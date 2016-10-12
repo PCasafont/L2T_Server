@@ -33,106 +33,106 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class CpDamPercent implements ISkillHandler
 {
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.CPDAMPERCENT};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CPDAMPERCENT};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (activeChar.isAlikeDead())
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (activeChar.isAlikeDead())
+		{
+			return;
+		}
 
-        L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-        double ssMul = L2ItemInstance.CHARGED_NONE;
-        if (weaponInst != null)
-        {
-            if (skill.isMagic())
-            {
-                ssMul = weaponInst.getChargedSpiritShot();
-                weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-            }
-            else
-            {
-                ssMul = weaponInst.getChargedSoulShot();
-                weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-            }
-        }
-        // If there is no weapon equipped, check for an active summon.
-        else if (activeChar instanceof L2Summon)
-        {
-            L2Summon activeSummon = (L2Summon) activeChar;
-            if (skill.isMagic())
-            {
-                ssMul = activeSummon.getChargedSpiritShot();
-                activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-            }
-            else
-            {
-                ssMul = activeSummon.getChargedSoulShot();
-                activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-            }
-        }
-        else if (activeChar instanceof L2Npc)
-        {
-            if (skill.isMagic())
-            {
-                ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
-                        L2ItemInstance.CHARGED_NONE;
-                ((L2Npc) activeChar)._soulshotcharged = false;
-            }
-            else
-            {
-                ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
-                        L2ItemInstance.CHARGED_NONE;
-                ((L2Npc) activeChar)._spiritshotcharged = false;
-            }
-        }
+		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		double ssMul = L2ItemInstance.CHARGED_NONE;
+		if (weaponInst != null)
+		{
+			if (skill.isMagic())
+			{
+				ssMul = weaponInst.getChargedSpiritShot();
+				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+			}
+			else
+			{
+				ssMul = weaponInst.getChargedSoulShot();
+				weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+			}
+		}
+		// If there is no weapon equipped, check for an active summon.
+		else if (activeChar instanceof L2Summon)
+		{
+			L2Summon activeSummon = (L2Summon) activeChar;
+			if (skill.isMagic())
+			{
+				ssMul = activeSummon.getChargedSpiritShot();
+				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+			}
+			else
+			{
+				ssMul = activeSummon.getChargedSoulShot();
+				activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+			}
+		}
+		else if (activeChar instanceof L2Npc)
+		{
+			if (skill.isMagic())
+			{
+				ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
+						L2ItemInstance.CHARGED_NONE;
+				((L2Npc) activeChar)._soulshotcharged = false;
+			}
+			else
+			{
+				ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
+						L2ItemInstance.CHARGED_NONE;
+				((L2Npc) activeChar)._spiritshotcharged = false;
+			}
+		}
 
-        for (L2Object obj : targets)
-        {
-            if (!(obj instanceof L2Character))
-            {
-                continue;
-            }
+		for (L2Object obj : targets)
+		{
+			if (!(obj instanceof L2Character))
+			{
+				continue;
+			}
 
-            L2Character target = (L2Character) obj;
-            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
-                    ((L2PcInstance) target).isFakeDeath())
-            {
-                target.stopFakeDeath(true);
-            }
-            else if (target.isDead() || target.isInvul(activeChar) ||
-                    target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
-            {
-                continue;
-            }
+			L2Character target = (L2Character) obj;
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+					((L2PcInstance) target).isFakeDeath())
+			{
+				target.stopFakeDeath(true);
+			}
+			else if (target.isDead() || target.isInvul(activeChar) ||
+					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
+			{
+				continue;
+			}
 
-            byte shld = Formulas.calcShldUse(activeChar, target, skill);
+			byte shld = Formulas.calcShldUse(activeChar, target, skill);
 
-            int damage = (int) (target.getCurrentCp() * (skill.getPower() / 100));
+			int damage = (int) (target.getCurrentCp() * (skill.getPower() / 100));
 
-            // Manage attack or cast break of the target (calculating rate, sending message...)
-            if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-            {
-                target.breakAttack();
-                target.breakCast();
-            }
-            skill.getEffects(activeChar, target, new Env(shld, ssMul));
-            activeChar.sendDamageMessage(target, damage, false, false, false);
-            target.setCurrentCp(target.getCurrentCp() - damage);
-        }
-    }
+			// Manage attack or cast break of the target (calculating rate, sending message...)
+			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+			{
+				target.breakAttack();
+				target.breakCast();
+			}
+			skill.getEffects(activeChar, target, new Env(shld, ssMul));
+			activeChar.sendDamageMessage(target, damage, false, false, false);
+			target.setCurrentCp(target.getCurrentCp() - damage);
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

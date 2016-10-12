@@ -32,68 +32,68 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class TakeCastle implements ISkillHandler
 {
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.TAKECASTLE};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.TAKECASTLE};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (!(activeChar instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (!(activeChar instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance player = (L2PcInstance) activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 
-        if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
-        {
-            return;
-        }
+		if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
+		{
+			return;
+		}
 
-        Castle castle = CastleManager.getInstance().getCastle(player);
-        if (castle == null || !player.checkIfOkToCastSealOfRule(castle, true, skill))
-        {
-            return;
-        }
+		Castle castle = CastleManager.getInstance().getCastle(player);
+		if (castle == null || !player.checkIfOkToCastSealOfRule(castle, true, skill))
+		{
+			return;
+		}
 
-        try
-        {
-            L2Clan originalOwner = ClanTable.getInstance().getClan(castle.getOwnerId());
-            castle.engrave(player.getClan(), targets[0]);
-            if (skill == FrequentSkill.IMPRINT_OF_DARKNESS.getSkill())
-            {
-                castle.setTendency(Castle.TENDENCY_DARKNESS);
-            }
-            else
-            {
-                castle.setTendency(Castle.TENDENCY_LIGHT);
-            }
+		try
+		{
+			L2Clan originalOwner = ClanTable.getInstance().getClan(castle.getOwnerId());
+			castle.engrave(player.getClan(), targets[0]);
+			if (skill == FrequentSkill.IMPRINT_OF_DARKNESS.getSkill())
+			{
+				castle.setTendency(Castle.TENDENCY_DARKNESS);
+			}
+			else
+			{
+				castle.setTendency(Castle.TENDENCY_LIGHT);
+			}
 
-            if (originalOwner != null)
-            {
-                originalOwner.checkTendency();
-            }
-            player.getClan().checkTendency();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
+			if (originalOwner != null)
+			{
+				originalOwner.checkTendency();
+			}
+			player.getClan().checkTendency();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 
-    public static void main(String[] args)
-    {
-        new TakeCastle();
-    }
+	public static void main(String[] args)
+	{
+		new TakeCastle();
+	}
 }

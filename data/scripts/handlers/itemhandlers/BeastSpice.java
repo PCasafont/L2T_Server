@@ -27,39 +27,39 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class BeastSpice implements IItemHandler
 {
-    /**
-     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-     */
-    @Override
-    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-    {
-        if (!(playable instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 */
+	@Override
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	{
+		if (!(playable instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance activeChar = (L2PcInstance) playable;
+		L2PcInstance activeChar = (L2PcInstance) playable;
 
-        if (!(activeChar.getTarget() instanceof L2FeedableBeastInstance))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
-            return;
-        }
+		if (!(activeChar.getTarget() instanceof L2FeedableBeastInstance))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
+			return;
+		}
 
-        int skillId = 0;
-        switch (item.getItemId())
-        {
-            case 6643:
-                skillId = 2188;
-                break;
-            case 6644:
-                skillId = 2189;
-                break;
-        }
-        L2Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
-        if (skill != null)
-        {
-            activeChar.useMagic(skill, false, false);
-        }
-    }
+		int skillId = 0;
+		switch (item.getItemId())
+		{
+			case 6643:
+				skillId = 2188;
+				break;
+			case 6644:
+				skillId = 2189;
+				break;
+		}
+		L2Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
+		if (skill != null)
+		{
+			activeChar.useMagic(skill, false, false);
+		}
+	}
 }

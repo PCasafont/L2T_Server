@@ -27,42 +27,42 @@ import l2server.gameserver.network.serverpackets.StaticObject;
 
 public class L2DoorInstanceActionShift implements IActionHandler
 {
-    @Override
-    public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-    {
-        if (activeChar.getAccessLevel().isGm())
-        {
-            activeChar.setTarget(target);
-            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
+	@Override
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	{
+		if (activeChar.getAccessLevel().isGm())
+		{
+			activeChar.setTarget(target);
+			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
 
-            StaticObject su = new StaticObject((L2DoorInstance) target, activeChar.isGM());
-            activeChar.sendPacket(su);
+			StaticObject su = new StaticObject((L2DoorInstance) target, activeChar.isGM());
+			activeChar.sendPacket(su);
 
-            NpcHtmlMessage html = new NpcHtmlMessage(0);
-            html.setFile(activeChar.getHtmlPrefix(), "admin/doorinfo.htm");
-            html.replace("%class%", target.getClass().getSimpleName());
-            html.replace("%hp%", String.valueOf((int) ((L2Character) target).getCurrentHp()));
-            html.replace("%hpmax%", String.valueOf(((L2Character) target).getMaxHp()));
-            html.replace("%pdef%", String.valueOf(((L2Character) target).getPDef((L2Character) target)));
-            html.replace("%mdef%", String.valueOf(((L2Character) target).getMDef((L2Character) target, null)));
-            html.replace("%objid%", String.valueOf(target.getObjectId()));
-            html.replace("%doorid%", String.valueOf(((L2DoorInstance) target).getDoorId()));
-            html.replace("%minx%", String.valueOf(((L2DoorInstance) target).getX(1)));
-            html.replace("%miny%", String.valueOf(((L2DoorInstance) target).getY(1)));
-            html.replace("%minz%", String.valueOf(((L2DoorInstance) target).getZMin()));
-            html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
-            html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
-            html.replace("%maxz%", String.valueOf(((L2DoorInstance) target).getZMax()));
-            html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" :
-                    "<font color=FF0000>NO</font>");
-            activeChar.sendPacket(html);
-        }
-        return true;
-    }
+			NpcHtmlMessage html = new NpcHtmlMessage(0);
+			html.setFile(activeChar.getHtmlPrefix(), "admin/doorinfo.htm");
+			html.replace("%class%", target.getClass().getSimpleName());
+			html.replace("%hp%", String.valueOf((int) ((L2Character) target).getCurrentHp()));
+			html.replace("%hpmax%", String.valueOf(((L2Character) target).getMaxHp()));
+			html.replace("%pdef%", String.valueOf(((L2Character) target).getPDef((L2Character) target)));
+			html.replace("%mdef%", String.valueOf(((L2Character) target).getMDef((L2Character) target, null)));
+			html.replace("%objid%", String.valueOf(target.getObjectId()));
+			html.replace("%doorid%", String.valueOf(((L2DoorInstance) target).getDoorId()));
+			html.replace("%minx%", String.valueOf(((L2DoorInstance) target).getX(1)));
+			html.replace("%miny%", String.valueOf(((L2DoorInstance) target).getY(1)));
+			html.replace("%minz%", String.valueOf(((L2DoorInstance) target).getZMin()));
+			html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
+			html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
+			html.replace("%maxz%", String.valueOf(((L2DoorInstance) target).getZMax()));
+			html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" :
+					"<font color=FF0000>NO</font>");
+			activeChar.sendPacket(html);
+		}
+		return true;
+	}
 
-    @Override
-    public InstanceType getInstanceType()
-    {
-        return InstanceType.L2DoorInstance;
-    }
+	@Override
+	public InstanceType getInstanceType()
+	{
+		return InstanceType.L2DoorInstance;
+	}
 }

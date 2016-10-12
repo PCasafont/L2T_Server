@@ -36,52 +36,52 @@ import l2server.util.Rnd;
 
 public class NervaOrcMerchant extends L2AttackableAIScript
 {
-    private static final int _merchant = 23320;
+	private static final int _merchant = 23320;
 
-    public NervaOrcMerchant(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public NervaOrcMerchant(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addAttackId(_merchant);
-        addSpawnId(_merchant);
+		addAttackId(_merchant);
+		addSpawnId(_merchant);
 
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn == null)
-            {
-                continue;
-            }
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn == null)
+			{
+				continue;
+			}
 
-            if (spawn.getNpcId() == _merchant)
-            {
-                this.notifySpawn(spawn.getNpc());
-            }
-        }
-    }
+			if (spawn.getNpcId() == _merchant)
+			{
+				this.notifySpawn(spawn.getNpc());
+			}
+		}
+	}
 
-    @Override
-    public String onSpawn(L2Npc npc)
-    {
-        npc.disableCoreAI(true);
+	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		npc.disableCoreAI(true);
 
-        return super.onSpawn(npc);
-    }
+		return super.onSpawn(npc);
+	}
 
-    @Override
-    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-    {
-        if (!npc.isMoving())
-        {
-            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-                    new L2CharPosition(npc.getX() + 1000, npc.getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(),
-                            0));
-        }
+	@Override
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
+	{
+		if (!npc.isMoving())
+		{
+			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+					new L2CharPosition(npc.getX() + 1000, npc.getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(),
+							0));
+		}
 
-        return super.onAttack(npc, attacker, damage, isPet, skill);
-    }
+		return super.onAttack(npc, attacker, damage, isPet, skill);
+	}
 
-    public static void main(String[] args)
-    {
-        new NervaOrcMerchant(-1, "NervaOrcMerchant", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new NervaOrcMerchant(-1, "NervaOrcMerchant", "ai");
+	}
 }

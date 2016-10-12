@@ -34,73 +34,73 @@ import java.util.logging.Logger;
  */
 public class TargetOne implements ISkillTargetTypeHandler
 {
-    protected static final Logger _log = Logger.getLogger(TargetOne.class.getName());
+	protected static final Logger _log = Logger.getLogger(TargetOne.class.getName());
 
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        L2SkillType skillType = skill.getSkillType();
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		L2SkillType skillType = skill.getSkillType();
 
-        boolean canTargetSelf = false;
+		boolean canTargetSelf = false;
 
-        switch (skillType)
-        {
-            case BUFF:
-            case HEAL:
-                //case HOT:
-            case HEAL_PERCENT:
-            case MANARECHARGE:
-            case MANAHEAL:
-            case NEGATE:
-            case CANCEL:
-            case CANCEL_DEBUFF:
-                //case REFLECT:
-            case COMBATPOINTHEAL:
-                //case MAGE_BANE:
-                //case WARRIOR_BANE:
-            case BETRAY:
-            case HPMPHEAL_PERCENT:
-            case HPMPCPHEAL_PERCENT:
-            case HPCPHEAL_PERCENT:
-            case BALANCE_LIFE:
-                canTargetSelf = true;
-                break;
-            case TAKEFORT:
-            {
-                if (target instanceof L2StaticObjectInstance)
-                {
-                    return new L2Character[]{target};
-                }
-                else
-                {
-                    _log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
-                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-                    return null;
-                }
-            }
-            default:
-        }
+		switch (skillType)
+		{
+			case BUFF:
+			case HEAL:
+				//case HOT:
+			case HEAL_PERCENT:
+			case MANARECHARGE:
+			case MANAHEAL:
+			case NEGATE:
+			case CANCEL:
+			case CANCEL_DEBUFF:
+				//case REFLECT:
+			case COMBATPOINTHEAL:
+				//case MAGE_BANE:
+				//case WARRIOR_BANE:
+			case BETRAY:
+			case HPMPHEAL_PERCENT:
+			case HPMPCPHEAL_PERCENT:
+			case HPCPHEAL_PERCENT:
+			case BALANCE_LIFE:
+				canTargetSelf = true;
+				break;
+			case TAKEFORT:
+			{
+				if (target instanceof L2StaticObjectInstance)
+				{
+					return new L2Character[]{target};
+				}
+				else
+				{
+					_log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+					return null;
+				}
+			}
+			default:
+		}
 
-        // Check for null target or any other invalid target
-        if (target == null || target.isDead() || target == activeChar && !canTargetSelf)
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-            return null;
-        }
+		// Check for null target or any other invalid target
+		if (target == null || target.isDead() || target == activeChar && !canTargetSelf)
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			return null;
+		}
 
-        // If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-        return new L2Character[]{target};
-    }
+		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
+		return new L2Character[]{target};
+	}
 
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        // TODO Auto-generated method stub
-        return L2SkillTargetType.TARGET_ONE;
-    }
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		// TODO Auto-generated method stub
+		return L2SkillTargetType.TARGET_ONE;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetOne());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetOne());
+	}
 }

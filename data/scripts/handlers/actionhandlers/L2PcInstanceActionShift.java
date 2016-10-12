@@ -28,46 +28,46 @@ import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2PcInstanceActionShift implements IActionHandler
 {
-    @Override
-    public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-    {
-        // Check if the gm already target this l2pcinstance
-        if (activeChar.getTarget() != target)
-        {
-            // Set the target of the L2PcInstance activeChar
-            activeChar.setTarget(target);
+	@Override
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	{
+		// Check if the gm already target this l2pcinstance
+		if (activeChar.getTarget() != target)
+		{
+			// Set the target of the L2PcInstance activeChar
+			activeChar.setTarget(target);
 
-            // Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
-            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-            if (target instanceof L2Character && target.getObjectId() != activeChar.getObjectId())
-            {
-                activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
-            }
-        }
+			// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
+			if (target instanceof L2Character && target.getObjectId() != activeChar.getObjectId())
+			{
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+			}
+		}
 
-        // Send a Server->Client packet ValidateLocation to correct the L2PcInstance position and heading on the client
-        if (activeChar != target)
-        {
-            activeChar.sendPacket(new ValidateLocation((L2Character) target));
-        }
+		// Send a Server->Client packet ValidateLocation to correct the L2PcInstance position and heading on the client
+		if (activeChar != target)
+		{
+			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+		}
 
-        if (activeChar.isGM())
-        {
-            IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler("admin_character_info");
-            if (ach != null)
-            {
-                ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
-            }
+		if (activeChar.isGM())
+		{
+			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler("admin_character_info");
+			if (ach != null)
+			{
+				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
+			}
 
-            return true;
-        }
+			return true;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public InstanceType getInstanceType()
-    {
-        return InstanceType.L2PcInstance;
-    }
+	@Override
+	public InstanceType getInstanceType()
+	{
+		return InstanceType.L2PcInstance;
+	}
 }

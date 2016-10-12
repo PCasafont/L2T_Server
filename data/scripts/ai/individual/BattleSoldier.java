@@ -29,67 +29,67 @@ import java.util.List;
 
 public class BattleSoldier extends L2AttackableAIScript
 {
-    private static final int BATTLE_SOLDIER = 33119;
+	private static final int BATTLE_SOLDIER = 33119;
 
-    private static final int[][] WALK_ROUTE = {
-            {-115692, 235946, -3091}, {-115692, 235946, -3091}, //1
-            {-114140, 235556, -3091}, //2
-            {-113477, 236672, -3045}, //3
-            {-113600, 237167, -3045} //4
-    };
+	private static final int[][] WALK_ROUTE = {
+			{-115692, 235946, -3091}, {-115692, 235946, -3091}, //1
+			{-114140, 235556, -3091}, //2
+			{-113477, 236672, -3045}, //3
+			{-113600, 237167, -3045} //4
+	};
 
-    private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+	private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
 
-    public BattleSoldier(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public BattleSoldier(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addSpawnId(BATTLE_SOLDIER);
+		addSpawnId(BATTLE_SOLDIER);
 
-        addEventId(BATTLE_SOLDIER, QuestEventType.ON_ARRIVED);
+		addEventId(BATTLE_SOLDIER, QuestEventType.ON_ARRIVED);
 
-        for (int[] coord : WALK_ROUTE)
-        {
-            _route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
-        }
+		for (int[] coord : WALK_ROUTE)
+		{
+			_route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
+		}
 
-        addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
-    }
+		addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
+	}
 
-    @Override
-    public String onArrived(final L2NpcWalkerAI guideAI)
-    {
-        if (guideAI.getCurrentPos() == 4)
-        {
-            guideAI.getActor().decayMe();
-            addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
-        }
-        else
-        {
-            guideAI.walkToLocation();
-            guideAI.setWaiting(false);
-        }
-        return null;
-    }
+	@Override
+	public String onArrived(final L2NpcWalkerAI guideAI)
+	{
+		if (guideAI.getCurrentPos() == 4)
+		{
+			guideAI.getActor().decayMe();
+			addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
+		}
+		else
+		{
+			guideAI.walkToLocation();
+			guideAI.setWaiting(false);
+		}
+		return null;
+	}
 
-    @Override
-    public final String onSpawn(L2Npc npc)
-    {
-        L2NpcWalkerAI _battleSoldierAI = new L2NpcWalkerAI(npc.new AIAccessor());
+	@Override
+	public final String onSpawn(L2Npc npc)
+	{
+		L2NpcWalkerAI _battleSoldierAI = new L2NpcWalkerAI(npc.new AIAccessor());
 
-        npc.setAI(_battleSoldierAI);
+		npc.setAI(_battleSoldierAI);
 
-        npc.setIsInvul(true);
+		npc.setIsInvul(true);
 
-        _battleSoldierAI.initializeRoute(_route, null);
+		_battleSoldierAI.initializeRoute(_route, null);
 
-        _battleSoldierAI.walkToLocation();
+		_battleSoldierAI.walkToLocation();
 
-        return super.onSpawn(npc);
-    }
+		return super.onSpawn(npc);
+	}
 
-    public static void main(String[] args)
-    {
-        new BattleSoldier(-1, "BattleSoldier", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new BattleSoldier(-1, "BattleSoldier", "ai");
+	}
 }

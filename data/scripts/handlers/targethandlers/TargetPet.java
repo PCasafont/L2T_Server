@@ -27,31 +27,31 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class TargetPet implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        // FIXME target = activeChar.getPet();
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		// FIXME target = activeChar.getPet();
 
-        if (target != null && !target.isDead())
-        {
-            return new L2Character[]{target};
-        }
+		if (target != null && !target.isDead())
+		{
+			return new L2Character[]{target};
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_PET;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_PET;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPet());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPet());
+	}
 }

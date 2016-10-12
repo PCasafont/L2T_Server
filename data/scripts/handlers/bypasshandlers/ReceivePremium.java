@@ -24,30 +24,30 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ReceivePremium implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"ReceivePremium"};
+	private static final String[] COMMANDS = {"ReceivePremium"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
 
-        {
-            if (activeChar.getPremiumItemList().isEmpty())
-            {
-                activeChar.sendPacket(
-                        SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_NO_MORE_VITAMIN_ITEMS_TO_BE_FOUND));
-                return false;
-            }
-        }
+		{
+			if (activeChar.getPremiumItemList().isEmpty())
+			{
+				activeChar.sendPacket(
+						SystemMessage.getSystemMessage(SystemMessageId.THERE_ARE_NO_MORE_VITAMIN_ITEMS_TO_BE_FOUND));
+				return false;
+			}
+		}
 
-        activeChar.sendPacket(new ExGetPremiumItemList(activeChar));
+		activeChar.sendPacket(new ExGetPremiumItemList(activeChar));
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

@@ -33,36 +33,36 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Craft implements ISkillHandler
 {
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.COMMON_CRAFT, L2SkillType.DWARVEN_CRAFT};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.COMMON_CRAFT, L2SkillType.DWARVEN_CRAFT};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (!(activeChar instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (!(activeChar instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance player = (L2PcInstance) activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 
-        if (player.getPrivateStoreType() != 0)
-        {
-            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_CREATED_WHILE_ENGAGED_IN_TRADING));
-            return;
-        }
-        RecipeController.getInstance()
-                .requestBookOpen(player, skill.getSkillType() == L2SkillType.DWARVEN_CRAFT ? true : false);
-    }
+		if (player.getPrivateStoreType() != 0)
+		{
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_CREATED_WHILE_ENGAGED_IN_TRADING));
+			return;
+		}
+		RecipeController.getInstance()
+				.requestBookOpen(player, skill.getSkillType() == L2SkillType.DWARVEN_CRAFT ? true : false);
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

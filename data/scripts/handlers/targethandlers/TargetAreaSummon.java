@@ -35,64 +35,64 @@ import java.util.List;
  */
 public class TargetAreaSummon implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        List<L2Character> targetList = new ArrayList<L2Character>();
-        // FIXME target = activeChar.getPet();
-        if (target == null || !(target instanceof L2SummonInstance) || target.isDead())
-        {
-            return null;
-        }
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		List<L2Character> targetList = new ArrayList<L2Character>();
+		// FIXME target = activeChar.getPet();
+		if (target == null || !(target instanceof L2SummonInstance) || target.isDead())
+		{
+			return null;
+		}
 
-        if (onlyFirst)
-        {
-            return new L2Character[]{target};
-        }
+		if (onlyFirst)
+		{
+			return new L2Character[]{target};
+		}
 
-        final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
-        final int radius = skill.getSkillRadius();
+		final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
+		final int radius = skill.getSkillRadius();
 
-        for (L2Character obj : objs)
-        {
-            if (obj == null || obj == target || obj == activeChar)
-            {
-                continue;
-            }
+		for (L2Character obj : objs)
+		{
+			if (obj == null || obj == target || obj == activeChar)
+			{
+				continue;
+			}
 
-            if (!Util.checkIfInRange(radius, target, obj, true))
-            {
-                continue;
-            }
+			if (!Util.checkIfInRange(radius, target, obj, true))
+			{
+				continue;
+			}
 
-            if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
-            {
-                continue;
-            }
+			if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
+			{
+				continue;
+			}
 
-            targetList.add(obj);
-        }
+			targetList.add(obj);
+		}
 
-        if (targetList.isEmpty())
-        {
-            return null;
-        }
+		if (targetList.isEmpty())
+		{
+			return null;
+		}
 
-        return targetList.toArray(new L2Character[targetList.size()]);
-    }
+		return targetList.toArray(new L2Character[targetList.size()]);
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_AREA_SUMMON;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_AREA_SUMMON;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaSummon());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaSummon());
+	}
 }

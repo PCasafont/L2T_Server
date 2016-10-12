@@ -6,85 +6,85 @@ import l2server.gameserver.model.L2Transformation;
 
 public class FlyingFinalForm extends L2Transformation
 {
-    private static final int[] SKILLS = {932, 950, 951, 953, 1544, 1545, 619};
+	private static final int[] SKILLS = {932, 950, 951, 953, 1544, 1545, 619};
 
-    public FlyingFinalForm()
-    {
-        // id, colRadius, colHeight
-        super(260, 9, 38);
-    }
+	public FlyingFinalForm()
+	{
+		// id, colRadius, colHeight
+		super(260, 9, 38);
+	}
 
-    @Override
-    public void onTransform()
-    {
-        if (getPlayer().getTransformationId() != 260 || getPlayer().isCursedWeaponEquipped())
-        {
-            return;
-        }
+	@Override
+	public void onTransform()
+	{
+		if (getPlayer().getTransformationId() != 260 || getPlayer().isCursedWeaponEquipped())
+		{
+			return;
+		}
 
-        getPlayer().setIsFlyingMounted(true);
+		getPlayer().setIsFlyingMounted(true);
 
-        transformedSkills();
-    }
+		transformedSkills();
+	}
 
-    public void transformedSkills()
-    {
-        // Life to Soul
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(953, 1), false);
-        // Soul Sucking
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(1545, 1), false);
+	public void transformedSkills()
+	{
+		// Life to Soul
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(953, 1), false);
+		// Soul Sucking
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(1545, 1), false);
 
-        int lvl = getPlayer().getLevel() - 78;
+		int lvl = getPlayer().getLevel() - 78;
 
-        if (lvl > 0)
-        {
-            // Nail Attack (up to 7 levels)
-            getPlayer().addSkill(SkillTable.getInstance().getInfo(950, lvl), false);
-            // Wing Assault (up to 7 levels)
-            getPlayer().addSkill(SkillTable.getInstance().getInfo(951, lvl), false);
-            // Death Beam (up to 7 levels)
-            getPlayer().addSkill(SkillTable.getInstance().getInfo(1544, lvl), false);
-        }
-        // Transform Dispel
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
+		if (lvl > 0)
+		{
+			// Nail Attack (up to 7 levels)
+			getPlayer().addSkill(SkillTable.getInstance().getInfo(950, lvl), false);
+			// Wing Assault (up to 7 levels)
+			getPlayer().addSkill(SkillTable.getInstance().getInfo(951, lvl), false);
+			// Death Beam (up to 7 levels)
+			getPlayer().addSkill(SkillTable.getInstance().getInfo(1544, lvl), false);
+		}
+		// Transform Dispel
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(SKILLS);
-    }
+		getPlayer().setTransformAllowedSkills(SKILLS);
+	}
 
-    @Override
-    public void onUntransform()
-    {
-        getPlayer().setIsFlyingMounted(false);
+	@Override
+	public void onUntransform()
+	{
+		getPlayer().setIsFlyingMounted(false);
 
-        removeSkills();
-    }
+		removeSkills();
+	}
 
-    public void removeSkills()
-    {
-        // Life to Soul
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(953, 1), false);
-        // Soul Sucking
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(1545, 1), false);
+	public void removeSkills()
+	{
+		// Life to Soul
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(953, 1), false);
+		// Soul Sucking
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(1545, 1), false);
 
-        int lvl = getPlayer().getLevel() - 78;
+		int lvl = getPlayer().getLevel() - 78;
 
-        if (lvl > 0)
-        {
-            // Nail Attack (up to 7 levels)
-            getPlayer().removeSkill(SkillTable.getInstance().getInfo(950, lvl), false);
-            // Wing Assault (up to 7 levels)
-            getPlayer().removeSkill(SkillTable.getInstance().getInfo(951, lvl), false);
-            // Death Beam (up to 7 levels)
-            getPlayer().removeSkill(SkillTable.getInstance().getInfo(1544, lvl), false);
-        }
-        // Transform Dispel
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
+		if (lvl > 0)
+		{
+			// Nail Attack (up to 7 levels)
+			getPlayer().removeSkill(SkillTable.getInstance().getInfo(950, lvl), false);
+			// Wing Assault (up to 7 levels)
+			getPlayer().removeSkill(SkillTable.getInstance().getInfo(951, lvl), false);
+			// Death Beam (up to 7 levels)
+			getPlayer().removeSkill(SkillTable.getInstance().getInfo(1544, lvl), false);
+		}
+		// Transform Dispel
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
-    }
+		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
+	}
 
-    public static void main(String[] args)
-    {
-        TransformationManager.getInstance().registerTransformation(new FlyingFinalForm());
-    }
+	public static void main(String[] args)
+	{
+		TransformationManager.getInstance().registerTransformation(new FlyingFinalForm());
+	}
 }

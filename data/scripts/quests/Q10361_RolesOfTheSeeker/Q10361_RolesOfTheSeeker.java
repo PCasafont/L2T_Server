@@ -27,101 +27,101 @@ import l2server.gameserver.model.quest.State;
  */
 public class Q10361_RolesOfTheSeeker extends Quest
 {
-    // Quest
-    public static String qn = "Q10361_RolesOfTheSeeker";
+	// Quest
+	public static String qn = "Q10361_RolesOfTheSeeker";
 
-    // NPC
-    private int _lakcis = 32977;
-    private int _chesha = 33449;
+	// NPC
+	private int _lakcis = 32977;
+	private int _chesha = 33449;
 
-    public Q10361_RolesOfTheSeeker(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        addStartNpc(_lakcis);
-        addTalkId(_lakcis);
-        addTalkId(_chesha);
-    }
+	public Q10361_RolesOfTheSeeker(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		addStartNpc(_lakcis);
+		addTalkId(_lakcis);
+		addTalkId(_chesha);
+	}
 
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = event;
-        QuestState st = player.getQuestState(qn);
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = event;
+		QuestState st = player.getQuestState(qn);
 
-        if (st == null)
-        {
-            return htmltext;
-        }
+		if (st == null)
+		{
+			return htmltext;
+		}
 
-        if (npc.getNpcId() == _lakcis && event.equalsIgnoreCase("32977-03.htm"))
-        {
-            st.setState(State.STARTED);
-            st.set("cond", "1");
-            st.playSound("ItemSound.quest_accept");
-        }
-        else if (npc.getNpcId() == _chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
-        {
-            st.unset("cond");
-            st.giveItems(22, 1);
-            st.giveItems(29, 1);
-            st.giveItems(57, 34000);
-            st.addExpAndSp(35000, 6500);
-            st.playSound("ItemSound.quest_finish");
-            st.exitQuest(false);
+		if (npc.getNpcId() == _lakcis && event.equalsIgnoreCase("32977-03.htm"))
+		{
+			st.setState(State.STARTED);
+			st.set("cond", "1");
+			st.playSound("ItemSound.quest_accept");
+		}
+		else if (npc.getNpcId() == _chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
+		{
+			st.unset("cond");
+			st.giveItems(22, 1);
+			st.giveItems(29, 1);
+			st.giveItems(57, 34000);
+			st.addExpAndSp(35000, 6500);
+			st.playSound("ItemSound.quest_finish");
+			st.exitQuest(false);
 
-            // Main quests state
-            player.setGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
-        }
-        return htmltext;
-    }
+			// Main quests state
+			player.setGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
+		}
+		return htmltext;
+	}
 
-    @Override
-    public String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = getNoQuestMsg(player);
-        QuestState st = player.getQuestState(qn);
-        if (st == null)
-        {
-            return htmltext;
-        }
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		QuestState st = player.getQuestState(qn);
+		if (st == null)
+		{
+			return htmltext;
+		}
 
-        if (npc.getNpcId() == _lakcis)
-        {
-            switch (st.getState())
-            {
-                case State.CREATED:
-                    if (canStart(player))
-                    {
-                        htmltext = "32977-01.htm";
-                    }
-                    else
-                    {
-                        htmltext = "32977-00.htm";
-                    }
-                    break;
-                case State.STARTED:
-                    htmltext = "32977-04.htm"; // TODO
-                    break;
-                case State.COMPLETED:
-                    htmltext = "32977-05.htm"; // TODO
-                    break;
-            }
-        }
-        else if (npc.getNpcId() == _chesha && st.getInt("cond") == 1)
-        {
-            htmltext = "33449-01.htm";
-        }
-        return htmltext;
-    }
+		if (npc.getNpcId() == _lakcis)
+		{
+			switch (st.getState())
+			{
+				case State.CREATED:
+					if (canStart(player))
+					{
+						htmltext = "32977-01.htm";
+					}
+					else
+					{
+						htmltext = "32977-00.htm";
+					}
+					break;
+				case State.STARTED:
+					htmltext = "32977-04.htm"; // TODO
+					break;
+				case State.COMPLETED:
+					htmltext = "32977-05.htm"; // TODO
+					break;
+			}
+		}
+		else if (npc.getNpcId() == _chesha && st.getInt("cond") == 1)
+		{
+			htmltext = "33449-01.htm";
+		}
+		return htmltext;
+	}
 
-    @Override
-    public boolean canStart(L2PcInstance player)
-    {
-        return player.getLevel() >= 10 && player.getLevel() <= 20;
-    }
+	@Override
+	public boolean canStart(L2PcInstance player)
+	{
+		return player.getLevel() >= 10 && player.getLevel() <= 20;
+	}
 
-    public static void main(String[] args)
-    {
-        new Q10361_RolesOfTheSeeker(10361, qn, "Entering the Ye Sagira Ruins.");
-    }
+	public static void main(String[] args)
+	{
+		new Q10361_RolesOfTheSeeker(10361, qn, "Entering the Ye Sagira Ruins.");
+	}
 }

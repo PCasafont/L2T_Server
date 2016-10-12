@@ -24,94 +24,94 @@ import l2server.gameserver.model.zone.L2ZoneType;
 
 public class Warpgate extends Quest
 {
-    private static final int ZONE = 40101;
+	private static final int ZONE = 40101;
 
-    private static final int[] WARPGATES = {32314, 32315, 32316, 32317, 32318, 32319, 33900};
+	private static final int[] WARPGATES = {32314, 32315, 32316, 32317, 32318, 32319, 33900};
 
-    private static boolean canEnter(L2PcInstance player)
-    {
-        if (player.isFlying())
-        {
-            return false;
-        }
+	private static boolean canEnter(L2PcInstance player)
+	{
+		if (player.isFlying())
+		{
+			return false;
+		}
 
-        if (player.getLevel() < 99)
-        {
-            return false;
-        }
+		if (player.getLevel() < 99)
+		{
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-    {
-        return npc.getNpcId() + ".html";
-    }
+	@Override
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	{
+		return npc.getNpcId() + ".html";
+	}
 
-    @Override
-    public final String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        if (!canEnter(player))
-        {
-            return "warpgate-no.html";
-        }
+	@Override
+	public final String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		if (!canEnter(player))
+		{
+			return "warpgate-no.html";
+		}
 
-        player.teleToLocation(-28930, 256438, -2194, true);
+		player.teleToLocation(-28930, 256438, -2194, true);
 
-        return null;
-    }
+		return null;
+	}
 
-    @Override
-    public final String onEnterZone(L2Character character, L2ZoneType zone)
-    {
-        if (character instanceof L2PcInstance)
-        {
-            if (!canEnter((L2PcInstance) character) && !character.isGM())
-            {
-                ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character), 1000);
-            }
-        }
-        return null;
-    }
+	@Override
+	public final String onEnterZone(L2Character character, L2ZoneType zone)
+	{
+		if (character instanceof L2PcInstance)
+		{
+			if (!canEnter((L2PcInstance) character) && !character.isGM())
+			{
+				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character), 1000);
+			}
+		}
+		return null;
+	}
 
-    private static final class Teleport implements Runnable
-    {
-        private final L2Character _char;
+	private static final class Teleport implements Runnable
+	{
+		private final L2Character _char;
 
-        public Teleport(L2Character c)
-        {
-            _char = c;
-        }
+		public Teleport(L2Character c)
+		{
+			_char = c;
+		}
 
-        @Override
-        public void run()
-        {
-            try
-            {
-                _char.teleToLocation(-16555, 209375, -3670, true);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-    }
+		@Override
+		public void run()
+		{
+			try
+			{
+				_char.teleToLocation(-16555, 209375, -3670, true);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
 
-    public Warpgate(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        for (int id : WARPGATES)
-        {
-            addStartNpc(id);
-            addFirstTalkId(id);
-            addTalkId(id);
-        }
-        addEnterZoneId(ZONE);
-    }
+	public Warpgate(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		for (int id : WARPGATES)
+		{
+			addStartNpc(id);
+			addFirstTalkId(id);
+			addTalkId(id);
+		}
+		addEnterZoneId(ZONE);
+	}
 
-    public static void main(String[] args)
-    {
-        new Warpgate(-1, "Warpgate", "teleports");
-    }
+	public static void main(String[] args)
+	{
+		new Warpgate(-1, "Warpgate", "teleports");
+	}
 }

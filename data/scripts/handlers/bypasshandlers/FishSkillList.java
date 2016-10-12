@@ -22,23 +22,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class FishSkillList implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"FishSkillList"};
+	private static final String[] COMMANDS = {"FishSkillList"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (!(target instanceof L2FishermanInstance))
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (!(target instanceof L2FishermanInstance))
+		{
+			return false;
+		}
 
-        L2FishermanInstance.showFishSkillList(activeChar);
-        return true;
-    }
+		L2FishermanInstance.showFishSkillList(activeChar);
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

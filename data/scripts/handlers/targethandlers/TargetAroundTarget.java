@@ -43,179 +43,179 @@ import java.util.ArrayList;
  */
 public class TargetAroundTarget implements ISkillTargetTypeHandler
 {
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        final ArrayList<L2Character> result = new ArrayList<L2Character>();
-        final L2PcInstance src = activeChar.getActingPlayer();
-        boolean isAttackingPlayer = false;
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		final ArrayList<L2Character> result = new ArrayList<L2Character>();
+		final L2PcInstance src = activeChar.getActingPlayer();
+		boolean isAttackingPlayer = false;
 
-        if (activeChar == target || target == null || src != null &&
-                (!isReachableTarget(activeChar, target, skill, false) ||
-                        !src.isAbleToCastOnTarget(target, skill, false)))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
-            return null;
-        }
-        else
-        {
-            if (target instanceof L2Playable)
-            {
-                isAttackingPlayer = true;
-            }
+		if (activeChar == target || target == null || src != null &&
+				(!isReachableTarget(activeChar, target, skill, false) ||
+						!src.isAbleToCastOnTarget(target, skill, false)))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
+			return null;
+		}
+		else
+		{
+			if (target instanceof L2Playable)
+			{
+				isAttackingPlayer = true;
+			}
 
-            result.add(target);
-        }
+			result.add(target);
+		}
 
-        if (target instanceof L2Playable)
-        {
-            for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-            {
-                if (!isReachableTarget(activeChar, obj, skill, true) ||
-                        !activeChar.isAbleToCastOnTarget(obj, skill, true))
-                {
-                    continue;
-                }
+		if (target instanceof L2Playable)
+		{
+			for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
+			{
+				if (!isReachableTarget(activeChar, obj, skill, true) ||
+						!activeChar.isAbleToCastOnTarget(obj, skill, true))
+				{
+					continue;
+				}
 
-                if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
-                {
-                    continue;
-                }
+				if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
+				{
+					continue;
+				}
 
-                result.add(obj);
-            }
-        }
-        else
-        {
-            for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
-            {
-                if (activeChar == obj || obj == target || !(obj instanceof L2Character) ||
-                        !isAttackingPlayer && obj instanceof L2Playable)
-                {
-                    continue;
-                }
+				result.add(obj);
+			}
+		}
+		else
+		{
+			for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
+			{
+				if (activeChar == obj || obj == target || !(obj instanceof L2Character) ||
+						!isAttackingPlayer && obj instanceof L2Playable)
+				{
+					continue;
+				}
 
-                if (!Util.checkIfInRange(skill.getSkillRadius(), obj, target, true))
-                {
-                    continue;
-                }
+				if (!Util.checkIfInRange(skill.getSkillRadius(), obj, target, true))
+				{
+					continue;
+				}
 
-                if (!isReachableTarget(target, (L2Character) obj, skill, true) ||
-                        !activeChar.isAbleToCastOnTarget(obj, skill, true))
-                {
-                    continue;
-                }
+				if (!isReachableTarget(target, (L2Character) obj, skill, true) ||
+						!activeChar.isAbleToCastOnTarget(obj, skill, true))
+				{
+					continue;
+				}
 
-                if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
-                {
-                    continue;
-                }
+				if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
+				{
+					continue;
+				}
 
-                result.add((L2Character) obj);
-            }
-        }
+				result.add((L2Character) obj);
+			}
+		}
 
-        return result.toArray(new L2Character[result.size()]);
-    }
+		return result.toArray(new L2Character[result.size()]);
+	}
 
-    private final boolean isReachableTarget(final L2Character activeChar, final L2Character target, final L2Skill skill, final boolean isMassiveCheck)
-    {
-        if (target instanceof L2Trap)
-        {
-            return false;
-        }
+	private final boolean isReachableTarget(final L2Character activeChar, final L2Character target, final L2Skill skill, final boolean isMassiveCheck)
+	{
+		if (target instanceof L2Trap)
+		{
+			return false;
+		}
 
-        final L2SkillTargetDirection td = skill.getTargetDirection();
+		final L2SkillTargetDirection td = skill.getTargetDirection();
 
-        if (td == L2SkillTargetDirection.DEAD_MONSTER)
-        {
-            if (target instanceof L2MonsterInstance)
-            {
-                if (skill.getSkillBehavior() == L2SkillBehaviorType.ATTACK)
-                {
-                    if (!isMassiveCheck && !target.isDead())
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    if (!target.isDead())
-                    {
-                        return false;
-                    }
-                }
+		if (td == L2SkillTargetDirection.DEAD_MONSTER)
+		{
+			if (target instanceof L2MonsterInstance)
+			{
+				if (skill.getSkillBehavior() == L2SkillBehaviorType.ATTACK)
+				{
+					if (!isMassiveCheck && !target.isDead())
+					{
+						return false;
+					}
+				}
+				else
+				{
+					if (!target.isDead())
+					{
+						return false;
+					}
+				}
 
-                return true;
-            }
-        }
-        else
-        {
-            if (!target.isDead())
-            {
-                if (td == L2SkillTargetDirection.UNDEAD)
-                {
-                    if (target.isUndead())
-                    {
-                        return true;
-                    }
-                }
+				return true;
+			}
+		}
+		else
+		{
+			if (!target.isDead())
+			{
+				if (td == L2SkillTargetDirection.UNDEAD)
+				{
+					if (target.isUndead())
+					{
+						return true;
+					}
+				}
 
-                if (isMassiveCheck)
-                {
-                    if (td == L2SkillTargetDirection.FRONT)
-                    {
-                        if (activeChar.isFacing(target, 180))
-                        {
-                            return true;
-                        }
-                        //else
-                        //	Broadcast.toGameMasters(target.getName() + " was unreachable");
-                    }
-                    else if (td == L2SkillTargetDirection.BEHIND)
-                    {
-                        if (!target.isFacing(activeChar, 140))
-                        {
-                            return true;
-                        }
-                    }
-                    else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND)
-                    {
-                        return true;
-                    }
-                    else if (td == L2SkillTargetDirection.PLAYER)
-                    {
-                        if (target instanceof L2Playable)
-                        {
-                            return true;
-                        }
-                    }
-                    else if (td == L2SkillTargetDirection.ALL_SUMMONS)
-                    {
-                        if (target instanceof L2Summon)
-                        {
-                            return true;
-                        }
-                    }
-                }
-                else
-                {
-                    return true;
-                }
-            }
-        }
+				if (isMassiveCheck)
+				{
+					if (td == L2SkillTargetDirection.FRONT)
+					{
+						if (activeChar.isFacing(target, 180))
+						{
+							return true;
+						}
+						//else
+						//	Broadcast.toGameMasters(target.getName() + " was unreachable");
+					}
+					else if (td == L2SkillTargetDirection.BEHIND)
+					{
+						if (!target.isFacing(activeChar, 140))
+						{
+							return true;
+						}
+					}
+					else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND)
+					{
+						return true;
+					}
+					else if (td == L2SkillTargetDirection.PLAYER)
+					{
+						if (target instanceof L2Playable)
+						{
+							return true;
+						}
+					}
+					else if (td == L2SkillTargetDirection.ALL_SUMMONS)
+					{
+						if (target instanceof L2Summon)
+						{
+							return true;
+						}
+					}
+				}
+				else
+				{
+					return true;
+				}
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_AROUND_TARGET;
-    }
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_AROUND_TARGET;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAroundTarget());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAroundTarget());
+	}
 }

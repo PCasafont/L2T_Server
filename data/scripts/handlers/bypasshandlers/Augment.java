@@ -23,38 +23,38 @@ import l2server.gameserver.network.serverpackets.ExShowVariationMakeWindow;
 
 public class Augment implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"Augment"};
+	private static final String[] COMMANDS = {"Augment"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
 
-        try
-        {
-            switch (Integer.parseInt(command.substring(8, 9).trim()))
-            {
-                case 1:
-                    activeChar.sendPacket(new ExShowVariationMakeWindow());
-                    return true;
-                case 2:
-                    activeChar.sendPacket(new ExShowVariationCancelWindow());
-                    return true;
-            }
-        }
-        catch (Exception e)
-        {
-            _log.info("Exception in " + getClass().getSimpleName());
-        }
-        return false;
-    }
+		try
+		{
+			switch (Integer.parseInt(command.substring(8, 9).trim()))
+			{
+				case 1:
+					activeChar.sendPacket(new ExShowVariationMakeWindow());
+					return true;
+				case 2:
+					activeChar.sendPacket(new ExShowVariationCancelWindow());
+					return true;
+			}
+		}
+		catch (Exception e)
+		{
+			_log.info("Exception in " + getClass().getSimpleName());
+		}
+		return false;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

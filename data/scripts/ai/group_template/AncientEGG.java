@@ -26,24 +26,24 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AncientEGG extends L2AttackableAIScript
 {
-    private static int EGG = 18344;
+	private static int EGG = 18344;
 
-    public AncientEGG(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        addAttackId(EGG);
-    }
+	public AncientEGG(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		addAttackId(EGG);
+	}
 
-    @Override
-    public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
-    {
-        player.setTarget(player);
-        player.doCast(SkillTable.getInstance().getInfo(5088, 1));
-        return super.onAttack(npc, player, damage, isPet, skill);
-    }
+	@Override
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
+	{
+		player.setTarget(player);
+		player.doCast(SkillTable.getInstance().getInfo(5088, 1));
+		return super.onAttack(npc, player, damage, isPet, skill);
+	}
 
-    public static void main(String[] args)
-    {
-        new AncientEGG(-1, "AncientEGG", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new AncientEGG(-1, "AncientEGG", "ai");
+	}
 }

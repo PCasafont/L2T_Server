@@ -31,71 +31,71 @@ import java.util.List;
 
 public class TalkingIslandGuards extends L2AttackableAIScript
 {
-    private static final int generalId = 33007;
-    private static final int guardId = 33018;
-    private static int _action = 0;
-    private List<L2Npc> _generals = new ArrayList<L2Npc>();
-    private List<L2Npc> _guards = new ArrayList<L2Npc>();
+	private static final int generalId = 33007;
+	private static final int guardId = 33018;
+	private static int _action = 0;
+	private List<L2Npc> _generals = new ArrayList<L2Npc>();
+	private List<L2Npc> _guards = new ArrayList<L2Npc>();
 
-    public TalkingIslandGuards(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
+	public TalkingIslandGuards(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
 
-        findNpcs();
-    }
+		findNpcs();
+	}
 
-    public void findNpcs()
-    {
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn != null)
-            {
-                if (spawn.getNpcId() == generalId)
-                {
-                    _generals.add(spawn.getNpc());
-                }
-                else if (spawn.getNpcId() == guardId)
-                {
-                    _guards.add(spawn.getNpc());
-                }
-            }
-        }
+	public void findNpcs()
+	{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn != null)
+			{
+				if (spawn.getNpcId() == generalId)
+				{
+					_generals.add(spawn.getNpc());
+				}
+				else if (spawn.getNpcId() == guardId)
+				{
+					_guards.add(spawn.getNpc());
+				}
+			}
+		}
 
-        if (!_guards.isEmpty() && !_generals.isEmpty())
-        {
-            startQuestTimer("socialgeneral", 5000, null, null);
-        }
-    }
+		if (!_guards.isEmpty() && !_generals.isEmpty())
+		{
+			startQuestTimer("socialgeneral", 5000, null, null);
+		}
+	}
 
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        if (event.startsWith("socialgeneral"))
-        {
-            _action = Rnd.get(12);
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		if (event.startsWith("socialgeneral"))
+		{
+			_action = Rnd.get(12);
 
-            for (L2Npc general : _generals)
-            {
-                general.broadcastPacket(new SocialAction(general.getObjectId(), _action));
-            }
+			for (L2Npc general : _generals)
+			{
+				general.broadcastPacket(new SocialAction(general.getObjectId(), _action));
+			}
 
-            startQuestTimer("socialguards", 2000, null, null);
-        }
-        else if (event.startsWith("socialguards"))
-        {
-            for (L2Npc guard : _guards)
-            {
-                guard.broadcastPacket(new SocialAction(guard.getObjectId(), _action));
-            }
+			startQuestTimer("socialguards", 2000, null, null);
+		}
+		else if (event.startsWith("socialguards"))
+		{
+			for (L2Npc guard : _guards)
+			{
+				guard.broadcastPacket(new SocialAction(guard.getObjectId(), _action));
+			}
 
-            startQuestTimer("socialgeneral", 8000, null, null);
-        }
+			startQuestTimer("socialgeneral", 8000, null, null);
+		}
 
-        return super.onAdvEvent(event, npc, player);
-    }
+		return super.onAdvEvent(event, npc, player);
+	}
 
-    public static void main(String[] args)
-    {
-        new TalkingIslandGuards(-1, "TalkingIslandGuards", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new TalkingIslandGuards(-1, "TalkingIslandGuards", "ai");
+	}
 }

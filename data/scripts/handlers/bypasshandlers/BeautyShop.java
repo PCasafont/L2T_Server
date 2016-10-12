@@ -24,39 +24,39 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 
 public class BeautyShop implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"use_beauty", "restore_beauty"};
+	private static final String[] COMMANDS = {"use_beauty", "restore_beauty"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
 
-        if (command.equalsIgnoreCase("use_beauty"))
-        {
-            activeChar.sendPacket(new ExShowBeautyMenuPacket(false, activeChar));
-            activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(),
-                    activeChar.getInventory().getInventoryItemCount(36308, 0), false));
-        }
-        else if (command.equalsIgnoreCase("restore_beauty"))
-        {
-            //Retail way is missing, just for avoid critical errors/client stuck we will restore the char app to default values..
-            activeChar.getAppearance().setFace(1);
-            activeChar.getAppearance().setHairStyle(1);
-            activeChar.getAppearance().setHairColor(1);
-            activeChar.broadcastUserInfo();
-            activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
-            //activeChar.sendPacket(new ExShowBeautyMenuPacket(true, activeChar));
-        }
+		if (command.equalsIgnoreCase("use_beauty"))
+		{
+			activeChar.sendPacket(new ExShowBeautyMenuPacket(false, activeChar));
+			activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(),
+					activeChar.getInventory().getInventoryItemCount(36308, 0), false));
+		}
+		else if (command.equalsIgnoreCase("restore_beauty"))
+		{
+			//Retail way is missing, just for avoid critical errors/client stuck we will restore the char app to default values..
+			activeChar.getAppearance().setFace(1);
+			activeChar.getAppearance().setHairStyle(1);
+			activeChar.getAppearance().setHairColor(1);
+			activeChar.broadcastUserInfo();
+			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
+			//activeChar.sendPacket(new ExShowBeautyMenuPacket(true, activeChar));
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

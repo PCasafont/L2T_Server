@@ -30,81 +30,81 @@ import java.util.List;
  */
 public class ClanWarsList implements IUserCommandHandler
 {
-    private static final int[] COMMAND_IDS = {88, 89, 90};
+	private static final int[] COMMAND_IDS = {88, 89, 90};
 
-    /**
-     * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
-     */
-    @Override
-    public boolean useUserCommand(int id, L2PcInstance activeChar)
-    {
-        if (id != COMMAND_IDS[0] && id != COMMAND_IDS[1] && id != COMMAND_IDS[2])
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 */
+	@Override
+	public boolean useUserCommand(int id, L2PcInstance activeChar)
+	{
+		if (id != COMMAND_IDS[0] && id != COMMAND_IDS[1] && id != COMMAND_IDS[2])
+		{
+			return false;
+		}
 
-        L2Clan clan = activeChar.getClan();
+		L2Clan clan = activeChar.getClan();
 
-        if (clan == null)
-        {
-            activeChar.sendMessage("You are not in a clan.");
-            return false;
-        }
+		if (clan == null)
+		{
+			activeChar.sendMessage("You are not in a clan.");
+			return false;
+		}
 
-        SystemMessage sm;
+		SystemMessage sm;
 
-        List<L2Clan> _clanList;
+		List<L2Clan> _clanList;
 
-        if (id == 88)
-        {
-            // Attack List
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_YOU_DECLARED_WAR_ON));
-            _clanList = clan.getDeclaredWars();
-        }
-        else if (id == 89)
-        {
-            // Under Attack List
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_THAT_HAVE_DECLARED_WAR_ON_YOU));
-            _clanList = clan.getUnderAttackWars();
-        }
-        else
-        // ID = 90
-        {
-            // War List
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_LIST));
-            _clanList = clan.getWarList();
-        }
+		if (id == 88)
+		{
+			// Attack List
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_YOU_DECLARED_WAR_ON));
+			_clanList = clan.getDeclaredWars();
+		}
+		else if (id == 89)
+		{
+			// Under Attack List
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_THAT_HAVE_DECLARED_WAR_ON_YOU));
+			_clanList = clan.getUnderAttackWars();
+		}
+		else
+		// ID = 90
+		{
+			// War List
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_LIST));
+			_clanList = clan.getWarList();
+		}
 
-        for (L2Clan warClan : _clanList)
-        {
-            if (warClan.getAllyId() > 0)
-            {
-                // Target With Ally
-                sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ALLIANCE);
-                sm.addString(warClan.getName());
-                sm.addString(warClan.getAllyName());
-            }
-            else
-            {
-                // Target Without Ally
-                sm = SystemMessage.getSystemMessage(SystemMessageId.S1_NO_ALLI_EXISTS);
-                sm.addString(warClan.getName());
-            }
+		for (L2Clan warClan : _clanList)
+		{
+			if (warClan.getAllyId() > 0)
+			{
+				// Target With Ally
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ALLIANCE);
+				sm.addString(warClan.getName());
+				sm.addString(warClan.getAllyName());
+			}
+			else
+			{
+				// Target Without Ally
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_NO_ALLI_EXISTS);
+				sm.addString(warClan.getName());
+			}
 
-            activeChar.sendPacket(sm);
-        }
+			activeChar.sendPacket(sm);
+		}
 
-        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
-     */
-    @Override
-    public int[] getUserCommandList()
-    {
-        return COMMAND_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 */
+	@Override
+	public int[] getUserCommandList()
+	{
+		return COMMAND_IDS;
+	}
 }

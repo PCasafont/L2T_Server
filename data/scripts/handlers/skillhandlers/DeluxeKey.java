@@ -29,41 +29,41 @@ import java.util.logging.Logger;
  */
 public class DeluxeKey implements ISkillHandler
 {
-    private static Logger _log = Logger.getLogger(DeluxeKey.class.getName());
+	private static Logger _log = Logger.getLogger(DeluxeKey.class.getName());
 
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.DELUXE_KEY_UNLOCK};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DELUXE_KEY_UNLOCK};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (!(activeChar instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (!(activeChar instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2Object[] targetList = skill.getTargetList(activeChar);
+		L2Object[] targetList = skill.getTargetList(activeChar);
 
-        if (targetList == null)
-        {
-            return;
-        }
+		if (targetList == null)
+		{
+			return;
+		}
 
-        _log.fine("Delux key casting succeded.");
+		_log.fine("Delux key casting succeded.");
 
-        // This is just a dummy skill handler for the golden food and crystal food skills,
-        // since the AI responce onSkillUse handles the rest.
+		// This is just a dummy skill handler for the golden food and crystal food skills,
+		// since the AI responce onSkillUse handles the rest.
 
-    }
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

@@ -37,229 +37,229 @@ import l2server.gameserver.util.Broadcast;
 
 public class SoulShots implements IItemHandler
 {
-    /**
-     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-     */
-    @Override
-    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-    {
-        if (!(playable instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 */
+	@Override
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	{
+		if (!(playable instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance activeChar = (L2PcInstance) playable;
-        L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-        L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-        int itemId = item.getItemId();
+		L2PcInstance activeChar = (L2PcInstance) playable;
+		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+		int itemId = item.getItemId();
 
-        // Check if Soul shot can be used
-        if (weaponInst == null || weaponItem == null || weaponItem.getSoulShotCount() == 0)
-        {
-            if (!activeChar.hasAutoSoulShot(item))
-            {
-                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SOULSHOTS));
-            }
-            return;
-        }
+		// Check if Soul shot can be used
+		if (weaponInst == null || weaponItem == null || weaponItem.getSoulShotCount() == 0)
+		{
+			if (!activeChar.hasAutoSoulShot(item))
+			{
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SOULSHOTS));
+			}
+			return;
+		}
 
-        final int weaponGrade = weaponItem.getCrystalType();
-        boolean gradeCheck = true;
+		final int weaponGrade = weaponItem.getCrystalType();
+		boolean gradeCheck = true;
 
-        switch (weaponGrade)
-        {
-            case L2Item.CRYSTAL_NONE:
-                if (itemId != 5789 && itemId != 1835)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_D:
-                if (itemId != 1463 && itemId != 22082)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_C:
-                if (itemId != 1464 && itemId != 22083)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_B:
-                if (itemId != 1465 && itemId != 22084)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_A:
-                if (itemId != 1466 && itemId != 22085)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_S:
-            case L2Item.CRYSTAL_S80:
-            case L2Item.CRYSTAL_S84:
-                if (itemId != 1467 && itemId != 22086)
-                {
-                    gradeCheck = false;
-                }
-                break;
-            case L2Item.CRYSTAL_R:
-            case L2Item.CRYSTAL_R95:
-            case L2Item.CRYSTAL_R99:
-                if (itemId != 17754 && itemId != 22433)
-                {
-                    gradeCheck = false;
-                }
-                break;
-        }
+		switch (weaponGrade)
+		{
+			case L2Item.CRYSTAL_NONE:
+				if (itemId != 5789 && itemId != 1835)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_D:
+				if (itemId != 1463 && itemId != 22082)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_C:
+				if (itemId != 1464 && itemId != 22083)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_B:
+				if (itemId != 1465 && itemId != 22084)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_A:
+				if (itemId != 1466 && itemId != 22085)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_S:
+			case L2Item.CRYSTAL_S80:
+			case L2Item.CRYSTAL_S84:
+				if (itemId != 1467 && itemId != 22086)
+				{
+					gradeCheck = false;
+				}
+				break;
+			case L2Item.CRYSTAL_R:
+			case L2Item.CRYSTAL_R95:
+			case L2Item.CRYSTAL_R99:
+				if (itemId != 17754 && itemId != 22433)
+				{
+					gradeCheck = false;
+				}
+				break;
+		}
 
-        if (!gradeCheck)
-        {
-            if (!activeChar.hasAutoSoulShot(item))
-            {
-                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
-            }
-            return;
-        }
+		if (!gradeCheck)
+		{
+			if (!activeChar.hasAutoSoulShot(item))
+			{
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
+			}
+			return;
+		}
 
-        int rubyLvl = 0;
-        PcInventory playerInventory = activeChar.getInventory();
-        for (int i = Inventory.PAPERDOLL_JEWELRY1;
-             i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
-             i++)
-        {
-            L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
-            if (jewel != null)
-            {
-                //Ruby
-                switch (jewel.getItemId())
-                {
-                    case 38855:
-                        rubyLvl = 1;
-                        break;
-                    case 38856:
-                        rubyLvl = 2;
-                        break;
-                    case 38857:
-                        rubyLvl = 3;
-                        break;
-                    case 38858:
-                        rubyLvl = 4;
-                        break;
-                    case 38859:
-                        rubyLvl = 5;
-                        break;
-                }
-            }
-        }
+		int rubyLvl = 0;
+		PcInventory playerInventory = activeChar.getInventory();
+		for (int i = Inventory.PAPERDOLL_JEWELRY1;
+			 i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
+			 i++)
+		{
+			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
+			if (jewel != null)
+			{
+				//Ruby
+				switch (jewel.getItemId())
+				{
+					case 38855:
+						rubyLvl = 1;
+						break;
+					case 38856:
+						rubyLvl = 2;
+						break;
+					case 38857:
+						rubyLvl = 3;
+						break;
+					case 38858:
+						rubyLvl = 4;
+						break;
+					case 38859:
+						rubyLvl = 5;
+						break;
+				}
+			}
+		}
 
-        int skillId = 0;
-        int skillLvl = 1;
-        double rubyMul = 1.0;
-        switch (rubyLvl)
-        {
-            case 0:
-                switch (itemId)
-                {
-                    case 1835:
-                    case 5789:
-                        skillId = 2039;
-                        break;
-                    case 1463:
-                        skillId = 2150;
-                        break;
-                    case 1464:
-                        skillId = 2151;
-                        break;
-                    case 1465:
-                        skillId = 2152;
-                        break;
-                    case 1466:
-                        skillId = 2153;
-                        break;
-                    case 1467:
-                        skillId = 2154;
-                        break;
-                    case 22082:
-                        skillId = 26060;
-                        break;
-                    case 22083:
-                        skillId = 26061;
-                        break;
-                    case 22084:
-                        skillId = 26062;
-                        break;
-                    case 22085:
-                        skillId = 26063;
-                        break;
-                    case 22086:
-                        skillId = 26064;
-                        break;
-                    case 17754:
-                    case 22433:
-                        skillId = 9193;
-                        break;
-                }
-                break;
-            case 1:
-                skillId = 17814;
-                rubyMul = 1.01;
-                break;
-            case 2:
-                skillId = 17814;
-                skillLvl = 2;
-                rubyMul = 1.035;
-                break;
-            case 3:
-                skillId = 17815;
-                rubyMul = 1.075;
-                break;
-            case 4:
-                skillId = 17816;
-                rubyMul = 1.125;
-                break;
-            case 5:
-                skillId = 17817;
-                rubyMul = 1.2;
-                break;
-        }
+		int skillId = 0;
+		int skillLvl = 1;
+		double rubyMul = 1.0;
+		switch (rubyLvl)
+		{
+			case 0:
+				switch (itemId)
+				{
+					case 1835:
+					case 5789:
+						skillId = 2039;
+						break;
+					case 1463:
+						skillId = 2150;
+						break;
+					case 1464:
+						skillId = 2151;
+						break;
+					case 1465:
+						skillId = 2152;
+						break;
+					case 1466:
+						skillId = 2153;
+						break;
+					case 1467:
+						skillId = 2154;
+						break;
+					case 22082:
+						skillId = 26060;
+						break;
+					case 22083:
+						skillId = 26061;
+						break;
+					case 22084:
+						skillId = 26062;
+						break;
+					case 22085:
+						skillId = 26063;
+						break;
+					case 22086:
+						skillId = 26064;
+						break;
+					case 17754:
+					case 22433:
+						skillId = 9193;
+						break;
+				}
+				break;
+			case 1:
+				skillId = 17814;
+				rubyMul = 1.01;
+				break;
+			case 2:
+				skillId = 17814;
+				skillLvl = 2;
+				rubyMul = 1.035;
+				break;
+			case 3:
+				skillId = 17815;
+				rubyMul = 1.075;
+				break;
+			case 4:
+				skillId = 17816;
+				rubyMul = 1.125;
+				break;
+			case 5:
+				skillId = 17817;
+				rubyMul = 1.2;
+				break;
+		}
 
-        activeChar.consumableLock.lock();
-        try
-        {
-            // Check if Soul shot is already active
-            if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
-            {
-                return;
-            }
+		activeChar.consumableLock.lock();
+		try
+		{
+			// Check if Soul shot is already active
+			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
+			{
+				return;
+			}
 
-            // Consume Soul shots if player has enough of them
-            int saSSCount = (int) activeChar.getStat().calcStat(Stats.SOULSHOT_COUNT, 0, null, null);
-            int SSCount = saSSCount == 0 ? weaponItem.getSoulShotCount() : saSSCount;
+			// Consume Soul shots if player has enough of them
+			int saSSCount = (int) activeChar.getStat().calcStat(Stats.SOULSHOT_COUNT, 0, null, null);
+			int SSCount = saSSCount == 0 ? weaponItem.getSoulShotCount() : saSSCount;
 
-            if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false))
-            {
-                if (!activeChar.disableAutoShot(item))
-                {
-                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS));
-                }
-                return;
-            }
+			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false))
+			{
+				if (!activeChar.disableAutoShot(item))
+				{
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS));
+				}
+				return;
+			}
 
-            // Charge soul shot
-            weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
-        }
-        finally
-        {
-            activeChar.consumableLock.unlock();
-        }
+			// Charge soul shot
+			weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
+		}
+		finally
+		{
+			activeChar.consumableLock.unlock();
+		}
 
-        // Send message to client
-        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SOULSHOT));
-        Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
-                new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
-    }
+		// Send message to client
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SOULSHOT));
+		Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
+				new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
+	}
 }

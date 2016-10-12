@@ -30,32 +30,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Legah extends L2AttackableAIScript
 {
-    private static final int _legah = 19475;
-    private static final int _legahMinion = 23332; //One-armed Zombie
+	private static final int _legah = 19475;
+	private static final int _legahMinion = 23332; //One-armed Zombie
 
-    public Legah(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public Legah(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addKillId(_legah);
-    }
+		addKillId(_legah);
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-    {
-        addSpawn(_legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+	{
+		addSpawn(_legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 
-        return super.onKill(npc, killer, isPet);
-    }
+		return super.onKill(npc, killer, isPet);
+	}
 
-    @Override
-    public int getOnKillDelay(int npcId)
-    {
-        return 0;
-    }
+	@Override
+	public int getOnKillDelay(int npcId)
+	{
+		return 0;
+	}
 
-    public static void main(String[] args)
-    {
-        new Legah(-1, "Legah", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new Legah(-1, "Legah", "ai");
+	}
 }

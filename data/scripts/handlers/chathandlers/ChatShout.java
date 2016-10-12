@@ -36,23 +36,22 @@ import java.util.Collection;
  */
 public class ChatShout implements IChatHandler
 {
-    private static final int[] COMMAND_IDS = {1};
+	private static final int[] COMMAND_IDS = {1};
 
-    /**
-     * Handle chat type 'shout'
-     *
-     */
-    @Override
-    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-    {
-        if (Config.isServer(Config.TENKAI) && activeChar.isGM())
-        {
-            Announcements.getInstance().handleAnnounce(activeChar.getName() + ": " + text, 0);
-            return;
-        }
+	/**
+	 * Handle chat type 'shout'
+	 */
+	@Override
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+	{
+		if (Config.isServer(Config.TENKAI) && activeChar.isGM())
+		{
+			Announcements.getInstance().handleAnnounce(activeChar.getName() + ": " + text, 0);
+			return;
+		}
 
 		/*if (activeChar.getLevel() < 95)
-        {
+		{
 			activeChar.sendMessage("You're not allowed to use this chat until level 95.");
 			return;
 		}*/
@@ -62,29 +61,29 @@ public class ChatShout implements IChatHandler
 			type = Say2.PARTYROOM_ALL;
 		}
 		else*/
-        if (DiscussionManager.getInstance().isGlobalChatDisabled())
-        {
-            activeChar.sendMessage("Global chat is disabled right now.");
-            return;
-        }
-        else if (!activeChar.getFloodProtectors().getShoutChat().tryPerformAction("shout chat"))
-        {
-            activeChar.sendMessage("Do not spam shout channel.");
-            return;
-        }
+		if (DiscussionManager.getInstance().isGlobalChatDisabled())
+		{
+			activeChar.sendMessage("Global chat is disabled right now.");
+			return;
+		}
+		else if (!activeChar.getFloodProtectors().getShoutChat().tryPerformAction("shout chat"))
+		{
+			activeChar.sendMessage("Do not spam shout channel.");
+			return;
+		}
 
-        CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-        CreatureSay csReg = new CreatureSay(activeChar, type, activeChar.getName(),
-                "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text);
+		CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+		CreatureSay csReg = new CreatureSay(activeChar, type, activeChar.getName(),
+				"[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text);
 
-        Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 
-        if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") ||
-                Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.isGM())
-        {
-            int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
-            for (L2PcInstance player : pls)
-            {
+		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") ||
+				Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.isGM())
+		{
+			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
+			for (L2PcInstance player : pls)
+			{
 				/*
 				if (!player.isGM())
 				{
@@ -92,57 +91,57 @@ public class ChatShout implements IChatHandler
 						continue;
 				}*/
 
-                if (activeChar.isGM() ||
-                        region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) &&
-                                !BlockList.isBlocked(player, activeChar) && activeChar.getEvent() == null &&
-                                player.getInstanceId() == activeChar.getInstanceId())
-                {
-                    player.sendPacket(cs);
-                }
-                else if (player.isGM())
-                {
-                    player.sendPacket(csReg);
-                }
-            }
-        }
-        else if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
-        {
-            for (L2PcInstance player : pls)
-            {
-                if (!BlockList.isBlocked(player, activeChar))
-                {
-                    player.sendPacket(cs);
-                }
-            }
-        }
+				if (activeChar.isGM() ||
+						region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) &&
+								!BlockList.isBlocked(player, activeChar) && activeChar.getEvent() == null &&
+								player.getInstanceId() == activeChar.getInstanceId())
+				{
+					player.sendPacket(cs);
+				}
+				else if (player.isGM())
+				{
+					player.sendPacket(csReg);
+				}
+			}
+		}
+		else if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+		{
+			for (L2PcInstance player : pls)
+			{
+				if (!BlockList.isBlocked(player, activeChar))
+				{
+					player.sendPacket(cs);
+				}
+			}
+		}
 
-        while (text.contains("Type=") && text.contains("Title="))
-        {
-            int index1 = text.indexOf("Type=");
-            int index2 = text.indexOf("Title=") + 6;
-            text = text.substring(0, index1) + text.substring(index2);
-        }
+		while (text.contains("Type=") && text.contains("Title="))
+		{
+			int index1 = text.indexOf("Type=");
+			int index2 = text.indexOf("Title=") + 6;
+			text = text.substring(0, index1) + text.substring(index2);
+		}
 
-        String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
-        if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
-        {
-            text = "[" + nearTown + "]" + text;
-        }
+		String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
+		if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+		{
+			text = "[" + nearTown + "]" + text;
+		}
 
-        if (!activeChar.isGM())
-        {
-            ConsoleTab.appendMessage(ConsoleFilter.ShoutChat, activeChar.getName() + ": " + text, nearTown);
-        }
-    }
+		if (!activeChar.isGM())
+		{
+			ConsoleTab.appendMessage(ConsoleFilter.ShoutChat, activeChar.getName() + ": " + text, nearTown);
+		}
+	}
 
-    /**
-     * Returns the chat types registered to this handler
-     *
-     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-     */
-    @Override
-    public int[] getChatTypeList()
-    {
-        return COMMAND_IDS;
-    }
+	/**
+	 * Returns the chat types registered to this handler
+	 *
+	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+	 */
+	@Override
+	public int[] getChatTypeList()
+	{
+		return COMMAND_IDS;
+	}
 }

@@ -36,36 +36,36 @@ import java.util.List;
 public class TargetFriendNotMe implements ISkillTargetTypeHandler
 {
 
-    /**
-     *
-     */
-    public TargetFriendNotMe()
-    {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 *
+	 */
+	public TargetFriendNotMe()
+	{
+		// TODO Auto-generated constructor stub
+	}
 
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        List<L2Character> targetList = new ArrayList<L2Character>();
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		List<L2Character> targetList = new ArrayList<L2Character>();
 
-        int radius = skill.getSkillRadius();
+		int radius = skill.getSkillRadius();
 
-        if (onlyFirst)
-        {
-            return new L2Character[]{activeChar};
-        }
+		if (onlyFirst)
+		{
+			return new L2Character[]{activeChar};
+		}
 
-        L2PcInstance player = null;
+		L2PcInstance player = null;
 
-        if (activeChar instanceof L2Summon)
-        {
-            player = ((L2Summon) activeChar).getOwner();
-            targetList.add(player);
-        }
-        /* FIXME
+		if (activeChar instanceof L2Summon)
+		{
+			player = ((L2Summon) activeChar).getOwner();
+			targetList.add(player);
+		}
+		/* FIXME
         else if (activeChar instanceof L2PcInstance)
 		{
 			player = (L2PcInstance) activeChar;
@@ -73,62 +73,62 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
 				targetList.add(activeChar.getPet());
 		}*/
 
-        L2Party playerPt = player.getParty();
-        L2CommandChannel cmdChannel = playerPt == null ? null : playerPt.getCommandChannel();
+		L2Party playerPt = player.getParty();
+		L2CommandChannel cmdChannel = playerPt == null ? null : playerPt.getCommandChannel();
 
-        for (L2PcInstance tempChar : player.getKnownList().getKnownPlayersInRadius(radius))
-        {
-            if (tempChar == player || tempChar.isDead())
-            {
-                continue;
-            }
+		for (L2PcInstance tempChar : player.getKnownList().getKnownPlayersInRadius(radius))
+		{
+			if (tempChar == player || tempChar.isDead())
+			{
+				continue;
+			}
 
-            if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
-                    playerPt != null && (playerPt.isInParty(tempChar) ||
-                            cmdChannel != null && tempChar.getParty() != null &&
-                                    cmdChannel.isInChannel(tempChar.getParty())) ||
-                    tempChar.getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
-            {
+			if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
+					playerPt != null && (playerPt.isInParty(tempChar) ||
+							cmdChannel != null && tempChar.getParty() != null &&
+									cmdChannel.isInChannel(tempChar.getParty())) ||
+					tempChar.getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
+			{
 
-                if (tempChar.getPet() != null)
-                {
-                    if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))
-                    {
-                        if (!tempChar.getPet().isDead() && player.checkPvpSkill(tempChar, skill) && !onlyFirst)
-                        {
-                            targetList.add(tempChar.getPet());
-                        }
-                    }
-                }
+				if (tempChar.getPet() != null)
+				{
+					if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))
+					{
+						if (!tempChar.getPet().isDead() && player.checkPvpSkill(tempChar, skill) && !onlyFirst)
+						{
+							targetList.add(tempChar.getPet());
+						}
+					}
+				}
 
-                if (!player.checkPvpSkill(tempChar, skill))
-                {
-                    continue;
-                }
+				if (!player.checkPvpSkill(tempChar, skill))
+				{
+					continue;
+				}
 
-                if (!onlyFirst)
-                {
-                    targetList.add(tempChar);
-                }
-                else
-                {
-                    return new L2Character[]{tempChar};
-                }
-            }
-        }
-        return targetList.toArray(new L2Character[targetList.size()]);
-    }
+				if (!onlyFirst)
+				{
+					targetList.add(tempChar);
+				}
+				else
+				{
+					return new L2Character[]{tempChar};
+				}
+			}
+		}
+		return targetList.toArray(new L2Character[targetList.size()]);
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_FRIEND_NOTME;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_FRIEND_NOTME;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetFriendNotMe());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetFriendNotMe());
+	}
 }

@@ -26,35 +26,35 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 
 public class SpiculaCaptain extends L2AttackableAIScript
 {
-    private static final int _captain = 23275;
+	private static final int _captain = 23275;
 
-    public SpiculaCaptain(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public SpiculaCaptain(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn == null)
-            {
-                continue;
-            }
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn == null)
+			{
+				continue;
+			}
 
-            if (spawn.getNpcId() == _captain)
-            {
-                spawn.getNpc().setShowSummonAnimation(true);
+			if (spawn.getNpcId() == _captain)
+			{
+				spawn.getNpc().setShowSummonAnimation(true);
 
-                for (L2MonsterInstance a : ((L2MonsterInstance) spawn.getNpc()).getMinionList().getSpawnedMinions())
-                {
-                    a.setShowSummonAnimation(true);
-                }
+				for (L2MonsterInstance a : ((L2MonsterInstance) spawn.getNpc()).getMinionList().getSpawnedMinions())
+				{
+					a.setShowSummonAnimation(true);
+				}
 
-                break;
-            }
-        }
-    }
+				break;
+			}
+		}
+	}
 
-    public static void main(String[] args)
-    {
-        new SpiculaCaptain(-1, "SpiculaCaptain", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new SpiculaCaptain(-1, "SpiculaCaptain", "ai");
+	}
 }

@@ -28,41 +28,39 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  */
 public class ChatPartyMatchRoom implements IChatHandler
 {
-    private static final int[] COMMAND_IDS = {14};
+	private static final int[] COMMAND_IDS = {14};
 
-    /**
-     * Handle chat type 'partymatchroom'
-     *
-     */
-    @Override
-    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-    {
-        if (activeChar.isInPartyMatchRoom())
-        {
-            PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
-            if (_room != null)
-            {
-                CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-                for (L2PcInstance _member : _room.getPartyMembers())
-                {
-                    _member.sendPacket(cs);
-                }
-            }
-        }
-    }
+	/**
+	 * Handle chat type 'partymatchroom'
+	 */
+	@Override
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+	{
+		if (activeChar.isInPartyMatchRoom())
+		{
+			PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
+			if (_room != null)
+			{
+				CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+				for (L2PcInstance _member : _room.getPartyMembers())
+				{
+					_member.sendPacket(cs);
+				}
+			}
+		}
+	}
 
-    /**
-     * Returns the chat types registered to this handler
-     *
-     */
-    @Override
-    public int[] getChatTypeList()
-    {
-        return COMMAND_IDS;
-    }
+	/**
+	 * Returns the chat types registered to this handler
+	 */
+	@Override
+	public int[] getChatTypeList()
+	{
+		return COMMAND_IDS;
+	}
 
-    public static void main(String[] args)
-    {
-        new ChatPartyMatchRoom();
-    }
+	public static void main(String[] args)
+	{
+		new ChatPartyMatchRoom();
+	}
 }

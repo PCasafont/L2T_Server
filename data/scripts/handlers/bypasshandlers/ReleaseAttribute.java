@@ -22,23 +22,23 @@ import l2server.gameserver.network.serverpackets.ExShowBaseAttributeCancelWindow
 
 public class ReleaseAttribute implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"ReleaseAttribute"};
+	private static final String[] COMMANDS = {"ReleaseAttribute"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
 
-        activeChar.sendPacket(new ExShowBaseAttributeCancelWindow(activeChar));
-        return true;
-    }
+		activeChar.sendPacket(new ExShowBaseAttributeCancelWindow(activeChar));
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

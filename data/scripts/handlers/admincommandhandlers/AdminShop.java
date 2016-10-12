@@ -35,65 +35,65 @@ import java.util.logging.Logger;
  */
 public class AdminShop implements IAdminCommandHandler
 {
-    private static Logger _log = Logger.getLogger(AdminShop.class.getName());
+	private static Logger _log = Logger.getLogger(AdminShop.class.getName());
 
-    private static final String[] ADMIN_COMMANDS = {"admin_buy", "admin_gmshop"};
+	private static final String[] ADMIN_COMMANDS = {"admin_buy", "admin_gmshop"};
 
-    @Override
-    public boolean useAdminCommand(String command, L2PcInstance activeChar)
-    {
-        if (command.startsWith("admin_buy"))
-        {
-            try
-            {
-                handleBuyRequest(activeChar, command.substring(10));
-            }
-            catch (IndexOutOfBoundsException e)
-            {
-                activeChar.sendMessage("Please specify buylist.");
-            }
-        }
-        else if (command.equals("admin_gmshop"))
-        {
-            AdminHelpPage.showHelpPage(activeChar, "gmshops.htm");
-        }
-        return true;
-    }
+	@Override
+	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	{
+		if (command.startsWith("admin_buy"))
+		{
+			try
+			{
+				handleBuyRequest(activeChar, command.substring(10));
+			}
+			catch (IndexOutOfBoundsException e)
+			{
+				activeChar.sendMessage("Please specify buylist.");
+			}
+		}
+		else if (command.equals("admin_gmshop"))
+		{
+			AdminHelpPage.showHelpPage(activeChar, "gmshops.htm");
+		}
+		return true;
+	}
 
-    @Override
-    public String[] getAdminCommandList()
-    {
-        return ADMIN_COMMANDS;
-    }
+	@Override
+	public String[] getAdminCommandList()
+	{
+		return ADMIN_COMMANDS;
+	}
 
-    private void handleBuyRequest(L2PcInstance activeChar, String command)
-    {
-        int val = -1;
-        try
-        {
-            val = Integer.parseInt(command);
-        }
-        catch (Exception e)
-        {
-            _log.warning("admin buylist failed:" + command);
-        }
+	private void handleBuyRequest(L2PcInstance activeChar, String command)
+	{
+		int val = -1;
+		try
+		{
+			val = Integer.parseInt(command);
+		}
+		catch (Exception e)
+		{
+			_log.warning("admin buylist failed:" + command);
+		}
 
-        L2TradeList list = TradeController.getInstance().getBuyList(val);
+		L2TradeList list = TradeController.getInstance().getBuyList(val);
 
-        if (list != null)
-        {
-            activeChar.sendPacket(new ExBuyList(list, activeChar.getAdena(), 0));
-            activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
-            if (Config.DEBUG)
-            {
-                _log.fine(
-                        "GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
-            }
-        }
-        else
-        {
-            _log.warning("no buylist with id:" + val);
-        }
-        activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-    }
+		if (list != null)
+		{
+			activeChar.sendPacket(new ExBuyList(list, activeChar.getAdena(), 0));
+			activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
+			if (Config.DEBUG)
+			{
+				_log.fine(
+						"GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
+			}
+		}
+		else
+		{
+			_log.warning("no buylist with id:" + val);
+		}
+		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+	}
 }

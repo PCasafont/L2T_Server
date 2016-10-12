@@ -6,49 +6,49 @@ import l2server.gameserver.model.L2Transformation;
 
 public class SujinChild extends L2Transformation
 {
-    private static final int[] SKILLS = new int[]{619};
+	private static final int[] SKILLS = new int[]{619};
 
-    public SujinChild()
-    {
-        // id, colRadius, colHeight
-        super(20003, 10, 11.00);
-    }
+	public SujinChild()
+	{
+		// id, colRadius, colHeight
+		super(20003, 10, 11.00);
+	}
 
-    @Override
-    public void onTransform()
-    {
-        if (getPlayer().getTransformationId() != 20003 || getPlayer().isCursedWeaponEquipped())
-        {
-            return;
-        }
+	@Override
+	public void onTransform()
+	{
+		if (getPlayer().getTransformationId() != 20003 || getPlayer().isCursedWeaponEquipped())
+		{
+			return;
+		}
 
-        transformedSkills();
-    }
+		transformedSkills();
+	}
 
-    public void transformedSkills()
-    {
-        // Transform Dispel
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void transformedSkills()
+	{
+		// Transform Dispel
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(SKILLS);
-    }
+		getPlayer().setTransformAllowedSkills(SKILLS);
+	}
 
-    @Override
-    public void onUntransform()
-    {
-        removeSkills();
-    }
+	@Override
+	public void onUntransform()
+	{
+		removeSkills();
+	}
 
-    public void removeSkills()
-    {
-        // Transform Dispel
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void removeSkills()
+	{
+		// Transform Dispel
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
-    }
+		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
+	}
 
-    public static void main(String[] args)
-    {
-        TransformationManager.getInstance().registerTransformation(new SujinChild());
-    }
+	public static void main(String[] args)
+	{
+		TransformationManager.getInstance().registerTransformation(new SujinChild());
+	}
 }

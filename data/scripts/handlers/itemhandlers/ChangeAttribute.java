@@ -28,28 +28,28 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ChangeAttribute implements IItemHandler
 {
-    @Override
-    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-    {
-        if (!(playable instanceof L2PcInstance))
-        {
-            return;
-        }
+	@Override
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	{
+		if (!(playable instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        final L2PcInstance activeChar = (L2PcInstance) playable;
-        if (activeChar.isCastingNow())
-        {
-            return;
-        }
+		final L2PcInstance activeChar = (L2PcInstance) playable;
+		if (activeChar.isCastingNow())
+		{
+			return;
+		}
 
-        if (activeChar.isEnchanting())
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHANGING_ATTRIBUTES_IS_IN_PROGRESS));
-            return;
-        }
+		if (activeChar.isEnchanting())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHANGING_ATTRIBUTES_IS_IN_PROGRESS));
+			return;
+		}
 
-        activeChar.setActiveEnchantAttrItem(item);
-        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHANGING_ATTRIBUTES_IS_IN_PROGRESS));
-        activeChar.sendPacket(new ExChangeAttributeItemList(activeChar, item.getObjectId()));
-    }
+		activeChar.setActiveEnchantAttrItem(item);
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHANGING_ATTRIBUTES_IS_IN_PROGRESS));
+		activeChar.sendPacket(new ExChangeAttributeItemList(activeChar, item.getObjectId()));
+	}
 }

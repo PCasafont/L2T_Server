@@ -33,42 +33,42 @@ import java.util.logging.Logger;
 
 public class Charge implements ISkillHandler
 {
-    static Logger _log = Logger.getLogger(Charge.class.getName());
+	static Logger _log = Logger.getLogger(Charge.class.getName());
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.L2PcInstance, l2server.gameserver.model.L2ItemInstance)
-     */
-    private static final L2SkillType[] SKILL_IDS = {/*L2SkillType.CHARGE*/};
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.L2PcInstance, l2server.gameserver.model.L2ItemInstance)
+	 */
+	private static final L2SkillType[] SKILL_IDS = {/*L2SkillType.CHARGE*/};
 
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
 
-        for (L2Object target : targets)
-        {
-            if (!(target instanceof L2PcInstance))
-            {
-                continue;
-            }
-            skill.getEffects(activeChar, (L2PcInstance) target);
-        }
+		for (L2Object target : targets)
+		{
+			if (!(target instanceof L2PcInstance))
+			{
+				continue;
+			}
+			skill.getEffects(activeChar, (L2PcInstance) target);
+		}
 
-        // self Effect :]
-        if (skill.hasSelfEffects())
-        {
-            final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-            if (effect != null && effect.isSelfEffect())
-            {
-                //Replace old effect with new one.
-                effect.exit();
-            }
-            skill.getEffectsSelf(activeChar);
-        }
-    }
+		// self Effect :]
+		if (skill.hasSelfEffects())
+		{
+			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			if (effect != null && effect.isSelfEffect())
+			{
+				//Replace old effect with new one.
+				effect.exit();
+			}
+			skill.getEffectsSelf(activeChar);
+		}
+	}
 
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

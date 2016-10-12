@@ -29,38 +29,38 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class BrokenBodiedGolem extends L2AttackableAIScript
 {
-    private static final int _brokenGolem = 23259;
-    private static final int _summonedGolem = 23260;
+	private static final int _brokenGolem = 23259;
+	private static final int _summonedGolem = 23260;
 
-    public BrokenBodiedGolem(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public BrokenBodiedGolem(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addKillId(_brokenGolem);
-    }
+		addKillId(_brokenGolem);
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-    {
-        for (int a = 0; a < 2; a++)
-        {
-            L2Npc minion = addSpawn(_summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
-            minion.setIsRunning(true);
-            minion.setTarget(killer);
-            ((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);
-            minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
-        }
-        return super.onKill(npc, killer, isPet);
-    }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+	{
+		for (int a = 0; a < 2; a++)
+		{
+			L2Npc minion = addSpawn(_summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+			minion.setIsRunning(true);
+			minion.setTarget(killer);
+			((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);
+			minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
+		}
+		return super.onKill(npc, killer, isPet);
+	}
 
-    @Override
-    public int getOnKillDelay(int npcId)
-    {
-        return 0;
-    }
+	@Override
+	public int getOnKillDelay(int npcId)
+	{
+		return 0;
+	}
 
-    public static void main(String[] args)
-    {
-        new BrokenBodiedGolem(-1, "BrokenBodiedGolem", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new BrokenBodiedGolem(-1, "BrokenBodiedGolem", "ai");
+	}
 }

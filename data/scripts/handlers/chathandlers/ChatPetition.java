@@ -28,32 +28,31 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ChatPetition implements IChatHandler
 {
-    private static final int[] COMMAND_IDS = {6, 7};
+	private static final int[] COMMAND_IDS = {6, 7};
 
-    /**
-     * Handle chat type 'petition player'
-     *
-     */
-    @Override
-    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-    {
-        if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_IN_PETITION_CHAT));
-            return;
-        }
+	/**
+	 * Handle chat type 'petition player'
+	 */
+	@Override
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+	{
+		if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_IN_PETITION_CHAT));
+			return;
+		}
 
-        PetitionManager.getInstance().sendActivePetitionMessage(activeChar, text);
-    }
+		PetitionManager.getInstance().sendActivePetitionMessage(activeChar, text);
+	}
 
-    /**
-     * Returns the chat types registered to this handler
-     *
-     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-     */
-    @Override
-    public int[] getChatTypeList()
-    {
-        return COMMAND_IDS;
-    }
+	/**
+	 * Returns the chat types registered to this handler
+	 *
+	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+	 */
+	@Override
+	public int[] getChatTypeList()
+	{
+		return COMMAND_IDS;
+	}
 }

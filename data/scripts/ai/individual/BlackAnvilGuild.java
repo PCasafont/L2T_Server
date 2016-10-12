@@ -27,41 +27,41 @@ import l2server.gameserver.util.Util;
 
 public class BlackAnvilGuild extends L2AttackableAIScript
 {
-    private static final int[] _guildGolems = {19309, 19311, 19313};
+	private static final int[] _guildGolems = {19309, 19311, 19313};
 
-    public BlackAnvilGuild(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public BlackAnvilGuild(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        for (int a : _guildGolems)
-        {
-            addSpawnId(a);
-        }
+		for (int a : _guildGolems)
+		{
+			addSpawnId(a);
+		}
 
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn == null)
-            {
-                continue;
-            }
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn == null)
+			{
+				continue;
+			}
 
-            if (Util.contains(_guildGolems, spawn.getNpcId()))
-            {
-                notifySpawn(spawn.getNpc());
-            }
-        }
-    }
+			if (Util.contains(_guildGolems, spawn.getNpcId()))
+			{
+				notifySpawn(spawn.getNpc());
+			}
+		}
+	}
 
-    @Override
-    public final String onSpawn(L2Npc npc)
-    {
-        npc.setIsInvul(true);
+	@Override
+	public final String onSpawn(L2Npc npc)
+	{
+		npc.setIsInvul(true);
 
-        return super.onSpawn(npc);
-    }
+		return super.onSpawn(npc);
+	}
 
-    public static void main(String[] args)
-    {
-        new BlackAnvilGuild(-1, "BlackAnvilGuild", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new BlackAnvilGuild(-1, "BlackAnvilGuild", "ai");
+	}
 }

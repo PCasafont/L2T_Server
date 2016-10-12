@@ -27,12 +27,12 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class TargetPartyMember implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        /*
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		/*
         if ((target != null && target == activeChar)
 			|| (target != null && activeChar.getParty() != null && target.getParty() != null
 					&& activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
@@ -54,20 +54,20 @@ public class TargetPartyMember implements ISkillTargetTypeHandler
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}*/
-        return null;
-        // FIXME
-    }
+		return null;
+		// FIXME
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_PARTY_MEMBER;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_PARTY_MEMBER;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyMember());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyMember());
+	}
 }

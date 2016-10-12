@@ -24,39 +24,39 @@ import java.util.StringTokenizer;
 
 public class Buy implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"Buy"};
+	private static final String[] COMMANDS = {"Buy"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (!(target instanceof L2MerchantInstance))
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (!(target instanceof L2MerchantInstance))
+		{
+			return false;
+		}
 
-        try
-        {
-            StringTokenizer st = new StringTokenizer(command, " ");
-            st.nextToken();
+		try
+		{
+			StringTokenizer st = new StringTokenizer(command, " ");
+			st.nextToken();
 
-            if (st.countTokens() < 1)
-            {
-                return false;
-            }
+			if (st.countTokens() < 1)
+			{
+				return false;
+			}
 
-            ((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
-            return true;
-        }
-        catch (Exception e)
-        {
-            _log.info("Exception in " + getClass().getSimpleName());
-        }
-        return false;
-    }
+			((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
+			return true;
+		}
+		catch (Exception e)
+		{
+			_log.info("Exception in " + getClass().getSimpleName());
+		}
+		return false;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

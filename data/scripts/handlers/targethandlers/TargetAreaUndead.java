@@ -35,102 +35,102 @@ import java.util.List;
  */
 public class TargetAreaUndead implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        List<L2Character> targetList = new ArrayList<L2Character>();
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		List<L2Character> targetList = new ArrayList<L2Character>();
 
-        L2Character cha;
+		L2Character cha;
 
-        int radius = skill.getSkillRadius();
+		int radius = skill.getSkillRadius();
 
-        if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) &&
-                target.isUndead() && !target.isAlikeDead())
-        {
-            cha = target;
+		if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) &&
+				target.isUndead() && !target.isAlikeDead())
+		{
+			cha = target;
 
-            if (onlyFirst == false)
-            {
-                targetList.add(cha); // Add target to target list
-            }
-            else
-            {
-                return new L2Character[]{cha};
-            }
-        }
-        else
-        {
-            cha = activeChar;
-        }
+			if (onlyFirst == false)
+			{
+				targetList.add(cha); // Add target to target list
+			}
+			else
+			{
+				return new L2Character[]{cha};
+			}
+		}
+		else
+		{
+			cha = activeChar;
+		}
 
-        Collection<L2Object> objs = cha.getKnownList().getKnownObjects().values();
-        //synchronized (cha.getKnownList().getKnownObjects())
-        {
-            for (L2Object obj : objs)
-            {
-                if (obj instanceof L2Npc)
-                {
-                    target = (L2Npc) obj;
-                }
-                else if (obj instanceof L2SummonInstance)
-                {
-                    target = (L2SummonInstance) obj;
-                }
-                else
-                {
-                    continue;
-                }
+		Collection<L2Object> objs = cha.getKnownList().getKnownObjects().values();
+		//synchronized (cha.getKnownList().getKnownObjects())
+		{
+			for (L2Object obj : objs)
+			{
+				if (obj instanceof L2Npc)
+				{
+					target = (L2Npc) obj;
+				}
+				else if (obj instanceof L2SummonInstance)
+				{
+					target = (L2SummonInstance) obj;
+				}
+				else
+				{
+					continue;
+				}
 
-                if (!GeoEngine.getInstance().canSeeTarget(activeChar, target))
-                {
-                    continue;
-                }
+				if (!GeoEngine.getInstance().canSeeTarget(activeChar, target))
+				{
+					continue;
+				}
 
-                if (!target.isAlikeDead()) // If target is not dead/fake death and not self
-                {
-                    if (!target.isUndead())
-                    {
-                        continue;
-                    }
+				if (!target.isAlikeDead()) // If target is not dead/fake death and not self
+				{
+					if (!target.isUndead())
+					{
+						continue;
+					}
 
-                    if (!Util.checkIfInRange(radius, cha, obj, true))
-                    {
-                        continue;
-                    }
+					if (!Util.checkIfInRange(radius, cha, obj, true))
+					{
+						continue;
+					}
 
-                    if (onlyFirst == false)
-                    {
-                        targetList.add((L2Character) obj);
-                    }
-                    else
-                    {
-                        return new L2Character[]{(L2Character) obj};
-                    }
-                }
-            }
-        }
+					if (onlyFirst == false)
+					{
+						targetList.add((L2Character) obj);
+					}
+					else
+					{
+						return new L2Character[]{(L2Character) obj};
+					}
+				}
+			}
+		}
 
-        if (targetList.size() == 0)
-        {
-            return null;
-        }
+		if (targetList.size() == 0)
+		{
+			return null;
+		}
 
-        return targetList.toArray(new L2Character[targetList.size()]);
-    }
+		return targetList.toArray(new L2Character[targetList.size()]);
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        // TODO Auto-generated method stub
-        return L2SkillTargetType.TARGET_AREA_UNDEAD;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		// TODO Auto-generated method stub
+		return L2SkillTargetType.TARGET_AREA_UNDEAD;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaUndead());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaUndead());
+	}
 }

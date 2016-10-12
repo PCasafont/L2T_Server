@@ -34,53 +34,53 @@ import java.util.ArrayList;
  */
 public class TrapTarget implements ISkillTargetTypeHandler
 {
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        L2TrapInstance aTrap = activeChar instanceof L2TrapInstance ? (L2TrapInstance) activeChar : null;
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		L2TrapInstance aTrap = activeChar instanceof L2TrapInstance ? (L2TrapInstance) activeChar : null;
 
-        if (aTrap == null)
-        {
-            return null;
-        }
+		if (aTrap == null)
+		{
+			return null;
+		}
 
-        final ArrayList<L2Character> result = new ArrayList<L2Character>();
+		final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
-        for (L2Character o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-        {
-            if (o == aTrap.getOwner() || o.isDead())
-            {
-                continue;
-            }
+		for (L2Character o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
+		{
+			if (o == aTrap.getOwner() || o.isDead())
+			{
+				continue;
+			}
 
-            if (!aTrap.getOwner().isAbleToCastOnTarget(o, skill, skill.isUseableWithoutTarget()))
-            {
-                continue;
-            }
-            else if (!GeoEngine.getInstance().canSeeTarget(aTrap, o))
-            {
-                continue;
-            }
+			if (!aTrap.getOwner().isAbleToCastOnTarget(o, skill, skill.isUseableWithoutTarget()))
+			{
+				continue;
+			}
+			else if (!GeoEngine.getInstance().canSeeTarget(aTrap, o))
+			{
+				continue;
+			}
 
-            if (skill.getTargetDirection() == L2SkillTargetDirection.SINGLE)
-            {
-                return new L2Character[]{o};
-            }
+			if (skill.getTargetDirection() == L2SkillTargetDirection.SINGLE)
+			{
+				return new L2Character[]{o};
+			}
 
-            result.add(o);
-        }
+			result.add(o);
+		}
 
-        return result.toArray(new L2Character[result.size()]);
-    }
+		return result.toArray(new L2Character[result.size()]);
+	}
 
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TRAP_TARGET;
-    }
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TRAP_TARGET;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TrapTarget());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TrapTarget());
+	}
 }

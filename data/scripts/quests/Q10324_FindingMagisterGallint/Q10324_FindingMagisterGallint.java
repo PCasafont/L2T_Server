@@ -28,100 +28,100 @@ import l2server.gameserver.network.serverpackets.TutorialShowHtml;
  */
 public class Q10324_FindingMagisterGallint extends Quest
 {
-    // Quest
-    public static String qn = "Q10324_FindingMagisterGallint";
+	// Quest
+	public static String qn = "Q10324_FindingMagisterGallint";
 
-    // NPC
-    private int _shannon = 32974;
-    private int _gallint = 32980;
+	// NPC
+	private int _shannon = 32974;
+	private int _gallint = 32980;
 
-    public Q10324_FindingMagisterGallint(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        addStartNpc(_shannon);
-        addTalkId(_shannon);
-        addTalkId(_gallint);
-    }
+	public Q10324_FindingMagisterGallint(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		addStartNpc(_shannon);
+		addTalkId(_shannon);
+		addTalkId(_gallint);
+	}
 
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = event;
-        QuestState st = player.getQuestState(qn);
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = event;
+		QuestState st = player.getQuestState(qn);
 
-        if (st == null)
-        {
-            return htmltext;
-        }
+		if (st == null)
+		{
+			return htmltext;
+		}
 
-        if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-03.htm"))
-        {
-            st.setState(State.STARTED);
-            st.set("cond", "1");
-            st.playSound("ItemSound.quest_accept");
-        }
-        else if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1)
-        {
-            st.unset("cond");
-            st.giveItems(57, 11000);
-            st.addExpAndSp(1700, 2000);
-            st.playSound("ItemSound.quest_finish");
-            st.exitQuest(false);
-            player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_004_skill_01.htm"));
+		if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-03.htm"))
+		{
+			st.setState(State.STARTED);
+			st.set("cond", "1");
+			st.playSound("ItemSound.quest_accept");
+		}
+		else if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1)
+		{
+			st.unset("cond");
+			st.giveItems(57, 11000);
+			st.addExpAndSp(1700, 2000);
+			st.playSound("ItemSound.quest_finish");
+			st.exitQuest(false);
+			player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_004_skill_01.htm"));
 
-            // Main quests state
-            player.setGlobalQuestFlag(GlobalQuest.STARTING, 5);
-        }
-        return htmltext;
-    }
+			// Main quests state
+			player.setGlobalQuestFlag(GlobalQuest.STARTING, 5);
+		}
+		return htmltext;
+	}
 
-    @Override
-    public String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = getNoQuestMsg(player);
-        QuestState st = player.getQuestState(qn);
-        if (st == null)
-        {
-            return htmltext;
-        }
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		QuestState st = player.getQuestState(qn);
+		if (st == null)
+		{
+			return htmltext;
+		}
 
-        if (npc.getNpcId() == _shannon)
-        {
-            switch (st.getState())
-            {
-                case State.CREATED:
-                    if (canStart(player))
-                    {
-                        htmltext = "32974-01.htm";
-                    }
-                    else
-                    {
-                        htmltext = "32974-00.htm"; // TODO
-                    }
-                    break;
-                case State.STARTED:
-                    htmltext = "32974-04.htm"; // TODO
-                    break;
-                case State.COMPLETED:
-                    htmltext = "32974-05.htm"; // TODO
-                    break;
-            }
-        }
-        else if (npc.getNpcId() == _gallint && st.getInt("cond") == 1)
-        {
-            htmltext = "32980-01.htm";
-        }
-        return htmltext;
-    }
+		if (npc.getNpcId() == _shannon)
+		{
+			switch (st.getState())
+			{
+				case State.CREATED:
+					if (canStart(player))
+					{
+						htmltext = "32974-01.htm";
+					}
+					else
+					{
+						htmltext = "32974-00.htm"; // TODO
+					}
+					break;
+				case State.STARTED:
+					htmltext = "32974-04.htm"; // TODO
+					break;
+				case State.COMPLETED:
+					htmltext = "32974-05.htm"; // TODO
+					break;
+			}
+		}
+		else if (npc.getNpcId() == _gallint && st.getInt("cond") == 1)
+		{
+			htmltext = "32980-01.htm";
+		}
+		return htmltext;
+	}
 
-    @Override
-    public boolean canStart(L2PcInstance player)
-    {
-        return player.getGlobalQuestFlag(GlobalQuest.STARTING, 4) && player.getLevel() <= 20;
-    }
+	@Override
+	public boolean canStart(L2PcInstance player)
+	{
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 4) && player.getLevel() <= 20;
+	}
 
-    public static void main(String[] args)
-    {
-        new Q10324_FindingMagisterGallint(10324, qn, "Moving from Basic Training Ground to Admin Office.");
-    }
+	public static void main(String[] args)
+	{
+		new Q10324_FindingMagisterGallint(10324, qn, "Moving from Basic Training Ground to Admin Office.");
+	}
 }

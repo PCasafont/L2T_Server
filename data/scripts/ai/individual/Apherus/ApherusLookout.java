@@ -25,38 +25,38 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ApherusLookout extends L2AttackableAIScript
 {
-    private static final int _apherusLookout = 22964;
-    private static final int _apherusPackage = 19001;
+	private static final int _apherusLookout = 22964;
+	private static final int _apherusPackage = 19001;
 
-    public ApherusLookout(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public ApherusLookout(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addKillId(_apherusLookout);
-    }
+		addKillId(_apherusLookout);
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-    {
-        if (npc.getNpcId() == _apherusLookout)
-        {
-            for (int a = 0; a < 3; a++)
-            {
-                L2Npc aPackage = addSpawn(_apherusPackage, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000, false);
-                aPackage.setIsImmobilized(true);
-            }
-        }
-        return super.onKill(npc, killer, isPet);
-    }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+	{
+		if (npc.getNpcId() == _apherusLookout)
+		{
+			for (int a = 0; a < 3; a++)
+			{
+				L2Npc aPackage = addSpawn(_apherusPackage, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000, false);
+				aPackage.setIsImmobilized(true);
+			}
+		}
+		return super.onKill(npc, killer, isPet);
+	}
 
-    @Override
-    public int getOnKillDelay(int npcId)
-    {
-        return 0;
-    }
+	@Override
+	public int getOnKillDelay(int npcId)
+	{
+		return 0;
+	}
 
-    public static void main(String[] args)
-    {
-        new ApherusLookout(-1, "ApherusLookout", "ai/individual");
-    }
+	public static void main(String[] args)
+	{
+		new ApherusLookout(-1, "ApherusLookout", "ai/individual");
+	}
 }

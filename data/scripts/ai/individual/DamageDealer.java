@@ -27,46 +27,46 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class DamageDealer extends L2AttackableAIScript
 {
-    private static final int DAMAGE_DEALER = 80350;
+	private static final int DAMAGE_DEALER = 80350;
 
-    public DamageDealer(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
+	public DamageDealer(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
 
-        if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-        {
-            L2Npc scarecrow = addSpawn(80350, 82945, 148631, -3469, 0, false, 0);
-            scarecrow.setIsImmobilized(true);
-            scarecrow.setIsMortal(false);
-            scarecrow.disableCoreAI(true);
-            addAttackId(DAMAGE_DEALER);
-        }
-    }
+		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
+		{
+			L2Npc scarecrow = addSpawn(80350, 82945, 148631, -3469, 0, false, 0);
+			scarecrow.setIsImmobilized(true);
+			scarecrow.setIsMortal(false);
+			scarecrow.disableCoreAI(true);
+			addAttackId(DAMAGE_DEALER);
+		}
+	}
 
-    @Override
-    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
-    {
-        if (npc.getNpcId() == DAMAGE_DEALER)
-        {
-            if (attacker.isGM())
-            {
-                return "";
-            }
+	@Override
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	{
+		if (npc.getNpcId() == DAMAGE_DEALER)
+		{
+			if (attacker.isGM())
+			{
+				return "";
+			}
 
-            if (attacker.isSubClassActive() || attacker.isTransformed() || attacker.getClassId() < 148)
-            {
-                attacker.sendMessage("You don't meet the conditions to use this!");
-                return "";
-            }
+			if (attacker.isSubClassActive() || attacker.isTransformed() || attacker.getClassId() < 148)
+			{
+				attacker.sendMessage("You don't meet the conditions to use this!");
+				return "";
+			}
 
-            DamageManager.getInstance().giveDamage(attacker, damage);
-        }
+			DamageManager.getInstance().giveDamage(attacker, damage);
+		}
 
-        return super.onAttack(npc, attacker, damage, isPet);
-    }
+		return super.onAttack(npc, attacker, damage, isPet);
+	}
 
-    public static void main(String[] args)
-    {
-        new DamageDealer(-1, "DamageDealer", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new DamageDealer(-1, "DamageDealer", "ai");
+	}
 }

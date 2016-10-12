@@ -30,47 +30,47 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class PaganKeys implements IItemHandler
 {
-    public static final int INTERACTION_DISTANCE = 100;
+	public static final int INTERACTION_DISTANCE = 100;
 
-    /**
-     * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
-     */
-    @Override
-    public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-    {
-        if (!(playable instanceof L2PcInstance))
-        {
-            return;
-        }
-        L2PcInstance activeChar = (L2PcInstance) playable;
-        L2Object target = activeChar.getTarget();
+	/**
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 */
+	@Override
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	{
+		if (!(playable instanceof L2PcInstance))
+		{
+			return;
+		}
+		L2PcInstance activeChar = (L2PcInstance) playable;
+		L2Object target = activeChar.getTarget();
 
-        if (!(target instanceof L2DoorInstance))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
-            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-        L2DoorInstance door = (L2DoorInstance) target;
+		if (!(target instanceof L2DoorInstance))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		L2DoorInstance door = (L2DoorInstance) target;
 
-        if (!activeChar.isInsideRadius(door, INTERACTION_DISTANCE, false, false))
-        {
-            activeChar.sendMessage("Too far.");
-            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
-        if (!activeChar.getAbnormalEffect().isEmpty() || activeChar.isInCombat())
-        {
-            activeChar.sendMessage("You cannot use the key now.");
-            activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+		if (!activeChar.isInsideRadius(door, INTERACTION_DISTANCE, false, false))
+		{
+			activeChar.sendMessage("Too far.");
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		if (!activeChar.getAbnormalEffect().isEmpty() || activeChar.isInCombat())
+		{
+			activeChar.sendMessage("You cannot use the key now.");
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-        if (!playable.destroyItem("Consume", item.getObjectId(), 1, null, false))
-        {
-            return;
-        }
+		if (!playable.destroyItem("Consume", item.getObjectId(), 1, null, false))
+		{
+			return;
+		}
 
-        door.openMe();
-    }
+		door.openMe();
+	}
 }

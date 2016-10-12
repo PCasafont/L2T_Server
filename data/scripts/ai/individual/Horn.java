@@ -33,65 +33,65 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class Horn extends L2AttackableAIScript
 {
-    private static final int[] _hornIds = {19460, 19461, 19462};
-    private static final int _chaosHorn = 23348;
-    private static final int _poras = 23335;
+	private static final int[] _hornIds = {19460, 19461, 19462};
+	private static final int _chaosHorn = 23348;
+	private static final int _poras = 23335;
 
-    public Horn(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public Horn(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        for (int a : _hornIds)
-        {
-            addKillId(a);
-        }
-    }
+		for (int a : _hornIds)
+		{
+			addKillId(a);
+		}
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-    {
-        switch (npc.getNpcId())
-        {
-            case 19460: //Green
-                for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600))
-                {
-                    if (chara == null || !(chara instanceof L2MonsterInstance))
-                    {
-                        continue;
-                    }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+	{
+		switch (npc.getNpcId())
+		{
+			case 19460: //Green
+				for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600))
+				{
+					if (chara == null || !(chara instanceof L2MonsterInstance))
+					{
+						continue;
+					}
 
-                    ((L2MonsterInstance) chara).setTarget(killer);
-                    ((L2MonsterInstance) chara).addDamageHate(killer, 500, 99999);
-                    ((L2MonsterInstance) chara).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
-                }
-                break;
+					((L2MonsterInstance) chara).setTarget(killer);
+					((L2MonsterInstance) chara).addDamageHate(killer, 500, 99999);
+					((L2MonsterInstance) chara).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
+				}
+				break;
 
-            case 19461: //Blue
-                for (int a = 0; a < 5; a++)
-                {
-                    addSpawn(_chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
-                }
-                break;
+			case 19461: //Blue
+				for (int a = 0; a < 5; a++)
+				{
+					addSpawn(_chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
+				}
+				break;
 
-            case 19462: //Red
-                for (int a = 0; a < 8; a++)
-                {
-                    addSpawn(_poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
-                }
-                break;
-        }
+			case 19462: //Red
+				for (int a = 0; a < 8; a++)
+				{
+					addSpawn(_poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
+				}
+				break;
+		}
 
-        return super.onKill(npc, killer, isPet);
-    }
+		return super.onKill(npc, killer, isPet);
+	}
 
-    @Override
-    public int getOnKillDelay(int npcId)
-    {
-        return 0;
-    }
+	@Override
+	public int getOnKillDelay(int npcId)
+	{
+		return 0;
+	}
 
-    public static void main(String[] args)
-    {
-        new Horn(-1, "Horn", "ai");
-    }
+	public static void main(String[] args)
+	{
+		new Horn(-1, "Horn", "ai");
+	}
 }

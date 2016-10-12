@@ -38,100 +38,100 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanFlag extends L2AttackableAIScript
 {
-    private static final int _clanFlagId = 19269;
-    private static final L2Skill _clanRising = SkillTable.getInstance().getInfo(15095, 1);
-    private static final L2Skill _clanCurse = SkillTable.getInstance().getInfo(15096, 1);
+	private static final int _clanFlagId = 19269;
+	private static final L2Skill _clanRising = SkillTable.getInstance().getInfo(15095, 1);
+	private static final L2Skill _clanCurse = SkillTable.getInstance().getInfo(15096, 1);
 
-    public ClanFlag(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public ClanFlag(int id, String name, String descr)
+	{
+		super(id, name, descr);
 
-        addSpawnId(_clanFlagId);
-    }
+		addSpawnId(_clanFlagId);
+	}
 
-    @Override
-    public final String onSpawn(L2Npc npc)
-    {
-        npc.disableCoreAI(true);
+	@Override
+	public final String onSpawn(L2Npc npc)
+	{
+		npc.disableCoreAI(true);
 
-        ClanFlagAI ai = new ClanFlagAI(npc);
+		ClanFlagAI ai = new ClanFlagAI(npc);
 
-        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
+		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
 
-        return null;
-    }
+		return null;
+	}
 
-    class ClanFlagAI implements Runnable
-    {
-        private L2Npc _clanFlag;
-        private ScheduledFuture<?> _schedule = null;
+	class ClanFlagAI implements Runnable
+	{
+		private L2Npc _clanFlag;
+		private ScheduledFuture<?> _schedule = null;
 
-        protected ClanFlagAI(L2Npc npc)
-        {
-            _clanFlag = npc;
-        }
+		protected ClanFlagAI(L2Npc npc)
+		{
+			_clanFlag = npc;
+		}
 
-        public void setSchedule(ScheduledFuture<?> schedule)
-        {
-            _schedule = schedule;
-        }
+		public void setSchedule(ScheduledFuture<?> schedule)
+		{
+			_schedule = schedule;
+		}
 
-        @Override
-        public void run()
-        {
-            if (_clanFlag == null || _clanFlag.isDead() || _clanFlag.isDecayed())
-            {
-                if (_schedule != null)
-                {
-                    _schedule.cancel(true);
-                    return;
-                }
-            }
+		@Override
+		public void run()
+		{
+			if (_clanFlag == null || _clanFlag.isDead() || _clanFlag.isDecayed())
+			{
+				if (_schedule != null)
+				{
+					_schedule.cancel(true);
+					return;
+				}
+			}
 
-            _clanFlag.setTitle(_clanFlag.getOwner().getClan().getName());
+			_clanFlag.setTitle(_clanFlag.getOwner().getClan().getName());
 
-            Collection<L2PcInstance> players = _clanFlag.getKnownList().getKnownPlayersInRadius(2000);
-            for (L2PcInstance player : players)
-            {
-                doAction(player, _clanFlag);
-            }
-        }
-    }
+			Collection<L2PcInstance> players = _clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			for (L2PcInstance player : players)
+			{
+				doAction(player, _clanFlag);
+			}
+		}
+	}
 
-    private void doAction(L2PcInstance target, L2Npc npc)
-    {
-        if (target == null || npc == null || npc.getOwner() == null)
-        {
-            return;
-        }
+	private void doAction(L2PcInstance target, L2Npc npc)
+	{
+		if (target == null || npc == null || npc.getOwner() == null)
+		{
+			return;
+		}
 
-        if (npc.isDead() || target.isDead())
-        {
-            return;
-        }
+		if (npc.isDead() || target.isDead())
+		{
+			return;
+		}
 
-        if (!GeoData.getInstance().canSeeTarget(npc, target))
-        {
-            return;
-        }
+		if (!GeoData.getInstance().canSeeTarget(npc, target))
+		{
+			return;
+		}
 
-        if (!npc.isInsideRadius(target, 2000, true, false))
-        {
-            return;
-        }
+		if (!npc.isInsideRadius(target, 2000, true, false))
+		{
+			return;
+		}
 
-        if (target.getClan() == npc.getOwner().getClan())
-        {
-            _clanRising.getEffects(npc, target);
-        }
-        else
-        {
-            _clanCurse.getEffects(npc, target);
-        }
-    }
+		if (target.getClan() == npc.getOwner().getClan())
+		{
+			_clanRising.getEffects(npc, target);
+		}
+		else
+		{
+			_clanCurse.getEffects(npc, target);
+		}
+	}
 
-    public static void main(String[] args)
-    {
-        new ClanFlag(-1, "ClanFlag", "ai/individual");
-    }
+	public static void main(String[] args)
+	{
+		new ClanFlag(-1, "ClanFlag", "ai/individual");
+	}
 }

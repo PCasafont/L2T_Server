@@ -29,32 +29,32 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class TargetMySummon implements ISkillTargetTypeHandler
 {
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        // FIXME target = activeChar.getPet();
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		// FIXME target = activeChar.getPet();
 
-        if (target != null && !target.isDead())
-        {
-            if (skill.getCastRange() > 0 && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
-            {
-                return null;
-            }
+		if (target != null && !target.isDead())
+		{
+			if (skill.getCastRange() > 0 && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
+			{
+				return null;
+			}
 
-            return new L2Character[]{target};
-        }
+			return new L2Character[]{target};
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        return L2SkillTargetType.TARGET_MY_SUMMON;
-    }
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		return L2SkillTargetType.TARGET_MY_SUMMON;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetMySummon());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetMySummon());
+	}
 }

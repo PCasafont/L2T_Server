@@ -33,162 +33,162 @@ import java.util.List;
 
 public class SpecializeClass implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"SpecializeClass"};
+	private static final String[] COMMANDS = {"SpecializeClass"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
-        {
-            activeChar.sendMessage("You must be on an awakened class to do this.");
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
+		{
+			activeChar.sendMessage("You must be on an awakened class to do this.");
+			return false;
+		}
 
-        if (activeChar.getTemporaryLevel() != 0)
-        {
-            activeChar.sendMessage("You can't do that while on a temporary level.");
-            return false;
-        }
+		if (activeChar.getTemporaryLevel() != 0)
+		{
+			activeChar.sendMessage("You can't do that while on a temporary level.");
+			return false;
+		}
 
-        boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
+		boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
 
-        if (command.length() < 16)
-        {
-            String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "classmaster/specialize.htm");
-            String buttons = "";
-            List<PlayerClass> classes = new ArrayList<PlayerClass>();
-            for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
-            {
-                if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
-                {
-                    for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
-                    {
-                        if (cl2.getParent() == cl1)
-                        {
-                            classes.add(cl2);
-                        }
-                    }
-                }
-            }
+		if (command.length() < 16)
+		{
+			String html = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "classmaster/specialize.htm");
+			String buttons = "";
+			List<PlayerClass> classes = new ArrayList<PlayerClass>();
+			for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
+			{
+				if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
+				{
+					for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
+					{
+						if (cl2.getParent() == cl1)
+						{
+							classes.add(cl2);
+						}
+					}
+				}
+			}
 
-            if (classes.isEmpty())
-            {
-                for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
-                {
-                    if (cl.getLevel() == 85 && cl.getParent() != null)
-                    {
-                        if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
-                        {
-                            classes.add(cl);
-                        }
-                        else if (activeChar.getCurrentClass().getParent() != null &&
-                                cl.getParent().getAwakeningClassId() ==
-                                        activeChar.getCurrentClass().getParent().getAwakeningClassId())
-                        {
-                            classes.add(cl);
-                        }
-                    }
-                }
-            }
+			if (classes.isEmpty())
+			{
+				for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
+				{
+					if (cl.getLevel() == 85 && cl.getParent() != null)
+					{
+						if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
+						{
+							classes.add(cl);
+						}
+						else if (activeChar.getCurrentClass().getParent() != null &&
+								cl.getParent().getAwakeningClassId() ==
+										activeChar.getCurrentClass().getParent().getAwakeningClassId())
+						{
+							classes.add(cl);
+						}
+					}
+				}
+			}
 
-            if (activeChar.getClassId() == activeChar.getBaseClass())
-            {
-                /*if (activeChar.isHero())
+			if (activeChar.getClassId() == activeChar.getBaseClass())
+			{
+				/*if (activeChar.isHero())
                 {
 					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're a hero!", 6000));
 					return false;
 				}
 				else if (Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
 					activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad and hero records will be reset!", 6000));*/
-                if (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
-                {
-                    activeChar.sendPacket(new ExShowScreenMessage(
-                            "You cannot use this option while you're involved in the Grand Olympiads!", 6000));
-                    return false;
-                }
-            }
+				if (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
+				{
+					activeChar.sendPacket(new ExShowScreenMessage(
+							"You cannot use this option while you're involved in the Grand Olympiads!", 6000));
+					return false;
+				}
+			}
 
-            for (PlayerClass cl : classes)
-            {
-                buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " +
-                        cl.getId() +
-                        "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
-            }
+			for (PlayerClass cl : classes)
+			{
+				buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " +
+						cl.getId() +
+						"\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
+			}
 
-            html = html.replace("%classButtons%", buttons);
-            NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
-            packet.setHtml(html);
-            packet.replace("%objectId%", String.valueOf(target.getObjectId()));
+			html = html.replace("%classButtons%", buttons);
+			NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
+			packet.setHtml(html);
+			packet.replace("%objectId%", String.valueOf(target.getObjectId()));
 
-            activeChar.sendPacket(packet);
-        }
-        else
-        {
-            try
-            {
-                if (activeChar.getClassId() == activeChar.getBaseClass() && activeChar.isHero())
-                {
-                    return false;
-                }
+			activeChar.sendPacket(packet);
+		}
+		else
+		{
+			try
+			{
+				if (activeChar.getClassId() == activeChar.getBaseClass() && activeChar.isHero())
+				{
+					return false;
+				}
 
-                int classId = Integer.parseInt(command.substring(16));
-                PlayerClass prev = activeChar.getCurrentClass();
-                if (!hasDeprecatedClass && prev.getLevel() == 85)
-                {
-                    if (!activeChar.isSubClassActive())
-                    {
-                        if (!activeChar.destroyItemByItemId("Specialize Class", 36949, 1, activeChar, true))
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        if (!activeChar.destroyItemByItemId("Specialize Class", 37494, 1, activeChar, true))
-                        {
-                            return false;
-                        }
-                    }
-                }
+				int classId = Integer.parseInt(command.substring(16));
+				PlayerClass prev = activeChar.getCurrentClass();
+				if (!hasDeprecatedClass && prev.getLevel() == 85)
+				{
+					if (!activeChar.isSubClassActive())
+					{
+						if (!activeChar.destroyItemByItemId("Specialize Class", 36949, 1, activeChar, true))
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (!activeChar.destroyItemByItemId("Specialize Class", 37494, 1, activeChar, true))
+						{
+							return false;
+						}
+					}
+				}
 
-                if (activeChar.getClassId() == activeChar.getBaseClass() &&
-                        (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
-                {
-                    Olympiad.getInstance().removeNoble(activeChar.getObjectId());
-                    HeroesManager.getInstance().removeHero(activeChar.getObjectId());
-                }
+				if (activeChar.getClassId() == activeChar.getBaseClass() &&
+						(activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
+				{
+					Olympiad.getInstance().removeNoble(activeChar.getObjectId());
+					HeroesManager.getInstance().removeHero(activeChar.getObjectId());
+				}
 
-                activeChar.setClassId(classId);
-                if (!activeChar.isSubClassActive())
-                {
-                    activeChar.setBaseClass(classId);
-                }
+				activeChar.setClassId(classId);
+				if (!activeChar.isSubClassActive())
+				{
+					activeChar.setBaseClass(classId);
+				}
 
-                for (L2Skill skill : activeChar.getAllSkills())
-                {
-                    if (!SkillTreeTable.getInstance().isSkillAllowed(activeChar, skill))
-                    {
-                        activeChar.removeSkill(skill, true);
-                    }
-                }
+				for (L2Skill skill : activeChar.getAllSkills())
+				{
+					if (!SkillTreeTable.getInstance().isSkillAllowed(activeChar, skill))
+					{
+						activeChar.removeSkill(skill, true);
+					}
+				}
 
-                activeChar.sendSkillList();
+				activeChar.sendSkillList();
 
-                activeChar.store();
-                activeChar.broadcastUserInfo();
-            }
-            catch (StringIndexOutOfBoundsException e)
-            {
-                e.printStackTrace();
-            }
-        }
+				activeChar.store();
+				activeChar.broadcastUserInfo();
+			}
+			catch (StringIndexOutOfBoundsException e)
+			{
+				e.printStackTrace();
+			}
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

@@ -23,90 +23,90 @@ import l2server.gameserver.util.Util;
 
 public class HeroWeapon extends Quest
 {
-    private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
+	private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
-    private final static int[] weaponIds =
-            {30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405};
+	private final static int[] weaponIds =
+			{30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405};
 
-    public HeroWeapon(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        for (int i : npcIds)
-        {
-            addStartNpc(i);
-            addTalkId(i);
-        }
-    }
+	public HeroWeapon(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		for (int i : npcIds)
+		{
+			addStartNpc(i);
+			addTalkId(i);
+		}
+	}
 
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        QuestState st = player.getQuestState(getName());
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		QuestState st = player.getQuestState(getName());
 
-        int weaponId = Integer.valueOf(event);
-        if (Util.contains(weaponIds, weaponId))
-        {
-            st.giveItems(weaponId, 1);
-        }
+		int weaponId = Integer.valueOf(event);
+		if (Util.contains(weaponIds, weaponId))
+		{
+			st.giveItems(weaponId, 1);
+		}
 
-        st.exitQuest(true);
-        return null;
-    }
+		st.exitQuest(true);
+		return null;
+	}
 
-    @Override
-    public String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = "";
-        QuestState st = player.getQuestState(getName());
-        if (st == null)
-        {
-            newQuestState(player);
-        }
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = "";
+		QuestState st = player.getQuestState(getName());
+		if (st == null)
+		{
+			newQuestState(player);
+		}
 
-        if (player.isHero())
-        {
-            if (hasHeroWeapon(player))
-            {
-                htmltext = "already_have_weapon.htm";
-                st.exitQuest(true);
-            }
-            else
-            {
-                htmltext = "weapon_list.htm";
-            }
-        }
-        else
-        {
-            htmltext = "no_hero.htm";
-            st.exitQuest(true);
-        }
+		if (player.isHero())
+		{
+			if (hasHeroWeapon(player))
+			{
+				htmltext = "already_have_weapon.htm";
+				st.exitQuest(true);
+			}
+			else
+			{
+				htmltext = "weapon_list.htm";
+			}
+		}
+		else
+		{
+			htmltext = "no_hero.htm";
+			st.exitQuest(true);
+		}
 
-        return htmltext;
-    }
+		return htmltext;
+	}
 
-    private boolean hasHeroWeapon(L2PcInstance player)
-    {
-        for (int i : weaponIds)
-        {
-            if (player.getInventory().getItemByItemId(i) != null)
-            {
-                return true;
-            }
-        }
+	private boolean hasHeroWeapon(L2PcInstance player)
+	{
+		for (int i : weaponIds)
+		{
+			if (player.getInventory().getItemByItemId(i) != null)
+			{
+				return true;
+			}
+		}
 
-        for (int i : weaponIds)
-        {
-            if (player.getWarehouse().getItemByItemId(i) != null)
-            {
-                return true;
-            }
-        }
+		for (int i : weaponIds)
+		{
+			if (player.getWarehouse().getItemByItemId(i) != null)
+			{
+				return true;
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    public static void main(String[] args)
-    {
-        new HeroWeapon(-1, "HeroWeapon", "custom");
-    }
+	public static void main(String[] args)
+	{
+		new HeroWeapon(-1, "HeroWeapon", "custom");
+	}
 }

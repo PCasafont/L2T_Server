@@ -31,59 +31,59 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class Soul implements ISkillHandler
 {
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHARGESOUL};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHARGESOUL};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (!(activeChar instanceof L2PcInstance) || activeChar.isAlikeDead())
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (!(activeChar instanceof L2PcInstance) || activeChar.isAlikeDead())
+		{
+			return;
+		}
 
-        L2PcInstance player = (L2PcInstance) activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 
-        int level = player.getSkillLevelHash(467);
-        if (level > 0)
-        {
-            L2Skill soulmastery = SkillTable.getInstance().getInfo(467, level);
+		int level = player.getSkillLevelHash(467);
+		if (level > 0)
+		{
+			L2Skill soulmastery = SkillTable.getInstance().getInfo(467, level);
 
-            if (soulmastery != null)
-            {
-                if (player.getSouls() < soulmastery.getNumSouls())
-                {
-                    int count = 0;
+			if (soulmastery != null)
+			{
+				if (player.getSouls() < soulmastery.getNumSouls())
+				{
+					int count = 0;
 
-                    if (player.getSouls() + skill.getNumSouls() <= soulmastery.getNumSouls())
-                    {
-                        count = skill.getNumSouls();
-                    }
-                    else
-                    {
-                        count = soulmastery.getNumSouls() - player.getSouls();
-                    }
+					if (player.getSouls() + skill.getNumSouls() <= soulmastery.getNumSouls())
+					{
+						count = skill.getNumSouls();
+					}
+					else
+					{
+						count = soulmastery.getNumSouls() - player.getSouls();
+					}
 
-                    player.increaseSouls(count);
-                }
-                else
-                {
-                    SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SOUL_CANNOT_BE_INCREASED_ANYMORE);
-                    player.sendPacket(sm);
-                    return;
-                }
-            }
-        }
-    }
+					player.increaseSouls(count);
+				}
+				else
+				{
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SOUL_CANNOT_BE_INCREASED_ANYMORE);
+					player.sendPacket(sm);
+					return;
+				}
+			}
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

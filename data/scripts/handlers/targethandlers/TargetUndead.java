@@ -34,50 +34,50 @@ import java.util.List;
  */
 public class TargetUndead implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @Override
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-    {
-        List<L2Character> targetList = new ArrayList<L2Character>();
+	/**
+	 */
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		List<L2Character> targetList = new ArrayList<L2Character>();
 
-        if (target instanceof L2Npc || target instanceof L2SummonInstance)
-        {
-            if (!target.isUndead() || target.isDead())
-            {
-                activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-                return null;
-            }
+		if (target instanceof L2Npc || target instanceof L2SummonInstance)
+		{
+			if (!target.isUndead() || target.isDead())
+			{
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+				return null;
+			}
 
-            if (onlyFirst == false)
-            {
-                targetList.add(target);
-            }
-            else
-            {
-                return new L2Character[]{target};
-            }
+			if (onlyFirst == false)
+			{
+				targetList.add(target);
+			}
+			else
+			{
+				return new L2Character[]{target};
+			}
 
-            return targetList.toArray(new L2Object[targetList.size()]);
-        }
-        else
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-            return null;
-        }
-    }
+			return targetList.toArray(new L2Object[targetList.size()]);
+		}
+		else
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
+			return null;
+		}
+	}
 
-    /**
-     */
-    @Override
-    public Enum<L2SkillTargetType> getTargetType()
-    {
-        // TODO Auto-generated method stub
-        return L2SkillTargetType.TARGET_UNDEAD;
-    }
+	/**
+	 */
+	@Override
+	public Enum<L2SkillTargetType> getTargetType()
+	{
+		// TODO Auto-generated method stub
+		return L2SkillTargetType.TARGET_UNDEAD;
+	}
 
-    public static void main(String[] args)
-    {
-        SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetUndead());
-    }
+	public static void main(String[] args)
+	{
+		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetUndead());
+	}
 }

@@ -6,69 +6,69 @@ import l2server.gameserver.model.L2Transformation;
 
 public class Kamael extends L2Transformation
 {
-    private static final int[] SKILLS = {539, 540, 1471, 1472, 5491, 619};
+	private static final int[] SKILLS = {539, 540, 1471, 1472, 5491, 619};
 
-    public Kamael()
-    {
-        // id, duration (secs), colRadius, colHeight
-        super(251, 9, 38);
-    }
+	public Kamael()
+	{
+		// id, duration (secs), colRadius, colHeight
+		super(251, 9, 38);
+	}
 
-    @Override
-    public void onTransform()
-    {
-        if (getPlayer().getTransformationId() != 251 || getPlayer().isCursedWeaponEquipped())
-        {
-            return;
-        }
+	@Override
+	public void onTransform()
+	{
+		if (getPlayer().getTransformationId() != 251 || getPlayer().isCursedWeaponEquipped())
+		{
+			return;
+		}
 
-        transformedSkills();
-    }
+		transformedSkills();
+	}
 
-    public void transformedSkills()
-    {
-        // Nail Attack
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(539, 1), false);
-        // Wing Assault
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(540, 1), false);
-        // Soul Sucking
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(1471, 1), false);
-        // Death Beam
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(1472, 1), false);
-        // Decrease Bow/Crossbow Attack Speed
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
-        // Transform Dispel
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void transformedSkills()
+	{
+		// Nail Attack
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(539, 1), false);
+		// Wing Assault
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(540, 1), false);
+		// Soul Sucking
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(1471, 1), false);
+		// Death Beam
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(1472, 1), false);
+		// Decrease Bow/Crossbow Attack Speed
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
+		// Transform Dispel
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(SKILLS);
-    }
+		getPlayer().setTransformAllowedSkills(SKILLS);
+	}
 
-    @Override
-    public void onUntransform()
-    {
-        removeSkills();
-    }
+	@Override
+	public void onUntransform()
+	{
+		removeSkills();
+	}
 
-    public void removeSkills()
-    {
-        // Nail Attack
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(539, 1), false);
-        // Wing Assault
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(540, 1), false);
-        // Soul Sucking
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(1471, 1), false);
-        // Death Beam
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(1472, 1), false);
-        // Decrease Bow/Crossbow Attack Speed
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
-        // Transform Dispel
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void removeSkills()
+	{
+		// Nail Attack
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(539, 1), false);
+		// Wing Assault
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(540, 1), false);
+		// Soul Sucking
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(1471, 1), false);
+		// Death Beam
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(1472, 1), false);
+		// Decrease Bow/Crossbow Attack Speed
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
+		// Transform Dispel
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
-    }
+		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
+	}
 
-    public static void main(String[] args)
-    {
-        TransformationManager.getInstance().registerTransformation(new Kamael());
-    }
+	public static void main(String[] args)
+	{
+		TransformationManager.getInstance().registerTransformation(new Kamael());
+	}
 }

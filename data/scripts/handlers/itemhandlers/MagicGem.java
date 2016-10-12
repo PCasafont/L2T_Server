@@ -31,39 +31,39 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler
 {
-    /**
-     */
-    @Override
-    public void useItem(L2Playable playable, L2ItemInstance magicGem, boolean forcedUse)
-    {
-        if (!(playable instanceof L2PcInstance))
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	public void useItem(L2Playable playable, L2ItemInstance magicGem, boolean forcedUse)
+	{
+		if (!(playable instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance player = (L2PcInstance) playable;
+		L2PcInstance player = (L2PcInstance) playable;
 
-        if (!player.getFloodProtectors().getMagicGem().tryPerformAction("Magic Gem"))
-        {
-            return;
-        }
+		if (!player.getFloodProtectors().getMagicGem().tryPerformAction("Magic Gem"))
+		{
+			return;
+		}
 
-        if (Config.isServer(Config.TENKAI))
-        {
-            if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 &&
-                    !player.isInsideZone(L2Character.ZONE_PVP) &&
-                    (!player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) ||
-                            player.isInsideZone(L2Character.ZONE_TOWN)) && player.getEvent() == null &&
-                    !player.isInOlympiadMode() && !AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
-                    InstanceManager.getInstance().getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0)
-            {
-                player.spawnServitors();
-                player.sendMessage("You use a Magic Gem.");
-            }
-            else
-            {
-                player.sendMessage("You cannot use a Magic Gem right now.");
-            }
-        }
-    }
+		if (Config.isServer(Config.TENKAI))
+		{
+			if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 &&
+					!player.isInsideZone(L2Character.ZONE_PVP) &&
+					(!player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) ||
+							player.isInsideZone(L2Character.ZONE_TOWN)) && player.getEvent() == null &&
+					!player.isInOlympiadMode() && !AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
+					InstanceManager.getInstance().getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0)
+			{
+				player.spawnServitors();
+				player.sendMessage("You use a Magic Gem.");
+			}
+			else
+			{
+				player.sendMessage("You cannot use a Magic Gem right now.");
+			}
+		}
+	}
 }

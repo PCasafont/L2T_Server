@@ -41,109 +41,109 @@ import java.util.logging.Logger;
 
 public class Mark implements ISkillHandler
 {
-    private static final Logger _logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
-    private static final L2SkillType[] SKILL_IDS = {L2SkillType.MARK};
+	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MARK};
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-    {
-        if (activeChar.isAlikeDead())
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
+	{
+		if (activeChar.isAlikeDead())
+		{
+			return;
+		}
 
-        L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-        if (weaponInst != null)
-        {
-            weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-        }
-        else if (activeChar instanceof L2Summon)
-        {
-            L2Summon activeSummon = (L2Summon) activeChar;
-            activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-        }
+		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		if (weaponInst != null)
+		{
+			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+		}
+		else if (activeChar instanceof L2Summon)
+		{
+			L2Summon activeSummon = (L2Summon) activeChar;
+			activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+		}
 
-        for (L2Object obj : targets)
-        {
-            if (!(obj instanceof L2Character))
-            {
-                continue;
-            }
+		for (L2Object obj : targets)
+		{
+			if (!(obj instanceof L2Character))
+			{
+				continue;
+			}
 
-            L2Character target = (L2Character) obj;
+			L2Character target = (L2Character) obj;
 
-            if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
-                    ((L2PcInstance) target).isFakeDeath())
-            {
-                target.stopFakeDeath(true);
-            }
-            else if (target.isDead())
-            {
-                continue;
-            }
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
+					((L2PcInstance) target).isFakeDeath())
+			{
+				target.stopFakeDeath(true);
+			}
+			else if (target.isDead())
+			{
+				continue;
+			}
 
-            final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
-            final byte shld = Formulas.calcShldUse(activeChar, target, skill);
+			final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
+			final byte shld = Formulas.calcShldUse(activeChar, target, skill);
 
-            if (mcrit)
-            {
-                int damage = (int) skill.getPower();
-                // Manage attack or cast break of the target (calculating rate, sending message...)
-                if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-                {
-                    target.breakAttack();
-                    target.breakCast();
-                }
+			if (mcrit)
+			{
+				int damage = (int) skill.getPower();
+				// Manage attack or cast break of the target (calculating rate, sending message...)
+				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
+				{
+					target.breakAttack();
+					target.breakCast();
+				}
 
-                activeChar.sendDamageMessage(target, damage, mcrit, false, false);
-                target.reduceCurrentHp(damage, activeChar, skill);
+				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
+				target.reduceCurrentHp(damage, activeChar, skill);
 
-                // Logging damage
-                if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable &&
-                        damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
-                {
-                    LogRecord record = new LogRecord(Level.INFO, "");
-                    record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
-                    record.setLoggerName("mdam");
-                    _logDamage.log(record);
-                }
-            }
+				// Logging damage
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable &&
+						damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
+				{
+					LogRecord record = new LogRecord(Level.INFO, "");
+					record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
+					record.setLoggerName("mdam");
+					_logDamage.log(record);
+				}
+			}
 
-            if (skill.hasEffects())
-            {
-                skill.getEffects(activeChar, target, new Env(shld, activeChar.getActiveWeaponInstance() != null ?
-                        activeChar.getActiveWeaponInstance().getChargedSoulShot() : L2ItemInstance.CHARGED_NONE));
-            }
-        }
+			if (skill.hasEffects())
+			{
+				skill.getEffects(activeChar, target, new Env(shld, activeChar.getActiveWeaponInstance() != null ?
+						activeChar.getActiveWeaponInstance().getChargedSoulShot() : L2ItemInstance.CHARGED_NONE));
+			}
+		}
 
-        // self Effect
-        if (skill.hasSelfEffects())
-        {
-            final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-            if (effect != null && effect.isSelfEffect())
-            {
-                //Replace old effect with new one.
-                effect.exit();
-            }
-            skill.getEffectsSelf(activeChar);
-        }
+		// self Effect
+		if (skill.hasSelfEffects())
+		{
+			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			if (effect != null && effect.isSelfEffect())
+			{
+				//Replace old effect with new one.
+				effect.exit();
+			}
+			skill.getEffectsSelf(activeChar);
+		}
 
-        if (skill.isSuicideAttack())
-        {
-            activeChar.doDie(activeChar);
-        }
-    }
+		if (skill.isSuicideAttack())
+		{
+			activeChar.doDie(activeChar);
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
-     */
-    @Override
-    public L2SkillType[] getSkillIds()
-    {
-        return SKILL_IDS;
-    }
+	/**
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 */
+	@Override
+	public L2SkillType[] getSkillIds()
+	{
+		return SKILL_IDS;
+	}
 }

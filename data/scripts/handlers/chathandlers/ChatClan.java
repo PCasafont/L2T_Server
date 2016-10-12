@@ -28,41 +28,40 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  */
 public class ChatClan implements IChatHandler
 {
-    private static final int[] COMMAND_IDS = {4};
+	private static final int[] COMMAND_IDS = {4};
 
-    /**
-     * Handle chat type 'clan'
-     *
-     */
-    @Override
-    public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-    {
-        if (activeChar.getClan() != null)
-        {
-            CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-            activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
+	/**
+	 * Handle chat type 'clan'
+	 */
+	@Override
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
+	{
+		if (activeChar.getClan() != null)
+		{
+			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
+			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
 
-            while (text.contains("Type=") && text.contains("Title="))
-            {
-                int index1 = text.indexOf("Type=");
-                int index2 = text.indexOf("Title=") + 6;
-                text = text.substring(0, index1) + text.substring(index2);
-            }
+			while (text.contains("Type=") && text.contains("Title="))
+			{
+				int index1 = text.indexOf("Type=");
+				int index2 = text.indexOf("Title=") + 6;
+				text = text.substring(0, index1) + text.substring(index2);
+			}
 
-            String clanName = activeChar.getClan().getName();
-            ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text,
-                    clanName, activeChar.getName());
-        }
-    }
+			String clanName = activeChar.getClan().getName();
+			ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text,
+					clanName, activeChar.getName());
+		}
+	}
 
-    /**
-     * Returns the chat types registered to this handler
-     *
-     * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
-     */
-    @Override
-    public int[] getChatTypeList()
-    {
-        return COMMAND_IDS;
-    }
+	/**
+	 * Returns the chat types registered to this handler
+	 *
+	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+	 */
+	@Override
+	public int[] getChatTypeList()
+	{
+		return COMMAND_IDS;
+	}
 }

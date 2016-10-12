@@ -28,67 +28,67 @@ import java.util.StringTokenizer;
 
 public class Wear implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"Wear"};
+	private static final String[] COMMANDS = {"Wear"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
 
-        if (!Config.ALLOW_WEAR)
-        {
-            return false;
-        }
+		if (!Config.ALLOW_WEAR)
+		{
+			return false;
+		}
 
-        try
-        {
-            StringTokenizer st = new StringTokenizer(command, " ");
-            st.nextToken();
+		try
+		{
+			StringTokenizer st = new StringTokenizer(command, " ");
+			st.nextToken();
 
-            if (st.countTokens() < 1)
-            {
-                return false;
-            }
+			if (st.countTokens() < 1)
+			{
+				return false;
+			}
 
-            showWearWindow(activeChar, Integer.parseInt(st.nextToken()));
-            return true;
-        }
-        catch (Exception e)
-        {
-            _log.info("Exception in " + getClass().getSimpleName());
-        }
-        return false;
-    }
+			showWearWindow(activeChar, Integer.parseInt(st.nextToken()));
+			return true;
+		}
+		catch (Exception e)
+		{
+			_log.info("Exception in " + getClass().getSimpleName());
+		}
+		return false;
+	}
 
-    private static void showWearWindow(L2PcInstance player, int val)
-    {
-        player.tempInventoryDisable();
+	private static void showWearWindow(L2PcInstance player, int val)
+	{
+		player.tempInventoryDisable();
 
-        if (Config.DEBUG)
-        {
-            _log.fine("Showing wearlist");
-        }
+		if (Config.DEBUG)
+		{
+			_log.fine("Showing wearlist");
+		}
 
-        L2TradeList list = TradeController.getInstance().getBuyList(val);
+		L2TradeList list = TradeController.getInstance().getBuyList(val);
 
-        if (list != null)
-        {
-            ShopPreviewList bl = new ShopPreviewList(list, player.getAdena(), player.getExpertiseIndex());
-            player.sendPacket(bl);
-        }
-        else
-        {
-            _log.warning("no buylist with id:" + val);
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-        }
-    }
+		if (list != null)
+		{
+			ShopPreviewList bl = new ShopPreviewList(list, player.getAdena(), player.getExpertiseIndex());
+			player.sendPacket(bl);
+		}
+		else
+		{
+			_log.warning("no buylist with id:" + val);
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+		}
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

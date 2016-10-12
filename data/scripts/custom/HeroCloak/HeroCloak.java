@@ -23,68 +23,68 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class HeroCloak extends Quest
 {
-    private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
+	private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
-    private final static int HERO_CLOAK = 30372;
-    private final static int GLORIOUS_CLOAK = 30373;
+	private final static int HERO_CLOAK = 30372;
+	private final static int GLORIOUS_CLOAK = 30373;
 
-    public HeroCloak(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
-        for (int i : npcIds)
-        {
-            addStartNpc(i);
-            addTalkId(i);
-        }
-    }
+	public HeroCloak(int questId, String name, String descr)
+	{
+		super(questId, name, descr);
+		for (int i : npcIds)
+		{
+			addStartNpc(i);
+			addTalkId(i);
+		}
+	}
 
-    @Override
-    public String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        String htmltext = "";
-        QuestState st = player.getQuestState(getName());
-        if (st == null)
-        {
-            st = newQuestState(player);
-        }
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = "";
+		QuestState st = player.getQuestState(getName());
+		if (st == null)
+		{
+			st = newQuestState(player);
+		}
 
-        if (player.isHero())
-        {
-            if (player.getInventory().getItemByItemId(HERO_CLOAK) == null)
-            {
-                st.giveItems(HERO_CLOAK, 1);
-            }
-            else
-            {
-                htmltext = "already_have_cloak.htm";
-            }
-        }
-        else
-        {
-            int heroRank = Olympiad.getInstance().getPosition(player);
-            if (heroRank > 0 && heroRank <= 3)
-            {
-                if (player.getInventory().getItemByItemId(GLORIOUS_CLOAK) == null)
-                {
-                    st.giveItems(GLORIOUS_CLOAK, 1);
-                }
-                else
-                {
-                    htmltext = "already_have_cloak.htm";
-                }
-            }
-            else
-            {
-                htmltext = "no_hero.htm";
-            }
-        }
+		if (player.isHero())
+		{
+			if (player.getInventory().getItemByItemId(HERO_CLOAK) == null)
+			{
+				st.giveItems(HERO_CLOAK, 1);
+			}
+			else
+			{
+				htmltext = "already_have_cloak.htm";
+			}
+		}
+		else
+		{
+			int heroRank = Olympiad.getInstance().getPosition(player);
+			if (heroRank > 0 && heroRank <= 3)
+			{
+				if (player.getInventory().getItemByItemId(GLORIOUS_CLOAK) == null)
+				{
+					st.giveItems(GLORIOUS_CLOAK, 1);
+				}
+				else
+				{
+					htmltext = "already_have_cloak.htm";
+				}
+			}
+			else
+			{
+				htmltext = "no_hero.htm";
+			}
+		}
 
-        st.exitQuest(true);
-        return htmltext;
-    }
+		st.exitQuest(true);
+		return htmltext;
+	}
 
-    public static void main(String[] args)
-    {
-        new HeroCloak(-1, "HeroCloak", "custom");
-    }
+	public static void main(String[] args)
+	{
+		new HeroCloak(-1, "HeroCloak", "custom");
+	}
 }

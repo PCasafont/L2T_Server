@@ -6,49 +6,49 @@ import l2server.gameserver.model.L2Transformation;
 
 public class DragonMasterKarin extends L2Transformation
 {
-    private static final int[] SKILLS = {619};
+	private static final int[] SKILLS = {619};
 
-    public DragonMasterKarin()
-    {
-        // id, colRadius, colHeight
-        super(20006, 8, 18.6);
-    }
+	public DragonMasterKarin()
+	{
+		// id, colRadius, colHeight
+		super(20006, 8, 18.6);
+	}
 
-    @Override
-    public void onTransform()
-    {
-        if (getPlayer().getTransformationId() != 20006 || getPlayer().isCursedWeaponEquipped())
-        {
-            return;
-        }
+	@Override
+	public void onTransform()
+	{
+		if (getPlayer().getTransformationId() != 20006 || getPlayer().isCursedWeaponEquipped())
+		{
+			return;
+		}
 
-        transformedSkills();
-    }
+		transformedSkills();
+	}
 
-    public void transformedSkills()
-    {
-        // Transform Dispel
-        getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void transformedSkills()
+	{
+		// Transform Dispel
+		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(SKILLS);
-    }
+		getPlayer().setTransformAllowedSkills(SKILLS);
+	}
 
-    @Override
-    public void onUntransform()
-    {
-        removeSkills();
-    }
+	@Override
+	public void onUntransform()
+	{
+		removeSkills();
+	}
 
-    public void removeSkills()
-    {
-        // Transform Dispel
-        getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
+	public void removeSkills()
+	{
+		// Transform Dispel
+		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
 
-        getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
-    }
+		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
+	}
 
-    public static void main(String[] args)
-    {
-        TransformationManager.getInstance().registerTransformation(new DragonMasterKarin());
-    }
+	public static void main(String[] args)
+	{
+		TransformationManager.getInstance().registerTransformation(new DragonMasterKarin());
+	}
 }

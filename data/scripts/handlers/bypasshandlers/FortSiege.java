@@ -25,20 +25,20 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class FortSiege implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"fort_register", "fort_unregister"};
+	private static final String[] COMMANDS = {"fort_register", "fort_unregister"};
 
-    @Override
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (!(target instanceof L2FortSiegeNpcInstance))
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (!(target instanceof L2FortSiegeNpcInstance))
+		{
+			return false;
+		}
 
-        if (activeChar.getClanId() > 0 &&
-                (activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) == L2Clan.CP_CS_MANAGE_SIEGE)
-        {
-            /*
+		if (activeChar.getClanId() > 0 &&
+				(activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) == L2Clan.CP_CS_MANAGE_SIEGE)
+		{
+			/*
             if (System.currentTimeMillis() < TerritoryWarManager.getInstance().getTWStartTimeInMillis()
 					&& TerritoryWarManager.getInstance().getIsRegistrationOver())
 			{
@@ -51,36 +51,36 @@ public class FortSiege implements IBypassHandler
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_SIEGE_REGISTRATION_TIME2));
 				return false;
 			}*/
-            if (command.toLowerCase().startsWith(COMMANDS[0])) // register
-            {
-                if (target.getFort().getSiege().registerAttacker(activeChar, false))
-                {
-                    SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REGISTERED_TO_S1_FORTRESS_BATTLE);
-                    sm.addString(target.getFort().getName());
-                    activeChar.sendPacket(sm);
-                    target.showChatWindow(activeChar, 7);
-                    return true;
-                }
-            }
-            else if (command.toLowerCase().startsWith(COMMANDS[1])) // unregister
-            {
-                target.getFort().getSiege().removeSiegeClan(activeChar.getClan());
-                target.showChatWindow(activeChar, 8);
-                return true;
-            }
-            return false;
-        }
-        else
-        {
-            target.showChatWindow(activeChar, 10);
-        }
+			if (command.toLowerCase().startsWith(COMMANDS[0])) // register
+			{
+				if (target.getFort().getSiege().registerAttacker(activeChar, false))
+				{
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REGISTERED_TO_S1_FORTRESS_BATTLE);
+					sm.addString(target.getFort().getName());
+					activeChar.sendPacket(sm);
+					target.showChatWindow(activeChar, 7);
+					return true;
+				}
+			}
+			else if (command.toLowerCase().startsWith(COMMANDS[1])) // unregister
+			{
+				target.getFort().getSiege().removeSiegeClan(activeChar.getClan());
+				target.showChatWindow(activeChar, 8);
+				return true;
+			}
+			return false;
+		}
+		else
+		{
+			target.showChatWindow(activeChar, 10);
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

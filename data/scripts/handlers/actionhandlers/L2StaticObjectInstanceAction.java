@@ -29,65 +29,65 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class L2StaticObjectInstanceAction implements IActionHandler
 {
-    @Override
-    public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-    {
-        if (((L2StaticObjectInstance) target).getType() < 0)
-        {
-            _log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
-                    ((L2StaticObjectInstance) target).getStaticObjectId());
-        }
+	@Override
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	{
+		if (((L2StaticObjectInstance) target).getType() < 0)
+		{
+			_log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
+					((L2StaticObjectInstance) target).getStaticObjectId());
+		}
 
-        // Check if the L2PcInstance already target the L2NpcInstance
-        if (activeChar.getTarget() != target)
-        {
-            // Set the target of the L2PcInstance activeChar
-            activeChar.setTarget(target);
-            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-        }
-        else if (interact)
-        {
-            activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
+		// Check if the L2PcInstance already target the L2NpcInstance
+		if (activeChar.getTarget() != target)
+		{
+			// Set the target of the L2PcInstance activeChar
+			activeChar.setTarget(target);
+			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
+		}
+		else if (interact)
+		{
+			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 
-            // Calculate the distance between the L2PcInstance and the L2NpcInstance
-            if (!activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
-            {
-                // Notify the L2PcInstance AI with AI_INTENTION_INTERACT
-                activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
-            }
-            else
-            {
-                if (((L2StaticObjectInstance) target).getType() == 2)
-                {
-                    String filename = "signboard.htm";
-                    String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
-                    NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
+			// Calculate the distance between the L2PcInstance and the L2NpcInstance
+			if (!activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
+			{
+				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
+			}
+			else
+			{
+				if (((L2StaticObjectInstance) target).getType() == 2)
+				{
+					String filename = "signboard.htm";
+					String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
+					NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
 
-                    if (content == null)
-                    {
-                        html.setHtml("<html><body>Signboard is missing:<br>" + filename + "</body></html>");
-                    }
-                    else
-                    {
-                        html.setHtml(content);
-                    }
+					if (content == null)
+					{
+						html.setHtml("<html><body>Signboard is missing:<br>" + filename + "</body></html>");
+					}
+					else
+					{
+						html.setHtml(content);
+					}
 
-                    activeChar.sendPacket(html);
+					activeChar.sendPacket(html);
 
-                    GMEventManager.getInstance().onNpcTalk(target, activeChar);
-                }
-                else if (((L2StaticObjectInstance) target).getType() == 0)
-                {
-                    activeChar.sendPacket(((L2StaticObjectInstance) target).getMap());
-                }
-            }
-        }
-        return true;
-    }
+					GMEventManager.getInstance().onNpcTalk(target, activeChar);
+				}
+				else if (((L2StaticObjectInstance) target).getType() == 0)
+				{
+					activeChar.sendPacket(((L2StaticObjectInstance) target).getMap());
+				}
+			}
+		}
+		return true;
+	}
 
-    @Override
-    public InstanceType getInstanceType()
-    {
-        return InstanceType.L2StaticObjectInstance;
-    }
+	@Override
+	public InstanceType getInstanceType()
+	{
+		return InstanceType.L2StaticObjectInstance;
+	}
 }
