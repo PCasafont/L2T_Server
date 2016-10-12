@@ -586,14 +586,7 @@ public class Valakas extends L2AttackableAIScript
             }
 
             // Start the zone when the cameras ends
-            ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    _bossZone.startWholeZone();
-                }
-            }, 17000);
+            ThreadPoolManager.getInstance().scheduleAi(() -> _bossZone.startWholeZone(), 17000);
 
             startQuestTimer("unlock_valakas", GrandBossManager.getInstance().getUnlockTime(_valakasId), null, null);
             startQuestTimer("end_valakas", 900000, null, null);

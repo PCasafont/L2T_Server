@@ -89,25 +89,21 @@ public final class ItemList extends L2ItemListPacket
         }
 
         // Sort here because the client doesn't give a damn about location slots
-        Arrays.sort(_items, new Comparator<L2ItemInstance>()
+        Arrays.sort(_items, (i1, i2) ->
         {
-            @Override
-            public int compare(L2ItemInstance i1, L2ItemInstance i2)
+            if (i1 == null)
             {
-                if (i1 == null)
-                {
-                    if (i2 == null)
-                    {
-                        return 0;
-                    }
-                    return -1;
-                }
                 if (i2 == null)
                 {
-                    return 1;
+                    return 0;
                 }
-                return i1.getLocationSlot() - i2.getLocationSlot();
+                return -1;
             }
+            if (i2 == null)
+            {
+                return 1;
+            }
+            return i1.getLocationSlot() - i2.getLocationSlot();
         });
     }
 

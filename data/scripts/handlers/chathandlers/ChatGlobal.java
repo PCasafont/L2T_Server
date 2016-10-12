@@ -45,15 +45,11 @@ public class ChatGlobal implements IChatHandler
 
     public ChatGlobal()
     {
-        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
+            synchronized (_messages)
             {
-                synchronized (_messages)
-                {
-                    _messages.clear();
-                }
+                _messages.clear();
             }
         }, 1000L, 24L * 3600L * 1000L);
     }

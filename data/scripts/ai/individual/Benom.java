@@ -196,141 +196,133 @@ public class Benom extends L2AttackableAIScript
     {
         int benomStatus = GrandBossManager.getInstance().getBossStatus(benomId);
 
-        if (event.equals("BenomRaidRoomSpawn"))
+        switch (event)
         {
-            if (benomIsSpawned == 0 && benomStatus == ALIVE)
-            {
-                benom = addSpawn(benomId, 12047, -49211, -3009, 0, false, 0);
-            }
-
-            benomIsSpawned = 1;
-
-            startQuestTimer("BenomBossDespawn", 93600000, npc, null);
-        }
-        else if (event.equals("BenomRaidSiegeSpawn"))
-        {
-            if (benomStatus == ALIVE)
-            {
-                if (benomIsSpawned == 0)
+            case "BenomRaidRoomSpawn":
+                if (benomIsSpawned == 0 && benomStatus == ALIVE)
                 {
-                    benom = addSpawn(benomId, 11025, -49152, -537, 0, false, 0);
-                    benomIsSpawned = 1;
-                }
-                else if (benomIsSpawned == 1)
-                {
-                    benom.teleToLocation(11025, -49152, -537);
+                    benom = addSpawn(benomId, 12047, -49211, -3009, 0, false, 0);
                 }
 
-                startQuestTimer("BenomSpawnEffect", 100, npc, null);
-            }
-        }
-        else if (event.equals("BenomSpawnEffect"))
-        {
-            npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-            npc.broadcastPacket(new SpecialCamera(npc.getObjectId(), 200, 0, 150, 0, 5000));
-            npc.broadcastPacket(new SocialAction(npc.getObjectId(), 3));
+                benomIsSpawned = 1;
 
-            startQuestTimer("BenomWalk", 5000, npc, null);
-            benomWalkRouteStep = 0;
-        }
-        else if (event.equals("Attacking"))
-        {
-            ArrayList<L2PcInstance> numPlayers = new ArrayList<>();
-            for (L2PcInstance plr : npc.getKnownList().getKnownPlayers().values())
-            {
-                numPlayers.add(plr);
-            }
-
-            if (numPlayers.size() > 0)
-            {
-                L2PcInstance target = numPlayers.get(Rnd.get(numPlayers.size()));
-                ((L2Attackable) npc).addDamageHate(target, 0, 999);
-                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-
-                startQuestTimer("Attacking", 2000, npc, player);
-            }
-            else if (numPlayers.size() == 0)
-            {
-                startQuestTimer("BenomWalkFinish", 2000, npc, null);
-            }
-        }
-        else if (event.equals("BenomWalk"))
-        {
-            if (benomWalkRouteStep == 33)
-            {
-                benomWalkRouteStep = 0;
-                startQuestTimer("BenomWalk", 100, npc, null);
-            }
-            else
-            {
-                startQuestTimer("Talk", 100, npc, null);
-                if (benomWalkRouteStep == 14)
+                startQuestTimer("BenomBossDespawn", 93600000, npc, null);
+                break;
+            case "BenomRaidSiegeSpawn":
+                if (benomStatus == ALIVE)
                 {
-                    startQuestTimer("DoorOpen", 15000, null, null);
-                    startQuestTimer("DoorClose", 23000, null, null);
-                }
-                if (benomWalkRouteStep == 32)
-                {
-                    startQuestTimer("DoorOpen", 500, null, null);
-                    startQuestTimer("DoorClose", 4000, null, null);
-                }
+                    if (benomIsSpawned == 0)
+                    {
+                        benom = addSpawn(benomId, 11025, -49152, -537, 0, false, 0);
+                        benomIsSpawned = 1;
+                    }
+                    else if (benomIsSpawned == 1)
+                    {
+                        benom.teleToLocation(11025, -49152, -537);
+                    }
 
+                    startQuestTimer("BenomSpawnEffect", 100, npc, null);
+                }
+                break;
+            case "BenomSpawnEffect":
                 npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+                npc.broadcastPacket(new SpecialCamera(npc.getObjectId(), 200, 0, 150, 0, 5000));
+                npc.broadcastPacket(new SocialAction(npc.getObjectId(), 3));
 
-                int time = walkInterval[benomWalkRouteStep];
+                startQuestTimer("BenomWalk", 5000, npc, null);
+                benomWalkRouteStep = 0;
+                break;
+            case "Attacking":
+                ArrayList<L2PcInstance> numPlayers = new ArrayList<>();
+                for (L2PcInstance plr : npc.getKnownList().getKnownPlayers().values())
+                {
+                    numPlayers.add(plr);
+                }
+
+                if (numPlayers.size() > 0)
+                {
+                    L2PcInstance target = numPlayers.get(Rnd.get(numPlayers.size()));
+                    ((L2Attackable) npc).addDamageHate(target, 0, 999);
+                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+
+                    startQuestTimer("Attacking", 2000, npc, player);
+                }
+                else if (numPlayers.size() == 0)
+                {
+                    startQuestTimer("BenomWalkFinish", 2000, npc, null);
+                }
+                break;
+            case "BenomWalk":
+                if (benomWalkRouteStep == 33)
+                {
+                    benomWalkRouteStep = 0;
+                    startQuestTimer("BenomWalk", 100, npc, null);
+                }
+                else
+                {
+                    startQuestTimer("Talk", 100, npc, null);
+                    if (benomWalkRouteStep == 14)
+                    {
+                        startQuestTimer("DoorOpen", 15000, null, null);
+                        startQuestTimer("DoorClose", 23000, null, null);
+                    }
+                    if (benomWalkRouteStep == 32)
+                    {
+                        startQuestTimer("DoorOpen", 500, null, null);
+                        startQuestTimer("DoorClose", 4000, null, null);
+                    }
+
+                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+
+                    int time = walkInterval[benomWalkRouteStep];
+                    int x = benomWalkRoutes[benomWalkRouteStep][0];
+                    int y = benomWalkRoutes[benomWalkRouteStep][1];
+                    int z = benomWalkRoutes[benomWalkRouteStep][2];
+
+                    npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
+                    benomWalkRouteStep++;
+                    startQuestTimer("BenomWalk", time, npc, null);
+                }
+                break;
+            case "BenomWalkFinish":
+                if (npc.getCastle().getSiege().getIsInProgress())
+                {
+                    cancelQuestTimer("Attacking", npc, player);
+                }
+
                 int x = benomWalkRoutes[benomWalkRouteStep][0];
                 int y = benomWalkRoutes[benomWalkRouteStep][1];
                 int z = benomWalkRoutes[benomWalkRouteStep][2];
 
-                npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
-                benomWalkRouteStep++;
-                startQuestTimer("BenomWalk", time, npc, null);
-            }
-        }
-        else if (event.equals("BenomWalkFinish"))
-        {
-            if (npc.getCastle().getSiege().getIsInProgress())
-            {
-                cancelQuestTimer("Attacking", npc, player);
-            }
+                npc.teleToLocation(x, y, z);
+                npc.setWalking();
+                benomWalkRouteStep = 0;
 
-            int x = benomWalkRoutes[benomWalkRouteStep][0];
-            int y = benomWalkRoutes[benomWalkRouteStep][1];
-            int z = benomWalkRoutes[benomWalkRouteStep][2];
-
-            npc.teleToLocation(x, y, z);
-            npc.setWalking();
-            benomWalkRouteStep = 0;
-
-            startQuestTimer("BenomWalk", 2200, npc, null);
-        }
-        else if (event.equals("Talk"))
-        {
-            if (Rnd.get(100) < 40)
-            {
-                npc.broadcastPacket(
-                        new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), benomSpeak[Rnd.get(benomSpeak.length)]));
-            }
-        }
-        else if (event.equals("BenomBossDespawn"))
-        {
-            GrandBossManager.getInstance().setBossStatus(benomId, ALIVE);
-            benomIsSpawned = 0;
-            npc.deleteMe();
-        }
-        else if (event.equals("BenomBossInit"))
-        {
-            GrandBossManager.getInstance().setBossStatus(benomId, ALIVE);
-            benomIsSpawned = 0;
-            data();
-        }
-        else if (event.equals("DoorOpen"))
-        {
-            DoorTable.getInstance().getDoor(20160005).openMe();
-        }
-        else if (event.equals("DoorClose"))
-        {
-            DoorTable.getInstance().getDoor(20160005).closeMe();
+                startQuestTimer("BenomWalk", 2200, npc, null);
+                break;
+            case "Talk":
+                if (Rnd.get(100) < 40)
+                {
+                    npc.broadcastPacket(
+                            new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), benomSpeak[Rnd.get(benomSpeak.length)]));
+                }
+                break;
+            case "BenomBossDespawn":
+                GrandBossManager.getInstance().setBossStatus(benomId, ALIVE);
+                benomIsSpawned = 0;
+                npc.deleteMe();
+                break;
+            case "BenomBossInit":
+                GrandBossManager.getInstance().setBossStatus(benomId, ALIVE);
+                benomIsSpawned = 0;
+                data();
+                break;
+            case "DoorOpen":
+                DoorTable.getInstance().getDoor(20160005).openMe();
+                break;
+            case "DoorClose":
+                DoorTable.getInstance().getDoor(20160005).closeMe();
+                break;
         }
 
         return super.onAdvEvent(event, npc, player);

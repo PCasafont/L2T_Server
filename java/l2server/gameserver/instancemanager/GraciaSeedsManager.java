@@ -101,21 +101,17 @@ public class GraciaSeedsManager
                 }
                 else
                 {
-                    ThreadPoolManager.getInstance().scheduleEffect(new Runnable()
+                    ThreadPoolManager.getInstance().scheduleEffect(() ->
                     {
-                        @Override
-                        public void run()
+                        setSoDState(1, true);
+                        Quest esQuest = QuestManager.getInstance().getQuest(qn);
+                        if (esQuest == null)
                         {
-                            setSoDState(1, true);
-                            Quest esQuest = QuestManager.getInstance().getQuest(qn);
-                            if (esQuest == null)
-                            {
-                                Log.warning("GraciaSeedManager: missing EnergySeeds Quest!");
-                            }
-                            else
-                            {
-                                esQuest.notifyEvent("StopSoDAi", null, null);
-                            }
+                            Log.warning("GraciaSeedManager: missing EnergySeeds Quest!");
+                        }
+                        else
+                        {
+                            esQuest.notifyEvent("StopSoDAi", null, null);
                         }
                     }, Config.SOD_STAGE_2_LENGTH - timePast);
                 }

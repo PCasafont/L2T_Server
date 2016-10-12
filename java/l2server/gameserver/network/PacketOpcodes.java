@@ -285,21 +285,20 @@ public class PacketOpcodes
                         }
 
                         String type = "int";
-                        if (partType.equals("c"))
+                        switch (partType)
                         {
-                            type = "byte";
-                        }
-                        else if (partType.equals("f"))
-                        {
-                            type = "float";
-                        }
-                        else if (partType.equals("Q"))
-                        {
-                            type = "long";
-                        }
-                        else if (partType.equals("S"))
-                        {
-                            type = "String";
+                            case "c":
+                                type = "byte";
+                                break;
+                            case "f":
+                                type = "float";
+                                break;
+                            case "Q":
+                                type = "long";
+                                break;
+                            case "S":
+                                type = "String";
+                                break;
                         }
 
                         content += "\t@SuppressWarnings(\"unused\")\n" + "\tprivate " + type + " _" + partName + ";\n";
@@ -361,21 +360,20 @@ public class PacketOpcodes
                         }
 
                         String type = "int";
-                        if (partType.equals("c"))
+                        switch (partType)
                         {
-                            type = "byte";
-                        }
-                        else if (partType.equals("f"))
-                        {
-                            type = "float";
-                        }
-                        else if (partType.equals("Q"))
-                        {
-                            type = "long";
-                        }
-                        else if (partType.equals("S"))
-                        {
-                            type = "String";
+                            case "c":
+                                type = "byte";
+                                break;
+                            case "f":
+                                type = "float";
+                                break;
+                            case "Q":
+                                type = "long";
+                                break;
+                            case "S":
+                                type = "String";
+                                break;
                         }
 
                         content += "\tprivate " + type + " _" + partName + ";\n";
@@ -395,21 +393,20 @@ public class PacketOpcodes
                             }
 
                             String type = "int";
-                            if (partType.equals("c"))
+                            switch (partType)
                             {
-                                type = "byte";
-                            }
-                            else if (partType.equals("f"))
-                            {
-                                type = "float";
-                            }
-                            else if (partType.equals("Q"))
-                            {
-                                type = "long";
-                            }
-                            else if (partType.equals("S"))
-                            {
-                                type = "String";
+                                case "c":
+                                    type = "byte";
+                                    break;
+                                case "f":
+                                    type = "float";
+                                    break;
+                                case "Q":
+                                    type = "long";
+                                    break;
+                                case "S":
+                                    type = "String";
+                                    break;
                             }
 
                             content += type + " " + partName + ", ";

@@ -757,42 +757,42 @@ public class AdminEffects implements IAdminCommandHandler
     {
         L2GameServerPacket packet = null;
 
-        if (type.equals("signsky"))
+        switch (type)
         {
-            if (state.equals("dawn"))
-            {
-                packet = new SSQInfo(2);
-            }
-            else if (state.equals("dusk"))
-            {
-                packet = new SSQInfo(1);
-            }
-        }
-        else if (type.equals("sky"))
-        {
-            if (state.equals("night"))
-            {
-                packet = new SunSet();
-            }
-            else if (state.equals("day"))
-            {
-                packet = new SunRise();
-            }
-            else if (state.equals("red"))
-            {
-                if (duration != 0)
+            case "signsky":
+                if (state.equals("dawn"))
                 {
-                    packet = new ExRedSky(duration);
+                    packet = new SSQInfo(2);
                 }
-                else
+                else if (state.equals("dusk"))
                 {
-                    packet = new ExRedSky(10);
+                    packet = new SSQInfo(1);
                 }
-            }
-        }
-        else
-        {
-            activeChar.sendMessage("Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red>");
+                break;
+            case "sky":
+                switch (state)
+                {
+                    case "night":
+                        packet = new SunSet();
+                        break;
+                    case "day":
+                        packet = new SunRise();
+                        break;
+                    case "red":
+                        if (duration != 0)
+                        {
+                            packet = new ExRedSky(duration);
+                        }
+                        else
+                        {
+                            packet = new ExRedSky(10);
+                        }
+                        break;
+                }
+                break;
+            default:
+                activeChar.sendMessage("Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red>");
+                break;
         }
         if (packet != null)
         {

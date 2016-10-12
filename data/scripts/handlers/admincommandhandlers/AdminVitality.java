@@ -62,63 +62,61 @@ public class AdminVitality implements IAdminCommandHandler
             L2PcInstance target;
             target = (L2PcInstance) activeChar.getTarget();
 
-            if (cmd.equals("admin_set_vitality"))
+            switch (cmd)
             {
-                try
-                {
-                    vitality = Integer.parseInt(st.nextToken());
-                }
-                catch (Exception e)
-                {
-                    activeChar.sendMessage("Incorrect vitality");
-                }
-
-                target.setVitalityPoints(vitality, true);
-                target.sendMessage("Admin set your Vitality points to " + vitality);
-            }
-            else if (cmd.equals("admin_set_vitality_level"))
-            {
-                try
-                {
-                    level = Integer.parseInt(st.nextToken());
-                }
-                catch (Exception e)
-                {
-                    activeChar.sendMessage("Incorrect vitality level (0-4)");
-                }
-
-                if (level >= 0 && level <= 4)
-                {
-                    if (level == 0)
+                case "admin_set_vitality":
+                    try
                     {
-                        vitality = PcStat.MIN_VITALITY_POINTS;
+                        vitality = Integer.parseInt(st.nextToken());
+                    }
+                    catch (Exception e)
+                    {
+                        activeChar.sendMessage("Incorrect vitality");
+                    }
+
+                    target.setVitalityPoints(vitality, true);
+                    target.sendMessage("Admin set your Vitality points to " + vitality);
+                    break;
+                case "admin_set_vitality_level":
+                    try
+                    {
+                        level = Integer.parseInt(st.nextToken());
+                    }
+                    catch (Exception e)
+                    {
+                        activeChar.sendMessage("Incorrect vitality level (0-4)");
+                    }
+
+                    if (level >= 0 && level <= 4)
+                    {
+                        if (level == 0)
+                        {
+                            vitality = PcStat.MIN_VITALITY_POINTS;
+                        }
+                        else
+                        {
+                            vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
+                        }
+                        target.setVitalityPoints(vitality, true, false);
+                        target.sendMessage("Admin set your Vitality level to " + level);
                     }
                     else
                     {
-                        vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
+                        activeChar.sendMessage("Incorrect vitality level (0-4)");
                     }
-                    target.setVitalityPoints(vitality, true, false);
-                    target.sendMessage("Admin set your Vitality level to " + level);
-                }
-                else
-                {
-                    activeChar.sendMessage("Incorrect vitality level (0-4)");
-                }
-            }
-            else if (cmd.equals("admin_full_vitality"))
-            {
-                target.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, true, true);
-                target.sendMessage("Admin completly recharged your Vitality");
-            }
-            else if (cmd.equals("admin_empty_vitality"))
-            {
-                target.setVitalityPoints(PcStat.MIN_VITALITY_POINTS, true, false);
-                target.sendMessage("Admin completly emptied your Vitality");
-            }
-            else if (cmd.equals("admin_get_vitality"))
-            {
-                vitality = target.getVitalityPoints();
-                activeChar.sendMessage("Player vitality points: " + vitality);
+                    break;
+                case "admin_full_vitality":
+                    target.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, true, true);
+                    target.sendMessage("Admin completly recharged your Vitality");
+                    break;
+                case "admin_empty_vitality":
+                    target.setVitalityPoints(PcStat.MIN_VITALITY_POINTS, true, false);
+                    target.sendMessage("Admin completly emptied your Vitality");
+                    break;
+                case "admin_get_vitality":
+                    vitality = target.getVitalityPoints();
+                    activeChar.sendMessage("Player vitality points: " + vitality);
+                    break;
             }
             return true;
         }

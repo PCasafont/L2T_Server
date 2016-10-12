@@ -299,17 +299,13 @@ public class ConsoleTab extends JPanel
         _textPane.setCharacterAttributes(aset, false);
         _textPane.replaceSelection(msg);
 
-        EventQueue.invokeLater(new Runnable()
+        EventQueue.invokeLater(() ->
         {
-            @Override
-            public void run()
+            Rectangle visibleRect = _textPane.getVisibleRect();
+            if (visibleRect.y + 100 > _textPane.getHeight() - visibleRect.height)
             {
-                Rectangle visibleRect = _textPane.getVisibleRect();
-                if (visibleRect.y + 100 > _textPane.getHeight() - visibleRect.height)
-                {
-                    visibleRect.y = _textPane.getHeight() - visibleRect.height;
-                    _textPane.scrollRectToVisible(visibleRect);
-                }
+                visibleRect.y = _textPane.getHeight() - visibleRect.height;
+                _textPane.scrollRectToVisible(visibleRect);
             }
         });
     }

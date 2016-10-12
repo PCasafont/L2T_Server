@@ -69,14 +69,7 @@ public class JIPTextField extends JPanel implements FocusListener
 
     private void initIPTextField(String textIp)
     {
-        final ActionListener nextfocusaction = new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent evt)
-            {
-                ((Component) evt.getSource()).transferFocus();
-            }
-        };
+        final ActionListener nextfocusaction = evt -> ((Component) evt.getSource()).transferFocus();
 
         setLayout(new GridBagLayout());
         _textFields = new JTextField[4];
@@ -181,10 +174,7 @@ public class JIPTextField extends JPanel implements FocusListener
             }
             return;
         }
-        catch (UnknownHostException ignored)
-        {
-        }
-        catch (NullPointerException ignored)
+        catch (UnknownHostException | NullPointerException ignored)
         {
         }
         for (int i = 0; i < 4; i++)

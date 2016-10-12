@@ -1005,29 +1005,25 @@ public class AdminEditChar implements IAdminCommandHandler
 
             ClientProcess[] clientInfo =
                     hardwareInfo.getProcesses().toArray(new ClientProcess[hardwareInfo.getProcesses().size()]);
-            Arrays.sort(clientInfo, new Comparator<ClientProcess>()
+            Arrays.sort(clientInfo, (p1, p2) ->
             {
-                @Override
-                public final int compare(final ClientProcess p1, final ClientProcess p2)
+                final String o1 = p1._productName;
+                final String o2 = p2._productName;
+
+                if (o1 == o2)
                 {
-                    final String o1 = p1._productName;
-                    final String o2 = p2._productName;
-
-                    if (o1 == o2)
-                    {
-                        return 0;
-                    }
-                    if (o1 == null)
-                    {
-                        return 1;
-                    }
-                    if (o2 == null)
-                    {
-                        return -1;
-                    }
-
-                    return o1.compareTo(o2);
+                    return 0;
                 }
+                if (o1 == null)
+                {
+                    return 1;
+                }
+                if (o2 == null)
+                {
+                    return -1;
+                }
+
+                return o1.compareTo(o2);
             });
 
             String lastProcessName = "";
@@ -1554,10 +1550,7 @@ public class AdminEditChar implements IAdminCommandHandler
             else
             {
                 ip = client.getConnection().getInetAddress().getHostAddress();
-                if (ipMap.get(ip) == null)
-                {
-                    ipMap.put(ip, new ArrayList<>());
-                }
+                ipMap.putIfAbsent(ip, new ArrayList<>());
                 ipMap.get(ip).add(player);
 
                 if (ipMap.get(ip).size() >= multibox)
@@ -1576,14 +1569,7 @@ public class AdminEditChar implements IAdminCommandHandler
         }
 
         List<String> keys = new ArrayList<>(dualboxIPs.keySet());
-        Collections.sort(keys, new Comparator<String>()
-        {
-            @Override
-            public int compare(String left, String right)
-            {
-                return dualboxIPs.get(left).compareTo(dualboxIPs.get(right));
-            }
-        });
+        Collections.sort(keys, (left, right) -> dualboxIPs.get(left).compareTo(dualboxIPs.get(right)));
         Collections.reverse(keys);
 
         final StringBuilder results = new StringBuilder();
@@ -1622,10 +1608,7 @@ public class AdminEditChar implements IAdminCommandHandler
             else
             {
                 IpPack pack = new IpPack(client.getConnection().getInetAddress().getHostAddress(), client.getTrace());
-                if (ipMap.get(pack) == null)
-                {
-                    ipMap.put(pack, new ArrayList<>());
-                }
+                ipMap.putIfAbsent(pack, new ArrayList<>());
                 ipMap.get(pack).add(player);
 
                 if (ipMap.get(pack).size() >= multibox)
@@ -1644,14 +1627,7 @@ public class AdminEditChar implements IAdminCommandHandler
         }
 
         List<IpPack> keys = new ArrayList<>(dualboxIPs.keySet());
-        Collections.sort(keys, new Comparator<IpPack>()
-        {
-            @Override
-            public int compare(IpPack left, IpPack right)
-            {
-                return dualboxIPs.get(left).compareTo(dualboxIPs.get(right));
-            }
-        });
+        Collections.sort(keys, (left, right) -> dualboxIPs.get(left).compareTo(dualboxIPs.get(right)));
         Collections.reverse(keys);
 
         final StringBuilder results = new StringBuilder();

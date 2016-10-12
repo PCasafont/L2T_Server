@@ -1599,19 +1599,15 @@ public class CustomCommunityBoard
     private final Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending)
     {
         final List<Entry<Object, Long>> list = new LinkedList<>(unsortMap.entrySet());
-        Collections.sort(list, new Comparator<Entry<Object, Long>>()
+        Collections.sort(list, (e1, e2) ->
         {
-            @Override
-            public int compare(Entry<Object, Long> e1, Entry<Object, Long> e2)
+            if (ascending)
             {
-                if (ascending)
-                {
-                    return e1.getValue().compareTo(e2.getValue());
-                }
-                else
-                {
-                    return e2.getValue().compareTo(e1.getValue());
-                }
+                return e1.getValue().compareTo(e2.getValue());
+            }
+            else
+            {
+                return e2.getValue().compareTo(e1.getValue());
             }
         });
 

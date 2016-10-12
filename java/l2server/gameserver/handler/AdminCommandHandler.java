@@ -55,7 +55,7 @@ public class AdminCommandHandler
     public IAdminCommandHandler getAdminCommandHandler(String adminCommand)
     {
         String command = adminCommand;
-        if (adminCommand.indexOf(" ") != -1)
+        if (adminCommand.contains(" "))
         {
             command = adminCommand.substring(0, adminCommand.indexOf(" "));
         }

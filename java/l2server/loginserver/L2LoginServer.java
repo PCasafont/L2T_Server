@@ -112,12 +112,7 @@ public class L2LoginServer
         {
             GameServerTable.load();
         }
-        catch (GeneralSecurityException e)
-        {
-            Log.log(Level.SEVERE, "FATAL: Failed to load GameServerTable. Reason: " + e.getMessage(), e);
-            System.exit(1);
-        }
-        catch (SQLException e)
+        catch (GeneralSecurityException | SQLException e)
         {
             Log.log(Level.SEVERE, "FATAL: Failed to load GameServerTable. Reason: " + e.getMessage(), e);
             System.exit(1);

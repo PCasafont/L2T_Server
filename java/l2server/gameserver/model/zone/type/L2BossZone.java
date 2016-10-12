@@ -105,22 +105,22 @@ public class L2BossZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("InvadeTime"))
+        switch (name)
         {
-            _timeInvade = Integer.parseInt(value);
-        }
-        else if (name.equals("EnabledByDefault"))
-        {
-            _enabled = Boolean.parseBoolean(value);
-        }
-        else if (name.equals("oustLoc"))
-        {
-            _exitLocation = new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
-                    Integer.parseInt(value.split(",")[2]));
-        }
-        else
-        {
-            super.setParameter(name, value);
+            case "InvadeTime":
+                _timeInvade = Integer.parseInt(value);
+                break;
+            case "EnabledByDefault":
+                _enabled = Boolean.parseBoolean(value);
+                break;
+            case "oustLoc":
+                _exitLocation =
+                        new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
+                                Integer.parseInt(value.split(",")[2]));
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 
@@ -444,14 +444,7 @@ public class L2BossZone extends L2ZoneType
                 player.sendPacket(
                         new ExShowScreenMessage("You will be removed from the zone in 60 seconds because of dual box!",
                                 5000));
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        kickPlayerFromEpicZone(player);
-                    }
-                }, 60000);
+                ThreadPoolManager.getInstance().scheduleGeneral(() -> kickPlayerFromEpicZone(player), 60000);
             }
         }
     }

@@ -114,11 +114,7 @@ public class AdminTest implements IAdminCommandHandler
                     adminTestSkill(activeChar, id, false);
                 }
             }
-            catch (NumberFormatException e)
-            {
-                activeChar.sendMessage("Command format is //skill_test <ID>");
-            }
-            catch (NoSuchElementException nsee)
+            catch (NumberFormatException | NoSuchElementException e)
             {
                 activeChar.sendMessage("Command format is //skill_test <ID>");
             }
@@ -1162,31 +1158,27 @@ public class AdminTest implements IAdminCommandHandler
                 gameClient.sendPacket(cl);
                 gameClient.setCharSelection(cl.getCharInfo());
 
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                ThreadPoolManager.getInstance().scheduleGeneral(() ->
                 {
-                    @Override
-                    public void run()
+                    L2PcInstance cha = L2PcInstance.load(charId);
+
+                    if (cha == null)
                     {
-                        L2PcInstance cha = L2PcInstance.load(charId);
-
-                        if (cha == null)
-                        {
-                            gameClient.sendPacket(ActionFailed.STATIC_PACKET);
-                            return;
-                        }
-
-                        cha.setClient(gameClient);
-                        gameClient.setActiveChar(cha);
-
-                        //BotsManager.getInstance().logPlayer(cha, true);
-
-                        gameClient.setState(GameClientState.IN_GAME);
-
-                        CharSelected cs = new CharSelected(cha, gameClient.getSessionId().playOkID1);
-                        gameClient.sendPacket(cs);
-
-                        cha.setOnlineStatus(true, false);
+                        gameClient.sendPacket(ActionFailed.STATIC_PACKET);
+                        return;
                     }
+
+                    cha.setClient(gameClient);
+                    gameClient.setActiveChar(cha);
+
+                    //BotsManager.getInstance().logPlayer(cha, true);
+
+                    gameClient.setState(GameClientState.IN_GAME);
+
+                    CharSelected cs = new CharSelected(cha, gameClient.getSessionId().playOkID1);
+                    gameClient.sendPacket(cs);
+
+                    cha.setOnlineStatus(true, false);
                 }, 1000);
             }
             else if (secondaryCommand.equals("Testos"))

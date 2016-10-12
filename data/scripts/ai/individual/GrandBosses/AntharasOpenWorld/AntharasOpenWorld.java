@@ -302,7 +302,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
                     minionsToSpawn.add(_behemothDragon);
                 }
 
-                for (int i = 0; i < minionsToSpawn.size(); i++)
+                for (Integer aMinionsToSpawn : minionsToSpawn)
                 {
                     int tried = 0;
                     boolean notFound = true;
@@ -335,7 +335,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
                         }
                     }
 
-                    L2Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, 120 * 2 * 60000);
+                    L2Npc minion = addSpawn(aMinionsToSpawn, x, y, -7704, 0, true, 120 * 2 * 60000);
                     minion.setIsRunning(true);
                     _allMonsters.add(minion);
                 }

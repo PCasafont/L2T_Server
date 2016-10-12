@@ -76,9 +76,9 @@ public class ZoneManager
         L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
         for (L2WorldRegion[] worldRegion : worldRegions)
         {
-            for (int y = 0; y < worldRegion.length; y++)
+            for (L2WorldRegion aWorldRegion : worldRegion)
             {
-                worldRegion[y].getZones().clear();
+                aWorldRegion.getZones().clear();
                 count++;
             }
         }

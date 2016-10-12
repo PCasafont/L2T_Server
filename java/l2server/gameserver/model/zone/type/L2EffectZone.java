@@ -64,68 +64,62 @@ public class L2EffectZone extends L2ZoneType
     @Override
     public void setParameter(String name, String value)
     {
-        if (name.equals("chance"))
+        switch (name)
         {
-            _chance = Integer.parseInt(value);
-        }
-        else if (name.equals("initialDelay"))
-        {
-            _initialDelay = Integer.parseInt(value);
-        }
-        else if (name.equals("default_enabled"))
-        {
-            _enabled = Boolean.parseBoolean(value);
-        }
-        else if (name.equals("reuse"))
-        {
-            _reuse = Integer.parseInt(value);
-        }
-        else if (name.equals("bypassSkillConditions"))
-        {
-            _bypassConditions = Boolean.parseBoolean(value);
-        }
-        else if (name.equals("maxDynamicSkillCount"))
-        {
-            _skills = new HashMap<>(Integer.parseInt(value));
-        }
-        else if (name.equals("skillIdLvl"))
-        {
-            String[] propertySplit = value.split(";");
-            _skills = new HashMap<>(propertySplit.length);
-            for (String skill : propertySplit)
-            {
-                String[] skillSplit = skill.split("-");
-                if (skillSplit.length != 2)
+            case "chance":
+                _chance = Integer.parseInt(value);
+                break;
+            case "initialDelay":
+                _initialDelay = Integer.parseInt(value);
+                break;
+            case "default_enabled":
+                _enabled = Boolean.parseBoolean(value);
+                break;
+            case "reuse":
+                _reuse = Integer.parseInt(value);
+                break;
+            case "bypassSkillConditions":
+                _bypassConditions = Boolean.parseBoolean(value);
+                break;
+            case "maxDynamicSkillCount":
+                _skills = new HashMap<>(Integer.parseInt(value));
+                break;
+            case "skillIdLvl":
+                String[] propertySplit = value.split(";");
+                _skills = new HashMap<>(propertySplit.length);
+                for (String skill : propertySplit)
                 {
-                    Log.warning(StringUtil
-                            .concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skill,
-                                    "\""));
-                }
-                else
-                {
-                    try
+                    String[] skillSplit = skill.split("-");
+                    if (skillSplit.length != 2)
                     {
-                        _skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+                        Log.warning(StringUtil
+                                .concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"",
+                                        skill, "\""));
                     }
-                    catch (NumberFormatException nfe)
+                    else
                     {
-                        if (!skill.isEmpty())
+                        try
                         {
-                            Log.warning(StringUtil
-                                    .concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"",
-                                            skillSplit[0], "\"", skillSplit[1]));
+                            _skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+                        }
+                        catch (NumberFormatException nfe)
+                        {
+                            if (!skill.isEmpty())
+                            {
+                                Log.warning(StringUtil.concat(getClass().getSimpleName() +
+                                                ": invalid config property -> skillsIdLvl \"", skillSplit[0], "\"",
+                                        skillSplit[1]));
+                            }
                         }
                     }
                 }
-            }
-        }
-        else if (name.equals("showDangerIcon"))
-        {
-            _isShowDangerIcon = Boolean.parseBoolean(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
+                break;
+            case "showDangerIcon":
+                _isShowDangerIcon = Boolean.parseBoolean(value);
+                break;
+            default:
+                super.setParameter(name, value);
+                break;
         }
     }
 
