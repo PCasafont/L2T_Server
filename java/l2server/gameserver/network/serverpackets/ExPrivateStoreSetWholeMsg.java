@@ -22,31 +22,31 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 {
-    private final int _objectId;
-    private final String _msg;
+	private final int _objectId;
+	private final String _msg;
 
-    public ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
-    {
-        _objectId = player.getObjectId();
-        _msg = msg;
-    }
+	public ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
+	{
+		_objectId = player.getObjectId();
+		_msg = msg;
+	}
 
-    public ExPrivateStoreSetWholeMsg(L2PcInstance player)
-    {
-        this(player, player.getSellList().getTitle());
-    }
+	public ExPrivateStoreSetWholeMsg(L2PcInstance player)
+	{
+		this(player, player.getSellList().getTitle());
+	}
 
     /*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_objectId);
-        writeS(_msg);
-    }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_objectId);
+		writeS(_msg);
+	}
 }

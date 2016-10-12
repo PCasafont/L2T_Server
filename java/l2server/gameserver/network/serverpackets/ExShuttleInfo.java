@@ -23,37 +23,37 @@ import l2server.gameserver.model.actor.instance.L2ShuttleInstance.ShuttleStop;
  */
 public class ExShuttleInfo extends L2GameServerPacket
 {
-    private final L2ShuttleInstance _shuttle;
+	private final L2ShuttleInstance _shuttle;
 
-    public ExShuttleInfo(L2ShuttleInstance shuttle)
-    {
-        _shuttle = shuttle;
-    }
+	public ExShuttleInfo(L2ShuttleInstance shuttle)
+	{
+		_shuttle = shuttle;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_shuttle.getObjectId());
-        writeD(_shuttle.getX());
-        writeD(_shuttle.getY());
-        writeD(_shuttle.getZ());
-        writeD(_shuttle.getHeading());
-        writeD(_shuttle.getId());
-        writeD(_shuttle.getStops().size());
-        for (ShuttleStop door : _shuttle.getStops())
-        {
-            writeD(door.getId());
-            writeD(0x00);
-            writeD(0x00);
-            writeD(_shuttle.getId() == 3 ? -115 : -50);//Related with shuttle doors
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(door.getId() == 0 ? 200 : -200);
-            writeD(45);
-            writeD(door.isDoorOpen() ? 0x01 : 0x00);
-            writeD(door.hasDoorChanged() ? 0x01 : 0x00);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_shuttle.getObjectId());
+		writeD(_shuttle.getX());
+		writeD(_shuttle.getY());
+		writeD(_shuttle.getZ());
+		writeD(_shuttle.getHeading());
+		writeD(_shuttle.getId());
+		writeD(_shuttle.getStops().size());
+		for (ShuttleStop door : _shuttle.getStops())
+		{
+			writeD(door.getId());
+			writeD(0x00);
+			writeD(0x00);
+			writeD(_shuttle.getId() == 3 ? -115 : -50);//Related with shuttle doors
+			writeD(0x00);
+			writeD(0x00);
+			writeD(0x00);
+			writeD(0x00);
+			writeD(door.getId() == 0 ? 200 : -200);
+			writeD(45);
+			writeD(door.isDoorOpen() ? 0x01 : 0x00);
+			writeD(door.hasDoorChanged() ? 0x01 : 0x00);
+		}
+	}
 }

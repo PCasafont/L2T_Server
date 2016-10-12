@@ -31,101 +31,101 @@ import l2server.log.Log;
 public final class RequestGiveItemToPet extends L2GameClientPacket
 {
 
-    private int _objectId;
+	private int _objectId;
 
-    private long _amount;
+	private long _amount;
 
-    @Override
-    protected void readImpl()
-    {
-        _objectId = readD();
-        _amount = readQ();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_objectId = readD();
+		_amount = readQ();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("giveitemtopet"))
-        {
-            player.sendMessage("You give items to pet too fast.");
-            return;
-        }
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("giveitemtopet"))
+		{
+			player.sendMessage("You give items to pet too fast.");
+			return;
+		}
 
-        if (player.getActiveEnchantItem() != null)
-        {
-            return;
-        }
-        // Alt game - Karma punishment
-        if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
-        {
-            return;
-        }
+		if (player.getActiveEnchantItem() != null)
+		{
+			return;
+		}
+		// Alt game - Karma punishment
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
+		{
+			return;
+		}
 
-        if (player.getPrivateStoreType() != 0)
-        {
-            player.sendMessage("Cannot exchange items while trading");
-            return;
-        }
+		if (player.getPrivateStoreType() != 0)
+		{
+			player.sendMessage("Cannot exchange items while trading");
+			return;
+		}
 
-        // Exploit Fix for Hero weapons Uses pet Inventory to buy New One.
-        // [L2JOneo]
-        L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
+		// Exploit Fix for Hero weapons Uses pet Inventory to buy New One.
+		// [L2JOneo]
+		L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
 
-        if (item == null)
-        {
-            return;
-        }
+		if (item == null)
+		{
+			return;
+		}
 
-        if (item.isHeroItem())
-        {
-            player.sendMessage("Duo To Hero Weapons Protection u Canot Use Pet's Inventory");
-            return;
-        }
+		if (item.isHeroItem())
+		{
+			player.sendMessage("Duo To Hero Weapons Protection u Canot Use Pet's Inventory");
+			return;
+		}
 
-        if (item.isAugmented())
-        {
-            return;
-        }
+		if (item.isAugmented())
+		{
+			return;
+		}
 
-        if (!item.isDropable() || !item.isDestroyable() || !item.isTradeable())
-        {
-            sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_NOT_FOR_PETS));
-            return;
-        }
+		if (!item.isDropable() || !item.isDestroyable() || !item.isTradeable())
+		{
+			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_NOT_FOR_PETS));
+			return;
+		}
 
-        L2PetInstance pet = player.getPet();
-        if (pet.isDead())
-        {
-            sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_GIVE_ITEMS_TO_DEAD_PET));
-            return;
-        }
+		L2PetInstance pet = player.getPet();
+		if (pet.isDead())
+		{
+			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_GIVE_ITEMS_TO_DEAD_PET));
+			return;
+		}
 
-        if (_amount < 0)
-        {
-            return;
-        }
-        if (!pet.getInventory().validateCapacity(item))
-        {
-            pet.getOwner()
-                    .sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
-            return;
-        }
-        if (!pet.getInventory().validateWeight(item, _amount))
-        {
-            pet.getOwner().sendPacket(
-                    SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
-            return;
-        }
+		if (_amount < 0)
+		{
+			return;
+		}
+		if (!pet.getInventory().validateCapacity(item))
+		{
+			pet.getOwner()
+					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
+			return;
+		}
+		if (!pet.getInventory().validateWeight(item, _amount))
+		{
+			pet.getOwner().sendPacket(
+					SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
+			return;
+		}
 
-        if (player.transferItem("Transfer", _objectId, _amount, pet.getInventory(), pet) == null)
-        {
-            Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
-        }
-    }
+		if (player.transferItem("Transfer", _objectId, _amount, pet.getInventory(), pet) == null)
+		{
+			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
+		}
+	}
 }

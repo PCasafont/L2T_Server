@@ -25,44 +25,44 @@ import java.util.List;
  */
 public class PartyMatchWaitingList
 {
-    private List<L2PcInstance> _members;
+	private List<L2PcInstance> _members;
 
-    private PartyMatchWaitingList()
-    {
-        _members = new ArrayList<>();
-    }
+	private PartyMatchWaitingList()
+	{
+		_members = new ArrayList<>();
+	}
 
-    public void addPlayer(L2PcInstance player)
-    {
-        // player.setPartyWait(1);
-        if (!_members.contains(player))
-        {
-            _members.add(player);
-        }
-    }
+	public void addPlayer(L2PcInstance player)
+	{
+		// player.setPartyWait(1);
+		if (!_members.contains(player))
+		{
+			_members.add(player);
+		}
+	}
 
-    public void removePlayer(L2PcInstance player)
-    {
-        //player.setPartyWait(0);
-        if (_members.contains(player))
-        {
-            _members.remove(player);
-        }
-    }
+	public void removePlayer(L2PcInstance player)
+	{
+		//player.setPartyWait(0);
+		if (_members.contains(player))
+		{
+			_members.remove(player);
+		}
+	}
 
-    public List<L2PcInstance> getPlayers()
-    {
-        return _members;
-    }
+	public List<L2PcInstance> getPlayers()
+	{
+		return _members;
+	}
 
-    public static PartyMatchWaitingList getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static PartyMatchWaitingList getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final PartyMatchWaitingList _instance = new PartyMatchWaitingList();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final PartyMatchWaitingList _instance = new PartyMatchWaitingList();
+	}
 }

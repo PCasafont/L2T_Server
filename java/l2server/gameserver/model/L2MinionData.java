@@ -28,118 +28,117 @@ import l2server.util.Rnd;
 public class L2MinionData
 {
 
-    /**
-     * The Identifier of the L2Minion
-     */
-    private int _minionId;
+	/**
+	 * The Identifier of the L2Minion
+	 */
+	private int _minionId;
 
-    /**
-     * The number of this Minion Type to spawn
-     */
-    private int _minionAmount;
-    private int _minionAmountMin;
-    private int _minionAmountMax;
-    private int _respawnTime;
-    private int _maxRespawn;
+	/**
+	 * The number of this Minion Type to spawn
+	 */
+	private int _minionAmount;
+	private int _minionAmountMin;
+	private int _minionAmountMax;
+	private int _respawnTime;
+	private int _maxRespawn;
 
-    /**
-     * Set the Identifier of the Minion to spawn.<BR><BR>
-     *
-     */
-    public void setMinionId(int id)
-    {
-        _minionId = id;
-    }
+	/**
+	 * Set the Identifier of the Minion to spawn.<BR><BR>
+	 */
+	public void setMinionId(int id)
+	{
+		_minionId = id;
+	}
 
-    /**
-     * Return the Identifier of the Minion to spawn.<BR><BR>
-     */
-    public int getMinionId()
-    {
-        return _minionId;
-    }
+	/**
+	 * Return the Identifier of the Minion to spawn.<BR><BR>
+	 */
+	public int getMinionId()
+	{
+		return _minionId;
+	}
 
-    /**
-     * Set the minimum of minions to amount.<BR><BR>
-     *
-     * @param amountMin The minimum quantity of this Minion type to spawn
-     */
-    public void setAmountMin(int amountMin)
-    {
-        _minionAmountMin = amountMin;
-    }
+	/**
+	 * Set the minimum of minions to amount.<BR><BR>
+	 *
+	 * @param amountMin The minimum quantity of this Minion type to spawn
+	 */
+	public void setAmountMin(int amountMin)
+	{
+		_minionAmountMin = amountMin;
+	}
 
-    /**
-     * Set the maximum of minions to amount.<BR><BR>
-     *
-     * @param amountMax The maximum quantity of this Minion type to spawn
-     */
-    public void setAmountMax(int amountMax)
-    {
-        _minionAmountMax = amountMax;
-    }
+	/**
+	 * Set the maximum of minions to amount.<BR><BR>
+	 *
+	 * @param amountMax The maximum quantity of this Minion type to spawn
+	 */
+	public void setAmountMax(int amountMax)
+	{
+		_minionAmountMax = amountMax;
+	}
 
-    /**
-     * Set the amount of this Minion type to spawn.<BR><BR>
-     *
-     * @param amount The quantity of this Minion type to spawn
-     */
-    public void setAmount(int amount)
-    {
-        _minionAmount = amount;
-    }
+	/**
+	 * Set the amount of this Minion type to spawn.<BR><BR>
+	 *
+	 * @param amount The quantity of this Minion type to spawn
+	 */
+	public void setAmount(int amount)
+	{
+		_minionAmount = amount;
+	}
 
-    public int getAmountMin()
-    {
-        return _minionAmountMin;
-    }
+	public int getAmountMin()
+	{
+		return _minionAmountMin;
+	}
 
-    public int getAmountMax()
-    {
-        return _minionAmountMax;
-    }
+	public int getAmountMax()
+	{
+		return _minionAmountMax;
+	}
 
-    /**
-     * Return the amount of this Minion type to spawn.<BR><BR>
-     */
-    public int getAmount()
-    {
-        if (_minionAmountMax > _minionAmountMin)
-        {
-            _minionAmount = Rnd.get(_minionAmountMin, _minionAmountMax);
-            return _minionAmount;
-        }
-        else
-        {
-            return _minionAmountMin;
-        }
-    }
+	/**
+	 * Return the amount of this Minion type to spawn.<BR><BR>
+	 */
+	public int getAmount()
+	{
+		if (_minionAmountMax > _minionAmountMin)
+		{
+			_minionAmount = Rnd.get(_minionAmountMin, _minionAmountMax);
+			return _minionAmount;
+		}
+		else
+		{
+			return _minionAmountMin;
+		}
+	}
 
-    public int getRespawnTime()
-    {
-        if (_respawnTime > 0 && _respawnTime < 15)
-        {
-            return 15;
-        }
+	public int getRespawnTime()
+	{
+		if (_respawnTime > 0 && _respawnTime < 15)
+		{
+			return 15;
+		}
 
-        return _respawnTime;
-    }
+		return _respawnTime;
+	}
 
-    public void setRespawnTime(final int respawnTime)
-    {
-        _respawnTime = respawnTime;
-    }
+	public void setRespawnTime(final int respawnTime)
+	{
+		_respawnTime = respawnTime;
+	}
 
-    public int getMaxRespawn()
-    {
-        //if (_maxRespawn > 5)
-        //	return 5;
+	public int getMaxRespawn()
+	{
+		//if (_maxRespawn > 5)
+		//	return 5;
 
-        return _maxRespawn;
-    }
+		return _maxRespawn;
+	}
 
-    public void setMaxRespawn(final int maxRespawn)
-    {
-        _maxRespawn = maxRespawn;
-    }
+	public void setMaxRespawn(final int maxRespawn)
+	{
+		_maxRespawn = maxRespawn;
+	}
 }

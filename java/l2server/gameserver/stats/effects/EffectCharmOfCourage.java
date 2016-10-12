@@ -28,58 +28,58 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectCharmOfCourage extends L2Effect
 {
-    public EffectCharmOfCourage(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectCharmOfCourage(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.CHARMOFCOURAGE;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.CHARMOFCOURAGE;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (getEffected() instanceof L2PcInstance)
-        {
-            getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
-            return true;
-        }
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (getEffected() instanceof L2PcInstance)
+		{
+			getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
+			return true;
+		}
+		return false;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        if (getEffected() instanceof L2PcInstance)
-        {
-            getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
-        }
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		if (getEffected() instanceof L2PcInstance)
+		{
+			getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

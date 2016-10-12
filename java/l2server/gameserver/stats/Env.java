@@ -28,26 +28,26 @@ import l2server.gameserver.model.actor.instance.L2CubicInstance;
 public final class Env
 {
 
-    public L2Character player;
-    public L2CubicInstance cubic;
-    public L2Character target;
-    public L2ItemInstance item;
-    public L2Skill skill;
-    public L2Abnormal effect;
-    public double value;
-    public double baseValue;
-    public boolean skillMastery = false;
-    public byte shld = 0;
-    public double ssMul = L2ItemInstance.CHARGED_NONE;
+	public L2Character player;
+	public L2CubicInstance cubic;
+	public L2Character target;
+	public L2ItemInstance item;
+	public L2Skill skill;
+	public L2Abnormal effect;
+	public double value;
+	public double baseValue;
+	public boolean skillMastery = false;
+	public byte shld = 0;
+	public double ssMul = L2ItemInstance.CHARGED_NONE;
 
-    public Env()
-    {
+	public Env()
+	{
 
-    }
+	}
 
-    public Env(byte shd, double ss)
-    {
-        shld = shd;
-        ssMul = ss;
-    }
+	public Env(byte shd, double ss)
+	{
+		shld = shd;
+		ssMul = ss;
+	}
 }

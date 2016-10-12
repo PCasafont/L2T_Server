@@ -50,95 +50,95 @@ import java.util.List;
 public class InventoryUpdate extends L2ItemListPacket
 {
 
-    private List<ItemInfo> _items;
+	private List<ItemInfo> _items;
 
-    public InventoryUpdate()
-    {
-        _items = new ArrayList<>();
-        if (Config.DEBUG)
-        {
-            showDebug();
-        }
-    }
+	public InventoryUpdate()
+	{
+		_items = new ArrayList<>();
+		if (Config.DEBUG)
+		{
+			showDebug();
+		}
+	}
 
-    /**
-     * @param items
-     */
-    public InventoryUpdate(List<ItemInfo> items)
-    {
-        _items = items;
-        if (Config.DEBUG)
-        {
-            showDebug();
-        }
-    }
+	/**
+	 * @param items
+	 */
+	public InventoryUpdate(List<ItemInfo> items)
+	{
+		_items = items;
+		if (Config.DEBUG)
+		{
+			showDebug();
+		}
+	}
 
-    public void addItem(L2ItemInstance item)
-    {
-        if (item != null)
-        {
-            _items.add(new ItemInfo(item));
-        }
-    }
+	public void addItem(L2ItemInstance item)
+	{
+		if (item != null)
+		{
+			_items.add(new ItemInfo(item));
+		}
+	}
 
-    public void addNewItem(L2ItemInstance item)
-    {
-        if (item != null)
-        {
-            _items.add(new ItemInfo(item, 1));
-        }
-    }
+	public void addNewItem(L2ItemInstance item)
+	{
+		if (item != null)
+		{
+			_items.add(new ItemInfo(item, 1));
+		}
+	}
 
-    public void addModifiedItem(L2ItemInstance item)
-    {
-        if (item != null)
-        {
-            _items.add(new ItemInfo(item, 2));
-        }
-    }
+	public void addModifiedItem(L2ItemInstance item)
+	{
+		if (item != null)
+		{
+			_items.add(new ItemInfo(item, 2));
+		}
+	}
 
-    public void addRemovedItem(L2ItemInstance item)
-    {
-        if (item != null)
-        {
-            _items.add(new ItemInfo(item, 3));
-        }
-    }
+	public void addRemovedItem(L2ItemInstance item)
+	{
+		if (item != null)
+		{
+			_items.add(new ItemInfo(item, 3));
+		}
+	}
 
-    public void addItems(List<L2ItemInstance> items)
-    {
-        if (items != null)
-        {
-            for (L2ItemInstance item : items)
-            {
-                if (item != null)
-                {
-                    _items.add(new ItemInfo(item));
-                }
-            }
-        }
-    }
+	public void addItems(List<L2ItemInstance> items)
+	{
+		if (items != null)
+		{
+			for (L2ItemInstance item : items)
+			{
+				if (item != null)
+				{
+					_items.add(new ItemInfo(item));
+				}
+			}
+		}
+	}
 
-    private void showDebug()
-    {
-        for (ItemInfo item : _items)
-        {
-            Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
-                    " last change:" + item.getChange());
-        }
-    }
+	private void showDebug()
+	{
+		for (ItemInfo item : _items)
+		{
+			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
+					" last change:" + item.getChange());
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        int count = _items.size();
-        writeH(count);
-        for (ItemInfo item : _items)
-        {
-            writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
-            writeItem(item);
-        }
-        _items.clear();
-        _items = null;
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		int count = _items.size();
+		writeH(count);
+		for (ItemInfo item : _items)
+		{
+			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
+			writeItem(item);
+		}
+		_items.clear();
+		_items = null;
+	}
 }

@@ -40,122 +40,122 @@ import java.util.Map;
  */
 public class PlayerClass
 {
-    private int _id;
-    private String _name;
-    private PlayerClass _parent;
-    private int _awakensTo;
-    private boolean _isMage;
-    private Race _race;
-    private int _level;
+	private int _id;
+	private String _name;
+	private PlayerClass _parent;
+	private int _awakensTo;
+	private boolean _isMage;
+	private Race _race;
+	private int _level;
 
-    private Map<Long, L2SkillLearn> _skills = new LinkedHashMap<>();
+	private Map<Long, L2SkillLearn> _skills = new LinkedHashMap<>();
 
-    private List<L2Henna> _allowedDyes = new ArrayList<>();
+	private List<L2Henna> _allowedDyes = new ArrayList<>();
 
-    public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level)
-    {
-        _id = id;
-        _name = name;
-        _parent = parent;
-        _awakensTo = awakensTo;
-        _isMage = isMage;
-        _race = raceId < 0 ? null : Race.values()[raceId];
-        _level = level;
-    }
+	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level)
+	{
+		_id = id;
+		_name = name;
+		_parent = parent;
+		_awakensTo = awakensTo;
+		_isMage = isMage;
+		_race = raceId < 0 ? null : Race.values()[raceId];
+		_level = level;
+	}
 
-    public final int getId()
-    {
-        return _id;
-    }
+	public final int getId()
+	{
+		return _id;
+	}
 
-    public final String getName()
-    {
-        return _name;
-    }
+	public final String getName()
+	{
+		return _name;
+	}
 
-    public final PlayerClass getParent()
-    {
-        return _parent;
-    }
+	public final PlayerClass getParent()
+	{
+		return _parent;
+	}
 
-    public final int getAwakeningClassId()
-    {
-        return _awakensTo;
-    }
+	public final int getAwakeningClassId()
+	{
+		return _awakensTo;
+	}
 
-    public final boolean isMage()
-    {
-        return _isMage;
-    }
+	public final boolean isMage()
+	{
+		return _isMage;
+	}
 
-    public final int getLevel()
-    {
-        return _level;
-    }
+	public final int getLevel()
+	{
+		return _level;
+	}
 
-    public final Race getRace()
-    {
-        return _race;
-    }
+	public final Race getRace()
+	{
+		return _race;
+	}
 
-    public final void addSkill(long hash, L2SkillLearn skill)
-    {
-        _skills.put(hash, skill);
-    }
+	public final void addSkill(long hash, L2SkillLearn skill)
+	{
+		_skills.put(hash, skill);
+	}
 
-    public final Map<Long, L2SkillLearn> getSkills()
-    {
-        return _skills;
-    }
+	public final Map<Long, L2SkillLearn> getSkills()
+	{
+		return _skills;
+	}
 
-    public void addAllowedDye(L2Henna henna)
-    {
-        _allowedDyes.add(henna);
-    }
+	public void addAllowedDye(L2Henna henna)
+	{
+		_allowedDyes.add(henna);
+	}
 
-    public final List<L2Henna> getAllowedDyes()
-    {
-        return _allowedDyes;
-    }
+	public final List<L2Henna> getAllowedDyes()
+	{
+		return _allowedDyes;
+	}
 
-    public final boolean isSummoner()
-    {
-        return _id == 14 || _id == 28 || _id == 41 || _id == 96 || _id == 104 || _id == 111 || _id == 146 ||
-                _id == 176 || _id == 177 || _id == 178;
-    }
+	public final boolean isSummoner()
+	{
+		return _id == 14 || _id == 28 || _id == 41 || _id == 96 || _id == 104 || _id == 111 || _id == 146 ||
+				_id == 176 || _id == 177 || _id == 178;
+	}
 
-    public final boolean childOf(PlayerClass cl)
-    {
-        if (_parent == null)
-        {
-            return false;
-        }
+	public final boolean childOf(PlayerClass cl)
+	{
+		if (_parent == null)
+		{
+			return false;
+		}
 
-        if (_parent == cl)
-        {
-            return true;
-        }
+		if (_parent == cl)
+		{
+			return true;
+		}
 
-        return _parent.childOf(cl);
-    }
+		return _parent.childOf(cl);
+	}
 
-    public final boolean equalsOrChildOf(PlayerClass cl)
-    {
-        return this == cl || childOf(cl);
-    }
+	public final boolean equalsOrChildOf(PlayerClass cl)
+	{
+		return this == cl || childOf(cl);
+	}
 
-    public final int level()
-    {
-        if (_parent == null)
-        {
-            return 0;
-        }
+	public final int level()
+	{
+		if (_parent == null)
+		{
+			return 0;
+		}
 
-        if (_id == 184 || _id == 185)
-        {
-            return 2;
-        }
+		if (_id == 184 || _id == 185)
+		{
+			return 2;
+		}
 
-        return 1 + _parent.level();
-    }
+		return 1 + _parent.level();
+	}
 }

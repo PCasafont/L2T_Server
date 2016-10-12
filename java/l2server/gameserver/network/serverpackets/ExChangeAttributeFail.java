@@ -21,12 +21,12 @@ package l2server.gameserver.network.serverpackets;
 public class ExChangeAttributeFail extends L2GameServerPacket
 {
 
-    public ExChangeAttributeFail()
-    {
-    }
+	public ExChangeAttributeFail()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

@@ -32,35 +32,35 @@ package l2server.gameserver.model.quest;
  */
 public class State
 {
-    public final static byte CREATED = 0;
-    public final static byte STARTED = 1;
-    public final static byte COMPLETED = 2;
+	public final static byte CREATED = 0;
+	public final static byte STARTED = 1;
+	public final static byte COMPLETED = 2;
 
-    // discover the string representation of the state, for readable DB storage
-    public static String getStateName(int state)
-    {
-        switch (state)
-        {
-            case STARTED:
-                return "Started";
-            case COMPLETED:
-                return "Completed";
-            default:
-                return "Start";
-        }
-    }
+	// discover the string representation of the state, for readable DB storage
+	public static String getStateName(int state)
+	{
+		switch (state)
+		{
+			case STARTED:
+				return "Started";
+			case COMPLETED:
+				return "Completed";
+			default:
+				return "Start";
+		}
+	}
 
-    // discover the state from its string representation (for reconstruction after DB read)
-    public static byte getStateId(String statename)
-    {
-        if (statename.equals("Started"))
-        {
-            return STARTED;
-        }
-        if (statename.equals("Completed"))
-        {
-            return COMPLETED;
-        }
-        return CREATED;
-    }
+	// discover the state from its string representation (for reconstruction after DB read)
+	public static byte getStateId(String statename)
+	{
+		if (statename.equals("Started"))
+		{
+			return STARTED;
+		}
+		if (statename.equals("Completed"))
+		{
+			return COMPLETED;
+		}
+		return CREATED;
+	}
 }

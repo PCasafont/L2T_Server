@@ -30,81 +30,81 @@ import java.util.ArrayList;
  */
 public class EffectCancelDebuff extends L2Effect
 {
-    public EffectCancelDebuff(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectCancelDebuff(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        // Only for players
-        if (!(getEffected() instanceof L2Playable))
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		// Only for players
+		if (!(getEffected() instanceof L2Playable))
+		{
+			return false;
+		}
 
-        L2Playable effected = (L2Playable) getEffected();
+		L2Playable effected = (L2Playable) getEffected();
 
-        if (effected == null || effected.isDead())
-        {
-            return false;
-        }
+		if (effected == null || effected.isDead())
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2MonsterInstance &&
-                ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2MonsterInstance &&
+				((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
+		{
+			return false;
+		}
 
-        L2Abnormal[] effects = effected.getAllEffects();
-        ArrayList<L2Abnormal> debuffs = new ArrayList<>();
+		L2Abnormal[] effects = effected.getAllEffects();
+		ArrayList<L2Abnormal> debuffs = new ArrayList<>();
 
-        int chance = (int) getAbnormal().getLandRate();
-        if (chance < 0)
-        {
-            chance = 100;
-        }
+		int chance = (int) getAbnormal().getLandRate();
+		if (chance < 0)
+		{
+			chance = 100;
+		}
 
-        // Filter out debuffs
-        for (L2Abnormal e : effects)
-        {
-            if (e.getSkill().isDebuff())
-            {
-                debuffs.add(e);
-            }
-        }
+		// Filter out debuffs
+		for (L2Abnormal e : effects)
+		{
+			if (e.getSkill().isDebuff())
+			{
+				debuffs.add(e);
+			}
+		}
 
-        // No debuffs found
-        if (debuffs.size() < 1)
-        {
-            return true;
-        }
+		// No debuffs found
+		if (debuffs.size() < 1)
+		{
+			return true;
+		}
 
-        // Consider chance (e.g. Song of Purification)
-        if (chance < 100 && Rnd.get(100) > chance)
-        {
-            return false;
-        }
+		// Consider chance (e.g. Song of Purification)
+		if (chance < 100 && Rnd.get(100) > chance)
+		{
+			return false;
+		}
 
-        // Remove all debuffs if chance test succeeded
-        for (L2Abnormal e : debuffs)
-        {
-            e.exit();
-        }
+		// Remove all debuffs if chance test succeeded
+		for (L2Abnormal e : debuffs)
+		{
+			e.exit();
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return true;
+	}
 }

@@ -24,44 +24,44 @@ import l2server.gameserver.datatables.BeautyTable.BeautyTemplate;
  */
 public final class ExResponseBeautyListPacket extends L2GameServerPacket
 {
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(0);
-        BeautyTemplate template = BeautyTable.getInstance().getTemplate(0);
-        writeD(template.getHairStyles().size());
-        for (BeautyInfo info : template.getHairStyles().values())
-        {
-            writeD(info.getParentId());
-            writeD(info.getId());
-            writeD(info.getUnk()); // ???
-            writeD(info.getAdenaPrice());
-            writeD(info.getTicketPrice());
-            writeD(99999999); // Remaining units
-        }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(0);
+		BeautyTemplate template = BeautyTable.getInstance().getTemplate(0);
+		writeD(template.getHairStyles().size());
+		for (BeautyInfo info : template.getHairStyles().values())
+		{
+			writeD(info.getParentId());
+			writeD(info.getId());
+			writeD(info.getUnk()); // ???
+			writeD(info.getAdenaPrice());
+			writeD(info.getTicketPrice());
+			writeD(99999999); // Remaining units
+		}
 
-        writeD(1);
-        writeD(template.getFaceStyles().size());
-        for (BeautyInfo info : template.getFaceStyles().values())
-        {
-            writeD(info.getParentId());
-            writeD(info.getId());
-            writeD(info.getUnk()); // ???
-            writeD(info.getAdenaPrice());
-            writeD(info.getTicketPrice());
-            writeD(99999999); // Remaining units
-        }
+		writeD(1);
+		writeD(template.getFaceStyles().size());
+		for (BeautyInfo info : template.getFaceStyles().values())
+		{
+			writeD(info.getParentId());
+			writeD(info.getId());
+			writeD(info.getUnk()); // ???
+			writeD(info.getAdenaPrice());
+			writeD(info.getTicketPrice());
+			writeD(99999999); // Remaining units
+		}
 
-        writeD(2);
-        writeD(template.getHairColors().size());
-        for (BeautyInfo info : template.getHairColors().values())
-        {
-            writeD(info.getParentId());
-            writeD(info.getId());
-            writeD(info.getUnk()); // ???
-            writeD(info.getAdenaPrice());
-            writeD(info.getTicketPrice());
-            writeD(99999999); // Remaining units
-        }
-    }
+		writeD(2);
+		writeD(template.getHairColors().size());
+		for (BeautyInfo info : template.getHairColors().values())
+		{
+			writeD(info.getParentId());
+			writeD(info.getId());
+			writeD(info.getUnk()); // ???
+			writeD(info.getAdenaPrice());
+			writeD(info.getTicketPrice());
+			writeD(99999999); // Remaining units
+		}
+	}
 }

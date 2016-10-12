@@ -19,29 +19,29 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2CastleWyvernManagerInstance extends L2WyvernManagerInstance
 {
-    public L2CastleWyvernManagerInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-    }
+	public L2CastleWyvernManagerInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+	}
 
-    @Override
-    public final boolean isOwnerClan(L2PcInstance player)
-    {
-        if (player.getClan() != null && getCastle() != null)
-        {
-            if (player.getClanId() == getCastle().getOwnerId() && player.isClanLeader())
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+	@Override
+	public final boolean isOwnerClan(L2PcInstance player)
+	{
+		if (player.getClan() != null && getCastle() != null)
+		{
+			if (player.getClanId() == getCastle().getOwnerId() && player.isClanLeader())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
-    /**
-     */
-    @Override
-    public boolean isInSiege()
-    {
-        return getCastle().getZone().isActive();
-    }
+	/**
+	 */
+	@Override
+	public boolean isInSiege()
+	{
+		return getCastle().getZone().isActive();
+	}
 }

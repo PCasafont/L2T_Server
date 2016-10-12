@@ -26,42 +26,42 @@ import java.util.Map;
  */
 public final class AcquireSkillList extends L2GameServerPacket
 {
-    private L2SkillLearn[] _skills;
-    private L2PcInstance _player;
+	private L2SkillLearn[] _skills;
+	private L2PcInstance _player;
 
-    public AcquireSkillList(L2PcInstance player)
-    {
-        _skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
-        _player = player;
-    }
+	public AcquireSkillList(L2PcInstance player)
+	{
+		_skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
+		_player = player;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeH(_skills.length);
-        for (L2SkillLearn sk : _skills)
-        {
-            writeD(sk.getId());
-            writeH(sk.getLevel());
-            writeH(0); // Skill enchant
-            writeQ(sk.getSpCost());
-            writeC(sk.getMinLevel());
-            writeC(sk.getMinDualLevel());
+	@Override
+	protected final void writeImpl()
+	{
+		writeH(_skills.length);
+		for (L2SkillLearn sk : _skills)
+		{
+			writeD(sk.getId());
+			writeH(sk.getLevel());
+			writeH(0); // Skill enchant
+			writeQ(sk.getSpCost());
+			writeC(sk.getMinLevel());
+			writeC(sk.getMinDualLevel());
 
-            writeC(sk.getCostItems().size());
-            for (int itemId : sk.getCostItems().keySet())
-            {
-                writeD(itemId);
-                writeQ(sk.getCostItems().get(itemId));
-            }
+			writeC(sk.getCostItems().size());
+			for (int itemId : sk.getCostItems().keySet())
+			{
+				writeD(itemId);
+				writeQ(sk.getCostItems().get(itemId));
+			}
 
-            Map<Integer, Integer> costSkills = sk.getCostSkills(_player);
-            writeC(costSkills.size());
-            for (int skillId : costSkills.keySet())
-            {
-                writeD(skillId);
-                writeD(costSkills.get(skillId));
-            }
-        }
-    }
+			Map<Integer, Integer> costSkills = sk.getCostSkills(_player);
+			writeC(costSkills.size());
+			for (int skillId : costSkills.keySet())
+			{
+				writeD(skillId);
+				writeD(costSkills.get(skillId));
+			}
+		}
+	}
 }

@@ -25,36 +25,36 @@ import java.util.Map;
  */
 public class ExAcquireSkillInfo extends L2GameServerPacket
 {
-    private L2SkillLearn _skill;
-    private L2PcInstance _player;
+	private L2SkillLearn _skill;
+	private L2PcInstance _player;
 
-    public ExAcquireSkillInfo(L2SkillLearn skill, L2PcInstance player)
-    {
-        _skill = skill;
-        _player = player;
-    }
+	public ExAcquireSkillInfo(L2SkillLearn skill, L2PcInstance player)
+	{
+		_skill = skill;
+		_player = player;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_skill.getId());
-        writeD(_skill.getLevel());
-        writeQ(_skill.getSpCost());
-        writeH(_skill.getMinLevel());
-        writeH(_skill.getMinDualLevel());
-        writeD(_skill.getCostItems().size());
-        for (int itemId : _skill.getCostItems().keySet())
-        {
-            writeD(itemId);
-            writeQ(_skill.getCostItems().get(itemId));
-        }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_skill.getId());
+		writeD(_skill.getLevel());
+		writeQ(_skill.getSpCost());
+		writeH(_skill.getMinLevel());
+		writeH(_skill.getMinDualLevel());
+		writeD(_skill.getCostItems().size());
+		for (int itemId : _skill.getCostItems().keySet())
+		{
+			writeD(itemId);
+			writeQ(_skill.getCostItems().get(itemId));
+		}
 
-        Map<Integer, Integer> costSkills = _skill.getCostSkills(_player);
-        writeD(costSkills.size());
-        for (int skillId : costSkills.keySet())
-        {
-            writeD(skillId);
-            writeD(costSkills.get(skillId));
-        }
-    }
+		Map<Integer, Integer> costSkills = _skill.getCostSkills(_player);
+		writeD(costSkills.size());
+		for (int skillId : costSkills.keySet())
+		{
+			writeD(skillId);
+			writeD(costSkills.get(skillId));
+		}
+	}
 }

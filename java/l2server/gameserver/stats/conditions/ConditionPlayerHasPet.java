@@ -26,52 +26,52 @@ import java.util.ArrayList;
  */
 public class ConditionPlayerHasPet extends Condition
 {
-    private final ArrayList<Integer> _controlItemIds;
+	private final ArrayList<Integer> _controlItemIds;
 
-    /**
-     * Instantiates a new condition player has pet.
-     *
-     * @param itemIds the item ids
-     */
-    public ConditionPlayerHasPet(ArrayList<Integer> itemIds)
-    {
-        if (itemIds.size() == 1 && itemIds.get(0) == 0)
-        {
-            _controlItemIds = null;
-        }
-        else
-        {
-            _controlItemIds = itemIds;
-        }
-    }
+	/**
+	 * Instantiates a new condition player has pet.
+	 *
+	 * @param itemIds the item ids
+	 */
+	public ConditionPlayerHasPet(ArrayList<Integer> itemIds)
+	{
+		if (itemIds.size() == 1 && itemIds.get(0) == 0)
+		{
+			_controlItemIds = null;
+		}
+		else
+		{
+			_controlItemIds = itemIds;
+		}
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        if (((L2PcInstance) env.player).getPet() == null)
-        {
-            return false;
-        }
+		if (((L2PcInstance) env.player).getPet() == null)
+		{
+			return false;
+		}
 
-        if (_controlItemIds == null)
-        {
-            return true;
-        }
+		if (_controlItemIds == null)
+		{
+			return true;
+		}
 
-        final L2ItemInstance controlItem = ((L2PcInstance) env.player).getPet().getControlItem();
-        if (controlItem == null)
-        {
-            return false;
-        }
+		final L2ItemInstance controlItem = ((L2PcInstance) env.player).getPet().getControlItem();
+		if (controlItem == null)
+		{
+			return false;
+		}
 
-        return _controlItemIds.contains(controlItem.getItemId());
-    }
+		return _controlItemIds.contains(controlItem.getItemId());
+	}
 }

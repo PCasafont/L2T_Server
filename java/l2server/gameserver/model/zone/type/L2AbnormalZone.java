@@ -27,51 +27,51 @@ import l2server.gameserver.stats.VisualEffect;
  */
 public class L2AbnormalZone extends L2ZoneType
 {
-    private int abnormal = VisualEffect.BIG_HEAD.getId();
+	private int abnormal = VisualEffect.BIG_HEAD.getId();
 
-    public L2AbnormalZone(int id)
-    {
-        super(id);
-    }
+	public L2AbnormalZone(int id)
+	{
+		super(id);
+	}
 
-    @Override
-    public void setParameter(String name, String value)
-    {
-        switch (name)
-        {
-            case "AbnormalMask":
-                abnormal = Integer.parseInt(value);
-                break;
-            case "SpecialMask":
-                abnormal = Integer.parseInt(value);
-                break;
-            default:
-                super.setParameter(name, value);
-                break;
-        }
-    }
+	@Override
+	public void setParameter(String name, String value)
+	{
+		switch (name)
+		{
+			case "AbnormalMask":
+				abnormal = Integer.parseInt(value);
+				break;
+			case "SpecialMask":
+				abnormal = Integer.parseInt(value);
+				break;
+			default:
+				super.setParameter(name, value);
+				break;
+		}
+	}
 
-    @Override
-    protected void onEnter(L2Character character)
-    {
-        character.startVisualEffect(abnormal);
-    }
+	@Override
+	protected void onEnter(L2Character character)
+	{
+		character.startVisualEffect(abnormal);
+	}
 
-    @Override
-    protected void onExit(L2Character character)
-    {
-        character.stopVisualEffect(abnormal);
-    }
+	@Override
+	protected void onExit(L2Character character)
+	{
+		character.stopVisualEffect(abnormal);
+	}
 
-    @Override
-    public void onDieInside(L2Character character, L2Character killer)
-    {
-        onExit(character);
-    }
+	@Override
+	public void onDieInside(L2Character character, L2Character killer)
+	{
+		onExit(character);
+	}
 
-    @Override
-    public void onReviveInside(L2Character character)
-    {
-        onEnter(character);
-    }
+	@Override
+	public void onReviveInside(L2Character character)
+	{
+		onEnter(character);
+	}
 }

@@ -25,17 +25,17 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public interface ISkillTargetTypeHandler
 {
-    /**
-     * @param skill
-     * @param activeChar
-     * @param onlyFirst
-     * @param target
-     * @return
-     */
-    public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
+	/**
+	 * @param skill
+	 * @param activeChar
+	 * @param onlyFirst
+	 * @param target
+	 * @return
+	 */
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
 
-    /**
-     * @return
-     */
-    public Enum<L2SkillTargetType> getTargetType();
+	/**
+	 * @return
+	 */
+	public Enum<L2SkillTargetType> getTargetType();
 }

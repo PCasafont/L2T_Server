@@ -28,36 +28,36 @@ import l2server.gameserver.stats.Env;
 public final class ConditionSlotItemType extends ConditionInventory
 {
 
-    private final int _mask;
+	private final int _mask;
 
-    /**
-     * Instantiates a new condition slot item type.
-     *
-     * @param slot the slot
-     * @param mask the mask
-     */
-    public ConditionSlotItemType(int slot, int mask)
-    {
-        super(slot);
-        _mask = mask;
-    }
+	/**
+	 * Instantiates a new condition slot item type.
+	 *
+	 * @param slot the slot
+	 * @param mask the mask
+	 */
+	public ConditionSlotItemType(int slot, int mask)
+	{
+		super(slot);
+		_mask = mask;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.ConditionInventory#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
-        Inventory inv = ((L2PcInstance) env.player).getInventory();
-        L2ItemInstance item = inv.getPaperdollItem(_slot);
-        if (item == null)
-        {
-            return false;
-        }
-        return (item.getItem().getItemMask() & _mask) != 0;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.ConditionInventory#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
+		Inventory inv = ((L2PcInstance) env.player).getInventory();
+		L2ItemInstance item = inv.getPaperdollItem(_slot);
+		if (item == null)
+		{
+			return false;
+		}
+		return (item.getItem().getItemMask() & _mask) != 0;
+	}
 }

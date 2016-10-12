@@ -31,45 +31,45 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectBluff extends L2Effect
 {
-    public EffectBluff(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectBluff(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (getEffected() instanceof L2NpcInstance)
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (getEffected() instanceof L2NpcInstance)
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2Npc && ((L2Npc) getEffected()).getNpcId() == 35062)
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2Npc && ((L2Npc) getEffected()).getNpcId() == 35062)
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2SiegeSummonInstance)
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2SiegeSummonInstance)
+		{
+			return false;
+		}
 
-        getEffected()
-                .broadcastPacket(new StartRotation(getEffected().getObjectId(), getEffected().getHeading(), 1, 65535));
-        getEffected().broadcastPacket(new StopRotation(getEffected().getObjectId(), getEffector().getHeading(), 65535));
-        getEffected().setHeading(getEffector().getHeading());
-        return true;
-    }
+		getEffected()
+				.broadcastPacket(new StartRotation(getEffected().getObjectId(), getEffected().getHeading(), 1, 65535));
+		getEffected().broadcastPacket(new StopRotation(getEffected().getObjectId(), getEffector().getHeading(), 65535));
+		getEffected().setHeading(getEffector().getHeading());
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

@@ -27,216 +27,215 @@ import java.util.Arrays;
  */
 public class L2DropData
 {
-    public static final int MAX_CHANCE = 100;
+	public static final int MAX_CHANCE = 100;
 
-    private int _itemId;
-    private int _minDrop;
-    private int _maxDrop;
-    private float _chance;
-    private String _questID = null;
-    private String[] _stateID = null;
-    private boolean _custom = false;
+	private int _itemId;
+	private int _minDrop;
+	private int _maxDrop;
+	private float _chance;
+	private String _questID = null;
+	private String[] _stateID = null;
+	private boolean _custom = false;
 
-    public L2DropData(int itemId, int min, int max, float chance)
-    {
-        _itemId = itemId;
-        _minDrop = min;
-        _maxDrop = max;
-        _chance = chance;
-    }
+	public L2DropData(int itemId, int min, int max, float chance)
+	{
+		_itemId = itemId;
+		_minDrop = min;
+		_maxDrop = max;
+		_chance = chance;
+	}
 
-    /**
-     * Returns the ID of the item dropped
-     *
-     * @return int
-     */
-    public int getItemId()
-    {
-        return _itemId;
-    }
+	/**
+	 * Returns the ID of the item dropped
+	 *
+	 * @return int
+	 */
+	public int getItemId()
+	{
+		return _itemId;
+	}
 
-    /**
-     * Sets the ID of the item dropped
-     *
-     * @param itemId : int designating the ID of the item
-     */
-    public void setItemId(int itemId)
-    {
-        _itemId = itemId;
-    }
+	/**
+	 * Sets the ID of the item dropped
+	 *
+	 * @param itemId : int designating the ID of the item
+	 */
+	public void setItemId(int itemId)
+	{
+		_itemId = itemId;
+	}
 
-    /**
-     * Returns the minimum quantity of items dropped
-     *
-     * @return int
-     */
-    public int getMinDrop()
-    {
-        return _minDrop;
-    }
+	/**
+	 * Returns the minimum quantity of items dropped
+	 *
+	 * @return int
+	 */
+	public int getMinDrop()
+	{
+		return _minDrop;
+	}
 
-    /**
-     * Returns the maximum quantity of items dropped
-     *
-     * @return int
-     */
-    public int getMaxDrop()
-    {
-        return _maxDrop;
-    }
+	/**
+	 * Returns the maximum quantity of items dropped
+	 *
+	 * @return int
+	 */
+	public int getMaxDrop()
+	{
+		return _maxDrop;
+	}
 
-    /**
-     * Returns the chance of having a drop
-     *
-     * @return float
-     */
-    public float getChance()
-    {
-        return _chance;
-    }
+	/**
+	 * Returns the chance of having a drop
+	 *
+	 * @return float
+	 */
+	public float getChance()
+	{
+		return _chance;
+	}
 
-    /**
-     * Sets the value for minimal quantity of dropped items
-     *
-     * @param mindrop : int designating the quantity
-     */
-    public void setMinDrop(int mindrop)
-    {
-        _minDrop = mindrop;
-    }
+	/**
+	 * Sets the value for minimal quantity of dropped items
+	 *
+	 * @param mindrop : int designating the quantity
+	 */
+	public void setMinDrop(int mindrop)
+	{
+		_minDrop = mindrop;
+	}
 
-    /**
-     * Sets the value for maximal quantity of dopped items
-     *
-     * @param maxdrop : int designating the quantity of dropped items
-     */
-    public void setMaxDrop(int maxdrop)
-    {
-        _maxDrop = maxdrop;
-    }
+	/**
+	 * Sets the value for maximal quantity of dopped items
+	 *
+	 * @param maxdrop : int designating the quantity of dropped items
+	 */
+	public void setMaxDrop(int maxdrop)
+	{
+		_maxDrop = maxdrop;
+	}
 
-    /**
-     * Sets the chance of having the item for a drop
-     *
-     * @param chance : int designating the chance
-     */
-    public void setChance(int chance)
-    {
-        _chance = chance;
-    }
+	/**
+	 * Sets the chance of having the item for a drop
+	 *
+	 * @param chance : int designating the chance
+	 */
+	public void setChance(int chance)
+	{
+		_chance = chance;
+	}
 
-    /**
-     * Returns the stateID.
-     *
-     * @return String[]
-     */
-    public String[] getStateIDs()
-    {
-        return _stateID;
-    }
+	/**
+	 * Returns the stateID.
+	 *
+	 * @return String[]
+	 */
+	public String[] getStateIDs()
+	{
+		return _stateID;
+	}
 
-    /**
-     * Adds states of the dropped item
-     *
-     * @param list : String[]
-     */
-    public void addStates(String[] list)
-    {
-        _stateID = list;
-    }
+	/**
+	 * Adds states of the dropped item
+	 *
+	 * @param list : String[]
+	 */
+	public void addStates(String[] list)
+	{
+		_stateID = list;
+	}
 
-    /**
-     * Returns the questID.
-     *
-     * @return String designating the ID of the quest
-     */
-    public String getQuestID()
-    {
-        return _questID;
-    }
+	/**
+	 * Returns the questID.
+	 *
+	 * @return String designating the ID of the quest
+	 */
+	public String getQuestID()
+	{
+		return _questID;
+	}
 
-    /**
-     * Sets the questID
-     *
-     */
-    public void setQuestID(String questID)
-    {
-        _questID = questID;
-    }
+	/**
+	 * Sets the questID
+	 */
+	public void setQuestID(String questID)
+	{
+		_questID = questID;
+	}
 
-    /**
-     * Returns if the dropped item is requested for a quest
-     *
-     * @return boolean
-     */
-    public boolean isQuestDrop()
-    {
-        return _questID != null && _stateID != null;
-    }
+	/**
+	 * Returns if the dropped item is requested for a quest
+	 *
+	 * @return boolean
+	 */
+	public boolean isQuestDrop()
+	{
+		return _questID != null && _stateID != null;
+	}
 
-    public void setCustom()
-    {
-        _custom = true;
-    }
+	public void setCustom()
+	{
+		_custom = true;
+	}
 
-    public boolean isCustom()
-    {
-        return _custom;
-    }
+	public boolean isCustom()
+	{
+		return _custom;
+	}
 
-    /**
-     * Returns a report of the object
-     *
-     * @return String
-     */
-    @Override
-    public String toString()
-    {
-        String out = "ItemID: " + getItemId() + " Min: " + getMinDrop() + " Max: " + getMaxDrop() + " Chance: " +
-                getChance() + "%";
-        if (isQuestDrop())
-        {
-            out += " QuestID: " + getQuestID() + " StateID's: " + Arrays.toString(getStateIDs());
-        }
+	/**
+	 * Returns a report of the object
+	 *
+	 * @return String
+	 */
+	@Override
+	public String toString()
+	{
+		String out = "ItemID: " + getItemId() + " Min: " + getMinDrop() + " Max: " + getMaxDrop() + " Chance: " +
+				getChance() + "%";
+		if (isQuestDrop())
+		{
+			out += " QuestID: " + getQuestID() + " StateID's: " + Arrays.toString(getStateIDs());
+		}
 
-        return out;
-    }
+		return out;
+	}
 
-    /**
-     * @see java.lang.Object#hashCode()
-     */
-    @Override
-    public int hashCode()
-    {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + _itemId;
-        return result;
-    }
+	/**
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + _itemId;
+		return result;
+	}
 
-    /**
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
-            return true;
-        }
-        if (obj == null)
-        {
-            return false;
-        }
-        if (!(obj instanceof L2DropData))
-        {
-            return false;
-        }
-        final L2DropData other = (L2DropData) obj;
-        if (_itemId != other._itemId)
-        {
-            return false;
-        }
-        return true;
-    }
+	/**
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (!(obj instanceof L2DropData))
+		{
+			return false;
+		}
+		final L2DropData other = (L2DropData) obj;
+		if (_itemId != other._itemId)
+		{
+			return false;
+		}
+		return true;
+	}
 }

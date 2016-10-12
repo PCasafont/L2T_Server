@@ -25,24 +25,24 @@ import l2server.gameserver.network.serverpackets.ExOlympiadInfoList;
  */
 public final class RequestExMoveToArena extends L2GameClientPacket
 {
-    //
+	//
 
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
 
-        if (activeChar != null)
-        {
-            activeChar.sendPacket(new ExOlympiadInfoList());
-        }
-    }
+		if (activeChar != null)
+		{
+			activeChar.sendPacket(new ExOlympiadInfoList());
+		}
+	}
 }

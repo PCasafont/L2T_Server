@@ -26,46 +26,46 @@ import l2server.gameserver.stats.Env;
 public final class ConditionPlayerPledgeClass extends Condition
 {
 
-    private final int _pledgeClass;
+	private final int _pledgeClass;
 
-    /**
-     * Instantiates a new condition player pledge class.
-     *
-     * @param pledgeClass the pledge class
-     */
-    public ConditionPlayerPledgeClass(int pledgeClass)
-    {
-        _pledgeClass = pledgeClass;
-    }
+	/**
+	 * Instantiates a new condition player pledge class.
+	 *
+	 * @param pledgeClass the pledge class
+	 */
+	public ConditionPlayerPledgeClass(int pledgeClass)
+	{
+		_pledgeClass = pledgeClass;
+	}
 
-    /**
-     * Test impl.
-     *
-     * @param env the env
-     * @return true, if successful
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * Test impl.
+	 *
+	 * @param env the env
+	 * @return true, if successful
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        final L2PcInstance player = (L2PcInstance) env.player;
+		final L2PcInstance player = (L2PcInstance) env.player;
 
-        if (player.getClan() == null)
-        {
-            return false;
-        }
+		if (player.getClan() == null)
+		{
+			return false;
+		}
 
-        if (_pledgeClass == -1)
-        {
-            return player.isClanLeader();
-        }
+		if (_pledgeClass == -1)
+		{
+			return player.isClanLeader();
+		}
 
-        //System.out.println(player.getName() + " Pledge = " + player.getPledgeClass());
-        return player.getPledgeClass() >= _pledgeClass;
-    }
+		//System.out.println(player.getName() + " Pledge = " + player.getPledgeClass());
+		return player.getPledgeClass() >= _pledgeClass;
+	}
 }

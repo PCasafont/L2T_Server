@@ -29,51 +29,51 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class PlayerAuthRequest extends BaseRecievePacket
 {
-    /**
-     * @param decrypt
-     */
-    public PlayerAuthRequest(byte[] decrypt, GameServerThread server)
-    {
-        super(decrypt);
-        String account = readS();
-        int playKey1 = readD();
-        int playKey2 = readD();
-        int loginKey1 = readD();
-        int loginKey2 = readD();
-        SessionKey sessionKey = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
+	/**
+	 * @param decrypt
+	 */
+	public PlayerAuthRequest(byte[] decrypt, GameServerThread server)
+	{
+		super(decrypt);
+		String account = readS();
+		int playKey1 = readD();
+		int playKey2 = readD();
+		int loginKey1 = readD();
+		int loginKey2 = readD();
+		SessionKey sessionKey = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
 
-        PlayerAuthResponse authResponse;
-        if (Config.DEBUG)
-        {
-            Log.info("auth request received for Player " + account);
-        }
+		PlayerAuthResponse authResponse;
+		if (Config.DEBUG)
+		{
+			Log.info("auth request received for Player " + account);
+		}
 
-        L2LoginClient client = LoginController.getInstance().getClientForKey(sessionKey);
-        if (client != null)
-        {
-            if (Config.DEBUG)
-            {
-                Log.info("auth request: OK");
-            }
-            LoginController.getInstance().removeAuthedLoginClient(client.getAccount());
-            if (account.equalsIgnoreCase("IdEmpty"))
-            {
-                authResponse = new PlayerAuthResponse(client.getAccount() + ";" + playKey1, true);
-            }
-            else
-            {
-                authResponse = new PlayerAuthResponse(account, true);
-            }
-        }
-        else
-        {
-            if (Config.DEBUG)
-            {
-                Log.info("auth request: NO");
-                Log.info("session key sent: " + sessionKey);
-            }
-            authResponse = new PlayerAuthResponse(account, false);
-        }
-        server.sendPacket(authResponse);
-    }
+		L2LoginClient client = LoginController.getInstance().getClientForKey(sessionKey);
+		if (client != null)
+		{
+			if (Config.DEBUG)
+			{
+				Log.info("auth request: OK");
+			}
+			LoginController.getInstance().removeAuthedLoginClient(client.getAccount());
+			if (account.equalsIgnoreCase("IdEmpty"))
+			{
+				authResponse = new PlayerAuthResponse(client.getAccount() + ";" + playKey1, true);
+			}
+			else
+			{
+				authResponse = new PlayerAuthResponse(account, true);
+			}
+		}
+		else
+		{
+			if (Config.DEBUG)
+			{
+				Log.info("auth request: NO");
+				Log.info("session key sent: " + sessionKey);
+			}
+			authResponse = new PlayerAuthResponse(account, false);
+		}
+		server.sendPacket(authResponse);
+	}
 }

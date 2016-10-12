@@ -27,66 +27,66 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class L2ARogueAI extends L2APlayerAI
 {
-    public L2ARogueAI(AIAccessor accessor)
-    {
-        super(accessor);
-    }
+	public L2ARogueAI(AIAccessor accessor)
+	{
+		super(accessor);
+	}
 
-    @Override
-    protected int[] getRandomGear()
-    {
-        return new int[]{
-                30268,
-                19704,
-                19705,
-                19706,
-                19707,
-                19708,
-                19464,
-                19463,
-                19458,
-                17623,
-                35570,
-                34860,
-                19462,
-                19454,
-                35890,
-                30312
-        };
-    }
+	@Override
+	protected int[] getRandomGear()
+	{
+		return new int[]{
+				30268,
+				19704,
+				19705,
+				19706,
+				19707,
+				19708,
+				19464,
+				19463,
+				19458,
+				17623,
+				35570,
+				34860,
+				19462,
+				19454,
+				35890,
+				30312
+		};
+	}
 
-    @Override
-    protected boolean interactWith(L2Character target)
-    {
-        if (super.interactWith(target))
-        {
-            return true;
-        }
+	@Override
+	protected boolean interactWith(L2Character target)
+	{
+		if (super.interactWith(target))
+		{
+			return true;
+		}
 
-        if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
-                _player.getTarget() instanceof L2Playable)
-        {
-            for (L2Skill skill : _player.getAllSkills())
-            {
-                if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
-                {
-                    continue;
-                }
+		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
+				_player.getTarget() instanceof L2Playable)
+		{
+			for (L2Skill skill : _player.getAllSkills())
+			{
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
+				{
+					continue;
+				}
 
-                //if (_player.useMagic(skill, true, false))
-                //	break;
-                _player.useMagic(skill, true, false);
-            }
-        }
+				//if (_player.useMagic(skill, true, false))
+				//	break;
+				_player.useMagic(skill, true, false);
+			}
+		}
 
-        setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+		setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    protected void think()
-    {
-        super.think();
-    }
+	@Override
+	protected void think()
+	{
+		super.think();
+	}
 }

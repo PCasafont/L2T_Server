@@ -57,55 +57,55 @@ import java.util.Collection;
  */
 public final class ExBuyList extends L2ItemListPacket
 {
-    private int _listId;
-    private Collection<L2TradeItem> _list;
-    private long _money;
-    private double _taxRate = 0;
+	private int _listId;
+	private Collection<L2TradeItem> _list;
+	private long _money;
+	private double _taxRate = 0;
 
-    public ExBuyList(L2TradeList list, long currentMoney, double taxRate)
-    {
-        _listId = list.getListId();
-        _list = list.getItems();
-        _money = currentMoney;
-        _taxRate = taxRate;
-    }
+	public ExBuyList(L2TradeList list, long currentMoney, double taxRate)
+	{
+		_listId = list.getListId();
+		_list = list.getItems();
+		_money = currentMoney;
+		_taxRate = taxRate;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeQ(_money); // current money
-        writeD(_listId);
-        writeD(0x00); // GoD ???
+	@Override
+	protected final void writeImpl()
+	{
+		writeQ(_money); // current money
+		writeD(_listId);
+		writeD(0x00); // GoD ???
 
-        writeH(_list.size());
+		writeH(_list.size());
 
-        for (L2TradeItem item : _list)
-        {
-            if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
-            {
-                writeC(0x00); // mask
+		for (L2TradeItem item : _list)
+		{
+			if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
+			{
+				writeC(0x00); // mask
 
-                writeD(item.getItemId());
-                writeD(item.getItemId());
-                writeC(0);
-                writeQ(item.getCurrentCount() < 0 ? 0 : item.getCurrentCount());
-                writeH(item.getTemplate().getType2());
-                writeH(0x00); // isEquipped
-                writeQ(item.getTemplate().getBodyPart()); // Body Part
-                writeH(0x00); // Enchant
-                writeD(-1); // Mana
-                writeD(-9999); // Time
-                writeC(0x01); // ???
+				writeD(item.getItemId());
+				writeD(item.getItemId());
+				writeC(0);
+				writeQ(item.getCurrentCount() < 0 ? 0 : item.getCurrentCount());
+				writeH(item.getTemplate().getType2());
+				writeH(0x00); // isEquipped
+				writeQ(item.getTemplate().getBodyPart()); // Body Part
+				writeH(0x00); // Enchant
+				writeD(-1); // Mana
+				writeD(-9999); // Time
+				writeC(0x01); // ???
 
-                if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
-                {
-                    writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
-                }
-                else
-                {
-                    writeQ((long) (item.getPrice() * (1 + _taxRate)));
-                }
-            }
-        }
-    }
+				if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
+				{
+					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
+				}
+				else
+				{
+					writeQ((long) (item.getPrice() * (1 + _taxRate)));
+				}
+			}
+		}
+	}
 }

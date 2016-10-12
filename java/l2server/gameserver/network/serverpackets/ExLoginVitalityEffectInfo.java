@@ -23,27 +23,27 @@ import l2server.Config;
 public class ExLoginVitalityEffectInfo extends L2GameServerPacket
 {
 
-    private float _expBonus;
-    private int _vitalityItemsUsed;
+	private float _expBonus;
+	private int _vitalityItemsUsed;
 
-    public ExLoginVitalityEffectInfo(int vitPoints, int vitalityItemsUsed)
-    {
-        if (vitPoints > 0)
-        {
-            _expBonus = Config.VITALITY_MULTIPLIER * 100;
-        }
-        else
-        {
-            _expBonus = 0;
-        }
+	public ExLoginVitalityEffectInfo(int vitPoints, int vitalityItemsUsed)
+	{
+		if (vitPoints > 0)
+		{
+			_expBonus = Config.VITALITY_MULTIPLIER * 100;
+		}
+		else
+		{
+			_expBonus = 0;
+		}
 
-        _vitalityItemsUsed = vitalityItemsUsed;
-    }
+		_vitalityItemsUsed = vitalityItemsUsed;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD((int) _expBonus);
-        writeD(_vitalityItemsUsed);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD((int) _expBonus);
+		writeD(_vitalityItemsUsed);
+	}
 }

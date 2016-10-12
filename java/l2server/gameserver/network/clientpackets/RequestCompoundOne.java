@@ -27,44 +27,44 @@ import l2server.gameserver.network.serverpackets.ExCompoundTwoFail;
  */
 public final class RequestCompoundOne extends L2GameClientPacket
 {
-    private int _objId;
+	private int _objId;
 
-    @Override
-    protected void readImpl()
-    {
-        _objId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_objId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(_objId);
-        if (compoundItem == null)
-        {
-            sendPacket(new ExCompoundTwoFail());
-            return;
-        }
+		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(_objId);
+		if (compoundItem == null)
+		{
+			sendPacket(new ExCompoundTwoFail());
+			return;
+		}
 
-        if (activeChar.getCompoundItem2() != null && (activeChar.getCompoundItem2() == compoundItem ||
-                activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId()))
-        {
-            sendPacket(new ExCompoundOneFail());
-            return;
-        }
+		if (activeChar.getCompoundItem2() != null && (activeChar.getCompoundItem2() == compoundItem ||
+				activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId()))
+		{
+			sendPacket(new ExCompoundOneFail());
+			return;
+		}
 
-        if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId()))
-        {
-            sendPacket(new ExCompoundOneFail());
-            return;
-        }
+		if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId()))
+		{
+			sendPacket(new ExCompoundOneFail());
+			return;
+		}
 
-        activeChar.setCompoundItem1(compoundItem);
-        sendPacket(new ExCompoundOneOK());
-    }
+		activeChar.setCompoundItem1(compoundItem);
+		sendPacket(new ExCompoundOneOK());
+	}
 }

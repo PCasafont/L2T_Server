@@ -27,40 +27,40 @@ import l2server.gameserver.network.serverpackets.PledgeReceivePowerInfo;
  */
 public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 {
-    @SuppressWarnings("unused")
-    private int _unk1;
-    private String _player;
+	@SuppressWarnings("unused")
+	private int _unk1;
+	private String _player;
 
-    @Override
-    protected void readImpl()
-    {
-        _unk1 = readD();
-        _player = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_unk1 = readD();
+		_player = readS();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        //Logozo.info("C5: RequestPledgeMemberPowerInfo d:"+_unk1);
-        //Logozo.info("C5: RequestPledgeMemberPowerInfo S:"+_player);
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        //do we need powers to do that??
-        L2Clan clan = activeChar.getClan();
-        if (clan == null)
-        {
-            return;
-        }
-        L2ClanMember member = clan.getClanMember(_player);
-        if (member == null)
-        {
-            return;
-        }
-        activeChar.sendPacket(new PledgeReceivePowerInfo(member));
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		//Logozo.info("C5: RequestPledgeMemberPowerInfo d:"+_unk1);
+		//Logozo.info("C5: RequestPledgeMemberPowerInfo S:"+_player);
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		//do we need powers to do that??
+		L2Clan clan = activeChar.getClan();
+		if (clan == null)
+		{
+			return;
+		}
+		L2ClanMember member = clan.getClanMember(_player);
+		if (member == null)
+		{
+			return;
+		}
+		activeChar.sendPacket(new PledgeReceivePowerInfo(member));
+	}
 }

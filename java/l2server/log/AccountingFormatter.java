@@ -26,76 +26,76 @@ import java.util.logging.LogRecord;
 
 public class AccountingFormatter extends Formatter
 {
-    private static final String CRLF = "\r\n";
-    private SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
+	private static final String CRLF = "\r\n";
+	private SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
 
-    @Override
-    public String format(LogRecord record)
-    {
-        final Object[] params = record.getParameters();
-        final StringBuilder output = StringUtil
-                .startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[",
-                        dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
-        for (Object p : params)
-        {
-            if (p == null)
-            {
-                continue;
-            }
+	@Override
+	public String format(LogRecord record)
+	{
+		final Object[] params = record.getParameters();
+		final StringBuilder output = StringUtil
+				.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[",
+						dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
+		for (Object p : params)
+		{
+			if (p == null)
+			{
+				continue;
+			}
 
-            StringUtil.append(output, ", ");
+			StringUtil.append(output, ", ");
 
-            if (p instanceof L2GameClient)
-            {
-                final L2GameClient client = (L2GameClient) p;
-                String address = null;
-                try
-                {
-                    if (!client.isDetached())
-                    {
-                        address = client.getConnection().getInetAddress().getHostAddress();
-                    }
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
+			if (p instanceof L2GameClient)
+			{
+				final L2GameClient client = (L2GameClient) p;
+				String address = null;
+				try
+				{
+					if (!client.isDetached())
+					{
+						address = client.getConnection().getInetAddress().getHostAddress();
+					}
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
 
-                switch (client.getState())
-                {
-                    case IN_GAME:
-                        if (client.getActiveChar() != null)
-                        {
-                            StringUtil.append(output, client.getActiveChar().getName());
-                            StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()), ") ");
-                        }
-                    case AUTHED:
-                        if (client.getAccountName() != null)
-                        {
-                            StringUtil.append(output, client.getAccountName(), " ");
-                        }
-                    case CONNECTED:
-                        if (address != null)
-                        {
-                            StringUtil.append(output, address);
-                        }
-                        break;
-                    default:
-                        throw new IllegalStateException("Missing state on switch");
-                }
-            }
-            else if (p instanceof L2PcInstance)
-            {
-                L2PcInstance player = (L2PcInstance) p;
-                StringUtil.append(output, player.getName());
-                StringUtil.append(output, "(", String.valueOf(player.getObjectId()), ")");
-            }
-            else
-            {
-                StringUtil.append(output, p.toString());
-            }
-        }
-        output.append(CRLF);
-        return output.toString();
-    }
+				switch (client.getState())
+				{
+					case IN_GAME:
+						if (client.getActiveChar() != null)
+						{
+							StringUtil.append(output, client.getActiveChar().getName());
+							StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()), ") ");
+						}
+					case AUTHED:
+						if (client.getAccountName() != null)
+						{
+							StringUtil.append(output, client.getAccountName(), " ");
+						}
+					case CONNECTED:
+						if (address != null)
+						{
+							StringUtil.append(output, address);
+						}
+						break;
+					default:
+						throw new IllegalStateException("Missing state on switch");
+				}
+			}
+			else if (p instanceof L2PcInstance)
+			{
+				L2PcInstance player = (L2PcInstance) p;
+				StringUtil.append(output, player.getName());
+				StringUtil.append(output, "(", String.valueOf(player.getObjectId()), ")");
+			}
+			else
+			{
+				StringUtil.append(output, p.toString());
+			}
+		}
+		output.append(CRLF);
+		return output.toString();
+	}
 }

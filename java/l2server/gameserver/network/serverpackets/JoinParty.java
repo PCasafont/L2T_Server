@@ -29,20 +29,20 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class JoinParty extends L2GameServerPacket
 {
-    //
+	//
 
-    private int _response;
+	private int _response;
 
-    /**
-     */
-    public JoinParty(int response)
-    {
-        _response = response;
-    }
+	/**
+	 */
+	public JoinParty(int response)
+	{
+		_response = response;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_response);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_response);
+	}
 }

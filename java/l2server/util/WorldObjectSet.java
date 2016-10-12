@@ -39,73 +39,73 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 {
-    private Map<Integer, T> _objectMap;
+	private Map<Integer, T> _objectMap;
 
-    public WorldObjectSet()
-    {
-        _objectMap = new ConcurrentHashMap<>();
-    }
+	public WorldObjectSet()
+	{
+		_objectMap = new ConcurrentHashMap<>();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#size()
-     */
-    @Override
-    public int size()
-    {
-        return _objectMap.size();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#size()
+	 */
+	@Override
+	public int size()
+	{
+		return _objectMap.size();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#isEmpty()
-     */
-    @Override
-    public boolean isEmpty()
-    {
-        return _objectMap.isEmpty();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#isEmpty()
+	 */
+	@Override
+	public boolean isEmpty()
+	{
+		return _objectMap.isEmpty();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#clear()
-     */
-    @Override
-    public void clear()
-    {
-        _objectMap.clear();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#clear()
+	 */
+	@Override
+	public void clear()
+	{
+		_objectMap.clear();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#put(T)
-     */
-    @Override
-    public void put(T obj)
-    {
-        _objectMap.put(obj.getObjectId(), obj);
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#put(T)
+	 */
+	@Override
+	public void put(T obj)
+	{
+		_objectMap.put(obj.getObjectId(), obj);
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#remove(T)
-     */
-    @Override
-    public void remove(T obj)
-    {
-        _objectMap.remove(obj.getObjectId());
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#remove(T)
+	 */
+	@Override
+	public void remove(T obj)
+	{
+		_objectMap.remove(obj.getObjectId());
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#contains(T)
-     */
-    @Override
-    public boolean contains(T obj)
-    {
-        return _objectMap.containsKey(obj.getObjectId());
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#contains(T)
+	 */
+	@Override
+	public boolean contains(T obj)
+	{
+		return _objectMap.containsKey(obj.getObjectId());
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.L2ObjectSet#iterator()
-     */
-    @Override
-    public Iterator<T> iterator()
-    {
-        return _objectMap.values().iterator();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.L2ObjectSet#iterator()
+	 */
+	@Override
+	public Iterator<T> iterator()
+	{
+		return _objectMap.values().iterator();
+	}
 }

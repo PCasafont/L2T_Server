@@ -21,24 +21,24 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExAirShipStopMove extends L2GameServerPacket
 {
 
-    private final int _playerId, _airShipId, _x, _y, _z;
+	private final int _playerId, _airShipId, _x, _y, _z;
 
-    public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z)
-    {
-        _playerId = player.getObjectId();
-        _airShipId = ship.getObjectId();
-        _x = x;
-        _y = y;
-        _z = z;
-    }
+	public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z)
+	{
+		_playerId = player.getObjectId();
+		_airShipId = ship.getObjectId();
+		_x = x;
+		_y = y;
+		_z = z;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_airShipId);
-        writeD(_playerId);
-        writeD(_x);
-        writeD(_y);
-        writeD(_z);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_airShipId);
+		writeD(_playerId);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+	}
 }

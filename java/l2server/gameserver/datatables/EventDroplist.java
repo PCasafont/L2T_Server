@@ -31,99 +31,99 @@ import java.util.List;
 public class EventDroplist
 {
 
-    //
+	//
 
-    /**
-     * The table containing all DataDrop object
-     */
-    private List<DateDrop> _allNpcDateDrops;
+	/**
+	 * The table containing all DataDrop object
+	 */
+	private List<DateDrop> _allNpcDateDrops;
 
-    public static EventDroplist getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static EventDroplist getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    public static class DateDrop
-    {
-        /**
-         * Start and end date of the Event
-         */
-        public DateRange dateRange;
+	public static class DateDrop
+	{
+		/**
+		 * Start and end date of the Event
+		 */
+		public DateRange dateRange;
 
-        /**
-         * The table containing Item identifier that can be dropped as extra Items during the Event
-         */
-        public int[] items;
+		/**
+		 * The table containing Item identifier that can be dropped as extra Items during the Event
+		 */
+		public int[] items;
 
-        /**
-         * The min number of Item dropped in one time during this Event
-         */
-        public int min;
+		/**
+		 * The min number of Item dropped in one time during this Event
+		 */
+		public int min;
 
-        /**
-         * The max number of Item dropped in one time during this Event
-         */
-        public int max;
+		/**
+		 * The max number of Item dropped in one time during this Event
+		 */
+		public int max;
 
-        /**
-         * The rate of drop for this Event
-         */
-        public int chance;
-    }
+		/**
+		 * The rate of drop for this Event
+		 */
+		public int chance;
+	}
 
-    /**
-     * Constructor of EventDroplist.<BR><BR>
-     */
-    private EventDroplist()
-    {
-        _allNpcDateDrops = new ArrayList<>();
-    }
+	/**
+	 * Constructor of EventDroplist.<BR><BR>
+	 */
+	private EventDroplist()
+	{
+		_allNpcDateDrops = new ArrayList<>();
+	}
 
-    /**
-     * Create and Init a new DateDrop then add it to the allNpcDateDrops of EventDroplist .<BR><BR>
-     *
-     * @param items  The table containing all item identifier of this DateDrop
-     * @param count  The table containing min and max value of this DateDrop
-     * @param chance The chance to obtain this drop
-     * @param range  The DateRange object to add to this DateDrop
-     */
-    public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range)
-    {
+	/**
+	 * Create and Init a new DateDrop then add it to the allNpcDateDrops of EventDroplist .<BR><BR>
+	 *
+	 * @param items  The table containing all item identifier of this DateDrop
+	 * @param count  The table containing min and max value of this DateDrop
+	 * @param chance The chance to obtain this drop
+	 * @param range  The DateRange object to add to this DateDrop
+	 */
+	public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range)
+	{
 
-        DateDrop date = new DateDrop();
+		DateDrop date = new DateDrop();
 
-        date.dateRange = range;
-        date.items = items;
-        date.min = count[0];
-        date.max = count[1];
-        date.chance = chance;
+		date.dateRange = range;
+		date.items = items;
+		date.min = count[0];
+		date.max = count[1];
+		date.chance = chance;
 
-        _allNpcDateDrops.add(date);
-    }
+		_allNpcDateDrops.add(date);
+	}
 
-    /**
-     * Return all DateDrop of EventDroplist allNpcDateDrops within the date range.<BR><BR>
-     */
-    public List<DateDrop> getAllDrops()
-    {
-        List<DateDrop> list = new ArrayList<>();
+	/**
+	 * Return all DateDrop of EventDroplist allNpcDateDrops within the date range.<BR><BR>
+	 */
+	public List<DateDrop> getAllDrops()
+	{
+		List<DateDrop> list = new ArrayList<>();
 
-        for (DateDrop drop : _allNpcDateDrops)
-        {
-            Date currentDate = new Date();
-            //Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
-            if (drop.dateRange.isWithinRange(currentDate))
-            {
-                list.add(drop);
-            }
-        }
+		for (DateDrop drop : _allNpcDateDrops)
+		{
+			Date currentDate = new Date();
+			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
+			if (drop.dateRange.isWithinRange(currentDate))
+			{
+				list.add(drop);
+			}
+		}
 
-        return list;
-    }
+		return list;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final EventDroplist _instance = new EventDroplist();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final EventDroplist _instance = new EventDroplist();
+	}
 }

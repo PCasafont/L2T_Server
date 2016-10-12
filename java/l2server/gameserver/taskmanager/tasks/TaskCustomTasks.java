@@ -27,38 +27,38 @@ import java.util.Calendar;
 
 public class TaskCustomTasks extends Task
 {
-    public static final String NAME = "custom_tasks";
+	public static final String NAME = "custom_tasks";
 
-    @Override
-    public String getName()
-    {
-        return NAME;
-    }
+	@Override
+	public String getName()
+	{
+		return NAME;
+	}
 
-    @Override
-    public void onTimeElapsed(ExecutedTask task)
-    {
-        Calendar cal = Calendar.getInstance();
-        int day = cal.get(Calendar.DAY_OF_WEEK);
+	@Override
+	public void onTimeElapsed(ExecutedTask task)
+	{
+		Calendar cal = Calendar.getInstance();
+		int day = cal.get(Calendar.DAY_OF_WEEK);
 
-        // Each Monday tasks
-        if (day == Calendar.MONDAY)
-        {
-            if (Config.ENABLE_CUSTOM_LOTTERY)
-            {
-                LotterySystem.getInstance().giveRewardsAndReset();
-            }
-            if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-            {
-                DamageManager.getInstance().giveRewardsAndReset();
-            }
-        }
-    }
+		// Each Monday tasks
+		if (day == Calendar.MONDAY)
+		{
+			if (Config.ENABLE_CUSTOM_LOTTERY)
+			{
+				LotterySystem.getInstance().giveRewardsAndReset();
+			}
+			if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
+			{
+				DamageManager.getInstance().giveRewardsAndReset();
+			}
+		}
+	}
 
-    @Override
-    public void initialize()
-    {
-        super.initialize();
-        TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "00:10:00", "");
-    }
+	@Override
+	public void initialize()
+	{
+		super.initialize();
+		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "00:10:00", "");
+	}
 }

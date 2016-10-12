@@ -29,85 +29,85 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestAllyInfo extends L2GameClientPacket
 {
 
-    @Override
-    public void readImpl()
-    {
+	@Override
+	public void readImpl()
+	{
 
-    }
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        SystemMessage sm;
-        if (activeChar.getAllyId() == 0)
-        {
-            sm = SystemMessage.getSystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES);
-            sendPacket(sm);
-            return;
-        }
+		SystemMessage sm;
+		if (activeChar.getAllyId() == 0)
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES);
+			sendPacket(sm);
+			return;
+		}
 
-        sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_INFO_HEAD);
-        sendPacket(sm);
-        sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_NAME_S1);
-        sm.addString(activeChar.getClan().getAllyName());
-        sendPacket(sm);
+		sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_INFO_HEAD);
+		sendPacket(sm);
+		sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_NAME_S1);
+		sm.addString(activeChar.getClan().getAllyName());
+		sendPacket(sm);
 
-        int clanCount = 0;
-        int totalMembers = 0;
-        int onlineMembers = 0;
-        for (L2Clan clan : ClanTable.getInstance().getClans())
-        {
-            if (clan.getAllyId() != activeChar.getAllyId())
-            {
-                continue;
-            }
+		int clanCount = 0;
+		int totalMembers = 0;
+		int onlineMembers = 0;
+		for (L2Clan clan : ClanTable.getInstance().getClans())
+		{
+			if (clan.getAllyId() != activeChar.getAllyId())
+			{
+				continue;
+			}
 
-            clanCount++;
-            totalMembers += clan.getMembersCount();
-            onlineMembers += clan.getOnlineMembersCount();
-        }
-        sm = SystemMessage.getSystemMessage(SystemMessageId.CONNECTION_S1_TOTAL_S2);
-        sm.addNumber(onlineMembers);
-        sm.addNumber(totalMembers);
-        sendPacket(sm);
+			clanCount++;
+			totalMembers += clan.getMembersCount();
+			onlineMembers += clan.getOnlineMembersCount();
+		}
+		sm = SystemMessage.getSystemMessage(SystemMessageId.CONNECTION_S1_TOTAL_S2);
+		sm.addNumber(onlineMembers);
+		sm.addNumber(totalMembers);
+		sendPacket(sm);
 
-        final L2Clan leaderClan = ClanTable.getInstance().getClan(activeChar.getAllyId());
-        sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_LEADER_S2_OF_S1);
-        sm.addString(leaderClan.getName());
-        sm.addString(leaderClan.getLeaderName());
-        sendPacket(sm);
+		final L2Clan leaderClan = ClanTable.getInstance().getClan(activeChar.getAllyId());
+		sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_LEADER_S2_OF_S1);
+		sm.addString(leaderClan.getName());
+		sm.addString(leaderClan.getLeaderName());
+		sendPacket(sm);
 
-        sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_CLAN_TOTAL_S1);
-        sm.addNumber(clanCount);
-        sendPacket(sm);
+		sm = SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_CLAN_TOTAL_S1);
+		sm.addNumber(clanCount);
+		sendPacket(sm);
 
-        sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_HEAD);
-        for (L2Clan clan : ClanTable.getInstance().getClans())
-        {
-            if (clan.getAllyId() != activeChar.getAllyId())
-            {
-                continue;
-            }
+		sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_HEAD);
+		for (L2Clan clan : ClanTable.getInstance().getClans())
+		{
+			if (clan.getAllyId() != activeChar.getAllyId())
+			{
+				continue;
+			}
 
-            sendPacket(sm); // send head or separator
-            sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_NAME_S1);
-            sm.addString(clan.getName());
-            sendPacket(sm);
-            sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_LEADER_S1);
-            sm.addString(clan.getLeaderName());
-            sendPacket(sm);
-            sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_LEVEL_S1);
-            sm.addNumber(clan.getLevel());
-            sendPacket(sm);
-            sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_SEPARATOR);
-        }
-        sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_FOOT);
-        sendPacket(sm);
-    }
+			sendPacket(sm); // send head or separator
+			sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_NAME_S1);
+			sm.addString(clan.getName());
+			sendPacket(sm);
+			sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_LEADER_S1);
+			sm.addString(clan.getLeaderName());
+			sendPacket(sm);
+			sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_LEVEL_S1);
+			sm.addNumber(clan.getLevel());
+			sendPacket(sm);
+			sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_SEPARATOR);
+		}
+		sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_FOOT);
+		sendPacket(sm);
+	}
 }

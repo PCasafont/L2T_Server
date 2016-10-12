@@ -32,76 +32,76 @@ import java.util.logging.Logger;
  */
 public final class RequestOustPledgeMember extends L2GameClientPacket
 {
-    static Logger _log = Logger.getLogger(RequestOustPledgeMember.class.getName());
+	static Logger _log = Logger.getLogger(RequestOustPledgeMember.class.getName());
 
-    private String _target;
+	private String _target;
 
-    @Override
-    protected void readImpl()
-    {
-        _target = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_target = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        if (activeChar.getClan() == null)
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER));
-            return;
-        }
-        if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_DISMISS) != L2Clan.CP_CL_DISMISS)
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
-            return;
-        }
-        if (activeChar.getName().equalsIgnoreCase(_target))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_DISMISS_YOURSELF));
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		if (activeChar.getClan() == null)
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER));
+			return;
+		}
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_DISMISS) != L2Clan.CP_CL_DISMISS)
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+			return;
+		}
+		if (activeChar.getName().equalsIgnoreCase(_target))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_DISMISS_YOURSELF));
+			return;
+		}
 
-        L2Clan clan = activeChar.getClan();
+		L2Clan clan = activeChar.getClan();
 
-        L2ClanMember member = clan.getClanMember(_target);
-        if (member == null)
-        {
-            Log.warning("Target (" + _target + ") is not member of the clan");
-            return;
-        }
-        if (member.isOnline() && member.getPlayerInstance().isInCombat())
-        {
-            activeChar.sendPacket(
-                    SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_CANNOT_BE_DISMISSED_DURING_COMBAT));
-            return;
-        }
+		L2ClanMember member = clan.getClanMember(_target);
+		if (member == null)
+		{
+			Log.warning("Target (" + _target + ") is not member of the clan");
+			return;
+		}
+		if (member.isOnline() && member.getPlayerInstance().isInCombat())
+		{
+			activeChar.sendPacket(
+					SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_CANNOT_BE_DISMISSED_DURING_COMBAT));
+			return;
+		}
 
-        // this also updates the database
-        clan.removeClanMember(member.getObjectId(), System.currentTimeMillis() + 18000000L); //24*60*60*1000 = 86400000
-        clan.setCharPenaltyExpiryTime(System.currentTimeMillis() + 18000000L); //24*60*60*1000 = 86400000
-        clan.updateClanInDB();
+		// this also updates the database
+		clan.removeClanMember(member.getObjectId(), System.currentTimeMillis() + 18000000L); //24*60*60*1000 = 86400000
+		clan.setCharPenaltyExpiryTime(System.currentTimeMillis() + 18000000L); //24*60*60*1000 = 86400000
+		clan.updateClanInDB();
 
-        SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_S1_EXPELLED);
-        sm.addString(member.getName());
-        clan.broadcastToOnlineMembers(sm);
-        sm = null;
-        activeChar.sendPacket(
-                SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_CLAN_MEMBER));
-        activeChar.sendPacket(
-                SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_S1_EXPELLED);
+		sm.addString(member.getName());
+		clan.broadcastToOnlineMembers(sm);
+		sm = null;
+		activeChar.sendPacket(
+				SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_CLAN_MEMBER));
+		activeChar.sendPacket(
+				SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
 
-        // Remove the Player From the Member list
-        clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(_target));
+		// Remove the Player From the Member list
+		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(_target));
 
-        if (member.isOnline())
-        {
-            L2PcInstance player = member.getPlayerInstance();
-            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
-        }
-    }
+		if (member.isOnline())
+		{
+			L2PcInstance player = member.getPlayerInstance();
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
+		}
+	}
 }

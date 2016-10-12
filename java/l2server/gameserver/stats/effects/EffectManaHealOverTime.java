@@ -25,61 +25,61 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectManaHealOverTime extends L2Effect
 {
-    public EffectManaHealOverTime(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectManaHealOverTime(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectManaHealOverTime(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectManaHealOverTime(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
-     */
-    @Override
-    protected boolean effectCanBeStolen()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+	 */
+	@Override
+	protected boolean effectCanBeStolen()
+	{
+		return true;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        if (getEffected().isDead() || getEffected() instanceof L2PcInstance &&
-                ((L2PcInstance) getEffected()).getCurrentClass().getId() == 146)
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		if (getEffected().isDead() || getEffected() instanceof L2PcInstance &&
+				((L2PcInstance) getEffected()).getCurrentClass().getId() == 146)
+		{
+			return false;
+		}
 
-        if (getEffected().calcStat(Stats.MANA_SHIELD_PERCENT, 0, getEffected(), null) > 0)
-        {
-            return false;
-        }
+		if (getEffected().calcStat(Stats.MANA_SHIELD_PERCENT, 0, getEffected(), null) > 0)
+		{
+			return false;
+		}
 
-        double mp = getEffected().getCurrentMp();
-        double maxmp = getEffected().getMaxMp();
-        mp += calc();
-        if (mp > maxmp)
-        {
-            mp = maxmp;
-        }
+		double mp = getEffected().getCurrentMp();
+		double maxmp = getEffected().getMaxMp();
+		mp += calc();
+		if (mp > maxmp)
+		{
+			mp = maxmp;
+		}
 
-        getEffected().setCurrentMp(mp);
-        StatusUpdate sump = new StatusUpdate(getEffected());
-        sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
-        getEffected().sendPacket(sump);
-        return true;
-    }
+		getEffected().setCurrentMp(mp);
+		StatusUpdate sump = new StatusUpdate(getEffected());
+		sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
+		getEffected().sendPacket(sump);
+		return true;
+	}
 }

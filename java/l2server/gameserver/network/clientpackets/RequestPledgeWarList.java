@@ -25,35 +25,35 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
  */
 public final class RequestPledgeWarList extends L2GameClientPacket
 {
-    @SuppressWarnings("unused")
-    private int _unk1;
-    private int _tab;
+	@SuppressWarnings("unused")
+	private int _unk1;
+	private int _tab;
 
-    @Override
-    protected void readImpl()
-    {
-        _unk1 = readD();
-        _tab = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_unk1 = readD();
+		_tab = readD();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        //Logozo.info("C5: RequestPledgeWarList d:"+_unk1);
-        //Logozo.info("C5: RequestPledgeWarList d:"+_tab);
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        if (activeChar.getClan() == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		//Logozo.info("C5: RequestPledgeWarList d:"+_unk1);
+		//Logozo.info("C5: RequestPledgeWarList d:"+_tab);
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		if (activeChar.getClan() == null)
+		{
+			return;
+		}
 
-        //do we need powers to do that??
-        activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), _tab));
-    }
+		//do we need powers to do that??
+		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), _tab));
+	}
 }

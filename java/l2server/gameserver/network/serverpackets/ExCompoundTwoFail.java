@@ -20,15 +20,15 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCompoundTwoFail extends L2GameServerPacket
 {
-    /*
+	/*
       @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

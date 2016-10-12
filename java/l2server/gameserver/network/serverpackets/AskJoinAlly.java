@@ -30,24 +30,24 @@ package l2server.gameserver.network.serverpackets;
  */
 public class AskJoinAlly extends L2GameServerPacket
 {
-    //
+	//
 
-    private String _requestorName;
-    private int _requestorObjId;
+	private String _requestorName;
+	private int _requestorObjId;
 
-    /**
-     *
-     */
-    public AskJoinAlly(int requestorObjId, String requestorName)
-    {
-        _requestorName = requestorName;
-        _requestorObjId = requestorObjId;
-    }
+	/**
+	 *
+	 */
+	public AskJoinAlly(int requestorObjId, String requestorName)
+	{
+		_requestorName = requestorName;
+		_requestorObjId = requestorObjId;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_requestorObjId);
-        writeS(_requestorName);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_requestorObjId);
+		writeS(_requestorName);
+	}
 }

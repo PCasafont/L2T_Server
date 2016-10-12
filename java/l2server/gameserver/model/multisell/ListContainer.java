@@ -23,80 +23,80 @@ import java.util.List;
  */
 public class ListContainer
 {
-    protected int _listId;
-    protected boolean _applyTaxes = false;
-    protected boolean _maintainEnchantment = false;
-    protected boolean _isChance = false;
-    protected int _timeLimit;
+	protected int _listId;
+	protected boolean _applyTaxes = false;
+	protected boolean _maintainEnchantment = false;
+	protected boolean _isChance = false;
+	protected int _timeLimit;
 
-    protected List<MultiSellEntry> _entries;
+	protected List<MultiSellEntry> _entries;
 
-    public ListContainer()
-    {
-        _entries = new ArrayList<>();
-    }
+	public ListContainer()
+	{
+		_entries = new ArrayList<>();
+	}
 
-    /**
-     * This constructor used in PreparedListContainer only
-     * ArrayList not created
-     */
-    protected ListContainer(int listId)
-    {
-        _listId = listId;
-    }
+	/**
+	 * This constructor used in PreparedListContainer only
+	 * ArrayList not created
+	 */
+	protected ListContainer(int listId)
+	{
+		_listId = listId;
+	}
 
-    public final List<MultiSellEntry> getEntries()
-    {
-        return _entries;
-    }
+	public final List<MultiSellEntry> getEntries()
+	{
+		return _entries;
+	}
 
-    public final void setListId(int listId)
-    {
-        _listId = listId;
-    }
+	public final void setListId(int listId)
+	{
+		_listId = listId;
+	}
 
-    public final int getListId()
-    {
-        return _listId;
-    }
+	public final int getListId()
+	{
+		return _listId;
+	}
 
-    public final void setApplyTaxes(boolean applyTaxes)
-    {
-        _applyTaxes = applyTaxes;
-    }
+	public final void setApplyTaxes(boolean applyTaxes)
+	{
+		_applyTaxes = applyTaxes;
+	}
 
-    public final boolean getApplyTaxes()
-    {
-        return _applyTaxes;
-    }
+	public final boolean getApplyTaxes()
+	{
+		return _applyTaxes;
+	}
 
-    public final void setMaintainEnchantment(boolean maintainEnchantment)
-    {
-        _maintainEnchantment = maintainEnchantment;
-    }
+	public final void setMaintainEnchantment(boolean maintainEnchantment)
+	{
+		_maintainEnchantment = maintainEnchantment;
+	}
 
-    public final boolean getMaintainEnchantment()
-    {
-        return _maintainEnchantment;
-    }
+	public final boolean getMaintainEnchantment()
+	{
+		return _maintainEnchantment;
+	}
 
-    public final void setIsChance(boolean isChance)
-    {
-        _isChance = isChance;
-    }
+	public final void setIsChance(boolean isChance)
+	{
+		_isChance = isChance;
+	}
 
-    public final boolean isChance()
-    {
-        return _isChance;
-    }
+	public final boolean isChance()
+	{
+		return _isChance;
+	}
 
-    public final void setTimeLimit(final int timeLimit)
-    {
-        _timeLimit = timeLimit;
-    }
+	public final void setTimeLimit(final int timeLimit)
+	{
+		_timeLimit = timeLimit;
+	}
 
-    public final int getTimeLimit()
-    {
-        return _timeLimit;
-    }
+	public final int getTimeLimit()
+	{
+		return _timeLimit;
+	}
 }

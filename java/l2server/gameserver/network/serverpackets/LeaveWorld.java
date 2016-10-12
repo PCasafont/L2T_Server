@@ -22,10 +22,10 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class LeaveWorld extends L2GameServerPacket
 {
-    public static final LeaveWorld STATIC_PACKET = new LeaveWorld();
+	public static final LeaveWorld STATIC_PACKET = new LeaveWorld();
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

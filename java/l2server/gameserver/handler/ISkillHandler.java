@@ -30,20 +30,20 @@ import java.util.logging.Logger;
 
 public interface ISkillHandler
 {
-    public static Logger _log = Logger.getLogger(ISkillHandler.class.getName());
+	public static Logger _log = Logger.getLogger(ISkillHandler.class.getName());
 
-    /**
-     * this is the worker method that is called when using an item.
-     *
-     * @param activeChar
-     * @return count reduction after usage
-     */
-    public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets);
+	/**
+	 * this is the worker method that is called when using an item.
+	 *
+	 * @param activeChar
+	 * @return count reduction after usage
+	 */
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets);
 
-    /**
-     * this method is called at initialization to register all the item ids automatically
-     *
-     * @return all known itemIds
-     */
-    public L2SkillType[] getSkillIds();
+	/**
+	 * this method is called at initialization to register all the item ids automatically
+	 *
+	 * @return all known itemIds
+	 */
+	public L2SkillType[] getSkillIds();
 }

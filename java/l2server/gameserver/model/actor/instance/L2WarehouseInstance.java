@@ -19,35 +19,35 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2WarehouseInstance extends L2NpcInstance
 {
-    /**
-     * @param template
-     */
-    public L2WarehouseInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2WarehouseInstance);
-    }
+	/**
+	 * @param template
+	 */
+	public L2WarehouseInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2WarehouseInstance);
+	}
 
-    @Override
-    public boolean isWarehouse()
-    {
-        return true;
-    }
+	@Override
+	public boolean isWarehouse()
+	{
+		return true;
+	}
 
-    @Override
-    public String getHtmlPath(int npcId, int val)
-    {
-        String pom = "";
+	@Override
+	public String getHtmlPath(int npcId, int val)
+	{
+		String pom = "";
 
-        if (val == 0)
-        {
-            pom = "" + npcId;
-        }
-        else
-        {
-            pom = npcId + "-" + val;
-        }
+		if (val == 0)
+		{
+			pom = "" + npcId;
+		}
+		else
+		{
+			pom = npcId + "-" + val;
+		}
 
-        return "warehouse/" + pom + ".htm";
-    }
+		return "warehouse/" + pom + ".htm";
+	}
 }

@@ -24,19 +24,19 @@ import java.io.IOException;
  */
 public class ChangeAccessLevel extends BaseSendablePacket
 {
-    public ChangeAccessLevel(String player, int access)
-    {
-        writeC(0x04);
-        writeD(access);
-        writeS(player);
-    }
+	public ChangeAccessLevel(String player, int access)
+	{
+		writeC(0x04);
+		writeD(access);
+		writeS(player);
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
-     */
-    @Override
-    public byte[] getContent() throws IOException
-    {
-        return getBytes();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
+	 */
+	@Override
+	public byte[] getContent() throws IOException
+	{
+		return getBytes();
+	}
 }

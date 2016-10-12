@@ -23,24 +23,24 @@ import l2server.gameserver.network.serverpackets.ExEnchantItemAllowed;
  */
 public final class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        activeChar.setIsEnchanting(true);
-        activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
-        sendPacket(new ExEnchantItemAllowed());
-    }
+		activeChar.setIsEnchanting(true);
+		activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
+		sendPacket(new ExEnchantItemAllowed());
+	}
 }

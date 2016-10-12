@@ -25,28 +25,28 @@ import java.util.ArrayList;
  */
 public class ConditionTargetClassIdRestriction extends Condition
 {
-    private final ArrayList<Integer> _classIds;
+	private final ArrayList<Integer> _classIds;
 
-    /**
-     * Instantiates a new condition target class id restriction.
-     *
-     * @param classId the class id
-     */
-    public ConditionTargetClassIdRestriction(ArrayList<Integer> classId)
-    {
-        _classIds = classId;
-    }
+	/**
+	 * Instantiates a new condition target class id restriction.
+	 *
+	 * @param classId the class id
+	 */
+	public ConditionTargetClassIdRestriction(ArrayList<Integer> classId)
+	{
+		_classIds = classId;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.target instanceof L2PcInstance))
-        {
-            return false;
-        }
-        return _classIds.contains(((L2PcInstance) env.target).getCurrentClass().getId());
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.target instanceof L2PcInstance))
+		{
+			return false;
+		}
+		return _classIds.contains(((L2PcInstance) env.target).getCurrentClass().getId());
+	}
 }

@@ -20,12 +20,12 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDivideAdenaCancel extends L2GameServerPacket
 {
-    public ExDivideAdenaCancel()
-    {
-    }
+	public ExDivideAdenaCancel()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

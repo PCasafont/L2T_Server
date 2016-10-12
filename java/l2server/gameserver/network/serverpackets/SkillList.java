@@ -37,52 +37,52 @@ import java.util.List;
  */
 public final class SkillList extends L2GameServerPacket
 {
-    private List<Skill> _skills;
+	private List<Skill> _skills;
 
-    static class Skill
-    {
-        public int id;
-        public int level;
-        public int reuseGroup;
-        public boolean passive;
-        public boolean disabled;
-        public boolean enchanted;
+	static class Skill
+	{
+		public int id;
+		public int level;
+		public int reuseGroup;
+		public boolean passive;
+		public boolean disabled;
+		public boolean enchanted;
 
-        Skill(int pId, int pLevel, int pReuseGroup, boolean pPassive, boolean pDisabled, boolean pEnchanted)
-        {
-            id = pId;
-            level = pLevel;
-            reuseGroup = pReuseGroup;
-            passive = pPassive;
-            disabled = pDisabled;
-            enchanted = pEnchanted;
-        }
-    }
+		Skill(int pId, int pLevel, int pReuseGroup, boolean pPassive, boolean pDisabled, boolean pEnchanted)
+		{
+			id = pId;
+			level = pLevel;
+			reuseGroup = pReuseGroup;
+			passive = pPassive;
+			disabled = pDisabled;
+			enchanted = pEnchanted;
+		}
+	}
 
-    public SkillList()
-    {
-        _skills = new ArrayList<>();
-    }
+	public SkillList()
+	{
+		_skills = new ArrayList<>();
+	}
 
-    public void addSkill(int id, int level, int reuseGroup, boolean passive, boolean disabled, boolean enchanted)
-    {
-        _skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
-    }
+	public void addSkill(int id, int level, int reuseGroup, boolean passive, boolean disabled, boolean enchanted)
+	{
+		_skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_skills.size());
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_skills.size());
 
-        for (Skill temp : _skills)
-        {
-            writeD(temp.passive ? 1 : 0);
-            writeD(temp.level);
-            writeD(temp.id);
-            writeD(temp.reuseGroup);
-            writeC(temp.disabled ? 1 : 0);
-            writeC(temp.enchanted ? 1 : 0);
-        }
-        writeD(0x00); // GoD ???
-    }
+		for (Skill temp : _skills)
+		{
+			writeD(temp.passive ? 1 : 0);
+			writeD(temp.level);
+			writeD(temp.id);
+			writeD(temp.reuseGroup);
+			writeC(temp.disabled ? 1 : 0);
+			writeC(temp.enchanted ? 1 : 0);
+		}
+		writeD(0x00); // GoD ???
+	}
 }

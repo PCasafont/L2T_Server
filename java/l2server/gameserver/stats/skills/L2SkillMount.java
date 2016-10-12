@@ -25,73 +25,73 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillMount extends L2Skill
 {
-    private int _npcId;
-    private int _itemId;
+	private int _npcId;
+	private int _itemId;
 
-    public L2SkillMount(StatsSet set)
-    {
-        super(set);
-        _npcId = set.getInteger("npcId", 0);
-        _itemId = set.getInteger("itemId", 0);
-    }
+	public L2SkillMount(StatsSet set)
+	{
+		super(set);
+		_npcId = set.getInteger("npcId", 0);
+		_itemId = set.getInteger("itemId", 0);
+	}
 
-    @Override
-    public void useSkill(L2Character caster, L2Object[] targets)
-    {
-        if (!(caster instanceof L2PcInstance))
-        {
-            return;
-        }
+	@Override
+	public void useSkill(L2Character caster, L2Object[] targets)
+	{
+		if (!(caster instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance activePlayer = (L2PcInstance) caster;
+		L2PcInstance activePlayer = (L2PcInstance) caster;
 
-        if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
-        {
-            return;
-        }
+		if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
+		{
+			return;
+		}
 
-        if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount"))
-        {
-            return;
-        }
+		if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount"))
+		{
+			return;
+		}
 
-        // Dismount Action
-        if (_npcId == 0)
-        {
-            activePlayer.dismount();
-            return;
-        }
+		// Dismount Action
+		if (_npcId == 0)
+		{
+			activePlayer.dismount();
+			return;
+		}
 
-        if (activePlayer.isSitting())
-        {
-            activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_MOVE_SITTING));
-            return;
-        }
+		if (activePlayer.isSitting())
+		{
+			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_MOVE_SITTING));
+			return;
+		}
 
-        if (activePlayer.inObserverMode())
-        {
-            return;
-        }
+		if (activePlayer.inObserverMode())
+		{
+			return;
+		}
 
-        if (activePlayer.isInOlympiadMode())
-        {
-            activePlayer.sendPacket(
-                    SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
-            return;
-        }
+		if (activePlayer.isInOlympiadMode())
+		{
+			activePlayer.sendPacket(
+					SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+			return;
+		}
 
-        if (activePlayer.getPet() != null || activePlayer.isMounted())
-        {
-            activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
-            return;
-        }
+		if (activePlayer.getPet() != null || activePlayer.isMounted())
+		{
+			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
+			return;
+		}
 
-        if (activePlayer.isAttackingNow() || activePlayer.isCursedWeaponEquipped())
-        {
-            activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_IN_COMBAT));
-            return;
-        }
+		if (activePlayer.isAttackingNow() || activePlayer.isCursedWeaponEquipped())
+		{
+			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_IN_COMBAT));
+			return;
+		}
 
-        activePlayer.mount(_npcId, _itemId, false);
-    }
+		activePlayer.mount(_npcId, _itemId, false);
+	}
 }

@@ -28,31 +28,31 @@ import l2server.gameserver.templates.item.L2Henna;
 public final class RequestHennaItemRemoveInfo extends L2GameClientPacket
 {
 
-    private int _symbolId;
+	private int _symbolId;
 
-    // format  cd
+	// format  cd
 
-    @Override
-    protected void readImpl()
-    {
-        _symbolId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_symbolId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        L2Henna template = HennaTable.getInstance().getTemplate(_symbolId);
-        if (template == null)
-        {
-            return;
-        }
+		L2Henna template = HennaTable.getInstance().getTemplate(_symbolId);
+		if (template == null)
+		{
+			return;
+		}
 
-        activeChar.sendPacket(new HennaItemRemoveInfo(template, activeChar));
-    }
+		activeChar.sendPacket(new HennaItemRemoveInfo(template, activeChar));
+	}
 }

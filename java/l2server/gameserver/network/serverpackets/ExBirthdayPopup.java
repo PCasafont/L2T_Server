@@ -22,12 +22,12 @@ package l2server.gameserver.network.serverpackets;
 public class ExBirthdayPopup extends L2GameServerPacket
 {
 
-    public ExBirthdayPopup()
-    {
-    }
+	public ExBirthdayPopup()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

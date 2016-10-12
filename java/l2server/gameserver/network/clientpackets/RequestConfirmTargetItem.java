@@ -29,43 +29,43 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestConfirmTargetItem extends L2GameClientPacket
 {
-    private int _itemObjId;
+	private int _itemObjId;
 
-    @Override
-    protected void readImpl()
-    {
-        _itemObjId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_itemObjId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjId);
-        if (item == null)
-        {
-            return;
-        }
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjId);
+		if (item == null)
+		{
+			return;
+		}
 
-        if (!LifeStoneTable.isValid(activeChar, item))
-        {
-            // Different system message here
-            if (item.isAugmented())
-            {
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN));
-                return;
-            }
+		if (!LifeStoneTable.isValid(activeChar, item))
+		{
+			// Different system message here
+			if (item.isAugmented())
+			{
+				activeChar.sendPacket(SystemMessage
+						.getSystemMessage(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN));
+				return;
+			}
 
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
-            return;
-        }
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
+			return;
+		}
 
-        activeChar.sendPacket(new ExPutItemResultForVariationMake(_itemObjId, item.getItemId()));
-    }
+		activeChar.sendPacket(new ExPutItemResultForVariationMake(_itemObjId, item.getItemId()));
+	}
 }

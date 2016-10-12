@@ -26,65 +26,65 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectNoblesseBless extends L2Effect
 {
-    public EffectNoblesseBless(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectNoblesseBless(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectNoblesseBless(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectNoblesseBless(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
-     */
-    @Override
-    protected boolean effectCanBeStolen()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+	 */
+	@Override
+	protected boolean effectCanBeStolen()
+	{
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.NOBLESSE_BLESSING;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.NOBLESSE_BLESSING;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        // just stop this effect
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		// just stop this effect
+		return false;
+	}
 }

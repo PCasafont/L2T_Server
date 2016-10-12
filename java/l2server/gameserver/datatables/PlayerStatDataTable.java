@@ -26,181 +26,181 @@ import java.util.Map;
 
 public class PlayerStatDataTable
 {
-    public class PlayerStatData
-    {
-        public final float HP;
-        public final float MP;
-        public final float CP;
+	public class PlayerStatData
+	{
+		public final float HP;
+		public final float MP;
+		public final float CP;
 
-        public PlayerStatData(float hp, float mp, float cp)
-        {
-            HP = hp;
-            MP = mp;
-            CP = cp;
-        }
-    }
+		public PlayerStatData(float hp, float mp, float cp)
+		{
+			HP = hp;
+			MP = mp;
+			CP = cp;
+		}
+	}
 
-    private final Map<Integer, PlayerStatData> _regenData = new HashMap<>();
-    private final Map<Integer, Map<Integer, PlayerStatData>> _classMaxData = new HashMap<>();
+	private final Map<Integer, PlayerStatData> _regenData = new HashMap<>();
+	private final Map<Integer, Map<Integer, PlayerStatData>> _classMaxData = new HashMap<>();
 
-    public static PlayerStatDataTable getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static PlayerStatDataTable getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private PlayerStatDataTable()
-    {
-        parseData();
-    }
+	private PlayerStatDataTable()
+	{
+		parseData();
+	}
 
-    public void reload()
-    {
-        parseData();
-    }
+	public void reload()
+	{
+		parseData();
+	}
 
-    public void parseData()
-    {
-        _regenData.clear();
-        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
-        XmlDocument doc = new XmlDocument(file);
-        for (XmlNode n : doc.getFirstChild().getChildren())
-        {
-            if (!n.getName().equalsIgnoreCase("regen"))
-            {
-                continue;
-            }
+	public void parseData()
+	{
+		_regenData.clear();
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
+		XmlDocument doc = new XmlDocument(file);
+		for (XmlNode n : doc.getFirstChild().getChildren())
+		{
+			if (!n.getName().equalsIgnoreCase("regen"))
+			{
+				continue;
+			}
 
-            int level = n.getInt("level");
-            float hp = n.getFloat("hp");
-            float mp = n.getFloat("mp");
-            float cp = n.getFloat("cp");
-            _regenData.put(level, new PlayerStatData(hp, mp, cp));
-        }
+			int level = n.getInt("level");
+			float hp = n.getFloat("hp");
+			float mp = n.getFloat("mp");
+			float cp = n.getFloat("cp");
+			_regenData.put(level, new PlayerStatData(hp, mp, cp));
+		}
 
-        Log.info("PlayerStatData: Loaded regen data for " + _regenData.size() + " levels.");
+		Log.info("PlayerStatData: Loaded regen data for " + _regenData.size() + " levels.");
 
-        _classMaxData.clear();
-        file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
-        doc = new XmlDocument(file);
-        for (XmlNode n : doc.getFirstChild().getChildren())
-        {
-            if (!n.getName().equalsIgnoreCase("class"))
-            {
-                continue;
-            }
+		_classMaxData.clear();
+		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
+		doc = new XmlDocument(file);
+		for (XmlNode n : doc.getFirstChild().getChildren())
+		{
+			if (!n.getName().equalsIgnoreCase("class"))
+			{
+				continue;
+			}
 
-            Map<Integer, PlayerStatData> statData = new HashMap<>();
-            for (XmlNode statNode : n.getChildren())
-            {
-                if (!statNode.getName().equalsIgnoreCase("statData"))
-                {
-                    continue;
-                }
+			Map<Integer, PlayerStatData> statData = new HashMap<>();
+			for (XmlNode statNode : n.getChildren())
+			{
+				if (!statNode.getName().equalsIgnoreCase("statData"))
+				{
+					continue;
+				}
 
-                int level = statNode.getInt("level");
-                float hp = statNode.getFloat("hp");
-                float mp = statNode.getFloat("mp");
-                float cp = statNode.getFloat("cp");
-                statData.put(level, new PlayerStatData(hp, mp, cp));
-            }
+				int level = statNode.getInt("level");
+				float hp = statNode.getFloat("hp");
+				float mp = statNode.getFloat("mp");
+				float cp = statNode.getFloat("cp");
+				statData.put(level, new PlayerStatData(hp, mp, cp));
+			}
 
-            String[] classIds = n.getString("id").split(",");
-            for (String classId : classIds)
-            {
-                _classMaxData.put(Integer.parseInt(classId), statData);
-            }
-        }
+			String[] classIds = n.getString("id").split(",");
+			for (String classId : classIds)
+			{
+				_classMaxData.put(Integer.parseInt(classId), statData);
+			}
+		}
 
-        Log.info("PlayerStatData: Loaded class max stat data for " + _classMaxData.size() + " classes.");
-    }
+		Log.info("PlayerStatData: Loaded class max stat data for " + _classMaxData.size() + " classes.");
+	}
 
-    public float getHpRegen(int level)
-    {
-        PlayerStatData data = _regenData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+	public float getHpRegen(int level)
+	{
+		PlayerStatData data = _regenData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.HP;
-    }
+		return data.HP;
+	}
 
-    public float getMpRegen(int level)
-    {
-        PlayerStatData data = _regenData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+	public float getMpRegen(int level)
+	{
+		PlayerStatData data = _regenData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.MP;
-    }
+		return data.MP;
+	}
 
-    public float getCpRegen(int level)
-    {
-        PlayerStatData data = _regenData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+	public float getCpRegen(int level)
+	{
+		PlayerStatData data = _regenData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.CP;
-    }
+		return data.CP;
+	}
 
-    public float getMaxHp(int classId, int level)
-    {
-        Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
-        if (classData == null)
-        {
-            return 0.0f;
-        }
+	public float getMaxHp(int classId, int level)
+	{
+		Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
+		if (classData == null)
+		{
+			return 0.0f;
+		}
 
-        PlayerStatData data = classData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+		PlayerStatData data = classData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.HP;
-    }
+		return data.HP;
+	}
 
-    public float getMaxMp(int classId, int level)
-    {
-        Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
-        if (classData == null)
-        {
-            return 0.0f;
-        }
+	public float getMaxMp(int classId, int level)
+	{
+		Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
+		if (classData == null)
+		{
+			return 0.0f;
+		}
 
-        PlayerStatData data = classData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+		PlayerStatData data = classData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.MP;
-    }
+		return data.MP;
+	}
 
-    public float getMaxCp(int classId, int level)
-    {
-        Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
-        if (classData == null)
-        {
-            return 0.0f;
-        }
+	public float getMaxCp(int classId, int level)
+	{
+		Map<Integer, PlayerStatData> classData = _classMaxData.get(classId);
+		if (classData == null)
+		{
+			return 0.0f;
+		}
 
-        PlayerStatData data = classData.get(level);
-        if (data == null)
-        {
-            return 0.0f;
-        }
+		PlayerStatData data = classData.get(level);
+		if (data == null)
+		{
+			return 0.0f;
+		}
 
-        return data.CP;
-    }
+		return data.CP;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final PlayerStatDataTable _instance = new PlayerStatDataTable();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final PlayerStatDataTable _instance = new PlayerStatDataTable();
+	}
 }

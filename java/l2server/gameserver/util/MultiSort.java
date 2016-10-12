@@ -29,282 +29,282 @@ import java.util.*;
  */
 public class MultiSort
 {
-    public static final int SORT_ASCENDING = 0;
-    public static final int SORT_DESCENDING = 1;
+	public static final int SORT_ASCENDING = 0;
+	public static final int SORT_DESCENDING = 1;
 
-    private List<?> _keyList;
-    private List<Integer> _valueList;
+	private List<?> _keyList;
+	private List<Integer> _valueList;
 
-    private boolean _isSortDescending;
-    private boolean _isSorted;
+	private boolean _isSortDescending;
+	private boolean _isSorted;
 
-    public MultiSort(int[] valueList)
-    {
-        _valueList = getIntList(valueList);
-    }
+	public MultiSort(int[] valueList)
+	{
+		_valueList = getIntList(valueList);
+	}
 
-    public MultiSort(Collection<Integer> valueList)
-    {
-        _valueList = getIntList(valueList);
-    }
+	public MultiSort(Collection<Integer> valueList)
+	{
+		_valueList = getIntList(valueList);
+	}
 
-    public MultiSort(Object[] keyList, int[] valueList)
-    {
-        _keyList = getList(keyList);
-        _valueList = getIntList(valueList);
-    }
+	public MultiSort(Object[] keyList, int[] valueList)
+	{
+		_keyList = getList(keyList);
+		_valueList = getIntList(valueList);
+	}
 
-    public MultiSort(Map<?, Integer> valueMap)
-    {
-        _keyList = getList(valueMap.keySet());
-        _valueList = getIntList(valueMap.values());
-    }
+	public MultiSort(Map<?, Integer> valueMap)
+	{
+		_keyList = getList(valueMap.keySet());
+		_valueList = getIntList(valueMap.values());
+	}
 
-    private final List<Integer> getIntList(Collection<Integer> valueList)
-    {
-        return Arrays.asList(valueList.toArray(new Integer[valueList.size()]));
-    }
+	private final List<Integer> getIntList(Collection<Integer> valueList)
+	{
+		return Arrays.asList(valueList.toArray(new Integer[valueList.size()]));
+	}
 
-    private final List<Integer> getIntList(int[] valueList)
-    {
-        Integer[] tempIntList = new Integer[valueList.length];
+	private final List<Integer> getIntList(int[] valueList)
+	{
+		Integer[] tempIntList = new Integer[valueList.length];
 
-        for (int i = 0; i < valueList.length; i++)
-        {
-            tempIntList[i] = valueList[i];
-        }
+		for (int i = 0; i < valueList.length; i++)
+		{
+			tempIntList[i] = valueList[i];
+		}
 
-        return Arrays.asList(tempIntList);
-    }
+		return Arrays.asList(tempIntList);
+	}
 
-    private final List<?> getList(Collection<?> valueList)
-    {
-        return getList(valueList.toArray(new Object[valueList.size()]));
-    }
+	private final List<?> getList(Collection<?> valueList)
+	{
+		return getList(valueList.toArray(new Object[valueList.size()]));
+	}
 
-    private final List<Object> getList(Object[] valueList)
-    {
-        return Arrays.asList(valueList);
-    }
+	private final List<Object> getList(Object[] valueList)
+	{
+		return Arrays.asList(valueList);
+	}
 
-    public final int getCount()
-    {
-        return getValues().size();
-    }
+	public final int getCount()
+	{
+		return getValues().size();
+	}
 
-    public final int getHarmonicMean()
-    {
-        if (getValues().isEmpty())
-        {
-            return -1;
-        }
+	public final int getHarmonicMean()
+	{
+		if (getValues().isEmpty())
+		{
+			return -1;
+		}
 
-        int totalValue = 0;
+		int totalValue = 0;
 
-        for (int currValue : getValues())
-        {
-            totalValue += 1 / currValue;
-        }
+		for (int currValue : getValues())
+		{
+			totalValue += 1 / currValue;
+		}
 
-        return getCount() / totalValue;
-    }
+		return getCount() / totalValue;
+	}
 
-    public final List<?> getKeys()
-    {
-        if (_keyList == null)
-        {
-            return new ArrayList<>();
-        }
+	public final List<?> getKeys()
+	{
+		if (_keyList == null)
+		{
+			return new ArrayList<>();
+		}
 
-        return _keyList;
-    }
+		return _keyList;
+	}
 
-    public final int getFrequency(int checkValue)
-    {
-        return Collections.frequency(getValues(), checkValue);
-    }
+	public final int getFrequency(int checkValue)
+	{
+		return Collections.frequency(getValues(), checkValue);
+	}
 
-    public final int getMaxValue()
-    {
-        return Collections.max(getValues());
-    }
+	public final int getMaxValue()
+	{
+		return Collections.max(getValues());
+	}
 
-    public final int getMinValue()
-    {
-        return Collections.min(getValues());
-    }
+	public final int getMinValue()
+	{
+		return Collections.min(getValues());
+	}
 
-    public final int getMean()
-    {
-        if (getValues().isEmpty())
-        {
-            return -1;
-        }
+	public final int getMean()
+	{
+		if (getValues().isEmpty())
+		{
+			return -1;
+		}
 
-        return getTotalValue() / getCount();
-    }
+		return getTotalValue() / getCount();
+	}
 
-    public final double getStandardDeviation()
-    {
-        if (getValues().isEmpty())
-        {
-            return -1;
-        }
+	public final double getStandardDeviation()
+	{
+		if (getValues().isEmpty())
+		{
+			return -1;
+		}
 
-        List<Double> tempValList = new ArrayList<>();
+		List<Double> tempValList = new ArrayList<>();
 
-        int meanValue = getMean();
-        int numValues = getCount();
+		int meanValue = getMean();
+		int numValues = getCount();
 
-        for (int value : getValues())
-        {
-            double adjValue = Math.pow(value - meanValue, 2);
-            tempValList.add(adjValue);
-        }
+		for (int value : getValues())
+		{
+			double adjValue = Math.pow(value - meanValue, 2);
+			tempValList.add(adjValue);
+		}
 
-        double totalValue = 0;
+		double totalValue = 0;
 
-        for (double storedVal : tempValList)
-        {
-            totalValue += storedVal;
-        }
+		for (double storedVal : tempValList)
+		{
+			totalValue += storedVal;
+		}
 
-        return Math.sqrt(totalValue / (numValues - 1));
-    }
+		return Math.sqrt(totalValue / (numValues - 1));
+	}
 
-    public final int getTotalValue()
-    {
-        if (getValues().isEmpty())
-        {
-            return 0;
-        }
+	public final int getTotalValue()
+	{
+		if (getValues().isEmpty())
+		{
+			return 0;
+		}
 
-        int totalValue = 0;
+		int totalValue = 0;
 
-        for (int currValue : getValues())
-        {
-            totalValue += currValue;
-        }
+		for (int currValue : getValues())
+		{
+			totalValue += currValue;
+		}
 
-        return totalValue;
-    }
+		return totalValue;
+	}
 
-    public final List<Integer> getValues()
-    {
-        if (_valueList == null)
-        {
-            return new ArrayList<>();
-        }
+	public final List<Integer> getValues()
+	{
+		if (_valueList == null)
+		{
+			return new ArrayList<>();
+		}
 
-        return _valueList;
-    }
+		return _valueList;
+	}
 
-    public final boolean isSortDescending()
-    {
-        return _isSortDescending;
-    }
+	public final boolean isSortDescending()
+	{
+		return _isSortDescending;
+	}
 
-    public final boolean isSorted()
-    {
-        return _isSorted;
-    }
+	public final boolean isSorted()
+	{
+		return _isSorted;
+	}
 
-    public final void setSortDescending(boolean isDescending)
-    {
-        _isSortDescending = isDescending;
-    }
+	public final void setSortDescending(boolean isDescending)
+	{
+		_isSortDescending = isDescending;
+	}
 
-    public boolean sort()
-    {
-        try
-        {
-            List<Object> newKeyList = new ArrayList<>();
-            List<Integer> newValueList = new ArrayList<>();
+	public boolean sort()
+	{
+		try
+		{
+			List<Object> newKeyList = new ArrayList<>();
+			List<Integer> newValueList = new ArrayList<>();
 
-            // Sort the list of values in ascending numerical order.
-            Collections.sort(getValues());
+			// Sort the list of values in ascending numerical order.
+			Collections.sort(getValues());
 
-            int lastValue = 0;
+			int lastValue = 0;
 
-            if (!isSortDescending())
-            {
-                // If there are no keys, just return the ascendingly sorted values.
-                if (getKeys().isEmpty())
-                {
-                    return true;
-                }
+			if (!isSortDescending())
+			{
+				// If there are no keys, just return the ascendingly sorted values.
+				if (getKeys().isEmpty())
+				{
+					return true;
+				}
 
-                // Iterate through the list of ordered numerical values.
-                for (int i = getValues().size() - 1; i > -1; i--)
-                {
-                    int currValue = getValues().get(i);
+				// Iterate through the list of ordered numerical values.
+				for (int i = getValues().size() - 1; i > -1; i--)
+				{
+					int currValue = getValues().get(i);
 
-                    // If the current value is equal to the last value, we have at least one
-                    // duplicate that has been outputted already, so continue.
-                    if (currValue == lastValue)
-                    {
-                        continue;
-                    }
+					// If the current value is equal to the last value, we have at least one
+					// duplicate that has been outputted already, so continue.
+					if (currValue == lastValue)
+					{
+						continue;
+					}
 
-                    // Set the last value to the current value, to prevent duplication.
-                    lastValue = currValue;
+					// Set the last value to the current value, to prevent duplication.
+					lastValue = currValue;
 
-                    // Iterate through each key and match it to its stored integer value,
-                    // then output both sets of data in the correct descending numerical order.
-                    for (int j = 0; j < getKeys().size(); j++)
-                    {
-                        Object currKey = getKeys().get(j);
+					// Iterate through each key and match it to its stored integer value,
+					// then output both sets of data in the correct descending numerical order.
+					for (int j = 0; j < getKeys().size(); j++)
+					{
+						Object currKey = getKeys().get(j);
 
-                        if (getValues().get(j) == currValue)
-                        {
-                            newKeyList.add(currKey);
-                            newValueList.add(currValue);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // If there are no keys, just sort the value list in reverse order.
-                if (getKeys().isEmpty())
-                {
-                    Collections.reverse(getValues());
-                    return true;
-                }
+						if (getValues().get(j) == currValue)
+						{
+							newKeyList.add(currKey);
+							newValueList.add(currValue);
+						}
+					}
+				}
+			}
+			else
+			{
+				// If there are no keys, just sort the value list in reverse order.
+				if (getKeys().isEmpty())
+				{
+					Collections.reverse(getValues());
+					return true;
+				}
 
-                // Do the exact same as above, but in descending order.
-                for (int i = 0; i < getValues().size(); i++)
-                {
-                    int currValue = getValues().get(i);
+				// Do the exact same as above, but in descending order.
+				for (int i = 0; i < getValues().size(); i++)
+				{
+					int currValue = getValues().get(i);
 
-                    if (currValue == lastValue)
-                    {
-                        continue;
-                    }
+					if (currValue == lastValue)
+					{
+						continue;
+					}
 
-                    lastValue = currValue;
+					lastValue = currValue;
 
-                    for (int j = 0; j < getKeys().size(); j++)
-                    {
-                        Object currKey = getKeys().get(j);
+					for (int j = 0; j < getKeys().size(); j++)
+					{
+						Object currKey = getKeys().get(j);
 
-                        if (getValues().get(j) == currValue)
-                        {
-                            newKeyList.add(currKey);
-                            newValueList.add(currValue);
-                        }
-                    }
-                }
-            }
+						if (getValues().get(j) == currValue)
+						{
+							newKeyList.add(currKey);
+							newValueList.add(currValue);
+						}
+					}
+				}
+			}
 
-            _keyList = newKeyList;
-            _valueList = newValueList;
-            _isSorted = true;
-            return true;
-        }
-        catch (Exception e)
-        {
-            return false;
-        }
-    }
+			_keyList = newKeyList;
+			_valueList = newValueList;
+			_isSorted = true;
+			return true;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
 }

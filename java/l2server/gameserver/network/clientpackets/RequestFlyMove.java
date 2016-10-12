@@ -22,26 +22,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestFlyMove extends L2GameClientPacket
 {
-    private int _stepId;
+	private int _stepId;
 
-    @Override
-    protected void readImpl()
-    {
-        _stepId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_stepId = readD();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        activeChar.flyMoveStep(_stepId);
-        //Log.info(getType() + ": " + _stepId);
-    }
+		activeChar.flyMoveStep(_stepId);
+		//Log.info(getType() + ": " + _stepId);
+	}
 }

@@ -22,18 +22,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExMentorAdd extends L2GameServerPacket
 {
-    L2PcInstance _player;
+	L2PcInstance _player;
 
-    public ExMentorAdd(L2PcInstance activeChar)
-    {
-        _player = activeChar;
-    }
+	public ExMentorAdd(L2PcInstance activeChar)
+	{
+		_player = activeChar;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeS(_player.getName());
-        writeD(_player.getClassId());
-        writeD(_player.getLevel());
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeS(_player.getName());
+		writeD(_player.getClassId());
+		writeD(_player.getLevel());
+	}
 }

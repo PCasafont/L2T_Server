@@ -26,52 +26,52 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectPhysicalAttackMute extends L2Effect
 {
-    public EffectPhysicalAttackMute(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectPhysicalAttackMute(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.PHYSICAL_ATTACK_MUTE;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.PHYSICAL_ATTACK_MUTE;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.SILENCE;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.SILENCE;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        getEffected().startPhysicalAttackMuted();
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		getEffected().startPhysicalAttackMuted();
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        // Simply stop the effect
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		// Simply stop the effect
+		return false;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        getEffected().stopPhysicalAttackMuted(getAbnormal());
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		getEffected().stopPhysicalAttackMuted(getAbnormal());
+	}
 }

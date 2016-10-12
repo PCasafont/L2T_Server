@@ -20,12 +20,12 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDivideAdenaStart extends L2GameServerPacket
 {
-    public ExDivideAdenaStart()
-    {
-    }
+	public ExDivideAdenaStart()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

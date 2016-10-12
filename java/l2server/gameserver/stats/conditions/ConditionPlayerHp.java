@@ -25,26 +25,26 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerHp extends Condition
 {
-    private final int _hp;
+	private final int _hp;
 
-    /**
-     * Instantiates a new condition player hp.
-     *
-     * @param hp the hp
-     */
-    public ConditionPlayerHp(int hp)
-    {
-        _hp = hp;
-    }
+	/**
+	 * Instantiates a new condition player hp.
+	 *
+	 * @param hp the hp
+	 */
+	public ConditionPlayerHp(int hp)
+	{
+		_hp = hp;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return env.player.getCurrentHp() * 100 / env.player.getMaxVisibleHp() <= _hp &&
-                !(env.player instanceof L2PcInstance && ((L2PcInstance) env.player).isInOlympiadMode() &&
-                        !((L2PcInstance) env.player).isOlympiadStart());
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return env.player.getCurrentHp() * 100 / env.player.getMaxVisibleHp() <= _hp &&
+				!(env.player instanceof L2PcInstance && ((L2PcInstance) env.player).isInOlympiadMode() &&
+						!((L2PcInstance) env.player).isOlympiadStart());
+	}
 }

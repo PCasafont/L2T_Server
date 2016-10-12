@@ -26,17 +26,17 @@ import l2server.gameserver.instancemanager.DuelManager;
 public final class RequestDuelSurrender extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-        // trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		// trigger
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        DuelManager.getInstance().doSurrender(getClient().getActiveChar());
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		DuelManager.getInstance().doSurrender(getClient().getActiveChar());
+	}
 }

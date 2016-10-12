@@ -25,46 +25,46 @@ import java.util.ArrayList;
  */
 public class ExMenteeSearch extends L2GameServerPacket
 {
-    ArrayList<L2PcInstance> _mentees;
-    int _page, _playersInPage;
+	ArrayList<L2PcInstance> _mentees;
+	int _page, _playersInPage;
 
-    public ExMenteeSearch(int page, int minLevel, int maxLevel)
-    {
-        _mentees = new ArrayList<>();
-        _page = page;
-        _playersInPage = 64;
-        for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-        {
-            if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
-            {
-                _mentees.add(player);
-            }
-        }
-    }
+	public ExMenteeSearch(int page, int minLevel, int maxLevel)
+	{
+		_mentees = new ArrayList<>();
+		_page = page;
+		_playersInPage = 64;
+		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
+		{
+			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
+			{
+				_mentees.add(player);
+			}
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_page);
-        if (!_mentees.isEmpty())
-        {
-            writeD(_mentees.size());
-            writeD(_mentees.size() % _playersInPage);
-            int i = 1;
-            for (L2PcInstance player : _mentees)
-            {
-                if (i <= _playersInPage * _page && i > _playersInPage * (_page - 1))
-                {
-                    writeS(player.getName());
-                    writeD(player.getClassId());
-                    writeD(player.getLevel());
-                }
-            }
-        }
-        else
-        {
-            writeD(0x00);
-            writeD(0x00);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_page);
+		if (!_mentees.isEmpty())
+		{
+			writeD(_mentees.size());
+			writeD(_mentees.size() % _playersInPage);
+			int i = 1;
+			for (L2PcInstance player : _mentees)
+			{
+				if (i <= _playersInPage * _page && i > _playersInPage * (_page - 1))
+				{
+					writeS(player.getName());
+					writeD(player.getClassId());
+					writeD(player.getLevel());
+				}
+			}
+		}
+		else
+		{
+			writeD(0x00);
+			writeD(0x00);
+		}
+	}
 }

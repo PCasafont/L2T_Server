@@ -28,71 +28,71 @@ import java.util.logging.Level;
 public class DeadLockDetector extends Thread
 {
 
-    private static final int _sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
+	private static final int _sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
 
-    private final ThreadMXBean tmx;
+	private final ThreadMXBean tmx;
 
-    public DeadLockDetector()
-    {
-        super("DeadLockDetector");
-        tmx = ManagementFactory.getThreadMXBean();
-    }
+	public DeadLockDetector()
+	{
+		super("DeadLockDetector");
+		tmx = ManagementFactory.getThreadMXBean();
+	}
 
-    @Override
-    public final void run()
-    {
-        boolean deadlock = false;
-        while (!deadlock)
-        {
-            try
-            {
-                long[] ids = tmx.findDeadlockedThreads();
+	@Override
+	public final void run()
+	{
+		boolean deadlock = false;
+		while (!deadlock)
+		{
+			try
+			{
+				long[] ids = tmx.findDeadlockedThreads();
 
-                if (ids != null)
-                {
-                    deadlock = true;
-                    ThreadInfo[] tis = tmx.getThreadInfo(ids, true, true);
-                    String info = "DeadLock Found!\n";
-                    for (ThreadInfo ti : tis)
-                    {
-                        info += ti.toString();
-                    }
+				if (ids != null)
+				{
+					deadlock = true;
+					ThreadInfo[] tis = tmx.getThreadInfo(ids, true, true);
+					String info = "DeadLock Found!\n";
+					for (ThreadInfo ti : tis)
+					{
+						info += ti.toString();
+					}
 
-                    for (ThreadInfo ti : tis)
-                    {
-                        LockInfo[] locks = ti.getLockedSynchronizers();
-                        MonitorInfo[] monitors = ti.getLockedMonitors();
-                        if (locks.length == 0 && monitors.length == 0)
-                        {
-                            continue;
-                        }
+					for (ThreadInfo ti : tis)
+					{
+						LockInfo[] locks = ti.getLockedSynchronizers();
+						MonitorInfo[] monitors = ti.getLockedMonitors();
+						if (locks.length == 0 && monitors.length == 0)
+						{
+							continue;
+						}
 
-                        ThreadInfo dl = ti;
-                        info += "Java-level deadlock:\n";
-                        info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
-                                " which is held by " + dl.getLockOwnerName() + "\n";
-                        while ((dl = tmx.getThreadInfo(new long[]{dl.getLockOwnerId()}, true, true)[0]).getThreadId() !=
-                                ti.getThreadId())
-                        {
-                            info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
-                                    " which is held by " + dl.getLockOwnerName() + "\n";
-                        }
-                    }
-                    Log.warning(info);
+						ThreadInfo dl = ti;
+						info += "Java-level deadlock:\n";
+						info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
+								" which is held by " + dl.getLockOwnerName() + "\n";
+						while ((dl = tmx.getThreadInfo(new long[]{dl.getLockOwnerId()}, true, true)[0]).getThreadId() !=
+								ti.getThreadId())
+						{
+							info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
+									" which is held by " + dl.getLockOwnerName() + "\n";
+						}
+					}
+					Log.warning(info);
 
-                    if (Config.RESTART_ON_DEADLOCK)
-                    {
-                        Announcements an = Announcements.getInstance();
-                        an.announceToAll("Server has stability issues - restarting now.");
-                        Shutdown.getInstance().startShutdown("DeadLockDetector - Auto Restart", 60, true);
-                    }
-                }
-                Thread.sleep(_sleepTime);
-            }
-            catch (Exception e)
-            {
-                Log.log(Level.WARNING, "DeadLockDetector: ", e);
-            }
-        }
-    }
+					if (Config.RESTART_ON_DEADLOCK)
+					{
+						Announcements an = Announcements.getInstance();
+						an.announceToAll("Server has stability issues - restarting now.");
+						Shutdown.getInstance().startShutdown("DeadLockDetector - Auto Restart", 60, true);
+					}
+				}
+				Thread.sleep(_sleepTime);
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.WARNING, "DeadLockDetector: ", e);
+			}
+		}
+	}
 }

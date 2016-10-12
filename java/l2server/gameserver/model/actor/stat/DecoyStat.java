@@ -19,47 +19,47 @@ import l2server.gameserver.model.actor.instance.L2DecoyInstance;
 
 public class DecoyStat extends NpcStat
 {
-    public DecoyStat(L2DecoyInstance activeChar)
-    {
-        super(activeChar);
-    }
+	public DecoyStat(L2DecoyInstance activeChar)
+	{
+		super(activeChar);
+	}
 
-    @Override
-    public final L2DecoyInstance getActiveChar()
-    {
-        return (L2DecoyInstance) super.getActiveChar();
-    }
+	@Override
+	public final L2DecoyInstance getActiveChar()
+	{
+		return (L2DecoyInstance) super.getActiveChar();
+	}
 
-    @Override
-    public int getRunSpeed()
-    {
-        if (getActiveChar() == null || getActiveChar().getOwner() == null)
-        {
-            return super.getRunSpeed();
-        }
+	@Override
+	public int getRunSpeed()
+	{
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
+		{
+			return super.getRunSpeed();
+		}
 
-        return getActiveChar().getOwner().getRunSpeed();
-    }
+		return getActiveChar().getOwner().getRunSpeed();
+	}
 
-    @Override
-    public int getPAtkSpd()
-    {
-        if (getActiveChar() == null || getActiveChar().getOwner() == null)
-        {
-            return super.getPAtkSpd();
-        }
+	@Override
+	public int getPAtkSpd()
+	{
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
+		{
+			return super.getPAtkSpd();
+		}
 
-        return getActiveChar().getOwner().getPAtkSpd();
-    }
+		return getActiveChar().getOwner().getPAtkSpd();
+	}
 
-    @Override
-    public int getMAtkSpd()
-    {
-        if (getActiveChar() == null || getActiveChar().getOwner() == null)
-        {
-            return super.getMAtkSpd();
-        }
+	@Override
+	public int getMAtkSpd()
+	{
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
+		{
+			return super.getMAtkSpd();
+		}
 
-        return getActiveChar().getOwner().getMAtkSpd();
-    }
+		return getActiveChar().getOwner().getMAtkSpd();
+	}
 }

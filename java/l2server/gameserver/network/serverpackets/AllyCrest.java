@@ -35,28 +35,28 @@ import l2server.gameserver.cache.CrestCache;
  */
 public class AllyCrest extends L2GameServerPacket
 {
-    private int _crestId;
-    private byte[] _data;
+	private int _crestId;
+	private byte[] _data;
 
-    public AllyCrest(int crestId)
-    {
-        _crestId = crestId;
-        _data = CrestCache.getInstance().getAllyCrest(_crestId);
-    }
+	public AllyCrest(int crestId)
+	{
+		_crestId = crestId;
+		_data = CrestCache.getInstance().getAllyCrest(_crestId);
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(Config.SERVER_ID); // server id?
-        writeD(_crestId);
-        if (_data != null)
-        {
-            writeD(_data.length);
-            writeB(_data);
-        }
-        else
-        {
-            writeD(0);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(Config.SERVER_ID); // server id?
+		writeD(_crestId);
+		if (_data != null)
+		{
+			writeD(_data.length);
+			writeB(_data);
+		}
+		else
+		{
+			writeD(0);
+		}
+	}
 }

@@ -27,71 +27,71 @@ import java.util.Collection;
 
 public class AttackableKnownList extends NpcKnownList
 {
-    public AttackableKnownList(L2Attackable activeChar)
-    {
-        super(activeChar);
-    }
+	public AttackableKnownList(L2Attackable activeChar)
+	{
+		super(activeChar);
+	}
 
-    @Override
-    protected boolean removeKnownObject(L2Object object, boolean forget)
-    {
-        if (!super.removeKnownObject(object, forget))
-        {
-            return false;
-        }
+	@Override
+	protected boolean removeKnownObject(L2Object object, boolean forget)
+	{
+		if (!super.removeKnownObject(object, forget))
+		{
+			return false;
+		}
 
-        // Remove the L2Object from the _aggrolist of the L2Attackable
-        if (object instanceof L2Character)
-        {
-            getActiveChar().getAggroList().remove(object);
-        }
-        // Set the L2Attackable Intention to AI_INTENTION_IDLE
-        final Collection<L2PcInstance> known = getKnownPlayers().values();
+		// Remove the L2Object from the _aggrolist of the L2Attackable
+		if (object instanceof L2Character)
+		{
+			getActiveChar().getAggroList().remove(object);
+		}
+		// Set the L2Attackable Intention to AI_INTENTION_IDLE
+		final Collection<L2PcInstance> known = getKnownPlayers().values();
 
-        //FIXME: This is a temporary solution && support for Walking Manager
-        if (getActiveChar().hasAI() && (known == null || known.isEmpty()))
-        {
-            getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
-        }
+		//FIXME: This is a temporary solution && support for Walking Manager
+		if (getActiveChar().hasAI() && (known == null || known.isEmpty()))
+		{
+			getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public L2Attackable getActiveChar()
-    {
-        return (L2Attackable) super.getActiveChar();
-    }
+	@Override
+	public L2Attackable getActiveChar()
+	{
+		return (L2Attackable) super.getActiveChar();
+	}
 
-    @Override
-    public int getDistanceToForgetObject(L2Object object)
-    {
-        if (getActiveChar().getAggroList().get(object) != null)
-        {
-            return 3000;
-        }
+	@Override
+	public int getDistanceToForgetObject(L2Object object)
+	{
+		if (getActiveChar().getAggroList().get(object) != null)
+		{
+			return 3000;
+		}
 
-        return getDistanceToWatchObject(object) + 200;
-    }
+		return getDistanceToWatchObject(object) + 200;
+	}
 
-    @Override
-    public int getDistanceToWatchObject(L2Object object)
-    {
-        if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null ||
-                !((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) ||
-                !(object instanceof L2Character))
-        {
-            return 0;
-        }
+	@Override
+	public int getDistanceToWatchObject(L2Object object)
+	{
+		if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null ||
+				!((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) ||
+				!(object instanceof L2Character))
+		{
+			return 0;
+		}
 
-        if (object instanceof L2Playable)
-        {
-            return object.getKnownList().getDistanceToWatchObject(getActiveObject());
-        }
+		if (object instanceof L2Playable)
+		{
+			return object.getKnownList().getDistanceToWatchObject(getActiveObject());
+		}
 
-        int max = Math.max(300, Math.max(getActiveChar().getAggroRange(),
-                Math.max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
+		int max = Math.max(300, Math.max(getActiveChar().getAggroRange(),
+				Math.max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
 
-        return max;
-    }
+		return max;
+	}
 }

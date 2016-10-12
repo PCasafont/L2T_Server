@@ -25,51 +25,51 @@ import java.util.List;
  */
 public final class ExShowTrace extends L2GameServerPacket
 {
-    private final List<Trace> _traces = new ArrayList<>();
+	private final List<Trace> _traces = new ArrayList<>();
 
-    public void addTrace(int x, int y, int z, int time)
-    {
-        _traces.add(new Trace(x, y, z, time));
-    }
+	public void addTrace(int x, int y, int z, int time)
+	{
+		_traces.add(new Trace(x, y, z, time));
+	}
 
-    public void addTrace(L2Object obj, int time)
-    {
-        this.addTrace(obj.getX(), obj.getY(), obj.getZ(), time);
-    }
+	public void addTrace(L2Object obj, int time)
+	{
+		this.addTrace(obj.getX(), obj.getY(), obj.getZ(), time);
+	}
 
-    static final class Trace
-    {
-        public final int _x;
-        public final int _y;
-        public final int _z;
-        public final int _time;
+	static final class Trace
+	{
+		public final int _x;
+		public final int _y;
+		public final int _z;
+		public final int _time;
 
-        public Trace(int x, int y, int z, int time)
-        {
-            _x = x;
-            _y = y;
-            _z = z;
-            _time = time;
-        }
-    }
+		public Trace(int x, int y, int z, int time)
+		{
+			_x = x;
+			_y = y;
+			_z = z;
+			_time = time;
+		}
+	}
 
     /*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeH(_traces.size());
-        for (Trace t : _traces)
-        {
-            writeD(t._x);
-            writeD(t._y);
-            writeD(t._z);
-            writeH(t._time);
-        }
-    }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeH(_traces.size());
+		for (Trace t : _traces)
+		{
+			writeD(t._x);
+			writeD(t._y);
+			writeD(t._z);
+			writeH(t._time);
+		}
+	}
 }

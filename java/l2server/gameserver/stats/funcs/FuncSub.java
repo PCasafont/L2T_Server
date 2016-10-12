@@ -20,26 +20,26 @@ import l2server.gameserver.stats.Stats;
 
 public class FuncSub extends Func
 {
-    private final Lambda _lambda;
+	private final Lambda _lambda;
 
-    public FuncSub(Stats pStat, Object owner, Lambda lambda)
-    {
-        super(pStat, owner);
-        _lambda = lambda;
-    }
+	public FuncSub(Stats pStat, Object owner, Lambda lambda)
+	{
+		super(pStat, owner);
+		_lambda = lambda;
+	}
 
-    @Override
-    public int getOrder()
-    {
-        return 0x40;
-    }
+	@Override
+	public int getOrder()
+	{
+		return 0x40;
+	}
 
-    @Override
-    public void calc(Env env)
-    {
-        if (cond == null || cond.test(env))
-        {
-            env.value -= _lambda.calc(env);
-        }
-    }
+	@Override
+	public void calc(Env env)
+	{
+		if (cond == null || cond.test(env))
+		{
+			env.value -= _lambda.calc(env);
+		}
+	}
 }

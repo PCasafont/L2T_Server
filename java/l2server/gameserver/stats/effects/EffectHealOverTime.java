@@ -25,62 +25,62 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectHealOverTime extends L2Effect
 {
-    public EffectHealOverTime(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectHealOverTime(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectHealOverTime(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectHealOverTime(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.HEAL_OVER_TIME;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.HEAL_OVER_TIME;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        getEffected().sendPacket(new ExRegMax(calc(), getAbnormal().getTotalCount() * getAbnormal().getDuration(),
-                getAbnormal().getDuration()));
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		getEffected().sendPacket(new ExRegMax(calc(), getAbnormal().getTotalCount() * getAbnormal().getDuration(),
+				getAbnormal().getDuration()));
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        if (getEffected().isDead())
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		if (getEffected().isDead())
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2DoorInstance)
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2DoorInstance)
+		{
+			return false;
+		}
 
-        double hp = getEffected().getCurrentHp();
-        double maxhp = getEffected().getMaxHp();
-        hp += calc();
-        if (hp > maxhp)
-        {
-            hp = maxhp;
-        }
+		double hp = getEffected().getCurrentHp();
+		double maxhp = getEffected().getMaxHp();
+		hp += calc();
+		if (hp > maxhp)
+		{
+			hp = maxhp;
+		}
 
-        getEffected().setCurrentHp(hp);
-        StatusUpdate suhp = new StatusUpdate(getEffected());
-        suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
-        getEffected().sendPacket(suhp);
-        return true;
-    }
+		getEffected().setCurrentHp(hp);
+		StatusUpdate suhp = new StatusUpdate(getEffected());
+		suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
+		getEffected().sendPacket(suhp);
+		return true;
+	}
 }

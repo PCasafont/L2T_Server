@@ -24,71 +24,71 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  */
 public class L2ConditionZone extends L2SpawnZone
 {
-    private boolean NO_ITEM_DROP = false;
-    private boolean NO_BOOKMARK = false;
+	private boolean NO_ITEM_DROP = false;
+	private boolean NO_BOOKMARK = false;
 
-    public L2ConditionZone(int id)
-    {
-        super(id);
-    }
+	public L2ConditionZone(int id)
+	{
+		super(id);
+	}
 
-    @Override
-    public void setParameter(String name, String value)
-    {
-        if (name.equalsIgnoreCase("NoBookmark"))
-        {
-            NO_BOOKMARK = Boolean.parseBoolean(value);
-        }
-        else if (name.equalsIgnoreCase("NoItemDrop"))
-        {
-            NO_ITEM_DROP = Boolean.parseBoolean(value);
-        }
-        else
-        {
-            super.setParameter(name, value);
-        }
-    }
+	@Override
+	public void setParameter(String name, String value)
+	{
+		if (name.equalsIgnoreCase("NoBookmark"))
+		{
+			NO_BOOKMARK = Boolean.parseBoolean(value);
+		}
+		else if (name.equalsIgnoreCase("NoItemDrop"))
+		{
+			NO_ITEM_DROP = Boolean.parseBoolean(value);
+		}
+		else
+		{
+			super.setParameter(name, value);
+		}
+	}
 
-    @Override
-    protected void onEnter(L2Character character)
-    {
-        if (character instanceof L2PcInstance)
-        {
-            if (NO_BOOKMARK)
-            {
-                character.setInsideZone(L2Character.ZONE_NOBOOKMARK, true);
-            }
-            if (NO_ITEM_DROP)
-            {
-                character.setInsideZone(L2Character.ZONE_NOITEMDROP, true);
-            }
-        }
-    }
+	@Override
+	protected void onEnter(L2Character character)
+	{
+		if (character instanceof L2PcInstance)
+		{
+			if (NO_BOOKMARK)
+			{
+				character.setInsideZone(L2Character.ZONE_NOBOOKMARK, true);
+			}
+			if (NO_ITEM_DROP)
+			{
+				character.setInsideZone(L2Character.ZONE_NOITEMDROP, true);
+			}
+		}
+	}
 
-    @Override
-    protected void onExit(L2Character character)
-    {
+	@Override
+	protected void onExit(L2Character character)
+	{
 
-        if (character instanceof L2PcInstance)
-        {
-            if (NO_BOOKMARK)
-            {
-                character.setInsideZone(L2Character.ZONE_NOBOOKMARK, false);
-            }
-            if (NO_ITEM_DROP)
-            {
-                character.setInsideZone(L2Character.ZONE_NOITEMDROP, false);
-            }
-        }
-    }
+		if (character instanceof L2PcInstance)
+		{
+			if (NO_BOOKMARK)
+			{
+				character.setInsideZone(L2Character.ZONE_NOBOOKMARK, false);
+			}
+			if (NO_ITEM_DROP)
+			{
+				character.setInsideZone(L2Character.ZONE_NOITEMDROP, false);
+			}
+		}
+	}
 
-    @Override
-    public void onDieInside(L2Character character, L2Character killer)
-    {
-    }
+	@Override
+	public void onDieInside(L2Character character, L2Character killer)
+	{
+	}
 
-    @Override
-    public void onReviveInside(L2Character character)
-    {
-    }
+	@Override
+	public void onReviveInside(L2Character character)
+	{
+	}
 }

@@ -27,66 +27,66 @@ import java.io.File;
  */
 public class AutoAnnounceTaskManager
 {
-    public static AutoAnnounceTaskManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static AutoAnnounceTaskManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private AutoAnnounceTaskManager()
-    {
-        load();
-    }
+	private AutoAnnounceTaskManager()
+	{
+		load();
+	}
 
-    private void load()
-    {
-        File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/autoAnnouncements.xml");
-        if (!file.exists())
-        {
-            return;
-        }
-        int count = 0;
-        XmlDocument doc = new XmlDocument(file);
-        for (XmlNode n : doc.getChildren())
-        {
-            if (n.getName().equalsIgnoreCase("list"))
-            {
-                for (XmlNode d : n.getChildren())
-                {
-                    if (d.getName().equalsIgnoreCase("announce"))
-                    {
-                        String text = d.getString("text");
-                        int initial = d.getInt("initial");
-                        int reuse = d.getInt("reuse");
+	private void load()
+	{
+		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/autoAnnouncements.xml");
+		if (!file.exists())
+		{
+			return;
+		}
+		int count = 0;
+		XmlDocument doc = new XmlDocument(file);
+		for (XmlNode n : doc.getChildren())
+		{
+			if (n.getName().equalsIgnoreCase("list"))
+			{
+				for (XmlNode d : n.getChildren())
+				{
+					if (d.getName().equalsIgnoreCase("announce"))
+					{
+						String text = d.getString("text");
+						int initial = d.getInt("initial");
+						int reuse = d.getInt("reuse");
 
-                        ThreadPoolManager.getInstance()
-                                .scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
-                        count++;
-                    }
-                }
-            }
-        }
-        Log.info("AutoAnnouncements: Loaded: " + count + " auto announcements!");
-    }
+						ThreadPoolManager.getInstance()
+								.scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
+						count++;
+					}
+				}
+			}
+		}
+		Log.info("AutoAnnouncements: Loaded: " + count + " auto announcements!");
+	}
 
-    private class AutoAnnouncement implements Runnable
-    {
-        private String _text;
+	private class AutoAnnouncement implements Runnable
+	{
+		private String _text;
 
-        private AutoAnnouncement(String text)
-        {
-            _text = text;
-        }
+		private AutoAnnouncement(String text)
+		{
+			_text = text;
+		}
 
-        @Override
-        public void run()
-        {
-            Broadcast.announceToOnlinePlayers(_text);
-        }
-    }
+		@Override
+		public void run()
+		{
+			Broadcast.announceToOnlinePlayers(_text);
+		}
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final AutoAnnounceTaskManager _instance = new AutoAnnounceTaskManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final AutoAnnounceTaskManager _instance = new AutoAnnounceTaskManager();
+	}
 }

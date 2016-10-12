@@ -17,7 +17,7 @@ package l2server.gameserver;
 
 public interface Reloadable
 {
-    public boolean reload();
+	public boolean reload();
 
-    public String getReloadMessage(boolean success);
+	public String getReloadMessage(boolean success);
 }

@@ -29,66 +29,66 @@ import java.util.List;
  */
 public final class OlympiadAnnouncer implements Runnable
 {
-    private static final int OLY_MANAGER = 31688;
+	private static final int OLY_MANAGER = 31688;
 
-    private List<L2Spawn> _managers = new ArrayList<>();
-    private int _currentStadium = 0;
+	private List<L2Spawn> _managers = new ArrayList<>();
+	private int _currentStadium = 0;
 
-    public OlympiadAnnouncer()
-    {
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
-            {
-                _managers.add(spawn);
-            }
-        }
-    }
+	public OlympiadAnnouncer()
+	{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
+			{
+				_managers.add(spawn);
+			}
+		}
+	}
 
-    @Override
-    public void run()
-    {
-        OlympiadGameTask task;
-        for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; _currentStadium++)
-        {
-            if (_currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
-            {
-                _currentStadium = 0;
-            }
+	@Override
+	public void run()
+	{
+		OlympiadGameTask task;
+		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; _currentStadium++)
+		{
+			if (_currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
+			{
+				_currentStadium = 0;
+			}
 
-            task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
-            if (task != null && task.getGame() != null && task.needAnnounce())
-            {
-                int msg;
-                final String arenaId = String.valueOf(task.getGame().getGameId() + 1);
-                switch (task.getGame().getType())
-                {
-                    case NON_CLASSED:
-                        // msg = "Olympiad class-free individual match is going to begin in Arena " + arenaId + " in a moment.";
-                        msg = 1300166;
-                        break;
-                    case CLASSED:
-                        // msg = "Olympiad class-specific individual match is going to begin in Arena " + arenaId + " in a moment.";
-                        msg = 1300167;
-                        break;
-                    default:
-                        continue;
-                }
+			task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
+			if (task != null && task.getGame() != null && task.needAnnounce())
+			{
+				int msg;
+				final String arenaId = String.valueOf(task.getGame().getGameId() + 1);
+				switch (task.getGame().getType())
+				{
+					case NON_CLASSED:
+						// msg = "Olympiad class-free individual match is going to begin in Arena " + arenaId + " in a moment.";
+						msg = 1300166;
+						break;
+					case CLASSED:
+						// msg = "Olympiad class-specific individual match is going to begin in Arena " + arenaId + " in a moment.";
+						msg = 1300167;
+						break;
+					default:
+						continue;
+				}
 
-                L2Npc manager;
-                NpcSay packet;
-                for (L2Spawn spawn : _managers)
-                {
-                    manager = spawn.getNpc();
-                    if (manager != null)
-                    {
-                        packet = new NpcSay(manager.getObjectId(), Say2.ALL_NOT_RECORDED, manager.getNpcId(), msg);
-                        packet.addStringParameter(arenaId);
-                        manager.broadcastPacket(packet);
-                    }
-                }
-                break;
-            }
-        }
-    }
+				L2Npc manager;
+				NpcSay packet;
+				for (L2Spawn spawn : _managers)
+				{
+					manager = spawn.getNpc();
+					if (manager != null)
+					{
+						packet = new NpcSay(manager.getObjectId(), Say2.ALL_NOT_RECORDED, manager.getNpcId(), msg);
+						packet.addStringParameter(arenaId);
+						manager.broadcastPacket(packet);
+					}
+				}
+				break;
+			}
+		}
+	}
 }

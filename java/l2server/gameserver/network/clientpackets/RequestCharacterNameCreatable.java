@@ -22,19 +22,19 @@ import l2server.gameserver.network.serverpackets.ExIsCharNameCreatable;
  */
 public final class RequestCharacterNameCreatable extends L2GameClientPacket
 {
-    private String _name;
+	private String _name;
 
-    @Override
-    protected void readImpl()
-    {
-        _name = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_name = readS();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        sendPacket(new ExIsCharNameCreatable(_name));
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		sendPacket(new ExIsCharNameCreatable(_name));
+	}
 }

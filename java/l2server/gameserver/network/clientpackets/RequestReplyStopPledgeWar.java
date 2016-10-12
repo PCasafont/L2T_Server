@@ -27,41 +27,41 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestReplyStopPledgeWar extends L2GameClientPacket
 {
-    //
+	//
 
-    private int _answer;
+	private int _answer;
 
-    @Override
-    protected void readImpl()
-    {
-        @SuppressWarnings("unused") String _reqName = readS();
-        _answer = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		@SuppressWarnings("unused") String _reqName = readS();
+		_answer = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        L2PcInstance requestor = activeChar.getActiveRequester();
-        if (requestor == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		L2PcInstance requestor = activeChar.getActiveRequester();
+		if (requestor == null)
+		{
+			return;
+		}
 
-        if (_answer == 1)
-        {
-            ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
-        }
-        else
-        {
-            requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REQUEST_TO_END_WAR_HAS_BEEN_DENIED));
-        }
+		if (_answer == 1)
+		{
+			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
+		}
+		else
+		{
+			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REQUEST_TO_END_WAR_HAS_BEEN_DENIED));
+		}
 
-        activeChar.setActiveRequester(null);
-        requestor.onTransactionResponse();
-    }
+		activeChar.setActiveRequester(null);
+		requestor.onTransactionResponse();
+	}
 }

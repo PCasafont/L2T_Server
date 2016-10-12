@@ -43,65 +43,65 @@ import java.util.List;
  */
 public final class ExAcquireSkillList extends L2GameServerPacket
 {
-    //
-    public enum SkillType
-    {
-        Usual, // 0
-        Fishing, // 1
-        Clan, // 2
-        SubUnit, // 3
-        SubClass, // 4
-        DualClass, // 5
-        Special // 6
-    }
+	//
+	public enum SkillType
+	{
+		Usual, // 0
+		Fishing, // 1
+		Clan, // 2
+		SubUnit, // 3
+		SubClass, // 4
+		DualClass, // 5
+		Special // 6
+	}
 
-    private List<Skill> _skills;
-    private SkillType _skillType;
+	private List<Skill> _skills;
+	private SkillType _skillType;
 
-    private static class Skill
-    {
-        public int id;
-        public int nextLevel;
-        public int maxLevel;
-        public int spCost;
-        public int requirements;
+	private static class Skill
+	{
+		public int id;
+		public int nextLevel;
+		public int maxLevel;
+		public int spCost;
+		public int requirements;
 
-        public Skill(int pId, int pNextLevel, int pMaxLevel, int pSpCost, int pRequirements)
-        {
-            id = pId;
-            nextLevel = pNextLevel;
-            maxLevel = pMaxLevel;
-            spCost = pSpCost;
-            requirements = pRequirements;
-        }
-    }
+		public Skill(int pId, int pNextLevel, int pMaxLevel, int pSpCost, int pRequirements)
+		{
+			id = pId;
+			nextLevel = pNextLevel;
+			maxLevel = pMaxLevel;
+			spCost = pSpCost;
+			requirements = pRequirements;
+		}
+	}
 
-    public ExAcquireSkillList(SkillType type)
-    {
-        _skillType = type;
-    }
+	public ExAcquireSkillList(SkillType type)
+	{
+		_skillType = type;
+	}
 
-    public void addSkill(int id, int nextLevel, int maxLevel, int spCost, int requirements)
-    {
-        if (_skills == null)
-        {
-            _skills = new ArrayList<>();
-        }
-        _skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
-    }
+	public void addSkill(int id, int nextLevel, int maxLevel, int spCost, int requirements)
+	{
+		if (_skills == null)
+		{
+			_skills = new ArrayList<>();
+		}
+		_skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeH(_skillType.ordinal());
-        writeH(_skills.size());
-        for (Skill temp : _skills)
-        {
-            writeD(temp.id);
-            writeH(temp.nextLevel);
-            writeH(temp.maxLevel);
-            writeQ(temp.spCost);
-            writeH(temp.requirements);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeH(_skillType.ordinal());
+		writeH(_skills.size());
+		for (Skill temp : _skills)
+		{
+			writeD(temp.id);
+			writeH(temp.nextLevel);
+			writeH(temp.maxLevel);
+			writeQ(temp.spCost);
+			writeH(temp.requirements);
+		}
+	}
 }

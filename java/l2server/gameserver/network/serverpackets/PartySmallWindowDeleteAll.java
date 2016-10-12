@@ -23,8 +23,8 @@ package l2server.gameserver.network.serverpackets;
 public final class PartySmallWindowDeleteAll extends L2GameServerPacket
 {
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

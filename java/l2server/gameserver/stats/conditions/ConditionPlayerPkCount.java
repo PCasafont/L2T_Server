@@ -23,29 +23,29 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerPkCount extends Condition
 {
-    public final int _pk;
+	public final int _pk;
 
-    /**
-     * Instantiates a new condition player pk count.
-     *
-     * @param pk the pk
-     */
-    public ConditionPlayerPkCount(int pk)
-    {
-        _pk = pk;
-    }
+	/**
+	 * Instantiates a new condition player pk count.
+	 *
+	 * @param pk the pk
+	 */
+	public ConditionPlayerPkCount(int pk)
+	{
+		_pk = pk;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        return ((L2PcInstance) env.player).getPkKills() <= _pk;
-    }
+		return ((L2PcInstance) env.player).getPkKills() <= _pk;
+	}
 }

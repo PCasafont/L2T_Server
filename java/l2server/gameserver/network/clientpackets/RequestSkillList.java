@@ -24,28 +24,28 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestSkillList extends L2GameClientPacket
 {
-    //
+	//
 
-    @Override
-    protected void readImpl()
-    {
-        // this is just a trigger packet. it has no content
-    }
+	@Override
+	protected void readImpl()
+	{
+		// this is just a trigger packet. it has no content
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance cha = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance cha = getClient().getActiveChar();
 
-        if (cha != null)
-        {
-            cha.sendSkillList();
-        }
-    }
+		if (cha != null)
+		{
+			cha.sendSkillList();
+		}
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

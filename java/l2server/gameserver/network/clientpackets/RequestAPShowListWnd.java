@@ -22,16 +22,16 @@ import l2server.gameserver.network.serverpackets.ExShowAPListWnd;
  */
 public final class RequestAPShowListWnd extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        sendPacket(new ExShowAPListWnd());
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		sendPacket(new ExShowAPListWnd());
+	}
 }

@@ -22,56 +22,56 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class DoorKnownList extends CharKnownList
 {
-    // =========================================================
-    // Data Field
+	// =========================================================
+	// Data Field
 
-    // =========================================================
-    // Constructor
-    public DoorKnownList(L2DoorInstance activeChar)
-    {
-        super(activeChar);
-    }
+	// =========================================================
+	// Constructor
+	public DoorKnownList(L2DoorInstance activeChar)
+	{
+		super(activeChar);
+	}
 
-    // =========================================================
-    // Method - Public
+	// =========================================================
+	// Method - Public
 
-    // =========================================================
-    // Method - Private
+	// =========================================================
+	// Method - Private
 
-    // =========================================================
-    // Property - Public
-    @Override
-    public final L2DoorInstance getActiveChar()
-    {
-        return (L2DoorInstance) super.getActiveChar();
-    }
+	// =========================================================
+	// Property - Public
+	@Override
+	public final L2DoorInstance getActiveChar()
+	{
+		return (L2DoorInstance) super.getActiveChar();
+	}
 
-    @Override
-    public int getDistanceToForgetObject(L2Object object)
-    {
-        if (object instanceof L2DefenderInstance)
-        {
-            return 800;
-        }
-        if (!(object instanceof L2PcInstance))
-        {
-            return 0;
-        }
+	@Override
+	public int getDistanceToForgetObject(L2Object object)
+	{
+		if (object instanceof L2DefenderInstance)
+		{
+			return 800;
+		}
+		if (!(object instanceof L2PcInstance))
+		{
+			return 0;
+		}
 
-        return 4000;
-    }
+		return 4000;
+	}
 
-    @Override
-    public int getDistanceToWatchObject(L2Object object)
-    {
-        if (object instanceof L2DefenderInstance)
-        {
-            return 600;
-        }
-        if (!(object instanceof L2PcInstance))
-        {
-            return 0;
-        }
-        return 3000;
-    }
+	@Override
+	public int getDistanceToWatchObject(L2Object object)
+	{
+		if (object instanceof L2DefenderInstance)
+		{
+			return 600;
+		}
+		if (!(object instanceof L2PcInstance))
+		{
+			return 0;
+		}
+		return 3000;
+	}
 }

@@ -24,25 +24,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ExReplyPostItemList extends L2ItemListPacket
 {
-    L2PcInstance _activeChar;
-    private L2ItemInstance[] _itemList;
+	L2PcInstance _activeChar;
+	private L2ItemInstance[] _itemList;
 
-    public ExReplyPostItemList(L2PcInstance activeChar)
-    {
-        _activeChar = activeChar;
-        _itemList = _activeChar.getInventory().getAvailableItems(true, false);
-    }
+	public ExReplyPostItemList(L2PcInstance activeChar)
+	{
+		_activeChar = activeChar;
+		_itemList = _activeChar.getInventory().getAvailableItems(true, false);
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_itemList.length);
-        for (L2ItemInstance item : _itemList)
-        {
-            writeItem(item);
-        }
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_itemList.length);
+		for (L2ItemInstance item : _itemList)
+		{
+			writeItem(item);
+		}
+	}
 }

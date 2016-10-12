@@ -26,302 +26,302 @@ import java.nio.ByteOrder;
  */
 public final class ExUserPaperdoll extends L2GameServerPacket
 {
-    private int _objectId;
-    private byte[] _data;
+	private int _objectId;
+	private byte[] _data;
 
-    public ExUserPaperdoll(L2PcInstance character)
-    {
-        _objectId = character.getObjectId();
-        int airShipHelm = 0;
-        if (character.isInAirShip() && character.getAirShip().isCaptain(character))
-        {
-            airShipHelm = character.getAirShip().getHelmItemId();
-        }
+	public ExUserPaperdoll(L2PcInstance character)
+	{
+		_objectId = character.getObjectId();
+		int airShipHelm = 0;
+		if (character.isInAirShip() && character.getAirShip().isCaptain(character))
+		{
+			airShipHelm = character.getAirShip().getHelmItemId();
+		}
 
-        ByteBuffer buffer = ByteBuffer.allocate(1000).order(ByteOrder.LITTLE_ENDIAN);
+		ByteBuffer buffer = ByteBuffer.allocate(1000).order(ByteOrder.LITTLE_ENDIAN);
 
-        // Write data to the buffer
-        buffer.putShort((short) 0x21);
+		// Write data to the buffer
+		buffer.putShort((short) 0x21);
 
-        // Mask
-        buffer.put((byte) 0xff);
-        buffer.put((byte) 0xff);
-        buffer.put((byte) 0xff);
-        buffer.put((byte) 0xff);
-        buffer.put((byte) 0xff);
+		// Mask
+		buffer.put((byte) 0xff);
+		buffer.put((byte) 0xff);
+		buffer.put((byte) 0xff);
+		buffer.put((byte) 0xff);
+		buffer.put((byte) 0xff);
 
-        // Underwear
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_UNDER));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_UNDER));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_UNDER));
+		// Underwear
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_UNDER));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_UNDER));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_UNDER));
 
-        // Right earring
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_REAR));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_REAR));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_REAR));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_REAR));
+		// Right earring
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_REAR));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_REAR));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_REAR));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_REAR));
 
-        // Left earring
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LEAR));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LEAR));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LEAR));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LEAR));
+		// Left earring
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LEAR));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LEAR));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LEAR));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LEAR));
 
-        // Necklace
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_NECK));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_NECK));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_NECK));
+		// Necklace
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_NECK));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_NECK));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_NECK));
 
-        // Right ring
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RFINGER));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RFINGER));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RFINGER));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RFINGER));
+		// Right ring
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RFINGER));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RFINGER));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RFINGER));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RFINGER));
 
-        // Left ring
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LFINGER));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LFINGER));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LFINGER));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LFINGER));
+		// Left ring
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LFINGER));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LFINGER));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LFINGER));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LFINGER));
 
-        // Helmet
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HEAD));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HEAD));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HEAD));
+		// Helmet
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HEAD));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HEAD));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HEAD));
 
-        if (airShipHelm == 0)
-        {
-            // Right hand
-            buffer.putShort((short) 22);
-            buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RHAND));
-            buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-            buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
-            buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
+		if (airShipHelm == 0)
+		{
+			// Right hand
+			buffer.putShort((short) 22);
+			buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RHAND));
+			buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
+			buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
+			buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
 
-            // Left hand
-            buffer.putShort((short) 22);
-            buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LHAND));
-            buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
-            buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LHAND));
-            buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LHAND));
-        }
-        else
-        {
-            // Right hand
-            buffer.putShort((short) 22);
-            buffer.putInt(0);
-            buffer.putInt(0);
-            buffer.putInt(0);
-            buffer.putInt(0);
+			// Left hand
+			buffer.putShort((short) 22);
+			buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LHAND));
+			buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
+			buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LHAND));
+			buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LHAND));
+		}
+		else
+		{
+			// Right hand
+			buffer.putShort((short) 22);
+			buffer.putInt(0);
+			buffer.putInt(0);
+			buffer.putInt(0);
+			buffer.putInt(0);
 
-            // Left hand
-            buffer.putShort((short) 22);
-            buffer.putInt(0);
-            buffer.putInt(0);
-            buffer.putInt(0);
-            buffer.putInt(0);
-        }
+			// Left hand
+			buffer.putShort((short) 22);
+			buffer.putInt(0);
+			buffer.putInt(0);
+			buffer.putInt(0);
+			buffer.putInt(0);
+		}
 
-        // Gloves
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_GLOVES));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_GLOVES));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_GLOVES));
+		// Gloves
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_GLOVES));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_GLOVES));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_GLOVES));
 
-        // Chest
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_CHEST));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_CHEST));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CHEST));
+		// Chest
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_CHEST));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_CHEST));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CHEST));
 
-        // Legs
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LEGS));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LEGS));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LEGS));
+		// Legs
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LEGS));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LEGS));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LEGS));
 
-        // Feet
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_FEET));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_FEET));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_FEET));
+		// Feet
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_FEET));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_FEET));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_FEET));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_FEET));
 
-        // Cloak
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_CLOAK));
-        int cloakApp = character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
-        if (character.isCloakHidden())
-        {
-            buffer.putInt(0);
-        }
-        else if (cloakApp != 0)
-        {
-            buffer.putInt(cloakApp);
-        }
-        else
-        {
-            buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
-        }
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_CLOAK));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK));
+		// Cloak
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_CLOAK));
+		int cloakApp = character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
+		if (character.isCloakHidden())
+		{
+			buffer.putInt(0);
+		}
+		else if (cloakApp != 0)
+		{
+			buffer.putInt(cloakApp);
+		}
+		else
+		{
+			buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
+		}
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_CLOAK));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK));
 
-        // Right hand
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RHAND));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
+		// Right hand
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RHAND));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
 
-        // Hair
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HAIR));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HAIR));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HAIR));
+		// Hair
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HAIR));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HAIR));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HAIR));
 
-        // Hair 2
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HAIR2));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HAIR2));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HAIR2));
+		// Hair 2
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_HAIR2));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_HAIR2));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_HAIR2));
 
-        // Right bracelet
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RBRACELET));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RBRACELET));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RBRACELET));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RBRACELET));
+		// Right bracelet
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_RBRACELET));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RBRACELET));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_RBRACELET));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_RBRACELET));
 
-        // Left bracelet
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LBRACELET));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LBRACELET));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LBRACELET));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LBRACELET));
+		// Left bracelet
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LBRACELET));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_LBRACELET));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_LBRACELET));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_LBRACELET));
 
-        // Deco 1
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO1));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO1));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO1));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO1));
+		// Deco 1
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO1));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO1));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO1));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO1));
 
-        // Deco 2
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO2));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO2));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO2));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO2));
+		// Deco 2
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO2));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO2));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO2));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO2));
 
-        // Deco 3
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO3));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO3));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO3));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO3));
+		// Deco 3
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO3));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO3));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO3));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO3));
 
-        // Deco 4
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO4));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO4));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO4));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO4));
+		// Deco 4
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO4));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO4));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO4));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO4));
 
-        // Deco 5
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO5));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO5));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO5));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO5));
+		// Deco 5
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO5));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO5));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO5));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO5));
 
-        // Deco 6
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO6));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO6));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO6));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO6));
+		// Deco 6
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_DECO6));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_DECO6));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_DECO6));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_DECO6));
 
-        // Belt
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_BELT));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_BELT));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_BELT));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_BELT));
+		// Belt
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_BELT));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_BELT));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_BELT));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_BELT));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_BROOCH));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_BROOCH));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_BROOCH));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_BROOCH));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_BROOCH));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_BROOCH));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_BROOCH));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_BROOCH));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY1));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY1));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY1));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY1));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY1));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY1));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY1));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY1));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY2));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY2));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY2));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY2));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY2));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY2));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY2));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY2));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY3));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY3));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY3));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY3));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY3));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY3));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY3));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY3));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY4));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY4));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY4));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY4));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY4));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY4));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY4));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY4));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY5));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY5));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY5));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY5));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY5));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY5));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY5));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY5));
 
-        // ???
-        buffer.putShort((short) 22);
-        buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY6));
-        buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY6));
-        buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY6));
-        buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY6));
+		// ???
+		buffer.putShort((short) 22);
+		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_JEWELRY6));
+		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_JEWELRY6));
+		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_JEWELRY6));
+		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_JEWELRY6));
 
-        int size = buffer.position();
-        buffer.position(0);
-        _data = new byte[size];
-        buffer.get(_data, 0, size);
-    }
+		int size = buffer.position();
+		buffer.position(0);
+		_data = new byte[size];
+		buffer.get(_data, 0, size);
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_objectId);
-        writeB(_data);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_objectId);
+		writeB(_data);
+	}
 }

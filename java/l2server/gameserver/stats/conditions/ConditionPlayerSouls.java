@@ -24,24 +24,24 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerSouls extends Condition
 {
 
-    private final int _souls;
+	private final int _souls;
 
-    /**
-     * Instantiates a new condition player souls.
-     *
-     * @param souls the souls
-     */
-    public ConditionPlayerSouls(int souls)
-    {
-        _souls = souls;
-    }
+	/**
+	 * Instantiates a new condition player souls.
+	 *
+	 * @param souls the souls
+	 */
+	public ConditionPlayerSouls(int souls)
+	{
+		_souls = souls;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return ((L2PcInstance) env.player).getSouls() >= _souls;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return ((L2PcInstance) env.player).getSouls() >= _souls;
+	}
 }

@@ -22,6 +22,6 @@ package l2server.gameserver.model.base;
  */
 public class Sex
 {
-    public static final int MALE = 0;
-    public static final int FEMALE = 1;
+	public static final int MALE = 0;
+	public static final int FEMALE = 1;
 }

@@ -32,161 +32,161 @@ import java.util.List;
  */
 public final class RequestJoinSiege extends L2GameClientPacket
 {
-    //
+	//
 
-    private int _castleId;
-    private int _isAttacker;
-    private int _isJoining;
+	private int _castleId;
+	private int _isAttacker;
+	private int _isJoining;
 
-    @Override
-    protected void readImpl()
-    {
-        _castleId = readD();
-        _isAttacker = readD();
-        _isJoining = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_castleId = readD();
+		_isAttacker = readD();
+		_isJoining = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if ((activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) != L2Clan.CP_CS_MANAGE_SIEGE)
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
-            return;
-        }
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) != L2Clan.CP_CS_MANAGE_SIEGE)
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+			return;
+		}
 
-        L2Clan clan = activeChar.getClan();
-        if (clan == null)
-        {
-            return;
-        }
+		L2Clan clan = activeChar.getClan();
+		if (clan == null)
+		{
+			return;
+		}
 
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
-        if (castle == null)
-        {
-            return;
-        }
+		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		if (castle == null)
+		{
+			return;
+		}
 
-        //NOT FOR ERTHEIA SERVER
-        /*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
+		//NOT FOR ERTHEIA SERVER
+		/*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
             return;*/
 
-        if (_isJoining == 1)
-        {
-            if (System.currentTimeMillis() < clan.getDissolvingExpiryTime())
-            {
-                activeChar.sendPacket(SystemMessage
-                        .getSystemMessage(SystemMessageId.CANT_PARTICIPATE_IN_SIEGE_WHILE_DISSOLUTION_IN_PROGRESS));
-                return;
-            }
-            if (_isAttacker == 1)
-            {
-                castle.getSiege().registerAttacker(activeChar);
-            }
-            else
-            {
-                castle.getSiege().registerDefender(activeChar);
-            }
-        }
-        else
-        {
-            castle.getSiege().removeSiegeClan(activeChar);
-        }
+		if (_isJoining == 1)
+		{
+			if (System.currentTimeMillis() < clan.getDissolvingExpiryTime())
+			{
+				activeChar.sendPacket(SystemMessage
+						.getSystemMessage(SystemMessageId.CANT_PARTICIPATE_IN_SIEGE_WHILE_DISSOLUTION_IN_PROGRESS));
+				return;
+			}
+			if (_isAttacker == 1)
+			{
+				castle.getSiege().registerAttacker(activeChar);
+			}
+			else
+			{
+				castle.getSiege().registerDefender(activeChar);
+			}
+		}
+		else
+		{
+			castle.getSiege().removeSiegeClan(activeChar);
+		}
 
-        castle.getSiege().listRegisterClan(activeChar);
-    }
+		castle.getSiege().listRegisterClan(activeChar);
+	}
 
-    public static boolean canRegister(L2PcInstance player)
-    {
-        if (player == null)
-        {
-            return false;
-        }
+	public static boolean canRegister(L2PcInstance player)
+	{
+		if (player == null)
+		{
+			return false;
+		}
 
-        //Config
-        int minClanLevel = 8;
-        int minClanSize = 7;
-        int numberOfPlayersToBeChecked = 5;
-        int shouldHaveLevel = 99;
-        int shouldHavePvPs = 5;
-        int shouldBeCreatedDaysAgo = 5;
+		//Config
+		int minClanLevel = 8;
+		int minClanSize = 7;
+		int numberOfPlayersToBeChecked = 5;
+		int shouldHaveLevel = 99;
+		int shouldHavePvPs = 5;
+		int shouldBeCreatedDaysAgo = 5;
 
-        //Vars
-        int varHaveLevel = 0;
-        int varHavePvPs = 0;
-        int varBeCreatedDaysAgo = 0;
+		//Vars
+		int varHaveLevel = 0;
+		int varHavePvPs = 0;
+		int varBeCreatedDaysAgo = 0;
 
-        List<String> ips = new ArrayList<>();
+		List<String> ips = new ArrayList<>();
 
-        L2Clan clan = ClanTable.getInstance().getClan(player.getClanId());
+		L2Clan clan = ClanTable.getInstance().getClan(player.getClanId());
 
-        if (clan.getLevel() < minClanLevel)
-        {
-            player.sendMessage("Your clan should have at least level " + minClanLevel + ".");
-            return false;
-        }
+		if (clan.getLevel() < minClanLevel)
+		{
+			player.sendMessage("Your clan should have at least level " + minClanLevel + ".");
+			return false;
+		}
 
-        if (clan.getMembersCount() < minClanSize)
-        {
-            player.sendMessage("Your clan should have at least " + minClanSize + " members in your clan.");
-            return false;
-        }
+		if (clan.getMembersCount() < minClanSize)
+		{
+			player.sendMessage("Your clan should have at least " + minClanSize + " members in your clan.");
+			return false;
+		}
 
-        if (clan.getOnlineMembersCount() < numberOfPlayersToBeChecked)
-        {
-            player.sendMessage("Your clan should have at least " + numberOfPlayersToBeChecked + " members online.");
-            return false;
-        }
+		if (clan.getOnlineMembersCount() < numberOfPlayersToBeChecked)
+		{
+			player.sendMessage("Your clan should have at least " + numberOfPlayersToBeChecked + " members online.");
+			return false;
+		}
 
-        for (L2PcInstance member : clan.getOnlineMembers(0))
-        {
-            if (member == null)
-            {
-                continue;
-            }
+		for (L2PcInstance member : clan.getOnlineMembers(0))
+		{
+			if (member == null)
+			{
+				continue;
+			}
 
-            if (ips.contains(member.getExternalIP()))
-            {
-                player.sendMessage(
-                        "Clan Member: " + member.getName() + " detected as dual box, doesn't count as online member!");
-                continue;
-            }
+			if (ips.contains(member.getExternalIP()))
+			{
+				player.sendMessage(
+						"Clan Member: " + member.getName() + " detected as dual box, doesn't count as online member!");
+				continue;
+			}
 
-            if ((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L >
-                    shouldBeCreatedDaysAgo)
-            {
-                varBeCreatedDaysAgo++;
-            }
+			if ((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L >
+					shouldBeCreatedDaysAgo)
+			{
+				varBeCreatedDaysAgo++;
+			}
 
-            if (member.getLevel() >= shouldHaveLevel)
-            {
-                varHaveLevel++;
-            }
+			if (member.getLevel() >= shouldHaveLevel)
+			{
+				varHaveLevel++;
+			}
 
-            if (member.getPvpKills() >= shouldHavePvPs)
-            {
-                varHavePvPs++;
-            }
+			if (member.getPvpKills() >= shouldHavePvPs)
+			{
+				varHavePvPs++;
+			}
 
-            ips.add(member.getExternalIP());
-        }
+			ips.add(member.getExternalIP());
+		}
 
-        if (varHaveLevel < numberOfPlayersToBeChecked || varHavePvPs < numberOfPlayersToBeChecked ||
-                varBeCreatedDaysAgo < numberOfPlayersToBeChecked)
-        {
-            player.sendMessage(
-                    "Your clan looks weak to have a castle, you should train more your clan and your clan members.");
-            player.sendMessage("Info: " + varHaveLevel + "/" + numberOfPlayersToBeChecked + ", " + varHavePvPs + "/" +
-                    numberOfPlayersToBeChecked + ", " + varBeCreatedDaysAgo + "/" + numberOfPlayersToBeChecked);
-            return false;
-        }
+		if (varHaveLevel < numberOfPlayersToBeChecked || varHavePvPs < numberOfPlayersToBeChecked ||
+				varBeCreatedDaysAgo < numberOfPlayersToBeChecked)
+		{
+			player.sendMessage(
+					"Your clan looks weak to have a castle, you should train more your clan and your clan members.");
+			player.sendMessage("Info: " + varHaveLevel + "/" + numberOfPlayersToBeChecked + ", " + varHavePvPs + "/" +
+					numberOfPlayersToBeChecked + ", " + varBeCreatedDaysAgo + "/" + numberOfPlayersToBeChecked);
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 }

@@ -25,37 +25,37 @@ import l2server.gameserver.templates.item.L2Item;
 public class ExCrystalizingEstimation extends L2GameServerPacket
 {
 
-    private L2Item _item;
-    private long _crystalCount;
+	private L2Item _item;
+	private long _crystalCount;
 
-    public ExCrystalizingEstimation(L2Item item, long crystalCount)
-    {
-        _item = item;
-        _crystalCount = crystalCount;
-    }
+	public ExCrystalizingEstimation(L2Item item, long crystalCount)
+	{
+		_item = item;
+		_crystalCount = crystalCount;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        if (Config.ENABLE_CRYSTALLIZE_REWARDS && _item.getCrystallizeRewards() != null)
-        {
-            writeD(_item.getCrystallizeRewards().length + 1);
-            writeD(_item.getCrystalItemId());
-            writeQ(_crystalCount);
-            writeF(100.0);
-            for (L2CrystallizeReward reward : _item.getCrystallizeRewards())
-            {
-                writeD(reward.getItemId());
-                writeQ(reward.getCount());
-                writeF(reward.getChance());
-            }
-        }
-        else
-        {
-            writeD(1);
-            writeD(_item.getCrystalItemId());
-            writeQ(_crystalCount);
-            writeF(100.0);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		if (Config.ENABLE_CRYSTALLIZE_REWARDS && _item.getCrystallizeRewards() != null)
+		{
+			writeD(_item.getCrystallizeRewards().length + 1);
+			writeD(_item.getCrystalItemId());
+			writeQ(_crystalCount);
+			writeF(100.0);
+			for (L2CrystallizeReward reward : _item.getCrystallizeRewards())
+			{
+				writeD(reward.getItemId());
+				writeQ(reward.getCount());
+				writeF(reward.getChance());
+			}
+		}
+		else
+		{
+			writeD(1);
+			writeD(_item.getCrystalItemId());
+			writeQ(_crystalCount);
+			writeF(100.0);
+		}
+	}
 }

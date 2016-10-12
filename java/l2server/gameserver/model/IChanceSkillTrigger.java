@@ -23,33 +23,33 @@ package l2server.gameserver.model;
  */
 public interface IChanceSkillTrigger
 {
-    /**
-     * Just a flag
-     */
-    public boolean triggersChanceSkill();
+	/**
+	 * Just a flag
+	 */
+	public boolean triggersChanceSkill();
 
-    /**
-     * Triggered Id
-     */
-    public int getTriggeredChanceId();
+	/**
+	 * Triggered Id
+	 */
+	public int getTriggeredChanceId();
 
-    /**
-     * Triggered level
-     */
-    public int getTriggeredChanceLevel();
+	/**
+	 * Triggered level
+	 */
+	public int getTriggeredChanceLevel();
 
-    /**
-     * Triggered enchant route
-     */
-    public int getTriggeredChanceEnchantRoute();
+	/**
+	 * Triggered enchant route
+	 */
+	public int getTriggeredChanceEnchantRoute();
 
-    /**
-     * Triggered enchant level
-     */
-    public int getTriggeredChanceEnchantLevel();
+	/**
+	 * Triggered enchant level
+	 */
+	public int getTriggeredChanceEnchantLevel();
 
-    /**
-     * Chance condition object
-     */
-    public ChanceCondition getTriggeredChanceCondition();
+	/**
+	 * Chance condition object
+	 */
+	public ChanceCondition getTriggeredChanceCondition();
 }

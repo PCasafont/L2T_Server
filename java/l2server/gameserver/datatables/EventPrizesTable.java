@@ -38,141 +38,141 @@ import java.util.Map;
  */
 public class EventPrizesTable implements Reloadable
 {
-    private final Map<String, List<EventPrize>> _prizes = new HashMap<>();
+	private final Map<String, List<EventPrize>> _prizes = new HashMap<>();
 
-    private EventPrizesTable()
-    {
-        ReloadableManager.getInstance().register("eventprizes", this);
+	private EventPrizesTable()
+	{
+		ReloadableManager.getInstance().register("eventprizes", this);
 
-        load();
-    }
+		load();
+	}
 
-    public void load()
-    {
-        _prizes.clear();
+	public void load()
+	{
+		_prizes.clear();
 
-        XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
-        if (doc.getFirstChild() == null)
-        {
-            Log.warning("An error occured while loading the Event Locations.");
-            return;
-        }
+		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
+		if (doc.getFirstChild() == null)
+		{
+			Log.warning("An error occured while loading the Event Locations.");
+			return;
+		}
 
-        int przCount = 0;
-        for (XmlNode n : doc.getChildren())
-        {
-            if (!n.getName().equals("list"))
-            {
-                continue;
-            }
+		int przCount = 0;
+		for (XmlNode n : doc.getChildren())
+		{
+			if (!n.getName().equals("list"))
+			{
+				continue;
+			}
 
-            for (XmlNode prizeNode : n.getChildren())
-            {
-                if (!prizeNode.getName().equals("prizeList"))
-                {
-                    continue;
-                }
+			for (XmlNode prizeNode : n.getChildren())
+			{
+				if (!prizeNode.getName().equals("prizeList"))
+				{
+					continue;
+				}
 
-                String name = prizeNode.getString("name");
-                for (XmlNode node : prizeNode.getChildren())
-                {
-                    List<EventPrize> list = _prizes.get(name);
-                    if (list == null)
-                    {
-                        list = new ArrayList<>();
-                        _prizes.put(name, list);
-                    }
+				String name = prizeNode.getString("name");
+				for (XmlNode node : prizeNode.getChildren())
+				{
+					List<EventPrize> list = _prizes.get(name);
+					if (list == null)
+					{
+						list = new ArrayList<>();
+						_prizes.put(name, list);
+					}
 
-                    if (node.getName().equalsIgnoreCase("prizeItem"))
-                    {
-                        list.add(new EventPrizeItem(node));
-                        przCount++;
-                    }
-                    else if (node.getName().equalsIgnoreCase("prizeCategory"))
-                    {
-                        list.add(new EventPrizeCategory(node));
-                        przCount++;
-                    }
-                }
-            }
-        }
+					if (node.getName().equalsIgnoreCase("prizeItem"))
+					{
+						list.add(new EventPrizeItem(node));
+						przCount++;
+					}
+					else if (node.getName().equalsIgnoreCase("prizeCategory"))
+					{
+						list.add(new EventPrizeCategory(node));
+						przCount++;
+					}
+				}
+			}
+		}
 
-        Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + _prizes.size() + " categories.");
-    }
+		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + _prizes.size() + " categories.");
+	}
 
-    public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier)
-    {
-        List<EventPrize> list = _prizes.get(prizeName);
-        if (list == null)
-        {
-            return;
-        }
+	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier)
+	{
+		List<EventPrize> list = _prizes.get(prizeName);
+		if (list == null)
+		{
+			return;
+		}
 
-        for (EventPrize prize : list)
-        {
-            float multiplier = teamMultiplier;
-            if (prize.dependsOnPerformance())
-            {
-                multiplier *= performanceMultiplier;
-            }
+		for (EventPrize prize : list)
+		{
+			float multiplier = teamMultiplier;
+			if (prize.dependsOnPerformance())
+			{
+				multiplier *= performanceMultiplier;
+			}
 
-            float chance = prize.getChance() * multiplier;
-            if (chance < 100.0f)
-            {
-                float rnd = Rnd.get(100000) / 1000.0f;
-                if (chance < rnd)
-                {
-                    continue;
-                }
+			float chance = prize.getChance() * multiplier;
+			if (chance < 100.0f)
+			{
+				float rnd = Rnd.get(100000) / 1000.0f;
+				if (chance < rnd)
+				{
+					continue;
+				}
 
-                multiplier = 1.0f;
-            }
-            else
-            {
-                multiplier = chance / 100.0f;
-            }
+				multiplier = 1.0f;
+			}
+			else
+			{
+				multiplier = chance / 100.0f;
+			}
 
-            while (multiplier > 0)
-            {
-                EventPrizeItem prizeItem = prize.getItem();
-                float mul = 1.0f;
-                if (multiplier < 1.0f)
-                {
-                    mul = multiplier;
-                }
-                int prizeCount = Math.round(Rnd.get(prizeItem.getMin(), prizeItem.getMax()) * mul);
-                if (prizeCount > 0)
-                {
-                    player.addItem("Event", prizeItem.getId(), prizeCount, player, true);
-                }
+			while (multiplier > 0)
+			{
+				EventPrizeItem prizeItem = prize.getItem();
+				float mul = 1.0f;
+				if (multiplier < 1.0f)
+				{
+					mul = multiplier;
+				}
+				int prizeCount = Math.round(Rnd.get(prizeItem.getMin(), prizeItem.getMax()) * mul);
+				if (prizeCount > 0)
+				{
+					player.addItem("Event", prizeItem.getId(), prizeCount, player, true);
+				}
 
-                multiplier -= 1.0f;
-            }
-        }
-    }
+				multiplier -= 1.0f;
+			}
+		}
+	}
 
-    @Override
-    public boolean reload()
-    {
-        load();
-        return true;
-    }
+	@Override
+	public boolean reload()
+	{
+		load();
+		return true;
+	}
 
-    @Override
-    public String getReloadMessage(boolean success)
-    {
-        return "Event prizes reloaded";
-    }
+	@Override
+	public String getReloadMessage(boolean success)
+	{
+		return "Event prizes reloaded";
+	}
 
-    private static EventPrizesTable _instance;
+	private static EventPrizesTable _instance;
 
-    public static EventPrizesTable getInstance()
-    {
-        if (_instance == null)
-        {
-            _instance = new EventPrizesTable();
-        }
+	public static EventPrizesTable getInstance()
+	{
+		if (_instance == null)
+		{
+			_instance = new EventPrizesTable();
+		}
 
-        return _instance;
-    }
+		return _instance;
+	}
 }

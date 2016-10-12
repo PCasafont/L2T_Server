@@ -29,119 +29,119 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public final class MagicSkillUse extends L2GameServerPacket
 {
-    private int _targetId, _tx, _ty, _tz;
-    private int _gauge;
-    private int _skillId;
-    private int _skillLevel;
-    private int _hitTime;
-    private int _reuseDelay;
-    private int _reuseGroup;
-    private int _charObjId, _x, _y, _z;
-    private boolean _ground = false;
-    private int _groundX, _groundY, _groundZ;
-    private int _skillActionId;
+	private int _targetId, _tx, _ty, _tz;
+	private int _gauge;
+	private int _skillId;
+	private int _skillLevel;
+	private int _hitTime;
+	private int _reuseDelay;
+	private int _reuseGroup;
+	private int _charObjId, _x, _y, _z;
+	private boolean _ground = false;
+	private int _groundX, _groundY, _groundZ;
+	private int _skillActionId;
 
-    //private int _flags;
+	//private int _flags;
 
-    public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, int skillActionId)
-    {
-        this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseGroup, gauge, false, skillActionId);
-    }
+	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, int skillActionId)
+	{
+		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseGroup, gauge, false, skillActionId);
+	}
 
-    public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId)
-    {
-        this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseDelay > 0 ? 0 : -1, 0, skillActionId);
-    }
+	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId)
+	{
+		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseDelay > 0 ? 0 : -1, 0, skillActionId);
+	}
 
-    public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, boolean ground, int skillActionId)
-    {
-        _charObjId = cha.getObjectId();
-        _targetId = target.getObjectId();
-        _gauge = gauge;
-        _skillId = skillId;
-        _skillLevel = skillLevel;
-        _hitTime = hitTime;
-        _reuseDelay = reuseDelay;
-        _reuseGroup = reuseGroup;
-        _x = cha.getX();
-        _y = cha.getY();
-        _z = cha.getZ();
-        _tx = target.getX();
-        _ty = target.getY();
-        _tz = target.getZ();
-        //_flags |= 0x20;
+	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, boolean ground, int skillActionId)
+	{
+		_charObjId = cha.getObjectId();
+		_targetId = target.getObjectId();
+		_gauge = gauge;
+		_skillId = skillId;
+		_skillLevel = skillLevel;
+		_hitTime = hitTime;
+		_reuseDelay = reuseDelay;
+		_reuseGroup = reuseGroup;
+		_x = cha.getX();
+		_y = cha.getY();
+		_z = cha.getZ();
+		_tx = target.getX();
+		_ty = target.getY();
+		_tz = target.getZ();
+		//_flags |= 0x20;
 
-        _ground = ground;
-        if (_ground)
-        {
-            _groundX = cha.getSkillCastPosition().getX();
-            _groundY = cha.getSkillCastPosition().getY();
-            _groundZ = _z + 10;
-        }
+		_ground = ground;
+		if (_ground)
+		{
+			_groundX = cha.getSkillCastPosition().getX();
+			_groundY = cha.getSkillCastPosition().getY();
+			_groundZ = _z + 10;
+		}
 
-        _skillActionId = skillActionId;
-    }
+		_skillActionId = skillActionId;
+	}
 
-    public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
-    {
-        _charObjId = cha.getObjectId();
-        _targetId = cha.getTargetId();
-        _gauge = 0;
-        _skillId = skillId;
-        _skillLevel = skillLevel;
-        _hitTime = hitTime;
-        _reuseDelay = reuseDelay;
-        _reuseGroup = reuseDelay > 0 ? 0 : -1;
-        _x = cha.getX();
-        _y = cha.getY();
-        _z = cha.getZ();
-        _tx = cha.getX();
-        _ty = cha.getY();
-        _tz = cha.getZ();
-        //_flags |= 0x20;
-    }
+	public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
+	{
+		_charObjId = cha.getObjectId();
+		_targetId = cha.getTargetId();
+		_gauge = 0;
+		_skillId = skillId;
+		_skillLevel = skillLevel;
+		_hitTime = hitTime;
+		_reuseDelay = reuseDelay;
+		_reuseGroup = reuseDelay > 0 ? 0 : -1;
+		_x = cha.getX();
+		_y = cha.getY();
+		_z = cha.getZ();
+		_tx = cha.getX();
+		_ty = cha.getY();
+		_tz = cha.getZ();
+		//_flags |= 0x20;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_gauge); // Don't show casting bar if 1
-        writeD(_charObjId);
-        writeD(_targetId);
-        writeD(_skillId);
-        writeD(_skillLevel);
-        writeD(_hitTime);
-        writeD(_reuseGroup);
-        writeD(_reuseDelay);
-        writeD(_x);
-        writeD(_y);
-        writeD(_z);
-        writeH(0x00);
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_gauge); // Don't show casting bar if 1
+		writeD(_charObjId);
+		writeD(_targetId);
+		writeD(_skillId);
+		writeD(_skillLevel);
+		writeD(_hitTime);
+		writeD(_reuseGroup);
+		writeD(_reuseDelay);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeH(0x00);
 
-        if (_ground)
-        {
-            writeH(0x01);
-            writeD(_groundX);
-            writeD(_groundY);
-            writeD(_groundZ);
-        }
-        else
-        {
-            writeH(0x00);
-        }
+		if (_ground)
+		{
+			writeH(0x01);
+			writeD(_groundX);
+			writeD(_groundY);
+			writeD(_groundZ);
+		}
+		else
+		{
+			writeH(0x00);
+		}
 
-        writeD(_tx);
-        writeD(_ty);
-        writeD(_tz);
+		writeD(_tx);
+		writeD(_ty);
+		writeD(_tz);
 
-        if (_skillActionId == 0)
-        {
-            writeD(0x00);
-            writeD(0x00);
-        }
-        else
-        {
-            writeD(0x01);
-            writeD(_skillActionId);
-        }
-    }
+		if (_skillActionId == 0)
+		{
+			writeD(0x00);
+			writeD(0x00);
+		}
+		else
+		{
+			writeD(0x01);
+			writeD(_skillActionId);
+		}
+	}
 }

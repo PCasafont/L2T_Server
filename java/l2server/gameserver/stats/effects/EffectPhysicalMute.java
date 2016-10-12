@@ -26,52 +26,52 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectPhysicalMute extends L2Effect
 {
-    public EffectPhysicalMute(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectPhysicalMute(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.PHYSICAL_MUTE;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.PHYSICAL_MUTE;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.SILENCE;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.SILENCE;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        getEffected().startPsychicalMuted();
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		getEffected().startPsychicalMuted();
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        // Simply stop the effect
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		// Simply stop the effect
+		return false;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        getEffected().stopPsychicalMuted(false);
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		getEffected().stopPsychicalMuted(false);
+	}
 }

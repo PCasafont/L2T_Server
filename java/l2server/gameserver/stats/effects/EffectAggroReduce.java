@@ -23,48 +23,48 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 public class EffectAggroReduce extends L2Effect
 {
-    public EffectAggroReduce(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectAggroReduce(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        //Works only on mobz
-        if (!(getEffected() instanceof L2Attackable))
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		//Works only on mobz
+		if (!(getEffected() instanceof L2Attackable))
+		{
+			return false;
+		}
 
-        if (getSkill().getTargetType() != L2SkillTargetType.TARGET_UNDEAD || getEffected().isUndead())
-        {
-            ((L2Attackable) getEffected()).reduceHate(null,
-                    ((L2Attackable) getEffected()).getHating(((L2Attackable) getEffected()).getMostHated()));
-        }
+		if (getSkill().getTargetType() != L2SkillTargetType.TARGET_UNDEAD || getEffected().isUndead())
+		{
+			((L2Attackable) getEffected()).reduceHate(null,
+					((L2Attackable) getEffected()).getHating(((L2Attackable) getEffected()).getMostHated()));
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
 
-    }
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        // nothing
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		// nothing
+		return false;
+	}
 }

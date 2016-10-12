@@ -26,57 +26,57 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 {
-    private String _member;
-    private int _powerGrade;
+	private String _member;
+	private int _powerGrade;
 
-    @Override
-    protected void readImpl()
-    {
-        _member = readS();
-        _powerGrade = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_member = readS();
+		_powerGrade = readD();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        final L2Clan clan = activeChar.getClan();
-        if (clan == null)
-        {
-            return;
-        }
+		final L2Clan clan = activeChar.getClan();
+		if (clan == null)
+		{
+			return;
+		}
 
-        if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS)
-        {
-            return;
-        }
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS)
+		{
+			return;
+		}
 
-        final L2ClanMember member = clan.getClanMember(_member);
-        if (member == null)
-        {
-            return;
-        }
+		final L2ClanMember member = clan.getClanMember(_member);
+		if (member == null)
+		{
+			return;
+		}
 
-        if (member.getObjectId() == clan.getLeaderId())
-        {
-            return;
-        }
+		if (member.getObjectId() == clan.getLeaderId())
+		{
+			return;
+		}
 
-        if (member.getPledgeType() == L2Clan.SUBUNIT_ACADEMY)
-        {
-            // also checked from client side
-            activeChar.sendMessage("You cannot change academy member grade");
-            return;
-        }
+		if (member.getPledgeType() == L2Clan.SUBUNIT_ACADEMY)
+		{
+			// also checked from client side
+			activeChar.sendMessage("You cannot change academy member grade");
+			return;
+		}
 
-        member.setPowerGrade(_powerGrade);
-        clan.broadcastClanStatus();
-    }
+		member.setPowerGrade(_powerGrade);
+		clan.broadcastClanStatus();
+	}
 }

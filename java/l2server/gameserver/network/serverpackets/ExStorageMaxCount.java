@@ -34,47 +34,47 @@ import l2server.gameserver.stats.Stats;
  */
 public class ExStorageMaxCount extends L2GameServerPacket
 {
-    private L2PcInstance _activeChar;
-    private int _inventory;
-    private int _warehouse;
-    private int _clan;
-    private int _privateSell;
-    private int _privateBuy;
-    private int _receipeD;
-    private int _recipe;
-    private int _inventoryExtraSlots;
-    private int _inventoryQuestItems;
+	private L2PcInstance _activeChar;
+	private int _inventory;
+	private int _warehouse;
+	private int _clan;
+	private int _privateSell;
+	private int _privateBuy;
+	private int _receipeD;
+	private int _recipe;
+	private int _inventoryExtraSlots;
+	private int _inventoryQuestItems;
 
-    public ExStorageMaxCount(L2PcInstance character)
-    {
-        _activeChar = character;
-        _inventory = _activeChar.getInventoryLimit();
-        _warehouse = _activeChar.getWareHouseLimit();
-        _privateSell = _activeChar.getPrivateSellStoreLimit();
-        _privateBuy = _activeChar.getPrivateBuyStoreLimit();
-        _clan = Config.WAREHOUSE_SLOTS_CLAN;
-        _receipeD = _activeChar.getDwarfRecipeLimit();
-        _recipe = _activeChar.getCommonRecipeLimit();
-        _inventoryExtraSlots = (int) _activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
-        _inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
-    }
+	public ExStorageMaxCount(L2PcInstance character)
+	{
+		_activeChar = character;
+		_inventory = _activeChar.getInventoryLimit();
+		_warehouse = _activeChar.getWareHouseLimit();
+		_privateSell = _activeChar.getPrivateSellStoreLimit();
+		_privateBuy = _activeChar.getPrivateBuyStoreLimit();
+		_clan = Config.WAREHOUSE_SLOTS_CLAN;
+		_receipeD = _activeChar.getDwarfRecipeLimit();
+		_recipe = _activeChar.getCommonRecipeLimit();
+		_inventoryExtraSlots = (int) _activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
+		_inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_inventory);
-        writeD(_warehouse);
-        writeD(_clan);
-        writeD(_privateSell);
-        writeD(_privateBuy);
-        writeD(_receipeD);
-        writeD(_recipe);
-        writeD(_inventoryExtraSlots); // Belt inventory slots increase count
-        writeD(_inventoryQuestItems);
-        writeD(40);
-        writeD(40);
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_inventory);
+		writeD(_warehouse);
+		writeD(_clan);
+		writeD(_privateSell);
+		writeD(_privateBuy);
+		writeD(_receipeD);
+		writeD(_recipe);
+		writeD(_inventoryExtraSlots); // Belt inventory slots increase count
+		writeD(_inventoryQuestItems);
+		writeD(40);
+		writeD(40);
+	}
 }

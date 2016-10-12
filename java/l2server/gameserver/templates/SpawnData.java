@@ -20,21 +20,21 @@ package l2server.gameserver.templates;
  */
 public class SpawnData
 {
-    public int X;
-    public int Y;
-    public int Z;
-    public int Heading;
-    public int Respawn;
-    public int RandomRespawn;
-    public String DbName = null;
+	public int X;
+	public int Y;
+	public int Z;
+	public int Heading;
+	public int Respawn;
+	public int RandomRespawn;
+	public String DbName = null;
 
-    public SpawnData(int x, int y, int z, int heading, int respawn, int randomRespawn)
-    {
-        X = x;
-        Y = y;
-        Z = z;
-        Heading = heading;
-        Respawn = respawn;
-        RandomRespawn = randomRespawn;
-    }
+	public SpawnData(int x, int y, int z, int heading, int respawn, int randomRespawn)
+	{
+		X = x;
+		Y = y;
+		Z = z;
+		Heading = heading;
+		Respawn = respawn;
+		RandomRespawn = randomRespawn;
+	}
 }

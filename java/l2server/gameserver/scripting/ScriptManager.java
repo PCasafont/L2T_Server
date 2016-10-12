@@ -20,22 +20,22 @@ package l2server.gameserver.scripting;
  */
 public abstract class ScriptManager<S extends ManagedScript>
 {
-    public abstract Iterable<S> getAllManagedScripts();
+	public abstract Iterable<S> getAllManagedScripts();
 
-    public boolean reload(S ms)
-    {
-        return ms.reload();
-    }
+	public boolean reload(S ms)
+	{
+		return ms.reload();
+	}
 
-    public boolean unload(S ms)
-    {
-        return ms.unload();
-    }
+	public boolean unload(S ms)
+	{
+		return ms.unload();
+	}
 
-    public void setActive(S ms, boolean status)
-    {
-        ms.setActive(status);
-    }
+	public void setActive(S ms, boolean status)
+	{
+		ms.setActive(status);
+	}
 
-    public abstract String getScriptManagerName();
+	public abstract String getScriptManagerName();
 }

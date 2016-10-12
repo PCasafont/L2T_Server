@@ -29,64 +29,64 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class L2AHealerAI extends L2APlayerAI
 {
-    public L2AHealerAI(AIAccessor accessor)
-    {
-        super(accessor);
-    }
+	public L2AHealerAI(AIAccessor accessor)
+	{
+		super(accessor);
+	}
 
-    @Override
-    protected int[] getRandomGear()
-    {
-        return new int[]{
-                30262,
-                19917,
-                19918,
-                19919,
-                19920,
-                19921,
-                19464,
-                19463,
-                19458,
-                17623,
-                35570,
-                34860,
-                19462,
-                19454,
-                35802,
-                30317
-        };
-    }
+	@Override
+	protected int[] getRandomGear()
+	{
+		return new int[]{
+				30262,
+				19917,
+				19918,
+				19919,
+				19920,
+				19921,
+				19464,
+				19463,
+				19458,
+				17623,
+				35570,
+				34860,
+				19462,
+				19454,
+				35802,
+				30317
+		};
+	}
 
-    @Override
-    protected boolean interactWith(L2Character target)
-    {
-        if (_player.isAlly(target))
-        {
-            if (target.isDead())
-            {
-                for (L2Skill skill : _player.getAllSkills())
-                {
-                    if (skill.getSkillType() != L2SkillType.RESURRECT ||
-                            skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
-                    {
-                        continue;
-                    }
+	@Override
+	protected boolean interactWith(L2Character target)
+	{
+		if (_player.isAlly(target))
+		{
+			if (target.isDead())
+			{
+				for (L2Skill skill : _player.getAllSkills())
+				{
+					if (skill.getSkillType() != L2SkillType.RESURRECT ||
+							skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
+					{
+						continue;
+					}
 
-                    if (_player.useMagic(skill, true, false))
-                    {
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
-            }
-            return true;
-        }
+					if (_player.useMagic(skill, true, false))
+					{
+						break;
+					}
+				}
+			}
+			else
+			{
+				setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
+			}
+			return true;
+		}
 
 		/*if (getIntention() == CtrlIntention.AI_INTENTION_IDLE
-                && (_player.getCurrentMp() > _player.getMaxMp() * 0.7
+				&& (_player.getCurrentMp() > _player.getMaxMp() * 0.7
 				|| _player.getCurrentHp() < _player.getMaxHp() * 0.5))
 		{
 			for (L2Skill skill : _player.getAllSkills())
@@ -98,175 +98,175 @@ public class L2AHealerAI extends L2APlayerAI
 					break;
 			}
 		}*/
-        setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
+		setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    protected void think()
-    {
-        super.think();
+	@Override
+	protected void think()
+	{
+		super.think();
 
-        if (_player.getParty() == null)
-        {
-            return;
-        }
+		if (_player.getParty() == null)
+		{
+			return;
+		}
 
-        L2PcInstance mostHarmed = null;
-        L2PcInstance mostDebuffed = null;
-        L2PcInstance dead = null;
-        int memberCount = 0;
-        int leastHealth = 100;
-        int totalHealth = 0;
-        int maxDebuffs = 0;
+		L2PcInstance mostHarmed = null;
+		L2PcInstance mostDebuffed = null;
+		L2PcInstance dead = null;
+		int memberCount = 0;
+		int leastHealth = 100;
+		int totalHealth = 0;
+		int maxDebuffs = 0;
 
-        for (L2PcInstance member : _player.getParty().getPartyMembers())
-        {
-            if (_player.getDistanceSq(member) > 1500 * 1500)
-            {
-                continue;
-            }
+		for (L2PcInstance member : _player.getParty().getPartyMembers())
+		{
+			if (_player.getDistanceSq(member) > 1500 * 1500)
+			{
+				continue;
+			}
 
-            if (member.isDead())
-            {
-                dead = member;
-                continue;
-            }
+			if (member.isDead())
+			{
+				dead = member;
+				continue;
+			}
 
-            int health = (int) (member.getCurrentHp() * 100 / member.getMaxHp());
-            if (health < leastHealth)
-            {
-                leastHealth = health;
-                mostHarmed = member;
-            }
+			int health = (int) (member.getCurrentHp() * 100 / member.getMaxHp());
+			if (health < leastHealth)
+			{
+				leastHealth = health;
+				mostHarmed = member;
+			}
 
-            health = (int) ((member.getCurrentHp() + member.getCurrentCp()) * 100 /
-                    (member.getMaxHp() + member.getMaxCp()));
-            if (health < leastHealth)
-            {
-                leastHealth = health;
-                mostHarmed = member;
-            }
+			health = (int) ((member.getCurrentHp() + member.getCurrentCp()) * 100 /
+					(member.getMaxHp() + member.getMaxCp()));
+			if (health < leastHealth)
+			{
+				leastHealth = health;
+				mostHarmed = member;
+			}
 
-            int debuffs = 0;
-            for (L2Abnormal e : member.getAllEffects())
-            {
-                if (e != null && e.getSkill().isDebuff() && e.getSkill().canBeDispeled())
-                {
-                    debuffs++;
-                }
-            }
+			int debuffs = 0;
+			for (L2Abnormal e : member.getAllEffects())
+			{
+				if (e != null && e.getSkill().isDebuff() && e.getSkill().canBeDispeled())
+				{
+					debuffs++;
+				}
+			}
 
-            if (debuffs > maxDebuffs)
-            {
-                maxDebuffs = debuffs;
-                mostDebuffed = member;
-            }
+			if (debuffs > maxDebuffs)
+			{
+				maxDebuffs = debuffs;
+				mostDebuffed = member;
+			}
 
-            totalHealth += health;
-            memberCount++;
-        }
+			totalHealth += health;
+			memberCount++;
+		}
 
-        //Log.info(meanHealth + " " + leastHealth);
+		//Log.info(meanHealth + " " + leastHealth);
 
-        if (dead != null)
-        {
-            _player.setTarget(dead);
+		if (dead != null)
+		{
+			_player.setTarget(dead);
 
-            for (L2Skill skill : _player.getAllSkills())
-            {
-                if (skill.getSkillType() != L2SkillType.RESURRECT)
-                {
-                    continue;
-                }
+			for (L2Skill skill : _player.getAllSkills())
+			{
+				if (skill.getSkillType() != L2SkillType.RESURRECT)
+				{
+					continue;
+				}
 
-                if (_player.useMagic(skill, true, false))
-                {
-                    return;
-                }
-            }
-        }
+				if (_player.useMagic(skill, true, false))
+				{
+					return;
+				}
+			}
+		}
 
-        if (memberCount == 0)
-        {
-            return;
-        }
+		if (memberCount == 0)
+		{
+			return;
+		}
 
-        if (mostDebuffed != null &&
-                (maxDebuffs > 2 || mostDebuffed.isMovementDisabled() || mostDebuffed.isOutOfControl()))
-        {
-            _player.setTarget(mostDebuffed);
+		if (mostDebuffed != null &&
+				(maxDebuffs > 2 || mostDebuffed.isMovementDisabled() || mostDebuffed.isOutOfControl()))
+		{
+			_player.setTarget(mostDebuffed);
 
-            for (L2Skill skill : _player.getAllSkills())
-            {
-                if (skill.getSkillType() != L2SkillType.CANCEL_DEBUFF)
-                {
-                    continue;
-                }
+			for (L2Skill skill : _player.getAllSkills())
+			{
+				if (skill.getSkillType() != L2SkillType.CANCEL_DEBUFF)
+				{
+					continue;
+				}
 
-                if (_player.useMagic(skill, true, false))
-                {
-                    return;
-                }
-            }
-        }
+				if (_player.useMagic(skill, true, false))
+				{
+					return;
+				}
+			}
+		}
 
-        int meanHealth = totalHealth / memberCount;
+		int meanHealth = totalHealth / memberCount;
 
-        //Log.info(leastHealth + " " + meanHealth);
+		//Log.info(leastHealth + " " + meanHealth);
 
-        if (meanHealth < 85 || leastHealth < 70)
-        {
-            _player.setTarget(mostHarmed);
+		if (meanHealth < 85 || leastHealth < 70)
+		{
+			_player.setTarget(mostHarmed);
 
-            if (meanHealth < leastHealth + 25 || meanHealth < 65)
-            {
-                for (L2Skill skill : _player.getAllSkills())
-                {
-                    if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
-                            skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
-                            skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
-                            skill.getSkillType() != L2SkillType.OVERHEAL ||
-                            skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
-                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_NOTME &&
-                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_CLAN)
-                    {
-                        continue;
-                    }
+			if (meanHealth < leastHealth + 25 || meanHealth < 65)
+			{
+				for (L2Skill skill : _player.getAllSkills())
+				{
+					if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
+							skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
+							skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
+							skill.getSkillType() != L2SkillType.OVERHEAL ||
+							skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
+									skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_NOTME &&
+									skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_CLAN)
+					{
+						continue;
+					}
 
-                    if (_player.useMagic(skill, true, false))
-                    {
-                        return;
-                    }
-                }
-            }
+					if (_player.useMagic(skill, true, false))
+					{
+						return;
+					}
+				}
+			}
 
-            if (mostHarmed != null)
-            {
-                for (L2Skill skill : _player.getAllSkills())
-                {
-                    if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
-                            skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
-                            skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
-                            skill.getSkillType() != L2SkillType.OVERHEAL ||
-                            skill.getTargetType() != L2SkillTargetType.TARGET_ONE &&
-                                    (skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) &&
-                                    (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER ||
-                                            mostHarmed == _player) &&
-                                    skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
-                    {
-                        continue;
-                    }
+			if (mostHarmed != null)
+			{
+				for (L2Skill skill : _player.getAllSkills())
+				{
+					if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
+							skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
+							skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
+							skill.getSkillType() != L2SkillType.OVERHEAL ||
+							skill.getTargetType() != L2SkillTargetType.TARGET_ONE &&
+									(skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) &&
+									(skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER ||
+											mostHarmed == _player) &&
+									skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
+					{
+						continue;
+					}
 
-                    if (_player.useMagic(skill, true, false))
-                    {
-                        return;
-                    }
-                }
-            }
-        }
-    }
+					if (_player.useMagic(skill, true, false))
+					{
+						return;
+					}
+				}
+			}
+		}
+	}
 
 	/*private boolean isHealingSkill(L2Skill skill)
 	{

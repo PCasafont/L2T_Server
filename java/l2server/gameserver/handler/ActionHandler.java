@@ -22,71 +22,71 @@ import java.util.Map;
 
 public class ActionHandler
 {
-    private Map<InstanceType, IActionHandler> _actions;
-    private Map<InstanceType, IActionHandler> _actionsShift;
+	private Map<InstanceType, IActionHandler> _actions;
+	private Map<InstanceType, IActionHandler> _actionsShift;
 
-    public static ActionHandler getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static ActionHandler getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private ActionHandler()
-    {
-        _actions = new HashMap<>();
-        _actionsShift = new HashMap<>();
-    }
+	private ActionHandler()
+	{
+		_actions = new HashMap<>();
+		_actionsShift = new HashMap<>();
+	}
 
-    public void registerActionHandler(IActionHandler handler)
-    {
-        _actions.put(handler.getInstanceType(), handler);
-    }
+	public void registerActionHandler(IActionHandler handler)
+	{
+		_actions.put(handler.getInstanceType(), handler);
+	}
 
-    public void registerActionShiftHandler(IActionHandler handler)
-    {
-        _actionsShift.put(handler.getInstanceType(), handler);
-    }
+	public void registerActionShiftHandler(IActionHandler handler)
+	{
+		_actionsShift.put(handler.getInstanceType(), handler);
+	}
 
-    public IActionHandler getActionHandler(InstanceType iType)
-    {
-        IActionHandler result = null;
-        for (InstanceType t = iType; t != null; t = t.getParent())
-        {
-            result = _actions.get(t);
-            if (result != null)
-            {
-                break;
-            }
-        }
-        return result;
-    }
+	public IActionHandler getActionHandler(InstanceType iType)
+	{
+		IActionHandler result = null;
+		for (InstanceType t = iType; t != null; t = t.getParent())
+		{
+			result = _actions.get(t);
+			if (result != null)
+			{
+				break;
+			}
+		}
+		return result;
+	}
 
-    public IActionHandler getActionShiftHandler(InstanceType iType)
-    {
-        IActionHandler result = null;
-        for (InstanceType t = iType; t != null; t = t.getParent())
-        {
-            result = _actionsShift.get(t);
-            if (result != null)
-            {
-                break;
-            }
-        }
-        return result;
-    }
+	public IActionHandler getActionShiftHandler(InstanceType iType)
+	{
+		IActionHandler result = null;
+		for (InstanceType t = iType; t != null; t = t.getParent())
+		{
+			result = _actionsShift.get(t);
+			if (result != null)
+			{
+				break;
+			}
+		}
+		return result;
+	}
 
-    public int size()
-    {
-        return _actions.size();
-    }
+	public int size()
+	{
+		return _actions.size();
+	}
 
-    public int sizeShift()
-    {
-        return _actionsShift.size();
-    }
+	public int sizeShift()
+	{
+		return _actionsShift.size();
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final ActionHandler _instance = new ActionHandler();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final ActionHandler _instance = new ActionHandler();
+	}
 }

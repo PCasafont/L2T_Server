@@ -30,36 +30,36 @@ import java.util.List;
 public class RequestCursedWeaponList extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-        //nothing to read it's just a trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		//nothing to read it's just a trigger
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2Character activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2Character activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        //send a ExCursedWeaponList :p
-        List<Integer> list = new ArrayList<>();
-        for (int id : CursedWeaponsManager.getInstance().getCursedWeaponsIds())
-        {
-            list.add(id);
-        }
+		//send a ExCursedWeaponList :p
+		List<Integer> list = new ArrayList<>();
+		for (int id : CursedWeaponsManager.getInstance().getCursedWeaponsIds())
+		{
+			list.add(id);
+		}
 
-        activeChar.sendPacket(new ExCursedWeaponList(list));
-    }
+		activeChar.sendPacket(new ExCursedWeaponList(list));
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

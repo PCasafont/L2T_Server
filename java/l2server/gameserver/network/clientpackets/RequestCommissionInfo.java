@@ -24,22 +24,22 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionInfo;
 public final class RequestCommissionInfo extends L2GameClientPacket
 {
 
-    int _itemOID;
+	int _itemOID;
 
-    @Override
-    protected void readImpl()
-    {
-        _itemOID = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_itemOID = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
-        player.sendPacket(new ExResponseCommissionInfo(player, _itemOID, true));
-    }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
+		player.sendPacket(new ExResponseCommissionInfo(player, _itemOID, true));
+	}
 }

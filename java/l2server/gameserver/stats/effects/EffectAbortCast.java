@@ -24,46 +24,46 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectAbortCast extends L2Effect
 {
-    public EffectAbortCast(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectAbortCast(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (getEffected() == null || getEffected() == getEffector())
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (getEffected() == null || getEffected() == getEffector())
+		{
+			return false;
+		}
 
-        if (getEffected().isRaid())
-        {
-            return false;
-        }
+		if (getEffected().isRaid())
+		{
+			return false;
+		}
 
-        if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected().getLastSkillCast() != null &&
-                getEffected().getLastSkillCast().isMagic())
-        {
-            getEffected().abortCast();
-            if (getEffected() instanceof L2PcInstance)
-            {
-                // Send a system message
-                getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTING_INTERRUPTED));
-            }
-        }
-        return true;
-    }
+		if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected().getLastSkillCast() != null &&
+				getEffected().getLastSkillCast().isMagic())
+		{
+			getEffected().abortCast();
+			if (getEffected() instanceof L2PcInstance)
+			{
+				// Send a system message
+				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTING_INTERRUPTED));
+			}
+		}
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return true;
+	}
 }

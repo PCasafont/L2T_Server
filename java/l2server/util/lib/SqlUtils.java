@@ -26,161 +26,161 @@ import java.util.logging.Level;
 public class SqlUtils
 {
 
-    private SqlUtils()
-    {
-    }
+	private SqlUtils()
+	{
+	}
 
-    // =========================================================
-    // Property - Public
-    public static SqlUtils getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	// =========================================================
+	// Property - Public
+	public static SqlUtils getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    // =========================================================
-    // Method - Public
-    public static Integer getIntValue(String resultField, String tableName, String whereClause)
-    {
-        String query = "";
-        Integer res = null;
+	// =========================================================
+	// Method - Public
+	public static Integer getIntValue(String resultField, String tableName, String whereClause)
+	{
+		String query = "";
+		Integer res = null;
 
-        Connection con = null;
+		Connection con = null;
 
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            query = L2DatabaseFactory.getInstance()
-                    .prepQuerySelect(new String[]{resultField}, tableName, whereClause, true);
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			query = L2DatabaseFactory.getInstance()
+					.prepQuerySelect(new String[]{resultField}, tableName, whereClause, true);
 
-            PreparedStatement statement = con.prepareStatement(query);
-            ResultSet rset = statement.executeQuery();
+			PreparedStatement statement = con.prepareStatement(query);
+			ResultSet rset = statement.executeQuery();
 
-            if (rset.next())
-            {
-                res = rset.getInt(1);
-            }
+			if (rset.next())
+			{
+				res = rset.getInt(1);
+			}
 
-            rset.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "Error in query '" + query + "':", e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
+			rset.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 
-        return res;
-    }
+		return res;
+	}
 
-    public static Integer[] getIntArray(String resultField, String tableName, String whereClause)
-    {
-        String query = "";
-        Integer[] res = null;
+	public static Integer[] getIntArray(String resultField, String tableName, String whereClause)
+	{
+		String query = "";
+		Integer[] res = null;
 
-        Connection con = null;
+		Connection con = null;
 
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            query = L2DatabaseFactory.getInstance()
-                    .prepQuerySelect(new String[]{resultField}, tableName, whereClause, false);
-            PreparedStatement statement = con.prepareStatement(query);
-            ResultSet rset = statement.executeQuery();
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			query = L2DatabaseFactory.getInstance()
+					.prepQuerySelect(new String[]{resultField}, tableName, whereClause, false);
+			PreparedStatement statement = con.prepareStatement(query);
+			ResultSet rset = statement.executeQuery();
 
-            int rows = 0;
+			int rows = 0;
 
-            while (rset.next())
-            {
-                rows++;
-            }
+			while (rset.next())
+			{
+				rows++;
+			}
 
-            if (rows == 0)
-            {
-                return new Integer[0];
-            }
+			if (rows == 0)
+			{
+				return new Integer[0];
+			}
 
-            res = new Integer[rows - 1];
+			res = new Integer[rows - 1];
 
-            rset.first();
+			rset.first();
 
-            int row = 0;
-            while (rset.next())
-            {
-                res[row] = rset.getInt(1);
-            }
-            rset.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "mSGI: Error in query '" + query + "':", e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
+			int row = 0;
+			while (rset.next())
+			{
+				res[row] = rset.getInt(1);
+			}
+			rset.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "mSGI: Error in query '" + query + "':", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 
-        return res;
-    }
+		return res;
+	}
 
-    public static Integer[][] get2DIntArray(String[] resultFields, String usedTables, String whereClause)
-    {
-        long start = System.currentTimeMillis();
+	public static Integer[][] get2DIntArray(String[] resultFields, String usedTables, String whereClause)
+	{
+		long start = System.currentTimeMillis();
 
-        String query = "";
+		String query = "";
 
-        Connection con = null;
+		Connection con = null;
 
-        Integer res[][] = null;
+		Integer res[][] = null;
 
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            query = L2DatabaseFactory.getInstance().prepQuerySelect(resultFields, usedTables, whereClause, false);
-            PreparedStatement statement = con.prepareStatement(query);
-            ResultSet rset = statement.executeQuery();
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			query = L2DatabaseFactory.getInstance().prepQuerySelect(resultFields, usedTables, whereClause, false);
+			PreparedStatement statement = con.prepareStatement(query);
+			ResultSet rset = statement.executeQuery();
 
-            int rows = 0;
-            while (rset.next())
-            {
-                rows++;
-            }
+			int rows = 0;
+			while (rset.next())
+			{
+				rows++;
+			}
 
-            res = new Integer[rows - 1][resultFields.length];
+			res = new Integer[rows - 1][resultFields.length];
 
-            rset.first();
+			rset.first();
 
-            int row = 0;
-            while (rset.next())
-            {
-                for (int i = 0; i < resultFields.length; i++)
-                {
-                    res[row][i] = rset.getInt(i + 1);
-                }
-                row++;
-            }
-            rset.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "Error in query '" + query + "':", e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
+			int row = 0;
+			while (rset.next())
+			{
+				for (int i = 0; i < resultFields.length; i++)
+				{
+					res[row][i] = rset.getInt(i + 1);
+				}
+				row++;
+			}
+			rset.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 
-        Log.fine("Get all rows in query '" + query + "' in " + (System.currentTimeMillis() - start) + "ms");
-        return res;
-    }
+		Log.fine("Get all rows in query '" + query + "' in " + (System.currentTimeMillis() - start) + "ms");
+		return res;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final SqlUtils _instance = new SqlUtils();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final SqlUtils _instance = new SqlUtils();
+	}
 }

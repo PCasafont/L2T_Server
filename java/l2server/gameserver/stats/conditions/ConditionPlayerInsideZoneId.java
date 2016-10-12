@@ -21,23 +21,22 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerInsideZoneId extends Condition
 {
 
-    private int _id;
+	private int _id;
 
-    /**
-     * Instantiates a new condition player landing zone.
-     *
-     */
-    public ConditionPlayerInsideZoneId(int id)
-    {
-        _id = id;
-    }
+	/**
+	 * Instantiates a new condition player landing zone.
+	 */
+	public ConditionPlayerInsideZoneId(int id)
+	{
+		_id = id;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return ZoneManager.getInstance().getZoneById(_id).isCharacterInZone(env.player);
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return ZoneManager.getInstance().getZoneById(_id).isCharacterInZone(env.player);
+	}
 }

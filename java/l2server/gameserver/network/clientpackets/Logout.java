@@ -35,58 +35,58 @@ import java.util.logging.Logger;
 public final class Logout extends L2GameClientPacket
 {
 
-    protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
-    @Override
-    protected void readImpl()
-    {
+	@Override
+	protected void readImpl()
+	{
 
-    }
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        // Dont allow leaving if player is fighting
-        final L2PcInstance player = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		// Dont allow leaving if player is fighting
+		final L2PcInstance player = getClient().getActiveChar();
 
-        if (player == null)
-        {
-            return;
-        }
+		if (player == null)
+		{
+			return;
+		}
 
-        if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null)
-        {
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+		if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null)
+		{
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-        if (player.isLocked())
-        {
-            Log.warning("Player " + player.getName() + " tried to logout during class change.");
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+		if (player.isLocked())
+		{
+			Log.warning("Player " + player.getName() + " tried to logout during class change.");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-        if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
-                !(player.isGM() && Config.GM_RESTART_FIGHTING))
-        {
-            if (Config.DEBUG)
-            {
-                Log.fine("Player " + player.getName() + " tried to logout while fighting");
-            }
+		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
+				!(player.isGM() && Config.GM_RESTART_FIGHTING))
+		{
+			if (Config.DEBUG)
+			{
+				Log.fine("Player " + player.getName() + " tried to logout while fighting");
+			}
 
-            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_LOGOUT_WHILE_FIGHTING));
-            player.sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_LOGOUT_WHILE_FIGHTING));
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-        // Remove player from Boss Zone
-        player.removeFromBossZone();
+		// Remove player from Boss Zone
+		player.removeFromBossZone();
 
-        LogRecord record = new LogRecord(Level.INFO, "Disconnected");
-        record.setParameters(new Object[]{getClient()});
-        _logAccounting.log(record);
+		LogRecord record = new LogRecord(Level.INFO, "Disconnected");
+		record.setParameters(new Object[]{getClient()});
+		_logAccounting.log(record);
 
-        player.logout();
-    }
+		player.logout();
+	}
 }

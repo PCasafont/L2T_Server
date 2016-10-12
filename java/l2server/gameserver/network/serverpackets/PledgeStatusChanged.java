@@ -29,23 +29,23 @@ import l2server.gameserver.model.L2Clan;
  */
 public final class PledgeStatusChanged extends L2GameServerPacket
 {
-    private L2Clan _clan;
+	private L2Clan _clan;
 
-    public PledgeStatusChanged(L2Clan clan)
-    {
-        _clan = clan;
-    }
+	public PledgeStatusChanged(L2Clan clan)
+	{
+		_clan = clan;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(Config.SERVER_ID);
-        writeD(_clan.getLeaderId());
-        writeD(_clan.getClanId());
-        writeD(_clan.getCrestId());
-        writeD(_clan.getAllyId());
-        writeD(_clan.getAllyCrestId());
-        writeD(0);
-        writeD(0);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(Config.SERVER_ID);
+		writeD(_clan.getLeaderId());
+		writeD(_clan.getClanId());
+		writeD(_clan.getCrestId());
+		writeD(_clan.getAllyId());
+		writeD(_clan.getAllyCrestId());
+		writeD(0);
+		writeD(0);
+	}
 }

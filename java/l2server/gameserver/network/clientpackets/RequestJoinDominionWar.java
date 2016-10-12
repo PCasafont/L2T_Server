@@ -11,7 +11,7 @@ public class RequestJoinDominionWar extends L2GameClientPacket
 	public void readImpl()
 	{
 	}
-	
+
 	@Override
 	public void runImpl()
 	{

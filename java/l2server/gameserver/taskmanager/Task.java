@@ -27,24 +27,24 @@ import java.util.concurrent.ScheduledFuture;
 public abstract class Task
 {
 
-    public void initialize()
-    {
-        if (Config.DEBUG)
-        {
-            Log.info("Task" + getName() + " inializate");
-        }
-    }
+	public void initialize()
+	{
+		if (Config.DEBUG)
+		{
+			Log.info("Task" + getName() + " inializate");
+		}
+	}
 
-    public ScheduledFuture<?> launchSpecial(ExecutedTask instance)
-    {
-        return null;
-    }
+	public ScheduledFuture<?> launchSpecial(ExecutedTask instance)
+	{
+		return null;
+	}
 
-    public abstract String getName();
+	public abstract String getName();
 
-    public abstract void onTimeElapsed(ExecutedTask task);
+	public abstract void onTimeElapsed(ExecutedTask task);
 
-    public void onDestroy()
-    {
-    }
+	public void onDestroy()
+	{
+	}
 }

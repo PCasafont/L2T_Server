@@ -27,21 +27,21 @@ import java.util.List;
 public class ReplyCharacters extends BaseSendablePacket
 {
 
-    public ReplyCharacters(String account, int chars, List<Long> timeToDel)
-    {
-        writeC(0x08);
-        writeS(account);
-        writeC(chars);
-        writeC(timeToDel.size());
-        for (long time : timeToDel)
-        {
-            writeQ(time);
-        }
-    }
+	public ReplyCharacters(String account, int chars, List<Long> timeToDel)
+	{
+		writeC(0x08);
+		writeS(account);
+		writeC(chars);
+		writeC(timeToDel.size());
+		for (long time : timeToDel)
+		{
+			writeQ(time);
+		}
+	}
 
-    @Override
-    public byte[] getContent() throws IOException
-    {
-        return getBytes();
-    }
+	@Override
+	public byte[] getContent() throws IOException
+	{
+		return getBytes();
+	}
 }

@@ -34,118 +34,118 @@ import java.util.logging.Level;
  */
 public class SpawnDataManager
 {
-    public class DbSpawnData
-    {
-        public long respawnTime;
-        public int currentHp;
-        public int currentMp;
-    }
+	public class DbSpawnData
+	{
+		public long respawnTime;
+		public int currentHp;
+		public int currentMp;
+	}
 
-    private Map<String, DbSpawnData> _dbSpawnData = new HashMap<>();
+	private Map<String, DbSpawnData> _dbSpawnData = new HashMap<>();
 
-    public SpawnDataManager()
-    {
-        loadDbSpawnData();
-    }
+	public SpawnDataManager()
+	{
+		loadDbSpawnData();
+	}
 
-    public void loadDbSpawnData()
-    {
-        Connection con = null;
-        PreparedStatement statement = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
+	public void loadDbSpawnData()
+	{
+		Connection con = null;
+		PreparedStatement statement = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
 
-            statement = con.prepareStatement("SELECT name, respawn_time, current_hp, current_mp FROM spawn_data");
-            ResultSet rset = statement.executeQuery();
-            while (rset.next())
-            {
-                DbSpawnData dbsd = new DbSpawnData();
-                dbsd.respawnTime = rset.getLong("respawn_time");
-                dbsd.currentHp = rset.getInt("current_hp");
-                dbsd.currentMp = rset.getInt("current_mp");
+			statement = con.prepareStatement("SELECT name, respawn_time, current_hp, current_mp FROM spawn_data");
+			ResultSet rset = statement.executeQuery();
+			while (rset.next())
+			{
+				DbSpawnData dbsd = new DbSpawnData();
+				dbsd.respawnTime = rset.getLong("respawn_time");
+				dbsd.currentHp = rset.getInt("current_hp");
+				dbsd.currentMp = rset.getInt("current_mp");
 
-                _dbSpawnData.put(rset.getString("name"), dbsd);
-            }
+				_dbSpawnData.put(rset.getString("name"), dbsd);
+			}
 
-            rset.close();
-            statement.close();
+			rset.close();
+			statement.close();
 
-            statement = con.prepareStatement("DELETE FROM spawn_data WHERE respawn_time < ?");
-            statement.setLong(1, System.currentTimeMillis());
-            statement.execute();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "Error while loading database spawn data: " + e.getMessage(), e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+			statement = con.prepareStatement("DELETE FROM spawn_data WHERE respawn_time < ?");
+			statement.setLong(1, System.currentTimeMillis());
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Error while loading database spawn data: " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    public DbSpawnData popDbSpawnData(String dbName)
-    {
-        DbSpawnData dbsd = _dbSpawnData.get(dbName);
-        _dbSpawnData.remove(dbName);
-        return dbsd;
-    }
+	public DbSpawnData popDbSpawnData(String dbName)
+	{
+		DbSpawnData dbsd = _dbSpawnData.get(dbName);
+		_dbSpawnData.remove(dbName);
+		return dbsd;
+	}
 
-    public void saveDbSpawnData()
-    {
-        for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-        {
-            if (spawn.getDbName() != null && !spawn.getDbName().isEmpty())
-            {
-                updateDbSpawnData(spawn);
-            }
-        }
-    }
+	public void saveDbSpawnData()
+	{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+		{
+			if (spawn.getDbName() != null && !spawn.getDbName().isEmpty())
+			{
+				updateDbSpawnData(spawn);
+			}
+		}
+	}
 
-    public void updateDbSpawnData(L2Spawn spawn)
-    {
-        L2Npc npc = spawn.getNpc();
-        if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() &&
-                npc.getCurrentMp() == npc.getMaxMp() ||
-                spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0)
-        {
-            return;
-        }
+	public void updateDbSpawnData(L2Spawn spawn)
+	{
+		L2Npc npc = spawn.getNpc();
+		if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() &&
+				npc.getCurrentMp() == npc.getMaxMp() ||
+				spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0)
+		{
+			return;
+		}
 
-        Connection con = null;
-        PreparedStatement statement = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            statement = con.prepareStatement(
-                    "REPLACE INTO spawn_data (name, respawn_time, current_hp, current_mp) VALUES (?, ?, ?, ?)");
-            statement.setString(1, spawn.getDbName());
-            statement.setLong(2, spawn.getNextRespawn());
-            statement.setDouble(3, npc.getCurrentHp());
-            statement.setDouble(4, npc.getCurrentMp());
-            statement.executeUpdate();
-            statement.close();
-        }
-        catch (SQLException e)
-        {
-            Log.log(Level.WARNING, "SQL error while updating spawn to database: " + e.getMessage(), e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+		Connection con = null;
+		PreparedStatement statement = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			statement = con.prepareStatement(
+					"REPLACE INTO spawn_data (name, respawn_time, current_hp, current_mp) VALUES (?, ?, ?, ?)");
+			statement.setString(1, spawn.getDbName());
+			statement.setLong(2, spawn.getNextRespawn());
+			statement.setDouble(3, npc.getCurrentHp());
+			statement.setDouble(4, npc.getCurrentMp());
+			statement.executeUpdate();
+			statement.close();
+		}
+		catch (SQLException e)
+		{
+			Log.log(Level.WARNING, "SQL error while updating spawn to database: " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    public static SpawnDataManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static SpawnDataManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final SpawnDataManager _instance = new SpawnDataManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final SpawnDataManager _instance = new SpawnDataManager();
+	}
 }

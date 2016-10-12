@@ -20,49 +20,49 @@ import java.util.List;
 
 public class ExEnchantSkillList extends L2GameServerPacket
 {
-    public enum EnchantSkillType
-    {
-        NORMAL, SAFE, UNTRAIN, CHANGE_ROUTE,
-    }
+	public enum EnchantSkillType
+	{
+		NORMAL, SAFE, UNTRAIN, CHANGE_ROUTE,
+	}
 
-    private final EnchantSkillType _type;
-    private final List<Skill> _skills;
+	private final EnchantSkillType _type;
+	private final List<Skill> _skills;
 
-    static class Skill
-    {
-        public int id;
-        public int nextLevel;
+	static class Skill
+	{
+		public int id;
+		public int nextLevel;
 
-        Skill(int pId, int pNextLevel)
-        {
-            id = pId;
-            nextLevel = pNextLevel;
-        }
-    }
+		Skill(int pId, int pNextLevel)
+		{
+			id = pId;
+			nextLevel = pNextLevel;
+		}
+	}
 
-    public void addSkill(int id, int level)
-    {
-        _skills.add(new Skill(id, level));
-    }
+	public void addSkill(int id, int level)
+	{
+		_skills.add(new Skill(id, level));
+	}
 
-    public ExEnchantSkillList(EnchantSkillType type)
-    {
-        _type = type;
-        _skills = new ArrayList<>();
-    }
+	public ExEnchantSkillList(EnchantSkillType type)
+	{
+		_type = type;
+		_skills = new ArrayList<>();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_type.ordinal());
-        writeD(_skills.size());
-        for (Skill sk : _skills)
-        {
-            writeD(sk.id);
-            writeD(sk.nextLevel);
-        }
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_type.ordinal());
+		writeD(_skills.size());
+		for (Skill sk : _skills)
+		{
+			writeD(sk.id);
+			writeD(sk.nextLevel);
+		}
+	}
 }

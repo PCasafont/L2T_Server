@@ -27,95 +27,95 @@ import java.util.logging.Level;
  */
 public class GeoEditorListener extends Thread
 {
-    private static GeoEditorListener _instance;
-    private static final int PORT = 9011;
+	private static GeoEditorListener _instance;
+	private static final int PORT = 9011;
 
-    private ServerSocket _serverSocket;
-    private static GeoEditorThread _geoEditor;
+	private ServerSocket _serverSocket;
+	private static GeoEditorThread _geoEditor;
 
-    public static GeoEditorListener getInstance()
-    {
-        synchronized (GeoEditorListener.class)
-        {
-            if (_instance == null)
-            {
-                try
-                {
-                    _instance = new GeoEditorListener();
-                    _instance.start();
-                    Log.info("GeoEditorListener Initialized.");
-                }
-                catch (IOException e)
-                {
-                    Log.log(Level.SEVERE, "Error creating geoeditor listener! " + e.getMessage(), e);
-                    System.exit(1);
-                }
-            }
-        }
-        return _instance;
-    }
+	public static GeoEditorListener getInstance()
+	{
+		synchronized (GeoEditorListener.class)
+		{
+			if (_instance == null)
+			{
+				try
+				{
+					_instance = new GeoEditorListener();
+					_instance.start();
+					Log.info("GeoEditorListener Initialized.");
+				}
+				catch (IOException e)
+				{
+					Log.log(Level.SEVERE, "Error creating geoeditor listener! " + e.getMessage(), e);
+					System.exit(1);
+				}
+			}
+		}
+		return _instance;
+	}
 
-    private GeoEditorListener() throws IOException
-    {
-        _serverSocket = new ServerSocket(PORT);
-    }
+	private GeoEditorListener() throws IOException
+	{
+		_serverSocket = new ServerSocket(PORT);
+	}
 
-    public GeoEditorThread getThread()
-    {
-        return _geoEditor;
-    }
+	public GeoEditorThread getThread()
+	{
+		return _geoEditor;
+	}
 
-    public String getStatus()
-    {
-        if (_geoEditor != null && _geoEditor.isWorking())
-        {
-            return "Geoeditor connected.";
-        }
-        return "Geoeditor not connected.";
-    }
+	public String getStatus()
+	{
+		if (_geoEditor != null && _geoEditor.isWorking())
+		{
+			return "Geoeditor connected.";
+		}
+		return "Geoeditor not connected.";
+	}
 
-    @Override
-    public void run()
-    {
-        Socket connection = null;
-        try
-        {
-            while (true)
-            {
-                connection = _serverSocket.accept();
-                if (_geoEditor != null && _geoEditor.isWorking())
-                {
-                    Log.warning("Geoeditor already connected!");
-                    connection.close();
-                    continue;
-                }
-                Log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
-                _geoEditor = new GeoEditorThread(connection);
-                _geoEditor.start();
-            }
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "GeoEditorListener: " + e.getMessage(), e);
-            try
-            {
-                connection.close();
-            }
-            catch (Exception e2)
-            {
-            }
-        }
-        finally
-        {
-            try
-            {
-                _serverSocket.close();
-            }
-            catch (IOException io)
-            {
-                Log.log(Level.INFO, "", io);
-            }
-            Log.warning("GeoEditorListener Closed!");
-        }
-    }
+	@Override
+	public void run()
+	{
+		Socket connection = null;
+		try
+		{
+			while (true)
+			{
+				connection = _serverSocket.accept();
+				if (_geoEditor != null && _geoEditor.isWorking())
+				{
+					Log.warning("Geoeditor already connected!");
+					connection.close();
+					continue;
+				}
+				Log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
+				_geoEditor = new GeoEditorThread(connection);
+				_geoEditor.start();
+			}
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "GeoEditorListener: " + e.getMessage(), e);
+			try
+			{
+				connection.close();
+			}
+			catch (Exception e2)
+			{
+			}
+		}
+		finally
+		{
+			try
+			{
+				_serverSocket.close();
+			}
+			catch (IOException io)
+			{
+				Log.log(Level.INFO, "", io);
+			}
+			Log.warning("GeoEditorListener Closed!");
+		}
+	}
 }

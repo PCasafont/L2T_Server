@@ -22,21 +22,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameCloseUI extends L2GameServerPacket
 {
-    int _seconds;
+	int _seconds;
 
-    /**
-     * Close Minigame Waiting List
-     */
-    public ExCubeGameCloseUI()
-    {
+	/**
+	 * Close Minigame Waiting List
+	 */
+	public ExCubeGameCloseUI()
+	{
 
-    }
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

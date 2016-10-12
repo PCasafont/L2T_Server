@@ -29,84 +29,84 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public final class L2QuestGuardInstance extends L2GuardInstance
 {
-    private boolean _isAutoAttackable = true;
-    private boolean _isPassive = false;
+	private boolean _isAutoAttackable = true;
+	private boolean _isPassive = false;
 
-    public L2QuestGuardInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2QuestGuardInstance);
-    }
+	public L2QuestGuardInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2QuestGuardInstance);
+	}
 
-    @Override
-    public void addDamage(L2Character attacker, int damage, L2Skill skill)
-    {
-        super.addDamage(attacker, damage, skill);
+	@Override
+	public void addDamage(L2Character attacker, int damage, L2Skill skill)
+	{
+		super.addDamage(attacker, damage, skill);
 
-        if (attacker instanceof L2Attackable)
-        {
-            if (getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK) != null)
-            {
-                for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK))
-                {
-                    quest.notifyAttack(this, null, damage, false, skill);
-                }
-            }
-        }
-    }
+		if (attacker instanceof L2Attackable)
+		{
+			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK) != null)
+			{
+				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK))
+				{
+					quest.notifyAttack(this, null, damage, false, skill);
+				}
+			}
+		}
+	}
 
-    @Override
-    public boolean doDie(L2Character killer)
-    {
-        // Kill the L2NpcInstance (the corpse disappeared after 7 seconds)
-        if (!super.doDie(killer))
-        {
-            return false;
-        }
+	@Override
+	public boolean doDie(L2Character killer)
+	{
+		// Kill the L2NpcInstance (the corpse disappeared after 7 seconds)
+		if (!super.doDie(killer))
+		{
+			return false;
+		}
 
-        if (killer instanceof L2Attackable)
-        {
-            if (getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL) != null)
-            {
-                for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))
-                {
-                    ThreadPoolManager.getInstance()
-                            .scheduleEffect(new OnKillNotifyTask(this, quest, null, false), _onKillDelay);
-                }
-            }
-        }
+		if (killer instanceof L2Attackable)
+		{
+			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL) != null)
+			{
+				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))
+				{
+					ThreadPoolManager.getInstance()
+							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), _onKillDelay);
+				}
+			}
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public void addDamageHate(L2Character attacker, int damage, int aggro)
-    {
-        if (!_isPassive && !(attacker instanceof L2PcInstance))
-        {
-            super.addDamageHate(attacker, damage, aggro);
-        }
-    }
+	@Override
+	public void addDamageHate(L2Character attacker, int damage, int aggro)
+	{
+		if (!_isPassive && !(attacker instanceof L2PcInstance))
+		{
+			super.addDamageHate(attacker, damage, aggro);
+		}
+	}
 
-    public void setPassive(boolean state)
-    {
-        _isPassive = state;
-    }
+	public void setPassive(boolean state)
+	{
+		_isPassive = state;
+	}
 
-    @Override
-    public boolean isAutoAttackable(L2Character attacker)
-    {
-        return _isAutoAttackable && !(attacker instanceof L2PcInstance);
-    }
+	@Override
+	public boolean isAutoAttackable(L2Character attacker)
+	{
+		return _isAutoAttackable && !(attacker instanceof L2PcInstance);
+	}
 
-    @Override
-    public void setAutoAttackable(boolean state)
-    {
-        _isAutoAttackable = state;
-    }
+	@Override
+	public void setAutoAttackable(boolean state)
+	{
+		_isAutoAttackable = state;
+	}
 
-    public boolean isPassive()
-    {
-        return _isPassive;
-    }
+	public boolean isPassive()
+	{
+		return _isPassive;
+	}
 }

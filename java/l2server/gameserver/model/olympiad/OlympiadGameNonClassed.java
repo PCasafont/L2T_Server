@@ -24,37 +24,37 @@ import java.util.List;
  */
 public class OlympiadGameNonClassed extends OlympiadGameNormal
 {
-    private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents)
-    {
-        super(id, opponents);
-    }
+	private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents)
+	{
+		super(id, opponents);
+	}
 
-    @Override
-    public final CompetitionType getType()
-    {
-        return CompetitionType.NON_CLASSED;
-    }
+	@Override
+	public final CompetitionType getType()
+	{
+		return CompetitionType.NON_CLASSED;
+	}
 
-    @Override
-    protected final int getDivider()
-    {
-        return 5;
-    }
+	@Override
+	protected final int getDivider()
+	{
+		return 5;
+	}
 
-    @Override
-    protected final int[][] getReward()
-    {
-        return Config.ALT_OLY_NONCLASSED_REWARD;
-    }
+	@Override
+	protected final int[][] getReward()
+	{
+		return Config.ALT_OLY_NONCLASSED_REWARD;
+	}
 
-    protected static OlympiadGameNonClassed createGame(int id, List<Integer> list)
-    {
-        final OlympiadParticipant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
-        if (opponents == null)
-        {
-            return null;
-        }
+	protected static OlympiadGameNonClassed createGame(int id, List<Integer> list)
+	{
+		final OlympiadParticipant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
+		if (opponents == null)
+		{
+			return null;
+		}
 
-        return new OlympiadGameNonClassed(id, opponents);
-    }
+		return new OlympiadGameNonClassed(id, opponents);
+	}
 }

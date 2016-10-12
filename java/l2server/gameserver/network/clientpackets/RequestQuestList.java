@@ -24,18 +24,18 @@ import l2server.gameserver.network.serverpackets.QuestList;
  */
 public final class RequestQuestList extends L2GameClientPacket
 {
-    //
+	//
 
-    @Override
-    protected void readImpl()
-    {
-        // trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		// trigger
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        QuestList ql = new QuestList();
-        sendPacket(ql);
-    }
+	@Override
+	protected void runImpl()
+	{
+		QuestList ql = new QuestList();
+		sendPacket(ql);
+	}
 }

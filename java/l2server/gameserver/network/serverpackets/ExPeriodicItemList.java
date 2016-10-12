@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPeriodicItemList extends L2GameServerPacket
 {
-    private int _unk;
+	private int _unk;
 
-    public ExPeriodicItemList(int unk)
-    {
-        _unk = unk;
-    }
+	public ExPeriodicItemList(int unk)
+	{
+		_unk = unk;
+	}
 
-    @Override
-    public void writeImpl()
-    {
-        writeD(_unk);
-    }
+	@Override
+	public void writeImpl()
+	{
+		writeD(_unk);
+	}
 }

@@ -25,29 +25,29 @@ import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
  */
 public final class RequestAPReset extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        if (!player.reduceAdena("Ability points", AbilityTable.getInstance().getAdenaCostForReset(), player, true))
-        {
-            sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
-            return;
-        }
+		if (!player.reduceAdena("Ability points", AbilityTable.getInstance().getAdenaCostForReset(), player, true))
+		{
+			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
+			return;
+		}
 
-        player.setAbilities(new TIntIntHashMap());
-        sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
-    }
+		player.setAbilities(new TIntIntHashMap());
+		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
+	}
 }

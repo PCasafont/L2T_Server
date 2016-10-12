@@ -27,21 +27,21 @@ import java.util.Map;
  */
 public class ImagesTable
 {
-    private static final Map<String, ImageIcon> IMAGES = new HashMap<>();
+	private static final Map<String, ImageIcon> IMAGES = new HashMap<>();
 
-    public static final String IMAGES_DIRECTORY = "../images/";
+	public static final String IMAGES_DIRECTORY = "../images/";
 
-    public static ImageIcon getImage(String name)
-    {
-        if (!IMAGES.containsKey(name))
-        {
-            IMAGES.put(name, new ImageIcon(IMAGES_DIRECTORY + name));
-        }
-        return IMAGES.get(name);
-    }
+	public static ImageIcon getImage(String name)
+	{
+		if (!IMAGES.containsKey(name))
+		{
+			IMAGES.put(name, new ImageIcon(IMAGES_DIRECTORY + name));
+		}
+		return IMAGES.get(name);
+	}
 
-    private ImagesTable()
-    {
-        //none
-    }
+	private ImagesTable()
+	{
+		//none
+	}
 }

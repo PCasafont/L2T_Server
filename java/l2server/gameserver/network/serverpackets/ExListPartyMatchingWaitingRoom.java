@@ -26,65 +26,65 @@ import java.util.ArrayList;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 {
-    @SuppressWarnings("unused")
-    private final L2PcInstance _activeChar;
-    @SuppressWarnings("unused")
-    private int _page;
-    private int _minlvl;
-    private int _maxlvl;
-    @SuppressWarnings("unused")
-    private int _mode;
-    private ArrayList<L2PcInstance> _members;
+	@SuppressWarnings("unused")
+	private final L2PcInstance _activeChar;
+	@SuppressWarnings("unused")
+	private int _page;
+	private int _minlvl;
+	private int _maxlvl;
+	@SuppressWarnings("unused")
+	private int _mode;
+	private ArrayList<L2PcInstance> _members;
 
-    public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
-    {
-        _activeChar = player;
-        _page = page;
-        _minlvl = minlvl;
-        _maxlvl = maxlvl;
-        _mode = mode;
-        _members = new ArrayList<>();
-        for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
-        {
-            if (cha == null)
-            {
-                continue;
-            }
+	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
+	{
+		_activeChar = player;
+		_page = page;
+		_minlvl = minlvl;
+		_maxlvl = maxlvl;
+		_mode = mode;
+		_members = new ArrayList<>();
+		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
+		{
+			if (cha == null)
+			{
+				continue;
+			}
 
-            if (!cha.isPartyWaiting())
-            {
-                PartyMatchWaitingList.getInstance().removePlayer(cha);
-                continue;
-            }
+			if (!cha.isPartyWaiting())
+			{
+				PartyMatchWaitingList.getInstance().removePlayer(cha);
+				continue;
+			}
 
-            if (cha.getLevel() < _minlvl || cha.getLevel() > _maxlvl)
-            {
-                continue;
-            }
+			if (cha.getLevel() < _minlvl || cha.getLevel() > _maxlvl)
+			{
+				continue;
+			}
 
-            _members.add(cha);
-        }
-    }
+			_members.add(cha);
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        /*if (_mode == 0)
+	@Override
+	protected final void writeImpl()
+	{
+		/*if (_mode == 0)
         {
 			writeD(0);
 			writeD(0);
 			return;
 		}*/
 
-        writeD(_members.size());
-        writeD(_members.size());
-        for (L2PcInstance member : _members)
-        {
-            writeS(member.getName());
-            writeD(member.getClassId());
-            writeD(member.getLevel());
-            writeD(TownManager.getClosestLocation(member));
-            writeD(0x00); // ???
-        }
-    }
+		writeD(_members.size());
+		writeD(_members.size());
+		for (L2PcInstance member : _members)
+		{
+			writeS(member.getName());
+			writeD(member.getClassId());
+			writeD(member.getLevel());
+			writeD(TownManager.getClosestLocation(member));
+			writeD(0x00); // ???
+		}
+	}
 }

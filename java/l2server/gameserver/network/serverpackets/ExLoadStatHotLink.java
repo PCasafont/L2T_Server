@@ -21,32 +21,32 @@ package l2server.gameserver.network.serverpackets;
 public class ExLoadStatHotLink extends L2GameServerPacket
 {
 
-    private int _pid1;
-    private int _pid2;
+	private int _pid1;
+	private int _pid2;
 
-    public ExLoadStatHotLink(int pid1)
-    {
-        _pid1 = pid1;
-        _pid2 = 0;
-    }
+	public ExLoadStatHotLink(int pid1)
+	{
+		_pid1 = pid1;
+		_pid2 = 0;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        if (getClient().getActiveChar() == null)
-        {
-            return;
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		if (getClient().getActiveChar() == null)
+		{
+			return;
+		}
 
-        //Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, true);
-        //Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, false);
+		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, true);
+		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, false);
 
-        writeD(_pid1);
-        writeD(_pid2);
-        /*writeD(lastMap.size() < 5 ? lastMap.size() : 5);
+		writeD(_pid1);
+		writeD(_pid2);
+		/*writeD(lastMap.size() < 5 ? lastMap.size() : 5);
         int position = 1;
 		for (Integer key : lastMap.keySet())
 		{
@@ -76,5 +76,5 @@ public class ExLoadStatHotLink extends L2GameServerPacket
 				break;
 			position++;
 		}*/
-    }
+	}
 }

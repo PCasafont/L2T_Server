@@ -30,141 +30,141 @@ import java.util.Map;
  */
 public class SurveyManager
 {
-    private static SurveyManager _instance;
+	private static SurveyManager _instance;
 
-    private final String GET_CURRENT_SURVEY =
-            "SELECT survey_id,question,description FROM survey WHERE survey_id = (SELECT MAX(survey_id) FROM survey where active = 1)";
-    private final String GET_CURRENT_SURVEY_POSSIBLE_ANSWERS =
-            "SELECT answer_id,answer FROM survey_possible_answer WHERE survey_id = ?";
-    private final String GET_CURRENT_SURVEY_ANSWERS = "SELECT charId FROM survey_answer WHERE survey_id = ?";
-    private final String STORE_ANSWER = "INSERT INTO survey_answer (charId,survey_id,answer_id) VALUES (?,?)";
+	private final String GET_CURRENT_SURVEY =
+			"SELECT survey_id,question,description FROM survey WHERE survey_id = (SELECT MAX(survey_id) FROM survey where active = 1)";
+	private final String GET_CURRENT_SURVEY_POSSIBLE_ANSWERS =
+			"SELECT answer_id,answer FROM survey_possible_answer WHERE survey_id = ?";
+	private final String GET_CURRENT_SURVEY_ANSWERS = "SELECT charId FROM survey_answer WHERE survey_id = ?";
+	private final String STORE_ANSWER = "INSERT INTO survey_answer (charId,survey_id,answer_id) VALUES (?,?)";
 
-    private int _id = 0;
-    private String _question;
-    private String _description;
-    private Map<Integer, String> _possibleAnswers;
-    private List<Integer> _answers;
+	private int _id = 0;
+	private String _question;
+	private String _description;
+	private Map<Integer, String> _possibleAnswers;
+	private List<Integer> _answers;
 
-    private SurveyManager()
-    {
-        load();
-    }
+	private SurveyManager()
+	{
+		load();
+	}
 
-    private void load()
-    {
-        Connection con = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement(GET_CURRENT_SURVEY);
-            ResultSet rset = statement.executeQuery();
+	private void load()
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(GET_CURRENT_SURVEY);
+			ResultSet rset = statement.executeQuery();
 
-            if (rset.next())
-            {
-                _id = rset.getInt("survey_id");
-                _question = rset.getString("question");
-                _description = rset.getString("description");
+			if (rset.next())
+			{
+				_id = rset.getInt("survey_id");
+				_question = rset.getString("question");
+				_description = rset.getString("description");
 
-                PreparedStatement statement2 = con.prepareStatement(GET_CURRENT_SURVEY_POSSIBLE_ANSWERS);
-                statement2.setInt(1, _id);
-                ResultSet rset2 = statement2.executeQuery();
-                Map<Integer, String> possibleAnswers = new HashMap<>();
-                while (rset2.next())
-                {
-                    possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
-                }
+				PreparedStatement statement2 = con.prepareStatement(GET_CURRENT_SURVEY_POSSIBLE_ANSWERS);
+				statement2.setInt(1, _id);
+				ResultSet rset2 = statement2.executeQuery();
+				Map<Integer, String> possibleAnswers = new HashMap<>();
+				while (rset2.next())
+				{
+					possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
+				}
 
-                _possibleAnswers = possibleAnswers;
+				_possibleAnswers = possibleAnswers;
 
-                statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
-                statement2.setInt(1, _id);
-                rset2 = statement2.executeQuery();
-                List<Integer> answers = new ArrayList<>();
-                while (rset2.next())
-                {
-                    answers.add(rset.getInt("charId"));
-                }
+				statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
+				statement2.setInt(1, _id);
+				rset2 = statement2.executeQuery();
+				List<Integer> answers = new ArrayList<>();
+				while (rset2.next())
+				{
+					answers.add(rset.getInt("charId"));
+				}
 
-                _answers = answers;
-            }
+				_answers = answers;
+			}
 
-            rset.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+			rset.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    public boolean isActive()
-    {
-        return _id > 0;
-    }
+	public boolean isActive()
+	{
+		return _id > 0;
+	}
 
-    public String getQuestion()
-    {
-        return _question;
-    }
+	public String getQuestion()
+	{
+		return _question;
+	}
 
-    public String getDescription()
-    {
-        return _description;
-    }
+	public String getDescription()
+	{
+		return _description;
+	}
 
-    public Integer[] getPossibleAnswerIds()
-    {
-        return (Integer[]) _possibleAnswers.keySet().toArray();
-    }
+	public Integer[] getPossibleAnswerIds()
+	{
+		return (Integer[]) _possibleAnswers.keySet().toArray();
+	}
 
-    public String getPossibleAnswer(int id)
-    {
-        return _possibleAnswers.get(id);
-    }
+	public String getPossibleAnswer(int id)
+	{
+		return _possibleAnswers.get(id);
+	}
 
-    public boolean playerAnswered(int playerObjId)
-    {
-        return _answers.contains(playerObjId);
-    }
+	public boolean playerAnswered(int playerObjId)
+	{
+		return _answers.contains(playerObjId);
+	}
 
-    public boolean storeAnswer(int playerObjId, int answerIndex)
-    {
-        if (_answers.contains(playerObjId))
-        {
-            return false;
-        }
-        Connection con = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement(STORE_ANSWER);
-            statement.setInt(1, playerObjId);
-            statement.setInt(2, answerIndex);
-            statement.execute();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-        _answers.add(playerObjId);
-        return true;
-    }
+	public boolean storeAnswer(int playerObjId, int answerIndex)
+	{
+		if (_answers.contains(playerObjId))
+		{
+			return false;
+		}
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(STORE_ANSWER);
+			statement.setInt(1, playerObjId);
+			statement.setInt(2, answerIndex);
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+		_answers.add(playerObjId);
+		return true;
+	}
 
-    public static SurveyManager getInstance()
-    {
-        if (_instance == null)
-        {
-            _instance = new SurveyManager();
-        }
-        return _instance;
-    }
+	public static SurveyManager getInstance()
+	{
+		if (_instance == null)
+		{
+			_instance = new SurveyManager();
+		}
+		return _instance;
+	}
 }

@@ -36,132 +36,132 @@ import java.util.Map;
  */
 public class EnsoulDataTable
 {
-    public static EnsoulDataTable getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static EnsoulDataTable getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private final Map<Integer, EnsoulEffect> _effects = new HashMap<>();
-    private final Map<Integer, SoulCrystal> _crystals = new HashMap<>();
+	private final Map<Integer, EnsoulEffect> _effects = new HashMap<>();
+	private final Map<Integer, SoulCrystal> _crystals = new HashMap<>();
 
-    // =========================================================
-    // Constructor
-    private EnsoulDataTable()
-    {
-        load();
-    }
+	// =========================================================
+	// Constructor
+	private EnsoulDataTable()
+	{
+		load();
+	}
 
-    private final void load()
-    {
-        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/effects.xml");
-        if (!file.exists())
-        {
-            Log.warning("File " + file.getAbsolutePath() + " does not exist");
-            return;
-        }
+	private final void load()
+	{
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/effects.xml");
+		if (!file.exists())
+		{
+			Log.warning("File " + file.getAbsolutePath() + " does not exist");
+			return;
+		}
 
-        XmlDocument doc = new XmlDocument(file);
-        for (XmlNode n : doc.getChildren())
-        {
-            if (!n.getName().equalsIgnoreCase("list"))
-            {
-                continue;
-            }
+		XmlDocument doc = new XmlDocument(file);
+		for (XmlNode n : doc.getChildren())
+		{
+			if (!n.getName().equalsIgnoreCase("list"))
+			{
+				continue;
+			}
 
-            for (XmlNode effectNode : n.getChildren())
-            {
-                if (!effectNode.getName().equalsIgnoreCase("effect"))
-                {
-                    continue;
-                }
+			for (XmlNode effectNode : n.getChildren())
+			{
+				if (!effectNode.getName().equalsIgnoreCase("effect"))
+				{
+					continue;
+				}
 
-                int id = effectNode.getInt("id");
-                String name = effectNode.getString("name");
-                int group = effectNode.getInt("group");
-                int stage = effectNode.getInt("stage");
-                EnsoulEffect effect = new EnsoulEffect(id, name, group, stage);
+				int id = effectNode.getInt("id");
+				String name = effectNode.getString("name");
+				int group = effectNode.getInt("group");
+				int stage = effectNode.getInt("stage");
+				EnsoulEffect effect = new EnsoulEffect(id, name, group, stage);
 
-                for (XmlNode funcNode : effectNode.getChildren())
-                {
-                    FuncTemplate ft = parseFunc(funcNode);
-                    if (ft != null)
-                    {
-                        effect.addFunc(ft.getFunc(effect));
-                    }
-                }
+				for (XmlNode funcNode : effectNode.getChildren())
+				{
+					FuncTemplate ft = parseFunc(funcNode);
+					if (ft != null)
+					{
+						effect.addFunc(ft.getFunc(effect));
+					}
+				}
 
-                _effects.put(id, effect);
-            }
-        }
+				_effects.put(id, effect);
+			}
+		}
 
-        Log.info("EnsoulDataTable: Loaded " + _effects.size() + " ensoul effects.");
+		Log.info("EnsoulDataTable: Loaded " + _effects.size() + " ensoul effects.");
 
-        file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
-        if (!file.exists())
-        {
-            Log.warning("File " + file.getAbsolutePath() + " does not exist");
-            return;
-        }
+		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
+		if (!file.exists())
+		{
+			Log.warning("File " + file.getAbsolutePath() + " does not exist");
+			return;
+		}
 
-        doc = new XmlDocument(file);
-        for (XmlNode n : doc.getChildren())
-        {
-            if (!n.getName().equalsIgnoreCase("list"))
-            {
-                continue;
-            }
+		doc = new XmlDocument(file);
+		for (XmlNode n : doc.getChildren())
+		{
+			if (!n.getName().equalsIgnoreCase("list"))
+			{
+				continue;
+			}
 
-            for (XmlNode crystalNode : n.getChildren())
-            {
-                if (!crystalNode.getName().equalsIgnoreCase("crystal"))
-                {
-                    continue;
-                }
+			for (XmlNode crystalNode : n.getChildren())
+			{
+				if (!crystalNode.getName().equalsIgnoreCase("crystal"))
+				{
+					continue;
+				}
 
-                int id = crystalNode.getInt("id");
-                boolean special = crystalNode.getBool("special", false);
-                SoulCrystal sc = new SoulCrystal(id, special);
+				int id = crystalNode.getInt("id");
+				boolean special = crystalNode.getBool("special", false);
+				SoulCrystal sc = new SoulCrystal(id, special);
 
-                for (XmlNode effectNode : crystalNode.getChildren())
-                {
-                    int effectId = effectNode.getInt("id");
-                    sc.addEffect(_effects.get(effectId));
-                }
+				for (XmlNode effectNode : crystalNode.getChildren())
+				{
+					int effectId = effectNode.getInt("id");
+					sc.addEffect(_effects.get(effectId));
+				}
 
-                _crystals.put(id, sc);
-            }
-        }
+				_crystals.put(id, sc);
+			}
+		}
 
-        Log.info("EnsoulDataTable: Loaded " + _crystals.size() + " soul crystals.");
-    }
+		Log.info("EnsoulDataTable: Loaded " + _crystals.size() + " soul crystals.");
+	}
 
-    public final EnsoulEffect getEffect(int id)
-    {
-        return _effects.get(id);
-    }
+	public final EnsoulEffect getEffect(int id)
+	{
+		return _effects.get(id);
+	}
 
-    public final SoulCrystal getCrystal(int id)
-    {
-        return _crystals.get(id);
-    }
+	public final SoulCrystal getCrystal(int id)
+	{
+		return _crystals.get(id);
+	}
 
-    private FuncTemplate parseFunc(XmlNode n)
-    {
-        String funcName = n.getName();
-        funcName = funcName.substring(0, 1).toUpperCase() + funcName.substring(1);
-        String statString = n.getString("stat");
-        double val = n.getDouble("val", 0.0);
-        Stats stat = Stats.fromString(statString);
-        Lambda lambda = new LambdaConst(val);
+	private FuncTemplate parseFunc(XmlNode n)
+	{
+		String funcName = n.getName();
+		funcName = funcName.substring(0, 1).toUpperCase() + funcName.substring(1);
+		String statString = n.getString("stat");
+		double val = n.getDouble("val", 0.0);
+		Stats stat = Stats.fromString(statString);
+		Lambda lambda = new LambdaConst(val);
 
-        Condition applyCond = null; //TODO
-        FuncTemplate ft = new FuncTemplate(applyCond, funcName, stat, lambda);
-        return ft;
-    }
+		Condition applyCond = null; //TODO
+		FuncTemplate ft = new FuncTemplate(applyCond, funcName, stat, lambda);
+		return ft;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final EnsoulDataTable _instance = new EnsoulDataTable();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final EnsoulDataTable _instance = new EnsoulDataTable();
+	}
 }

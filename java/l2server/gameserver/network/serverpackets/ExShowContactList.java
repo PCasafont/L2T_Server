@@ -31,21 +31,21 @@ import java.util.List;
  */
 public class ExShowContactList extends L2GameServerPacket
 {
-    private final List<String> _contacts;
+	private final List<String> _contacts;
 
-    public ExShowContactList(L2PcInstance player)
-    {
-        _contacts = new ArrayList<>();
-        _contacts.addAll(player.getContactList().getAllContacts());
-    }
+	public ExShowContactList(L2PcInstance player)
+	{
+		_contacts = new ArrayList<>();
+		_contacts.addAll(player.getContactList().getAllContacts());
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_contacts.size());
-        for (String name : _contacts)
-        {
-            writeS(name);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_contacts.size());
+		for (String name : _contacts)
+		{
+			writeS(name);
+		}
+	}
 }

@@ -26,35 +26,34 @@ import l2server.gameserver.communitybbs.CommunityBoard;
 public final class RequestShowBoard extends L2GameClientPacket
 {
 
-    @SuppressWarnings("unused")
-    private int _unknown;
+	@SuppressWarnings("unused")
+	private int _unknown;
 
-    /**
-     * packet type id 0x57
-     * <p>
-     * sample
-     * <p>
-     * 57
-     * 01 00 00 00		// unknown (always 1?)
-     * <p>
-     * format:		cd
-     *
-     */
-    @Override
-    protected final void readImpl()
-    {
-        _unknown = readD();
-    }
+	/**
+	 * packet type id 0x57
+	 * <p>
+	 * sample
+	 * <p>
+	 * 57
+	 * 01 00 00 00		// unknown (always 1?)
+	 * <p>
+	 * format:		cd
+	 */
+	@Override
+	protected final void readImpl()
+	{
+		_unknown = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        CommunityBoard.getInstance().handleCommands(getClient(), Config.BBS_DEFAULT);
-    }
+	@Override
+	protected void runImpl()
+	{
+		CommunityBoard.getInstance().handleCommands(getClient(), Config.BBS_DEFAULT);
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

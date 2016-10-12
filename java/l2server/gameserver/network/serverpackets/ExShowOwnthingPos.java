@@ -23,16 +23,16 @@ package l2server.gameserver.network.serverpackets;
 public class ExShowOwnthingPos extends L2GameServerPacket
 {
 
-    public ExShowOwnthingPos()
-    {
-    }
+	public ExShowOwnthingPos()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(0);
-        //writeD(0);
-    }
+	/**
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(0);
+		//writeD(0);
+	}
 }

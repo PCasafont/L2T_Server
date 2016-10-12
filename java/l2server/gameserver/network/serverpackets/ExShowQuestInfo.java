@@ -24,11 +24,11 @@ package l2server.gameserver.network.serverpackets;
 public class ExShowQuestInfo extends L2GameServerPacket
 {
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

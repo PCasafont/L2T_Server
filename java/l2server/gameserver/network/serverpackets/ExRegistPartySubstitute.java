@@ -21,17 +21,17 @@ package l2server.gameserver.network.serverpackets;
 public class ExRegistPartySubstitute extends L2GameServerPacket
 {
 
-    int k[];
+	int k[];
 
-    public ExRegistPartySubstitute(int l[])
-    {
-        k = l;
-    }
+	public ExRegistPartySubstitute(int l[])
+	{
+		k = l;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(k[0]);
-        writeD(k[1]);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(k[0]);
+		writeD(k[1]);
+	}
 }

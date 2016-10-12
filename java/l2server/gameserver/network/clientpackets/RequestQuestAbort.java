@@ -31,47 +31,47 @@ import l2server.log.Log;
 public final class RequestQuestAbort extends L2GameClientPacket
 {
 
-    private int _questId;
+	private int _questId;
 
-    @Override
-    protected void readImpl()
-    {
-        _questId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_questId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        Quest qe = QuestManager.getInstance().getQuest(_questId);
-        if (qe != null)
-        {
-            QuestState qs = activeChar.getQuestState(qe.getName());
-            if (qs != null)
-            {
-                qs.exitQuest(true);
-                activeChar.sendPacket(new QuestList());
-            }
-            else
-            {
-                if (Config.DEBUG)
-                {
-                    Log.info("Player '" + activeChar.getName() + "' try to abort quest " + qe.getName() +
-                            " but he didn't have it started.");
-                }
-            }
-        }
-        else
-        {
-            if (Config.DEBUG)
-            {
-                Log.warning("Quest (id='" + _questId + "') not found.");
-            }
-        }
-    }
+		Quest qe = QuestManager.getInstance().getQuest(_questId);
+		if (qe != null)
+		{
+			QuestState qs = activeChar.getQuestState(qe.getName());
+			if (qs != null)
+			{
+				qs.exitQuest(true);
+				activeChar.sendPacket(new QuestList());
+			}
+			else
+			{
+				if (Config.DEBUG)
+				{
+					Log.info("Player '" + activeChar.getName() + "' try to abort quest " + qe.getName() +
+							" but he didn't have it started.");
+				}
+			}
+		}
+		else
+		{
+			if (Config.DEBUG)
+			{
+				Log.warning("Quest (id='" + _questId + "') not found.");
+			}
+		}
+	}
 }

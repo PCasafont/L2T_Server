@@ -14,7 +14,7 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 	private int _clanRequest;
 	private String _ownerClan;
 	private int _warTime;
-	
+
 	public ExShowDominionRegistry(int currentTime, String territoryOwner, String ownerAlliance, int territoryCount, int territoryId, int mercRequest, int clanRequest, String ownerClan, int warTime)
 	{
 		_currentTime = currentTime;
@@ -27,7 +27,7 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 		_ownerClan = ownerClan;
 		_warTime = warTime;
 	}
-	
+
 	@Override
 	public void writeImpl()
 	{

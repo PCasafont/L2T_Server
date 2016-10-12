@@ -28,50 +28,50 @@ import java.util.ArrayList;
  */
 public final class ConditionPlayerHasClanHall extends Condition
 {
-    private final ArrayList<Integer> _clanHall;
+	private final ArrayList<Integer> _clanHall;
 
-    /**
-     * Instantiates a new condition player has clan hall.
-     *
-     * @param clanHall the clan hall
-     */
-    public ConditionPlayerHasClanHall(ArrayList<Integer> clanHall)
-    {
-        _clanHall = clanHall;
-    }
+	/**
+	 * Instantiates a new condition player has clan hall.
+	 *
+	 * @param clanHall the clan hall
+	 */
+	public ConditionPlayerHasClanHall(ArrayList<Integer> clanHall)
+	{
+		_clanHall = clanHall;
+	}
 
-    /**
-     * Test impl.
-     *
-     * @param env the env
-     * @return true, if successful
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * Test impl.
+	 *
+	 * @param env the env
+	 * @return true, if successful
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2Clan clan = ((L2PcInstance) env.player).getClan();
-        if (clan == null)
-        {
-            return _clanHall.size() == 1 && _clanHall.get(0) == 0;
-        }
+		L2Clan clan = ((L2PcInstance) env.player).getClan();
+		if (clan == null)
+		{
+			return _clanHall.size() == 1 && _clanHall.get(0) == 0;
+		}
 
-        if (env.player.isGM())
-        {
-            return true;
-        }
+		if (env.player.isGM())
+		{
+			return true;
+		}
 
-        // All Clan Hall
-        if (_clanHall.size() == 1 && _clanHall.get(0) == -1)
-        {
-            return clan.getHasHideout() > 0;
-        }
+		// All Clan Hall
+		if (_clanHall.size() == 1 && _clanHall.get(0) == -1)
+		{
+			return clan.getHasHideout() > 0;
+		}
 
-        return _clanHall.contains(clan.getHasHideout());
-    }
+		return _clanHall.contains(clan.getHasHideout());
+	}
 }

@@ -23,11 +23,11 @@ package l2server.gameserver.network.serverpackets;
 public class ExDominionWarEnd extends L2GameServerPacket
 {
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

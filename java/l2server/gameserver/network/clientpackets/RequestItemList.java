@@ -25,26 +25,26 @@ import l2server.gameserver.network.serverpackets.ItemList;
 public final class RequestItemList extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-        // trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		// trigger
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        if (getClient() != null && getClient().getActiveChar() != null &&
-                !getClient().getActiveChar().isInventoryDisabled())
-        {
-            ItemList il = new ItemList(getClient().getActiveChar(), true);
-            sendPacket(il);
-        }
-    }
+	@Override
+	protected void runImpl()
+	{
+		if (getClient() != null && getClient().getActiveChar() != null &&
+				!getClient().getActiveChar().isInventoryDisabled())
+		{
+			ItemList il = new ItemList(getClient().getActiveChar(), true);
+			sendPacket(il);
+		}
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

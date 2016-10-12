@@ -30,56 +30,56 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 {
 
-    private int _supportObjectId;
-    private int _enchantObjectId;
+	private int _supportObjectId;
+	private int _enchantObjectId;
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-     */
-    @Override
-    protected void readImpl()
-    {
-        _supportObjectId = readD();
-        _enchantObjectId = readD();
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+	 */
+	@Override
+	protected void readImpl()
+	{
+		_supportObjectId = readD();
+		_enchantObjectId = readD();
+	}
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar != null)
-        {
-            if (activeChar.isEnchanting())
-            {
-                L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_enchantObjectId);
-                L2ItemInstance support = activeChar.getInventory().getItemByObjectId(_supportObjectId);
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar != null)
+		{
+			if (activeChar.isEnchanting())
+			{
+				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_enchantObjectId);
+				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(_supportObjectId);
 
-                if (item == null || support == null)
-                {
-                    return;
-                }
+				if (item == null || support == null)
+				{
+					return;
+				}
 
-                EnchantSupportItem supportTemplate = EnchantItemTable.getInstance().getSupportItem(support);
+				EnchantSupportItem supportTemplate = EnchantItemTable.getInstance().getSupportItem(support);
 
-                if (supportTemplate == null || !supportTemplate.isValid(item))
-                {
-                    // message may be custom
-                    activeChar.sendPacket(
-                            SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
-                    activeChar.setActiveEnchantSupportItem(null);
-                    activeChar.sendPacket(new ExPutEnchantSupportItemResult(0));
-                    return;
-                }
-                activeChar.setActiveEnchantSupportItem(support);
+				if (supportTemplate == null || !supportTemplate.isValid(item))
+				{
+					// message may be custom
+					activeChar.sendPacket(
+							SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
+					activeChar.setActiveEnchantSupportItem(null);
+					activeChar.sendPacket(new ExPutEnchantSupportItemResult(0));
+					return;
+				}
+				activeChar.setActiveEnchantSupportItem(support);
 
-                activeChar.setIsEnchanting(true);
-                activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
-                activeChar.sendPacket(new ExPutEnchantSupportItemResult(_supportObjectId));
-                activeChar.sendPacket(new ExEnchantItemAllowed());
-            }
-        }
-    }
+				activeChar.setIsEnchanting(true);
+				activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
+				activeChar.sendPacket(new ExPutEnchantSupportItemResult(_supportObjectId));
+				activeChar.sendPacket(new ExEnchantItemAllowed());
+			}
+		}
+	}
 }

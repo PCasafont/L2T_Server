@@ -25,47 +25,47 @@ import l2server.gameserver.model.L2Skill;
  */
 public class PledgeSkillList extends L2GameServerPacket
 {
-    private L2Skill[] _skills;
-    private SubPledgeSkill[] _subSkills;
+	private L2Skill[] _skills;
+	private SubPledgeSkill[] _subSkills;
 
-    public static class SubPledgeSkill
-    {
-        public SubPledgeSkill(int subType, int skillId, int skillLvl)
-        {
-            super();
-            this.subType = subType;
-            this.skillId = skillId;
-            this.skillLvl = skillLvl;
-        }
+	public static class SubPledgeSkill
+	{
+		public SubPledgeSkill(int subType, int skillId, int skillLvl)
+		{
+			super();
+			this.subType = subType;
+			this.skillId = skillId;
+			this.skillLvl = skillLvl;
+		}
 
-        int subType;
-        int skillId;
-        int skillLvl;
-    }
+		int subType;
+		int skillId;
+		int skillLvl;
+	}
 
-    public PledgeSkillList(L2Clan clan)
-    {
-        _skills = clan.getAllSkills();
-        _subSkills = clan.getAllSubSkills();
-    }
+	public PledgeSkillList(L2Clan clan)
+	{
+		_skills = clan.getAllSkills();
+		_subSkills = clan.getAllSubSkills();
+	}
 
-    /**
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_skills.length);
-        writeD(_subSkills.length); // squad skill length
-        for (L2Skill sk : _skills)
-        {
-            writeD(sk.getId());
-            writeD(sk.getLevelHash());
-        }
-        for (SubPledgeSkill sk : _subSkills)
-        {
-            writeD(sk.subType); // clan Sub-unit types
-            writeD(sk.skillId);
-            writeD(sk.skillLvl);
-        }
-    }
+	/**
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_skills.length);
+		writeD(_subSkills.length); // squad skill length
+		for (L2Skill sk : _skills)
+		{
+			writeD(sk.getId());
+			writeD(sk.getLevelHash());
+		}
+		for (SubPledgeSkill sk : _subSkills)
+		{
+			writeD(sk.subType); // clan Sub-unit types
+			writeD(sk.skillId);
+			writeD(sk.skillLvl);
+		}
+	}
 }

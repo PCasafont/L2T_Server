@@ -33,107 +33,106 @@ import l2server.log.Log;
 public class RequestUnEquipItem extends L2GameClientPacket
 {
 
-    // cd
-    private int _slot;
+	// cd
+	private int _slot;
 
-    /**
-     * packet type id 0x11
-     * format:		cd
-     *
-     */
-    @Override
-    protected void readImpl()
-    {
-        _slot = readD();
-    }
+	/**
+	 * packet type id 0x11
+	 * format:		cd
+	 */
+	@Override
+	protected void readImpl()
+	{
+		_slot = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        if (Config.DEBUG)
-        {
-            Log.fine("request unequip slot " + _slot);
-        }
+	@Override
+	protected void runImpl()
+	{
+		if (Config.DEBUG)
+		{
+			Log.fine("request unequip slot " + _slot);
+		}
 
-        L2PcInstance activeChar = getClient().getActiveChar();
+		L2PcInstance activeChar = getClient().getActiveChar();
 
-        if (activeChar == null)
-        {
-            return;
-        }
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
-        if (item == null)
-        {
-            // Wear-items are not to be unequipped
-            return;
-        }
-        // Prevent of unequiping a cursed weapon
-        if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
-        {
-            // Message ?
-            return;
-        }
+		L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
+		if (item == null)
+		{
+			// Wear-items are not to be unequipped
+			return;
+		}
+		// Prevent of unequiping a cursed weapon
+		if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
+		{
+			// Message ?
+			return;
+		}
 
-        // arrows and bolts
-        if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
-        {
-            // Message ?
-            return;
-        }
+		// arrows and bolts
+		if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
+		{
+			// Message ?
+			return;
+		}
 
-        // Prevent player from unequipping items in special conditions
-        if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead())
-        {
-            activeChar.sendMessage("Your status does not allow you to do that.");
-            return;
-        }
-        if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
-        {
-            return;
-        }
+		// Prevent player from unequipping items in special conditions
+		if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead())
+		{
+			activeChar.sendMessage("Your status does not allow you to do that.");
+			return;
+		}
+		if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
+		{
+			return;
+		}
 
-        if (!activeChar.getInventory().canManipulateWithItemId(item.getItemId()))
-        {
-            activeChar.sendMessage("Cannot use this item.");
-            return;
-        }
+		if (!activeChar.getInventory().canManipulateWithItemId(item.getItemId()))
+		{
+			activeChar.sendMessage("Cannot use this item.");
+			return;
+		}
 
-        L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
+		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 
-        // show the update in the inventory
-        InventoryUpdate iu = new InventoryUpdate();
+		// show the update in the inventory
+		InventoryUpdate iu = new InventoryUpdate();
 
-        for (L2ItemInstance itm : unequiped)
-        {
-            activeChar.checkSShotsMatch(null, itm);
+		for (L2ItemInstance itm : unequiped)
+		{
+			activeChar.checkSShotsMatch(null, itm);
 
-            iu.addModifiedItem(itm);
-        }
+			iu.addModifiedItem(itm);
+		}
 
-        activeChar.sendPacket(iu);
+		activeChar.sendPacket(iu);
 
-        // On retail you don't stop hitting if unequip something. REOMVED: activeChar.abortAttack();
-        activeChar.broadcastUserInfo();
+		// On retail you don't stop hitting if unequip something. REOMVED: activeChar.abortAttack();
+		activeChar.broadcastUserInfo();
 
-        // this can be 0 if the user pressed the right mousebutton twice very fast
-        if (unequiped.length > 0)
-        {
+		// this can be 0 if the user pressed the right mousebutton twice very fast
+		if (unequiped.length > 0)
+		{
 
-            SystemMessage sm = null;
-            if (unequiped[0].getEnchantLevel() > 0)
-            {
-                sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
-                sm.addNumber(unequiped[0].getEnchantLevel());
-                sm.addItemName(unequiped[0]);
-            }
-            else
-            {
-                sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
-                sm.addItemName(unequiped[0]);
-            }
-            activeChar.sendPacket(sm);
-            sm = null;
-        }
-    }
+			SystemMessage sm = null;
+			if (unequiped[0].getEnchantLevel() > 0)
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
+				sm.addNumber(unequiped[0].getEnchantLevel());
+				sm.addItemName(unequiped[0]);
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
+				sm.addItemName(unequiped[0]);
+			}
+			activeChar.sendPacket(sm);
+			sm = null;
+		}
+	}
 }

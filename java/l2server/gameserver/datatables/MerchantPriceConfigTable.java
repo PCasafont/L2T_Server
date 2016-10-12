@@ -38,242 +38,242 @@ import java.util.logging.Level;
 public class MerchantPriceConfigTable implements InstanceListManager
 {
 
-    public static MerchantPriceConfigTable getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static MerchantPriceConfigTable getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private static final String MPCS_FILE = "MerchantPriceConfig.xml";
+	private static final String MPCS_FILE = "MerchantPriceConfig.xml";
 
-    private Map<Integer, MerchantPriceConfig> _mpcs = new HashMap<>();
-    private MerchantPriceConfig _defaultMpc;
+	private Map<Integer, MerchantPriceConfig> _mpcs = new HashMap<>();
+	private MerchantPriceConfig _defaultMpc;
 
-    private MerchantPriceConfigTable()
-    {
-    }
+	private MerchantPriceConfigTable()
+	{
+	}
 
-    public MerchantPriceConfig getMerchantPriceConfig(L2Character cha)
-    {
-        for (MerchantPriceConfig mpc : _mpcs.values())
-        {
-            if (cha.getWorldRegion() != null && cha.getWorldRegion().containsZone(mpc.getZoneId()))
-            {
-                return mpc;
-            }
-        }
-        return _defaultMpc;
-    }
+	public MerchantPriceConfig getMerchantPriceConfig(L2Character cha)
+	{
+		for (MerchantPriceConfig mpc : _mpcs.values())
+		{
+			if (cha.getWorldRegion() != null && cha.getWorldRegion().containsZone(mpc.getZoneId()))
+			{
+				return mpc;
+			}
+		}
+		return _defaultMpc;
+	}
 
-    public MerchantPriceConfig getMerchantPriceConfig(int id)
-    {
-        return _mpcs.get(id);
-    }
+	public MerchantPriceConfig getMerchantPriceConfig(int id)
+	{
+		return _mpcs.get(id);
+	}
 
-    public void loadXML() throws SAXException, IOException, ParserConfigurationException
-    {
-        File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + MPCS_FILE);
-        if (file.exists())
-        {
-            int defaultPriceConfigId;
-            XmlDocument doc = new XmlDocument(file);
+	public void loadXML() throws SAXException, IOException, ParserConfigurationException
+	{
+		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + MPCS_FILE);
+		if (file.exists())
+		{
+			int defaultPriceConfigId;
+			XmlDocument doc = new XmlDocument(file);
 
-            XmlNode n = doc.getFirstChild();
-            if (!n.hasAttribute("defaultPriceConfig"))
-            {
-                throw new IllegalStateException("merchantPriceConfig must define an 'defaultPriceConfig'");
-            }
-            else
-            {
-                defaultPriceConfigId = n.getInt("defaultPriceConfig");
-            }
-            MerchantPriceConfig mpc;
-            for (XmlNode subn : n.getChildren())
-            {
-                mpc = parseMerchantPriceConfig(subn);
-                if (mpc != null)
-                {
-                    _mpcs.put(mpc.getId(), mpc);
-                }
-            }
+			XmlNode n = doc.getFirstChild();
+			if (!n.hasAttribute("defaultPriceConfig"))
+			{
+				throw new IllegalStateException("merchantPriceConfig must define an 'defaultPriceConfig'");
+			}
+			else
+			{
+				defaultPriceConfigId = n.getInt("defaultPriceConfig");
+			}
+			MerchantPriceConfig mpc;
+			for (XmlNode subn : n.getChildren())
+			{
+				mpc = parseMerchantPriceConfig(subn);
+				if (mpc != null)
+				{
+					_mpcs.put(mpc.getId(), mpc);
+				}
+			}
 
-            MerchantPriceConfig defaultMpc = this.getMerchantPriceConfig(defaultPriceConfigId);
-            if (defaultMpc == null)
-            {
-                throw new IllegalStateException("'defaultPriceConfig' points to an non-loaded priceConfig");
-            }
-            _defaultMpc = defaultMpc;
-        }
-    }
+			MerchantPriceConfig defaultMpc = this.getMerchantPriceConfig(defaultPriceConfigId);
+			if (defaultMpc == null)
+			{
+				throw new IllegalStateException("'defaultPriceConfig' points to an non-loaded priceConfig");
+			}
+			_defaultMpc = defaultMpc;
+		}
+	}
 
-    private MerchantPriceConfig parseMerchantPriceConfig(XmlNode n)
-    {
-        if (n.getName().equals("priceConfig"))
-        {
-            final int id;
-            final int baseTax;
-            final String name;
+	private MerchantPriceConfig parseMerchantPriceConfig(XmlNode n)
+	{
+		if (n.getName().equals("priceConfig"))
+		{
+			final int id;
+			final int baseTax;
+			final String name;
 
-            if (!n.hasAttribute("id"))
-            {
-                throw new IllegalStateException("Must define the priceConfig 'id'");
-            }
-            else
-            {
-                id = n.getInt("id");
-            }
+			if (!n.hasAttribute("id"))
+			{
+				throw new IllegalStateException("Must define the priceConfig 'id'");
+			}
+			else
+			{
+				id = n.getInt("id");
+			}
 
-            if (!n.hasAttribute("name"))
-            {
-                throw new IllegalStateException("Must define the priceConfig 'name'");
-            }
-            else
-            {
-                name = n.getString("name");
-            }
+			if (!n.hasAttribute("name"))
+			{
+				throw new IllegalStateException("Must define the priceConfig 'name'");
+			}
+			else
+			{
+				name = n.getString("name");
+			}
 
-            if (!n.hasAttribute("baseTax"))
-            {
-                throw new IllegalStateException("Must define the priceConfig 'baseTax'");
-            }
-            else
-            {
-                baseTax = n.getInt("baseTax");
-            }
+			if (!n.hasAttribute("baseTax"))
+			{
+				throw new IllegalStateException("Must define the priceConfig 'baseTax'");
+			}
+			else
+			{
+				baseTax = n.getInt("baseTax");
+			}
 
-            int castleId = n.getInt("castleId", -1);
-            int zoneId = n.getInt("zoneId", -1);
+			int castleId = n.getInt("castleId", -1);
+			int zoneId = n.getInt("zoneId", -1);
 
-            return new MerchantPriceConfig(id, name, baseTax, castleId, zoneId);
-        }
-        return null;
-    }
+			return new MerchantPriceConfig(id, name, baseTax, castleId, zoneId);
+		}
+		return null;
+	}
 
-    @Override
-    public void load()
-    {
-        try
-        {
-            loadXML();
-            Log.info("MerchantPriceConfigTable: Loaded " + _mpcs.size() + " merchant price configs.");
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.SEVERE, "Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
-        }
-    }
+	@Override
+	public void load()
+	{
+		try
+		{
+			loadXML();
+			Log.info("MerchantPriceConfigTable: Loaded " + _mpcs.size() + " merchant price configs.");
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
+		}
+	}
 
-    @Override
-    public void updateReferences()
-    {
-        for (final MerchantPriceConfig mpc : _mpcs.values())
-        {
-            mpc.updateReferences();
-        }
-    }
+	@Override
+	public void updateReferences()
+	{
+		for (final MerchantPriceConfig mpc : _mpcs.values())
+		{
+			mpc.updateReferences();
+		}
+	}
 
-    @Override
-    public void activateInstances()
-    {
-    }
+	@Override
+	public void activateInstances()
+	{
+	}
 
-    /**
-     * @author KenM
-     */
-    public static final class MerchantPriceConfig
-    {
-        private final int _id;
-        private final String _name;
-        private final int _baseTax;
-        private final int _castleId;
-        private Castle _castle;
-        private final int _zoneId;
+	/**
+	 * @author KenM
+	 */
+	public static final class MerchantPriceConfig
+	{
+		private final int _id;
+		private final String _name;
+		private final int _baseTax;
+		private final int _castleId;
+		private Castle _castle;
+		private final int _zoneId;
 
-        public MerchantPriceConfig(final int id, final String name, final int baseTax, final int castleId, final int zoneId)
-        {
-            _id = id;
-            _name = name;
-            _baseTax = baseTax;
-            _castleId = castleId;
-            _zoneId = zoneId;
-        }
+		public MerchantPriceConfig(final int id, final String name, final int baseTax, final int castleId, final int zoneId)
+		{
+			_id = id;
+			_name = name;
+			_baseTax = baseTax;
+			_castleId = castleId;
+			_zoneId = zoneId;
+		}
 
-        /**
-         * @return Returns the id.
-         */
-        public int getId()
-        {
-            return _id;
-        }
+		/**
+		 * @return Returns the id.
+		 */
+		public int getId()
+		{
+			return _id;
+		}
 
-        /**
-         * @return Returns the name.
-         */
-        public String getName()
-        {
-            return _name;
-        }
+		/**
+		 * @return Returns the name.
+		 */
+		public String getName()
+		{
+			return _name;
+		}
 
-        /**
-         * @return Returns the baseTax.
-         */
-        public int getBaseTax()
-        {
-            return _baseTax;
-        }
+		/**
+		 * @return Returns the baseTax.
+		 */
+		public int getBaseTax()
+		{
+			return _baseTax;
+		}
 
-        /**
-         * @return Returns the baseTax / 100.0.
-         */
-        public double getBaseTaxRate()
-        {
-            return _baseTax / 100.0;
-        }
+		/**
+		 * @return Returns the baseTax / 100.0.
+		 */
+		public double getBaseTaxRate()
+		{
+			return _baseTax / 100.0;
+		}
 
-        /**
-         * @return Returns the castle.
-         */
-        public Castle getCastle()
-        {
-            return _castle;
-        }
+		/**
+		 * @return Returns the castle.
+		 */
+		public Castle getCastle()
+		{
+			return _castle;
+		}
 
-        /**
-         * @return Returns the zoneId.
-         */
-        public int getZoneId()
-        {
-            return _zoneId;
-        }
+		/**
+		 * @return Returns the zoneId.
+		 */
+		public int getZoneId()
+		{
+			return _zoneId;
+		}
 
-        public boolean hasCastle()
-        {
-            return getCastle() != null;
-        }
+		public boolean hasCastle()
+		{
+			return getCastle() != null;
+		}
 
-        public double getCastleTaxRate()
-        {
-            return hasCastle() ? getCastle().getTaxRate() : 0.0;
-        }
+		public double getCastleTaxRate()
+		{
+			return hasCastle() ? getCastle().getTaxRate() : 0.0;
+		}
 
-        public int getTotalTax()
-        {
-            return hasCastle() ? getCastle().getTaxPercent() + getBaseTax() : getBaseTax();
-        }
+		public int getTotalTax()
+		{
+			return hasCastle() ? getCastle().getTaxPercent() + getBaseTax() : getBaseTax();
+		}
 
-        public double getTotalTaxRate()
-        {
-            return getTotalTax() / 100.0;
-        }
+		public double getTotalTaxRate()
+		{
+			return getTotalTax() / 100.0;
+		}
 
-        public void updateReferences()
-        {
-            _castle = CastleManager.getInstance().getCastleById(_castleId);
-        }
-    }
+		public void updateReferences()
+		{
+			_castle = CastleManager.getInstance().getCastleById(_castleId);
+		}
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final MerchantPriceConfigTable _instance = new MerchantPriceConfigTable();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final MerchantPriceConfigTable _instance = new MerchantPriceConfigTable();
+	}
 }

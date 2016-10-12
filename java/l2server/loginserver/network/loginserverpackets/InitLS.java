@@ -23,23 +23,23 @@ import l2server.util.network.BaseSendablePacket;
  */
 public class InitLS extends BaseSendablePacket
 {
-    // ID 0x00
-    // format
-    // d proto rev
-    // d key size
-    // b key
+	// ID 0x00
+	// format
+	// d proto rev
+	// d key size
+	// b key
 
-    public InitLS(byte[] publickey)
-    {
-        writeC(0x00);
-        writeD(L2LoginServer.PROTOCOL_REV);
-        writeD(publickey.length);
-        writeB(publickey);
-    }
+	public InitLS(byte[] publickey)
+	{
+		writeC(0x00);
+		writeD(L2LoginServer.PROTOCOL_REV);
+		writeD(publickey.length);
+		writeB(publickey);
+	}
 
-    @Override
-    public byte[] getContent()
-    {
-        return getBytes();
-    }
+	@Override
+	public byte[] getContent()
+	{
+		return getBytes();
+	}
 }

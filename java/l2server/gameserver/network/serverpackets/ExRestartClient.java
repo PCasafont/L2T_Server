@@ -23,12 +23,12 @@ package l2server.gameserver.network.serverpackets;
 public class ExRestartClient extends L2GameServerPacket
 {
 
-    /**
-     */
-    @Override
-    protected void writeImpl()
-    {
-        writeC(0xfe);
-        writeH(0x49);
-    }
+	/**
+	 */
+	@Override
+	protected void writeImpl()
+	{
+		writeC(0xfe);
+		writeH(0x49);
+	}
 }

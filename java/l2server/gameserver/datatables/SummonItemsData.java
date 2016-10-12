@@ -30,63 +30,63 @@ import java.io.File;
 
 public class SummonItemsData
 {
-    private TIntObjectHashMap<L2SummonItem> _summonitems;
+	private TIntObjectHashMap<L2SummonItem> _summonitems;
 
-    public static SummonItemsData getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static SummonItemsData getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private SummonItemsData()
-    {
-        _summonitems = new TIntObjectHashMap<>();
+	private SummonItemsData()
+	{
+		_summonitems = new TIntObjectHashMap<>();
 
-        File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
-        XmlDocument doc = new XmlDocument(file);
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
+		XmlDocument doc = new XmlDocument(file);
 
-        for (XmlNode n : doc.getChildren())
-        {
-            if (n.getName().equalsIgnoreCase("list"))
-            {
-                for (XmlNode d : n.getChildren())
-                {
-                    if (d.getName().equalsIgnoreCase("item"))
-                    {
-                        int itemId = d.getInt("id");
-                        int npcId = d.getInt("npcId");
-                        byte summonType = (byte) d.getInt("summonType");
-                        int despawnTime = d.getInt("despawn", -1);
+		for (XmlNode n : doc.getChildren())
+		{
+			if (n.getName().equalsIgnoreCase("list"))
+			{
+				for (XmlNode d : n.getChildren())
+				{
+					if (d.getName().equalsIgnoreCase("item"))
+					{
+						int itemId = d.getInt("id");
+						int npcId = d.getInt("npcId");
+						byte summonType = (byte) d.getInt("summonType");
+						int despawnTime = d.getInt("despawn", -1);
 
-                        L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
-                        _summonitems.put(itemId, summonitem);
-                    }
-                }
-            }
-        }
+						L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
+						_summonitems.put(itemId, summonitem);
+					}
+				}
+			}
+		}
 
-        Log.info("Summon items data: Loaded " + _summonitems.size() + " summon items.");
-    }
+		Log.info("Summon items data: Loaded " + _summonitems.size() + " summon items.");
+	}
 
-    public L2SummonItem getSummonItem(int itemId)
-    {
-        return _summonitems.get(itemId);
-    }
+	public L2SummonItem getSummonItem(int itemId)
+	{
+		return _summonitems.get(itemId);
+	}
 
-    public int[] itemIDs()
-    {
-        int size = _summonitems.size();
-        int[] result = new int[size];
-        int i = 0;
-        for (Object si : _summonitems.getValues())
-        {
-            result[i++] = ((L2SummonItem) si).getItemId();
-        }
-        return result;
-    }
+	public int[] itemIDs()
+	{
+		int size = _summonitems.size();
+		int[] result = new int[size];
+		int i = 0;
+		for (Object si : _summonitems.getValues())
+		{
+			result[i++] = ((L2SummonItem) si).getItemId();
+		}
+		return result;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final SummonItemsData _instance = new SummonItemsData();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final SummonItemsData _instance = new SummonItemsData();
+	}
 }

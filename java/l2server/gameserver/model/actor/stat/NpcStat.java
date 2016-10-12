@@ -19,25 +19,25 @@ import l2server.gameserver.model.actor.L2Npc;
 
 public class NpcStat extends CharStat
 {
-    public NpcStat(L2Npc activeChar)
-    {
-        super(activeChar);
-    }
+	public NpcStat(L2Npc activeChar)
+	{
+		super(activeChar);
+	}
 
-    @Override
-    public byte getLevel()
-    {
-        return getActiveChar().getTemplate().Level;
-    }
+	@Override
+	public byte getLevel()
+	{
+		return getActiveChar().getTemplate().Level;
+	}
 
-    @Override
-    public L2Npc getActiveChar()
-    {
-        return (L2Npc) super.getActiveChar();
-    }
+	@Override
+	public L2Npc getActiveChar()
+	{
+		return (L2Npc) super.getActiveChar();
+	}
 
 	/*
-    @Override
+	@Override
 	public int getWalkSpeed(){ return (int) calcStat(Stats.WALK_SPEED, getActiveChar().getTemplate().baseWalkSpd, null, null);}
 
 	@Override

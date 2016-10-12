@@ -30,69 +30,69 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestConfirmGemStone extends L2GameClientPacket
 {
-    private int _targetItemObjId;
-    private int _refinerItemObjId;
-    private int _gemstoneItemObjId;
-    private long _gemStoneCount;
+	private int _targetItemObjId;
+	private int _refinerItemObjId;
+	private int _gemstoneItemObjId;
+	private long _gemStoneCount;
 
-    /**
-     */
-    @Override
-    protected void readImpl()
-    {
-        _targetItemObjId = readD();
-        _refinerItemObjId = readD();
-        _gemstoneItemObjId = readD();
-        _gemStoneCount = readQ();
-    }
+	/**
+	 */
+	@Override
+	protected void readImpl()
+	{
+		_targetItemObjId = readD();
+		_refinerItemObjId = readD();
+		_gemstoneItemObjId = readD();
+		_gemStoneCount = readQ();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
-        if (targetItem == null)
-        {
-            return;
-        }
-        L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
-        if (refinerItem == null)
-        {
-            return;
-        }
-        L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemstoneItemObjId);
-        if (gemStoneItem == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		if (targetItem == null)
+		{
+			return;
+		}
+		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
+		if (refinerItem == null)
+		{
+			return;
+		}
+		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemstoneItemObjId);
+		if (gemStoneItem == null)
+		{
+			return;
+		}
 
-        // Make sure the item is a gemstone
-        if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
-            return;
-        }
+		// Make sure the item is a gemstone
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
+			return;
+		}
 
-        // Check for gemstone count
-        final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
-        if (ls == null)
-        {
-            return;
-        }
+		// Check for gemstone count
+		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
+		if (ls == null)
+		{
+			return;
+		}
 
-        if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GEMSTONE_QUANTITY_IS_INCORRECT));
-            return;
-        }
+		if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GEMSTONE_QUANTITY_IS_INCORRECT));
+			return;
+		}
 
-        activeChar.sendPacket(new ExPutCommissionResultForVariationMake(_gemstoneItemObjId, _gemStoneCount,
-                gemStoneItem.getItemId()));
-    }
+		activeChar.sendPacket(new ExPutCommissionResultForVariationMake(_gemstoneItemObjId, _gemStoneCount,
+				gemStoneItem.getItemId()));
+	}
 }

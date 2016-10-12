@@ -5,15 +5,15 @@ package l2server.gameserver.network.clientpackets;
  */
 public class NotifyStartMiniGame extends L2GameClientPacket
 {
-    @Override
-    public void readImpl()
-    {
-    }
+	@Override
+	public void readImpl()
+	{
+	}
 
-    @Override
-    public void runImpl()
-    {
-        // TODO
-        //Log.info(getType() + " packet was received from " + getClient() + ".");
-    }
+	@Override
+	public void runImpl()
+	{
+		// TODO
+		//Log.info(getType() + " packet was received from " + getClient() + ".");
+	}
 }

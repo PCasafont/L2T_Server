@@ -27,56 +27,56 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 
 public final class RequestRegistBeauty extends L2GameClientPacket
 {
-    private int _hair;
-    private int _face;
-    private int _hairColor;
+	private int _hair;
+	private int _face;
+	private int _hairColor;
 
-    @Override
-    protected final void readImpl()
-    {
-        _hair = readD();
-        _face = readD();
-        _hairColor = readD();
-    }
+	@Override
+	protected final void readImpl()
+	{
+		_hair = readD();
+		_face = readD();
+		_hairColor = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
 
-        if (activeChar == null)
-        {
-            return;
-        }
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        //Get the price
-        BeautyInfo styleInfo = null;
+		//Get the price
+		BeautyInfo styleInfo = null;
 
-        if (_hair > 0)
-        {
-            styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(_hair);
-        }
-        else if (_face > 0)
-        {
-            styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(_face);
-        }
+		if (_hair > 0)
+		{
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(_hair);
+		}
+		else if (_face > 0)
+		{
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(_face);
+		}
 
-        if (styleInfo != null)
-        {
-            if (_face == -1)
-            {
-                _face = activeChar.getAppearance().getFace();
-            }
+		if (styleInfo != null)
+		{
+			if (_face == -1)
+			{
+				_face = activeChar.getAppearance().getFace();
+			}
 
-            if (_hair == -1)
-            {
-                _hair = activeChar.getAppearance().getHairStyle();
-            }
+			if (_hair == -1)
+			{
+				_hair = activeChar.getAppearance().getHairStyle();
+			}
 
-            if (_hairColor == -1)
-            {
-                _hairColor = activeChar.getAppearance().getHairColor();
-            }
+			if (_hairColor == -1)
+			{
+				_hairColor = activeChar.getAppearance().getHairColor();
+			}
 
 			/*L2ItemInstance playerTickets = activeChar.getInventory().getItemByItemId(36308);
 
@@ -102,25 +102,25 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 				activeChar.destroyItemByItemId("Beauty shop", 36308, ticketPrice, activeChar, true);
 			}*/
 
-            activeChar.getAppearance().setHairStyle(_hair);
+			activeChar.getAppearance().setHairStyle(_hair);
 
-            activeChar.getAppearance().setFace(_face);
+			activeChar.getAppearance().setFace(_face);
 
-            activeChar.getAppearance().setHairColor(_hairColor);
+			activeChar.getAppearance().setHairColor(_hairColor);
 
-            activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
-                    activeChar.getInventory().getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
+			activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
+					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
 
-            //activeChar.sendPacket(new ExResponseBeautyListPacket());
+			//activeChar.sendPacket(new ExResponseBeautyListPacket());
 
-            //activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0), false));
+			//activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0), false));
 
-            activeChar.broadcastUserInfo();
+			activeChar.broadcastUserInfo();
 
-            activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
+			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
 
-            //Log.info("INFO: Hair: " + _hair + ", Face: " + _face + ", COLOR: " + _hairColor);
-            //Log.info("END OK");
-        }
-    }
+			//Log.info("INFO: Hair: " + _hair + ", Face: " + _face + ", COLOR: " + _hairColor);
+			//Log.info("END OK");
+		}
+	}
 }

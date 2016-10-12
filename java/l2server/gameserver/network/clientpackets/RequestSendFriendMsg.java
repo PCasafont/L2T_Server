@@ -38,72 +38,72 @@ import java.sql.PreparedStatement;
  */
 public final class RequestSendFriendMsg extends L2GameClientPacket
 {
-    //private static Logger _logChat = Logger.getLogger("chat");
+	//private static Logger _logChat = Logger.getLogger("chat");
 
-    private String _message;
-    private String _reciever;
+	private String _message;
+	private String _reciever;
 
-    @Override
-    protected void readImpl()
-    {
-        _message = readS();
-        _reciever = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_message = readS();
+		_reciever = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (_message == null || _message.isEmpty() || _message.length() > 300)
-        {
-            return;
-        }
+		if (_message == null || _message.isEmpty() || _message.length() > 300)
+		{
+			return;
+		}
 
-        final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
-        if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
-            return;
-        }
+		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
+		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
+			return;
+		}
 
-        if (Config.LOG_CHAT)
-        {
-            Connection con = null;
-            try
-            {
-                con = L2DatabaseFactory.getInstance().getConnection();
+		if (Config.LOG_CHAT)
+		{
+			Connection con = null;
+			try
+			{
+				con = L2DatabaseFactory.getInstance().getConnection();
 
-                PreparedStatement statement = con.prepareStatement(
-                        "INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
+				PreparedStatement statement = con.prepareStatement(
+						"INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
 
-                statement.setLong(1, System.currentTimeMillis());
-                statement.setString(2, "TELL");
-                statement.setString(3, activeChar.getName());
-                statement.setString(4, _reciever);
-                statement.setString(5, _message);
-                statement.execute();
-                statement.close();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-            finally
-            {
-                L2DatabaseFactory.close(con);
-            }
-            /*LogRecord record = new LogRecord(Level.INFO, _message);
+				statement.setLong(1, System.currentTimeMillis());
+				statement.setString(2, "TELL");
+				statement.setString(3, activeChar.getName());
+				statement.setString(4, _reciever);
+				statement.setString(5, _message);
+				statement.execute();
+				statement.close();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+			finally
+			{
+				L2DatabaseFactory.close(con);
+			}
+			/*LogRecord record = new LogRecord(Level.INFO, _message);
             record.setLoggerName("chat");
 			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ _reciever +"]"});
 
 			_logChat.log(record);*/
-        }
+		}
 
-        targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));
-    }
+		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));
+	}
 }

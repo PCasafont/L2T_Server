@@ -23,33 +23,33 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExAcquireAPSkillList extends L2GameServerPacket
 {
-    private L2PcInstance _player;
-    private boolean _success;
+	private L2PcInstance _player;
+	private boolean _success;
 
-    public ExAcquireAPSkillList(L2PcInstance player, boolean success)
-    {
-        _player = player;
-        _success = success;
-    }
+	public ExAcquireAPSkillList(L2PcInstance player, boolean success)
+	{
+		_player = player;
+		_success = success;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_success ? 0x01 : 0x00);
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_success ? 0x01 : 0x00);
 
-        writeQ(AbilityTable.getInstance().getAdenaCostForReset());
-        writeQ(AbilityTable.getInstance().getSpCostPerPoint(_player.getAbilityPoints()));
-        writeD(AbilityTable.getInstance().getMaxPoints());
-        writeD(_player.getAbilityPoints());
-        writeD(_player.getSpentAbilityPoints());
+		writeQ(AbilityTable.getInstance().getAdenaCostForReset());
+		writeQ(AbilityTable.getInstance().getSpCostPerPoint(_player.getAbilityPoints()));
+		writeD(AbilityTable.getInstance().getMaxPoints());
+		writeD(_player.getAbilityPoints());
+		writeD(_player.getSpentAbilityPoints());
 
-        writeD(_player.getAbilities().size());
-        for (int skillId : _player.getAbilities().keys())
-        {
-            writeD(skillId);
-            writeD(_player.getAbilities().get(skillId));
-        }
+		writeD(_player.getAbilities().size());
+		for (int skillId : _player.getAbilities().keys())
+		{
+			writeD(skillId);
+			writeD(_player.getAbilities().get(skillId));
+		}
 
-        writeD(0x01);
-    }
+		writeD(0x01);
+	}
 }

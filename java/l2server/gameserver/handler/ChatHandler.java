@@ -27,63 +27,63 @@ import l2server.log.Log;
 public class ChatHandler
 {
 
-    private TIntObjectHashMap<IChatHandler> _datatable;
+	private TIntObjectHashMap<IChatHandler> _datatable;
 
-    public static ChatHandler getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static ChatHandler getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    /**
-     * Singleton constructor
-     */
-    private ChatHandler()
-    {
-        _datatable = new TIntObjectHashMap<>();
-    }
+	/**
+	 * Singleton constructor
+	 */
+	private ChatHandler()
+	{
+		_datatable = new TIntObjectHashMap<>();
+	}
 
-    /**
-     * Register a new chat handler
-     *
-     * @param handler
-     */
-    public void registerChatHandler(IChatHandler handler)
-    {
-        int[] ids = handler.getChatTypeList();
-        for (int id : ids)
-        {
-            if (Config.DEBUG)
-            {
-                Log.fine("Adding handler for chat type " + id);
-            }
-            _datatable.put(id, handler);
-        }
-    }
+	/**
+	 * Register a new chat handler
+	 *
+	 * @param handler
+	 */
+	public void registerChatHandler(IChatHandler handler)
+	{
+		int[] ids = handler.getChatTypeList();
+		for (int id : ids)
+		{
+			if (Config.DEBUG)
+			{
+				Log.fine("Adding handler for chat type " + id);
+			}
+			_datatable.put(id, handler);
+		}
+	}
 
-    /**
-     * Get the chat handler for the given chat type
-     *
-     * @param chatType
-     * @return
-     */
-    public IChatHandler getChatHandler(int chatType)
-    {
-        return _datatable.get(chatType);
-    }
+	/**
+	 * Get the chat handler for the given chat type
+	 *
+	 * @param chatType
+	 * @return
+	 */
+	public IChatHandler getChatHandler(int chatType)
+	{
+		return _datatable.get(chatType);
+	}
 
-    /**
-     * Returns the size
-     *
-     * @return
-     */
-    public int size()
-    {
-        return _datatable.size();
-    }
+	/**
+	 * Returns the size
+	 *
+	 * @return
+	 */
+	public int size()
+	{
+		return _datatable.size();
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final ChatHandler _instance = new ChatHandler();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final ChatHandler _instance = new ChatHandler();
+	}
 }

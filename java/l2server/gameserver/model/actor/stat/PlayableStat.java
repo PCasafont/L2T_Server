@@ -28,230 +28,230 @@ import l2server.log.Log;
 public class PlayableStat extends CharStat
 {
 
-    private static final long MAX_SP = 50000000000L;
+	private static final long MAX_SP = 50000000000L;
 
-    public PlayableStat(L2Playable activeChar)
-    {
-        super(activeChar);
-    }
+	public PlayableStat(L2Playable activeChar)
+	{
+		super(activeChar);
+	}
 
-    public boolean addExp(long value)
-    {
-        long expForMaxLevel = getExpForLevel(getMaxLevel() + 1);
-        if (getExp() + value < 0 || value > 0 && getExp() == expForMaxLevel - 1)
-        {
-            return true;
-        }
+	public boolean addExp(long value)
+	{
+		long expForMaxLevel = getExpForLevel(getMaxLevel() + 1);
+		if (getExp() + value < 0 || value > 0 && getExp() == expForMaxLevel - 1)
+		{
+			return true;
+		}
 
-        if (getExp() + value >= expForMaxLevel)
-        {
-            value = expForMaxLevel - 1 - getExp();
-        }
+		if (getExp() + value >= expForMaxLevel)
+		{
+			value = expForMaxLevel - 1 - getExp();
+		}
 
-        setExp(getExp() + value);
+		setExp(getExp() + value);
 
-        byte minimumLevel = 1;
-        if (getActiveChar() instanceof L2PetInstance)
-        {
-            // get minimum level from L2NpcTemplate
-            minimumLevel = (byte) PetDataTable.getInstance()
-                    .getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
-        }
+		byte minimumLevel = 1;
+		if (getActiveChar() instanceof L2PetInstance)
+		{
+			// get minimum level from L2NpcTemplate
+			minimumLevel = (byte) PetDataTable.getInstance()
+					.getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
+		}
 
-        byte level = minimumLevel; // minimum level
+		byte level = minimumLevel; // minimum level
 
-        for (byte tmp = level; tmp <= getMaxLevel() + 1; tmp++)
-        {
-            if (getExp() >= getExpForLevel(tmp))
-            {
-                continue;
-            }
+		for (byte tmp = level; tmp <= getMaxLevel() + 1; tmp++)
+		{
+			if (getExp() >= getExpForLevel(tmp))
+			{
+				continue;
+			}
 
-            level = --tmp;
-            break;
-        }
-        if (level != getLevel() && level >= minimumLevel)
-        {
-            addLevel((byte) (level - getLevel()));
-        }
+			level = --tmp;
+			break;
+		}
+		if (level != getLevel() && level >= minimumLevel)
+		{
+			addLevel((byte) (level - getLevel()));
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    public boolean removeExp(long value)
-    {
-        if (getExp() - value < 0)
-        {
-            value = getExp() - 1;
-        }
+	public boolean removeExp(long value)
+	{
+		if (getExp() - value < 0)
+		{
+			value = getExp() - 1;
+		}
 
-        setExp(getExp() - value);
+		setExp(getExp() - value);
 
-        byte minimumLevel = 1;
-        if (getActiveChar() instanceof L2PetInstance)
-        {
-            // get minimum level from L2NpcTemplate
-            minimumLevel = (byte) PetDataTable.getInstance()
-                    .getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
-        }
-        byte level = minimumLevel;
+		byte minimumLevel = 1;
+		if (getActiveChar() instanceof L2PetInstance)
+		{
+			// get minimum level from L2NpcTemplate
+			minimumLevel = (byte) PetDataTable.getInstance()
+					.getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
+		}
+		byte level = minimumLevel;
 
-        for (byte tmp = level; tmp <= getMaxLevel() + 1; tmp++)
-        {
-            if (getExp() >= getExpForLevel(tmp))
-            {
-                continue;
-            }
-            level = --tmp;
-            break;
-        }
-        if (level != getLevel() && level >= minimumLevel)
-        {
-            addLevel((byte) (level - getLevel()));
-        }
-        return true;
-    }
+		for (byte tmp = level; tmp <= getMaxLevel() + 1; tmp++)
+		{
+			if (getExp() >= getExpForLevel(tmp))
+			{
+				continue;
+			}
+			level = --tmp;
+			break;
+		}
+		if (level != getLevel() && level >= minimumLevel)
+		{
+			addLevel((byte) (level - getLevel()));
+		}
+		return true;
+	}
 
-    public boolean addExpAndSp(long addToExp, long addToSp)
-    {
-        boolean expAdded = false;
-        boolean spAdded = false;
-        if (addToExp >= 0)
-        {
-            expAdded = addExp(addToExp);
-        }
-        if (addToSp >= 0)
-        {
-            spAdded = addSp(addToSp);
-        }
+	public boolean addExpAndSp(long addToExp, long addToSp)
+	{
+		boolean expAdded = false;
+		boolean spAdded = false;
+		if (addToExp >= 0)
+		{
+			expAdded = addExp(addToExp);
+		}
+		if (addToSp >= 0)
+		{
+			spAdded = addSp(addToSp);
+		}
 
-        return expAdded || spAdded;
-    }
+		return expAdded || spAdded;
+	}
 
-    public boolean removeExpAndSp(long removeExp, long removeSp)
-    {
-        boolean expRemoved = false;
-        boolean spRemoved = false;
-        if (removeExp > 0)
-        {
-            expRemoved = removeExp(removeExp);
-        }
-        if (removeSp > 0)
-        {
-            spRemoved = removeSp(removeSp);
-        }
+	public boolean removeExpAndSp(long removeExp, long removeSp)
+	{
+		boolean expRemoved = false;
+		boolean spRemoved = false;
+		if (removeExp > 0)
+		{
+			expRemoved = removeExp(removeExp);
+		}
+		if (removeSp > 0)
+		{
+			spRemoved = removeSp(removeSp);
+		}
 
-        return expRemoved || spRemoved;
-    }
+		return expRemoved || spRemoved;
+	}
 
-    public boolean addLevel(byte value)
-    {
-        if (getLevel() + value > getMaxLevel())
-        {
-            if (getLevel() < getMaxLevel())
-            {
-                value = (byte) (getMaxLevel() - getLevel());
-            }
-            else
-            {
-                return false;
-            }
-        }
+	public boolean addLevel(byte value)
+	{
+		if (getLevel() + value > getMaxLevel())
+		{
+			if (getLevel() < getMaxLevel())
+			{
+				value = (byte) (getMaxLevel() - getLevel());
+			}
+			else
+			{
+				return false;
+			}
+		}
 
-        boolean levelIncreased = getLevel() + value > getLevel();
-        value += getLevel();
-        setLevel(value);
+		boolean levelIncreased = getLevel() + value > getLevel();
+		value += getLevel();
+		setLevel(value);
 
-        // Sync up exp with current level
-        if (getExp() >= getExpForLevel(getLevel() + 1) || getExpForLevel(getLevel()) > getExp())
-        {
-            setExp(getExpForLevel(getLevel()));
-        }
+		// Sync up exp with current level
+		if (getExp() >= getExpForLevel(getLevel() + 1) || getExpForLevel(getLevel()) > getExp())
+		{
+			setExp(getExpForLevel(getLevel()));
+		}
 
-        if (!levelIncreased && getActiveChar() instanceof L2PcInstance && !((L2PcInstance) getActiveChar()).isGM() &&
-                Config.DECREASE_SKILL_LEVEL)
-        {
-            ((L2PcInstance) getActiveChar()).checkPlayerSkills();
-        }
+		if (!levelIncreased && getActiveChar() instanceof L2PcInstance && !((L2PcInstance) getActiveChar()).isGM() &&
+				Config.DECREASE_SKILL_LEVEL)
+		{
+			((L2PcInstance) getActiveChar()).checkPlayerSkills();
+		}
 
-        if (!levelIncreased)
-        {
-            return false;
-        }
+		if (!levelIncreased)
+		{
+			return false;
+		}
 
-        getActiveChar().getStatus().setCurrentHp(getActiveChar().getStat().getMaxHp());
-        getActiveChar().getStatus().setCurrentMp(getActiveChar().getStat().getMaxMp());
+		getActiveChar().getStatus().setCurrentHp(getActiveChar().getStat().getMaxHp());
+		getActiveChar().getStatus().setCurrentMp(getActiveChar().getStat().getMaxMp());
 
-        return true;
-    }
+		return true;
+	}
 
-    public boolean addSp(long value)
-    {
-        if (value < 0)
-        {
-            Log.warning("wrong usage");
-            return false;
-        }
+	public boolean addSp(long value)
+	{
+		if (value < 0)
+		{
+			Log.warning("wrong usage");
+			return false;
+		}
 
-        long currentSp = getSp();
-        if (currentSp == MAX_SP)
-        {
-            return false;
-        }
+		long currentSp = getSp();
+		if (currentSp == MAX_SP)
+		{
+			return false;
+		}
 
-        if (currentSp > MAX_SP - value)
-        {
-            value = MAX_SP - currentSp;
-        }
+		if (currentSp > MAX_SP - value)
+		{
+			value = MAX_SP - currentSp;
+		}
 
-        setSp(currentSp + value);
-        return true;
-    }
+		setSp(currentSp + value);
+		return true;
+	}
 
-    public boolean removeSp(long value)
-    {
-        long currentSp = getSp();
-        if (currentSp < value)
-        {
-            value = currentSp;
-        }
-        setSp(getSp() - value);
-        return true;
-    }
+	public boolean removeSp(long value)
+	{
+		long currentSp = getSp();
+		if (currentSp < value)
+		{
+			value = currentSp;
+		}
+		setSp(getSp() - value);
+		return true;
+	}
 
-    public long getExpForLevel(int level)
-    {
-        return level;
-    }
+	public long getExpForLevel(int level)
+	{
+		return level;
+	}
 
-    @Override
-    public int getRunSpeed()
-    {
-        int val = super.getRunSpeed();
-        if (getActiveChar().isInsideZone(L2Character.ZONE_WATER))
-        {
-            val /= 2;
-        }
+	@Override
+	public int getRunSpeed()
+	{
+		int val = super.getRunSpeed();
+		if (getActiveChar().isInsideZone(L2Character.ZONE_WATER))
+		{
+			val /= 2;
+		}
 
-        if (getActiveChar().isInsideZone(L2Character.ZONE_SWAMP))
-        {
-            L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
-            int bonus = zone == null ? 0 : zone.getMoveBonus();
-            double dbonus = bonus / 100.0; //%
-            val += val * dbonus;
-        }
+		if (getActiveChar().isInsideZone(L2Character.ZONE_SWAMP))
+		{
+			L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+			int bonus = zone == null ? 0 : zone.getMoveBonus();
+			double dbonus = bonus / 100.0; //%
+			val += val * dbonus;
+		}
 
-        return val;
-    }
+		return val;
+	}
 
-    @Override
-    public L2Playable getActiveChar()
-    {
-        return (L2Playable) super.getActiveChar();
-    }
+	@Override
+	public L2Playable getActiveChar()
+	{
+		return (L2Playable) super.getActiveChar();
+	}
 
-    public int getMaxLevel()
-    {
-        return Config.MAX_LEVEL;
-    }
+	public int getMaxLevel()
+	{
+		return Config.MAX_LEVEL;
+	}
 }

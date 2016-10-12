@@ -26,24 +26,24 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerFlyMounted extends Condition
 {
 
-    private boolean _val;
+	private boolean _val;
 
-    /**
-     * Instantiates a new condition player fly mounted.
-     *
-     * @param val the val
-     */
-    public ConditionPlayerFlyMounted(boolean val)
-    {
-        _val = val;
-    }
+	/**
+	 * Instantiates a new condition player fly mounted.
+	 *
+	 * @param val the val
+	 */
+	public ConditionPlayerFlyMounted(boolean val)
+	{
+		_val = val;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return env.player instanceof L2PcInstance ? ((L2PcInstance) env.player).isFlyingMounted() == _val : true;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return env.player instanceof L2PcInstance ? ((L2PcInstance) env.player).isFlyingMounted() == _val : true;
+	}
 }

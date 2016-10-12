@@ -28,46 +28,46 @@ import java.util.List;
  */
 public class ExOlympiadSpelledInfo extends L2GameServerPacket
 {
-    // chdd(dhd)
-    private int _playerID;
-    private List<Effect> _effects;
+	// chdd(dhd)
+	private int _playerID;
+	private List<Effect> _effects;
 
-    private static class Effect
-    {
-        protected int _skillId;
-        protected int _level;
-        protected int _duration;
+	private static class Effect
+	{
+		protected int _skillId;
+		protected int _level;
+		protected int _duration;
 
-        public Effect(int pSkillId, int pLevel, int pDuration)
-        {
-            _skillId = pSkillId;
-            _level = pLevel;
-            _duration = pDuration;
-        }
-    }
+		public Effect(int pSkillId, int pLevel, int pDuration)
+		{
+			_skillId = pSkillId;
+			_level = pLevel;
+			_duration = pDuration;
+		}
+	}
 
-    public ExOlympiadSpelledInfo(L2PcInstance player)
-    {
-        _effects = new ArrayList<>();
-        _playerID = player.getObjectId();
-    }
+	public ExOlympiadSpelledInfo(L2PcInstance player)
+	{
+		_effects = new ArrayList<>();
+		_playerID = player.getObjectId();
+	}
 
-    public void addEffect(int skillId, int level, int duration)
-    {
-        _effects.add(new Effect(skillId, level, duration));
-    }
+	public void addEffect(int skillId, int level, int duration)
+	{
+		_effects.add(new Effect(skillId, level, duration));
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_playerID);
-        writeD(_effects.size());
-        for (Effect temp : _effects)
-        {
-            writeD(temp._skillId);
-            writeD(temp._level);
-            writeD(0x00); // ???
-            writeH(temp._duration / 1000 + 1);
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_playerID);
+		writeD(_effects.size());
+		for (Effect temp : _effects)
+		{
+			writeD(temp._skillId);
+			writeD(temp._level);
+			writeD(0x00); // ???
+			writeH(temp._duration / 1000 + 1);
+		}
+	}
 }

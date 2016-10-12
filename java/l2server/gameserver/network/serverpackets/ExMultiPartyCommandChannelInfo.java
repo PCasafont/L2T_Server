@@ -24,40 +24,40 @@ import l2server.gameserver.model.L2Party;
  */
 public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
 {
-    private L2CommandChannel _channel;
+	private L2CommandChannel _channel;
 
-    public ExMultiPartyCommandChannelInfo(L2CommandChannel channel)
-    {
-        _channel = channel;
-    }
+	public ExMultiPartyCommandChannelInfo(L2CommandChannel channel)
+	{
+		_channel = channel;
+	}
 
     /*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        if (_channel == null)
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		if (_channel == null)
+		{
+			return;
+		}
 
-        // L2PcInstance player = this.getClient().getActiveChar();
+		// L2PcInstance player = this.getClient().getActiveChar();
 
-        writeS(_channel.getChannelLeader().getName()); // Channelowner
-        writeD(0); // Channelloot 0 or 1
-        writeD(_channel.getMemberCount());
+		writeS(_channel.getChannelLeader().getName()); // Channelowner
+		writeD(0); // Channelloot 0 or 1
+		writeD(_channel.getMemberCount());
 
-        writeD(_channel.getPartys().size());
-        for (L2Party p : _channel.getPartys())
-        {
-            writeS(p.getLeader().getName()); // Leadername
-            writeD(p.getPartyLeaderOID()); // Leaders ObjId
-            writeD(p.getMemberCount()); // Membercount
-        }
-    }
+		writeD(_channel.getPartys().size());
+		for (L2Party p : _channel.getPartys())
+		{
+			writeS(p.getLeader().getName()); // Leadername
+			writeD(p.getPartyLeaderOID()); // Leaders ObjId
+			writeD(p.getMemberCount()); // Membercount
+		}
+	}
 }

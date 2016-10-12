@@ -27,16 +27,16 @@ import l2server.gameserver.model.L2Object;
  */
 public final class Revive extends L2GameServerPacket
 {
-    private int _objectId;
+	private int _objectId;
 
-    public Revive(L2Object obj)
-    {
-        _objectId = obj.getObjectId();
-    }
+	public Revive(L2Object obj)
+	{
+		_objectId = obj.getObjectId();
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_objectId);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_objectId);
+	}
 }

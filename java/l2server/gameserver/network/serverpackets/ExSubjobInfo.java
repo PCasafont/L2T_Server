@@ -23,32 +23,32 @@ import l2server.gameserver.model.base.SubClass;
  */
 public final class ExSubjobInfo extends L2GameServerPacket
 {
-    private L2PcInstance _activeChar;
+	private L2PcInstance _activeChar;
 
-    public ExSubjobInfo(L2PcInstance activeChar)
-    {
-        _activeChar = activeChar;
-    }
+	public ExSubjobInfo(L2PcInstance activeChar)
+	{
+		_activeChar = activeChar;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeC(0x00); // GoD ???
-        writeD(_activeChar.getCurrentClass().getId()); // Current Class
-        writeD(0x00); // GoD ???
+	@Override
+	protected final void writeImpl()
+	{
+		writeC(0x00); // GoD ???
+		writeD(_activeChar.getCurrentClass().getId()); // Current Class
+		writeD(0x00); // GoD ???
 
-        writeD(_activeChar.getSubClasses().size() + 1); // Class amount
+		writeD(_activeChar.getSubClasses().size() + 1); // Class amount
 
-        writeD(0x00); // Base class index
-        writeD(_activeChar.getBaseClass());
-        writeD(_activeChar.getBaseClassLevel());
-        writeC(0x00); // 0x00 Red (base)
-        for (SubClass sc : _activeChar.getSubClasses().values())
-        {
-            writeD(sc.getClassIndex());
-            writeD(sc.getClassId());
-            writeD(sc.getLevel());
-            writeC(sc.isDual() ? 0x01 : 0x02);
-        }
-    }
+		writeD(0x00); // Base class index
+		writeD(_activeChar.getBaseClass());
+		writeD(_activeChar.getBaseClassLevel());
+		writeC(0x00); // 0x00 Red (base)
+		for (SubClass sc : _activeChar.getSubClasses().values())
+		{
+			writeD(sc.getClassIndex());
+			writeD(sc.getClassId());
+			writeD(sc.getLevel());
+			writeC(sc.isDual() ? 0x01 : 0x02);
+		}
+	}
 }

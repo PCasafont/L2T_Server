@@ -30,213 +30,213 @@ import java.util.List;
  */
 public class L2Henna
 {
-    private final int symbolId;
-    private final int dye;
-    private final String name;
-    private final long price;
-    private final int INT;
-    private final int STR;
-    private final int CON;
-    private final int MEN;
-    private final int DEX;
-    private final int WIT;
-    private final int LUC;
-    private final int CHA;
-    private final int elemId;
-    private final int elemVal;
+	private final int symbolId;
+	private final int dye;
+	private final String name;
+	private final long price;
+	private final int INT;
+	private final int STR;
+	private final int CON;
+	private final int MEN;
+	private final int DEX;
+	private final int WIT;
+	private final int LUC;
+	private final int CHA;
+	private final int elemId;
+	private final int elemVal;
 
-    //Temp dyes values
-    private final long maxTime;
-    private long expireTime;
-    private final boolean isFourthSlot;
-    private List<SkillHolder> skills;
+	//Temp dyes values
+	private final long maxTime;
+	private long expireTime;
+	private final boolean isFourthSlot;
+	private List<SkillHolder> skills;
 
-    public L2Henna(StatsSet set)
-    {
-        symbolId = set.getInteger("symbolId");
-        dye = set.getInteger("dyeId");
-        name = set.getString("name");
-        long p = set.getLong("price", 0);
-        if (Config.isServer(Config.TENKAI_ESTHUS))
-        {
-            p = (int) Math.sqrt(p);
-        }
-        price = p;
-        STR = set.getInteger("STR", 0);
-        CON = set.getInteger("CON", 0);
-        DEX = set.getInteger("DEX", 0);
-        INT = set.getInteger("INT", 0);
-        WIT = set.getInteger("WIT", 0);
-        MEN = set.getInteger("MEN", 0);
-        LUC = set.getInteger("LUC", 0);
-        CHA = set.getInteger("CHA", 0);
-        elemId = set.getInteger("elemId", 0);
-        elemVal = set.getInteger("elemVal", 0);
-        maxTime = set.getLong("time", 0);
-        isFourthSlot = set.getBool("fourthSlot", false);
-        if (set.getString("skills", null) != null)
-        {
-            skills = new ArrayList<>();
+	public L2Henna(StatsSet set)
+	{
+		symbolId = set.getInteger("symbolId");
+		dye = set.getInteger("dyeId");
+		name = set.getString("name");
+		long p = set.getLong("price", 0);
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+		{
+			p = (int) Math.sqrt(p);
+		}
+		price = p;
+		STR = set.getInteger("STR", 0);
+		CON = set.getInteger("CON", 0);
+		DEX = set.getInteger("DEX", 0);
+		INT = set.getInteger("INT", 0);
+		WIT = set.getInteger("WIT", 0);
+		MEN = set.getInteger("MEN", 0);
+		LUC = set.getInteger("LUC", 0);
+		CHA = set.getInteger("CHA", 0);
+		elemId = set.getInteger("elemId", 0);
+		elemVal = set.getInteger("elemVal", 0);
+		maxTime = set.getLong("time", 0);
+		isFourthSlot = set.getBool("fourthSlot", false);
+		if (set.getString("skills", null) != null)
+		{
+			skills = new ArrayList<>();
 
-            String[] skillsParse = set.getString("skills").split(";");
-            for (String element : skillsParse)
-            {
-                String[] skInfo = element.split(",");
+			String[] skillsParse = set.getString("skills").split(";");
+			for (String element : skillsParse)
+			{
+				String[] skInfo = element.split(",");
 
-                SkillHolder sk = new SkillHolder(Integer.valueOf(skInfo[0]), Integer.valueOf(skInfo[1]));
-                if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE)
-                {
-                    System.out.println(sk.getSkillId() + " is not done!");
-                }
-                skills.add(sk);
-            }
-        }
-    }
+				SkillHolder sk = new SkillHolder(Integer.valueOf(skInfo[0]), Integer.valueOf(skInfo[1]));
+				if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE)
+				{
+					System.out.println(sk.getSkillId() + " is not done!");
+				}
+				skills.add(sk);
+			}
+		}
+	}
 
-    public int getSymbolId()
-    {
-        return symbolId;
-    }
+	public int getSymbolId()
+	{
+		return symbolId;
+	}
 
-    /**
-     * @return
-     */
-    public int getDyeId()
-    {
-        return dye;
-    }
+	/**
+	 * @return
+	 */
+	public int getDyeId()
+	{
+		return dye;
+	}
 
-    /**
-     * @return
-     */
-    public String getName()
-    {
-        return name;
-    }
+	/**
+	 * @return
+	 */
+	public String getName()
+	{
+		return name;
+	}
 
-    /**
-     * @return
-     */
-    public long getPrice()
-    {
-        return price;
-    }
+	/**
+	 * @return
+	 */
+	public long getPrice()
+	{
+		return price;
+	}
 
-    /**
-     * @return
-     */
-    public int getAmountDyeRequire()
-    {
-        if (isFourthSlot())
-        {
-            return 1;
-        }
+	/**
+	 * @return
+	 */
+	public int getAmountDyeRequire()
+	{
+		if (isFourthSlot())
+		{
+			return 1;
+		}
 
-        return 10;
-    }
+		return 10;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatINT()
-    {
-        return INT;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatINT()
+	{
+		return INT;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatSTR()
-    {
-        return STR;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatSTR()
+	{
+		return STR;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatCON()
-    {
-        return CON;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatCON()
+	{
+		return CON;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatMEM()
-    {
-        return MEN;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatMEM()
+	{
+		return MEN;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatDEX()
-    {
-        return DEX;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatDEX()
+	{
+		return DEX;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatWIT()
-    {
-        return WIT;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatWIT()
+	{
+		return WIT;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatLUC()
-    {
-        return LUC;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatLUC()
+	{
+		return LUC;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatCHA()
-    {
-        return CHA;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatCHA()
+	{
+		return CHA;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatElemId()
-    {
-        return elemId;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatElemId()
+	{
+		return elemId;
+	}
 
-    /**
-     * @return
-     */
-    public int getStatElemVal()
-    {
-        return elemVal;
-    }
+	/**
+	 * @return
+	 */
+	public int getStatElemVal()
+	{
+		return elemVal;
+	}
 
-    public long getMaxTime()
-    {
-        return maxTime;
-    }
+	public long getMaxTime()
+	{
+		return maxTime;
+	}
 
-    public boolean isFourthSlot()
-    {
-        return isFourthSlot;
-    }
+	public boolean isFourthSlot()
+	{
+		return isFourthSlot;
+	}
 
-    public List<SkillHolder> getSkills()
-    {
-        return skills;
-    }
+	public List<SkillHolder> getSkills()
+	{
+		return skills;
+	}
 
-    public void setExpireTime(long time)
-    {
-        expireTime = time;
-    }
+	public void setExpireTime(long time)
+	{
+		expireTime = time;
+	}
 
-    public long getExpireTime()
-    {
-        return expireTime;
-    }
+	public long getExpireTime()
+	{
+		return expireTime;
+	}
 }

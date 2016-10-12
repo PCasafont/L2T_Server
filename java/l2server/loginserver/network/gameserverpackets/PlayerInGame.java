@@ -27,22 +27,22 @@ import l2server.util.network.BaseRecievePacket;
 public class PlayerInGame extends BaseRecievePacket
 {
 
-    /**
-     * @param decrypt
-     */
-    public PlayerInGame(byte[] decrypt, GameServerThread server)
-    {
-        super(decrypt);
-        int size = readH();
-        for (int i = 0; i < size; i++)
-        {
-            String account = readS();
-            server.addAccountOnGameServer(account);
-            if (Config.DEBUG)
-            {
-                Log.info("Account " + account + " logged in GameServer: [" + server.getServerId() + "] " +
-                        GameServerTable.getInstance().getServerNameById(server.getServerId()));
-            }
-        }
-    }
+	/**
+	 * @param decrypt
+	 */
+	public PlayerInGame(byte[] decrypt, GameServerThread server)
+	{
+		super(decrypt);
+		int size = readH();
+		for (int i = 0; i < size; i++)
+		{
+			String account = readS();
+			server.addAccountOnGameServer(account);
+			if (Config.DEBUG)
+			{
+				Log.info("Account " + account + " logged in GameServer: [" + server.getServerId() + "] " +
+						GameServerTable.getInstance().getServerNameById(server.getServerId()));
+			}
+		}
+	}
 }

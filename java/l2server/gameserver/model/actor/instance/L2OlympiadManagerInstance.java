@@ -27,36 +27,36 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2OlympiadManagerInstance extends L2Npc
 {
-    public L2OlympiadManagerInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2OlympiadManagerInstance);
-    }
+	public L2OlympiadManagerInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2OlympiadManagerInstance);
+	}
 
-    public void showChatWindow(L2PcInstance player, int val, String suffix)
-    {
-        // Tenkai custom for easy disabling of Oly npc when something is wrong with the Olympiad system
-        if (!Config.ALT_OLY_NPC_REACTS)
-        {
-            return;
-        }
+	public void showChatWindow(L2PcInstance player, int val, String suffix)
+	{
+		// Tenkai custom for easy disabling of Oly npc when something is wrong with the Olympiad system
+		if (!Config.ALT_OLY_NPC_REACTS)
+		{
+			return;
+		}
 
-        String filename = Olympiad.OLYMPIAD_HTML_PATH;
+		String filename = Olympiad.OLYMPIAD_HTML_PATH;
 
-        filename += "noble_desc" + val;
-        filename += suffix != null ? suffix + ".htm" : ".htm";
+		filename += "noble_desc" + val;
+		filename += suffix != null ? suffix + ".htm" : ".htm";
 
-        if (filename.equals(Olympiad.OLYMPIAD_HTML_PATH + "noble_desc0.htm"))
-        {
-            if (player.isNoble())
-            {
-                filename = Olympiad.OLYMPIAD_HTML_PATH + "noble_main.htm";
-            }
-            else
-            {
-                filename = "default/" + getNpcId() + ".htm";
-            }
-        }
-        showChatWindowByFileName(player, filename);
-    }
+		if (filename.equals(Olympiad.OLYMPIAD_HTML_PATH + "noble_desc0.htm"))
+		{
+			if (player.isNoble())
+			{
+				filename = Olympiad.OLYMPIAD_HTML_PATH + "noble_main.htm";
+			}
+			else
+			{
+				filename = "default/" + getNpcId() + ".htm";
+			}
+		}
+		showChatWindowByFileName(player, filename);
+	}
 }

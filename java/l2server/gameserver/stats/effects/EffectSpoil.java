@@ -34,63 +34,63 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectSpoil extends L2Effect
 {
-    public EffectSpoil(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectSpoil(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (!(getEffector() instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (!(getEffector() instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        if (!(getEffected() instanceof L2MonsterInstance))
-        {
-            return false;
-        }
+		if (!(getEffected() instanceof L2MonsterInstance))
+		{
+			return false;
+		}
 
-        L2MonsterInstance target = (L2MonsterInstance) getEffected();
+		L2MonsterInstance target = (L2MonsterInstance) getEffected();
 
-        if (target == null)
-        {
-            return false;
-        }
+		if (target == null)
+		{
+			return false;
+		}
 
-        if (target.isSpoil())
-        {
-            getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
-            return false;
-        }
+		if (target.isSpoil())
+		{
+			getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
+			return false;
+		}
 
-        // SPOIL SYSTEM by Lbaldi
-        boolean spoil = false;
-        if (target.isDead() == false)
-        {
-            spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
+		// SPOIL SYSTEM by Lbaldi
+		boolean spoil = false;
+		if (target.isDead() == false)
+		{
+			spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
 
-            if (spoil)
-            {
-                target.setSpoil(true);
-                target.setIsSpoiledBy(getEffector().getObjectId());
-                getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
-            }
-            target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
-        }
-        return true;
-    }
+			if (spoil)
+			{
+				target.setSpoil(true);
+				target.setIsSpoiledBy(getEffector().getObjectId());
+				getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
+			}
+			target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
+		}
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

@@ -26,55 +26,55 @@ import java.util.List;
  */
 public class EnsoulEffect
 {
-    private final int _id;
-    private final String _name;
-    private final int _group;
-    private final int _stage;
-    private final List<Func> _funcs = new ArrayList<>();
+	private final int _id;
+	private final String _name;
+	private final int _group;
+	private final int _stage;
+	private final List<Func> _funcs = new ArrayList<>();
 
-    public EnsoulEffect(int id, String name, int group, int stage)
-    {
-        _id = id;
-        _name = name;
-        _group = group;
-        _stage = stage;
-    }
+	public EnsoulEffect(int id, String name, int group, int stage)
+	{
+		_id = id;
+		_name = name;
+		_group = group;
+		_stage = stage;
+	}
 
-    public void addFunc(Func func)
-    {
-        _funcs.add(func);
-    }
+	public void addFunc(Func func)
+	{
+		_funcs.add(func);
+	}
 
-    public int getId()
-    {
-        return _id;
-    }
+	public int getId()
+	{
+		return _id;
+	}
 
-    public String getName()
-    {
-        return _name;
-    }
+	public String getName()
+	{
+		return _name;
+	}
 
-    public int getGroup()
-    {
-        return _group;
-    }
+	public int getGroup()
+	{
+		return _group;
+	}
 
-    public int getStage()
-    {
-        return _stage;
-    }
+	public int getStage()
+	{
+		return _stage;
+	}
 
-    public void applyBonus(L2PcInstance player)
-    {
-        for (Func f : _funcs)
-        {
-            player.addStatFunc(f);
-        }
-    }
+	public void applyBonus(L2PcInstance player)
+	{
+		for (Func f : _funcs)
+		{
+			player.addStatFunc(f);
+		}
+	}
 
-    public void removeBonus(L2PcInstance player)
-    {
-        player.removeStatsOwner(this);
-    }
+	public void removeBonus(L2PcInstance player)
+	{
+		player.removeStatsOwner(this);
+	}
 }

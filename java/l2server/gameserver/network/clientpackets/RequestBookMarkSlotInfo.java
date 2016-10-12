@@ -25,16 +25,16 @@ import l2server.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
 public final class RequestBookMarkSlotInfo extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-        //There is nothing to read.
-    }
+	@Override
+	protected void readImpl()
+	{
+		//There is nothing to read.
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        player.sendPacket(new ExGetBookMarkInfoPacket(player));
-    }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		player.sendPacket(new ExGetBookMarkInfoPacket(player));
+	}
 }

@@ -26,37 +26,37 @@ import l2server.gameserver.templates.item.L2Weapon;
 public class ConditionTargetUsesWeaponKind extends Condition
 {
 
-    private final int _weaponMask;
+	private final int _weaponMask;
 
-    /**
-     * Instantiates a new condition target uses weapon kind.
-     *
-     * @param weaponMask the weapon mask
-     */
-    public ConditionTargetUsesWeaponKind(int weaponMask)
-    {
-        _weaponMask = weaponMask;
-    }
+	/**
+	 * Instantiates a new condition target uses weapon kind.
+	 *
+	 * @param weaponMask the weapon mask
+	 */
+	public ConditionTargetUsesWeaponKind(int weaponMask)
+	{
+		_weaponMask = weaponMask;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
 
-        if (env.target == null)
-        {
-            return false;
-        }
+		if (env.target == null)
+		{
+			return false;
+		}
 
-        L2Weapon item = env.target.getActiveWeaponItem();
+		L2Weapon item = env.target.getActiveWeaponItem();
 
-        if (item == null)
-        {
-            return false;
-        }
+		if (item == null)
+		{
+			return false;
+		}
 
-        return (item.getItemType().mask() & _weaponMask) != 0;
-    }
+		return (item.getItemType().mask() & _weaponMask) != 0;
+	}
 }

@@ -21,21 +21,21 @@ package l2server.gameserver.network.clientpackets;
 public class RequestPVPMatchRecord extends L2GameClientPacket
 {
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-     */
-    @Override
-    protected void readImpl()
-    {
-        // trigger, no data
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+	 */
+	@Override
+	protected void readImpl()
+	{
+		// trigger, no data
+	}
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
 
-    }
+	}
 }

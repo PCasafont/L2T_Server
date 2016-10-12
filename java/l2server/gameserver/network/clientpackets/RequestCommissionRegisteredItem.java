@@ -23,24 +23,24 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionList;
  */
 public final class RequestCommissionRegisteredItem extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        //AuctionManager am = AuctionManager.getInstance();
+		//AuctionManager am = AuctionManager.getInstance();
 
-        //am.checkForAuctionsDeletion();
+		//am.checkForAuctionsDeletion();
 
-        player.sendPacket(new ExResponseCommissionList(player));
-    }
+		player.sendPacket(new ExResponseCommissionList(player));
+	}
 }

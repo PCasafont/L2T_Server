@@ -27,54 +27,54 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectPhoenixBless extends L2Effect
 {
-    public EffectPhoenixBless(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectPhoenixBless(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.PHOENIX_BLESSING;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.PHOENIX_BLESSING;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        if (getEffected() instanceof L2Playable)
-        {
-            ((L2Playable) getEffected()).stopPhoenixBlessing(getAbnormal());
-        }
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		if (getEffected() instanceof L2Playable)
+		{
+			((L2Playable) getEffected()).stopPhoenixBlessing(getAbnormal());
+		}
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        // just stop this effect
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		// just stop this effect
+		return false;
+	}
 }

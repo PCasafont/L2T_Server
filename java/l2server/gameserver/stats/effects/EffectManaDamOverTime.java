@@ -23,34 +23,34 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectManaDamOverTime extends L2Effect
 {
-    public EffectManaDamOverTime(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectManaDamOverTime(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        if (getEffected().isDead())
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		if (getEffected().isDead())
+		{
+			return false;
+		}
 
-        double manaDam = calc();
+		double manaDam = calc();
 
-        if (manaDam > getEffected().getCurrentMp())
-        {
-            if (getSkill().isToggle())
-            {
-                getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
-                return false;
-            }
-        }
+		if (manaDam > getEffected().getCurrentMp())
+		{
+			if (getSkill().isToggle())
+			{
+				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+				return false;
+			}
+		}
 
-        getEffected().reduceCurrentMp(manaDam);
-        return true;
-    }
+		getEffected().reduceCurrentMp(manaDam);
+		return true;
+	}
 }

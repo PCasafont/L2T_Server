@@ -24,26 +24,25 @@ import l2server.gameserver.stats.Env;
 public class ConditionTargetActiveEffect extends Condition
 {
 
-    private final String _effectName;
+	private final String _effectName;
 
-    /**
-     * Instantiates a new condition target active effect id.
-     *
-     */
-    public ConditionTargetActiveEffect(String effectName)
-    {
-        _effectName = effectName;
-    }
+	/**
+	 * Instantiates a new condition target active effect id.
+	 */
+	public ConditionTargetActiveEffect(String effectName)
+	{
+		_effectName = effectName;
+	}
 
-    @Override
-    public boolean testImpl(Env env)
-    {
-        final L2Abnormal e = env.target.getFirstEffectByName(_effectName);
-        if (e != null)
-        {
-            return true;
-        }
+	@Override
+	public boolean testImpl(Env env)
+	{
+		final L2Abnormal e = env.target.getFirstEffectByName(_effectName);
+		if (e != null)
+		{
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

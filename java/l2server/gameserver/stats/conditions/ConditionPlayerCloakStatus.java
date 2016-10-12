@@ -23,29 +23,29 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerCloakStatus extends Condition
 {
-    private final int _val;
+	private final int _val;
 
-    /**
-     * Instantiates a new condition player cloak status.
-     *
-     * @param val the val
-     */
-    public ConditionPlayerCloakStatus(int val)
-    {
-        _val = val;
-    }
+	/**
+	 * Instantiates a new condition player cloak status.
+	 *
+	 * @param val the val
+	 */
+	public ConditionPlayerCloakStatus(int val)
+	{
+		_val = val;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= _val;
-    }
+		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= _val;
+	}
 }

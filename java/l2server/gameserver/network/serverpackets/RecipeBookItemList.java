@@ -24,41 +24,41 @@ import l2server.gameserver.model.L2RecipeList;
  */
 public class RecipeBookItemList extends L2GameServerPacket
 {
-    private L2RecipeList[] _recipes;
-    private boolean _isDwarvenCraft;
-    private int _maxMp;
+	private L2RecipeList[] _recipes;
+	private boolean _isDwarvenCraft;
+	private int _maxMp;
 
-    public RecipeBookItemList(boolean isDwarvenCraft, int maxMp)
-    {
-        _isDwarvenCraft = isDwarvenCraft;
-        _maxMp = maxMp;
-    }
+	public RecipeBookItemList(boolean isDwarvenCraft, int maxMp)
+	{
+		_isDwarvenCraft = isDwarvenCraft;
+		_maxMp = maxMp;
+	}
 
-    public void addRecipes(L2RecipeList[] recipeBook)
-    {
-        _recipes = recipeBook;
-    }
+	public void addRecipes(L2RecipeList[] recipeBook)
+	{
+		_recipes = recipeBook;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
-        writeD(_maxMp);
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
+		writeD(_maxMp);
 
-        if (_recipes == null)
-        {
-            writeD(0);
-        }
-        else
-        {
-            writeD(_recipes.length);//number of items in recipe book
+		if (_recipes == null)
+		{
+			writeD(0);
+		}
+		else
+		{
+			writeD(_recipes.length);//number of items in recipe book
 
-            for (int i = 0; i < _recipes.length; i++)
-            {
-                L2RecipeList temp = _recipes[i];
-                writeD(temp.getId());
-                writeD(i + 1);
-            }
-        }
-    }
+			for (int i = 0; i < _recipes.length; i++)
+			{
+				L2RecipeList temp = _recipes[i];
+				writeD(temp.getId());
+				writeD(i + 1);
+			}
+		}
+	}
 }

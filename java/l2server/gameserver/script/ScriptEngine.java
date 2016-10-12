@@ -24,35 +24,35 @@ import java.util.Hashtable;
  */
 public class ScriptEngine
 {
-    protected EngineInterface _utils = FaenorInterface.getInstance();
-    public static final Hashtable<String, ParserFactory> parserFactories = new Hashtable<>();
+	protected EngineInterface _utils = FaenorInterface.getInstance();
+	public static final Hashtable<String, ParserFactory> parserFactories = new Hashtable<>();
 
-    protected static Parser createParser(String name) throws ParserNotCreatedException
-    {
-        ParserFactory s = parserFactories.get(name);
-        if (s == null) // shape not found
-        {
-            try
-            {
-                Class.forName("l2server.gameserver.script." + name);
-                // By now the static block with no function would
-                // have been executed if the shape was found.
-                // the shape is expected to have put its factory
-                // in the hashtable.
+	protected static Parser createParser(String name) throws ParserNotCreatedException
+	{
+		ParserFactory s = parserFactories.get(name);
+		if (s == null) // shape not found
+		{
+			try
+			{
+				Class.forName("l2server.gameserver.script." + name);
+				// By now the static block with no function would
+				// have been executed if the shape was found.
+				// the shape is expected to have put its factory
+				// in the hashtable.
 
-                s = parserFactories.get(name);
-                if (s == null) // if the shape factory is not there even now
-                {
-                    throw new ParserNotCreatedException();
-                }
-            }
-            catch (ClassNotFoundException e)
-            {
-                // We'll throw an exception to indicate that
-                // the shape could not be created
-                throw new ParserNotCreatedException();
-            }
-        }
-        return s.create();
-    }
+				s = parserFactories.get(name);
+				if (s == null) // if the shape factory is not there even now
+				{
+					throw new ParserNotCreatedException();
+				}
+			}
+			catch (ClassNotFoundException e)
+			{
+				// We'll throw an exception to indicate that
+				// the shape could not be created
+				throw new ParserNotCreatedException();
+			}
+		}
+		return s.create();
+	}
 }

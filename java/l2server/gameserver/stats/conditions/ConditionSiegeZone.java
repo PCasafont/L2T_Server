@@ -31,157 +31,157 @@ import l2server.gameserver.stats.Env;
 
 public final class ConditionSiegeZone extends Condition
 {
-    //	conditional values
-    public final static int COND_NOT_ZONE = 0x0001;
-    public final static int COND_CAST_ATTACK = 0x0002;
-    public final static int COND_CAST_DEFEND = 0x0004;
-    public final static int COND_CAST_NEUTRAL = 0x0008;
-    public final static int COND_FORT_ATTACK = 0x0010;
-    public final static int COND_FORT_DEFEND = 0x0020;
-    public final static int COND_FORT_NEUTRAL = 0x0040;
+	//	conditional values
+	public final static int COND_NOT_ZONE = 0x0001;
+	public final static int COND_CAST_ATTACK = 0x0002;
+	public final static int COND_CAST_DEFEND = 0x0004;
+	public final static int COND_CAST_NEUTRAL = 0x0008;
+	public final static int COND_FORT_ATTACK = 0x0010;
+	public final static int COND_FORT_DEFEND = 0x0020;
+	public final static int COND_FORT_NEUTRAL = 0x0040;
 
-    private final int _value;
-    private final boolean _self;
+	private final int _value;
+	private final boolean _self;
 
-    /**
-     * Instantiates a new condition siege zone.
-     *
-     * @param value the value
-     * @param self  the self
-     */
+	/**
+	 * Instantiates a new condition siege zone.
+	 *
+	 * @param value the value
+	 * @param self  the self
+	 */
 
-    public ConditionSiegeZone(int value, boolean self)
-    {
-        _value = value;
-        _self = self;
-    }
+	public ConditionSiegeZone(int value, boolean self)
+	{
+		_value = value;
+		_self = self;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        L2Character target = _self ? env.player : env.target;
-        Castle castle = CastleManager.getInstance().getCastle(target);
-        Fort fort = FortManager.getInstance().getFort(target);
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		L2Character target = _self ? env.player : env.target;
+		Castle castle = CastleManager.getInstance().getCastle(target);
+		Fort fort = FortManager.getInstance().getFort(target);
 
-        if (castle == null && fort == null)
-        {
-            if ((_value & COND_NOT_ZONE) != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        if (castle != null)
-        {
-            return checkIfOk(target, castle, _value);
-        }
-        else
-        {
-            return checkIfOk(target, fort, _value);
-        }
-    }
+		if (castle == null && fort == null)
+		{
+			if ((_value & COND_NOT_ZONE) != 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		if (castle != null)
+		{
+			return checkIfOk(target, castle, _value);
+		}
+		else
+		{
+			return checkIfOk(target, fort, _value);
+		}
+	}
 
-    /**
-     * Check if ok.
-     *
-     * @param activeChar the active char
-     * @param castle     the castle
-     * @param value      the value
-     * @return true, if successful
-     */
-    public static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
-    {
-        if (activeChar == null || !(activeChar instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * Check if ok.
+	 *
+	 * @param activeChar the active char
+	 * @param castle     the castle
+	 * @param value      the value
+	 * @return true, if successful
+	 */
+	public static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
+	{
+		if (activeChar == null || !(activeChar instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2PcInstance player = (L2PcInstance) activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 
-        if (castle == null || castle.getCastleId() <= 0)
-        {
-            if ((value & COND_NOT_ZONE) != 0)
-            {
-                return true;
-            }
-        }
-        else if (!castle.getZone().isActive())
-        {
-            if ((value & COND_NOT_ZONE) != 0)
-            {
-                return true;
-            }
-        }
-        else if ((value & COND_CAST_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
-                player.getSiegeState() == 1)
-        {
-            return true;
-        }
-        else if ((value & COND_CAST_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
-                player.getSiegeState() == 2)
-        {
-            return true;
-        }
-        else if ((value & COND_CAST_NEUTRAL) != 0 && player.getSiegeState() == 0)
-        {
-            return true;
-        }
+		if (castle == null || castle.getCastleId() <= 0)
+		{
+			if ((value & COND_NOT_ZONE) != 0)
+			{
+				return true;
+			}
+		}
+		else if (!castle.getZone().isActive())
+		{
+			if ((value & COND_NOT_ZONE) != 0)
+			{
+				return true;
+			}
+		}
+		else if ((value & COND_CAST_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
+				player.getSiegeState() == 1)
+		{
+			return true;
+		}
+		else if ((value & COND_CAST_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
+				player.getSiegeState() == 2)
+		{
+			return true;
+		}
+		else if ((value & COND_CAST_NEUTRAL) != 0 && player.getSiegeState() == 0)
+		{
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    /**
-     * Check if ok.
-     *
-     * @param activeChar the active char
-     * @param fort       the fort
-     * @param value      the value
-     * @return true, if successful
-     */
-    public static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
-    {
-        if (activeChar == null || !(activeChar instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * Check if ok.
+	 *
+	 * @param activeChar the active char
+	 * @param fort       the fort
+	 * @param value      the value
+	 * @return true, if successful
+	 */
+	public static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
+	{
+		if (activeChar == null || !(activeChar instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2PcInstance player = (L2PcInstance) activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 
-        if (fort == null || fort.getFortId() <= 0)
-        {
-            if ((value & COND_NOT_ZONE) != 0)
-            {
-                return true;
-            }
-        }
-        else if (!fort.getZone().isActive())
-        {
-            if ((value & COND_NOT_ZONE) != 0)
-            {
-                return true;
-            }
-        }
-        else if ((value & COND_FORT_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
-                player.getSiegeState() == 1)
-        {
-            return true;
-        }
-        else if ((value & COND_FORT_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
-                player.getSiegeState() == 2)
-        {
-            return true;
-        }
-        else if ((value & COND_FORT_NEUTRAL) != 0 && player.getSiegeState() == 0)
-        {
-            return true;
-        }
+		if (fort == null || fort.getFortId() <= 0)
+		{
+			if ((value & COND_NOT_ZONE) != 0)
+			{
+				return true;
+			}
+		}
+		else if (!fort.getZone().isActive())
+		{
+			if ((value & COND_NOT_ZONE) != 0)
+			{
+				return true;
+			}
+		}
+		else if ((value & COND_FORT_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
+				player.getSiegeState() == 1)
+		{
+			return true;
+		}
+		else if ((value & COND_FORT_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
+				player.getSiegeState() == 2)
+		{
+			return true;
+		}
+		else if ((value & COND_FORT_NEUTRAL) != 0 && player.getSiegeState() == 0)
+		{
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

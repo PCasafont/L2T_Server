@@ -27,95 +27,95 @@ import java.util.zip.ZipFile;
  */
 public class ScriptPackage
 {
-    private List<ScriptDocument> _scriptFiles;
-    private List<String> _otherFiles;
-    private String _name;
+	private List<ScriptDocument> _scriptFiles;
+	private List<String> _otherFiles;
+	private String _name;
 
-    public ScriptPackage(ZipFile pack)
-    {
-        _scriptFiles = new ArrayList<>();
-        _otherFiles = new ArrayList<>();
-        _name = pack.getName();
-        addFiles(pack);
-    }
+	public ScriptPackage(ZipFile pack)
+	{
+		_scriptFiles = new ArrayList<>();
+		_otherFiles = new ArrayList<>();
+		_name = pack.getName();
+		addFiles(pack);
+	}
 
-    /**
-     * @return Returns the otherFiles.
-     */
-    public List<String> getOtherFiles()
-    {
-        return _otherFiles;
-    }
+	/**
+	 * @return Returns the otherFiles.
+	 */
+	public List<String> getOtherFiles()
+	{
+		return _otherFiles;
+	}
 
-    /**
-     * @return Returns the scriptFiles.
-     */
-    public List<ScriptDocument> getScriptFiles()
-    {
-        return _scriptFiles;
-    }
+	/**
+	 * @return Returns the scriptFiles.
+	 */
+	public List<ScriptDocument> getScriptFiles()
+	{
+		return _scriptFiles;
+	}
 
-    /**
-     */
-    private void addFiles(ZipFile pack)
-    {
-        for (Enumeration<? extends ZipEntry> e = pack.entries(); e.hasMoreElements(); )
-        {
-            ZipEntry entry = e.nextElement();
-            if (entry.getName().endsWith(".xml"))
-            {
-                try
-                {
-                    ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
-                    _scriptFiles.add(newScript);
-                }
-                catch (IOException e1)
-                {
-                    e1.printStackTrace();
-                }
-            }
-            else if (!entry.isDirectory())
-            {
-                _otherFiles.add(entry.getName());
-            }
-        }
-    }
+	/**
+	 */
+	private void addFiles(ZipFile pack)
+	{
+		for (Enumeration<? extends ZipEntry> e = pack.entries(); e.hasMoreElements(); )
+		{
+			ZipEntry entry = e.nextElement();
+			if (entry.getName().endsWith(".xml"))
+			{
+				try
+				{
+					ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
+					_scriptFiles.add(newScript);
+				}
+				catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+			else if (!entry.isDirectory())
+			{
+				_otherFiles.add(entry.getName());
+			}
+		}
+	}
 
-    /**
-     * @return Returns the name.
-     */
-    public String getName()
-    {
-        return _name;
-    }
+	/**
+	 * @return Returns the name.
+	 */
+	public String getName()
+	{
+		return _name;
+	}
 
-    @Override
-    public String toString()
-    {
-        if (getScriptFiles().isEmpty() && getOtherFiles().isEmpty())
-        {
-            return "Empty Package.";
-        }
+	@Override
+	public String toString()
+	{
+		if (getScriptFiles().isEmpty() && getOtherFiles().isEmpty())
+		{
+			return "Empty Package.";
+		}
 
-        String out = "Package Name: " + getName() + "\n";
+		String out = "Package Name: " + getName() + "\n";
 
-        if (!getScriptFiles().isEmpty())
-        {
-            out += "Xml Script Files...\n";
-            for (ScriptDocument script : getScriptFiles())
-            {
-                out += script.getName() + "\n";
-            }
-        }
+		if (!getScriptFiles().isEmpty())
+		{
+			out += "Xml Script Files...\n";
+			for (ScriptDocument script : getScriptFiles())
+			{
+				out += script.getName() + "\n";
+			}
+		}
 
-        if (!getOtherFiles().isEmpty())
-        {
-            out += "Other Files...\n";
-            for (String fileName : getOtherFiles())
-            {
-                out += fileName + "\n";
-            }
-        }
-        return out;
-    }
+		if (!getOtherFiles().isEmpty())
+		{
+			out += "Other Files...\n";
+			for (String fileName : getOtherFiles())
+			{
+				out += fileName + "\n";
+			}
+		}
+		return out;
+	}
 }

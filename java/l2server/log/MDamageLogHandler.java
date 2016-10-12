@@ -20,8 +20,8 @@ import java.util.logging.FileHandler;
 
 public class MDamageLogHandler extends FileHandler
 {
-    public MDamageLogHandler() throws IOException, SecurityException
-    {
-        super();
-    }
+	public MDamageLogHandler() throws IOException, SecurityException
+	{
+		super();
+	}
 }

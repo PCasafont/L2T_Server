@@ -29,81 +29,81 @@ import java.util.List;
  */
 public class SpawnGroup
 {
-    private final int _minZ;
-    private final int _maxZ;
-    private final L2Territory _territory = new L2Territory(0);
-    private final List<L2Spawn> _spawns = new ArrayList<>();
+	private final int _minZ;
+	private final int _maxZ;
+	private final L2Territory _territory = new L2Territory(0);
+	private final List<L2Spawn> _spawns = new ArrayList<>();
 
-    public SpawnGroup(XmlNode node)
-    {
-        _minZ = node.getInt("minZ");
-        _maxZ = node.getInt("maxZ");
-        for (XmlNode subNode : node.getChildren())
-        {
-            if (subNode.getName().equalsIgnoreCase("vertex"))
-            {
-                int x = subNode.getInt("x");
-                int y = subNode.getInt("y");
-                _territory.add(x, y, _minZ, _maxZ, 0);
-            }
-            else if (subNode.getName().equalsIgnoreCase("spawn"))
-            {
-                int npcId = subNode.getInt("npcId");
-                int amount = subNode.getInt("amount");
-                int respawn = subNode.getInt("respawn");
-                int randomRespawn = subNode.getInt("randomRespawn", 0);
-                String dbName = subNode.getString("dbName", null);
+	public SpawnGroup(XmlNode node)
+	{
+		_minZ = node.getInt("minZ");
+		_maxZ = node.getInt("maxZ");
+		for (XmlNode subNode : node.getChildren())
+		{
+			if (subNode.getName().equalsIgnoreCase("vertex"))
+			{
+				int x = subNode.getInt("x");
+				int y = subNode.getInt("y");
+				_territory.add(x, y, _minZ, _maxZ, 0);
+			}
+			else if (subNode.getName().equalsIgnoreCase("spawn"))
+			{
+				int npcId = subNode.getInt("npcId");
+				int amount = subNode.getInt("amount");
+				int respawn = subNode.getInt("respawn");
+				int randomRespawn = subNode.getInt("randomRespawn", 0);
+				String dbName = subNode.getString("dbName", null);
 
-                L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
-                if (t == null)
-                {
-                    Log.warning("Spawn group: no npc template with id " + npcId);
-                    continue;
-                }
+				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
+				if (t == null)
+				{
+					Log.warning("Spawn group: no npc template with id " + npcId);
+					continue;
+				}
 
-                for (int i = 0; i < amount; i++)
-                {
-                    try
-                    {
-                        L2Spawn spawn = new L2Spawn(t);
-                        spawn.setRespawnDelay(respawn);
-                        spawn.setRandomRespawnDelay(randomRespawn);
-                        spawn.startRespawn();
-                        spawn.setGroup(this);
-                        spawn.setDbName(dbName);
+				for (int i = 0; i < amount; i++)
+				{
+					try
+					{
+						L2Spawn spawn = new L2Spawn(t);
+						spawn.setRespawnDelay(respawn);
+						spawn.setRandomRespawnDelay(randomRespawn);
+						spawn.startRespawn();
+						spawn.setGroup(this);
+						spawn.setDbName(dbName);
 
-                        spawn.doSpawn();
+						spawn.doSpawn();
 
-                        _spawns.add(spawn);
+						_spawns.add(spawn);
 
-                        if (t.Type.equals("L2Monster"))
-                        {
-                            t.addKnownSpawn(spawn);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
-                }
+						if (t.Type.equals("L2Monster"))
+						{
+							t.addKnownSpawn(spawn);
+						}
+					}
+					catch (Exception e)
+					{
+						e.printStackTrace();
+					}
+				}
 
-                SearchDropManager.getInstance().addLootInfo(t, true);
-            }
-        }
-    }
+				SearchDropManager.getInstance().addLootInfo(t, true);
+			}
+		}
+	}
 
-    public int[] getRandomPoint()
-    {
-        return _territory.getRandomPoint();
-    }
+	public int[] getRandomPoint()
+	{
+		return _territory.getRandomPoint();
+	}
 
-    public L2Territory getTerritory()
-    {
-        return _territory;
-    }
+	public L2Territory getTerritory()
+	{
+		return _territory;
+	}
 
-    public List<L2Spawn> getSpawns()
-    {
-        return _spawns;
-    }
+	public List<L2Spawn> getSpawns()
+	{
+		return _spawns;
+	}
 }

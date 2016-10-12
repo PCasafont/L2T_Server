@@ -23,20 +23,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestUpdateFriendMemo extends L2GameClientPacket
 {
-    String cName;
-    String memo;
+	String cName;
+	String memo;
 
-    @Override
-    protected void readImpl()
-    {
-        cName = readS();
-        memo = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		cName = readS();
+		memo = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        player.addFriendMemo(CharNameTable.getInstance().getIdByName(cName), memo);
-    }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		player.addFriendMemo(CharNameTable.getInstance().getIdByName(cName), memo);
+	}
 }

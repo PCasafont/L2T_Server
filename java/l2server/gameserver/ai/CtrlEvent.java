@@ -21,11 +21,11 @@ package l2server.gameserver.ai;
 
 public enum CtrlEvent
 {
-    /**
-     * Something has changed, usually a previous step has being completed
-     * or maybe was completed, the AI must thing on next action
-     */
-    EVT_THINK, /**
+	/**
+	 * Something has changed, usually a previous step has being completed
+	 * or maybe was completed, the AI must thing on next action
+	 */
+	EVT_THINK, /**
  * The actor was attacked. This event comes each time a physical or magical
  * attack was done on the actor. NPC may start attack in responce, or ignore
  * this event if they already attack someone, or change target and so on.

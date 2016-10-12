@@ -24,48 +24,48 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
  */
 public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 {
-    private int _action;
-    private int _karma;
-    private String _introduction;
-    private String _largeIntroduction;
+	private int _action;
+	private int _karma;
+	private String _introduction;
+	private String _largeIntroduction;
 
-    @Override
-    protected void readImpl()
-    {
-        _action = readD();
-        _karma = readD();
-        _introduction = readS();
-        _largeIntroduction = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_action = readD();
+		_karma = readD();
+		_introduction = readS();
+		_largeIntroduction = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null || !activeChar.isClanLeader())
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null || !activeChar.isClanLeader())
+		{
+			return;
+		}
 
-        switch (_action)
-        {
-            case 0:
-                if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan()))
-                {
-                    sendPacket(new ExPledgeRecruitApplyInfo(0));
-                }
-                break;
-            case 1:
-                if (ClanRecruitManager.getInstance()
-                        .addClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction))
-                {
-                    sendPacket(new ExPledgeRecruitApplyInfo(1));
-                }
-                break;
-            case 2:
-                ClanRecruitManager.getInstance()
-                        .updateClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction);
-                break;
-        }
-    }
+		switch (_action)
+		{
+			case 0:
+				if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan()))
+				{
+					sendPacket(new ExPledgeRecruitApplyInfo(0));
+				}
+				break;
+			case 1:
+				if (ClanRecruitManager.getInstance()
+						.addClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction))
+				{
+					sendPacket(new ExPledgeRecruitApplyInfo(1));
+				}
+				break;
+			case 2:
+				ClanRecruitManager.getInstance()
+						.updateClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction);
+				break;
+		}
+	}
 }

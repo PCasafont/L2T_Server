@@ -28,37 +28,37 @@ import java.util.ResourceBundle.Control;
  */
 public class LanguageControl extends Control
 {
-    public static final String LANGUAGES_DIRECTORY = "../languages/";
+	public static final String LANGUAGES_DIRECTORY = "../languages/";
 
-    public static final LanguageControl INSTANCE = new LanguageControl();
+	public static final LanguageControl INSTANCE = new LanguageControl();
 
-    /**
-     * prevent instancing, allows sub-classing
-     */
-    protected LanguageControl()
-    {
+	/**
+	 * prevent instancing, allows sub-classing
+	 */
+	protected LanguageControl()
+	{
 
-    }
+	}
 
-    @Override
-    public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload) throws
-            IllegalAccessException, InstantiationException, IOException
-    {
-        if (baseName == null || locale == null || format == null || loader == null)
-        {
-            throw new NullPointerException();
-        }
-        ResourceBundle bundle = null;
-        if (format.equals("java.properties"))
-        {
-            format = "properties";
-            String bundleName = toBundleName(baseName, locale);
-            String resourceName = LANGUAGES_DIRECTORY + toResourceName(bundleName, format);
-            try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(resourceName)))
-            {
-                bundle = new PropertyResourceBundle(bis);
-            }
-        }
-        return bundle;
-    }
+	@Override
+	public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload) throws
+			IllegalAccessException, InstantiationException, IOException
+	{
+		if (baseName == null || locale == null || format == null || loader == null)
+		{
+			throw new NullPointerException();
+		}
+		ResourceBundle bundle = null;
+		if (format.equals("java.properties"))
+		{
+			format = "properties";
+			String bundleName = toBundleName(baseName, locale);
+			String resourceName = LANGUAGES_DIRECTORY + toResourceName(bundleName, format);
+			try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(resourceName)))
+			{
+				bundle = new PropertyResourceBundle(bis);
+			}
+		}
+		return bundle;
+	}
 }

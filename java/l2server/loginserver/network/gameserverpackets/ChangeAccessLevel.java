@@ -27,18 +27,18 @@ import java.util.logging.Logger;
  */
 public class ChangeAccessLevel extends BaseRecievePacket
 {
-    protected static Logger _log = Logger.getLogger(ChangeAccessLevel.class.getName());
+	protected static Logger _log = Logger.getLogger(ChangeAccessLevel.class.getName());
 
-    /**
-     * @param decrypt
-     */
-    public ChangeAccessLevel(byte[] decrypt, GameServerThread server)
-    {
-        super(decrypt);
-        int level = readD();
-        String account = readS();
+	/**
+	 * @param decrypt
+	 */
+	public ChangeAccessLevel(byte[] decrypt, GameServerThread server)
+	{
+		super(decrypt);
+		int level = readD();
+		String account = readS();
 
-        LoginController.getInstance().setAccountAccessLevel(account, level);
-        Log.info("Changed " + account + " access level to " + level);
-    }
+		LoginController.getInstance().setAccountAccessLevel(account, level);
+		Log.info("Changed " + account + " access level to " + level);
+	}
 }

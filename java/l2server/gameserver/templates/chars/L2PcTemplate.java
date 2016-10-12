@@ -27,131 +27,130 @@ import java.util.List;
  */
 public class L2PcTemplate extends L2CharTemplate
 {
-    public final Race race;
-    public final boolean isMage;
-    public final int startingClassId;
+	public final Race race;
+	public final boolean isMage;
+	public final int startingClassId;
 
-    public final double fCollisionHeightFemale;
-    public final double fCollisionRadiusFemale;
+	public final double fCollisionHeightFemale;
+	public final double fCollisionRadiusFemale;
 
-    private List<PcTemplateItem> _items = new ArrayList<>();
-    private List<Integer> _skillIds = new ArrayList<>();
+	private List<PcTemplateItem> _items = new ArrayList<>();
+	private List<Integer> _skillIds = new ArrayList<>();
 
-    public L2PcTemplate(StatsSet set)
-    {
-        super(set);
-        race = Race.values()[set.getInteger("raceId")];
-        isMage = set.getBool("isMage");
-        startingClassId = set.getInteger("startingClassId");
+	public L2PcTemplate(StatsSet set)
+	{
+		super(set);
+		race = Race.values()[set.getInteger("raceId")];
+		isMage = set.getBool("isMage");
+		startingClassId = set.getInteger("startingClassId");
 
-        fCollisionRadiusFemale = set.getDouble("collisionRadiusFemale");
-        fCollisionHeightFemale = set.getDouble("collisionHeightFemale");
-    }
+		fCollisionRadiusFemale = set.getDouble("collisionRadiusFemale");
+		fCollisionHeightFemale = set.getDouble("collisionHeightFemale");
+	}
 
-    public int getId()
-    {
-        return race.ordinal() * 2 + (isMage ? 1 : 0);
-    }
+	public int getId()
+	{
+		return race.ordinal() * 2 + (isMage ? 1 : 0);
+	}
 
-    /**
-     * Adds starter equipment
-     *
-     */
-    public void addItem(int itemId, int amount, boolean equipped)
-    {
-        if (amount == 1 || !equipped)
-        {
-            _items.add(new PcTemplateItem(itemId, amount, equipped));
-        }
-        else
-        {
-            for (int i = 0; i < amount; i++)
-            {
-                _items.add(new PcTemplateItem(itemId, 1, equipped));
-            }
-        }
-    }
+	/**
+	 * Adds starter equipment
+	 */
+	public void addItem(int itemId, int amount, boolean equipped)
+	{
+		if (amount == 1 || !equipped)
+		{
+			_items.add(new PcTemplateItem(itemId, amount, equipped));
+		}
+		else
+		{
+			for (int i = 0; i < amount; i++)
+			{
+				_items.add(new PcTemplateItem(itemId, 1, equipped));
+			}
+		}
+	}
 
-    /**
-     * @return itemIds of all the starter equipment
-     */
-    public List<PcTemplateItem> getItems()
-    {
-        return _items;
-    }
+	/**
+	 * @return itemIds of all the starter equipment
+	 */
+	public List<PcTemplateItem> getItems()
+	{
+		return _items;
+	}
 
-    public static final class PcTemplateItem
-    {
-        private final int _itemId;
-        private final int _amount;
-        private final boolean _equipped;
+	public static final class PcTemplateItem
+	{
+		private final int _itemId;
+		private final int _amount;
+		private final boolean _equipped;
 
-        /**
-         * @param amount
-         * @param itemId
-         */
-        public PcTemplateItem(int itemId, int amount, boolean equipped)
-        {
-            _itemId = itemId;
-            _amount = amount;
-            _equipped = equipped;
-        }
+		/**
+		 * @param amount
+		 * @param itemId
+		 */
+		public PcTemplateItem(int itemId, int amount, boolean equipped)
+		{
+			_itemId = itemId;
+			_amount = amount;
+			_equipped = equipped;
+		}
 
-        /**
-         * @return Returns the itemId.
-         */
-        public int getItemId()
-        {
-            return _itemId;
-        }
+		/**
+		 * @return Returns the itemId.
+		 */
+		public int getItemId()
+		{
+			return _itemId;
+		}
 
-        /**
-         * @return Returns the amount.
-         */
-        public int getAmount()
-        {
-            return _amount;
-        }
+		/**
+		 * @return Returns the amount.
+		 */
+		public int getAmount()
+		{
+			return _amount;
+		}
 
-        /**
-         * @return Returns the if the item should be equipped after char creation.
-         */
-        public boolean isEquipped()
-        {
-            return _equipped;
-        }
-    }
+		/**
+		 * @return Returns the if the item should be equipped after char creation.
+		 */
+		public boolean isEquipped()
+		{
+			return _equipped;
+		}
+	}
 
-    public void addSkill(int id)
-    {
-        _skillIds.add(id);
-    }
+	public void addSkill(int id)
+	{
+		_skillIds.add(id);
+	}
 
-    public List<Integer> getSkillIds()
-    {
-        return _skillIds;
-    }
+	public List<Integer> getSkillIds()
+	{
+		return _skillIds;
+	}
 
-    public final int getFallHeight()
-    {
-        return 333;
-    }
+	public final int getFallHeight()
+	{
+		return 333;
+	}
 
-    @Override
-    public float getBaseHpReg(int level)
-    {
-        return PlayerStatDataTable.getInstance().getHpRegen(level);
-    }
+	@Override
+	public float getBaseHpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getHpRegen(level);
+	}
 
-    @Override
-    public float getBaseMpReg(int level)
-    {
-        return PlayerStatDataTable.getInstance().getMpRegen(level);
-    }
+	@Override
+	public float getBaseMpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getMpRegen(level);
+	}
 
-    @Override
-    public float getBaseCpReg(int level)
-    {
-        return PlayerStatDataTable.getInstance().getCpRegen(level);
-    }
+	@Override
+	public float getBaseCpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getCpRegen(level);
+	}
 }

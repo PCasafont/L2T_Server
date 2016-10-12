@@ -25,32 +25,32 @@ import l2server.gameserver.stats.Env;
 public final class ConditionItemId extends Condition
 {
 
-    private final int _itemId;
+	private final int _itemId;
 
-    /**
-     * Instantiates a new condition item id.
-     *
-     * @param itemId the item id
-     */
-    public ConditionItemId(int itemId)
-    {
-        _itemId = itemId;
-    }
+	/**
+	 * Instantiates a new condition item id.
+	 *
+	 * @param itemId the item id
+	 */
+	public ConditionItemId(int itemId)
+	{
+		_itemId = itemId;
+	}
 
-    /**
-     * Test impl.
-     *
-     * @param env the env
-     * @return true, if successful
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (env.item == null)
-        {
-            return false;
-        }
-        return env.item.getItemId() == _itemId;
-    }
+	/**
+	 * Test impl.
+	 *
+	 * @param env the env
+	 * @return true, if successful
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (env.item == null)
+		{
+			return false;
+		}
+		return env.item.getItemId() == _itemId;
+	}
 }

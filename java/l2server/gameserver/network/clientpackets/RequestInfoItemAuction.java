@@ -26,41 +26,41 @@ import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
  */
 public final class RequestInfoItemAuction extends L2GameClientPacket
 {
-    private int _instanceId;
+	private int _instanceId;
 
-    @Override
-    protected final void readImpl()
-    {
-        _instanceId = super.readD();
-    }
+	@Override
+	protected final void readImpl()
+	{
+		_instanceId = super.readD();
+	}
 
-    @Override
-    protected final void runImpl()
-    {
-        final L2PcInstance activeChar = super.getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected final void runImpl()
+	{
+		final L2PcInstance activeChar = super.getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
-        {
-            return;
-        }
+		if (!getClient().getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
+		{
+			return;
+		}
 
-        final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
-        if (instance == null)
-        {
-            return;
-        }
+		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
+		if (instance == null)
+		{
+			return;
+		}
 
-        final ItemAuction auction = instance.getCurrentAuction();
-        if (auction == null)
-        {
-            return;
-        }
+		final ItemAuction auction = instance.getCurrentAuction();
+		if (auction == null)
+		{
+			return;
+		}
 
-        activeChar.updateLastItemAuctionRequest();
-        activeChar.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
-    }
+		activeChar.updateLastItemAuctionRequest();
+		activeChar.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
+	}
 }

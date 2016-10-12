@@ -26,20 +26,20 @@ import java.util.logging.Logger;
  */
 public interface IUserCommandHandler
 {
-    public static Logger _log = Logger.getLogger(IUserCommandHandler.class.getName());
+	public static Logger _log = Logger.getLogger(IUserCommandHandler.class.getName());
 
-    /**
-     * this is the worker method that is called when someone uses an admin command.
-     *
-     * @param activeChar
-     * @return command success
-     */
-    public boolean useUserCommand(int id, L2PcInstance activeChar);
+	/**
+	 * this is the worker method that is called when someone uses an admin command.
+	 *
+	 * @param activeChar
+	 * @return command success
+	 */
+	public boolean useUserCommand(int id, L2PcInstance activeChar);
 
-    /**
-     * this method is called at initialization to register all the item ids automatically
-     *
-     * @return all known itemIds
-     */
-    public int[] getUserCommandList();
+	/**
+	 * this method is called at initialization to register all the item ids automatically
+	 *
+	 * @return all known itemIds
+	 */
+	public int[] getUserCommandList();
 }

@@ -23,15 +23,15 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExMailArrived extends L2GameServerPacket
 {
-    public static final ExMailArrived STATIC_PACKET = new ExMailArrived();
+	public static final ExMailArrived STATIC_PACKET = new ExMailArrived();
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected void writeImpl()
-    {
-        writeC(0xfe);
-        writeH(0x2e);
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected void writeImpl()
+	{
+		writeC(0xfe);
+		writeH(0x2e);
+	}
 }

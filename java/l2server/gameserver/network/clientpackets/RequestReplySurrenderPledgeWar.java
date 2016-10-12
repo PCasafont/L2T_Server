@@ -20,40 +20,40 @@ import l2server.gameserver.model.entity.ClanWarManager;
 
 public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
 {
-    //
+	//
 
-    private int _answer;
+	private int _answer;
 
-    @Override
-    protected void readImpl()
-    {
-        @SuppressWarnings("unused") String _reqName = readS();
-        _answer = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		@SuppressWarnings("unused") String _reqName = readS();
+		_answer = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        L2PcInstance requestor = activeChar.getActiveRequester();
-        if (requestor == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		L2PcInstance requestor = activeChar.getActiveRequester();
+		if (requestor == null)
+		{
+			return;
+		}
 
-        if (_answer == 1)
-        {
-            requestor.deathPenalty(false, false, false, false);
-            ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
-        }
-        else
-        {
-        }
+		if (_answer == 1)
+		{
+			requestor.deathPenalty(false, false, false, false);
+			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
+		}
+		else
+		{
+		}
 
-        activeChar.onTransactionRequest(null);
-    }
+		activeChar.onTransactionRequest(null);
+	}
 }

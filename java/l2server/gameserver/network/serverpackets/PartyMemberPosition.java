@@ -27,37 +27,37 @@ import java.util.Map;
  */
 public class PartyMemberPosition extends L2GameServerPacket
 {
-    Map<Integer, Location> locations = new HashMap<>();
+	Map<Integer, Location> locations = new HashMap<>();
 
-    public PartyMemberPosition(L2Party party)
-    {
-        reuse(party);
-    }
+	public PartyMemberPosition(L2Party party)
+	{
+		reuse(party);
+	}
 
-    public void reuse(L2Party party)
-    {
-        locations.clear();
-        for (L2PcInstance member : party.getPartyMembers())
-        {
-            if (member == null)
-            {
-                continue;
-            }
-            locations.put(member.getObjectId(), new Location(member));
-        }
-    }
+	public void reuse(L2Party party)
+	{
+		locations.clear();
+		for (L2PcInstance member : party.getPartyMembers())
+		{
+			if (member == null)
+			{
+				continue;
+			}
+			locations.put(member.getObjectId(), new Location(member));
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(locations.size());
-        for (Map.Entry<Integer, Location> entry : locations.entrySet())
-        {
-            Location loc = entry.getValue();
-            writeD(entry.getKey());
-            writeD(loc.getX());
-            writeD(loc.getY());
-            writeD(loc.getZ());
-        }
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(locations.size());
+		for (Map.Entry<Integer, Location> entry : locations.entrySet())
+		{
+			Location loc = entry.getValue();
+			writeD(entry.getKey());
+			writeD(loc.getX());
+			writeD(loc.getY());
+			writeD(loc.getZ());
+		}
+	}
 }

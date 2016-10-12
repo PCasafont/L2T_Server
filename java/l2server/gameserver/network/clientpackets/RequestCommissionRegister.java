@@ -26,34 +26,34 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionRegister;
  */
 public final class RequestCommissionRegister extends L2GameClientPacket
 {
-    int _itemOID;
-    String _itemName;
-    long _price;
-    long _count;
-    int _duration;
+	int _itemOID;
+	String _itemName;
+	long _price;
+	long _count;
+	int _duration;
 
-    @Override
-    protected void readImpl()
-    {
-        _itemOID = readD();
-        _itemName = readS();
-        _price = readQ();
-        _count = readQ();
-        _duration = readD();
-        readQ(); // Unknown
-    }
+	@Override
+	protected void readImpl()
+	{
+		_itemOID = readD();
+		_itemName = readS();
+		_price = readQ();
+		_count = readQ();
+		_duration = readD();
+		readQ(); // Unknown
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
 		/*long destroyPrice = _price;
-        AuctionManager am = AuctionManager.getInstance();
+		AuctionManager am = AuctionManager.getInstance();
 		am.checkForAuctionsDeletion();
 		long timeToAdd = 0;
 		switch (_duration)
@@ -125,14 +125,14 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 		iu.addModifiedItem(player.getInventory().getItemByObjectId(_itemOID));
 		player.sendPacket(iu);
 		reloadAuction(player, true);*/
-    }
+	}
 
-    @SuppressWarnings("unused")
-    private void reloadAuction(L2PcInstance player, boolean success)
-    {
-        player.sendPacket(new ExResponseCommissionRegister(success));
-        player.sendPacket(new ExResponseCommissionList(player));
-        player.sendPacket(new ExResponseCommissionInfo(player, 0, success));
-        player.sendPacket(new ExResponseCommissionItemList(player));
-    }
+	@SuppressWarnings("unused")
+	private void reloadAuction(L2PcInstance player, boolean success)
+	{
+		player.sendPacket(new ExResponseCommissionRegister(success));
+		player.sendPacket(new ExResponseCommissionList(player));
+		player.sendPacket(new ExResponseCommissionInfo(player, 0, success));
+		player.sendPacket(new ExResponseCommissionItemList(player));
+	}
 }

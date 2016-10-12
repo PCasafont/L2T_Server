@@ -18,25 +18,25 @@ package l2server.gameserver.network.serverpackets;
 public class EnchantResult extends L2GameServerPacket
 {
 
-    private int _result;
-    private int _crystal;
-    private int _count;
-    private int _enchantLevel;
+	private int _result;
+	private int _crystal;
+	private int _count;
+	private int _enchantLevel;
 
-    public EnchantResult(int result, int crystal, int count, int enchantLevel)
-    {
-        _result = result;
-        _crystal = crystal;
-        _count = count;
-        _enchantLevel = enchantLevel;
-    }
+	public EnchantResult(int result, int crystal, int count, int enchantLevel)
+	{
+		_result = result;
+		_crystal = crystal;
+		_count = count;
+		_enchantLevel = enchantLevel;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_result);
-        writeD(_crystal);
-        writeQ(_count);
-        writeD(_enchantLevel);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_result);
+		writeD(_crystal);
+		writeQ(_count);
+		writeD(_enchantLevel);
+	}
 }

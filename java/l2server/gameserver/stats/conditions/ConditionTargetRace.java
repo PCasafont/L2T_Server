@@ -28,25 +28,25 @@ import l2server.gameserver.util.Util;
 public class ConditionTargetRace extends Condition
 {
 
-    private final Race[] _races;
+	private final Race[] _races;
 
-    /**
-     * Instantiates a new condition target race.
-     *
-     * @param races the list containing the allowed races.
-     */
-    public ConditionTargetRace(Race[] races)
-    {
-        _races = races;
-    }
+	/**
+	 * Instantiates a new condition target race.
+	 *
+	 * @param races the list containing the allowed races.
+	 */
+	public ConditionTargetRace(Race[] races)
+	{
+		_races = races;
+	}
 
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.target instanceof L2PcInstance))
-        {
-            return false;
-        }
-        return Util.contains(_races, env.target.getActingPlayer().getRace());
-    }
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.target instanceof L2PcInstance))
+		{
+			return false;
+		}
+		return Util.contains(_races, env.target.getActingPlayer().getRace());
+	}
 }

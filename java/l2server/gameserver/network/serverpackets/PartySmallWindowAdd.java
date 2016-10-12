@@ -26,34 +26,34 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class PartySmallWindowAdd extends L2GameServerPacket
 {
 
-    private final L2PcInstance _member;
-    private final int _leaderId;
-    private final int _distribution;
+	private final L2PcInstance _member;
+	private final int _leaderId;
+	private final int _distribution;
 
-    public PartySmallWindowAdd(L2PcInstance member, L2Party party)
-    {
-        _member = member;
-        _leaderId = party.getPartyLeaderOID();
-        _distribution = party.getLootDistribution();
-    }
+	public PartySmallWindowAdd(L2PcInstance member, L2Party party)
+	{
+		_member = member;
+		_leaderId = party.getPartyLeaderOID();
+		_distribution = party.getLootDistribution();
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_leaderId); // c3
-        writeD(_distribution);//writeD(0x04); ?? //c3
-        writeD(_member.getObjectId());
-        writeS(_member.getName());
-        writeD((int) _member.getCurrentCp()); //c4
-        writeD(_member.getMaxCp()); //c4
-        writeD((int) _member.getCurrentHp());
-        writeD(_member.getMaxVisibleHp());
-        writeD((int) _member.getCurrentMp());
-        writeD(_member.getMaxMp());
-        writeD(_member.getVitalityPoints());
-        writeC(_member.getLevel());
-        writeH(_member.getCurrentClass().getId());
-        /*writeD(_member.getVitalityPoints());
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_leaderId); // c3
+		writeD(_distribution);//writeD(0x04); ?? //c3
+		writeD(_member.getObjectId());
+		writeS(_member.getName());
+		writeD((int) _member.getCurrentCp()); //c4
+		writeD(_member.getMaxCp()); //c4
+		writeD((int) _member.getCurrentHp());
+		writeD(_member.getMaxVisibleHp());
+		writeD((int) _member.getCurrentMp());
+		writeD(_member.getMaxMp());
+		writeD(_member.getVitalityPoints());
+		writeC(_member.getLevel());
+		writeH(_member.getCurrentClass().getId());
+		/*writeD(_member.getVitalityPoints());
         writeC(0x01); // ???
 		writeC(_member.getRace().ordinal());
 		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(_member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
@@ -82,5 +82,5 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 			writeD(_member.getPet().getMaxMp());
 			writeC(_member.getPet().getLevel());
 		}*/
-    }
+	}
 }

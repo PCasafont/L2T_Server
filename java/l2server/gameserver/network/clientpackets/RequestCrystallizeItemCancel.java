@@ -20,15 +20,15 @@ package l2server.gameserver.network.clientpackets;
  */
 public final class RequestCrystallizeItemCancel extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+	}
 }

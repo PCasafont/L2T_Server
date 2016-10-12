@@ -31,73 +31,73 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestPartyMatchDetail extends L2GameClientPacket
 {
-    private int _roomid;
-    @SuppressWarnings("unused")
-    private int _unk1;
-    @SuppressWarnings("unused")
-    private int _unk2;
-    @SuppressWarnings("unused")
-    private int _unk3;
+	private int _roomid;
+	@SuppressWarnings("unused")
+	private int _unk1;
+	@SuppressWarnings("unused")
+	private int _unk2;
+	@SuppressWarnings("unused")
+	private int _unk3;
 
-    @Override
-    protected void readImpl()
-    {
-        _roomid = readD();
-        /*
+	@Override
+	protected void readImpl()
+	{
+		_roomid = readD();
+		/*
          * IF player click on Room all unk are 0
 		 * IF player click AutoJoin values are -1 1 1
 		 */
-        _unk1 = readD();
-        _unk2 = readD();
-        _unk3 = readD();
-    }
+		_unk1 = readD();
+		_unk2 = readD();
+		_unk3 = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance _activeChar = getClient().getActiveChar();
-        if (_activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance _activeChar = getClient().getActiveChar();
+		if (_activeChar == null)
+		{
+			return;
+		}
 
-        PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
-        if (_room == null)
-        {
-            return;
-        }
+		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
+		if (_room == null)
+		{
+			return;
+		}
 
-        if (_activeChar.getLevel() >= _room.getMinLvl() && _activeChar.getLevel() <= _room.getMaxLvl())
-        {
-            // Remove from waiting list
-            PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
+		if (_activeChar.getLevel() >= _room.getMinLvl() && _activeChar.getLevel() <= _room.getMaxLvl())
+		{
+			// Remove from waiting list
+			PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
 
-            _activeChar.setPartyRoom(_roomid);
+			_activeChar.setPartyRoom(_roomid);
 
-            _activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-            _activeChar.sendPacket(new ExPartyRoomMembers(_activeChar, _room, 0));
+			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
+			_activeChar.sendPacket(new ExPartyRoomMembers(_activeChar, _room, 0));
 
-            for (L2PcInstance _member : _room.getPartyMembers())
-            {
-                if (_member == null)
-                {
-                    continue;
-                }
+			for (L2PcInstance _member : _room.getPartyMembers())
+			{
+				if (_member == null)
+				{
+					continue;
+				}
 
-                _member.sendPacket(new ExManagePartyRoomMember(_activeChar, _room, 0));
+				_member.sendPacket(new ExManagePartyRoomMember(_activeChar, _room, 0));
 
-                SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ENTERED_PARTY_ROOM);
-                sm.addCharName(_activeChar);
-                _member.sendPacket(sm);
-            }
-            _room.addMember(_activeChar);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ENTERED_PARTY_ROOM);
+				sm.addCharName(_activeChar);
+				_member.sendPacket(sm);
+			}
+			_room.addMember(_activeChar);
 
-            // Info Broadcast
-            _activeChar.broadcastUserInfo();
-        }
-        else
-        {
-            _activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_ENTER_PARTY_ROOM));
-        }
-    }
+			// Info Broadcast
+			_activeChar.broadcastUserInfo();
+		}
+		else
+		{
+			_activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_ENTER_PARTY_ROOM));
+		}
+	}
 }

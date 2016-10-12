@@ -26,34 +26,34 @@ import java.util.ArrayList;
  */
 public class ConditionTargetNpcId extends Condition
 {
-    private final ArrayList<Integer> _npcIds;
+	private final ArrayList<Integer> _npcIds;
 
-    /**
-     * Instantiates a new condition target npc id.
-     *
-     * @param npcIds the npc ids
-     */
-    public ConditionTargetNpcId(ArrayList<Integer> npcIds)
-    {
-        _npcIds = npcIds;
-    }
+	/**
+	 * Instantiates a new condition target npc id.
+	 *
+	 * @param npcIds the npc ids
+	 */
+	public ConditionTargetNpcId(ArrayList<Integer> npcIds)
+	{
+		_npcIds = npcIds;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (env.target instanceof L2Npc)
-        {
-            return _npcIds.contains(((L2Npc) env.target).getNpcId());
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (env.target instanceof L2Npc)
+		{
+			return _npcIds.contains(((L2Npc) env.target).getNpcId());
+		}
 
-        if (env.target instanceof L2DoorInstance)
-        {
-            return _npcIds.contains(((L2DoorInstance) env.target).getDoorId());
-        }
+		if (env.target instanceof L2DoorInstance)
+		{
+			return _npcIds.contains(((L2DoorInstance) env.target).getDoorId());
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

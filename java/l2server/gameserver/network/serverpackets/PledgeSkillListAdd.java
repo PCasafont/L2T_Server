@@ -22,21 +22,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public class PledgeSkillListAdd extends L2GameServerPacket
 {
-    private int _id;
-    private int _lvl;
+	private int _id;
+	private int _lvl;
 
-    public PledgeSkillListAdd(int id, int lvl)
-    {
-        _id = id;
-        _lvl = lvl;
-    }
+	public PledgeSkillListAdd(int id, int lvl)
+	{
+		_id = id;
+		_lvl = lvl;
+	}
 
-    /**
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_id);
-        writeD(_lvl);
-    }
+	/**
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_id);
+		writeD(_lvl);
+	}
 }

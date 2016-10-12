@@ -26,56 +26,56 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectFusion extends L2Effect
 {
-    public int _effect;
-    public int _maxEffect;
+	public int _effect;
+	public int _maxEffect;
 
-    public EffectFusion(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-        _effect = getSkill().getLevel();
-        _maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
-    }
+	public EffectFusion(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+		_effect = getSkill().getLevel();
+		_maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return true;
+	}
 
-    public void increaseEffect()
-    {
-        if (_effect < _maxEffect)
-        {
-            _effect++;
-            updateBuff();
-        }
-    }
+	public void increaseEffect()
+	{
+		if (_effect < _maxEffect)
+		{
+			_effect++;
+			updateBuff();
+		}
+	}
 
-    public void decreaseForce()
-    {
-        _effect--;
-        if (_effect < 1)
-        {
-            exit();
-        }
-        else
-        {
-            updateBuff();
-        }
-    }
+	public void decreaseForce()
+	{
+		_effect--;
+		if (_effect < 1)
+		{
+			exit();
+		}
+		else
+		{
+			updateBuff();
+		}
+	}
 
-    private void updateBuff()
-    {
-        exit();
-        SkillTable.getInstance().getInfo(getSkill().getId(), _effect).getEffects(getEffector(), getEffected());
-    }
+	private void updateBuff()
+	{
+		exit();
+		SkillTable.getInstance().getInfo(getSkill().getId(), _effect).getEffects(getEffector(), getEffected());
+	}
 }

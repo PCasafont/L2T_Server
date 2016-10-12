@@ -23,28 +23,28 @@ import l2server.gameserver.network.serverpackets.ExListMpccWaiting;
  */
 public class RequestListMpccWaiting extends L2GameClientPacket
 {
-    private static int _page;
-    private static int _location;
-    private static int _anyLevel;
+	private static int _page;
+	private static int _location;
+	private static int _anyLevel;
 
-    @Override
-    protected void readImpl()
-    {
-        _page = readD();
-        _location = readD();
-        _anyLevel = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_page = readD();
+		_location = readD();
+		_anyLevel = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance _activeChar = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance _activeChar = getClient().getActiveChar();
 
-        if (_activeChar == null)
-        {
-            return;
-        }
+		if (_activeChar == null)
+		{
+			return;
+		}
 
-        _activeChar.sendPacket(new ExListMpccWaiting(_activeChar, _page, _location, _anyLevel));
-    }
+		_activeChar.sendPacket(new ExListMpccWaiting(_activeChar, _page, _location, _anyLevel));
+	}
 }

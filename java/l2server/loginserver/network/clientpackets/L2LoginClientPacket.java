@@ -27,21 +27,21 @@ import java.util.logging.Level;
 public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient>
 {
 
-    /**
-     */
-    @Override
-    protected final boolean read()
-    {
-        try
-        {
-            return readImpl();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
-            return false;
-        }
-    }
+	/**
+	 */
+	@Override
+	protected final boolean read()
+	{
+		try
+		{
+			return readImpl();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
+			return false;
+		}
+	}
 
-    protected abstract boolean readImpl();
+	protected abstract boolean readImpl();
 }

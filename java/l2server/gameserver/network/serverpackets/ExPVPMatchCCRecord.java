@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPVPMatchCCRecord extends L2GameServerPacket
 {
-    private int _unk;
+	private int _unk;
 
-    public ExPVPMatchCCRecord(int unk)
-    {
-        _unk = unk;
-    }
+	public ExPVPMatchCCRecord(int unk)
+	{
+		_unk = unk;
+	}
 
-    @Override
-    public void writeImpl()
-    {
-        writeD(_unk);
-    }
+	@Override
+	public void writeImpl()
+	{
+		writeD(_unk);
+	}
 }

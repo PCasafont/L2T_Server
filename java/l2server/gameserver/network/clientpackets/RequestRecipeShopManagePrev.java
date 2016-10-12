@@ -26,35 +26,35 @@ import l2server.gameserver.network.serverpackets.RecipeShopSellList;
  */
 public final class RequestRecipeShopManagePrev extends L2GameClientPacket
 {
-    //
+	//
 
-    @Override
-    protected void readImpl()
-    {
-        // trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		// trigger
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null || player.getTarget() == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null || player.getTarget() == null)
+		{
+			return;
+		}
 
-        // Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
-        if (player.isAlikeDead())
-        {
-            sendPacket(ActionFailed.STATIC_PACKET);
-            return;
-        }
+		// Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
+		if (player.isAlikeDead())
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-        if (!(player.getTarget() instanceof L2PcInstance))
-        {
-            return;
-        }
-        L2PcInstance target = (L2PcInstance) player.getTarget();
-        player.sendPacket(new RecipeShopSellList(player, target));
-    }
+		if (!(player.getTarget() instanceof L2PcInstance))
+		{
+			return;
+		}
+		L2PcInstance target = (L2PcInstance) player.getTarget();
+		player.sendPacket(new RecipeShopSellList(player, target));
+	}
 }

@@ -27,103 +27,103 @@ import java.util.Map;
 public class GlobalVariablesManager
 {
 
-    private static final String LOAD_VAR = "SELECT var,value FROM global_variables";
-    private static final String SAVE_VAR =
-            "INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";
+	private static final String LOAD_VAR = "SELECT var,value FROM global_variables";
+	private static final String SAVE_VAR =
+			"INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";
 
-    private final Map<String, String> _variablesMap;
+	private final Map<String, String> _variablesMap;
 
-    private GlobalVariablesManager()
-    {
-        _variablesMap = new HashMap<>();
+	private GlobalVariablesManager()
+	{
+		_variablesMap = new HashMap<>();
 
-        loadVars();
-    }
+		loadVars();
+	}
 
-    private final void loadVars()
-    {
-        Connection con = null;
-        PreparedStatement statement = null;
-        ResultSet rset;
-        String var, value;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            statement = con.prepareStatement(LOAD_VAR);
+	private final void loadVars()
+	{
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset;
+		String var, value;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			statement = con.prepareStatement(LOAD_VAR);
 
-            rset = statement.executeQuery();
-            while (rset.next())
-            {
-                var = rset.getString(1);
-                value = rset.getString(2);
+			rset = statement.executeQuery();
+			while (rset.next())
+			{
+				var = rset.getString(1);
+				value = rset.getString(2);
 
-                _variablesMap.put(var, value);
-            }
-            rset.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.warning("GlobalVariablesManager: problem while loading variables: " + e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+				_variablesMap.put(var, value);
+			}
+			rset.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.warning("GlobalVariablesManager: problem while loading variables: " + e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    public final void saveVars()
-    {
-        Connection con = null;
-        PreparedStatement statement = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            statement = con.prepareStatement(SAVE_VAR);
+	public final void saveVars()
+	{
+		Connection con = null;
+		PreparedStatement statement = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			statement = con.prepareStatement(SAVE_VAR);
 
-            for (String var : _variablesMap.keySet())
-            {
-                statement.setString(1, var);
-                statement.setString(2, _variablesMap.get(var));
-                statement.setString(3, _variablesMap.get(var));
-                statement.execute();
-            }
-            statement.close();
-            //Log.info("GlobalVariablesManager: Database updated.");
-        }
-        catch (Exception e)
-        {
-            Log.warning("GlobalVariablesManager: problem while saving variables: " + e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+			for (String var : _variablesMap.keySet())
+			{
+				statement.setString(1, var);
+				statement.setString(2, _variablesMap.get(var));
+				statement.setString(3, _variablesMap.get(var));
+				statement.execute();
+			}
+			statement.close();
+			//Log.info("GlobalVariablesManager: Database updated.");
+		}
+		catch (Exception e)
+		{
+			Log.warning("GlobalVariablesManager: problem while saving variables: " + e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    public void storeVariable(String var, String value)
-    {
-        _variablesMap.put(var, value);
-    }
+	public void storeVariable(String var, String value)
+	{
+		_variablesMap.put(var, value);
+	}
 
-    public boolean isVariableStored(String var)
-    {
-        return _variablesMap.containsKey(var);
-    }
+	public boolean isVariableStored(String var)
+	{
+		return _variablesMap.containsKey(var);
+	}
 
-    public String getStoredVariable(String var)
-    {
-        return _variablesMap.get(var);
-    }
+	public String getStoredVariable(String var)
+	{
+		return _variablesMap.get(var);
+	}
 
-    public static GlobalVariablesManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static GlobalVariablesManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final GlobalVariablesManager _instance = new GlobalVariablesManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final GlobalVariablesManager _instance = new GlobalVariablesManager();
+	}
 }

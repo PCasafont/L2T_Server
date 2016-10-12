@@ -33,123 +33,123 @@ import java.util.logging.Level;
  */
 public final class L2CastleTeleporterInstance extends L2Npc
 {
-    private boolean _currentTask = false;
+	private boolean _currentTask = false;
 
-    /**
-     * @param template
-     */
-    public L2CastleTeleporterInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2CastleTeleporterInstance);
-    }
+	/**
+	 * @param template
+	 */
+	public L2CastleTeleporterInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2CastleTeleporterInstance);
+	}
 
-    @Override
-    public void onBypassFeedback(L2PcInstance player, String command)
-    {
-        StringTokenizer st = new StringTokenizer(command, " ");
-        String actualCommand = st.nextToken(); // Get actual command
+	@Override
+	public void onBypassFeedback(L2PcInstance player, String command)
+	{
+		StringTokenizer st = new StringTokenizer(command, " ");
+		String actualCommand = st.nextToken(); // Get actual command
 
-        if (actualCommand.equalsIgnoreCase("tele"))
-        {
-            int delay;
-            if (!getTask())
-            {
-                if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
-                {
-                    delay = 480000;
-                }
-                else
-                {
-                    delay = 30000;
-                }
+		if (actualCommand.equalsIgnoreCase("tele"))
+		{
+			int delay;
+			if (!getTask())
+			{
+				if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
+				{
+					delay = 480000;
+				}
+				else
+				{
+					delay = 30000;
+				}
 
-                setTask(true);
-                ThreadPoolManager.getInstance().scheduleGeneral(new oustAllPlayers(), delay);
-            }
+				setTask(true);
+				ThreadPoolManager.getInstance().scheduleGeneral(new oustAllPlayers(), delay);
+			}
 
-            String filename = "castleteleporter/MassGK-1.htm";
-            NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-            html.setFile(player.getHtmlPrefix(), filename);
-            player.sendPacket(html);
-            return;
-        }
-        else
-        {
-            super.onBypassFeedback(player, command);
-        }
-    }
+			String filename = "castleteleporter/MassGK-1.htm";
+			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+			html.setFile(player.getHtmlPrefix(), filename);
+			player.sendPacket(html);
+			return;
+		}
+		else
+		{
+			super.onBypassFeedback(player, command);
+		}
+	}
 
-    @Override
-    public void showChatWindow(L2PcInstance player)
-    {
-        String filename;
-        if (!getTask())
-        {
-            if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
-            {
-                filename = "castleteleporter/MassGK-2.htm";
-            }
-            else
-            {
-                filename = "castleteleporter/MassGK.htm";
-            }
-        }
-        else
-        {
-            filename = "castleteleporter/MassGK-1.htm";
-        }
+	@Override
+	public void showChatWindow(L2PcInstance player)
+	{
+		String filename;
+		if (!getTask())
+		{
+			if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
+			{
+				filename = "castleteleporter/MassGK-2.htm";
+			}
+			else
+			{
+				filename = "castleteleporter/MassGK.htm";
+			}
+		}
+		else
+		{
+			filename = "castleteleporter/MassGK-1.htm";
+		}
 
-        NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-        html.setFile(player.getHtmlPrefix(), filename);
-        html.replace("%objectId%", String.valueOf(getObjectId()));
-        player.sendPacket(html);
-    }
+		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+		html.setFile(player.getHtmlPrefix(), filename);
+		html.replace("%objectId%", String.valueOf(getObjectId()));
+		player.sendPacket(html);
+	}
 
-    void oustAllPlayers()
-    {
-        getCastle().oustAllPlayers();
-    }
+	void oustAllPlayers()
+	{
+		getCastle().oustAllPlayers();
+	}
 
-    class oustAllPlayers implements Runnable
-    {
-        @Override
-        public void run()
-        {
-            try
-            {
-                NpcSay cs = new NpcSay(getObjectId(), 1, getNpcId(),
-                        1000443); // The defenders of $s1 castle will be teleported to the inner castle.
-                cs.addStringParameter(getCastle().getName());
-                int region = MapRegionTable.getInstance().getMapRegion(getX(), getY());
-                Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-                //synchronized (L2World.getInstance().getAllPlayers())
-                {
-                    for (L2PcInstance player : pls)
-                    {
-                        if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()))
-                        {
-                            player.sendPacket(cs);
-                        }
-                    }
-                }
-                oustAllPlayers();
-                setTask(false);
-            }
-            catch (NullPointerException e)
-            {
-                Log.log(Level.WARNING, "" + e.getMessage(), e);
-            }
-        }
-    }
+	class oustAllPlayers implements Runnable
+	{
+		@Override
+		public void run()
+		{
+			try
+			{
+				NpcSay cs = new NpcSay(getObjectId(), 1, getNpcId(),
+						1000443); // The defenders of $s1 castle will be teleported to the inner castle.
+				cs.addStringParameter(getCastle().getName());
+				int region = MapRegionTable.getInstance().getMapRegion(getX(), getY());
+				Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+				//synchronized (L2World.getInstance().getAllPlayers())
+				{
+					for (L2PcInstance player : pls)
+					{
+						if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()))
+						{
+							player.sendPacket(cs);
+						}
+					}
+				}
+				oustAllPlayers();
+				setTask(false);
+			}
+			catch (NullPointerException e)
+			{
+				Log.log(Level.WARNING, "" + e.getMessage(), e);
+			}
+		}
+	}
 
-    public boolean getTask()
-    {
-        return _currentTask;
-    }
+	public boolean getTask()
+	{
+		return _currentTask;
+	}
 
-    public void setTask(boolean state)
-    {
-        _currentTask = state;
-    }
+	public void setTask(boolean state)
+	{
+		_currentTask = state;
+	}
 }

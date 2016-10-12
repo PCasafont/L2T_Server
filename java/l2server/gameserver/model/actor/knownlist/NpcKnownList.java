@@ -28,129 +28,129 @@ import java.util.concurrent.ScheduledFuture;
 
 public class NpcKnownList extends CharKnownList
 {
-    // =========================================================
-    // Data Field
-    private ScheduledFuture<?> _trackingTask = null;
+	// =========================================================
+	// Data Field
+	private ScheduledFuture<?> _trackingTask = null;
 
-    // =========================================================
-    // Constructor
-    public NpcKnownList(L2Npc activeChar)
-    {
-        super(activeChar);
-    }
+	// =========================================================
+	// Constructor
+	public NpcKnownList(L2Npc activeChar)
+	{
+		super(activeChar);
+	}
 
-    // =========================================================
-    // Method - Public
+	// =========================================================
+	// Method - Public
 
-    // =========================================================
-    // Method - Private
+	// =========================================================
+	// Method - Private
 
-    // =========================================================
-    // Property - Public
+	// =========================================================
+	// Property - Public
 
-    @Override
-    public boolean addKnownObject(L2Object object)
-    {
-        if (!super.addKnownObject(object))
-        {
-            return false;
-        }
+	@Override
+	public boolean addKnownObject(L2Object object)
+	{
+		if (!super.addKnownObject(object))
+		{
+			return false;
+		}
 
-        if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance)
-        {
-            final L2Npc npc = (L2Npc) getActiveObject();
+		if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance)
+		{
+			final L2Npc npc = (L2Npc) getActiveObject();
 
-            // Notify to scripts
-            if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE) != null)
-            {
-                for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE))
-                {
-                    quest.notifyCreatureSee(npc, (L2PcInstance) object, object instanceof L2Summon);
-                }
-            }
-        }
-        return true;
-    }
+			// Notify to scripts
+			if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE) != null)
+			{
+				for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE))
+				{
+					quest.notifyCreatureSee(npc, (L2PcInstance) object, object instanceof L2Summon);
+				}
+			}
+		}
+		return true;
+	}
 
-    @Override
-    public L2Npc getActiveChar()
-    {
-        return (L2Npc) super.getActiveChar();
-    }
+	@Override
+	public L2Npc getActiveChar()
+	{
+		return (L2Npc) super.getActiveChar();
+	}
 
-    @Override
-    public int getDistanceToForgetObject(L2Object object)
-    {
-        return getDistanceToWatchObject(object) + 200;
-    }
+	@Override
+	public int getDistanceToForgetObject(L2Object object)
+	{
+		return getDistanceToWatchObject(object) + 200;
+	}
 
-    @Override
-    public int getDistanceToWatchObject(L2Object object)
-    {
-        if (object instanceof L2NpcInstance || !(object instanceof L2Character))
-        {
-            return 0;
-        }
+	@Override
+	public int getDistanceToWatchObject(L2Object object)
+	{
+		if (object instanceof L2NpcInstance || !(object instanceof L2Character))
+		{
+			return 0;
+		}
 
-        if (object instanceof L2Playable)
-        {
-            return object.getKnownList().getDistanceToWatchObject(getActiveObject());
-        }
+		if (object instanceof L2Playable)
+		{
+			return object.getKnownList().getDistanceToWatchObject(getActiveObject());
+		}
 
-        return 500;
-    }
+		return 500;
+	}
 
-    //L2Master mod - support for Walking monsters aggro
-    public void startTrackingTask()
-    {
-        if (_trackingTask == null && getActiveChar().getAggroRange() > 0)
-        {
-            _trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
-        }
-    }
+	//L2Master mod - support for Walking monsters aggro
+	public void startTrackingTask()
+	{
+		if (_trackingTask == null && getActiveChar().getAggroRange() > 0)
+		{
+			_trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
+		}
+	}
 
-    //L2Master mod - support for Walking monsters aggro
-    public void stopTrackingTask()
-    {
-        if (_trackingTask != null)
-        {
-            _trackingTask.cancel(true);
-            _trackingTask = null;
-        }
-    }
+	//L2Master mod - support for Walking monsters aggro
+	public void stopTrackingTask()
+	{
+		if (_trackingTask != null)
+		{
+			_trackingTask.cancel(true);
+			_trackingTask = null;
+		}
+	}
 
-    //L2Master mod - support for Walking monsters aggro
-    private class TrackingTask implements Runnable
-    {
-        public TrackingTask()
-        {
-            //
-        }
+	//L2Master mod - support for Walking monsters aggro
+	private class TrackingTask implements Runnable
+	{
+		public TrackingTask()
+		{
+			//
+		}
 
-        @Override
-        public void run()
-        {
-            if (getActiveChar() instanceof L2Attackable)
-            {
-                final L2Attackable monster = (L2Attackable) getActiveChar();
-                if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO)
-                {
-                    final Collection<L2PcInstance> players = getKnownPlayers().values();
-                    if (players != null)
-                    {
-                        for (L2PcInstance pl : players)
-                        {
-                            if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() &&
-                                    !pl.isInvul(monster))
-                            {
-                                monster.addDamageHate(pl, 0, 100);
-                                monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pl, null);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+		@Override
+		public void run()
+		{
+			if (getActiveChar() instanceof L2Attackable)
+			{
+				final L2Attackable monster = (L2Attackable) getActiveChar();
+				if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO)
+				{
+					final Collection<L2PcInstance> players = getKnownPlayers().values();
+					if (players != null)
+					{
+						for (L2PcInstance pl : players)
+						{
+							if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() &&
+									!pl.isInvul(monster))
+							{
+								monster.addDamageHate(pl, 0, 100);
+								monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pl, null);
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

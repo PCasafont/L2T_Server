@@ -22,20 +22,20 @@ package l2server.gameserver.network.serverpackets;
  */
 public class AutoAttackStop extends L2GameServerPacket
 {
-    // dh
+	// dh
 
-    private int _targetObjId;
+	private int _targetObjId;
 
-    /**
-     */
-    public AutoAttackStop(int targetObjId)
-    {
-        _targetObjId = targetObjId;
-    }
+	/**
+	 */
+	public AutoAttackStop(int targetObjId)
+	{
+		_targetObjId = targetObjId;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_targetObjId);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_targetObjId);
+	}
 }

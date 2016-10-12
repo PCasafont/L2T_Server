@@ -5,8 +5,8 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShortCutDelete extends L2GameServerPacket
 {
-    @Override
-    public void writeImpl()
-    {
-    }
+	@Override
+	public void writeImpl()
+	{
+	}
 }

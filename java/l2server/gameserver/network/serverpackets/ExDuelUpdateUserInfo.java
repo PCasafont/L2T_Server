@@ -24,27 +24,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExDuelUpdateUserInfo extends L2GameServerPacket
 {
-    private L2PcInstance _activeChar;
+	private L2PcInstance _activeChar;
 
-    public ExDuelUpdateUserInfo(L2PcInstance cha)
-    {
-        _activeChar = cha;
-    }
+	public ExDuelUpdateUserInfo(L2PcInstance cha)
+	{
+		_activeChar = cha;
+	}
 
-    /**
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeS(_activeChar.getName());
-        writeD(_activeChar.getObjectId());
-        writeD(_activeChar.getCurrentClass().getId());
-        writeD(_activeChar.getLevel());
-        writeD((int) _activeChar.getCurrentHp());
-        writeD(_activeChar.getMaxVisibleHp());
-        writeD((int) _activeChar.getCurrentMp());
-        writeD(_activeChar.getMaxMp());
-        writeD((int) _activeChar.getCurrentCp());
-        writeD(_activeChar.getMaxCp());
-    }
+	/**
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeS(_activeChar.getName());
+		writeD(_activeChar.getObjectId());
+		writeD(_activeChar.getCurrentClass().getId());
+		writeD(_activeChar.getLevel());
+		writeD((int) _activeChar.getCurrentHp());
+		writeD(_activeChar.getMaxVisibleHp());
+		writeD((int) _activeChar.getCurrentMp());
+		writeD(_activeChar.getMaxMp());
+		writeD((int) _activeChar.getCurrentCp());
+		writeD(_activeChar.getMaxCp());
+	}
 }

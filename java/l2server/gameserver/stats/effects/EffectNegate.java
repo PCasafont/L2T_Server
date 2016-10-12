@@ -27,56 +27,56 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectNegate extends L2Effect
 {
-    public EffectNegate(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectNegate(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    @Override
-    public boolean onStart()
-    {
-        L2Skill skill = getSkill();
+	@Override
+	public boolean onStart()
+	{
+		L2Skill skill = getSkill();
 
-        for (int negateSkillId : skill.getNegateId())
-        {
-            if (negateSkillId != 0)
-            {
-                getEffected().stopSkillEffects(negateSkillId);
-            }
-        }
-        for (L2AbnormalType negateEffectType : skill.getNegateStats())
-        {
-            getEffected().stopEffects(negateEffectType);
-        }
-        if (skill.getNegateAbnormals() != null)
-        {
-            for (L2Abnormal effect : getEffected().getAllEffects())
-            {
-                if (effect == null)
-                {
-                    continue;
-                }
+		for (int negateSkillId : skill.getNegateId())
+		{
+			if (negateSkillId != 0)
+			{
+				getEffected().stopSkillEffects(negateSkillId);
+			}
+		}
+		for (L2AbnormalType negateEffectType : skill.getNegateStats())
+		{
+			getEffected().stopEffects(negateEffectType);
+		}
+		if (skill.getNegateAbnormals() != null)
+		{
+			for (L2Abnormal effect : getEffected().getAllEffects())
+			{
+				if (effect == null)
+				{
+					continue;
+				}
 
-                for (String negateAbnormalType : skill.getNegateAbnormals().keySet())
-                {
-                    for (String stackType : effect.getStackType())
-                    {
-                        if (negateAbnormalType.equalsIgnoreCase(stackType) &&
-                                skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
-                        {
-                            effect.exit();
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        return true;
-    }
+				for (String negateAbnormalType : skill.getNegateAbnormals().keySet())
+				{
+					for (String stackType : effect.getStackType())
+					{
+						if (negateAbnormalType.equalsIgnoreCase(stackType) &&
+								skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
+						{
+							effect.exit();
+							break;
+						}
+					}
+				}
+			}
+		}
+		return true;
+	}
 
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

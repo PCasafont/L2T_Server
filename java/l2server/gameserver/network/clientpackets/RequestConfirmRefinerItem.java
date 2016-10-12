@@ -31,50 +31,50 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class RequestConfirmRefinerItem extends L2GameClientPacket
 {
 
-    private int _targetItemObjId;
-    private int _refinerItemObjId;
+	private int _targetItemObjId;
+	private int _refinerItemObjId;
 
-    @Override
-    protected void readImpl()
-    {
-        _targetItemObjId = readD();
-        _refinerItemObjId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_targetItemObjId = readD();
+		_refinerItemObjId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
-        if (targetItem == null)
-        {
-            return;
-        }
+		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		if (targetItem == null)
+		{
+			return;
+		}
 
-        final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
-        if (refinerItem == null)
-        {
-            return;
-        }
+		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
+		if (refinerItem == null)
+		{
+			return;
+		}
 
-        if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
-            return;
-        }
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
+			return;
+		}
 
-        final int refinerItemId = refinerItem.getItem().getItemId();
-        final int grade = targetItem.getItem().getItemGrade();
-        final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItemId);
-        final int gemStoneId = LifeStoneTable.getGemStoneId(grade, ls.getGrade());
-        final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
+		final int refinerItemId = refinerItem.getItem().getItemId();
+		final int grade = targetItem.getItem().getItemGrade();
+		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItemId);
+		final int gemStoneId = LifeStoneTable.getGemStoneId(grade, ls.getGrade());
+		final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
 
-        activeChar.sendPacket(
-                new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
-    }
+		activeChar.sendPacket(
+				new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
+	}
 }

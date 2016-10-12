@@ -23,27 +23,27 @@ import l2server.gameserver.network.serverpackets.ExShowOwnthingPos;
 public class RequestDominionInfo extends L2GameClientPacket
 {
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-     */
-    @Override
-    protected void readImpl()
-    {
-        // nothing
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+	 */
+	@Override
+	protected void readImpl()
+	{
+		// nothing
+	}
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        sendPacket(new ExShowOwnthingPos());
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		sendPacket(new ExShowOwnthingPos());
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

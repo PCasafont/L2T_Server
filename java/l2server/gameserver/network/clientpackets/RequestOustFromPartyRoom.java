@@ -31,51 +31,51 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestOustFromPartyRoom extends L2GameClientPacket
 {
 
-    private int _charid;
+	private int _charid;
 
-    @Override
-    protected void readImpl()
-    {
-        _charid = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_charid = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        L2PcInstance member = L2World.getInstance().getPlayer(_charid);
-        if (member == null)
-        {
-            return;
-        }
+		L2PcInstance member = L2World.getInstance().getPlayer(_charid);
+		if (member == null)
+		{
+			return;
+		}
 
-        PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
-        if (_room == null)
-        {
-            return;
-        }
+		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
+		if (_room == null)
+		{
+			return;
+		}
 
-        if (_room.getOwner() != activeChar)
-        {
-            return;
-        }
+		if (_room.getOwner() != activeChar)
+		{
+			return;
+		}
 
-        if (activeChar.isInParty() && member.isInParty() &&
-                activeChar.getParty().getPartyLeaderOID() == member.getParty().getPartyLeaderOID())
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISMISS_PARTY_MEMBER));
-        }
-        else
-        {
-            _room.deleteMember(member);
-            member.setPartyRoom(0);
-            member.sendPacket(new ExClosePartyRoom());
-            member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OUSTED_FROM_PARTY_ROOM));
-        }
-    }
+		if (activeChar.isInParty() && member.isInParty() &&
+				activeChar.getParty().getPartyLeaderOID() == member.getParty().getPartyLeaderOID())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISMISS_PARTY_MEMBER));
+		}
+		else
+		{
+			_room.deleteMember(member);
+			member.setPartyRoom(0);
+			member.sendPacket(new ExClosePartyRoom());
+			member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OUSTED_FROM_PARTY_ROOM));
+		}
+	}
 }

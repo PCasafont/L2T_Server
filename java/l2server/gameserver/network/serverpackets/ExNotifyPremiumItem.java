@@ -21,12 +21,12 @@ package l2server.gameserver.network.serverpackets;
 public class ExNotifyPremiumItem extends L2GameServerPacket
 {
 
-    public ExNotifyPremiumItem()
-    {
-    }
+	public ExNotifyPremiumItem()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

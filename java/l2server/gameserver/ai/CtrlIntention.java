@@ -22,10 +22,10 @@ package l2server.gameserver.ai;
 
 public enum CtrlIntention
 {
-    /**
-     * Do nothing, disconnect AI of NPC if no players around
-     */
-    AI_INTENTION_IDLE, /**
+	/**
+	 * Do nothing, disconnect AI of NPC if no players around
+	 */
+	AI_INTENTION_IDLE, /**
  * Alerted state without goal : scan attackable targets, random walk, etc
  */
 AI_INTENTION_ACTIVE, /**

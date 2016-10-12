@@ -27,45 +27,45 @@ import l2server.gameserver.stats.Env;
 public final class ConditionPlayerHasFort extends Condition
 {
 
-    private final int _fort;
+	private final int _fort;
 
-    /**
-     * Instantiates a new condition player has fort.
-     *
-     * @param fort the fort
-     */
-    public ConditionPlayerHasFort(int fort)
-    {
-        _fort = fort;
-    }
+	/**
+	 * Instantiates a new condition player has fort.
+	 *
+	 * @param fort the fort
+	 */
+	public ConditionPlayerHasFort(int fort)
+	{
+		_fort = fort;
+	}
 
-    /**
-     * Test impl.
-     *
-     * @param env the env
-     * @return true, if successful
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * Test impl.
+	 *
+	 * @param env the env
+	 * @return true, if successful
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2Clan clan = ((L2PcInstance) env.player).getClan();
-        if (clan == null)
-        {
-            return _fort == 0;
-        }
+		L2Clan clan = ((L2PcInstance) env.player).getClan();
+		if (clan == null)
+		{
+			return _fort == 0;
+		}
 
-        // Any fortress
-        if (_fort == -1)
-        {
-            return clan.getHasFort() > 0;
-        }
+		// Any fortress
+		if (_fort == -1)
+		{
+			return clan.getHasFort() > 0;
+		}
 
-        return clan.getHasFort() == _fort;
-    }
+		return clan.getHasFort() == _fort;
+	}
 }

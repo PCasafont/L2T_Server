@@ -28,90 +28,90 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class L2MotherTreeZone extends L2ZoneType
 {
-    private int _enterMsg;
-    private int _leaveMsg;
-    private int _mpRegen;
-    private int _hpRegen;
+	private int _enterMsg;
+	private int _leaveMsg;
+	private int _mpRegen;
+	private int _hpRegen;
 
-    public L2MotherTreeZone(int id)
-    {
-        super(id);
-    }
+	public L2MotherTreeZone(int id)
+	{
+		super(id);
+	}
 
-    @Override
-    public void setParameter(String name, String value)
-    {
-        switch (name)
-        {
-            case "enterMsgId":
-                _enterMsg = Integer.valueOf(value);
-                break;
-            case "leaveMsgId":
-                _leaveMsg = Integer.valueOf(value);
-                break;
-            case "MpRegenBonus":
-                _mpRegen = Integer.valueOf(value);
-                break;
-            case "HpRegenBonus":
-                _hpRegen = Integer.valueOf(value);
-                break;
-            default:
-                super.setParameter(name, value);
-                break;
-        }
-    }
+	@Override
+	public void setParameter(String name, String value)
+	{
+		switch (name)
+		{
+			case "enterMsgId":
+				_enterMsg = Integer.valueOf(value);
+				break;
+			case "leaveMsgId":
+				_leaveMsg = Integer.valueOf(value);
+				break;
+			case "MpRegenBonus":
+				_mpRegen = Integer.valueOf(value);
+				break;
+			case "HpRegenBonus":
+				_hpRegen = Integer.valueOf(value);
+				break;
+			default:
+				super.setParameter(name, value);
+				break;
+		}
+	}
 
-    @Override
-    protected void onEnter(L2Character character)
-    {
-        if (character instanceof L2PcInstance)
-        {
-            L2PcInstance player = (L2PcInstance) character;
-            player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
-            if (_enterMsg != 0)
-            {
-                player.sendPacket(SystemMessage.getSystemMessage(_enterMsg));
-            }
-        }
-    }
+	@Override
+	protected void onEnter(L2Character character)
+	{
+		if (character instanceof L2PcInstance)
+		{
+			L2PcInstance player = (L2PcInstance) character;
+			player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
+			if (_enterMsg != 0)
+			{
+				player.sendPacket(SystemMessage.getSystemMessage(_enterMsg));
+			}
+		}
+	}
 
-    @Override
-    protected void onExit(L2Character character)
-    {
-        if (character instanceof L2PcInstance)
-        {
-            L2PcInstance player = (L2PcInstance) character;
-            player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
-            if (_leaveMsg != 0)
-            {
-                player.sendPacket(SystemMessage.getSystemMessage(_leaveMsg));
-            }
-        }
-    }
+	@Override
+	protected void onExit(L2Character character)
+	{
+		if (character instanceof L2PcInstance)
+		{
+			L2PcInstance player = (L2PcInstance) character;
+			player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
+			if (_leaveMsg != 0)
+			{
+				player.sendPacket(SystemMessage.getSystemMessage(_leaveMsg));
+			}
+		}
+	}
 
-    @Override
-    public void onDieInside(L2Character character, L2Character killer)
-    {
-    }
+	@Override
+	public void onDieInside(L2Character character, L2Character killer)
+	{
+	}
 
-    @Override
-    public void onReviveInside(L2Character character)
-    {
-    }
+	@Override
+	public void onReviveInside(L2Character character)
+	{
+	}
 
-    /**
-     * @return the _mpRegen
-     */
-    public int getMpRegenBonus()
-    {
-        return _mpRegen;
-    }
+	/**
+	 * @return the _mpRegen
+	 */
+	public int getMpRegenBonus()
+	{
+		return _mpRegen;
+	}
 
-    /**
-     * @return the _hpRegen
-     */
-    public int getHpRegenBonus()
-    {
-        return _hpRegen;
-    }
+	/**
+	 * @return the _hpRegen
+	 */
+	public int getHpRegenBonus()
+	{
+		return _hpRegen;
+	}
 }

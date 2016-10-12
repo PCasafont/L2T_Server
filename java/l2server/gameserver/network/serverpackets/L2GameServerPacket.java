@@ -27,88 +27,88 @@ import java.util.logging.Level;
  */
 public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 {
-    protected int _invisibleCharacter = 0;
+	protected int _invisibleCharacter = 0;
 
-    /**
-     * @return True if packet originated from invisible character.
-     */
-    public int getInvisibleCharacter()
-    {
-        return _invisibleCharacter;
-    }
+	/**
+	 * @return True if packet originated from invisible character.
+	 */
+	public int getInvisibleCharacter()
+	{
+		return _invisibleCharacter;
+	}
 
-    /**
-     * Set "invisible" boolean flag in the packet.
-     * Packets from invisible characters will not be broadcasted to players.
-     *
-     * @param objectId
-     */
-    public void setInvisibleCharacter(final int objectId)
-    {
-        _invisibleCharacter = objectId;
-    }
+	/**
+	 * Set "invisible" boolean flag in the packet.
+	 * Packets from invisible characters will not be broadcasted to players.
+	 *
+	 * @param objectId
+	 */
+	public void setInvisibleCharacter(final int objectId)
+	{
+		_invisibleCharacter = objectId;
+	}
 
-    /**
-     */
-    @Override
-    protected void write()
-    {
-        try
-        {
-            //if (getClient() != null && getClient().getAccountName() != null
-            //		&& getClient().getAccountName().equalsIgnoreCase("pere"))
-            //	Log.info(getType());
+	/**
+	 */
+	@Override
+	protected void write()
+	{
+		try
+		{
+			//if (getClient() != null && getClient().getAccountName() != null
+			//		&& getClient().getAccountName().equalsIgnoreCase("pere"))
+			//	Log.info(getType());
 
-            byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
-            if (opcode != null)
-            {
-                writeB(opcode);
-            }
+			byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
+			if (opcode != null)
+			{
+				writeB(opcode);
+			}
 
-            writeImpl();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.SEVERE,
-                    "Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e.getMessage(),
-                    e);
-        }
-    }
+			writeImpl();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE,
+					"Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e.getMessage(),
+					e);
+		}
+	}
 
-    public void runImpl()
-    {
+	public void runImpl()
+	{
 
-    }
+	}
 
-    protected abstract void writeImpl();
+	protected abstract void writeImpl();
 
-    protected Class<?> getOpCodeClass()
-    {
-        return getClass();
-    }
+	protected Class<?> getOpCodeClass()
+	{
+		return getClass();
+	}
 
-    /**
-     * @return A String with this packet name for debugging purposes
-     */
-    public final String getType()
-    {
-        String type = "[S]";
-        byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
-        if (opcode != null)
-        {
-            type += " " + Integer.toHexString(opcode[0] & 0xff);
-            if (opcode.length > 2)
-            {
-                type += ":" + Integer.toHexString(opcode[1] & 0xff | opcode[2] & 0xff << 8);
-            }
-            if (opcode.length > 6)
-            {
-                type += ":" + Integer.toHexString(
-                        opcode[3] & 0xff | opcode[4] & 0xff << 8 | opcode[5] & 0xff << 16 | opcode[6] & 0xff << 24);
-            }
-        }
+	/**
+	 * @return A String with this packet name for debugging purposes
+	 */
+	public final String getType()
+	{
+		String type = "[S]";
+		byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
+		if (opcode != null)
+		{
+			type += " " + Integer.toHexString(opcode[0] & 0xff);
+			if (opcode.length > 2)
+			{
+				type += ":" + Integer.toHexString(opcode[1] & 0xff | opcode[2] & 0xff << 8);
+			}
+			if (opcode.length > 6)
+			{
+				type += ":" + Integer.toHexString(
+						opcode[3] & 0xff | opcode[4] & 0xff << 8 | opcode[5] & 0xff << 16 | opcode[6] & 0xff << 24);
+			}
+		}
 
-        type += " " + getClass().getSimpleName();
-        return type;
-    }
+		type += " " + getClass().getSimpleName();
+		return type;
+	}
 }

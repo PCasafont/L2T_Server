@@ -23,28 +23,28 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerIsClanLeader extends Condition
 {
-    private final boolean _val;
+	private final boolean _val;
 
-    /**
-     * Instantiates a new condition player is clan leader.
-     *
-     * @param val the val
-     */
-    public ConditionPlayerIsClanLeader(boolean val)
-    {
-        _val = val;
-    }
+	/**
+	 * Instantiates a new condition player is clan leader.
+	 *
+	 * @param val the val
+	 */
+	public ConditionPlayerIsClanLeader(boolean val)
+	{
+		_val = val;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
-        return ((L2PcInstance) env.player).isClanLeader() == _val;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
+		return ((L2PcInstance) env.player).isClanLeader() == _val;
+	}
 }

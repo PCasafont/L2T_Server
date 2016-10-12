@@ -23,27 +23,27 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class RequestCommissionBuyInfo extends L2GameClientPacket
 {
 
-    @SuppressWarnings("unused")
-    private long _auctionID;
+	@SuppressWarnings("unused")
+	private long _auctionID;
 
-    @Override
-    protected void readImpl()
-    {
-        _auctionID = readQ();
-        readD(); // Category - unused
-    }
+	@Override
+	protected void readImpl()
+	{
+		_auctionID = readQ();
+		readD(); // Category - unused
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
 		/*AuctionManager am = AuctionManager.getInstance();
-        Auctions auction = am.getAuctionById(_auctionID);
+		Auctions auction = am.getAuctionById(_auctionID);
 		if (auction != null)
 		{
 			if (activeChar.getObjectId() == auction.getPlayerID())
@@ -53,5 +53,5 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 		}
 		else
 			activeChar.sendPacket(SystemMessageId.ITEM_PURCHASE_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST);*/
-    }
+	}
 }

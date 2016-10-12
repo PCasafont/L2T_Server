@@ -25,17 +25,17 @@ import l2server.log.Log;
  */
 public final class RequestPCCafeCouponUse extends L2GameClientPacket
 {
-    private String _str;
+	private String _str;
 
-    @Override
-    protected void readImpl()
-    {
-        _str = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_str = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        Log.info("C5: RequestPCCafeCouponUse: S: " + _str);
-    }
+	@Override
+	protected void runImpl()
+	{
+		Log.info("C5: RequestPCCafeCouponUse: S: " + _str);
+	}
 }

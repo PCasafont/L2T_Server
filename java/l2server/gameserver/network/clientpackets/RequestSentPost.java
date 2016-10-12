@@ -32,53 +32,53 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 public final class RequestSentPost extends L2GameClientPacket
 {
 
-    private int _msgId;
+	private int _msgId;
 
-    @Override
-    protected void readImpl()
-    {
-        _msgId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_msgId = readD();
+	}
 
-    @Override
-    public void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null || !Config.ALLOW_MAIL)
-        {
-            return;
-        }
+	@Override
+	public void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null || !Config.ALLOW_MAIL)
+		{
+			return;
+		}
 
-        Message msg = MailManager.getInstance().getMessage(_msgId);
-        if (msg == null)
-        {
-            return;
-        }
+		Message msg = MailManager.getInstance().getMessage(_msgId);
+		if (msg == null)
+		{
+			return;
+		}
 
-        if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-            return;
-        }
+		if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
+			return;
+		}
 
-        if (msg.getSenderId() != activeChar.getObjectId())
-        {
-            Util.handleIllegalPlayerAction(activeChar,
-                    "Player " + activeChar.getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
-            return;
-        }
+		if (msg.getSenderId() != activeChar.getObjectId())
+		{
+			Util.handleIllegalPlayerAction(activeChar,
+					"Player " + activeChar.getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
+			return;
+		}
 
-        if (msg.isDeletedBySender())
-        {
-            return;
-        }
+		if (msg.isDeletedBySender())
+		{
+			return;
+		}
 
-        activeChar.sendPacket(new ExReplySentPost(msg));
-    }
+		activeChar.sendPacket(new ExReplySentPost(msg));
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

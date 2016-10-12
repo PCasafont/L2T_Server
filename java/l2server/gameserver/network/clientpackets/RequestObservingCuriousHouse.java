@@ -7,19 +7,19 @@ import l2server.log.Log;
  */
 public class RequestObservingCuriousHouse extends L2GameClientPacket
 {
-    @SuppressWarnings("unused")
-    private int _unk;
+	@SuppressWarnings("unused")
+	private int _unk;
 
-    @Override
-    public void readImpl()
-    {
-        _unk = readD();
-    }
+	@Override
+	public void readImpl()
+	{
+		_unk = readD();
+	}
 
-    @Override
-    public void runImpl()
-    {
-        // TODO
-        Log.info(getType() + " packet was received from " + getClient() + ".");
-    }
+	@Override
+	public void runImpl()
+	{
+		// TODO
+		Log.info(getType() + " packet was received from " + getClient() + ".");
+	}
 }

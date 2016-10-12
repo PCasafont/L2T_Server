@@ -27,51 +27,51 @@ import java.util.List;
  */
 public class NewCharacterSuccess extends L2GameServerPacket
 {
-    // dddddddddddddddddddd
-    private List<L2PcTemplate> _chars = new ArrayList<>();
+	// dddddddddddddddddddd
+	private List<L2PcTemplate> _chars = new ArrayList<>();
 
-    public NewCharacterSuccess()
-    {
+	public NewCharacterSuccess()
+	{
 
-    }
+	}
 
-    public void addChar(L2PcTemplate template)
-    {
-        _chars.add(template);
-    }
+	public void addChar(L2PcTemplate template)
+	{
+		_chars.add(template);
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_chars.size());
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_chars.size());
 
-        for (L2PcTemplate temp : _chars)
-        {
-            if (temp == null)
-            {
-                continue;
-            }
+		for (L2PcTemplate temp : _chars)
+		{
+			if (temp == null)
+			{
+				continue;
+			}
 
-            writeD(temp.race.ordinal());
-            writeD(temp.startingClassId);
-            writeD(0x46);
-            writeD(temp.baseSTR);
-            writeD(0x0a);
-            writeD(0x46);
-            writeD(temp.baseDEX);
-            writeD(0x0a);
-            writeD(0x46);
-            writeD(temp.baseCON);
-            writeD(0x0a);
-            writeD(0x46);
-            writeD(temp.baseINT);
-            writeD(0x0a);
-            writeD(0x46);
-            writeD(temp.baseWIT);
-            writeD(0x0a);
-            writeD(0x46);
-            writeD(temp.baseMEN);
-            writeD(0x0a);
-        }
-    }
+			writeD(temp.race.ordinal());
+			writeD(temp.startingClassId);
+			writeD(0x46);
+			writeD(temp.baseSTR);
+			writeD(0x0a);
+			writeD(0x46);
+			writeD(temp.baseDEX);
+			writeD(0x0a);
+			writeD(0x46);
+			writeD(temp.baseCON);
+			writeD(0x0a);
+			writeD(0x46);
+			writeD(temp.baseINT);
+			writeD(0x0a);
+			writeD(0x46);
+			writeD(temp.baseWIT);
+			writeD(0x0a);
+			writeD(0x46);
+			writeD(temp.baseMEN);
+			writeD(0x0a);
+		}
+	}
 }

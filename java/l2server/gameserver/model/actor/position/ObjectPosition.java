@@ -25,221 +25,221 @@ import l2server.util.Point3D;
 public class ObjectPosition
 {
 
-    // =========================================================
-    // Data Field
-    private L2Object _activeObject;
-    private int _heading = 0;
-    private Point3D _worldPosition;
-    private L2WorldRegion _worldRegion; // Object localization : Used for items/chars that are seen in the world
+	// =========================================================
+	// Data Field
+	private L2Object _activeObject;
+	private int _heading = 0;
+	private Point3D _worldPosition;
+	private L2WorldRegion _worldRegion; // Object localization : Used for items/chars that are seen in the world
 
-    // =========================================================
-    // Constructor
-    public ObjectPosition(L2Object activeObject)
-    {
-        _activeObject = activeObject;
-        setWorldRegion(L2World.getInstance().getRegion(getWorldPosition()));
-    }
+	// =========================================================
+	// Constructor
+	public ObjectPosition(L2Object activeObject)
+	{
+		_activeObject = activeObject;
+		setWorldRegion(L2World.getInstance().getRegion(getWorldPosition()));
+	}
 
-    // =========================================================
-    // Method - Public
+	// =========================================================
+	// Method - Public
 
-    /**
-     * Set the x,y,z position of the L2Object and if necessary modify its _worldRegion.<BR><BR>
-     * <p>
-     * <B><U> Assert </U> :</B><BR><BR>
-     * <li> _worldRegion != null</li><BR><BR>
-     * <p>
-     * <B><U> Example of use </U> :</B><BR><BR>
-     * <li> Update position during and after movement, or after teleport </li><BR>
-     */
-    public final void setXYZ(int x, int y, int z)
-    {
-        assert getWorldRegion() != null;
+	/**
+	 * Set the x,y,z position of the L2Object and if necessary modify its _worldRegion.<BR><BR>
+	 * <p>
+	 * <B><U> Assert </U> :</B><BR><BR>
+	 * <li> _worldRegion != null</li><BR><BR>
+	 * <p>
+	 * <B><U> Example of use </U> :</B><BR><BR>
+	 * <li> Update position during and after movement, or after teleport </li><BR>
+	 */
+	public final void setXYZ(int x, int y, int z)
+	{
+		assert getWorldRegion() != null;
 
-        setWorldPosition(x, y, z);
+		setWorldPosition(x, y, z);
 
-        try
-        {
-            if (L2World.getInstance().getRegion(getWorldPosition()) != getWorldRegion())
-            {
-                updateWorldRegion();
-            }
-        }
-        catch (Exception e)
-        {
-            Log.warning("Object at bad coords: (x: " + getX() + ", y: " + getY() + ", z: " + getZ() + ").");
-            badCoords();
-        }
-    }
+		try
+		{
+			if (L2World.getInstance().getRegion(getWorldPosition()) != getWorldRegion())
+			{
+				updateWorldRegion();
+			}
+		}
+		catch (Exception e)
+		{
+			Log.warning("Object at bad coords: (x: " + getX() + ", y: " + getY() + ", z: " + getZ() + ").");
+			badCoords();
+		}
+	}
 
-    /**
-     * Called on setXYZ exception.<BR><BR>
-     * <B><U> Overwritten in </U> :</B><BR><BR>
-     * <li> CharPosition</li>
-     * <li> PcPosition</li><BR>
-     */
-    protected void badCoords()
-    {
+	/**
+	 * Called on setXYZ exception.<BR><BR>
+	 * <B><U> Overwritten in </U> :</B><BR><BR>
+	 * <li> CharPosition</li>
+	 * <li> PcPosition</li><BR>
+	 */
+	protected void badCoords()
+	{
 
-    }
+	}
 
-    /**
-     * Set the x,y,z position of the L2Object and make it invisible.<BR><BR>
-     * <p>
-     * <B><U> Concept</U> :</B><BR><BR>
-     * A L2Object is invisble if <B>_hidden</B>=true or <B>_worldregion</B>==null <BR><BR>
-     * <p>
-     * <B><U> Assert </U> :</B><BR><BR>
-     * <li> _worldregion==null <I>(L2Object is invisible)</I></li><BR><BR>
-     * <p>
-     * <B><U> Example of use </U> :</B><BR><BR>
-     * <li> Create a Door</li>
-     * <li> Restore L2PcInstance</li><BR>
-     */
-    public final void setXYZInvisible(int x, int y, int z)
-    {
-        assert getWorldRegion() == null;
-        if (x > L2World.MAP_MAX_X)
-        {
-            x = L2World.MAP_MAX_X - 5000;
-        }
-        if (x < L2World.MAP_MIN_X)
-        {
-            x = L2World.MAP_MIN_X + 5000;
-        }
-        if (y > L2World.MAP_MAX_Y)
-        {
-            y = L2World.MAP_MAX_Y - 5000;
-        }
-        if (y < L2World.MAP_MIN_Y)
-        {
-            y = L2World.MAP_MIN_Y + 5000;
-        }
+	/**
+	 * Set the x,y,z position of the L2Object and make it invisible.<BR><BR>
+	 * <p>
+	 * <B><U> Concept</U> :</B><BR><BR>
+	 * A L2Object is invisble if <B>_hidden</B>=true or <B>_worldregion</B>==null <BR><BR>
+	 * <p>
+	 * <B><U> Assert </U> :</B><BR><BR>
+	 * <li> _worldregion==null <I>(L2Object is invisible)</I></li><BR><BR>
+	 * <p>
+	 * <B><U> Example of use </U> :</B><BR><BR>
+	 * <li> Create a Door</li>
+	 * <li> Restore L2PcInstance</li><BR>
+	 */
+	public final void setXYZInvisible(int x, int y, int z)
+	{
+		assert getWorldRegion() == null;
+		if (x > L2World.MAP_MAX_X)
+		{
+			x = L2World.MAP_MAX_X - 5000;
+		}
+		if (x < L2World.MAP_MIN_X)
+		{
+			x = L2World.MAP_MIN_X + 5000;
+		}
+		if (y > L2World.MAP_MAX_Y)
+		{
+			y = L2World.MAP_MAX_Y - 5000;
+		}
+		if (y < L2World.MAP_MIN_Y)
+		{
+			y = L2World.MAP_MIN_Y + 5000;
+		}
 
-        setWorldPosition(x, y, z);
-        getActiveObject().setIsVisible(false);
-    }
+		setWorldPosition(x, y, z);
+		getActiveObject().setIsVisible(false);
+	}
 
-    /**
-     * checks if current object changed its region, if so, update referencies
-     */
-    public void updateWorldRegion()
-    {
-        if (!getActiveObject().isVisible())
-        {
-            return;
-        }
+	/**
+	 * checks if current object changed its region, if so, update referencies
+	 */
+	public void updateWorldRegion()
+	{
+		if (!getActiveObject().isVisible())
+		{
+			return;
+		}
 
-        L2WorldRegion newRegion = L2World.getInstance().getRegion(getWorldPosition());
-        if (newRegion != getWorldRegion())
-        {
-            getWorldRegion().removeVisibleObject(getActiveObject());
+		L2WorldRegion newRegion = L2World.getInstance().getRegion(getWorldPosition());
+		if (newRegion != getWorldRegion())
+		{
+			getWorldRegion().removeVisibleObject(getActiveObject());
 
-            setWorldRegion(newRegion);
+			setWorldRegion(newRegion);
 
-            // Add the L2Oject spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
-            getWorldRegion().addVisibleObject(getActiveObject());
-        }
-    }
+			// Add the L2Oject spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
+			getWorldRegion().addVisibleObject(getActiveObject());
+		}
+	}
 
-    // =========================================================
-    // Method - Private
+	// =========================================================
+	// Method - Private
 
-    // =========================================================
-    // Property - Public
-    public L2Object getActiveObject()
-    {
-        return _activeObject;
-    }
+	// =========================================================
+	// Property - Public
+	public L2Object getActiveObject()
+	{
+		return _activeObject;
+	}
 
-    public final int getHeading()
-    {
-        return _heading;
-    }
+	public final int getHeading()
+	{
+		return _heading;
+	}
 
-    public final void setHeading(int value)
-    {
-        _heading = value;
-    }
+	public final void setHeading(int value)
+	{
+		_heading = value;
+	}
 
-    /**
-     * Return the x position of the L2Object.
-     */
-    public final int getX()
-    {
-        return getWorldPosition().getX();
-    }
+	/**
+	 * Return the x position of the L2Object.
+	 */
+	public final int getX()
+	{
+		return getWorldPosition().getX();
+	}
 
-    public final void setX(int value)
-    {
-        getWorldPosition().setX(value);
-    }
+	public final void setX(int value)
+	{
+		getWorldPosition().setX(value);
+	}
 
-    /**
-     * Return the y position of the L2Object.
-     */
-    public final int getY()
-    {
-        return getWorldPosition().getY();
-    }
+	/**
+	 * Return the y position of the L2Object.
+	 */
+	public final int getY()
+	{
+		return getWorldPosition().getY();
+	}
 
-    public final void setY(int value)
-    {
-        getWorldPosition().setY(value);
-    }
+	public final void setY(int value)
+	{
+		getWorldPosition().setY(value);
+	}
 
-    /**
-     * Return the z position of the L2Object.
-     */
-    public final int getZ()
-    {
-        return getWorldPosition().getZ();
-    }
+	/**
+	 * Return the z position of the L2Object.
+	 */
+	public final int getZ()
+	{
+		return getWorldPosition().getZ();
+	}
 
-    public final void setZ(int value)
-    {
-        getWorldPosition().setZ(value);
-    }
+	public final void setZ(int value)
+	{
+		getWorldPosition().setZ(value);
+	}
 
-    public final Point3D getWorldPosition()
-    {
-        if (_worldPosition == null)
-        {
-            _worldPosition = new Point3D(0, 0, 0);
-        }
-        return _worldPosition;
-    }
+	public final Point3D getWorldPosition()
+	{
+		if (_worldPosition == null)
+		{
+			_worldPosition = new Point3D(0, 0, 0);
+		}
+		return _worldPosition;
+	}
 
-    public final void setWorldPosition(int x, int y, int z)
-    {
-        getWorldPosition().setXYZ(x, y, z);
-    }
+	public final void setWorldPosition(int x, int y, int z)
+	{
+		getWorldPosition().setXYZ(x, y, z);
+	}
 
-    public final void setWorldPosition(Point3D newPosition)
-    {
-        setWorldPosition(newPosition.getX(), newPosition.getY(), newPosition.getZ());
-    }
+	public final void setWorldPosition(Point3D newPosition)
+	{
+		setWorldPosition(newPosition.getX(), newPosition.getY(), newPosition.getZ());
+	}
 
-    public final L2WorldRegion getWorldRegion()
-    {
-        return _worldRegion;
-    }
+	public final L2WorldRegion getWorldRegion()
+	{
+		return _worldRegion;
+	}
 
-    public void setWorldRegion(L2WorldRegion value)
-    {
-        if (_worldRegion != null &&
-                getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
-        {
-            if (value != null)
-            {
-                _worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change
-            }
-            else
-            {
-                _worldRegion.removeFromZones((L2Character) getActiveObject()); // at world region change
-            }
-        }
+	public void setWorldRegion(L2WorldRegion value)
+	{
+		if (_worldRegion != null &&
+				getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
+		{
+			if (value != null)
+			{
+				_worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change
+			}
+			else
+			{
+				_worldRegion.removeFromZones((L2Character) getActiveObject()); // at world region change
+			}
+		}
 
-        _worldRegion = value;
-    }
+		_worldRegion = value;
+	}
 }

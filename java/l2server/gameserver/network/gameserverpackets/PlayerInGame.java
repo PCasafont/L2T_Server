@@ -25,29 +25,29 @@ import java.util.ArrayList;
  */
 public class PlayerInGame extends BaseSendablePacket
 {
-    public PlayerInGame(String player)
-    {
-        writeC(0x02);
-        writeH(1);
-        writeS(player);
-    }
+	public PlayerInGame(String player)
+	{
+		writeC(0x02);
+		writeH(1);
+		writeS(player);
+	}
 
-    public PlayerInGame(ArrayList<String> players)
-    {
-        writeC(0x02);
-        writeH(players.size());
-        for (String pc : players)
-        {
-            writeS(pc);
-        }
-    }
+	public PlayerInGame(ArrayList<String> players)
+	{
+		writeC(0x02);
+		writeH(players.size());
+		for (String pc : players)
+		{
+			writeS(pc);
+		}
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
-     */
-    @Override
-    public byte[] getContent() throws IOException
-    {
-        return getBytes();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
+	 */
+	@Override
+	public byte[] getContent() throws IOException
+	{
+		return getBytes();
+	}
 }

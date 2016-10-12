@@ -34,45 +34,45 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreManageListSell extends L2ItemListPacket
 {
-    private int _objId;
-    private long _playerAdena;
-    private boolean _packageSale;
-    private TradeList.TradeItem[] _itemList;
-    private TradeList.TradeItem[] _sellList;
+	private int _objId;
+	private long _playerAdena;
+	private boolean _packageSale;
+	private TradeList.TradeItem[] _itemList;
+	private TradeList.TradeItem[] _sellList;
 
-    public PrivateStoreManageListSell(L2PcInstance player, boolean isPackageSale)
-    {
-        _objId = player.getObjectId();
-        _playerAdena = player.getAdena();
-        player.getSellList().updateItems();
-        _packageSale = isPackageSale;
-        _itemList = player.getInventory().getAvailableItems(player.getSellList());
-        _sellList = player.getSellList().getItems();
-    }
+	public PrivateStoreManageListSell(L2PcInstance player, boolean isPackageSale)
+	{
+		_objId = player.getObjectId();
+		_playerAdena = player.getAdena();
+		player.getSellList().updateItems();
+		_packageSale = isPackageSale;
+		_itemList = player.getInventory().getAvailableItems(player.getSellList());
+		_sellList = player.getSellList().getItems();
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        //section 1
-        writeD(_objId);
-        writeD(_packageSale ? 1 : 0); // Package sell
-        writeQ(_playerAdena);
+	@Override
+	protected final void writeImpl()
+	{
+		//section 1
+		writeD(_objId);
+		writeD(_packageSale ? 1 : 0); // Package sell
+		writeQ(_playerAdena);
 
-        //section2
-        writeD(_itemList.length); //for potential sells
-        for (TradeList.TradeItem item : _itemList)
-        {
-            writeItem(item);
-            writeQ(item.getItem().getReferencePrice() * 2);
-        }
-        //section 3
-        writeD(_sellList.length); //count for any items already added for sell
-        for (TradeList.TradeItem item : _sellList)
-        {
-            writeItem(item);
+		//section2
+		writeD(_itemList.length); //for potential sells
+		for (TradeList.TradeItem item : _itemList)
+		{
+			writeItem(item);
+			writeQ(item.getItem().getReferencePrice() * 2);
+		}
+		//section 3
+		writeD(_sellList.length); //count for any items already added for sell
+		for (TradeList.TradeItem item : _sellList)
+		{
+			writeItem(item);
 
-            writeQ(item.getPrice());
-            writeQ(item.getItem().getReferencePrice() * 2);
-        }
-    }
+			writeQ(item.getPrice());
+			writeQ(item.getItem().getReferencePrice() * 2);
+		}
+	}
 }

@@ -23,19 +23,19 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class RequestChangeAttributeCancel extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
-        player.setActiveEnchantAttrItem(null);
-    }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
+		player.setActiveEnchantAttrItem(null);
+	}
 }

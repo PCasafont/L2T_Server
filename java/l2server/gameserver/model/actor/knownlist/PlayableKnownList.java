@@ -19,27 +19,27 @@ import l2server.gameserver.model.actor.L2Playable;
 
 public class PlayableKnownList extends CharKnownList
 {
-    // =========================================================
-    // Data Field
+	// =========================================================
+	// Data Field
 
-    // =========================================================
-    // Constructor
-    public PlayableKnownList(L2Playable activeChar)
-    {
-        super(activeChar);
-    }
+	// =========================================================
+	// Constructor
+	public PlayableKnownList(L2Playable activeChar)
+	{
+		super(activeChar);
+	}
 
-    // =========================================================
-    // Method - Public
+	// =========================================================
+	// Method - Public
 
-    // =========================================================
-    // Method - Private
+	// =========================================================
+	// Method - Private
 
-    // =========================================================
-    // Property - Public
-    @Override
-    public L2Playable getActiveChar()
-    {
-        return (L2Playable) super.getActiveChar();
-    }
+	// =========================================================
+	// Property - Public
+	@Override
+	public L2Playable getActiveChar()
+	{
+		return (L2Playable) super.getActiveChar();
+	}
 }

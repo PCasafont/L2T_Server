@@ -27,30 +27,30 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameRemovePlayer extends L2GameServerPacket
 {
-    L2PcInstance _player;
-    boolean _isRedTeam;
+	L2PcInstance _player;
+	boolean _isRedTeam;
 
-    /**
-     * Remove Player from Minigame Waiting List
-     *
-     * @param player:    Player to Remove
-     * @param isRedTeam: Is Player from Red Team?
-     */
-    public ExCubeGameRemovePlayer(L2PcInstance player, boolean isRedTeam)
-    {
-        _player = player;
-        _isRedTeam = isRedTeam;
-    }
+	/**
+	 * Remove Player from Minigame Waiting List
+	 *
+	 * @param player:    Player to Remove
+	 * @param isRedTeam: Is Player from Red Team?
+	 */
+	public ExCubeGameRemovePlayer(L2PcInstance player, boolean isRedTeam)
+	{
+		_player = player;
+		_isRedTeam = isRedTeam;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(0xffffffff);
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(0xffffffff);
 
-        writeD(_isRedTeam ? 0x01 : 0x00);
-        writeD(_player.getObjectId());
-    }
+		writeD(_isRedTeam ? 0x01 : 0x00);
+		writeD(_player.getObjectId());
+	}
 }

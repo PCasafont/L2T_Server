@@ -22,19 +22,19 @@ import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitData;
  */
 public class ExPledgeRecruitBoardDetail extends L2GameServerPacket
 {
-    private ClanRecruitData _data;
+	private ClanRecruitData _data;
 
-    public ExPledgeRecruitBoardDetail(ClanRecruitData data)
-    {
-        _data = data;
-    }
+	public ExPledgeRecruitBoardDetail(ClanRecruitData data)
+	{
+		_data = data;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_data.clan.getClanId());
-        writeD(_data.karma);
-        writeS(_data.introduction);
-        writeS(_data.largeIntroduction);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_data.clan.getClanId());
+		writeD(_data.karma);
+		writeS(_data.introduction);
+		writeS(_data.largeIntroduction);
+	}
 }

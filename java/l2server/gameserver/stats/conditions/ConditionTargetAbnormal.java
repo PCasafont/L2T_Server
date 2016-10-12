@@ -24,24 +24,24 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetAbnormal extends Condition
 {
-    private final int _abnormalId;
+	private final int _abnormalId;
 
-    /**
-     * Instantiates a new condition target abnormal.
-     *
-     * @param abnormalId the abnormal id
-     */
-    public ConditionTargetAbnormal(int abnormalId)
-    {
-        _abnormalId = abnormalId;
-    }
+	/**
+	 * Instantiates a new condition target abnormal.
+	 *
+	 * @param abnormalId the abnormal id
+	 */
+	public ConditionTargetAbnormal(int abnormalId)
+	{
+		_abnormalId = abnormalId;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    boolean testImpl(Env env)
-    {
-        return env.target.getAbnormalEffect().contains(_abnormalId);
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	boolean testImpl(Env env)
+	{
+		return env.target.getAbnormalEffect().contains(_abnormalId);
+	}
 }

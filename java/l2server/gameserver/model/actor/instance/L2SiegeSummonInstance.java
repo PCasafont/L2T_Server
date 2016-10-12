@@ -21,20 +21,20 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SiegeSummonInstance extends L2SummonInstance
 {
-    public L2SiegeSummonInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
-    {
-        super(objectId, template, owner, skill);
-        setInstanceType(InstanceType.L2SiegeSummonInstance);
-    }
+	public L2SiegeSummonInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
+	{
+		super(objectId, template, owner, skill);
+		setInstanceType(InstanceType.L2SiegeSummonInstance);
+	}
 
-    @Override
-    public void onSpawn()
-    {
-        super.onSpawn();
-        if (!getOwner().isGM() && !isInsideZone(L2Character.ZONE_SIEGE))
-        {
-            unSummon(getOwner());
-            getOwner().sendMessage("Summon was unsummoned because it exited siege zone");
-        }
-    }
+	@Override
+	public void onSpawn()
+	{
+		super.onSpawn();
+		if (!getOwner().isGM() && !isInsideZone(L2Character.ZONE_SIEGE))
+		{
+			unSummon(getOwner());
+			getOwner().sendMessage("Summon was unsummoned because it exited siege zone");
+		}
+	}
 }

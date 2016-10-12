@@ -24,28 +24,28 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public final class L2TrainerInstance extends L2NpcInstance
 {
-    /**
-     * @param template
-     */
-    public L2TrainerInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2TrainerInstance);
-    }
+	/**
+	 * @param template
+	 */
+	public L2TrainerInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2TrainerInstance);
+	}
 
-    @Override
-    public String getHtmlPath(int npcId, int val)
-    {
-        String pom = "";
-        if (val == 0)
-        {
-            pom = "" + npcId;
-        }
-        else
-        {
-            pom = npcId + "-" + val;
-        }
+	@Override
+	public String getHtmlPath(int npcId, int val)
+	{
+		String pom = "";
+		if (val == 0)
+		{
+			pom = "" + npcId;
+		}
+		else
+		{
+			pom = npcId + "-" + val;
+		}
 
-        return "trainer/" + pom + ".htm";
-    }
+		return "trainer/" + pom + ".htm";
+	}
 }

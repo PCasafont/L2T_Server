@@ -24,85 +24,85 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public class EffectParalyze extends L2Effect
 {
-    public EffectParalyze(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectParalyze(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectParalyze(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectParalyze(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
-     */
-    @Override
-    protected boolean effectCanBeStolen()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+	 */
+	@Override
+	protected boolean effectCanBeStolen()
+	{
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.PARALYZE;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.PARALYZE;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.PARALYZE;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.PARALYZE;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (getAbnormal() != null)
-        {
-            if (getAbnormal().getTemplate().visualEffect != null &&
-                    getAbnormal().getTemplate().visualEffect.length == 0)
-            {
-                getEffected().startVisualEffect(VisualEffect.HOLD_1);
-            }
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (getAbnormal() != null)
+		{
+			if (getAbnormal().getTemplate().visualEffect != null &&
+					getAbnormal().getTemplate().visualEffect.length == 0)
+			{
+				getEffected().startVisualEffect(VisualEffect.HOLD_1);
+			}
+		}
 
-        getEffected().startParalyze();
-        return super.onStart();
-    }
+		getEffected().startParalyze();
+		return super.onStart();
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        if (getAbnormal() != null)
-        {
-            if (getAbnormal().getTemplate().visualEffect != null &&
-                    getAbnormal().getTemplate().visualEffect.length == 0)
-            {
-                getEffected().stopVisualEffect(VisualEffect.HOLD_1);
-            }
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		if (getAbnormal() != null)
+		{
+			if (getAbnormal().getTemplate().visualEffect != null &&
+					getAbnormal().getTemplate().visualEffect.length == 0)
+			{
+				getEffected().stopVisualEffect(VisualEffect.HOLD_1);
+			}
+		}
 
-        getEffected().stopParalyze(false);
-        super.onExit();
-    }
+		getEffected().stopParalyze(false);
+		super.onExit();
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return true;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return true;
+	}
 }

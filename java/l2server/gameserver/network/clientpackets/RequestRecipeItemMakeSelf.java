@@ -23,42 +23,42 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 {
-    //
+	//
 
-    private int _id;
+	private int _id;
 
-    @Override
-    protected void readImpl()
-    {
-        _id = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_id = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getManufacture().tryPerformAction("RecipeMakeSelf"))
-        {
-            return;
-        }
+		if (!getClient().getFloodProtectors().getManufacture().tryPerformAction("RecipeMakeSelf"))
+		{
+			return;
+		}
 
-        if (activeChar.getPrivateStoreType() != 0)
-        {
-            activeChar.sendMessage("Cannot make items while trading");
-            return;
-        }
+		if (activeChar.getPrivateStoreType() != 0)
+		{
+			activeChar.sendMessage("Cannot make items while trading");
+			return;
+		}
 
-        if (activeChar.isInCraftMode())
-        {
-            activeChar.sendMessage("Currently in Craft Mode");
-            return;
-        }
+		if (activeChar.isInCraftMode())
+		{
+			activeChar.sendMessage("Currently in Craft Mode");
+			return;
+		}
 
-        RecipeController.getInstance().requestMakeItem(activeChar, _id);
-    }
+		RecipeController.getInstance().requestMakeItem(activeChar, _id);
+	}
 }

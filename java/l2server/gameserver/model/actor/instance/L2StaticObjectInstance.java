@@ -36,213 +36,213 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class L2StaticObjectInstance extends L2Character
 {
-    /**
-     * The interaction distance of the L2StaticObjectInstance
-     */
-    public static final int INTERACTION_DISTANCE = 150;
+	/**
+	 * The interaction distance of the L2StaticObjectInstance
+	 */
+	public static final int INTERACTION_DISTANCE = 150;
 
-    private int _staticObjectId;
-    private int _meshIndex = 0; // 0 - static objects, alternate static objects
-    private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
-    private ShowTownMap _map;
+	private int _staticObjectId;
+	private int _meshIndex = 0; // 0 - static objects, alternate static objects
+	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
+	private ShowTownMap _map;
 
-    /**
-     * This class may be created only by L2Character and only for AI
-     */
-    public class AIAccessor extends L2Character.AIAccessor
-    {
-        protected AIAccessor()
-        {
-        }
+	/**
+	 * This class may be created only by L2Character and only for AI
+	 */
+	public class AIAccessor extends L2Character.AIAccessor
+	{
+		protected AIAccessor()
+		{
+		}
 
-        @Override
-        public L2StaticObjectInstance getActor()
-        {
-            return L2StaticObjectInstance.this;
-        }
+		@Override
+		public L2StaticObjectInstance getActor()
+		{
+			return L2StaticObjectInstance.this;
+		}
 
-        @Override
-        public void moveTo(int x, int y, int z, int offset)
-        {
-        }
+		@Override
+		public void moveTo(int x, int y, int z, int offset)
+		{
+		}
 
-        @Override
-        public void moveTo(int x, int y, int z)
-        {
-        }
+		@Override
+		public void moveTo(int x, int y, int z)
+		{
+		}
 
-        @Override
-        public void stopMove(L2CharPosition pos)
-        {
-        }
+		@Override
+		public void stopMove(L2CharPosition pos)
+		{
+		}
 
-        @Override
-        public void doAttack(L2Character target)
-        {
-        }
+		@Override
+		public void doAttack(L2Character target)
+		{
+		}
 
-        @Override
-        public void doCast(L2Skill skill, boolean second)
-        {
-        }
-    }
+		@Override
+		public void doCast(L2Skill skill, boolean second)
+		{
+		}
+	}
 
-    @Override
-    public L2CharacterAI getAI()
-    {
-        return null;
-    }
+	@Override
+	public L2CharacterAI getAI()
+	{
+		return null;
+	}
 
-    /**
-     * @return Returns the StaticObjectId.
-     */
-    public int getStaticObjectId()
-    {
-        return _staticObjectId;
-    }
+	/**
+	 * @return Returns the StaticObjectId.
+	 */
+	public int getStaticObjectId()
+	{
+		return _staticObjectId;
+	}
 
-    /**
-     */
-    public L2StaticObjectInstance(int objectId, L2CharTemplate template, int staticId)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2StaticObjectInstance);
-        _staticObjectId = staticId;
-    }
+	/**
+	 */
+	public L2StaticObjectInstance(int objectId, L2CharTemplate template, int staticId)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2StaticObjectInstance);
+		_staticObjectId = staticId;
+	}
 
-    @Override
-    public final StaticObjectKnownList getKnownList()
-    {
-        return (StaticObjectKnownList) super.getKnownList();
-    }
+	@Override
+	public final StaticObjectKnownList getKnownList()
+	{
+		return (StaticObjectKnownList) super.getKnownList();
+	}
 
-    @Override
-    public void initKnownList()
-    {
-        setKnownList(new StaticObjectKnownList(this));
-    }
+	@Override
+	public void initKnownList()
+	{
+		setKnownList(new StaticObjectKnownList(this));
+	}
 
-    @Override
-    public final StaticObjStat getStat()
-    {
-        return (StaticObjStat) super.getStat();
-    }
+	@Override
+	public final StaticObjStat getStat()
+	{
+		return (StaticObjStat) super.getStat();
+	}
 
-    @Override
-    public void initCharStat()
-    {
-        setStat(new StaticObjStat(this));
-    }
+	@Override
+	public void initCharStat()
+	{
+		setStat(new StaticObjStat(this));
+	}
 
-    @Override
-    public final StaticObjStatus getStatus()
-    {
-        return (StaticObjStatus) super.getStatus();
-    }
+	@Override
+	public final StaticObjStatus getStatus()
+	{
+		return (StaticObjStatus) super.getStatus();
+	}
 
-    @Override
-    public void initCharStatus()
-    {
-        setStatus(new StaticObjStatus(this));
-    }
+	@Override
+	public void initCharStatus()
+	{
+		setStatus(new StaticObjStatus(this));
+	}
 
-    public int getType()
-    {
-        return _type;
-    }
+	public int getType()
+	{
+		return _type;
+	}
 
-    public void setType(int type)
-    {
-        _type = type;
-    }
+	public void setType(int type)
+	{
+		_type = type;
+	}
 
-    public void setMap(String texture, int x, int y)
-    {
-        _map = new ShowTownMap("town_map." + texture, x, y);
-    }
+	public void setMap(String texture, int x, int y)
+	{
+		_map = new ShowTownMap("town_map." + texture, x, y);
+	}
 
-    public ShowTownMap getMap()
-    {
-        return _map;
-    }
+	public ShowTownMap getMap()
+	{
+		return _map;
+	}
 
-    @Override
-    public final int getLevel()
-    {
-        return 1;
-    }
+	@Override
+	public final int getLevel()
+	{
+		return 1;
+	}
 
-    /**
-     * Return null.<BR><BR>
-     */
-    @Override
-    public L2ItemInstance getActiveWeaponInstance()
-    {
-        return null;
-    }
+	/**
+	 * Return null.<BR><BR>
+	 */
+	@Override
+	public L2ItemInstance getActiveWeaponInstance()
+	{
+		return null;
+	}
 
-    @Override
-    public L2Weapon getActiveWeaponItem()
-    {
-        return null;
-    }
+	@Override
+	public L2Weapon getActiveWeaponItem()
+	{
+		return null;
+	}
 
-    @Override
-    public L2ItemInstance getSecondaryWeaponInstance()
-    {
-        return null;
-    }
+	@Override
+	public L2ItemInstance getSecondaryWeaponInstance()
+	{
+		return null;
+	}
 
-    @Override
-    public L2Weapon getSecondaryWeaponItem()
-    {
-        return null;
-    }
+	@Override
+	public L2Weapon getSecondaryWeaponItem()
+	{
+		return null;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.model.L2Object#isAttackable()
-     */
-    @Override
-    public boolean isAutoAttackable(L2Character attacker)
-    {
-        return false;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.model.L2Object#isAttackable()
+	 */
+	@Override
+	public boolean isAutoAttackable(L2Character attacker)
+	{
+		return false;
+	}
 
-    /**
-     * Set the meshIndex of the object<BR><BR>
-     * <p>
-     * <B><U> Values </U> :</B><BR><BR>
-     * <li> default textures : 0</li>
-     * <li> alternate textures : 1 </li><BR><BR>
-     *
-     * @param meshIndex
-     */
-    public void setMeshIndex(int meshIndex)
-    {
-        _meshIndex = meshIndex;
-        this.broadcastPacket(new StaticObject(this));
-    }
+	/**
+	 * Set the meshIndex of the object<BR><BR>
+	 * <p>
+	 * <B><U> Values </U> :</B><BR><BR>
+	 * <li> default textures : 0</li>
+	 * <li> alternate textures : 1 </li><BR><BR>
+	 *
+	 * @param meshIndex
+	 */
+	public void setMeshIndex(int meshIndex)
+	{
+		_meshIndex = meshIndex;
+		this.broadcastPacket(new StaticObject(this));
+	}
 
-    /**
-     * Return the meshIndex of the object.<BR><BR>
-     * <p>
-     * <B><U> Values </U> :</B><BR><BR>
-     * <li> default textures : 0</li>
-     * <li> alternate textures : 1 </li><BR><BR>
-     */
-    public int getMeshIndex()
-    {
-        return _meshIndex;
-    }
+	/**
+	 * Return the meshIndex of the object.<BR><BR>
+	 * <p>
+	 * <B><U> Values </U> :</B><BR><BR>
+	 * <li> default textures : 0</li>
+	 * <li> alternate textures : 1 </li><BR><BR>
+	 */
+	public int getMeshIndex()
+	{
+		return _meshIndex;
+	}
 
-    @Override
-    public void updateAbnormalEffect()
-    {
-    }
+	@Override
+	public void updateAbnormalEffect()
+	{
+	}
 
-    @Override
-    public void sendInfo(L2PcInstance activeChar)
-    {
-        activeChar.sendPacket(new StaticObject(this));
-    }
+	@Override
+	public void sendInfo(L2PcInstance activeChar)
+	{
+		activeChar.sendPacket(new StaticObject(this));
+	}
 }

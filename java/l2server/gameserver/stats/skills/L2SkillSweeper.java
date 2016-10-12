@@ -25,32 +25,32 @@ import l2server.gameserver.templates.StatsSet;
  */
 public class L2SkillSweeper extends L2Skill
 {
-    private boolean _absorbHp;
-    private int _absorbAbs;
+	private boolean _absorbHp;
+	private int _absorbAbs;
 
-    /**
-     * @param set
-     */
-    public L2SkillSweeper(StatsSet set)
-    {
-        super(set);
-        _absorbHp = set.getBool("absorbHp", true);
-        _absorbAbs = set.getInteger("absorbAbs", -1);
-    }
+	/**
+	 * @param set
+	 */
+	public L2SkillSweeper(StatsSet set)
+	{
+		super(set);
+		_absorbHp = set.getBool("absorbHp", true);
+		_absorbAbs = set.getInteger("absorbAbs", -1);
+	}
 
-    @Override
-    public void useSkill(L2Character caster, L2Object[] targets)
-    {
-        // not used
-    }
+	@Override
+	public void useSkill(L2Character caster, L2Object[] targets)
+	{
+		// not used
+	}
 
-    public boolean isAbsorbHp()
-    {
-        return _absorbHp;
-    }
+	public boolean isAbsorbHp()
+	{
+		return _absorbHp;
+	}
 
-    public int getAbsorbAbs()
-    {
-        return _absorbAbs;
-    }
+	public int getAbsorbAbs()
+	{
+		return _absorbAbs;
+	}
 }

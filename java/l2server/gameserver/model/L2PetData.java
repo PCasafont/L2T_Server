@@ -28,144 +28,144 @@ import java.util.List;
  */
 public class L2PetData
 {
-    private TIntObjectHashMap<L2PetLevelData> _levelStats = new TIntObjectHashMap<>();
-    private List<L2PetSkillLearn> _skills = new ArrayList<>();
+	private TIntObjectHashMap<L2PetLevelData> _levelStats = new TIntObjectHashMap<>();
+	private List<L2PetSkillLearn> _skills = new ArrayList<>();
 
-    private int _load = 20000;
-    private int _hungry_limit = 1;
-    private int _minlvl = Byte.MAX_VALUE;
-    private int[] _food = {};
+	private int _load = 20000;
+	private int _hungry_limit = 1;
+	private int _minlvl = Byte.MAX_VALUE;
+	private int[] _food = {};
 
-    public void addNewStat(L2PetLevelData data, int level)
-    {
-        if (_minlvl > level)
-        {
-            _minlvl = level;
-        }
-        _levelStats.put(level, data);
-    }
+	public void addNewStat(L2PetLevelData data, int level)
+	{
+		if (_minlvl > level)
+		{
+			_minlvl = level;
+		}
+		_levelStats.put(level, data);
+	}
 
-    public L2PetLevelData getPetLevelData(int petLevel)
-    {
-        return _levelStats.get(petLevel);
-    }
+	public L2PetLevelData getPetLevelData(int petLevel)
+	{
+		return _levelStats.get(petLevel);
+	}
 
-    public int getLoad()
-    {
-        return _load;
-    }
+	public int getLoad()
+	{
+		return _load;
+	}
 
-    public int getHungry_limit()
-    {
-        return _hungry_limit;
-    }
+	public int getHungry_limit()
+	{
+		return _hungry_limit;
+	}
 
-    public int getMinLevel()
-    {
-        return _minlvl;
-    }
+	public int getMinLevel()
+	{
+		return _minlvl;
+	}
 
-    public int[] getFood()
-    {
-        return _food;
-    }
+	public int[] getFood()
+	{
+		return _food;
+	}
 
-    public void set_load(int _load)
-    {
-        this._load = _load;
-    }
+	public void set_load(int _load)
+	{
+		this._load = _load;
+	}
 
-    public void set_hungry_limit(int _hungry_limit)
-    {
-        this._hungry_limit = _hungry_limit;
-    }
+	public void set_hungry_limit(int _hungry_limit)
+	{
+		this._hungry_limit = _hungry_limit;
+	}
 
-    public void set_food(int[] _food)
-    {
-        this._food = _food;
-    }
+	public void set_food(int[] _food)
+	{
+		this._food = _food;
+	}
 
-    //SKILS
+	//SKILS
 
-    public void addNewSkill(int id, int lvl, int petLvl)
-    {
-        _skills.add(new L2PetSkillLearn(id, lvl, petLvl));
-    }
+	public void addNewSkill(int id, int lvl, int petLvl)
+	{
+		_skills.add(new L2PetSkillLearn(id, lvl, petLvl));
+	}
 
-    public int getAvailableLevel(int skillId, int petLvl)
-    {
-        int lvl = 0;
-        for (L2PetSkillLearn temp : _skills)
-        {
-            if (temp.getId() != skillId)
-            {
-                continue;
-            }
-            if (temp.getLevel() == 0)
-            {
-                if (petLvl < 70)
-                {
-                    lvl = petLvl / 10;
-                    if (lvl <= 0)
-                    {
-                        lvl = 1;
-                    }
-                }
-                else
-                {
-                    lvl = 7 + (petLvl - 70) / 5;
-                }
+	public int getAvailableLevel(int skillId, int petLvl)
+	{
+		int lvl = 0;
+		for (L2PetSkillLearn temp : _skills)
+		{
+			if (temp.getId() != skillId)
+			{
+				continue;
+			}
+			if (temp.getLevel() == 0)
+			{
+				if (petLvl < 70)
+				{
+					lvl = petLvl / 10;
+					if (lvl <= 0)
+					{
+						lvl = 1;
+					}
+				}
+				else
+				{
+					lvl = 7 + (petLvl - 70) / 5;
+				}
 
-                // formula usable for skill that have 10 or more skill levels
-                int maxLvl = SkillTable.getInstance().getMaxLevel(temp.getId());
-                if (lvl > maxLvl)
-                {
-                    lvl = maxLvl;
-                }
-                break;
-            }
-            else if (temp.getMinLevel() <= petLvl)
-            {
-                if (temp.getLevel() > lvl)
-                {
-                    lvl = temp.getLevel();
-                }
-            }
-        }
-        return lvl;
-    }
+				// formula usable for skill that have 10 or more skill levels
+				int maxLvl = SkillTable.getInstance().getMaxLevel(temp.getId());
+				if (lvl > maxLvl)
+				{
+					lvl = maxLvl;
+				}
+				break;
+			}
+			else if (temp.getMinLevel() <= petLvl)
+			{
+				if (temp.getLevel() > lvl)
+				{
+					lvl = temp.getLevel();
+				}
+			}
+		}
+		return lvl;
+	}
 
-    public List<L2PetSkillLearn> getAvailableSkills()
-    {
-        return _skills;
-    }
+	public List<L2PetSkillLearn> getAvailableSkills()
+	{
+		return _skills;
+	}
 
-    public static final class L2PetSkillLearn
-    {
-        private final int _id;
-        private final int _level;
-        private final int _minLevel;
+	public static final class L2PetSkillLearn
+	{
+		private final int _id;
+		private final int _level;
+		private final int _minLevel;
 
-        public L2PetSkillLearn(int id, int lvl, int minLvl)
-        {
-            _id = id;
-            _level = lvl;
-            _minLevel = minLvl;
-        }
+		public L2PetSkillLearn(int id, int lvl, int minLvl)
+		{
+			_id = id;
+			_level = lvl;
+			_minLevel = minLvl;
+		}
 
-        public int getId()
-        {
-            return _id;
-        }
+		public int getId()
+		{
+			return _id;
+		}
 
-        public int getLevel()
-        {
-            return _level;
-        }
+		public int getLevel()
+		{
+			return _level;
+		}
 
-        public int getMinLevel()
-        {
-            return _minLevel;
-        }
-    }
+		public int getMinLevel()
+		{
+			return _minLevel;
+		}
+	}
 }

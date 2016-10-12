@@ -26,58 +26,58 @@ import java.util.List;
  */
 public class AbnormalStatusUpdate extends L2GameServerPacket
 {
-    private List<Effect> _effects;
+	private List<Effect> _effects;
 
-    private static class Effect
-    {
-        protected int _skillId;
-        protected int _level;
-        protected int _comboId;
-        protected int _duration;
+	private static class Effect
+	{
+		protected int _skillId;
+		protected int _level;
+		protected int _comboId;
+		protected int _duration;
 
-        public Effect(int pSkillId, int pLevel, int pComboId, int pDuration)
-        {
-            _skillId = pSkillId;
-            _level = pLevel;
-            _comboId = pComboId;
-            _duration = pDuration;
-        }
-    }
+		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration)
+		{
+			_skillId = pSkillId;
+			_level = pLevel;
+			_comboId = pComboId;
+			_duration = pDuration;
+		}
+	}
 
-    public AbnormalStatusUpdate()
-    {
-        _effects = new ArrayList<>();
-    }
+	public AbnormalStatusUpdate()
+	{
+		_effects = new ArrayList<>();
+	}
 
-    public void addEffect(int skillId, int level, int comboId, int duration)
-    {
-        if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
-        {
-            return;
-        }
-        _effects.add(new Effect(skillId, level, comboId, duration));
-    }
+	public void addEffect(int skillId, int level, int comboId, int duration)
+	{
+		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
+		{
+			return;
+		}
+		_effects.add(new Effect(skillId, level, comboId, duration));
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeH(_effects.size());
+	@Override
+	protected final void writeImpl()
+	{
+		writeH(_effects.size());
 
-        for (Effect temp : _effects)
-        {
-            writeD(temp._skillId);
-            writeD(temp._level);
+		for (Effect temp : _effects)
+		{
+			writeD(temp._skillId);
+			writeD(temp._level);
 
-            writeD(temp._comboId);
+			writeD(temp._comboId);
 
-            if (temp._duration == -1)
-            {
-                writeH(-1);
-            }
-            else
-            {
-                writeH(temp._duration / 1000 + 1);
-            }
-        }
-    }
+			if (temp._duration == -1)
+			{
+				writeH(-1);
+			}
+			else
+			{
+				writeH(temp._duration / 1000 + 1);
+			}
+		}
+	}
 }

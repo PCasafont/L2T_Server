@@ -25,26 +25,26 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2AdventurerInstance extends L2NpcInstance
 {
-    public L2AdventurerInstance(int objectId, L2NpcTemplate template)
-    {
-        super(objectId, template);
-        setInstanceType(InstanceType.L2AdventurerInstance);
-    }
+	public L2AdventurerInstance(int objectId, L2NpcTemplate template)
+	{
+		super(objectId, template);
+		setInstanceType(InstanceType.L2AdventurerInstance);
+	}
 
-    @Override
-    public String getHtmlPath(int npcId, int val)
-    {
-        String pom = "";
+	@Override
+	public String getHtmlPath(int npcId, int val)
+	{
+		String pom = "";
 
-        if (val == 0)
-        {
-            pom = "" + npcId;
-        }
-        else
-        {
-            pom = npcId + "-" + val;
-        }
+		if (val == 0)
+		{
+			pom = "" + npcId;
+		}
+		else
+		{
+			pom = npcId + "-" + val;
+		}
 
-        return "adventurer_guildsman/" + pom + ".htm";
-    }
+		return "adventurer_guildsman/" + pom + ".htm";
+	}
 }

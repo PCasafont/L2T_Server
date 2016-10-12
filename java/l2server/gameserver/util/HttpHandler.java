@@ -32,111 +32,111 @@ import java.net.URL;
 
 public class HttpHandler
 {
-    private static final String USER_AGENT =
-            "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";
+	private static final String USER_AGENT =
+			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";
 
-    private static final boolean DEV_MODE = false;
+	private static final boolean DEV_MODE = false;
 
-    public HttpHandler()
-    {
-        CookieHandler.setDefault(new CookieManager());
-    }
+	public HttpHandler()
+	{
+		CookieHandler.setDefault(new CookieManager());
+	}
 
-    public final String getWebResponse(final String url)
-    {
-        String result = null;
+	public final String getWebResponse(final String url)
+	{
+		String result = null;
 
-        try
-        {
-            URL obj = new URL(url);
+		try
+		{
+			URL obj = new URL(url);
 
-            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-            con.setRequestMethod("GET");
-            con.setRequestProperty("User-Agent", USER_AGENT);
+			con.setRequestMethod("GET");
+			con.setRequestProperty("User-Agent", USER_AGENT);
 
-            con.connect();
+			con.connect();
 
-            int responseCode = con.getResponseCode();
+			int responseCode = con.getResponseCode();
 
-            if (DEV_MODE)
-            {
-                Log.info("\nSending 'GET' request to URL : " + url);
-                Log.info("Response Code : " + responseCode);
-            }
+			if (DEV_MODE)
+			{
+				Log.info("\nSending 'GET' request to URL : " + url);
+				Log.info("Response Code : " + responseCode);
+			}
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-            String inputLine;
-            StringBuilder response = new StringBuilder();
+			String inputLine;
+			StringBuilder response = new StringBuilder();
 
-            while ((inputLine = in.readLine()) != null)
-            {
-                response.append(inputLine);
-            }
+			while ((inputLine = in.readLine()) != null)
+			{
+				response.append(inputLine);
+			}
 
-            in.close();
+			in.close();
 
-            result = response.toString();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            return null;
-        }
+			result = response.toString();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
 
-        return result;
-    }
+		return result;
+	}
 
-    public final String doPost(final String url, final String post)
-    {
-        String result = null;
+	public final String doPost(final String url, final String post)
+	{
+		String result = null;
 
-        try
-        {
-            HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
+		try
+		{
+			HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("User-Agent", USER_AGENT);
-            connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("User-Agent", USER_AGENT);
+			connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 
-            connection.setDoOutput(true);
+			connection.setDoOutput(true);
 
-            DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+			DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
 
-            outputStream.writeBytes(post);
-            outputStream.flush();
-            outputStream.close();
+			outputStream.writeBytes(post);
+			outputStream.flush();
+			outputStream.close();
 
-            int responseCode = connection.getResponseCode();
+			int responseCode = connection.getResponseCode();
 
-            if (DEV_MODE)
-            {
-                Log.info("Sending 'POST' request to...: " + url + ".");
-                Log.info("Post...: " + post + ".");
-                Log.info("Response Code...: " + responseCode + ".");
-            }
+			if (DEV_MODE)
+			{
+				Log.info("Sending 'POST' request to...: " + url + ".");
+				Log.info("Post...: " + post + ".");
+				Log.info("Response Code...: " + responseCode + ".");
+			}
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-            String inputLine;
-            StringBuilder response = new StringBuilder();
+			String inputLine;
+			StringBuilder response = new StringBuilder();
 
-            while ((inputLine = bufferedReader.readLine()) != null)
-            {
-                response.append(inputLine);
-            }
+			while ((inputLine = bufferedReader.readLine()) != null)
+			{
+				response.append(inputLine);
+			}
 
-            bufferedReader.close();
+			bufferedReader.close();
 
-            result = response.toString();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            return null;
-        }
+			result = response.toString();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
 
-        return result;
-    }
+		return result;
+	}
 }

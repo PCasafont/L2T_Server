@@ -21,13 +21,13 @@ package l2server.gameserver.network.serverpackets;
 
 public class AcquireSkillDone extends L2GameServerPacket
 {
-    public AcquireSkillDone()
-    {
+	public AcquireSkillDone()
+	{
 
-    }
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

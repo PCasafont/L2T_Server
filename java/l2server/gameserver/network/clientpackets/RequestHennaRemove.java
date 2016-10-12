@@ -27,50 +27,49 @@ import l2server.gameserver.templates.item.L2Henna;
  */
 public final class RequestHennaRemove extends L2GameClientPacket
 {
-    private int _symbolId;
+	private int _symbolId;
 
-    // format  cd
+	// format  cd
 
-    /**
-     * packet type id 0xbb
-     * format:		cd
-     *
-     */
-    @Override
-    protected void readImpl()
-    {
-        _symbolId = readD();
-    }
+	/**
+	 * packet type id 0xbb
+	 * format:		cd
+	 */
+	@Override
+	protected void readImpl()
+	{
+		_symbolId = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaRemove"))
-        {
-            return;
-        }
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaRemove"))
+		{
+			return;
+		}
 
-        for (int i = 1; i <= 4; i++)
-        {
-            L2Henna henna = activeChar.getHenna(i);
-            if (henna != null && henna.getSymbolId() == _symbolId)
-            {
-                if (activeChar.getAdena() >= henna.getPrice() / 5)
-                {
-                    activeChar.removeHenna(i);
-                    break;
-                }
-                else
-                {
-                    activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
-                }
-            }
-        }
-    }
+		for (int i = 1; i <= 4; i++)
+		{
+			L2Henna henna = activeChar.getHenna(i);
+			if (henna != null && henna.getSymbolId() == _symbolId)
+			{
+				if (activeChar.getAdena() >= henna.getPrice() / 5)
+				{
+					activeChar.removeHenna(i);
+					break;
+				}
+				else
+				{
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+				}
+			}
+		}
+	}
 }

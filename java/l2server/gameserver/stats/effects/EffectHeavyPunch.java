@@ -30,82 +30,82 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectHeavyPunch extends L2Effect
 {
-    public EffectHeavyPunch(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectHeavyPunch(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    public EffectHeavyPunch(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	public EffectHeavyPunch(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.HEAVY_PUNCH;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.HEAVY_PUNCH;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (!(getEffector() instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (!(getEffector() instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2PcInstance attacker = (L2PcInstance) getEffector();
-        L2Character target = getEffected();
+		L2PcInstance attacker = (L2PcInstance) getEffector();
+		L2Character target = getEffected();
 
-        int lastPhysicalDamages = attacker.getLastPhysicalDamages();
+		int lastPhysicalDamages = attacker.getLastPhysicalDamages();
 
-        int minDamageNeeded = attacker.getFirstEffect(30520) != null ? 300 : 150;
+		int minDamageNeeded = attacker.getFirstEffect(30520) != null ? 300 : 150;
 
-        if (lastPhysicalDamages < minDamageNeeded)
-        {
-            return false;
-        }
+		if (lastPhysicalDamages < minDamageNeeded)
+		{
+			return false;
+		}
 
-        attacker.sendMessage("Heavy Punch is acting up.");
+		attacker.sendMessage("Heavy Punch is acting up.");
 
-        double multiplier = 17.5;
-        if (Config.isServer(Config.TENKAI))
-        {
-            multiplier = 4;
-        }
+		double multiplier = 17.5;
+		if (Config.isServer(Config.TENKAI))
+		{
+			multiplier = 4;
+		}
 
-        int damage = (int) (attacker.getLastPhysicalDamages() * multiplier *
-                attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
+		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier *
+				attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
 
-        if (Config.isServer(Config.TENKAI) && damage > 10000 && target.getActingPlayer() != null)
-        {
-            damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
-        }
+		if (Config.isServer(Config.TENKAI) && damage > 10000 && target.getActingPlayer() != null)
+		{
+			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
+		}
 
-        attacker.onHitTimer(target, damage, false, false, L2ItemInstance.CHARGED_SOULSHOT, (byte) 0, true);
+		attacker.onHitTimer(target, damage, false, false, L2ItemInstance.CHARGED_SOULSHOT, (byte) 0, true);
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        super.onExit();
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		super.onExit();
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
 
-        return true;
-    }
+		return true;
+	}
 }

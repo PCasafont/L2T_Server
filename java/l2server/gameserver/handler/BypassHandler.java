@@ -27,56 +27,56 @@ import java.util.logging.Level;
 public class BypassHandler
 {
 
-    private TIntObjectHashMap<IBypassHandler> _datatable;
+	private TIntObjectHashMap<IBypassHandler> _datatable;
 
-    public static BypassHandler getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static BypassHandler getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private BypassHandler()
-    {
-        _datatable = new TIntObjectHashMap<>();
-    }
+	private BypassHandler()
+	{
+		_datatable = new TIntObjectHashMap<>();
+	}
 
-    public void registerBypassHandler(IBypassHandler handler)
-    {
-        for (String element : handler.getBypassList())
-        {
-            if (Config.DEBUG)
-            {
-                Log.log(Level.FINE, "Adding handler for command " + element);
-            }
+	public void registerBypassHandler(IBypassHandler handler)
+	{
+		for (String element : handler.getBypassList())
+		{
+			if (Config.DEBUG)
+			{
+				Log.log(Level.FINE, "Adding handler for command " + element);
+			}
 
-            _datatable.put(element.toLowerCase().hashCode(), handler);
-        }
-    }
+			_datatable.put(element.toLowerCase().hashCode(), handler);
+		}
+	}
 
-    public IBypassHandler getBypassHandler(String BypassCommand)
-    {
-        String command = BypassCommand;
+	public IBypassHandler getBypassHandler(String BypassCommand)
+	{
+		String command = BypassCommand;
 
-        if (BypassCommand.contains(" "))
-        {
-            command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
-        }
+		if (BypassCommand.contains(" "))
+		{
+			command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
+		}
 
-        if (Config.DEBUG)
-        {
-            Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
-        }
+		if (Config.DEBUG)
+		{
+			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
+		}
 
-        return _datatable.get(command.toLowerCase().hashCode());
-    }
+		return _datatable.get(command.toLowerCase().hashCode());
+	}
 
-    public int size()
-    {
-        return _datatable.size();
-    }
+	public int size()
+	{
+		return _datatable.size();
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final BypassHandler _instance = new BypassHandler();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final BypassHandler _instance = new BypassHandler();
+	}
 }

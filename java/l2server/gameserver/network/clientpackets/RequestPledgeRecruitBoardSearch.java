@@ -23,40 +23,40 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitBoardSearch;
  */
 public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 {
-    private int _level;
-    private int _karma;
-    private boolean _clanName;
-    private String _name;
-    private int _sortBy;
-    private boolean _desc;
-    private int _page;
+	private int _level;
+	private int _karma;
+	private boolean _clanName;
+	private String _name;
+	private int _sortBy;
+	private boolean _desc;
+	private int _page;
 
-    @Override
-    protected void readImpl()
-    {
-        _level = readD();
-        _karma = readD();
-        _clanName = readD() == 1;
-        _name = readS();
-        _sortBy = readD();
-        _desc = readD() == 1;
-        _page = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_level = readD();
+		_karma = readD();
+		_clanName = readD() == 1;
+		_name = readS();
+		_sortBy = readD();
+		_desc = readD() == 1;
+		_page = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
-        {
-            return;
-        }
+		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
+		{
+			return;
+		}
 
-        sendPacket(new ExPledgeRecruitBoardSearch(_level, _karma, _clanName, _name, _sortBy, _desc, _page));
-    }
+		sendPacket(new ExPledgeRecruitBoardSearch(_level, _karma, _clanName, _name, _sortBy, _desc, _page));
+	}
 }

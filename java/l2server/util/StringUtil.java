@@ -200,104 +200,104 @@ package l2server.util;
 public final class StringUtil
 {
 
-    private StringUtil()
-    {
-    }
+	private StringUtil()
+	{
+	}
 
-    /**
-     * Concatenates strings.
-     *
-     * @param strings strings to be concatenated
-     * @return concatenated string
-     * @see StringUtil
-     */
-    public static String concat(final String... strings)
-    {
-        final StringBuilder sbString = new StringBuilder();
+	/**
+	 * Concatenates strings.
+	 *
+	 * @param strings strings to be concatenated
+	 * @return concatenated string
+	 * @see StringUtil
+	 */
+	public static String concat(final String... strings)
+	{
+		final StringBuilder sbString = new StringBuilder();
 
-        for (final String string : strings)
-        {
-            sbString.append(string);
-        }
+		for (final String string : strings)
+		{
+			sbString.append(string);
+		}
 
-        String result = sbString.toString();
-        return result;
-    }
+		String result = sbString.toString();
+		return result;
+	}
 
-    /**
-     * Creates new string builder with size initialized to
-     * <code>sizeHint</code>, unless total length of strings is greater than
-     * <code>sizeHint</code>.
-     *
-     * @param sizeHint hint for string builder size allocation
-     * @param strings  strings to be appended
-     * @return created string builder
-     * @see StringUtil
-     */
-    public static StringBuilder startAppend(final int sizeHint, final String... strings)
-    {
-        final int length = getLength(strings);
-        final StringBuilder sbString = new StringBuilder(sizeHint > length ? sizeHint : length);
+	/**
+	 * Creates new string builder with size initialized to
+	 * <code>sizeHint</code>, unless total length of strings is greater than
+	 * <code>sizeHint</code>.
+	 *
+	 * @param sizeHint hint for string builder size allocation
+	 * @param strings  strings to be appended
+	 * @return created string builder
+	 * @see StringUtil
+	 */
+	public static StringBuilder startAppend(final int sizeHint, final String... strings)
+	{
+		final int length = getLength(strings);
+		final StringBuilder sbString = new StringBuilder(sizeHint > length ? sizeHint : length);
 
-        for (final String string : strings)
-        {
-            sbString.append(string);
-        }
+		for (final String string : strings)
+		{
+			sbString.append(string);
+		}
 
-        return sbString;
-    }
+		return sbString;
+	}
 
-    /**
-     * Appends strings to existing string builder.
-     *
-     * @param sbString string builder
-     * @param strings  strings to be appended
-     * @see StringUtil
-     */
-    public static void append(final StringBuilder sbString, final String... strings)
-    {
-        sbString.ensureCapacity(sbString.length() + getLength(strings));
+	/**
+	 * Appends strings to existing string builder.
+	 *
+	 * @param sbString string builder
+	 * @param strings  strings to be appended
+	 * @see StringUtil
+	 */
+	public static void append(final StringBuilder sbString, final String... strings)
+	{
+		sbString.ensureCapacity(sbString.length() + getLength(strings));
 
-        for (final String string : strings)
-        {
-            sbString.append(string);
-        }
-    }
+		for (final String string : strings)
+		{
+			sbString.append(string);
+		}
+	}
 
-    /**
-     * Counts total length of all the strings.
-     *
-     * @param strings array of strings
-     * @return total length of all the strings
-     */
-    private static int getLength(final String[] strings)
-    {
-        int length = 0;
+	/**
+	 * Counts total length of all the strings.
+	 *
+	 * @param strings array of strings
+	 * @return total length of all the strings
+	 */
+	private static int getLength(final String[] strings)
+	{
+		int length = 0;
 
-        for (final String string : strings)
-        {
-            if (string == null)
-            {
-                length += 4;
-            }
-            else
-            {
-                length += string.length();
-            }
-        }
+		for (final String string : strings)
+		{
+			if (string == null)
+			{
+				length += 4;
+			}
+			else
+			{
+				length += string.length();
+			}
+		}
 
-        return length;
-    }
+		return length;
+	}
 
-    public static String getTraceString(StackTraceElement[] trace)
-    {
-        final StringBuilder sbString = new StringBuilder();
-        for (final StackTraceElement element : trace)
-        {
-            sbString.append(element.toString()).append("\n");
-        }
+	public static String getTraceString(StackTraceElement[] trace)
+	{
+		final StringBuilder sbString = new StringBuilder();
+		for (final StackTraceElement element : trace)
+		{
+			sbString.append(element.toString()).append("\n");
+		}
 
-        String result = sbString.toString();
-        return result;
-    }
+		String result = sbString.toString();
+		return result;
+	}
 }

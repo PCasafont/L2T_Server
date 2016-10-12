@@ -25,18 +25,18 @@ import java.io.IOException;
  */
 public class RequestCharacters extends BaseSendablePacket
 {
-    public RequestCharacters(String account)
-    {
-        writeC(0x05);
-        writeS(account);
-    }
+	public RequestCharacters(String account)
+	{
+		writeC(0x05);
+		writeS(account);
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.util.network.BaseSendablePacket#getContent()
-     */
-    @Override
-    public byte[] getContent() throws IOException
-    {
-        return getBytes();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.util.network.BaseSendablePacket#getContent()
+	 */
+	@Override
+	public byte[] getContent() throws IOException
+	{
+		return getBytes();
+	}
 }

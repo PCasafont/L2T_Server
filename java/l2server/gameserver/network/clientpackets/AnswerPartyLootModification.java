@@ -24,26 +24,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class AnswerPartyLootModification extends L2GameClientPacket
 {
 
-    public int _answer;
+	public int _answer;
 
-    @Override
-    protected void readImpl()
-    {
-        _answer = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_answer = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
-        L2Party party = activeChar.getParty();
-        if (party != null)
-        {
-            party.answerLootChangeRequest(activeChar, _answer == 1);
-        }
-    }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		L2Party party = activeChar.getParty();
+		if (party != null)
+		{
+			party.answerLootChangeRequest(activeChar, _answer == 1);
+		}
+	}
 }

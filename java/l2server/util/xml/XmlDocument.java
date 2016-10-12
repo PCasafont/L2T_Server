@@ -29,56 +29,56 @@ import java.util.List;
  */
 public class XmlDocument
 {
-    private static DocumentBuilderFactory _factory = DocumentBuilderFactory.newInstance();
+	private static DocumentBuilderFactory _factory = DocumentBuilderFactory.newInstance();
 
-    static
-    {
-        _factory.setValidating(false);
-        _factory.setIgnoringComments(true);
-    }
+	static
+	{
+		_factory.setValidating(false);
+		_factory.setIgnoringComments(true);
+	}
 
-    private List<XmlNode> _children = new ArrayList<>();
+	private List<XmlNode> _children = new ArrayList<>();
 
-    public XmlDocument(File file)
-    {
-        if (file == null || !file.exists())
-        {
-            Log.warning("The following XML could not be loaded:");
-            Log.warning("- " + file.getAbsolutePath());
-            return;
-        }
+	public XmlDocument(File file)
+	{
+		if (file == null || !file.exists())
+		{
+			Log.warning("The following XML could not be loaded:");
+			Log.warning("- " + file.getAbsolutePath());
+			return;
+		}
 
-        Document doc = null;
-        try
-        {
-            doc = _factory.newDocumentBuilder().parse(file);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+		Document doc = null;
+		try
+		{
+			doc = _factory.newDocumentBuilder().parse(file);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 
-        for (Node baseNode = doc.getFirstChild(); baseNode != null; baseNode = baseNode.getNextSibling())
-        {
-            if (baseNode.getNodeType() == Node.ELEMENT_NODE)
-            {
-                _children.add(new XmlNode(baseNode));
-            }
-        }
-    }
+		for (Node baseNode = doc.getFirstChild(); baseNode != null; baseNode = baseNode.getNextSibling())
+		{
+			if (baseNode.getNodeType() == Node.ELEMENT_NODE)
+			{
+				_children.add(new XmlNode(baseNode));
+			}
+		}
+	}
 
-    public XmlNode getFirstChild()
-    {
-        if (_children.isEmpty())
-        {
-            return null;
-        }
+	public XmlNode getFirstChild()
+	{
+		if (_children.isEmpty())
+		{
+			return null;
+		}
 
-        return _children.get(0);
-    }
+		return _children.get(0);
+	}
 
-    public List<XmlNode> getChildren()
-    {
-        return _children;
-    }
+	public List<XmlNode> getChildren()
+	{
+		return _children;
+	}
 }

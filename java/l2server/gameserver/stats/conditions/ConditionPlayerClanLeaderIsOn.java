@@ -25,26 +25,26 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerClanLeaderIsOn extends Condition
 {
 
-    public ConditionPlayerClanLeaderIsOn()
-    {
+	public ConditionPlayerClanLeaderIsOn()
+	{
 
-    }
+	}
 
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (env.player instanceof L2PcInstance)
-        {
-            L2PcInstance _player = (L2PcInstance) env.player;
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (env.player instanceof L2PcInstance)
+		{
+			L2PcInstance _player = (L2PcInstance) env.player;
 
-            if (_player == null || _player.getClan() == null)
-            {
-                return false;
-            }
+			if (_player == null || _player.getClan() == null)
+			{
+				return false;
+			}
 
-            return _player.getClan().getLeader().isOnline();
-        }
+			return _player.getClan().getLeader().isOnline();
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

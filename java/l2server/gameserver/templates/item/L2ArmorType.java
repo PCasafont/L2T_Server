@@ -21,44 +21,44 @@ package l2server.gameserver.templates.item;
 
 public enum L2ArmorType implements L2ItemType
 {
-    NONE("None"), LIGHT("Light"), HEAVY("Heavy"), MAGIC("Magic"), SIGIL("Sigil"),
+	NONE("None"), LIGHT("Light"), HEAVY("Heavy"), MAGIC("Magic"), SIGIL("Sigil"),
 
-    //L2J CUSTOM
-    SHIELD("Shield");
+	//L2J CUSTOM
+	SHIELD("Shield");
 
-    final int _mask;
-    final String _name;
+	final int _mask;
+	final String _name;
 
-    /**
-     * Constructor of the L2ArmorType.
-     *
-     * @param name : String designating the name of the ArmorType
-     */
-    L2ArmorType(String name)
-    {
-        _mask = 1 << ordinal() + L2WeaponType.values().length;
-        _name = name;
-    }
+	/**
+	 * Constructor of the L2ArmorType.
+	 *
+	 * @param name : String designating the name of the ArmorType
+	 */
+	L2ArmorType(String name)
+	{
+		_mask = 1 << ordinal() + L2WeaponType.values().length;
+		_name = name;
+	}
 
-    /**
-     * Returns the ID of the ArmorType after applying a mask.
-     *
-     * @return int : ID of the ArmorType after mask
-     */
-    @Override
-    public int mask()
-    {
-        return _mask;
-    }
+	/**
+	 * Returns the ID of the ArmorType after applying a mask.
+	 *
+	 * @return int : ID of the ArmorType after mask
+	 */
+	@Override
+	public int mask()
+	{
+		return _mask;
+	}
 
-    /**
-     * Returns the name of the ArmorType
-     *
-     * @return String
-     */
-    @Override
-    public String toString()
-    {
-        return _name;
-    }
+	/**
+	 * Returns the name of the ArmorType
+	 *
+	 * @return String
+	 */
+	@Override
+	public String toString()
+	{
+		return _name;
+	}
 }

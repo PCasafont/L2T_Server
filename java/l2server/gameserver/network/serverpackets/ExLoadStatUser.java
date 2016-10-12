@@ -23,23 +23,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExLoadStatUser extends L2GameServerPacket
 {
 
-    L2PcInstance _player;
+	L2PcInstance _player;
 
-    public ExLoadStatUser(L2PcInstance player)
-    {
-        _player = player;
-    }
+	public ExLoadStatUser(L2PcInstance player)
+	{
+		_player = player;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        if (_player == null)
-        {
-            return;
-        }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		if (_player == null)
+		{
+			return;
+		}
 
 		/*writeD(MuseumStatistic.values().length);
 
@@ -55,5 +55,5 @@ public class ExLoadStatUser extends L2GameServerPacket
 			writeQ(score1);
 			writeQ(score2);
 		}*/
-    }
+	}
 }

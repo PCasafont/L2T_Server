@@ -33,55 +33,55 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 public final class RequestReceivedPost extends L2GameClientPacket
 {
 
-    private int _msgId;
+	private int _msgId;
 
-    @Override
-    protected void readImpl()
-    {
-        _msgId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_msgId = readD();
+	}
 
-    @Override
-    public void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null || !Config.ALLOW_MAIL)
-        {
-            return;
-        }
+	@Override
+	public void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null || !Config.ALLOW_MAIL)
+		{
+			return;
+		}
 
-        final Message msg = MailManager.getInstance().getMessage(_msgId);
-        if (msg == null)
-        {
-            return;
-        }
+		final Message msg = MailManager.getInstance().getMessage(_msgId);
+		if (msg == null)
+		{
+			return;
+		}
 
-        if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-            return;
-        }
+		if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
+			return;
+		}
 
-        if (msg.getReceiverId() != activeChar.getObjectId())
-        {
-            Util.handleIllegalPlayerAction(activeChar,
-                    "Player " + activeChar.getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
-            return;
-        }
+		if (msg.getReceiverId() != activeChar.getObjectId())
+		{
+			Util.handleIllegalPlayerAction(activeChar,
+					"Player " + activeChar.getName() + " tried to receive not own post!", Config.DEFAULT_PUNISH);
+			return;
+		}
 
-        if (msg.isDeletedByReceiver())
-        {
-            return;
-        }
+		if (msg.isDeletedByReceiver())
+		{
+			return;
+		}
 
-        activeChar.sendPacket(new ExReplyReceivedPost(msg));
-        activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
-        msg.markAsRead();
-    }
+		activeChar.sendPacket(new ExReplyReceivedPost(msg));
+		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
+		msg.markAsRead();
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

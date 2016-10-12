@@ -22,56 +22,56 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectTalismanPower extends L2Effect
 {
-    public EffectTalismanPower(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectTalismanPower(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        switch (getSkill().getId())
-        {
-            case 13385:
-            case 13386:
-                getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER1);
-                break;
-            case 13387:
-                getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER2);
-                break;
-            case 13388:
-                getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER3);
-                break;
-            case 13389:
-                getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER4);
-                break;
-            case 17978:
-                getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER5);
-                break;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		switch (getSkill().getId())
+		{
+			case 13385:
+			case 13386:
+				getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER1);
+				break;
+			case 13387:
+				getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER2);
+				break;
+			case 13388:
+				getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER3);
+				break;
+			case 13389:
+				getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER4);
+				break;
+			case 17978:
+				getEffected().startVisualEffect(VisualEffect.TALISMAN_POWER5);
+				break;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public void onExit()
-    {
-        getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER1);
-        getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER2);
-        getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER3);
-        getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER4);
-        getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER5);
-    }
+	@Override
+	public void onExit()
+	{
+		getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER1);
+		getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER2);
+		getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER3);
+		getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER4);
+		getEffected().stopVisualEffect(VisualEffect.TALISMAN_POWER5);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

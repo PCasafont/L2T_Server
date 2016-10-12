@@ -24,31 +24,31 @@ import l2server.gameserver.network.serverpackets.ExShowFortressInfo;
 public class RequestAllFortressInfo extends L2GameClientPacket
 {
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-     */
-    @Override
-    protected void readImpl()
-    {
-        // trigger packet
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+	 */
+	@Override
+	protected void readImpl()
+	{
+		// trigger packet
+	}
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2GameClient client = getClient();
-        if (client != null)
-        {
-            client.sendPacket(new ExShowFortressInfo());
-        }
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2GameClient client = getClient();
+		if (client != null)
+		{
+			client.sendPacket(new ExShowFortressInfo());
+		}
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

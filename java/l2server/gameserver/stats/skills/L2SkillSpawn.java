@@ -35,129 +35,129 @@ import java.util.logging.Level;
 
 public class L2SkillSpawn extends L2Skill
 {
-    private final int _npcId;
-    private final int _despawnDelay;
-    private final boolean _summonSpawn;
-    private final boolean _randomOffset;
-    private int _count;
+	private final int _npcId;
+	private final int _despawnDelay;
+	private final boolean _summonSpawn;
+	private final boolean _randomOffset;
+	private int _count;
 
-    public L2SkillSpawn(StatsSet set)
-    {
-        super(set);
-        _npcId = set.getInteger("npcId", 0);
-        _despawnDelay = set.getInteger("despawnDelay", 0);
-        _summonSpawn = set.getBool("isSummonSpawn", false);
-        _randomOffset = set.getBool("randomOffset", true);
-        _count = set.getInteger("count", 1);
-    }
+	public L2SkillSpawn(StatsSet set)
+	{
+		super(set);
+		_npcId = set.getInteger("npcId", 0);
+		_despawnDelay = set.getInteger("despawnDelay", 0);
+		_summonSpawn = set.getBool("isSummonSpawn", false);
+		_randomOffset = set.getBool("randomOffset", true);
+		_count = set.getInteger("count", 1);
+	}
 
-    @Override
-    public void useSkill(L2Character caster, L2Object[] targets)
-    {
-        if (caster.isAlikeDead())
-        {
-            return;
-        }
+	@Override
+	public void useSkill(L2Character caster, L2Object[] targets)
+	{
+		if (caster.isAlikeDead())
+		{
+			return;
+		}
 
-        if (_npcId == 0)
-        {
-            Log.warning("NPC ID not defined for skill ID:" + getId());
-            return;
-        }
+		if (_npcId == 0)
+		{
+			Log.warning("NPC ID not defined for skill ID:" + getId());
+			return;
+		}
 
-        final L2NpcTemplate template = NpcTable.getInstance().getTemplate(_npcId);
-        if (template == null)
-        {
-            Log.warning("Spawn of the nonexisting NPC ID:" + _npcId + ", skill ID:" + getId());
-            return;
-        }
+		final L2NpcTemplate template = NpcTable.getInstance().getTemplate(_npcId);
+		if (template == null)
+		{
+			Log.warning("Spawn of the nonexisting NPC ID:" + _npcId + ", skill ID:" + getId());
+			return;
+		}
 
-        try
-        {
-            int x = 0;
-            int y = 0;
-            int z = 0;
+		try
+		{
+			int x = 0;
+			int y = 0;
+			int z = 0;
 
-            boolean skillMastery = Formulas.calcSkillMastery(caster, this);
-            int first = 0;
-            if (skillMastery && getId() == 10532)
-            {
-                first = -_count;
-            }
+			boolean skillMastery = Formulas.calcSkillMastery(caster, this);
+			int first = 0;
+			if (skillMastery && getId() == 10532)
+			{
+				first = -_count;
+			}
 
-            for (int i = first; i < _count; i++)
-            {
-                final L2Spawn spawn = new L2Spawn(template);
+			for (int i = first; i < _count; i++)
+			{
+				final L2Spawn spawn = new L2Spawn(template);
 
-                spawn.setInstanceId(caster.getInstanceId());
-                spawn.setHeading(-1);
+				spawn.setInstanceId(caster.getInstanceId());
+				spawn.setHeading(-1);
 
-                if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND)
-                {
-                    Point3D wordPosition = ((L2PcInstance) caster).getSkillCastPosition();
+				if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND)
+				{
+					Point3D wordPosition = ((L2PcInstance) caster).getSkillCastPosition();
 
-                    if (wordPosition != null)
-                    {
-                        x = wordPosition.getX();
-                        y = wordPosition.getY();
-                        z = wordPosition.getZ();
-                    }
-                }
-                else
-                {
-                    if (_randomOffset)
-                    {
-                        x = caster.getX() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
-                        y = caster.getY() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
-                    }
-                    else
-                    {
-                        x = caster.getX();
-                        y = caster.getY();
-                    }
-                    z = caster.getZ();
-                }
+					if (wordPosition != null)
+					{
+						x = wordPosition.getX();
+						y = wordPosition.getY();
+						z = wordPosition.getZ();
+					}
+				}
+				else
+				{
+					if (_randomOffset)
+					{
+						x = caster.getX() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
+						y = caster.getY() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
+					}
+					else
+					{
+						x = caster.getX();
+						y = caster.getY();
+					}
+					z = caster.getZ();
+				}
 
-                spawn.setX(x);
-                spawn.setY(y);
-                spawn.setZ(z + 20);
+				spawn.setX(x);
+				spawn.setY(y);
+				spawn.setZ(z + 20);
 
-                spawn.stopRespawn();
+				spawn.stopRespawn();
 
-                L2Npc npc = spawn.getNpc();
+				L2Npc npc = spawn.getNpc();
 
-                if (caster instanceof L2PcInstance)
-                {
-                    npc.setOwner((L2PcInstance) caster);
-                    npc.setInstanceId(caster.getInstanceId());
-                }
+				if (caster instanceof L2PcInstance)
+				{
+					npc.setOwner((L2PcInstance) caster);
+					npc.setInstanceId(caster.getInstanceId());
+				}
 
-                npc.setIsRunning(true);
-                spawn.doSpawn(_summonSpawn);
+				npc.setIsRunning(true);
+				spawn.doSpawn(_summonSpawn);
 
-                if (_despawnDelay > 0)
-                {
-                    npc.scheduleDespawn(_despawnDelay);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING,
-                    "Exception while spawning NPC ID: " + _npcId + ", skill ID: " + getId() + ", exception: " +
-                            e.getMessage(), e);
-        }
+				if (_despawnDelay > 0)
+				{
+					npc.scheduleDespawn(_despawnDelay);
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING,
+					"Exception while spawning NPC ID: " + _npcId + ", skill ID: " + getId() + ", exception: " +
+							e.getMessage(), e);
+		}
 
-        // self Effect
-        if (hasSelfEffects())
-        {
-            final L2Abnormal effect = caster.getFirstEffect(getId());
-            if (effect != null && effect.isSelfEffect())
-            {
-                //Replace old effect with new one.
-                effect.exit();
-            }
-            getEffectsSelf(caster);
-        }
-    }
+		// self Effect
+		if (hasSelfEffects())
+		{
+			final L2Abnormal effect = caster.getFirstEffect(getId());
+			if (effect != null && effect.isSelfEffect())
+			{
+				//Replace old effect with new one.
+				effect.exit();
+			}
+			getEffectsSelf(caster);
+		}
+	}
 }

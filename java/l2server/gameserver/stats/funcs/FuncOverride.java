@@ -22,14 +22,14 @@ import l2server.gameserver.stats.Stats;
  */
 public class FuncOverride extends FuncSet
 {
-    public FuncOverride(Stats pStat, Object owner, Lambda lambda)
-    {
-        super(pStat, owner, lambda);
-    }
+	public FuncOverride(Stats pStat, Object owner, Lambda lambda)
+	{
+		super(pStat, owner, lambda);
+	}
 
-    @Override
-    public int getOrder()
-    {
-        return 0x50;
-    }
+	@Override
+	public int getOrder()
+	{
+		return 0x50;
+	}
 }

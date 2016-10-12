@@ -36,96 +36,96 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EffectLove extends L2Effect
 {
-    public EffectLove(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectLove(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#getType()
-     */
-    @Override
-    public L2EffectType getEffectType()
-    {
-        return L2EffectType.LOVE;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 */
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.LOVE;
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.LOVE;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.LOVE;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        // Fear skills cannot be used in event
-        if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		// Fear skills cannot be used in event
+		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
-                getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
-                getEffected() instanceof L2SiegeSummonInstance)
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
+				getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
+				getEffected() instanceof L2SiegeSummonInstance)
+		{
+			return false;
+		}
 
-        if (!getEffected().isInLove())
-        {
-            if (getEffected().isCastingNow() && getEffected().canAbortCast())
-            {
-                getEffected().abortCast();
-            }
+		if (!getEffected().isInLove())
+		{
+			if (getEffected().isCastingNow() && getEffected().canAbortCast())
+			{
+				getEffected().abortCast();
+			}
 
-            getEffected().startLove();
-            getEffected().startVisualEffect(VisualEffect.TARGET_HEART);
-        }
+			getEffected().startLove();
+			getEffected().startVisualEffect(VisualEffect.TARGET_HEART);
+		}
 
-        onActionTime();
-        return true;
-    }
+		onActionTime();
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onExit()
-     */
-    @Override
-    public void onExit()
-    {
-        getEffected().stopVisualEffect(VisualEffect.TARGET_HEART);
-        getEffected().stopLove(false);
-        getEffected().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 */
+	@Override
+	public void onExit()
+	{
+		getEffected().stopVisualEffect(VisualEffect.TARGET_HEART);
+		getEffected().stopLove(false);
+		getEffected().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        int posX = getEffector().getX();
-        int posY = getEffector().getY();
-        int posZ = getEffector().getZ();
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		int posX = getEffector().getX();
+		int posY = getEffector().getY();
+		int posZ = getEffector().getZ();
 
-        if (Config.GEODATA > 0)
-        {
-            Location destiny = GeoData.getInstance()
-                    .moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
-                            getEffected().getInstanceId());
-            posX = destiny.getX();
-            posY = destiny.getY();
-        }
+		if (Config.GEODATA > 0)
+		{
+			Location destiny = GeoData.getInstance()
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
+							getEffected().getInstanceId());
+			posX = destiny.getX();
+			posY = destiny.getY();
+		}
 
-        if (!(getEffected() instanceof L2PetInstance))
-        {
-            getEffected().setRunning();
-        }
+		if (!(getEffected() instanceof L2PetInstance))
+		{
+			getEffected().setRunning();
+		}
 
-        getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(posX, posY, posZ, 0));
-        return true;
-    }
+		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(posX, posY, posZ, 0));
+		return true;
+	}
 }

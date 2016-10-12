@@ -24,40 +24,40 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
  */
 public final class RequestPledgeRecruitApplyInfo extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        int info = -1;
-        if (activeChar.getClan() == null)
-        {
-            info = 0;
-        }
-        else if (activeChar.isClanLeader() &&
-                ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
-        {
-            info = 1;
-        }
+		int info = -1;
+		if (activeChar.getClan() == null)
+		{
+			info = 0;
+		}
+		else if (activeChar.isClanLeader() &&
+				ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
+		{
+			info = 1;
+		}
 
-        if (ClanRecruitManager.getInstance().getApplicant(activeChar.getObjectId()) != null)
-        {
-            info = 2;
-        }
-        else if (ClanRecruitManager.getInstance().getWaitingUser(activeChar.getObjectId()) != null)
-        {
-            info = 3;
-        }
+		if (ClanRecruitManager.getInstance().getApplicant(activeChar.getObjectId()) != null)
+		{
+			info = 2;
+		}
+		else if (ClanRecruitManager.getInstance().getWaitingUser(activeChar.getObjectId()) != null)
+		{
+			info = 3;
+		}
 
-        sendPacket(new ExPledgeRecruitApplyInfo(info));
-    }
+		sendPacket(new ExPledgeRecruitApplyInfo(info));
+	}
 }

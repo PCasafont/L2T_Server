@@ -40,124 +40,124 @@ import java.util.logging.Logger;
 public class CharacterSelect extends L2GameClientPacket
 {
 
-    protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
-    // cd
-    private int _charSlot;
+	// cd
+	private int _charSlot;
 
-    @SuppressWarnings("unused")
-    private int _unk1; // new in C4
-    @SuppressWarnings("unused")
-    private int _unk2; // new in C4
-    @SuppressWarnings("unused")
-    private int _unk3; // new in C4
-    @SuppressWarnings("unused")
-    private int _unk4; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk1; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk2; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk3; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk4; // new in C4
 
-    @Override
-    protected void readImpl()
-    {
-        _charSlot = readD();
-        _unk1 = readH();
-        _unk2 = readD();
-        _unk3 = readD();
-        _unk4 = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_charSlot = readD();
+		_unk1 = readH();
+		_unk2 = readD();
+		_unk3 = readD();
+		_unk4 = readD();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") ||
-                Shutdown.getInstance().isShuttingDown())
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") ||
+				Shutdown.getInstance().isShuttingDown())
+		{
+			return;
+		}
 
-        if (Config.SECOND_AUTH_ENABLED && !getClient().getSecondaryAuth().isAuthed())
-        {
-            getClient().getSecondaryAuth().openDialog();
-            return;
-        }
+		if (Config.SECOND_AUTH_ENABLED && !getClient().getSecondaryAuth().isAuthed())
+		{
+			getClient().getSecondaryAuth().openDialog();
+			return;
+		}
 
-        // we should always be able to acquire the lock
-        // but if we can't lock then nothing should be done (ie repeated packet)
-        if (getClient().getActiveCharLock().tryLock())
-        {
-            try
-            {
-                // should always be null
-                // but if not then this is repeated packet and nothing should be done here
-                if (getClient().getActiveChar() == null)
-                {
-                    if (Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
-                            .tryAddClient(AntiFeedManager.GAME_ID, getClient(),
-                                    Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
-                    {
-                        final CharSelectInfoPackage info = getClient().getCharSelection(_charSlot);
-                        if (info == null)
-                        {
-                            return;
-                        }
+		// we should always be able to acquire the lock
+		// but if we can't lock then nothing should be done (ie repeated packet)
+		if (getClient().getActiveCharLock().tryLock())
+		{
+			try
+			{
+				// should always be null
+				// but if not then this is repeated packet and nothing should be done here
+				if (getClient().getActiveChar() == null)
+				{
+					if (Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
+							.tryAddClient(AntiFeedManager.GAME_ID, getClient(),
+									Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
+					{
+						final CharSelectInfoPackage info = getClient().getCharSelection(_charSlot);
+						if (info == null)
+						{
+							return;
+						}
 
-                        final NpcHtmlMessage msg = new NpcHtmlMessage(0);
-                        msg.setFile(null, "mods/IPRestriction.htm");
-                        msg.replace("%max%", String.valueOf(AntiFeedManager.getInstance()
-                                .getLimit(getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP)));
-                        getClient().sendPacket(msg);
-                        return;
-                    }
+						final NpcHtmlMessage msg = new NpcHtmlMessage(0);
+						msg.setFile(null, "mods/IPRestriction.htm");
+						msg.replace("%max%", String.valueOf(AntiFeedManager.getInstance()
+								.getLimit(getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP)));
+						getClient().sendPacket(msg);
+						return;
+					}
 
-                    // The L2PcInstance must be created here, so that it can be attached to the L2GameClient
-                    if (Config.DEBUG)
-                    {
-                        Log.fine("selected slot:" + _charSlot);
-                    }
+					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
+					if (Config.DEBUG)
+					{
+						Log.fine("selected slot:" + _charSlot);
+					}
 
-                    //load up character from disk
-                    L2PcInstance cha = getClient().loadCharFromDisk(_charSlot);
-                    if (cha == null)
-                    {
-                        return; // handled in L2GameClient
-                    }
+					//load up character from disk
+					L2PcInstance cha = getClient().loadCharFromDisk(_charSlot);
+					if (cha == null)
+					{
+						return; // handled in L2GameClient
+					}
 
-                    if (cha.getAccessLevel().getLevel() < 0)
-                    {
-                        cha.logout();
-                        return;
-                    }
+					if (cha.getAccessLevel().getLevel() < 0)
+					{
+						cha.logout();
+						return;
+					}
 
-                    CharNameTable.getInstance().addName(cha);
+					CharNameTable.getInstance().addName(cha);
 
-                    cha.setClient(getClient());
-                    getClient().setActiveChar(cha);
-                    cha.setOnlineStatus(true, true);
+					cha.setClient(getClient());
+					getClient().setActiveChar(cha);
+					cha.setOnlineStatus(true, true);
 
-                    if (Config.ANTI_BOTS_ENABLED)
-                    {
-                        final String hardwareId = AntiBotsManager.getInstance()
-                                .getHardwareIdFor(cha.getClient().getConnectionAddress().toString().replace("/", ""));
-                        if (hardwareId != null)
-                        {
-                            getClient().setHWId(hardwareId);
-                        }
-                    }
+					if (Config.ANTI_BOTS_ENABLED)
+					{
+						final String hardwareId = AntiBotsManager.getInstance()
+								.getHardwareIdFor(cha.getClient().getConnectionAddress().toString().replace("/", ""));
+						if (hardwareId != null)
+						{
+							getClient().setHWId(hardwareId);
+						}
+					}
 
-                    //sendPacket(new SSQInfo());
-                    sendPacket(new ExSubjobInfo(cha));
+					//sendPacket(new SSQInfo());
+					sendPacket(new ExSubjobInfo(cha));
 
-                    getClient().setState(GameClientState.IN_GAME);
-                    CharSelected cs = new CharSelected(cha, getClient().getSessionId().playOkID1);
-                    sendPacket(cs);
-                }
-            }
-            finally
-            {
-                getClient().getActiveCharLock().unlock();
-            }
+					getClient().setState(GameClientState.IN_GAME);
+					CharSelected cs = new CharSelected(cha, getClient().getSessionId().playOkID1);
+					sendPacket(cs);
+				}
+			}
+			finally
+			{
+				getClient().getActiveCharLock().unlock();
+			}
 
-            LogRecord record = new LogRecord(Level.INFO, "Logged in");
-            record.setParameters(new Object[]{getClient()});
-            _logAccounting.log(record);
-        }
-    }
+			LogRecord record = new LogRecord(Level.INFO, "Logged in");
+			record.setParameters(new Object[]{getClient()});
+			_logAccounting.log(record);
+		}
+	}
 }

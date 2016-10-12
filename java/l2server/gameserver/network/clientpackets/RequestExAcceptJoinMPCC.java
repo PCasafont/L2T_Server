@@ -28,65 +28,65 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 {
-    private int _response;
+	private int _response;
 
-    /**
-     */
-    @Override
-    protected void readImpl()
-    {
-        _response = readD();
-    }
+	/**
+	 */
+	@Override
+	protected void readImpl()
+	{
+		_response = readD();
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player != null)
-        {
-            L2PcInstance requestor = player.getActiveRequester();
-            SystemMessage sm;
-            if (requestor == null)
-            {
-                return;
-            }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player != null)
+		{
+			L2PcInstance requestor = player.getActiveRequester();
+			SystemMessage sm;
+			if (requestor == null)
+			{
+				return;
+			}
 
-            if (_response == 1)
-            {
-                boolean newCc = false;
+			if (_response == 1)
+			{
+				boolean newCc = false;
 
-                L2Party party = requestor.getParty();
+				L2Party party = requestor.getParty();
 
-                if (party == null)
-                {
-                    return;
-                }
+				if (party == null)
+				{
+					return;
+				}
 
-                if (!party.isInCommandChannel())
-                {
-                    new L2CommandChannel(requestor); // Create new CC
-                    sm = SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_FORMED);
-                    requestor.sendPacket(sm);
-                    newCc = true;
-                }
+				if (!party.isInCommandChannel())
+				{
+					new L2CommandChannel(requestor); // Create new CC
+					sm = SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_FORMED);
+					requestor.sendPacket(sm);
+					newCc = true;
+				}
 
-                party.getCommandChannel().addParty(player.getParty());
-                if (!newCc)
-                {
-                    sm = SystemMessage.getSystemMessage(SystemMessageId.JOINED_COMMAND_CHANNEL);
-                    player.sendPacket(sm);
-                }
-            }
-            else
-            {
-                requestor.sendMessage("The player declined to join your Command Channel.");
-            }
+				party.getCommandChannel().addParty(player.getParty());
+				if (!newCc)
+				{
+					sm = SystemMessage.getSystemMessage(SystemMessageId.JOINED_COMMAND_CHANNEL);
+					player.sendPacket(sm);
+				}
+			}
+			else
+			{
+				requestor.sendMessage("The player declined to join your Command Channel.");
+			}
 
-            player.setActiveRequester(null);
-            requestor.onTransactionResponse();
-        }
-    }
+			player.setActiveRequester(null);
+			requestor.onTransactionResponse();
+		}
+	}
 }

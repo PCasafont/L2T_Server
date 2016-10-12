@@ -29,141 +29,141 @@ import java.util.Map;
  */
 public final class L2SkillLearn
 {
-    // these two build the primary key
-    private final int _id;
-    private final int _level;
+	// these two build the primary key
+	private final int _id;
+	private final int _level;
 
-    private final int _spCost;
-    private final int _minLevel;
-    private final int _minDualLevel;
+	private final int _spCost;
+	private final int _minLevel;
+	private final int _minDualLevel;
 
-    private final boolean _learnedFromPanel;
-    private final boolean _learnedByFs;
-    private final boolean _isTransfer;
-    private final boolean _isAutoGet;
+	private final boolean _learnedFromPanel;
+	private final boolean _learnedByFs;
+	private final boolean _isTransfer;
+	private final boolean _isAutoGet;
 
-    private final Map<Integer, Integer> _costItems = new HashMap<>();
-    private final List<Integer> _costSkills = new ArrayList<>();
+	private final Map<Integer, Integer> _costItems = new HashMap<>();
+	private final List<Integer> _costSkills = new ArrayList<>();
 
-    private boolean _isRemember = false;
+	private boolean _isRemember = false;
 
-    public L2SkillLearn(int id, int lvl, int cost, int minLvl, int minDualLvl, boolean panel, boolean fs, boolean transfer, boolean autoget)
-    {
-        _id = id;
-        _level = lvl;
-        _minLevel = minLvl;
-        _minDualLevel = minDualLvl;
-        _spCost = cost;
-        _learnedFromPanel = panel;
-        _learnedByFs = fs;
-        _isTransfer = transfer;
-        _isAutoGet = autoget;
-    }
+	public L2SkillLearn(int id, int lvl, int cost, int minLvl, int minDualLvl, boolean panel, boolean fs, boolean transfer, boolean autoget)
+	{
+		_id = id;
+		_level = lvl;
+		_minLevel = minLvl;
+		_minDualLevel = minDualLvl;
+		_spCost = cost;
+		_learnedFromPanel = panel;
+		_learnedByFs = fs;
+		_isTransfer = transfer;
+		_isAutoGet = autoget;
+	}
 
-    /**
-     * @return Returns the id.
-     */
-    public int getId()
-    {
-        return _id;
-    }
+	/**
+	 * @return Returns the id.
+	 */
+	public int getId()
+	{
+		return _id;
+	}
 
-    /**
-     * @return Returns the level.
-     */
-    public int getLevel()
-    {
-        return _level;
-    }
+	/**
+	 * @return Returns the level.
+	 */
+	public int getLevel()
+	{
+		return _level;
+	}
 
-    /**
-     * @return Returns the minLevel.
-     */
-    public int getMinLevel()
-    {
-        return _minLevel;
-    }
+	/**
+	 * @return Returns the minLevel.
+	 */
+	public int getMinLevel()
+	{
+		return _minLevel;
+	}
 
-    public int getMinDualLevel()
-    {
-        return _minDualLevel;
-    }
+	public int getMinDualLevel()
+	{
+		return _minDualLevel;
+	}
 
-    /**
-     * @return Returns the spCost.
-     */
-    public int getSpCost()
-    {
-        return _spCost;
-    }
+	/**
+	 * @return Returns the spCost.
+	 */
+	public int getSpCost()
+	{
+		return _spCost;
+	}
 
-    /**
-     * Return true if skill can be learned by teachers
-     */
-    public boolean isLearnedFromPanel()
-    {
-        return _learnedFromPanel;
-    }
+	/**
+	 * Return true if skill can be learned by teachers
+	 */
+	public boolean isLearnedFromPanel()
+	{
+		return _learnedFromPanel;
+	}
 
-    /**
-     * Return true if skill can be learned by forgotten scroll
-     */
-    public boolean isLearnedByFS()
-    {
-        return _learnedByFs;
-    }
+	/**
+	 * Return true if skill can be learned by forgotten scroll
+	 */
+	public boolean isLearnedByFS()
+	{
+		return _learnedByFs;
+	}
 
-    public boolean isTransferSkill()
-    {
-        return _isTransfer;
-    }
+	public boolean isTransferSkill()
+	{
+		return _isTransfer;
+	}
 
-    public boolean isAutoGetSkill()
-    {
-        return _isAutoGet;
-    }
+	public boolean isAutoGetSkill()
+	{
+		return _isAutoGet;
+	}
 
-    public void addCostItem(int itemId, int count)
-    {
-        _costItems.put(itemId, count);
-    }
+	public void addCostItem(int itemId, int count)
+	{
+		_costItems.put(itemId, count);
+	}
 
-    public Map<Integer, Integer> getCostItems()
-    {
-        return _costItems;
-    }
+	public Map<Integer, Integer> getCostItems()
+	{
+		return _costItems;
+	}
 
-    public void addCostSkill(int skillId)
-    {
-        _costSkills.add(skillId);
-    }
+	public void addCostSkill(int skillId)
+	{
+		_costSkills.add(skillId);
+	}
 
-    public List<Integer> getCostSkills()
-    {
-        return _costSkills;
-    }
+	public List<Integer> getCostSkills()
+	{
+		return _costSkills;
+	}
 
-    public Map<Integer, Integer> getCostSkills(L2PcInstance player)
-    {
-        Map<Integer, Integer> costSkills = new HashMap<>();
-        for (int skillId : _costSkills)
-        {
-            int skillLevel = player.getSkillLevelHash(skillId);
-            if (skillLevel > 0)
-            {
-                costSkills.put(skillId, skillLevel);
-            }
-        }
-        return costSkills;
-    }
+	public Map<Integer, Integer> getCostSkills(L2PcInstance player)
+	{
+		Map<Integer, Integer> costSkills = new HashMap<>();
+		for (int skillId : _costSkills)
+		{
+			int skillLevel = player.getSkillLevelHash(skillId);
+			if (skillLevel > 0)
+			{
+				costSkills.put(skillId, skillLevel);
+			}
+		}
+		return costSkills;
+	}
 
-    public void setIsRemember(boolean remember)
-    {
-        _isRemember = remember;
-    }
+	public void setIsRemember(boolean remember)
+	{
+		_isRemember = remember;
+	}
 
-    public boolean isRemember()
-    {
-        return _isRemember;
-    }
+	public boolean isRemember()
+	{
+		return _isRemember;
+	}
 }

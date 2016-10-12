@@ -23,24 +23,24 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerCp extends Condition
 {
 
-    private final int _cp;
+	private final int _cp;
 
-    /**
-     * Instantiates a new condition player cp.
-     *
-     * @param cp the cp
-     */
-    public ConditionPlayerCp(int cp)
-    {
-        _cp = cp;
-    }
+	/**
+	 * Instantiates a new condition player cp.
+	 *
+	 * @param cp the cp
+	 */
+	public ConditionPlayerCp(int cp)
+	{
+		_cp = cp;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return env.player.getCurrentCp() * 100 / env.player.getMaxCp() >= _cp;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return env.player.getCurrentCp() * 100 / env.player.getMaxCp() >= _cp;
+	}
 }

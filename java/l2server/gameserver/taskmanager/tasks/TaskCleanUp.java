@@ -23,24 +23,24 @@ import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
  */
 public final class TaskCleanUp extends Task
 {
-    public static final String NAME = "clean_up";
+	public static final String NAME = "clean_up";
 
-    /**
-     * @see l2server.gameserver.taskmanager.Task#getName()
-     */
-    @Override
-    public String getName()
-    {
-        return NAME;
-    }
+	/**
+	 * @see l2server.gameserver.taskmanager.Task#getName()
+	 */
+	@Override
+	public String getName()
+	{
+		return NAME;
+	}
 
-    /**
-     * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
-     */
-    @Override
-    public void onTimeElapsed(ExecutedTask task)
-    {
-        System.runFinalization();
-        System.gc();
-    }
+	/**
+	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
+	 */
+	@Override
+	public void onTimeElapsed(ExecutedTask task)
+	{
+		System.runFinalization();
+		System.gc();
+	}
 }

@@ -17,19 +17,19 @@ package l2server.gameserver.network.serverpackets;
 
 public final class StopPledgeWar extends L2GameServerPacket
 {
-    private String _pledgeName;
-    private String _playerName;
+	private String _pledgeName;
+	private String _playerName;
 
-    public StopPledgeWar(String pledge, String charName)
-    {
-        _pledgeName = pledge;
-        _playerName = charName;
-    }
+	public StopPledgeWar(String pledge, String charName)
+	{
+		_pledgeName = pledge;
+		_playerName = charName;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeS(_pledgeName);
-        writeS(_playerName);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeS(_pledgeName);
+		writeS(_playerName);
+	}
 }

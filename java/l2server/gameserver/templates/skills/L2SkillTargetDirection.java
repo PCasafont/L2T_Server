@@ -20,39 +20,39 @@ package l2server.gameserver.templates.skills;
  */
 public enum L2SkillTargetDirection
 {
-    DEFAULT,
-    // General Skills
-    SINGLE,
-    AROUND,
-    BEHIND,
-    FRONT,
-    UNDEAD,
-    DEAD_PLAYABLE,
-    DEAD_PARTY_MEMBER,
-    DEAD_CLAN_MEMBER,
-    DEAD_ALLY_MEMBER,
-    DEAD_PARTY_AND_CLAN_MEMBER,
-    DEAD_PET,
-    DEAD_MONSTER,
-    ONE_NOT_SUMMONS,
-    ENNEMY_SUMMON,
-    ALL_SUMMONS,
-    MONSTERS,
-    // Friendly Skills
-    PARTY_ONE,
-    PARTY_ONE_NOTME,
-    PARTY_ALL,
-    PARTY_ALL_NOTME,
-    PARTY_AND_CLAN,
-    CLAN,
-    ALLIANCE,
-    // Special Skills
-    SUBLIMES,
-    PARTY_ANYWHERE,
-    INVISIBLE_TRAP,
-    CHAIN_HEAL,
+	DEFAULT,
+	// General Skills
+	SINGLE,
+	AROUND,
+	BEHIND,
+	FRONT,
+	UNDEAD,
+	DEAD_PLAYABLE,
+	DEAD_PARTY_MEMBER,
+	DEAD_CLAN_MEMBER,
+	DEAD_ALLY_MEMBER,
+	DEAD_PARTY_AND_CLAN_MEMBER,
+	DEAD_PET,
+	DEAD_MONSTER,
+	ONE_NOT_SUMMONS,
+	ENNEMY_SUMMON,
+	ALL_SUMMONS,
+	MONSTERS,
+	// Friendly Skills
+	PARTY_ONE,
+	PARTY_ONE_NOTME,
+	PARTY_ALL,
+	PARTY_ALL_NOTME,
+	PARTY_AND_CLAN,
+	CLAN,
+	ALLIANCE,
+	// Special Skills
+	SUBLIMES,
+	PARTY_ANYWHERE,
+	INVISIBLE_TRAP,
+	CHAIN_HEAL,
 
-    ME,
-    // ????
-    PLAYER, // PVP-ONLY SKILL
+	ME,
+	// ????
+	PLAYER, // PVP-ONLY SKILL
 }

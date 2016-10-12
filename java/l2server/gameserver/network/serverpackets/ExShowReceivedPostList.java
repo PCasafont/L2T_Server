@@ -26,48 +26,48 @@ import java.util.List;
 public class ExShowReceivedPostList extends L2GameServerPacket
 {
 
-    private List<Message> _inbox;
+	private List<Message> _inbox;
 
-    public ExShowReceivedPostList(int objectId)
-    {
-        _inbox = MailManager.getInstance().getInbox(objectId);
-    }
+	public ExShowReceivedPostList(int objectId)
+	{
+		_inbox = MailManager.getInstance().getInbox(objectId);
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        writeD((int) (System.currentTimeMillis() / 1000));
-        if (_inbox != null && _inbox.size() > 0)
-        {
-            writeD(_inbox.size());
-            for (Message msg : _inbox)
-            {
-                writeD(msg.getSendBySystem());
-                if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
-                {
-                    writeD(msg.getSystemMessage1());
-                }
-                writeD(msg.getId());
-                writeS(msg.getSubject());
-                writeS(msg.getSenderName());
-                writeD(msg.isLocked() ? 0x01 : 0x00);
-                writeD(msg.getExpirationSeconds());
-                writeD(msg.isUnread() ? 0x01 : 0x00);
-                writeD(msg.getSendBySystem() == 0 ? 0x00 : 0x01); // Is returnable...
-                writeD(msg.hasAttachments() ? 0x01 : 0x00);
-                writeD(msg.isReturned() ? 0x01 : 0x00);
-                writeD(msg.getSendBySystem());
-            }
-            writeD(2902007);
-            writeD(100);
-            writeD(1000);
-        }
-        else
-        {
-            writeD(0x00);
-        }
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		writeD((int) (System.currentTimeMillis() / 1000));
+		if (_inbox != null && _inbox.size() > 0)
+		{
+			writeD(_inbox.size());
+			for (Message msg : _inbox)
+			{
+				writeD(msg.getSendBySystem());
+				if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
+				{
+					writeD(msg.getSystemMessage1());
+				}
+				writeD(msg.getId());
+				writeS(msg.getSubject());
+				writeS(msg.getSenderName());
+				writeD(msg.isLocked() ? 0x01 : 0x00);
+				writeD(msg.getExpirationSeconds());
+				writeD(msg.isUnread() ? 0x01 : 0x00);
+				writeD(msg.getSendBySystem() == 0 ? 0x00 : 0x01); // Is returnable...
+				writeD(msg.hasAttachments() ? 0x01 : 0x00);
+				writeD(msg.isReturned() ? 0x01 : 0x00);
+				writeD(msg.getSendBySystem());
+			}
+			writeD(2902007);
+			writeD(100);
+			writeD(1000);
+		}
+		else
+		{
+			writeD(0x00);
+		}
+	}
 }

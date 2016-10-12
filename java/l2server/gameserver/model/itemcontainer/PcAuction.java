@@ -23,34 +23,34 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PcAuction extends ItemContainer
 {
-    private L2PcInstance _owner;
+	private L2PcInstance _owner;
 
-    public PcAuction(L2PcInstance owner)
-    {
-        _owner = owner;
-    }
+	public PcAuction(L2PcInstance owner)
+	{
+		_owner = owner;
+	}
 
-    @Override
-    public String getName()
-    {
-        return "Auction";
-    }
+	@Override
+	public String getName()
+	{
+		return "Auction";
+	}
 
-    @Override
-    public L2PcInstance getOwner()
-    {
-        return _owner;
-    }
+	@Override
+	public L2PcInstance getOwner()
+	{
+		return _owner;
+	}
 
-    @Override
-    public ItemLocation getBaseLocation()
-    {
-        return ItemLocation.AUCTION;
-    }
+	@Override
+	public ItemLocation getBaseLocation()
+	{
+		return ItemLocation.AUCTION;
+	}
 
-    @Override
-    public boolean validateCapacity(long slots)
-    {
-        return _items.size() + slots <= 10;
-    }
+	@Override
+	public boolean validateCapacity(long slots)
+	{
+		return _items.size() + slots <= 10;
+	}
 }

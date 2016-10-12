@@ -29,44 +29,44 @@ import java.util.List;
  */
 public class ExShowFortressInfo extends L2GameServerPacket
 {
-    //
+	//
 
     /*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        List<Fort> forts = FortManager.getInstance().getForts();
-        writeD(forts.size());
-        for (Fort fort : forts)
-        {
-            L2Clan clan = fort.getOwnerClan();
-            writeD(fort.getFortId());
-            if (clan != null)
-            {
-                writeS(clan.getName());
-            }
-            else
-            {
-                writeS("");
-            }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		List<Fort> forts = FortManager.getInstance().getForts();
+		writeD(forts.size());
+		for (Fort fort : forts)
+		{
+			L2Clan clan = fort.getOwnerClan();
+			writeD(fort.getFortId());
+			if (clan != null)
+			{
+				writeS(clan.getName());
+			}
+			else
+			{
+				writeS("");
+			}
 
-            if (fort.getSiege().getIsInProgress())
-            {
-                writeD(1);
-            }
-            else
-            {
-                writeD(0);
-            }
+			if (fort.getSiege().getIsInProgress())
+			{
+				writeD(1);
+			}
+			else
+			{
+				writeD(0);
+			}
 
-            // Time of possession
-            writeD(fort.getOwnedTime());
-        }
-    }
+			// Time of possession
+			writeD(fort.getOwnedTime());
+		}
+	}
 }

@@ -24,26 +24,26 @@ import l2server.gameserver.network.serverpackets.EnchantResult;
 public class RequestExCancelEnchantItem extends L2GameClientPacket
 {
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
-     */
-    @Override
-    protected void readImpl()
-    {
-        // nothing (trigger)
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
+	 */
+	@Override
+	protected void readImpl()
+	{
+		// nothing (trigger)
+	}
 
-    /**
-     * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar != null)
-        {
-            activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
-            activeChar.setActiveEnchantItem(null);
-        }
-    }
+	/**
+	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar != null)
+		{
+			activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
+			activeChar.setActiveEnchantItem(null);
+		}
+	}
 }

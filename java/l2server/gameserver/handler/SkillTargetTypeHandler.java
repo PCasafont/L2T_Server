@@ -26,43 +26,43 @@ import java.util.Map;
  */
 public class SkillTargetTypeHandler
 {
-    private Map<Enum<L2SkillTargetType>, ISkillTargetTypeHandler> _datatable;
+	private Map<Enum<L2SkillTargetType>, ISkillTargetTypeHandler> _datatable;
 
-    public static SkillTargetTypeHandler getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static SkillTargetTypeHandler getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private SkillTargetTypeHandler()
-    {
-        _datatable = new HashMap<>();
-    }
+	private SkillTargetTypeHandler()
+	{
+		_datatable = new HashMap<>();
+	}
 
-    public void registerSkillTargetType(ISkillTargetTypeHandler handler)
-    {
-        Enum<L2SkillTargetType> ids = handler.getTargetType();
-        _datatable.put(ids, handler);
-    }
+	public void registerSkillTargetType(ISkillTargetTypeHandler handler)
+	{
+		Enum<L2SkillTargetType> ids = handler.getTargetType();
+		_datatable.put(ids, handler);
+	}
 
-    public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType)
-    {
-        Enum<L2SkillTargetType> target = skillTargetType;
+	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType)
+	{
+		Enum<L2SkillTargetType> target = skillTargetType;
 
-        Log.fine("getting handler for command: " + target.toString() + " -> " + (_datatable.get(target) != null));
-        return _datatable.get(target);
-    }
+		Log.fine("getting handler for command: " + target.toString() + " -> " + (_datatable.get(target) != null));
+		return _datatable.get(target);
+	}
 
-    /**
-     * @return
-     */
-    public int size()
-    {
-        return _datatable.size();
-    }
+	/**
+	 * @return
+	 */
+	public int size()
+	{
+		return _datatable.size();
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final SkillTargetTypeHandler _instance = new SkillTargetTypeHandler();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final SkillTargetTypeHandler _instance = new SkillTargetTypeHandler();
+	}
 }

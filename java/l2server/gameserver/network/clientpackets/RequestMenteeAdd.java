@@ -27,105 +27,105 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestMenteeAdd extends L2GameClientPacket
 {
-    String _name;
+	String _name;
 
-    @Override
-    protected void readImpl()
-    {
-        _name = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_name = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance activeChar = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance activeChar = getClient().getActiveChar();
 
-        if (activeChar == null)
-        {
-            return;
-        }
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        final L2PcInstance mentee = L2World.getInstance().getPlayer(_name);
+		final L2PcInstance mentee = L2World.getInstance().getPlayer(_name);
 
-        SystemMessage sm;
-        // can't use mentee invite for locating invisible characters
-        if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
-        {
-            //Target is not found in the game.
-            activeChar.sendPacket(
-                    SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME); // TODO: Find other message not friends.
-            return;
-        }
-        else if (mentee == activeChar)
-        {
-            activeChar.sendPacket(SystemMessageId.YOU_CANNOT_BECOME_YOUR_OWN_MENTEE);
-            return;
-        }
-        else if (BlockList.isBlocked(activeChar, mentee))
-        {
-            sm = SystemMessage.getSystemMessage(SystemMessageId.BLOCKED_C1);
-            sm.addCharName(mentee);
-            activeChar.sendPacket(sm);
-            return;
-        }
-        else if (BlockList.isBlocked(mentee, activeChar))
-        {
-            activeChar.sendMessage("You are in target's block list.");
-            return;
-        }
-        else if (mentee.isSubClassActive())
-        {
-            activeChar.sendPacket(SystemMessageId.INVITATION_CAN_OCCUR_ONLY_WHEN_THE_MENTEE_IS_IN_MAIN_CLASS_STATUS);
-            return;
-        }
-        else if (mentee.getLevel() > 85)
-        {
-            sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_ABOVE_LEVEL_86_AND_CANNOT_BECOME_A_MENTEE);
-            sm.addCharName(mentee);
-            activeChar.sendPacket(sm);
-            return;
-        }
+		SystemMessage sm;
+		// can't use mentee invite for locating invisible characters
+		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
+		{
+			//Target is not found in the game.
+			activeChar.sendPacket(
+					SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME); // TODO: Find other message not friends.
+			return;
+		}
+		else if (mentee == activeChar)
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_BECOME_YOUR_OWN_MENTEE);
+			return;
+		}
+		else if (BlockList.isBlocked(activeChar, mentee))
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.BLOCKED_C1);
+			sm.addCharName(mentee);
+			activeChar.sendPacket(sm);
+			return;
+		}
+		else if (BlockList.isBlocked(mentee, activeChar))
+		{
+			activeChar.sendMessage("You are in target's block list.");
+			return;
+		}
+		else if (mentee.isSubClassActive())
+		{
+			activeChar.sendPacket(SystemMessageId.INVITATION_CAN_OCCUR_ONLY_WHEN_THE_MENTEE_IS_IN_MAIN_CLASS_STATUS);
+			return;
+		}
+		else if (mentee.getLevel() > 85)
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_ABOVE_LEVEL_86_AND_CANNOT_BECOME_A_MENTEE);
+			sm.addCharName(mentee);
+			activeChar.sendPacket(sm);
+			return;
+		}
 
-        if (activeChar.getMenteeList().contains(mentee.getObjectId()))
-        {
-            // Player already is in your menteelist
-            sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_HAS_A_MENTOR);
-            sm.addString(mentee.getName());
-            activeChar.sendPacket(sm);
-            return;
-        }
-        else if (mentee.isMentee())
-        {
-            sm = SystemMessage
-                    .getSystemMessage(SystemMessageId.S1_ALREADY_HAS_MENTORING_RELATIONSHIP_WITH_ANOTHER_CHARACTER);
-            sm.addCharName(mentee);
-            activeChar.sendPacket(sm);
-            return;
-        }
-        else if (activeChar.getClassId() < 139)
-        {
-            activeChar.sendPacket(SystemMessageId.YOU_MUST_AWAKEN_IN_ORDER_TO_BECOM_A_MENTOR);
-            return;
-        }
-        else if (activeChar.getMenteeList().size() >= 3)
-        {
-            activeChar.sendPacket(SystemMessageId.A_MENTOR_CAN_HAVE_UP_TO_3_MENTEES_AT_THE_SAME_TIME);
-            return;
-        }
+		if (activeChar.getMenteeList().contains(mentee.getObjectId()))
+		{
+			// Player already is in your menteelist
+			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_HAS_A_MENTOR);
+			sm.addString(mentee.getName());
+			activeChar.sendPacket(sm);
+			return;
+		}
+		else if (mentee.isMentee())
+		{
+			sm = SystemMessage
+					.getSystemMessage(SystemMessageId.S1_ALREADY_HAS_MENTORING_RELATIONSHIP_WITH_ANOTHER_CHARACTER);
+			sm.addCharName(mentee);
+			activeChar.sendPacket(sm);
+			return;
+		}
+		else if (activeChar.getClassId() < 139)
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_MUST_AWAKEN_IN_ORDER_TO_BECOM_A_MENTOR);
+			return;
+		}
+		else if (activeChar.getMenteeList().size() >= 3)
+		{
+			activeChar.sendPacket(SystemMessageId.A_MENTOR_CAN_HAVE_UP_TO_3_MENTEES_AT_THE_SAME_TIME);
+			return;
+		}
 
-        if (!mentee.isProcessingRequest())
-        {
-            // requets to become mentee
-            activeChar.onTransactionRequest(mentee);
-            sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_OFFERED_TO_BECOME_S1_MENTOR);
-            sm.addString(mentee.getName());
-            mentee.sendPacket(new ExMentorAdd(activeChar));
-        }
-        else
-        {
-            sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
-            sm.addString(mentee.getName());
-        }
-        activeChar.sendPacket(sm);
-    }
+		if (!mentee.isProcessingRequest())
+		{
+			// requets to become mentee
+			activeChar.onTransactionRequest(mentee);
+			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_OFFERED_TO_BECOME_S1_MENTOR);
+			sm.addString(mentee.getName());
+			mentee.sendPacket(new ExMentorAdd(activeChar));
+		}
+		else
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
+			sm.addString(mentee.getName());
+		}
+		activeChar.sendPacket(sm);
+	}
 }

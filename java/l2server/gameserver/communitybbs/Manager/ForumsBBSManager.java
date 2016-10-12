@@ -34,160 +34,160 @@ import java.util.logging.Level;
 public class ForumsBBSManager extends BaseBBSManager
 {
 
-    private final List<Forum> _table;
-    private int _lastid = 1;
+	private final List<Forum> _table;
+	private int _lastid = 1;
 
-    /**
-     * Instantiates a new forums bbs manager.
-     */
-    private ForumsBBSManager()
-    {
-        _table = new ArrayList<>();
+	/**
+	 * Instantiates a new forums bbs manager.
+	 */
+	private ForumsBBSManager()
+	{
+		_table = new ArrayList<>();
 
-        Connection con = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_type=0");
-            ResultSet result = statement.executeQuery();
-            while (result.next())
-            {
-                int forumId = result.getInt("forum_id");
-                Forum f = new Forum(forumId, null);
-                addForum(f);
-            }
-            result.close();
-            statement.close();
-        }
-        catch (Exception e)
-        {
-            Log.log(Level.WARNING, "Data error on Forum (root): " + e.getMessage(), e);
-        }
-        finally
-        {
-            L2DatabaseFactory.close(con);
-        }
-    }
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_type=0");
+			ResultSet result = statement.executeQuery();
+			while (result.next())
+			{
+				int forumId = result.getInt("forum_id");
+				Forum f = new Forum(forumId, null);
+				addForum(f);
+			}
+			result.close();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Data error on Forum (root): " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
 
-    /**
-     * Inits the root.
-     */
-    public void initRoot()
-    {
-        List<Forum> copy = new ArrayList<>(_table);
-        for (Forum f : copy)
-        {
-            f.vload();
-        }
-        Log.info("Loaded " + _table.size() + " forums. Last forum id used: " + _lastid);
-    }
+	/**
+	 * Inits the root.
+	 */
+	public void initRoot()
+	{
+		List<Forum> copy = new ArrayList<>(_table);
+		for (Forum f : copy)
+		{
+			f.vload();
+		}
+		Log.info("Loaded " + _table.size() + " forums. Last forum id used: " + _lastid);
+	}
 
-    /**
-     * Adds the forum.
-     *
-     * @param ff the forum
-     */
-    public void addForum(Forum ff)
-    {
-        if (ff == null)
-        {
-            return;
-        }
+	/**
+	 * Adds the forum.
+	 *
+	 * @param ff the forum
+	 */
+	public void addForum(Forum ff)
+	{
+		if (ff == null)
+		{
+			return;
+		}
 
-        _table.add(ff);
+		_table.add(ff);
 
-        if (ff.getID() > _lastid)
-        {
-            _lastid = ff.getID();
-        }
-    }
+		if (ff.getID() > _lastid)
+		{
+			_lastid = ff.getID();
+		}
+	}
 
-    @Override
-    public void parsecmd(String command, L2PcInstance activeChar)
-    {
-    }
+	@Override
+	public void parsecmd(String command, L2PcInstance activeChar)
+	{
+	}
 
-    /**
-     * Gets the forum by name.
-     *
-     * @param name the forum name
-     * @return the forum by name
-     */
-    public Forum getForumByName(String name)
-    {
-        for (Forum f : _table)
-        {
-            if (f.getName().equals(name))
-            {
-                return f;
-            }
-        }
-        return null;
-    }
+	/**
+	 * Gets the forum by name.
+	 *
+	 * @param name the forum name
+	 * @return the forum by name
+	 */
+	public Forum getForumByName(String name)
+	{
+		for (Forum f : _table)
+		{
+			if (f.getName().equals(name))
+			{
+				return f;
+			}
+		}
+		return null;
+	}
 
-    /**
-     * Creates the new forum.
-     *
-     * @param name   the forum name
-     * @param parent the parent forum
-     * @param type   the forum type
-     * @param perm   the perm
-     * @param oid    the oid
-     * @return the new forum
-     */
-    public Forum createNewForum(String name, Forum parent, int type, int perm, int oid)
-    {
-        Forum forum = new Forum(name, parent, type, perm, oid);
-        forum.insertIntoDb();
-        return forum;
-    }
+	/**
+	 * Creates the new forum.
+	 *
+	 * @param name   the forum name
+	 * @param parent the parent forum
+	 * @param type   the forum type
+	 * @param perm   the perm
+	 * @param oid    the oid
+	 * @return the new forum
+	 */
+	public Forum createNewForum(String name, Forum parent, int type, int perm, int oid)
+	{
+		Forum forum = new Forum(name, parent, type, perm, oid);
+		forum.insertIntoDb();
+		return forum;
+	}
 
-    /**
-     * Gets the a new Id.
-     *
-     * @return the a new Id
-     */
-    public int getANewID()
-    {
-        return ++_lastid;
-    }
+	/**
+	 * Gets the a new Id.
+	 *
+	 * @return the a new Id
+	 */
+	public int getANewID()
+	{
+		return ++_lastid;
+	}
 
-    /**
-     * Gets the forum by Id.
-     *
-     * @param idf the the forum Id
-     * @return the forum by Id
-     */
-    public Forum getForumByID(int idf)
-    {
-        for (Forum f : _table)
-        {
-            if (f.getID() == idf)
-            {
-                return f;
-            }
-        }
-        return null;
-    }
+	/**
+	 * Gets the forum by Id.
+	 *
+	 * @param idf the the forum Id
+	 * @return the forum by Id
+	 */
+	public Forum getForumByID(int idf)
+	{
+		for (Forum f : _table)
+		{
+			if (f.getID() == idf)
+			{
+				return f;
+			}
+		}
+		return null;
+	}
 
-    @Override
-    public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
-    {
+	@Override
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
+	{
 
-    }
+	}
 
-    /**
-     * Gets the single instance of ForumsBBSManager.
-     *
-     * @return single instance of ForumsBBSManager
-     */
-    public static ForumsBBSManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	/**
+	 * Gets the single instance of ForumsBBSManager.
+	 *
+	 * @return single instance of ForumsBBSManager
+	 */
+	public static ForumsBBSManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    private static class SingletonHolder
-    {
-        protected static final ForumsBBSManager _instance = new ForumsBBSManager();
-    }
+	private static class SingletonHolder
+	{
+		protected static final ForumsBBSManager _instance = new ForumsBBSManager();
+	}
 }

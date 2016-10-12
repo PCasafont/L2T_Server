@@ -22,29 +22,29 @@ import java.util.ArrayList;
 
 public class ConditionPlayerClassNameStartsWith extends Condition
 {
-    private final ArrayList<String> _className;
+	private final ArrayList<String> _className;
 
-    public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
-    {
-        _className = className;
-    }
+	public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
+	{
+		_className = className;
+	}
 
-    @Override
-    public boolean testImpl(Env env)
-    {
-        if (!(env.player instanceof L2PcInstance))
-        {
-            return false;
-        }
+	@Override
+	public boolean testImpl(Env env)
+	{
+		if (!(env.player instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        for (String className : _className)
-        {
-            if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
-            {
-                return true;
-            }
-        }
+		for (String className : _className)
+		{
+			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
+			{
+				return true;
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

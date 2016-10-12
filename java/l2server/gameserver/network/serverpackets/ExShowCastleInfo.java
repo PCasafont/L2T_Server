@@ -29,39 +29,39 @@ public class ExShowCastleInfo extends L2GameServerPacket
 {
 
     /*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
 
-    /**
-     * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
-     */
-    @Override
-    protected final void writeImpl()
-    {
-        List<Castle> castles = CastleManager.getInstance().getCastles();
-        writeD(castles.size());
-        for (Castle castle : castles)
-        {
-            writeD(castle.getCastleId());
-            if (castle.getOwnerId() > 0)
-            {
-                if (ClanTable.getInstance().getClan(castle.getOwnerId()) != null)
-                {
-                    writeS(ClanTable.getInstance().getClan(castle.getOwnerId()).getName());
-                }
-                else
-                {
-                    Log.warning("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " +
-                            castle.getOwnerId() + " who does not have a  name!");
-                    writeS("");
-                }
-            }
-            else
-            {
-                writeS("");
-            }
-            writeD(castle.getTaxPercent());
-            writeD((int) (castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
-        }
-    }
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+		List<Castle> castles = CastleManager.getInstance().getCastles();
+		writeD(castles.size());
+		for (Castle castle : castles)
+		{
+			writeD(castle.getCastleId());
+			if (castle.getOwnerId() > 0)
+			{
+				if (ClanTable.getInstance().getClan(castle.getOwnerId()) != null)
+				{
+					writeS(ClanTable.getInstance().getClan(castle.getOwnerId()).getName());
+				}
+				else
+				{
+					Log.warning("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " +
+							castle.getOwnerId() + " who does not have a  name!");
+					writeS("");
+				}
+			}
+			else
+			{
+				writeS("");
+			}
+			writeD(castle.getTaxPercent());
+			writeD((int) (castle.getSiege().getSiegeDate().getTimeInMillis() / 1000));
+		}
+	}
 }

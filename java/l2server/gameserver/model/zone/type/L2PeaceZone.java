@@ -26,71 +26,71 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2PeaceZone extends L2ZoneType
 {
-    boolean _enabled;
+	boolean _enabled;
 
-    public L2PeaceZone(int id)
-    {
-        super(id);
+	public L2PeaceZone(int id)
+	{
+		super(id);
 
-        _enabled = true;
-    }
+		_enabled = true;
+	}
 
-    @Override
-    protected void onEnter(L2Character character)
-    {
-        if (!_enabled)
-        {
-            return;
-        }
+	@Override
+	protected void onEnter(L2Character character)
+	{
+		if (!_enabled)
+		{
+			return;
+		}
 
-        if (!GMEventManager.getInstance().onEnterZone(character, this))
-        {
-            return;
-        }
+		if (!GMEventManager.getInstance().onEnterZone(character, this))
+		{
+			return;
+		}
 
-        character.setInsideZone(L2Character.ZONE_PEACE, true);
-    }
+		character.setInsideZone(L2Character.ZONE_PEACE, true);
+	}
 
-    @Override
-    protected void onExit(L2Character character)
-    {
-        character.setInsideZone(L2Character.ZONE_PEACE, false);
-    }
+	@Override
+	protected void onExit(L2Character character)
+	{
+		character.setInsideZone(L2Character.ZONE_PEACE, false);
+	}
 
-    @Override
-    public void onDieInside(L2Character character, L2Character killer)
-    {
-    }
+	@Override
+	public void onDieInside(L2Character character, L2Character killer)
+	{
+	}
 
-    @Override
-    public void onReviveInside(L2Character character)
-    {
-    }
+	@Override
+	public void onReviveInside(L2Character character)
+	{
+	}
 
-    public boolean isEnabled()
-    {
-        return _enabled;
-    }
+	public boolean isEnabled()
+	{
+		return _enabled;
+	}
 
-    public void setZoneEnabled(boolean val)
-    {
-        _enabled = val;
+	public void setZoneEnabled(boolean val)
+	{
+		_enabled = val;
 
-        for (L2Character chara : getCharactersInside().values())
-        {
-            if (chara == null)
-            {
-                continue;
-            }
+		for (L2Character chara : getCharactersInside().values())
+		{
+			if (chara == null)
+			{
+				continue;
+			}
 
-            if (_enabled)
-            {
-                onEnter(chara);
-            }
-            else
-            {
-                onExit(chara);
-            }
-        }
-    }
+			if (_enabled)
+			{
+				onEnter(chara);
+			}
+			else
+			{
+				onExit(chara);
+			}
+		}
+	}
 }

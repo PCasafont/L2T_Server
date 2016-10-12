@@ -5,19 +5,19 @@ package l2server.gameserver.network.clientpackets;
  */
 public class RequestBRProductList extends L2GameClientPacket
 {
-    @SuppressWarnings("unused")
-    private int _unk;
+	@SuppressWarnings("unused")
+	private int _unk;
 
-    @Override
-    public void readImpl()
-    {
-        _unk = readD();
-    }
+	@Override
+	public void readImpl()
+	{
+		_unk = readD();
+	}
 
-    @Override
-    public void runImpl()
-    {
-        // TODO
-        //Log.info(getType() + " packet was received from " + getClient() + ".");
-    }
+	@Override
+	public void runImpl()
+	{
+		// TODO
+		//Log.info(getType() + " packet was received from " + getClient() + ".");
+	}
 }

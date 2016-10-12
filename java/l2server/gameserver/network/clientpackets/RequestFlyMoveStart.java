@@ -25,30 +25,30 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestFlyMoveStart extends L2GameClientPacket
 {
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null ||
-                PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass()).getLevel() < 85 ||
-                activeChar.getReputation() < 0 || activeChar.isMounted() || activeChar.isTransformed())
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null ||
+				PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass()).getLevel() < 85 ||
+				activeChar.getReputation() < 0 || activeChar.isMounted() || activeChar.isTransformed())
+		{
+			return;
+		}
 
-        if (!activeChar.getSummons().isEmpty())
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
-            return;
-        }
+		if (!activeChar.getSummons().isEmpty())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
+			return;
+		}
 
-        activeChar.startFlyMove();
-    }
+		activeChar.startFlyMove();
+	}
 }

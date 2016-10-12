@@ -28,27 +28,27 @@ import l2server.gameserver.network.serverpackets.ExSendManorList;
 public class RequestManorList extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        ExSendManorList manorlist = new ExSendManorList();
-        player.sendPacket(manorlist);
-    }
+		ExSendManorList manorlist = new ExSendManorList();
+		player.sendPacket(manorlist);
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

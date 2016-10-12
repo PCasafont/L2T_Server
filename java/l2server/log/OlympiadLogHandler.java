@@ -20,8 +20,8 @@ import java.util.logging.FileHandler;
 
 public class OlympiadLogHandler extends FileHandler
 {
-    public OlympiadLogHandler() throws IOException, SecurityException
-    {
-        super();
-    }
+	public OlympiadLogHandler() throws IOException, SecurityException
+	{
+		super();
+	}
 }

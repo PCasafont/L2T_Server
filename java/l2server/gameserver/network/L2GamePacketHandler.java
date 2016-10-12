@@ -36,101 +36,101 @@ import java.nio.ByteBuffer;
  * @author KenM
  */
 public final class L2GamePacketHandler
-        implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient>
+		implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient>
 {
 
-    // implementation
-    @Override
-    public ReceivablePacket<L2GameClient> handlePacket(ByteBuffer buf, L2GameClient client)
-    {
-        if (client.dropPacket())
-        {
-            return null;
-        }
+	// implementation
+	@Override
+	public ReceivablePacket<L2GameClient> handlePacket(ByteBuffer buf, L2GameClient client)
+	{
+		if (client.dropPacket())
+		{
+			return null;
+		}
 
-        GameClientState state = client.getState();
-        PacketFamily family = PacketOpcodes.ClientPacketsFamily;
-        L2GameClientPacket msg = null;
-        int[] accumOpcodes = new int[5];
-        int opcodeCount = 0;
-        while (msg == null)
-        {
-            int opcode;
-            switch (family.switchLength)
-            {
-                case 1:
-                    opcode = buf.get() & 0xFF;
-                    break;
-                case 2:
-                    opcode = buf.getShort() & 0xffff;
-                    break;
-                case 4:
-                default:
-                    opcode = buf.getInt();
-            }
-            accumOpcodes[opcodeCount] = opcode;
-            opcodeCount++;
+		GameClientState state = client.getState();
+		PacketFamily family = PacketOpcodes.ClientPacketsFamily;
+		L2GameClientPacket msg = null;
+		int[] accumOpcodes = new int[5];
+		int opcodeCount = 0;
+		while (msg == null)
+		{
+			int opcode;
+			switch (family.switchLength)
+			{
+				case 1:
+					opcode = buf.get() & 0xFF;
+					break;
+				case 2:
+					opcode = buf.getShort() & 0xffff;
+					break;
+				case 4:
+				default:
+					opcode = buf.getInt();
+			}
+			accumOpcodes[opcodeCount] = opcode;
+			opcodeCount++;
 
-            Object obj = family.children.get(opcode);
-            if (obj instanceof PacketFamily)
-            {
-                family = (PacketFamily) obj;
-            }
-            else if (obj instanceof Class<?>)
-            {
-                @SuppressWarnings("unchecked") Class<? extends L2GameClientPacket> packetClass =
-                        (Class<? extends L2GameClientPacket>) obj;
-                try
-                {
-                    msg = packetClass.newInstance();
-                }
-                catch (Exception e)
-                {
-                    Log.warning("Error while trying to create packet of type: " + packetClass.getCanonicalName());
-                    e.printStackTrace();
-                }
-            }
-            else
-            {
-                printDebug(accumOpcodes, opcodeCount, buf, state, client);
-                break;
-            }
-        }
+			Object obj = family.children.get(opcode);
+			if (obj instanceof PacketFamily)
+			{
+				family = (PacketFamily) obj;
+			}
+			else if (obj instanceof Class<?>)
+			{
+				@SuppressWarnings("unchecked") Class<? extends L2GameClientPacket> packetClass =
+						(Class<? extends L2GameClientPacket>) obj;
+				try
+				{
+					msg = packetClass.newInstance();
+				}
+				catch (Exception e)
+				{
+					Log.warning("Error while trying to create packet of type: " + packetClass.getCanonicalName());
+					e.printStackTrace();
+				}
+			}
+			else
+			{
+				printDebug(accumOpcodes, opcodeCount, buf, state, client);
+				break;
+			}
+		}
 
-        return msg;
-    }
+		return msg;
+	}
 
-    private void printDebug(int[] opcodes, int opcodeCount, ByteBuffer buf, GameClientState state, L2GameClient client)
-    {
-        client.onUnknownPacket();
-        if (!Config.PACKET_HANDLER_DEBUG)
-        {
-            return;
-        }
+	private void printDebug(int[] opcodes, int opcodeCount, ByteBuffer buf, GameClientState state, L2GameClient client)
+	{
+		client.onUnknownPacket();
+		if (!Config.PACKET_HANDLER_DEBUG)
+		{
+			return;
+		}
 
-        String opcode = "0x" + Integer.toHexString(opcodes[0]);
-        for (int i = 1; i < opcodeCount; i++)
-        {
-            opcode += ":0x" + Integer.toHexString(opcodes[i]);
-        }
+		String opcode = "0x" + Integer.toHexString(opcodes[0]);
+		for (int i = 1; i < opcodeCount; i++)
+		{
+			opcode += ":0x" + Integer.toHexString(opcodes[i]);
+		}
 
-        int size = buf.remaining();
-        Log.warning("Unknown Packet: " + opcode + " on State: " + state.name() + " Client: " + client.toString());
-        byte[] array = new byte[size];
-        buf.get(array);
-        Log.warning(Util.printData(array, size));
-    }
+		int size = buf.remaining();
+		Log.warning("Unknown Packet: " + opcode + " on State: " + state.name() + " Client: " + client.toString());
+		byte[] array = new byte[size];
+		buf.get(array);
+		Log.warning(Util.printData(array, size));
+	}
 
-    // impl
-    @Override
-    public L2GameClient create(MMOConnection<L2GameClient> con)
-    {
-        return new L2GameClient(con);
-    }
+	// impl
+	@Override
+	public L2GameClient create(MMOConnection<L2GameClient> con)
+	{
+		return new L2GameClient(con);
+	}
 
-    @Override
-    public void execute(ReceivablePacket<L2GameClient> rp)
-    {
-        rp.getClient().execute(rp);
-    }
+	@Override
+	public void execute(ReceivablePacket<L2GameClient> rp)
+	{
+		rp.getClient().execute(rp);
+	}
 }

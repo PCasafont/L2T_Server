@@ -27,36 +27,36 @@ import l2server.gameserver.util.Util;
  */
 public final class SetPrivateStoreMsgBuy extends L2GameClientPacket
 {
-    //
+	//
 
-    private static final int MAX_MSG_LENGTH = 29;
+	private static final int MAX_MSG_LENGTH = 29;
 
-    private String _storeMsg;
+	private String _storeMsg;
 
-    @Override
-    protected void readImpl()
-    {
-        _storeMsg = readS();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_storeMsg = readS();
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        final L2PcInstance player = getClient().getActiveChar();
-        if (player == null || player.getBuyList() == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		final L2PcInstance player = getClient().getActiveChar();
+		if (player == null || player.getBuyList() == null)
+		{
+			return;
+		}
 
-        if (_storeMsg != null && _storeMsg.length() > MAX_MSG_LENGTH)
-        {
-            Util.handleIllegalPlayerAction(player,
-                    "Player " + player.getName() + " tried to overflow private store buy message",
-                    Config.DEFAULT_PUNISH);
-            return;
-        }
+		if (_storeMsg != null && _storeMsg.length() > MAX_MSG_LENGTH)
+		{
+			Util.handleIllegalPlayerAction(player,
+					"Player " + player.getName() + " tried to overflow private store buy message",
+					Config.DEFAULT_PUNISH);
+			return;
+		}
 
-        player.getBuyList().setTitle(_storeMsg);
-        player.sendPacket(new PrivateStoreMsgBuy(player));
-    }
+		player.getBuyList().setTitle(_storeMsg);
+		player.sendPacket(new PrivateStoreMsgBuy(player));
+	}
 }

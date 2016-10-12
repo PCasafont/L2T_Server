@@ -23,69 +23,69 @@ import java.util.List;
  */
 public class MultiSellEntry
 {
-    protected int _entryId;
-    protected boolean _stackable = true;
+	protected int _entryId;
+	protected boolean _stackable = true;
 
-    protected List<Ingredient> _products;
-    protected List<Ingredient> _ingredients;
+	protected List<Ingredient> _products;
+	protected List<Ingredient> _ingredients;
 
-    public MultiSellEntry(int entryId)
-    {
-        _entryId = entryId;
-        _products = new ArrayList<>();
-        _ingredients = new ArrayList<>();
-    }
+	public MultiSellEntry(int entryId)
+	{
+		_entryId = entryId;
+		_products = new ArrayList<>();
+		_ingredients = new ArrayList<>();
+	}
 
-    /**
-     * This constructor used in PreparedEntry only
-     * ArrayLists not created
-     */
-    protected MultiSellEntry()
-    {
-    }
+	/**
+	 * This constructor used in PreparedEntry only
+	 * ArrayLists not created
+	 */
+	protected MultiSellEntry()
+	{
+	}
 
-    public final void setEntryId(int id)
-    {
-        _entryId = id;
-    }
+	public final void setEntryId(int id)
+	{
+		_entryId = id;
+	}
 
-    public final int getEntryId()
-    {
-        return _entryId;
-    }
+	public final int getEntryId()
+	{
+		return _entryId;
+	}
 
-    public final void addProduct(Ingredient product)
-    {
-        _products.add(product);
+	public final void addProduct(Ingredient product)
+	{
+		_products.add(product);
 
-        if (!product.isStackable())
-        {
-            _stackable = false;
-        }
-    }
+		if (!product.isStackable())
+		{
+			_stackable = false;
+		}
+	}
 
-    public final List<Ingredient> getProducts()
-    {
-        return _products;
-    }
+	public final List<Ingredient> getProducts()
+	{
+		return _products;
+	}
 
-    public final void addIngredient(Ingredient ingredient)
-    {
-        _ingredients.add(ingredient);
-    }
+	public final void addIngredient(Ingredient ingredient)
+	{
+		_ingredients.add(ingredient);
+	}
 
-    public final List<Ingredient> getIngredients()
-    {
-        return _ingredients;
-    }
+	public final List<Ingredient> getIngredients()
+	{
+		return _ingredients;
+	}
 
-    public final boolean isStackable()
-    {
-        return _stackable;
-    }
+	public final boolean isStackable()
+	{
+		return _stackable;
+	}
 
-    public long getTaxAmount()
-    {
-        return 0;
-    }
+	public long getTaxAmount()
+	{
+		return 0;
+	}
 }

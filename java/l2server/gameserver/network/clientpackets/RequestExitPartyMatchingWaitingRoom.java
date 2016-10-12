@@ -24,21 +24,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-    }
+	@Override
+	protected void readImpl()
+	{
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance _activeChar = getClient().getActiveChar();
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance _activeChar = getClient().getActiveChar();
 
-        if (_activeChar == null)
-        {
-            return;
-        }
+		if (_activeChar == null)
+		{
+			return;
+		}
 
-        PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
-    }
+		PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
+	}
 }

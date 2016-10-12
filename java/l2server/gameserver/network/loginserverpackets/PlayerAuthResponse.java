@@ -22,33 +22,33 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class PlayerAuthResponse extends BaseRecievePacket
 {
-    private String _account;
-    private boolean _authed;
+	private String _account;
+	private boolean _authed;
 
-    /**
-     * @param decrypt
-     */
-    public PlayerAuthResponse(byte[] decrypt)
-    {
-        super(decrypt);
+	/**
+	 * @param decrypt
+	 */
+	public PlayerAuthResponse(byte[] decrypt)
+	{
+		super(decrypt);
 
-        _account = readS();
-        _authed = readC() == 0 ? false : true;
-    }
+		_account = readS();
+		_authed = readC() == 0 ? false : true;
+	}
 
-    /**
-     * @return Returns the account.
-     */
-    public String getAccount()
-    {
-        return _account;
-    }
+	/**
+	 * @return Returns the account.
+	 */
+	public String getAccount()
+	{
+		return _account;
+	}
 
-    /**
-     * @return Returns the authed state.
-     */
-    public boolean isAuthed()
-    {
-        return _authed;
-    }
+	/**
+	 * @return Returns the authed state.
+	 */
+	public boolean isAuthed()
+	{
+		return _authed;
+	}
 }

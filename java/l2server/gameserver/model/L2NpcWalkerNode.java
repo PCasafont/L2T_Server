@@ -23,76 +23,76 @@ import l2server.gameserver.network.NpcStringId;
  */
 public class L2NpcWalkerNode
 {
-    private int _chatId = 0;
-    private int _moveX;
-    private int _moveY;
-    private int _moveZ;
-    private int _delay;
-    @SuppressWarnings("unused")
-    private NpcStringId _npcString;
-    private String _chatText;
-    private boolean _running;
+	private int _chatId = 0;
+	private int _moveX;
+	private int _moveY;
+	private int _moveZ;
+	private int _delay;
+	@SuppressWarnings("unused")
+	private NpcStringId _npcString;
+	private String _chatText;
+	private boolean _running;
 
-    public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
-    {
-        this(moveX, moveY, moveZ, delay, null, chatText, running);
-    }
+	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
+	{
+		this(moveX, moveY, moveZ, delay, null, chatText, running);
+	}
 
-    public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
-    {
-        _moveX = x;
-        _moveY = y;
-        _moveZ = z;
-        _delay = delay;
-        _npcString = npcString;
-        _chatText = chatText;
-        if (_chatText.startsWith("#"))
-        {
-            _chatId = Integer.parseInt(_chatText.substring(1));
-        }
-        else if (_chatText.trim().isEmpty())
-        {
-            _chatText = null;
-        }
-        _running = running;
-    }
+	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
+	{
+		_moveX = x;
+		_moveY = y;
+		_moveZ = z;
+		_delay = delay;
+		_npcString = npcString;
+		_chatText = chatText;
+		if (_chatText.startsWith("#"))
+		{
+			_chatId = Integer.parseInt(_chatText.substring(1));
+		}
+		else if (_chatText.trim().isEmpty())
+		{
+			_chatText = null;
+		}
+		_running = running;
+	}
 
-    public String getChatText()
-    {
-        if (_chatId != 0)
-        {
-            throw new IllegalStateException("Chat id is defined for walker route!");
-        }
-        return _chatText;
-    }
+	public String getChatText()
+	{
+		if (_chatId != 0)
+		{
+			throw new IllegalStateException("Chat id is defined for walker route!");
+		}
+		return _chatText;
+	}
 
-    public int getMoveX()
-    {
-        return _moveX;
-    }
+	public int getMoveX()
+	{
+		return _moveX;
+	}
 
-    public int getMoveY()
-    {
-        return _moveY;
-    }
+	public int getMoveY()
+	{
+		return _moveY;
+	}
 
-    public int getMoveZ()
-    {
-        return _moveZ;
-    }
+	public int getMoveZ()
+	{
+		return _moveZ;
+	}
 
-    public int getDelay()
-    {
-        return _delay;
-    }
+	public int getDelay()
+	{
+		return _delay;
+	}
 
-    public boolean getRunning()
-    {
-        return _running;
-    }
+	public boolean getRunning()
+	{
+		return _running;
+	}
 
-    public int getChatId()
-    {
-        return _chatId;
-    }
+	public int getChatId()
+	{
+		return _chatId;
+	}
 }

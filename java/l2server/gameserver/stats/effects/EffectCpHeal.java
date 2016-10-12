@@ -24,56 +24,56 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectCpHeal extends L2Effect
 {
-    public EffectCpHeal(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectCpHeal(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectCpHeal(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectCpHeal(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.BUFF;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.BUFF;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (getEffected().isDead())
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (getEffected().isDead())
+		{
+			return false;
+		}
 
-        if (getEffected() instanceof L2DoorInstance)
-        {
-            return false;
-        }
+		if (getEffected() instanceof L2DoorInstance)
+		{
+			return false;
+		}
 
-        double cp = getEffected().getCurrentCp();
-        cp += calc();
+		double cp = getEffected().getCurrentCp();
+		cp += calc();
 
-        getEffected().setCurrentCp(cp);
-        StatusUpdate sump = new StatusUpdate(getEffected());
-        sump.addAttribute(StatusUpdate.CUR_CP, (int) cp);
-        getEffected().sendPacket(sump);
+		getEffected().setCurrentCp(cp);
+		StatusUpdate sump = new StatusUpdate(getEffected());
+		sump.addAttribute(StatusUpdate.CUR_CP, (int) cp);
+		getEffected().sendPacket(sump);
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 }

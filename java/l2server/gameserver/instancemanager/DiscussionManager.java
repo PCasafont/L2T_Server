@@ -20,62 +20,62 @@ import java.util.List;
 
 public class DiscussionManager
 {
-    private List<Integer> _voted = new ArrayList<>();
-    private int[] _votes = new int[10];
-    private boolean _votesEnabled = false;
-    private boolean _globalChatDisabled = false;
+	private List<Integer> _voted = new ArrayList<>();
+	private int[] _votes = new int[10];
+	private boolean _votesEnabled = false;
+	private boolean _globalChatDisabled = false;
 
-    public static DiscussionManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static DiscussionManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    public boolean vote(int objectId, byte option)
-    {
-        if (_voted.contains(objectId))
-        {
-            return false;
-        }
-        _voted.add(objectId);
-        _votes[option]++;
-        return true;
-    }
+	public boolean vote(int objectId, byte option)
+	{
+		if (_voted.contains(objectId))
+		{
+			return false;
+		}
+		_voted.add(objectId);
+		_votes[option]++;
+		return true;
+	}
 
-    public void startVotations()
-    {
-        _voted.clear();
-        for (int i = 0; i < _votes.length; i++)
-        {
-            _votes[i] = 0;
-        }
-        _votesEnabled = true;
-    }
+	public void startVotations()
+	{
+		_voted.clear();
+		for (int i = 0; i < _votes.length; i++)
+		{
+			_votes[i] = 0;
+		}
+		_votesEnabled = true;
+	}
 
-    public int[] endVotations()
-    {
-        _voted.clear();
-        _votesEnabled = false;
-        return _votes;
-    }
+	public int[] endVotations()
+	{
+		_voted.clear();
+		_votesEnabled = false;
+		return _votes;
+	}
 
-    public boolean areVotesEnabled()
-    {
-        return _votesEnabled;
-    }
+	public boolean areVotesEnabled()
+	{
+		return _votesEnabled;
+	}
 
-    public void setGlobalChatDisabled(boolean chatDisabled)
-    {
-        _globalChatDisabled = chatDisabled;
-    }
+	public void setGlobalChatDisabled(boolean chatDisabled)
+	{
+		_globalChatDisabled = chatDisabled;
+	}
 
-    public boolean isGlobalChatDisabled()
-    {
-        return _globalChatDisabled;
-    }
+	public boolean isGlobalChatDisabled()
+	{
+		return _globalChatDisabled;
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final DiscussionManager _instance = new DiscussionManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final DiscussionManager _instance = new DiscussionManager();
+	}
 }

@@ -26,101 +26,101 @@ import java.util.Collection;
 
 public class L2WaterZone extends L2ZoneType
 {
-    public L2WaterZone(int id)
-    {
-        super(id);
-    }
+	public L2WaterZone(int id)
+	{
+		super(id);
+	}
 
-    @Override
-    protected void onEnter(L2Character character)
-    {
-        character.setInsideZone(L2Character.ZONE_WATER, true);
+	@Override
+	protected void onEnter(L2Character character)
+	{
+		character.setInsideZone(L2Character.ZONE_WATER, true);
 
-        if (character instanceof L2PcInstance)
-        {
-            if (((L2PcInstance) character).isTransformed() && !((L2PcInstance) character).isCursedWeaponEquipped())
-            {
-                character.stopTransformation(true);
-                //((L2PcInstance) character).untransform();
-            }
-            // TODO: update to only send speed status when that packet is known
-            else
-            {
-                ((L2PcInstance) character).broadcastUserInfo();
-            }
-        }
-        else if (character instanceof L2Npc)
-        {
-            Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-            //synchronized (character.getKnownList().getKnownPlayers())
-            {
-                for (L2PcInstance player : plrs)
-                {
-                    if (character.getRunSpeed() == 0)
-                    {
-                        player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
-                    }
-                    else
-                    {
-                        player.sendPacket(new NpcInfo((L2Npc) character, player));
-                    }
-                }
-            }
-        }
+		if (character instanceof L2PcInstance)
+		{
+			if (((L2PcInstance) character).isTransformed() && !((L2PcInstance) character).isCursedWeaponEquipped())
+			{
+				character.stopTransformation(true);
+				//((L2PcInstance) character).untransform();
+			}
+			// TODO: update to only send speed status when that packet is known
+			else
+			{
+				((L2PcInstance) character).broadcastUserInfo();
+			}
+		}
+		else if (character instanceof L2Npc)
+		{
+			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
+			//synchronized (character.getKnownList().getKnownPlayers())
+			{
+				for (L2PcInstance player : plrs)
+				{
+					if (character.getRunSpeed() == 0)
+					{
+						player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
+					}
+					else
+					{
+						player.sendPacket(new NpcInfo((L2Npc) character, player));
+					}
+				}
+			}
+		}
 
 		/*
-         * if (character instanceof L2PcInstance) {
+		 * if (character instanceof L2PcInstance) {
 		 * ((L2PcInstance)character).sendMessage("You entered water!"); }
 		 */
-    }
+	}
 
-    @Override
-    protected void onExit(L2Character character)
-    {
-        character.setInsideZone(L2Character.ZONE_WATER, false);
+	@Override
+	protected void onExit(L2Character character)
+	{
+		character.setInsideZone(L2Character.ZONE_WATER, false);
 
 		/*if (character instanceof L2PcInstance)
 		{
 			((L2PcInstance)character).sendMessage("You exited water!");
 		}*/
 
-        // TODO: update to only send speed status when that packet is known
-        if (character instanceof L2PcInstance)
-        {
-            ((L2PcInstance) character).broadcastUserInfo();
-        }
-        else if (character instanceof L2Npc)
-        {
-            Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-            //synchronized (character.getKnownList().getKnownPlayers())
-            {
-                for (L2PcInstance player : plrs)
-                {
-                    if (character.getRunSpeed() == 0)
-                    {
-                        player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
-                    }
-                    else
-                    {
-                        player.sendPacket(new NpcInfo((L2Npc) character, player));
-                    }
-                }
-            }
-        }
-    }
+		// TODO: update to only send speed status when that packet is known
+		if (character instanceof L2PcInstance)
+		{
+			((L2PcInstance) character).broadcastUserInfo();
+		}
+		else if (character instanceof L2Npc)
+		{
+			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
+			//synchronized (character.getKnownList().getKnownPlayers())
+			{
+				for (L2PcInstance player : plrs)
+				{
+					if (character.getRunSpeed() == 0)
+					{
+						player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
+					}
+					else
+					{
+						player.sendPacket(new NpcInfo((L2Npc) character, player));
+					}
+				}
+			}
+		}
+	}
 
-    @Override
-    public void onDieInside(L2Character character, L2Character killer)
-    {
-    }
+	@Override
+	public void onDieInside(L2Character character, L2Character killer)
+	{
+	}
 
-    @Override
-    public void onReviveInside(L2Character character)
-    {
-    }
+	@Override
+	public void onReviveInside(L2Character character)
+	{
+	}
 
-    public int getWaterZ()
-    {
-        return getZone().getHighZ();
-    }
+	public int getWaterZ()
+	{
+		return getZone().getHighZ();
+	}
 }

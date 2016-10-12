@@ -21,18 +21,18 @@ package l2server.gameserver.network.serverpackets;
 public class ExRotation extends L2GameServerPacket
 {
 
-    private int _charObjId, _degree;
+	private int _charObjId, _degree;
 
-    public ExRotation(int charId, int degree)
-    {
-        _charObjId = charId;
-        _degree = degree;
-    }
+	public ExRotation(int charId, int degree)
+	{
+		_charObjId = charId;
+		_degree = degree;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_charObjId);
-        writeD(_degree);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_charObjId);
+		writeD(_degree);
+	}
 }

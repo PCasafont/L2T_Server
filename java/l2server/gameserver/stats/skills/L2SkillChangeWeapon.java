@@ -34,170 +34,170 @@ import l2server.gameserver.templates.item.L2Weapon;
 public class L2SkillChangeWeapon extends L2Skill
 {
 
-    /**
-     * @param set
-     */
-    public L2SkillChangeWeapon(StatsSet set)
-    {
-        super(set);
-    }
+	/**
+	 * @param set
+	 */
+	public L2SkillChangeWeapon(StatsSet set)
+	{
+		super(set);
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])
-     */
-    @Override
-    public void useSkill(L2Character caster, L2Object[] targets)
-    {
-        if (caster.isAlikeDead())
-        {
-            return;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])
+	 */
+	@Override
+	public void useSkill(L2Character caster, L2Object[] targets)
+	{
+		if (caster.isAlikeDead())
+		{
+			return;
+		}
 
-        if (!(caster instanceof L2PcInstance))
-        {
-            return;
-        }
+		if (!(caster instanceof L2PcInstance))
+		{
+			return;
+		}
 
-        L2PcInstance player = (L2PcInstance) caster;
+		L2PcInstance player = (L2PcInstance) caster;
 
-        if (player.isEnchanting())
-        {
-            return;
-        }
+		if (player.isEnchanting())
+		{
+			return;
+		}
 
-        L2Weapon weaponItem = player.getActiveWeaponItem();
+		L2Weapon weaponItem = player.getActiveWeaponItem();
 
-        if (weaponItem == null)
-        {
-            return;
-        }
+		if (weaponItem == null)
+		{
+			return;
+		}
 
-        L2ItemInstance wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-        if (wpn == null)
-        {
-            wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-        }
+		L2ItemInstance wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+		if (wpn == null)
+		{
+			wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+		}
 
-        if (wpn != null)
-        {
-            if (wpn.isAugmented())
-            {
-                return;
-            }
+		if (wpn != null)
+		{
+			if (wpn.isAugmented())
+			{
+				return;
+			}
 
-            int newItemId = 0;
-            int enchantLevel = 0;
-            Elementals elementals = null;
+			int newItemId = 0;
+			int enchantLevel = 0;
+			Elementals elementals = null;
 
-            if (weaponItem.getChangeWeaponId() != 0)
-            {
-                newItemId = weaponItem.getChangeWeaponId();
-                enchantLevel = wpn.getEnchantLevel();
-                elementals = wpn.getElementals() == null ? null : wpn.getElementals()[0];
+			if (weaponItem.getChangeWeaponId() != 0)
+			{
+				newItemId = weaponItem.getChangeWeaponId();
+				enchantLevel = wpn.getEnchantLevel();
+				elementals = wpn.getElementals() == null ? null : wpn.getElementals()[0];
 
-                if (newItemId == -1)
-                {
-                    return;
-                }
+				if (newItemId == -1)
+				{
+					return;
+				}
 
-                L2ItemInstance[] unequiped =
-                        player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
-                InventoryUpdate iu = new InventoryUpdate();
-                for (L2ItemInstance item : unequiped)
-                {
-                    iu.addModifiedItem(item);
-                }
+				L2ItemInstance[] unequiped =
+						player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
+				InventoryUpdate iu = new InventoryUpdate();
+				for (L2ItemInstance item : unequiped)
+				{
+					iu.addModifiedItem(item);
+				}
 
-                player.sendPacket(iu);
+				player.sendPacket(iu);
 
-                if (unequiped.length > 0)
-                {
-                    byte count = 0;
+				if (unequiped.length > 0)
+				{
+					byte count = 0;
 
-                    for (L2ItemInstance item : unequiped)
-                    {
-                        if (!(item.getItem() instanceof L2Weapon))
-                        {
-                            count++;
-                            continue;
-                        }
+					for (L2ItemInstance item : unequiped)
+					{
+						if (!(item.getItem() instanceof L2Weapon))
+						{
+							count++;
+							continue;
+						}
 
-                        SystemMessage sm = null;
-                        if (item.getEnchantLevel() > 0)
-                        {
-                            sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
-                            sm.addNumber(item.getEnchantLevel());
-                            sm.addItemName(item);
-                        }
-                        else
-                        {
-                            sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
-                            sm.addItemName(item);
-                        }
-                        player.sendPacket(sm);
-                    }
+						SystemMessage sm = null;
+						if (item.getEnchantLevel() > 0)
+						{
+							sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
+							sm.addNumber(item.getEnchantLevel());
+							sm.addItemName(item);
+						}
+						else
+						{
+							sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
+							sm.addItemName(item);
+						}
+						player.sendPacket(sm);
+					}
 
-                    if (count == unequiped.length)
-                    {
-                        return;
-                    }
-                }
-                else
-                {
-                    return;
-                }
+					if (count == unequiped.length)
+					{
+						return;
+					}
+				}
+				else
+				{
+					return;
+				}
 
-                long destroyedItemTime = wpn.getTime();
+				long destroyedItemTime = wpn.getTime();
 
-                L2ItemInstance destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
+				L2ItemInstance destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
 
-                if (destroyItem == null)
-                {
-                    return;
-                }
+				if (destroyItem == null)
+				{
+					return;
+				}
 
-                L2ItemInstance newItem =
-                        player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
+				L2ItemInstance newItem =
+						player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
 
-                if (newItem == null)
-                {
-                    return;
-                }
+				if (newItem == null)
+				{
+					return;
+				}
 
-                if (destroyedItemTime != -1)
-                {
-                    newItem.setTime(10080);
-                }
+				if (destroyedItemTime != -1)
+				{
+					newItem.setTime(10080);
+				}
 
-                if (elementals != null && elementals.getElement() != -1 && elementals.getValue() != -1)
-                {
-                    newItem.setElementAttr(elementals.getElement(), elementals.getValue());
-                }
-                newItem.setEnchantLevel(enchantLevel);
-                player.getInventory().equipItem(newItem);
+				if (elementals != null && elementals.getElement() != -1 && elementals.getValue() != -1)
+				{
+					newItem.setElementAttr(elementals.getElement(), elementals.getValue());
+				}
+				newItem.setEnchantLevel(enchantLevel);
+				player.getInventory().equipItem(newItem);
 
-                SystemMessage msg = null;
+				SystemMessage msg = null;
 
-                if (newItem.getEnchantLevel() > 0)
-                {
-                    msg = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED);
-                    msg.addNumber(newItem.getEnchantLevel());
-                    msg.addItemName(newItem);
-                }
-                else
-                {
-                    msg = SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED);
-                    msg.addItemName(newItem);
-                }
-                player.sendPacket(msg);
+				if (newItem.getEnchantLevel() > 0)
+				{
+					msg = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED);
+					msg.addNumber(newItem.getEnchantLevel());
+					msg.addItemName(newItem);
+				}
+				else
+				{
+					msg = SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED);
+					msg.addItemName(newItem);
+				}
+				player.sendPacket(msg);
 
-                InventoryUpdate u = new InventoryUpdate();
-                u.addRemovedItem(destroyItem);
-                u.addItem(newItem);
-                player.sendPacket(u);
+				InventoryUpdate u = new InventoryUpdate();
+				u.addRemovedItem(destroyItem);
+				u.addItem(newItem);
+				player.sendPacket(u);
 
-                player.broadcastUserInfo();
-            }
-        }
-    }
+				player.broadcastUserInfo();
+			}
+		}
+	}
 }

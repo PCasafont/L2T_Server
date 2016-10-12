@@ -26,22 +26,22 @@ import java.io.IOException;
 public class AuthResponse extends BaseSendablePacket
 {
 
-    /**
-     * @param serverId
-     */
-    public AuthResponse(int serverId)
-    {
-        writeC(0x02);
-        writeC(serverId);
-        writeS(GameServerTable.getInstance().getServerNameById(serverId));
-    }
+	/**
+	 * @param serverId
+	 */
+	public AuthResponse(int serverId)
+	{
+		writeC(0x02);
+		writeC(serverId);
+		writeS(GameServerTable.getInstance().getServerNameById(serverId));
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
-     */
-    @Override
-    public byte[] getContent() throws IOException
-    {
-        return getBytes();
-    }
+	/* (non-Javadoc)
+	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
+	 */
+	@Override
+	public byte[] getContent() throws IOException
+	{
+		return getBytes();
+	}
 }

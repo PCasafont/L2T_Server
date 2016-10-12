@@ -27,72 +27,72 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
 public final class RequestShortCutReg extends L2GameClientPacket
 {
 
-    private int _type;
-    private int _id;
-    private int _slot;
-    private int _page;
-    private int _lvl;
-    private int _characterType; // 1 - player, 2 - pet
+	private int _type;
+	private int _id;
+	private int _slot;
+	private int _page;
+	private int _lvl;
+	private int _characterType; // 1 - player, 2 - pet
 
-    @Override
-    protected void readImpl()
-    {
-        _type = readD();
-        int slot = readD();
-        _id = readD();
-        _lvl = readD();
-        _characterType = readD();
+	@Override
+	protected void readImpl()
+	{
+		_type = readD();
+		int slot = readD();
+		_id = readD();
+		_lvl = readD();
+		_characterType = readD();
 
-        _slot = slot % 12;
-        _page = slot / 12;
-    }
+		_slot = slot % 12;
+		_page = slot / 12;
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (_page > 10 || _page < 0)
-        {
-            return;
-        }
+		if (_page > 10 || _page < 0)
+		{
+			return;
+		}
 
-        switch (_type)
-        {
-            case 0x01: // item
-            case 0x02: // skill
-            {
-                L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
-                activeChar.registerShortCut(sc);
-                sendPacket(new ShortCutRegister(sc));
-                break;
-            }
-            case 0x03: // action
-            case 0x04: // macro
-            case 0x05: // recipe
-            {
-                L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
-                activeChar.registerShortCut(sc);
-                sendPacket(new ShortCutRegister(sc));
-                break;
-            }
-            case 0x06: // Teleport Bookmark
-            {
-                L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
-                activeChar.registerShortCut(sc);
-                sendPacket(new ShortCutRegister(sc));
-                break;
-            }
-        }
-    }
+		switch (_type)
+		{
+			case 0x01: // item
+			case 0x02: // skill
+			{
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				activeChar.registerShortCut(sc);
+				sendPacket(new ShortCutRegister(sc));
+				break;
+			}
+			case 0x03: // action
+			case 0x04: // macro
+			case 0x05: // recipe
+			{
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				activeChar.registerShortCut(sc);
+				sendPacket(new ShortCutRegister(sc));
+				break;
+			}
+			case 0x06: // Teleport Bookmark
+			{
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				activeChar.registerShortCut(sc);
+				sendPacket(new ShortCutRegister(sc));
+				break;
+			}
+		}
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

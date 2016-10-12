@@ -31,44 +31,44 @@ import l2server.gameserver.network.serverpackets.PartyMatchDetail;
  */
 public final class RequestWithDrawalParty extends L2GameClientPacket
 {
-    //
+	//
 
-    @Override
-    protected void readImpl()
-    {
-        //trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		//trigger
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        L2Party party = player.getParty();
+		L2Party party = player.getParty();
 
-        if (party != null)
-        {
-            party.removePartyMember(player, messageType.Left);
+		if (party != null)
+		{
+			party.removePartyMember(player, messageType.Left);
 
-            if (player.isInPartyMatchRoom())
-            {
-                PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
-                if (_room != null)
-                {
-                    player.sendPacket(new PartyMatchDetail(player, _room));
-                    player.sendPacket(new ExPartyRoomMembers(player, _room, 0));
-                    player.sendPacket(new ExClosePartyRoom());
+			if (player.isInPartyMatchRoom())
+			{
+				PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
+				if (_room != null)
+				{
+					player.sendPacket(new PartyMatchDetail(player, _room));
+					player.sendPacket(new ExPartyRoomMembers(player, _room, 0));
+					player.sendPacket(new ExClosePartyRoom());
 
-                    _room.deleteMember(player);
-                }
-                player.setPartyRoom(0);
-                //player.setPartyMatching(0);
-                player.broadcastUserInfo();
-            }
-        }
-    }
+					_room.deleteMember(player);
+				}
+				player.setPartyRoom(0);
+				//player.setPartyMatching(0);
+				player.broadcastUserInfo();
+			}
+		}
+	}
 }

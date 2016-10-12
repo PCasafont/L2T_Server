@@ -29,55 +29,55 @@ import l2server.log.Log;
 public final class RequestGetItemFromPet extends L2GameClientPacket
 {
 
-    private int _objectId;
-    private long _amount;
-    @SuppressWarnings("unused")
-    private int _unknown;
+	private int _objectId;
+	private long _amount;
+	@SuppressWarnings("unused")
+	private int _unknown;
 
-    @Override
-    protected void readImpl()
-    {
-        _objectId = readD();
-        _amount = readQ();
-        _unknown = readD();// = 0 for most trades
-    }
+	@Override
+	protected void readImpl()
+	{
+		_objectId = readD();
+		_amount = readQ();
+		_unknown = readD();// = 0 for most trades
+	}
 
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        if (player == null)
-        {
-            return;
-        }
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("getfrompet"))
-        {
-            player.sendMessage("You get items from pet too fast.");
-            return;
-        }
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("getfrompet"))
+		{
+			player.sendMessage("You get items from pet too fast.");
+			return;
+		}
 
-        L2PetInstance pet = player.getPet();
-        if (player.getActiveEnchantItem() != null)
-        {
-            return;
-        }
-        if (_amount < 0)
-        {
-            Util.handleIllegalPlayerAction(player,
-                    "[RequestGetItemFromPet] Character " + player.getName() + " of account " + player.getAccountName() +
-                            " tried to get item with oid " + _objectId + " from pet but has count < 0!",
-                    Config.DEFAULT_PUNISH);
-            return;
-        }
-        else if (_amount == 0)
-        {
-            return;
-        }
+		L2PetInstance pet = player.getPet();
+		if (player.getActiveEnchantItem() != null)
+		{
+			return;
+		}
+		if (_amount < 0)
+		{
+			Util.handleIllegalPlayerAction(player,
+					"[RequestGetItemFromPet] Character " + player.getName() + " of account " + player.getAccountName() +
+							" tried to get item with oid " + _objectId + " from pet but has count < 0!",
+					Config.DEFAULT_PUNISH);
+			return;
+		}
+		else if (_amount == 0)
+		{
+			return;
+		}
 
-        if (pet.transferItem("Transfer", _objectId, _amount, player.getInventory(), player, pet) == null)
-        {
-            Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
-        }
-    }
+		if (pet.transferItem("Transfer", _objectId, _amount, player.getInventory(), player, pet) == null)
+		{
+			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
+		}
+	}
 }

@@ -29,35 +29,35 @@ import java.util.logging.LogRecord;
 public class ConsoleLogFormatter extends Formatter
 {
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see java.util.logging.Formatter#format(java.util.logging.LogRecord)
-     */
-    // private static final String _ = " ";
-    private static final String CRLF = "\r\n";
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.util.logging.Formatter#format(java.util.logging.LogRecord)
+	 */
+	// private static final String _ = " ";
+	private static final String CRLF = "\r\n";
 
-    @Override
-    public String format(LogRecord record)
-    {
-        final StringBuilder output = new StringBuilder(500);
-        // output.append(record.getLevel().getName());
-        // output.append(_);
-        // output.append(record.getLoggerName());
-        // output.append(_);
-        StringUtil.append(output, record.getMessage(), CRLF);
+	@Override
+	public String format(LogRecord record)
+	{
+		final StringBuilder output = new StringBuilder(500);
+		// output.append(record.getLevel().getName());
+		// output.append(_);
+		// output.append(record.getLoggerName());
+		// output.append(_);
+		StringUtil.append(output, record.getMessage(), CRLF);
 
-        if (record.getThrown() != null)
-        {
-            try
-            {
-                StringUtil.append(output, Util.getStackTrace(record.getThrown()), CRLF);
-            }
-            catch (Exception ex)
-            {
-            }
-        }
+		if (record.getThrown() != null)
+		{
+			try
+			{
+				StringUtil.append(output, Util.getStackTrace(record.getThrown()), CRLF);
+			}
+			catch (Exception ex)
+			{
+			}
+		}
 
-        return output.toString();
-    }
+		return output.toString();
+	}
 }

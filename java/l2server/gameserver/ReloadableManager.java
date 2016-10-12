@@ -20,32 +20,32 @@ import java.util.Map;
 
 public class ReloadableManager
 {
-    private Map<String, Reloadable> _reloadables = new HashMap<>();
+	private Map<String, Reloadable> _reloadables = new HashMap<>();
 
-    public static ReloadableManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static ReloadableManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    public void register(String name, Reloadable r)
-    {
-        _reloadables.put(name, r);
-    }
+	public void register(String name, Reloadable r)
+	{
+		_reloadables.put(name, r);
+	}
 
-    public String reload(String name)
-    {
-        Reloadable r = _reloadables.get(name);
-        if (r == null)
-        {
-            return "Couldn't find a reloadable called \"" + name + "\"";
-        }
+	public String reload(String name)
+	{
+		Reloadable r = _reloadables.get(name);
+		if (r == null)
+		{
+			return "Couldn't find a reloadable called \"" + name + "\"";
+		}
 
-        return r.getReloadMessage(r.reload());
-    }
+		return r.getReloadMessage(r.reload());
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final ReloadableManager _instance = new ReloadableManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final ReloadableManager _instance = new ReloadableManager();
+	}
 }

@@ -33,43 +33,43 @@ import java.util.HashMap;
 public class ExShowProcureCropDetail extends L2GameServerPacket
 {
 
-    private int _cropId;
+	private int _cropId;
 
-    private HashMap<Integer, CropProcure> _castleCrops;
+	private HashMap<Integer, CropProcure> _castleCrops;
 
-    public ExShowProcureCropDetail(int cropId)
-    {
-        _cropId = cropId;
-        _castleCrops = new HashMap<>();
+	public ExShowProcureCropDetail(int cropId)
+	{
+		_cropId = cropId;
+		_castleCrops = new HashMap<>();
 
-        for (Castle c : CastleManager.getInstance().getCastles())
-        {
-            CropProcure cropItem = c.getCrop(_cropId, CastleManorManager.PERIOD_CURRENT);
-            if (cropItem != null && cropItem.getAmount() > 0)
-            {
-                _castleCrops.put(c.getCastleId(), cropItem);
-            }
-        }
-    }
+		for (Castle c : CastleManager.getInstance().getCastles())
+		{
+			CropProcure cropItem = c.getCrop(_cropId, CastleManorManager.PERIOD_CURRENT);
+			if (cropItem != null && cropItem.getAmount() > 0)
+			{
+				_castleCrops.put(c.getCastleId(), cropItem);
+			}
+		}
+	}
 
-    @Override
-    public void runImpl()
-    {
-    }
+	@Override
+	public void runImpl()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_cropId); // crop id
-        writeD(_castleCrops.size()); // size
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_cropId); // crop id
+		writeD(_castleCrops.size()); // size
 
-        for (int manorId : _castleCrops.keySet())
-        {
-            CropProcure crop = _castleCrops.get(manorId);
-            writeD(manorId); // manor name
-            writeQ(crop.getAmount()); // buy residual
-            writeQ(crop.getPrice()); // buy price
-            writeC(crop.getReward()); // reward type
-        }
-    }
+		for (int manorId : _castleCrops.keySet())
+		{
+			CropProcure crop = _castleCrops.get(manorId);
+			writeD(manorId); // manor name
+			writeQ(crop.getAmount()); // buy residual
+			writeQ(crop.getPrice()); // buy price
+			writeC(crop.getReward()); // reward type
+		}
+	}
 }

@@ -24,28 +24,28 @@ import l2server.gameserver.model.entity.RecoBonus;
  */
 public class ExVoteSystemInfo extends L2GameServerPacket
 {
-    private int _recomLeft;
-    private int _recomHave;
-    private int _bonusTime;
-    private int _bonusVal;
-    private int _bonusType;
+	private int _recomLeft;
+	private int _recomHave;
+	private int _bonusTime;
+	private int _bonusVal;
+	private int _bonusType;
 
-    public ExVoteSystemInfo(L2PcInstance player)
-    {
-        _recomLeft = player.getRecomLeft();
-        _recomHave = player.getRecomHave();
-        _bonusTime = player.getRecomBonusTime();
-        _bonusVal = RecoBonus.getRecoBonus(player);
-        _bonusType = player.getRecomBonusType();
-    }
+	public ExVoteSystemInfo(L2PcInstance player)
+	{
+		_recomLeft = player.getRecomLeft();
+		_recomHave = player.getRecomHave();
+		_bonusTime = player.getRecomBonusTime();
+		_bonusVal = RecoBonus.getRecoBonus(player);
+		_bonusType = player.getRecomBonusType();
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_recomLeft);
-        writeD(_recomHave);
-        writeD(_bonusTime);
-        writeD(_bonusVal);
-        writeD(_bonusType);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_recomLeft);
+		writeD(_recomHave);
+		writeD(_bonusTime);
+		writeD(_bonusVal);
+		writeD(_bonusType);
+	}
 }

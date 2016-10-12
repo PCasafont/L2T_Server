@@ -29,43 +29,43 @@ import java.util.Map;
  */
 public class RequestGetBossRecord extends L2GameClientPacket
 {
-    private int _bossId;
+	private int _bossId;
 
-    @Override
-    protected void readImpl()
-    {
-        _bossId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_bossId = readD();
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (_bossId != 0)
-        {
-            Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " +
-                    activeChar); // should be always 0, log it if isnt 0 for furture research
-        }
+		if (_bossId != 0)
+		{
+			Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " +
+					activeChar); // should be always 0, log it if isnt 0 for furture research
+		}
 
-        int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
-        int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
+		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
+		int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
 
-        Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
+		Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
 
-        // trigger packet
-        activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
-    }
+		// trigger packet
+		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
+	}
 
-    @Override
-    protected boolean triggersOnActionRequest()
-    {
-        return false;
-    }
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

@@ -23,24 +23,24 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionTargetHp extends Condition
 {
-    private final int _hp;
+	private final int _hp;
 
-    /**
-     * Instantiates a new condition player hp.
-     *
-     * @param hp the hp
-     */
-    public ConditionTargetHp(int hp)
-    {
-        _hp = hp;
-    }
+	/**
+	 * Instantiates a new condition player hp.
+	 *
+	 * @param hp the hp
+	 */
+	public ConditionTargetHp(int hp)
+	{
+		_hp = hp;
+	}
 
-    /* (non-Javadoc)
-     * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
-     */
-    @Override
-    public boolean testImpl(Env env)
-    {
-        return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= _hp;
-    }
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
+	 */
+	@Override
+	public boolean testImpl(Env env)
+	{
+		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= _hp;
+	}
 }

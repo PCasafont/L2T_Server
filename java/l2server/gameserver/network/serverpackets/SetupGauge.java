@@ -23,43 +23,43 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class SetupGauge extends L2GameServerPacket
 {
-    public static final int BLUE_DUAL = 0;
-    public static final int BLUE = 1;
-    public static final int BLUE_MINI = 2;
-    public static final int GREEN_MINI = 3;
-    public static final int REC_MINI = 4;
+	public static final int BLUE_DUAL = 0;
+	public static final int BLUE = 1;
+	public static final int BLUE_MINI = 2;
+	public static final int GREEN_MINI = 3;
+	public static final int REC_MINI = 4;
 
-    private int _color;
-    private int _time;
-    private int _time2;
-    private int _charObjId;
+	private int _color;
+	private int _time;
+	private int _time2;
+	private int _charObjId;
 
-    public SetupGauge(int dat1, int time)
-    {
-        _color = dat1;
-        _time = time;
-        _time2 = time;
-    }
+	public SetupGauge(int dat1, int time)
+	{
+		_color = dat1;
+		_time = time;
+		_time2 = time;
+	}
 
-    public SetupGauge(int color, int currentTime, int maxTime)
-    {
-        _color = color;
-        _time = currentTime;
-        _time2 = maxTime;
-    }
+	public SetupGauge(int color, int currentTime, int maxTime)
+	{
+		_color = color;
+		_time = currentTime;
+		_time2 = maxTime;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_charObjId);
-        writeD(_color);
-        writeD(_time);
-        writeD(_time2);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_charObjId);
+		writeD(_color);
+		writeD(_time);
+		writeD(_time2);
+	}
 
-    @Override
-    public void runImpl()
-    {
-        _charObjId = getClient().getActiveChar().getObjectId();
-    }
+	@Override
+	public void runImpl()
+	{
+		_charObjId = getClient().getActiveChar().getObjectId();
+	}
 }

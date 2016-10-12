@@ -25,37 +25,37 @@ import java.util.Map;
  */
 public class BossManager
 {
-    private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<>();
+	private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<>();
 
-    public static BossManager getInstance()
-    {
-        return SingletonHolder._instance;
-    }
+	public static BossManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
 
-    public void registerBoss(L2RaidBossInstance boss)
-    {
-        _bosses.put(boss.getNpcId(), boss);
-    }
+	public void registerBoss(L2RaidBossInstance boss)
+	{
+		_bosses.put(boss.getNpcId(), boss);
+	}
 
-    public Map<Integer, L2RaidBossInstance> getBosses()
-    {
-        return _bosses;
-    }
+	public Map<Integer, L2RaidBossInstance> getBosses()
+	{
+		return _bosses;
+	}
 
-    public L2RaidBossInstance getBoss(int id)
-    {
-        return _bosses.get(id);
-    }
+	public L2RaidBossInstance getBoss(int id)
+	{
+		return _bosses.get(id);
+	}
 
-    public boolean isAlive(int id)
-    {
-        L2RaidBossInstance boss = _bosses.get(id);
-        return boss != null && !boss.isDead();
-    }
+	public boolean isAlive(int id)
+	{
+		L2RaidBossInstance boss = _bosses.get(id);
+		return boss != null && !boss.isDead();
+	}
 
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder
-    {
-        protected static final BossManager _instance = new BossManager();
-    }
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder
+	{
+		protected static final BossManager _instance = new BossManager();
+	}
 }

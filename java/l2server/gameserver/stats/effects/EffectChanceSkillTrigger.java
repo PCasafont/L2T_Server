@@ -26,134 +26,134 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTrigger
 {
-    private final int _triggeredId;
-    private final int _triggeredLevel;
-    private final int _triggeredEnchantRoute;
-    private final int _triggeredEnchantLevel;
-    private final ChanceCondition _chanceCondition;
+	private final int _triggeredId;
+	private final int _triggeredLevel;
+	private final int _triggeredEnchantRoute;
+	private final int _triggeredEnchantLevel;
+	private final ChanceCondition _chanceCondition;
 
-    public EffectChanceSkillTrigger(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
+	public EffectChanceSkillTrigger(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
 
-        _triggeredId = template.triggeredId;
-        _triggeredLevel = template.triggeredLevel;
-        _triggeredEnchantRoute = template.triggeredEnchantRoute;
-        _triggeredEnchantLevel = template.triggeredEnchantLevel;
-        _chanceCondition = template.chanceCondition;
-    }
+		_triggeredId = template.triggeredId;
+		_triggeredLevel = template.triggeredLevel;
+		_triggeredEnchantRoute = template.triggeredEnchantRoute;
+		_triggeredEnchantLevel = template.triggeredEnchantLevel;
+		_chanceCondition = template.chanceCondition;
+	}
 
-    // Special constructor to steal this effect
-    public EffectChanceSkillTrigger(Env env, L2Effect effect)
-    {
-        super(env, effect);
+	// Special constructor to steal this effect
+	public EffectChanceSkillTrigger(Env env, L2Effect effect)
+	{
+		super(env, effect);
 
-        _triggeredId = effect.getTemplate().triggeredId;
-        _triggeredLevel = effect.getTemplate().triggeredLevel;
-        _triggeredEnchantRoute = effect.getTemplate().triggeredEnchantRoute;
-        _triggeredEnchantLevel = effect.getTemplate().triggeredEnchantLevel;
-        _chanceCondition = effect.getTemplate().chanceCondition;
-    }
+		_triggeredId = effect.getTemplate().triggeredId;
+		_triggeredLevel = effect.getTemplate().triggeredLevel;
+		_triggeredEnchantRoute = effect.getTemplate().triggeredEnchantRoute;
+		_triggeredEnchantLevel = effect.getTemplate().triggeredEnchantLevel;
+		_chanceCondition = effect.getTemplate().chanceCondition;
+	}
 
-    @Override
-    protected boolean effectCanBeStolen()
-    {
-        return true;
-    }
+	@Override
+	protected boolean effectCanBeStolen()
+	{
+		return true;
+	}
 
-    @Override
-    public boolean onStart()
-    {
-        getEffected().addChanceTrigger(this);
-        getEffected().onStartChanceEffect(getSkill(), getSkill().getElement());
-        return super.onStart();
-    }
+	@Override
+	public boolean onStart()
+	{
+		getEffected().addChanceTrigger(this);
+		getEffected().onStartChanceEffect(getSkill(), getSkill().getElement());
+		return super.onStart();
+	}
 
-    @Override
-    public boolean onActionTime()
-    {
-        L2Abnormal activeEffect = getEffected().getFirstEffect(_triggeredId);
-        if (activeEffect != null)
-        {
-            if (activeEffect.getLevel() == _triggeredLevel &&
-                    activeEffect.getEnchantRouteId() == _triggeredEnchantRoute &&
-                    activeEffect.getEnchantLevel() == _triggeredEnchantLevel)
-            {
-                return true;
-            }
-        }
+	@Override
+	public boolean onActionTime()
+	{
+		L2Abnormal activeEffect = getEffected().getFirstEffect(_triggeredId);
+		if (activeEffect != null)
+		{
+			if (activeEffect.getLevel() == _triggeredLevel &&
+					activeEffect.getEnchantRouteId() == _triggeredEnchantRoute &&
+					activeEffect.getEnchantLevel() == _triggeredEnchantLevel)
+			{
+				return true;
+			}
+		}
 
-        if (getSkill().isToggle())
-        {
-            int dam = (int) calc();
-            double manaDam = dam % 1000;
-            if (manaDam > getEffected().getCurrentMp())
-            {
-                getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
-                return false;
-            }
+		if (getSkill().isToggle())
+		{
+			int dam = (int) calc();
+			double manaDam = dam % 1000;
+			if (manaDam > getEffected().getCurrentMp())
+			{
+				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+				return false;
+			}
 
-            getEffected().reduceCurrentMp(manaDam);
+			getEffected().reduceCurrentMp(manaDam);
 
-            double hpDam = dam / 1000;
-            if (hpDam > getEffected().getCurrentHp() - 1)
-            {
-                getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP));
-                return false;
-            }
+			double hpDam = dam / 1000;
+			if (hpDam > getEffected().getCurrentHp() - 1)
+			{
+				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP));
+				return false;
+			}
 
-            getEffected().reduceCurrentHpByDOT(hpDam, getEffected(), getSkill());
-        }
+			getEffected().reduceCurrentHpByDOT(hpDam, getEffected(), getSkill());
+		}
 
-        getEffected().onActionTimeChanceEffect(getSkill(), getSkill().getElement());
-        return true;
-    }
+		getEffected().onActionTimeChanceEffect(getSkill(), getSkill().getElement());
+		return true;
+	}
 
-    @Override
-    public void onExit()
-    {
-        // trigger only if effect in use and successfully ticked to the end
-        if (getAbnormal().getInUse() && getAbnormal().getCount() == 0)
-        {
-            getEffected().onExitChanceEffect(getSkill(), getSkill().getElement());
-        }
-        getEffected().removeChanceEffect(this);
-        super.onExit();
-    }
+	@Override
+	public void onExit()
+	{
+		// trigger only if effect in use and successfully ticked to the end
+		if (getAbnormal().getInUse() && getAbnormal().getCount() == 0)
+		{
+			getEffected().onExitChanceEffect(getSkill(), getSkill().getElement());
+		}
+		getEffected().removeChanceEffect(this);
+		super.onExit();
+	}
 
-    @Override
-    public int getTriggeredChanceId()
-    {
-        return _triggeredId;
-    }
+	@Override
+	public int getTriggeredChanceId()
+	{
+		return _triggeredId;
+	}
 
-    @Override
-    public int getTriggeredChanceLevel()
-    {
-        return _triggeredLevel;
-    }
+	@Override
+	public int getTriggeredChanceLevel()
+	{
+		return _triggeredLevel;
+	}
 
-    @Override
-    public int getTriggeredChanceEnchantRoute()
-    {
-        return _triggeredEnchantRoute;
-    }
+	@Override
+	public int getTriggeredChanceEnchantRoute()
+	{
+		return _triggeredEnchantRoute;
+	}
 
-    @Override
-    public int getTriggeredChanceEnchantLevel()
-    {
-        return _triggeredEnchantLevel;
-    }
+	@Override
+	public int getTriggeredChanceEnchantLevel()
+	{
+		return _triggeredEnchantLevel;
+	}
 
-    @Override
-    public boolean triggersChanceSkill()
-    {
-        return _triggeredId > 1;
-    }
+	@Override
+	public boolean triggersChanceSkill()
+	{
+		return _triggeredId > 1;
+	}
 
-    @Override
-    public ChanceCondition getTriggeredChanceCondition()
-    {
-        return _chanceCondition;
-    }
+	@Override
+	public ChanceCondition getTriggeredChanceCondition()
+	{
+		return _chanceCondition;
+	}
 }

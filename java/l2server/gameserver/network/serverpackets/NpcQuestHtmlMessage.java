@@ -125,97 +125,97 @@ import l2server.log.Log;
 public final class NpcQuestHtmlMessage extends L2GameServerPacket
 {
 
-    private int _npcObjId;
-    private String _html;
-    private int _questId = 0;
+	private int _npcObjId;
+	private String _html;
+	private int _questId = 0;
 
-    /**
-     * @param npcObjId
-     * @param questId
-     */
-    public NpcQuestHtmlMessage(int npcObjId, int questId)
-    {
-        _npcObjId = npcObjId;
-        _questId = questId;
-    }
+	/**
+	 * @param npcObjId
+	 * @param questId
+	 */
+	public NpcQuestHtmlMessage(int npcObjId, int questId)
+	{
+		_npcObjId = npcObjId;
+		_questId = questId;
+	}
 
-    @Override
-    public void runImpl()
-    {
-        if (Config.BYPASS_VALIDATION)
-        {
-            buildBypassCache(getClient().getActiveChar());
-        }
-    }
+	@Override
+	public void runImpl()
+	{
+		if (Config.BYPASS_VALIDATION)
+		{
+			buildBypassCache(getClient().getActiveChar());
+		}
+	}
 
-    public void setHtml(String text)
-    {
-        if (!text.contains("<html>"))
-        {
-            text = "<html><body>" + text + "</body></html>";
-        }
+	public void setHtml(String text)
+	{
+		if (!text.contains("<html>"))
+		{
+			text = "<html><body>" + text + "</body></html>";
+		}
 
-        _html = text;
-    }
+		_html = text;
+	}
 
-    public boolean setFile(String path)
-    {
-        String content = HtmCache.getInstance().getHtm(getClient().getActiveChar().getHtmlPrefix(), path);
+	public boolean setFile(String path)
+	{
+		String content = HtmCache.getInstance().getHtm(getClient().getActiveChar().getHtmlPrefix(), path);
 
-        if (content == null)
-        {
-            setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
-            Log.warning("missing html page " + path);
-            return false;
-        }
+		if (content == null)
+		{
+			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
+			Log.warning("missing html page " + path);
+			return false;
+		}
 
-        setHtml(content);
-        return true;
-    }
+		setHtml(content);
+		return true;
+	}
 
-    public void replace(String pattern, String value)
-    {
-        _html = _html.replaceAll(pattern, value);
-    }
+	public void replace(String pattern, String value)
+	{
+		_html = _html.replaceAll(pattern, value);
+	}
 
-    private final void buildBypassCache(L2PcInstance activeChar)
-    {
-        if (activeChar == null)
-        {
-            return;
-        }
+	private final void buildBypassCache(L2PcInstance activeChar)
+	{
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        activeChar.clearBypass();
-        int len = _html.length();
-        for (int i = 0; i < len; i++)
-        {
-            int start = _html.indexOf("bypass -h", i);
-            int finish = _html.indexOf("\"", start);
+		activeChar.clearBypass();
+		int len = _html.length();
+		for (int i = 0; i < len; i++)
+		{
+			int start = _html.indexOf("bypass -h", i);
+			int finish = _html.indexOf("\"", start);
 
-            if (start < 0 || finish < 0)
-            {
-                break;
-            }
+			if (start < 0 || finish < 0)
+			{
+				break;
+			}
 
-            start += 10;
-            i = finish;
-            int finish2 = _html.indexOf("$", start);
-            if (finish2 < finish && finish2 > 0)
-            {
-                activeChar.addBypass2(_html.substring(start, finish2).trim());
-            }
-            else
-            {
-                activeChar.addBypass(_html.substring(start, finish).trim());
-            }
-        }
-    }
+			start += 10;
+			i = finish;
+			int finish2 = _html.indexOf("$", start);
+			if (finish2 < finish && finish2 > 0)
+			{
+				activeChar.addBypass2(_html.substring(start, finish2).trim());
+			}
+			else
+			{
+				activeChar.addBypass(_html.substring(start, finish).trim());
+			}
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_npcObjId);
-        writeS(_html);
-        writeD(_questId);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_npcObjId);
+		writeS(_html);
+		writeD(_questId);
+	}
 }

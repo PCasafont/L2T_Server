@@ -26,49 +26,49 @@ import java.util.List;
  */
 public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 {
-    private int _page;
-    private int _pageCount;
-    private List<ClanRecruitData> _data;
+	private int _page;
+	private int _pageCount;
+	private List<ClanRecruitData> _data;
 
-    public ExPledgeRecruitBoardSearch(int level, int karma, boolean clanName, String name, int sortBy, boolean desc, int page)
-    {
-        _page = page;
-        List<ClanRecruitData> list =
-                ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
-        _pageCount = (list.size() - 1) / 12 + 1;
+	public ExPledgeRecruitBoardSearch(int level, int karma, boolean clanName, String name, int sortBy, boolean desc, int page)
+	{
+		_page = page;
+		List<ClanRecruitData> list =
+				ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
+		_pageCount = (list.size() - 1) / 12 + 1;
 
-        _data = new ArrayList<>();
-        int index = (page - 1) * 12;
-        while (index < page * 12 && index < list.size())
-        {
-            _data.add(list.get(index));
-            index++;
-        }
-    }
+		_data = new ArrayList<>();
+		int index = (page - 1) * 12;
+		while (index < page * 12 && index < list.size())
+		{
+			_data.add(list.get(index));
+			index++;
+		}
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(_page);
-        writeD(_pageCount);
-        writeD(_data.size());
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(_page);
+		writeD(_pageCount);
+		writeD(_data.size());
 
-        for (ClanRecruitData data : _data)
-        {
-            writeD(data.clan.getClanId());
-            writeD(data.clan.getAllyId());
-        }
+		for (ClanRecruitData data : _data)
+		{
+			writeD(data.clan.getClanId());
+			writeD(data.clan.getAllyId());
+		}
 
-        for (ClanRecruitData data : _data)
-        {
-            writeD(data.clan.getCrestId());
-            writeD(data.clan.getAllyCrestId());
-            writeS(data.clan.getName());
-            writeS(data.clan.getLeaderName());
-            writeD(data.clan.getLevel());
-            writeD(data.clan.getMembersCount());
-            writeD(data.karma);
-            writeS(data.introduction);
-        }
-    }
+		for (ClanRecruitData data : _data)
+		{
+			writeD(data.clan.getCrestId());
+			writeD(data.clan.getAllyCrestId());
+			writeS(data.clan.getName());
+			writeS(data.clan.getLeaderName());
+			writeD(data.clan.getLevel());
+			writeD(data.clan.getMembersCount());
+			writeD(data.karma);
+			writeS(data.introduction);
+		}
+	}
 }

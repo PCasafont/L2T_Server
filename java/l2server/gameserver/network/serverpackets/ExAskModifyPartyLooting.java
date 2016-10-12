@@ -21,19 +21,19 @@ package l2server.gameserver.network.serverpackets;
 public class ExAskModifyPartyLooting extends L2GameServerPacket
 {
 
-    private String _requestor;
-    private byte _mode;
+	private String _requestor;
+	private byte _mode;
 
-    public ExAskModifyPartyLooting(String name, byte mode)
-    {
-        _requestor = name;
-        _mode = mode;
-    }
+	public ExAskModifyPartyLooting(String name, byte mode)
+	{
+		_requestor = name;
+		_mode = mode;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeS(_requestor);
-        writeD(_mode);
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeS(_requestor);
+		writeD(_mode);
+	}
 }

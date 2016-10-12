@@ -8,19 +8,19 @@ package l2server.gameserver;
 public interface InstanceListManager
 {
 
-    /**
-     * Loads instances with their data from persistant format. This method
-     * has no side effect as calling methods of another instance manager.
-     */
-    void load();
+	/**
+	 * Loads instances with their data from persistant format. This method
+	 * has no side effect as calling methods of another instance manager.
+	 */
+	void load();
 
-    /**
-     * For each loaded instance, updates references to related instances.
-     */
-    void updateReferences();
+	/**
+	 * For each loaded instance, updates references to related instances.
+	 */
+	void updateReferences();
 
-    /**
-     * Activates instances so their setup is performed.
-     */
-    void activateInstances();
+	/**
+	 * Activates instances so their setup is performed.
+	 */
+	void activateInstances();
 }

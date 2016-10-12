@@ -29,45 +29,45 @@ import java.awt.*;
  */
 public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer
 {
-    private static final long serialVersionUID = 1L;
-    @SuppressWarnings("unused")
-    private PlayerTableModel _table;
+	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
+	private PlayerTableModel _table;
 
-    public PlayerTableRenderer(PlayerTableModel table)
-    {
-        _table = table;
-    }
+	public PlayerTableRenderer(PlayerTableModel table)
+	{
+		_table = table;
+	}
 
-    @Override
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col)
-    {
-        Component c;
-        if (value instanceof Component)
-        {
-            c = (Component) value;
-            if (isSelected)
-            {
-                c.setForeground(table.getSelectionForeground());
-                c.setBackground(table.getSelectionBackground());
-            }
-        }
-        else
-        {
-            c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
-        }
+	@Override
+	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col)
+	{
+		Component c;
+		if (value instanceof Component)
+		{
+			c = (Component) value;
+			if (isSelected)
+			{
+				c.setForeground(table.getSelectionForeground());
+				c.setBackground(table.getSelectionBackground());
+			}
+		}
+		else
+		{
+			c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
+		}
 
-        if (!isSelected)
-        {
-            c.setBackground(table.getBackground());
-        }
+		if (!isSelected)
+		{
+			c.setBackground(table.getBackground());
+		}
 
-        return c;
-    }
+		return c;
+	}
 
-    public interface TooltipTable
-    {
-        public String getToolTip(int row, int col);
+	public interface TooltipTable
+	{
+		public String getToolTip(int row, int col);
 
-        public boolean getIsMarked(int row);
-    }
+		public boolean getIsMarked(int row);
+	}
 }

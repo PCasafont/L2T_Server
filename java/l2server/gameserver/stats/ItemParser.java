@@ -33,155 +33,155 @@ import java.util.Map.Entry;
  */
 public final class ItemParser extends StatsParser
 {
-    private String _type;
-    private StatsSet _set;
-    private L2Item _item = null;
+	private String _type;
+	private StatsSet _set;
+	private L2Item _item = null;
 
-    public ItemParser(XmlNode node)
-    {
-        super(node);
-    }
+	public ItemParser(XmlNode node)
+	{
+		super(node);
+	}
 
-    @Override
-    protected StatsSet getStatsSet()
-    {
-        return _set;
-    }
+	@Override
+	protected StatsSet getStatsSet()
+	{
+		return _set;
+	}
 
-    @Override
-    public void parse() throws RuntimeException
-    {
-        _type = _node.getString("type");
-        _set = new StatsSet();
-        for (Entry<String, String> e : _node.getAttributes().entrySet())
-        {
-            _set.set(e.getKey(), e.getValue());
-        }
+	@Override
+	public void parse() throws RuntimeException
+	{
+		_type = _node.getString("type");
+		_set = new StatsSet();
+		for (Entry<String, String> e : _node.getAttributes().entrySet())
+		{
+			_set.set(e.getKey(), e.getValue());
+		}
 
-        makeItem();
+		makeItem();
 
-        parseChildren();
+		parseChildren();
 
-        if (_node.hasAttribute("rCrit") && !_node.hasAttribute("mCritRate"))
-        {
-            _node.getAttributes().put("mCritRate", _node.getString("rCrit"));
-        }
-        parseTemplate(_node, _item);
-    }
+		if (_node.hasAttribute("rCrit") && !_node.hasAttribute("mCritRate"))
+		{
+			_node.getAttributes().put("mCritRate", _node.getString("rCrit"));
+		}
+		parseTemplate(_node, _item);
+	}
 
-    public void parse(ItemParser original) throws RuntimeException
-    {
-        _type = _node.getString("type", original._type);
+	public void parse(ItemParser original) throws RuntimeException
+	{
+		_type = _node.getString("type", original._type);
 
-        _set = new StatsSet();
-        _set.add(original._set);
+		_set = new StatsSet();
+		_set.add(original._set);
 
-        for (Entry<String, String> e : _node.getAttributes().entrySet())
-        {
-            _set.set(e.getKey(), e.getValue());
-        }
+		for (Entry<String, String> e : _node.getAttributes().entrySet())
+		{
+			_set.set(e.getKey(), e.getValue());
+		}
 
-        makeItem();
+		makeItem();
 
-        if (original._item.getConditions() != null && !_set.getBool("overrideCond", false))
-        {
-            for (Condition cond : original._item.getConditions())
-            {
-                _item.attach(cond);
-            }
-        }
+		if (original._item.getConditions() != null && !_set.getBool("overrideCond", false))
+		{
+			for (Condition cond : original._item.getConditions())
+			{
+				_item.attach(cond);
+			}
+		}
 
-        if (original._item.getSkills() != null && !_set.getBool("overrideSkills", false))
-        {
-            for (SkillHolder sh : original._item.getSkills())
-            {
-                _item.attach(sh);
-            }
-        }
+		if (original._item.getSkills() != null && !_set.getBool("overrideSkills", false))
+		{
+			for (SkillHolder sh : original._item.getSkills())
+			{
+				_item.attach(sh);
+			}
+		}
 
-        parseChildren();
+		parseChildren();
 
-        if (original._item.getFuncs() != null && !_set.getBool("overrideStats", false))
-        {
-            for (FuncTemplate func : original._item.getFuncs())
-            {
-                _item.attach(func);
-            }
-        }
+		if (original._item.getFuncs() != null && !_set.getBool("overrideStats", false))
+		{
+			for (FuncTemplate func : original._item.getFuncs())
+			{
+				_item.attach(func);
+			}
+		}
 
-        parseTemplate(_node, _item);
-    }
+		parseTemplate(_node, _item);
+	}
 
-    private void parseChildren()
-    {
-        for (XmlNode n : _node.getChildren())
-        {
-            if (n.getName().equalsIgnoreCase("cond"))
-            {
-                Condition condition = parseCondition(n.getFirstChild(), _item);
-                if (condition != null && n.hasAttribute("msg"))
-                {
-                    condition.setMessage(n.getString("msg"));
-                }
-                else if (condition != null && n.hasAttribute("msgId"))
-                {
-                    condition.setMessageId(Integer.decode(getValue(n.getString("msgId"))));
-                    if (n.hasAttribute("addName") && Integer.decode(getValue(n.getString("msgId"))) > 0)
-                    {
-                        condition.addName();
-                    }
-                }
-                _item.attach(condition);
-            }
-            else if (n.getName().equalsIgnoreCase("skill"))
-            {
-                int skillId = n.getInt("id");
-                int skillLvl = n.getInt("level");
-                _item.attach(new SkillHolder(skillId, skillLvl));
-            }
-            else if (n.getName().equalsIgnoreCase("crystallizeReward"))
-            {
-                int itemId = n.getInt("id");
-                int count = n.getInt("count");
-                double chance = n.getDouble("chance");
-                _item.attach(new L2CrystallizeReward(itemId, count, chance));
-            }
-            else if (n.getName().equalsIgnoreCase("capsuledItem") && _item instanceof L2EtcItem)
-            {
-                int itemId = n.getInt("id");
-                int min = n.getInt("min");
-                int max = n.getInt("max");
-                double chance = n.getDouble("chance");
-                if (max < min)
-                {
-                    Log.info("> Max amount < Min amount in part " + itemId + ", item " + _item);
-                    continue;
-                }
-                ((L2EtcItem) _item).attach(new L2ExtractableProduct(itemId, min, max, chance));
-            }
-        }
-    }
+	private void parseChildren()
+	{
+		for (XmlNode n : _node.getChildren())
+		{
+			if (n.getName().equalsIgnoreCase("cond"))
+			{
+				Condition condition = parseCondition(n.getFirstChild(), _item);
+				if (condition != null && n.hasAttribute("msg"))
+				{
+					condition.setMessage(n.getString("msg"));
+				}
+				else if (condition != null && n.hasAttribute("msgId"))
+				{
+					condition.setMessageId(Integer.decode(getValue(n.getString("msgId"))));
+					if (n.hasAttribute("addName") && Integer.decode(getValue(n.getString("msgId"))) > 0)
+					{
+						condition.addName();
+					}
+				}
+				_item.attach(condition);
+			}
+			else if (n.getName().equalsIgnoreCase("skill"))
+			{
+				int skillId = n.getInt("id");
+				int skillLvl = n.getInt("level");
+				_item.attach(new SkillHolder(skillId, skillLvl));
+			}
+			else if (n.getName().equalsIgnoreCase("crystallizeReward"))
+			{
+				int itemId = n.getInt("id");
+				int count = n.getInt("count");
+				double chance = n.getDouble("chance");
+				_item.attach(new L2CrystallizeReward(itemId, count, chance));
+			}
+			else if (n.getName().equalsIgnoreCase("capsuledItem") && _item instanceof L2EtcItem)
+			{
+				int itemId = n.getInt("id");
+				int min = n.getInt("min");
+				int max = n.getInt("max");
+				double chance = n.getDouble("chance");
+				if (max < min)
+				{
+					Log.info("> Max amount < Min amount in part " + itemId + ", item " + _item);
+					continue;
+				}
+				((L2EtcItem) _item).attach(new L2ExtractableProduct(itemId, min, max, chance));
+			}
+		}
+	}
 
-    private void makeItem() throws RuntimeException
-    {
-        if (_item != null)
-        {
-            return; // item is already created
-        }
-        try
-        {
-            Constructor<?> c =
-                    Class.forName("l2server.gameserver.templates.item.L2" + _type).getConstructor(StatsSet.class);
-            _item = (L2Item) c.newInstance(_set);
-        }
-        catch (Exception e)
-        {
-            throw new RuntimeException(e);
-        }
-    }
+	private void makeItem() throws RuntimeException
+	{
+		if (_item != null)
+		{
+			return; // item is already created
+		}
+		try
+		{
+			Constructor<?> c =
+					Class.forName("l2server.gameserver.templates.item.L2" + _type).getConstructor(StatsSet.class);
+			_item = (L2Item) c.newInstance(_set);
+		}
+		catch (Exception e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
 
-    public L2Item getItem()
-    {
-        return _item;
-    }
+	public L2Item getItem()
+	{
+		return _item;
+	}
 }

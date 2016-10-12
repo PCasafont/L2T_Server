@@ -21,14 +21,14 @@ package l2server.gameserver.network.serverpackets;
 public class ExDeletePartySubstitute extends L2GameServerPacket
 {
 
-    public ExDeletePartySubstitute()
-    {
-    }
+	public ExDeletePartySubstitute()
+	{
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeD(0x00); // TODO: Unknown
-        writeD(0x00); // TODO: Unknown
-    }
+	@Override
+	protected final void writeImpl()
+	{
+		writeD(0x00); // TODO: Unknown
+		writeD(0x00); // TODO: Unknown
+	}
 }

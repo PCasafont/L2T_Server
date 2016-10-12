@@ -30,76 +30,76 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectTransformation extends L2Effect
 {
-    public EffectTransformation(Env env, L2EffectTemplate template)
-    {
-        super(env, template);
-    }
+	public EffectTransformation(Env env, L2EffectTemplate template)
+	{
+		super(env, template);
+	}
 
-    // Special constructor to steal this effect
-    public EffectTransformation(Env env, L2Effect effect)
-    {
-        super(env, effect);
-    }
+	// Special constructor to steal this effect
+	public EffectTransformation(Env env, L2Effect effect)
+	{
+		super(env, effect);
+	}
 
-    @Override
-    public L2AbnormalType getAbnormalType()
-    {
-        return L2AbnormalType.MUTATE;
-    }
+	@Override
+	public L2AbnormalType getAbnormalType()
+	{
+		return L2AbnormalType.MUTATE;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onStart()
-     */
-    @Override
-    public boolean onStart()
-    {
-        if (!(getEffected() instanceof L2PcInstance))
-        {
-            return false;
-        }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 */
+	@Override
+	public boolean onStart()
+	{
+		if (!(getEffected() instanceof L2PcInstance))
+		{
+			return false;
+		}
 
-        L2PcInstance trg = (L2PcInstance) getEffected();
-        if (trg == null)
-        {
-            return false;
-        }
+		L2PcInstance trg = (L2PcInstance) getEffected();
+		if (trg == null)
+		{
+			return false;
+		}
 
-        if (trg.isAlikeDead() || trg.isCursedWeaponEquipped())
-        {
-            return false;
-        }
+		if (trg.isAlikeDead() || trg.isCursedWeaponEquipped())
+		{
+			return false;
+		}
 
-        if (getEffector() == trg && trg.getTransformation() != null)
-        {
-            trg.sendPacket(
-                    SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
-            return false;
-        }
+		if (getEffector() == trg && trg.getTransformation() != null)
+		{
+			trg.sendPacket(
+					SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
+			return false;
+		}
 
-        //LasTravel: Avoiding use mounts for enter to castles
-        if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) &&
-                trg.isInsideZone(L2Character.ZONE_CASTLE))
-        {
-            trg.getFirstEffect(getSkill().getId()).exit();
-            return false;
-        }
+		//LasTravel: Avoiding use mounts for enter to castles
+		if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) &&
+				trg.isInsideZone(L2Character.ZONE_CASTLE))
+		{
+			trg.getFirstEffect(getSkill().getId()).exit();
+			return false;
+		}
 
-        TransformationManager.getInstance().transformPlayer(getSkill().getTransformId(), trg);
-        return true;
-    }
+		TransformationManager.getInstance().transformPlayer(getSkill().getTransformId(), trg);
+		return true;
+	}
 
-    /**
-     * @see l2server.gameserver.model.L2Abnormal#onActionTime()
-     */
-    @Override
-    public boolean onActionTime()
-    {
-        return false;
-    }
+	/**
+	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 */
+	@Override
+	public boolean onActionTime()
+	{
+		return false;
+	}
 
-    @Override
-    public void onExit()
-    {
-        getEffected().stopTransformation(false);
-    }
+	@Override
+	public void onExit()
+	{
+		getEffected().stopTransformation(false);
+	}
 }

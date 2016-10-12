@@ -33,68 +33,68 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 public final class RequestRejectPostAttachment extends L2GameClientPacket
 {
 
-    private int _msgId;
+	private int _msgId;
 
-    @Override
-    protected void readImpl()
-    {
-        _msgId = readD();
-    }
+	@Override
+	protected void readImpl()
+	{
+		_msgId = readD();
+	}
 
-    @Override
-    public void runImpl()
-    {
-        if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
-        {
-            return;
-        }
+	@Override
+	public void runImpl()
+	{
+		if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+		{
+			return;
+		}
 
-        final L2PcInstance activeChar = getClient().getActiveChar();
-        if (activeChar == null)
-        {
-            return;
-        }
+		final L2PcInstance activeChar = getClient().getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
 
-        if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
-        {
-            return;
-        }
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
+		{
+			return;
+		}
 
-        if (!activeChar.isInsideZone(ZONE_PEACE))
-        {
-            activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
-            return;
-        }
+		if (!activeChar.isInsideZone(ZONE_PEACE))
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
+			return;
+		}
 
-        Message msg = MailManager.getInstance().getMessage(_msgId);
-        if (msg == null)
-        {
-            return;
-        }
+		Message msg = MailManager.getInstance().getMessage(_msgId);
+		if (msg == null)
+		{
+			return;
+		}
 
-        if (msg.getReceiverId() != activeChar.getObjectId())
-        {
-            Util.handleIllegalPlayerAction(activeChar,
-                    "Player " + activeChar.getName() + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
-            return;
-        }
+		if (msg.getReceiverId() != activeChar.getObjectId())
+		{
+			Util.handleIllegalPlayerAction(activeChar,
+					"Player " + activeChar.getName() + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
+			return;
+		}
 
-        if (!msg.hasAttachments() || msg.getSendBySystem() != 0)
-        {
-            return;
-        }
+		if (!msg.hasAttachments() || msg.getSendBySystem() != 0)
+		{
+			return;
+		}
 
-        MailManager.getInstance().sendMessage(new Message(msg));
+		MailManager.getInstance().sendMessage(new Message(msg));
 
-        activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
-        activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
+		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
 
-        final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
-        if (sender != null)
-        {
-            SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_RETURNED_MAIL);
-            sm.addCharName(activeChar);
-            sender.sendPacket(sm);
-        }
-    }
+		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+		if (sender != null)
+		{
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_RETURNED_MAIL);
+			sm.addCharName(activeChar);
+			sender.sendPacket(sm);
+		}
+	}
 }

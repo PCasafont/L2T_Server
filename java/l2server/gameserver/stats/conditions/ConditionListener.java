@@ -29,8 +29,8 @@ package l2server.gameserver.stats.conditions;
 public interface ConditionListener
 {
 
-    /**
-     * Notify changed.
-     */
-    public void notifyChanged();
+	/**
+	 * Notify changed.
+	 */
+	public void notifyChanged();
 }

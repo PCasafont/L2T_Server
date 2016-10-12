@@ -21,55 +21,55 @@ import l2server.gameserver.templates.item.L2Henna;
 public class HennaRemoveList extends L2GameServerPacket
 {
 
-    private L2PcInstance _player;
+	private L2PcInstance _player;
 
-    public HennaRemoveList(L2PcInstance player)
-    {
-        _player = player;
-    }
+	public HennaRemoveList(L2PcInstance player)
+	{
+		_player = player;
+	}
 
-    @SuppressWarnings("unused")
-    private final int getHennaUsedSlots()
-    {
-        int _slots = 0;
-        switch (_player.getHennaEmptySlots())
-        {
-            case 0:
-                _slots = 3;
-                break;
-            case 1:
-                _slots = 2;
-                break;
-            case 2:
-                _slots = 1;
-                break;
-            case 3:
-                _slots = 0;
-                break;
-        }
+	@SuppressWarnings("unused")
+	private final int getHennaUsedSlots()
+	{
+		int _slots = 0;
+		switch (_player.getHennaEmptySlots())
+		{
+			case 0:
+				_slots = 3;
+				break;
+			case 1:
+				_slots = 2;
+				break;
+			case 2:
+				_slots = 1;
+				break;
+			case 3:
+				_slots = 0;
+				break;
+		}
 
-        return _slots;
-    }
+		return _slots;
+	}
 
-    @Override
-    protected final void writeImpl()
-    {
-        writeQ(_player.getAdena());
-        writeD(4);
-        writeD(4 - _player.getHennaEmptySlots());
+	@Override
+	protected final void writeImpl()
+	{
+		writeQ(_player.getAdena());
+		writeD(4);
+		writeD(4 - _player.getHennaEmptySlots());
 
-        for (int i = 0; i <= 4; i++)
-        {
-            L2Henna henna = _player.getHenna(i);
-            if (henna != null)
-            {
-                writeD(henna.getSymbolId());
-                writeD(henna.getDyeId());
-                writeQ(henna.getAmountDyeRequire() / 2);
-                writeQ(henna.getPrice() / 5);
-                writeD(0x00);
-                writeD(0x00);
-            }
-        }
-    }
+		for (int i = 0; i <= 4; i++)
+		{
+			L2Henna henna = _player.getHenna(i);
+			if (henna != null)
+			{
+				writeD(henna.getSymbolId());
+				writeD(henna.getDyeId());
+				writeQ(henna.getAmountDyeRequire() / 2);
+				writeQ(henna.getPrice() / 5);
+				writeD(0x00);
+				writeD(0x00);
+			}
+		}
+	}
 }

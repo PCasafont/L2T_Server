@@ -23,10 +23,10 @@ package l2server.gameserver.network.serverpackets;
 public class ExShowAdventurerGuideBook extends L2GameServerPacket
 {
 
-    /**
-     */
-    @Override
-    protected final void writeImpl()
-    {
-    }
+	/**
+	 */
+	@Override
+	protected final void writeImpl()
+	{
+	}
 }

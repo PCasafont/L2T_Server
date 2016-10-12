@@ -28,24 +28,24 @@ import l2server.gameserver.network.serverpackets.PledgePowerGradeList;
 public final class RequestPledgePowerGradeList extends L2GameClientPacket
 {
 
-    @Override
-    protected void readImpl()
-    {
-        // trigger
-    }
+	@Override
+	protected void readImpl()
+	{
+		// trigger
+	}
 
-    /**
-     */
-    @Override
-    protected void runImpl()
-    {
-        L2PcInstance player = getClient().getActiveChar();
-        L2Clan clan = player.getClan();
-        if (clan != null)
-        {
-            RankPrivs[] privs = clan.getAllRankPrivs();
-            player.sendPacket(new PledgePowerGradeList(privs));
-            //Logozo.warning("plegdepowergradelist send, privs length: "+privs.length);
-        }
-    }
+	/**
+	 */
+	@Override
+	protected void runImpl()
+	{
+		L2PcInstance player = getClient().getActiveChar();
+		L2Clan clan = player.getClan();
+		if (clan != null)
+		{
+			RankPrivs[] privs = clan.getAllRankPrivs();
+			player.sendPacket(new PledgePowerGradeList(privs));
+			//Logozo.warning("plegdepowergradelist send, privs length: "+privs.length);
+		}
+	}
 }
