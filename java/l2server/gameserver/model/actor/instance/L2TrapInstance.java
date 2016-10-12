@@ -199,13 +199,9 @@ public class L2TrapInstance extends L2Trap
 			return true;
 		}
 
-		if (_owner.isInParty() && cha.isInParty() &&
-				_owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID())
-		{
-			return true;
-		}
+		return _owner.isInParty() && cha.isInParty() &&
+				_owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID();
 
-		return false;
 	}
 
 	@Override

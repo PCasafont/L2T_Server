@@ -308,9 +308,7 @@ public class CustomAuctionManager
 				return "None";
 			}
 
-			String result = CharNameTable.getInstance().getNameById(_currentAuctionOwner);
-
-			return result;
+			return CharNameTable.getInstance().getNameById(_currentAuctionOwner);
 		}
 
 		private int getCurrentOwnerId()

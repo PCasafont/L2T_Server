@@ -110,7 +110,6 @@ public class ValueSortMap
 					valueList.remove(i);
 					iNullValueCount++;
 					i--;
-					continue;
 				}
 			}
 		}

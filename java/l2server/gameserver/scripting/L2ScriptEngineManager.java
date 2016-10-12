@@ -314,7 +314,7 @@ public final class L2ScriptEngineManager
 		}
 	}
 
-	public CompiledScriptCache getCompiledScriptCache() throws IOException
+	public CompiledScriptCache getCompiledScriptCache()
 	{
 		return _cache;
 	}

@@ -63,7 +63,7 @@ public class Duel
 		_duelId = duelId;
 		_playerA = playerA;
 		_playerB = playerB;
-		_partyDuel = partyDuel == 1 ? true : false;
+		_partyDuel = partyDuel == 1;
 
 		_duelEndTime = Calendar.getInstance();
 		if (_partyDuel)

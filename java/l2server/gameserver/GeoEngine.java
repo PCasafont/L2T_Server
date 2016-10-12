@@ -278,11 +278,7 @@ public class GeoEngine extends GeoData
 		int gx = x - L2World.MAP_MIN_X >> 4;
 		int gy = y - L2World.MAP_MIN_Y >> 4;
 		short region = getRegionOffset(gx, gy);
-		if (_geodata.contains(region))
-		{
-			return true;
-		}
-		return false;
+		return _geodata.contains(region);
 	}
 
 	private static boolean canSee(int x, int y, double z, int tx, int ty, int tz)
@@ -1430,11 +1426,7 @@ public class GeoEngine extends GeoData
 				{
 					Log.warning("height:" + height + " z" + z);
 				}
-				if (z < nGetUpperHeight(x + inc_x, y + inc_y, height))
-				{
-					return false; // an obstacle high enough
-				}
-				return true;
+				return z >= nGetUpperHeight(x + inc_x, y + inc_y, height);
 			}
 			else
 			{
@@ -1522,11 +1514,7 @@ public class GeoEngine extends GeoData
 								nGetUpperHeight(x + inc_x, y + inc_y, lowerHeight));
 					}
 					// check one inc_x inc_y further, for the height there
-					if (z < nGetUpperHeight(x + inc_x, y + inc_y, lowerHeight))
-					{
-						return false; // a wall
-					}
-					return true; // we see over it, e.g. a fence
+					return z >= nGetUpperHeight(x + inc_x, y + inc_y, lowerHeight);
 				}
 				else
 				{
@@ -1536,11 +1524,7 @@ public class GeoEngine extends GeoData
 			if (!checkNSWE(NSWE, x, y, x + inc_x, y + inc_y))
 			{
 				// check one inc_x inc_y further, for the height there
-				if (z < nGetUpperHeight(x + inc_x, y + inc_y, lowerHeight))
-				{
-					return false; // we hit an obstacle high enough
-				}
-				return true;
+				return z >= nGetUpperHeight(x + inc_x, y + inc_y, lowerHeight);
 			}
 			else
 			{

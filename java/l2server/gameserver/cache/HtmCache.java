@@ -293,12 +293,8 @@ public class HtmCache implements Reloadable
 		file = new File("data_" + Config.SERVER_NAME + "/html/" + path);
 		filter = new HtmFilter();
 
-		if (file.exists() && filter.accept(file) && !file.isDirectory())
-		{
-			return true;
-		}
+		return file.exists() && filter.accept(file) && !file.isDirectory();
 
-		return false;
 	}
 
 	@SuppressWarnings("synthetic-access")

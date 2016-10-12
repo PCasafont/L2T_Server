@@ -123,7 +123,7 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		writeD(_size); // font size 0 - normal, 1 - small
 		writeD(_unk2); // ?
 		writeD(_unk3); // ?
-		writeD(_effect == true ? 1 :
+		writeD(_effect ? 1 :
 				0); // upper effect (0 - disabled, 1 enabled) - _position must be 2 (center) otherwise no effect
 		writeD(_time); // time
 		writeD(_unk4); // ?

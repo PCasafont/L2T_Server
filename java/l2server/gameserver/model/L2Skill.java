@@ -1528,11 +1528,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final boolean is7Signs()
 	{
-		if (_id > 4360 && _id < 4367)
-		{
-			return true;
-		}
-		return false;
+		return _id > 4360 && _id < 4367;
 	}
 
 	public final boolean isStayAfterDeath()
@@ -1581,12 +1577,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			mask |= activeChar.getSecondaryWeaponItem().getItemType().mask();
 		}
 
-		if ((mask & weaponsAllowed) != 0)
-		{
-			return true;
-		}
+		return (mask & weaponsAllowed) != 0;
 
-		return false;
 	}
 
 	public boolean checkCondition(L2Character activeChar, L2Object target, boolean itemOrWeapon)
@@ -2287,15 +2279,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 				targetList.add(target);
 
-				final L2Character origin = activeChar;
 				final boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) &&
 						!activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 				final int radius = getSkillRadius();
 
 				// Calculate a normalized direction vector from the player to the target
-				float dirX = target.getX() - origin.getX();
-				float dirY = target.getY() - origin.getY();
-				float dirZ = target.getZ() - origin.getZ();
+				float dirX = target.getX() - activeChar.getX();
+				float dirY = target.getY() - activeChar.getY();
+				float dirZ = target.getZ() - activeChar.getZ();
 				float length = (float) Math.sqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
 				dirX /= length;
 				dirY /= length;
@@ -2309,12 +2300,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						continue;
 					}
 
-					if (obj == origin)
+					if (obj == activeChar)
 					{
 						continue;
 					}
 
-					if (Util.checkIfInRange(radius, origin, obj, true))
+					if (Util.checkIfInRange(radius, activeChar, obj, true))
 					{
 						if (obj == target || !checkForAreaOffensiveSkills(activeChar, obj, this, srcInArena))
 						{
@@ -2322,9 +2313,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						}
 
 						// Calculate a normalized direction vector from the player to the object
-						float dx = obj.getX() - origin.getX();
-						float dy = obj.getY() - origin.getY();
-						float dz = obj.getZ() - origin.getZ();
+						float dx = obj.getX() - activeChar.getX();
+						float dy = obj.getY() - activeChar.getY();
+						float dz = obj.getZ() - activeChar.getZ();
 						length = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
 						dx /= length;
 						dy /= length;
@@ -2352,14 +2343,13 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		ISkillTargetTypeHandler stth = SkillTargetTypeHandler.getInstance().getSkillTarget(targetType);
 		if (stth != null)
 		{
-			L2Object[] result = stth.getTargetList(this, activeChar, onlyFirst, target);
 			/*
 			if (activeChar.getName().equals("Chuter"))
 			{
 				for (L2Object o : result)
 					activeChar.sendMessage("TTTT = " + o);
 			}*/
-			return result;
+			return stth.getTargetList(this, activeChar, onlyFirst, target);
 		}
 		else
 		{
@@ -2567,12 +2557,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			}
 		}
 
-		if (geoEnabled && !GeoData.getInstance().canSeeTarget(caster, target))
-		{
-			return false;
-		}
+		return !(geoEnabled && !GeoData.getInstance().canSeeTarget(caster, target));
 
-		return true;
 	}
 
 	public static boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
@@ -2582,13 +2568,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			return false;
 		}
 
-		if (radius > 0 && !Util.checkIfInRange(radius, caster, target, true) &&
-				!GeoData.getInstance().canSeeTarget(caster, target))
-		{
-			return false;
-		}
+		return !(radius > 0 && !Util.checkIfInRange(radius, caster, target, true) &&
+				!GeoData.getInstance().canSeeTarget(caster, target));
 
-		return true;
 	}
 
 	public final Func[] getStatFuncs(L2Character player)
@@ -3324,12 +3306,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 		else if (getTargetType() == L2SkillTargetType.TARGET_SPECIAL)
 		{
-			if (getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL) // Progressive Heal
-			{
-				return false;
-			}
+			return getTargetDirection() != L2SkillTargetDirection.CHAIN_HEAL;
 
-			return true;
 		}
 		else if (getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA)
 		{

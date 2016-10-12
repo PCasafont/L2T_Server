@@ -411,7 +411,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -439,7 +438,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -467,7 +465,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -496,7 +493,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -525,7 +521,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -554,7 +549,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -584,7 +578,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -613,7 +606,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -642,7 +634,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -671,7 +662,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -703,7 +693,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 				}
 				else
 				{
-					continue;
 				}
 			}
 		}
@@ -729,7 +718,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 			}
 			else
 			{
-				continue;
 			}
 		}
 		return _list;

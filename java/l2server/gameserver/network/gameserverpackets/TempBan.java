@@ -50,7 +50,7 @@ public class TempBan extends BaseSendablePacket
 	 * @see l2server.util.network.BaseSendablePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent() throws IOException
+	public byte[] getContent()
 	{
 		return getBytes();
 	}

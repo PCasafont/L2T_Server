@@ -72,13 +72,11 @@ public class SimonSays extends EventInstance
 			rewardPlayers(_winners);
 			Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0).getName() +
 					" has won being the last one standing!");
-			return;
 		}
 		else
 		{
 			Announcements.getInstance()
 					.announceToAll("The event has ended in a tie due to the fact there wasn't anyone left");
-			return;
 		}
 	}
 

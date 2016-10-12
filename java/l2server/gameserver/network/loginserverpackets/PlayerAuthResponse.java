@@ -33,7 +33,7 @@ public class PlayerAuthResponse extends BaseRecievePacket
 		super(decrypt);
 
 		_account = readS();
-		_authed = readC() == 0 ? false : true;
+		_authed = readC() != 0;
 	}
 
 	/**

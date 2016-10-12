@@ -164,7 +164,6 @@ public class CursedWeaponsManager
 		{
 			Log.log(Level.SEVERE, "Error parsing cursed weapons file.", e);
 
-			return;
 		}
 	}
 
@@ -214,7 +213,6 @@ public class CursedWeaponsManager
 		{
 			Log.log(Level.WARNING, "Could not restore CursedWeapons data: " + e.getMessage(), e);
 
-			return;
 		}
 		finally
 		{

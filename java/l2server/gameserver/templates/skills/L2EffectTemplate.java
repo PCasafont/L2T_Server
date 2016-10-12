@@ -85,8 +85,7 @@ public class L2EffectTemplate
 	{
 		try
 		{
-			L2Effect effect = (L2Effect) _constructor.newInstance(env, this);
-			return effect;
+			return (L2Effect) _constructor.newInstance(env, this);
 		}
 		catch (IllegalAccessException e)
 		{
@@ -135,10 +134,9 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			L2Effect effect = (L2Effect) stolenCons.newInstance(env, stolen);
 			// if (_applayCond != null)
 			// effect.setCondition(_applayCond);
-			return effect;
+			return (L2Effect) stolenCons.newInstance(env, stolen);
 		}
 		catch (IllegalAccessException e)
 		{

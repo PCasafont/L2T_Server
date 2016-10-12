@@ -633,7 +633,7 @@ public final class BlockCheckerEngine
 				return;
 			}
 
-			_isRedWinner = _redPoints > _bluePoints ? true : false;
+			_isRedWinner = _redPoints > _bluePoints;
 
 			if (_isRedWinner)
 			{

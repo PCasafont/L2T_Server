@@ -53,11 +53,9 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 			return false;
 		}
 
-		boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress() &&
-				!getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan());
-
 		// Attackable during siege by all except defenders
-		return isFort;
+		return getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress() &&
+				!getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan());
 	}
 
 	@Override

@@ -153,9 +153,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -202,9 +200,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -238,9 +234,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -276,9 +270,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -298,9 +290,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -319,9 +309,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -340,9 +328,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		L2ItemInstance[] result = list.toArray(new L2ItemInstance[list.size()]);
-
-		return result;
+		return list.toArray(new L2ItemInstance[list.size()]);
 	}
 
 	/**
@@ -365,9 +351,7 @@ public class PcInventory extends Inventory
 			}
 		}
 
-		TradeList.TradeItem[] result = list.toArray(new TradeList.TradeItem[list.size()]);
-
-		return result;
+		return list.toArray(new TradeItem[list.size()]);
 	}
 
 	public L2ItemInstance getWeaponByTypeAndGrade(final L2WeaponType weaponType, final int crystalType)
@@ -1019,12 +1003,8 @@ public class PcInventory extends Inventory
 	 */
 	public boolean canManipulateWithItemId(int itemId)
 	{
-		if (_blockMode == 0 && Util.contains(_blockItems, itemId) ||
-				_blockMode == 1 && !Util.contains(_blockItems, itemId))
-		{
-			return false;
-		}
-		return true;
+		return !(_blockMode == 0 && Util.contains(_blockItems, itemId) ||
+				_blockMode == 1 && !Util.contains(_blockItems, itemId));
 	}
 
 	@Override

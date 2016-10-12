@@ -140,10 +140,6 @@ public class NodeLoc extends AbstractNodeLoc
 		{
 			return false;
 		}
-		if (_geoHeightAndNSWE != other._geoHeightAndNSWE)
-		{
-			return false;
-		}
-		return true;
+		return _geoHeightAndNSWE == other._geoHeightAndNSWE;
 	}
 }

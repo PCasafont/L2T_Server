@@ -155,8 +155,7 @@ public class EnsoulDataTable
 		Lambda lambda = new LambdaConst(val);
 
 		Condition applyCond = null; //TODO
-		FuncTemplate ft = new FuncTemplate(applyCond, funcName, stat, lambda);
-		return ft;
+		return new FuncTemplate(applyCond, funcName, stat, lambda);
 	}
 
 	@SuppressWarnings("synthetic-access")

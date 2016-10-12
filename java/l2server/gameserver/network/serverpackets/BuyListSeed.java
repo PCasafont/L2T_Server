@@ -19,6 +19,7 @@ import l2server.gameserver.instancemanager.CastleManorManager.SeedProduction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Format: c ddh[hdddhhd]
@@ -55,13 +56,8 @@ public final class BuyListSeed extends L2GameServerPacket
 		if (seeds != null && seeds.size() > 0)
 		{
 			_list = new ArrayList<>();
-			for (SeedProduction s : seeds)
-			{
-				if (s.getCanProduce() > 0 && s.getPrice() > 0)
-				{
-					_list.add(new Seed(s.getId(), s.getCanProduce(), s.getPrice()));
-				}
-			}
+			_list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
+					.map(s -> new Seed(s.getId(), s.getCanProduce(), s.getPrice())).collect(Collectors.toList()));
 		}
 	}
 

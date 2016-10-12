@@ -41,14 +41,7 @@ public class L2SkillElemental extends L2Skill
 		_seeds[1] = set.getInteger("seed2", 0);
 		_seeds[2] = set.getInteger("seed3", 0);
 
-		if (set.getInteger("seed_any", 0) == 1)
-		{
-			_seedAny = true;
-		}
-		else
-		{
-			_seedAny = false;
-		}
+		_seedAny = set.getInteger("seed_any", 0) == 1;
 	}
 
 	@Override

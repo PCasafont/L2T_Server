@@ -86,7 +86,7 @@ public class ServerStatus extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent() throws IOException
+	public byte[] getContent()
 	{
 		writeC(0x06);
 		writeD(_attributes.size());

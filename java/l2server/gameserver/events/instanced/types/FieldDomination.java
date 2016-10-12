@@ -142,7 +142,6 @@ public class FieldDomination extends EventInstance
 					"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points");
 		}
 
-		return;
 	}
 
 	@Override

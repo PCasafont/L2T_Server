@@ -381,12 +381,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 			return false;
 		}
 
-		if (_playerTwo.player == null || _playerTwo.disconnected)
-		{
-			return false;
-		}
+		return !(_playerTwo.player == null || _playerTwo.disconnected);
 
-		return true;
 	}
 
 	@Override

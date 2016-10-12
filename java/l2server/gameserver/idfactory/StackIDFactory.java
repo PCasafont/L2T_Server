@@ -96,7 +96,7 @@ public class StackIDFactory extends IdFactory
 				//ps.setInt(1, _curOID);
 				ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();
-				while (rs.next())
+				if (rs.next())
 				{
 					int badId = rs.getInt(1);
 					Log.severe("Bad ID " + badId + " in DB found by: " + check);

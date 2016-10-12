@@ -1026,16 +1026,12 @@ public class GMEventManager
 			return false;
 		}
 
-		if (player.getLevel() < 99 || player.isInCombat() || player.getPvpFlag() > 0 || player.getInstanceId() != 0 ||
-				player.isInDuel() || player.isFakeDeath() || player.isOutOfControl() || player.isInOlympiadMode() ||
-				OlympiadManager.getInstance().isRegistered(player) ||
+		return !(player.getLevel() < 99 || player.isInCombat() || player.getPvpFlag() > 0 ||
+				player.getInstanceId() != 0 || player.isInDuel() || player.isFakeDeath() || player.isOutOfControl() ||
+				player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player) ||
 				AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.getIsInsideGMEvent() ||
-				player.getEvent() != null)
-		{
-			return false;
-		}
+				player.getEvent() != null);
 
-		return true;
 	}
 
 	private class ParticipateRegister

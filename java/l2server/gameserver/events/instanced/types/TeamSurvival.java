@@ -44,7 +44,6 @@ public class TeamSurvival extends EventInstance
 
 		Announcements.getInstance().announceToAll(
 				"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " kill points.");
-		return;
 	}
 
 	@Override

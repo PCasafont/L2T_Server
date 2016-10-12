@@ -240,11 +240,7 @@ public class L2ChestInstance extends L2MonsterInstance
 		{
 			return true;
 		}
-		if (isInteracted())
-		{
-			return false;
-		}
-		return true;
+		return !isInteracted();
 	}
 
 	@Override

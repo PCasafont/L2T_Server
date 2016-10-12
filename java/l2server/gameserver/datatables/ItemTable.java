@@ -426,8 +426,7 @@ public class ItemTable implements Reloadable
 		{
 			return null;
 		}
-		L2ItemInstance temp = new L2ItemInstance(0, item);
-		return temp;
+		return new L2ItemInstance(0, item);
 	}
 
 	/**

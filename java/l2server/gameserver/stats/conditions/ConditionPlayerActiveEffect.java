@@ -35,10 +35,6 @@ public class ConditionPlayerActiveEffect extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2Abnormal e = env.player.getFirstEffectByName(_effectName);
-		if (e != null)
-		{
-			return true;
-		}
-		return false;
+		return e != null;
 	}
 }

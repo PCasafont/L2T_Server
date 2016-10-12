@@ -70,7 +70,7 @@ public class EffectMug extends L2Effect
 
 		// SPOIL SYSTEM by Lbaldi
 		boolean spoil = false;
-		if (target.isDead() == false)
+		if (!target.isDead())
 		{
 			spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
 

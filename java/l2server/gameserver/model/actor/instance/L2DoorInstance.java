@@ -350,11 +350,7 @@ public class L2DoorInstance extends L2Character
 		{
 			return true;
 		}
-		if (getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive() && getIsShowHp())
-		{
-			return true;
-		}
-		return false;
+		return getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive() && getIsShowHp();
 	}
 
 	@Override
@@ -541,7 +537,6 @@ public class L2DoorInstance extends L2Character
 
 		if (openThis == 0)
 		{
-			return;
 		}
 		else if (openThis == 1)
 		{

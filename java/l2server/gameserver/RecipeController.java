@@ -220,7 +220,7 @@ public class RecipeController
 		}
 	}
 
-	private void loadFromXML() throws SAXException, IOException, ParserConfigurationException
+	private void loadFromXML()
 	{
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + RECIPES_FILE);
 		File customFile = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/recipes.xml");

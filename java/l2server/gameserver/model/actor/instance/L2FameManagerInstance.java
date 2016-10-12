@@ -67,7 +67,6 @@ public class L2FameManagerInstance extends L2Npc
 			}
 
 			sendHtmlMessage(player, html);
-			return;
 		}
 		else if (actualCommand.equalsIgnoreCase("CRP"))
 		{
@@ -93,7 +92,6 @@ public class L2FameManagerInstance extends L2Npc
 			}
 
 			sendHtmlMessage(player, html);
-			return;
 		}
 		else
 		{

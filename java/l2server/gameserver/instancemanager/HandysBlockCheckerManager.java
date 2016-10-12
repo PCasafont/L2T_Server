@@ -238,7 +238,7 @@ public final class HandysBlockCheckerManager
 		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 		synchronized (holder)
 		{
-			boolean isRed = team == 0 ? true : false;
+			boolean isRed = team == 0;
 
 			holder.removePlayer(player, team);
 			holder.broadCastPacketToTeam(new ExCubeGameRemovePlayer(player, isRed));

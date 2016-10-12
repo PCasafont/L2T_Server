@@ -25,7 +25,7 @@ public final class RequestShowBeautyList extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		_isFace = readD() == 0 ? false : true;
+		_isFace = readD() != 0;
 	}
 
 	@Override

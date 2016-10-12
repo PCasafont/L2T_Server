@@ -63,8 +63,7 @@ public final class ItemAuctionInstance
 	private ItemAuction _nextAuction;
 	private ScheduledFuture<?> _stateTask;
 
-	public ItemAuctionInstance(final int instanceId, final AtomicInteger auctionIds, final XmlNode node) throws
-			Exception
+	public ItemAuctionInstance(final int instanceId, final AtomicInteger auctionIds, final XmlNode node)
 	{
 		_instanceId = instanceId;
 		_auctionIds = auctionIds;
@@ -394,7 +393,7 @@ public final class ItemAuctionInstance
 			}
 		}
 
-		private void runImpl() throws Exception
+		private void runImpl()
 		{
 			final ItemAuctionState state = _auction.getAuctionState();
 			switch (state)

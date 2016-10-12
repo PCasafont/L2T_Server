@@ -254,7 +254,6 @@ public final class RequestRefundItem extends L2GameClientPacket
 			if (item == null)
 			{
 				Log.warning("Error refunding object for char " + player.getName() + " (newitem == null)");
-				continue;
 			}
 		}
 

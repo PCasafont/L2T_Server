@@ -127,7 +127,6 @@ public final class RequestPetUseItem extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessageId.PET_CANNOT_USE_ITEM);
 		}
 
-		return;
 	}
 
 	private void useItem(L2PetInstance pet, L2ItemInstance item, L2PcInstance activeChar)

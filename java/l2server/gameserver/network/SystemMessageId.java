@@ -21682,7 +21682,6 @@ public final class SystemMessageId
 						builders.add(new BuilderObject(paramId));
 						index1 += 2;
 						index2 = index1 + 1;
-						continue LOOP;
 					}
 				}
 			}

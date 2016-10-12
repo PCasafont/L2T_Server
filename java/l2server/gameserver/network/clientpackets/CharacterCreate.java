@@ -262,7 +262,6 @@ public final class CharacterCreate extends L2GameClientPacket
 	public static boolean isValidName(String text)
 	{
 		boolean result = true;
-		String test = text;
 		Pattern pattern;
 		try
 		{
@@ -273,7 +272,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			Log.warning("ERROR : Character name pattern of config is wrong!");
 			pattern = Pattern.compile(".*");
 		}
-		Matcher regexp = pattern.matcher(test);
+		Matcher regexp = pattern.matcher(text);
 		if (!regexp.matches())
 		{
 			result = false;

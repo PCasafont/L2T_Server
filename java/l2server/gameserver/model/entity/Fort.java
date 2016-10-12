@@ -950,7 +950,7 @@ public class Fort
 
 	public final void setOwnerClan(L2Clan clan)
 	{
-		setVisibleFlag(clan != null ? true : false);
+		setVisibleFlag(clan != null);
 		_fortOwner = clan;
 	}
 

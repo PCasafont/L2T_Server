@@ -59,7 +59,6 @@ public final class RequestPrivateStoreManageSell extends L2GameClientPacket
 		}
 		if (player.getMountType() != 0)
 		{
-			return;
 		}
 	}
 

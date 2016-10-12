@@ -50,7 +50,6 @@ public final class L2ClanTraderInstance extends L2Npc
 			}
 
 			sendHtmlMessage(player, html);
-			return;
 		}
 		else if (command.startsWith("exchange"))
 		{
@@ -98,7 +97,6 @@ public final class L2ClanTraderInstance extends L2Npc
 			}
 
 			sendHtmlMessage(player, html);
-			return;
 		}
 		else
 		{

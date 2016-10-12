@@ -4961,11 +4961,7 @@ public abstract class L2Character extends L2Object
 		{
 			return false;
 		}
-		if (m.onGeodataPathIndex == m.geoPath.size() - 1)
-		{
-			return false;
-		}
-		return true;
+		return m.onGeodataPathIndex != m.geoPath.size() - 1;
 	}
 
 	/**
@@ -8328,11 +8324,7 @@ public abstract class L2Character extends L2Object
 		{
 			angleDiff -= 360;
 		}
-		if (Math.abs(angleDiff) <= maxAngleDiff)
-		{
-			return true;
-		}
-		return false;
+		return Math.abs(angleDiff) <= maxAngleDiff;
 	}
 
 	/**
@@ -8358,11 +8350,7 @@ public abstract class L2Character extends L2Object
 		{
 			angleDiff -= 360;
 		}
-		if (Math.abs(angleDiff) <= maxAngleDiff)
-		{
-			return true;
-		}
-		return false;
+		return Math.abs(angleDiff) <= maxAngleDiff;
 	}
 
 	public boolean isInFrontOfTarget()
@@ -9290,13 +9278,9 @@ public abstract class L2Character extends L2Object
 								return false;
 							}
 
-							if (event.getParticipantTeam(activeChar.getObjectId()) !=
-									event.getParticipantTeam(target.getObjectId()))
-							{
-								return false;
-							}
+							return event.getParticipantTeam(activeChar.getObjectId()) ==
+									event.getParticipantTeam(target.getObjectId());
 
-							return true;
 						}
 
 						if (isInsideSiegeZone)
@@ -9412,13 +9396,9 @@ public abstract class L2Character extends L2Object
 								return true;
 							}
 
-							if (event.getParticipantTeam(activeChar.getObjectId()) !=
-									event.getParticipantTeam(target.getObjectId()))
-							{
-								return true;
-							}
+							return event.getParticipantTeam(activeChar.getObjectId()) !=
+									event.getParticipantTeam(target.getObjectId());
 
-							return false;
 						}
 
 						if (activeChar.isInDuel())
@@ -9559,13 +9539,9 @@ public abstract class L2Character extends L2Object
 									return true;
 								}
 
-								if (event.getParticipantTeam(activeChar.getObjectId()) !=
-										event.getParticipantTeam(target.getObjectId()))
-								{
-									return true;
-								}
+								return event.getParticipantTeam(activeChar.getObjectId()) !=
+										event.getParticipantTeam(target.getObjectId());
 
-								return false;
 							}
 
 							if (activeChar.isInDuel())
@@ -9710,13 +9686,9 @@ public abstract class L2Character extends L2Object
 									return true;
 								}
 
-								if (event.getParticipantTeam(activeChar.getObjectId()) !=
-										event.getParticipantTeam(target.getObjectId()))
-								{
-									return true;
-								}
+								return event.getParticipantTeam(activeChar.getObjectId()) !=
+										event.getParticipantTeam(target.getObjectId());
 
-								return false;
 							}
 
 							if (isPressingCtrl)
@@ -9790,14 +9762,7 @@ public abstract class L2Character extends L2Object
 						if (cDoor != null)
 						{
                             /* Maybe we need checks to see if the character is attacker? **/
-							if (cDoor.getSiege().getIsInProgress())
-							{
-								return true;
-							}
-							else
-							{
-								return false;
-							}
+							return cDoor.getSiege().getIsInProgress();
 						}
 						else if (fDoor != null)
 						{

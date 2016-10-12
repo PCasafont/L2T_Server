@@ -51,11 +51,9 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
 		int condition = validateCondition(player);
 		if (condition <= COND_ALL_FALSE)
 		{
-			return;
 		}
 		else if (condition == COND_BUSY_BECAUSE_OF_SIEGE)
 		{
-			return;
 		}
 		else if (condition == COND_OWNER)
 		{
@@ -70,7 +68,6 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
 				{
 				}
 				showChatWindow(player, val);
-				return;
 			}
 			else
 			{

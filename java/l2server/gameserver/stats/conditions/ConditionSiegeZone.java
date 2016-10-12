@@ -68,14 +68,7 @@ public final class ConditionSiegeZone extends Condition
 
 		if (castle == null && fort == null)
 		{
-			if ((_value & COND_NOT_ZONE) != 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return (_value & COND_NOT_ZONE) != 0;
 		}
 		if (castle != null)
 		{

@@ -44,11 +44,7 @@ public class ZoneCylinder extends L2ZoneForm
 	@Override
 	public boolean isInsideZone(int x, int y, int z)
 	{
-		if (Math.pow(_x - x, 2) + Math.pow(_y - y, 2) > _radS || z < _z1 || z > _z2)
-		{
-			return false;
-		}
-		return true;
+		return !(Math.pow(_x - x, 2) + Math.pow(_y - y, 2) > _radS || z < _z1 || z > _z2);
 	}
 
 	@Override

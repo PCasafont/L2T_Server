@@ -320,28 +320,14 @@ public class L2Npc extends L2Character
 	{
 		L2NpcAIData AI = getTemplate().getAIData();
 
-		if (AI.getLongRangeSkill() == 0)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		return AI.getLongRangeSkill() != 0;
 	}
 
 	public boolean hasSSkill()
 	{
 		L2NpcAIData AI = getTemplate().getAIData();
 
-		if (AI.getShortRangeSkill() == 0)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		return AI.getShortRangeSkill() != 0;
 	}
 
 	public ArrayList<L2Skill> getLrangeSkill()
@@ -961,13 +947,9 @@ public class L2Npc extends L2Character
 		{
 			return false;
 		}
-		if (player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() &&
-				player.getInstanceId() != -1)
-		{
-			return false;
-		}
+		return !(player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() &&
+				player.getInstanceId() != -1);
 
-		return true;
 	}
 
 	public int getInteractionDistance()
@@ -1943,7 +1925,6 @@ public class L2Npc extends L2Character
 					"I cannot teach you any skills.<br>You must find your current class teachers.", "</body></html>");
 			msg.setHtml(sb);
 			player.sendPacket(msg);
-			return;
 		}
 		else
 		{

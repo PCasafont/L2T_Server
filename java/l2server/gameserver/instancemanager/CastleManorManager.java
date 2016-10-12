@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 /**
  * Class For Castle Manor Manager Load manor data from DB Update/Reload/Delete
@@ -567,10 +568,7 @@ public class CastleManorManager
 	{
 		ArrayList<SeedProduction> seeds = new ArrayList<>();
 		ArrayList<Integer> seedsIds = L2Manor.getInstance().getSeedsForCastle(castleId);
-		for (int sd : seedsIds)
-		{
-			seeds.add(new SeedProduction(sd));
-		}
+		seeds.addAll(seedsIds.stream().map(SeedProduction::new).collect(Collectors.toList()));
 		return seeds;
 	}
 
@@ -578,10 +576,7 @@ public class CastleManorManager
 	{
 		ArrayList<CropProcure> crops = new ArrayList<>();
 		ArrayList<Integer> cropsIds = L2Manor.getInstance().getCropsForCastle(castleId);
-		for (int cr : cropsIds)
-		{
-			crops.add(new CropProcure(cr));
-		}
+		crops.addAll(cropsIds.stream().map(CropProcure::new).collect(Collectors.toList()));
 
 		return crops;
 	}

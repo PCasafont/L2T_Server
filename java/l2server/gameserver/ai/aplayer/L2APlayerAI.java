@@ -81,7 +81,6 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 					if (elem != null && elem.getValue() > 0)
 					{
 						hasElement = true;
-						continue;
 					}
 				}
 			}

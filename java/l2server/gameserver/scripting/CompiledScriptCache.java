@@ -98,7 +98,7 @@ public class CompiledScriptCache implements Serializable
 		}
 	}
 
-	public void save() throws FileNotFoundException, IOException
+	public void save() throws IOException
 	{
 		synchronized (_compiledScripts)
 		{

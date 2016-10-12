@@ -92,7 +92,6 @@ public class KingOfTheHill extends EventInstance
 		rewardPlayers(sorted);
 		Announcements.getInstance().announceToAll("The event has ended. The player " + sorted.get(0).getName() +
 				" won being on the highest place during the most time!");
-		return;
 	}
 
 	@Override

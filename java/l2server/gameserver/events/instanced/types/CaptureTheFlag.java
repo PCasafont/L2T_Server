@@ -129,7 +129,6 @@ public class CaptureTheFlag extends EventInstance
 
 		Announcements.getInstance().announceToAll(
 				"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
-		return;
 	}
 
 	@Override
@@ -187,13 +186,11 @@ public class CaptureTheFlag extends EventInstance
 
 			CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
 					"I have caught " + team.getName() + " team's flag!");
-			for (L2PcInstance character : playerTeam.getParticipatedPlayers().values())
-			{
-				if (character != null)
-				{
-					character.sendPacket(cs);
-				}
-			}
+			playerTeam.getParticipatedPlayers().values().stream().filter(character -> character != null)
+					.forEach(character ->
+					{
+						character.sendPacket(cs);
+					});
 
 			player.addEventPoints(10);
 		}

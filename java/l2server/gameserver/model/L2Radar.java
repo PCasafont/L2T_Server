@@ -139,11 +139,7 @@ public final class L2Radar
 			{
 				return false;
 			}
-			if (_z != other._z)
-			{
-				return false;
-			}
-			return true;
+			return _z == other._z;
 		}
 	}
 }

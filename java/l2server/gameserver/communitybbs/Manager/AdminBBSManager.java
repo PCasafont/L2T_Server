@@ -60,7 +60,6 @@ public class AdminBBSManager extends BaseBBSManager
 	{
 		if (!activeChar.isGM())
 		{
-			return;
 		}
 	}
 

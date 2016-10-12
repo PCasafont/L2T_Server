@@ -41,7 +41,6 @@ public final class RequestCommissionDelete extends L2GameClientPacket
 		L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
-			return;
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

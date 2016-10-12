@@ -161,9 +161,8 @@ public class L2DatabaseFactory
 				mySqlTop1 = " Limit 1 ";
 			}
 		}
-		String query = "SELECT " + msSqlTop1 + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause +
+		return "SELECT " + msSqlTop1 + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause +
 				mySqlTop1;
-		return query;
 	}
 
 	public void shutdown()
@@ -303,12 +302,12 @@ public class L2DatabaseFactory
 		}
 	}
 
-	public int getBusyConnectionCount() throws SQLException
+	public int getBusyConnectionCount()
 	{
 		return _gameDatabase.getTotalLeased();
 	}
 
-	public int getIdleConnectionCount() throws SQLException
+	public int getIdleConnectionCount()
 	{
 		return _gameDatabase.getTotalFree();
 	}

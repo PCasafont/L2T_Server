@@ -672,7 +672,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				z1 = leader.getZ();
 				// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet CharMoveToLocation (broadcast)
 				moveTo(x1, y1, z1);
-				return;
 			}
 			else if (Rnd.nextInt(RANDOM_WALK_RATE) == 0)
 			{
@@ -1345,7 +1344,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			if (npc.isMovementDisabled())
 			{
 				targetReconsider();
-				return;
 			}
 			else
 			{
@@ -1362,7 +1360,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					range = 5;
 				}
 				moveToPawn(getAttackTarget(), range);
-				return;
 			}
 		}
 		else
@@ -1500,20 +1497,18 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					if (target != null)
 					{
 						clientStopMoving(null);
-						L2Object targets = attackTarget;
 						caster.setTarget(target);
 						caster.doCast(sk);
-						caster.setTarget(targets);
+						caster.setTarget(attackTarget);
 						return true;
 					}
 				}
 				if (canParty(sk))
 				{
 					clientStopMoving(null);
-					L2Object targets = attackTarget;
 					caster.setTarget(caster);
 					caster.doCast(sk);
-					caster.setTarget(targets);
+					caster.setTarget(attackTarget);
 					return true;
 				}
 				break;
@@ -1755,10 +1750,9 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					if (target != null)
 					{
 						clientStopMoving(null);
-						L2Object targets = attackTarget;
 						caster.setTarget(target);
 						caster.doCast(sk);
-						caster.setTarget(targets);
+						caster.setTarget(attackTarget);
 						return true;
 					}
 				}
@@ -1817,10 +1811,9 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						if (target != null)
 						{
 							clientStopMoving(null);
-							L2Object targets = attackTarget;
 							caster.setTarget(target);
 							caster.doCast(sk);
-							caster.setTarget(targets);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -1851,10 +1844,9 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						if (target != null)
 						{
 							clientStopMoving(null);
-							L2Object targets = attackTarget;
 							caster.setTarget(target);
 							caster.doCast(sk);
-							caster.setTarget(targets);
+							caster.setTarget(attackTarget);
 							return true;
 						}
 					}
@@ -2113,7 +2105,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		{
 			setIntention(AI_INTENTION_ACTIVE);
 			Log.log(Level.WARNING, this + " - failed executing movementDisable(): " + e.getMessage(), e);
-			return;
 		}
 	}
 
@@ -2502,7 +2493,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						if (((L2Attackable) obj).getFactionId() != null &&
 								((L2Attackable) obj).getFactionId().equals(actor.getFactionId()))
 						{
-							continue;
 						}
 						else
 						{
@@ -2634,7 +2624,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						if (((L2Attackable) obj).getFactionId() != null &&
 								((L2Attackable) obj).getFactionId().equals(actor.getFactionId()))
 						{
-							continue;
 						}
 						else
 						{

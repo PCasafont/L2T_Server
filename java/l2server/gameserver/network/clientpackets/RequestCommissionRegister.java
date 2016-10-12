@@ -49,7 +49,6 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 		L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
-			return;
 		}
 
 		/*long destroyPrice = _price;

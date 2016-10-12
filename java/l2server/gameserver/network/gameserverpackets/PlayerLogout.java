@@ -34,7 +34,7 @@ public class PlayerLogout extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent() throws IOException
+	public byte[] getContent()
 	{
 		return getBytes();
 	}

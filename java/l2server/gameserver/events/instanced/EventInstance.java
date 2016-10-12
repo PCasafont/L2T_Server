@@ -237,7 +237,6 @@ public abstract class EventInstance
 	{
 		if (player == null)
 		{
-			return;
 		}
 
 		/*
@@ -809,13 +808,9 @@ public abstract class EventInstance
 			return false;
 		}
 
-		if (playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
-				!Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED)
-		{
-			return false;
-		}
+		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
+				!Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED);
 
-		return true;
 	}
 
 	public boolean onForcedAttack(L2PcInstance playerInstance, int targetPlayerObjectId)
@@ -828,12 +823,9 @@ public abstract class EventInstance
 			return false;
 		}
 
-		if (playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId && _config.isPvp())
-		{
-			return false;
-		}
+		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
+				_config.isPvp());
 
-		return true;
 	}
 
 	public boolean onScrollUse(int playerObjectId)
@@ -843,12 +835,8 @@ public abstract class EventInstance
 			return true;
 		}
 
-		if (isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SCROLL_ALLOWED)
-		{
-			return false;
-		}
+		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SCROLL_ALLOWED);
 
-		return true;
 	}
 
 	public boolean onPotionUse(int playerObjectId)
@@ -858,12 +846,8 @@ public abstract class EventInstance
 			return true;
 		}
 
-		if (isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_POTIONS_ALLOWED)
-		{
-			return false;
-		}
+		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_POTIONS_ALLOWED);
 
-		return true;
 	}
 
 	public boolean onEscapeUse(int playerObjectId)
@@ -873,12 +857,8 @@ public abstract class EventInstance
 			return true;
 		}
 
-		if (isPlayerParticipant(playerObjectId))
-		{
-			return false;
-		}
+		return !isPlayerParticipant(playerObjectId);
 
-		return true;
 	}
 
 	public boolean onItemSummon(int playerObjectId)
@@ -888,12 +868,8 @@ public abstract class EventInstance
 			return true;
 		}
 
-		if (isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SUMMON_BY_ITEM_ALLOWED)
-		{
-			return false;
-		}
+		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SUMMON_BY_ITEM_ALLOWED);
 
-		return true;
 	}
 
 	public abstract void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance);

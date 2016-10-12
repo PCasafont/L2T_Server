@@ -263,7 +263,7 @@ public class CustomWorldAltars
 					if (randomSpawn != null)
 					{
 						_currentSpawn = randomSpawn;
-						_currentSpawn.setInUse(true, pvpZones < 2 ? true : false);
+						_currentSpawn.setInUse(true, pvpZones < 2);
 						_altarNpc = NpcUtil.addSpawn(_altarId, _currentSpawn.getSpawn().getX(),
 								_currentSpawn.getSpawn().getY(), _currentSpawn.getSpawn().getZ(),
 								_currentSpawn.getSpawn().getHeading(), false, 0, true, 0);

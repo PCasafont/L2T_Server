@@ -150,12 +150,8 @@ public class L2ClanMember
 		{
 			return false;
 		}
-		if (_player.getClient().isDetached())
-		{
-			return false;
-		}
+		return !_player.getClient().isDetached();
 
-		return true;
 	}
 
 	/**

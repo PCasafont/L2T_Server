@@ -117,13 +117,11 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 			}
 			activeChar.sendPacket(sm);
 			activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
-			return;
 		}
 		else
 		{
 			activeChar.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_ATTRIBUTE));
-			return;
 		}
 	}
 

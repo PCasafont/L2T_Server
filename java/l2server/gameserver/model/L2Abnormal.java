@@ -813,29 +813,21 @@ public class L2Abnormal
 
 	public boolean canBeStolen()
 	{
-		if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
+		return !(!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
 				getSkill().getTargetType() == L2SkillTargetType.TARGET_SELF || getSkill().isToggle() ||
 				getSkill().isDebuff() || getSkill().isHeroSkill() || getSkill().getTransformId() > 0
 				//|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
 				|| getSkill().isPotion() && getSkill().getId() != 2274 && getSkill().getId() != 2341
 				// Hardcode for now :<
-				|| isHerbEffect() || !getSkill().canBeDispeled())
-		{
-			return false;
-		}
-		return true;
+				|| isHerbEffect() || !getSkill().canBeDispeled());
 	}
 
 	public boolean canBeShared()
 	{
-		if (!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
+		return !(!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
 				getSkill().isToggle() || getSkill().isDebuff()
 				//|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
-				|| !getSkill().canBeDispeled())
-		{
-			return false;
-		}
-		return true;
+				|| !getSkill().canBeDispeled());
 	}
 
 	/**

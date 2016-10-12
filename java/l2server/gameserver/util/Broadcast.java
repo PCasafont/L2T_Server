@@ -282,13 +282,11 @@ public final class Broadcast
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance onlinePlayer : pls)
+			pls.stream().filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() &&
+					onlinePlayer.getInstanceId() == instanceId).forEachOrdered(onlinePlayer ->
 			{
-				if (onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.getInstanceId() == instanceId)
-				{
-					onlinePlayer.sendPacket(mov);
-				}
-			}
+				onlinePlayer.sendPacket(mov);
+			});
 		}
 	}
 
@@ -297,13 +295,11 @@ public final class Broadcast
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance onlinePlayer : pls)
-			{
-				if (onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.isGM())
-				{
-					onlinePlayer.sendMessage(message);
-				}
-			}
+			pls.stream().filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.isGM())
+					.forEachOrdered(onlinePlayer ->
+					{
+						onlinePlayer.sendMessage(message);
+					});
 		}
 	}
 }

@@ -1727,14 +1727,8 @@ public class L2PcInstance extends L2Playable
 		{
 			return true;
 		}
-		else if (_commonRecipeBook.containsKey(recipeId))
-		{
-			return true;
-		}
 		else
-		{
-			return false;
-		}
+			return _commonRecipeBook.containsKey(recipeId);
 	}
 
 	/**
@@ -2238,11 +2232,7 @@ public class L2PcInstance extends L2Playable
 
 	public boolean isRegisteredOnThisSiegeField(int val)
 	{
-		if (_siegeSide != val && (_siegeSide < 81 || _siegeSide > 89))
-		{
-			return false;
-		}
-		return true;
+		return !(_siegeSide != val && (_siegeSide < 81 || _siegeSide > 89));
 	}
 
 	public int getSiegeSide()
@@ -2990,7 +2980,6 @@ public class L2PcInstance extends L2Playable
 				}
 			}
 
-			continue;
 		}
 	}
 
@@ -5043,7 +5032,7 @@ public class L2PcInstance extends L2Playable
 		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM &&
 				!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
 		{
-			if (item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM || !item.isEquipable())
+			if (!item.isEquipable() || Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
 			{
 				ItemsAutoDestroy.getInstance().addItem(item);
 			}
@@ -5130,7 +5119,7 @@ public class L2PcInstance extends L2Playable
 		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM &&
 				!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
 		{
-			if (item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM || !item.isEquipable())
+			if (!item.isEquipable() || Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
 			{
 				ItemsAutoDestroy.getInstance().addItem(item);
 			}
@@ -6041,7 +6030,7 @@ public class L2PcInstance extends L2Playable
 				return;
 			}
 
-			if ((isInParty() && getParty().getLootDistribution() == L2Party.ITEM_LOOTER || !isInParty()) &&
+			if ((!isInParty() || getParty().getLootDistribution() == L2Party.ITEM_LOOTER) &&
 					!_inventory.validateCapacity(target))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -6682,13 +6671,11 @@ public class L2PcInstance extends L2Playable
 
 	public void engageAnswer(int answer)
 	{
-		if (_engagerequest == false)
+		if (!_engagerequest)
 		{
-			return;
 		}
 		else if (_engageid == 0)
 		{
-			return;
 		}
 		else
 		{
@@ -8524,14 +8511,8 @@ public class L2PcInstance extends L2Playable
 		{
 			return true;
 		}
-		else if (weaponItem.getItemType() == L2WeaponType.DUALBLUNT)
-		{
-			return true;
-		}
 		else
-		{
-			return false;
-		}
+			return weaponItem.getItemType() == L2WeaponType.DUALBLUNT;
 	}
 
 	public void setUptime(long time)
@@ -10727,11 +10708,7 @@ public class L2PcInstance extends L2Playable
 
 		if (getIsInsideGMEvent())
 		{
-			if (!GMEventManager.getInstance().canAttack(this, attacker))
-			{
-				return false;
-			}
-			return true;
+			return GMEventManager.getInstance().canAttack(this, attacker);
 		}
 
 		// Check if the attacker isn't the L2PcInstance Pet
@@ -10750,15 +10727,8 @@ public class L2PcInstance extends L2Playable
 		// Check if the attacker is in olympia and olympia start
 		if (attacker instanceof L2PcInstance && ((L2PcInstance) attacker).isInOlympiadMode())
 		{
-			if (isInOlympiadMode() && isOlympiadStart() &&
-					((L2PcInstance) attacker).getOlympiadGameId() == getOlympiadGameId())
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return isInOlympiadMode() && isOlympiadStart() &&
+					((L2PcInstance) attacker).getOlympiadGameId() == getOlympiadGameId();
 		}
 
 		// Check if the attacker is not in the same clan
@@ -13739,12 +13709,8 @@ public class L2PcInstance extends L2Playable
 
 	public boolean isRentedPet()
 	{
-		if (_taskRentPet != null)
-		{
-			return true;
-		}
+		return _taskRentPet != null;
 
-		return false;
 	}
 
 	public void stopWaterTask()
@@ -13771,12 +13737,8 @@ public class L2PcInstance extends L2Playable
 
 	public boolean isInWater()
 	{
-		if (_taskWater != null)
-		{
-			return true;
-		}
+		return _taskWater != null;
 
-		return false;
 	}
 
 	public void checkWaterState()
@@ -14507,13 +14469,8 @@ public class L2PcInstance extends L2Playable
 			return false;
 		}
 
-		if (CursedWeaponsManager.getInstance().isCursed(item.getItemId()))
-		{
-			// can not trade a cursed weapon
-			return false;
-		}
+		return !CursedWeaponsManager.getInstance().isCursed(item.getItemId());
 
-		return true;
 	}
 
 	public void clearBypass()
@@ -17257,13 +17214,12 @@ public class L2PcInstance extends L2Playable
 	@Override
 	public int getAttackElementValue(byte attribute)
 	{
-		int value = super.getAttackElementValue(attribute);
 
 		// 20% if summon exist
 		//if (!getSummons().isEmpty() && getCurrentClass().isSummoner())
 		//	return value / 5;
 
-		return value;
+		return super.getAttackElementValue(attribute);
 	}
 
 	public void setIsInSiege(boolean b)
@@ -17903,11 +17859,7 @@ public class L2PcInstance extends L2Playable
 		{
 			return false;
 		}
-		if (isInBoat() || isInAirShip())
-		{
-			return false;
-		}
-		return true;
+		return !(isInBoat() || isInAirShip());
 	}
 
 	/**
@@ -18394,7 +18346,6 @@ public class L2PcInstance extends L2Playable
 			// not found - not a learn skill?
 			if (learn == null)
 			{
-				continue;
 			}
 			else
 			{
@@ -18442,18 +18393,11 @@ public class L2PcInstance extends L2Playable
 
 	public boolean canMakeSocialAction()
 	{
-		if (getPrivateStoreType() == 0 && getActiveRequester() == null && !isAlikeDead() &&
-				(!isAllSkillsDisabled() || isInDuel()) && !isCastingNow() && !isCastingSimultaneouslyNow())
 		//&& getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE
 		//&& !AttackStanceTaskManager.getInstance().getAttackStanceTask(this)
 		//&& !isInOlympiadMode())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return getPrivateStoreType() == 0 && getActiveRequester() == null && !isAlikeDead() &&
+				(!isAllSkillsDisabled() || isInDuel()) && !isCastingNow() && !isCastingSimultaneouslyNow();
 	}
 
 	public void setMultiSocialAction(int id, int targetId)
@@ -19352,9 +19296,8 @@ public class L2PcInstance extends L2Playable
 
 	public void mobSummonAnswer(int answer)
 	{
-		if (_mobSummonRequest == false)
+		if (!_mobSummonRequest)
 		{
-			return;
 		}
 		else
 		{
@@ -19379,9 +19322,8 @@ public class L2PcInstance extends L2Playable
 
 	public void mobSummonExchangeAnswer(int answer)
 	{
-		if (_mobSummonExchangeRequest == false)
+		if (!_mobSummonExchangeRequest)
 		{
-			return;
 		}
 		else
 		{
@@ -19901,9 +19843,8 @@ public class L2PcInstance extends L2Playable
 
 	public void chessChallengeAnswer(int answer)
 	{
-		if (_chessChallengeRequest == false)
+		if (!_chessChallengeRequest)
 		{
-			return;
 		}
 		else
 		{
@@ -20130,7 +20071,6 @@ public class L2PcInstance extends L2Playable
 			_lastSummonId = _pet.getNpcId();
 		}
 
-		return;
 	}
 
 	/**
@@ -20746,7 +20686,6 @@ public class L2PcInstance extends L2Playable
 				charId = rset.getInt("charId");
 				if (charId == getObjectId())
 				{
-					continue;
 				}
 			}
 

@@ -283,12 +283,8 @@ public class GrandBossManager
 			return false;
 		}
 		L2BossZone temp = getZone(player.getX(), player.getY(), player.getZ());
-		if (temp == null)
-		{
-			return false;
-		}
+		return temp != null;
 
-		return true;
 	}
 
 	/*
@@ -647,12 +643,8 @@ public class GrandBossManager
 	{
 		Long temp = System.currentTimeMillis() - lastAction;
 
-		if (temp > 900000)
-		{
-			return false;
-		}
+		return temp <= 900000;
 
-		return true;
 	}
 
 	@SuppressWarnings("synthetic-access")

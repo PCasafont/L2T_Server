@@ -297,8 +297,7 @@ public final class StatsSet
 		}
 		if (val instanceof Number)
 		{
-			int[] result = {((Number) val).intValue()};
-			return result;
+			return new int[]{((Number) val).intValue()};
 		}
 		int c = 0;
 		String[] vals = ((String) val).split(";");

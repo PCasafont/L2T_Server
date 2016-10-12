@@ -398,7 +398,7 @@ public class Instance
 		_doors = null;
 	}
 
-	public void loadInstanceTemplate(String filename) throws FileNotFoundException
+	public void loadInstanceTemplate(String filename)
 	{
 		File xml = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "instances/" + filename);
 

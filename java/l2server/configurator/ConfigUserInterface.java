@@ -332,8 +332,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			{
 				try
 				{
-					InetAddress address = InetAddress.getByName(value);
-					return address;
+					return InetAddress.getByName(value);
 				}
 				catch (UnknownHostException e)
 				{

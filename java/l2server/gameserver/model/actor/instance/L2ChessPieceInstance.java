@@ -685,14 +685,7 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 	@Override
 	public boolean isAutoAttackable(L2Character character)
 	{
-		if (character instanceof L2ChessPieceInstance)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return character instanceof L2ChessPieceInstance;
 	}
 
 	@Override

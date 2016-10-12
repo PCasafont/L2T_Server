@@ -399,7 +399,6 @@ public final class L2BabyPetInstance extends L2PetInstance
 					if (!_baby.isSkillDisabled(skill) && _baby.getCurrentMp() >= skill.getMpConsume())
 					{
 						castSkill(skill);
-						return;
 					}
 				}
 			}

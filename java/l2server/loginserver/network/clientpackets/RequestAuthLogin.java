@@ -17,20 +17,15 @@ package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.log.Log;
-import l2server.loginserver.GameServerTable.GameServerInfo;
-import l2server.loginserver.HackingException;
+import l2server.loginserver.GameServerTable;
 import l2server.loginserver.LoginController;
-import l2server.loginserver.LoginController.AuthLoginResult;
 import l2server.loginserver.network.L2LoginClient;
-import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.serverpackets.AccountKicked;
-import l2server.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
-import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import l2server.loginserver.network.serverpackets.LoginFail;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
 
 import javax.crypto.Cipher;
-import java.net.InetAddress;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
 
@@ -116,15 +111,15 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		}
 
 		LoginController lc = LoginController.getInstance();
-		try
-		{
-			AuthLoginResult result = lc.tryAuthLogin(_user, _password, client);
+		/*try
+		{*/
+			LoginController.AuthLoginResult result = lc.tryAuthLogin(_user, _password, client);
 			switch (result)
 			{
 				case AUTH_SUCCESS:
 					client.setAccount(_user);
 					lc.getCharactersOnAccount(_user);
-					client.setState(LoginClientState.AUTHED_LOGIN);
+					client.setState(L2LoginClient.LoginClientState.AUTHED_LOGIN);
 					client.setSessionKey(lc.assignSessionKeyToClient(_user, client));
 					if (Config.SHOW_LICENCE)
 					{
@@ -149,27 +144,27 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					}
 					break;
 				case INVALID_PASSWORD:
-					client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
+					client.close(LoginFail.LoginFailReason.REASON_USER_OR_PASS_WRONG);
 					break;
 				case ACCOUNT_BANNED:
-					client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
+					client.close(new AccountKicked(AccountKicked.AccountKickedReason.REASON_PERMANENTLY_BANNED));
 					break;
 				case ALREADY_ON_LS:
 					L2LoginClient oldClient;
 					if ((oldClient = lc.getAuthedClient(_user)) != null)
 					{
 						// kick the other client
-						oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+						oldClient.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 						lc.removeAuthedLoginClient(_user);
 					}
 					// kick also current client
-					client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+					client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 					break;
 				case ALREADY_ON_GS:
-					GameServerInfo gsi;
+					GameServerTable.GameServerInfo gsi;
 					if ((gsi = lc.getAccountOnGameServer(_user)) != null)
 					{
-						client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+						client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 
 						// kick from there
 						if (gsi.isAuthed())
@@ -179,13 +174,13 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					}
 					break;
 			}
-		}
+		/*}
 		catch (HackingException e)
 		{
 			InetAddress address = getClient().getConnection().getInetAddress();
 			lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " +
 					e.getConnects() + " incorrect login attempts.");
-		}
+		}*/
 	}
 }

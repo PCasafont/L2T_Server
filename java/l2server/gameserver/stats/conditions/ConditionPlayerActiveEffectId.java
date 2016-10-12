@@ -57,11 +57,7 @@ public class ConditionPlayerActiveEffectId extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2Abnormal e = env.player.getFirstEffect(_effectId);
-		if (e != null && (_effectLvl == -1 || _effectLvl <= e.getSkill().getLevel()))
-		{
-			return true;
-		}
+		return e != null && (_effectLvl == -1 || _effectLvl <= e.getSkill().getLevel());
 
-		return false;
 	}
 }

@@ -39,6 +39,7 @@ import l2server.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -368,11 +369,8 @@ public final class L2Weapon extends L2Item
 		{
 			target.getFirstEffect(_skillsOnCrit.getSkill().getId()).exit();
 		}
-		for (L2Abnormal e : _skillsOnCrit.getSkill()
-				.getEffects(caster, target, new Env(shld, L2ItemInstance.CHARGED_NONE)))
-		{
-			effects.add(e);
-		}
+		Collections.addAll(effects,
+				_skillsOnCrit.getSkill().getEffects(caster, target, new Env(shld, L2ItemInstance.CHARGED_NONE)));
 		if (effects.isEmpty())
 		{
 			return _emptyEffectSet;

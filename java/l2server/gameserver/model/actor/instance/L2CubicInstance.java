@@ -1047,7 +1047,7 @@ public class L2CubicInstance
 
 					if (target != null && !target.isDead())
 					{
-						boolean cubicShouldStopIfNoAction = _id == BUFF_CUBIC || _id == MIND_CUBIC ? false : true;
+						boolean cubicShouldStopIfNoAction = !(_id == BUFF_CUBIC || _id == MIND_CUBIC);
 
 						if (target.getMaxHp() - target.getCurrentHp() > skill.getPower() || !cubicShouldStopIfNoAction)
 						{

@@ -130,5 +130,5 @@ public abstract class BaseSendablePacket
 		return _bao.toByteArray();
 	}
 
-	public abstract byte[] getContent() throws IOException;
+	public abstract byte[] getContent();
 }

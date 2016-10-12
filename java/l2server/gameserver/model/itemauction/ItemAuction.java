@@ -337,7 +337,6 @@ public final class ItemAuction
 
 			player.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.SUBMITTED_A_BID_OF_S1).addItemNumber(newBid));
-			return;
 		}
 	}
 

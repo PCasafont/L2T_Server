@@ -1659,11 +1659,7 @@ public class MercTicketManager
 				count++;
 			}
 		}
-		if (count >= limit)
-		{
-			return true;
-		}
-		return false;
+		return count >= limit;
 	}
 
 	/**
@@ -1691,11 +1687,7 @@ public class MercTicketManager
 				count++;
 			}
 		}
-		if (count >= limit)
-		{
-			return true;
-		}
-		return false;
+		return count >= limit;
 	}
 
 	public int getMaxAllowedMerc(int castleId)

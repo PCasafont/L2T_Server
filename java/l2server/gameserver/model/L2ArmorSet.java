@@ -95,12 +95,8 @@ public final class L2ArmorSet
 		Inventory inv = player.getInventory();
 
 		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if (shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(_id))
-		{
-			return true;
-		}
+		return shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(_id);
 
-		return false;
 	}
 
 	public TIntIntHashMap getSkills()

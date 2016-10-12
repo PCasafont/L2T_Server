@@ -329,7 +329,6 @@ public final class Formulas
 				if (env.player.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0)
 				{
 					env.value *= BaseStats.MEN.calcBonus(env.player);
-					return;
 				}
 			}
 			else
@@ -2971,8 +2970,7 @@ public final class Formulas
 			rate /= target.calcStat(Stats.CRIT_DAMAGE_EVASION, 1, null, null);
 		}
 
-		final boolean success = rate > Rnd.get(1000);
-		return success;
+		return rate > Rnd.get(1000);
 	}
 
 	/**
@@ -3402,14 +3400,7 @@ public final class Formulas
 				case DEBUFF:
 				case AGGDEBUFF:
 				case CONTINUOUS_DEBUFF:
-					if (d > 0 && Rnd.get(1000) == 1)
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
+					return d > 0 && Rnd.get(1000) == 1;
 			}
 		}
 
@@ -3788,12 +3779,8 @@ public final class Formulas
 				return false;
 			}
 
-			if (target.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && skill.getName().contains("Talisman"))
-			{
-				return false;
-			}
+			return !(target.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && skill.getName().contains("Talisman"));
 
-			return true;
 		}
 
 		if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
@@ -4571,8 +4558,7 @@ public final class Formulas
 		{
 			return 0;
 		}
-		final double damage = cha.calcStat(Stats.FALL, fallHeight * cha.getMaxHp() / 1000, null, null);
-		return damage;
+		return cha.calcStat(Stats.FALL, fallHeight * cha.getMaxHp() / 1000, null, null);
 	}
 
 	private static double FRONT_MAX_ANGLE = 100;
@@ -4667,11 +4653,7 @@ public final class Formulas
 		{
 			angleDiff -= 360;
 		}
-		if (Math.abs(angleDiff) <= FRONT_MAX_ANGLE)
-		{
-			return true;
-		}
-		return false;
+		return Math.abs(angleDiff) <= FRONT_MAX_ANGLE;
 	}
 
 	/**
@@ -4691,9 +4673,8 @@ public final class Formulas
 		}
 
 		double angleChar, angleTarget, angleDiff;
-		L2Character target1 = target;
-		angleChar = Util.calculateAngleFrom(attacker, target1);
-		angleTarget = Util.convertHeadingToDegree(target1.getHeading());
+		angleChar = Util.calculateAngleFrom(attacker, target);
+		angleTarget = Util.convertHeadingToDegree(target.getHeading());
 		angleDiff = angleChar - angleTarget;
 		if (angleDiff <= -360 + BACK_MAX_ANGLE)
 		{
@@ -4703,11 +4684,7 @@ public final class Formulas
 		{
 			angleDiff -= 360;
 		}
-		if (Math.abs(angleDiff) <= BACK_MAX_ANGLE)
-		{
-			return true;
-		}
-		return false;
+		return Math.abs(angleDiff) <= BACK_MAX_ANGLE;
 	}
 
 	public static double damageMultiplier(L2Character attacker, L2Character target)

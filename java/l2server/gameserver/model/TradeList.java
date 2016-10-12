@@ -378,8 +378,7 @@ public class TradeList
 			inventory.adjustAvailableItem(item);
 			list.add(item);
 		}
-		TradeList.TradeItem[] result = list.toArray(new TradeList.TradeItem[list.size()]);
-		return result;
+		return list.toArray(new TradeItem[list.size()]);
 	}
 
 	/**

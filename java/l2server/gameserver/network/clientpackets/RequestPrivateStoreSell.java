@@ -93,26 +93,24 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance storePlayer = object;
-
-		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1)
+		if (player.getInstanceId() != object.getInstanceId() && player.getInstanceId() != -1)
 		{
 			return;
 		}
 
-		if (storePlayer.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_BUY)
+		if (object.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_BUY)
 		{
 			return;
 		}
 
-		storePlayer.hasBeenStoreActive();
+		object.hasBeenStoreActive();
 
 		if (player.isCursedWeaponEquipped() || player.isInJail())
 		{
 			return;
 		}
 
-		TradeList storeList = storePlayer.getBuyList();
+		TradeList storeList = object.getBuyList();
 		if (storeList == null)
 		{
 			return;
@@ -129,14 +127,14 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("PrivateStore sell has failed due to invalid list or request. Player: " + player.getName() +
-					", Private store of: " + storePlayer.getName());
+					", Private store of: " + object.getName());
 			return;
 		}
 
 		if (storeList.getItemCount() == 0)
 		{
-			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
-			storePlayer.broadcastUserInfo();
+			object.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			object.broadcastUserInfo();
 		}
 	}
 

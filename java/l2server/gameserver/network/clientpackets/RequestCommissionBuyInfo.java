@@ -39,7 +39,6 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
-			return;
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

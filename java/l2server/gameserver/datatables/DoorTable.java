@@ -208,8 +208,7 @@ public class DoorTable
 
 	public L2DoorInstance[] getDoors()
 	{
-		L2DoorInstance[] _allTemplates = _doors.getValues(new L2DoorInstance[_doors.size()]);
-		return _allTemplates;
+		return _doors.getValues(new L2DoorInstance[_doors.size()]);
 	}
 
 	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)

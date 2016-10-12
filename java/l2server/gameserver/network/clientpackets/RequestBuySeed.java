@@ -238,12 +238,8 @@ public class RequestBuySeed extends L2GameClientPacket
 				return false;
 			}
 			// check for overflow
-			if (MAX_ADENA / _count < _seed.getPrice())
-			{
-				return false;
-			}
+			return MAX_ADENA / _count >= _seed.getPrice();
 
-			return true;
 		}
 
 		public boolean updateProduction(Castle c)

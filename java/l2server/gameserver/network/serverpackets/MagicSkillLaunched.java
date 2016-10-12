@@ -52,8 +52,7 @@ public class MagicSkillLaunched extends L2GameServerPacket
 		else
 		{
 			_numberOfTargets = 1;
-			L2Object[] objs = {cha};
-			_targets = objs;
+			_targets = new L2Object[]{cha};
 		}
 		_singleTargetId = 0;
 	}

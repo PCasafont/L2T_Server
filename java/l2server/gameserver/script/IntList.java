@@ -31,8 +31,7 @@ public class IntList
 			return getIntegerList(range.split(","));
 		}
 
-		int[] list = {getInt(range)};
-		return list;
+		return new int[]{getInt(range)};
 	}
 
 	private static int getInt(String number)

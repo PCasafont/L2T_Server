@@ -276,7 +276,6 @@ public class LifeStoneTable
 		catch (Exception e)
 		{
 			Log.log(Level.SEVERE, "Error loading life stone data", e);
-			return;
 		}
 	}
 
@@ -348,12 +347,8 @@ public class LifeStoneTable
 			return false;
 		}
 		// Count must be greater or equal of required number
-		if (getGemStoneCount(grade, ls.getGrade()) > gemStones.getCount())
-		{
-			return false;
-		}
+		return getGemStoneCount(grade, ls.getGrade()) <= gemStones.getCount();
 
-		return true;
 	}
 
 	/*
@@ -399,12 +394,8 @@ public class LifeStoneTable
 			return false;
 		}
 		// check for level of the lifestone
-		if (player.getLevel() < ls.getPlayerLevel())
-		{
-			return false;
-		}
+		return player.getLevel() >= ls.getPlayerLevel();
 
-		return true;
 	}
 
 	/*
@@ -493,12 +484,8 @@ public class LifeStoneTable
 		}
 
 		// blacklist check
-		if (!item.getItem().isAugmentable())
-		{
-			return false;
-		}
+		return item.getItem().isAugmentable();
 
-		return true;
 	}
 
 	/*
@@ -542,12 +529,8 @@ public class LifeStoneTable
 		{
 			return false;
 		}
-		if (player.isEnchanting() || player.isProcessingTransaction())
-		{
-			return false;
-		}
+		return !(player.isEnchanting() || player.isProcessingTransaction());
 
-		return true;
 	}
 
 	/*

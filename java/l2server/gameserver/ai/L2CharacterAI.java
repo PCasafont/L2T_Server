@@ -1391,22 +1391,8 @@ public class L2CharacterAI extends AbstractAI
 					isFighter = true;
 				}
 			}
-			if (target.getRunSpeed() < _actor.getRunSpeed() - 3)
-			{
-				isSlower = true;
-			}
-			else
-			{
-				isSlower = false;
-			}
-			if (target.getMDef(null, null) * 1.2 > _actor.getMAtk(null, null))
-			{
-				isMagicResistant = true;
-			}
-			else
-			{
-				isMagicResistant = false;
-			}
+			isSlower = target.getRunSpeed() < _actor.getRunSpeed() - 3;
+			isMagicResistant = target.getMDef(null, null) * 1.2 > _actor.getMAtk(null, null);
 			if (target.getBuffCount() < 4)
 			{
 				isCanceled = true;
@@ -1627,10 +1613,6 @@ public class L2CharacterAI extends AbstractAI
 
 	public boolean isParty(L2Skill sk)
 	{
-		if (sk.getTargetType() == L2SkillTargetType.TARGET_PARTY)
-		{
-			return true;
-		}
-		return false;
+		return sk.getTargetType() == L2SkillTargetType.TARGET_PARTY;
 	}
 }

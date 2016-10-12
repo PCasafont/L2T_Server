@@ -349,18 +349,12 @@ public class CastleManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		for (final Castle castle : _castles)
-		{
-			castle.activateInstance();
-		}
+		_castles.forEach(Castle::activateInstance);
 	}
 
 	public void spawnCastleTendencyNPCs()
 	{
-		for (Castle castle : getCastles())
-		{
-			castle.manageTendencyChangeSpawns();
-		}
+		getCastles().forEach(Castle::manageTendencyChangeSpawns);
 	}
 
 	@SuppressWarnings("synthetic-access")

@@ -119,8 +119,7 @@ public final class Util
 
 	public static double convertHeadingToDegree(int clientHeading)
 	{
-		double degree = clientHeading / 182.044444444;
-		return degree;
+		return clientHeading / 182.044444444;
 	}
 
 	public static int convertDegreeToClientHeading(double degree)

@@ -59,8 +59,7 @@ public class CustomCommunityBoard
 		private String getDate()
 		{
 			long timestamp = Long.parseLong(_postDate);
-			String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date(timestamp * 1000));
-			return date;
+			return new SimpleDateFormat("dd/MM/yyyy").format(new Date(timestamp * 1000));
 		}
 
 		private String getUrl()

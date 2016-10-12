@@ -1001,7 +1001,7 @@ public abstract class L2Summon extends L2Playable
 	@Override
 	public boolean isInCombat()
 	{
-		return getOwner() != null ? getOwner().isInCombat() : false;
+		return getOwner() != null && getOwner().isInCombat();
 	}
 
 	@Override

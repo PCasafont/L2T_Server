@@ -485,12 +485,8 @@ public class FortSiege implements Siegable
 	@Override
 	public boolean checkIsDefender(L2Clan clan)
 	{
-		if (clan != null && getFort().getOwnerClan() == clan)
-		{
-			return true;
-		}
+		return clan != null && getFort().getOwnerClan() == clan;
 
-		return false;
 	}
 
 	/**
@@ -838,7 +834,6 @@ public class FortSiege implements Siegable
 			clearSiegeClan(); // remove all clans
 			// spawn suspicious merchant immediately
 			ThreadPoolManager.getInstance().executeTask(new ScheduleSuspiciousMerchantSpawn());
-			return;
 		}
 		else
 		{

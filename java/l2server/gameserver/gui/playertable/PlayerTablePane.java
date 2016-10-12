@@ -137,7 +137,6 @@ public class PlayerTablePane extends JPanel
 	{
 		if (!forced && _currentSelectedPlayer == _playerTable.getSelectedRow())
 		{
-			return;
 		}
 		else
 		{
@@ -168,8 +167,9 @@ public class PlayerTablePane extends JPanel
 	}
 
 	@Override
-	public void finalize()
+	public void finalize() throws Throwable
 	{
+		super.finalize();
 		Log.info("Finalized: " + getClass().getSimpleName());
 	}
 }

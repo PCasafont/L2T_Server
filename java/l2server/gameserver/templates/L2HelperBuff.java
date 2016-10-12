@@ -65,14 +65,7 @@ public class L2HelperBuff
 			_forSummon = true;
 		}
 
-		if ("false".equals(set.getString("isMagicClass")))
-		{
-			_isMagicClass = false;
-		}
-		else
-		{
-			_isMagicClass = true;
-		}
+		_isMagicClass = !"false".equals(set.getString("isMagicClass"));
 	}
 
 	/**

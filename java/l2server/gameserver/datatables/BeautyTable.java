@@ -127,48 +127,45 @@ public class BeautyTable implements Reloadable
 
 		XmlDocument doc = new XmlDocument(file);
 		_beautyTable.clear();
-		for (XmlNode n : doc.getChildren())
+		doc.getChildren().stream().filter(n -> n.getName().equalsIgnoreCase("list")).forEachOrdered(n ->
 		{
-			if (n.getName().equalsIgnoreCase("list"))
+			BeautyTemplate template = new BeautyTemplate(0);
+			for (XmlNode d : n.getChildren())
 			{
-				BeautyTemplate template = new BeautyTemplate(0);
-				for (XmlNode d : n.getChildren())
+				boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
+				boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
+				boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
+				if (isHairStyle || isFaceStyle || isHairColor)
 				{
-					boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
-					boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
-					boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
-					if (isHairStyle || isFaceStyle || isHairColor)
+					int id = d.getInt("id");
+					int parentId = d.getInt("parentId", 0);
+					int unk = d.getInt("unk");
+					int adenaCost = d.getInt("adenaCost");
+					int ticketCost = d.getInt("ticketCost");
+
+					BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
+
+					if (isHairStyle)
 					{
-						int id = d.getInt("id");
-						int parentId = d.getInt("parentId", 0);
-						int unk = d.getInt("unk");
-						int adenaCost = d.getInt("adenaCost");
-						int ticketCost = d.getInt("ticketCost");
-
-						BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
-
-						if (isHairStyle)
-						{
-							template.getHairStyles().put(id, info);
-						}
-						else if (isFaceStyle)
-						{
-							template.getFaceStyles().put(id, info);
-						}
-						else
-						{
-							template.getHairColors().put(id, info);
-						}
+						template.getHairStyles().put(id, info);
+					}
+					else if (isFaceStyle)
+					{
+						template.getFaceStyles().put(id, info);
+					}
+					else
+					{
+						template.getHairColors().put(id, info);
 					}
 				}
-
-				_beautyTable.put(0, template);
-
-				Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
-						template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
-						" hair colors!");
 			}
-		}
+
+			_beautyTable.put(0, template);
+
+			Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
+					template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
+					" hair colors!");
+		});
 
 		return false;
 	}

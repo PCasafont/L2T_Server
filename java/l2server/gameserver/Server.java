@@ -537,10 +537,9 @@ public class Server
 
 	public static void printSection(String s)
 	{
-		long t = System.currentTimeMillis();
 		//if (_t > 0)
 		//	Log.info("Time spent in last section: " + (t - _t) / 1000 + "s");
-		_t = t;
+		_t = System.currentTimeMillis();
 
 		s = "=[ " + s + " ]";
 		while (s.length() < 78)

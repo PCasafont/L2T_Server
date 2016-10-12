@@ -42,15 +42,14 @@ public class XmlQuest extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = event;
 		QuestState st = player.getQuestState(getName());
 
 		if (st == null)
 		{
-			return htmltext;
+			return event;
 		}
 
-		return htmltext;
+		return event;
 	}
 
 	@Override

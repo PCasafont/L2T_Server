@@ -100,12 +100,8 @@ public class EnchantItemTable implements Reloadable
 				return false;
 			}
 
-			if (_itemId > 0 && enchantItem.getItemId() != _itemId)
-			{
-				return false;
-			}
+			return !(_itemId > 0 && enchantItem.getItemId() != _itemId);
 
-			return true;
 		}
 
 		/*
@@ -403,11 +399,7 @@ public class EnchantItemTable implements Reloadable
 		{
 			return false;
 		}
-		if (item.getName().startsWith("Common"))
-		{
-			return false;
-		}
+		return !item.getName().startsWith("Common");
 
-		return true;
 	}
 }

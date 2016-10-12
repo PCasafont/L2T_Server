@@ -67,12 +67,10 @@ public class CursedBattle extends EventInstance
 			rewardPlayers(_winners);
 			Announcements.getInstance().announceToAll("The event has ended. The player " + _cursedPlayer.getName() +
 					" won being the cursed player at the last moment!");
-			return;
 		}
 		else
 		{
 			Announcements.getInstance().announceToAll("The event has ended in a tie");
-			return;
 		}
 	}
 
@@ -110,11 +108,7 @@ public class CursedBattle extends EventInstance
 	@Override
 	public boolean onAction(L2PcInstance playerInstance, int targetedPlayerObjectId)
 	{
-		if (!isCursedPlayer(targetedPlayerObjectId) && !isCursedPlayer(playerInstance.getObjectId()))
-		{
-			return false;
-		}
-		return true;
+		return !(!isCursedPlayer(targetedPlayerObjectId) && !isCursedPlayer(playerInstance.getObjectId()));
 	}
 
 	@Override
@@ -199,6 +193,6 @@ public class CursedBattle extends EventInstance
 
 	public boolean isCursedPlayer(int objectId)
 	{
-		return _cursedPlayer == null ? false : _cursedPlayer.getObjectId() == objectId;
+		return _cursedPlayer != null && _cursedPlayer.getObjectId() == objectId;
 	}
 }

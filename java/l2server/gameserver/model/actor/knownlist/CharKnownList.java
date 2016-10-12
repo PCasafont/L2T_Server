@@ -26,6 +26,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 public class CharKnownList extends ObjectKnownList
 {
@@ -218,13 +219,8 @@ public class CharKnownList extends ObjectKnownList
 		final Collection<L2Object> objs = getKnownObjects().values();
 		//synchronized (getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (obj instanceof L2Character)
-				{
-					result.add((L2Character) obj);
-				}
-			}
+			result.addAll(objs.stream().filter(obj -> obj instanceof L2Character).map(obj -> (L2Character) obj)
+					.collect(Collectors.toList()));
 		}
 		return result;
 	}
@@ -236,16 +232,9 @@ public class CharKnownList extends ObjectKnownList
 		final Collection<L2Object> objs = getKnownObjects().values();
 		//synchronized (getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (obj instanceof L2Character)
-				{
-					if (Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
-					{
-						result.add((L2Character) obj);
-					}
-				}
-			}
+			result.addAll(objs.stream().filter(obj -> obj instanceof L2Character)
+					.filter(obj -> Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
+					.map(obj -> (L2Character) obj).collect(Collectors.toList()));
 		}
 		return result;
 	}
@@ -284,13 +273,9 @@ public class CharKnownList extends ObjectKnownList
 		final Collection<L2PcInstance> plrs = getKnownPlayers().values();
 		//synchronized (getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (Util.checkIfInRange((int) radius, getActiveChar(), player, true))
-				{
-					result.add(player);
-				}
-			}
+			result.addAll(
+					plrs.stream().filter(player -> Util.checkIfInRange((int) radius, getActiveChar(), player, true))
+							.collect(Collectors.toList()));
 		}
 		return result;
 	}

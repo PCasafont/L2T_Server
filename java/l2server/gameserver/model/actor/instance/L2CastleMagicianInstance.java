@@ -96,7 +96,6 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			{
 			}
 			showChatWindow(player, val);
-			return;
 		}
 		else if (command.startsWith("ExchangeKE"))
 		{
@@ -320,7 +319,6 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			}
 
 			showChatWindowByFileName(player, filename);
-			return;
 		}
 		else if (command.equals("gotoleader"))
 		{
@@ -345,7 +343,6 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 				String filename = "castlemagician/magician-nogate.htm";
 				showChatWindowByFileName(player, filename);
 			}
-			return;
 		}
 		else if (command.equals("subskills"))
 		{
@@ -404,7 +401,6 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			}
 
 			player.sendPacket(html);
-			return;
 		}
 		else
 		{

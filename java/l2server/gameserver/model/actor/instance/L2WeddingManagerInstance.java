@@ -238,14 +238,7 @@ public class L2WeddingManagerInstance extends L2Npc
 			L2ItemInstance fw1 = p1.getChestArmorInstance();
 			L2ItemInstance fw2 = p2.getChestArmorInstance();
 
-			if (fw1 == null || fw2 == null || fw1.getItemId() != 6408 || fw2.getItemId() != 6408)
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
+			return !(fw1 == null || fw2 == null || fw1.getItemId() != 6408 || fw2.getItemId() != 6408);
 		}
 
 		return true;

@@ -436,10 +436,7 @@ public class CharInfo extends L2GameServerPacket
 					_activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
 			writeH(_activeChar.getCubics().size());
-			for (int id : _activeChar.getCubics().keySet())
-			{
-				writeH(id);
-			}
+			_activeChar.getCubics().keySet().forEach(this::writeH);
 
 			writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 
@@ -512,10 +509,7 @@ public class CharInfo extends L2GameServerPacket
 				abnormals.add(VisualEffect.STEALTH.getId());
 			}
 			writeD(abnormals.size());
-			for (int abnormalId : abnormals)
-			{
-				writeH(abnormalId);
-			}
+			abnormals.forEach(this::writeH);
 
 			//writeC(_inv.getMaxTalismanCount());
 			writeC(_activeChar.hasCoCAura() ? 100 : 0x00);

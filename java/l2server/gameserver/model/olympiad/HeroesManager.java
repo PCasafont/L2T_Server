@@ -239,8 +239,7 @@ public class HeroesManager
 		FightTime = FightTime / 1000;
 		String seconds = String.format(format, FightTime % 60);
 		String minutes = String.format(format, FightTime % 3600 / 60);
-		String time = minutes + ":" + seconds;
-		return time;
+		return minutes + ":" + seconds;
 	}
 
 	/**

@@ -201,8 +201,7 @@ public class SubPledgeSkillTree
 			}
 		}
 
-		SubUnitSkill[] result = list.toArray(new SubUnitSkill[list.size()]);
-		return result;
+		return list.toArray(new SubUnitSkill[list.size()]);
 	}
 
 	@SuppressWarnings("synthetic-access")

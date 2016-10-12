@@ -100,14 +100,7 @@ public class ChessEventSide
 
 	public boolean containsPlayer(int playerObjectId)
 	{
-		if (_player != null && _player.getObjectId() == playerObjectId)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return _player != null && _player.getObjectId() == playerObjectId;
 	}
 
 	public byte getId()
@@ -286,50 +279,22 @@ public class ChessEventSide
 
 	public boolean estaBuit(int i, int j)
 	{
-		if (getPiece(i, j) == null)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return getPiece(i, j) == null;
 	}
 
 	public boolean hiHaAmic(int i, int j)
 	{
-		if (getPiece(i, j) != null && getPiece(i, j).getSide().getId() == getId())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return getPiece(i, j) != null && getPiece(i, j).getSide().getId() == getId();
 	}
 
 	public boolean hiHaEnemic(int i, int j)
 	{
-		if (getPiece(i, j) != null && getPiece(i, j).getSide().getId() != getId())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return getPiece(i, j) != null && getPiece(i, j).getSide().getId() != getId();
 	}
 
 	public boolean containsAPlayer()
 	{
-		if (_player != null)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return _player != null;
 	}
 
 	public ChessEventSide getEnemy()

@@ -130,10 +130,7 @@ public class ArtificialPlayersManager implements Reloadable
 		{
 			for (L2Party party : _partiesSent)
 			{
-				for (L2PcInstance member : party.getPartyMembers())
-				{
-					member.deleteMe();
-				}
+				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 
 			_partiesSent.clear();
@@ -213,10 +210,7 @@ public class ArtificialPlayersManager implements Reloadable
 			else if (_partiesSent.size() > 0 && pvpers > 20)
 			{
 				L2Party party = _partiesSent.remove(0);
-				for (L2PcInstance member : party.getPartyMembers())
-				{
-					member.deleteMe();
-				}
+				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 		}, 100000L, 100000L);
 

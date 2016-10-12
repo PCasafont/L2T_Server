@@ -661,23 +661,21 @@ public class PcStat extends PlayableStat
 	@Override
 	public int getEvasionRate(L2Character target)
 	{
-		int val = super.getEvasionRate(target);
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;
 
-		return val;
+		return super.getEvasionRate(target);
 	}
 
 	@Override
 	public int getMEvasionRate(L2Character target)
 	{
-		int val = super.getMEvasionRate(target);
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;
 
-		return val;
+		return super.getMEvasionRate(target);
 	}
 
 	@Override

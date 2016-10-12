@@ -767,8 +767,7 @@ public abstract class L2Item
 			return _emptyEffectSet;
 		}
 
-		L2Abnormal[] result = effects.toArray(new L2Abnormal[effects.size()]);
-		return result;
+		return effects.toArray(new L2Abnormal[effects.size()]);
 	}
 
 	/**

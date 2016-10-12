@@ -38,11 +38,7 @@ public class ConditionTargetActiveEffect extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2Abnormal e = env.target.getFirstEffectByName(_effectName);
-		if (e != null)
-		{
-			return true;
-		}
+		return e != null;
 
-		return false;
 	}
 }

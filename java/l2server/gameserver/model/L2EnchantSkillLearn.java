@@ -69,12 +69,8 @@ public final class L2EnchantSkillLearn
 			return false;
 		}
 
-		if (level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size())
-		{
-			return true;
-		}
+		return level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size();
 
-		return false;
 	}
 
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)

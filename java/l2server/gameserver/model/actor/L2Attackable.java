@@ -2436,8 +2436,7 @@ public class L2Attackable extends L2Npc
 				sp = 0;
 			}
 		}
-		long[] tmp = {(long) xp, (long) sp};
-		return tmp;
+		return new long[]{(long) xp, (long) sp};
 	}
 
 	public long calculateOverhitExp(long normalExp)
@@ -2456,8 +2455,7 @@ public class L2Attackable extends L2Npc
 		double overhitExp = overhitPercentage / 100 * normalExp;
 
 		// Return the rounded ammount of exp points to be added to the player's normal exp reward
-		long bonusOverhit = Math.round(overhitExp);
-		return bonusOverhit;
+		return Math.round(overhitExp);
 	}
 
 	/**
@@ -2774,12 +2772,8 @@ public class L2Attackable extends L2Npc
 	 */
 	public boolean useVitalityRate()
 	{
-		if (isChampion() && !Config.L2JMOD_CHAMPION_ENABLE_VITALITY)
-		{
-			return false;
-		}
+		return !(isChampion() && !Config.L2JMOD_CHAMPION_ENABLE_VITALITY);
 
-		return true;
 	}
 
 	/**

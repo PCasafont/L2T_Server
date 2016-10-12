@@ -326,11 +326,7 @@ public class PetDataTable
 	public static boolean isPetItem(int itemId)
 	{
 		L2Item item = ItemTable.getInstance().getTemplate(itemId);
-		if (item != null && item.getItemType() == L2EtcItemType.PET_COLLAR)
-		{
-			return true;
-		}
-		return false;
+		return item != null && item.getItemType() == L2EtcItemType.PET_COLLAR;
 
 		/*switch (itemId)
 		{

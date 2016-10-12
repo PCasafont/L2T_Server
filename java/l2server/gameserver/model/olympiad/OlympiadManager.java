@@ -356,7 +356,6 @@ public class OlympiadManager
 				_classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
 		if (classed != null && classed.remove(objId))
 		{
-			return;
 		}
 	}
 

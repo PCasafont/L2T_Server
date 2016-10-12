@@ -538,10 +538,7 @@ public class Castle
 	public void removeUpgrade()
 	{
 		Set<Integer> toIterate = new HashSet<>(_function.keySet());
-		for (int fk : toIterate)
-		{
-			removeFunction(fk);
-		}
+		toIterate.forEach(this::removeFunction);
 		_function.clear();
 	}
 

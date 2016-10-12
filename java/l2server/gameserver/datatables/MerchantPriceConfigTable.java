@@ -69,7 +69,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		return _mpcs.get(id);
 	}
 
-	public void loadXML() throws SAXException, IOException, ParserConfigurationException
+	public void loadXML()
 	{
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + MPCS_FILE);
 		if (file.exists())

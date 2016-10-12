@@ -1449,7 +1449,6 @@ public class L2Party
 			if (pcEnemy.getClassId() == 142 && worstEnemy.getClassId() != 142)
 			{
 				worstEnemy = pcEnemy;
-				continue;
 			}
 		}
 

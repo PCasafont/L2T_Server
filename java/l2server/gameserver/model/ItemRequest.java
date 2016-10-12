@@ -93,10 +93,6 @@ public class ItemRequest
 			return false;
 		}
 		ItemRequest other = (ItemRequest) obj;
-		if (_objectId != other._objectId)
-		{
-			return false;
-		}
-		return true;
+		return _objectId == other._objectId;
 	}
 }

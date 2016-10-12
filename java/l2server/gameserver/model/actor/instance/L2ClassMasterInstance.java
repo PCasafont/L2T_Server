@@ -302,12 +302,8 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 			return true;
 		}
 
-		if (Config.ALLOW_ENTIRE_TREE && newC.childOf(oldC))
-		{
-			return true;
-		}
+		return Config.ALLOW_ENTIRE_TREE && newC.childOf(oldC);
 
-		return false;
 	}
 
 	private static String getRequiredItems(int level)

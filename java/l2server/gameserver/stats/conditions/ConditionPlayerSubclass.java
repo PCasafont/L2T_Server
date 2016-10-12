@@ -41,6 +41,6 @@ public class ConditionPlayerSubclass extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.player instanceof L2PcInstance ? ((L2PcInstance) env.player).isSubClassActive() == _val : true;
+		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isSubClassActive() == _val;
 	}
 }

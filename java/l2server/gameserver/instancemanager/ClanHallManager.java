@@ -168,11 +168,7 @@ public class ClanHallManager
 	 */
 	public final boolean isFree(int chId)
 	{
-		if (_freeClanHall.containsKey(chId))
-		{
-			return true;
-		}
-		return false;
+		return _freeClanHall.containsKey(chId);
 	}
 
 	/**

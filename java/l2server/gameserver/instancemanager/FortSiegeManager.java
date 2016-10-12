@@ -113,10 +113,9 @@ public class FortSiegeManager
 			statement.setInt(2, fortid);
 			ResultSet rs = statement.executeQuery();
 
-			while (rs.next())
+			if (rs.next())
 			{
 				register = true;
-				break;
 			}
 
 			rs.close();

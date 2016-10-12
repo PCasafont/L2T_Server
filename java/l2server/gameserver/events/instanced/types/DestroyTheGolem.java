@@ -129,7 +129,6 @@ public class DestroyTheGolem extends EventInstance
 
 		Announcements.getInstance().announceToAll(
 				"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
-		return;
 	}
 
 	@Override

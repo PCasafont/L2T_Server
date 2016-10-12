@@ -43,11 +43,7 @@ public class EffectRecovery extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2PcInstance)
-		{
-			return true;
-		}
-		return false;
+		return getEffected() instanceof L2PcInstance;
 	}
 
 	/**

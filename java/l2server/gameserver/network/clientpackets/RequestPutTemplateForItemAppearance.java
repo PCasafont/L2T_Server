@@ -175,11 +175,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 		int templateBodyPart = template.getItem().getBodyPart();
 		if (valid && targetType != templateType)
 		{
-			valid = false;
-			if (templateType == L2ArmorType.NONE && templateBodyPart == L2Item.SLOT_ALLDRESS)
-			{
-				valid = true;
-			}
+			valid = templateType == L2ArmorType.NONE && templateBodyPart == L2Item.SLOT_ALLDRESS;
 
 			if (Config.isServer(Config.TENKAI))
 			{
@@ -218,13 +214,9 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 
 		if (valid && targetBodyPart != templateBodyPart)
 		{
-			valid = false;
-			if ((targetBodyPart == L2Item.SLOT_FULL_ARMOR || targetBodyPart == L2Item.SLOT_CHEST) &&
+			valid = (targetBodyPart == L2Item.SLOT_FULL_ARMOR || targetBodyPart == L2Item.SLOT_CHEST) &&
 					(templateBodyPart == L2Item.SLOT_ALLDRESS || templateBodyPart == L2Item.SLOT_FULL_ARMOR ||
-							templateBodyPart == L2Item.SLOT_CHEST))
-			{
-				valid = true;
-			}
+							templateBodyPart == L2Item.SLOT_CHEST);
 		}
 
 		if (!valid)

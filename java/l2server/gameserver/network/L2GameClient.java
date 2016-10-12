@@ -413,7 +413,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-	public void markRestoredChar(int charslot) throws Exception
+	public void markRestoredChar(int charslot)
 	{
 		//have to make sure active character must be nulled
         /*if (getActiveChar() != null)

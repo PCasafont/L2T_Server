@@ -135,13 +135,9 @@ public class RankingKillInfo
 			return false;
 		}
 
-		if (!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) ||
-				!killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()))
-		{
-			return false;
-		}
+		return !(!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) ||
+				!killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()));
 
-		return true;
 	}
 
 	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)

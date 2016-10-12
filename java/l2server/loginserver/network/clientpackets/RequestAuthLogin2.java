@@ -16,9 +16,7 @@
 package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.loginserver.GameServerTable.GameServerInfo;
-import l2server.loginserver.HackingException;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.LoginController.AuthLoginResult;
 import l2server.loginserver.network.L2LoginClient;
@@ -28,8 +26,6 @@ import l2server.loginserver.network.serverpackets.AccountKicked.AccountKickedRea
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
-
-import java.net.InetAddress;
 
 /**
  * @author Pere
@@ -81,8 +77,8 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 	{
 		L2LoginClient client = getClient();
 		LoginController lc = LoginController.getInstance();
-		try
-		{
+		/*try
+		{*/
 			AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
 			String user = lc.loginValid(_authKey, client);
 			if (user != null)
@@ -150,13 +146,13 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 					}
 					break;
 			}
-		}
+		/*}
 		catch (HackingException e)
 		{
 			InetAddress address = getClient().getConnection().getInetAddress();
 			lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " +
 					e.getConnects() + " incorrect login attempts.");
-		}
+		}*/
 	}
 }

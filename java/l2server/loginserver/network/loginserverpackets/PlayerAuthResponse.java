@@ -35,7 +35,7 @@ public class PlayerAuthResponse extends BaseSendablePacket
 	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent() throws IOException
+	public byte[] getContent()
 	{
 		return getBytes();
 	}

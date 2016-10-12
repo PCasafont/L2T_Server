@@ -72,7 +72,6 @@ public final class L2CastleTeleporterInstance extends L2Npc
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 			html.setFile(player.getHtmlPrefix(), filename);
 			player.sendPacket(html);
-			return;
 		}
 		else
 		{

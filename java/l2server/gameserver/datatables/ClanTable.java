@@ -167,9 +167,8 @@ public class ClanTable
 	 */
 	public L2Clan getClan(int clanId)
 	{
-		L2Clan clan = _clans.get(clanId);
 
-		return clan;
+		return _clans.get(clanId);
 	}
 
 	public L2Clan getClanByName(String clanName)

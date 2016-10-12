@@ -66,12 +66,8 @@ public class TradeController implements Reloadable
 			return false;
 		}
 
-		if (!load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/"))
-		{
-			return false;
-		}
+		return load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/");
 
-		return true;
 	}
 
 	public boolean load(String path)

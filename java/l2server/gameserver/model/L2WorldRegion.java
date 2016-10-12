@@ -65,14 +65,7 @@ public final class L2WorldRegion
 		_tileY = pTileY;
 
 		// default a newly initialized region to inactive, unless always on is specified
-		if (Config.GRIDS_ALWAYS_ON)
-		{
-			_active = true;
-		}
-		else
-		{
-			_active = false;
-		}
+		_active = Config.GRIDS_ALWAYS_ON;
 		_zones = new ArrayList<>();
 	}
 

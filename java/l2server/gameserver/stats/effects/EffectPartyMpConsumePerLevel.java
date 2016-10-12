@@ -153,12 +153,8 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 				return false;
 			}
 
-			if (!Util.checkIfInRange(700, getEffector(), getEffected(), false))
-			{
-				return false;
-			}
+			return Util.checkIfInRange(700, getEffector(), getEffected(), false);
 
-			return true;
 		}
 		else
 		{

@@ -91,7 +91,6 @@ public class StalkedStalkers extends EventInstance
 		Announcements.getInstance().announceToAll(
 				"The event has ended. The player " + sorted.get(0).getName() + " won with " +
 						sorted.get(0).getEventPoints() + " points");
-		return;
 	}
 
 	@Override

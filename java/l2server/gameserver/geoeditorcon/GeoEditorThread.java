@@ -262,11 +262,7 @@ public class GeoEditorThread extends Thread
 
 	public boolean isSend(L2PcInstance gm)
 	{
-		if (_mode == 1 && _gms.contains(gm))
-		{
-			return true;
-		}
-		return false;
+		return _mode == 1 && _gms.contains(gm);
 	}
 
 	private boolean isConnected()

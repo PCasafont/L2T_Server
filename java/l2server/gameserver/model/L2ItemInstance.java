@@ -796,7 +796,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isDropable()
 	{
-		return isAugmented() ? false : _item.isDropable();
+		return !isAugmented() && _item.isDropable();
 	}
 
 	/**
@@ -826,7 +826,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			return false;
 		}
 
-		return isAugmented() ? false : _item.isTradeable();
+		return !isAugmented() && _item.isTradeable();
 	}
 
 	/**
@@ -841,7 +841,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			return false;
 		}
 
-		return isAugmented() ? false : _item.isSellable();
+		return !isAugmented() && _item.isSellable();
 	}
 
 	/**
@@ -1096,7 +1096,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	@Override
 	public boolean isAugmented()
 	{
-		return _augmentation == null ? false : true;
+		return _augmentation != null;
 	}
 
 	/**
@@ -2507,7 +2507,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
 	public boolean isValuable()
 	{
-		return getItem().getItemGrade() >= L2Item.CRYSTAL_S ? true : isAugmented() ? true : isPvp() ? true : false;
+		return getItem().getItemGrade() >= L2Item.CRYSTAL_S || (isAugmented() || isPvp());
 	}
 
 	private boolean _isEventDrop;

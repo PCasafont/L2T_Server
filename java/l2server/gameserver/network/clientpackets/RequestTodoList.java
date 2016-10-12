@@ -37,7 +37,6 @@ public final class RequestTodoList extends L2GameClientPacket
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
-			return;
 		}
 	}
 }

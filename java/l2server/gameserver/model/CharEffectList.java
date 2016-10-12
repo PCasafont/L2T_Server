@@ -654,13 +654,7 @@ public class CharEffectList
 			{
 				if (!_buffs.isEmpty())
 				{
-					for (L2Abnormal e : _buffs)
-					{
-						if (e != null && e.getSkill().isToggle())
-						{
-							e.exit();
-						}
-					}
+					_buffs.stream().filter(e -> e != null && e.getSkill().isToggle()).forEachOrdered(L2Abnormal::exit);
 				}
 			}
 		}
@@ -692,26 +686,14 @@ public class CharEffectList
 			{
 				if (!_debuffs.isEmpty())
 				{
-					for (L2Abnormal e : _debuffs)
-					// Get active skills effects of the selected type
-					{
-						if (e != null && e.getType() == type)
-						{
-							temp.add(e);
-						}
-					}
+					temp.addAll(_debuffs.stream().filter(e -> e != null && e.getType() == type)
+							.collect(Collectors.toList()));
 				}
 			}
 		}
 		if (!temp.isEmpty())
 		{
-			for (L2Abnormal e : temp)
-			{
-				if (e != null)
-				{
-					e.exit();
-				}
-			}
+			temp.stream().filter(e -> e != null).forEachOrdered(L2Abnormal::exit);
 		}
 	}
 
@@ -730,14 +712,8 @@ public class CharEffectList
 			{
 				if (!_buffs.isEmpty())
 				{
-					for (L2Abnormal e : _buffs)
-					// Get active skills effects of the selected type
-					{
-						if (e != null && (e.getEffectMask() & type.getMask()) > 0)
-						{
-							temp.add(e);
-						}
-					}
+					temp.addAll(_buffs.stream().filter(e -> e != null && (e.getEffectMask() & type.getMask()) > 0)
+							.collect(Collectors.toList()));
 				}
 			}
 		}
@@ -747,26 +723,14 @@ public class CharEffectList
 			{
 				if (!_debuffs.isEmpty())
 				{
-					for (L2Abnormal e : _debuffs)
-					// Get active skills effects of the selected type
-					{
-						if (e != null && (e.getEffectMask() & type.getMask()) > 0)
-						{
-							temp.add(e);
-						}
-					}
+					temp.addAll(_debuffs.stream().filter(e -> e != null && (e.getEffectMask() & type.getMask()) > 0)
+							.collect(Collectors.toList()));
 				}
 			}
 		}
 		if (!temp.isEmpty())
 		{
-			for (L2Abnormal e : temp)
-			{
-				if (e != null)
-				{
-					e.exit();
-				}
-			}
+			temp.stream().filter(e -> e != null).forEachOrdered(L2Abnormal::exit);
 		}
 	}
 
@@ -785,13 +749,8 @@ public class CharEffectList
 			{
 				if (!_buffs.isEmpty())
 				{
-					for (L2Abnormal e : _buffs)
-					{
-						if (e != null && e.getSkill().getId() == skillId)
-						{
-							temp.add(e);
-						}
-					}
+					temp.addAll(_buffs.stream().filter(e -> e != null && e.getSkill().getId() == skillId)
+							.collect(Collectors.toList()));
 				}
 			}
 		}
@@ -801,25 +760,14 @@ public class CharEffectList
 			{
 				if (!_debuffs.isEmpty())
 				{
-					for (L2Abnormal e : _debuffs)
-					{
-						if (e != null && e.getSkill().getId() == skillId)
-						{
-							temp.add(e);
-						}
-					}
+					temp.addAll(_debuffs.stream().filter(e -> e != null && e.getSkill().getId() == skillId)
+							.collect(Collectors.toList()));
 				}
 			}
 		}
 		if (!temp.isEmpty())
 		{
-			for (L2Abnormal e : temp)
-			{
-				if (e != null)
-				{
-					e.exit();
-				}
-			}
+			temp.stream().filter(e -> e != null).forEachOrdered(L2Abnormal::exit);
 		}
 	}
 
@@ -893,16 +841,10 @@ public class CharEffectList
 	{
 		if (_hasBuffsRemovedOnDebuffBlock && _buffs != null && !_buffs.isEmpty())
 		{
-			for (L2Abnormal e : _buffs)
+			_buffs.stream().filter(e -> e != null).filter(e -> e.isRemovedOnDebuffBlock(true)).forEachOrdered(e ->
 			{
-				if (e != null)
-				{
-					if (e.isRemovedOnDebuffBlock(true))
-					{
-						e.exit(true);
-					}
-				}
-			}
+				e.exit(true);
+			});
 		}
 	}
 

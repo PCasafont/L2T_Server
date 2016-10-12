@@ -195,7 +195,7 @@ public class LoginController
 		INVALID_PASSWORD, ACCOUNT_BANNED, ALREADY_ON_LS, ALREADY_ON_GS, AUTH_SUCCESS
 	}
 
-	public AuthLoginResult tryAuthLogin(String account, String password, L2LoginClient client) throws HackingException
+	public AuthLoginResult tryAuthLogin(String account, String password, L2LoginClient client)
 	{
 		AuthLoginResult ret = AuthLoginResult.INVALID_PASSWORD;
 		// check auth
@@ -224,7 +224,7 @@ public class LoginController
 		return ret;
 	}
 
-	public AuthLoginResult tryAuthLogin(String sessionKey, L2LoginClient client, String account) throws HackingException
+	public AuthLoginResult tryAuthLogin(String sessionKey, L2LoginClient client, String account)
 	{
 		AuthLoginResult ret = AuthLoginResult.ALREADY_ON_GS;
 		if (!isAccountInAnyGameServer(account))

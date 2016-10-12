@@ -38,7 +38,6 @@ public class ExLoadStatUser extends L2GameServerPacket
 	{
 		if (_player == null)
 		{
-			return;
 		}
 
 		/*writeD(MuseumStatistic.values().length);

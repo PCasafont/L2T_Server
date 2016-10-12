@@ -278,9 +278,9 @@ public abstract class StatsParser
 
 	protected Condition parseLogicNot(XmlNode node, Object template)
 	{
-		for (XmlNode n : node.getChildren())
+		if (node.getFirstChild() != null)
 		{
-			return new ConditionLogicNot(parseCondition(n, template));
+			return new ConditionLogicNot(parseCondition(node.getFirstChild(), template));
 		}
 
 		Log.severe("Empty <not> condition in " + _name);

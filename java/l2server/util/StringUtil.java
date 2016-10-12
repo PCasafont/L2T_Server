@@ -220,8 +220,7 @@ public final class StringUtil
 			sbString.append(string);
 		}
 
-		String result = sbString.toString();
-		return result;
+		return sbString.toString();
 	}
 
 	/**
@@ -297,7 +296,6 @@ public final class StringUtil
 			sbString.append(element.toString()).append("\n");
 		}
 
-		String result = sbString.toString();
-		return result;
+		return sbString.toString();
 	}
 }

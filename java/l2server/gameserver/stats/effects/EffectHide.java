@@ -155,11 +155,7 @@ public class EffectHide extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
-		{
-			return false;
-		}
+		return !(getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped());
 
-		return true;
 	}
 }

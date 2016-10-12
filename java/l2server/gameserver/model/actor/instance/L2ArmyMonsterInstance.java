@@ -39,7 +39,6 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 		if (_isDoingAMove)
 		{
 			_mt2 = new MoveTask(x, y, z);
-			return;
 		}
 		else
 		{

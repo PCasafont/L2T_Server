@@ -58,7 +58,6 @@ public class PreparedEntry extends MultiSellEntry
 					adenaAmount += ing.getItemCount();
 				}
 
-				continue; // do not yet add this adena amount to the list as non-taxIngredient adena might be entered later (order not guaranteed)
 			}
 			else if (maintainEnchantment && item != null && ing.isArmorOrWeapon())
 			{

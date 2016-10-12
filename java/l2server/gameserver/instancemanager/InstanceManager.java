@@ -379,7 +379,7 @@ public class InstanceManager
 			{
 				instance.loadInstanceTemplate(template);
 			}
-			catch (FileNotFoundException e)
+			catch (Exception e)
 			{
 				Log.log(Level.WARNING,
 						"InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(),

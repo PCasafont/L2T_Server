@@ -735,12 +735,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		}
 
 		qs = player.getQuestState("235_MimirsElixir");
-		if (qs == null || !qs.isCompleted())
-		{
-			return false;
-		}
+		return !(qs == null || !qs.isCompleted());
 
-		return true;
 	}
 
 	/*

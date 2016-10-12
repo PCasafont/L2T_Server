@@ -132,8 +132,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 			L2Skill skill = SkillTable.getInstance().getInfo(buffId, buffLevel);
 			if (skill != null)
 			{
-				L2Character effected = player;
-				skill.getEffects(player, effected);
+				skill.getEffects(player, player);
 				player.setCurrentMp(player.getMaxMp());
 			}
 

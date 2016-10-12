@@ -34,7 +34,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_change = readD() == 1 ? true : false;
+		_change = readD() == 1;
 	}
 
 	/**

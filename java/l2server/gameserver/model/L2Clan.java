@@ -614,8 +614,7 @@ public class L2Clan
 			}
 		}
 
-		L2PcInstance[] result = list.toArray(new L2PcInstance[list.size()]);
-		return result;
+		return list.toArray(new L2PcInstance[list.size()]);
 	}
 
 	public int getOnlineMembersCount()
@@ -796,7 +795,7 @@ public class L2Clan
 	 */
 	public boolean isMember(int id)
 	{
-		return id == 0 ? false : _members.containsKey(id);
+		return id != 0 && _members.containsKey(id);
 	}
 
 	public void updateClanScoreInDB()
@@ -2516,12 +2515,8 @@ public class L2Clan
 			return false;
 		}
 
-		if (Config.isServer(Config.TENKAI) && !checkClanBalance(activeChar, activeChar.getClan()))
-		{
-			return false;
-		}
+		return !(Config.isServer(Config.TENKAI) && !checkClanBalance(activeChar, activeChar.getClan()));
 
-		return true;
 	}
 
 	/**
@@ -3381,12 +3376,8 @@ public class L2Clan
 			return true;
 		}
 		// is first level?
-		if (current == null && skill.getLevel() == 1)
-		{
-			return true;
-		}
+		return current == null && skill.getLevel() == 1;
 
-		return false;
 	}
 
 	public SubPledgeSkill[] getAllSubSkills()
@@ -3403,8 +3394,7 @@ public class L2Clan
 				list.add(new SubPledgeSkill(subunit._id, skill.getId(), skill.getLevelHash()));
 			}
 		}
-		SubPledgeSkill[] result = list.toArray(new SubPledgeSkill[list.size()]);
-		return result;
+		return list.toArray(new SubPledgeSkill[list.size()]);
 	}
 
 	private void checkCrests()

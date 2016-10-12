@@ -242,12 +242,8 @@ public abstract class L2Playable extends L2Character
 			return false;
 		}
 
-		if (targetPlayer.getPvpFlag() == 0 && !player.isInSameClanWar(targetPlayer))
-		{
-			return false;
-		}
+		return !(targetPlayer.getPvpFlag() == 0 && !player.isInSameClanWar(targetPlayer));
 
-		return true;
 		/*  Even at war, there should be PvP flag
         if (
 				player.getClan() == null ||

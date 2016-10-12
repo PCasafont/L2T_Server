@@ -68,7 +68,7 @@ public final class RequestSendPost extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_receiver = readS();
-		_isCod = readD() == 0 ? false : true;
+		_isCod = readD() != 0;
 		_subject = readS();
 		_text = readS();
 

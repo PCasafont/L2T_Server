@@ -40,7 +40,7 @@ public class ReplyCharacters extends BaseSendablePacket
 	}
 
 	@Override
-	public byte[] getContent() throws IOException
+	public byte[] getContent()
 	{
 		return getBytes();
 	}

@@ -773,7 +773,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 			// then assume no external HTML file was assigned.
 			if (content.length() > 26)
 			{
-				html.setHtml(content.toString());
+				html.setHtml(content);
 			}
 
 			html.replace("%objectId%", String.valueOf(getObjectId()));
@@ -1126,12 +1126,8 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 			return true;
 		}
 
-		if (Config.ALLOW_ENTIRE_TREE && newC.childOf(oldC))
-		{
-			return true;
-		}
+		return Config.ALLOW_ENTIRE_TREE && newC.childOf(oldC);
 
-		return false;
 	}
 
 	private Iterator<SubClass> iterSubClasses(L2PcInstance player)
@@ -1302,7 +1298,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 			html1 += "You don't have any symbol to remove!";
 		}
 		html1 += "</body></html>";
-		insertObjectIdAndShowChatWindow(player, html1.toString());
+		insertObjectIdAndShowChatWindow(player, html1);
 	}
 
 	public void showPledgeSkillList(L2PcInstance player)
@@ -1802,7 +1798,6 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 		{
 			player.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
-			return;
 		}
 		else
 		{
@@ -1831,7 +1826,6 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 		{
 			player.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_USE_CLAN_WAREHOUSE));
-			return;
 		}
 		else
 		{

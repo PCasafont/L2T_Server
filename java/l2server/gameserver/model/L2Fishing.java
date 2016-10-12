@@ -127,12 +127,10 @@ public class L2Fishing implements Runnable
 		{
 			_fishCurHp = _fishMaxHp * 2;
 			doDie(false);
-			return;
 		}
 		else if (_fishCurHp == 0)
 		{
 			doDie(true);
-			return;
 		}
 	}
 

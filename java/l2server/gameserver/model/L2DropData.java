@@ -232,10 +232,6 @@ public class L2DropData
 			return false;
 		}
 		final L2DropData other = (L2DropData) obj;
-		if (_itemId != other._itemId)
-		{
-			return false;
-		}
-		return true;
+		return _itemId == other._itemId;
 	}
 }

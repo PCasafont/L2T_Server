@@ -133,13 +133,9 @@ public class AntiFeedManager
 		}
 
 		//Clan check
-		if (attackerPlayer.getClan() != null && targetPlayer.getClan() != null &&
-				attackerPlayer.getClanId() == targetPlayer.getClanId())
-		{
-			return false;
-		}
+		return !(attackerPlayer.getClan() != null && targetPlayer.getClan() != null &&
+				attackerPlayer.getClanId() == targetPlayer.getClanId());
 
-		return true;
 	}
 
 	/**
