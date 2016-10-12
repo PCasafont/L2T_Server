@@ -107,7 +107,7 @@ public final class Util
      * Return degree value of object 2 to the horizontal line with object 1
      * being the origin
      */
-    private static double calculateAngleFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
+    public final static double calculateAngleFrom(int obj1X, int obj1Y, int obj2X, int obj2Y)
     {
         double angleTarget = Math.toDegrees(Math.atan2(obj2Y - obj1Y, obj2X - obj1X));
         if (angleTarget < 0)
@@ -361,7 +361,7 @@ public final class Util
      * @param strDelim - the delimiter to put between the strings
      * @return a delimited string for a given array of string elements.
      */
-    private static String implodeString(String[] strArray, String strDelim)
+    public static String implodeString(String[] strArray, String strDelim)
     {
         String result = "";
 

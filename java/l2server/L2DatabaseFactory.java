@@ -199,7 +199,7 @@ public class L2DatabaseFactory
         _webDatabase = null;
     }
 
-    private String safetyString(String... whatToCheck)
+    public final String safetyString(String... whatToCheck)
     {
         // NOTE: Use brace as a safety precaution just in case name is a reserved word
         final char braceLeft;
@@ -313,7 +313,7 @@ public class L2DatabaseFactory
         return _gameDatabase.getTotalFree();
     }
 
-    private ProviderType getProviderType()
+    public final ProviderType getProviderType()
     {
         return _providerType;
     }

@@ -416,7 +416,7 @@ public class CustomAuctionManager
     private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>();
     //All the auction info
 
-    private void startAuction(final int templateId)
+    public final void startAuction(final int templateId)
     {
         int auctionId = IdFactory.getInstance().getNextId();
 
@@ -568,7 +568,7 @@ public class CustomAuctionManager
     /**
      * Load all the shit
      */
-    private void load(boolean reload)
+    public void load(boolean reload)
     {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(false);
@@ -970,6 +970,6 @@ public class CustomAuctionManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CustomAuctionManager _instance = new CustomAuctionManager();
+        protected static final CustomAuctionManager _instance = new CustomAuctionManager();
     }
 }

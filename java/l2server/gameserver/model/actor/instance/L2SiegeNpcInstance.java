@@ -44,7 +44,7 @@ public class L2SiegeNpcInstance extends L2NpcInstance
      *
      * @param player
      */
-    private void showSiegeInfoWindow(L2PcInstance player)
+    public void showSiegeInfoWindow(L2PcInstance player)
     {
         if (validateCondition(player))
         {

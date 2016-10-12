@@ -36,7 +36,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 {
 
     private String _name;
-    private boolean _isMentor;
+    boolean _isMentor;
 
     @Override
     protected void readImpl()

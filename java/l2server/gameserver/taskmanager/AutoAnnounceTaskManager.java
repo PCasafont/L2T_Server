@@ -87,6 +87,6 @@ public class AutoAnnounceTaskManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final AutoAnnounceTaskManager _instance = new AutoAnnounceTaskManager();
+        protected static final AutoAnnounceTaskManager _instance = new AutoAnnounceTaskManager();
     }
 }

@@ -192,6 +192,6 @@ public class BeautyTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final BeautyTable _instance = new BeautyTable();
+        protected static final BeautyTable _instance = new BeautyTable();
     }
 }

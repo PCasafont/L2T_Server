@@ -55,7 +55,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
     private final int MAX_SEND_PER_PASS;
     private final int MAX_READ_PER_PASS;
     private final long SLEEP_TIME;
-    private boolean TCP_NODELAY;
+    public boolean TCP_NODELAY;
     // Main Buffers
     private final ByteBuffer DIRECT_WRITE_BUFFER;
     private final ByteBuffer WRITE_BUFFER;
@@ -496,7 +496,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
         }
     }
 
-    private void writePacket(final SelectionKey key, final MMOConnection<T> con)
+    protected final void writePacket(final SelectionKey key, final MMOConnection<T> con)
     {
         if (!prepareWriteBuffer(con))
         {
@@ -682,7 +682,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
         _shutdown = true;
     }
 
-    private void closeSelectorThread()
+    protected void closeSelectorThread()
     {
         for (final SelectionKey key : _selector.keys())
         {

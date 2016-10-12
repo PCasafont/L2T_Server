@@ -30,12 +30,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 {
-    private int _timeLeft;
-    private int _bluePoints;
-    private int _redPoints;
-    private boolean _isRedTeam;
-    private L2PcInstance _player;
-    private int _playerPoints;
+    int _timeLeft;
+    int _bluePoints;
+    int _redPoints;
+    boolean _isRedTeam;
+    L2PcInstance _player;
+    int _playerPoints;
 
     /**
      * Update a Secret Point Counter (used by client when receive ExCubeGameEnd)

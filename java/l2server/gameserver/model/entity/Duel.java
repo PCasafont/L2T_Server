@@ -334,7 +334,7 @@ public class Duel
      *
      * @return returns true if a duelist is engaged in Pvp combat
      */
-    private boolean isDuelistInPvp(boolean sendMessage)
+    public boolean isDuelistInPvp(boolean sendMessage)
     {
         if (_partyDuel)
         {
@@ -357,7 +357,7 @@ public class Duel
     /**
      * Starts the duel
      */
-    private void startDuel()
+    public void startDuel()
     {
         // Save player Conditions
         savePlayerConditions();
@@ -437,7 +437,7 @@ public class Duel
     /**
      * Save the current player condition: hp, mp, cp, location
      */
-    private void savePlayerConditions()
+    public void savePlayerConditions()
     {
         if (_partyDuel)
         {
@@ -462,7 +462,7 @@ public class Duel
      *
      * @param was the duel canceled?
      */
-    private void restorePlayerConditions(boolean abnormalDuelEnd)
+    public void restorePlayerConditions(boolean abnormalDuelEnd)
     {
         // update isInDuel() state for all players
         if (_partyDuel)
@@ -518,7 +518,7 @@ public class Duel
      *
      * @return remaining time
      */
-    private int getRemainingTime()
+    public int getRemainingTime()
     {
         return (int) (_duelEndTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
     }
@@ -553,12 +553,12 @@ public class Duel
         return _partyDuel;
     }
 
-    private void setFinished(boolean mode)
+    public void setFinished(boolean mode)
     {
         _finished = mode;
     }
 
-    private boolean getFinished()
+    public boolean getFinished()
     {
         return _finished;
     }
@@ -570,7 +570,7 @@ public class Duel
      * @param y
      * @param z
      */
-    private void teleportPlayers(int x, int y, int z)
+    public void teleportPlayers(int x, int y, int z)
     {
         //TODO: adjust the values if needed... or implement something better (especially using more then 1 arena)
         if (!_partyDuel)
@@ -665,7 +665,7 @@ public class Duel
      *
      * @return looser
      */
-    private L2PcInstance getLooser()
+    public L2PcInstance getLooser()
     {
         if (!getFinished() || _playerA == null || _playerB == null)
         {
@@ -685,7 +685,7 @@ public class Duel
     /**
      * Playback the bow animation for all loosers
      */
-    private void playKneelAnimation()
+    public void playKneelAnimation()
     {
         L2PcInstance looser = getLooser();
 
@@ -712,7 +712,7 @@ public class Duel
      *
      * @return current count
      */
-    private int countdown()
+    public int countdown()
     {
         _countdown--;
 
@@ -744,7 +744,7 @@ public class Duel
      *
      * @param duel result
      */
-    private void endDuel(DuelResultEnum result)
+    public void endDuel(DuelResultEnum result)
     {
         if (_playerA == null || _playerB == null)
         {
@@ -841,7 +841,7 @@ public class Duel
      *
      * @return DuelResultEnum duel status
      */
-    private DuelResultEnum checkEndDuelCondition()
+    public DuelResultEnum checkEndDuelCondition()
     {
         // one of the players might leave during duel
         if (_playerA == null || _playerB == null)

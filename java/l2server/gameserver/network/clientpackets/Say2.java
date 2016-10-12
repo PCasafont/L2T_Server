@@ -46,7 +46,7 @@ public final class Say2 extends L2GameClientPacket
     public final static int SHOUT = 1; //!
     public final static int TELL = 2;
     public final static int PARTY = 3; //#
-    private final static int CLAN = 4; //@
+    public final static int CLAN = 4; //@
     public final static int GM = 5;
     public final static int PETITION_PLAYER = 6; // used for petition
     public final static int PETITION_GM = 7; //* used for petition
@@ -67,7 +67,7 @@ public final class Say2 extends L2GameClientPacket
     public final static int ALL_NOT_RECORDED = 22;
     public final static int UNK_1 = 23;
     public final static int UNK_2 = 24;
-    private final static int GLOBAL = 25;
+    public final static int GLOBAL = 25;
 
     private final static String[] CHAT_NAMES = {
             "ALL",

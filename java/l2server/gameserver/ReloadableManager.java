@@ -46,6 +46,6 @@ public class ReloadableManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ReloadableManager _instance = new ReloadableManager();
+        protected static final ReloadableManager _instance = new ReloadableManager();
     }
 }

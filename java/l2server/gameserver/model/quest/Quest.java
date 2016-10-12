@@ -79,13 +79,13 @@ public class Quest extends ManagedScript
     private final String _name;
     private final String _descr;
     private final byte _initialState = State.CREATED;
-    private boolean _onEnterWorld = false;
+    protected boolean _onEnterWorld = false;
     // NOTE: questItemIds will be overridden by child classes.  Ideally, it should be
     // protected instead of public.  However, quest scripts written in Jython will
     // have trouble with protected, as Jython only knows private and public...
     // In fact, protected will typically be considered private thus breaking the scripts.
     // Leave this as public as a workaround.
-    private int[] questItemIds = null;
+    public int[] questItemIds = null;
 
     private static final String DEFAULT_NO_QUEST_MSG =
             "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
@@ -109,7 +109,7 @@ public class Quest extends ManagedScript
      * @param name    : String corresponding to the name of the quest
      * @param descr   : String for the description of the quest
      */
-    protected Quest(int questId, String name, String descr)
+    public Quest(int questId, String name, String descr)
     {
         _questId = questId;
         _name = name;
@@ -131,7 +131,7 @@ public class Quest extends ManagedScript
      * Children of this class can implement this function in order to define what variables
      * to load and what structures to save them in.  By default, nothing is loaded.
      */
-    private void init_LoadGlobalData()
+    protected void init_LoadGlobalData()
     {
 
     }
@@ -236,7 +236,7 @@ public class Quest extends ManagedScript
      *
      * @return State
      */
-    private byte getInitialState()
+    public byte getInitialState()
     {
         return _initialState;
     }
@@ -256,7 +256,7 @@ public class Quest extends ManagedScript
      *
      * @return String
      */
-    private String getDescr()
+    public String getDescr()
     {
         return _descr;
     }
@@ -898,22 +898,22 @@ public class Quest extends ManagedScript
     }
 
     // these are methods that java calls to invoke scripts
-    private String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
         return null;
     }
 
-    private String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
+    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
     {
         return onAttack(npc, attacker, damage, isPet);
     }
 
-    private String onCreatureSee(L2Npc npc, L2PcInstance creature, boolean isPet)
+    public String onCreatureSee(L2Npc npc, L2PcInstance creature, boolean isPet)
     {
         return onCreatureSee(npc, creature, isPet);
     }
 
-    private String onDeath(L2Character killer, L2Character victim, QuestState qs)
+    public String onDeath(L2Character killer, L2Character victim, QuestState qs)
     {
         if (killer instanceof L2Npc)
         {
@@ -925,7 +925,7 @@ public class Quest extends ManagedScript
         }
     }
 
-    String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
         // if not overridden by a subclass, then default to the returned value of the simpler (and older) onEvent override
         // if the player has a state, use it as parameter in the next call, else return null
@@ -938,117 +938,117 @@ public class Quest extends ManagedScript
         return null;
     }
 
-    private String onEvent(String event, QuestState qs)
+    public String onEvent(String event, QuestState qs)
     {
         return null;
     }
 
-    String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
+    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
         return null;
     }
 
-    String onTalk(L2Npc npc, L2PcInstance talker)
+    public String onTalk(L2Npc npc, L2PcInstance talker)
     {
         return null;
     }
 
-    private String onFirstTalk(L2Npc npc, L2PcInstance player)
+    public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
         return null;
     }
 
-    private String onAcquireSkillList(L2Npc npc, L2PcInstance player)
+    public String onAcquireSkillList(L2Npc npc, L2PcInstance player)
     {
         return null;
     }
 
-    private String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill)
+    public String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
         return null;
     }
 
-    private String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill)
+    public String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
         return null;
     }
 
-    private String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
+    public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
         return null;
     }
 
-    private String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
+    public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
         return null;
     }
 
-    private String onTrapAction(L2Trap trap, L2Character trigger, TrapAction action)
+    public String onTrapAction(L2Trap trap, L2Character trigger, TrapAction action)
     {
         return null;
     }
 
-    private String onSpawn(L2Npc npc)
+    public String onSpawn(L2Npc npc)
     {
         return null;
     }
 
-    private String onSpawn(L2Summon npc)
+    public String onSpawn(L2Summon npc)
     {
         return null;
     }
 
-    private String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isPet)
+    public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isPet)
     {
         return null;
     }
 
-    private String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
+    public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
         return null;
     }
 
-    private String onEnterWorld(L2PcInstance player)
+    public String onEnterWorld(L2PcInstance player)
     {
         return null;
     }
 
-    private String onEnterZone(L2Character character, L2ZoneType zone)
+    public String onEnterZone(L2Character character, L2ZoneType zone)
     {
         return null;
     }
 
-    private String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
+    public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
     {
         return null;
     }
 
-    private String onExitZone(L2Character character, L2ZoneType zone)
+    public String onExitZone(L2Character character, L2ZoneType zone)
     {
         return null;
     }
 
-    private String onItemUse(L2PcInstance player, L2Item item)
+    public String onItemUse(L2PcInstance player, L2Item item)
     {
         return null;
     }
 
-    private String onSocialAction(L2Npc npc, L2PcInstance player, int actionId)
+    public String onSocialAction(L2Npc npc, L2PcInstance player, int actionId)
     {
         return null;
     }
 
-    private String onArrived(L2NpcWalkerAI npc)
+    public String onArrived(L2NpcWalkerAI npc)
     {
         return null;
     }
 
-    private String onPlayerArrived(L2NpcWalkerAI npc)
+    public String onPlayerArrived(L2NpcWalkerAI npc)
     {
         return null;
     }
 
-    private String onOlympiadCombat(L2PcInstance player, CompetitionType type, boolean hasWon)
+    public String onOlympiadCombat(L2PcInstance player, CompetitionType type, boolean hasWon)
     {
         return null;
     }
@@ -1060,7 +1060,7 @@ public class Quest extends ManagedScript
      * @param t      : Throwable
      * @return boolean
      */
-    private boolean showError(L2PcInstance player, Throwable t)
+    public boolean showError(L2PcInstance player, Throwable t)
     {
         Log.log(Level.WARNING, getScriptFile().getAbsolutePath(), t);
         if (t.getMessage() == null)
@@ -1087,7 +1087,7 @@ public class Quest extends ManagedScript
      * @param res : String pointing out the message to show at the player
      * @return boolean
      */
-    private boolean showResult(L2PcInstance player, String res)
+    public boolean showResult(L2PcInstance player, String res)
     {
         if (res == null || res.isEmpty() || player == null)
         {
@@ -1514,7 +1514,7 @@ public class Quest extends ManagedScript
      * @param player
      * @return
      */
-    static String getNoQuestMsg(L2PcInstance player)
+    public static String getNoQuestMsg(L2PcInstance player)
     {
         final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
         if (result != null && result.length() > 0)
@@ -1549,7 +1549,7 @@ public class Quest extends ManagedScript
      * @param eventType : type of event being registered
      * @return L2NpcTemplate : Npc Template corresponding to the npcId, or null if the id is invalid
      */
-    private L2NpcTemplate addEventId(int npcId, QuestEventType eventType)
+    public L2NpcTemplate addEventId(int npcId, QuestEventType eventType)
     {
         try
         {
@@ -1749,7 +1749,7 @@ public class Quest extends ManagedScript
 
     // returns a random party member's L2PcInstance for the passed player's party
     // returns the passed player if he has no party.
-    private L2PcInstance getRandomPartyMember(L2PcInstance player)
+    public L2PcInstance getRandomPartyMember(L2PcInstance player)
     {
         // NPE prevention.  If the player is null, there is nothing to return
         if (player == null)
@@ -1793,7 +1793,7 @@ public class Quest extends ManagedScript
      * The party member must be within 1500 distance from the target of the reference
      * player, or if no target exists, 1500 distance from the player itself.
      */
-    private L2PcInstance getRandomPartyMember(L2PcInstance player, String var, String value)
+    public L2PcInstance getRandomPartyMember(L2PcInstance player, String var, String value)
     {
         // if no valid player instance is passed, there is nothing to check...
         if (player == null)
@@ -1976,7 +1976,7 @@ public class Quest extends ManagedScript
      * @param fileName
      * @return
      */
-    private String getHtm(String prefix, String fileName)
+    public String getHtm(String prefix, String fileName)
     {
         String content = HtmCache.getInstance().getHtm(prefix,
                 Config.DATA_FOLDER + "scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + fileName);
@@ -2030,7 +2030,7 @@ public class Quest extends ManagedScript
         return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
     }
 
-    private L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+    public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
     {
         L2Npc result = null;
         try

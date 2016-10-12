@@ -169,7 +169,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
         }
     }
 
-    private void setCanTalk(boolean val)
+    void setCanTalk(boolean val)
     {
         _canTalk = val;
     }

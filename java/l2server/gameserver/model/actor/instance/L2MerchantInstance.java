@@ -38,7 +38,7 @@ public class L2MerchantInstance extends L2NpcInstance
     /**
      * @param template
      */
-    L2MerchantInstance(int objectId, L2NpcTemplate template)
+    public L2MerchantInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2MerchantInstance);
@@ -92,7 +92,7 @@ public class L2MerchantInstance extends L2NpcInstance
         return _mpc;
     }
 
-    final void showBuyWindow(L2PcInstance player, int val)
+    public final void showBuyWindow(L2PcInstance player, int val)
     {
         double taxRate = 0;
 

@@ -248,7 +248,7 @@ public class FieldDomination extends EventInstance
         _FDflagsSpawned = false;
     }
 
-    private void spawnNeutralFlag(EventTeam team)
+    public void spawnNeutralFlag(EventTeam team)
     {
         L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(44008);
 

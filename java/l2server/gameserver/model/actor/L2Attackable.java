@@ -145,11 +145,11 @@ public class L2Attackable extends L2Npc
      * attacker : The attacker L2Character concerned by this RewardInfo of this L2Attackable
      * dmg : Total amount of damage done by the attacker to this L2Attackable (summon + own)
      */
-    static final class RewardInfo
+    protected static final class RewardInfo
     {
-        L2Character _attacker;
+        protected L2Character _attacker;
 
-        int _dmg = 0;
+        protected int _dmg = 0;
 
         public RewardInfo(L2Character pAttacker, int pDmg)
         {
@@ -227,9 +227,9 @@ public class L2Attackable extends L2Npc
 
     public static final class RewardItem
     {
-        int _itemId;
+        protected int _itemId;
 
-        long _count;
+        protected long _count;
 
         public RewardItem(int itemId, long count)
         {
@@ -335,7 +335,7 @@ public class L2Attackable extends L2Npc
      * @param objectId      Identifier of the object to initialized
      * @param L2NpcTemplate Template to apply to the NPC
      */
-    protected L2Attackable(int objectId, L2NpcTemplate template)
+    public L2Attackable(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2Attackable);
@@ -552,12 +552,12 @@ public class L2Attackable extends L2Npc
         super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
     }
 
-    protected void setMustRewardExpSp(boolean value)
+    public void setMustRewardExpSp(boolean value)
     {
         _mustGiveExpSp = value;
     }
 
-    private boolean getMustRewardExpSP()
+    public boolean getMustRewardExpSP()
     {
         return _mustGiveExpSp;
     }
@@ -1075,7 +1075,7 @@ public class L2Attackable extends L2Npc
      * @param attacker The L2Character that gave damages to this L2Attackable
      * @param damage   The number of damages given by the attacker L2Character
      */
-    protected void addDamage(L2Character attacker, int damage, L2Skill skill)
+    public void addDamage(L2Character attacker, int damage, L2Skill skill)
     {
         if (attacker == null)
         {
@@ -1759,7 +1759,7 @@ public class L2Attackable extends L2Npc
         return null;
     }
 
-    private void doItemDrop(L2Character lastAttacker)
+    public void doItemDrop(L2Character lastAttacker)
     {
         doItemDrop(getTemplate(), lastAttacker);
     }
@@ -1783,7 +1783,7 @@ public class L2Attackable extends L2Npc
      *
      * @param lastAttacker The L2Character that has killed the L2Attackable
      */
-    protected void doItemDrop(L2NpcTemplate npcTemplate, L2Character lastAttacker)
+    public void doItemDrop(L2NpcTemplate npcTemplate, L2Character lastAttacker)
     {
         if (lastAttacker == null)
         {
@@ -2092,7 +2092,7 @@ public class L2Attackable extends L2Npc
      *
      * @param lastAttacker The L2Character that has killed the L2Attackable
      */
-    private void doEventDrop(L2Character lastAttacker)
+    public void doEventDrop(L2Character lastAttacker)
     {
         if (lastAttacker == null)
         {
@@ -2135,7 +2135,7 @@ public class L2Attackable extends L2Npc
     /**
      * Drop reward item.
      */
-    private L2ItemInstance dropItem(L2PcInstance lastAttacker, RewardItem item)
+    public L2ItemInstance dropItem(L2PcInstance lastAttacker, RewardItem item)
     {
         int randDropLim = 70;
 
@@ -2207,7 +2207,7 @@ public class L2Attackable extends L2Npc
      *
      * @param player The L2Character searched in the _aggroList of the L2Attackable
      */
-    protected boolean containsTarget(L2Character player)
+    public boolean containsTarget(L2Character player)
     {
         return getAggroList().containsKey(player);
     }
@@ -2293,7 +2293,7 @@ public class L2Attackable extends L2Npc
      *
      * @return L2Character attacker
      */
-    private L2Character getOverhitAttacker()
+    public L2Character getOverhitAttacker()
     {
         return _overhitAttacker;
     }
@@ -2303,7 +2303,7 @@ public class L2Attackable extends L2Npc
      *
      * @return double damage
      */
-    private double getOverhitDamage()
+    public double getOverhitDamage()
     {
         return _overhitDamage;
     }
@@ -2319,7 +2319,7 @@ public class L2Attackable extends L2Npc
     /**
      * Activate the absorbed soul condition on the L2Attackable.
      */
-    private void absorbSoul()
+    public void absorbSoul()
     {
         _absorbed = true;
     }
@@ -2365,7 +2365,7 @@ public class L2Attackable extends L2Npc
         absorbSoul();
     }
 
-    private void resetAbsorbList()
+    public void resetAbsorbList()
     {
         _absorbed = false;
         _absorbersList.clear();
@@ -2450,7 +2450,7 @@ public class L2Attackable extends L2Npc
         return tmp;
     }
 
-    private long calculateOverhitExp(long normalExp)
+    public long calculateOverhitExp(long normalExp)
     {
         // Get the percentage based on the total of extra (over-hit) damage done relative to the total (maximum) ammount of HP on the L2Attackable
         double overhitPercentage = getOverhitDamage() * 100 / getMaxHp();
@@ -2544,7 +2544,7 @@ public class L2Attackable extends L2Npc
         return _canBeSweeped;
     }
 
-    private void setCanBeSweeped(final boolean canBeSweeped)
+    public final void setCanBeSweeped(final boolean canBeSweeped)
     {
         _canBeSweeped = canBeSweeped;
     }
@@ -2674,7 +2674,7 @@ public class L2Attackable extends L2Npc
         return true; // This means we use MAX_MONSTER_ANIMATION instead of MAX_NPC_ANIMATION
     }
 
-    private void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
+    protected void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
     {
         _commandChannelTimer = commandChannelTimer;
     }
@@ -2689,7 +2689,7 @@ public class L2Attackable extends L2Npc
         return _firstCommandChannelAttacked;
     }
 
-    private void setFirstCommandChannelAttacked(L2CommandChannel firstCommandChannelAttacked)
+    public void setFirstCommandChannelAttacked(L2CommandChannel firstCommandChannelAttacked)
     {
         _firstCommandChannelAttacked = firstCommandChannelAttacked;
     }
@@ -2697,7 +2697,7 @@ public class L2Attackable extends L2Npc
     /**
      * @return the _commandChannelLastAttack
      */
-    private long getCommandChannelLastAttack()
+    public long getCommandChannelLastAttack()
     {
         return _commandChannelLastAttack;
     }
@@ -2705,7 +2705,7 @@ public class L2Attackable extends L2Npc
     /**
      * @param channelLastAttack the _commandChannelLastAttack to set
      */
-    private void setCommandChannelLastAttack(long channelLastAttack)
+    public void setCommandChannelLastAttack(long channelLastAttack)
     {
         _commandChannelLastAttack = channelLastAttack;
     }
@@ -2806,7 +2806,7 @@ public class L2Attackable extends L2Npc
      *
      * @param isRaid
      */
-    protected void setIsRaid(boolean isRaid)
+    public void setIsRaid(boolean isRaid)
     {
         _isRaid = isRaid;
     }
@@ -2816,7 +2816,7 @@ public class L2Attackable extends L2Npc
      *
      * @param val
      */
-    protected void setIsRaidMinion(boolean val)
+    public void setIsRaidMinion(boolean val)
     {
         _isRaid = val;
         _isRaidMinion = val;

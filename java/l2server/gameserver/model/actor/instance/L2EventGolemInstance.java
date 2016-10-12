@@ -56,7 +56,7 @@ public class L2EventGolemInstance extends L2MonsterInstance
         return super.doDie(killer);
     }
 
-    private EventTeam getTeam()
+    public EventTeam getTeam()
     {
         return _team;
     }

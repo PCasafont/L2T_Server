@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public class TempBan extends BaseSendablePacket
 {
-    private TempBan(String accountName, String ip, long time, String reason)
+    public TempBan(String accountName, String ip, long time, String reason)
     {
         writeC(0x0A);
         writeS(accountName);

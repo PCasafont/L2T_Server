@@ -55,7 +55,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
         enchantItemAttribute(player, _objectId, _count);
     }
 
-    private static void enchantItemAttribute(L2PcInstance player, int itemObjId, long count)
+    public static void enchantItemAttribute(L2PcInstance player, int itemObjId, long count)
     {
         if (itemObjId == 0xFFFFFFFF)
         {
@@ -310,7 +310,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
         player.setActiveEnchantAttrItem(null);
     }
 
-    private static int getLimit(L2ItemInstance item, int stoneId)
+    public static int getLimit(L2ItemInstance item, int stoneId)
     {
         Elementals.ElementalItems elementItem = Elementals.getItemElemental(stoneId);
         if (elementItem == null)
@@ -328,7 +328,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
         }
     }
 
-    private static int getPowerToAdd(int stoneId, int oldValue, L2ItemInstance item)
+    public static int getPowerToAdd(int stoneId, int oldValue, L2ItemInstance item)
     {
         if (Elementals.getItemElement(stoneId) != Elementals.NONE)
         {

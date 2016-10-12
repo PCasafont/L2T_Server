@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 /**
  * @author KenM
  */
-class RegisterDialog extends JDialog implements ActionListener
+public class RegisterDialog extends JDialog implements ActionListener
 {
     private static final long serialVersionUID = 1L;
     private ResourceBundle _bundle;

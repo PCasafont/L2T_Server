@@ -23,7 +23,7 @@ import l2server.gameserver.network.serverpackets.ExFriendDetailInfo;
  */
 public class RequestFriendDetailInfo extends L2GameClientPacket
 {
-    private String _charName;
+    String _charName;
 
     @Override
     protected void readImpl()

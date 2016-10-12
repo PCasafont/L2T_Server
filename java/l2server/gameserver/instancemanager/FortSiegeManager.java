@@ -291,6 +291,6 @@ public class FortSiegeManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final FortSiegeManager _instance = new FortSiegeManager();
+        protected static final FortSiegeManager _instance = new FortSiegeManager();
     }
 }

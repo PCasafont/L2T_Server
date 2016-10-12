@@ -61,7 +61,7 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
         return true;
     }
 
-    private String readString()
+    public String readString()
     {
         String s = "";
         char c = (char) readC();

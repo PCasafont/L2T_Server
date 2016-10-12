@@ -54,7 +54,7 @@ public abstract class L2Effect
     private L2Abnormal _abnormal;
     private L2EffectTemplate _template;
 
-    private boolean preventExitUpdate;
+    public boolean preventExitUpdate;
 
     /**
      * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font><br>
@@ -89,7 +89,7 @@ public abstract class L2Effect
         _lambda = _template.lambda;
     }
 
-    protected final double calc()
+    public final double calc()
     {
         Env env = new Env();
         env.player = _effector;
@@ -108,7 +108,7 @@ public abstract class L2Effect
         return _effector;
     }
 
-    protected final L2Character getEffected()
+    public final L2Character getEffected()
     {
         return _effected;
     }
@@ -120,12 +120,12 @@ public abstract class L2Effect
      * <li>Cancel the effect in the the abnormal effect map of the L2Character </li>
      * <li>Stop the task of the L2Effect, remove it and update client magic icon </li><BR><BR>
      */
-    protected final void exit()
+    public final void exit()
     {
         this.exit(false);
     }
 
-    private void exit(boolean preventUpdate)
+    public final void exit(boolean preventUpdate)
     {
         preventExitUpdate = preventUpdate;
     }
@@ -168,12 +168,12 @@ public abstract class L2Effect
      */
     public abstract boolean onActionTime();
 
-    protected int getLevel()
+    public int getLevel()
     {
         return getSkill().getLevelHash();
     }
 
-    protected L2Abnormal getAbnormal()
+    public L2Abnormal getAbnormal()
     {
         return _abnormal;
     }

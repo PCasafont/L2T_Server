@@ -22,17 +22,17 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-abstract class ConditionInventory extends Condition implements ConditionListener
+public abstract class ConditionInventory extends Condition implements ConditionListener
 {
 
-    final int _slot;
+    protected final int _slot;
 
     /**
      * Instantiates a new condition inventory.
      *
      * @param slot the slot
      */
-    ConditionInventory(int slot)
+    public ConditionInventory(int slot)
     {
         _slot = slot;
     }

@@ -53,7 +53,7 @@ public class LotterySystem
     private static final String SAVE_LOTTERY =
             "INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";
     private static long _collectedCoins = 0;
-    private static ScheduledFuture<?> _saveTask;
+    protected static ScheduledFuture<?> _saveTask;
 
     public void buyNumber(L2PcInstance pl, int number)
     {
@@ -359,7 +359,7 @@ public class LotterySystem
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final LotterySystem _instance = new LotterySystem();
+        protected static final LotterySystem _instance = new LotterySystem();
     }
 
     public NpcHtmlMessage parseLotteryPanel(L2PcInstance pl, NpcHtmlMessage htmlPage)

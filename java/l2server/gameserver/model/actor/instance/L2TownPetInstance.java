@@ -32,10 +32,7 @@ import l2server.util.Rnd;
 
 public class L2TownPetInstance extends L2Npc
 {
-    private int randomX;
-    private int randomY;
-    private int spawnX;
-    private int spawnY;
+    int randomX, randomY, spawnX, spawnY;
 
     public L2TownPetInstance(int objectId, L2NpcTemplate template)
     {
@@ -90,7 +87,7 @@ public class L2TownPetInstance extends L2Npc
         spawnY = getY();
     }
 
-    private class RandomWalkTask implements Runnable
+    public class RandomWalkTask implements Runnable
     {
         @Override
         public void run()

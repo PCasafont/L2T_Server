@@ -40,7 +40,7 @@ public class ChessEvent
     {
     }
 
-    private static void init()
+    public static void init()
     {
         _sides[0] = new ChessEventSide((byte) 0);
         _sides[1] = new ChessEventSide((byte) 1);
@@ -153,7 +153,7 @@ public class ChessEvent
         setState(ChessState.PARTICIPATING);
     }
 
-    private static synchronized boolean addWaitingParticipant(L2PcInstance playerInstance, int sideId)
+    public static synchronized boolean addWaitingParticipant(L2PcInstance playerInstance, int sideId)
     {
         if (playerInstance == null)
         {
@@ -179,7 +179,7 @@ public class ChessEvent
         return trobat;
     }
 
-    private static synchronized boolean removeWaitingParticipant(L2PcInstance playerInstance)
+    public static synchronized boolean removeWaitingParticipant(L2PcInstance playerInstance)
     {
         if (playerInstance == null)
         {
@@ -204,7 +204,7 @@ public class ChessEvent
         return trobat;
     }
 
-    private static synchronized L2PcInstance challengeWaitingParticipant(L2PcInstance playerInstance, int cellId)
+    public static synchronized L2PcInstance challengeWaitingParticipant(L2PcInstance playerInstance, int cellId)
     {
         if (playerInstance == null)
         {
@@ -227,7 +227,7 @@ public class ChessEvent
         return target;
     }
 
-    private static synchronized L2PcInstance acceptChallengingParticipant(L2PcInstance playerInstance)
+    public static synchronized L2PcInstance acceptChallengingParticipant(L2PcInstance playerInstance)
     {
         if (playerInstance == null)
         {
@@ -266,7 +266,7 @@ public class ChessEvent
         return target;
     }
 
-    private static synchronized L2PcInstance rejectChallengingParticipant(L2PcInstance playerInstance)
+    public static synchronized L2PcInstance rejectChallengingParticipant(L2PcInstance playerInstance)
     {
         if (playerInstance == null)
         {
@@ -295,7 +295,7 @@ public class ChessEvent
         return target;
     }
 
-    private static boolean removeParticipant(int playerObjectId)
+    public static boolean removeParticipant(int playerObjectId)
     {
         // Get the teamId of the player
         byte teamId = getParticipantSideId(playerObjectId);

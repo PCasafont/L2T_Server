@@ -23,7 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameEnd extends L2GameServerPacket
 {
-    private boolean _isRedTeamWin;
+    boolean _isRedTeamWin;
 
     /**
      * Show Minigame Results

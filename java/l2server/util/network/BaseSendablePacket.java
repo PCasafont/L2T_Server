@@ -25,7 +25,7 @@ import java.io.IOException;
  */
 public abstract class BaseSendablePacket
 {
-    private ByteArrayOutputStream _bao;
+    ByteArrayOutputStream _bao;
 
     protected BaseSendablePacket()
     {
@@ -111,7 +111,7 @@ public abstract class BaseSendablePacket
         return _bao.size() + 2;
     }
 
-    protected byte[] getBytes()
+    public byte[] getBytes()
     {
         //if (this instanceof Init)
         //	writeD(0x00); //reserve for XOR initial key

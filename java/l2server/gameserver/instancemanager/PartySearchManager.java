@@ -24,15 +24,15 @@ import java.util.ArrayList;
  */
 public class PartySearchManager
 {
-    private ArrayList<L2PcInstance> lookingForParty;
-    private ArrayList<L2PcInstance> wannaToChangeThisPlayer;
+    ArrayList<L2PcInstance> lookingForParty;
+    ArrayList<L2PcInstance> wannaToChangeThisPlayer;
 
-    private PartySearchManager()
+    public PartySearchManager()
     {
         load();
     }
 
-    private void load()
+    public void load()
     {
         if (lookingForParty == null)
         {
@@ -148,6 +148,6 @@ public class PartySearchManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final PartySearchManager _instance = new PartySearchManager();
+        protected static final PartySearchManager _instance = new PartySearchManager();
     }
 }

@@ -256,7 +256,7 @@ public class ClanBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        static final ClanBBSManager _instance = new ClanBBSManager();
+        protected static final ClanBBSManager _instance = new ClanBBSManager();
     }
 
     /**

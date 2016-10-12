@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * @author GKR
  */
-class L2WalkRoute
+public class L2WalkRoute
 {
     private final int _id;
     private final List<L2NpcWalkerNode> _nodeList; // List of nodes

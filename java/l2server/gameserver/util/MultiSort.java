@@ -27,7 +27,7 @@ import java.util.*;
  *
  * @author Tempy
  */
-class MultiSort
+public class MultiSort
 {
     public static final int SORT_ASCENDING = 0;
     public static final int SORT_DESCENDING = 1;
@@ -87,7 +87,7 @@ class MultiSort
         return Arrays.asList(valueList);
     }
 
-    private int getCount()
+    public final int getCount()
     {
         return getValues().size();
     }
@@ -109,7 +109,7 @@ class MultiSort
         return getCount() / totalValue;
     }
 
-    private List<?> getKeys()
+    public final List<?> getKeys()
     {
         if (_keyList == null)
         {
@@ -134,7 +134,7 @@ class MultiSort
         return Collections.min(getValues());
     }
 
-    private int getMean()
+    public final int getMean()
     {
         if (getValues().isEmpty())
         {
@@ -172,7 +172,7 @@ class MultiSort
         return Math.sqrt(totalValue / (numValues - 1));
     }
 
-    private int getTotalValue()
+    public final int getTotalValue()
     {
         if (getValues().isEmpty())
         {
@@ -189,7 +189,7 @@ class MultiSort
         return totalValue;
     }
 
-    private List<Integer> getValues()
+    public final List<Integer> getValues()
     {
         if (_valueList == null)
         {
@@ -199,7 +199,7 @@ class MultiSort
         return _valueList;
     }
 
-    private boolean isSortDescending()
+    public final boolean isSortDescending()
     {
         return _isSortDescending;
     }

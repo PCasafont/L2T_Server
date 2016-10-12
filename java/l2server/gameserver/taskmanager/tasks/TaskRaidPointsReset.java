@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class TaskRaidPointsReset extends Task
 {
-    private static final String NAME = "raid_points_reset";
+    public static final String NAME = "raid_points_reset";
 
     @Override
     public String getName()

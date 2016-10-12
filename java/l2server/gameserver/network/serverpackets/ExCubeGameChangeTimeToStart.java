@@ -23,7 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameChangeTimeToStart extends L2GameServerPacket
 {
-    private int _seconds;
+    int _seconds;
 
     /**
      * Update Minigame Waiting List Time to Start

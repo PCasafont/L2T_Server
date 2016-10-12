@@ -57,7 +57,7 @@ public class GmListTable
         return tmpGmList;
     }
 
-    private ArrayList<String> getAllGmNames(boolean includeHidden)
+    public ArrayList<String> getAllGmNames(boolean includeHidden)
     {
         ArrayList<String> tmpGmList = new ArrayList<String>();
         for (Entry<L2PcInstance, Boolean> n : _gmList.entrySet())
@@ -179,6 +179,6 @@ public class GmListTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final GmListTable _instance = new GmListTable();
+        protected static final GmListTable _instance = new GmListTable();
     }
 }

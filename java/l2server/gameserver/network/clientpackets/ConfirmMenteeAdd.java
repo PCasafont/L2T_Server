@@ -33,7 +33,7 @@ import java.util.logging.Level;
  */
 public class ConfirmMenteeAdd extends L2GameClientPacket
 {
-    private int _response;
+    int _response;
 
     @Override
     protected void readImpl()

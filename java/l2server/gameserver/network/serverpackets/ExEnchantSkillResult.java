@@ -30,7 +30,7 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 
     private boolean _enchanted;
 
-    private ExEnchantSkillResult(boolean enchanted)
+    public ExEnchantSkillResult(boolean enchanted)
     {
         _enchanted = enchanted;
     }

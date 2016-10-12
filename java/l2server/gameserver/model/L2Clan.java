@@ -89,7 +89,7 @@ public class L2Clan
     /**
      * Leader clan dissolve ally
      */
-    private static final int PENALTY_TYPE_DISSOLVE_ALLY = 4;
+    public static final int PENALTY_TYPE_DISSOLVE_ALLY = 4;
 
     private ClanWarehouse _warehouse = null;
 
@@ -106,7 +106,7 @@ public class L2Clan
     /**
      * Privilege to join clan
      */
-    private static final int CP_CL_JOIN_CLAN = 2;
+    public static final int CP_CL_JOIN_CLAN = 2;
     /**
      * Privilege to give a title
      */
@@ -161,7 +161,7 @@ public class L2Clan
     /**
      * Clan subunit type of Royal Guard B
      */
-    private static final int SUBUNIT_ROYAL2 = 200;
+    public static final int SUBUNIT_ROYAL2 = 200;
     /**
      * Clan subunit type of Order of Knights A-1
      */
@@ -169,15 +169,15 @@ public class L2Clan
     /**
      * Clan subunit type of Order of Knights A-2
      */
-    private static final int SUBUNIT_KNIGHT2 = 1002;
+    public static final int SUBUNIT_KNIGHT2 = 1002;
     /**
      * Clan subunit type of Order of Knights B-1
      */
-    private static final int SUBUNIT_KNIGHT3 = 2001;
+    public static final int SUBUNIT_KNIGHT3 = 2001;
     /**
      * Clan subunit type of Order of Knights B-2
      */
-    private static final int SUBUNIT_KNIGHT4 = 2002;
+    public static final int SUBUNIT_KNIGHT4 = 2002;
 
     /**
      * HashMap(Integer, L2Skill) containing all skills of the L2Clan
@@ -355,7 +355,7 @@ public class L2Clan
     /**
      * @param name The name to set.
      */
-    private void setName(String name)
+    public void setName(String name)
     {
         _name = name;
     }
@@ -540,7 +540,7 @@ public class L2Clan
         return result;
     }
 
-    private int getMaxNrOfMembers(int pledgetype)
+    public int getMaxNrOfMembers(int pledgetype)
     {
         int limit = 0;
 
@@ -651,7 +651,7 @@ public class L2Clan
         return _allyName;
     }
 
-    private void setAllyCrestId(int allyCrestId)
+    public void setAllyCrestId(int allyCrestId)
     {
         _allyCrestId = allyCrestId;
     }
@@ -715,7 +715,7 @@ public class L2Clan
     /**
      * @param crestLargeId The id of pledge LargeCrest.
      */
-    private void setLargeCrestId(int crestLargeId)
+    public void setLargeCrestId(int crestLargeId)
     {
         _crestLargeId = crestLargeId;
     }
@@ -771,7 +771,7 @@ public class L2Clan
     /**
      * @param level The level to set.
      */
-    private void setLevel(int level)
+    public void setLevel(int level)
     {
         _level = level;
         /*if (_level >= 2 && _forum == null && Config.COMMUNITY_TYPE > 0)
@@ -1210,7 +1210,7 @@ public class L2Clan
     /**
      * used to add a skill to skill list of this L2Clan
      */
-    private L2Skill addSkill(L2Skill newSkill)
+    public L2Skill addSkill(L2Skill newSkill)
     {
         L2Skill oldSkill = null;
 
@@ -1370,7 +1370,7 @@ public class L2Clan
         addSkillEffects(player, false);
     }
 
-    private void addSkillEffects(L2PcInstance player, boolean activesOnly)
+    public void addSkillEffects(L2PcInstance player, boolean activesOnly)
     {
         if (player == null || _reputationScore < 0)
         {
@@ -1426,7 +1426,7 @@ public class L2Clan
         removeSkillEffects(player, false);
     }
 
-    private void removeSkillEffects(L2PcInstance player, boolean activesOnly)
+    public void removeSkillEffects(L2PcInstance player, boolean activesOnly)
     {
         if (player == null)
         {
@@ -1474,7 +1474,7 @@ public class L2Clan
         }
     }
 
-    private void broadcastToOnlineAllyMembers(L2GameServerPacket packet)
+    public void broadcastToOnlineAllyMembers(L2GameServerPacket packet)
     {
         if (getAllyId() == 0)
         {
@@ -2100,7 +2100,7 @@ public class L2Clan
         return subPledge;
     }
 
-    private int getAvailablePledgeTypes(int pledgeType)
+    public int getAvailablePledgeTypes(int pledgeType)
     {
         if (_subPledges.get(pledgeType) != null)
         {
@@ -2206,7 +2206,7 @@ public class L2Clan
         }
     }
 
-    private void initializePrivs()
+    public void initializePrivs()
     {
         RankPrivs privs;
         for (int i = 1; i < 10; i++)
@@ -2532,7 +2532,7 @@ public class L2Clan
      *
      * @return <b>false</b> if the requesting clan is too big, compared to the other clans. Else <b>true</b>.
      */
-    private boolean checkClanBalance(L2PcInstance requester, L2Clan clanOfRequester)
+    public boolean checkClanBalance(L2PcInstance requester, L2Clan clanOfRequester)
     {
         L2Clan[] topClans = ClanTable.getInstance().getTopTenClansByMemberCount();
 
@@ -2658,12 +2658,12 @@ public class L2Clan
         return true;
     }
 
-    private long getAllyPenaltyExpiryTime()
+    public long getAllyPenaltyExpiryTime()
     {
         return _allyPenaltyExpiryTime;
     }
 
-    private int getAllyPenaltyType()
+    public int getAllyPenaltyType()
     {
         return _allyPenaltyType;
     }
@@ -2674,7 +2674,7 @@ public class L2Clan
         _allyPenaltyType = penaltyType;
     }
 
-    private long getCharPenaltyExpiryTime()
+    public long getCharPenaltyExpiryTime()
     {
         return _charPenaltyExpiryTime;
     }

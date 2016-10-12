@@ -46,7 +46,7 @@ import java.util.List;
  */
 public abstract class L2Item
 {
-    static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
+    public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
     public static final int TYPE1_SHIELD_ARMOR = 1;
     public static final int TYPE1_ITEM_QUESTITEM_ADENA = 4;
 
@@ -63,8 +63,8 @@ public abstract class L2Item
     public static final int BABY = 0x8;
     public static final int IMPROVED_BABY = 0x10;
     public static final int GROWN_WOLF = 0x20;
-    private static final int ALL_WOLF = 0x21;
-    private static final int ALL_PET = 0x3F;
+    public static final int ALL_WOLF = 0x21;
+    public static final int ALL_PET = 0x3F;
 
     public static final int SLOT_NONE = 0x0000;
     public static final int SLOT_UNDERWEAR = 0x0001;
@@ -162,24 +162,24 @@ public abstract class L2Item
     private boolean _isForPet = false;
     private final String _bodyPartName;
 
-    int _type1; // needed for item list (inventory)
-    int _type2; // different lists for armor, weapon, etc
-    private Elementals[] _elementals = null;
-    FuncTemplate[] _funcTemplates;
-    private L2AbnormalTemplate[] _effectTemplates;
-    private List<Condition> _preConditions;
+    protected int _type1; // needed for item list (inventory)
+    protected int _type2; // different lists for armor, weapon, etc
+    protected Elementals[] _elementals = null;
+    protected FuncTemplate[] _funcTemplates;
+    protected L2AbnormalTemplate[] _effectTemplates;
+    protected List<Condition> _preConditions;
     private SkillHolder[] _skillHolder;
     private L2CrystallizeReward[] _crystallizeRewards;
 
-    static final Func[] _emptyFunctionSet = new Func[0];
-    static final L2Abnormal[] _emptyEffectSet = new L2Abnormal[0];
+    protected static final Func[] _emptyFunctionSet = new Func[0];
+    protected static final L2Abnormal[] _emptyEffectSet = new L2Abnormal[0];
 
     /**
      * Constructor of the L2Item that fill class variables.<BR><BR>
      *
      * @param set : StatsSet corresponding to a set of couples (key,value) for description of the item
      */
-    L2Item(StatsSet set)
+    protected L2Item(StatsSet set)
     {
         _itemId = set.getInteger("id");
         _name = set.getString("name");
@@ -504,7 +504,7 @@ public abstract class L2Item
     /**
      * Sets the base elemental of the item
      */
-    private void setElementals(Elementals element)
+    public void setElementals(Elementals element)
     {
         if (_elementals == null)
         {
@@ -1030,7 +1030,7 @@ public abstract class L2Item
     /**
      * @return the _ex_immediate_effect
      */
-    boolean is_ex_immediate_effect()
+    public boolean is_ex_immediate_effect()
     {
         return _ex_immediate_effect;
     }
@@ -1038,7 +1038,7 @@ public abstract class L2Item
     /**
      * @return the _default_action
      */
-    L2ActionType getDefaultAction()
+    public L2ActionType getDefaultAction()
     {
         return _defaultAction;
     }

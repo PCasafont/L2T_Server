@@ -128,7 +128,7 @@ public class ThreadPoolManager
         scheduleGeneralAtFixedRate(new PurgeTask(), 10 * 60 * 1000l, 5 * 60 * 1000l);
     }
 
-    private static long validateDelay(long delay)
+    public static long validateDelay(long delay)
     {
         if (delay < 1)
         {
@@ -517,6 +517,6 @@ public class ThreadPoolManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ThreadPoolManager _instance = new ThreadPoolManager();
+        protected static final ThreadPoolManager _instance = new ThreadPoolManager();
     }
 }

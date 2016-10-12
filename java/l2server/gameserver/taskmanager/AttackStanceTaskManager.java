@@ -44,7 +44,7 @@ import java.util.logging.Level;
 public class AttackStanceTaskManager
 {
 
-    private Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
+    protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<L2Character, Long>();
 
     private AttackStanceTaskManager()
     {
@@ -115,7 +115,7 @@ public class AttackStanceTaskManager
 
     private class FightModeScheduler implements Runnable
     {
-        FightModeScheduler()
+        protected FightModeScheduler()
         {
             // Do nothing
         }
@@ -172,6 +172,6 @@ public class AttackStanceTaskManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
+        protected static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
     }
 }

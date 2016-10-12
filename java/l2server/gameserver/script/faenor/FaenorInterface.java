@@ -96,7 +96,7 @@ public class FaenorInterface implements EngineInterface
      * @param drop
      * @param sweep
      */
-    private void addDrop(L2NpcTemplate npc, L2DropData drop, boolean sweep)
+    public void addDrop(L2NpcTemplate npc, L2DropData drop, boolean sweep)
     {
         if (sweep)
         {
@@ -116,7 +116,7 @@ public class FaenorInterface implements EngineInterface
      * @param drop
      * @param sweep
      */
-    private void addDrop(L2NpcTemplate npc, L2DropData drop, int category)
+    public void addDrop(L2NpcTemplate npc, L2DropData drop, int category)
     {
         //npc.addMultiDrop(drop, category);
     }
@@ -157,6 +157,6 @@ public class FaenorInterface implements EngineInterface
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final FaenorInterface _instance = new FaenorInterface();
+        protected static final FaenorInterface _instance = new FaenorInterface();
     }
 }

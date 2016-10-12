@@ -30,7 +30,7 @@ public class ExFlyMove extends L2GameServerPacket
     private int _objectId;
     private L2FlyMoveType _type;
     private int _id;
-    private Map<Integer, Point3D> _moves;
+    Map<Integer, Point3D> _moves;
 
     public ExFlyMove(L2PcInstance activeChar, int id, Map<Integer, Point3D> options)
     {

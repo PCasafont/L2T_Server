@@ -413,7 +413,7 @@ public class Message
         return _attachments;
     }
 
-    private synchronized void unloadAttachments()
+    protected final synchronized void unloadAttachments()
     {
         if (_attachments != null)
         {

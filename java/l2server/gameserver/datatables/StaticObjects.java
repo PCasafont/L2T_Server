@@ -121,6 +121,6 @@ public class StaticObjects
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final StaticObjects _instance = new StaticObjects();
+        protected static final StaticObjects _instance = new StaticObjects();
     }
 }

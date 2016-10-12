@@ -2247,6 +2247,6 @@ public class GMEventManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final GMEventManager _instance = new GMEventManager();
+        protected static final GMEventManager _instance = new GMEventManager();
     }
 }

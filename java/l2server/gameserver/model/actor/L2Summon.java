@@ -64,7 +64,7 @@ public abstract class L2Summon extends L2Playable
 
     public class AIAccessor extends L2Character.AIAccessor
     {
-        AIAccessor()
+        protected AIAccessor()
         {
         }
 
@@ -84,7 +84,7 @@ public abstract class L2Summon extends L2Playable
         }
     }
 
-    protected L2Summon(int objectId, L2NpcTemplate template, L2PcInstance owner)
+    public L2Summon(int objectId, L2NpcTemplate template, L2PcInstance owner)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2Summon);
@@ -347,7 +347,7 @@ public abstract class L2Summon extends L2Playable
         _chargedSpiritShot = shotType;
     }
 
-    protected void followOwner()
+    public void followOwner()
     {
         setFollowStatus(true);
     }
@@ -397,7 +397,7 @@ public abstract class L2Summon extends L2Playable
         return true;
     }
 
-    protected boolean doDie(L2Character killer, boolean decayed)
+    public boolean doDie(L2Character killer, boolean decayed)
     {
         if (!super.doDie(killer))
         {
@@ -455,7 +455,7 @@ public abstract class L2Summon extends L2Playable
         _owner.sendPacket(su);
     }
 
-    protected void deleteMe(L2PcInstance owner)
+    public void deleteMe(L2PcInstance owner)
     {
         if (!(this instanceof L2CloneInstance))
         {
@@ -628,7 +628,7 @@ public abstract class L2Summon extends L2Playable
     {
     }
 
-    protected void store()
+    public void store()
     {
     }
 

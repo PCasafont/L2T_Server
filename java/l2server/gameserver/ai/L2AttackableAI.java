@@ -77,7 +77,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
     private int timepass = 0;
     private int chaostime = 0;
     private L2NpcTemplate _skillrender;
-    private int lastBuffTick;
+    int lastBuffTick;
 
     /**
      * Constructor of L2AttackableAI.<BR><BR>
@@ -369,7 +369,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
         }
     }
 
-    private void startAITask()
+    public void startAITask()
     {
         // If not idle - create an AI task (schedule onEvtThink repeatedly)
         if (_aiTask == null)
@@ -2914,7 +2914,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
     /**
      * @param timepass The timepass to set.
      */
-    private void setTimepass(int TP)
+    public void setTimepass(int TP)
     {
         timepass = TP;
     }
@@ -2927,7 +2927,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
         return timepass;
     }
 
-    private L2Attackable getActiveChar()
+    public L2Attackable getActiveChar()
     {
         return (L2Attackable) _actor;
     }

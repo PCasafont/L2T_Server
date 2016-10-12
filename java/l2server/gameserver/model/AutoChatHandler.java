@@ -46,7 +46,7 @@ public class AutoChatHandler implements SpawnListener
 
     private static final int DEFAULT_CHAT_DELAY = 60000; // 60 secs by default
 
-    private Map<Integer, AutoChatInstance> _registeredChats;
+    protected Map<Integer, AutoChatInstance> _registeredChats;
 
     private AutoChatHandler()
     {
@@ -163,7 +163,7 @@ public class AutoChatHandler implements SpawnListener
      * @param AutoChatInstance chatInst
      * @return boolean removedSuccessfully
      */
-    private boolean removeChat(AutoChatInstance chatInst)
+    public boolean removeChat(AutoChatInstance chatInst)
     {
         if (chatInst == null)
         {
@@ -263,7 +263,7 @@ public class AutoChatHandler implements SpawnListener
      */
     public class AutoChatInstance
     {
-        int _npcId;
+        protected int _npcId;
         private long _defaultDelay = DEFAULT_CHAT_DELAY;
         private String[] _defaultTexts;
         private boolean _defaultRandom = false;
@@ -272,9 +272,9 @@ public class AutoChatHandler implements SpawnListener
         private boolean _isActive;
 
         private Map<Integer, AutoChatDefinition> _chatDefinitions = new HashMap<Integer, AutoChatDefinition>();
-        ScheduledFuture<?> _chatTask;
+        protected ScheduledFuture<?> _chatTask;
 
-        AutoChatInstance(int npcId, String[] chatTexts, long chatDelay, boolean isGlobal)
+        protected AutoChatInstance(int npcId, String[] chatTexts, long chatDelay, boolean isGlobal)
         {
             _defaultTexts = chatTexts;
             _npcId = npcId;
@@ -290,12 +290,12 @@ public class AutoChatHandler implements SpawnListener
             setActive(true);
         }
 
-        AutoChatDefinition getChatDefinition(int objectId)
+        protected AutoChatDefinition getChatDefinition(int objectId)
         {
             return _chatDefinitions.get(objectId);
         }
 
-        AutoChatDefinition[] getChatDefinitions()
+        protected AutoChatDefinition[] getChatDefinitions()
         {
             return _chatDefinitions.values().toArray(new AutoChatDefinition[_chatDefinitions.values().size()]);
         }
@@ -569,17 +569,17 @@ public class AutoChatHandler implements SpawnListener
          */
         private class AutoChatDefinition
         {
-            int _chatIndex = 0;
-            L2Npc _npcInstance;
+            protected int _chatIndex = 0;
+            protected L2Npc _npcInstance;
 
-            AutoChatInstance _chatInstance;
+            protected AutoChatInstance _chatInstance;
 
             private long _chatDelay = 0;
             private String[] _chatTexts = null;
             private boolean _isActiveDefinition;
             private boolean _randomChat;
 
-            AutoChatDefinition(AutoChatInstance chatInst, L2Npc npcInst, String[] chatTexts, long chatDelay)
+            protected AutoChatDefinition(AutoChatInstance chatInst, L2Npc npcInst, String[] chatTexts, long chatDelay)
             {
                 _npcInstance = npcInst;
 
@@ -603,7 +603,7 @@ public class AutoChatHandler implements SpawnListener
                 }
             }
 
-            String[] getChatTexts()
+            protected String[] getChatTexts()
             {
                 if (_chatTexts != null)
                 {
@@ -695,7 +695,7 @@ public class AutoChatHandler implements SpawnListener
             private int _runnerNpcId;
             private int _objectId;
 
-            AutoChatRunner(int pNpcId, int pObjectId)
+            protected AutoChatRunner(int pNpcId, int pObjectId)
             {
                 _runnerNpcId = pNpcId;
                 _objectId = pObjectId;
@@ -832,6 +832,6 @@ public class AutoChatHandler implements SpawnListener
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final AutoChatHandler _instance = new AutoChatHandler();
+        protected static final AutoChatHandler _instance = new AutoChatHandler();
     }
 }

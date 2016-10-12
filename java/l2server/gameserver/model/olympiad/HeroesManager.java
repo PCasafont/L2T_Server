@@ -73,16 +73,16 @@ public class HeroesManager
     private static Map<Integer, HeroInfo> _heroes = new HashMap<Integer, HeroInfo>();
     private static Map<Integer, HeroInfo> _pastAndCurrentHeroes = new HashMap<Integer, HeroInfo>();
 
-    private static final String COUNT = "count";
-    private static final String PLAYED = "played";
+    public static final String COUNT = "count";
+    public static final String PLAYED = "played";
     public static final String CLAN_NAME = "clan_name";
     public static final String CLAN_CREST = "clan_crest";
     public static final String ALLY_NAME = "ally_name";
     public static final String ALLY_CREST = "ally_crest";
 
-    private static final int ACTION_RAID_KILLED = 1;
-    private static final int ACTION_HERO_GAINED = 2;
-    private static final int ACTION_CASTLE_TAKEN = 3;
+    public static final int ACTION_RAID_KILLED = 1;
+    public static final int ACTION_HERO_GAINED = 2;
+    public static final int ACTION_CASTLE_TAKEN = 3;
 
     public static HeroesManager getInstance()
     {
@@ -248,7 +248,7 @@ public class HeroesManager
      *
      * @param charId
      */
-    private void loadMessage(HeroInfo hero)
+    public void loadMessage(HeroInfo hero)
     {
         Connection con = null;
         try
@@ -274,7 +274,7 @@ public class HeroesManager
         }
     }
 
-    private void loadDiary(HeroInfo hero)
+    public void loadDiary(HeroInfo hero)
     {
         int diaryentries = 0;
         Connection con = null;
@@ -336,7 +336,7 @@ public class HeroesManager
         }
     }
 
-    private void loadFights(HeroInfo hero)
+    public void loadFights(HeroInfo hero)
     {
         Calendar date = Calendar.getInstance();
         date.set(Calendar.DAY_OF_MONTH, 1);
@@ -828,7 +828,7 @@ public class HeroesManager
         }
     }
 
-    private void updateHeroes(boolean setDefault)
+    public void updateHeroes(boolean setDefault)
     {
         //_herofights = new HashMap<Integer, List<StatsSet>>();
         //_herocounts = new HashMap<Integer, StatsSet>();
@@ -924,7 +924,7 @@ public class HeroesManager
         }
     }
 
-    private void setHeroGained(int charId)
+    public void setHeroGained(int charId)
     {
         if (_heroes.containsKey(charId))
         {
@@ -965,7 +965,7 @@ public class HeroesManager
         }
     }
 
-    private void saveDiaryData(int charId, int action, int param)
+    public void saveDiaryData(int charId, int action, int param)
     {
         Connection con = null;
         try
@@ -1008,7 +1008,7 @@ public class HeroesManager
      *
      * @param charId character objid
      */
-    private void saveHeroMessage(int charId)
+    public void saveHeroMessage(int charId)
     {
         if (!_heroes.containsKey(charId))
         {
@@ -1094,6 +1094,6 @@ public class HeroesManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final HeroesManager _instance = new HeroesManager();
+        protected static final HeroesManager _instance = new HeroesManager();
     }
 }

@@ -220,6 +220,6 @@ public class BoatManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final BoatManager _instance = new BoatManager();
+        protected static final BoatManager _instance = new BoatManager();
     }
 }

@@ -42,10 +42,10 @@ public final class IllegalPlayerAction implements Runnable
     private int _punishment;
     private L2PcInstance _actor;
 
-    private static final int PUNISH_BROADCAST = 1;
+    public static final int PUNISH_BROADCAST = 1;
     public static final int PUNISH_KICK = 2;
-    private static final int PUNISH_KICKBAN = 3;
-    private static final int PUNISH_JAIL = 4;
+    public static final int PUNISH_KICKBAN = 3;
+    public static final int PUNISH_JAIL = 4;
 
     public IllegalPlayerAction(L2PcInstance actor, String message, int punishment)
     {

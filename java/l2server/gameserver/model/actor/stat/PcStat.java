@@ -50,7 +50,7 @@ public class PcStat extends PlayableStat
     private float _vitalityPoints = -1;
 
     public static final int MAX_VITALITY_POINTS = 140000;
-    private static final int MIN_VITALITY_POINTS = 0;
+    public static final int MIN_VITALITY_POINTS = 0;
 
     // =========================================================
     // Constructor
@@ -98,7 +98,7 @@ public class PcStat extends PlayableStat
      * @param addToSp  The SP value to add
      */
     //@Override
-    private boolean addExpAndSp(long addToExp, long addToSp, double bonusMultiplier)
+    public boolean addExpAndSp(long addToExp, long addToSp, double bonusMultiplier)
     {
         if (getActiveChar().getTemporaryLevel() != 0)
         {

@@ -79,6 +79,6 @@ public class TopBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        static final TopBBSManager _instance = new TopBBSManager();
+        protected static final TopBBSManager _instance = new TopBBSManager();
     }
 }

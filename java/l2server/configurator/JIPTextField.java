@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * @author KenM
  */
-class JIPTextField extends JPanel implements FocusListener
+public class JIPTextField extends JPanel implements FocusListener
 {
     /**
      * Comment for <code>serialVersionUID</code>
@@ -42,7 +42,7 @@ class JIPTextField extends JPanel implements FocusListener
     private JTextField[] _textFields;
     private List<FocusListener> _focusListeners;
 
-    private JIPTextField(String textIp)
+    public JIPTextField(String textIp)
     {
         super.addFocusListener(this);
 
@@ -205,7 +205,7 @@ class JIPTextField extends JPanel implements FocusListener
         }
     }
 
-    private boolean isEmpty()
+    public boolean isEmpty()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -217,7 +217,7 @@ class JIPTextField extends JPanel implements FocusListener
         return true;
     }
 
-    private boolean isCorrect()
+    public boolean isCorrect()
     {
         for (int i = 0; i < 4; i++)
         {

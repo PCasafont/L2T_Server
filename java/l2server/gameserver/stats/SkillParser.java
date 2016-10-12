@@ -55,12 +55,12 @@ public final class SkillParser extends StatsParser
     }
 
     private StatsSet[] _sets;
-    private Map<Integer, Map<Integer, StatsSet[]>> _enchantSets = new HashMap<Integer, Map<Integer, StatsSet[]>>();
+    Map<Integer, Map<Integer, StatsSet[]>> _enchantSets = new HashMap<Integer, Map<Integer, StatsSet[]>>();
     private int _currentLevel;
     private int _currentEnchantRoute;
     private int _currentEnchantLevel;
-    private Map<String, String[]> _tables = new HashMap<String, String[]>();
-    private Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> _enchantTables =
+    protected Map<String, String[]> _tables = new HashMap<String, String[]>();
+    Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> _enchantTables =
             new HashMap<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>>();
 
     private Map<Integer, L2Skill> _skills = new HashMap<Integer, L2Skill>();
@@ -76,7 +76,7 @@ public final class SkillParser extends StatsParser
         return _sets[_currentLevel];
     }
 
-    private String getTableValue(String name)
+    protected String getTableValue(String name)
     {
         try
         {
@@ -151,7 +151,7 @@ public final class SkillParser extends StatsParser
         }
     }
 
-    private void parseTable(XmlNode n)
+    protected void parseTable(XmlNode n)
     {
         String name = n.getString("name");
         if (name.charAt(0) != '#')
@@ -375,7 +375,7 @@ public final class SkillParser extends StatsParser
         }
     }
 
-    private void parseBeanSet(XmlNode n, StatsSet set)
+    protected void parseBeanSet(XmlNode n, StatsSet set)
     {
         String name = n.getString("name").trim();
         String value = n.getString("val").trim();
@@ -394,7 +394,7 @@ public final class SkillParser extends StatsParser
         }
     }
 
-    void attachAbnormal(XmlNode n, L2Skill template)
+    protected void attachAbnormal(XmlNode n, L2Skill template)
     {
         /**
          * Keep this values as default ones, DP needs it
@@ -519,7 +519,7 @@ public final class SkillParser extends StatsParser
         }
     }
 
-    void attachEffect(XmlNode n, L2AbnormalTemplate template)
+    protected void attachEffect(XmlNode n, L2AbnormalTemplate template)
     {
         String type = getValue(n.getString("type").intern());
         Condition applayCond = parseCondition(n.getFirstChild(), template);

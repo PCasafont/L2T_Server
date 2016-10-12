@@ -202,7 +202,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
         }
     }
 
-    private void showBuyWindow(L2PcInstance player, int val)
+    protected final void showBuyWindow(L2PcInstance player, int val)
     {
         double taxRate = 50;
 
@@ -229,7 +229,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    private void showSellWindow(L2PcInstance player)
+    protected final void showSellWindow(L2PcInstance player)
     {
         if (Config.DEBUG)
         {

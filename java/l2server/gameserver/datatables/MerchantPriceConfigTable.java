@@ -64,12 +64,12 @@ public class MerchantPriceConfigTable implements InstanceListManager
         return _defaultMpc;
     }
 
-    private MerchantPriceConfig getMerchantPriceConfig(int id)
+    public MerchantPriceConfig getMerchantPriceConfig(int id)
     {
         return _mpcs.get(id);
     }
 
-    private void loadXML() throws SAXException, IOException, ParserConfigurationException
+    public void loadXML() throws SAXException, IOException, ParserConfigurationException
     {
         File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + MPCS_FILE);
         if (file.exists())
@@ -274,6 +274,6 @@ public class MerchantPriceConfigTable implements InstanceListManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MerchantPriceConfigTable _instance = new MerchantPriceConfigTable();
+        protected static final MerchantPriceConfigTable _instance = new MerchantPriceConfigTable();
     }
 }

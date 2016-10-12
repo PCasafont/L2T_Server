@@ -254,12 +254,12 @@ public final class L2ScriptEngineManager
         }
     }
 
-    private void executeAllScriptsInDirectory(File dir)
+    public void executeAllScriptsInDirectory(File dir)
     {
         this.executeAllScriptsInDirectory(dir, false, 0);
     }
 
-    private void executeAllScriptsInDirectory(File dir, boolean recurseDown, int maxDepth)
+    public void executeAllScriptsInDirectory(File dir, boolean recurseDown, int maxDepth)
     {
         this.executeAllScriptsInDirectory(dir, recurseDown, maxDepth, 0);
     }
@@ -319,7 +319,7 @@ public final class L2ScriptEngineManager
         return _cache;
     }
 
-    private CompiledScriptCache loadCompiledScriptCache()
+    public CompiledScriptCache loadCompiledScriptCache()
     {
         if (USE_COMPILED_CACHE)
         {
@@ -407,7 +407,7 @@ public final class L2ScriptEngineManager
         }
     }
 
-    private void executeScript(ScriptEngine engine, File file) throws FileNotFoundException, ScriptException
+    public void executeScript(ScriptEngine engine, File file) throws FileNotFoundException, ScriptException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
@@ -483,7 +483,7 @@ public final class L2ScriptEngineManager
         }
     }
 
-    private static String getClassForFile(File script)
+    public static String getClassForFile(File script)
     {
         String path = script.getAbsolutePath();
         String scpPath = SCRIPT_FOLDER.getAbsolutePath();
@@ -495,7 +495,7 @@ public final class L2ScriptEngineManager
         return null;
     }
 
-    private ScriptContext getScriptContext(ScriptEngine engine)
+    public ScriptContext getScriptContext(ScriptEngine engine)
     {
         return engine.getContext();
     }
@@ -513,7 +513,7 @@ public final class L2ScriptEngineManager
         }
     }
 
-    private Object eval(ScriptEngine engine, String script, ScriptContext context) throws ScriptException
+    public Object eval(ScriptEngine engine, String script, ScriptContext context) throws ScriptException
     {
         if (engine instanceof Compilable && ATTEMPT_COMPILATION)
         {
@@ -587,7 +587,7 @@ public final class L2ScriptEngineManager
     /**
      * @param currentLoadingScript The currentLoadingScript to set.
      */
-    private void setCurrentLoadingScript(File currentLoadingScript)
+    protected void setCurrentLoadingScript(File currentLoadingScript)
     {
         _currentLoadingScript = currentLoadingScript;
     }
@@ -595,7 +595,7 @@ public final class L2ScriptEngineManager
     /**
      * @return Returns the currentLoadingScript.
      */
-    File getCurrentLoadingScript()
+    protected File getCurrentLoadingScript()
     {
         return _currentLoadingScript;
     }
@@ -603,6 +603,6 @@ public final class L2ScriptEngineManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final L2ScriptEngineManager _instance = new L2ScriptEngineManager();
+        protected static final L2ScriptEngineManager _instance = new L2ScriptEngineManager();
     }
 }

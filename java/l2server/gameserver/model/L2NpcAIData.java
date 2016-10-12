@@ -91,7 +91,7 @@ public class L2NpcAIData
     //--------------------------------------------------------------------------------------------------------------
     //Setting....
     //--------------------------------------------------------------------------------------------------------------
-    private void setPrimaryAttack(int primaryattack)
+    public void setPrimaryAttack(int primaryattack)
     {
         _primary_attack = primaryattack;
     }
@@ -126,22 +126,22 @@ public class L2NpcAIData
         _spiritshotchance = spiritshotchance;
     }
 
-    private void setShortRangeSkill(int shortrangeskill)
+    public void setShortRangeSkill(int shortrangeskill)
     {
         _shortrangeskill = shortrangeskill;
     }
 
-    private void setShortRangeChance(int shortrangechance)
+    public void setShortRangeChance(int shortrangechance)
     {
         _shortrangechance = shortrangechance;
     }
 
-    private void setLongRangeSkill(int longrangeskill)
+    public void setLongRangeSkill(int longrangeskill)
     {
         _longrangeskill = longrangeskill;
     }
 
-    private void setLongRangeChance(int longrangechance)
+    public void setLongRangeChance(int longrangechance)
     {
         _shortrangechance = longrangechance;
     }
@@ -151,7 +151,7 @@ public class L2NpcAIData
         _switchrangechance = switchrangechance;
     }
 
-    private void setIsChaos(int ischaos)
+    public void setIsChaos(int ischaos)
     {
         _ischaos = ischaos;
     }
@@ -169,7 +169,7 @@ public class L2NpcAIData
         _clanRange = clanRange;
     }
 
-    private void setEnemyClan(String enemyClan)
+    public void setEnemyClan(String enemyClan)
     {
         if (enemyClan != null && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
         {
@@ -177,32 +177,32 @@ public class L2NpcAIData
         }
     }
 
-    private void setEnemyRange(int enemyRange)
+    public void setEnemyRange(int enemyRange)
     {
         _enemyRange = enemyRange;
     }
 
-    private void setDodge(int dodge)
+    public void setDodge(int dodge)
     {
         _dodge = dodge;
     }
 
-    private void setMinSocial1(int minSocial1)
+    public void setMinSocial1(int minSocial1)
     {
         _minSocial1 = minSocial1;
     }
 
-    private void setMaxSocial1(int maxSocial1)
+    public void setMaxSocial1(int maxSocial1)
     {
         _maxSocial1 = maxSocial1;
     }
 
-    private void setMinSocial2(int minSocial2)
+    public void setMinSocial2(int minSocial2)
     {
         _minSocial2 = minSocial2;
     }
 
-    private void setMaxSocial2(int maxSocial2)
+    public void setMaxSocial2(int maxSocial2)
     {
         _maxSocial2 = maxSocial2;
     }

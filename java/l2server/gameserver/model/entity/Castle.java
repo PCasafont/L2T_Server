@@ -100,7 +100,7 @@ public class Castle
     private ArrayList<L2Skill> _residentialSkills = new ArrayList<L2Skill>();
     private int _bloodAlliance = 0;
 
-    private static final int TENDENCY_NONE = 0;
+    public static final int TENDENCY_NONE = 0;
     public static final int TENDENCY_LIGHT = 1;
     public static final int TENDENCY_DARKNESS = 2;
 
@@ -119,8 +119,8 @@ public class Castle
     {
         private int _type;
         private int _lvl;
-        int _fee;
-        int _tempFee;
+        protected int _fee;
+        protected int _tempFee;
         private long _rate;
         private long _endDate;
         protected boolean _inDebt;
@@ -471,7 +471,7 @@ public class Castle
         return _castleZone;
     }
 
-    private L2CastleTeleportZone getTeleZone()
+    public L2CastleTeleportZone getTeleZone()
     {
         if (_teleZone == null)
         {
@@ -546,7 +546,7 @@ public class Castle
     }
 
     // This method updates the castle tax rate
-    private void setOwner(L2Clan clan)
+    public void setOwner(L2Clan clan)
     {
         // Remove old owner
         if (getOwnerId() > 0 && (clan == null || clan.getClanId() != getOwnerId()))
@@ -836,7 +836,7 @@ public class Castle
     /**
      * Remove function In List and in DB
      */
-    private void removeFunction(int functionType)
+    public void removeFunction(int functionType)
     {
         _function.remove(functionType);
         Connection con = null;
@@ -995,7 +995,7 @@ public class Castle
         return _castleId;
     }
 
-    private L2DoorInstance getDoor(int doorId)
+    public final L2DoorInstance getDoor(int doorId)
     {
         if (doorId <= 0)
         {
@@ -1012,7 +1012,7 @@ public class Castle
         return null;
     }
 
-    private List<L2DoorInstance> getDoors()
+    public final List<L2DoorInstance> getDoors()
     {
         return _doors;
     }
@@ -1075,12 +1075,12 @@ public class Castle
         return _treasury;
     }
 
-    private boolean getShowNpcCrest()
+    public final boolean getShowNpcCrest()
     {
         return _showNpcCrest;
     }
 
-    private void setShowNpcCrest(boolean showNpcCrest)
+    public final void setShowNpcCrest(boolean showNpcCrest)
     {
         if (_showNpcCrest != showNpcCrest)
         {
@@ -1520,7 +1520,7 @@ public class Castle
         }
     }
 
-    private void updateShowNpcCrest()
+    public void updateShowNpcCrest()
     {
         Connection con = null;
         PreparedStatement statement;
@@ -1590,7 +1590,7 @@ public class Castle
         return _artefacts;
     }
 
-    private void resetManor()
+    public void resetManor()
     {
         setCropProcure(new ArrayList<CropProcure>(), CastleManorManager.PERIOD_CURRENT);
         setCropProcure(new ArrayList<CropProcure>(), CastleManorManager.PERIOD_NEXT);

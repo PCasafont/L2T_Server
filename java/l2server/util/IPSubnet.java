@@ -20,9 +20,9 @@ import java.net.UnknownHostException;
 
 public class IPSubnet
 {
-    private final byte[] _addr;
-    private final byte[] _mask;
-    private final boolean _isIPv4;
+    final byte[] _addr;
+    final byte[] _mask;
+    final boolean _isIPv4;
 
     public IPSubnet(String input) throws UnknownHostException, NumberFormatException, ArrayIndexOutOfBoundsException
     {
@@ -57,12 +57,12 @@ public class IPSubnet
         }
     }
 
-    private byte[] getAddress()
+    public byte[] getAddress()
     {
         return _addr;
     }
 
-    private boolean applyMask(byte[] addr)
+    public boolean applyMask(byte[] addr)
     {
         // V4 vs V4 or V6 vs V6 checks
         if (_isIPv4 == (addr.length == 4))

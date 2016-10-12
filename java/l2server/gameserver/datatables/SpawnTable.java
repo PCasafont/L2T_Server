@@ -582,6 +582,6 @@ public class SpawnTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final SpawnTable _instance = new SpawnTable();
+        protected static final SpawnTable _instance = new SpawnTable();
     }
 }

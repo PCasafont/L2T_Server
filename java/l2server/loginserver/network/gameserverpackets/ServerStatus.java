@@ -31,12 +31,12 @@ public class ServerStatus extends BaseRecievePacket
 
     public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
 
-    private static final int SERVER_LIST_STATUS = 0x01;
-    private static final int SERVER_TYPE = 0x02;
-    private static final int SERVER_LIST_SQUARE_BRACKET = 0x03;
-    private static final int MAX_PLAYERS = 0x04;
+    public static final int SERVER_LIST_STATUS = 0x01;
+    public static final int SERVER_TYPE = 0x02;
+    public static final int SERVER_LIST_SQUARE_BRACKET = 0x03;
+    public static final int MAX_PLAYERS = 0x04;
     public static final int TEST_SERVER = 0x05;
-    private static final int SERVER_AGE = 0x06;
+    public static final int SERVER_AGE = 0x06;
 
     // Server Status
     public static final int STATUS_AUTO = 0x00;
@@ -60,7 +60,7 @@ public class ServerStatus extends BaseRecievePacket
     public static final int SERVER_AGE_15 = 0x0F;
     public static final int SERVER_AGE_18 = 0x12;
 
-    private static final int ON = 0x01;
+    public static final int ON = 0x01;
     public static final int OFF = 0x00;
 
     /**

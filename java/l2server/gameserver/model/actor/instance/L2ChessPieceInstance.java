@@ -483,7 +483,7 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         return 0;
     }
 
-    private boolean anyBetween(int x, int y, int i, int j)
+    public boolean anyBetween(int x, int y, int i, int j)
     {
         int k;
         if (i == x)
@@ -584,7 +584,7 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         return false;
     }
 
-    private boolean estaBuit(int i, int j)
+    public boolean estaBuit(int i, int j)
     {
         return getSide().estaBuit(i, j);
     }
@@ -647,12 +647,12 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         getSide().getEnemy().getPlayer().sendPacket(cs2);
     }
 
-    private void setTurn()
+    public void setTurn()
     {
         ChessEvent.turn = getSide().getEnemy().getId();
     }
 
-    private String getPieceName()
+    public String getPieceName()
     {
         switch (getType())
         {
@@ -721,7 +721,7 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         return 0;
     }
 
-    private boolean hasMoved()
+    public boolean hasMoved()
     {
         return !_firstMove;
     }
@@ -736,17 +736,17 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
         return _side;
     }
 
-    private void setSide(ChessEventSide side)
+    public void setSide(ChessEventSide side)
     {
         _side = side;
     }
 
-    private int getPosX()
+    public int getPosX()
     {
         return _posX;
     }
 
-    private int getPosY()
+    public int getPosY()
     {
         return _posY;
     }

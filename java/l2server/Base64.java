@@ -46,27 +46,27 @@ public class Base64
     /**
      * No options specified. Value is zero.
      */
-    private final static int NO_OPTIONS = 0;
+    public final static int NO_OPTIONS = 0;
 
     /**
      * Specify encoding.
      */
-    private final static int ENCODE = 1;
+    public final static int ENCODE = 1;
 
     /**
      * Specify decoding.
      */
-    private final static int DECODE = 0;
+    public final static int DECODE = 0;
 
     /**
      * Specify that data should be gzip-compressed.
      */
-    private final static int GZIP = 2;
+    public final static int GZIP = 2;
 
     /**
      * Don't break lines when encoding (violates strict Base64 specification)
      */
-    private final static int DONT_BREAK_LINES = 8;
+    public final static int DONT_BREAK_LINES = 8;
 
 	/*  P R I V A T E F I E L D S */
 
@@ -188,7 +188,7 @@ public class Base64
      * Translates a Base64 value to either its 6-bit reconstruction value or a
      * negative number indicating some other meaning.
      **/
-    private final static byte[] DECODABET = {
+    final static byte[] DECODABET = {
             -9, -9, -9, -9, -9, -9, -9, -9, -9, // Decimal 0 - 8
             -5, -5, // Whitespace: Tab and Linefeed
             -9, -9, // Decimal 11 - 12
@@ -283,7 +283,7 @@ public class Base64
      * @return four byte array in Base64 notation.
      * @since 1.5.1
      */
-    private static byte[] encode3to4(byte[] b4, byte[] threeBytes, int numSigBytes)
+    static byte[] encode3to4(byte[] b4, byte[] threeBytes, int numSigBytes)
     {
         encode3to4(threeBytes, 0, numSigBytes, b4, 0);
         return b4;
@@ -308,7 +308,7 @@ public class Base64
      * @return the <var>destination</var> array
      * @since 1.3
      */
-    private static byte[] encode3to4(byte[] source, int srcOffset, int numSigBytes, byte[] destination, int destOffset)
+    static byte[] encode3to4(byte[] source, int srcOffset, int numSigBytes, byte[] destination, int destOffset)
     {
         // 1 2 3
         // 01234567890123456789012345678901 Bit position
@@ -394,7 +394,7 @@ public class Base64
      * @see Base64#DONT_BREAK_LINES
      * @since 2.0
      */
-    private static String encodeObject(java.io.Serializable serializableObject, int options)
+    public static String encodeObject(java.io.Serializable serializableObject, int options)
     {
         // Streams
         java.io.ByteArrayOutputStream baos = null;
@@ -553,7 +553,7 @@ public class Base64
      * @see Base64#DONT_BREAK_LINES
      * @since 2.0
      */
-    private static String encodeBytes(byte[] source, int off, int len, int options)
+    public static String encodeBytes(byte[] source, int off, int len, int options)
     {
         // Isolate options
         int dontBreakLines = options & DONT_BREAK_LINES;
@@ -704,7 +704,7 @@ public class Base64
      * @return the number of decoded bytes converted
      * @since 1.3
      */
-    private static int decode4to3(byte[] source, int srcOffset, byte[] destination, int destOffset)
+    static int decode4to3(byte[] source, int srcOffset, byte[] destination, int destOffset)
     {
         // Example: Dk==
         if (source[srcOffset + 2] == EQUALS_SIGN)
@@ -785,7 +785,7 @@ public class Base64
      * @return decoded data
      * @since 1.3
      */
-    private static byte[] decode(byte[] source, int off, int len)
+    public static byte[] decode(byte[] source, int off, int len)
     {
         int len34 = len * 3 / 4;
         byte[] outBuff = new byte[len34]; // Upper limit on size of output

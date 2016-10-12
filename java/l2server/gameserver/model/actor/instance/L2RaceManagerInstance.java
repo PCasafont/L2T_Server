@@ -37,7 +37,7 @@ public class L2RaceManagerInstance extends L2Npc
     @SuppressWarnings("unused")
     private static List<Race> _history;
     private static List<L2RaceManagerInstance> _managers;
-    private static int _raceNumber = 4;
+    protected static int _raceNumber = 4;
 
     //Time Constants
     private final static long SECOND = 1000;
@@ -52,10 +52,10 @@ public class L2RaceManagerInstance extends L2Npc
     private static final int RACE_END = 3;
     private static int _state = RACE_END;
 
-    private static final int[][] _codes = {{-1, 0}, {0, 15322}, {13765, -1}};
+    protected static final int[][] _codes = {{-1, 0}, {0, 15322}, {13765, -1}};
     private static boolean _notInitialized = true;
-    private static MonRaceInfo _packet;
-    private static final int[] _cost = {100, 500, 1000, 5000, 10000, 20000, 50000, 100000};
+    protected static MonRaceInfo _packet;
+    protected static final int _cost[] = {100, 500, 1000, 5000, 10000, 20000, 50000, 100000};
 
     public L2RaceManagerInstance(int objectId, L2NpcTemplate template)
     {
@@ -142,7 +142,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private void makeAnnouncement(SystemMessageId type)
+    public void makeAnnouncement(SystemMessageId type)
     {
         SystemMessage sm = SystemMessage.getSystemMessage(type);
         switch (type.getId())
@@ -199,7 +199,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private void broadcast(L2GameServerPacket pkt)
+    protected void broadcast(L2GameServerPacket pkt)
     {
         for (L2RaceManagerInstance manager : _managers)
         {
@@ -210,7 +210,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private void sendMonsterInfo()
+    public void sendMonsterInfo()
     {
         broadcast(_packet);
     }
@@ -291,7 +291,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private void showOdds(L2PcInstance player)
+    public void showOdds(L2PcInstance player)
     {
         if (_state == ACCEPTING_BETS)
         {
@@ -314,7 +314,7 @@ public class L2RaceManagerInstance extends L2Npc
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    private void showMonsterInfo(L2PcInstance player)
+    public void showMonsterInfo(L2PcInstance player)
     {
         int npcId = getTemplate().NpcId;
         String filename, search;
@@ -332,7 +332,7 @@ public class L2RaceManagerInstance extends L2Npc
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    private void showBuyTicket(L2PcInstance player, int val)
+    public void showBuyTicket(L2PcInstance player, int val)
     {
         if (_state != ACCEPTING_BETS)
         {
@@ -496,7 +496,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private class RunRace implements Runnable
+    class RunRace implements Runnable
     {
         @Override
         public void run()
@@ -508,7 +508,7 @@ public class L2RaceManagerInstance extends L2Npc
         }
     }
 
-    private class RunEnd implements Runnable
+    class RunEnd implements Runnable
     {
         @Override
         public void run()

@@ -105,7 +105,7 @@ public class L2Territory
         }
     }
 
-    private boolean isIntersect(int x, int y, Point p1, Point p2)
+    public boolean isIntersect(int x, int y, Point p1, Point p2)
     {
         double dy1 = p1._y - y;
         double dy2 = p2._y - y;
@@ -133,7 +133,7 @@ public class L2Territory
         return dx0 <= dx1;
     }
 
-    private boolean isInside(int x, int y)
+    public boolean isInside(int x, int y)
     {
         int intersect_count = 0;
         for (int i = 0; i < _points.size(); i++)

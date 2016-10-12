@@ -399,6 +399,6 @@ public class MailManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MailManager _instance = new MailManager();
+        protected static final MailManager _instance = new MailManager();
     }
 }

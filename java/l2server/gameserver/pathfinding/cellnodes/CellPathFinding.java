@@ -423,6 +423,6 @@ public class CellPathFinding extends PathFinding
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CellPathFinding _instance = new CellPathFinding();
+        protected static final CellPathFinding _instance = new CellPathFinding();
     }
 }

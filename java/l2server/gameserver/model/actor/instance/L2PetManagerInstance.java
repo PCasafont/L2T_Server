@@ -181,7 +181,7 @@ public class L2PetManagerInstance extends L2MerchantInstance
         }
     }
 
-    private void exchange(L2PcInstance player, int itemIdtake, int itemIdgive)
+    public final void exchange(L2PcInstance player, int itemIdtake, int itemIdgive)
     {
         NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
         if (player.destroyItemByItemId("Consume", itemIdtake, 1, this, true))

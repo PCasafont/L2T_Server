@@ -582,7 +582,7 @@ public class CharEffectList
      *
      * @return
      */
-    private int getActivationCount()
+    public int getActivationCount()
     {
         if (_buffs == null)
         {
@@ -1005,7 +1005,7 @@ public class CharEffectList
         }
     }
 
-    private void removeEffectFromQueue(L2Abnormal effect)
+    protected void removeEffectFromQueue(L2Abnormal effect)
     {
         if (effect == null)
         {
@@ -1111,7 +1111,7 @@ public class CharEffectList
         }
     }
 
-    private void addEffectFromQueue(L2Abnormal newEffect)
+    protected void addEffectFromQueue(L2Abnormal newEffect)
     {
         if (newEffect == null)
         {
@@ -1503,7 +1503,7 @@ public class CharEffectList
         }
     }
 
-    private void updateEffectIcons()
+    protected void updateEffectIcons()
     {
         if (_owner == null)
         {
@@ -1704,7 +1704,7 @@ public class CharEffectList
         }
     }
 
-    private void updateEffectFlags()
+    protected void updateEffectFlags()
     {
         boolean foundRemovedOnAction = false;
         boolean foundRemovedOnDamage = false;

@@ -42,10 +42,10 @@ import java.util.logging.LogRecord;
  */
 abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 {
-    private OlympiadParticipant _playerOne;
-    private OlympiadParticipant _playerTwo;
+    protected OlympiadParticipant _playerOne;
+    protected OlympiadParticipant _playerTwo;
 
-    OlympiadGameNormal(int id, OlympiadParticipant[] opponents)
+    protected OlympiadGameNormal(int id, OlympiadParticipant[] opponents)
     {
         super(id);
 
@@ -56,7 +56,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
         _playerTwo.player.setOlympiadGameId(id);
     }
 
-    static final OlympiadParticipant[] createListOfParticipants(List<Integer> list)
+    protected static final OlympiadParticipant[] createListOfParticipants(List<Integer> list)
     {
         if (list == null || list.isEmpty() || list.size() < 2)
         {
@@ -839,7 +839,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
     {
     }
 
-    private static void saveResults(OlympiadParticipant one, OlympiadParticipant two, int _winner, long _startTime, long _fightTime, CompetitionType type)
+    protected static final void saveResults(OlympiadParticipant one, OlympiadParticipant two, int _winner, long _startTime, long _fightTime, CompetitionType type)
     {
         Connection con = null;
         try

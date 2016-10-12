@@ -29,7 +29,7 @@ public class ImagesTable
 {
     private static final Map<String, ImageIcon> IMAGES = new HashMap<String, ImageIcon>();
 
-    private static final String IMAGES_DIRECTORY = "../images/";
+    public static final String IMAGES_DIRECTORY = "../images/";
 
     public static ImageIcon getImage(String name)
     {

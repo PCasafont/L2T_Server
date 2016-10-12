@@ -25,7 +25,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2NpcInstance extends L2Npc
 {
-    L2NpcInstance(int objectId, L2NpcTemplate template)
+    public L2NpcInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2NpcInstance);

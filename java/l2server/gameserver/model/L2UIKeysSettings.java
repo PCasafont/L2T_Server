@@ -38,10 +38,10 @@ public class L2UIKeysSettings
 
     private final L2PcInstance _player;
 
-    private Map<Integer, List<ActionKey>> _storedKeys;
-    private Map<Integer, List<Integer>> _storedCategories;
+    Map<Integer, List<ActionKey>> _storedKeys;
+    Map<Integer, List<Integer>> _storedCategories;
 
-    private boolean _saved = true;
+    boolean _saved = true;
 
     public L2UIKeysSettings(L2PcInstance player)
     {
@@ -78,7 +78,7 @@ public class L2UIKeysSettings
         return _storedKeys;
     }
 
-    private void loadFromDB()
+    public void loadFromDB()
     {
         getCatsFromDB();
         getKeysFromDB();
@@ -158,7 +158,7 @@ public class L2UIKeysSettings
         _saved = true;
     }
 
-    private void getCatsFromDB()
+    public void getCatsFromDB()
     {
 
         if (_storedCategories != null)
@@ -201,7 +201,7 @@ public class L2UIKeysSettings
         }
     }
 
-    private void getKeysFromDB()
+    public void getKeysFromDB()
     {
         if (_storedKeys != null)
         {
@@ -247,7 +247,7 @@ public class L2UIKeysSettings
         }
     }
 
-    private void insertCategory(int cat, int cmd)
+    public void insertCategory(int cat, int cmd)
     {
         if (_storedCategories.containsKey(cat))
         {
@@ -261,7 +261,7 @@ public class L2UIKeysSettings
         }
     }
 
-    private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
+    public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
     {
         ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
         if (_storedKeys.containsKey(cat))

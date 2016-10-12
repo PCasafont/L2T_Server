@@ -48,7 +48,7 @@ public class DayNightSpawnManager
     /**
      * Spawn Day Creatures, and Unspawn Night Creatures
      */
-    private void spawnDayCreatures()
+    public void spawnDayCreatures()
     {
         SpawnTable.getInstance().spawnSpecificTable("day_spawns");
 
@@ -58,7 +58,7 @@ public class DayNightSpawnManager
     /**
      * Spawn Night Creatures, and Unspawn Day Creatures
      */
-    private void spawnNightCreatures()
+    public void spawnNightCreatures()
     {
         SpawnTable.getInstance().spawnSpecificTable("night_spawns");
 
@@ -103,7 +103,7 @@ public class DayNightSpawnManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final DayNightSpawnManager _instance = new DayNightSpawnManager();
+        protected static final DayNightSpawnManager _instance = new DayNightSpawnManager();
     }
 
     public void cleanUp()

@@ -546,7 +546,7 @@ public class MercTicketManager
     };
 
     //TODO: not retail like: clan lvl 5 - 30 ticks max, lvl 7+ - 50 max
-    static final int[] MERCS_MAX_PER_CASTLE = {
+    protected static final int[] MERCS_MAX_PER_CASTLE = {
             100, // Gludio
             150, // Dion
             200, // Giran
@@ -1839,7 +1839,7 @@ public class MercTicketManager
         return ITEM_IDS;
     }
 
-    private List<L2ItemInstance> getDroppedTickets()
+    public final List<L2ItemInstance> getDroppedTickets()
     {
         if (_droppedTickets == null)
         {
@@ -1858,6 +1858,6 @@ public class MercTicketManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MercTicketManager _instance = new MercTicketManager();
+        protected static final MercTicketManager _instance = new MercTicketManager();
     }
 }

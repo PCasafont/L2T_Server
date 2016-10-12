@@ -45,7 +45,7 @@ public final class L2ArmorSet
      * @param player whose inventory is being checked
      * @return True if player equips whole set
      */
-    private boolean containsAll(L2PcInstance player)
+    public boolean containsAll(L2PcInstance player)
     {
         return countMissingParts(player) == 0;
     }

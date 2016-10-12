@@ -44,7 +44,7 @@ public class Die extends L2GameServerPacket
     private boolean _sweepable;
     private boolean _allowFixedRess;
     private L2Clan _clan;
-    private L2Character _activeChar;
+    L2Character _activeChar;
 
     /**
      * @param cha

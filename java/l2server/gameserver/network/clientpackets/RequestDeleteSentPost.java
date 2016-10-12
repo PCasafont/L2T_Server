@@ -34,7 +34,7 @@ public final class RequestDeleteSentPost extends L2GameClientPacket
 
     private static final int BATCH_LENGTH = 4; // length of the one item
 
-    private int[] _msgIds = null;
+    int[] _msgIds = null;
 
     @Override
     protected void readImpl()

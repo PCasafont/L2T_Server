@@ -53,7 +53,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
      * @param objectId      Identifier of the object to initialized
      * @param L2NpcTemplate Template to apply to the NPC
      */
-    L2RaidBossInstance(int objectId, L2NpcTemplate template)
+    public L2RaidBossInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2RaidBossInstance);
@@ -141,7 +141,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
         }, 60000, getMaintenanceInterval() + Rnd.get(5000));
     }
 
-    private void checkAndReturnToSpawn()
+    protected void checkAndReturnToSpawn()
     {
         if (isDead() || isMovementDisabled())
         {

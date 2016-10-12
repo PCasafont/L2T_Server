@@ -217,7 +217,7 @@ public final class ItemAuctionInstance
         return null;
     }
 
-    private void checkAndSetCurrentAndNextAuction()
+    final void checkAndSetCurrentAndNextAuction()
     {
         final ItemAuction[] auctions = _auctions.getValues(new ItemAuction[_auctions.size()]);
 
@@ -368,7 +368,7 @@ public final class ItemAuctionInstance
         return stack.toArray(new ItemAuction[stack.size()]);
     }
 
-    private ItemAuction[] getAuctions()
+    public final ItemAuction[] getAuctions()
     {
         final ItemAuction[] auctions;
 
@@ -498,7 +498,7 @@ public final class ItemAuctionInstance
         }
     }
 
-    private void onAuctionFinished(final ItemAuction auction)
+    final void onAuctionFinished(final ItemAuction auction)
     {
         auction.broadcastToAllBiddersInternal(
                 SystemMessage.getSystemMessage(SystemMessageId.S1_AUCTION_ENDED).addNumber(auction.getAuctionId()));
@@ -538,7 +538,7 @@ public final class ItemAuctionInstance
         }
     }
 
-    private void setStateTask(final ScheduledFuture<?> future)
+    final void setStateTask(final ScheduledFuture<?> future)
     {
         final ScheduledFuture<?> stateTask = _stateTask;
         if (stateTask != null)

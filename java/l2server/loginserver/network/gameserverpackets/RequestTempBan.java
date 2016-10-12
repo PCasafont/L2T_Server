@@ -29,10 +29,8 @@ import java.sql.SQLException;
  */
 public class RequestTempBan extends BaseRecievePacket
 {
-    private String _accountName;
-    private String _banReason;
-    private String _ip;
-    private long _banTime;
+    String _accountName, _banReason, _ip;
+    long _banTime;
 
     /**
      * @param decrypt

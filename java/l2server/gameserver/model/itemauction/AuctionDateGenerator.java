@@ -23,12 +23,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author Forsaiken
  */
-final class AuctionDateGenerator
+public final class AuctionDateGenerator
 {
-    private static final String FIELD_INTERVAL = "interval";
-    private static final String FIELD_DAY_OF_WEEK = "day_of_week";
-    private static final String FIELD_HOUR_OF_DAY = "hour_of_day";
-    private static final String FIELD_MINUTE_OF_HOUR = "minute_of_hour";
+    public static final String FIELD_INTERVAL = "interval";
+    public static final String FIELD_DAY_OF_WEEK = "day_of_week";
+    public static final String FIELD_HOUR_OF_DAY = "hour_of_day";
+    public static final String FIELD_MINUTE_OF_HOUR = "minute_of_hour";
 
     private static final long MILLIS_IN_WEEK = TimeUnit.MILLISECONDS.convert(7, TimeUnit.DAYS);
 

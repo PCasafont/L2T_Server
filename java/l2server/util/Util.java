@@ -116,7 +116,7 @@ public class Util
         return result.toString();
     }
 
-    private static String fillHex(int data, int digits)
+    public static String fillHex(int data, int digits)
     {
         String number = Integer.toHexString(data);
 

@@ -37,7 +37,7 @@ public enum BaseStats
     LUC(new LUC()),
     CHA(new CHA());
 
-    private static final int MAX_STAT_VALUE = 300;
+    public static final int MAX_STAT_VALUE = 300;
 
     private static final double[] STRbonus = new double[MAX_STAT_VALUE];
     private static final double[] INTbonus = new double[MAX_STAT_VALUE];
@@ -50,7 +50,7 @@ public enum BaseStats
 
     private final BaseStat _stat;
 
-    private String getValue()
+    public final String getValue()
     {
         return _stat.getClass().getSimpleName();
     }

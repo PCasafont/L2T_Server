@@ -27,7 +27,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestMenteeAdd extends L2GameClientPacket
 {
-    private String _name;
+    String _name;
 
     @Override
     protected void readImpl()

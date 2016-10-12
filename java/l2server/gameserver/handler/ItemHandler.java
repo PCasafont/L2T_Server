@@ -86,6 +86,6 @@ public class ItemHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ItemHandler _instance = new ItemHandler();
+        protected static final ItemHandler _instance = new ItemHandler();
     }
 }

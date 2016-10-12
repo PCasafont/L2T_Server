@@ -50,7 +50,7 @@ public class RaidBossPointsManager
         return SingletonHolder._instance;
     }
 
-    private RaidBossPointsManager()
+    public RaidBossPointsManager()
     {
         init();
     }
@@ -234,6 +234,6 @@ public class RaidBossPointsManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final RaidBossPointsManager _instance = new RaidBossPointsManager();
+        protected static final RaidBossPointsManager _instance = new RaidBossPointsManager();
     }
 }

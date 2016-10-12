@@ -63,6 +63,6 @@ public class HeroSkillTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final HeroSkillTable _instance = new HeroSkillTable();
+        protected static final HeroSkillTable _instance = new HeroSkillTable();
     }
 }

@@ -31,11 +31,11 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 
     private static class Effect
     {
-        int _skillId;
-        int _level;
-        int _comboId;
-        int _duration;
-        int _effector;
+        protected int _skillId;
+        protected int _level;
+        protected int _comboId;
+        protected int _duration;
+        protected int _effector;
 
         public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
         {

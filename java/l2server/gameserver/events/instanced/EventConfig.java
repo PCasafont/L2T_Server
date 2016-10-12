@@ -85,7 +85,7 @@ public class EventConfig
                 _type == EventType.StalkedSalkers || _type == EventType.SimonSays;
     }
 
-    private boolean needsRandomCoords()
+    public boolean needsRandomCoords()
     {
         return spawnsPlayersRandomly() || _type == EventType.LuckyChests;
     }
@@ -107,7 +107,7 @@ public class EventConfig
         return _teamNames[id];
     }
 
-    private boolean selectTeamNames(int name)
+    public boolean selectTeamNames(int name)
     {
         boolean dual = false;
         switch (name)
@@ -187,7 +187,7 @@ public class EventConfig
         _location = location;
     }
 
-    private void selectLocation()
+    public void selectLocation()
     {
         _location = EventsManager.getInstance().getRandomLocation();
 

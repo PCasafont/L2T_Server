@@ -30,7 +30,7 @@ public abstract class IdFactory
 {
 
     @Deprecated
-    static final String[] ID_UPDATES = {
+    protected static final String[] ID_UPDATES = {
             "UPDATE items				 SET owner_id = ?	WHERE owner_id = ?",
             "UPDATE items				 SET object_id = ?   WHERE object_id = ?",
             "UPDATE character_quests	  SET charId = ?	 WHERE charId = ?",
@@ -69,7 +69,7 @@ public abstract class IdFactory
             "UPDATE clanhall			 SET ownerId = ?	   WHERE ownerId = ?"
     };
 
-    static final String[] ID_CHECKS = {
+    protected static final String[] ID_CHECKS = {
             "SELECT owner_id	FROM items				 WHERE object_id >= ?   AND object_id < ?",
             "SELECT object_id   FROM items				 WHERE object_id >= ?   AND object_id < ?",
             "SELECT charId	 FROM character_quests	  WHERE charId >= ?	 AND charId < ?",
@@ -102,15 +102,15 @@ public abstract class IdFactory
             "DELETE FROM character_skills_save WHERE restore_type = 1 AND systime <= ?"
     };
 
-    boolean _initialized;
+    protected boolean _initialized;
 
-    static final int FIRST_OID = 0x10000000;
-    static final int LAST_OID = 0x7FFFFFFF;
-    static final int FREE_OBJECT_ID_SIZE = LAST_OID - FIRST_OID;
+    public static final int FIRST_OID = 0x10000000;
+    public static final int LAST_OID = 0x7FFFFFFF;
+    public static final int FREE_OBJECT_ID_SIZE = LAST_OID - FIRST_OID;
 
-    static final IdFactory _instance;
+    protected static final IdFactory _instance;
 
-    IdFactory()
+    protected IdFactory()
     {
         ThreadPoolManager.getInstance().executeTask(new Runnable()
         {
@@ -299,7 +299,7 @@ public abstract class IdFactory
      * @return
      * @throws SQLException
      */
-    final int[] extractUsedObjectIDTable() throws Exception
+    protected final int[] extractUsedObjectIDTable() throws Exception
     {
         Connection con = null;
 

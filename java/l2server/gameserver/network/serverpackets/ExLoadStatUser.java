@@ -23,7 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExLoadStatUser extends L2GameServerPacket
 {
 
-    private L2PcInstance _player;
+    L2PcInstance _player;
 
     public ExLoadStatUser(L2PcInstance player)
     {

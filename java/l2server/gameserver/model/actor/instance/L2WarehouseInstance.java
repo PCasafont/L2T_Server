@@ -22,7 +22,7 @@ public class L2WarehouseInstance extends L2NpcInstance
     /**
      * @param template
      */
-    L2WarehouseInstance(int objectId, L2NpcTemplate template)
+    public L2WarehouseInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2WarehouseInstance);

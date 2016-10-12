@@ -214,7 +214,7 @@ public class WayPointNode extends L2Object
         nodeB.addLineInfo(nodeA, lineNodes);
     }
 
-    private void addLineInfo(WayPointNode node, List<WayPointNode> line)
+    public void addLineInfo(WayPointNode node, List<WayPointNode> line)
     {
         _linkLists.put(node, line);
     }
@@ -241,7 +241,7 @@ public class WayPointNode extends L2Object
     /**
      * @param target
      */
-    private void eraseLine(WayPointNode target)
+    public void eraseLine(WayPointNode target)
     {
         _linkLists.remove(target);
     }

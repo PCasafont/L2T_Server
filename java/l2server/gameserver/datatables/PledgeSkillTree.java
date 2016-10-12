@@ -36,7 +36,7 @@ public class PledgeSkillTree
 {
     private Map<Long, L2PledgeSkillLearn> _skillTree = new HashMap<Long, L2PledgeSkillLearn>();
 
-    private PledgeSkillTree()
+    public PledgeSkillTree()
     {
         load();
     }
@@ -165,6 +165,6 @@ public class PledgeSkillTree
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final PledgeSkillTree _instance = new PledgeSkillTree();
+        protected static final PledgeSkillTree _instance = new PledgeSkillTree();
     }
 }

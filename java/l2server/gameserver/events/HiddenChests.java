@@ -25,7 +25,7 @@ import l2server.util.Rnd;
  */
 public class HiddenChests
 {
-    private static HiddenChests _instance = null;
+    public static HiddenChests _instance = null;
 
     private static final int SPECIAL_CHEST_COUNT = 5;
     private L2Spawn[] _specialChestSpawns = new L2Spawn[SPECIAL_CHEST_COUNT];
@@ -126,7 +126,7 @@ public class HiddenChests
         }
     }
 
-    private void moveChest(L2Npc chest, final boolean delayed)
+    public void moveChest(L2Npc chest, final boolean delayed)
     {
         if (chest == null)
         {

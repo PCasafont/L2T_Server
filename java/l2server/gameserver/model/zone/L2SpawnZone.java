@@ -32,7 +32,7 @@ public abstract class L2SpawnZone extends L2ZoneType
     private List<Location> _spawnLocs = null;
     private List<Location> _chaoticSpawnLocs = null;
 
-    protected L2SpawnZone(int id)
+    public L2SpawnZone(int id)
     {
         super(id);
     }

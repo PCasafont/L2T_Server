@@ -28,14 +28,14 @@ import java.util.ResourceBundle.Control;
  */
 public class LanguageControl extends Control
 {
-    private static final String LANGUAGES_DIRECTORY = "../languages/";
+    public static final String LANGUAGES_DIRECTORY = "../languages/";
 
     public static final LanguageControl INSTANCE = new LanguageControl();
 
     /**
      * prevent instancing, allows sub-classing
      */
-    private LanguageControl()
+    protected LanguageControl()
     {
 
     }

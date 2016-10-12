@@ -25,7 +25,7 @@ import org.python.util.PythonInterpreter;
  */
 public class TaskJython extends Task
 {
-    private static final String NAME = "jython";
+    public static final String NAME = "jython";
     private final PythonInterpreter _python = new PythonInterpreter();
 
     /**

@@ -61,12 +61,12 @@ public class OlympiadGameManager implements Runnable
         return SingletonHolder._instance;
     }
 
-    final boolean isBattleStarted()
+    protected final boolean isBattleStarted()
     {
         return _battleStarted;
     }
 
-    final void startBattle()
+    protected final void startBattle()
     {
         _battleStarted = true;
     }
@@ -166,7 +166,7 @@ public class OlympiadGameManager implements Runnable
         }
     }
 
-    private boolean isAllTasksFinished()
+    public final boolean isAllTasksFinished()
     {
         for (OlympiadGameTask task : _tasks)
         {
@@ -216,6 +216,6 @@ public class OlympiadGameManager implements Runnable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final OlympiadGameManager _instance = new OlympiadGameManager();
+        protected static final OlympiadGameManager _instance = new OlympiadGameManager();
     }
 }

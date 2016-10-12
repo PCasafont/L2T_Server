@@ -24,7 +24,7 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionInfo;
 public final class RequestCommissionInfo extends L2GameClientPacket
 {
 
-    private int _itemOID;
+    int _itemOID;
 
     @Override
     protected void readImpl()

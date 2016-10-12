@@ -24,9 +24,9 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2CastleWarehouseInstance extends L2WarehouseInstance
 {
-    private static final int COND_ALL_FALSE = 0;
-    private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
-    private static final int COND_OWNER = 2;
+    protected static final int COND_ALL_FALSE = 0;
+    protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
+    protected static final int COND_OWNER = 2;
 
     /**
      * @param template
@@ -76,7 +76,7 @@ public class L2CastleWarehouseInstance extends L2WarehouseInstance
         player.sendPacket(html);
     }
 
-    private int validateCondition(L2PcInstance player)
+    protected int validateCondition(L2PcInstance player)
     {
         if (player.isGM())
         {

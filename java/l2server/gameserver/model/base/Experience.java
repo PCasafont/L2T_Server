@@ -38,7 +38,7 @@ public class Experience
         reload();
     }
 
-    private static void reload()
+    public static void reload()
     {
         Map<Integer, Long> levels = new HashMap<Integer, Long>();
         int maxLevel = 0;

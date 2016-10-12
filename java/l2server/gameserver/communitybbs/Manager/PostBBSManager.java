@@ -276,6 +276,6 @@ public class PostBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        static final PostBBSManager _instance = new PostBBSManager();
+        protected static final PostBBSManager _instance = new PostBBSManager();
     }
 }

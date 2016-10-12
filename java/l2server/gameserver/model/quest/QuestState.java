@@ -141,7 +141,7 @@ public final class QuestState
      *
      * @return
      */
-    private boolean isCreated()
+    public boolean isCreated()
     {
         return getState() == State.CREATED;
     }
@@ -248,7 +248,7 @@ public final class QuestState
      * @param val : String indicating the value of the variable for quest
      * @return String (equal to parameter "val")
      */
-    private String set(String var, String val)
+    public String set(String var, String val)
     {
         if (_vars == null)
         {
@@ -418,7 +418,7 @@ public final class QuestState
      * @param var : String designating the variable for the quest to be deleted
      * @return String pointing out the previous value associated with the variable "var"
      */
-    private String unset(String var)
+    public String unset(String var)
     {
         if (_vars == null)
         {
@@ -610,7 +610,7 @@ public final class QuestState
      * @param itemId : ID of the item wanted to be count
      * @return long
      */
-    private long getQuestItemsCount(int itemId)
+    public long getQuestItemsCount(int itemId)
     {
         long count = 0;
 
@@ -767,7 +767,7 @@ public final class QuestState
         giveItems(itemId, count, 0);
     }
 
-    private void giveItems(int itemId, long count, int enchantlevel)
+    public void giveItems(int itemId, long count, int enchantlevel)
     {
         if (count <= 0)
         {
@@ -900,7 +900,7 @@ public final class QuestState
         return dropQuestItems(itemId, count, count, neededCount, dropChance, sound);
     }
 
-    private boolean dropQuestItems(int itemId, int minCount, int maxCount, long neededCount, int dropChance, boolean sound)
+    public boolean dropQuestItems(int itemId, int minCount, int maxCount, long neededCount, int dropChance, boolean sound)
     {
         dropChance *=
                 Config.RATE_QUEST_DROP / (getPlayer().getParty() != null ? getPlayer().getParty().getMemberCount() : 1);
@@ -994,7 +994,7 @@ public final class QuestState
      * @param itemId : Identifier of the item
      * @param count  : Quantity of items to destroy
      */
-    private void takeItems(int itemId, long count)
+    public void takeItems(int itemId, long count)
     {
         // Get object item from player's inventory list
         L2ItemInstance item = getPlayer().getInventory().getItemByItemId(itemId);
@@ -1030,7 +1030,7 @@ public final class QuestState
      *
      * @param sound
      */
-    private void playSound(String sound)
+    public void playSound(String sound)
     {
         getPlayer().sendPacket(new PlaySound(sound));
     }
@@ -1187,7 +1187,7 @@ public final class QuestState
      * It could be either the player, or any killed/attacked mob
      * Return object id of newly spawned npc
      */
-    private L2Npc addSpawn(int npcId, L2Character cha, boolean randomOffset, int despawnDelay)
+    public L2Npc addSpawn(int npcId, L2Character cha, boolean randomOffset, int despawnDelay)
     {
         return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), randomOffset, despawnDelay);
     }
@@ -1196,7 +1196,7 @@ public final class QuestState
      * Add spawn for player instance
      * Return object id of newly spawned npc
      */
-    private L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay)
+    public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay)
     {
         return getQuest().addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false);
     }

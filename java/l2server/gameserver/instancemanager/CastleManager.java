@@ -188,7 +188,7 @@ public class CastleManager implements InstanceListManager
         return getCastleIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
     }
 
-    private int getCastleIndex(int x, int y, int z)
+    public final int getCastleIndex(int x, int y, int z)
     {
         Castle castle;
         for (int i = 0; i < getCastles().size(); i++)
@@ -223,14 +223,14 @@ public class CastleManager implements InstanceListManager
         }
     }
 
-    private int _castleId = 1; // from this castle
+    int _castleId = 1; // from this castle
 
     public int getCirclet()
     {
         return getCircletByCastleId(_castleId);
     }
 
-    private int getCircletByCastleId(int castleId)
+    public int getCircletByCastleId(int castleId)
     {
         if (castleId > 0 && castleId < 10)
         {
@@ -366,6 +366,6 @@ public class CastleManager implements InstanceListManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CastleManager _instance = new CastleManager();
+        protected static final CastleManager _instance = new CastleManager();
     }
 }

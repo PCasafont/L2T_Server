@@ -641,6 +641,6 @@ public class ClanRecruitManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ClanRecruitManager _instance = new ClanRecruitManager();
+        protected static final ClanRecruitManager _instance = new ClanRecruitManager();
     }
 }

@@ -38,7 +38,7 @@ import java.util.logging.Level;
  */
 public class ItemsOnGroundManager
 {
-    private List<L2ItemInstance> _items = null;
+    protected List<L2ItemInstance> _items = null;
     private final StoreInDb _task = new StoreInDb();
 
     private ItemsOnGroundManager()
@@ -202,7 +202,7 @@ public class ItemsOnGroundManager
         _items.clear();
     }
 
-    private void emptyTable()
+    public void emptyTable()
     {
         Connection conn = null;
         try
@@ -222,7 +222,7 @@ public class ItemsOnGroundManager
         }
     }
 
-    class StoreInDb extends Thread
+    protected class StoreInDb extends Thread
     {
         @Override
         public synchronized void run()
@@ -319,6 +319,6 @@ public class ItemsOnGroundManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ItemsOnGroundManager _instance = new ItemsOnGroundManager();
+        protected static final ItemsOnGroundManager _instance = new ItemsOnGroundManager();
     }
 }

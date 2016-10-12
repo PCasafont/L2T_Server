@@ -44,7 +44,7 @@ import java.util.logging.Logger;
 
 public class Olympiad
 {
-    private static final Logger _logResults = Logger.getLogger("olympiad");
+    protected static final Logger _logResults = Logger.getLogger("olympiad");
 
     private Map<Integer, OlympiadNobleInfo> _nobles;
     private TIntIntHashMap _noblesRank;
@@ -162,14 +162,14 @@ public class Olympiad
             189
     };
 
-    private static final int COMP_START = Config.ALT_OLY_START_TIME; // 6PM
-    private static final int COMP_MIN = Config.ALT_OLY_MIN; // 00 mins
-    private static final long COMP_PERIOD = Config.ALT_OLY_CPERIOD; // 6 hours
-    private static final long WEEKLY_PERIOD = Config.ALT_OLY_WPERIOD; // 1 week
-    private static final long VALIDATION_PERIOD = 86400000; // 24 hours
+    public static final int COMP_START = Config.ALT_OLY_START_TIME; // 6PM
+    public static final int COMP_MIN = Config.ALT_OLY_MIN; // 00 mins
+    public static final long COMP_PERIOD = Config.ALT_OLY_CPERIOD; // 6 hours
+    public static final long WEEKLY_PERIOD = Config.ALT_OLY_WPERIOD; // 1 week
+    public static final long VALIDATION_PERIOD = 86400000; // 24 hours
 
     public static final int DEFAULT_POINTS = 10;
-    private static final int WEEKLY_POINTS = 10;
+    public static final int WEEKLY_POINTS = 10;
 
     public static final int BASE_INSTANCE_ID = 5000;
 
@@ -178,30 +178,30 @@ public class Olympiad
     public static final String CHAR_ID = "charId";
     public static final String CLASS_ID = "class_id";
     public static final String CHAR_NAME = "char_name";
-    private static final String POINTS = "olympiad_points";
-    private static final String COMP_DONE = "competitions_done";
-    private static final String COMP_WON = "competitions_won";
-    private static final String COMP_LOST = "competitions_lost";
-    private static final String COMP_DRAWN = "competitions_drawn";
-    private static final String COMP_CLASSED = "competitions_classed";
-    private static final String COMP_NONCLASSED = "competitions_nonclassed";
-    private static final String SETTLED = "settled";
+    public static final String POINTS = "olympiad_points";
+    public static final String COMP_DONE = "competitions_done";
+    public static final String COMP_WON = "competitions_won";
+    public static final String COMP_LOST = "competitions_lost";
+    public static final String COMP_DRAWN = "competitions_drawn";
+    public static final String COMP_CLASSED = "competitions_classed";
+    public static final String COMP_NONCLASSED = "competitions_nonclassed";
+    public static final String SETTLED = "settled";
 
-    private long _olympiadEnd;
-    private long _validationEnd;
+    protected long _olympiadEnd;
+    protected long _validationEnd;
 
-    private long _nextWeeklyChange;
-    private int _currentCycle;
+    protected long _nextWeeklyChange;
+    protected int _currentCycle;
     private long _compEnd;
     private Calendar _compStart;
-    static boolean _inCompPeriod = false;
+    protected static boolean _inCompPeriod = false;
     protected static boolean _compStarted = false;
-    private ScheduledFuture<?> _scheduledCompStart;
-    private ScheduledFuture<?> _scheduledCompEnd;
-    private ScheduledFuture<?> _scheduledOlympiadEnd;
-    private ScheduledFuture<?> _scheduledWeeklyTask;
-    private ScheduledFuture<?> _gameManager = null;
-    private ScheduledFuture<?> _gameAnnouncer = null;
+    protected ScheduledFuture<?> _scheduledCompStart;
+    protected ScheduledFuture<?> _scheduledCompEnd;
+    protected ScheduledFuture<?> _scheduledOlympiadEnd;
+    protected ScheduledFuture<?> _scheduledWeeklyTask;
+    protected ScheduledFuture<?> _gameManager = null;
+    protected ScheduledFuture<?> _gameAnnouncer = null;
 
     public static Olympiad getInstance()
     {
@@ -295,7 +295,7 @@ public class Olympiad
         Log.info("Olympiad System: Loaded " + _nobles.size() + " Nobles");
     }
 
-    private void loadNoblesRank()
+    public void loadNoblesRank()
     {
         _noblesRank = new TIntIntHashMap();
         TIntIntHashMap tmpPlace = new TIntIntHashMap();
@@ -360,7 +360,7 @@ public class Olympiad
         }
     }
 
-    private void init()
+    protected void init()
     {
         _compStart = Calendar.getInstance();
         // Make sure that it is on weekend
@@ -391,7 +391,7 @@ public class Olympiad
         loadNoblesRank();
     }
 
-    private class OlympiadEndTask implements Runnable
+    protected class OlympiadEndTask implements Runnable
     {
         @Override
         public void run()
@@ -556,7 +556,7 @@ public class Olympiad
         return 10L;
     }
 
-    private void setNewOlympiadEnd()
+    protected void setNewOlympiadEnd()
     {
         SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_STARTED);
         sm.addNumber(_currentCycle);
@@ -630,7 +630,7 @@ public class Olympiad
         return _compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
     }
 
-    long getMillisToCompEnd()
+    protected long getMillisToCompEnd()
     {
         // if (_compEnd > Calendar.getInstance().getTimeInMillis())
         return _compEnd - Calendar.getInstance().getTimeInMillis();
@@ -662,7 +662,7 @@ public class Olympiad
         }, getMillisToWeekChange(), WEEKLY_PERIOD);
     }
 
-    private synchronized void addWeeklyPoints()
+    protected synchronized void addWeeklyPoints()
     {
         for (Integer nobleId : _nobles.keySet())
         {
@@ -684,7 +684,7 @@ public class Olympiad
     /**
      * Save noblesse data to database
      */
-    private synchronized void saveNobleData()
+    protected synchronized void saveNobleData()
     {
         if (_nobles == null || _nobles.isEmpty())
         {
@@ -762,7 +762,7 @@ public class Olympiad
         GlobalVariablesManager.getInstance().storeVariable("olympiadData", data);
     }
 
-    private void updateMonthlyData()
+    protected void updateMonthlyData()
     {
         Connection con = null;
         try
@@ -866,7 +866,7 @@ public class Olympiad
         return 0;
     }
 
-    private List<String> getClassLeaderBoard(int classId)
+    public List<String> getClassLeaderBoard(int classId)
     {
         // if (_period != 1) return;
 
@@ -997,7 +997,7 @@ public class Olympiad
         return points;
     }
 
-    private int getLastNobleOlympiadPoints(int objId)
+    public int getLastNobleOlympiadPoints(int objId)
     {
         int result = 0;
         Connection con = null;
@@ -1028,7 +1028,7 @@ public class Olympiad
         return result;
     }
 
-    private void deleteNobles()
+    protected void deleteNobles()
     {
         Connection con = null;
 
@@ -1152,6 +1152,6 @@ public class Olympiad
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final Olympiad _instance = new Olympiad();
+        protected static final Olympiad _instance = new Olympiad();
     }
 }

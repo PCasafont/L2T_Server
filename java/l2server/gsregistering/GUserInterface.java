@@ -30,10 +30,10 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 
     private final JFrame _frame;
 
-    private JTableModel _dtm;
-    private JProgressBar _progressBar;
+    JTableModel _dtm;
+    JProgressBar _progressBar;
 
-    private JTable _gsTable;
+    public JTable _gsTable;
 
     public GUserInterface(ResourceBundle bundle)
     {
@@ -182,7 +182,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
     }
 
-    private void refreshServers()
+    protected void refreshServers()
     {
         if (!isLoaded())
         {
@@ -298,7 +298,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         return _frame;
     }
 
-    private class ButtonCellRenderer implements TableCellRenderer
+    class ButtonCellRenderer implements TableCellRenderer
     {
 
         /* (non-Javadoc)

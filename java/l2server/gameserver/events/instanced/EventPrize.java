@@ -26,10 +26,10 @@ import java.util.List;
  */
 public abstract class EventPrize
 {
-    private final float _chance;
-    private final boolean _dependsOnPerformance;
+    protected final float _chance;
+    protected final boolean _dependsOnPerformance;
 
-    EventPrize(XmlNode node)
+    public EventPrize(XmlNode node)
     {
         _chance = node.getFloat("chance");
         _dependsOnPerformance = node.getBool("dependsOnPerformance", false);

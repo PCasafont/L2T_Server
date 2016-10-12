@@ -57,23 +57,23 @@ public class LoginController
     /**
      * Time before kicking the client if he didnt log in yet
      */
-    private final static int LOGIN_TIMEOUT = 600 * 1000;
+    public final static int LOGIN_TIMEOUT = 600 * 1000;
 
     /**
      * Authed Clients on LoginServer
      */
-    private ConcurrentHashMap<String, L2LoginClient> _loginServerClients =
+    protected ConcurrentHashMap<String, L2LoginClient> _loginServerClients =
             new ConcurrentHashMap<String, L2LoginClient>();
 
     private final Map<String, BanInfo> _bannedIps = new HashMap<String, BanInfo>();
 
     private final Map<InetAddress, FailedLoginAttempt> _hackProtection;
 
-    private ScrambledKeyPair[] _keyPairs;
+    protected ScrambledKeyPair[] _keyPairs;
 
     private final Thread _purge;
 
-    private byte[][] _blowfishKeys;
+    protected byte[][] _blowfishKeys;
     private static final int BLOWFISH_KEYS = 20;
 
     public static void load() throws GeneralSecurityException
@@ -313,7 +313,7 @@ public class LoginController
      * @param address The address to be removed from the ban list
      * @return true if the ban was removed, false if there was no ban for this ip
      */
-    private boolean removeBanForAddress(InetAddress address)
+    public boolean removeBanForAddress(InetAddress address)
     {
         return _bannedIps.remove(address.getHostAddress()) != null;
     }
@@ -369,7 +369,7 @@ public class LoginController
         return 0;
     }
 
-    private boolean isAccountInAnyGameServer(String account)
+    public boolean isAccountInAnyGameServer(String account)
     {
         Collection<GameServerInfo> serverList = GameServerTable.getInstance().getRegisteredGameServers().values();
         for (GameServerInfo gsi : serverList)
@@ -620,7 +620,7 @@ public class LoginController
      * @param address
      * @return
      */
-    private boolean loginValid(String user, String password, L2LoginClient client)// throws HackingException
+    public boolean loginValid(String user, String password, L2LoginClient client)// throws HackingException
     {
         boolean ok = false;
         InetAddress address = client.getConnection().getInetAddress();
@@ -1065,7 +1065,7 @@ public class LoginController
         return ok;
     }
 
-    private boolean isValidIPAddress(String ipAddress)
+    public boolean isValidIPAddress(String ipAddress)
     {
         String[] parts = ipAddress.split("\\.");
         if (parts.length != 4)

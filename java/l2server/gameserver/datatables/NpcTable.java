@@ -61,7 +61,7 @@ public class NpcTable
     }
 
     // just wrapper
-    private void reloadAllNpc()
+    public void reloadAllNpc()
     {
         _npcs = new TIntObjectHashMap<L2NpcTemplate>();
 
@@ -874,6 +874,6 @@ public class NpcTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final NpcTable _instance = new NpcTable();
+        protected static final NpcTable _instance = new NpcTable();
     }
 }

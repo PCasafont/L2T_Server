@@ -27,7 +27,7 @@ public class SimonSays extends EventInstance
     private SimonSaysTask _simonSaysTask;
     private ArrayList<Integer> _actedPlayers = new ArrayList<Integer>();
 
-    private List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
+    List<L2PcInstance> _winners = new ArrayList<L2PcInstance>();
 
     public SimonSays(int id, EventConfig config)
     {
@@ -143,7 +143,7 @@ public class SimonSays extends EventInstance
         }
     }
 
-    private void simonSays()
+    public void simonSays()
     {
         _currentSocialActionId = Rnd.get(16) + 2;
         if (_currentSocialActionId > 15)
@@ -218,7 +218,7 @@ public class SimonSays extends EventInstance
         return actionString;
     }
 
-    private void endSimonSaysRound()
+    public void endSimonSaysRound()
     {
         CreatureSay cs = new CreatureSay(0, Say2.TELL, "Instanced Events", "Nice! You passed this round!");
         CreatureSay cs2 = new CreatureSay(0, Say2.TELL, "Instanced Events",
@@ -310,7 +310,7 @@ public class SimonSays extends EventInstance
         }
     }
 
-    private void startSimonSaysTask()
+    public void startSimonSaysTask()
     {
         if (_simonSaysTask != null && !_simonSaysTask.isStopped())
         {

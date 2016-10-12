@@ -93,7 +93,7 @@ public class L2Npc extends L2Character
     /**
      * True if endDecayTask has already been called
      */
-    private volatile boolean _isDecayed = false;
+    volatile boolean _isDecayed = false;
 
     /**
      * The castle index in the array of L2Castle this L2NpcInstance belongs to
@@ -124,7 +124,7 @@ public class L2Npc extends L2Character
 
     private boolean _isRndWalk = false;
 
-    private RandomAnimationTask _rAniTask = null;
+    protected RandomAnimationTask _rAniTask = null;
     private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
     private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
     private int _currentEnchant; // normally this shouldn't change from the template, but there exist exceptions
@@ -135,8 +135,8 @@ public class L2Npc extends L2Character
     public boolean _spiritshotcharged = false;
     private int _soulshotamount = 0;
     private int _spiritshotamount = 0;
-    private boolean _ssrecharged = true;
-    private boolean _spsrecharged = true;
+    public boolean _ssrecharged = true;
+    public boolean _spsrecharged = true;
     protected boolean _isHideName = false;
     private int _displayEffect = 0;
 
@@ -152,25 +152,25 @@ public class L2Npc extends L2Character
     private L2PcInstance _clonedPlayer;
 
     //AI Recall
-    private int getSoulShot()
+    public int getSoulShot()
     {
         L2NpcAIData AI = getTemplate().getAIData();
         return AI.getSoulShot();
     }
 
-    private int getSpiritShot()
+    public int getSpiritShot()
     {
         L2NpcAIData AI = getTemplate().getAIData();
         return AI.getSpiritShot();
     }
 
-    private int getSoulShotChance()
+    public int getSoulShotChance()
     {
         L2NpcAIData AI = getTemplate().getAIData();
         return AI.getSoulShotChance();
     }
 
-    private int getSpiritShotChance()
+    public int getSpiritShotChance()
     {
         L2NpcAIData AI = getTemplate().getAIData();
         return AI.getSpiritShotChance();
@@ -280,7 +280,7 @@ public class L2Npc extends L2Character
         return AI.getSkillChance();
     }
 
-    private boolean canMove()
+    public boolean canMove()
     {
         L2NpcAIData AI = getTemplate().getAIData();
         return AI.canMove();
@@ -530,7 +530,7 @@ public class L2Npc extends L2Character
     /**
      * Send a packet SocialAction to all L2PcInstance in the _KnownPlayers of the L2NpcInstance and create a new RandomAnimation Task.<BR><BR>
      */
-    private void onRandomAnimation(int animationId)
+    public void onRandomAnimation(int animationId)
     {
         // Send a packet SocialAction to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
         long now = System.currentTimeMillis();
@@ -586,7 +586,7 @@ public class L2Npc extends L2Character
     /**
      * Check if the server allows Random Animation.<BR><BR>
      */
-    protected boolean hasRandomAnimation()
+    public boolean hasRandomAnimation()
     {
         return Config.MAX_NPC_ANIMATION > 0 && !getAiType().equals(AIType.CORPSE) &&
                 (getTemplate().getAIData().getMaxSocial(false) != 0 ||
@@ -604,7 +604,7 @@ public class L2Npc extends L2Character
      * @param objectId Identifier of the object to initialized
      * @param template The L2NpcTemplate to apply to the NPC
      */
-    protected L2Npc(int objectId, L2NpcTemplate template)
+    public L2Npc(int objectId, L2NpcTemplate template)
     {
         // Call the L2Character constructor to set the _template of the L2Character, copy skills from template to object
         // and link _calculators to NPC_STD_CALCULATOR
@@ -801,7 +801,7 @@ public class L2Npc extends L2Character
      *
      * @param object The Object to add to _knownObject
      */
-    protected int getDistanceToWatchObject(L2Object object)
+    public int getDistanceToWatchObject(L2Object object)
     {
         if (object instanceof L2NpcInstance || !(object instanceof L2Character))
         {
@@ -853,7 +853,7 @@ public class L2Npc extends L2Character
         return _isAutoAttackable;
     }
 
-    protected void setAutoAttackable(boolean flag)
+    public void setAutoAttackable(boolean flag)
     {
         _isAutoAttackable = flag;
     }
@@ -882,7 +882,7 @@ public class L2Npc extends L2Character
     /**
      * Return the busy status of this L2NpcInstance.<BR><BR>
      */
-    protected final boolean isBusy()
+    public final boolean isBusy()
     {
         return _isBusy;
     }
@@ -898,7 +898,7 @@ public class L2Npc extends L2Character
     /**
      * Return the busy message of this L2NpcInstance.<BR><BR>
      */
-    protected final String getBusyMessage()
+    public final String getBusyMessage()
     {
         return _busyMessage;
     }
@@ -919,7 +919,7 @@ public class L2Npc extends L2Character
         return false;
     }
 
-    protected boolean canTarget(L2PcInstance player)
+    public boolean canTarget(L2PcInstance player)
     {
         if (player.isOutOfControl() || !getTemplate().Targetable)
         {
@@ -1014,7 +1014,7 @@ public class L2Npc extends L2Character
      * @param maxDistance long
      * @return Castle
      */
-    protected final Castle getCastle(long maxDistance)
+    public final Castle getCastle(long maxDistance)
     {
         int index = CastleManager.getInstance().findNearestCastleIndex(this, maxDistance);
 
@@ -1195,7 +1195,7 @@ public class L2Npc extends L2Character
      * @param player  The L2PcInstance who talks with the L2NpcInstance
      * @param content The text of the L2NpcMessage
      */
-    private void insertObjectIdAndShowChatWindow(L2PcInstance player, String content, boolean isQuest)
+    public void insertObjectIdAndShowChatWindow(L2PcInstance player, String content, boolean isQuest)
     {
         // Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
         content = content.replaceAll("%objectId%", String.valueOf(getObjectId()));
@@ -1204,12 +1204,12 @@ public class L2Npc extends L2Character
         player.sendPacket(npcReply);
     }
 
-    protected void insertObjectIdAndShowChatWindow(L2PcInstance player, String content)
+    public void insertObjectIdAndShowChatWindow(L2PcInstance player, String content)
     {
         insertObjectIdAndShowChatWindow(player, content, false);
     }
 
-    protected String getHtmlPath(int npcId, String val)
+    public String getHtmlPath(int npcId, String val)
     {
         if (val.isEmpty())
         {
@@ -1224,7 +1224,7 @@ public class L2Npc extends L2Character
         return getHtmlPathCommon(npcId, val);
     }
 
-    protected String getHtmlPath(int npcId, int val)
+    public String getHtmlPath(int npcId, int val)
     {
         return getHtmlPathCommon(npcId, String.valueOf(val));
     }
@@ -1278,7 +1278,7 @@ public class L2Npc extends L2Character
         return "npcdefault.htm";
     }
 
-    protected void showChatWindow(L2PcInstance player)
+    public void showChatWindow(L2PcInstance player)
     {
         showChatWindow(player, "");
     }
@@ -1306,7 +1306,7 @@ public class L2Npc extends L2Character
         return false;
     }
 
-    protected void showChatWindow(L2PcInstance player, String val)
+    public void showChatWindow(L2PcInstance player, String val)
     {
         if (val.isEmpty())
         {
@@ -1322,7 +1322,7 @@ public class L2Npc extends L2Character
         }
     }
 
-    protected void showChatWindow(L2PcInstance player, int val)
+    public void showChatWindow(L2PcInstance player, int val)
     {
         showChatWindowCommon(player, String.valueOf(val));
     }
@@ -1605,7 +1605,7 @@ public class L2Npc extends L2Character
      * @param player   The L2PcInstance that talk with the L2NpcInstance
      * @param filename The filename that contains the text to send
      */
-    protected void showChatWindowByFileName(L2PcInstance player, String filename)
+    public void showChatWindowByFileName(L2PcInstance player, String filename)
     {
         // Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
         NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -1620,7 +1620,7 @@ public class L2Npc extends L2Character
     /**
      * Return the Exp Reward of this L2NpcInstance contained in the L2NpcTemplate (modified by RATE_XP).<BR><BR>
      */
-    float getExpReward()
+    public float getExpReward()
     {
         return getTemplate().RewardExp * Config.RATE_XP;
     }
@@ -1628,7 +1628,7 @@ public class L2Npc extends L2Character
     /**
      * Return the SP Reward of this L2NpcInstance contained in the L2NpcTemplate (modified by RATE_SP).<BR><BR>
      */
-    int getSpReward()
+    public int getSpReward()
     {
         return (int) (getTemplate().RewardSp * Config.RATE_SP);
     }
@@ -1825,7 +1825,7 @@ public class L2Npc extends L2Character
         }
     }
 
-    boolean isMob() // rather delete this check
+    public boolean isMob() // rather delete this check
     {
         return false; // This means we use MAX_NPC_ANIMATION instead of MAX_MONSTER_ANIMATION
     }
@@ -1857,7 +1857,7 @@ public class L2Npc extends L2Character
         updateAbnormalEffect();
     }
 
-    protected void setHideName(boolean val)
+    public void setHideName(boolean val)
     {
         _isHideName = val;
     }

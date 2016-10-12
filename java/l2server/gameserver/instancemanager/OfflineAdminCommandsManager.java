@@ -30,14 +30,14 @@ public class OfflineAdminCommandsManager
         return SingletonHolder._instance;
     }
 
-    private OfflineAdminCommandsManager()
+    public OfflineAdminCommandsManager()
     {
         loadDummy();
         ThreadPoolManager.getInstance()
                 .scheduleGeneralAtFixedRate(new CheckCommandsTask(), TIME_BETWEEN_CHECKS, TIME_BETWEEN_CHECKS);
     }
 
-    private void loadDummy()
+    public void loadDummy()
     {
         Connection con = null;
 
@@ -69,7 +69,7 @@ public class OfflineAdminCommandsManager
         }
     }
 
-    private void executeCommand(String author, int accessLevel, String command, int date)
+    public void executeCommand(String author, int accessLevel, String command, int date)
     {
         command = "admin_" + command.substring(2);
         String commandName = command.split(" ")[0];
@@ -133,7 +133,7 @@ public class OfflineAdminCommandsManager
         }
     }
 
-    private class CheckCommandsTask implements Runnable
+    public class CheckCommandsTask implements Runnable
     {
         @Override
         public void run()
@@ -182,6 +182,6 @@ public class OfflineAdminCommandsManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final OfflineAdminCommandsManager _instance = new OfflineAdminCommandsManager();
+        protected static final OfflineAdminCommandsManager _instance = new OfflineAdminCommandsManager();
     }
 }

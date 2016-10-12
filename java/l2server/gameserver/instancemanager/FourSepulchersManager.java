@@ -59,16 +59,16 @@ public class FourSepulchersManager
     private static final int CHAPEL_KEY = 7260;
     private static final int ANTIQUE_BROOCH = 7262;
 
-    private boolean _firstTimeRun;
-    private boolean _inEntryTime = false;
-    private boolean _inWarmUpTime = false;
-    private boolean _inAttackTime = false;
-    private boolean _inCoolDownTime = false;
+    protected boolean _firstTimeRun;
+    protected boolean _inEntryTime = false;
+    protected boolean _inWarmUpTime = false;
+    protected boolean _inAttackTime = false;
+    protected boolean _inCoolDownTime = false;
 
-    private ScheduledFuture<?> _changeCoolDownTimeTask = null;
-    private ScheduledFuture<?> _changeEntryTimeTask = null;
-    private ScheduledFuture<?> _changeWarmUpTimeTask = null;
-    private ScheduledFuture<?> _changeAttackTimeTask = null;
+    protected ScheduledFuture<?> _changeCoolDownTimeTask = null;
+    protected ScheduledFuture<?> _changeEntryTimeTask = null;
+    protected ScheduledFuture<?> _changeWarmUpTimeTask = null;
+    protected ScheduledFuture<?> _changeAttackTimeTask = null;
     protected ScheduledFuture<?> _onPartyAnnihilatedTask = null;
 
     private int[][] _startHallSpawn =
@@ -97,39 +97,39 @@ public class FourSepulchersManager
                     {25339, 175591, -72744, -7215, 49317}
             },
             };
-    private HashMap<Integer, Boolean> _archonSpawned = new HashMap<Integer, Boolean>();
-    private HashMap<Integer, Boolean> _hallInUse = new HashMap<Integer, Boolean>();
-    private HashMap<Integer, L2PcInstance> _challengers = new HashMap<Integer, L2PcInstance>();
-    private TIntObjectHashMap<int[]> _startHallSpawns = new TIntObjectHashMap<int[]>();
-    private TIntIntHashMap _hallGateKeepers = new TIntIntHashMap();
-    private TIntIntHashMap _keyBoxNpc = new TIntIntHashMap();
-    private TIntIntHashMap _victim = new TIntIntHashMap();
-    private TIntObjectHashMap<L2Spawn> _executionerSpawns = new TIntObjectHashMap<L2Spawn>();
-    private TIntObjectHashMap<L2Spawn> _keyBoxSpawns = new TIntObjectHashMap<L2Spawn>();
-    private TIntObjectHashMap<L2Spawn> _mysteriousBoxSpawns = new TIntObjectHashMap<L2Spawn>();
-    private TIntObjectHashMap<L2Spawn> _shadowSpawns = new TIntObjectHashMap<L2Spawn>();
-    private TIntObjectHashMap<ArrayList<L2Spawn>> _dukeFinalMobs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
-    private TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _dukeMobs =
+    protected HashMap<Integer, Boolean> _archonSpawned = new HashMap<Integer, Boolean>();
+    protected HashMap<Integer, Boolean> _hallInUse = new HashMap<Integer, Boolean>();
+    protected HashMap<Integer, L2PcInstance> _challengers = new HashMap<Integer, L2PcInstance>();
+    protected TIntObjectHashMap<int[]> _startHallSpawns = new TIntObjectHashMap<int[]>();
+    protected TIntIntHashMap _hallGateKeepers = new TIntIntHashMap();
+    protected TIntIntHashMap _keyBoxNpc = new TIntIntHashMap();
+    protected TIntIntHashMap _victim = new TIntIntHashMap();
+    protected TIntObjectHashMap<L2Spawn> _executionerSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _keyBoxSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _mysteriousBoxSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<L2Spawn> _shadowSpawns = new TIntObjectHashMap<L2Spawn>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _dukeFinalMobs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _dukeMobs =
             new TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>>();
-    private TIntObjectHashMap<ArrayList<L2Spawn>> _emperorsGraveNpcs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
-    private TIntObjectHashMap<ArrayList<L2Spawn>> _magicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
-    private TIntObjectHashMap<ArrayList<L2Spawn>> _physicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
-    private TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _viscountMobs =
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _emperorsGraveNpcs = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _magicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2Spawn>> _physicalMonsters = new TIntObjectHashMap<ArrayList<L2Spawn>>();
+    protected TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>> _viscountMobs =
             new TIntObjectHashMap<ArrayList<L2SepulcherMonsterInstance>>();
 
-    private ArrayList<L2Spawn> _physicalSpawns;
-    private ArrayList<L2Spawn> _magicalSpawns;
-    private ArrayList<L2Spawn> _managers;
-    private ArrayList<L2Spawn> _dukeFinalSpawns;
-    private ArrayList<L2Spawn> _emperorsGraveSpawns;
-    private ArrayList<L2Npc> _allMobs = new ArrayList<L2Npc>();
+    protected ArrayList<L2Spawn> _physicalSpawns;
+    protected ArrayList<L2Spawn> _magicalSpawns;
+    protected ArrayList<L2Spawn> _managers;
+    protected ArrayList<L2Spawn> _dukeFinalSpawns;
+    protected ArrayList<L2Spawn> _emperorsGraveSpawns;
+    protected ArrayList<L2Npc> _allMobs = new ArrayList<L2Npc>();
 
-    private long _attackTimeEnd = 0;
-    private long _coolDownTimeEnd = 0;
-    private long _entryTimeEnd = 0;
-    private long _warmUpTimeEnd = 0;
+    protected long _attackTimeEnd = 0;
+    protected long _coolDownTimeEnd = 0;
+    protected long _entryTimeEnd = 0;
+    protected long _warmUpTimeEnd = 0;
 
-    private byte _newCycleMin = 55;
+    protected byte _newCycleMin = 55;
 
     private FourSepulchersManager()
     {
@@ -189,7 +189,7 @@ public class FourSepulchersManager
     }
 
     // phase select on server launch
-    private void timeSelector()
+    protected void timeSelector()
     {
         timeCalculator();
         long currentTime = Calendar.getInstance().getTimeInMillis();
@@ -229,7 +229,7 @@ public class FourSepulchersManager
     }
 
     // phase end times calculator
-    private void timeCalculator()
+    protected void timeCalculator()
     {
         Calendar tmp = Calendar.getInstance();
         if (tmp.get(Calendar.MINUTE) < _newCycleMin)
@@ -243,7 +243,7 @@ public class FourSepulchersManager
         _attackTimeEnd = _warmUpTimeEnd + Config.FS_TIME_ATTACK * 60000l;
     }
 
-    private void clean()
+    public void clean()
     {
         for (int i = 31921; i < 31925; i++)
         {
@@ -271,7 +271,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void spawnManagers()
+    protected void spawnManagers()
     {
         _managers = new ArrayList<L2Spawn>();
         // L2Spawn spawnDat;
@@ -333,7 +333,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void initFixedInfo()
+    protected void initFixedInfo()
     {
         _startHallSpawns.put(31921, _startHallSpawn[0]);
         _startHallSpawns.put(31922, _startHallSpawn[1]);
@@ -815,7 +815,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void initLocationShadowSpawns()
+    protected void initLocationShadowSpawns()
     {
         int locNo = Rnd.get(4);
         final int[] gateKeeper = {31929, 31934, 31939, 31944};
@@ -854,7 +854,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void initExecutionerSpawns()
+    protected void initExecutionerSpawns()
     {
         L2Spawn spawnDat;
         L2NpcTemplate template;
@@ -889,7 +889,7 @@ public class FourSepulchersManager
         }
     }
 
-    private boolean isEntryTime()
+    public boolean isEntryTime()
     {
         return _inEntryTime;
     }
@@ -1410,7 +1410,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void locationShadowSpawns()
+    protected void locationShadowSpawns()
     {
         int locNo = Rnd.get(4);
         // Logozo.info("FourSepulchersManager.LocationShadowSpawns: Location index
@@ -1453,7 +1453,7 @@ public class FourSepulchersManager
         }
     }
 
-    private void deleteAllMobs()
+    public void deleteAllMobs()
     {
         for (L2Npc mob : _allMobs)
         {
@@ -1478,7 +1478,7 @@ public class FourSepulchersManager
         _allMobs.clear();
     }
 
-    private void closeAllDoors()
+    protected void closeAllDoors()
     {
         for (int doorId : _hallGateKeepers.getValues())
         {
@@ -1501,7 +1501,7 @@ public class FourSepulchersManager
         }
     }
 
-    private byte minuteSelect(byte min)
+    protected byte minuteSelect(byte min)
     {
         if ((double) min % 5 != 0)// if doesn't divides on 5 fully
         {
@@ -1578,7 +1578,7 @@ public class FourSepulchersManager
         return min;
     }
 
-    private void managerSay(byte min)
+    public void managerSay(byte min)
     {
         // for attack phase, sending message every 5 minutes
         if (_inAttackTime)
@@ -1645,7 +1645,7 @@ public class FourSepulchersManager
         }
     }
 
-    private class ManagerSay implements Runnable
+    protected class ManagerSay implements Runnable
     {
         @Override
         public void run()
@@ -1677,7 +1677,7 @@ public class FourSepulchersManager
         }
     }
 
-    private class ChangeEntryTime implements Runnable
+    protected class ChangeEntryTime implements Runnable
     {
         @Override
         public void run()
@@ -1715,7 +1715,7 @@ public class FourSepulchersManager
         }
     }
 
-    private class ChangeWarmUpTime implements Runnable
+    protected class ChangeWarmUpTime implements Runnable
     {
         @Override
         public void run()
@@ -1749,7 +1749,7 @@ public class FourSepulchersManager
         }
     }
 
-    private class ChangeAttackTime implements Runnable
+    protected class ChangeAttackTime implements Runnable
     {
         @Override
         public void run()
@@ -1818,7 +1818,7 @@ public class FourSepulchersManager
         }
     }
 
-    private class ChangeCoolDownTime implements Runnable
+    protected class ChangeCoolDownTime implements Runnable
     {
         @Override
         public void run()
@@ -1862,7 +1862,7 @@ public class FourSepulchersManager
         return _hallGateKeepers;
     }
 
-    private void showHtmlFile(L2PcInstance player, String file, L2Npc npc, L2PcInstance member)
+    public void showHtmlFile(L2PcInstance player, String file, L2Npc npc, L2PcInstance member)
     {
         NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
         html.setFile(player.getHtmlPrefix(), "SepulcherNpc/" + file);
@@ -1876,6 +1876,6 @@ public class FourSepulchersManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final FourSepulchersManager _instance = new FourSepulchersManager();
+        protected static final FourSepulchersManager _instance = new FourSepulchersManager();
     }
 }

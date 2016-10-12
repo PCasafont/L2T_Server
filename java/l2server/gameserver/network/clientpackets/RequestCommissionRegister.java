@@ -26,11 +26,11 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionRegister;
  */
 public final class RequestCommissionRegister extends L2GameClientPacket
 {
-    private int _itemOID;
-    private String _itemName;
-    private long _price;
-    private long _count;
-    private int _duration;
+    int _itemOID;
+    String _itemName;
+    long _price;
+    long _count;
+    int _duration;
 
     @Override
     protected void readImpl()

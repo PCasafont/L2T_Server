@@ -23,11 +23,7 @@ import l2server.gameserver.model.actor.L2Character;
 public class ExStopMoveAirShip extends L2GameServerPacket
 {
     // store coords here because they can be changed from other threads
-    private final int _objectId;
-    private final int _x;
-    private final int _y;
-    private final int _z;
-    private final int _heading;
+    final int _objectId, _x, _y, _z, _heading;
 
     public ExStopMoveAirShip(L2Character ship)
     {

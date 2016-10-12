@@ -65,11 +65,11 @@ public class CursedWeapon
     private long _endTime = 0;
 
     private int _playerId = 0;
-    private L2PcInstance _player = null;
+    protected L2PcInstance _player = null;
     private L2ItemInstance _item = null;
     private int _playerKarma = 0;
     private int _playerPkKills = 0;
-    private int transformationId = 0;
+    protected int transformationId = 0;
 
     private static final int[] TRANSFORM_IDS = new int[]{3630, 3631};
 
@@ -249,7 +249,7 @@ public class CursedWeapon
 
     private class RemoveTask implements Runnable
     {
-        RemoveTask()
+        protected RemoveTask()
         {
         }
 
@@ -363,7 +363,7 @@ public class CursedWeapon
         _player.sendSkillList();
     }
 
-    private void doTransform()
+    public void doTransform()
     {
         if (_itemId == 8689)
         {
@@ -393,7 +393,7 @@ public class CursedWeapon
         }
     }
 
-    private void removeSkill()
+    public void removeSkill()
     {
         _player.removeSkill(_skillId);
         _player.removeSkill(SkillTable.FrequentSkill.VOID_BURST.getSkill().getId());
@@ -747,7 +747,7 @@ public class CursedWeapon
         }
     }
 
-    private long getTimeLeft()
+    public long getTimeLeft()
     {
         return _endTime - System.currentTimeMillis();
     }

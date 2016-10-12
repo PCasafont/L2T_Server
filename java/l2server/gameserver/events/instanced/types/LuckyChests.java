@@ -278,7 +278,7 @@ public class LuckyChests extends EventInstance
         _chestsSpawned = false;
     }
 
-    private class UnspawnChestsTask implements Runnable
+    class UnspawnChestsTask implements Runnable
     {
         @Override
         @SuppressWarnings("synthetic-access")

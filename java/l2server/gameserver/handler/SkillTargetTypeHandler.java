@@ -63,6 +63,6 @@ public class SkillTargetTypeHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final SkillTargetTypeHandler _instance = new SkillTargetTypeHandler();
+        protected static final SkillTargetTypeHandler _instance = new SkillTargetTypeHandler();
     }
 }

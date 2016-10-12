@@ -40,7 +40,7 @@ import java.util.ResourceBundle;
 /**
  * @author KenM
  */
-abstract class BaseGameServerRegister
+public abstract class BaseGameServerRegister
 {
     private boolean _loaded = false;
     private ResourceBundle _bundle;
@@ -282,12 +282,12 @@ abstract class BaseGameServerRegister
         }
     }
 
-    BaseGameServerRegister(ResourceBundle bundle)
+    public BaseGameServerRegister(ResourceBundle bundle)
     {
         setBundle(bundle);
     }
 
-    void load()
+    public void load()
     {
         try
         {
@@ -306,7 +306,7 @@ abstract class BaseGameServerRegister
      *
      * @throws Exception
      */
-    private void loadImp() throws Exception
+    protected void loadImp() throws Exception
     {
         ServerMode.serverMode = ServerMode.MODE_LOGINSERVER;
 
@@ -316,7 +316,7 @@ abstract class BaseGameServerRegister
         _loaded = true;
     }
 
-    boolean isLoaded()
+    public boolean isLoaded()
     {
         return _loaded;
     }
@@ -324,7 +324,7 @@ abstract class BaseGameServerRegister
     /**
      * @param bundle The bundle to set.
      */
-    private void setBundle(ResourceBundle bundle)
+    public void setBundle(ResourceBundle bundle)
     {
         _bundle = bundle;
     }
@@ -337,13 +337,13 @@ abstract class BaseGameServerRegister
         return _bundle;
     }
 
-    protected abstract void showError(String msg, Throwable t);
+    public abstract void showError(String msg, Throwable t);
 
     /**
      * @param id
      * @throws SQLException
      */
-    static void unregisterGameServer(int id) throws SQLException
+    public static void unregisterGameServer(int id) throws SQLException
     {
         Connection con = null;
         PreparedStatement statement = null;
@@ -363,7 +363,7 @@ abstract class BaseGameServerRegister
         }
     }
 
-    static void unregisterAllGameServers() throws SQLException
+    public static void unregisterAllGameServers() throws SQLException
     {
         Connection con = null;
         PreparedStatement statement = null;
@@ -409,7 +409,7 @@ abstract class BaseGameServerRegister
         out.close();
     }
 
-    private static int registerFirstAvailable(String outDir) throws IOException
+    public static int registerFirstAvailable(String outDir) throws IOException
     {
         for (Entry<Integer, String> e : GameServerTable.getInstance().getServerNames().entrySet())
         {
@@ -579,7 +579,7 @@ abstract class BaseGameServerRegister
         }
     }
 
-    private static class UnregisterAllTask extends BaseTask
+    static class UnregisterAllTask extends BaseTask
     {
         /**
          * @see java.lang.Runnable#run()

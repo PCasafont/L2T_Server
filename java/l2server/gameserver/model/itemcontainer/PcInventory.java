@@ -954,7 +954,7 @@ public class PcInventory extends Inventory
      * @param items array of Ids to block/allow
      * @param mode  blocking mode {@link PcInventory#_blockMode}
      */
-    private void setInventoryBlock(int[] items, int mode)
+    public void setInventoryBlock(int[] items, int mode)
     {
         _blockMode = mode;
         _blockItems = items;

@@ -21,7 +21,7 @@ public class ResidentialSkillTable
     private static ResidentialSkillTable _instance = null;
     private static TIntObjectHashMap<ArrayList<L2Skill>> _list;
 
-    private ResidentialSkillTable()
+    ResidentialSkillTable()
     {
         load();
     }

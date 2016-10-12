@@ -164,6 +164,6 @@ public final class ItemAuctionManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ItemAuctionManager _instance = new ItemAuctionManager();
+        protected static final ItemAuctionManager _instance = new ItemAuctionManager();
     }
 }

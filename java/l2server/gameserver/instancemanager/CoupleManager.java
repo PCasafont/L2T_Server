@@ -149,7 +149,7 @@ public class CoupleManager
         }
     }
 
-    private int getCoupleIndex(int coupleId)
+    public final int getCoupleIndex(int coupleId)
     {
         int i = 0;
         for (Couple temp : getCouples())
@@ -175,6 +175,6 @@ public class CoupleManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CoupleManager _instance = new CoupleManager();
+        protected static final CoupleManager _instance = new CoupleManager();
     }
 }

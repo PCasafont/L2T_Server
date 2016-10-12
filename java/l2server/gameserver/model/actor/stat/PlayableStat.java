@@ -112,7 +112,7 @@ public class PlayableStat extends CharStat
         return true;
     }
 
-    boolean addExpAndSp(long addToExp, long addToSp)
+    public boolean addExpAndSp(long addToExp, long addToSp)
     {
         boolean expAdded = false;
         boolean spAdded = false;
@@ -128,7 +128,7 @@ public class PlayableStat extends CharStat
         return expAdded || spAdded;
     }
 
-    boolean removeExpAndSp(long removeExp, long removeSp)
+    public boolean removeExpAndSp(long removeExp, long removeSp)
     {
         boolean expRemoved = false;
         boolean spRemoved = false;
@@ -144,7 +144,7 @@ public class PlayableStat extends CharStat
         return expRemoved || spRemoved;
     }
 
-    boolean addLevel(byte value)
+    public boolean addLevel(byte value)
     {
         if (getLevel() + value > getMaxLevel())
         {
@@ -185,7 +185,7 @@ public class PlayableStat extends CharStat
         return true;
     }
 
-    boolean addSp(long value)
+    public boolean addSp(long value)
     {
         if (value < 0)
         {
@@ -208,7 +208,7 @@ public class PlayableStat extends CharStat
         return true;
     }
 
-    private boolean removeSp(long value)
+    public boolean removeSp(long value)
     {
         long currentSp = getSp();
         if (currentSp < value)
@@ -219,7 +219,7 @@ public class PlayableStat extends CharStat
         return true;
     }
 
-    long getExpForLevel(int level)
+    public long getExpForLevel(int level)
     {
         return level;
     }
@@ -250,7 +250,7 @@ public class PlayableStat extends CharStat
         return (L2Playable) super.getActiveChar();
     }
 
-    int getMaxLevel()
+    public int getMaxLevel()
     {
         return Config.MAX_LEVEL;
     }

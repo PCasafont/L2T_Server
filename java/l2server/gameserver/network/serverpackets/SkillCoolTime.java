@@ -26,7 +26,7 @@ import java.util.Iterator;
  */
 public class SkillCoolTime extends L2GameServerPacket
 {
-    private Collection<TimeStamp> _reuseTimeStamps;
+    public Collection<TimeStamp> _reuseTimeStamps;
 
     public SkillCoolTime(L2PcInstance cha)
     {

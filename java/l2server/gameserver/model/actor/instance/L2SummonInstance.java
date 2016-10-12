@@ -48,7 +48,7 @@ public class L2SummonInstance extends L2Summon
     private int _summonSkillId;
     private L2Skill _summonPrice;
     private int _summonPoints;
-    private int _lastLifeTimeCheck; // Following FbiAgent's example to avoid sending useless packets
+    public int _lastLifeTimeCheck; // Following FbiAgent's example to avoid sending useless packets
 
     private Future<?> _summonLifeTask;
 
@@ -189,22 +189,22 @@ public class L2SummonInstance extends L2Summon
         return _expPenalty;
     }
 
-    private int getItemConsumeCount()
+    public int getItemConsumeCount()
     {
         return _itemConsumeCount;
     }
 
-    private int getItemConsumeId()
+    public int getItemConsumeId()
     {
         return _itemConsumeId;
     }
 
-    private int getItemConsumeSteps()
+    public int getItemConsumeSteps()
     {
         return _itemConsumeSteps;
     }
 
-    private int getNextItemConsumeTime()
+    public int getNextItemConsumeTime()
     {
         return _nextItemConsumeTime;
     }
@@ -214,12 +214,12 @@ public class L2SummonInstance extends L2Summon
         return _totalLifeTime;
     }
 
-    private int getTimeLostIdle()
+    public int getTimeLostIdle()
     {
         return _timeLostIdle;
     }
 
-    private int getTimeLostActive()
+    public int getTimeLostActive()
     {
         return _timeLostActive;
     }
@@ -239,12 +239,12 @@ public class L2SummonInstance extends L2Summon
         _nextItemConsumeTime = value;
     }
 
-    private void decNextItemConsumeTime(int value)
+    public void decNextItemConsumeTime(int value)
     {
         _nextItemConsumeTime -= value;
     }
 
-    private void decTimeRemaining(int value)
+    public void decTimeRemaining(int value)
     {
         _timeRemaining -= value;
     }

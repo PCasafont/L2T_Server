@@ -32,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventsManager implements Reloadable
 {
-    private static EventsManager _instance = null;
+    public static EventsManager _instance = null;
 
     private HashMap<Integer, EventLocation> _locations = new HashMap<Integer, EventLocation>();
 
@@ -72,7 +72,7 @@ public class EventsManager implements Reloadable
         Log.info("Instanced Events started.");
     }
 
-    private void loadConfig()
+    public void loadConfig()
     {
         _locations.clear();
 
@@ -367,7 +367,7 @@ public class EventsManager implements Reloadable
         playerInstance.setEvent(null);
     }
 
-    private void join(L2PcInstance playerInstance)
+    public void join(L2PcInstance playerInstance)
     {
         if (isPlayerParticipant(playerInstance.getObjectId()))
         {
@@ -429,7 +429,7 @@ public class EventsManager implements Reloadable
         playerInstance.sendPacket(npcHtmlMessage);
     }
 
-    private synchronized boolean addParticipant(L2PcInstance playerInstance)
+    public synchronized boolean addParticipant(L2PcInstance playerInstance)
     {
         // Check for nullpoitner
         if (playerInstance == null)
@@ -442,7 +442,7 @@ public class EventsManager implements Reloadable
         return true;
     }
 
-    private void leave(L2PcInstance playerInstance)
+    public void leave(L2PcInstance playerInstance)
     {
         if (!isPlayerParticipant(playerInstance.getObjectId()))
         {
@@ -663,7 +663,7 @@ public class EventsManager implements Reloadable
         return -1;
     }
 
-    private EventInstance getParticipantEvent(int playerObjectId)
+    public EventInstance getParticipantEvent(int playerObjectId)
     {
         for (EventInstance event : _instances.values())
         {
@@ -722,7 +722,7 @@ public class EventsManager implements Reloadable
         return false;
     }
 
-    private EventInstance createInstance(int id, List<Integer> group, EventConfig config)
+    public EventInstance createInstance(int id, List<Integer> group, EventConfig config)
     {
         // A map of lists to access the players sorted by class
         Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<Integer, List<L2PcInstance>>();

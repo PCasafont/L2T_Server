@@ -35,7 +35,7 @@ import java.util.logging.Level;
 public class Lottery
 {
     public static final long SECOND = 1000;
-    private static final long MINUTE = 60000;
+    public static final long MINUTE = 60000;
 
     private static final String INSERT_LOTTERY =
             "INSERT INTO games(id, idnr, enddate, prize, newprize) VALUES (?, ?, ?, ?, ?)";
@@ -49,11 +49,11 @@ public class Lottery
     private static final String SELECT_LOTTERY_TICKET =
             "SELECT number1, number2, prize1, prize2, prize3 FROM games WHERE id = 1 and idnr = ?";
 
-    private int _number;
-    private long _prize;
-    private boolean _isSellingTickets;
-    private boolean _isStarted;
-    private long _enddate;
+    protected int _number;
+    protected long _prize;
+    protected boolean _isSellingTickets;
+    protected boolean _isStarted;
+    protected long _enddate;
 
     private Lottery()
     {
@@ -74,17 +74,17 @@ public class Lottery
         return SingletonHolder._instance;
     }
 
-    private int getId()
+    public int getId()
     {
         return _number;
     }
 
-    private long getPrize()
+    public long getPrize()
     {
         return _prize;
     }
 
-    private long getEndDate()
+    public long getEndDate()
     {
         return _enddate;
     }
@@ -126,7 +126,7 @@ public class Lottery
 
     private class startLottery implements Runnable
     {
-        startLottery()
+        protected startLottery()
         {
             // Do nothing
         }
@@ -250,7 +250,7 @@ public class Lottery
 
     private class stopSellingTickets implements Runnable
     {
-        stopSellingTickets()
+        protected stopSellingTickets()
         {
             // Do nothing
         }
@@ -271,7 +271,7 @@ public class Lottery
 
     private class finishLottery implements Runnable
     {
-        finishLottery()
+        protected finishLottery()
         {
             // Do nothing
         }
@@ -532,7 +532,7 @@ public class Lottery
         return checkTicket(item.getCustomType1(), item.getEnchantLevel(), item.getCustomType2());
     }
 
-    private long[] checkTicket(int id, int enchant, int type2)
+    public long[] checkTicket(int id, int enchant, int type2)
     {
         long res[] = {0, 0};
 
@@ -621,6 +621,6 @@ public class Lottery
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final Lottery _instance = new Lottery();
+        protected static final Lottery _instance = new Lottery();
     }
 }

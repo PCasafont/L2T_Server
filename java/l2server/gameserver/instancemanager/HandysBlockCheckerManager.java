@@ -102,7 +102,7 @@ public final class HandysBlockCheckerManager
      *
      * @param arena
      */
-    private synchronized void clearArenaVotes(int arena)
+    public synchronized void clearArenaVotes(int arena)
     {
         _arenaVotes.put(arena, 0);
     }

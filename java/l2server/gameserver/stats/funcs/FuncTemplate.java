@@ -28,9 +28,9 @@ import java.util.logging.Level;
  */
 public final class FuncTemplate
 {
-    private Condition applayCond;
-    private final Class<?> func;
-    private final Constructor<?> constructor;
+    public Condition applayCond;
+    public final Class<?> func;
+    public final Constructor<?> constructor;
     public final Stats stat;
     public final Lambda lambda;
 

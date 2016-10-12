@@ -63,7 +63,7 @@ public class PlayerClassTable implements Reloadable
         ReloadableManager.getInstance().register("classes", this);
     }
 
-    private void load()
+    public void load()
     {
         File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "classes.xml");
         XmlDocument doc = new XmlDocument(file);
@@ -526,6 +526,6 @@ public class PlayerClassTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final PlayerClassTable _instance = new PlayerClassTable();
+        protected static final PlayerClassTable _instance = new PlayerClassTable();
     }
 }

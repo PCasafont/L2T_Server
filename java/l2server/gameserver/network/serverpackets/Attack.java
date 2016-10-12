@@ -37,17 +37,17 @@ public class Attack extends L2GameServerPacket
     public static final int HITFLAG_SHLD = 0x40;
     public static final int HITFLAG_MISS = 0x80;
      */
-    private static final int HITFLAG_MISS = 0x01;
-    private static final int HITFLAG_SHLD = 0x02;
-    private static final int HITFLAG_CRIT = 0x04;
-    private static final int HITFLAG_USESS = 0x08;
+    public static final int HITFLAG_MISS = 0x01;
+    public static final int HITFLAG_SHLD = 0x02;
+    public static final int HITFLAG_CRIT = 0x04;
+    public static final int HITFLAG_USESS = 0x08;
 
     public class Hit
     {
-        final int _targetId;
-        final int _damage;
-        int _flags;
-        int _ssGrade;
+        protected final int _targetId;
+        protected final int _damage;
+        protected int _flags;
+        protected int _ssGrade;
 
         Hit(L2Object target, int damage, boolean miss, boolean crit, byte shld)
         {
@@ -80,7 +80,7 @@ public class Attack extends L2GameServerPacket
     private final int _attackerObjId;
     private final int _targetObjId;
     public final double soulshotCharge;
-    private final int _ssGrade;
+    public final int _ssGrade;
     private final int _x;
     private final int _y;
     private final int _z;

@@ -78,7 +78,7 @@ public class FishData
     /**
      * @return Returns the name.
      */
-    private String getName()
+    public String getName()
     {
         return _name;
     }

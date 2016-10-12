@@ -21,9 +21,9 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author Pere
  */
-class ShopGenerator
+public class ShopGenerator
 {
-    private static void customShops()
+    public static void customShops()
     {
         String result = "<?xml version='1.0' encoding='utf-8'?>\r\n<list>\r\n";
         for (L2Item item : ItemTable.getInstance().getAllItems())

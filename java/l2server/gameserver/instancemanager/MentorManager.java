@@ -24,14 +24,14 @@ import java.util.HashMap;
  */
 public class MentorManager
 {
-    private HashMap<Integer, Integer> coinsRewardForLevel;
+    HashMap<Integer, Integer> coinsRewardForLevel;
 
-    private MentorManager()
+    public MentorManager()
     {
         load();
     }
 
-    private void load()
+    public void load()
     {
         coinsRewardForLevel = new HashMap<Integer, Integer>();
         coinsRewardForLevel.put(10, 1);
@@ -109,6 +109,6 @@ public class MentorManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MentorManager _instance = new MentorManager();
+        protected static final MentorManager _instance = new MentorManager();
     }
 }

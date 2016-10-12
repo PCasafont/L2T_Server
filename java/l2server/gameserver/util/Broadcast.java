@@ -238,7 +238,7 @@ public final class Broadcast
      * <p>
      * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR><BR>
      */
-    private static void toAllOnlinePlayers(L2GameServerPacket mov, int dimensionId)
+    public static void toAllOnlinePlayers(L2GameServerPacket mov, int dimensionId)
     {
         if (Config.DEBUG)
         {

@@ -30,7 +30,7 @@ public abstract class ManagedScript
     private long _lastLoadTime;
     private boolean _isActive;
 
-    protected ManagedScript()
+    public ManagedScript()
     {
         _scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
         setLastLoadTime(System.currentTimeMillis());
@@ -74,7 +74,7 @@ public abstract class ManagedScript
     /**
      * @return Returns the scriptFile.
      */
-    protected File getScriptFile()
+    public File getScriptFile()
     {
         return _scriptFile;
     }
@@ -82,7 +82,7 @@ public abstract class ManagedScript
     /**
      * @param lastLoadTime The lastLoadTime to set.
      */
-    private void setLastLoadTime(long lastLoadTime)
+    protected void setLastLoadTime(long lastLoadTime)
     {
         _lastLoadTime = lastLoadTime;
     }

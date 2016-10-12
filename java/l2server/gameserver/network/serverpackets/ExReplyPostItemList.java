@@ -24,7 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ExReplyPostItemList extends L2ItemListPacket
 {
-    private L2PcInstance _activeChar;
+    L2PcInstance _activeChar;
     private L2ItemInstance[] _itemList;
 
     public ExReplyPostItemList(L2PcInstance activeChar)

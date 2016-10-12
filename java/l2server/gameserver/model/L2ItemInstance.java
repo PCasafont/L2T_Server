@@ -176,7 +176,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
     private Elementals[] _elementals = null;
 
     private ScheduledFuture<?> itemLootShedule = null;
-    private ScheduledFuture<?> _lifeTimeTask;
+    public ScheduledFuture<?> _lifeTimeTask;
 
     private int _mobId = 0;
 
@@ -213,7 +213,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
      * @param objectId : int designating the ID of the object in the world
      * @param item     : L2Item containing informations of the item
      */
-    private L2ItemInstance(int objectId, L2Item item, long time)
+    public L2ItemInstance(int objectId, L2Item item, long time)
     {
         super(objectId);
         setInstanceType(InstanceType.L2ItemInstance);
@@ -1175,7 +1175,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         }
     }
 
-    private void restoreAttributes()
+    public void restoreAttributes()
     {
         Connection con = null;
         try
@@ -1724,7 +1724,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         }
     }
 
-    private void scheduleConsumeManaTask()
+    public void scheduleConsumeManaTask()
     {
         if (_consumingMana)
         {
@@ -2438,7 +2438,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
         }
     }
 
-    private void setDropperObjectId(int id)
+    public void setDropperObjectId(int id)
     {
         _dropperObjectId = id;
     }

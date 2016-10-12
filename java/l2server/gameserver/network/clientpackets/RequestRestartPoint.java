@@ -36,7 +36,7 @@ import l2server.log.Log;
 public final class RequestRestartPoint extends L2GameClientPacket
 {
 
-    private int _requestedPointType;
+    protected int _requestedPointType;
     protected boolean _continuation;
 
     @Override

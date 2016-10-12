@@ -21,7 +21,7 @@ package l2server.gameserver.network.serverpackets;
 public class Ex2ndPasswordAck extends L2GameServerPacket
 {
 
-    private int _response;
+    int _response;
 
     public static int SUCCESS = 0x00;
     public static int WRONG_PATTERN = 0x01;

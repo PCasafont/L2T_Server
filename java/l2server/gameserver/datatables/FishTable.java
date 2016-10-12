@@ -132,6 +132,6 @@ public class FishTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final FishTable _instance = new FishTable();
+        protected static final FishTable _instance = new FishTable();
     }
 }

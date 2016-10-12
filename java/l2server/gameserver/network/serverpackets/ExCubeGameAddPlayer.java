@@ -28,8 +28,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameAddPlayer extends L2GameServerPacket
 {
-    private L2PcInstance _player;
-    private boolean _isRedTeam;
+    L2PcInstance _player;
+    boolean _isRedTeam;
 
     /**
      * Add Player To Minigame Waiting List

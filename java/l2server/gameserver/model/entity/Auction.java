@@ -505,7 +505,7 @@ public class Auction
     /**
      * Remove auctions
      */
-    private void deleteAuctionFromDB()
+    public void deleteAuctionFromDB()
     {
         ClanHallAuctionManager.getInstance().getAuctions().remove(this);
         Connection con = null;
@@ -531,7 +531,7 @@ public class Auction
     /**
      * End of auction
      */
-    private void endAuction()
+    public void endAuction()
     {
         if (ClanHallManager.getInstance().loaded())
         {
@@ -669,12 +669,12 @@ public class Auction
         return _endDate;
     }
 
-    private int getHighestBidderId()
+    public final int getHighestBidderId()
     {
         return _highestBidderId;
     }
 
-    private String getHighestBidderName()
+    public final String getHighestBidderName()
     {
         return _highestBidderName;
     }

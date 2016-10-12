@@ -88,7 +88,7 @@ public class ObjectKnownList
         return removeKnownObject(object, false);
     }
 
-    boolean removeKnownObject(L2Object object, boolean forget)
+    protected boolean removeKnownObject(L2Object object, boolean forget)
     {
         if (object == null)
         {
@@ -200,17 +200,17 @@ public class ObjectKnownList
         }
     }
 
-    L2Object getActiveObject()
+    public L2Object getActiveObject()
     {
         return _activeObject;
     }
 
-    int getDistanceToForgetObject(L2Object object)
+    public int getDistanceToForgetObject(L2Object object)
     {
         return 0;
     }
 
-    int getDistanceToWatchObject(L2Object object)
+    public int getDistanceToWatchObject(L2Object object)
     {
         return 0;
     }

@@ -148,6 +148,6 @@ public class MonsterRace
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MonsterRace _instance = new MonsterRace();
+        protected static final MonsterRace _instance = new MonsterRace();
     }
 }

@@ -122,7 +122,7 @@ public class Point3D implements Serializable
         return dx * dx + dy * dy;
     }
 
-    private static long distanceSquared(Point3D point1, Point3D point2)
+    public static long distanceSquared(Point3D point1, Point3D point2)
     {
         long dx, dy;
         synchronized (point1)

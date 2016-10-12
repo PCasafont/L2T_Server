@@ -44,7 +44,7 @@ public class L2GuardInstance extends L2Attackable
 {
     private static final int RETURN_INTERVAL = 60000;
 
-    private class ReturnTask implements Runnable
+    public class ReturnTask implements Runnable
     {
         @Override
         public void run()
@@ -72,7 +72,7 @@ public class L2GuardInstance extends L2Attackable
      * @param objectId      Identifier of the object to initialized
      * @param L2NpcTemplate Template to apply to the NPC
      */
-    L2GuardInstance(int objectId, L2NpcTemplate template)
+    public L2GuardInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2GuardInstance);

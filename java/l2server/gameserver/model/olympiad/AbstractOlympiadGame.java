@@ -46,7 +46,7 @@ import java.util.logging.Logger;
  */
 public abstract class AbstractOlympiadGame
 {
-    static final Logger _logResults = Logger.getLogger("olympiad");
+    protected static final Logger _logResults = Logger.getLogger("olympiad");
 
     protected static final String POINTS = "olympiad_points";
     protected static final String COMP_DONE = "competitions_done";
@@ -58,11 +58,11 @@ public abstract class AbstractOlympiadGame
     protected static final String COMP_NONCLASSED = "competitions_nonclassed";
     protected static final String COMP_TEAMS = "competitions_teams";
 
-    long _startTime = 0;
-    boolean _aborted = false;
-    final int _gameId;
+    protected long _startTime = 0;
+    protected boolean _aborted = false;
+    protected final int _gameId;
 
-    AbstractOlympiadGame(int id)
+    protected AbstractOlympiadGame(int id)
     {
         _gameId = id;
     }
@@ -77,13 +77,13 @@ public abstract class AbstractOlympiadGame
         return _gameId;
     }
 
-    boolean makeCompetitionStart()
+    protected boolean makeCompetitionStart()
     {
         _startTime = System.currentTimeMillis();
         return !_aborted;
     }
 
-    final void addPointsToParticipant(OlympiadParticipant par, int points)
+    protected final void addPointsToParticipant(OlympiadParticipant par, int points)
     {
         par.nobleInfo.setPoints(par.nobleInfo.getPoints() + points);
         final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_GAINED_S2_OLYMPIAD_POINTS);
@@ -92,7 +92,7 @@ public abstract class AbstractOlympiadGame
         broadcastPacketToParticipants(sm);
     }
 
-    final void removePointsFromParticipant(OlympiadParticipant par, int points)
+    protected final void removePointsFromParticipant(OlympiadParticipant par, int points)
     {
         par.nobleInfo.setPoints(par.nobleInfo.getPoints() - points);
         final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_LOST_S2_OLYMPIAD_POINTS);
@@ -108,7 +108,7 @@ public abstract class AbstractOlympiadGame
      * @param _player
      * @return
      */
-    final SystemMessage checkDefaulted(OlympiadParticipant par)
+    protected final SystemMessage checkDefaulted(OlympiadParticipant par)
     {
         L2PcInstance player = par.player;
         if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached())
@@ -165,7 +165,7 @@ public abstract class AbstractOlympiadGame
         return null;
     }
 
-    static final boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id)
+    protected static final boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id)
     {
         final L2PcInstance player = par.player;
         if (player == null || !player.isOnline())
@@ -208,7 +208,7 @@ public abstract class AbstractOlympiadGame
         return true;
     }
 
-    static final void removals(L2PcInstance player, boolean removeParty)
+    protected static final void removals(L2PcInstance player, boolean removeParty)
     {
         try
         {
@@ -324,7 +324,7 @@ public abstract class AbstractOlympiadGame
         }
     }
 
-    static final void cleanEffects(L2PcInstance player)
+    protected static final void cleanEffects(L2PcInstance player)
     {
         try
         {
@@ -385,7 +385,7 @@ public abstract class AbstractOlympiadGame
         }
     }
 
-    static final void playerStatusBack(L2PcInstance player)
+    protected static final void playerStatusBack(L2PcInstance player)
     {
         try
         {
@@ -441,7 +441,7 @@ public abstract class AbstractOlympiadGame
         }
     }
 
-    static final void portPlayerBack(L2PcInstance player)
+    protected static final void portPlayerBack(L2PcInstance player)
     {
         if (player == null)
         {
@@ -458,7 +458,7 @@ public abstract class AbstractOlympiadGame
         player.setLastCords(0, 0, 0);
     }
 
-    static final void rewardParticipant(L2PcInstance player, int[][] reward)
+    public static final void rewardParticipant(L2PcInstance player, int[][] reward)
     {
         if (player == null || !player.isOnline() || reward == null)
         {
@@ -497,7 +497,7 @@ public abstract class AbstractOlympiadGame
         }
     }
 
-    final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
+    protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
     {
         broadcastPacketToParticipants(packet);
         stadium.broadcastPacketToObservers(packet, _gameId);

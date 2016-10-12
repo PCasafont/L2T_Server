@@ -24,9 +24,9 @@ package l2server.network;
  */
 public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPacket<T>
 {
-    T _writeClient;
+    protected T _writeClient;
 
-    protected final T getWriteClient()
+    public final T getWriteClient()
     {
         return _writeClient;
     }

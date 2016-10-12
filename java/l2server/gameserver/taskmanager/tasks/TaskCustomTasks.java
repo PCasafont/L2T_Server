@@ -27,7 +27,7 @@ import java.util.Calendar;
 
 public class TaskCustomTasks extends Task
 {
-    private static final String NAME = "custom_tasks";
+    public static final String NAME = "custom_tasks";
 
     @Override
     public String getName()

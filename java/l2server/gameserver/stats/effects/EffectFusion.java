@@ -27,7 +27,7 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 public class EffectFusion extends L2Effect
 {
     public int _effect;
-    private int _maxEffect;
+    public int _maxEffect;
 
     public EffectFusion(Env env, L2EffectTemplate template)
     {

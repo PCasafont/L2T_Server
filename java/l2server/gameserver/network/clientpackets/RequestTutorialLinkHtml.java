@@ -20,7 +20,7 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class RequestTutorialLinkHtml extends L2GameClientPacket
 {
-    private String _bypass;
+    String _bypass;
 
     @Override
     protected void readImpl()

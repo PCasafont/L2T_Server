@@ -58,7 +58,7 @@ public abstract class L2Object
 
     // =========================================================
     // Constructor
-    protected L2Object(int objectId)
+    public L2Object(int objectId)
     {
         setInstanceType(InstanceType.L2Object);
         _objectId = objectId;
@@ -310,7 +310,7 @@ public abstract class L2Object
      * <li> L2GuardInstance :  Set the home location of its L2GuardInstance </li>
      * <li> L2Attackable	:  Reset the Spoiled flag </li><BR><BR>
      */
-    protected void onSpawn()
+    public void onSpawn()
     {
     }
 
@@ -571,7 +571,7 @@ public abstract class L2Object
         onSpawn();
     }
 
-    protected void toggleVisible()
+    public void toggleVisible()
     {
         if (isVisible())
         {
@@ -632,12 +632,12 @@ public abstract class L2Object
      * <p>
      * Removes the need for instanceof checks.
      */
-    protected void initKnownList()
+    public void initKnownList()
     {
         _knownList = new ObjectKnownList(this);
     }
 
-    protected final void setKnownList(ObjectKnownList value)
+    public final void setKnownList(ObjectKnownList value)
     {
         _knownList = value;
     }
@@ -677,12 +677,12 @@ public abstract class L2Object
      * <p>
      * Removes the need for instanceof checks.
      */
-    protected void initPosition()
+    public void initPosition()
     {
         _position = new ObjectPosition(this);
     }
 
-    protected final void setObjectPosition(ObjectPosition value)
+    public final void setObjectPosition(ObjectPosition value)
     {
         _position = value;
     }

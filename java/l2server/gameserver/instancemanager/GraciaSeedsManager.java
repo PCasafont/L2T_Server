@@ -25,7 +25,7 @@ import java.util.Calendar;
 public class GraciaSeedsManager
 {
 
-    private static String qn = "EnergySeeds";
+    public static String qn = "EnergySeeds";
 
     private static final byte SOITYPE = 2;
     private static final byte SOATYPE = 3;
@@ -44,7 +44,7 @@ public class GraciaSeedsManager
         handleSodStages();
     }
 
-    private void saveData(byte seedType)
+    public void saveData(byte seedType)
     {
         switch (seedType)
         {
@@ -67,7 +67,7 @@ public class GraciaSeedsManager
         }
     }
 
-    private void loadData()
+    public void loadData()
     {
         // Seed of Destruction variables
         if (GlobalVariablesManager.getInstance().isVariableStored("SoDState"))
@@ -156,7 +156,7 @@ public class GraciaSeedsManager
         return _SoDTiatKilled;
     }
 
-    private void setSoDState(int value, boolean doSave)
+    public void setSoDState(int value, boolean doSave)
     {
         Log.info("GraciaSeedManager: New Seed of Destruction state -> " + value + ".");
         _SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
@@ -210,6 +210,6 @@ public class GraciaSeedsManager
 
     private static class SingletonHolder
     {
-        static final GraciaSeedsManager _instance = new GraciaSeedsManager();
+        protected static final GraciaSeedsManager _instance = new GraciaSeedsManager();
     }
 }

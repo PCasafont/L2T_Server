@@ -32,13 +32,13 @@ import l2server.gameserver.stats.Env;
 public final class ConditionSiegeZone extends Condition
 {
     //	conditional values
-    private final static int COND_NOT_ZONE = 0x0001;
-    private final static int COND_CAST_ATTACK = 0x0002;
-    private final static int COND_CAST_DEFEND = 0x0004;
-    private final static int COND_CAST_NEUTRAL = 0x0008;
-    private final static int COND_FORT_ATTACK = 0x0010;
-    private final static int COND_FORT_DEFEND = 0x0020;
-    private final static int COND_FORT_NEUTRAL = 0x0040;
+    public final static int COND_NOT_ZONE = 0x0001;
+    public final static int COND_CAST_ATTACK = 0x0002;
+    public final static int COND_CAST_DEFEND = 0x0004;
+    public final static int COND_CAST_NEUTRAL = 0x0008;
+    public final static int COND_FORT_ATTACK = 0x0010;
+    public final static int COND_FORT_DEFEND = 0x0020;
+    public final static int COND_FORT_NEUTRAL = 0x0040;
 
     private final int _value;
     private final boolean _self;
@@ -95,7 +95,7 @@ public final class ConditionSiegeZone extends Condition
      * @param value      the value
      * @return true, if successful
      */
-    private static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
+    public static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
     {
         if (activeChar == null || !(activeChar instanceof L2PcInstance))
         {
@@ -144,7 +144,7 @@ public final class ConditionSiegeZone extends Condition
      * @param value      the value
      * @return true, if successful
      */
-    private static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
+    public static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
     {
         if (activeChar == null || !(activeChar instanceof L2PcInstance))
         {

@@ -133,7 +133,7 @@ public class MinionList
     /**
      * Delete all spawned minions and try to reuse them.
      */
-    private void deleteSpawnedMinions()
+    public void deleteSpawnedMinions()
     {
         //Broadcast.toGameMasters("Deleting Spawned Minions.. ");
         if (!_minionReferences.isEmpty())

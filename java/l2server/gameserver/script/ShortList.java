@@ -18,7 +18,7 @@ package l2server.gameserver.script;
 /**
  * @author -Nemesiss-
  */
-class ShortList
+public class ShortList
 {
     public static short[] parse(String range)
     {

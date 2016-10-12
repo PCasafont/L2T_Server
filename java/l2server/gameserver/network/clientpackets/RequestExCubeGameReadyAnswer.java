@@ -29,8 +29,8 @@ import l2server.log.Log;
 public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
 {
 
-    private int _arena;
-    private int _answer;
+    int _arena;
+    int _answer;
 
     @Override
     protected void readImpl()

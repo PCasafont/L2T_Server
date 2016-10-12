@@ -35,22 +35,22 @@ public class TimeController
 {
     public static final int TICKS_PER_SECOND = 10; // not able to change this without checking through code
     public static final int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
-    private static final int IG_DAYS_PER_DAY = 6;
-    private static final int MILLIS_PER_IG_DAY = 1000 * 60 * 60 * 24 / IG_DAYS_PER_DAY;
-    private static final int SECONDS_PER_IG_DAY = MILLIS_PER_IG_DAY / 1000;
+    public static final int IG_DAYS_PER_DAY = 6;
+    public static final int MILLIS_PER_IG_DAY = 1000 * 60 * 60 * 24 / IG_DAYS_PER_DAY;
+    public static final int SECONDS_PER_IG_DAY = MILLIS_PER_IG_DAY / 1000;
     public static final int MINUTES_PER_IG_DAY = SECONDS_PER_IG_DAY / 60;
-    private static final int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
+    public static final int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
     public static final int TICKS_SUN_STATE_CHANGE = TICKS_PER_IG_DAY / 4;
 
-    private static int _gameTicks;
-    private static long _gameStartTime;
-    private static boolean _isNight = false;
-    private static boolean _interruptRequest = false;
+    protected static int _gameTicks;
+    protected static long _gameStartTime;
+    protected static boolean _isNight = false;
+    protected static boolean _interruptRequest = false;
 
     private static final ConcurrentHashMap<Integer, L2Character> _movingObjects =
             new ConcurrentHashMap<Integer, L2Character>();
 
-    private static TimerThread _timer;
+    protected static TimerThread _timer;
 
     /**
      * one ingame day is 240 real minutes
@@ -115,7 +115,7 @@ public class TimeController
      * <li>If movement is finished, the L2Character is removed from movingObjects </li>
      * <li>Create a task to update the _knownObject and _knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
      */
-    private void moveObjects()
+    protected void moveObjects()
     {
         // Go throw the table containing L2Character in movement
         Iterator<Map.Entry<Integer, L2Character>> it = _movingObjects.entrySet().iterator();
@@ -255,6 +255,6 @@ public class TimeController
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final TimeController _instance = new TimeController();
+        protected static final TimeController _instance = new TimeController();
     }
 }

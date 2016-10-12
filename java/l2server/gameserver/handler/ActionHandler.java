@@ -87,6 +87,6 @@ public class ActionHandler
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final ActionHandler _instance = new ActionHandler();
+        protected static final ActionHandler _instance = new ActionHandler();
     }
 }

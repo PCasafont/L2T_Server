@@ -87,7 +87,7 @@ public class L2SkillContinuousDrain extends L2Skill
         }
     }
 
-    private boolean drain(L2Character activeChar, L2Object[] targets)
+    public boolean drain(L2Character activeChar, L2Object[] targets)
     {
         if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this)
         {

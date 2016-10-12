@@ -60,7 +60,7 @@ public class ObjectPoly
         return _polyId;
     }
 
-    private void setPolyId(int value)
+    public final void setPolyId(int value)
     {
         _polyId = value;
     }
@@ -70,7 +70,7 @@ public class ObjectPoly
         return _polyType;
     }
 
-    private void setPolyType(String value)
+    public final void setPolyType(String value)
     {
         _polyType = value;
     }

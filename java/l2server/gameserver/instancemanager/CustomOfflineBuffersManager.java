@@ -386,7 +386,7 @@ public class CustomOfflineBuffersManager
         return true;
     }
 
-    private void offlineBuffPannel(L2PcInstance player)
+    public void offlineBuffPannel(L2PcInstance player)
     {
         if (!Config.OFFLINE_BUFFERS_ENABLE)
         {
@@ -840,6 +840,6 @@ public class CustomOfflineBuffersManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CustomOfflineBuffersManager _instance = new CustomOfflineBuffersManager();
+        protected static final CustomOfflineBuffersManager _instance = new CustomOfflineBuffersManager();
     }
 }

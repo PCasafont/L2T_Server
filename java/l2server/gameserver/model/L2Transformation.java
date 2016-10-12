@@ -41,7 +41,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
      * @param collisionRadius Collision Radius of the player while transformed
      * @param collisionHeight Collision Height of the player while transformed
      */
-    private L2Transformation(int id, int graphicalId, double collisionRadius, double collisionHeight)
+    public L2Transformation(int id, int graphicalId, double collisionRadius, double collisionHeight)
     {
         _id = id;
         _graphicalId = graphicalId;
@@ -137,7 +137,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
     /**
      * @return Returns the player.
      */
-    private L2PcInstance getPlayer()
+    public L2PcInstance getPlayer()
     {
         return _player;
     }
@@ -147,7 +147,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
         resume();
     }
 
-    private void resume()
+    public void resume()
     {
         getPlayer().transform(this);
     }
@@ -158,7 +158,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
         stop();
     }
 
-    private void stop()
+    public void stop()
     {
         getPlayer().unTransform(true);
     }

@@ -23,13 +23,13 @@ import java.util.List;
  */
 public class ListContainer
 {
-    private int _listId;
-    boolean _applyTaxes = false;
-    boolean _maintainEnchantment = false;
-    boolean _isChance = false;
-    int _timeLimit;
+    protected int _listId;
+    protected boolean _applyTaxes = false;
+    protected boolean _maintainEnchantment = false;
+    protected boolean _isChance = false;
+    protected int _timeLimit;
 
-    List<MultiSellEntry> _entries;
+    protected List<MultiSellEntry> _entries;
 
     public ListContainer()
     {
@@ -40,7 +40,7 @@ public class ListContainer
      * This constructor used in PreparedListContainer only
      * ArrayList not created
      */
-    ListContainer(int listId)
+    protected ListContainer(int listId)
     {
         _listId = listId;
     }
@@ -65,7 +65,7 @@ public class ListContainer
         _applyTaxes = applyTaxes;
     }
 
-    final boolean getApplyTaxes()
+    public final boolean getApplyTaxes()
     {
         return _applyTaxes;
     }
@@ -95,7 +95,7 @@ public class ListContainer
         _timeLimit = timeLimit;
     }
 
-    final int getTimeLimit()
+    public final int getTimeLimit()
     {
         return _timeLimit;
     }

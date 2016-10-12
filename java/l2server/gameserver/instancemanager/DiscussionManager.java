@@ -76,6 +76,6 @@ public class DiscussionManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final DiscussionManager _instance = new DiscussionManager();
+        protected static final DiscussionManager _instance = new DiscussionManager();
     }
 }

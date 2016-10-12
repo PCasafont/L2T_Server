@@ -314,7 +314,7 @@ public final class L2WorldRegion
 
     // check if all 9 neighbors (including self) are inactive or active but with no players.
     // returns true if the above condition is met.
-    private boolean areNeighborsEmpty()
+    public boolean areNeighborsEmpty()
     {
         // if this region is occupied, return false.
         if (isActive() && !_allPlayable.isEmpty())
@@ -340,7 +340,7 @@ public final class L2WorldRegion
      *
      * @param value
      */
-    private void setActive(boolean value)
+    public void setActive(boolean value)
     {
         if (_active == value)
         {

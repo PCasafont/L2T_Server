@@ -36,7 +36,7 @@ import java.io.IOException;
  * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-class BlowfishEngine
+public class BlowfishEngine
 {
     private final static int[] KP = {
             0x243F6A88,

@@ -106,12 +106,12 @@ public final class L2CastleTeleporterInstance extends L2Npc
         player.sendPacket(html);
     }
 
-    private void oustAllPlayers()
+    void oustAllPlayers()
     {
         getCastle().oustAllPlayers();
     }
 
-    private class oustAllPlayers implements Runnable
+    class oustAllPlayers implements Runnable
     {
         @Override
         public void run()
@@ -143,12 +143,12 @@ public final class L2CastleTeleporterInstance extends L2Npc
         }
     }
 
-    private boolean getTask()
+    public boolean getTask()
     {
         return _currentTask;
     }
 
-    private void setTask(boolean state)
+    public void setTask(boolean state)
     {
         _currentTask = state;
     }

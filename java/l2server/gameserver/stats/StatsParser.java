@@ -43,10 +43,10 @@ public abstract class StatsParser
 {
     static Logger _log = Logger.getLogger(StatsParser.class.getName());
 
-    int _id;
-    String _name;
+    protected int _id;
+    protected String _name;
 
-    XmlNode _node;
+    protected XmlNode _node;
 
     StatsParser(XmlNode node)
     {
@@ -59,7 +59,7 @@ public abstract class StatsParser
 
     protected abstract StatsSet getStatsSet();
 
-    void parseTemplate(XmlNode node, Object template)
+    protected void parseTemplate(XmlNode node, Object template)
     {
         XmlNode firstNode = node.getFirstChild();
         if (firstNode == null)
@@ -178,7 +178,7 @@ public abstract class StatsParser
         }
     }
 
-    private void attachFunc(XmlNode n, Object template, String name)
+    protected void attachFunc(XmlNode n, Object template, String name)
     {
         Stats stat = Stats.fromString(n.getString("stat"));
         Lambda lambda = getLambda(n, template);
@@ -198,7 +198,7 @@ public abstract class StatsParser
         }
     }
 
-    private void attachLambdaFunc(XmlNode n, Object template, LambdaCalc calc)
+    protected void attachLambdaFunc(XmlNode n, Object template, LambdaCalc calc)
     {
         String name = n.getName();
         final StringBuilder sb = new StringBuilder(name);
@@ -209,7 +209,7 @@ public abstract class StatsParser
         calc.addFunc(ft.getFunc(calc));
     }
 
-    Condition parseCondition(XmlNode n, Object template)
+    protected Condition parseCondition(XmlNode n, Object template)
     {
         if (n == null)
         {
@@ -246,7 +246,7 @@ public abstract class StatsParser
         return null;
     }
 
-    private Condition parseLogicAnd(XmlNode node, Object template)
+    protected Condition parseLogicAnd(XmlNode node, Object template)
     {
         ConditionLogicAnd cond = new ConditionLogicAnd();
         for (XmlNode n : node.getChildren())
@@ -261,7 +261,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    private Condition parseLogicOr(XmlNode node, Object template)
+    protected Condition parseLogicOr(XmlNode node, Object template)
     {
         ConditionLogicOr cond = new ConditionLogicOr();
         for (XmlNode n : node.getChildren())
@@ -276,7 +276,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    private Condition parseLogicNot(XmlNode node, Object template)
+    protected Condition parseLogicNot(XmlNode node, Object template)
     {
         for (XmlNode n : node.getChildren())
         {
@@ -287,7 +287,7 @@ public abstract class StatsParser
         return null;
     }
 
-    private Condition parsePlayerCondition(XmlNode n, Object template)
+    protected Condition parsePlayerCondition(XmlNode n, Object template)
     {
         Condition cond = null;
         byte[] forces = new byte[2];
@@ -647,7 +647,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    private Condition parseTargetCondition(XmlNode n, Object template)
+    protected Condition parseTargetCondition(XmlNode n, Object template)
     {
         Condition cond = null;
         for (Entry<String, String> a : n.getAttributes().entrySet())
@@ -817,7 +817,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    private Condition parseUsingCondition(XmlNode n)
+    protected Condition parseUsingCondition(XmlNode n)
     {
         Condition cond = null;
         for (Entry<String, String> a : n.getAttributes().entrySet())
@@ -882,7 +882,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    private Condition parseGameCondition(XmlNode n)
+    protected Condition parseGameCondition(XmlNode n)
     {
         Condition cond = null;
         for (Entry<String, String> a : n.getAttributes().entrySet())
@@ -910,7 +910,7 @@ public abstract class StatsParser
         return cond;
     }
 
-    Lambda getLambda(XmlNode node, Object template)
+    protected Lambda getLambda(XmlNode node, Object template)
     {
         String val = node.getString("val", null);
         if (val != null)
@@ -963,12 +963,12 @@ public abstract class StatsParser
         return calc;
     }
 
-    String getValue(String value)
+    protected String getValue(String value)
     {
         return value;
     }
 
-    private Condition joinAnd(Condition cond, Condition c)
+    protected Condition joinAnd(Condition cond, Condition c)
     {
         if (cond == null)
         {

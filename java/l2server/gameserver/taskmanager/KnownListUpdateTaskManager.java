@@ -34,10 +34,10 @@ public class KnownListUpdateTaskManager
 {
 
     private final static int FULL_UPDATE_TIMER = 100;
-    private static boolean updatePass = true;
+    public static boolean updatePass = true;
 
     // Do full update every FULL_UPDATE_TIMER * KNOWNLIST_UPDATE_INTERVAL
-    private static int _fullUpdateTimer = FULL_UPDATE_TIMER;
+    public static int _fullUpdateTimer = FULL_UPDATE_TIMER;
 
     private static final HashSet<L2WorldRegion> _failedRegions = new HashSet<L2WorldRegion>(1);
 
@@ -109,7 +109,7 @@ public class KnownListUpdateTaskManager
         }
     }
 
-    private void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects)
+    public void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects)
     {
         // synchronized (syncObject)
         {
@@ -174,6 +174,6 @@ public class KnownListUpdateTaskManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final KnownListUpdateTaskManager _instance = new KnownListUpdateTaskManager();
+        protected static final KnownListUpdateTaskManager _instance = new KnownListUpdateTaskManager();
     }
 }

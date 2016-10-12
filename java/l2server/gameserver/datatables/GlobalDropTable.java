@@ -160,7 +160,7 @@ public class GlobalDropTable implements Reloadable
 
     private static List<GlobalDropCategory> _globalDropCategories = new ArrayList<GlobalDropCategory>();
 
-    private ScheduledFuture<?> _resetSchedule = null;
+    ScheduledFuture<?> _resetSchedule = null;
 
     public static GlobalDropTable getInstance()
     {

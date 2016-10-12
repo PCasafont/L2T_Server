@@ -133,22 +133,22 @@ public class L2DamageZone extends L2ZoneType
         }
     }
 
-    private Collection<L2Character> getCharacterList()
+    protected Collection<L2Character> getCharacterList()
     {
         return _characterList.values();
     }
 
-    private int getHPDamagePerSecond()
+    protected int getHPDamagePerSecond()
     {
         return _damageHPPerSec;
     }
 
-    private int getMPDamagePerSecond()
+    protected int getMPDamagePerSecond()
     {
         return _damageMPPerSec;
     }
 
-    private void stopTask()
+    protected void stopTask()
     {
         if (_task != null)
         {

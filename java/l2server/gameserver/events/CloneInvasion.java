@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 public class CloneInvasion
 {
-    private static CloneInvasion _instance = null;
+    public static CloneInvasion _instance = null;
 
     private StartTask _task;
 
@@ -32,7 +32,7 @@ public class CloneInvasion
         return _instance;
     }
 
-    private void start()
+    public void start()
     {
         Announcements.getInstance().announceToAll(
                 "A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
@@ -41,7 +41,7 @@ public class CloneInvasion
         spawnNpcPlayers();
     }
 
-    private void spawnNpcPlayers()
+    public void spawnNpcPlayers()
     {
         for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
         {
@@ -145,7 +145,7 @@ public class CloneInvasion
         }
     }
 
-    private void scheduleEventStart()
+    public void scheduleEventStart()
     {
         try
         {

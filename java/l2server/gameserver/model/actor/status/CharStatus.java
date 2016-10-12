@@ -47,9 +47,9 @@ public class CharStatus
 
     private Future<?> _regTask;
 
-    byte _flagsRegenActive = 0;
+    protected byte _flagsRegenActive = 0;
 
-    static final byte REGEN_FLAG_CP = 4;
+    protected static final byte REGEN_FLAG_CP = 4;
     private static final byte REGEN_FLAG_HP = 1;
     private static final byte REGEN_FLAG_MP = 2;
 
@@ -430,7 +430,7 @@ public class CharStatus
         }
     }
 
-    void doRegeneration()
+    protected void doRegeneration()
     {
         final CharStat charstat = getActiveChar().getStat();
 
@@ -464,7 +464,7 @@ public class CharStatus
     /**
      * Task of HP/MP regeneration
      */
-    private class RegenTask implements Runnable
+    class RegenTask implements Runnable
     {
         @Override
         public void run()
@@ -480,7 +480,7 @@ public class CharStatus
         }
     }
 
-    L2Character getActiveChar()
+    public L2Character getActiveChar()
     {
         return _activeChar;
     }

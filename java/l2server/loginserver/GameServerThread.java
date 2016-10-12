@@ -213,7 +213,7 @@ public class GameServerThread extends Thread
      * @param ipAddress
      * @return
      */
-    private static boolean isBannedGameserverIP(String ipAddress)
+    public static boolean isBannedGameserverIP(String ipAddress)
     {
         return false;
     }
@@ -285,7 +285,7 @@ public class GameServerThread extends Thread
     /**
      * @param gameHost The gameHost to set.
      */
-    private void setGameHosts(String[] hosts)
+    public void setGameHosts(String[] hosts)
     {
         Log.info("Updated Gameserver [" + getServerId() + "] " +
                 GameServerTable.getInstance().getServerNameById(getServerId()) + " IP's:");
@@ -312,7 +312,7 @@ public class GameServerThread extends Thread
     /**
      * @return Returns the isAuthed.
      */
-    private boolean isAuthed()
+    public boolean isAuthed()
     {
         if (getGameServerInfo() == null)
         {
@@ -321,7 +321,7 @@ public class GameServerThread extends Thread
         return getGameServerInfo().isAuthed();
     }
 
-    private void setGameServerInfo(GameServerInfo gsi)
+    public void setGameServerInfo(GameServerInfo gsi)
     {
         _gsi = gsi;
     }

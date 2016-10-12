@@ -28,7 +28,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExFishingEnd extends L2GameServerPacket
 {
     private boolean _win;
-    private L2Character _activeChar;
+    L2Character _activeChar;
 
     public ExFishingEnd(boolean win, L2PcInstance character)
     {

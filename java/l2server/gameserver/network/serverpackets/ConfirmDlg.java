@@ -52,10 +52,10 @@ public class ConfirmDlg extends L2GameServerPacket
 
     private static class CnfDlgData
     {
-        final int type;
-        final Object value;
+        protected final int type;
+        protected final Object value;
 
-        CnfDlgData(int t, Object val)
+        protected CnfDlgData(int t, Object val)
         {
             type = t;
             value = val;
@@ -106,17 +106,17 @@ public class ConfirmDlg extends L2GameServerPacket
         return addString(pc.getAppearance().getVisibleName());
     }
 
-    private ConfirmDlg addNpcName(L2Npc npc)
+    public ConfirmDlg addNpcName(L2Npc npc)
     {
         return addNpcName(npc.getTemplate());
     }
 
-    private ConfirmDlg addNpcName(L2Summon npc)
+    public ConfirmDlg addNpcName(L2Summon npc)
     {
         return addNpcName(npc.getNpcId());
     }
 
-    private ConfirmDlg addNpcName(L2NpcTemplate tpl)
+    public ConfirmDlg addNpcName(L2NpcTemplate tpl)
     {
         if (tpl.isCustom())
         {
@@ -125,7 +125,7 @@ public class ConfirmDlg extends L2GameServerPacket
         return addNpcName(tpl.NpcId);
     }
 
-    private ConfirmDlg addNpcName(int id)
+    public ConfirmDlg addNpcName(int id)
     {
         _info.add(new CnfDlgData(TYPE_NPC_NAME, id));
         return this;
@@ -142,7 +142,7 @@ public class ConfirmDlg extends L2GameServerPacket
         return addItemName(item.getItemId());
     }
 
-    private ConfirmDlg addItemName(int id)
+    public ConfirmDlg addItemName(int id)
     {
         _info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
         return this;
@@ -160,7 +160,7 @@ public class ConfirmDlg extends L2GameServerPacket
         return addSkillName(effect.getSkill());
     }
 
-    private ConfirmDlg addSkillName(L2Skill skill)
+    public ConfirmDlg addSkillName(L2Skill skill)
     {
         if (skill.getId() != skill.getDisplayId()) //custom skill -  need nameId or smth like this.
         {
@@ -174,7 +174,7 @@ public class ConfirmDlg extends L2GameServerPacket
         return addSkillName(id, 1);
     }
 
-    private ConfirmDlg addSkillName(int id, int lvl)
+    public ConfirmDlg addSkillName(int id, int lvl)
     {
         _info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
         _skillLvL = lvl;

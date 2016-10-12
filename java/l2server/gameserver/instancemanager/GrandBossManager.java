@@ -64,15 +64,15 @@ public class GrandBossManager
 
     protected static Logger _log = Logger.getLogger(GrandBossManager.class.getName());
 
-    private static Map<Integer, L2GrandBossInstance> _bosses;
+    protected static Map<Integer, L2GrandBossInstance> _bosses;
 
-    private static TIntObjectHashMap<StatsSet> _storedInfo;
+    protected static TIntObjectHashMap<StatsSet> _storedInfo;
 
     private TIntIntHashMap _bossStatus;
 
     private ArrayList<L2BossZone> _zones;
 
-    private final int ALIVE = 0;
+    public final int ALIVE = 0;
     public final int WAITING = 1;
     public final int FIGHTING = 2;
     public final int DEAD = 3;
@@ -299,7 +299,7 @@ public class GrandBossManager
         return _bossStatus.get(bossId);
     }
 
-    private void setBossStatus(int bossId, int status)
+    public void setBossStatus(int bossId, int status)
     {
         _bossStatus.put(bossId, status);
         Log.info(
@@ -329,7 +329,7 @@ public class GrandBossManager
         return _storedInfo.get(bossId);
     }
 
-    private void setStatsSet(int bossId, StatsSet info)
+    public void setStatsSet(int bossId, StatsSet info)
     {
         _storedInfo.put(bossId, info);
         updateDb(bossId, false);
@@ -658,6 +658,6 @@ public class GrandBossManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final GrandBossManager _instance = new GrandBossManager();
+        protected static final GrandBossManager _instance = new GrandBossManager();
     }
 }

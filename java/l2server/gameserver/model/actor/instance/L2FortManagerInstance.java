@@ -39,9 +39,9 @@ import java.util.StringTokenizer;
  */
 public class L2FortManagerInstance extends L2MerchantInstance
 {
-    private static final int COND_ALL_FALSE = 0;
-    private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
-    private static final int COND_OWNER = 2;
+    protected static final int COND_ALL_FALSE = 0;
+    protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
+    protected static final int COND_OWNER = 2;
 
     public L2FortManagerInstance(int objectId, L2NpcTemplate template)
     {
@@ -1088,7 +1088,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
         player.sendPacket(ActionFailed.STATIC_PACKET);
     }
 
-    private int validateCondition(L2PcInstance player)
+    protected int validateCondition(L2PcInstance player)
     {
         if (getFort() != null && getFort().getFortId() > 0)
         {

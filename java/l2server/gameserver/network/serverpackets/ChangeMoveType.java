@@ -28,8 +28,8 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class ChangeMoveType extends L2GameServerPacket
 {
-    private static final int WALK = 0;
-    private static final int RUN = 1;
+    public static final int WALK = 0;
+    public static final int RUN = 1;
 
     private int _charObjId;
     private boolean _running;

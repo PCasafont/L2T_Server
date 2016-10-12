@@ -106,7 +106,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 
     protected abstract void runImpl();
 
-    final void sendPacket(L2GameServerPacket gsp)
+    protected final void sendPacket(L2GameServerPacket gsp)
     {
         getClient().sendPacket(gsp);
     }
@@ -114,7 +114,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
     /**
      * @return A String with this packet name for debugging purposes
      */
-    final String getType()
+    public final String getType()
     {
         String type = "[C]";
         byte[] opcode = PacketOpcodes.getClientPacketOpcode(getClass());
@@ -137,12 +137,12 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
         return type;
     }
 
-    boolean triggersOnActionRequest()
+    protected boolean triggersOnActionRequest()
     {
         return true;
     }
 
-    void cleanUp()
+    protected void cleanUp()
     {
     }
 }

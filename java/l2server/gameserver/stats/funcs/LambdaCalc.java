@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
 public final class LambdaCalc extends Lambda
 {
 
-    private Func[] funcs;
+    public Func[] funcs;
 
     public LambdaCalc()
     {

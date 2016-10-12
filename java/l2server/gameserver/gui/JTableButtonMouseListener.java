@@ -12,7 +12,7 @@ import java.awt.event.MouseListener;
 /**
  * @author KenM
  */
-class JTableButtonMouseListener implements MouseListener
+public class JTableButtonMouseListener implements MouseListener
 {
     private JTable _table;
 

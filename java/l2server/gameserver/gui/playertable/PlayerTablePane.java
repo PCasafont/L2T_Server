@@ -37,7 +37,7 @@ public class PlayerTablePane extends JPanel
 {
     private static final long serialVersionUID = 1L;
 
-    private class ButtonListeners implements ActionListener
+    public class ButtonListeners implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent evt)
@@ -114,7 +114,7 @@ public class PlayerTablePane extends JPanel
         getPlayerTable().scrollRectToVisible(getPlayerTable().getCellRect(startIndex, 0, true));
     }
 
-    private void updateTable()
+    public void updateTable()
     {
         SwingUtilities.invokeLater(new Runnable()
         {
@@ -139,12 +139,12 @@ public class PlayerTablePane extends JPanel
         return _playerTableModel;
     }
 
-    private void updateCurrentPlayer()
+    public void updateCurrentPlayer()
     {
         updateCurrentPlayer(false);
     }
 
-    private void updateCurrentPlayer(boolean forced)
+    public void updateCurrentPlayer(boolean forced)
     {
         if (!forced && _currentSelectedPlayer == _playerTable.getSelectedRow())
         {
@@ -164,7 +164,7 @@ public class PlayerTablePane extends JPanel
         _playerTable.getSelectionModel().setSelectionInterval(rowNumber, rowNumber);
     }
 
-    private class PlayerSelectionListener implements ListSelectionListener
+    public class PlayerSelectionListener implements ListSelectionListener
     {
         @Override
         public void valueChanged(ListSelectionEvent e)

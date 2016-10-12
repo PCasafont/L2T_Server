@@ -22,7 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-class ConditionTargetNone extends Condition
+public class ConditionTargetNone extends Condition
 {
 
     /**

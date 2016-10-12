@@ -20,7 +20,7 @@ import l2server.gameserver.pathfinding.geonodes.GeoNode;
 /**
  * @author -Nemesiss-
  */
-class BinaryNodeHeap
+public class BinaryNodeHeap
 {
     private final GeoNode[] _list;
     private int _size;

@@ -34,9 +34,9 @@ public class ExOlympiadSpelledInfo extends L2GameServerPacket
 
     private static class Effect
     {
-        int _skillId;
-        int _level;
-        int _duration;
+        protected int _skillId;
+        protected int _level;
+        protected int _duration;
 
         public Effect(int pSkillId, int pLevel, int pDuration)
         {

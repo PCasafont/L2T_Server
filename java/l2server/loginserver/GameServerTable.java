@@ -79,7 +79,7 @@ public class GameServerTable
         return _instance;
     }
 
-    private GameServerTable() throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException
+    public GameServerTable() throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException
     {
         loadServerNames();
         Log.info("Loaded " + _serverNames.size() + " server names");

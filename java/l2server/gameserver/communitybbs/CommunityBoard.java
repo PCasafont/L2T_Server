@@ -163,6 +163,6 @@ public class CommunityBoard
 
     private static class SingletonHolder
     {
-        static final CommunityBoard _instance = new CommunityBoard();
+        protected static final CommunityBoard _instance = new CommunityBoard();
     }
 }

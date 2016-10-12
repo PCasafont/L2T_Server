@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-class ConditionPlayerBaseStats extends Condition
+public class ConditionPlayerBaseStats extends Condition
 {
 
     private final BaseStat _stat;

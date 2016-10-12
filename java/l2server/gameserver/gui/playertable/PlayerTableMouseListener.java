@@ -13,7 +13,7 @@ import java.awt.event.MouseListener;
 /**
  * @author KenM
  */
-class PlayerTableMouseListener implements MouseListener, ActionListener
+public class PlayerTableMouseListener implements MouseListener, ActionListener
 {
     private JPopupMenu _popupMenu;
     private PlayerTablePane _parent;

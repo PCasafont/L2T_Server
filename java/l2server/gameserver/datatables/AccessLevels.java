@@ -188,6 +188,6 @@ public class AccessLevels
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final AccessLevels _instance = new AccessLevels();
+        protected static final AccessLevels _instance = new AccessLevels();
     }
 }

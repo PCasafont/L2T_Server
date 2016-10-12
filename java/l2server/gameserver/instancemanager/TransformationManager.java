@@ -58,7 +58,7 @@ public class TransformationManager
         }
     }
 
-    private L2Transformation getTransformationById(int id)
+    public L2Transformation getTransformationById(int id)
     {
         return _transformations.get(id);
     }
@@ -71,7 +71,7 @@ public class TransformationManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final TransformationManager _instance = new TransformationManager();
+        protected static final TransformationManager _instance = new TransformationManager();
     }
 
     /**

@@ -135,7 +135,7 @@ public class ChessEventSide
         return _board;
     }
 
-    private void setBoard(int i, int j, int value)
+    public void setBoard(int i, int j, int value)
     {
         _board[i][j] = value;
     }
@@ -254,7 +254,7 @@ public class ChessEventSide
         }
     }
 
-    private void unSpawnPieces()
+    public void unSpawnPieces()
     {
         int i;
         for (i = 0; i < 16; i++)
@@ -270,7 +270,7 @@ public class ChessEventSide
         }
     }
 
-    private void killPieces()
+    public void killPieces()
     {
         int i;
         for (i = 0; i < 16; i++)

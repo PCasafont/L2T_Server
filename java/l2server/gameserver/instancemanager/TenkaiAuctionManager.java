@@ -857,7 +857,7 @@ public class TenkaiAuctionManager implements Reloadable
         return 0;
     }
 
-    private void addAuction(Auction auction)
+    public void addAuction(Auction auction)
     {
         _auctions.put(auction.getId(), auction);
 
@@ -914,6 +914,6 @@ public class TenkaiAuctionManager implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final TenkaiAuctionManager _instance = new TenkaiAuctionManager();
+        protected static final TenkaiAuctionManager _instance = new TenkaiAuctionManager();
     }
 }

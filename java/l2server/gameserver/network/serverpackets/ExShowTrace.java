@@ -27,7 +27,7 @@ public final class ExShowTrace extends L2GameServerPacket
 {
     private final List<Trace> _traces = new ArrayList<Trace>();
 
-    private void addTrace(int x, int y, int z, int time)
+    public void addTrace(int x, int y, int z, int time)
     {
         _traces.add(new Trace(x, y, z, time));
     }

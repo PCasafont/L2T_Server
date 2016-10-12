@@ -61,7 +61,7 @@ public abstract class L2ItemListPacket extends L2GameServerPacket
         public int getAppearance();
     }
 
-    void writeItem(ItemInstanceInfo item)
+    protected void writeItem(ItemInstanceInfo item)
     {
         byte mask = 0x00;
         if (item.isAugmented())

@@ -384,6 +384,6 @@ public class AntiFeedManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final AntiFeedManager _instance = new AntiFeedManager();
+        protected static final AntiFeedManager _instance = new AntiFeedManager();
     }
 }

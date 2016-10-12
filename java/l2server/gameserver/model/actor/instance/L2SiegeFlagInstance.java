@@ -220,7 +220,7 @@ public class L2SiegeFlagInstance extends L2Npc
         }
     }
 
-    private void setCanTalk(boolean val)
+    void setCanTalk(boolean val)
     {
         _canTalk = val;
     }

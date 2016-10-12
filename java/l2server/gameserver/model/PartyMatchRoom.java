@@ -78,7 +78,7 @@ public class PartyMatchRoom
         }
     }
 
-    private void notifyMembersAboutExit(L2PcInstance player)
+    public void notifyMembersAboutExit(L2PcInstance player)
     {
         for (L2PcInstance _member : getPartyMembers())
         {

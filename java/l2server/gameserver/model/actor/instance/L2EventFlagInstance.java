@@ -143,7 +143,7 @@ public class L2EventFlagInstance extends L2NpcInstance
         _toDelete = true;
     }
 
-    private boolean isToDelete()
+    public boolean isToDelete()
     {
         return _toDelete;
     }

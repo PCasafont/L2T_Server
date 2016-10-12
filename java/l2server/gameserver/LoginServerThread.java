@@ -60,7 +60,7 @@ import java.util.logging.Logger;
 
 public class LoginServerThread extends Thread
 {
-    private static final Logger _logAccounting = Logger.getLogger("accounting");
+    protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
     /**
      * {@see l2server.loginserver.LoginServer#PROTOCOL_REV }
@@ -540,7 +540,7 @@ public class LoginServerThread extends Thread
         return new BigInteger(hex).toString(16);
     }
 
-    private void doKickPlayer(String account)
+    public void doKickPlayer(String account)
     {
         L2GameClient client = _accountsInGameServer.get(account);
         if (client != null)
@@ -644,7 +644,7 @@ public class LoginServerThread extends Thread
     /**
      * @param server_gm_only
      */
-    private void sendServerStatus(int id, int value)
+    public void sendServerStatus(int id, int value)
     {
         ServerStatus ss = new ServerStatus();
         ss.addAttribute(id, value);
@@ -779,6 +779,6 @@ public class LoginServerThread extends Thread
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final LoginServerThread _instance = new LoginServerThread();
+        protected static final LoginServerThread _instance = new LoginServerThread();
     }
 }

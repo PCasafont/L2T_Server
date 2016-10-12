@@ -162,6 +162,6 @@ public class EnsoulDataTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final EnsoulDataTable _instance = new EnsoulDataTable();
+        protected static final EnsoulDataTable _instance = new EnsoulDataTable();
     }
 }

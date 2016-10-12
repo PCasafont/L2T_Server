@@ -22,7 +22,7 @@ import java.io.Serializable;
 /**
  * @author KenM
  */
-class CompiledScriptHolder implements Serializable
+public class CompiledScriptHolder implements Serializable
 {
     /**
      * Version 1
@@ -47,7 +47,7 @@ class CompiledScriptHolder implements Serializable
     /**
      * @return Returns the lastModified.
      */
-    private long getLastModified()
+    public long getLastModified()
     {
         return _lastModified;
     }
@@ -63,7 +63,7 @@ class CompiledScriptHolder implements Serializable
     /**
      * @return Returns the size.
      */
-    private long getSize()
+    public long getSize()
     {
         return _size;
     }

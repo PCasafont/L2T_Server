@@ -188,6 +188,6 @@ public class ForumsBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        static final ForumsBBSManager _instance = new ForumsBBSManager();
+        protected static final ForumsBBSManager _instance = new ForumsBBSManager();
     }
 }

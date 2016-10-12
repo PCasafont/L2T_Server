@@ -46,7 +46,7 @@ import java.util.logging.Level;
 /**
  * @author Pere
  */
-class SqlToXml
+public class SqlToXml
 {
     public static void races()
     {

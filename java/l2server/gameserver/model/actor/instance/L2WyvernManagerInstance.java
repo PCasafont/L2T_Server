@@ -22,7 +22,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2WyvernManagerInstance extends L2Npc
 {
-    L2WyvernManagerInstance(int objectId, L2NpcTemplate template)
+    public L2WyvernManagerInstance(int objectId, L2NpcTemplate template)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2WyvernManagerInstance);
@@ -46,7 +46,7 @@ public class L2WyvernManagerInstance extends L2Npc
         player.sendPacket(html);
     }
 
-    boolean isOwnerClan(L2PcInstance player)
+    public boolean isOwnerClan(L2PcInstance player)
     {
         return true;
     }

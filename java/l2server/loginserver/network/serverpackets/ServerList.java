@@ -61,17 +61,17 @@ public final class ServerList extends L2LoginServerPacket
 
     class ServerData
     {
-        byte[] _ip;
-        int _port;
-        int _ageLimit;
-        boolean _pvp;
-        int _currentPlayers;
-        int _maxPlayers;
-        boolean _brackets;
+        protected byte[] _ip;
+        protected int _port;
+        protected int _ageLimit;
+        protected boolean _pvp;
+        protected int _currentPlayers;
+        protected int _maxPlayers;
+        protected boolean _brackets;
         protected boolean _clock;
-        int _status;
-        int _serverId;
-        int _serverType;
+        protected int _status;
+        protected int _serverId;
+        protected int _serverType;
 
         ServerData(L2LoginClient client, GameServerInfo gsi)
         {

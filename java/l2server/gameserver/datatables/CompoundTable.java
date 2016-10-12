@@ -138,6 +138,6 @@ public class CompoundTable implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final CompoundTable _instance = new CompoundTable();
+        protected static final CompoundTable _instance = new CompoundTable();
     }
 }

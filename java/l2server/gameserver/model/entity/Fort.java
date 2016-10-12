@@ -86,8 +86,8 @@ public class Fort
     {
         private int _type;
         private int _lvl;
-        int _fee;
-        int _tempFee;
+        protected int _fee;
+        protected int _tempFee;
         private long _rate;
         private long _endDate;
         protected boolean _inDebt;
@@ -346,7 +346,7 @@ public class Fort
         ThreadPoolManager.getInstance().scheduleGeneral(new endFortressSiege(this, clan), 1000);
     }
 
-    private void engrave(L2Clan clan)
+    public void engrave(L2Clan clan)
     {
         setOwner(clan, true);
     }
@@ -447,7 +447,7 @@ public class Fort
      * @param clan
      * @param updateClanPoints
      */
-    private boolean setOwner(L2Clan clan, boolean updateClansReputation)
+    public boolean setOwner(L2Clan clan, boolean updateClansReputation)
     {
         L2Clan oldowner = getOwnerClan();
 
@@ -749,7 +749,7 @@ public class Fort
     /**
      * Remove function In List and in DB
      */
-    private void removeFunction(int functionType)
+    public void removeFunction(int functionType)
     {
         _function.remove(functionType);
         Connection con = null;
@@ -954,13 +954,13 @@ public class Fort
         return _fortOwner;
     }
 
-    private void setOwnerClan(L2Clan clan)
+    public final void setOwnerClan(L2Clan clan)
     {
         setVisibleFlag(clan != null ? true : false);
         _fortOwner = clan;
     }
 
-    private L2DoorInstance getDoor(int doorId)
+    public final L2DoorInstance getDoor(int doorId)
     {
         if (doorId <= 0)
         {
@@ -1042,7 +1042,7 @@ public class Fort
         return _name;
     }
 
-    private void updateClansReputation(L2Clan owner, boolean removePoints)
+    public void updateClansReputation(L2Clan owner, boolean removePoints)
     {
         if (owner != null)
         {
@@ -1139,7 +1139,7 @@ public class Fort
      * 0 - small (3 commanders) <BR>
      * 1 - big (4 commanders + control room)
      */
-    private int getFortType()
+    public final int getFortType()
     {
         return _fortType;
     }
@@ -1204,12 +1204,12 @@ public class Fort
         SpawnTable.getInstance().despawnSpecificTable(_name + "_npc_commanders");
     }
 
-    private void spawnSpecialEnvoys()
+    public void spawnSpecialEnvoys()
     {
         SpawnTable.getInstance().spawnSpecificTable(_name + "_envoys");
     }
 
-    private void despawnSpecialEnvoys()
+    public void despawnSpecialEnvoys()
     {
         SpawnTable.getInstance().despawnSpecificTable(_name + "_envoys");
     }

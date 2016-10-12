@@ -347,8 +347,8 @@ public class AntiBotsManager
     private static int _failedWebHitTimes = 0;
 
     // Key: IP
-    private static final Map<String, ClientInfo> _clients = new HashMap<String, ClientInfo>();
-    private static final ArrayList<PlayerBanTrace> _pendingBans = new ArrayList<PlayerBanTrace>();
+    public static final Map<String, ClientInfo> _clients = new HashMap<String, ClientInfo>();
+    public static final ArrayList<PlayerBanTrace> _pendingBans = new ArrayList<PlayerBanTrace>();
     public static final ArrayList<String> _hardwareBans = new ArrayList<String>();
 
     private static final String[] PROHIBITED_PROCESSES_NAMES = {
@@ -363,7 +363,7 @@ public class AntiBotsManager
             "la2robot", "la2util", "autoit" //https://www.autoitscript.com
     };
 
-    private AntiBotsManager()
+    public AntiBotsManager()
     {
         init();
     }
@@ -828,7 +828,7 @@ public class AntiBotsManager
         return result;
     }
 
-    private boolean isIllegalProcess(final ClientProcess process)
+    public final boolean isIllegalProcess(final ClientProcess process)
     {
         final String productName = process.getProductName().toLowerCase();
         final String fileExeName = process.getFileName().toLowerCase();
@@ -855,7 +855,7 @@ public class AntiBotsManager
         return false;
     }
 
-    private List<ClientInfo> getClientsInfoByIp(final String ip)
+    public final List<ClientInfo> getClientsInfoByIp(final String ip)
     {
         List<ClientInfo> result = new ArrayList<ClientInfo>();
 
@@ -1098,7 +1098,7 @@ public class AntiBotsManager
         return false;
     }
 
-    private String getProperPlayerIP(String ip)
+    public String getProperPlayerIP(String ip)
     {
         synchronized (_conflictiveUserIps)
         {

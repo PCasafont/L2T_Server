@@ -20,7 +20,7 @@ public abstract class AbstractNode
     private AbstractNodeLoc _loc;
     private AbstractNode _parent;
 
-    protected AbstractNode(AbstractNodeLoc loc)
+    public AbstractNode(AbstractNodeLoc loc)
     {
         _loc = loc;
     }

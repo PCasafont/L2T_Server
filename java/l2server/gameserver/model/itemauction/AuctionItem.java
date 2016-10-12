@@ -24,7 +24,7 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author Forsaiken
  */
-final class AuctionItem
+public final class AuctionItem
 {
     private final int _auctionItemId;
     private final int _auctionLength;

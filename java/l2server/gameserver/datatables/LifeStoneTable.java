@@ -156,14 +156,14 @@ public class LifeStoneTable
     public static final int GRADE_HIGH = 2;
     public static final int GRADE_TOP = 3;
     public static final int GRADE_LEG = 4;
-    private static final int GRADE_ACC = 5; // Accessory LS
-    private static final int GRADE_ARIA = 6; // Aria's LS
+    public static final int GRADE_ACC = 5; // Accessory LS
+    public static final int GRADE_ARIA = 6; // Aria's LS
 
-    private static final int GEMSTONE_D = 2130;
-    private static final int GEMSTONE_C = 2131;
-    private static final int GEMSTONE_B = 2132;
-    private static final int GEMSTONE_A = 2133;
-    private static final int GEMSTONE_R = 19440;
+    protected static final int GEMSTONE_D = 2130;
+    protected static final int GEMSTONE_C = 2131;
+    protected static final int GEMSTONE_B = 2132;
+    protected static final int GEMSTONE_A = 2133;
+    protected static final int GEMSTONE_R = 19440;
 
     private final Map<Integer, LifeStone> _lifeStones = new HashMap<Integer, LifeStone>();
 
@@ -174,7 +174,7 @@ public class LifeStoneTable
         load();
     }
 
-    private void load()
+    public final void load()
     {
         _lifeStones.clear();
 
@@ -508,7 +508,7 @@ public class LifeStoneTable
     /*
      * Check if player's conditions valid for augmentation process
      */
-    private static boolean isValid(L2PcInstance player)
+    public static final boolean isValid(L2PcInstance player)
     {
         if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE)
         {
@@ -648,6 +648,6 @@ public class LifeStoneTable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final LifeStoneTable _instance = new LifeStoneTable();
+        protected static final LifeStoneTable _instance = new LifeStoneTable();
     }
 }

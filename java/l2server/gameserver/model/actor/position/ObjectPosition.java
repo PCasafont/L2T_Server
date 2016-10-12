@@ -78,7 +78,7 @@ public class ObjectPosition
      * <li> CharPosition</li>
      * <li> PcPosition</li><BR>
      */
-    void badCoords()
+    protected void badCoords()
     {
 
     }
@@ -123,7 +123,7 @@ public class ObjectPosition
     /**
      * checks if current object changed its region, if so, update referencies
      */
-    private void updateWorldRegion()
+    public void updateWorldRegion()
     {
         if (!getActiveObject().isVisible())
         {
@@ -147,7 +147,7 @@ public class ObjectPosition
 
     // =========================================================
     // Property - Public
-    L2Object getActiveObject()
+    public L2Object getActiveObject()
     {
         return _activeObject;
     }

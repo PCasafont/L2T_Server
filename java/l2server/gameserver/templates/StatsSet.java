@@ -38,7 +38,7 @@ public final class StatsSet
      *
      * @return HashMap
      */
-    private Map<String, Object> getSet()
+    public final Map<String, Object> getSet()
     {
         return _set;
     }

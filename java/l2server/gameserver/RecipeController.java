@@ -340,23 +340,23 @@ public class RecipeController
 
     private static class RecipeItemMaker implements Runnable
     {
-        boolean _isValid;
-        List<TempItem> _items = null;
-        final L2RecipeList _recipeList;
-        final L2PcInstance _player; // "crafter"
-        final L2PcInstance _target; // "customer"
-        final L2Skill _skill;
-        final int _skillId;
-        final int _skillLevel;
-        int _creationPasses = 1;
-        int _itemGrab;
-        int _exp = -1;
-        int _sp = -1;
-        long _price;
-        int _totalItems;
+        protected boolean _isValid;
+        protected List<TempItem> _items = null;
+        protected final L2RecipeList _recipeList;
+        protected final L2PcInstance _player; // "crafter"
+        protected final L2PcInstance _target; // "customer"
+        protected final L2Skill _skill;
+        protected final int _skillId;
+        protected final int _skillLevel;
+        protected int _creationPasses = 1;
+        protected int _itemGrab;
+        protected int _exp = -1;
+        protected int _sp = -1;
+        protected long _price;
+        protected int _totalItems;
         @SuppressWarnings("unused")
         protected int _materialsRefPrice;
-        int _delay;
+        protected int _delay;
 
         public RecipeItemMaker(L2PcInstance pPlayer, L2RecipeList pRecipeList, L2PcInstance pTarget)
         {
@@ -1054,6 +1054,6 @@ public class RecipeController
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final RecipeController _instance = new RecipeController();
+        protected static final RecipeController _instance = new RecipeController();
     }
 }

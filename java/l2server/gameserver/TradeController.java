@@ -74,7 +74,7 @@ public class TradeController implements Reloadable
         return true;
     }
 
-    private boolean load(String path)
+    public boolean load(String path)
     {
         File dir = new File(path);
         if (!dir.exists())
@@ -313,6 +313,6 @@ public class TradeController implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final TradeController _instance = new TradeController();
+        protected static final TradeController _instance = new TradeController();
     }
 }

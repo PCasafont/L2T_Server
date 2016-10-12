@@ -5,7 +5,7 @@ import java.nio.BufferOverflowException;
 /**
  * @author Forsaiken
  */
-final class NioNetStringBuffer
+public final class NioNetStringBuffer
 {
     private final char[] _buf;
 

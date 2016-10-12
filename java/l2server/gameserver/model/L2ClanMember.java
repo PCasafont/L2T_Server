@@ -238,7 +238,7 @@ public class L2ClanMember
         }
     }
 
-    private void updatePledgeType()
+    public void updatePledgeType()
     {
         Connection con = null;
 
@@ -290,7 +290,7 @@ public class L2ClanMember
     /**
      * Update the characters table of the database with power grade.<BR><BR>
      */
-    private void updatePowerGrade()
+    public void updatePowerGrade()
     {
         Connection con = null;
 

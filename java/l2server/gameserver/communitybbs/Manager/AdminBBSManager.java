@@ -66,6 +66,6 @@ public class AdminBBSManager extends BaseBBSManager
 
     private static class SingletonHolder
     {
-        static final AdminBBSManager _instance = new AdminBBSManager();
+        protected static final AdminBBSManager _instance = new AdminBBSManager();
     }
 }

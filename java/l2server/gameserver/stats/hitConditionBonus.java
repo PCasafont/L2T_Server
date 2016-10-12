@@ -28,7 +28,7 @@ import java.util.logging.Level;
 /**
  * @author Nik
  */
-class hitConditionBonus
+public class hitConditionBonus
 {
 
     private static int frontBonus = 0;
@@ -40,7 +40,7 @@ class hitConditionBonus
 
     //private static int rainBonus = 0;
 
-    static double getConditionBonus(L2Character attacker, L2Character target)
+    protected static double getConditionBonus(L2Character attacker, L2Character target)
     {
         double mod = 100;
         // Get high or low bonus

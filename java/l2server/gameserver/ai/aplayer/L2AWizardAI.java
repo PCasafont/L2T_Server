@@ -26,8 +26,8 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class L2AWizardAI extends L2APlayerAI
 {
-    private static final int MAGICAL_CHARGE = 11094;
-    private static final int MAGICAL_EVASION = 11057;
+    public static final int MAGICAL_CHARGE = 11094;
+    public static final int MAGICAL_EVASION = 11057;
 
     //11007 + 3
     public L2AWizardAI(AIAccessor accessor)

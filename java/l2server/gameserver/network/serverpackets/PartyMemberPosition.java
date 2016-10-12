@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class PartyMemberPosition extends L2GameServerPacket
 {
-    private Map<Integer, Location> locations = new HashMap<Integer, Location>();
+    Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
     public PartyMemberPosition(L2Party party)
     {

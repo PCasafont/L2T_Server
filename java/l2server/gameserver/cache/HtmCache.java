@@ -74,7 +74,7 @@ public class HtmCache implements Reloadable
                 HtmCache.getInstance().getLoadedFiles() + " files loaded";
     }
 
-    private void reload(File f)
+    public void reload(File f)
     {
         if (!Config.LAZY_CACHE)
         {
@@ -98,12 +98,12 @@ public class HtmCache implements Reloadable
         Log.info("Cache[HTML]: Reloaded specified path.");
     }
 
-    private double getMemoryUsage()
+    public double getMemoryUsage()
     {
         return (float) _bytesBuffLen / 1048576;
     }
 
-    private int getLoadedFiles()
+    public int getLoadedFiles()
     {
         return _loadedFiles;
     }
@@ -139,7 +139,7 @@ public class HtmCache implements Reloadable
         }
     }
 
-    private String loadFile(File file)
+    public String loadFile(File file)
     {
         final String relpath = Util.getRelativePath(Config.DATAPACK_ROOT, file);
         final int hashcode = relpath.hashCode();
@@ -252,7 +252,7 @@ public class HtmCache implements Reloadable
         return content;
     }
 
-    private String getHtm(String path)
+    public String getHtm(String path)
     {
         if (path == null || path.isEmpty())
         {
@@ -304,6 +304,6 @@ public class HtmCache implements Reloadable
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final HtmCache _instance = new HtmCache();
+        protected static final HtmCache _instance = new HtmCache();
     }
 }

@@ -23,11 +23,11 @@ import java.util.List;
  */
 public class MultiSellEntry
 {
-    int _entryId;
-    boolean _stackable = true;
+    protected int _entryId;
+    protected boolean _stackable = true;
 
-    List<Ingredient> _products;
-    List<Ingredient> _ingredients;
+    protected List<Ingredient> _products;
+    protected List<Ingredient> _ingredients;
 
     public MultiSellEntry(int entryId)
     {
@@ -40,7 +40,7 @@ public class MultiSellEntry
      * This constructor used in PreparedEntry only
      * ArrayLists not created
      */
-    MultiSellEntry()
+    protected MultiSellEntry()
     {
     }
 

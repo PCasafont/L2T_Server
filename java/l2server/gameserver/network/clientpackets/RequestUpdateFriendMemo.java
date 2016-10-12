@@ -23,8 +23,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestUpdateFriendMemo extends L2GameClientPacket
 {
-    private String cName;
-    private String memo;
+    String cName;
+    String memo;
 
     @Override
     protected void readImpl()

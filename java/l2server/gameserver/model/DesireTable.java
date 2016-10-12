@@ -187,7 +187,7 @@ public class DesireTable
         }
     }
 
-    private void addKnownObject(L2Object object, DesireType... desireList)
+    public void addKnownObject(L2Object object, DesireType... desireList)
     {
         if (object != null)
         {

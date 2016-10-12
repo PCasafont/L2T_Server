@@ -38,7 +38,7 @@ import java.util.logging.Level;
  */
 public class L2Trap extends L2Character
 {
-    private static final int TICK = 1000; // 1s
+    protected static final int TICK = 1000; // 1s
 
     private boolean _isTriggered;
     private final L2Skill _skill;
@@ -50,7 +50,7 @@ public class L2Trap extends L2Character
      * @param objectId
      * @param template
      */
-    protected L2Trap(int objectId, L2NpcTemplate template, int lifeTime, L2Skill skill)
+    public L2Trap(int objectId, L2NpcTemplate template, int lifeTime, L2Skill skill)
     {
         super(objectId, template);
         setInstanceType(InstanceType.L2Trap);
@@ -268,7 +268,7 @@ public class L2Trap extends L2Character
      * @param cha - checked character
      * @return True if character can see trap
      */
-    protected boolean canSee(L2Character cha)
+    public boolean canSee(L2Character cha)
     {
         return false;
     }
@@ -278,7 +278,7 @@ public class L2Trap extends L2Character
      *
      * @param detector
      */
-    protected void setDetected(L2Character detector)
+    public void setDetected(L2Character detector)
     {
         detector.sendPacket(new NpcInfo(this));
     }
@@ -360,7 +360,7 @@ public class L2Trap extends L2Character
      *
      * @param target
      */
-    private void trigger(L2Character target)
+    public void trigger(L2Character target)
     {
         _isTriggered = true;
         broadcastPacket(new NpcInfo(this));

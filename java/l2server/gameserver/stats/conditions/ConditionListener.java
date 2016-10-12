@@ -26,7 +26,7 @@ package l2server.gameserver.stats.conditions;
  *
  * @author mkizub
  */
-interface ConditionListener
+public interface ConditionListener
 {
 
     /**

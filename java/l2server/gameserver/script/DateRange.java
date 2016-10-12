@@ -29,7 +29,7 @@ public class DateRange
 {
     private Date _startDate, _endDate;
 
-    private DateRange(Date from, Date to)
+    public DateRange(Date from, Date to)
     {
         _startDate = from;
         _endDate = to;

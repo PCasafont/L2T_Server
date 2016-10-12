@@ -39,7 +39,7 @@ import java.util.Map;
 
 public final class Config
 {
-    private static final int DEFAULT = 0x01;
+    public static final int DEFAULT = 0x01;
     public static final int TENKAI = 0x02;
     public static final int TENKAI_ESTHUS = 0x20;
 
@@ -606,7 +606,7 @@ public final class Config
     public static String WEB_DB_NAME;
     public static String FORUM_DB_NAME;
     public static String LOGIN_DB_NAME;
-    private static int SERVER_NAME_MASK;
+    public static int SERVER_NAME_MASK;
 
     //--------------------------------------------------
     // FloodProtector Settings
@@ -959,7 +959,7 @@ public final class Config
 
     //chatfilter
     public static ArrayList<String> FILTER_LIST;
-    private static ArrayList<String> LANGUAGE_FILTER;
+    public static ArrayList<String> LANGUAGE_FILTER;
 
     // Conquerable Halls Settings
     public static int CHS_SIEGE_LENGTH;
@@ -982,9 +982,9 @@ public final class Config
     // L2J Property File Definitions
     //--------------------------------------------------
     public static final String CONFIG_DIRECTORY = "./config/";
-    private static final String HEXID_FILE = "hexid.txt";
-    private static final String CHAT_FILTER_FILE = "chatfilter.txt";
-    private static final String LANGUAGE_FILTER_FILE = "languagefilter.txt";
+    public static final String HEXID_FILE = "hexid.txt";
+    public static final String CHAT_FILTER_FILE = "chatfilter.txt";
+    public static final String LANGUAGE_FILTER_FILE = "languagefilter.txt";
 
     public static String CONFIG_FILE = "default.cfg";
 
@@ -1206,7 +1206,7 @@ public final class Config
      * @param hexId    (String) : hexadecimal ID of the server to store
      * @param fileName (String) : name of the L2Properties file
      */
-    private static void saveHexid(int serverId, String hexId, String fileName)
+    public static void saveHexid(int serverId, String hexId, String fileName)
     {
         try
         {
@@ -1650,7 +1650,7 @@ public final class Config
         return result;
     }
 
-    private static double[] parseDoubleArray(String value)
+    public static double[] parseDoubleArray(String value)
     {
         double[] array = new double[Byte.MAX_VALUE + 1];
 
@@ -1743,7 +1743,7 @@ public final class Config
         return result;
     }
 
-    private static double[] MOONLAND_EXPERIENCE_RATE_MULTIPLIER = {
+    public static double[] MOONLAND_EXPERIENCE_RATE_MULTIPLIER = {
             10.0, // Level 1
             10.5, // Level 2
             11.0, // Level 3
@@ -1873,12 +1873,12 @@ public final class Config
         return findNonCustomResource(path);
     }
 
-    private static File findCustomResource(final String path)
+    public static final File findCustomResource(final String path)
     {
         return new File("data_" + SERVER_NAME + "/", path);
     }
 
-    private static File findNonCustomResource(final String path)
+    public static final File findNonCustomResource(final String path)
     {
         return new File("data/", path);
     }

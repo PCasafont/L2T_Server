@@ -28,8 +28,8 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class L2AArcherAI extends L2APlayerAI
 {
-    private static final int QUICK_EVASION = 10774;
-    private static final int QUICK_CHARGE = 10805;
+    public static final int QUICK_EVASION = 10774;
+    public static final int QUICK_CHARGE = 10805;
 
     public L2AArcherAI(AIAccessor accessor)
     {

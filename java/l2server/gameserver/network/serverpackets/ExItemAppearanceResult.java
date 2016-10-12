@@ -23,7 +23,7 @@ import l2server.gameserver.model.L2ItemInstance;
 public class ExItemAppearanceResult extends L2GameServerPacket
 {
     private int _answer;
-    private L2ItemInstance _result;
+    L2ItemInstance _result;
 
     public ExItemAppearanceResult(int answer, L2ItemInstance result)
     {

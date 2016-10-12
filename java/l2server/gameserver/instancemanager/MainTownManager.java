@@ -131,7 +131,7 @@ public class MainTownManager
     private List<MainTownInfo> _nextTowns = new ArrayList<MainTownInfo>();
     private long _nextTownTimer = 0L;
 
-    private MainTownManager()
+    public MainTownManager()
     {
         load();
     }
@@ -308,6 +308,6 @@ public class MainTownManager
     @SuppressWarnings("synthetic-access")
     private static class SingletonHolder
     {
-        static final MainTownManager _instance = new MainTownManager();
+        protected static final MainTownManager _instance = new MainTownManager();
     }
 }
