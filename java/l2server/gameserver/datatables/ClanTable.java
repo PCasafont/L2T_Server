@@ -142,14 +142,7 @@ public class ClanTable
 
         if (Config.isServer(Config.TENKAI))
         {
-            ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    determineTopClansByMemberCount();
-                }
-            }, 0, 3600000);
+            ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> determineTopClansByMemberCount(), 0, 3600000);
         }
     }
 
@@ -424,19 +417,15 @@ public class ClanTable
 
     public void scheduleRemoveClan(final int clanId)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
+            if (getClan(clanId) == null)
             {
-                if (getClan(clanId) == null)
-                {
-                    return;
-                }
-                if (getClan(clanId).getDissolvingExpiryTime() != 0)
-                {
-                    destroyClan(clanId);
-                }
+                return;
+            }
+            if (getClan(clanId).getDissolvingExpiryTime() != 0)
+            {
+                destroyClan(clanId);
             }
         }, Math.max(getClan(clanId).getDissolvingExpiryTime() - System.currentTimeMillis(), 300000));
     }

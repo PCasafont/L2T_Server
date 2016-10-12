@@ -36,8 +36,6 @@ public class TargetOne implements ISkillTargetTypeHandler
 {
     protected static final Logger _log = Logger.getLogger(TargetOne.class.getName());
 
-    /**
-     */
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
@@ -80,6 +78,7 @@ public class TargetOne implements ISkillTargetTypeHandler
                     return null;
                 }
             }
+            default:
         }
 
         // Check for null target or any other invalid target
@@ -93,8 +92,6 @@ public class TargetOne implements ISkillTargetTypeHandler
         return new L2Character[]{target};
     }
 
-    /**
-     */
     @Override
     public Enum<L2SkillTargetType> getTargetType()
     {

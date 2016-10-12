@@ -2037,6 +2037,7 @@ public class CrystalCaverns extends Quest
                         runEmeraldRooms(world, ROOM1_SPAWNS, 1);
                     }
                     break;
+                default:
             }
         }
         return null;

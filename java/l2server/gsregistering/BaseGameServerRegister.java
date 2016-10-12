@@ -258,14 +258,10 @@ public abstract class BaseGameServerRegister
             // couldn't care less
         }
 
-        SwingUtilities.invokeLater(new Runnable()
+        SwingUtilities.invokeLater(() ->
         {
-            @Override
-            public void run()
-            {
-                GUserInterface gui = new GUserInterface(bundle);
-                gui.getFrame().setVisible(true);
-            }
+            GUserInterface gui = new GUserInterface(bundle);
+            gui.getFrame().setVisible(true);
         });
     }
 

@@ -125,14 +125,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 
     public void refreshAsync()
     {
-        Runnable r = new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                GUserInterface.this.refreshServers();
-            }
-        };
+        Runnable r = () -> GUserInterface.this.refreshServers();
         Thread t = new Thread(r, "LoaderThread");
         t.start();
     }
@@ -141,25 +134,11 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
     public void load()
     {
 
-        SwingUtilities.invokeLater(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                _progressBar.setVisible(true);
-            }
-        });
+        SwingUtilities.invokeLater(() -> _progressBar.setVisible(true));
 
         super.load();
 
-        SwingUtilities.invokeLater(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                _progressBar.setVisible(false);
-            }
-        });
+        SwingUtilities.invokeLater(() -> _progressBar.setVisible(false));
     }
 
     /**
@@ -191,55 +170,47 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
         // load succeeded?
         if (isLoaded())
         {
-            SwingUtilities.invokeLater(new Runnable()
+            SwingUtilities.invokeLater(() ->
             {
-                @Override
-                public void run()
+                int size = GameServerTable.getInstance().getServerNames().size();
+                if (size == 0)
                 {
-                    int size = GameServerTable.getInstance().getServerNames().size();
-                    if (size == 0)
-                    {
-                        String title = getBundle().getString("error");
-                        String msg = getBundle().getString("noServerNames");
-                        JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
-                        System.exit(1);
-                    }
-                    // reset
-                    _dtm.setRowCount(0);
+                    String title = getBundle().getString("error");
+                    String msg = getBundle().getString("noServerNames");
+                    JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
+                    System.exit(1);
+                }
+                // reset
+                _dtm.setRowCount(0);
 
-                    for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
+                for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
+                {
+                    String name = GameServerTable.getInstance().getServerNameById(id);
+                    JButton button =
+                            new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
+                    button.addActionListener(e ->
                     {
-                        String name = GameServerTable.getInstance().getServerNameById(id);
-                        JButton button =
-                                new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
-                        button.addActionListener(new ActionListener()
+                        String sid = String.valueOf(id);
+                        String sname = GameServerTable.getInstance().getServerNameById(id);
+
+                        int choice = JOptionPane.showConfirmDialog(getFrame(),
+                                getBundle().getString("confirmRemoveText").replace("%d", sid)
+                                        .replace("%s", sname), getBundle().getString("confirmRemoveTitle"),
+                                JOptionPane.YES_NO_OPTION);
+                        if (choice == JOptionPane.YES_OPTION)
                         {
-                            @Override
-                            public void actionPerformed(ActionEvent e)
+                            try
                             {
-                                String sid = String.valueOf(id);
-                                String sname = GameServerTable.getInstance().getServerNameById(id);
-
-                                int choice = JOptionPane.showConfirmDialog(getFrame(),
-                                        getBundle().getString("confirmRemoveText").replace("%d", sid)
-                                                .replace("%s", sname), getBundle().getString("confirmRemoveTitle"),
-                                        JOptionPane.YES_NO_OPTION);
-                                if (choice == JOptionPane.YES_OPTION)
-                                {
-                                    try
-                                    {
-                                        BaseGameServerRegister.unregisterGameServer(id);
-                                        GUserInterface.this.refreshAsync();
-                                    }
-                                    catch (SQLException e1)
-                                    {
-                                        GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
-                                    }
-                                }
+                                BaseGameServerRegister.unregisterGameServer(id);
+                                GUserInterface.this.refreshAsync();
                             }
-                        });
-                        _dtm.addRow(new Object[]{id, name, button});
-                    }
+                            catch (SQLException e1)
+                            {
+                                GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
+                            }
+                        }
+                    });
+                    _dtm.addRow(new Object[]{id, name, button});
                 }
             });
         }

@@ -444,14 +444,7 @@ public class L2BossZone extends L2ZoneType
                 player.sendPacket(
                         new ExShowScreenMessage("You will be removed from the zone in 60 seconds because of dual box!",
                                 5000));
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        kickPlayerFromEpicZone(player);
-                    }
-                }, 60000);
+                ThreadPoolManager.getInstance().scheduleGeneral(() -> kickPlayerFromEpicZone(player), 60000);
             }
         }
     }

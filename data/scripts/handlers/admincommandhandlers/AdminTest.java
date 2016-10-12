@@ -55,10 +55,6 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -1188,81 +1184,6 @@ public class AdminTest implements IAdminCommandHandler
                         cha.setOnlineStatus(true, false);
                     }
                 }, 1000);
-            }
-            else if (secondaryCommand.equals("Testos"))
-            {
-
-            }
-            else if (secondaryCommand.equals("PrintSkills"))
-            {
-                final L2Object target = activeChar.getTarget();
-
-                L2PcInstance targetedPlayer = null;
-                if (!(target instanceof L2PcInstance))
-                {
-                    targetedPlayer = activeChar;
-                }
-                else
-                {
-                    targetedPlayer = (L2PcInstance) target;
-                }
-
-                String filePath =
-                        "D:/Projects/Dreams Gaming/Lineage II/Goddess of Destruction+/Server Files/MoonLand/Tools/L2_DataTool/dist/data/client/skillname-e.txt";
-
-                List<String> allLines = null;
-                try
-                {
-                    allLines = Files.readAllLines(Paths.get(filePath), StandardCharsets.ISO_8859_1);
-                }
-                catch (IOException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-                Log.info("// ");
-                Log.info("// ");
-                Log.info("");
-                for (L2Skill s : targetedPlayer.getAllSkills())
-                {
-                    if (!s.isActive())
-                    {
-                        continue;
-                    }
-                    else if (s.getName().equals("Common Craft") || s.getName().startsWith("Mentor"))
-                    {
-                        continue;
-                    }
-
-                    final String varName = s.getName().toUpperCase().replace(" ", "_").replace("'", "");
-
-                    for (String s2 : allLines)
-                    {
-                        final String[] split = s2.split("\t");
-                        final int skillId = Integer.parseInt(split[0]);
-
-                        if (skillId != s.getId())
-                        {
-                            continue;
-                        }
-
-                        final int skillLevel = Integer.parseInt(split[1]);
-
-                        if (skillLevel != s.getLevel())
-                        {
-                            continue;
-                        }
-
-                        @SuppressWarnings("unused") final String skillName = split[2];
-                        final String skillDesc = split[3];
-
-                        Log.info("// " + skillDesc);
-                        Log.info("// Cooldown: " + s.getReuseDelay() / 1000 + "s");
-                    }
-                    Log.info("private static final int " + varName + " = " + s.getId() + ";");
-                    Log.info("");
-                }
             }
         }
         return true;

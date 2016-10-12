@@ -571,14 +571,8 @@ public abstract class L2ZoneType
 
         broadcastMovie(vidId);
 
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                startWholeZone();
-            }
-        }, ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
+        ThreadPoolManager.getInstance().scheduleGeneral(
+                () -> startWholeZone(), ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
     }
 
     public void stopWholeZone()
@@ -632,14 +626,7 @@ public abstract class L2ZoneType
 
     public void sendDelayedPacketToZone(final int delayMsSec, final L2GameServerPacket packet)
     {
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                broadcastPacket(packet);
-            }
-        }, delayMsSec);
+        ThreadPoolManager.getInstance().scheduleGeneral(() -> broadcastPacket(packet), delayMsSec);
     }
 
     public void oustAllPlayers()

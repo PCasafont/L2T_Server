@@ -715,6 +715,7 @@ public class Istina extends L2AttackableAIScript
                         InstanceManager.getInstance()
                                 .sendPacket(world.instanceId, new EventTrigger(_effectGreenCircle, false));
                         break;
+                    default:
                 }
             }
             else if (event.equalsIgnoreCase("stage_last_boss_drop"))
@@ -899,6 +900,7 @@ public class Istina extends L2AttackableAIScript
                         case USE_ZONE_RED:
                             world.zoneDebuff.getEffects(character, character);
                             break;
+                        default:
                     }
                     break;
 
@@ -909,6 +911,7 @@ public class Istina extends L2AttackableAIScript
                         case USE_ZONE_GREEN:
                             world.zoneDebuff.getEffects(character, character);
                             break;
+                        default:
                     }
                     break;
 
@@ -919,8 +922,10 @@ public class Istina extends L2AttackableAIScript
                         case USE_ZONE_GREEN:
                             world.zoneDebuff.getEffects(character, character);
                             break;
+                        default:
                     }
                     break;
+                default:
             }
         }
         return super.onEnterZone(character, zone);

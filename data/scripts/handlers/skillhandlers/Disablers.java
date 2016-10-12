@@ -420,6 +420,7 @@ public class Disablers implements ISkillHandler
                                 case SIGNET_GROUND:
                                 case SIGNET_EFFECT:
                                     continue;
+                                default:
                             }
 
                             switch (a.getSkill().getId())

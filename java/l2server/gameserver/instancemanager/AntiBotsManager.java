@@ -464,17 +464,13 @@ public class AntiBotsManager
 
                         if (Config.ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED)
                         {
-                            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+                            ThreadPoolManager.getInstance().scheduleGeneral(() ->
                             {
-                                @Override
-                                public void run()
+                                GmListTable.broadcastMessageToGMs(
+                                        player.getName() + " has been kicked. His system was outdated.");
+                                if (!player.isGM())
                                 {
-                                    GmListTable.broadcastMessageToGMs(
-                                            player.getName() + " has been kicked. His system was outdated.");
-                                    if (!player.isGM())
-                                    {
-                                        player.logout();
-                                    }
+                                    player.logout();
                                 }
                             }, 20000);
                         }

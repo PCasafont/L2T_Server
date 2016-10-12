@@ -39,18 +39,11 @@ import java.util.List;
  */
 public class TargetFrontArea implements ISkillTargetTypeHandler
 {
-
-    /**
-     *
-     */
     public TargetFrontArea()
     {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     */
-    @SuppressWarnings("null")
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {

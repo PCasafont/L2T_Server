@@ -34,8 +34,6 @@ import java.util.List;
  */
 public class TargetCorpseMob implements ISkillTargetTypeHandler
 {
-    /**
-     */
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {
@@ -63,9 +61,10 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler
                 }
                 break;
             }
+            default:
         }
 
-        if (onlyFirst == false)
+        if (!onlyFirst)
         {
             targetList.add(target);
             return targetList.toArray(new L2Object[targetList.size()]);

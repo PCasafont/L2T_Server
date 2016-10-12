@@ -8910,7 +8910,7 @@ public class L2PcInstance extends L2Playable
             double currentMp = 0;
 
             byte playerTemporaryLevel = 0;
-            while (rset.next())
+            if (rset.next())
             {
                 final int activeClassId = rset.getInt("classid");
                 final boolean female = rset.getInt("sex") != 0;
@@ -9131,7 +9131,6 @@ public class L2PcInstance extends L2Playable
 
                 chars.close();
                 stmt.close();
-                break;
             }
 
             rset.close();
@@ -21050,14 +21049,10 @@ public class L2PcInstance extends L2Playable
                 _mezResistTasks[type].cancel(false);
             }
 
-            _mezResistTasks[type] = ThreadPoolManager.getInstance().scheduleEffect(new Runnable()
+            _mezResistTasks[type] = ThreadPoolManager.getInstance().scheduleEffect(() ->
             {
-                @Override
-                public void run()
-                {
-                    _mezResistLevels[type] = 0;
-                    _mezResistTasks[type] = null;
-                }
+                _mezResistLevels[type] = 0;
+                _mezResistTasks[type] = null;
             }, 15000L);
         }
 
@@ -23107,21 +23102,17 @@ public class L2PcInstance extends L2Playable
         }
 
         sendMessage("You have one minute to see how the " + item.getName() + " appearance looks on your char.");
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
+            if (!_tryingOn.containsKey(invSlot) || _tryingOn.get(invSlot) != item.getItemId())
             {
-                if (!_tryingOn.containsKey(invSlot) || _tryingOn.get(invSlot) != item.getItemId())
-                {
-                    return;
-                }
-
-                _tryingOn.remove(invSlot);
-
-                broadcastUserInfo();
-                sendMessage("Your minute to see the " + item.getName() + " appearance has expired.");
+                return;
             }
+
+            _tryingOn.remove(invSlot);
+
+            broadcastUserInfo();
+            sendMessage("Your minute to see the " + item.getName() + " appearance has expired.");
         }, 60000L);
     }
 
@@ -23145,22 +23136,18 @@ public class L2PcInstance extends L2Playable
         _dwEquipped = true;
         //if (AttackStanceTaskManager.getInstance().getAttackStanceTask(this))
         //	startDragonBloodConsumeTask();
-        ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+        ThreadPoolManager.getInstance().scheduleGeneral(() ->
         {
-            @Override
-            public void run()
+            if (isPlayingEvent() || isInOlympiadMode())
             {
-                if (isPlayingEvent() || isInOlympiadMode())
-                {
-                    getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
-                    broadcastUserInfo();
-                    sendPacket(new ItemList(L2PcInstance.this, false));
-                }
-                //sendPacket(new ExShowScreenMessage("Dragonclaw weapons are disabled! Let's test some R99 PvP for now ;)", 5000));
-                //getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
-                //broadcastUserInfo();
-                //sendPacket(new ItemList(L2PcInstance.this, false));
+                getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
+                broadcastUserInfo();
+                sendPacket(new ItemList(L2PcInstance.this, false));
             }
+            //sendPacket(new ExShowScreenMessage("Dragonclaw weapons are disabled! Let's test some R99 PvP for now ;)", 5000));
+            //getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
+            //broadcastUserInfo();
+            //sendPacket(new ItemList(L2PcInstance.this, false));
         }, 10L);
     }
 
@@ -23197,24 +23184,20 @@ public class L2PcInstance extends L2Playable
             return;
         }
 
-        _dragonBloodConsumeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        _dragonBloodConsumeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
+            if (!isInsideZone(ZONE_PEACE) && !destroyItemByItemId("dcConsume", 36415, 1, L2PcInstance.this, true))
             {
-                if (!isInsideZone(ZONE_PEACE) && !destroyItemByItemId("dcConsume", 36415, 1, L2PcInstance.this, true))
-                {
-                    sendPacket(new ExShowScreenMessage("You don't have Dragon Blood in your inventory!", 5000));
-                    getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
-                    broadcastUserInfo();
-                    sendPacket(new ItemList(L2PcInstance.this, false));
-                }
-                else
-                {
-                    L2ItemInstance dw = getActiveWeaponInstance();
-                    sendPacket(new ExShowScreenMessage("Your " + dw.getName() + " has just consumed 1 Dragon Blood",
-                            5000));
-                }
+                sendPacket(new ExShowScreenMessage("You don't have Dragon Blood in your inventory!", 5000));
+                getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
+                broadcastUserInfo();
+                sendPacket(new ItemList(L2PcInstance.this, false));
+            }
+            else
+            {
+                L2ItemInstance dw = getActiveWeaponInstance();
+                sendPacket(new ExShowScreenMessage("Your " + dw.getName() + " has just consumed 1 Dragon Blood",
+                        5000));
             }
         }, 10L, 60000L);
     }

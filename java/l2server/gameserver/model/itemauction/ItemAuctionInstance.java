@@ -273,14 +273,7 @@ public final class ItemAuctionInstance
 
             default:
             {
-                Arrays.sort(auctions, new Comparator<ItemAuction>()
-                {
-                    @Override
-                    public final int compare(final ItemAuction o1, final ItemAuction o2)
-                    {
-                        return ((Long) o2.getStartingTime()).compareTo(o1.getStartingTime());
-                    }
-                });
+                Arrays.sort(auctions, (o1, o2) -> ((Long) o2.getStartingTime()).compareTo(o1.getStartingTime()));
 
                 // just to make sure we won`t skip any auction because of little different times
                 final long currentTime = System.currentTimeMillis();

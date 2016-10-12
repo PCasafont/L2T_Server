@@ -1661,27 +1661,23 @@ public class GMEventManager
             sendPacketToFighterPlayers(
                     new ExShowScreenMessage("Take buffs! The fight will start in 40 seconds!", 5000));
 
-            ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+            ThreadPoolManager.getInstance().scheduleGeneral(() ->
             {
-                @Override
-                public void run()
+                setCanBetNow(false);
+
+                deleteBuffers();
+
+                for (Entry<Integer, Integer> i : _currentEvent.getParticipants().entrySet())
                 {
-                    setCanBetNow(false);
-
-                    deleteBuffers();
-
-                    for (Entry<Integer, Integer> i : _currentEvent.getParticipants().entrySet())
+                    L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
+                    if (player != null)
                     {
-                        L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
-                        if (player != null)
-                        {
-                            player.heal();
-                        }
+                        player.heal();
                     }
-
-                    sendPacketToWaitingPlayers(new ExShowScreenMessage("The fight has started!", 2000));
-                    sendPacketToFighterPlayers(new ExShowScreenMessage("Start the fight! GO! GO! GO!", 5000));
                 }
+
+                sendPacketToWaitingPlayers(new ExShowScreenMessage("The fight has started!", 2000));
+                sendPacketToFighterPlayers(new ExShowScreenMessage("Start the fight! GO! GO! GO!", 5000));
             }, 40000);
         }
 

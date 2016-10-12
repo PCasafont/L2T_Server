@@ -648,17 +648,13 @@ public class Olympiad
 
     private void scheduleWeeklyChange()
     {
-        _scheduledWeeklyTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+        _scheduledWeeklyTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
         {
-            @Override
-            public void run()
-            {
-                addWeeklyPoints();
-                Log.info("Olympiad System: Added weekly points to nobles");
+            addWeeklyPoints();
+            Log.info("Olympiad System: Added weekly points to nobles");
 
-                Calendar nextChange = Calendar.getInstance();
-                _nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
-            }
+            Calendar nextChange = Calendar.getInstance();
+            _nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
         }, getMillisToWeekChange(), WEEKLY_PERIOD);
     }
 
@@ -1093,15 +1089,8 @@ public class Olympiad
             long compEndEnd = getMillisToCompEnd();
             if (compEndEnd > 600000)
             {
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        Announcements.getInstance().announceToAll(
-                                SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_REGISTRATION_PERIOD_ENDED));
-                    }
-                }, compEndEnd - 600000);
+                ThreadPoolManager.getInstance().scheduleGeneral(() -> Announcements.getInstance().announceToAll(
+                        SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_REGISTRATION_PERIOD_ENDED)), compEndEnd - 600000);
             }
 
             _scheduledCompEnd = ThreadPoolManager.getInstance().scheduleGeneral(new CompEndTask(), compEndEnd);

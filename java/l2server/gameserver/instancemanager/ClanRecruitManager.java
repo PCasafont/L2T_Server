@@ -304,45 +304,41 @@ public class ClanRecruitManager
 
         if (sortBy > 0)
         {
-            Collections.sort(list, new Comparator<ClanRecruitData>()
+            Collections.sort(list, (d1, d2) ->
             {
-                @Override
-                public int compare(ClanRecruitData d1, ClanRecruitData d2)
+                try
                 {
-                    try
+                    int result = d1.clan.getClanId() < d2.clan.getClanId() ? 1 : -1;
+                    switch (sortBy)
                     {
-                        int result = d1.clan.getClanId() < d2.clan.getClanId() ? 1 : -1;
-                        switch (sortBy)
-                        {
-                            case 1:
-                                result = d1.clan.getName().compareTo(d2.clan.getName());
-                                break;
-                            case 2:
-                                result = d1.clan.getLeaderName().compareTo(d2.clan.getLeaderName());
-                                break;
-                            case 3:
-                                result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 :
-                                        d1.clan.getLevel() > d2.clan.getLevel() ? -1 : 0;
-                                break;
-                            case 5:
-                                result = d1.karma < d2.karma ? 1 : d1.karma > d2.karma ? -1 : 0;
-                                break;
-                        }
-
-                        if (desc)
-                        {
-                            result *= -1;
-                        }
-
-                        return result;
-                    }
-                    catch (Exception e)
-                    {
-                        e.printStackTrace();
+                        case 1:
+                            result = d1.clan.getName().compareTo(d2.clan.getName());
+                            break;
+                        case 2:
+                            result = d1.clan.getLeaderName().compareTo(d2.clan.getLeaderName());
+                            break;
+                        case 3:
+                            result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 :
+                                    d1.clan.getLevel() > d2.clan.getLevel() ? -1 : 0;
+                            break;
+                        case 5:
+                            result = d1.karma < d2.karma ? 1 : d1.karma > d2.karma ? -1 : 0;
+                            break;
                     }
 
-                    return 1;
+                    if (desc)
+                    {
+                        result *= -1;
+                    }
+
+                    return result;
                 }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+                return 1;
             });
         }
 
@@ -603,35 +599,31 @@ public class ClanRecruitManager
 
         if (sortBy > 0)
         {
-            Collections.sort(result, new Comparator<ClanRecruitWaitingUser>()
+            Collections.sort(result, (wu1, wu2) ->
             {
-                @Override
-                public int compare(ClanRecruitWaitingUser wu1, ClanRecruitWaitingUser wu2)
+                int result1 = wu1.id < wu2.id ? 1 : -1;
+                switch (sortBy)
                 {
-                    int result = wu1.id < wu2.id ? 1 : -1;
-                    switch (sortBy)
-                    {
-                        case 1:
-                            result = wu1.name.compareTo(wu2.name);
-                            break;
-                        case 2:
-                            result = wu1.karma < wu2.karma ? 1 : -1;
-                            break;
-                        case 3:
-                            result = wu1.classId < wu2.classId ? 1 : -1;
-                            break;
-                        case 4:
-                            result = wu1.level < wu2.level ? 1 : -1;
-                            break;
-                    }
-
-                    if (desc)
-                    {
-                        result *= -1;
-                    }
-
-                    return result;
+                    case 1:
+                        result1 = wu1.name.compareTo(wu2.name);
+                        break;
+                    case 2:
+                        result1 = wu1.karma < wu2.karma ? 1 : -1;
+                        break;
+                    case 3:
+                        result1 = wu1.classId < wu2.classId ? 1 : -1;
+                        break;
+                    case 4:
+                        result1 = wu1.level < wu2.level ? 1 : -1;
+                        break;
                 }
+
+                if (desc)
+                {
+                    result1 *= -1;
+                }
+
+                return result1;
             });
         }
 

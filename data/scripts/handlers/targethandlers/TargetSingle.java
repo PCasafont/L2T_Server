@@ -246,6 +246,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 
                 break;
             }
+            default:
         }
 
         return false;

@@ -40,9 +40,6 @@ import java.util.List;
  */
 public class TargetArea implements ISkillTargetTypeHandler
 {
-    /**
-     */
-    @SuppressWarnings("null")
     @Override
     public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
     {

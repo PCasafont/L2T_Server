@@ -1020,6 +1020,7 @@ public class Stage1 extends Quest
                         }
                     }
                     break;
+                default:
             }
         }
         return null;
