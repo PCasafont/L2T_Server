@@ -2310,7 +2310,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -2340,7 +2339,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
                 <effect type="DamOverTime" val="#dot" />
@@ -2388,7 +2386,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="STUN" landRate="100" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -2413,7 +2410,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="100" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -2438,7 +2434,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="70" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -2463,7 +2458,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal comboId="365" duration="10" landRate="90">
                 <effect type="LiftHold" val="0" />
@@ -2487,7 +2481,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal landRate="100">
                 <effect type="AbortCast" val="0" />
@@ -2513,7 +2506,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="100">
                 <effect type="Fear" val="0" />

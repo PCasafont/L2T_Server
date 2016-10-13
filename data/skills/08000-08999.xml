@@ -2783,7 +2783,6 @@
         <set name="mpConsume" val="148" />
         <set name="hitTime" val="2500" />
         <set name="reuseDelay" val="20000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Temporarily increases Critical Damage rate. Effect 3. -->
     <skill id="8241" levels="1" name="Critical Up">
@@ -3148,7 +3147,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Transforms into a Native. -->
     <skill id="8277" levels="1" name="Transform Native">

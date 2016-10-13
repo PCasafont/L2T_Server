@@ -14,9 +14,7 @@
  */
 package ai.individual;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -33,7 +31,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.templates.StatsSet;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Orfen AI
@@ -60,7 +60,7 @@ public class Orfen extends L2AttackableAIScript
     private static final int RIBA_IREN = 29018;
 
     private static boolean _IsTeleported;
-    private static List<L2Attackable> _Minions = new HashMap<L2Attackable>();
+    private static List<L2Attackable> _Minions = new ArrayList<L2Attackable>();
     private static L2BossZone _Zone;
 
     private static final byte ALIVE = 0;

@@ -2197,7 +2197,6 @@
         <set name="power" val="80" />
         <set name="reuseDelay" val="5000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" stackLvl="3" stackType="pa_down">
                 <effect type="Debuff" val="0" />
@@ -2222,7 +2221,6 @@
         <set name="power" val="80" />
         <set name="reuseDelay" val="5000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" stackLvl="3" stackType="pd_down">
                 <effect type="Debuff" val="0" />
@@ -6387,7 +6385,6 @@
         <set name="reuseDelay" val="7000" />
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal noicon="1">
                 <effect type="RemoveTarget" val="0" />
@@ -8551,7 +8548,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Bow,Crossbow" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="5" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun"
                       visualEffect="stun">
@@ -8987,7 +8983,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Bow,Crossbow" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" landRate="#landRate" stackLvl="4" stackType="speed_down">
                 <sub stat="runSpd" val="70" />
@@ -9034,7 +9029,6 @@
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="weaponsAllowed" val="Bow,Crossbow" />
         <set name="offensive" val="True" />
-        <set name="saveVs" val="CON" />
         <set name="ignoredDefPercent" val="#ignoredDefPercent" />
     </skill>
     <!-- Death blow! Please do not use. -->

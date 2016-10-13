@@ -163,7 +163,7 @@
     </skill>
     <!-- Paralyzed and unable to move momentarily. -->
     <skill id="6125" levels="1" name="Paralysis">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="40" />
@@ -177,7 +177,7 @@
     </skill>
     <!-- Paralyzed and unable to move momentarily. -->
     <skill id="6126" levels="1" name="Paralysis">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -213,7 +213,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Mutant Curse: Stunned and unable to move momentarily. -->
     <skill id="6130" levels="1" name="Mutant Curse">
@@ -227,7 +226,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Mutant Curse: Speed decreases momentarily. Effect 1. -->
     <skill id="6131" levels="1" name="Decrease Speed">
@@ -240,7 +238,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Mutant Curse: Atk. Spd. decreases momentarily. Effect 1. -->
     <skill id="6132" levels="1" name="Decrease Atk. Spd.">
@@ -253,7 +250,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Head is enlarged. -->
     <skill id="6133" levels="1" name="Mysterious Effect">
@@ -274,7 +270,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Mutant Curse: Stunned and unable to move momentarily. -->
     <skill id="6135" levels="1" name="Mutant Curse">
@@ -287,7 +282,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- See the summoned spirit perform cute tricks. -->
     <skill id="6136" levels="1" name="Agathion Cute Trick - Juju">
@@ -336,7 +330,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: You are covered in hot and sticky tar. Your Speed is decreased by 30% for 5 minutes. P. Def. and evasion are decreased by 10%.
@@ -353,7 +346,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="castRange" val="300" />
         <set name="effectRange" val="800" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="6143" levels="1" name="Ancient Beam">
         <set name="target" val="TARGET_NONE" />
@@ -407,7 +399,7 @@
     </skill>
     <!-- You have been weakened by the Altar's Curse. You probably can't fight in this condition. -->
     <skill id="6148" levels="1" name="Altar's Curse">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -429,7 +421,7 @@
     </skill>
     <!-- Kasha's Brand. For 5 minutes, P. Def. - 30%. -->
     <skill id="6149" levels="1" name="Kasha's Brand">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isDebuff" val="true" />
@@ -446,7 +438,7 @@
     <!-- Kasha's Curse. Atk. Spd. increases. -->
     <skill id="6150" levels="4" name="Kasha's Curse">
         <table name="#pAtkSpd">2 4 6 8</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="2000" />
@@ -469,7 +461,7 @@
     <!-- Kasha's Yearning. P. Atk. increases. -->
     <skill id="6152" levels="4" name="Kasha's Yearning">
         <table name="#pAtk">2 4 6 8</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="2000" />
@@ -492,7 +484,7 @@
     <!-- Kasha's Despair. Critical rate increases. -->
     <skill id="6154" levels="4" name="Kasha's Despair">
         <table name="#rCrit">150 200 520 750</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="3000" />
@@ -523,7 +515,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="6167" levels="12" name="Stun">
@@ -535,7 +526,6 @@
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="800" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="6168" levels="12" name="Stun">
@@ -549,11 +539,10 @@
         <set name="coolTime" val="800" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Shyeed's cries continue to be heard. Nearby monsters seem to get stronger. -->
     <skill id="6169" levels="1" name="Shyeed's Fury">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -566,7 +555,7 @@
         </for>
     </skill>
     <skill id="6170" levels="1" name="Shyeed's Fury">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -584,7 +573,7 @@
     </skill>
     <!-- It feels like something will escape the mouth. The predecessor's strength is full. Overall abilities are increased. -->
     <skill id="6171" levels="1" name="Full Authority">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />

@@ -31,13 +31,16 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.model.quest.jython.QuestJython;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.util.L2FastList;
-import l2server.util.L2FastMap;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SagasSuperClass extends QuestJython
 {
-    private static L2FastList<Quest> _scripts = new L2FastList<Quest>();
+    private static List<Quest> _scripts = new ArrayList<Quest>();
     public String qn = "SagasSuperClass";
     public int qnu;
     public int[] NPC = {};
@@ -49,7 +52,7 @@ public class SagasSuperClass extends QuestJython
     public int[] Y = {};
     public int[] Z = {};
     public String[] Text = {};
-    L2FastMap<L2Npc, Integer> _SpawnList = new L2FastMap<L2Npc, Integer>();
+    Map<L2Npc, Integer> _SpawnList = new HashMap<L2Npc, Integer>();
 
     int[] QuestClass[] = {
             {0x7f},
@@ -129,8 +132,8 @@ public class SagasSuperClass extends QuestJython
 
     public void Cast(L2Npc npc, L2Character target, int skillId, int level)
     {
-        target.broadcastPacket(new MagicSkillUse(target, target, skillId, level, 6000, 1));
-        target.broadcastPacket(new MagicSkillUse(npc, npc, skillId, level, 6000, 1));
+        target.broadcastPacket(new MagicSkillUse(target, target, skillId, level, 6000, 1, 0));
+        target.broadcastPacket(new MagicSkillUse(npc, npc, skillId, level, 6000, 1, 0));
     }
 
     public void AutoChat(L2Npc npc, String text)
@@ -1006,7 +1009,7 @@ public class SagasSuperClass extends QuestJython
                 L2Party party = player.getParty();
                 if (party != null)
                 {
-                    L2FastList<QuestState> PartyQuestMembers = new L2FastList<QuestState>();
+                    List<QuestState> PartyQuestMembers = new ArrayList<QuestState>();
                     for (L2PcInstance player1 : party.getPartyMembers())
                     {
                         QuestState st1 = findQuest(player1);

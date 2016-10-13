@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.cache.HtmCache;
@@ -28,39 +29,41 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 public class AdminHelpPage implements IAdminCommandHandler
 {
 
-    private static final String[] ADMIN_COMMANDS = {"admin_help"};
+	private static final String[] ADMIN_COMMANDS = {"admin_help"};
 
-    public boolean useAdminCommand(String command, L2PcInstance activeChar)
-    {
+	@Override
+	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	{
 
-        if (command.startsWith("admin_help"))
-        {
-            try
-            {
-                String val = command.substring(11);
-                showHelpPage(activeChar, val);
-            }
-            catch (StringIndexOutOfBoundsException e)
-            {
-                //case of empty filename
-            }
-        }
+		if (command.startsWith("admin_help"))
+		{
+			try
+			{
+				String val = command.substring(11);
+				showHelpPage(activeChar, val);
+			}
+			catch (StringIndexOutOfBoundsException e)
+			{
+				//case of empty filename
+			}
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    public String[] getAdminCommandList()
-    {
-        return ADMIN_COMMANDS;
-    }
+	@Override
+	public String[] getAdminCommandList()
+	{
+		return ADMIN_COMMANDS;
+	}
 
-    //FIXME: implement method to send html to player in L2PcInstance directly
-    //PUBLIC & STATIC so other classes from package can include it directly
-    public static void showHelpPage(L2PcInstance targetChar, String filename)
-    {
-        String content = HtmCache.getInstance().getHtmForce(targetChar.getHtmlPrefix(), "admin/" + filename);
-        NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-        adminReply.setHtml(content);
-        targetChar.sendPacket(adminReply);
-    }
+	//FIXME: implement method to send html to player in L2PcInstance directly
+	//PUBLIC & STATIC so other classes from package can include it directly
+	public static void showHelpPage(L2PcInstance targetChar, String filename)
+	{
+		String content = HtmCache.getInstance().getHtmForce(targetChar.getHtmlPrefix(), "admin/" + filename);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		adminReply.setHtml(content);
+		targetChar.sendPacket(adminReply);
+	}
 }

@@ -6,3 +6,5 @@
 /config/hexid.txt
 /data/crests/*.bmp
 /data/geodata/*.l2j
+/data_classic/crests/*.bmp
+/data_classic/geodata/*.l2j

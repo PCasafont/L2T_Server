@@ -26,7 +26,7 @@
         <set name="effectRange" val="400" />
     </skill>
     <skill id="6706" levels="1" name="Piercing Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -35,7 +35,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="castRange" val="100" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" landRate="80" stackLvl="3" stackType="pd_down">
                 <effect type="Debuff" val="0" />

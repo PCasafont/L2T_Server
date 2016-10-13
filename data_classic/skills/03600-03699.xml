@@ -524,7 +524,7 @@
     </skill>
     <!-- Emits cursed energy to strike a distant enemy. -->
     <skill id="3631" levels="1" name="Void Flow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="140" />

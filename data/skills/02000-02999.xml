@@ -5512,7 +5512,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond addName="1" msgId="113">
                 <and>
@@ -5532,7 +5531,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond addName="1" msgId="113">
                 <and>
@@ -6173,7 +6171,6 @@
         <set name="reuseDelay" val="15000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond addName="1" msgId="113">
                 <player SiegeZone="126" />

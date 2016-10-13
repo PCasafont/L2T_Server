@@ -846,7 +846,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -1007,7 +1006,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="1000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="35" stackLvl="1" stackType="turn_passive">
                 <effect type="Debuff" val="0" />
@@ -1129,7 +1127,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -1183,7 +1180,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -1208,7 +1204,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="4" stackType="armor_water">
                 <effect type="Debuff" val="0" />
@@ -1235,7 +1230,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -1286,7 +1280,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="4" stackType="armor_wind">
                 <effect type="Debuff" val="0" />
@@ -1389,7 +1382,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="armor_fire">
                 <effect type="Debuff" val="0" />
@@ -1519,7 +1511,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -1550,7 +1541,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="70" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -1579,7 +1569,6 @@
         <set name="reuseDelay" val="2000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="60" stackLvl="#abnormalLvl" stackType="hit_down">
                 <effect type="Debuff" val="0" />
@@ -1603,7 +1592,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -1631,7 +1619,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="#abnormalLvl" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -1662,7 +1649,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="70" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -1692,7 +1678,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="35" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -1726,7 +1711,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="3" landRate="80" stackLvl="#abnormalLvl" stackType="dot_mp">
                 <effect type="ManaDamOverTime" val="#mdot" />
@@ -1749,7 +1733,6 @@
         <set name="reuseDelay" val="2000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="60" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -1802,7 +1785,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="70" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -1832,7 +1814,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="60" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -2495,7 +2476,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="#abnormalLvl" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -2547,7 +2527,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="pa_down">
                 <effect type="Debuff" val="0" />
@@ -2582,7 +2561,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="35" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -2616,7 +2594,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="70" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -2640,7 +2617,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -2664,7 +2640,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5">
                 <effect chanceType="ON_EXIT" triggeredId="6091" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -2979,7 +2954,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="70" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -3014,7 +2988,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" effectType="DEBUFF" landRate="60" stackLvl="2" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -3096,7 +3069,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -3151,7 +3123,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -3175,7 +3146,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -3207,7 +3177,6 @@
         <set name="reuseDelay" val="4000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="60" stackLvl="#abnormalLvl" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -3239,7 +3208,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="3" landRate="60" stackLvl="#abnormalLvl" stackType="dot_mp">
                 <effect type="ManaDamOverTime" val="#mdot" />
@@ -3514,7 +3482,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="hit_down">
                 <effect type="Debuff" val="0" />
@@ -3543,7 +3510,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="armor_earth">
                 <effect type="Debuff" val="0" />
@@ -3577,7 +3543,6 @@
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="resist_poison">
                 <effect type="Debuff" val="0" />
@@ -3926,7 +3891,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="15" landRate="70" stackLvl="#abnormalLvl" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -4079,7 +4043,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" effectType="DEBUFF" landRate="60" stackLvl="2" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -4129,7 +4092,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="3" effectType="BLEED" landRate="50" stackLvl="#abnormalLvl"
                       stackType="bleeding" visualEffect="bleed">
@@ -4353,7 +4315,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="1" landRate="#landRate" stackLvl="5" stackType="dot_attr">
                 <effect type="DamOverTime" val="#dot" />
@@ -4411,7 +4372,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="40" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -4434,7 +4394,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="1" stackType="hp_regen_down">
                 <effect type="Debuff" val="0" />
@@ -4458,7 +4417,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="60" stackLvl="1" stackType="reuse_delay_up">
                 <effect type="Debuff" val="0" />
@@ -4897,7 +4855,6 @@
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#duration" landRate="90" stackLvl="3" stackType="md_down">
                 <effect type="Debuff" val="0" />
@@ -5073,7 +5030,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="1" stackType="heal_effect_down">
                 <effect type="Debuff" val="0" />
@@ -5116,7 +5072,6 @@
         <set name="reuseDelay" val="150000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="30" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -5567,7 +5522,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -5747,7 +5701,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -6537,7 +6490,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -6558,7 +6510,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -6585,7 +6536,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="40" stackLvl="1" stackType="multi_debuff">
                 <effect type="ManaDamOverTime" val="72" />
@@ -6614,7 +6564,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_fire">
                 <effect type="ManaDamOverTime" val="36" />
@@ -6643,7 +6592,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_water">
                 <effect type="ManaDamOverTime" val="36" />
@@ -6672,7 +6620,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_wind">
                 <effect type="ManaDamOverTime" val="36" />
@@ -6700,7 +6647,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="4" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_holy">
                 <effect type="ManaDamOverTime" val="36" />
@@ -6726,7 +6672,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="absorbPart" val="0.25" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_unholy">
@@ -7093,7 +7038,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="100" stackType="pd_up">
                 <effect type="Debuff" val="0" />
@@ -7115,7 +7059,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="100" stackType="speed_up">
                 <effect type="Debuff" val="0" />
@@ -7137,7 +7080,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="100" stackType="pd_up">
                 <effect type="Debuff" val="0" />
@@ -7159,7 +7101,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="100" stackType="speed_up">
                 <effect type="Debuff" val="0" />
@@ -7279,7 +7220,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -7309,7 +7249,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="1" stackType="heal_effect_down">
                 <effect type="Debuff" val="0" />
@@ -7430,7 +7369,6 @@
         <set name="isDebuff" val="true" />
         <set name="canBeDispeled" val="false" />
         <set name="canBeReflected" val="false" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond msgId="1509">
                 <and>
@@ -7466,7 +7404,6 @@
         <set name="isDebuff" val="true" />
         <set name="canBeDispeled" val="false" />
         <set name="canBeReflected" val="false" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond msgId="1509">
                 <and>
@@ -7518,7 +7455,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="derangement">
                 <effect type="Betray" val="0" />
@@ -7543,7 +7479,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="50" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -7578,7 +7513,6 @@
         <set name="skillRadius" val="230" />
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="50" stackLvl="3" stackType="md_down">
                 <effect type="Debuff" val="0" />
@@ -7615,7 +7549,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_fire">
                 <effect type="Debuff" val="0" />
@@ -7647,7 +7580,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_water">
                 <effect type="Debuff" val="0" />
@@ -7679,7 +7611,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_wind">
                 <effect type="Debuff" val="0" />
@@ -7704,7 +7635,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="3" stackType="casting_time_up">
                 <effect type="Debuff" val="0" />
@@ -7922,7 +7852,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="80" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -7969,7 +7898,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="3" stackType="mp_cost_up">
                 <effect type="Debuff" val="0" />
@@ -8983,7 +8911,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="#abnormalLvl" stackType="death_mark"
                       visualEffect="deathmark">
@@ -9103,7 +9030,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="soulMaxConsumeCount" val="5" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="speed_down">
@@ -9325,7 +9251,6 @@
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="armor_unholy">
                 <effect type="Debuff" val="0" />
@@ -9349,7 +9274,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="80" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -9371,7 +9295,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="20" landRate="80" stackLvl="1" stackType="silence" visualEffect="mute">
                 <effect type="Mute" val="0" />
@@ -9396,7 +9319,6 @@
         <set name="isDebuff" val="true" />
         <set name="flyCourse" val="0" />
         <set name="flyRadius" val="500" />
-        <set name="saveVs" val="CON" />
         <set name="soulMaxConsumeCount" val="5" />
         <set name="simultaneousCast" val="true" />
         <for>
@@ -9485,7 +9407,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="fire_dot">
                 <effect type="DamOverTime" val="173" />
@@ -9534,7 +9455,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" effectType="DEBUFF" landRate="80" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -9558,7 +9478,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="water_dot">
                 <effect type="DamOverTime" val="173" />
@@ -9643,7 +9562,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="wind_dot">
                 <effect type="DamOverTime" val="173" />
@@ -9746,7 +9664,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="SILENCE" landRate="#landRate" stackLvl="1"
                       stackType="normal_attack_block">
@@ -10157,7 +10074,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20" visualEffect="poison">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5448" type="ChanceSkillTrigger"
@@ -10179,7 +10095,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5449" type="ChanceSkillTrigger"
@@ -10202,7 +10117,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5450" triggeredLevel="#lvl"
@@ -10224,7 +10138,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5451" type="ChanceSkillTrigger"
@@ -10247,7 +10160,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5452" triggeredLevel="#lvl"
@@ -10270,7 +10182,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5453" triggeredLevel="#lvl"
@@ -10449,7 +10360,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="absorbPart" val="0.2" />
         <for>
             <abnormal duration="15" effectType="DEBUFF" landRate="90" stackLvl="1" stackType="ultimate_debuff">
@@ -10728,7 +10638,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="60" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -10786,7 +10695,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="#landRate" stackLvl="3" stackType="limit">
                 <subPercent stat="gainHpLimit" val="#limit" />
@@ -10832,7 +10740,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal activationMinDamage="100" duration="30" landRate="70" stackLvl="#triggeredLevel"
                       stackType="curse_life_flow" visualEffect="poison">
@@ -10857,7 +10764,6 @@
         <set name="effectRange" val="1400" />
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="soulMaxConsumeCount" val="5" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_soul">
@@ -11189,7 +11095,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="armor_holy">
                 <effect type="Debuff" val="0" />
@@ -11232,7 +11137,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="4" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="120" landRate="80" stackLvl="1" stackType="heal_effect_down">
                 <effect type="DamOverTime" val="#dot" />
@@ -11354,7 +11258,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="60" stackLvl="2" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -11639,7 +11542,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -11720,7 +11622,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="num_souls" val="1" />
-        <set name="saveVs" val="WIT" />
         <for>
             <abnormal count="15" landRate="80">
                 <effect type="DamOverTime" val="1" />
@@ -11736,7 +11637,6 @@
         <set name="mpConsume" val="50" />
         <set name="hitTime" val="4000" />
         <set name="reuseDelay" val="5000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: For 20 minutes, increases P. Atk. by 3%, M. Atk. by 3%, Skill Power by 5%, Atk. Spd. by2%, Casting Spd. by 1%, and Critical Rate by 5%. The master's abilities are extended to the servitor.

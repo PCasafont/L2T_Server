@@ -752,13 +752,12 @@
     <!-- Stunned and unable to move. -->
     <skill id="3571" levels="2" name="Special Ability: Critical Stun">
         <table name="#magicLvl">75 84</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -768,7 +767,7 @@
     <!-- Temporarily decreases Speed. Effect 3. -->
     <skill id="3574" levels="3" name="Special Ability: Critical Slow">
         <table name="#magicLvl">75 84 84</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -776,7 +775,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="100" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -786,7 +784,7 @@
     </skill>
     <!-- Inflicted with hold and unable to move momentarily. -->
     <skill id="3577" levels="3" name="Special Ability: Magic Hold">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -795,7 +793,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="100" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />

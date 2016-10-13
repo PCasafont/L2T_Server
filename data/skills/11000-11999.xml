@@ -231,7 +231,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
     </skill>
     <!--
@@ -278,7 +277,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11077" triggeredLevel="3" type="ChanceSkillTrigger"
@@ -330,7 +328,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11078" triggeredLevel="3" type="ChanceSkillTrigger"
@@ -382,7 +379,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11079" triggeredLevel="3" type="ChanceSkillTrigger"
@@ -434,7 +430,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11080" triggeredLevel="3" type="ChanceSkillTrigger"
@@ -484,7 +479,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isElemental" val="true" />
         <for>
             <abnormal noicon="1">
@@ -535,7 +529,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
     </skill>
     <!--
@@ -582,7 +575,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect activationChance="100" chanceType="ON_START" triggeredId="11087" triggeredLevel="3"
@@ -634,7 +626,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect activationChance="100" chanceType="ON_START" triggeredId="11088" triggeredLevel="3"
@@ -686,7 +677,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect activationChance="100" chanceType="ON_START" triggeredId="11089" triggeredLevel="3"
@@ -738,7 +728,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect activationChance="100" chanceType="ON_START" triggeredId="11090" triggeredLevel="3"
@@ -788,7 +777,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isElemental" val="true" />
         <for>
             <abnormal noicon="1">
@@ -839,7 +827,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
     </skill>
     <!--
@@ -886,7 +873,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11101" triggeredLevel="1" type="ChanceSkillTrigger"
@@ -938,7 +924,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11102" triggeredLevel="1" type="ChanceSkillTrigger"
@@ -990,7 +975,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11103" triggeredLevel="1" type="ChanceSkillTrigger"
@@ -1042,7 +1026,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal noicon="1">
                 <effect chanceType="ON_START" triggeredId="11104" triggeredLevel="1" type="ChanceSkillTrigger"
@@ -1092,7 +1075,6 @@
         <set name="effectRange" val="1600" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isElemental" val="true" />
         <for>
             <abnormal noicon="1">
@@ -1263,7 +1245,6 @@
         <set name="skillRadius" val="150" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
     </skill>
     <!--
@@ -1309,7 +1290,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit.
@@ -1354,7 +1334,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit.
@@ -1399,7 +1378,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit.
@@ -1444,7 +1422,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit.
@@ -1487,7 +1464,6 @@
         <set name="skillRadius" val="150" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isElemental" val="true" />
     </skill>
     <!--
@@ -1531,7 +1507,6 @@
         <set name="skillRadius" val="150" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
     </skill>
     <!--
@@ -1577,7 +1552,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit.
@@ -1622,7 +1596,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit.
@@ -1667,7 +1640,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit.
@@ -1712,7 +1684,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit.
@@ -1755,7 +1726,6 @@
         <set name="skillRadius" val="150" />
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="isElemental" val="true" />
     </skill>
     <!--
@@ -1848,7 +1818,6 @@
         <set name="reuseDelay" val="10000" />
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="20" landRate="#landRate" stackLvl="1" stackType="multi_debuff">
                 <effect type="Debuff" val="0" />
@@ -1903,7 +1872,6 @@
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
         <set name="skillRadius" val="150" />
-        <set name="saveVs" val="MEN" />
         <set name="absorbPart" val="0.25" />
         <for>
             <abnormal duration="20" landRate="#landRate" stackLvl="1" stackType="multi_debuff">
@@ -1992,7 +1960,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal comboId="365" duration="5" landRate="#landRate" stackLvl="1" stackType="lift_hold">
                 <effect type="LiftHold" val="0" />
@@ -2033,7 +2000,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal comboId="365" duration="5" landRate="#landRate" stackLvl="1" stackType="lift_hold">
                 <effect type="LiftHold" val="0" />
@@ -2076,7 +2042,6 @@
         <set name="effectRange" val="1600" />
         <set name="skillRadius" val="300" />
         <set name="killByDOT" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="staticHitTime" val="true" />
         <for>
             <abnormal comboId="365" count="5" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
@@ -2123,7 +2088,6 @@
         <set name="skillRadius" val="300" />
         <set name="killByDOT" val="true" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal comboId="365" count="5" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
                 <effect type="LiftHold" val="0" />
@@ -2183,7 +2147,6 @@
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -2238,7 +2201,6 @@
         <set name="effectRange" val="1600" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -2518,7 +2480,6 @@
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" visualEffect="skull_fear, flame">
                 <effect type="DamOverTime" val="300" />
@@ -2567,7 +2528,6 @@
         <set name="effectRange" val="1600" />
         <set name="skillRadius" val="200" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" visualEffect="skull_fear, flame">
                 <effect type="DamOverTime" val="200" />
@@ -2667,7 +2627,6 @@
         <set name="isMagic" val="true" />
         <set name="power" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#abnormalTime" stackLvl="#abnormalLvl" stackType="elemental_spike">
                 <effect type="Debuff" val="0" />
@@ -2690,7 +2649,6 @@
         <set name="isMagic" val="true" />
         <set name="power" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#abnormalTime" stackLvl="#abnormalLvl" stackType="elemental_spike">
                 <effect type="Debuff" val="0" />
@@ -2713,7 +2671,6 @@
         <set name="isMagic" val="true" />
         <set name="power" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#abnormalTime" stackLvl="#abnormalLvl" stackType="elemental_spike">
                 <effect type="Debuff" val="0" />
@@ -2736,7 +2693,6 @@
         <set name="isMagic" val="true" />
         <set name="power" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#abnormalTime" stackLvl="#abnormalLvl" stackType="elemental_spike">
                 <effect type="Debuff" val="0" />
@@ -2759,7 +2715,6 @@
         <set name="isMagic" val="true" />
         <set name="power" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#abnormalTime" stackLvl="#abnormalLvl" stackType="elemental_spike">
                 <effect type="Debuff" val="0" />
@@ -2813,7 +2768,6 @@
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="3" duration="2" landRate="15" stackLvl="1">
                 <effect type="Fear" val="0" />
@@ -2828,7 +2782,6 @@
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="1" duration="5" landRate="20" stackLvl="1">
                 <effect type="Debuff" val="0" />
@@ -2845,7 +2798,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="20" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="1" landRate="15" stackLvl="1" stackType="knock_back">
                 <effect type="KnockBack" val="0" />
@@ -2860,7 +2812,6 @@
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="20" stackLvl="1">
                 <effect type="Root" val="0" />
@@ -2875,7 +2826,6 @@
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" effectType="STUN" landRate="15" stackLvl="1" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -4460,7 +4410,6 @@
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="90" stackLvl="1" stackType="md_down">
                 <effect type="Debuff" val="0" />
@@ -4631,7 +4580,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="isStanceSwitch" val="true" />
         <for>
             <abnormal landRate="#landRate" noicon="1">
@@ -4834,7 +4782,6 @@
         <set name="overHit" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal landRate="#landRate" noicon="1">
                 <effect activationChance="40" chanceType="ON_START" triggeredId="11196" triggeredLevel="1"
@@ -4943,7 +4890,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" landRate="90" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -5295,7 +5241,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="1" landRate="#landRate" stackLvl="1" stackType="mark_weakness">
                 <effect type="MDamOverTime" val="#DOT" />
@@ -5347,7 +5292,6 @@
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
         <set name="absorbPart" val="0.5" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="1" landRate="#landRate" stackLvl="8" stackType="mark_void">
                 <effect type="MDamOverTime" val="#DOT" />
@@ -5398,7 +5342,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="1" landRate="#landRate" stackLvl="8" stackType="mark_plague">
                 <effect type="MDamOverTime" val="#DOT" />
@@ -5448,7 +5391,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="1" landRate="#landRate" stackLvl="8" stackType="mark_trick">
                 <effect type="MDamOverTime" val="#DOT" />
@@ -5906,7 +5848,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal comboId="365" duration="10" landRate="#landRate" stackLvl="1" stackType="lift_hold">
                 <effect type="LiftHold" val="0" />
@@ -7162,7 +7103,6 @@
         <set name="reuseDelay" val="15000" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="skillActionId" val="1131" />
         <for>
             <abnormal duration="5" landRate="100" stackLvl="2" stackType="stun" visualEffect="stun">
@@ -7379,7 +7319,6 @@
         <set name="reuseDelay" val="15000" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="skillActionId" val="1137" />
         <for>
             <abnormal duration="5" landRate="100" stackLvl="2" stackType="stun" visualEffect="stun">
@@ -9003,7 +8942,6 @@
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
         <set name="flyType" val="CHARGE" />
-        <set name="saveVs" val="CON" />
         <for>
             <cond addName="1" msgId="113">
                 <and>
@@ -9071,7 +9009,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
-        <set name="saveVs" val="CON" />
         <set name="ignoredDefPercent" val="#ignoredDefPercent" />
         <for>
             <abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="crippling_attack">
@@ -9131,7 +9068,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
-        <set name="saveVs" val="CON" />
         <set name="ignoredDefPercent" val="#ignoredDefPercent" />
         <for>
             <abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shadow_blade">
@@ -9241,7 +9177,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
-        <set name="saveVs" val="CON" />
         <set name="ignoredDefPercent" val="#ignoredDefPercent" />
         <for>
             <abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="crippling_attack">
@@ -9303,7 +9238,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
-        <set name="saveVs" val="CON" />
         <set name="ignoredDefPercent" val="#ignoredDefPercent" />
         <for>
             <abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shadow_blade">
@@ -9996,7 +9930,6 @@
         <set name="effectRange" val="#effectRange" />
         <set name="isDebuff" val="true" />
         <set name="transformId" val="111" />
-        <set name="saveVs" val="MEN" />
         <set name="removedOnDamage" val="true" />
         <for>
             <abnormal duration="15" landRate="#landRate" stackLvl="1" stackType="transform">
@@ -10042,7 +9975,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="#landRate" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -10083,7 +10015,6 @@
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="#landRate" stackLvl="1" stackType="turn_stone">
                 <effect type="Petrification" val="0" />
@@ -10363,7 +10294,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="#landRate" stackLvl="1"
                       stackType="defense_down_chaos_symphony">
@@ -10510,7 +10440,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="1" stackType="hp_regen_down">
                 <effect type="Debuff" val="0" />
@@ -10535,7 +10464,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal landRate="80" noicon="1">
                 <effect type="RemoveTarget" val="0" />
@@ -10557,7 +10485,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="1" stackType="reuse_delay_up">
                 <effect type="Debuff" val="0" />
@@ -10660,7 +10587,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="#landRate" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -10907,7 +10833,6 @@
         <set name="skillRadius" val="500" />
         <set name="isDebuff" val="true" />
         <set name="transformId" val="111" />
-        <set name="saveVs" val="MEN" />
         <set name="removedOnDamage" val="true" />
         <for>
             <abnormal duration="10" landRate="#landRate" stackLvl="1" stackType="transform">
@@ -10960,7 +10885,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="skillRadius" val="500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="#landRate" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -11001,7 +10925,6 @@
         <set name="reuseDelay" val="120000" />
         <set name="skillRadius" val="500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="#power" stackLvl="1" stackType="medusa">
                 <effect type="Petrification" val="0" />
@@ -13003,7 +12926,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="#landRate" stackLvl="4" stackType="mp_cost_up">
                 <effect type="Debuff" val="0" />
@@ -13201,7 +13123,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="60" duration="1" landRate="#landRate" stackLvl="1" stackType="mark_lumi">
                 <effect type="DamOverTime" val="#dot" />

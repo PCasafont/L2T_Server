@@ -1429,7 +1429,6 @@
         <set name="effectRange" val="1600" />
         <set name="skillRadius" val="300" />
         <set name="killByDOT" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond>
                 <and>

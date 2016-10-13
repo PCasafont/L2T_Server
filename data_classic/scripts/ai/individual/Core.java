@@ -14,9 +14,7 @@
  */
 package ai.individual;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
@@ -26,7 +24,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.templates.StatsSet;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Core AI
@@ -50,7 +50,7 @@ public class Core extends L2AttackableAIScript
 
     private static boolean _FirstAttacked;
 
-    List<L2Attackable> Minions = new HashMap<L2Attackable>();
+    List<L2Attackable> Minions = new ArrayList<L2Attackable>();
 
     public Core(int id, String name, String descr)
     {

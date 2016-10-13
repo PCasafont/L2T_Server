@@ -228,7 +228,7 @@
     </skill>
     <!-- Powerful attack on the target. -->
     <skill id="15236" levels="1" name="Dark Thrust">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="10" />
@@ -529,7 +529,7 @@
     </skill>
     <!-- Long-range projectile -->
     <skill id="15274" levels="1" name="Mighty Wind Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="1200" />

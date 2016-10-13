@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!-- Kain's Soul Crystal - Stage 1 -->
+    <crystal id="46444">
+        <effect id="1" /> <!-- Might -->
+        <effect id="16" /> <!-- Fury -->
+        <effect id="31" /> <!-- Focus -->
+        <effect id="46" /> <!-- Death -->
+        <effect id="61" /> <!-- Hunter -->
+        <effect id="76" /> <!-- Fire -->
+        <effect id="91" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 2 -->
+    <crystal id="46445">
+        <effect id="2" /> <!-- Might -->
+        <effect id="17" /> <!-- Fury -->
+        <effect id="32" /> <!-- Focus -->
+        <effect id="47" /> <!-- Death -->
+        <effect id="62" /> <!-- Hunter -->
+        <effect id="77" /> <!-- Fire -->
+        <effect id="92" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 3 -->
+    <crystal id="46446">
+        <effect id="3" /> <!-- Might -->
+        <effect id="18" /> <!-- Fury -->
+        <effect id="33" /> <!-- Focus -->
+        <effect id="48" /> <!-- Death -->
+        <effect id="63" /> <!-- Hunter -->
+        <effect id="78" /> <!-- Fire -->
+        <effect id="93" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 4 -->
+    <crystal id="46447">
+        <effect id="4" /> <!-- Might -->
+        <effect id="19" /> <!-- Fury -->
+        <effect id="34" /> <!-- Focus -->
+        <effect id="49" /> <!-- Death -->
+        <effect id="64" /> <!-- Hunter -->
+        <effect id="79" /> <!-- Fire -->
+        <effect id="94" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 5 -->
+    <crystal id="46448">
+        <effect id="5" /> <!-- Might -->
+        <effect id="20" /> <!-- Fury -->
+        <effect id="35" /> <!-- Focus -->
+        <effect id="50" /> <!-- Death -->
+        <effect id="65" /> <!-- Hunter -->
+        <effect id="80" /> <!-- Fire -->
+        <effect id="95" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 6 -->
+    <crystal id="46449">
+        <effect id="6" /> <!-- Might -->
+        <effect id="21" /> <!-- Fury -->
+        <effect id="36" /> <!-- Focus -->
+        <effect id="51" /> <!-- Death -->
+        <effect id="66" /> <!-- Hunter -->
+        <effect id="81" /> <!-- Fire -->
+        <effect id="96" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 7 -->
+    <crystal id="46450">
+        <effect id="7" /> <!-- Might -->
+        <effect id="22" /> <!-- Fury -->
+        <effect id="37" /> <!-- Focus -->
+        <effect id="52" /> <!-- Death -->
+        <effect id="67" /> <!-- Hunter -->
+        <effect id="82" /> <!-- Fire -->
+        <effect id="97" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 8 -->
+    <crystal id="46451">
+        <effect id="8" /> <!-- Might -->
+        <effect id="23" /> <!-- Fury -->
+        <effect id="38" /> <!-- Focus -->
+        <effect id="53" /> <!-- Death -->
+        <effect id="68" /> <!-- Hunter -->
+        <effect id="83" /> <!-- Fire -->
+        <effect id="98" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 9 -->
+    <crystal id="46452">
+        <effect id="9" /> <!-- Might -->
+        <effect id="24" /> <!-- Fury -->
+        <effect id="39" /> <!-- Focus -->
+        <effect id="54" /> <!-- Death -->
+        <effect id="69" /> <!-- Hunter -->
+        <effect id="84" /> <!-- Fire -->
+        <effect id="99" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 10 -->
+    <crystal id="46453">
+        <effect id="10" /> <!-- Might -->
+        <effect id="25" /> <!-- Fury -->
+        <effect id="40" /> <!-- Focus -->
+        <effect id="55" /> <!-- Death -->
+        <effect id="70" /> <!-- Hunter -->
+        <effect id="85" /> <!-- Fire -->
+        <effect id="100" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 11 -->
+    <crystal id="46454">
+        <effect id="11" /> <!-- Might -->
+        <effect id="26" /> <!-- Fury -->
+        <effect id="41" /> <!-- Focus -->
+        <effect id="56" /> <!-- Death -->
+        <effect id="71" /> <!-- Hunter -->
+        <effect id="86" /> <!-- Fire -->
+        <effect id="101" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 12 -->
+    <crystal id="46455">
+        <effect id="12" /> <!-- Might -->
+        <effect id="27" /> <!-- Fury -->
+        <effect id="42" /> <!-- Focus -->
+        <effect id="57" /> <!-- Death -->
+        <effect id="72" /> <!-- Hunter -->
+        <effect id="87" /> <!-- Fire -->
+        <effect id="102" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 13 -->
+    <crystal id="46456">
+        <effect id="13" /> <!-- Might -->
+        <effect id="28" /> <!-- Fury -->
+        <effect id="43" /> <!-- Focus -->
+        <effect id="58" /> <!-- Death -->
+        <effect id="73" /> <!-- Hunter -->
+        <effect id="88" /> <!-- Fire -->
+        <effect id="103" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 14 -->
+    <crystal id="46457">
+        <effect id="14" /> <!-- Might -->
+        <effect id="29" /> <!-- Fury -->
+        <effect id="44" /> <!-- Focus -->
+        <effect id="59" /> <!-- Death -->
+        <effect id="74" /> <!-- Hunter -->
+        <effect id="89" /> <!-- Fire -->
+        <effect id="104" /> <!-- Body -->
+    </crystal>
+    <!-- Kain's Soul Crystal - Stage 15 -->
+    <crystal id="46458">
+        <effect id="15" /> <!-- Might -->
+        <effect id="30" /> <!-- Fury -->
+        <effect id="45" /> <!-- Focus -->
+        <effect id="60" /> <!-- Death -->
+        <effect id="75" /> <!-- Hunter -->
+        <effect id="90" /> <!-- Fire -->
+        <effect id="105" /> <!-- Body -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 1 -->
+    <crystal id="46459">
+        <effect id="106" /> <!-- Empower -->
+        <effect id="121" /> <!-- Acumen -->
+        <effect id="136" /> <!-- Wild -->
+        <effect id="151" /> <!-- Mystic -->
+        <effect id="166" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 2 -->
+    <crystal id="46460">
+        <effect id="107" /> <!-- Empower -->
+        <effect id="122" /> <!-- Acumen -->
+        <effect id="137" /> <!-- Wild -->
+        <effect id="152" /> <!-- Mystic -->
+        <effect id="167" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 3 -->
+    <crystal id="46461">
+        <effect id="108" /> <!-- Empower -->
+        <effect id="123" /> <!-- Acumen -->
+        <effect id="138" /> <!-- Wild -->
+        <effect id="153" /> <!-- Mystic -->
+        <effect id="168" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 4 -->
+    <crystal id="46462">
+        <effect id="109" /> <!-- Empower -->
+        <effect id="124" /> <!-- Acumen -->
+        <effect id="139" /> <!-- Wild -->
+        <effect id="154" /> <!-- Mystic -->
+        <effect id="169" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 5 -->
+    <crystal id="46463">
+        <effect id="110" /> <!-- Empower -->
+        <effect id="125" /> <!-- Acumen -->
+        <effect id="140" /> <!-- Wild -->
+        <effect id="155" /> <!-- Mystic -->
+        <effect id="170" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 6 -->
+    <crystal id="46464">
+        <effect id="111" /> <!-- Empower -->
+        <effect id="126" /> <!-- Acumen -->
+        <effect id="141" /> <!-- Wild -->
+        <effect id="156" /> <!-- Mystic -->
+        <effect id="171" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 7 -->
+    <crystal id="46465">
+        <effect id="112" /> <!-- Empower -->
+        <effect id="127" /> <!-- Acumen -->
+        <effect id="142" /> <!-- Wild -->
+        <effect id="157" /> <!-- Mystic -->
+        <effect id="172" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 8 -->
+    <crystal id="46466">
+        <effect id="113" /> <!-- Empower -->
+        <effect id="128" /> <!-- Acumen -->
+        <effect id="143" /> <!-- Wild -->
+        <effect id="158" /> <!-- Mystic -->
+        <effect id="173" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 9 -->
+    <crystal id="46467">
+        <effect id="114" /> <!-- Empower -->
+        <effect id="129" /> <!-- Acumen -->
+        <effect id="144" /> <!-- Wild -->
+        <effect id="159" /> <!-- Mystic -->
+        <effect id="174" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 10 -->
+    <crystal id="46468">
+        <effect id="115" /> <!-- Empower -->
+        <effect id="130" /> <!-- Acumen -->
+        <effect id="145" /> <!-- Wild -->
+        <effect id="160" /> <!-- Mystic -->
+        <effect id="175" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 11 -->
+    <crystal id="46469">
+        <effect id="116" /> <!-- Empower -->
+        <effect id="131" /> <!-- Acumen -->
+        <effect id="146" /> <!-- Wild -->
+        <effect id="161" /> <!-- Mystic -->
+        <effect id="176" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 12 -->
+    <crystal id="46470">
+        <effect id="117" /> <!-- Empower -->
+        <effect id="132" /> <!-- Acumen -->
+        <effect id="147" /> <!-- Wild -->
+        <effect id="162" /> <!-- Mystic -->
+        <effect id="177" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 13 -->
+    <crystal id="46471">
+        <effect id="118" /> <!-- Empower -->
+        <effect id="133" /> <!-- Acumen -->
+        <effect id="148" /> <!-- Wild -->
+        <effect id="163" /> <!-- Mystic -->
+        <effect id="178" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 14 -->
+    <crystal id="46472">
+        <effect id="119" /> <!-- Empower -->
+        <effect id="134" /> <!-- Acumen -->
+        <effect id="149" /> <!-- Wild -->
+        <effect id="164" /> <!-- Mystic -->
+        <effect id="179" /> <!-- Soul -->
+    </crystal>
+    <!-- Mermoden's Soul Crystal - Stage 15 -->
+    <crystal id="46473">
+        <effect id="120" /> <!-- Empower -->
+        <effect id="135" /> <!-- Acumen -->
+        <effect id="150" /> <!-- Wild -->
+        <effect id="165" /> <!-- Mystic -->
+        <effect id="180" /> <!-- Soul -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 1 -->
+    <crystal id="46474">
+        <effect id="181" /> <!-- Speed Focus -->
+        <effect id="196" /> <!-- Speed Death -->
+        <effect id="211" /> <!-- Speed Hunter -->
+        <effect id="226" /> <!-- Speed Fire -->
+        <effect id="241" /> <!-- Speed Body -->
+        <effect id="256" /> <!-- Critical Death -->
+        <effect id="271" /> <!-- Critical Hunter -->
+        <effect id="286" /> <!-- Critical Fire -->
+        <effect id="301" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 2 -->
+    <crystal id="46475">
+        <effect id="182" /> <!-- Speed Focus -->
+        <effect id="197" /> <!-- Speed Death -->
+        <effect id="212" /> <!-- Speed Hunter -->
+        <effect id="227" /> <!-- Speed Fire -->
+        <effect id="242" /> <!-- Speed Body -->
+        <effect id="257" /> <!-- Critical Death -->
+        <effect id="272" /> <!-- Critical Hunter -->
+        <effect id="287" /> <!-- Critical Fire -->
+        <effect id="302" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 3 -->
+    <crystal id="46476">
+        <effect id="183" /> <!-- Speed Focus -->
+        <effect id="198" /> <!-- Speed Death -->
+        <effect id="213" /> <!-- Speed Hunter -->
+        <effect id="228" /> <!-- Speed Fire -->
+        <effect id="243" /> <!-- Speed Body -->
+        <effect id="258" /> <!-- Critical Death -->
+        <effect id="273" /> <!-- Critical Hunter -->
+        <effect id="288" /> <!-- Critical Fire -->
+        <effect id="303" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 4 -->
+    <crystal id="46477">
+        <effect id="184" /> <!-- Speed Focus -->
+        <effect id="199" /> <!-- Speed Death -->
+        <effect id="214" /> <!-- Speed Hunter -->
+        <effect id="229" /> <!-- Speed Fire -->
+        <effect id="244" /> <!-- Speed Body -->
+        <effect id="259" /> <!-- Critical Death -->
+        <effect id="274" /> <!-- Critical Hunter -->
+        <effect id="289" /> <!-- Critical Fire -->
+        <effect id="304" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 5 -->
+    <crystal id="46478">
+        <effect id="185" /> <!-- Speed Focus -->
+        <effect id="200" /> <!-- Speed Death -->
+        <effect id="215" /> <!-- Speed Hunter -->
+        <effect id="230" /> <!-- Speed Fire -->
+        <effect id="245" /> <!-- Speed Body -->
+        <effect id="260" /> <!-- Critical Death -->
+        <effect id="275" /> <!-- Critical Hunter -->
+        <effect id="290" /> <!-- Critical Fire -->
+        <effect id="305" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 6 -->
+    <crystal id="46479">
+        <effect id="186" /> <!-- Speed Focus -->
+        <effect id="201" /> <!-- Speed Death -->
+        <effect id="216" /> <!-- Speed Hunter -->
+        <effect id="231" /> <!-- Speed Fire -->
+        <effect id="246" /> <!-- Speed Body -->
+        <effect id="261" /> <!-- Critical Death -->
+        <effect id="276" /> <!-- Critical Hunter -->
+        <effect id="291" /> <!-- Critical Fire -->
+        <effect id="306" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 7 -->
+    <crystal id="46480">
+        <effect id="187" /> <!-- Speed Focus -->
+        <effect id="202" /> <!-- Speed Death -->
+        <effect id="217" /> <!-- Speed Hunter -->
+        <effect id="232" /> <!-- Speed Fire -->
+        <effect id="247" /> <!-- Speed Body -->
+        <effect id="262" /> <!-- Critical Death -->
+        <effect id="277" /> <!-- Critical Hunter -->
+        <effect id="292" /> <!-- Critical Fire -->
+        <effect id="307" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 8 -->
+    <crystal id="46481">
+        <effect id="188" /> <!-- Speed Focus -->
+        <effect id="203" /> <!-- Speed Death -->
+        <effect id="218" /> <!-- Speed Hunter -->
+        <effect id="233" /> <!-- Speed Fire -->
+        <effect id="248" /> <!-- Speed Body -->
+        <effect id="263" /> <!-- Critical Death -->
+        <effect id="278" /> <!-- Critical Hunter -->
+        <effect id="293" /> <!-- Critical Fire -->
+        <effect id="308" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 9 -->
+    <crystal id="46482">
+        <effect id="189" /> <!-- Speed Focus -->
+        <effect id="204" /> <!-- Speed Death -->
+        <effect id="219" /> <!-- Speed Hunter -->
+        <effect id="234" /> <!-- Speed Fire -->
+        <effect id="249" /> <!-- Speed Body -->
+        <effect id="264" /> <!-- Critical Death -->
+        <effect id="279" /> <!-- Critical Hunter -->
+        <effect id="294" /> <!-- Critical Fire -->
+        <effect id="309" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 10 -->
+    <crystal id="46483">
+        <effect id="190" /> <!-- Speed Focus -->
+        <effect id="205" /> <!-- Speed Death -->
+        <effect id="220" /> <!-- Speed Hunter -->
+        <effect id="235" /> <!-- Speed Fire -->
+        <effect id="250" /> <!-- Speed Body -->
+        <effect id="265" /> <!-- Critical Death -->
+        <effect id="280" /> <!-- Critical Hunter -->
+        <effect id="295" /> <!-- Critical Fire -->
+        <effect id="310" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 11 -->
+    <crystal id="46484">
+        <effect id="191" /> <!-- Speed Focus -->
+        <effect id="206" /> <!-- Speed Death -->
+        <effect id="221" /> <!-- Speed Hunter -->
+        <effect id="236" /> <!-- Speed Fire -->
+        <effect id="251" /> <!-- Speed Body -->
+        <effect id="266" /> <!-- Critical Death -->
+        <effect id="281" /> <!-- Critical Hunter -->
+        <effect id="296" /> <!-- Critical Fire -->
+        <effect id="311" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 12 -->
+    <crystal id="46485">
+        <effect id="192" /> <!-- Speed Focus -->
+        <effect id="207" /> <!-- Speed Death -->
+        <effect id="222" /> <!-- Speed Hunter -->
+        <effect id="237" /> <!-- Speed Fire -->
+        <effect id="252" /> <!-- Speed Body -->
+        <effect id="267" /> <!-- Critical Death -->
+        <effect id="282" /> <!-- Critical Hunter -->
+        <effect id="297" /> <!-- Critical Fire -->
+        <effect id="312" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 13 -->
+    <crystal id="46486">
+        <effect id="193" /> <!-- Speed Focus -->
+        <effect id="208" /> <!-- Speed Death -->
+        <effect id="223" /> <!-- Speed Hunter -->
+        <effect id="238" /> <!-- Speed Fire -->
+        <effect id="253" /> <!-- Speed Body -->
+        <effect id="268" /> <!-- Critical Death -->
+        <effect id="283" /> <!-- Critical Hunter -->
+        <effect id="298" /> <!-- Critical Fire -->
+        <effect id="313" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 14 -->
+    <crystal id="46487">
+        <effect id="194" /> <!-- Speed Focus -->
+        <effect id="209" /> <!-- Speed Death -->
+        <effect id="224" /> <!-- Speed Hunter -->
+        <effect id="239" /> <!-- Speed Fire -->
+        <effect id="254" /> <!-- Speed Body -->
+        <effect id="269" /> <!-- Critical Death -->
+        <effect id="284" /> <!-- Critical Hunter -->
+        <effect id="299" /> <!-- Critical Fire -->
+        <effect id="314" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Leona's Soul Crystal - Stage 15 -->
+    <crystal id="46488">
+        <effect id="195" /> <!-- Speed Focus -->
+        <effect id="210" /> <!-- Speed Death -->
+        <effect id="225" /> <!-- Speed Hunter -->
+        <effect id="240" /> <!-- Speed Fire -->
+        <effect id="255" /> <!-- Speed Body -->
+        <effect id="270" /> <!-- Critical Death -->
+        <effect id="285" /> <!-- Critical Hunter -->
+        <effect id="300" /> <!-- Critical Fire -->
+        <effect id="315" /> <!-- Critical Body -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 1 -->
+    <crystal id="46489">
+        <effect id="316" /> <!-- Acumen Wild -->
+        <effect id="331" /> <!-- Acumen Mystic -->
+        <effect id="346" /> <!-- Acumen Soul -->
+        <effect id="361" /> <!-- Wid. Mystic -->
+        <effect id="376" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 2 -->
+    <crystal id="46490">
+        <effect id="317" /> <!-- Acumen Wild -->
+        <effect id="332" /> <!-- Acumen Mystic -->
+        <effect id="347" /> <!-- Acumen Soul -->
+        <effect id="362" /> <!-- Wid. Mystic -->
+        <effect id="377" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 3 -->
+    <crystal id="46491">
+        <effect id="318" /> <!-- Acumen Wild -->
+        <effect id="333" /> <!-- Acumen Mystic -->
+        <effect id="348" /> <!-- Acumen Soul -->
+        <effect id="363" /> <!-- Wid. Mystic -->
+        <effect id="378" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 4 -->
+    <crystal id="46492">
+        <effect id="319" /> <!-- Acumen Wild -->
+        <effect id="334" /> <!-- Acumen Mystic -->
+        <effect id="349" /> <!-- Acumen Soul -->
+        <effect id="364" /> <!-- Wid. Mystic -->
+        <effect id="379" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 5 -->
+    <crystal id="46493">
+        <effect id="320" /> <!-- Acumen Wild -->
+        <effect id="335" /> <!-- Acumen Mystic -->
+        <effect id="350" /> <!-- Acumen Soul -->
+        <effect id="365" /> <!-- Wid. Mystic -->
+        <effect id="380" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 6 -->
+    <crystal id="46494">
+        <effect id="321" /> <!-- Acumen Wild -->
+        <effect id="336" /> <!-- Acumen Mystic -->
+        <effect id="351" /> <!-- Acumen Soul -->
+        <effect id="366" /> <!-- Wid. Mystic -->
+        <effect id="381" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 7 -->
+    <crystal id="46495">
+        <effect id="322" /> <!-- Acumen Wild -->
+        <effect id="337" /> <!-- Acumen Mystic -->
+        <effect id="352" /> <!-- Acumen Soul -->
+        <effect id="367" /> <!-- Wid. Mystic -->
+        <effect id="382" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 8 -->
+    <crystal id="46496">
+        <effect id="323" /> <!-- Acumen Wild -->
+        <effect id="338" /> <!-- Acumen Mystic -->
+        <effect id="353" /> <!-- Acumen Soul -->
+        <effect id="368" /> <!-- Wid. Mystic -->
+        <effect id="383" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 9 -->
+    <crystal id="46497">
+        <effect id="324" /> <!-- Acumen Wild -->
+        <effect id="339" /> <!-- Acumen Mystic -->
+        <effect id="354" /> <!-- Acumen Soul -->
+        <effect id="369" /> <!-- Wid. Mystic -->
+        <effect id="384" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 10 -->
+    <crystal id="46498">
+        <effect id="325" /> <!-- Acumen Wild -->
+        <effect id="340" /> <!-- Acumen Mystic -->
+        <effect id="355" /> <!-- Acumen Soul -->
+        <effect id="370" /> <!-- Wid. Mystic -->
+        <effect id="385" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 11 -->
+    <crystal id="46499">
+        <effect id="326" /> <!-- Acumen Wild -->
+        <effect id="341" /> <!-- Acumen Mystic -->
+        <effect id="356" /> <!-- Acumen Soul -->
+        <effect id="371" /> <!-- Wid. Mystic -->
+        <effect id="386" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 12 -->
+    <crystal id="46500">
+        <effect id="327" /> <!-- Acumen Wild -->
+        <effect id="342" /> <!-- Acumen Mystic -->
+        <effect id="357" /> <!-- Acumen Soul -->
+        <effect id="372" /> <!-- Wid. Mystic -->
+        <effect id="387" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 13 -->
+    <crystal id="46501">
+        <effect id="328" /> <!-- Acumen Wild -->
+        <effect id="343" /> <!-- Acumen Mystic -->
+        <effect id="358" /> <!-- Acumen Soul -->
+        <effect id="373" /> <!-- Wid. Mystic -->
+        <effect id="388" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 14 -->
+    <crystal id="46502">
+        <effect id="329" /> <!-- Acumen Wild -->
+        <effect id="344" /> <!-- Acumen Mystic -->
+        <effect id="359" /> <!-- Acumen Soul -->
+        <effect id="374" /> <!-- Wid. Mystic -->
+        <effect id="389" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Pantheon's Soul Crystal - Stage 15 -->
+    <crystal id="46503">
+        <effect id="330" /> <!-- Acumen Wild -->
+        <effect id="345" /> <!-- Acumen Mystic -->
+        <effect id="360" /> <!-- Acumen Soul -->
+        <effect id="375" /> <!-- Wid. Mystic -->
+        <effect id="390" /> <!-- Wid. Soul -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 1 -->
+    <crystal id="46504">
+        <effect id="391" /> <!-- HP Acumen -->
+        <effect id="406" /> <!-- HP Wild -->
+        <effect id="421" /> <!-- HP Mystic -->
+        <effect id="436" /> <!-- HP Soul -->
+        <effect id="451" /> <!-- MP Fury -->
+        <effect id="466" /> <!-- MP Focus -->
+        <effect id="481" /> <!-- MP Death -->
+        <effect id="496" /> <!-- MP Hunter -->
+        <effect id="511" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 2 -->
+    <crystal id="46505">
+        <effect id="392" /> <!-- HP Acumen -->
+        <effect id="407" /> <!-- HP Wild -->
+        <effect id="422" /> <!-- HP Mystic -->
+        <effect id="437" /> <!-- HP Soul -->
+        <effect id="452" /> <!-- MP Fury -->
+        <effect id="467" /> <!-- MP Focus -->
+        <effect id="482" /> <!-- MP Death -->
+        <effect id="497" /> <!-- MP Hunter -->
+        <effect id="512" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 3 -->
+    <crystal id="46506">
+        <effect id="393" /> <!-- HP Acumen -->
+        <effect id="408" /> <!-- HP Wild -->
+        <effect id="423" /> <!-- HP Mystic -->
+        <effect id="438" /> <!-- HP Soul -->
+        <effect id="453" /> <!-- MP Fury -->
+        <effect id="468" /> <!-- MP Focus -->
+        <effect id="483" /> <!-- MP Death -->
+        <effect id="498" /> <!-- MP Hunter -->
+        <effect id="513" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 4 -->
+    <crystal id="46507">
+        <effect id="394" /> <!-- HP Acumen -->
+        <effect id="409" /> <!-- HP Wild -->
+        <effect id="424" /> <!-- HP Mystic -->
+        <effect id="439" /> <!-- HP Soul -->
+        <effect id="454" /> <!-- MP Fury -->
+        <effect id="469" /> <!-- MP Focus -->
+        <effect id="484" /> <!-- MP Death -->
+        <effect id="499" /> <!-- MP Hunter -->
+        <effect id="514" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 5 -->
+    <crystal id="46508">
+        <effect id="395" /> <!-- HP Acumen -->
+        <effect id="410" /> <!-- HP Wild -->
+        <effect id="425" /> <!-- HP Mystic -->
+        <effect id="440" /> <!-- HP Soul -->
+        <effect id="455" /> <!-- MP Fury -->
+        <effect id="470" /> <!-- MP Focus -->
+        <effect id="485" /> <!-- MP Death -->
+        <effect id="500" /> <!-- MP Hunter -->
+        <effect id="515" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 6 -->
+    <crystal id="46509">
+        <effect id="396" /> <!-- HP Acumen -->
+        <effect id="411" /> <!-- HP Wild -->
+        <effect id="426" /> <!-- HP Mystic -->
+        <effect id="441" /> <!-- HP Soul -->
+        <effect id="456" /> <!-- MP Fury -->
+        <effect id="471" /> <!-- MP Focus -->
+        <effect id="486" /> <!-- MP Death -->
+        <effect id="501" /> <!-- MP Hunter -->
+        <effect id="516" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 7 -->
+    <crystal id="46510">
+        <effect id="397" /> <!-- HP Acumen -->
+        <effect id="412" /> <!-- HP Wild -->
+        <effect id="427" /> <!-- HP Mystic -->
+        <effect id="442" /> <!-- HP Soul -->
+        <effect id="457" /> <!-- MP Fury -->
+        <effect id="472" /> <!-- MP Focus -->
+        <effect id="487" /> <!-- MP Death -->
+        <effect id="502" /> <!-- MP Hunter -->
+        <effect id="517" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 8 -->
+    <crystal id="46511">
+        <effect id="398" /> <!-- HP Acumen -->
+        <effect id="413" /> <!-- HP Wild -->
+        <effect id="428" /> <!-- HP Mystic -->
+        <effect id="443" /> <!-- HP Soul -->
+        <effect id="458" /> <!-- MP Fury -->
+        <effect id="473" /> <!-- MP Focus -->
+        <effect id="488" /> <!-- MP Death -->
+        <effect id="503" /> <!-- MP Hunter -->
+        <effect id="518" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 9 -->
+    <crystal id="46512">
+        <effect id="399" /> <!-- HP Acumen -->
+        <effect id="414" /> <!-- HP Wild -->
+        <effect id="429" /> <!-- HP Mystic -->
+        <effect id="444" /> <!-- HP Soul -->
+        <effect id="459" /> <!-- MP Fury -->
+        <effect id="474" /> <!-- MP Focus -->
+        <effect id="489" /> <!-- MP Death -->
+        <effect id="504" /> <!-- MP Hunter -->
+        <effect id="519" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 10 -->
+    <crystal id="46513">
+        <effect id="400" /> <!-- HP Acumen -->
+        <effect id="415" /> <!-- HP Wild -->
+        <effect id="430" /> <!-- HP Mystic -->
+        <effect id="445" /> <!-- HP Soul -->
+        <effect id="460" /> <!-- MP Fury -->
+        <effect id="475" /> <!-- MP Focus -->
+        <effect id="490" /> <!-- MP Death -->
+        <effect id="505" /> <!-- MP Hunter -->
+        <effect id="520" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 11 -->
+    <crystal id="46514">
+        <effect id="401" /> <!-- HP Acumen -->
+        <effect id="416" /> <!-- HP Wild -->
+        <effect id="431" /> <!-- HP Mystic -->
+        <effect id="446" /> <!-- HP Soul -->
+        <effect id="461" /> <!-- MP Fury -->
+        <effect id="476" /> <!-- MP Focus -->
+        <effect id="491" /> <!-- MP Death -->
+        <effect id="506" /> <!-- MP Hunter -->
+        <effect id="521" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 12 -->
+    <crystal id="46515">
+        <effect id="402" /> <!-- HP Acumen -->
+        <effect id="417" /> <!-- HP Wild -->
+        <effect id="432" /> <!-- HP Mystic -->
+        <effect id="447" /> <!-- HP Soul -->
+        <effect id="462" /> <!-- MP Fury -->
+        <effect id="477" /> <!-- MP Focus -->
+        <effect id="492" /> <!-- MP Death -->
+        <effect id="507" /> <!-- MP Hunter -->
+        <effect id="522" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 13 -->
+    <crystal id="46516">
+        <effect id="403" /> <!-- HP Acumen -->
+        <effect id="418" /> <!-- HP Wild -->
+        <effect id="433" /> <!-- HP Mystic -->
+        <effect id="448" /> <!-- HP Soul -->
+        <effect id="463" /> <!-- MP Fury -->
+        <effect id="478" /> <!-- MP Focus -->
+        <effect id="493" /> <!-- MP Death -->
+        <effect id="508" /> <!-- MP Hunter -->
+        <effect id="523" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 14 -->
+    <crystal id="46517">
+        <effect id="404" /> <!-- HP Acumen -->
+        <effect id="419" /> <!-- HP Wild -->
+        <effect id="434" /> <!-- HP Mystic -->
+        <effect id="449" /> <!-- HP Soul -->
+        <effect id="464" /> <!-- MP Fury -->
+        <effect id="479" /> <!-- MP Focus -->
+        <effect id="494" /> <!-- MP Death -->
+        <effect id="509" /> <!-- MP Hunter -->
+        <effect id="524" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Lionel's Soul Crystal - Stage 15 -->
+    <crystal id="46518">
+        <effect id="405" /> <!-- HP Acumen -->
+        <effect id="420" /> <!-- HP Wild -->
+        <effect id="435" /> <!-- HP Mystic -->
+        <effect id="450" /> <!-- HP Soul -->
+        <effect id="465" /> <!-- MP Fury -->
+        <effect id="480" /> <!-- MP Focus -->
+        <effect id="495" /> <!-- MP Death -->
+        <effect id="510" /> <!-- MP Hunter -->
+        <effect id="525" /> <!-- MP Fire -->
+    </crystal>
+    <!-- Mystic Soul Crystal -->
+    <crystal id="46553" special="true">
+        <effect id="526" /> <!-- Tyrr -->
+        <effect id="527" /> <!-- Feoh -->
+        <effect id="528" /> <!-- Sigel -->
+    </crystal>
+    <!-- Practice Soul Crystal - Stage 1 -->
+    <crystal id="46526">
+        <effect id="666" /> <!-- Fury-Practice -->
+        <effect id="667" /> <!-- Acumen-Practice -->
+    </crystal>
+</list>

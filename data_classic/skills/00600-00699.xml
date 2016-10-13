@@ -358,7 +358,7 @@
         <table name="#magicLvl">40 41 42 43 44 44 45 46 47 48 49 50 51 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65
             66 67 68 69 70 71 72 73 74 75 76
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -374,7 +374,6 @@
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Bow, Crossbow" />
-        <set name="saveVs" val="MEN" />
         <set name="soulMaxConsumeCount" val="5" />
         <for>
             <abnormal count="3" duration="1" effectType="FEAR" landRate="40" stackLvl="1" stackType="turn_flee">
@@ -384,7 +383,7 @@
     </skill>
     <!-- Opens a treasure chest with a spinning kick. -->
     <skill id="630" levels="1" name="Rabbit Tornado">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="2500" />
@@ -698,7 +697,7 @@
     </skill>
     <!-- Attacks the enemy with 2904 Power added to P. Atk. Over-hit and Critical are possible. -->
     <skill id="675" levels="1" name="Divine Warrior Cross Slash">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="112" />
@@ -715,7 +714,7 @@
     </skill>
     <!-- Hurls Momentum to attack the enemy with 2323 Power added to P. Atk. Over-hit and Critical are possible. -->
     <skill id="676" levels="1" name="Divine Warrior Sonic Blaster">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="56" />
@@ -784,7 +783,7 @@
     </skill>
     <!-- Provokes the enemy to attack with 6752 Power. -->
     <skill id="680" levels="1" name="Divine Knight Hate">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGDAMAGE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="2" />
@@ -797,7 +796,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" stackLvl="1" stackType="target_lock">
                 <effect type="TargetMe" val="0" />
@@ -817,7 +815,6 @@
         <set name="staticReuse" val="true" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" stackLvl="1" stackType="target_lock">
                 <effect type="TargetMe" val="0" />
@@ -826,7 +823,7 @@
     </skill>
     <!-- Cause damage and shock together at the same time. Make the enemies shocked momentarily. Over-hit is possible. Power 1162. -->
     <skill id="682" levels="1" name="Divine Knight Stun Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
@@ -841,7 +838,6 @@
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -864,7 +860,6 @@
         <set name="overHit" val="true" />
         <set name="ignoreShld" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -914,7 +909,7 @@
     </skill>
     <!-- Shoots arrows that inflict both damage and shock to the enemy in order to cancel target state. Momentarily stuns target. Over-hit is possible. Power 2323. -->
     <skill id="686" levels="1" name="Divine Rogue Stun Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
@@ -928,7 +923,6 @@
         <set name="SSBoost" val="2.0" />
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -940,7 +934,7 @@
     </skill>
     <!-- Shoots 2 arrows continuously. Critical hit is possible. Over-hit is possible. Power 6195. -->
     <skill id="687" levels="1" name="Divine Rogue Double Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="159" />
@@ -956,7 +950,7 @@
     </skill>
     <!-- Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit is possible. Power 1549. Effect 3. -->
     <skill id="688" levels="1" name="Divine Rogue Bleed Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
@@ -971,7 +965,6 @@
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" effectType="BLEED" landRate="50" stackLvl="3" stackType="bleeding"
                       visualEffect="bleed">
@@ -981,7 +974,7 @@
     </skill>
     <!-- Attacks the target's vital points. CP Siphon. Over-hit is possible. Power 6969. -->
     <skill id="689" levels="1" name="Divine Rogue Deadly Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="72" />
@@ -999,7 +992,7 @@
     </skill>
     <!-- Temporarily increase Evasion by 4. -->
     <skill id="690" levels="1" name="Divine Rogue Agility">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1041,7 +1034,7 @@
     </skill>
     <!-- Attacks a contacted target with non-attribute attack. Momentarily decreases your M. Atk. during PvP. Power 102. -->
     <skill id="692" levels="1" name="Divine Wizard Divine Flare">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1104,7 +1097,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -1113,7 +1105,7 @@
     </skill>
     <!-- Momentarily decrease Holy Attack Resistance, and increase Dark Attack Resistance. Effect 3. -->
     <skill id="696" levels="1" name="Divine Wizard Surrender to Holy">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1124,7 +1116,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="3" stackType="armor_unholy">
                 <effect type="Debuff" val="0" />
@@ -1158,7 +1149,7 @@
     </skill>
     <!-- Restores HP by 946 power. -->
     <skill id="698" levels="1" name="Divine Healer Major Heal">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1172,7 +1163,7 @@
     </skill>
     <!-- Restores HP by 826 power. -->
     <skill id="699" levels="1" name="Divine Healer Battle Heal">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

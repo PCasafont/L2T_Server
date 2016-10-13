@@ -49,7 +49,7 @@
         <table name="#power">690 722 753 783 812 840 867 892 915 936 946</table>
         <table name="#aggro">403 421 439 457 474 490 506 520 534 546 546</table>
         <table name="#magicLvl">56 58 60 62 64 66 68 70 72 74 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -194,7 +194,7 @@
     </skill>
     <!-- Cancels the target's debuffs. Consumes 1 Einhasad's Holy Water. -->
     <skill id="1409" levels="1" name="Cleanse">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL_DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -227,7 +227,7 @@
     </skill>
     <!-- Disrupts a nearby target's casting, disrupting their spell. -->
     <skill id="1412" levels="1" name="Spell Turning">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -394,7 +394,7 @@
     </skill>
     <!-- Protects the target with holy power, making it invincible for 10 seconds. -->
     <skill id="1418" levels="1" name="Celestial Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -726,7 +726,7 @@
         <table name="#mpConsume">9 9 10 14 15 15</table>
         <table name="#magicLvl">3 5 8 10 13 15</table>
         <table name="#power">13 14 16 18 20 22</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -783,7 +783,7 @@
         <table name="#mpConsume">15 17 17 18 19 20 22 23 24 25</table>
         <table name="#power">24 26 28 31 33 35 38 40 43 46</table>
         <table name="#magicLvl">18 20 22 24 26 28 30 32 34 36</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -838,7 +838,7 @@
         <table name="#dmg">72 96 123 123 150 150 174 174 189 189</table>
         <table name="#abnormalLvl">1 2 3 4 5 6 7 8 9 10</table>
         <table name="#amount">20 20 23 23 23 23 23 23 23 23</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -852,7 +852,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="#abnormalLvl" stackType="death_mark"
                       visualEffect="deathmark">
@@ -904,7 +903,7 @@
         <table name="#magicLvl">39 40 42 43 45 46 48 49 51 52 54 55 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
             74
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -971,7 +970,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="soulMaxConsumeCount" val="5" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="speed_down">
@@ -1022,7 +1020,7 @@
         <table name="#magicLvl">66 68 70 72 74</table>
         <table name="#mpConsume">62 64 65 67 69</table>
         <table name="#power">96 99 102 105 108</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1049,7 +1047,7 @@
         <table name="#maxNegated">3 4 5 6 7</table>
         <table name="#power">30 35 40 45 50</table>
         <table name="#magicLvl">55 60 64 68 72</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="STEAL_BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1098,7 +1096,7 @@
         <table name="#vuln">15 23 30</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#aggro">285 379 418</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1178,7 +1176,7 @@
         <table name="#effectRange">1250 1250 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400
             1400
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1190,7 +1188,6 @@
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="armor_unholy">
                 <effect type="Debuff" val="0" />
@@ -1202,7 +1199,7 @@
     <!-- Catches the enemy's shadow and inflicts hold for 15 seconds. -->
     <skill id="1446" levels="11" name="Shadow Bind">
         <table name="#magicLvl">52 55 58 60 62 64 66 68 70 72 74</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1214,7 +1211,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="80" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -1224,7 +1220,7 @@
     <!-- Seals the enemy's voice, blocking their ability to cast magic for 20 seconds. -->
     <skill id="1447" levels="9" name="Voice Bind">
         <table name="#magicLvl">58 60 62 64 66 68 70 72 74</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1236,7 +1232,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="20" landRate="80" stackLvl="1" stackType="silence" visualEffect="mute">
                 <effect type="Mute" val="0" />
@@ -1245,7 +1240,7 @@
     </skill>
     <!-- Transfer a soul to the target. Only possible when the target is a Kamael. Consumes 1 Soul. -->
     <skill id="1449" levels="1" name="Transfer Soul">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CHARGESOUL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hpConsume" val="20" />
@@ -1277,7 +1272,7 @@
     </skill>
     <!-- Detonates a Fire Vortex that inflicts Fire damage on the enemy with 195 Power added to M. Atk. -->
     <skill id="1451" levels="1" name="Fire Vortex Buster">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1302,7 +1297,7 @@
     </skill>
     <!-- Uses the power of Fire to burn the enemy for 10 seconds, inflicting damage of 173 HP per second. -->
     <skill id="1452" levels="1" name="Count of Fire">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1317,7 +1312,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="fire_dot">
                 <effect type="DamOverTime" val="173" />
@@ -1326,7 +1320,7 @@
     </skill>
     <!-- Creates an Ice Vortex that inflicts Water damage on the enemy with 195 Power added to M. Atk. -->
     <skill id="1453" levels="1" name="Ice Vortex Crusher">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1365,7 +1359,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" effectType="DEBUFF" landRate="80" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -1375,7 +1368,7 @@
     </skill>
     <!-- Summons a blast of icy air that freezes the enemy for 10 seconds, causing loss of 173 HP per second. -->
     <skill id="1455" levels="1" name="Throne of Ice">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1389,7 +1382,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="water_dot">
                 <effect type="DamOverTime" val="173" />
@@ -1398,7 +1390,7 @@
     </skill>
     <!-- Creates a powerful Wind Vortex that inflicts Wind damage on the enemy with 195 Power added to M. Atk. -->
     <skill id="1456" levels="1" name="Wind Vortex Slug">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1444,7 +1436,7 @@
     </skill>
     <!-- Uses the power of a storm to weaken the enemy for 10 seconds, causing loss of 173 HP per second. -->
     <skill id="1458" levels="1" name="Throne of Wind">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1459,7 +1451,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" landRate="80" stackLvl="1" stackType="wind_dot">
                 <effect type="DamOverTime" val="173" />
@@ -1484,7 +1475,7 @@
     </skill>
     <!-- For 20 minutes, increases the recharge power received by the target by 85. -->
     <skill id="1460" levels="1" name="Mana Gain">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1527,7 +1518,8 @@
     <skill id="1462" levels="7" name="Seal of Blockade">
         <table name="#mpConsume">100 130 170 252 278 306 332</table>
         <table name="#hitTime">4000 3700 3400 3100 2800 2500 2200</table>
-        <set name="target" val="TARGET_PVP_AREA" />
+         <set name="target" val="TARGET_AROUND_TARGET" />
+         <set name="targetDirection" val="PLAYER" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1541,7 +1533,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="SILENCE" landRate="80" stackLvl="1" stackType="normal_attack_block">
                 <effect type="PhysicalAttackMute" val="0" />
@@ -1717,7 +1708,7 @@
     </skill>
     <!-- Absorbs your enemy's soul over time. -->
     <skill id="1472" levels="1" name="Soul Sucking">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1770,7 +1761,7 @@
             death_mark,7
             death_mark,10
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="NEGATE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1920,7 +1911,7 @@
     <skill id="1481" levels="7" name="Oblivion">
         <table name="#magicLvl">43 49 55 60 64 68 72</table>
         <table name="#mpConsume">38 44 50 55 60 64 67</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1932,7 +1923,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20" visualEffect="poison">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5448" type="ChanceSkillTrigger"
@@ -1943,7 +1933,7 @@
     <!-- For 1 minute, inflicts the curse of weakness on the enemy and makes him faint at a certain rate when damage is received. -->
     <skill id="1482" levels="4" name="Weak Constitution">
         <table name="#mpConsume">58 62 65 68</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1954,7 +1944,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5449" type="ChanceSkillTrigger"
@@ -1966,7 +1955,7 @@
     <skill id="1483" levels="7" name="Thin Skin">
         <table name="#mpConsume">42 48 54 58 62 65 68</table>
         <table name="#lvl">1 2 3 4 5 6 7</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1977,7 +1966,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5450" triggeredLevel="#lvl"
@@ -1988,7 +1976,7 @@
     <!-- For 1 minute, makes the enemy lose his ambition, and decreases Atk. Spd./Speed/Casting Spd. at a certain rate when damage is received. -->
     <skill id="1484" levels="4" name="Enervation">
         <table name="#mpConsume">55 60 64 67</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1999,7 +1987,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5451" type="ChanceSkillTrigger"
@@ -2011,7 +1998,7 @@
     <skill id="1485" levels="3" name="Spite">
         <table name="#mpConsume">62 65 68</table>
         <table name="#lvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2022,7 +2009,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5452" triggeredLevel="#lvl"
@@ -2034,7 +2020,7 @@
     <skill id="1486" levels="4" name="Mental Impoverish">
         <table name="#mpConsume">64 65 67 68</table>
         <table name="#lvl">1 2 3 4</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2045,7 +2031,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="20">
                 <effect activationChance="30" chanceType="ON_ATTACKED_HIT" triggeredId="5453" triggeredLevel="#lvl"
@@ -2066,7 +2051,7 @@
     <skill id="1487" levels="8" name="Restoration">
         <table name="#mpConsume">70 82 48 54 58 62 65 68</table>
         <table name="#hot">45 54 66 75 81 87 90 96</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2094,7 +2079,7 @@
     <skill id="1488" levels="3" name="Restoration Impact">
         <table name="#mpConsume">23 28 33</table>
         <table name="#power">10 15 20</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2223,7 +2208,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="absorbPart" val="0.2" />
         <for>
             <abnormal duration="15" effectType="DEBUFF" landRate="90" stackLvl="1" stackType="ultimate_debuff">
@@ -2280,7 +2264,7 @@
     </skill>
     <!-- Combines P. Atk. increase and P. Def. increase to have more advanced combat power increase effect. For 40 minutes, increases P. Atk. by 15% and P. Def. by 15%. -->
     <skill id="1499" levels="1" name="Improve Combat">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

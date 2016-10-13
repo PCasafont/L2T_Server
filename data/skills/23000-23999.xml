@@ -3812,7 +3812,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" stackLvl="2" stackType="fire_dot">
                 <effect type="DamOverTime" val="300" />
@@ -3830,7 +3829,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" stackLvl="2" stackType="wind_dot">
                 <effect type="DamOverTime" val="300" />
@@ -3848,7 +3846,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" stackLvl="2" stackType="dark_dot">
                 <effect type="DamOverTime" val="300" />

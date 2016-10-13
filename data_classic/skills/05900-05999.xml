@@ -10,7 +10,6 @@
         <set name="hitTime" val="2000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- When a blow is incurred, the target is continuously removed, and skills and magic cannot be used. -->
     <skill id="5901" levels="2" name="Mist of Oblivion">
@@ -22,7 +21,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="#hitTime" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5902" levels="1" name="Cancel NPC Trigger Target">
         <set name="target" val="TARGET_SELF" />
@@ -37,7 +35,7 @@
     </skill>
     <!-- Equipment are removed. Unable to use weapons while the effect lasts. -->
     <skill id="5903" levels="1" name="Burst of Misplace">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -49,7 +47,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="STR" />
         <for>
             <abnormal duration="5" landRate="33" stackLvl="1" stackType="disarm">
                 <effect type="Disarm" val="0" />
@@ -82,7 +79,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="73" />
         <set name="hitTime" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5906" levels="1" name="Ritual of Revive">
         <set name="target" val="TARGET_NONE" />
@@ -103,7 +99,6 @@
         <set name="hitTime" val="#hitTime" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Momentarily inflicts Hold on the enemy. Additional Hold is not available while effects last. -->
     <skill id="5908" levels="2" name="Ritual of Entombment">
@@ -116,10 +111,9 @@
         <set name="hitTime" val="#hitTime" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5909" levels="1" name="Stronghold Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -130,7 +124,7 @@
         <set name="effectRange" val="400" />
     </skill>
     <skill id="5910" levels="1" name="Stronghold Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -151,7 +145,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5913" levels="1" name="Putrefaction Cleanse">
         <set name="target" val="TARGET_NONE" />
@@ -166,7 +159,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5915" levels="9" name="Mummifying Aura">
         <set name="target" val="TARGET_NONE" />
@@ -191,7 +183,7 @@
     </skill>
     <!-- Immortal Lord's command. Cannot resurrect. -->
     <skill id="5919" levels="1" name="Obey">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -238,7 +230,6 @@
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
         <set name="absorbPart" val="0.8" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="multi_debuff_f"
                       visualEffect="bleed">
@@ -266,7 +257,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="300" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="multi_debuff_g"
                       visualEffect="bleed">
@@ -585,7 +575,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5961" levels="1" name="Barrier Thunder Storm">
@@ -597,7 +586,6 @@
         <set name="hitTime" val="4000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5962" levels="1" name="Air Defense Cannon">
         <set name="target" val="TARGET_NONE" />
@@ -648,7 +636,6 @@
         <set name="lvlDepend" val="2" />
         <set name="reuseDelay" val="40000" />
         <set name="staticReuse" val="true" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Momentarily increases your own bow Atk. Spd. Effect 1.
@@ -679,7 +666,6 @@
         <set name="effectRange" val="400" />
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Increases Max HP. -->
     <skill id="5970" levels="1" name="Seduced Knight's Help">
@@ -807,7 +793,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5985" levels="9" name="Decaying Aura">
         <set name="target" val="TARGET_NONE" />
@@ -915,7 +900,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- When a blow is incurred, an opponent loses their target and cannot use skills and magic. -->
     <skill id="5993" levels="1" name="Command of Anchor">
@@ -929,7 +913,6 @@
         <set name="power" val="171" />
         <set name="hitTime" val="2000" />
         <set name="skillRadius" val="300" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="90" stackLvl="8" stackType="oblivion"
                       visualEffect="poison">

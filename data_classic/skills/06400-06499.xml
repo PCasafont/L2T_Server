@@ -17,7 +17,6 @@
         <set name="skillRadius" val="200" />
         <set name="skillScope" val="fan;200;90" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="4" duration="5" landRate="100" stackLvl="8" stackType="dot_mp" visualEffect="poison">
                 <effect type="ManaDamOverTime" val="20" />
@@ -40,7 +39,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="4" duration="5" landRate="100" stackLvl="8" stackType="dot_mp" visualEffect="poison">
                 <effect type="ManaDamOverTime" val="20" />
@@ -63,7 +61,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="4" duration="5" landRate="100" stackLvl="8" stackType="dot_mp" visualEffect="poison">
                 <effect type="DamOverTime" val="345" />
@@ -74,7 +71,7 @@
         </for>
     </skill>
     <skill id="6419" levels="1" name="Light of Scout">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="82" />
@@ -85,7 +82,7 @@
         <set name="effectRange" val="400" />
     </skill>
     <skill id="6420" levels="1" name="Lizard Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -96,7 +93,7 @@
         <set name="effectRange" val="400" />
     </skill>
     <skill id="6421" levels="1" name="Warrior's Rage">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
@@ -118,7 +115,7 @@
     </skill>
     <!-- Stunned and unable to move for 3 seconds. -->
     <skill id="6423" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
@@ -130,7 +127,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="60" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -138,7 +134,7 @@
         </for>
     </skill>
     <skill id="6424" levels="1" name="Double Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
@@ -155,10 +151,9 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="2" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="6426" levels="1" name="Priest's Ire">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -196,7 +191,6 @@
         <set name="power" val="90" />
         <set name="castRange" val="2000" />
         <set name="effectRange" val="2500" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" effectType="HOLD" landRate="50" stackLvl="1" stackType="root_magically"
                       visualEffect="root">
@@ -206,7 +200,7 @@
     </skill>
     <!-- Bow/Crossbow P. Atk. increase by 15% and HP recovers. -->
     <skill id="6429" levels="1" name="Cozy Mucus">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="110" />
@@ -234,7 +228,7 @@
     </skill>
     <!-- P. Atk. increases by 19 % for 5 minutes. -->
     <skill id="6431" levels="1" name="Feral Might">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -253,7 +247,7 @@
     </skill>
     <!-- Critical attack rate increases by 35 % for 5 minutes. -->
     <skill id="6432" levels="1" name="Feral Focus">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -272,7 +266,7 @@
     </skill>
     <!-- Accuracy increases by 7 for 5 minutes. -->
     <skill id="6433" levels="1" name="Feral Guidance">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -291,7 +285,7 @@
     </skill>
     <!-- Atk. Spd. increases by 38 % for 5 minutes. -->
     <skill id="6434" levels="1" name="Feral Haste">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -318,13 +312,12 @@
         <table name="#rCrit">20 50 75</table>
         <table name="#cAtk">20 30 40</table>
         <table name="#abnormalLvl">7 8 9</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" landRate="80" stackLvl="#abnormalLvl" stackType="multi_debuff">
                 <effect type="DamOverTime" val="#dot" />
@@ -339,13 +332,12 @@
     </skill>
     <!-- Max HP decreases by 5%, Bow/Crossbow Critical Rate increases by 90% and Critical Damage increases by 50% per second. -->
     <skill id="6436" levels="1" name="Curse of the Dark Abyss">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="3" duration="5" landRate="80" stackLvl="10" stackType="multi_debuff">
                 <effect type="DamOverTime" val="400" />
@@ -369,7 +361,7 @@
     -->
     <skill id="6437" levels="7" name="Freezing Core Area">
         <table name="#dot">30 60 90 150 250 350 500</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="84" />
@@ -377,7 +369,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="15" duration="5" landRate="80" stackLvl="10" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -390,37 +381,32 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6439" levels="1" name="Energy of Wisdom">
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6440" levels="1" name="Energy of Strength">
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6441" levels="1" name="Energy of Agility">
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- A special location buff that allows the user to inflict magic damage on monsters in the Seed of Annihilation. -->
     <skill id="6442" levels="1" name="Energy of Wisdom">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" stackLvl="1" stackType="signal_e">
                 <effect type="Buff" val="0" />
@@ -430,12 +416,11 @@
     </skill>
     <!-- A special location buff that allows the user to inflict melee damage on monsters in the Seed of Annihilation. -->
     <skill id="6443" levels="1" name="Energy of Strength">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" stackLvl="1" stackType="signal_e">
                 <effect type="Buff" val="0" />
@@ -446,12 +431,11 @@
     </skill>
     <!-- A special location buff that allows the user to inflict ranged physical damage on monsters in the Seed of Annihilation. -->
     <skill id="6444" levels="1" name="Energy of Agility">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="60" stackLvl="1" stackType="signal_e">
                 <effect type="Buff" val="0" />

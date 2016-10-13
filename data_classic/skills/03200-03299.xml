@@ -737,7 +737,7 @@
     </skill>
     <!-- Taps into the magic of the bow to fire a harmless bolt. Warning: If you use this skill against a monster, it will flag you for PvP. -->
     <skill id="3261" levels="1" name="Forgiveness">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="1" />

@@ -6,7 +6,7 @@
         <set name="operateType" val="OP_PASSIVE" />
     </skill>
     <skill id="7001" levels="1" name="Dispel Buff">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -17,7 +17,7 @@
         <set name="aggroPoints" val="100" />
     </skill>
     <skill id="7002" levels="1" name="Dispel Debuff">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL_DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -26,7 +26,7 @@
         <set name="aggroPoints" val="100" />
     </skill>
     <skill id="7003" levels="1" name="Dispel All">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="NEGATE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -91,7 +91,6 @@
         <set name="reuseDelay" val="20000" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Once used, the Feather of Blessing cannot be reused for another 5 minutes. -->
     <skill id="7008" levels="1" name="Feather of Blessing">
@@ -331,7 +330,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Critical attack rate by 30% for 1 hour. -->
     <skill id="7041" levels="1" name="Master's Blessing - Focus">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -350,7 +349,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Critical P. Atk. by 35% for 1 hour. -->
     <skill id="7042" levels="1" name="Master's Blessing - Death Whisper">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -369,7 +368,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Atk. Spd. by 33% for 1 hour. -->
     <skill id="7043" levels="1" name="Master's Blessing - Haste">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -388,7 +387,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Accuracy by 4 for 1 hour. -->
     <skill id="7044" levels="1" name="Master's Blessing - Guidance">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -407,7 +406,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Max HP by 35% for 1 hour. -->
     <skill id="7045" levels="1" name="Master's Blessing - Blessed Body">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -426,7 +425,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Max MP by 35% for 1 hour. -->
     <skill id="7046" levels="1" name="Master's Blessing - Blessed Soul">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -445,7 +444,7 @@
     </skill>
     <!-- The GM is always by your side. Increase Evasion by 4 for 1 hour. -->
     <skill id="7047" levels="1" name="Master's Blessing - Agility">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -464,7 +463,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Casting Spd. by 30% for 1 hour. -->
     <skill id="7048" levels="1" name="Master's Blessing - Acumen">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -483,7 +482,7 @@
     </skill>
     <!-- The GM is always by your side. Increases the weight penalty interval by 9000 for 1 hour. -->
     <skill id="7049" levels="1" name="Master's Blessing - Decrease Weight">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -502,7 +501,7 @@
     </skill>
     <!-- The GM is always by your side. Increases P. Atk. by 15% for 1 hour. -->
     <skill id="7050" levels="1" name="Master's Blessing - Might">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -521,7 +520,7 @@
     </skill>
     <!-- The GM is always by your side. Increases P. Def. by 15% for 1 hour. -->
     <skill id="7051" levels="1" name="Master's Blessing - Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -540,7 +539,7 @@
     </skill>
     <!-- The GM is always by your side. Increases M. Def. by 30% for 1 hour. -->
     <skill id="7052" levels="1" name="Master's Blessing - Magic Barrier">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -559,7 +558,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
     <skill id="7053" levels="1" name="Master's Blessing - Vampiric Rage">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -578,7 +577,7 @@
     </skill>
     <!-- The GM is always by your side. Increases M. Atk. by 75% for 1 hour. -->
     <skill id="7054" levels="1" name="Master's Blessing - Empower">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -597,7 +596,7 @@
     </skill>
     <!-- The GM is always by your side. Increases Speed by 33 for 1 hour. -->
     <skill id="7055" levels="1" name="Master's Blessing - Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -616,7 +615,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, decreases a party member's P. Def. by 8%, M. Def. by 16%, and evasion by 4. Increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
     <skill id="7056" levels="1" name="Master's Blessing - Berserker Spirit">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -642,7 +641,7 @@
     </skill>
     <!-- The GM is always by your side. Increases P. Atk. by 10% for 1 hour. -->
     <skill id="7057" levels="1" name="Master's Blessing - Greater Might">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -660,7 +659,7 @@
     </skill>
     <!-- The GM is always by your side. Increases P. Def. by 15% for 1 hour. -->
     <skill id="7058" levels="1" name="Master's Blessing - Greater Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -678,7 +677,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, increases by 2 the occurrence rate of damage that is caused by magic damage. -->
     <skill id="7059" levels="1" name="Master's Blessing - Wild Magic">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -697,7 +696,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, decreases physical skill MP consumption by 20%, magic skill's MP consumption by 10%, and song/dance skill's MP consumption by 20%. -->
     <skill id="7060" levels="1" name="Master's Blessing - Clarity">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -717,7 +716,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, receives help from a great spirit to increase the chance of prominent damage occurring through magic damage by 2, MP recovery bonus by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP consumption for skill use by 5%. -->
     <skill id="7061" levels="1" name="Master's Blessing - Prophecy of Water">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -749,7 +748,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, receives help from a great spirit to increase Max MP by 20%, HP recovery bonus by 20%, the chance of prominent damage occurring through magic damage by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. -->
     <skill id="7062" levels="1" name="Master's Blessing - Prophecy of Fire">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -780,7 +779,7 @@
     </skill>
     <!-- The GM is always by your side. For 1 hour, receives help from a great spirit to increase Max HP by 20%, rate of critical attack by 20%, rate of Prominent Damage through magic damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Bestows the ability to recover as HP 5% of the physical damage inflicted on the enemy with a certain probability. -->
     <skill id="7063" levels="1" name="Master's Blessing - Prophecy of Wind">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -810,7 +809,7 @@
     </skill>
     <!-- The GM is always by your side. Recovers HP by 20%, and for 1 hour, receives help from a great spirit to increase Max HP by 20%, the chance of prominent damage occurring through magic damage by 2, the rate of critical attack by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, Debuff Resistance by 10%, and Accuracy by 4. -->
     <skill id="7064" levels="1" name="Master's Blessing - Chant of Victory">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -866,7 +865,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
         <cond addName="1" msgId="113">
             <target mindistance="200" />
         </cond>
@@ -883,7 +881,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
         <cond addName="1" msgId="113">
             <target mindistance="200" />
         </cond>
@@ -956,7 +953,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Currently stunned. -->
     <skill id="7077" levels="1" name="Test - Delay Debuff - Call">
@@ -981,7 +977,6 @@
         <set name="hitTime" val="2500" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Shoots toward ground. -->
     <skill id="7081" levels="1" name="Effect Test - Land Shot">
@@ -1041,7 +1036,7 @@
     </skill>
     <!-- The GM is always by your side. Combine P. Atk. increase and P. Def. increase to have more advanced combat power increase effect. For 1 hour, increases P. Atk. by 15% and P. Def. by 15%. -->
     <skill id="7088" levels="1" name="Master's Blessing - Improve Combat">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1064,7 +1059,7 @@
     </skill>
     <!-- The GM is always by your side. Combine M. Atk. increase and M. Def. increase to have more advanced magic ability increase effect. For 1 hour, increases M. Atk. by 75% and M. Def. by 30%. -->
     <skill id="7089" levels="1" name="Master's Blessing - Improve Magic">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1087,7 +1082,7 @@
     </skill>
     <!-- The GM is always by your side. Combine maximum HP increase and maximum MP increase to have more advanced mental and physical power. For 1 hour, increases Max HP by 35% and Max MP by 35%. -->
     <skill id="7090" levels="1" name="Master's Blessing - Improve Condition">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1110,7 +1105,7 @@
     </skill>
     <!-- The GM is always by your side. Combine Critical Rate increase and Critical Damage increase to have more advanced critical increase effect. For 1 hour, increases Critical Rate by 30% and Critical Damage by 35%. -->
     <skill id="7091" levels="1" name="Master's Blessing - Improve Critical Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1133,7 +1128,7 @@
     </skill>
     <!-- The GM is always by your side. Combine Shield Defense rate increase and Shield Defense increase to have more advanced shield ability increase effect. For 1 hour, increases shield defense rate by 30% and Shield Defense by 50%. -->
     <skill id="7092" levels="1" name="Master's Blessing - Improve Shield Defense">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1156,7 +1151,7 @@
     </skill>
     <!-- The GM is always by your side. Combine Spd. increase and Evasion increase to have more advanced movement increase effect. For 1 hour, increases Speed by 33 and evasion by 4. -->
     <skill id="7093" levels="1" name="Master's Blessing - Improve Movement">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1179,7 +1174,7 @@
     </skill>
     <!-- The GM is always by your side. Sharpens a bladed weapon to increase P. Atk. by 5% and Critical Rate by 20% for 1 hour. -->
     <skill id="7094" levels="1" name="Master's Blessing - Sharpen Edge">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="1" />
@@ -1201,7 +1196,7 @@
     </skill>
     <!-- The GM is always by your side. Thickens the surface of heavy armor to increase P. Def. by 10% for 1 hour. -->
     <skill id="7095" levels="1" name="Master's Blessing - Encase Armor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="1" />
@@ -1220,7 +1215,7 @@
     </skill>
     <!-- The GM is always by your side. The target's buff/de-buff doesn't disappear at death but is maintained. But the Noblesse Blessing and the Amulet of Luck disappear. -->
     <skill id="7096" levels="1" name="Master's Blessing - Noblesse Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

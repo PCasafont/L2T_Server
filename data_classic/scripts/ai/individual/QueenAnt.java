@@ -14,9 +14,7 @@
  */
 package ai.individual;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -27,13 +25,7 @@ import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2BabyPetInstance;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2BossZone;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
@@ -42,7 +34,10 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.StatsSet;
 import l2server.util.Rnd;
-import ai.group_template.L2AttackableAIScript;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * Queen Ant AI
@@ -75,7 +70,7 @@ public class QueenAnt extends L2AttackableAIScript
 
     private L2MonsterInstance _queen = null;
     private L2MonsterInstance _larva = null;
-    private List<L2MonsterInstance> _nurses = new HashMap<L2MonsterInstance>(5).shared();
+    private List<L2MonsterInstance> _nurses = new Vector<L2MonsterInstance>(5);
 
     public QueenAnt(int questId, String name, String descr)
     {
@@ -199,7 +194,8 @@ public class QueenAnt extends L2AttackableAIScript
             boolean notCasting;
             final boolean larvaNeedHeal = _larva != null && _larva.getCurrentHp() < _larva.getMaxHp();
             final boolean queenNeedHeal = _queen != null && _queen.getCurrentHp() < _queen.getMaxHp();
-            for (L2MonsterInstance nurse : _nurses)
+            List<L2MonsterInstance> toIterate = new ArrayList<L2MonsterInstance>(_nurses);
+            for (L2MonsterInstance nurse : toIterate)
             {
                 if (nurse == null || nurse.isDead() || nurse.isCastingNow())
                 {
@@ -364,7 +360,7 @@ public class QueenAnt extends L2AttackableAIScript
 
             if (curse != null)
             {
-                npc.broadcastPacket(new MagicSkillUse(npc, character, curse.getId(), curse.getLevel(), 300, 0));
+                npc.broadcastPacket(new MagicSkillUse(npc, character, curse.getId(), curse.getLevel(), 300, 0, 0));
                 curse.getEffects(npc, character);
             }
 

@@ -209,7 +209,7 @@
         <table name="#magicLvl">55 60 65 70 75 80 85</table>
         <table name="#power">1832 2272 2751 3252 3752 4224 4640</table>
         <table name="#mpConsume">109 121 131 142 151 159 165</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -220,7 +220,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="150" />
         <set name="effectRange" val="650" />
-        <set name="saveVs" val="MEN" />
         <set name="Debuff" val="true" />
         <for>
             <abnormal duration="10" landRate="30" stackLvl="3" stackType="speed_down">
@@ -234,7 +233,7 @@
         <table name="#magicLvl">55 60 65 70 75 80 85</table>
         <table name="#power">1832 2272 2751 3252 3752 4224 4640</table>
         <table name="#mpConsume">109 121 131 142 151 159 165</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -245,7 +244,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="150" />
         <set name="effectRange" val="650" />
-        <set name="saveVs" val="MEN" />
         <set name="Debuff" val="true" />
         <for>
             <abnormal duration="10" landRate="30" stackLvl="4" stackType="speed_down">
@@ -258,7 +256,7 @@
     <skill id="6620" levels="7" name="Maguen Plasma">
         <table name="#pAtk">100 150 200 250 300 350 400</table>
         <table name="#mAtk">5 10 15 20 25 30 35</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -284,7 +282,7 @@
     <skill id="6621" levels="7" name="Maguen Plasma">
         <table name="#pAtk">200 250 300 350 400 450 500</table>
         <table name="#mAtk">15 20 25 30 35 40 45</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -313,7 +311,6 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="121" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6623" levels="1" name="Fungus Hub">
         <set name="target" val="TARGET_NONE" />
@@ -330,7 +327,6 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="121" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6625" levels="1" name="Energy of Life">
         <set name="target" val="TARGET_NONE" />
@@ -476,7 +472,7 @@
         <set name="effectRange" val="2500" />
     </skill>
     <skill id="6641" levels="1" name="Holy Ball">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -492,7 +488,7 @@
         <set name="elementPower" val="20" />
     </skill>
     <skill id="6642" levels="1" name="Dash">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -515,7 +511,7 @@
         </for>
     </skill>
     <skill id="6643" levels="1" name="Holy Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -663,7 +659,6 @@
         <set name="ignoreResists" val="#ignoreResists" />
         <set name="name" val="#names" />
         <set name="aggroPoints" val="100" />
-        <set name="saveVs" val="CON" />
         <cond>
             <not>
                 <player active_effect_id_lvl="9058,1" />
@@ -699,7 +694,7 @@
     </skill>
     <!-- Increases P. Def. by 18% by 5 minutes. -->
     <skill id="6666" levels="1" name="Feral Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -718,7 +713,7 @@
     </skill>
     <!-- Increases Speed. by 33 for 5 minutes. -->
     <skill id="6667" levels="1" name="Feral Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -737,7 +732,7 @@
     </skill>
     <!-- Increases critical P. Atk. by 35% for 5 minutes. -->
     <skill id="6668" levels="1" name="Feral Death Whisper">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -756,7 +751,7 @@
     </skill>
     <!-- Increases Max HP by 35% for 5 minutes. -->
     <skill id="6669" levels="1" name="Feral Blessed Body">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -775,7 +770,7 @@
     </skill>
     <!-- For 5 minutes, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
     <skill id="6670" levels="1" name="Feral Vampiric Rage">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -794,7 +789,7 @@
     </skill>
     <!-- P. Def. decreases momentarily. by 8%, M. Def. by 16%, Evasion by 4 and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed. by 8 for 5 minutes. -->
     <skill id="6671" levels="1" name="Feral Berserker Spirit">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -820,7 +815,7 @@
     </skill>
     <!-- Increases Shield defense rate by 5% for 30 minutes. -->
     <skill id="6672" levels="1" name="Feral Blessed Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -860,7 +855,7 @@
         <set name="mpConsume" val="83" />
     </skill>
     <skill id="6676" levels="1" name="Magician's Perversity">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -881,7 +876,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="6678" levels="1" name="Cancel Hold">
         <set name="target" val="TARGET_NONE" />
@@ -893,7 +887,7 @@
         <set name="effectRange" val="1100" />
     </skill>
     <skill id="6679" levels="1" name="Summoner's Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -917,7 +911,7 @@
     </skill>
     <!-- Speed. increases by 40 for 20 minutes. -->
     <skill id="6681" levels="1" name="Maguen Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1038,7 +1032,6 @@
         <set name="coolTime" val="2000" />
         <set name="castRange" val="800" />
         <set name="effectRange" val="1300" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="6691" levels="1" name="Dualsword Deadly Move">
         <set name="target" val="TARGET_NONE" />
@@ -1125,7 +1118,6 @@
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
         <set name="aggroPoints" val="100" />
-        <set name="saveVs" val="CON" />
         <cond>
             <not>
                 <player active_effect_id_lvl="9058,1" />

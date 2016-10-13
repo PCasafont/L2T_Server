@@ -163,7 +163,6 @@
         <set name="isDebuff" val="#isDebuff" />
         <set name="aggroPoints" val="#aggroPoints" />
         <set name="maxNegated" val="#maxNegated" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#time" stackLvl="1" stackType="#abnormalType" type="#effectname1" val="0">
                 <addPercent stat="pAtk" val="#attackAndSpeed" />
@@ -234,7 +233,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="80" stackLvl="1" stackType="stun" visualEffect="dancestun">
                 <effect type="Stun" val="0" />
@@ -320,7 +318,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="20" landRate="80" stackLvl="1" stackType="paralyze" visualEffect="floatroot">
                 <effect type="Paralyze" val="0" />
@@ -401,7 +398,6 @@
         <set name="reuseDelay" val="25000" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Speed decreases momentarily. Effect 1.
@@ -415,7 +411,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Inflicted with hold and unable to move momentarily. -->
     <skill id="5023" levels="12" name="Hold">
@@ -425,7 +420,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Atk. Spd. decreases momentarily. Effect 1.
@@ -439,7 +433,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- His exploits are famous among Wererats. After assigning the South to the Sukar Wererats, he and a group of followers journeyed north in search of wealth. Unlike other Wererats, he possesses an enterprising spirit and began plundering the tombs of Orc tribal chiefs. Chased away by vengeful spirits, now he and his band rob unwary travelers passing through the region. -->
     <skill id="5025" levels="1" name="Raid Boss (Lv. 30)">
@@ -523,7 +516,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5038" levels="16" name="Servitor PvP Penalty">
         <table name="#pvpDmg">2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 50</table>
@@ -926,7 +918,6 @@
         <set name="reuseDelay" val="7000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Atk. Spd. decreases momentarily. Effect 3. -->
     <skill id="5069" levels="12" name="Decrease Atk. Spd.">
@@ -940,7 +931,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Casting Spd. decreases momentarily. Effect 3. -->
     <skill id="5070" levels="12" name="Decrease Casting Spd.">
@@ -954,7 +944,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- P. Atk. decreases momentarily. Effect 3. -->
     <skill id="5071" levels="12" name="Decrease P. Atk.">
@@ -968,7 +957,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- M. Atk. decreases momentarily. Effect 3. -->
     <skill id="5072" levels="12" name="Decrease M. Atk.">
@@ -982,7 +970,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5073" levels="12" name="Power Shot">
         <table name="#power">18 26 38 52 68 85 102 110 116 122 126 129</table>
@@ -1158,7 +1145,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1193,7 +1179,6 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="23" />
         <set name="hitTime" val="3300" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- HP decreases from poison momentarily. If HP falls to 0, death will ensue. -->
     <skill id="5086" levels="1" name="Deadly Poison">
@@ -1203,7 +1188,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="23" />
         <set name="hitTime" val="3300" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5087" levels="2" name="Berserk">
         <table name="#pAtk">90 180</table>
@@ -1271,7 +1255,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="7" duration="3" landRate="90" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -1493,7 +1476,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1538,7 +1520,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -1568,7 +1549,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="70" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -1590,7 +1570,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="aggroPoints" val="100" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="30" stackLvl="1" stackType="stun" visualEffect="stun">
@@ -1649,7 +1628,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="40" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1846,7 +1824,6 @@
         <set name="reuseDelay" val="20000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1033" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="root_magically" visualEffect="root">
@@ -1870,7 +1847,6 @@
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="skillActionId" val="1034" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="60" stackLvl="1" stackType="stun" visualEffect="stun">
@@ -1911,7 +1887,6 @@
         <set name="skillRadius" val="200" />
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1038" />
         <for>
             <abnormal count="10" duration="3" landRate="60" stackLvl="3" stackType="attack_time_up"
@@ -2407,7 +2382,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -2427,7 +2401,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -2447,7 +2420,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" landRate="40" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -2466,7 +2438,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -2485,7 +2456,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -2504,7 +2474,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="40" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -2523,7 +2492,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="40" stackLvl="1" stackType="turn_stone">
                 <effect type="Petrification" val="0" />
@@ -2542,7 +2510,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -2568,7 +2535,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="40" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -2596,7 +2562,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="40" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -2616,7 +2581,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="40" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -2635,7 +2599,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="40" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -3039,7 +3002,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -3064,7 +3026,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" stackLvl="3" stackType="pd_down">
                 <effect type="Debuff" val="0" />
@@ -3089,7 +3050,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -3114,7 +3074,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" stackLvl="3" stackType="md_down">
                 <effect type="Debuff" val="0" />
@@ -3190,7 +3149,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3212,7 +3170,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="3" landRate="50" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -3248,7 +3205,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" stackLvl="1" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -3271,7 +3227,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" stackLvl="1" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -3464,7 +3419,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3488,7 +3442,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -3633,7 +3586,6 @@
         <set name="baseCritRate" val="20" />
         <set name="isDebuff" val="true" />
         <set name="flyRadius" val="300" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="3" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3656,7 +3608,6 @@
         <set name="hitTime" val="5000" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3676,7 +3627,6 @@
         <set name="hitTime" val="3000" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3696,7 +3646,6 @@
         <set name="hitTime" val="2000" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3791,7 +3740,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="PARALYZE" landRate="80" stackLvl="1" stackType="freezing">
                 <effect type="Paralyze" val="0" />
@@ -3830,7 +3778,6 @@
         <set name="skillRadius" val="600" />
         <set name="skillScope" val="fan;600;60" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3852,7 +3799,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -3872,7 +3818,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" visualEffect="earthquake">
                 <effect type="Debuff" val="0" />
@@ -3890,7 +3835,6 @@
         <set name="hitTime" val="1200" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Increases P. Atk. and P. Def. -->
     <skill id="5244" levels="1" name="Physical Up">
@@ -3966,7 +3910,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="#abnormalLvl" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -4025,7 +3968,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="5" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -4060,7 +4002,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="3" landRate="70" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -4084,7 +4025,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -4120,7 +4060,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="3" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -4158,7 +4097,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="3" duration="3" landRate="90" stackLvl="#abnormalLvl" stackType="dot_mp"
                       visualEffect="bleed">
@@ -4196,7 +4134,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="30" landRate="100" stackLvl="1" stackType="death_clack" visualEffect="bleed">
                 <effect chanceType="ON_EXIT" triggeredId="5257" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -4245,7 +4182,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="3" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -4266,7 +4202,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="STR" />
         <for>
             <abnormal duration="5" landRate="70" stackLvl="1" stackType="disarm" visualEffect="bleed">
                 <effect type="Disarm" val="0" />
@@ -4360,7 +4295,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="70" stackLvl="3" stackType="death_mark"
                       visualEffect="deathmark">
@@ -4408,7 +4342,6 @@
         <set name="reuseDelay" val="15000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
         <set name="equipDelay" val="30000" />
         <for>
             <abnormal duration="60" stackLvl="3" stackType="mp_cost_up">
@@ -4446,7 +4379,6 @@
         <set name="lvlDepend" val="1" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" effectType="POISON" landRate="80" stackLvl="1" stackType="poison"
                       visualEffect="poison">
@@ -4467,7 +4399,6 @@
         <set name="power" val="80" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="all_speed_down">
                 <effect type="Debuff" val="0" />
@@ -4489,7 +4420,6 @@
         <set name="power" val="80" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="3" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -4511,7 +4441,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -5035,7 +4964,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -5064,7 +4992,6 @@
         <set name="coolTime" val="660" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -5094,7 +5021,6 @@
         <set name="coolTime" val="660" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="80" stackLvl="#abnormalLvl"
                       stackType="bleeding">
@@ -5121,7 +5047,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="PARALYZE" landRate="80" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -5147,7 +5072,6 @@
         <set name="power" val="#power" />
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="800" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="60" stackLvl="8" stackType="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -5172,7 +5096,6 @@
         <set name="skillRadius" val="150" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="60" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -5196,7 +5119,6 @@
         <set name="effectRange" val="1400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -5224,7 +5146,6 @@
         <set name="hitTime" val="4500" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -5254,7 +5175,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="80" stackLvl="#abnormalLvl"
                       stackType="bleeding">
@@ -5610,7 +5530,6 @@
         <set name="hitTime" val="4000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -6000,7 +5919,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -6029,7 +5947,6 @@
         <set name="coolTime" val="660" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -6060,7 +5977,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="80" stackLvl="#abnormalLvl"
                       stackType="bleeding">
@@ -6088,7 +6004,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="PARALYZE" landRate="80" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -6116,7 +6031,6 @@
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="800" />
         <set name="skillRadius" val="150" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="60" stackLvl="8" stackType="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -6143,7 +6057,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="PARALYZE" landRate="60" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -6162,7 +6075,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Poisons a target, momentarily decreasing HP. Effect 8.
@@ -6185,7 +6097,6 @@
         <set name="hitTime" val="4500" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -6208,7 +6119,6 @@
         <set name="hitTime" val="4500" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5371" levels="9" name="Aura Burn">
         <table name="#magicLvl">75 78 81 84 87 90 93 96 99</table>
@@ -6544,7 +6454,6 @@
         <set name="skillRadius" val="200" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="POISON" landRate="80" stackLvl="#abnormalLvl"
                       stackType="poison">
@@ -6612,7 +6521,6 @@
         <set name="magicLvl" val="1" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <cond>
                 <and>
@@ -6846,7 +6754,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="6" duration="5" landRate="80" stackLvl="3" stackType="fire_dot">
                 <effect type="DamOverTime" val="#dot" />
@@ -6868,7 +6775,6 @@
         <set name="lvlDepend" val="1" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="6" duration="5" landRate="80" stackLvl="1" stackType="speed_down" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -6899,7 +6805,6 @@
         <set name="lvlDepend" val="1" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="6" duration="5" stackLvl="1" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="#dot" />
@@ -7000,7 +6905,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5432" levels="2" name="Weapon Supply">
         <set name="target" val="TARGET_NONE" />
@@ -7026,7 +6930,6 @@
         <set name="coolTime" val="720" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal effectType="STUN" landRate="90" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -7048,7 +6951,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal effectType="STUN" landRate="90" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -7155,7 +7057,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1043" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="3" stackType="pa_down">
@@ -7184,7 +7085,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="skillActionId" val="1042" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="50" stackLvl="3" stackType="bleeding"
@@ -7282,7 +7182,6 @@
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="100" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -7394,7 +7293,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="maxNegated" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="minNegated" val="1" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="speed_down">
@@ -7426,7 +7324,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Causes a temporary fear so strong that a target flees mindlessly. -->
     <skill id="5460" levels="1" name="Fear">
@@ -7434,7 +7331,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5461" levels="12" name="Power Shot">
         <table name="#magicLvl">40 45 50 55 60 65 70 75 80 85 90 95</table>
@@ -7712,7 +7608,6 @@
         <set name="hitTime" val="3000" />
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="100" stackLvl="10" stackType="bleeding"
                       visualEffect="bleed">
@@ -7749,7 +7644,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="180" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -7805,7 +7699,6 @@
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="90" stackLvl="10" stackType="bleeding"
                       visualEffect="bleed">
@@ -7826,7 +7719,6 @@
         <set name="effectRange" val="400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -7847,7 +7739,6 @@
         <set name="hitTime" val="1500" />
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -7928,7 +7819,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Water resistance decreases. -->
     <skill id="5510" levels="1" name="Water Power">
@@ -7938,7 +7828,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Wind resistance decreases. -->
     <skill id="5511" levels="1" name="Wind Power">
@@ -7948,7 +7837,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Earth resistance decreases. -->
     <skill id="5512" levels="1" name="Earth Power">
@@ -7958,7 +7846,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Continuously damaged by the fire attribute. -->
     <skill id="5513" levels="1" name="Fire Taint">
@@ -8044,7 +7931,6 @@
         <set name="hitTime" val="500" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- You have made the contract of arrogance with the devil. No one can stop you. -->
     <skill id="5524" levels="1" name="Chain Buff - Bow/Magic Resistance">
@@ -8100,7 +7986,6 @@
         <set name="hitTime" val="2000" />
         <set name="castRange" val="500" />
         <set name="effectRange" val="1000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Inflicts damage and Bleed on the target simultaneously. Effect 1. -->
     <skill id="5530" levels="12" name="Blood Storm">
@@ -8111,7 +7996,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="1000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5531" levels="1" name="Presentation - Beleth Magic Skill 1">
         <set name="target" val="TARGET_NONE" />
@@ -8351,7 +8235,6 @@
         <set name="hitTime" val="2500" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5552" levels="12" name="Heal Up">
         <set name="target" val="TARGET_NONE" />
@@ -8560,7 +8443,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="aggroPoints" val="671" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="expose_weak_point">
@@ -8596,7 +8478,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -8614,7 +8495,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -8843,7 +8723,6 @@
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
         <set name="skillRadius" val="200" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1050" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="3" stackType="pa_down">
@@ -8861,7 +8740,6 @@
         <set name="mpConsume" val="55" />
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1045" />
     </skill>
     <!-- Scare the enemies with a mighty roar. Decrease the attacking speed and Casting Spd. -->
@@ -8873,7 +8751,6 @@
         <set name="mpConsume" val="55" />
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
-        <set name="saveVs" val="MEN" />
         <set name="skillActionId" val="1046" />
     </skill>
     <!--
@@ -9045,7 +8922,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" landRate="#landRate" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -9077,7 +8953,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- HP decreases from bleeding momentarily. Effect 11. -->
     <skill id="5595" levels="1" name="Bleed">
@@ -9085,7 +8960,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- HP decreases from flame momentarily. Effect 11. -->
     <skill id="5596" levels="1" name="Flame">
@@ -9097,7 +8971,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="150" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" landRate="11" stackLvl="10" stackType="dot_attr" visualEffect="bleed">
                 <effect type="DamOverTime" val="200" />
@@ -10437,7 +10310,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10455,7 +10327,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10473,7 +10344,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10491,7 +10361,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" stackLvl="8" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="100" />
@@ -10509,7 +10378,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10527,7 +10395,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10545,7 +10412,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10563,7 +10429,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10581,7 +10446,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -10652,7 +10516,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="mirage_trap">
                 <effect activationChance="30" chanceType="ON_ATTACKED" triggeredId="5680" type="ChanceSkillTrigger"
@@ -10965,7 +10828,6 @@
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="100" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -11078,7 +10940,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Paralyzed and unable to move momentarily. -->
     <skill id="5707" levels="1" name="Paralysis">
@@ -11180,7 +11041,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="6" duration="5" effectType="BLEED" landRate="80" stackLvl="1" stackType="fire_dot"
                       visualEffect="bleed">
@@ -11199,7 +11059,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5717" levels="1" name="Fire Breath">
         <set name="target" val="TARGET_NONE" />
@@ -11449,7 +11308,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="1" effectType="FEAR" landRate="20" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -11492,7 +11350,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" effectType="SLEEP" landRate="25" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -11600,7 +11457,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Draws on your HP to summon your strength and unleash a punishing attack. Power 183.
@@ -11707,7 +11563,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="skillActionId" val="1063" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
@@ -11993,7 +11848,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5765" levels="1" name="Naia Sprout">
         <set name="target" val="TARGET_NONE" />
@@ -12227,7 +12081,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Poisons the target, causing them to lose 66 HP every second for 30 seconds. -->
     <skill id="5795" levels="1" name="Poison">
@@ -12240,7 +12093,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Speed decreases momentarily. Effect 3. -->
     <skill id="5796" levels="1" name="Decrease Speed">
@@ -12253,7 +12105,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5797" levels="1" name="Bursting Flame">
         <set name="target" val="TARGET_NONE" />
@@ -12284,7 +12135,6 @@
         <set name="mpConsume" val="165" />
         <set name="hitTime" val="1800" />
         <set name="reuseDelay" val="6000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5800" levels="1" name="Self-destruction">
         <set name="target" val="TARGET_NONE" />
@@ -12314,7 +12164,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5803" levels="3" name="Green Chili">
         <table name="#mpConsume">69 72 73</table>
@@ -12398,7 +12247,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5811" levels="1" name="Sonic Bomb">
         <set name="target" val="TARGET_NONE" />
@@ -12623,7 +12471,6 @@
         <set name="reuseDelay" val="3000" />
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" landRate="40" stackLvl="1" stackType="target_lock">
                 <effect type="TargetMe" val="0" />
@@ -12806,7 +12653,6 @@
         <set name="reuseDelay" val="6000" />
         <set name="skillRadius" val="1000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="3" landRate="80" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -12853,7 +12699,6 @@
         <set name="reuseDelay" val="2000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5847" levels="1" name="Flip Nearby Blocks">
         <set name="target" val="TARGET_NONE" />
@@ -12881,7 +12726,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="isPotion" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -12908,7 +12752,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="isPotion" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -12965,7 +12808,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="#castRange" />
         <set name="effectRange" val="#effectRange" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Transforms into a Makeshift Bat. -->
     <skill id="5856" levels="1" name="Transformation Scroll: Makeshift Bat">
@@ -13040,7 +12882,6 @@
         <set name="mpConsume" val="75" />
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Magic skills are blocked and Speed decreases momentarily. Destruction of the Mind is activated, inflicting major damage on the minds of nearby party members after 10 seconds. -->
     <skill id="5861" levels="1" name="Authority of Valakas">
@@ -13051,7 +12892,6 @@
         <set name="mpConsume" val="75" />
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5862" levels="1" name="Destruction of the Body">
         <set name="target" val="TARGET_NONE" />
@@ -13095,7 +12935,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8.
@@ -13109,7 +12948,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8.
@@ -13123,7 +12961,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8.
@@ -13135,7 +12972,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8.
@@ -13149,7 +12985,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8.
@@ -13163,7 +12998,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8.
@@ -13175,7 +13009,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="2" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Life force is being sapped out by the Leech of Darkness. -->
     <skill id="5873" levels="5" name="Death Worm">
@@ -13185,7 +13018,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Life force is being sapped out by the Leech of Darkness. -->
     <skill id="5874" levels="5" name="Death Worm">
@@ -13195,7 +13027,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Life force is being sapped out by the Leech of Darkness. -->
     <skill id="5875" levels="5" name="Death Worm">
@@ -13203,7 +13034,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="2" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- The grudge of those who didn't die. Can die by lethal malice after 5 minutes. -->
     <skill id="5876" levels="1" name="Begrudged Haunting">
@@ -13214,7 +13044,6 @@
         <set name="hitTime" val="1000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5877" levels="4" name="Chant of Worm Waking">
         <set name="target" val="TARGET_NONE" />
@@ -13239,7 +13068,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="7" duration="3" landRate="33" stackLvl="3" stackType="casting_time_up">
                 <effect type="DamOverTime" val="250" />
@@ -13260,7 +13088,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="90" stackLvl="9" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="105" />
@@ -13278,7 +13105,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- P. Def., Evasion, and Speed are decreased. -->
     <skill id="5881" levels="2" name="Vicious Mutilation">
@@ -13291,7 +13117,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5882" levels="2" name="Weakened Pommel">
@@ -13309,7 +13134,6 @@
         <set name="effectRange" val="400" />
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="30" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -13329,7 +13153,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="90" stackLvl="9" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="105" />
@@ -13350,7 +13173,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="STR" />
         <for>
             <abnormal duration="5" landRate="33" stackLvl="1" stackType="disarm">
                 <effect type="Disarm" val="0" />
@@ -13368,7 +13190,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Evasion and Speed are decreased. -->
     <skill id="5886" levels="1" name="Ground Shaker">
@@ -13384,7 +13205,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="33" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -13402,7 +13222,6 @@
         <set name="mpConsume" val="165" />
         <set name="hitTime" val="1000" />
         <set name="reuseDelay" val="1000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Stunned and unable to move momentarily. Lost the target. -->
     <skill id="5888" levels="2" name="Earth Shaker">
@@ -13419,7 +13238,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal effectType="STUN" landRate="33" noicon="1" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="RemoveTarget" val="9" />
@@ -13438,7 +13256,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Cannot move because the target is locked. -->
     <skill id="5890" levels="3" name="Tainted Mass Shackle">
@@ -13450,7 +13267,6 @@
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="1000" />
         <set name="reuseDelay" val="1000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5891" levels="1" name="Threatening Bellow">
         <set name="target" val="TARGET_NONE" />
@@ -13477,7 +13293,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal effectType="STUN" landRate="33" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Bluff" val="9" />
@@ -13508,7 +13323,6 @@
         <set name="effectRange" val="800" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="33" stackLvl="1" stackType="multi_debuff_a">
                 <effect type="Debuff" val="0" />
@@ -13540,7 +13354,6 @@
         <set name="effectRange" val="800" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="33" stackLvl="1" stackType="multi_debuff_b">
                 <effect type="Debuff" val="0" />
@@ -13577,7 +13390,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="33" stackLvl="1" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -13604,7 +13416,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="33" stackLvl="1" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -13637,7 +13448,6 @@
         <set name="hitTime" val="2000" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- When a blow is incurred, the target is continuously removed, and skills and magic cannot be used. -->
     <skill id="5901" levels="2" name="Mist of Oblivion">
@@ -13649,7 +13459,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="#hitTime" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5902" levels="1" name="Cancel NPC Trigger Target">
         <set name="target" val="TARGET_SELF" />
@@ -13676,7 +13485,6 @@
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="STR" />
         <for>
             <abnormal duration="5" landRate="33" stackLvl="1" stackType="disarm">
                 <effect type="Disarm" val="0" />
@@ -13710,7 +13518,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="73" />
         <set name="hitTime" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5906" levels="1" name="Ritual of Revive">
         <set name="target" val="TARGET_NONE" />
@@ -13731,7 +13538,6 @@
         <set name="hitTime" val="#hitTime" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Momentarily inflicts Hold on the enemy. Additional Hold is not available while effects last. -->
     <skill id="5908" levels="2" name="Ritual of Entombment">
@@ -13744,7 +13550,6 @@
         <set name="hitTime" val="#hitTime" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5909" levels="1" name="Stronghold Attack">
         <set name="target" val="TARGET_SINGLE" />
@@ -13779,7 +13584,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5913" levels="1" name="Putrefaction Cleanse">
         <set name="target" val="TARGET_NONE" />
@@ -13794,7 +13598,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5915" levels="9" name="Mummifying Aura">
         <set name="target" val="TARGET_NONE" />
@@ -13868,7 +13671,6 @@
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
         <set name="absorbPart" val="0.8" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="multi_debuff_f"
                       visualEffect="bleed">
@@ -13897,7 +13699,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="300" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="multi_debuff_g"
                       visualEffect="bleed">
@@ -14247,7 +14048,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5961" levels="1" name="Barrier Thunder Storm">
@@ -14259,7 +14059,6 @@
         <set name="hitTime" val="4000" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5962" levels="1" name="Air Defense Cannon">
         <set name="target" val="TARGET_NONE" />
@@ -14310,7 +14109,6 @@
         <set name="lvlDepend" val="2" />
         <set name="reuseDelay" val="40000" />
         <set name="staticReuse" val="true" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Momentarily increases your own bow Atk. Spd. Effect 1.
@@ -14343,7 +14141,6 @@
         <set name="effectRange" val="400" />
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Increases Max HP. -->
     <skill id="5970" levels="1" name="Seduced Knight's Help">
@@ -14518,7 +14315,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5985" levels="9" name="Decaying Aura">
         <set name="target" val="TARGET_NONE" />
@@ -14630,7 +14426,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- When a blow is incurred, an opponent loses their target and cannot use skills and magic. -->
     <skill id="5993" levels="1" name="Command of Anchor">
@@ -14645,7 +14440,6 @@
         <set name="power" val="171" />
         <set name="hitTime" val="2000" />
         <set name="skillRadius" val="300" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="90" stackLvl="8" stackType="oblivion"
                       visualEffect="poison">

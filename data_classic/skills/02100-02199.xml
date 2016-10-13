@@ -581,7 +581,7 @@
         </for>
     </skill>
     <skill id="2170" levels="1" name="Scroll: Cancel Sleep">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="NEGATE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="itemConsumeCount" val="1" />

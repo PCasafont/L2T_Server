@@ -115,7 +115,6 @@
         <set name="effectRange" val="1200" />
         <set name="skillRadius" val="300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="70" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -184,7 +183,7 @@
     </skill>
     <!-- Paralyzed and unable to move momentarily. -->
     <skill id="4319" levels="1" name="Paralysis">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -194,7 +193,6 @@
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -217,7 +215,7 @@
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#abnormalLvl">2 3 4 5 6 7 8 8 9 9 10 10</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 83 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -226,7 +224,6 @@
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal count="10" duration="3" stackLvl="#abnormalLvl" stackType="Poison" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -235,7 +232,7 @@
     </skill>
     <!-- P. Def. greatly decreases temporarily. -->
     <skill id="4321" levels="1" name="Decrease P. Def.">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -244,7 +241,6 @@
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="120" landRate="100" stackLvl="4" stackType="pd_down">
                 <effect type="Buff" val="0" />
@@ -254,7 +250,7 @@
     </skill>
     <!-- Increases movement speed by 33 for 60 minutes. -->
     <skill id="4322" levels="1" name="Adventurer's Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -270,7 +266,7 @@
     </skill>
     <!-- Increases P. Def. by 15% for 60 minutes. -->
     <skill id="4323" levels="1" name="Adventurer's Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -286,7 +282,7 @@
     </skill>
     <!-- Increases Max HP by 35% for 60 minutes. -->
     <skill id="4324" levels="1" name="Adventurer's Blessed Body">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -302,7 +298,7 @@
     </skill>
     <!-- For 60 minutes, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
     <skill id="4325" levels="1" name="Adventurer's Vampiric Rage">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -318,7 +314,7 @@
     </skill>
     <!-- Increases HP regeneration bonus by 20% for 60 minutes. -->
     <skill id="4326" levels="1" name="Adventurer's Regeneration">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -334,7 +330,7 @@
     </skill>
     <!-- Increases Atk. Spd. by 15% for 60 minutes. -->
     <skill id="4327" levels="1" name="Adventurer's Haste">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -350,7 +346,7 @@
     </skill>
     <!-- Increases Max MP by 35% for 60 minutes. -->
     <skill id="4328" levels="1" name="Adventurer's Blessed Soul">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -366,7 +362,7 @@
     </skill>
     <!-- Increases Casting Spd. by 30% for 60 minutes. -->
     <skill id="4329" levels="1" name="Adventurer's Acumen">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -382,7 +378,7 @@
     </skill>
     <!-- Decreases magic cancel damage by 18 for 60 minutes. -->
     <skill id="4330" levels="1" name="Adventurer's Concentration">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -398,7 +394,7 @@
     </skill>
     <!-- Increases M. Atk. by 55% for 60 minutes. -->
     <skill id="4331" levels="1" name="Adventurer's Empower">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -488,7 +484,7 @@
         <set name="summonTotalLifeTime" val="3600000" />
     </skill>
     <skill id="4339" levels="1" name="Mimir's Elixir">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="castRange" val="400" />
@@ -532,7 +528,7 @@
         <table name="#sMagicLevel">20 30</table>
         <table name="#abnormalLvl">1 2</table>
         <table name="#mpConsume">50 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -557,7 +553,7 @@
         <table name="#sMagicLevel">35 44 52</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">50 0 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -582,7 +578,7 @@
         <table name="#sMagicLevel">7 25 44</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">50 0 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -607,7 +603,7 @@
         <table name="#sMagicLevel">7 20 40</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">50 0 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -633,7 +629,7 @@
         <table name="#sMagicLevel">25 40 48 56</table>
         <table name="#abnormalLvl">1 2 3 4</table>
         <table name="#mpConsume">50 0 0 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -663,7 +659,7 @@
         <table name="#sMagicLevel">44 48 52 56 64 72</table>
         <table name="#abnormalLvl">1 2 3 4 5 6</table>
         <table name="#mpConsume">0 150 0 0 0 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -691,7 +687,7 @@
         <table name="#sMagicLevel">44 48 52 56 62 70</table>
         <table name="#abnormalLvl">1 2 3 4 5 6</table>
         <table name="#mpConsume">0 150 0 0 0 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -715,7 +711,7 @@
         <table name="#sMagicLevel">44 52</table>
         <table name="#abnormalLvl">2 3</table>
         <table name="#mpConsume">150 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -741,7 +737,7 @@
         <table name="#sMagicLevel">40 52 64 72</table>
         <table name="#abnormalLvl">1 2 3 4</table>
         <table name="#mpConsume">150 0 0 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -769,7 +765,7 @@
         <table name="#sMagicLevel">20 30 44 52 60 68</table>
         <table name="#abnormalLvl">1 2 3 4 5 6</table>
         <table name="#mpConsume">0 200 0 0 0 400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -795,7 +791,7 @@
         <table name="#sMagicLevel">35 52</table>
         <table name="#abnormalLvl">1 2</table>
         <table name="#mpConsume">200 400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -830,7 +826,7 @@
         <table name="#sMagicLevel">40 48 56 62 66 70</table>
         <table name="#abnormalLvl">1 2 3 4 5 6</table>
         <table name="#mpConsume">0 200 0 0 0 400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -856,7 +852,7 @@
         <table name="#sMagicLevel">30 44 58 72</table>
         <table name="#abnormalLvl">1 2 3 4</table>
         <table name="#mpConsume">200 0 0 400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -881,7 +877,7 @@
         <table name="#sMagicLevel">20 35 48</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">300 0 600</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -906,7 +902,7 @@
         <table name="#sMagicLevel">25 44 52</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">300 0 600</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -930,7 +926,7 @@
         <table name="#sMagicLevel">44 52</table>
         <table name="#abnormalLvl">1 2</table>
         <table name="#mpConsume">300 600</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -955,7 +951,7 @@
         <table name="#sMagicLevel">40 48 56</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">200 0 400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -980,7 +976,7 @@
         <table name="#sMagicLevel">25 44 52</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">300 0 600</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1005,7 +1001,7 @@
         <table name="#sMagicLevel">40 48 56</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#mpConsume">300 0 600</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1027,7 +1023,7 @@
     <skill id="4361" levels="2" name="Curse of Destruction">
         <table name="#abnormalLvl">1 2</table>
         <table name="#vuln">0 50</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1035,7 +1031,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <set name="canBeDispeled" val="false" />
         <for>
             <abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
@@ -1054,7 +1049,7 @@
     <skill id="4362" levels="2" name="Curse of Destruction">
         <table name="#abnormalLvl">1 2</table>
         <table name="#vuln">0 50</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1062,7 +1057,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <set name="canBeDispeled" val="false" />
         <for>
             <abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
@@ -1076,7 +1070,7 @@
     </skill>
     <!-- Curse of the Preacher of Doom. Momentarily decreases Accuracy. Effect 1. -->
     <skill id="4363" levels="1" name="Curse of Destruction">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1084,7 +1078,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="1200" stackLvl="1" stackType="hit_down">
                 <effect type="Debuff" val="0" />
@@ -1099,7 +1092,7 @@
     <skill id="4364" levels="2" name="Blessing of Revelations">
         <table name="#abnormalLvl">1 2</table>
         <table name="#additionalVulns">0 25</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1125,7 +1118,7 @@
     <skill id="4365" levels="2" name="Blessing of Revelations">
         <table name="#abnormalLvl">1 2</table>
         <table name="#additionalVulns">0 25</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1145,7 +1138,7 @@
     </skill>
     <!-- Blessing of the Orator of Revelations. Momentarily decreases body weight and increases Poison/Bleed Resistance. Effect 1. -->
     <skill id="4366" levels="1" name="Blessing of Revelations">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1163,7 +1156,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4367" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1175,7 +1168,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4368" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1188,7 +1181,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4369" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1201,7 +1194,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4370" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1214,7 +1207,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4371" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1227,7 +1220,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4372" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1240,7 +1233,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4373" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1253,7 +1246,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4374" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1266,7 +1259,7 @@
     </skill>
     <!-- Receiving the fortress blessing. -->
     <skill id="4375" levels="1" name="Clan Hall Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1291,7 +1284,7 @@
         <table name="#power">46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 28 38 50 61 71 76 80 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1332,7 +1325,7 @@
         </for>
     </skill>
     <skill id="4380" levels="1" name="Arena CP Recovery">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="COMBATPOINTHEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1352,7 +1345,7 @@
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#power">46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617</table>
         <table name="#mpConsume">13 20 28 38 50 61 71 76 80 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1363,7 +1356,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="300" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="big_head"
                       visualEffect="bighead">
@@ -1391,7 +1383,7 @@
     </skill>
     <!-- Scapegoat's Grace. Temporarily protects against any debuff that lowers P. Def. -->
     <skill id="4384" levels="1" name="Scapegoat's Grace">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1406,7 +1398,7 @@
     </skill>
     <!-- Scapegoat's Grace. Temporarily protects against any debuff that lowers P. Atk. -->
     <skill id="4385" levels="1" name="Scapegoat's Grace">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1421,7 +1413,7 @@
     </skill>
     <!-- Scapegoat's Grace. Temporarily protects against poison. -->
     <skill id="4386" levels="1" name="Scapegoat's Grace">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1436,7 +1428,7 @@
     </skill>
     <!-- Scapegoat's Grace. Temporarily protects against any de-buff that diminishes the effect of HP recovery magic. -->
     <skill id="4387" levels="1" name="Scapegoat's Grace">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1489,7 +1481,7 @@
     <skill id="4391" levels="2" name="Wind Walk">
         <table name="#runSpd">20 33</table>
         <table name="#abnormalLvl">2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1510,7 +1502,7 @@
     <skill id="4392" levels="3" name="Shield">
         <table name="#rate">8 12 15</table>
         <table name="#abnormalLvl">2 3 4</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1531,7 +1523,7 @@
     <skill id="4393" levels="3" name="Might">
         <table name="#pAtk">8 12 15</table>
         <table name="#abnormalLvl">2 3 4</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1555,7 +1547,7 @@
     <skill id="4394" levels="6" name="Blessed Body">
         <table name="#maxHp">10 15 20 25 30 35</table>
         <table name="#abnormalLvl">2 3 4 5 6 7</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1579,7 +1571,7 @@
     <skill id="4395" levels="6" name="Blessed Soul">
         <table name="#maxMp">10 15 20 25 30 35</table>
         <table name="#abnormalLvl">2 3 4 5 6 7</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1599,7 +1591,7 @@
     <skill id="4396" levels="2" name="Magic Barrier">
         <table name="#abnormalLvl">3 4</table>
         <table name="#mDef">23 30</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1621,7 +1613,7 @@
         <table name="#mAtk">10 16</table>
         <table name="#rEvas">2 4</table>
         <table name="#abnormalLvl">2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1652,7 +1644,7 @@
     <skill id="4398" levels="6" name="Blessed Shield">
         <table name="#rShld">5 10 15 20 25 30</table>
         <table name="#abnormalLvl">2 3 4 5 6 7</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1674,7 +1666,7 @@
     <skill id="4399" levels="4" name="Vampiric Rage">
         <table name="#absorbDam">6 7 8 9</table>
         <table name="#abnormalLvl">2 3 4 5</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

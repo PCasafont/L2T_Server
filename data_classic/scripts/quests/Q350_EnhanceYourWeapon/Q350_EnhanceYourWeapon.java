@@ -14,14 +14,6 @@
  */
 package quests.Q350_EnhanceYourWeapon;
 
-import java.io.File;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
@@ -38,10 +30,14 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.util.*;
+import java.util.logging.Level;
 
 public class Q350_EnhanceYourWeapon extends Quest
 {
@@ -51,10 +47,10 @@ public class Q350_EnhanceYourWeapon extends Quest
     private static final int GREEN_SOUL_CRYSTAL0_ID = 4640;
     private static final int BLUE_SOUL_CRYSTAL0_ID = 4651;
 
-    private final FastMap<Integer, SoulCrystal> _soulCrystals = new FastMap<Integer, SoulCrystal>();
+    private final Map<Integer, SoulCrystal> _soulCrystals = new HashMap<Integer, SoulCrystal>();
     // <npcid, <level, LevelingInfo>>
-    private final FastMap<Integer, FastMap<Integer, LevelingInfo>> _npcLevelingInfos =
-            new FastMap<Integer, FastMap<Integer, LevelingInfo>>();
+    private final Map<Integer, Map<Integer, LevelingInfo>> _npcLevelingInfos =
+            new HashMap<Integer, Map<Integer, LevelingInfo>>();
 
     private static enum AbsorbCrystalType
     {
@@ -205,7 +201,7 @@ public class Q350_EnhanceYourWeapon extends Quest
                                 }
                                 int npcId = Integer.parseInt(att.getNodeValue());
 
-                                FastMap<Integer, LevelingInfo> temp = new FastMap<Integer, LevelingInfo>();
+                                Map<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
 
                                 for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
                                 {
@@ -419,7 +415,7 @@ public class Q350_EnhanceYourWeapon extends Quest
     /**
      * Calculate the leveling chance of Soul Crystals based on the attacker that killed this L2Attackable
      *
-     * @param attacker The player that last killed this L2Attackable
+     * @param killer The player that last killed this L2Attackable
      *                 $ Rewrite 06.12.06 - Yesod
      *                 $ Rewrite 08.01.10 - Gigiikun
      */
@@ -432,7 +428,7 @@ public class Q350_EnhanceYourWeapon extends Quest
             return;
         }
 
-        FastMap<L2PcInstance, SoulCrystal> players = FastMap.newInstance();
+        Map<L2PcInstance, SoulCrystal> players = new HashMap<L2PcInstance, SoulCrystal>();
         int maxSCLevel = 0;
 
         //TODO: what if mob support last_hit + party?
@@ -531,7 +527,7 @@ public class Q350_EnhanceYourWeapon extends Quest
             case PARTY_RANDOM:
                 if (killer.getParty() != null)
                 {
-                    FastList<L2PcInstance> luckyParty = FastList.newInstance();
+                    List<L2PcInstance> luckyParty = new ArrayList<L2PcInstance>();
                     luckyParty.addAll(killer.getParty().getPartyMembers());
                     while (Rnd.get(100) < 33 && !luckyParty.isEmpty())
                     {
@@ -541,7 +537,6 @@ public class Q350_EnhanceYourWeapon extends Quest
                             tryToLevelCrystal(lucky, players.get(lucky), mob);
                         }
                     }
-                    FastList.recycle(luckyParty);
                 }
                 else if (Rnd.get(100) < 33)
                 {
@@ -565,7 +560,6 @@ public class Q350_EnhanceYourWeapon extends Quest
                 tryToLevelCrystal(killer, players.get(killer), mob);
                 break;
         }
-        FastMap.recycle(players);
     }
 
     private boolean isPartyLevelingMonster(int npcId)

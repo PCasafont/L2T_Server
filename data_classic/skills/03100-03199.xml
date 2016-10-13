@@ -13,7 +13,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5170" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily paralyzes the target during magic use. -->
     <skill id="3101" levels="10" name="Item Skill: Paralyze">
@@ -28,7 +27,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5171" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily petrifies the target during magic use. -->
     <skill id="3102" levels="10" name="Item Skill: Medusa">
@@ -43,7 +41,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5172" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during magic use. -->
     <skill id="3103" levels="10" name="Item Skill: Fear">
@@ -58,7 +55,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5173" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Chance: Momentarily inflicts Poison on the target during magic use. Effect 5.
@@ -78,7 +74,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5174" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
         Level 1: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 5.
@@ -99,7 +94,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5175" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks the target's magic skill during magic use. -->
     <skill id="3106" levels="10" name="Item Skill: Silence">
@@ -114,7 +108,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5176" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily blocks all of the target's physical and magic skills during magic use. -->
     <skill id="3107" levels="10" name="Item Skill: Doom">
@@ -129,7 +122,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5177" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Chance: Increases the target's urge to attack during a critical attack. Power 438.
@@ -147,7 +139,7 @@
         <table name="#power">438 467 495 523 549 574 597 617 635 659 659 659 659 659 659</table>
         <table name="#activationChance">2 2 2 3 3 3 4 4 5 5 5 5 5 5 5</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGDAMAGE" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -183,7 +175,7 @@
         <table name="#power">219 234 248 262 275 287 299 309 318 330 330 330 330 330 330</table>
         <table name="#activationChance">2 2 2 3 3 3 4 4 5 5 5 5 5 5 5</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGREDUCE" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -209,7 +201,7 @@
         <table name="#power">49 53 57 61 66 70 74 78 82 88</table>
         <table name="#activationChance">2 2 2 3 3 3 4 4 5 5</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MANADAM" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="isMagic" val="true" />
@@ -232,7 +224,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5166" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily decreases the target's Atk. Spd. during a critical attack. Effect 3. -->
     <skill id="3112" levels="15" name="Item Skill: Winter (Critical)">
@@ -247,7 +238,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5167" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Stun on the target during a critical attack. -->
     <skill id="3113" levels="10" name="Item Skill: Stun">
@@ -262,7 +252,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5168" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily inflicts Hold on the target during a critical attack. The target cannot be affected by any additional hold attacks while the effect lasts. -->
     <skill id="3114" levels="15" name="Item Skill: Hold">
@@ -277,7 +266,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5169" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Sleep on the target during a critical attack. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
     <skill id="3115" levels="10" name="Item Skill: Sleep">
@@ -292,7 +280,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5170" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily paralyzes the target during a critical attack. -->
     <skill id="3116" levels="10" name="Item Skill: Paralyze">
@@ -307,7 +294,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5171" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily petrifies the target during a critical attack. -->
     <skill id="3117" levels="10" name="Item Skill: Medusa">
@@ -322,7 +308,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5172" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during a critical attack. -->
     <skill id="3118" levels="10" name="Item Skill: Fear">
@@ -337,7 +322,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5173" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 5.
@@ -357,7 +341,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5174" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
         Level 1: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 5.
@@ -378,7 +361,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5175" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks the target's magic skill during a critical attack. -->
     <skill id="3121" levels="10" name="Item Skill: Silence">
@@ -393,7 +375,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5176" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily blocks all of the target's physical and magic skills during a critical attack. -->
     <skill id="3122" levels="10" name="Item Skill: Doom">
@@ -408,7 +389,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5177" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Active: Instantly recovers your HP. Power 308.
@@ -527,7 +507,7 @@
         <table name="#mpConsume">48 53 55 59 64 65 69 73 77 82</table>
         <table name="#power">41 44 47 50 53 57 59 62 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MANARECHARGE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -966,7 +946,7 @@
         <table name="#mpConsume">21 22 24 25 27 29 30 31 33 35 35 35 35 35 35</table>
         <table name="#power">438 467 495 523 549 574 597 617 635 659 659 659 659 659 659</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGDAMAGE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1007,7 +987,7 @@
         <table name="#mpConsume">48 53 55 59 64 65 69 73 77 82 82 82 82 82 82</table>
         <table name="#power">219 234 248 262 275 287 299 309 318 330 342 354 366 378 390</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGREDUCE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1025,7 +1005,7 @@
     <skill id="3151" levels="15" name="Item Skill: Peace">
         <table name="#mpConsume">48 53 55 59 64 65 69 73 77 82 82 82 82 82 82</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGREMOVE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1042,7 +1022,7 @@
     <skill id="3152" levels="10" name="Item Skill: Trick">
         <table name="#mpConsume">21 22 24 25 27 29 30 31 33 35</table>
         <table name="#magicLvl">49 52 55 58 60 62 64 66 68 70 72 74</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGREDUCE_CHAR" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1076,7 +1056,7 @@
         <table name="#mpConsume">74 79 85 90 97 102 107 112 117 124</table>
         <table name="#power">49 53 57 61 66 70 74 78 82 88</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1108,7 +1088,7 @@
         <table name="#mpConsume">62 67 70 75 80 85 89 94 98 104</table>
         <table name="#power">68 73 79 84 90 96 101 107 112 120</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MANADAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1348,7 +1328,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1379,7 +1359,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1410,7 +1390,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1441,7 +1421,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1472,7 +1452,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1503,7 +1483,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1534,7 +1514,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#power">61 66 72 77 82 87 92 97 102 110</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1981,7 +1961,7 @@
     <skill id="3187" levels="15" name="Item Skill: Slow (Active)">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69 69 69 69 69 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1994,7 +1974,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -2006,7 +1985,7 @@
     <skill id="3188" levels="15" name="Item Skill: Winter (Active)">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69 69 69 69 69 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2019,7 +1998,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" landRate="40" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -2032,7 +2010,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
         <table name="#hitTime">4000 1500 1500 1500 1500 1500 1500 1500 1500 1500</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -2044,7 +2022,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="staticHitTime" val="true" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="stun" visualEffect="stun">
@@ -2056,7 +2033,7 @@
     <skill id="3190" levels="10" name="Item Skill: Hold">
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2069,7 +2046,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -2080,7 +2056,7 @@
     <skill id="3191" levels="10" name="Item Skill: Sleep">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2093,7 +2069,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -2104,7 +2079,7 @@
     <skill id="3192" levels="10" name="Item Skill: Paralyze">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2117,7 +2092,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40">
                 <effect chanceType="ON_EXIT" triggeredId="6126" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -2131,7 +2105,7 @@
     <skill id="3193" levels="10" name="Item Skill: Medusa">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2146,7 +2120,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="turn_stone">
                 <effect type="Petrification" val="0" />
@@ -2157,7 +2130,7 @@
     <skill id="3194" levels="10" name="Item Skill: Fear">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2170,7 +2143,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40">
                 <effect type="Fear" val="0" />
@@ -2187,7 +2159,7 @@
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69 69 69 69 69 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75 75 75 75 75 75</table>
         <table name="#dmg">123 123 150 150 150 174 174 174 189 189 189 189 189 189 189</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2200,7 +2172,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="40" visualEffect="poison">
                 <effect type="DamOverTime" val="#dmg" />
@@ -2218,7 +2189,7 @@
         <table name="#dmg">39 39 51 51 66 66 81 81 93 102 102 102 102 102 102</table>
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69 69 69 69 69 69</table>
         <table name="#abnormalLvl">5 5 6 6 6 7 7 7 8 8 8 8 8 8 8</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -2232,7 +2203,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="40" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -2244,7 +2214,7 @@
     <skill id="3197" levels="10" name="Item Skill: Silence">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2257,7 +2227,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -2268,7 +2237,7 @@
     <skill id="3198" levels="10" name="Item Skill: Doom">
         <table name="#mpConsume">42 44 48 50 54 57 60 63 65 69</table>
         <table name="#magicLvl">46 49 52 55 58 61 64 67 70 75</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2281,7 +2250,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />

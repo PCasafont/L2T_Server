@@ -163,7 +163,7 @@
     </skill>
     <!-- Swings arms to attack target. -->
     <skill id="15517" levels="1" name="Chaos Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -222,7 +222,7 @@
     </skill>
     <!-- Damages enemy with dark poison and drains HP gradually. -->
     <skill id="15522" levels="1" name="Dark Poison">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -236,7 +236,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
                 <effect type="DamOverTime" val="14000" />
@@ -260,7 +259,7 @@
     </skill>
     <!-- Sucks blood from the enemy, continuously draining HP. -->
     <skill id="15524" levels="1" name="Suck Blood">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -273,7 +272,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
                 <effect type="DamOverTime" val="14000" />
@@ -354,7 +352,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="70" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -434,7 +431,7 @@
     -->
     <skill id="15537" levels="2" name="Blood Sacrifice: Decrease Speed">
         <table name="#hp">50 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="#hp" />
@@ -448,7 +445,7 @@
     -->
     <skill id="15538" levels="2" name="Blood Sacrifice: Decrease Accuracy">
         <table name="#hp">50 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="#hp" />
@@ -462,7 +459,7 @@
     -->
     <skill id="15539" levels="2" name="Blood Sacrifice: Decrease P. Def.">
         <table name="#hp">50 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="#hp" />
@@ -476,7 +473,7 @@
     -->
     <skill id="15540" levels="2" name="Blood Sacrifice: Decrease M. Def.">
         <table name="#hp">50 100</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -585,7 +582,7 @@
     </skill>
     <!-- Powerful attack on enemy's vital point. Speed increases upon hit. Has a low chance of doing Half-kill. -->
     <skill id="15550" levels="1" name="Heart Destroyer">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -614,7 +611,7 @@
     </skill>
     <!-- Decreases target's P. Atk. By 30%. -->
     <skill id="15552" levels="1" name="Hell's Prison">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="10" />
@@ -645,7 +642,7 @@
     </skill>
     <!-- Hits enemy's vital point. -->
     <skill id="15555" levels="1" name="Cunning Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="99" />
@@ -935,7 +932,7 @@
     </skill>
     <!-- Swings a spark-filled chain for a powerful M. Atk. -->
     <skill id="15585" levels="1" name="Hateful Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -973,7 +970,7 @@
     </skill>
     <!-- Powerful M. Atk. on enemy. -->
     <skill id="15588" levels="1" name="Soulful Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -985,7 +982,7 @@
     </skill>
     <!-- Powerful P. Atk. on enemy. -->
     <skill id="15589" levels="1" name="Painful Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="16500" />
@@ -1061,7 +1058,7 @@
     </skill>
     <!-- Ranged projectile. -->
     <skill id="15598" levels="1" name="Mighty Wind Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

@@ -5475,7 +5475,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
                 <effect type="DamOverTime" val="14000" />
@@ -5512,7 +5511,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
                 <effect type="DamOverTime" val="14000" />
@@ -5596,7 +5594,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="70" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -5916,7 +5913,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal landRate="80">
                 <effect type="AbortCast" val="0" />
@@ -6015,7 +6011,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
                 <effect type="DamOverTime" val="14000" />
@@ -6808,7 +6803,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="STUN" landRate="100" visualEffect="stun">
                 <effect type="Stun" val="0" />

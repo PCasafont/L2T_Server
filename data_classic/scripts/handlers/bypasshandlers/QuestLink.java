@@ -3,20 +3,18 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
-import java.util.List;
-
-import javolution.util.FastList;
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IBypassHandler;
@@ -31,310 +29,306 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class QuestLink implements IBypassHandler
 {
-    private static final String[] COMMANDS = {"Quest"};
+	private static final String[] COMMANDS = {"Quest"};
 
-    public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-    {
-        if (target == null)
-        {
-            return false;
-        }
+	@Override
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
+	{
+		if (target == null)
+		{
+			return false;
+		}
 
-        String quest = "";
-        try
-        {
-            quest = command.substring(5).trim();
-        }
-        catch (IndexOutOfBoundsException ioobe)
-        {
-        }
-        if (quest.length() == 0)
-        {
-            showQuestWindow(activeChar, target);
-        }
-        else
-        {
-            showQuestWindow(activeChar, target, quest);
-        }
+		String quest = "";
+		try
+		{
+			quest = command.substring(5).trim();
+		}
+		catch (IndexOutOfBoundsException ioobe)
+		{
+		}
+		if (quest.length() == 0)
+		{
+			showQuestWindow(activeChar, target);
+		}
+		else
+		{
+			showQuestWindow(activeChar, target, quest);
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * Open a choose quest window on client with all quests available of the L2NpcInstance.<BR><BR>
-     * <p>
-     * <B><U> Actions</U> :</B><BR><BR>
-     * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li><BR><BR>
-     *
-     * @param player The L2PcInstance that talk with the L2NpcInstance
-     * @param quests The table containing quests of the L2NpcInstance
-     */
-    public static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Quest[] quests)
-    {
-        final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
-        for (Quest q : quests)
-        {
-            StringUtil.append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q
-                    .getName(), "\">");
-            if (q.getQuestIntId() < 10000)
-            {
-                QuestState qs = player.getQuestState(q.getScriptName());
-                if (qs != null)
-                {
-                    if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
-                    {
-                        sb.append("<font color=\"6699ff\">[" + q.getDescr() + " (In Progress)]</font>");
-                    }
-                    else if (qs.getState() == State.COMPLETED)
-                    {
-                        sb.append("<font color=\"787878\">[" + q.getDescr() + " (Done)]</font>");
-                    }
-                    else if (q.canStart(player))
-                    {
-                        sb.append("<font color=\"6699ff\">[" + q.getDescr() + "]</font>");
-                    }
-                    else
-                    {
-                        sb.append("<font color=\"a62f31\">[" + q.getDescr() + "]</font>");
-                    }
-                }
-                else if (q.canStart(player))
-                {
-                    sb.append("<font color=\"6699ff\">[" + q.getDescr() + "]</font>");
-                }
-                else
-                {
-                    sb.append("<font color=\"a62f31\">[" + q.getDescr() + "]</font>");
-                }
-            }
-            else
-            {
+	/**
+	 * Open a choose quest window on client with all quests available of the L2NpcInstance.<BR><BR>
+	 * <p>
+	 * <B><U> Actions</U> :</B><BR><BR>
+	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li><BR><BR>
+	 *
+	 * @param player The L2PcInstance that talk with the L2NpcInstance
+	 * @param quests The table containing quests of the L2NpcInstance
+	 */
+	public static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Quest[] quests)
+	{
+		final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
+		for (Quest q : quests)
+		{
+			StringUtil
+					.append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q.getName(),
+							"\">");
+			if (q.getQuestIntId() < 10000)
+			{
+				StringUtil.append(sb, "[", q.getDescr());
 
-                QuestState qs = player.getQuestState(q.getScriptName());
-                if (qs != null)
-                {
-                    if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
-                    {
-                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                                .getQuestIntId() % 10000) + "02</fstring>]</font>");
-                    }
-                    else if (qs.getState() == State.COMPLETED)
-                    {
-                        sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                                .getQuestIntId() % 10000) + "03</fstring>]</font>");
-                    }
-                    else if (q.canStart(player))
-                    {
-                        sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                                .getQuestIntId() % 10000) + "01</fstring>]</font>");
-                    }
-                    else
-                    {
-                        sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                                .getQuestIntId() % 10000) + "04</fstring>]</font>");
-                    }
-                }
-                else if (q.canStart(player))
-                {
-                    sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                            .getQuestIntId() % 10000) + "01</fstring>]</font>");
-                }
-                else
-                {
-                    sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q
-                            .getQuestIntId() % 10000) + "04</fstring>]</font>");
-                }
-            }
-            sb.append("</a><br>");
-        }
+				QuestState qs = player.getQuestState(q.getScriptName());
+				if (qs != null)
+				{
+					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
+					{
+						sb.append(" (In Progress)");
+					}
+					else if (qs.getState() == State.COMPLETED)
+					{
+						sb.append(" (Done)");
+					}
+				}
+				sb.append("]");
+			}
+			else
+			{
 
-        sb.append("</body></html>");
+				QuestState qs = player.getQuestState(q.getScriptName());
+				if (qs != null)
+				{
+					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
+					{
+						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+								q.getQuestIntId() % 10000 + "02</fstring>]</font>");
+					}
+					else if (qs.getState() == State.COMPLETED)
+					{
+						sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+								q.getQuestIntId() % 10000 + "03</fstring>]</font>");
+					}
+					else if (q.canStart(player))
+					{
+						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+								q.getQuestIntId() % 10000 + "01</fstring>]</font>");
+					}
+					else
+					{
+						sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+								q.getQuestIntId() % 10000 + "04</fstring>]</font>");
+					}
+				}
+				else if (q.canStart(player))
+				{
+					sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+							q.getQuestIntId() % 10000 + "01</fstring>]</font>");
+				}
+				else
+				{
+					sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" +
+							q.getQuestIntId() % 10000 + "04</fstring>]</font>");
+				}
+			}
+			sb.append("</a><br>");
+		}
 
-        // Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
-        npc.insertObjectIdAndShowChatWindow(player, sb.toString(), true);
-    }
+		sb.append("</body></html>");
 
-    /**
-     * Open a quest window on client with the text of the L2NpcInstance.<BR><BR>
-     * <p>
-     * <B><U> Actions</U> :</B><BR><BR>
-     * <li>Get the text of the quest state in the folder data/scripts/quests/questId/stateId.htm </li>
-     * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
-     * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR><BR>
-     *
-     * @param player  The L2PcInstance that talk with the L2NpcInstance
-     * @param questId The Identifier of the quest to display the message
-     */
-    public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
-    {
-        String content = null;
+		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
+		npc.insertObjectIdAndShowChatWindow(player, sb.toString(), true);
+	}
 
-        Quest q = QuestManager.getInstance().getQuest(questId);
+	/**
+	 * Open a quest window on client with the text of the L2NpcInstance.<BR><BR>
+	 * <p>
+	 * <B><U> Actions</U> :</B><BR><BR>
+	 * <li>Get the text of the quest state in the folder data/scripts/quests/questId/stateId.htm </li>
+	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
+	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR><BR>
+	 *
+	 * @param player  The L2PcInstance that talk with the L2NpcInstance
+	 * @param questId The Identifier of the quest to display the message
+	 */
+	public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
+	{
+		String content = null;
 
-        // Get the state of the selected quest
-        QuestState qs = player.getQuestState(questId);
+		Quest q = QuestManager.getInstance().getQuest(questId);
 
-        if (q != null)
-        {
-            if ((q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000) && (player.getWeightPenalty() >= 3 || !player
-                    .isInventoryUnder90(true)))
-            {
-                player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT));
-                return;
-            }
+		// Get the state of the selected quest
+		QuestState qs = player.getQuestState(questId);
 
-            if (qs == null)
-            {
-                if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000)
-                {
-                    if (player
-                            .getAllActiveQuests().length >
-                            40) // if too many ongoing quests, don't show window and send message
-                    {
-                        player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TOO_MANY_QUESTS));
-                        return;
-                    }
-                }
-                // check for start point
-                Quest[] qlst = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
+		if (q != null)
+		{
+			if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000 &&
+					(player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
+			{
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT));
+				return;
+			}
 
-                if (qlst != null && qlst.length > 0)
-                {
-                    for (Quest temp : qlst)
-                    {
-                        if (temp == q)
-                        {
-                            qs = q.newQuestState(player);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            content = Quest.getNoQuestMsg(player); // no quests found
-        }
+			if (qs == null)
+			{
+				if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000)
+				{
+					if (player.getAllActiveQuests().length >
+							40) // if too many ongoing quests, don't show window and send message
+					{
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TOO_MANY_QUESTS));
+						return;
+					}
+				}
+				// check for start point
+				Quest[] qlst = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 
-        if (qs != null)
-        {
-            // If the quest is alreday started, no need to show a window
-            if (!qs.getQuest().notifyTalk(npc, qs))
-            {
-                return;
-            }
+				if (qlst != null && qlst.length > 0)
+				{
+					for (Quest temp : qlst)
+					{
+						if (temp == q)
+						{
+							qs = q.newQuestState(player);
+							break;
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			content = Quest.getNoQuestMsg(player); // no quests found
+		}
 
-            questId = qs.getQuest().getName();
-            String stateId = State.getStateName(qs.getState());
-            String path = Config.DATA_FOLDER + "scripts/quests/" + questId + "/" + stateId + ".htm";
-            content = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), path);
+		if (qs != null)
+		{
+			// If the quest is alreday started, no need to show a window
+			if (!qs.getQuest().notifyTalk(npc, qs))
+			{
+				return;
+			}
 
-            if (Config.DEBUG)
-            {
-                if (content != null)
-                {
-                    _log.fine("Showing quest window for quest " + questId + " html path: " + path);
-                }
-                else
-                {
-                    _log.fine("File not exists for quest " + questId + " html path: " + path);
-                }
-            }
-        }
+			questId = qs.getQuest().getName();
+			String stateId = State.getStateName(qs.getState());
+			String path = Config.DATA_FOLDER + "scripts/quests/" + questId + "/" + stateId + ".htm";
+			content = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), path);
 
-        // Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
-        if (content != null)
-        {
-            npc.insertObjectIdAndShowChatWindow(player, content, true);
-        }
+			if (Config.DEBUG)
+			{
+				if (content != null)
+				{
+					_log.fine("Showing quest window for quest " + questId + " html path: " + path);
+				}
+				else
+				{
+					_log.fine("File not exists for quest " + questId + " html path: " + path);
+				}
+			}
+		}
 
-        // Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
-        player.sendPacket(ActionFailed.STATIC_PACKET);
-    }
+		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
+		if (content != null)
+		{
+			npc.insertObjectIdAndShowChatWindow(player, content, true);
+		}
 
-    /**
-     * Collect awaiting quests/start points and display a QuestChooseWindow (if several available) or QuestWindow.<BR><BR>
-     *
-     * @param player The L2PcInstance that talk with the L2NpcInstance
-     */
-    public static void showQuestWindow(L2PcInstance player, L2Npc npc)
-    {
-        // collect awaiting quests and start points
-        List<Quest> options = new HashMap<Quest>();
+		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
+		player.sendPacket(ActionFailed.STATIC_PACKET);
+	}
 
-        QuestState[] awaits = player.getQuestsForTalk(npc.getTemplate().NpcId);
-        Quest[] starts = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
+	/**
+	 * Collect awaiting quests/start points and display a QuestChooseWindow (if several available) or QuestWindow.<BR><BR>
+	 *
+	 * @param player The L2PcInstance that talk with the L2NpcInstance
+	 */
+	public static void showQuestWindow(L2PcInstance player, L2Npc npc)
+	{
+		// collect awaiting quests and start points
+		List<Quest> options = new ArrayList<Quest>();
 
-        // Quests are limited between 1 and 999 because those are the quests that are supported by the client.
-        // By limiting them there, we are allowed to create custom quests at higher IDs without interfering
-        if (awaits != null)
-        {
-            for (QuestState x : awaits)
-            {
-                if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest()
-                        .getQuestIntId() < 20000) && x.getState() != State.COMPLETED)
-                {
-                    options.add(x.getQuest());
-                }
-            }
-        }
+		QuestState[] awaits = player.getQuestsForTalk(npc.getTemplate().NpcId);
+		Quest[] starts = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 
-        if (starts != null)
-        {
-            for (Quest x : starts)
-            {
-                if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && (player
-                        .getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName())
-                        .getState() != State.COMPLETED) && x.canStart(player))
-                {
-                    options.add(x);
-                }
-            }
-            for (Quest x : starts)
-            {
-                if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && (player
-                        .getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName())
-                        .getState() != State.COMPLETED))
-                {
-                    options.add(x);
-                }
-            }
-            for (Quest x : starts)
-            {
-                if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000))
-                {
-                    options.add(x);
-                }
-            }
-        }
-        /*if (awaits != null)
+		// Quests are limited between 1 and 999 because those are the quests that are supported by the client.
+		// By limiting them there, we are allowed to create custom quests at higher IDs without interfering
+		if (awaits != null)
 		{
 			for (QuestState x : awaits)
 			{
-				if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest().getQuestIntId() < 20000))
+				if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 &&
+						x.getQuest().getQuestIntId() < 20000 && x.getState() != State.COMPLETED)
+				{
 					options.add(x.getQuest());
+				}
 			}
-		}*/
+		}
 
-        // Display a QuestChooseWindow (if several quests are available) or QuestWindow
-        if (options.size() > 1)
-        {
-            showQuestChooseWindow(player, npc, options.toArray(new Quest[options.size()]));
-        }
-        else if (options.size() == 1)
-        {
-            showQuestWindow(player, npc, options.get(0).getName());
-        }
-        else
-        {
-            showQuestWindow(player, npc, "");
-        }
-    }
+		if (starts != null)
+		{
+			for (Quest x : starts)
+			{
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 &&
+						(player.getQuestState(x.getScriptName()) == null ||
+								player.getQuestState(x.getScriptName()).getState() != State.COMPLETED) &&
+						x.canStart(player))
+				{
+					options.add(x);
+				}
+			}
+			for (Quest x : starts)
+			{
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 &&
+						(player.getQuestState(x.getScriptName()) == null ||
+								player.getQuestState(x.getScriptName()).getState() != State.COMPLETED))
+				{
+					options.add(x);
+				}
+			}
+			for (Quest x : starts)
+			{
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000)
+				{
+					options.add(x);
+				}
+			}
+		}
+		if (awaits != null)
+		{
+			for (QuestState x : awaits)
+			{
+				if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 &&
+						x.getQuest().getQuestIntId() < 20000)
+				{
+					options.add(x.getQuest());
+				}
+			}
+		}
 
-    public String[] getBypassList()
-    {
-        return COMMANDS;
-    }
+		// Display a QuestChooseWindow (if several quests are available) or QuestWindow
+		if (options.size() > 1)
+		{
+			showQuestChooseWindow(player, npc, options.toArray(new Quest[options.size()]));
+		}
+		else if (options.size() == 1)
+		{
+			showQuestWindow(player, npc, options.get(0).getName());
+		}
+		else
+		{
+			showQuestWindow(player, npc, "");
+		}
+	}
+
+	@Override
+	public String[] getBypassList()
+	{
+		return COMMANDS;
+	}
 }

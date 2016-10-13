@@ -142,6 +142,11 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		return true;
 	}
 
+	public boolean triggerzOnActionRequest()
+	{
+		return triggersOnActionRequest();
+	}
+
 	protected void cleanUp()
 	{
 	}

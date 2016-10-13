@@ -51,7 +51,7 @@
         <table name="#mCritRate">100 200</table>
         <table name="#abnormalLvl">1 2</table>
         <table name="#aggro">582 635</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -78,7 +78,7 @@
         <table name="#sDef">30 40 50</table>
         <table name="#abnormalLvl">1 2 3</table>
         <table name="#aggro">549 611 646</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -129,7 +129,7 @@
         <table name="#mpConsume">104 108 112 114 117 120</table>
         <table name="#rateCp">745 767 789 811 834 858</table>
         <table name="#aggro">677 700 722 743 763 780</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="COMBATPOINTHEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -333,7 +333,7 @@
     </skill>
     <!-- Maintains target's buff/de-buff condition even following death and resurrection. The Noblesse Blessing and the Amulet of Luck disappear, however. Consumes 5 Spirit Ore. -->
     <skill id="1323" levels="1" name="Noblesse Blessing">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -649,7 +649,7 @@
     </skill>
     <!-- Blocks all the enemy's physical and magical skills for 1 minute. -->
     <skill id="1336" levels="1" name="Curse of Doom">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -661,7 +661,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -670,7 +669,7 @@
     </skill>
     <!-- For 30 sec., decreases the enemy's Speed by 10%, P. Def. by 30%, Evasion by 6, M. Atk. by 30%, Casting Spd. by 20% and magic damage by 30%. -->
     <skill id="1337" levels="1" name="Curse of Abyss">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -682,7 +681,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -697,7 +695,7 @@
     </skill>
     <!-- For 30 sec., decreases Buff-canceling Attack Resistance by 30%, Debuff Resistance by 30% and drains 24 MP every second. Increases physical skill MP Consumption by 10% and magic skill MP Consumption by 30%. -->
     <skill id="1338" levels="1" name="Arcane Chaos">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -709,7 +707,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="40" stackLvl="1" stackType="multi_debuff">
                 <effect type="ManaDamOverTime" val="72" />
@@ -722,7 +719,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the dimension of Fire and inflicts Fire damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. Consumes 12 MP every second. Over-hit is possible. -->
     <skill id="1339" levels="1" name="Fire Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -738,7 +735,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_fire">
                 <effect type="ManaDamOverTime" val="36" />
@@ -751,7 +747,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the dimension of Water and inflicts Water damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 30%, Atk. Spd. by 10%, Casting Spd. by 10%, and resistance against Water by 20. Consumes 12 MP every second. Over-hit is possible. -->
     <skill id="1340" levels="1" name="Ice Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -767,7 +763,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_water">
                 <effect type="ManaDamOverTime" val="36" />
@@ -780,7 +775,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the dimension of Wind and inflicts Wind damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 10%, Atk. Spd. by 10%, Casting Spd. by 30%, and resistance against Wind by 20. Consumes 12 MP every second. Over-hit is possible. -->
     <skill id="1341" levels="1" name="Wind Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -796,7 +791,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_wind">
                 <effect type="ManaDamOverTime" val="36" />
@@ -809,7 +803,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the holy dimension and inflicts Holy damage on the enemy with 139 Power added to M. Atk. For 30 sec., decreases Accuracy by 6 and Holy Attack Resistance by 30. Consumes 12 MP every second. -->
     <skill id="1342" levels="1" name="Light Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -824,7 +818,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="4" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_holy">
                 <effect type="ManaDamOverTime" val="36" />
@@ -835,7 +828,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the dimension of darkness and inflicts dark damage on the enemy with 139 Power added to M. Atk. Absorbs 25% as HP. For 30 sec., decreases Accuracy by 6 and Dark Attack Resistance by 30. Consumes 12 MP every second. -->
     <skill id="1343" levels="1" name="Dark Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -850,7 +843,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <set name="absorbPart" val="0.25" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_unholy">
@@ -1009,7 +1001,7 @@
     </skill>
     <!-- Removes buffs that increase Atk. Spd. and Speed from the enemy. -->
     <skill id="1350" levels="1" name="Warrior Bane">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1024,7 +1016,7 @@
     </skill>
     <!-- Removes buffs that increase M. Atk. and Casting Spd. from the enemy. -->
     <skill id="1351" levels="1" name="Mage Bane">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1039,7 +1031,7 @@
     </skill>
     <!-- For 20 minutes, increases Fire/Water/Wind/Earth Resistance by 20. -->
     <skill id="1352" levels="1" name="Elemental Resistance">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1061,7 +1053,7 @@
     </skill>
     <!-- For 20 minutes, increases Dark Attack Resistance by 30 and Holy Attack Resistance by 20. -->
     <skill id="1353" levels="1" name="Holy Attack Resistance">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1081,7 +1073,7 @@
     </skill>
     <!-- For 20 minutes, Buff-canceling Attack Resistance + 30 and Debuff Resistance + 20. -->
     <skill id="1354" levels="1" name="Arcane Protection">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1200,7 +1192,7 @@
     </skill>
     <!-- Cancels a buff that increases the enemy's P. Def. For 2 minutes, decreases P. Def. by 10% and prevents him from receiving P. Def.-increasing buffs. -->
     <skill id="1358" levels="1" name="Block Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1212,7 +1204,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="100" stackType="pd_up">
                 <effect type="Debuff" val="0" />
@@ -1222,7 +1213,7 @@
     </skill>
     <!-- Cancels a buff that increases the enemy's Speed. For 2 minutes, decreases Speed by 10% and prevents him from receiving Speed-increasing buffs. -->
     <skill id="1359" levels="1" name="Block Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1234,7 +1225,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="100" stackType="speed_up">
                 <effect type="Debuff" val="0" />
@@ -1255,7 +1245,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="100" stackType="pd_up">
                 <effect type="Debuff" val="0" />
@@ -1276,7 +1265,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="100" stackType="speed_up">
                 <effect type="Debuff" val="0" />
@@ -1393,7 +1381,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -1422,7 +1409,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="40" stackLvl="1" stackType="heal_effect_down">
                 <effect type="Debuff" val="0" />
@@ -1533,7 +1519,6 @@
         <set name="isDebuff" val="true" />
         <set name="canBeDispeled" val="false" />
         <set name="canBeReflected" val="false" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="80" stackLvl="2" stackType="hero_debuff">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -1563,7 +1548,6 @@
         <set name="isDebuff" val="true" />
         <set name="canBeDispeled" val="false" />
         <set name="canBeReflected" val="false" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="4" duration="2" landRate="80" stackLvl="1" stackType="hero_debuff">
                 <effect type="Fear" val="0" />
@@ -1609,7 +1593,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="derangement">
                 <effect type="Betray" val="0" />
@@ -1633,7 +1616,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="50" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -1667,7 +1649,6 @@
         <set name="skillRadius" val="230" />
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="#power" stackLvl="3" stackType="md_down">
                 <effect type="Debuff" val="0" />
@@ -1704,7 +1685,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_fire">
                 <effect type="Debuff" val="0" />
@@ -1736,7 +1716,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_water">
                 <effect type="Debuff" val="0" />
@@ -1768,7 +1747,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="4" stackType="armor_wind">
                 <effect type="Debuff" val="0" />
@@ -1781,7 +1759,7 @@
     <skill id="1386" levels="10" name="Arcane Disruption">
         <table name="#mpConsume">52 54 55 58 60 62 64 65 67 69</table>
         <table name="#magicLvl">56 58 60 62 64 66 68 70 72 74</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1793,7 +1771,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="3" stackType="casting_time_up">
                 <effect type="Debuff" val="0" />
@@ -1842,7 +1819,7 @@
         <table name="#pAtk">4 7 10</table>
         <table name="#mpConsume">54 62 69</table>
         <table name="#itemConsumeCount">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1869,7 +1846,7 @@
         <table name="#pDef">5 10 15</table>
         <table name="#mpConsume">54 62 69</table>
         <table name="#itemConsumeCount">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1950,7 +1927,7 @@
         <table name="#mpConsume">54 62 69</table>
         <table name="#holyRes">15 23 30</table>
         <table name="#abnormalLvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1975,7 +1952,7 @@
         <table name="#mpConsume">54 62 69</table>
         <table name="#darkRes">15 23 30</table>
         <table name="#abnormalLvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1995,7 +1972,7 @@
     <skill id="1394" levels="10" name="Trance">
         <table name="#mpConsume">27 28 28 29 30 32 33 33 34 35</table>
         <table name="#magicLvl">56 58 60 62 64 66 68 70 72 74</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2007,7 +1984,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="80" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -2042,7 +2018,7 @@
     <skill id="1396" levels="10" name="Magical Backfire">
         <table name="#magicLvl">56 58 60 62 64 66 68 70 72 74</table>
         <table name="#mpConsume">52 54 55 58 60 62 64 65 67 69</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2054,7 +2030,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="3" stackType="mp_cost_up">
                 <effect type="Debuff" val="0" />
@@ -2075,7 +2050,7 @@
         <table name="#itemConsumeCount">1 2 3</table>
         <table name="#MagicalMpConsumeRate">4 7 10</table>
         <table name="#MpConsumeRate">10 15 20</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -2111,7 +2086,7 @@
     <skill id="1398" levels="10" name="Mana Burn">
         <table name="#mpConsume">77 80 83 87 89 93 95 98 100 103</table>
         <table name="#power">117 123 128 133 138 143 148 153 157 162</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MANADAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

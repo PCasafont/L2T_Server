@@ -93,7 +93,7 @@
     </skill>
     <!-- Throws a powerful punch with 11205 Power that both stuns and inflicts damage to the enemy. Over-hit is possible. -->
     <skill id="808" levels="1" name="Golem Punch">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -107,7 +107,6 @@
         <set name="effectRange" val="400" />
         <set name="SSBoost" val="2.0" />
         <set name="overHit" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="3" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -329,7 +328,7 @@
             2366 2460 2556 2653 2751 2850 2950 3050 3151 3252 3353 3453 3553 3653 3752 3849 3945 4040 4133 4224 4312
             4399 4482 4563 4640
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -404,7 +403,7 @@
             2366 2460 2556 2653 2751 2850 2950 3050 3151 3252 3353 3453 3553 3653 3752 3849 3945 4040 4133 4224 4312
             4399 4482 4563 4640
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -529,7 +528,7 @@
     </skill>
     <!-- Sharpens a bladed weapon to increase P. Atk. by 5% and Critical Rate by 20% for 20 minutes. -->
     <skill id="825" levels="1" name="Sharpen Edge">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="49" />
@@ -553,7 +552,7 @@
     </skill>
     <!-- Adds a spike to a blunt weapon to increase P. Atk. by 5% and its weight for shock attacks by 8% for 20 minute(s). -->
     <skill id="826" levels="1" name="Spike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="49" />
@@ -577,7 +576,7 @@
     </skill>
     <!-- Enhances the string of a bow or crossbow to increase P. Atk. by 5% and range by 100 for 20 minute(s). -->
     <skill id="827" levels="1" name="Bowstring">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="49" />
@@ -601,7 +600,7 @@
     </skill>
     <!-- Thickens the surface of heavy armor to increase P. Def. by 10% for 20 minute(s). -->
     <skill id="828" levels="1" name="Encase Armor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="46" />
@@ -622,7 +621,7 @@
     </skill>
     <!-- Tans light armor to increase P. Def. by 5% and Evasion by 2 for 20 minutes. Cannot be used on pets. -->
     <skill id="829" levels="1" name="Hard Tanning">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="46" />
@@ -646,7 +645,7 @@
     </skill>
     <!-- Embroiders a robe to increase P. Def. by 5% and MP Recovery Bonus by 2 for 20 minutes. -->
     <skill id="830" levels="1" name="Embroider">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="46" />
@@ -717,7 +716,7 @@
         <table name="#mdot">76 83 83 83</table>
         <table name="#magicLvl">68 70 72 74</table>
         <table name="#triggeredLevel">1 2 3 4</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -732,7 +731,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="20" duration="1" effectType="POISON" landRate="80" visualEffect="poison">
                 <effect type="ManaDamOverTime" val="#mdot" />
@@ -798,7 +796,7 @@
     </skill>
     <!-- Demolishes an outpost. After demolition, a new outpost can be constructed. -->
     <skill id="845" levels="1" name="Outpost Demolition">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="30" />
@@ -827,7 +825,7 @@
     </skill>
     <!-- With an opposing ward in hand, go back to your outpost and use this skill to move the ward back to your castle. -->
     <skill id="847" levels="1" name="Ward Transport">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="180000" />
@@ -943,7 +941,7 @@
     <skill id="869" levels="9" name="Mercenary Power Strike">
         <table name="#magicLvl">60 70 80 81 82 83 84 85 86</table>
         <table name="#power">2272 3252 4224 4312 4399 4482 4563 4640 4715</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -969,7 +967,7 @@
     <skill id="870" levels="8" name="Royal Guard Captain Power Strike">
         <table name="#magicLvl">70 80 81 82 83 84 85 86</table>
         <table name="#power">3252 4224 4312 4399 4482 4563 4640 4715</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -984,7 +982,7 @@
     </skill>
     <!-- Increases P. Atk. by 15% for 20 minutes -->
     <skill id="871" levels="1" name="Might">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1013,7 +1011,7 @@
     <skill id="872" levels="8" name="Archer Captain Power Shot">
         <table name="#magicLvl">70 80 81 82 83 84 85 86</table>
         <table name="#power">4336 5632 5750 5865 5976 6084 6187 6286</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1074,7 +1072,7 @@
     </skill>
     <!-- Increases M. Atk. power by 75% for 20 minutes. -->
     <skill id="875" levels="1" name="Empower">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1123,7 +1121,7 @@
     <!-- Disarms the enemy and prevents him from equipping a weapon for 5 seconds. -->
     <skill id="877" levels="8" name="Centurion Disarm">
         <table name="#magicLvl">70 80 81 82 83 84 85 86</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1134,7 +1132,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="STR" />
         <for>
             <abnormal duration="5" landRate="70" stackLvl="1" stackType="disarm">
                 <effect type="Disarm" val="0" />
@@ -1154,7 +1151,7 @@
     <skill id="878" levels="7" name="Knight Captain Power Strike">
         <table name="#magicLvl">80 81 82 83 84 85 86</table>
         <table name="#power">5068 5175 5278 5379 5475 5568 5658</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1170,7 +1167,7 @@
     <!-- Causes your enemy to flee in fear. -->
     <skill id="879" levels="7" name="Knight Captain Curse Fear">
         <table name="#magicLvl">80 81 82 83 84 85 86</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1182,7 +1179,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -1221,7 +1217,7 @@
         <table name="#magicLvl">80 81 82 83 84 85 86</table>
         <table name="#power">116 117 119 120 121 122 123</table>
         <table name="#elementPower">25 30 35 40 45 50 55</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1248,7 +1244,7 @@
         <table name="#magicLvl">80 81 82 83 84 85 86</table>
         <table name="#power">116 117 119 120 121 122 123</table>
         <table name="#elementPower">25 30 35 40 45 50 55</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1276,7 +1272,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -1322,7 +1317,7 @@
         <table name="#power">2251 2310 2367 2424 2480 2534 2588 2639 2690 2738 2784</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1334,7 +1329,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" type="Stun" val="0"
                       visualEffect="stun, airstun">
@@ -1358,7 +1352,7 @@
         <table name="#power">110 111 112 114 115 116 117 119 120 121 122</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1371,7 +1365,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="9" effectType="HOLD" landRate="80" stackLvl="1" stackType="root_magically" type="Root"
                       val="0" visualEffect="root, airroot">
@@ -1395,7 +1388,7 @@
         <table name="#power">3752 3849 3945 4040 4133 4224 4312 4399 4482 4563 4640</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1423,7 +1416,7 @@
         <table name="#power">3752 3849 3945 4040 4133 4224 4312 4399 4482 4563 4640</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1451,7 +1444,7 @@
         <table name="#power">5627 5773 5918 6060 6199 6335 6468 6598 6723 6844 6960</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1479,7 +1472,7 @@
         <table name="#power">88 89 90 91 92 93 94 95 96 97 98</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1508,7 +1501,7 @@
         <table name="#power">131 133 135 136 138 139 141 142 144 145 146</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1537,7 +1530,7 @@
         <table name="#power">197 199 202 204 206 209 211 213 215 217 219</table>
         <table name="#mpConsume">69 70 70 71 72 72 73 74 74 75 75</table>
         <table name="#magicLvl">75 76 77 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1600,7 +1593,7 @@
         <table name="#mpConsume">72 73 74 74 75 75</table>
         <table name="#pvpPower">3168 3234 3299 3362 3422 3480</table>
         <table name="#pvePower">9503 9702 9896 10084 10266 10440</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -1626,7 +1619,7 @@
         <table name="#mpConsume">72 73 74 74 75 75</table>
         <table name="#pvpPower">3168 3234 3299 3362 3422 3480</table>
         <table name="#pvePower">9503 9702 9896 10084 10266 10440</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />
@@ -1689,7 +1682,6 @@
         <set name="SSBoost" val="2.0" />
         <set name="isDebuff" val="true" />
         <set name="pvpPower" val="#pvpPower" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="multi_debuff">
                 <effect type="Debuff" val="0" />

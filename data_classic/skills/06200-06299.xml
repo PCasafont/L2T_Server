@@ -2,7 +2,7 @@
 <list>
     <!-- Cancels transformation. -->
     <skill id="6200" levels="1" name="Dispel NPC Transformation">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="TRANSFORMDISPEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="2500" />
@@ -36,7 +36,7 @@
         <table name="#power">1649 2045 2476 2927 3108 3288 3464 3636 3801 3881 3959 4034 4107 4176 4243 4307 4367 4424
             4477
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="2" />
@@ -51,7 +51,6 @@
         <set name="overHit" val="true" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" effectType="BLEED" landRate="40" stackLvl="6" stackType="bleeding"
                       visualEffect="bleed">
@@ -73,7 +72,6 @@
         <set name="reuseDelay" val="5000" />
         <set name="skillRadius" val="100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -271,7 +269,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Speed/Casting Spd./Atk. Spd. are reduced by 50% for 20 seconds. -->
     <skill id="6238" levels="1" name="Decrease Speed">
@@ -280,7 +277,6 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
         <set name="hitTime" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Heatstroke stage 1. Inflicted with heatstroke. You are extremely hot and fatigued.
@@ -362,7 +358,6 @@
         <set name="reuseDelay" val="1000" />
         <set name="castRange" val="200" />
         <set name="effectRange" val="700" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="6251" levels="1" name="Summon Sultriness">
         <set name="target" val="TARGET_NONE" />
@@ -449,7 +444,6 @@
         <set name="hitTime" val="2000" />
         <set name="coolTime" val="500" />
         <set name="reuseDelay" val="30000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6264" levels="1" name="Golem Boom">
         <set name="target" val="TARGET_NONE" />
@@ -477,7 +471,6 @@
         <set name="coolTime" val="500" />
         <set name="castRange" val="2500" />
         <set name="effectRange" val="3000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Absorbs the target's stamina and makes it your own. -->
     <skill id="6267" levels="1" name="Soul Drain">
@@ -511,7 +504,6 @@
         <set name="hitTime" val="2500" />
         <set name="castRange" val="1100" />
         <set name="effectRange" val="1600" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="6270" levels="1" name="Poison Gas">
         <set name="target" val="TARGET_NONE" />
@@ -595,7 +587,7 @@
         <set name="elementPower" val="180" />
     </skill>
     <skill id="6277" levels="1" name="Summon Spirits">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -635,7 +627,7 @@
     </skill>
     <!-- Freya's Cruel Sentence. Verdict will be made after 10 seconds. -->
     <skill id="6280" levels="1" name="Announcement of Death">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -647,7 +639,6 @@
         <set name="effectRange" val="2000" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" landRate="100" stackLvl="1" stackType="death_clack" visualEffect="bleed">
                 <effect chanceType="ON_EXIT" triggeredId="6281" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -681,7 +672,7 @@
         </for>
     </skill>
     <skill id="6283" levels="1" name="Ice Storm">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -729,7 +720,7 @@
     </skill>
     <!-- Increase HP Recovery Bonus by 15% and P. Def. by 10% for 20 minutes. -->
     <skill id="6286" levels="1" name="Divine Protection of Sword">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -796,7 +787,7 @@
         </for>
     </skill>
     <skill id="6290" levels="1" name="Power Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -821,7 +812,7 @@
         <set name="elementPower" val="20" />
     </skill>
     <skill id="6292" levels="1" name="Rush">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -877,7 +868,7 @@
         </for>
     </skill>
     <skill id="6295" levels="1" name="Point Target">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="2500" />
@@ -886,7 +877,7 @@
         <set name="effectRange" val="1300" />
     </skill>
     <skill id="6296" levels="1" name="Rush">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -910,7 +901,7 @@
         </for>
     </skill>
     <skill id="6297" levels="1" name="Cylinder Throw">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -924,7 +915,7 @@
         <set name="elementPower" val="20" />
     </skill>
     <skill id="6298" levels="1" name="Summon Subordinate Knight">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />

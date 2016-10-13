@@ -14,7 +14,6 @@
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="4" duration="5" effectType="BLEED" landRate="90" stackLvl="10" stackType="bleeding"
                       visualEffect="bleed">
@@ -34,7 +33,6 @@
         <set name="effectRange" val="400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -54,7 +52,6 @@
         <set name="hitTime" val="1500" />
         <set name="skillRadius" val="600" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -135,7 +132,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Water resistance decreases. -->
     <skill id="5510" levels="1" name="Water Power">
@@ -145,7 +141,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Wind resistance decreases. -->
     <skill id="5511" levels="1" name="Wind Power">
@@ -155,7 +150,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Earth resistance decreases. -->
     <skill id="5512" levels="1" name="Earth Power">
@@ -165,7 +159,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="85" />
         <set name="hitTime" val="3330" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Continuously damaged by the fire attribute. -->
     <skill id="5513" levels="1" name="Fire Taint">
@@ -251,7 +244,6 @@
         <set name="hitTime" val="500" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- You have made the contract of arrogance with the devil. No one can stop you. -->
     <skill id="5524" levels="1" name="Chain Buff - Bow/Magic Resistance">
@@ -307,7 +299,6 @@
         <set name="hitTime" val="2000" />
         <set name="castRange" val="500" />
         <set name="effectRange" val="1000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Inflicts damage and Bleed on the target simultaneously. Effect 1. -->
     <skill id="5530" levels="12" name="Blood Storm">
@@ -318,7 +309,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="1000" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5531" levels="1" name="Presentation - Beleth Magic Skill 1">
         <set name="target" val="TARGET_NONE" />
@@ -539,7 +529,6 @@
         <set name="hitTime" val="2500" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5552" levels="12" name="Heal Up">
         <set name="target" val="TARGET_NONE" />
@@ -736,7 +725,7 @@
     </skill>
     <!-- The probability of Critical hit has been increased, and defense power has been decreased. -->
     <skill id="5565" levels="1" name="Expose Vulnerability">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -748,7 +737,6 @@
         <set name="effectRange" val="400" />
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="aggroPoints" val="671" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="expose_weak_point">
@@ -764,7 +752,7 @@
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
     <skill id="5567" levels="1" name="Flame Armor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -776,7 +764,7 @@
     </skill>
     <!-- Speed has been slowed down. -->
     <skill id="5568" levels="1" name="Frost Armor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -784,7 +772,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="80" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -794,7 +781,7 @@
     </skill>
     <!-- Attacking speed has been slowed down. -->
     <skill id="5569" levels="1" name="Hurricane Armor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -802,7 +789,6 @@
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -812,7 +798,8 @@
     </skill>
     <!-- Summoner's Wrath. -->
     <skill id="5570" levels="1" name="Excessive Loyalty">
-        <set name="target" val="TARGET_ALL_SUMMONS" />
+        <set name="target" val="TARGET_SUMMON" />
+        <set name="targetDirection" val="ALL_SUMMONS" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -962,7 +949,7 @@
     </skill>
     <!-- Bite ferociously with sharp teeth. -->
     <skill id="5580" levels="1" name="Divine Beast Bite">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -976,7 +963,7 @@
     </skill>
     <!-- Damages and stuns the target simultaneously. Over-hit is available. Power 704. -->
     <skill id="5581" levels="1" name="Divine Beast Stun Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1025,7 +1012,6 @@
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
         <set name="skillRadius" val="200" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="3" stackType="pa_down">
                 <effect type="Debuff" val="0" />
@@ -1042,7 +1028,6 @@
         <set name="mpConsume" val="55" />
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Scare the enemies with a mighty roar. Decrease the attacking speed and Casting Spd. -->
     <skill id="5585" levels="1" name="Strider Roar">
@@ -1053,7 +1038,6 @@
         <set name="mpConsume" val="55" />
         <set name="hitTime" val="1200" />
         <set name="reuseDelay" val="8000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Increases attacking power temporarily. Effect 1.
@@ -1204,7 +1188,7 @@
     <skill id="5591" levels="8" name="Light Flow">
         <table name="#magicLvl">60 62 64 66 68 70 72 74</table>
         <table name="#power">189 196 203 210 217 223 229 234</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_STATIC" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1215,7 +1199,7 @@
     <skill id="5592" levels="16" name="Lightning Barrier">
         <table name="#magicLvl">80 81 81 81 82 82 82 83 83 83 84 84 85 85 85 85</table>
         <table name="#power">80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1224,7 +1208,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="3" landRate="#power" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -1232,7 +1215,7 @@
         </for>
     </skill>
     <skill id="5593" levels="1" name="Vampiric Mana Burn">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1256,7 +1239,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- HP decreases from bleeding momentarily. Effect 11. -->
     <skill id="5595" levels="1" name="Bleed">
@@ -1264,11 +1246,10 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- HP decreases from flame momentarily. Effect 11. -->
     <skill id="5596" levels="1" name="Flame">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="95" />
@@ -1276,7 +1257,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="0" />
         <set name="elementPower" val="150" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" landRate="11" stackLvl="10" stackType="dot_attr" visualEffect="bleed">
                 <effect type="DamOverTime" val="200" />

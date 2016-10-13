@@ -2,7 +2,7 @@
 <list>
     <!-- Increases both M. Atk. and M. Def. to have more advanced magic ability increase effect. For 40 minutes, increases M. Atk. by 75% and M. Def. by 30%. -->
     <skill id="1500" levels="1" name="Improve Magic">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -25,7 +25,7 @@
     </skill>
     <!-- Combines Max HP increase and Max MP increase to have more advanced mental and physical power. For 40 minutes, increases Max HP by 35% and Max MP by 35%. -->
     <skill id="1501" levels="1" name="Improve Condition">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -48,7 +48,7 @@
     </skill>
     <!-- Combines Critical Rate increase and Critical Damage increase to have more advanced critical increase effect. For 40 minutes, increases Critical Rate by 30% and Critical Damage by 35%. -->
     <skill id="1502" levels="1" name="Improve Critical Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -71,7 +71,7 @@
     </skill>
     <!-- Combines Shield Defense rate increase and Shield Defense. increase to have more advanced shield ability increase effect. For 40 minutes, increases Shield Defense by 30% and Shield Defense by 50%. -->
     <skill id="1503" levels="1" name="Improve Shield Defense">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -94,7 +94,7 @@
     </skill>
     <!-- Combines Spd. increase and Evasion increase to have more advanced movement increase effect. For 40 minutes, increases Speed by 33 and Evasion by 4. -->
     <skill id="1504" levels="1" name="Improve Movement">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -141,7 +141,7 @@
     </skill>
     <!-- By casting Eva's blessing, it recovers HP/MP/CP, and cancels bad abnormal conditions by rate. -->
     <skill id="1506" levels="1" name="Blessing of Eva">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HPMPHEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -170,7 +170,7 @@
     </skill>
     <!-- For 30 sec., 80% of the standard melee damage inflicted on the enemy is recovered as HP with a certain probability. -->
     <skill id="1507" levels="1" name="Lord of Vampires">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -200,7 +200,6 @@
         <set name="reuseDelay" val="30000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="60" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -224,7 +223,8 @@
     <skill id="1509" levels="6" name="Seal of Limit">
         <table name="#limit">20 30 40 50 60 70</table>
         <table name="#mpConsume">90 130 252 278 306 332</table>
-        <set name="target" val="TARGET_PVP_AREA" />
+         <set name="target" val="TARGET_AROUND_TARGET" />
+         <set name="targetDirection" val="PLAYER" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -237,7 +237,6 @@
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="3" stackType="limit">
                 <subPercent stat="gainHpLimit" val="#limit" />
@@ -251,7 +250,7 @@
         <table name="#magicLvl">60 62 64 66 68 70 72 74</table>
         <table name="#mpConsume">34 35 37 38 39 39 40 42</table>
         <table name="#triggeredLevel">1 2 3 4 5 6 7 8</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -263,7 +262,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal activationMinDamage="100" duration="30" landRate="70" stackLvl="#triggeredLevel"
                       stackType="curse_life_flow" visualEffect="poison">
@@ -274,7 +272,7 @@
     </skill>
     <!-- Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 112 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. -->
     <skill id="1512" levels="1" name="Soul Vortex">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -288,7 +286,6 @@
         <set name="effectRange" val="1400" />
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <set name="soulMaxConsumeCount" val="5" />
         <for>
             <abnormal count="10" duration="3" landRate="80" stackLvl="1" stackType="multi_debuff_soul">
@@ -301,7 +298,7 @@
     </skill>
     <!-- Detonates an Soul Vortex to inflict non-attribute damage on the enemy with 195 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
     <skill id="1513" levels="1" name="Soul Vortex Extinction">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -371,7 +368,7 @@
     </skill>
     <!-- Consecutively throws souls to inflict non-attribute damage on the enemy using 166 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
     <skill id="1516" levels="1" name="Soul Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -514,7 +511,7 @@
             2000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000
             1000 1000 1000 1000
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -540,7 +537,7 @@
         <table name="#mpConsume">39 39 41 42 43 44 44 46 47 48 49 49 51 52 53 54 55 56 57 58 59 60 61 62 63 64 64 66 67
             67 68 69 69 70 71 72 73 73 73 74 74 75
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -553,7 +550,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="armor_holy">
                 <effect type="Debuff" val="0" />
@@ -582,7 +578,7 @@
         <table name="#mpConsume">39 40 42 43 44 44 45 47 48 49 49 50 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67
             68 69 69 70 70 72 73 73 73 74 74 75 75
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -596,7 +592,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="4" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="120" landRate="80" stackLvl="1" stackType="heal_effect_down">
                 <effect type="DamOverTime" val="#dot" />
@@ -716,7 +711,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="60" stackLvl="2" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -743,7 +737,7 @@
         <table name="#mpConsume">23 27 30 35 36 38 40 41 43 45 46 47 50</table>
         <table name="#magicLvl">44 48 52 56 58 60 62 64 66 68 70 72 74</table>
         <table name="#power">35 39 43 47 49 51 53 56 58 59 61 63 65</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -940,7 +934,7 @@
         <table name="#mpConsume">18 24 29 33</table>
         <table name="#vuln">16 24 32 40</table>
         <table name="#abnormalLvl">1 2 3 4</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -987,7 +981,7 @@
     </skill>
     <!-- Inflicts the Curse of Desparion, momentarily decreasing enemy Speed, Accuracy, P. Atk. and Atk. Spd. -->
     <skill id="1541" levels="1" name="Curse of Desparion">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -999,7 +993,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="80" stackLvl="1" stackType="ultimate_debuff">
                 <effect type="Debuff" val="0" />
@@ -1012,7 +1005,7 @@
     </skill>
     <!-- For 20 minutes, increases the target's P. Def. against Critical by 30%. When the target receives an attack above a certain amount of damage, increases Critical Damage of standard melee attack for 8 seconds. -->
     <skill id="1542" levels="1" name="Counter Critical">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1068,7 +1061,7 @@
     </skill>
     <!-- Continuously absorbs the enemy's soul. -->
     <skill id="1545" levels="1" name="Soul Sucking">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1079,7 +1072,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="num_souls" val="1" />
-        <set name="saveVs" val="WIT" />
         <for>
             <abnormal count="15" landRate="80">
                 <effect type="DamOverTime" val="1" />
@@ -1095,7 +1087,6 @@
         <set name="mpConsume" val="50" />
         <set name="hitTime" val="4000" />
         <set name="reuseDelay" val="5000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: For 20 minutes, increases P. Atk. by 3%, M. Atk. by 3%, Skill Power by 5%, Atk. Spd. by 2%, Casting Spd. by 1%, and Critical Rate by 5%. The master's abilities are extended to the servitor.
@@ -1142,7 +1133,7 @@
         <table name="#mpConsume">27 35 39</table>
         <table name="#vuln">10 15 20</table>
         <table name="#abnormalLvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1235,7 +1226,7 @@
     </skill>
     <!-- Recovers the target and the 10 most injured allies around the target by 30% of their Max HP. The recovery amount decreases starting from the most injured person. Requires 4 Spirit Ore. -->
     <skill id="1553" levels="1" name="Chain Heal">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CHAIN_HEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1275,7 +1266,7 @@
     </skill>
     <!-- Inflicts non-attribute damage on the enemy with 178 Power added to M. Atk. and recovers MP. Inflicts additional non-attribute damage with 124 Power if the target is a monster. -->
     <skill id="1555" levels="1" name="Aura Cannon">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1372,7 +1363,7 @@
         <table name="#magicLvl">40 44 48 52 56 58 60 62 64 66 68 70 72 74 76 77 78 79 80 81 82 83 84 85</table>
         <table name="#pvpPower">57 58 60 61 63 66 68 71 74 77 79 82 84 87 89 90 91 92 93 94 95 96 97 98</table>
         <table name="#power">57 58 60 61 63 66 68 71 74 77 79 82 89 94 100 104 110 115 139 152 166 179 193 207</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1412,7 +1403,7 @@
     </skill>
     <!-- Attacks the target's vital points with 11234 Power added to P. Atk., causing a Spoiled state. Lethal strike, half Kill, critical hit, and over-hit are possible. Requires a dual dagger. -->
     <skill id="1560" levels="1" name="Lucky Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="83" />

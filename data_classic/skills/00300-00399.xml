@@ -329,7 +329,7 @@
         <table name="#mpConsume">116 119 121 122 124 126 129 131 133 135 138 140 142 144 146 148</table>
         <table name="#magicLvl">59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74</table>
         <table name="#power">2908 3030 3154 3280 3408 3537 3668 3800 3933 4067 4201 4336 4470 4604 4738 4870</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="FATAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -365,7 +365,7 @@
         <table name="#power">4558 4750 4944 5142 5342 5545 5751 5958 6166 6376 6586 6797 7008 7218 7427 7635</table>
         <table name="#magicLvl">59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74</table>
         <table name="#hpConsume">208 212 212 217 221 225 229 233 237 240 244 248 251 255 258 261</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -505,7 +505,7 @@
         <table name="#mpConsume">63 64 65 66 67 68 69 70 71 72</table>
         <table name="#magicLvl">65 66 67 68 69 70 71 72 73 74</table>
         <table name="#power">2751 2850 2950 3050 3151 3252 3353 3453 3553 3653</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -555,7 +555,7 @@
     </skill>
     <!-- Uses 15005 Power to attack a castle's gate. Can be used while mounted on a Strider. Consumes 5 Spirit Ore. -->
     <skill id="325" levels="1" name="Strider Siege Assault">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="STRSIEGEASSAULT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="itemConsumeId" val="3031" />
@@ -782,7 +782,7 @@
     </skill>
     <!-- Gives a divine blessing by sacrificing oneself. Restores HP by 50%, and for 2 minutes, increases Buff-canceling Attack Resistance by 100%, Debuff Resistance by 30%, and the Healing power received by 30%. Restores 50 HP every second. -->
     <skill id="341" levels="1" name="Touch of Life">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="78" />
@@ -814,7 +814,7 @@
     </skill>
     <!-- Sacrifices oneself to pronounce an Dark curse on the enemy. Cancels up to 5 buffs with 25% probability and consumes 90% CP. For 2 minutes, decreases Max CP by 90% and the Healing power received by 30%. Increases susceptibility to de-buff by 30%. -->
     <skill id="342" levels="1" name="Touch of Death">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="78" />
@@ -827,7 +827,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="maxNegated" val="5" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="120" landRate="80" stackLvl="1" stackType="touch_of_death">
                 <effect type="Debuff" val="0" />
@@ -845,7 +844,7 @@
     </skill>
     <!-- Shoots an arrow that is aimed at a vital spot. Attacks the enemy with 7698 Power added to P. Atk. Requires a bow. Over-hit, Half-Kill, and Critical are possible. -->
     <skill id="343" levels="1" name="Lethal Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="76" />
@@ -863,7 +862,7 @@
     </skill>
     <!-- Attacks the target's vital points with 5773 Power added to P. Atk. Requires a dagger. Over-hit and Half-kill are possible. -->
     <skill id="344" levels="1" name="Lethal Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="76" />
@@ -899,7 +898,7 @@
     <skill id="345" levels="12" name="Sonic Rage">
         <table name="#power">0 205 215 225 551 565 598 630 662 693 725 757</table>
         <table name="#mpConsume">50 55 56 57 58 59 61 63 65 67 69 71</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="#mpConsume" />
@@ -937,7 +936,7 @@
     <skill id="346" levels="12" name="Raging Force">
         <table name="#power">0 205 215 225 551 565 598 630 662 693 725 757</table>
         <table name="#mpConsume">50 55 56 57 58 59 61 63 65 67 69 71</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="#mpConsume" />
@@ -986,7 +985,7 @@
     </skill>
     <!-- Causes a change inside the monster while attacking the enemy and permits use of the Sweeper skill. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible. -->
     <skill id="348" levels="1" name="Spoil Crush">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="76" />
@@ -1073,7 +1072,7 @@
     </skill>
     <!-- Attacks the enemy with shield, stunning them for 2 seconds. Requires a shield. Target cancel is possible. -->
     <skill id="352" levels="1" name="Shield Bash">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="77" />
@@ -1086,7 +1085,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Shield" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="2" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1096,7 +1094,7 @@
     </skill>
     <!-- Attacks the enemy with shield, blocking the enemy's physical skills for 1 minute. Requires a shield. Target cancel is possible. -->
     <skill id="353" levels="1" name="Shield Slam">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="77" />
@@ -1109,7 +1107,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Shield" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="40" stackLvl="1" stackType="silence_physical">
                 <effect type="PhysicalMute" val="0" />
@@ -1121,7 +1118,7 @@
     </skill>
     <!-- Shoots an arrow at the enemy with 1973 Power added to P. Atk., and decreases the enemy's Speed by 30% for 1 minute. Requires a bow. Over-hit and Critical are possible. -->
     <skill id="354" levels="1" name="Hamstring Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="77" />
@@ -1137,7 +1134,6 @@
         <set name="overHit" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Bow" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" effectType="DEBUFF" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -1233,7 +1229,7 @@
     </skill>
     <!-- Deceives the enemy into turning his back, losing his urge to attack and becoming stunned for 9 seconds. Requires a dagger. Target cancel is possible. -->
     <skill id="358" levels="1" name="Bluff">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="AGGREDUCE_CHAR" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="77" />
@@ -1245,7 +1241,6 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Dagger, Dual Dagger" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="40" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1316,7 +1311,6 @@
         <set name="ignoreShld" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Pole" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="8" effectType="STUN" landRate="40" stackLvl="2" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1330,7 +1324,7 @@
     </skill>
     <!-- Attacks the enemy with 3077 Power added to P. Atk., inflicting Stun for 9 seconds and decreasing their P. Def. by 30% and M. Def. by 30%. Requires a sword, blunt weapon, two-handed sword, or two-handed blunt weapon to be equipped. Over-hit and Critical are possible. Ignores Shield Defense. -->
     <skill id="362" levels="1" name="Armor Crush">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="77" />
@@ -1350,7 +1344,6 @@
         <set name="ignoreShld" val="true" />
         <set name="isDebuff" val="true" />
         <set name="weaponsAllowed" val="Sword, Blunt, Big Blunt, Big Sword" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="40" stackLvl="2" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1460,7 +1453,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="3" />
         <set name="weaponsAllowed" val="Dual Sword" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" effectType="DEBUFF" landRate="50" stackLvl="1" stackType="medusa">
                 <effect type="Petrification" val="0" />
@@ -1493,7 +1485,7 @@
     </skill>
     <!-- Attacks the enemy with 2020 Power added to P. Atk. and increases Evasion by 6 for 30 seconds. Requires a bow. Over-hit is possible. -->
     <skill id="369" levels="1" name="Evade Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="78" />

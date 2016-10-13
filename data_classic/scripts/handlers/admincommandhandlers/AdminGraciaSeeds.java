@@ -13,81 +13,84 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.admincommandhandlers;
 
-import java.util.Calendar;
-import java.util.StringTokenizer;
+package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GraciaSeedsManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
+import java.util.Calendar;
+import java.util.StringTokenizer;
+
 public class AdminGraciaSeeds implements IAdminCommandHandler
 {
-    private static final String[] ADMIN_COMMANDS = {"admin_gracia_seeds", "admin_kill_tiat", "admin_set_sodstate"};
+	private static final String[] ADMIN_COMMANDS = {"admin_gracia_seeds", "admin_kill_tiat", "admin_set_sodstate"};
 
-    /**
-     * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
-     */
-    public boolean useAdminCommand(String command, L2PcInstance activeChar)
-    {
-        StringTokenizer st = new StringTokenizer(command, " ");
-        String actualCommand = st.nextToken(); // Get actual command
+	/**
+	 * @see IAdminCommandHandler#useAdminCommand(String, L2PcInstance)
+	 */
+	@Override
+	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	{
+		StringTokenizer st = new StringTokenizer(command, " ");
+		String actualCommand = st.nextToken(); // Get actual command
 
-        String val = "";
-        if (st.countTokens() >= 1)
-        {
-            val = st.nextToken();
-        }
+		String val = "";
+		if (st.countTokens() >= 1)
+		{
+			val = st.nextToken();
+		}
 
-        if (actualCommand.equalsIgnoreCase("admin_kill_tiat"))
-        {
-            GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
-        }
-        else if (actualCommand.equalsIgnoreCase("admin_set_sodstate"))
-        {
-            GraciaSeedsManager.getInstance().setSoDState(Integer.parseInt(val), true);
-        }
+		if (actualCommand.equalsIgnoreCase("admin_kill_tiat"))
+		{
+			GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
+		}
+		else if (actualCommand.equalsIgnoreCase("admin_set_sodstate"))
+		{
+			GraciaSeedsManager.getInstance().setSoDState(Integer.parseInt(val), true);
+		}
 
-        showMenu(activeChar);
-        return true;
-    }
+		showMenu(activeChar);
+		return true;
+	}
 
-    private void showMenu(L2PcInstance activeChar)
-    {
-        NpcHtmlMessage html = new NpcHtmlMessage(0);
-        html.setFile(activeChar.getHtmlPrefix(), "admin/graciaseeds.htm");
-        html.replace("%sodstate%", String.valueOf(GraciaSeedsManager.getInstance().getSoDState()));
-        html.replace("%sodtiatkill%", String.valueOf(GraciaSeedsManager.getInstance().getSoDTiatKilled()));
-        if (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() > 0)
-        {
-            Calendar nextChangeDate = Calendar.getInstance();
-            nextChangeDate.setTimeInMillis(System.currentTimeMillis() + GraciaSeedsManager.getInstance()
-                    .getSoDTimeForNextStateChange());
-            html.replace("%sodtime%", nextChangeDate.getTime().toString());
-        }
-        else
-        {
-            html.replace("%sodtime%", "-1");
-        }
-        activeChar.sendPacket(html);
-    }
+	private void showMenu(L2PcInstance activeChar)
+	{
+		NpcHtmlMessage html = new NpcHtmlMessage(0);
+		html.setFile(activeChar.getHtmlPrefix(), "admin/graciaseeds.htm");
+		html.replace("%sodstate%", String.valueOf(GraciaSeedsManager.getInstance().getSoDState()));
+		html.replace("%sodtiatkill%", String.valueOf(GraciaSeedsManager.getInstance().getSoDTiatKilled()));
+		if (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() > 0)
+		{
+			Calendar nextChangeDate = Calendar.getInstance();
+			nextChangeDate.setTimeInMillis(
+					System.currentTimeMillis() + GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange());
+			html.replace("%sodtime%", nextChangeDate.getTime().toString());
+		}
+		else
+		{
+			html.replace("%sodtime%", "-1");
+		}
+		activeChar.sendPacket(html);
+	}
 
-    /**
-     * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
-     */
-    public String[] getAdminCommandList()
-    {
-        return ADMIN_COMMANDS;
-    }
+	/**
+	 * @see IAdminCommandHandler#getAdminCommandList()
+	 */
+	@Override
+	public String[] getAdminCommandList()
+	{
+		return ADMIN_COMMANDS;
+	}
 }

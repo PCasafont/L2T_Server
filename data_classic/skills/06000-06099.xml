@@ -180,7 +180,7 @@
     </skill>
     <!-- Target cannot move until the match starts. -->
     <skill id="6034" levels="1" name="Freeze">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -225,7 +225,7 @@
     </skill>
     <!-- Charges the enemy and inflicts damage. -->
     <skill id="6041" levels="1" name="Phoenix Rush">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -249,7 +249,7 @@
     </skill>
     <!-- Cancels the target's de-buff. -->
     <skill id="6042" levels="1" name="Phoenix Cleanse">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL_DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -279,7 +279,7 @@
     </skill>
     <!-- Attacks the enemy with a powerful beak. Power 2156. -->
     <skill id="6044" levels="1" name="Phoenix Flame Beak">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="81" />
@@ -306,7 +306,7 @@
         <table name="#magicLvl">10 20 30 40 50 60 70 72 74 76 77 78 79 80</table>
         <table name="#power">136 313 655 1248 2163 3407 4877 5179 5478 5772 5917 6059 6198 6334</table>
         <table name="#mpConsume">13 20 28 38 50 61 71 73 75 77 78 78 79 80</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -377,7 +377,7 @@
         <table name="#magicLvl">10 20 30 40 50 60 70 72 74 76 77 78 79 80</table>
         <table name="#power">136 313 655 1248 2163 3407 4877 5179 5478 5772 5917 6059 6198 6334</table>
         <table name="#mpConsume">13 20 28 38 50 61 71 73 75 77 78 78 79 80</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -408,7 +408,7 @@
         <table name="#magicLvl">10 20 30 40 50 60 70 72 74 76 77 78 79 80</table>
         <table name="#power">17 25 37 51 67 84 101 104 107 110 111 113 114 115</table>
         <table name="#mpConsume">24 39 53 70 90 110 130 133 137 139 140 143 144 145</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -683,7 +683,7 @@
     </skill>
     <!-- The target is paralyzed. -->
     <skill id="6090" levels="1" name="Lightning Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="nextActionAttack" val="true" />
@@ -697,7 +697,7 @@
     </skill>
     <!-- The target is paralyzed. -->
     <skill id="6091" levels="1" name="Anchor">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isDebuff" val="true" />
@@ -710,7 +710,7 @@
     </skill>
     <!-- The target is paralyzed. -->
     <skill id="6092" levels="1" name="Lightning Shock">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isDebuff" val="true" />
@@ -743,7 +743,7 @@
     <!-- Cancels multiple enemy buffs. -->
     <skill id="6094" levels="11" name="Panther Cancel">
         <table name="#magicLvl">68 72 76 78 79 80 81 82 83 84 85</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -775,7 +775,7 @@
     <skill id="6095" levels="15" name="Panther Dark Claw">
         <table name="#magicLvl">42 51 60 64 68 72 76 78 79 80 81 82 83 84 85</table>
         <table name="#power">469 758 1136 1327 1525 1727 1925 2020 2067 2112 2156 2200 2241 2282 2320</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -790,7 +790,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="5" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="3" stackType="armor_unholy">
                 <effect type="Debuff" val="0" />
@@ -816,7 +815,7 @@
     <skill id="6096" levels="13" name="Panther Fatal Claw">
         <table name="#magicLvl">60 64 68 72 76 78 79 80 81 82 83 84 85</table>
         <table name="#power">3408 3980 4575 5180 5773 6060 6199 6335 6468 6598 6723 6844 6960</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />

@@ -1,0 +1,2384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28000" type="Weapon" name="Ultimate Eternal Tunic - Robe / lv6" icon="BranchIcon.icon.armor_t813_u_i01"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28001" type="Weapon" name="Ultimate Eternal Stockings - Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_l_i01" bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28002" type="Weapon" name="Ultimate Eternal Gloves - Robe / lv6" icon="BranchIcon.icon.armor_t813_g_i01"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28003" type="Weapon" name="Ultimate Eternal Shoes - Robe / lv6" icon="BranchIcon.icon.armor_t813_b_i01"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28004" type="Weapon" name="Ultimate Eternal Helmet - Attack Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28005" type="Weapon" name="Ultimate Eternal Breatplate - Attack Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="498" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28006" type="Weapon" name="Ultimate Eternal Gaiters - Attack Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="311" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28007" type="Weapon" name="Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28008" type="Weapon" name="Ultimate Eternal Boots - Attack Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28009" type="Weapon" name="Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28010" type="Weapon" name="Ultimate Eternal Leather Armor - Assassin Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="398" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28011" type="Weapon" name="Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="249" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28012" type="Weapon" name="Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28013" type="Weapon" name="Ultimate Eternal Leather Boots - Assassin Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28014" type="Weapon" name="Ultimate Eternal Circlet - Magic Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28015" type="Weapon" name="Ultimate Eternal Tunic - Magic Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28016" type="Weapon" name="Ultimate Eternal Stockings - Magic Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28017" type="Weapon" name="Ultimate Eternal Gloves - Magic Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28018" type="Weapon" name="Ultimate Eternal Shoes - Magic Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28019" type="Weapon" name="Ultimate Eternal Helmet - Defense Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28020" type="Weapon" name="Ultimate Eternal Breatplate - Defense Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="498" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28021" type="Weapon" name="Ultimate Eternal Gaiters - Defense Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="311" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28022" type="Weapon" name="Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28023" type="Weapon" name="Ultimate Eternal Boots - Defense Type / Heavy Armor / lv6"
+          icon="BranchIcon.icon.armor_t811_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28024" type="Weapon" name="Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28025" type="Weapon" name="Ultimate Eternal Leather Armor - Enchant Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="398" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28026" type="Weapon" name="Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="249" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28027" type="Weapon" name="Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28028" type="Weapon" name="Ultimate Eternal Leather Boots - Enchant Type / Light Armor / lv6"
+          icon="BranchIcon.icon.armor_t812_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28029" type="Weapon" name="Ultimate Eternal Circlet - Recovery Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28030" type="Weapon" name="Ultimate Eternal Tunic - Recovery Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28031" type="Weapon" name="Ultimate Eternal Stockings - Recovery Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28032" type="Weapon" name="Ultimate Eternal Gloves - Recovery Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28033" type="Weapon" name="Ultimate Eternal Shoes - Recovery Type / Robe / lv6"
+          icon="BranchIcon.icon.armor_t813_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28034" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28035" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="451" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28036" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="282" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28037" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28038" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28039" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28040" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="361" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28041" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="226" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28042" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28043" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28044" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28045" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="248" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28046" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="155" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28047" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28048" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28049" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28050" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="451" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28051" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="282" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28052" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28053" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28054" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28055" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="361" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28056" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="226" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28057" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28058" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28059" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28060" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="248" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28061" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="155" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28062" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28063" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28064" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28065" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="451" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28066" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="282" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28067" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28068" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28069" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28070" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="361" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28071" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="226" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28072" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28073" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 1"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28074" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="169" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28075" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="248" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28076" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="155" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28077" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28078" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 1"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="113" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28079" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28080" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="460" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28081" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="288" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28082" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28083" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28084" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28085" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="368" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28086" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="230" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28087" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28088" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28089" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28090" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="253" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28091" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="158" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28092" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28093" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28094" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28095" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="460" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28096" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="288" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28097" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28098" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28099" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28100" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="368" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28101" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="230" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28102" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28103" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28104" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28105" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="253" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28106" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="158" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28107" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28108" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28109" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28110" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="460" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28111" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="288" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28112" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28113" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28114" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28115" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="368" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28116" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="230" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28117" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28118" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 2"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28119" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="173" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28120" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="253" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28121" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="158" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28122" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28123" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 2"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="115" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28124" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28125" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="469" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28126" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="293" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28127" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28128" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28129" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28130" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="375" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28131" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="234" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28132" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28133" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28134" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28135" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="258" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28136" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="161" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28137" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28138" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28139" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28140" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="469" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28141" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="293" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28142" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28143" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28144" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28145" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="375" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28146" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="234" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28147" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28148" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28149" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28150" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="258" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28151" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="161" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28152" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28153" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28154" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28155" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="469" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28156" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="293" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28157" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28158" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28159" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28160" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="375" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28161" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="234" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28162" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28163" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 3"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28164" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="176" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28165" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="258" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28166" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="161" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28167" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28168" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 3"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="117" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28169" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28170" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="479" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28171" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="299" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28172" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28173" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28174" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28175" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="383" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28176" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="239" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28177" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28178" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28179" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28180" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="263" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28181" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="164" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28182" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28183" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28184" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28185" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="479" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28186" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="299" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28187" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28188" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28189" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28190" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="383" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28191" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="239" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28192" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28193" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28194" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28195" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="263" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28196" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="164" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28197" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28198" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28199" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28200" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="479" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28201" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="299" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28202" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28203" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28204" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28205" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="383" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28206" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="239" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28207" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28208" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 4"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28209" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="180" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28210" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="263" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28211" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="164" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28212" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28213" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 4"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="120" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28214" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28215" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="488" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28216" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="305" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28217" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28218" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28219" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28220" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="390" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28221" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="244" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28222" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28223" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28224" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28225" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="268" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28226" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="168" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28227" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28228" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28229" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28230" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="488" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28231" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="305" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28232" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28233" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28234" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28235" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="390" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28236" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="244" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28237" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28238" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28239" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28240" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="268" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28241" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="168" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28242" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28243" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28244" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28245" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="488" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28246" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="305" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28247" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28248" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28249" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28250" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="390" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28251" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="244" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28252" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28253" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 5"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28254" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="183" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28255" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="268" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28256" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="168" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28257" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28258" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 5"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="122" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28259" type="Weapon" name="Transcendent Eternal Helmet - Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28260" type="Weapon" name="Transcendent Eternal Breatplate - Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="498" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28261" type="Weapon" name="Transcendent Eternal Gaiters - Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="311" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28262" type="Weapon" name="Transcendent Eternal Gauntlets - Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28263" type="Weapon" name="Transcendent Eternal Boots - Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28264" type="Weapon" name="Transcendent Eternal Leather Helmet - Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28265" type="Weapon" name="Transcendent Eternal Leather Armor - Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="398" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28266" type="Weapon" name="Transcendent Eternal Leather Leggings - Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="249" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28267" type="Weapon" name="Transcendent Eternal Leather Gloves - Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28268" type="Weapon" name="Transcendent Eternal Leather Boots - Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28269" type="Weapon" name="Transcendent Eternal Circlet - Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28270" type="Weapon" name="Transcendent Eternal Tunic - Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28271" type="Weapon" name="Transcendent Eternal Stockings - Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28272" type="Weapon" name="Transcendent Eternal Gloves - Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28273" type="Weapon" name="Transcendent Eternal Shoes - Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28274" type="Weapon" name="Transcendent Eternal Helmet - Attack Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28275" type="Weapon" name="Transcendent Eternal Breatplate - Attack Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="498" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28276" type="Weapon" name="Transcendent Eternal Gaiters - Attack Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="311" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28277" type="Weapon" name="Transcendent Eternal Gauntlets - Attack Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
+    <item id="28278" type="Weapon" name="Transcendent Eternal Boots - Attack Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
+    <item id="28279" type="Weapon" name="Transcendent Eternal Leather Helmet - Assassin Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
+    <item id="28280" type="Weapon" name="Transcendent Eternal Leather Armor - Assassin Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="398" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
+    <item id="28281" type="Weapon" name="Transcendent Eternal Leather Leggings - Assassin Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="249" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28282" type="Weapon" name="Transcendent Eternal Leather Gloves - Assassin Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
+    <item id="28283" type="Weapon" name="Transcendent Eternal Leather Boots - Assassin Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28284" type="Weapon" name="Transcendent Eternal Circlet - Magic Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28285" type="Weapon" name="Transcendent Eternal Tunic - Magic Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28286" type="Weapon" name="Transcendent Eternal Stockings - Magic Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28287" type="Weapon" name="Transcendent Eternal Gloves - Magic Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
+    <item id="28288" type="Weapon" name="Transcendent Eternal Shoes - Magic Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
+    <item id="28289" type="Weapon" name="Transcendent Eternal Helmet - Defense Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
+    <item id="28290" type="Weapon" name="Transcendent Eternal Breatplate - Defense Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="498" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
+    <item id="28291" type="Weapon" name="Transcendent Eternal Gaiters - Defense Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="311" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28292" type="Weapon" name="Transcendent Eternal Gauntlets - Defense Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
+    <item id="28293" type="Weapon" name="Transcendent Eternal Boots - Defense Type / Heavy Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t801_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28294" type="Weapon" name="Transcendent Eternal Leather Helmet - Enchant Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_leather_helmet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28295" type="Weapon" name="Transcendent Eternal Leather Armor - Enchant Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="398" />
+        <baseAdd stat="rEvas" val="5" />
+        <baseAdd stat="mEvasRate" val="5" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28296" type="Weapon" name="Transcendent Eternal Leather Leggings - Enchant Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="249" />
+        <baseAdd stat="rEvas" val="3" />
+        <baseAdd stat="mEvasRate" val="3" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28297" type="Weapon" name="Transcendent Eternal Leather Gloves - Enchant Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
+    <item id="28298" type="Weapon" name="Transcendent Eternal Leather Boots - Enchant Type / Light Armor / Lv. 6"
+          icon="BranchIcon.icon.armor_t802_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
+    <item id="28299" type="Weapon" name="Transcendent Eternal Circlet - Recovery Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_circlet_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="187" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
+    <item id="28300" type="Weapon" name="Transcendent Eternal Tunic - Recovery Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_u_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="274" />
+        <baseAdd stat="mDef" val="56" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
+    <item id="28301" type="Weapon" name="Transcendent Eternal Stockings - Recovery Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_l_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="171" />
+        <baseAdd stat="mDef" val="37" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28302" type="Weapon" name="Transcendent Eternal Gloves - Recovery Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_g_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
+    <item id="28303" type="Weapon" name="Transcendent Eternal Shoes - Recovery Type / Robe / Lv. 6"
+          icon="BranchIcon.icon.armor_t803_b_i01"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="125" />
+    </item>
+    <!-- M. Def. + 30%, Dark Resistance + 100, SRT/INT + 5, Critical Damage + 18%. Effect does not stack with additional rings. -->
+    <item id="28304" type="Weapon" name="Shilen's Ring" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel" weight="0"
+          crystal_type="none">
+        <baseAdd stat="mDef" val="146" />
+    </item>
+    <item id="28305" type="Weapon" name="Shilen's Ring - Not Used - Stage 2" icon="icon.ring_earthworm_heart"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="167" />
+    </item>
+    <item id="28306" type="Weapon" name="Shilen's Ring - Stage 3" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="187" />
+    </item>
+    <!-- Main ingredient for making Shilen's Ring. -->
+    <item id="28307" type="Weapon" name="Shilen's Ring Fragment" icon="icon.etc_r991_ring_piece" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- M. Def. + 60%, Dark Resistance + 120, SRT/INT + 7, Physical/Mind attack success rate + 25. Effect does not stack with additional rings. -->
+    <item id="28308" type="Weapon" name="Shilen's Necklace - Not Used" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="292" />
+    </item>
+    <item id="28309" type="Weapon" name="Shilen's Necklace - Not Used - Stage 2"
+          icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="333" />
+    </item>
+    <item id="28310" type="Weapon" name="Shilen's Necklace - Not Used - Stage 3"
+          icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="374" />
+    </item>
+    <!-- Main ingredient for making Shilen's Necklace. -->
+    <item id="28311" type="Weapon" name="Shilen's Necklace Fragment" icon="icon.etc_r991_necklace_piece" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- M. Def. + 50%, Dark Resistance + 110, SRT/INT + 6, Physical/Mind Resistance + 30, Speed + 10. Effect does not stack with additional rings. -->
+    <item id="28312" type="Weapon" name="Shilen's Earring" icon="icon.accessory_earring_of_lind_i00" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="219" />
+    </item>
+    <item id="28313" type="Weapon" name="Shilen's Earring - Not Used - Stage 2"
+          icon="icon.accessory_earring_of_lind_i00" bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="250" />
+    </item>
+    <item id="28314" type="Weapon" name="Shilen's Earring - Not Used - Stage 3"
+          icon="icon.accessory_earring_of_lind_i00" bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="280" />
+    </item>
+    <!-- Main ingredient for making Shilen's Earring. -->
+    <item id="28315" type="Weapon" name="Shilen's Earring Fragment" icon="icon.etc_r991_earring_piece" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Enchant scroll exclusive to Shilen's Ring. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
+    <item id="28316" type="Weapon" name="Scroll: Shilen's Ring" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Enchant scroll exclusive to Shilen's Necklace. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
+    <item id="28317" type="Weapon" name="Scroll: Shilen's Necklace" icon="icon.g_scrl_of_ench_wolf_shirt"
+          bodypart="none" material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Enchant scroll exclusive to Shilen's Earring. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
+    <item id="28318" type="Weapon" name="Scroll: Shilen's Earring" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 1. -->
+    <item id="28319" type="Weapon" name="Gran Kain's Necklace - Stage 1" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 2. -->
+    <item id="28320" type="Weapon" name="Gran Kain's Necklace - Stage 2" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 3. -->
+    <item id="28321" type="Weapon" name="Gran Kain's Necklace - Stage 3" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 4. -->
+    <item id="28322" type="Weapon" name="Gran Kain's Necklace - Stage 4" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 5. -->
+    <item id="28323" type="Weapon" name="Gran Kain's Necklace - Stage 5" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Grankain's Necklace Stage 6. -->
+    <item id="28324" type="Weapon" name="Gran Kain's Necklace - Stage 6" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 1. -->
+    <item id="28325" type="Weapon" name="Einhasad's Necklace - Stage 1" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 2. -->
+    <item id="28326" type="Weapon" name="Einhasad's Necklace - Stage 2" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 3. -->
+    <item id="28327" type="Weapon" name="Einhasad's Necklace - Stage 3" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 4. -->
+    <item id="28328" type="Weapon" name="Einhasad's Necklace - Stage 4" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 5. -->
+    <item id="28329" type="Weapon" name="Einhasad's Necklace - Stage 5" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Einhasad's Necklace Stage 6. -->
+    <item id="28330" type="Weapon" name="Einhasad's Necklace - Stage 6" icon="icon.accessory_necklace_of_valakas_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 1. -->
+    <item id="28331" type="Weapon" name="Pa'agrio's Earring - Stage 1" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 2. -->
+    <item id="28332" type="Weapon" name="Pa'agrio's Earring - Stage 2" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 3. -->
+    <item id="28333" type="Weapon" name="Pa'agrio's Earring - Stage 3" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 4. -->
+    <item id="28334" type="Weapon" name="Pa'agrio's Earring - Stage 4" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 5. -->
+    <item id="28335" type="Weapon" name="Pa'agrio's Earring - Stage 5" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Pa'agrio's Earring Stage 6. -->
+    <item id="28336" type="Weapon" name="Pa'agrio's Earring - Stage 6" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 1. -->
+    <item id="28337" type="Weapon" name="Eva's Earring - Stage 1" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 2. -->
+    <item id="28338" type="Weapon" name="Eva's Earring - Stage 2" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 3. -->
+    <item id="28339" type="Weapon" name="Eva's Earring - Stage 3" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 4. -->
+    <item id="28340" type="Weapon" name="Eva's Earring - Stage 4" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 5. -->
+    <item id="28341" type="Weapon" name="Eva's Earring - Stage 5" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Eva's Earring Stage 6. -->
+    <item id="28342" type="Weapon" name="Eva's Earring - Stage 6" icon="icon.accessory_earring_of_lind_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 1. -->
+    <item id="28343" type="Weapon" name="Sayha's Ring - Stage 1" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 2. -->
+    <item id="28344" type="Weapon" name="Sayha's Ring - Stage 2" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 3. -->
+    <item id="28345" type="Weapon" name="Sayha's Ring - Stage 3" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 4. -->
+    <item id="28346" type="Weapon" name="Sayha's Ring - Stage 4" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 5. -->
+    <item id="28347" type="Weapon" name="Sayha's Ring - Stage 5" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Sayha's Ring Stage 6. -->
+    <item id="28348" type="Weapon" name="Sayha's Ring - Stage 6" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 1. -->
+    <item id="28349" type="Weapon" name="Maphr's Ring - Stage 1" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 2. -->
+    <item id="28350" type="Weapon" name="Maphr's Ring - Stage 2" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 3. -->
+    <item id="28351" type="Weapon" name="Maphr's Ring - Stage 3" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 4. -->
+    <item id="28352" type="Weapon" name="Maphr's Ring - Stage 4" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 5. -->
+    <item id="28353" type="Weapon" name="Maphr's Ring - Stage 5" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain Maphr's Ring Stage 6. -->
+    <item id="28354" type="Weapon" name="Maphr's Ring - Stage 6" icon="icon.ring_earthworm_heart" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain either Dark/Bloody Eternal Enhancement Stone, various Weapon Enchant Scrolls, Giant's Energy, or Gemstone (R-grade). Once a day. Cannot be used in the Olympiad. -->
+    <item id="28355" type="Weapon" name="Prestige Cube - 7-day" icon="icon.etc_dkbrown_crystal_cube_pc_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Wrapped Pack containing 1 Prestige Cube (7-day). -->
+    <item id="28356" type="Weapon" name="Prestige Cube Pack - 7-day" icon="BranchSys.icon.br_lucky_bag_box_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Special treasure chest. Double-click to receive a random item. -->
+    <item id="28357" type="Weapon" name="Special Treasure Chest" icon="icon.etc_treasure_box_i02" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Activates 6 jewel slots when equipped. Inventory Slot + 12. -->
+    <item id="28358" type="Weapon" name="La Vie En Rose's Elegant Brooch"
+          icon="BranchIcon.icon.etc_g_bm_brooch_lavianrose"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+        <baseAdd stat="mDef" val="101" />
+    </item>
+    <!-- La Vie En Rose's refined gemstone powder. Go find Shadai to use it when exchanging for gemstones. -->
+    <item id="28359" type="Weapon" name="La Vie En Rose's Gemstone Powder" icon="BranchIcon.icon.etc_g_bm_powder_jewel"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Cat's Eye Lv. 3. -->
+    <item id="28360" type="Weapon" name="Cat's Eye Lv. 3 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Cat's Eye Lv. 4. -->
+    <item id="28361" type="Weapon" name="Cat's Eye Lv. 4 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Amethyst Lv. 3. -->
+    <item id="28362" type="Weapon" name="Amethyst Lv. 3 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Amethyst Lv. 4. -->
+    <item id="28363" type="Weapon" name="Amethyst Lv. 4 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- A grinder used for refining La Vie En Rose's jewels. Ask Shadai to grind gemstones. -->
+    <item id="28364" type="Weapon" name="Jewel Grinder" icon="BranchIcon.icon.etc_g_bm_jewel_grinder" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a La Vie En Rose's Jewelry Box. -->
+    <item id="28365" type="Weapon" name="Ultimate Jewelry Box" icon="icon.bm_sayha_blessed_box" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Vital Stone Lv. 3. -->
+    <item id="28366" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_vital"
+          bodypart="none" material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Tanzanite Lv. 3. -->
+    <item id="28367" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Vital Stone Lv. 4. -->
+    <item id="28368" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_vital"
+          bodypart="none" material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Tanzanite Lv. 4. -->
+    <item id="28369" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Tanzanite Lv. 3. -->
+    <item id="28370" type="Weapon" name="Garnet Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_garnet" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Vital Stone Lv. 4. -->
+    <item id="28371" type="Weapon" name="Garnet Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_garnet" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Vital Stone Lv. 3. -->
+    <item id="28372" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_vital"
+          bodypart="none" material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Tanzanite Lv. 3. -->
+    <item id="28373" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Vital Stone Lv. 4. -->
+    <item id="28374" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_vital"
+          bodypart="none" material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a Tanzanite Lv. 4. -->
+    <item id="28375" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Decreases damage received from Reflect Damage by 50 and there's a chance of reflecting debuffs to the enemy. Can use the invincibility skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28376" type="Weapon" name="Greater Cat's Eye" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- PvP Damage + 15%, chance of receiving a critical attack - 25%. Can remove invincibility. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28377" type="Weapon" name="Greater Amethyst" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%. XP Gain increases by 10%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28378" type="Weapon" name="Greater Vital Stone" icon="icon.bm_jewel_vital_high_lv1_lavianrose"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Resistance to Debuffs + 30%, and when receiving damage to a PC, Stun/Silence are canceled. Cancels debuff and you become immune to debuffs for 7 seconds. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28379" type="Weapon" name="Greater Garnet" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Recover 15% of Max HP instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28380" type="Weapon" name="Greater Tanzanite" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Get 1 of the following: 1 type of Talisman - Abundance, Lindvior's Earring, Earth Wyrm Heart Ring, Seven Signs' Energy, Talisman - Lilith, Talisman - Anakim, Talisman - Insanity, Talisman - Longing, Antharas' Earring, Bottle of Antharas' Soul, Valakas' Necklace, Bottle of Valakas' Soul, Baium's Ring, Baium's Soul Ring, Octavis' Ring, Octavis' Earring, Octavis' Necklace, Istina's Necklace, Istina's Ring, Queen Ant's Ring, Superior Giant's Codex Chapter 1, Superior Giant's Codex - Mastery Chapter 1, Superior Giant's Codex - Discipline Chapter 1, Lv. 5 Legendary Dye Pack, Elcyum Regular/Crystal, Giant's Energy, Orfen's Earring, Tempest Stone, Gemstone, Fortune Pocket - Stage 5, Blessed Zaken, Venir's Talisman Stage 8/10/14. -->
+    <item id="28381" type="Weapon" name="Abundance Box - Infinite" icon="icon.etc_pi_gift_box_i03" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Double-click to obtain a La Vie En Rose's Jewelry Box. -->
+    <item id="28382" type="Weapon" name="Ultimate Jewelry Box" icon="icon.bm_sayha_blessed_box" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Increases Resistance to all Debuffs by 30%, and when receiving damage to a PC, Stun/Silence are canceled. When used, all debuffs are canceled and you become immune to debuffs for 7 seconds. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="28383" type="Weapon" name="Greater Garnet" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- A belt from Chef Monkey. When equipped, Max HP/MP/CP + 300, Weight + 12800, Damage + 7%, Received Damage - 5%, Inventory Slots + 18, Attribute Resistance + 5. -->
+    <item id="28384" type="Weapon" name="Chef Monkey's Belt" icon="BranchIcon.icon.g_monkey_belt" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+        <baseAdd stat="pDef" val="50" />
+    </item>
+    <!-- Double-click to obtain a Race Change Ticket. -->
+    <item id="28385" type="Weapon" name="Race Change Ticket Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+    <!--
+        Do the following to change your character's race.
+        1.Place this item with the character that you want to change the race for.
+        2.Submit a ticket at support.lineage2.com with the title 'Character Race Change'.
+        (Note)Erteia, Kamael, Tirr Maestro, Iss Dominator characters cannot use this item.
+    -->
+    <item id="28386" type="Weapon" name="Race Change Ticket" icon="icon.etc_exchange_ticket_i00" bodypart="none"
+          material="steel"
+          weight="0" crystal_type="none">
+    </item>
+    <!-- Wrapped pack containing Agathion - Unlimited Vitality. -->
+    <item id="28387" type="Weapon" name="Agathion - Unlimited Vitality Pack"
+          icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+          bodypart="none" material="steel" weight="0" crystal_type="none">
+    </item>
+    <!-- Summons Unlimited Vitality Agathion. -->
+    <item id="28388" type="Weapon" name="Agathion - Unlimited Vitality" icon="BranchSys.icon.br_aga_bonus_i00"
+          bodypart="none"
+          material="steel" weight="0" crystal_type="none">
+    </item>
+</list>

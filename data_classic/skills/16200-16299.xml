@@ -31,7 +31,7 @@
     </skill>
     <skill id="16202" levels="4" name="Fatal Strike">
         <table name="#power">100000 120000 140000 160000</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="1" />
@@ -44,7 +44,7 @@
     </skill>
     <skill id="16203" levels="4" name="Fatal Shot">
         <table name="#power">100000 120000 140000 160000</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="1" />
@@ -57,7 +57,7 @@
     </skill>
     <skill id="16204" levels="4" name="Fatal Slasher">
         <table name="#power">100000 120000 140000 160000</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="1" />
@@ -82,7 +82,7 @@
     <skill id="16206" levels="4" name="Holy Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -98,7 +98,7 @@
     <skill id="16207" levels="4" name="Dark Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -114,7 +114,7 @@
     <skill id="16208" levels="4" name="Fire Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -130,7 +130,7 @@
     <skill id="16209" levels="4" name="Water Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -146,7 +146,7 @@
     <skill id="16210" levels="4" name="Wind Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -162,7 +162,7 @@
     <skill id="16211" levels="4" name="Earth Spike">
         <table name="#power">550 650 750 850</table>
         <table name="#elementPower">100 150 200 300</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -408,7 +408,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="POISON" landRate="100" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -437,7 +436,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="5" duration="2" effectType="BLEED" landRate="100" visualEffect="bleed">
                 <effect type="DamOverTime" val="#dot" />
@@ -445,7 +443,7 @@
         </for>
     </skill>
     <skill id="16226" levels="1" name="Battle Recovery">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -484,7 +482,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="STUN" landRate="100" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -508,7 +505,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="100" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -532,7 +528,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="70" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -556,7 +551,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="90">
                 <effect type="LiftHold" val="0" />
@@ -580,7 +574,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="100">
                 <effect type="Fear" val="0" />

@@ -181,7 +181,7 @@
     </skill>
     <!-- Skill where Tauti throws crossways and receives back again. -->
     <skill id="15171" levels="1" name="Tauti Boomerang">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="80000" />

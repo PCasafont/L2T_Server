@@ -28,7 +28,6 @@
         <set name="magicLvl" val="40" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="5" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="66" />
@@ -202,7 +201,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -266,7 +264,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -288,7 +285,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="5" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="#dot" />
@@ -342,7 +338,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -626,7 +621,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -650,7 +644,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -851,7 +844,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="7" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="222" />
@@ -867,7 +859,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="7" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="264" />
@@ -884,7 +875,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="7" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="768" />
@@ -901,7 +891,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="100" stackLvl="7" stackType="bleeding" visualEffect="bleed">
                 <effect type="DamOverTime" val="384" />
@@ -1000,7 +989,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="7" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="#dot" />
@@ -1019,7 +1007,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="100" stackLvl="7" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="672" />
@@ -1140,7 +1127,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1209,7 +1195,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="100" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -1227,7 +1212,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="100">
                 <effect chanceType="ON_EXIT" triggeredId="6126" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -1274,7 +1258,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="100" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -1293,7 +1276,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="100">
                 <effect chanceType="ON_EXIT" triggeredId="6126" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -1402,7 +1384,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5166" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily decreases the target's Atk. Spd. during an normal physical attack. Effect 3. -->
     <skill id="3084" levels="10" name="Item Skill: Winter (Attack Active)">
@@ -1417,7 +1398,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5167" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Stun on the target during an normal physical attack. -->
     <skill id="3085" levels="10" name="Item Skill: Stun">
@@ -1432,7 +1412,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5168" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily inflicts Hold on the target during an normal physical attack. The target cannot be affected by any additional hold attacks while the effect lasts. -->
     <skill id="3086" levels="15" name="Item Skill: Hold">
@@ -1447,7 +1426,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5169" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Sleep on the target during a normal physical attack. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
     <skill id="3087" levels="10" name="Item Skill: Sleep">
@@ -1462,7 +1440,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5170" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily paralyzes the target during an normal physical attack. -->
     <skill id="3088" levels="10" name="Item Skill: Paralyze">
@@ -1477,7 +1454,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5171" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily petrifies the target during a normal physical attack. -->
     <skill id="3089" levels="10" name="Item Skill: Medusa">
@@ -1492,7 +1468,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5172" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during a normal physical attack. -->
     <skill id="3090" levels="10" name="Item Skill: Fear">
@@ -1507,7 +1482,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5173" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Poison on the target during a normal physical attack. Effect 5.
@@ -1527,7 +1501,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5174" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Bleed on the target during a normal physical attack. Effect 5.
@@ -1548,7 +1521,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5175" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks the target's magic skill during a normal physical attack. -->
     <skill id="3093" levels="10" name="Item Skill: Silence">
@@ -1563,7 +1535,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5176" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks all of the target's physical and magic skills during a normal physical attack. -->
     <skill id="3094" levels="10" name="Item Skill: Doom">
@@ -1578,7 +1549,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5177" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Chance: Burns up the target's MP during magic use. Power 49.
@@ -1619,7 +1589,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5166" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily decreases the target's Atk. Spd. during magic use. Effect 3. -->
     <skill id="3097" levels="10" name="Item Skill: Winter (Magic Active)">
@@ -1634,7 +1603,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5167" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Stun on the target during magic use. -->
     <skill id="3098" levels="10" name="Item Skill: Stun">
@@ -1649,7 +1617,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5168" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily inflicts Hold on the target during magic use. The target cannot be affected by any additional hold attacks while the effect lasts. -->
     <skill id="3099" levels="15" name="Item Skill: Hold">
@@ -1664,7 +1631,6 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="5169" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Sleep on the target during magic use. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
     <skill id="3100" levels="10" name="Item Skill: Sleep">
@@ -1679,7 +1645,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5170" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily paralyzes the target during magic use. -->
     <skill id="3101" levels="10" name="Item Skill: Paralyze">
@@ -1694,7 +1659,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5171" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily petrifies the target during magic use. -->
     <skill id="3102" levels="10" name="Item Skill: Medusa">
@@ -1709,7 +1673,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5172" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during magic use. -->
     <skill id="3103" levels="10" name="Item Skill: Fear">
@@ -1724,7 +1687,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5173" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Poison on the target during magic use. Effect 5.
@@ -1744,7 +1706,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5174" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 5.
@@ -1765,7 +1726,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5175" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks the target's magic skill during magic use. -->
     <skill id="3106" levels="10" name="Item Skill: Silence">
@@ -1780,7 +1740,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5176" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily blocks all of the target's physical and magic skills during magic use. -->
     <skill id="3107" levels="10" name="Item Skill: Doom">
@@ -1795,7 +1754,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5177" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Chance: Increases the target's urge to attack during a critical attack. Power 438.
@@ -1898,7 +1856,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5166" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily decreases the target's Atk. Spd. during a critical attack. Effect 3. -->
     <skill id="3112" levels="15" name="Item Skill: Winter (Critical)">
@@ -1913,7 +1870,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5167" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Stun on the target during a critical attack. -->
     <skill id="3113" levels="10" name="Item Skill: Stun">
@@ -1928,7 +1884,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5168" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily inflicts Hold on the target during a critical attack. The target cannot be affected by any additional hold attacks while the effect lasts. -->
     <skill id="3114" levels="15" name="Item Skill: Hold">
@@ -1943,7 +1898,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5169" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Sleep on the target during a critical attack. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
     <skill id="3115" levels="10" name="Item Skill: Sleep">
@@ -1958,7 +1912,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5170" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily paralyzes the target during a critical attack. -->
     <skill id="3116" levels="10" name="Item Skill: Paralyze">
@@ -1973,7 +1926,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5171" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily petrifies the target during a critical attack. -->
     <skill id="3117" levels="10" name="Item Skill: Medusa">
@@ -1988,7 +1940,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5172" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during a critical attack. -->
     <skill id="3118" levels="10" name="Item Skill: Fear">
@@ -2003,7 +1954,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5173" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 5.
@@ -2023,7 +1973,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5174" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!--
 		Level 1: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 5.
@@ -2044,7 +1993,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5175" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="CON" />
     </skill>
     <!-- Chance: Momentarily blocks the target's magic skill during a critical attack. -->
     <skill id="3121" levels="10" name="Item Skill: Silence">
@@ -2059,7 +2007,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5176" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Chance: Momentarily blocks all of the target's physical and magic skills during a critical attack. -->
     <skill id="3122" levels="10" name="Item Skill: Doom">
@@ -2074,7 +2021,6 @@
         <set name="activationChance" val="#activationChance" />
         <set name="triggeredId" val="5177" />
         <set name="triggeredLevel" val="#triggeredLevel" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
 		Level 1: Active: Instantly recovers your HP. Power 308.
@@ -3724,7 +3670,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -3749,7 +3694,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="5" landRate="40" stackLvl="3" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -3774,7 +3718,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <set name="staticHitTime" val="true" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="stun" visualEffect="stun">
@@ -3799,7 +3742,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -3823,7 +3765,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -3847,7 +3788,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="15" landRate="40">
                 <effect chanceType="ON_EXIT" triggeredId="6126" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -3876,7 +3816,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="3" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="turn_stone">
                 <effect type="Petrification" val="0" />
@@ -3900,7 +3839,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="5" duration="2" landRate="40">
                 <effect type="Fear" val="0" />
@@ -3930,7 +3868,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="40" visualEffect="poison">
                 <effect type="DamOverTime" val="#dmg" />
@@ -3962,7 +3899,6 @@
         <set name="nextActionAttack" val="true" />
         <set name="isDebuff" val="true" />
         <set name="staticHitTime" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="40" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -3987,7 +3923,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -4011,7 +3946,6 @@
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />
@@ -5787,7 +5721,6 @@
         <set name="hitTime" val="3000" />
         <set name="reuseDelay" val="8000" />
         <set name="staticReuse" val="true" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Create 1 Hot Springs CP Potion with the power of the Talisman. Consumes 16 Soulstone. -->
     <skill id="3332" levels="1" name="Orange Talisman - Hot Springs CP Potion">
@@ -8499,7 +8432,6 @@
         <set name="magicLvl" val="#magicLvl" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="100" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -8556,7 +8488,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" landRate="100" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -8603,7 +8534,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="100" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -8640,7 +8570,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" stackLvl="3" stackType="pd_down">
                 <effect type="Debuff" val="0" />
@@ -8728,7 +8657,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -8765,7 +8693,6 @@
         <set name="lvlDepend" val="2" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" stackLvl="1" stackType="silence_physical">
                 <effect type="PhysicalMute" val="0" />
@@ -8802,7 +8729,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -8842,7 +8768,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" stackLvl="1" stackType="silence">
                 <effect type="Mute" val="0" />
@@ -8910,7 +8835,6 @@
         <set name="lvlDepend" val="1" />
         <set name="power" val="80" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />

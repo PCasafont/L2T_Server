@@ -12,53 +12,58 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-
 import l2server.Config;
+import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.bots.BotMode;
-import l2server.gameserver.bots.BotType;
-import l2server.gameserver.bots.BotsManager;
-import l2server.gameserver.bots.controllers.BotController;
-import l2server.gameserver.custom.fusion.MiniGamesManager;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.*;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.instancemanager.CustomAuctionManager;
+import l2server.gameserver.instancemanager.GrandBossManager;
+import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2GuardInstance;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.Experience;
-import l2server.gameserver.model.base.Race;
+import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.actor.stat.PcStat;
+import l2server.gameserver.model.entity.ClanWarManager;
+import l2server.gameserver.model.entity.ClanWarManager.ClanWar;
+import l2server.gameserver.model.olympiad.Olympiad;
+import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.CharSelected;
-import l2server.gameserver.network.serverpackets.CharSelectionInfo;
-import l2server.gameserver.network.serverpackets.ExOlympiadMode;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.RestartResponse;
+import l2server.gameserver.network.clientpackets.Say2;
+import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
 
 /**
  * This class ...
@@ -68,727 +73,1162 @@ import l2server.util.Rnd;
 
 public class AdminTest implements IAdminCommandHandler
 {
-    private static final String[] ADMIN_COMMANDS =
-            {"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
-
-    /* (non-Javadoc)
-     * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
-     */
-    public boolean useAdminCommand(String command, L2PcInstance activeChar)
-    {
-        StringTokenizer st = new StringTokenizer(command);
-
-        st.nextToken();
-
-        if (command.equals("admin_stats"))
-        {
-            for (String line : ThreadPoolManager.getInstance().getStats())
-            {
-                activeChar.sendMessage(line);
-            }
-        }
-        else if (command.startsWith("admin_skill_test") || command.startsWith("admin_st"))
-        {
-            try
-            {
-                int id = Integer.parseInt(st.nextToken());
-                if (command.startsWith("admin_skill_test"))
-                {
-                    adminTestSkill(activeChar, id, true);
-                }
-                else
-                {
-                    adminTestSkill(activeChar, id, false);
-                }
-            }
-            catch (NumberFormatException e)
-            {
-                activeChar.sendMessage("Command format is //skill_test <ID>");
-            }
-            catch (NoSuchElementException nsee)
-            {
-                activeChar.sendMessage("Command format is //skill_test <ID>");
-            }
-        }
-        else if (command.equals("admin_known on"))
-        {
-            Config.CHECK_KNOWN = true;
-        }
-        else if (command.equals("admin_known off"))
-        {
-            Config.CHECK_KNOWN = false;
-        }
-        else if (command.toLowerCase().startsWith("admin_test"))
-        {
-            //TradeController.getInstance().reload();
-            //activeChar.sendMessage("Shops have been successfully reloaded!");
-        }
-        else if (command.startsWith("admin_do"))
-        {
-            if (!st.hasMoreTokens())
-            {
-                activeChar.sendMessage("You forgot to tell me what to execute. Ex: onExecute InventoryToMultisell");
-                return false;
-            }
-
-            String secondaryCommand = st.nextToken();
-
-            if (secondaryCommand.equals("TeleportAllPlayersToMe"))
-            {
-                for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-                {
-                    player.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-                }
-            }
-            else if (secondaryCommand.equals("OlyCamera"))
-            {
-                if (activeChar.getTarget() instanceof L2PcInstance)
-                {
-                    final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
-
-                    target.sendPacket(new ExOlympiadMode(3));
-                }
-                else
-                {
-                    activeChar.sendPacket(new ExOlympiadMode(3));
-                }
-            }
-            else if (secondaryCommand.equals("ShowEventData"))
-            {
-                activeChar.sendMessage("Participating = " + activeChar.isPlayingMiniGame());
-                activeChar.sendMessage("Kills = " + activeChar.getEventKills());
-            }
-            else if (secondaryCommand.equals("Login"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("Specify the name of the character to log into.");
-                    return false;
-                }
-
-                final String logIntoCharacterName = st.nextToken();
-
-                String charNameToSwitch = "";
-                if (st.hasMoreTokens())
-                {
-                    charNameToSwitch = st.nextToken();
-                }
-
-                L2PcInstance toon = activeChar;
-                if (!charNameToSwitch.equals(""))
-                {
-                    toon = L2World.getInstance().getPlayer(charNameToSwitch);
-                    activeChar.sendMessage("Logging " + toon.getName() + " into " + logIntoCharacterName);
-                }
-
-                final int charId = CharNameTable.getInstance().getIdByName(logIntoCharacterName);
-
-                if (charId == 0)
-                {
-                    activeChar.sendMessage("No character with such name. Try again.");
-                    return false;
-                }
-
-                final L2GameClient gameClient = toon.getClient();
-
-                toon.setClient(null);
-
-                gameClient.saveCharToDisk();
-
-                gameClient.setActiveChar(null);
-
-                // return the client to the authed status
-                gameClient.setState(GameClientState.AUTHED);
-
-                gameClient.sendPacket(RestartResponse.STATIC_PACKET_TRUE);
-
-                // send char list
-                CharSelectionInfo cl = new CharSelectionInfo(gameClient.getAccountName(), gameClient
-                        .getSessionId().playOkID1);
-                gameClient.sendPacket(cl);
-                gameClient.setCharSelection(cl.getCharInfo());
-
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    public void run()
-                    {
-                        L2PcInstance cha = L2PcInstance.load(charId);
-
-                        if (cha == null)
-                        {
-                            gameClient.sendPacket(ActionFailed.STATIC_PACKET);
-                            return;
-                        }
-
-                        cha.setClient(gameClient);
-                        gameClient.setActiveChar(cha);
-
-                        //BotsManager.getInstance().logPlayer(cha, true);
-
-                        gameClient.setState(GameClientState.IN_GAME);
-
-                        CharSelected cs = new CharSelected(cha, gameClient.getSessionId().playOkID1);
-                        gameClient.sendPacket(cs);
-                    }
-                }, 1000);
-            }
-            else if (secondaryCommand.equals("CreateBot"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("Type the ClassId of the character you would like to create.");
-                    return false;
-                }
-
-                int classId = -1;
-
-                BotType botType = null;
-                String botTypeInput = "";
-
-                if (st.hasMoreTokens())
-                {
-                    String nextToken = st.nextToken();
-                    try
-                    {
-                        classId = Integer.parseInt(nextToken);
-                    }
-                    catch (Exception e)
-                    {
-                        botTypeInput = nextToken;
-                    }
-
-                    if (!botTypeInput.equals(""))
-                    {
-                        try
-                        {
-                            botType = BotType.valueOf(botTypeInput);
-                        }
-                        catch (Exception e)
-                        {
-                            activeChar.sendMessage("Specified BotType is unknown. Try REGULAR or TESTER.");
-                            return false;
-                        }
-                    }
-                }
-
-                final L2PcInstance player = BotsManager.getInstance().createPlayer(botType, classId);
-
-                //. ...
-                player.setClassId(classId);
-                player.setBaseClass(player.getActiveClass());
-                player.broadcastUserInfo();
-
-                long allExpToAdd = Experience.getAbsoluteExp(99) - player.getExp();
-
-                player.addExpAndSp(allExpToAdd, 999999);
-                player.giveAvailableSkills(true);
-                player.store();
-
-                player.setCurrentMp(player.getMaxMp());
-                player.setCurrentHp(player.getMaxHp());
-                player.setCurrentCp(player.getMaxCp());
-
-                player.getBotController().onEnterWorld(false);
-
-                player.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-
-                player.getBotController().broadcastDebugMessage("I'm ready!!!");
-            }
-            else if (secondaryCommand.equals("CreateBots"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("Type the amount of characters you would like to create.");
-                    return false;
-                }
-
-                final int amount = Integer.parseInt(st.nextToken());
-
-                int classId = -1;
-
-                BotType botType = null;
-                String botTypeInput = "";
-
-                if (st.hasMoreTokens())
-                {
-                    String nextToken = st.nextToken();
-                    try
-                    {
-                        classId = Integer.parseInt(nextToken);
-                    }
-                    catch (Exception e)
-                    {
-                        botTypeInput = nextToken;
-                    }
-
-                    if (!botTypeInput.equals(""))
-                    {
-                        try
-                        {
-                            botType = BotType.valueOf(botTypeInput);
-                        }
-                        catch (Exception e)
-                        {
-                            activeChar.sendMessage("Specified BotType is unknown. Try REGULAR or TESTER.");
-                            return false;
-                        }
-                    }
-                }
-
-                int createdBots = 0;
-
-                while (createdBots++ < amount)
-                {
-                    // If there was no class specified...
-                    if (classId == -1)
-                    {
-                        // We create one (or more, depends on the amount specified) character of EVERY classes.
-                        for (int i = 0; i < BotsManager.AWAKANED_CLASSES_IDS.length; i++)
-                        {
-                            // Not available yet...
-                            if (!((Boolean) BotsManager.AWAKANED_CLASSES_IDS[i][5]))
-                            {
-                                continue;
-                            }
-
-                            // We spawn them in line, front of us...
-                            float headingAngle = (float) (activeChar.getHeading() * Math.PI) / Short.MAX_VALUE;
-
-                            int x = 0, y = 0, z = 0;
-
-                            if (botType == BotType.TESTER)
-                            {
-                                x = (int) (activeChar.getX() + (i * 50) * (float) Math.cos(headingAngle));
-                                y = (int) (activeChar.getY() + (i * 50) * (float) Math.sin(headingAngle));
-                                z = activeChar.getZ() + 1;
-                            }
-                            else
-                            {
-                                x = activeChar.getX() + Rnd.get(-2000, 2000);
-                                y = activeChar.getY() + Rnd.get(-2000, 2000);
-                                z = activeChar.getZ();
-                            }
-                            // Create the bot...
-                            final L2PcInstance player = BotsManager.getInstance()
-                                    .createPlayer(botType, (Integer) BotsManager.AWAKANED_CLASSES_IDS[i][0]);
-
-                            if (player == null)
-                            {
-                                continue;
-                            }
-
-                            // Now, get the last class and top level...
-                            player.setClassId((Integer) BotsManager.AWAKANED_CLASSES_IDS[i][0]);
-                            player.setBaseClass(player.getActiveClass());
-                            player.broadcastUserInfo();
-
-                            // 1 / 2 is a newbie ^_^
-                            int randomLevel = Rnd.nextBoolean() ? Rnd.get(85, 95) : Rnd.get(0, 4) == 0 ? Rnd
-                                    .get(96, 99) : 99;
-
-                            if (player.getRace() == Race.Kamael)
-                            {
-                                randomLevel = Rnd.get(96, 99); // No S80 Kamaels. Fuck it.
-                            }
-
-                            long allExpToAdd = Experience.getAbsoluteExp(randomLevel) - player.getExp();
-
-                            player.addExpAndSp(allExpToAdd, 999999999);
-                            player.giveAvailableSkills(true);
-                            player.store();
-
-                            player.setCurrentMp(player.getMaxMp());
-                            player.setCurrentHp(player.getMaxHp());
-                            player.setCurrentCp(player.getMaxCp());
-
-                            //player.setTitle((String) BotsManager.AWAKANED_CLASSES_IDS[i][1]);
-                            player.broadcastTitleInfo();
-
-                            // Login. He'll get geared up and stuff.
-                            player.getBotController().onEnterWorld(false);
-
-                            player.teleToLocation(x, y, z);
-                        }
-                    }
-                    else
-                    {
-                        // We spawn them in line, front of us...
-                        float headingAngle = (float) (activeChar.getHeading() * Math.PI) / Short.MAX_VALUE;
-
-                        float x = activeChar.getX() + (createdBots * 50) * (float) Math.cos(headingAngle);
-                        float y = activeChar.getY() + (createdBots * 50) * (float) Math.sin(headingAngle);
-                        float z = activeChar.getZ() + 1;
-
-                        final L2PcInstance player = BotsManager.getInstance().createPlayer(botType, classId);
-
-                        // Login. He'll get geared up and stuff.
-                        player.getBotController().onEnterWorld(false);
-
-                        player.teleToLocation((int) x, (int) y, (int) z);
-
-                        // Now, get the last class and top level...
-                        player.setClassId(classId);
-                        player.setBaseClass(player.getActiveClass());
-                        player.broadcastUserInfo();
-
-                        long allExpToAdd = Experience.getAbsoluteExp(99) - player.getExp();
-
-                        player.addExpAndSp(allExpToAdd, 999999);
-                        player.giveAvailableSkills(true);
-                        player.store();
-
-                        player.setCurrentMp(player.getMaxMp());
-                        player.setCurrentHp(player.getMaxHp());
-                        player.setCurrentCp(player.getMaxCp());
-
-                        player.setTitle("Lalala...");
-                        player.broadcastTitleInfo();
-                    }
-                }
-            }
-            else if (secondaryCommand.equals("LoginBot"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("Mention the name of the bot to login.");
-                    return false;
-                }
-
-                final String botName = st.nextToken();
-
-                final L2PcInstance player = BotsManager.getInstance().loadPlayer(botName, BotMode.SPAWNED_BY_GM);
-
-                player.getBotController().onEnterWorld(false);
-                player.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-
-                activeChar.sendMessage("Logged in " + player.getName() + ".");
-            }
-            else if (secondaryCommand.equals("LogoutBot"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("Mention the name of the bot to logout.");
-                    return false;
-                }
-
-                final String botName = st.nextToken();
-
-                final L2PcInstance player = L2World.getInstance().getPlayer(botName);
-
-                if (player != null && player.isBot())
-                {
-                    player.getBotController().onExitWorld();
-
-                    activeChar.sendMessage("Logged out " + player.getName() + ".");
-                }
-            }
-            else if (secondaryCommand.equals("LoginBots"))
-            {
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("You must mentioned a range of bots to load. Ex: //do LoginBots 0 25");
-                    return false;
-                }
-
-                int firstId = -1;
-
-                try
-                {
-                    firstId = Integer.parseInt(st.nextToken());
-                }
-                catch (Exception e)
-                {
-                    activeChar.sendMessage("You must mentioned a range of bots to load. Ex: //do LoginBots 0 25");
-                }
-
-                if (!st.hasMoreTokens())
-                {
-                    activeChar.sendMessage("You must mentioned a range of bots to load. Ex: //do LoginBots 0 25");
-                    return false;
-                }
-
-                int secondId = -1;
-
-                try
-                {
-                    secondId = Integer.parseInt(st.nextToken());
-                }
-                catch (Exception e)
-                {
-                    activeChar.sendMessage("You must mentioned a range of bots to load. Ex: //do LoginBots 0 25");
-                }
-
-                int loadedBots = 0;
-                for (int i = firstId; i < secondId; i++)
-                {
-                    final L2PcInstance player = BotsManager.getInstance().loadPlayer("" + i, BotMode.SPAWNED_BY_GM);
-
-                    player.getBotController().onEnterWorld(false);
-
-                    // We spawn them in line, front of us...
-                    float headingAngle = (float) (activeChar.getHeading() * Math.PI) / Short.MAX_VALUE;
-
-                    float x = activeChar.getX() + (loadedBots * 50) * (float) Math.cos(headingAngle);
-                    float y = activeChar.getY() + (loadedBots * 50) * (float) Math.sin(headingAngle);
-                    float z = activeChar.getZ() + 1;
-
-                    player.teleToLocation((int) x, (int) y, (int) z);
-
-                    activeChar.sendMessage("Logged in Bot[" + player.getName() + "].");
-
-                    loadedBots++;
-                }
-
-                activeChar.sendMessage(loadedBots + " Bots have been successfully loaded.");
-            }
-            else if (secondaryCommand.equals("LogoutBots"))
-            {
-                final Map<Integer, L2PcInstance> allPlayers = L2World.getInstance().getAllPlayers();
-
-                for (L2PcInstance p : allPlayers.values())
-                {
-                    if (p == null || !p.isBot())
-                    {
-                        continue;
-                    }
-
-                    @SuppressWarnings("unused") final BotController b = p.getBotController();
-
-                    boolean shouldLogout =
-                            true;// !(b instanceof YulController) && !(b instanceof SigelController) && !(b instanceof OthellController);
-
-                    if (!shouldLogout)
-                    {
-                        continue;
-                    }
-
-                    p.getBotController().onExitWorld();
-                    p.sendMessage("Logged out " + p.getName() + ".");
-                }
-            }
-            else if (secondaryCommand.equals("StartController"))
-            {
-                final L2Object target = activeChar.getTarget();
-
-                final L2PcInstance toonToControl;
-                if (target != null)
-                {
-                    if (!(target instanceof L2PcInstance))
-                    {
-                        activeChar.sendMessage("This target cannot be controlled by a bot.");
-                        return false;
-                    }
-
-                    toonToControl = (L2PcInstance) target;
-                }
-                else
-                {
-                    toonToControl = activeChar;
-                }
-
-                toonToControl.setBotController(BotsManager.getInstance().initControllerFor(toonToControl));
-
-                toonToControl.getBotController().onEnterWorld(true);
-
-                if (toonToControl.isPlayingMiniGame())
-                {
-                    toonToControl.getBotController().setMode(BotMode.PLAYING_MINI_GAME);
-                }
-                else
-                {
-                    toonToControl.getBotController().setMode(BotMode.SPAWNED_BY_GM);
-                }
-
-                if (toonToControl == activeChar)
-                {
-                    activeChar.sendMessage("You are now controlled by an AI.");
-                }
-                else
-                {
-                    activeChar.sendMessage(toonToControl.getName() + " is now controlled by an AI");
-                }
-            }
-            else if (secondaryCommand.equals("StopController"))
-            {
-                boolean forceSelf = false;
-
-                if (st.hasMoreTokens())
-                {
-                    forceSelf = true;
-                }
-
-                final L2PcInstance toonToControl;
-
-                if (forceSelf)
-                {
-                    toonToControl = activeChar;
-                }
-                else
-                {
-                    final L2Object target = activeChar.getTarget();
-
-                    if (target != null)
-                    {
-                        if (!(target instanceof L2PcInstance))
-                        {
-                            activeChar.sendMessage("This target cannot be controlled by a bot.");
-                            return false;
-                        }
-
-                        toonToControl = (L2PcInstance) target;
-                    }
-                    else
-                    {
-                        toonToControl = activeChar;
-                    }
-                }
-
-                final BotController botController = toonToControl.getBotController();
-
-                if (botController == null)
-                {
-                    activeChar.sendMessage("There was no Bot Controller running.");
-                    return false;
-                }
-
-                toonToControl.getBotController().onExitWorld();
-                toonToControl.setBotController(null);
-                toonToControl.sendMessage("You are no longer controlled by an AI.");
-
-                if (toonToControl == activeChar)
-                {
-                    activeChar.sendMessage("You are no longer controlled by an AI.");
-                }
-                else
-                {
-                    activeChar.sendMessage(toonToControl.getName() + " is no longer controlled by an AI.");
-                }
-            }
-            else if (secondaryCommand.equals("Events"))
-            {
-                new MiniGamesManager();
-            }
-            else if (secondaryCommand.equals("Testos"))
-            {
-
-            }
-            else if (secondaryCommand.equals("PrintSkills"))
-            {
-                final L2Object target = activeChar.getTarget();
-
-                L2PcInstance targetedPlayer = null;
-                if (!(target instanceof L2PcInstance))
-                {
-                    targetedPlayer = activeChar;
-                }
-                else
-                {
-                    targetedPlayer = (L2PcInstance) target;
-                }
-
-                String filePath =
-                        "D:/Projects/Dreams Gaming/Lineage II/Goddess of Destruction+/Server Files/MoonLand/Tools/L2_DataTool/dist/data/client/skillname-e.txt";
-
-                List<String> allLines = null;
-                try
-                {
-                    allLines = Files.readAllLines(Paths.get(filePath), StandardCharsets.ISO_8859_1);
-                }
-                catch (IOException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-                String className = (String) BotsManager.getInstance()
-                        .getClassDataById(targetedPlayer.getActiveClass())[1];
-
-                Log.info("// " + className);
-                Log.info("// ");
-                Log.info("// ");
-                Log.info("");
-                for (L2Skill s : targetedPlayer.getAllSkills())
-                {
-                    if (!s.isActive())
-                    {
-                        continue;
-                    }
-                    else if (s.getName().equals("Common Craft") || s.getName().startsWith("Mentor"))
-                    {
-                        continue;
-                    }
-
-                    final String varName = s.getName().toUpperCase().replace(" ", "_").replace("'", "");
-
-                    for (String s2 : allLines)
-                    {
-                        final String[] split = s2.split("\t");
-                        final int skillId = Integer.parseInt(split[0]);
-
-                        if (skillId != s.getId())
-                        {
-                            continue;
-                        }
-
-                        final int skillLevel = Integer.parseInt(split[1]);
-
-                        if (skillLevel != s.getLevel())
-                        {
-                            continue;
-                        }
-
-                        @SuppressWarnings("unused") final String skillName = split[2];
-                        final String skillDesc = split[3];
-
-                        Log.info("// " + skillDesc);
-                        Log.info("// Cooldown: " + (s.getReuseDelay() / 1000) + "s");
-                    }
-                    Log.info("private static final int " + varName + " = " + s.getId() + ";");
-                    Log.info("");
-                }
-            }
-        }
-        return true;
-    }
-
-    /**
-     * @param activeChar
-     * @param id
-     */
-    private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
-    {
-        L2Character caster;
-        L2Object target = activeChar.getTarget();
-        if (!(target instanceof L2Character))
-        {
-            caster = activeChar;
-        }
-        else
-        {
-            caster = (L2Character) target;
-        }
-
-        L2Skill _skill = SkillTable.getInstance().getInfo(id, 1);
-        if (_skill != null)
-        {
-            caster.setTarget(activeChar);
-            if (msu)
-            {
-                caster.broadcastPacket(new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill
-                        .getReuseDelay(), _skill.getReuseHashCode(), 0));
-            }
-            else
-            {
-                caster.doCast(_skill);
-            }
-        }
-    }
-
-    /* (non-Javadoc)
-     * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
-     */
-    public String[] getAdminCommandList()
-    {
-        return ADMIN_COMMANDS;
-    }
+	private static final String[] ADMIN_COMMANDS =
+			{"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
+
+	private List<L2NpcTemplate> _npcTemplates = new ArrayList<L2NpcTemplate>();
+	private List<Location> _coords = new ArrayList<Location>();
+
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
+	 */
+	@Override
+	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	{
+		StringTokenizer st = new StringTokenizer(command);
+
+		st.nextToken();
+
+		if (command.equals("admin_stats"))
+		{
+			for (String line : ThreadPoolManager.getInstance().getStats())
+			{
+				activeChar.sendMessage(line);
+			}
+		}
+		else if (command.startsWith("admin_skill_test") || command.startsWith("admin_st"))
+		{
+			try
+			{
+				int id = Integer.parseInt(st.nextToken());
+				if (command.startsWith("admin_skill_test"))
+				{
+					adminTestSkill(activeChar, id, true);
+				}
+				else
+				{
+					adminTestSkill(activeChar, id, false);
+				}
+			}
+			catch (NumberFormatException e)
+			{
+				activeChar.sendMessage("Command format is //skill_test <ID>");
+			}
+			catch (NoSuchElementException nsee)
+			{
+				activeChar.sendMessage("Command format is //skill_test <ID>");
+			}
+		}
+		else if (command.equals("admin_known on"))
+		{
+			Config.CHECK_KNOWN = true;
+		}
+		else if (command.equals("admin_known off"))
+		{
+			Config.CHECK_KNOWN = false;
+		}
+		else if (command.toLowerCase().startsWith("admin_test"))
+		{
+			//TradeController.getInstance().reload();
+			//activeChar.sendMessage("Shops have been successfully reloaded!");
+		}
+		else if (command.startsWith("admin_do"))
+		{
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("You forgot to tell me what to execute. Ex: onExecute InventoryToMultisell");
+				return false;
+			}
+
+			String secondaryCommand = st.nextToken();
+
+			if (secondaryCommand.equals("TeleportAllPlayersToMe"))
+			{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
+				{
+					player.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+				}
+			}
+			else if (secondaryCommand.equals("RefreshVisualEffects"))
+			{
+				activeChar.sendPacket(new ExUserEffects(activeChar));
+			}
+			else if (secondaryCommand.equals("shiet"))
+			{
+				for (L2NpcTemplate temp : NpcTable.getInstance().getAllTemplates())
+				{
+					if (!temp.getBaseSet().getBool("overrideSpawns", false))
+					{
+						Util.logToFile(
+								"<npc id=\"" + temp.NpcId + "\" overrideSpawns=\"true\" /> <!-- " + temp.Name + " -->",
+								"overriddenSpawns", "xml", true, false);
+					}
+				}
+
+				activeChar.sendMessage("Done...");
+			}
+			else if (secondaryCommand.equals("FixAph"))
+			{
+				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
+
+				SpawnTable.getInstance().spawnSpecificTable("gainak_siege");
+			}
+			else if (secondaryCommand.equals("ShowRaids"))
+			{
+				for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
+				{
+					if (!(spawn.getNpc() instanceof L2RaidBossInstance))
+					{
+						continue;
+					}
+
+					activeChar.sendMessage(spawn.getNpc().getName());
+				}
+			}
+			else if (secondaryCommand.equals("ReloadMobRes"))
+			{
+				activeChar.sendMessage("reloaded.");
+			}
+			else if (secondaryCommand.equals("OlyFeex"))
+			{
+				Olympiad.getInstance().loadNoblesRank();
+
+				activeChar.sendMessage("olyfeexed?.");
+			}
+			else if (secondaryCommand.equals("FindOlyAbuses"))
+			{
+				final int[] HERO_IDS = {
+						// Regular Classes
+						88,
+						89,
+						90,
+						91,
+						92,
+						93,
+						94,
+						95,
+						96,
+						97,
+						98,
+						99,
+						100,
+						101,
+						102,
+						103,
+						104,
+						105,
+						106,
+						107,
+						108,
+						109,
+						110,
+						111,
+						112,
+						113,
+						114,
+						115,
+						116,
+						117,
+						118,
+						131,
+						132,
+						133,
+						134,
+						186,
+						187,
+
+						// Awakened Classes
+						148,
+						149,
+						150,
+						151,
+						152,
+						153,
+						154,
+						155,
+						156,
+						157,
+						158,
+						159,
+						160,
+						161,
+						162,
+						163,
+						164,
+						165,
+						166,
+						167,
+						168,
+						169,
+						170,
+						171,
+						172,
+						173,
+						174,
+						175,
+						176,
+						177,
+						178,
+						179,
+						180,
+						181,
+						188,
+						189
+				};
+
+				String OLYMPIAD_GET_HEROES = "SELECT charId FROM olympiad_nobles " +
+						"WHERE class_id = ? AND competitions_done >= 10 AND competitions_won > 0 " +
+						"ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
+
+				Connection con = null;
+
+				try
+				{
+					con = L2DatabaseFactory.getInstance().getConnection();
+					PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROES);
+					for (int classId : HERO_IDS)
+					{
+						String characterName = "";
+						String accountName = "";
+						@SuppressWarnings("unused") String lastIP = "";
+						@SuppressWarnings("unused") String lastHWID = "";
+						int charId = 0;
+						@SuppressWarnings("unused") String className =
+								PlayerClassTable.getInstance().getClassNameById(classId);
+
+						statement.setInt(1, classId);
+						ResultSet rset = statement.executeQuery();
+						statement.clearParameters();
+
+						if (rset.next())
+						{
+							charId = rset.getInt("charId");
+							OlympiadNobleInfo hero = Olympiad.getInstance().getNobleInfo(charId);
+
+							activeChar.sendMessage(
+									"Hero for " + PlayerClassTable.getInstance().getClassNameById(classId) + " = " +
+											hero.getName() + ".");
+
+							characterName = hero.getName();
+
+							Connection con2 = null;
+							try
+							{
+								con2 = L2DatabaseFactory.getInstance().getConnection();
+								PreparedStatement statement2 =
+										con.prepareStatement("SELECT * FROM characters WHERE char_name = ?");
+
+								statement2.setString(1, characterName);
+								ResultSet rset2 = statement2.executeQuery();
+								statement2.clearParameters();
+
+								if (rset2.next())
+								{
+									accountName = rset2.getString("account_name");
+								}
+
+								rset2.close();
+								statement2.close();
+							}
+							catch (SQLException e)
+							{
+								Log.warning("ERR 1");
+							}
+							finally
+							{
+								L2DatabaseFactory.close(con2);
+							}
+
+							try
+							{
+								con2 = L2DatabaseFactory.getInstance().getConnection();
+								PreparedStatement statement2 =
+										con2.prepareStatement("SELECT * FROM accounts WHERE login = ?");
+
+								statement2.setString(1, accountName);
+								ResultSet rset2 = statement2.executeQuery();
+								statement2.clearParameters();
+
+								if (rset2.next())
+								{
+									lastIP = rset2.getString("lastIP");
+								}
+
+								rset2.close();
+								statement2.close();
+							}
+							catch (SQLException e)
+							{
+								Log.warning("ERR 2");
+							}
+							finally
+							{
+								L2DatabaseFactory.close(con2);
+							}
+						}
+
+						rset.close();
+					}
+					statement.close();
+				}
+				catch (SQLException e)
+				{
+					Log.warning("Olympiad System: Couldnt load heros from DB");
+				}
+				finally
+				{
+					L2DatabaseFactory.close(con);
+				}
+			}
+			else if (secondaryCommand.equals("DeleteIstina"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				InstanceManager.getInstance().deleteInstanceTime(target.getObjectId(), 169);
+			}
+			else if (secondaryCommand.equals("GoToTarget"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				activeChar.teleToLocation(target.getX(), target.getY(), target.getZ());
+			}
+			else if (secondaryCommand.equals("FakeCast"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				if (target instanceof L2MonsterInstance)
+				{
+					final L2MonsterInstance monster = (L2MonsterInstance) target;
+					//(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
+					activeChar.sendPacket(new MagicSkillLaunched(monster, 5082, 1, new L2Object[]{
+							activeChar, activeChar.getSummons().get(0)
+					}));
+				}
+			}
+			else if (secondaryCommand.equals("DeleteWar"))
+			{
+				L2Clan equinox = ClanTable.getInstance().getClanByName("Equinox");
+				L2Clan illuminati = ClanTable.getInstance().getClanByName("SaintsOfBots");
+
+				ClanWarManager.getInstance().getWar(equinox, illuminati).delete();
+
+				activeChar.sendMessage("Done.");
+			}
+			else if (secondaryCommand.equals("FixOlyToon"))
+			{
+				final L2PcInstance target = activeChar.getTarget().getActingPlayer();
+
+				Olympiad.getInstance().removeNoble(target.getObjectId());
+
+				activeChar.sendMessage("DONE.");
+			}
+			else if (secondaryCommand.equals("CumToMe"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				if (target instanceof L2Character)
+				{
+					L2Character targetedCharacter = (L2Character) target;
+
+					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+							new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
+				}
+			}
+			else if (secondaryCommand.equals("GetMovin"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				if (target instanceof L2Character)
+				{
+					L2Character targetedCharacter = (L2Character) target;
+
+					// Giran Weapon Shop
+					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+							new L2CharPosition(79778 + Rnd.get(-100, 100), 146671 + Rnd.get(-100, 100), -3515, 0));
+
+					// Giran Grocery
+					//targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(80434, 147896, -3504, 0));
+				}
+			}
+			else if (secondaryCommand.equals("GetMova"))
+			{
+				L2Object target = activeChar.getTarget();
+
+				if (target instanceof L2Character)
+				{
+					L2Character targetedCharacter = (L2Character) target;
+
+					// Giran Grocery
+					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+							new L2CharPosition(79671 + Rnd.get(-250, 250), 147530 + Rnd.get(-250, 250), -3504, 0));
+				}
+			}
+			else if (secondaryCommand.equals("DropHerb"))
+			{
+				L2ItemInstance droppedItem = null;
+
+				int buffHerbs = 50107 + Rnd.get(-7, 10);
+				@SuppressWarnings("unused") int buffHerbsChance = 20;
+
+				// Hunter Deathmatch - PP/EE/SE Buff Herbs...
+				droppedItem = ItemTable.getInstance().createItem("EventReward", buffHerbs, 1, activeChar, activeChar);
+				droppedItem
+						.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
+								activeChar.getZ());
+
+				droppedItem = ItemTable.getInstance().createItem("EventReward", 8156, 1, activeChar, activeChar);
+				droppedItem
+						.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
+								activeChar.getZ());
+			}
+			else if (secondaryCommand.equals("SetAgathion"))
+			{
+				final int agathionId = Integer.parseInt(st.nextToken());
+
+				activeChar.setAgathionId(agathionId);
+				activeChar.broadcastUserInfo();
+			}
+			else if (secondaryCommand.equals("StartAuction"))
+			{
+				final int auctionId = Integer.parseInt(st.nextToken());
+
+				CustomAuctionManager.getInstance().startAuction(auctionId);
+
+				activeChar.sendMessage("Started the Auction " + auctionId + ".");
+			}
+			else if (secondaryCommand.equals("EndAuction"))
+			{
+				final int auctionId = Integer.parseInt(st.nextToken());
+
+				activeChar.sendMessage("Ended the Auction " + auctionId + ".");
+			}
+			else if (secondaryCommand.equals("FixAuction"))
+			{
+				CustomAuctionManager.getInstance().tryToBid(activeChar, 268929159, 1, "Adena");
+				activeChar.sendMessage("BLA");
+			}
+			else if (secondaryCommand.equals("ReloadAuctions"))
+			{
+				CustomAuctionManager.getInstance().load(true);
+
+				activeChar.sendMessage("Auctions have been reloaded.");
+			}
+			else if (secondaryCommand.equals("SetObserver"))
+			{
+				if (activeChar.getTarget() instanceof L2PcInstance)
+				{
+					final L2PcInstance player = (L2PcInstance) activeChar.getTarget();
+
+					player.enterObserverMode(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+				}
+
+				activeChar.sendMessage("Done.");
+			}
+			else if (secondaryCommand.equals("LeaveObserver"))
+			{
+				if (activeChar.getTarget() instanceof L2PcInstance)
+				{
+					final L2PcInstance player = (L2PcInstance) activeChar.getTarget();
+
+					player.leaveObserverMode();
+				}
+
+				activeChar.sendMessage("Done.");
+			}
+			else if (secondaryCommand.equals("TestTempLevel"))
+			{
+				activeChar.setTemporaryLevel((byte) 60);
+				activeChar.setTemporaryLevel((byte) 0);
+				activeChar.setTemporaryLevel((byte) 35);
+			}
+			else if (secondaryCommand.equals("NoFeed"))
+			{
+				if (!(activeChar.getTarget() instanceof L2PcInstance))
+				{
+					return false;
+				}
+
+				final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
+
+				L2ItemInstance item = activeChar.getInventory().getItemByItemId(6392);
+
+				if (item != null)
+				{
+					activeChar.sendMessage("Destroying Medals...");
+					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
+				}
+
+				item = activeChar.getInventory().getItemByItemId(6393);
+
+				if (item != null)
+				{
+					activeChar.sendMessage("Destroying Glitt Medals...");
+					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
+				}
+
+				item = activeChar.getInventory().getItemByItemId(6393);
+
+				if (item != null)
+				{
+					activeChar.sendMessage("Destroying Noble Brooch...");
+					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
+				}
+			}
+			else if (secondaryCommand.equals("VisualEffect"))
+			{
+				for (Integer a : activeChar.getAbnormalEffect())
+				{
+					activeChar.stopVisualEffect(a);
+				}
+
+				int id = Integer.parseInt(st.nextToken());
+
+				activeChar.startVisualEffect(id);
+				activeChar.sendPacket(new ExUserEffects(activeChar));
+
+				if (activeChar.getTarget() instanceof L2PcInstance)
+				{
+					final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
+
+					for (Integer a : target.getAbnormalEffect())
+					{
+						target.stopVisualEffect(a);
+					}
+
+					target.startVisualEffect(id);
+					target.sendPacket(new ExUserEffects(target));
+				}
+			}
+			else if (secondaryCommand.equals("Social"))
+			{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
+				{
+					player.broadcastPacket(new SocialAction(player.getObjectId(), 33));
+				}
+			}
+			else if (secondaryCommand.equals("MagicGem"))
+			{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
+				{
+					if (player.getInventory().getItemByItemId(1373) == null)
+					{
+						player.addItem("AdminDo", 1373, 1, activeChar, true);
+						activeChar.sendMessage("Magic Gem given to " + player.getName());
+					}
+				}
+			}
+			else if (secondaryCommand.equals("CheckClones"))
+			{
+				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
+				{
+					//if (Util.calculateDistance(obj, activeChar, false) > 50)
+					//	continue;
+
+					if (!(obj instanceof L2GuardInstance))
+					{
+						continue;
+					}
+
+					activeChar.sendMessage("Found Object " + obj);
+					activeChar.sendMessage("IsDecayed " + ((L2GuardInstance) obj).isDecayed());
+					//obj.decayMe();
+					break;
+				}
+			}
+			else if (secondaryCommand.equals("TellEmVote"))
+			{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
+				{
+					//if (player.getInventory().getItemByItemId(15393) != null)
+					//	continue;
+
+					//if (!player.isGM())
+					//	continue;
+
+					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Jonah", "Hey! you don't have a Vitality Belt. Come to me in Giran for one! unlimited vitality, better adena drops, auto-loot in boosted hunting grounds... you need a Vitality Belt!"));
+					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Jonah", "Kff! I noticed you don't have a Vitality Belt... only newbies run around without a Vitality Belt! Come to me in Giran for one!"));
+					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Lorain", "Hey! I'm now giving out Divine Protection Elixirs to mini-games participants! come get yours! join the mini game!"));
+					player.sendPacket(new CreatureSay(0x00, Say2.SHOUT, "DarkCore",
+							"I WILL LICK YOUR NUTS FOR NOBLE ITEMS, PM ME"));
+
+					//activeChar.sendMessage("Said it to " + player.getName() + ".");
+				}
+			}
+			else if (secondaryCommand.equals("TellHim"))
+			{
+				((L2Character) activeChar.getTarget()).setIsInvul(false);
+			}
+			else if (secondaryCommand.equals("FixClanWars"))
+			{
+				for (L2Clan clan : ClanTable.getInstance().getClans())
+				{
+					for (ClanWar war : clan.getWars())
+					{
+						war.delete();
+					}
+				}
+
+				activeChar.sendMessage("Fixed clan wars.");
+			}
+			else if (secondaryCommand.equals("Testur"))
+			{
+				activeChar.getClient().setDetached(true);
+			}
+			else if (secondaryCommand.equals("Vitality"))
+			{
+				int level = 4;
+				int vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
+
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
+				{
+					player.setVitalityPoints(vitality, false, true);
+				}
+
+				activeChar.sendMessage("Done.");
+			}
+			else if (secondaryCommand.equals("EndOlympiads"))
+			{
+				Olympiad.getInstance().endOlympiads();
+			}
+			else if (secondaryCommand.equals("Crest"))
+			{
+				if (activeChar.getClan().getAllyCrestId() != 0)
+				{
+					activeChar.sendPacket(new AllyCrest(activeChar.getClan().getAllyCrestId()));
+					activeChar.sendMessage("Crest sent.. ( " + activeChar.getClan().getAllyCrestId());
+				}
+			}
+			else if (secondaryCommand.equals("GrabPosition"))
+			{
+				_coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
+
+				activeChar.sendMessage("Recorded current position.");
+			}
+			else if (secondaryCommand.equals("ClearPositions"))
+			{
+				_coords.clear();
+
+				activeChar.sendMessage("Cleared recorded positions.");
+			}
+			else if (secondaryCommand.equals("PrintPositions"))
+			{
+				for (Location l : _coords)
+				{
+					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
+				}
+			}
+			else if (secondaryCommand.equals("GrabNearbyMonsters"))
+			{
+				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
+				{
+					if (obj instanceof L2MonsterInstance && !(obj instanceof L2RaidBossInstance))
+					{
+						final L2MonsterInstance monster = (L2MonsterInstance) obj;
+
+						if (_npcTemplates.contains(monster.getTemplate()))
+						{
+							continue;
+						}
+
+						_npcTemplates.add(monster.getTemplate());
+						activeChar.sendMessage("Added " + monster.getName() + ".");
+					}
+				}
+			}
+			else if (secondaryCommand.equals("ClearNpcs"))
+			{
+				_npcTemplates.clear();
+
+				activeChar.sendMessage("Templates cleared.");
+			}
+			else if (secondaryCommand.equals("PrintDropsForNpcs"))
+			{
+				for (L2NpcTemplate npcTemplate : _npcTemplates)
+				{
+					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
+					System.out.println("\t\t<droplist>");
+					System.out.println(
+							"\t\t\t<item category='1' categoryChance='100' id='5572' minCount='2' maxCount='3' dropChance='100'/> <!--  Wind Mantra -->");
+					System.out.println(
+							"\t\t\t<item category='2' categoryChance='100' id='5570' minCount='1' maxCount='2' dropChance='100'/> <!--  Water Mantra -->");
+					System.out.println(
+							"\t\t\t<item category='3' categoryChance='100' id='5574' minCount='1' maxCount='1' dropChance='100'/> <!--  Fire Mantra -->");
+					System.out.println("\t\t</droplist>");
+					System.out.println("\t</npc>");
+				}
+			}
+			else if (secondaryCommand.equals("InventoryToMultisell"))
+			{
+				String log = "<?xml version='1.0' encoding='utf-8'?>\n<list>\n";
+				for (L2ItemInstance item : activeChar.getInventory().getItems())
+				{
+					log += "\t<!-- " + item.getName() + " -->\n";
+					log += "\t<item>\n";
+					log += "\t\t<ingredient id=\"57\" count=\"1\" /> <!-- Adena -->\n";
+					log += "\t\t<production id=\"" + item.getItemId() + "\" count=\"1\" />\n";
+					log += "\t</item>\n";
+				}
+
+				log += "</list>";
+
+				Util.logToFile(log, "InventoryToMultisell", "xml", false, false);
+			}
+			else if (secondaryCommand.equals("EpicTest"))
+			{
+				SimpleDateFormat dateFormatter = new SimpleDateFormat("EEEE d MMMMMMM");
+				// new SimpleDateFormat("EEEE d MMMMMMM k:m:s:");
+
+				long baiumRespawnTime =
+						System.currentTimeMillis() + GrandBossManager.getInstance().getUnlockTime(29020);
+
+				activeChar.sendMessage("Baium Respawn: " + dateFormatter.format(baiumRespawnTime));
+
+				long earliestSpawnTime = 0;
+				long latestSpawnTime = 0;
+
+				String earliestSpawnTimeDay = "";
+				String latestSpawnTimeDay = "";
+
+				switch (Rnd.get(0, 2))
+				{
+					case 0:
+					{
+						// Shows -1 +1
+						earliestSpawnTime = baiumRespawnTime - 3600000;
+						latestSpawnTime = baiumRespawnTime + 3600000;
+						break;
+					}
+					case 1:
+					{
+						// Shows -2 0
+						earliestSpawnTime = baiumRespawnTime - 2 * 3600000;
+						latestSpawnTime = baiumRespawnTime;
+						break;
+					}
+					case 2:
+					{
+						// Shows 0 +2
+						earliestSpawnTime = baiumRespawnTime;
+						latestSpawnTime = baiumRespawnTime + 2 * 3600000;
+						break;
+					}
+				}
+
+				earliestSpawnTimeDay = dateFormatter.format(earliestSpawnTime);
+				latestSpawnTimeDay = dateFormatter.format(latestSpawnTime);
+
+				dateFormatter = new SimpleDateFormat("k:m:s:");
+
+				if (!earliestSpawnTimeDay.equals(latestSpawnTimeDay))
+				{
+					activeChar.sendMessage("Baium will be spawning between " + earliestSpawnTimeDay + " at " +
+							dateFormatter.format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " +
+							dateFormatter.format(latestSpawnTime) + ".");
+				}
+				else
+				{
+					activeChar.sendMessage("Baium will be spawning on " + earliestSpawnTimeDay + " between " +
+							dateFormatter.format(earliestSpawnTime) + " and " + dateFormatter.format(latestSpawnTime) +
+							".");
+				}
+			}
+			else if (secondaryCommand.equals("SpawnMonsters"))
+			{
+				int fromId = Integer.parseInt(st.nextToken());
+				int toId = Integer.parseInt(st.nextToken());
+
+				//int x = activeChar.getX(), y = activeChar.getY(), z = activeChar.getZ();
+
+				float headingAngle =
+						(float) ((activeChar.getHeading() + Rnd.get(-15000, 15000)) * Math.PI) / Short.MAX_VALUE;
+
+				int range = 50;
+
+				float x = activeChar.getX() + range * (float) Math.cos(headingAngle);
+				float y = activeChar.getY() + range * (float) Math.sin(headingAngle);
+				float z = activeChar.getZ() + 1;
+
+				@SuppressWarnings("unused") int spawnedMonsters = 0;
+				for (int id = fromId; id < toId; id++)
+				{
+					L2Spawn spawn = null;
+
+					L2NpcTemplate template = NpcTable.getInstance().getTemplate(id);
+					try
+					{
+						spawn = new L2Spawn(template);
+					}
+					catch (Exception e)
+					{
+						e.printStackTrace();
+						continue;
+					}
+
+					x = activeChar.getX() + range * (float) Math.cos(headingAngle);
+					y = activeChar.getY() + range * (float) Math.sin(headingAngle);
+					z = activeChar.getZ() + 1;
+
+					spawn.setInstanceId(0);
+					spawn.setHeading(Rnd.get(65535));
+					spawn.setX((int) x);
+					spawn.setY((int) y);
+					spawn.setZ((int) z);
+					spawn.stopRespawn();
+					spawn.doSpawn(false);
+
+					range += 50;
+				}
+			}
+			else if (secondaryCommand.equals("CleanInventory"))
+			{
+				activeChar.getInventory().destroyAllItems("Admin", activeChar, activeChar);
+			}
+			else if (secondaryCommand.equals("GenerateBossWeapons"))
+			{
+				final int[] weaponsIds = {
+						// Antharas
+						36417, 36418, 36419, 36420, 36421, 36422, 36423, 36424, 36425, 36426,
+						// Valakas
+						36427, 36428, 36429, 36430, 36431, 36432, 36433,
+						// Lindvior
+						36434, 36435, 36436, 36437, 36438, 36439, 36440
+				};
+
+				for (int itemId : weaponsIds)
+				{
+					final L2Item itemTemplate = ItemTable.getInstance().getTemplate(itemId);
+
+					String baseItemName = itemTemplate.getName();
+					String[] itemNames = new String[3];
+
+					itemNames[0] = baseItemName.replace("Fragment", "Standard");
+					itemNames[1] = baseItemName.replace("Fragment", "High-grade");
+					itemNames[2] = baseItemName.replace("Fragment", "Top-grade");
+					L2Item[] itemTemplates = new L2Item[3];
+
+					activeChar.sendMessage("Base Item Name: " + baseItemName);
+					activeChar.sendMessage("Will be looking for...:");
+					for (String s : itemNames)
+					{
+						activeChar.sendMessage("- '" + s + "'");
+					}
+
+					for (L2Item item : ItemTable.getInstance().getAllItems())
+					{
+						if (item == null)
+						{
+							continue;
+						}
+
+						if (item.getName().equalsIgnoreCase(itemNames[0]))
+						{
+							itemTemplates[0] = item;
+						}
+						if (item.getName().equalsIgnoreCase(itemNames[1]))
+						{
+							itemTemplates[1] = item;
+						}
+						if (item.getName().equalsIgnoreCase(itemNames[2]))
+						{
+							itemTemplates[2] = item;
+						}
+					}
+
+					for (L2Item item : itemTemplates)
+					{
+						activeChar.sendMessage("Found Item: " + item.getName());
+					}
+
+					String toLog = "";
+					/*
+                    toLog += "\t<item>\n";
+					toLog += "\t\t<ingredient id=\"50009\" count=\"250\" /> <!-- Raid Heart -->\n";
+					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
+					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"75\" /> <!-- " + baseItemName + " -->\n";
+					toLog += "\t\t<production id=\"9143\" count=\"25\" chance=\"50\" /> <!-- Golden Apiga -->\n";
+					toLog += "\t</item>\n";
+					toLog += "\t<item>\n";
+					toLog += "\t\t<ingredient id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
+					toLog += "\t\t<ingredient id=\"50009\" count=\"100\" /> <!-- Raid Heart -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[0].getItemId() + "\" count=\"1\" /> <!-- " + itemTemplates[0].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[0].getItemId() + "\" count=\"1\" chance=\"50\" /> <!-- " + itemTemplates[0].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"50\" /> <!-- " + baseItemName + " -->\n";
+					toLog += "\t</item>\n";
+					toLog += "\t<item>\n";
+					toLog += "\t\t<ingredient id=\"" + itemTemplates[0].getItemId() + "\" count=\"1\" /> <!-- " + itemTemplates[0].getName() + " -->\n";
+					toLog += "\t\t<ingredient id=\"50009\" count=\"100\" /> <!-- Raid Heart -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" chance=\"25\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[0].getItemId() + "\" count=\"1\" chance=\"75\" /> <!-- " + itemTemplates[0].getName() + " -->\n";
+					toLog += "\t</item>\n";
+					toLog += "\t<item>\n";
+					toLog += "\t\t<ingredient id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
+					toLog += "\t\t<ingredient id=\"50009\" count=\"100\" /> <!-- Raid Heart -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[2].getItemId() + "\" count=\"1\" /> <!-- " + itemTemplates[2].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[2].getItemId() + "\" count=\"1\" chance=\"10\" /> <!-- " + itemTemplates[2].getName() + " -->\n";
+					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" chance=\"90\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
+					toLog += "\t</item>\n";
+					 */
+
+					/*
+					toLog += "\t<item id=\"" + itemId + "\" type=\"Weapon\" name=\"" + baseItemName + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
+					toLog += "\t<item id=\"" + itemTemplates[0].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[0].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
+					toLog += "\t<item id=\"" + itemTemplates[1].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[1].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
+					toLog += "\t<item id=\"" + itemTemplates[2].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[2].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
+					 */
+
+					toLog += "case " + itemId + ": // " + baseItemName + "\n";
+					toLog += "case " + itemTemplates[0].getItemId() + ": // " + itemTemplates[0].getName() + "\n";
+					toLog += "case " + itemTemplates[1].getItemId() + ": // " + itemTemplates[1].getName() + "\n";
+					toLog += "case " + itemTemplates[2].getItemId() + ": // " + itemTemplates[2].getName() + "\n";
+
+					Util.logToFile(toLog, "NewShoppos", "xml", true, false);
+				}
+			}
+			else if (secondaryCommand.startsWith("Rape"))
+			{
+				if (!st.hasMoreTokens())
+				{
+					activeChar.sendMessage("Input a monster ID...");
+					return false;
+				}
+
+				int monsterId = Integer.parseInt(st.nextToken());
+
+				if (!st.hasMoreTokens())
+				{
+					activeChar.sendMessage("Input the amount of time to rape it...");
+					return false;
+				}
+
+				int killCount = Integer.parseInt(st.nextToken());
+
+				for (int i = 0; i < killCount; i++)
+				{
+					L2Spawn spawn = null;
+
+					L2NpcTemplate template = NpcTable.getInstance().getTemplate(monsterId);
+					try
+					{
+						spawn = new L2Spawn(template);
+					}
+					catch (Exception e)
+					{
+						e.printStackTrace();
+					}
+
+					spawn.setInstanceId(0);
+					spawn.setHeading(Rnd.get(65535));
+					spawn.setX(activeChar.getX() + Rnd.get(-50, 50));
+					spawn.setY(activeChar.getY() + Rnd.get(-50, 50));
+					spawn.setZ(activeChar.getZ());
+					spawn.stopRespawn();
+					spawn.doSpawn(false);
+
+					L2Npc npc = spawn.getNpc();
+
+					npc.reduceCurrentHp(npc.getMaxHp() + 1, activeChar, null);
+				}
+			}
+			else if (secondaryCommand.equals("ShowSpawns"))
+			{
+				final int npcId = Integer.parseInt(st.nextToken());
+
+				for (L2Spawn spawn : SpawnTable.getInstance().getAllSpawns(npcId))
+				{
+					String out = "<spawn x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() +
+							"\" heading=\"" + spawn.getHeading() + "\" respawn=\"10000\" />";
+					System.out.println(out);
+				}
+			}
+			else if (secondaryCommand.equals("FarmSimulator"))
+			{
+				int killedMonsters = 0;
+				int playerLevel = activeChar.getLevel();
+
+				L2NpcTemplate[] monsters =
+						NpcTable.getInstance().getAllMonstersBetweenLevels(playerLevel - 5, playerLevel + 5);
+
+				for (L2NpcTemplate monster : monsters)
+				{
+					if (activeChar.getLevel() + 5 < monster.Level)
+					{
+						break;
+					}
+
+					boolean canSpawn = false;
+
+					if (monster.Level < 10)
+					{
+						canSpawn = true;
+					}
+
+					if (canSpawn)
+					{
+						L2Spawn spawn = null;
+
+						L2NpcTemplate template = NpcTable.getInstance().getTemplate(monster.NpcId);
+						try
+						{
+							spawn = new L2Spawn(template);
+						}
+						catch (Exception e)
+						{
+							e.printStackTrace();
+						}
+
+						spawn.setInstanceId(0);
+						spawn.setHeading(Rnd.get(65535));
+						spawn.setX(activeChar.getX() + Rnd.get(-50, 50));
+						spawn.setY(activeChar.getY() + Rnd.get(-50, 50));
+						spawn.setZ(activeChar.getZ());
+						spawn.stopRespawn();
+						spawn.doSpawn(false);
+
+						L2Npc npc = spawn.getNpc();
+
+						npc.reduceCurrentHp(npc.getMaxHp() + 1, activeChar, null);
+
+						killedMonsters++;
+					}
+				}
+
+				activeChar.sendMessage(killedMonsters + " monsters were killed.");
+			}
+			else if (secondaryCommand.equals("OlyCamera"))
+			{
+				if (activeChar.getTarget() instanceof L2PcInstance)
+				{
+					final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
+
+					target.sendPacket(new ExOlympiadMode(3));
+				}
+				else
+				{
+					activeChar.sendPacket(new ExOlympiadMode(3));
+				}
+			}
+			else if (secondaryCommand.equals("Login"))
+			{
+				if (!st.hasMoreTokens())
+				{
+					activeChar.sendMessage("Specify the name of the character to log into.");
+					return false;
+				}
+
+				final String logIntoCharacterName = st.nextToken();
+
+				String charNameToSwitch = "";
+				if (st.hasMoreTokens())
+				{
+					charNameToSwitch = st.nextToken();
+				}
+
+				L2PcInstance toon = activeChar;
+				if (!charNameToSwitch.equals(""))
+				{
+					toon = L2World.getInstance().getPlayer(charNameToSwitch);
+					activeChar.sendMessage("Logging " + toon.getName() + " into " + logIntoCharacterName);
+				}
+
+				final int charId = CharNameTable.getInstance().getIdByName(logIntoCharacterName);
+
+				if (charId == 0)
+				{
+					activeChar.sendMessage("No character with such name. Try again.");
+					return false;
+				}
+
+				final L2GameClient gameClient = toon.getClient();
+
+				toon.setClient(null);
+
+				gameClient.saveCharToDisk();
+
+				gameClient.setActiveChar(null);
+
+				// return the client to the authed status
+				gameClient.setState(GameClientState.AUTHED);
+
+				gameClient.sendPacket(RestartResponse.STATIC_PACKET_TRUE);
+
+				// send char list
+				CharSelectionInfo cl =
+						new CharSelectionInfo(gameClient.getAccountName(), gameClient.getSessionId().playOkID1);
+				gameClient.sendPacket(cl);
+				gameClient.setCharSelection(cl.getCharInfo());
+
+				ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						L2PcInstance cha = L2PcInstance.load(charId);
+
+						if (cha == null)
+						{
+							gameClient.sendPacket(ActionFailed.STATIC_PACKET);
+							return;
+						}
+
+						cha.setClient(gameClient);
+						gameClient.setActiveChar(cha);
+
+						//BotsManager.getInstance().logPlayer(cha, true);
+
+						gameClient.setState(GameClientState.IN_GAME);
+
+						CharSelected cs = new CharSelected(cha, gameClient.getSessionId().playOkID1);
+						gameClient.sendPacket(cs);
+
+						cha.setOnlineStatus(true, false);
+					}
+				}, 1000);
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * @param activeChar
+	 * @param id
+	 */
+	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
+	{
+		L2Character caster;
+		L2Object target = activeChar.getTarget();
+		if (!(target instanceof L2Character))
+		{
+			caster = activeChar;
+		}
+		else
+		{
+			caster = (L2Character) target;
+		}
+
+		L2Skill _skill = SkillTable.getInstance().getInfo(id, 1);
+		if (_skill != null)
+		{
+			caster.setTarget(activeChar);
+			if (msu)
+			{
+				caster.broadcastPacket(
+						new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill.getReuseDelay(),
+								_skill.getReuseHashCode(), 0, 0));
+			}
+			else
+			{
+				caster.doCast(_skill);
+			}
+		}
+	}
+
+	/* (non-Javadoc)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 */
+	@Override
+	public String[] getAdminCommandList()
+	{
+		return ADMIN_COMMANDS;
+	}
 }

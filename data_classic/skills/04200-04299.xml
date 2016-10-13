@@ -10,7 +10,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#abnormalLvl">1 2 2 3 3 3 3 3 3 3 3 3</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -19,7 +19,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="90" stackLvl="#abnormalLvl" stackType="attack_time_up">
                 <effect type="Debuff" val="0" />
@@ -31,7 +30,7 @@
     <skill id="4201" levels="12" name="Sleep">
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -40,7 +39,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="70" stackLvl="1" stackType="sleep" visualEffect="sleep">
                 <effect type="Sleep" val="0" />
@@ -51,7 +49,7 @@
     <skill id="4202" levels="12" name="Hold">
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -60,7 +58,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="70" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -77,7 +74,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#abnormalLvl">1 2 2 3 3 3 3 3 3 3 3 3 3</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -86,7 +83,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" landRate="50" stackLvl="#abnormalLvl" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -110,7 +106,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#abnormalLvl">2 3 4 5 6 7 8 8 9 9 10 10</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -119,7 +115,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="7" duration="3" landRate="90" stackLvl="#abnormalLvl" stackType="bleeding"
                       visualEffect="bleed">
@@ -131,7 +126,7 @@
     <skill id="4205" levels="12" name="Paralysis">
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -140,7 +135,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" landRate="40" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
@@ -161,7 +155,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#abnormalLvl">2 2 2 2 2 3 4 5 6 7 8 8</table>
         <table name="#mpConsume">17 29 39 53 67 83 97 103 108 112 115 116</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -170,7 +164,6 @@
         <set name="castRange" val="750" />
         <set name="effectRange" val="1250" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="10" duration="3" landRate="90" stackLvl="#abnormalLvl" stackType="dot_mp">
                 <effect type="ManaDamOverTime" val="#maxMp" />
@@ -181,7 +174,7 @@
         <table name="#power">352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790</table>
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">32 45 63 83 106 129 150 158 164 168 170 173</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -196,7 +189,7 @@
         <table name="#power">176 475 1304 3414 8592 16607 25504 29589 33944 38501 43180 47895</table>
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">32 45 63 83 106 129 150 158 164 168 170 173</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -206,7 +199,6 @@
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="80" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -217,7 +209,7 @@
         <table name="#power">2516 3150 4708 7611 11465 14839 17138 18081 19008 19977 13303 13157</table>
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#mpConsume">21 34 50 67 86 104 119 125 129 131 131 132</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -235,7 +227,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#abnormalLvl">11 12 13 14 15 16 17 17 18 18 19 19</table>
         <table name="#mpConsume">43 69 99 134 173 207 239 250 258 262 262 263</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="HEAL_PERCENT" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -330,7 +322,7 @@
     </skill>
     <!-- You have been cursed by a Guardian Spirit. No magic or physical skills can be used at this time. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
     <skill id="4215" levels="1" name="Raid Curse">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="100" />
@@ -345,7 +337,7 @@
         </for>
     </skill>
     <skill id="4216" levels="1" name="Scatter Enemy">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="60" />
@@ -387,7 +379,7 @@
     </skill>
     <!-- Afflicted with Hold and unable to move momentarily. -->
     <skill id="4219" levels="1" name="Hold">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="60" />
@@ -397,7 +389,6 @@
         <set name="castRange" val="800" />
         <set name="effectRange" val="1300" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="root_magically" visualEffect="root">
                 <effect type="Root" val="0" />
@@ -405,7 +396,7 @@
         </for>
     </skill>
     <skill id="4220" levels="1" name="Dual Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="60" />
@@ -491,7 +482,7 @@
         <table name="#power">122 279 584 1110 1923 3030 4336 5002 5632 6187 6632 6978</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">25 40 56 76 99 121 142 151 159 165 168 170</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -506,7 +497,7 @@
         <table name="#power">122 279 584 1110 1923 3030 4336 5002 5632 6187 6632 6978</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">25 40 56 76 99 121 142 151 159 165 168 170</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -519,7 +510,7 @@
     </skill>
     <!-- Unleashes a devastating attack against castle gates and walls. -->
     <skill id="4230" levels="1" name="Wild Cannon">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="70" />
@@ -533,7 +524,7 @@
         <table name="#power">18 26 38 52 68 85 102 110 116 122 126 129</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -577,7 +568,7 @@
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
         <table name="#power">352 949 2607 6828 17184 33213 51007 59177 67888 77001 86359 95790</table>
         <table name="#mpConsume">32 45 63 83 106 129 150 158 164 168 170 173</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -609,7 +600,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="2" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="120" effectType="DEBUFF" landRate="90" stackLvl="1" stackType="heal_effect_down">
                 <effect type="Debuff" val="0" />
@@ -633,7 +623,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" effectType="DEBUFF" landRate="90" stackLvl="3" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -651,7 +640,6 @@
         <set name="reuseDelay" val="75000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="60" landRate="100" stackLvl="1" stackType="reuse_delay_up">
                 <effect type="Debuff" val="0" />
@@ -708,7 +696,7 @@
     </skill>
     <!-- A deadly toxin courses through your bloodstream, gradually reducing your HP. Effect 9. -->
     <skill id="4243" levels="1" name="Venomous Poison">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="70" />
@@ -716,7 +704,6 @@
         <set name="castRange" val="2000" />
         <set name="effectRange" val="2500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal count="1200" duration="3" stackLvl="9" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="294" />
@@ -769,7 +756,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -786,7 +773,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">17 28 38 49 63 78 92 97 102 105 108 109</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -805,7 +792,7 @@
         <table name="#power">4 5 8 11 15 19 24 24 24 24 24 24</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -819,7 +806,6 @@
         <set name="isDebuff" val="true" />
         <set name="element" val="1" />
         <set name="elementPower" val="20" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="60" effectType="DEBUFF" landRate="60" stackLvl="2" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -831,7 +817,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -848,7 +834,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -879,7 +865,7 @@
         <table name="#power">3 5 7 9 13 16 20 20 20 20 20 20</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -896,7 +882,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -913,7 +899,7 @@
         <table name="#power">5 8 12 17 24 31 39 39 39 39 39 39</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -953,7 +939,7 @@
     </skill>
     <!-- Slows down the speed of a user who is riding a strider. -->
     <skill id="4258" levels="1" name="Hinder Strider">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -962,7 +948,6 @@
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="NULL" />
         <for>
             <abnormal duration="1200" stackLvl="99" stackType="speed_down">
                 <effect type="Debuff" val="0" />
@@ -1001,7 +986,6 @@
         <set name="effectRange" val="#effectRange" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" landRate="35" stackLvl="#abnormalLvl" stackType="poison"
                       visualEffect="poison">
@@ -1015,7 +999,7 @@
         <table name="#mpConsume">17 28 38 49 63 78 92 97 102 105 108 109</table>
         <table name="#castRange">600 750 750 900 900 900 900 900 900 900 900 900</table>
         <table name="#effectRange">1100 1250 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1037,7 +1021,7 @@
         <table name="#mpConsume">13 20 27 35 45 55 65 69 73 75 77 78</table>
         <table name="#castRange">600 750 750 900 900 900 900 900 900 900 900 900</table>
         <table name="#effectRange">1100 1250 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1053,7 +1037,7 @@
     </skill>
     <!-- Speed increases temporarily. Effect 2. -->
     <skill id="4262" levels="2" name="Holiday Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1070,7 +1054,7 @@
     </skill>
     <!-- Atk. Spd. increases temporarily. Effect 1. -->
     <skill id="4263" levels="1" name="Holiday Haste">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1087,7 +1071,7 @@
     </skill>
     <!-- M. Atk. increases temporarily. Effect 1. -->
     <skill id="4264" levels="1" name="Holiday Empower">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1108,7 +1092,7 @@
         Level 3: P. Atk. increases temporarily. Effect 3.
     -->
     <skill id="4265" levels="3" name="Holiday Might">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1129,7 +1113,7 @@
         Level 3: P. Def. increases temporarily. Effect 3.
     -->
     <skill id="4266" levels="3" name="Holiday Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
     <skill id="5000" levels="1" name="Alfred Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="76" />
@@ -12,7 +12,7 @@
         <set name="effectRange" val="1500" />
     </skill>
     <skill id="5001" levels="1" name="Alfred Life Drain">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="76" />
@@ -56,7 +56,7 @@
     </skill>
     <!-- Frintezza is in temporary state of paralysis. -->
     <skill id="5005" levels="1" name="Frintezza Pose">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -137,7 +137,6 @@
         <set name="name" val="#names" />
         <set name="aggroPoints" val="#aggroPoints" />
         <set name="maxNegated" val="#maxNegated" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="#time" stackLvl="1" stackType="#abnormalType" type="#effectname1" val="0">
                 <addPercent stat="pAtk" val="#attackAndSpeed" />
@@ -196,7 +195,7 @@
     </skill>
     <!-- Unable to move momentarily. -->
     <skill id="5012" levels="1" name="Breath of Scarlet">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -205,7 +204,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" landRate="80" stackLvl="1" stackType="stun" visualEffect="dancestun">
                 <effect type="Stun" val="0" />
@@ -214,7 +212,7 @@
     </skill>
     <!-- Portrait ghost drains HP. -->
     <skill id="5013" levels="1" name="Frintezza Energy Drain">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DRAIN" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -262,7 +260,6 @@
         <set name="effectRange" val="1000" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="20" landRate="80" stackLvl="1" stackType="paralyze" visualEffect="floatroot">
                 <effect type="Paralyze" val="0" />
@@ -341,7 +338,6 @@
         <set name="reuseDelay" val="25000" />
         <set name="castRange" val="400" />
         <set name="effectRange" val="900" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Speed decreases momentarily. Effect 1.
@@ -355,7 +351,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Afflicted with Hold and unable to move momentarily. -->
     <skill id="5023" levels="12" name="Hold">
@@ -365,7 +360,6 @@
         <set name="lvlDepend" val="2" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!--
         Level 1: Atk. Spd. decreases momentarily. Effect 1.
@@ -379,7 +373,6 @@
         <set name="lvlDepend" val="1" />
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- His exploits are famous among Wererats. After assigning the South to the Sukar Wererats, he and a group of followers journeyed north in search of wealth. Unlike other Wererats, he possesses an enterprising spirit and began plundering the tombs of Orc tribal chiefs. Chased away by vengeful spirits, now he and his band rob unwary travelers passing through the region. -->
     <skill id="5025" levels="1" name="Raid Boss (Lv. 30)">
@@ -463,7 +456,6 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5039" levels="1" name="Ultra Bomb">
         <set name="target" val="TARGET_NONE" />
@@ -476,7 +468,7 @@
         <table name="#mpConsume">2 2 2 2 2 2 2 242 252 259 262 262</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#abnormalLvl">1 2 3 4 5 6 7 8 9 10 11 12</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -530,7 +522,7 @@
         <table name="#mpConsume">7 10 14 19 25 31 36 38 40 42 42 43</table>
         <table name="#power">137 314 656 1249 2164 3408 4878 5627 6335 6960 7461 7850</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -572,7 +564,7 @@
         <table name="#power">65 164 451 1121 2992 5736 8832 10130 11982 13131 14865 16351</table>
         <table name="#mpConsume">19 22 25 28 31 33 36 38 40 42 42 43</table>
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -588,7 +580,7 @@
         <table name="#power">65 164 451 1121 2992 5736 8832 10130 11982 13131 14865 16351</table>
         <table name="#mpConsume">19 22 25 28 31 33 36 38 40 42 42 43</table>
         <table name="#magicLvl">14 24 34 44 54 64 74 79 84 89 94 99</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -681,7 +673,7 @@
         <table name="#mpConsume">7 10 14 18 23 28 33 35 37 38 39 39</table>
         <table name="#power">18 26 38 52 68 85 102 110 116 122 126 129</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -716,7 +708,7 @@
         <table name="#mpConsume">7 10 14 18 23 28 33 35 37 38 39 39</table>
         <table name="#power">52 60 68 77 85 94 102 110 116 122 126 129</table>
         <table name="#magicLvl">40 45 50 55 60 65 70 75 80 85 90 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -808,7 +800,7 @@
         <table name="#mpConsume">7 10 14 18 23 28 33 35 37 38 39 39</table>
         <table name="#power">18 26 38 52 68 85 102 110 116 122 126 129</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -851,7 +843,6 @@
         <set name="reuseDelay" val="7000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Atk. Spd. decreases momentarily. Effect 3. -->
     <skill id="5069" levels="12" name="Decrease Atk. Spd.">
@@ -865,7 +856,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- Casting Spd. decreases momentarily. Effect 3. -->
     <skill id="5070" levels="12" name="Decrease Casting Spd.">
@@ -879,7 +869,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- P. Atk. decreases momentarily. Effect 3. -->
     <skill id="5071" levels="12" name="Decrease P. Atk.">
@@ -893,7 +882,6 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- M. Atk. decreases momentarily. Effect 3. -->
     <skill id="5072" levels="12" name="Decrease M. Atk.">
@@ -907,12 +895,11 @@
         <set name="reuseDelay" val="8000" />
         <set name="castRange" val="1500" />
         <set name="effectRange" val="2000" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <skill id="5073" levels="12" name="Power Shot">
         <table name="#power">18 26 38 52 68 85 102 110 116 122 126 129</table>
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1035,7 +1022,7 @@
     <skill id="5081" levels="4" name="Silence">
         <table name="#mpConsume">75 75 75 20</table>
         <table name="#power">1715 3540 7306 8602</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1068,7 +1055,7 @@
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5083" levels="4" name="Stun">
         <table name="#mpConsume">93 93 93 5</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1080,7 +1067,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" effectType="STUN" landRate="50" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1088,7 +1074,7 @@
         </for>
     </skill>
     <skill id="5084" levels="4" name="Blinding Blow">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BLOW" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1115,7 +1101,6 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="23" />
         <set name="hitTime" val="3300" />
-        <set name="saveVs" val="MEN" />
     </skill>
     <!-- HP decreases from poison momentarily. If HP falls to 0, death will ensue. -->
     <skill id="5086" levels="1" name="Deadly Poison">
@@ -1125,7 +1110,6 @@
         <set name="lvlDepend" val="1" />
         <set name="mpConsume" val="23" />
         <set name="hitTime" val="3300" />
-        <set name="saveVs" val="CON" />
     </skill>
     <skill id="5087" levels="2" name="Berserk">
         <table name="#pAtk">90 180</table>
@@ -1154,7 +1138,7 @@
         <set name="aggroPoints" val="100" />
     </skill>
     <skill id="5089" levels="1" name="Presentation -  Enter the Sailren Nest Quest">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DUMMY" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -1191,7 +1175,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal count="7" duration="3" landRate="90" stackLvl="1" stackType="turn_flee">
                 <effect type="Fear" val="0" />
@@ -1227,7 +1210,7 @@
         <set name="isSuicideAttack" val="true" />
     </skill>
     <skill id="5095" levels="1" name="Antharas Strike">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />
@@ -1238,7 +1221,7 @@
         <set name="effectRange" val="400" />
     </skill>
     <skill id="5096" levels="1" name="Antharas Power Shot">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="85" />

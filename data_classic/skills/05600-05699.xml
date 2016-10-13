@@ -212,7 +212,7 @@
     <skill id="5621" levels="12" name="Aerial Recharge">
         <table name="#magicLvl">10 20 30 40 50 60 70 75 80 85 90 95</table>
         <table name="#power">6 10 13 18 23 28 33 35 36 38 39 39</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MANAHEAL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -263,7 +263,7 @@
     </skill>
     <!-- For 60 minutes, Spd. increases by 33. -->
     <skill id="5627" levels="1" name="Adventurer's Wind Walk">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -279,7 +279,7 @@
     </skill>
     <!-- For 60 minutes P. Def. increases by 15% -->
     <skill id="5628" levels="1" name="Adventurer's Shield">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -295,7 +295,7 @@
     </skill>
     <!-- For 60 minutes, Max HP increases by 35%. -->
     <skill id="5629" levels="1" name="Adventurer's Blessed Body">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -311,7 +311,7 @@
     </skill>
     <!-- For 60 minutes, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
     <skill id="5630" levels="1" name="Adventurer's Vampiric Rage">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -327,7 +327,7 @@
     </skill>
     <!-- For 60 minutes, HP Recovery Rate increases by 20%. -->
     <skill id="5631" levels="1" name="Adventurer's Regeneration">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -343,7 +343,7 @@
     </skill>
     <!-- Increases Atk. Spd. by 33% for 60 minutes. -->
     <skill id="5632" levels="1" name="Adventurer's Haste">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -359,7 +359,7 @@
     </skill>
     <!-- For 60 minutes, Max HP is increased by 35%. -->
     <skill id="5633" levels="1" name="Adventurer's Blessed Soul">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -375,7 +375,7 @@
     </skill>
     <!-- For 60 minutes, Casting Spd. increases by 30% -->
     <skill id="5634" levels="1" name="Adventurer's Acumen">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -391,7 +391,7 @@
     </skill>
     <!-- For 60 minutes, decreases magic cancel rate by 18. -->
     <skill id="5635" levels="1" name="Adventurer's Concentration">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -407,7 +407,7 @@
     </skill>
     <!-- For 60 minutes, M. Atk. increases by 55%. -->
     <skill id="5636" levels="1" name="Adventurer's Empower">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -423,7 +423,7 @@
     </skill>
     <!-- Increases M. Def. by 30% for 60 minutes. -->
     <skill id="5637" levels="1" name="Adventurer's Magic Barrier">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -449,7 +449,7 @@
         <table name="#maxHp">20 25 30 35</table>
         <table name="#mpConsume">48 52 60 67</table>
         <table name="#abnormalLvl">3 4 5 6</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -479,7 +479,7 @@
         <table name="#abnormalLvl">3 4 5 6</table>
         <table name="#maxMp">20 25 30 35</table>
         <table name="#mpConsume">48 52 58 65</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -507,7 +507,7 @@
         <table name="#magicLvl">44 52</table>
         <table name="#mpConsume">39 48</table>
         <table name="#pAtkSpd">15 33</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -548,7 +548,7 @@
     </skill>
     <!-- Increases Casting Spd. temporarily. Effect 3. -->
     <skill id="5643" levels="1" name="Seraphim the Unicorn - Acumen">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -598,7 +598,7 @@
         <table name="#abnormalLvl">1 2 2</table>
         <table name="#magicLvl">64 72 72</table>
         <table name="#mpConsume">58 65 52</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -629,7 +629,7 @@
         <table name="#mpConsume">54 62 69</table>
         <table name="#MpConsumeRate">4 7 10</table>
         <table name="#SpiritOre">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -661,7 +661,7 @@
         <table name="#mAtk">65 75</table>
         <table name="#mpConsume">39 48</table>
         <table name="#abnormalLvl">2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -722,7 +722,7 @@
         <table name="#magicLvl">40 48 56</table>
         <table name="#mpConsume">35 44 52</table>
         <table name="#abnormalLvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -750,7 +750,7 @@
         <table name="#mpConsume">39 48</table>
         <table name="#rCrit">25 30</table>
         <table name="#abnormalLvl">2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -779,7 +779,7 @@
         <table name="#magicLvl">56 62 64</table>
         <table name="#mpConsume">35 44 52</table>
         <table name="#abnormalLvl">1 2 3</table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -903,7 +903,7 @@
             640 657 673 690 707 723 740 757 773 790 806 823 839 856 872 888 903 919 935 950 965 979 994 1008 1022 1037
             1056 1077 1104 1132 1161 1190 1220 1251 1279
         </table>
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="#magicLvl" />
@@ -1137,7 +1137,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5665" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1146,7 +1146,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1155,7 +1154,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5666" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1164,7 +1163,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1173,7 +1171,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5667" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1182,7 +1180,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1191,7 +1188,7 @@
     </skill>
     <!-- HP decreases from Poison momentarily. Effect 8. -->
     <skill id="5668" levels="1" name="Poison">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -1200,7 +1197,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal count="10" duration="3" stackLvl="8" stackType="poison" visualEffect="poison">
                 <effect type="DamOverTime" val="100" />
@@ -1209,7 +1205,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5669" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1218,7 +1214,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1227,7 +1222,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5670" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1236,7 +1231,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1245,7 +1239,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5671" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1254,7 +1248,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1263,7 +1256,7 @@
     </skill>
     <!-- Stunned and unable to move momentarily. -->
     <skill id="5672" levels="1" name="Stun">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1272,7 +1265,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1280,7 +1272,7 @@
         </for>
     </skill>
     <skill id="5673" levels="1" name="Evasion Counter">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1290,7 +1282,6 @@
         <set name="castRange" val="40" />
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="9" stackLvl="1" stackType="stun" visualEffect="stun">
                 <effect type="Stun" val="0" />
@@ -1360,7 +1351,6 @@
         <set name="effectRange" val="1100" />
         <set name="skillRadius" val="200" />
         <set name="isDebuff" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="30" stackLvl="1" stackType="mirage_trap">
                 <effect activationChance="30" chanceType="ON_ATTACKED" triggeredId="5680" type="ChanceSkillTrigger"
@@ -1395,7 +1385,7 @@
         <set name="aggroPoints" val="1" />
     </skill>
     <skill id="5682" levels="1" name="PvP Weapon - Cancel">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="CANCEL" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1410,7 +1400,7 @@
     </skill>
     <!-- Shield Defense greatly decreases momentarily. -->
     <skill id="5683" levels="1" name="PvP Weapon - Ignore Shield Defense">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1429,7 +1419,7 @@
         </for>
     </skill>
     <skill id="5684" levels="1" name="PvP Weapon - Attack Rate">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1476,7 +1466,7 @@
     </skill>
     <!-- Bow/Crossbow range decreases momentarily. -->
     <skill id="5687" levels="1" name="PvP Weapon - Decrease Range">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1498,7 +1488,7 @@
     </skill>
     <!-- Resistance against all attributes decreases momentarily. -->
     <skill id="5688" levels="1" name="PvP Weapon - Decrease Resist">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="magicLvl" val="80" />
@@ -1576,13 +1566,12 @@
     </skill>
     <!-- Unable to use physical/magic skills momentarily. -->
     <skill id="5697" levels="4" name="Seal">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="lvlDepend" val="1" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="MEN" />
         <for>
             <abnormal duration="10" landRate="100" stackLvl="1" stackType="silence_all">
                 <effect type="SilenceMagicPhysical" val="0" />

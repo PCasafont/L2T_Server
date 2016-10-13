@@ -2,7 +2,7 @@
 <list>
     <!-- Powerful P. Atk. on enemy. -->
     <skill id="15600" levels="1" name="Lindvior's Attack">
-        <set name="target" val="TARGET_ONE" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="power" val="1500" />
@@ -280,7 +280,6 @@
         <set name="skillRadius" val="150" />
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
-        <set name="saveVs" val="CON" />
         <for>
             <abnormal duration="10" effectType="STUN" landRate="100" visualEffect="stun">
                 <effect type="Stun" val="0" />
