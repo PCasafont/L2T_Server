@@ -501,7 +501,7 @@ public class AutoSpawnHandler
 				L2NpcTemplate npcTemp = NpcTable.getInstance().getTemplate(spawnInst.getNpcId());
 				if (npcTemp == null)
 				{
-					Log.warning("Couldnt find NPC id" + spawnInst.getNpcId() + " Try to update your DP");
+					Log.warning("Couldn't find NPC #" + spawnInst.getNpcId() + ". Try to update your DP");
 					return;
 				}
 				L2Spawn newSpawn = new L2Spawn(npcTemp);

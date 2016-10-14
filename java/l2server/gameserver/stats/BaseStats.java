@@ -163,6 +163,18 @@ public enum BaseStats
 
 	static
 	{
+		for (int i = 0; i < MAX_STAT_VALUE; i++)
+		{
+			STRbonus[i] = 1.0;
+			INTbonus[i] = 1.0;
+			CONbonus[i] = 1.0;
+			MENbonus[i] = 1.0;
+			DEXbonus[i] = 1.0;
+			WITbonus[i] = 1.0;
+			LUCbonus[i] = 1.0;
+			CHAbonus[i] = 1.0;
+		}
+
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/statBonus.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getFirstChild().getChildren())
