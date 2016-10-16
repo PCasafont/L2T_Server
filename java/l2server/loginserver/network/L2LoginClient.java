@@ -30,6 +30,8 @@ import l2server.network.SendablePacket;
 import l2server.util.Rnd;
 import l2server.util.crypt.LoginCrypt;
 import l2server.util.crypt.ScrambledKeyPair;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -51,23 +53,23 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		CONNECTED, AUTHED_GG, AUTHED_LOGIN
 	}
 
-	private LoginClientState state;
+	@Getter @Setter private LoginClientState state;
 
 	// Crypt
 	private LoginCrypt loginCrypt;
 	private ScrambledKeyPair scrambledPair;
-	private byte[] blowfishKey;
+	@Getter private byte[] blowfishKey;
 
-	private String account;
-	private int accessLevel;
-	private int lastServer;
-	private SessionKey sessionKey;
+	@Getter @Setter private String account;
+	@Getter @Setter private int accessLevel;
+	@Getter @Setter private int lastServer;
+	@Getter @Setter private SessionKey sessionKey;
 	public int sessionId;
 	private boolean joinedGS;
 	private Map<Integer, Integer> charsOnServers;
 	private Map<Integer, long[]> charsToDelete;
 
-	private long connectionStartTime;
+	@Getter private long connectionStartTime;
 
 	/**
 	 * @param con
@@ -131,20 +133,8 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		return true;
 	}
 
-	public LoginClientState getState()
-	{
-		return state;
-	}
 
-	public void setState(LoginClientState state)
-	{
-		this.state = state;
-	}
 
-	public byte[] getBlowfishKey()
-	{
-		return blowfishKey;
-	}
 
 	public byte[] getScrambledModulus()
 	{
@@ -156,35 +146,11 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		return (RSAPrivateKey) scrambledPair.pair.getPrivate();
 	}
 
-	public String getAccount()
-	{
-		return account;
-	}
 
-	public void setAccount(String account)
-	{
-		this.account = account;
-	}
 
-	public void setAccessLevel(int accessLevel)
-	{
-		this.accessLevel = accessLevel;
-	}
 
-	public int getAccessLevel()
-	{
-		return accessLevel;
-	}
 
-	public void setLastServer(int lastServer)
-	{
-		this.lastServer = lastServer;
-	}
 
-	public int getLastServer()
-	{
-		return lastServer;
-	}
 
 	public int getSessionId()
 	{
@@ -201,20 +167,8 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		joinedGS = val;
 	}
 
-	public void setSessionKey(SessionKey sessionKey)
-	{
-		this.sessionKey = sessionKey;
-	}
 
-	public SessionKey getSessionKey()
-	{
-		return sessionKey;
-	}
 
-	public long getConnectionStartTime()
-	{
-		return connectionStartTime;
-	}
 
 	public void sendPacket(L2LoginServerPacket lsp)
 	{

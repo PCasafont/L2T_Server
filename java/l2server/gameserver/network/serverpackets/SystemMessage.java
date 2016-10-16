@@ -33,6 +33,7 @@ import l2server.gameserver.network.SystemMessageId.SMLocalisation;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.io.PrintStream;
 import java.util.Arrays;
@@ -45,8 +46,8 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private static final class SMParam
 	{
-		private final byte type;
-		private final Object value;
+		@Getter private final byte type;
+		@Getter private final Object value;
 
 		public SMParam(final byte type, final Object value)
 		{
@@ -54,15 +55,7 @@ public final class SystemMessage extends L2GameServerPacket
 			this.value = value;
 		}
 
-		public final byte getType()
-		{
-			return type;
-		}
 
-		public final Object getValue()
-		{
-			return value;
-		}
 
 		public final String getStringValue()
 		{

@@ -132,7 +132,7 @@ public final class ExSummonInfo extends L2GameServerPacket
 		buffer.get(data2, 0, size);
 
 		abnormals = summon.getAbnormalEffect();
-		if (summon.getOwner().getAppearance().getInvisible())
+		if (summon.getOwner().getAppearance().isInvisible())
 		{
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}

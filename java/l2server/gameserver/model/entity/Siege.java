@@ -38,6 +38,7 @@ import l2server.gameserver.network.serverpackets.SiegeInfo;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,7 +56,7 @@ public class Siege implements Siegable
 	public static final byte DEFENDER = 0;
 	public static final byte ATTACKER = 1;
 	public static final byte DEFENDER_NOT_APPROWED = 2;
-	private int controlTowerCount;
+	@Getter private int controlTowerCount;
 	private int flameTowerCount;
 
 	public enum TeleportWhoType
@@ -1797,7 +1798,7 @@ public class Siege implements Siegable
 
 	public final boolean getIsTimeRegistrationOver()
 	{
-		return getCastle().getIsTimeRegistrationOver();
+		return getCastle().isTimeRegistrationOver();
 	}
 
 	@Override
@@ -1843,10 +1844,6 @@ public class Siege implements Siegable
 		return siegeGuardManager;
 	}
 
-	public int getControlTowerCount()
-	{
-		return controlTowerCount;
-	}
 
 	public void disableTraps()
 	{

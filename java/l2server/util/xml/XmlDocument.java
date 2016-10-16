@@ -16,6 +16,7 @@
 package l2server.util.xml;
 
 import l2server.log.Log;
+import lombok.Getter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -37,7 +38,7 @@ public class XmlDocument
 		factory.setIgnoringComments(true);
 	}
 
-	private List<XmlNode> children = new ArrayList<>();
+	@Getter private List<XmlNode> children = new ArrayList<>();
 
 	public XmlDocument(File file)
 	{
@@ -77,8 +78,4 @@ public class XmlDocument
 		return children.get(0);
 	}
 
-	public List<XmlNode> getChildren()
-	{
-		return children;
-	}
 }

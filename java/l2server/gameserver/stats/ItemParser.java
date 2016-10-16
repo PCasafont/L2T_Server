@@ -24,6 +24,7 @@ import l2server.gameserver.templates.item.L2EtcItem;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.lang.reflect.Constructor;
 import java.util.Map.Entry;
@@ -35,7 +36,7 @@ public final class ItemParser extends StatsParser
 {
 	private String type;
 	private StatsSet set;
-	private L2Item item = null;
+	@Getter private L2Item item = null;
 
 	public ItemParser(XmlNode node)
 	{
@@ -180,8 +181,4 @@ public final class ItemParser extends StatsParser
 		}
 	}
 
-	public L2Item getItem()
-	{
-		return item;
-	}
 }

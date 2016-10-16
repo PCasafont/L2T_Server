@@ -23,6 +23,7 @@ import l2server.gameserver.stats.SkillParser;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -301,7 +302,7 @@ public class SkillTable implements Reloadable
 
 		private final int id;
 		private final int level;
-		private L2Skill skill = null;
+		@Getter private L2Skill skill = null;
 
 		FrequentSkill(int id, int level)
 		{
@@ -309,10 +310,6 @@ public class SkillTable implements Reloadable
 			this.level = level;
 		}
 
-		public L2Skill getSkill()
-		{
-			return skill;
-		}
 
 	}
 }

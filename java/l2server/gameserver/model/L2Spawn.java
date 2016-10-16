@@ -30,6 +30,8 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -57,7 +59,7 @@ public class L2Spawn
 	/**
 	 * The location area where L2NpcInstance can be spawned
 	 */
-	private SpawnGroup group;
+	@Getter @Setter private SpawnGroup group;
 
 	/**
 	 * Is it spawned currently?
@@ -87,7 +89,7 @@ public class L2Spawn
 	/**
 	 * The heading of L2NpcInstance when they are spawned
 	 */
-	private int heading;
+	@Getter @Setter private int heading;
 
 	/**
 	 * The possible coords in which to spawn [x, y, z, chance]
@@ -97,14 +99,14 @@ public class L2Spawn
 	/**
 	 * The delay between a L2NpcInstance remove and its re-spawn
 	 */
-	private int respawnDelay;
+	@Getter private int respawnDelay;
 
 	/**
 	 * Random delay RaidBoss
 	 */
-	private int randomRespawnDelay;
+	@Getter private int randomRespawnDelay;
 
-	private int instanceId = 0;
+	@Getter @Setter private int instanceId = 0;
 	@SuppressWarnings("unused")
 	private int dimensionId = 0;
 
@@ -116,9 +118,9 @@ public class L2Spawn
 	/**
 	 * If it has a value, the npc data will be saved
 	 */
-	private String dbName = null;
+	@Getter @Setter private String dbName = null;
 
-	private long nextRespawn = 0L;
+	@Getter private long nextRespawn = 0L;
 
 	private static final List<SpawnListener> spawnListeners = new ArrayList<>();
 
@@ -254,15 +256,7 @@ public class L2Spawn
 		doRespawn = true;
 	}
 
-	public void setDbName(String dbName)
-	{
-		this.dbName = dbName;
-	}
 
-	public String getDbName()
-	{
-		return dbName;
-	}
 
 	public boolean doSpawn()
 	{
@@ -450,10 +444,6 @@ public class L2Spawn
 	/**
 	 * Return the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
 	 */
-	public SpawnGroup getGroup()
-	{
-		return group;
-	}
 
 	/**
 	 * Return the X position of the spwan point.<BR><BR>
@@ -490,34 +480,18 @@ public class L2Spawn
 	/**
 	 * Return the heading of L2NpcInstance when they are spawned.<BR><BR>
 	 */
-	public int getHeading()
-	{
-		return heading;
-	}
 
 	/**
 	 * Return the delay between a L2NpcInstance remove and its re-spawn.<BR><BR>
 	 */
-	public int getRespawnDelay()
-	{
-		return respawnDelay;
-	}
 
 	/**
 	 * Return Random RaidBoss Spawn delay.<BR><BR>
 	 */
-	public int getRandomRespawnDelay()
-	{
-		return randomRespawnDelay;
-	}
 
 	/**
 	 * Set the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
 	 */
-	public void setGroup(SpawnGroup group)
-	{
-		this.group = group;
-	}
 
 	/**
 	 * Set the X position of the spwan point.<BR><BR>
@@ -546,10 +520,6 @@ public class L2Spawn
 	/**
 	 * Set the heading of L2NpcInstance when they are spawned.<BR><BR>
 	 */
-	public void setHeading(int heading)
-	{
-		this.heading = heading;
-	}
 
 	public void setRandomCoords(List<int[]> coords)
 	{
@@ -639,25 +609,13 @@ public class L2Spawn
 		return npc.getTemplate();
 	}
 
-	public int getInstanceId()
-	{
-		return instanceId;
-	}
 
 	public boolean isSpawned()
 	{
 		return spawned;
 	}
 
-	public void setInstanceId(int instanceId)
-	{
-		this.instanceId = instanceId;
-	}
 
-	public long getNextRespawn()
-	{
-		return nextRespawn;
-	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

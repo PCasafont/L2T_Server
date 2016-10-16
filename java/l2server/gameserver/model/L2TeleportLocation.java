@@ -15,6 +15,8 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
+import lombok.Setter;
 /**
  * This class ...
  *
@@ -22,14 +24,14 @@ package l2server.gameserver.model;
  */
 public class L2TeleportLocation
 {
-	private int teleId;
-	private int locX;
-	private int locY;
-	private int locZ;
-	private int price;
+	@Getter private int teleId;
+	@Getter @Setter private int locX;
+	@Getter @Setter private int locY;
+	@Getter @Setter private int locZ;
+	@Getter @Setter private int price;
 	private boolean forNoble;
-	private int itemId;
-	private String description;
+	@Getter private int itemId;
+	@Getter @Setter private String description;
 
 	/**
 	 * @param id
@@ -42,34 +44,18 @@ public class L2TeleportLocation
 	/**
 	 * @param locX
 	 */
-	public void setLocX(int locX)
-	{
-		this.locX = locX;
-	}
 
 	/**
 	 * @param locY
 	 */
-	public void setLocY(int locY)
-	{
-		this.locY = locY;
-	}
 
 	/**
 	 * @param locZ
 	 */
-	public void setLocZ(int locZ)
-	{
-		this.locZ = locZ;
-	}
 
 	/**
 	 * @param price
 	 */
-	public void setPrice(int price)
-	{
-		this.price = price;
-	}
 
 	/**
 	 * @param val
@@ -90,42 +76,22 @@ public class L2TeleportLocation
 	/**
 	 * @return
 	 */
-	public int getTeleId()
-	{
-		return teleId;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getLocX()
-	{
-		return locX;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getLocY()
-	{
-		return locY;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getLocZ()
-	{
-		return locZ;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getPrice()
-	{
-		return price;
-	}
 
 	/**
 	 * @return
@@ -138,18 +104,6 @@ public class L2TeleportLocation
 	/**
 	 * @return
 	 */
-	public int getItemId()
-	{
-		return itemId;
-	}
 
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
 
-	public String getDescription()
-	{
-		return description;
-	}
 }

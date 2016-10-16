@@ -16,6 +16,7 @@
 package l2server.gameserver.templates;
 
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,17 +32,13 @@ import java.util.logging.Level;
 public final class StatsSet
 {
 
-	private final Map<String, Object> set = new HashMap<>();
+	@Getter private final Map<String, Object> set = new HashMap<>();
 
 	/**
 	 * Returns the set of values
 	 *
 	 * @return HashMap
 	 */
-	public final Map<String, Object> getSet()
-	{
-		return set;
-	}
 
 	/**
 	 * Add a set of couple values in the current set

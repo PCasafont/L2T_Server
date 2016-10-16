@@ -13,6 +13,8 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.StringTokenizer;
 
@@ -21,11 +23,11 @@ import java.util.StringTokenizer;
  */
 public final class L2ChessPieceInstance extends L2MonsterInstance
 {
-	private ChessEventSide side;
-	private int type;
+	@Getter @Setter private ChessEventSide side;
+	@Getter private int type;
 	private boolean firstMove;
-	private int posX;
-	private int posY;
+	@Getter private int posX;
+	@Getter private int posY;
 
 	public L2ChessPieceInstance(int objectId, L2NpcTemplate template)
 	{
@@ -719,30 +721,10 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 		return !firstMove;
 	}
 
-	public int getType()
-	{
-		return type;
-	}
 
-	public ChessEventSide getSide()
-	{
-		return side;
-	}
 
-	public void setSide(ChessEventSide side)
-	{
-		this.side = side;
-	}
 
-	public int getPosX()
-	{
-		return posX;
-	}
 
-	public int getPosY()
-	{
-		return posY;
-	}
 
 	public int getRPosX()
 	{

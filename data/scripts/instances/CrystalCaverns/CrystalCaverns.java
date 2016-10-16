@@ -12,29 +12,14 @@ Please maintain consistency between the Crystal Caverns scripts.
 
 package instances.CrystalCaverns;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.L2Trap;
+import l2server.gameserver.model.*;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -44,20 +29,17 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.FlyToLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.SpecialCamera;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CrystalCaverns extends Quest
 {
@@ -446,7 +428,7 @@ public class CrystalCaverns extends Quest
 		{
 			if (door.getDoorId() == doorId)
 			{
-				if (door.getOpen())
+				if (door.isOpen())
 				{
 					door.closeMe();
 				}
@@ -2095,7 +2077,7 @@ public class CrystalCaverns extends Quest
 					{
 						if (door.getDoorId() == room + 24220000)
 						{
-							if (door.getOpen())
+							if (door.isOpen())
 							{
 								return "";
 							}
@@ -2157,7 +2139,7 @@ public class CrystalCaverns extends Quest
 					{
 						if (door.getDoorId() == doorId)
 						{
-							if (door.getOpen() && world.openedDoors.get(door) == character)
+							if (door.isOpen() && world.openedDoors.get(door) == character)
 							{
 								door.closeMe();
 								world.openedDoors.remove(door);

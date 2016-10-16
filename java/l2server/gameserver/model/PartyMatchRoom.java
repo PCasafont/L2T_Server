@@ -20,6 +20,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExManagePartyRoomMember;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +31,10 @@ import java.util.List;
  */
 public class PartyMatchRoom
 {
-	private int id;
-	private String title;
+	@Getter private int id;
+	@Getter @Setter private String title;
 	private int loot;
-	private int location;
+	@Getter private int location;
 	private int minlvl;
 	private int maxlvl;
 	private int maxmem;
@@ -108,10 +110,6 @@ public class PartyMatchRoom
 		}
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
 	public int getLootType()
 	{
@@ -128,10 +126,6 @@ public class PartyMatchRoom
 		return maxlvl;
 	}
 
-	public int getLocation()
-	{
-		return location;
-	}
 
 	public int getMembers()
 	{
@@ -143,10 +137,6 @@ public class PartyMatchRoom
 		return maxmem;
 	}
 
-	public String getTitle()
-	{
-		return title;
-	}
 
 	public L2PcInstance getOwner()
 	{
@@ -180,8 +170,4 @@ public class PartyMatchRoom
 		this.maxmem = maxmem;
 	}
 
-	public void setTitle(String title)
-	{
-		this.title = title;
-	}
 }

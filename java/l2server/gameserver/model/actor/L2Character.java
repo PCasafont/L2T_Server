@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor;
 
+
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -77,6 +78,8 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -129,9 +132,9 @@ public abstract class L2Character extends L2Object
 	private boolean isMortal = true; // Char will die when HP decreased to 0
 	private boolean isFlying = false;
 
-	private CharStat stat;
-	private CharStatus status;
-	private L2CharTemplate template;
+	@Getter private CharStat stat;
+	@Getter private CharStatus status;
+	@Getter private L2CharTemplate template;
 	// The link on the L2CharTemplate object containing generic and static properties of this L2Character type (ex : Max HP, Speed...)
 	private String title;
 	private double hpUpdateIncCheck = .0;
@@ -150,7 +153,7 @@ public abstract class L2Character extends L2Object
 	/**
 	 * HashMap containing the active chance skills on this character
 	 */
-	private ChanceSkillList chanceSkills;
+	@Getter private ChanceSkillList chanceSkills;
 
 	/**
 	 * Current force buff this caster is casting to a target
@@ -3165,7 +3168,7 @@ public abstract class L2Character extends L2Object
 
 		isRunning = value;
 
-		if (this instanceof L2Npc && ((L2Npc) this).getIsInvisible())
+		if (this instanceof L2Npc && ((L2Npc) this).isInvisible())
 		{
 			return;
 		}
@@ -3316,10 +3319,6 @@ public abstract class L2Character extends L2Object
 		setKnownList(new CharKnownList(this));
 	}
 
-	public CharStat getStat()
-	{
-		return stat;
-	}
 
 	/**
 	 * Initializes the CharStat class of the L2Object,
@@ -3337,10 +3336,6 @@ public abstract class L2Character extends L2Object
 		stat = value;
 	}
 
-	public CharStatus getStatus()
-	{
-		return status;
-	}
 
 	/**
 	 * Initializes the CharStatus class of the L2Object,
@@ -3370,10 +3365,6 @@ public abstract class L2Character extends L2Object
 		setObjectPosition(new CharPosition(this));
 	}
 
-	public L2CharTemplate getTemplate()
-	{
-		return template;
-	}
 
 	/**
 	 * Set the template of the L2Character.<BR><BR>
@@ -4456,12 +4447,12 @@ public abstract class L2Character extends L2Object
 	private L2Object target;
 
 	// set by the start of attack, in game ticks
-	private int attackEndTime;
+	@Getter private int attackEndTime;
 	private int attacking;
 	private int disableBowAttackEndTime;
 	private int disableCrossBowAttackEndTime;
 
-	private int castInterruptTime;
+	@Getter private int castInterruptTime;
 
 	/**
 	 * Table of calculators containing all standard NPC calculator (ex : ACCURACY_COMBAT, EVASION_RATE
@@ -4833,7 +4824,7 @@ public abstract class L2Character extends L2Object
 		}
 		else if (this instanceof L2Npc)
 		{
-			if (((L2Npc) this).getIsInvisible())
+			if (((L2Npc) this).isInvisible())
 			{
 				return;
 			}
@@ -5041,10 +5032,6 @@ public abstract class L2Character extends L2Object
 		return castInterruptTime > TimeController.getGameTicks();
 	}
 
-	public int getCastInterruptTime()
-	{
-		return castInterruptTime;
-	}
 
 	public boolean canDoubleCast()
 	{
@@ -7218,10 +7205,6 @@ public abstract class L2Character extends L2Object
 		return skills.values().toArray(new L2Skill[skills.values().size()]);
 	}
 
-	public ChanceSkillList getChanceSkills()
-	{
-		return chanceSkills;
-	}
 
 	/**
 	 * Return the level of a skill owned by the L2Character.<BR><BR>
@@ -8418,10 +8401,6 @@ public abstract class L2Character extends L2Object
 		return 1 + (double) Rnd.get(-random, random) / 100;
 	}
 
-	public int getAttackEndTime()
-	{
-		return attackEndTime;
-	}
 
 	/**
 	 * Not Implemented.<BR><BR>
@@ -9057,17 +9036,9 @@ public abstract class L2Character extends L2Object
 		return -1;
 	}
 
-	private L2Character faceoffTarget = null;
+	@Getter @Setter private L2Character faceoffTarget = null;
 
-	public void setFaceoffTarget(L2Character faceoffTarget)
-	{
-		this.faceoffTarget = faceoffTarget;
-	}
 
-	public L2Character getFaceoffTarget()
-	{
-		return faceoffTarget;
-	}
 
 	public void addSkillEffect(L2Skill newSkill)
 	{

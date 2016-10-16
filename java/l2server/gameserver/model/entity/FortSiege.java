@@ -34,6 +34,7 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -227,7 +228,7 @@ public class FortSiege implements Siegable
 
 	// Fort setting
 	protected ArrayList<L2Spawn> commanders = new ArrayList<>();
-	private final Fort fort;
+	@Getter private final Fort fort;
 	private boolean isInProgress = false;
 	ScheduledFuture<?> siegeEnd = null;
 	ScheduledFuture<?> siegeRestore = null;
@@ -1291,10 +1292,6 @@ public class FortSiege implements Siegable
 		return attackerClans;
 	}
 
-	public final Fort getFort()
-	{
-		return fort;
-	}
 
 	public final boolean getIsInProgress()
 	{

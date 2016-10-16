@@ -21,6 +21,8 @@ import l2server.gameserver.stats.funcs.Lambda;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This class ...
@@ -38,21 +40,21 @@ public abstract class L2Effect
 	//member this.effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
-	private final L2Character effector;
+	@Getter private final L2Character effector;
 
 	//member this.effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
-	private final L2Character effected;
+	@Getter private final L2Character effected;
 
 	// the value of an update
 	private final Lambda lambda;
 
 	//the skill that was used.
-	private final L2Skill skill;
+	@Getter private final L2Skill skill;
 
-	private L2Abnormal abnormal;
-	private L2EffectTemplate template;
+	@Getter @Setter private L2Abnormal abnormal;
+	@Getter private L2EffectTemplate template;
 
 	public boolean preventExitUpdate;
 
@@ -98,20 +100,8 @@ public abstract class L2Effect
 		return lambda.calc(env);
 	}
 
-	public final L2Skill getSkill()
-	{
-		return skill;
-	}
 
-	public final L2Character getEffector()
-	{
-		return effector;
-	}
 
-	public final L2Character getEffected()
-	{
-		return effected;
-	}
 
 	/**
 	 * Stop the L2Effect task and send Server->Client update packet.<BR><BR>
@@ -173,20 +163,8 @@ public abstract class L2Effect
 		return getSkill().getLevelHash();
 	}
 
-	public L2Abnormal getAbnormal()
-	{
-		return abnormal;
-	}
 
-	public void setAbnormal(L2Abnormal abnormal)
-	{
-		this.abnormal = abnormal;
-	}
 
-	public L2EffectTemplate getTemplate()
-	{
-		return template;
-	}
 
 	public boolean isSelfEffectType()
 	{

@@ -23,6 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.zone.L2SpawnZone;
 import l2server.gameserver.network.serverpackets.AgitDecoInfo;
+import lombok.Getter;
 
 /**
  * A clan hall zone
@@ -31,7 +32,7 @@ import l2server.gameserver.network.serverpackets.AgitDecoInfo;
  */
 public class L2ClanHallZone extends L2SpawnZone
 {
-	private int clanHallId;
+	@Getter private int clanHallId;
 
 	public L2ClanHallZone(int id)
 	{
@@ -127,8 +128,4 @@ public class L2ClanHallZone extends L2SpawnZone
 	/**
 	 * @return the clanHallId
 	 */
-	public int getClanHallId()
-	{
-		return clanHallId;
-	}
 }

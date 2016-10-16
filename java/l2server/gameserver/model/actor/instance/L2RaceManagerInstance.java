@@ -25,6 +25,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Broadcast;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -461,10 +462,10 @@ public class L2RaceManagerInstance extends L2Npc
 
 		public class Info
 		{
-			private int id;
-			private int place;
-			private int odds;
-			private int payout;
+			@Getter private int id;
+			@Getter private int place;
+			@Getter private int odds;
+			@Getter private int payout;
 
 			public Info(int pId, int pPlace, int pOdds, int pPayout)
 			{
@@ -474,25 +475,9 @@ public class L2RaceManagerInstance extends L2Npc
 				payout = pPayout;
 			}
 
-			public int getId()
-			{
-				return id;
-			}
 
-			public int getOdds()
-			{
-				return odds;
-			}
 
-			public int getPayout()
-			{
-				return payout;
-			}
 
-			public int getPlace()
-			{
-				return place;
-			}
 		}
 	}
 

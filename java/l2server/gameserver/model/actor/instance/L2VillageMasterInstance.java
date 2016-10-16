@@ -684,7 +684,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 						return;
 					}
 
-					player.getSubClasses().get(paramOne).setIsDual(true);
+					player.getSubClasses().get(paramOne).setDual(true);
 					player.sendPacket(new ExSubjobInfo(player));
 
 					html.setHtml(

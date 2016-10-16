@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * This class ...
  *
@@ -24,25 +25,21 @@ package l2server.gameserver.model;
 public class L2LvlupData
 {
 	private int classid;
-	private int classLvl;
-	private float classHpAdd;
-	private float classHpBase;
-	private float classHpModifier;
-	private float classCpAdd;
-	private float classCpBase;
-	private float classCpModifier;
-	private float classMpAdd;
-	private float classMpBase;
-	private float classMpModifier;
+	@Getter private int classLvl;
+	@Getter private float classHpAdd;
+	@Getter private float classHpBase;
+	@Getter private float classHpModifier;
+	@Getter private float classCpAdd;
+	@Getter private float classCpBase;
+	@Getter private float classCpModifier;
+	@Getter private float classMpAdd;
+	@Getter private float classMpBase;
+	@Getter private float classMpModifier;
 
 	/**
 	 * @return Returns the this.classHpAdd.
 	 */
 	@Deprecated
-	public float getClassHpAdd()
-	{
-		return classHpAdd;
-	}
 
 	/**
 	 * @param hpAdd The this.classHpAdd to set.
@@ -56,10 +53,6 @@ public class L2LvlupData
 	 * @return Returns the this.classHpBase.
 	 */
 	@Deprecated
-	public float getClassHpBase()
-	{
-		return classHpBase;
-	}
 
 	/**
 	 * @param hpBase The this.classHpBase to set.
@@ -73,10 +66,6 @@ public class L2LvlupData
 	 * @return Returns the this.classHpModifier.
 	 */
 	@Deprecated
-	public float getClassHpModifier()
-	{
-		return classHpModifier;
-	}
 
 	/**
 	 * @param hpModifier The this.classHpModifier to set.
@@ -90,10 +79,6 @@ public class L2LvlupData
 	 * @return Returns the this.classCpAdd.
 	 */
 	@Deprecated
-	public float getClassCpAdd()
-	{
-		return classCpAdd;
-	}
 
 	/**
 	 */
@@ -106,10 +91,6 @@ public class L2LvlupData
 	 * @return Returns the this.classCpBase.
 	 */
 	@Deprecated
-	public float getClassCpBase()
-	{
-		return classCpBase;
-	}
 
 	/**
 	 */
@@ -122,10 +103,6 @@ public class L2LvlupData
 	 * @return Returns the this.classCpModifier.
 	 */
 	@Deprecated
-	public float getClassCpModifier()
-	{
-		return classCpModifier;
-	}
 
 	/**
 	 * @param cpModifier The this.classCpModifier to set.
@@ -154,10 +131,6 @@ public class L2LvlupData
 	 * @return Returns the this.classLvl.
 	 */
 	@Deprecated
-	public int getClassLvl()
-	{
-		return classLvl;
-	}
 
 	/**
 	 * @param lvl The this.classLvl to set.
@@ -171,10 +144,6 @@ public class L2LvlupData
 	 * @return Returns the this.classMpAdd.
 	 */
 	@Deprecated
-	public float getClassMpAdd()
-	{
-		return classMpAdd;
-	}
 
 	/**
 	 * @param mpAdd The this.classMpAdd to set.
@@ -188,10 +157,6 @@ public class L2LvlupData
 	 * @return Returns the this.classMpBase.
 	 */
 	@Deprecated
-	public float getClassMpBase()
-	{
-		return classMpBase;
-	}
 
 	/**
 	 * @param mpBase The this.classMpBase to set.
@@ -205,10 +170,6 @@ public class L2LvlupData
 	 * @return Returns the this.classMpModifier.
 	 */
 	@Deprecated
-	public float getClassMpModifier()
-	{
-		return classMpModifier;
-	}
 
 	/**
 	 * @param mpModifier The this.classMpModifier to set.

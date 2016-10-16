@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.concurrent.Future;
 import java.util.logging.Level;
@@ -33,10 +34,10 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	private static final int HELM = 13556;
 	private static final int LOW_FUEL = 40;
 
-	private int fuel = 0;
-	private int maxFuel = 0;
+	@Getter private int fuel = 0;
+	@Getter private int maxFuel = 0;
 
-	private int ownerId;
+	@Getter private int ownerId;
 	private int helmId;
 	private L2PcInstance captain = null;
 
@@ -78,12 +79,6 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		}
 
 		return player.getClanId() == ownerId || player.getObjectId() == ownerId;
-	}
-
-	@Override
-	public int getOwnerId()
-	{
-		return ownerId;
 	}
 
 	@Override
@@ -203,12 +198,6 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 
 	@Override
-	public int getFuel()
-	{
-		return fuel;
-	}
-
-	@Override
 	public void setFuel(int f)
 	{
 
@@ -234,12 +223,6 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		{
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_SOON_RUN_OUT));
 		}
-	}
-
-	@Override
-	public int getMaxFuel()
-	{
-		return maxFuel;
 	}
 
 	@Override

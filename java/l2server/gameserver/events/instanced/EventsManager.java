@@ -19,6 +19,7 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,12 +37,12 @@ public class EventsManager implements Reloadable
 
 	private HashMap<Integer, EventLocation> locations = new HashMap<>();
 
-	private EventManagerTask task;
+	@Getter private EventManagerTask task;
 	private ConcurrentHashMap<Integer, EventInstance> instances = new ConcurrentHashMap<>();
 	private int nextInstanceId = 1;
 
-	private EventConfig currentConfig = null;
-	private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
+	@Getter private EventConfig currentConfig = null;
+	@Getter private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
 
 	public static EventsManager getInstance()
 	{
@@ -121,14 +122,10 @@ public class EventsManager implements Reloadable
 		return locations.get(id);
 	}
 
-	public EventManagerTask getTask()
-	{
-		return task;
-	}
 
 	class EventManagerTask implements Runnable
 	{
-		private int minutesToStart;
+		@Getter private int minutesToStart;
 
 		public EventManagerTask()
 		{
@@ -203,21 +200,9 @@ public class EventsManager implements Reloadable
 			}
 		}
 
-		public int getMinutesToStart()
-		{
-			return minutesToStart;
-		}
 	}
 
-	public EventConfig getCurrentConfig()
-	{
-		return currentConfig;
-	}
 
-	public Map<Integer, L2PcInstance> getRegisteredPlayers()
-	{
-		return registeredPlayers;
-	}
 
 	private boolean prepare()
 	{

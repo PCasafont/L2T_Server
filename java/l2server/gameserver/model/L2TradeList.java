@@ -19,6 +19,8 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,8 +39,8 @@ public class L2TradeList
 	private final int listId;
 
 	private String buystorename, sellstorename;
-	private boolean hasLimitedStockItem;
-	private int npcId;
+	@Setter private boolean hasLimitedStockItem;
+	@Getter private int npcId;
 
 	public L2TradeList(int listId)
 	{
@@ -50,10 +52,6 @@ public class L2TradeList
 		npcId = id;
 	}
 
-	public int getNpcId()
-	{
-		return npcId;
-	}
 
 	public void addItem(L2TradeItem item)
 	{
@@ -89,10 +87,6 @@ public class L2TradeList
 	/**
 	 * @param hasLimitedStockItem The hasLimitedStockItem to set.
 	 */
-	public void setHasLimitedStockItem(boolean hasLimitedStockItem)
-	{
-		this.hasLimitedStockItem = hasLimitedStockItem;
-	}
 
 	/**
 	 * @return Returns the hasLimitedStockItem.
@@ -167,13 +161,13 @@ public class L2TradeList
 		private final int listId;
 		private final int itemId;
 		private final L2Item template;
-		private long price;
+		@Getter @Setter private long price;
 
 		// count related
 		private AtomicLong currentCount = new AtomicLong();
-		private int maxCount = -1;
-		private long restoreDelay;
-		private long nextRestoreTime = 0;
+		@Getter @Setter private int maxCount = -1;
+		@Getter private long restoreDelay;
+		@Setter private long nextRestoreTime = 0;
 
 		public L2TradeItem(int listId, int itemId)
 		{
@@ -193,18 +187,10 @@ public class L2TradeList
 		/**
 		 * @param price The price to set.
 		 */
-		public void setPrice(long price)
-		{
-			this.price = price;
-		}
 
 		/**
 		 * @return Returns the price.
 		 */
-		public long getPrice()
-		{
-			return price;
-		}
 
 		public L2Item getTemplate()
 		{
@@ -259,18 +245,10 @@ public class L2TradeList
 		/**
 		 * @param maxCount The maxCount to set.
 		 */
-		public void setMaxCount(int maxCount)
-		{
-			this.maxCount = maxCount;
-		}
 
 		/**
 		 * @return Returns the maxCount.
 		 */
-		public int getMaxCount()
-		{
-			return maxCount;
-		}
 
 		public boolean hasLimitedStock()
 		{
@@ -288,20 +266,12 @@ public class L2TradeList
 		/**
 		 * @return Returns the restoreDelay (in milis)
 		 */
-		public long getRestoreDelay()
-		{
-			return restoreDelay;
-		}
 
 		/**
 		 * For resuming when server loads
 		 *
 		 * @param nextRestoreTime The nextRestoreTime to set.
 		 */
-		public void setNextRestoreTime(long nextRestoreTime)
-		{
-			this.nextRestoreTime = nextRestoreTime;
-		}
 
 		protected void saveDataTimer()
 		{

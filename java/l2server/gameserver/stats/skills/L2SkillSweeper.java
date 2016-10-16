@@ -19,6 +19,7 @@ import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.StatsSet;
+import lombok.Getter;
 
 /**
  * @author JIV
@@ -26,7 +27,7 @@ import l2server.gameserver.templates.StatsSet;
 public class L2SkillSweeper extends L2Skill
 {
 	private boolean absorbHp;
-	private int absorbAbs;
+	@Getter private int absorbAbs;
 
 	/**
 	 * @param set
@@ -49,8 +50,4 @@ public class L2SkillSweeper extends L2Skill
 		return absorbHp;
 	}
 
-	public int getAbsorbAbs()
-	{
-		return absorbAbs;
-	}
 }

@@ -24,6 +24,7 @@ import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public final class L2Armor extends L2Item
 	// skill that activates when armor is enchanted +X
 	// private final String[] skill;
 	private L2ArmorType type;
-	private int[] armorSet;
+	@Getter private int[] armorSet;
 
 	/**
 	 * Constructor for Armor.<BR><BR>
@@ -169,10 +170,6 @@ public final class L2Armor extends L2Item
 		return sh.getSkill();
 	}
 
-	public int[] getArmorSet()
-	{
-		return armorSet;
-	}
 
 	public boolean isArmorSetPart(int armorSet)
 	{

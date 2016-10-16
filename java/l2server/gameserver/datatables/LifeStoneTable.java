@@ -29,6 +29,7 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class LifeStoneTable
 	public static final class EnchantEffectSet
 	{
 		private final List<EnchantEffect> enchantEffects;
-		private final float chance;
+		@Getter private final float chance;
 
 		public EnchantEffectSet(List<EnchantEffect> effects, float chance)
 		{
@@ -58,10 +59,6 @@ public class LifeStoneTable
 			return enchantEffects.get(Rnd.get(enchantEffects.size()));
 		}
 
-		public final float getChance()
-		{
-			return chance;
-		}
 	}
 
 	public static final class EnchantEffectGroup
@@ -96,8 +93,8 @@ public class LifeStoneTable
 		// lifestone level to player level table
 		private static final int[] LEVELS = {46, 49, 52, 55, 58, 61, 64, 67, 70, 76, 80, 82, 84, 85, 95, 99};
 
-		private final int grade;
-		private final int level;
+		@Getter private final int grade;
+		@Getter private final int level;
 		private final Map<String, EnchantEffectGroup[]> effects = new HashMap<>();
 
 		public LifeStone(int grade, int level)
@@ -106,15 +103,7 @@ public class LifeStoneTable
 			this.level = level;
 		}
 
-		public final int getLevel()
-		{
-			return level;
-		}
 
-		public final int getGrade()
-		{
-			return grade;
-		}
 
 		public final int getPlayerLevel()
 		{

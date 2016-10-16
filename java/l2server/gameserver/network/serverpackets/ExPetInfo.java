@@ -135,7 +135,7 @@ public final class ExPetInfo extends L2GameServerPacket
 		buffer.get(data2, 0, size);
 
 		abnormals = pet.getAbnormalEffect();
-		if (pet.getOwner().getAppearance().getInvisible())
+		if (pet.getOwner().getAppearance().isInvisible())
 		{
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}

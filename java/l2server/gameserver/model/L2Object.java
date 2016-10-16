@@ -31,6 +31,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
+import lombok.Getter;
 
 /**
  * Mother class of all objects in the world wich ones is it possible
@@ -47,12 +48,12 @@ public abstract class L2Object
 	// =========================================================
 	// Data Field
 	private boolean isVisible; // Object visibility
-	private ObjectKnownList knownList;
+	@Getter private ObjectKnownList knownList;
 	private String name;
 	private int objectId; // Object identifier
 	private ObjectPoly poly;
-	private ObjectPosition position;
-	private int instanceId = 0;
+	@Getter private ObjectPosition position;
+	@Getter private int instanceId = 0;
 
 	private InstanceType instanceType = null;
 
@@ -187,7 +188,7 @@ public abstract class L2Object
 		L2MiniGameManagerInstance(L2MerchantInstance),
 		L2CloneInstance(L2SummonInstance);
 
-		private final InstanceType parent;
+		@Getter private final InstanceType parent;
 		private final long typeL;
 		private final long typeH;
 		private final long maskL;
@@ -226,10 +227,6 @@ public abstract class L2Object
 			}
 		}
 
-		public final InstanceType getParent()
-		{
-			return parent;
-		}
 
 		public final boolean isType(InstanceType it)
 		{
@@ -336,10 +333,6 @@ public abstract class L2Object
 	 * @return The id of the instance zone the object is in - id 0 is global
 	 * since everything like dropped items, mobs, players can be in a instanciated area, it must be in l2object
 	 */
-	public int getInstanceId()
-	{
-		return instanceId;
-	}
 
 	/**
 	 * @param instanceId The id of the instance zone the object is in - id 0 is global
@@ -621,10 +614,6 @@ public abstract class L2Object
 		}
 	}
 
-	public ObjectKnownList getKnownList()
-	{
-		return knownList;
-	}
 
 	/**
 	 * Initializes the KnownList of the L2Object,
@@ -666,10 +655,6 @@ public abstract class L2Object
 		return poly;
 	}
 
-	public ObjectPosition getPosition()
-	{
-		return position;
-	}
 
 	/**
 	 * Initializes the Position class of the L2Object,

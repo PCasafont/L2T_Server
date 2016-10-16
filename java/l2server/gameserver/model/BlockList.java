@@ -34,6 +34,7 @@ import l2server.gameserver.network.serverpackets.ExBlockAddResult;
 import l2server.gameserver.network.serverpackets.ExBlockRemoveResult;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -56,7 +57,7 @@ public class BlockList
 	private static Map<Integer, List<Integer>> offlineList = new HashMap<>();
 
 	private final L2PcInstance owner;
-	private List<Integer> blockList;
+	@Getter private List<Integer> blockList;
 
 	public BlockList(L2PcInstance owner)
 	{
@@ -193,10 +194,6 @@ public class BlockList
 		owner.setMessageRefusal(state);
 	}
 
-	public List<Integer> getBlockList()
-	{
-		return blockList;
-	}
 
 	public static void addToBlockList(L2PcInstance listOwner, int targetId)
 	{

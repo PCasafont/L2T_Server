@@ -49,7 +49,7 @@ public class RequestMenteeAdd extends L2GameClientPacket
 
 		SystemMessage sm;
 		// can't use mentee invite for locating invisible characters
-		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
+		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().isInvisible())
 		{
 			//Target is not found in the game.
 			activeChar.sendPacket(

@@ -6,6 +6,8 @@ import l2server.gameserver.model.actor.instance.L2EventFlagInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class EventTeam
 	/**
 	 * The name of the team<br>
 	 */
-	private String name;
+	@Getter @Setter private String name;
 	/**
 	 * The team spot coordinated<br>
 	 */
@@ -28,18 +30,18 @@ public class EventTeam
 	/**
 	 * The points of the team<br>
 	 */
-	private short points;
+	@Getter private short points;
 	/**
 	 * Name and instance of all participated players in HashMap<br>
 	 */
 	private Map<Integer, L2PcInstance> participatedPlayers = new LinkedHashMap<>();
 
-	private int flagId = 44004;
-	private L2Spawn flagSpawn;
-	private int golemId = 44003;
-	private L2Spawn golemSpawn;
+	@Getter private int flagId = 44004;
+	@Getter private L2Spawn flagSpawn;
+	@Getter private int golemId = 44003;
+	@Getter private L2Spawn golemSpawn;
 
-	private L2PcInstance VIP;
+	@Getter private L2PcInstance VIP;
 
 	/**
 	 * C'tor initialize the team<br><br>
@@ -149,10 +151,6 @@ public class EventTeam
 	 *
 	 * @return String: name of the team<br>
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * Returns the coordinates of the team spot<br><br>
@@ -169,10 +167,6 @@ public class EventTeam
 	 *
 	 * @return short: team points<br>
 	 */
-	public short getPoints()
-	{
-		return points;
-	}
 
 	/**
 	 * Returns name and instance of all participated players in HashMap<br><br>
@@ -256,20 +250,12 @@ public class EventTeam
 		return null;
 	}
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 
 	public void setCoords(Point3D coords)
 	{
 		coordinates = coords;
 	}
 
-	public L2Spawn getFlagSpawn()
-	{
-		return flagSpawn;
-	}
 
 	public void setFlagSpawn(L2Spawn spawn)
 	{
@@ -284,30 +270,18 @@ public class EventTeam
 		flagSpawn = spawn;
 	}
 
-	public int getFlagId()
-	{
-		return flagId;
-	}
 
 	public void setVIP(L2PcInstance character)
 	{
 		VIP = character;
 	}
 
-	public L2PcInstance getVIP()
-	{
-		return VIP;
-	}
 
 	public boolean isAlive()
 	{
 		return getAlivePlayerCount() > 0;
 	}
 
-	public L2Spawn getGolemSpawn()
-	{
-		return golemSpawn;
-	}
 
 	public void setGolemSpawn(L2Spawn spawn)
 	{
@@ -318,8 +292,4 @@ public class EventTeam
 		golemSpawn = spawn;
 	}
 
-	public int getGolemId()
-	{
-		return golemId;
-	}
 }

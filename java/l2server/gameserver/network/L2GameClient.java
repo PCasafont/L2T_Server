@@ -43,6 +43,8 @@ import l2server.log.Log;
 import l2server.network.MMOClient;
 import l2server.network.MMOConnection;
 import l2server.network.ReceivablePacket;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -80,18 +82,18 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		CONNECTED, AUTHED, IN_GAME
 	}
 
-	private GameClientState state;
+	@Getter private GameClientState state;
 
 	// Info
 	private final InetAddress addr;
-	private String accountName;
-	private SessionKey sessionId;
-	private L2PcInstance activeChar;
-	private ReentrantLock activeCharLock = new ReentrantLock();
-	private SecondaryPasswordAuth secondaryAuth;
+	@Getter private String accountName;
+	@Getter private SessionKey sessionId;
+	@Getter private L2PcInstance activeChar;
+	@Getter private ReentrantLock activeCharLock = new ReentrantLock();
+	@Getter private SecondaryPasswordAuth secondaryAuth;
 
 	private boolean isAuthedGG;
-	private long connectionStartTime;
+	@Getter private long connectionStartTime;
 	private CharSelectInfoPackage[] charSlotMapping = null;
 
 	// floodprotectors
@@ -101,21 +103,21 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	protected ScheduledFuture<?> autoSaveInDB;
 	protected ScheduledFuture<?> cleanupTask = null;
 
-	private L2GameServerPacket aditionalClosePacket;
+	@Setter private L2GameServerPacket aditionalClosePacket;
 
 	private GameCrypt crypt;
 
-	private ClientStats stats;
+	@Getter private ClientStats stats;
 
 	private boolean isDetached = false;
 
 	private boolean protocolOk;
-	private int protocolVersion;
+	@Getter private int protocolVersion;
 
 	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> packetQueue;
 	private ReentrantLock queueLock = new ReentrantLock();
 
-	private int[][] trace;
+	@Getter private int[][] trace;
 
 	private String hwId;
 
@@ -159,10 +161,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return key;
 	}
 
-	public GameClientState getState()
-	{
-		return state;
-	}
 
 	public void setState(GameClientState pState)
 	{
@@ -173,10 +171,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-	public ClientStats getStats()
-	{
-		return stats;
-	}
 
 	/**
 	 * Returns cached connection IP address, for checking detached clients.
@@ -187,10 +181,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return addr;
 	}
 
-	public long getConnectionStartTime()
-	{
-		return connectionStartTime;
-	}
 
 	@Override
 	public boolean decrypt(ByteBuffer buf, int size)
@@ -207,10 +197,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return true;
 	}
 
-	public L2PcInstance getActiveChar()
-	{
-		return activeChar;
-	}
 
 	public void setActiveChar(L2PcInstance pActiveChar)
 	{
@@ -222,10 +208,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}*/
 	}
 
-	public ReentrantLock getActiveCharLock()
-	{
-		return activeCharLock;
-	}
 
 	public FloodProtectors getFloodProtectors()
 	{
@@ -252,20 +234,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-	public String getAccountName()
-	{
-		return accountName;
-	}
 
 	public void setSessionId(SessionKey sk)
 	{
 		sessionId = sk;
 	}
 
-	public SessionKey getSessionId()
-	{
-		return sessionId;
-	}
 
 	public void sendPacket(L2GameServerPacket gsp)
 	{
@@ -724,10 +698,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return charSlotMapping[charslot];
 	}
 
-	public SecondaryPasswordAuth getSecondaryAuth()
-	{
-		return secondaryAuth;
-	}
 
 	public void close(L2GameServerPacket gsp, boolean blockDisconnectTask)
 	{
@@ -1118,10 +1088,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		protocolOk = b;
 	}
 
-	public int getProtocolVersion()
-	{
-		return protocolVersion;
-	}
 
 	public void setProtocolVersion(int version)
 	{
@@ -1322,10 +1288,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		trace = tracert;
 	}
 
-	public int[][] getTrace()
-	{
-		return trace;
-	}
 
 	public void setHWId(String hwId)
 	{
@@ -1348,8 +1310,4 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return false;
 	}
 
-	public void setAditionalClosePacket(L2GameServerPacket aditionalClosePacket)
-	{
-		this.aditionalClosePacket = aditionalClosePacket;
-	}
 }

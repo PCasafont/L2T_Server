@@ -17,6 +17,7 @@ package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
 import l2server.util.Point3D;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class L2FlyMove
 		START, CHOOSE, MOVE
 	}
 
-	private int id;
+	@Getter private int id;
 	private TIntObjectHashMap<Point3D> steps = new TIntObjectHashMap<>();
 	private TIntObjectHashMap<L2FlyMoveChoose> chooses = new TIntObjectHashMap<>();
 
@@ -40,10 +41,6 @@ public class L2FlyMove
 		this.id = id;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
 	public void addStep(int id, Point3D s)
 	{
@@ -67,35 +64,27 @@ public class L2FlyMove
 
 	public class L2FlyMoveChoose
 	{
-		private int at;
-		private List<L2FlyMoveOption> options = new ArrayList<>();
+		@Getter private int at;
+		@Getter private List<L2FlyMoveOption> options = new ArrayList<>();
 
 		public L2FlyMoveChoose(int at)
 		{
 			this.at = at;
 		}
 
-		public int getAt()
-		{
-			return at;
-		}
 
 		public void addOption(L2FlyMoveOption o)
 		{
 			options.add(o);
 		}
 
-		public List<L2FlyMoveOption> getOptions()
-		{
-			return options;
-		}
 	}
 
 	public class L2FlyMoveOption
 	{
-		private int start;
-		private int end;
-		private int last;
+		@Getter private int start;
+		@Getter private int end;
+		@Getter private int last;
 
 		public L2FlyMoveOption(int start, int end, int last)
 		{
@@ -104,19 +93,7 @@ public class L2FlyMove
 			this.last = last;
 		}
 
-		public int getStart()
-		{
-			return start;
-		}
 
-		public int getEnd()
-		{
-			return end;
-		}
 
-		public int getLast()
-		{
-			return last;
-		}
 	}
 }

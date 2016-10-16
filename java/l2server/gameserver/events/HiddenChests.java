@@ -1,5 +1,6 @@
 package l2server.gameserver.events;
 
+
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -19,6 +20,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Setter;
 
 /**
  * @author Pere
@@ -330,7 +332,7 @@ public class HiddenChests
 	class HiddenChestsTask implements Runnable
 	{
 		private int index;
-		private long startTime;
+		@Setter private long startTime;
 
 		public HiddenChestsTask(int index, long startTime)
 		{
@@ -338,10 +340,6 @@ public class HiddenChests
 			this.startTime = startTime;
 		}
 
-		public void setStartTime(long startTime)
-		{
-			this.startTime = startTime;
-		}
 
 		/**
 		 * @see java.lang.Runnable#run()

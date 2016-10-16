@@ -21,6 +21,7 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,7 +45,7 @@ public class Message
 	public static final int REJECTED = 2;
 
 	private final int messageId, senderId, receiverId;
-	private final long expiration;
+	@Getter private final long expiration;
 	private String senderName = null;
 	private String receiverName = null;
 	private final String subject, content;
@@ -257,10 +258,6 @@ public class Message
 		return reqAdena > 0;
 	}
 
-	public final long getExpiration()
-	{
-		return expiration;
-	}
 
 	public final int getExpirationSeconds()
 	{

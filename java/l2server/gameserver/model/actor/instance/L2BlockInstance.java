@@ -23,13 +23,14 @@ import l2server.gameserver.model.entity.BlockCheckerEngine;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 /**
  * @author BiggBoss
  */
 public class L2BlockInstance extends L2MonsterInstance
 {
-	private int colorEffect;
+	@Getter private int colorEffect;
 
 	/**
 	 * @param objectId
@@ -100,12 +101,6 @@ public class L2BlockInstance extends L2MonsterInstance
 	 *
 	 * @return
 	 */
-	@Override
-	public int getColorEffect()
-	{
-		return colorEffect;
-	}
-
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{

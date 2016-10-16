@@ -15,17 +15,6 @@
 
 package instances.FinalEmperialTomb;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-
 import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.GeoData;
@@ -49,15 +38,7 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.NpcStringId;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.Earthquake;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.MagicSkillCancelled;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.NpcInfo;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.SpecialCamera;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
@@ -65,6 +46,13 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.*;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
 
 /*
 TODO:
@@ -422,7 +410,7 @@ public class FinalEmperialTomb extends Quest
 		{
 			if (door.getDoorId() == doorId)
 			{
-				if (door.getOpen())
+				if (door.isOpen())
 				{
 					door.closeMe();
 				}

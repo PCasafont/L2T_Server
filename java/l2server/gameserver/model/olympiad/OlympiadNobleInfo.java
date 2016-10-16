@@ -15,6 +15,8 @@
 
 package l2server.gameserver.model.olympiad;
 
+import lombok.Getter;
+import lombok.Setter;
 /**
  * @author Pere
  */
@@ -24,16 +26,16 @@ public class OlympiadNobleInfo
 	private final String name;
 	private final int classId;
 
-	private int points = Olympiad.DEFAULT_POINTS;
-	private int matches = 0;
-	private int victories = 0;
-	private int defeats = 0;
-	private int draws = 0;
-	private int classedMatches = 0;
-	private int nonClassedMatches = 0;
-	private boolean settled = false;
+	@Getter @Setter private int points = Olympiad.DEFAULT_POINTS;
+	@Getter private int matches = 0;
+	@Getter private int victories = 0;
+	@Getter private int defeats = 0;
+	@Getter private int draws = 0;
+	@Getter private int classedMatches = 0;
+	@Getter private int nonClassedMatches = 0;
+	@Setter private boolean settled = false;
 
-	private boolean toSave = false;
+	@Setter private boolean toSave = false;
 
 	public OlympiadNobleInfo(int id, String name, int classId)
 	{
@@ -83,15 +85,7 @@ public class OlympiadNobleInfo
 		return classId;
 	}
 
-	public int getPoints()
-	{
-		return points;
-	}
 
-	public void setPoints(int points)
-	{
-		this.points = points;
-	}
 
 	public void increaseMatches()
 	{
@@ -123,35 +117,11 @@ public class OlympiadNobleInfo
 		nonClassedMatches++;
 	}
 
-	public int getMatches()
-	{
-		return matches;
-	}
 
-	public int getVictories()
-	{
-		return victories;
-	}
 
-	public int getDefeats()
-	{
-		return defeats;
-	}
 
-	public int getDraws()
-	{
-		return draws;
-	}
 
-	public int getClassedMatches()
-	{
-		return classedMatches;
-	}
 
-	public int getNonClassedMatches()
-	{
-		return nonClassedMatches;
-	}
 
 	public int getMatchesThisWeek()
 	{
@@ -163,18 +133,10 @@ public class OlympiadNobleInfo
 		return settled;
 	}
 
-	public void setSettled(boolean settled)
-	{
-		this.settled = settled;
-	}
 
 	public boolean isToSave()
 	{
 		return toSave;
 	}
 
-	public void setToSave(boolean toSave)
-	{
-		this.toSave = toSave;
-	}
 }

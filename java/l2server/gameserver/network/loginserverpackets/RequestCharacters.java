@@ -16,6 +16,7 @@
 package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
+import lombok.Getter;
 
 /**
  * @author mrTJO
@@ -23,7 +24,7 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class RequestCharacters extends BaseRecievePacket
 {
-	private String account;
+	@Getter private String account;
 
 	public RequestCharacters(byte[] decrypt)
 	{
@@ -34,8 +35,4 @@ public class RequestCharacters extends BaseRecievePacket
 	/**
 	 * @return Return account name
 	 */
-	public String getAccount()
-	{
-		return account;
-	}
 }

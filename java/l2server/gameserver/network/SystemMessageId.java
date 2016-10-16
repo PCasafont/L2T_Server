@@ -17,6 +17,7 @@ package l2server.gameserver.network;
 
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -21706,7 +21707,7 @@ public final class SystemMessageId
 		}
 	}
 
-	private final int id;
+	@Getter private final int id;
 	private String name;
 	private byte params;
 	private SMLocalisation[] localisations;
@@ -21718,10 +21719,6 @@ public final class SystemMessageId
 		localisations = EMPTY_SML_ARRAY;
 	}
 
-	public final int getId()
-	{
-		return id;
-	}
 
 	private void setName(final String name)
 	{
@@ -21947,7 +21944,7 @@ public final class SystemMessageId
 	 */
 	private static final class BuilderObject implements Builder
 	{
-		private final int index;
+		@Getter private final int index;
 
 		public BuilderObject(final int id)
 		{
@@ -21974,12 +21971,6 @@ public final class SystemMessageId
 			}
 
 			return params[0].toString();
-		}
-
-		@Override
-		public final int getIndex()
-		{
-			return index;
 		}
 
 		@Override

@@ -1,38 +1,41 @@
 package l2server.gameserver.events.chess;
 
+
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.instance.L2ChessPieceInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Pere
  */
 public class ChessEventSide
 {
-	private byte id;
+	@Getter private byte id;
 
 	private int startX;
 	private int startY;
 	private int startZ;
 
-	private L2PcInstance player;
+	@Getter private L2PcInstance player;
 
 	private int endX;
 	private int endY;
 	private int endZ;
 
-	private int[][] board;
+	@Getter private int[][] board;
 
 	private L2Spawn[] pieceSpawns;
 
-	private L2ChessPieceInstance king;
+	@Getter private L2ChessPieceInstance king;
 
-	private boolean canTheKingBeKilled = false;
+	@Setter private boolean canTheKingBeKilled = false;
 
-	private boolean hasWon = false;
+	@Setter private boolean hasWon = false;
 
 	public ChessEventSide(byte id)
 	{
@@ -103,15 +106,7 @@ public class ChessEventSide
 		return player != null && player.getObjectId() == playerObjectId;
 	}
 
-	public byte getId()
-	{
-		return id;
-	}
 
-	public L2PcInstance getPlayer()
-	{
-		return player;
-	}
 
 	public L2Spawn getPieceSpawn(int i)
 	{
@@ -123,10 +118,6 @@ public class ChessEventSide
 		pieceSpawns[i] = spawn;
 	}
 
-	public int[][] getBoard()
-	{
-		return board;
-	}
 
 	public void setBoard(int i, int j, int value)
 	{
@@ -319,15 +310,7 @@ public class ChessEventSide
 		ChessEvent.setBoard(x, y, piece, getId());
 	}
 
-	public L2ChessPieceInstance getKing()
-	{
-		return king;
-	}
 
-	public void setCanTheKingBeKilled(boolean canTheKingBeKilled)
-	{
-		this.canTheKingBeKilled = canTheKingBeKilled;
-	}
 
 	public boolean canTheKingBeKilled(boolean check)
 	{
@@ -355,8 +338,4 @@ public class ChessEventSide
 		return hasWon;
 	}
 
-	public void setHasWon(boolean hasWon)
-	{
-		this.hasWon = hasWon;
-	}
 }

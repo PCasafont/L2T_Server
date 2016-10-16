@@ -34,7 +34,7 @@ public final class ExUserEffects extends L2GameServerPacket
 		objectId = character.getObjectId();
 		transformId = character.getTransformationId();
 		abnormals = character.getAbnormalEffect();
-		if (character.getAppearance().getInvisible())
+		if (character.getAppearance().isInvisible())
 		{
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}

@@ -36,6 +36,8 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,9 +65,9 @@ public class Fort
 	private int state = 0;
 	private int castleId = 0;
 	private int blood = 0;
-	private int supplyLvL = 0;
+	@Getter private int supplyLvL = 0;
 	private HashMap<Integer, FortFunction> function;
-	private ArrayList<L2Skill> residentialSkills = new ArrayList<>();
+	@Getter private ArrayList<L2Skill> residentialSkills = new ArrayList<>();
 	private ScheduledFuture<?>[] fortUpdater = new ScheduledFuture<?>[2];
 	private boolean isSuspiciousMerchantSpawned = false;
 
@@ -84,11 +86,11 @@ public class Fort
 
 	public class FortFunction
 	{
-		private int type;
-		private int lvl;
+		@Getter private int type;
+		@Getter @Setter private int lvl;
 		protected int fee;
 		protected int tempFee;
-		private long rate;
+		@Getter private long rate;
 		private long endDate;
 		protected boolean inDebt;
 		public boolean cwh;
@@ -104,35 +106,19 @@ public class Fort
 			initializeTask(cwh);
 		}
 
-		public int getType()
-		{
-			return type;
-		}
 
-		public int getLvl()
-		{
-			return lvl;
-		}
 
 		public int getLease()
 		{
 			return fee;
 		}
 
-		public long getRate()
-		{
-			return rate;
-		}
 
 		public long getEndTime()
 		{
 			return endDate;
 		}
 
-		public void setLvl(int lvl)
-		{
-			this.lvl = lvl;
-		}
 
 		public void setLease(int lease)
 		{
@@ -563,10 +549,6 @@ public class Fort
 		}
 	}
 
-	public int getSupplyLvL()
-	{
-		return supplyLvL;
-	}
 
 	public void saveFortVariables()
 	{
@@ -612,7 +594,7 @@ public class Fort
 	{
 		for (L2DoorInstance door : doors)
 		{
-			if (door.getOpen())
+			if (door.isOpen())
 			{
 				door.closeMe();
 			}
@@ -1254,10 +1236,6 @@ public class Fort
 		}
 	}
 
-	public ArrayList<L2Skill> getResidentialSkills()
-	{
-		return residentialSkills;
-	}
 
 	public void giveResidentialSkills(L2PcInstance player)
 	{

@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,13 +42,13 @@ public class Duel
 	// =========================================================
 	// Data Field
 	private int duelId;
-	private L2PcInstance playerA;
-	private L2PcInstance playerB;
+	@Getter private L2PcInstance playerA;
+	@Getter private L2PcInstance playerB;
 	private boolean partyDuel;
 	private Calendar duelEndTime;
 	private int surrenderRequest = 0;
 	private int countdown = 4;
-	private boolean finished = false;
+	@Getter private boolean finished = false;
 
 	private ArrayList<PlayerCondition> playerConditions;
 
@@ -98,7 +99,7 @@ public class Duel
 
 	public static class PlayerCondition
 	{
-		private L2PcInstance player;
+		@Getter private L2PcInstance player;
 		private double hp;
 		private double mp;
 		private double cp;
@@ -170,10 +171,6 @@ public class Duel
 			}
 		}
 
-		public L2PcInstance getPlayer()
-		{
-			return player;
-		}
 	}
 
 	// ===============================================================
@@ -526,20 +523,12 @@ public class Duel
 	 *
 	 * @return duel requester
 	 */
-	public L2PcInstance getPlayerA()
-	{
-		return playerA;
-	}
 
 	/**
 	 * Get the player that was challenged
 	 *
 	 * @return challenged player
 	 */
-	public L2PcInstance getPlayerB()
-	{
-		return playerB;
-	}
 
 	/**
 	 * Returns whether this is a party duel or not
@@ -556,10 +545,6 @@ public class Duel
 		finished = mode;
 	}
 
-	public boolean getFinished()
-	{
-		return finished;
-	}
 
 	/**
 	 * teleport all players to the given coordinates
@@ -643,7 +628,7 @@ public class Duel
 	 */
 	public L2PcInstance getWinner()
 	{
-		if (!getFinished() || playerA == null || playerB == null)
+		if (!isFinished() || playerA == null || playerB == null)
 		{
 			return null;
 		}
@@ -665,7 +650,7 @@ public class Duel
 	 */
 	public L2PcInstance getLooser()
 	{
-		if (!getFinished() || playerA == null || playerB == null)
+		if (!isFinished() || playerA == null || playerB == null)
 		{
 			return null;
 		}

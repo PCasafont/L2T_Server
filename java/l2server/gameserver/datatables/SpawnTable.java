@@ -27,6 +27,7 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,9 +45,9 @@ import java.util.logging.Level;
  */
 public class SpawnTable
 {
-	private CopyOnWriteArraySet<L2Spawn> spawnTable = new CopyOnWriteArraySet<>();
+	@Getter private CopyOnWriteArraySet<L2Spawn> spawnTable = new CopyOnWriteArraySet<>();
 	private ConcurrentMap<String, List<L2Spawn>> specificSpawnTable = new ConcurrentHashMap<>();
-	private CopyOnWriteArraySet<SpawnGroup> spawnGroups = new CopyOnWriteArraySet<>();
+	@Getter private CopyOnWriteArraySet<SpawnGroup> spawnGroups = new CopyOnWriteArraySet<>();
 	private int customSpawnCount;
 
 	public static SpawnTable getInstance()
@@ -62,10 +63,6 @@ public class SpawnTable
 		}
 	}
 
-	public CopyOnWriteArraySet<L2Spawn> getSpawnTable()
-	{
-		return spawnTable;
-	}
 
 	public List<L2Spawn> getSpecificSpawns(String name)
 	{
@@ -73,10 +70,6 @@ public class SpawnTable
 		return specificSpawnTable.get(name);
 	}
 
-	public CopyOnWriteArraySet<SpawnGroup> getSpawnGroups()
-	{
-		return spawnGroups;
-	}
 
 	public void spawnSpecificTable(String tableName)
 	{

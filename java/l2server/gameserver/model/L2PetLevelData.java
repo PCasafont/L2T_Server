@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * Stats definition for each pet level
  *
@@ -22,37 +23,29 @@ package l2server.gameserver.model;
  */
 public class L2PetLevelData
 {
-	private int ownerExpTaken;
-	private long petMaxExp;
-	private int petMaxHP;
-	private int petMaxMP;
-	private int petPAtk;
-	private int petPDef;
-	private int petMAtk;
-	private int petMDef;
-	private int petMaxFeed;
-	private int petFeedBattle;
-	private int petFeedNormal;
-	private int petRegenHP;
-	private int petRegenMP;
-	private short petSoulShot;
-	private short petSpiritShot;
+	@Getter private int ownerExpTaken;
+	@Getter private long petMaxExp;
+	@Getter private int petMaxHP;
+	@Getter private int petMaxMP;
+	@Getter private int petPAtk;
+	@Getter private int petPDef;
+	@Getter private int petMAtk;
+	@Getter private int petMDef;
+	@Getter private int petMaxFeed;
+	@Getter private int petFeedBattle;
+	@Getter private int petFeedNormal;
+	@Getter private int petRegenHP;
+	@Getter private int petRegenMP;
+	@Getter private short petSoulShot;
+	@Getter private short petSpiritShot;
 
 	//  Max Exp
-	public long getPetMaxExp()
-	{
-		return petMaxExp;
-	}
 
 	public void setPetMaxExp(long pPetMaxExp)
 	{
 		petMaxExp = pPetMaxExp;
 	}
 
-	public int getOwnerExpTaken()
-	{
-		return ownerExpTaken;
-	}
 
 	public void setOwnerExpTaken(int pOwnerExpTaken)
 	{
@@ -60,10 +53,6 @@ public class L2PetLevelData
 	}
 
 	//  Max HP
-	public int getPetMaxHP()
-	{
-		return petMaxHP;
-	}
 
 	public void setPetMaxHP(int pPetMaxHP)
 	{
@@ -71,10 +60,6 @@ public class L2PetLevelData
 	}
 
 	//  Max Mp
-	public int getPetMaxMP()
-	{
-		return petMaxMP;
-	}
 
 	public void setPetMaxMP(int pPetMaxMP)
 	{
@@ -82,10 +67,6 @@ public class L2PetLevelData
 	}
 
 	//  PAtk
-	public int getPetPAtk()
-	{
-		return petPAtk;
-	}
 
 	public void setPetPAtk(int pPetPAtk)
 	{
@@ -93,10 +74,6 @@ public class L2PetLevelData
 	}
 
 	//  PDef
-	public int getPetPDef()
-	{
-		return petPDef;
-	}
 
 	public void setPetPDef(int pPetPDef)
 	{
@@ -104,10 +81,6 @@ public class L2PetLevelData
 	}
 
 	//  MAtk
-	public int getPetMAtk()
-	{
-		return petMAtk;
-	}
 
 	public void setPetMAtk(int pPetMAtk)
 	{
@@ -115,10 +88,6 @@ public class L2PetLevelData
 	}
 
 	//  MDef
-	public int getPetMDef()
-	{
-		return petMDef;
-	}
 
 	public void setPetMDef(int pPetMDef)
 	{
@@ -126,10 +95,6 @@ public class L2PetLevelData
 	}
 
 	//  MaxFeed
-	public int getPetMaxFeed()
-	{
-		return petMaxFeed;
-	}
 
 	public void setPetMaxFeed(int pPetMaxFeed)
 	{
@@ -137,10 +102,6 @@ public class L2PetLevelData
 	}
 
 	//  Normal Feed
-	public int getPetFeedNormal()
-	{
-		return petFeedNormal;
-	}
 
 	public void setPetFeedNormal(int pPetFeedNormal)
 	{
@@ -148,10 +109,6 @@ public class L2PetLevelData
 	}
 
 	//  Battle Feed
-	public int getPetFeedBattle()
-	{
-		return petFeedBattle;
-	}
 
 	public void setPetFeedBattle(int pPetFeedBattle)
 	{
@@ -159,10 +116,6 @@ public class L2PetLevelData
 	}
 
 	//  Regen HP
-	public int getPetRegenHP()
-	{
-		return petRegenHP;
-	}
 
 	public void setPetRegenHP(int pPetRegenHP)
 	{
@@ -170,10 +123,6 @@ public class L2PetLevelData
 	}
 
 	//  Regen MP
-	public int getPetRegenMP()
-	{
-		return petRegenMP;
-	}
 
 	public void setPetRegenMP(int pPetRegenMP)
 	{
@@ -183,10 +132,6 @@ public class L2PetLevelData
 	/**
 	 * @return the _petSoulShot
 	 */
-	public short getPetSoulShot()
-	{
-		return petSoulShot;
-	}
 
 	/**
 	 * @param soulShot the this.petSoulShot to set
@@ -199,10 +144,6 @@ public class L2PetLevelData
 	/**
 	 * @return the _petSpiritShot
 	 */
-	public short getPetSpiritShot()
-	{
-		return petSpiritShot;
-	}
 
 	/**
 	 * @param spiritShot the this.petSpiritShot to set

@@ -24,6 +24,7 @@ import l2server.gameserver.model.zone.type.L2DerbyTrackZone;
 import l2server.gameserver.model.zone.type.L2PeaceZone;
 import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -47,9 +48,9 @@ public final class L2WorldRegion
 	/**
 	 * L2ObjectHashSet(L2Object) containing L2Object visible in this L2WorldRegion
 	 */
-	private Map<Integer, L2Object> visibleObjects;
+	@Getter private Map<Integer, L2Object> visibleObjects;
 
-	private List<L2WorldRegion> surroundingRegions;
+	@Getter private List<L2WorldRegion> surroundingRegions;
 	private int tileX, tileY;
 	private boolean active = false;
 	private ScheduledFuture<?> neighborsTask = null;
@@ -472,20 +473,12 @@ public final class L2WorldRegion
 	/**
 	 * Return the ArrayList this.surroundingRegions containing all L2WorldRegion around the current L2WorldRegion
 	 */
-	public List<L2WorldRegion> getSurroundingRegions()
-	{
-		return surroundingRegions;
-	}
 
 	public Map<Integer, L2Playable> getVisiblePlayable()
 	{
 		return allPlayable;
 	}
 
-	public Map<Integer, L2Object> getVisibleObjects()
-	{
-		return visibleObjects;
-	}
 
 	public String getName()
 	{

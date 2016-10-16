@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.L2SpawnZone;
+import lombok.Getter;
 
 /**
  * A castle zone
@@ -29,7 +30,7 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  */
 public class L2CastleZone extends L2SpawnZone
 {
-	private int castleId;
+	@Getter private int castleId;
 	private Castle castle = null;
 
 	public L2CastleZone(int id)
@@ -106,10 +107,6 @@ public class L2CastleZone extends L2SpawnZone
 		}
 	}
 
-	public int getCastleId()
-	{
-		return castleId;
-	}
 
 	private Castle getCastle()
 	{

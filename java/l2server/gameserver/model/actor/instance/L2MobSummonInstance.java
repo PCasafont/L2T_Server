@@ -16,6 +16,7 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.Collection;
 import java.util.StringTokenizer;
@@ -27,7 +28,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 {
 	private boolean previousFollowStatus = true;
 
-	private L2ItemInstance controlItem;
+	@Getter private L2ItemInstance controlItem;
 
 	public L2MobSummonInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance controlItem)
 	{
@@ -552,10 +553,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 		controlItem = item;
 	}
 
-	public L2ItemInstance getControlItem()
-	{
-		return controlItem;
-	}
 
 	@Override
 	public void setIsImmobilized(boolean value)
@@ -613,7 +610,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 					continue;
 				}
 
-				if (!player.isGM() && getOwner() != null && getOwner().getAppearance().getInvisible())
+				if (!player.isGM() && getOwner() != null && getOwner().getAppearance().isInvisible())
 				{
 					continue;
 				}

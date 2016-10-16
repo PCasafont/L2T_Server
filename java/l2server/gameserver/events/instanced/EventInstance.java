@@ -15,6 +15,7 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -54,7 +55,7 @@ public abstract class EventInstance
 
 	private int participants;
 
-	private long startTime = 0;
+	@Getter private long startTime = 0;
 
 	public EventInstance(int id, EventConfig config)
 	{
@@ -226,10 +227,6 @@ public abstract class EventInstance
 		return true;
 	}
 
-	public long getStartTime()
-	{
-		return startTime;
-	}
 
 	public abstract void calculateRewards();
 

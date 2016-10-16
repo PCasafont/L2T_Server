@@ -9,6 +9,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -24,15 +25,15 @@ public class GlobalDropTable implements Reloadable
 	public class GlobalDropCategory
 	{
 		private List<Integer> itemIds = new ArrayList<>();
-		private String description;
-		private int chance;
-		private int minAmount;
-		private int maxAmount;
-		private int mobId;
-		private int minLevel;
-		private int maxLevel;
+		@Getter private String description;
+		@Getter private int chance;
+		@Getter private int minAmount;
+		@Getter private int maxAmount;
+		@Getter private int mobId;
+		@Getter private int minLevel;
+		@Getter private int maxLevel;
 		private boolean raidOnly;
-		private int maxDailyCount;
+		@Getter private int maxDailyCount;
 
 		private TIntIntHashMap countsPerPlayer = new TIntIntHashMap();
 
@@ -54,40 +55,12 @@ public class GlobalDropTable implements Reloadable
 			itemIds.add(itemId);
 		}
 
-		public String getDescription()
-		{
-			return description;
-		}
 
-		public int getChance()
-		{
-			return chance;
-		}
 
-		public int getMinAmount()
-		{
-			return minAmount;
-		}
 
-		public int getMaxAmount()
-		{
-			return maxAmount;
-		}
 
-		public int getMobId()
-		{
-			return mobId;
-		}
 
-		public int getMinLevel()
-		{
-			return minLevel;
-		}
 
-		public int getMaxLevel()
-		{
-			return maxLevel;
-		}
 
 		public List<Integer> getRewards()
 		{
@@ -104,10 +77,6 @@ public class GlobalDropTable implements Reloadable
 			return raidOnly;
 		}
 
-		public int getMaxDailyCount()
-		{
-			return maxDailyCount;
-		}
 
 		public int getCountForPlayer(L2PcInstance player)
 		{

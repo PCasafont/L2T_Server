@@ -28,9 +28,10 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -42,25 +43,25 @@ import java.util.logging.Level;
  */
 public class Instance
 {
-	private int id;
-	private String name;
+	@Getter private int id;
+	@Getter @Setter private String name;
 
-	private TIntHashSet players = new TIntHashSet();
+	@Getter private TIntHashSet players = new TIntHashSet();
 	private final EjectPlayerProcedure ejectProc;
 
-	private CopyOnWriteArrayList<L2Npc> npcs = new CopyOnWriteArrayList<>();
-	private ArrayList<L2DoorInstance> doors = null;
-	private int[] spawnLoc = new int[3];
+	@Getter private CopyOnWriteArrayList<L2Npc> npcs = new CopyOnWriteArrayList<>();
+	@Getter private ArrayList<L2DoorInstance> doors = null;
+	@Getter private int[] spawnLoc = new int[3];
 	private boolean allowSummon = true;
 	private long emptyDestroyTime = -1;
 	private long lastLeft = -1;
-	private long instanceStartTime = -1;
-	private long instanceEndTime = -1;
+	@Getter private long instanceStartTime = -1;
+	@Getter private long instanceEndTime = -1;
 	private boolean isPvPInstance = false;
 	private boolean isPeaceInstance = false;
 	private boolean showTimer = false;
 	private boolean isTimerIncrease = true;
-	private String timerText = "";
+	@Getter private String timerText = "";
 
 	protected ScheduledFuture<?> CheckTimeUpTask = null;
 
@@ -74,23 +75,11 @@ public class Instance
 	/**
 	 * Returns the ID of this instance.
 	 */
-	public int getId()
-	{
-		return id;
-	}
 
 	/**
 	 * Returns the name of this instance
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 
 	/**
 	 * Returns whether summon friend type skills are allowed for this instance
@@ -270,20 +259,8 @@ public class Instance
 		doors.add(newdoor);
 	}
 
-	public TIntHashSet getPlayers()
-	{
-		return players;
-	}
 
-	public CopyOnWriteArrayList<L2Npc> getNpcs()
-	{
-		return npcs;
-	}
 
-	public ArrayList<L2DoorInstance> getDoors()
-	{
-		return doors;
-	}
 
 	public L2DoorInstance getDoor(int id)
 	{
@@ -297,15 +274,7 @@ public class Instance
 		return null;
 	}
 
-	public long getInstanceEndTime()
-	{
-		return instanceEndTime;
-	}
 
-	public long getInstanceStartTime()
-	{
-		return instanceStartTime;
-	}
 
 	public boolean isShowTimer()
 	{
@@ -317,20 +286,12 @@ public class Instance
 		return isTimerIncrease;
 	}
 
-	public String getTimerText()
-	{
-		return timerText;
-	}
 
 	/**
 	 * Returns the spawn location for this instance to be used when leaving the instance
 	 *
 	 * @return int[3]
 	 */
-	public int[] getSpawnLoc()
-	{
-		return spawnLoc;
-	}
 
 	/**
 	 * Sets the spawn location for this instance to be used when leaving the instance

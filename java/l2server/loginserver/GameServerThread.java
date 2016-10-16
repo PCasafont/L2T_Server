@@ -28,6 +28,7 @@ import l2server.util.Rnd;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
 import l2server.util.network.BaseSendablePacket;
+import lombok.Getter;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -53,7 +54,7 @@ public class GameServerThread extends Thread
 	private final RSAPublicKey publicKey;
 	private final RSAPrivateKey privateKey;
 	private NewCrypt blowfish;
-	private GameServerState loginConnectionState = GameServerState.CONNECTED;
+	@Getter private GameServerState loginConnectionState = GameServerState.CONNECTED;
 
 	private final String connectionIp;
 
@@ -366,10 +367,6 @@ public class GameServerThread extends Thread
 		accountsOnGameServer.remove(account);
 	}
 
-	public GameServerState getLoginConnectionState()
-	{
-		return loginConnectionState;
-	}
 
 	public void setLoginConnectionState(GameServerState state)
 	{

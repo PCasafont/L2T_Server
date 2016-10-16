@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * This class describes a RecipeList statUse and altStatChange component.<BR><BR>
  */
@@ -31,12 +32,12 @@ public class L2RecipeStatInstance
 	/**
 	 * The Identifier of the statType
 	 */
-	private StatType type;
+	@Getter private StatType type;
 
 	/**
 	 * The value of the statType
 	 */
-	private int value;
+	@Getter private int value;
 
 	/**
 	 * Constructor of L2RecipeStatInstance.<BR><BR>
@@ -57,16 +58,8 @@ public class L2RecipeStatInstance
 	/**
 	 * Return the the type of the L2RecipeStatInstance.<BR><BR>
 	 */
-	public StatType getType()
-	{
-		return type;
-	}
 
 	/**
 	 * Return the value of the L2RecipeStatInstance.<BR><BR>
 	 */
-	public int getValue()
-	{
-		return value;
-	}
 }

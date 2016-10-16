@@ -17,6 +17,7 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.log.Log;
+import lombok.Getter;
 
 /**
  * @author FBIagent<br>
@@ -30,7 +31,7 @@ public class L2AccessLevel
 	/**
 	 * The access level name<br>
 	 */
-	private String name = null;
+	@Getter private String name = null;
 	/**
 	 * Child access levels
 	 */
@@ -42,11 +43,11 @@ public class L2AccessLevel
 	/**
 	 * The name color for the access level<br>
 	 */
-	private int nameColor = 0;
+	@Getter private int nameColor = 0;
 	/**
 	 * The title color for the access level<br>
 	 */
-	private int titleColor = 0;
+	@Getter private int titleColor = 0;
 	/**
 	 * Flag to determine if the access level has gm access<br>
 	 */
@@ -129,30 +130,18 @@ public class L2AccessLevel
 	 *
 	 * @return String: access level name<br>
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * Returns the name color of the access level<br><br>
 	 *
 	 * @return int: the name color for the access level<br>
 	 */
-	public int getNameColor()
-	{
-		return nameColor;
-	}
 
 	/**
 	 * Returns the title color color of the access level<br><br>
 	 *
 	 * @return int: the title color for the access level<br>
 	 */
-	public int getTitleColor()
-	{
-		return titleColor;
-	}
 
 	/**
 	 * Retuns if the access level has gm access or not<br><br>

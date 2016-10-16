@@ -18,6 +18,7 @@ package l2server.gameserver.communitybbs.BB;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.TopicBBSManager;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,8 +33,8 @@ public class Topic
 	private int id;
 	private int forumId;
 	private String topicName;
-	private long date;
-	private String ownerName;
+	@Getter private long date;
+	@Getter private String ownerName;
 	private int ownerId;
 	private int type;
 	private int cReply;
@@ -117,10 +118,6 @@ public class Topic
 		return topicName;
 	}
 
-	public String getOwnerName()
-	{
-		return ownerName;
-	}
 
 	/**
 	 *
@@ -153,8 +150,4 @@ public class Topic
 	/**
 	 * @return
 	 */
-	public long getDate()
-	{
-		return date;
-	}
 }

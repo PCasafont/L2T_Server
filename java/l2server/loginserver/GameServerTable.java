@@ -23,6 +23,8 @@ import l2server.util.IPSubnet;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.math.BigInteger;
@@ -47,7 +49,7 @@ import java.util.logging.Level;
 public class GameServerTable
 {
 
-	private static GameServerTable instance;
+	@Getter private static GameServerTable instance;
 
 	// Server Names Config
 	private static Map<Integer, String> serverNames = new HashMap<>();
@@ -74,10 +76,6 @@ public class GameServerTable
 		}
 	}
 
-	public static GameServerTable getInstance()
-	{
-		return instance;
-	}
 
 	public GameServerTable() throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException
 	{
@@ -257,24 +255,24 @@ public class GameServerTable
 	public static class GameServerInfo
 	{
 		// auth
-		private int id;
-		private byte[] hexId;
+		@Getter @Setter private int id;
+		@Getter private byte[] hexId;
 		private boolean isAuthed;
 
 		// status
 		private GameServerThread gst;
-		private int status;
+		@Getter @Setter private int status;
 
 		// network
 		private ArrayList<GameServerAddress> addrs = new ArrayList<>(5);
-		private int port;
+		@Getter @Setter private int port;
 
 		// config
 		private boolean isPvp = true;
-		private int serverType;
-		private int ageLimit;
+		@Getter private int serverType;
+		@Getter private int ageLimit;
 		private boolean isShowingBrackets;
-		private int maxPlayers;
+		@Getter @Setter private int maxPlayers;
 
 		public GameServerInfo(int id, byte[] hexId, GameServerThread gst)
 		{
@@ -289,20 +287,8 @@ public class GameServerTable
 			this(id, hexId, null);
 		}
 
-		public void setId(int id)
-		{
-			this.id = id;
-		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public byte[] getHexId()
-		{
-			return hexId;
-		}
 
 		public void setAuthed(boolean isAuthed)
 		{
@@ -324,15 +310,7 @@ public class GameServerTable
 			return gst;
 		}
 
-		public void setStatus(int status)
-		{
-			this.status = status;
-		}
 
-		public int getStatus()
-		{
-			return status;
-		}
 
 		public int getCurrentPlayerCount()
 		{
@@ -356,25 +334,9 @@ public class GameServerTable
 			return null;
 		}
 
-		public int getPort()
-		{
-			return port;
-		}
 
-		public void setPort(int port)
-		{
-			this.port = port;
-		}
 
-		public void setMaxPlayers(int maxPlayers)
-		{
-			this.maxPlayers = maxPlayers;
-		}
 
-		public int getMaxPlayers()
-		{
-			return maxPlayers;
-		}
 
 		public boolean isPvp()
 		{
@@ -386,20 +348,12 @@ public class GameServerTable
 			ageLimit = val;
 		}
 
-		public int getAgeLimit()
-		{
-			return ageLimit;
-		}
 
 		public void setServerType(int val)
 		{
 			serverType = val;
 		}
 
-		public int getServerType()
-		{
-			return serverType;
-		}
 
 		public void setShowingBrackets(boolean val)
 		{
@@ -454,7 +408,7 @@ public class GameServerTable
 
 		private class GameServerAddress extends IPSubnet
 		{
-			private String serverAddress;
+			@Getter private String serverAddress;
 
 			public GameServerAddress(String subnet, String address) throws UnknownHostException
 			{
@@ -462,10 +416,6 @@ public class GameServerTable
 				serverAddress = address;
 			}
 
-			public String getServerAddress()
-			{
-				return serverAddress;
-			}
 
 			@Override
 			public String toString()

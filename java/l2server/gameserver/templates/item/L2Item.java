@@ -31,6 +31,7 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2AbnormalTemplate;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,21 +126,21 @@ public abstract class L2Item
 		0, 90, 45, 67, 144, 250, 250, 250, 400, 400, 400
 	};*/
 
-	private final int itemId;
-	private final String name;
+	@Getter private final int itemId;
+	@Getter private final String name;
 	private final String icon;
-	private final int weight;
+	@Getter private final int weight;
 	private final boolean stackable;
-	private final int crystalType;
-	private final int duration;
-	private final int time;
-	private final int autoDestroyTime;
-	private final int bodyPart;
+	@Getter private final int crystalType;
+	@Getter private final int duration;
+	@Getter private final int time;
+	@Getter private final int autoDestroyTime;
+	@Getter private final int bodyPart;
 	private final int referencePrice;
-	private final int crystalCount;
-	private final int boundItem;
-	private final int standardItem;
-	private final int blessedItem;
+	@Getter private final int crystalCount;
+	@Getter private final int boundItem;
+	@Getter private final int standardItem;
+	@Getter private final int blessedItem;
 	private final boolean sellable;
 	private final boolean dropable;
 	private final boolean destroyable;
@@ -290,38 +291,22 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getDuration()
-	{
-		return duration;
-	}
 
 	/**
 	 * Returns the time of the item
 	 *
 	 * @return int
 	 */
-	public final int getTime()
-	{
-		return time;
-	}
 
 	/**
 	 * @return the auto destroy time of the item in seconds: 0 or less - default
 	 */
-	public final int getAutoDestroyTime()
-	{
-		return autoDestroyTime;
-	}
 
 	/**
 	 * Returns the ID of the iden
 	 *
 	 * @return int
 	 */
-	public final int getItemId()
-	{
-		return itemId;
-	}
 
 	public abstract int getItemMask();
 
@@ -340,10 +325,6 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getWeight()
-	{
-		return weight;
-	}
 
 	/**
 	 * Returns if the item is crystallizable
@@ -360,10 +341,6 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalType()
-	{
-		return crystalType;
-	}
 
 	/**
 	 * Return the type of crystal if item is crystallizable
@@ -413,10 +390,6 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalCount()
-	{
-		return crystalCount;
-	}
 
 	/**
 	 * Returns the quantity of crystals for crystallization on specific enchant level
@@ -457,30 +430,14 @@ public abstract class L2Item
 		}
 	}
 
-	public final int getBoundItem()
-	{
-		return boundItem;
-	}
 
-	public final int getStandardItem()
-	{
-		return standardItem;
-	}
 
-	public final int getBlessedItem()
-	{
-		return blessedItem;
-	}
 
 	/**
 	 * Returns the name of the item
 	 *
 	 * @return String
 	 */
-	public final String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * Returns the base elemental of the item
@@ -537,10 +494,6 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getBodyPart()
-	{
-		return bodyPart;
-	}
 
 	/**
 	 * Returns the type 1 of the item

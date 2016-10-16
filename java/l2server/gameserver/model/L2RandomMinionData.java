@@ -15,13 +15,15 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class L2RandomMinionData
 {
 	private List<Integer> randomMinionIds = new ArrayList<>();
-	private List<Integer> lastSpawnedMinionIds = new ArrayList<>();
+	@Getter private List<Integer> lastSpawnedMinionIds = new ArrayList<>();
 	private int minionAmount;
 
 	public L2RandomMinionData()
@@ -55,10 +57,6 @@ public class L2RandomMinionData
 		return randomMinionIds;
 	}
 
-	public List<Integer> getLastSpawnedMinionIds()
-	{
-		return lastSpawnedMinionIds;
-	}
 
 	public void setAmount(int amount)
 	{

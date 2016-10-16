@@ -32,6 +32,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.util.Point3D;
+import lombok.Getter;
 
 import java.util.*;
 
@@ -43,7 +44,7 @@ import java.util.*;
 
 public class WayPointNode extends L2Object
 {
-	private int id;
+	@Getter private int id;
 	private String title, type;
 	private static final String NORMAL = "Node", SELECTED = "Selected", LINKED = "Linked";
 	private static int lineId = 5560;
@@ -164,10 +165,6 @@ public class WayPointNode extends L2Object
 		this.title = title;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
 	public String getType()
 	{

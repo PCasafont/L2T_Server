@@ -21,6 +21,7 @@ import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.HashMap;
@@ -35,42 +36,26 @@ public class BeautyTable implements Reloadable
 {
 	public class BeautyTemplate
 	{
-		private int id;
-		private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
-		private Map<Integer, BeautyInfo> faceStyles = new HashMap<>();
-		private Map<Integer, BeautyInfo> hairColors = new HashMap<>();
+		@Getter private int id;
+		@Getter private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
+		@Getter private Map<Integer, BeautyInfo> faceStyles = new HashMap<>();
+		@Getter private Map<Integer, BeautyInfo> hairColors = new HashMap<>();
 
 		public BeautyTemplate(int id)
 		{
 			this.id = id;
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public Map<Integer, BeautyInfo> getHairStyles()
-		{
-			return hairStyles;
-		}
 
-		public Map<Integer, BeautyInfo> getFaceStyles()
-		{
-			return faceStyles;
-		}
 
-		public Map<Integer, BeautyInfo> getHairColors()
-		{
-			return hairColors;
-		}
 	}
 
 	public class BeautyInfo
 	{
-		private int id;
-		private int parentId;
-		private int unk;
+		@Getter private int id;
+		@Getter private int parentId;
+		@Getter private int unk;
 		private int adenaCost;
 		private int ticketCost;
 
@@ -83,20 +68,8 @@ public class BeautyTable implements Reloadable
 			ticketCost = tickets;
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public int getParentId()
-		{
-			return parentId;
-		}
 
-		public int getUnk()
-		{
-			return unk;
-		}
 
 		public int getAdenaPrice()
 		{

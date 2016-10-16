@@ -27,6 +27,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,9 +50,9 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	private static final int DURATION_CHECK_INTERVAL = 60000; // 1 minute
 	private static final int DURATION_INCREASE_INTERVAL = 20000; // 20 secs (gained upon feeding)
 	private static final int BUFF_INTERVAL = 5000; // 5 seconds
-	private int remainingTime = MAX_DURATION;
+	@Getter private int remainingTime = MAX_DURATION;
 	private int homeX, homeY, homeZ;
-	private L2PcInstance owner;
+	@Getter private L2PcInstance owner;
 	private Future<?> buffTask = null;
 	private Future<?> durationCheckTask = null;
 	private static boolean isFreyaBeast;
@@ -121,10 +122,6 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		setHome(c.getX(), c.getY(), c.getZ());
 	}
 
-	public int getRemainingTime()
-	{
-		return remainingTime;
-	}
 
 	public void setRemainingTime(int duration)
 	{
@@ -241,12 +238,6 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				sitCastAndFollow(skill, owner);
 			}
 		}
-	}
-
-	@Override
-	public L2PcInstance getOwner()
-	{
-		return owner;
 	}
 
 	@Override

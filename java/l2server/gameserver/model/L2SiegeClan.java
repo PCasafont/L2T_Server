@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.L2Npc;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ public class L2SiegeClan
 	private int clanId = 0;
 	private List<L2Npc> flag = new ArrayList<>();
 	private int numFlagsAdded = 0;
-	private SiegeClanType type;
+	@Getter private SiegeClanType type;
 
 	public enum SiegeClanType
 	{
@@ -104,10 +105,6 @@ public class L2SiegeClan
 		return flag;
 	}
 
-	public SiegeClanType getType()
-	{
-		return type;
-	}
 
 	public void setType(SiegeClanType setType)
 	{

@@ -3030,7 +3030,7 @@ public final class Formulas
 		if (target instanceof L2MonsterInstance)
 		{
 			if (((L2MonsterInstance) target).getTemplate().isLethalImmune ||
-					((L2MonsterInstance) target).getIsLethalInmune())
+					((L2MonsterInstance) target).isLethalImmune())
 			{
 				return false;
 			}

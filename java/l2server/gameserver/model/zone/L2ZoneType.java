@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.zone;
 
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -33,6 +34,8 @@ import l2server.gameserver.network.serverpackets.ExServerPrimitive;
 import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,7 +60,7 @@ public abstract class L2ZoneType
 	 */
 	private boolean checkAffected = false;
 
-	private String name = null;
+	@Getter @Setter private String name = null;
 	private int minLvl;
 	private int maxLvl;
 	private int[] race;
@@ -287,20 +290,12 @@ public abstract class L2ZoneType
 	 *
 	 * @param name
 	 */
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 
 	/**
 	 * Returns zone name
 	 *
 	 * @return
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * Checks if the given coordinates are within zone's plane

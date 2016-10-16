@@ -27,14 +27,15 @@ import l2server.gameserver.stats.*;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2SkillType;
+import lombok.Getter;
 
 public class CharStat
 {
 	// =========================================================
 	// Data Field
-	private L2Character activeChar;
-	private long exp = 0;
-	private long sp = 0;
+	@Getter private L2Character activeChar;
+	@Getter private long exp = 0;
+	@Getter private long sp = 0;
 	private byte level = 1;
 
 	// =========================================================
@@ -186,10 +187,6 @@ public class CharStat
 		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
 	}
 
-	public L2Character getActiveChar()
-	{
-		return activeChar;
-	}
 
 	/**
 	 * Return the Attack Speed multiplier (base+modifier) of the L2Character to
@@ -326,10 +323,6 @@ public class CharStat
 		return val;
 	}
 
-	public long getExp()
-	{
-		return exp;
-	}
 
 	public void setExp(long value)
 	{
@@ -974,10 +967,6 @@ public class CharStat
 		return (int) calcStat(Stats.SHIELD_DEFENCE, 0, null, null);
 	}
 
-	public long getSp()
-	{
-		return sp;
-	}
 
 	public void setSp(long value)
 	{

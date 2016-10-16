@@ -21,6 +21,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -304,7 +305,7 @@ public class L2Manor
 
 	private static class SeedData
 	{
-		private int id;
+		@Getter private int id;
 		private int level; // seed level
 		private int crop; // crop type
 		private int mature; // mature crop type
@@ -338,10 +339,6 @@ public class L2Manor
 			return manorId;
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
 		public int getCrop()
 		{

@@ -15,6 +15,10 @@
 
 package l2server.gameserver.model;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +29,7 @@ import java.util.List;
  */
 public class L2ManufactureList
 {
-	private List<L2ManufactureItem> list;
+	@Getter @Setter private List<L2ManufactureItem> list;
 	private boolean confirmed;
 	private String manufactureStoreName;
 
@@ -70,13 +74,5 @@ public class L2ManufactureList
 		list.add(item);
 	}
 
-	public List<L2ManufactureItem> getList()
-	{
-		return list;
-	}
 
-	public void setList(List<L2ManufactureItem> list)
-	{
-		this.list = list;
-	}
 }

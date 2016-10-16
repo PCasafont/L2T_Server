@@ -26,6 +26,7 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.util.Rnd;
 import l2server.util.crypt.ScrambledKeyPair;
 import l2server.util.lib.LoginLog;
+import lombok.Getter;
 
 import javax.crypto.Cipher;
 import java.net.InetAddress;
@@ -52,7 +53,7 @@ import java.util.logging.Level;
 public class LoginController
 {
 
-	private static LoginController instance;
+	@Getter private static LoginController instance;
 
 	/**
 	 * Time before kicking the client if he didnt log in yet
@@ -90,10 +91,6 @@ public class LoginController
 		}
 	}
 
-	public static LoginController getInstance()
-	{
-		return instance;
-	}
 
 	private LoginController() throws GeneralSecurityException
 	{
@@ -1082,7 +1079,7 @@ public class LoginController
 	class FailedLoginAttempt
 	{
 		//private InetAddress ipAddress;
-		private int count;
+		@Getter private int count;
 		private long lastAttempTime;
 		private String lastPassword;
 
@@ -1118,10 +1115,6 @@ public class LoginController
 			}
 		}
 
-		public int getCount()
-		{
-			return count;
-		}
 
 		public void increaseCounter()
 		{

@@ -71,7 +71,7 @@ public class L2DoorInstanceAction implements IActionHandler
 				else
 				{
 					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen())
+					if (!((L2DoorInstance) target).isOpen())
 					{
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					}
@@ -94,7 +94,7 @@ public class L2DoorInstanceAction implements IActionHandler
 				else
 				{
 					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen())
+					if (!((L2DoorInstance) target).isOpen())
 					{
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					}

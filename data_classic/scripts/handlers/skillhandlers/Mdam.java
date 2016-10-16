@@ -111,7 +111,7 @@ public class Mdam implements ISkillHandler
 
 			if (damage != 0)
 			{
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().isInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 

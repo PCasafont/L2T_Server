@@ -10,6 +10,7 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -67,15 +68,15 @@ public class DMGManager
 	{
 		private int Classid = 0;
 
-		private int NewDmg = 0;
+		@Getter private int NewDmg = 0;
 
-		private String NewName = null;
+		@Getter private String NewName = null;
 
-		private int PlayerId = 0;
+		@Getter private int PlayerId = 0;
 
-		private String externalIP = null;
+		@Getter private String externalIP = null;
 
-		private String internalIP = null;
+		@Getter private String internalIP = null;
 
 		public void setdmg(int classid, int newdmg, String newname, int playerid, String externalip, String internalip)
 		{
@@ -112,30 +113,10 @@ public class DMGManager
 			return Classid;
 		}
 
-		public int getNewDmg()
-		{
-			return NewDmg;
-		}
 
-		public String getNewName()
-		{
-			return NewName;
-		}
 
-		public int getPlayerId()
-		{
-			return PlayerId;
-		}
 
-		public String getExternalIP()
-		{
-			return externalIP;
-		}
 
-		public String getInternalIP()
-		{
-			return internalIP;
-		}
 
 		public void setNewData(int dmg, L2PcInstance pl)
 		{

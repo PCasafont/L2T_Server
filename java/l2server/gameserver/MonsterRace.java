@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.lang.reflect.Constructor;
 import java.util.logging.Level;
@@ -28,9 +29,9 @@ import java.util.logging.Level;
 public class MonsterRace
 {
 
-	private L2Npc[] monsters;
+	@Getter private L2Npc[] monsters;
 	private Constructor<?> constructor;
-	private int[][] speeds;
+	@Getter private int[][] speeds;
 	private int[] first, second;
 
 	private MonsterRace()
@@ -118,18 +119,10 @@ public class MonsterRace
 	/**
 	 * @return Returns the monsters.
 	 */
-	public L2Npc[] getMonsters()
-	{
-		return monsters;
-	}
 
 	/**
 	 * @return Returns the speeds.
 	 */
-	public int[][] getSpeeds()
-	{
-		return speeds;
-	}
 
 	public int getFirstPlace()
 	{

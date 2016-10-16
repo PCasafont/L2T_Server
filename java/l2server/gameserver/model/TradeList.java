@@ -25,6 +25,8 @@ import l2server.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceIn
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -38,26 +40,26 @@ public class TradeList
 {
 	public static class TradeItem implements ItemInstanceInfo
 	{
-		private int objectId;
+		@Getter @Setter private int objectId;
 		private final L2Item item;
 		private int location;
-		private int enchant;
+		@Setter private int enchant;
 		private int type1;
 		private int type2;
-		private long count;
-		private long storeCount;
-		private Map<L2Item, Long> priceItems = new HashMap<>();
-		private long price;
+		@Getter @Setter private long count;
+		@Getter private long storeCount;
+		@Getter private Map<L2Item, Long> priceItems = new HashMap<>();
+		@Getter @Setter private long price;
 		private boolean isSoulEnhanced;
-		private int[] ensoulEffectIds;
-		private int[] ensoulSpecialEffectIds;
+		@Getter private int[] ensoulEffectIds;
+		@Getter private int[] ensoulSpecialEffectIds;
 		private boolean isAugmented;
 		private long augmentationId;
 		private boolean elemEnchanted = false;
 		private final byte elemAtkType;
 		private final int elemAtkPower;
 		private int[] elemDefAttr = {0, 0, 0, 0, 0, 0};
-		private int appearance;
+		@Getter private int appearance;
 
 		public TradeItem(L2ItemInstance item, long count, long price)
 		{
@@ -142,17 +144,6 @@ public class TradeList
 			}
 		}
 
-		public void setObjectId(int objectId)
-		{
-			this.objectId = objectId;
-		}
-
-		@Override
-		public int getObjectId()
-		{
-			return objectId;
-		}
-
 		@Override
 		public L2Item getItem()
 		{
@@ -165,10 +156,6 @@ public class TradeList
 			return location;
 		}
 
-		public void setEnchant(int enchant)
-		{
-			this.enchant = enchant;
-		}
 
 		@Override
 		public int getEnchantLevel()
@@ -186,48 +173,10 @@ public class TradeList
 			return type2;
 		}
 
-		public void setCount(long count)
-		{
-			this.count = count;
-		}
-
-		@Override
-		public long getCount()
-		{
-			return count;
-		}
-
-		public long getStoreCount()
-		{
-			return storeCount;
-		}
-
-		public void setPrice(long price)
-		{
-			this.price = price;
-		}
-
-		public long getPrice()
-		{
-			return price;
-		}
-
 		@Override
 		public boolean isSoulEnhanced()
 		{
 			return isSoulEnhanced;
-		}
-
-		@Override
-		public int[] getEnsoulEffectIds()
-		{
-			return ensoulEffectIds;
-		}
-
-		@Override
-		public int[] getEnsoulSpecialEffectIds()
-		{
-			return ensoulSpecialEffectIds;
 		}
 
 		@Override
@@ -267,17 +216,6 @@ public class TradeList
 		}
 
 		@Override
-		public int getAppearance()
-		{
-			return appearance;
-		}
-
-		public Map<L2Item, Long> getPriceItems()
-		{
-			return priceItems;
-		}
-
-		@Override
 		public int getMana()
 		{
 			return -1;
@@ -297,9 +235,9 @@ public class TradeList
 	}
 
 	private final L2PcInstance owner;
-	private L2PcInstance partner;
+	@Getter @Setter private L2PcInstance partner;
 	private final List<TradeItem> items;
-	private String title;
+	@Getter @Setter private String title;
 	private boolean packaged;
 
 	private boolean confirmed = false;
@@ -316,25 +254,9 @@ public class TradeList
 		return owner;
 	}
 
-	public void setPartner(L2PcInstance partner)
-	{
-		this.partner = partner;
-	}
 
-	public L2PcInstance getPartner()
-	{
-		return partner;
-	}
 
-	public void setTitle(String title)
-	{
-		this.title = title;
-	}
 
-	public String getTitle()
-	{
-		return title;
-	}
 
 	public boolean isLocked()
 	{

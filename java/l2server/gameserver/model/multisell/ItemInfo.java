@@ -17,19 +17,20 @@ package l2server.gameserver.model.multisell;
 
 import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.L2ItemInstance;
+import lombok.Getter;
 
 /**
  * @author DS
  */
 public class ItemInfo
 {
-	private final int enchantLevel;
-	private int[] ensoulEffectIds;
-	private int[] ensoulSpecialEffectIds;
-	private final long augmentId;
-	private final byte elementId;
-	private final int elementPower;
-	private final int[] elementals = new int[6];
+	@Getter private final int enchantLevel;
+	@Getter private int[] ensoulEffectIds;
+	@Getter private int[] ensoulSpecialEffectIds;
+	@Getter private final long augmentId;
+	@Getter private final byte elementId;
+	@Getter private final int elementPower;
+	@Getter private final int[] elementals = new int[6];
 
 	public ItemInfo(L2ItemInstance item)
 	{
@@ -47,38 +48,10 @@ public class ItemInfo
 		elementals[5] = item.getElementDefAttr(Elementals.DARK);
 	}
 
-	public final int getEnchantLevel()
-	{
-		return enchantLevel;
-	}
 
-	public int[] getEnsoulEffectIds()
-	{
-		return ensoulEffectIds;
-	}
 
-	public int[] getEnsoulSpecialEffectIds()
-	{
-		return ensoulSpecialEffectIds;
-	}
 
-	public final long getAugmentId()
-	{
-		return augmentId;
-	}
 
-	public final byte getElementId()
-	{
-		return elementId;
-	}
 
-	public final int getElementPower()
-	{
-		return elementPower;
-	}
 
-	public final int[] getElementals()
-	{
-		return elementals;
-	}
 }

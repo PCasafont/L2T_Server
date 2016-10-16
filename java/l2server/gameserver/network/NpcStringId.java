@@ -17,6 +17,7 @@ package l2server.gameserver.network;
 
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -25819,7 +25820,7 @@ public final class NpcStringId
 		return new BuilderContainer(builders.toArray(new Builder[builders.size()]));
 	}
 
-	private final int id;
+	@Getter private final int id;
 	private String name;
 	private byte params;
 	private NSLocalisation[] localisations;
@@ -25831,10 +25832,6 @@ public final class NpcStringId
 		localisations = EMPTY_NSL_ARRAY;
 	}
 
-	public final int getId()
-	{
-		return id;
-	}
 
 	private void setName(final String name)
 	{
@@ -26060,7 +26057,7 @@ public final class NpcStringId
 	 */
 	private static final class BuilderObject implements Builder
 	{
-		private final int index;
+		@Getter private final int index;
 
 		public BuilderObject(final int id)
 		{
@@ -26087,12 +26084,6 @@ public final class NpcStringId
 			}
 
 			return params[0].toString();
-		}
-
-		@Override
-		public final int getIndex()
-		{
-			return index;
 		}
 
 		@Override

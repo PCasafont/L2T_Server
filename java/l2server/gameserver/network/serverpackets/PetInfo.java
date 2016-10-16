@@ -197,7 +197,7 @@ public class PetInfo extends L2GameServerPacket
 		writeC(summon.getOwner() != null ? summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
 
 		Set<Integer> abnormal = summon.getAbnormalEffect();
-		if (summon.getOwner().getAppearance().getInvisible())
+		if (summon.getOwner().getAppearance().isInvisible())
 		{
 			abnormal.add(VisualEffect.STEALTH.getId());
 		}

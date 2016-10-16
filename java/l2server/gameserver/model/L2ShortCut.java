@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * This class ...
  *
@@ -35,7 +36,7 @@ public class L2ShortCut
 	private final int id;
 	private final int level;
 	private final int characterType;
-	private int sharedReuseGroup = -1;
+	@Getter private int sharedReuseGroup = -1;
 
 	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType)
 	{
@@ -77,10 +78,6 @@ public class L2ShortCut
 		return characterType;
 	}
 
-	public int getSharedReuseGroup()
-	{
-		return sharedReuseGroup;
-	}
 
 	public void setSharedReuseGroup(int g)
 	{

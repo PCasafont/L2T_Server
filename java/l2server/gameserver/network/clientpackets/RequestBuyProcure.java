@@ -30,6 +30,7 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
+import lombok.Getter;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
 
@@ -202,7 +203,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 	{
 		private final int itemId;
 		private final long count;
-		private int reward;
+		@Getter private int reward;
 
 		public Procure(int id, long num)
 		{
@@ -220,10 +221,6 @@ public class RequestBuyProcure extends L2GameClientPacket
 			return count;
 		}
 
-		public int getReward()
-		{
-			return reward;
-		}
 
 		public void setReward(Castle c)
 		{

@@ -18,6 +18,7 @@ package l2server.gameserver.templates.item;
 import l2server.gameserver.model.L2ExtractableProduct;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.templates.StatsSet;
+import lombok.Getter;
 
 /**
  * This class is dedicated to the management of EtcItem.
@@ -31,7 +32,7 @@ public final class L2EtcItem extends L2Item
 	private final int sharedReuseGroup;
 	private L2EtcItemType type;
 	private final boolean isBlessed;
-	private L2ExtractableProduct[] extractableItems = null;
+	@Getter private L2ExtractableProduct[] extractableItems = null;
 
 	/**
 	 * Constructor for EtcItem.
@@ -159,8 +160,4 @@ public final class L2EtcItem extends L2Item
 	/**
 	 * @return the _extractable_items
 	 */
-	public L2ExtractableProduct[] getExtractableItems()
-	{
-		return extractableItems;
-	}
 }

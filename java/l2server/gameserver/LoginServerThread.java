@@ -31,6 +31,7 @@ import l2server.log.Log;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
 import l2server.util.network.BaseSendablePacket;
+import lombok.Getter;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -90,11 +91,11 @@ public class LoginServerThread extends Thread
 	private int requestID;
 	private int serverID;
 	private boolean reserveHost;
-	private int maxPlayer;
+	@Getter private int maxPlayer;
 	private final List<WaitingClient> waitingClients;
 	private Map<String, L2GameClient> accountsInGameServer;
 	private int status;
-	private String serverName;
+	@Getter private String serverName;
 	private String[] subnets;
 	private String[] hosts;
 
@@ -637,10 +638,6 @@ public class LoginServerThread extends Thread
 	/**
 	 * @return Returns the maxPlayer.
 	 */
-	public int getMaxPlayer()
-	{
-		return maxPlayer;
-	}
 
 	/**
 	 */
@@ -700,10 +697,6 @@ public class LoginServerThread extends Thread
 	/**
 	 * @return Returns the serverName.
 	 */
-	public String getServerName()
-	{
-		return serverName;
-	}
 
 	public void setServerStatus(int status)
 	{

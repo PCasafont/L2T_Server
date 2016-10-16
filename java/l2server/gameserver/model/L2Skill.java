@@ -37,12 +37,12 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.*;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Point3D;
+import lombok.Getter;
 
 import java.util.*;
 
@@ -107,44 +107,44 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private static final L2Abnormal[] emptyEffectSet = new L2Abnormal[0];
 
 	// these two build the primary key
-	private final int id;
-	private final int level;
-	private final int enchantRouteId;
-	private final int enchantLevel;
+	@Getter private final int id;
+	@Getter private final int level;
+	@Getter private final int enchantRouteId;
+	@Getter private final int enchantLevel;
 
 	/**
 	 * Identifier for a skill that client can't display
 	 */
-	private int displayId;
+	@Getter private int displayId;
 
 	// not needed, just for easier debug
-	private final String name;
+	@Getter private final String name;
 	private final SkillOpType operateType;
 	private final boolean magic;
 	private final boolean staticReuse;
 	private final boolean staticHitTime;
-	private final int mpConsume;
-	private final int hpConsume;
-	private final int cpConsume;
+	@Getter private final int mpConsume;
+	@Getter private final int hpConsume;
+	@Getter private final int cpConsume;
 
-	private final int targetConsume;
-	private final int targetConsumeId;
+	@Getter private final int targetConsume;
+	@Getter private final int targetConsumeId;
 
-	private final int itemConsume;
-	private final int itemConsumeId;
+	@Getter private final int itemConsume;
+	@Getter private final int itemConsumeId;
 
-	private final int fameConsume;
-	private final int clanRepConsume;
+	@Getter private final int fameConsume;
+	@Getter private final int clanRepConsume;
 
-	private final int castRange;
-	private final int effectRange;
+	@Getter private final int castRange;
+	@Getter private final int effectRange;
 
 	// Abnormal levels for skills and their canceling, e.g. poison vs negate
 	private final int abnormalLvl; // e.g. poison or bleed lvl 2
 	// Note: see also _effectAbnormalLvl
 	private final int[] negateId; // cancels the effect of skill ID
 	private final L2AbnormalType[] negateStats; // lists the effect types that are canceled
-	private final Map<String, Byte> negateAbnormals;
+	@Getter private final Map<String, Byte> negateAbnormals;
 	// lists the effect abnormal types with order below the presented that are canceled
 	private final int minNegatedEffects; // minimum number of effects to negate
 	private final int maxNegatedEffects; // maximum number of effects to negate
@@ -158,35 +158,35 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	private final int refId;
 	// all times in milliseconds
-	private final int hitTime;
-	private final int[] hitTimings;
+	@Getter private final int hitTime;
+	@Getter private final int[] hitTimings;
 	//private final int skillInterruptTime;
-	private final int coolTime;
-	private final int reuseHashCode;
-	private final int reuseDelay;
-	private final int buffDuration;
+	@Getter private final int coolTime;
+	@Getter private final int reuseHashCode;
+	@Getter private final int reuseDelay;
+	@Getter private final int buffDuration;
 	// for item skills delay on equip
-	private final int equipDelay;
+	@Getter private final int equipDelay;
 
 	/**
 	 * Target type of the skill : SELF, PARTY, CLAN, PET...
 	 */
-	private final L2SkillTargetType targetType;
+	@Getter private final L2SkillTargetType targetType;
 	private final L2SkillTargetDirection targetDirection;
 	private final L2SkillBehaviorType behaviorType;
 
 	private final int feed;
 	// base success chance
-	private final double power;
+	@Getter private final double power;
 	private final double pvpPower;
 	private final double pvePower; //FIXME: remove?
 	private final double stunPower;
 	private final int magicLevel;
-	private final int levelDepend;
+	@Getter private final int levelDepend;
 	private final boolean ignoreResists;
 	private final boolean ignoreImmunity;
-	private final int minChance;
-	private final int maxChance;
+	@Getter private final int minChance;
+	@Getter private final int maxChance;
 	private final int blowChance;
 
 	private final boolean isNeutral;
@@ -194,11 +194,11 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	// The radius center varies according to the _targetType:
 	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
 	private int skillRadius;
-	private final int skillSafeRadius;
+	@Getter private final int skillSafeRadius;
 
-	private final L2SkillType skillType;
+	@Getter private final L2SkillType skillType;
 	private final int effectAbnormalLvl; // abnormal level for the additional effect type, e.g. poison lvl 1
-	private final int effectId;
+	@Getter private final int effectId;
 	private final int effectLvl; // normal effect level
 
 	private final boolean nextActionIsAttack;
@@ -206,29 +206,29 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	private final boolean removedOnAction;
 	private final boolean removedOnDamage;
-	private final int removedOnDamageChance;
-	private final int strikesToRemove;
-	private final int damageToRemove;
+	@Getter private final int removedOnDamageChance;
+	@Getter private final int strikesToRemove;
+	@Getter private final int damageToRemove;
 	private final boolean removedOnDebuffBlock;
-	private final int debuffBlocksToRemove;
+	@Getter private final int debuffBlocksToRemove;
 
 	private final boolean isPotion;
-	private final byte element;
-	private final int elementPower;
+	@Getter private final byte element;
+	@Getter private final int elementPower;
 
-	private final BaseStats saveVs;
+	@Getter private final BaseStats saveVs;
 
-	private final int condition;
-	private final int conditionValue;
+	@Getter private final int condition;
+	@Getter private final int conditionValue;
 	private final boolean overhit;
-	private final int weaponsAllowed;
-	private final int armorsAllowed;
+	@Getter private final int weaponsAllowed;
+	@Getter private final int armorsAllowed;
 
 	private final int minPledgeClass;
 	private final boolean isOffensive;
-	private final int maxCharges;
-	private final int numCharges;
-	private final int maxChargeConsume;
+	@Getter private final int maxCharges;
+	@Getter private final int numCharges;
+	@Getter private final int maxChargeConsume;
 	private final int triggeredId;
 	private final int triggeredLevel;
 	private final int triggeredEnchantRoute;
@@ -236,22 +236,22 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final String chanceType;
 	private final int soulMaxConsume;
 	private final int soulConsume;
-	private final int numSouls;
-	private final int expNeeded;
-	private final int critChance;
+	@Getter private final int numSouls;
+	@Getter private final int expNeeded;
+	@Getter private final int critChance;
 	private final float dependOnTargetBuff;
 	private final int[] dependOnTargetEffectId;
 	private final double[] damageDepend;
 
-	private final int transformId;
-	private final int transformDuration;
+	@Getter private final int transformId;
+	@Getter private final int transformDuration;
 
 	private final int afterEffectId;
 	private final int afterEffectLvl;
 	private final boolean isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean isGMSkill; // True if skill is GM skill
 
-	private final float baseCritRate;
+	@Getter private final float baseCritRate;
 	// percent of success for skill critical hit (especially for PDAM & BLOW - they're not affected by rCrit values or buffs). Default loads -1 for all other skills but 0 to PDAM & BLOW
 	private final int lethalEffect1;
 	// percent of success for lethal 1st effect (hit cp to 1 or if mob hp to 50%) (only for PDAM skills)
@@ -260,8 +260,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final boolean directHpDmg; // If true then dmg is being make directly
 	private final boolean isDance; // If true then casting more dances will cost more MP
 	private final int nextDanceCost;
-	private final int aggroPoints;
-	private final float ignoredDefPercent;
+	@Getter private final int aggroPoints;
+	@Getter private final float ignoredDefPercent;
 	private final boolean canBeUsedWhenDisabled;
 
 	protected List<Condition> preCondition;
@@ -273,9 +273,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	protected ChanceCondition chanceCondition = null;
 
 	// Flying support
-	private final String flyType;
-	private final int flyRadius;
-	private final float flyCourse;
+	@Getter private final String flyType;
+	@Getter private final int flyRadius;
+	@Getter private final float flyCourse;
 
 	private final boolean isDebuff;
 
@@ -296,14 +296,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	private boolean isTriggered = false;
 
-	private int partyChangeSkill = -1;
-	private int partyChangeSkillLevel = 1;
-	private int partyChangeSkillEnchantRoute = 0;
-	private int partyChangeSkillEnchantLevel = 0;
+	@Getter private int partyChangeSkill = -1;
+	@Getter private int partyChangeSkillLevel = 1;
+	@Getter private int partyChangeSkillEnchantRoute = 0;
+	@Getter private int partyChangeSkillEnchantLevel = 0;
 	private boolean isCastedToParty = false;
 	private final int skillActionId;
-	private final int alterSkillId;
-	private final int alterSkillLevel;
+	@Getter private final int alterSkillId;
+	@Getter private final int alterSkillLevel;
 	private final int alterIconTime;
 	private final boolean isElemental;
 	private final boolean isStanceSwitch;
@@ -700,43 +700,15 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isPotion;
 	}
 
-	public final int getArmorsAllowed()
-	{
-		return armorsAllowed;
-	}
 
-	public final int getConditionValue()
-	{
-		return conditionValue;
-	}
 
-	public final L2SkillType getSkillType()
-	{
-		return skillType;
-	}
 
-	public final byte getElement()
-	{
-		return element;
-	}
 
-	public final int getElementPower()
-	{
-		return elementPower;
-	}
 
 	/**
 	 * Return the target type of the skill : SELF, PARTY, CLAN, PET...<BR><BR>
 	 */
-	public final L2SkillTargetType getTargetType()
-	{
-		return targetType;
-	}
 
-	public final int getCondition()
-	{
-		return condition;
-	}
 
 	public final boolean isOverhit()
 	{
@@ -803,10 +775,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 	}
 
-	public final double getPower()
-	{
-		return power;
-	}
 
 	public final double getPower(boolean isPvP, boolean isPvE)
 	{
@@ -818,10 +786,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return negateStats;
 	}
 
-	public final Map<String, Byte> getNegateAbnormals()
-	{
-		return negateAbnormals;
-	}
 
 	public final int getAbnormalLvl()
 	{
@@ -854,10 +818,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return maxNegatedEffects;
 	}
 
-	public final int getLevelDepend()
-	{
-		return levelDepend;
-	}
 
 	/**
 	 * Return true if skill should ignore all resistances
@@ -878,18 +838,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	/**
 	 * Return minimum skill/effect land rate (default is 1).
 	 */
-	public final int getMinChance()
-	{
-		return minChance;
-	}
 
 	/**
 	 * Return maximum skill/effect land rate (default is 99).
 	 */
-	public final int getMaxChance()
-	{
-		return maxChance;
-	}
 
 	/**
 	 * Return true if skill effects should be removed on any action except movement
@@ -907,20 +859,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return removedOnDamage;
 	}
 
-	public final int getRemovedOnDamageChance()
-	{
-		return removedOnDamageChance;
-	}
 
-	public final int getStrikesToRemove()
-	{
-		return strikesToRemove;
-	}
 
-	public final int getDamageToRemove()
-	{
-		return damageToRemove;
-	}
 
 	/**
 	 * Return true if skill effects should be removed on debuff block
@@ -930,18 +870,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return removedOnDebuffBlock;
 	}
 
-	public final int getDebuffBlocksToRemove()
-	{
-		return debuffBlocksToRemove;
-	}
 
 	/**
 	 * Return the additional effect Id.<BR><BR>
 	 */
-	public final int getEffectId()
-	{
-		return effectId;
-	}
 
 	/**
 	 * Return the additional effect level.<BR><BR>
@@ -972,50 +904,26 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	/**
 	 * @return Returns the buffDuration.
 	 */
-	public final int getBuffDuration()
-	{
-		return buffDuration;
-	}
 
 	/**
 	 * @return Returns the castRange.
 	 */
-	public final int getCastRange()
-	{
-		return castRange;
-	}
 
 	/**
 	 * @return Returns the cpConsume;
 	 */
-	public final int getCpConsume()
-	{
-		return cpConsume;
-	}
 
 	/**
 	 * @return Returns the effectRange.
 	 */
-	public final int getEffectRange()
-	{
-		return effectRange;
-	}
 
 	/**
 	 * @return Returns the hpConsume.
 	 */
-	public final int getHpConsume()
-	{
-		return hpConsume;
-	}
 
 	/**
 	 * @return Returns the id.
 	 */
-	public final int getId()
-	{
-		return id;
-	}
 
 	/**
 	 * @return Returns the boolean this.isDebuff.
@@ -1025,10 +933,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isDebuff;
 	}
 
-	public int getDisplayId()
-	{
-		return displayId;
-	}
 
 	public void setDisplayId(int id)
 	{
@@ -1063,76 +967,36 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	/**
 	 * Return skill saveVs base stat (STR, INT ...).<BR><BR>
 	 */
-	public final BaseStats getSaveVs()
-	{
-		return saveVs;
-	}
 
 	/**
 	 * @return Returns the this.targetConsumeId.
 	 */
-	public final int getTargetConsumeId()
-	{
-		return targetConsumeId;
-	}
 
 	/**
 	 * @return Returns the targetConsume.
 	 */
-	public final int getTargetConsume()
-	{
-		return targetConsume;
-	}
 
 	/**
 	 * @return Returns the itemConsume.
 	 */
-	public final int getItemConsume()
-	{
-		return itemConsume;
-	}
 
 	/**
 	 * @return Returns the itemConsumeId.
 	 */
-	public final int getItemConsumeId()
-	{
-		return itemConsumeId;
-	}
 
 	/**
 	 * @return Returns the fameConsume.
 	 */
-	public final int getFameConsume()
-	{
-		return fameConsume;
-	}
 
 	/**
 	 * @return Returns the clanRepConsume.
 	 */
-	public final int getClanRepConsume()
-	{
-		return clanRepConsume;
-	}
 
 	/**
 	 * @return Returns the level.
 	 */
-	public final int getLevel()
-	{
-		return level;
-	}
 
-	public final int getEnchantRouteId()
-	{
-		return enchantRouteId;
-	}
 
-	public final int getEnchantLevel()
-	{
-		return enchantLevel;
-	}
 
 	public final int getLevelHash()
 	{
@@ -1171,69 +1035,33 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	/**
 	 * @return Returns the mpConsume.
 	 */
-	public final int getMpConsume()
-	{
-		return mpConsume;
-	}
 
 	/**
 	 * @return Returns the name.
 	 */
-	public final String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * @return Returns the reuseDelay.
 	 */
-	public final int getReuseDelay()
-	{
-		return reuseDelay;
-	}
 
-	public final int getReuseHashCode()
-	{
-		return reuseHashCode;
-	}
 
-	public final int getEquipDelay()
-	{
-		return equipDelay;
-	}
 
-	public final int getHitTime()
-	{
-		return hitTime;
-	}
 
 	public final int getHitCounts()
 	{
 		return hitTimings.length;
 	}
 
-	public final int[] getHitTimings()
-	{
-		return hitTimings;
-	}
 
 	/**
 	 * @return Returns the coolTime.
 	 */
-	public final int getCoolTime()
-	{
-		return coolTime;
-	}
 
 	public final int getSkillRadius()
 	{
 		return skillRadius;
 	}
 
-	public final int getSkillSafeRadius()
-	{
-		return skillSafeRadius;
-	}
 
 	public final boolean isActive()
 	{
@@ -1265,15 +1093,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return nextDanceCost;
 	}
 
-	public final int getAggroPoints()
-	{
-		return aggroPoints;
-	}
 
-	public final float getIgnoredDefPercent()
-	{
-		return ignoredDefPercent;
-	}
 
 	public boolean canBeUsedWhenDisabled()
 	{
@@ -1310,10 +1130,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return getSkillType() == L2SkillType.PUMPING || getSkillType() == L2SkillType.REELING;
 	}
 
-	public final int getWeaponsAllowed()
-	{
-		return weaponsAllowed;
-	}
 
 	public int getMinPledgeClass()
 	{
@@ -1359,20 +1175,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isGMSkill;
 	}
 
-	public final int getNumCharges()
-	{
-		return numCharges;
-	}
 
-	public final int getMaxChargeConsume()
-	{
-		return maxChargeConsume;
-	}
 
-	public final int getNumSouls()
-	{
-		return numSouls;
-	}
 
 	public final int getMaxSoulConsumeCount()
 	{
@@ -1384,30 +1188,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return soulConsume;
 	}
 
-	public final int getExpNeeded()
-	{
-		return expNeeded;
-	}
 
-	public final int getCritChance()
-	{
-		return critChance;
-	}
 
-	public final int getTransformId()
-	{
-		return transformId;
-	}
 
-	public final int getTransformDuration()
-	{
-		return transformDuration;
-	}
 
-	public final float getBaseCritRate()
-	{
-		return baseCritRate;
-	}
 
 	public final int getLethalChance1()
 	{
@@ -1424,20 +1208,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return directHpDmg;
 	}
 
-	public final String getFlyType()
-	{
-		return flyType;
-	}
 
-	public final int getFlyRadius()
-	{
-		return flyRadius;
-	}
 
-	public final float getFlyCourse()
-	{
-		return flyCourse;
-	}
 
 	public final boolean isSkillTypeOffensive()
 	{
@@ -2967,10 +2739,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return refId;
 	}
 
-	public final int getMaxCharges()
-	{
-		return maxCharges;
-	}
 
 	public int getAfterEffectId()
 	{
@@ -3158,25 +2926,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isTriggered && !isDebuff;
 	}
 
-	public int getPartyChangeSkill()
-	{
-		return partyChangeSkill;
-	}
 
-	public int getPartyChangeSkillLevel()
-	{
-		return partyChangeSkillLevel;
-	}
 
-	public int getPartyChangeSkillEnchantRoute()
-	{
-		return partyChangeSkillEnchantRoute;
-	}
 
-	public int getPartyChangeSkillEnchantLevel()
-	{
-		return partyChangeSkillEnchantLevel;
-	}
 
 	public boolean isCastedToParty()
 	{
@@ -3188,15 +2940,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 *
 	 * @return
 	 */
-	public final int getAlterSkillId()
-	{
-		return alterSkillId;
-	}
 
-	public final int getAlterSkillLevel()
-	{
-		return alterSkillLevel;
-	}
 
 	public final int getAlterSkillTime()
 	{

@@ -62,7 +62,7 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 			}
 			else if (war.getState() == WarState.REPOSE)
 			{
-				if (war.getTie())
+				if (war.isTie())
 				{
 					state = 5;
 				}

@@ -34,6 +34,7 @@ import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,7 +53,7 @@ public class PcInventory extends Inventory
 	private L2ItemInstance adena;
 	private L2ItemInstance ancientAdena;
 
-	private int[] blockItems = null;
+	@Getter private int[] blockItems = null;
 
 	private int questSlots;
 	/**
@@ -63,7 +64,7 @@ public class PcInventory extends Inventory
 	 * <LI>1 - allow usage of items from this.invItems, block other items
 	 * </UL>
 	 */
-	private int blockMode = -1;
+	@Getter private int blockMode = -1;
 
 	public PcInventory(L2PcInstance owner)
 	{
@@ -980,20 +981,12 @@ public class PcInventory extends Inventory
 	 *
 	 * @return int  {@link PcInventory#_blockMode}
 	 */
-	public int getBlockMode()
-	{
-		return blockMode;
-	}
 
 	/**
 	 * Return TIntArrayList with blocked item ids
 	 *
 	 * @return TIntArrayList
 	 */
-	public int[] getBlockItems()
-	{
-		return blockItems;
-	}
 
 	/**
 	 * Check if player can use item by itemid

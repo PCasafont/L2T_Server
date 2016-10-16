@@ -19,7 +19,6 @@ import l2server.log.Log;
 import l2server.util.network.BaseSendablePacket;
 
 import javax.crypto.Cipher;
-import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.interfaces.RSAPublicKey;
 import java.util.logging.Level;

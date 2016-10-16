@@ -18,12 +18,14 @@ package l2server.gameserver.model.actor.appearance;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.model.actor.instance.L2ApInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import lombok.Getter;
+import lombok.Setter;
 
 public class PcAppearance
 {
 	// =========================================================
 	// Data Field
-	private L2PcInstance owner;
+	@Getter @Setter private L2PcInstance owner;
 
 	private int face;
 	private int hairColor;
@@ -34,7 +36,7 @@ public class PcAppearance
 	/**
 	 * true if the player is invisible
 	 */
-	private boolean invisible = false;
+	@Getter private boolean invisible = false;
 
 	/**
 	 * The current visible name of this player, not necessarily the real one
@@ -49,12 +51,12 @@ public class PcAppearance
 	/**
 	 * The hexadecimal Color of players name (white is 0xFFFFFF)
 	 */
-	private int nameColor = 0xFFFFFF;
+	@Getter private int nameColor = 0xFFFFFF;
 
 	/**
 	 * The hexadecimal Color of players name (white is 0xFFFFFF)
 	 */
-	private int titleColor = 0xFFFF77;
+	@Getter private int titleColor = 0xFFFF77;
 
 	// =========================================================
 	// Constructor
@@ -205,15 +207,6 @@ public class PcAppearance
 		invisible = false;
 	}
 
-	public boolean getInvisible()
-	{
-		return invisible;
-	}
-
-	public int getNameColor()
-	{
-		return nameColor;
-	}
 
 	public void setNameColor(int nameColor)
 	{
@@ -230,10 +223,6 @@ public class PcAppearance
 		nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 
-	public int getTitleColor()
-	{
-		return titleColor;
-	}
 
 	public void setTitleColor(int titleColor)
 	{
@@ -248,21 +237,5 @@ public class PcAppearance
 	public void setTitleColor(int red, int green, int blue)
 	{
 		titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
-	}
-
-	/**
-	 * @param owner The owner to set.
-	 */
-	public void setOwner(L2PcInstance owner)
-	{
-		this.owner = owner;
-	}
-
-	/**
-	 * @return Returns the owner.
-	 */
-	public L2PcInstance getOwner()
-	{
-		return owner;
 	}
 }

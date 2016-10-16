@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.quest.Quest;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -32,9 +33,9 @@ public class GraciaSeedsManager
 
 	// Seed of Destruction
 	private static final byte SODTYPE = 1;
-	private int SoDTiatKilled = 0;
-	private int SoDState = 1;
-	private Calendar SoDLastStateChangeDate;
+	@Getter private int SoDTiatKilled = 0;
+	@Getter private int SoDState = 1;
+	@Getter private Calendar SoDLastStateChangeDate;
 
 	private GraciaSeedsManager()
 	{
@@ -147,10 +148,6 @@ public class GraciaSeedsManager
 		}
 	}
 
-	public int getSoDTiatKilled()
-	{
-		return SoDTiatKilled;
-	}
 
 	public void setSoDState(int value, boolean doSave)
 	{
@@ -189,15 +186,7 @@ public class GraciaSeedsManager
 		}
 	}
 
-	public Calendar getSoDLastStateChangeDate()
-	{
-		return SoDLastStateChangeDate;
-	}
 
-	public int getSoDState()
-	{
-		return SoDState;
-	}
 
 	public static GraciaSeedsManager getInstance()
 	{

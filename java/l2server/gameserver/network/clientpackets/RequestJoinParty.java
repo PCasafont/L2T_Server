@@ -70,7 +70,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			return;
 		}
 
-		if (Config.isServer(Config.TENKAI) && target.getAppearance().getInvisible() && !requestor.isGM())
+		if (Config.isServer(Config.TENKAI) && target.getAppearance().isInvisible() && !requestor.isGM())
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return;
@@ -201,7 +201,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_FULL));
 			return;
 		}
-		if (party.getPendingInvitation() && !party.isInvitationRequestExpired())
+		if (party.isPendingInvitation() && !party.isInvitationRequestExpired())
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
 			return;

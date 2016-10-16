@@ -68,7 +68,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 	{
 		if (command.equalsIgnoreCase("itemid"))
 		{
-			player.setIsItemId(true);
+			player.setItemId(true);
 			player.sendMessage("Double click on the item you want to know its itemid.");
 		}
 		else if (command.equalsIgnoreCase("offlinebuffer"))

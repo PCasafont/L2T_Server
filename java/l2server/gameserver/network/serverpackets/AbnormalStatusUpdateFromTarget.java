@@ -66,7 +66,7 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 					continue;
 			}
 
-			if (e.getInUse())
+			if (e.isInUse())
 			{
 				e.addIcon(this);
 			}

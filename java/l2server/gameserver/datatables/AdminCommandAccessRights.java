@@ -102,7 +102,7 @@ public class AdminCommandAccessRights
 			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
 			return false;
 		}
-		return adminCommandAccessRights.get(command).getRequireConfirm();
+		return adminCommandAccessRights.get(command).isRequireConfirm();
 	}
 
 	public void reloadAdminCommandAccessRights()

@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.network.NpcStringId;
+import lombok.Getter;
 
 /**
  * @author Rayan RPG, JIV
@@ -23,15 +24,15 @@ import l2server.gameserver.network.NpcStringId;
  */
 public class L2NpcWalkerNode
 {
-	private int chatId = 0;
-	private int moveX;
-	private int moveY;
-	private int moveZ;
-	private int delay;
+	@Getter private int chatId = 0;
+	@Getter private int moveX;
+	@Getter private int moveY;
+	@Getter private int moveZ;
+	@Getter private int delay;
 	@SuppressWarnings("unused")
 	private NpcStringId npcString;
 	private String chatText;
-	private boolean running;
+	@Getter private boolean running;
 
 	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
 	{
@@ -66,33 +67,9 @@ public class L2NpcWalkerNode
 		return chatText;
 	}
 
-	public int getMoveX()
-	{
-		return moveX;
-	}
 
-	public int getMoveY()
-	{
-		return moveY;
-	}
 
-	public int getMoveZ()
-	{
-		return moveZ;
-	}
 
-	public int getDelay()
-	{
-		return delay;
-	}
 
-	public boolean getRunning()
-	{
-		return running;
-	}
 
-	public int getChatId()
-	{
-		return chatId;
-	}
 }

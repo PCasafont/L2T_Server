@@ -17,13 +17,14 @@ package l2server.gameserver.model.itemcontainer;
 
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import lombok.Getter;
 
 /**
  * @author Erlandys
  */
 public class PcAuction extends ItemContainer
 {
-	private L2PcInstance owner;
+	@Getter private L2PcInstance owner;
 
 	public PcAuction(L2PcInstance owner)
 	{
@@ -34,12 +35,6 @@ public class PcAuction extends ItemContainer
 	public String getName()
 	{
 		return "Auction";
-	}
-
-	@Override
-	public L2PcInstance getOwner()
-	{
-		return owner;
 	}
 
 	@Override

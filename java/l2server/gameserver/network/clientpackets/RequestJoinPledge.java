@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.AskJoinPledge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import lombok.Getter;
 
 /**
  * This class ...
@@ -31,7 +32,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 {
 
 	private int target;
-	private int pledgeType;
+	@Getter private int pledgeType;
 
 	@Override
 	protected void readImpl()
@@ -85,8 +86,4 @@ public final class RequestJoinPledge extends L2GameClientPacket
 		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, pledgeType, pledgeName));
 	}
 
-	public int getPledgeType()
-	{
-		return pledgeType;
-	}
 }

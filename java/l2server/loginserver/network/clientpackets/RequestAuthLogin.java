@@ -24,6 +24,7 @@ import l2server.loginserver.network.serverpackets.AccountKicked;
 import l2server.loginserver.network.serverpackets.LoginFail;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
+import lombok.Getter;
 
 import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
@@ -38,25 +39,17 @@ public class RequestAuthLogin extends L2LoginClientPacket
 {
 	private byte[] raw = new byte[256];
 
-	private String user;
-	private String password;
+	@Getter private String user;
+	@Getter private String password;
 	private int ncotp;
 
 	/**
 	 * @return
 	 */
-	public String getPassword()
-	{
-		return password;
-	}
 
 	/**
 	 * @return
 	 */
-	public String getUser()
-	{
-		return user;
-	}
 
 	public int getOneTimePassword()
 	{

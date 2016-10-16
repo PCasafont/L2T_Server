@@ -32,6 +32,7 @@ import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,8 +43,8 @@ import java.util.logging.Level;
 public class L2DecoyInstance extends L2Attackable
 {
 	private L2PcInstance owner;
-	private int totalLifeTime;
-	private int timeRemaining;
+	@Getter private int totalLifeTime;
+	@Getter private int timeRemaining;
 	private Future<?> decoyLifeTask;
 	private List<Future<?>> skillSpam = new ArrayList<>();
 
@@ -227,15 +228,7 @@ public class L2DecoyInstance extends L2Attackable
 		timeRemaining -= value;
 	}
 
-	public int getTimeRemaining()
-	{
-		return timeRemaining;
-	}
 
-	public int getTotalLifeTime()
-	{
-		return totalLifeTime;
-	}
 
 	@Override
 	public void onSpawn()

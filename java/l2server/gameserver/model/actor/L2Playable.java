@@ -26,6 +26,7 @@ import l2server.gameserver.model.actor.status.PlayableStatus;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
+import lombok.Getter;
 
 /**
  * This class represents all Playable characters in the world.<BR><BR>
@@ -37,7 +38,7 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public abstract class L2Playable extends L2Character
 {
-	private L2Character lockedTarget = null;
+	@Getter private L2Character lockedTarget = null;
 
 	/**
 	 * Constructor of L2PlayableInstance (use L2Character constructor).<BR><BR>
@@ -369,10 +370,6 @@ public abstract class L2Playable extends L2Character
 		return lockedTarget != null;
 	}
 
-	public L2Character getLockedTarget()
-	{
-		return lockedTarget;
-	}
 
 	public void setLockedTarget(L2Character cha)
 	{

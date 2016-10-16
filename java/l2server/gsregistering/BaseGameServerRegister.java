@@ -21,6 +21,8 @@ import l2server.ServerMode;
 import l2server.i18n.LanguageControl;
 import l2server.loginserver.GameServerTable;
 import l2server.util.Util;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +45,7 @@ import java.util.ResourceBundle;
 public abstract class BaseGameServerRegister
 {
 	private boolean loaded = false;
-	private ResourceBundle bundle;
+	@Getter @Setter private ResourceBundle bundle;
 
 	public static void main(String[] args)
 	{
@@ -326,18 +328,10 @@ public abstract class BaseGameServerRegister
 	/**
 	 * @param bundle The bundle to set.
 	 */
-	public void setBundle(ResourceBundle bundle)
-	{
-		this.bundle = bundle;
-	}
 
 	/**
 	 * @return Returns the bundle.
 	 */
-	public ResourceBundle getBundle()
-	{
-		return bundle;
-	}
 
 	public abstract void showError(String msg, Throwable t);
 
@@ -426,23 +420,15 @@ public abstract class BaseGameServerRegister
 
 	static abstract class BaseTask implements Runnable
 	{
-		private ResourceBundle bundle;
+		@Getter @Setter private ResourceBundle bundle;
 
 		/**
 		 * @param bundle The bundle to set.
 		 */
-		public void setBundle(ResourceBundle bundle)
-		{
-			this.bundle = bundle;
-		}
 
 		/**
 		 * @return Returns the bundle.
 		 */
-		public ResourceBundle getBundle()
-		{
-			return bundle;
-		}
 
 		public void showError(String msg, Throwable t)
 		{

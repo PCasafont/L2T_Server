@@ -25,6 +25,7 @@ import l2server.gameserver.model.entity.FortSiege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -247,10 +248,10 @@ public class FortSiegeManager
 	public static class SiegeSpawn
 	{
 		Location location;
-		private int npcId;
-		private int heading;
-		private int fortId;
-		private int id;
+		@Getter private int npcId;
+		@Getter private int heading;
+		@Getter private int fortId;
+		@Getter private int id;
 
 		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id)
 		{
@@ -261,25 +262,9 @@ public class FortSiegeManager
 			this.id = id;
 		}
 
-		public int getFortId()
-		{
-			return fortId;
-		}
 
-		public int getNpcId()
-		{
-			return npcId;
-		}
 
-		public int getHeading()
-		{
-			return heading;
-		}
 
-		public int getId()
-		{
-			return id;
-		}
 
 		public Location getLocation()
 		{

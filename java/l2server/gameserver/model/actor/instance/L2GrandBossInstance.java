@@ -44,7 +44,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2GrandBossInstance);
-		setIsRaid(true);
+		setRaid(true);
 	}
 
 	@Override

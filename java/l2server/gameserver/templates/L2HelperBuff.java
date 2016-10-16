@@ -15,6 +15,7 @@
 
 package l2server.gameserver.templates;
 
+import lombok.Getter;
 /**
  * This class represents a Newbie Helper Buff
  * <p>
@@ -26,22 +27,22 @@ public class L2HelperBuff
 	/**
 	 * Min level that the player must achieve to obtain this buff from Newbie Helper
 	 */
-	private int lowerLevel;
+	@Getter private int lowerLevel;
 
 	/**
 	 * Max level that the player mustn't exceed if it want to obtain this buff from Newbie Helper
 	 */
-	private int upperLevel;
+	@Getter private int upperLevel;
 
 	/**
 	 * Identifier of the skill (buff) that the Newbie Helper must cast
 	 */
-	private int skillID;
+	@Getter private int skillID;
 
 	/**
 	 * Level of the skill (buff) that the Newbie Helper must cast
 	 */
-	private int skillLevel;
+	@Getter private int skillLevel;
 
 	/**
 	 * If True only Magus class will obtain this Buff <BR>
@@ -73,40 +74,24 @@ public class L2HelperBuff
 	 *
 	 * @return int
 	 */
-	public int getLowerLevel()
-	{
-		return lowerLevel;
-	}
 
 	/**
 	 * Returns the upper level that the L2PcInstance mustn't exceed in order to obtain this buff
 	 *
 	 * @return int
 	 */
-	public int getUpperLevel()
-	{
-		return upperLevel;
-	}
 
 	/**
 	 * Returns the ID of the buff that the L2PcInstance will receive
 	 *
 	 * @return int
 	 */
-	public int getSkillID()
-	{
-		return skillID;
-	}
 
 	/**
 	 * Returns the Level of the buff that the L2PcInstance will receive
 	 *
 	 * @return int
 	 */
-	public int getSkillLevel()
-	{
-		return skillLevel;
-	}
 
 	/**
 	 * Returns if this Buff can be cast on a fighter or a mystic

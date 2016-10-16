@@ -29,6 +29,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public final class OlympiadGameTask implements Runnable
 	public static final int[] BATTLE_START_TIME_SECOND = {10, 5, 4, 3, 2, 1, 0};
 	public static final int[] TELEPORT_TO_TOWN = {40, 30, 20, 10, 5, 4, 3, 2, 1, 0};
 
-	private final L2OlympiadStadiumZone zone;
+	@Getter private final L2OlympiadStadiumZone zone;
 	private AbstractOlympiadGame game;
 	private GameState state = GameState.IDLE;
 	private boolean needAnnounce = false;
@@ -157,10 +158,6 @@ public final class OlympiadGameTask implements Runnable
 		}
 	}
 
-	public final L2OlympiadStadiumZone getZone()
-	{
-		return zone;
-	}
 
 	public final AbstractOlympiadGame getGame()
 	{
@@ -552,7 +549,7 @@ public final class OlympiadGameTask implements Runnable
 	{
 		for (L2DoorInstance door : doors)
 		{
-			if (door != null && !door.getOpen())
+			if (door != null && !door.isOpen())
 			{
 				door.openMe();
 			}
@@ -563,7 +560,7 @@ public final class OlympiadGameTask implements Runnable
 	{
 		for (L2DoorInstance door : doors)
 		{
-			if (door != null && door.getOpen())
+			if (door != null && door.isOpen())
 			{
 				door.closeMe();
 			}

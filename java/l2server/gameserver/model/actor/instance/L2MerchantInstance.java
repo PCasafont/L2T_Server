@@ -25,6 +25,7 @@ import l2server.gameserver.network.serverpackets.ExBuyList;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+import lombok.Getter;
 
 /**
  * This class ...
@@ -33,7 +34,7 @@ import l2server.log.Log;
  */
 public class L2MerchantInstance extends L2NpcInstance
 {
-	private MerchantPriceConfig mpc;
+	@Getter private MerchantPriceConfig mpc;
 
 	/**
 	 * @param template
@@ -87,10 +88,6 @@ public class L2MerchantInstance extends L2NpcInstance
 	/**
 	 * @return Returns the mpc.
 	 */
-	public MerchantPriceConfig getMpc()
-	{
-		return mpc;
-	}
 
 	public final void showBuyWindow(L2PcInstance player, int val)
 	{

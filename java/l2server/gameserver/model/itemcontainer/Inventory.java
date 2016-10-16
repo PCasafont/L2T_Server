@@ -29,6 +29,7 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.item.*;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -97,7 +98,7 @@ public abstract class Inventory extends ItemContainer
 	protected int totalWeight;
 
 	// used to quickly check for using of items of special type
-	private int wearedMask;
+	@Getter private int wearedMask;
 
 	// Recorder of alterations in inventory
 	private static final class ChangeRecorder implements PaperdollListener
@@ -154,12 +155,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class WeaponListener implements PaperdollListener
 	{
-		private static WeaponListener instance = new WeaponListener();
+		@Getter private static WeaponListener instance = new WeaponListener();
 
-		public static WeaponListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -251,12 +248,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class StatsListener implements PaperdollListener
 	{
-		private static StatsListener instance = new StatsListener();
+		@Getter private static StatsListener instance = new StatsListener();
 
-		public static StatsListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -277,12 +270,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class ItemSkillsListener implements PaperdollListener
 	{
-		private static ItemSkillsListener instance = new ItemSkillsListener();
+		@Getter private static ItemSkillsListener instance = new ItemSkillsListener();
 
-		public static ItemSkillsListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -519,12 +508,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class ArmorSetListener implements PaperdollListener
 	{
-		private static ArmorSetListener instance = new ArmorSetListener();
+		@Getter private static ArmorSetListener instance = new ArmorSetListener();
 
-		public static ArmorSetListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyEquiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -765,12 +750,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class BraceletListener implements PaperdollListener
 	{
-		private static BraceletListener instance = new BraceletListener();
+		@Getter private static BraceletListener instance = new BraceletListener();
 
-		public static BraceletListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -794,12 +775,8 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class BroochListener implements PaperdollListener
 	{
-		private static BroochListener instance = new BroochListener();
+		@Getter private static BroochListener instance = new BroochListener();
 
-		public static BroochListener getInstance()
-		{
-			return instance;
-		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -1213,10 +1190,6 @@ public abstract class Inventory extends ItemContainer
 	 *
 	 * @return int
 	 */
-	public int getWearedMask()
-	{
-		return wearedMask;
-	}
 
 	public int getSlotFromItem(L2ItemInstance item)
 	{

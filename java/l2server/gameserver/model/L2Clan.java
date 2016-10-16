@@ -38,6 +38,8 @@ import l2server.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,26 +55,26 @@ import java.util.logging.Level;
  */
 public class L2Clan
 {
-	private String name;
-	private int clanId;
-	private L2ClanMember leader;
+	@Getter @Setter private String name;
+	@Getter @Setter private int clanId;
+	@Getter private L2ClanMember leader;
 	private Map<Integer, L2ClanMember> members = new HashMap<>();
 
-	private String allyName;
-	private int allyId;
-	private int level;
-	private int hasCastle;
-	private int hasFort;
-	private int hasHideout;
-	private int hiredGuards;
-	private int crestId;
+	@Getter @Setter private String allyName;
+	@Getter @Setter private int allyId;
+	@Getter private int level;
+	@Getter @Setter private int hasCastle;
+	@Getter @Setter private int hasFort;
+	@Getter @Setter private int hasHideout;
+	@Getter private int hiredGuards;
+	@Getter @Setter private int crestId;
 	private int crestLargeId;
-	private int allyCrestId;
-	private int auctionBiddedAt = 0;
-	private long allyPenaltyExpiryTime;
-	private int allyPenaltyType;
-	private long charPenaltyExpiryTime;
-	private long dissolvingExpiryTime;
+	@Getter @Setter private int allyCrestId;
+	@Getter private int auctionBiddedAt = 0;
+	@Getter private long allyPenaltyExpiryTime;
+	@Getter private int allyPenaltyType;
+	@Getter private long charPenaltyExpiryTime;
+	@Getter private long dissolvingExpiryTime;
 	// Ally Penalty Types
 	/**
 	 * Clan leaved ally
@@ -93,7 +95,7 @@ public class L2Clan
 
 	private ClanWarehouse warehouse = null;
 
-	private List<ClanWar> wars = new ArrayList<>();
+	@Getter private List<ClanWar> wars = new ArrayList<>();
 
 	@SuppressWarnings("unused")
 	private Forum forum;
@@ -187,8 +189,8 @@ public class L2Clan
 	private final Map<Integer, SubPledge> subPledges = new HashMap<>();
 	private final Map<Integer, L2Skill> subPledgeSkills = new HashMap<>();
 
-	private int reputationScore = 0;
-	private int rank = 0;
+	@Getter private int reputationScore = 0;
+	@Getter @Setter private int rank = 0;
 
 	private String notice;
 	private boolean noticeEnabled = false;
@@ -223,18 +225,10 @@ public class L2Clan
 	/**
 	 * @return Returns the clanId.
 	 */
-	public int getClanId()
-	{
-		return clanId;
-	}
 
 	/**
 	 * @param clanId The clanId to set.
 	 */
-	public void setClanId(int clanId)
-	{
-		this.clanId = clanId;
-	}
 
 	/**
 	 * @return Returns the leaderId.
@@ -247,10 +241,6 @@ public class L2Clan
 	/**
 	 * @return L2ClanMember of clan leader.
 	 */
-	public L2ClanMember getLeader()
-	{
-		return leader;
-	}
 
 	/**
 	 */
@@ -346,18 +336,10 @@ public class L2Clan
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	/**
 	 * @param name The name to set.
 	 */
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 
 	private void addClanMember(L2ClanMember member)
 	{
@@ -636,79 +618,39 @@ public class L2Clan
 	/**
 	 * @return
 	 */
-	public int getAllyId()
-	{
-		return allyId;
-	}
 
 	/**
 	 * @return
 	 */
-	public String getAllyName()
-	{
-		return allyName;
-	}
 
-	public void setAllyCrestId(int allyCrestId)
-	{
-		this.allyCrestId = allyCrestId;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getAllyCrestId()
-	{
-		return allyCrestId;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getLevel()
-	{
-		return level;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getHasCastle()
-	{
-		return hasCastle;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getHasFort()
-	{
-		return hasFort;
-	}
 
 	/**
 	 * @return
 	 */
-	public int getHasHideout()
-	{
-		return hasHideout;
-	}
 
 	/**
 	 * @param crestId The id of pledge crest.
 	 */
-	public void setCrestId(int crestId)
-	{
-		this.crestId = crestId;
-	}
 
 	/**
 	 * @return Returns the clanCrestId.
 	 */
-	public int getCrestId()
-	{
-		return crestId;
-	}
 
 	/**
 	 * @param crestLargeId The id of pledge LargeCrest.
@@ -729,42 +671,22 @@ public class L2Clan
 	/**
 	 * @param allyId The allyId to set.
 	 */
-	public void setAllyId(int allyId)
-	{
-		this.allyId = allyId;
-	}
 
 	/**
 	 * @param allyName The allyName to set.
 	 */
-	public void setAllyName(String allyName)
-	{
-		this.allyName = allyName;
-	}
 
 	/**
 	 * @param hasCastle The hasCastle to set.
 	 */
-	public void setHasCastle(int hasCastle)
-	{
-		this.hasCastle = hasCastle;
-	}
 
 	/**
 	 * @param hasFort The hasFort to set.
 	 */
-	public void setHasFort(int hasFort)
-	{
-		this.hasFort = hasFort;
-	}
 
 	/**
 	 * @param hasHideout The hasHideout to set.
 	 */
-	public void setHasHideout(int hasHideout)
-	{
-		this.hasHideout = hasHideout;
-	}
 
 	/**
 	 * @param level The level to set.
@@ -1548,10 +1470,6 @@ public class L2Clan
 		return warehouse;
 	}
 
-	public List<ClanWar> getWars()
-	{
-		return wars;
-	}
 
 	public boolean isAtWarWith(Integer id)
 	{
@@ -1705,10 +1623,6 @@ public class L2Clan
 		return false;
 	}
 
-	public int getHiredGuards()
-	{
-		return hiredGuards;
-	}
 
 	public void incrementHiredGuards()
 	{
@@ -1843,9 +1757,9 @@ public class L2Clan
 
 	public static class SubPledge
 	{
-		private int id;
+		@Getter private int id;
 		private String subPledgeName;
-		private int leaderId;
+		@Getter @Setter private int leaderId;
 		private final Map<Integer, L2Skill> subPledgeSkills = new HashMap<>();
 
 		public SubPledge(int id, String name, int leaderId)
@@ -1855,10 +1769,6 @@ public class L2Clan
 			this.leaderId = leaderId;
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
 		public String getName()
 		{
@@ -1870,15 +1780,7 @@ public class L2Clan
 			subPledgeName = name;
 		}
 
-		public int getLeaderId()
-		{
-			return leaderId;
-		}
 
-		public void setLeaderId(int leaderId)
-		{
-			this.leaderId = leaderId;
-		}
 
 		public L2Skill addNewSkill(L2Skill skill)
 		{
@@ -1894,7 +1796,7 @@ public class L2Clan
 	public static class RankPrivs
 	{
 		private int rankId;
-		private int party;// TODO find out what this stuff means and implement it
+		@Getter private int party;// TODO find out what this stuff means and implement it
 		private int rankPrivs;
 
 		public RankPrivs(int rank, int party, int privs)
@@ -1909,10 +1811,6 @@ public class L2Clan
 			return rankId;
 		}
 
-		public int getParty()
-		{
-			return party;
-		}
 
 		public int getPrivs()
 		{
@@ -2390,25 +2288,9 @@ public class L2Clan
 		}
 	}
 
-	public int getReputationScore()
-	{
-		return reputationScore;
-	}
 
-	public void setRank(int rank)
-	{
-		this.rank = rank;
-	}
 
-	public int getRank()
-	{
-		return rank;
-	}
 
-	public int getAuctionBiddedAt()
-	{
-		return auctionBiddedAt;
-	}
 
 	public void setAuctionBiddedAt(int id, boolean storeInDb)
 	{
@@ -2652,15 +2534,7 @@ public class L2Clan
 		return true;
 	}
 
-	public long getAllyPenaltyExpiryTime()
-	{
-		return allyPenaltyExpiryTime;
-	}
 
-	public int getAllyPenaltyType()
-	{
-		return allyPenaltyType;
-	}
 
 	public void setAllyPenaltyExpiryTime(long expiryTime, int penaltyType)
 	{
@@ -2668,20 +2542,12 @@ public class L2Clan
 		allyPenaltyType = penaltyType;
 	}
 
-	public long getCharPenaltyExpiryTime()
-	{
-		return charPenaltyExpiryTime;
-	}
 
 	public void setCharPenaltyExpiryTime(long time)
 	{
 		charPenaltyExpiryTime = time;
 	}
 
-	public long getDissolvingExpiryTime()
-	{
-		return dissolvingExpiryTime;
-	}
 
 	public void setDissolvingExpiryTime(long time)
 	{
@@ -3254,12 +3120,8 @@ public class L2Clan
 		}
 	}
 
-	private int tempLargeCrestId = 0;
+	@Getter private int tempLargeCrestId = 0;
 
-	public int getTempLargeCrestId()
-	{
-		return tempLargeCrestId;
-	}
 
 	public void setTempLargeCrestId(int id)
 	{

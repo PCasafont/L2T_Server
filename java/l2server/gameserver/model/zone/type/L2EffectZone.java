@@ -26,6 +26,7 @@ import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -40,7 +41,7 @@ import java.util.concurrent.Future;
  */
 public class L2EffectZone extends L2ZoneType
 {
-	private int chance;
+	@Getter private int chance;
 	private int initialDelay;
 	private int reuse;
 	private boolean enabled;
@@ -183,10 +184,6 @@ public class L2EffectZone extends L2ZoneType
 		return enabled;
 	}
 
-	public int getChance()
-	{
-		return chance;
-	}
 
 	public void addSkill(int skillId, int skillLvL)
 	{

@@ -22,6 +22,7 @@ import l2server.gameserver.model.L2Skill;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -46,11 +47,11 @@ public class SubPledgeSkillTree
 
 	public static class SubUnitSkill
 	{
-		private L2Skill skill;
-		private int clanLvl;
-		private int reputation;
-		private int itemId;
-		private int count;
+		@Getter private L2Skill skill;
+		@Getter private int clanLvl;
+		@Getter private int reputation;
+		@Getter private int itemId;
+		@Getter private int count;
 
 		public SubUnitSkill(L2Skill skill, int clanLvl, int reputation, int itemId, int count)
 		{
@@ -62,30 +63,10 @@ public class SubPledgeSkillTree
 			this.count = count;
 		}
 
-		public L2Skill getSkill()
-		{
-			return skill;
-		}
 
-		public int getClanLvl()
-		{
-			return clanLvl;
-		}
 
-		public int getReputation()
-		{
-			return reputation;
-		}
 
-		public int getItemId()
-		{
-			return itemId;
-		}
 
-		public int getCount()
-		{
-			return count;
-		}
 	}
 
 	public void reload()

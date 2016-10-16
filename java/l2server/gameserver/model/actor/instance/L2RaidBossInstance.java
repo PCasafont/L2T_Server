@@ -56,7 +56,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2RaidBossInstance);
-		setIsRaid(true);
+		setRaid(true);
 		BossManager.getInstance().registerBoss(this);
 	}
 

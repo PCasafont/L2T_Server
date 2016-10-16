@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.AccessLevels;
+import lombok.Getter;
 
 /**
  * @author FBIagent<br>
@@ -25,12 +26,12 @@ public class L2AdminCommandAccessRight
 	/**
 	 * The admin command<br>
 	 */
-	private String adminCommand = null;
+	@Getter private String adminCommand = null;
 	/**
 	 * The access levels which can use the admin command<br>
 	 */
 	private L2AccessLevel[] accessLevels = null;
-	private boolean requireConfirm;
+	@Getter private boolean requireConfirm;
 
 	/**
 	 * Initialized members
@@ -66,10 +67,6 @@ public class L2AdminCommandAccessRight
 	 *
 	 * @return String: the admin command the access right belongs to<br>
 	 */
-	public String getAdminCommand()
-	{
-		return adminCommand;
-	}
 
 	/**
 	 * Checks if the given characterAccessLevel is allowed to use the admin command which belongs to this access right<br><br>
@@ -91,8 +88,4 @@ public class L2AdminCommandAccessRight
 		return false;
 	}
 
-	public boolean getRequireConfirm()
-	{
-		return requireConfirm;
-	}
 }

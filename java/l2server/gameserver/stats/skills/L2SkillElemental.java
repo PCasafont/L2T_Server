@@ -91,7 +91,7 @@ public class L2SkillElemental extends L2Skill
 					if (seed != 0)
 					{
 						L2Abnormal e = target.getFirstEffect(seed);
-						if (e == null || !e.getInUse())
+						if (e == null || !e.isInUse())
 						{
 							charged = false;
 							break;
@@ -107,7 +107,7 @@ public class L2SkillElemental extends L2Skill
 					if (seed != 0)
 					{
 						L2Abnormal e = target.getFirstEffect(seed);
-						if (e != null && e.getInUse())
+						if (e != null && e.isInUse())
 						{
 							charged = true;
 							break;

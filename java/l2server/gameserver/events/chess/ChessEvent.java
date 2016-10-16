@@ -8,6 +8,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
+import lombok.Getter;
 
 /**
  * @author Pere
@@ -21,11 +22,11 @@ public class ChessEvent
 
 	private static ChessEventSide[] sides = new ChessEventSide[2];
 
-	private static L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
+	@Getter private static L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
 
 	private static ChessState state = ChessState.PARTICIPATING;
 
-	private static L2PcInstance[][] waitingPlayers = new L2PcInstance[8][2];
+	@Getter private static L2PcInstance[][] waitingPlayers = new L2PcInstance[8][2];
 
 	private static int[] waitingPlayerSideIds = new int[8];
 
@@ -507,20 +508,12 @@ public class ChessEvent
 		return false;
 	}
 
-	public static L2PcInstance[][] getWaitingPlayers()
-	{
-		return waitingPlayers;
-	}
 
 	public static ChessEventSide getSide(int id)
 	{
 		return sides[id];
 	}
 
-	public static L2ChessPieceInstance[][] getBoard()
-	{
-		return board;
-	}
 
 	public static L2ChessPieceInstance[][] getBoard(int side)
 	{

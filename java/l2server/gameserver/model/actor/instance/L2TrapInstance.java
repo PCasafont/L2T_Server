@@ -25,14 +25,15 @@ import l2server.gameserver.model.quest.Quest.TrapAction;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class L2TrapInstance extends L2Trap
 {
-	private L2PcInstance owner;
-	private int level;
+	@Getter private L2PcInstance owner;
+	@Getter private int level;
 	private boolean isInArena = false;
 	private final List<Integer> playersWhoDetectedMe = new ArrayList<>();
 
@@ -68,18 +69,6 @@ public class L2TrapInstance extends L2Trap
 		{
 			level = 1;
 		}
-	}
-
-	@Override
-	public int getLevel()
-	{
-		return level;
-	}
-
-	@Override
-	public L2PcInstance getOwner()
-	{
-		return owner;
 	}
 
 	@Override

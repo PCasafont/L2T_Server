@@ -28,6 +28,7 @@ import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -85,7 +86,7 @@ public final class L2World
 	/**
 	 * HashMap(Integer Player id, L2PcInstance) containing all the players in game
 	 */
-	private Map<Integer, L2PcInstance> allPlayers;
+	@Getter private Map<Integer, L2PcInstance> allPlayers;
 
 	/**
 	 * L2ObjectHashMap(L2Object) containing all visible objects
@@ -250,10 +251,6 @@ public final class L2World
 		return GmListTable.getInstance().getAllGms(true);
 	}
 
-	public Map<Integer, L2PcInstance> getAllPlayers()
-	{
-		return allPlayers;
-	}
 
 	public final Collection<L2PcInstance> getAllPlayersArray()
 	{

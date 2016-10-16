@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.L2Character;
+import lombok.Getter;
 
 /**
  * This class ...
@@ -25,10 +26,10 @@ import l2server.gameserver.model.actor.L2Character;
 
 public final class Location
 {
-	private int x;
-	private int y;
-	private int z;
-	private int heading;
+	@Getter private int x;
+	@Getter private int y;
+	@Getter private int z;
+	@Getter private int heading;
 
 	public Location(int x, int y, int z)
 	{
@@ -60,23 +61,7 @@ public final class Location
 		this.heading = heading;
 	}
 
-	public int getX()
-	{
-		return x;
-	}
 
-	public int getY()
-	{
-		return y;
-	}
 
-	public int getZ()
-	{
-		return z;
-	}
 
-	public int getHeading()
-	{
-		return heading;
-	}
 }

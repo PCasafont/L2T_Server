@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 
@@ -31,12 +32,12 @@ public class AbilityTable
 {
 	public class Ability
 	{
-		private int type;
-		private int skillId;
-		private int maxLevel;
-		private int reqPoints;
-		private int reqSkill;
-		private int reqSkillLvl;
+		@Getter private int type;
+		@Getter private int skillId;
+		@Getter private int maxLevel;
+		@Getter private int reqPoints;
+		@Getter private int reqSkill;
+		@Getter private int reqSkillLvl;
 
 		public Ability(int type, int skillId, int maxLevel, int reqPoints, int reqSkill, int reqSkillLvl)
 		{
@@ -48,35 +49,11 @@ public class AbilityTable
 			this.reqSkillLvl = reqSkillLvl;
 		}
 
-		public int getType()
-		{
-			return type;
-		}
 
-		public int getSkillId()
-		{
-			return skillId;
-		}
 
-		public int getMaxLevel()
-		{
-			return maxLevel;
-		}
 
-		public int getReqPoints()
-		{
-			return reqPoints;
-		}
 
-		public int getReqSkill()
-		{
-			return reqSkill;
-		}
 
-		public int getReqSkillLvl()
-		{
-			return reqSkillLvl;
-		}
 	}
 
 	private TIntObjectHashMap<Ability> abilities = new TIntObjectHashMap<>();

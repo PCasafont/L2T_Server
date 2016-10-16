@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.chars.L2PcTemplate;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,25 +32,25 @@ import java.sql.ResultSet;
  */
 public class L2StatueInstance extends L2Npc
 {
-	private int recordId;
-	private int socialId;
-	private int socialFrame;
+	@Getter private int recordId;
+	@Getter private int socialId;
+	@Getter private int socialFrame;
 	private L2PcTemplate template;
-	private int sex;
-	private int hairStyle;
-	private int hairColor;
-	private int face;
-	private int necklace = 0;
-	private int head = 0;
-	private int rHand = 0;
-	private int lHand = 0;
-	private int gloves = 0;
-	private int chest = 0;
-	private int pants = 0;
-	private int boots = 0;
-	private int cloak = 0;
-	private int hair1 = 0;
-	private int hair2 = 0;
+	@Getter private int sex;
+	@Getter private int hairStyle;
+	@Getter private int hairColor;
+	@Getter private int face;
+	@Getter private int necklace = 0;
+	@Getter private int head = 0;
+	@Getter private int rHand = 0;
+	@Getter private int lHand = 0;
+	@Getter private int gloves = 0;
+	@Getter private int chest = 0;
+	@Getter private int pants = 0;
+	@Getter private int boots = 0;
+	@Getter private int cloak = 0;
+	@Getter private int hair1 = 0;
+	@Getter private int hair2 = 0;
 
 	/*
 	 * To create 1 instance:
@@ -167,20 +168,8 @@ public class L2StatueInstance extends L2Npc
 		}
 	}
 
-	public int getRecordId()
-	{
-		return recordId;
-	}
 
-	public int getSocialId()
-	{
-		return socialId;
-	}
 
-	public int getSocialFrame()
-	{
-		return socialFrame;
-	}
 
 	public int getClassId()
 	{
@@ -192,78 +181,18 @@ public class L2StatueInstance extends L2Npc
 		return template.race.ordinal();
 	}
 
-	public int getSex()
-	{
-		return sex;
-	}
 
-	public int getHairStyle()
-	{
-		return hairStyle;
-	}
 
-	public int getHairColor()
-	{
-		return hairColor;
-	}
 
-	public int getFace()
-	{
-		return face;
-	}
 
-	public int getNecklace()
-	{
-		return necklace;
-	}
 
-	public int getHead()
-	{
-		return head;
-	}
 
-	public int getRHand()
-	{
-		return rHand;
-	}
 
-	public int getLHand()
-	{
-		return lHand;
-	}
 
-	public int getGloves()
-	{
-		return gloves;
-	}
 
-	public int getChest()
-	{
-		return chest;
-	}
 
-	public int getPants()
-	{
-		return pants;
-	}
 
-	public int getBoots()
-	{
-		return boots;
-	}
 
-	public int getCloak()
-	{
-		return cloak;
-	}
 
-	public int getHair1()
-	{
-		return hair1;
-	}
 
-	public int getHair2()
-	{
-		return hair2;
-	}
 }

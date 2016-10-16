@@ -25,6 +25,7 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -251,8 +252,8 @@ public class AutoChatHandler implements SpawnListener
 	public class AutoChatInstance
 	{
 		protected int npcId;
-		private long defaultDelay = DEFAULT_CHAT_DELAY;
-		private String[] defaultTexts;
+		@Getter private long defaultDelay = DEFAULT_CHAT_DELAY;
+		@Getter private String[] defaultTexts;
 		private boolean defaultRandom = false;
 
 		private boolean globalChat = false;
@@ -426,15 +427,7 @@ public class AutoChatHandler implements SpawnListener
 		/**
 		 * A series of methods used to get and set default values for new chat definitions.
 		 */
-		public long getDefaultDelay()
-		{
-			return defaultDelay;
-		}
 
-		public String[] getDefaultTexts()
-		{
-			return defaultTexts;
-		}
 
 		public void setDefaultChatDelay(long delayValue)
 		{

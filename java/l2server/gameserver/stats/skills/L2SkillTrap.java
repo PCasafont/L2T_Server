@@ -27,10 +27,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2TrapInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import lombok.Getter;
 
 public class L2SkillTrap extends L2SkillSummon
 {
-	private int triggerSkillId = 0;
+	@Getter private int triggerSkillId = 0;
 	private int triggerSkillLvl = 0;
 	private int trapNpcId = 0;
 	protected L2Spawn trapSpawn;
@@ -46,10 +47,6 @@ public class L2SkillTrap extends L2SkillSummon
 		trapNpcId = set.getInteger("trapNpcId");
 	}
 
-	public int getTriggerSkillId()
-	{
-		return triggerSkillId;
-	}
 
 	/**
 	 * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])

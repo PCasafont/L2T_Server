@@ -242,7 +242,7 @@ public class DoorTable
 		for (L2DoorInstance doorInst : allDoors)
 		{
 			//check dead and open
-			if (doorInst.isDead() || doorInst.getOpen() || !doorInst.checkCollision() || doorInst.getX(0) == 0)
+			if (doorInst.isDead() || doorInst.isOpen() || !doorInst.checkCollision() || doorInst.getX(0) == 0)
 			{
 				continue;
 			}

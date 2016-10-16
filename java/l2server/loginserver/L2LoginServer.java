@@ -23,6 +23,7 @@ import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.L2LoginPacketHandler;
 import l2server.network.Core;
 import l2server.network.CoreConfig;
+import lombok.Getter;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -39,8 +40,8 @@ public class L2LoginServer
 {
 	public static final int PROTOCOL_REV = 0x0106;
 
-	private static L2LoginServer instance;
-	private GameServerListener gameServerListener;
+	@Getter private static L2LoginServer instance;
+	@Getter private GameServerListener gameServerListener;
 	private Core<L2LoginClient> selectorThread;
 
 	public static void main(String[] args)
@@ -48,10 +49,6 @@ public class L2LoginServer
 		instance = new L2LoginServer();
 	}
 
-	public static L2LoginServer getInstance()
-	{
-		return instance;
-	}
 
 	public L2LoginServer()
 	{
@@ -181,10 +178,6 @@ public class L2LoginServer
 				Config.PORT_LOGIN);
 	}
 
-	public GameServerListener getGameServerListener()
-	{
-		return gameServerListener;
-	}
 
 	private void loadBanFile()
 	{

@@ -20,6 +20,7 @@ import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
+import lombok.Getter;
 
 /**
  * A simple no restart zone
@@ -28,7 +29,7 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoRestartZone extends L2ZoneType
 {
-	private int restartAllowedTime = 0;
+	@Getter private int restartAllowedTime = 0;
 	private boolean enabled = true;
 
 	public L2NoRestartZone(int id)
@@ -112,10 +113,6 @@ public class L2NoRestartZone extends L2ZoneType
 		// Do nothing.
 	}
 
-	public int getRestartAllowedTime()
-	{
-		return restartAllowedTime;
-	}
 
 	public void setRestartAllowedTime(int time)
 	{

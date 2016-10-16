@@ -113,7 +113,7 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	public void onExit()
 	{
 		// trigger only if effect in use and successfully ticked to the end
-		if (getAbnormal().getInUse() && getAbnormal().getCount() == 0)
+		if (getAbnormal().isInUse() && getAbnormal().getCount() == 0)
 		{
 			getEffected().onExitChanceEffect(getSkill(), getSkill().getElement());
 		}

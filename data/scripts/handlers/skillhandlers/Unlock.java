@@ -89,7 +89,7 @@ public class Unlock implements ISkillHandler
 					return;
 				}
 
-				if (doorUnlock(skill) && !door.getOpen())
+				if (doorUnlock(skill) && !door.isOpen())
 				{
 					door.openMe();
 					//if (skill.getAfterEffectId() == 0)

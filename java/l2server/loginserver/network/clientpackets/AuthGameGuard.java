@@ -18,6 +18,7 @@ package l2server.loginserver.network.clientpackets;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.serverpackets.GGAuth;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import lombok.Getter;
 
 /**
  * @author -Wooden-
@@ -25,36 +26,16 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
  */
 public class AuthGameGuard extends L2LoginClientPacket
 {
-	private int sessionId;
-	private int data1;
-	private int data2;
-	private int data3;
-	private int data4;
+	@Getter private int sessionId;
+	@Getter private int data1;
+	@Getter private int data2;
+	@Getter private int data3;
+	@Getter private int data4;
 
-	public int getSessionId()
-	{
-		return sessionId;
-	}
 
-	public int getData1()
-	{
-		return data1;
-	}
 
-	public int getData2()
-	{
-		return data2;
-	}
 
-	public int getData3()
-	{
-		return data3;
-	}
 
-	public int getData4()
-	{
-		return data4;
-	}
 
 	/**
 	 */

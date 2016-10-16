@@ -28,6 +28,8 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,7 +51,7 @@ public class DesireTable
 
 	static class DesireValue
 	{
-		private float value;
+		@Getter private float value;
 
 		DesireValue()
 		{
@@ -66,10 +68,6 @@ public class DesireTable
 			value += pValue;
 		}
 
-		public float getValue()
-		{
-			return value;
-		}
 	}
 
 	class Desires

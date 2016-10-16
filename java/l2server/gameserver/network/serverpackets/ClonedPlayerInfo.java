@@ -279,7 +279,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeC(activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
 
 		Set<Integer> abnormals = npc.getAbnormalEffect();
-		if (activeChar.getAppearance().getInvisible())
+		if (activeChar.getAppearance().isInvisible())
 		{
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}

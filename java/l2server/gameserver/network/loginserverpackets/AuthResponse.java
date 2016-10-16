@@ -16,6 +16,7 @@
 package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
+import lombok.Getter;
 
 /**
  * @author -Wooden-
@@ -23,8 +24,8 @@ import l2server.util.network.BaseRecievePacket;
 public class AuthResponse extends BaseRecievePacket
 {
 
-	private int serverId;
-	private String serverName;
+	@Getter private int serverId;
+	@Getter private String serverName;
 
 	/**
 	 * @param decrypt
@@ -39,16 +40,8 @@ public class AuthResponse extends BaseRecievePacket
 	/**
 	 * @return Returns the serverId.
 	 */
-	public int getServerId()
-	{
-		return serverId;
-	}
 
 	/**
 	 * @return Returns the serverName.
 	 */
-	public String getServerName()
-	{
-		return serverName;
-	}
 }

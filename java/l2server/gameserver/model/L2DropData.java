@@ -15,6 +15,9 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Arrays;
 
 /**
@@ -29,11 +32,11 @@ public class L2DropData
 {
 	public static final int MAX_CHANCE = 100;
 
-	private int itemId;
-	private int minDrop;
-	private int maxDrop;
-	private float chance;
-	private String questID = null;
+	@Getter @Setter private int itemId;
+	@Getter private int minDrop;
+	@Getter private int maxDrop;
+	@Getter private float chance;
+	@Getter @Setter private String questID = null;
 	private String[] stateID = null;
 	private boolean custom = false;
 
@@ -50,50 +53,30 @@ public class L2DropData
 	 *
 	 * @return int
 	 */
-	public int getItemId()
-	{
-		return itemId;
-	}
 
 	/**
 	 * Sets the ID of the item dropped
 	 *
 	 * @param itemId : int designating the ID of the item
 	 */
-	public void setItemId(int itemId)
-	{
-		this.itemId = itemId;
-	}
 
 	/**
 	 * Returns the minimum quantity of items dropped
 	 *
 	 * @return int
 	 */
-	public int getMinDrop()
-	{
-		return minDrop;
-	}
 
 	/**
 	 * Returns the maximum quantity of items dropped
 	 *
 	 * @return int
 	 */
-	public int getMaxDrop()
-	{
-		return maxDrop;
-	}
 
 	/**
 	 * Returns the chance of having a drop
 	 *
 	 * @return float
 	 */
-	public float getChance()
-	{
-		return chance;
-	}
 
 	/**
 	 * Sets the value for minimal quantity of dropped items
@@ -150,18 +133,10 @@ public class L2DropData
 	 *
 	 * @return String designating the ID of the quest
 	 */
-	public String getQuestID()
-	{
-		return questID;
-	}
 
 	/**
 	 * Sets the questID
 	 */
-	public void setQuestID(String questID)
-	{
-		this.questID = questID;
-	}
 
 	/**
 	 * Returns if the dropped item is requested for a quest

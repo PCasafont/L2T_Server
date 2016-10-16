@@ -27,6 +27,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.*;
@@ -38,8 +39,8 @@ public class FarmZoneManager
 {
 	public class FarmZone
 	{
-		private String name;
-		private Set<L2NpcTemplate> mobs = new HashSet<>();
+		@Getter private String name;
+		@Getter private Set<L2NpcTemplate> mobs = new HashSet<>();
 
 		public FarmZone(String name)
 		{
@@ -51,15 +52,7 @@ public class FarmZoneManager
 			mobs.add(mob);
 		}
 
-		public String getName()
-		{
-			return name;
-		}
 
-		public Set<L2NpcTemplate> getMobs()
-		{
-			return mobs;
-		}
 	}
 
 	private Map<String, FarmZone> farmZones = new HashMap<>();

@@ -19,6 +19,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 public class L2CastleTeleportZone extends L2ZoneType
 {
 	private int[] spawnLoc;
-	private int castleId;
+	@Getter private int castleId;
 
 	public L2CastleTeleportZone(int id)
 	{
@@ -141,10 +142,6 @@ public class L2CastleTeleportZone extends L2ZoneType
 		}
 	}
 
-	public int getCastleId()
-	{
-		return castleId;
-	}
 
 	/**
 	 * Get the spawn locations

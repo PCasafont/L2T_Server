@@ -745,7 +745,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 						return;
 					}
 
-					subClass.setIsDual(true);
+					subClass.setDual(true);
 					if (Config.STARTING_LEVEL > subClass.getLevel())
 					{
 						byte level = Config.STARTING_LEVEL;

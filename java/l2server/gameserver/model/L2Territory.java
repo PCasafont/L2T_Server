@@ -24,6 +24,7 @@ package l2server.gameserver.model;
 
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class L2Territory
 		}
 	}
 
-	private List<Point> points;
+	@Getter private List<Point> points;
 	private int terr;
 	private int xMin;
 	private int xMax;
@@ -52,7 +53,7 @@ public class L2Territory
 	private int yMax;
 	private int zMin;
 	private int zMax;
-	private int procMax;
+	@Getter private int procMax;
 
 	public L2Territory(int terr)
 	{
@@ -197,10 +198,6 @@ public class L2Territory
 		return p;
 	}
 
-	public int getProcMax()
-	{
-		return procMax;
-	}
 
 	public int getMinZ()
 	{
@@ -212,8 +209,4 @@ public class L2Territory
 		return zMax;
 	}
 
-	public List<Point> getPoints()
-	{
-		return points;
-	}
 }

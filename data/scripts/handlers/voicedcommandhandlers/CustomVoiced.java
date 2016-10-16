@@ -15,9 +15,6 @@
 
 package handlers.voicedcommandhandlers;
 
-import java.text.DecimalFormat;
-import java.util.Calendar;
-
 import l2server.Config;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.HiddenChests;
@@ -32,6 +29,9 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
+
+import java.text.DecimalFormat;
+import java.util.Calendar;
 
 public class CustomVoiced implements IVoicedCommandHandler
 {
@@ -68,7 +68,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 	{
 		if (command.equalsIgnoreCase("itemid"))
 		{
-			player.setIsItemId(true);
+			player.setItemId(true);
 			player.sendMessage("Double click on the item you want to know its itemid.");
 		}
 		else if (command.equalsIgnoreCase("offlinebuffer"))

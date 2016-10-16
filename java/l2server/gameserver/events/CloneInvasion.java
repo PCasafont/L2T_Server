@@ -11,6 +11,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -212,17 +213,13 @@ public class CloneInvasion
 
 	class StartTask implements Runnable
 	{
-		private long startTime;
+		@Getter private long startTime;
 
 		public StartTask(long startTime)
 		{
 			this.startTime = startTime;
 		}
 
-		public long getStartTime()
-		{
-			return startTime;
-		}
 
 		@Override
 		public void run()

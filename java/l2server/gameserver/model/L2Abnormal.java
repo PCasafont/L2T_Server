@@ -32,6 +32,7 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledFuture;
@@ -56,15 +57,15 @@ public class L2Abnormal
 	//member this.effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
-	private final L2Character effector;
+	@Getter private final L2Character effector;
 
 	//member this.effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
-	private final L2Character effected;
+	@Getter private final L2Character effected;
 
 	//the skill that was used.
-	private final L2Skill skill;
+	@Getter private final L2Skill skill;
 
 	private final boolean isHerbEffect;
 
@@ -76,18 +77,18 @@ public class L2Abnormal
 
 	// period, seconds
 	private final int duration;
-	private int periodStartTicks;
+	@Getter private int periodStartTicks;
 	private int periodFirstTime;
 
-	private L2AbnormalTemplate template;
+	@Getter private L2AbnormalTemplate template;
 
 	// function templates
 	private final FuncTemplate[] funcTemplates;
 
 	//initial count
-	private int totalCount;
+	@Getter private int totalCount;
 	// counter
-	private int count;
+	@Getter private int count;
 
 	// visual effect
 	private VisualEffect[] visualEffect;
@@ -96,7 +97,7 @@ public class L2Abnormal
 	// is selfeffect ?
 	private boolean isSelfEffect = false;
 	// skill combo id
-	private int comboId = 0;
+	@Getter private int comboId = 0;
 
 	public boolean preventExitUpdate;
 	private int strikes = 0;
@@ -133,12 +134,12 @@ public class L2Abnormal
 	 */
 	private final byte stackLvl;
 
-	private boolean inUse = false;
+	@Getter private boolean inUse = false;
 	private boolean startConditionsCorrect = true;
 
-	private double landRate;
+	@Getter private double landRate;
 
-	private L2Effect[] effects;
+	@Getter private L2Effect[] effects;
 
 	/**
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font><br>
@@ -229,15 +230,7 @@ public class L2Abnormal
 		//scheduleEffect();
 	}
 
-	public int getCount()
-	{
-		return count;
-	}
 
-	public int getTotalCount()
-	{
-		return totalCount;
-	}
 
 	public void setCount(int newcount)
 	{
@@ -279,10 +272,6 @@ public class L2Abnormal
 		return Math.abs(count - totalCount + 1) * duration + getTime() + 1;
 	}
 
-	public boolean getInUse()
-	{
-		return inUse;
-	}
 
 	public boolean setInUse(boolean inUse)
 	{
@@ -309,20 +298,8 @@ public class L2Abnormal
 		return stackLvl;
 	}
 
-	public final L2Skill getSkill()
-	{
-		return skill;
-	}
 
-	public final L2Character getEffector()
-	{
-		return effector;
-	}
 
-	public final L2Character getEffected()
-	{
-		return effected;
-	}
 
 	public boolean isSelfEffect()
 	{
@@ -566,7 +543,7 @@ public class L2Abnormal
 				if (count > 0)
 				{
 					count--;
-					if (getInUse())
+					if (isInUse())
 					{ // effect has to be in use
 						if (onActionTime() && startConditionsCorrect && count > 0)
 						{
@@ -598,7 +575,7 @@ public class L2Abnormal
 				stopEffectTask();
 
 				// Cancel the effect in the the abnormal effect map of the L2Character
-				if (getInUse() || !(count > 1 || duration > 0))
+				if (isInUse() || !(count > 1 || duration > 0))
 				{
 					if (startConditionsCorrect)
 					{
@@ -785,30 +762,10 @@ public class L2Abnormal
 		return getSkill().getLevelHash();
 	}
 
-	public int getPeriodStartTicks()
-	{
-		return periodStartTicks;
-	}
 
-	public L2AbnormalTemplate getTemplate()
-	{
-		return template;
-	}
 
-	public double getLandRate()
-	{
-		return landRate;
-	}
 
-	public int getComboId()
-	{
-		return comboId;
-	}
 
-	public L2Effect[] getEffects()
-	{
-		return effects;
-	}
 
 	public boolean canBeStolen()
 	{

@@ -168,7 +168,7 @@ public final class UseItem extends L2GameClientPacket
 
 			activeChar.sendMessage("Your " + itemName + "'s id is " + item.getObjectId() + ".");
 
-			activeChar.setIsItemId(false);
+			activeChar.setItemId(false);
 			return;
 		}
 

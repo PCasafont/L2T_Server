@@ -9,6 +9,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -101,7 +102,7 @@ public class Curfew
 
 	class CurfewTask implements Runnable
 	{
-		private long startTime;
+		@Getter private long startTime;
 
 		public CurfewTask(long startTime)
 		{
@@ -204,17 +205,13 @@ public class Curfew
 
 	class StartTask implements Runnable
 	{
-		private long startTime;
+		@Getter private long startTime;
 
 		public StartTask(long startTime)
 		{
 			this.startTime = startTime;
 		}
 
-		public long getStartTime()
-		{
-			return startTime;
-		}
 
 		@Override
 		public void run()

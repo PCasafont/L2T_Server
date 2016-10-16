@@ -212,7 +212,7 @@ public final class UserInfo extends L2GameServerPacket
 		// Clan
 		String title = player.getTitle() != null ? player.getTitle() : "";
 
-		if (player.getAppearance().getInvisible() && player.isGM())
+		if (player.getAppearance().isInvisible() && player.isGM())
 		{
 			title = "Invisible";
 		}

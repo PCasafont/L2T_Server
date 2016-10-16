@@ -34,6 +34,7 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.templates.item.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -64,7 +65,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * ID of the owner
 	 */
-	private int ownerId;
+	@Getter private int ownerId;
 
 	/**
 	 * ID of who dropped the item last, used for knownlist
@@ -74,15 +75,15 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * Quantity of the item
 	 */
-	private long count;
+	@Getter private long count;
 	/**
 	 * Initial Quantity of the item
 	 */
-	private long initCount;
+	@Getter private long initCount;
 	/**
 	 * Remaining time (in miliseconds)
 	 */
-	private long time;
+	@Getter private long time;
 	/**
 	 * Quantity of the item can decrease
 	 */
@@ -111,7 +112,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * Level of enchantment of the item
 	 */
-	private int enchantLevel;
+	@Getter private int enchantLevel;
 
 	/**
 	 * Wear Item
@@ -121,17 +122,17 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * Soul Crystal Enhancements
 	 */
-	private EnsoulEffect[] ensoulEffects = new EnsoulEffect[3];
+	@Getter private EnsoulEffect[] ensoulEffects = new EnsoulEffect[3];
 
 	/**
 	 * Augmented Item
 	 */
-	private L2Augmentation augmentation = null;
+	@Getter private L2Augmentation augmentation = null;
 
 	/**
 	 * Shadow item
 	 */
-	private int mana = -1;
+	@Getter private int mana = -1;
 	private boolean consumingMana = false;
 	private static final int MANA_CONSUMPTION_RATE = 60000;
 
@@ -141,7 +142,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	private int type1;
 	private int type2;
 
-	private long dropTime;
+	@Getter private long dropTime;
 
 	private boolean published = false;
 
@@ -173,12 +174,12 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
 	private final ReentrantLock dbLock = new ReentrantLock();
 
-	private Elementals[] elementals = null;
+	@Getter private Elementals[] elementals = null;
 
-	private ScheduledFuture<?> itemLootShedule = null;
+	@Getter private ScheduledFuture<?> itemLootShedule = null;
 	public ScheduledFuture<?> lifeTimeTask;
 
-	private int mobId = 0;
+	@Getter private int mobId = 0;
 
 	/**
 	 * Constructor of the L2ItemInstance from the objectId and the itemId.
@@ -389,10 +390,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 *
 	 * @return int : ownerID of the item
 	 */
-	public int getOwnerId()
-	{
-		return ownerId;
-	}
 
 	/**
 	 * Sets the location of the item
@@ -441,15 +438,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
 		this.count = count >= -1 ? count : 0;
 		storedInDb = false;
-	}
-
-	/**
-	 * @return Returns the count.
-	 */
-	@Override
-	public long getCount()
-	{
-		return count;
 	}
 
 	public static void logItem(int itemId, int objectId, long count, int ownerId, String process)
@@ -632,10 +620,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		dropTime = time;
 	}
 
-	public long getDropTime()
-	{
-		return dropTime;
-	}
 
 	/**
 	 * Returns the type of item
@@ -937,17 +921,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	}
 
 	/**
-	 * Returns the level of enchantment of the item
-	 *
-	 * @return int
-	 */
-	@Override
-	public int getEnchantLevel()
-	{
-		return enchantLevel;
-	}
-
-	/**
 	 * Sets the level of enchantment of the item
 	 */
 	public void setEnchantLevel(int enchantLevel)
@@ -984,10 +957,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 *
 	 * @return augmentation
 	 */
-	public EnsoulEffect[] getEnsoulEffects()
-	{
-		return ensoulEffects;
-	}
 
 	/**
 	 * Returns the augmentation object for this item
@@ -1104,10 +1073,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 *
 	 * @return augmentation
 	 */
-	public L2Augmentation getAugmentation()
-	{
-		return augmentation;
-	}
 
 	/**
 	 * Returns the augmentation bonus for this item
@@ -1332,10 +1297,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		}
 	}
 
-	public Elementals[] getElementals()
-	{
-		return elementals;
-	}
 
 	@Override
 	public boolean isElementEnchanted()
@@ -1583,17 +1544,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	}
 
 	/**
-	 * Returns the remaining mana of this shadow item
-	 *
-	 * @return lifeTime
-	 */
-	@Override
-	public int getMana()
-	{
-		return mana;
-	}
-
-	/**
 	 * Decreases the mana of this shadow item,
 	 * sends a inventory update
 	 * schedules a new consumption task if non is running
@@ -1732,18 +1682,12 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleConsumeManaTask(this), MANA_CONSUMPTION_RATE);
 	}
 
-	private int appearance;
+	@Getter private int appearance;
 
 	public void setAppearance(int appearance)
 	{
 		this.appearance = appearance;
 		storedInDb = false;
-	}
-
-	@Override
-	public int getAppearance()
-	{
-		return appearance;
 	}
 
 	/**
@@ -2241,10 +2185,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		itemLootShedule = sf;
 	}
 
-	public ScheduledFuture<?> getItemLootShedule()
-	{
-		return itemLootShedule;
-	}
 
 	public void setProtected(boolean isProtected)
 	{
@@ -2276,10 +2216,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		initCount = InitCount;
 	}
 
-	public long getInitCount()
-	{
-		return initCount;
-	}
 
 	public void restoreInitCount()
 	{
@@ -2299,10 +2235,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 *
 	 * @return Time
 	 */
-	public long getTime()
-	{
-		return time;
-	}
 
 	public final void setTime(final int time)
 	{
@@ -2486,10 +2418,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		updateDatabase(true);
 	}
 
-	public int getMobId()
-	{
-		return mobId;
-	}
 
 	public int getMaxEnchantLevel()
 	{

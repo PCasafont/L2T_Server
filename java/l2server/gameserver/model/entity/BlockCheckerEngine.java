@@ -36,6 +36,7 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +59,7 @@ public final class BlockCheckerEngine
 	private int redPoints = 15;
 	private int bluePoints = 15;
 	// Current used arena
-	private int arena = -1;
+	@Getter private int arena = -1;
 	// All blocks
 	private ArrayList<L2Spawn> spawns = new ArrayList<>();
 	// Sets if the red team won the event at the end of this (used for packets)
@@ -136,10 +137,6 @@ public final class BlockCheckerEngine
 	 *
 	 * @return false;
 	 */
-	public int getArena()
-	{
-		return arena;
-	}
 
 	/**
 	 * Returns the time when the event

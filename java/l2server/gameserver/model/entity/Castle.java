@@ -45,6 +45,8 @@ import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,7 +85,7 @@ public class Castle
 	private int ownerId = 0;
 	private Siege siege = null;
 	private Calendar siegeDate;
-	private boolean isTimeRegistrationOver = true;
+	@Getter private boolean isTimeRegistrationOver = true;
 	// true if Castle Lords set the time, or 24h is elapsed after the siege
 	private Calendar siegeTimeRegistrationEndDate; // last siege end date + 1 day
 	private int taxPercent = 0;
@@ -94,17 +96,17 @@ public class Castle
 	private L2CastleZone castleZone = null;
 	private L2CastleTeleportZone teleZone;
 	private L2Clan formerOwner = null;
-	private List<L2ArtefactInstance> artefacts = new ArrayList<>(1);
+	@Getter private List<L2ArtefactInstance> artefacts = new ArrayList<>(1);
 	private TIntIntHashMap engrave = new TIntIntHashMap(1);
 	private Map<Integer, CastleFunction> function;
-	private ArrayList<L2Skill> residentialSkills = new ArrayList<>();
-	private int bloodAlliance = 0;
+	@Getter private ArrayList<L2Skill> residentialSkills = new ArrayList<>();
+	@Getter private int bloodAlliance = 0;
 
 	public static final int TENDENCY_NONE = 0;
 	public static final int TENDENCY_LIGHT = 1;
 	public static final int TENDENCY_DARKNESS = 2;
 
-	private int tendency = TENDENCY_NONE;
+	@Getter private int tendency = TENDENCY_NONE;
 
 	/**
 	 * Castle Functions
@@ -117,11 +119,11 @@ public class Castle
 
 	public class CastleFunction
 	{
-		private int type;
-		private int lvl;
+		@Getter private int type;
+		@Getter @Setter private int lvl;
 		protected int fee;
 		protected int tempFee;
-		private long rate;
+		@Getter private long rate;
 		private long endDate;
 		protected boolean inDebt;
 		public boolean cwh;
@@ -137,35 +139,19 @@ public class Castle
 			initializeTask(cwh);
 		}
 
-		public int getType()
-		{
-			return type;
-		}
 
-		public int getLvl()
-		{
-			return lvl;
-		}
 
 		public int getLease()
 		{
 			return fee;
 		}
 
-		public long getRate()
-		{
-			return rate;
-		}
 
 		public long getEndTime()
 		{
 			return endDate;
 		}
 
-		public void setLvl(int lvl)
-		{
-			this.lvl = lvl;
-		}
 
 		public void setLease(int lease)
 		{
@@ -712,7 +698,7 @@ public class Castle
 				}
 			}
 
-			if (door.getOpen())
+			if (door.isOpen())
 			{
 				door.closeMe();
 			}
@@ -1038,10 +1024,6 @@ public class Castle
 		return siegeDate;
 	}
 
-	public boolean getIsTimeRegistrationOver()
-	{
-		return isTimeRegistrationOver;
-	}
 
 	public void setIsTimeRegistrationOver(boolean val)
 	{
@@ -1541,10 +1523,6 @@ public class Castle
 		}
 	}
 
-	public ArrayList<L2Skill> getResidentialSkills()
-	{
-		return residentialSkills;
-	}
 
 	public void giveResidentialSkills(L2PcInstance player)
 	{
@@ -1582,10 +1560,6 @@ public class Castle
 		artefacts.add(artefact);
 	}
 
-	public List<L2ArtefactInstance> getArtefacts()
-	{
-		return artefacts;
-	}
 
 	public void resetManor()
 	{
@@ -1600,10 +1574,6 @@ public class Castle
 		}
 	}
 
-	public int getBloodAlliance()
-	{
-		return bloodAlliance;
-	}
 
 	public void setBloodAlliance(int count)
 	{
@@ -1629,10 +1599,6 @@ public class Castle
 		}
 	}
 
-	public int getTendency()
-	{
-		return tendency;
-	}
 
 	public void setTendency(int tendency)
 	{

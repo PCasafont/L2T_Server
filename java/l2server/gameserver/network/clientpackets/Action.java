@@ -120,7 +120,7 @@ public final class Action extends L2GameClientPacket
 		}
 
 		// Only GMs can directly interact with invisible characters, but an invis char can target itself
-		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar.isGM() &&
+		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().isInvisible() && !activeChar.isGM() &&
 				obj != activeChar)
 		{
 			activeChar.sendSysMessage("ERR2");

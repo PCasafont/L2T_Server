@@ -39,6 +39,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,8 +56,8 @@ public abstract class L2Summon extends L2Playable
 	private boolean follow = true;
 	private boolean previousFollowStatus = true;
 
-	private double chargedSoulShot;
-	private double chargedSpiritShot;
+	@Getter private double chargedSoulShot;
+	@Getter private double chargedSpiritShot;
 
 	//  /!\ BLACK MAGIC /!\
 	// we dont have walk speed in pet data so for now use runspd / 3
@@ -231,7 +232,7 @@ public abstract class L2Summon extends L2Playable
 				{
 					continue;
 				}
-				if (!player.isGM() && getOwner() != null && getOwner().getAppearance().getInvisible())
+				if (!player.isGM() && getOwner() != null && getOwner().getAppearance().isInvisible())
 				{
 					continue;
 				}
@@ -598,15 +599,7 @@ public abstract class L2Summon extends L2Playable
 		return owner.isAutoAttackable(attacker);
 	}
 
-	public double getChargedSoulShot()
-	{
-		return chargedSoulShot;
-	}
 
-	public double getChargedSpiritShot()
-	{
-		return chargedSpiritShot;
-	}
 
 	public int getControlObjectId()
 	{
@@ -1020,7 +1013,7 @@ public abstract class L2Summon extends L2Playable
 
 		if (getOwner() != null)
 		{
-			mov.setInvisibleCharacter(getOwner().getAppearance().getInvisible() ? getOwner().getObjectId() : 0);
+			mov.setInvisibleCharacter(getOwner().getAppearance().isInvisible() ? getOwner().getObjectId() : 0);
 		}
 
 		super.broadcastPacket(mov);
@@ -1036,7 +1029,7 @@ public abstract class L2Summon extends L2Playable
 
 		if (getOwner() != null)
 		{
-			mov.setInvisibleCharacter(getOwner().getAppearance().getInvisible() ? getOwner().getObjectId() : 0);
+			mov.setInvisibleCharacter(getOwner().getAppearance().isInvisible() ? getOwner().getObjectId() : 0);
 		}
 
 		super.broadcastPacket(mov, radiusInKnownlist);
@@ -1082,7 +1075,7 @@ public abstract class L2Summon extends L2Playable
 				continue;
 			}
 
-			if (!player.isGM() && getOwner() != null && getOwner().getAppearance().getInvisible())
+			if (!player.isGM() && getOwner() != null && getOwner().getAppearance().isInvisible())
 			{
 				continue;
 			}
@@ -1147,7 +1140,7 @@ public abstract class L2Summon extends L2Playable
 
 				storedSkills.add(skill.getReuseHashCode());
 
-				if (!effect.isHerbEffect() && effect.getInUse() && !skill.isToggle())
+				if (!effect.isHerbEffect() && effect.isInUse() && !skill.isToggle())
 				{
 
 					statement.setInt(1, getOwner().getObjectId());
@@ -1265,7 +1258,7 @@ public abstract class L2Summon extends L2Playable
 					activeChar.sendPacket(new PetItemList((L2PetInstance) this));
 				}
 			}
-			else if (activeChar.isGM() || !getOwner().getAppearance().getInvisible())
+			else if (activeChar.isGM() || !getOwner().getAppearance().isInvisible())
 			{
 				if (this instanceof L2PetInstance)
 				{

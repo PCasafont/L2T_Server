@@ -878,7 +878,7 @@ public class GMEventManager
 							continue;
 						}
 
-						if (door.getOpen())
+						if (door.isOpen())
 						{
 							door.closeMe();
 						}

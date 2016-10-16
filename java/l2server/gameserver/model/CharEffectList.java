@@ -167,7 +167,7 @@ public class CharEffectList
 
 						if (e.getType() == tp)
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -194,7 +194,7 @@ public class CharEffectList
 						}
 						if (e.getType() == tp)
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -242,7 +242,7 @@ public class CharEffectList
 					}
 					if (e.getSkill() == skill)
 					{
-						if (e.getInUse())
+						if (e.isInUse())
 						{
 							return e;
 						}
@@ -277,7 +277,7 @@ public class CharEffectList
 					}
 					if (e.getSkill() == skill)
 					{
-						if (e.getInUse())
+						if (e.isInUse())
 						{
 							return e;
 						}
@@ -315,7 +315,7 @@ public class CharEffectList
 						}
 						if (e.getSkill().getId() == skillId)
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -343,7 +343,7 @@ public class CharEffectList
 						}
 						if (e.getSkill().getId() == skillId)
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -385,7 +385,7 @@ public class CharEffectList
 
 							if (eff.getTemplate().funcName.equalsIgnoreCase(effectName))
 							{
-								if (e.getInUse())
+								if (e.isInUse())
 								{
 									return e;
 								}
@@ -422,7 +422,7 @@ public class CharEffectList
 
 							if (eff.getTemplate().funcName.equalsIgnoreCase(effectName))
 							{
-								if (e.getInUse())
+								if (e.isInUse())
 								{
 									return e;
 								}
@@ -462,7 +462,7 @@ public class CharEffectList
 						}
 						if (e.getSkill().getFirstEffectStack().equals(stackType))
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -490,7 +490,7 @@ public class CharEffectList
 						}
 						if (e.getSkill().getFirstEffectStack().equals(stackType))
 						{
-							if (e.getInUse())
+							if (e.isInUse())
 							{
 								return e;
 							}
@@ -567,7 +567,7 @@ public class CharEffectList
 
 			for (L2Abnormal e : buffs)
 			{
-				if (e != null && e.getSkill().isDance() && e.getInUse())
+				if (e != null && e.getSkill().isDance() && e.isInUse())
 				{
 					danceCount++;
 				}
@@ -598,7 +598,7 @@ public class CharEffectList
 
 			for (L2Abnormal e : buffs)
 			{
-				if (e != null && e.getSkill().isActivation() && e.getInUse())
+				if (e != null && e.getSkill().isActivation() && e.isInUse())
 				{
 					danceCount++;
 				}
@@ -1523,7 +1523,7 @@ public class CharEffectList
 							continue;
 					}
 
-					if (e.getInUse())
+					if (e.isInUse())
 					{
 						if (mi != null)
 						{
@@ -1576,7 +1576,7 @@ public class CharEffectList
 							continue;
 					}
 
-					if (e.getInUse())
+					if (e.isInUse())
 					{
 						if (mi != null)
 						{

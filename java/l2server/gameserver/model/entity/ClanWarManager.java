@@ -9,6 +9,7 @@ import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -292,24 +293,24 @@ public class ClanWarManager
 			DOMINATING, SUPERIOR, EVENLYMATCHED, INFERIOR, OVERWHELMED
 		}
 
-		private L2Clan clan1;
-		private L2Clan clan2;
+		@Getter private L2Clan clan1;
+		@Getter private L2Clan clan2;
 		private int score1;
 		private int score2;
-		private int declarator1;
-		private int declarator2;
+		@Getter private int declarator1;
+		@Getter private int declarator2;
 		private WarState warState;
 		private long startTime;
 		private long endTime;
 		private long deleteTime;
-		private WarSituation situation1;
-		private WarSituation situation2;
+		@Getter private WarSituation situation1;
+		@Getter private WarSituation situation2;
 		private int clan1DeathsForWar;
 		private int clan1Score;
 		private int clan2Score;
-		private L2Clan loser;
-		private L2Clan winner;
-		private boolean tie = false;
+		@Getter private L2Clan loser;
+		@Getter private L2Clan winner;
+		@Getter private boolean tie = false;
 		private ScheduledFuture<?> task = null;
 
 		public ClanWar(int clanId1, int clanId2, int clanScore1, int clanScore2, int clanWarDeclarator1, int clanWarDeclarator2, int clan1DeathsForWar, int clan1ShownScore, int clan2ShownScore, WarState warState, int loserId, int winnerId, long start_time, long end_time, long delete_time)
@@ -647,7 +648,7 @@ public class ClanWarManager
 				}
 			}
 
-			if (!getTie())
+			if (!isTie())
 			{
 				Connection con = null;
 				try
@@ -738,30 +739,14 @@ public class ClanWarManager
 			}
 		}
 
-		public L2Clan getClan1()
-		{
-			return clan1;
-		}
 
-		public L2Clan getClan2()
-		{
-			return clan2;
-		}
 
 		public WarState getState()
 		{
 			return warState;
 		}
 
-		public int getDeclarator1()
-		{
-			return declarator1;
-		}
 
-		public int getDeclarator2()
-		{
-			return declarator2;
-		}
 
 		public long getStartTimeInMilis()
 		{
@@ -801,15 +786,7 @@ public class ClanWarManager
 			return score2;
 		}
 
-		public WarSituation getSituation1()
-		{
-			return situation1;
-		}
 
-		public WarSituation getSituation2()
-		{
-			return situation2;
-		}
 
 		public void raiseClan1Score()
 		{
@@ -866,30 +843,18 @@ public class ClanWarManager
 			loser = clan;
 		}
 
-		public L2Clan getLoser()
-		{
-			return loser;
-		}
 
 		public void setWinner(L2Clan clan)
 		{
 			winner = clan;
 		}
 
-		public L2Clan getWinner()
-		{
-			return winner;
-		}
 
 		public void setTie()
 		{
 			tie = true;
 		}
 
-		public boolean getTie()
-		{
-			return tie;
-		}
 
 		public boolean isMutual()
 		{

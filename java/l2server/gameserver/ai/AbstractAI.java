@@ -32,6 +32,7 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.concurrent.Future;
 import java.util.logging.Level;
@@ -145,7 +146,7 @@ abstract class AbstractAI implements Ctrl
 	 * Different targets this AI maintains
 	 */
 	private L2Object target;
-	private L2Character castTarget;
+	@Getter private L2Character castTarget;
 	protected L2Character attackTarget;
 	protected L2Character followTarget;
 
@@ -202,10 +203,6 @@ abstract class AbstractAI implements Ctrl
 	/**
 	 * Return the current cast target.<BR><BR>
 	 */
-	public L2Character getCastTarget()
-	{
-		return castTarget;
-	}
 
 	protected void setAttackTarget(L2Character target)
 	{

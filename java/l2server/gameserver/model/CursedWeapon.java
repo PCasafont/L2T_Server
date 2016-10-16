@@ -32,6 +32,8 @@ import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,11 +51,11 @@ public class CursedWeapon
 	// this.skillId is the skills ID.
 	private final int skillId;
 	private final int skillMaxLevel;
-	private int dropRate;
-	private int duration;
-	private int durationLost;
-	private int disapearChance;
-	private int stageKills;
+	@Setter private int dropRate;
+	@Setter private int duration;
+	@Setter private int durationLost;
+	@Setter private int disapearChance;
+	@Getter @Setter private int stageKills;
 
 	// this should be false unless if the cursed weapon is dropped, in that case it would be true.
 	private boolean isDropped = false;
@@ -61,14 +63,14 @@ public class CursedWeapon
 	private boolean isActivated = false;
 	private ScheduledFuture<?> removeTask;
 
-	private int nbKills = 0;
-	private long endTime = 0;
+	@Getter @Setter private int nbKills = 0;
+	@Getter @Setter private long endTime = 0;
 
-	private int playerId = 0;
+	@Getter @Setter private int playerId = 0;
 	protected L2PcInstance player = null;
-	private L2ItemInstance item = null;
-	private int playerKarma = 0;
-	private int playerPkKills = 0;
+	@Setter private L2ItemInstance item = null;
+	@Getter @Setter private int playerKarma = 0;
+	@Getter @Setter private int playerPkKills = 0;
 	protected int transformationId = 0;
 
 	private static final int[] TRANSFORM_IDS = new int[]{3630, 3631};
@@ -592,50 +594,14 @@ public class CursedWeapon
 
 	// =========================================================
 	// Setter
-	public void setDisapearChance(int disapearChance)
-	{
-		this.disapearChance = disapearChance;
-	}
 
-	public void setDropRate(int dropRate)
-	{
-		this.dropRate = dropRate;
-	}
 
-	public void setDuration(int duration)
-	{
-		this.duration = duration;
-	}
 
-	public void setDurationLost(int durationLost)
-	{
-		this.durationLost = durationLost;
-	}
 
-	public void setStageKills(int stageKills)
-	{
-		this.stageKills = stageKills;
-	}
 
-	public void setNbKills(int nbKills)
-	{
-		this.nbKills = nbKills;
-	}
 
-	public void setPlayerId(int playerId)
-	{
-		this.playerId = playerId;
-	}
 
-	public void setPlayerKarma(int playerKarma)
-	{
-		this.playerKarma = playerKarma;
-	}
 
-	public void setPlayerPkKills(int playerPkKills)
-	{
-		this.playerPkKills = playerPkKills;
-	}
 
 	public void setActivated(boolean isActivated)
 	{
@@ -647,20 +613,12 @@ public class CursedWeapon
 		this.isDropped = isDropped;
 	}
 
-	public void setEndTime(long endTime)
-	{
-		this.endTime = endTime;
-	}
 
 	public void setPlayer(L2PcInstance player)
 	{
 		this.player = player;
 	}
 
-	public void setItem(L2ItemInstance item)
-	{
-		this.item = item;
-	}
 
 	// =========================================================
 	// Getter
@@ -674,10 +632,6 @@ public class CursedWeapon
 		return isDropped;
 	}
 
-	public long getEndTime()
-	{
-		return endTime;
-	}
 
 	public String getName()
 	{
@@ -694,35 +648,15 @@ public class CursedWeapon
 		return skillId;
 	}
 
-	public int getPlayerId()
-	{
-		return playerId;
-	}
 
 	public L2PcInstance getPlayer()
 	{
 		return player;
 	}
 
-	public int getPlayerKarma()
-	{
-		return playerKarma;
-	}
 
-	public int getPlayerPkKills()
-	{
-		return playerPkKills;
-	}
 
-	public int getNbKills()
-	{
-		return nbKills;
-	}
 
-	public int getStageKills()
-	{
-		return stageKills;
-	}
 
 	public boolean isActive()
 	{

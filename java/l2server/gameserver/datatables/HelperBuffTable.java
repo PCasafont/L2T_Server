@@ -21,6 +21,7 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,19 +44,19 @@ public class HelperBuffTable
 	 * The player level since Newbie Helper can give the fisrt buff <BR>
 	 * Used to generate message : "Come back here when you have reached level ...")
 	 */
-	private int magicClassLowestLevel = 100;
-	private int physicClassLowestLevel = 100;
+	@Getter private int magicClassLowestLevel = 100;
+	@Getter private int physicClassLowestLevel = 100;
 
 	/**
 	 * The player level above which Newbie Helper won't give any buff <BR>
 	 * Used to generate message : "Only novice character of level ... or less can receive my support magic.")
 	 */
-	private int magicClassHighestLevel = 1;
-	private int physicClassHighestLevel = 1;
+	@Getter private int magicClassHighestLevel = 1;
+	@Getter private int physicClassHighestLevel = 1;
 
-	private int servitorLowestLevel = 100;
+	@Getter private int servitorLowestLevel = 100;
 
-	private int servitorHighestLevel = 1;
+	@Getter private int servitorHighestLevel = 1;
 
 	public static HelperBuffTable getInstance()
 	{
@@ -155,50 +156,26 @@ public class HelperBuffTable
 	/**
 	 * @return Returns the magicClassHighestLevel.
 	 */
-	public int getMagicClassHighestLevel()
-	{
-		return magicClassHighestLevel;
-	}
 
 	/**
 	 * @return Returns the magicClassLowestLevel.
 	 */
-	public int getMagicClassLowestLevel()
-	{
-		return magicClassLowestLevel;
-	}
 
 	/**
 	 * @return Returns the physicClassHighestLevel.
 	 */
-	public int getPhysicClassHighestLevel()
-	{
-		return physicClassHighestLevel;
-	}
 
 	/**
 	 * @return Returns the physicClassLowestLevel.
 	 */
-	public int getPhysicClassLowestLevel()
-	{
-		return physicClassLowestLevel;
-	}
 
 	/**
 	 * @return Returns the servitorLowestLevel.
 	 */
-	public int getServitorLowestLevel()
-	{
-		return servitorLowestLevel;
-	}
 
 	/**
 	 * @return Returns the servitorHighestLevel.
 	 */
-	public int getServitorHighestLevel()
-	{
-		return servitorHighestLevel;
-	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

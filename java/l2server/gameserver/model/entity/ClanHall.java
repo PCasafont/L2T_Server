@@ -29,6 +29,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,7 +49,7 @@ public class ClanHall
 	private String desc;
 	private String location;
 	protected long paidUntil;
-	private L2ClanHallZone zone;
+	@Getter @Setter private L2ClanHallZone zone;
 	private int grade;
 	protected final int chRate = 604800000;
 	protected boolean isFree = true;
@@ -68,11 +70,11 @@ public class ClanHall
 
 	public class ClanHallFunction
 	{
-		private int type;
-		private int lvl;
+		@Getter private int type;
+		@Getter @Setter private int lvl;
 		protected int fee;
 		protected int tempFee;
-		private long rate;
+		@Getter private long rate;
 		private long endDate;
 		protected boolean inDebt;
 		public boolean cwh;
@@ -89,35 +91,19 @@ public class ClanHall
 			initializeTask(cwh);
 		}
 
-		public int getType()
-		{
-			return type;
-		}
 
-		public int getLvl()
-		{
-			return lvl;
-		}
 
 		public int getLease()
 		{
 			return fee;
 		}
 
-		public long getRate()
-		{
-			return rate;
-		}
 
 		public long getEndTime()
 		{
 			return endDate;
 		}
 
-		public void setLvl(int lvl)
-		{
-			this.lvl = lvl;
-		}
 
 		public void setLease(int lease)
 		{
@@ -373,18 +359,10 @@ public class ClanHall
 	 *
 	 * @param zone
 	 */
-	public void setZone(L2ClanHallZone zone)
-	{
-		this.zone = zone;
-	}
 
 	/**
 	 * Returns the zone of this clan hall
 	 */
-	public L2ClanHallZone getZone()
-	{
-		return zone;
-	}
 
 	/**
 	 * Free this clan hall

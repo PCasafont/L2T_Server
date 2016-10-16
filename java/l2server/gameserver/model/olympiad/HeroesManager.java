@@ -852,7 +852,7 @@ public class HeroesManager
 						statement.setInt(1, hero.getId());
 						statement.setInt(2, hero.getClassId());
 						statement.setInt(3, hero.getCount());
-						statement.setBoolean(4, hero.getPlayed());
+						statement.setBoolean(4, hero.isPlayed());
 						statement.execute();
 
 						Connection con2 = L2DatabaseFactory.getInstance().getConnection();
@@ -898,7 +898,7 @@ public class HeroesManager
 					{
 						statement = con.prepareStatement(UPDATE_HERO);
 						statement.setInt(1, hero.getCount());
-						statement.setBoolean(2, hero.getPlayed());
+						statement.setBoolean(2, hero.isPlayed());
 						statement.setInt(3, hero.getId());
 						statement.execute();
 					}

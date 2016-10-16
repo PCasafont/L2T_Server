@@ -15,6 +15,8 @@
 
 package l2server.gameserver.script;
 
+import lombok.Getter;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -27,9 +29,9 @@ import java.util.zip.ZipFile;
  */
 public class ScriptPackage
 {
-	private List<ScriptDocument> scriptFiles;
-	private List<String> otherFiles;
-	private String name;
+	@Getter private List<ScriptDocument> scriptFiles;
+	@Getter private List<String> otherFiles;
+	@Getter private String name;
 
 	public ScriptPackage(ZipFile pack)
 	{
@@ -42,18 +44,10 @@ public class ScriptPackage
 	/**
 	 * @return Returns the otherFiles.
 	 */
-	public List<String> getOtherFiles()
-	{
-		return otherFiles;
-	}
 
 	/**
 	 * @return Returns the scriptFiles.
 	 */
-	public List<ScriptDocument> getScriptFiles()
-	{
-		return scriptFiles;
-	}
 
 	/**
 	 */
@@ -84,10 +78,6 @@ public class ScriptPackage
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	@Override
 	public String toString()

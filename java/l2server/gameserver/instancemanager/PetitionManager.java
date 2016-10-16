@@ -27,6 +27,8 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -75,17 +77,17 @@ public final class PetitionManager
 
 	private class Petition
 	{
-		private long submitTime = System.currentTimeMillis();
+		@Getter private long submitTime = System.currentTimeMillis();
 
-		private int id;
+		@Getter private int id;
 		private PetitionType type;
-		private PetitionState state = PetitionState.Pending;
-		private String content;
+		@Getter @Setter private PetitionState state = PetitionState.Pending;
+		@Getter private String content;
 
 		private List<CreatureSay> messageLog = new ArrayList<>();
 
-		private L2PcInstance petitioner;
-		private L2PcInstance responder;
+		@Getter private L2PcInstance petitioner;
+		@Getter private L2PcInstance responder;
 
 		public Petition(L2PcInstance petitioner, String petitionText, int petitionType)
 		{
@@ -150,35 +152,11 @@ public final class PetitionManager
 			return getPendingPetitions().remove(getId()) != null;
 		}
 
-		public String getContent()
-		{
-			return content;
-		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public L2PcInstance getPetitioner()
-		{
-			return petitioner;
-		}
 
-		public L2PcInstance getResponder()
-		{
-			return responder;
-		}
 
-		public long getSubmitTime()
-		{
-			return submitTime;
-		}
 
-		public PetitionState getState()
-		{
-			return state;
-		}
 
 		public String getTypeAsString()
 		{
@@ -210,10 +188,6 @@ public final class PetitionManager
 			getResponder().sendPacket(responsePacket);
 		}
 
-		public void setState(PetitionState state)
-		{
-			this.state = state;
-		}
 
 		public void setResponder(L2PcInstance respondingAdmin)
 		{

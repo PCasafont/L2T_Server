@@ -20,18 +20,19 @@ import l2server.gameserver.model.L2Augmentation;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2Item;
+import lombok.Getter;
 
 /**
  * @author Forsaiken
  */
 public final class AuctionItem
 {
-	private final int auctionItemId;
-	private final int auctionLength;
-	private final long auctionInitBid;
+	@Getter private final int auctionItemId;
+	@Getter private final int auctionLength;
+	@Getter private final long auctionInitBid;
 
-	private final int itemId;
-	private final long itemCount;
+	@Getter private final int itemId;
+	@Getter private final long itemCount;
 	private final StatsSet itemExtra;
 
 	public AuctionItem(final int auctionItemId, final int auctionLength, final long auctionInitBid, final int itemId, final long itemCount, final StatsSet itemExtra)
@@ -51,30 +52,10 @@ public final class AuctionItem
 		return item != null;
 	}
 
-	public final int getAuctionItemId()
-	{
-		return auctionItemId;
-	}
 
-	public final int getAuctionLength()
-	{
-		return auctionLength;
-	}
 
-	public final long getAuctionInitBid()
-	{
-		return auctionInitBid;
-	}
 
-	public final int getItemId()
-	{
-		return itemId;
-	}
 
-	public final long getItemCount()
-	{
-		return itemCount;
-	}
 
 	public final L2ItemInstance createNewItemInstance()
 	{

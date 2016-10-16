@@ -26,6 +26,7 @@ import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Formulas;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -35,7 +36,7 @@ import java.util.logging.Level;
 public class CharStatus
 {
 
-	private L2Character activeChar;
+	@Getter private L2Character activeChar;
 
 	private double currentHp = 0; //Current HP of the L2Character
 	private double currentMp = 0; //Current MP of the L2Character
@@ -149,7 +150,7 @@ public class CharStatus
 			return;
 		}
 
-		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getAppearance().getInvisible();
+		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getAppearance().isInvisible();
 		if (!isDOT && !isHPConsumption || isHide)
 		{
 			getActiveChar().stopEffectsOnDamage(awake, (int) value);
@@ -478,8 +479,4 @@ public class CharStatus
 		}
 	}
 
-	public L2Character getActiveChar()
-	{
-		return activeChar;
-	}
 }

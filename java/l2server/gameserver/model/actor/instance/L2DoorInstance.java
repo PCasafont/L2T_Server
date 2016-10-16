@@ -41,6 +41,7 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2DoorTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -68,9 +69,9 @@ public class L2DoorInstance extends L2Character
 	 * The fort index in the array of L2Fort this L2NpcInstance belongs to
 	 */
 	private int fortIndex = -2;
-	private ClanHall clanHall;
-	private boolean open = false;
-	private boolean isAttackableDoor = false;
+	@Getter private ClanHall clanHall;
+	@Getter private boolean open = false;
+	@Getter private boolean isAttackableDoor = false;
 	private boolean isTargetable;
 	private boolean checkCollision;
 	private int openType = 0;
@@ -262,10 +263,6 @@ public class L2DoorInstance extends L2Character
 	/**
 	 * @return Returns the open.
 	 */
-	public boolean getOpen()
-	{
-		return open;
-	}
 
 	/**
 	 * @param open The open to set.
@@ -279,10 +276,6 @@ public class L2DoorInstance extends L2Character
 		}
 	}
 
-	public boolean getIsAttackableDoor()
-	{
-		return isAttackableDoor;
-	}
 
 	public boolean getIsShowHp()
 	{
@@ -339,10 +332,6 @@ public class L2DoorInstance extends L2Character
 		clanHall = clanhall;
 	}
 
-	public ClanHall getClanHall()
-	{
-		return clanHall;
-	}
 
 	public boolean isEnemy()
 	{
@@ -362,7 +351,7 @@ public class L2DoorInstance extends L2Character
 			return false;
 		}
 
-		if (getIsAttackableDoor())
+		if (isAttackableDoor())
 		{
 			return true;
 		}
@@ -449,7 +438,7 @@ public class L2DoorInstance extends L2Character
 		EventTrigger oe = null;
 		if (getEmitter() > 0)
 		{
-			oe = new EventTrigger(this, getOpen());
+			oe = new EventTrigger(this, isOpen());
 		}
 		for (L2PcInstance player : knownPlayers)
 		{
@@ -514,7 +503,7 @@ public class L2DoorInstance extends L2Character
 				first = door;
 			}
 
-			if (door.getOpen() != open)
+			if (door.isOpen() != open)
 			{
 				door.setOpen(open);
 				door.broadcastStatusUpdate();
@@ -665,7 +654,7 @@ public class L2DoorInstance extends L2Character
 	{
 		if (getEmitter() > 0)
 		{
-			activeChar.sendPacket(new EventTrigger(this, getOpen()));
+			activeChar.sendPacket(new EventTrigger(this, isOpen()));
 		}
 
 		activeChar.sendPacket(new StaticObject(this, activeChar.isGM()));
@@ -733,7 +722,7 @@ public class L2DoorInstance extends L2Character
 		@Override
 		public void run()
 		{
-			if (getOpen())
+			if (isOpen())
 			{
 				closeMe();
 			}
@@ -745,7 +734,7 @@ public class L2DoorInstance extends L2Character
 		@Override
 		public void run()
 		{
-			boolean open = getOpen();
+			boolean open = isOpen();
 			if (open)
 			{
 				closeMe();

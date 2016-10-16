@@ -44,6 +44,7 @@ import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -60,7 +61,7 @@ import java.util.logging.Level;
 public class L2PetInstance extends L2Summon
 {
 	private int curFed;
-	private PetInventory inventory;
+	@Getter private PetInventory inventory;
 	private final int controlObjectId;
 	private boolean respawned;
 	private boolean mountable;
@@ -393,12 +394,6 @@ public class L2PetInstance extends L2Summon
 	{
 		// temporary? unavailable
 		return null;
-	}
-
-	@Override
-	public PetInventory getInventory()
-	{
-		return inventory;
 	}
 
 	/**

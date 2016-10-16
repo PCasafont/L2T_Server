@@ -31,6 +31,8 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.util.*;
@@ -858,10 +860,10 @@ public class RecipeController
 		 */
 		private class TempItem
 		{ // no object id stored, this will be only "list" of items with it's owner
-			private int itemId;
-			private int quantity;
-			private int referencePrice;
-			private String itemName;
+			@Getter private int itemId;
+			@Getter @Setter private int quantity;
+			@Getter private int referencePrice;
+			@Getter private String itemName;
 
 			/**
 			 * @param item
@@ -879,39 +881,19 @@ public class RecipeController
 			/**
 			 * @return Returns the quantity.
 			 */
-			public int getQuantity()
-			{
-				return quantity;
-			}
 
 			/**
 			 * @param quantity The quantity to set.
 			 */
-			public void setQuantity(int quantity)
-			{
-				this.quantity = quantity;
-			}
 
-			public int getReferencePrice()
-			{
-				return referencePrice;
-			}
 
 			/**
 			 * @return Returns the itemId.
 			 */
-			public int getItemId()
-			{
-				return itemId;
-			}
 
 			/**
 			 * @return Returns the itemName.
 			 */
-			public String getItemName()
-			{
-				return itemName;
-			}
 		}
 
 		private void rewardPlayer()

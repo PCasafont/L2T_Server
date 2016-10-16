@@ -610,7 +610,7 @@ public final class Util
 			if (obj != null && (obj instanceof L2Playable && playable || obj instanceof L2PetInstance ||
 					obj instanceof L2SummonInstance))
 			{
-				if (obj instanceof L2PcInstance && !invisible && obj.getActingPlayer().getAppearance().getInvisible())
+				if (obj instanceof L2PcInstance && !invisible && obj.getActingPlayer().getAppearance().isInvisible())
 				{
 					continue;
 				}

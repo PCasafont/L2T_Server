@@ -19,6 +19,7 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +31,7 @@ import java.util.logging.Level;
  */
 public class L2ClanMember
 {
-	private L2Clan clan;
+	@Getter private L2Clan clan;
 	private int objectId;
 	private String name;
 	private String title;
@@ -398,10 +399,6 @@ public class L2ClanMember
 		return "";
 	}
 
-	public L2Clan getClan()
-	{
-		return clan;
-	}
 
 	public int calculatePledgeClass(L2PcInstance player)
 	{

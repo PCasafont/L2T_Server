@@ -15,10 +15,11 @@
 
 package l2server.gameserver.pathfinding;
 
+import lombok.Getter;
 public abstract class AbstractNode
 {
-	private AbstractNodeLoc loc;
-	private AbstractNode parent;
+	@Getter private AbstractNodeLoc loc;
+	@Getter private AbstractNode parent;
 
 	public AbstractNode(AbstractNodeLoc loc)
 	{
@@ -30,15 +31,7 @@ public abstract class AbstractNode
 		parent = p;
 	}
 
-	public AbstractNode getParent()
-	{
-		return parent;
-	}
 
-	public AbstractNodeLoc getLoc()
-	{
-		return loc;
-	}
 
 	public void setLoc(AbstractNodeLoc l)
 	{

@@ -12,6 +12,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,8 +27,8 @@ public class EventsMatchMaker
 {
 	public static EventsMatchMaker instance = null;
 
-	private MatchMakingTask pvpTask;
-	private MatchMakingTask specialTask;
+	@Getter private MatchMakingTask pvpTask;
+	@Getter private MatchMakingTask specialTask;
 	public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<>();
 	private int nextInstanceId = 1;
 
@@ -56,23 +57,15 @@ public class EventsMatchMaker
 		}
 	}
 
-	public MatchMakingTask getPvpTask()
-	{
-		return pvpTask;
-	}
 
-	public MatchMakingTask getSpecialTask()
-	{
-		return specialTask;
-	}
 
 	class MatchMakingTask implements Runnable
 	{
 		private boolean pvp = true;
-		private EventConfig currentConfig = null;
-		private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
+		@Getter private EventConfig currentConfig = null;
+		@Getter private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
 		private int prepareAttempts = 0;
-		private int fillProgress = 0;
+		@Getter private int fillProgress = 0;
 
 		MatchMakingTask(boolean pvp)
 		{
@@ -116,20 +109,8 @@ public class EventsMatchMaker
 			}
 		}
 
-		public EventConfig getCurrentConfig()
-		{
-			return currentConfig;
-		}
 
-		public Map<Integer, L2PcInstance> getRegisteredPlayers()
-		{
-			return registeredPlayers;
-		}
 
-		public int getFillProgress()
-		{
-			return fillProgress;
-		}
 
 		private boolean prepare()
 		{

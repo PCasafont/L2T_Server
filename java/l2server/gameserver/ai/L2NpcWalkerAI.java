@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
@@ -34,12 +35,12 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	ScheduledFuture<?> task = null;
 	private List<L2NpcWalkerNode> route = null;
-	private int currentPos = 0;
+	@Getter private int currentPos = 0;
 	private long nextMoveTime = 0;
 
-	private L2PcInstance guided = null;
+	@Getter private L2PcInstance guided = null;
 	private boolean isWaiting = false;
-	private int waitRadius = 100;
+	@Getter private int waitRadius = 100;
 	private boolean waitingForQuestResponse = false;
 
 	/**
@@ -208,7 +209,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			currentPos = 0;
 		}
 
-		boolean moveType = route.get(currentPos).getRunning();
+		boolean moveType = route.get(currentPos).isRunning();
 
 		if (moveType)
 		{
@@ -255,15 +256,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		return (L2Npc) super.getActor();
 	}
 
-	public int getCurrentPos()
-	{
-		return currentPos;
-	}
 
-	public L2PcInstance getGuided()
-	{
-		return guided;
-	}
 
 	public boolean isWaiting()
 	{
@@ -276,10 +269,6 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		waitingForQuestResponse = false;
 	}
 
-	public int getWaitRadius()
-	{
-		return waitRadius;
-	}
 
 	public void setWaitRadius(int radius)
 	{

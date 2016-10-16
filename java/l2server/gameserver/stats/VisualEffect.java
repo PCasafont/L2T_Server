@@ -15,6 +15,8 @@
 
 package l2server.gameserver.stats;
 
+import lombok.Getter;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -214,8 +216,8 @@ public enum VisualEffect
 	BIG_BODY(173, "bigBody"),
 	SMALL_BODY(174, "smallBody");
 
-	private final int id;
-	private final String name;
+	@Getter private final int id;
+	@Getter private final String name;
 
 	VisualEffect(int id, String name)
 	{
@@ -223,15 +225,7 @@ public enum VisualEffect
 		this.id = id;
 	}
 
-	public final int getId()
-	{
-		return id;
-	}
 
-	public final String getName()
-	{
-		return name;
-	}
 
 	public static VisualEffect getByName(String name)
 	{

@@ -19,6 +19,8 @@ import l2server.configurator.ConfigUserInterface.ConfigFile.ConfigComment;
 import l2server.configurator.ConfigUserInterface.ConfigFile.ConfigProperty;
 import l2server.i18n.LanguageControl;
 import l2server.images.ImagesTable;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,9 +48,9 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 	private JTabbedPane tabPane = new JTabbedPane();
 
-	private List<ConfigFile> configs = new ArrayList<>();
+	@Getter @Setter private List<ConfigFile> configs = new ArrayList<>();
 
-	private ResourceBundle bundle;
+	@Getter @Setter private ResourceBundle bundle;
 
 	/**
 	 * @param args
@@ -347,7 +349,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	static class ConfigFile
 	{
 		private File file;
-		private String name;
+		@Getter @Setter private String name;
 		private final List<ConfigComment> configs = new ArrayList<>();
 
 		public ConfigFile(File file)
@@ -380,18 +382,10 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		/**
 		 * @param name The name to set.
 		 */
-		public void setName(String name)
-		{
-			this.name = name;
-		}
 
 		/**
 		 * @return Returns the name.
 		 */
-		public String getName()
-		{
-			return name;
-		}
 
 		public void save() throws IOException
 		{
@@ -416,7 +410,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		class ConfigComment
 		{
 
-			private String comments;
+			@Getter @Setter private String comments;
 
 			/**
 			 * @param comments
@@ -429,18 +423,10 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			/**
 			 * @return Returns the comments.
 			 */
-			public String getComments()
-			{
-				return comments;
-			}
 
 			/**
 			 * @param comments The comments to set.
 			 */
-			public void setComments(String comments)
-			{
-				this.comments = comments;
-			}
 
 			public void save(Writer writer) throws IOException
 			{
@@ -455,8 +441,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		class ConfigProperty extends ConfigComment
 		{
 			private String propname;
-			private Object value;
-			private ValueType type;
+			@Getter private Object value;
+			@Getter @Setter private ValueType type;
 			private JComponent component;
 
 			/**
@@ -504,10 +490,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			/**
 			 * @return Returns the value.
 			 */
-			public Object getValue()
-			{
-				return value;
-			}
 
 			/**
 			 * @param value The value to set.
@@ -520,18 +502,10 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			/**
 			 * @return Returns the type.
 			 */
-			public ValueType getType()
-			{
-				return type;
-			}
 
 			/**
 			 * @param type The type to set.
 			 */
-			public void setType(ValueType type)
-			{
-				this.type = type;
-			}
 
 			public JComponent getValueComponent()
 			{
@@ -699,18 +673,10 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param configs The configuration to set.
 	 */
-	public void setConfigs(List<ConfigFile> configs)
-	{
-		this.configs = configs;
-	}
 
 	/**
 	 * @return Returns the configuration.
 	 */
-	public List<ConfigFile> getConfigs()
-	{
-		return configs;
-	}
 
 	/**
 	 * @return Returns the configuration setting name in a
@@ -738,16 +704,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param bundle The bundle to set.
 	 */
-	public void setBundle(ResourceBundle bundle)
-	{
-		this.bundle = bundle;
-	}
 
 	/**
 	 * @return Returns the bundle.
 	 */
-	public ResourceBundle getBundle()
-	{
-		return bundle;
-	}
 }

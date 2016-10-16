@@ -20,6 +20,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncAdd;
 import l2server.gameserver.stats.funcs.LambdaConst;
+import lombok.Getter;
 
 public final class Elementals
 {
@@ -299,13 +300,9 @@ public final class Elementals
 
 	// non static:
 	private ElementalStatBoni boni = null;
-	private byte element = NONE;
-	private int value = 0;
+	@Getter private byte element = NONE;
+	@Getter private int value = 0;
 
-	public byte getElement()
-	{
-		return element;
-	}
 
 	public void setElement(byte type)
 	{
@@ -313,10 +310,6 @@ public final class Elementals
 		boni.setElement(type);
 	}
 
-	public int getValue()
-	{
-		return value;
-	}
 
 	public void setValue(int val)
 	{

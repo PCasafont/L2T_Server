@@ -22,6 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2SpawnZone;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 /**
  * A Town zone
@@ -30,7 +31,7 @@ import l2server.util.Rnd;
  */
 public class L2TownZone extends L2SpawnZone
 {
-	private int townId;
+	@Getter private int townId;
 	private int taxById;
 	private boolean isPeaceZone;
 
@@ -133,10 +134,6 @@ public class L2TownZone extends L2SpawnZone
 	 *
 	 * @return
 	 */
-	public int getTownId()
-	{
-		return townId;
-	}
 
 	/**
 	 * Returns this town zones castle id

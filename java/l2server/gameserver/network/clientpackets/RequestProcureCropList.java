@@ -28,6 +28,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
+import lombok.Getter;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
@@ -215,7 +216,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		private final int itemId;
 		private final int manorId;
 		private final long count;
-		private int reward = 0;
+		@Getter private int reward = 0;
 		private CropProcure crop = null;
 
 		public Crop(int obj, int id, int m, long num)
@@ -241,10 +242,6 @@ public class RequestProcureCropList extends L2GameClientPacket
 			return count;
 		}
 
-		public int getReward()
-		{
-			return reward;
-		}
 
 		public long getPrice()
 		{

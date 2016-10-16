@@ -23,11 +23,9 @@ import l2server.gameserver.model.entity.Castle;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import org.xml.sax.SAXException;
+import lombok.Getter;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -185,7 +183,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		private final String name;
 		private final int baseTax;
 		private final int castleId;
-		private Castle castle;
+		@Getter private Castle castle;
 		private final int zoneId;
 
 		public MerchantPriceConfig(final int id, final String name, final int baseTax, final int castleId, final int zoneId)
@@ -232,10 +230,6 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		/**
 		 * @return Returns the castle.
 		 */
-		public Castle getCastle()
-		{
-			return castle;
-		}
 
 		/**
 		 * @return Returns the zoneId.

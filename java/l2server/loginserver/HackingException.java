@@ -15,6 +15,7 @@
 
 package l2server.loginserver;
 
+import lombok.Getter;
 /**
  * This class ...
  *
@@ -28,7 +29,7 @@ public class HackingException extends Exception
 	 */
 	private static final long serialVersionUID = 4050762693478463029L;
 	String ip;
-	private int connects;
+	@Getter private int connects;
 
 	public HackingException(String ip, int connects)
 	{
@@ -44,8 +45,4 @@ public class HackingException extends Exception
 		return ip;
 	}
 
-	public int getConnects()
-	{
-		return connects;
-	}
 }

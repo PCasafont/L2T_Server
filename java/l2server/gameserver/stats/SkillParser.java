@@ -28,6 +28,7 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.util.*;
 import java.util.logging.Level;
@@ -62,7 +63,7 @@ public final class SkillParser extends StatsParser
 	protected Map<String, String[]> tables = new HashMap<>();
 	Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> enchantTables = new HashMap<>();
 
-	private Map<Integer, L2Skill> skills = new HashMap<>();
+	@Getter private Map<Integer, L2Skill> skills = new HashMap<>();
 
 	public SkillParser(XmlNode node)
 	{
@@ -618,8 +619,4 @@ public final class SkillParser extends StatsParser
 		return value;
 	}
 
-	public Map<Integer, L2Skill> getSkills()
-	{
-		return skills;
-	}
 }

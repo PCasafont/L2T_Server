@@ -26,6 +26,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -559,7 +560,7 @@ public class AutoSpawnHandler
 	 */
 	private class AutoDespawner implements Runnable
 	{
-		private int objectId;
+		@Getter private int objectId;
 
 		protected AutoDespawner(int objectId)
 		{
@@ -615,7 +616,7 @@ public class AutoSpawnHandler
 	 */
 	public static class AutoSpawnInstance
 	{
-		protected int objectId;
+		@Getter protected int objectId;
 
 		protected int spawnIndex;
 
@@ -662,10 +663,6 @@ public class AutoSpawnHandler
 			return npcList.remove(npcInst);
 		}
 
-		public int getObjectId()
-		{
-			return objectId;
-		}
 
 		public int getInitialDelay()
 		{

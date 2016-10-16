@@ -18,6 +18,7 @@ package l2server.gameserver.templates.chars;
 import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +35,8 @@ public class L2PcTemplate extends L2CharTemplate
 	public final double fCollisionHeightFemale;
 	public final double fCollisionRadiusFemale;
 
-	private List<PcTemplateItem> items = new ArrayList<>();
-	private List<Integer> skillIds = new ArrayList<>();
+	@Getter private List<PcTemplateItem> items = new ArrayList<>();
+	@Getter private List<Integer> skillIds = new ArrayList<>();
 
 	public L2PcTemplate(StatsSet set)
 	{
@@ -74,10 +75,6 @@ public class L2PcTemplate extends L2CharTemplate
 	/**
 	 * @return itemIds of all the starter equipment
 	 */
-	public List<PcTemplateItem> getItems()
-	{
-		return items;
-	}
 
 	public static final class PcTemplateItem
 	{
@@ -126,10 +123,6 @@ public class L2PcTemplate extends L2CharTemplate
 		skillIds.add(id);
 	}
 
-	public List<Integer> getSkillIds()
-	{
-		return skillIds;
-	}
 
 	public final int getFallHeight()
 	{

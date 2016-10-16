@@ -15,6 +15,7 @@
 
 package l2server.util.xml;
 
+import lombok.Getter;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -28,10 +29,10 @@ import java.util.Map.Entry;
  */
 public class XmlNode
 {
-	private String name;
-	private Map<String, String> attributes = new HashMap<>();
-	private List<XmlNode> children = new ArrayList<>();
-	private String text = null;
+	@Getter private String name;
+	@Getter private Map<String, String> attributes = new HashMap<>();
+	@Getter private List<XmlNode> children = new ArrayList<>();
+	@Getter private String text = null;
 
 	public XmlNode(Node base)
 	{
@@ -57,10 +58,6 @@ public class XmlNode
 		}
 	}
 
-	public String getName()
-	{
-		return name;
-	}
 
 	public boolean hasAttributes()
 	{
@@ -308,10 +305,6 @@ public class XmlNode
 		return String.valueOf(val);
 	}
 
-	public Map<String, String> getAttributes()
-	{
-		return attributes;
-	}
 
 	public XmlNode getFirstChild()
 	{
@@ -323,15 +316,7 @@ public class XmlNode
 		return children.get(0);
 	}
 
-	public List<XmlNode> getChildren()
-	{
-		return children;
-	}
 
-	public String getText()
-	{
-		return text;
-	}
 
 	@Override
 	public String toString()

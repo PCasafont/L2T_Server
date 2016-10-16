@@ -49,7 +49,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 			case 25342:
 			case 25346:
 			case 25349:
-				setIsRaid(true);
+				setRaid(true);
 		}
 	}
 
@@ -123,7 +123,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 			case 25342:
 			case 25346:
 			case 25349:
-				setIsRaid(true);
+				setRaid(true);
 				break;
 		}
 		super.onSpawn();

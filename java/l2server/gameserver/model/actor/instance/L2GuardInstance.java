@@ -18,7 +18,6 @@ package l2server.gameserver.model.actor.instance;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.ai.L2AttackableAI;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.L2WorldRegion;

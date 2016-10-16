@@ -18,6 +18,8 @@
 
 package l2server.network;
 
+import lombok.Getter;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -44,7 +46,7 @@ public class MMOConnection<T extends MMOClient<?>>
 
 	private final WritableByteChannel writableByteChannel;
 
-	private final int port;
+	@Getter private final int port;
 
 	private final NioNetStackList<SendablePacket<T>> sendQueue;
 
@@ -131,10 +133,6 @@ public class MMOConnection<T extends MMOClient<?>>
 		return address;
 	}
 
-	public final int getPort()
-	{
-		return port;
-	}
 
 	final void close() throws IOException
 	{

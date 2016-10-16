@@ -27,6 +27,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Siege;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -286,10 +287,10 @@ public class SiegeManager
 	public static class SiegeSpawn
 	{
 		Location location;
-		private int npcId;
-		private int heading;
-		private int castleId;
-		private int hp;
+		@Getter private int npcId;
+		@Getter private int heading;
+		@Getter private int castleId;
+		@Getter private int hp;
 
 		public SiegeSpawn(int castle_id, int x, int y, int z, int heading, int npc_id)
 		{
@@ -308,25 +309,9 @@ public class SiegeManager
 			this.hp = hp;
 		}
 
-		public int getCastleId()
-		{
-			return castleId;
-		}
 
-		public int getNpcId()
-		{
-			return npcId;
-		}
 
-		public int getHeading()
-		{
-			return heading;
-		}
 
-		public int getHp()
-		{
-			return hp;
-		}
 
 		public Location getLocation()
 		{

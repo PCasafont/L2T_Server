@@ -16,6 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,8 +41,8 @@ public class SurveyManager
 	private final String STORE_ANSWER = "INSERT INTO survey_answer (charId,survey_id,answer_id) VALUES (?,?)";
 
 	private int id = 0;
-	private String question;
-	private String description;
+	@Getter private String question;
+	@Getter private String description;
 	private Map<Integer, String> possibleAnswers;
 	private List<Integer> answers;
 
@@ -106,15 +107,7 @@ public class SurveyManager
 		return id > 0;
 	}
 
-	public String getQuestion()
-	{
-		return question;
-	}
 
-	public String getDescription()
-	{
-		return description;
-	}
 
 	public Integer[] getPossibleAnswerIds()
 	{

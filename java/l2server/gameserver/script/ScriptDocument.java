@@ -16,6 +16,7 @@
 package l2server.gameserver.script;
 
 import l2server.log.Log;
+import lombok.Getter;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -32,8 +33,8 @@ import java.util.logging.Level;
  */
 public class ScriptDocument
 {
-	private Document document;
-	private String name;
+	@Getter private Document document;
+	@Getter private String name;
 
 	public ScriptDocument(String name, InputStream input)
 	{
@@ -62,18 +63,10 @@ public class ScriptDocument
 		}
 	}
 
-	public Document getDocument()
-	{
-		return document;
-	}
 
 	/**
 	 * @return Returns the this.name.
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	@Override
 	public String toString()

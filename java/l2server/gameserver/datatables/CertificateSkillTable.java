@@ -22,6 +22,7 @@ import l2server.gameserver.model.base.SubClass;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
 import l2server.gameserver.util.Broadcast;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,9 +34,9 @@ public class CertificateSkillTable
 
 	public class CertificateSkillLearn
 	{
-		private int skillId;
-		private int maxLevel;
-		private int cost;
+		@Getter private int skillId;
+		@Getter private int maxLevel;
+		@Getter private int cost;
 
 		public CertificateSkillLearn(int skillId, int maxLevel, int cost)
 		{
@@ -44,24 +45,12 @@ public class CertificateSkillTable
 			this.cost = cost;
 		}
 
-		public int getSkillId()
-		{
-			return skillId;
-		}
 
-		public int getMaxLevel()
-		{
-			return maxLevel;
-		}
 
-		public int getCost()
-		{
-			return cost;
-		}
 	}
 
-	private Map<Integer, CertificateSkillLearn> subClassSkills = new HashMap<>();
-	private Map<Integer, CertificateSkillLearn> dualClassSkills = new HashMap<>();
+	@Getter private Map<Integer, CertificateSkillLearn> subClassSkills = new HashMap<>();
+	@Getter private Map<Integer, CertificateSkillLearn> dualClassSkills = new HashMap<>();
 
 	public static CertificateSkillTable getInstance()
 	{
@@ -131,15 +120,7 @@ public class CertificateSkillTable
 		dualClassSkills.put(1985, new CertificateSkillLearn(1985, 1, 4));
 	}
 
-	public Map<Integer, CertificateSkillLearn> getSubClassSkills()
-	{
-		return subClassSkills;
-	}
 
-	public Map<Integer, CertificateSkillLearn> getDualClassSkills()
-	{
-		return dualClassSkills;
-	}
 
 	public void sendSubClassSkillList(L2PcInstance player)
 	{

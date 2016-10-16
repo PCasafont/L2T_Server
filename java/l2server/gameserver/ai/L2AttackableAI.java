@@ -36,6 +36,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.Collection;
 import java.util.List;
@@ -74,7 +75,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	 */
 	private boolean thinking; // to prevent recursive thinking
 
-	private int timepass = 0;
+	@Getter private int timepass = 0;
 	private int chaostime = 0;
 	private L2NpcTemplate skillrender;
 	int lastBuffTick;
@@ -2909,10 +2910,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	/**
 	 * @return Returns the timepass.
 	 */
-	public int getTimepass()
-	{
-		return timepass;
-	}
 
 	public L2Attackable getActiveChar()
 	{

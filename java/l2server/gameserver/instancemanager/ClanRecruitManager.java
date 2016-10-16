@@ -22,6 +22,7 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,7 +55,7 @@ public class ClanRecruitManager
 		public ClanRecruitData recruitData = null;
 	}
 
-	private Map<Integer, ClanRecruitData> recruitData = new HashMap<>();
+	@Getter private Map<Integer, ClanRecruitData> recruitData = new HashMap<>();
 	private Map<Integer, ClanRecruitWaitingUser> allApplicants = new HashMap<>();
 	private Map<Integer, ClanRecruitWaitingUser> waitingUsers = new HashMap<>();
 
@@ -268,10 +269,6 @@ public class ClanRecruitManager
 		return true;
 	}
 
-	public Map<Integer, ClanRecruitData> getRecruitData()
-	{
-		return recruitData;
-	}
 
 	public ClanRecruitData getRecruitData(int clanId)
 	{

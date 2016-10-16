@@ -37,6 +37,7 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 public class L2SkillSummon extends L2Skill
 {
@@ -60,18 +61,18 @@ public class L2SkillSummon extends L2Skill
 	private final int summonTimeLostActive;
 
 	// item consume time in milliseconds
-	private final int itemConsumeTime;
+	@Getter private final int itemConsumeTime;
 	// item consume count over time
-	private final int itemConsumeOT;
+	@Getter private final int itemConsumeOT;
 	// item consume id over time
-	private final int itemConsumeIdOT;
+	@Getter private final int itemConsumeIdOT;
 	// how many times to consume an item
-	private final int itemConsumeSteps;
+	@Getter private final int itemConsumeSteps;
 
 	// id of the debuff skill got during the summon's life
-	private final int summonPrice;
+	@Getter private final int summonPrice;
 	// summon points that it consumes
-	private final int summonPoints;
+	@Getter private final int summonPoints;
 
 	private final int summonAmount;
 
@@ -489,41 +490,17 @@ public class L2SkillSummon extends L2Skill
 	/**
 	 * @return Returns the itemConsume count over time.
 	 */
-	public final int getItemConsumeOT()
-	{
-		return itemConsumeOT;
-	}
 
 	/**
 	 * @return Returns the itemConsumeId over time.
 	 */
-	public final int getItemConsumeIdOT()
-	{
-		return itemConsumeIdOT;
-	}
 
-	public final int getItemConsumeSteps()
-	{
-		return itemConsumeSteps;
-	}
 
 	/**
 	 * @return Returns the itemConsume time in milliseconds.
 	 */
-	public final int getItemConsumeTime()
-	{
-		return itemConsumeTime;
-	}
 
-	public final int getSummonPrice()
-	{
-		return summonPrice;
-	}
 
-	public final int getSummonPoints()
-	{
-		return summonPoints;
-	}
 
 	public final int getNpcId()
 	{

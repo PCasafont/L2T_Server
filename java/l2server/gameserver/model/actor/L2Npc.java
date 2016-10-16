@@ -49,6 +49,8 @@ import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -78,7 +80,7 @@ public class L2Npc extends L2Character
 	/**
 	 * The L2Spawn object that manage this L2NpcInstance
 	 */
-	private L2Spawn spawn;
+	@Getter @Setter private L2Spawn spawn;
 
 	/**
 	 * The flag to specify if this L2NpcInstance is busy
@@ -138,18 +140,18 @@ public class L2Npc extends L2Character
 	public boolean ssrecharged = true;
 	public boolean spsrecharged = true;
 	protected boolean isHideName = false;
-	private int displayEffect = 0;
+	@Getter private int displayEffect = 0;
 
-	private boolean isInvisible = false;
-	private boolean isLethalInmune = false;
-	private boolean isDebuffInmune = false;
+	@Getter private boolean isInvisible = false;
+	@Getter private boolean isLethalImmune = false;
+	@Getter private boolean isDebuffImmune = false;
 
-	private L2PcInstance owner = null;
+	@Getter @Setter private L2PcInstance owner = null;
 
 	/**
 	 * The Polymorph object that manage this L2NpcInstance's morph to a PcInstance
 	 */
-	private L2PcInstance clonedPlayer;
+	@Getter @Setter private L2PcInstance clonedPlayer;
 
 	//AI Recall
 	public int getSoulShot()
@@ -737,7 +739,7 @@ public class L2Npc extends L2Character
 	@Override
 	public void updateAbnormalEffect()
 	{
-		if (getIsInvisible())
+		if (isInvisible())
 		{
 			return;
 		}
@@ -1652,13 +1654,7 @@ public class L2Npc extends L2Character
 
 	/**
 	 * Set the spawn of the L2NpcInstance.<BR><BR>
-	 *
-	 * @param spawn The L2Spawn that manage the L2NpcInstance
 	 */
-	public void setSpawn(L2Spawn spawn)
-	{
-		this.spawn = spawn;
-	}
 
 	@Override
 	public void onSpawn()
@@ -1776,10 +1772,6 @@ public class L2Npc extends L2Character
 	/**
 	 * Return the L2Spawn object that manage this L2NpcInstance.<BR><BR>
 	 */
-	public L2Spawn getSpawn()
-	{
-		return spawn;
-	}
 
 	@Override
 	public String toString()
@@ -1882,7 +1874,7 @@ public class L2Npc extends L2Character
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
-		if (getIsInvisible())
+		if (isInvisible())
 		{
 			return;
 		}
@@ -1935,15 +1927,7 @@ public class L2Npc extends L2Character
 		}
 	}
 
-	public L2PcInstance getClonedPlayer()
-	{
-		return clonedPlayer;
-	}
 
-	public void setClonedPlayer(L2PcInstance clonedPlayer)
-	{
-		this.clonedPlayer = clonedPlayer;
-	}
 
 	public void scheduleDespawn(long delay)
 	{
@@ -2009,10 +1993,6 @@ public class L2Npc extends L2Character
 		}
 	}
 
-	public int getDisplayEffect()
-	{
-		return displayEffect;
-	}
 
 	public int getColorEffect()
 	{
@@ -2065,39 +2045,15 @@ public class L2Npc extends L2Character
 		broadcastPacket(toBroadcast);
 	}
 
-	public boolean getIsInvisible()
-	{
-		return isInvisible;
-	}
 
 	public void setIsLethalImmune(boolean b)
 	{
-		isLethalInmune = b;
-	}
-
-	public boolean getIsLethalInmune()
-	{
-		return isLethalInmune;
-	}
-
-	public boolean getIsDebuffInmune()
-	{
-		return isDebuffInmune;
+		isLethalImmune = b;
 	}
 
 	public void setIsDebuffInmune(boolean b)
 	{
-		isDebuffInmune = b;
-	}
-
-	public void setOwner(L2PcInstance owner)
-	{
-		this.owner = owner;
-	}
-
-	public L2PcInstance getOwner()
-	{
-		return owner;
+		isDebuffImmune = b;
 	}
 
 	public final void tell(final L2PcInstance player, final String message)

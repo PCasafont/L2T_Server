@@ -15,6 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
+
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2World;
@@ -25,6 +26,7 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import lombok.Setter;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -59,7 +61,7 @@ public class GamePlayWatcher
 		private L2PcInstance pivot = null;
 		private long checkForAnotherPivotTimer = 0L;
 
-		private ScheduledFuture<?> schedule = null;
+		@Setter private ScheduledFuture<?> schedule = null;
 
 		public WatchTask(L2PcInstance watcher)
 		{
@@ -242,9 +244,5 @@ public class GamePlayWatcher
 			}
 		}
 
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
-			this.schedule = schedule;
-		}
 	}
 }

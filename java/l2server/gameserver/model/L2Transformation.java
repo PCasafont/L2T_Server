@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import lombok.Getter;
 
 /**
  * @author KenM
@@ -33,7 +34,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 
 	protected static final int[] EMPTY_ARRAY = {};
 
-	private L2PcInstance player;
+	@Getter private L2PcInstance player;
 
 	/**
 	 * @param id              Internal id that server will use to associate this transformation
@@ -137,10 +138,6 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	/**
 	 * @return Returns the player.
 	 */
-	public L2PcInstance getPlayer()
-	{
-		return player;
-	}
 
 	public void start()
 	{

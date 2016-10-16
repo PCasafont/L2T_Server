@@ -41,6 +41,8 @@ import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,7 +54,7 @@ import java.util.logging.Level;
 
 public class L2Attackable extends L2Npc
 {
-	private boolean isRaid = false;
+	@Setter private boolean isRaid = false;
 	private boolean isRaidMinion = false;
 	private boolean champion = false;
 
@@ -66,7 +68,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public static final class AggroInfo
 	{
-		private final L2Character attacker;
+		@Getter private final L2Character attacker;
 		private int hate = 0;
 		private int damage = 0;
 
@@ -75,10 +77,6 @@ public class L2Attackable extends L2Npc
 			attacker = pAttacker;
 		}
 
-		public final L2Character getAttacker()
-		{
-			return attacker;
-		}
 
 		public final int getHate()
 		{
@@ -296,22 +294,22 @@ public class L2Attackable extends L2Npc
 
 	private RewardItem[] harvestItems;
 	private boolean seeded;
-	private int seedType = 0;
+	@Getter private int seedType = 0;
 	private int seederObjId = 0;
 
 	private boolean overhit;
 
-	private double overhitDamage;
+	@Getter private double overhitDamage;
 
-	private L2Character overhitAttacker;
+	@Getter private L2Character overhitAttacker;
 
-	private L2CommandChannel firstCommandChannelAttacked = null;
-	private CommandChannelTimer commandChannelTimer = null;
-	private long commandChannelLastAttack = 0;
+	@Getter @Setter private L2CommandChannel firstCommandChannelAttacked = null;
+	@Getter private CommandChannelTimer commandChannelTimer = null;
+	@Getter private long commandChannelLastAttack = 0;
 
 	private boolean absorbed;
 
-	private ConcurrentHashMap<Integer, AbsorberInfo> absorbersList = new ConcurrentHashMap<>();
+	@Getter private ConcurrentHashMap<Integer, AbsorberInfo> absorbersList = new ConcurrentHashMap<>();
 
 	private boolean mustGiveExpSp;
 
@@ -1420,7 +1418,7 @@ public class L2Attackable extends L2Npc
 		if (ai.getAttacker() instanceof L2PcInstance)
 		{
 			L2PcInstance act = (L2PcInstance) ai.getAttacker();
-			if (act.getAppearance().getInvisible() /*|| ai.getAttacker().isInvul()*/ || act.isSpawnProtected())
+			if (act.getAppearance().isInvisible() /*|| ai.getAttacker().isInvul()*/ || act.isSpawnProtected())
 			{
 				//Remove Object Should Use This Method and Can be Blocked While Interating
 				getAggroList().remove(target);
@@ -2284,20 +2282,12 @@ public class L2Attackable extends L2Npc
 	 *
 	 * @return L2Character attacker
 	 */
-	public L2Character getOverhitAttacker()
-	{
-		return overhitAttacker;
-	}
 
 	/**
 	 * Return the ammount of damage done on the L2Attackable using an over-hit enabled skill.
 	 *
 	 * @return double damage
 	 */
-	public double getOverhitDamage()
-	{
-		return overhitDamage;
-	}
 
 	/**
 	 * Return True if the L2Attackable was hit by an over-hit enabled skill.
@@ -2362,10 +2352,6 @@ public class L2Attackable extends L2Npc
 		absorbersList.clear();
 	}
 
-	public ConcurrentHashMap<Integer, AbsorberInfo> getAbsorbersList()
-	{
-		return absorbersList;
-	}
 
 	/**
 	 * Calculate the Experience and SP to distribute to attacker (L2PcInstance, L2SummonInstance or L2Party) of the L2Attackable.
@@ -2625,10 +2611,6 @@ public class L2Attackable extends L2Npc
 		return seederObjId;
 	}
 
-	public int getSeedType()
-	{
-		return seedType;
-	}
 
 	public boolean isSeeded()
 	{
@@ -2667,28 +2649,12 @@ public class L2Attackable extends L2Npc
 		this.commandChannelTimer = commandChannelTimer;
 	}
 
-	public CommandChannelTimer getCommandChannelTimer()
-	{
-		return commandChannelTimer;
-	}
 
-	public L2CommandChannel getFirstCommandChannelAttacked()
-	{
-		return firstCommandChannelAttacked;
-	}
 
-	public void setFirstCommandChannelAttacked(L2CommandChannel firstCommandChannelAttacked)
-	{
-		this.firstCommandChannelAttacked = firstCommandChannelAttacked;
-	}
 
 	/**
 	 * @return the _commandChannelLastAttack
 	 */
-	public long getCommandChannelLastAttack()
-	{
-		return commandChannelLastAttack;
-	}
 
 	/**
 	 * @param channelLastAttack the this.commandChannelLastAttack to set
@@ -2790,10 +2756,6 @@ public class L2Attackable extends L2Npc
 	 *
 	 * @param isRaid
 	 */
-	public void setIsRaid(boolean isRaid)
-	{
-		this.isRaid = isRaid;
-	}
 
 	/**
 	 * Set this Npc as a Minion instance.<BR><BR>

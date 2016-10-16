@@ -17,6 +17,7 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceInfo;
 import l2server.gameserver.templates.item.L2Item;
+import lombok.Getter;
 
 /**
  * Get all information from L2ItemInstance to generate ItemInfo.<BR><BR>
@@ -26,12 +27,12 @@ public class ItemInfo implements ItemInstanceInfo
 	/**
 	 * Identifier of the L2ItemInstance
 	 */
-	private int objectId;
+	@Getter private int objectId;
 
 	/**
 	 * The L2Item template of the L2ItemInstance
 	 */
-	private L2Item item;
+	@Getter private L2Item item;
 
 	/**
 	 * The level of enchant on the L2ItemInstance
@@ -42,8 +43,8 @@ public class ItemInfo implements ItemInstanceInfo
 	 * The item's ensoul effect data
 	 */
 	private boolean isSoulEnhanced;
-	private int[] ensoulEffectIds;
-	private int[] ensoulSpecialEffectIds;
+	@Getter private int[] ensoulEffectIds;
+	@Getter private int[] ensoulSpecialEffectIds;
 
 	/**
 	 * The augmentation of the item
@@ -53,12 +54,12 @@ public class ItemInfo implements ItemInstanceInfo
 	/**
 	 * The quantity of L2ItemInstance
 	 */
-	private long count;
+	@Getter private long count;
 
 	/**
 	 * The price of the L2ItemInstance
 	 */
-	private long price;
+	@Getter private long price;
 
 	/**
 	 * The custom L2ItemInstance types (used loto, race tickets)
@@ -74,12 +75,12 @@ public class ItemInfo implements ItemInstanceInfo
 	/**
 	 * The action to do clientside (1=ADD, 2=MODIFY, 3=REMOVE)
 	 */
-	private int change;
+	@Getter private int change;
 
 	/**
 	 * The mana of this item
 	 */
-	private int mana;
+	@Getter private int mana;
 	private int time;
 
 	private int location;
@@ -89,7 +90,7 @@ public class ItemInfo implements ItemInstanceInfo
 	private int elemAtkPower = 0;
 	private int[] elemDefAttr = {0, 0, 0, 0, 0, 0};
 
-	private int appearance;
+	@Getter private int appearance;
 
 	/**
 	 * Get all information from L2ItemInstance to generate ItemInfo.<BR><BR>
@@ -247,18 +248,6 @@ public class ItemInfo implements ItemInstanceInfo
 	}
 
 	@Override
-	public int getObjectId()
-	{
-		return objectId;
-	}
-
-	@Override
-	public L2Item getItem()
-	{
-		return item;
-	}
-
-	@Override
 	public int getEnchantLevel()
 	{
 		return enchant;
@@ -271,18 +260,6 @@ public class ItemInfo implements ItemInstanceInfo
 	}
 
 	@Override
-	public int[] getEnsoulEffectIds()
-	{
-		return ensoulEffectIds;
-	}
-
-	@Override
-	public int[] getEnsoulSpecialEffectIds()
-	{
-		return ensoulSpecialEffectIds;
-	}
-
-	@Override
 	public boolean isAugmented()
 	{
 		return augmentation != 0;
@@ -292,17 +269,6 @@ public class ItemInfo implements ItemInstanceInfo
 	public long getAugmentationBonus()
 	{
 		return augmentation;
-	}
-
-	@Override
-	public long getCount()
-	{
-		return count;
-	}
-
-	public long getPrice()
-	{
-		return price;
 	}
 
 	public int getCustomType1()
@@ -321,16 +287,6 @@ public class ItemInfo implements ItemInstanceInfo
 		return equipped;
 	}
 
-	public int getChange()
-	{
-		return change;
-	}
-
-	@Override
-	public int getMana()
-	{
-		return mana;
-	}
 
 	@Override
 	public int getRemainingTime()
@@ -366,11 +322,5 @@ public class ItemInfo implements ItemInstanceInfo
 	public int getElementDefAttr(byte i)
 	{
 		return elemDefAttr[i];
-	}
-
-	@Override
-	public int getAppearance()
-	{
-		return appearance;
 	}
 }

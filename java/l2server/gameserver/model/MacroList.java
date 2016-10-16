@@ -21,6 +21,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.SendMacroList;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,7 +38,7 @@ public class MacroList
 {
 
 	private L2PcInstance owner;
-	private int revision;
+	@Getter private int revision;
 	private int macroId;
 	private Map<Integer, L2Macro> macroses = new HashMap<>();
 
@@ -48,10 +49,6 @@ public class MacroList
 		macroId = 1000;
 	}
 
-	public int getRevision()
-	{
-		return revision;
-	}
 
 	public L2Macro[] getAllMacroses()
 	{

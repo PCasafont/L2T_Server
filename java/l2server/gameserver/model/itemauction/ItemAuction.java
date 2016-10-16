@@ -26,6 +26,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,9 +43,9 @@ public final class ItemAuction
 	private static final long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
 	private static final long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);
 
-	private final int auctionId;
-	private final int instanceId;
-	private final long startingTime;
+	@Getter private final int auctionId;
+	@Getter private final int instanceId;
+	@Getter private final long startingTime;
 	private volatile long endingTime;
 	private final AuctionItem auctionItem;
 	private final ArrayList<ItemAuctionBid> auctionBids;
@@ -54,7 +55,7 @@ public final class ItemAuction
 	private volatile ItemAuctionExtendState scheduledAuctionEndingExtendState;
 	private volatile ItemAuctionExtendState auctionEndingExtendState;
 
-	private final ItemInfo itemInfo;
+	@Getter private final ItemInfo itemInfo;
 
 	private ItemAuctionBid highestBid;
 	private int lastBidPlayerObjId;
@@ -117,20 +118,8 @@ public final class ItemAuction
 		}
 	}
 
-	public final int getAuctionId()
-	{
-		return auctionId;
-	}
 
-	public final int getInstanceId()
-	{
-		return instanceId;
-	}
 
-	public final ItemInfo getItemInfo()
-	{
-		return itemInfo;
-	}
 
 	public final L2ItemInstance createNewItemInstance()
 	{
@@ -162,10 +151,6 @@ public final class ItemAuction
 		scheduledAuctionEndingExtendState = state;
 	}
 
-	public final long getStartingTime()
-	{
-		return startingTime;
-	}
 
 	public final long getEndingTime()
 	{

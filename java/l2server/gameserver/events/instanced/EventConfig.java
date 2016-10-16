@@ -1,16 +1,19 @@
 package l2server.gameserver.events.instanced;
 
+
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.events.instanced.types.*;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Pere
  */
 public class EventConfig
 {
-	private EventType type = EventType.TVT;
-	private EventLocation location = null;
+	@Getter private EventType type = EventType.TVT;
+	@Getter @Setter private EventLocation location = null;
 	private String[] teamNames = new String[4];
 
 	public EventConfig()
@@ -58,10 +61,6 @@ public class EventConfig
 		return this.type == type;
 	}
 
-	public EventType getType()
-	{
-		return type;
-	}
 
 	public boolean isAllVsAll()
 	{
@@ -173,15 +172,7 @@ public class EventConfig
 		selectLocation();
 	}
 
-	public EventLocation getLocation()
-	{
-		return location;
-	}
 
-	public void setLocation(EventLocation location)
-	{
-		this.location = location;
-	}
 
 	public void selectLocation()
 	{

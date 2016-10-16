@@ -78,7 +78,7 @@ public class PcStatus extends PlayableStatus
 			return;
 		}
 
-		boolean isHide = getActiveChar().getAppearance().getInvisible();
+		boolean isHide = getActiveChar().getAppearance().isInvisible();
 		if (!isHPConsumption || isHide)
 		{
 			if (getActiveChar().isSitting())

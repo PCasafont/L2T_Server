@@ -30,6 +30,7 @@ import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.concurrent.Future;
 import java.util.logging.Level;
@@ -37,17 +38,17 @@ import java.util.logging.Level;
 public class L2SummonInstance extends L2Summon
 {
 	private float expPenalty = 0; // exp decrease multiplier (i.e. 0.3 (= 30%) for shadow)
-	private int itemConsumeId;
-	private int itemConsumeCount;
-	private int itemConsumeSteps;
+	@Getter private int itemConsumeId;
+	@Getter private int itemConsumeCount;
+	@Getter private int itemConsumeSteps;
 	private final int totalLifeTime;
 	private final int timeLostIdle;
 	private final int timeLostActive;
-	private int timeRemaining;
-	private int nextItemConsumeTime;
-	private int summonSkillId;
+	@Getter private int timeRemaining;
+	@Getter private int nextItemConsumeTime;
+	@Getter private int summonSkillId;
 	private L2Skill summonPrice;
-	private int summonPoints;
+	@Getter private int summonPoints;
 	public int lastLifeTimeCheck; // Following FbiAgent's example to avoid sending useless packets
 
 	private Future<?> summonLifeTask;
@@ -189,25 +190,9 @@ public class L2SummonInstance extends L2Summon
 		return expPenalty;
 	}
 
-	public int getItemConsumeCount()
-	{
-		return itemConsumeCount;
-	}
 
-	public int getItemConsumeId()
-	{
-		return itemConsumeId;
-	}
 
-	public int getItemConsumeSteps()
-	{
-		return itemConsumeSteps;
-	}
 
-	public int getNextItemConsumeTime()
-	{
-		return nextItemConsumeTime;
-	}
 
 	public int getTotalLifeTime()
 	{
@@ -224,15 +209,7 @@ public class L2SummonInstance extends L2Summon
 		return timeLostActive;
 	}
 
-	public int getTimeRemaining()
-	{
-		return timeRemaining;
-	}
 
-	public int getSummonSkillId()
-	{
-		return summonSkillId;
-	}
 
 	public void setNextItemConsumeTime(int value)
 	{
@@ -509,8 +486,4 @@ public class L2SummonInstance extends L2Summon
 		return owner != null && owner.isInOlympiadMode();
 	}
 
-	public int getSummonPoints()
-	{
-		return summonPoints;
-	}
 }

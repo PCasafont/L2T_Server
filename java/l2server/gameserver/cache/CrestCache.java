@@ -21,6 +21,7 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.io.*;
 import java.sql.Connection;
@@ -40,7 +41,7 @@ public class CrestCache
 
 	private ConcurrentHashMap<Integer, byte[]> mapAlly = new ConcurrentHashMap<>();
 
-	private int loadedFiles;
+	@Getter private int loadedFiles;
 
 	private long bytesBuffLen;
 
@@ -190,10 +191,6 @@ public class CrestCache
 		return (float) bytesBuffLen / 1048576;
 	}
 
-	public int getLoadedFiles()
-	{
-		return loadedFiles;
-	}
 
 	public byte[] getPledgeCrest(int id)
 	{

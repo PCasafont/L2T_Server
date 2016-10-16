@@ -25,6 +25,7 @@ import l2server.gameserver.model.quest.Quest.QuestEventType;
 import l2server.gameserver.templates.SpawnData;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -156,13 +157,13 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 */
 	private List<L2MinionData> minions = null;
 	private L2RandomMinionData randomMinions = null;
-	private Map<Integer, L2Skill> skills = null;
-	private List<SpawnData> spawns = new ArrayList<>();
+	@Getter private Map<Integer, L2Skill> skills = null;
+	@Getter private List<SpawnData> spawns = new ArrayList<>();
 	// contains a list of quests for each event type (questStart, questAttack, questKill, etc)
 	private Map<QuestEventType, Quest[]> questEvents = null;
 
-	private StatsSet baseSet;
-	private L2NpcTemplate baseTemplate;
+	@Getter private StatsSet baseSet;
+	@Getter private L2NpcTemplate baseTemplate;
 
 	private final List<L2Spawn> allSpawns = new ArrayList<>();
 
@@ -525,15 +526,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return randomMinions;
 	}
 
-	public Map<Integer, L2Skill> getSkills()
-	{
-		return skills;
-	}
 
-	public List<SpawnData> getSpawns()
-	{
-		return spawns;
-	}
 
 	public void addQuestEvent(Quest.QuestEventType EventType, Quest q)
 	{
@@ -1093,15 +1086,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return Race == L2NpcRace.UNDEAD;
 	}
 
-	public StatsSet getBaseSet()
-	{
-		return baseSet;
-	}
 
-	public L2NpcTemplate getBaseTemplate()
-	{
-		return baseTemplate;
-	}
 
 	public String getXmlNpcId()
 	{

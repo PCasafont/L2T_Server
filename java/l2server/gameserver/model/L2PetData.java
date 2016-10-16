@@ -17,6 +17,8 @@ package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.datatables.SkillTable;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +33,10 @@ public class L2PetData
 	private TIntObjectHashMap<L2PetLevelData> levelStats = new TIntObjectHashMap<>();
 	private List<L2PetSkillLearn> skills = new ArrayList<>();
 
-	private int load = 20000;
-	private int _hungry_limit = 1;
+	@Getter private int load = 20000;
+	@Setter private int _hungry_limit = 1;
 	private int minlvl = Byte.MAX_VALUE;
-	private int[] food = {};
+	@Getter private int[] food = {};
 
 	public void addNewStat(L2PetLevelData data, int level)
 	{
@@ -50,10 +52,6 @@ public class L2PetData
 		return levelStats.get(petLevel);
 	}
 
-	public int getLoad()
-	{
-		return load;
-	}
 
 	public int getHungry_limit()
 	{
@@ -65,20 +63,12 @@ public class L2PetData
 		return minlvl;
 	}
 
-	public int[] getFood()
-	{
-		return food;
-	}
 
 	public void set_load(int load)
 	{
 		this.load = load;
 	}
 
-	public void set_hungry_limit(int _hungry_limit)
-	{
-		this._hungry_limit = _hungry_limit;
-	}
 
 	public void set_food(int[] food)
 	{

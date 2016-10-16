@@ -20,6 +20,7 @@ import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -37,7 +38,7 @@ public class HtmCache implements Reloadable
 {
 	private final Map<Integer, String> cache;
 
-	private int loadedFiles;
+	@Getter private int loadedFiles;
 	private long bytesBuffLen;
 
 	public static HtmCache getInstance()
@@ -103,10 +104,6 @@ public class HtmCache implements Reloadable
 		return (float) bytesBuffLen / 1048576;
 	}
 
-	public int getLoadedFiles()
-	{
-		return loadedFiles;
-	}
 
 	private static class HtmFilter implements FileFilter
 	{

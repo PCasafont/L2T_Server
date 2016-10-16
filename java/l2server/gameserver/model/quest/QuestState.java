@@ -33,6 +33,8 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -61,7 +63,7 @@ public final class QuestState
 	/**
 	 * State of the quest
 	 */
-	private byte state;
+	@Getter private byte state;
 
 	/**
 	 * List of couples (variable for quest,value of the variable for quest)
@@ -71,9 +73,9 @@ public final class QuestState
 	/**
 	 * boolean flag letting QuestStateManager know to exit quest when cleaning up
 	 */
-	private boolean isExitQuestOnCleanUp = false;
+	@Setter private boolean isExitQuestOnCleanUp = false;
 
-	private TIntIntHashMap npcLogs = new TIntIntHashMap();
+	@Getter private TIntIntHashMap npcLogs = new TIntIntHashMap();
 
 	/**
 	 * Constructor of the QuestState : save the quest in the list of quests of the player.<BR/><BR/>
@@ -130,10 +132,6 @@ public final class QuestState
 	 *
 	 * @return State
 	 */
-	public byte getState()
-	{
-		return state;
-	}
 
 	/**
 	 * Return true if quest just created, false otherwise
@@ -1092,10 +1090,6 @@ public final class QuestState
 	 *
 	 * @return QuestTimer<BR> Return null if name does not exist
 	 */
-	public void setIsExitQuestOnCleanUp(boolean isExitQuestOnCleanUp)
-	{
-		this.isExitQuestOnCleanUp = isExitQuestOnCleanUp;
-	}
 
 	/**
 	 * Start a timer for quest.<BR><BR>
@@ -1307,10 +1301,6 @@ public final class QuestState
 		npc.dropItem(player, itemId, count);
 	}
 
-	public TIntIntHashMap getNpcLogs()
-	{
-		return npcLogs;
-	}
 
 	public int getNpcLog(int npcId)
 	{

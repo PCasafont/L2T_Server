@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +48,9 @@ public class L2Henna
 
 	//Temp dyes values
 	private final long maxTime;
-	private long expiryTime;
+	@Getter private long expiryTime;
 	private final boolean isFourthSlot;
-	private List<SkillHolder> skills;
+	@Getter private List<SkillHolder> skills;
 
 	public L2Henna(StatsSet set)
 	{
@@ -225,18 +226,10 @@ public class L2Henna
 		return isFourthSlot;
 	}
 
-	public List<SkillHolder> getSkills()
-	{
-		return skills;
-	}
 
 	public void setExpiryTime(long time)
 	{
 		expiryTime = time;
 	}
 
-	public long getExpiryTime()
-	{
-		return expiryTime;
-	}
 }

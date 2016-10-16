@@ -26,6 +26,7 @@ import l2server.gameserver.model.entity.Message.SendBySystem;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.AskJoinPledge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import lombok.Getter;
 
 /**
  * @author Pere
@@ -34,7 +35,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 {
 	private boolean accept;
 	private int applicantId;
-	private int pledgeType;
+	@Getter private int pledgeType;
 
 	@Override
 	protected void readImpl()
@@ -101,8 +102,4 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 		}
 	}
 
-	public int getPledgeType()
-	{
-		return pledgeType;
-	}
 }

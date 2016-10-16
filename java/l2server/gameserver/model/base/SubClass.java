@@ -17,6 +17,8 @@ package l2server.gameserver.model.base;
 
 import l2server.Config;
 import l2server.gameserver.datatables.PlayerClassTable;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Character Sub-Class Definition
@@ -31,12 +33,12 @@ public final class SubClass
 			Config.MAX_SUBCLASS_LEVEL < Config.MAX_LEVEL ? Config.MAX_SUBCLASS_LEVEL : Config.MAX_LEVEL;
 
 	private PlayerClass playerClass;
-	private long exp = Experience.getAbsoluteExp(40);
-	private long sp = 0;
-	private byte level = 40;
-	private int classIndex = 1;
-	private boolean isDual = false;
-	private int certificates = 0;
+	@Getter private long exp = Experience.getAbsoluteExp(40);
+	@Getter private long sp = 0;
+	@Getter private byte level = 40;
+	@Getter @Setter private int classIndex = 1;
+	@Setter private boolean isDual = false;
+	@Getter @Setter private int certificates = 0;
 
 	public SubClass(int classId, long exp, long sp, byte level, int classIndex, boolean isDual)
 	{
@@ -89,35 +91,15 @@ public final class SubClass
 		return playerClass.getId();
 	}
 
-	public long getExp()
-	{
-		return exp;
-	}
 
-	public long getSp()
-	{
-		return sp;
-	}
 
-	public byte getLevel()
-	{
-		return level;
-	}
 
-	public int getClassIndex()
-	{
-		return classIndex;
-	}
 
 	public boolean isDual()
 	{
 		return isDual;
 	}
 
-	public int getCertificates()
-	{
-		return certificates;
-	}
 
 	public byte getMaxLevel()
 	{
@@ -144,20 +126,8 @@ public final class SubClass
 		sp = spValue;
 	}
 
-	public void setClassIndex(int classIndex)
-	{
-		this.classIndex = classIndex;
-	}
 
-	public void setIsDual(boolean isDual)
-	{
-		this.isDual = isDual;
-	}
 
-	public void setCertificates(int certificates)
-	{
-		this.certificates = certificates;
-	}
 
 	public void setLevel(byte levelValue)
 	{

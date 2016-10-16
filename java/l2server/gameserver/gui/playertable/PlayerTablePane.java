@@ -21,6 +21,7 @@ package l2server.gameserver.gui.playertable;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.log.Log;
+import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -49,8 +50,8 @@ public class PlayerTablePane extends JPanel
 	private GridBagLayout layout = new GridBagLayout();
 
 	//Npc Table
-	private PlayerTableModel playerTableModel;
-	private JTable playerTable;
+	@Getter private PlayerTableModel playerTableModel;
+	@Getter private JTable playerTable;
 
 	private int currentSelectedPlayer = -1;
 
@@ -118,15 +119,7 @@ public class PlayerTablePane extends JPanel
 		});
 	}
 
-	public JTable getPlayerTable()
-	{
-		return playerTable;
-	}
 
-	public PlayerTableModel getPlayerTableModel()
-	{
-		return playerTableModel;
-	}
 
 	public void updateCurrentPlayer()
 	{

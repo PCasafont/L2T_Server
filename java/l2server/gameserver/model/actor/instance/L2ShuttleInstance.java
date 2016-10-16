@@ -25,6 +25,7 @@ import l2server.gameserver.network.serverpackets.ExShuttleInfo;
 import l2server.gameserver.network.serverpackets.ExShuttleMove;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.util.Point3D;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +35,8 @@ import java.util.List;
  */
 public class L2ShuttleInstance extends L2Vehicle
 {
-	private int id;
-	private List<ShuttleStop> stops = new ArrayList<>();
+	@Getter private int id;
+	@Getter private List<ShuttleStop> stops = new ArrayList<>();
 
 	private int currentStopId = 0;
 
@@ -55,15 +56,7 @@ public class L2ShuttleInstance extends L2Vehicle
 		return true;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
-	public List<ShuttleStop> getStops()
-	{
-		return stops;
-	}
 
 	public boolean isClosed()
 	{
@@ -195,11 +188,11 @@ public class L2ShuttleInstance extends L2Vehicle
 
 	public class ShuttleStop
 	{
-		private Point3D position;
-		private int time;
+		@Getter private Point3D position;
+		@Getter private int time;
 		private int doorId;
 		private int outerDoorId;
-		private Point3D oustPosition;
+		@Getter private Point3D oustPosition;
 		private boolean isDoorOpen;
 		private long lastDoorChange;
 
@@ -219,20 +212,8 @@ public class L2ShuttleInstance extends L2Vehicle
 			return doorId;
 		}
 
-		public Point3D getPosition()
-		{
-			return position;
-		}
 
-		public Point3D getOustPosition()
-		{
-			return oustPosition;
-		}
 
-		public int getTime()
-		{
-			return time;
-		}
 
 		public boolean isDoorOpen()
 		{

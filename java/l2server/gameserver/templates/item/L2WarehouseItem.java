@@ -17,6 +17,7 @@ package l2server.gameserver.templates.item;
 
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceInfo;
+import lombok.Getter;
 
 /**
  * This class contains L2ItemInstance<BR>
@@ -29,16 +30,16 @@ import l2server.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceIn
  */
 public class L2WarehouseItem implements ItemInstanceInfo
 {
-	private L2Item item;
-	private int object;
+	@Getter private L2Item item;
+	private int objectId;
 	private long count;
 	private int owner;
 	private int locationSlot;
 	private int enchant;
 	private int grade;
 	private boolean isSoulEnhanced;
-	private int[] ensoulEffectIds;
-	private int[] ensoulSpecialEffectIds;
+	@Getter private int[] ensoulEffectIds;
+	@Getter private int[] ensoulSpecialEffectIds;
 	private boolean isAugmented;
 	private long augmentationId;
 	private int customType1;
@@ -51,12 +52,12 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	private boolean elemEnchanted = false;
 	private int time;
 
-	private int appearance;
+	@Getter private int appearance;
 
 	public L2WarehouseItem(L2ItemInstance item)
 	{
 		this.item = item.getItem();
-		object = item.getObjectId();
+		objectId = item.getObjectId();
 		count = item.getCount();
 		owner = item.getOwnerId();
 		locationSlot = item.getLocationSlot();
@@ -96,17 +97,6 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	}
 
 	/**
-	 * Returns the item.
-	 *
-	 * @return L2Item
-	 */
-	@Override
-	public L2Item getItem()
-	{
-		return item;
-	}
-
-	/**
 	 * Returns the unique objectId
 	 *
 	 * @return int
@@ -114,7 +104,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public final int getObjectId()
 	{
-		return object;
+		return objectId;
 	}
 
 	/**
@@ -267,18 +257,6 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	}
 
 	@Override
-	public int[] getEnsoulEffectIds()
-	{
-		return ensoulEffectIds;
-	}
-
-	@Override
-	public int[] getEnsoulSpecialEffectIds()
-	{
-		return ensoulSpecialEffectIds;
-	}
-
-	@Override
 	public boolean isAugmented()
 	{
 		return isAugmented;
@@ -363,11 +341,5 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	public boolean isEquipped()
 	{
 		return false;
-	}
-
-	@Override
-	public int getAppearance()
-	{
-		return appearance;
 	}
 }

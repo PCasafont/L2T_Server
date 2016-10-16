@@ -15,6 +15,10 @@
 
 package l2server.configurator;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.swing.*;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -254,7 +258,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		private static final long serialVersionUID = 1L;
 
 		private int max;
-		private JTextField next;
+		@Getter @Setter private JTextField next;
 
 		public MaxLengthDocument(int maxLength)
 		{
@@ -298,17 +302,9 @@ public class JIPTextField extends JPanel implements FocusListener
 		/**
 		 * @param next The next to set.
 		 */
-		public void setNext(JTextField next)
-		{
-			this.next = next;
-		}
 
 		/**
 		 * @return Returns the next.
 		 */
-		public JTextField getNext()
-		{
-			return next;
-		}
 	}
 }

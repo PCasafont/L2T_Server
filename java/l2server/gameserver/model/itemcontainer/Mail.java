@@ -21,6 +21,7 @@ import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,7 +34,7 @@ import java.util.logging.Level;
 public class Mail extends ItemContainer
 {
 	private final int ownerId;
-	private int messageId;
+	@Getter private int messageId;
 
 	public Mail(int objectId, int messageId)
 	{
@@ -59,10 +60,6 @@ public class Mail extends ItemContainer
 		return ItemLocation.MAIL;
 	}
 
-	public int getMessageId()
-	{
-		return messageId;
-	}
 
 	public void setNewMessageId(int messageId)
 	{

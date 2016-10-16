@@ -15,19 +15,21 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
+import lombok.Setter;
 public class FishData
 {
-	private int id;
-	private int level;
-	private String name;
+	@Getter private int id;
+	@Getter private int level;
+	@Getter private String name;
 	private int hp;
-	private int hpRegen;
-	private int type;
-	private int group;
-	private int fishGuts;
-	private int gutsCheckTime;
-	private int waitTime;
-	private int combatTime;
+	@Getter private int hpRegen;
+	@Getter @Setter private int type;
+	@Getter private int group;
+	@Getter private int fishGuts;
+	@Getter private int gutsCheckTime;
+	@Getter private int waitTime;
+	@Getter private int combatTime;
 
 	public FishData(int id, int lvl, String name, int HP, int HpRegen, int type, int group, int fish_guts, int guts_check_time, int wait_time, int combat_time)
 	{
@@ -62,69 +64,25 @@ public class FishData
 	/**
 	 * @return Returns the id.
 	 */
-	public int getId()
-	{
-		return id;
-	}
 
 	/**
 	 * @return Returns the level.
 	 */
-	public int getLevel()
-	{
-		return level;
-	}
 
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
-		return name;
-	}
 
 	public int getHP()
 	{
 		return hp;
 	}
 
-	public int getHpRegen()
-	{
-		return hpRegen;
-	}
 
-	public int getType()
-	{
-		return type;
-	}
 
-	public int getGroup()
-	{
-		return group;
-	}
 
-	public int getFishGuts()
-	{
-		return fishGuts;
-	}
 
-	public int getGutsCheckTime()
-	{
-		return gutsCheckTime;
-	}
 
-	public int getWaitTime()
-	{
-		return waitTime;
-	}
 
-	public int getCombatTime()
-	{
-		return combatTime;
-	}
 
-	public void setType(int type)
-	{
-		this.type = type;
-	}
 }

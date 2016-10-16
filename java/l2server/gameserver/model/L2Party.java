@@ -37,6 +37,7 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,12 +70,12 @@ public class L2Party
 	public static final byte ITEM_ORDER_SPOIL = 4;
 
 	private final CopyOnWriteArrayList<L2PcInstance> members;
-	private boolean pendingInvitation = false;
+	@Getter private boolean pendingInvitation = false;
 	private long pendingInviteTimeout;
 	private int partyLvl = 0;
 	private int itemDistribution = 0;
 	private int itemLastLoot = 0;
-	private L2CommandChannel commandChannel = null;
+	@Getter private L2CommandChannel commandChannel = null;
 	private byte requestChangeLoot = -1;
 	private List<Integer> changeLootAnswers = null;
 	private long requestChangeLootTimer = 0;
@@ -119,10 +120,6 @@ public class L2Party
 	 *
 	 * @return boolean if party waits for invitation respond
 	 */
-	public boolean getPendingInvitation()
-	{
-		return pendingInvitation;
-	}
 
 	/**
 	 * set invitation process flag and store time for expiration
@@ -1169,10 +1166,6 @@ public class L2Party
 		return commandChannel != null;
 	}
 
-	public L2CommandChannel getCommandChannel()
-	{
-		return commandChannel;
-	}
 
 	public void setCommandChannel(L2CommandChannel channel)
 	{
@@ -1267,12 +1260,8 @@ public class L2Party
 		requestChangeLootTimer = 0;
 	}
 
-	private L2Character target;
+	@Getter private L2Character target;
 
-	public L2Character getTarget()
-	{
-		return target;
-	}
 
 	public void think()
 	{

@@ -20,6 +20,7 @@ import l2server.gameserver.model.L2WorldRegion;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.util.Util;
+import lombok.Getter;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -28,7 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ObjectKnownList
 {
-	private L2Object activeObject;
+	@Getter private L2Object activeObject;
 	private Map<Integer, L2Object> knownObjects;
 
 	public ObjectKnownList(L2Object activeObject)
@@ -200,10 +201,6 @@ public class ObjectKnownList
 		}
 	}
 
-	public L2Object getActiveObject()
-	{
-		return activeObject;
-	}
 
 	public int getDistanceToForgetObject(L2Object object)
 	{

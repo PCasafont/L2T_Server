@@ -17,6 +17,7 @@ package l2server.loginserver.network.clientpackets;
 
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.ServerList;
+import lombok.Getter;
 
 /**
  * Format: ddc
@@ -28,7 +29,7 @@ public class RequestServerList extends L2LoginClientPacket
 {
 	private int skey1;
 	private int skey2;
-	private int data3;
+	@Getter private int data3;
 
 	/**
 	 * @return
@@ -49,10 +50,6 @@ public class RequestServerList extends L2LoginClientPacket
 	/**
 	 * @return
 	 */
-	public int getData3()
-	{
-		return data3;
-	}
 
 	@Override
 	public boolean readImpl()

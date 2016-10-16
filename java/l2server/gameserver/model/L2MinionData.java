@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.util.Rnd;
+import lombok.Getter;
 
 /**
  * This class defines the spawn data of a Minion type
@@ -31,7 +32,7 @@ public class L2MinionData
 	/**
 	 * The Identifier of the L2Minion
 	 */
-	private int minionId;
+	@Getter private int minionId;
 
 	/**
 	 * The number of this Minion Type to spawn
@@ -53,10 +54,6 @@ public class L2MinionData
 	/**
 	 * Return the Identifier of the Minion to spawn.<BR><BR>
 	 */
-	public int getMinionId()
-	{
-		return minionId;
-	}
 
 	/**
 	 * Set the minimum of minions to amount.<BR><BR>

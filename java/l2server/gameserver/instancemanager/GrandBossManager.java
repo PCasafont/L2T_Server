@@ -29,6 +29,7 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,7 +71,7 @@ public class GrandBossManager
 
 	private TIntIntHashMap bossStatus;
 
-	private ArrayList<L2BossZone> zones;
+	@Getter private ArrayList<L2BossZone> zones;
 
 	public final int ALIVE = 0;
 	public final int WAITING = 1;
@@ -476,10 +477,6 @@ public class GrandBossManager
 		zones.clear();
 	}
 
-	public ArrayList<L2BossZone> getZones()
-	{
-		return zones;
-	}
 
 	//LasTravel
 

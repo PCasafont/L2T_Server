@@ -111,7 +111,7 @@ public class CharInfo extends L2GameServerPacket
 		attackSpeedMultiplier = activeChar.getAttackSpeedMultiplier();
 		runSpd = (int) activeChar.getTemplate().baseRunSpd;
 		walkSpd = (int) activeChar.getTemplate().baseWalkSpd;
-		invisibleCharacter = cha.getAppearance().getInvisible() ? cha.getObjectId() : 0;
+		invisibleCharacter = cha.getAppearance().isInvisible() ? cha.getObjectId() : 0;
 		//_territoryId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(cha);
 		//_isDisguised = TerritoryWarManager.getInstance().isDisguised(cha.getObjectId());
 	}
@@ -190,7 +190,7 @@ public class CharInfo extends L2GameServerPacket
 
 				writeS(activeChar.getAppearance().getVisibleName());
 
-				if (gmSeeInvis || activeChar.getAppearance().getInvisible())
+				if (gmSeeInvis || activeChar.getAppearance().isInvisible())
 				{
 					writeS("Invisible");
 				}
@@ -382,7 +382,7 @@ public class CharInfo extends L2GameServerPacket
 			writeD(activeChar.getAppearance().getHairColor());
 			writeD(activeChar.getAppearance().getFace());
 
-			if (gmSeeInvis || activeChar.getAppearance().getInvisible())
+			if (gmSeeInvis || activeChar.getAppearance().isInvisible())
 			{
 				writeS("Invisible");
 			}
@@ -503,7 +503,7 @@ public class CharInfo extends L2GameServerPacket
 			writeC(activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
 
 			Set<Integer> abnormals = activeChar.getAbnormalEffect();
-			if (activeChar.getAppearance().getInvisible())
+			if (activeChar.getAppearance().isInvisible())
 			{
 				abnormals.add(VisualEffect.STEALTH.getId());
 			}

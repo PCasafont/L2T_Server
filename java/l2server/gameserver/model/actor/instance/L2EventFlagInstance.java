@@ -1,5 +1,6 @@
 package l2server.gameserver.model.actor.instance;
 
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CtrlIntention;
@@ -12,6 +13,8 @@ import l2server.gameserver.events.instanced.types.CaptureTheFlag;
 import l2server.gameserver.events.instanced.types.FieldDomination;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Pere
@@ -20,7 +23,7 @@ public class L2EventFlagInstance extends L2NpcInstance
 {
 	private boolean toDelete = false;
 	private EventInstance event = null;
-	private EventTeam team = null;
+	@Getter @Setter private EventTeam team = null;
 	private EventType type;
 
 	public L2EventFlagInstance(int objectId, L2NpcTemplate template)
@@ -95,15 +98,7 @@ public class L2EventFlagInstance extends L2NpcInstance
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 
-	public EventTeam getTeam()
-	{
-		return team;
-	}
 
-	public void setTeam(EventTeam team)
-	{
-		this.team = team;
-	}
 
 	class FlagCastFinalizer implements Runnable
 	{
