@@ -30,7 +30,6 @@ import java.util.logging.Level;
  */
 public class DayNightSpawnManager
 {
-
 	private Map<L2Spawn, L2RaidBossInstance> bosses;
 
 	public static DayNightSpawnManager getInstance()

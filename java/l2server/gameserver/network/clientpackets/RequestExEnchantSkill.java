@@ -44,7 +44,6 @@ import java.sql.PreparedStatement;
  */
 public final class RequestExEnchantSkill extends L2GameClientPacket
 {
-
 	private int type;
 	private int skillId;
 	private int skillLvl;
@@ -300,9 +299,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			currentSkill = player.getKnownSkill(skillId);
 			player.sendPacket(new UserInfo(player));
 			player.sendSkillList();
-			player.sendPacket(
-					new ExEnchantSkillInfo(skillId, currentSkill.getLevel(), currentSkill.getEnchantRouteId(),
-							currentSkill.getEnchantLevel()));
+			player.sendPacket(new ExEnchantSkillInfo(skillId, currentSkill.getLevel(), currentSkill.getEnchantRouteId(),
+					currentSkill.getEnchantLevel()));
 			player.sendPacket(new ExEnchantSkillInfoDetail(type, skillId, currentSkill.getLevel(),
 					currentSkill.getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
 

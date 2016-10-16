@@ -75,7 +75,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 
 		//NOT FOR ERTHEIA SERVER
 		/*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
-            return;*/
+			return;*/
 
 		if (isJoining == 1)
 		{

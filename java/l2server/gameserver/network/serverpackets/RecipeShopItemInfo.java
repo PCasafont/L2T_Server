@@ -24,7 +24,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RecipeShopItemInfo extends L2GameServerPacket
 {
-
 	private L2PcInstance player;
 	private int recipeId;
 

@@ -77,7 +77,6 @@ public class L2Attackable extends L2Npc
 			attacker = pAttacker;
 		}
 
-
 		public final int getHate()
 		{
 			return hate;
@@ -863,8 +862,8 @@ public class L2Attackable extends L2Npc
 									L2PcInstance pcAttacker = (L2PcInstance) attacker;
 									if (pcAttacker.getSkillLevelHash(467) > 0)
 									{
-										L2Skill skill = SkillTable.getInstance()
-												.getInfo(467, attacker.getSkillLevelHash(467));
+										L2Skill skill =
+												SkillTable.getInstance().getInfo(467, attacker.getSkillLevelHash(467));
 
 										if (skill.getExpNeeded() <= addexp)
 										{
@@ -1684,7 +1683,7 @@ public class L2Attackable extends L2Npc
 
 			// Check to prevent very high level player to nearly kill mob and let low level player do the last hit.
 			/*if (!getAttackByList().isEmpty())
-            {
+			{
 				for (L2Character atkChar: getAttackByList())
 					if (atkChar != null && atkChar.getLevel() > highestLevel)
 						highestLevel = atkChar.getLevel();
@@ -2324,7 +2323,6 @@ public class L2Attackable extends L2Npc
 		absorbersList.clear();
 	}
 
-
 	/**
 	 * Calculate the Experience and SP to distribute to attacker (L2PcInstance, L2SummonInstance or L2Party) of the L2Attackable.
 	 *
@@ -2583,8 +2581,6 @@ public class L2Attackable extends L2Npc
 		return seederObjId;
 	}
 
-
-
 	/**
 	 * Set delay for onKill() call, in ms
 	 * Default: 5000 ms
@@ -2700,7 +2696,6 @@ public class L2Attackable extends L2Npc
 	public boolean useVitalityRate()
 	{
 		return !(isChampion() && !Config.L2JMOD_CHAMPION_ENABLE_VITALITY);
-
 	}
 
 	/**

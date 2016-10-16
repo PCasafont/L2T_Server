@@ -15,7 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
@@ -27,6 +26,7 @@ import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -55,12 +55,6 @@ public class MainTownManager
 			this.startZ = startZ;
 			this.startRandom = startRandom;
 		}
-
-
-
-
-
-
 
 		public void spawnNpcs()
 		{
@@ -147,8 +141,7 @@ public class MainTownManager
 		rotationIndex = 0;
 		if (GlobalVariablesManager.getInstance().isVariableStored("MTRotationIndex"))
 		{
-			rotationIndex =
-					Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
+			rotationIndex = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
 		}
 		else
 		{

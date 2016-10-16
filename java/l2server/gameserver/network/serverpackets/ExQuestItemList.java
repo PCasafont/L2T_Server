@@ -33,7 +33,6 @@ import java.util.ArrayList;
  */
 public class ExQuestItemList extends L2ItemListPacket
 {
-
 	private ArrayList<L2ItemInstance> items;
 	private PcInventory inventory;
 

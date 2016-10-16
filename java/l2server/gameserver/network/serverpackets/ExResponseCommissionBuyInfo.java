@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExResponseCommissionBuyInfo extends L2GameServerPacket
 {
-
 	@Override
 	protected final void writeImpl()
 	{

@@ -155,7 +155,6 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 
 	private class ScheduleTalkTask implements Runnable
 	{
-
 		public ScheduleTalkTask()
 		{
 		}

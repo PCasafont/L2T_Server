@@ -5,8 +5,7 @@ package l2server.gameserver.network.clientpackets;
  */
 public class NCGuardSendDataToServer extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int size;
+	@SuppressWarnings("unused") private int size;
 
 	@Override
 	public void readImpl()

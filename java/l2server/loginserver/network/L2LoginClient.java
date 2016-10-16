@@ -47,7 +47,6 @@ import java.util.Map;
  */
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 {
-
 	public enum LoginClientState
 	{
 		CONNECTED, AUTHED_GG, AUTHED_LOGIN
@@ -133,9 +132,6 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		return true;
 	}
 
-
-
-
 	public byte[] getScrambledModulus()
 	{
 		return scrambledPair.scrambledModulus;
@@ -145,12 +141,6 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 	{
 		return (RSAPrivateKey) scrambledPair.pair.getPrivate();
 	}
-
-
-
-
-
-
 
 	public int getSessionId()
 	{
@@ -166,9 +156,6 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 	{
 		joinedGS = val;
 	}
-
-
-
 
 	public void sendPacket(L2LoginServerPacket lsp)
 	{
@@ -231,7 +218,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 			LoginController.getInstance().removeAuthedLoginClient(getAccount());
 		}
 		/*ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-        {
+		{
 			public void run()
 			{
 				LoginController.getInstance().removeAuthedLoginClient(getAccount());

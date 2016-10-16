@@ -26,7 +26,6 @@ import l2server.log.Log;
  */
 public class AdminCommandHandler
 {
-
 	private TIntObjectHashMap<IAdminCommandHandler> datatable;
 
 	public static AdminCommandHandler getInstance()

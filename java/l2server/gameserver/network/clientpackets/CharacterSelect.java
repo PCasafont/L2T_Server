@@ -38,20 +38,15 @@ import java.util.logging.Logger;
  */
 public class CharacterSelect extends L2GameClientPacket
 {
-
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	// cd
 	private int charSlot;
 
-	@SuppressWarnings("unused")
-	private int unk1; // new in C4
-	@SuppressWarnings("unused")
-	private int unk2; // new in C4
-	@SuppressWarnings("unused")
-	private int unk3; // new in C4
-	@SuppressWarnings("unused")
-	private int unk4; // new in C4
+	@SuppressWarnings("unused") private int unk1; // new in C4
+	@SuppressWarnings("unused") private int unk2; // new in C4
+	@SuppressWarnings("unused") private int unk3; // new in C4
+	@SuppressWarnings("unused") private int unk4; // new in C4
 
 	@Override
 	protected void readImpl()

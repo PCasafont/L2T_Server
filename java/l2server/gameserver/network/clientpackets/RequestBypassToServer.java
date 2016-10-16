@@ -54,7 +54,6 @@ import java.util.logging.Level;
  */
 public final class RequestBypassToServer extends L2GameClientPacket
 {
-
 	// S
 	private String command;
 

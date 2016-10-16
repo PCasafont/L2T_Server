@@ -31,7 +31,6 @@ import l2server.log.Log;
  */
 public final class AddTradeItem extends L2GameClientPacket
 {
-
 	private int tradeId;
 	private int objectId;
 	private long count;

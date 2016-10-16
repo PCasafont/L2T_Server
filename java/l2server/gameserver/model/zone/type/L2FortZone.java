@@ -64,7 +64,6 @@ public class L2FortZone extends L2SpawnZone
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)
 	{
-
 	}
 
 	@Override
@@ -94,9 +93,7 @@ public class L2FortZone extends L2SpawnZone
 				continue;
 			}
 
-			temp.teleToLocation(
-					MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
+			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
 		}
 	}
-
 }

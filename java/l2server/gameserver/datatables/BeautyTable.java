@@ -45,10 +45,6 @@ public class BeautyTable implements Reloadable
 		{
 			this.id = id;
 		}
-
-
-
-
 	}
 
 	public class BeautyInfo
@@ -67,9 +63,6 @@ public class BeautyTable implements Reloadable
 			adenaCost = adena;
 			ticketCost = tickets;
 		}
-
-
-
 
 		public int getAdenaPrice()
 		{

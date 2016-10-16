@@ -22,7 +22,6 @@ import java.util.List;
  */
 public class VIPTeamVsTeam extends EventInstance
 {
-
 	public VIPTeamVsTeam(int id, EventConfig config)
 	{
 		super(id, config);

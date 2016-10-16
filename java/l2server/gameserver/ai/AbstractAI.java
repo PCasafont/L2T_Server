@@ -47,7 +47,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
  */
 abstract class AbstractAI implements Ctrl
 {
-
 	class FollowTask implements Runnable
 	{
 		protected int range = 70;
@@ -230,7 +229,7 @@ abstract class AbstractAI implements Ctrl
 	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
 	{
 		/*
-         if (Config.DEBUG)
+		 if (Config.DEBUG)
 		 Log.warning("AbstractAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
 		*/
 

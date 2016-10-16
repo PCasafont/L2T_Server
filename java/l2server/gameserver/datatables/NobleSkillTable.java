@@ -15,9 +15,9 @@
 
 package l2server.gameserver.datatables;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
+import lombok.Getter;
 
 /**
  * @author -Nemesiss-
@@ -47,7 +47,6 @@ public class NobleSkillTable
 	{
 		return SingletonHolder.instance;
 	}
-
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

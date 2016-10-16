@@ -35,8 +35,7 @@ public class ItemsAutoDestroy
 		Log.info("Initializing ItemsAutoDestroy.");
 		items = new CopyOnWriteArrayList<>();
 		sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
-		if (sleep ==
-				0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..
+		if (sleep == 0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..
 		{
 			sleep = 3600000;
 		}

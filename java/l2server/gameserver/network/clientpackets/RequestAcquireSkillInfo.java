@@ -33,7 +33,6 @@ import l2server.log.Log;
  */
 public class RequestAcquireSkillInfo extends L2GameClientPacket
 {
-
 	private int id;
 	private int level;
 	private int skillType;

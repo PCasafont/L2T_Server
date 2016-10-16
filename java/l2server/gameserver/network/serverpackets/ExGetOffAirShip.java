@@ -19,7 +19,6 @@ import l2server.gameserver.model.actor.L2Character;
 
 public class ExGetOffAirShip extends L2GameServerPacket
 {
-
 	private final int playerId, airShipId, x, y, z;
 
 	public ExGetOffAirShip(L2Character player, L2Character ship, int x, int y, int z)

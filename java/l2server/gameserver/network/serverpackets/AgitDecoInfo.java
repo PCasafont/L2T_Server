@@ -159,8 +159,7 @@ public class AgitDecoInfo extends L2GameServerPacket
 		}
 		else if (clanHall.getGrade() == 0 && function.getLvl() < 2 ||
 				clanHall.getGrade() == 1 && function.getLvl() < 4 ||
-				clanHall.getGrade() == 2 && function.getLvl() < 5 ||
-				clanHall.getGrade() == 3 && function.getLvl() < 8)
+				clanHall.getGrade() == 2 && function.getLvl() < 5 || clanHall.getGrade() == 3 && function.getLvl() < 8)
 		{
 			writeC(1);
 			writeC(1);

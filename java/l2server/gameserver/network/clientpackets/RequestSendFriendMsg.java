@@ -98,7 +98,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 				L2DatabaseFactory.close(con);
 			}
 			/*LogRecord record = new LogRecord(Level.INFO, this.message);
-            record.setLoggerName("chat");
+			record.setLoggerName("chat");
 			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ this.reciever +"]"});
 
 			this.logChat.log(record);*/

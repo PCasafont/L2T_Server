@@ -90,7 +90,6 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket
 			player.sendPacket(new PrivateSellListSell(client.getActiveChar()));
 			player.sendPacket(new ExUserInfo(player));
 			player.broadcastPacket(new ExUserInfo(player));
-
 		}
 
 		if (privatetype == 1)
@@ -99,8 +98,6 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket
 			player.sendPacket(new PrivateSellListSell(client.getActiveChar()));
 			player.sendPacket(new ChangeWaitType (player,1));
 			player.broadcastPacket(new ChangeWaitType (player,1));
-
 		}*/
-
 	}
 }

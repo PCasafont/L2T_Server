@@ -22,7 +22,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class LambdaStats extends Lambda
 {
-
 	public enum StatsType
 	{
 		PLAYER_LEVEL, CUBIC_LEVEL, TARGET_LEVEL, PLAYER_MAX_HP, PLAYER_MAX_MP

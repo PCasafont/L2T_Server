@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class MagicSkillCancelled extends L2GameServerPacket
 {
-
 	private int objectId;
 
 	public MagicSkillCancelled(int objectId)

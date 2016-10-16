@@ -107,7 +107,6 @@ public class L2CastleZone extends L2SpawnZone
 		}
 	}
 
-
 	private Castle getCastle()
 	{
 		if (castle == null)

@@ -39,7 +39,6 @@ import l2server.util.Rnd;
  */
 public final class RequestCrystallizeItem extends L2GameClientPacket
 {
-
 	private int objectId;
 	private long count;
 

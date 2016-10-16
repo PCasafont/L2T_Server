@@ -28,7 +28,6 @@ import l2server.log.Log;
  */
 public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
 {
-
 	int arena;
 	int answer;
 

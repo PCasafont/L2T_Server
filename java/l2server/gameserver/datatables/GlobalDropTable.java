@@ -55,13 +55,6 @@ public class GlobalDropTable implements Reloadable
 			itemIds.add(itemId);
 		}
 
-
-
-
-
-
-
-
 		public List<Integer> getRewards()
 		{
 			return itemIds;
@@ -71,8 +64,6 @@ public class GlobalDropTable implements Reloadable
 		{
 			return itemIds.get(Rnd.get(itemIds.size()));
 		}
-
-
 
 		public int getCountForPlayer(L2PcInstance player)
 		{
@@ -219,5 +210,4 @@ public class GlobalDropTable implements Reloadable
 	{
 		return "Global Drops reloaded";
 	}
-
 }

@@ -15,13 +15,13 @@
 
 package handlers.admincommandhandlers;
 
-import java.io.File;
-
 import l2server.Config;
 import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.io.File;
 
 /**
  * @author Layanere
@@ -47,7 +47,6 @@ public class AdminCache implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-
 		if (command.startsWith("admin_cache_htm_rebuild") || command.equals("admin_cache_htm_reload"))
 		{
 			HtmCache.getInstance().reload(Config.DATAPACK_ROOT);

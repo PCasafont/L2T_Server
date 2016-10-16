@@ -152,7 +152,6 @@ public class L2ClanMember
 			return false;
 		}
 		return !player.getClient().isDetached();
-
 	}
 
 	/**
@@ -398,7 +397,6 @@ public class L2ClanMember
 		}
 		return "";
 	}
-
 
 	public int calculatePledgeClass(L2PcInstance player)
 	{

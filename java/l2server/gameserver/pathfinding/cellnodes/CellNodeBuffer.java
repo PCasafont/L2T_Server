@@ -350,7 +350,6 @@ public class CellNodeBuffer
 			return true;
 		}
 		return Math.abs(result.getLoc().getZ() - z) > 16;
-
 	}
 
 	private double getCost(int x, int y, short z, float weight)

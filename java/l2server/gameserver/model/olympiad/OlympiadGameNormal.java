@@ -382,7 +382,6 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		}
 
 		return !(playerTwo.player == null || playerTwo.disconnected);
-
 	}
 
 	@Override
@@ -462,8 +461,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 
 						if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 						{
-							logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
-									points, getType().toString());
+							logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0, points,
+									getType().toString());
 						}
 					}
 					catch (Exception e)
@@ -565,8 +564,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 
 					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
-						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
-								pointDiff, getType().toString());
+						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0, pointDiff,
+								getType().toString());
 					}
 				}
 				else if (pOneCrash && pTwoCrash)
@@ -581,8 +580,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 
 					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
-						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
-								pointDiff, getType().toString());
+						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0, pointDiff,
+								getType().toString());
 					}
 				}
 
@@ -644,8 +643,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_ENDED_IN_A_TIE);
 				broadcastPacket(sm, stadium);
 			}
-			else if (playerTwo.player == null || !playerTwo.player.isOnline() ||
-					playerTwoHp == 0 && playerOneHp != 0 ||
+			else if (playerTwo.player == null || !playerTwo.player.isOnline() || playerTwoHp == 0 && playerOneHp != 0 ||
 					playerOne.player.getOlyGivenDmg() > playerTwo.player.getOlyGivenDmg() && playerTwoHp != 0 &&
 							playerOneHp != 0)
 			{
@@ -675,8 +673,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				playerOne.competitionDone(getType(), true);
 				playerTwo.competitionDone(getType(), false);
 			}
-			else if (playerOne.player == null || !playerOne.player.isOnline() ||
-					playerOneHp == 0 && playerTwoHp != 0 ||
+			else if (playerOne.player == null || !playerOne.player.isOnline() || playerOneHp == 0 && playerTwoHp != 0 ||
 					playerTwo.player.getOlyGivenDmg() > playerOne.player.getOlyGivenDmg() && playerOneHp != 0 &&
 							playerTwoHp != 0)
 			{

@@ -106,8 +106,7 @@ public class EffectSignet extends L2Effect
 				continue;
 			}
 
-			if (skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, skill,
-					srcInArena))
+			if (skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, skill, srcInArena))
 			{
 				continue;
 			}

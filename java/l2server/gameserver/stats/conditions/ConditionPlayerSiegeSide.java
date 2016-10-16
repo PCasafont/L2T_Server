@@ -23,7 +23,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerSiegeSide extends Condition
 {
-
 	private final int siegeSide;
 
 	/**

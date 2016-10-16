@@ -24,7 +24,6 @@ import l2server.gameserver.network.serverpackets.PledgeCrest;
  */
 public final class RequestPledgeCrest extends L2GameClientPacket
 {
-
 	private int crestId;
 
 	@Override

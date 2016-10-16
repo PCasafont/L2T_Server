@@ -32,7 +32,6 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
  */
 public final class RequestRejectPostAttachment extends L2GameClientPacket
 {
-
 	private int msgId;
 
 	@Override

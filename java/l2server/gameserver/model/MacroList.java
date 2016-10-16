@@ -36,7 +36,6 @@ import java.util.logging.Level;
  */
 public class MacroList
 {
-
 	private L2PcInstance owner;
 	@Getter private int revision;
 	private int macroId;
@@ -48,7 +47,6 @@ public class MacroList
 		revision = 1;
 		macroId = 1000;
 	}
-
 
 	public L2Macro[] getAllMacroses()
 	{

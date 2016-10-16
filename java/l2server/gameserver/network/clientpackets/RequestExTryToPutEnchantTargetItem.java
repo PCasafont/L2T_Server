@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 {
-
 	private int objectId = 0;
 
 	/**

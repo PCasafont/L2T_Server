@@ -27,7 +27,6 @@ import java.util.logging.Level;
  */
 public final class RequestLinkHtml extends L2GameClientPacket
 {
-
 	private String link;
 
 	@Override

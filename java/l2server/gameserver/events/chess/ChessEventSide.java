@@ -1,6 +1,5 @@
 package l2server.gameserver.events.chess;
 
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
@@ -106,8 +105,6 @@ public class ChessEventSide
 		return player != null && player.getObjectId() == playerObjectId;
 	}
 
-
-
 	public L2Spawn getPieceSpawn(int i)
 	{
 		return pieceSpawns[i];
@@ -117,7 +114,6 @@ public class ChessEventSide
 	{
 		pieceSpawns[i] = spawn;
 	}
-
 
 	public void setBoard(int i, int j, int value)
 	{
@@ -310,8 +306,6 @@ public class ChessEventSide
 		ChessEvent.setBoard(x, y, piece, getId());
 	}
 
-
-
 	public boolean canTheKingBeKilled(boolean check)
 	{
 		if (!check)
@@ -337,5 +331,4 @@ public class ChessEventSide
 	{
 		return hasWon;
 	}
-
 }

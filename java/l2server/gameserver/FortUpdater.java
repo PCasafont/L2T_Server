@@ -32,8 +32,7 @@ public class FortUpdater implements Runnable
 	protected static Logger log = Logger.getLogger(FortUpdater.class.getName());
 	private L2Clan clan;
 	private Fort fort;
-	@SuppressWarnings("unused")
-	private int runCount;
+	@SuppressWarnings("unused") private int runCount;
 	private UpdaterType updaterType;
 
 	public enum UpdaterType

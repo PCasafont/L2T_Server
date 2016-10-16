@@ -67,7 +67,6 @@ public class DesireTable
 		{
 			value += pValue;
 		}
-
 	}
 
 	class Desires

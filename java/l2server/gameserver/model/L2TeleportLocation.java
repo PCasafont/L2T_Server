@@ -17,6 +17,7 @@ package l2server.gameserver.model;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * This class ...
  *
@@ -64,6 +65,4 @@ public class L2TeleportLocation
 	{
 		return forNoble;
 	}
-
-
 }

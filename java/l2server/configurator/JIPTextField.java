@@ -15,7 +15,6 @@
 
 package l2server.configurator;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -251,7 +250,6 @@ public class JIPTextField extends JPanel implements FocusListener
 
 	public class MaxLengthDocument extends PlainDocument
 	{
-
 		/**
 		 * Comment for <code>serialVersionUID</code>
 		 */

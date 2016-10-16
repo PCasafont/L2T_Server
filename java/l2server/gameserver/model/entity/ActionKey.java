@@ -79,7 +79,7 @@ public class ActionKey
 
 	public String getSqlSaveString(int playerId, int order)
 	{
-		return "(" + playerId + ", " + cat + ", " + order + ", " + cmd + "," + key + ", " + tgKey1 + ", " +
-				tgKey2 + ", " + show + ")";
+		return "(" + playerId + ", " + cat + ", " + order + ", " + cmd + "," + key + ", " + tgKey1 + ", " + tgKey2 +
+				", " + show + ")";
 	}
 }

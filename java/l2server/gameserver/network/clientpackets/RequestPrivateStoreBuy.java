@@ -34,7 +34,6 @@ import java.util.HashSet;
  */
 public final class RequestPrivateStoreBuy extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
 	private int storePlayerId;

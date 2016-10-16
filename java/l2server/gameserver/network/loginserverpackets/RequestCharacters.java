@@ -31,5 +31,4 @@ public class RequestCharacters extends BaseRecievePacket
 		super(decrypt);
 		account = readS();
 	}
-
 }

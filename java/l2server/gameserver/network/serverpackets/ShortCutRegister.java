@@ -35,7 +35,6 @@ import l2server.gameserver.model.L2ShortCut;
  */
 public final class ShortCutRegister extends L2GameServerPacket
 {
-
 	private L2ShortCut shortcut;
 
 	/**
@@ -69,7 +68,7 @@ public final class ShortCutRegister extends L2GameServerPacket
 				writeD(shortcut.getCharacterType());
 				break;
 			/* these are same as default case, no need to duplicate, enable if packet get changed
-             */
+			 */
             /*	case L2ShortCut.TYPE_ACTION: //3
              *		writeD(this.shortcut.getId());
 			 *		writeD(this.shortcut.getUserCommand());

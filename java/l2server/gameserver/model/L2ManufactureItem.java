@@ -37,8 +37,6 @@ public class L2ManufactureItem
 		isDwarven = RecipeController.getInstance().getRecipeList(this.recipeId).isDwarvenRecipe();
 	}
 
-
-
 	public boolean isDwarven()
 	{
 		return isDwarven;

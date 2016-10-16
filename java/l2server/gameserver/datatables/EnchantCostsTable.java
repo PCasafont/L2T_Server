@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import lombok.Getter;
 import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2EnchantSkillLearn;
@@ -24,6 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -57,13 +57,6 @@ public class EnchantCostsTable
 			this.untrainBook = untrainBook;
 			this.immortalBook = immortalBook;
 		}
-
-
-
-
-
-
-
 	}
 
 	public static class EnchantSkillDetail
@@ -92,7 +85,6 @@ public class EnchantCostsTable
 
 			return rates[ply.getLevel() - 85];
 		}
-
 	}
 
 	private TIntObjectHashMap<L2EnchantSkillLearn> enchantSkillTrees = new TIntObjectHashMap<>();

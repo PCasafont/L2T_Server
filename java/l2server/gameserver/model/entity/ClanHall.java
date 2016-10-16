@@ -40,7 +40,6 @@ import java.util.logging.Level;
 
 public class ClanHall
 {
-
 	private int clanHallId;
 	private List<L2DoorInstance> doors;
 	private String name;
@@ -91,19 +90,15 @@ public class ClanHall
 			initializeTask(cwh);
 		}
 
-
-
 		public int getLease()
 		{
 			return fee;
 		}
 
-
 		public long getEndTime()
 		{
 			return endDate;
 		}
-
 
 		public void setLease(int lease)
 		{
@@ -710,8 +705,7 @@ public class ClanHall
 						}
 						else
 						{
-							ThreadPoolManager.getInstance()
-									.scheduleGeneral(new FeeTask(), paidUntil + chRate - time);
+							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), paidUntil + chRate - time);
 						}
 					}
 				}

@@ -28,7 +28,6 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
  */
 public final class RequestSSQStatus extends L2GameClientPacket
 {
-
 	private int page;
 
 	@Override

@@ -45,7 +45,6 @@ import java.util.Calendar;
  */
 public class SiegeInfo extends L2GameServerPacket
 {
-
 	private Castle castle;
 
 	public SiegeInfo(Castle castle)

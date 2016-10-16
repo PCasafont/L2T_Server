@@ -35,7 +35,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class MinionList
 {
-
 	private final L2MonsterInstance master;
 	/**
 	 * List containing the current spawned minions
@@ -186,9 +185,9 @@ public class MinionList
 		deleteSpawnedMinions();
 
 		// if master has spawn and can respawn - try to reuse minions
-		if (reusedMinionReferences == null && (master.getTemplate().getMinionData() != null ||
-				master.getTemplate().getRandomMinionData() != null) && master.getSpawn() != null &&
-				master.getSpawn().isRespawnEnabled())
+		if (reusedMinionReferences == null &&
+				(master.getTemplate().getMinionData() != null || master.getTemplate().getRandomMinionData() != null) &&
+				master.getSpawn() != null && master.getSpawn().isRespawnEnabled())
 		{
 			reusedMinionReferences = new ArrayList<>();
 		}

@@ -29,7 +29,6 @@ import java.io.File;
 
 public class PetDataTable
 {
-
 	private static TIntObjectHashMap<L2PetData> petTable;
 
 	public static PetDataTable getInstance()

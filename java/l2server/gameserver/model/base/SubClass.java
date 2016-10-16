@@ -91,15 +91,10 @@ public final class SubClass
 		return playerClass.getId();
 	}
 
-
-
-
-
 	public boolean isDual()
 	{
 		return isDual;
 	}
-
 
 	public byte getMaxLevel()
 	{
@@ -125,9 +120,6 @@ public final class SubClass
 	{
 		sp = spValue;
 	}
-
-
-
 
 	public void setLevel(byte levelValue)
 	{

@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 public class DuelManager
 {
-
 	public static DuelManager getInstance()
 	{
 		return SingletonHolder.instance;

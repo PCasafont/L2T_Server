@@ -158,7 +158,6 @@ public final class OlympiadGameTask implements Runnable
 		}
 	}
 
-
 	public final AbstractOlympiadGame getGame()
 	{
 		return game;
@@ -587,6 +586,4 @@ public final class OlympiadGameTask implements Runnable
 			}
 		}
 	}
-
-
 }

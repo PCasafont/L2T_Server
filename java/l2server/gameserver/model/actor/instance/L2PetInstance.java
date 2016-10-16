@@ -315,7 +315,6 @@ public class L2PetInstance extends L2Summon
 		setStat(new PetStat(this));
 	}
 
-
 	@Override
 	public int getSummonType()
 	{

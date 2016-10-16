@@ -208,7 +208,6 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	private class ScheduleTalkTask implements Runnable
 	{
-
 		public ScheduleTalkTask()
 		{
 		}

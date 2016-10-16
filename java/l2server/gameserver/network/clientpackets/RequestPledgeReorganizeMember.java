@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 {
-
 	private int isMemberSelected;
 	private String memberName;
 	private int newPledgeType;

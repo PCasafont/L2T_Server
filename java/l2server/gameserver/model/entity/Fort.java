@@ -106,19 +106,15 @@ public class Fort
 			initializeTask(cwh);
 		}
 
-
-
 		public int getLease()
 		{
 			return fee;
 		}
 
-
 		public long getEndTime()
 		{
 			return endDate;
 		}
-
 
 		public void setLease(int lease)
 		{
@@ -313,9 +309,8 @@ public class Fort
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.WARNING,
-						"Exception: ScheduleSpecialEnvoysSpawn() for Fort " + fortInst.getName() + ": " +
-								e.getMessage(), e);
+				Log.log(Level.WARNING, "Exception: ScheduleSpecialEnvoysSpawn() for Fort " + fortInst.getName() + ": " +
+						e.getMessage(), e);
 			}
 		}
 	}
@@ -548,7 +543,6 @@ public class Fort
 			supplyLvL = val;
 		}
 	}
-
 
 	public void saveFortVariables()
 	{
@@ -1235,7 +1229,6 @@ public class Fort
 			Log.log(Level.WARNING, "Error unspawning siege guards for fort " + getName() + ":" + e.getMessage(), e);
 		}
 	}
-
 
 	public void giveResidentialSkills(L2PcInstance player)
 	{

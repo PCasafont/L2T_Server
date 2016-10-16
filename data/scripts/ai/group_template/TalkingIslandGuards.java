@@ -15,15 +15,15 @@
 
 package ai.group_template;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author LasTravel

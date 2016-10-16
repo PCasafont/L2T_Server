@@ -24,10 +24,8 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerClanLeaderIsOn extends Condition
 {
-
 	public ConditionPlayerClanLeaderIsOn()
 	{
-
 	}
 
 	@Override

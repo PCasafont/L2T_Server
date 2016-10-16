@@ -94,7 +94,6 @@ public class L2Henna
 		}
 	}
 
-
 	/**
 	 * @return
 	 */
@@ -196,16 +195,13 @@ public class L2Henna
 		return elemVal;
 	}
 
-
 	public boolean isFourthSlot()
 	{
 		return isFourthSlot;
 	}
 
-
 	public void setExpiryTime(long time)
 	{
 		expiryTime = time;
 	}
-
 }

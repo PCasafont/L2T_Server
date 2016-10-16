@@ -52,11 +52,6 @@ public final class AuctionItem
 		return item != null;
 	}
 
-
-
-
-
-
 	public final L2ItemInstance createNewItemInstance()
 	{
 		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", itemId, itemCount, null, null);
@@ -67,7 +62,8 @@ public final class AuctionItem
 		final int augmentationId = itemExtra.getInteger("augmentation_id", 0);
 		if (augmentationId != 0)
 		{
-			@SuppressWarnings("unused") final int augmentationSkillId = itemExtra.getInteger("augmentation_skill_id", 0);
+			@SuppressWarnings("unused") final int augmentationSkillId =
+					itemExtra.getInteger("augmentation_skill_id", 0);
 			@SuppressWarnings("unused") final int augmentationSkillLevel =
 					itemExtra.getInteger("augmentation_skill_lvl", 0);
 			item.setAugmentation(new L2Augmentation(augmentationId));

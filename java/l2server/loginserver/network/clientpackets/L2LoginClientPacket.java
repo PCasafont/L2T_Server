@@ -26,7 +26,6 @@ import java.util.logging.Level;
  */
 public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient>
 {
-
 	/**
 	 */
 	@Override

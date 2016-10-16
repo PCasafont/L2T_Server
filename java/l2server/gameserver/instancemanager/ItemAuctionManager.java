@@ -117,7 +117,8 @@ public final class ItemAuctionManager
 
 	public final void shutdown()
 	{
-		final ItemAuctionInstance[] instances = managerInstances.getValues(new ItemAuctionInstance[managerInstances.size()]);
+		final ItemAuctionInstance[] instances =
+				managerInstances.getValues(new ItemAuctionInstance[managerInstances.size()]);
 		for (final ItemAuctionInstance instance : instances)
 		{
 			instance.shutdown();

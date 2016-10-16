@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestOustFromPartyRoom extends L2GameClientPacket
 {
-
 	private int charid;
 
 	@Override

@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public final class DlgAnswer extends L2GameClientPacket
 {
-
 	private int messageId;
 	private int answer;
 	private int requesterId;

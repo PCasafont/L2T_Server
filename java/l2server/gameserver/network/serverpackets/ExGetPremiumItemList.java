@@ -28,7 +28,6 @@ import java.util.Map.Entry;
  */
 public class ExGetPremiumItemList extends L2GameServerPacket
 {
-
 	private L2PcInstance activeChar;
 
 	private Map<Integer, L2PremiumItem> map;

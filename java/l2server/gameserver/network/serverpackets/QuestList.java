@@ -43,7 +43,6 @@ public class QuestList extends L2GameServerPacket
 
 	public QuestList()
 	{
-
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class QuestList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		/*
-          This text was wrote by XaKa
+		  This text was wrote by XaKa
           QuestList packet structure:
           {
           		1 byte - 0x80

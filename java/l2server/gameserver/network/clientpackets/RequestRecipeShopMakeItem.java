@@ -28,8 +28,7 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 
 	private int id;
 	private int recipeId;
-	@SuppressWarnings("unused")
-	private long unknow;
+	@SuppressWarnings("unused") private long unknow;
 
 	@Override
 	protected void readImpl()

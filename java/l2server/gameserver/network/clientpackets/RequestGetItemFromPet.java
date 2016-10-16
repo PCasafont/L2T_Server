@@ -28,11 +28,9 @@ import l2server.log.Log;
  */
 public final class RequestGetItemFromPet extends L2GameClientPacket
 {
-
 	private int objectId;
 	private long amount;
-	@SuppressWarnings("unused")
-	private int unknown;
+	@SuppressWarnings("unused") private int unknown;
 
 	@Override
 	protected void readImpl()

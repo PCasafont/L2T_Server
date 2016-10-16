@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
@@ -44,6 +40,10 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -273,7 +273,7 @@ public class Pdam implements ISkillHandler
 
 								// Half the reflected damage for bows
 								/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-                                if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+								if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 										 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 									reflectedDamage *= 0.5f;*/
 

@@ -91,7 +91,7 @@ public final class AuthLogin extends L2GameClientPacket
 		int vitalityPoints = Config.STARTING_VITALITY_POINTS;
 		int vitalityItemsUsed = 0;
 		/*
-         *
+		 *
 			Connection con = null;
 			try
 			{

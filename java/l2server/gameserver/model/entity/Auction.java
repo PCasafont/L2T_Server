@@ -92,14 +92,10 @@ public class Auction
 			return name;
 		}
 
-
-
-
 		public void setTimeBid(long timeBid)
 		{
 			this.timeBid.setTimeInMillis(timeBid);
 		}
-
 	}
 
 	/**
@@ -529,7 +525,7 @@ public class Auction
 			if (highestBidderId == 0 && sellerId > 0)
 			{
 				/* If seller haven't sell ClanHall, auction removed,
-                   THIS MUST BE CONFIRMED */
+				   THIS MUST BE CONFIRMED */
 				int aucId = ClanHallAuctionManager.getInstance().getAuctionIndex(id);
 				ClanHallAuctionManager.getInstance().getAuctions().remove(aucId);
 				return;

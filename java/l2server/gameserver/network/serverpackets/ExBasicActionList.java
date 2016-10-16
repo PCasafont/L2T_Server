@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class ExBasicActionList extends L2GameServerPacket
 {
-
 	public static final int[] actionsOnTransform = {
 			1,
 			2,

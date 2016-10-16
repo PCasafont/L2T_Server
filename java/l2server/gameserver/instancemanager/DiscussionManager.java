@@ -16,6 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +69,6 @@ public class DiscussionManager
 	{
 		globalChatDisabled = chatDisabled;
 	}
-
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

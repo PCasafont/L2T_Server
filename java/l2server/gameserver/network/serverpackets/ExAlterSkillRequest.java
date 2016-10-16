@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExAlterSkillRequest extends L2GameServerPacket
 {
-
 	private int nextSkillId;
 	private int currentSkillId;
 	private int alterTime;

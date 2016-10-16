@@ -25,7 +25,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerInvSize extends Condition
 {
-
 	private final int size;
 
 	/**

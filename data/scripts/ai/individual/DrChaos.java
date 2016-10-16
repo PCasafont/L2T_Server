@@ -33,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SpecialCamera;
  */
 public class DrChaos extends Quest
 {
-
 	private static final int DOCTER_CHAOS = 32033;
 	private static final int STRANGE_MACHINE = 32032;
 	private static final int CHAOS_GOLEM = 25512;

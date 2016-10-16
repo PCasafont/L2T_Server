@@ -23,11 +23,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExResponseCommissionInfo extends L2GameServerPacket
 {
-
-	@SuppressWarnings("unused")
-	private L2PcInstance player;
-	@SuppressWarnings("unused")
-	private L2ItemInstance item;
+	@SuppressWarnings("unused") private L2PcInstance player;
+	@SuppressWarnings("unused") private L2ItemInstance item;
 	private boolean success;
 
 	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success)

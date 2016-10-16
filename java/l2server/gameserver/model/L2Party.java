@@ -54,7 +54,6 @@ import java.util.logging.Level;
  */
 public class L2Party
 {
-
 	//private static final double[] BONUS_EXP_SP = {1, 1.30, 1.39, 1.50, 1.54, 1.58, 1.63, 1.67, 1.71};
 	// TODO: Soul: I do believe are correct doubles. It must be:
 	// 0%, 10%, 20%, 30%, 40%, 50%, 100%, 110%, 120%
@@ -675,7 +674,7 @@ public class L2Party
 	public void distributeItem(L2PcInstance player, L2ItemInstance item)
 	{
 		/*switch (item.getItemId())
-        {
+		{
 			case 57: // Adena
 			case 4355: // Blue Eva
 			case 4356: // Gold Einhasad
@@ -1160,7 +1159,6 @@ public class L2Party
 		return commandChannel != null;
 	}
 
-
 	public void setCommandChannel(L2CommandChannel channel)
 	{
 		commandChannel = channel;
@@ -1256,7 +1254,6 @@ public class L2Party
 
 	@Getter private L2Character target;
 
-
 	public void think()
 	{
 		L2PcInstance leader = getLeader();
@@ -1303,8 +1300,8 @@ public class L2Party
 			}
 		}
 
-		if (target != null && target.isVisible() && !target.isDead() &&
-				leader.getDistanceSq(target) < 2000 * 2000 && target.isAutoAttackable(leader) && allies.size() > 0 &&
+		if (target != null && target.isVisible() && !target.isDead() && leader.getDistanceSq(target) < 2000 * 2000 &&
+				target.isAutoAttackable(leader) && allies.size() > 0 &&
 				(!playerFound && target instanceof L2ApInstance || !(target instanceof L2ApInstance)))
 		{
 			//_target = null;

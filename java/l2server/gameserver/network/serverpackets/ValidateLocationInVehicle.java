@@ -25,7 +25,6 @@ import l2server.util.Point3D;
  */
 public class ValidateLocationInVehicle extends L2GameServerPacket
 {
-
 	private int charObjId;
 	private int boatObjId;
 	private int heading;

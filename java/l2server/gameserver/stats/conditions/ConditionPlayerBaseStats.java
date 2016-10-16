@@ -26,7 +26,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerBaseStats extends Condition
 {
-
 	private final BaseStat stat;
 	private final int value;
 

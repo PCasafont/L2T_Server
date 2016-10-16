@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * This class describes a RecipeList statUse and altStatChange component.<BR><BR>
  */
@@ -54,5 +55,4 @@ public class L2RecipeStatInstance
 		}
 		this.value = value;
 	}
-
 }

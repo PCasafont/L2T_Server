@@ -52,7 +52,6 @@ import java.util.logging.Level;
  */
 public class LoginController
 {
-
 	@Getter private static LoginController instance;
 
 	/**
@@ -90,7 +89,6 @@ public class LoginController
 			}
 		}
 	}
-
 
 	private LoginController() throws GeneralSecurityException
 	{
@@ -297,7 +295,6 @@ public class LoginController
 		}
 		return false;
 	}
-
 
 	/**
 	 * Remove the specified address from the ban list
@@ -1110,7 +1107,6 @@ public class LoginController
 				lastAttempTime = System.currentTimeMillis();
 			}
 		}
-
 
 		public void increaseCounter()
 		{

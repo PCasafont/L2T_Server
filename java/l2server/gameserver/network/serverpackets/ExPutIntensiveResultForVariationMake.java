@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket
 {
-
 	private int refinerItemObjId;
 	private int lifestoneItemId;
 	private int gemstoneItemId;

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.instancemanager;
 
-import lombok.Getter;
 import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,6 @@ public class BossManager
 	{
 		bosses.put(boss.getNpcId(), boss);
 	}
-
 
 	public L2RaidBossInstance getBoss(int id)
 	{

@@ -83,8 +83,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 				}
 				if (param1 < L2World.GRACIA_MAX_X)
 				{
-					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(param1, param2, z, 0));
+					ship.getAI()
+							.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(param1, param2, z, 0));
 				}
 				break;
 			case 1:

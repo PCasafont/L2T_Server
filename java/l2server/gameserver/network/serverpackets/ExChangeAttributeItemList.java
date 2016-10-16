@@ -25,7 +25,6 @@ import java.util.ArrayList;
  */
 public class ExChangeAttributeItemList extends L2ItemListPacket
 {
-
 	private ArrayList<L2ItemInstance> itemsList;
 	private int itemOID;
 

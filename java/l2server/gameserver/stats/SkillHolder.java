@@ -40,8 +40,6 @@ public final class SkillHolder
 		skillLvl = skill.getLevelHash();
 	}
 
-
-
 	public final L2Skill getSkill()
 	{
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);

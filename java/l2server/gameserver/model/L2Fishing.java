@@ -98,9 +98,7 @@ public class L2Fishing implements Runnable
 		}
 		mode = Rnd.get(100) >= 80 ? 1 : 0;
 
-		ExFishingStartCombat efsc =
-				new ExFishingStartCombat(fisher, time, fishMaxHp, mode, lureType,
-						deceptiveMode);
+		ExFishingStartCombat efsc = new ExFishingStartCombat(fisher, time, fishMaxHp, mode, lureType, deceptiveMode);
 		fisher.broadcastPacket(efsc);
 		fisher.sendPacket(new PlaySound(1, "SF_S_01", 0, 0, 0, 0, 0));
 		// Succeeded in getting a bite
@@ -120,9 +118,7 @@ public class L2Fishing implements Runnable
 			fishCurHp = 0;
 		}
 
-		ExFishingHpRegen efhr =
-				new ExFishingHpRegen(fisher, time, fishCurHp, mode, goodUse, anim, pen,
-						deceptiveMode);
+		ExFishingHpRegen efhr = new ExFishingHpRegen(fisher, time, fishCurHp, mode, goodUse, anim, pen, deceptiveMode);
 		fisher.broadcastPacket(efhr);
 		anim = 0;
 		if (fishCurHp > fishMaxHp * 2)
@@ -216,9 +212,7 @@ public class L2Fishing implements Runnable
 		finally
 		{
 			thinking = false;
-			ExFishingHpRegen efhr =
-					new ExFishingHpRegen(fisher, time, fishCurHp, mode, 0, anim, 0,
-							deceptiveMode);
+			ExFishingHpRegen efhr = new ExFishingHpRegen(fisher, time, fishCurHp, mode, 0, anim, 0, deceptiveMode);
 			if (anim != 0)
 			{
 				fisher.broadcastPacket(efhr);

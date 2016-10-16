@@ -30,7 +30,6 @@ import java.util.List;
 
 public class EventDroplist
 {
-
 	//
 
 	/**
@@ -89,7 +88,6 @@ public class EventDroplist
 	 */
 	public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range)
 	{
-
 		DateDrop date = new DateDrop();
 
 		date.dateRange = range;

@@ -15,10 +15,10 @@
 
 package l2server.gameserver.scripting;
 
-import lombok.Getter;
 import com.l2jserver.script.jython.JythonScriptEngine;
 import l2server.Config;
 import l2server.log.Log;
+import lombok.Getter;
 
 import javax.script.*;
 import java.io.*;
@@ -579,7 +579,6 @@ public final class L2ScriptEngineManager
 	{
 		scriptManagers.remove(manager);
 	}
-
 
 	/**
 	 * @param currentLoadingScript The currentLoadingScript to set.

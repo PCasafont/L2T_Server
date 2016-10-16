@@ -63,13 +63,11 @@ public class SpawnTable
 		}
 	}
 
-
 	public List<L2Spawn> getSpecificSpawns(String name)
 	{
 		name = name.toLowerCase();
 		return specificSpawnTable.get(name);
 	}
-
 
 	public void spawnSpecificTable(String tableName)
 	{

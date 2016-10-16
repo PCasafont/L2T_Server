@@ -28,7 +28,6 @@ import lombok.Getter;
  */
 public class L2MinionData
 {
-
 	/**
 	 * The Identifier of the L2Minion
 	 */

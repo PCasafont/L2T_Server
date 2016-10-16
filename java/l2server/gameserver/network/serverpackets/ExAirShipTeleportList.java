@@ -19,7 +19,6 @@ import l2server.gameserver.model.VehiclePathPoint;
 
 public class ExAirShipTeleportList extends L2GameServerPacket
 {
-
 	private int dockId;
 	private VehiclePathPoint[][] teleports;
 	private int[] fuelConsumption;

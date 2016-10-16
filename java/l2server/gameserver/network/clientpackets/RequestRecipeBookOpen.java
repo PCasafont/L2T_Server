@@ -21,7 +21,6 @@ import l2server.log.Log;
 
 public final class RequestRecipeBookOpen extends L2GameClientPacket
 {
-
 	private boolean isDwarvenCraft;
 
 	@Override

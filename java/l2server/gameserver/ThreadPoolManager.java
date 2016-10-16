@@ -15,10 +15,10 @@
 
 package l2server.gameserver;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.*;
@@ -58,7 +58,6 @@ import java.util.logging.Level;
  */
 public class ThreadPoolManager
 {
-
 	private static final class RunnableWrapper implements Runnable
 	{
 		private final Runnable r;
@@ -273,7 +272,8 @@ public class ThreadPoolManager
 				" |- PoolSize:		" + effectsScheduledThreadPool.getPoolSize(),
 				" |- MaximumPoolSize: " + effectsScheduledThreadPool.getMaximumPoolSize(),
 				" |- CompletedTasks:  " + effectsScheduledThreadPool.getCompletedTaskCount(),
-				" |- ScheduledTasks:  " + (effectsScheduledThreadPool.getTaskCount() - effectsScheduledThreadPool.getCompletedTaskCount()),
+				" |- ScheduledTasks:  " + (effectsScheduledThreadPool.getTaskCount() -
+						effectsScheduledThreadPool.getCompletedTaskCount()),
 				" | -------",
 				" + General:",
 				" |- ActiveThreads:   " + generalScheduledThreadPool.getActiveCount(),
@@ -281,7 +281,8 @@ public class ThreadPoolManager
 				" |- PoolSize:		" + generalScheduledThreadPool.getPoolSize(),
 				" |- MaximumPoolSize: " + generalScheduledThreadPool.getMaximumPoolSize(),
 				" |- CompletedTasks:  " + generalScheduledThreadPool.getCompletedTaskCount(),
-				" |- ScheduledTasks:  " + (generalScheduledThreadPool.getTaskCount() - generalScheduledThreadPool.getCompletedTaskCount()),
+				" |- ScheduledTasks:  " + (generalScheduledThreadPool.getTaskCount() -
+						generalScheduledThreadPool.getCompletedTaskCount()),
 				" | -------",
 				" + AI:",
 				" |- ActiveThreads:   " + aiScheduledThreadPool.getActiveCount(),
@@ -375,7 +376,6 @@ public class ThreadPoolManager
 			Log.log(Level.WARNING, "", e);
 		}
 	}
-
 
 	public void purge()
 	{

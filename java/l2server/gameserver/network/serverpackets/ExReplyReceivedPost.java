@@ -25,7 +25,6 @@ import l2server.log.Log;
  */
 public class ExReplyReceivedPost extends L2ItemListPacket
 {
-
 	private Message msg;
 	private L2ItemInstance[] items = null;
 

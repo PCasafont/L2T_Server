@@ -23,7 +23,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerSouls extends Condition
 {
-
 	private final int souls;
 
 	/**

@@ -15,9 +15,6 @@
 
 package quests.Q10329_BackupSeekers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.datatables.SkillTable;
@@ -31,6 +28,9 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Pere

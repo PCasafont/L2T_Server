@@ -42,7 +42,6 @@ import java.util.logging.Level;
  */
 public class Announcements
 {
-
 	private List<String> announcements = new ArrayList<>();
 	private List<List<Object>> eventAnnouncements = new ArrayList<>();
 

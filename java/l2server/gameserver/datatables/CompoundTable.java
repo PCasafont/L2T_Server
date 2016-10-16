@@ -15,13 +15,13 @@
 
 package l2server.gameserver.datatables;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.io.File;
 import java.util.HashMap;
@@ -49,10 +49,6 @@ public class CompoundTable implements Reloadable
 			this.result = result;
 			this.chance = chance;
 		}
-
-
-
-
 	}
 
 	private final Map<Integer, Combination> combinations = new HashMap<>();

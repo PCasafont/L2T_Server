@@ -20,7 +20,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ExAirShipStopMove extends L2GameServerPacket
 {
-
 	private final int playerId, airShipId, x, y, z;
 
 	public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z)

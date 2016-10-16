@@ -28,7 +28,6 @@ import l2server.util.Rnd;
  */
 public class RequestChangeAttributeItem extends L2GameClientPacket
 {
-
 	private int attributeOID, itemOID, newAttributeID;
 
 	@Override

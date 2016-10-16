@@ -15,8 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -29,6 +27,8 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:

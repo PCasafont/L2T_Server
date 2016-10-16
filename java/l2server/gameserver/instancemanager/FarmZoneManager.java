@@ -51,8 +51,6 @@ public class FarmZoneManager
 		{
 			mobs.add(mob);
 		}
-
-
 	}
 
 	private Map<String, FarmZone> farmZones = new HashMap<>();

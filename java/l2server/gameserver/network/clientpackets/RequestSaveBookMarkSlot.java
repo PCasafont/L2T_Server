@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestSaveBookMarkSlot extends L2GameClientPacket
 {
-
 	private int icon;
 	private String name, tag;
 

@@ -26,7 +26,6 @@ import java.util.Map;
 
 public class GlobalVariablesManager
 {
-
 	private static final String LOAD_VAR = "SELECT var,value FROM global_variables";
 	private static final String SAVE_VAR =
 			"INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";

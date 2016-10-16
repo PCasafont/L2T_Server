@@ -23,7 +23,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetActiveEffect extends Condition
 {
-
 	private final String effectName;
 
 	/**
@@ -39,6 +38,5 @@ public class ConditionTargetActiveEffect extends Condition
 	{
 		final L2Abnormal e = env.target.getFirstEffectByName(effectName);
 		return e != null;
-
 	}
 }

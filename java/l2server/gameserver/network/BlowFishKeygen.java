@@ -7,7 +7,6 @@ public class BlowFishKeygen
 	// block instantiation
 	private BlowFishKeygen()
 	{
-
 	}
 
 	private static final int CRYPT_KEYS_SIZE = 20;

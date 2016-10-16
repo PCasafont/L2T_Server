@@ -29,7 +29,6 @@ import l2server.log.Log;
 
 public final class RequestPetUseItem extends L2GameClientPacket
 {
-
 	private int objectId;
 
 	@Override
@@ -126,7 +125,6 @@ public final class RequestPetUseItem extends L2GameClientPacket
 		{
 			activeChar.sendPacket(SystemMessageId.PET_CANNOT_USE_ITEM);
 		}
-
 	}
 
 	private void useItem(L2PetInstance pet, L2ItemInstance item, L2PcInstance activeChar)

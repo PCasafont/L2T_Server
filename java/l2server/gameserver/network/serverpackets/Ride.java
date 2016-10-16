@@ -88,7 +88,6 @@ public final class Ride extends L2GameServerPacket
 	@Override
 	public void runImpl()
 	{
-
 	}
 
 	public int getMountType()

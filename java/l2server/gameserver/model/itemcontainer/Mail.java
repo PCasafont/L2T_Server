@@ -60,7 +60,6 @@ public class Mail extends ItemContainer
 		return ItemLocation.MAIL;
 	}
 
-
 	public void setNewMessageId(int messageId)
 	{
 		this.messageId = messageId;

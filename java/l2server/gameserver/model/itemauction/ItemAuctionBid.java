@@ -33,7 +33,6 @@ public final class ItemAuctionBid
 		this.lastBid = lastBid;
 	}
 
-
 	public final long getLastBid()
 	{
 		return lastBid;

@@ -15,9 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
@@ -29,6 +26,9 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class ...

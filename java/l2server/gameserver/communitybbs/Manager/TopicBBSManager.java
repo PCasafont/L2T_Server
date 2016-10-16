@@ -355,8 +355,8 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()), ";",
-					String.valueOf(index - 1),
+			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()),
+					";", String.valueOf(index - 1),
 					"\" back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
 		}
 
@@ -374,8 +374,9 @@ public class TopicBBSManager extends BaseBBSManager
 			}
 			else
 			{
-				StringUtil.append(html, "<td><a action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()), ";",
-						String.valueOf(i), "\"> ", String.valueOf(i), " </a></td>");
+				StringUtil
+						.append(html, "<td><a action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()), ";",
+								String.valueOf(i), "\"> ", String.valueOf(i), " </a></td>");
 			}
 		}
 		if (index == nbp)
@@ -385,8 +386,8 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()), ";",
-					String.valueOf(index + 1),
+			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()),
+					";", String.valueOf(index + 1),
 					"\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
 		}
 

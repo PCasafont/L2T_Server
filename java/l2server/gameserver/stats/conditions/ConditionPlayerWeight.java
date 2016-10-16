@@ -25,7 +25,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerWeight extends Condition
 {
-
 	private final int weight;
 
 	/**

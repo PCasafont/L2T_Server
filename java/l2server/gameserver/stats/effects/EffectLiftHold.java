@@ -41,8 +41,7 @@ public class EffectLiftHold extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
-				getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid())
 		{
 			return false;
 		}

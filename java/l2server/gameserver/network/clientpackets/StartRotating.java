@@ -25,7 +25,6 @@ import l2server.gameserver.network.serverpackets.StartRotation;
  */
 public final class StartRotating extends L2GameClientPacket
 {
-
 	private int degree;
 	private int side;
 

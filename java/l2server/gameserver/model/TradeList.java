@@ -150,7 +150,6 @@ public class TradeList
 			return location;
 		}
 
-
 		@Override
 		public int getEnchantLevel()
 		{
@@ -242,14 +241,6 @@ public class TradeList
 		items = new CopyOnWriteArrayList<>();
 		this.owner = owner;
 	}
-
-
-
-
-
-
-
-
 
 	public void setPackaged(boolean value)
 	{
@@ -567,8 +558,8 @@ public class TradeList
 			TradeList partnerList = partner.getActiveTradeList();
 			if (partnerList == null)
 			{
-				Log.warning(partner.getName() + ": Trading partner (" + partner.getName() +
-						") is invalid in this trade!");
+				Log.warning(
+						partner.getName() + ": Trading partner (" + partner.getName() + ") is invalid in this trade!");
 				return false;
 			}
 

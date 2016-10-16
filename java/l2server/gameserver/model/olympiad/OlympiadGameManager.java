@@ -29,7 +29,6 @@ import java.util.List;
  */
 public class OlympiadGameManager implements Runnable
 {
-
 	private volatile boolean battleStarted = false;
 	private final OlympiadGameTask[] tasks;
 

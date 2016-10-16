@@ -41,11 +41,10 @@ import java.util.logging.Level;
  */
 public class TradeController implements Reloadable
 {
-
 	private Map<Integer, L2TradeList> lists = new HashMap<>();
 
 	public static TradeController getInstance()
-    {
+	{
 		return SingletonHolder.instance;
 	}
 
@@ -67,7 +66,6 @@ public class TradeController implements Reloadable
 		}
 
 		return load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/");
-
 	}
 
 	public boolean load(String path)
@@ -203,10 +201,10 @@ public class TradeController implements Reloadable
 				long savedTime = rset.getLong("time");
 
 				L2TradeList tradeList = lists.get(shopId);
-                if (tradeList == null)
-                {
-                    continue;
-                }
+				if (tradeList == null)
+				{
+					continue;
+				}
 
 				L2TradeItem item = tradeList.getItemById(itemId);
 

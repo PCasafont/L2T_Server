@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class CharCreateOk extends L2GameServerPacket
 {
-
 	@Override
 	protected final void writeImpl()
 	{

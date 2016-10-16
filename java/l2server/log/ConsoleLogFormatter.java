@@ -28,7 +28,6 @@ import java.util.logging.LogRecord;
  */
 public class ConsoleLogFormatter extends Formatter
 {
-
 	/*
 	 * (non-Javadoc)
 	 *

@@ -60,7 +60,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			return;
 		}
 		/*
-         * FIXME: check this, maybe useful
+		 * FIXME: check this, maybe useful
 		if (!InstancedEvent.onScrollUse(playable.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);

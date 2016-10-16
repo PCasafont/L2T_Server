@@ -107,8 +107,7 @@ public class L2Spawn
 	@Getter private int randomRespawnDelay;
 
 	@Getter @Setter private int instanceId = 0;
-	@SuppressWarnings("unused")
-	private int dimensionId = 0;
+	@SuppressWarnings("unused") private int dimensionId = 0;
 
 	/**
 	 * If True a L2NpcInstance is respawned each time that another is killed
@@ -256,8 +255,6 @@ public class L2Spawn
 		doRespawn = true;
 	}
 
-
-
 	public boolean doSpawn()
 	{
 		return doSpawn(false);
@@ -391,11 +388,10 @@ public class L2Spawn
 		{
 			// Set champion on next spawn
 			if (npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion &&
-					!npc.isRaid() && !npc.isRaidMinion() &&
-					!(npc instanceof L2ArmyMonsterInstance) && !(npc instanceof L2ChessPieceInstance) &&
-					!(npc instanceof L2EventGolemInstance) && getNpcId() != 44000 &&
-					Config.L2JMOD_CHAMPION_FREQUENCY > 0 && npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL &&
-					npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
+					!npc.isRaid() && !npc.isRaidMinion() && !(npc instanceof L2ArmyMonsterInstance) &&
+					!(npc instanceof L2ChessPieceInstance) && !(npc instanceof L2EventGolemInstance) &&
+					getNpcId() != 44000 && Config.L2JMOD_CHAMPION_FREQUENCY > 0 &&
+					npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL && npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
 					(Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
 			{
 				int random = Rnd.get(100);
@@ -565,7 +561,6 @@ public class L2Spawn
 		randomRespawnDelay = i * 1000;
 	}
 
-
 	private void respawnNpc()
 	{
 		if (doRespawn)
@@ -581,18 +576,13 @@ public class L2Spawn
 		return npc.getTemplate();
 	}
 
-
-
-
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString()
 	{
-		return "L2Spawn [_template=" + getNpcId() + ", _locX=" + locX + ", _locY=" + locY + ", _locZ=" +
-				locZ +
+		return "L2Spawn [_template=" + getNpcId() + ", _locX=" + locX + ", _locY=" + locY + ", _locZ=" + locZ +
 				", _heading=" + heading + "]";
 	}
 }

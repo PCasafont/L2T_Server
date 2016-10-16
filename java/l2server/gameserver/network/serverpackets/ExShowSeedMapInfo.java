@@ -29,7 +29,6 @@ import l2server.gameserver.instancemanager.GraciaSeedsManager;
  */
 public class ExShowSeedMapInfo extends L2GameServerPacket
 {
-
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

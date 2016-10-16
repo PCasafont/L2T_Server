@@ -38,7 +38,6 @@ import java.util.List;
  */
 public class ExCubeGameTeamList extends L2GameServerPacket
 {
-
 	// Players Lists
 	List<L2PcInstance> bluePlayers;
 	List<L2PcInstance> redPlayers;

@@ -134,14 +134,12 @@ public class L2CastleTeleportZone extends L2ZoneType
 				L2PcInstance player = (L2PcInstance) character;
 				if (player.isOnline())
 				{
-					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2],
-							spawnLoc[3]),
+					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2], spawnLoc[3]),
 							spawnLoc[4]);
 				}
 			}
 		}
 	}
-
 
 	/**
 	 * Get the spawn locations

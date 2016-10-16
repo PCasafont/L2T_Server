@@ -393,7 +393,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					break;
 				case 4: // Add Subclass - Action (Subclass 4 x[x])
 					/*
-                     * If the character is less than level 75 on any of their previously chosen
+					 * If the character is less than level 75 on any of their previously chosen
 					 * classes then disallow them to change to their most recently added sub-class choice.
 					 */
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
@@ -601,7 +601,8 @@ public class L2VillageMasterInstance extends L2NpcInstance
 						 * up some place down the line along with other seemingly unrelated
 						 * problems.
 						 */
-						player.setActiveClass(0); // Also updates this.classIndex plus switching this.classid to baseclass.
+						player.setActiveClass(
+								0); // Also updates this.classIndex plus switching this.classid to baseclass.
 
 						player.sendMessage(
 								"The sub class could not be added, you have been reverted to your base class.");
@@ -733,7 +734,6 @@ public class L2VillageMasterInstance extends L2NpcInstance
 
 		qs = player.getQuestState("235_MimirsElixir");
 		return !(qs == null || !qs.isCompleted());
-
 	}
 
 	/*

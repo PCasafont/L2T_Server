@@ -41,9 +41,6 @@ public class CellNode extends AbstractNode
 		isInUse = true;
 	}
 
-
-
-
 	public void setCost(double cost)
 	{
 		this.cost = (float) cost;

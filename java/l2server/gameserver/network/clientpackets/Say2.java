@@ -39,7 +39,6 @@ import java.sql.PreparedStatement;
  */
 public final class Say2 extends L2GameClientPacket
 {
-
 	//private static Logger logChat = Logger.getLogger("chat");
 
 	public static final int ALL = 0;
@@ -151,8 +150,7 @@ public final class Say2 extends L2GameClientPacket
 		// April 27, 2009 - Verified on Gracia P2 & Final official client as 105
 		// Allow higher limit if player shift some item (text is longer then)
 		if (!activeChar.isGM() &&
-				(text.indexOf(8) >= 0 && text.length() > 500 || text.indexOf(8) < 0 &&
-						text.length() > 105))
+				(text.indexOf(8) >= 0 && text.length() > 500 || text.indexOf(8) < 0 && text.length() > 105))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
@@ -166,7 +164,7 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 		/*
-        if (activeChar.isPlayingMiniGame())
+		if (activeChar.isPlayingMiniGame())
 		{
 			activeChar.sendMessage("You may not chat at this time.");
 			return;
@@ -190,8 +188,7 @@ public final class Say2 extends L2GameClientPacket
 
 		if (activeChar.isChatBanned())
 		{
-			if (type == ALL || type == SHOUT || type == TRADE || type == HERO_VOICE ||
-					type == GLOBAL)
+			if (type == ALL || type == SHOUT || type == TRADE || type == HERO_VOICE || type == GLOBAL)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;

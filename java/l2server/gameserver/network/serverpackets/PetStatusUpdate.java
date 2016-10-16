@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public class PetStatusUpdate extends L2GameServerPacket
 {
-
 	private L2Summon summon;
 	private int maxHp, maxMp;
 	private int maxFed, curFed;

@@ -23,7 +23,6 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillDefault extends L2Skill
 {
-
 	public L2SkillDefault(StatsSet set)
 	{
 		super(set);

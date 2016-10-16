@@ -133,7 +133,6 @@ public class MMOConnection<T extends MMOClient<?>>
 		return address;
 	}
 
-
 	final void close() throws IOException
 	{
 		socket.close();
@@ -220,7 +219,6 @@ public class MMOConnection<T extends MMOClient<?>>
 	@SuppressWarnings("unchecked")
 	public final void close(final SendablePacket<T> sp)
 	{
-
 		close(new SendablePacket[]{sp});
 	}
 

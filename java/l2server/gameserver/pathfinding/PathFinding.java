@@ -96,7 +96,7 @@ public abstract class PathFinding
 		return null;
 	}
 	 */
-    /*
+	/*
 	public List<AbstractNodeLoc> searchAStar(XmlNode start, Node end, int instanceId)
 	{
 		// Not operational yet?

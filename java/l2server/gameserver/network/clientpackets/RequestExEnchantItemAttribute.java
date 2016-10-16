@@ -32,7 +32,6 @@ import l2server.util.Rnd;
 
 public class RequestExEnchantItemAttribute extends L2GameClientPacket
 {
-
 	private int objectId;
 	private long count;
 

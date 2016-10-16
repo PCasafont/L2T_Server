@@ -23,7 +23,6 @@ import l2server.util.Rnd;
  */
 public final class LambdaRnd extends Lambda
 {
-
 	private final Lambda max;
 	private final boolean linear;
 

@@ -45,7 +45,6 @@ import java.util.logging.Level;
  */
 public class CursedWeaponsManager
 {
-
 	public static CursedWeaponsManager getInstance()
 	{
 		return SingletonHolder.instance;
@@ -163,7 +162,6 @@ public class CursedWeaponsManager
 		catch (Exception e)
 		{
 			Log.log(Level.SEVERE, "Error parsing cursed weapons file.", e);
-
 		}
 	}
 
@@ -212,7 +210,6 @@ public class CursedWeaponsManager
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING, "Could not restore CursedWeapons data: " + e.getMessage(), e);
-
 		}
 		finally
 		{
@@ -275,7 +272,7 @@ public class CursedWeaponsManager
 
 						// Delete the skill
 						/*
-                        statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=");
+						statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=");
 						statement.setInt(1, playerId);
 						statement.setInt(2, cw.getSkillId());
 						if (statement.executeUpdate() != 1)

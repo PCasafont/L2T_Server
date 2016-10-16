@@ -167,8 +167,7 @@ public class RequestSetCrop extends L2GameClientPacket
 				return null;
 			}
 
-			return CastleManorManager.getInstance().getNewCropProcure(itemId, sales, type, price,
-					sales);
+			return CastleManorManager.getInstance().getNewCropProcure(itemId, sales, type, price, sales);
 		}
 	}
 }

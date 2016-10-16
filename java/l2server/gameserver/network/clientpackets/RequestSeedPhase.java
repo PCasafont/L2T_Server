@@ -23,7 +23,6 @@ import l2server.gameserver.network.serverpackets.ExShowSeedMapInfo;
  */
 public class RequestSeedPhase extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

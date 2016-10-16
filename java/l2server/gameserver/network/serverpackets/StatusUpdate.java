@@ -110,7 +110,7 @@ public final class StatusUpdate extends L2GameServerPacket
 		attributes = new ArrayList<>();
 		objectId = object.getObjectId();
 		/*if (object instanceof L2Attackable || object instanceof L2Playable
-                && getClient() != null && getClient().getActiveChar() != null
+				&& getClient() != null && getClient().getActiveChar() != null
 				&& getClient().getActiveChar().getObjectId() != this.objectId)
 			this.maxHp = ((L2Character) object).getMaxVisibleHp();*/
 	}

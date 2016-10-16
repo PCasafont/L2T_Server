@@ -27,7 +27,6 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class TargetGround implements ISkillTargetTypeHandler
 {
-
 	/**
 	 */
 	@Override

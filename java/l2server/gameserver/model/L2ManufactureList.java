@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -73,6 +72,4 @@ public class L2ManufactureList
 	{
 		list.add(item);
 	}
-
-
 }

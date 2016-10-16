@@ -187,7 +187,6 @@ public class CharStat
 		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
 	}
 
-
 	/**
 	 * Return the Attack Speed multiplier (base+modifier) of the L2Character to
 	 * get proper animations.
@@ -323,7 +322,6 @@ public class CharStat
 		return val;
 	}
 
-
 	public void setExp(long value)
 	{
 		exp = value;
@@ -351,7 +349,6 @@ public class CharStat
 
 			if (activeChar.getTemporaryLevel() != 0)
 				return activeChar.getTemporaryLevel();
-
 		}*/
 		return level;
 	}
@@ -475,8 +472,7 @@ public class CharStat
 		{
 			bonusSpdAtk = Config.L2JMOD_CHAMPION_SPD_ATK;
 		}
-		double val =
-				calcStat(Stats.MAGIC_ATTACK_SPEED, activeChar.getTemplate().baseMAtkSpd * bonusSpdAtk, null, null);
+		double val = calcStat(Stats.MAGIC_ATTACK_SPEED, activeChar.getTemplate().baseMAtkSpd * bonusSpdAtk, null, null);
 		if (!Config.isServer(Config.TENKAI) && val > Config.MAX_MATK_SPEED && !activeChar.isGM())
 		{
 			val = Config.MAX_MATK_SPEED;
@@ -784,8 +780,7 @@ public class CharStat
 		}
 
 		int val = (int) Math
-				.round(calcStat(Stats.POWER_ATTACK_SPEED, activeChar.getTemplate().basePAtkSpd * bonusAtk, null,
-						null));
+				.round(calcStat(Stats.POWER_ATTACK_SPEED, activeChar.getTemplate().basePAtkSpd * bonusAtk, null, null));
 		if (Config.isServer(Config.TENKAI) && val > 1400)
 		{
 			val = 1400 + (int) Math.pow(val - 1400, 0.75);
@@ -966,7 +961,6 @@ public class CharStat
 	{
 		return (int) calcStat(Stats.SHIELD_DEFENCE, 0, null, null);
 	}
-
 
 	public void setSp(long value)
 	{

@@ -71,7 +71,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 				}
 			}
 			/*else
-            {
+			{
 				if (getEffector() instanceof L2PcInstance)
 				{
 					for (L2SummonInstance summon : ((L2PcInstance)getEffector()).getSummons())
@@ -154,7 +154,6 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 			}
 
 			return Util.checkIfInRange(700, getEffector(), getEffected(), false);
-
 		}
 		else
 		{

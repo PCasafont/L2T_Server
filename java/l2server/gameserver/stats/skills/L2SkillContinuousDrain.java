@@ -143,7 +143,7 @@ public class L2SkillContinuousDrain extends L2Skill
 					target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
 			{
 				/*if (this.cp > 0)
-                {
+				{
 					if (damage < this.cp)
 						this.drain = 0;
 					else

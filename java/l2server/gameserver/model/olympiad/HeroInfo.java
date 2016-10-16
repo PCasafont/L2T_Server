@@ -80,42 +80,18 @@ public class HeroInfo
 		this.played = played;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void increaseCount()
 	{
 		count++;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public void addDiaryEntry(DiaryEntry entry)
 	{
 		diary.add(entry);
 	}
 
-
 	public void addFight(FightInfo fight)
 	{
 		fights.add(fight);
 	}
-
 }

@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class ResidentialSkillTable
 {
-
 	private static ResidentialSkillTable instance = null;
 	private static TIntObjectHashMap<ArrayList<L2Skill>> list;
 

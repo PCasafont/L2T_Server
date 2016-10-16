@@ -40,7 +40,6 @@ import java.util.logging.Level;
  */
 public class MapRegionTable
 {
-
 	private final int[][] regions = new int[16][18];
 
 	public enum TeleportWhereType
@@ -516,7 +515,6 @@ public class MapRegionTable
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.ClanHall)
 				{
-
 					clanhall = ClanHallManager.getInstance().getClanHallByOwner(player.getClan());
 					if (clanhall != null)
 					{

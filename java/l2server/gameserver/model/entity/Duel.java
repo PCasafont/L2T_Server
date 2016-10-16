@@ -32,7 +32,6 @@ import java.util.logging.Level;
 
 public class Duel
 {
-
 	public static final int DUELSTATE_NODUEL = 0;
 	public static final int DUELSTATE_DUELLING = 1;
 	public static final int DUELSTATE_DEAD = 2;
@@ -170,7 +169,6 @@ public class Duel
 				player.teleToLocation(x, y, z);
 			}
 		}
-
 	}
 
 	// ===============================================================
@@ -522,7 +520,6 @@ public class Duel
 	{
 		this.finished = finished;
 	}
-
 
 	/**
 	 * teleport all players to the given coordinates

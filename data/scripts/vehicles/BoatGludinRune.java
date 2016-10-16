@@ -15,9 +15,6 @@
 
 package vehicles;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
@@ -26,6 +23,9 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.log.Log;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author DS
@@ -154,8 +154,9 @@ public class BoatGludinRune implements Runnable
 		ARRIVAL_GLUDIN5 = new CreatureSay(0, Say2.BOAT, 801, 1632);
 		ARRIVAL_GLUDIN1 = new CreatureSay(0, Say2.BOAT, 801, 1633);
 
-		GLUDIN_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), GLUDIN_DOCK[0].x,
-				GLUDIN_DOCK[0].y, GLUDIN_DOCK[0].z);
+		GLUDIN_SOUND =
+				new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), GLUDIN_DOCK[0].x,
+						GLUDIN_DOCK[0].y, GLUDIN_DOCK[0].z);
 		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), RUNE_DOCK[0].x,
 				RUNE_DOCK[0].y, RUNE_DOCK[0].z);
 	}

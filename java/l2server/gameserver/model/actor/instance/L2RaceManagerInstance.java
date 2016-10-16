@@ -35,8 +35,7 @@ public class L2RaceManagerInstance extends L2Npc
 	public static final int LANES = 8;
 	public static final int WINDOW_START = 0;
 
-	@SuppressWarnings("unused")
-	private static List<Race> history;
+	@SuppressWarnings("unused") private static List<Race> history;
 	private static List<L2RaceManagerInstance> managers;
 	protected static int raceNumber = 4;
 
@@ -474,10 +473,6 @@ public class L2RaceManagerInstance extends L2Npc
 				odds = pOdds;
 				payout = pPayout;
 			}
-
-
-
-
 		}
 	}
 

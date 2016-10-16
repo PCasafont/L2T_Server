@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import gnu.trove.TIntHashSet;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
+import lombok.Getter;
 
 /**
  * This class ...
@@ -63,7 +63,6 @@ public final class L2EnchantSkillLearn
 		}
 
 		return level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size();
-
 	}
 
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)

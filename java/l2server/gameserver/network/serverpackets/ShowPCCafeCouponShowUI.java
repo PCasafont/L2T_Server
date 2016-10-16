@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShowPCCafeCouponShowUI extends L2GameServerPacket
 {
-
 	/**
 	 */
 	@Override

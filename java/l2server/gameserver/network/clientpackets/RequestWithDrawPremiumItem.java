@@ -28,7 +28,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 {
-
 	private int itemNum;
 	private int charId;
 	private long itemcount;

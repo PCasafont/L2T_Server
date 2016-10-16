@@ -57,8 +57,6 @@ public class EventsMatchMaker
 		}
 	}
 
-
-
 	class MatchMakingTask implements Runnable
 	{
 		private boolean pvp = true;
@@ -108,9 +106,6 @@ public class EventsMatchMaker
 			{
 			}
 		}
-
-
-
 
 		private boolean prepare()
 		{
@@ -786,7 +781,7 @@ public class EventsMatchMaker
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
 		/*String hwId = player.getClient().getHWId();
-        for (L2PcInstance registered : this.registeredPlayers.values())
+		for (L2PcInstance registered : this.registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null

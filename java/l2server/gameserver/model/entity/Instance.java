@@ -250,9 +250,6 @@ public class Instance
 		doors.add(newdoor);
 	}
 
-
-
-
 	public L2DoorInstance getDoor(int id)
 	{
 		for (L2DoorInstance temp : getDoors())
@@ -264,9 +261,6 @@ public class Instance
 		}
 		return null;
 	}
-
-
-
 
 	public boolean isTimerIncrease()
 	{
@@ -384,7 +378,7 @@ public class Instance
 				}
 			}
 			/*			else if (n.getName().equalsIgnoreCase("timeDelay"))
-                        {
+						{
 							a = n.getString("val");
 							if (a != null)
 								instance.setTimeDelay(Integer.parseInt(a);
@@ -455,7 +449,6 @@ public class Instance
 
 					if (d.getName().equalsIgnoreCase("spawn"))
 					{
-
 						npcId = d.getInt("npcId");
 						x = d.getInt("x");
 						y = d.getInt("y");
@@ -534,7 +527,6 @@ public class Instance
 		}
 		else if (players.isEmpty() && emptyDestroyTime > 0)
 		{
-
 			Long emptyTimeLeft = lastLeft + emptyDestroyTime - System.currentTimeMillis();
 			if (emptyTimeLeft <= 0)
 			{
@@ -648,7 +640,6 @@ public class Instance
 	{
 		EjectPlayerProcedure()
 		{
-
 		}
 
 		@Override

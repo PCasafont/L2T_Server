@@ -113,7 +113,6 @@ public class L2NoRestartZone extends L2ZoneType
 		// Do nothing.
 	}
 
-
 	public void setRestartAllowedTime(int time)
 	{
 		restartAllowedTime = time;

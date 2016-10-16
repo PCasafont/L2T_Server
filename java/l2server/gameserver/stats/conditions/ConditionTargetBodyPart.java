@@ -27,7 +27,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class ConditionTargetBodyPart extends Condition
 {
-
 	private L2Armor armor;
 
 	/**

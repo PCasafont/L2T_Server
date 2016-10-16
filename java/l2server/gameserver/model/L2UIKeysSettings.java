@@ -35,7 +35,6 @@ import java.util.logging.Level;
  */
 public class L2UIKeysSettings
 {
-
 	private final L2PcInstance player;
 
 	Map<Integer, List<ActionKey>> storedKeys;
@@ -160,7 +159,6 @@ public class L2UIKeysSettings
 
 	public void getCatsFromDB()
 	{
-
 		if (storedCategories != null)
 		{
 			return;

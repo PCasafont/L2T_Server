@@ -13,10 +13,10 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
+import lombok.Getter;
 
 /**
  * @author Luno
@@ -97,10 +97,7 @@ public final class L2ArmorSet
 
 		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		return shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(id);
-
 	}
-
-
 
 	public int getEnchant6skillId()
 	{

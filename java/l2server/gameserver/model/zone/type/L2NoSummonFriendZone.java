@@ -25,7 +25,6 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoSummonFriendZone extends L2ZoneType
 {
-
 	public L2NoSummonFriendZone(int id)
 	{
 		super(id);

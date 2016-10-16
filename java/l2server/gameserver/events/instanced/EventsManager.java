@@ -122,7 +122,6 @@ public class EventsManager implements Reloadable
 		return locations.get(id);
 	}
 
-
 	class EventManagerTask implements Runnable
 	{
 		@Getter private int minutesToStart;
@@ -176,12 +175,11 @@ public class EventsManager implements Reloadable
 				currentConfig = new EventConfig();
 				minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 			}
-			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 ||
-					minutesToStart == 1)
+			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 || minutesToStart == 1)
 			{
 				// Auto join!
 				/*if (this.minutesToStart == 1)
-                {
+				{
 					for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 					{
 						if (player == null || player.isGM())
@@ -199,10 +197,7 @@ public class EventsManager implements Reloadable
 								5000)), 5000L);
 			}
 		}
-
 	}
-
-
 
 	private boolean prepare()
 	{

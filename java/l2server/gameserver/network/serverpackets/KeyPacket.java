@@ -24,7 +24,6 @@ import l2server.Config;
  */
 public final class KeyPacket extends L2GameServerPacket
 {
-
 	private byte[] key;
 	private int id;
 

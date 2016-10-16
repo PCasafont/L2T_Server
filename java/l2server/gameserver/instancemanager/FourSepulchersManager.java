@@ -51,7 +51,6 @@ import java.util.logging.Level;
  */
 public class FourSepulchersManager
 {
-
 	private static final String QUEST_ID = "620_FourGoblets";
 
 	private static final int ENTRANCE_PASS = 7075;
@@ -582,7 +581,6 @@ public class FourSepulchersManager
 
 	private void loadMagicalMonsters()
 	{
-
 		magicalMonsters.clear();
 
 		int loaded = 0;
@@ -737,7 +735,6 @@ public class FourSepulchersManager
 
 	private void loadEmperorsGraveMonsters()
 	{
-
 		emperorsGraveNpcs.clear();
 
 		int loaded = 0;

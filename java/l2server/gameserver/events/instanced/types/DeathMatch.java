@@ -19,7 +19,6 @@ import java.util.List;
  */
 public class DeathMatch extends EventInstance
 {
-
 	public DeathMatch(int id, EventConfig config)
 	{
 		super(id, config);

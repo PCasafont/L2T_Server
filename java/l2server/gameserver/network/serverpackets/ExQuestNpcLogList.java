@@ -22,7 +22,6 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class ExQuestNpcLogList extends L2GameServerPacket
 {
-
 	private QuestState state;
 
 	public ExQuestNpcLogList(QuestState st)

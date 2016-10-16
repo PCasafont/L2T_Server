@@ -941,7 +941,7 @@ public class AdminTest implements IAdminCommandHandler
 
 					String toLog = "";
 					/*
-                    toLog += "\t<item>\n";
+					toLog += "\t<item>\n";
 					toLog += "\t\t<ingredient id=\"50009\" count=\"250\" /> <!-- Raid Heart -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"75\" /> <!-- " + baseItemName + " -->\n";

@@ -29,7 +29,6 @@ import l2server.util.Point3D;
  */
 public final class RequestGetOnVehicle extends L2GameClientPacket
 {
-
 	private int boatId;
 	private Point3D pos;
 

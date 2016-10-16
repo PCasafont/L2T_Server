@@ -45,7 +45,6 @@ public final class RequestBBSWrite extends L2GameClientPacket
 	@Override
 	protected final void runImpl()
 	{
-		CommunityBoard.getInstance().handleWriteCommands(getClient(), url, arg1, arg2, arg3, arg4,
-				arg5);
+		CommunityBoard.getInstance().handleWriteCommands(getClient(), url, arg1, arg2, arg3, arg4, arg5);
 	}
 }

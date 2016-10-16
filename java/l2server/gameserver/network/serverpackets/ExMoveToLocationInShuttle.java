@@ -23,8 +23,7 @@ public class ExMoveToLocationInShuttle extends L2GameServerPacket
 	private int charObjId;
 	private int shuttleId;
 	private Point3D destination;
-	@SuppressWarnings("unused")
-	private int heading;
+	@SuppressWarnings("unused") private int heading;
 
 	public ExMoveToLocationInShuttle(L2PcInstance player)
 	{

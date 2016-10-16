@@ -25,8 +25,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -40,6 +38,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
+
+import java.util.StringTokenizer;
 
 /**
  * Small typo fix by Zoey76 24/02/2011

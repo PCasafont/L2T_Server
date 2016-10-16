@@ -15,7 +15,6 @@ import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.log.Log;
 import l2server.util.Rnd;

@@ -43,7 +43,6 @@ import java.util.Map;
 
 public class CrystalCaverns extends Quest
 {
-
 	private static class CrystalGolem
 	{
 		public L2ItemInstance foodItem = null;
@@ -358,7 +357,6 @@ public class CrystalCaverns extends Quest
 			{22418, 146795, 152641, -12165, 33850}
 			// {22308, 145093, 152502, -12165, 31841},{22308, 146158, 152776, -12165, 30810},
 			// {22308, 146116, 152976, -12133, 32571},
-
 	};
 	private static int[][] STEAM2_SPAWNS = {
 			{22306, 147740, 152767, -12165, 65043},
@@ -377,7 +375,7 @@ public class CrystalCaverns extends Quest
 			{22307, 151058, 152316, -12146, 65342},
 			{22307, 151057, 152461, -12165, 2171}
 	/*{22308, 150794, 152455, -12165, 31613},{22308, 150665, 152383, -12165, 32767},
-    {22308, 151697, 152621, -12167, 31423},{22309, 151061, 152581, -12165, 6228},
+	{22308, 151697, 152621, -12167, 31423},{22309, 151061, 152581, -12165, 6228},
 	{22309, 150653, 152253, -12132, 31343},{22309, 150628, 152431, -12165, 33022},
 	{22309, 151620, 152487, -12165, 30114},{22309, 151672, 152544, -12165, 31846},
 	{22309, 150488, 152350, -12165, 29072},{22310, 151139, 152238, -12132, 1069}*/
@@ -853,7 +851,6 @@ public class CrystalCaverns extends Quest
 		addSpawn(29102,154380,143468,-12708,43943,false,0,false,world.instanceId,0);//down power
 		addSpawn(32271,153573,142069,-9722,11175,false,0,false,world.instanceId);
 		world.Baylor = addSpawn(BAYLOR,153557,142089,-12735,11175,false,0,false,world.instanceId,0);
-
 	}*/
 
 	@Override
@@ -918,7 +915,6 @@ public class CrystalCaverns extends Quest
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-
 		boolean doReturn = true;
 		for (L2Object obj : targets)
 		{

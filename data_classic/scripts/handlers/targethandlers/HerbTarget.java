@@ -15,8 +15,6 @@
 
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Object;
@@ -26,6 +24,8 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
+
+import java.util.ArrayList;
 
 /**
  * Used by all herb skills.

@@ -26,7 +26,6 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EtcStatusUpdate extends L2GameServerPacket
 {
-
 	private L2PcInstance activeChar;
 
 	public EtcStatusUpdate(L2PcInstance activeChar)

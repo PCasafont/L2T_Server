@@ -25,7 +25,6 @@ import l2server.Config;
  */
 public class RequestEx2ndPasswordVerify extends L2GameClientPacket
 {
-
 	//
 	String password;
 

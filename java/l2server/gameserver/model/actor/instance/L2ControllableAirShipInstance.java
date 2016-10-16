@@ -200,7 +200,6 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public void setFuel(int f)
 	{
-
 		final int old = fuel;
 		if (f < 0)
 		{

@@ -103,7 +103,6 @@ public class L2NpcAIData
 		_skill_chance = skill_chance;
 	}
 
-
 	public void setSoulShot(int soulshot)
 	{
 		this.soulshot = soulshot;
@@ -162,7 +161,6 @@ public class L2NpcAIData
 		}
 	}
 
-
 	public void setEnemyClan(String enemyClan)
 	{
 		if (enemyClan != null && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
@@ -170,12 +168,6 @@ public class L2NpcAIData
 			this.enemyClan = enemyClan.intern();
 		}
 	}
-
-
-
-
-
-
 
 	public void setAi(String ai)
 	{
@@ -285,11 +277,6 @@ public class L2NpcAIData
 		return ischaos;
 	}
 
-
-
-
-
-
 	public int getMinSocial(boolean second)
 	{
 		return !second ? minSocial1 : minSocial2;
@@ -299,7 +286,6 @@ public class L2NpcAIData
 	{
 		return !second ? maxSocial1 : maxSocial2;
 	}
-
 
 	/*
 

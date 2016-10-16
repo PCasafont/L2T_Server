@@ -101,5 +101,4 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 			ClanRecruitManager.getInstance().removeApplicant(applicantId);
 		}
 	}
-
 }

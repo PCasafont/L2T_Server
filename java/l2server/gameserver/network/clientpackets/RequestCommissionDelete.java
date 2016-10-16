@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCommissionDelete extends L2GameClientPacket
 {
-
 	long auctionID;
 	int category;
 	int duration;

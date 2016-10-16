@@ -22,10 +22,8 @@ package l2server.gameserver.network.serverpackets;
  */
 public class PledgeShowMemberListDeleteAll extends L2GameServerPacket
 {
-
 	public PledgeShowMemberListDeleteAll()
 	{
-
 	}
 
 	@Override

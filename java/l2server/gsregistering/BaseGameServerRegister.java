@@ -81,7 +81,7 @@ public abstract class BaseGameServerRegister
 					gui = false;
 					break;
 			/* --force
-             * Forces GameServer register operations to overwrite a server if necessary
+			 * Forces GameServer register operations to overwrite a server if necessary
 			 */
 				case "-f":
 				case "--force":
@@ -320,7 +320,6 @@ public abstract class BaseGameServerRegister
 		loaded = true;
 	}
 
-
 	public abstract void showError(String msg, Throwable t);
 
 	/**
@@ -429,7 +428,6 @@ public abstract class BaseGameServerRegister
 
 	static class RegisterTask extends BaseTask
 	{
-
 		private final int id;
 		private final String outDir;
 		private boolean force;

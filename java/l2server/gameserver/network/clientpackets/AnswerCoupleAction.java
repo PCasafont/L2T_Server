@@ -28,7 +28,6 @@ import l2server.gameserver.util.Util;
  */
 public class AnswerCoupleAction extends L2GameClientPacket
 {
-
 	private int charObjId;
 	private int actionId;
 	private int answer;

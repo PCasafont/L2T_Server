@@ -15,13 +15,13 @@
 
 package handlers.usercommandhandlers;
 
-import java.util.List;
-
 import l2server.gameserver.handler.IUserCommandHandler;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.List;
 
 /**
  * Support for /clanwarlist command

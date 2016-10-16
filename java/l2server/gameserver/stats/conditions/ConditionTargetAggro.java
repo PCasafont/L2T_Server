@@ -27,7 +27,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetAggro extends Condition
 {
-
 	private final boolean isAggro;
 
 	/**

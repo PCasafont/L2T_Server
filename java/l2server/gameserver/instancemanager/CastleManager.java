@@ -34,7 +34,6 @@ import java.util.logging.Level;
 
 public class CastleManager implements InstanceListManager
 {
-
 	public static CastleManager getInstance()
 	{
 		return SingletonHolder.instance;

@@ -132,8 +132,7 @@ public class L2SkillContinuousCasts extends L2Skill
 				}
 			}
 
-			L2Skill skillToCast =
-					SkillTable.getInstance().getInfo(skillId, level, skillEnchantRoute, skillEnchantLvl);
+			L2Skill skillToCast = SkillTable.getInstance().getInfo(skillId, level, skillEnchantRoute, skillEnchantLvl);
 			//System.out.println(targetObj + " " + level);
 			if (!skillToCast.checkCondition(activeChar, target, false))
 			{

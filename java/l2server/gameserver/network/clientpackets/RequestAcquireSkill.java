@@ -37,11 +37,9 @@ import java.util.List;
  */
 public class RequestAcquireSkill extends L2GameClientPacket
 {
-
 	private int id;
 	private int level;
-	@SuppressWarnings("unused")
-	private int enchantHash;
+	@SuppressWarnings("unused") private int enchantHash;
 	private int skillType;
 	private int subType;
 

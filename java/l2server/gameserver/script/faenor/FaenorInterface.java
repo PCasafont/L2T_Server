@@ -33,7 +33,6 @@ import java.util.List;
  */
 public class FaenorInterface implements EngineInterface
 {
-
 	public static FaenorInterface getInstance()
 	{
 		return SingletonHolder.instance;

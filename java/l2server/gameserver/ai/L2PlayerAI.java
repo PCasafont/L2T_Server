@@ -30,7 +30,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
 
 public class L2PlayerAI extends L2PlayableAI
 {
-
 	private boolean thinking; // to prevent recursive thinking
 
 	IntentionCommand nextIntention = null;
@@ -62,7 +61,7 @@ public class L2PlayerAI extends L2PlayableAI
 	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
 	{
 		/*
-         if (Config.DEBUG)
+		 if (Config.DEBUG)
 		 Log.warning("L2PlayerAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
 		*/
 

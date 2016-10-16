@@ -26,7 +26,6 @@ import l2server.log.Log;
  */
 public class VoicedCommandHandler
 {
-
 	private TIntObjectHashMap<IVoicedCommandHandler> datatable;
 
 	public static VoicedCommandHandler getInstance()

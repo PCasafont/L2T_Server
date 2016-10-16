@@ -21,7 +21,6 @@ import l2server.util.Point3D;
 
 public class ExGetOnAirShip extends L2GameServerPacket
 {
-
 	private final int playerId, airShipId;
 	private final Point3D pos;
 

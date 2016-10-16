@@ -122,7 +122,6 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		setHome(c.getX(), c.getY(), c.getZ());
 	}
 
-
 	public void setRemainingTime(int duration)
 	{
 		remainingTime = duration;
@@ -479,7 +478,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 					}
 				}
 				/* There are too many conflicting reports about whether distance from home should
-                 * be taken into consideration.  Disabled for now.
+				 * be taken into consideration.  Disabled for now.
 				 *
 				if (this.tamedBeast.isTooFarFromHome())
 					this.tamedBeast.setRemainingTime(-1);

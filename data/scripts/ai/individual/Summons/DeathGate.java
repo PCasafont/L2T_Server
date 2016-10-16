@@ -15,14 +15,14 @@
 
 package ai.individual.Summons;
 
-import java.util.concurrent.ScheduledFuture;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -96,8 +96,7 @@ public class DeathGate extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() ||
-					deathGate.getOwner().isAlikeDead())
+			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() || deathGate.getOwner().isAlikeDead())
 			{
 				if (schedule != null)
 				{

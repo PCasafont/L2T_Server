@@ -31,7 +31,6 @@ import l2server.log.Log;
  */
 public final class RequestAutoSoulShot extends L2GameClientPacket
 {
-
 	// format cd
 	private int itemId;
 	private int enabled; // 1 = on : 0 = off;
@@ -77,8 +76,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				if (itemId < 6535 || itemId > 6540)
 				{
 					// Attempt to charge first shot on activation
-					if (itemId == 6645 || itemId == 6646 || itemId == 6647 || itemId == 20332 ||
-							itemId == 20333 ||
+					if (itemId == 6645 || itemId == 6646 || itemId == 6647 || itemId == 20332 || itemId == 20333 ||
 							itemId == 20334)
 					{
 						boolean hasSummon = false;
@@ -103,8 +101,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 								}
 							}
 							activeChar.addAutoSoulShot(item);
-							activeChar.sendPacket(
-									new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
+							activeChar
+									.sendPacket(new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
 
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -140,8 +138,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 								}
 							}
 							activeChar.addAutoSoulShot(item);
-							activeChar.sendPacket(
-									new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
+							activeChar
+									.sendPacket(new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
 
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -165,8 +163,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 								item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain())
 						{
 							activeChar.addAutoSoulShot(item);
-							activeChar.sendPacket(
-									new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
+							activeChar
+									.sendPacket(new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
 						}
 						else
 						{
@@ -183,8 +181,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							}
 
 							activeChar.addAutoSoulShot(item);
-							activeChar.sendPacket(
-									new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
+							activeChar
+									.sendPacket(new ExAutoSoulShot(itemId, enabled, item.getItem().getShotTypeIndex()));
 						}
 
 						// start the auto soulshot use

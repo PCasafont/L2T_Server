@@ -32,7 +32,6 @@ import java.util.Collection;
  */
 public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 {
-
 	private String pledgeName;
 
 	@Override

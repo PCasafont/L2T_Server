@@ -30,7 +30,6 @@ import java.util.logging.Level;
  */
 public final class SystemMessageId
 {
-
 	private static final SMLocalisation[] EMPTY_SML_ARRAY = new SMLocalisation[0];
 	public static final SystemMessageId[] EMPTY_ARRAY = new SystemMessageId[0];
 
@@ -21718,7 +21717,6 @@ public final class SystemMessageId
 		this.id = id;
 		localisations = EMPTY_SML_ARRAY;
 	}
-
 
 	private void setName(final String name)
 	{

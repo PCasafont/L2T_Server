@@ -1,6 +1,5 @@
 package l2server.gameserver.events;
 
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -172,7 +171,6 @@ public class HiddenChests
 		{
 			try
 			{
-
 				L2Spawn chestSpawn = new L2Spawn(tmpl);
 				int x = 0;
 				int y = 0;
@@ -340,7 +338,6 @@ public class HiddenChests
 			this.startTime = startTime;
 		}
 
-
 		/**
 		 * @see java.lang.Runnable#run()
 		 */
@@ -380,8 +377,7 @@ public class HiddenChests
 				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
 				player.setIsCastingNow(false);
 
-				if (player.getTarget() == chest && !chest.isDead() &&
-						Util.checkIfInRange(1000, player, chest, true))
+				if (player.getTarget() == chest && !chest.isDead() && Util.checkIfInRange(1000, player, chest, true))
 				{
 					String name = player.getName();
 					if (player.getActingPlayer() != null)
@@ -392,8 +388,7 @@ public class HiddenChests
 					chest.reduceCurrentHp(chest.getMaxHp() + 1, player, null);
 
 					ThreadPoolManager.getInstance()
-							.scheduleGeneral(() -> HiddenChests.getInstance().moveChest(chest, !player.isGM()),
-									5000L);
+							.scheduleGeneral(() -> HiddenChests.getInstance().moveChest(chest, !player.isGM()), 5000L);
 				}
 			}
 		}

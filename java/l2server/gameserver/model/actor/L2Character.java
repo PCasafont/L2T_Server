@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.actor;
 
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -782,7 +781,7 @@ public abstract class L2Character extends L2Object
 
 				L2PcInstance actor = (L2PcInstance) this;
 				/*
-                 * Players riding wyvern or with special (flying) transformations can't do melee attacks, only with skills
+				 * Players riding wyvern or with special (flying) transformations can't do melee attacks, only with skills
 				 */
 				if (actor.isMounted() && actor.getMountNpcId() == 12621 ||
 						actor.isTransformed() && !actor.getTransformation().canDoMeleeAttack())
@@ -1363,7 +1362,6 @@ public abstract class L2Character extends L2Object
 		{
 			if (((L2Attackable) this).soulshotcharged)
 			{
-
 				// Create a new hit task with Medium priority for hit 1
 				ThreadPoolManager.getInstance()
 						.scheduleAi(new HitTask(target, damage1, crit1, miss1, L2ItemInstance.CHARGED_SOULSHOT, shld1),
@@ -3116,8 +3114,7 @@ public abstract class L2Character extends L2Object
 
 	public final boolean isParalyzed()
 	{
-		return isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()) ||
-				isAffected(L2EffectType.PETRIFY.getMask());
+		return isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()) || isAffected(L2EffectType.PETRIFY.getMask());
 	}
 
 	public final void setIsParalyzed(boolean value)
@@ -3318,7 +3315,6 @@ public abstract class L2Character extends L2Object
 		setKnownList(new CharKnownList(this));
 	}
 
-
 	/**
 	 * Initializes the CharStat class of the L2Object,
 	 * is overwritten in classes that require a different CharStat Type.
@@ -3334,7 +3330,6 @@ public abstract class L2Character extends L2Object
 	{
 		stat = value;
 	}
-
 
 	/**
 	 * Initializes the CharStatus class of the L2Object,
@@ -3363,7 +3358,6 @@ public abstract class L2Character extends L2Object
 	{
 		setObjectPosition(new CharPosition(this));
 	}
-
 
 	/**
 	 * Set the template of the L2Character.<BR><BR>
@@ -3597,12 +3591,9 @@ public abstract class L2Character extends L2Object
 	class FlyToLocationTask implements Runnable
 	{
 		private final L2Character actor;
-		@SuppressWarnings("unused")
-		private final int x;
-		@SuppressWarnings("unused")
-		private final int y;
-		@SuppressWarnings("unused")
-		private final int z;
+		@SuppressWarnings("unused") private final int x;
+		@SuppressWarnings("unused") private final int y;
+		@SuppressWarnings("unused") private final int z;
 
 		public FlyToLocationTask(L2Character actor, int x, int y, int z)
 		{
@@ -4546,7 +4537,6 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void addStatFuncs(Func[] funcs)
 	{
-
 		ArrayList<Stats> modifiedStats = new ArrayList<>();
 
 		for (Func f : funcs)
@@ -4639,7 +4629,6 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void removeStatFuncs(Func[] funcs)
 	{
-
 		ArrayList<Stats> modifiedStats = new ArrayList<>();
 
 		for (Func f : funcs)
@@ -4676,7 +4665,6 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void removeStatsOwner(Object owner)
 	{
-
 		ArrayList<Stats> modifiedStats = null;
 
 		int i = 0;
@@ -5030,7 +5018,6 @@ public abstract class L2Character extends L2Object
 	{
 		return castInterruptTime > TimeController.getGameTicks();
 	}
-
 
 	public boolean canDoubleCast()
 	{
@@ -7204,7 +7191,6 @@ public abstract class L2Character extends L2Object
 		return skills.values().toArray(new L2Skill[skills.values().size()]);
 	}
 
-
 	/**
 	 * Return the level of a skill owned by the L2Character.<BR><BR>
 	 *
@@ -7798,7 +7784,6 @@ public abstract class L2Character extends L2Object
 	// Quest event ON_SPELL_FNISHED
 	protected void notifyQuestEventSkillFinished(L2Skill skill, L2Object target)
 	{
-
 	}
 
 	public Map<Integer, Long> getDisabledSkills()
@@ -8399,7 +8384,6 @@ public abstract class L2Character extends L2Object
 
 		return 1 + (double) Rnd.get(-random, random) / 100;
 	}
-
 
 	/**
 	 * Not Implemented.<BR><BR>
@@ -9037,8 +9021,6 @@ public abstract class L2Character extends L2Object
 
 	@Getter @Setter private L2Character faceoffTarget = null;
 
-
-
 	public void addSkillEffect(L2Skill newSkill)
 	{
 		if (newSkill != null)
@@ -9250,7 +9232,6 @@ public abstract class L2Character extends L2Object
 
 							return event.getParticipantTeam(activeChar.getObjectId()) ==
 									event.getParticipantTeam(target.getObjectId());
-
 						}
 
 						if (isInsideSiegeZone)
@@ -9368,7 +9349,6 @@ public abstract class L2Character extends L2Object
 
 							return event.getParticipantTeam(activeChar.getObjectId()) !=
 									event.getParticipantTeam(target.getObjectId());
-
 						}
 
 						if (activeChar.isInDuel())
@@ -9511,7 +9491,6 @@ public abstract class L2Character extends L2Object
 
 								return event.getParticipantTeam(activeChar.getObjectId()) !=
 										event.getParticipantTeam(target.getObjectId());
-
 							}
 
 							if (activeChar.isInDuel())
@@ -9658,7 +9637,6 @@ public abstract class L2Character extends L2Object
 
 								return event.getParticipantTeam(activeChar.getObjectId()) !=
 										event.getParticipantTeam(target.getObjectId());
-
 							}
 
 							if (isPressingCtrl)

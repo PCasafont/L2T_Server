@@ -135,7 +135,6 @@ public class ZoneCuboid extends L2ZoneForm
 			return true;
 		}
 		return lineSegmentsIntersect(x2, y1, x2, y2, ax1, ay2, ax2, ay2);
-
 	}
 
 	@Override

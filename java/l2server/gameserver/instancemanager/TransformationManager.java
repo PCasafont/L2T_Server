@@ -25,7 +25,6 @@ import l2server.log.Log;
  */
 public class TransformationManager
 {
-
 	public static TransformationManager getInstance()
 	{
 		return SingletonHolder.instance;

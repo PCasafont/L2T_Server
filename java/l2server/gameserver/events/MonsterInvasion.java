@@ -456,7 +456,6 @@ public class MonsterInvasion
 			this.startTime = startTime;
 		}
 
-
 		@Override
 		public void run()
 		{

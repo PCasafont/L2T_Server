@@ -48,7 +48,6 @@ import java.util.Map.Entry;
  */
 public class MultiSellChoose extends L2GameClientPacket
 {
-
 	private int listId;
 	private int entryId;
 	private long amount;
@@ -130,8 +129,7 @@ public class MultiSellChoose extends L2GameClientPacket
 				if (!entry.isStackable() && amount > 1)
 				{
 					Log.severe("Character: " + player.getName() +
-							" is trying to set amount > 1 on non-stackable multisell, id:" + listId + ":" +
-							entryId);
+							" is trying to set amount > 1 on non-stackable multisell, id:" + listId + ":" + entryId);
 					player.setMultiSell(null);
 					return;
 				}
@@ -181,7 +179,7 @@ public class MultiSellChoose extends L2GameClientPacket
 						player.sendMessage("Item ID = " + e.getItemId());
 					}
 					/*
-                    if (e.getItemId() == 13722)
+					if (e.getItemId() == 13722)
 					{
 						player.sendMessage("You can't use your Olympiad Tokens yet. Try again later.");
 						return;
@@ -632,8 +630,7 @@ public class MultiSellChoose extends L2GameClientPacket
 			long count = item.getPriceItems().get(priceItem);
 			L2ItemInstance itemToTake =
 					inv.getItemByItemId(priceItem.getItemId()); // initialize and initial guess for the item to take.
-			itemToTake =
-					player.checkItemManipulation(itemToTake.getObjectId(), count * amount, "Custom Private Store");
+			itemToTake = player.checkItemManipulation(itemToTake.getObjectId(), count * amount, "Custom Private Store");
 			if (itemToTake == null)
 			{
 				// this is a cheat, transaction will be aborted and if any items already taken will not be returned back to inventory!

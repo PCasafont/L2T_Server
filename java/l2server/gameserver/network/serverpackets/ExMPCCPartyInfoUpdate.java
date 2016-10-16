@@ -24,7 +24,6 @@ import l2server.gameserver.model.L2Party;
  */
 public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
 {
-
 	private L2Party party;
 	private int mode, LeaderOID, memberCount;
 	private String name;

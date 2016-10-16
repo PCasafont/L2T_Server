@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * @author Pere
  */
@@ -31,7 +32,4 @@ public class L2CrystallizeReward
 		this.count = count;
 		this.chance = chance;
 	}
-
-
-
 }

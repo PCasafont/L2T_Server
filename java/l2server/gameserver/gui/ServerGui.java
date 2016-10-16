@@ -1,6 +1,7 @@
 package l2server.gameserver.gui;
 
 import lombok.Getter;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -31,7 +32,7 @@ public class ServerGui
 		//Menu Bar Items
 		//File Menu
 		/*JMenuItem itemExit = new JMenuItem("Exit");
-        itemExit.setActionCommand("Exit");
+		itemExit.setActionCommand("Exit");
 		itemExit.addActionListener(this.menuListener);
 
 		this.fileMenu.add(itemExit);
@@ -68,7 +69,6 @@ public class ServerGui
 		Frame.setVisible(true);
 	}
 
-
 	private void addListeners()
 	{
 		//Window Closing
@@ -98,6 +98,4 @@ public class ServerGui
 	{
 		return Frame;
 	}
-
-
 }

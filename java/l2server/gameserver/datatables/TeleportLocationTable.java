@@ -33,7 +33,6 @@ import java.io.File;
  */
 public class TeleportLocationTable implements Reloadable
 {
-
 	private TIntObjectHashMap<L2TeleportLocation> teleports;
 
 	public static TeleportLocationTable getInstance()

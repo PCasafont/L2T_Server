@@ -240,7 +240,7 @@ public class ClanWarManager
 	{
 		//TODO: To review
 		/*int count = 0;
-        for (L2ClanMember player : clan1.getMembers())
+		for (L2ClanMember player : clan1.getMembers())
 		{
 			if (player != null && player.getPlayerInstance().getWantsPeace() == 1)
 				count++;
@@ -739,14 +739,10 @@ public class ClanWarManager
 			}
 		}
 
-
-
 		public WarState getState()
 		{
 			return warState;
 		}
-
-
 
 		public long getStartTimeInMilis()
 		{
@@ -785,8 +781,6 @@ public class ClanWarManager
 		{
 			return score2;
 		}
-
-
 
 		public void raiseClan1Score()
 		{
@@ -843,18 +837,15 @@ public class ClanWarManager
 			loser = clan;
 		}
 
-
 		public void setWinner(L2Clan clan)
 		{
 			winner = clan;
 		}
 
-
 		public void setTie()
 		{
 			tie = true;
 		}
-
 
 		public boolean isMutual()
 		{

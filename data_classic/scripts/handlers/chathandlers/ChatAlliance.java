@@ -32,7 +32,7 @@ public class ChatAlliance implements IChatHandler
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
 		/*if (activeChar.isGM())
-        {
+		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			GmListTable.broadcastToGMs(cs);
 		}

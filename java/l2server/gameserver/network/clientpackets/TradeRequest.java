@@ -34,7 +34,6 @@ import l2server.log.Log;
  */
 public final class TradeRequest extends L2GameClientPacket
 {
-
 	private int objectId;
 
 	@Override

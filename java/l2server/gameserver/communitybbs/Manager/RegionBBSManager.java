@@ -207,7 +207,6 @@ public class RegionBBSManager extends BaseBBSManager
 
 			try
 			{
-
 				L2PcInstance receiver = L2World.getInstance().getPlayer(ar2);
 				if (receiver == null)
 				{
@@ -473,9 +472,10 @@ public class RegionBBSManager extends BaseBBSManager
 				}
 				else
 				{
-					StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
-							String.valueOf(page + 1),
-							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+					StringUtil
+							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
+									String.valueOf(page + 1),
+									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
 				htmlCode.append("</tr></table>");
 			}
@@ -585,9 +585,10 @@ public class RegionBBSManager extends BaseBBSManager
 				}
 				else
 				{
-					StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
-							String.valueOf(page + 1),
-							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+					StringUtil
+							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
+									String.valueOf(page + 1),
+									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
 
 				htmlCode.append("</tr></table>");

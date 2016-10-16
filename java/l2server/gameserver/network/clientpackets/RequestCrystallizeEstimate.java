@@ -24,10 +24,8 @@ import l2server.gameserver.network.serverpackets.ExCrystalizingEstimation;
  */
 public final class RequestCrystallizeEstimate extends L2GameClientPacket
 {
-
 	private int itemObjId;
-	@SuppressWarnings("unused")
-	private long itemCount;
+	@SuppressWarnings("unused") private long itemCount;
 
 	@Override
 	protected void readImpl()

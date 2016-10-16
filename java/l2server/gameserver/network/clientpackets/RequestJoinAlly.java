@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestJoinAlly extends L2GameClientPacket
 {
-
 	//
 
 	private int id;

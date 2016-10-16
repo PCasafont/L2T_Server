@@ -31,7 +31,6 @@ import java.nio.ByteBuffer;
  */
 public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 {
-
 	/**
 	 */
 	@Override

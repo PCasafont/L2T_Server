@@ -190,15 +190,6 @@ public class L2SummonInstance extends L2Summon
 		return expPenalty;
 	}
 
-
-
-
-
-
-
-
-
-
 	public void setNextItemConsumeTime(int value)
 	{
 		nextItemConsumeTime = value;
@@ -314,8 +305,8 @@ public class L2SummonInstance extends L2Summon
 		{
 			if (Config.DEBUG)
 			{
-				Log.warning("L2SummonInstance: " + summon.getTemplate().Name + " (" + activeChar.getName() +
-						") run task.");
+				Log.warning(
+						"L2SummonInstance: " + summon.getTemplate().Name + " (" + activeChar.getName() + ") run task.");
 			}
 
 			try
@@ -347,7 +338,8 @@ public class L2SummonInstance extends L2Summon
 
 					// check if owner has enought itemConsume, if requested
 					if (summon.getItemConsumeCount() > 0 && summon.getItemConsumeId() != 0 && !summon.isDead() &&
-							!summon.destroyItemByItemId("Consume", summon.getItemConsumeId(), summon.getItemConsumeCount(), activeChar, true))
+							!summon.destroyItemByItemId("Consume", summon.getItemConsumeId(),
+									summon.getItemConsumeCount(), activeChar, true))
 					{
 						summon.unSummon(activeChar);
 					}
@@ -355,7 +347,7 @@ public class L2SummonInstance extends L2Summon
 
 				// prevent useless packet-sending when the difference isn't visible.
 				/*if ((this.summon.lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
-                {
+				{
 					this.summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
 					this.summon.lastShowntimeRemaining = (int) newTimeRemaining;
 					this.summon.updateEffectIcons();
@@ -473,5 +465,4 @@ public class L2SummonInstance extends L2Summon
 	{
 		return owner != null && owner.isInOlympiadMode();
 	}
-
 }

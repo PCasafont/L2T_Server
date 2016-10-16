@@ -20,7 +20,6 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerInsideZoneId extends Condition
 {
-
 	private int id;
 
 	/**

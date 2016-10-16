@@ -15,10 +15,6 @@
 
 package ai.group_template;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
@@ -32,6 +28,10 @@ import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2EffectZone;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SeedOfAnnihilation extends Quest
 {
@@ -225,8 +225,7 @@ public class SeedOfAnnihilation extends Quest
 					af.setDisplayEffect(regionsData[i].activeBuff);
 				}
 
-				L2EffectZone zone =
-						ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class);
+				L2EffectZone zone = ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class);
 				zone.clearSkills();
 				zone.addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
 			}

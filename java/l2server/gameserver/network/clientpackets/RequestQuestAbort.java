@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public final class RequestQuestAbort extends L2GameClientPacket
 {
-
 	private int questId;
 
 	@Override

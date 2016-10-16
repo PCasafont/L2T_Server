@@ -15,9 +15,6 @@
 
 package ai.individual;
 
-import java.util.HashSet;
-import java.util.concurrent.ConcurrentHashMap;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
@@ -25,6 +22,9 @@ import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DarkWaterDragon extends L2AttackableAIScript
 {
@@ -212,8 +212,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 				startQuestTimer("fourth_spawn", 10000, npc, null); //timer to delay timer "4"
 				startQuestTimer("fafurion_poison", 3000, npc, null,
 						true); //Every three seconds reduces Fafurions hp like it is poisoned
-				startQuestTimer("fafurion_despawn", 120000, npc,
-						null); //Fafurion Kindred disappears after two minutes
+				startQuestTimer("fafurion_despawn", 120000, npc, null); //Fafurion Kindred disappears after two minutes
 			}
 		}
 		return super.onSpawn(npc);

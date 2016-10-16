@@ -31,7 +31,6 @@ import java.util.logging.Level;
  */
 public class Post
 {
-
 	public static class CPost
 	{
 		public int postId;

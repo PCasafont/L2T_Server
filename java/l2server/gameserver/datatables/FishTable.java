@@ -30,7 +30,6 @@ import java.util.List;
  */
 public class FishTable
 {
-
 	private static List<FishData> fishsNormal = new ArrayList<>();
 	private static List<FishData> fishsEasy = new ArrayList<>();
 	private static List<FishData> fishsHard = new ArrayList<>();

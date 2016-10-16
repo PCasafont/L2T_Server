@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public final class RequestGiveItemToPet extends L2GameClientPacket
 {
-
 	private int objectId;
 
 	private long amount;

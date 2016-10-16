@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AnswerPartyLootModification extends L2GameClientPacket
 {
-
 	public int answer;
 
 	@Override

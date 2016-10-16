@@ -321,7 +321,7 @@ public class NpcTable
 									}
 								}
 								/*if (dc.getAllDrops().size() == 1)
-                                {
+								{
 									L2DropData dd = dc.getAllDrops().getFirst();
 									npc.addDropData(new L2DropData(dd.getItemId(), dd.getMinDrop(), dd.getMaxDrop(), dc.getChance()));
 								}

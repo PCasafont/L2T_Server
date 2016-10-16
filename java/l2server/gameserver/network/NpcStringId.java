@@ -33,7 +33,6 @@ import java.util.logging.Level;
  */
 public final class NpcStringId
 {
-
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
 
@@ -25831,7 +25830,6 @@ public final class NpcStringId
 		this.id = id;
 		localisations = EMPTY_NSL_ARRAY;
 	}
-
 
 	private void setName(final String name)
 	{

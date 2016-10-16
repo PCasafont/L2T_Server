@@ -49,7 +49,6 @@ public class L2LoginServer
 		instance = new L2LoginServer();
 	}
 
-
 	public L2LoginServer()
 	{
 		ServerMode.serverMode = ServerMode.MODE_LOGINSERVER;
@@ -177,7 +176,6 @@ public class L2LoginServer
 		Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" +
 				Config.PORT_LOGIN);
 	}
-
 
 	private void loadBanFile()
 	{

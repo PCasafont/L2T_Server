@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestConfirmRefinerItem extends L2GameClientPacket
 {
-
 	private int targetItemObjId;
 	private int refinerItemObjId;
 

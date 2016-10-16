@@ -670,7 +670,6 @@ public class SkillTreeTable
 		}
 
 		return Arrays.binarySearch(allSkillsHashCodes, hashCode) >= 0;
-
 	}
 
 	public L2SkillLearn[] getAvailableSkillsForPlayer(final L2PcInstance player, boolean missingOnesOnly, boolean topLevelOnly)

@@ -20,7 +20,6 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public class HennaRemoveList extends L2GameServerPacket
 {
-
 	private L2PcInstance player;
 
 	public HennaRemoveList(L2PcInstance player)

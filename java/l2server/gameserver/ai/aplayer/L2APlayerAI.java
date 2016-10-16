@@ -322,8 +322,8 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			// If there's some nearby ally, wait
 			for (L2PcInstance player : this.player.getKnownList().getKnownPlayers().values())
 			{
-				if (!this.player.isInsideZone(L2Character.ZONE_TOWN) && this.player.isAlly(player) && !player.isDead() &&
-						this.player.isInsideRadius(player, 2000, true, false))
+				if (!this.player.isInsideZone(L2Character.ZONE_TOWN) && this.player.isAlly(player) &&
+						!player.isDead() && this.player.isInsideRadius(player, 2000, true, false))
 				{
 					return;
 				}

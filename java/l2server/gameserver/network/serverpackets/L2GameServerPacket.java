@@ -77,7 +77,6 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 
 	public void runImpl()
 	{
-
 	}
 
 	protected abstract void writeImpl();

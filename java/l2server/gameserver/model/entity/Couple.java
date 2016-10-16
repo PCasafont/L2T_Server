@@ -31,7 +31,6 @@ import java.util.logging.Level;
  */
 public class Couple
 {
-
 	// =========================================================
 	// Data Field
 	private int Id = 0;

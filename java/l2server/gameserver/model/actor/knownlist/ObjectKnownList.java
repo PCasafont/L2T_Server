@@ -201,7 +201,6 @@ public class ObjectKnownList
 		}
 	}
 
-
 	public int getDistanceToForgetObject(L2Object object)
 	{
 		return 0;

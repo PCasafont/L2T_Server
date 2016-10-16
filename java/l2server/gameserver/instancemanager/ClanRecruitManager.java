@@ -269,7 +269,6 @@ public class ClanRecruitManager
 		return true;
 	}
 
-
 	public ClanRecruitData getRecruitData(int clanId)
 	{
 		return recruitData.get(clanId);

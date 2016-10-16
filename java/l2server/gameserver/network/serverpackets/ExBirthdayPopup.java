@@ -21,7 +21,6 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExBirthdayPopup extends L2GameServerPacket
 {
-
 	public ExBirthdayPopup()
 	{
 	}

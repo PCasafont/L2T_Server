@@ -24,7 +24,6 @@ import l2server.gameserver.stats.Env;
  */
 public abstract class ConditionInventory extends Condition implements ConditionListener
 {
-
 	protected final int slot;
 
 	/**

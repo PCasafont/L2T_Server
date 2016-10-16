@@ -24,7 +24,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetLevel extends Condition
 {
-
 	private final int level;
 
 	/**

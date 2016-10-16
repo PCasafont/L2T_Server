@@ -207,7 +207,6 @@ public class PcAppearance
 		invisible = false;
 	}
 
-
 	public void setNameColor(int nameColor)
 	{
 		if (nameColor < 0)
@@ -222,7 +221,6 @@ public class PcAppearance
 	{
 		nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
-
 
 	public void setTitleColor(int titleColor)
 	{

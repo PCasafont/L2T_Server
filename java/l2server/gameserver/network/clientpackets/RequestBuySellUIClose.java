@@ -20,7 +20,6 @@ import l2server.gameserver.network.serverpackets.ItemList;
 
 public class RequestBuySellUIClose extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

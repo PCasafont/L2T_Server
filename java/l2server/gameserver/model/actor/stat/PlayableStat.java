@@ -27,7 +27,6 @@ import l2server.log.Log;
 
 public class PlayableStat extends CharStat
 {
-
 	private static final long MAX_SP = 50000000000L;
 
 	public PlayableStat(L2Playable activeChar)

@@ -41,7 +41,6 @@ import java.util.logging.Level;
 
 public class BitSetIDFactory extends IdFactory
 {
-
 	private BitSet freeIds;
 	private AtomicInteger freeIdCount;
 	private AtomicInteger nextFreeId;

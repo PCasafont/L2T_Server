@@ -170,7 +170,6 @@ public final class L2Armor extends L2Item
 		return sh.getSkill();
 	}
 
-
 	public boolean isArmorSetPart(int armorSet)
 	{
 		if (this.armorSet == null)

@@ -32,7 +32,6 @@ import l2server.util.Rnd;
  */
 public class Chests extends L2AttackableAIScript
 {
-
 	private static final int SKILL_DELUXE_KEY = 2229;
 
 	//Base chance for BOX to be opened

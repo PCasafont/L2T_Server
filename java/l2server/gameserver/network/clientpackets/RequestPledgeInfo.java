@@ -31,7 +31,6 @@ import java.util.logging.Level;
  */
 public final class RequestPledgeInfo extends L2GameClientPacket
 {
-
 	private int clanId;
 
 	@Override

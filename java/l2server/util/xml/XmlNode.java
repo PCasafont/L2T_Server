@@ -58,7 +58,6 @@ public class XmlNode
 		}
 	}
 
-
 	public boolean hasAttributes()
 	{
 		return !attributes.isEmpty();
@@ -305,7 +304,6 @@ public class XmlNode
 		return String.valueOf(val);
 	}
 
-
 	public XmlNode getFirstChild()
 	{
 		if (children.isEmpty())
@@ -315,8 +313,6 @@ public class XmlNode
 
 		return children.get(0);
 	}
-
-
 
 	@Override
 	public String toString()

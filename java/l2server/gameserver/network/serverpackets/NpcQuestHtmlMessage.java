@@ -124,7 +124,6 @@ import l2server.log.Log;
  */
 public final class NpcQuestHtmlMessage extends L2GameServerPacket
 {
-
 	private int npcObjId;
 	private String html;
 	private int questId = 0;

@@ -361,7 +361,6 @@ public class InstanceManager
 	 */
 	public int createDynamicInstance(String template)
 	{
-
 		while (getInstance(dynamic) != null)
 		{
 			dynamic++;

@@ -25,7 +25,6 @@ import java.util.List;
  */
 public class ExShowSentPostList extends L2GameServerPacket
 {
-
 	private List<Message> outbox;
 
 	public ExShowSentPostList(int objectId)

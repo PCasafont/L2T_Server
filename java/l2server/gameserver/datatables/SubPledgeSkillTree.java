@@ -62,11 +62,6 @@ public class SubPledgeSkillTree
 			this.itemId = itemId;
 			this.count = count;
 		}
-
-
-
-
-
 	}
 
 	public void reload()

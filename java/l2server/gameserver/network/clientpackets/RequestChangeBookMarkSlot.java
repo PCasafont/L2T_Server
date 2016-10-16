@@ -21,7 +21,6 @@ package l2server.gameserver.network.clientpackets;
  */
 public final class RequestChangeBookMarkSlot extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{
@@ -31,6 +30,5 @@ public final class RequestChangeBookMarkSlot extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-
 	}
 }

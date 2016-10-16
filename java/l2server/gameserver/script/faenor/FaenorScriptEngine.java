@@ -109,7 +109,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			}
 		}
 		/*for (ScriptDocument script : scripts)
-         {
+		 {
 		 Log.sss("Script: "+script);
 		 }
 		 Log.sss("Sorting");

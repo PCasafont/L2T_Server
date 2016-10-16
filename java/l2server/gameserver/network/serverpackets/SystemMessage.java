@@ -41,7 +41,6 @@ import java.util.logging.Level;
 
 public final class SystemMessage extends L2GameServerPacket
 {
-
 	private static final SMParam[] EMPTY_PARAM_ARRAY = new SMParam[0];
 
 	private static final class SMParam
@@ -54,8 +53,6 @@ public final class SystemMessage extends L2GameServerPacket
 			this.type = type;
 			this.value = value;
 		}
-
-
 
 		public final String getStringValue()
 		{

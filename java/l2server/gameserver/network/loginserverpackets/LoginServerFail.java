@@ -20,7 +20,6 @@ import lombok.Getter;
 
 public class LoginServerFail extends BaseRecievePacket
 {
-
 	private static final String[] REASONS = {
 			"None",
 			"Reason: ip banned",
@@ -46,5 +45,4 @@ public class LoginServerFail extends BaseRecievePacket
 	{
 		return REASONS[reason];
 	}
-
 }

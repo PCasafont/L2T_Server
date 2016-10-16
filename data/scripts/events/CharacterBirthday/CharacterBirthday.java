@@ -15,8 +15,6 @@
 
 package events.CharacterBirthday;
 
-import java.util.Calendar;
-
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.L2Skill;
@@ -27,6 +25,8 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.PlaySound;
+
+import java.util.Calendar;
 
 /**
  * @author Gnacik

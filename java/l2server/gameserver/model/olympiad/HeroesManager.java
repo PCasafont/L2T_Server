@@ -19,7 +19,6 @@
 
 package l2server.gameserver.model.olympiad;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.cache.HtmCache;
@@ -44,6 +43,7 @@ import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -465,7 +465,6 @@ public class HeroesManager
 			L2DatabaseFactory.close(con);
 		}
 	}
-
 
 	public int getHeroByClass(int classid)
 	{

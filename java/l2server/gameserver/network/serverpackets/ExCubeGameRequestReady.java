@@ -22,13 +22,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameRequestReady extends L2GameServerPacket
 {
-
 	/**
 	 * Show Confirm Dialog for 10 seconds
 	 */
 	public ExCubeGameRequestReady()
 	{
-
 	}
 
 	/* (non-Javadoc)

@@ -15,20 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.LineNumberReader;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.StringTokenizer;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.NpcTable;
@@ -51,6 +37,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * @author Pere
@@ -179,7 +174,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		else if (command.startsWith("admin_packet"))
 		{
 			/*StringTokenizer st = new StringTokenizer(command, " ");
-            String token = st.nextToken();
+			String token = st.nextToken();
 			int type;
 			int[] args = new int[50];
 			switch (Integer.valueOf(st.nextToken()))
@@ -316,7 +311,6 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_observe_landrates"))
 		{
-
 			L2PcInstance target = null;
 
 			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)

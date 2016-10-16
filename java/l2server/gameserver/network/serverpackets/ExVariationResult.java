@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExVariationResult extends L2GameServerPacket
 {
-
 	private int stat12;
 	private int stat34;
 	private int unk3;

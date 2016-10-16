@@ -25,7 +25,6 @@ import java.util.List;
  */
 public class CaptureTheFlag extends EventInstance
 {
-
 	private boolean flagsSpawned = false;
 
 	public CaptureTheFlag(int id, EventConfig config)

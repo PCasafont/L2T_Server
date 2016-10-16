@@ -66,7 +66,7 @@ public class EffectBuff extends L2Effect
 	{
 		super.onExit();
 		/*if (getEffector() != null && getEffector() instanceof L2MonsterInstance)
-        {
+		{
 			if (!getEffector().isInCombat())
 				getEffector().doCast(getSkill());
 		}*/

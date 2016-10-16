@@ -34,12 +34,10 @@ public class GeoNode extends AbstractNode
 		neighborsIdx = Neighbors_idx;
 	}
 
-
 	public void setCost(int cost)
 	{
 		this.cost = (short) cost;
 	}
-
 
 	public void attachNeighbors()
 	{

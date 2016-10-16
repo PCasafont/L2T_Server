@@ -235,7 +235,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		}
 		else
 		{
-			this.time = this.item.getTime() == -1 ? -1 : System.currentTimeMillis() + (long) this.item.getTime() * 60 * 1000;
+			this.time = this.item.getTime() == -1 ? -1 :
+					System.currentTimeMillis() + (long) this.item.getTime() * 60 * 1000;
 		}
 
 		scheduleLifeTimeTask();
@@ -602,7 +603,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	{
 		dropTime = time;
 	}
-
 
 	/**
 	 * Returns the type of item
@@ -1258,7 +1258,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		}
 	}
 
-
 	@Override
 	public boolean isElementEnchanted()
 	{
@@ -1774,7 +1773,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 				if (ownerId == 0 || loc == ItemLocation.VOID || loc == ItemLocation.REFUND ||
 						getCount() == 0 && loc != ItemLocation.LEASE)
 				{
-                    /*
+					/*
 					if (getCount() != 0)
 					{
 						Broadcast.toGameMasters("(2) Deleted " + getCount() + " " + getName() + " from DB because... ");
@@ -1910,8 +1909,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			if (Config.GEODATA > 0 && dropper != null)
 			{
 				Location dropDest = GeoData.getInstance()
-						.moveCheck(dropper.getX(), dropper.getY(), dropper.getZ(), x, y, z,
-								dropper.getInstanceId());
+						.moveCheck(dropper.getX(), dropper.getY(), dropper.getZ(), x, y, z, dropper.getInstanceId());
 				x = dropDest.getX();
 				y = dropDest.getY();
 				z = dropDest.getZ();
@@ -2146,7 +2144,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		itemLootShedule = sf;
 	}
 
-
 	public void setProtected(boolean isProtected)
 	{
 		this.isProtected = isProtected;
@@ -2176,7 +2173,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	{
 		initCount = InitCount;
 	}
-
 
 	public void restoreInitCount()
 	{
@@ -2339,7 +2335,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		}
 	}
 
-
 	public void publish()
 	{
 		published = true;
@@ -2368,7 +2363,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		this.mobId = mobId;
 		updateDatabase(true);
 	}
-
 
 	public int getMaxEnchantLevel()
 	{

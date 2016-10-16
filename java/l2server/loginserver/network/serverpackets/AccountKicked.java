@@ -16,6 +16,7 @@
 package l2server.loginserver.network.serverpackets;
 
 import lombok.Getter;
+
 /**
  * @author KenM
  */
@@ -34,7 +35,6 @@ public final class AccountKicked extends L2LoginServerPacket
 		{
 			this.code = code;
 		}
-
 	}
 
 	private AccountKickedReason reason;

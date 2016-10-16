@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * This class ...
  *

@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public final class RequestDuelStart extends L2GameClientPacket
 {
-
 	private String player;
 	private int partyDuel;
 

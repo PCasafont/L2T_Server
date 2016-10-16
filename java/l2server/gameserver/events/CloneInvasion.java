@@ -220,7 +220,6 @@ public class CloneInvasion
 			this.startTime = startTime;
 		}
 
-
 		@Override
 		public void run()
 		{

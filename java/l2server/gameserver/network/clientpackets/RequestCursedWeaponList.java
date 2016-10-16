@@ -29,7 +29,6 @@ import java.util.List;
  */
 public class RequestCursedWeaponList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

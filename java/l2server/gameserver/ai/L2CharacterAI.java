@@ -1011,7 +1011,6 @@ public class L2CharacterAI extends AbstractAI
 			// Caller should be L2Playable and thinkAttack/thinkCast/thinkInteract/thinkPickUp
 			if (getFollowTarget() != null)
 			{
-
 				// allow larger hit range when the target is moving (check is run only once per second)
 				if (!actor.isInsideRadius(target, offset + 100, false, false))
 				{
@@ -1039,8 +1038,7 @@ public class L2CharacterAI extends AbstractAI
 			{
 				if (!((L2PcInstance) actor).getTransformation().canStartFollowToCast())
 				{
-					actor
-							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DIST_TOO_FAR_CASTING_STOPPED));
+					actor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DIST_TOO_FAR_CASTING_STOPPED));
 					actor.sendPacket(ActionFailed.STATIC_PACKET);
 
 					return true;
@@ -1150,8 +1148,8 @@ public class L2CharacterAI extends AbstractAI
 			setIntention(AI_INTENTION_ACTIVE);
 			return true;
 		}
-		if (actor != null && skill != null && skill.isOffensive() && skill.getSkillRadius() > 0 &&
-				Config.GEODATA > 0 && !GeoData.getInstance().canSeeTarget(actor, target))
+		if (actor != null && skill != null && skill.isOffensive() && skill.getSkillRadius() > 0 && Config.GEODATA > 0 &&
+				!GeoData.getInstance().canSeeTarget(actor, target))
 		{
 			setIntention(AI_INTENTION_ACTIVE);
 			return true;
@@ -1251,7 +1249,7 @@ public class L2CharacterAI extends AbstractAI
 					case BUFF:
 						buffSkills.add(sk);
 						continue; // won't be considered something for fighting
-                        /*case PARALYZE:
+						/*case PARALYZE:
 						case STUN:
 							// hardcoding petrification until improvements are made to
 							// EffectTemplate... petrification is totally different for
@@ -1593,7 +1591,6 @@ public class L2CharacterAI extends AbstractAI
 					L2Abnormal[] effects = target.getAllEffects();
 					for (int i = 0; effects != null && i < effects.length; i++)
 					{
-
 						L2Abnormal effect = effects[i];
 						if (effect.getSkill() == sk)
 						{

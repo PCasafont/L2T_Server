@@ -23,7 +23,6 @@ import l2server.util.network.BaseSendablePacket;
  */
 public class AuthResponse extends BaseSendablePacket
 {
-
 	/**
 	 * @param serverId
 	 */

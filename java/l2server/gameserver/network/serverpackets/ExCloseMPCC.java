@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCloseMPCC extends L2GameServerPacket
 {
-
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */

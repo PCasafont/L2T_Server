@@ -23,7 +23,6 @@ import lombok.Getter;
  */
 public class AuthResponse extends BaseRecievePacket
 {
-
 	@Getter private int serverId;
 	@Getter private String serverName;
 
@@ -36,5 +35,4 @@ public class AuthResponse extends BaseRecievePacket
 		serverId = readC();
 		serverName = readS();
 	}
-
 }

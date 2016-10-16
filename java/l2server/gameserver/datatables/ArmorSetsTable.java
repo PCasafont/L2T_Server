@@ -36,7 +36,6 @@ import java.io.File;
  */
 public class ArmorSetsTable implements Reloadable
 {
-
 	private TIntObjectHashMap<L2ArmorSet> armorSets;
 
 	public static ArmorSetsTable getInstance()

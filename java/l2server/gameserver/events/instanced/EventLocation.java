@@ -1,10 +1,10 @@
 package l2server.gameserver.events.instanced;
 
-import lombok.Getter;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.zone.type.L2TenkaiEventZone;
 import l2server.util.Point3D;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -48,15 +48,10 @@ public class EventLocation
 		return maxTeamPlayers * spawns.size();
 	}
 
-
-
-
-
 	public int getTeamCount()
 	{
 		return spawns.size();
 	}
-
 
 	public Point3D getSpawn(int id)
 	{

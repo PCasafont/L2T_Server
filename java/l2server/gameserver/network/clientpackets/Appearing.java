@@ -28,11 +28,9 @@ import l2server.gameserver.network.serverpackets.UserInfo;
  */
 public final class Appearing extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{
-
 	}
 
 	@Override

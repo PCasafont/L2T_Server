@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class TeleportBookmark implements IItemHandler
 {
-
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{

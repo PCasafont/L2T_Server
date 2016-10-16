@@ -36,7 +36,6 @@ import java.util.logging.Level;
 
 public class FortSiegeManager
 {
-
 	public static FortSiegeManager getInstance()
 	{
 		return SingletonHolder.instance;
@@ -261,10 +260,6 @@ public class FortSiegeManager
 			npcId = npc_id;
 			this.id = id;
 		}
-
-
-
-
 
 		public Location getLocation()
 		{

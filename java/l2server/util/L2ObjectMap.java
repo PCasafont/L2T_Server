@@ -38,7 +38,6 @@ import java.util.Iterator;
 
 public abstract class L2ObjectMap<T extends L2Object> implements Iterable<T>
 {
-
 	public abstract int size();
 
 	public abstract boolean isEmpty();

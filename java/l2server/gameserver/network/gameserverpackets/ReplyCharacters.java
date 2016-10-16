@@ -25,7 +25,6 @@ import java.util.List;
  */
 public class ReplyCharacters extends BaseSendablePacket
 {
-
 	public ReplyCharacters(String account, int chars, List<Long> timeToDel)
 	{
 		writeC(0x08);

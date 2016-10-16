@@ -35,7 +35,6 @@ import java.util.logging.Level;
 
 public class CharStatus
 {
-
 	@Getter private L2Character activeChar;
 
 	private double currentHp = 0; //Current HP of the L2Character
@@ -478,5 +477,4 @@ public class CharStatus
 			}
 		}
 	}
-
 }

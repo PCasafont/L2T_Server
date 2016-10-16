@@ -22,15 +22,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCommissionList extends L2GameClientPacket
 {
-
-	@SuppressWarnings("unused")
-	private long category;
-	@SuppressWarnings("unused")
-	private int type;
-	@SuppressWarnings("unused")
-	private int grade;
-	@SuppressWarnings("unused")
-	private String searchName;
+	@SuppressWarnings("unused") private long category;
+	@SuppressWarnings("unused") private int type;
+	@SuppressWarnings("unused") private int grade;
+	@SuppressWarnings("unused") private String searchName;
 
 	@Override
 	protected void readImpl()

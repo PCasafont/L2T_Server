@@ -24,10 +24,8 @@ import java.util.logging.Level;
 public class Expression
 {
 	private final ScriptContext context;
-	@SuppressWarnings("unused")
-	private final String lang;
-	@SuppressWarnings("unused")
-	private final String code;
+	@SuppressWarnings("unused") private final String lang;
+	@SuppressWarnings("unused") private final String code;
 
 	public static Object eval(String lang, String code)
 	{

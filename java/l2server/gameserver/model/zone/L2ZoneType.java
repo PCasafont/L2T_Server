@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.zone;
 
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;

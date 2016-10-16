@@ -25,7 +25,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerFlyMounted extends Condition
 {
-
 	private boolean val;
 
 	/**

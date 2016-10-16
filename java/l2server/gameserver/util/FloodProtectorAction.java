@@ -82,8 +82,8 @@ public final class FloodProtectorAction
 			if (config.LOG_FLOODING && !logged && Log.isLoggable(Level.WARNING))
 			{
 				log(" called command ", command, " ~", String.valueOf(
-						(config.FLOOD_PROTECTION_INTERVAL - (nextGameTick - curTick)) *
-								TimeController.MILLIS_IN_TICK), " ms after previous command");
+						(config.FLOOD_PROTECTION_INTERVAL - (nextGameTick - curTick)) * TimeController.MILLIS_IN_TICK),
+						" ms after previous command");
 				logged = true;
 			}
 

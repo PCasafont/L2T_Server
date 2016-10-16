@@ -47,7 +47,6 @@ public class L2SkillTrap extends L2SkillSummon
 		trapNpcId = set.getInteger("trapNpcId");
 	}
 
-
 	/**
 	 * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])
 	 */

@@ -27,7 +27,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionSlotItemType extends ConditionInventory
 {
-
 	private final int mask;
 
 	/**

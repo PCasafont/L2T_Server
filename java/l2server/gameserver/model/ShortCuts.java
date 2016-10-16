@@ -240,8 +240,8 @@ public class ShortCuts
 			return;
 		}
 
-		L2ShortCut old = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel())
-				.remove(slot + page * 12);
+		L2ShortCut old =
+				shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).remove(slot + page * 12);
 
 		owner.sendSysMessage("Old Shortcut = " + old);
 		if (old == null || owner == null)

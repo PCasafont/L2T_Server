@@ -30,7 +30,6 @@ public class RequestEx2ndPasswordCheck extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-
 	}
 
 	@Override

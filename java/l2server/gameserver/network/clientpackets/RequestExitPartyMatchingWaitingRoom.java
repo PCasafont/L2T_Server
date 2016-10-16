@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

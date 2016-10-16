@@ -26,7 +26,6 @@ import l2server.log.Log;
  */
 public class UserCommandHandler
 {
-
 	private TIntObjectHashMap<IUserCommandHandler> datatable;
 
 	public static UserCommandHandler getInstance()

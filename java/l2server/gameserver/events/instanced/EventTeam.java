@@ -87,7 +87,7 @@ public class EventTeam
 		synchronized (participatedPlayers)
 		{
 			/*if (!EventsManager.getInstance().isType(EventType.DM)
-                    && !EventsManager.getInstance().isType(EventType.SS)
+					&& !EventsManager.getInstance().isType(EventType.SS)
 					&& !EventsManager.getInstance().isType(EventType.SS2))
 				this.participatedPlayers.get(playerObjectId).setEvent(null);*/
 			participatedPlayers.remove(playerObjectId);
@@ -238,12 +238,10 @@ public class EventTeam
 		return null;
 	}
 
-
 	public void setCoords(Point3D coords)
 	{
 		coordinates = coords;
 	}
-
 
 	public void setFlagSpawn(L2Spawn spawn)
 	{
@@ -258,18 +256,15 @@ public class EventTeam
 		flagSpawn = spawn;
 	}
 
-
 	public void setVIP(L2PcInstance character)
 	{
 		VIP = character;
 	}
 
-
 	public boolean isAlive()
 	{
 		return getAlivePlayerCount() > 0;
 	}
-
 
 	public void setGolemSpawn(L2Spawn spawn)
 	{
@@ -279,5 +274,4 @@ public class EventTeam
 		}
 		golemSpawn = spawn;
 	}
-
 }

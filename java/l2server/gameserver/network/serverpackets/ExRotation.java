@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExRotation extends L2GameServerPacket
 {
-
 	private int charObjId, degree;
 
 	public ExRotation(int charId, int degree)

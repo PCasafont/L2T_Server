@@ -42,7 +42,6 @@ import java.util.logging.Level;
  */
 public class CharNameTable
 {
-
 	private final Map<Integer, String> chars;
 	private final Map<Integer, Integer> accessLevels;
 

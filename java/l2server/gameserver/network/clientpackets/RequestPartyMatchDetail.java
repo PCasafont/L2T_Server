@@ -32,19 +32,16 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestPartyMatchDetail extends L2GameClientPacket
 {
 	private int roomid;
-	@SuppressWarnings("unused")
-	private int unk1;
-	@SuppressWarnings("unused")
-	private int unk2;
-	@SuppressWarnings("unused")
-	private int unk3;
+	@SuppressWarnings("unused") private int unk1;
+	@SuppressWarnings("unused") private int unk2;
+	@SuppressWarnings("unused") private int unk3;
 
 	@Override
 	protected void readImpl()
 	{
 		roomid = readD();
 		/*
-         * IF player click on Room all unk are 0
+		 * IF player click on Room all unk are 0
 		 * IF player click AutoJoin values are -1 1 1
 		 */
 		unk1 = readD();

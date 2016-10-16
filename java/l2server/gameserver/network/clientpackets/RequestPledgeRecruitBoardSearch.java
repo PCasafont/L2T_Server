@@ -57,7 +57,6 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExPledgeRecruitBoardSearch(level, karma, clanName, name, sortBy, desc,
-				page));
+		sendPacket(new ExPledgeRecruitBoardSearch(level, karma, clanName, name, sortBy, desc, page));
 	}
 }

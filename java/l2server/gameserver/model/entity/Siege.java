@@ -554,8 +554,7 @@ public class Siege implements Siegable
 			SpawnTable.getInstance().spawnSpecificTable(getCastle().getName() + "_flame_tower"); // Spawn control tower
 			controlTowerCount =
 					SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_control_tower").size();
-			flameTowerCount =
-					SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_flame_tower").size();
+			flameTowerCount = SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_flame_tower").size();
 			getCastle().spawnDoor(); // Spawn door
 			spawnSiegeGuard(); // Spawn siege guard
 			MercTicketManager.getInstance()
@@ -1843,7 +1842,6 @@ public class Siege implements Siegable
 		}
 		return siegeGuardManager;
 	}
-
 
 	public void disableTraps()
 	{

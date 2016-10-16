@@ -28,7 +28,6 @@ import l2server.gameserver.model.olympiad.HeroesManager;
  */
 public final class RequestWriteHeroWords extends L2GameClientPacket
 {
-
 	private String heroWords;
 
 	/**

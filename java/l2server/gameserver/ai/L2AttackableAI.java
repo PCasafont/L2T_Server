@@ -1473,7 +1473,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 
 		switch (sk.getSkillType())
 		{
-
 			case BUFF:
 			{
 				if (caster.getFirstEffect(sk) == null)
@@ -1831,7 +1830,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			{
 				if (!canAura(sk))
 				{
-
 					if (GeoData.getInstance().canSeeTarget(caster, attackTarget) && !attackTarget.isDead() &&
 							dist2 <= srange)
 					{
@@ -2045,7 +2043,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				}
 				//-------------------------------------------------------------
 				//if there is no ATK skill to use, then try Universal skill
-                /*
+				/*
 				if (this.skillrender.hasUniversalSkill())
 				{
 					for (L2Skill sk:_skillrender.universalskills)
@@ -2294,7 +2292,6 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				}
 				if (obj instanceof L2PcInstance || obj instanceof L2Summon)
 				{
-
 					if (dist2 <= range)
 					{
 						if (getAttackTarget().getFirstEffect(L2AbnormalType.BUFF) != null)

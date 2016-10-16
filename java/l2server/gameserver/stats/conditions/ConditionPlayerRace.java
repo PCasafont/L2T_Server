@@ -27,7 +27,6 @@ import l2server.gameserver.util.Util;
  */
 public class ConditionPlayerRace extends Condition
 {
-
 	private final Race[] races;
 
 	/**

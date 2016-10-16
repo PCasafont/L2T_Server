@@ -42,7 +42,6 @@ import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE
  */
 public final class RequestRefundItem extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 4; // length of the one item
 
 	private int listId;

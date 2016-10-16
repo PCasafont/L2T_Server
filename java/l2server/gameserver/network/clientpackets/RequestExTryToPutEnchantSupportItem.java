@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 {
-
 	private int supportObjectId;
 	private int enchantObjectId;
 

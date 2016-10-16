@@ -212,7 +212,6 @@ public class Curfew
 			this.startTime = startTime;
 		}
 
-
 		@Override
 		public void run()
 		{

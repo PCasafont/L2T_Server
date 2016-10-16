@@ -32,11 +32,6 @@ public class AuthGameGuard extends L2LoginClientPacket
 	@Getter private int data3;
 	@Getter private int data4;
 
-
-
-
-
-
 	/**
 	 */
 	@Override

@@ -16,6 +16,7 @@
 package l2server.gameserver.templates.skills;
 
 import lombok.Getter;
+
 /**
  * @author Pere
  */
@@ -60,5 +61,4 @@ public enum L2EffectType
 	{
 		this.mask = mask;
 	}
-
 }

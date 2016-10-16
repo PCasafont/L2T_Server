@@ -30,7 +30,6 @@ import java.util.logging.Level;
  */
 public final class CharacterDelete extends L2GameClientPacket
 {
-
 	// cd
 	private int charSlot;
 

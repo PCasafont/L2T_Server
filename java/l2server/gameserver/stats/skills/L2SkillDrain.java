@@ -204,7 +204,7 @@ public class L2SkillDrain extends L2Skill
 			}
 		}
 		//effect self :]
-        /*L2Abnormal effect = activeChar.getFirstEffect(getId());
+		/*L2Abnormal effect = activeChar.getFirstEffect(getId());
 		if (effect != null && effect.isSelfEffect())
 		{
 			//Replace old effect with new one.

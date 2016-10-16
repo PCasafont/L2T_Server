@@ -15,8 +15,8 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,7 +61,6 @@ public final class L2SkillLearn
 		isAutoGet = autoget;
 	}
 
-
 	/**
 	 * Return true if skill can be learned by forgotten scroll
 	 */
@@ -85,12 +84,10 @@ public final class L2SkillLearn
 		costItems.put(itemId, count);
 	}
 
-
 	public void addCostSkill(int skillId)
 	{
 		costSkills.add(skillId);
 	}
-
 
 	public Map<Integer, Integer> getCostSkills(L2PcInstance player)
 	{

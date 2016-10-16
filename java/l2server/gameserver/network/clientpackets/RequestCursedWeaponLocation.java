@@ -32,7 +32,6 @@ import java.util.List;
  */
 public final class RequestCursedWeaponLocation extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

@@ -15,9 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.Calendar;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
@@ -33,6 +30,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
+
+import java.util.Calendar;
+import java.util.StringTokenizer;
 
 /**
  * This class handles all siege commands:

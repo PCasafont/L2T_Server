@@ -22,7 +22,6 @@ import l2server.Config;
  */
 public class ExLoginVitalityEffectInfo extends L2GameServerPacket
 {
-
 	private float expBonus;
 	private int vitalityItemsUsed;
 

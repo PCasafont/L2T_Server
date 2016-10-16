@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class SimonSays extends EventInstance
 {
-
 	private boolean someoneFailed = false;
 	private int currentSocialActionId = 2;
 	private SimonSaysTask simonSaysTask;
@@ -238,8 +237,7 @@ public class SimonSays extends EventInstance
 
 		if (!someoneFailed && getParticipatedPlayersCount() > 1)
 		{
-			L2PcInstance player = teams[0].getParticipatedPlayers().get(actedPlayers.get(
-					actedPlayers.size() - 1));
+			L2PcInstance player = teams[0].getParticipatedPlayers().get(actedPlayers.get(actedPlayers.size() - 1));
 			if (player != null)
 			{
 				removeParticipant(player.getObjectId());

@@ -15,13 +15,13 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * @author poltomb
@@ -38,7 +38,6 @@ public class AdminSummon implements IAdminCommandHandler
 	@Override
 	public String[] getAdminCommandList()
 	{
-
 		return ADMIN_COMMANDS;
 	}
 

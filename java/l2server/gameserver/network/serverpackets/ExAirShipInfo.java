@@ -19,7 +19,6 @@ import l2server.gameserver.model.actor.instance.L2AirShipInstance;
 
 public class ExAirShipInfo extends L2GameServerPacket
 {
-
 	// store some parameters, because they can be changed during broadcast
 	private final L2AirShipInstance ship;
 	private final int x, y, z, heading, moveSpeed, rotationSpeed, captain, helm;

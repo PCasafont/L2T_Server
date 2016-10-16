@@ -26,7 +26,6 @@ import java.util.logging.Level;
 
 public class Topic
 {
-
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;
 
@@ -55,7 +54,6 @@ public class Topic
 
 		if (ct == ConstructorType.CREATE)
 		{
-
 			insertindb();
 		}
 	}
@@ -118,7 +116,6 @@ public class Topic
 		return topicName;
 	}
 
-
 	/**
 	 *
 	 */
@@ -146,5 +143,4 @@ public class Topic
 			L2DatabaseFactory.close(con);
 		}
 	}
-
 }

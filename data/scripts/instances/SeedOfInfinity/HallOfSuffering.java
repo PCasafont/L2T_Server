@@ -15,10 +15,6 @@
 
 package instances.SeedOfInfinity;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.Config;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.cache.HtmCache;
@@ -43,6 +39,10 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 Todo:
 - after 15mins mobs are despawned
@@ -53,7 +53,6 @@ Please maintain consistency between the Seed scripts.
  */
 public class HallOfSuffering extends Quest
 {
-
 	private class HSWorld extends InstanceWorld
 	{
 		public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();

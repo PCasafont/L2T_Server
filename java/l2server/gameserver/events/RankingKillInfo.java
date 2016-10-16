@@ -137,13 +137,12 @@ public class RankingKillInfo
 
 		return !(!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) ||
 				!killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()));
-
 	}
 
 	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)
 	{
 		/*if (killer == null || killed == null)
-            return;
+			return;
 
 		List<String> rewardedPlayers = new ArrayList<String>();
 		List<L2PcInstance> allPlayersToBuff = new ArrayList<L2PcInstance>();
@@ -220,8 +219,7 @@ public class RankingKillInfo
 
 	private class KillInfo
 	{
-		@SuppressWarnings("unused")
-		private String killerName;
+		@SuppressWarnings("unused") private String killerName;
 		private int killingSpree;
 		private HashMap<String, Integer> killerList;
 

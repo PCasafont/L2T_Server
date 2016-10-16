@@ -26,7 +26,6 @@ import java.util.logging.Level;
  */
 public class BypassHandler
 {
-
 	private TIntObjectHashMap<IBypassHandler> datatable;
 
 	public static BypassHandler getInstance()

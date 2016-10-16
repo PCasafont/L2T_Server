@@ -32,7 +32,6 @@ import l2server.gameserver.stats.conditions.Condition;
 
 public abstract class Func
 {
-
 	/**
 	 * Statistics, that is affected by this function (See L2Character.CALCULATOR_XXX constants)
 	 */

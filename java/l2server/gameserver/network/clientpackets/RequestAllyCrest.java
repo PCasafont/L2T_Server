@@ -24,7 +24,6 @@ import l2server.gameserver.network.serverpackets.AllyCrest;
  */
 public final class RequestAllyCrest extends L2GameClientPacket
 {
-
 	private int crestId;
 
 	/**

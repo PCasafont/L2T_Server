@@ -25,7 +25,6 @@ import lombok.Getter;
 
 public class ObjectPosition
 {
-
 	// =========================================================
 	// Data Field
 	@Getter private L2Object activeObject;
@@ -81,7 +80,6 @@ public class ObjectPosition
 	 */
 	protected void badCoords()
 	{
-
 	}
 
 	/**

@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestPartyLootModification extends L2GameClientPacket
 {
-
 	private byte mode;
 
 	@Override

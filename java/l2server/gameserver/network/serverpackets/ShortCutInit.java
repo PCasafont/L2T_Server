@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class ShortCutInit extends L2GameServerPacket
 {
-
 	private L2ShortCut[] shortCuts;
 	private L2PcInstance activeChar;
 

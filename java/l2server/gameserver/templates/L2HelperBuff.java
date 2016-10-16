@@ -16,6 +16,7 @@
 package l2server.gameserver.templates;
 
 import lombok.Getter;
+
 /**
  * This class represents a Newbie Helper Buff
  * <p>
@@ -78,5 +79,4 @@ public class L2HelperBuff
 	{
 		return isMagicClass;
 	}
-
 }

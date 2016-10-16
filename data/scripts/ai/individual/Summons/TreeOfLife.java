@@ -15,8 +15,6 @@
 
 package ai.individual.Summons;
 
-import java.util.concurrent.ScheduledFuture;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -24,6 +22,8 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -98,8 +98,7 @@ public class TreeOfLife extends L2AttackableAIScript
 						continue;
 					}
 
-					SkillTable.getInstance()
-							.getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
+					SkillTable.getInstance().getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
 							.getEffects(treeOfLife, player);
 				}
 			}
@@ -107,8 +106,7 @@ public class TreeOfLife extends L2AttackableAIScript
 			{
 				if (GeoData.getInstance().canSeeTarget(treeOfLife, owner))
 				{
-					SkillTable.getInstance()
-							.getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
+					SkillTable.getInstance().getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
 							.getEffects(treeOfLife, owner);
 				}
 			}

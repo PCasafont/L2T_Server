@@ -33,7 +33,6 @@ import l2server.gameserver.model.L2Macro;
  */
 public class SendMacroList extends L2GameServerPacket
 {
-
 	private final int rev;
 
 	private final int count;

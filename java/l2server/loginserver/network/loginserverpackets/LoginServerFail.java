@@ -22,7 +22,6 @@ import l2server.util.network.BaseSendablePacket;
  */
 public class LoginServerFail extends BaseSendablePacket
 {
-
 	/**
 	 * @param reason
 	 */

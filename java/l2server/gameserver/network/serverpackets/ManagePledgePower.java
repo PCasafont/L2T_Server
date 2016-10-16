@@ -19,7 +19,6 @@ import l2server.gameserver.model.L2Clan;
 
 public class ManagePledgePower extends L2GameServerPacket
 {
-
 	private int action;
 	private L2Clan clan;
 	private int rank;
@@ -43,7 +42,7 @@ public class ManagePledgePower extends L2GameServerPacket
 		{
 			return;
 			/*
-            if (L2World.getInstance().findObject(this.clanId) == null)
+			if (L2World.getInstance().findObject(this.clanId) == null)
 				return;
 
 			privs = ((L2PcInstance)L2World.getInstance().findObject(this.clanId)).getClanPrivileges();

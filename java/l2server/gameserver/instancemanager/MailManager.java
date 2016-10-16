@@ -69,7 +69,6 @@ public class MailManager
 			ResultSet rset1 = stmt1.executeQuery();
 			while (rset1.next())
 			{
-
 				Message msg = new Message(rset1);
 
 				int msgId = msg.getId();

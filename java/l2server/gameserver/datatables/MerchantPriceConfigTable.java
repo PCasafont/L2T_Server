@@ -35,7 +35,6 @@ import java.util.logging.Level;
  */
 public class MerchantPriceConfigTable implements InstanceListManager
 {
-
 	public static MerchantPriceConfigTable getInstance()
 	{
 		return SingletonHolder.instance;

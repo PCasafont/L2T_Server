@@ -26,7 +26,6 @@ import l2server.log.Log;
 
 public class GuardKnownList extends AttackableKnownList
 {
-
 	public GuardKnownList(L2GuardInstance activeChar)
 	{
 		super(activeChar);

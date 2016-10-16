@@ -27,7 +27,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ChairSit extends L2GameServerPacket
 {
-
 	private L2PcInstance activeChar;
 	private int staticObjectId;
 

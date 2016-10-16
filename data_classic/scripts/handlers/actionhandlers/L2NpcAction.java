@@ -27,7 +27,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.*;
 import l2server.util.Rnd;
 
 public class L2NpcAction implements IActionHandler

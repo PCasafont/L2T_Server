@@ -17,7 +17,6 @@ package l2server.gameserver.network.serverpackets;
 
 public final class CSShowComBoard extends L2GameServerPacket
 {
-
 	private final byte[] html;
 
 	public CSShowComBoard(final byte[] html)

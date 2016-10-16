@@ -15,11 +15,6 @@
 
 package quests.Q350_EnhanceYourWeapon;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
@@ -38,6 +33,11 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 public class Q350_EnhanceYourWeapon extends Quest
 {

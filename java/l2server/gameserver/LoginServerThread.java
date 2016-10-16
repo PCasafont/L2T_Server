@@ -240,9 +240,8 @@ public class LoginServerThread extends Thread
 								Log.info("Changed blowfish key");
 							}
 							AuthRequest ar =
-									new AuthRequest(requestID, acceptAlternate, hexID, gamePort,
-											reserveHost,
-											maxPlayer, subnets, hosts);
+									new AuthRequest(requestID, acceptAlternate, hexID, gamePort, reserveHost, maxPlayer,
+											subnets, hosts);
 							sendPacket(ar);
 							if (Config.DEBUG)
 							{

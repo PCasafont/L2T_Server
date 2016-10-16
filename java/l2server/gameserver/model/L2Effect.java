@@ -31,7 +31,6 @@ import lombok.Setter;
  */
 public abstract class L2Effect
 {
-
 	public enum EffectState
 	{
 		CREATED, ACTING, FINISHING
@@ -100,9 +99,6 @@ public abstract class L2Effect
 		return lambda.calc(env);
 	}
 
-
-
-
 	/**
 	 * Stop the L2Effect task and send Server->Client update packet.<BR><BR>
 	 * <p>
@@ -162,9 +158,6 @@ public abstract class L2Effect
 	{
 		return getSkill().getLevelHash();
 	}
-
-
-
 
 	public boolean isSelfEffectType()
 	{

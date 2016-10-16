@@ -28,7 +28,6 @@ import l2server.log.Log;
  */
 public class RecipeItemMakeInfo extends L2GameServerPacket
 {
-
 	private int id;
 	private L2PcInstance activeChar;
 	private boolean success;

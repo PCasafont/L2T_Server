@@ -43,7 +43,6 @@ import java.util.logging.Level;
 
 public class CursedWeapon
 {
-
 	// this.name is the name of the cursed weapon associated with its ID.
 	@Getter private final String name;
 	// this.itemId is the Item ID of the cursed weapon.
@@ -151,7 +150,7 @@ public class CursedWeapon
 					}
 					statement.close();
 					/* Yesod: Skill is not stored into database any more.
-                    // Delete the skill
+					// Delete the skill
 					statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=?");
 					statement.setInt(1, this.playerId);
 					statement.setInt(2, this.skillId);
@@ -595,14 +594,6 @@ public class CursedWeapon
 	// =========================================================
 	// Setter
 
-
-
-
-
-
-
-
-
 	public void setActivated(boolean isActivated)
 	{
 		this.isActivated = isActivated;
@@ -613,12 +604,10 @@ public class CursedWeapon
 		this.isDropped = isDropped;
 	}
 
-
 	public void setPlayer(L2PcInstance player)
 	{
 		this.player = player;
 	}
-
 
 	// =========================================================
 	// Getter
@@ -632,19 +621,10 @@ public class CursedWeapon
 		return isDropped;
 	}
 
-
-
-
-
-
 	public L2PcInstance getPlayer()
 	{
 		return player;
 	}
-
-
-
-
 
 	public boolean isActive()
 	{

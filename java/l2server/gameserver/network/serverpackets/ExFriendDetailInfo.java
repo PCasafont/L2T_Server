@@ -31,7 +31,6 @@ import java.util.Calendar;
  */
 public class ExFriendDetailInfo extends L2GameServerPacket
 {
-
 	private L2PcInstance player;
 	int friendObjId;
 	private String name;

@@ -25,7 +25,6 @@ import java.util.Map.Entry;
 
 public class DMGManager
 {
-
 	// Config
 	private static final String eventname = "Damage Manager";
 
@@ -112,11 +111,6 @@ public class DMGManager
 		{
 			return Classid;
 		}
-
-
-
-
-
 
 		public void setNewData(int dmg, L2PcInstance pl)
 		{

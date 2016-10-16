@@ -21,7 +21,6 @@ import java.util.List;
 
 public class ShowBoard extends L2GameServerPacket
 {
-
 	private StringBuilder htmlCode;
 
 	public ShowBoard(String htmlCode, String id)

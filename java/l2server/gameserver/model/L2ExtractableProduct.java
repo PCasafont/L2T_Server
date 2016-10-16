@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * @author JIV
  */
@@ -41,8 +42,4 @@ public class L2ExtractableProduct
 		this.max = max;
 		this.chance = (int) (chance * 1000);
 	}
-
-
-
-
 }

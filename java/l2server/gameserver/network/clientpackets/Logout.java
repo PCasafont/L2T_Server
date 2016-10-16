@@ -34,13 +34,11 @@ import java.util.logging.Logger;
  */
 public final class Logout extends L2GameClientPacket
 {
-
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	@Override
 	protected void readImpl()
 	{
-
 	}
 
 	@Override

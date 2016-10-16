@@ -26,7 +26,6 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
  */
 public final class RequestShortCutReg extends L2GameClientPacket
 {
-
 	private int type;
 	private int id;
 	private int slot;

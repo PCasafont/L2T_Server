@@ -46,9 +46,8 @@ public class SkillTargetTypeHandler
 
 	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType)
 	{
-
-		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(
-				skillTargetType) != null));
+		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " +
+				(datatable.get(skillTargetType) != null));
 		return datatable.get(skillTargetType);
 	}
 

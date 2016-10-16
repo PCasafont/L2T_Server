@@ -40,7 +40,6 @@ import java.util.logging.Level;
 
 public class RecipeController
 {
-
 	private Map<Integer, L2RecipeList> lists;
 	private static final Map<Integer, RecipeItemMaker> activeMakers = new HashMap<>();
 	private static final String RECIPES_FILE = "recipes.xml";
@@ -144,8 +143,7 @@ public class RecipeController
 
 		RecipeItemMaker maker;
 
-		if (Config.ALT_GAME_CREATION &&
-				(maker = activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
+		if (Config.ALT_GAME_CREATION && (maker = activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
 		{
 			player.sendMessage("Manufacturer is busy, please try later.");
 			return;
@@ -353,8 +351,7 @@ public class RecipeController
 		protected int sp = -1;
 		protected long price;
 		protected int totalItems;
-		@SuppressWarnings("unused")
-		protected int materialsRefPrice;
+		@SuppressWarnings("unused") protected int materialsRefPrice;
 		protected int delay;
 
 		public RecipeItemMaker(L2PcInstance pPlayer, L2RecipeList pRecipeList, L2PcInstance pTarget)
@@ -510,7 +507,6 @@ public class RecipeController
 
 			if (Config.ALT_GAME_CREATION && !items.isEmpty())
 			{
-
 				if (!calculateStatUse(true, true))
 				{
 					return; // check stat use

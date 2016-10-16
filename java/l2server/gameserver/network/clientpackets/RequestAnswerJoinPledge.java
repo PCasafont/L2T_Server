@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.*;
  */
 public final class RequestAnswerJoinPledge extends L2GameClientPacket
 {
-
 	private int answer;
 
 	@Override

@@ -31,7 +31,6 @@ import java.util.logging.Level;
  */
 public class TaskRecom extends Task
 {
-
 	private static final String NAME = "recommendations";
 
 	/**

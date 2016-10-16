@@ -41,7 +41,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	public void mouseReleased(MouseEvent e)
 	{
 		checkPopup(e);
-        /*if (e.isPopupTrigger())
+		/*if (e.isPopupTrigger())
 		{
 			showPopupMenu(e);
 		}*/
@@ -79,7 +79,6 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	@Override
 	public void mouseEntered(MouseEvent e)
 	{
-
 	}
 
 	/* (non-Javadoc)
@@ -88,7 +87,6 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	@Override
 	public void mouseExited(MouseEvent e)
 	{
-
 	}
 
 	/* (non-Javadoc)

@@ -15,9 +15,6 @@
 
 package ai.individual.Summons;
 
-import java.util.Collection;
-import java.util.concurrent.ScheduledFuture;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -25,6 +22,9 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.Collection;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel

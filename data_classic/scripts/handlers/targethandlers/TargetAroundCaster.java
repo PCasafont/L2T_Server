@@ -15,8 +15,6 @@
 
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
@@ -31,6 +29,8 @@ import l2server.gameserver.templates.skills.L2SkillTargetDirection;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
 
 /**
  * Used by all skills that affects nearby players around the caster.

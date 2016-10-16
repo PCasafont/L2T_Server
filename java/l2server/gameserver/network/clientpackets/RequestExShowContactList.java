@@ -26,7 +26,6 @@ import l2server.gameserver.network.serverpackets.ExShowContactList;
  */
 public final class RequestExShowContactList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

@@ -77,5 +77,4 @@ public class XmlDocument
 
 		return children.get(0);
 	}
-
 }

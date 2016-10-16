@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * This class ...
  *
@@ -47,13 +48,6 @@ public class L2ShortCut
 		level = shortcutLevel;
 		this.characterType = characterType;
 	}
-
-
-
-
-
-
-
 
 	public void setSharedReuseGroup(int g)
 	{

@@ -70,33 +70,10 @@ public class CharSelectInfoPackage
 		paperdoll = PcInventory.restoreVisibleInventory(objectId);
 	}
 
-
-
-
-
-
-
 	public int getCurrentClass()
 	{
 		return classId;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public int getPaperdollObjectId(int slot)
 	{
@@ -108,23 +85,10 @@ public class CharSelectInfoPackage
 		return paperdoll[slot][1];
 	}
 
-
-
-
-
-
-
-
-
-
 	public void setTemplate(L2PcTemplate t)
 	{
 		template = t;
 	}
-
-
-
-
 
 	public int getEnchantEffect()
 	{
@@ -140,14 +104,10 @@ public class CharSelectInfoPackage
 		reputation = k;
 	}
 
-
-
-
 	public void setPkKills(int PkKills)
 	{
 		pkKills = PkKills;
 	}
-
 
 	public void setPvPKills(int PvPKills)
 	{
@@ -159,24 +119,13 @@ public class CharSelectInfoPackage
 		return pvpKills;
 	}
 
-
 	public void setTransformId(int id)
 	{
 		transformId = id;
 	}
 
-
-
-
-
-
-
 	public boolean isShowingHat()
 	{
 		return showHat;
 	}
-
-
-
-
 }

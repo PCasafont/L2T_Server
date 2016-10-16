@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExChangePostState extends L2GameServerPacket
 {
-
 	private boolean receivedBoard;
 	private int[] changedMsgIds;
 	private int changeId;

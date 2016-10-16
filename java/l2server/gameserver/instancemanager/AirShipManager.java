@@ -35,7 +35,6 @@ import java.util.logging.Level;
 
 public class AirShipManager
 {
-
 	private static final String LOAD_DB = "SELECT * FROM airships";
 	private static final String ADD_DB = "INSERT INTO airships (owner_id,fuel) VALUES (?,?)";
 	private static final String UPDATE_DB = "UPDATE airships SET fuel=? WHERE owner_id=?";
@@ -195,7 +194,6 @@ public class AirShipManager
 	{
 		final L2AirShipInstance ship = airShips.get(ownerId);
 		return !(ship == null || !(ship.isVisible() || ship.isTeleporting()));
-
 	}
 
 	public void registerAirShipTeleportList(int dockId, int locationId, VehiclePathPoint[][] tp, int[] fuelConsumption)

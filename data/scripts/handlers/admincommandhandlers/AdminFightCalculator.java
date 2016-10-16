@@ -15,8 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.idfactory.IdFactory;
@@ -30,6 +28,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.StringUtil;
+
+import java.util.StringTokenizer;
 
 /**
  * _class handles following admin commands:

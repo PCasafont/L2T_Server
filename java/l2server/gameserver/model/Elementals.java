@@ -303,13 +303,11 @@ public final class Elementals
 	@Getter private byte element = NONE;
 	@Getter private int value = 0;
 
-
 	public void setElement(byte type)
 	{
 		element = type;
 		boni.setElement(type);
 	}
-
 
 	public void setValue(int val)
 	{

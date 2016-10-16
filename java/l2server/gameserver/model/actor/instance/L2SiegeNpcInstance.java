@@ -64,6 +64,5 @@ public class L2SiegeNpcInstance extends L2NpcInstance
 	private boolean validateCondition(L2PcInstance player)
 	{
 		return !getCastle().getSiege().getIsInProgress();
-
 	}
 }

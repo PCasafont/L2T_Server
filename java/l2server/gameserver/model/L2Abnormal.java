@@ -46,7 +46,6 @@ import java.util.logging.Level;
  */
 public class L2Abnormal
 {
-
 	public enum AbnormalState
 	{
 		CREATED, ACTING, FINISHING
@@ -160,8 +159,7 @@ public class L2Abnormal
 		// Support for retail herbs duration when this.effected has a Summon
 		int temp = template.duration;
 
-		if (skill.getId() > 2277 && skill.getId() < 2286 || skill.getId() >= 2512 &&
-				skill.getId() <= 2514)
+		if (skill.getId() > 2277 && skill.getId() < 2286 || skill.getId() >= 2512 && skill.getId() <= 2514)
 		{
 			if (effected instanceof L2SummonInstance ||
 					effected instanceof L2PcInstance && !((L2PcInstance) effected).getSummons().isEmpty())
@@ -230,8 +228,6 @@ public class L2Abnormal
 		//scheduleEffect();
 	}
 
-
-
 	public void setCount(int newcount)
 	{
 		count = Math.min(newcount, totalCount); // sanity check
@@ -247,7 +243,6 @@ public class L2Abnormal
 	{
 		return icon;
 	}
-
 
 	public int getTime()
 	{
@@ -268,7 +263,6 @@ public class L2Abnormal
 		return Math.abs(count - totalCount + 1) * duration + getTime() + 1;
 	}
 
-
 	public boolean setInUse(boolean inUse)
 	{
 		this.inUse = inUse;
@@ -283,11 +277,6 @@ public class L2Abnormal
 
 		return startConditionsCorrect;
 	}
-
-
-
-
-
 
 	public boolean isSelfEffect()
 	{
@@ -573,14 +562,14 @@ public class L2Abnormal
 
 				if (skill.getAfterEffectId() > 0)
 				{
-					L2Skill skill =
-							SkillTable.getInstance().getInfo(this.skill.getAfterEffectId(), this.skill.getAfterEffectLvl());
+					L2Skill skill = SkillTable.getInstance()
+							.getInfo(this.skill.getAfterEffectId(), this.skill.getAfterEffectLvl());
 					if (skill != null)
 					{
 						getEffected().broadcastPacket(
 								new MagicSkillUse(effected, skill.getId(), skill.getLevelHash(), 0, 0));
-						getEffected().broadcastPacket(
-								new MagicSkillLaunched(effected, skill.getId(), skill.getLevelHash()));
+						getEffected()
+								.broadcastPacket(new MagicSkillLaunched(effected, skill.getId(), skill.getLevelHash()));
 						skill.getEffects(getEffected(), getEffected());
 					}
 				}
@@ -680,11 +669,13 @@ public class L2Abnormal
 		if (totalCount > 1)
 		{
 			mi.addEffect(sk.getId(), levelHash, comboId,
-					(count - 1) * duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS), effector.getObjectId());
+					(count - 1) * duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS),
+					effector.getObjectId());
 		}
 		else if (effector != null)
 		{
-			mi.addEffect(sk.getId(), levelHash, comboId, (int) future.getDelay(TimeUnit.MILLISECONDS), effector.getObjectId());
+			mi.addEffect(sk.getId(), levelHash, comboId, (int) future.getDelay(TimeUnit.MILLISECONDS),
+					effector.getObjectId());
 		}
 		else if (duration == -1)
 		{
@@ -749,11 +740,6 @@ public class L2Abnormal
 	{
 		return getSkill().getLevelHash();
 	}
-
-
-
-
-
 
 	public boolean canBeStolen()
 	{

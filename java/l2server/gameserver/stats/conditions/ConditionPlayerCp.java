@@ -22,7 +22,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerCp extends Condition
 {
-
 	private final int cp;
 
 	/**

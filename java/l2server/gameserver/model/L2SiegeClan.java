@@ -105,7 +105,6 @@ public class L2SiegeClan
 		return flag;
 	}
 
-
 	public void setType(SiegeClanType setType)
 	{
 		type = setType;

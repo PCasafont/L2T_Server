@@ -57,7 +57,6 @@ public class PreparedEntry extends MultiSellEntry
 				{
 					adenaAmount += ing.getItemCount();
 				}
-
 			}
 			else if (maintainEnchantment && item != null && ing.isArmorOrWeapon())
 			{

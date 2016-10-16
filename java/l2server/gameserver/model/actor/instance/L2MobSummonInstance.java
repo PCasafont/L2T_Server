@@ -252,7 +252,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 					if (isInsideRadius(target, 1500, true, false))
 					{
 						/*
-                        L2PcInstance receptor = ((L2MobSummonInstance)target).getOwner();
+						L2PcInstance receptor = ((L2MobSummonInstance)target).getOwner();
 						receptor.setMobSummonExchangeRequest(true, this);
 						String confirmText = getOwner().getName() + " wants to exchange your " + receptor.getPet().getName() + " for his " + getName() + ". Do you accept?";
 						ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1.getId()).addString(confirmText);
@@ -542,7 +542,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 
 		if (owner != null)
 		{
-
 		}
 
 		return true;
@@ -552,7 +551,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 	{
 		controlItem = item;
 	}
-
 
 	@Override
 	public void setIsImmobilized(boolean value)

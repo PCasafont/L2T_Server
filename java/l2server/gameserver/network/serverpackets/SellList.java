@@ -31,7 +31,6 @@ import java.util.List;
  */
 public class SellList extends L2GameServerPacket
 {
-
 	private final L2PcInstance activeChar;
 	private final L2MerchantInstance lease;
 	private long money;

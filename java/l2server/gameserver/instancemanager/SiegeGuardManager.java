@@ -33,7 +33,6 @@ import java.util.logging.Level;
 
 public class SiegeGuardManager
 {
-
 	// =========================================================
 	// Data Field
 	private Castle castle;

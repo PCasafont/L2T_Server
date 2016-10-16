@@ -15,7 +15,6 @@
 
 package l2server.gameserver.security;
 
-import lombok.Getter;
 import l2server.Base64;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
@@ -26,6 +25,7 @@ import l2server.gameserver.network.serverpackets.Ex2ndPasswordCheck;
 import l2server.gameserver.network.serverpackets.Ex2ndPasswordVerify;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -242,9 +242,9 @@ public class SecondaryPasswordAuth
 			{
 				LoginServerThread.getInstance().sendTempBan(activeClient.getAccountName(),
 						activeClient.getConnectionAddress().getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
-				Log.warning(activeClient.getAccountName() + " - (" +
-						activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " +
-						wrongAttempts + " times in row.");
+				Log.warning(
+						activeClient.getAccountName() + " - (" + activeClient.getConnectionAddress().getHostAddress() +
+								") has inputted the wrong password " + wrongAttempts + " times in row.");
 				insertWrongAttempt(0);
 				activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN,
 						Config.SECOND_AUTH_MAX_ATTEMPTS));
@@ -276,7 +276,6 @@ public class SecondaryPasswordAuth
 			activeClient.sendPacket(new Ex2ndPasswordCheck(Ex2ndPasswordCheck.PASSWORD_NEW));
 		}
 	}
-
 
 	private String cryptPassword(String password)
 	{

@@ -27,7 +27,6 @@ import l2server.gameserver.network.serverpackets.ExSendManorList;
  */
 public class RequestManorList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

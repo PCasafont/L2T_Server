@@ -24,7 +24,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class Ex2ndPasswordCheck extends L2GameServerPacket
 {
-
 	public static final int PASSWORD_NEW = 0x00;
 	public static final int PASSWORD_PROMPT = 0x01;
 	public static final int PASSWORD_OK = 0x02;

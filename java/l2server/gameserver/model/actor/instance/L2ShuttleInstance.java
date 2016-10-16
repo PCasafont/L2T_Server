@@ -56,8 +56,6 @@ public class L2ShuttleInstance extends L2Vehicle
 		return true;
 	}
 
-
-
 	public boolean isClosed()
 	{
 		for (ShuttleStop ss : stops)
@@ -211,9 +209,6 @@ public class L2ShuttleInstance extends L2Vehicle
 		{
 			return doorId;
 		}
-
-
-
 
 		public boolean isDoorOpen()
 		{

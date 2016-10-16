@@ -27,8 +27,7 @@ import l2server.gameserver.network.serverpackets.PledgeReceivePowerInfo;
  */
 public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int unk1;
+	@SuppressWarnings("unused") private int unk1;
 	private String player;
 
 	@Override

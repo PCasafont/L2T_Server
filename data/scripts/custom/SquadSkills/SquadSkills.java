@@ -15,13 +15,6 @@
 
 package custom.SquadSkills;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
@@ -35,6 +28,13 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel
@@ -206,8 +206,9 @@ public class SquadSkills extends Quest
 			String pledgeInfo = "<table width=300>";
 
 			//Add the main clan
-			pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_0\">" +
-					playerClan.getName() + " (Main Clan)</a></td></tr>";
+			pledgeInfo +=
+					"<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_0\">" + playerClan.getName() +
+							" (Main Clan)</a></td></tr>";
 
 			//SubPledges
 			SubPledge[] subPledges = playerClan.getAllSubPledges();
@@ -218,9 +219,8 @@ public class SquadSkills extends Quest
 				{
 					continue;
 				}
-				pledgeInfo +=
-						"<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_" + pledge.getId() +
-								"\">" + pledge.getName() + "</a></td></tr>";
+				pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_" + pledge.getId() +
+						"\">" + pledge.getName() + "</a></td></tr>";
 			}
 
 			pledgeInfo += "</table>";
@@ -249,10 +249,11 @@ public class SquadSkills extends Quest
 					{
 						continue;
 					}
-					skillInfo += "<tr><td><a action=\"bypass -h Quest " + qn + " try_learn_skill_" + toLearn.getKey() +
-							"_" + toLearn.getValue() + "_" + pledgeType + "\">" +
-							SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: " +
-							toLearn.getValue() + ")</a></td></tr>";
+					skillInfo +=
+							"<tr><td><a action=\"bypass -h Quest " + qn + " try_learn_skill_" + toLearn.getKey() + "_" +
+									toLearn.getValue() + "_" + pledgeType + "\">" +
+									SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: " +
+									toLearn.getValue() + ")</a></td></tr>";
 				}
 			}
 			skillInfo += "</table>";

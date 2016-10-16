@@ -22,7 +22,6 @@ import l2server.gameserver.network.serverpackets.ExShowOwnthingPos;
  */
 public class RequestDominionInfo extends L2GameClientPacket
 {
-
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */

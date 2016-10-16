@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.datatables.CharNameTable;
@@ -31,6 +30,7 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import lombok.Getter;
 
 import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
@@ -41,7 +41,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public final class RequestSendPost extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
 	private static final int MAX_RECV_LENGTH = 16;
@@ -417,8 +416,6 @@ public final class RequestSendPost extends L2GameClientPacket
 			objectId = id;
 			count = num;
 		}
-
-
 	}
 
 	@Override

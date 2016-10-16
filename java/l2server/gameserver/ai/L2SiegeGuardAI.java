@@ -41,7 +41,6 @@ import static l2server.gameserver.ai.CtrlIntention.*;
  */
 public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 {
-
 	//
 	private static final int MAX_ATTACK_TIMEOUT = 300; // int ticks, i.e. 30 seconds
 
@@ -590,7 +589,6 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 				if (dist_2 <= castRange * castRange && castRange > 70 && !actor.isSkillDisabled(sk) &&
 						actor.getCurrentMp() >= actor.getStat().getMpConsume(sk) && !sk.isPassive())
 				{
-
 					L2Object OldTarget = actor.getTarget();
 					if (sk.getSkillType() == L2SkillType.BUFF || sk.getSkillType() == L2SkillType.HEAL)
 					{
@@ -628,8 +626,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 			}
 
 			// Check if the L2SiegeGuardInstance is attacking, knows the target and can't run
-			if (!actor.isAttackingNow() && actor.getRunSpeed() == 0 &&
-					actor.getKnownList().knowsObject(attackTarget))
+			if (!actor.isAttackingNow() && actor.getRunSpeed() == 0 && actor.getKnownList().knowsObject(attackTarget))
 			{
 				// Cancel the target
 				actor.getKnownList().removeKnownObject(attackTarget);
@@ -679,7 +676,6 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 					}
 				}
 			}
-
 		}
 		// Else, if the actor is muted and far from target, just "move to pawn"
 		else if (actor.isMuted() && dist_2 > range * range && !selfAnalysis.isHealer)

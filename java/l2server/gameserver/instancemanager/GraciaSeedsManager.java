@@ -25,7 +25,6 @@ import java.util.Calendar;
 
 public class GraciaSeedsManager
 {
-
 	public static String qn = "EnergySeeds";
 
 	private static final byte SOITYPE = 2;
@@ -148,7 +147,6 @@ public class GraciaSeedsManager
 		}
 	}
 
-
 	public void setSoDState(int value, boolean doSave)
 	{
 		Log.info("GraciaSeedManager: New Seed of Destruction state -> " + value + ".");
@@ -185,8 +183,6 @@ public class GraciaSeedsManager
 				return -1;
 		}
 	}
-
-
 
 	public static GraciaSeedsManager getInstance()
 	{

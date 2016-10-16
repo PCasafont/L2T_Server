@@ -32,7 +32,6 @@ import java.util.List;
  */
 public class PetInventoryUpdate extends L2ItemListPacket
 {
-
 	private List<ItemInfo> items;
 
 	/**

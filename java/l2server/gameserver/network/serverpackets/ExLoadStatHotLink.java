@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExLoadStatHotLink extends L2GameServerPacket
 {
-
 	private int pid1;
 	private int pid2;
 
@@ -47,7 +46,7 @@ public class ExLoadStatHotLink extends L2GameServerPacket
 		writeD(pid1);
 		writeD(pid2);
 		/*writeD(lastMap.size() < 5 ? lastMap.size() : 5);
-        int position = 1;
+		int position = 1;
 		for (Integer key : lastMap.keySet())
 		{
 			writeH(position);

@@ -37,11 +37,9 @@ import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE
 @Deprecated
 public class RequestBuyProcure extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	@SuppressWarnings("unused")
-	private int listId;
+	@SuppressWarnings("unused") private int listId;
 	private Procure[] items = null;
 
 	@Override
@@ -210,9 +208,6 @@ public class RequestBuyProcure extends L2GameClientPacket
 			itemId = id;
 			count = num;
 		}
-
-
-
 
 		public void setReward(Castle c)
 		{

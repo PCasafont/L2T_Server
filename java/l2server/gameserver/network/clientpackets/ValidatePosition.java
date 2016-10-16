@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public class ValidatePosition extends L2GameClientPacket
 {
-
 	/**
 	 * urgent messages, execute immediately
 	 */
@@ -103,7 +102,7 @@ public class ValidatePosition extends L2GameClientPacket
 		if (activeChar.isInAirShip())
 		{
 			/*if (Config.COORD_SYNCHRONIZE == 2)
-            {
+			{
 				dx = this.x - activeChar.getInVehiclePosition().getX();
 				dy = this.y - activeChar.getInVehiclePosition().getY();
 				dz = this.z - activeChar.getInVehiclePosition().getZ();

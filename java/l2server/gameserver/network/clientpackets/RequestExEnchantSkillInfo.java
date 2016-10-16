@@ -32,7 +32,6 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
  */
 public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 {
-
 	private int skillId;
 	private int skillLvl;
 	private int skillEnchant;
@@ -92,7 +91,6 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.sendPacket(new ExEnchantSkillInfo(skillId, skillLvl, skillEnchant / 1000,
-				skillEnchant % 1000));
+		activeChar.sendPacket(new ExEnchantSkillInfo(skillId, skillLvl, skillEnchant / 1000, skillEnchant % 1000));
 	}
 }

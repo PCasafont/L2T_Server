@@ -48,7 +48,6 @@ import java.util.logging.Level;
  */
 public class GameServerTable
 {
-
 	@Getter private static GameServerTable instance;
 
 	// Server Names Config
@@ -75,7 +74,6 @@ public class GameServerTable
 			}
 		}
 	}
-
 
 	public GameServerTable() throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException
 	{
@@ -228,7 +226,6 @@ public class GameServerTable
 		return getServerNames().get(id);
 	}
 
-
 	public KeyPair getKeyPair()
 	{
 		return keyPairs[Rnd.nextInt(10)];
@@ -283,9 +280,6 @@ public class GameServerTable
 			this(id, hexId, null);
 		}
 
-
-
-
 		public void setAuthed(boolean isAuthed)
 		{
 			this.isAuthed = isAuthed;
@@ -305,8 +299,6 @@ public class GameServerTable
 		{
 			return gst;
 		}
-
-
 
 		public int getCurrentPlayerCount()
 		{
@@ -330,10 +322,6 @@ public class GameServerTable
 			return null;
 		}
 
-
-
-
-
 		public boolean isPvp()
 		{
 			return isPvp;
@@ -344,12 +332,10 @@ public class GameServerTable
 			ageLimit = val;
 		}
 
-
 		public void setServerType(int val)
 		{
 			serverType = val;
 		}
-
 
 		public void setShowingBrackets(boolean val)
 		{
@@ -411,7 +397,6 @@ public class GameServerTable
 				super(subnet);
 				serverAddress = address;
 			}
-
 
 			@Override
 			public String toString()

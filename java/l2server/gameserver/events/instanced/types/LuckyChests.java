@@ -22,7 +22,6 @@ import l2server.util.Rnd;
  */
 public class LuckyChests extends EventInstance
 {
-
 	private boolean chestsSpawned = false;
 	private L2Spawn[] chestSpawns = new L2Spawn[200];
 

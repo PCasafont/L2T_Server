@@ -20,7 +20,6 @@ package l2server.gameserver.util;
  */
 public final class FloodProtectorConfig
 {
-
 	/**
 	 * Type used for identification of logging output.
 	 */

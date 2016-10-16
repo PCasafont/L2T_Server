@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * Stats definition for each pet level
  *
@@ -45,7 +46,6 @@ public class L2PetLevelData
 	{
 		petMaxExp = pPetMaxExp;
 	}
-
 
 	public void setOwnerExpTaken(int pOwnerExpTaken)
 	{

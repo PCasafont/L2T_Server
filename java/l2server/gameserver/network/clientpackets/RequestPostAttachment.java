@@ -36,7 +36,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public final class RequestPostAttachment extends L2GameClientPacket
 {
-
 	private int msgId;
 
 	@Override

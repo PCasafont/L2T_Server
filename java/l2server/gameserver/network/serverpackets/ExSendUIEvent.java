@@ -130,8 +130,10 @@ public class ExSendUIEvent extends L2GameServerPacket
 				writeD(0x00); // unknown
 				writeD(npcString); // TODO: npcString
 				writeS(text); // text above timer
-				writeS(String.valueOf(endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
-				writeS(String.valueOf(endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
+				writeS(String.valueOf(
+						endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
+				writeS(String.valueOf(
+						endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
 
 				break;
 		}

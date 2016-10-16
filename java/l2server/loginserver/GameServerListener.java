@@ -28,7 +28,6 @@ import java.util.List;
  */
 public class GameServerListener extends FloodProtectedListener
 {
-
 	private static List<GameServerThread> gameServers = new ArrayList<>();
 
 	public GameServerListener() throws IOException

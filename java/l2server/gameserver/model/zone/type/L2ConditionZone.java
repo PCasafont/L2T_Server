@@ -68,7 +68,6 @@ public class L2ConditionZone extends L2SpawnZone
 	@Override
 	protected void onExit(L2Character character)
 	{
-
 		if (character instanceof L2PcInstance)
 		{
 			if (NO_BOOKMARK)

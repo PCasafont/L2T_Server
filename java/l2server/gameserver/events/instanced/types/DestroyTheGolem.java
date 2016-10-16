@@ -26,7 +26,6 @@ import java.util.List;
  */
 public class DestroyTheGolem extends EventInstance
 {
-
 	private boolean golemsSpawned = false;
 
 	public DestroyTheGolem(int id, EventConfig config)

@@ -35,7 +35,6 @@ import java.util.StringTokenizer;
  */
 public class EnchantHPBonusData
 {
-
 	private final TIntObjectHashMap<Integer[]> armorHPBonus = new TIntObjectHashMap<>();
 	private static final float fullArmorModifier = 1.5f;
 

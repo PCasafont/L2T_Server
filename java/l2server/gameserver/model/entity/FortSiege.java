@@ -487,7 +487,6 @@ public class FortSiege implements Siegable
 	public boolean checkIsDefender(L2Clan clan)
 	{
 		return clan != null && getFort().getOwnerClan() == clan;
-
 	}
 
 	/**
@@ -1291,7 +1290,6 @@ public class FortSiege implements Siegable
 	{
 		return attackerClans;
 	}
-
 
 	public final boolean getIsInProgress()
 	{

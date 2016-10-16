@@ -25,8 +25,7 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
  */
 public final class RequestPledgeWarList extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int unk1;
+	@SuppressWarnings("unused") private int unk1;
 	private int tab;
 
 	@Override

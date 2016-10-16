@@ -484,8 +484,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			if (Config.DEBUG)
 			{
-				Log.info("*** Skill " + name + " (" + level + ") changed reuse from " +
-						set.getInteger("reuseDelay", 0) + " to " + Config.SKILL_REUSE_LIST.get(id) + " seconds.");
+				Log.info(
+						"*** Skill " + name + " (" + level + ") changed reuse from " + set.getInteger("reuseDelay", 0) +
+								" to " + Config.SKILL_REUSE_LIST.get(id) + " seconds.");
 			}
 			reuseDelay = Config.SKILL_REUSE_LIST.get(id);
 		}
@@ -746,7 +747,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			case DEATHLINK:
 			{
 				return power * Math.pow(1.7165 - activeChar.getCurrentHp() / activeChar.getMaxHp(), 2) * 0.577;
-                /*
+				/*
 				 * DrHouse:
 				 * Rolling back to old formula (look below) for DEATHLINK due to this one based on logarithm is not
 				 * accurate enough. Commented here because probably is a matter of just adjusting a constant
@@ -765,7 +766,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 	}
 
-
 	public final double getPower(boolean isPvP, boolean isPvE)
 	{
 		return isPvP ? pvpPower : isPvE ? pvePower : power;
@@ -775,7 +775,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return negateStats;
 	}
-
 
 	public final int getAbnormalLvl()
 	{
@@ -935,7 +934,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return skillRadius;
 	}
-
 
 	public final boolean isActive()
 	{
@@ -1205,7 +1203,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 
 		return (mask & weaponsAllowed) != 0;
-
 	}
 
 	public boolean checkCondition(L2Character activeChar, L2Object target, boolean itemOrWeapon)
@@ -2185,7 +2182,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 
 		return !(geoEnabled && !GeoData.getInstance().canSeeTarget(caster, target));
-
 	}
 
 	public static boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
@@ -2197,7 +2193,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		return !(radius > 0 && !Util.checkIfInRange(radius, caster, target, true) &&
 				!GeoData.getInstance().canSeeTarget(caster, target));
-
 	}
 
 	public final Func[] getStatFuncs(L2Character player)
@@ -2586,9 +2581,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return refId;
 	}
 
-
-
-
 	@Override
 	public boolean triggersChanceSkill()
 	{
@@ -2654,9 +2646,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return isClanSkill;
 	}
-
-
-
 
 	/**
 	 * @param skillId
@@ -2744,10 +2733,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return isTriggered && !isDebuff;
 	}
-
-
-
-
 
 	public boolean isCastedToParty()
 	{
@@ -2853,7 +2838,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		else if (getTargetType() == L2SkillTargetType.TARGET_SPECIAL)
 		{
 			return getTargetDirection() != L2SkillTargetDirection.CHAIN_HEAL;
-
 		}
 		else if (getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA)
 		{
@@ -2907,7 +2891,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		return false;
 	}
-
 
 	public final boolean isFishingSkill()
 	{

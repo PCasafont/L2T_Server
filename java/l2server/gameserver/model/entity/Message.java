@@ -258,7 +258,6 @@ public class Message
 		return reqAdena > 0;
 	}
 
-
 	public final int getExpirationSeconds()
 	{
 		return (int) (expiration / 1000);

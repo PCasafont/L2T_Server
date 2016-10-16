@@ -52,7 +52,6 @@ import java.util.regex.PatternSyntaxException;
 @SuppressWarnings("unused")
 public final class CharacterCreate extends L2GameClientPacket
 {
-
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	// cSdddddddddddd
@@ -230,8 +229,8 @@ public final class CharacterCreate extends L2GameClientPacket
 			{
 				if (Config.DEBUG)
 				{
-					Log.fine("Character Creation Failure: " + name + " classId: " + classId + " Template: " +
-							template + " Message generated: Your character creation has failed.");
+					Log.fine("Character Creation Failure: " + name + " classId: " + classId + " Template: " + template +
+							" Message generated: Your character creation has failed.");
 				}
 
 				sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -468,7 +467,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
 			player.registerShortCut(shortcut);
 			// .landrates macro
-            /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
+			/*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1006, 0, 0);
 			player.registerShortCut(shortcut);*/

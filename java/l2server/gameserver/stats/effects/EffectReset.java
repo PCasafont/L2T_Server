@@ -99,7 +99,6 @@ public class EffectReset extends L2Effect
 	@Override
 	public void onExit()
 	{
-
 	}
 
 	/**

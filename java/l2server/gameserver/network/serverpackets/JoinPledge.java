@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class JoinPledge extends L2GameServerPacket
 {
-
 	private int pledgeId;
 
 	public JoinPledge(int pledgeId)

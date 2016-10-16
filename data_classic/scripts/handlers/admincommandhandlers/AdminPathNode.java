@@ -15,13 +15,13 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
+
+import java.util.List;
 
 public class AdminPathNode implements IAdminCommandHandler
 {
@@ -48,15 +48,12 @@ public class AdminPathNode implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_show_path"))
 		{
-
 		}
 		else if (command.equals("admin_path_debug"))
 		{
-
 		}
 		else if (command.equals("admin_show_pn"))
 		{
-
 		}
 		else if (command.equals("admin_find_path"))
 		{

@@ -246,7 +246,7 @@ public abstract class L2Playable extends L2Character
 		return !(targetPlayer.getPvpFlag() == 0 && !player.isInSameClanWar(targetPlayer));
 
 		/*  Even at war, there should be PvP flag
-        if (
+		if (
 				player.getClan() == null ||
 				targetPlayer.getClan() == null ||
 				(
@@ -369,7 +369,6 @@ public abstract class L2Playable extends L2Character
 	{
 		return lockedTarget != null;
 	}
-
 
 	public void setLockedTarget(L2Character cha)
 	{

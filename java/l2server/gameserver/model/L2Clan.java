@@ -97,8 +97,7 @@ public class L2Clan
 
 	@Getter private List<ClanWar> wars = new ArrayList<>();
 
-	@SuppressWarnings("unused")
-	private Forum forum;
+	@SuppressWarnings("unused") private Forum forum;
 
 	//  Clan Privileges
 	/**
@@ -616,8 +615,7 @@ public class L2Clan
 	{
 		this.level = level;
 		/*if (this.level >= 2 && this.forum == null && Config.COMMUNITY_TYPE > 0)
-        {
-
+		{
 			Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 
 			if (forum != null)
@@ -957,7 +955,6 @@ public class L2Clan
 		storeNotice(notice, noticeEnabled);
 	}
 
-
 	public String getNotice()
 	{
 		if (notice == null)
@@ -1075,7 +1072,6 @@ public class L2Clan
 
 		if (newSkill != null)
 		{
-
 			if (subType == -2) // regular clan skill
 			{
 				oldSkill = skills.put(newSkill.getId(), newSkill);
@@ -1387,7 +1383,6 @@ public class L2Clan
 		return warehouse;
 	}
 
-
 	public boolean isAtWarWith(Integer id)
 	{
 		if (!wars.isEmpty())
@@ -1540,7 +1535,6 @@ public class L2Clan
 		return false;
 	}
 
-
 	public void incrementHiredGuards()
 	{
 		hiredGuards++;
@@ -1686,7 +1680,6 @@ public class L2Clan
 			this.leaderId = leaderId;
 		}
 
-
 		public String getName()
 		{
 			return subPledgeName;
@@ -1696,8 +1689,6 @@ public class L2Clan
 		{
 			subPledgeName = name;
 		}
-
-
 
 		public L2Skill addNewSkill(L2Skill skill)
 		{
@@ -1727,7 +1718,6 @@ public class L2Clan
 		{
 			return rankId;
 		}
-
 
 		public int getPrivs()
 		{
@@ -2205,10 +2195,6 @@ public class L2Clan
 		}
 	}
 
-
-
-
-
 	public void setAuctionBiddedAt(int id, boolean storeInDb)
 	{
 		auctionBiddedAt = id;
@@ -2315,7 +2301,6 @@ public class L2Clan
 		}
 
 		return !(Config.isServer(Config.TENKAI) && !checkClanBalance(activeChar, activeChar.getClan()));
-
 	}
 
 	/**
@@ -2451,20 +2436,16 @@ public class L2Clan
 		return true;
 	}
 
-
-
 	public void setAllyPenaltyExpiryTime(long expiryTime, int penaltyType)
 	{
 		allyPenaltyExpiryTime = expiryTime;
 		allyPenaltyType = penaltyType;
 	}
 
-
 	public void setCharPenaltyExpiryTime(long time)
 	{
 		charPenaltyExpiryTime = time;
 	}
-
 
 	public void setDissolvingExpiryTime(long time)
 	{
@@ -3039,7 +3020,6 @@ public class L2Clan
 
 	@Getter private int tempLargeCrestId = 0;
 
-
 	public void setTempLargeCrestId(int id)
 	{
 		tempLargeCrestId = id;
@@ -3156,7 +3136,6 @@ public class L2Clan
 		}
 		// is first level?
 		return current == null && skill.getLevel() == 1;
-
 	}
 
 	public SubPledgeSkill[] getAllSubSkills()

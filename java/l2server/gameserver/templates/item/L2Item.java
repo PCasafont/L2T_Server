@@ -118,7 +118,7 @@ public abstract class L2Item
 
 	private static final int[] crystalItemId = {0, 1458, 1459, 1460, 1461, 1462, 1462, 1462, 17371, 17371, 17371};
 	/*private static final int[] crystalEnchantBonusArmor =
-    {
+	{
 		0, 11, 6, 11, 19, 25, 25, 25, 35, 35, 35
 	};
 	private static final int[] crystalEnchantBonusWeapon =
@@ -270,12 +270,9 @@ public abstract class L2Item
 		common = itemId >= 12006 && itemId <= 12361;
 		heroItem = set.getBool("isHeroItem", false);
 		pvpItem = itemId >= 10667 && itemId <= 10835 || itemId >= 12852 && itemId <= 12977 ||
-				itemId >= 14363 && itemId <= 14525 || itemId == 14528 || itemId == 14529 ||
-				itemId == 14558 ||
-				itemId >= 15913 && itemId <= 16024 || itemId >= 16134 && itemId <= 16147 ||
-				itemId == 16149 ||
-				itemId == 16151 || itemId == 16153 || itemId == 16155 || itemId == 16157 ||
-				itemId == 16159 ||
+				itemId >= 14363 && itemId <= 14525 || itemId == 14528 || itemId == 14529 || itemId == 14558 ||
+				itemId >= 15913 && itemId <= 16024 || itemId >= 16134 && itemId <= 16147 || itemId == 16149 ||
+				itemId == 16151 || itemId == 16153 || itemId == 16155 || itemId == 16157 || itemId == 16159 ||
 				itemId >= 16168 && itemId <= 16176 || itemId >= 16179 && itemId <= 16220;
 	}
 
@@ -389,7 +386,6 @@ public abstract class L2Item
 			return crystalCount;
 		}
 	}
-
 
 	/**
 	 * Returns the base elemental of the item
@@ -655,7 +651,6 @@ public abstract class L2Item
 
 		for (L2AbnormalTemplate et : effectTemplates)
 		{
-
 			e = et.getEffect(env);
 			if (e != null)
 			{
@@ -881,7 +876,6 @@ public abstract class L2Item
 	{
 		return crystallizeRewards;
 	}
-
 
 	/**
 	 * Returns the name of the item

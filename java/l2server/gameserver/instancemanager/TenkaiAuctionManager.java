@@ -559,10 +559,10 @@ public class TenkaiAuctionManager implements Reloadable
 
 			sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuctionInfo.getId() +
 					"\" width=100 type=number length=14></td></tr>");
-			sb.append(
-					"<tr><td></td><td><br><button action=\"bypass this.bbscustom;action;bid;" + currentAuctionInfo.getId() +
-							"; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" + currentAuctionInfo.getId() +
-							"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
+			sb.append("<tr><td></td><td><br><button action=\"bypass this.bbscustom;action;bid;" +
+					currentAuctionInfo.getId() + "; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" +
+					currentAuctionInfo.getId() +
+					"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
 			sb.append("</table><br>");
 

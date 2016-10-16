@@ -33,7 +33,6 @@ import java.util.logging.Level;
  */
 public class StackIDFactory extends IdFactory
 {
-
 	private int curOID;
 	private int tempOID;
 

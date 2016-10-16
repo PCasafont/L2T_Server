@@ -1,6 +1,5 @@
 package l2server.gameserver.model.actor.instance;
 
-
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CtrlIntention;
@@ -98,8 +97,6 @@ public class L2EventFlagInstance extends L2NpcInstance
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 
-
-
 	class FlagCastFinalizer implements Runnable
 	{
 		private L2PcInstance player;
@@ -137,5 +134,4 @@ public class L2EventFlagInstance extends L2NpcInstance
 	{
 		toDelete = true;
 	}
-
 }

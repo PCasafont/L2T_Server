@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * This class ...
  *
@@ -45,5 +46,4 @@ public final class L2PledgeSkillLearn
 	{
 		return baseLvl;
 	}
-
 }

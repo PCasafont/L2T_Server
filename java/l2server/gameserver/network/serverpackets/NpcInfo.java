@@ -157,7 +157,7 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) 0); // PvP Flag
 		buffer.putInt(0); // Reputation
 		/*if (npc.getOwner() != null)
-        {
+		{
 			buffer.putInt(npc.getOwner().getClanId());
 			buffer.putInt(npc.getOwner().getClanCrestId());
 			buffer.putInt(npc.getOwner().getClanCrestLargeId());

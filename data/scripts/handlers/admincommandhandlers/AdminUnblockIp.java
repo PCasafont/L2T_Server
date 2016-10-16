@@ -15,11 +15,11 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -31,7 +31,6 @@ import l2server.log.Log;
  */
 public class AdminUnblockIp implements IAdminCommandHandler
 {
-
 	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_unblockip"};
@@ -42,7 +41,6 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-
 		if (command.startsWith("admin_unblockip "))
 		{
 			try

@@ -165,7 +165,6 @@ public class WayPointNode extends L2Object
 		this.title = title;
 	}
 
-
 	public String getType()
 	{
 		return type;

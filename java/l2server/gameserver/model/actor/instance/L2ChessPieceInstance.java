@@ -721,11 +721,6 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 		return !firstMove;
 	}
 
-
-
-
-
-
 	public int getRPosX()
 	{
 		if (getSide().getId() == 0)

@@ -208,7 +208,6 @@ public class L2Npc extends L2Character
 
 	public boolean useSpiritShot()
 	{
-
 		if (spiritshotcharged)
 		{
 			return true;
@@ -951,7 +950,6 @@ public class L2Npc extends L2Character
 		}
 		return !(player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() &&
 				player.getInstanceId() != -1);
-
 	}
 
 	public int getInteractionDistance()
@@ -1919,8 +1917,6 @@ public class L2Npc extends L2Character
 		}
 	}
 
-
-
 	public void scheduleDespawn(long delay)
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(this.new DespawnTask(), delay);
@@ -1985,7 +1981,6 @@ public class L2Npc extends L2Character
 		}
 	}
 
-
 	public int getColorEffect()
 	{
 		return 0;
@@ -2036,7 +2031,6 @@ public class L2Npc extends L2Character
 
 		broadcastPacket(toBroadcast);
 	}
-
 
 	public void setIsLethalImmune(boolean b)
 	{

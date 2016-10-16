@@ -167,9 +167,6 @@ public class L2StatueInstance extends L2Npc
 		}
 	}
 
-
-
-
 	public int getClassId()
 	{
 		return template.startingClassId;
@@ -179,19 +176,4 @@ public class L2StatueInstance extends L2Npc
 	{
 		return template.race.ordinal();
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -23,7 +23,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetNpcType extends Condition
 {
-
 	private final InstanceType[] npcType;
 
 	/**

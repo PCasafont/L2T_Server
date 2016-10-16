@@ -206,7 +206,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeC(0);
 
 		writeC(activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+				activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
 		writeH(activeChar.getCubics().size());
 		for (int id : activeChar.getCubics().keySet())

@@ -27,7 +27,6 @@ import l2server.gameserver.templates.item.L2Henna;
  */
 public final class RequestHennaItemDrawInfo extends L2GameClientPacket
 {
-
 	private int symbolId;
 
 	// format  cd

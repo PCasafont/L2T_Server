@@ -411,8 +411,7 @@ public class CellPathFinding extends PathFinding
 					String.valueOf(postFilterPasses), "/",
 					String.format("%1.1f", (double) postFilterPasses / postFilterUses), "\r\n");
 		}
-		StringUtil
-				.append(stat, "Pathfind success/fail:", String.valueOf(findSuccess), "/", String.valueOf(findFails));
+		StringUtil.append(stat, "Pathfind success/fail:", String.valueOf(findSuccess), "/", String.valueOf(findFails));
 		result[result.length - 1] = stat.toString();
 
 		return result;

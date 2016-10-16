@@ -30,7 +30,6 @@ import java.util.logging.Level;
  */
 public class GameGuardReply extends L2GameClientPacket
 {
-
 	private static final byte[] VALID = {
 			(byte) 0x88,
 			0x40,

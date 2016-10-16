@@ -242,8 +242,7 @@ public class L2DefenderInstance extends L2Attackable
 				// Check if siege is in progress
 				if (fort != null && fort.getZone().isActive() || castle != null && castle.getZone().isActive())
 				{
-					int activeSiegeId = fort != null ? fort.getFortId() :
-							castle != null ? castle.getCastleId() : 0;
+					int activeSiegeId = fort != null ? fort.getFortId() : castle != null ? castle.getCastleId() : 0;
 					if (player != null &&
 							(player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId)))
 					{

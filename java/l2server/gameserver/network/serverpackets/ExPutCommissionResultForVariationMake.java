@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
 {
-
 	private int gemstoneObjId;
 	private int itemId;
 	private long gemstoneCount;

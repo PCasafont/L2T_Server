@@ -118,9 +118,6 @@ public final class ItemAuction
 		}
 	}
 
-
-
-
 	public final L2ItemInstance createNewItemInstance()
 	{
 		return auctionItem.createNewItemInstance();
@@ -150,7 +147,6 @@ public final class ItemAuction
 	{
 		scheduledAuctionEndingExtendState = state;
 	}
-
 
 	public final long getEndingTime()
 	{

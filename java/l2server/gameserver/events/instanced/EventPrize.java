@@ -15,9 +15,9 @@
 
 package l2server.gameserver.events.instanced;
 
-import lombok.Getter;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +51,6 @@ public abstract class EventPrize
 			min = node.getInt("min");
 			max = node.getInt("max");
 		}
-
-
-
 
 		@Override
 		public EventPrizeItem getItem()

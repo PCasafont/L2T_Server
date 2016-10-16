@@ -20,7 +20,6 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerActiveEffect extends Condition
 {
-
 	private final String effectName;
 
 	/**

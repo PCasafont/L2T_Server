@@ -115,8 +115,7 @@ public class CustomWorldAltars
 		private L2Npc altarNpc;
 		private L2Npc bossNpc;
 		private AltarsSpawns currentSpawn;
-		@SuppressWarnings("unused")
-		private ScheduledFuture<?> spawnTask;
+		@SuppressWarnings("unused") private ScheduledFuture<?> spawnTask;
 		private long nextRespawn;
 		private boolean isCursed;
 

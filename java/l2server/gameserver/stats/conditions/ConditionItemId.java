@@ -24,7 +24,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionItemId extends Condition
 {
-
 	private final int itemId;
 
 	/**

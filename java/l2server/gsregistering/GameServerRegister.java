@@ -193,7 +193,6 @@ public class GameServerRegister extends BaseGameServerRegister
 
 	private boolean yesNoQuestion(String question) throws IOException
 	{
-
 		do
 		{
 			hr();

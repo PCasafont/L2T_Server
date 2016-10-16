@@ -47,8 +47,7 @@ public class GameServerAuth extends BaseRecievePacket
 	GameServerThread server;
 	private byte[] hexId;
 	private int desiredId;
-	@SuppressWarnings("unused")
-	private boolean hostReserved;
+	@SuppressWarnings("unused") private boolean hostReserved;
 	private boolean acceptAlternativeId;
 	private int maxPlayers;
 	private int port;

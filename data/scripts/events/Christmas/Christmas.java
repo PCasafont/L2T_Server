@@ -1,10 +1,5 @@
 package events.Christmas;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.ItemTable;
@@ -23,6 +18,11 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author LasTravel
@@ -496,9 +496,8 @@ public class Christmas extends Quest
 					int x = (int) (radius * Math.cos(i * 0.618));
 					int y = (int) (radius * Math.sin(i * 0.618));
 
-					L2Npc inv =
-							addSpawn(invaderIds[Rnd.get(invaderIds.length)], -59718 + x, -56909 + y, -2029 + 20, -1,
-									false, 0, false, 0);
+					L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], -59718 + x, -56909 + y, -2029 + 20, -1,
+							false, 0, false, 0);
 					invaders.add(inv);
 				}
 				radius += 300;

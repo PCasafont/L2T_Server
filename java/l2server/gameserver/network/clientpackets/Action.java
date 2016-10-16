@@ -34,12 +34,9 @@ public final class Action extends L2GameClientPacket
 {
 	// cddddc
 	private int objectId;
-	@SuppressWarnings("unused")
-	private int originX;
-	@SuppressWarnings("unused")
-	private int originY;
-	@SuppressWarnings("unused")
-	private int originZ;
+	@SuppressWarnings("unused") private int originX;
+	@SuppressWarnings("unused") private int originY;
+	@SuppressWarnings("unused") private int originZ;
 	private int actionId;
 
 	@Override

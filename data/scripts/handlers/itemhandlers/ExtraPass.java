@@ -15,8 +15,6 @@
 
 package handlers.itemhandlers;
 
-import java.util.Map;
-
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2ItemInstance;
@@ -24,6 +22,8 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.SkillHolder;
+
+import java.util.Map;
 
 public class ExtraPass implements IItemHandler
 {

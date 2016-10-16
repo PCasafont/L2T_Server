@@ -54,7 +54,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public class ItemTable implements Reloadable
 {
-
 	public static final Map<String, Integer> crystalTypes = new HashMap<>();
 	public static final Map<String, Integer> slots = new HashMap<>();
 	public static final Map<String, L2WeaponType> weaponTypes = new HashMap<>();

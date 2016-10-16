@@ -29,7 +29,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class AdminMammon implements IAdminCommandHandler
 {
-
 	private static final String[] ADMIN_COMMANDS = {"admin_mammon_find", "admin_mammon_respawn",};
 
 	@Override

@@ -20,7 +20,6 @@ import java.sql.ResultSet;
  */
 public class OfflineAdminCommandsManager
 {
-
 	private final int TIME_BETWEEN_CHECKS = 60000; // 1 min
 
 	private L2PcInstance dummy;

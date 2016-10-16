@@ -58,7 +58,6 @@ public class LifeStoneTable
 		{
 			return enchantEffects.get(Rnd.get(enchantEffects.size()));
 		}
-
 	}
 
 	public static final class EnchantEffectGroup
@@ -102,8 +101,6 @@ public class LifeStoneTable
 			this.grade = grade;
 			this.level = level;
 		}
-
-
 
 		public final int getPlayerLevel()
 		{
@@ -337,7 +334,6 @@ public class LifeStoneTable
 		}
 		// Count must be greater or equal of required number
 		return getGemStoneCount(grade, ls.getGrade()) <= gemStones.getCount();
-
 	}
 
 	/*
@@ -384,7 +380,6 @@ public class LifeStoneTable
 		}
 		// check for level of the lifestone
 		return player.getLevel() >= ls.getPlayerLevel();
-
 	}
 
 	/*
@@ -474,7 +469,6 @@ public class LifeStoneTable
 
 		// blacklist check
 		return item.getItem().isAugmentable();
-
 	}
 
 	/*
@@ -519,7 +513,6 @@ public class LifeStoneTable
 			return false;
 		}
 		return !(player.isEnchanting() || player.isProcessingTransaction());
-
 	}
 
 	/*

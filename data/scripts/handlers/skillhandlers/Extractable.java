@@ -104,7 +104,7 @@ public class Extractable implements ISkillHandler
 
 		//FIXME: remove this once skill reuse will be global for main/subclass.
 		/*
-        if (!skill.getName().equals("Check Item") && player.isSubClassActive() && (skill.getReuseDelay() > 0) && !Util.contains(protectedSkillIds, skill.getId()))
+		if (!skill.getName().equals("Check Item") && player.isSubClassActive() && (skill.getReuseDelay() > 0) && !Util.contains(protectedSkillIds, skill.getId()))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIN_CLASS_SKILL_ONLY));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addSkillName(skill));

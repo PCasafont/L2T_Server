@@ -14,9 +14,6 @@
 
 package ai.individual;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.DoorTable;
@@ -31,6 +28,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author theOne

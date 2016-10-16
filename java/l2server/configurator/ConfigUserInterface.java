@@ -40,7 +40,6 @@ import java.util.regex.Pattern;
  */
 public class ConfigUserInterface extends JFrame implements ActionListener
 {
-
 	/**
 	 * Comment for <code>serialVersionUID</code>
 	 */
@@ -469,6 +468,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			{
 				propname = name;
 			}
+
 			/**
 			 * @param value The value to set.
 			 */

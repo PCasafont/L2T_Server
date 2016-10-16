@@ -15,10 +15,6 @@
 
 package ai.individual;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledFuture;
-
 import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
@@ -39,6 +35,10 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ScheduledFuture;
 
 public class Sailren extends L2AttackableAIScript
 {
@@ -157,7 +157,6 @@ public class Sailren extends L2AttackableAIScript
 
 		for (L2PcInstance partyMember : party.getPartyMembers())
 		{
-
 			if (partyMember == null)
 			{
 				continue;

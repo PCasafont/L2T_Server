@@ -40,7 +40,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class MultiSellList extends L2GameServerPacket
 {
-
 	private int size, index;
 	private final ListContainer list;
 	private final boolean finished;
@@ -98,7 +97,7 @@ public final class MultiSellList extends L2GameServerPacket
 
 			toLog += "\t\t<ingredient id=\"57\" count=\"" + productTemplate.getReferencePrice() * 1000 + "\" /><!-- Adena -->\n";
 			 */
-            /*
+			/*
 			for (Ingredient i : ent.getIngredients())
 			{
 				L2Item itemTemplate = ItemTable.getInstance().getTemplate(i.getItemId());

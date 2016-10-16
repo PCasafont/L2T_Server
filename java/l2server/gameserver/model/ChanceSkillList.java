@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
@@ -30,6 +29,7 @@ import l2server.gameserver.stats.effects.EffectChanceSkillTrigger;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.Map;
@@ -52,7 +52,6 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 		super();
 		this.owner = owner;
 	}
-
 
 	public void onHit(L2Character target, int damage, boolean ownerWasHit, boolean isSummon, boolean wasCrit)
 	{
@@ -358,7 +357,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 				return;
 			}
 			/*
-            for (L2Object obj : targets)
+			for (L2Object obj : targets)
 			{
 				if (!(obj instanceof L2Character))
 					continue;

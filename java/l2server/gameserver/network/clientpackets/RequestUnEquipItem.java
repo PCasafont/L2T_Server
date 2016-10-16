@@ -32,7 +32,6 @@ import l2server.log.Log;
  */
 public class RequestUnEquipItem extends L2GameClientPacket
 {
-
 	// cd
 	private int slot;
 
@@ -118,7 +117,6 @@ public class RequestUnEquipItem extends L2GameClientPacket
 		// this can be 0 if the user pressed the right mousebutton twice very fast
 		if (unequiped.length > 0)
 		{
-
 			SystemMessage sm = null;
 			if (unequiped[0].getEnchantLevel() > 0)
 			{

@@ -396,7 +396,7 @@ public final class SkillParser extends StatsParser
 	protected void attachAbnormal(XmlNode n, L2Skill template)
 	{
 		/*
-          Keep this values as default ones, DP needs it
+		  Keep this values as default ones, DP needs it
          */
 		int duration = 0;
 		int count = 1;
@@ -618,5 +618,4 @@ public final class SkillParser extends StatsParser
 
 		return value;
 	}
-
 }

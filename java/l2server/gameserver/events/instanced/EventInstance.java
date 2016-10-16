@@ -227,7 +227,6 @@ public abstract class EventInstance
 		return true;
 	}
 
-
 	public abstract void calculateRewards();
 
 	protected void onContribution(L2PcInstance player, int weight)
@@ -458,8 +457,8 @@ public abstract class EventInstance
 				}
 				else
 				{
-					teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ?
-							1 : 0);
+					teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ? 1 :
+							0);
 				}
 			}
 			else
@@ -484,8 +483,7 @@ public abstract class EventInstance
 			}
 			else
 			{
-				teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ? 1 :
-						0);
+				teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ? 1 : 0);
 			}
 		}
 		else
@@ -678,7 +676,7 @@ public abstract class EventInstance
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			removeParticipant(playerInstance.getObjectId());
-            /*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
+			/*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
 			team.addPlayer(playerInstance);
 			if (isState(EventState.STARTING) || isState(EventState.STARTED))
 			{
@@ -807,7 +805,6 @@ public abstract class EventInstance
 
 		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
 				!Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED);
-
 	}
 
 	public boolean onForcedAttack(L2PcInstance playerInstance, int targetPlayerObjectId)
@@ -820,8 +817,8 @@ public abstract class EventInstance
 			return false;
 		}
 
-		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId && config.isPvp());
-
+		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
+				config.isPvp());
 	}
 
 	public boolean onScrollUse(int playerObjectId)
@@ -832,7 +829,6 @@ public abstract class EventInstance
 		}
 
 		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SCROLL_ALLOWED);
-
 	}
 
 	public boolean onPotionUse(int playerObjectId)
@@ -843,7 +839,6 @@ public abstract class EventInstance
 		}
 
 		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_POTIONS_ALLOWED);
-
 	}
 
 	public boolean onEscapeUse(int playerObjectId)
@@ -854,7 +849,6 @@ public abstract class EventInstance
 		}
 
 		return !isPlayerParticipant(playerObjectId);
-
 	}
 
 	public boolean onItemSummon(int playerObjectId)
@@ -865,7 +859,6 @@ public abstract class EventInstance
 		}
 
 		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SUMMON_BY_ITEM_ALLOWED);
-
 	}
 
 	public abstract void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance);
@@ -899,8 +892,7 @@ public abstract class EventInstance
 		}
 		else
 		{
-			return (byte) (teams[0].containsPlayer(playerObjectId) ? 0 :
-					teams[1].containsPlayer(playerObjectId) ? 1 :
+			return (byte) (teams[0].containsPlayer(playerObjectId) ? 0 : teams[1].containsPlayer(playerObjectId) ? 1 :
 					teams[2].containsPlayer(playerObjectId) ? 2 : teams[3].containsPlayer(playerObjectId) ? 3 : -1);
 		}
 	}

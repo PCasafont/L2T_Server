@@ -56,7 +56,6 @@ import java.util.logging.Level;
 
 public class Castle
 {
-
 	// =========================================================
 	// Data Field
 	private List<CropProcure> procure = new ArrayList<>();
@@ -139,19 +138,15 @@ public class Castle
 			initializeTask(cwh);
 		}
 
-
-
 		public int getLease()
 		{
 			return fee;
 		}
 
-
 		public long getEndTime()
 		{
 			return endDate;
 		}
-
 
 		public void setLease(int lease)
 		{
@@ -268,7 +263,7 @@ public class Castle
 	{
 		this.castleId = castleId;
 		/*if (this.castleId == 7 || castleId == 9) // Goddard and Schuttgart
-            this.nbArtifact = 2;*/
+			this.nbArtifact = 2;*/
 	}
 
 	// =========================================================
@@ -336,9 +331,9 @@ public class Castle
 				amount -= runeTax;
 			}
 		}
-		if (!name.equalsIgnoreCase("aden") && !name.equalsIgnoreCase("Rune") &&
-				!name.equalsIgnoreCase("Schuttgart") && !name.equalsIgnoreCase(
-				"Goddard")) // If current castle instance is not Aden, Rune, Goddard or Schuttgart.
+		if (!name.equalsIgnoreCase("aden") && !name.equalsIgnoreCase("Rune") && !name.equalsIgnoreCase("Schuttgart") &&
+				!name.equalsIgnoreCase(
+						"Goddard")) // If current castle instance is not Aden, Rune, Goddard or Schuttgart.
 		{
 			Castle aden = CastleManager.getInstance().getCastle("aden");
 			if (aden != null)
@@ -1024,7 +1019,6 @@ public class Castle
 		return siegeDate;
 	}
 
-
 	public void setIsTimeRegistrationOver(boolean val)
 	{
 		isTimeRegistrationOver = val;
@@ -1523,7 +1517,6 @@ public class Castle
 		}
 	}
 
-
 	public void giveResidentialSkills(L2PcInstance player)
 	{
 		if (residentialSkills != null && !residentialSkills.isEmpty())
@@ -1560,7 +1553,6 @@ public class Castle
 		artefacts.add(artefact);
 	}
 
-
 	public void resetManor()
 	{
 		setCropProcure(new ArrayList<>(), CastleManorManager.PERIOD_CURRENT);
@@ -1573,7 +1565,6 @@ public class Castle
 			saveSeedData();
 		}
 	}
-
 
 	public void setBloodAlliance(int count)
 	{
@@ -1598,7 +1589,6 @@ public class Castle
 			L2DatabaseFactory.close(con);
 		}
 	}
-
 
 	public void setTendency(int tendency)
 	{

@@ -58,7 +58,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 	private void handleSendPacket(L2PcInstance activeChar)
 	{
 		/*
-         * -1 0 to initialize the race
+		 * -1 0 to initialize the race
 		 * 0 15322 to start race
 		 * 13765 -1 in middle of race
 		 * -1 0 to end the race
@@ -99,7 +99,6 @@ public class AdminMonsterRace implements IAdminCommandHandler
 
 	class RunRace implements Runnable
 	{
-
 		private int[][] codes;
 		private L2PcInstance activeChar;
 

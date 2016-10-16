@@ -23,7 +23,6 @@ import java.util.List;
  */
 public class FieldDomination extends EventInstance
 {
-
 	private boolean FDflagsSpawned = false;
 	private L2Spawn[] FDFlagSpawns = new L2Spawn[5];
 
@@ -141,7 +140,6 @@ public class FieldDomination extends EventInstance
 			Announcements.getInstance().announceToAll(
 					"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points");
 		}
-
 	}
 
 	@Override

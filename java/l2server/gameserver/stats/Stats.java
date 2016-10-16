@@ -340,7 +340,6 @@ public enum Stats
 
 	@Getter private String value;
 
-
 	Stats(String s)
 	{
 		value = s;

@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,4 @@ public class SoulCrystal
 	{
 		effects.add(effect);
 	}
-
-
-
 }

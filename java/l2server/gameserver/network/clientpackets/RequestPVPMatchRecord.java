@@ -20,7 +20,6 @@ package l2server.gameserver.network.clientpackets;
  */
 public class RequestPVPMatchRecord extends L2GameClientPacket
 {
-
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
@@ -36,6 +35,5 @@ public class RequestPVPMatchRecord extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-
 	}
 }

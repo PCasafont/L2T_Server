@@ -15,7 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2World;
@@ -82,7 +81,8 @@ public class GamePlayWatcher
 			}
 
 			if (checkForAnotherPivotTimer < System.currentTimeMillis() || pivot == null ||
-					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) || pivot.isInsidePeaceZone(pivot) || pivot.isDead())
+					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) ||
+					pivot.isInsidePeaceZone(pivot) || pivot.isDead())
 			{
 				pivot = null;
 				checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
@@ -199,8 +199,9 @@ public class GamePlayWatcher
 			}
 			else
 			{
-				double yaw = Math.toDegrees(Math.atan2(pivot.getX() - pivot.getTarget().getX(),
-						pivot.getY() - pivot.getTarget().getY())) + 90;
+				double yaw = Math.toDegrees(
+						Math.atan2(pivot.getX() - pivot.getTarget().getX(), pivot.getY() - pivot.getTarget().getY())) +
+						90;
 				double angle = 180 - yaw;
 				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(pivot, pivot.getTarget(), false));
 				if (pitch < 15)
@@ -243,6 +244,5 @@ public class GamePlayWatcher
 				));
 			}
 		}
-
 	}
 }

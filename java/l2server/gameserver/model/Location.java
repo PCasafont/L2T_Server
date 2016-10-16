@@ -60,8 +60,4 @@ public final class Location
 		this.z = z;
 		this.heading = heading;
 	}
-
-
-
-
 }

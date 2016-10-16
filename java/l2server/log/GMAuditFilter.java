@@ -20,7 +20,6 @@ import java.util.logging.LogRecord;
 
 public class GMAuditFilter implements Filter
 {
-
 	@Override
 	public boolean isLoggable(LogRecord record)
 	{

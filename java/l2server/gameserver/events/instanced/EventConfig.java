@@ -1,6 +1,5 @@
 package l2server.gameserver.events.instanced;
 
-
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.events.instanced.types.*;
 import l2server.util.Rnd;
@@ -60,7 +59,6 @@ public class EventConfig
 	{
 		return this.type == type;
 	}
-
 
 	public boolean isAllVsAll()
 	{
@@ -171,8 +169,6 @@ public class EventConfig
 
 		selectLocation();
 	}
-
-
 
 	public void selectLocation()
 	{

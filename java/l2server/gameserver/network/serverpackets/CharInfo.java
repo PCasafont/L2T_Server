@@ -221,8 +221,9 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				Log.warning("Character " + activeChar.getName() + " (" + activeChar.getObjectId() +
-						") morphed in a Npc (" + activeChar.getPoly().getPolyId() + ") w/o template.");
+				Log.warning(
+						"Character " + activeChar.getName() + " (" + activeChar.getObjectId() + ") morphed in a Npc (" +
+								activeChar.getPoly().getPolyId() + ") w/o template.");
 			}
 		}
 		else
@@ -323,7 +324,7 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0);
 			}
 			/*if (this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
-            {
+			{
 				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
 				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
 				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
@@ -432,7 +433,8 @@ public class CharInfo extends L2GameServerPacket
 			}
 
 			writeC(activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-			writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+			writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+					activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
 			writeH(activeChar.getCubics().size());
 			activeChar.getCubics().keySet().forEach(this::writeH);

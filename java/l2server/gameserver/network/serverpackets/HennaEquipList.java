@@ -22,7 +22,6 @@ import java.util.List;
 
 public class HennaEquipList extends L2GameServerPacket
 {
-
 	private L2PcInstance player;
 	private List<L2Henna> hennaEquipList;
 

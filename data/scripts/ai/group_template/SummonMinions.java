@@ -15,9 +15,6 @@
 
 package ai.group_template;
 
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
-
 import gnu.trove.TIntHashSet;
 import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.ai.CtrlIntention;
@@ -26,6 +23,9 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class SummonMinions extends L2AttackableAIScript
 {
@@ -99,7 +99,7 @@ public class SummonMinions extends L2AttackableAIScript
 								for (int val : minions)
 								{
 									L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150),
-													npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0);
+											npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0);
 									newNpc.setRunning();
 									newNpc.addDamageHate(attacker, 0, 999);
 									newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
@@ -158,8 +158,8 @@ public class SummonMinions extends L2AttackableAIScript
 							HasSpawned = 0;
 							for (int val : MINIONS.get(npcId))
 							{
-								L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd.get(-150, 150),
-												npc.getZ(), 0, false, 0);
+								L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150),
+										npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0);
 								newNpc.setRunning();
 								newNpc.addDamageHate(attacker, 0, 999);
 								newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
@@ -174,8 +174,8 @@ public class SummonMinions extends L2AttackableAIScript
 						{
 							for (int val : MINIONS.get(npcId))
 							{
-								L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd.get(-150, 150),
-												npc.getZ(), 0, false, 0);
+								L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150),
+										npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0);
 								newNpc.setRunning();
 								newNpc.addDamageHate(attacker, 0, 999);
 								newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);

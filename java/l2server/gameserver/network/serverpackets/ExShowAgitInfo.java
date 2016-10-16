@@ -26,7 +26,6 @@ import java.util.Map;
  */
 public class ExShowAgitInfo extends L2GameServerPacket
 {
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

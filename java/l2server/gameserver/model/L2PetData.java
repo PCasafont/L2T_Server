@@ -52,7 +52,6 @@ public class L2PetData
 		return levelStats.get(petLevel);
 	}
 
-
 	public int getHungry_limit()
 	{
 		return _hungry_limit;
@@ -63,12 +62,10 @@ public class L2PetData
 		return minlvl;
 	}
 
-
 	public void set_load(int load)
 	{
 		this.load = load;
 	}
-
 
 	public void set_food(int[] food)
 	{
@@ -142,8 +139,5 @@ public class L2PetData
 			level = lvl;
 			minLevel = minLvl;
 		}
-
-
-
 	}
 }

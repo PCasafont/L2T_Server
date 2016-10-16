@@ -56,8 +56,7 @@ public final class ServerList extends L2LoginServerPacket
 	private List<ServerData> servers;
 	private int lastServer;
 	private Map<Integer, Integer> charsOnServers;
-	@SuppressWarnings("unused")
-	private Map<Integer, long[]> charsToDelete;
+	@SuppressWarnings("unused") private Map<Integer, long[]> charsToDelete;
 
 	class ServerData
 	{
@@ -163,7 +162,7 @@ public final class ServerList extends L2LoginServerPacket
 				writeC(servId);
 				writeC(charsOnServers.get(servId));
 				/*if (this.charsToDelete == null || !this.charsToDelete.containsKey(servId))
-                    writeC(0x00);
+					writeC(0x00);
 				else
 				{
 					writeC(this.charsToDelete.get(servId).length);

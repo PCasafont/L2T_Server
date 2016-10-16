@@ -119,7 +119,7 @@ public class L2SkillSummon extends L2Skill
 
 				//Since GoD can resummon a cubic instantly
 				/*if (player.isGM())
-                {
+				{
 					for (L2CubicInstance cubic : player.getCubics().values())
 					{
 						if (cubic == null)
@@ -251,14 +251,14 @@ public class L2SkillSummon extends L2Skill
 					}
 					if (player == activeChar)
 					{
-						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance,
-								maxcount, summonTotalLifeTime, false);
+						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount,
+								summonTotalLifeTime, false);
 					}
 					else
 					// given by other player
 					{
-						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance,
-								maxcount, summonTotalLifeTime, true);
+						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount,
+								summonTotalLifeTime, true);
 					}
 					if (hasEffects())
 					{
@@ -288,8 +288,7 @@ public class L2SkillSummon extends L2Skill
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CUBIC_SUMMONING_FAILED));
 					return;
 				}
-				activeChar.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance,
-						maxcount,
+				activeChar.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount,
 						summonTotalLifeTime, false);
 
 				if (hasEffects())

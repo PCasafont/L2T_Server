@@ -24,7 +24,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestChangePartyLeader extends L2GameClientPacket
 {
-
 	//
 
 	private String name;

@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.*;
 
 public final class RequestPartyMatchConfig extends L2GameClientPacket
 {
-
 	private int auto, loc, lvl;
 
 	@Override

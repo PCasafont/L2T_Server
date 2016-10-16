@@ -35,7 +35,6 @@ import java.util.ArrayList;
  */
 public class ExShowSeedSetting extends L2GameServerPacket
 {
-
 	private int manorId;
 
 	private int count;

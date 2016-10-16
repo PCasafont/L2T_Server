@@ -31,7 +31,6 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
  */
 public final class RequestDeleteSentPost extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 4; // length of the one item
 
 	int[] msgIds = null;

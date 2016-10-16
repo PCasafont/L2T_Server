@@ -27,7 +27,6 @@ import l2server.log.Log;
  */
 public class PetItemList extends L2ItemListPacket
 {
-
 	private L2PetInstance activeChar;
 
 	public PetItemList(L2PetInstance character)

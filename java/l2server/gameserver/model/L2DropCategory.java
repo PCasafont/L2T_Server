@@ -59,7 +59,6 @@ public class L2DropCategory
 		custom = true;
 	}
 
-
 	/**
 	 * useful for seeded conditions...the category will attempt to drop only among
 	 * items that are allowed to be dropped when a mob is seeded.

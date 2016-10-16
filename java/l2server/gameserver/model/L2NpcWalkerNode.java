@@ -29,8 +29,7 @@ public class L2NpcWalkerNode
 	@Getter private int moveY;
 	@Getter private int moveZ;
 	@Getter private int delay;
-	@SuppressWarnings("unused")
-	private NpcStringId npcString;
+	@SuppressWarnings("unused") private NpcStringId npcString;
 	private String chatText;
 	@Getter private boolean running;
 
@@ -66,10 +65,4 @@ public class L2NpcWalkerNode
 		}
 		return chatText;
 	}
-
-
-
-
-
-
 }

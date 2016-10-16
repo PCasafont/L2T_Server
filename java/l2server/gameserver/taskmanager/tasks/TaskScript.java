@@ -28,7 +28,6 @@ import java.io.File;
  */
 public class TaskScript extends Task
 {
-
 	public static final String NAME = "script";
 
 	/**

@@ -36,7 +36,6 @@ import l2server.log.Log;
  */
 public final class RequestDropItem extends L2GameClientPacket
 {
-
 	private int objectId;
 	private long count;
 	private int x;
@@ -194,8 +193,7 @@ public final class RequestDropItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" +
-					z);
+			Log.fine("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" + z);
 		}
 
 		if (item.isEquipped())

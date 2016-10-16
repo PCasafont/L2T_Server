@@ -119,8 +119,6 @@ public class PlayerTablePane extends JPanel
 		});
 	}
 
-
-
 	public void updateCurrentPlayer()
 	{
 		updateCurrentPlayer(false);

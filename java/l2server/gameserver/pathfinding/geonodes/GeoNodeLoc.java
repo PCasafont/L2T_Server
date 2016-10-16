@@ -15,9 +15,9 @@
 
 package l2server.gameserver.pathfinding.geonodes;
 
-import lombok.Getter;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
+import lombok.Getter;
 
 /**
  * @author -Nemesiss-

@@ -44,6 +44,4 @@ public class L2SkillSweeper extends L2Skill
 	{
 		// not used
 	}
-
-
 }

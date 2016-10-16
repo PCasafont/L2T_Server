@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class AskJoinPledge extends L2GameServerPacket
 {
-
 	private int requestorObjId;
 	private String subPledgeName;
 	private int pledgeType;

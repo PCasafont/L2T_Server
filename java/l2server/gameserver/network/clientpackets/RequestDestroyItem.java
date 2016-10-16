@@ -45,7 +45,6 @@ import java.util.logging.Level;
  */
 public final class RequestDestroyItem extends L2GameClientPacket
 {
-
 	private int objectId;
 	private long count;
 

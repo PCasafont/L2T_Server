@@ -29,7 +29,6 @@ import java.util.List;
  */
 public class ExSellList extends L2ItemListPacket
 {
-
 	private List<L2TradeItem> buyList = new ArrayList<>();
 	private L2ItemInstance[] sellList = null;
 	private L2ItemInstance[] refundList = null;

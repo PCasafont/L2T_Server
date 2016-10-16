@@ -539,8 +539,9 @@ public class CustomAuctionManager
 
 			sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuction.getKey() +
 					"\" width=100 type=number length=14></td></tr>");
-			sb.append("<tr><td></td><td><br><button action=\"bypass this.bbscustom;action;bid;" + currentAuction.getKey() +
-					"; $plbid" + currentAuction.getKey() + " ; $plcoin" + currentAuction.getKey() +
+			sb.append("<tr><td></td><td><br><button action=\"bypass this.bbscustom;action;bid;" +
+					currentAuction.getKey() + "; $plbid" + currentAuction.getKey() + " ; $plcoin" +
+					currentAuction.getKey() +
 					"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
 			sb.append("</table><br>");

@@ -107,8 +107,6 @@ public class SurveyManager
 		return id > 0;
 	}
 
-
-
 	public Integer[] getPossibleAnswerIds()
 	{
 		return (Integer[]) possibleAnswers.keySet().toArray();

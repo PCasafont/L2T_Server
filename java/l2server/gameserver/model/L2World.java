@@ -43,7 +43,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class L2World
 {
-
 	/**
 	 * Gracia border
 	 * Flying objects not allowed to the east of it.
@@ -250,7 +249,6 @@ public final class L2World
 	{
 		return GmListTable.getInstance().getAllGms(true);
 	}
-
 
 	public final Collection<L2PcInstance> getAllPlayersArray()
 	{

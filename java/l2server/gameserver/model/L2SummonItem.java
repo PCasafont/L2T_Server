@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * @author -Nemesiss-
  */
@@ -34,12 +35,8 @@ public class L2SummonItem
 		this.despawnDelay = despawnDelay;
 	}
 
-
-
-
 	public boolean isPetSummon()
 	{
 		return type == 1 || type == 2;
 	}
-
 }

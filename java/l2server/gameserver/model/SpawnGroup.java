@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +97,4 @@ public class SpawnGroup
 	{
 		return territory.getRandomPoint();
 	}
-
-
 }

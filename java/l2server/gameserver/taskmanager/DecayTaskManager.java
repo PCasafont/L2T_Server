@@ -32,7 +32,6 @@ import java.util.logging.Level;
  */
 public class DecayTaskManager
 {
-
 	protected Map<L2Character, Long> decayTasks = new ConcurrentHashMap<>();
 
 	public static final int RAID_BOSS_DECAY_TIME = 30000;

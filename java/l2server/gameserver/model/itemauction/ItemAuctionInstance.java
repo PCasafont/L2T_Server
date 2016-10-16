@@ -407,9 +407,8 @@ public final class ItemAuctionInstance
 										state.toString());
 					}
 
-					Log.fine(
-							"L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has started for instance " +
-									auction.getInstanceId());
+					Log.fine("L2ItemAuctionInstance: Auction " + auction.getAuctionId() + " has started for instance " +
+							auction.getInstanceId());
 					checkAndSetCurrentAndNextAuction();
 					break;
 				}

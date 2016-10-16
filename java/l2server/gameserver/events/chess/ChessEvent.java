@@ -192,8 +192,7 @@ public class ChessEvent
 		while (i < 8 && !trobat)
 		{
 			if (waitingPlayers[i][0] != null && waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId() ||
-					waitingPlayers[i][1] != null &&
-							waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+					waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
 				waitingPlayers[i][0] = null;
 				waitingPlayers[i][1] = null;
@@ -246,8 +245,7 @@ public class ChessEvent
 			{
 				target = waitingPlayers[i][1];
 			}
-			else if (waitingPlayers[i][1] != null &&
-					waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if (waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
 				target = waitingPlayers[i][0];
 				side = 1;
@@ -285,8 +283,7 @@ public class ChessEvent
 				target = waitingPlayers[i][1];
 				waitingPlayers[i][1] = null;
 			}
-			else if (waitingPlayers[i][1] != null &&
-					waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if (waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
 				target = waitingPlayers[i][0];
 				waitingPlayers[i][0] = null;
@@ -346,7 +343,6 @@ public class ChessEvent
 
 		if (command.startsWith("wait") && getParticipantSideId(playerInstance.getObjectId()) == -1)
 		{
-
 			int sideId = Integer.valueOf(command.substring(4));
 
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
@@ -456,8 +452,7 @@ public class ChessEvent
 
 	public static byte getParticipantSideId(int playerObjectId)
 	{
-		return (byte) (sides[0].containsPlayer(playerObjectId) ? 0 :
-				sides[1].containsPlayer(playerObjectId) ? 1 : -1);
+		return (byte) (sides[0].containsPlayer(playerObjectId) ? 0 : sides[1].containsPlayer(playerObjectId) ? 1 : -1);
 	}
 
 	public static boolean isPlayerParticipant(int playerObjectId)
@@ -508,12 +503,10 @@ public class ChessEvent
 		return false;
 	}
 
-
 	public static ChessEventSide getSide(int id)
 	{
 		return sides[id];
 	}
-
 
 	public static L2ChessPieceInstance[][] getBoard(int side)
 	{

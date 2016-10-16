@@ -120,9 +120,8 @@ public class PlayerClass
 
 	public final boolean isSummoner()
 	{
-		return id == 14 || id == 28 || id == 41 || id == 96 || id == 104 || id == 111 ||
-				id == 146 ||
-				id == 176 || id == 177 || id == 178;
+		return id == 14 || id == 28 || id == 41 || id == 96 || id == 104 || id == 111 || id == 146 || id == 176 ||
+				id == 177 || id == 178;
 	}
 
 	public final boolean childOf(PlayerClass cl)

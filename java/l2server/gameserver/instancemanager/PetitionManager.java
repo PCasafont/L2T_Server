@@ -40,7 +40,6 @@ import java.util.*;
  */
 public final class PetitionManager
 {
-
 	private Map<Integer, Petition> pendingPetitions;
 	private Map<Integer, Petition> completedPetitions;
 
@@ -152,12 +151,6 @@ public final class PetitionManager
 			return getPendingPetitions().remove(getId()) != null;
 		}
 
-
-
-
-
-
-
 		public String getTypeAsString()
 		{
 			return type.toString().replace("_", " ");
@@ -187,7 +180,6 @@ public final class PetitionManager
 
 			getResponder().sendPacket(responsePacket);
 		}
-
 
 		public void setResponder(L2PcInstance respondingAdmin)
 		{

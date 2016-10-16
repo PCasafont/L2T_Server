@@ -29,7 +29,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class L2FriendSay extends L2GameServerPacket
 {
-
 	private String sender, receiver, message;
 
 	public L2FriendSay(String sender, String reciever, String message)

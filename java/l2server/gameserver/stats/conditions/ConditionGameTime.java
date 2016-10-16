@@ -25,7 +25,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionGameTime extends Condition
 {
-
 	/**
 	 * The Enum CheckGameTime.
 	 */

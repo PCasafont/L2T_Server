@@ -183,7 +183,6 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 				}
 				else if (val.equalsIgnoreCase("support"))
 				{
-
 					NpcHtmlMessage html = new NpcHtmlMessage(1);
 					if (getClanHall().getFunction(ClanHall.FUNC_SUPPORT) == null)
 					{

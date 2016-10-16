@@ -26,14 +26,11 @@ import java.util.ArrayList;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 {
-	@SuppressWarnings("unused")
-	private final L2PcInstance activeChar;
-	@SuppressWarnings("unused")
-	private int page;
+	@SuppressWarnings("unused") private final L2PcInstance activeChar;
+	@SuppressWarnings("unused") private int page;
 	private int minlvl;
 	private int maxlvl;
-	@SuppressWarnings("unused")
-	private int mode;
+	@SuppressWarnings("unused") private int mode;
 	private ArrayList<L2PcInstance> members;
 
 	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
@@ -70,7 +67,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		/*if (this.mode == 0)
-        {
+		{
 			writeD(0);
 			writeD(0);
 			return;

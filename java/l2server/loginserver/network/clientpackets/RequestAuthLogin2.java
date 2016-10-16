@@ -79,73 +79,73 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		LoginController lc = LoginController.getInstance();
 		/*try
 		{*/
-			AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
-			String user = lc.loginValid(authKey, client);
-			if (user != null)
-			{
-				result = lc.tryAuthLogin(authKey, client, user);
-			}
+		AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
+		String user = lc.loginValid(authKey, client);
+		if (user != null)
+		{
+			result = lc.tryAuthLogin(authKey, client, user);
+		}
 
-			switch (result)
-			{
-				case AUTH_SUCCESS:
-					client.setAccount(user);
-					lc.getCharactersOnAccount(user);
-					client.setState(LoginClientState.AUTHED_LOGIN);
-					client.setSessionKey(lc.assignSessionKeyToClient(user, client));
-					if (Config.SHOW_LICENCE)
+		switch (result)
+		{
+			case AUTH_SUCCESS:
+				client.setAccount(user);
+				lc.getCharactersOnAccount(user);
+				client.setState(LoginClientState.AUTHED_LOGIN);
+				client.setSessionKey(lc.assignSessionKeyToClient(user, client));
+				if (Config.SHOW_LICENCE)
+				{
+					client.sendPacket(new LoginOk(getClient().getSessionKey()));
+				}
+				else
+				{
+					int time = 0;
+					while (getClient().getCharsOnServ() == null && time < 10)
 					{
-						client.sendPacket(new LoginOk(getClient().getSessionKey()));
-					}
-					else
-					{
-						int time = 0;
-						while (getClient().getCharsOnServ() == null && time < 10)
+						try
 						{
-							try
-							{
-								Thread.sleep(100);
-							}
-							catch (Exception e)
-							{
-								e.printStackTrace();
-							}
-							time++;
+							Thread.sleep(100);
 						}
-						getClient().sendPacket(new ServerList(getClient()));
+						catch (Exception e)
+						{
+							e.printStackTrace();
+						}
+						time++;
 					}
-					break;
-				case INVALID_PASSWORD:
-					client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
-					break;
-				case ACCOUNT_BANNED:
-					client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
-					break;
-				case ALREADY_ON_LS:
-					L2LoginClient oldClient;
-					if ((oldClient = lc.getAuthedClient(user)) != null)
-					{
-						// kick the other client
-						oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
-						lc.removeAuthedLoginClient(user);
-					}
-					// kick also current client
+					getClient().sendPacket(new ServerList(getClient()));
+				}
+				break;
+			case INVALID_PASSWORD:
+				client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
+				break;
+			case ACCOUNT_BANNED:
+				client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
+				break;
+			case ALREADY_ON_LS:
+				L2LoginClient oldClient;
+				if ((oldClient = lc.getAuthedClient(user)) != null)
+				{
+					// kick the other client
+					oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+					lc.removeAuthedLoginClient(user);
+				}
+				// kick also current client
+				client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+				break;
+			case ALREADY_ON_GS:
+				GameServerInfo gsi;
+				if ((gsi = lc.getAccountOnGameServer(user)) != null)
+				{
 					client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
-					break;
-				case ALREADY_ON_GS:
-					GameServerInfo gsi;
-					if ((gsi = lc.getAccountOnGameServer(user)) != null)
-					{
-						client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
 
-						// kick from there
-						if (gsi.isAuthed())
-						{
-							gsi.getGameServerThread().kickPlayer(user);
-						}
+					// kick from there
+					if (gsi.isAuthed())
+					{
+						gsi.getGameServerThread().kickPlayer(user);
 					}
-					break;
-			}
+				}
+				break;
+		}
 		/*}
 		catch (HackingException e)
 		{

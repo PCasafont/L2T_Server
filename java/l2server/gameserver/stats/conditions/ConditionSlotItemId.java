@@ -27,7 +27,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionSlotItemId extends ConditionInventory
 {
-
 	private final int itemId;
 	private final int enchantLevel;
 

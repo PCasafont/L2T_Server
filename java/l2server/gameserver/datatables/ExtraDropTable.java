@@ -33,7 +33,6 @@ import java.util.ArrayList;
  */
 public class ExtraDropTable
 {
-
 	private TIntObjectHashMap<ArrayList<L2DropCategory>> extraGroups;
 
 	public static ExtraDropTable getInstance()

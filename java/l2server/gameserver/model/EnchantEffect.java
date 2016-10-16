@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.funcs.Func;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +53,6 @@ public class EnchantEffect
 	{
 		funcs.add(func);
 	}
-
-
-
 
 	public L2Skill getSkill()
 	{

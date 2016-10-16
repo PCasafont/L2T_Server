@@ -28,8 +28,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestWithdrawPartyRoom extends L2GameClientPacket
 {
 	private int roomid;
-	@SuppressWarnings("unused")
-	private int unk1;
+	@SuppressWarnings("unused") private int unk1;
 
 	@Override
 	protected void readImpl()

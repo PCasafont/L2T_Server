@@ -37,7 +37,6 @@ import java.util.logging.Level;
 
 public class OfflineTradersTable
 {
-
 	//SQL DEFINITIONS
 	private static final String SAVE_OFFLINE_STATUS =
 			"INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)";

@@ -26,7 +26,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionPlayerHasFort extends Condition
 {
-
 	private final int fort;
 
 	/**

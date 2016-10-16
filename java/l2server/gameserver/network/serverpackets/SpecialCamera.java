@@ -17,7 +17,6 @@ package l2server.gameserver.network.serverpackets;
 
 public class SpecialCamera extends L2GameServerPacket
 {
-
 	private final int id;
 	private final int dist;
 	private final int yaw;

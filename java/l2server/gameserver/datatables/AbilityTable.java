@@ -48,12 +48,6 @@ public class AbilityTable
 			this.reqSkill = reqSkill;
 			this.reqSkillLvl = reqSkillLvl;
 		}
-
-
-
-
-
-
 	}
 
 	private TIntObjectHashMap<Ability> abilities = new TIntObjectHashMap<>();
@@ -200,7 +194,6 @@ public class AbilityTable
 					}
 					else
 					{
-
 						int classId = player.getClassId();
 						if (classId > 146 && classId < 188)
 						{

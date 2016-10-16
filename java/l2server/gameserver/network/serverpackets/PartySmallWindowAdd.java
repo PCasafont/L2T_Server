@@ -25,7 +25,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PartySmallWindowAdd extends L2GameServerPacket
 {
-
 	private final L2PcInstance member;
 	private final int leaderId;
 	private final int distribution;
@@ -54,7 +53,7 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 		writeC(member.getLevel());
 		writeH(member.getCurrentClass().getId());
 		/*writeD(this.member.getVitalityPoints());
-        writeC(0x01); // ???
+		writeC(0x01); // ???
 		writeC(this.member.getRace().ordinal());
 		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(this.member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
 		writeD(this.member.getSummons().size() + (this.member.getPet() != null ? 1 : 0));

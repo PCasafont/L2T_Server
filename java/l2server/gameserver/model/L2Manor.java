@@ -339,7 +339,6 @@ public class L2Manor
 			return manorId;
 		}
 
-
 		public int getCrop()
 		{
 			return crop;
@@ -378,8 +377,7 @@ public class L2Manor
 		@Override
 		public String toString()
 		{
-			return "SeedData [_id=" + id + ", _level=" + level + ", _crop=" + crop + ", _mature=" +
-					mature +
+			return "SeedData [_id=" + id + ", _level=" + level + ", _crop=" + crop + ", _mature=" + mature +
 					", _type1=" + type1 + ", _type2=" + type2 + ", _manorId=" + manorId + ", _isAlternative=" +
 					isAlternative + ", _limitSeeds=" + limitSeeds + ", _limitCrops=" + limitCrops + "]";
 		}

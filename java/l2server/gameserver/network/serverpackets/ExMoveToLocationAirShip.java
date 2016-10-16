@@ -19,7 +19,6 @@ import l2server.gameserver.model.actor.L2Character;
 
 public class ExMoveToLocationAirShip extends L2GameServerPacket
 {
-
 	private final int objId, tx, ty, tz, x, y, z;
 
 	public ExMoveToLocationAirShip(L2Character cha)

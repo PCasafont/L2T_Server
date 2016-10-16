@@ -21,7 +21,6 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public final class L2FlyTerrainObjectInstance extends L2Npc
 {
-
 	public L2FlyTerrainObjectInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);

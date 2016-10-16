@@ -52,7 +52,6 @@ public class L2TradeList
 		npcId = id;
 	}
 
-
 	public void addItem(L2TradeItem item)
 	{
 		items.put(item.getItemId(), item);

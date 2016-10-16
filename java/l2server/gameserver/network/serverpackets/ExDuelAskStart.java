@@ -22,7 +22,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDuelAskStart extends L2GameServerPacket
 {
-
 	private String requestorName;
 	private int partyDuel;
 

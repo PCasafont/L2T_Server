@@ -36,8 +36,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 
 	private volatile boolean thinking; // to prevent recursive thinking
 	private volatile boolean startFollow = ((L2Summon) actor).getFollowStatus();
-	@SuppressWarnings("unused")
-	private L2Character lastAttack = null;
+	@SuppressWarnings("unused") private L2Character lastAttack = null;
 
 	private volatile boolean startAvoid = false;
 	private Future<?> avoidTask = null;
@@ -243,8 +242,8 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 				final int targetX = ownerX + (int) (AVOID_RADIUS * Math.cos(angle));
 				final int targetY = ownerY + (int) (AVOID_RADIUS * Math.sin(angle));
 				if (Config.GEODATA == 0 || GeoData.getInstance()
-						.canMoveFromToTarget(actor.getX(), actor.getY(), actor.getZ(), targetX, targetY,
-								actor.getZ(), actor.getInstanceId()))
+						.canMoveFromToTarget(actor.getX(), actor.getY(), actor.getZ(), targetX, targetY, actor.getZ(),
+								actor.getInstanceId()))
 				{
 					moveTo(targetX, targetY, actor.getZ());
 				}

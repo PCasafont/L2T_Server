@@ -35,7 +35,6 @@ import java.util.logging.Level;
  */
 public class ClanHallManager
 {
-
 	private Map<Integer, ClanHall> clanHall;
 	private Map<Integer, ClanHall> freeClanHall;
 	private Map<Integer, ClanHall> allClanHalls;
@@ -62,7 +61,7 @@ public class ClanHallManager
 
     /* Reload All Clan Hall */
 	/*	public final void reload() Cant reload atm - would loose zone info
-        {
+		{
 			this.clanHall.clear();
 			this.freeClanHall.clear();
 			load();

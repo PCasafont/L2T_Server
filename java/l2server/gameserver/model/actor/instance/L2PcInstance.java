@@ -233,7 +233,6 @@ public class L2PcInstance extends L2Playable
 	{
 		protected AIAccessor()
 		{
-
 		}
 
 		public L2PcInstance getPlayer()
@@ -522,7 +521,6 @@ public class L2PcInstance extends L2Playable
 	{
 		return hasIdentityCrisis;
 	}
-
 
 	/**
 	 * The L2FolkInstance corresponding to the last Folk wich one the player talked.
@@ -835,7 +833,6 @@ public class L2PcInstance extends L2Playable
 
 	@Getter private long fightStanceTime;
 
-
 	public void setFightStanceTime(long time)
 	{
 		fightStanceTime = time;
@@ -845,7 +842,6 @@ public class L2PcInstance extends L2Playable
 	{
 		pvpFlagLasts = time;
 	}
-
 
 	public void startPvPFlag()
 	{
@@ -878,7 +874,6 @@ public class L2PcInstance extends L2Playable
 	{
 		public PvPFlag()
 		{
-
 		}
 
 		@Override
@@ -1060,9 +1055,6 @@ public class L2PcInstance extends L2Playable
 			this.ctrlPressed = ctrlPressed;
 			this.shiftPressed = shiftPressed;
 		}
-
-
-
 
 		public int getSkillId()
 		{
@@ -1581,7 +1573,6 @@ public class L2PcInstance extends L2Playable
 
 	//	public boolean isInCraftMode() { return (getPrivateStoreType() == STORE_PRIVATE_MANUFACTURE); }
 
-
 	public void isInCraftMode(boolean b)
 	{
 		inCraftMode = b;
@@ -1684,7 +1675,9 @@ public class L2PcInstance extends L2Playable
 			return true;
 		}
 		else
+		{
 			return commonRecipeBook.containsKey(recipeId);
+		}
 	}
 
 	/**
@@ -2104,7 +2097,6 @@ public class L2PcInstance extends L2Playable
 		return shortCuts.getAllShortCuts();
 	}
 
-
 	/**
 	 * Return the L2ShortCut of the L2PcInstance corresponding to the position (page-slot).<BR><BR>
 	 *
@@ -2160,7 +2152,6 @@ public class L2PcInstance extends L2Playable
 	{
 		return !(siegeSide != val && (siegeSide < 81 || siegeSide > 89));
 	}
-
 
 	/**
 	 * Set the PvP Flag of the L2PcInstance.<BR><BR>
@@ -2648,8 +2639,6 @@ public class L2PcInstance extends L2Playable
 		return (int) calcStat(Stats.MAX_LOAD, baseLoad * Config.ALT_WEIGHT_LIMIT, this, null);
 	}
 
-
-
 	public int getWeightPenalty()
 	{
 		if (dietMode)
@@ -2841,7 +2830,6 @@ public class L2PcInstance extends L2Playable
 					currenteffect.exit();
 				}
 			}
-
 		}
 	}
 
@@ -2857,7 +2845,7 @@ public class L2PcInstance extends L2Playable
 
 		// on retail auto shots never disabled on uneqip
 		/*if (unequipped.getItem().getType2() == L2Item.TYPE2_WEAPON &&
-                (equipped == null ? true : equipped.getItem().getItemGradeSPlus() != unequipped.getItem().getItemGradeSPlus()))
+				(equipped == null ? true : equipped.getItem().getItemGradeSPlus() != unequipped.getItem().getItemGradeSPlus()))
 		{
 			disableAutoShotByCrystalType(unequipped.getItem().getItemGradeSPlus());
 		}*/
@@ -3179,7 +3167,6 @@ public class L2PcInstance extends L2Playable
 		activeEnchantAttrItem = stone;
 	}
 
-
 	public void setActiveEnchantItem(L2ItemInstance scroll)
 	{
 		// If we dont have a Enchant Item, we are not enchanting.
@@ -3192,13 +3179,10 @@ public class L2PcInstance extends L2Playable
 		activeEnchantItem = scroll;
 	}
 
-
 	public void setActiveEnchantSupportItem(L2ItemInstance item)
 	{
 		activeEnchantSupportItem = item;
 	}
-
-
 
 	public void setActiveEnchantTimestamp(long val)
 	{
@@ -3678,7 +3662,6 @@ public class L2PcInstance extends L2Playable
 		return getTemplate().race;
 	}
 
-
 	/**
 	 * Return the SP amount of the L2PcInstance.
 	 */
@@ -3748,12 +3731,10 @@ public class L2PcInstance extends L2Playable
 		return 0;
 	}
 
-
 	public void setClanJoinExpiryTime(long time)
 	{
 		clanJoinExpiryTime = time;
 	}
-
 
 	public void setClanCreateExpiryTime(long time)
 	{
@@ -3765,7 +3746,6 @@ public class L2PcInstance extends L2Playable
 		onlineTime = time;
 		onlineBeginTime = System.currentTimeMillis();
 	}
-
 
 	public void setZoneRestartLimitTime(long time)
 	{
@@ -3839,7 +3819,6 @@ public class L2PcInstance extends L2Playable
 			L2DatabaseFactory.close(con);
 		}
 	}
-
 
 	/**
 	 * Delete a ShortCut of the L2PcInstance this.shortCuts.<BR><BR>
@@ -6039,7 +6018,6 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
 	/**
 	 * This returns the transformation Id of the current transformation.
 	 * For example, if a player is transformed as a Buffalo, and then picks up the Zariche,
@@ -6279,8 +6257,7 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if (legs.getItemType() == L2ArmorType.HEAVY &&
-					armor.getItemType() == L2ArmorType.HEAVY)
+			if (legs.getItemType() == L2ArmorType.HEAVY && armor.getItemType() == L2ArmorType.HEAVY)
 			{
 				return true;
 			}
@@ -6303,8 +6280,7 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if (legs.getItemType() == L2ArmorType.LIGHT &&
-					armor.getItemType() == L2ArmorType.LIGHT)
+			if (legs.getItemType() == L2ArmorType.LIGHT && armor.getItemType() == L2ArmorType.LIGHT)
 			{
 				return true;
 			}
@@ -6327,8 +6303,7 @@ public class L2PcInstance extends L2Playable
 
 		if (armor != null && legs != null)
 		{
-			if (legs.getItemType() == L2ArmorType.MAGIC &&
-					armor.getItemType() == L2ArmorType.MAGIC)
+			if (legs.getItemType() == L2ArmorType.MAGIC && armor.getItemType() == L2ArmorType.MAGIC)
 			{
 				return true;
 			}
@@ -6343,7 +6318,6 @@ public class L2PcInstance extends L2Playable
 		}
 		return false;
 	}
-
 
 	public void setMarried(boolean state)
 	{
@@ -6386,13 +6360,10 @@ public class L2PcInstance extends L2Playable
 		return engageid;
 	}
 
-
 	public void setPartnerId(int partnerid)
 	{
 		partnerId = partnerid;
 	}
-
-
 
 	public void engageAnswer(int answer)
 	{
@@ -7358,7 +7329,6 @@ public class L2PcInstance extends L2Playable
 		stopRecoGiveTask();
 	}
 
-
 	public L2SummonInstance getSummon(int summon)
 	{
 		if (summons.size() <= summon)
@@ -8108,7 +8078,6 @@ public class L2PcInstance extends L2Playable
 		return summons.get(summon).getInventory();
 	}
 
-
 	/**
 	 * Return True if the L2PcInstance use a dual weapon.<BR><BR>
 	 */
@@ -8134,7 +8103,9 @@ public class L2PcInstance extends L2Playable
 			return true;
 		}
 		else
+		{
 			return weaponItem.getItemType() == L2WeaponType.DUALBLUNT;
+		}
 	}
 
 	public void setUptime(long time)
@@ -12050,7 +12021,6 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
 	public void setClanPrivileges(int n)
 	{
 		clanPrivileges = n;
@@ -12063,19 +12033,15 @@ public class L2PcInstance extends L2Playable
 		checkItemRestriction();
 	}
 
-
 	public void setPledgeType(int typeId)
 	{
 		pledgeType = typeId;
 	}
 
-
-
 	public void setApprentice(int apprentice_id)
 	{
 		apprentice = apprentice_id;
 	}
-
 
 	public void setSponsor(int sponsor_id)
 	{
@@ -12092,7 +12058,6 @@ public class L2PcInstance extends L2Playable
 		bookmarkslot = slot;
 		sendPacket(new ExGetBookMarkInfoPacket(this));
 	}
-
 
 	@Override
 	public void sendMessage(String message)
@@ -12249,15 +12214,10 @@ public class L2PcInstance extends L2Playable
 		olympiadSide = i;
 	}
 
-
 	public void setOlympiadGameId(int id)
 	{
 		olympiadGameId = id;
 	}
-
-
-
-
 
 	public boolean inObserverMode()
 	{
@@ -12335,7 +12295,6 @@ public class L2PcInstance extends L2Playable
 		return exchangeRefusal;
 	}
 
-
 	public void setHero(boolean hero)
 	{
 		if (hero && baseClass == activeClass)
@@ -12368,8 +12327,6 @@ public class L2PcInstance extends L2Playable
 		OlympiadStart = b;
 	}
 
-
-
 	public void setHasCoCAura(boolean b)
 	{
 		isCoCWinner = b;
@@ -12393,18 +12350,15 @@ public class L2PcInstance extends L2Playable
 		return isHero() || isGM() && Config.GM_HERO_AURA;
 	}
 
-
 	public boolean isInDuel()
 	{
 		return isInDuel;
 	}
 
-
 	public void setDuelState(int mode)
 	{
 		duelState = mode;
 	}
-
 
 	/**
 	 * Sets up the duel state using a non 0 duelId.
@@ -12504,7 +12458,6 @@ public class L2PcInstance extends L2Playable
 		return true;
 	}
 
-
 	public void setNoble(boolean val)
 	{
 		if (Config.IS_CLASSIC)
@@ -12541,7 +12494,6 @@ public class L2PcInstance extends L2Playable
 		lvlJoinedAcademy = lvl;
 	}
 
-
 	public boolean isAcademyMember()
 	{
 		return lvlJoinedAcademy > 0;
@@ -12560,14 +12512,10 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
-
-
 	public boolean isFishing()
 	{
 		return fishing;
 	}
-
 
 	public void setAllianceWithVarkaKetra(int sideAndLvlOfAlliance)
 	{
@@ -13214,7 +13162,6 @@ public class L2PcInstance extends L2Playable
 	public boolean isRentedPet()
 	{
 		return taskRentPet != null;
-
 	}
 
 	public void stopWaterTask()
@@ -13242,7 +13189,6 @@ public class L2PcInstance extends L2Playable
 	public boolean isInWater()
 	{
 		return taskWater != null;
-
 	}
 
 	public void checkWaterState()
@@ -13288,7 +13234,6 @@ public class L2PcInstance extends L2Playable
 			checkPlayerSkills();
 		}
 	}
-
 
 	@Override
 	public void doRevive()
@@ -13424,7 +13369,6 @@ public class L2PcInstance extends L2Playable
 		reviveRequested = false;
 		revivePower = 0;
 	}
-
 
 	public boolean isRevivingPet()
 	{
@@ -13616,7 +13560,6 @@ public class L2PcInstance extends L2Playable
 	{
 		lastServerPosition.setXYZ(x, y, z);
 	}
-
 
 	public boolean checkLastServerPosition(int x, int y, int z)
 	{
@@ -13946,7 +13889,6 @@ public class L2PcInstance extends L2Playable
 		}
 
 		return !CursedWeaponsManager.getInstance().isCursed(item.getItemId());
-
 	}
 
 	public void clearBypass()
@@ -14012,7 +13954,6 @@ public class L2PcInstance extends L2Playable
 		return (L2ShuttleInstance) vehicle;
 	}
 
-
 	public void setVehicle(L2Vehicle v)
 	{
 		if (v == null && vehicle != null)
@@ -14022,7 +13963,6 @@ public class L2PcInstance extends L2Playable
 
 		vehicle = v;
 	}
-
 
 	public boolean isInCrystallize()
 	{
@@ -15085,12 +15025,6 @@ public class L2PcInstance extends L2Playable
 		stopLookingForFishTask();
 	}
 
-
-
-
-
-
-
 	public int getInventoryLimit()
 	{
 		int ivlim;
@@ -15183,7 +15117,6 @@ public class L2PcInstance extends L2Playable
 		this.mountObjectID = mountObjectID;
 	}
 
-
 	@Getter @Setter private L2ItemInstance lure = null;
 	public int shortBuffTaskSkillId = 0;
 
@@ -15236,7 +15169,6 @@ public class L2PcInstance extends L2Playable
 
 		currentPetSkill = new SkillDat(currentSkill, ctrlPressed, shiftPressed);
 	}
-
 
 	/**
 	 * Create a new SkillDat object and queue it in the player this.queuedSkill.<BR><BR>
@@ -15452,7 +15384,6 @@ public class L2PcInstance extends L2Playable
 		storeCharBase();
 	}
 
-
 	public void setPunishTimer(long time)
 	{
 		punishTimer = time;
@@ -15578,7 +15509,6 @@ public class L2PcInstance extends L2Playable
 	{
 		cursedWeaponEquippedId = value;
 	}
-
 
 	@Override
 	public boolean isAttackingDisabled()
@@ -15859,10 +15789,6 @@ public class L2PcInstance extends L2Playable
 			this.reuse = reuse;
 			stamp = systime;
 		}
-
-
-
-
 
 		public long getRemaining()
 		{
@@ -16545,7 +16471,6 @@ public class L2PcInstance extends L2Playable
 	@Override
 	public int getAttackElementValue(byte attribute)
 	{
-
 		// 20% if summon exist
 		//if (!getSummons().isEmpty() && getCurrentClass().isSummoner())
 		//	return value / 5;
@@ -16670,7 +16595,6 @@ public class L2PcInstance extends L2Playable
 
 	private class ChargeTask implements Runnable
 	{
-
 		@Override
 		public void run()
 		{
@@ -16711,7 +16635,6 @@ public class L2PcInstance extends L2Playable
 
 				try
 				{
-
 					con = L2DatabaseFactory.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement(UPDATE_TP_BOOKMARK);
 
@@ -16955,7 +16878,6 @@ public class L2PcInstance extends L2Playable
 
 		try
 		{
-
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(INSERT_TP_BOOKMARK);
 
@@ -17259,7 +17181,6 @@ public class L2PcInstance extends L2Playable
 	 */
 	@Getter private List<Integer> friendList = new ArrayList<>();
 
-
 	public void restoreFriendList()
 	{
 		friendList.clear();
@@ -17305,7 +17226,6 @@ public class L2PcInstance extends L2Playable
 
 	public void restoreBlockList()
 	{
-
 		Connection con = null;
 
 		try
@@ -17728,9 +17648,6 @@ public class L2PcInstance extends L2Playable
 		multiSocialTarget = targetId;
 	}
 
-
-
-
 	public int getBookmarkslot()
 	{
 		return bookmarkslot;
@@ -17876,8 +17793,6 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
-
 	public void setBlockCheckerArena(byte arena)
 	{
 		handysBlockCheckerEventArena = arena;
@@ -17983,8 +17898,7 @@ public class L2PcInstance extends L2Playable
 			recoBonusTask = ThreadPoolManager.getInstance().scheduleGeneral(new RecoBonusTaskEnd(), _task_time);
 		}
 		// Create task to give new recommendations
-		recoGiveTask =
-				ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RecoGiveTask(), 7200000, 3600000);
+		recoGiveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RecoGiveTask(), 7200000, 3600000);
 		// Store new data
 		storeRecommendations();
 	}
@@ -18196,8 +18110,6 @@ public class L2PcInstance extends L2Playable
 		lastSummons.clear();
 	}
 
-
-
 	public boolean isAtWarWithCastle(int castleId)
 	{
 		if (getClan() == null)
@@ -18235,18 +18147,15 @@ public class L2PcInstance extends L2Playable
 		return getClan().getWarList().contains(clanId);
 	}
 
-
 	public boolean isItemId()
 	{
 		return isItemId;
 	}
 
-
 	public void setCtfFlag(EventTeam team)
 	{
 		ctfFlag = team;
 	}
-
 
 	public void setEventPoints(int eventPoints)
 	{
@@ -18289,7 +18198,6 @@ public class L2PcInstance extends L2Playable
 	{
 		return hasMoved;
 	}
-
 
 	class HasMovedTask implements Runnable
 	{
@@ -18523,7 +18431,6 @@ public class L2PcInstance extends L2Playable
 		return lostExp;
 	}
 
-
 	public void setTitleColor(String color)
 	{
 		if (color.length() > 0)
@@ -18557,7 +18464,6 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
 	public void setMobSummonRequest(boolean state, L2ItemInstance item)
 	{
 		mobSummonRequest = state;
@@ -18578,7 +18484,6 @@ public class L2PcInstance extends L2Playable
 			setMobSummonRequest(false, null);
 		}
 	}
-
 
 	public void setMobSummonExchangeRequest(boolean state, L2MobSummonInstance mob)
 	{
@@ -18714,8 +18619,7 @@ public class L2PcInstance extends L2Playable
 			sendPacket(new MagicSkillLaunched(L2PcInstance.this, 2046, 1));
 			setIsCastingNow(false);
 			L2MobSummonInstance summon =
-					new L2MobSummonInstance(IdFactory.getInstance().getNextId(), npcTemplate, L2PcInstance.this,
-							item);
+					new L2MobSummonInstance(IdFactory.getInstance().getNextId(), npcTemplate, L2PcInstance.this, item);
 
 			summon.setName(npcTemplate.Name);
 			summon.setTitle(getName());
@@ -18776,14 +18680,10 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
-
-
 	public boolean isNoExp()
 	{
 		return noExp;
 	}
-
-
 
 	public void setLandRates(boolean landRates)
 	{
@@ -19080,7 +18980,6 @@ public class L2PcInstance extends L2Playable
 		ThreadPoolManager.getInstance().scheduleGeneral(stalkerHintsTask, 5000);
 	}
 
-
 	public void setChessChallengeRequest(boolean state, L2PcInstance challenger)
 	{
 		chessChallengeRequest = state;
@@ -19316,7 +19215,6 @@ public class L2PcInstance extends L2Playable
 			// Only for the same summon buffs shall be restored
 			lastSummonId = pet.getNpcId();
 		}
-
 	}
 
 	/**
@@ -19335,7 +19233,6 @@ public class L2PcInstance extends L2Playable
 		eventDisarmed = disarmed;
 	}
 
-
 	@Override
 	public boolean isDisarmed()
 	{
@@ -19343,7 +19240,6 @@ public class L2PcInstance extends L2Playable
 	}
 
 	@Getter private int lastCheckedAwakeningClassId = 0;
-
 
 	public void setLastCheckedAwakeningClassId(int classId)
 	{
@@ -19687,7 +19583,6 @@ public class L2PcInstance extends L2Playable
 
 	@Getter private int elementalStance = 0;
 
-
 	public void setElementalStance(int stanceId)
 	{
 		elementalStance = stanceId;
@@ -19716,7 +19611,6 @@ public class L2PcInstance extends L2Playable
 		currentUnbindScroll = scroll;
 	}
 
-
 	@Getter private L2ItemInstance currentBlessingScroll = null;
 
 	public void setCurrentBlessingScroll(L2ItemInstance scroll)
@@ -19724,9 +19618,7 @@ public class L2PcInstance extends L2Playable
 		currentBlessingScroll = scroll;
 	}
 
-
 	@Setter private boolean canEscape = true;
-
 
 	public boolean canEscape()
 	{
@@ -19747,10 +19639,9 @@ public class L2PcInstance extends L2Playable
 
 	public boolean isAlly(L2Character target)
 	{
-		return target instanceof L2PcInstance &&
-				(getParty() != null && target.getParty() == getParty() ||
-						getClanId() != 0 && ((L2PcInstance) target).getClanId() == getClanId() ||
-						getAllyId() != 0 && ((L2PcInstance) target).getAllyId() == getAllyId()
+		return target instanceof L2PcInstance && (getParty() != null && target.getParty() == getParty() ||
+				getClanId() != 0 && ((L2PcInstance) target).getClanId() == getClanId() ||
+				getAllyId() != 0 && ((L2PcInstance) target).getAllyId() == getAllyId()
 		/*|| target instanceof L2ApInstance*/);
 	}
 
@@ -20094,7 +19985,6 @@ public class L2PcInstance extends L2Playable
 		return getClient().getHWId();
 	}
 
-
 	public void storeCharFriendMemos()
 	{
 		Connection con = null;
@@ -20266,8 +20156,6 @@ public class L2PcInstance extends L2Playable
 	{
 		return isAddSellItem;
 	}
-
-
 
 	public int getCubicMastery()
 	{
@@ -20488,13 +20376,10 @@ public class L2PcInstance extends L2Playable
 		botLevel++;
 	}
 
-
 	public void setBotLevel(int level)
 	{
 		botLevel = level;
 	}
-
-
 
 	public void captcha(String message)
 	{
@@ -20687,7 +20572,6 @@ public class L2PcInstance extends L2Playable
 	{
 		return showHat;
 	}
-
 
 	public int getArmorEnchant()
 	{
@@ -21076,12 +20960,10 @@ public class L2PcInstance extends L2Playable
 	@Getter private L2ItemInstance compoundItem1 = null;
 	@Getter private L2ItemInstance compoundItem2 = null;
 
-
 	public void setCompoundItem1(L2ItemInstance compoundItem)
 	{
 		compoundItem1 = compoundItem;
 	}
-
 
 	public void setCompoundItem2(L2ItemInstance compoundItem)
 	{
@@ -21093,14 +20975,12 @@ public class L2PcInstance extends L2Playable
 	private byte temporaryLevel;
 	@Getter private byte temporaryLevelToApply;
 
-
 	public void setTemporaryLevelToApply(final byte level)
 	{
 		temporaryLevelToApply = level;
 	}
 
-	@SuppressWarnings("unused")
-	private int classIdBeforeDelevel;
+	@SuppressWarnings("unused") private int classIdBeforeDelevel;
 
 	private int temporaryClassId;
 	private PlayerClass temporaryPlayerClass;
@@ -21942,7 +21822,6 @@ public class L2PcInstance extends L2Playable
 				}
 				catch (Exception ignored)
 				{
-
 				}
 			}
 
@@ -22175,7 +22054,6 @@ public class L2PcInstance extends L2Playable
 			}
 			catch (final Exception ignored)
 			{
-
 			}
 		}
 	}

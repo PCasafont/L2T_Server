@@ -28,7 +28,6 @@ import java.util.logging.Level;
  */
 public class BlowFishKey extends BaseSendablePacket
 {
-
 	/**
 	 * @param blowfishKey
 	 * @param publicKey

@@ -24,7 +24,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetNone extends Condition
 {
-
 	/**
 	 * Instantiates a new condition target none.
 	 */

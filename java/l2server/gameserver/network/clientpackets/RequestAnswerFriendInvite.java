@@ -38,7 +38,6 @@ import java.util.logging.Level;
  */
 public final class RequestAnswerFriendInvite extends L2GameClientPacket
 {
-
 	private int response;
 
 	@Override

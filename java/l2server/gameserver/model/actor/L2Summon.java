@@ -599,8 +599,6 @@ public abstract class L2Summon extends L2Playable
 		return owner.isAutoAttackable(attacker);
 	}
 
-
-
 	public int getControlObjectId()
 	{
 		return 0;
@@ -1142,7 +1140,6 @@ public abstract class L2Summon extends L2Playable
 
 				if (!effect.isHerbEffect() && effect.isInUse() && !skill.isToggle())
 				{
-
 					statement.setInt(1, getOwner().getObjectId());
 					statement.setInt(2, skill.getId());
 					statement.setInt(3, skill.getLevelHash());

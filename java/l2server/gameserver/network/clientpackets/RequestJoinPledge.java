@@ -30,7 +30,6 @@ import lombok.Getter;
  */
 public final class RequestJoinPledge extends L2GameClientPacket
 {
-
 	private int target;
 	@Getter private int pledgeType;
 
@@ -85,5 +84,4 @@ public final class RequestJoinPledge extends L2GameClientPacket
 				activeChar.getClan().getSubPledge(pledgeType).getName() : null;
 		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, pledgeType, pledgeName));
 	}
-
 }

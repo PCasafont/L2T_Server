@@ -43,7 +43,6 @@ import java.util.NoSuchElementException;
  */
 public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> implements Iterable<T>
 {
-
 	private static final boolean TRACE = false;
 	private static final boolean DEBUG = false;
 

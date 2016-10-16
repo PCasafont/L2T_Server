@@ -55,8 +55,7 @@ public class EffectKnockBack extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
-				getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid())
 		{
 			return false;
 		}
@@ -119,8 +118,7 @@ public class EffectKnockBack extends L2Effect
 				if (Config.GEODATA > 0)
 				{
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y,
-									z,
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
 									getEffected().getInstanceId());
 					x = destiny.getX();
 					y = destiny.getY();
@@ -186,8 +184,7 @@ public class EffectKnockBack extends L2Effect
 				if (Config.GEODATA > 0)
 				{
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y,
-									z,
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
 									getEffected().getInstanceId());
 					x = destiny.getX();
 					y = destiny.getY();

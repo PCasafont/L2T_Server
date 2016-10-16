@@ -34,7 +34,6 @@ import l2server.gameserver.network.SystemMessageId;
  */
 public abstract class L2PlayableAI extends L2CharacterAI
 {
-
 	/**
 	 * @param accessor
 	 */

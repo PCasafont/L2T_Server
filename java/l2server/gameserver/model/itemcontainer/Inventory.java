@@ -157,7 +157,6 @@ public abstract class Inventory extends ItemContainer
 	{
 		@Getter private static WeaponListener instance = new WeaponListener();
 
-
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
@@ -250,12 +249,11 @@ public abstract class Inventory extends ItemContainer
 	{
 		@Getter private static StatsListener instance = new StatsListener();
 
-
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
 			/*if (slot == PAPERDOLL_RHAND)
-                return;*/
+				return;*/
 			inventory.getOwner().removeStatsOwner(item);
 		}
 
@@ -271,7 +269,6 @@ public abstract class Inventory extends ItemContainer
 	private static final class ItemSkillsListener implements PaperdollListener
 	{
 		@Getter private static ItemSkillsListener instance = new ItemSkillsListener();
-
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -509,7 +506,6 @@ public abstract class Inventory extends ItemContainer
 	private static final class ArmorSetListener implements PaperdollListener
 	{
 		@Getter private static ArmorSetListener instance = new ArmorSetListener();
-
 
 		@Override
 		public void notifyEquiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -752,7 +748,6 @@ public abstract class Inventory extends ItemContainer
 	{
 		@Getter private static BraceletListener instance = new BraceletListener();
 
-
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
@@ -776,7 +771,6 @@ public abstract class Inventory extends ItemContainer
 	private static final class BroochListener implements PaperdollListener
 	{
 		@Getter private static BroochListener instance = new BroochListener();
-
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)

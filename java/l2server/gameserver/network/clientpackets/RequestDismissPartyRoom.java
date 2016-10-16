@@ -24,10 +24,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestDismissPartyRoom extends L2GameClientPacket
 {
-
 	private int roomid;
-	@SuppressWarnings("unused")
-	private int data2;
+	@SuppressWarnings("unused") private int data2;
 
 	@Override
 	protected void readImpl()

@@ -310,7 +310,7 @@ public final class Formulas
 			if (env.player instanceof L2PcInstance)
 			{
 				/*L2PcInstance p = (L2PcInstance) env.player;
-                if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
+				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
 					env.value -= 5;
 				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RFINGER) != null)
 					env.value -= 5;
@@ -2568,7 +2568,6 @@ public final class Formulas
 							damage *= 0.10;
 					}
 
-
 					break;
 				}
 				case 22957: // Garden Warrior
@@ -3780,7 +3779,6 @@ public final class Formulas
 			}
 
 			return !(target.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && skill.getName().contains("Talisman"));
-
 		}
 
 		if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
@@ -4130,9 +4128,8 @@ public final class Formulas
 			}
 			if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
 			{
-				target.sendMessage(
-						"This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
-								skill.getPower() + " base land rate.");
+				target.sendMessage("This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
+						skill.getPower() + " base land rate.");
 			}
 		}
 

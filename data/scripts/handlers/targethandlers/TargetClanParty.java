@@ -15,9 +15,6 @@
 
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Object;
@@ -29,12 +26,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Didl
  */
 public class TargetClanParty implements ISkillTargetTypeHandler
 {
-
 	/**
 	 *
 	 */
@@ -101,7 +100,6 @@ public class TargetClanParty implements ISkillTargetTypeHandler
 				if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
 						player.isInParty() && player.getParty().isInParty(tempChar))
 				{
-
 					if (tempChar.getPet() != null)
 					{
 						if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))

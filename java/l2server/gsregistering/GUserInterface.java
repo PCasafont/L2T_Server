@@ -1,8 +1,8 @@
 package l2server.gsregistering;
 
-import lombok.Getter;
 import l2server.images.ImagesTable;
 import l2server.loginserver.GameServerTable;
+import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -22,12 +22,10 @@ import java.util.ResourceBundle;
  */
 public class GUserInterface extends BaseGameServerRegister implements ActionListener
 {
-
 	/**
 	 *
 	 */
-	@SuppressWarnings("unused")
-	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused") private static final long serialVersionUID = 1L;
 
 	@Getter private final JFrame frame;
 
@@ -112,7 +110,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		// maximize, doesn't seem really needed
 		//getFrame().setExtendedState(JFrame.MAXIMIZED_BOTH);
 		/*
-        // Work-around JVM maximize issue on linux
+		// Work-around JVM maximize issue on linux
 		String osName = System.getProperty("os.name");
 		if (osName.equals("Linux"))
 		{
@@ -134,7 +132,6 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	@Override
 	public void load()
 	{
-
 		SwingUtilities.invokeLater(() -> progressBar.setVisible(true));
 
 		super.load();
@@ -259,7 +256,6 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 
 	class ButtonCellRenderer implements TableCellRenderer
 	{
-
 		/* (non-Javadoc)
 		 * @see javax.swing.table.TableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
 		 */

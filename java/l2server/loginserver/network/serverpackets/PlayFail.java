@@ -16,6 +16,7 @@
 package l2server.loginserver.network.serverpackets;
 
 import lombok.Getter;
+
 /**
  * This class ...
  *
@@ -71,7 +72,6 @@ public final class PlayFail extends L2LoginServerPacket
 		{
 			this.code = code;
 		}
-
 	}
 
 	private final PlayFailReason reason;

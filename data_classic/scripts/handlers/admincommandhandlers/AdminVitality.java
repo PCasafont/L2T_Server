@@ -15,12 +15,12 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.stat.PcStat;
+
+import java.util.StringTokenizer;
 
 /**
  * @author Psychokiller1888
@@ -28,7 +28,6 @@ import l2server.gameserver.model.actor.stat.PcStat;
 
 public class AdminVitality implements IAdminCommandHandler
 {
-
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_set_vitality",
 			"admin_set_vitality_level",

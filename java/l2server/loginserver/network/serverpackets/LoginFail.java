@@ -16,6 +16,7 @@
 package l2server.loginserver.network.serverpackets;
 
 import lombok.Getter;
+
 /**
  * Fromat: d
  * d: the failure reason
@@ -70,7 +71,6 @@ public final class LoginFail extends L2LoginServerPacket
 		{
 			this.code = code;
 		}
-
 	}
 
 	private LoginFailReason reason;

@@ -24,7 +24,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestShortCutDel extends L2GameClientPacket
 {
-
 	private int slot;
 	private int page;
 

@@ -154,7 +154,6 @@ public class L2StaticObjectInstance extends L2Character
 		map = new ShowTownMap("town_map." + texture, x, y);
 	}
 
-
 	@Override
 	public final int getLevel()
 	{

@@ -25,7 +25,6 @@ import java.util.logging.Level;
 
 public class SqlUtils
 {
-
 	private SqlUtils()
 	{
 	}

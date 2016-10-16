@@ -28,7 +28,6 @@ import l2server.log.Log;
  */
 public final class CannotMoveAnymore extends L2GameClientPacket
 {
-
 	private int x;
 	private int y;
 	private int z;
@@ -54,18 +53,16 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine(
-					"client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() +
-							" z:" + player.getZ());
+			Log.fine("client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() +
+					" z:" + player.getZ());
 		}
 
 		if (player.getAI() != null)
 		{
-			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(x, y, z,
-					heading));
+			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(x, y, z, heading));
 		}
 		/*if (player.getParty() != null)
-        {
+		{
 			player.getParty().broadcastToPartyMembers(player, new PartyMemberPosition(player));
 		}*/
 

@@ -46,7 +46,7 @@ public class HeroSkillTable
 	public static boolean isHeroSkill(int skillid)
 	{
 		/*
-         * Do not perform checks directly on L2Skill array,
+		 * Do not perform checks directly on L2Skill array,
 		 * it will cause errors due to SkillTable not initialized
 		 */
 		for (int id : heroSkillsId)

@@ -30,7 +30,6 @@ import java.util.concurrent.Future;
  */
 public final class FusionSkill
 {
-
 	protected int skillCastRange;
 	protected int fusionId;
 	protected int fusionLevel;

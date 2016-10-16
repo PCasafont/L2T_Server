@@ -32,7 +32,6 @@ import l2server.util.Point3D;
  */
 public class MoveToLocationInAirShip extends L2GameClientPacket
 {
-
 	private int shipId;
 	private int targetX;
 	private int targetY;

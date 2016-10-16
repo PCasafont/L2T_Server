@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExChangeNpcState extends L2GameServerPacket
 {
-
 	private int objId;
 	private int state;
 

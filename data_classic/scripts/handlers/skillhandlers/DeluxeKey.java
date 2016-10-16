@@ -15,8 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
@@ -24,6 +22,8 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * @author Julian
@@ -56,7 +56,6 @@ public class DeluxeKey implements ISkillHandler
 
 		// This is just a dummy skill handler for the golden food and crystal food skills,
 		// since the AI responce onSkillUse handles the rest.
-
 	}
 
 	/**

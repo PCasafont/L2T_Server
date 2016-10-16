@@ -1,12 +1,5 @@
 package custom.FearonSiege;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
@@ -25,15 +18,14 @@ import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.Earthquake;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.SpecialCamera;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * @author LasTravel
@@ -386,16 +378,16 @@ public class FearonSiege extends Quest
 			 */
 			if (this.summonTreeHelper != null && !this.summonTreeHelper.isDecayed())
 			{
-				Collection<L2Character> chars =
-						this.summonTreeHelper.getKnownList().getKnownCharactersInRadius(this.blessingOfTree.getSkillRadius());
+				Collection<L2Character> chars = this.summonTreeHelper.getKnownList()
+						.getKnownCharactersInRadius(this.blessingOfTree.getSkillRadius());
 
 				if (chars != null && !chars.isEmpty())
 				{
 					for (L2Character chara : chars)
 					{
 						if (chara == null ||
-								!chara.isInsideRadius(this.summonTreeHelper, this.blessingOfTree.getSkillRadius(), false,
-										false) || !(chara instanceof L2Playable))
+								!chara.isInsideRadius(this.summonTreeHelper, this.blessingOfTree.getSkillRadius(),
+										false, false) || !(chara instanceof L2Playable))
 						{
 							continue;
 						}
@@ -414,8 +406,8 @@ public class FearonSiege extends Quest
 			 */
 			if (this.summonGravityCore != null && !this.summonGravityCore.isDecayed())
 			{
-				Collection<L2Character> chars =
-						this.summonGravityCore.getKnownList().getKnownCharactersInRadius(this.ultimateDef.getSkillRadius());
+				Collection<L2Character> chars = this.summonGravityCore.getKnownList()
+						.getKnownCharactersInRadius(this.ultimateDef.getSkillRadius());
 
 				if (chars != null && !chars.isEmpty())
 				{
@@ -487,7 +479,8 @@ public class FearonSiege extends Quest
 						continue;
 					}
 
-					if (chara.isDead() && this.warriorMageSup.isInsideRadius(chara, this.resSkill.getCastRange(), false, false))
+					if (chara.isDead() &&
+							this.warriorMageSup.isInsideRadius(chara, this.resSkill.getCastRange(), false, false))
 					{
 						deadPlayers.add(chara);
 					}
@@ -533,8 +526,9 @@ public class FearonSiege extends Quest
 				}
 				else if (fuckedCount > 5 && fuckedCount <= 10) //Summon Tree of Life
 				{
-					if (this.summonTreeHelper == null || this.summonTreeHelper.isDecayed() && this.warriorMageSup.getCurrentMp() >=
-							this.summonTree.getMpConsume()) //Be sure we don't spawn more than one
+					if (this.summonTreeHelper == null || this.summonTreeHelper.isDecayed() &&
+							this.warriorMageSup.getCurrentMp() >=
+									this.summonTree.getMpConsume()) //Be sure we don't spawn more than one
 					{
 						this.warriorMageSup.broadcastPacket(
 								new CreatureSay(this.warriorMageSup.getObjectId(), 1, this.warriorMageSup.getName(),
@@ -548,9 +542,8 @@ public class FearonSiege extends Quest
 							@Override
 							public void run()
 							{
-								summonTreeHelper =
-										addSpawn(summonTreeId, warriorMageSup.getX(), warriorMageSup.getY(),
-												warriorMageSup.getZ() + 20, 0, true, 30000, true, instanceId);
+								summonTreeHelper = addSpawn(summonTreeId, warriorMageSup.getX(), warriorMageSup.getY(),
+										warriorMageSup.getZ() + 20, 0, true, 30000, true, instanceId);
 
 								//We will start that task only one time, then will be running all time while a tree is spawned
 								QuestTimer treeAi = getQuestTimer("tree_ai", null, null);
@@ -676,8 +669,7 @@ public class FearonSiege extends Quest
 
 			Announcements.getInstance().announceToAll("The instance will start on 10 minutes!");
 
-			protectionStone =
-					addSpawn(protectionStoneId, -79660, 244954, -3651 + 20, 0, false, 0, false, instanceId);
+			protectionStone = addSpawn(protectionStoneId, -79660, 244954, -3651 + 20, 0, false, 0, false, instanceId);
 
 			startQuestTimer("stone_ai", 3000, null, null, true);
 
@@ -734,9 +726,8 @@ public class FearonSiege extends Quest
 					int x = (int) (1200 * Math.cos(i * 0.618));
 					int y = (int) (1200 * Math.sin(i * 0.618));
 
-					L2Npc minion =
-							addSpawn(this.invadeMobs[Rnd.get(this.invadeMobs.length)], -79660 + x, 244954 + y, -3651 + 20, -1,
-									false, 0, true, instanceId);
+					L2Npc minion = addSpawn(this.invadeMobs[Rnd.get(this.invadeMobs.length)], -79660 + x, 244954 + y,
+							-3651 + 20, -1, false, 0, true, instanceId);
 					minion.setIsRunning(true);
 					minion.addSkill(passiveSkill);
 					minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
@@ -965,9 +956,8 @@ public class FearonSiege extends Quest
 						continue;
 					}
 
-					Log.warning(
-							this.qn + ": Rewarded in total :" + ItemTable.getInstance().getTemplate(i.getKey()).getName() +
-									"(" + i.getValue() + ")");
+					Log.warning(this.qn + ": Rewarded in total :" +
+							ItemTable.getInstance().getTemplate(i.getKey()).getName() + "(" + i.getValue() + ")");
 				}
 			}
 		}
@@ -1034,8 +1024,8 @@ public class FearonSiege extends Quest
 					public void run()
 					{
 						InstanceManager.getInstance().sendPacket(instanceId,
-								new MagicSkillUse(protectionStone, portalEffect2.getId(), 1,
-										portalEffect2.getHitTime(), portalEffect2.getReuseDelay()));
+								new MagicSkillUse(protectionStone, portalEffect2.getId(), 1, portalEffect2.getHitTime(),
+										portalEffect2.getReuseDelay()));
 
 						for (int i = 0; i < 15; i++)
 						{
@@ -1093,8 +1083,8 @@ public class FearonSiege extends Quest
 					public void run()
 					{
 						InstanceManager.getInstance().sendPacket(instanceId,
-								new MagicSkillUse(protectionStone, portalEffect2.getId(), 1,
-										portalEffect2.getHitTime(), portalEffect2.getReuseDelay()));
+								new MagicSkillUse(protectionStone, portalEffect2.getId(), 1, portalEffect2.getHitTime(),
+										portalEffect2.getReuseDelay()));
 
 						warriorLeona = addSpawn(warriorLeonaId, protectionStone.getX(), protectionStone.getY(),
 								protectionStone.getZ() + 20, 0, true, 0, true, instanceId);
@@ -1107,9 +1097,8 @@ public class FearonSiege extends Quest
 								warriorsSpawnEffect.getHitTime(), warriorsSpawnEffect.getReuseDelay()));
 						warriorKain.broadcastPacket(new MagicSkillUse(warriorKain, warriorsSpawnEffect.getId(), 1,
 								warriorsSpawnEffect.getHitTime(), warriorsSpawnEffect.getReuseDelay()));
-						warriorMageSup.broadcastPacket(
-								new MagicSkillUse(warriorMageSup, warriorsSpawnEffect.getId(), 1,
-										warriorsSpawnEffect.getHitTime(), warriorsSpawnEffect.getReuseDelay()));
+						warriorMageSup.broadcastPacket(new MagicSkillUse(warriorMageSup, warriorsSpawnEffect.getId(), 1,
+								warriorsSpawnEffect.getHitTime(), warriorsSpawnEffect.getReuseDelay()));
 
 						//Start It back
 						ThreadPoolManager.getInstance().scheduleAi(new Runnable()

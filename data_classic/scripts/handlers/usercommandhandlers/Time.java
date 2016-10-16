@@ -15,15 +15,15 @@
 
 package handlers.usercommandhandlers;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import l2server.Config;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.handler.IUserCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Time implements IUserCommandHandler
 {

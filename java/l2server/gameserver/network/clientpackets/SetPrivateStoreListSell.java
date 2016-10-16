@@ -33,7 +33,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public class SetPrivateStoreListSell extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
 	private boolean packageSale;

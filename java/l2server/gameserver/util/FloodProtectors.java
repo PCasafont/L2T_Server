@@ -13,9 +13,9 @@
 
 package l2server.gameserver.util;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.network.L2GameClient;
+import lombok.Getter;
 
 /**
  * Collection of flood protectors for single player.

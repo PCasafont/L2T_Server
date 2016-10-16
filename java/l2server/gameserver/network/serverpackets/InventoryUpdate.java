@@ -49,7 +49,6 @@ import java.util.List;
 
 public class InventoryUpdate extends L2ItemListPacket
 {
-
 	private List<ItemInfo> items;
 
 	public InventoryUpdate()

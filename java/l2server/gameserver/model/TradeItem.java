@@ -17,6 +17,7 @@ package l2server.gameserver.model;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * This class ...
  *
@@ -40,12 +41,10 @@ public final class TradeItem
 		objectId = id;
 	}
 
-
 	public void setItemId(int id)
 	{
 		itemId = id;
 	}
-
 
 	public void setOwnersPrice(long price)
 	{
@@ -62,12 +61,8 @@ public final class TradeItem
 		storePrice = price;
 	}
 
-
-
-
 	public void setEnchantLevel(int enchant)
 	{
 		enchantLevel = enchant;
 	}
-
 }

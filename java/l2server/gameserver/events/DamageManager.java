@@ -140,7 +140,7 @@ public class DamageManager
 
 		if (dmg > info.getCurrentDamage())
 		{
-            /*if (playerMatch(pl.getHWID(), pl.getClassId()))
+			/*if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
 				pl.sendMessage("You already have another record, only one per person is allowed");
 				return;

@@ -28,7 +28,6 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillElemental extends L2Skill
 {
-
 	private final int[] seeds;
 	private final boolean seedAny;
 

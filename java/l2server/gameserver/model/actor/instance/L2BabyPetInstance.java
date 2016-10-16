@@ -251,7 +251,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 				if (majorHeal != null)
 				{
 					/*
-                      if the owner's HP is more than 80%, do nothing.
+					  if the owner's HP is more than 80%, do nothing.
                       if the owner's HP is very low (less than 20%) have a high chance for strong heal
                       otherwise, have a low chance for weak heal
                      */

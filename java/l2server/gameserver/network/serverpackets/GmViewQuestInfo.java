@@ -26,7 +26,6 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class GmViewQuestInfo extends L2GameServerPacket
 {
-
 	private L2PcInstance activeChar;
 
 	public GmViewQuestInfo(L2PcInstance cha)

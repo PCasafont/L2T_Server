@@ -88,14 +88,12 @@ public class L2PcTemplate extends L2CharTemplate
 			this.amount = amount;
 			this.equipped = equipped;
 		}
-
 	}
 
 	public void addSkill(int id)
 	{
 		skillIds.add(id);
 	}
-
 
 	public final int getFallHeight()
 	{

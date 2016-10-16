@@ -17,7 +17,6 @@ package l2server.gameserver.network.serverpackets;
 
 public class CameraMode extends L2GameServerPacket
 {
-
 	private int mode;
 
 	/**

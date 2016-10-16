@@ -47,11 +47,4 @@ public class ItemInfo
 		elementals[4] = item.getElementDefAttr(Elementals.HOLY);
 		elementals[5] = item.getElementDefAttr(Elementals.DARK);
 	}
-
-
-
-
-
-
-
 }

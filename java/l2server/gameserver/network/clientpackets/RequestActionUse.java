@@ -57,7 +57,6 @@ import java.util.logging.Level;
  */
 public final class RequestActionUse extends L2GameClientPacket
 {
-
 	private int actionId;
 	private boolean ctrlPressed;
 	private boolean shiftPressed;

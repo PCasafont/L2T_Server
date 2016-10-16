@@ -36,5 +36,4 @@ public class PlayerAuthResponse extends BaseRecievePacket
 		account = readS();
 		authed = readC() != 0;
 	}
-
 }

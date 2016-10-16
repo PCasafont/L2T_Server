@@ -104,7 +104,6 @@ public class HtmCache implements Reloadable
 		return (float) bytesBuffLen / 1048576;
 	}
 
-
 	private static class HtmFilter implements FileFilter
 	{
 		@Override
@@ -291,7 +290,6 @@ public class HtmCache implements Reloadable
 		filter = new HtmFilter();
 
 		return file.exists() && filter.accept(file) && !file.isDirectory();
-
 	}
 
 	@SuppressWarnings("synthetic-access")

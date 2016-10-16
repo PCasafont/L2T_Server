@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPutItemResultForVariationMake extends L2GameServerPacket
 {
-
 	private int itemObjId;
 	private int itemId;
 

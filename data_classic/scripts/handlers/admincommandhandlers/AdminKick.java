@@ -15,13 +15,13 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.Collection;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2ApInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import java.util.Collection;
+import java.util.StringTokenizer;
 
 public class AdminKick implements IAdminCommandHandler
 {

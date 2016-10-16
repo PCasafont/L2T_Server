@@ -121,8 +121,7 @@ public final class L2ColosseumFence extends L2Object
 
 	public boolean isInsideFence(int x, int y, int z)
 	{
-		return x >= bounds.x && y >= bounds.y && z >= minZ && z <= maxZ && x <= bounds.x +
-				bounds.width &&
+		return x >= bounds.x && y >= bounds.y && z >= minZ && z <= maxZ && x <= bounds.x + bounds.width &&
 				y <= bounds.y + bounds.width;
 	}
 }

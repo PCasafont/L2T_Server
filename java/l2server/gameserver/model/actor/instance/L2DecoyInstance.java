@@ -228,8 +228,6 @@ public class L2DecoyInstance extends L2Attackable
 		timeRemaining -= value;
 	}
 
-
-
 	@Override
 	public void onSpawn()
 	{

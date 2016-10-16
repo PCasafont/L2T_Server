@@ -37,7 +37,6 @@ import java.util.Map.Entry;
  */
 public final class RequestMagicSkillUse extends L2GameClientPacket
 {
-
 	private int magicId;
 	private boolean ctrlPressed;
 	private boolean shiftPressed;

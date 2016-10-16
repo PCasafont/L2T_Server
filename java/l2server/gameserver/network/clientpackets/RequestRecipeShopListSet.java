@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.RecipeController;
 import l2server.gameserver.model.L2ManufactureItem;
@@ -29,6 +28,7 @@ import l2server.gameserver.network.serverpackets.RecipeShopMsg;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
+import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -171,6 +171,5 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			list.add(new L2ManufactureItem(recipeId, cost));
 			return true;
 		}
-
 	}
 }

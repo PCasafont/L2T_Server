@@ -20,7 +20,6 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public final class HennaInfo extends L2GameServerPacket
 {
-
 	private final L2PcInstance activeChar;
 	private final L2Henna[] hennas = new L2Henna[4];
 	private int count;

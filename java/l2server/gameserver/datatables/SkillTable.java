@@ -309,7 +309,5 @@ public class SkillTable implements Reloadable
 			this.id = id;
 			this.level = level;
 		}
-
-
 	}
 }

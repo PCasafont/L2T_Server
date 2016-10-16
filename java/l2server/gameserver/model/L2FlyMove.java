@@ -41,7 +41,6 @@ public class L2FlyMove
 		this.id = id;
 	}
 
-
 	public void addStep(int id, Point3D s)
 	{
 		steps.put(id, s);
@@ -72,12 +71,10 @@ public class L2FlyMove
 			this.at = at;
 		}
 
-
 		public void addOption(L2FlyMoveOption o)
 		{
 			options.add(o);
 		}
-
 	}
 
 	public class L2FlyMoveOption
@@ -92,8 +89,5 @@ public class L2FlyMove
 			this.end = end;
 			this.last = last;
 		}
-
-
-
 	}
 }

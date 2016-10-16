@@ -20,6 +20,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import lombok.Getter;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -267,7 +268,6 @@ public class ExServerPrimitive extends L2GameServerPacket
 		{
 			return isNameColored;
 		}
-
 	}
 
 	private static class Line extends Point
@@ -283,6 +283,5 @@ public class ExServerPrimitive extends L2GameServerPacket
 			this.y2 = y2;
 			this.z2 = z2;
 		}
-
 	}
 }

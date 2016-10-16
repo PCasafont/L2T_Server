@@ -111,7 +111,8 @@ public class OlympiadManager
 			return false;
 		}
 
-		final List<Integer> classed = classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+		final List<Integer> classed =
+				classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
 		if (classed != null && classed.contains(objId))
 		{
 			if (showMessage)
@@ -258,7 +259,6 @@ public class OlympiadManager
 			}
 			case NON_CLASSED:
 			{
-
 				addPlayer(nonClassBasedRegisters, nobleInfo);
 				sm = SystemMessage
 						.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_NO_CLASS_GAMES);
@@ -351,7 +351,8 @@ public class OlympiadManager
 			return;
 		}
 
-		final List<Integer> classed = classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+		final List<Integer> classed =
+				classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
 		if (classed != null && classed.remove(objId))
 		{
 		}
@@ -420,7 +421,7 @@ public class OlympiadManager
 
 		//If we have access to the player HWID we will use it to check dualbox otherwise we will use the external ip and the internal ip
 		/*for (L2PcInstance pl : L2World.getInstance().getAllOlympiadPlayers())
-        {
+		{
 			if (pl == null)
 				continue;
 			if ((player.getHWID() != null) && (pl.getHWID() != null))

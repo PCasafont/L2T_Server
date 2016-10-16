@@ -28,13 +28,11 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
  */
 public class AdminHelpPage implements IAdminCommandHandler
 {
-
 	private static final String[] ADMIN_COMMANDS = {"admin_help"};
 
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-
 		if (command.startsWith("admin_help"))
 		{
 			try

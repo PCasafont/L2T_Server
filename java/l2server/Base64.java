@@ -652,7 +652,6 @@ public class Base64
 			return new String(outBuff, 0, e);
 		} // end catch
 		// end else: don't compress
-
 	} // end encodeBytes
 
 	// /**
@@ -853,7 +852,6 @@ public class Base64
 		if (bytes != null && // In case decoding returned null
 				bytes.length >= 2)
 		{
-
 			int head = bytes[0] & 0xff | bytes[1] << 8 & 0xff00;
 			if (bytes.length >= 4 && // Don't want to get ArrayIndexOutOfBounds
 					java.util.zip.GZIPInputStream.GZIP_MAGIC == head)

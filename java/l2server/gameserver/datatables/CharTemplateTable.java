@@ -34,7 +34,6 @@ import java.io.File;
  */
 public final class CharTemplateTable implements Reloadable
 {
-
 	public static CharTemplateTable getInstance()
 	{
 		return SingletonHolder.instance;
@@ -70,7 +69,6 @@ public final class CharTemplateTable implements Reloadable
 		{
 			if (n.getName().equalsIgnoreCase("list"))
 			{
-
 				for (XmlNode d : n.getChildren())
 				{
 					if (d.getName().equalsIgnoreCase("race"))

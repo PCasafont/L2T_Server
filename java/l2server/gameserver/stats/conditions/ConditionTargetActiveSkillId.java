@@ -23,7 +23,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetActiveSkillId extends Condition
 {
-
 	private final int skillId;
 	private final int skillLevel;
 

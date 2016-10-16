@@ -198,7 +198,6 @@ public class L2Territory
 		return p;
 	}
 
-
 	public int getMinZ()
 	{
 		return zMin;
@@ -208,5 +207,4 @@ public class L2Territory
 	{
 		return zMax;
 	}
-
 }

@@ -25,7 +25,6 @@ import l2server.gameserver.network.serverpackets.ExShowFortressSiegeInfo;
  */
 public class RequestFortressSiegeInfo extends L2GameClientPacket
 {
-
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */

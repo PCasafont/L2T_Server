@@ -161,7 +161,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return key;
 	}
 
-
 	public void setState(GameClientState pState)
 	{
 		if (state != pState)
@@ -171,7 +170,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-
 	/**
 	 * Returns cached connection IP address, for checking detached clients.
 	 * For loaded offline traders returns localhost address.
@@ -180,7 +178,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	{
 		return addr;
 	}
-
 
 	@Override
 	public boolean decrypt(ByteBuffer buf, int size)
@@ -197,18 +194,15 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return true;
 	}
 
-
 	public void setActiveChar(L2PcInstance pActiveChar)
 	{
 		activeChar = pActiveChar;
 		//JIV remove - done on spawn
 		/*if (this.activeChar != null)
-        {
+		{
 			L2World.getInstance().storeObject(getActiveChar());
 		}*/
 	}
-
-
 
 	public void setGameGuardOk(boolean val)
 	{
@@ -230,12 +224,10 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-
 	public void setSessionId(SessionKey sk)
 	{
 		sessionId = sk;
 	}
-
 
 	public void sendPacket(L2GameServerPacket gsp)
 	{
@@ -694,7 +686,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return charSlotMapping[charslot];
 	}
 
-
 	public void close(L2GameServerPacket gsp, boolean blockDisconnectTask)
 	{
 		if (getConnection() == null)
@@ -985,8 +976,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			{
 				if (cleanupTask == null)
 				{
-					cleanupTask =
-							ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
+					cleanupTask = ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
 				}
 			}
 		}
@@ -1074,12 +1064,10 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-
 	public void setProtocolOk(boolean b)
 	{
 		protocolOk = b;
 	}
-
 
 	public void setProtocolVersion(int version)
 	{
@@ -1280,7 +1268,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		trace = tracert;
 	}
 
-
 	public void setHWId(String hwId)
 	{
 		this.hwId = hwId;
@@ -1301,5 +1288,4 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 		return false;
 	}
-
 }

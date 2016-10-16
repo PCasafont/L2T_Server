@@ -44,9 +44,6 @@ public class CertificateSkillTable
 			this.maxLevel = maxLevel;
 			this.cost = cost;
 		}
-
-
-
 	}
 
 	@Getter private Map<Integer, CertificateSkillLearn> subClassSkills = new HashMap<>();
@@ -119,8 +116,6 @@ public class CertificateSkillTable
 		// Dual - Shield of the Giants
 		dualClassSkills.put(1985, new CertificateSkillLearn(1985, 1, 4));
 	}
-
-
 
 	public void sendSubClassSkillList(L2PcInstance player)
 	{

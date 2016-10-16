@@ -28,7 +28,7 @@ public class Teleporter extends L2Transformation
 	public void transformedSkills()
 	{
 		/*
-        Commented out until we figure out how to remove the skills properly.
+		Commented out until we figure out how to remove the skills properly.
 		What happens if a player transforms at level 40, gets the level 40 version of the skill, then somehow levels up?
 		Then when we untransform, the script will look for the level 41 version of the skill, right?
 		Or will it still remove the level 40 skill? Needs to be tested.

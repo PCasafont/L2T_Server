@@ -70,7 +70,6 @@ public final class L2WorldRegion
 		zones = new ArrayList<>();
 	}
 
-
 	public void addZone(L2ZoneType zone)
 	{
 		zones.add(zone);
@@ -297,7 +296,6 @@ public final class L2WorldRegion
 		}
 	}
 
-
 	// check if all 9 neighbors (including self) are inactive or active but with no players.
 	// returns true if the above condition is met.
 	public boolean areNeighborsEmpty()
@@ -466,7 +464,6 @@ public final class L2WorldRegion
 	{
 		return allPlayable;
 	}
-
 
 	public String getName()
 	{

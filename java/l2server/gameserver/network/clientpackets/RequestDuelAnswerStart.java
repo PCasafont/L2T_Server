@@ -28,8 +28,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestDuelAnswerStart extends L2GameClientPacket
 {
 	private int partyDuel;
-	@SuppressWarnings("unused")
-	private int unk1;
+	@SuppressWarnings("unused") private int unk1;
 	private int response;
 
 	@Override

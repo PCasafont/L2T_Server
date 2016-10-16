@@ -31,7 +31,6 @@ import l2server.util.Point3D;
  */
 public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 {
-
 	private int x;
 	private int y;
 	private int z;

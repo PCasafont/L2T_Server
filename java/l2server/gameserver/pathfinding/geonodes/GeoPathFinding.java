@@ -38,7 +38,6 @@ import java.util.logging.Level;
  */
 public class GeoPathFinding extends PathFinding
 {
-
 	private static Map<Short, ByteBuffer> pathNodes = new HashMap<>();
 	private static Map<Short, IntBuffer> pathNodesIndex = new HashMap<>();
 

@@ -29,14 +29,10 @@ public final class AttackRequest extends L2GameClientPacket
 {
 	// cddddc
 	private int objectId;
-	@SuppressWarnings("unused")
-	private int originX;
-	@SuppressWarnings("unused")
-	private int originY;
-	@SuppressWarnings("unused")
-	private int originZ;
-	@SuppressWarnings("unused")
-	private int attackId;
+	@SuppressWarnings("unused") private int originX;
+	@SuppressWarnings("unused") private int originY;
+	@SuppressWarnings("unused") private int originZ;
+	@SuppressWarnings("unused") private int attackId;
 
 	@Override
 	protected void readImpl()

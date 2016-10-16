@@ -107,8 +107,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public float HatersDamageMultiplier;
 
 	//Skill AI
-	@SuppressWarnings("unchecked")
-	public List<L2Skill>[] aiSkills = new List[AIST_COUNT];
+	@SuppressWarnings("unchecked") public List<L2Skill>[] aiSkills = new List[AIST_COUNT];
 	public boolean[] aiSkillChecks = new boolean[AIST_COUNT];
 
 	private L2NpcAIData aiData = new L2NpcAIData();
@@ -411,7 +410,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 					addRangeSkill(skill);
 					break;
 				/*case ROOT:
-                addRootSkill(skill);
+				addRootSkill(skill);
 				addImmobiliseSkill(skill);
 				addRangeSkill(skill);
 				break;
@@ -525,8 +524,6 @@ public final class L2NpcTemplate extends L2CharTemplate
 	{
 		return randomMinions;
 	}
-
-
 
 	public void addQuestEvent(Quest.QuestEventType EventType, Quest q)
 	{
@@ -1085,8 +1082,6 @@ public final class L2NpcTemplate extends L2CharTemplate
 	{
 		return Race == L2NpcRace.UNDEAD;
 	}
-
-
 
 	public String getXmlNpcId()
 	{
@@ -1674,5 +1669,4 @@ public final class L2NpcTemplate extends L2CharTemplate
 			allSpawns.remove(spawn);
 		}
 	}
-
 }

@@ -57,7 +57,6 @@ public class L2RandomMinionData
 		return randomMinionIds;
 	}
 
-
 	public void setAmount(int amount)
 	{
 		minionAmount = amount;

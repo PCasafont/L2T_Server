@@ -26,7 +26,6 @@ import java.util.List;
  */
 public class ExResponseCommissionItemList extends L2ItemListPacket
 {
-
 	private List<L2ItemInstance> items = new ArrayList<>();
 
 	public ExResponseCommissionItemList(L2PcInstance player)

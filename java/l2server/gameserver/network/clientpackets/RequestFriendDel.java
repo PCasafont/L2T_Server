@@ -36,7 +36,6 @@ import java.util.logging.Level;
  */
 public final class RequestFriendDel extends L2GameClientPacket
 {
-
 	private String name;
 
 	@Override

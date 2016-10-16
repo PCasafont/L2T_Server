@@ -43,7 +43,6 @@ import java.util.logging.Level;
  */
 public class GeoEngine extends GeoData
 {
-
 	private static final byte EAST = 1;
 	private static final byte WEST = 2;
 	private static final byte SOUTH = 4;
@@ -172,7 +171,7 @@ public class GeoEngine extends GeoData
 			z2 += 30; // well they don't move closer to balcony fence at the moment :(
 		}
 		/*if (cha.getZ() >= target.getZ())
-            return canSeeTarget(cha.getX(), cha.getY(), z, target.getX(), target.getY(), z2);
+			return canSeeTarget(cha.getX(), cha.getY(), z, target.getX(), target.getY(), z2);
 		else*/
 		return canSeeTarget(target.getX(), target.getY(), z2, cha.getX(), cha.getY(), z);
 	}

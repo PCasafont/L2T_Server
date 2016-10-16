@@ -15,10 +15,6 @@
 
 package handlers.targethandlers;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
@@ -31,6 +27,10 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @author nBd

@@ -15,8 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Object;
@@ -26,6 +24,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+
+import java.util.StringTokenizer;
 
 /**
  * This class handles following admin commands: polymorph

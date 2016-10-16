@@ -30,7 +30,6 @@ import java.util.regex.PatternSyntaxException;
 
 public class PetNameTable
 {
-
 	private PetNameTable()
 	{
 	}

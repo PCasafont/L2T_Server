@@ -27,7 +27,6 @@ import l2server.gameserver.network.serverpackets.PledgePowerGradeList;
  */
 public final class RequestPledgePowerGradeList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

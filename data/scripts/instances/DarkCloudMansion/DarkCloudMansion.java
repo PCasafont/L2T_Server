@@ -1,8 +1,5 @@
 package instances.DarkCloudMansion;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -20,6 +17,9 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DarkCloudMansion extends Quest
 {
@@ -134,7 +134,7 @@ public class DarkCloudMansion extends Quest
 	private static int D6 = 24230006; //Fifth Room
 	private static int W1 = 24230007; //Wall 1
 	/*private static int W2 = 24230008; //Wall 2
-    private static int W3 = 24230009; //Wall 3
+	private static int W3 = 24230009; //Wall 3
 	private static int W4 = 24230010; //Wall 4
 	private static int W5 = 24230011; //Wall 5
 	private static int W6 = 24230012; //Wall 6
@@ -651,11 +651,13 @@ public class DarkCloudMansion extends Quest
 			FifthRoom.npcList.add(thisnpc);
 			if (temp[idx] == 1 && Rnd.get(100) < 95)
 			{
-				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), spawnChat[Rnd.get(spawnChat.length)]));
+				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
+						spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			else if (temp[idx] != 1 && Rnd.get(100) < 67)
 			{
-				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), spawnChat[Rnd.get(spawnChat.length)]));
+				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
+						spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			idx++;
 		}
@@ -741,14 +743,16 @@ public class DarkCloudMansion extends Quest
 					mob.count = 1;
 					if (mob.status == 1)
 					{
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), successChat[Rnd.get(successChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+								successChat[Rnd.get(successChat.length)]));
 						FifthRoom.founded += 1;
 						startQuestTimer("decayMe", 1500, npc, player);
 					}
 					else
 					{
 						FifthRoom.reset = 1;
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), faildChat[Rnd.get(faildChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+								faildChat[Rnd.get(faildChat.length)]));
 						startQuestTimer("decayChatBelethSamples", 4000, npc, player);
 						startQuestTimer("decayBelethSamples", 4500, npc, player);
 					}
@@ -918,7 +922,8 @@ public class DarkCloudMansion extends Quest
 				{
 					if (mob.status == 1)
 					{
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), decayChat[Rnd.get(decayChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
+								decayChat[Rnd.get(decayChat.length)]));
 					}
 				}
 			}

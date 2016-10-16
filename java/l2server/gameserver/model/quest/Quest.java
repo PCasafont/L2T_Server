@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.quest;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -49,6 +48,7 @@ import l2server.gameserver.util.MinionList;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.Util;
+import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -64,7 +64,6 @@ import java.util.logging.Level;
  */
 public class Quest extends ManagedScript
 {
-
 	/**
 	 * HashMap containing events from String value of the event
 	 */
@@ -134,7 +133,6 @@ public class Quest extends ManagedScript
 	 */
 	protected void init_LoadGlobalData()
 	{
-
 	}
 
 	/**
@@ -145,7 +143,6 @@ public class Quest extends ManagedScript
 	 */
 	public void saveGlobalData()
 	{
-
 	}
 
 	public enum TrapAction
@@ -207,7 +204,6 @@ public class Quest extends ManagedScript
 		{
 			return allowMultipleRegistration;
 		}
-
 	}
 
 	/**
@@ -1090,7 +1086,6 @@ public class Quest extends ManagedScript
 	 */
 	public static void playerEnter(L2PcInstance player)
 	{
-
 		Connection con = null;
 		try
 		{
@@ -1109,7 +1104,6 @@ public class Quest extends ManagedScript
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
 			{
-
 				// Get ID of the quest and ID of its state
 				String questId = rs.getString("name");
 				String statename = rs.getString("value");

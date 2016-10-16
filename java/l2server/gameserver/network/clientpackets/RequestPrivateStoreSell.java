@@ -30,7 +30,6 @@ import l2server.log.Log;
  */
 public final class RequestPrivateStoreSell extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 32; // length of the one item
 
 	private int storePlayerId;

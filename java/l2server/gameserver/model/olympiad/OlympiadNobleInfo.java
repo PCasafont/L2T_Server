@@ -17,6 +17,7 @@ package l2server.gameserver.model.olympiad;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * @author Pere
  */
@@ -70,11 +71,6 @@ public class OlympiadNobleInfo
 		nonClassedMatches = 0;
 	}
 
-
-
-
-
-
 	public void increaseMatches()
 	{
 		matches++;
@@ -105,12 +101,6 @@ public class OlympiadNobleInfo
 		nonClassedMatches++;
 	}
 
-
-
-
-
-
-
 	public int getMatchesThisWeek()
 	{
 		return classedMatches + nonClassedMatches;
@@ -121,10 +111,8 @@ public class OlympiadNobleInfo
 		return settled;
 	}
 
-
 	public boolean isToSave()
 	{
 		return toSave;
 	}
-
 }

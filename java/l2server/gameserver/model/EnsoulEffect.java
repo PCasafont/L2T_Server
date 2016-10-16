@@ -15,9 +15,9 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.funcs.Func;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,10 +45,6 @@ public class EnsoulEffect
 	{
 		funcs.add(func);
 	}
-
-
-
-
 
 	public void applyBonus(L2PcInstance player)
 	{

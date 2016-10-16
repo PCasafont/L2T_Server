@@ -32,7 +32,6 @@ import java.util.logging.Level;
  */
 public class CoupleManager
 {
-
 	private CoupleManager()
 	{
 		Log.info("L2JMOD: Initializing CoupleManager");

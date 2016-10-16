@@ -32,7 +32,6 @@ import java.util.Map;
 
 public class ScenePlayerDataTable implements Reloadable
 {
-
 	private Map<Integer, Integer> sceneDataTable;
 
 	@Override

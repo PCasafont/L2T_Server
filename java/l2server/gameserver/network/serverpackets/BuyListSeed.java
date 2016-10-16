@@ -43,7 +43,6 @@ import java.util.stream.Collectors;
 
 public final class BuyListSeed extends L2GameServerPacket
 {
-
 	private int manorId;
 	private List<Seed> list = null;
 	private long money;

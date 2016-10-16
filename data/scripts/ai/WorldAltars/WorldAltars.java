@@ -15,14 +15,14 @@
 
 package ai.WorldAltars;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.instancemanager.CustomWorldAltars;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author LasTravel

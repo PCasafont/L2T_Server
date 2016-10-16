@@ -23,11 +23,9 @@ import l2server.gameserver.network.serverpackets.ExMentorList;
  */
 public class RequestMentorList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{
-
 	}
 
 	@Override

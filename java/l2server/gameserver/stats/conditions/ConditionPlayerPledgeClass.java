@@ -25,7 +25,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionPlayerPledgeClass extends Condition
 {
-
 	private final int pledgeClass;
 
 	/**

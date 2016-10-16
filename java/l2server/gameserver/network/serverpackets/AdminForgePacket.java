@@ -42,7 +42,6 @@ public class AdminForgePacket extends L2GameServerPacket
 
 	public AdminForgePacket()
 	{
-
 	}
 
 	/* (non-Javadoc)

@@ -591,8 +591,8 @@ public class CustomCommunityBoard
 			}
 			String bossIsAggro = isAggro ? "<font color=FF0000>*</font>" : "";
 			String nameString =
-					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass this.bbscustom;action;showRadar; ") + "" +
-							boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
+					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass this.bbscustom;action;showRadar; ") +
+							"" + boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
 							"\">" + npc.getName() + "</a>";
 
 			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) +
@@ -1239,8 +1239,9 @@ public class CustomCommunityBoard
 				replyMSG += "<td width=120></td>";
 			}
 
-			replyMSG += "<td width=100>Page " + page + "</td><td width=70><a action=\"bypass this.bbscustom;info;drop;" +
-					npcId + ";" + (page + 1) + "\">Next Page</a></td>";
+			replyMSG +=
+					"<td width=100>Page " + page + "</td><td width=70><a action=\"bypass this.bbscustom;info;drop;" +
+							npcId + ";" + (page + 1) + "\">Next Page</a></td>";
 		}
 
 		replyMSG += "</tr></table></center>";
@@ -1450,7 +1451,7 @@ public class CustomCommunityBoard
 	{
 		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
-            multiplier = 2.5f - (multiplier - 2.5f);
+			multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 

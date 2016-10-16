@@ -28,7 +28,6 @@ import l2server.util.Point3D;
  */
 public class GeoData
 {
-
 	protected GeoData()
 	{
 	}
@@ -173,7 +172,6 @@ public class GeoData
 
 	public static void unloadGeodata(byte rx, byte ry)
 	{
-
 	}
 
 	public static boolean loadGeodataFile(byte rx, byte ry)

@@ -46,11 +46,9 @@ import java.util.logging.Level;
  */
 public final class RequestPreviewItem extends L2GameClientPacket
 {
-
 	private L2PcInstance activeChar;
 	private Map<Integer, Integer> _item_list;
-	@SuppressWarnings("unused")
-	private int unk;
+	@SuppressWarnings("unused") private int unk;
 	private int listId;
 	private int count;
 	private int[] items;

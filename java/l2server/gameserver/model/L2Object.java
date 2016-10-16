@@ -227,7 +227,6 @@ public abstract class L2Object
 			}
 		}
 
-
 		public final boolean isType(InstanceType it)
 		{
 			return (maskL & it.typeL) > 0 || (maskH & it.typeH) > 0;
@@ -404,7 +403,6 @@ public abstract class L2Object
 		{
 			if (this instanceof L2PcInstance)
 			{
-
 				// We don't want some ugly looking disappear/appear effects, so don't update
 				// the knownlist here, but players usually enter instancezones through teleporting
 				// and the teleport will do the revalidation for us.
@@ -609,7 +607,6 @@ public abstract class L2Object
 		}
 	}
 
-
 	/**
 	 * Initializes the KnownList of the L2Object,
 	 * is overwritten in classes that require a different knownlist Type.
@@ -649,7 +646,6 @@ public abstract class L2Object
 		}
 		return poly;
 	}
-
 
 	/**
 	 * Initializes the Position class of the L2Object,
@@ -696,7 +692,6 @@ public abstract class L2Object
 	 */
 	public void sendInfo(L2PcInstance activeChar)
 	{
-
 	}
 
 	@Override

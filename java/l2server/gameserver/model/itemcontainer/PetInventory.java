@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.itemcontainer;
 
-import lombok.Getter;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.gameserver.templates.item.L2Item;
+import lombok.Getter;
 
 public class PetInventory extends Inventory
 {

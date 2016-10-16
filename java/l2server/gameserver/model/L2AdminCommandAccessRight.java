@@ -53,7 +53,8 @@ public class L2AdminCommandAccessRight
 		{
 			try
 			{
-				this.accessLevels[i] = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
+				this.accessLevels[i] =
+						AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
 			}
 			catch (NumberFormatException nfe)
 			{
@@ -81,5 +82,4 @@ public class L2AdminCommandAccessRight
 
 		return false;
 	}
-
 }

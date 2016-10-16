@@ -58,8 +58,7 @@ public class SQLAccountManager
 			System.out.println("4 - List accounts & access levels.");
 			System.out.println("5 - Exit.");
 			LineNumberReader in = new LineNumberReader(new InputStreamReader(System.in));
-			while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4") ||
-					mode.equals("5")))
+			while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4") || mode.equals("5")))
 			{
 				System.out.print("Your choice: ");
 				mode = in.readLine();

@@ -256,8 +256,6 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		return (L2Npc) super.getActor();
 	}
 
-
-
 	public boolean isWaiting()
 	{
 		return isWaiting;
@@ -268,7 +266,6 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		isWaiting = waiting;
 		waitingForQuestResponse = false;
 	}
-
 
 	public void setWaitRadius(int radius)
 	{

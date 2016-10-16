@@ -132,7 +132,6 @@ public final class UseItem extends L2GameClientPacket
 		// NOTE: disabled due to deadlocks
 		// synchronized (activeChar.getInventory())
 		// 	{
-
 		if (activeChar.isGM())
 		{
 			activeChar.sendSysMessage("Using Item[" + item.getItemId() + "]");
@@ -444,7 +443,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 
 		itemId = item.getItemId();
-        /*
+		/*
 		 * Alt game - Karma punishment // SOE
 		 * 736  	Scroll of Escape
 		 * 1538  	Blessed Scroll of Escape

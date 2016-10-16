@@ -49,7 +49,6 @@ import java.util.logging.Level;
  */
 public final class QuestState
 {
-
 	/**
 	 * Quest associated to the QuestState
 	 */
@@ -101,7 +100,6 @@ public final class QuestState
 		// set the state of the quest
 		this.state = state;
 	}
-
 
 	/**
 	 * Return the quest
@@ -1274,7 +1272,6 @@ public final class QuestState
 	{
 		npc.dropItem(player, itemId, count);
 	}
-
 
 	public int getNpcLog(int npcId)
 	{

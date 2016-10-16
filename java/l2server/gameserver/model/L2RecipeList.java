@@ -172,5 +172,4 @@ public class L2RecipeList
 	{
 		return isDwarvenRecipe;
 	}
-
 }

@@ -180,5 +180,4 @@ public final class ItemParser extends StatsParser
 			throw new RuntimeException(e);
 		}
 	}
-
 }

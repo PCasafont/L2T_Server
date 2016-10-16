@@ -33,7 +33,6 @@ import java.util.logging.Level;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
-
 	private final List<Forum> table;
 	private int lastid = 1;
 
@@ -173,7 +172,6 @@ public class ForumsBBSManager extends BaseBBSManager
 	@Override
 	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
 	{
-
 	}
 
 	/**

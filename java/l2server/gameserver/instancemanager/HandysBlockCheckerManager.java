@@ -188,7 +188,7 @@ public final class HandysBlockCheckerManager
 				player.sendPacket(SystemMessage
 						.getSystemMessage(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE));
 			}
-            /*
+			/*
 			if (UnderGroundColiseum.getInstance().isRegisteredPlayer(player))
 			{
 				UngerGroundColiseum.getInstance().removeParticipant(player);

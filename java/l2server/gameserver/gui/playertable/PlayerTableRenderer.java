@@ -30,8 +30,7 @@ import java.awt.*;
 public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer
 {
 	private static final long serialVersionUID = 1L;
-	@SuppressWarnings("unused")
-	private PlayerTableModel table;
+	@SuppressWarnings("unused") private PlayerTableModel table;
 
 	public PlayerTableRenderer(PlayerTableModel table)
 	{

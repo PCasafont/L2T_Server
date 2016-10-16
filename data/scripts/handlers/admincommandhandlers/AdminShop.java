@@ -15,8 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -26,6 +24,8 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExBuyList;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.log.Log;
+
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -87,8 +87,7 @@ public class AdminShop implements IAdminCommandHandler
 			activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
 			if (Config.DEBUG)
 			{
-				Log.fine(
-						"GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
+				Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
 			}
 		}
 		else

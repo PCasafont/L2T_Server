@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -242,7 +242,6 @@ public final class ChanceCondition
 			return triggerType.check(event) && (critChance < 0 || Rnd.get(100) < critChance);
 		}
 	}
-
 
 	@Override
 	public String toString()

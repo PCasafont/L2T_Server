@@ -113,7 +113,6 @@ public class L2DropData
 		custom = true;
 	}
 
-
 	/**
 	 * Returns a report of the object
 	 *

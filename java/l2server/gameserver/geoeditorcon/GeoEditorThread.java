@@ -30,7 +30,6 @@ import java.util.logging.Level;
  */
 public class GeoEditorThread extends Thread
 {
-
 	private boolean working = false;
 
 	private int mode = 0; // 0 - don't send coords, 1 - send each

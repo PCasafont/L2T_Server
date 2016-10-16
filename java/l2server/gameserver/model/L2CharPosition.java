@@ -20,7 +20,6 @@ package l2server.gameserver.model;
  */
 public final class L2CharPosition
 {
-
 	public final int x, y, z, heading;
 
 	/**

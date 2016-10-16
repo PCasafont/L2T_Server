@@ -30,7 +30,6 @@ import java.util.List;
  */
 public class RecipeShopManageList extends L2GameServerPacket
 {
-
 	private L2PcInstance seller;
 	private boolean isDwarven;
 	private L2RecipeList[] recipes;

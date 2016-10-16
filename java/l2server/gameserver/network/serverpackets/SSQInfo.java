@@ -26,7 +26,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class SSQInfo extends L2GameServerPacket
 {
-
 	private static int state = 0;
 
 	public SSQInfo(int state)

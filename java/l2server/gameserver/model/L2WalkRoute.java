@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 import java.util.List;
 
 /**
@@ -33,14 +34,12 @@ public class L2WalkRoute
 
 	public L2WalkRoute(int id, List<L2NpcWalkerNode> route, boolean repeat, boolean once, byte repeatType)
 	{
-
 		this.id = id;
 		nodeList = route;
 		this.repeatType = repeatType;
 		repeatWalk = (this.repeatType >= 0 && this.repeatType <= 2) && repeat;
 		debug = false;
 	}
-
 
 	public List<L2NpcWalkerNode> getNodeList()
 	{
@@ -61,7 +60,6 @@ public class L2WalkRoute
 	{
 		return stopAfterCycle;
 	}
-
 
 	public int getNodesCount()
 	{

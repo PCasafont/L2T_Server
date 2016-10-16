@@ -38,7 +38,6 @@ import l2server.log.Log;
  */
 public final class RequestJoinParty extends L2GameClientPacket
 {
-
 	private String name;
 	private int itemDistribution;
 
@@ -133,7 +132,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			return;
 		}
 		/*
-        if (target.getClient() == null || target.getClient().isDetached())
+		if (target.getClient() == null || target.getClient().isDetached())
 		{
 			requestor.sendMessage("Player is in offline mode.");
 			return;

@@ -66,7 +66,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		try
 		{
 			/* Removes onspawn protection - player has faster computer than average
-             * Since GE: True for all packets
+			 * Since GE: True for all packets
 			 * except RequestItemList and UseItem (in case the item is a Scroll of Escape (736)
 			 */
 			if (triggersOnActionRequest())

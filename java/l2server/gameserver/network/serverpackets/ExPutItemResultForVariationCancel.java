@@ -22,7 +22,6 @@ import l2server.gameserver.model.L2ItemInstance;
  */
 public class ExPutItemResultForVariationCancel extends L2GameServerPacket
 {
-
 	private int itemObjId;
 	private int itemId;
 	private int itemAug1;

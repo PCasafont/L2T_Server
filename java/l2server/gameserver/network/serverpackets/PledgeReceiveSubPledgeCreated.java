@@ -24,7 +24,6 @@ import l2server.gameserver.model.L2ClanMember;
  */
 public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
 {
-
 	private SubPledge subPledge;
 	private L2Clan clan;
 

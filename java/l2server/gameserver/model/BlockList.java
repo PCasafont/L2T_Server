@@ -53,7 +53,6 @@ import java.util.logging.Level;
 
 public class BlockList
 {
-
 	private static Map<Integer, List<Integer>> offlineList = new HashMap<>();
 
 	private final L2PcInstance owner;
@@ -193,7 +192,6 @@ public class BlockList
 	{
 		owner.setMessageRefusal(state);
 	}
-
 
 	public static void addToBlockList(L2PcInstance listOwner, int targetId)
 	{

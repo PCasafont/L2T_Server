@@ -437,8 +437,8 @@ public class GMEventManager
 						continue;
 					}
 
-					int participatedTimes = currentEvent
-							.getParticipatedTimes(pl.getObjectId(), pl.getExternalIP(), pl.getInternalIP());
+					int participatedTimes =
+							currentEvent.getParticipatedTimes(pl.getObjectId(), pl.getExternalIP(), pl.getInternalIP());
 					sb.append("<table width=750 " + (x % 2 == 1 ? "bgcolor=131210" : "") + "><tr><td FIXWIDTH=159>" +
 							pl.getName() + " " + (participatedTimes > 0 ? "(" + participatedTimes + ")" : "") +
 							"</td><td FIXWIDTH=159>" +
@@ -488,8 +488,11 @@ public class GMEventManager
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td><br><br></td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Name:</td><td>" + currentEvent.getName() +
 							"</td></tr>");
-					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Description:</td><td>" + currentEvent.getDescription() + "</td></tr>");
-					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Location:</td><td>" + currentEvent.getLocation() + "</td></tr>");
+					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Description:</td><td>" +
+							currentEvent.getDescription() + "</td></tr>");
+					sb.append(
+							"<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Location:</td><td>" + currentEvent.getLocation() +
+									"</td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Powered By:</td><td>" + currentEvent.getGMName() +
 							"</td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td><br><br></td></tr>");
@@ -572,8 +575,7 @@ public class GMEventManager
 
 	private class SubEvent
 	{
-		@SuppressWarnings("unused")
-		private String eventName;
+		@SuppressWarnings("unused") private String eventName;
 		private String startBypass;
 		private String endBypass;
 
@@ -1029,7 +1031,6 @@ public class GMEventManager
 				player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player) ||
 				AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.getIsInsideGMEvent() ||
 				player.getEvent() != null);
-
 	}
 
 	private class ParticipateRegister
@@ -1582,8 +1583,7 @@ public class GMEventManager
 
 		private void reAnnounce()
 		{
-			Announcements.getInstance()
-					.announceToAll(eventName + " at " + location + " join with ALT + B > GM EVENT!");
+			Announcements.getInstance().announceToAll(eventName + " at " + location + " join with ALT + B > GM EVENT!");
 		}
 
 		private void returnBets()
@@ -1676,12 +1676,14 @@ public class GMEventManager
 
 		private void spawnBuffers()
 		{
-			L2Npc bufferOne = NpcUtil.addSpawn(bufferNpcId, bufferSpawnOne.getX(), bufferSpawnOne.getY(),
-					bufferSpawnOne.getZ(), bufferSpawnOne.getHeading(), false, 0, false, 0);
+			L2Npc bufferOne =
+					NpcUtil.addSpawn(bufferNpcId, bufferSpawnOne.getX(), bufferSpawnOne.getY(), bufferSpawnOne.getZ(),
+							bufferSpawnOne.getHeading(), false, 0, false, 0);
 			buffers.add(bufferOne);
 
-			L2Npc bufferTwo = NpcUtil.addSpawn(bufferNpcId, bufferSpawnTwo.getX(), bufferSpawnTwo.getY(),
-					bufferSpawnTwo.getZ(), bufferSpawnTwo.getHeading(), false, 0, false, 0);
+			L2Npc bufferTwo =
+					NpcUtil.addSpawn(bufferNpcId, bufferSpawnTwo.getX(), bufferSpawnTwo.getY(), bufferSpawnTwo.getZ(),
+							bufferSpawnTwo.getHeading(), false, 0, false, 0);
 			buffers.add(bufferTwo);
 		}
 

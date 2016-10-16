@@ -42,7 +42,6 @@ import java.util.logging.Level;
 
 public class SiegeManager
 {
-
 	public static SiegeManager getInstance()
 	{
 		return SingletonHolder.instance;
@@ -308,10 +307,6 @@ public class SiegeManager
 			npcId = npc_id;
 			this.hp = hp;
 		}
-
-
-
-
 
 		public Location getLocation()
 		{

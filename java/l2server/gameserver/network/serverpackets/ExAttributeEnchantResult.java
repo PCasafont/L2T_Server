@@ -17,7 +17,6 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExAttributeEnchantResult extends L2GameServerPacket
 {
-
 	private int addedPower;
 	private int totalPower;
 	private int succeeded;

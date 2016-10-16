@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExRegistWaitingSubstituteOk extends L2GameServerPacket
 {
-
 	int classId;
 	L2PcInstance player;
 

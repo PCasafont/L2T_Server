@@ -178,7 +178,7 @@ public class TownManager
 			case 16:
 				return 9; // Schuttgart
 				/*
-                case 17:
+				case 17:
 				return getTown(16); // Floran
 				case 18:
 				return getTown(19); //Primeval Isle

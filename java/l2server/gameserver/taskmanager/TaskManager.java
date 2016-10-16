@@ -40,7 +40,6 @@ import static l2server.gameserver.taskmanager.TaskTypes.*;
  */
 public final class TaskManager
 {
-
 	protected static final String[] SQL_STATEMENTS = {
 			"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
 			"UPDATE global_tasks SET last_activation=? WHERE id=?",

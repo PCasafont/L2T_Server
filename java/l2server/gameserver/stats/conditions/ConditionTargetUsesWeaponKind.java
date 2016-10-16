@@ -25,7 +25,6 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class ConditionTargetUsesWeaponKind extends Condition
 {
-
 	private final int weaponMask;
 
 	/**
@@ -44,7 +43,6 @@ public class ConditionTargetUsesWeaponKind extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-
 		if (env.target == null)
 		{
 			return false;

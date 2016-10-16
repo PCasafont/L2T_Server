@@ -272,7 +272,6 @@ public class L2DoorInstance extends L2Character
 		}
 	}
 
-
 	public boolean getIsShowHp()
 	{
 		return getTemplate().showHp;
@@ -327,7 +326,6 @@ public class L2DoorInstance extends L2Character
 	{
 		clanHall = clanhall;
 	}
-
 
 	public boolean isEnemy()
 	{

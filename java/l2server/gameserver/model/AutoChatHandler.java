@@ -45,7 +45,6 @@ import java.util.stream.Collectors;
  */
 public class AutoChatHandler implements SpawnListener
 {
-
 	private static final int DEFAULT_CHAT_DELAY = 60000; // 60 secs by default
 
 	protected final Map<Integer, AutoChatInstance> registeredChats;
@@ -493,8 +492,7 @@ public class AutoChatHandler implements SpawnListener
 			if (isActive())
 			{
 				AutoChatRunner acr = new AutoChatRunner(npcId, -1);
-				chatTask =
-						ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(acr, defaultDelay, defaultDelay);
+				chatTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(acr, defaultDelay, defaultDelay);
 			}
 			else
 			{

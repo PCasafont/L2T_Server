@@ -46,8 +46,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	//For geodata
 	private int curX;
 	private int curY;
-	@SuppressWarnings("unused")
-	private int curZ;
+	@SuppressWarnings("unused") private int curZ;
 
 	public TaskPriority getPriority()
 	{
@@ -134,13 +133,13 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 				return;
 			}
 
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-					new L2CharPosition(targetX, targetY, targetZ, 0));
+			activeChar.getAI()
+					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(targetX, targetY, targetZ, 0));
 
 			//if (activeChar.isInOlympiadMode())
 			//	activeChar.broadcastPacket(new ValidateLocation(activeChar));
 			/*if (activeChar.getParty() != null)
-                activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar));*/
+				activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar));*/
 
 			if (activeChar.getInstanceId() != activeChar.getObjectId())
 			{

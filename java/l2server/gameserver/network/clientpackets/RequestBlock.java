@@ -25,7 +25,6 @@ import l2server.log.Log;
 
 public final class RequestBlock extends L2GameClientPacket
 {
-
 	private static final int BLOCK = 0;
 	private static final int UNBLOCK = 1;
 	private static final int BLOCKLIST = 2;

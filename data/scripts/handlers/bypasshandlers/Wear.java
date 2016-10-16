@@ -15,8 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.handler.IBypassHandler;
@@ -26,6 +24,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ShopPreviewList;
 import l2server.log.Log;
+
+import java.util.StringTokenizer;
 
 public class Wear implements IBypassHandler
 {

@@ -20,7 +20,6 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public class HennaItemDrawInfo extends L2GameServerPacket
 {
-
 	private L2PcInstance activeChar;
 	private L2Henna henna;
 

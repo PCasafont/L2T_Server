@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.datatables.ItemTable;
@@ -34,6 +33,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -45,7 +45,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public final class RequestBuyItem extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
 	private int listId;
@@ -356,7 +355,5 @@ public final class RequestBuyItem extends L2GameClientPacket
 			itemId = id;
 			count = num;
 		}
-
-
 	}
 }

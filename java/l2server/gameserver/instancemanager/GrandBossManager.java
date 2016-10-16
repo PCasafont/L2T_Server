@@ -285,7 +285,6 @@ public class GrandBossManager
 		}
 		L2BossZone temp = getZone(player.getX(), player.getY(), player.getZ());
 		return temp != null;
-
 	}
 
 	/*
@@ -477,7 +476,6 @@ public class GrandBossManager
 		zones.clear();
 	}
 
-
 	//LasTravel
 
 	/**
@@ -641,7 +639,6 @@ public class GrandBossManager
 		Long temp = System.currentTimeMillis() - lastAction;
 
 		return temp <= 900000;
-
 	}
 
 	@SuppressWarnings("synthetic-access")

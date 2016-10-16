@@ -15,8 +15,8 @@
 
 package l2server.gsregistering;
 
-import lombok.Getter;
 import l2server.loginserver.GameServerTable;
+import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -35,8 +35,7 @@ public class RegisterDialog extends JDialog implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	private ResourceBundle bundle;
-	@SuppressWarnings("rawtypes")
-	private final JComboBox combo;
+	@SuppressWarnings("rawtypes") private final JComboBox combo;
 	private final GUserInterface owner;
 
 	@SuppressWarnings({"rawtypes", "unchecked"})
@@ -97,8 +96,7 @@ public class RegisterDialog extends JDialog implements ActionListener
 		add(btnCancel, cons);
 
 		final double leftSize = Math.max(label.getPreferredSize().getWidth(), btnSave.getPreferredSize().getWidth());
-		final double rightSize =
-				Math.max(combo.getPreferredSize().getWidth(), btnCancel.getPreferredSize().getWidth());
+		final double rightSize = Math.max(combo.getPreferredSize().getWidth(), btnCancel.getPreferredSize().getWidth());
 
 		final double height = combo.getPreferredSize().getHeight() + 4 * textPane.getPreferredSize().getHeight() +
 				btnSave.getPreferredSize().getHeight();
@@ -144,7 +142,6 @@ public class RegisterDialog extends JDialog implements ActionListener
 			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			fc.setFileFilter(new FileFilter()
 			{
-
 				@Override
 				public boolean accept(File f)
 				{

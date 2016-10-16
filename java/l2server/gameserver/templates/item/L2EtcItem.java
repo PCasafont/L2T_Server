@@ -148,5 +148,4 @@ public final class L2EtcItem extends L2Item
 	{
 		return isBlessed;
 	}
-
 }

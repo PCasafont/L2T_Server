@@ -32,7 +32,6 @@ import java.util.HashMap;
  */
 public class ExShowProcureCropDetail extends L2GameServerPacket
 {
-
 	private int cropId;
 
 	private HashMap<Integer, CropProcure> castleCrops;

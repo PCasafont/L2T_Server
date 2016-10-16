@@ -22,7 +22,6 @@ import l2server.gameserver.datatables.CharNameTable;
  */
 public class ExBlockAddResult extends L2GameServerPacket
 {
-
 	private int objId;
 
 	public ExBlockAddResult(int OID)

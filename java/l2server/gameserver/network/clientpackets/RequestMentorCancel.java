@@ -34,7 +34,6 @@ import java.util.logging.Level;
  */
 public class RequestMentorCancel extends L2GameClientPacket
 {
-
 	private String name;
 	boolean isMentor;
 

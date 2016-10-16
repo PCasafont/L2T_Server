@@ -80,5 +80,4 @@ public enum L2WeaponType implements L2ItemType
 	{
 		return name;
 	}
-
 }

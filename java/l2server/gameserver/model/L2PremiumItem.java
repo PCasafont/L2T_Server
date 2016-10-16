@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * * @author Gnacik
  */
@@ -36,7 +37,4 @@ public class L2PremiumItem
 	{
 		count = newcount;
 	}
-
-
-
 }

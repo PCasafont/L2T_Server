@@ -26,7 +26,6 @@ import java.util.List;
  */
 public class StalkedStalkers extends EventInstance
 {
-
 	private HashMap<Integer, String> assignedStalkers = new HashMap<>();
 
 	public StalkedStalkers(int id, EventConfig config)

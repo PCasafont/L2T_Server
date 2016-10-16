@@ -26,8 +26,7 @@ import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
 public class PledgeReceiveWarList extends L2GameServerPacket
 {
 	private L2Clan clan;
-	@SuppressWarnings("unused")
-	private int tab;
+	@SuppressWarnings("unused") private int tab;
 	private int scores;
 	private int pkedPlayers;
 	private int state;

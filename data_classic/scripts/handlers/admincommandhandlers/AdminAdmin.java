@@ -15,17 +15,10 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.ReloadableManager;
-import l2server.gameserver.datatables.AccessLevels;
-import l2server.gameserver.datatables.AdminCommandAccessRights;
-import l2server.gameserver.datatables.CoreMessageTable;
-import l2server.gameserver.datatables.DoorTable;
-import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.datatables.NpcWalkersTable;
+import l2server.gameserver.datatables.*;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -35,6 +28,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+
+import java.util.StringTokenizer;
 
 /**
  * This class handles following admin commands:

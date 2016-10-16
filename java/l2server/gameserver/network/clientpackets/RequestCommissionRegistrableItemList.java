@@ -23,7 +23,6 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionItemList;
  */
 public final class RequestCommissionRegistrableItemList extends L2GameClientPacket
 {
-
 	@Override
 	protected void readImpl()
 	{

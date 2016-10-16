@@ -101,7 +101,6 @@ public class EnchantItemTable implements Reloadable
 			}
 
 			return !(itemId > 0 && enchantItem.getItemId() != itemId);
-
 		}
 
 		/*
@@ -400,6 +399,5 @@ public class EnchantItemTable implements Reloadable
 			return false;
 		}
 		return !item.getName().startsWith("Common");
-
 	}
 }

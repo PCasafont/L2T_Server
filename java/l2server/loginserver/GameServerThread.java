@@ -165,7 +165,7 @@ public class GameServerThread extends Thread
 	{
 		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
-            multiplier = 2.5f - (multiplier - 2.5f);
+			multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 
@@ -347,7 +347,6 @@ public class GameServerThread extends Thread
 		return -1;
 	}
 
-
 	public void SetBlowFish(NewCrypt blowfish)
 	{
 		this.blowfish = blowfish;
@@ -362,7 +361,6 @@ public class GameServerThread extends Thread
 	{
 		accountsOnGameServer.remove(account);
 	}
-
 
 	public void setLoginConnectionState(GameServerState state)
 	{

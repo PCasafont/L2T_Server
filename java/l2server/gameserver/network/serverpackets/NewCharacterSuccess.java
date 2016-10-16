@@ -32,7 +32,6 @@ public class NewCharacterSuccess extends L2GameServerPacket
 
 	public NewCharacterSuccess()
 	{
-
 	}
 
 	public void addChar(L2PcTemplate template)

@@ -30,7 +30,6 @@ import java.util.ArrayList;
  */
 public class ExShowManorDefaultInfo extends L2GameServerPacket
 {
-
 	private ArrayList<Integer> crops = null;
 
 	public ExShowManorDefaultInfo()

@@ -47,7 +47,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public class RequestProcureCropList extends L2GameClientPacket
 {
-
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
 	private Crop[] items = null;
@@ -226,10 +225,6 @@ public class RequestProcureCropList extends L2GameClientPacket
 			manorId = m;
 			count = num;
 		}
-
-
-
-
 
 		public long getPrice()
 		{

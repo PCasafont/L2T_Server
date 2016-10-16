@@ -26,7 +26,6 @@ import java.util.List;
  */
 public class ExUISetting extends L2GameServerPacket
 {
-
 	private final L2UIKeysSettings uiSettings;
 	private int buffsize, categories;
 

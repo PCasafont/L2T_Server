@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.model.L2ItemInstance;
@@ -29,6 +28,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.util.Util;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -253,7 +253,5 @@ public final class RequestSellItem extends L2GameClientPacket
 			objectId = objId;
 			count = num;
 		}
-
-
 	}
 }

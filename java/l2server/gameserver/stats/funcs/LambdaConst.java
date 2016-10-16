@@ -22,7 +22,6 @@ import l2server.gameserver.stats.Env;
  */
 public final class LambdaConst extends Lambda
 {
-
 	private final double value;
 
 	public LambdaConst(double value)

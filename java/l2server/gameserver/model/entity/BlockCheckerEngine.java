@@ -49,7 +49,6 @@ import java.util.logging.Level;
  */
 public final class BlockCheckerEngine
 {
-
 	// The object which holds all basic members info
 	private HandysBlockCheckerManager.ArenaParticipantsHolder holder;
 	// Maps to hold player of each team and his points

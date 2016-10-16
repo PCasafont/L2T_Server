@@ -36,7 +36,6 @@ import java.util.List;
 
 public class ExShowSellCropList extends L2GameServerPacket
 {
-
 	private int manorId = 1;
 	private final HashMap<Integer, L2ItemInstance> cropsItems;
 	private final HashMap<Integer, CropProcure> castleCrops;

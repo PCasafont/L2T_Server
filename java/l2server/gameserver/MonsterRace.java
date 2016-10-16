@@ -28,7 +28,6 @@ import java.util.logging.Level;
 
 public class MonsterRace
 {
-
 	@Getter private L2Npc[] monsters;
 	private Constructor<?> constructor;
 	@Getter private int[][] speeds;

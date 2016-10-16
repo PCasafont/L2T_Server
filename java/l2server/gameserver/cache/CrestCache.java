@@ -191,7 +191,6 @@ public class CrestCache
 		return (float) bytesBuffLen / 1048576;
 	}
 
-
 	public byte[] getPledgeCrest(int id)
 	{
 		return mapPledge.get(id);

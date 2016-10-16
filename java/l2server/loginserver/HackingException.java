@@ -16,6 +16,7 @@
 package l2server.loginserver;
 
 import lombok.Getter;
+
 /**
  * This class ...
  *
@@ -44,5 +45,4 @@ public class HackingException extends Exception
 	{
 		return ip;
 	}
-
 }

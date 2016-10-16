@@ -110,14 +110,10 @@ public class PartyMatchRoom
 		}
 	}
 
-
 	public int getLootType()
 	{
 		return loot;
 	}
-
-
-
 
 	public int getMembers()
 	{
@@ -128,7 +124,6 @@ public class PartyMatchRoom
 	{
 		return maxmem;
 	}
-
 
 	public L2PcInstance getOwner()
 	{
@@ -159,5 +154,4 @@ public class PartyMatchRoom
 	{
 		this.maxmem = maxmem;
 	}
-
 }

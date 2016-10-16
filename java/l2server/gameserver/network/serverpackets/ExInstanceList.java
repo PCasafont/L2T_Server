@@ -27,7 +27,6 @@ import java.util.Map;
 
 public class ExInstanceList extends L2GameServerPacket
 {
-
 	private int current = -1;
 	private int objId;
 

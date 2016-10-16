@@ -24,7 +24,6 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionLogicNot extends Condition
 {
-
 	private Condition condition;
 
 	/**

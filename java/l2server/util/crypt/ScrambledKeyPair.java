@@ -26,7 +26,6 @@ import java.security.interfaces.RSAPublicKey;
  */
 public class ScrambledKeyPair
 {
-
 	public KeyPair pair;
 	public byte[] scrambledModulus;
 

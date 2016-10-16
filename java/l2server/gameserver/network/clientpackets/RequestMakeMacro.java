@@ -70,8 +70,8 @@ public final class RequestMakeMacro extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.info("Make macro id:" + id + "\tname:" + name + "\tdesc:" + desc + "\tacronym:" + acronym +
-					"\ticon:" + icon + "\tcount:" + count);
+			Log.info("Make macro id:" + id + "\tname:" + name + "\tdesc:" + desc + "\tacronym:" + acronym + "\ticon:" +
+					icon + "\tcount:" + count);
 		}
 		for (int i = 0; i < count; i++)
 		{

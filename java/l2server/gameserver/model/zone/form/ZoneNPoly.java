@@ -134,7 +134,8 @@ public class ZoneNPoly extends L2ZoneForm
 		double test, shortestDist;
 		double u = ((x - this.x[this.x.length - 1]) * (this.x[0] - this.x[this.x.length - 1]) +
 				(y - this.y[this.y.length - 1]) * (this.y[0] - this.y[this.y.length - 1])) /
-				(Math.pow(this.x[0] - this.x[this.x.length - 1], 2) + Math.pow(this.y[0] - this.y[this.y.length - 1], 2));
+				(Math.pow(this.x[0] - this.x[this.x.length - 1], 2) +
+						Math.pow(this.y[0] - this.y[this.y.length - 1], 2));
 		if (u > 0 && u < 1)
 		{
 			shortestDist = Math.pow(this.x[0] + u * (this.x[this.x.length - 1] - this.x[0]) - x, 2) +
@@ -149,7 +150,8 @@ public class ZoneNPoly extends L2ZoneForm
 		{
 			u = ((x - this.x[this.x.length - 1]) * (this.x[0] - this.x[this.x.length - 1]) +
 					(y - this.y[this.y.length - 1]) * (this.y[0] - this.y[this.y.length - 1])) /
-					(Math.pow(this.x[0] - this.x[this.x.length - 1], 2) + Math.pow(this.y[0] - this.y[this.y.length - 1], 2));
+					(Math.pow(this.x[0] - this.x[this.x.length - 1], 2) +
+							Math.pow(this.y[0] - this.y[this.y.length - 1], 2));
 			if (u > 0 && u < 1)
 			{
 				test = Math.pow(this.x[i] + u * (this.x[i - 1] - this.x[i]) - x, 2) +
@@ -233,9 +235,7 @@ public class ZoneNPoly extends L2ZoneForm
 
 		int centerX = minX + (maxX - minX) / 2;
 		int centerY = minY + (maxY - minY) / 2;
-		int radius = (int) Math.sqrt((maxX - minX) * (maxX - minX) + (maxY - minY) * (
-				maxY -
-				minY));
+		int radius = (int) Math.sqrt((maxX - minX) * (maxX - minX) + (maxY - minY) * (maxY - minY));
 		int count = 500;//Math.min(Math.max((this.maxX - this.minX) / 50, 5), 100);
 		int angle = Rnd.get(180);
 		double dirX = Math.cos(angle * Math.PI / 180.0);

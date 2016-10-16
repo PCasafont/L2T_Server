@@ -23,7 +23,6 @@ import l2server.gameserver.network.serverpackets.EnchantResult;
  */
 public class RequestExCancelEnchantItem extends L2GameClientPacket
 {
-
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */

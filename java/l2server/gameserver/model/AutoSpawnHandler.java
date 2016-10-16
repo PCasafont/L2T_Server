@@ -67,7 +67,6 @@ import java.util.stream.Collectors;
  */
 public class AutoSpawnHandler
 {
-
 	private static final int DEFAULT_INITIAL_SPAWN = 30000; // 30 seconds after registration
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs
 	private static final int DEFAULT_DESPAWN = 3600000; // 1 hour in millisecs
@@ -593,8 +592,7 @@ public class AutoSpawnHandler
 
 					if (Config.DEBUG)
 					{
-						Log.info(
-								"AutoSpawnHandler: Spawns removed for spawn instance (Object ID = " + objectId + ").");
+						Log.info("AutoSpawnHandler: Spawns removed for spawn instance (Object ID = " + objectId + ").");
 					}
 				}
 			}
@@ -663,7 +661,6 @@ public class AutoSpawnHandler
 			return npcList.remove(npcInst);
 		}
 
-
 		public int getInitialDelay()
 		{
 			return initDelay;
@@ -717,8 +714,6 @@ public class AutoSpawnHandler
 		{
 			broadcastAnnouncement = broadcastValue;
 		}
-
-
 
 		public boolean isBroadcasting()
 		{

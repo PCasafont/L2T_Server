@@ -20,10 +20,8 @@ import l2server.gameserver.network.serverpackets.HennaRemoveList;
 
 public final class RequestHennaRemoveList extends L2GameClientPacket
 {
-
 	// This is just a trigger packet...
-	@SuppressWarnings("unused")
-	private int unknown;
+	@SuppressWarnings("unused") private int unknown;
 
 	@Override
 	protected void readImpl()

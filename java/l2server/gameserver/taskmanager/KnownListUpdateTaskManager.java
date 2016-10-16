@@ -32,7 +32,6 @@ import java.util.logging.Level;
 
 public class KnownListUpdateTaskManager
 {
-
 	private static final int FULL_UPDATE_TIMER = 100;
 	public static boolean updatePass = true;
 

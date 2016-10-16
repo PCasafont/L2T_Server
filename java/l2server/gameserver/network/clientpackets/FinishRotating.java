@@ -25,10 +25,8 @@ import l2server.gameserver.network.serverpackets.StopRotation;
  */
 public final class FinishRotating extends L2GameClientPacket
 {
-
 	private int degree;
-	@SuppressWarnings("unused")
-	private int unknown;
+	@SuppressWarnings("unused") private int unknown;
 
 	@Override
 	protected void readImpl()

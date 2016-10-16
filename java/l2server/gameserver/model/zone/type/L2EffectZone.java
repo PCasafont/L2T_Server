@@ -179,8 +179,6 @@ public class L2EffectZone extends L2ZoneType
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);
 	}
 
-
-
 	public void addSkill(int skillId, int skillLvL)
 	{
 		if (skillLvL < 1) // remove skill

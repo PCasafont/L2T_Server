@@ -97,8 +97,7 @@ public class L2SiegeZone extends L2ZoneType
 
 			if (character instanceof L2PcInstance)
 			{
-				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(siegableId) ||
-						character.isGM())
+				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(siegableId) || character.isGM())
 				{
 					((L2PcInstance) character).setIsInSiege(true); // in siege
 					if (siege != null && siege.giveFame())
@@ -110,11 +109,9 @@ public class L2SiegeZone extends L2ZoneType
 				else if (siegableId > 100 && !character.isGM())
 				{
 					character.sendMessage("You are not registered at this siege!");
-					character
-							.teleToLocation(TownManager.getClosestTown(character).getSpawnLoc(), true);
+					character.teleToLocation(TownManager.getClosestTown(character).getSpawnLoc(), true);
 				}
-				character
-						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 				if (!Config.ALLOW_WYVERN_DURING_SIEGE && ((L2PcInstance) character).getMountType() == 2)
 				{
 					character.sendPacket(SystemMessage
@@ -235,8 +232,7 @@ public class L2SiegeZone extends L2ZoneType
 
 				if (character instanceof L2PcInstance)
 				{
-					character
-							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+					character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 					((L2PcInstance) character).stopFameTask();
 					if (((L2PcInstance) character).getMountType() == 2)
 					{

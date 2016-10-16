@@ -16,6 +16,7 @@
 package l2server.gameserver.model;
 
 import lombok.Getter;
+
 /**
  * @author -Nemesiss-, Zoey76
  */
@@ -31,7 +32,4 @@ public class L2ExtractableProductItem
 		this.ammount = ammount;
 		this.chance = chance;
 	}
-
-
-
 }

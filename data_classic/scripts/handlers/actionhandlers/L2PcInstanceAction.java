@@ -27,7 +27,6 @@ import l2server.gameserver.model.L2Object.InstanceType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.skills.L2EffectType;
 
 public class L2PcInstanceAction implements IActionHandler

@@ -291,15 +291,13 @@ public class L2CubicInstance
 			case PHANTOM_CUBIC:
 			case GUARDIAN_CUBIC:
 				actionTask = ThreadPoolManager.getInstance()
-						.scheduleEffectAtFixedRate(new Action(activationchance), activationtime / 2,
-								activationtime);
+						.scheduleEffectAtFixedRate(new Action(activationchance), activationtime / 2, activationtime);
 				break;
 
 			case LIFE_CUBIC:
 			case BUFF_CUBIC:
 			case MIND_CUBIC:
-				actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new Heal(), 0,
-						activationtime);
+				actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new Heal(), 0, activationtime);
 				break;
 		}
 	}
@@ -364,8 +362,7 @@ public class L2CubicInstance
 
 	private class Action implements Runnable
 	{
-		@SuppressWarnings("unused")
-		private int chance;
+		@SuppressWarnings("unused") private int chance;
 
 		Action(int chance)
 		{

@@ -26,7 +26,6 @@ import l2server.gameserver.network.serverpackets.SiegeAttackerList;
  */
 public final class RequestSiegeAttackerList extends L2GameClientPacket
 {
-
 	//
 
 	private int castleId;

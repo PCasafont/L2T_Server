@@ -225,8 +225,6 @@ public enum VisualEffect
 		this.id = id;
 	}
 
-
-
 	public static VisualEffect getByName(String name)
 	{
 		for (VisualEffect eff : VisualEffect.values())

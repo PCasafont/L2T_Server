@@ -15,8 +15,6 @@
 
 package ai.group_template;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-
 import l2server.Config;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
@@ -36,6 +34,8 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+
 /**
  * Overarching Superclass for all mob AI
  *
@@ -43,7 +43,6 @@ import l2server.util.Rnd;
  */
 public class L2AttackableAIScript extends QuestJython
 {
-
 	/**
 	 * This is used to register all monsters contained in mobs for a particular script<BR>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method register ID for all QuestEventTypes<BR>
@@ -211,7 +210,6 @@ public class L2AttackableAIScript extends QuestJython
 
 			//if (npc.isMinion() && ((L2MonsterInstance) npc).getLeader().isDead())
 			//	((L2MonsterInstance) npc).getLeader().getMinionList().deleteSpawnedMinions();
-
 		}
 		return null;
 	}

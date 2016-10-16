@@ -20,7 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExVariationCancelResult extends L2GameServerPacket
 {
-
 	private int result;
 
 	public ExVariationCancelResult(int result)
