@@ -414,11 +414,6 @@ public class AutoChatHandler implements SpawnListener
 			return npcInsts.toArray(new L2Npc[npcInsts.size()]);
 		}
 
-		/**
-		 * A series of methods used to get and set default values for new chat definitions.
-		 */
-
-
 		public void setDefaultChatDelay(long delayValue)
 		{
 			defaultDelay = delayValue;

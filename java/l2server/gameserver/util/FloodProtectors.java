@@ -27,7 +27,7 @@ public final class FloodProtectors
 	/**
 	 * Pick up item flood protector.
 	 */
-	private final FloodProtectorAction pickUp;
+	@Getter private final FloodProtectorAction pickUpItem;
 
 	/**
 	 * Use-item flood protector.
@@ -118,7 +118,7 @@ public final class FloodProtectors
 	public FloodProtectors(final L2GameClient client)
 	{
 		super();
-		pickUp = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
+		pickUpItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
 		useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
 		rollDice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ROLL_DICE);
 		firework = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_FIREWORK);

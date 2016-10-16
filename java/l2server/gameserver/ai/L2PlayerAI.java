@@ -64,7 +64,7 @@ public class L2PlayerAI extends L2PlayableAI
 		/*
          if (Config.DEBUG)
 		 Log.warning("L2PlayerAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
-		 */
+		*/
 
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill

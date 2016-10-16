@@ -30,10 +30,6 @@ import java.util.Map;
  */
 public class AdminCommandAccessRights
 {
-	/**
-	 * The logger<br>
-	 */
-
 	private Map<String, L2AdminCommandAccessRight> adminCommandAccessRights;
 
 	/**

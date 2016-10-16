@@ -700,16 +700,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isPotion;
 	}
 
-
-
-
-
-
-	/**
-	 * Return the target type of the skill : SELF, PARTY, CLAN, PET...<BR><BR>
-	 */
-
-
 	public final boolean isOverhit()
 	{
 		return overhit;
@@ -818,7 +808,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return maxNegatedEffects;
 	}
 
-
 	/**
 	 * Return true if skill should ignore all resistances
 	 */
@@ -851,9 +840,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return removedOnDamage;
 	}
 
-
-
-
 	/**
 	 * Return true if skill effects should be removed on debuff block
 	 */
@@ -861,7 +847,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return removedOnDebuffBlock;
 	}
-
 
 	/**
 	 * Return the additional effect level.<BR><BR>
@@ -897,26 +882,15 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isDebuff;
 	}
 
-
 	public void setDisplayId(int id)
 	{
 		displayId = id;
 	}
 
-
-
-
-
 	public boolean triggerAnotherSkill()
 	{
 		return triggeredId > 1;
 	}
-
-	/**
-	 * @return Returns the level.
-	 */
-
-
 
 	public final int getLevelHash()
 	{
@@ -993,8 +967,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return nextDanceCost;
 	}
 
-
-
 	public boolean canBeUsedWhenDisabled()
 	{
 		return canBeUsedWhenDisabled;
@@ -1029,8 +1001,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return getSkillType() == L2SkillType.PUMPING || getSkillType() == L2SkillType.REELING;
 	}
-
-
 
 	public final boolean isPvpSkill()
 	{
@@ -1071,9 +1041,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isGMSkill;
 	}
 
-
-
-
 	public final int getMaxSoulConsumeCount()
 	{
 		return soulMaxConsume;
@@ -1083,11 +1050,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return soulConsume;
 	}
-
-
-
-
-
 
 	public final int getLethalChance1()
 	{
@@ -1103,9 +1065,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return directHpDmg;
 	}
-
-
-
 
 	public final boolean isSkillTypeOffensive()
 	{
@@ -2795,19 +2754,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isCastedToParty;
 	}
 
-	/**
-	 * Return the additional alter skill info.<BR><BR>
-	 *
-	 * @return
-	 */
-
-
 	public final int getAlterSkillTime()
 	{
 		return alterIconTime;
 	}
-
-
 
 	public boolean isElemental()
 	{

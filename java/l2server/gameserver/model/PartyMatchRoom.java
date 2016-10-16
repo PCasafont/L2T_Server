@@ -35,8 +35,8 @@ public class PartyMatchRoom
 	@Getter @Setter private String title;
 	private int loot;
 	@Getter private int location;
-	private int minLvl;
-	private int maxLvl;
+	@Getter private int minLvl;
+	@Getter private int maxLvl;
 	private int maxmem;
 	private final List<L2PcInstance> members = new ArrayList<>();
 
@@ -116,15 +116,7 @@ public class PartyMatchRoom
 		return loot;
 	}
 
-	public int getMinLvl()
-	{
-		return minLvl;
-	}
 
-	public int getMaxLvl()
-	{
-		return maxLvl;
-	}
 
 
 	public int getMembers()

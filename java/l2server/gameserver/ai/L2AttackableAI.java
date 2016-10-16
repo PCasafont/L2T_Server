@@ -892,7 +892,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		/*
 		if (this.actor.getTarget() == null || this.getAttackTarget() == null || this.getAttackTarget().isDead() || ctarget == this.actor)
 			AggroReconsider();
-		 */
+		*/
 
 		//----------------------------------------------------------------
 
@@ -2902,14 +2902,10 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 
 	/**
 	 */
-	public void setTimepass(int TP)
+	public void setTimepass(int timepass)
 	{
-		timepass = TP;
+		this.timepass = timepass;
 	}
-
-	/**
-	 * @return Returns the timepass.
-	 */
 
 	public L2Attackable getActiveChar()
 	{

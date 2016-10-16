@@ -32,16 +32,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+ * This class manages the player add/remove, team change and
+ * event arena status, as the clearance of the participants
+ * list or liberate the arena
+ *
  * @author BiggBoss
  */
 public final class HandysBlockCheckerManager
 {
-	/*
-     * This class manage the player add/remove, team change and
-	 * event arena status, as the clearance of the participants
-	 * list or liberate the arena
-	 */
-
 	// All the participants and their team classifed by arena
 	private static ArenaParticipantsHolder[] arenaPlayers;
 
@@ -201,7 +199,7 @@ public final class HandysBlockCheckerManager
 				KrateiCubeManager.getInstance().removeParticipant(player);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE));
 			}
-			 */
+			*/
 
 			if (registrationPenalty.contains(player.getObjectId()))
 			{

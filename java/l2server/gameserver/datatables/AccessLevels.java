@@ -29,8 +29,6 @@ import java.io.File;
  */
 public class AccessLevels
 {
-	/* The logger<br> */
-
 	/**
 	 * Reserved master access level<br>
 	 */

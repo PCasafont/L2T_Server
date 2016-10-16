@@ -487,13 +487,6 @@ public class L2SkillSummon extends L2Skill
 		return summonTimeLostActive;
 	}
 
-
-	/**
-	 * @return Returns the itemConsume time in milliseconds.
-	 */
-
-
-
 	public final int getNpcId()
 	{
 		return npcId;

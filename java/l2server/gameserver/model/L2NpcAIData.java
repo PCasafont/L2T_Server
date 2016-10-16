@@ -206,7 +206,6 @@ public class L2NpcAIData
 	}
 
 	/*
-
 	public void setBaseShldRate (int baseShldRate)
 	{
 		this.baseShldRate = baseShldRate;
@@ -216,7 +215,7 @@ public class L2NpcAIData
 	{
 		this.baseShldDef = baseShldDef;
 	}
-	 */
+	*/
 
 	//--------------------------------------------------------------------------------------------------------------
 	//Data Recall....

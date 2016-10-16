@@ -67,7 +67,7 @@ public class ClanHallManager
 			this.freeClanHall.clear();
 			load();
 		}
-	 */
+	*/
 
 	/**
 	 * Load All Clan Hall

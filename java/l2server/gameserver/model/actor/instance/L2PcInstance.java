@@ -5054,11 +5054,6 @@ public class L2PcInstance extends L2Playable
 		return isFakeDeath();
 	}
 
-	/**
-	 * Get the client owner of this char.<BR><BR>
-	 */
-
-
 	private void closeNetConnection(boolean closeClient)
 	{
 		closeNetConnection(closeClient, false, null);

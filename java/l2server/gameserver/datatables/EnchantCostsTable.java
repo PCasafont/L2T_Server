@@ -83,11 +83,6 @@ public class EnchantCostsTable
 			this.range = range;
 		}
 
-		/**
-		 * @return Returns the spCost.
-		 */
-
-
 		public byte getRate(L2PcInstance ply)
 		{
 			if (ply.getLevel() < 85)

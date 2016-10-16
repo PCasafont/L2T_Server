@@ -2191,12 +2191,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		return time > 0;
 	}
 
-	/**
-	 * Returns (current system time + time) of this time limited item
-	 *
-	 * @return Time
-	 */
-
 	public final void setTime(final int time)
 	{
 		this.time = System.currentTimeMillis() + (long) time * 60 * 1000;

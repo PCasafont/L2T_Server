@@ -203,10 +203,6 @@ public class MerchantPriceConfigTable implements InstanceListManager
 			return baseTax / 100.0;
 		}
 
-		/**
-		 * @return Returns the zoneId.
-		 */
-
 		public boolean hasCastle()
 		{
 			return getCastle() != null;
