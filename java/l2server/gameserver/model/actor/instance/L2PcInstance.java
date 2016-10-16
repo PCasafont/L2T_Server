@@ -13563,7 +13563,7 @@ public class L2PcInstance extends L2Playable
 
 	public boolean checkLastServerPosition(int x, int y, int z)
 	{
-		return lastServerPosition.equals(x, y, z);
+		return lastServerPosition.equalsTo(x, y, z);
 	}
 
 	public int getLastServerDistance(int x, int y, int z)
