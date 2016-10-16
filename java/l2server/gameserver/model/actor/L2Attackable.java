@@ -2278,18 +2278,6 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the L2Character who hit on the L2Attackable using an over-hit enabled skill.
-	 *
-	 * @return L2Character attacker
-	 */
-
-	/**
-	 * Return the ammount of damage done on the L2Attackable using an over-hit enabled skill.
-	 *
-	 * @return double damage
-	 */
-
-	/**
 	 * Return True if the L2Attackable was hit by an over-hit enabled skill.
 	 */
 	public boolean isOverhit()
@@ -2649,13 +2637,6 @@ public class L2Attackable extends L2Npc
 		this.commandChannelTimer = commandChannelTimer;
 	}
 
-
-
-
-	/**
-	 * @return the _commandChannelLastAttack
-	 */
-
 	/**
 	 * @param channelLastAttack the this.commandChannelLastAttack to set
 	 */
@@ -2750,12 +2731,6 @@ public class L2Attackable extends L2Npc
 	{
 		return isRaid;
 	}
-
-	/**
-	 * Set this Npc as a Raid instance.<BR><BR>
-	 *
-	 * @param isRaid
-	 */
 
 	/**
 	 * Set this Npc as a Minion instance.<BR><BR>

@@ -223,14 +223,6 @@ public class L2Clan
 	}
 
 	/**
-	 * @return Returns the clanId.
-	 */
-
-	/**
-	 * @param clanId The clanId to set.
-	 */
-
-	/**
 	 * @return Returns the leaderId.
 	 */
 	public int getLeaderId()
@@ -238,12 +230,6 @@ public class L2Clan
 		return leader != null ? leader.getObjectId() : 0;
 	}
 
-	/**
-	 * @return L2ClanMember of clan leader.
-	 */
-
-	/**
-	 */
 	public void setLeader(L2ClanMember leader)
 	{
 		this.leader = leader;
@@ -332,14 +318,6 @@ public class L2Clan
 
 		return leader;
 	}
-
-	/**
-	 * @return Returns the name.
-	 */
-
-	/**
-	 * @param name The name to set.
-	 */
 
 	private void addClanMember(L2ClanMember member)
 	{
@@ -616,43 +594,6 @@ public class L2Clan
 	}
 
 	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @param crestId The id of pledge crest.
-	 */
-
-	/**
-	 * @return Returns the clanCrestId.
-	 */
-
-	/**
 	 * @param crestLargeId The id of pledge LargeCrest.
 	 */
 	public void setLargeCrestId(int crestLargeId)
@@ -667,26 +608,6 @@ public class L2Clan
 	{
 		return crestLargeId;
 	}
-
-	/**
-	 * @param allyId The allyId to set.
-	 */
-
-	/**
-	 * @param allyName The allyName to set.
-	 */
-
-	/**
-	 * @param hasCastle The hasCastle to set.
-	 */
-
-	/**
-	 * @param hasFort The hasFort to set.
-	 */
-
-	/**
-	 * @param hasHideout The hasHideout to set.
-	 */
 
 	/**
 	 * @param level The level to set.

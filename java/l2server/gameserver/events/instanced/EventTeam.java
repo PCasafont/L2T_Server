@@ -147,12 +147,6 @@ public class EventTeam
 	}
 
 	/**
-	 * Returns the name of the team<br><br>
-	 *
-	 * @return String: name of the team<br>
-	 */
-
-	/**
 	 * Returns the coordinates of the team spot<br><br>
 	 *
 	 * @return int[]: team coordinates<br>
@@ -161,12 +155,6 @@ public class EventTeam
 	{
 		return coordinates;
 	}
-
-	/**
-	 * Returns the points of the team<br><br>
-	 *
-	 * @return short: team points<br>
-	 */
 
 	/**
 	 * Returns name and instance of all participated players in HashMap<br><br>

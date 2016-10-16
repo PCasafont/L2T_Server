@@ -132,13 +132,6 @@ public final class BlockCheckerEngine
 	}
 
 	/**
-	 * Will return the id of the arena used
-	 * by this event
-	 *
-	 * @return false;
-	 */
-
-	/**
 	 * Returns the time when the event
 	 * started
 	 *

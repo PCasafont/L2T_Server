@@ -73,15 +73,6 @@ public class Instance
 	}
 
 	/**
-	 * Returns the ID of this instance.
-	 */
-
-	/**
-	 * Returns the name of this instance
-	 */
-
-
-	/**
 	 * Returns whether summon friend type skills are allowed for this instance
 	 */
 	public boolean isSummonAllowed()
@@ -285,13 +276,6 @@ public class Instance
 	{
 		return isTimerIncrease;
 	}
-
-
-	/**
-	 * Returns the spawn location for this instance to be used when leaving the instance
-	 *
-	 * @return int[3]
-	 */
 
 	/**
 	 * Sets the spawn location for this instance to be used when leaving the instance

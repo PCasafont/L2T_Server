@@ -379,14 +379,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			return configs;
 		}
 
-		/**
-		 * @param name The name to set.
-		 */
-
-		/**
-		 * @return Returns the name.
-		 */
-
 		public void save() throws IOException
 		{
 			BufferedWriter bufWriter = null;
@@ -409,7 +401,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		class ConfigComment
 		{
-
 			@Getter @Setter private String comments;
 
 			/**
@@ -419,14 +410,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			{
 				this.comments = comments;
 			}
-
-			/**
-			 * @return Returns the comments.
-			 */
-
-			/**
-			 * @param comments The comments to set.
-			 */
 
 			public void save(Writer writer) throws IOException
 			{
@@ -486,11 +469,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			{
 				propname = name;
 			}
-
-			/**
-			 * @return Returns the value.
-			 */
-
 			/**
 			 * @param value The value to set.
 			 */
@@ -498,14 +476,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			{
 				this.value = value;
 			}
-
-			/**
-			 * @return Returns the type.
-			 */
-
-			/**
-			 * @param type The type to set.
-			 */
 
 			public JComponent getValueComponent()
 			{
@@ -670,19 +640,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		}
 	}
 
-	/**
-	 * @param configs The configuration to set.
-	 */
-
-	/**
-	 * @return Returns the configuration.
-	 */
-
-	/**
-	 * @return Returns the configuration setting name in a
-	 * human readable form.
-	 */
-
 	public static String unCamelize(final String keyName)
 	{
 		Pattern p = Pattern.compile("\\p{Lu}");
@@ -700,12 +657,4 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		m.appendTail(sb);
 		return sb.toString().trim();
 	}
-
-	/**
-	 * @param bundle The bundle to set.
-	 */
-
-	/**
-	 * @return Returns the bundle.
-	 */
 }

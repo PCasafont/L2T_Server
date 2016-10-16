@@ -80,7 +80,7 @@ public class L2Fishing implements Runnable
 	public L2Fishing(L2PcInstance Fisher, FishData fish, boolean isNoob, boolean isUpperGrade)
 	{
 		fisher = Fisher;
-		fishMaxHp = fish.getHP();
+		fishMaxHp = fish.getHp();
 		fishCurHp = fishMaxHp;
 		regenHp = fish.getHpRegen();
 		fishId = fish.getId();

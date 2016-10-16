@@ -877,23 +877,6 @@ public class RecipeController
 				itemName = item.getItem().getName();
 				referencePrice = item.getReferencePrice();
 			}
-
-			/**
-			 * @return Returns the quantity.
-			 */
-
-			/**
-			 * @param quantity The quantity to set.
-			 */
-
-
-			/**
-			 * @return Returns the itemId.
-			 */
-
-			/**
-			 * @return Returns the itemName.
-			 */
 		}
 
 		private void rewardPlayer()

@@ -20,7 +20,6 @@ import lombok.Getter;
 
 public class KickPlayer extends BaseRecievePacket
 {
-
 	@Getter private String account;
 
 	/**
@@ -31,8 +30,4 @@ public class KickPlayer extends BaseRecievePacket
 		super(decrypt);
 		account = readS();
 	}
-
-	/**
-	 * @return Returns the account.
-	 */
 }

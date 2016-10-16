@@ -37,11 +37,4 @@ public class AuthResponse extends BaseRecievePacket
 		serverName = readS();
 	}
 
-	/**
-	 * @return Returns the serverId.
-	 */
-
-	/**
-	 * @return Returns the serverName.
-	 */
 }

@@ -519,18 +519,6 @@ public class Duel
 	}
 
 	/**
-	 * Get the player that requestet the duel
-	 *
-	 * @return duel requester
-	 */
-
-	/**
-	 * Get the player that was challenged
-	 *
-	 * @return challenged player
-	 */
-
-	/**
 	 * Returns whether this is a party duel or not
 	 *
 	 * @return is party duel

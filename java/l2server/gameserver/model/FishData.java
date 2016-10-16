@@ -17,12 +17,13 @@ package l2server.gameserver.model;
 
 import lombok.Getter;
 import lombok.Setter;
+
 public class FishData
 {
 	@Getter private int id;
 	@Getter private int level;
 	@Getter private String name;
-	private int hp;
+	@Getter private int hp;
 	@Getter private int hpRegen;
 	@Getter @Setter private int type;
 	@Getter private int group;
@@ -51,7 +52,7 @@ public class FishData
 		id = copyOf.getId();
 		level = copyOf.getLevel();
 		name = copyOf.getName();
-		hp = copyOf.getHP();
+		hp = copyOf.getHp();
 		hpRegen = copyOf.getHpRegen();
 		type = copyOf.getType();
 		group = copyOf.getGroup();
@@ -60,29 +61,4 @@ public class FishData
 		waitTime = copyOf.getWaitTime();
 		combatTime = copyOf.getCombatTime();
 	}
-
-	/**
-	 * @return Returns the id.
-	 */
-
-	/**
-	 * @return Returns the level.
-	 */
-
-	/**
-	 * @return Returns the name.
-	 */
-
-	public int getHP()
-	{
-		return hp;
-	}
-
-
-
-
-
-
-
-
 }

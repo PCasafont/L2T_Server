@@ -63,12 +63,6 @@ public class L2AdminCommandAccessRight
 	}
 
 	/**
-	 * Returns the admin command the access right belongs to<br><br>
-	 *
-	 * @return String: the admin command the access right belongs to<br>
-	 */
-
-	/**
 	 * Checks if the given characterAccessLevel is allowed to use the admin command which belongs to this access right<br><br>
 	 *
 	 * @param characterAccessLevel<br><br>

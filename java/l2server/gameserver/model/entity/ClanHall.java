@@ -355,16 +355,6 @@ public class ClanHall
 	}
 
 	/**
-	 * Sets this clan halls zone
-	 *
-	 * @param zone
-	 */
-
-	/**
-	 * Returns the zone of this clan hall
-	 */
-
-	/**
 	 * Free this clan hall
 	 */
 	public void free()

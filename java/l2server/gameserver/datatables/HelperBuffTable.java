@@ -38,7 +38,7 @@ public class HelperBuffTable
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */
-	private List<L2HelperBuff> helperBuff;
+	@Getter private List<L2HelperBuff> helperBuffTable = new ArrayList<>();
 
 	/**
 	 * The player level since Newbie Helper can give the fisrt buff <BR>
@@ -68,7 +68,6 @@ public class HelperBuffTable
 	 */
 	private HelperBuffTable()
 	{
-		helperBuff = new ArrayList<>();
 		restoreHelperBuffData();
 	}
 
@@ -137,45 +136,13 @@ public class HelperBuffTable
 							}
 						}
 						L2HelperBuff template = new L2HelperBuff(helperBuffDat);
-						helperBuff.add(template);
+						helperBuffTable.add(template);
 					}
 				}
 			}
 		}
-		Log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
+		Log.info("HelperBuffTable: Loaded: " + helperBuffTable.size() + " buffs!");
 	}
-
-	/**
-	 * Return the Helper Buff List
-	 */
-	public List<L2HelperBuff> getHelperBuffTable()
-	{
-		return helperBuff;
-	}
-
-	/**
-	 * @return Returns the magicClassHighestLevel.
-	 */
-
-	/**
-	 * @return Returns the magicClassLowestLevel.
-	 */
-
-	/**
-	 * @return Returns the physicClassHighestLevel.
-	 */
-
-	/**
-	 * @return Returns the physicClassLowestLevel.
-	 */
-
-	/**
-	 * @return Returns the servitorLowestLevel.
-	 */
-
-	/**
-	 * @return Returns the servitorHighestLevel.
-	 */
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

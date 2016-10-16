@@ -85,10 +85,6 @@ public class L2TradeList
 	}
 
 	/**
-	 * @param hasLimitedStockItem The hasLimitedStockItem to set.
-	 */
-
-	/**
 	 * @return Returns the hasLimitedStockItem.
 	 */
 	public boolean hasLimitedStockItem()
@@ -183,14 +179,6 @@ public class L2TradeList
 		{
 			return itemId;
 		}
-
-		/**
-		 * @param price The price to set.
-		 */
-
-		/**
-		 * @return Returns the price.
-		 */
 
 		public L2Item getTemplate()
 		{

@@ -298,13 +298,5 @@ public class JIPTextField extends JPanel implements FocusListener
 				super.insertString(offset, str, a);
 			}
 		}
-
-		/**
-		 * @param next The next to set.
-		 */
-
-		/**
-		 * @return Returns the next.
-		 */
 	}
 }

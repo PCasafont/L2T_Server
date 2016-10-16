@@ -124,8 +124,4 @@ public class L2ClanHallZone extends L2SpawnZone
 			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		}
 	}
-
-	/**
-	 * @return the clanHallId
-	 */
 }

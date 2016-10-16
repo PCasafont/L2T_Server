@@ -325,14 +325,6 @@ public abstract class BaseGameServerRegister
 		return loaded;
 	}
 
-	/**
-	 * @param bundle The bundle to set.
-	 */
-
-	/**
-	 * @return Returns the bundle.
-	 */
-
 	public abstract void showError(String msg, Throwable t);
 
 	/**
@@ -421,14 +413,6 @@ public abstract class BaseGameServerRegister
 	static abstract class BaseTask implements Runnable
 	{
 		@Getter @Setter private ResourceBundle bundle;
-
-		/**
-		 * @param bundle The bundle to set.
-		 */
-
-		/**
-		 * @return Returns the bundle.
-		 */
 
 		public void showError(String msg, Throwable t)
 		{

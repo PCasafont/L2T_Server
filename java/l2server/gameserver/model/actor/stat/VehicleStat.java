@@ -22,20 +22,10 @@ import lombok.Setter;
 public class VehicleStat extends CharStat
 {
 	@Getter @Setter private float moveSpeed = 0;
-	private int rotationSpeed = 0;
+	@Getter @Setter private int rotationSpeed = 0;
 
 	public VehicleStat(L2Vehicle activeChar)
 	{
 		super(activeChar);
-	}
-
-	public final int getRotationSpeed()
-	{
-		return rotationSpeed;
-	}
-
-	public final void setRotationSpeed(int speed)
-	{
-		rotationSpeed = speed;
 	}
 }

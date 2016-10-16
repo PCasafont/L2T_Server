@@ -47,30 +47,6 @@ public class CompiledScriptHolder implements Serializable
 		size = scriptFile.length();
 	}
 
-	/**
-	 * @return Returns the lastModified.
-	 */
-
-	/**
-	 * @param lastModified The lastModified to set.
-	 */
-
-	/**
-	 * @return Returns the size.
-	 */
-
-	/**
-	 * @param size The size to set.
-	 */
-
-	/**
-	 * @return Returns the compiledScript.
-	 */
-
-	/**
-	 * @param compiledScript The compiledScript to set.
-	 */
-
 	public boolean matches(File f)
 	{
 		return f.lastModified() == getLastModified() && f.length() == getSize();

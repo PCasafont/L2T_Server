@@ -51,7 +51,7 @@ public class L2AccessLevel
 	/**
 	 * Flag to determine if the access level has gm access<br>
 	 */
-	private boolean isGm = false;
+	@Getter private boolean isGm = false;
 	/**
 	 * Flag for peace zone attack
 	 */
@@ -123,34 +123,6 @@ public class L2AccessLevel
 	public int getLevel()
 	{
 		return accessLevel;
-	}
-
-	/**
-	 * Returns the access level name<br><br>
-	 *
-	 * @return String: access level name<br>
-	 */
-
-	/**
-	 * Returns the name color of the access level<br><br>
-	 *
-	 * @return int: the name color for the access level<br>
-	 */
-
-	/**
-	 * Returns the title color color of the access level<br><br>
-	 *
-	 * @return int: the title color for the access level<br>
-	 */
-
-	/**
-	 * Retuns if the access level has gm access or not<br><br>
-	 *
-	 * @return boolean: true if access level have gm access, otherwise false<br>
-	 */
-	public boolean isGm()
-	{
-		return isGm;
 	}
 
 	/**
