@@ -57,7 +57,7 @@ public class LoginController
 	/**
 	 * Time before kicking the client if he didnt log in yet
 	 */
-	public final static int LOGIN_TIMEOUT = 600 * 1000;
+	public static final int LOGIN_TIMEOUT = 600 * 1000;
 
 	/**
 	 * Authed Clients on LoginServer

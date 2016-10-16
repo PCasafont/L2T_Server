@@ -34,7 +34,7 @@ import java.util.logging.Level;
  */
 public final class L2ScriptEngineManager
 {
-	public final static File SCRIPT_FOLDER =
+	public static final File SCRIPT_FOLDER =
 			new File(Config.DATAPACK_ROOT.getAbsolutePath(), Config.DATA_FOLDER + "scripts");
 
 	public static L2ScriptEngineManager getInstance()

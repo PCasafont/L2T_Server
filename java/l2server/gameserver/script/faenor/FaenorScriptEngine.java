@@ -38,8 +38,8 @@ import java.util.zip.ZipFile;
 public class FaenorScriptEngine extends ScriptEngine
 {
 	static Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
-	public final static String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
-	public final static boolean DEBUG = true;
+	public static final String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
+	public static final boolean DEBUG = true;
 
 	private LinkedList<ScriptDocument> _scripts;
 

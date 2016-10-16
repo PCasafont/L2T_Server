@@ -22,7 +22,7 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class HeroCirclet extends Quest
 {
-	private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
+	private static final int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
 	public HeroCirclet(int questId, String name, String descr)
 	{

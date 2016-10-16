@@ -39,7 +39,7 @@ public class L2FortSupportCaptainInstance extends L2MerchantInstance implements 
 		setInstanceType(InstanceType.L2FortSupportCaptainInstance);
 	}
 
-	private final static int[] TalismanIds = {
+	private static final int[] TalismanIds = {
 			9914,
 			9915,
 			9917,

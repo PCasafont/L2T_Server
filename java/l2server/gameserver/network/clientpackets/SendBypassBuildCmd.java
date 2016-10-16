@@ -31,8 +31,8 @@ import l2server.log.Log;
 public final class SendBypassBuildCmd extends L2GameClientPacket
 {
 
-	public final static int GM_MESSAGE = 9;
-	public final static int ANNOUNCEMENT = 10;
+	public static final int GM_MESSAGE = 9;
+	public static final int ANNOUNCEMENT = 10;
 
 	private String _command;
 

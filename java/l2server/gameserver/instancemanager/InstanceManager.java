@@ -58,7 +58,7 @@ public class InstanceManager
 	private int _dynamic = 300000;
 
 	// InstanceId Names
-	private final static Map<Integer, String> _instanceIdNames = new HashMap<>();
+	private static final Map<Integer, String> _instanceIdNames = new HashMap<>();
 	private Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new HashMap<>();
 
 	private static final String ADD_INSTANCE_TIME =

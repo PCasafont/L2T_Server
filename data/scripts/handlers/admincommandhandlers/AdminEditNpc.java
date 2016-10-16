@@ -49,7 +49,7 @@ import java.util.logging.Logger;
 public class AdminEditNpc implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminEditNpc.class.getName());
-	private final static int PAGE_LIMIT = 20;
+	private static final int PAGE_LIMIT = 20;
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_edit_npc",

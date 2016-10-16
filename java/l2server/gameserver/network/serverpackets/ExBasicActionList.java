@@ -185,8 +185,8 @@ public final class ExBasicActionList extends L2GameServerPacket
 		}
 	}
 
-	private final static ExBasicActionList STATIC_PACKET_TRANSFORMED = new ExBasicActionList(_actionsOnTransform);
-	private final static ExBasicActionList STATIC_PACKET = new ExBasicActionList(_defaultActionList);
+	private static final ExBasicActionList STATIC_PACKET_TRANSFORMED = new ExBasicActionList(_actionsOnTransform);
+	private static final ExBasicActionList STATIC_PACKET = new ExBasicActionList(_defaultActionList);
 
 	public static ExBasicActionList getStaticPacket(final L2PcInstance player)
 	{

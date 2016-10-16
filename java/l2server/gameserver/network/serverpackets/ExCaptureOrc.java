@@ -21,7 +21,7 @@ package l2server.gameserver.network.serverpackets;
 public class ExCaptureOrc extends L2GameServerPacket
 {
 
-	private final static byte[] _test;
+	private static final byte[] _test;
 
 	static
 	{

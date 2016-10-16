@@ -29,19 +29,19 @@ import l2server.gameserver.network.serverpackets.RadarControl;
 public class Q307_ControlDeviceOfTheGiants extends Quest
 {
 	// NPC
-	private final static int DROPH = 32711;
+	private static final int DROPH = 32711;
 	// RB
-	private final static int GORGOLOS = 25681;
-	private final static int LAST_TITAN_UTENUS = 25684;
-	private final static int GIANT_MARPANAK = 25680;
-	private final static int HEKATON_PRIME = 25687;
+	private static final int GORGOLOS = 25681;
+	private static final int LAST_TITAN_UTENUS = 25684;
+	private static final int GIANT_MARPANAK = 25680;
+	private static final int HEKATON_PRIME = 25687;
 	// Items
-	private final static int SUPPORT_ITEMS = 14850;
-	private final static int CET_1_SHEET = 14851;
-	private final static int CET_2_SHEET = 14852;
-	private final static int CET_3_SHEET = 14853;
+	private static final int SUPPORT_ITEMS = 14850;
+	private static final int CET_1_SHEET = 14851;
+	private static final int CET_2_SHEET = 14852;
+	private static final int CET_3_SHEET = 14853;
 
-	private final static int respawnDelay = 3600000; // 1 hour
+	private static final int respawnDelay = 3600000; // 1 hour
 
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)

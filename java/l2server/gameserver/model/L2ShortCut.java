@@ -22,12 +22,12 @@ package l2server.gameserver.model;
  */
 public class L2ShortCut
 {
-	public final static int TYPE_ITEM = 1;
-	public final static int TYPE_SKILL = 2;
-	public final static int TYPE_ACTION = 3;
-	public final static int TYPE_MACRO = 4;
-	public final static int TYPE_RECIPE = 5;
-	public final static int TYPE_TPBOOKMARK = 6;
+	public static final int TYPE_ITEM = 1;
+	public static final int TYPE_SKILL = 2;
+	public static final int TYPE_ACTION = 3;
+	public static final int TYPE_MACRO = 4;
+	public static final int TYPE_RECIPE = 5;
+	public static final int TYPE_TPBOOKMARK = 6;
 
 	private final int _slot;
 	private final int _page;

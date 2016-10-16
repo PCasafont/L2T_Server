@@ -26,17 +26,17 @@ import l2server.gameserver.util.Util;
 
 public class OracleTeleport extends Quest
 {
-	private final static int[] TOWN_DAWN =
+	private static final int[] TOWN_DAWN =
 			{31078, 31079, 31080, 31081, 31083, 31084, 31082, 31692, 31694, 31997, 31168};
 
-	private final static int[] TOWN_DUSK =
+	private static final int[] TOWN_DUSK =
 			{31085, 31086, 31087, 31088, 31090, 31091, 31089, 31693, 31695, 31998, 31169};
 
-	private final static int[] TEMPLE_PRIEST = {31127, 31128, 31129, 31130, 31131, 31137, 31138, 31139, 31140, 31141};
+	private static final int[] TEMPLE_PRIEST = {31127, 31128, 31129, 31130, 31131, 31137, 31138, 31139, 31140, 31141};
 
-	private final static int[] RIFT_POSTERS = {31488, 31489, 31490, 31491, 31492, 31493};
+	private static final int[] RIFT_POSTERS = {31488, 31489, 31490, 31491, 31492, 31493};
 
-	private final static int[] TELEPORTERS = {
+	private static final int[] TELEPORTERS = {
 			31078,
 			31079,
 			31080,
@@ -103,7 +103,7 @@ public class OracleTeleport extends Quest
 			31125
 	};
 
-	private final static int[][] RETURN_LOCS = {
+	private static final int[][] RETURN_LOCS = {
 			{-80555, 150337, -3040},
 			{-13953, 121404, -2984},
 			{16354, 142820, -2696},

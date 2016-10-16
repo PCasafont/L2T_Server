@@ -23,9 +23,9 @@ import l2server.gameserver.util.Util;
 
 public class HeroWeapon extends Quest
 {
-	private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
+	private static final int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
-	private final static int[] weaponIds =
+	private static final int[] weaponIds =
 			{30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405};
 
 	public HeroWeapon(int questId, String name, String descr)

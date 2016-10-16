@@ -31,15 +31,15 @@ import java.util.Map;
 
 public class PrisonGuards extends L2AttackableAIScript
 {
-	final private static int GUARD1 = 18367;
-	final private static int GUARD2 = 18368;
-	final private static int STAMP = 10013;
-	final private static String[] GUARDVARS = {"1st", "2nd", "3rd", "4th"};
-	final private static String qn = "IOPRace";
+	private static final int GUARD1 = 18367;
+	private static final int GUARD2 = 18368;
+	private static final int STAMP = 10013;
+	private static final String[] GUARDVARS = {"1st", "2nd", "3rd", "4th"};
+	private static final String qn = "IOPRace";
 
-	private final static int silence = 4098;
-	private final static int pertification = 4578;
-	private final static int eventTimer = 5239;
+	private static final int silence = 4098;
+	private static final int pertification = 4578;
+	private static final int eventTimer = 5239;
 
 	private boolean _firstAttacked = false;
 

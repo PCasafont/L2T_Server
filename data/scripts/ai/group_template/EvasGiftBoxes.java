@@ -23,16 +23,16 @@ import l2server.util.Rnd;
 
 public class EvasGiftBoxes extends Quest
 {
-	final private static int GIFTBOX = 32342;
+	private static final int GIFTBOX = 32342;
 
-	final private static int KISSOFEVA = 1073;
+	private static final int KISSOFEVA = 1073;
 
 	// index 0: without kiss of eva
 	// index 1: with kiss of eva
 	// chance,itemId,...
-	final private static int[][] CHANCES = {{2, 9692, 1, 9693}, {100, 9692, 50, 9693}};
+	private static final int[][] CHANCES = {{2, 9692, 1, 9693}, {100, 9692, 50, 9693}};
 
-	final private static String qn = "EvasGiftBoxes";
+	private static final String qn = "EvasGiftBoxes";
 
 	public EvasGiftBoxes(int questId, String name, String descr)
 	{

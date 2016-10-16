@@ -14,14 +14,14 @@ import l2server.util.Rnd;
  */
 public class HeavyMedal extends Quest
 {
-	private final static int CAT_ROY = 31228;
-	private final static int CAT_WINNIE = 31229;
-	private final static int GLITTERING_MEDAL = 6393;
+	private static final int CAT_ROY = 31228;
+	private static final int CAT_WINNIE = 31229;
+	private static final int GLITTERING_MEDAL = 6393;
 
-	private final static int WIN_CHANCE = 50;
+	private static final int WIN_CHANCE = 50;
 
-	private final static int[] MEDALS = {5, 10, 20, 40};
-	private final static int[] BADGES = {6399, 6400, 6401, 6402};
+	private static final int[] MEDALS = {5, 10, 20, 40};
+	private static final int[] BADGES = {6399, 6400, 6401, 6402};
 
 	private static final int[][] _spawns_winnie = {
 			{-44342, -113726, -240, 0},

@@ -92,16 +92,16 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}*/
 
 	//conditional values
-	public final static int COND_RUNNING = 0x0001;
-	public final static int COND_WALKING = 0x0002;
-	public final static int COND_SIT = 0x0004;
-	public final static int COND_BEHIND = 0x0008;
-	public final static int COND_CRIT = 0x0010;
-	public final static int COND_LOWHP = 0x0020;
-	public final static int COND_ROBES = 0x0040;
-	public final static int COND_CHARGES = 0x0080;
-	public final static int COND_SHIELD = 0x0100;
-	public final static int COND_FRONT = 0x0200;
+	public static final int COND_RUNNING = 0x0001;
+	public static final int COND_WALKING = 0x0002;
+	public static final int COND_SIT = 0x0004;
+	public static final int COND_BEHIND = 0x0008;
+	public static final int COND_CRIT = 0x0010;
+	public static final int COND_LOWHP = 0x0020;
+	public static final int COND_ROBES = 0x0040;
+	public static final int COND_CHARGES = 0x0080;
+	public static final int COND_SHIELD = 0x0100;
+	public static final int COND_FRONT = 0x0200;
 
 	private static final Func[] _emptyFunctionSet = new Func[0];
 	private static final L2Abnormal[] _emptyEffectSet = new L2Abnormal[0];

@@ -43,8 +43,8 @@ public class L2SepulcherNpcInstance extends L2Npc
 	protected Future<?> _spawnNextMysteriousBoxTask = null;
 	protected Future<?> _spawnMonsterTask = null;
 
-	private final static String HTML_FILE_PATH = "SepulcherNpc/";
-	private final static int HALLS_KEY = 7260;
+	private static final String HTML_FILE_PATH = "SepulcherNpc/";
+	private static final int HALLS_KEY = 7260;
 
 	public L2SepulcherNpcInstance(int objectID, L2NpcTemplate template)
 	{

@@ -47,7 +47,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	private static final boolean TRACE = false;
 	private static final boolean DEBUG = false;
 
-	private final static int[] PRIMES = {
+	private static final int[] PRIMES = {
 			5,
 			7,
 			11,

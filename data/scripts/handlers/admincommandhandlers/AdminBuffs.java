@@ -15,7 +15,7 @@ import java.util.StringTokenizer;
 
 public class AdminBuffs implements IAdminCommandHandler
 {
-	private final static int PAGE_LIMIT = 20;
+	private static final int PAGE_LIMIT = 20;
 
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_getbuffs", "admin_stopbuff", "admin_stopallbuffs", "admin_areacancel", "admin_removereuse"};

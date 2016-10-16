@@ -31,7 +31,7 @@ public class MithrilMines extends Quest
 			{175499, -181586, -904}
 	};
 
-	private final static int npcId = 32652;
+	private static final int npcId = 32652;
 
 	public MithrilMines(int questId, String name, String descr)
 	{

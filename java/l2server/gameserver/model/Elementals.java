@@ -34,19 +34,19 @@ public final class Elementals
 		}
 	}
 
-	public final static byte NONE = -1;
-	public final static byte FIRE = 0;
-	public final static byte WATER = 1;
-	public final static byte WIND = 2;
-	public final static byte EARTH = 3;
-	public final static byte HOLY = 4;
-	public final static byte DARK = 5;
+	public static final byte NONE = -1;
+	public static final byte FIRE = 0;
+	public static final byte WATER = 1;
+	public static final byte WIND = 2;
+	public static final byte EARTH = 3;
+	public static final byte HOLY = 4;
+	public static final byte DARK = 5;
 
-	public final static int FIRST_WEAPON_BONUS = 20;
-	public final static int NEXT_WEAPON_BONUS = 5;
-	public final static int ARMOR_BONUS = 6;
+	public static final int FIRST_WEAPON_BONUS = 20;
+	public static final int NEXT_WEAPON_BONUS = 5;
+	public static final int ARMOR_BONUS = 6;
 
-	public final static int[] WEAPON_VALUES = {
+	public static final int[] WEAPON_VALUES = {
 			0, // Level 1
 			25, // Level 2
 			75, // Level 3
@@ -63,7 +63,7 @@ public final class Elementals
 			Integer.MAX_VALUE // TODO: Higher stones
 	};
 
-	public final static int[] ARMOR_VALUES = {
+	public static final int[] ARMOR_VALUES = {
 			0, // Level 1
 			12, // Level 2
 			30, // Level 3

@@ -23,7 +23,7 @@ import l2server.gameserver.model.quest.State;
 
 public class StakatoNest extends Quest
 {
-	private final static int[][] data = {
+	private static final int[][] data = {
 			{80456, -52322, -5640},
 			{88718, -46214, -4640},
 			{87464, -54221, -5120},
@@ -31,7 +31,7 @@ public class StakatoNest extends Quest
 			{87682, -43291, -4128}
 	};
 
-	private final static int npcId = 32640;
+	private static final int npcId = 32640;
 
 	public StakatoNest(int questId, String name, String descr)
 	{

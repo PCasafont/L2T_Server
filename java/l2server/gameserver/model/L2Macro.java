@@ -22,9 +22,9 @@ package l2server.gameserver.model;
  */
 public class L2Macro
 {
-	public final static int CMD_TYPE_SKILL = 1;
-	public final static int CMD_TYPE_ACTION = 3;
-	public final static int CMD_TYPE_SHORTCUT = 4;
+	public static final int CMD_TYPE_SKILL = 1;
+	public static final int CMD_TYPE_ACTION = 3;
+	public static final int CMD_TYPE_SHORTCUT = 4;
 
 	public int id;
 	public final int icon;

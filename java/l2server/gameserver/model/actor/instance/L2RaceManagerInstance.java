@@ -40,8 +40,8 @@ public class L2RaceManagerInstance extends L2Npc
 	protected static int _raceNumber = 4;
 
 	//Time Constants
-	private final static long SECOND = 1000;
-	private final static long MINUTE = 60 * SECOND;
+	private static final long SECOND = 1000;
+	private static final long MINUTE = 60 * SECOND;
 
 	private static int _minutes = 5;
 

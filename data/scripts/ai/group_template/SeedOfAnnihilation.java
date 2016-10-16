@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class SeedOfAnnihilation extends Quest
 {
-	final private static String qn = "SeedOfAnnihilation";
+	private static final String qn = "SeedOfAnnihilation";
 	private static final Map<Integer, int[]> _teleportZones = new HashMap<Integer, int[]>();
 	private static final int ANNIHILATION_FURNACE = 18928;
 	// Strength, Agility, Wisdom

@@ -37,7 +37,7 @@ public class CharacterBirthday extends Quest
 	private static final int _npc = 32600;
 	private static boolean is_spawned = false;
 
-	private final static int[] _gk = {
+	private static final int[] _gk = {
 			30006,
 			30059,
 			30080,

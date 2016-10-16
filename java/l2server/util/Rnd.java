@@ -310,11 +310,11 @@ public final class Rnd
 		}
 	}
 
-	private final static long ADDEND = 0xBL;
+	private static final long ADDEND = 0xBL;
 
-	private final static long MASK = (1L << 48) - 1;
+	private static final long MASK = (1L << 48) - 1;
 
-	private final static long MULTIPLIER = 0x5DEECE66DL;
+	private static final long MULTIPLIER = 0x5DEECE66DL;
 
 	private static final RandomContainer rnd = newInstance(RandomType.UNSECURE_THREAD_LOCAL);
 

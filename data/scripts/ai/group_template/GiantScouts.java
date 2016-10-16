@@ -30,7 +30,7 @@ import java.util.Collection;
 
 public class GiantScouts extends L2AttackableAIScript
 {
-	final private static int _scouts[] = {22668, 22669};
+	private static final int _scouts[] = {22668, 22669};
 
 	public GiantScouts(int questId, String name, String descr)
 	{

@@ -25,9 +25,9 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class IOPRace extends Quest
 {
-	final private static int RIGNOS = 32349;
-	final private static int STAMP = 10013;
-	final private static int KEY = 9694;
+	private static final int RIGNOS = 32349;
+	private static final int STAMP = 10013;
+	private static final int KEY = 9694;
 
 	private int _player = -1;
 

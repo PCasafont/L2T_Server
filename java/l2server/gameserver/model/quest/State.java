@@ -32,9 +32,9 @@ package l2server.gameserver.model.quest;
  */
 public class State
 {
-	public final static byte CREATED = 0;
-	public final static byte STARTED = 1;
-	public final static byte COMPLETED = 2;
+	public static final byte CREATED = 0;
+	public static final byte STARTED = 1;
+	public static final byte COMPLETED = 2;
 
 	// discover the string representation of the state, for readable DB storage
 	public static String getStateName(int state)

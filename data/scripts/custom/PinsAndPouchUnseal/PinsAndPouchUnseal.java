@@ -24,14 +24,14 @@ import l2server.util.Rnd;
 
 public class PinsAndPouchUnseal extends Quest
 {
-	private final static int[] NPCs = {32610, 32612};
+	private static final int[] NPCs = {32610, 32612};
 
-	private final static int[] UNSEALPRICE = {3200, 11800, 26500, 136600};
+	private static final int[] UNSEALPRICE = {3200, 11800, 26500, 136600};
 	// failed, low, mid, high, top
-	private final static int[] CHANCES = {49, 78, 95, 99, 100};
+	private static final int[] CHANCES = {49, 78, 95, 99, 100};
 
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] PINS = {
+	private static final int[][] PINS = {
 			{13898, 13902, 13903, 13904, 13905},
 			{13899, 13906, 13907, 13908, 13909},
 			{13900, 13910, 13911, 13912, 13913},
@@ -39,7 +39,7 @@ public class PinsAndPouchUnseal extends Quest
 	};
 
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] POUCHS = {
+	private static final int[][] POUCHS = {
 			{13918, 13922, 13923, 13924, 13925},
 			{13919, 13926, 13927, 13928, 13929},
 			{13920, 13930, 13931, 13932, 13933},
@@ -49,7 +49,7 @@ public class PinsAndPouchUnseal extends Quest
 	// "B,C grade" is the Magic Clip
 	// "A,S grade" is the Magic Ornament
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] CLIPSORNAMENTS = {
+	private static final int[][] CLIPSORNAMENTS = {
 			{14902, 14906, 14907, 14908, 14909},
 			{14903, 14910, 14911, 14912, 14913},
 			{14904, 14914, 14915, 14916, 14917},

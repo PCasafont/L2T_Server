@@ -23,10 +23,10 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class HeroCloak extends Quest
 {
-	private final static int[] npcIds = {31690, 31769, 31770, 31771, 31772};
+	private static final int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
-	private final static int HERO_CLOAK = 30372;
-	private final static int GLORIOUS_CLOAK = 30373;
+	private static final int HERO_CLOAK = 30372;
+	private static final int GLORIOUS_CLOAK = 30373;
 
 	public HeroCloak(int questId, String name, String descr)
 	{

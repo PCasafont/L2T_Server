@@ -42,34 +42,34 @@ public final class Say2 extends L2GameClientPacket
 
 	//private static Logger _logChat = Logger.getLogger("chat");
 
-	public final static int ALL = 0;
-	public final static int SHOUT = 1; //!
-	public final static int TELL = 2;
-	public final static int PARTY = 3; //#
-	public final static int CLAN = 4; //@
-	public final static int GM = 5;
-	public final static int PETITION_PLAYER = 6; // used for petition
-	public final static int PETITION_GM = 7; //* used for petition
-	public final static int TRADE = 8; //+
-	public final static int ALLIANCE = 9; //$
-	public final static int ANNOUNCEMENT = 10;
-	public final static int BOAT = 11;
-	public final static int L2FRIEND = 12;
-	public final static int MSNCHAT = 13;
-	public final static int PARTYMATCH_ROOM = 14;
-	public final static int PARTYROOM_COMMANDER = 15; //(Yellow)
-	public final static int PARTYROOM_ALL = 16; //(Red)
-	public final static int HERO_VOICE = 17;
-	public final static int CRITICAL_ANNOUNCE = 18;
-	public final static int SCREEN_ANNOUNCE = 19;
-	public final static int BATTLEFIELD = 20;
-	public final static int MPCC_ROOM = 21;
-	public final static int ALL_NOT_RECORDED = 22;
-	public final static int UNK_1 = 23;
-	public final static int UNK_2 = 24;
-	public final static int GLOBAL = 25;
+	public static final int ALL = 0;
+	public static final int SHOUT = 1; //!
+	public static final int TELL = 2;
+	public static final int PARTY = 3; //#
+	public static final int CLAN = 4; //@
+	public static final int GM = 5;
+	public static final int PETITION_PLAYER = 6; // used for petition
+	public static final int PETITION_GM = 7; //* used for petition
+	public static final int TRADE = 8; //+
+	public static final int ALLIANCE = 9; //$
+	public static final int ANNOUNCEMENT = 10;
+	public static final int BOAT = 11;
+	public static final int L2FRIEND = 12;
+	public static final int MSNCHAT = 13;
+	public static final int PARTYMATCH_ROOM = 14;
+	public static final int PARTYROOM_COMMANDER = 15; //(Yellow)
+	public static final int PARTYROOM_ALL = 16; //(Red)
+	public static final int HERO_VOICE = 17;
+	public static final int CRITICAL_ANNOUNCE = 18;
+	public static final int SCREEN_ANNOUNCE = 19;
+	public static final int BATTLEFIELD = 20;
+	public static final int MPCC_ROOM = 21;
+	public static final int ALL_NOT_RECORDED = 22;
+	public static final int UNK_1 = 23;
+	public static final int UNK_2 = 24;
+	public static final int GLOBAL = 25;
 
-	private final static String[] CHAT_NAMES = {
+	private static final String[] CHAT_NAMES = {
 			"ALL",
 			"SHOUT",
 			"TELL",

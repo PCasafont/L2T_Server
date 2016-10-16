@@ -98,7 +98,7 @@ public class CrystalCaverns extends Quest
 	private static final int CONT_CRYSTAL = 9690; //Contaminated Crystal
 	private static final int RED_CORAL = 9692; //Red Coral
 	private static final int CRYSTALFOOD = 9693; //Food item for Crystal Golems
-	final private static int RACE_KEY = 9694; // Race Key for Emerald doors
+	private static final int RACE_KEY = 9694; // Race Key for Emerald doors
 	private static final int BOSS_CRYSTAL_1 = 9695; //Clear Crystal
 	private static final int BOSS_CRYSTAL_2 = 9696; //Clear Crystal
 	private static final int BOSS_CRYSTAL_3 = 9697; //Clear Crystal
@@ -129,7 +129,7 @@ public class CrystalCaverns extends Quest
 	private static final int KECHIGUARD = 25715; // 25533;
 	private static final int BAYLOR = 29186; // 29099;
 	private static final int DARNEL = 25713; // 25531;
-	private final static int ALARMID = 18474;
+	private static final int ALARMID = 18474;
 
 	// private static final int[] BOSSCR  = {9695,9696,9697};
 	private static final int[] CGMOBS = {22311, 22312, 22313, 22314, 22315, 22316, 22317};
@@ -169,7 +169,7 @@ public class CrystalCaverns extends Quest
 	private static final int[] ZONES = {20105, 20106, 20107};
 
 	// Baylor alarm spawns
-	private final static int[][] ALARMSPAWN =
+	private static final int[][] ALARMSPAWN =
 			{{153572, 141277, -12738}, {153572, 142852, -12738}, {154358, 142075, -12738}, {152788, 142075, -12738}};
 
 	// Oracle order
