@@ -24,27 +24,27 @@ import l2server.gameserver.communitybbs.CommunityBoard;
  */
 public final class RequestBBSWrite extends L2GameClientPacket
 {
-	private String _url;
-	private String _arg1;
-	private String _arg2;
-	private String _arg3;
-	private String _arg4;
-	private String _arg5;
+	private String url;
+	private String arg1;
+	private String arg2;
+	private String arg3;
+	private String arg4;
+	private String arg5;
 
 	@Override
 	protected final void readImpl()
 	{
-		_url = readS();
-		_arg1 = readS();
-		_arg2 = readS();
-		_arg3 = readS();
-		_arg4 = readS();
-		_arg5 = readS();
+		this.url = readS();
+		this.arg1 = readS();
+		this.arg2 = readS();
+		this.arg3 = readS();
+		this.arg4 = readS();
+		this.arg5 = readS();
 	}
 
 	@Override
 	protected final void runImpl()
 	{
-		CommunityBoard.getInstance().handleWriteCommands(getClient(), _url, _arg1, _arg2, _arg3, _arg4, _arg5);
+		CommunityBoard.getInstance().handleWriteCommands(getClient(), this.url, this.arg1, this.arg2, this.arg3, this.arg4, this.arg5);
 	}
 }

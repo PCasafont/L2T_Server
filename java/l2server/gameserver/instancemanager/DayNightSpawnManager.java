@@ -31,16 +31,16 @@ import java.util.logging.Level;
 public class DayNightSpawnManager
 {
 
-	private Map<L2Spawn, L2RaidBossInstance> _bosses;
+	private Map<L2Spawn, L2RaidBossInstance> bosses;
 
 	public static DayNightSpawnManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private DayNightSpawnManager()
 	{
-		_bosses = new HashMap<>();
+		this.bosses = new HashMap<>();
 
 		Log.info("DayNightSpawnManager: Day/Night handler initialized");
 	}
@@ -103,11 +103,11 @@ public class DayNightSpawnManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DayNightSpawnManager _instance = new DayNightSpawnManager();
+		protected static final DayNightSpawnManager instance = new DayNightSpawnManager();
 	}
 
 	public void cleanUp()
 	{
-		_bosses.clear();
+		this.bosses.clear();
 	}
 }

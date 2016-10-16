@@ -22,18 +22,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class ExUserLoad extends L2GameServerPacket
 {
-	private L2PcInstance _player;
+	private L2PcInstance player;
 
 	public ExUserLoad(L2PcInstance player)
 	{
-		_player = player;
+		this.player = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_player.getObjectId());
-		writeD(_player.getCurrentLoad());
-		writeD(_player.getMaxLoad());
+		writeD(this.player.getObjectId());
+		writeD(this.player.getCurrentLoad());
+		writeD(this.player.getMaxLoad());
 	}
 }

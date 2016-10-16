@@ -32,11 +32,11 @@ public class Q20_BringUpWithLove extends Quest
 {
 	private static final String qn = "20_BringUpWithLove";
 	// Npc
-	private static final int _tunatun = 31537;
+	private static final int tunatun = 31537;
 	// Item
 	private static final int _beast_whip = 15473;
-	private static final int _crystal = 9553;
-	private static final int _jewel = 7185;
+	private static final int crystal = 9553;
+	private static final int jewel = 7185;
 
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -49,7 +49,7 @@ public class Q20_BringUpWithLove extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _tunatun)
+		if (npc.getNpcId() == this.tunatun)
 		{
 			if (event.equalsIgnoreCase("31537-12.htm"))
 			{
@@ -71,8 +71,8 @@ public class Q20_BringUpWithLove extends Quest
 			else if (event.equalsIgnoreCase("31537-15.htm"))
 			{
 				st.unset("cond");
-				st.takeItems(_jewel, -1);
-				st.giveItems(_crystal, 1);
+				st.takeItems(this.jewel, -1);
+				st.giveItems(this.crystal, 1);
 				st.playSound("ItemSound.quest_finish");
 				st.exitQuest(false);
 			}
@@ -102,7 +102,7 @@ public class Q20_BringUpWithLove extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _tunatun)
+		if (npc.getNpcId() == this.tunatun)
 		{
 			switch (st.getState())
 			{
@@ -147,9 +147,9 @@ public class Q20_BringUpWithLove extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(_tunatun);
-		addTalkId(_tunatun);
-		addFirstTalkId(_tunatun);
+		addStartNpc(this.tunatun);
+		addTalkId(this.tunatun);
+		addFirstTalkId(this.tunatun);
 	}
 
 	public static void main(String[] args)

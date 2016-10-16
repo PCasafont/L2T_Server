@@ -31,15 +31,15 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	public static String qn = "Q10321_QualificationsOfTheSeeker";
 
 	// NPC
-	private int _theodore = 32975;
-	private int _shannon = 32974;
+	private int theodore = 32975;
+	private int shannon = 32974;
 
 	public Q10321_QualificationsOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_theodore);
-		addTalkId(_theodore);
-		addTalkId(_shannon);
+		addStartNpc(this.theodore);
+		addTalkId(this.theodore);
+		addTalkId(this.shannon);
 	}
 
 	@Override
@@ -53,13 +53,13 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _theodore && event.equalsIgnoreCase("32975-03.htm"))
+		if (npc.getNpcId() == this.theodore && event.equalsIgnoreCase("32975-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == this.shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 5000);
@@ -83,7 +83,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _theodore)
+		if (npc.getNpcId() == this.theodore)
 		{
 			switch (st.getState())
 			{
@@ -105,7 +105,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _shannon && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == this.shannon && st.getInt("cond") == 1)
 		{
 			htmltext = "32974-01.htm";
 		}

@@ -21,32 +21,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class GMViewSkillInfo extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
-	private L2Skill[] _skills;
+	private L2PcInstance activeChar;
+	private L2Skill[] skills;
 
 	public GMViewSkillInfo(L2PcInstance cha)
 	{
-		_activeChar = cha;
-		_skills = _activeChar.getAllSkills();
-		if (_skills.length == 0)
+		this.activeChar = cha;
+		this.skills = this.activeChar.getAllSkills();
+		if (this.skills.length == 0)
 		{
-			_skills = new L2Skill[0];
+			this.skills = new L2Skill[0];
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_activeChar.getName());
-		writeD(_skills.length);
+		writeS(this.activeChar.getName());
+		writeD(this.skills.length);
 
 		boolean isDisabled = false;
-		if (_activeChar.getClan() != null)
+		if (this.activeChar.getClan() != null)
 		{
-			isDisabled = _activeChar.getClan().getReputationScore() < 0;
+			isDisabled = this.activeChar.getClan().getReputationScore() < 0;
 		}
 
-		for (L2Skill skill : _skills)
+		for (L2Skill skill : this.skills)
 		{
 			writeD(skill.isPassive() ? 1 : 0);
 			writeD(skill.getLevelHash());

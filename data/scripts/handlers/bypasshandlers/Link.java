@@ -19,6 +19,7 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.log.Log;
 
 public class Link implements IBypassHandler
 {
@@ -48,7 +49,7 @@ public class Link implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			Log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

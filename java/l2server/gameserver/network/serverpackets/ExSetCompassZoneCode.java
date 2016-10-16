@@ -31,11 +31,11 @@ public class ExSetCompassZoneCode extends L2GameServerPacket
 	public static final int PVPZONE = 0x0E;
 	public static final int GENERALZONE = 0x0F;
 
-	private int _zoneType;
+	private int zoneType;
 
 	public ExSetCompassZoneCode(int val)
 	{
-		_zoneType = val;
+		this.zoneType = val;
 	}
 
 	/**
@@ -43,6 +43,6 @@ public class ExSetCompassZoneCode extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_zoneType);
+		writeD(this.zoneType);
 	}
 }

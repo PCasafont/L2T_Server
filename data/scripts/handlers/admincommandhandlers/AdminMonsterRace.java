@@ -33,7 +33,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminMonsterRace implements IAdminCommandHandler
 {
-	//private static Logger _log = Logger.getLogger(AdminMonsterRace.class.getName());
+	//private static Logger log = Logger.getLogger(AdminMonsterRace.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_mons"};
 
@@ -125,7 +125,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			 //_log.info("Adding "+speeds1[i][j] +" and "+ speeds2[i][j]);
 			 speed[i] += (speeds1[i][j]*1);// + (speeds2[i][j]*1);
 			 }
-			 _log.info("Total speed for "+(i+1)+" = "+speed[i]);
+			 Log.info("Total speed for "+(i+1)+" = "+speed[i]);
 			 }*/
 
 			MonRaceInfo spk = new MonRaceInfo(codes[2][0], codes[2][1], MonsterRace.getInstance().getMonsters(),

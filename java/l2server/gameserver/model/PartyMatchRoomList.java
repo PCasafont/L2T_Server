@@ -28,68 +28,68 @@ import java.util.Map;
  */
 public class PartyMatchRoomList
 {
-	private int _maxid = 1;
-	private Map<Integer, PartyMatchRoom> _rooms;
+	private int maxid = 1;
+	private Map<Integer, PartyMatchRoom> rooms;
 
 	private PartyMatchRoomList()
 	{
-		_rooms = new HashMap<>();
+		this.rooms = new HashMap<>();
 	}
 
 	public synchronized void addPartyMatchRoom(int id, PartyMatchRoom room)
 	{
-		_rooms.put(id, room);
-		_maxid++;
+		this.rooms.put(id, room);
+		this.maxid++;
 	}
 
 	public void deleteRoom(int id)
 	{
-		for (L2PcInstance _member : getRoom(id).getPartyMembers())
+		for (L2PcInstance member : getRoom(id).getPartyMembers())
 		{
-			if (_member == null)
+			if (member == null)
 			{
 				continue;
 			}
 
-			_member.sendPacket(new ExClosePartyRoom());
-			_member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_DISBANDED));
+			member.sendPacket(new ExClosePartyRoom());
+			member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_DISBANDED));
 
-			_member.setPartyRoom(0);
+			member.setPartyRoom(0);
 			//_member.setPartyMatching(0);
-			_member.broadcastUserInfo();
+			member.broadcastUserInfo();
 		}
-		_rooms.remove(id);
+		this.rooms.remove(id);
 	}
 
 	public PartyMatchRoom getRoom(int id)
 	{
-		return _rooms.get(id);
+		return this.rooms.get(id);
 	}
 
 	public PartyMatchRoom[] getRooms()
 	{
-		return _rooms.values().toArray(new PartyMatchRoom[_rooms.size()]);
+		return this.rooms.values().toArray(new PartyMatchRoom[this.rooms.size()]);
 	}
 
 	public int getPartyMatchRoomCount()
 	{
-		return _rooms.size();
+		return this.rooms.size();
 	}
 
 	public int getMaxId()
 	{
-		return _maxid;
+		return this.maxid;
 	}
 
 	public PartyMatchRoom getPlayerRoom(L2PcInstance player)
 	{
-		for (PartyMatchRoom _room : _rooms.values())
+		for (PartyMatchRoom room : this.rooms.values())
 		{
-			for (L2PcInstance member : _room.getPartyMembers())
+			for (L2PcInstance member : room.getPartyMembers())
 			{
 				if (member.equals(player))
 				{
-					return _room;
+					return room;
 				}
 			}
 		}
@@ -98,13 +98,13 @@ public class PartyMatchRoomList
 
 	public int getPlayerRoomId(L2PcInstance player)
 	{
-		for (PartyMatchRoom _room : _rooms.values())
+		for (PartyMatchRoom room : this.rooms.values())
 		{
-			for (L2PcInstance member : _room.getPartyMembers())
+			for (L2PcInstance member : room.getPartyMembers())
 			{
 				if (member.equals(player))
 				{
-					return _room.getId();
+					return room.getId();
 				}
 			}
 		}
@@ -113,12 +113,12 @@ public class PartyMatchRoomList
 
 	public static PartyMatchRoomList getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PartyMatchRoomList _instance = new PartyMatchRoomList();
+		protected static final PartyMatchRoomList instance = new PartyMatchRoomList();
 	}
 }

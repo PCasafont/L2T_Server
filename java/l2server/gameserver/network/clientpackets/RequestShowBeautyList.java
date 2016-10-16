@@ -20,12 +20,12 @@ import l2server.gameserver.network.serverpackets.ExShowBeautyList;
 
 public final class RequestShowBeautyList extends L2GameClientPacket
 {
-	private boolean _isFace;
+	private boolean isFace;
 
 	@Override
 	protected final void readImpl()
 	{
-		_isFace = readD() != 0;
+		this.isFace = readD() != 0;
 	}
 
 	@Override
@@ -39,6 +39,6 @@ public final class RequestShowBeautyList extends L2GameClientPacket
 
 		activeChar.sendPacket(
 				new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0),
-						_isFace));
+						this.isFace));
 	}
 }

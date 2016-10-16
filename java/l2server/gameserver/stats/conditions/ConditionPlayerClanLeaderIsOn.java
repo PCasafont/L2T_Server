@@ -35,14 +35,14 @@ public class ConditionPlayerClanLeaderIsOn extends Condition
 	{
 		if (env.player instanceof L2PcInstance)
 		{
-			L2PcInstance _player = (L2PcInstance) env.player;
+			L2PcInstance player = (L2PcInstance) env.player;
 
-			if (_player == null || _player.getClan() == null)
+			if (player == null || player.getClan() == null)
 			{
 				return false;
 			}
 
-			return _player.getClan().getLeader().isOnline();
+			return player.getClan().getLeader().isOnline();
 		}
 
 		return false;

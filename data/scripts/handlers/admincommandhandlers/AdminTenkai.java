@@ -15,6 +15,20 @@
 
 package handlers.admincommandhandlers;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.LineNumberReader;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringTokenizer;
+
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.NpcTable;
@@ -38,22 +52,13 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
-import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.StringTokenizer;
-
 /**
  * @author Pere
  */
 public class AdminTenkai implements IAdminCommandHandler
 {
-	private static List<SpawnInfo> _deletedSpawns = new ArrayList<SpawnInfo>();
-	private static List<Integer> _mobIds = new ArrayList<Integer>();
+	private static List<SpawnInfo> deletedSpawns = new ArrayList<SpawnInfo>();
+	private static List<Integer> mobIds = new ArrayList<Integer>();
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_chess_start",
@@ -427,13 +432,13 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				}
 
-				for (SpawnInfo deleted : _deletedSpawns)
+				for (SpawnInfo deleted : deletedSpawns)
 				{
 					if (!line.contains(
 							deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ()))
 					{
 						writeOutput.println(line);
-						_deletedSpawns.remove(deleted);
+						deletedSpawns.remove(deleted);
 						Log.warning(
 								deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ());
 						break;
@@ -451,9 +456,9 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		
 		/*for (int id : mobIds)
-			_log.warning("" + id);*/
+			Log.warning("" + id);*/
 
-		for (SpawnInfo parser : _deletedSpawns)
+		for (SpawnInfo parser : deletedSpawns)
 		{
 			Log.warning(parser.getId() + "," + parser.getX() + "," + parser.getY() + "," + parser.getZ() + ",0,0,");
 		}
@@ -469,9 +474,9 @@ public class AdminTenkai implements IAdminCommandHandler
 			{
 				L2Npc target = (L2Npc) obj;
 
-				if (!_mobIds.contains(target.getNpcId()))
+				if (!this.mobIds.contains(target.getNpcId()))
 				{
-					_mobIds.add(target.getNpcId());
+					this.mobIds.add(target.getNpcId());
 				}
 
 				L2Spawn spawn = target.getSpawn();
@@ -481,7 +486,7 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				}
 
-				_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+				this.deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 				target.deleteMe();
 
@@ -501,14 +506,14 @@ public class AdminTenkai implements IAdminCommandHandler
 		{
 			L2Npc target = (L2Npc) obj;
 
-			if (!_mobIds.contains(target.getNpcId()))
+			if (!this.mobIds.contains(target.getNpcId()))
 			{
-				_mobIds.add(target.getNpcId());
+				this.mobIds.add(target.getNpcId());
 			}
 
 			L2Spawn spawn = target.getSpawn();
 
-			_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+			this.deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 			target.deleteMe();
 
@@ -526,37 +531,37 @@ public class AdminTenkai implements IAdminCommandHandler
 
 	private class SpawnInfo
 	{
-		private int _id = 0;
-		private int _x = 0;
-		private int _y = 0;
-		private int _z = 0;
+		private int id = 0;
+		private int x = 0;
+		private int y = 0;
+		private int z = 0;
 
 		public SpawnInfo(int ID, int X, int Y, int Z)
 		{
-			_id = ID;
-			_x = X;
-			_y = Y;
-			_z = Z;
+			this.id = ID;
+			this.x = X;
+			this.y = Y;
+			this.z = Z;
 		}
 
 		private int getId()
 		{
-			return _id;
+			return this.id;
 		}
 
 		private int getX()
 		{
-			return _x;
+			return this.x;
 		}
 
 		private int getY()
 		{
-			return _y;
+			return this.y;
 		}
 
 		private int getZ()
 		{
-			return _z;
+			return this.z;
 		}
 	}
 

@@ -20,19 +20,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExAskCoupleAction extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _actionId;
+	private int charObjId;
+	private int actionId;
 
 	public ExAskCoupleAction(int charObjId, int social)
 	{
-		_charObjId = charObjId;
-		_actionId = social;
+		this.charObjId = charObjId;
+		this.actionId = social;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_actionId);
-		writeD(_charObjId);
+		writeD(this.actionId);
+		writeD(this.charObjId);
 	}
 }

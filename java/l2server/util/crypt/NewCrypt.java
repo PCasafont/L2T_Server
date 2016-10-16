@@ -25,19 +25,19 @@ import java.util.logging.Logger;
  */
 public class NewCrypt
 {
-	protected static Logger _log = Logger.getLogger(NewCrypt.class.getName());
-	BlowfishEngine _crypt;
-	BlowfishEngine _decrypt;
+	protected static Logger log = Logger.getLogger(NewCrypt.class.getName());
+	BlowfishEngine crypt;
+	BlowfishEngine decrypt;
 
 	/**
 	 * @param blowfishKey
 	 */
 	public NewCrypt(byte[] blowfishKey)
 	{
-		_crypt = new BlowfishEngine();
-		_crypt.init(true, blowfishKey);
-		_decrypt = new BlowfishEngine();
-		_decrypt.init(false, blowfishKey);
+		this.crypt = new BlowfishEngine();
+		this.crypt.init(true, blowfishKey);
+		this.decrypt = new BlowfishEngine();
+		this.decrypt.init(false, blowfishKey);
 	}
 
 	public NewCrypt(String key)
@@ -174,7 +174,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			_decrypt.processBlock(raw, i * 8, result, i * 8);
+			this.decrypt.processBlock(raw, i * 8, result, i * 8);
 		}
 
 		return result;
@@ -187,7 +187,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			_decrypt.processBlock(raw, offset + i * 8, result, i * 8);
+			this.decrypt.processBlock(raw, offset + i * 8, result, i * 8);
 		}
 
 		System.arraycopy(result, 0, raw, offset, size);
@@ -200,7 +200,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			_crypt.processBlock(raw, i * 8, result, i * 8);
+			this.crypt.processBlock(raw, i * 8, result, i * 8);
 		}
 
 		return result;
@@ -213,7 +213,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			_crypt.processBlock(raw, offset + i * 8, result, i * 8);
+			this.crypt.processBlock(raw, offset + i * 8, result, i * 8);
 		}
 
 		System.arraycopy(result, 0, raw, offset, size);

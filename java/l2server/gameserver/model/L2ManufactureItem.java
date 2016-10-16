@@ -24,30 +24,30 @@ import l2server.gameserver.RecipeController;
  */
 public class L2ManufactureItem
 {
-	private int _recipeId;
-	private long _cost;
-	private boolean _isDwarven;
+	private int recipeId;
+	private long cost;
+	private boolean isDwarven;
 
 	public L2ManufactureItem(int recipeId, long cost)
 	{
-		_recipeId = recipeId;
-		_cost = cost;
+		this.recipeId = recipeId;
+		this.cost = cost;
 
-		_isDwarven = RecipeController.getInstance().getRecipeList(_recipeId).isDwarvenRecipe();
+		this.isDwarven = RecipeController.getInstance().getRecipeList(this.recipeId).isDwarvenRecipe();
 	}
 
 	public int getRecipeId()
 	{
-		return _recipeId;
+		return this.recipeId;
 	}
 
 	public long getCost()
 	{
-		return _cost;
+		return this.cost;
 	}
 
 	public boolean isDwarven()
 	{
-		return _isDwarven;
+		return this.isDwarven;
 	}
 }

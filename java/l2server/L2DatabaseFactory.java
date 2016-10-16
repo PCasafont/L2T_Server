@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 public class L2DatabaseFactory
 {
-	static Logger _log = Logger.getLogger(L2DatabaseFactory.class.getName());
+	static Logger log = Logger.getLogger(L2DatabaseFactory.class.getName());
 
 	public enum ProviderType
 	{
@@ -35,14 +35,14 @@ public class L2DatabaseFactory
 
 	private static class SingletonHolder
 	{
-		private static final L2DatabaseFactory _INSTANCE = new L2DatabaseFactory();
+		private static final L2DatabaseFactory INSTANCE = new L2DatabaseFactory();
 	}
 
 	// =========================================================
 	// Data Field
-	private ProviderType _providerType;
-	private BoneCP _gameDatabase;
-	private BoneCP _webDatabase;
+	private ProviderType providerType;
+	private BoneCP gameDatabase;
+	private BoneCP webDatabase;
 
 	private final int PARTITION_COUNT = 4;
 
@@ -87,10 +87,10 @@ public class L2DatabaseFactory
 			//config.setCloseConnectionWatch(true);
 			//config.setCloseConnectionWatchTimeout(300000);
 
-			_gameDatabase = new BoneCP(config);
+			this.gameDatabase = new BoneCP(config);
 
 			// Test the connection
-			_gameDatabase.getConnection().close();
+			this.gameDatabase.getConnection().close();
 
 			if (Config.DEBUG)
 			{
@@ -99,11 +99,11 @@ public class L2DatabaseFactory
 
 			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft"))
 			{
-				_providerType = ProviderType.MsSql;
+				this.providerType = ProviderType.MsSql;
 			}
 			else
 			{
-				_providerType = ProviderType.MySql;
+				this.providerType = ProviderType.MySql;
 			}
 		}
 		catch (Exception e)
@@ -134,9 +134,9 @@ public class L2DatabaseFactory
 			config.setPassword("f00ky0gr4np4");
 			config.setTransactionRecoveryEnabled(true);
 
-			_webDatabase = new BoneCP(config);
+			this.webDatabase = new BoneCP(config);
 
-			_webDatabase.getConnection().close();
+			this.webDatabase.getConnection().close();
 		}
 		catch (Exception e)
 		{
@@ -167,35 +167,35 @@ public class L2DatabaseFactory
 
 	public void shutdown()
 	{
-		Log.info("During this session the connection pool initialized " + _gameDatabase.getTotalCreatedConnections() +
+		Log.info("During this session the connection pool initialized " + this.gameDatabase.getTotalCreatedConnections() +
 				" connections.");
-		if (_gameDatabase.getTotalLeased() > 0)
+		if (this.gameDatabase.getTotalLeased() > 0)
 		{
-			Log.info(_gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
+			Log.info(this.gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
 		Log.info("Shutting down pool...");
 
 		try
 		{
-			_gameDatabase.close();
+			this.gameDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		_gameDatabase = null;
+		this.gameDatabase = null;
 
 		try
 		{
-			_webDatabase.close();
+			this.webDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		_webDatabase = null;
+		this.webDatabase = null;
 	}
 
 	public final String safetyString(String... whatToCheck)
@@ -243,7 +243,7 @@ public class L2DatabaseFactory
 	// Property - Public
 	public static L2DatabaseFactory getInstance()
 	{
-		return SingletonHolder._INSTANCE;
+		return SingletonHolder.INSTANCE;
 	}
 
 	public Connection getConnection()
@@ -253,7 +253,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = _gameDatabase.getConnection();
+				con = this.gameDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -273,7 +273,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = _webDatabase.getConnection();
+				con = this.webDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -304,16 +304,16 @@ public class L2DatabaseFactory
 
 	public int getBusyConnectionCount()
 	{
-		return _gameDatabase.getTotalLeased();
+		return this.gameDatabase.getTotalLeased();
 	}
 
 	public int getIdleConnectionCount()
 	{
-		return _gameDatabase.getTotalFree();
+		return this.gameDatabase.getTotalFree();
 	}
 
 	public final ProviderType getProviderType()
 	{
-		return _providerType;
+		return this.providerType;
 	}
 }

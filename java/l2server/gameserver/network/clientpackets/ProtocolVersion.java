@@ -5,9 +5,9 @@ import l2server.gameserver.network.serverpackets.KeyPacket;
 
 public class ProtocolVersion extends L2GameClientPacket
 {
-	private int _version;
-	private byte[] _data;
-	private byte[] _check;
+	private int version;
+	private byte[] data;
+	private byte[] check;
 
 	public ProtocolVersion()
 	{
@@ -16,17 +16,17 @@ public class ProtocolVersion extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		if (_buf.remaining() >= 0x04)
+		if (this.buf.remaining() >= 0x04)
 		{
-			_version = readD();
+			this.version = readD();
 		}
 
-		if (_buf.remaining() == 0x104)
+		if (this.buf.remaining() == 0x104)
 		{
-			_data = new byte[0x100];
-			_check = new byte[4];
-			readB(_data);
-			readB(_check);
+			this.data = new byte[0x100];
+			this.check = new byte[4];
+			readB(this.data);
+			readB(this.check);
 		}
 	}
 
@@ -34,18 +34,18 @@ public class ProtocolVersion extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2GameClient client = getClient();
-		client.setProtocolVersion(_version);
-		if (_version == -2L)
+		client.setProtocolVersion(this.version);
+		if (this.version == -2L)
 		{
 			client.closeNow();
 			return;
 		}
-		else if (_version == -3L)
+		else if (this.version == -3L)
 		{
 			client.closeNow();
 			return;
 		}
-		else if (_version == 64)
+		else if (this.version == 64)
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);

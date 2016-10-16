@@ -15,6 +15,10 @@
 
 package handlers.skillhandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
@@ -32,11 +36,8 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
 
 public class StealBuffs implements ISkillHandler
 {
@@ -259,7 +260,7 @@ public class StealBuffs implements ISkillHandler
 				}
 				catch (RuntimeException e)
 				{
-					_log.log(Level.WARNING,
+					Log.log(Level.WARNING,
 							"Cannot steal effect: " + eff + " Stealer: " + activeChar + " Stolen: " + target, e);
 				}
 			}
@@ -317,7 +318,7 @@ public class StealBuffs implements ISkillHandler
 		}
 		else if (activeChar instanceof L2Npc)
 		{
-			((L2Npc) activeChar)._spiritshotcharged = false;
+			((L2Npc) activeChar).spiritshotcharged = false;
 		}
 	}
 

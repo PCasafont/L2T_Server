@@ -32,12 +32,12 @@ import java.util.logging.Level;
 public final class RequestPledgeInfo extends L2GameClientPacket
 {
 
-	private int _clanId;
+	private int clanId;
 
 	@Override
 	protected void readImpl()
 	{
-		_clanId = readD();
+		this.clanId = readD();
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public final class RequestPledgeInfo extends L2GameClientPacket
 	{
 		if (Config.DEBUG)
 		{
-			Log.log(Level.FINE, "Info for clan " + _clanId + " requested");
+			Log.log(Level.FINE, "Info for clan " + this.clanId + " requested");
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
@@ -55,12 +55,12 @@ public final class RequestPledgeInfo extends L2GameClientPacket
 			return;
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClan(_clanId);
+		L2Clan clan = ClanTable.getInstance().getClan(this.clanId);
 		if (clan == null)
 		{
 			if (Config.DEBUG)
 			{
-				Log.warning("Clan data for clanId " + _clanId + " is missing for player " + activeChar.getName());
+				Log.warning("Clan data for clanId " + this.clanId + " is missing for player " + activeChar.getName());
 			}
 			return; // we have no clan data ?!? should not happen
 		}

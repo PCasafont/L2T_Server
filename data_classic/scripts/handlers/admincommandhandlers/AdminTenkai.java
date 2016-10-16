@@ -15,6 +15,20 @@
 
 package handlers.admincommandhandlers;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.LineNumberReader;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringTokenizer;
+
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.NpcTable;
@@ -37,15 +51,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-
-import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * @author Pere
@@ -451,7 +456,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		
 		/*for (int id : mobIds)
-			_log.warning("" + id);*/
+			Log.warning("" + id);*/
 
 		for (SpawnInfo parser : _deletedSpawns)
 		{
@@ -619,7 +624,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			//<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
 			Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() +
 					"\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
-			//_log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
+			//Log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
 		}
 		catch (Exception e)
 		{

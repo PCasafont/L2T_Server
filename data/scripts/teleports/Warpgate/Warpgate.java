@@ -77,11 +77,11 @@ public class Warpgate extends Quest
 
 	private static final class Teleport implements Runnable
 	{
-		private final L2Character _char;
+		private final L2Character cha;
 
 		public Teleport(L2Character c)
 		{
-			_char = c;
+			this.cha = c;
 		}
 
 		@Override
@@ -89,7 +89,7 @@ public class Warpgate extends Quest
 		{
 			try
 			{
-				_char.teleToLocation(-16555, 209375, -3670, true);
+				this.cha.teleToLocation(-16555, 209375, -3670, true);
 			}
 			catch (Exception e)
 			{

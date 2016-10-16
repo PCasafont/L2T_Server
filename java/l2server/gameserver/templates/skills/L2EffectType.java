@@ -53,15 +53,15 @@ public enum L2EffectType
 	BLOCK_HIDE(0x0000000020000000L),
 	BLOCK_TALISMANS(0x0000000040000000L);
 
-	private long _mask;
+	private long mask;
 
 	L2EffectType(long mask)
 	{
-		_mask = mask;
+		this.mask = mask;
 	}
 
 	public long getMask()
 	{
-		return _mask;
+		return this.mask;
 	}
 }

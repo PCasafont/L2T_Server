@@ -31,16 +31,16 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 {
 	//
 
-	private int _approved;
-	private int _castleId;
-	private int _clanId;
+	private int approved;
+	private int castleId;
+	private int clanId;
 
 	@Override
 	protected void readImpl()
 	{
-		_castleId = readD();
-		_clanId = readD();
-		_approved = readD();
+		this.castleId = readD();
+		this.clanId = readD();
+		this.approved = readD();
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 			return;
 		}
 
-		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		Castle castle = CastleManager.getInstance().getCastleById(this.castleId);
 		if (castle == null)
 		{
 			return;
@@ -70,7 +70,7 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 			return;
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClan(_clanId);
+		L2Clan clan = ClanTable.getInstance().getClan(this.clanId);
 		if (clan == null)
 		{
 			return;
@@ -78,11 +78,11 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 
 		if (!castle.getSiege().getIsRegistrationOver())
 		{
-			if (_approved == 1)
+			if (this.approved == 1)
 			{
 				if (castle.getSiege().checkIsDefenderWaiting(clan))
 				{
-					castle.getSiege().approveSiegeDefenderClan(_clanId);
+					castle.getSiege().approveSiegeDefenderClan(this.clanId);
 				}
 				else
 				{
@@ -93,7 +93,7 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 			{
 				if (castle.getSiege().checkIsDefenderWaiting(clan) || castle.getSiege().checkIsDefender(clan))
 				{
-					castle.getSiege().removeSiegeClan(_clanId);
+					castle.getSiege().removeSiegeClan(this.clanId);
 				}
 			}
 		}

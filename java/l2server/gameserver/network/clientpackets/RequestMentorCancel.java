@@ -35,14 +35,14 @@ import java.util.logging.Level;
 public class RequestMentorCancel extends L2GameClientPacket
 {
 
-	private String _name;
-	boolean _isMentor;
+	private String name;
+	boolean isMentor;
 
 	@Override
 	protected void readImpl()
 	{
-		_isMentor = readD() == 1;
-		_name = readS();
+		this.isMentor = readD() == 1;
+		this.name = readS();
 	}
 
 	@Override
@@ -56,13 +56,13 @@ public class RequestMentorCancel extends L2GameClientPacket
 			return;
 		}
 
-		int id = CharNameTable.getInstance().getIdByName(_name);
+		int id = CharNameTable.getInstance().getIdByName(this.name);
 
 		Connection con = null;
 
 		try
 		{
-			if (!_isMentor)
+			if (!this.isMentor)
 			{
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
@@ -75,7 +75,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 				// Mentee cancelled mentoring with mentor
 				sm = SystemMessage
 						.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
-				sm.addString(_name);
+				sm.addString(this.name);
 				activeChar.sendPacket(sm);
 
 				for (L2Abnormal e : activeChar.getAllEffects())

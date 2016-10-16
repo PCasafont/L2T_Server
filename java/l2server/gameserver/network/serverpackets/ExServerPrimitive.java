@@ -31,12 +31,12 @@ import java.util.List;
  */
 public class ExServerPrimitive extends L2GameServerPacket
 {
-	private final String _name;
-	private int _x;
-	private int _y;
-	private int _z;
-	private final List<Point> _points = new ArrayList<>();
-	private final List<Line> _lines = new ArrayList<>();
+	private final String name;
+	private int x;
+	private int y;
+	private int z;
+	private final List<Point> points = new ArrayList<>();
+	private final List<Line> lines = new ArrayList<>();
 
 	/**
 	 * @param name A unique name this will be used to replace lines if second packet is sent
@@ -46,10 +46,10 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public ExServerPrimitive(String name, int x, int y, int z)
 	{
-		_name = name;
-		_x = x;
-		_y = y;
-		_z = z;
+		this.name = name;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public ExServerPrimitive(String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	/**
@@ -67,9 +67,9 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public void setXYZ(int x, int y, int z)
 	{
-		_x = x;
-		_y = y;
-		_z = z;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public void addPoint(String name, int color, boolean isNameColored, int x, int y, int z)
 	{
-		_points.add(new Point(name, color, isNameColored, x, y, z));
+		this.points.add(new Point(name, color, isNameColored, x, y, z));
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public void addLine(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
 	{
-		_lines.add(new Line(name, color, isNameColored, x, y, z, x2, y2, z2));
+		this.lines.add(new Line(name, color, isNameColored, x, y, z, x2, y2, z2));
 	}
 
 	/**
@@ -199,16 +199,16 @@ public class ExServerPrimitive extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_name);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeS(this.name);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 		writeD(65535); // has to do something with display range and angle
 		writeD(65535); // has to do something with display range and angle
 
-		writeD(_points.size() + _lines.size());
+		writeD(this.points.size() + this.lines.size());
 
-		for (Point point : _points)
+		for (Point point : this.points)
 		{
 			writeC(1); // Its the type in this case Point
 			writeS(point.getName());
@@ -222,7 +222,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 			writeD(point.getZ());
 		}
 
-		for (Line line : _lines)
+		for (Line line : this.lines)
 		{
 			writeC(2); // Its the type in this case Line
 			writeS(line.getName());
@@ -242,21 +242,21 @@ public class ExServerPrimitive extends L2GameServerPacket
 
 	private static class Point
 	{
-		private final String _name;
-		private final int _color;
-		private final boolean _isNameColored;
-		private final int _x;
-		private final int _y;
-		private final int _z;
+		private final String name;
+		private final int color;
+		private final boolean isNameColored;
+		private final int x;
+		private final int y;
+		private final int z;
 
 		public Point(String name, int color, boolean isNameColored, int x, int y, int z)
 		{
-			_name = name;
-			_color = color;
-			_isNameColored = isNameColored;
-			_x = x;
-			_y = y;
-			_z = z;
+			this.name = name;
+			this.color = color;
+			this.isNameColored = isNameColored;
+			this.x = x;
+			this.y = y;
+			this.z = z;
 		}
 
 		/**
@@ -264,7 +264,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public String getName()
 		{
-			return _name;
+			return this.name;
 		}
 
 		/**
@@ -272,7 +272,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getColor()
 		{
-			return _color;
+			return this.color;
 		}
 
 		/**
@@ -280,7 +280,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public boolean isNameColored()
 		{
-			return _isNameColored;
+			return this.isNameColored;
 		}
 
 		/**
@@ -288,7 +288,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getX()
 		{
-			return _x;
+			return this.x;
 		}
 
 		/**
@@ -296,7 +296,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getY()
 		{
-			return _y;
+			return this.y;
 		}
 
 		/**
@@ -304,22 +304,22 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getZ()
 		{
-			return _z;
+			return this.z;
 		}
 	}
 
 	private static class Line extends Point
 	{
-		private final int _x2;
-		private final int _y2;
-		private final int _z2;
+		private final int x2;
+		private final int y2;
+		private final int z2;
 
 		public Line(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
 		{
 			super(name, color, isNameColored, x, y, z);
-			_x2 = x2;
-			_y2 = y2;
-			_z2 = z2;
+			this.x2 = x2;
+			this.y2 = y2;
+			this.z2 = z2;
 		}
 
 		/**
@@ -327,7 +327,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getX2()
 		{
-			return _x2;
+			return this.x2;
 		}
 
 		/**
@@ -335,7 +335,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getY2()
 		{
-			return _y2;
+			return this.y2;
 		}
 
 		/**
@@ -343,7 +343,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getZ2()
 		{
-			return _z2;
+			return this.z2;
 		}
 	}
 }

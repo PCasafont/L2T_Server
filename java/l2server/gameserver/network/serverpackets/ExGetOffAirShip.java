@@ -20,24 +20,24 @@ import l2server.gameserver.model.actor.L2Character;
 public class ExGetOffAirShip extends L2GameServerPacket
 {
 
-	private final int _playerId, _airShipId, _x, _y, _z;
+	private final int playerId, airShipId, x, y, z;
 
 	public ExGetOffAirShip(L2Character player, L2Character ship, int x, int y, int z)
 	{
-		_playerId = player.getObjectId();
-		_airShipId = ship.getObjectId();
-		_x = x;
-		_y = y;
-		_z = z;
+		this.playerId = player.getObjectId();
+		this.airShipId = ship.getObjectId();
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_playerId);
-		writeD(_airShipId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.playerId);
+		writeD(this.airShipId);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 	}
 }

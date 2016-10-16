@@ -32,23 +32,23 @@ import java.util.*;
 
 public class SkillTreeTable
 {
-	private List<L2SkillLearn> _fishingSkillTrees = new ArrayList<>();
+	private List<L2SkillLearn> fishingSkillTrees = new ArrayList<>();
 	//all common skills (taught by Fisherman)
-	private List<L2SkillLearn> _expandDwarfCraftSkillTrees = new ArrayList<>();
+	private List<L2SkillLearn> expandDwarfCraftSkillTrees = new ArrayList<>();
 	//list of special skill for dwarf (expand dwarf craft) learned by class teacher
-	private List<L2TransformSkillLearn> _transformSkillTrees = new ArrayList<>();
+	private List<L2TransformSkillLearn> transformSkillTrees = new ArrayList<>();
 	// Transform Skills (Test)
-	private ArrayList<L2SkillLearn> _specialSkillTrees = new ArrayList<>();
+	private ArrayList<L2SkillLearn> specialSkillTrees = new ArrayList<>();
 
 	// checker, sorted arrays of hash codes
-	private TIntObjectHashMap<long[]> _skillsByRaceHashCodes; // race-specific transformations
-	private long[] _allSkillsHashCodes; // fishing, special and all races transformations
+	private TIntObjectHashMap<long[]> skillsByRaceHashCodes; // race-specific transformations
+	private long[] allSkillsHashCodes; // fishing, special and all races transformations
 
-	private boolean _loading = true;
+	private boolean loading = true;
 
 	public static SkillTreeTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private SkillTreeTable()
@@ -88,7 +88,7 @@ public class SkillTreeTable
 
 	private void load()
 	{
-		_loading = true;
+		this.loading = true;
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/fishingSkillTree.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -118,11 +118,11 @@ public class SkillTreeTable
 
 				if (isDwarven)
 				{
-					_expandDwarfCraftSkillTrees.add(skill);
+					this.expandDwarfCraftSkillTrees.add(skill);
 				}
 				else
 				{
-					_fishingSkillTrees.add(skill);
+					this.fishingSkillTrees.add(skill);
 				}
 			}
 		}
@@ -149,7 +149,7 @@ public class SkillTreeTable
 
 				L2TransformSkillLearn skill = new L2TransformSkillLearn(raceId, id, itemId, lvl, cost, minLvl);
 
-				_transformSkillTrees.add(skill);
+				this.transformSkillTrees.add(skill);
 			}
 		}
 
@@ -176,17 +176,17 @@ public class SkillTreeTable
 				L2SkillLearn skill = new L2SkillLearn(id, lvl, 0, 0, 0, npc, fs, false, false);
 				skill.addCostItem(costId, costCount);
 
-				_specialSkillTrees.add(skill);
+				this.specialSkillTrees.add(skill);
 			}
 		}
 
 		generateCheckArrays();
 
-		Log.info("FishingSkillTreeTable: Loaded " + _fishingSkillTrees.size() + " general skills.");
-		Log.info("DwarvenCraftSkillTreeTable: Loaded " + _expandDwarfCraftSkillTrees.size() + " dwarven skills.");
-		Log.info("TransformSkillTreeTable: Loaded " + _transformSkillTrees.size() + " transform skills");
-		Log.info("SpecialSkillTreeTable: Loaded " + _specialSkillTrees.size() + " special skills");
-		_loading = false;
+		Log.info("FishingSkillTreeTable: Loaded " + this.fishingSkillTrees.size() + " general skills.");
+		Log.info("DwarvenCraftSkillTreeTable: Loaded " + this.expandDwarfCraftSkillTrees.size() + " dwarven skills.");
+		Log.info("TransformSkillTreeTable: Loaded " + this.transformSkillTrees.size() + " transform skills");
+		Log.info("SpecialSkillTreeTable: Loaded " + this.specialSkillTrees.size() + " special skills");
+		this.loading = false;
 	}
 
 	private void generateCheckArrays()
@@ -199,7 +199,7 @@ public class SkillTreeTable
 		TIntObjectHashMap<long[]> result = new TIntObjectHashMap<>(Race.values().length);
 		for (Race r : Race.values())
 		{
-			for (L2TransformSkillLearn s : _transformSkillTrees)
+			for (L2TransformSkillLearn s : this.transformSkillTrees)
 			{
 				if (s.getRace() == r.ordinal())
 				{
@@ -209,7 +209,7 @@ public class SkillTreeTable
 
 			if (r == Race.Dwarf)
 			{
-				for (L2SkillLearn s : _expandDwarfCraftSkillTrees)
+				for (L2SkillLearn s : this.expandDwarfCraftSkillTrees)
 				{
 					list.add(SkillTable.getSkillHashCode(s.getId(), s.getLevel()));
 				}
@@ -225,15 +225,15 @@ public class SkillTreeTable
 			result.put(r.ordinal(), array);
 			list.clear();
 		}
-		_skillsByRaceHashCodes = result;
+		this.skillsByRaceHashCodes = result;
 
 		// skills available for all classes and races
-		for (L2SkillLearn s : _fishingSkillTrees)
+		for (L2SkillLearn s : this.fishingSkillTrees)
 		{
 			list.add(SkillTable.getSkillHashCode(s.getId(), s.getLevel()));
 		}
 
-		for (L2TransformSkillLearn s : _transformSkillTrees)
+		for (L2TransformSkillLearn s : this.transformSkillTrees)
 		{
 			if (s.getRace() == -1)
 			{
@@ -241,7 +241,7 @@ public class SkillTreeTable
 			}
 		}
 
-		for (L2SkillLearn s : _specialSkillTrees)
+		for (L2SkillLearn s : this.specialSkillTrees)
 		{
 			list.add(SkillTable.getSkillHashCode(s.getId(), s.getLevel()));
 		}
@@ -253,7 +253,7 @@ public class SkillTreeTable
 			array[i++] = s;
 		}
 		Arrays.sort(array);
-		_allSkillsHashCodes = array;
+		this.allSkillsHashCodes = array;
 	}
 
 	public L2SkillLearn[] getAvailableClassSkills(L2PcInstance cha)
@@ -390,7 +390,7 @@ public class SkillTreeTable
 		List<L2SkillLearn> result = new ArrayList<>();
 		List<L2SkillLearn> skills = new ArrayList<>();
 
-		skills.addAll(_fishingSkillTrees);
+		skills.addAll(this.fishingSkillTrees);
 
 		if (skills.size() < 1)
 		{
@@ -399,9 +399,9 @@ public class SkillTreeTable
 			return new L2SkillLearn[0];
 		}
 
-		if (cha.hasDwarvenCraft() && _expandDwarfCraftSkillTrees != null)
+		if (cha.hasDwarvenCraft() && this.expandDwarfCraftSkillTrees != null)
 		{
-			skills.addAll(_expandDwarfCraftSkillTrees);
+			skills.addAll(this.expandDwarfCraftSkillTrees);
 		}
 
 		L2Skill[] oldSkills = cha.getAllSkills();
@@ -443,7 +443,7 @@ public class SkillTreeTable
 		List<L2SkillLearn> result = new ArrayList<>();
 		List<L2SkillLearn> skills = new ArrayList<>();
 
-		skills.addAll(_specialSkillTrees);
+		skills.addAll(this.specialSkillTrees);
 
 		if (skills.size() < 1)
 		{
@@ -485,7 +485,7 @@ public class SkillTreeTable
 	public L2TransformSkillLearn[] getAvailableTransformSkills(L2PcInstance cha)
 	{
 		List<L2TransformSkillLearn> result = new ArrayList<>();
-		List<L2TransformSkillLearn> skills = _transformSkillTrees;
+		List<L2TransformSkillLearn> skills = this.transformSkillTrees;
 
 		if (skills == null)
 		{
@@ -534,7 +534,7 @@ public class SkillTreeTable
 		int minLevel = 0;
 		List<L2SkillLearn> skills = new ArrayList<>();
 
-		skills.addAll(_fishingSkillTrees);
+		skills.addAll(this.fishingSkillTrees);
 
 		if (skills.size() < 1)
 		{
@@ -543,9 +543,9 @@ public class SkillTreeTable
 			return minLevel;
 		}
 
-		if (cha.hasDwarvenCraft() && _expandDwarfCraftSkillTrees != null)
+		if (cha.hasDwarvenCraft() && this.expandDwarfCraftSkillTrees != null)
 		{
-			skills.addAll(_expandDwarfCraftSkillTrees);
+			skills.addAll(this.expandDwarfCraftSkillTrees);
 		}
 
 		for (L2SkillLearn s : skills)
@@ -567,7 +567,7 @@ public class SkillTreeTable
 		int minLevel = 0;
 		List<L2TransformSkillLearn> skills = new ArrayList<>();
 
-		skills.addAll(_transformSkillTrees);
+		skills.addAll(this.transformSkillTrees);
 
 		if (skills.size() < 1)
 		{
@@ -646,7 +646,7 @@ public class SkillTreeTable
 			return true;
 		}
 
-		if (_loading) // prevent accidental skill remove during reload
+		if (this.loading) // prevent accidental skill remove during reload
 		{
 			return true;
 		}
@@ -664,12 +664,12 @@ public class SkillTreeTable
 			return true;
 		}
 
-		if (Arrays.binarySearch(_skillsByRaceHashCodes.get(player.getRace().ordinal()), hashCode) >= 0)
+		if (Arrays.binarySearch(this.skillsByRaceHashCodes.get(player.getRace().ordinal()), hashCode) >= 0)
 		{
 			return true;
 		}
 
-		return Arrays.binarySearch(_allSkillsHashCodes, hashCode) >= 0;
+		return Arrays.binarySearch(this.allSkillsHashCodes, hashCode) >= 0;
 
 	}
 
@@ -789,7 +789,7 @@ public class SkillTreeTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SkillTreeTable _instance = new SkillTreeTable();
+		protected static final SkillTreeTable instance = new SkillTreeTable();
 	}
 
 	public void reload()

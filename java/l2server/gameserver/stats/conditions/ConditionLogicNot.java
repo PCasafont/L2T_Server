@@ -25,7 +25,7 @@ import l2server.gameserver.stats.Env;
 public class ConditionLogicNot extends Condition
 {
 
-	private Condition _condition;
+	private Condition condition;
 
 	/**
 	 * Instantiates a new condition logic not.
@@ -34,10 +34,10 @@ public class ConditionLogicNot extends Condition
 	 */
 	public ConditionLogicNot(Condition condition)
 	{
-		_condition = condition;
+		this.condition = condition;
 		if (getListener() != null)
 		{
-			_condition.setListener(this);
+			this.condition.setListener(this);
 		}
 	}
 
@@ -52,11 +52,11 @@ public class ConditionLogicNot extends Condition
 	{
 		if (listener != null)
 		{
-			_condition.setListener(this);
+			this.condition.setListener(this);
 		}
 		else
 		{
-			_condition.setListener(null);
+			this.condition.setListener(null);
 		}
 		super.setListener(listener);
 	}
@@ -71,6 +71,6 @@ public class ConditionLogicNot extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return !_condition.test(env);
+		return !this.condition.test(env);
 	}
 }

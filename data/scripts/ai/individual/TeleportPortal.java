@@ -27,13 +27,13 @@ import l2server.gameserver.model.quest.Quest;
 
 public class TeleportPortal extends Quest
 {
-	private static final int _portal = 32910;
+	private static final int portal = 32910;
 
 	public TeleportPortal(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addAggroRangeEnterId(_portal);
+		addAggroRangeEnterId(this.portal);
 	}
 
 	@Override

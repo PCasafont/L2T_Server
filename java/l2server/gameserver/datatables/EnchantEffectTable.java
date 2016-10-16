@@ -37,10 +37,10 @@ public class EnchantEffectTable
 {
 	public static EnchantEffectTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private final Map<Integer, EnchantEffect> _effects = new HashMap<>();
+	private final Map<Integer, EnchantEffect> effects = new HashMap<>();
 
 	// =========================================================
 	// Constructor
@@ -124,7 +124,7 @@ public class EnchantEffectTable
 							}
 						}
 
-						_effects.put(id, effect);
+						this.effects.put(id, effect);
 					}
 				}
 			}
@@ -135,17 +135,17 @@ public class EnchantEffectTable
 			}
 		}
 
-		Log.info("EnchantEffectTable: Loaded " + _effects.size() + " enchant effects.");
+		Log.info("EnchantEffectTable: Loaded " + this.effects.size() + " enchant effects.");
 	}
 
 	public final EnchantEffect getEffect(int id)
 	{
-		return _effects.get(id);
+		return this.effects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EnchantEffectTable _instance = new EnchantEffectTable();
+		protected static final EnchantEffectTable instance = new EnchantEffectTable();
 	}
 }

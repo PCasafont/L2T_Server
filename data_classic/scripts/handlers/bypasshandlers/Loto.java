@@ -15,6 +15,8 @@
 
 package handlers.bypasshandlers;
 
+import java.text.DateFormat;
+
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.idfactory.IdFactory;
@@ -27,8 +29,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-
-import java.text.DateFormat;
 
 public class Loto implements IBypassHandler
 {

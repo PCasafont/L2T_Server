@@ -34,15 +34,15 @@ import java.util.logging.Level;
 public class ForumsBBSManager extends BaseBBSManager
 {
 
-	private final List<Forum> _table;
-	private int _lastid = 1;
+	private final List<Forum> table;
+	private int lastid = 1;
 
 	/**
 	 * Instantiates a new forums bbs manager.
 	 */
 	private ForumsBBSManager()
 	{
-		_table = new ArrayList<>();
+		this.table = new ArrayList<>();
 
 		Connection con = null;
 		try
@@ -74,12 +74,12 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public void initRoot()
 	{
-		List<Forum> copy = new ArrayList<>(_table);
+		List<Forum> copy = new ArrayList<>(this.table);
 		for (Forum f : copy)
 		{
 			f.vload();
 		}
-		Log.info("Loaded " + _table.size() + " forums. Last forum id used: " + _lastid);
+		Log.info("Loaded " + this.table.size() + " forums. Last forum id used: " + this.lastid);
 	}
 
 	/**
@@ -94,11 +94,11 @@ public class ForumsBBSManager extends BaseBBSManager
 			return;
 		}
 
-		_table.add(ff);
+		this.table.add(ff);
 
-		if (ff.getID() > _lastid)
+		if (ff.getID() > lastid)
 		{
-			_lastid = ff.getID();
+			this.lastid = ff.getID();
 		}
 	}
 
@@ -115,7 +115,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByName(String name)
 	{
-		for (Forum f : _table)
+		for (Forum f : this.table)
 		{
 			if (f.getName().equals(name))
 			{
@@ -149,7 +149,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public int getANewID()
 	{
-		return ++_lastid;
+		return ++lastid;
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByID(int idf)
 	{
-		for (Forum f : _table)
+		for (Forum f : this.table)
 		{
 			if (f.getID() == idf)
 			{
@@ -183,11 +183,11 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public static ForumsBBSManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final ForumsBBSManager _instance = new ForumsBBSManager();
+		protected static final ForumsBBSManager instance = new ForumsBBSManager();
 	}
 }

@@ -15,6 +15,9 @@
 
 package ai.individual.Summons;
 
+import java.util.Collection;
+import java.util.concurrent.ScheduledFuture;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -22,9 +25,6 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.Collection;
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -35,14 +35,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanGuardian extends L2AttackableAIScript
 {
-    private static final int _clanGuardian = 15053;
-    private static final L2Skill _clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
+    private static final int clanGuardian = 15053;
+    private static final L2Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
 
     public ClanGuardian(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addSpawnId(_clanGuardian);
+        addSpawnId(this.clanGuardian);
     }
 
     @Override
@@ -57,41 +57,41 @@ public class ClanGuardian extends L2AttackableAIScript
 
     class ClanGuardianAI implements Runnable
     {
-        private L2Summon _clanGuardian;
-        private L2PcInstance _owner;
-        private ScheduledFuture<?> _schedule = null;
+        private L2Summon clanGuardian;
+        private L2PcInstance owner;
+        private ScheduledFuture<?> schedule = null;
 
         protected ClanGuardianAI(L2Summon npc)
         {
-            _clanGuardian = npc;
-            _owner = npc.getOwner();
+            this.clanGuardian = npc;
+            this.owner = npc.getOwner();
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
         {
-            _schedule = schedule;
+            this.schedule = schedule;
         }
 
         @Override
         public void run()
         {
-            if (_clanGuardian == null || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
+            if (this.clanGuardian == null || this.clanGuardian.isDead() || !this.owner.getSummons().contains(this.clanGuardian))
             {
-                if (_schedule != null)
+                if (this.schedule != null)
                 {
-                    _schedule.cancel(true);
+                    this.schedule.cancel(true);
                     return;
                 }
             }
 
-            Collection<L2PcInstance> _players = _clanGuardian.getKnownList().getKnownPlayersInRadius(500);
+            Collection<L2PcInstance> players = this.clanGuardian.getKnownList().getKnownPlayersInRadius(500);
 
-            for (L2PcInstance player : _players)
+            for (L2PcInstance player : players)
             {
-                if (isValidTarget(player, _clanGuardian))
+                if (isValidTarget(player, this.clanGuardian))
                 {
-                    _clanGuardian.setTarget(player);
-                    _clanGuardian.doCast(_clanGuardianRecovery);
+                    this.clanGuardian.setTarget(player);
+                    this.clanGuardian.doCast(clanGuardianRecovery);
                 }
             }
         }

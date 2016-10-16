@@ -25,24 +25,24 @@ import java.util.ArrayList;
 
 public class PreparedListContainer extends ListContainer
 {
-	private int _npcObjectId = 0;
+	private int npcObjectId = 0;
 
 	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, L2Npc npc)
 	{
 		super(template.getListId());
-		_maintainEnchantment = template.getMaintainEnchantment();
+		this.maintainEnchantment = template.getMaintainEnchantment();
 
-		_applyTaxes = false;
-		_isChance = template.isChance();
-		_timeLimit = template.getTimeLimit();
+		this.applyTaxes = false;
+		this.isChance = template.isChance();
+		this.timeLimit = template.getTimeLimit();
 
 		double taxRate = 0;
 		if (npc != null)
 		{
-			_npcObjectId = npc.getObjectId();
+			this.npcObjectId = npc.getObjectId();
 			if (template.getApplyTaxes() && npc.getIsInTown() && npc.getCastle().getOwnerId() > 0)
 			{
-				_applyTaxes = true;
+				this.applyTaxes = true;
 				taxRate = npc.getCastle().getTaxRate();
 			}
 		}
@@ -55,7 +55,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			final L2ItemInstance[] items;
-			if (_maintainEnchantment)
+			if (this.maintainEnchantment)
 			{
 				items = player.getInventory().getUniqueItemsByEnchantLevel(false, false, false);
 			}
@@ -65,7 +65,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			// size is not known - using ArrayList
-			_entries = new ArrayList<>();
+			this.entries = new ArrayList<>();
 			for (L2ItemInstance item : items)
 			{
 				// only do the matchup on equipable items that are not currently equipped
@@ -80,7 +80,7 @@ public class PreparedListContainer extends ListContainer
 						{
 							if (item.getItemId() == ing.getItemId())
 							{
-								_entries.add(new PreparedEntry(ent, item, _applyTaxes, _maintainEnchantment, taxRate));
+								this.entries.add(new PreparedEntry(ent, item, this.applyTaxes, this.maintainEnchantment, taxRate));
 								break; // next entry
 							}
 						}
@@ -90,16 +90,16 @@ public class PreparedListContainer extends ListContainer
 		}
 		else
 		{
-			_entries = new ArrayList<>(template.getEntries().size());
+			this.entries = new ArrayList<>(template.getEntries().size());
 			for (MultiSellEntry ent : template.getEntries())
 			{
-				_entries.add(new PreparedEntry(ent, null, _applyTaxes, false, taxRate));
+				this.entries.add(new PreparedEntry(ent, null, this.applyTaxes, false, taxRate));
 			}
 		}
 	}
 
 	public final boolean checkNpcObjectId(int npcObjectId)
 	{
-		return _npcObjectId == 0 || _npcObjectId == npcObjectId;
+		return this.npcObjectId == 0 || this.npcObjectId == npcObjectId;
 	}
 }

@@ -22,11 +22,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDuelStart extends L2GameServerPacket
 {
-	private int _unk1;
+	private int unk1;
 
 	public ExDuelStart(int unk1)
 	{
-		_unk1 = unk1;
+		this.unk1 = unk1;
 	}
 
 	/**
@@ -34,6 +34,6 @@ public class ExDuelStart extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_unk1);
+		writeD(this.unk1);
 	}
 }

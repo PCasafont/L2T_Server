@@ -25,14 +25,14 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillMount extends L2Skill
 {
-	private int _npcId;
-	private int _itemId;
+	private int npcId;
+	private int itemId;
 
 	public L2SkillMount(StatsSet set)
 	{
 		super(set);
-		_npcId = set.getInteger("npcId", 0);
-		_itemId = set.getInteger("itemId", 0);
+		this.npcId = set.getInteger("npcId", 0);
+		this.itemId = set.getInteger("itemId", 0);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class L2SkillMount extends L2Skill
 		}
 
 		// Dismount Action
-		if (_npcId == 0)
+		if (this.npcId == 0)
 		{
 			activePlayer.dismount();
 			return;
@@ -92,6 +92,6 @@ public class L2SkillMount extends L2Skill
 			return;
 		}
 
-		activePlayer.mount(_npcId, _itemId, false);
+		activePlayer.mount(this.npcId, this.itemId, false);
 	}
 }

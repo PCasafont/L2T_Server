@@ -45,9 +45,9 @@ import l2server.util.Rnd;
  */
 public final class UseItem extends L2GameClientPacket
 {
-	private int _objectId;
-	private boolean _ctrlPressed;
-	private int _itemId;
+	private int objectId;
+	private boolean ctrlPressed;
+	private int itemId;
 
 	/**
 	 * Weapon Equip Task
@@ -79,8 +79,8 @@ public final class UseItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
-		_ctrlPressed = readD() != 0;
+		this.objectId = readD();
+		this.ctrlPressed = readD() != 0;
 	}
 
 	@Override
@@ -98,7 +98,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
 		if (item == null)
 		{
 			return;
@@ -443,7 +443,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 
-		_itemId = item.getItemId();
+		this.itemId = item.getItemId();
         /*
 		 * Alt game - Karma punishment // SOE
 		 * 736  	Scroll of Escape
@@ -487,7 +487,7 @@ public final class UseItem extends L2GameClientPacket
 		 */
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0)
 		{
-			switch (_itemId)
+			switch (this.itemId)
 			{
 				case 736:
 				case 1538:
@@ -511,13 +511,13 @@ public final class UseItem extends L2GameClientPacket
 					return;
 			}
 
-			if (_itemId >= 7117 && _itemId <= 7135)
+			if (this.itemId >= 7117 && this.itemId <= 7135)
 			{
 				return;
 			}
 		}
 
-		if (activeChar.isFishing() && (_itemId < 6535 || _itemId > 6540))
+		if (activeChar.isFishing() && (this.itemId < 6535 || this.itemId > 6540))
 		{
 			// You cannot do anything else while fishing
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
@@ -562,7 +562,7 @@ public final class UseItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.finest(activeChar.getObjectId() + ": use item " + _objectId);
+			Log.finest(activeChar.getObjectId() + ": use item " + this.objectId);
 		}
 
 		if (!item.isEquipped() && !item.getItem().checkCondition(activeChar, activeChar, true))
@@ -742,7 +742,7 @@ public final class UseItem extends L2GameClientPacket
 				}
 			}
 
-			if (activeChar.isCursedWeaponEquipped() && _itemId == 6408) // Don't allow to put formal wear
+			if (activeChar.isCursedWeaponEquipped() && this.itemId == 6408) // Don't allow to put formal wear
 			{
 				return;
 			}
@@ -768,7 +768,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 		else
 		{
-			if (activeChar.isInOlympiadMode() && _itemId == 37041)
+			if (activeChar.isInOlympiadMode() && this.itemId == 37041)
 			{
 				return;
 			}
@@ -802,7 +802,7 @@ public final class UseItem extends L2GameClientPacket
 				}
 				else
 				{
-					handler.useItem(activeChar, item, _ctrlPressed);
+					handler.useItem(activeChar, item, this.ctrlPressed);
 				}
 			}
 		}
@@ -812,6 +812,6 @@ public final class UseItem extends L2GameClientPacket
 	@Override
 	protected boolean triggersOnActionRequest()
 	{
-		return !Config.SPAWN_PROTECTION_ALLOWED_ITEMS.contains(_itemId);
+		return !Config.SPAWN_PROTECTION_ALLOWED_ITEMS.contains(this.itemId);
 	}
 }

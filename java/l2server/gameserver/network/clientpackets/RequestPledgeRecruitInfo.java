@@ -25,12 +25,12 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitInfo;
  */
 public final class RequestPledgeRecruitInfo extends L2GameClientPacket
 {
-	private int _clanId;
+	private int clanId;
 
 	@Override
 	protected void readImpl()
 	{
-		_clanId = readD();
+		this.clanId = readD();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public final class RequestPledgeRecruitInfo extends L2GameClientPacket
 			return;
 		}
 
-		ClanRecruitData data = ClanRecruitManager.getInstance().getRecruitData(_clanId);
+		ClanRecruitData data = ClanRecruitManager.getInstance().getRecruitData(this.clanId);
 		if (data != null)
 		{
 			sendPacket(new ExPledgeRecruitInfo(data));

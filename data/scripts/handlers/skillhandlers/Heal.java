@@ -24,7 +24,11 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.L2ArmyMonsterInstance;
+import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.L2EventGolemInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.BaseStats;
@@ -122,11 +126,11 @@ public class Heal implements ISkillHandler
 
 					((L2Summon) activeChar).setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 				}
-				else if (activeChar instanceof L2Npc && ((L2Npc) activeChar)._spiritshotcharged)
+				else if (activeChar instanceof L2Npc && ((L2Npc) activeChar).spiritshotcharged)
 				{
 					mAtkMul = 4;
 
-					((L2Npc) activeChar)._spiritshotcharged = false;
+					((L2Npc) activeChar).spiritshotcharged = false;
 				}
 
 				baseHeal = power + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, skill));

@@ -15,6 +15,10 @@
 
 package handlers.chathandlers;
 
+import java.util.Collection;
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.gui.ConsoleTab;
@@ -25,10 +29,7 @@ import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-
-import java.util.Collection;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * A chat handler
@@ -65,7 +66,7 @@ public class ChatAll implements IChatHandler
 				command = text.substring(1);
 				if (Config.DEBUG)
 				{
-					_log.info("Command: " + command);
+					Log.info("Command: " + command);
 				}
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
 			}
@@ -78,7 +79,7 @@ public class ChatAll implements IChatHandler
 			{
 				if (Config.DEBUG)
 				{
-					_log.warning("No handler registered for bypass '" + command + "'");
+					Log.warning("No handler registered for bypass '" + command + "'");
 				}
 				vcd_used = false;
 			}

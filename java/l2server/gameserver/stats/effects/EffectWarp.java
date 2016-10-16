@@ -41,7 +41,7 @@ import l2server.gameserver.util.Util;
  * if flyCourse = 360 or 0, player will be moved in in front of him. <br>
  * <br>
  * <p>
- * If target is effector, put in XML self = "1". This will make _actor =
+ * If target is effector, put in XML self = "1". This will make actor =
  * getEffector(). This, combined with target type, allows more complex actions
  * like flying target's backwards or player's backwards.<br>
  * <br>
@@ -51,7 +51,7 @@ import l2server.gameserver.util.Util;
 public class EffectWarp extends L2Effect
 {
 	private int x, y, z;
-	private L2Character _actor;
+	private L2Character actor;
 
 	public EffectWarp(Env env, L2EffectTemplate template)
 	{
@@ -64,30 +64,30 @@ public class EffectWarp extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		_actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
+		actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
 
-		if (_actor.isMovementDisabled())
+		if (actor.isMovementDisabled())
 		{
 			return false;
 		}
 
-		int _radius = getSkill().getFlyRadius();
+		int radius = getSkill().getFlyRadius();
 
-		double angle = Util.convertHeadingToDegree(_actor.getHeading());
+		double angle = Util.convertHeadingToDegree(actor.getHeading());
 		double radian = Math.toRadians(angle);
 		double course = Math.toRadians(getSkill().getFlyCourse());
 
 		float x1 = (float) Math.cos(Math.PI + radian + course);
 		float y1 = (float) Math.sin(Math.PI + radian + course);
 
-		x = _actor.getX() + (int) (x1 * _radius);
-		y = _actor.getY() + (int) (y1 * _radius);
-		z = _actor.getZ();
+		x = actor.getX() + (int) (x1 * radius);
+		y = actor.getY() + (int) (y1 * radius);
+		z = actor.getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(_actor.getX(), _actor.getY(), _actor.getZ(), x, y, z, _actor.getInstanceId());
+					.moveCheck(actor.getX(), actor.getY(), actor.getZ(), x, y, z, actor.getInstanceId());
 			if (destiny.getX() != x || destiny.getY() != y)
 			{
 				x = destiny.getX() - (int) (x1 * 10);
@@ -98,14 +98,14 @@ public class EffectWarp extends L2Effect
 
 		// TODO: check if this AI intention is retail-like. This stops player's
 		// previous movement
-		_actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 
-		_actor.broadcastPacket(new FlyToLocation(_actor, x, y, z, FlyType.DUMMY));
-		_actor.abortAttack();
-		_actor.abortCast();
+		actor.broadcastPacket(new FlyToLocation(actor, x, y, z, FlyType.DUMMY));
+		actor.abortAttack();
+		actor.abortCast();
 
-		_actor.setXYZ(x, y, z);
-		_actor.broadcastPacket(new ValidateLocation(_actor));
+		actor.setXYZ(x, y, z);
+		actor.broadcastPacket(new ValidateLocation(actor));
 
 		return true;
 	}

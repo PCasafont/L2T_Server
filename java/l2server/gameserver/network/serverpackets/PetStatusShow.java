@@ -25,19 +25,19 @@ import l2server.gameserver.model.actor.L2Summon;
  */
 public class PetStatusShow extends L2GameServerPacket
 {
-	private int _summonType;
-	private int _summonId;
+	private int summonType;
+	private int summonId;
 
 	public PetStatusShow(L2Summon summon)
 	{
-		_summonType = summon.getSummonType();
-		_summonId = summon.getObjectId();
+		this.summonType = summon.getSummonType();
+		this.summonId = summon.getObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_summonType);
-		writeD(_summonId);
+		writeD(this.summonType);
+		writeD(this.summonId);
 	}
 }

@@ -48,8 +48,8 @@ public final class TaskManager
 			"INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"
 	};
 
-	private final HashMap<Integer, Task> _tasks = new HashMap<>();
-	protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<>();
+	private final HashMap<Integer, Task> tasks = new HashMap<>();
+	protected final ArrayList<ExecutedTask> currentTasks = new ArrayList<>();
 
 	public class ExecutedTask implements Runnable
 	{
@@ -141,13 +141,13 @@ public final class TaskManager
 				scheduled.cancel(true);
 			}
 
-			_currentTasks.remove(this);
+			currentTasks.remove(this);
 		}
 	}
 
 	public static TaskManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private TaskManager()
@@ -178,9 +178,9 @@ public final class TaskManager
 	public void registerTask(Task task)
 	{
 		int key = task.getName().hashCode();
-		if (!_tasks.containsKey(key))
+		if (!this.tasks.containsKey(key))
 		{
-			_tasks.put(key, task);
+			this.tasks.put(key, task);
 			task.initialize();
 		}
 	}
@@ -196,7 +196,7 @@ public final class TaskManager
 
 			while (rset.next())
 			{
-				Task task = _tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
+				Task task = this.tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
 
 				if (task == null)
 				{
@@ -210,7 +210,7 @@ public final class TaskManager
 					ExecutedTask current = new ExecutedTask(task, type, rset);
 					if (launchTask(current))
 					{
-						_currentTasks.add(current);
+						this.currentTasks.add(current);
 					}
 				}
 			}
@@ -426,6 +426,6 @@ public final class TaskManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TaskManager _instance = new TaskManager();
+		protected static final TaskManager instance = new TaskManager();
 	}
 }

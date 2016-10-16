@@ -22,11 +22,11 @@ public class PcWarehouse extends Warehouse
 {
 	//
 
-	private L2PcInstance _owner;
+	private L2PcInstance owner;
 
 	public PcWarehouse(L2PcInstance owner)
 	{
-		_owner = owner;
+		this.owner = owner;
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class PcWarehouse extends Warehouse
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return _owner;
+		return this.owner;
 	}
 
 	@Override
@@ -64,6 +64,6 @@ public class PcWarehouse extends Warehouse
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return _items.size() + slots <= _owner.getWareHouseLimit();
+		return this.items.size() + slots <= this.owner.getWareHouseLimit();
 	}
 }

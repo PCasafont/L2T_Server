@@ -15,6 +15,9 @@
 
 package handlers.targethandlers;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
@@ -33,9 +36,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillTargetDirection;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Used by all skills that affects friendly players.

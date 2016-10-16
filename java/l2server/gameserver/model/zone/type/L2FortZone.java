@@ -28,7 +28,7 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  */
 public class L2FortZone extends L2SpawnZone
 {
-	private int _fortId;
+	private int fortId;
 
 	public L2FortZone(int id)
 	{
@@ -40,7 +40,7 @@ public class L2FortZone extends L2SpawnZone
 	{
 		if (name.equals("fortId"))
 		{
-			_fortId = Integer.parseInt(value);
+			this.fortId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -82,7 +82,7 @@ public class L2FortZone extends L2SpawnZone
 	 */
 	public void banishForeigners(L2Clan owningClan)
 	{
-		for (L2Character temp : _characterList.values())
+		for (L2Character temp : this.characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -100,6 +100,6 @@ public class L2FortZone extends L2SpawnZone
 
 	public int getFortId()
 	{
-		return _fortId;
+		return this.fortId;
 	}
 }

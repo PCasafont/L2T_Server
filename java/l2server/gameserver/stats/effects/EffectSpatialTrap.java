@@ -25,9 +25,9 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectSpatialTrap extends L2Effect
 {
-	private int _trapX;
-	private int _trapY;
-	private int _trapZ;
+	private int trapX;
+	private int trapY;
+	private int trapZ;
 
 	public EffectSpatialTrap(Env env, L2EffectTemplate template)
 	{
@@ -51,9 +51,9 @@ public class EffectSpatialTrap extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		_trapX = getEffector().getX();
-		_trapY = getEffector().getY();
-		_trapZ = getEffector().getZ();
+		this.trapX = getEffector().getX();
+		this.trapY = getEffector().getY();
+		this.trapZ = getEffector().getZ();
 
 		return true;
 	}
@@ -69,16 +69,16 @@ public class EffectSpatialTrap extends L2Effect
 
 	public final int getTrapX()
 	{
-		return _trapX;
+		return this.trapX;
 	}
 
 	public final int getTrapY()
 	{
-		return _trapY;
+		return this.trapY;
 	}
 
 	public final int getTrapZ()
 	{
-		return _trapZ;
+		return this.trapZ;
 	}
 }

@@ -26,12 +26,12 @@ import l2server.gameserver.templates.StatsSet;
  */
 public final class L2EtcItem extends L2Item
 {
-	// private final String[] _skill;
-	private String _handler;
-	private final int _sharedReuseGroup;
-	private L2EtcItemType _type;
-	private final boolean _isBlessed;
-	private L2ExtractableProduct[] _extractableItems = null;
+	// private final String[] skill;
+	private String handler;
+	private final int sharedReuseGroup;
+	private L2EtcItemType type;
+	private final boolean isBlessed;
+	private L2ExtractableProduct[] extractableItems = null;
 
 	/**
 	 * Constructor for EtcItem.
@@ -42,7 +42,7 @@ public final class L2EtcItem extends L2Item
 	public L2EtcItem(StatsSet set)
 	{
 		super(set);
-		_type = L2EtcItemType.valueOf(set.getString("etcitemType", "none").toUpperCase());
+		this.type = L2EtcItemType.valueOf(set.getString("etcitemType", "none").toUpperCase());
 
 		// l2j custom - L2EtcItemType.SHOT
 		switch (getDefaultAction())
@@ -52,46 +52,46 @@ public final class L2EtcItem extends L2Item
 			case summon_spiritshot:
 			case spiritshot:
 			{
-				_type = L2EtcItemType.SHOT;
+				this.type = L2EtcItemType.SHOT;
 				break;
 			}
 		}
 
 		if (is_ex_immediate_effect())
 		{
-			_type = L2EtcItemType.HERB;
+			this.type = L2EtcItemType.HERB;
 		}
 
-		_type1 = L2Item.TYPE1_ITEM_QUESTITEM_ADENA;
-		_type2 = L2Item.TYPE2_OTHER; // default is other
+		this.type1 = L2Item.TYPE1_ITEM_QUESTITEM_ADENA;
+		this.type2 = L2Item.TYPE2_OTHER; // default is other
 
 		if (isQuestItem())
 		{
-			_type2 = L2Item.TYPE2_QUEST;
+			this.type2 = L2Item.TYPE2_QUEST;
 		}
 		else if (getItemId() == PcInventory.ADENA_ID || getItemId() == PcInventory.ANCIENT_ADENA_ID)
 		{
-			_type2 = L2Item.TYPE2_MONEY;
+			this.type2 = L2Item.TYPE2_MONEY;
 		}
 
-		_handler = set.getString("handler", null); // ! null !
-		_sharedReuseGroup = set.getInteger("sharedReuseGroup", -1);
-		_isBlessed = set.getBool("blessed", false);
+		this.handler = set.getString("handler", null); // ! null !
+		this.sharedReuseGroup = set.getInteger("sharedReuseGroup", -1);
+		this.isBlessed = set.getBool("blessed", false);
 	}
 
 	public void attach(L2ExtractableProduct product)
 	{
-		if (_extractableItems == null)
+		if (this.extractableItems == null)
 		{
-			_extractableItems = new L2ExtractableProduct[]{product};
+			this.extractableItems = new L2ExtractableProduct[]{product};
 		}
 		else
 		{
-			int len = _extractableItems.length;
+			int len = this.extractableItems.length;
 			L2ExtractableProduct[] tmp = new L2ExtractableProduct[len + 1];
-			System.arraycopy(_extractableItems, 0, tmp, 0, len);
+			System.arraycopy(this.extractableItems, 0, tmp, 0, len);
 			tmp[len] = product;
-			_extractableItems = tmp;
+			this.extractableItems = tmp;
 		}
 	}
 
@@ -103,7 +103,7 @@ public final class L2EtcItem extends L2Item
 	@Override
 	public L2EtcItemType getItemType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	/**
@@ -136,7 +136,7 @@ public final class L2EtcItem extends L2Item
 	 */
 	public String getHandlerName()
 	{
-		return _handler;
+		return this.handler;
 	}
 
 	/**
@@ -144,7 +144,7 @@ public final class L2EtcItem extends L2Item
 	 */
 	public int getSharedReuseGroup()
 	{
-		return _sharedReuseGroup;
+		return this.sharedReuseGroup;
 	}
 
 	/**
@@ -153,7 +153,7 @@ public final class L2EtcItem extends L2Item
 	@Override
 	public final boolean isBlessed()
 	{
-		return _isBlessed;
+		return this.isBlessed;
 	}
 
 	/**
@@ -161,6 +161,6 @@ public final class L2EtcItem extends L2Item
 	 */
 	public L2ExtractableProduct[] getExtractableItems()
 	{
-		return _extractableItems;
+		return this.extractableItems;
 	}
 }

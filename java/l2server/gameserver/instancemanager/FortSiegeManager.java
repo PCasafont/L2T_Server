@@ -38,10 +38,10 @@ public class FortSiegeManager
 
 	public static FortSiegeManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private List<FortSiege> _sieges;
+	private List<FortSiege> sieges;
 
 	public final void addSiegeSkills(L2PcInstance character)
 	{
@@ -151,20 +151,20 @@ public class FortSiegeManager
 
 	public final List<FortSiege> getSieges()
 	{
-		if (_sieges == null)
+		if (this.sieges == null)
 		{
-			_sieges = new ArrayList<>();
+			this.sieges = new ArrayList<>();
 		}
-		return _sieges;
+		return this.sieges;
 	}
 
 	public final void addSiege(FortSiege fortSiege)
 	{
-		if (_sieges == null)
+		if (this.sieges == null)
 		{
-			_sieges = new ArrayList<>();
+			this.sieges = new ArrayList<>();
 		}
-		_sieges.add(fortSiege);
+		this.sieges.add(fortSiege);
 	}
 
 	public boolean isCombat(int itemId)
@@ -246,50 +246,50 @@ public class FortSiegeManager
 
 	public static class SiegeSpawn
 	{
-		Location _location;
-		private int _npcId;
-		private int _heading;
-		private int _fortId;
-		private int _id;
+		Location location;
+		private int npcId;
+		private int heading;
+		private int fortId;
+		private int id;
 
 		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id)
 		{
-			_fortId = fort_id;
-			_location = new Location(x, y, z, heading);
-			_heading = heading;
-			_npcId = npc_id;
-			_id = id;
+			this.fortId = fort_id;
+			this.location = new Location(x, y, z, heading);
+			this.heading = heading;
+			this.npcId = npc_id;
+			this.id = id;
 		}
 
 		public int getFortId()
 		{
-			return _fortId;
+			return this.fortId;
 		}
 
 		public int getNpcId()
 		{
-			return _npcId;
+			return this.npcId;
 		}
 
 		public int getHeading()
 		{
-			return _heading;
+			return this.heading;
 		}
 
 		public int getId()
 		{
-			return _id;
+			return this.id;
 		}
 
 		public Location getLocation()
 		{
-			return _location;
+			return this.location;
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FortSiegeManager _instance = new FortSiegeManager();
+		protected static final FortSiegeManager instance = new FortSiegeManager();
 	}
 }

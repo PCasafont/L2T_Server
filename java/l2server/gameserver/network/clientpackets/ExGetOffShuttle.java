@@ -26,18 +26,18 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public class ExGetOffShuttle extends L2GameClientPacket
 {
-	private int _shuttleId;
-	private int _posX;
-	private int _posY;
-	private int _posZ;
+	private int shuttleId;
+	private int posX;
+	private int posY;
+	private int posZ;
 
 	@Override
 	protected void readImpl()
 	{
-		_shuttleId = readD();
-		_posX = readD();
-		_posY = readD();
-		_posZ = readD();
+		this.shuttleId = readD();
+		this.posX = readD();
+		this.posY = readD();
+		this.posZ = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class ExGetOffShuttle extends L2GameClientPacket
 			return;
 		}
 
-		L2Object obj = L2World.getInstance().findObject(_shuttleId);
+		L2Object obj = L2World.getInstance().findObject(this.shuttleId);
 		if (!(obj instanceof L2ShuttleInstance))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -63,6 +63,6 @@ public class ExGetOffShuttle extends L2GameClientPacket
 			return;
 		}
 
-		shuttle.oustPlayer(player, _posX, _posY, _posZ);
+		shuttle.oustPlayer(player, this.posX, this.posY, this.posZ);
 	}
 }

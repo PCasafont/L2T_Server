@@ -51,57 +51,57 @@ public class L2Abnormal
 		CREATED, ACTING, FINISHING
 	}
 
-	private static final Func[] _emptyFunctionSet = new Func[0];
+	private static final Func[] emptyFunctionSet = new Func[0];
 
-	//member _effector is the instance of L2Character that cast/used the spell/skill that is
+	//member this.effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
-	private final L2Character _effector;
+	private final L2Character effector;
 
-	//member _effected is the instance of L2Character that was affected
+	//member this.effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
-	private final L2Character _effected;
+	private final L2Character effected;
 
 	//the skill that was used.
-	private final L2Skill _skill;
+	private final L2Skill skill;
 
-	private final boolean _isHerbEffect;
+	private final boolean isHerbEffect;
 
 	//or the items that was used.
-	//private final L2Item _item;
+	//private final L2Item item;
 
 	// the current state
-	private AbnormalState _state;
+	private AbnormalState state;
 
 	// period, seconds
-	private final int _duration;
-	private int _periodStartTicks;
-	private int _periodFirstTime;
+	private final int duration;
+	private int periodStartTicks;
+	private int periodFirstTime;
 
-	private L2AbnormalTemplate _template;
+	private L2AbnormalTemplate template;
 
 	// function templates
-	private final FuncTemplate[] _funcTemplates;
+	private final FuncTemplate[] funcTemplates;
 
 	//initial count
-	private int _totalCount;
+	private int totalCount;
 	// counter
-	private int _count;
+	private int count;
 
 	// visual effect
-	private VisualEffect[] _visualEffect;
+	private VisualEffect[] visualEffect;
 	// show icon
-	private boolean _icon;
+	private boolean icon;
 	// is selfeffect ?
-	private boolean _isSelfEffect = false;
+	private boolean isSelfEffect = false;
 	// skill combo id
-	private int _comboId = 0;
+	private int comboId = 0;
 
 	public boolean preventExitUpdate;
-	private int _strikes = 0;
-	private int _blockedDamage = 0;
-	private int _debuffBlocks = 0;
+	private int strikes = 0;
+	private int blockedDamage = 0;
+	private int debuffBlocks = 0;
 
 	private final class AbnormalTask implements Runnable
 	{
@@ -110,8 +110,8 @@ public class L2Abnormal
 		{
 			try
 			{
-				_periodFirstTime = 0;
-				_periodStartTicks = TimeController.getGameTicks();
+				periodFirstTime = 0;
+				periodStartTicks = TimeController.getGameTicks();
 				scheduleEffect();
 			}
 			catch (Exception e)
@@ -121,24 +121,24 @@ public class L2Abnormal
 		}
 	}
 
-	private ScheduledFuture<?> _currentFuture;
+	private ScheduledFuture<?> currentFuture;
 
 	/**
 	 * The Identifier of the stack group
 	 */
-	private final String[] _stackType;
+	private final String[] stackType;
 
 	/**
 	 * The position of the effect in the stack group
 	 */
-	private final byte _stackLvl;
+	private final byte stackLvl;
 
-	private boolean _inUse = false;
-	private boolean _startConditionsCorrect = true;
+	private boolean inUse = false;
+	private boolean startConditionsCorrect = true;
 
-	private double _landRate;
+	private double landRate;
 
-	private L2Effect[] _effects;
+	private L2Effect[] effects;
 
 	/**
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font><br>
@@ -146,23 +146,23 @@ public class L2Abnormal
 	 */
 	public L2Abnormal(Env env, L2AbnormalTemplate template, L2Effect[] effects)
 	{
-		_state = AbnormalState.CREATED;
-		_skill = env.skill;
-		//_item = env._item == null ? null : env._item.getItem();
-		_template = template;
-		_effected = env.target;
-		_effector = env.player;
-		_funcTemplates = template.funcTemplates;
-		_count = template.counter;
-		_totalCount = _count;
+		this.state = AbnormalState.CREATED;
+		this.skill = env.skill;
+		//_item = env.item == null ? null : env.item.getItem();
+		this.template = template;
+		this.effected = env.target;
+		this.effector = env.player;
+		this.funcTemplates = template.funcTemplates;
+		this.count = template.counter;
+		this.totalCount = this.count;
 
-		// Support for retail herbs duration when _effected has a Summon
+		// Support for retail herbs duration when this.effected has a Summon
 		int temp = template.duration;
 
-		if (_skill.getId() > 2277 && _skill.getId() < 2286 || _skill.getId() >= 2512 && _skill.getId() <= 2514)
+		if (this.skill.getId() > 2277 && this.skill.getId() < 2286 || this.skill.getId() >= 2512 && this.skill.getId() <= 2514)
 		{
-			if (_effected instanceof L2SummonInstance ||
-					_effected instanceof L2PcInstance && !((L2PcInstance) _effected).getSummons().isEmpty())
+			if (this.effected instanceof L2SummonInstance ||
+					this.effected instanceof L2PcInstance && !((L2PcInstance) this.effected).getSummons().isEmpty())
 			{
 				temp /= 2;
 			}
@@ -173,19 +173,19 @@ public class L2Abnormal
 			temp *= 2;
 		}
 
-		_duration = temp;
-		_visualEffect = template.visualEffect;
-		_stackType = template.stackType;
-		_stackLvl = template.stackLvl;
-		_periodStartTicks = TimeController.getGameTicks();
-		_periodFirstTime = 0;
-		_icon = template.icon;
-		_landRate = template.landRate;
+		this.duration = temp;
+		this.visualEffect = template.visualEffect;
+		this.stackType = template.stackType;
+		this.stackLvl = template.stackLvl;
+		this.periodStartTicks = TimeController.getGameTicks();
+		this.periodFirstTime = 0;
+		this.icon = template.icon;
+		this.landRate = template.landRate;
 
-		_isHerbEffect = _skill.getName().contains("Herb");
-		_comboId = template.comboId;
+		this.isHerbEffect = this.skill.getName().contains("Herb");
+		this.comboId = template.comboId;
 
-		_effects = effects;
+		this.effects = effects;
 	}
 
 	/**
@@ -200,25 +200,25 @@ public class L2Abnormal
 	 */
 	protected L2Abnormal(Env env, L2Abnormal effect)
 	{
-		_template = effect._template;
-		_state = AbnormalState.CREATED;
-		_skill = env.skill;
-		_effected = env.target;
-		_effector = env.player;
-		_funcTemplates = _template.funcTemplates;
-		_count = effect.getCount();
-		_totalCount = _template.counter;
-		_duration = _template.duration;
-		_visualEffect = _template.visualEffect;
-		_stackType = _template.stackType;
-		_stackLvl = _template.stackLvl;
-		_periodStartTicks = effect.getPeriodStartTicks();
-		_periodFirstTime = effect.getTime();
-		_icon = _template.icon;
+		this.template = effect.template;
+		this.state = AbnormalState.CREATED;
+		this.skill = env.skill;
+		this.effected = env.target;
+		this.effector = env.player;
+		this.funcTemplates = this.template.funcTemplates;
+		this.count = effect.getCount();
+		this.totalCount = this.template.counter;
+		this.duration = this.template.duration;
+		this.visualEffect = this.template.visualEffect;
+		this.stackType = this.template.stackType;
+		this.stackLvl = this.template.stackLvl;
+		this.periodStartTicks = effect.getPeriodStartTicks();
+		this.periodFirstTime = effect.getTime();
+		this.icon = this.template.icon;
 
-		_isHerbEffect = _skill.getName().contains("Herb");
+		this.isHerbEffect = this.skill.getName().contains("Herb");
 
-		_comboId = effect._comboId;
+		this.comboId = effect.comboId;
 
 		/*
 		 * Commented out by DrHouse:
@@ -230,38 +230,38 @@ public class L2Abnormal
 
 	public int getCount()
 	{
-		return _count;
+		return this.count;
 	}
 
 	public int getTotalCount()
 	{
-		return _totalCount;
+		return this.totalCount;
 	}
 
 	public void setCount(int newcount)
 	{
-		_count = Math.min(newcount, _totalCount); // sanity check
+		this.count = Math.min(newcount, this.totalCount); // sanity check
 	}
 
 	public void setFirstTime(int newFirstTime)
 	{
-		_periodFirstTime = Math.min(newFirstTime, _duration);
-		_periodStartTicks -= _periodFirstTime * TimeController.TICKS_PER_SECOND;
+		this.periodFirstTime = Math.min(newFirstTime, this.duration);
+		this.periodStartTicks -= this.periodFirstTime * TimeController.TICKS_PER_SECOND;
 	}
 
 	public boolean getShowIcon()
 	{
-		return _icon;
+		return this.icon;
 	}
 
 	public int getDuration()
 	{
-		return _duration;
+		return this.duration;
 	}
 
 	public int getTime()
 	{
-		return (TimeController.getGameTicks() - _periodStartTicks) / TimeController.TICKS_PER_SECOND;
+		return (TimeController.getGameTicks() - this.periodStartTicks) / TimeController.TICKS_PER_SECOND;
 	}
 
 	/**
@@ -271,98 +271,98 @@ public class L2Abnormal
 	 */
 	public int getTaskTime()
 	{
-		if (_count == _totalCount)
+		if (this.count == this.totalCount)
 		{
 			return 0;
 		}
-		return Math.abs(_count - _totalCount + 1) * _duration + getTime() + 1;
+		return Math.abs(this.count - this.totalCount + 1) * this.duration + getTime() + 1;
 	}
 
 	public boolean getInUse()
 	{
-		return _inUse;
+		return this.inUse;
 	}
 
 	public boolean setInUse(boolean inUse)
 	{
-		_inUse = inUse;
-		if (_inUse)
+		this.inUse = inUse;
+		if (this.inUse)
 		{
-			_startConditionsCorrect = onStart();
+			this.startConditionsCorrect = onStart();
 		}
 		else
 		{
 			onExit();
 		}
 
-		return _startConditionsCorrect;
+		return this.startConditionsCorrect;
 	}
 
 	public String[] getStackType()
 	{
-		return _stackType;
+		return this.stackType;
 	}
 
 	public byte getStackLvl()
 	{
-		return _stackLvl;
+		return this.stackLvl;
 	}
 
 	public final L2Skill getSkill()
 	{
-		return _skill;
+		return this.skill;
 	}
 
 	public final L2Character getEffector()
 	{
-		return _effector;
+		return this.effector;
 	}
 
 	public final L2Character getEffected()
 	{
-		return _effected;
+		return this.effected;
 	}
 
 	public boolean isSelfEffect()
 	{
-		return _isSelfEffect;
+		return this.isSelfEffect;
 	}
 
 	public void setSelfEffect()
 	{
-		_isSelfEffect = true;
+		this.isSelfEffect = true;
 	}
 
 	public boolean isHerbEffect()
 	{
-		return _isHerbEffect;
+		return this.isHerbEffect;
 	}
 
 	private synchronized void startEffectTask()
 	{
-		if (_duration > 0)
+		if (this.duration > 0)
 		{
 			stopEffectTask();
-			final int initialDelay = Math.max((_duration - _periodFirstTime) * 1000, 5);
-			if (_count > 1)
+			final int initialDelay = Math.max((this.duration - this.periodFirstTime) * 1000, 5);
+			if (this.count > 1)
 			{
-				_currentFuture = ThreadPoolManager.getInstance()
-						.scheduleEffectAtFixedRate(new AbnormalTask(), initialDelay, _duration * 1000);
+				this.currentFuture = ThreadPoolManager.getInstance()
+						.scheduleEffectAtFixedRate(new AbnormalTask(), initialDelay, this.duration * 1000);
 			}
 			else
 			{
-				_currentFuture = ThreadPoolManager.getInstance().scheduleEffect(new AbnormalTask(), initialDelay);
+				this.currentFuture = ThreadPoolManager.getInstance().scheduleEffect(new AbnormalTask(), initialDelay);
 			}
 		}
-		if (_state == AbnormalState.ACTING)
+		if (this.state == AbnormalState.ACTING)
 		{
 			if (isSelfEffectType())
 			{
-				_effector.addEffect(this);
+				this.effector.addEffect(this);
 			}
 			else
 			{
-				_effected.addEffect(this);
+				this.effected.addEffect(this);
 			}
 		}
 	}
@@ -382,7 +382,7 @@ public class L2Abnormal
 	public final void exit(boolean preventUpdate)
 	{
 		preventExitUpdate = preventUpdate;
-		_state = AbnormalState.FINISHING;
+		this.state = AbnormalState.FINISHING;
 		scheduleEffect();
 	}
 
@@ -395,13 +395,13 @@ public class L2Abnormal
 	 */
 	public final synchronized void stopEffectTask()
 	{
-		if (_currentFuture != null)
+		if (this.currentFuture != null)
 		{
 			// Cancel the task
-			_currentFuture.cancel(false);
-			//ThreadPoolManager.getInstance().removeEffect(_currentTask);
+			this.currentFuture.cancel(false);
+			//ThreadPoolManager.getInstance().removeEffect(this.currentTask);
 
-			_currentFuture = null;
+			this.currentFuture = null;
 
 			if (isSelfEffectType() && getEffector() != null)
 			{
@@ -424,7 +424,7 @@ public class L2Abnormal
 			return getTemplate().effectType;
 		}
 
-		for (L2Effect e : _effects)
+		for (L2Effect e : this.effects)
 		{
 			if (e.getAbnormalType() != L2AbnormalType.NONE)
 			{
@@ -438,7 +438,7 @@ public class L2Abnormal
 	public long getEffectMask()
 	{
 		long mask = 0L;
-		for (L2Effect e : _effects)
+		for (L2Effect e : this.effects)
 		{
 			mask |= e.getEffectMask();
 		}
@@ -451,18 +451,18 @@ public class L2Abnormal
 	 */
 	public boolean onStart()
 	{
-		if (_visualEffect != null)
+		if (this.visualEffect != null)
 		{
-			for (VisualEffect ve : _visualEffect)
+			for (VisualEffect ve : this.visualEffect)
 			{
 				getEffected().startVisualEffect(ve);
 			}
 		}
 
 		boolean canStart = true;
-		boolean[] started = new boolean[_effects.length];
+		boolean[] started = new boolean[this.effects.length];
 		int i = 0;
-		for (L2Effect effect : _effects)
+		for (L2Effect effect : this.effects)
 		{
 			started[i] = effect.onStart();
 			if (!started[i])
@@ -476,7 +476,7 @@ public class L2Abnormal
 		if (!canStart)
 		{
 			i = 0;
-			for (L2Effect effect : _effects)
+			for (L2Effect effect : this.effects)
 			{
 				if (started[i])
 				{
@@ -486,17 +486,17 @@ public class L2Abnormal
 				i++;
 			}
 
-			if (_visualEffect != null)
+			if (this.visualEffect != null)
 			{
-				for (VisualEffect ve : _visualEffect)
+				for (VisualEffect ve : this.visualEffect)
 				{
 					getEffected().stopVisualEffect(ve);
 				}
 			}
 		}
 
-		_strikes = 0;
-		_debuffBlocks = 0;
+		this.strikes = 0;
+		this.debuffBlocks = 0;
 
 		return canStart;
 	}
@@ -506,14 +506,14 @@ public class L2Abnormal
 	 */
 	public void onExit()
 	{
-		for (L2Effect effect : _effects)
+		for (L2Effect effect : this.effects)
 		{
 			effect.onExit();
 		}
 
-		if (_visualEffect != null)
+		if (this.visualEffect != null)
 		{
-			for (VisualEffect ve : _visualEffect)
+			for (VisualEffect ve : this.visualEffect)
 			{
 				getEffected().stopVisualEffect(ve);
 			}
@@ -526,7 +526,7 @@ public class L2Abnormal
 	public boolean onActionTime()
 	{
 		boolean toReturn = true;
-		for (L2Effect effect : _effects)
+		for (L2Effect effect : this.effects)
 		{
 			if (!effect.onActionTime())
 			{
@@ -539,57 +539,57 @@ public class L2Abnormal
 
 	public final void scheduleEffect()
 	{
-		switch (_state)
+		switch (this.state)
 		{
 			case CREATED:
 			{
-				_state = AbnormalState.ACTING;
+				this.state = AbnormalState.ACTING;
 
-				if (_skill.isOffensive() && _icon && getEffected() instanceof L2PcInstance)
+				if (this.skill.isOffensive() && this.icon && getEffected() instanceof L2PcInstance)
 				{
 					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
-					smsg.addSkillName(_skill);
+					smsg.addSkillName(this.skill);
 					getEffected().sendPacket(smsg);
 				}
 
-				if (_duration != 0)
+				if (this.duration != 0)
 				{
 					startEffectTask();
 					return;
 				}
 				// effects not having count or period should start
-				_startConditionsCorrect = onStart();
+				this.startConditionsCorrect = onStart();
 			}
 			case ACTING:
 			{
-				if (_count > 0)
+				if (this.count > 0)
 				{
-					_count--;
+					this.count--;
 					if (getInUse())
 					{ // effect has to be in use
-						if (onActionTime() && _startConditionsCorrect && _count > 0)
+						if (onActionTime() && this.startConditionsCorrect && this.count > 0)
 						{
 							return; // false causes effect to finish right away
 						}
 					}
-					else if (_count > 0)
+					else if (this.count > 0)
 					{ // do not finish it yet, in case reactivated
 						return;
 					}
 				}
-				_state = AbnormalState.FINISHING;
+				this.state = AbnormalState.FINISHING;
 			}
 			case FINISHING:
 			{
 				//If the time left is equal to zero, send the message
-				if (_count == 0 && _icon && getEffected() instanceof L2PcInstance)
+				if (this.count == 0 && this.icon && getEffected() instanceof L2PcInstance)
 				{
 					SystemMessage smsg3 = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_WORN_OFF);
-					smsg3.addSkillName(_skill);
+					smsg3.addSkillName(this.skill);
 					getEffected().sendPacket(smsg3);
 				}
 				// if task is null - stopEffectTask does not remove effect
-				if (_currentFuture == null && getEffected() != null)
+				if (this.currentFuture == null && getEffected() != null)
 				{
 					getEffected().removeEffect(this);
 				}
@@ -597,33 +597,33 @@ public class L2Abnormal
 				stopEffectTask();
 
 				// Cancel the effect in the the abnormal effect map of the L2Character
-				if (getInUse() || !(_count > 1 || _duration > 0))
+				if (getInUse() || !(this.count > 1 || this.duration > 0))
 				{
-					if (_startConditionsCorrect)
+					if (this.startConditionsCorrect)
 					{
 						onExit();
 					}
 				}
 
-				if (_skill.getAfterEffectId() > 0)
+				if (this.skill.getAfterEffectId() > 0)
 				{
 					L2Skill skill =
-							SkillTable.getInstance().getInfo(_skill.getAfterEffectId(), _skill.getAfterEffectLvl());
+							SkillTable.getInstance().getInfo(this.skill.getAfterEffectId(), this.skill.getAfterEffectLvl());
 					if (skill != null)
 					{
 						getEffected().broadcastPacket(
-								new MagicSkillUse(_effected, skill.getId(), skill.getLevelHash(), 0, 0));
+								new MagicSkillUse(this.effected, skill.getId(), skill.getLevelHash(), 0, 0));
 						getEffected().broadcastPacket(
-								new MagicSkillLaunched(_effected, skill.getId(), skill.getLevelHash()));
+								new MagicSkillLaunched(this.effected, skill.getId(), skill.getLevelHash()));
 						skill.getEffects(getEffected(), getEffected());
 					}
 				}
 
-				if (_skill.getId() == 14571 && getEffected() instanceof L2PcInstance)
+				if (this.skill.getId() == 14571 && getEffected() instanceof L2PcInstance)
 				{
 					((L2PcInstance) getEffected()).decreaseBreathOfShilenDebuffLevel();
 				}
-				if (_skill.getId() == 1570 && getEffected() instanceof L2PcInstance &&
+				if (this.skill.getId() == 1570 && getEffected() instanceof L2PcInstance &&
 						((L2PcInstance) getEffected()).hasIdentityCrisis())
 				{
 					((L2PcInstance) getEffected()).setHasIdentityCrisis(false);
@@ -634,11 +634,11 @@ public class L2Abnormal
 
 	public Func[] getStatFuncs()
 	{
-		if (_funcTemplates == null)
+		if (this.funcTemplates == null)
 		{
-			return _emptyFunctionSet;
+			return this.emptyFunctionSet;
 		}
-		ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
+		ArrayList<Func> funcs = new ArrayList<>(this.funcTemplates.length);
 
 		Env env = new Env();
 		env.player = getEffector();
@@ -646,7 +646,7 @@ public class L2Abnormal
 		env.skill = getSkill();
 		Func f;
 
-		for (FuncTemplate t : _funcTemplates)
+		for (FuncTemplate t : this.funcTemplates)
 		{
 			f = t.getFunc(this); // effect is owner
 			if (f != null)
@@ -656,7 +656,7 @@ public class L2Abnormal
 		}
 		if (funcs.isEmpty())
 		{
-			return _emptyFunctionSet;
+			return this.emptyFunctionSet;
 		}
 
 		return funcs.toArray(new Func[funcs.size()]);
@@ -664,12 +664,12 @@ public class L2Abnormal
 
 	public final void addIcon(AbnormalStatusUpdate mi)
 	{
-		if (_state != AbnormalState.ACTING)
+		if (this.state != AbnormalState.ACTING)
 		{
 			return;
 		}
 
-		final ScheduledFuture<?> future = _currentFuture;
+		final ScheduledFuture<?> future = this.currentFuture;
 		final L2Skill sk = getSkill();
 
 		int levelHash = getLevelHash();
@@ -677,31 +677,31 @@ public class L2Abnormal
 		{
 			levelHash = getLevel();
 		}
-		if (_totalCount > 1)
+		if (this.totalCount > 1)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId,
-					(_count - 1) * _duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS));
+			mi.addEffect(sk.getId(), levelHash, this.comboId,
+					(this.count - 1) * this.duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS));
 		}
 		else if (future != null)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId, (int) future.getDelay(TimeUnit.MILLISECONDS));
+			mi.addEffect(sk.getId(), levelHash, this.comboId, (int) future.getDelay(TimeUnit.MILLISECONDS));
 		}
-		else if (_duration == -1)
+		else if (this.duration == -1)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId, _duration);
+			mi.addEffect(sk.getId(), levelHash, this.comboId, this.duration);
 		}
 	}
 
 	public final void addIcon(AbnormalStatusUpdateFromTarget mi)
 	{
-		if (_state != AbnormalState.ACTING)
+		if (this.state != AbnormalState.ACTING)
 		{
 			return;
 		}
 
-		final ScheduledFuture<?> future = _currentFuture;
+		final ScheduledFuture<?> future = this.currentFuture;
 		final L2Skill sk = getSkill();
-		if (sk == null || _effector == null || mi == null || future == null)
+		if (sk == null || this.effector == null || mi == null || future == null)
 		{
 			return;
 		}
@@ -711,58 +711,58 @@ public class L2Abnormal
 		{
 			levelHash = getLevel();
 		}
-		if (_totalCount > 1)
+		if (this.totalCount > 1)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId,
-					(_count - 1) * _duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS),
-					_effector.getObjectId());
+			mi.addEffect(sk.getId(), levelHash, this.comboId,
+					(this.count - 1) * this.duration * 1000 + (int) future.getDelay(TimeUnit.MILLISECONDS),
+					this.effector.getObjectId());
 		}
-		else if (_effector != null)
+		else if (this.effector != null)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId, (int) future.getDelay(TimeUnit.MILLISECONDS),
-					_effector.getObjectId());
+			mi.addEffect(sk.getId(), levelHash, this.comboId, (int) future.getDelay(TimeUnit.MILLISECONDS),
+					this.effector.getObjectId());
 		}
-		else if (_duration == -1)
+		else if (this.duration == -1)
 		{
-			mi.addEffect(sk.getId(), levelHash, _comboId, _duration, _effector.getObjectId());
+			mi.addEffect(sk.getId(), levelHash, this.comboId, this.duration, this.effector.getObjectId());
 		}
 	}
 
 	public final void addPartySpelledIcon(PartySpelled ps)
 	{
-		if (_state != AbnormalState.ACTING)
+		if (this.state != AbnormalState.ACTING)
 		{
 			return;
 		}
 
-		final ScheduledFuture<?> future = _currentFuture;
+		final ScheduledFuture<?> future = this.currentFuture;
 		final L2Skill sk = getSkill();
 		if (future != null)
 		{
 			ps.addPartySpelledEffect(sk.getId(), getLevelHash(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		}
-		else if (_duration == -1)
+		else if (this.duration == -1)
 		{
-			ps.addPartySpelledEffect(sk.getId(), getLevelHash(), _duration);
+			ps.addPartySpelledEffect(sk.getId(), getLevelHash(), this.duration);
 		}
 	}
 
 	public final void addOlympiadSpelledIcon(ExOlympiadSpelledInfo os)
 	{
-		if (_state != AbnormalState.ACTING)
+		if (this.state != AbnormalState.ACTING)
 		{
 			return;
 		}
 
-		final ScheduledFuture<?> future = _currentFuture;
+		final ScheduledFuture<?> future = this.currentFuture;
 		final L2Skill sk = getSkill();
 		if (future != null)
 		{
 			os.addEffect(sk.getId(), getLevelHash(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		}
-		else if (_duration == -1)
+		else if (this.duration == -1)
 		{
-			os.addEffect(sk.getId(), getLevelHash(), _duration);
+			os.addEffect(sk.getId(), getLevelHash(), this.duration);
 		}
 	}
 
@@ -788,27 +788,27 @@ public class L2Abnormal
 
 	public int getPeriodStartTicks()
 	{
-		return _periodStartTicks;
+		return this.periodStartTicks;
 	}
 
 	public L2AbnormalTemplate getTemplate()
 	{
-		return _template;
+		return this.template;
 	}
 
 	public double getLandRate()
 	{
-		return _landRate;
+		return this.landRate;
 	}
 
 	public int getComboId()
 	{
-		return _comboId;
+		return this.comboId;
 	}
 
 	public L2Effect[] getEffects()
 	{
-		return _effects;
+		return this.effects;
 	}
 
 	public boolean canBeStolen()
@@ -837,7 +837,7 @@ public class L2Abnormal
 	 */
 	protected boolean effectCanBeStolen()
 	{
-		for (L2Effect effect : _effects)
+		for (L2Effect effect : this.effects)
 		{
 			if (!effect.effectCanBeStolen())
 			{
@@ -851,12 +851,12 @@ public class L2Abnormal
 	@Override
 	public String toString()
 	{
-		return "L2Effect [_skill=" + _skill + ", _state=" + _state + ", _duration=" + _duration + "]";
+		return "L2Effect [_skill=" + this.skill + ", _state=" + this.state + ", _duration=" + this.duration + "]";
 	}
 
 	public boolean isSelfEffectType()
 	{
-		for (L2Effect effect : _effects)
+		for (L2Effect effect : this.effects)
 		{
 			if (effect.isSelfEffectType())
 			{
@@ -871,14 +871,14 @@ public class L2Abnormal
 	{
 		if (damage > 0)
 		{
-			_strikes++;
-			_blockedDamage += damage;
+			this.strikes++;
+			this.blockedDamage += damage;
 		}
 
 		return getSkill().isRemovedOnDamage() || (getEffectMask() & L2EffectType.SLEEP.getMask()) != 0 ||
 				(getEffectMask() & L2EffectType.FEAR.getMask()) != 0 ||
-				getSkill().getStrikesToRemove() > 0 && (damage == 0 || _strikes >= getSkill().getStrikesToRemove()) ||
-				getSkill().getDamageToRemove() > 0 && (damage == 0 || _blockedDamage >= getSkill().getDamageToRemove());
+				getSkill().getStrikesToRemove() > 0 && (damage == 0 || this.strikes >= getSkill().getStrikesToRemove()) ||
+				getSkill().getDamageToRemove() > 0 && (damage == 0 || this.blockedDamage >= getSkill().getDamageToRemove());
 	}
 
 	public boolean isRemovedOnDebuffBlock(boolean onDebuffBlock)
@@ -887,8 +887,8 @@ public class L2Abnormal
 		{
 			if (onDebuffBlock && getSkill().getDebuffBlocksToRemove() > 0)
 			{
-				_debuffBlocks++;
-				return _debuffBlocks >= getSkill().getDebuffBlocksToRemove();
+				this.debuffBlocks++;
+				return this.debuffBlocks >= getSkill().getDebuffBlocksToRemove();
 			}
 
 			return true;

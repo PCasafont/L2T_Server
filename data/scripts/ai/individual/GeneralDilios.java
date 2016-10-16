@@ -15,6 +15,9 @@
 
 package ai.individual;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
@@ -23,9 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Dilios AI
@@ -37,8 +37,8 @@ public class GeneralDilios extends L2AttackableAIScript
 	private static final int generalId = 32549;
 	private static final int guardId = 32619;
 
-	private L2Npc _general;
-	private List<L2Npc> _guards = new ArrayList<L2Npc>();
+	private L2Npc general;
+	private List<L2Npc> guards = new ArrayList<L2Npc>();
 
 	private static final int[] diliosText = {
 			1800695,
@@ -58,7 +58,7 @@ public class GeneralDilios extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 		findNpcs();
-		if (_general == null || _guards.isEmpty())
+		if (this.general == null || this.guards.isEmpty())
 		{
 			throw new NullPointerException("Cannot find npcs!");
 		}
@@ -73,11 +73,11 @@ public class GeneralDilios extends L2AttackableAIScript
 			{
 				if (spawn.getNpcId() == generalId)
 				{
-					_general = spawn.getNpc();
+					this.general = spawn.getNpc();
 				}
 				else if (spawn.getNpcId() == guardId)
 				{
-					_guards.add(spawn.getNpc());
+					this.guards.add(spawn.getNpc());
 				}
 			}
 		}
@@ -91,22 +91,22 @@ public class GeneralDilios extends L2AttackableAIScript
 			int value = Integer.parseInt(event.substring(8));
 			if (value < 6)
 			{
-				_general.broadcastPacket(
-						new NpcSay(_general.getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
+				this.general.broadcastPacket(
+						new NpcSay(this.general.getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
 				startQuestTimer("guard_animation_0", 3400, null, null);
 			}
 			else
 			{
 				value = -1;
-				_general.broadcastPacket(
-						new NpcSay(_general.getObjectId(), 1, generalId, diliosText[Rnd.get(diliosText.length)]));
+				this.general.broadcastPacket(
+						new NpcSay(this.general.getObjectId(), 1, generalId, diliosText[Rnd.get(diliosText.length)]));
 			}
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}
 		else if (event.startsWith("guard_animation_"))
 		{
 			int value = Integer.parseInt(event.substring(16));
-			for (L2Npc guard : _guards)
+			for (L2Npc guard : this.guards)
 			{
 				guard.broadcastPacket(new SocialAction(guard.getObjectId(), 4));
 			}

@@ -22,15 +22,15 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class VehicleStarted extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _state;
+	private int objectId;
+	private int state;
 
 	/**
 	 */
 	public VehicleStarted(L2Character boat, int state)
 	{
-		_objectId = boat.getObjectId();
-		_state = state;
+		this.objectId = boat.getObjectId();
+		this.state = state;
 	}
 
 	/*
@@ -41,7 +41,7 @@ public class VehicleStarted extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_state);
+		writeD(this.objectId);
+		writeD(this.state);
 	}
 }

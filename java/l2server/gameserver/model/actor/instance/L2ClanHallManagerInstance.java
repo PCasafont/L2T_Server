@@ -42,7 +42,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	protected static final int COND_ALL_FALSE = 1;
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 2;
 	protected static final int COND_OWNER = 3;
-	private int _clanHallId = -1;
+	private int clanHallId = -1;
 
 	/**
 	 * @param objectId
@@ -1679,21 +1679,21 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	 */
 	public final ClanHall getClanHall()
 	{
-		if (_clanHallId < 0)
+		if (this.clanHallId < 0)
 		{
 			ClanHall temp = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
 
 			if (temp != null)
 			{
-				_clanHallId = temp.getId();
+				this.clanHallId = temp.getId();
 			}
 
-			if (_clanHallId < 0)
+			if (this.clanHallId < 0)
 			{
 				return null;
 			}
 		}
-		return ClanHallManager.getInstance().getClanHallById(_clanHallId);
+		return ClanHallManager.getInstance().getClanHallById(this.clanHallId);
 	}
 
 	private void doTeleport(L2PcInstance player, int val)

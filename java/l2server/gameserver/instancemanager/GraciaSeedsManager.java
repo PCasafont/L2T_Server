@@ -32,14 +32,14 @@ public class GraciaSeedsManager
 
 	// Seed of Destruction
 	private static final byte SODTYPE = 1;
-	private int _SoDTiatKilled = 0;
-	private int _SoDState = 1;
-	private Calendar _SoDLastStateChangeDate;
+	private int SoDTiatKilled = 0;
+	private int SoDState = 1;
+	private Calendar SoDLastStateChangeDate;
 
 	private GraciaSeedsManager()
 	{
 		Log.info(getClass().getSimpleName() + ": Initializing");
-		_SoDLastStateChangeDate = Calendar.getInstance();
+		this.SoDLastStateChangeDate = Calendar.getInstance();
 		loadData();
 		handleSodStages();
 	}
@@ -50,10 +50,10 @@ public class GraciaSeedsManager
 		{
 			case SODTYPE:
 				// Seed of Destruction
-				GlobalVariablesManager.getInstance().storeVariable("SoDState", String.valueOf(_SoDState));
-				GlobalVariablesManager.getInstance().storeVariable("SoDTiatKilled", String.valueOf(_SoDTiatKilled));
+				GlobalVariablesManager.getInstance().storeVariable("SoDState", String.valueOf(this.SoDState));
+				GlobalVariablesManager.getInstance().storeVariable("SoDTiatKilled", String.valueOf(this.SoDTiatKilled));
 				GlobalVariablesManager.getInstance()
-						.storeVariable("SoDLSCDate", String.valueOf(_SoDLastStateChangeDate.getTimeInMillis()));
+						.storeVariable("SoDLSCDate", String.valueOf(this.SoDLastStateChangeDate.getTimeInMillis()));
 				break;
 			case SOITYPE:
 				// Seed of Infinity
@@ -72,9 +72,9 @@ public class GraciaSeedsManager
 		// Seed of Destruction variables
 		if (GlobalVariablesManager.getInstance().isVariableStored("SoDState"))
 		{
-			_SoDState = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDState"));
-			_SoDTiatKilled = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDTiatKilled"));
-			_SoDLastStateChangeDate.setTimeInMillis(
+			this.SoDState = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDState"));
+			this.SoDTiatKilled = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("SoDTiatKilled"));
+			this.SoDLastStateChangeDate.setTimeInMillis(
 					Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("SoDLSCDate")));
 		}
 		else
@@ -86,14 +86,14 @@ public class GraciaSeedsManager
 
 	private void handleSodStages()
 	{
-		switch (_SoDState)
+		switch (this.SoDState)
 		{
 			case 1:
 				// do nothing, players should kill Tiat a few times
 				break;
 			case 2:
 				// Conquest Complete state, if too much time is passed than change to defense state
-				long timePast = System.currentTimeMillis() - _SoDLastStateChangeDate.getTimeInMillis();
+				long timePast = System.currentTimeMillis() - this.SoDLastStateChangeDate.getTimeInMillis();
 				if (timePast >= Config.SOD_STAGE_2_LENGTH)
 				// change to Attack state because Defend statet is not implemented
 				{
@@ -121,16 +121,16 @@ public class GraciaSeedsManager
 				setSoDState(1, true);
 				break;
 			default:
-				Log.warning("GraciaSeedManager: Unknown Seed of Destruction state(" + _SoDState + ")! ");
+				Log.warning("GraciaSeedManager: Unknown Seed of Destruction state(" + this.SoDState + ")! ");
 		}
 	}
 
 	public void increaseSoDTiatKilled()
 	{
-		if (_SoDState == 1)
+		if (this.SoDState == 1)
 		{
-			_SoDTiatKilled++;
-			if (_SoDTiatKilled >= Config.SOD_TIAT_KILL_COUNT)
+			this.SoDTiatKilled++;
+			if (this.SoDTiatKilled >= Config.SOD_TIAT_KILL_COUNT)
 			{
 				setSoDState(2, false);
 			}
@@ -149,18 +149,18 @@ public class GraciaSeedsManager
 
 	public int getSoDTiatKilled()
 	{
-		return _SoDTiatKilled;
+		return this.SoDTiatKilled;
 	}
 
 	public void setSoDState(int value, boolean doSave)
 	{
 		Log.info("GraciaSeedManager: New Seed of Destruction state -> " + value + ".");
-		_SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
-		_SoDState = value;
+		this.SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
+		this.SoDState = value;
 		// reset number of Tiat kills
-		if (_SoDState == 1)
+		if (this.SoDState == 1)
 		{
-			_SoDTiatKilled = 0;
+			this.SoDTiatKilled = 0;
 		}
 
 		handleSodStages();
@@ -173,12 +173,12 @@ public class GraciaSeedsManager
 
 	public long getSoDTimeForNextStateChange()
 	{
-		switch (_SoDState)
+		switch (this.SoDState)
 		{
 			case 1:
 				return -1;
 			case 2:
-				return _SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH -
+				return this.SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH -
 						System.currentTimeMillis();
 			case 3:
 				// not implemented yet
@@ -191,21 +191,21 @@ public class GraciaSeedsManager
 
 	public Calendar getSoDLastStateChangeDate()
 	{
-		return _SoDLastStateChangeDate;
+		return this.SoDLastStateChangeDate;
 	}
 
 	public int getSoDState()
 	{
-		return _SoDState;
+		return this.SoDState;
 	}
 
 	public static GraciaSeedsManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final GraciaSeedsManager _instance = new GraciaSeedsManager();
+		protected static final GraciaSeedsManager instance = new GraciaSeedsManager();
 	}
 }

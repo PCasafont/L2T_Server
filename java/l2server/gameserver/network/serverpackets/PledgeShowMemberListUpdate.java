@@ -24,68 +24,68 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 {
-	private int _pledgeType;
-	private int _hasSponsor;
-	private String _name;
-	private int _level;
-	private int _classId;
-	private int _objectId;
-	private boolean _isOnline;
-	private int _race;
-	private int _sex;
+	private int pledgeType;
+	private int hasSponsor;
+	private String name;
+	private int level;
+	private int classId;
+	private int objectId;
+	private boolean isOnline;
+	private int race;
+	private int sex;
 
 	public PledgeShowMemberListUpdate(L2PcInstance player)
 	{
-		_pledgeType = player.getPledgeType();
-		if (_pledgeType == L2Clan.SUBUNIT_ACADEMY)
+		this.pledgeType = player.getPledgeType();
+		if (this.pledgeType == L2Clan.SUBUNIT_ACADEMY)
 		{
-			_hasSponsor = player.getSponsor() != 0 ? 1 : 0;
+			this.hasSponsor = player.getSponsor() != 0 ? 1 : 0;
 		}
 		else
 		{
-			_hasSponsor = 0;
+			this.hasSponsor = 0;
 		}
-		_name = player.getName();
-		_level = player.getLevel();
-		_classId = player.getCurrentClass().getId();
-		_race = player.getRace().ordinal();
-		_sex = player.getAppearance().getSex() ? 1 : 0;
-		_objectId = player.getObjectId();
-		_isOnline = player.isOnline();
+		this.name = player.getName();
+		this.level = player.getLevel();
+		this.classId = player.getCurrentClass().getId();
+		this.race = player.getRace().ordinal();
+		this.sex = player.getAppearance().getSex() ? 1 : 0;
+		this.objectId = player.getObjectId();
+		this.isOnline = player.isOnline();
 	}
 
 	public PledgeShowMemberListUpdate(L2ClanMember member)
 	{
-		_name = member.getName();
-		_level = member.getLevel();
-		_classId = member.getCurrentClass();
-		_objectId = member.getObjectId();
-		_isOnline = member.isOnline();
-		_pledgeType = member.getPledgeType();
-		_race = member.getRaceOrdinal();
-		_sex = member.getSex() ? 1 : 0;
-		if (_pledgeType == L2Clan.SUBUNIT_ACADEMY)
+		this.name = member.getName();
+		this.level = member.getLevel();
+		this.classId = member.getCurrentClass();
+		this.objectId = member.getObjectId();
+		this.isOnline = member.isOnline();
+		this.pledgeType = member.getPledgeType();
+		this.race = member.getRaceOrdinal();
+		this.sex = member.getSex() ? 1 : 0;
+		if (this.pledgeType == L2Clan.SUBUNIT_ACADEMY)
 		{
-			_hasSponsor = member.getSponsor() != 0 ? 1 : 0;
+			this.hasSponsor = member.getSponsor() != 0 ? 1 : 0;
 		}
 		else
 		{
-			_hasSponsor = 0;
+			this.hasSponsor = 0;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_name);
-		writeD(_level);
-		writeD(_classId);
-		writeD(_sex);
-		writeD(_race);
-		if (_isOnline)
+		writeS(this.name);
+		writeD(this.level);
+		writeD(this.classId);
+		writeD(this.sex);
+		writeD(this.race);
+		if (this.isOnline)
 		{
-			writeD(_objectId);
-			writeD(_pledgeType);
+			writeD(this.objectId);
+			writeD(this.pledgeType);
 		}
 		else
 		{
@@ -93,6 +93,6 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 			writeD(0);
 			writeD(0);
 		}
-		writeD(_hasSponsor);
+		writeD(this.hasSponsor);
 	}
 }

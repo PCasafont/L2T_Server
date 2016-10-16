@@ -142,12 +142,12 @@ public class PartySearchManager
 
 	public static PartySearchManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PartySearchManager _instance = new PartySearchManager();
+		protected static final PartySearchManager instance = new PartySearchManager();
 	}
 }

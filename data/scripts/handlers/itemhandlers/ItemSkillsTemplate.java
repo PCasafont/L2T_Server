@@ -15,6 +15,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.Map;
+
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -29,8 +31,7 @@ import l2server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.item.L2EtcItemType;
-
-import java.util.Map;
+import l2server.log.Log;
 
 /**
  * Template for item skills handler
@@ -145,7 +146,7 @@ public class ItemSkillsTemplate implements IItemHandler
 							case 26026:
 							case 25000:
 							case 25001:
-								int buffId = activeChar._shortBuffTaskSkillId;
+								int buffId = activeChar.shortBuffTaskSkillId;
 								// greater healing potions
 								if (skillId == 2037 || skillId == 26025)
 								{
@@ -227,7 +228,7 @@ public class ItemSkillsTemplate implements IItemHandler
 		}
 		else
 		{
-			_log.info("Item " + item + " does not have registered any skill for handler.");
+			Log.info("Item " + item + " does not have registered any skill for handler.");
 		}
 	}
 

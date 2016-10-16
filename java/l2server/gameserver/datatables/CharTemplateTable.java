@@ -37,14 +37,14 @@ public final class CharTemplateTable implements Reloadable
 
 	public static CharTemplateTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private final L2PcTemplate[] _templates;
+	private final L2PcTemplate[] templates;
 
 	private CharTemplateTable()
 	{
-		_templates = new L2PcTemplate[Race.values().length * 2];
+		this.templates = new L2PcTemplate[Race.values().length * 2];
 		load();
 
 		ReloadableManager.getInstance().register("chartemplates", this);
@@ -142,13 +142,13 @@ public final class CharTemplateTable implements Reloadable
 									}
 								}
 
-								_templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
+								this.templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
 								count++;
 							}
 							else if (raceNode.getName().equalsIgnoreCase("skill"))
 							{
-								_templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								_templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
+								this.templates[raceId * 2].addSkill(raceNode.getInt("id"));
+								this.templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
 							}
 						}
 					}
@@ -160,7 +160,7 @@ public final class CharTemplateTable implements Reloadable
 
 						if (ItemTable.getInstance().getTemplate(itemId) != null)
 						{
-							for (L2PcTemplate pct : _templates)
+							for (L2PcTemplate pct : this.templates)
 							{
 								if (pct != null)
 								{
@@ -185,7 +185,7 @@ public final class CharTemplateTable implements Reloadable
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			player.setTemplate(_templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
+			player.setTemplate(this.templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;
@@ -199,12 +199,12 @@ public final class CharTemplateTable implements Reloadable
 
 	public L2PcTemplate getTemplate(int tId)
 	{
-		return _templates[tId];
+		return this.templates[tId];
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CharTemplateTable _instance = new CharTemplateTable();
+		protected static final CharTemplateTable instance = new CharTemplateTable();
 	}
 }

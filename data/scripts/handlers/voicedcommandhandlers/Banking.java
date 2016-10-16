@@ -26,7 +26,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class Banking implements IVoicedCommandHandler
 {
-	private static final String[] _voicedCommands = {"bank", "withdraw", "deposit"};
+	private static final String[] voicedCommands = {"bank", "withdraw", "deposit"};
 
 	/**
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
@@ -85,6 +85,6 @@ public class Banking implements IVoicedCommandHandler
 	@Override
 	public String[] getVoicedCommandList()
 	{
-		return _voicedCommands;
+		return this.voicedCommands;
 	}
 }

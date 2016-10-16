@@ -15,6 +15,9 @@
 
 package handlers.targethandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Object;
@@ -25,9 +28,6 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author One

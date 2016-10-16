@@ -29,7 +29,7 @@ import l2server.util.Rnd;
  */
 public class L2BlockInstance extends L2MonsterInstance
 {
-	private int _colorEffect;
+	private int colorEffect;
 
 	/**
 	 * @param objectId
@@ -52,10 +52,10 @@ public class L2BlockInstance extends L2MonsterInstance
 		// Do not update color while sending old info
 		synchronized (this)
 		{
-			if (_colorEffect == 0x53)
+			if (this.colorEffect == 0x53)
 			{
 				// Change color
-				_colorEffect = 0x00;
+				this.colorEffect = 0x00;
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this, attacker));
 				increaseTeamPointsAndSend(attacker, team, event);
@@ -63,7 +63,7 @@ public class L2BlockInstance extends L2MonsterInstance
 			else
 			{
 				// Change color
-				_colorEffect = 0x53;
+				this.colorEffect = 0x53;
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this, attacker));
 				increaseTeamPointsAndSend(attacker, team, event);
@@ -92,7 +92,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	 */
 	public void setRed(boolean isRed)
 	{
-		_colorEffect = isRed ? 0x53 : 0x00;
+		this.colorEffect = isRed ? 0x53 : 0x00;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	@Override
 	public int getColorEffect()
 	{
-		return _colorEffect;
+		return this.colorEffect;
 	}
 
 	@Override

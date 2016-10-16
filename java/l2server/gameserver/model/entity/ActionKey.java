@@ -20,12 +20,12 @@ package l2server.gameserver.model.entity;
  */
 public class ActionKey
 {
-	int _cat;
-	int _cmd;
-	int _key;
-	int _tgKey1;
-	int _tgKey2;
-	int _show;
+	private int cat;
+	private int cmd;
+	private int key;
+	private int tgKey1;
+	private int tgKey2;
+	private int show;
 
 	/**
 	 * L2ActionKey Initialization
@@ -39,47 +39,47 @@ public class ActionKey
 	 */
 	public ActionKey(int cat, int cmd, int key, int tgKey1, int tgKey2, int show)
 	{
-		_cat = cat;
-		_cmd = cmd;
-		_key = key;
-		_tgKey1 = tgKey1;
-		_tgKey2 = tgKey2;
-		_show = show;
+		this.cat = cat;
+		this.cmd = cmd;
+		this.key = key;
+		this.tgKey1 = tgKey1;
+		this.tgKey2 = tgKey2;
+		this.show = show;
 	}
 
 	public int getCategory()
 	{
-		return _cat;
+		return this.cat;
 	}
 
 	public int getCommandId()
 	{
-		return _cmd;
+		return this.cmd;
 	}
 
 	public int getKeyId()
 	{
-		return _key;
+		return this.key;
 	}
 
 	public int getToogleKey1()
 	{
-		return _tgKey1;
+		return this.tgKey1;
 	}
 
 	public int getToogleKey2()
 	{
-		return _tgKey2;
+		return this.tgKey2;
 	}
 
 	public int getShowStatus()
 	{
-		return _show;
+		return this.show;
 	}
 
 	public String getSqlSaveString(int playerId, int order)
 	{
-		return "(" + playerId + ", " + _cat + ", " + order + ", " + _cmd + "," + _key + ", " + _tgKey1 + ", " +
-				_tgKey2 + ", " + _show + ")";
+		return "(" + playerId + ", " + this.cat + ", " + order + ", " + this.cmd + "," + this.key + ", " + this.tgKey1 + ", " +
+				this.tgKey2 + ", " + this.show + ")";
 	}
 }

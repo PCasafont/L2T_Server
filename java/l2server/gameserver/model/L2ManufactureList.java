@@ -25,58 +25,58 @@ import java.util.List;
  */
 public class L2ManufactureList
 {
-	private List<L2ManufactureItem> _list;
-	private boolean _confirmed;
-	private String _manufactureStoreName;
+	private List<L2ManufactureItem> list;
+	private boolean confirmed;
+	private String manufactureStoreName;
 
 	public L2ManufactureList()
 	{
-		_list = new ArrayList<>();
-		_confirmed = false;
+		this.list = new ArrayList<>();
+		this.confirmed = false;
 	}
 
 	public int size()
 	{
-		return _list.size();
+		return this.list.size();
 	}
 
 	public void setConfirmedTrade(boolean x)
 	{
-		_confirmed = x;
+		this.confirmed = x;
 	}
 
 	public boolean hasConfirmed()
 	{
-		return _confirmed;
+		return this.confirmed;
 	}
 
 	/**
 	 */
 	public void setStoreName(String manufactureStoreName)
 	{
-		_manufactureStoreName = manufactureStoreName;
+		this.manufactureStoreName = manufactureStoreName;
 	}
 
 	/**
-	 * @return Returns the _manufactureStoreName.
+	 * @return Returns the this.manufactureStoreName.
 	 */
 	public String getStoreName()
 	{
-		return _manufactureStoreName;
+		return this.manufactureStoreName;
 	}
 
 	public void add(L2ManufactureItem item)
 	{
-		_list.add(item);
+		this.list.add(item);
 	}
 
 	public List<L2ManufactureItem> getList()
 	{
-		return _list;
+		return this.list;
 	}
 
 	public void setList(List<L2ManufactureItem> list)
 	{
-		_list = list;
+		this.list = list;
 	}
 }

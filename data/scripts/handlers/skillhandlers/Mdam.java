@@ -15,6 +15,10 @@
 
 package handlers.skillhandlers;
 
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -37,10 +41,6 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 /**
  * This class ...
  *
@@ -49,7 +49,7 @@ import java.util.logging.Logger;
 
 public class Mdam implements ISkillHandler
 {
-	private static final Logger _logDamage = Logger.getLogger("damage");
+	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MDAM, L2SkillType.DEATHLINK};
 
@@ -317,7 +317,7 @@ public class Mdam implements ISkillHandler
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("mdam");
-						_logDamage.log(record);
+						this.logDamage.log(record);
 					}
 				}
 			}

@@ -26,14 +26,14 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
 public final class RequestPledgeWarList extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _unk1;
-	private int _tab;
+	private int unk1;
+	private int tab;
 
 	@Override
 	protected void readImpl()
 	{
-		_unk1 = readD();
-		_tab = readD();
+		this.unk1 = readD();
+		this.tab = readD();
 	}
 
 	/**
@@ -54,6 +54,6 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 		}
 
 		//do we need powers to do that??
-		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), _tab));
+		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), this.tab));
 	}
 }

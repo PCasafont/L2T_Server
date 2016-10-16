@@ -27,15 +27,15 @@ import java.util.Map;
 
 public final class ExShowBeautyList extends L2GameServerPacket
 {
-	private long _adena;
-	private long _tickets;
-	private boolean _isFace;
+	private long adena;
+	private long tickets;
+	private boolean isFace;
 
 	public ExShowBeautyList(long adena, long tickets, boolean isFace)
 	{
-		_adena = adena;
-		_tickets = tickets;
-		_isFace = isFace;
+		this.adena = adena;
+		this.tickets = tickets;
+		this.isFace = isFace;
 	}
 
 	@Override
@@ -48,13 +48,13 @@ public final class ExShowBeautyList extends L2GameServerPacket
 			return;
 		}
 
-		writeQ(_adena);
-		writeQ(_tickets);
+		writeQ(this.adena);
+		writeQ(this.tickets);
 
-		writeD(_isFace ? 1 : 0);
+		writeD(this.isFace ? 1 : 0);
 
 		Map<Integer, BeautyInfo> styles = null;
-		if (!_isFace)
+		if (!this.isFace)
 		{
 			styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
 		}

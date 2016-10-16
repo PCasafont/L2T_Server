@@ -39,176 +39,176 @@ public class HeroInfo
 		public String result;
 	}
 
-	private final int _id;
-	private final String _name;
-	private final int _classId;
+	private final int id;
+	private final String name;
+	private final int classId;
 
-	private int _victories;
-	private int _defeats;
-	private int _draws;
+	private int victories;
+	private int defeats;
+	private int draws;
 
-	private int _count = 1;
-	private boolean _played = true;
-	private String _clanName = "";
-	private int _clanCrest = 0;
-	private String _allyName = "";
-	private int _allyCrest = 0;
+	private int count = 1;
+	private boolean played = true;
+	private String clanName = "";
+	private int clanCrest = 0;
+	private String allyName = "";
+	private int allyCrest = 0;
 
-	private String _message;
-	private List<DiaryEntry> _diary = new ArrayList<>();
-	private List<FightInfo> _fights = new ArrayList<>();
+	private String message;
+	private List<DiaryEntry> diary = new ArrayList<>();
+	private List<FightInfo> fights = new ArrayList<>();
 
 	public HeroInfo(OlympiadNobleInfo nobleInfo)
 	{
-		_id = nobleInfo.getId();
-		_name = nobleInfo.getName();
-		_classId = nobleInfo.getClassId();
-		_victories = nobleInfo.getVictories();
-		_defeats = nobleInfo.getDefeats();
-		_draws = nobleInfo.getDraws();
+		this.id = nobleInfo.getId();
+		this.name = nobleInfo.getName();
+		this.classId = nobleInfo.getClassId();
+		this.victories = nobleInfo.getVictories();
+		this.defeats = nobleInfo.getDefeats();
+		this.draws = nobleInfo.getDraws();
 	}
 
 	public HeroInfo(int id, String name, int classId, int count, boolean played)
 	{
-		_id = id;
-		_name = name;
-		_classId = classId;
-		_count = count;
-		_played = played;
+		this.id = id;
+		this.name = name;
+		this.classId = classId;
+		this.count = count;
+		this.played = played;
 	}
 
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	public String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public int getClassId()
 	{
-		return _classId;
+		return this.classId;
 	}
 
 	public int getVictories()
 	{
-		return _victories;
+		return this.victories;
 	}
 
 	public void setVictories(int victories)
 	{
-		_victories = victories;
+		this.victories = victories;
 	}
 
 	public int getDefeats()
 	{
-		return _defeats;
+		return this.defeats;
 	}
 
 	public void setDefeats(int defeats)
 	{
-		_defeats = defeats;
+		this.defeats = defeats;
 	}
 
 	public int getDraws()
 	{
-		return _draws;
+		return this.draws;
 	}
 
 	public void setDraws(int draws)
 	{
-		_draws = draws;
+		this.draws = draws;
 	}
 
 	public int getCount()
 	{
-		return _count;
+		return this.count;
 	}
 
 	public void increaseCount()
 	{
-		_count++;
+		this.count++;
 	}
 
 	public boolean getPlayed()
 	{
-		return _played;
+		return this.played;
 	}
 
 	public void setPlayed(boolean played)
 	{
-		_played = played;
+		this.played = played;
 	}
 
 	public String getClanName()
 	{
-		return _clanName;
+		return this.clanName;
 	}
 
 	public void setClanName(String clanName)
 	{
-		_clanName = clanName;
+		this.clanName = clanName;
 	}
 
 	public int getClanCrest()
 	{
-		return _clanCrest;
+		return this.clanCrest;
 	}
 
 	public void setClanCrest(int clanCrest)
 	{
-		_clanCrest = clanCrest;
+		this.clanCrest = clanCrest;
 	}
 
 	public String getAllyName()
 	{
-		return _allyName;
+		return this.allyName;
 	}
 
 	public void setAllyName(String allyName)
 	{
-		_allyName = allyName;
+		this.allyName = allyName;
 	}
 
 	public int getAllyCrest()
 	{
-		return _allyCrest;
+		return this.allyCrest;
 	}
 
 	public void setAllyCrest(int allyCrest)
 	{
-		_allyCrest = allyCrest;
+		this.allyCrest = allyCrest;
 	}
 
 	public String getMessage()
 	{
-		return _message;
+		return this.message;
 	}
 
 	public void setMessage(String message)
 	{
-		_message = message;
+		this.message = message;
 	}
 
 	public void addDiaryEntry(DiaryEntry entry)
 	{
-		_diary.add(entry);
+		this.diary.add(entry);
 	}
 
 	public List<DiaryEntry> getDiary()
 	{
-		return _diary;
+		return this.diary;
 	}
 
 	public void addFight(FightInfo fight)
 	{
-		_fights.add(fight);
+		this.fights.add(fight);
 	}
 
 	public List<FightInfo> getFights()
 	{
-		return _fights;
+		return this.fights;
 	}
 }

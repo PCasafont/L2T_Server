@@ -22,16 +22,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class TradeDone extends L2GameServerPacket
 {
-	private int _num;
+	private int num;
 
 	public TradeDone(int num)
 	{
-		_num = num;
+		this.num = num;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_num);
+		writeD(this.num);
 	}
 }

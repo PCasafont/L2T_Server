@@ -30,16 +30,16 @@ import java.util.logging.Logger;
  */
 public final class RequestGMCommand extends L2GameClientPacket
 {
-	static Logger _log = Logger.getLogger(RequestGMCommand.class.getName());
+	static Logger log = Logger.getLogger(RequestGMCommand.class.getName());
 
-	private String _targetName;
-	private int _command;
+	private String targetName;
+	private int command;
 
 	@Override
 	protected void readImpl()
 	{
-		_targetName = readS();
-		_command = readD();
+		this.targetName = readS();
+		this.command = readD();
 		//_unknown  = readD();
 	}
 
@@ -52,12 +52,12 @@ public final class RequestGMCommand extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance player = L2World.getInstance().getPlayer(_targetName);
+		L2PcInstance player = L2World.getInstance().getPlayer(this.targetName);
 		if (player == null)
 		{
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 			{
-				if (pl != null && pl.getName().equalsIgnoreCase(_targetName))
+				if (pl != null && pl.getName().equalsIgnoreCase(this.targetName))
 				{
 					player = pl;
 					break;
@@ -65,15 +65,15 @@ public final class RequestGMCommand extends L2GameClientPacket
 			}
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClanByName(_targetName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(this.targetName);
 
 		// player name was incorrect?
-		if (player == null && (clan == null || _command != 6))
+		if (player == null && (clan == null || this.command != 6))
 		{
 			return;
 		}
 
-		switch (_command)
+		switch (this.command)
 		{
 			case 1: // player status
 			{

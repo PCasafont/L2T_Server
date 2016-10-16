@@ -44,10 +44,10 @@ public class PcStat extends PlayableStat
 	// =========================================================
 	// Data Field
 
-	private int _oldMaxHp; // stats watch
-	private int _oldMaxMp; // stats watch
-	private int _oldMaxCp; // stats watch
-	private float _vitalityPoints = -1;
+	private int oldMaxHp; // stats watch
+	private int oldMaxMp; // stats watch
+	private int oldMaxCp; // stats watch
+	private float vitalityPoints = -1;
 
 	public static final int MAX_VITALITY_POINTS = 140000;
 	public static final int MIN_VITALITY_POINTS = 0;
@@ -186,7 +186,7 @@ public class PcStat extends PlayableStat
 		double bonusMultiplier = 1.0;
 		if (useBonuses)
 		{
-			if (Config.ENABLE_VITALITY && _vitalityPoints > 0)
+			if (Config.ENABLE_VITALITY && this.vitalityPoints > 0)
 			{
 				addToExp *= Config.VITALITY_MULTIPLIER;
 				addToSp *= Config.VITALITY_MULTIPLIER;
@@ -493,9 +493,9 @@ public class PcStat extends PlayableStat
 				PlayerStatDataTable.getInstance().getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()),
 				null, null);
 
-		if (val != _oldMaxCp)
+		if (val != this.oldMaxCp)
 		{
-			_oldMaxCp = val;
+			this.oldMaxCp = val;
 
 			// Launch a regen task if the new Max CP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentCp() != val)
@@ -522,9 +522,9 @@ public class PcStat extends PlayableStat
 				null, null);
 		int val = (int) calcStat(Stats.LIMIT_HP, maxHp, null, null);
 
-		if (val != _oldMaxHp)
+		if (val != this.oldMaxHp)
 		{
-			_oldMaxHp = val;
+			this.oldMaxHp = val;
 
 			// Launch a regen task if the new Max HP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentHp() != val)
@@ -564,9 +564,9 @@ public class PcStat extends PlayableStat
 				PlayerStatDataTable.getInstance().getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()),
 				null, null);
 
-		if (val != _oldMaxMp)
+		if (val != this.oldMaxMp)
 		{
-			_oldMaxMp = val;
+			this.oldMaxMp = val;
 
 			// Launch a regen task if the new Max MP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentMp() != val)
@@ -723,7 +723,7 @@ public class PcStat extends PlayableStat
 	 */
 	public int getVitalityPoints()
 	{
-		return (int) _vitalityPoints;
+		return (int) this.vitalityPoints;
 	}
 
 	/*
@@ -734,7 +734,7 @@ public class PcStat extends PlayableStat
 	public void setVitalityPoints(int points, boolean quiet, boolean allowGM)
 	{
 		points = Math.min(Math.max(points, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
-		if (points == _vitalityPoints)
+		if (points == this.vitalityPoints)
 		{
 			return;
 		}
@@ -744,7 +744,7 @@ public class PcStat extends PlayableStat
 			return;
 		}
 
-		_vitalityPoints = points;
+		this.vitalityPoints = points;
 	}
 
 	public synchronized void updateVitalityPoints(float points, boolean useRates, boolean quiet)
@@ -784,15 +784,15 @@ public class PcStat extends PlayableStat
 
 		if (points < 0)
 		{
-			points = Math.max(_vitalityPoints + points, MIN_VITALITY_POINTS);
+			points = Math.max(this.vitalityPoints + points, MIN_VITALITY_POINTS);
 		}
 
-		if (points == _vitalityPoints)
+		if (points == this.vitalityPoints)
 		{
 			return;
 		}
 
-		_vitalityPoints = points;
+		this.vitalityPoints = points;
 	}
 
 	@Override

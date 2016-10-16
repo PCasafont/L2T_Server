@@ -20,161 +20,161 @@ package l2server.gameserver.model.olympiad;
  */
 public class OlympiadNobleInfo
 {
-	private final int _id;
-	private final String _name;
-	private final int _classId;
+	private final int id;
+	private final String name;
+	private final int classId;
 
-	private int _points = Olympiad.DEFAULT_POINTS;
-	private int _matches = 0;
-	private int _victories = 0;
-	private int _defeats = 0;
-	private int _draws = 0;
-	private int _classedMatches = 0;
-	private int _nonClassedMatches = 0;
-	private boolean _settled = false;
+	private int points = Olympiad.DEFAULT_POINTS;
+	private int matches = 0;
+	private int victories = 0;
+	private int defeats = 0;
+	private int draws = 0;
+	private int classedMatches = 0;
+	private int nonClassedMatches = 0;
+	private boolean settled = false;
 
-	private boolean _toSave = false;
+	private boolean toSave = false;
 
 	public OlympiadNobleInfo(int id, String name, int classId)
 	{
-		_id = id;
-		_name = name;
-		_classId = classId;
-		_toSave = true;
+		this.id = id;
+		this.name = name;
+		this.classId = classId;
+		this.toSave = true;
 	}
 
 	public OlympiadNobleInfo(int id, String name, int classId, int points, int matches, int victories, int defeats, int draws, int classedMatches, int nonClassedMatches, boolean settled)
 	{
-		_id = id;
-		_name = name;
-		_classId = classId;
+		this.id = id;
+		this.name = name;
+		this.classId = classId;
 
-		_points = points;
-		_matches = matches;
-		_victories = victories;
-		_defeats = defeats;
-		_draws = draws;
-		_classedMatches = classedMatches;
-		_nonClassedMatches = nonClassedMatches;
-		_settled = settled;
+		this.points = points;
+		this.matches = matches;
+		this.victories = victories;
+		this.defeats = defeats;
+		this.draws = draws;
+		this.classedMatches = classedMatches;
+		this.nonClassedMatches = nonClassedMatches;
+		this.settled = settled;
 	}
 
 	public void addWeeklyPoints(int weeklyPoints)
 	{
-		_points += weeklyPoints;
+		this.points += weeklyPoints;
 
 		// Also reset the competitions that the player could do this week
-		_classedMatches = 0;
-		_nonClassedMatches = 0;
+		this.classedMatches = 0;
+		this.nonClassedMatches = 0;
 	}
 
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	public String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public int getClassId()
 	{
-		return _classId;
+		return this.classId;
 	}
 
 	public int getPoints()
 	{
-		return _points;
+		return this.points;
 	}
 
 	public void setPoints(int points)
 	{
-		_points = points;
+		this.points = points;
 	}
 
 	public void increaseMatches()
 	{
-		_matches++;
+		this.matches++;
 	}
 
 	public void increaseVictories()
 	{
-		_victories++;
+		this.victories++;
 	}
 
 	public void increaseDefeats()
 	{
-		_defeats++;
+		this.defeats++;
 	}
 
 	public void increaseDraws()
 	{
-		_draws++;
+		this.draws++;
 	}
 
 	public void increaseClassedMatches()
 	{
-		_classedMatches++;
+		this.classedMatches++;
 	}
 
 	public void increaseNonClassedMatches()
 	{
-		_nonClassedMatches++;
+		this.nonClassedMatches++;
 	}
 
 	public int getMatches()
 	{
-		return _matches;
+		return this.matches;
 	}
 
 	public int getVictories()
 	{
-		return _victories;
+		return this.victories;
 	}
 
 	public int getDefeats()
 	{
-		return _defeats;
+		return this.defeats;
 	}
 
 	public int getDraws()
 	{
-		return _draws;
+		return this.draws;
 	}
 
 	public int getClassedMatches()
 	{
-		return _classedMatches;
+		return this.classedMatches;
 	}
 
 	public int getNonClassedMatches()
 	{
-		return _nonClassedMatches;
+		return this.nonClassedMatches;
 	}
 
 	public int getMatchesThisWeek()
 	{
-		return _classedMatches + _nonClassedMatches;
+		return this.classedMatches + this.nonClassedMatches;
 	}
 
 	public boolean isSettled()
 	{
-		return _settled;
+		return this.settled;
 	}
 
 	public void setSettled(boolean settled)
 	{
-		_settled = settled;
+		this.settled = settled;
 	}
 
 	public boolean isToSave()
 	{
-		return _toSave;
+		return this.toSave;
 	}
 
 	public void setToSave(boolean toSave)
 	{
-		_toSave = toSave;
+		this.toSave = toSave;
 	}
 }

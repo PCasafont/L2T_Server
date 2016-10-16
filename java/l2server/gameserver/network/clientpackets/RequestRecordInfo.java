@@ -43,27 +43,27 @@ public class RequestRecordInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 
-		_activeChar.sendPacket(new UserInfo(_activeChar));
+		activeChar.sendPacket(new UserInfo(activeChar));
 
-		Collection<L2Object> objs = _activeChar.getKnownList().getKnownObjects().values();
-		//synchronized (_activeChar.getKnownList().getKnownObjects())
+		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
 			for (L2Object object : objs)
 			{
 				if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item"))
 				{
-					_activeChar.sendPacket(new SpawnItem(object));
+					activeChar.sendPacket(new SpawnItem(object));
 				}
 				else
 				{
-					object.sendInfo(_activeChar);
+					object.sendInfo(activeChar);
 
 					if (object instanceof L2Character)
 					{
@@ -74,7 +74,7 @@ public class RequestRecordInfo extends L2GameClientPacket
 						L2Character obj = (L2Character) object;
 						if (obj.getAI() != null)
 						{
-							obj.getAI().describeStateToPlayer(_activeChar);
+							obj.getAI().describeStateToPlayer(activeChar);
 						}
 					}
 				}

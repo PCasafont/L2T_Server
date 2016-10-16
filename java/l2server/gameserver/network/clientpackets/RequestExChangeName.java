@@ -25,9 +25,9 @@ import l2server.log.Log;
  */
 public class RequestExChangeName extends L2GameClientPacket
 {
-	private String _newName;
-	private int _type;
-	private int _charSlot;
+	private String newName;
+	private int type;
+	private int charSlot;
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -35,9 +35,9 @@ public class RequestExChangeName extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_type = readD();
-		_newName = readS();
-		_charSlot = readD();
+		this.type = readD();
+		this.newName = readS();
+		this.charSlot = readD();
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public class RequestExChangeName extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		Log.info("Recieved " + getType() + " name: " + _newName + " type: " + _type + " CharSlot: " + _charSlot);
+		Log.info("Recieved " + getType() + " name: " + this.newName + " type: " + this.type + " CharSlot: " + this.charSlot);
 	}
 }

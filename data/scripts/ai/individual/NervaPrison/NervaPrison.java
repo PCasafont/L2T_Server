@@ -15,6 +15,12 @@
 
 package ai.individual.NervaPrison;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.ZoneManager;
@@ -25,12 +31,6 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * @author LasTravel
@@ -44,23 +44,23 @@ import java.util.Map.Entry;
 
 public class NervaPrison extends L2AttackableAIScript
 {
-    private static final String _qn = "NervaPrison";
-    private static final int _doorNpc = 19459;
-    private static final int _kaysen = 19458;
-    private static final int _nervaKey = 36665;
-    private static final int _kaiser = 23329;
-    private static final Map<L2ZoneType, List<L2DoorInstance>> _prisons =
+    private static final String qn = "NervaPrison";
+    private static final int doorNpc = 19459;
+    private static final int kaysen = 19458;
+    private static final int nervaKey = 36665;
+    private static final int kaiser = 23329;
+    private static final Map<L2ZoneType, List<L2DoorInstance>> prisons =
             new HashMap<L2ZoneType, List<L2DoorInstance>>();
 
     public NervaPrison(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addTalkId(_doorNpc);
-        addStartNpc(_doorNpc);
-        addFirstTalkId(_kaysen);
-        addKillId(_kaiser);
-        addSpawnId(_kaysen);
+        addTalkId(this.doorNpc);
+        addStartNpc(this.doorNpc);
+        addFirstTalkId(this.kaysen);
+        addKillId(this.kaiser);
+        addSpawnId(this.kaysen);
 
         for (int i = 60052; i <= 60059; i++)
         {
@@ -74,21 +74,21 @@ public class NervaPrison extends L2AttackableAIScript
                 }
             }
 
-            _prisons.put(zone, doors);
+            this.prisons.put(zone, doors);
         }
     }
 
     @Override
     public String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (npc.getNpcId() == _doorNpc)
+        if (npc.getNpcId() == this.doorNpc)
         {
-            if (!player.destroyItemByItemId(_qn, _nervaKey, 1, player, true))
+            if (!player.destroyItemByItemId(this.qn, this.nervaKey, 1, player, true))
             {
                 return "19459-1.html";
             }
 
-            for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : _prisons.entrySet())
+            for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : this.prisons.entrySet())
             {
                 if (currentZone.getKey().isInsideZone(npc))
                 {
@@ -116,7 +116,7 @@ public class NervaPrison extends L2AttackableAIScript
     {
         if (!npc.isDead() && npc.isInsideRadius(player, 50, false, false))
         {
-            for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : _prisons.entrySet())
+            for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : this.prisons.entrySet())
             {
                 if (currentZone.getKey().isInsideZone(npc))
                 {
@@ -138,7 +138,7 @@ public class NervaPrison extends L2AttackableAIScript
             npc.deleteMe();
 
             L2MonsterInstance kaiser =
-                    (L2MonsterInstance) addSpawn(_kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000,
+                    (L2MonsterInstance) addSpawn(this.kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000,
                             false); //3min
             kaiser.setTarget(player);
             kaiser.addDamageHate(player, 500, 99999);
@@ -154,7 +154,7 @@ public class NervaPrison extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : _prisons.entrySet())
+        for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : this.prisons.entrySet())
         {
             if (currentZone.getKey().isInsideZone(npc))
             {
@@ -170,7 +170,7 @@ public class NervaPrison extends L2AttackableAIScript
     @Override
     public final String onSpawn(L2Npc npc)
     {
-        for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : _prisons.entrySet())
+        for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : this.prisons.entrySet())
         {
             if (currentZone.getKey().isInsideZone(npc))
             {
@@ -199,6 +199,6 @@ public class NervaPrison extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new NervaPrison(-1, _qn, "ai/individual");
+        new NervaPrison(-1, qn, "ai/individual");
     }
 }

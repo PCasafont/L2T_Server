@@ -15,6 +15,12 @@
 
 package handlers.admincommandhandlers;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.StringTokenizer;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.LoginServerThread;
@@ -24,12 +30,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.GMAudit;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.StringTokenizer;
 
 /**
  * This class handles following admin commands:

@@ -32,7 +32,7 @@ import l2server.loginserver.network.serverpackets.ServerList;
  */
 public class RequestAuthLogin2 extends L2LoginClientPacket
 {
-	private String _authKey;
+	private String authKey;
 
 	@Override
 	public boolean readImpl()
@@ -44,7 +44,7 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		readD(); // ???
 		readC(); // ???
 		readH(); // ???
-		_authKey = readString();
+		this.authKey = readString();
 		readC(); // ???
 		readH(); // ???
 		readD(); // ???
@@ -80,10 +80,10 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		/*try
 		{*/
 			AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
-			String user = lc.loginValid(_authKey, client);
+			String user = lc.loginValid(this.authKey, client);
 			if (user != null)
 			{
-				result = lc.tryAuthLogin(_authKey, client, user);
+				result = lc.tryAuthLogin(this.authKey, client, user);
 			}
 
 			switch (result)

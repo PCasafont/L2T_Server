@@ -24,26 +24,26 @@ package l2server.network;
  */
 public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPacket<T>
 {
-	protected T _writeClient;
+	protected T writeClient;
 
 	public final T getWriteClient()
 	{
-		return _writeClient;
+		return this.writeClient;
 	}
 
 	protected final void putInt(final int value)
 	{
-		_buf.putInt(value);
+		this.buf.putInt(value);
 	}
 
 	protected final void putDouble(final double value)
 	{
-		_buf.putDouble(value);
+		this.buf.putDouble(value);
 	}
 
 	protected final void putFloat(final float value)
 	{
-		_buf.putFloat(value);
+		this.buf.putFloat(value);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeC(final int data)
 	{
-		_buf.put((byte) data);
+		this.buf.put((byte) data);
 	}
 
 	/**
@@ -65,7 +65,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeF(final double value)
 	{
-		_buf.putDouble(value);
+		this.buf.putDouble(value);
 	}
 
 	/**
@@ -76,7 +76,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeFl(final float value)
 	{
-		_buf.putFloat(value);
+		this.buf.putFloat(value);
 	}
 
 	/**
@@ -87,7 +87,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeH(final int value)
 	{
-		_buf.putShort((short) value);
+		this.buf.putShort((short) value);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeD(final int value)
 	{
-		_buf.putInt(value);
+		this.buf.putInt(value);
 	}
 
 	/**
@@ -109,7 +109,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeQ(final long value)
 	{
-		_buf.putLong(value);
+		this.buf.putLong(value);
 	}
 
 	/**
@@ -120,7 +120,7 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 */
 	protected final void writeB(final byte[] data)
 	{
-		_buf.put(data);
+		this.buf.put(data);
 	}
 
 	/**
@@ -135,11 +135,11 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 			final int len = text.length();
 			for (int i = 0; i < len; i++)
 			{
-				_buf.putChar(text.charAt(i));
+				this.buf.putChar(text.charAt(i));
 			}
 		}
 
-		_buf.putChar('\000');
+		this.buf.putChar('\000');
 	}
 
 	protected abstract void write();

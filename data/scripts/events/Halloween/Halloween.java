@@ -1,5 +1,8 @@
 package events.Halloween;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.ItemTable;
@@ -15,13 +18,14 @@ import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2server.gameserver.network.serverpackets.Earthquake;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Halloween global thematic event.
@@ -475,12 +479,12 @@ public class Halloween extends Quest
 				count += round;
 			}
 
-			L2ItemInstance _item = null;
+			L2ItemInstance item = null;
 			for (int a = 1; a <= count; a++)
 			{
-				_item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
-				_item.setInstanceId(instanceId);
-				_item.dropMe(npc, npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ() + 50);
+				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
+				item.setInstanceId(instanceId);
+				item.dropMe(npc, npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ() + 50);
 			}
 		}
 
@@ -488,11 +492,11 @@ public class Halloween extends Quest
 		{
 			cancelQuestTimers("stop_event");
 
-			L2ItemInstance _item = null;
+			L2ItemInstance item = null;
 			for (int a = 1; a <= 2000; a++)
 			{
-				_item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
-				_item.dropMe(npc, npc.getX() + Rnd.get(500), npc.getY() + Rnd.get(500), npc.getZ() + 50);
+				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
+				item.dropMe(npc, npc.getX() + Rnd.get(500), npc.getY() + Rnd.get(500), npc.getZ() + 50);
 			}
 
 			InstanceManager.getInstance().finishInstance(instanceId, true);

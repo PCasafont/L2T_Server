@@ -31,7 +31,7 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class L2CloneInstance extends L2SummonInstance
 {
-	private ScheduledFuture<?> _cloneTask;
+	private ScheduledFuture<?> cloneTask;
 
 	public L2CloneInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
 	{
@@ -46,9 +46,9 @@ public class L2CloneInstance extends L2SummonInstance
 		super.onSpawn();
 
 		// Schedule the party look-up task every 60seconds.
-		if (_cloneTask == null)
+		if (this.cloneTask == null)
 		{
-			_cloneTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CloneTask(this), 1000, 1000);
+			this.cloneTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CloneTask(this), 1000, 1000);
 		}
 	}
 
@@ -67,10 +67,10 @@ public class L2CloneInstance extends L2SummonInstance
 		}
 
 		// Cancel the attackers-check task.
-		if (_cloneTask != null)
+		if (this.cloneTask != null)
 		{
-			_cloneTask.cancel(true);
-			_cloneTask = null;
+			this.cloneTask.cancel(true);
+			this.cloneTask = null;
 		}
 
 		return true;
@@ -79,10 +79,10 @@ public class L2CloneInstance extends L2SummonInstance
 	@Override
 	public void unSummon(L2PcInstance owner)
 	{
-		if (_cloneTask != null)
+		if (this.cloneTask != null)
 		{
-			_cloneTask.cancel(true);
-			_cloneTask = null;
+			this.cloneTask.cancel(true);
+			this.cloneTask = null;
 		}
 
 		super.unSummon(owner);
@@ -90,47 +90,47 @@ public class L2CloneInstance extends L2SummonInstance
 
 	private static final class CloneTask implements Runnable
 	{
-		private final L2CloneInstance _clone;
+		private final L2CloneInstance clone;
 
 		CloneTask(final L2CloneInstance clone)
 		{
-			_clone = clone;
+			this.clone = clone;
 		}
 
 		@Override
 		public final void run()
 		{
-			final L2PcInstance owner = _clone.getOwner();
+			final L2PcInstance owner = this.clone.getOwner();
 
-			if (!_clone.isVisible())
+			if (!this.clone.isVisible())
 			{
 				return;
 			}
 
 			if (owner.isAttackingNow())
 			{
-				if (owner.getTarget() != _clone.getTarget() || !_clone.isAttackingNow() && !_clone.isCastingNow())
+				if (owner.getTarget() != this.clone.getTarget() || !this.clone.isAttackingNow() && !this.clone.isCastingNow())
 				{
-					_clone.setTarget(owner.getTarget());
+					this.clone.setTarget(owner.getTarget());
 
-					if (_clone.getTarget() != null && _clone.getTarget().isAutoAttackable(owner))
+					if (this.clone.getTarget() != null && this.clone.getTarget().isAutoAttackable(owner))
 					{
-						_clone.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _clone.getTarget());
+						this.clone.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this.clone.getTarget());
 					}
 				}
 			}
-			else if (!_clone.isAttackingNow() && !_clone.isCastingNow())
+			else if (!this.clone.isAttackingNow() && !this.clone.isCastingNow())
 			{
-				_clone.followOwner();
+				this.clone.followOwner();
 			}
 
-			for (L2Skill skill : _clone.getAllSkills())
+			for (L2Skill skill : this.clone.getAllSkills())
 			{
 				if (Rnd.nextBoolean())
 				{
 					continue;
 				}
-				else if (_clone.isSkillDisabled(skill.getReuseHashCode()))
+				else if (this.clone.isSkillDisabled(skill.getReuseHashCode()))
 				{
 					continue;
 				}
@@ -142,9 +142,9 @@ public class L2CloneInstance extends L2SummonInstance
 					reuseDelay *= 2;
 				}
 
-				_clone.useMagic(skill, false, false);
+				this.clone.useMagic(skill, false, false);
 
-				_clone.disableSkill(skill, reuseDelay);
+				this.clone.disableSkill(skill, reuseDelay);
 			}
 		}
 	}

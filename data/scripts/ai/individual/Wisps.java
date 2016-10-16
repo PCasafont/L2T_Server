@@ -36,22 +36,22 @@ import l2server.gameserver.util.Util;
 
 public class Wisps extends L2AttackableAIScript
 {
-	private static final int _wisp = 32915;
-	private static final int _largeWisp = 32916;
-	private static final L2Skill _healSkill = SkillTable.getInstance().getInfo(14064, 1);
+	private static final int wisp = 32915;
+	private static final int largeWisp = 32916;
+	private static final L2Skill healSkill = SkillTable.getInstance().getInfo(14064, 1);
 
 	public Wisps(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addSpawnId(_wisp);
-		addSpawnId(_largeWisp);
+		addSpawnId(this.wisp);
+		addSpawnId(this.largeWisp);
 
-		addAggroRangeEnterId(_wisp);
-		addAggroRangeEnterId(_largeWisp);
+		addAggroRangeEnterId(this.wisp);
+		addAggroRangeEnterId(this.largeWisp);
 
-		addSpellFinishedId(_wisp);
-		addSpellFinishedId(_largeWisp);
+		addSpellFinishedId(this.wisp);
+		addSpellFinishedId(this.largeWisp);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -60,7 +60,7 @@ public class Wisps extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == _wisp || spawn.getNpcId() == _largeWisp)
+			if (spawn.getNpcId() == this.wisp || spawn.getNpcId() == this.largeWisp)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -85,7 +85,7 @@ public class Wisps extends L2AttackableAIScript
 		}
 
 		npc.setTarget(player);
-		npc.doCast(_healSkill);
+		npc.doCast(this.healSkill);
 
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}

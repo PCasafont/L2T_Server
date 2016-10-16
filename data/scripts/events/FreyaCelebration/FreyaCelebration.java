@@ -37,22 +37,22 @@ import l2server.util.Rnd;
  */
 public class FreyaCelebration extends Quest
 {
-	private static final int _freya = 13296;
+	private static final int freya = 13296;
 	private static final int _freya_potion = 15440;
 	private static final int _freya_gift = 17138;
-	private static final int _hours = 20;
+	private static final int hours = 20;
 
-	private static final int[] _skills = {9150, 9151, 9152, 9153, 9154, 9155, 9156};
+	private static final int[] skills = {9150, 9151, 9152, 9153, 9154, 9155, 9156};
 
 	private static final String[] _freya_texts = {
-			"It has been so long since I have felt this... I almost miss it.",
+			"It has been so long since I have felt .. I almost miss it.",
 			"I have no idea what I'm feeling right now.  Are all human emotions like this?",
 			"You humans bring me such nonsense... a gift.  I have no need of such things.",
 			"I would 'appreciate' this, however it has been far too long since I have felt appreciation for anything.",
 			" I am Freya the Ice Queen!  Feelings and emotions of Felicia are nothing but memories to me."
 	};
 
-	private static final int[][] _spawns = {
+	private static final int[][] spawns = {
 			{-119494, 44882, 360, 24576},
 			{-117239, 46842, 360, 49151},
 			{-84023, 243051, -3728, 4096},
@@ -109,7 +109,7 @@ public class FreyaCelebration extends Quest
 					st.takeItems(57, 1);
 					st.giveItems(_freya_potion, 1);
 					q.saveGlobalQuestVar(player.getAccountName(),
-							Long.toString(System.currentTimeMillis() + _hours * 3600000));
+							Long.toString(System.currentTimeMillis() + hours * 3600000));
 				}
 				else
 				{
@@ -143,7 +143,7 @@ public class FreyaCelebration extends Quest
 			return null;
 		}
 
-		if (npc.getNpcId() == _freya && Util.contains(targets, npc) && Util.contains(_skills, skill.getId()))
+		if (npc.getNpcId() == freya && Util.contains(targets, npc) && Util.contains(skills, skill.getId()))
 		{
 			if (Rnd.get(100) < 5)
 			{
@@ -180,13 +180,13 @@ public class FreyaCelebration extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(_freya);
-		addFirstTalkId(_freya);
-		addTalkId(_freya);
-		addSkillSeeId(_freya);
-		for (int[] _spawn : _spawns)
+		addStartNpc(freya);
+		addFirstTalkId(freya);
+		addTalkId(freya);
+		addSkillSeeId(freya);
+		for (int[] spawn : spawns)
 		{
-			addSpawn(_freya, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
+			addSpawn(freya, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 

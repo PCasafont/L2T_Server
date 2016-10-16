@@ -19,6 +19,7 @@ import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.log.Log;
 
 public class Multisell implements IBypassHandler
 {
@@ -46,7 +47,7 @@ public class Multisell implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			Log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

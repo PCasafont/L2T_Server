@@ -17,15 +17,15 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExRegMax extends L2GameServerPacket
 {
-	private double _max;
-	private int _count;
-	private int _time;
+	private double max;
+	private int count;
+	private int time;
 
 	public ExRegMax(double max, int count, int time)
 	{
-		_max = max;
-		_count = count;
-		_time = time;
+		this.max = max;
+		this.count = count;
+		this.time = time;
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +35,8 @@ public class ExRegMax extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(1);
-		writeD(_count);
-		writeD(_time);
-		writeF(_max);
+		writeD(this.count);
+		writeD(this.time);
+		writeF(this.max);
 	}
 }

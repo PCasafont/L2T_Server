@@ -23,13 +23,13 @@ package l2server.gameserver.network.serverpackets;
 public class ExAskJoinMPCC extends L2GameServerPacket
 {
 
-	private String _requestorName;
+	private String requestorName;
 
 	/**
 	 */
 	public ExAskJoinMPCC(String requestorName)
 	{
-		_requestorName = requestorName;
+		this.requestorName = requestorName;
 	}
 
 	/* (non-Javadoc)
@@ -38,6 +38,6 @@ public class ExAskJoinMPCC extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_requestorName); // name of CCLeader
+		writeS(this.requestorName); // name of CCLeader
 	}
 }

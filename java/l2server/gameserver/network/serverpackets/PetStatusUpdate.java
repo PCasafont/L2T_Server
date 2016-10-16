@@ -27,48 +27,48 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
 public class PetStatusUpdate extends L2GameServerPacket
 {
 
-	private L2Summon _summon;
-	private int _maxHp, _maxMp;
-	private int _maxFed, _curFed;
+	private L2Summon summon;
+	private int maxHp, maxMp;
+	private int maxFed, curFed;
 
 	public PetStatusUpdate(L2Summon summon)
 	{
-		_summon = summon;
-		_maxHp = _summon.getMaxVisibleHp();
-		_maxMp = _summon.getMaxMp();
-		if (_summon instanceof L2PetInstance)
+		this.summon = summon;
+		this.maxHp = this.summon.getMaxVisibleHp();
+		this.maxMp = this.summon.getMaxMp();
+		if (this.summon instanceof L2PetInstance)
 		{
-			L2PetInstance pet = (L2PetInstance) _summon;
-			_curFed = pet.getCurrentFed(); // how fed it is
-			_maxFed = pet.getMaxFed(); //max fed it can be
+			L2PetInstance pet = (L2PetInstance) this.summon;
+			this.curFed = pet.getCurrentFed(); // how fed it is
+			this.maxFed = pet.getMaxFed(); //max fed it can be
 		}
-		else if (_summon instanceof L2SummonInstance)
+		else if (this.summon instanceof L2SummonInstance)
 		{
-			L2SummonInstance sum = (L2SummonInstance) _summon;
-			_curFed = sum.getTimeRemaining();
-			_maxFed = sum.getTotalLifeTime();
+			L2SummonInstance sum = (L2SummonInstance) this.summon;
+			this.curFed = sum.getTimeRemaining();
+			this.maxFed = sum.getTotalLifeTime();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_summon.getSummonType());
-		writeD(_summon.getObjectId());
-		writeD(_summon.getX());
-		writeD(_summon.getY());
-		writeD(_summon.getZ());
+		writeD(this.summon.getSummonType());
+		writeD(this.summon.getObjectId());
+		writeD(this.summon.getX());
+		writeD(this.summon.getY());
+		writeD(this.summon.getZ());
 		writeS("");
-		writeD(_curFed);
-		writeD(_maxFed);
-		writeD((int) _summon.getCurrentHp());
-		writeD(_maxHp);
-		writeD((int) _summon.getCurrentMp());
-		writeD(_maxMp);
-		writeD(_summon.getLevel());
-		writeQ(_summon.getStat().getExp());
-		writeQ(_summon.getExpForThisLevel()); // 0% absolute value
-		writeQ(_summon.getExpForNextLevel()); // 100% absolute value
+		writeD(this.curFed);
+		writeD(this.maxFed);
+		writeD((int) this.summon.getCurrentHp());
+		writeD(this.maxHp);
+		writeD((int) this.summon.getCurrentMp());
+		writeD(this.maxMp);
+		writeD(this.summon.getLevel());
+		writeQ(this.summon.getStat().getExp());
+		writeQ(this.summon.getExpForThisLevel()); // 0% absolute value
+		writeQ(this.summon.getExpForNextLevel()); // 100% absolute value
 		writeD(0); // ???
 	}
 }

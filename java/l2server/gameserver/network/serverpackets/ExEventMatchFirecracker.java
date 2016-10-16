@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExEventMatchFirecracker extends L2GameServerPacket
 {
-	private int _fireCrackerId;
+	private int fireCrackerId;
 
 	public ExEventMatchFirecracker(int fireCrackerId)
 	{
-		_fireCrackerId = fireCrackerId;
+		this.fireCrackerId = fireCrackerId;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_fireCrackerId);
+		writeD(this.fireCrackerId);
 	}
 }

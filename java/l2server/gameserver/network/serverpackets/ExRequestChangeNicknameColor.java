@@ -20,16 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExRequestChangeNicknameColor extends L2GameServerPacket
 {
-	private int _itemObjectId;
+	private int itemObjectId;
 
 	public ExRequestChangeNicknameColor(int itemObjectId)
 	{
-		_itemObjectId = itemObjectId;
+		this.itemObjectId = itemObjectId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_itemObjectId);
+		writeD(this.itemObjectId);
 	}
 }

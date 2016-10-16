@@ -29,8 +29,8 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public final class L2QuestGuardInstance extends L2GuardInstance
 {
-	private boolean _isAutoAttackable = true;
-	private boolean _isPassive = false;
+	private boolean isAutoAttackable = true;
+	private boolean isPassive = false;
 
 	public L2QuestGuardInstance(int objectId, L2NpcTemplate template)
 	{
@@ -71,7 +71,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))
 				{
 					ThreadPoolManager.getInstance()
-							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), _onKillDelay);
+							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), this.onKillDelay);
 				}
 			}
 		}
@@ -82,7 +82,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	@Override
 	public void addDamageHate(L2Character attacker, int damage, int aggro)
 	{
-		if (!_isPassive && !(attacker instanceof L2PcInstance))
+		if (!this.isPassive && !(attacker instanceof L2PcInstance))
 		{
 			super.addDamageHate(attacker, damage, aggro);
 		}
@@ -90,23 +90,23 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 
 	public void setPassive(boolean state)
 	{
-		_isPassive = state;
+		this.isPassive = state;
 	}
 
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return _isAutoAttackable && !(attacker instanceof L2PcInstance);
+		return this.isAutoAttackable && !(attacker instanceof L2PcInstance);
 	}
 
 	@Override
 	public void setAutoAttackable(boolean state)
 	{
-		_isAutoAttackable = state;
+		this.isAutoAttackable = state;
 	}
 
 	public boolean isPassive()
 	{
-		return _isPassive;
+		return this.isPassive;
 	}
 }

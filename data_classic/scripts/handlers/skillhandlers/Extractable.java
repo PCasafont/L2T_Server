@@ -27,6 +27,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
@@ -56,7 +57,7 @@ public class Extractable implements ISkillHandler
 
 		if (exItem.getProductItemsArray().isEmpty())
 		{
-			_log.warning(
+			Log.warning(
 					"Extractable Item Skill with no data, probably wrong/empty table with Skill Id: " + skill.getId());
 			return;
 		}
@@ -126,7 +127,7 @@ public class Extractable implements ISkillHandler
 
 				if (ItemTable.getInstance().createDummyItem(createItemID[i]) == null)
 				{
-					_log.warning("Extractable Item Skill Id:" + skill.getId() + " createItemID " + createItemID[i] +
+					Log.warning("Extractable Item Skill Id:" + skill.getId() + " createItemID " + createItemID[i] +
 							" doesn't have a template!");
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_INSIDE_THAT));
 					return;

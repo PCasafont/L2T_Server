@@ -35,8 +35,8 @@ import l2server.gameserver.model.L2ItemInstance;
  */
 public class DropItem extends L2GameServerPacket
 {
-	private L2ItemInstance _item;
-	private int _charObjId;
+	private L2ItemInstance item;
+	private int charObjId;
 
 	/**
 	 * Constructor of the DropItem server packet
@@ -46,23 +46,23 @@ public class DropItem extends L2GameServerPacket
 	 */
 	public DropItem(L2ItemInstance item, int playerObjId)
 	{
-		_item = item;
-		_charObjId = playerObjId;
+		this.item = item;
+		this.charObjId = playerObjId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_item.getObjectId());
-		writeD(_item.getItemId());
+		writeD(this.charObjId);
+		writeD(this.item.getObjectId());
+		writeD(this.item.getItemId());
 
-		writeD(_item.getX());
-		writeD(_item.getY());
-		writeD(_item.getZ());
+		writeD(this.item.getX());
+		writeD(this.item.getY());
+		writeD(this.item.getZ());
 		// only show item count if it is a stackable item
-		writeC(_item.isStackable() ? 0x01 : 0x00);
-		writeQ(_item.getCount());
+		writeC(this.item.isStackable() ? 0x01 : 0x00);
+		writeQ(this.item.getCount());
 
 		writeC(0); // unknown
 	}

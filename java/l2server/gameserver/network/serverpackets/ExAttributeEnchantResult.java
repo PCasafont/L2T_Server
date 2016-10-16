@@ -18,29 +18,29 @@ package l2server.gameserver.network.serverpackets;
 public class ExAttributeEnchantResult extends L2GameServerPacket
 {
 
-	private int _addedPower;
-	private int _totalPower;
-	private int _succeeded;
-	private int _failed;
+	private int addedPower;
+	private int totalPower;
+	private int succeeded;
+	private int failed;
 
 	public ExAttributeEnchantResult(int addedPower, int totalPower, int succeeded, int failed)
 	{
-		_addedPower = addedPower;
-		_totalPower = totalPower;
-		_succeeded = succeeded;
-		_failed = failed;
+		this.addedPower = addedPower;
+		this.totalPower = totalPower;
+		this.succeeded = succeeded;
+		this.failed = failed;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		//writeD(_result);
+		//writeD(this.result);
 		writeD(0);
 		writeC(0);
 		writeH(4); // ???
-		writeH(_addedPower);
-		writeH(_totalPower);
-		writeH(_succeeded); // Successful stones
-		writeH(_failed); // Failed stones
+		writeH(this.addedPower);
+		writeH(this.totalPower);
+		writeH(this.succeeded); // Successful stones
+		writeH(this.failed); // Failed stones
 	}
 }

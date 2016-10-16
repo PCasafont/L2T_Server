@@ -15,6 +15,9 @@
 
 package handlers.bypasshandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTreeTable;
@@ -27,9 +30,6 @@ import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SpecializeClass implements IBypassHandler
 {

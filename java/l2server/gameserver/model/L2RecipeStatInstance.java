@@ -31,12 +31,12 @@ public class L2RecipeStatInstance
 	/**
 	 * The Identifier of the statType
 	 */
-	private StatType _type;
+	private StatType type;
 
 	/**
 	 * The value of the statType
 	 */
-	private int _value;
+	private int value;
 
 	/**
 	 * Constructor of L2RecipeStatInstance.<BR><BR>
@@ -45,13 +45,13 @@ public class L2RecipeStatInstance
 	{
 		try
 		{
-			_type = Enum.valueOf(StatType.class, type);
+			this.type = Enum.valueOf(StatType.class, type);
 		}
 		catch (Exception e)
 		{
 			throw new IllegalArgumentException();
 		}
-		_value = value;
+		this.value = value;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class L2RecipeStatInstance
 	 */
 	public StatType getType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	/**
@@ -67,6 +67,6 @@ public class L2RecipeStatInstance
 	 */
 	public int getValue()
 	{
-		return _value;
+		return this.value;
 	}
 }

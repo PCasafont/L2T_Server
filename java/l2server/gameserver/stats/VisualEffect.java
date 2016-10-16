@@ -214,23 +214,23 @@ public enum VisualEffect
 	BIG_BODY(173, "bigBody"),
 	SMALL_BODY(174, "smallBody");
 
-	private final int _id;
-	private final String _name;
+	private final int id;
+	private final String name;
 
 	VisualEffect(int id, String name)
 	{
-		_name = name;
-		_id = id;
+		this.name = name;
+		this.id = id;
 	}
 
 	public final int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	public final String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public static VisualEffect getByName(String name)

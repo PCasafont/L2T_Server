@@ -35,7 +35,7 @@ import java.util.logging.Logger;
 public final class Logout extends L2GameClientPacket
 {
 
-	protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	@Override
 	protected void readImpl()
@@ -85,7 +85,7 @@ public final class Logout extends L2GameClientPacket
 
 		LogRecord record = new LogRecord(Level.INFO, "Disconnected");
 		record.setParameters(new Object[]{getClient()});
-		_logAccounting.log(record);
+		this.logAccounting.log(record);
 
 		player.logout();
 	}

@@ -25,12 +25,12 @@ public class RequestPledgeExtendedInfo extends L2GameClientPacket
 {
 
 	@SuppressWarnings("unused")
-	private String _name;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
+		this.name = readS();
 	}
 
 	@Override

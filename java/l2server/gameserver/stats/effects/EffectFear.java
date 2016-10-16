@@ -38,8 +38,8 @@ public class EffectFear extends L2Effect
 {
 	public static final int FEAR_RANGE = 500;
 
-	private int _dX = -1;
-	private int _dY = -1;
+	private int dX = -1;
+	private int dY = -1;
 
 	public EffectFear(Env env, L2EffectTemplate template)
 	{
@@ -113,11 +113,11 @@ public class EffectFear extends L2Effect
 
 			if (getEffected().getX() > getEffector().getX())
 			{
-				_dX = 1;
+				this.dX = 1;
 			}
 			if (getEffected().getY() > getEffector().getY())
 			{
-				_dY = 1;
+				this.dY = 1;
 			}
 
 			getEffected().startFear();
@@ -151,15 +151,15 @@ public class EffectFear extends L2Effect
 
 		if (getEffected().getX() > getEffector().getX())
 		{
-			_dX = 1;
+			this.dX = 1;
 		}
 		if (getEffected().getY() > getEffector().getY())
 		{
-			_dY = 1;
+			this.dY = 1;
 		}
 
-		posX += _dX * FEAR_RANGE;
-		posY += _dY * FEAR_RANGE;
+		posX += this.dX * FEAR_RANGE;
+		posY += this.dY * FEAR_RANGE;
 
 		if (Config.GEODATA > 0)
 		{

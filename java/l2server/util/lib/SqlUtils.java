@@ -34,7 +34,7 @@ public class SqlUtils
 	// Property - Public
 	public static SqlUtils getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	// =========================================================
@@ -181,6 +181,6 @@ public class SqlUtils
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SqlUtils _instance = new SqlUtils();
+		protected static final SqlUtils instance = new SqlUtils();
 	}
 }

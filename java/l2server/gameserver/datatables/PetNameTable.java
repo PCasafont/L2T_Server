@@ -37,7 +37,7 @@ public class PetNameTable
 
 	public static PetNameTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public boolean doesPetNameExist(String name, int petNpcId)
@@ -123,6 +123,6 @@ public class PetNameTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PetNameTable _instance = new PetNameTable();
+		protected static final PetNameTable instance = new PetNameTable();
 	}
 }

@@ -23,11 +23,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PcAuction extends ItemContainer
 {
-	private L2PcInstance _owner;
+	private L2PcInstance owner;
 
 	public PcAuction(L2PcInstance owner)
 	{
-		_owner = owner;
+		this.owner = owner;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class PcAuction extends ItemContainer
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return _owner;
+		return this.owner;
 	}
 
 	@Override
@@ -51,6 +51,6 @@ public class PcAuction extends ItemContainer
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return _items.size() + slots <= 10;
+		return this.items.size() + slots <= 10;
 	}
 }

@@ -15,6 +15,9 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.List;
+import java.util.StringTokenizer;
+
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
@@ -22,9 +25,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
-
-import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Admin comand handler for Manor System
@@ -41,7 +41,7 @@ import java.util.StringTokenizer;
  */
 public class AdminManor implements IAdminCommandHandler
 {
-	private static final String[] _adminCommands = {
+	private static final String[] adminCommands = {
 			"admin_manor",
 			"admin_manor_approve",
 			"admin_manor_setnext",
@@ -145,7 +145,7 @@ public class AdminManor implements IAdminCommandHandler
 	@Override
 	public String[] getAdminCommandList()
 	{
-		return _adminCommands;
+		return this.adminCommands;
 	}
 
 	private String formatTime(long millis)

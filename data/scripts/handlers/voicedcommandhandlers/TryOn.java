@@ -15,6 +15,9 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
@@ -24,9 +27,6 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.item.L2EtcItem;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Pere

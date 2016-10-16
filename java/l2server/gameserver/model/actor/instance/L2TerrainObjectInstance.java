@@ -25,7 +25,7 @@ public final class L2TerrainObjectInstance extends L2Npc
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2TerrainObjectInstance);
-		_isHideName = true;
+		this.isHideName = true;
 	}
 
 	@Override

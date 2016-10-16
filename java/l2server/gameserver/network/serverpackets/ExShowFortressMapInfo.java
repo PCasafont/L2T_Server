@@ -25,11 +25,11 @@ import java.util.List;
  */
 public class ExShowFortressMapInfo extends L2GameServerPacket
 {
-	private final Fort _fortress;
+	private final Fort fortress;
 
 	public ExShowFortressMapInfo(Fort fortress)
 	{
-		_fortress = fortress;
+		this.fortress = fortress;
 	}
 
     /*
@@ -42,12 +42,12 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_fortress.getFortId());
-		writeD(_fortress.getSiege().getIsInProgress() ? 1 : 0); // fortress siege status
-		writeD(_fortress.getFortSize()); // barracks count
+		writeD(this.fortress.getFortId());
+		writeD(this.fortress.getSiege().getIsInProgress() ? 1 : 0); // fortress siege status
+		writeD(this.fortress.getFortSize()); // barracks count
 
-		List<L2Spawn> commanders = _fortress.getCommanderSpawns();
-		if (commanders != null && commanders.size() != 0 && _fortress.getSiege().getIsInProgress())
+		List<L2Spawn> commanders = this.fortress.getCommanderSpawns();
+		if (commanders != null && commanders.size() != 0 && this.fortress.getSiege().getIsInProgress())
 		{
 			switch (commanders.size())
 			{
@@ -91,7 +91,7 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 		}
 		else
 		{
-			for (int i = 0; i < _fortress.getFortSize(); i++)
+			for (int i = 0; i < this.fortress.getFortSize(); i++)
 			{
 				writeD(0);
 			}
@@ -105,7 +105,7 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 	private boolean isSpawned(int npcId)
 	{
 		boolean ret = false;
-		for (L2Spawn spawn : _fortress.getCommanderSpawns())
+		for (L2Spawn spawn : this.fortress.getCommanderSpawns())
 		{
 			if (spawn.getNpcId() == npcId)
 			{

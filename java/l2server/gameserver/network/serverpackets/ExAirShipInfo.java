@@ -21,36 +21,36 @@ public class ExAirShipInfo extends L2GameServerPacket
 {
 
 	// store some parameters, because they can be changed during broadcast
-	private final L2AirShipInstance _ship;
-	private final int _x, _y, _z, _heading, _moveSpeed, _rotationSpeed, _captain, _helm;
+	private final L2AirShipInstance ship;
+	private final int x, y, z, heading, moveSpeed, rotationSpeed, captain, helm;
 
 	public ExAirShipInfo(L2AirShipInstance ship)
 	{
-		_ship = ship;
-		_x = ship.getX();
-		_y = ship.getY();
-		_z = ship.getZ();
-		_heading = ship.getHeading();
-		_moveSpeed = (int) ship.getStat().getMoveSpeed();
-		_rotationSpeed = ship.getStat().getRotationSpeed();
-		_captain = ship.getCaptainId();
-		_helm = ship.getHelmObjectId();
+		this.ship = ship;
+		this.x = ship.getX();
+		this.y = ship.getY();
+		this.z = ship.getZ();
+		this.heading = ship.getHeading();
+		this.moveSpeed = (int) ship.getStat().getMoveSpeed();
+		this.rotationSpeed = ship.getStat().getRotationSpeed();
+		this.captain = ship.getCaptainId();
+		this.helm = ship.getHelmObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_ship.getObjectId());
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_heading);
+		writeD(this.ship.getObjectId());
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
+		writeD(this.heading);
 
-		writeD(_captain);
-		writeD(_moveSpeed);
-		writeD(_rotationSpeed);
-		writeD(_helm);
-		if (_helm != 0)
+		writeD(this.captain);
+		writeD(this.moveSpeed);
+		writeD(this.rotationSpeed);
+		writeD(this.helm);
+		if (this.helm != 0)
 		{
 			writeD(0x16e); // Controller X
 			writeD(0x00); // Controller Y
@@ -69,7 +69,7 @@ public class ExAirShipInfo extends L2GameServerPacket
 			writeD(0x00);
 		}
 
-		writeD(_ship.getFuel());
-		writeD(_ship.getMaxFuel());
+		writeD(this.ship.getFuel());
+		writeD(this.ship.getMaxFuel());
 	}
 }

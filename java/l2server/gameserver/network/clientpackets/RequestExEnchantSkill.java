@@ -45,18 +45,18 @@ import java.sql.PreparedStatement;
 public final class RequestExEnchantSkill extends L2GameClientPacket
 {
 
-	private int _type;
-	private int _skillId;
-	private int _skillLvl;
-	private int _skillEnchant;
+	private int type;
+	private int skillId;
+	private int skillLvl;
+	private int skillEnchant;
 
 	@Override
 	protected void readImpl()
 	{
-		_type = readD();
-		_skillId = readD();
-		_skillLvl = readH();
-		_skillEnchant = readH();
+		this.type = readD();
+		this.skillId = readD();
+		this.skillLvl = readH();
+		this.skillEnchant = readH();
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +65,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (_skillId <= 0 || _skillLvl <= 0 || _type < 0 || _type > 4) // minimal sanity check
+		if (this.skillId <= 0 || this.skillLvl <= 0 || this.type < 0 || this.type > 4) // minimal sanity check
 		{
 			return;
 		}
@@ -94,15 +94,15 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			return;
 		}
 
-		int enchantRoute = _skillEnchant / 1000;
-		int enchantLevel = _skillEnchant % 1000;
-		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, enchantRoute, enchantLevel);
+		int enchantRoute = this.skillEnchant / 1000;
+		int enchantLevel = this.skillEnchant % 1000;
+		L2Skill skill = SkillTable.getInstance().getInfo(this.skillId, this.skillLvl, enchantRoute, enchantLevel);
 		if (skill == null)
 		{
 			return;
 		}
 
-		L2EnchantSkillLearn s = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId);
+		L2EnchantSkillLearn s = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(this.skillId);
 		if (s == null)
 		{
 			return;
@@ -113,12 +113,12 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			return;
 		}
 
-		L2Skill currentSkill = player.getKnownSkill(_skillId);
+		L2Skill currentSkill = player.getKnownSkill(this.skillId);
 		int currentLevel = currentSkill.getLevel();
 		int currentEnchantRoute = currentSkill.getEnchantRouteId();
 		int currentEnchantLevel = currentSkill.getEnchantLevel();
 		// do u have this skill enchanted?
-		if (_type == 3 && (currentEnchantRoute < 1 || currentEnchantLevel < 1 || currentLevel != _skillLvl ||
+		if (this.type == 3 && (currentEnchantRoute < 1 || currentEnchantLevel < 1 || currentLevel != this.skillLvl ||
 				currentEnchantLevel < enchantLevel - 1))
 		{
 			return;
@@ -127,7 +127,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		EnchantSkillDetail esd = s.getEnchantSkillDetail(enchantRoute, enchantLevel);
 		int costMultiplier = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
 		int reqItemId = esd.getRange().getNormalBook();
-		switch (_type)
+		switch (this.type)
 		{
 			case 1:
 				costMultiplier = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
@@ -149,13 +149,13 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		int requireditems = esd.getAdenaCost() * costMultiplier;
 		int rate = esd.getRate(player);
 
-		if (player.getSp() >= requiredSp || _type == 2)
+		if (player.getSp() >= requiredSp || this.type == 2)
 		{
 			// only first lvl requires book
 			boolean firstLevel = enchantLevel % 10 == 1; // 101, 201, 301 ...
 			L2ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
 
-			boolean useBook = _type == 1 || Config.ES_SP_BOOK_NEEDED && (_type != 0 || firstLevel);
+			boolean useBook = this.type == 1 || Config.ES_SP_BOOK_NEEDED && (this.type != 0 || firstLevel);
 			if (useBook && spb == null)// Haven't spellbook
 			{
 				player.sendPacket(SystemMessage
@@ -171,7 +171,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			}
 
 			boolean check = true;
-			if (_type != 2 && requiredSp > 0)
+			if (this.type != 2 && requiredSp > 0)
 			{
 				check &= player.getStat().removeExpAndSp(0, requiredSp, false);
 			}
@@ -190,7 +190,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				return;
 			}
 
-			if (_type == 3)
+			if (this.type == 3)
 			{
 				int levelPenalty = Rnd.get(Math.min(4, currentEnchantLevel));
 				enchantLevel -= levelPenalty;
@@ -199,7 +199,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 					enchantRoute = 0;
 				}
 
-				skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, enchantRoute, enchantLevel);
+				skill = SkillTable.getInstance().getInfo(this.skillId, this.skillLvl, enchantRoute, enchantLevel);
 
 				if (skill != null)
 				{
@@ -210,14 +210,14 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 					{
 						SystemMessage sm = SystemMessage
 								.getSystemMessage(SystemMessageId.SKILL_ENCHANT_CHANGE_SUCCESSFUL_S1_LEVEL_WILL_REMAIN);
-						sm.addSkillName(_skillId);
+						sm.addSkillName(this.skillId);
 						player.sendPacket(sm);
 					}
 					else
 					{
 						SystemMessage sm = SystemMessage.getSystemMessage(
 								SystemMessageId.SKILL_ENCHANT_CHANGE_SUCCESSFUL_S1_LEVEL_WAS_DECREASED_BY_S2);
-						sm.addSkillName(_skillId);
+						sm.addSkillName(this.skillId);
 						sm.addNumber(levelPenalty);
 						player.sendPacket(sm);
 					}
@@ -229,7 +229,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 					player.sendPacket(sm);
 				}
 			}
-			if (_type == 2)
+			if (this.type == 2)
 			{
 				player.getStat().addSp((int) (requiredSp * 0.8));
 				logSkillEnchant(player, skill, spb, rate);
@@ -239,7 +239,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Learned skill ID: " + _skillId + " Level: " + _skillLvl + " for " + requiredSp + " SP, " +
+					Log.fine("Learned skill ID: " + this.skillId + " Level: " + this.skillLvl + " for " + requiredSp + " SP, " +
 							requireditems + " Adena.");
 				}
 
@@ -247,18 +247,18 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(
 							SystemMessageId.UNTRAIN_SUCCESSFUL_SKILL_S1_ENCHANT_LEVEL_DECREASED_BY_ONE);
-					sm.addSkillName(_skillId);
+					sm.addSkillName(this.skillId);
 					player.sendPacket(sm);
 				}
 				else
 				{
 					SystemMessage sm = SystemMessage
 							.getSystemMessage(SystemMessageId.UNTRAIN_SUCCESSFUL_SKILL_S1_ENCHANT_LEVEL_RESETED);
-					sm.addSkillName(_skillId);
+					sm.addSkillName(this.skillId);
 					player.sendPacket(sm);
 				}
 			}
-			else if (_type == 4 || Rnd.get(100) <= rate)
+			else if (this.type == 4 || Rnd.get(100) <= rate)
 			{
 				logSkillEnchant(player, skill, spb, rate);
 
@@ -266,7 +266,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Learned skill ID: " + _skillId + " Level: " + _skillLvl + " for " + requiredSp + " SP, " +
+					Log.fine("Learned skill ID: " + this.skillId + " Level: " + this.skillLvl + " for " + requiredSp + " SP, " +
 							requireditems + " Adena.");
 				}
 
@@ -274,13 +274,13 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
 				SystemMessage sm =
 						SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_ENCHANTING_THE_SKILL_S1);
-				sm.addSkillName(_skillId);
+				sm.addSkillName(this.skillId);
 				player.sendPacket(sm);
 			}
-			else if (_type == 0)
+			else if (this.type == 0)
 			{
 				skill = SkillTable.getInstance()
-						.getInfo(_skillId, _skillLvl, esd.getRange().getStartLevel() > 0 ? enchantRoute : 0,
+						.getInfo(this.skillId, this.skillLvl, esd.getRange().getStartLevel() > 0 ? enchantRoute : 0,
 								esd.getRange().getStartLevel());
 				player.addSkill(skill, true);
 				player.sendPacket(
@@ -292,18 +292,18 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			{
 				SystemMessage sm =
 						SystemMessage.getSystemMessage(SystemMessageId.SKILL_ENCHANT_FAILED_S1_LEVEL_WILL_REMAIN);
-				sm.addSkillName(_skillId);
+				sm.addSkillName(this.skillId);
 				player.sendPacket(sm);
 				player.sendPacket(ExEnchantSkillResult.valueOf(false));
 			}
 
-			currentSkill = player.getKnownSkill(_skillId);
+			currentSkill = player.getKnownSkill(this.skillId);
 			player.sendPacket(new UserInfo(player));
 			player.sendSkillList();
 			player.sendPacket(
-					new ExEnchantSkillInfo(_skillId, currentSkill.getLevel(), currentSkill.getEnchantRouteId(),
+					new ExEnchantSkillInfo(this.skillId, currentSkill.getLevel(), currentSkill.getEnchantRouteId(),
 							currentSkill.getEnchantLevel()));
-			player.sendPacket(new ExEnchantSkillInfoDetail(_type, _skillId, currentSkill.getLevel(),
+			player.sendPacket(new ExEnchantSkillInfoDetail(this.type, this.skillId, currentSkill.getLevel(),
 					currentSkill.getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
 
 			updateSkillShortcuts(player);
@@ -323,10 +323,10 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 
 		for (L2ShortCut sc : allShortCuts)
 		{
-			if (sc != null && sc.getId() == _skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
+			if (sc != null && sc.getId() == this.skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
 			{
 				L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(),
-						player.getSkillLevelHash(_skillId), 1);
+						player.getSkillLevelHash(this.skillId), 1);
 				player.sendPacket(new ShortCutRegister(newsc));
 				player.registerShortCut(newsc);
 			}

@@ -26,13 +26,13 @@ import java.io.FileNotFoundException;
  */
 public abstract class ManagedScript
 {
-	private File _scriptFile;
-	private long _lastLoadTime;
-	private boolean _isActive;
+	private File scriptFile;
+	private long lastLoadTime;
+	private boolean isActive;
 
 	public ManagedScript()
 	{
-		_scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
+		this.scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
 		setLastLoadTime(System.currentTimeMillis());
 	}
 
@@ -63,12 +63,12 @@ public abstract class ManagedScript
 
 	public void setActive(boolean status)
 	{
-		_isActive = status;
+		this.isActive = status;
 	}
 
 	public boolean isActive()
 	{
-		return _isActive;
+		return this.isActive;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public abstract class ManagedScript
 	 */
 	public File getScriptFile()
 	{
-		return _scriptFile;
+		return this.scriptFile;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class ManagedScript
 	 */
 	protected void setLastLoadTime(long lastLoadTime)
 	{
-		_lastLoadTime = lastLoadTime;
+		this.lastLoadTime = lastLoadTime;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public abstract class ManagedScript
 	 */
 	protected long getLastLoadTime()
 	{
-		return _lastLoadTime;
+		return this.lastLoadTime;
 	}
 
 	public abstract String getScriptName();

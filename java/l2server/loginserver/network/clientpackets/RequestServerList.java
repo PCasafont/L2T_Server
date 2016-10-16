@@ -26,16 +26,16 @@ import l2server.loginserver.network.serverpackets.ServerList;
  */
 public class RequestServerList extends L2LoginClientPacket
 {
-	private int _skey1;
-	private int _skey2;
-	private int _data3;
+	private int skey1;
+	private int skey2;
+	private int data3;
 
 	/**
 	 * @return
 	 */
 	public int getSessionKey1()
 	{
-		return _skey1;
+		return this.skey1;
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class RequestServerList extends L2LoginClientPacket
 	 */
 	public int getSessionKey2()
 	{
-		return _skey2;
+		return this.skey2;
 	}
 
 	/**
@@ -51,16 +51,16 @@ public class RequestServerList extends L2LoginClientPacket
 	 */
 	public int getData3()
 	{
-		return _data3;
+		return this.data3;
 	}
 
 	@Override
 	public boolean readImpl()
 	{
-		if (super._buf.remaining() >= 8)
+		if (super.buf.remaining() >= 8)
 		{
-			_skey1 = readD(); // loginOk 1
-			_skey2 = readD(); // loginOk 2
+			this.skey1 = readD(); // loginOk 1
+			this.skey2 = readD(); // loginOk 2
 			return true;
 		}
 		else
@@ -74,7 +74,7 @@ public class RequestServerList extends L2LoginClientPacket
 	@Override
 	public void run()
 	{
-		if (getClient().getSessionKey().checkLoginPair(_skey1, _skey2))
+		if (getClient().getSessionKey().checkLoginPair(this.skey1, this.skey2))
 		{
 			getClient().sendPacket(new ServerList(getClient()));
 		}

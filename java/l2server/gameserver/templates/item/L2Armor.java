@@ -36,11 +36,11 @@ public final class L2Armor extends L2Item
 {
 	public static final int MAX_ENCHANT_SKILL = 10;
 
-	private TIntObjectHashMap<SkillHolder> _enchantSkills = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<SkillHolder> enchantSkills = new TIntObjectHashMap<>();
 	// skill that activates when armor is enchanted +X
-	// private final String[] _skill;
-	private L2ArmorType _type;
-	private int[] _armorSet;
+	// private final String[] skill;
+	private L2ArmorType type;
+	private int[] armorSet;
 
 	/**
 	 * Constructor for Armor.<BR><BR>
@@ -56,40 +56,40 @@ public final class L2Armor extends L2Item
 	public L2Armor(StatsSet set)
 	{
 		super(set);
-		_type = L2ArmorType.valueOf(set.getString("armorType", "none").toUpperCase());
+		this.type = L2ArmorType.valueOf(set.getString("armorType", "none").toUpperCase());
 
-		int _bodyPart = getBodyPart();
-		if (_bodyPart == L2Item.SLOT_NECK || _bodyPart == L2Item.SLOT_HAIR || _bodyPart == L2Item.SLOT_HAIR2 ||
-				_bodyPart == L2Item.SLOT_HAIRALL || (_bodyPart & L2Item.SLOT_L_EAR) != 0 ||
-				(_bodyPart & L2Item.SLOT_L_FINGER) != 0 || (_bodyPart & L2Item.SLOT_R_BRACELET) != 0 ||
-				(_bodyPart & L2Item.SLOT_L_BRACELET) != 0 || (_bodyPart & L2Item.SLOT_BACK) != 0 ||
-				(_bodyPart & L2Item.SLOT_BROOCH) != 0)
+		int bodyPart = getBodyPart();
+		if (bodyPart == L2Item.SLOT_NECK || bodyPart == L2Item.SLOT_HAIR || bodyPart == L2Item.SLOT_HAIR2 ||
+				bodyPart == L2Item.SLOT_HAIRALL || (bodyPart & L2Item.SLOT_L_EAR) != 0 ||
+				(bodyPart & L2Item.SLOT_L_FINGER) != 0 || (bodyPart & L2Item.SLOT_R_BRACELET) != 0 ||
+				(bodyPart & L2Item.SLOT_L_BRACELET) != 0 || (bodyPart & L2Item.SLOT_BACK) != 0 ||
+				(bodyPart & L2Item.SLOT_BROOCH) != 0)
 		{
-			_type1 = L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE;
-			_type2 = L2Item.TYPE2_ACCESSORY;
+			this.type1 = L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE;
+			this.type2 = L2Item.TYPE2_ACCESSORY;
 		}
 		else
 		{
-			if (_type == L2ArmorType.NONE && getBodyPart() == L2Item.SLOT_L_HAND) // retail define shield as NONE
+			if (this.type == L2ArmorType.NONE && getBodyPart() == L2Item.SLOT_L_HAND) // retail define shield as NONE
 			{
-				_type = L2ArmorType.SHIELD;
+				this.type = L2ArmorType.SHIELD;
 			}
-			_type1 = L2Item.TYPE1_SHIELD_ARMOR;
-			_type2 = L2Item.TYPE2_SHIELD_ARMOR;
+			this.type1 = L2Item.TYPE1_SHIELD_ARMOR;
+			this.type2 = L2Item.TYPE2_SHIELD_ARMOR;
 		}
 
 		String sets = set.getString("armorSet", null);
 		if (sets != null)
 		{
 			String[] setsSplit = sets.split(";");
-			_armorSet = new int[setsSplit.length];
+			this.armorSet = new int[setsSplit.length];
 			int used = 0;
 
 			for (String element : setsSplit)
 			{
 				try
 				{
-					_armorSet[used] = Integer.parseInt(element);
+					this.armorSet[used] = Integer.parseInt(element);
 					used++;
 				}
 				catch (Exception e)
@@ -124,7 +124,7 @@ public final class L2Armor extends L2Item
 					}
 					if (id > 0 && level > 0)
 					{
-						_enchantSkills.put(enchant, new SkillHolder(id, level));
+						this.enchantSkills.put(enchant, new SkillHolder(id, level));
 					}
 				}
 			}
@@ -139,7 +139,7 @@ public final class L2Armor extends L2Item
 	@Override
 	public L2ArmorType getItemType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	/**
@@ -160,7 +160,7 @@ public final class L2Armor extends L2Item
 	 */
 	public L2Skill getEnchantSkill(int enchant)
 	{
-		SkillHolder sh = _enchantSkills.get(enchant);
+		SkillHolder sh = this.enchantSkills.get(enchant);
 		if (sh == null)
 		{
 			return null;
@@ -171,17 +171,17 @@ public final class L2Armor extends L2Item
 
 	public int[] getArmorSet()
 	{
-		return _armorSet;
+		return this.armorSet;
 	}
 
 	public boolean isArmorSetPart(int armorSet)
 	{
-		if (_armorSet == null)
+		if (this.armorSet == null)
 		{
 			return false;
 		}
 
-		for (int set : _armorSet)
+		for (int set : this.armorSet)
 		{
 			if (set == armorSet)
 			{
@@ -201,15 +201,15 @@ public final class L2Armor extends L2Item
 	@Override
 	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if (_funcTemplates == null || _funcTemplates.length == 0)
+		if (this.funcTemplates == null || this.funcTemplates.length == 0)
 		{
-			return _emptyFunctionSet;
+			return this.emptyFunctionSet;
 		}
 
-		ArrayList<Func> funcs = new ArrayList<>(_funcTemplates.length);
+		ArrayList<Func> funcs = new ArrayList<>(this.funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : _funcTemplates)
+		for (FuncTemplate t : this.funcTemplates)
 		{
 			f = t.getFunc(instance);
 			if (f != null)

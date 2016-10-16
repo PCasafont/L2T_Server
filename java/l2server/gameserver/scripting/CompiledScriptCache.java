@@ -35,8 +35,8 @@ public class CompiledScriptCache implements Serializable
 {
 	private static final long serialVersionUID = 2L;
 
-	private Map<String, CompiledScriptHolder> _compiledScripts = new HashMap<>();
-	private transient boolean _modified = false;
+	private final Map<String, CompiledScriptHolder> compiledScripts = new HashMap<>();
+	private transient boolean modified = false;
 
 	public CompiledScript loadCompiledScript(ScriptEngine engine, File file) throws FileNotFoundException,
 			ScriptException
@@ -44,7 +44,7 @@ public class CompiledScriptCache implements Serializable
 		int len = L2ScriptEngineManager.SCRIPT_FOLDER.getPath().length() + 1;
 		String relativeName = file.getPath().substring(len);
 
-		CompiledScriptHolder csh = _compiledScripts.get(relativeName);
+		CompiledScriptHolder csh = compiledScripts.get(relativeName);
 		if (csh != null && csh.matches(file))
 		{
 			if (Config.DEBUG)
@@ -66,10 +66,10 @@ public class CompiledScriptCache implements Serializable
 			CompiledScript cs = eng.compile(reader);
 			if (cs instanceof Serializable)
 			{
-				synchronized (_compiledScripts)
+				synchronized (compiledScripts)
 				{
-					_compiledScripts.put(relativeName, new CompiledScriptHolder(cs, file));
-					_modified = true;
+					compiledScripts.put(relativeName, new CompiledScriptHolder(cs, file));
+					modified = true;
 				}
 			}
 
@@ -79,20 +79,20 @@ public class CompiledScriptCache implements Serializable
 
 	public boolean isModified()
 	{
-		return _modified;
+		return modified;
 	}
 
 	public void purge()
 	{
-		synchronized (_compiledScripts)
+		synchronized (compiledScripts)
 		{
-			for (String path : _compiledScripts.keySet())
+			for (String path : compiledScripts.keySet())
 			{
 				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, path);
 				if (!file.isFile())
 				{
-					_compiledScripts.remove(path);
-					_modified = true;
+					compiledScripts.remove(path);
+					modified = true;
 				}
 			}
 		}
@@ -100,26 +100,26 @@ public class CompiledScriptCache implements Serializable
 
 	public void save() throws IOException
 	{
-		synchronized (_compiledScripts)
+		synchronized (compiledScripts)
 		{
 			ObjectOutputStream oos = new ObjectOutputStream(
 					new FileOutputStream(new File(L2ScriptEngineManager.SCRIPT_FOLDER, "CompiledScripts.cache")));
 			oos.writeObject(this);
 			oos.close();
-			_modified = false;
+			modified = false;
 		}
 	}
 
 	public void checkFiles()
 	{
-		synchronized (_compiledScripts)
+		synchronized (compiledScripts)
 		{
-			for (String path : _compiledScripts.keySet())
+			for (String path : compiledScripts.keySet())
 			{
 				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, path);
-				if (!_compiledScripts.get(path).matches(file))
+				if (!compiledScripts.get(path).matches(file))
 				{
-					_compiledScripts.clear();
+					compiledScripts.clear();
 					return;
 				}
 			}

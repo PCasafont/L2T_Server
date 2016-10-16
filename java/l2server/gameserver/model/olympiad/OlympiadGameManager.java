@@ -30,8 +30,8 @@ import java.util.List;
 public class OlympiadGameManager implements Runnable
 {
 
-	private volatile boolean _battleStarted = false;
-	private final OlympiadGameTask[] _tasks;
+	private volatile boolean battleStarted = false;
+	private final OlympiadGameTask[] tasks;
 
 	private OlympiadGameManager()
 	{
@@ -42,33 +42,33 @@ public class OlympiadGameManager implements Runnable
 			throw new Error("No olympiad stadium zones defined !");
 		}
 
-		_tasks = new OlympiadGameTask[zones.size() * 40];
+		this.tasks = new OlympiadGameTask[zones.size() * 40];
 		int i = 0;
 		for (L2OlympiadStadiumZone zone : zones)
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				_tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
+				this.tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
 			}
 			i++;
 		}
 
-		Log.info("Olympiad System: Loaded " + _tasks.length + " stadium instances.");
+		Log.info("Olympiad System: Loaded " + this.tasks.length + " stadium instances.");
 	}
 
 	public static OlympiadGameManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	protected final boolean isBattleStarted()
 	{
-		return _battleStarted;
+		return this.battleStarted;
 	}
 
 	protected final void startBattle()
 	{
-		_battleStarted = true;
+		this.battleStarted = true;
 	}
 
 	@Override
@@ -112,9 +112,9 @@ public class OlympiadGameManager implements Runnable
 			if (readyClassed != null || readyNonClassed)
 			{
 				// set up the games queue
-				for (int i = 0; i < _tasks.length; i++)
+				for (int i = 0; i < this.tasks.length; i++)
 				{
-					task = _tasks[i];
+					task = this.tasks[i];
 					synchronized (task)
 					{
 						if (!task.isRunning())
@@ -158,17 +158,17 @@ public class OlympiadGameManager implements Runnable
 				}
 			}
 		}
-		else if (isAllTasksFinished() && _battleStarted)
+		else if (isAllTasksFinished() && this.battleStarted)
 		{
 			OlympiadManager.getInstance().clearRegistered();
-			_battleStarted = false;
+			this.battleStarted = false;
 			Log.info("Olympiad System: All current games finished.");
 		}
 	}
 
 	public final boolean isAllTasksFinished()
 	{
-		for (OlympiadGameTask task : _tasks)
+		for (OlympiadGameTask task : this.tasks)
 		{
 			if (task.isRunning())
 			{
@@ -180,17 +180,17 @@ public class OlympiadGameManager implements Runnable
 
 	public final OlympiadGameTask getOlympiadTask(int id)
 	{
-		if (id < 0 || id >= _tasks.length)
+		if (id < 0 || id >= this.tasks.length)
 		{
 			return null;
 		}
 
-		return _tasks[id];
+		return this.tasks[id];
 	}
 
 	public final int getNumberOfStadiums()
 	{
-		return _tasks.length;
+		return this.tasks.length;
 	}
 
 	public final void notifyCompetitorDamage(L2PcInstance player, int damage)
@@ -201,12 +201,12 @@ public class OlympiadGameManager implements Runnable
 		}
 
 		final int id = player.getOlympiadGameId();
-		if (id < 0 || id >= _tasks.length)
+		if (id < 0 || id >= this.tasks.length)
 		{
 			return;
 		}
 
-		final AbstractOlympiadGame game = _tasks[id].getGame();
+		final AbstractOlympiadGame game = this.tasks[id].getGame();
 		if (game != null)
 		{
 			game.addDamage(player, damage);
@@ -216,6 +216,6 @@ public class OlympiadGameManager implements Runnable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final OlympiadGameManager _instance = new OlympiadGameManager();
+		protected static final OlympiadGameManager instance = new OlympiadGameManager();
 	}
 }

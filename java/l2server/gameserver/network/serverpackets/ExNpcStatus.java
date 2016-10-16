@@ -22,21 +22,21 @@ import l2server.gameserver.model.actor.L2Npc;
  */
 public final class ExNpcStatus extends L2GameServerPacket
 {
-	private L2Npc _npc;
+	private L2Npc npc;
 
 	public ExNpcStatus(L2Npc npc)
 	{
-		_npc = npc;
+		this.npc = npc;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_npc.getObjectId());
+		writeD(this.npc.getObjectId());
 		writeH(4); // Unk
 		writeC(0xff); // Mask
-		writeC(_npc.isAlikeDead() ? 0x01 : 0x00);
-		writeC(_npc.isInCombat() ? 0x01 : 0x00);
+		writeC(this.npc.isAlikeDead() ? 0x01 : 0x00);
+		writeC(this.npc.isInCombat() ? 0x01 : 0x00);
 		writeC(0x00); // Unk
 		writeC(0x00); // Unk
 		writeC(0x00); // Unk

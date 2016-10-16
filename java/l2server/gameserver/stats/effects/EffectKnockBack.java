@@ -36,7 +36,7 @@ import l2server.util.Rnd;
  */
 public class EffectKnockBack extends L2Effect
 {
-	private int _x, _y, _z;
+	private int x, y, z;
 
 	public EffectKnockBack(Env env, L2EffectTemplate template)
 	{
@@ -112,23 +112,23 @@ public class EffectKnockBack extends L2Effect
 				cos = dx / distance;
 
 				// Calculate the new destination with offset included
-				_x = getEffector().getX() - (int) (offset * cos);
-				_y = getEffector().getY() - (int) (offset * sin);
-				_z = getEffected().getZ();
+				this.x = getEffector().getX() - (int) (offset * cos);
+				this.y = getEffector().getY() - (int) (offset * sin);
+				this.z = getEffected().getZ();
 
 				if (Config.GEODATA > 0)
 				{
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
 									getEffected().getInstanceId());
-					_x = destiny.getX();
-					_y = destiny.getY();
+					this.x = destiny.getX();
+					this.y = destiny.getY();
 				}
 				getEffected().setIsParalyzed(true);
 				getEffected().startParalyze();
-				getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, FlyType.KNOCK_DOWN));
+				getEffected().broadcastPacket(new FlyToLocation(getEffected(), this.x, this.y, this.z, FlyType.KNOCK_DOWN));
 				getEffected().startVisualEffect(VisualEffect.S_KNOCK_DOWN);
-				getEffected().setXYZ(_x, _y, _z);
+				getEffected().setXYZ(this.x, this.y, this.z);
 				return true;
 			}
 		}
@@ -178,17 +178,17 @@ public class EffectKnockBack extends L2Effect
 				cos = dx / distance;
 
 				// Calculate the new destination with offset included
-				_x = curX + (int) (offset * cos);
-				_y = curY + (int) (offset * sin);
-				_z = curZ;
+				this.x = curX + (int) (offset * cos);
+				this.y = curY + (int) (offset * sin);
+				this.z = curZ;
 
 				if (Config.GEODATA > 0)
 				{
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
 									getEffected().getInstanceId());
-					_x = destiny.getX();
-					_y = destiny.getY();
+					this.x = destiny.getX();
+					this.y = destiny.getY();
 				}
 
 				@SuppressWarnings("unused") boolean knockBack = false;
@@ -196,8 +196,8 @@ public class EffectKnockBack extends L2Effect
 				if (Rnd.nextBoolean())
 				{
 					getEffected().stopMove(null);
-					getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, FlyType.THROW_UP));
-					getEffected().setXYZ(_x, _y, _z);
+					getEffected().broadcastPacket(new FlyToLocation(getEffected(), this.x, this.y, this.z, FlyType.THROW_UP));
+					getEffected().setXYZ(this.x, this.y, this.z);
 					getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 					return false;
 				}
@@ -205,9 +205,9 @@ public class EffectKnockBack extends L2Effect
 				{
 					getEffected().setIsParalyzed(true);
 					getEffected().startParalyze();
-					getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, FlyType.KNOCK_DOWN));
+					getEffected().broadcastPacket(new FlyToLocation(getEffected(), this.x, this.y, this.z, FlyType.KNOCK_DOWN));
 					getEffected().startVisualEffect(VisualEffect.S_KNOCK_DOWN);
-					getEffected().setXYZ(_x, _y, _z);
+					getEffected().setXYZ(this.x, this.y, this.z);
 					return true;
 				}
 			}
@@ -254,20 +254,20 @@ public class EffectKnockBack extends L2Effect
 		cos = dx / distance;
 
 		// Calculate the new destination with offset included
-		_x = getEffector().getX() - (int) (offset * cos);
-		_y = getEffector().getY() - (int) (offset * sin);
-		_z = getEffected().getZ();
+		this.x = getEffector().getX() - (int) (offset * cos);
+		this.y = getEffector().getY() - (int) (offset * sin);
+		this.z = getEffected().getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
 							getEffected().getInstanceId());
-			if (destiny.getX() != _x || destiny.getY() != _y)
+			if (destiny.getX() != this.x || destiny.getY() != this.y)
 			{
-				_x = destiny.getX() + (int) (cos * 10);
-				_y = destiny.getY() + (int) (sin * 10);
-				_z = GeoData.getInstance().getHeight(_x, _y, _z);
+				this.x = destiny.getX() + (int) (cos * 10);
+				this.y = destiny.getY() + (int) (sin * 10);
+				this.z = GeoData.getInstance().getHeight(this.x, this.y, this.z);
 			}
 		}
 		getEffected().setIsParalyzed(true);
@@ -275,8 +275,8 @@ public class EffectKnockBack extends L2Effect
 
 		boolean throwUp = getSkill().getId() == 30012 || getSkill().getId() == 30506;
 		getEffected().broadcastPacket(
-				new FlyToLocation(getEffected(), _x, _y, _z, throwUp ? FlyType.THROW_UP : FlyType.KNOCK_BACK));
-		getEffected().setXYZ(_x, _y, _z);
+				new FlyToLocation(getEffected(), this.x, this.y, this.z, throwUp ? FlyType.THROW_UP : FlyType.KNOCK_BACK));
+		getEffected().setXYZ(this.x, this.y, this.z);
 		return true;
 	}
 

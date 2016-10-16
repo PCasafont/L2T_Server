@@ -31,14 +31,14 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestConfirmCancelItem extends L2GameClientPacket
 {
-	private int _objectId;
+	private int objectId;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
+		this.objectId = readD();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 		{
 			return;
 		}
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
 		if (item == null)
 		{
 			return;

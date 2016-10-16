@@ -22,11 +22,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExRedSky extends L2GameServerPacket
 {
-	private int _duration;
+	private int duration;
 
 	public ExRedSky(int duration)
 	{
-		_duration = duration;
+		this.duration = duration;
 	}
 
 	/**
@@ -34,6 +34,6 @@ public class ExRedSky extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_duration);
+		writeD(this.duration);
 	}
 }

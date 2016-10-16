@@ -26,46 +26,46 @@ public class L2HelperBuff
 	/**
 	 * Min level that the player must achieve to obtain this buff from Newbie Helper
 	 */
-	private int _lowerLevel;
+	private int lowerLevel;
 
 	/**
 	 * Max level that the player mustn't exceed if it want to obtain this buff from Newbie Helper
 	 */
-	private int _upperLevel;
+	private int upperLevel;
 
 	/**
 	 * Identifier of the skill (buff) that the Newbie Helper must cast
 	 */
-	private int _skillID;
+	private int skillID;
 
 	/**
 	 * Level of the skill (buff) that the Newbie Helper must cast
 	 */
-	private int _skillLevel;
+	private int skillLevel;
 
 	/**
 	 * If True only Magus class will obtain this Buff <BR>
 	 * If False only Fighter class will obtain this Buff
 	 */
-	private boolean _isMagicClass;
+	private boolean isMagicClass;
 
-	private boolean _forSummon = false;
+	private boolean forSummon = false;
 
 	/**
 	 * Constructor of L2HelperBuff.<BR><BR>
 	 */
 	public L2HelperBuff(StatsSet set)
 	{
-		_lowerLevel = set.getInteger("lowerLevel");
-		_upperLevel = set.getInteger("upperLevel");
-		_skillID = set.getInteger("skillID");
-		_skillLevel = set.getInteger("skillLevel");
+		this.lowerLevel = set.getInteger("lowerLevel");
+		this.upperLevel = set.getInteger("upperLevel");
+		this.skillID = set.getInteger("skillID");
+		this.skillLevel = set.getInteger("skillLevel");
 		if ("true".equals(set.getString("forSummon")))
 		{
-			_forSummon = true;
+			this.forSummon = true;
 		}
 
-		_isMagicClass = !"false".equals(set.getString("isMagicClass"));
+		this.isMagicClass = !"false".equals(set.getString("isMagicClass"));
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class L2HelperBuff
 	 */
 	public int getLowerLevel()
 	{
-		return _lowerLevel;
+		return this.lowerLevel;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class L2HelperBuff
 	 */
 	public int getUpperLevel()
 	{
-		return _upperLevel;
+		return this.upperLevel;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class L2HelperBuff
 	 */
 	public int getSkillID()
 	{
-		return _skillID;
+		return this.skillID;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class L2HelperBuff
 	 */
 	public int getSkillLevel()
 	{
-		return _skillLevel;
+		return this.skillLevel;
 	}
 
 	/**
@@ -115,11 +115,11 @@ public class L2HelperBuff
 	 */
 	public boolean isMagicClassBuff()
 	{
-		return _isMagicClass;
+		return this.isMagicClass;
 	}
 
 	public boolean isForSummon()
 	{
-		return _forSummon;
+		return this.forSummon;
 	}
 }

@@ -24,18 +24,18 @@ public class AutoAttackStop extends L2GameServerPacket
 {
 	// dh
 
-	private int _targetObjId;
+	private int targetObjId;
 
 	/**
 	 */
 	public AutoAttackStop(int targetObjId)
 	{
-		_targetObjId = targetObjId;
+		this.targetObjId = targetObjId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_targetObjId);
+		writeD(this.targetObjId);
 	}
 }

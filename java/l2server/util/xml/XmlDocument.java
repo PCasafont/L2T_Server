@@ -29,15 +29,15 @@ import java.util.List;
  */
 public class XmlDocument
 {
-	private static DocumentBuilderFactory _factory = DocumentBuilderFactory.newInstance();
+	private static DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 	static
 	{
-		_factory.setValidating(false);
-		_factory.setIgnoringComments(true);
+		factory.setValidating(false);
+		factory.setIgnoringComments(true);
 	}
 
-	private List<XmlNode> _children = new ArrayList<>();
+	private List<XmlNode> children = new ArrayList<>();
 
 	public XmlDocument(File file)
 	{
@@ -51,7 +51,7 @@ public class XmlDocument
 		Document doc = null;
 		try
 		{
-			doc = _factory.newDocumentBuilder().parse(file);
+			doc = this.factory.newDocumentBuilder().parse(file);
 		}
 		catch (Exception e)
 		{
@@ -62,23 +62,23 @@ public class XmlDocument
 		{
 			if (baseNode.getNodeType() == Node.ELEMENT_NODE)
 			{
-				_children.add(new XmlNode(baseNode));
+				this.children.add(new XmlNode(baseNode));
 			}
 		}
 	}
 
 	public XmlNode getFirstChild()
 	{
-		if (_children.isEmpty())
+		if (this.children.isEmpty())
 		{
 			return null;
 		}
 
-		return _children.get(0);
+		return this.children.get(0);
 	}
 
 	public List<XmlNode> getChildren()
 	{
-		return _children;
+		return this.children;
 	}
 }

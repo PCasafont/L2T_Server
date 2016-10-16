@@ -29,6 +29,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
+import l2server.log.Log;
 
 /**
  * @author Kerberos, Zoey76
@@ -69,7 +70,7 @@ public class PetFood implements IItemHandler
 				useFood(playable, 2916, item);
 				break;
 			default:
-				_log.warning("Pet Food Id: " + itemId + " without handler!");
+				Log.warning("Pet Food Id: " + itemId + " without handler!");
 				break;
 		}
 	}

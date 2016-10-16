@@ -29,17 +29,17 @@ public class Ex2ndPasswordCheck extends L2GameServerPacket
 	public static final int PASSWORD_PROMPT = 0x01;
 	public static final int PASSWORD_OK = 0x02;
 
-	int _windowType;
+	int windowType;
 
 	public Ex2ndPasswordCheck(int windowType)
 	{
-		_windowType = windowType;
+		this.windowType = windowType;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_windowType);
+		writeD(this.windowType);
 		writeD(0x00);
 	}
 }

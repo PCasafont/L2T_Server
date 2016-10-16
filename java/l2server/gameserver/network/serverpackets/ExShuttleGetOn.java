@@ -24,24 +24,24 @@ import l2server.util.Point3D;
  */
 public class ExShuttleGetOn extends L2GameServerPacket
 {
-	private final int _playerId, _shuttleId;
-	private final Point3D _pos;
+	private final int playerId, shuttleId;
+	private final Point3D pos;
 
 	public ExShuttleGetOn(L2PcInstance player, L2Character shuttle)
 	{
-		_playerId = player.getObjectId();
-		_shuttleId = shuttle.getObjectId();
-		_pos = player.getInVehiclePosition();
+		this.playerId = player.getObjectId();
+		this.shuttleId = shuttle.getObjectId();
+		this.pos = player.getInVehiclePosition();
 		player.gotOnOffShuttle();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_playerId);
-		writeD(_shuttleId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
+		writeD(this.playerId);
+		writeD(this.shuttleId);
+		writeD(this.pos.getX());
+		writeD(this.pos.getY());
+		writeD(this.pos.getZ());
 	}
 }

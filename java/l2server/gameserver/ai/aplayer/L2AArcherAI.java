@@ -69,53 +69,53 @@ public class L2AArcherAI extends L2APlayerAI
 
 		if (target != null)
 		{
-			if (_player.isInsideRadius(target, 100, true, true))
+			if (this.player.isInsideRadius(target, 100, true, true))
 			{
-				L2Skill skill = _player.getKnownSkill(QUICK_EVASION);
-				if (skill != null && _player.useMagic(skill, true, false))
+				L2Skill skill = this.player.getKnownSkill(QUICK_EVASION);
+				if (skill != null && this.player.useMagic(skill, true, false))
 				{
 					return true;
 				}
 			}
-			else if (!_player.isInsideRadius(target, 1500, true, true))
+			else if (!this.player.isInsideRadius(target, 1500, true, true))
 			{
-				L2Skill skill = _player.getKnownSkill(QUICK_CHARGE);
-				if (skill != null && _player.useMagic(skill, true, false))
-				{
-					return true;
-				}
-			}
-		}
-
-		for (L2Character attacker : _player.getKnownList().getKnownCharactersInRadius(100))
-		{
-			if (_player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == _player)
-			{
-				L2Skill skill = _player.getKnownSkill(QUICK_CHARGE);
-				if (skill != null && _player.useMagic(skill, true, false))
-				{
-					return true;
-				}
-
-				skill = _player.getKnownSkill(QUICK_EVASION);
-				if (skill != null && _player.useMagic(skill, true, false))
+				L2Skill skill = this.player.getKnownSkill(QUICK_CHARGE);
+				if (skill != null && this.player.useMagic(skill, true, false))
 				{
 					return true;
 				}
 			}
 		}
 
-		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
-				_player.getTarget() instanceof L2Playable)
+		for (L2Character attacker : this.player.getKnownList().getKnownCharactersInRadius(100))
 		{
-			for (L2Skill skill : _player.getAllSkills())
+			if (this.player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == this.player)
+			{
+				L2Skill skill = this.player.getKnownSkill(QUICK_CHARGE);
+				if (skill != null && this.player.useMagic(skill, true, false))
+				{
+					return true;
+				}
+
+				skill = this.player.getKnownSkill(QUICK_EVASION);
+				if (skill != null && this.player.useMagic(skill, true, false))
+				{
+					return true;
+				}
+			}
+		}
+
+		if (this.player.getCurrentMp() > player.getMaxMp() * 0.7 || this.player.getCurrentHp() < this.player.getMaxHp() * 0.5 ||
+				this.player.getTarget() instanceof L2Playable)
+		{
+			for (L2Skill skill : this.player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 				{
 					continue;
 				}
 
-				if (_player.useMagic(skill, true, false))
+				if (this.player.useMagic(skill, true, false))
 				{
 					break;
 				}
@@ -132,15 +132,15 @@ public class L2AArcherAI extends L2APlayerAI
 	{
 		super.think();
 
-		L2ItemInstance arrows = _player.getInventory().getItemByItemId(18550);
+		L2ItemInstance arrows = this.player.getInventory().getItemByItemId(18550);
 		if (arrows == null || arrows.getCount() < 1000)
 		{
-			_player.getInventory().addItem("", 18550, 1000, _player, _player);
-			L2ItemInstance bow = _player.getActiveWeaponInstance();
+			this.player.getInventory().addItem("", 18550, 1000, this.player, this.player);
+			L2ItemInstance bow = this.player.getActiveWeaponInstance();
 			if (bow != null)
 			{
-				_player.useEquippableItem(bow, false);
-				_player.useEquippableItem(bow, false);
+				this.player.useEquippableItem(bow, false);
+				this.player.useEquippableItem(bow, false);
 			}
 		}
 	}

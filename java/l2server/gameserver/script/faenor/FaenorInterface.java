@@ -36,7 +36,7 @@ public class FaenorInterface implements EngineInterface
 
 	public static FaenorInterface getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private FaenorInterface()
@@ -152,6 +152,6 @@ public class FaenorInterface implements EngineInterface
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FaenorInterface _instance = new FaenorInterface();
+		protected static final FaenorInterface instance = new FaenorInterface();
 	}
 }

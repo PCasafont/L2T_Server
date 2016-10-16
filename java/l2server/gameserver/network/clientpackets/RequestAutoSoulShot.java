@@ -33,14 +33,14 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 {
 
 	// format cd
-	private int _itemId;
-	private int _enabled; // 1 = on : 0 = off;
+	private int itemId;
+	private int enabled; // 1 = on : 0 = off;
 
 	@Override
 	protected void readImpl()
 	{
-		_itemId = readD();
-		_enabled = readD();
+		this.itemId = readD();
+		this.enabled = readD();
 	}
 
 	@Override
@@ -56,16 +56,16 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("AutoSoulShot:" + _itemId);
+				Log.fine("AutoSoulShot:" + this.itemId);
 			}
 
-			L2ItemInstance item = activeChar.getInventory().getItemByItemId(_itemId);
+			L2ItemInstance item = activeChar.getInventory().getItemByItemId(this.itemId);
 			if (item == null)
 			{
 				return;
 			}
 
-			if (_enabled == 1)
+			if (this.enabled == 1)
 			{
 				if (!activeChar.getInventory().canManipulateWithItemId(item.getItemId()))
 				{
@@ -74,11 +74,11 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				}
 
 				// Fishingshots are not automatic on retail
-				if (_itemId < 6535 || _itemId > 6540)
+				if (this.itemId < 6535 || this.itemId > 6540)
 				{
 					// Attempt to charge first shot on activation
-					if (_itemId == 6645 || _itemId == 6646 || _itemId == 6647 || _itemId == 20332 || _itemId == 20333 ||
-							_itemId == 20334)
+					if (this.itemId == 6645 || this.itemId == 6646 || this.itemId == 6647 || this.itemId == 20332 || this.itemId == 20333 ||
+							this.itemId == 20334)
 					{
 						boolean hasSummon = false;
 						if (activeChar.getPet() != null)
@@ -103,7 +103,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							}
 							activeChar.addAutoSoulShot(item);
 							activeChar.sendPacket(
-									new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
+									new ExAutoSoulShot(this.itemId, this.enabled, item.getItem().getShotTypeIndex()));
 
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -140,7 +140,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							}
 							activeChar.addAutoSoulShot(item);
 							activeChar.sendPacket(
-									new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
+									new ExAutoSoulShot(this.itemId, this.enabled, item.getItem().getShotTypeIndex()));
 
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -165,12 +165,12 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 						{
 							activeChar.addAutoSoulShot(item);
 							activeChar.sendPacket(
-									new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
+									new ExAutoSoulShot(this.itemId, this.enabled, item.getItem().getShotTypeIndex()));
 						}
 						else
 						{
-							if (_itemId >= 2509 && _itemId <= 2514 || _itemId >= 3947 && _itemId <= 3952 ||
-									_itemId == 5790 || _itemId >= 22072 && _itemId <= 22081)
+							if (this.itemId >= 2509 && this.itemId <= 2514 || this.itemId >= 3947 && this.itemId <= 3952 ||
+									this.itemId == 5790 || this.itemId >= 22072 && this.itemId <= 22081)
 							{
 								activeChar.sendPacket(
 										SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
@@ -183,7 +183,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 
 							activeChar.addAutoSoulShot(item);
 							activeChar.sendPacket(
-									new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
+									new ExAutoSoulShot(this.itemId, this.enabled, item.getItem().getShotTypeIndex()));
 						}
 
 						// start the auto soulshot use
@@ -195,10 +195,10 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					}
 				}
 			}
-			else if (_enabled == 0)
+			else if (this.enabled == 0)
 			{
 				activeChar.removeAutoSoulShot(item);
-				activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
+				activeChar.sendPacket(new ExAutoSoulShot(this.itemId, this.enabled, item.getItem().getShotTypeIndex()));
 
 				// cancel the auto soulshot use
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AUTO_USE_OF_S1_CANCELLED);

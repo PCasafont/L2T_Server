@@ -22,18 +22,18 @@ package l2server.gameserver.network.serverpackets;
 public class GMHide extends L2GameServerPacket
 {
 	// cd
-	private static int _mode;
+	private static int mode;
 
 	/**
 	 */
 	public GMHide(int mode)
 	{
-		_mode = mode;
+		this.mode = mode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_mode);
+		writeD(this.mode);
 	}
 }

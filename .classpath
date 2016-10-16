@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="**/.svn/*|.svn" kind="src" path="java" />
-	<classpathentry excluding="**/.svn/*|.svn" kind="src" path="data/scripts" />
+	<classpathentry excluding="**/.svn/*|.svn" kind="src" path="data_classic/scripts" />
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" />
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4" />
 	<classpathentry kind="lib" path="lib/jython.jar" />
@@ -21,7 +21,7 @@
 	<classpathentry kind="lib" path="lib/bsh-2.0b5.jar" />
 	<classpathentry kind="lib" path="lib/bsh-engine.jar" />
 	<classpathentry kind="lib" path="lib/java-engine.jar" />
-	<classpathentry kind="lib" path="lib/jnit-4.12.jar" />
+	<classpathentry kind="lib" path="lib/junit-4.12.jar" />
 	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar" />
 	<classpathentry kind="output" path="bin" />
 </classpath>

@@ -27,12 +27,12 @@ public final class CharacterRestore extends L2GameClientPacket
 	//
 
 	// cd
-	private int _charSlot;
+	private int charSlot;
 
 	@Override
 	protected void readImpl()
 	{
-		_charSlot = readD();
+		this.charSlot = readD();
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public final class CharacterRestore extends L2GameClientPacket
 
 		try
 		{
-			getClient().markRestoredChar(_charSlot);
+			getClient().markRestoredChar(this.charSlot);
 		}
 		catch (Exception ignored)
 		{

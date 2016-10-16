@@ -23,7 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameEnd extends L2GameServerPacket
 {
-	boolean _isRedTeamWin;
+	boolean isRedTeamWin;
 
 	/**
 	 * Show Minigame Results
@@ -32,7 +32,7 @@ public class ExCubeGameEnd extends L2GameServerPacket
 	 */
 	public ExCubeGameEnd(boolean isRedTeamWin)
 	{
-		_isRedTeamWin = isRedTeamWin;
+		this.isRedTeamWin = isRedTeamWin;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ExCubeGameEnd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_isRedTeamWin ? 0x01 : 0x00);
+		writeD(this.isRedTeamWin ? 0x01 : 0x00);
 	}
 }

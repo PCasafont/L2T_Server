@@ -1,5 +1,8 @@
 package instances.GrandBosses.Freya;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
@@ -7,20 +10,27 @@ import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2CharPosition;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.EventTrigger;
+import l2server.gameserver.network.serverpackets.ExSendUIEvent;
+import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.PlaySound;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author LasTravel
@@ -39,24 +49,24 @@ import java.util.List;
 public class Freya extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "Freya";
+    private static final boolean debug = false;
+    private static final String qn = "Freya";
 
     //Id's
     @SuppressWarnings("unused")
-    private static final int _glacier = 18853;
-    private static final int _frozenCore = 15470;
-    private static final int _dummy = 18932;
-    private static final int _jiniaId = 32781;
-    private static final int _jiniaInnerId = 18850;
-    private static final int _kegorInnerId = 18851;
-    private static final int _sirraId = 32762;
-    private static final int[] _templates = {139, 144};
+    private static final int glacier = 18853;
+    private static final int frozenCore = 15470;
+    private static final int dummy = 18932;
+    private static final int jiniaId = 32781;
+    private static final int jiniaInnerId = 18850;
+    private static final int kegorInnerId = 18851;
+    private static final int sirraId = 32762;
+    private static final int[] templates = {139, 144};
     private static final int[] _all_mobs = {29177, 29178, 29179, 29180, 18854, 18855, 18856, 25699, 25700};
-    private static final int[] _roomEffects = {23140202, 23140204, 23140206, 23140208, 23140212, 23140214, 23140216};
+    private static final int[] roomEffects = {23140202, 23140204, 23140206, 23140208, 23140212, 23140214, 23140216};
 
     //Cords
-    private static final Location[] _playerEnter = {
+    private static final Location[] playerEnter = {
             new Location(114185, -112435, -11210),
             new Location(114183, -112280, -11210),
             new Location(114024, -112435, -11210),
@@ -66,7 +76,7 @@ public class Freya extends L2AttackableAIScript
     };
 
     //Spawns
-    private static final int[][] _iceKnightAroundRoom = {
+    private static final int[][] iceKnightAroundRoom = {
             {113845, -116091, -11168, 8264},
             {113381, -115622, -11168, 8264},
             {113380, -113978, -11168, -8224},
@@ -85,7 +95,7 @@ public class Freya extends L2AttackableAIScript
             {116502, -115473, -10960, 32724}
     };
 
-    private static final int[][] _iceBreathingCenterRoom = {
+    private static final int[][] iceBreathingCenterRoom = {
             {114713, -115109, -11202, 16456},
             {114008, -115080, -11202, 3568},
             {114422, -115508, -11202, 12400},
@@ -120,13 +130,13 @@ public class Freya extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addTalkId(_jiniaId);
-        addStartNpc(_jiniaId);
-        addTalkId(_sirraId);
-        addStartNpc(_sirraId);
-        addFirstTalkId(_sirraId);
-        addFirstTalkId(_jiniaInnerId);
-        addFirstTalkId(_kegorInnerId);
+        addTalkId(this.jiniaId);
+        addStartNpc(this.jiniaId);
+        addTalkId(this.sirraId);
+        addStartNpc(this.sirraId);
+        addFirstTalkId(this.sirraId);
+        addFirstTalkId(this.jiniaInnerId);
+        addFirstTalkId(this.kegorInnerId);
 
         for (int mob : _all_mobs)
         {
@@ -139,7 +149,7 @@ public class Freya extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -209,7 +219,7 @@ public class Freya extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -243,7 +253,7 @@ public class Freya extends L2AttackableAIScript
 
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(23140101).openMe();
 
-                startQuestTimer("stage_1_intro", _debug ? 10000 : 5 * 60000, npc, null);
+                startQuestTimer("stage_1_intro", this.debug ? 10000 : 5 * 60000, npc, null);
             }
             else if (event.equalsIgnoreCase("stage_1_intro"))
             {
@@ -278,7 +288,7 @@ public class Freya extends L2AttackableAIScript
                 world.Freya =
                         addSpawn(world.FirstFreyaId, 114720, -117085, -11088, 15956, false, 0, false, world.instanceId);
 
-                world.dummy = addSpawn(_dummy, 114707, -114797, -11199, 0, false, 0, false, world.instanceId);
+                world.dummy = addSpawn(this.dummy, 114707, -114797, -11199, 0, false, 0, false, world.instanceId);
 
                 world.AllMobs.add(world.dummy);
 
@@ -404,7 +414,7 @@ public class Freya extends L2AttackableAIScript
                 startQuestTimer("stage_3_spawnmonuments", 60000, npc, null);
 
                 //Start room tempest effects
-                for (int id : _roomEffects)
+                for (int id : this.roomEffects)
                 {
                     InstanceManager.getInstance().sendPacket(world.instanceId, new EventTrigger(id, true));
                 }
@@ -513,7 +523,7 @@ public class Freya extends L2AttackableAIScript
             }
         }
 
-        if (npc.getNpcId() == _jiniaId && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+        if (npc.getNpcId() == this.jiniaId && Util.isDigit(event) && Util.contains(this.templates, Integer.valueOf(event)))
         {
             try
             {
@@ -532,7 +542,7 @@ public class Freya extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -577,7 +587,7 @@ public class Freya extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -603,7 +613,7 @@ public class Freya extends L2AttackableAIScript
                         npc, null);
 
                 //Stop room tempest effects
-                for (int id : _roomEffects)
+                for (int id : this.roomEffects)
                 {
                     InstanceManager.getInstance().sendPacket(world.instanceId, new EventTrigger(id, false));
                 }
@@ -615,17 +625,17 @@ public class Freya extends L2AttackableAIScript
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player);
         }
 
         int npcid = npc.getNpcId();
-        if (npcid == _jiniaInnerId || npcid == _kegorInnerId)
+        if (npcid == this.jiniaInnerId || npcid == this.kegorInnerId)
         {
             player.sendPacket(ActionFailed.STATIC_PACKET);
         }
-        else if (npcid == _sirraId)
+        else if (npcid == this.sirraId)
         {
             return "Sirra.html";
         }
@@ -635,13 +645,13 @@ public class Freya extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
-        if (npcId == _jiniaId)
+        if (npcId == this.jiniaId)
         {
             return "Jinia.html";
         }
@@ -701,13 +711,13 @@ public class Freya extends L2AttackableAIScript
             {
                 maxLvl = Config.MAX_LEVEL;
             }
-            if (!_debug && !InstanceManager.getInstance()
+            if (!this.debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, template_id, minPlayers, 35, 77, maxLvl))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
             world = new FreyaWorld();
             world.instanceId = instanceId;
             world.templateId = template_id;
@@ -718,7 +728,7 @@ public class Freya extends L2AttackableAIScript
             setupIDs((FreyaWorld) world, template_id);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (_debug)
+            if (this.debug)
             {
                 allPlayers.add(player);
             }
@@ -739,15 +749,15 @@ public class Freya extends L2AttackableAIScript
                 }
 
                 //Delete Frozen core
-                enterPlayer.deleteAllItemsById(_frozenCore);
+                enterPlayer.deleteAllItemsById(this.frozenCore);
                 //Give new Frozen Core
-                enterPlayer.getInventory().addItem(_qn, _frozenCore, 3, enterPlayer, enterPlayer);
+                enterPlayer.getInventory().addItem(this.qn, this.frozenCore, 3, enterPlayer, enterPlayer);
 
                 world.allowed.add(enterPlayer.getObjectId());
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(_playerEnter[Rnd.get(0, _playerEnter.length - 1)], true);
+                enterPlayer.teleToLocation(this.playerEnter[Rnd.get(0, this.playerEnter.length - 1)], true);
             }
 
             Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " +
@@ -779,7 +789,7 @@ public class Freya extends L2AttackableAIScript
 
     private void spawnMobs(FreyaWorld world, int mobId)
     {
-        for (int sp[] : _iceBreathingCenterRoom)
+        for (int sp[] : this.iceBreathingCenterRoom)
         {
             L2Npc npc = addSpawn(mobId, sp[0], sp[1], sp[2], sp[3], false, 0, false, world.instanceId);
             world.AllMobs.add(npc);
@@ -803,7 +813,7 @@ public class Freya extends L2AttackableAIScript
 
     private void spawnMonuments(FreyaWorld world)
     {
-        for (int sp[] : _iceKnightAroundRoom)
+        for (int sp[] : this.iceKnightAroundRoom)
         {
             L2Npc npc = addSpawn(world.IceKnightId, sp[0], sp[1], sp[2], sp[3], false, 0, false, world.instanceId);
             world.Monuments.add(npc);
@@ -823,6 +833,6 @@ public class Freya extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Freya(-1, _qn, "instances/GrandBosses");
+        new Freya(-1, qn, "instances/GrandBosses");
     }
 }

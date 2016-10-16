@@ -18,10 +18,10 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2EventFlagInstance extends L2NpcInstance
 {
-	private boolean _toDelete = false;
-	private EventInstance _event = null;
-	private EventTeam _team = null;
-	private EventType _type;
+	private boolean toDelete = false;
+	private EventInstance event = null;
+	private EventTeam team = null;
+	private EventType type;
 
 	public L2EventFlagInstance(int objectId, L2NpcTemplate template)
 	{
@@ -30,21 +30,21 @@ public class L2EventFlagInstance extends L2NpcInstance
 
 	public void setEvent(EventInstance event)
 	{
-		_event = event;
-		if (_event.isType(EventType.CaptureTheFlag))
+		this.event = event;
+		if (this.event.isType(EventType.CaptureTheFlag))
 		{
-			_type = EventType.CaptureTheFlag;
+			this.type = EventType.CaptureTheFlag;
 		}
 		else
 		{
-			_type = EventType.FieldDomination;
+			this.type = EventType.FieldDomination;
 		}
 	}
 
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if (_toDelete || !_event.isType(_type))
+		if (this.toDelete || !this.event.isType(this.type))
 		{
 			deleteMe();
 			SpawnTable.getInstance().deleteSpawn(getSpawn(), true);
@@ -66,13 +66,13 @@ public class L2EventFlagInstance extends L2NpcInstance
 			else
 			{
 				if (player.getEvent() != null &&
-						(_event.isType(EventType.CaptureTheFlag) || _event.isType(EventType.FieldDomination)))
+						(this.event.isType(EventType.CaptureTheFlag) || this.event.isType(EventType.FieldDomination)))
 				{
-					if (_event.isType(EventType.CaptureTheFlag) && player.getEvent() == _event)
+					if (this.event.isType(EventType.CaptureTheFlag) && player.getEvent() == this.event)
 					{
 						((CaptureTheFlag) player.getEvent()).onFlagTouched(player, getTeam());
 					}
-					else if (_event.isType(EventType.FieldDomination) && !player.isCastingNow() &&
+					else if (this.event.isType(EventType.FieldDomination) && !player.isCastingNow() &&
 							player.getEvent() != null &&
 							player.getEvent().getParticipantTeam(player.getObjectId()).getFlagId() != getNpcId())
 					{
@@ -97,41 +97,41 @@ public class L2EventFlagInstance extends L2NpcInstance
 
 	public EventTeam getTeam()
 	{
-		return _team;
+		return this.team;
 	}
 
 	public void setTeam(EventTeam team)
 	{
-		_team = team;
+		this.team = team;
 	}
 
 	class FlagCastFinalizer implements Runnable
 	{
-		private L2PcInstance _player;
+		private L2PcInstance player;
 
 		FlagCastFinalizer(L2PcInstance player)
 		{
-			_player = player;
+			this.player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_player.isCastingNow())
+			if (this.player.isCastingNow())
 			{
-				_player.sendPacket(new MagicSkillLaunched(_player, 2046, 1));
-				_player.setIsCastingNow(false);
+				this.player.sendPacket(new MagicSkillLaunched(this.player, 2046, 1));
+				this.player.setIsCastingNow(false);
 
-				if (_player.getEvent() != null && _player.getEvent() instanceof FieldDomination && !isToDelete())
+				if (this.player.getEvent() != null && this.player.getEvent() instanceof FieldDomination && !isToDelete())
 				{
 					if (getTeam() == null)
 					{
-						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this,
-								_player.getEvent().getParticipantTeam(_player.getObjectId()), _player);
+						((FieldDomination) this.player.getEvent()).convertFlag(L2EventFlagInstance.this,
+								this.player.getEvent().getParticipantTeam(this.player.getObjectId()), this.player);
 					}
 					else
 					{
-						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this, null, _player);
+						((FieldDomination) this.player.getEvent()).convertFlag(L2EventFlagInstance.this, null, this.player);
 					}
 				}
 			}
@@ -140,11 +140,11 @@ public class L2EventFlagInstance extends L2NpcInstance
 
 	public void shouldBeDeleted()
 	{
-		_toDelete = true;
+		this.toDelete = true;
 	}
 
 	public boolean isToDelete()
 	{
-		return _toDelete;
+		return this.toDelete;
 	}
 }

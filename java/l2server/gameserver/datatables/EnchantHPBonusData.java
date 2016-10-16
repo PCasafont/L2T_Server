@@ -36,12 +36,12 @@ import java.util.StringTokenizer;
 public class EnchantHPBonusData
 {
 
-	private final TIntObjectHashMap<Integer[]> _armorHPBonus = new TIntObjectHashMap<>();
+	private final TIntObjectHashMap<Integer[]> armorHPBonus = new TIntObjectHashMap<>();
 	private static final float fullArmorModifier = 1.5f;
 
 	public static EnchantHPBonusData getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private EnchantHPBonusData()
@@ -56,7 +56,7 @@ public class EnchantHPBonusData
 
 	private void load()
 	{
-		_armorHPBonus.clear();
+		this.armorHPBonus.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantHPBonus.xml");
 
 		if (file.exists())
@@ -95,12 +95,12 @@ public class EnchantHPBonusData
 								}
 								bonus[i] = value;
 							}
-							_armorHPBonus.put(grade, bonus);
+							this.armorHPBonus.put(grade, bonus);
 						}
 					}
 				}
 			}
-			if (_armorHPBonus.isEmpty())
+			if (this.armorHPBonus.isEmpty())
 			{
 				return;
 			}
@@ -155,7 +155,7 @@ public class EnchantHPBonusData
 
 	public final int getHPBonus(L2ItemInstance item)
 	{
-		final Integer[] values = _armorHPBonus.get(item.getItem().getItemGradePlain());
+		final Integer[] values = this.armorHPBonus.get(item.getItem().getItemGradePlain());
 
 		if (values == null || values.length == 0)
 		{
@@ -175,6 +175,6 @@ public class EnchantHPBonusData
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EnchantHPBonusData _instance = new EnchantHPBonusData();
+		protected static final EnchantHPBonusData instance = new EnchantHPBonusData();
 	}
 }

@@ -57,29 +57,29 @@ import java.util.Collection;
  */
 public final class ExBuyList extends L2ItemListPacket
 {
-	private int _listId;
-	private Collection<L2TradeItem> _list;
-	private long _money;
-	private double _taxRate = 0;
+	private int listId;
+	private Collection<L2TradeItem> list;
+	private long money;
+	private double taxRate = 0;
 
 	public ExBuyList(L2TradeList list, long currentMoney, double taxRate)
 	{
-		_listId = list.getListId();
-		_list = list.getItems();
-		_money = currentMoney;
-		_taxRate = taxRate;
+		this.listId = list.getListId();
+		this.list = list.getItems();
+		this.money = currentMoney;
+		this.taxRate = taxRate;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(_money); // current money
-		writeD(_listId);
+		writeQ(this.money); // current money
+		writeD(this.listId);
 		writeD(0x00); // GoD ???
 
-		writeH(_list.size());
+		writeH(this.list.size());
 
-		for (L2TradeItem item : _list)
+		for (L2TradeItem item : this.list)
 		{
 			if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
 			{
@@ -99,11 +99,11 @@ public final class ExBuyList extends L2ItemListPacket
 
 				if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
 				{
-					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
+					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + this.taxRate)));
 				}
 				else
 				{
-					writeQ((long) (item.getPrice() * (1 + _taxRate)));
+					writeQ((long) (item.getPrice() * (1 + this.taxRate)));
 				}
 			}
 		}

@@ -23,28 +23,28 @@ import java.util.ArrayList;
 
 public final class ExEnchantSkillInfo extends L2GameServerPacket
 {
-	private ArrayList<Integer> _routes; //skill lvls for each route
+	private ArrayList<Integer> routes; //skill lvls for each route
 
-	private final int _id;
-	private final int _lvl;
-	private final int _enchant;
-	private boolean _maxEnchanted = false;
+	private final int id;
+	private final int lvl;
+	private final int enchant;
+	private boolean maxEnchanted = false;
 
 	public ExEnchantSkillInfo(int id, int lvl, int enchRoute, int enchLvl)
 	{
-		_routes = new ArrayList<>();
-		_id = id;
-		_lvl = lvl;
-		_enchant = enchRoute * 1000 + enchLvl;
+		this.routes = new ArrayList<>();
+		this.id = id;
+		this.lvl = lvl;
+		this.enchant = enchRoute * 1000 + enchLvl;
 
-		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_id);
+		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(this.id);
 		// do we have this skill?
 		if (enchantLearn != null)
 		{
 			// skill already enchanted?
 			if (enchRoute > 0)
 			{
-				_maxEnchanted = enchantLearn.isMaxEnchant(enchRoute, enchLvl);
+				this.maxEnchanted = enchantLearn.isMaxEnchant(enchRoute, enchLvl);
 
 				// get detail for next level
 				EnchantSkillDetail esd = enchantLearn.getEnchantSkillDetail(enchRoute, enchLvl);
@@ -52,7 +52,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				// if it exists add it
 				if (esd != null)
 				{
-					_routes.add(_lvl + (enchRoute * 1000 + enchLvl + (_maxEnchanted ? 0 : 1) << 16));
+					this.routes.add(this.lvl + (enchRoute * 1000 + enchLvl + (this.maxEnchanted ? 0 : 1) << 16));
 				}
 
 				for (int route : enchantLearn.getAllRoutes())
@@ -63,7 +63,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 					}
 					// add other levels of all routes - same lvl as enchanted
 					// lvl
-					_routes.add(_lvl + (route * 1000 + enchLvl << 16));
+					this.routes.add(this.lvl + (route * 1000 + enchLvl << 16));
 				}
 			}
 			else
@@ -72,7 +72,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				for (int route : enchantLearn.getAllRoutes())
 				{
 					// add first level (+1) of all routes
-					_routes.add(_lvl + (route * 1000 + 1 << 16));
+					this.routes.add(this.lvl + (route * 1000 + 1 << 16));
 				}
 			}
 		}
@@ -86,14 +86,14 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_id);
-		writeH(_lvl);
-		writeH(_enchant);
-		writeD(_maxEnchanted ? 0 : 1);
-		writeD(_lvl > 100 ? 1 : 0); // enchanted?
+		writeD(this.id);
+		writeH(this.lvl);
+		writeH(this.enchant);
+		writeD(this.maxEnchanted ? 0 : 1);
+		writeD(this.lvl > 100 ? 1 : 0); // enchanted?
 
-		writeD(_routes.size());
-		for (Integer level : _routes)
+		writeD(this.routes.size());
+		for (Integer level : this.routes)
 		{
 			writeD(level);
 		}

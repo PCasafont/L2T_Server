@@ -27,24 +27,24 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
 public final class RequestShortCutReg extends L2GameClientPacket
 {
 
-	private int _type;
-	private int _id;
-	private int _slot;
-	private int _page;
-	private int _lvl;
-	private int _characterType; // 1 - player, 2 - pet
+	private int type;
+	private int id;
+	private int slot;
+	private int page;
+	private int lvl;
+	private int characterType; // 1 - player, 2 - pet
 
 	@Override
 	protected void readImpl()
 	{
-		_type = readD();
+		this.type = readD();
 		int slot = readD();
-		_id = readD();
-		_lvl = readD();
-		_characterType = readD();
+		this.id = readD();
+		this.lvl = readD();
+		this.characterType = readD();
 
-		_slot = slot % 12;
-		_page = slot / 12;
+		this.slot = slot % 12;
+		this.page = slot / 12;
 	}
 
 	@Override
@@ -56,17 +56,17 @@ public final class RequestShortCutReg extends L2GameClientPacket
 			return;
 		}
 
-		if (_page > 10 || _page < 0)
+		if (this.page > 10 || this.page < 0)
 		{
 			return;
 		}
 
-		switch (_type)
+		switch (this.type)
 		{
 			case 0x01: // item
 			case 0x02: // skill
 			{
-				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				L2ShortCut sc = new L2ShortCut(this.slot, this.page, this.type, this.id, this.lvl, this.characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;
@@ -75,14 +75,14 @@ public final class RequestShortCutReg extends L2GameClientPacket
 			case 0x04: // macro
 			case 0x05: // recipe
 			{
-				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				L2ShortCut sc = new L2ShortCut(this.slot, this.page, this.type, this.id, this.lvl, this.characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;
 			}
 			case 0x06: // Teleport Bookmark
 			{
-				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
+				L2ShortCut sc = new L2ShortCut(this.slot, this.page, this.type, this.id, this.lvl, this.characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;

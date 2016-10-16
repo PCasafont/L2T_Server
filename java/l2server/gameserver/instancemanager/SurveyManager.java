@@ -30,7 +30,7 @@ import java.util.Map;
  */
 public class SurveyManager
 {
-	private static SurveyManager _instance;
+	private static SurveyManager instance;
 
 	private final String GET_CURRENT_SURVEY =
 			"SELECT survey_id,question,description FROM survey WHERE survey_id = (SELECT MAX(survey_id) FROM survey where active = 1)";
@@ -39,11 +39,11 @@ public class SurveyManager
 	private final String GET_CURRENT_SURVEY_ANSWERS = "SELECT charId FROM survey_answer WHERE survey_id = ?";
 	private final String STORE_ANSWER = "INSERT INTO survey_answer (charId,survey_id,answer_id) VALUES (?,?)";
 
-	private int _id = 0;
-	private String _question;
-	private String _description;
-	private Map<Integer, String> _possibleAnswers;
-	private List<Integer> _answers;
+	private int id = 0;
+	private String question;
+	private String description;
+	private Map<Integer, String> possibleAnswers;
+	private List<Integer> answers;
 
 	private SurveyManager()
 	{
@@ -61,12 +61,12 @@ public class SurveyManager
 
 			if (rset.next())
 			{
-				_id = rset.getInt("survey_id");
-				_question = rset.getString("question");
-				_description = rset.getString("description");
+				this.id = rset.getInt("survey_id");
+				this.question = rset.getString("question");
+				this.description = rset.getString("description");
 
 				PreparedStatement statement2 = con.prepareStatement(GET_CURRENT_SURVEY_POSSIBLE_ANSWERS);
-				statement2.setInt(1, _id);
+				statement2.setInt(1, this.id);
 				ResultSet rset2 = statement2.executeQuery();
 				Map<Integer, String> possibleAnswers = new HashMap<>();
 				while (rset2.next())
@@ -74,10 +74,10 @@ public class SurveyManager
 					possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
 				}
 
-				_possibleAnswers = possibleAnswers;
+				this.possibleAnswers = possibleAnswers;
 
 				statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
-				statement2.setInt(1, _id);
+				statement2.setInt(1, this.id);
 				rset2 = statement2.executeQuery();
 				List<Integer> answers = new ArrayList<>();
 				while (rset2.next())
@@ -85,7 +85,7 @@ public class SurveyManager
 					answers.add(rset.getInt("charId"));
 				}
 
-				_answers = answers;
+				this.answers = answers;
 			}
 
 			rset.close();
@@ -103,37 +103,37 @@ public class SurveyManager
 
 	public boolean isActive()
 	{
-		return _id > 0;
+		return this.id > 0;
 	}
 
 	public String getQuestion()
 	{
-		return _question;
+		return this.question;
 	}
 
 	public String getDescription()
 	{
-		return _description;
+		return this.description;
 	}
 
 	public Integer[] getPossibleAnswerIds()
 	{
-		return (Integer[]) _possibleAnswers.keySet().toArray();
+		return (Integer[]) this.possibleAnswers.keySet().toArray();
 	}
 
 	public String getPossibleAnswer(int id)
 	{
-		return _possibleAnswers.get(id);
+		return this.possibleAnswers.get(id);
 	}
 
 	public boolean playerAnswered(int playerObjId)
 	{
-		return _answers.contains(playerObjId);
+		return this.answers.contains(playerObjId);
 	}
 
 	public boolean storeAnswer(int playerObjId, int answerIndex)
 	{
-		if (_answers.contains(playerObjId))
+		if (this.answers.contains(playerObjId))
 		{
 			return false;
 		}
@@ -155,16 +155,16 @@ public class SurveyManager
 		{
 			L2DatabaseFactory.close(con);
 		}
-		_answers.add(playerObjId);
+		this.answers.add(playerObjId);
 		return true;
 	}
 
 	public static SurveyManager getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new SurveyManager();
+			instance = new SurveyManager();
 		}
-		return _instance;
+		return instance;
 	}
 }

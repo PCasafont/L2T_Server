@@ -15,6 +15,8 @@
 
 package handlers.skillhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
@@ -22,8 +24,6 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillType;
-
-import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -33,7 +33,7 @@ import java.util.logging.Logger;
 
 public class Charge implements ISkillHandler
 {
-	static Logger _log = Logger.getLogger(Charge.class.getName());
+	static Logger log = Logger.getLogger(Charge.class.getName());
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.L2PcInstance, l2server.gameserver.model.L2ItemInstance)

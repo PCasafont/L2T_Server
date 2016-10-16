@@ -20,13 +20,13 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExVitalityEffectInfo extends L2GameServerPacket
 {
-	private int _vitality;
-	private int _effectId;
+	private int vitality;
+	private int effectId;
 
 	public ExVitalityEffectInfo(int vitality, int effectId)
 	{
-		_vitality = vitality;
-		_effectId = effectId;
+		this.vitality = vitality;
+		this.effectId = effectId;
 	}
 
 	/**
@@ -34,8 +34,8 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_vitality);
-		writeD(_effectId);
+		writeD(this.vitality);
+		writeD(this.effectId);
 		writeH(0);
 		writeH(999);
 		writeH(999);

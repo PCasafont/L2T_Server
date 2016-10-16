@@ -33,16 +33,16 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
 public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 {
 
-	private int _skillId;
-	private int _skillLvl;
-	private int _skillEnchant;
+	private int skillId;
+	private int skillLvl;
+	private int skillEnchant;
 
 	@Override
 	protected void readImpl()
 	{
-		_skillId = readD();
-		_skillLvl = readH();
-		_skillEnchant = readH();
+		this.skillId = readD();
+		this.skillLvl = readH();
+		this.skillEnchant = readH();
 	}
 
 	/* (non-Javadoc)
@@ -51,7 +51,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (_skillId <= 0 || _skillLvl <= 0) // minimal sanity check
+		if (this.skillId <= 0 || this.skillLvl <= 0) // minimal sanity check
 		{
 			return;
 		}
@@ -75,23 +75,23 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())
 			return;*/
 
-		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, _skillEnchant);
-		if (skill == null || skill.getId() != _skillId)
+		L2Skill skill = SkillTable.getInstance().getInfo(this.skillId, this.skillLvl, this.skillEnchant);
+		if (skill == null || skill.getId() != this.skillId)
 		{
 			return;
 		}
 
-		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId) == null)
+		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(this.skillId) == null)
 		{
 			return;
 		}
 
-		int playerSkillLvl = activeChar.getSkillLevelHash(_skillId);
-		if (playerSkillLvl == -1 || playerSkillLvl != _skillLvl + (_skillEnchant << 16))
+		int playerSkillLvl = activeChar.getSkillLevelHash(this.skillId);
+		if (playerSkillLvl == -1 || playerSkillLvl != this.skillLvl + (this.skillEnchant << 16))
 		{
 			return;
 		}
 
-		activeChar.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl, _skillEnchant / 1000, _skillEnchant % 1000));
+		activeChar.sendPacket(new ExEnchantSkillInfo(this.skillId, this.skillLvl, this.skillEnchant / 1000, this.skillEnchant % 1000));
 	}
 }

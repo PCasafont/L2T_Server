@@ -31,159 +31,159 @@ public class PetInfo extends L2GameServerPacket
 {
 	//
 
-	private L2Summon _summon;
-	private int _x, _y, _z, _heading;
-	private boolean _isSummoned;
-	private int _val;
-	private int _mAtkSpd, _pAtkSpd;
-	private int _runSpd, _walkSpd, _swimRunSpd, _swimWalkSpd, _flRunSpd, _flWalkSpd, _flyRunSpd, _flyWalkSpd;
-	private int _maxHp, _maxMp;
-	private int _maxFed, _curFed;
-	private float _multiplier;
+	private L2Summon summon;
+	private int x, y, z, heading;
+	private boolean isSummoned;
+	private int val;
+	private int mAtkSpd, pAtkSpd;
+	private int runSpd, walkSpd, swimRunSpd, swimWalkSpd, flRunSpd, flWalkSpd, flyRunSpd, flyWalkSpd;
+	private int maxHp, maxMp;
+	private int maxFed, curFed;
+	private float multiplier;
 
 	/**
 	 * rev 478  dddddddddddddddddddffffdddcccccSSdddddddddddddddddddddddddddhc
 	 */
 	public PetInfo(L2Summon summon, int val)
 	{
-		_summon = summon;
-		_isSummoned = _summon.isShowSummonAnimation();
-		_x = _summon.getX();
-		_y = _summon.getY();
-		_z = _summon.getZ();
-		_heading = _summon.getHeading();
-		_mAtkSpd = _summon.getMAtkSpd();
-		_pAtkSpd = _summon.getPAtkSpd();
-		_multiplier = _summon.getMovementSpeedMultiplier();
-		_runSpd = Math.round(_summon.getTemplate().baseRunSpd);
-		_walkSpd = Math.round(_summon.getTemplate().baseWalkSpd);
-		_swimRunSpd = _flRunSpd = _flyRunSpd = _runSpd;
-		_swimWalkSpd = _flWalkSpd = _flyWalkSpd = _walkSpd;
-		_maxHp = _summon.getMaxVisibleHp();
-		_maxMp = _summon.getMaxMp();
-		_val = val;
-		if (_summon instanceof L2PetInstance)
+		this.summon = summon;
+		this.isSummoned = this.summon.isShowSummonAnimation();
+		this.x = this.summon.getX();
+		this.y = this.summon.getY();
+		this.z = this.summon.getZ();
+		this.heading = this.summon.getHeading();
+		this.mAtkSpd = this.summon.getMAtkSpd();
+		this.pAtkSpd = this.summon.getPAtkSpd();
+		this.multiplier = this.summon.getMovementSpeedMultiplier();
+		this.runSpd = Math.round(this.summon.getTemplate().baseRunSpd);
+		this.walkSpd = Math.round(this.summon.getTemplate().baseWalkSpd);
+		this.swimRunSpd = this.flRunSpd = this.flyRunSpd = this.runSpd;
+		this.swimWalkSpd = this.flWalkSpd = this.flyWalkSpd = this.walkSpd;
+		this.maxHp = this.summon.getMaxVisibleHp();
+		this.maxMp = this.summon.getMaxMp();
+		this.val = val;
+		if (this.summon instanceof L2PetInstance)
 		{
-			L2PetInstance pet = (L2PetInstance) _summon;
-			_curFed = pet.getCurrentFed(); // how fed it is
-			_maxFed = pet.getMaxFed(); //max fed it can be
+			L2PetInstance pet = (L2PetInstance) this.summon;
+			this.curFed = pet.getCurrentFed(); // how fed it is
+			this.maxFed = pet.getMaxFed(); //max fed it can be
 		}
-		else if (_summon instanceof L2SummonInstance)
+		else if (this.summon instanceof L2SummonInstance)
 		{
-			L2SummonInstance sum = (L2SummonInstance) _summon;
-			_curFed = sum.getTimeRemaining();
-			_maxFed = sum.getTotalLifeTime();
+			L2SummonInstance sum = (L2SummonInstance) this.summon;
+			this.curFed = sum.getTimeRemaining();
+			this.maxFed = sum.getTotalLifeTime();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(_summon.getSummonType());
-		writeD(_summon.getObjectId());
-		writeD(_summon.getTemplate().TemplateId + 1000000);
+		writeC(this.summon.getSummonType());
+		writeD(this.summon.getObjectId());
+		writeD(this.summon.getTemplate().TemplateId + 1000000);
 
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_heading);
-		writeD(_mAtkSpd);
-		writeD(_pAtkSpd);
-		writeH(_runSpd);
-		writeH(_walkSpd);
-		writeH(_swimRunSpd);
-		writeH(_swimWalkSpd);
-		writeH(_flRunSpd);
-		writeH(_flWalkSpd);
-		writeH(_flyRunSpd);
-		writeH(_flyWalkSpd);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
+		writeD(this.heading);
+		writeD(this.mAtkSpd);
+		writeD(this.pAtkSpd);
+		writeH(this.runSpd);
+		writeH(this.walkSpd);
+		writeH(this.swimRunSpd);
+		writeH(this.swimWalkSpd);
+		writeH(this.flRunSpd);
+		writeH(this.flWalkSpd);
+		writeH(this.flyRunSpd);
+		writeH(this.flyWalkSpd);
 
-		writeF(_multiplier); // movement multiplier
-		writeF(_summon.getAttackSpeedMultiplier()); // attack speed multiplier
-		writeF(_summon.getTemplate().fCollisionRadius);
-		writeF(_summon.getTemplate().fCollisionHeight);
-		writeD(_summon.getWeapon()); // right hand weapon
-		writeD(_summon.getArmor()); // body armor
+		writeF(this.multiplier); // movement multiplier
+		writeF(this.summon.getAttackSpeedMultiplier()); // attack speed multiplier
+		writeF(this.summon.getTemplate().fCollisionRadius);
+		writeF(this.summon.getTemplate().fCollisionHeight);
+		writeD(this.summon.getWeapon()); // right hand weapon
+		writeD(this.summon.getArmor()); // body armor
 		writeD(0); // left hand weapon
-		writeC(_isSummoned ? 2 : _val); //  0=teleported  1=default   2=summoned
+		writeC(this.isSummoned ? 2 : this.val); //  0=teleported  1=default   2=summoned
 		writeD(-1); // High Five NPCStringId
-		writeS(_summon.getName()); // summon name
+		writeS(this.summon.getName()); // summon name
 		writeD(-1); // High Five NPCStringId
-		writeS(_summon.getTitle()); // owner name
-		writeC(_summon.getOwner() != null ? _summon.getOwner().getPvpFlag() :
+		writeS(this.summon.getTitle()); // owner name
+		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getPvpFlag() :
 				0); //0 = white,2= purpleblink, if its greater then karma = purple
-		writeD(_summon.getOwner() != null ? _summon.getOwner().getReputation() : 0); // karma
-		writeD(_curFed); // how fed it is
-		writeD(_maxFed); //max fed it can be
-		writeD((int) _summon.getCurrentHp());//current hp
-		writeD(_maxHp);// max hp
-		writeD((int) _summon.getCurrentMp());//current mp
-		writeD(_maxMp);//max mp
-		writeQ(_summon.getStat().getSp()); //sp
-		writeC(_summon.getLevel());// lvl
-		writeQ(_summon.getStat().getExp());
+		writeD(this.summon.getOwner() != null ? this.summon.getOwner().getReputation() : 0); // karma
+		writeD(this.curFed); // how fed it is
+		writeD(this.maxFed); //max fed it can be
+		writeD((int) this.summon.getCurrentHp());//current hp
+		writeD(this.maxHp);// max hp
+		writeD((int) this.summon.getCurrentMp());//current mp
+		writeD(this.maxMp);//max mp
+		writeQ(this.summon.getStat().getSp()); //sp
+		writeC(this.summon.getLevel());// lvl
+		writeQ(this.summon.getStat().getExp());
 
-		if (_summon.getExpForThisLevel() > _summon.getStat().getExp())
+		if (this.summon.getExpForThisLevel() > summon.getStat().getExp())
 		{
-			writeQ(_summon.getStat().getExp());// 0%  absolute value
+			writeQ(this.summon.getStat().getExp());// 0%  absolute value
 		}
 		else
 		{
-			writeQ(_summon.getExpForThisLevel());// 0%  absolute value
+			writeQ(this.summon.getExpForThisLevel());// 0%  absolute value
 		}
 
-		writeQ(_summon.getExpForNextLevel());// 100% absoulte value
-		writeD(_summon instanceof L2PetInstance ? _summon.getInventory().getTotalWeight() : 0);//weight
-		writeD(_summon.getMaxLoad());//max weight it can carry
-		writeD(_summon.getPAtk(null));//patk
-		writeD(_summon.getPDef(null));//pdef
-		writeD(_summon.getAccuracy());//accuracy
-		writeD(_summon.getEvasionRate(null));//evasion
-		writeD(_summon.getCriticalHit(null, null));//critical
-		writeD(_summon.getMAtk(null, null));//matk
-		writeD(_summon.getMDef(null, null));//mdef
-		writeD(_summon.getMAccuracy()); // M. Accuracy
-		writeD(_summon.getMEvasionRate(null)); // M. Evasion
-		//Log.info(_summon.getMEvasionRate(null)); // M. Evasion
-		writeD(_summon.getMCriticalHit(null, null)); // M. Critical
-		writeD((int) _summon.getStat().getMoveSpeed());//speed
-		writeD(_summon.getPAtkSpd());//atkspeed
-		writeD(_summon.getMAtkSpd());//casting speed
+		writeQ(this.summon.getExpForNextLevel());// 100% absoulte value
+		writeD(this.summon instanceof L2PetInstance ? this.summon.getInventory().getTotalWeight() : 0);//weight
+		writeD(this.summon.getMaxLoad());//max weight it can carry
+		writeD(this.summon.getPAtk(null));//patk
+		writeD(this.summon.getPDef(null));//pdef
+		writeD(this.summon.getAccuracy());//accuracy
+		writeD(this.summon.getEvasionRate(null));//evasion
+		writeD(this.summon.getCriticalHit(null, null));//critical
+		writeD(this.summon.getMAtk(null, null));//matk
+		writeD(this.summon.getMDef(null, null));//mdef
+		writeD(this.summon.getMAccuracy()); // M. Accuracy
+		writeD(this.summon.getMEvasionRate(null)); // M. Evasion
+		//Log.info(this.summon.getMEvasionRate(null)); // M. Evasion
+		writeD(this.summon.getMCriticalHit(null, null)); // M. Critical
+		writeD((int) this.summon.getStat().getMoveSpeed());//speed
+		writeD(this.summon.getPAtkSpd());//atkspeed
+		writeD(this.summon.getMAtkSpd());//casting speed
 
-		int npcId = _summon.getTemplate().NpcId;
-		writeC(_summon.isMountable() ? 1 : 0);//c2	ride button
+		int npcId = this.summon.getTemplate().NpcId;
+		writeC(this.summon.isMountable() ? 1 : 0);//c2	ride button
 
-		writeC(_summon.getOwner() != null ? _summon.getOwner().getTeam() : 0); // team aura (1 = blue, 2 = red)
-		writeC(_summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit
-		writeC(_summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
+		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getTeam() : 0); // team aura (1 = blue, 2 = red)
+		writeC(this.summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit
+		writeC(this.summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
 
 		int form = 0;
 		if (npcId == 16041 || npcId == 16042)
 		{
-			if (_summon.getLevel() > 84)
+			if (this.summon.getLevel() > 84)
 			{
 				form = 3;
 			}
-			else if (_summon.getLevel() > 79)
+			else if (this.summon.getLevel() > 79)
 			{
 				form = 2;
 			}
-			else if (_summon.getLevel() > 74)
+			else if (this.summon.getLevel() > 74)
 			{
 				form = 1;
 			}
 		}
 		else if (npcId == 16025 || npcId == 16037)
 		{
-			if (_summon.getLevel() > 69)
+			if (this.summon.getLevel() > 69)
 			{
 				form = 3;
 			}
-			else if (_summon.getLevel() > 64)
+			else if (this.summon.getLevel() > 64)
 			{
 				form = 2;
 			}
-			else if (_summon.getLevel() > 59)
+			else if (this.summon.getLevel() > 59)
 			{
 				form = 1;
 			}
@@ -193,11 +193,11 @@ public class PetInfo extends L2GameServerPacket
 		writeH(0x00); // ???
 		writeH(0x00); // ???
 
-		writeC(_summon.getOwner() != null ? _summon.getOwner().getSpentSummonPoints() : 0); // Consumed summon points
-		writeC(_summon.getOwner() != null ? _summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
+		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getSpentSummonPoints() : 0); // Consumed summon points
+		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
 
-		Set<Integer> abnormal = _summon.getAbnormalEffect();
-		if (_summon.getOwner().getAppearance().getInvisible())
+		Set<Integer> abnormal = this.summon.getAbnormalEffect();
+		if (this.summon.getOwner().getAppearance().getInvisible())
 		{
 			abnormal.add(VisualEffect.STEALTH.getId());
 		}

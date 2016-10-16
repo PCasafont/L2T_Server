@@ -32,12 +32,12 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestRefineCancel extends L2GameClientPacket
 {
-	private int _targetItemObjId;
+	private int targetItemObjId;
 
 	@Override
 	protected void readImpl()
 	{
-		_targetItemObjId = readD();
+		this.targetItemObjId = readD();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(this.targetItemObjId);
 		if (targetItem == null)
 		{
 			activeChar.sendPacket(new ExVariationCancelResult(0));

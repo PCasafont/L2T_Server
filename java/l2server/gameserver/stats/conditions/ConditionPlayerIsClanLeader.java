@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerIsClanLeader extends Condition
 {
-	private final boolean _val;
+	private final boolean val;
 
 	/**
 	 * Instantiates a new condition player is clan leader.
@@ -32,7 +32,7 @@ public class ConditionPlayerIsClanLeader extends Condition
 	 */
 	public ConditionPlayerIsClanLeader(boolean val)
 	{
-		_val = val;
+		this.val = val;
 	}
 
 	/* (non-Javadoc)
@@ -45,6 +45,6 @@ public class ConditionPlayerIsClanLeader extends Condition
 		{
 			return false;
 		}
-		return ((L2PcInstance) env.player).isClanLeader() == _val;
+		return ((L2PcInstance) env.player).isClanLeader() == this.val;
 	}
 }

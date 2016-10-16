@@ -26,10 +26,10 @@ public class L2SiegeClan
 	// Instance
 	// ===============================================================
 	// Data Field
-	private int _clanId = 0;
-	private List<L2Npc> _flag = new ArrayList<>();
-	private int _numFlagsAdded = 0;
-	private SiegeClanType _type;
+	private int clanId = 0;
+	private List<L2Npc> flag = new ArrayList<>();
+	private int numFlagsAdded = 0;
+	private SiegeClanType type;
 
 	public enum SiegeClanType
 	{
@@ -41,20 +41,20 @@ public class L2SiegeClan
 
 	public L2SiegeClan(int clanId, SiegeClanType type)
 	{
-		_clanId = clanId;
-		_type = type;
+		this.clanId = clanId;
+		this.type = type;
 	}
 
 	// =========================================================
 	// Method - Public
 	public int getNumFlags()
 	{
-		return _numFlagsAdded;
+		return this.numFlagsAdded;
 	}
 
 	public void addFlag(L2Npc flag)
 	{
-		_numFlagsAdded++;
+		this.numFlagsAdded++;
 		getFlag().add(flag);
 	}
 
@@ -76,7 +76,7 @@ public class L2SiegeClan
 		}
 
 		flag.deleteMe();
-		_numFlagsAdded--;
+		this.numFlagsAdded--;
 		return ret;
 	}
 
@@ -92,25 +92,25 @@ public class L2SiegeClan
 	// Property
 	public final int getClanId()
 	{
-		return _clanId;
+		return this.clanId;
 	}
 
 	public final List<L2Npc> getFlag()
 	{
-		if (_flag == null)
+		if (this.flag == null)
 		{
-			_flag = new ArrayList<>();
+			this.flag = new ArrayList<>();
 		}
-		return _flag;
+		return this.flag;
 	}
 
 	public SiegeClanType getType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	public void setType(SiegeClanType setType)
 	{
-		_type = setType;
+		this.type = setType;
 	}
 }

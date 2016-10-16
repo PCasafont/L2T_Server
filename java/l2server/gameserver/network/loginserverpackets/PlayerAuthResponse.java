@@ -22,8 +22,8 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class PlayerAuthResponse extends BaseRecievePacket
 {
-	private String _account;
-	private boolean _authed;
+	private String account;
+	private boolean authed;
 
 	/**
 	 * @param decrypt
@@ -32,8 +32,8 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	{
 		super(decrypt);
 
-		_account = readS();
-		_authed = readC() != 0;
+		this.account = readS();
+		this.authed = readC() != 0;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	 */
 	public String getAccount()
 	{
-		return _account;
+		return this.account;
 	}
 
 	/**
@@ -49,6 +49,6 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	 */
 	public boolean isAuthed()
 	{
-		return _authed;
+		return this.authed;
 	}
 }

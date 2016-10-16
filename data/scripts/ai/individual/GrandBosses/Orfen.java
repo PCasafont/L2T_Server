@@ -44,15 +44,15 @@ import l2server.util.Rnd;
 public class Orfen extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "Orfen";
+    private static final boolean debug = false;
+    private static final String qn = "Orfen";
 
     //Id's
-    private static final int _orfenId = 29014;
-    private static final int[] _textIds = {1000028, 1000029, 1000030, 1000031};
-    private static final L2Skill _paralysis = SkillTable.getInstance().getInfo(4064, 1);
-    private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(43728, 17220, -4342);
-    private static final Location[] _orfenLocs = {
+    private static final int orfenId = 29014;
+    private static final int[] textIds = {1000028, 1000029, 1000030, 1000031};
+    private static final L2Skill paralysis = SkillTable.getInstance().getInfo(4064, 1);
+    private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(43728, 17220, -4342);
+    private static final Location[] orfenLocs = {
             new Location(43728, 17220, -4342),
             new Location(55024, 17368, -5412),
             new Location(53504, 21248, -5486),
@@ -60,26 +60,26 @@ public class Orfen extends L2AttackableAIScript
     };
 
     //Others
-    private L2Npc _orfenBoss;
-    private static long _LastAction;
-    private boolean _isTeleported;
+    private L2Npc orfenBoss;
+    private static long LastAction;
+    private boolean isTeleported;
 
     public Orfen(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addAttackId(_orfenId);
-        addKillId(_orfenId);
-        addSkillSeeId(_orfenId);
+        addAttackId(this.orfenId);
+        addKillId(this.orfenId);
+        addSkillSeeId(this.orfenId);
 
         //Unlock
-        startQuestTimer("unlock_orfen", GrandBossManager.getInstance().getUnlockTime(_orfenId), null, null);
+        startQuestTimer("unlock_orfen", GrandBossManager.getInstance().getUnlockTime(this.orfenId), null, null);
     }
 
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -91,44 +91,44 @@ public class Orfen extends L2AttackableAIScript
 
             if (rnd < 4)
             {
-                orfenLoc = _orfenLocs[1];
+                orfenLoc = this.orfenLocs[1];
             }
             else if (rnd < 7)
             {
-                orfenLoc = _orfenLocs[2];
+                orfenLoc = this.orfenLocs[2];
             }
             else
             {
-                orfenLoc = _orfenLocs[3];
+                orfenLoc = this.orfenLocs[3];
             }
 
-            _orfenBoss = addSpawn(_orfenId, orfenLoc.getX(), orfenLoc.getY(), orfenLoc.getZ(), 0, false, 0);
+            this.orfenBoss = addSpawn(this.orfenId, orfenLoc.getX(), orfenLoc.getY(), orfenLoc.getZ(), 0, false, 0);
 
-            GrandBossManager.getInstance().addBoss((L2GrandBossInstance) _orfenBoss);
+            GrandBossManager.getInstance().addBoss((L2GrandBossInstance) this.orfenBoss);
 
-            GrandBossManager.getInstance().setBossStatus(_orfenId, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(this.orfenId, GrandBossManager.getInstance().ALIVE);
 
-            _orfenBoss.broadcastPacket(
-                    new PlaySound(1, "BS01_A", 1, _orfenBoss.getObjectId(), _orfenBoss.getX(), _orfenBoss.getY(),
-                            _orfenBoss.getZ()));
+            this.orfenBoss.broadcastPacket(
+                    new PlaySound(1, "BS01_A", 1, this.orfenBoss.getObjectId(), this.orfenBoss.getX(), this.orfenBoss.getY(),
+                            this.orfenBoss.getZ()));
         }
         else if (event.equalsIgnoreCase("check_orfen_location"))
         {
             //Check the boss location and minion loc
-            if (_isTeleported && _orfenBoss.getCurrentHp() > _orfenBoss.getMaxHp() * 0.95 ||
-                    !_bossZone.isInsideZone(_orfenBoss) && !_isTeleported)
+            if (this.isTeleported && this.orfenBoss.getCurrentHp() > orfenBoss.getMaxHp() * 0.95 ||
+                    !this.bossZone.isInsideZone(this.orfenBoss) && !this.isTeleported)
             {
                 setSpawnPoint(Rnd.get(3) + 1);
-                _isTeleported = false;
+                this.isTeleported = false;
             }
-            else if (_isTeleported && !_bossZone.isInsideZone(_orfenBoss))
+            else if (this.isTeleported && !this.bossZone.isInsideZone(this.orfenBoss))
             {
                 setSpawnPoint(0);
             }
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(_orfenId, _LastAction))
+            if (!GrandBossManager.getInstance().isActive(this.orfenId, this.LastAction))
             {
                 notifyEvent("end_orfen", null, null);
             }
@@ -147,9 +147,9 @@ public class Orfen extends L2AttackableAIScript
                 checkOrfenLoc.cancel();
             }
 
-            if (GrandBossManager.getInstance().getBossStatus(_orfenId) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(this.orfenId) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(_orfenId, GrandBossManager.getInstance().ALIVE);
+                GrandBossManager.getInstance().setBossStatus(this.orfenId, GrandBossManager.getInstance().ALIVE);
             }
         }
         return super.onAdvEvent(event, npc, player);
@@ -157,44 +157,44 @@ public class Orfen extends L2AttackableAIScript
 
     public void setSpawnPoint(int index)
     {
-        Location loc = _orfenLocs[index];
+        Location loc = this.orfenLocs[index];
 
-        ((L2Attackable) _orfenBoss).clearAggroList();
+        ((L2Attackable) this.orfenBoss).clearAggroList();
 
-        _orfenBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
+        this.orfenBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 
-        L2Spawn spawn = _orfenBoss.getSpawn();
+        L2Spawn spawn = this.orfenBoss.getSpawn();
         spawn.setX(loc.getX());
         spawn.setY(loc.getY());
         spawn.setZ(loc.getZ());
 
-        _orfenBoss.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
+        this.orfenBoss.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
     }
 
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        _LastAction = System.currentTimeMillis();
+        this.LastAction = System.currentTimeMillis();
 
-        if (GrandBossManager.getInstance().getBossStatus(_orfenId) == GrandBossManager.getInstance().ALIVE)
+        if (GrandBossManager.getInstance().getBossStatus(this.orfenId) == GrandBossManager.getInstance().ALIVE)
         {
-            GrandBossManager.getInstance().setBossStatus(_orfenId, GrandBossManager.getInstance().FIGHTING);
+            GrandBossManager.getInstance().setBossStatus(this.orfenId, GrandBossManager.getInstance().FIGHTING);
 
             startQuestTimer("check_activity_task", 60000, null, null, true);
 
             startQuestTimer("check_orfen_location", 10000, null, null, true);
         }
 
-        if (npc.getNpcId() == _orfenId)
+        if (npc.getNpcId() == this.orfenId)
         {
-            if (!_isTeleported && npc.getCurrentHp() - damage < npc.getMaxHp() / 2)
+            if (!this.isTeleported && npc.getCurrentHp() - damage < npc.getMaxHp() / 2)
             {
-                _isTeleported = true;
+                this.isTeleported = true;
                 setSpawnPoint(0);
             }
             else if (npc.isInsideRadius(attacker, 1000, false, false) &&
@@ -202,12 +202,12 @@ public class Orfen extends L2AttackableAIScript
             {
                 attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 
-                NpcSay packet = new NpcSay(npc.getObjectId(), 0, _orfenId, _textIds[Rnd.get(3)]);
+                NpcSay packet = new NpcSay(npc.getObjectId(), 0, this.orfenId, this.textIds[Rnd.get(3)]);
                 packet.addStringParameter(attacker.getName().toString());
                 npc.broadcastPacket(packet);
 
                 npc.setTarget(attacker);
-                npc.doCast(_paralysis);
+                npc.doCast(this.paralysis);
             }
         }
         return super.onAttack(npc, attacker, damage, isPet);
@@ -216,22 +216,22 @@ public class Orfen extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == _orfenId)
+        if (npc.getNpcId() == this.orfenId)
         {
-            _orfenBoss.broadcastPacket(
-                    new PlaySound(1, "BS02_D", 1, _orfenBoss.getObjectId(), _orfenBoss.getX(), _orfenBoss.getY(),
-                            _orfenBoss.getZ()));
+            this.orfenBoss.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, this.orfenBoss.getObjectId(), this.orfenBoss.getX(), this.orfenBoss.getY(),
+                            this.orfenBoss.getZ()));
 
-            GrandBossManager.getInstance().notifyBossKilled(_orfenId);
+            GrandBossManager.getInstance().notifyBossKilled(this.orfenId);
 
             notifyEvent("end_orfen", null, null);
 
-            startQuestTimer("unlock_orfen", GrandBossManager.getInstance().getUnlockTime(_orfenId), null, null);
+            startQuestTimer("unlock_orfen", GrandBossManager.getInstance().getUnlockTime(this.orfenId), null, null);
         }
         return super.onKill(npc, killer, isPet);
     }
@@ -239,19 +239,19 @@ public class Orfen extends L2AttackableAIScript
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (npc.getNpcId() == _orfenId)
+        if (npc.getNpcId() == this.orfenId)
         {
             L2Character originalCaster = isPet ? caster.getPet() : caster;
             if (skill.getAggroPoints() > 0 && Rnd.get(5) == 0 && npc.isInsideRadius(originalCaster, 1000, false, false))
             {
-                NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), _textIds[Rnd.get(_textIds.length)]);
+                NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), this.textIds[Rnd.get(this.textIds.length)]);
                 packet.addStringParameter(caster.getName().toString());
                 npc.broadcastPacket(packet);
 
                 originalCaster.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 
                 npc.setTarget(originalCaster);
-                npc.doCast(_paralysis);
+                npc.doCast(this.paralysis);
             }
         }
         return super.onSkillSee(npc, caster, skill, targets, isPet);
@@ -259,6 +259,6 @@ public class Orfen extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Orfen(-1, _qn, "ai/individual/GrandBosses");
+        new Orfen(-1, qn, "ai/individual/GrandBosses");
     }
 }

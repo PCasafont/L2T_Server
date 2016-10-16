@@ -41,7 +41,7 @@ import java.util.logging.Level;
 public class MapRegionTable
 {
 
-	private final int[][] _regions = new int[16][18];
+	private final int[][] regions = new int[16][18];
 
 	public enum TeleportWhereType
 	{
@@ -50,7 +50,7 @@ public class MapRegionTable
 
 	public static MapRegionTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private MapRegionTable()
@@ -78,7 +78,7 @@ public class MapRegionTable
 				int region = Integer.parseInt(st.nextToken().trim());
 				for (int j = 0; j < 16; j++)
 				{
-					_regions[j][region] = Integer.parseInt(st.nextToken().trim());
+					this.regions[j][region] = Integer.parseInt(st.nextToken().trim());
 					//Log.fine(j+","+region+" -> "+rset.getInt(j+2));
 				}
 			}
@@ -108,7 +108,7 @@ public class MapRegionTable
 	{
 		try
 		{
-			return _regions[getMapRegionX(posX)][getMapRegionY(posY)];
+			return this.regions[getMapRegionX(posX)][getMapRegionY(posY)];
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{
@@ -672,6 +672,6 @@ public class MapRegionTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MapRegionTable _instance = new MapRegionTable();
+		protected static final MapRegionTable instance = new MapRegionTable();
 	}
 }

@@ -15,14 +15,15 @@
 
 package handlers.admincommandhandlers;
 
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands: - delete = deletes target
@@ -31,7 +32,7 @@ import java.util.logging.Logger;
  */
 public class AdminRepairChar implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRepairChar.class.getName());
+	private static Logger log = Logger.getLogger(AdminRepairChar.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_restore", "admin_repair"};
 
@@ -99,7 +100,7 @@ public class AdminRepairChar implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "could not repair char:", e);
+			Log.log(Level.WARNING, "could not repair char:", e);
 		}
 		finally
 		{

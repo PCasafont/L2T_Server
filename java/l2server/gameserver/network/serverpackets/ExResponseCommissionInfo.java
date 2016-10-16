@@ -25,22 +25,22 @@ public class ExResponseCommissionInfo extends L2GameServerPacket
 {
 
 	@SuppressWarnings("unused")
-	private L2PcInstance _player;
+	private L2PcInstance player;
 	@SuppressWarnings("unused")
-	private L2ItemInstance _item;
-	private boolean _success;
+	private L2ItemInstance item;
+	private boolean success;
 
 	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success)
 	{
-		_player = player;
-		_item = player.getInventory().getItemByObjectId(itemOID);
-		_success = success;
+		this.player = player;
+		this.item = player.getInventory().getItemByObjectId(itemOID);
+		this.success = success;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_success ? 0x01 : 0x00);
+		writeD(this.success ? 0x01 : 0x00);
 		writeD(0x00); // ItemID
 		writeD(0x00); // TODO: Price
 		writeQ(0x00); // TODO: Count

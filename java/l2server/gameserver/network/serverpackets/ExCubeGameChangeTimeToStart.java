@@ -23,7 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameChangeTimeToStart extends L2GameServerPacket
 {
-	int _seconds;
+	int seconds;
 
 	/**
 	 * Update Minigame Waiting List Time to Start
@@ -32,7 +32,7 @@ public class ExCubeGameChangeTimeToStart extends L2GameServerPacket
 	 */
 	public ExCubeGameChangeTimeToStart(int seconds)
 	{
-		_seconds = seconds;
+		this.seconds = seconds;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ExCubeGameChangeTimeToStart extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_seconds);
+		writeD(this.seconds);
 	}
 }

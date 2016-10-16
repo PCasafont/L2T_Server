@@ -5,17 +5,17 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShuffleSeedAndPublicKey extends L2GameServerPacket
 {
-	private int _publicKeySize;
+	private int publicKeySize;
 
 	public ExShuffleSeedAndPublicKey(int publicKeySize)
 	{
-		_publicKeySize = publicKeySize;
+		this.publicKeySize = publicKeySize;
 	}
 
 	@Override
 	public void writeImpl()
 	{
 		writeB(new byte[1]); // seed (TODO: check size)
-		writeH(_publicKeySize);
+		writeH(this.publicKeySize);
 	}
 }

@@ -31,92 +31,92 @@ public class L2FlyMove
 		START, CHOOSE, MOVE
 	}
 
-	private int _id;
-	private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<>();
-	private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<>();
+	private int id;
+	private TIntObjectHashMap<Point3D> steps = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<L2FlyMoveChoose> chooses = new TIntObjectHashMap<>();
 
 	public L2FlyMove(int id)
 	{
-		_id = id;
+		this.id = id;
 	}
 
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	public void addStep(int id, Point3D s)
 	{
-		_steps.put(id, s);
+		this.steps.put(id, s);
 	}
 
 	public Point3D getStep(int id)
 	{
-		return _steps.get(id);
+		return this.steps.get(id);
 	}
 
 	public void addChoose(int id, L2FlyMoveChoose c)
 	{
-		_chooses.put(id, c);
+		this.chooses.put(id, c);
 	}
 
 	public L2FlyMoveChoose getChoose(int id)
 	{
-		return _chooses.get(id);
+		return this.chooses.get(id);
 	}
 
 	public class L2FlyMoveChoose
 	{
-		private int _at;
-		private List<L2FlyMoveOption> _options = new ArrayList<>();
+		private int at;
+		private List<L2FlyMoveOption> options = new ArrayList<>();
 
 		public L2FlyMoveChoose(int at)
 		{
-			_at = at;
+			this.at = at;
 		}
 
 		public int getAt()
 		{
-			return _at;
+			return this.at;
 		}
 
 		public void addOption(L2FlyMoveOption o)
 		{
-			_options.add(o);
+			this.options.add(o);
 		}
 
 		public List<L2FlyMoveOption> getOptions()
 		{
-			return _options;
+			return this.options;
 		}
 	}
 
 	public class L2FlyMoveOption
 	{
-		private int _start;
-		private int _end;
-		private int _last;
+		private int start;
+		private int end;
+		private int last;
 
 		public L2FlyMoveOption(int start, int end, int last)
 		{
-			_start = start;
-			_end = end;
-			_last = last;
+			this.start = start;
+			this.end = end;
+			this.last = last;
 		}
 
 		public int getStart()
 		{
-			return _start;
+			return this.start;
 		}
 
 		public int getEnd()
 		{
-			return _end;
+			return this.end;
 		}
 
 		public int getLast()
 		{
-			return _last;
+			return this.last;
 		}
 	}
 }

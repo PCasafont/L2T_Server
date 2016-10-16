@@ -25,7 +25,7 @@ import l2server.gameserver.templates.item.L2EtcItem;
  */
 public class ItemHandler
 {
-	private TIntObjectHashMap<IItemHandler> _datatable;
+	private TIntObjectHashMap<IItemHandler> datatable;
 
 	/**
 	 * Create ItemHandler if doesn't exist and returns ItemHandler
@@ -34,7 +34,7 @@ public class ItemHandler
 	 */
 	public static ItemHandler getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class ItemHandler
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return this.datatable.size();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class ItemHandler
 	 */
 	private ItemHandler()
 	{
-		_datatable = new TIntObjectHashMap<>();
+		this.datatable = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ItemHandler
 	 */
 	public void registerItemHandler(IItemHandler handler)
 	{
-		_datatable.put(handler.getClass().getSimpleName().intern().hashCode(), handler);
+		this.datatable.put(handler.getClass().getSimpleName().intern().hashCode(), handler);
 	}
 
 	/**
@@ -79,12 +79,12 @@ public class ItemHandler
 		{
 			return null;
 		}
-		return _datatable.get(item.getHandlerName().hashCode());
+		return this.datatable.get(item.getHandlerName().hashCode());
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ItemHandler _instance = new ItemHandler();
+		protected static final ItemHandler instance = new ItemHandler();
 	}
 }

@@ -37,27 +37,27 @@ import java.util.zip.ZipFile;
  */
 public class FaenorScriptEngine extends ScriptEngine
 {
-	static Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
+	static Logger log = Logger.getLogger(FaenorScriptEngine.class.getName());
 	public static final String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
 	public static final boolean DEBUG = true;
 
-	private LinkedList<ScriptDocument> _scripts;
+	private LinkedList<ScriptDocument> scripts;
 
 	public static FaenorScriptEngine getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private FaenorScriptEngine()
 	{
-		_scripts = new LinkedList<>();
+		this.scripts = new LinkedList<>();
 		loadPackages();
 		parsePackages();
 	}
 
 	public void reloadPackages()
 	{
-		_scripts = new LinkedList<>();
+		this.scripts = new LinkedList<>();
 		parsePackages();
 	}
 
@@ -97,7 +97,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			List<ScriptDocument> scrpts = module.getScriptFiles();
 			for (ScriptDocument script : scrpts)
 			{
-				_scripts.add(script);
+				this.scripts.add(script);
 			}
 			try
 			{
@@ -122,15 +122,15 @@ public class FaenorScriptEngine extends ScriptEngine
 
 	public void orderScripts()
 	{
-		if (_scripts.size() > 1)
+		if (this.scripts.size() > 1)
 		{
 			//ScriptDocument npcInfo = null;
 
-			for (int i = 0; i < _scripts.size(); )
+			for (int i = 0; i < this.scripts.size(); )
 			{
-				if (_scripts.get(i).getName().contains("NpcStatData"))
+				if (this.scripts.get(i).getName().contains("NpcStatData"))
 				{
-					_scripts.addFirst(_scripts.remove(i));
+					this.scripts.addFirst(this.scripts.remove(i));
 					//scripts.set(i, scripts.get(0));
 					//scripts.set(0, npcInfo);
 				}
@@ -151,7 +151,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			sem.eval("beanshell", "double log1p(double d) { return Math.log1p(d); }");
 			sem.eval("beanshell", "double pow(double d, double p) { return Math.pow(d,p); }");
 
-			for (ScriptDocument script : _scripts)
+			for (ScriptDocument script : this.scripts)
 			{
 				parseScript(script, context);
 			}
@@ -202,14 +202,14 @@ public class FaenorScriptEngine extends ScriptEngine
 	@Override
 	public String toString()
 	{
-		if (_scripts.isEmpty())
+		if (this.scripts.isEmpty())
 		{
 			return "No Packages Loaded.";
 		}
 
 		String out = "Script Packages currently loaded:\n";
 
-		for (ScriptDocument script : _scripts)
+		for (ScriptDocument script : this.scripts)
 		{
 			out += script;
 		}
@@ -219,6 +219,6 @@ public class FaenorScriptEngine extends ScriptEngine
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FaenorScriptEngine _instance = new FaenorScriptEngine();
+		protected static final FaenorScriptEngine instance = new FaenorScriptEngine();
 	}
 }

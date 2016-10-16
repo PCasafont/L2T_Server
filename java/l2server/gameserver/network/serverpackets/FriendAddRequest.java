@@ -31,20 +31,20 @@ package l2server.gameserver.network.serverpackets;
 public class FriendAddRequest extends L2GameServerPacket
 {
 
-	private String _requestorName;
+	private String requestorName;
 
 	/**
 	 */
 	public FriendAddRequest(String requestorName)
 	{
-		_requestorName = requestorName;
+		this.requestorName = requestorName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeS(_requestorName);
+		writeS(this.requestorName);
 		writeD(0);
 	}
 }

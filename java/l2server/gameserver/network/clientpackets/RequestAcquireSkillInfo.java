@@ -34,22 +34,22 @@ import l2server.log.Log;
 public class RequestAcquireSkillInfo extends L2GameClientPacket
 {
 
-	private int _id;
-	private int _level;
-	private int _skillType;
+	private int id;
+	private int level;
+	private int skillType;
 
 	@Override
 	protected void readImpl()
 	{
-		_id = readD();
-		_level = readD();
-		_skillType = readD();
+		this.id = readD();
+		this.level = readD();
+		this.skillType = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (_id <= 0 || _level <= 0) // minimal sanity check
+		if (this.id <= 0 || this.level <= 0) // minimal sanity check
 		{
 			return;
 		}
@@ -63,7 +63,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 
 		final L2Npc trainer = activeChar.getLastFolkNPC();
 
-		final L2Skill skill = SkillTable.getInstance().getInfo(_id, _level);
+		final L2Skill skill = SkillTable.getInstance().getInfo(this.id, this.level);
 
 		boolean canteach = false;
 
@@ -71,13 +71,13 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 		{
 			if (Config.DEBUG)
 			{
-				Log.warning("skill id " + _id + " level " + _level + " is undefined. aquireSkillInfo failed.");
+				Log.warning("skill id " + this.id + " level " + this.level + " is undefined. aquireSkillInfo failed.");
 			}
 
 			return;
 		}
 
-		if (_skillType == 0)
+		if (this.skillType == 0)
 		{
 			if (trainer instanceof L2TransformManagerInstance)
 			{
@@ -86,7 +86,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 
 				for (L2TransformSkillLearn s : skillst)
 				{
-					if (s.getId() == _id && s.getLevel() == _level)
+					if (s.getId() == this.id && s.getLevel() == this.level)
 					{
 						canteach = true;
 						itemId = s.getItemId();
@@ -113,7 +113,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 
 			for (L2SkillLearn s : skills)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
+				if (s.getId() == this.id && s.getLevel() == this.level)
 				{
 					skillToLearn = s;
 					break;
@@ -127,14 +127,14 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 
 			sendPacket(new ExAcquireSkillInfo(skillToLearn, activeChar));
 		}
-		else if (_skillType == 2)
+		else if (this.skillType == 2)
 		{
 			int requiredRep = 0;
 			L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(activeChar);
 
 			for (L2PledgeSkillLearn s : skills)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
+				if (s.getId() == this.id && s.getLevel() == this.level)
 				{
 					canteach = true;
 					requiredRep = s.getRepCost();
@@ -150,7 +150,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), requiredRep, 2);
 			sendPacket(asi);
 		}
-		else if (_skillType == 3)
+		else if (this.skillType == 3)
 		{
 			if (trainer instanceof L2SquadTrainer)
 			{
@@ -161,7 +161,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				sendPacket(asi);
 			}
 		}
-		else if (_skillType == 4)
+		else if (this.skillType == 4)
 		{
 			int cost = CertificateSkillTable.getInstance().getSubClassSkillCost(skill.getId());
 			if (cost > 0)
@@ -171,7 +171,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				sendPacket(asi);
 			}
 		}
-		else if (_skillType == 5)
+		else if (this.skillType == 5)
 		{
 			int cost = CertificateSkillTable.getInstance().getDualClassSkillCost(skill.getId());
 			if (cost > 0)
@@ -181,7 +181,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				sendPacket(asi);
 			}
 		}
-		else if (_skillType == 6)
+		else if (this.skillType == 6)
 		{
 			int costid = 0;
 			int costcount = 0;

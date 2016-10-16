@@ -24,22 +24,22 @@ import l2server.util.Rnd;
 public final class LambdaRnd extends Lambda
 {
 
-	private final Lambda _max;
-	private final boolean _linear;
+	private final Lambda max;
+	private final boolean linear;
 
 	public LambdaRnd(Lambda max, boolean linear)
 	{
-		_max = max;
-		_linear = linear;
+		this.max = max;
+		this.linear = linear;
 	}
 
 	@Override
 	public double calc(Env env)
 	{
-		if (_linear)
+		if (this.linear)
 		{
-			return _max.calc(env) * Rnd.nextDouble();
+			return this.max.calc(env) * Rnd.nextDouble();
 		}
-		return _max.calc(env) * Rnd.nextGaussian();
+		return this.max.calc(env) * Rnd.nextGaussian();
 	}
 }

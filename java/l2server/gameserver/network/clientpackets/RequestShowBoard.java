@@ -27,7 +27,7 @@ public final class RequestShowBoard extends L2GameClientPacket
 {
 
 	@SuppressWarnings("unused")
-	private int _unknown;
+	private int unknown;
 
 	/**
 	 * packet type id 0x57
@@ -42,7 +42,7 @@ public final class RequestShowBoard extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		_unknown = readD();
+		this.unknown = readD();
 	}
 
 	@Override

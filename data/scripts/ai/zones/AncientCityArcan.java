@@ -35,17 +35,17 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 public class AncientCityArcan extends Quest
 {
-	private static final int _blueEffectId = 262001;
-	private static final int _redEffectId = 262003;
-	private static int _currentEffect = _blueEffectId;
-	private static final int _ancientCityArcanId = 60010;
-	private static final L2ZoneType _ancientCityZone = ZoneManager.getInstance().getZoneById(_ancientCityArcanId);
+	private static final int blueEffectId = 262001;
+	private static final int redEffectId = 262003;
+	private static int currentEffect = blueEffectId;
+	private static final int ancientCityArcanId = 60010;
+	private static final L2ZoneType ancientCityZone = ZoneManager.getInstance().getZoneById(ancientCityArcanId);
 
 	public AncientCityArcan(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		addEnterZoneId(_ancientCityArcanId);
+		addEnterZoneId(ancientCityArcanId);
 
 		startQuestTimer("ancient_city_arcan_change", 1800000, null, null, true);
 	}
@@ -56,8 +56,8 @@ public class AncientCityArcan extends Quest
 		if (character instanceof L2PcInstance)
 		{
 			character.broadcastPacket(
-					new EventTrigger(_currentEffect == _blueEffectId ? _blueEffectId : _redEffectId, false));
-			character.broadcastPacket(new EventTrigger(_currentEffect, true));
+					new EventTrigger(currentEffect == blueEffectId ? blueEffectId : redEffectId, false));
+			character.broadcastPacket(new EventTrigger(currentEffect, true));
 		}
 		return null;
 	}
@@ -70,27 +70,27 @@ public class AncientCityArcan extends Quest
 			int deleteEffect = 0;
 			int messageId = 0;
 
-			if (_currentEffect == _blueEffectId)
+			if (currentEffect == blueEffectId)
 			{
-				_currentEffect = _redEffectId;
-				deleteEffect = _blueEffectId;
+				currentEffect = redEffectId;
+				deleteEffect = blueEffectId;
 				messageId = 8888108;
 
 				SpawnTable.getInstance().spawnSpecificTable("ancient_city_arcan");
 			}
 			else
 			{
-				_currentEffect = _blueEffectId;
-				deleteEffect = _redEffectId;
+				currentEffect = blueEffectId;
+				deleteEffect = redEffectId;
 				messageId = 8888107;
 
 				SpawnTable.getInstance().despawnSpecificTable("ancient_city_arcan");
 			}
 
-			_ancientCityZone.broadcastPacket(new EventTrigger(deleteEffect, false));
-			_ancientCityZone.broadcastPacket(new EventTrigger(_currentEffect, true));
-			_ancientCityZone.broadcastPacket(new ExShowScreenMessage(messageId, 0, true, 5000));
-			_ancientCityZone.broadcastPacket(new Earthquake(207382, 89370, -1123, 5, 10));
+			ancientCityZone.broadcastPacket(new EventTrigger(deleteEffect, false));
+			ancientCityZone.broadcastPacket(new EventTrigger(currentEffect, true));
+			ancientCityZone.broadcastPacket(new ExShowScreenMessage(messageId, 0, true, 5000));
+			ancientCityZone.broadcastPacket(new Earthquake(207382, 89370, -1123, 5, 10));
 		}
 		return "";
 	}

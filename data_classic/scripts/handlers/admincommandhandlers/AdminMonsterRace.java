@@ -122,10 +122,10 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			 {
 			 for (int j=0; j<20; j++)
 			 {
-			 //_log.info("Adding "+speeds1[i][j] +" and "+ speeds2[i][j]);
+			 //Log.info("Adding "+speeds1[i][j] +" and "+ speeds2[i][j]);
 			 speed[i] += (speeds1[i][j]*1);// + (speeds2[i][j]*1);
 			 }
-			 _log.info("Total speed for "+(i+1)+" = "+speed[i]);
+			 Log.info("Total speed for "+(i+1)+" = "+speed[i]);
 			 }*/
 
 			MonRaceInfo spk = new MonRaceInfo(codes[2][0], codes[2][1], MonsterRace.getInstance().getMonsters(),

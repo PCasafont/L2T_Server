@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Survival extends EventInstance
 {
-	List<L2PcInstance> _winners = new ArrayList<>();
+	List<L2PcInstance> winners = new ArrayList<>();
 
 	public Survival(int id, EventConfig config)
 	{
@@ -29,32 +29,32 @@ public class Survival extends EventInstance
 	public void calculateRewards()
 	{
 		L2PcInstance winner = null;
-		if (_teams[0].getParticipatedPlayerCount() != 1)
+		if (this.teams[0].getParticipatedPlayerCount() != 1)
 		{
 			Announcements.getInstance().announceToAll("The event has ended in a tie");
 			return;
 		}
 
-		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
 		{
 			winner = playerInstance;
 		}
 
 		if (winner != null)
 		{
-			_winners.add(0, winner);
+			this.winners.add(0, winner);
 		}
 
-		if (!_winners.isEmpty())
+		if (!this.winners.isEmpty())
 		{
-			int extraPoints = _winners.size() * 3;
-			for (L2PcInstance player : _winners)
+			int extraPoints = this.winners.size() * 3;
+			for (L2PcInstance player : this.winners)
 			{
 				player.addEventPoints(extraPoints);
 				extraPoints /= 2;
 			}
-			rewardPlayers(_winners);
-			Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0).getName() +
+			rewardPlayers(this.winners);
+			Announcements.getInstance().announceToAll("The event has ended. The player " + this.winners.get(0).getName() +
 					" has won being the last one standing!");
 		}
 		else
@@ -69,10 +69,10 @@ public class Survival extends EventInstance
 	{
 		String html = "";
 		int alive = 0;
-		if (_teams[0].getParticipatedPlayerCount() > 0)
+		if (this.teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Survivors:<br>";
-			for (L2PcInstance participant : _teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : this.teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
@@ -107,7 +107,7 @@ public class Survival extends EventInstance
 
 		removeParticipant(killedPlayerInstance.getObjectId());
 		killedPlayerInstance.sendMessage("You have been killed and disqualified from the event.");
-		_winners.add(0, killedPlayerInstance);
+		this.winners.add(0, killedPlayerInstance);
 		new EventTeleporter(killedPlayerInstance, new Point3D(0, 0, 0), false, true);
 
 		killerPlayer.addEventPoints(3);
@@ -118,7 +118,7 @@ public class Survival extends EventInstance
 			assistant.addEventPoints(1);
 		}
 
-		if (_teams[0].getParticipatedPlayerCount() <= 1)
+		if (this.teams[0].getParticipatedPlayerCount() <= 1)
 		{
 			stopFight();
 		}

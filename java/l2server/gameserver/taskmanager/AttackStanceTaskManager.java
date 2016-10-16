@@ -43,7 +43,7 @@ import java.util.logging.Level;
 public class AttackStanceTaskManager
 {
 
-	protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<>();
+	protected Map<L2Character, Long> attackStanceTasks = new ConcurrentHashMap<>();
 
 	private AttackStanceTaskManager()
 	{
@@ -52,7 +52,7 @@ public class AttackStanceTaskManager
 
 	public static AttackStanceTaskManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public void addAttackStanceTask(L2Character actor)
@@ -73,7 +73,7 @@ public class AttackStanceTaskManager
 			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance)
 					.forEach(summon -> summon.unSummon(player));
 		}
-		_attackStanceTasks.put(actor, System.currentTimeMillis());
+		this.attackStanceTasks.put(actor, System.currentTimeMillis());
 	}
 
 	public void removeAttackStanceTask(L2Character actor)
@@ -88,7 +88,7 @@ public class AttackStanceTaskManager
 			((L2PcInstance) actor).onCombatStanceEnd();
 		}
 
-		_attackStanceTasks.remove(actor);
+		this.attackStanceTasks.remove(actor);
 	}
 
 	public boolean getAttackStanceTask(L2Character actor)
@@ -99,7 +99,7 @@ public class AttackStanceTaskManager
 			actor = summon.getOwner();
 		}
 
-		return _attackStanceTasks.containsKey(actor);
+		return this.attackStanceTasks.containsKey(actor);
 	}
 
 	private class FightModeScheduler implements Runnable
@@ -115,11 +115,11 @@ public class AttackStanceTaskManager
 			Long current = System.currentTimeMillis();
 			try
 			{
-				if (_attackStanceTasks != null)
+				if (attackStanceTasks != null)
 				{
 					synchronized (this)
 					{
-						for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
+						for (Entry<L2Character, Long> entry : attackStanceTasks.entrySet())
 						{
 							L2Character actor = entry.getKey();
 							if (current - entry.getValue() > 15000)
@@ -157,6 +157,6 @@ public class AttackStanceTaskManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
+		protected static final AttackStanceTaskManager instance = new AttackStanceTaskManager();
 	}
 }

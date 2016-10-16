@@ -23,7 +23,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class PetStatus extends SummonStatus
 {
-	private int _currentFed = 0; //Current Fed of the L2PetInstance
+	private int currentFed = 0; //Current Fed of the L2PetInstance
 
 	public PetStatus(L2PetInstance activeChar)
 	{
@@ -61,12 +61,12 @@ public class PetStatus extends SummonStatus
 
 	public int getCurrentFed()
 	{
-		return _currentFed;
+		return this.currentFed;
 	}
 
 	public void setCurrentFed(int value)
 	{
-		_currentFed = value;
+		this.currentFed = value;
 	}
 
 	@Override

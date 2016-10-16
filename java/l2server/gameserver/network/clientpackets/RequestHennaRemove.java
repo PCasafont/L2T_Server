@@ -27,7 +27,7 @@ import l2server.gameserver.templates.item.L2Henna;
  */
 public final class RequestHennaRemove extends L2GameClientPacket
 {
-	private int _symbolId;
+	private int symbolId;
 
 	// format  cd
 
@@ -38,7 +38,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_symbolId = readD();
+		this.symbolId = readD();
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 		for (int i = 1; i <= 4; i++)
 		{
 			L2Henna henna = activeChar.getHenna(i);
-			if (henna != null && henna.getSymbolId() == _symbolId)
+			if (henna != null && henna.getSymbolId() == this.symbolId)
 			{
 				if (activeChar.getAdena() >= henna.getPrice() / 5)
 				{

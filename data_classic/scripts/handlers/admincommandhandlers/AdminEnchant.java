@@ -15,6 +15,8 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -26,8 +28,7 @@ import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands:
@@ -149,7 +150,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						_log.warning("Set enchant error: " + e);
+						Log.warning("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a new enchant value.");
 				}
@@ -157,7 +158,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						_log.warning("Set enchant error: " + e);
+						Log.warning("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}

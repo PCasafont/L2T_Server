@@ -93,17 +93,17 @@ public class L2JailZone extends L2ZoneType
 
 	static class BackToJail implements Runnable
 	{
-		private L2PcInstance _activeChar;
+		private L2PcInstance activeChar;
 
 		BackToJail(L2Character character)
 		{
-			_activeChar = (L2PcInstance) character;
+			this.activeChar = (L2PcInstance) character;
 		}
 
 		@Override
 		public void run()
 		{
-			_activeChar.teleToLocation(-114356, -249645, -2984); // Jail
+			this.activeChar.teleToLocation(-114356, -249645, -2984); // Jail
 		}
 	}
 }

@@ -22,21 +22,21 @@ import l2server.gameserver.model.itemcontainer.Inventory;
  */
 public final class L2ArmorSet
 {
-	private final int _id;
-	private final int _parts;
-	private final TIntIntHashMap _skills;
-	private final int _shieldSkillId;
-	private final int _enchant6Skill;
+	private final int id;
+	private final int parts;
+	private final TIntIntHashMap skills;
+	private final int shieldSkillId;
+	private final int enchant6Skill;
 
 	public L2ArmorSet(int id, int parts, TIntIntHashMap skills, int enchant6skill, int shield_skill_id)
 	{
-		_id = id;
-		_parts = parts;
-		_skills = skills;
+		this.id = id;
+		this.parts = parts;
+		this.skills = skills;
 
-		_shieldSkillId = shield_skill_id;
+		this.shieldSkillId = shield_skill_id;
 
-		_enchant6Skill = enchant6skill;
+		this.enchant6Skill = enchant6skill;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public final class L2ArmorSet
 
 	public int countMissingParts(L2PcInstance player)
 	{
-		return _parts - countParts(player);
+		return this.parts - countParts(player);
 	}
 
 	private int countParts(L2PcInstance player)
@@ -66,23 +66,23 @@ public final class L2ArmorSet
 		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 
 		int count = 0;
-		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(_id))
+		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(this.id))
 		{
 			count++;
 		}
-		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(_id))
+		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(this.id))
 		{
 			count++;
 		}
-		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id))
+		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(this.id))
 		{
 			count++;
 		}
-		if (headItem != null && headItem.getArmorItem().isArmorSetPart(_id))
+		if (headItem != null && headItem.getArmorItem().isArmorSetPart(this.id))
 		{
 			count++;
 		}
-		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(_id))
+		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(this.id))
 		{
 			count++;
 		}
@@ -95,23 +95,23 @@ public final class L2ArmorSet
 		Inventory inv = player.getInventory();
 
 		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		return shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(_id);
+		return shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(this.id);
 
 	}
 
 	public TIntIntHashMap getSkills()
 	{
-		return _skills;
+		return this.skills;
 	}
 
 	public int getShieldSkillId()
 	{
-		return _shieldSkillId;
+		return this.shieldSkillId;
 	}
 
 	public int getEnchant6skillId()
 	{
-		return _enchant6Skill;
+		return this.enchant6Skill;
 	}
 
 	/**
@@ -136,24 +136,24 @@ public final class L2ArmorSet
 		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 
 		int enchant = Integer.MAX_VALUE;
-		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(_id) && chestItem.getEnchantLevel() < enchant)
+		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(this.id) && chestItem.getEnchantLevel() < enchant)
 		{
 			enchant = chestItem.getEnchantLevel();
 		}
-		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(_id) && legsItem.getEnchantLevel() < enchant)
+		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(this.id) && legsItem.getEnchantLevel() < enchant)
 		{
 			enchant = legsItem.getEnchantLevel();
 		}
-		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id) &&
+		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(this.id) &&
 				glovesItem.getEnchantLevel() < enchant)
 		{
 			enchant = glovesItem.getEnchantLevel();
 		}
-		if (headItem != null && headItem.getArmorItem().isArmorSetPart(_id) && headItem.getEnchantLevel() < enchant)
+		if (headItem != null && headItem.getArmorItem().isArmorSetPart(this.id) && headItem.getEnchantLevel() < enchant)
 		{
 			enchant = headItem.getEnchantLevel();
 		}
-		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(_id) && feetItem.getEnchantLevel() < enchant)
+		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(this.id) && feetItem.getEnchantLevel() < enchant)
 		{
 			enchant = feetItem.getEnchantLevel();
 		}

@@ -1,5 +1,8 @@
 package instances.GrandBosses.Beleth;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
@@ -11,14 +14,15 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.PlaySound;
+import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.network.serverpackets.SpecialCamera;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author LasTravel (Based on Abyss script)
@@ -31,19 +35,19 @@ import java.util.List;
 public class Beleth extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "Beleth";
+    private static final boolean debug = false;
+    private static final String qn = "Beleth";
 
     //Id's
-    private static final int _npcEnter = 33881;
-    private static final int _stoneId = 32470;
-    private static final int _priestId = 29128;
-    private static final int _realBelethId = 29118;
-    private static final int _fakeBelethId = 29119;
+    private static final int npcEnter = 33881;
+    private static final int stoneId = 32470;
+    private static final int priestId = 29128;
+    private static final int realBelethId = 29118;
+    private static final int fakeBelethId = 29119;
     private static final int _door_1 = 20240001;
     private static final int _door_2 = 20240002;
     private static final int _door_3 = 20240003;
-    private static final int _instanceTemplateId = 500;
+    private static final int instanceTemplateId = 500;
     private static final int _camera_1_id = 29120;
     private static final int _camera_2_id = 29121;
     private static final int _camera_3_id = 29122;
@@ -51,12 +55,12 @@ public class Beleth extends L2AttackableAIScript
     private static final int _camera_6_id = 29125;
 
     //Vars
-    private static int[] _cloneX = new int[32];
-    private static int[] _cloneY = new int[32];
-    private static int[] _cloneH = new int[32];
+    private static int[] cloneX = new int[32];
+    private static int[] cloneY = new int[32];
+    private static int[] cloneH = new int[32];
 
     //Cords
-    private static final Location[] _enterCords = {
+    private static final Location[] enterCords = {
             new Location(16311, 209100, -9360),
             new Location(16002, 209388, -9360),
             new Location(16572, 209655, -9360),
@@ -68,21 +72,21 @@ public class Beleth extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addTalkId(_npcEnter);
+        addTalkId(this.npcEnter);
 
-        addStartNpc(_npcEnter);
+        addStartNpc(this.npcEnter);
 
-        addFirstTalkId(_stoneId);
+        addFirstTalkId(this.stoneId);
 
-        addFirstTalkId(_priestId);
+        addFirstTalkId(this.priestId);
 
-        addKillId(_realBelethId);
+        addKillId(this.realBelethId);
 
-        addKillId(_fakeBelethId);
+        addKillId(this.fakeBelethId);
 
-        addAggroRangeEnterId(_realBelethId);
+        addAggroRangeEnterId(this.realBelethId);
 
-        addAggroRangeEnterId(_fakeBelethId);
+        addAggroRangeEnterId(this.fakeBelethId);
 
         //Calculate shits
         double angle = 22.5;
@@ -106,25 +110,25 @@ public class Beleth extends L2AttackableAIScript
                 outerRad = 1250;
             }
 
-            _cloneX[i] = 16327;
+            this.cloneX[i] = 16327;
 
-            _cloneX[i] += (int) (innerRad * Math.sin(i * Math.toRadians(angle)));
+            this.cloneX[i] += (int) (innerRad * Math.sin(i * Math.toRadians(angle)));
 
-            _cloneY[i] = 213135;
+            this.cloneY[i] = 213135;
 
-            _cloneY[i] += (int) (innerRad * Math.cos(i * Math.toRadians(angle)));
+            this.cloneY[i] += (int) (innerRad * Math.cos(i * Math.toRadians(angle)));
 
-            _cloneH[i] = Util.convertDegreeToClientHeading(270 - i * angle);
+            this.cloneH[i] = Util.convertDegreeToClientHeading(270 - i * angle);
 
-            _cloneX[i + 16] = 16327;
+            this.cloneX[i + 16] = 16327;
 
-            _cloneX[i + 16] += (int) (outerRad * Math.sin(i * Math.toRadians(angle)));
+            this.cloneX[i + 16] += (int) (outerRad * Math.sin(i * Math.toRadians(angle)));
 
-            _cloneY[i + 16] = 213135;
+            this.cloneY[i + 16] = 213135;
 
-            _cloneY[i + 16] += (int) (outerRad * Math.cos(i * Math.toRadians(angle)));
+            this.cloneY[i + 16] += (int) (outerRad * Math.cos(i * Math.toRadians(angle)));
 
-            _cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - i * angle);
+            this.cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - i * angle);
         }
     }
 
@@ -153,12 +157,12 @@ public class Beleth extends L2AttackableAIScript
     @Override
     public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAggroRangeEnter: " + player);
         }
 
-        if (npc.getNpcId() == _realBelethId || npc.getNpcId() == _fakeBelethId)
+        if (npc.getNpcId() == this.realBelethId || npc.getNpcId() == this.fakeBelethId)
         {
             //Trick
             if (isPet)
@@ -192,14 +196,14 @@ public class Beleth extends L2AttackableAIScript
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player);
         }
 
         int npcid = npc.getNpcId();
 
-        if (npcid == _stoneId)
+        if (npcid == this.stoneId)
         {
             return null;
         }
@@ -210,7 +214,7 @@ public class Beleth extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -240,7 +244,7 @@ public class Beleth extends L2AttackableAIScript
             {
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(_door_1).openMe();
 
-                startQuestTimer("stage_1_intro_1", _debug ? 20000 : 5 * 60000, null, player);
+                startQuestTimer("stage_1_intro_1", this.debug ? 20000 : 5 * 60000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1"))
             {
@@ -328,7 +332,7 @@ public class Beleth extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_intro_1_10"))
             {
-                world.beleth = addSpawn(_realBelethId, 16321, 214211, -9352, 49369, false, 0, false, world.instanceId);
+                world.beleth = addSpawn(this.realBelethId, 16321, 214211, -9352, 49369, false, 0, false, world.instanceId);
 
                 startQuestTimer("stage_1_intro_1_11", 200, null, player);
             }
@@ -343,7 +347,7 @@ public class Beleth extends L2AttackableAIScript
 
                     int y = (int) (150 * Math.sin(i * 1.046666667) + 213059);
 
-                    L2Npc minion = addSpawn(_fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
+                    L2Npc minion = addSpawn(this.fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
 
                     minion.setShowSummonAnimation(true);
 
@@ -437,7 +441,7 @@ public class Beleth extends L2AttackableAIScript
                 InstanceManager.getInstance().sendPacket(world.instanceId,
                         new SpecialCamera(world.camera_3.getObjectId(), 40, 280, 0, 0, 4000, 5, 0, 1, 0));
 
-                L2Npc minion = addSpawn(_fakeBelethId, 16253, 213144, -9357, 49152, false, 0, false, world.instanceId);
+                L2Npc minion = addSpawn(this.fakeBelethId, 16253, 213144, -9357, 49152, false, 0, false, world.instanceId);
 
                 minion.setShowSummonAnimation(true);
 
@@ -593,8 +597,8 @@ public class Beleth extends L2AttackableAIScript
             }
         }
 
-        if (npc != null && npc.getNpcId() == _npcEnter && Util.isDigit(event) &&
-                Integer.valueOf(event) == _instanceTemplateId)
+        if (npc != null && npc.getNpcId() == this.npcEnter && Util.isDigit(event) &&
+                Integer.valueOf(event) == instanceTemplateId)
         {
             try
             {
@@ -614,7 +618,7 @@ public class Beleth extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -625,13 +629,13 @@ public class Beleth extends L2AttackableAIScript
         {
             belethWorld world = (belethWorld) wrld;
 
-            if (npc.getNpcId() == _realBelethId)
+            if (npc.getNpcId() == this.realBelethId)
             {
                 despawnAll(world);
 
                 world.beleth.deleteMe();
 
-                world.beleth = addSpawn(_realBelethId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
+                world.beleth = addSpawn(this.realBelethId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
 
                 world.beleth.setIsInvul(true);
 
@@ -639,17 +643,17 @@ public class Beleth extends L2AttackableAIScript
 
                 world.beleth.disableAllSkills();
 
-                world.priest = addSpawn(_priestId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
+                world.priest = addSpawn(this.priestId, 16323, 213170, -9357, 49152, false, 0, false, world.instanceId);
 
                 world.priest.setShowSummonAnimation(true);
 
                 world.priest.decayMe();
 
-                addSpawn(_stoneId, 12470, 215607, -9381, 49152, false, 0, false, world.instanceId); //Stone
+                addSpawn(this.stoneId, 12470, 215607, -9381, 49152, false, 0, false, world.instanceId); //Stone
 
                 startQuestTimer("stage_final_1", 1000, null, player);
             }
-            else if (npc.getNpcId() == _fakeBelethId)
+            else if (npc.getNpcId() == this.fakeBelethId)
             {
                 npc.abortCast();
 
@@ -665,12 +669,12 @@ public class Beleth extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == _npcEnter)
+        if (npc.getNpcId() == this.npcEnter)
         {
             return "tryEnter.html";
         }
@@ -688,12 +692,12 @@ public class Beleth extends L2AttackableAIScript
         {
             if (i == realbeleth)
             {
-                npc = addSpawn(_realBelethId, _cloneX[i], _cloneY[i], -9353, _cloneH[i], false, 0, false,
+                npc = addSpawn(this.realBelethId, this.cloneX[i], this.cloneY[i], -9353, this.cloneH[i], false, 0, false,
                         world.instanceId);
             }
             else
             {
-                npc = addSpawn(_fakeBelethId, _cloneX[i], _cloneY[i], -9353, _cloneH[i], false, 0, false,
+                npc = addSpawn(this.fakeBelethId, this.cloneX[i], this.cloneY[i], -9353, this.cloneH[i], false, 0, false,
                         world.instanceId);
             }
 
@@ -747,12 +751,12 @@ public class Beleth extends L2AttackableAIScript
         }
         else
         {
-            if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, 5, 35, 75, 91))
+            if (!this.debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, 5, 35, 75, 91))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
 
             world = new belethWorld();
 
@@ -766,7 +770,7 @@ public class Beleth extends L2AttackableAIScript
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
-            if (_debug)
+            if (this.debug)
             {
                 allPlayers.add(player);
             }
@@ -788,7 +792,7 @@ public class Beleth extends L2AttackableAIScript
 
                 enterPlayer.setInstanceId(instanceId);
 
-                enterPlayer.teleToLocation(_enterCords[Rnd.get(0, _enterCords.length - 1)], true);
+                enterPlayer.teleToLocation(this.enterCords[Rnd.get(0, this.enterCords.length - 1)], true);
             }
 
             startQuestTimer("stage_1_open_door", 3000, null, player);
@@ -802,6 +806,6 @@ public class Beleth extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Beleth(-1, _qn, "instances/GrandBosses");
+        new Beleth(-1, qn, "instances/GrandBosses");
     }
 }

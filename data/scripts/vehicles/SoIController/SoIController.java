@@ -56,23 +56,23 @@ public class SoIController extends AirShipController
 		addFirstTalkId(CONTROLLER_ID);
 		addTalkId(CONTROLLER_ID);
 
-		_dockZone = DOCK_ZONE;
+		this.dockZone = DOCK_ZONE;
 		addEnterZoneId(DOCK_ZONE);
 		addExitZoneId(DOCK_ZONE);
 
-		_shipSpawnX = -212719;
-		_shipSpawnY = 213348;
-		_shipSpawnZ = 5000;
+		this.shipSpawnX = -212719;
+		this.shipSpawnY = 213348;
+		this.shipSpawnZ = 5000;
 
-		_oustLoc = new Location(-213401, 210401, 4408);
+		this.oustLoc = new Location(-213401, 210401, 4408);
 
-		_locationId = LOCATION;
-		_arrivalPath = ARRIVAL;
-		_departPath = DEPART;
-		_teleportsTable = TELEPORTS;
-		_fuelTable = FUEL;
+		this.locationId = LOCATION;
+		this.arrivalPath = ARRIVAL;
+		this.departPath = DEPART;
+		this.teleportsTable = TELEPORTS;
+		this.fuelTable = FUEL;
 
-		_movieId = 1002;
+		this.movieId = 1002;
 
 		validityCheck();
 	}

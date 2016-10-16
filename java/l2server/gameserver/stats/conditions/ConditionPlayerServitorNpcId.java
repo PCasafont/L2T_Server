@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 public class ConditionPlayerServitorNpcId extends Condition
 {
-	private final ArrayList<Integer> _npcIds;
+	private final ArrayList<Integer> npcIds;
 
 	/**
 	 * Instantiates a new condition player servitor npc id.
@@ -37,11 +37,11 @@ public class ConditionPlayerServitorNpcId extends Condition
 	{
 		if (npcIds.size() == 1 && npcIds.get(0) == 0)
 		{
-			_npcIds = null;
+			this.npcIds = null;
 		}
 		else
 		{
-			_npcIds = npcIds;
+			this.npcIds = npcIds;
 		}
 	}
 
@@ -64,17 +64,17 @@ public class ConditionPlayerServitorNpcId extends Condition
 		}
 
 		boolean hasInSummons = false;
-		if (_npcIds != null)
+		if (this.npcIds != null)
 		{
 			for (L2SummonInstance summon : player.getSummons())
 			{
-				if (!summon.isDead() && _npcIds.contains(summon.getNpcId()))
+				if (!summon.isDead() && this.npcIds.contains(summon.getNpcId()))
 				{
 					hasInSummons = true;
 				}
 			}
 		}
 
-		return _npcIds == null || _npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
+		return this.npcIds == null || this.npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
 	}
 }

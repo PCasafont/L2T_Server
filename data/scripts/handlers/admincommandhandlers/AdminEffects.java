@@ -15,6 +15,9 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.Collection;
+import java.util.StringTokenizer;
+
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -26,12 +29,21 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2ChestInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.CharInfo;
+import l2server.gameserver.network.serverpackets.Earthquake;
+import l2server.gameserver.network.serverpackets.ExRedSky;
+import l2server.gameserver.network.serverpackets.L2GameServerPacket;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.PlaySound;
+import l2server.gameserver.network.serverpackets.SSQInfo;
+import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.network.serverpackets.StopMove;
+import l2server.gameserver.network.serverpackets.SunRise;
+import l2server.gameserver.network.serverpackets.SunSet;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Broadcast;
-
-import java.util.Collection;
-import java.util.StringTokenizer;
 
 /**
  * This class handles following admin commands:
@@ -802,9 +814,9 @@ public class AdminEffects implements IAdminCommandHandler
 
 	private void playAdminSound(L2PcInstance activeChar, String sound)
 	{
-		PlaySound _snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
-		activeChar.sendPacket(_snd);
-		activeChar.broadcastPacket(_snd);
+		PlaySound snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
+		activeChar.sendPacket(snd);
+		activeChar.broadcastPacket(snd);
 		activeChar.sendMessage("Playing " + sound + ".");
 	}
 

@@ -49,12 +49,12 @@ public class MultiSell implements Reloadable
 	public static final int FAME = -300;
 	public static final int RAID_POINTS = -500;
 
-	private final Map<String, ListContainer> _entries = new HashMap<>();
-	private int _nextId = 1;
+	private final Map<String, ListContainer> entries = new HashMap<>();
+	private int nextId = 1;
 
 	public static MultiSell getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private MultiSell()
@@ -67,7 +67,7 @@ public class MultiSell implements Reloadable
 	@Override
 	public final boolean reload()
 	{
-		_entries.clear();
+		this.entries.clear();
 		load();
 
 		return true;
@@ -102,7 +102,7 @@ public class MultiSell implements Reloadable
 	 */
 	public final void separateAndSend(String listName, L2PcInstance player, L2Npc npc, boolean inventoryOnly)
 	{
-		ListContainer template = _entries.get(listName);
+		ListContainer template = this.entries.get(listName);
 		if (template == null)
 		{
 			Log.warning("[MultiSell] can't find list: " + listName + " requested by player: " + player.getName() +
@@ -230,7 +230,7 @@ public class MultiSell implements Reloadable
 			XmlDocument doc = new XmlDocument(f);
 
 			// Already got custom data, skipping default...
-			if (_entries.containsKey(name))
+			if (this.entries.containsKey(name))
 			{
 				//Log.log(Level.WARNING, "Already got custom data for Multisell[" + id + "], skipping default...");
 				continue;
@@ -239,8 +239,8 @@ public class MultiSell implements Reloadable
 			try
 			{
 				ListContainer list = parseDocument(doc);
-				list.setListId(_nextId++);
-				_entries.put(name, list);
+				list.setListId(this.nextId++);
+				this.entries.put(name, list);
 
 				if (name.equals("app_stones"))
 				{
@@ -274,7 +274,7 @@ public class MultiSell implements Reloadable
 			}
 		}
 		verify();
-		Log.info("MultiSell: Loaded " + _entries.size() + " lists.");
+		Log.info("MultiSell: Loaded " + this.entries.size() + " lists.");
 	}
 
 	private ListContainer parseDocument(XmlDocument doc)
@@ -364,7 +364,7 @@ public class MultiSell implements Reloadable
 
 	private void verify()
 	{
-		for (ListContainer list : _entries.values())
+		for (ListContainer list : this.entries.values())
 		{
 			for (MultiSellEntry ent : list.getEntries())
 			{
@@ -409,6 +409,6 @@ public class MultiSell implements Reloadable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MultiSell _instance = new MultiSell();
+		protected static final MultiSell instance = new MultiSell();
 	}
 }

@@ -24,7 +24,7 @@ import l2server.gameserver.network.serverpackets.ExShowFortressMapInfo;
  */
 public class RequestFortressMapInfo extends L2GameClientPacket
 {
-	private int _fortressId;
+	private int fortressId;
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -32,7 +32,7 @@ public class RequestFortressMapInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_fortressId = readD();
+		this.fortressId = readD();
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class RequestFortressMapInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		Fort fort = FortManager.getInstance().getFortById(_fortressId);
+		Fort fort = FortManager.getInstance().getFortById(this.fortressId);
 		sendPacket(new ExShowFortressMapInfo(fort));
 	}
 }

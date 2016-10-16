@@ -42,8 +42,8 @@ import java.util.ResourceBundle;
  */
 public abstract class BaseGameServerRegister
 {
-	private boolean _loaded = false;
-	private ResourceBundle _bundle;
+	private boolean loaded = false;
+	private ResourceBundle bundle;
 
 	public static void main(String[] args)
 	{
@@ -315,12 +315,12 @@ public abstract class BaseGameServerRegister
 		Config.load();
 		GameServerTable.load();
 
-		_loaded = true;
+		this.loaded = true;
 	}
 
 	public boolean isLoaded()
 	{
-		return _loaded;
+		return this.loaded;
 	}
 
 	/**
@@ -328,7 +328,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public void setBundle(ResourceBundle bundle)
 	{
-		_bundle = bundle;
+		this.bundle = bundle;
 	}
 
 	/**
@@ -336,7 +336,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public ResourceBundle getBundle()
 	{
-		return _bundle;
+		return this.bundle;
 	}
 
 	public abstract void showError(String msg, Throwable t);
@@ -426,14 +426,14 @@ public abstract class BaseGameServerRegister
 
 	static abstract class BaseTask implements Runnable
 	{
-		private ResourceBundle _bundle;
+		private ResourceBundle bundle;
 
 		/**
 		 * @param bundle The bundle to set.
 		 */
 		public void setBundle(ResourceBundle bundle)
 		{
-			_bundle = bundle;
+			this.bundle = bundle;
 		}
 
 		/**
@@ -441,7 +441,7 @@ public abstract class BaseGameServerRegister
 		 */
 		public ResourceBundle getBundle()
 		{
-			return _bundle;
+			return this.bundle;
 		}
 
 		public void showError(String msg, Throwable t)
@@ -464,23 +464,23 @@ public abstract class BaseGameServerRegister
 	static class RegisterTask extends BaseTask
 	{
 
-		private final int _id;
-		private final String _outDir;
-		private boolean _force;
-		private boolean _fallback;
+		private final int id;
+		private final String outDir;
+		private boolean force;
+		private boolean fallback;
 
 		public RegisterTask(int id, String outDir, boolean force, boolean fallback)
 		{
-			_id = id;
-			_outDir = outDir;
-			_force = force;
-			_fallback = fallback;
+			this.id = id;
+			this.outDir = outDir;
+			this.force = force;
+			this.fallback = fallback;
 		}
 
 		public void setActions(boolean force, boolean fallback)
 		{
-			_force = force;
-			_fallback = fallback;
+			this.force = force;
+			this.fallback = fallback;
 		}
 
 		/**
@@ -491,9 +491,9 @@ public abstract class BaseGameServerRegister
 		{
 			try
 			{
-				if (_id < 0)
+				if (this.id < 0)
 				{
-					int registeredId = BaseGameServerRegister.registerFirstAvailable(_outDir);
+					int registeredId = BaseGameServerRegister.registerFirstAvailable(this.outDir);
 
 					if (registeredId < 0)
 					{
@@ -506,21 +506,21 @@ public abstract class BaseGameServerRegister
 				}
 				else
 				{
-					System.out.printf(getBundle().getString("checkingIdInUse") + '\n', _id);
-					if (GameServerTable.getInstance().hasRegisteredGameServerOnId(_id))
+					System.out.printf(getBundle().getString("checkingIdInUse") + '\n', this.id);
+					if (GameServerTable.getInstance().hasRegisteredGameServerOnId(this.id))
 					{
 						System.out.println(getBundle().getString("yes"));
-						if (_force)
+						if (this.force)
 						{
-							System.out.printf(getBundle().getString("forcingRegistration") + '\n', _id);
-							BaseGameServerRegister.unregisterGameServer(_id);
-							BaseGameServerRegister.registerGameServer(_id, _outDir);
-							System.out.printf(getBundle().getString("registrationOk") + '\n', _id);
+							System.out.printf(getBundle().getString("forcingRegistration") + '\n', this.id);
+							BaseGameServerRegister.unregisterGameServer(this.id);
+							BaseGameServerRegister.registerGameServer(this.id, this.outDir);
+							System.out.printf(getBundle().getString("registrationOk") + '\n', this.id);
 						}
-						else if (_fallback)
+						else if (this.fallback)
 						{
 							System.out.println(getBundle().getString("fallingBack"));
-							int registeredId = BaseGameServerRegister.registerFirstAvailable(_outDir);
+							int registeredId = BaseGameServerRegister.registerFirstAvailable(this.outDir);
 
 							if (registeredId < 0)
 							{
@@ -539,7 +539,7 @@ public abstract class BaseGameServerRegister
 					else
 					{
 						System.out.println(getBundle().getString("no"));
-						BaseGameServerRegister.registerGameServer(_id, _outDir);
+						BaseGameServerRegister.registerGameServer(this.id, this.outDir);
 					}
 				}
 			}
@@ -556,11 +556,11 @@ public abstract class BaseGameServerRegister
 
 	static class UnregisterTask extends BaseTask
 	{
-		private final int _id;
+		private final int id;
 
 		public UnregisterTask(int id)
 		{
-			_id = id;
+			this.id = id;
 		}
 
 		/**
@@ -569,10 +569,10 @@ public abstract class BaseGameServerRegister
 		@Override
 		public void run()
 		{
-			System.out.printf(getBundle().getString("removingGsId") + '\n', _id);
+			System.out.printf(getBundle().getString("removingGsId") + '\n', this.id);
 			try
 			{
-				BaseGameServerRegister.unregisterGameServer(_id);
+				BaseGameServerRegister.unregisterGameServer(this.id);
 			}
 			catch (SQLException e)
 			{

@@ -41,30 +41,30 @@ import java.util.logging.Level;
 
 public class L2DecoyInstance extends L2Attackable
 {
-	private L2PcInstance _owner;
-	private int _totalLifeTime;
-	private int _timeRemaining;
-	private Future<?> _decoyLifeTask;
-	private List<Future<?>> _skillSpam = new ArrayList<>();
+	private L2PcInstance owner;
+	private int totalLifeTime;
+	private int timeRemaining;
+	private Future<?> decoyLifeTask;
+	private List<Future<?>> skillSpam = new ArrayList<>();
 
 	public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
 	{
 		super(objectId, template);
-		_owner = owner;
+		this.owner = owner;
 		setXYZ(owner.getX(), owner.getY(), owner.getZ());
 		setIsInvul(false);
 		setInstanceType(InstanceType.L2DecoyInstance);
 		if (skill != null)
 		{
-			_totalLifeTime = ((L2SkillDecoy) skill).getTotalLifeTime();
+			this.totalLifeTime = ((L2SkillDecoy) skill).getTotalLifeTime();
 		}
 		else
 		{
-			_totalLifeTime = 20000;
+			this.totalLifeTime = 20000;
 		}
-		_timeRemaining = _totalLifeTime;
+		this.timeRemaining = this.totalLifeTime;
 		int delay = 1000;
-		_decoyLifeTask = ThreadPoolManager.getInstance()
+		this.decoyLifeTask = ThreadPoolManager.getInstance()
 				.scheduleGeneralAtFixedRate(new DecoyLifetime(getOwner(), this), delay, delay);
 		if (template.getSkills() != null)
 		{
@@ -72,7 +72,7 @@ public class L2DecoyInstance extends L2Attackable
 			{
 				if (s.isActive())
 				{
-					_skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
+					this.skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
 							new SkillSpam(this, SkillTable.getInstance().getInfo(s.getId(), s.getLevelHash())), 2000,
 							5000));
 				}
@@ -80,7 +80,7 @@ public class L2DecoyInstance extends L2Attackable
 		}
 		if (getName().equalsIgnoreCase("Clone Attack") && getNpcId() >= 13319 && getNpcId() <= 13322)
 		{
-			_skillSpam.add(ThreadPoolManager.getInstance()
+			this.skillSpam.add(ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new SkillSpam(this, null), 100, 100));
 		}
 	}
@@ -92,12 +92,12 @@ public class L2DecoyInstance extends L2Attackable
 		{
 			return false;
 		}
-		for (Future<?> spam : _skillSpam)
+		for (Future<?> spam : this.skillSpam)
 		{
 			spam.cancel(true);
 		}
-		_skillSpam.clear();
-		_totalLifeTime = 0;
+		this.skillSpam.clear();
+		this.totalLifeTime = 0;
 		DecayTaskManager.getInstance().addDecayTask(this);
 		return true;
 	}
@@ -105,24 +105,24 @@ public class L2DecoyInstance extends L2Attackable
 	@Override
 	public L2CharacterAI getAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
+		L2CharacterAI ai = this.ai; // copy handle
 		if (ai == null)
 		{
 			synchronized (this)
 			{
-				if (_ai == null)
+				if (this.ai == null)
 				{
 					if (getNpcId() >= 13319 && getNpcId() <= 13322)
 					{
-						_ai = new L2AttackableAI(new L2Attackable.AIAccessor());
+						this.ai = new L2AttackableAI(new L2Attackable.AIAccessor());
 					}
 					else
 					{
-						_ai = new L2CharacterAI(new L2Character.AIAccessor());
+						this.ai = new L2CharacterAI(new L2Character.AIAccessor());
 					}
 				}
 
-				return _ai;
+				return this.ai;
 			}
 		}
 		setIsRunning(true);
@@ -155,14 +155,14 @@ public class L2DecoyInstance extends L2Attackable
 
 	static class DecoyLifetime implements Runnable
 	{
-		private L2PcInstance _activeChar;
+		private L2PcInstance activeChar;
 
-		private L2DecoyInstance _decoy;
+		private L2DecoyInstance decoy;
 
 		DecoyLifetime(L2PcInstance activeChar, L2DecoyInstance Decoy)
 		{
-			_activeChar = activeChar;
-			_decoy = Decoy;
+			this.activeChar = activeChar;
+			this.decoy = Decoy;
 		}
 
 		@Override
@@ -171,11 +171,11 @@ public class L2DecoyInstance extends L2Attackable
 			try
 			{
 				double newTimeRemaining;
-				_decoy.decTimeRemaining(1000);
-				newTimeRemaining = _decoy.getTimeRemaining();
+				this.decoy.decTimeRemaining(1000);
+				newTimeRemaining = this.decoy.getTimeRemaining();
 				if (newTimeRemaining < 0)
 				{
-					_decoy.unSummon(_activeChar);
+					this.decoy.unSummon(this.activeChar);
 				}
 			}
 			catch (Exception e)
@@ -187,14 +187,14 @@ public class L2DecoyInstance extends L2Attackable
 
 	static class SkillSpam implements Runnable
 	{
-		private L2DecoyInstance _activeChar;
+		private L2DecoyInstance activeChar;
 
-		private L2Skill _skill;
+		private L2Skill skill;
 
 		SkillSpam(L2DecoyInstance activeChar, L2Skill Hate)
 		{
-			_activeChar = activeChar;
-			_skill = Hate;
+			this.activeChar = activeChar;
+			this.skill = Hate;
 		}
 
 		@Override
@@ -202,17 +202,17 @@ public class L2DecoyInstance extends L2Attackable
 		{
 			try
 			{
-				if (_skill != null)
+				if (this.skill != null)
 				{
-					_activeChar.setTarget(_activeChar);
-					_activeChar.doCast(_skill);
+					this.activeChar.setTarget(this.activeChar);
+					this.activeChar.doCast(this.skill);
 				}
-				else if (_activeChar.getOwner().getTarget() instanceof L2Character)
+				else if (this.activeChar.getOwner().getTarget() instanceof L2Character)
 				{
-					L2Character target = (L2Character) _activeChar.getOwner().getTarget();
-					_activeChar.addDamageHate(target, 1, 1);
+					L2Character target = (L2Character) this.activeChar.getOwner().getTarget();
+					this.activeChar.addDamageHate(target, 1, 1);
 					//_activeChar.doAttack(target);
-					_activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+					this.activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
 			}
 			catch (Throwable e)
@@ -224,17 +224,17 @@ public class L2DecoyInstance extends L2Attackable
 
 	public void decTimeRemaining(int value)
 	{
-		_timeRemaining -= value;
+		this.timeRemaining -= value;
 	}
 
 	public int getTimeRemaining()
 	{
-		return _timeRemaining;
+		return this.timeRemaining;
 	}
 
 	public int getTotalLifeTime()
 	{
-		return _totalLifeTime;
+		return this.totalLifeTime;
 	}
 
 	@Override
@@ -268,13 +268,13 @@ public class L2DecoyInstance extends L2Attackable
 	@Override
 	public void onDecay()
 	{
-		deleteMe(_owner);
+		deleteMe(this.owner);
 	}
 
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return _owner.isAutoAttackable(attacker);
+		return this.owner.isAutoAttackable(attacker);
 	}
 
 	@Override
@@ -310,16 +310,16 @@ public class L2DecoyInstance extends L2Attackable
 
 	public synchronized void unSummon(L2PcInstance owner)
 	{
-		if (_decoyLifeTask != null)
+		if (this.decoyLifeTask != null)
 		{
-			_decoyLifeTask.cancel(true);
-			_decoyLifeTask = null;
+			this.decoyLifeTask.cancel(true);
+			this.decoyLifeTask = null;
 		}
-		for (Future<?> spam : _skillSpam)
+		for (Future<?> spam : this.skillSpam)
 		{
 			spam.cancel(true);
 		}
-		_skillSpam.clear();
+		this.skillSpam.clear();
 
 		if (isVisible() && !isDead())
 		{
@@ -336,13 +336,13 @@ public class L2DecoyInstance extends L2Attackable
 	@Override
 	public final L2PcInstance getOwner()
 	{
-		return _owner;
+		return this.owner;
 	}
 
 	@Override
 	public L2PcInstance getActingPlayer()
 	{
-		return _owner;
+		return this.owner;
 	}
 
 	@Override

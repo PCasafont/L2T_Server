@@ -37,23 +37,23 @@ import java.util.List;
  */
 public class ExOlympiadMatchList extends L2GameServerPacket
 {
-	private final List<OlympiadGameTask> _games;
+	private final List<OlympiadGameTask> games;
 
 	/**
 	 * @param games: competitions list
 	 */
 	public ExOlympiadMatchList(List<OlympiadGameTask> games)
 	{
-		_games = games;
+		this.games = games;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_games.size());
+		writeD(this.games.size());
 		writeD(0x00);
 
-		for (OlympiadGameTask curGame : _games)
+		for (OlympiadGameTask curGame : this.games)
 		{
 			writeD(curGame.getGame().getGameId()); // Stadium Id (Arena 1 = 0)
 

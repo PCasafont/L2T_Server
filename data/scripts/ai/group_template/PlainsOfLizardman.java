@@ -34,7 +34,7 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
  */
 public class PlainsOfLizardman extends L2AttackableAIScript
 {
-	private static final int[] _MOBS = {18864, 18865, 18866, 18868};
+	private static final int[] MOBS = {18864, 18865, 18866, 18868};
 
 	private static final int FANTASY_MUSHROOM = 18864;
 	private static final int FANTASY_MUSHROOM_SKILL = 6427;
@@ -52,7 +52,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		registerMobs(_MOBS, QuestEventType.ON_ATTACK);
+		registerMobs(this.MOBS, QuestEventType.ON_ATTACK);
 	}
 
 	public static void main(String[] args)

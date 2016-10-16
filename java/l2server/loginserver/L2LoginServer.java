@@ -39,18 +39,18 @@ public class L2LoginServer
 {
 	public static final int PROTOCOL_REV = 0x0106;
 
-	private static L2LoginServer _instance;
-	private GameServerListener _gameServerListener;
-	private Core<L2LoginClient> _selectorThread;
+	private static L2LoginServer instance;
+	private GameServerListener gameServerListener;
+	private Core<L2LoginClient> selectorThread;
 
 	public static void main(String[] args)
 	{
-		_instance = new L2LoginServer();
+		instance = new L2LoginServer();
 	}
 
 	public static L2LoginServer getInstance()
 	{
-		return _instance;
+		return instance;
 	}
 
 	public L2LoginServer()
@@ -145,7 +145,7 @@ public class L2LoginServer
 		final SelectorHelper sh = new SelectorHelper();
 		try
 		{
-			_selectorThread = new Core<>(sc, sh, lph, sh, sh);
+			this.selectorThread = new Core<>(sc, sh, lph, sh, sh);
 		}
 		catch (IOException e)
 		{
@@ -155,8 +155,8 @@ public class L2LoginServer
 
 		try
 		{
-			_gameServerListener = new GameServerListener();
-			_gameServerListener.start();
+			this.gameServerListener = new GameServerListener();
+			this.gameServerListener.start();
 			Log.info("Listening for GameServers on " + Config.GAME_SERVER_LOGIN_HOST + ":" +
 					Config.GAME_SERVER_LOGIN_PORT);
 		}
@@ -168,14 +168,14 @@ public class L2LoginServer
 
 		try
 		{
-			_selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
+			this.selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		_selectorThread.start();
+		this.selectorThread.start();
 
 		Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" +
 				Config.PORT_LOGIN);
@@ -183,7 +183,7 @@ public class L2LoginServer
 
 	public GameServerListener getGameServerListener()
 	{
-		return _gameServerListener;
+		return this.gameServerListener;
 	}
 
 	private void loadBanFile()

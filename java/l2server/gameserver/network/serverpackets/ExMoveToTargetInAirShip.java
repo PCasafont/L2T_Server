@@ -5,30 +5,30 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExMoveToTargetInAirShip extends L2GameServerPacket
 {
-	private int _objID;
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _vehicleid;
+	private int objID;
+	private int x;
+	private int y;
+	private int z;
+	private int vehicleid;
 
 	public ExMoveToTargetInAirShip(int objID, int x, int y, int z, int vehicleid)
 	{
-		_objID = objID;
-		_x = x;
-		_y = y;
-		_z = z;
-		_vehicleid = vehicleid;
+		this.objID = objID;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.vehicleid = vehicleid;
 	}
 
 	@Override
 	public void writeImpl()
 	{
 		writeD(0x00); // heading1
-		writeD(_objID);
-		writeD(_x);
+		writeD(this.objID);
+		writeD(this.x);
 		writeD(0x00); // heading2
-		writeD(_y);
-		writeD(_z);
-		writeD(_vehicleid);
+		writeD(this.y);
+		writeD(this.z);
+		writeD(this.vehicleid);
 	}
 }

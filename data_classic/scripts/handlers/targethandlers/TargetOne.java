@@ -15,6 +15,9 @@
 
 package handlers.targethandlers;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Object;
@@ -25,9 +28,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * @author nBd
@@ -73,7 +74,7 @@ public class TargetOne implements ISkillTargetTypeHandler
 				}
 				else
 				{
-					_log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
+					Log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return null;
 				}

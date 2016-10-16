@@ -57,77 +57,77 @@ public class CustomOfflineBuffersManager
 	private static final String STORE_BUFFERS =
 			"INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
 	private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";
-	private static final Map<Integer, BufferTable> _customBufferTable = new HashMap<>();
+	private static final Map<Integer, BufferTable> customBufferTable = new HashMap<>();
 
 	private class BufferTable
 	{
-		private int _playerId;
-		private int _coinId;
-		private String _coinName;
-		private String _description;
-		private Map<Integer, Long> _buffs;
+		private int playerId;
+		private int coinId;
+		private String coinName;
+		private String description;
+		private Map<Integer, Long> buffs;
 
 		private BufferTable(Integer bufferId)
 		{
-			_playerId = bufferId;
-			_coinName = "Adena";
-			_buffs = new HashMap<>();
+			this.playerId = bufferId;
+			this.coinName = "Adena";
+			this.buffs = new HashMap<>();
 		}
 
 		private void setCointId(int i)
 		{
-			_coinId = i;
-			_coinName = i != 0 ? ItemTable.getInstance().getTemplate(_coinId).getName() : null;
+			this.coinId = i;
+			this.coinName = i != 0 ? ItemTable.getInstance().getTemplate(this.coinId).getName() : null;
 		}
 
 		private int getCointId()
 		{
-			return _coinId;
+			return this.coinId;
 		}
 
 		private void addBuff(int skillId, long skillPrice)
 		{
-			_buffs.put(skillId, skillPrice);
+			this.buffs.put(skillId, skillPrice);
 		}
 
 		private Map<Integer, Long> getBuffs()
 		{
-			return _buffs;
+			return this.buffs;
 		}
 
 		private String getDescription()
 		{
-			return _description;
+			return this.description;
 		}
 
 		private void setDescription(String desc)
 		{
-			_description = desc;
+			this.description = desc;
 		}
 
 		private int getPlayerId()
 		{
-			return _playerId;
+			return this.playerId;
 		}
 
 		private void addBuffs(Map<Integer, Long> playerBuffs)
 		{
-			_buffs = playerBuffs;
+			this.buffs = playerBuffs;
 		}
 
 		private String getCoinName()
 		{
-			return _coinName;
+			return this.coinName;
 		}
 
 		private L2PcInstance getBuffer(boolean deleteIfIllegal)
 		{
-			L2PcInstance buffer = L2World.getInstance().getPlayer(_playerId);
+			L2PcInstance buffer = L2World.getInstance().getPlayer(this.playerId);
 			if (buffer != null && deleteIfIllegal && !buffer.getIsOfflineBuffer())
 			{
-				synchronized (_customBufferTable)
+				synchronized (customBufferTable)
 				{
-					_customBufferTable.remove(_playerId);
+					customBufferTable.remove(this.playerId);
 					return null;
 				}
 			}
@@ -138,10 +138,10 @@ public class CustomOfflineBuffersManager
 	public String getOfflineBuffersPage(int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
 			int maxPlayersPerPage = 20;
-			int playersSize = _customBufferTable.size();
+			int playersSize = this.customBufferTable.size();
 			int maxPages = playersSize / maxPlayersPerPage;
 			if (playersSize > maxPlayersPerPage * maxPages)
 			{
@@ -167,7 +167,7 @@ public class CustomOfflineBuffersManager
 			sb.append(
 					"<table width=750 bgcolor=999999><tr><td FIXWIDTH=50>Name</td><td FIXWIDTH=60>Class</td><td FIXWIDTH=35 align=center>Mana</td><td FIXWIDTH=80 align=center>Description</td><td FIXWIDTH=30>Buffs Count</td><td FIXWIDTH=35 align=center>Coin</td></tr></table>");
 
-			for (Entry<Integer, BufferTable> i : _customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : this.customBufferTable.entrySet())
 			{
 				BufferTable buffTable = i.getValue();
 				if (buffTable == null)
@@ -187,7 +187,7 @@ public class CustomOfflineBuffersManager
 						"%</td><td FIXWIDTH=80 align=center>" +
 						(buffTable.getDescription() == null ? "" : buffTable.getDescription()) +
 						"</td><td FIXWIDTH=30 align=center><button value=\"" + buffTable.getBuffs().size() +
-						"\" width=50 height=16 action=\"bypass _bbscustom;action;worldBuff;bufferInfo;" +
+						"\" width=50 height=16 action=\"bypass this.bbscustom;action;worldBuff;bufferInfo;" +
 						buffTable.getPlayerId() +
 						"\" back=\"L2UI_CT1.Button_DF_Calculator_Over\" fore=\"L2UI_CT1.Button_DF_Calculator\"></button></td><td FIXWIDTH=35 align=center>" +
 						buffTable.getCoinName() + "</td></tr></table>");
@@ -205,9 +205,9 @@ public class CustomOfflineBuffersManager
 		}
 
 		StringBuilder sb = new StringBuilder();
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(playerId);
+			BufferTable buffTable = this.customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -240,7 +240,7 @@ public class CustomOfflineBuffersManager
 					sb.append("<table width=300 " + (loc % 2 == 0 ? "bgcolor=131210" : "") +
 							" border=0><tr><td FIXWIDTH=32><img src=\"" +
 							getCorrectSkillIcon(buffInfo.getName(), buffInfo.getId()) +
-							"\" width=32 height=32></td><td FIXWIDTH=130><a action=\"bypass _bbscustom;action;worldBuff;getBuff;" +
+							"\" width=32 height=32></td><td FIXWIDTH=130><a action=\"bypass this.bbscustom;action;worldBuff;getBuff;" +
 							playerId + ";" + skillId + "\">" + buffInfo.getName() +
 							"</a></td><td FIXWIDTH=35 align=center>" + buffInfo.getLevelHash() +
 							"</td><td FIXWIDTH=80 align=center>" + i.getValue() + "</td></tr></table>");
@@ -271,9 +271,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(playerId);
+			BufferTable buffTable = this.customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -287,7 +287,7 @@ public class CustomOfflineBuffersManager
 
 			if (buffer.getClient() == null || !buffer.getClient().isDetached() || !buffer.getIsOfflineBuffer())
 			{
-				_customBufferTable.remove(playerId);
+				this.customBufferTable.remove(playerId);
 				return;
 			}
 
@@ -388,7 +388,7 @@ public class CustomOfflineBuffersManager
 		{
 			return;
 		}
-		BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+		BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 		List<L2Skill> buffSkills = new ArrayList<>();
 		for (L2Skill sk : player.getAllSkills())
 		{
@@ -440,13 +440,13 @@ public class CustomOfflineBuffersManager
 		{
 			sb.append("<tr><td align=center><font color=LEVEL>" + buffTable.getDescription() + "</font></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;delDesc\" value=Delete Description! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;delDesc\" value=Delete Description! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		else
 		{
 			sb.append("<tr><td align=center><edit var=\"addDesc\" width=150 type=char length=16></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;addDesc; $addDesc\" value=\"Add Description!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;addDesc; $addDesc\" value=\"Add Description!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		sb.append("</table></center><br>");
 
@@ -455,14 +455,14 @@ public class CustomOfflineBuffersManager
 		{
 			sb.append("<tr><td align=center><font color=LEVEL>" + buffTable.getCoinName() + "</font></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;delCoin\" value=\"Change this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;delCoin\" value=\"Change this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		else
 		{
 			sb.append(
 					"<tr><td align=center><combobox width=150 height=17 var=\"coinType\" list=Adena;SilverShilen;BlueEva;GoldEinhasad></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;addCoin; $coinType\" value=\"Use this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;addCoin; $coinType\" value=\"Use this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		sb.append("</table></center><br>");
 
@@ -481,13 +481,13 @@ public class CustomOfflineBuffersManager
 			if (buffTable != null && buffTable.getBuffs().containsKey(sk.getId()))
 			{
 				sb.append("<tr><td>Price:</td><td>" + buffTable.getBuffs().get(sk.getId()) +
-						"</td><td><button action=\"bypass _bbscustom;action;worldBuff;delBuff;" + sk.getId() +
+						"</td><td><button action=\"bypass this.bbscustom;action;worldBuff;delBuff;" + sk.getId() +
 						"\" value=Remove! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			}
 			else
 			{
 				sb.append("<tr><td>Price:</td><td><edit var=\"addBuff" + sk.getId() +
-						"\" width=100 type=number length=14></td><td><button action=\"bypass _bbscustom;action;worldBuff;addBuff;" +
+						"\" width=100 type=number length=14></td><td><button action=\"bypass this.bbscustom;action;worldBuff;addBuff;" +
 						sk.getId() + "; $addBuff" + sk.getId() +
 						"\" value=Add! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			}
@@ -509,13 +509,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				_customBufferTable.put(player.getObjectId(), buffTable);
+				this.customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			if (player.getSkillLevelHash(skillId) != -1)
@@ -540,16 +540,16 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.getBuffs().remove(skillId);
 
 				if (buffTable.getBuffs().size() == 0)
 				{
-					_customBufferTable.remove(player.getObjectId());
+					this.customBufferTable.remove(player.getObjectId());
 				}
 
 				player.sendMessage("World Buffers: Buff removed!");
@@ -566,13 +566,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				_customBufferTable.put(player.getObjectId(), buffTable);
+				this.customBufferTable.put(player.getObjectId(), buffTable);
 			}
 			buffTable.setDescription(description);
 			player.sendMessage("World Buffers: Description updated!");
@@ -588,13 +588,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				_customBufferTable.put(player.getObjectId(), buffTable);
+				this.customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			buffTable.setCointId(coin != null ? TenkaiAuctionManager.getInstance().getCurrencyId(coin) : 0);
@@ -611,9 +611,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.setDescription("");
@@ -634,9 +634,9 @@ public class CustomOfflineBuffersManager
 			return true;
 		}
 
-		synchronized (_customBufferTable)
+		synchronized (this.customBufferTable)
 		{
-			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				if (buffTable.getBuffs().size() > 0 && buffTable.getCointId() != 0)
@@ -714,7 +714,7 @@ public class CustomOfflineBuffersManager
 					table.setCointId(coinId);
 					player.setIsOfflineBuffer(true);
 
-					_customBufferTable.put(charId, table);
+					this.customBufferTable.put(charId, table);
 				}
 				catch (Exception e)
 				{
@@ -740,7 +740,7 @@ public class CustomOfflineBuffersManager
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("CustomOfflineBuffers: restored " + _customBufferTable.size() + " offline buffers!");
+		Log.info("CustomOfflineBuffers: restored " + this.customBufferTable.size() + " offline buffers!");
 	}
 
 	public void storeOfflineBuffers()
@@ -750,7 +750,7 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		if (_customBufferTable.isEmpty())
+		if (this.customBufferTable.isEmpty())
 		{
 			return;
 		}
@@ -761,7 +761,7 @@ public class CustomOfflineBuffersManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement sq = con.prepareStatement(STORE_BUFFERS);
 
-			for (Entry<Integer, BufferTable> i : _customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : this.customBufferTable.entrySet())
 			{
 				BufferTable table = i.getValue();
 				if (table.getBuffs().isEmpty())
@@ -830,12 +830,12 @@ public class CustomOfflineBuffersManager
 
 	public static CustomOfflineBuffersManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CustomOfflineBuffersManager _instance = new CustomOfflineBuffersManager();
+		protected static final CustomOfflineBuffersManager instance = new CustomOfflineBuffersManager();
 	}
 }

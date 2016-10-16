@@ -27,7 +27,7 @@ import l2server.gameserver.util.Util;
  */
 public class GoToFriend implements ISkillHandler
 {
-	//private static Logger _log = Logger.getLogger(SummonFriend.class.getName());
+	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GO_TO_FRIEND};
 
 	/**

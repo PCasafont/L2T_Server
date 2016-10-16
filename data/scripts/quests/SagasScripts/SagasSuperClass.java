@@ -15,6 +15,9 @@
 
 package quests.SagasScripts;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.QuestManager;
@@ -34,12 +37,9 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class SagasSuperClass extends QuestJython
 {
-	private static ArrayList<Quest> _scripts = new ArrayList<Quest>();
+	private static ArrayList<Quest> scripts = new ArrayList<Quest>();
 	public String qn = "SagasSuperClass";
 	public int qnu;
 	public int[] NPC = {};
@@ -51,7 +51,7 @@ public class SagasSuperClass extends QuestJython
 	public int[] Y = {};
 	public int[] Z = {};
 	public String[] Text = {};
-	HashMap<L2Npc, Integer> _SpawnList = new HashMap<L2Npc, Integer>();
+	HashMap<L2Npc, Integer> SpawnList = new HashMap<L2Npc, Integer>();
 
 	int[] QuestClass[] = {
 			{0x7f},
@@ -142,12 +142,12 @@ public class SagasSuperClass extends QuestJython
 
 	public void AddSpawn(QuestState st, L2Npc mob)
 	{
-		_SpawnList.put(mob, st.getPlayer().getObjectId());
+		this.SpawnList.put(mob, st.getPlayer().getObjectId());
 	}
 
 	public L2Npc FindSpawn(L2PcInstance player, L2Npc npc)
 	{
-		if (_SpawnList.containsKey(npc) && _SpawnList.get(npc) == player.getObjectId())
+		if (this.SpawnList.containsKey(npc) && this.SpawnList.get(npc) == player.getObjectId())
 		{
 			return npc;
 		}
@@ -156,9 +156,9 @@ public class SagasSuperClass extends QuestJython
 
 	public void DeleteSpawn(QuestState st, L2Npc npc)
 	{
-		if (_SpawnList.containsKey(npc))
+		if (this.SpawnList.containsKey(npc))
 		{
-			_SpawnList.remove(npc);
+			this.SpawnList.remove(npc);
 			npc.deleteMe();
 		}
 	}
@@ -167,9 +167,9 @@ public class SagasSuperClass extends QuestJython
 	{
 		L2PcInstance player = null;
 		QuestState st = null;
-		if (_SpawnList.containsKey(npc))
+		if (this.SpawnList.containsKey(npc))
 		{
-			player = L2World.getInstance().getPlayer(_SpawnList.get(npc));
+			player = L2World.getInstance().getPlayer(this.SpawnList.get(npc));
 			if (player != null)
 			{
 				st = player.getQuestState(qn);
@@ -967,9 +967,9 @@ public class SagasSuperClass extends QuestJython
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance player, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (_SpawnList.containsKey(npc) && _SpawnList.get(npc) != player.getObjectId())
+		if (this.SpawnList.containsKey(npc) && this.SpawnList.get(npc) != player.getObjectId())
 		{
-			L2PcInstance quest_player = (L2PcInstance) L2World.getInstance().findObject(_SpawnList.get(npc));
+			L2PcInstance quest_player = (L2PcInstance) L2World.getInstance().findObject(this.SpawnList.get(npc));
 			if (quest_player == null)
 			{
 				return null;
@@ -1163,21 +1163,21 @@ public class SagasSuperClass extends QuestJython
 	public boolean unload()
 	{
 		// if sub classes aren't loaded, just unload superclass
-		if (_scripts.size() == 0)
+		if (this.scripts.size() == 0)
 		{
 			return super.unload();
 		}
 
 		// unload all subclasses
-		for (int index = 0; index < _scripts.size(); index++)
+		for (int index = 0; index < this.scripts.size(); index++)
 		{
-			if (_scripts.get(index) == null)
+			if (this.scripts.get(index) == null)
 			{
 				continue;
 			}
-			QuestManager.getInstance().removeQuest(_scripts.get(index));
+			QuestManager.getInstance().removeQuest(this.scripts.get(index));
 		}
-		_scripts.clear();
+		this.scripts.clear();
 
 		// now unload superclass
 		return super.unload();
@@ -1189,39 +1189,39 @@ public class SagasSuperClass extends QuestJython
 		new SagasSuperClass(-1, "SagasSuperClass", "Saga's SuperClass");
 
 		// initialize subclasses
-		_scripts.add(new SagaOfEvasSaint());
-		_scripts.add(new SagaOfEvasTemplar());
-		_scripts.add(new SagaOfTheAdventurer());
-		_scripts.add(new SagaOfTheArcanaLord());
-		_scripts.add(new SagaOfTheArchmage());
-		_scripts.add(new SagaOfTheCardinal());
-		_scripts.add(new SagaOfTheDominator());
-		_scripts.add(new SagaOfTheDoombringer());
-		_scripts.add(new SagaOfTheDoomcryer());
-		_scripts.add(new SagaOfTheDreadnoughts());
-		_scripts.add(new SagaOfTheDuelist());
-		_scripts.add(new SagaOfTheElementalMaster());
-		_scripts.add(new SagaOfTheFortuneSeeker());
-		_scripts.add(new SagaOfTheGhostHunter());
-		_scripts.add(new SagaOfTheGhostSentinel());
-		_scripts.add(new SagaOfTheGrandKhavatari());
-		_scripts.add(new SagaOfTheHellKnight());
-		_scripts.add(new SagaOfTheHierophant());
-		_scripts.add(new SagaOfTheMaestro());
-		_scripts.add(new SagaOfTheMoonlightSentinel());
-		_scripts.add(new SagaOfTheMysticMuse());
-		_scripts.add(new SagaOfThePhoenixKnight());
-		_scripts.add(new SagaOfTheSagittarius());
-		_scripts.add(new SagaOfTheShillienSaint());
-		_scripts.add(new SagaOfTheShillienTemplar());
-		_scripts.add(new SagaOfTheSoulHound());
-		_scripts.add(new SagaOfTheSoultaker());
-		_scripts.add(new SagaOfTheSpectralDancer());
-		_scripts.add(new SagaOfTheSpectralMaster());
-		_scripts.add(new SagaOfTheStormScreamer());
-		_scripts.add(new SagaOfTheSwordMuse());
-		_scripts.add(new SagaOfTheTitan());
-		_scripts.add(new SagaOfTheTrickster());
-		_scripts.add(new SagaOfTheWindRider());
+		scripts.add(new SagaOfEvasSaint());
+		scripts.add(new SagaOfEvasTemplar());
+		scripts.add(new SagaOfTheAdventurer());
+		scripts.add(new SagaOfTheArcanaLord());
+		scripts.add(new SagaOfTheArchmage());
+		scripts.add(new SagaOfTheCardinal());
+		scripts.add(new SagaOfTheDominator());
+		scripts.add(new SagaOfTheDoombringer());
+		scripts.add(new SagaOfTheDoomcryer());
+		scripts.add(new SagaOfTheDreadnoughts());
+		scripts.add(new SagaOfTheDuelist());
+		scripts.add(new SagaOfTheElementalMaster());
+		scripts.add(new SagaOfTheFortuneSeeker());
+		scripts.add(new SagaOfTheGhostHunter());
+		scripts.add(new SagaOfTheGhostSentinel());
+		scripts.add(new SagaOfTheGrandKhavatari());
+		scripts.add(new SagaOfTheHellKnight());
+		scripts.add(new SagaOfTheHierophant());
+		scripts.add(new SagaOfTheMaestro());
+		scripts.add(new SagaOfTheMoonlightSentinel());
+		scripts.add(new SagaOfTheMysticMuse());
+		scripts.add(new SagaOfThePhoenixKnight());
+		scripts.add(new SagaOfTheSagittarius());
+		scripts.add(new SagaOfTheShillienSaint());
+		scripts.add(new SagaOfTheShillienTemplar());
+		scripts.add(new SagaOfTheSoulHound());
+		scripts.add(new SagaOfTheSoultaker());
+		scripts.add(new SagaOfTheSpectralDancer());
+		scripts.add(new SagaOfTheSpectralMaster());
+		scripts.add(new SagaOfTheStormScreamer());
+		scripts.add(new SagaOfTheSwordMuse());
+		scripts.add(new SagaOfTheTitan());
+		scripts.add(new SagaOfTheTrickster());
+		scripts.add(new SagaOfTheWindRider());
 	}
 }

@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  */
 public class BlowFishKey extends BaseRecievePacket
 {
-	protected static final Logger _log = Logger.getLogger(BlowFishKey.class.getName());
+	protected static final Logger log = Logger.getLogger(BlowFishKey.class.getName());
 
 	/**
 	 * @param decrypt

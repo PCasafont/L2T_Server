@@ -36,46 +36,46 @@ import java.util.logging.Level;
 public class L2UIKeysSettings
 {
 
-	private final L2PcInstance _player;
+	private final L2PcInstance player;
 
-	Map<Integer, List<ActionKey>> _storedKeys;
-	Map<Integer, List<Integer>> _storedCategories;
+	Map<Integer, List<ActionKey>> storedKeys;
+	Map<Integer, List<Integer>> storedCategories;
 
-	boolean _saved = true;
+	boolean saved = true;
 
 	public L2UIKeysSettings(L2PcInstance player)
 	{
-		_player = player;
+		this.player = player;
 		loadFromDB();
 	}
 
 	public void storeAll(Map<Integer, List<Integer>> catMap, Map<Integer, List<ActionKey>> keyMap)
 	{
-		_saved = false;
-		_storedCategories = catMap;
-		_storedKeys = keyMap;
+		this.saved = false;
+		this.storedCategories = catMap;
+		this.storedKeys = keyMap;
 	}
 
 	public void storeCategories(Map<Integer, List<Integer>> catMap)
 	{
-		_saved = false;
-		_storedCategories = catMap;
+		this.saved = false;
+		this.storedCategories = catMap;
 	}
 
 	public Map<Integer, List<Integer>> getCategories()
 	{
-		return _storedCategories;
+		return this.storedCategories;
 	}
 
 	public void storeKeys(Map<Integer, List<ActionKey>> keyMap)
 	{
-		_saved = false;
-		_storedKeys = keyMap;
+		this.saved = false;
+		this.storedKeys = keyMap;
 	}
 
 	public Map<Integer, List<ActionKey>> getKeys()
 	{
-		return _storedKeys;
+		return this.storedKeys;
 	}
 
 	public void loadFromDB()
@@ -90,18 +90,18 @@ public class L2UIKeysSettings
 	public void saveInDB()
 	{
 		String query;
-		int playerId = _player.getObjectId();
+		int playerId = this.player.getObjectId();
 
-		if (_saved)
+		if (this.saved)
 		{
 			return;
 		}
 
 		query = "REPLACE INTO character_ui_categories (`charId`, `catId`, `order`, `cmdId`) VALUES ";
-		for (int category : _storedCategories.keySet())
+		for (int category : this.storedCategories.keySet())
 		{
 			int order = 0;
-			for (int key : _storedCategories.get(category))
+			for (int key : this.storedCategories.get(category))
 			{
 				query += "(" + playerId + ", " + category + ", " + order++ + ", " + key + "),";
 			}
@@ -126,7 +126,7 @@ public class L2UIKeysSettings
 
 		query =
 				"REPLACE INTO character_ui_actions (`charId`, `cat`, `order`, `cmd`, `key`, `tgKey1`, `tgKey2`, `show`) VALUES";
-		for (List<ActionKey> keyLst : _storedKeys.values())
+		for (List<ActionKey> keyLst : this.storedKeys.values())
 		{
 			int order = 0;
 			for (ActionKey key : keyLst)
@@ -155,18 +155,18 @@ public class L2UIKeysSettings
 		{
 			L2DatabaseFactory.close(con);
 		}
-		_saved = true;
+		this.saved = true;
 	}
 
 	public void getCatsFromDB()
 	{
 
-		if (_storedCategories != null)
+		if (this.storedCategories != null)
 		{
 			return;
 		}
 
-		_storedCategories = new HashMap<>();
+		this.storedCategories = new HashMap<>();
 
 		Connection con = null;
 		try
@@ -174,7 +174,7 @@ public class L2UIKeysSettings
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement(
 					"SELECT * FROM character_ui_categories WHERE `charId` = ? ORDER BY `catId`, `order`");
-			stmt.setInt(1, _player.getObjectId());
+			stmt.setInt(1, this.player.getObjectId());
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next())
@@ -195,20 +195,20 @@ public class L2UIKeysSettings
 			L2DatabaseFactory.close(con);
 		}
 
-		if (_storedCategories.size() < 1)
+		if (this.storedCategories.size() < 1)
 		{
-			_storedCategories = UITable.getInstance().getCategories();
+			this.storedCategories = UITable.getInstance().getCategories();
 		}
 	}
 
 	public void getKeysFromDB()
 	{
-		if (_storedKeys != null)
+		if (this.storedKeys != null)
 		{
 			return;
 		}
 
-		_storedKeys = new HashMap<>();
+		this.storedKeys = new HashMap<>();
 
 		Connection con = null;
 		try
@@ -216,7 +216,7 @@ public class L2UIKeysSettings
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement(
 					"SELECT * FROM character_ui_actions WHERE `charId` = ? ORDER BY `cat`, `order`");
-			stmt.setInt(1, _player.getObjectId());
+			stmt.setInt(1, this.player.getObjectId());
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next())
@@ -241,43 +241,43 @@ public class L2UIKeysSettings
 			L2DatabaseFactory.close(con);
 		}
 
-		if (_storedKeys.size() < 1)
+		if (this.storedKeys.size() < 1)
 		{
-			_storedKeys = UITable.getInstance().getKeys();
+			this.storedKeys = UITable.getInstance().getKeys();
 		}
 	}
 
 	public void insertCategory(int cat, int cmd)
 	{
-		if (_storedCategories.containsKey(cat))
+		if (this.storedCategories.containsKey(cat))
 		{
-			_storedCategories.get(cat).add(cmd);
+			this.storedCategories.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			_storedCategories.put(cat, tmp);
+			this.storedCategories.put(cat, tmp);
 		}
 	}
 
 	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (_storedKeys.containsKey(cat))
+		if (this.storedKeys.containsKey(cat))
 		{
-			_storedKeys.get(cat).add(tmk);
+			this.storedKeys.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			_storedKeys.put(cat, tmp);
+			this.storedKeys.put(cat, tmp);
 		}
 	}
 
 	public boolean isSaved()
 	{
-		return _saved;
+		return this.saved;
 	}
 }

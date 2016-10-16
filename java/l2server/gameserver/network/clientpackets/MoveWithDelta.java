@@ -26,18 +26,18 @@ package l2server.gameserver.network.clientpackets;
 public class MoveWithDelta extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _dx;
+	private int dx;
 	@SuppressWarnings("unused")
-	private int _dy;
+	private int dy;
 	@SuppressWarnings("unused")
-	private int _dz;
+	private int dz;
 
 	@Override
 	protected void readImpl()
 	{
-		_dx = readD();
-		_dy = readD();
-		_dz = readD();
+		this.dx = readD();
+		this.dy = readD();
+		this.dz = readD();
 	}
 
 	@Override

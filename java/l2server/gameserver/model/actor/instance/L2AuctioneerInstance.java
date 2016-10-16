@@ -41,7 +41,7 @@ public final class L2AuctioneerInstance extends L2Npc
 	private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	private static final int COND_REGULAR = 3;
 
-	private Map<Integer, Auction> _pendingAuctions = new HashMap<>();
+	private Map<Integer, Auction> pendingAuctions = new HashMap<>();
 
 	public L2AuctioneerInstance(int objectId, L2NpcTemplate template)
 	{
@@ -101,12 +101,12 @@ public final class L2AuctioneerInstance extends L2Npc
 						Auction a =
 								new Auction(player.getClan().getHasHideout(), player.getClan(), days * 86400000L, bid,
 										ClanHallManager.getInstance().getClanHallByOwner(player.getClan()).getName());
-						if (_pendingAuctions.get(a.getId()) != null)
+						if (this.pendingAuctions.get(a.getId()) != null)
 						{
-							_pendingAuctions.remove(a.getId());
+							this.pendingAuctions.remove(a.getId());
 						}
 
-						_pendingAuctions.put(a.getId(), a);
+						this.pendingAuctions.put(a.getId(), a);
 
 						String filename = "auction/AgitSale3.htm";
 						NpcHtmlMessage html = new NpcHtmlMessage(1);
@@ -139,9 +139,9 @@ public final class L2AuctioneerInstance extends L2Npc
 			{
 				try
 				{
-					Auction a = _pendingAuctions.get(player.getClan().getHasHideout());
+					Auction a = this.pendingAuctions.get(player.getClan().getHasHideout());
 					a.confirmAuction();
-					_pendingAuctions.remove(player.getClan().getHasHideout());
+					this.pendingAuctions.remove(player.getClan().getHasHideout());
 				}
 				catch (Exception e)
 				{

@@ -26,40 +26,40 @@ import java.util.List;
 public final class NpcSay extends L2GameServerPacket
 {
 	// cddddS
-	private int _objectId;
-	private int _textType;
-	private int _npcId;
-	private String _text;
-	private int _npcString;
-	private List<String> _parameters;
+	private int objectId;
+	private int textType;
+	private int npcId;
+	private String text;
+	private int npcString;
+	private List<String> parameters;
 
 	/**
 	 */
 	public NpcSay(int objectId, int messageType, int npcId, String text)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = -1;
-		_text = text;
+		this.objectId = objectId;
+		this.textType = messageType;
+		this.npcId = 1000000 + npcId;
+		this.npcString = -1;
+		this.text = text;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, int npcString)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = npcString;
-		_text = null;
+		this.objectId = objectId;
+		this.textType = messageType;
+		this.npcId = 1000000 + npcId;
+		this.npcString = npcString;
+		this.text = null;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, NpcStringId npcStringId)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = npcStringId.getId();
-		_text = null;
+		this.objectId = objectId;
+		this.textType = messageType;
+		this.npcId = 1000000 + npcId;
+		this.npcString = npcStringId.getId();
+		this.text = null;
 	}
 
 	/**
@@ -69,29 +69,29 @@ public final class NpcSay extends L2GameServerPacket
 	 */
 	public void addStringParameter(String text)
 	{
-		if (_parameters == null)
+		if (this.parameters == null)
 		{
-			_parameters = new ArrayList<>();
+			this.parameters = new ArrayList<>();
 		}
-		_parameters.add(text);
+		this.parameters.add(text);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_textType);
-		writeD(_npcId);
-		writeD(_npcString);
-		if (_npcString == -1)
+		writeD(this.objectId);
+		writeD(this.textType);
+		writeD(this.npcId);
+		writeD(this.npcString);
+		if (this.npcString == -1)
 		{
-			writeS(_text);
+			writeS(this.text);
 		}
 		else
 		{
-			if (_parameters != null)
+			if (this.parameters != null)
 			{
-				for (String s : _parameters)
+				for (String s : this.parameters)
 				{
 					writeS(s);
 				}

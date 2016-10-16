@@ -31,23 +31,23 @@ public class L2MinionData
 	/**
 	 * The Identifier of the L2Minion
 	 */
-	private int _minionId;
+	private int minionId;
 
 	/**
 	 * The number of this Minion Type to spawn
 	 */
-	private int _minionAmount;
-	private int _minionAmountMin;
-	private int _minionAmountMax;
-	private int _respawnTime;
-	private int _maxRespawn;
+	private int minionAmount;
+	private int minionAmountMin;
+	private int minionAmountMax;
+	private int respawnTime;
+	private int maxRespawn;
 
 	/**
 	 * Set the Identifier of the Minion to spawn.<BR><BR>
 	 */
 	public void setMinionId(int id)
 	{
-		_minionId = id;
+		this.minionId = id;
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class L2MinionData
 	 */
 	public int getMinionId()
 	{
-		return _minionId;
+		return this.minionId;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class L2MinionData
 	 */
 	public void setAmountMin(int amountMin)
 	{
-		_minionAmountMin = amountMin;
+		this.minionAmountMin = amountMin;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class L2MinionData
 	 */
 	public void setAmountMax(int amountMax)
 	{
-		_minionAmountMax = amountMax;
+		this.minionAmountMax = amountMax;
 	}
 
 	/**
@@ -85,17 +85,17 @@ public class L2MinionData
 	 */
 	public void setAmount(int amount)
 	{
-		_minionAmount = amount;
+		this.minionAmount = amount;
 	}
 
 	public int getAmountMin()
 	{
-		return _minionAmountMin;
+		return this.minionAmountMin;
 	}
 
 	public int getAmountMax()
 	{
-		return _minionAmountMax;
+		return this.minionAmountMax;
 	}
 
 	/**
@@ -103,42 +103,42 @@ public class L2MinionData
 	 */
 	public int getAmount()
 	{
-		if (_minionAmountMax > _minionAmountMin)
+		if (this.minionAmountMax > minionAmountMin)
 		{
-			_minionAmount = Rnd.get(_minionAmountMin, _minionAmountMax);
-			return _minionAmount;
+			this.minionAmount = Rnd.get(this.minionAmountMin, this.minionAmountMax);
+			return this.minionAmount;
 		}
 		else
 		{
-			return _minionAmountMin;
+			return this.minionAmountMin;
 		}
 	}
 
 	public int getRespawnTime()
 	{
-		if (_respawnTime > 0 && _respawnTime < 15)
+		if (this.respawnTime > 0 && this.respawnTime < 15)
 		{
 			return 15;
 		}
 
-		return _respawnTime;
+		return this.respawnTime;
 	}
 
 	public void setRespawnTime(final int respawnTime)
 	{
-		_respawnTime = respawnTime;
+		this.respawnTime = respawnTime;
 	}
 
 	public int getMaxRespawn()
 	{
-		//if (_maxRespawn > 5)
+		//if (this.maxRespawn > 5)
 		//	return 5;
 
-		return _maxRespawn;
+		return this.maxRespawn;
 	}
 
 	public void setMaxRespawn(final int maxRespawn)
 	{
-		_maxRespawn = maxRespawn;
+		this.maxRespawn = maxRespawn;
 	}
 }

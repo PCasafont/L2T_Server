@@ -20,6 +20,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowVariationCancelWindow;
 import l2server.gameserver.network.serverpackets.ExShowVariationMakeWindow;
+import l2server.log.Log;
 
 public class Augment implements IBypassHandler
 {
@@ -47,7 +48,7 @@ public class Augment implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			Log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

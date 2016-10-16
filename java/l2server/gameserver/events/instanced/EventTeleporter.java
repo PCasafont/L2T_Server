@@ -17,16 +17,16 @@ import l2server.util.Rnd;
  */
 public class EventTeleporter implements Runnable
 {
-	private L2PcInstance _playerInstance = null;
-	private Point3D _coordinates = null;
-	private boolean _restore = false;
-	private boolean _heal = true;
+	private L2PcInstance playerInstance = null;
+	private Point3D coordinates = null;
+	private boolean restore = false;
+	private boolean heal = true;
 
 	public EventTeleporter(L2PcInstance playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore)
 	{
-		_playerInstance = playerInstance;
-		_coordinates = coordinates;
-		_restore = restore;
+		this.playerInstance = playerInstance;
+		this.coordinates = coordinates;
+		this.restore = restore;
 
 		long delay = (playerInstance.getEvent() == null || playerInstance.getEvent().isState(EventState.STARTED) ?
 				Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) *
@@ -37,10 +37,10 @@ public class EventTeleporter implements Runnable
 
 	public EventTeleporter(L2PcInstance playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore, boolean heal)
 	{
-		_playerInstance = playerInstance;
-		_coordinates = coordinates;
-		_restore = restore;
-		_heal = heal;
+		this.playerInstance = playerInstance;
+		this.coordinates = coordinates;
+		this.restore = restore;
+		this.heal = heal;
 
 		long delay = (playerInstance.getEvent() == null || playerInstance.getEvent().isState(EventState.STARTED) ?
 				Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) *
@@ -52,12 +52,12 @@ public class EventTeleporter implements Runnable
 	@Override
 	public void run()
 	{
-		if (_playerInstance == null)
+		if (this.playerInstance == null)
 		{
 			return;
 		}
 
-		EventInstance event = _playerInstance.getEvent();
+		EventInstance event = this.playerInstance.getEvent();
 		if (event == null)
 		{
 			return;
@@ -65,7 +65,7 @@ public class EventTeleporter implements Runnable
 
 		try
 		{
-			for (L2Abnormal effect : _playerInstance.getAllEffects())
+			for (L2Abnormal effect : this.playerInstance.getAllEffects())
 			{
 				if (effect != null)
 				{
@@ -73,14 +73,14 @@ public class EventTeleporter implements Runnable
 				}
 			}
 
-			L2PetInstance pet = _playerInstance.getPet();
+			L2PetInstance pet = this.playerInstance.getPet();
 			if (pet != null)
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (pet.isMountable() || event.isType(EventType.LuckyChests) ||
 						event.isType(EventType.StalkedSalkers) || event.isType(EventType.SimonSays))
 				{
-					pet.unSummon(_playerInstance);
+					pet.unSummon(this.playerInstance);
 				}
 				else
 				{
@@ -93,13 +93,13 @@ public class EventTeleporter implements Runnable
 					}
 				}
 			}
-			for (L2SummonInstance summon : _playerInstance.getSummons())
+			for (L2SummonInstance summon : this.playerInstance.getSummons())
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (summon.isMountable() || event.isType(EventType.LuckyChests) ||
 						event.isType(EventType.StalkedSalkers) || event.isType(EventType.SimonSays))
 				{
-					summon.unSummon(_playerInstance);
+					summon.unSummon(this.playerInstance);
 				}
 				else
 				{
@@ -115,16 +115,16 @@ public class EventTeleporter implements Runnable
 
 			if (event.getConfig().isAllVsAll())
 			{
-				_playerInstance.leaveParty();
+				this.playerInstance.leaveParty();
 			}
 
-			for (L2SummonInstance summon : _playerInstance.getSummons())
+			for (L2SummonInstance summon : this.playerInstance.getSummons())
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (event.isType(EventType.LuckyChests) || event.isType(EventType.StalkedSalkers) ||
 						event.isType(EventType.SimonSays))
 				{
-					summon.unSummon(_playerInstance);
+					summon.unSummon(this.playerInstance);
 				}
 				else
 				{
@@ -138,23 +138,23 @@ public class EventTeleporter implements Runnable
 				}
 			}
 
-			if (_playerInstance.isDead())
+			if (this.playerInstance.isDead())
 			{
-				_playerInstance.restoreExp(100.0);
-				_playerInstance.doRevive();
+				this.playerInstance.restoreExp(100.0);
+				this.playerInstance.doRevive();
 			}
 
-			if (_heal)
+			if (this.heal)
 			{
-				_playerInstance.setCurrentCp(_playerInstance.getMaxCp());
-				_playerInstance.setCurrentHp(_playerInstance.getMaxHp());
-				_playerInstance.setCurrentMp(_playerInstance.getMaxMp());
+				this.playerInstance.setCurrentCp(this.playerInstance.getMaxCp());
+				this.playerInstance.setCurrentHp(this.playerInstance.getMaxHp());
+				this.playerInstance.setCurrentMp(this.playerInstance.getMaxMp());
 			}
 
 			int x = 0, y = 0, z = 0;
-			if (event.isState(EventState.STARTED) && !_restore)
+			if (event.isState(EventState.STARTED) && !this.restore)
 			{
-				_playerInstance.setInstanceId(event.getInstanceId());
+				this.playerInstance.setInstanceId(event.getInstanceId());
 				if (event.getConfig().spawnsPlayersRandomly())
 				{
 					EventLocation location = event.getConfig().getLocation();
@@ -167,35 +167,35 @@ public class EventTeleporter implements Runnable
 				{
 					float r1 = Rnd.get(1000);
 					int r2 = Rnd.get(100);
-					x = Math.round((float) Math.cos(r1 / 1000 * 2 * Math.PI) * r2 + _coordinates.getX());
-					y = Math.round((float) Math.sin(r1 / 1000 * 2 * Math.PI) * r2 + _coordinates.getY());
-					z = GeoData.getInstance().getHeight(x, y, _coordinates.getZ());
+					x = Math.round((float) Math.cos(r1 / 1000 * 2 * Math.PI) * r2 + this.coordinates.getX());
+					y = Math.round((float) Math.sin(r1 / 1000 * 2 * Math.PI) * r2 + this.coordinates.getY());
+					z = GeoData.getInstance().getHeight(x, y, this.coordinates.getZ());
 				}
 			}
 			else
 			{
-				_playerInstance.setInstanceId(0);
-				_playerInstance.setEvent(null);
-				_playerInstance.returnedFromEvent();
-				if (_playerInstance.getEventSavedPosition().getX() == 0 &&
-						_playerInstance.getEventSavedPosition().getY() == 0 &&
-						_playerInstance.getEventSavedPosition().getZ() == 0)
+				this.playerInstance.setInstanceId(0);
+				this.playerInstance.setEvent(null);
+				this.playerInstance.returnedFromEvent();
+				if (this.playerInstance.getEventSavedPosition().getX() == 0 &&
+						this.playerInstance.getEventSavedPosition().getY() == 0 &&
+						this.playerInstance.getEventSavedPosition().getZ() == 0)
 				{
-					x = _coordinates.getX();
-					y = _coordinates.getY();
-					z = GeoData.getInstance().getHeight(_coordinates.getX(), _coordinates.getY(), _coordinates.getZ());
+					x = this.coordinates.getX();
+					y = this.coordinates.getY();
+					z = GeoData.getInstance().getHeight(this.coordinates.getX(), this.coordinates.getY(), this.coordinates.getZ());
 				}
 				else
 				{
-					x = _playerInstance.getEventSavedPosition().getX();
-					y = _playerInstance.getEventSavedPosition().getY();
-					z = _playerInstance.getEventSavedPosition().getZ();
+					x = this.playerInstance.getEventSavedPosition().getX();
+					y = this.playerInstance.getEventSavedPosition().getY();
+					z = this.playerInstance.getEventSavedPosition().getZ();
 				}
 
 				// Remove all skills' reuse when the event ends
-				_playerInstance.removeSkillReuse(true);
+				this.playerInstance.removeSkillReuse(true);
 			}
-			_playerInstance.teleToLocation(x, y, z, false);
+			this.playerInstance.teleToLocation(x, y, z, false);
 		}
 		catch (Exception e)
 		{

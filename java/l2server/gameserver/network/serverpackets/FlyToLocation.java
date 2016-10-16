@@ -23,9 +23,9 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public final class FlyToLocation extends L2GameServerPacket
 {
-	private final int _destX, _destY, _destZ;
-	private final int _chaObjId, _chaX, _chaY, _chaZ;
-	private final FlyType _type;
+	private final int destX, destY, destZ;
+	private final int chaObjId, chaX, chaY, chaZ;
+	private final FlyType type;
 
 	public enum FlyType
 	{
@@ -36,14 +36,14 @@ public final class FlyToLocation extends L2GameServerPacket
 
 	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type)
 	{
-		_chaObjId = cha.getObjectId();
-		_chaX = cha.getX();
-		_chaY = cha.getY();
-		_chaZ = cha.getZ();
-		_destX = destX;
-		_destY = destY;
-		_destZ = destZ;
-		_type = type;
+		this.chaObjId = cha.getObjectId();
+		this.chaX = cha.getX();
+		this.chaY = cha.getY();
+		this.chaZ = cha.getZ();
+		this.destX = destX;
+		this.destY = destY;
+		this.destZ = destZ;
+		this.type = type;
 	}
 
 	public FlyToLocation(L2Character cha, L2Object dest, FlyType type)
@@ -61,14 +61,14 @@ public final class FlyToLocation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_chaObjId);
-		writeD(_destX);
-		writeD(_destY);
-		writeD(_destZ);
-		writeD(_chaX);
-		writeD(_chaY);
-		writeD(_chaZ);
-		writeD(_type.ordinal());
+		writeD(this.chaObjId);
+		writeD(this.destX);
+		writeD(this.destY);
+		writeD(this.destZ);
+		writeD(this.chaX);
+		writeD(this.chaY);
+		writeD(this.chaZ);
+		writeD(this.type.ordinal());
 		writeD(0x00); // flySpeed?
 		writeD(0x00); // flyDelay?
 		writeD(333); // animationSpeed?

@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerIsHero extends Condition
 {
-	private final boolean _val;
+	private final boolean val;
 
 	/**
 	 * Instantiates a new condition player is hero.
@@ -32,7 +32,7 @@ public class ConditionPlayerIsHero extends Condition
 	 */
 	public ConditionPlayerIsHero(boolean val)
 	{
-		_val = val;
+		this.val = val;
 	}
 
 	/* (non-Javadoc)
@@ -45,6 +45,6 @@ public class ConditionPlayerIsHero extends Condition
 		{
 			return false;
 		}
-		return ((L2PcInstance) env.player).isHero() == _val;
+		return ((L2PcInstance) env.player).isHero() == this.val;
 	}
 }

@@ -29,8 +29,8 @@ public class SocialAction extends L2GameServerPacket
 	public static final int CLAP = 34;
 	public static final int LEVEL_UP = 2122;
 
-	private int _charObjId;
-	private int _actionId;
+	private int charObjId;
+	private int actionId;
 
 	/**
 	 * @param objectId
@@ -38,15 +38,15 @@ public class SocialAction extends L2GameServerPacket
 	 */
 	public SocialAction(int objectId, int actionId)
 	{
-		_charObjId = objectId;
-		_actionId = actionId;
+		this.charObjId = objectId;
+		this.actionId = actionId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_actionId);
+		writeD(this.charObjId);
+		writeD(this.actionId);
 		writeD(0x00); // GoD ??? (maybe npcstringId or npcTextId)
 	}
 }

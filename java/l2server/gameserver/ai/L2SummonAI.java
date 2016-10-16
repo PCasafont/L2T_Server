@@ -34,13 +34,13 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 {
 	private static final int AVOID_RADIUS = 70;
 
-	private volatile boolean _thinking; // to prevent recursive thinking
-	private volatile boolean _startFollow = ((L2Summon) _actor).getFollowStatus();
+	private volatile boolean thinking; // to prevent recursive thinking
+	private volatile boolean startFollow = ((L2Summon) this.actor).getFollowStatus();
 	@SuppressWarnings("unused")
-	private L2Character _lastAttack = null;
+	private L2Character lastAttack = null;
 
-	private volatile boolean _startAvoid = false;
-	private Future<?> _avoidTask = null;
+	private volatile boolean startAvoid = false;
+	private Future<?> avoidTask = null;
 
 	public L2SummonAI(AIAccessor accessor)
 	{
@@ -51,15 +51,15 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	protected void onIntentionIdle()
 	{
 		stopFollow();
-		_startFollow = false;
+		this.startFollow = false;
 		onIntentionActive();
 	}
 
 	@Override
 	protected void onIntentionActive()
 	{
-		L2Summon summon = (L2Summon) _actor;
-		if (_startFollow)
+		L2Summon summon = (L2Summon) this.actor;
+		if (this.startFollow)
 		{
 			setIntention(AI_INTENTION_FOLLOW, summon.getOwner());
 		}
@@ -92,32 +92,32 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 			setAttackTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(getAttackTarget(), _actor.getPhysicalAttackRange()))
+		if (maybeMoveToPawn(getAttackTarget(), this.actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
 		clientStopMoving(null);
-		_accessor.doAttack(getAttackTarget());
+		this.accessor.doAttack(getAttackTarget());
 	}
 
 	private void thinkCast()
 	{
-		L2Summon summon = (L2Summon) _actor;
+		L2Summon summon = (L2Summon) this.actor;
 		if (checkTargetLost(getCastTarget()))
 		{
 			setCastTarget(null);
 			return;
 		}
-		boolean val = _startFollow;
-		if (maybeMoveToPawn(getCastTarget(), _actor.getMagicalAttackRange(_skill)))
+		boolean val = this.startFollow;
+		if (maybeMoveToPawn(getCastTarget(), this.actor.getMagicalAttackRange(this.skill)))
 		{
 			return;
 		}
 		clientStopMoving(null);
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
-		_startFollow = val;
-		_accessor.doCast(_skill, false);
+		this.startFollow = val;
+		this.accessor.doCast(this.skill, false);
 	}
 
 	private void thinkPickUp()
@@ -131,7 +131,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((L2Summon.AIAccessor) _accessor).doPickupItem(getTarget());
+		((L2Summon.AIAccessor) this.accessor).doPickupItem(getTarget());
 	}
 
 	private void thinkInteract()
@@ -150,12 +150,12 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		if (this.thinking || this.actor.isCastingNow() || this.actor.isAllSkillsDisabled())
 		{
 			return;
 		}
 
-		_thinking = true;
+		this.thinking = true;
 		try
 		{
 			switch (getIntention())
@@ -176,27 +176,27 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 		}
 		finally
 		{
-			_thinking = false;
+			this.thinking = false;
 		}
 	}
 
 	@Override
 	protected void onEvtFinishCasting()
 	{
-		boolean shouldFollow = _attackTarget == null || !_attackTarget.isAutoAttackable(((L2Summon) _actor).getOwner());
+		boolean shouldFollow = this.attackTarget == null || !this.attackTarget.isAutoAttackable(((L2Summon) this.actor).getOwner());
 
-		if (!_actor.isMoving() && !_actor.isAttackingNow())
+		if (!this.actor.isMoving() && !this.actor.isAttackingNow())
 		{
 			shouldFollow = true;
 		}
 
 		if (shouldFollow)
 		{
-			((L2Summon) _actor).setFollowStatus(_startFollow);
+			((L2Summon) this.actor).setFollowStatus(this.startFollow);
 		}
 		else
 		{
-			setIntention(CtrlIntention.AI_INTENTION_ATTACK, _attackTarget);
+			setIntention(CtrlIntention.AI_INTENTION_ATTACK, this.attackTarget);
 		}
 	}
 
@@ -219,34 +219,34 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	private void avoidAttack(L2Character attacker)
 	{
 		// trying to avoid if summon near owner
-		if (((L2Summon) _actor).getOwner() != null && ((L2Summon) _actor).getOwner() != attacker &&
-				((L2Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
+		if (((L2Summon) this.actor).getOwner() != null && ((L2Summon) this.actor).getOwner() != attacker &&
+				((L2Summon) this.actor).getOwner().isInsideRadius(this.actor, 2 * AVOID_RADIUS, true, false))
 		{
-			_startAvoid = true;
+			this.startAvoid = true;
 		}
 	}
 
 	@Override
 	public void run()
 	{
-		if (_startAvoid)
+		if (this.startAvoid)
 		{
-			_startAvoid = false;
+			this.startAvoid = false;
 
-			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled())
+			if (!this.clientMoving && !this.actor.isDead() && !this.actor.isMovementDisabled())
 			{
-				final int ownerX = ((L2Summon) _actor).getOwner().getX();
-				final int ownerY = ((L2Summon) _actor).getOwner().getY();
+				final int ownerX = ((L2Summon) this.actor).getOwner().getX();
+				final int ownerY = ((L2Summon) this.actor).getOwner().getY();
 				final double angle =
-						Math.toRadians(Rnd.get(-90, 90)) + Math.atan2(ownerY - _actor.getY(), ownerX - _actor.getX());
+						Math.toRadians(Rnd.get(-90, 90)) + Math.atan2(ownerY - this.actor.getY(), ownerX - this.actor.getX());
 
 				final int targetX = ownerX + (int) (AVOID_RADIUS * Math.cos(angle));
 				final int targetY = ownerY + (int) (AVOID_RADIUS * Math.sin(angle));
 				if (Config.GEODATA == 0 || GeoData.getInstance()
-						.canMoveFromToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY,
-								_actor.getZ(), _actor.getInstanceId()))
+						.canMoveFromToTarget(this.actor.getX(), this.actor.getY(), this.actor.getZ(), targetX, targetY,
+								this.actor.getZ(), this.actor.getInstanceId()))
 				{
-					moveTo(targetX, targetY, _actor.getZ());
+					moveTo(targetX, targetY, this.actor.getZ());
 				}
 			}
 		}
@@ -261,26 +261,26 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 			case AI_INTENTION_IDLE:
 			case AI_INTENTION_MOVE_TO:
 			case AI_INTENTION_PICK_UP:
-				((L2Summon) _actor).setFollowStatus(_startFollow);
+				((L2Summon) this.actor).setFollowStatus(this.startFollow);
 		}
 	}
 
 	public void setStartFollowController(boolean val)
 	{
-		_startFollow = val;
+		this.startFollow = val;
 	}
 
 	public boolean getStartFollowController()
 	{
-		return _startFollow;
+		return this.startFollow;
 	}
 
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if (target instanceof L2Character && target.isAutoAttackable(((L2Summon) _actor).getOwner()))
+		if (target instanceof L2Character && target.isAutoAttackable(((L2Summon) this.actor).getOwner()))
 		{
-			_attackTarget = (L2Character) _actor.getTarget();
+			this.attackTarget = (L2Character) this.actor.getTarget();
 		}
 
 		super.onIntentionCast(skill, target);
@@ -288,18 +288,18 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 
 	private void startAvoidTask()
 	{
-		if (_avoidTask == null)
+		if (this.avoidTask == null)
 		{
-			_avoidTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 100, 100);
+			this.avoidTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 100, 100);
 		}
 	}
 
 	private void stopAvoidTask()
 	{
-		if (_avoidTask != null)
+		if (this.avoidTask != null)
 		{
-			_avoidTask.cancel(false);
-			_avoidTask = null;
+			this.avoidTask.cancel(false);
+			this.avoidTask = null;
 		}
 	}
 

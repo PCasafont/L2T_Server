@@ -15,6 +15,8 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.util.Map.Entry;
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
@@ -31,8 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
-
-import java.util.Map.Entry;
 
 /**
  * @author Pere

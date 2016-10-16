@@ -52,31 +52,31 @@ public class RequestBuySeed extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private int _manorId;
-	private Seed[] _seeds = null;
+	private int manorId;
+	private Seed[] seeds = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_manorId = readD();
+		this.manorId = readD();
 
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
 		{
 			return;
 		}
 
-		_seeds = new Seed[count];
+		this.seeds = new Seed[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
 			long cnt = readQ();
 			if (cnt < 1)
 			{
-				_seeds = null;
+				this.seeds = null;
 				return;
 			}
-			_seeds[i] = new Seed(itemId, cnt);
+			this.seeds[i] = new Seed(itemId, cnt);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			return;
 		}
 
-		if (_seeds == null)
+		if (this.seeds == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -117,13 +117,13 @@ public class RequestBuySeed extends L2GameClientPacket
 			return;
 		}
 
-		Castle castle = CastleManager.getInstance().getCastleById(_manorId);
+		Castle castle = CastleManager.getInstance().getCastleById(this.manorId);
 
 		long totalPrice = 0;
 		int slots = 0;
 		int totalWeight = 0;
 
-		for (Seed i : _seeds)
+		for (Seed i : this.seeds)
 		{
 			if (!i.setProduction(castle))
 			{
@@ -173,7 +173,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		}
 
 		// Proceed the purchase
-		for (Seed i : _seeds)
+		for (Seed i : this.seeds)
 		{
 			// take adena and check seed amount once again
 			if (!player.reduceAdena("Buy", i.getPrice(), player, false) || !i.updateProduction(castle))
@@ -199,64 +199,64 @@ public class RequestBuySeed extends L2GameClientPacket
 
 	private static class Seed
 	{
-		private final int _seedId;
-		private final long _count;
-		SeedProduction _seed;
+		private final int seedId;
+		private final long count;
+		SeedProduction seed;
 
 		public Seed(int id, long num)
 		{
-			_seedId = id;
-			_count = num;
+			this.seedId = id;
+			this.count = num;
 		}
 
 		public int getSeedId()
 		{
-			return _seedId;
+			return this.seedId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return this.count;
 		}
 
 		public long getPrice()
 		{
-			return _seed.getPrice() * _count;
+			return this.seed.getPrice() * this.count;
 		}
 
 		public boolean setProduction(Castle c)
 		{
-			_seed = c.getSeed(_seedId, CastleManorManager.PERIOD_CURRENT);
+			this.seed = c.getSeed(this.seedId, CastleManorManager.PERIOD_CURRENT);
 			// invalid price - seed disabled
-			if (_seed.getPrice() <= 0)
+			if (this.seed.getPrice() <= 0)
 			{
 				return false;
 			}
 			// try to buy more than castle can produce
-			if (_seed.getCanProduce() < _count)
+			if (this.seed.getCanProduce() < this.count)
 			{
 				return false;
 			}
 			// check for overflow
-			return MAX_ADENA / _count >= _seed.getPrice();
+			return MAX_ADENA / this.count >= this.seed.getPrice();
 
 		}
 
 		public boolean updateProduction(Castle c)
 		{
-			synchronized (_seed)
+			synchronized (this.seed)
 			{
-				long amount = _seed.getCanProduce();
-				if (_count > amount)
+				long amount = this.seed.getCanProduce();
+				if (this.count > amount)
 				{
 					return false; // not enough seeds
 				}
-				_seed.setCanProduce(amount - _count);
+				this.seed.setCanProduce(amount - this.count);
 			}
 			// Update Castle Seeds Amount
 			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
-				c.updateSeed(_seedId, _seed.getCanProduce(), CastleManorManager.PERIOD_CURRENT);
+				c.updateSeed(this.seedId, this.seed.getCanProduce(), CastleManorManager.PERIOD_CURRENT);
 			}
 			return true;
 		}

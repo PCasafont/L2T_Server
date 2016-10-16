@@ -27,358 +27,358 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
  */
 public class CharSelectInfoPackage
 {
-	private String _name;
-	private int _objectId = 0;
-	private int _charId = 0x00030b7a;
-	private long _exp = 0;
-	private long _sp = 0;
-	private int _clanId = 0;
-	private L2PcTemplate _template = null;
-	private int _classId = 0;
-	private long _deleteTimer = 0L;
-	private long _lastAccess = 0L;
-	private int _face = 0;
-	private int _hairStyle = 0;
-	private int _hairColor = 0;
-	private int _sex = 0;
-	private int _level = 1;
-	private int _maxHp = 0;
-	private double _currentHp = 0;
-	private int _maxMp = 0;
-	private double _currentMp = 0;
-	private int[][] _paperdoll;
-	private int _reputation = 0;
-	private int _pkKills = 0;
-	private int _pvpKills = 0;
-	private long _augmentationId = 0;
-	private int _transformId = 0;
-	private int _x = 0;
-	private int _y = 0;
-	private int _z = 0;
-	private boolean _showHat = true;
-	private int _vitalityPoints = 0;
-	private int _vitalityLevel = 0;
+	private String name;
+	private int objectId = 0;
+	private int charId = 0x00030b7a;
+	private long exp = 0;
+	private long sp = 0;
+	private int clanId = 0;
+	private L2PcTemplate template = null;
+	private int classId = 0;
+	private long deleteTimer = 0L;
+	private long lastAccess = 0L;
+	private int face = 0;
+	private int hairStyle = 0;
+	private int hairColor = 0;
+	private int sex = 0;
+	private int level = 1;
+	private int maxHp = 0;
+	private double currentHp = 0;
+	private int maxMp = 0;
+	private double currentMp = 0;
+	private int[][] paperdoll;
+	private int reputation = 0;
+	private int pkKills = 0;
+	private int pvpKills = 0;
+	private long augmentationId = 0;
+	private int transformId = 0;
+	private int x = 0;
+	private int y = 0;
+	private int z = 0;
+	private boolean showHat = true;
+	private int vitalityPoints = 0;
+	private int vitalityLevel = 0;
 
 	/**
 	 */
 	public CharSelectInfoPackage(int objectId, String name)
 	{
 		setObjectId(objectId);
-		_name = name;
-		_paperdoll = PcInventory.restoreVisibleInventory(objectId);
+		this.name = name;
+		this.paperdoll = PcInventory.restoreVisibleInventory(objectId);
 	}
 
 	public int getObjectId()
 	{
-		return _objectId;
+		return this.objectId;
 	}
 
 	public void setObjectId(int objectId)
 	{
-		_objectId = objectId;
+		this.objectId = objectId;
 	}
 
 	public int getCharId()
 	{
-		return _charId;
+		return this.charId;
 	}
 
 	public void setCharId(int charId)
 	{
-		_charId = charId;
+		this.charId = charId;
 	}
 
 	public int getClanId()
 	{
-		return _clanId;
+		return this.clanId;
 	}
 
 	public void setClanId(int clanId)
 	{
-		_clanId = clanId;
+		this.clanId = clanId;
 	}
 
 	public int getCurrentClass()
 	{
-		return _classId;
+		return this.classId;
 	}
 
 	public void setClassId(int classId)
 	{
-		_classId = classId;
+		this.classId = classId;
 	}
 
 	public double getCurrentHp()
 	{
-		return _currentHp;
+		return this.currentHp;
 	}
 
 	public void setCurrentHp(double currentHp)
 	{
-		_currentHp = currentHp;
+		this.currentHp = currentHp;
 	}
 
 	public double getCurrentMp()
 	{
-		return _currentMp;
+		return this.currentMp;
 	}
 
 	public void setCurrentMp(double currentMp)
 	{
-		_currentMp = currentMp;
+		this.currentMp = currentMp;
 	}
 
 	public long getDeleteTimer()
 	{
-		return _deleteTimer;
+		return this.deleteTimer;
 	}
 
 	public void setDeleteTimer(long deleteTimer)
 	{
-		_deleteTimer = deleteTimer;
+		this.deleteTimer = deleteTimer;
 	}
 
 	public long getLastAccess()
 	{
-		return _lastAccess;
+		return this.lastAccess;
 	}
 
 	public void setLastAccess(long lastAccess)
 	{
-		_lastAccess = lastAccess;
+		this.lastAccess = lastAccess;
 	}
 
 	public long getExp()
 	{
-		return _exp;
+		return this.exp;
 	}
 
 	public void setExp(long exp)
 	{
-		_exp = exp;
+		this.exp = exp;
 	}
 
 	public int getFace()
 	{
-		return _face;
+		return this.face;
 	}
 
 	public void setFace(int face)
 	{
-		_face = face;
+		this.face = face;
 	}
 
 	public int getHairColor()
 	{
-		return _hairColor;
+		return this.hairColor;
 	}
 
 	public void setHairColor(int hairColor)
 	{
-		_hairColor = hairColor;
+		this.hairColor = hairColor;
 	}
 
 	public int getHairStyle()
 	{
-		return _hairStyle;
+		return this.hairStyle;
 	}
 
 	public void setHairStyle(int hairStyle)
 	{
-		_hairStyle = hairStyle;
+		this.hairStyle = hairStyle;
 	}
 
 	public int getPaperdollObjectId(int slot)
 	{
-		return _paperdoll[slot][0];
+		return this.paperdoll[slot][0];
 	}
 
 	public int getPaperdollItemId(int slot)
 	{
-		return _paperdoll[slot][1];
+		return this.paperdoll[slot][1];
 	}
 
 	public int getLevel()
 	{
-		return _level;
+		return this.level;
 	}
 
 	public void setLevel(int level)
 	{
-		_level = level;
+		this.level = level;
 	}
 
 	public int getMaxHp()
 	{
-		return _maxHp;
+		return this.maxHp;
 	}
 
 	public void setMaxHp(int maxHp)
 	{
-		_maxHp = maxHp;
+		this.maxHp = maxHp;
 	}
 
 	public int getMaxMp()
 	{
-		return _maxMp;
+		return this.maxMp;
 	}
 
 	public void setMaxMp(int maxMp)
 	{
-		_maxMp = maxMp;
+		this.maxMp = maxMp;
 	}
 
 	public String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public void setName(String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	public L2PcTemplate getTemplate()
 	{
-		return _template;
+		return this.template;
 	}
 
 	public void setTemplate(L2PcTemplate t)
 	{
-		_template = t;
+		this.template = t;
 	}
 
 	public int getSex()
 	{
-		return _sex;
+		return this.sex;
 	}
 
 	public void setSex(int sex)
 	{
-		_sex = sex;
+		this.sex = sex;
 	}
 
 	public long getSp()
 	{
-		return _sp;
+		return this.sp;
 	}
 
 	public void setSp(long sp)
 	{
-		_sp = sp;
+		this.sp = sp;
 	}
 
 	public int getEnchantEffect()
 	{
-		if (_paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0)
+		if (this.paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0)
 		{
-			return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
+			return this.paperdoll[Inventory.PAPERDOLL_RHAND][2];
 		}
-		return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
+		return this.paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
 
 	public void setReputation(int k)
 	{
-		_reputation = k;
+		this.reputation = k;
 	}
 
 	public int getReputation()
 	{
-		return _reputation;
+		return this.reputation;
 	}
 
 	public void setAugmentationId(long augmentationId)
 	{
-		_augmentationId = augmentationId;
+		this.augmentationId = augmentationId;
 	}
 
 	public long getAugmentationId()
 	{
-		return _augmentationId;
+		return this.augmentationId;
 	}
 
 	public void setPkKills(int PkKills)
 	{
-		_pkKills = PkKills;
+		this.pkKills = PkKills;
 	}
 
 	public int getPkKills()
 	{
-		return _pkKills;
+		return this.pkKills;
 	}
 
 	public void setPvPKills(int PvPKills)
 	{
-		_pvpKills = PvPKills;
+		this.pvpKills = PvPKills;
 	}
 
 	public int getPvPKills()
 	{
-		return _pvpKills;
+		return this.pvpKills;
 	}
 
 	public int getTransformId()
 	{
-		return _transformId;
+		return this.transformId;
 	}
 
 	public void setTransformId(int id)
 	{
-		_transformId = id;
+		this.transformId = id;
 	}
 
 	public int getX()
 	{
-		return _x;
+		return this.x;
 	}
 
 	public int getY()
 	{
-		return _y;
+		return this.y;
 	}
 
 	public int getZ()
 	{
-		return _z;
+		return this.z;
 	}
 
 	public void setX(int x)
 	{
-		_x = x;
+		this.x = x;
 	}
 
 	public void setY(int y)
 	{
-		_y = y;
+		this.y = y;
 	}
 
 	public void setZ(int z)
 	{
-		_z = z;
+		this.z = z;
 	}
 
 	public boolean isShowingHat()
 	{
-		return _showHat;
+		return this.showHat;
 	}
 
 	public void setShowHat(boolean showHat)
 	{
-		_showHat = showHat;
+		this.showHat = showHat;
 	}
 
 	public int getVitalityPoints()
 	{
-		return _vitalityPoints;
+		return this.vitalityPoints;
 	}
 
 	public void setVitalityPoints(int vitalityPoints)
 	{
-		_vitalityPoints = vitalityPoints;
+		this.vitalityPoints = vitalityPoints;
 	}
 
 	public int getVitalityLevel()
 	{
-		return _vitalityLevel;
+		return this.vitalityLevel;
 	}
 }

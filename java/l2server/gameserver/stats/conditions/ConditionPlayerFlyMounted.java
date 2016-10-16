@@ -26,7 +26,7 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerFlyMounted extends Condition
 {
 
-	private boolean _val;
+	private boolean val;
 
 	/**
 	 * Instantiates a new condition player fly mounted.
@@ -35,7 +35,7 @@ public class ConditionPlayerFlyMounted extends Condition
 	 */
 	public ConditionPlayerFlyMounted(boolean val)
 	{
-		_val = val;
+		this.val = val;
 	}
 
 	/* (non-Javadoc)
@@ -44,6 +44,6 @@ public class ConditionPlayerFlyMounted extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isFlyingMounted() == _val;
+		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isFlyingMounted() == this.val;
 	}
 }

@@ -20,7 +20,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class GetOffVehicle extends L2GameServerPacket
 {
-	private int _charObjId, _boatObjId, _x, _y, _z;
+	private int charObjId, boatObjId, x, y, z;
 
 	/**
 	 * @param x
@@ -29,20 +29,20 @@ public class GetOffVehicle extends L2GameServerPacket
 	 */
 	public GetOffVehicle(int charObjId, int boatObjId, int x, int y, int z)
 	{
-		_charObjId = charObjId;
-		_boatObjId = boatObjId;
-		_x = x;
-		_y = y;
-		_z = z;
+		this.charObjId = charObjId;
+		this.boatObjId = boatObjId;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.charObjId);
+		writeD(this.boatObjId);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 	}
 }

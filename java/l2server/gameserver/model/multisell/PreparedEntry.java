@@ -26,20 +26,20 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public class PreparedEntry extends MultiSellEntry
 {
-	private long _taxAmount = 0;
+	private long taxAmount = 0;
 
 	public PreparedEntry(MultiSellEntry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
 	{
-		_entryId = template.getEntryId() * 100000;
+		this.entryId = template.getEntryId() * 100000;
 		if (maintainEnchantment && item != null)
 		{
-			_entryId += item.getEnchantLevel();
+			this.entryId += item.getEnchantLevel();
 		}
 
 		ItemInfo info = null;
 		long adenaAmount = 0;
 
-		_ingredients = new ArrayList<>(template.getIngredients().size());
+		this.ingredients = new ArrayList<>(template.getIngredients().size());
 		for (Ingredient ing : template.getIngredients())
 		{
 			if (ing.getItemId() == ADENA_ID)
@@ -50,7 +50,7 @@ public class PreparedEntry extends MultiSellEntry
 					// if taxes are to be applied, modify/add the adena count based on the template adena/ancient adena count
 					if (applyTaxes)
 					{
-						_taxAmount += Math.round(ing.getItemCount() * taxRate);
+						this.taxAmount += Math.round(ing.getItemCount() * taxRate);
 					}
 				}
 				else
@@ -64,39 +64,39 @@ public class PreparedEntry extends MultiSellEntry
 				info = new ItemInfo(item);
 				final Ingredient newIngredient = ing.clone();
 				newIngredient.setItemInfo(info);
-				_ingredients.add(newIngredient);
+				this.ingredients.add(newIngredient);
 			}
 			else
 			{
-				_ingredients.add(ing);
+				this.ingredients.add(ing);
 			}
 		}
 
 		// now add the adena, if any.
-		adenaAmount += _taxAmount; // do not forget tax
+		adenaAmount += this.taxAmount; // do not forget tax
 		if (adenaAmount > 0)
 		{
-			_ingredients.add(new Ingredient(ADENA_ID, adenaAmount, false, false));
+			this.ingredients.add(new Ingredient(ADENA_ID, adenaAmount, false, false));
 		}
 
 		// now copy products
-		_products = new ArrayList<>(template.getProducts().size());
+		this.products = new ArrayList<>(template.getProducts().size());
 		for (Ingredient ing : template.getProducts())
 		{
 			if (!ing.isStackable())
 			{
-				_stackable = false;
+				this.stackable = false;
 			}
 
 			if (maintainEnchantment && ing.isArmorOrWeapon())
 			{
 				final Ingredient newProduct = ing.clone();
 				newProduct.setItemInfo(info);
-				_products.add(newProduct);
+				this.products.add(newProduct);
 			}
 			else
 			{
-				_products.add(ing);
+				this.products.add(ing);
 			}
 		}
 	}
@@ -104,6 +104,6 @@ public class PreparedEntry extends MultiSellEntry
 	@Override
 	public final long getTaxAmount()
 	{
-		return _taxAmount;
+		return this.taxAmount;
 	}
 }

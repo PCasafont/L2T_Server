@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
-import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncAdd;
@@ -30,7 +29,7 @@ public final class Elementals
 	{
 		for (ElementalItems item : ElementalItems.values())
 		{
-			TABLE.put(item._itemId, item);
+			TABLE.put(item.itemId, item);
 		}
 	}
 
@@ -84,11 +83,11 @@ public final class Elementals
 	{
 		Stone(3), Roughore(3), Crystal(6), Jewel(9), Energy(12);
 
-		public int _maxLevel;
+		public int maxLevel;
 
 		ElementalItemType(int maxLvl)
 		{
-			_maxLevel = maxLvl;
+			this.maxLevel = maxLvl;
 		}
 	}
 
@@ -130,15 +129,15 @@ public final class Elementals
 		divineEnergy(HOLY, 9569, ElementalItemType.Energy),
 		darkEnergy(DARK, 9568, ElementalItemType.Energy);
 
-		public byte _element;
-		public int _itemId;
-		public ElementalItemType _type;
+		public byte element;
+		public int itemId;
+		public ElementalItemType type;
 
 		ElementalItems(byte element, int itemId, ElementalItemType type)
 		{
-			_element = element;
-			_itemId = itemId;
-			_type = type;
+			this.element = element;
+			this.itemId = itemId;
+			this.type = type;
 		}
 	}
 
@@ -147,7 +146,7 @@ public final class Elementals
 		ElementalItems item = TABLE.get(itemId);
 		if (item != null)
 		{
-			return item._element;
+			return item.element;
 		}
 		return NONE;
 	}
@@ -162,7 +161,7 @@ public final class Elementals
 		ElementalItems item = TABLE.get(itemId);
 		if (item != null)
 		{
-			return item._type._maxLevel;
+			return item.type.maxLevel;
 		}
 		return -1;
 	}
@@ -224,133 +223,133 @@ public final class Elementals
 
 	public static class ElementalStatBoni
 	{
-		private byte _elementalType;
-		private int _elementalValue;
-		private boolean _active;
+		private byte elementalType;
+		private int elementalValue;
+		private boolean active;
 
 		public ElementalStatBoni(byte type, int value)
 		{
-			_elementalType = type;
-			_elementalValue = value;
-			_active = false;
+			this.elementalType = type;
+			this.elementalValue = value;
+			this.active = false;
 		}
 
 		public void applyBonus(L2PcInstance player, boolean isArmor)
 		{
 			// make sure the bonuses are not applied twice..
-			if (_active)
+			if (this.active)
 			{
 				return;
 			}
 
-			switch (_elementalType)
+			switch (this.elementalType)
 			{
 				case FIRE:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.FIRE_RES : Stats.FIRE_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 				case WATER:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.WATER_RES : Stats.WATER_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 				case WIND:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.WIND_RES : Stats.WIND_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 				case EARTH:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.EARTH_RES : Stats.EARTH_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 				case DARK:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.DARK_RES : Stats.DARK_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 				case HOLY:
 					player.addStatFunc(new FuncAdd(isArmor ? Stats.HOLY_RES : Stats.HOLY_POWER, this,
-							new LambdaConst(_elementalValue)));
+							new LambdaConst(this.elementalValue)));
 					break;
 			}
 
-			_active = true;
+			this.active = true;
 		}
 
 		public void removeBonus(L2PcInstance player)
 		{
 			// make sure the bonuses are not removed twice
-			if (!_active)
+			if (!this.active)
 			{
 				return;
 			}
 
 			player.removeStatsOwner(this);
 
-			_active = false;
+			this.active = false;
 		}
 
 		public void setValue(int val)
 		{
-			_elementalValue = val;
+			this.elementalValue = val;
 		}
 
 		public void setElement(byte type)
 		{
-			_elementalType = type;
+			this.elementalType = type;
 		}
 	}
 
 	// non static:
-	private ElementalStatBoni _boni = null;
-	private byte _element = NONE;
-	private int _value = 0;
+	private ElementalStatBoni boni = null;
+	private byte element = NONE;
+	private int value = 0;
 
 	public byte getElement()
 	{
-		return _element;
+		return this.element;
 	}
 
 	public void setElement(byte type)
 	{
-		_element = type;
-		_boni.setElement(type);
+		this.element = type;
+		this.boni.setElement(type);
 	}
 
 	public int getValue()
 	{
-		return _value;
+		return this.value;
 	}
 
 	public void setValue(int val)
 	{
-		_value = val;
-		_boni.setValue(val);
+		this.value = val;
+		this.boni.setValue(val);
 	}
 
 	@Override
 	public String toString()
 	{
-		return getElementName(_element) + " +" + _value;
+		return getElementName(this.element) + " +" + this.value;
 	}
 
 	public Elementals(byte type, int value)
 	{
-		_element = type;
-		_value = value;
-		_boni = new ElementalStatBoni(_element, _value);
+		this.element = type;
+		this.value = value;
+		this.boni = new ElementalStatBoni(this.element, this.value);
 	}
 
 	public void applyBonus(L2PcInstance player, boolean isArmor)
 	{
-		_boni.applyBonus(player, isArmor);
+		this.boni.applyBonus(player, isArmor);
 	}
 
 	public void removeBonus(L2PcInstance player)
 	{
-		_boni.removeBonus(player);
+		this.boni.removeBonus(player);
 	}
 
 	public void updateBonus(L2PcInstance player, boolean isArmor)
 	{
-		_boni.removeBonus(player);
-		_boni.applyBonus(player, isArmor);
+		this.boni.removeBonus(player);
+		this.boni.applyBonus(player, isArmor);
 	}
 }

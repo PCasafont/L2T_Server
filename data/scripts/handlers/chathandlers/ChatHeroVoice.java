@@ -15,6 +15,8 @@
 
 package handlers.chathandlers;
 
+import java.util.Collection;
+
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -24,8 +26,6 @@ import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-
-import java.util.Collection;
 
 /**
  * Hero chat handler.

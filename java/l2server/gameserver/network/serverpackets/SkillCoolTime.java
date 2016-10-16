@@ -26,12 +26,12 @@ import java.util.Iterator;
  */
 public class SkillCoolTime extends L2GameServerPacket
 {
-	public Collection<TimeStamp> _reuseTimeStamps;
+	public Collection<TimeStamp> reuseTimeStamps;
 
 	public SkillCoolTime(L2PcInstance cha)
 	{
-		_reuseTimeStamps = cha.getReuseTimeStamps();
-		Iterator<TimeStamp> iter = _reuseTimeStamps.iterator();
+		this.reuseTimeStamps = cha.getReuseTimeStamps();
+		Iterator<TimeStamp> iter = this.reuseTimeStamps.iterator();
 		while (iter.hasNext())
 		{
 			if (!iter.next().hasNotPassed()) // remove expired timestamps
@@ -51,8 +51,8 @@ public class SkillCoolTime extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_reuseTimeStamps.size()); // list size
-		for (TimeStamp ts : _reuseTimeStamps)
+		writeD(this.reuseTimeStamps.size()); // list size
+		for (TimeStamp ts : this.reuseTimeStamps)
 		{
 			writeD(ts.getSkillId());
 			writeD(0x00);

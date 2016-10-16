@@ -38,8 +38,8 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class QuestList extends L2GameServerPacket
 {
-	private Quest[] _quests;
-	private L2PcInstance _activeChar;
+	private Quest[] quests;
+	private L2PcInstance activeChar;
 
 	public QuestList()
 	{
@@ -51,8 +51,8 @@ public class QuestList extends L2GameServerPacket
 	{
 		if (getClient() != null && getClient().getActiveChar() != null)
 		{
-			_activeChar = getClient().getActiveChar();
-			_quests = _activeChar.getAllActiveQuests();
+			this.activeChar = getClient().getActiveChar();
+			this.quests = this.activeChar.getAllActiveQuests();
 		}
 	}
 
@@ -90,13 +90,13 @@ public class QuestList extends L2GameServerPacket
           the 10th but the 6th and 9th are not to be shown at all (not completed, either).
          */
 
-		if (_quests != null)
+		if (this.quests != null)
 		{
-			writeH(_quests.length);
-			for (Quest q : _quests)
+			writeH(this.quests.length);
+			for (Quest q : this.quests)
 			{
 				writeD(q.getQuestIntId());
-				QuestState qs = _activeChar.getQuestState(q.getName());
+				QuestState qs = this.activeChar.getQuestState(q.getName());
 				if (qs == null)
 				{
 					writeD(0);
@@ -122,7 +122,7 @@ public class QuestList extends L2GameServerPacket
 
 		for (GlobalQuest q : GlobalQuest.values())
 		{
-			writeD(_activeChar.getGlobalQuestState(q));
+			writeD(this.activeChar.getGlobalQuestState(q));
 		}
 	}
 }

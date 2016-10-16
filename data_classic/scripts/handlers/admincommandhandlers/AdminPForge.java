@@ -15,6 +15,10 @@
 
 package handlers.admincommandhandlers;
 
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.util.StringTokenizer;
+
 import l2server.gameserver.Server;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -24,10 +28,6 @@ import l2server.gameserver.network.serverpackets.AdminForgePacket;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.network.NioNetStringBuffer;
 import l2server.util.StringUtil;
-
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.util.StringTokenizer;
 
 /**
  * This class handles commands for gm to forge packets

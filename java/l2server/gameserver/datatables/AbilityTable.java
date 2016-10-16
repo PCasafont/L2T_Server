@@ -31,66 +31,66 @@ public class AbilityTable
 {
 	public class Ability
 	{
-		private int _type;
-		private int _skillId;
-		private int _maxLevel;
-		private int _reqPoints;
-		private int _reqSkill;
-		private int _reqSkillLvl;
+		private int type;
+		private int skillId;
+		private int maxLevel;
+		private int reqPoints;
+		private int reqSkill;
+		private int reqSkillLvl;
 
 		public Ability(int type, int skillId, int maxLevel, int reqPoints, int reqSkill, int reqSkillLvl)
 		{
-			_type = type;
-			_skillId = skillId;
-			_maxLevel = maxLevel;
-			_reqPoints = reqPoints;
-			_reqSkill = reqSkill;
-			_reqSkillLvl = reqSkillLvl;
+			this.type = type;
+			this.skillId = skillId;
+			this.maxLevel = maxLevel;
+			this.reqPoints = reqPoints;
+			this.reqSkill = reqSkill;
+			this.reqSkillLvl = reqSkillLvl;
 		}
 
 		public int getType()
 		{
-			return _type;
+			return this.type;
 		}
 
 		public int getSkillId()
 		{
-			return _skillId;
+			return this.skillId;
 		}
 
 		public int getMaxLevel()
 		{
-			return _maxLevel;
+			return this.maxLevel;
 		}
 
 		public int getReqPoints()
 		{
-			return _reqPoints;
+			return this.reqPoints;
 		}
 
 		public int getReqSkill()
 		{
-			return _reqSkill;
+			return this.reqSkill;
 		}
 
 		public int getReqSkillLvl()
 		{
-			return _reqSkillLvl;
+			return this.reqSkillLvl;
 		}
 	}
 
-	private TIntObjectHashMap<Ability> _abilities = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<Ability> abilities = new TIntObjectHashMap<>();
 
-	private static AbilityTable _instance;
+	private static AbilityTable instance;
 
 	public static AbilityTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new AbilityTable();
+			instance = new AbilityTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 
 	private AbilityTable()
@@ -126,18 +126,18 @@ public class AbilityTable
 							reqSkillLvl = abilityNode.getInt("reqSkillLvl");
 						}
 
-						_abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
+						this.abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
 					}
 				}
 			}
 		}
 
-		Log.info("AbilityTable: Loaded " + _abilities.size() + " abilities.");
+		Log.info("AbilityTable: Loaded " + this.abilities.size() + " abilities.");
 	}
 
 	public Ability getAbility(int skillId)
 	{
-		return _abilities.get(skillId);
+		return this.abilities.get(skillId);
 	}
 
 	public int getMaxPoints()

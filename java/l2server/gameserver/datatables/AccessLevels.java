@@ -34,27 +34,27 @@ public class AccessLevels
 	/**
 	 * Reserved master access level<br>
 	 */
-	public static final int _masterAccessLevelNum = Config.MASTERACCESS_LEVEL;
+	public static final int masterAccessLevelNum = Config.MASTERACCESS_LEVEL;
 	/**
 	 * The master access level which can use everything<br>
 	 */
-	public static L2AccessLevel _masterAccessLevel =
-			new L2AccessLevel(_masterAccessLevelNum, "Master Access", Config.MASTERACCESS_NAME_COLOR,
+	public static L2AccessLevel masterAccessLevel =
+			new L2AccessLevel(masterAccessLevelNum, "Master Access", Config.MASTERACCESS_NAME_COLOR,
 					Config.MASTERACCESS_TITLE_COLOR, null, true, true, true, true, true, true, true, true);
 	/**
 	 * Reserved user access level<br>
 	 */
-	public static final int _userAccessLevelNum = 0;
+	public static final int userAccessLevelNum = 0;
 	/**
 	 * The user access level which can do no administrative tasks<br>
 	 */
-	public static L2AccessLevel _userAccessLevel =
-			new L2AccessLevel(_userAccessLevelNum, "User", -1, -1, null, false, false, false, true, false, true, true,
+	public static L2AccessLevel userAccessLevel =
+			new L2AccessLevel(userAccessLevelNum, "User", -1, -1, null, false, false, false, true, false, true, true,
 					true);
 	/**
 	 * HashMap of access levels defined in database<br>
 	 */
-	private final TIntObjectHashMap<L2AccessLevel> _accessLevels = new TIntObjectHashMap<>();
+	private final TIntObjectHashMap<L2AccessLevel> accessLevels = new TIntObjectHashMap<>();
 
 	/**
 	 * Returns the one and only instance of this class<br><br>
@@ -63,13 +63,13 @@ public class AccessLevels
 	 */
 	public static AccessLevels getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private AccessLevels()
 	{
 		loadAccessLevels();
-		_accessLevels.put(_userAccessLevelNum, _userAccessLevel);
+		this.accessLevels.put(this.userAccessLevelNum, this.userAccessLevel);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class AccessLevels
 	 */
 	private void loadAccessLevels()
 	{
-		_accessLevels.clear();
+		this.accessLevels.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -87,18 +87,18 @@ public class AccessLevels
 			{
 				int accessLevel = n.getInt("id");
 				String name = n.getString("name");
-				if (accessLevel == _userAccessLevelNum)
+				if (accessLevel == this.userAccessLevelNum)
 				{
 					Log.warning(
 							"AccessLevels: Access level with name " + name + " is using reserved user access level " +
-									_userAccessLevelNum + ". Ignoring it!");
+									this.userAccessLevelNum + ". Ignoring it!");
 					continue;
 				}
-				else if (accessLevel == _masterAccessLevelNum)
+				else if (accessLevel == this.masterAccessLevelNum)
 				{
 					Log.warning(
 							"AccessLevels: Access level with name " + name + " is using reserved master access level " +
-									_masterAccessLevelNum + ". Ignoring it!");
+									this.masterAccessLevelNum + ". Ignoring it!");
 					continue;
 				}
 				else if (accessLevel < 0)
@@ -138,14 +138,14 @@ public class AccessLevels
 				boolean takeAggro = n.getBool("takeAggro");
 				boolean gainExp = n.getBool("gainExp");
 
-				_accessLevels.put(accessLevel,
+				this.accessLevels.put(accessLevel,
 						new L2AccessLevel(accessLevel, name, nameColor, titleColor, childs.isEmpty() ? null : childs,
 								isGm, allowPeaceAttack, allowFixedRes, allowTransaction, allowAltG, giveDamage,
 								takeAggro, gainExp));
 			}
 		}
 
-		Log.info("AccessLevels: Loaded " + _accessLevels.size() + " access levels.");
+		Log.info("AccessLevels: Loaded " + this.accessLevels.size() + " access levels.");
 	}
 
 	/**
@@ -158,23 +158,23 @@ public class AccessLevels
 	{
 		L2AccessLevel accessLevel = null;
 
-		synchronized (_accessLevels)
+		synchronized (this.accessLevels)
 		{
-			accessLevel = _accessLevels.get(accessLevelNum);
+			accessLevel = this.accessLevels.get(accessLevelNum);
 		}
 		return accessLevel;
 	}
 
 	public void addBanAccessLevel(int accessLevel)
 	{
-		synchronized (_accessLevels)
+		synchronized (this.accessLevels)
 		{
 			if (accessLevel > -1)
 			{
 				return;
 			}
 
-			_accessLevels.put(accessLevel,
+			this.accessLevels.put(accessLevel,
 					new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false,
 							false, false));
 		}
@@ -188,6 +188,6 @@ public class AccessLevels
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AccessLevels _instance = new AccessLevels();
+		protected static final AccessLevels instance = new AccessLevels();
 	}
 }

@@ -33,12 +33,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestExAskJoinMPCC extends L2GameClientPacket
 {
 	//
-	private String _name;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
+		this.name = readS();
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance player = L2World.getInstance().getPlayer(_name);
+		L2PcInstance player = L2World.getInstance().getPlayer(this.name);
 		if (player == null)
 		{
 			return;

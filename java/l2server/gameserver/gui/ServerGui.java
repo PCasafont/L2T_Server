@@ -10,18 +10,18 @@ public class ServerGui
 {
 	public static JFrame Frame;
 
-	//private JMenuBar _menuBar = new JMenuBar();
+	//private JMenuBar menuBar = new JMenuBar();
 
-	//private JMenu _fileMenu = new JMenu("File");
-	//private JMenu _helpMenu = new JMenu("Help");
+	//private JMenu fileMenu = new JMenu("File");
+	//private JMenu helpMenu = new JMenu("Help");
 
-	//private ActionListener _menuListener = new MenuActionListener();
+	//private ActionListener menuListener = new MenuActionListener();
 
-	private static JTabbedPane _tabPane = new JTabbedPane();
+	private static JTabbedPane tabPane = new JTabbedPane();
 
-	private static ConsoleTab _consoleTab;
+	private static ConsoleTab consoleTab;
 
-	private static AdminTab _adminTab;
+	private static AdminTab adminTab;
 
 	public void init()
 	{
@@ -31,32 +31,32 @@ public class ServerGui
 		//File Menu
 		/*JMenuItem itemExit = new JMenuItem("Exit");
         itemExit.setActionCommand("Exit");
-		itemExit.addActionListener(_menuListener);
+		itemExit.addActionListener(this.menuListener);
 
-		_fileMenu.add(itemExit);
+		this.fileMenu.add(itemExit);
 
 		//Help
 		JMenuItem itemAbout = new JMenuItem("About");
 		itemAbout.setActionCommand("About");
-		itemAbout.addActionListener(_menuListener);
-		_helpMenu.add(itemAbout);
+		itemAbout.addActionListener(this.menuListener);
+		this.helpMenu.add(itemAbout);
 
-		_menuBar.add(_fileMenu);
-		_menuBar.add(_helpMenu);
-		_frame.setJMenuBar(_menuBar);*/
+		this.menuBar.add(this.fileMenu);
+		this.menuBar.add(this.helpMenu);
+		this.frame.setJMenuBar(this.menuBar);*/
 
 		// Console Tab
-		_consoleTab = new ConsoleTab(true);
-		_adminTab = new AdminTab();
+		this.consoleTab = new ConsoleTab(true);
+		this.adminTab = new AdminTab();
 
 		Frame.setLayout(new BorderLayout());
 		Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		_tabPane.add("Console", _consoleTab);
-		_tabPane.add("Admin", _adminTab);
+		this.tabPane.add("Console", this.consoleTab);
+		this.tabPane.add("Admin", this.adminTab);
 
 		//build the frame
-		Frame.add(_tabPane, BorderLayout.CENTER);
+		Frame.add(this.tabPane, BorderLayout.CENTER);
 
 		//add the window listeners
 		addListeners();
@@ -69,7 +69,7 @@ public class ServerGui
 
 	public JTabbedPane getTabPane()
 	{
-		return _tabPane;
+		return this.tabPane;
 	}
 
 	private void addListeners()
@@ -104,11 +104,11 @@ public class ServerGui
 
 	public ConsoleTab getConsoleTab()
 	{
-		return _consoleTab;
+		return this.consoleTab;
 	}
 
 	public AdminTab getAdminTab()
 	{
-		return _adminTab;
+		return this.adminTab;
 	}
 }

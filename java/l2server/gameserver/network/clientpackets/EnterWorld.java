@@ -203,7 +203,7 @@ public class EnterWorld extends L2GameClientPacket
 
 			if (Config.GM_GIVE_SPECIAL_SKILLS)
 			{
-				GMSkillTable.getInstance().addSkills(activeChar);
+				GMSkillTable.addSkills(activeChar);
 			}
 		}
 

@@ -15,6 +15,10 @@
 
 package ai.individual;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -29,10 +33,6 @@ import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.util.Rnd;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 /**
  * @author LasTravel
  *         <p>
@@ -41,8 +41,8 @@ import java.util.Map.Entry;
 
 public class HarnakUndergroundRuins extends L2AttackableAIScript
 {
-	private static final int[] _normalMobs = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};
-	private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<L2ZoneType, zoneInfo>(24);
+	private static final int[] normalMobs = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};
+	private static Map<L2ZoneType, zoneInfo> roomInfo = new HashMap<L2ZoneType, zoneInfo>(24);
 
 	public HarnakUndergroundRuins(int id, String name, String descr)
 	{
@@ -51,13 +51,13 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 		for (int zoneId = 60028; zoneId <= 60051; zoneId++)
 		{
 			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
-			_roomInfo.put(zone, new zoneInfo());
+			this.roomInfo.put(zone, new zoneInfo());
 
 			//Spawn the normal mobs here
 			SpawnTable.getInstance().spawnSpecificTable(zone.getName().replace(" ", "_"));
 		}
 
-		for (int npc : _normalMobs)
+		for (int npc : this.normalMobs)
 		{
 			addKillId(npc);
 			addSpawnId(npc);
@@ -122,7 +122,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 		{
 			try
 			{
-				zoneInfo currentInfo = _roomInfo.get(zone);
+				zoneInfo currentInfo = roomInfo.get(zone);
 				switch (currentInfo.getZoneStage())
 				{
 					case 0:
@@ -205,7 +205,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		for (Entry<L2ZoneType, zoneInfo> currentZone : _roomInfo.entrySet())
+		for (Entry<L2ZoneType, zoneInfo> currentZone : this.roomInfo.entrySet())
 		{
 			if (currentZone.getKey().isInsideZone(npc))
 			{

@@ -22,17 +22,17 @@ import l2server.util.Point3D;
  */
 public class GetOnVehicle extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _boatObjId;
-	private Point3D _pos;
+	private int charObjId;
+	private int boatObjId;
+	private Point3D pos;
 
 	/**
 	 */
 	public GetOnVehicle(int charObjId, int boatObjId, Point3D pos)
 	{
-		_charObjId = charObjId;
-		_boatObjId = boatObjId;
-		_pos = pos;
+		this.charObjId = charObjId;
+		this.boatObjId = boatObjId;
+		this.pos = pos;
 	}
 
 	/* (non-Javadoc)
@@ -41,10 +41,10 @@ public class GetOnVehicle extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
+		writeD(this.charObjId);
+		writeD(this.boatObjId);
+		writeD(this.pos.getX());
+		writeD(this.pos.getY());
+		writeD(this.pos.getZ());
 	}
 }

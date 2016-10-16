@@ -1,13 +1,13 @@
 package ai.individual.AltarOfSouls;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author LasTravel
@@ -15,24 +15,24 @@ import java.util.Map;
 
 public class AltarOfSouls extends Quest
 {
-    private static final String _qn = "AltarOfSouls";
-    private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
-    private static final int[] _raidIds = {25944, 25943, 25942};
-    private static final int[] _stoneIds = {38572, 38573, 38574};
-    private static final int _altarOfSoulsId = 33920;
+    private static final String qn = "AltarOfSouls";
+    private static Map<Integer, Boolean> spawnInfo = new HashMap<Integer, Boolean>(3);
+    private static final int[] raidIds = {25944, 25943, 25942};
+    private static final int[] stoneIds = {38572, 38573, 38574};
+    private static final int altarOfSoulsId = 33920;
 
     public AltarOfSouls(int questId, String name, String descr)
     {
         super(questId, name, descr);
 
-        addFirstTalkId(_altarOfSoulsId);
-        addStartNpc(_altarOfSoulsId);
-        addTalkId(_altarOfSoulsId);
+        addFirstTalkId(this.altarOfSoulsId);
+        addStartNpc(this.altarOfSoulsId);
+        addTalkId(this.altarOfSoulsId);
 
-        for (int i : _raidIds)
+        for (int i : this.raidIds)
         {
             addKillId(i);
-            _spawnInfo.put(i, false);
+            this.spawnInfo.put(i, false);
         }
     }
 
@@ -49,17 +49,17 @@ public class AltarOfSouls extends Quest
         {
             int bossId = Integer.valueOf(event.split(" ")[1]);
             int stoneId = 0;
-            if (bossId == _raidIds[0])
+            if (bossId == this.raidIds[0])
             {
-                stoneId = _stoneIds[0];
+                stoneId = this.stoneIds[0];
             }
-            else if (bossId == _raidIds[1])
+            else if (bossId == this.raidIds[1])
             {
-                stoneId = _stoneIds[1];
+                stoneId = this.stoneIds[1];
             }
             else
             {
-                stoneId = _stoneIds[2];
+                stoneId = this.stoneIds[2];
             }
 
             if (stoneId == 0) //Cheating?
@@ -67,16 +67,16 @@ public class AltarOfSouls extends Quest
                 return null;
             }
 
-            synchronized (_spawnInfo)
+            synchronized (this.spawnInfo)
             {
-                if (!_spawnInfo.get(bossId))
+                if (!this.spawnInfo.get(bossId))
                 {
-                    if (!player.destroyItemByItemId(_qn, stoneId, 1, player, true))
+                    if (!player.destroyItemByItemId(this.qn, stoneId, 1, player, true))
                     {
                         return stoneId + "-no.html";
                     }
 
-                    _spawnInfo.put(bossId, true); //Boss is spawned
+                    this.spawnInfo.put(bossId, true); //Boss is spawned
 
                     L2Attackable boss =
                             (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0,
@@ -95,9 +95,9 @@ public class AltarOfSouls extends Quest
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        synchronized (_spawnInfo)
+        synchronized (this.spawnInfo)
         {
-            _spawnInfo.put(npc.getNpcId(), false);
+            this.spawnInfo.put(npc.getNpcId(), false);
         }
 
         return super.onKill(npc, player, isPet);
@@ -105,6 +105,6 @@ public class AltarOfSouls extends Quest
 
     public static void main(String[] args)
     {
-        new AltarOfSouls(-1, _qn, "ai/individual");
+        new AltarOfSouls(-1, qn, "ai/individual");
     }
 }

@@ -38,8 +38,8 @@ public class JIPTextField extends JPanel implements FocusListener
 	 * Comment for <code>serialVersionUID</code>
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField[] _textFields;
-	private List<FocusListener> _focusListeners;
+	private JTextField[] textFields;
+	private List<FocusListener> focusListeners;
 
 	public JIPTextField(String textIp)
 	{
@@ -47,9 +47,9 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		initIPTextField(textIp);
 
-		for (JTextField _textField : _textFields)
+		for (JTextField textField : this.textFields)
 		{
-			_textField.addFocusListener(this);
+			textField.addFocusListener(this);
 		}
 	}
 
@@ -71,7 +71,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		final ActionListener nextfocusaction = evt -> ((Component) evt.getSource()).transferFocus();
 
 		setLayout(new GridBagLayout());
-		_textFields = new JTextField[4];
+		this.textFields = new JTextField[4];
 
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.anchor = GridBagConstraints.PAGE_START;
@@ -93,15 +93,15 @@ public class JIPTextField extends JPanel implements FocusListener
 				cons.gridx++;
 			}
 			MaxLengthDocument maxDoc = new MaxLengthDocument(3);
-			_textFields[i] = new JTextField(maxDoc, str, 3);
+			this.textFields[i] = new JTextField(maxDoc, str, 3);
 			if (previous != null)
 			{
-				previous.setNext(_textFields[i]);
+				previous.setNext(this.textFields[i]);
 			}
 			previous = maxDoc;
 			//ic.weightx = 1;
-			add(_textFields[i], cons);
-			_textFields[i].addActionListener(nextfocusaction);
+			add(this.textFields[i], cons);
+			this.textFields[i].addActionListener(nextfocusaction);
 			cons.gridx++;
 		}
 	}
@@ -109,23 +109,23 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void addFocusListener(FocusListener fl)
 	{
-		if (_focusListeners == null)
+		if (this.focusListeners == null)
 		{
-			_focusListeners = new LinkedList<>();
+			this.focusListeners = new LinkedList<>();
 		}
 
-		if (fl != null && !_focusListeners.contains(fl))
+		if (fl != null && !this.focusListeners.contains(fl))
 		{
-			_focusListeners.add(fl);
+			this.focusListeners.add(fl);
 		}
 	}
 
 	@Override
 	public void removeFocusListener(FocusListener fl)
 	{
-		if (_focusListeners != null)
+		if (this.focusListeners != null)
 		{
-			_focusListeners.remove(fl);
+			this.focusListeners.remove(fl);
 		}
 	}
 
@@ -134,13 +134,13 @@ public class JIPTextField extends JPanel implements FocusListener
 		String str = "";
 		for (int i = 0; i < 4; i++)
 		{
-			if (_textFields[i].getText().length() == 0)
+			if (this.textFields[i].getText().length() == 0)
 			{
 				str += "0";
 			}
 			else
 			{
-				str += _textFields[i].getText();
+				str += this.textFields[i].getText();
 			}
 			if (i < 3)
 			{
@@ -164,11 +164,11 @@ public class JIPTextField extends JPanel implements FocusListener
 				// byte always have a sign in Java, IP addresses aren't
 				if (b[i] >= 0)
 				{
-					_textFields[i].setText(Byte.toString(b[i]));
+					this.textFields[i].setText(Byte.toString(b[i]));
 				}
 				else
 				{
-					_textFields[i].setText(Integer.toString(b[i] + 256));
+					this.textFields[i].setText(Integer.toString(b[i] + 256));
 				}
 			}
 			return;
@@ -178,18 +178,18 @@ public class JIPTextField extends JPanel implements FocusListener
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			_textFields[i].setText("");
+			this.textFields[i].setText("");
 		}
 	}
 
 	@Override
 	public void setEnabled(boolean enabled)
 	{
-		for (JTextField _textField : _textFields)
+		for (JTextField textField : this.textFields)
 		{
-			if (_textField != null)
+			if (textField != null)
 			{
-				_textField.setEnabled(enabled);
+				textField.setEnabled(enabled);
 			}
 		}
 	}
@@ -198,7 +198,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (_textFields[i].getText().length() != 0)
+			if (this.textFields[i].getText().length() != 0)
 			{
 				return false;
 			}
@@ -210,7 +210,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (_textFields[i].getText().length() == 0)
+			if (this.textFields[i].getText().length() == 0)
 			{
 				return false;
 			}
@@ -221,9 +221,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void focusGained(FocusEvent event)
 	{
-		if (_focusListeners != null)
+		if (this.focusListeners != null)
 		{
-			for (FocusListener fl : _focusListeners)
+			for (FocusListener fl : this.focusListeners)
 			{
 				fl.focusGained(event);
 			}
@@ -235,9 +235,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		if (isCorrect() || isEmpty())
 		{
-			if (_focusListeners != null)
+			if (this.focusListeners != null)
 			{
-				for (FocusListener fl : _focusListeners)
+				for (FocusListener fl : this.focusListeners)
 				{
 					fl.focusLost(event);
 				}
@@ -253,8 +253,8 @@ public class JIPTextField extends JPanel implements FocusListener
 		 */
 		private static final long serialVersionUID = 1L;
 
-		private int _max;
-		private JTextField _next;
+		private int max;
+		private JTextField next;
 
 		public MaxLengthDocument(int maxLength)
 		{
@@ -263,14 +263,14 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		public MaxLengthDocument(int maxLength, JTextField next)
 		{
-			_max = maxLength;
+			this.max = maxLength;
 			setNext(next);
 		}
 
 		@Override
 		public void insertString(int offset, String str, AttributeSet a) throws BadLocationException
 		{
-			if (getLength() + str.length() > _max)
+			if (getLength() + str.length() > max)
 			{
 				if (getNext() != null)
 				{
@@ -300,7 +300,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		 */
 		public void setNext(JTextField next)
 		{
-			_next = next;
+			this.next = next;
 		}
 
 		/**
@@ -308,7 +308,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		 */
 		public JTextField getNext()
 		{
-			return _next;
+			return this.next;
 		}
 	}
 }

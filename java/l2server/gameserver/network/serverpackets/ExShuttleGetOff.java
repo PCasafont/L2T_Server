@@ -23,25 +23,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExShuttleGetOff extends L2GameServerPacket
 {
-	private final int _playerId, _shuttleId, _x, _y, _z;
+	private final int playerId, shuttleId, x, y, z;
 
 	public ExShuttleGetOff(L2PcInstance player, L2Character shuttle, int x, int y, int z)
 	{
-		_playerId = player.getObjectId();
-		_shuttleId = shuttle.getObjectId();
-		_x = x;
-		_y = y;
-		_z = z;
+		this.playerId = player.getObjectId();
+		this.shuttleId = shuttle.getObjectId();
+		this.x = x;
+		this.y = y;
+		this.z = z;
 		player.gotOnOffShuttle();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_playerId);
-		writeD(_shuttleId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.playerId);
+		writeD(this.shuttleId);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 	}
 }

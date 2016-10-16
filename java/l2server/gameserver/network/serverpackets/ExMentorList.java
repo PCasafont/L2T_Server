@@ -41,8 +41,8 @@ public class ExMentorList extends L2GameServerPacket
 		public boolean online;
 	}
 
-	private L2PcInstance _player;
-	private List<PartnerInfo> _partners = new ArrayList<>();
+	private L2PcInstance player;
+	private List<PartnerInfo> partners = new ArrayList<>();
 
 	public ExMentorList(L2PcInstance activeChar)
 	{
@@ -66,7 +66,7 @@ public class ExMentorList extends L2GameServerPacket
 					getClassIdAndLevel(partnerInfo);
 					partnerInfo.online = false;
 				}
-				_partners.add(partnerInfo);
+				this.partners.add(partnerInfo);
 			}
 		}
 		else if (activeChar.isMentee())
@@ -87,10 +87,10 @@ public class ExMentorList extends L2GameServerPacket
 				getClassIdAndLevel(partnerInfo);
 				partnerInfo.online = false;
 			}
-			_partners.add(partnerInfo);
+			this.partners.add(partnerInfo);
 		}
 
-		_player = activeChar;
+		this.player = activeChar;
 	}
 
 	private void getClassIdAndLevel(PartnerInfo partnerInfo)
@@ -126,11 +126,11 @@ public class ExMentorList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_player.isMentor() ? 0x01 :
-				_player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+		writeD(this.player.isMentor() ? 0x01 :
+				this.player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
 		writeD(0x00); // ???
-		writeD(_partners.size());
-		for (PartnerInfo menteeInfo : _partners)
+		writeD(this.partners.size());
+		for (PartnerInfo menteeInfo : this.partners)
 		{
 			writeD(menteeInfo.objId);
 			writeS(menteeInfo.name);

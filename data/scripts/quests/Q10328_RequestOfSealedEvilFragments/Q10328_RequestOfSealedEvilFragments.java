@@ -31,17 +31,17 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	public static String qn = "Q10328_RequestOfSealedEvilFragments";
 
 	// NPC
-	private int _pantheon = 32972;
-	private int _kakai = 30565;
+	private int pantheon = 32972;
+	private int kakai = 30565;
 
-	private int _evilFragment = 17577;
+	private int evilFragment = 17577;
 
 	public Q10328_RequestOfSealedEvilFragments(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_pantheon);
-		addTalkId(_pantheon);
-		addTalkId(_kakai);
+		addStartNpc(this.pantheon);
+		addTalkId(this.pantheon);
+		addTalkId(this.kakai);
 	}
 
 	@Override
@@ -55,23 +55,23 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-04.htm"))
+		if (npc.getNpcId() == this.pantheon && event.equalsIgnoreCase("32972-04.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
-			st.giveItems(_evilFragment, 1);
+			st.giveItems(this.evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == this.kakai && st.getInt("cond") == 1)
 		{
 			if (event.equalsIgnoreCase("30565-02.htm"))
 			{
-				st.takeItems(_evilFragment, -1);
+				st.takeItems(this.evilFragment, -1);
 			}
 			else if (event.equalsIgnoreCase("30565-03.htm"))
 			{
 				st.unset("cond");
-				st.takeItems(_evilFragment, -1);
+				st.takeItems(this.evilFragment, -1);
 				st.giveItems(57, 20000);
 				st.addExpAndSp(13000, 4000);
 				st.playSound("ItemSound.quest_finish");
@@ -94,7 +94,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon)
+		if (npc.getNpcId() == this.pantheon)
 		{
 			switch (st.getState())
 			{
@@ -116,7 +116,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == this.kakai && st.getInt("cond") == 1)
 		{
 			htmltext = "30565-01.htm";
 		}

@@ -34,19 +34,19 @@ import java.util.logging.Level;
  */
 public class CrestCache
 {
-	private ConcurrentHashMap<Integer, byte[]> _mapPledge = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<Integer, byte[]> mapPledge = new ConcurrentHashMap<>();
 
-	private ConcurrentHashMap<Integer, byte[][]> _mapPledgeLarge = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<Integer, byte[][]> mapPledgeLarge = new ConcurrentHashMap<>();
 
-	private ConcurrentHashMap<Integer, byte[]> _mapAlly = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<Integer, byte[]> mapAlly = new ConcurrentHashMap<>();
 
-	private int _loadedFiles;
+	private int loadedFiles;
 
-	private long _bytesBuffLen;
+	private long bytesBuffLen;
 
 	public static CrestCache getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private CrestCache()
@@ -65,12 +65,12 @@ public class CrestCache
 		byte[] content;
 		synchronized (this)
 		{
-			_loadedFiles = 0;
-			_bytesBuffLen = 0;
+			this.loadedFiles = 0;
+			this.bytesBuffLen = 0;
 
-			_mapPledge.clear();
-			_mapPledgeLarge.clear();
-			_mapAlly.clear();
+			this.mapPledge.clear();
+			this.mapPledgeLarge.clear();
+			this.mapAlly.clear();
 		}
 
 		for (File file : files)
@@ -88,27 +88,27 @@ public class CrestCache
 					{
 						int subId = Integer.valueOf(file.getName().substring(12, 13));
 						int id = Integer.valueOf(file.getName().substring(14, file.getName().length() - 4));
-						byte[][] array = _mapPledgeLarge.get(id);
+						byte[][] array = this.mapPledgeLarge.get(id);
 						if (array == null)
 						{
 							array = new byte[10][];
 						}
 
 						array[subId] = content;
-						_mapPledgeLarge.put(id, array);
+						this.mapPledgeLarge.put(id, array);
 					}
 					else if (file.getName().startsWith("Crest_"))
 					{
-						_mapPledge.put(Integer.valueOf(file.getName().substring(6, file.getName().length() - 4)),
+						this.mapPledge.put(Integer.valueOf(file.getName().substring(6, file.getName().length() - 4)),
 								content);
 					}
 					else if (file.getName().startsWith("AllyCrest_"))
 					{
-						_mapAlly.put(Integer.valueOf(file.getName().substring(10, file.getName().length() - 4)),
+						this.mapAlly.put(Integer.valueOf(file.getName().substring(10, file.getName().length() - 4)),
 								content);
 					}
-					_loadedFiles++;
-					_bytesBuffLen += content.length;
+					this.loadedFiles++;
+					this.bytesBuffLen += content.length;
 				}
 				catch (Exception e)
 				{
@@ -187,33 +187,33 @@ public class CrestCache
 
 	public float getMemoryUsage()
 	{
-		return (float) _bytesBuffLen / 1048576;
+		return (float) this.bytesBuffLen / 1048576;
 	}
 
 	public int getLoadedFiles()
 	{
-		return _loadedFiles;
+		return this.loadedFiles;
 	}
 
 	public byte[] getPledgeCrest(int id)
 	{
-		return _mapPledge.get(id);
+		return this.mapPledge.get(id);
 	}
 
 	public byte[][] getPledgeCrestLarge(int id)
 	{
-		return _mapPledgeLarge.get(id);
+		return this.mapPledgeLarge.get(id);
 	}
 
 	public byte[] getAllyCrest(int id)
 	{
-		return _mapAlly.get(id);
+		return this.mapAlly.get(id);
 	}
 
 	public void removePledgeCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Crest_" + id + ".bmp");
-		_mapPledge.remove(id);
+		this.mapPledge.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -227,7 +227,7 @@ public class CrestCache
 	public void removePledgeCrestLarge(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Crest_Large_" + id + ".bmp");
-		_mapPledgeLarge.remove(id);
+		this.mapPledgeLarge.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -254,7 +254,7 @@ public class CrestCache
 	public void removeAllyCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/AllyCrest_" + id + ".bmp");
-		_mapAlly.remove(id);
+		this.mapAlly.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -273,7 +273,7 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			_mapPledge.put(newId, data);
+			this.mapPledge.put(newId, data);
 			return true;
 		}
 		catch (IOException e)
@@ -303,13 +303,13 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			byte[][] array = _mapPledgeLarge.get(newId);
+			byte[][] array = this.mapPledgeLarge.get(newId);
 			if (array == null)
 			{
 				array = new byte[10][];
 			}
 			array[subId] = data;
-			_mapPledgeLarge.put(newId, array);
+			this.mapPledgeLarge.put(newId, array);
 			return true;
 		}
 		catch (IOException e)
@@ -338,7 +338,7 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			_mapAlly.put(newId, data);
+			this.mapAlly.put(newId, data);
 			return true;
 		}
 		catch (IOException e)
@@ -380,6 +380,6 @@ public class CrestCache
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CrestCache _instance = new CrestCache();
+		protected static final CrestCache instance = new CrestCache();
 	}
 }

@@ -41,7 +41,7 @@ import l2server.gameserver.util.Util;
  * if flyCourse = 360 or 0, player will be moved in in front of him. <br>
  * <br>
  * <p>
- * If target is effector, put in XML self = "1". This will make _actor =
+ * If target is effector, put in XML self = "1". This will make this.actor =
  * getEffector(). This, combined with target type, allows more complex actions
  * like flying target's backwards or player's backwards.<br>
  * <br>
@@ -50,7 +50,7 @@ import l2server.gameserver.util.Util;
  */
 public class EffectTeleport extends L2Effect
 {
-	private L2Character _actor;
+	private L2Character actor;
 
 	public EffectTeleport(Env env, L2EffectTemplate template)
 	{
@@ -63,30 +63,30 @@ public class EffectTeleport extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		_actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
+		this.actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
 
-		if (_actor.isMovementDisabled())
+		if (this.actor.isMovementDisabled())
 		{
 			return false;
 		}
 
 		int radius = getSkill().getFlyRadius();
 
-		double angle = Util.convertHeadingToDegree(_actor.getHeading());
+		double angle = Util.convertHeadingToDegree(this.actor.getHeading());
 		double radian = Math.toRadians(angle);
 		double course = Math.toRadians(getSkill().getFlyCourse());
 
 		float x1 = (float) Math.cos(Math.PI + radian + course);
 		float y1 = (float) Math.sin(Math.PI + radian + course);
 
-		int x = _actor.getX() + (int) (x1 * radius);
-		int y = _actor.getY() + (int) (y1 * radius);
-		int z = _actor.getZ();
+		int x = this.actor.getX() + (int) (x1 * radius);
+		int y = this.actor.getY() + (int) (y1 * radius);
+		int z = this.actor.getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(_actor.getX(), _actor.getY(), _actor.getZ(), x, y, z, _actor.getInstanceId());
+					.moveCheck(this.actor.getX(), this.actor.getY(), this.actor.getZ(), x, y, z, this.actor.getInstanceId());
 			if (destiny.getX() != x || destiny.getY() != y)
 			{
 				x = destiny.getX() - (int) (x1 * 10);
@@ -97,12 +97,12 @@ public class EffectTeleport extends L2Effect
 
 		// TODO: check if this AI intention is retail-like. This stops player's
 		// previous movement
-		_actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		this.actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 
-		_actor.broadcastPacket(new FlyToLocation(_actor, x, y, z, FlyType.MAGIC));
+		this.actor.broadcastPacket(new FlyToLocation(this.actor, x, y, z, FlyType.MAGIC));
 
-		_actor.setXYZ(x, y, z);
-		_actor.broadcastPacket(new ValidateLocation(_actor));
+		this.actor.setXYZ(x, y, z);
+		this.actor.broadcastPacket(new ValidateLocation(this.actor));
 
 		return true;
 	}

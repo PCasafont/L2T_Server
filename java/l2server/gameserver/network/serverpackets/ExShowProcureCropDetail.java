@@ -33,21 +33,21 @@ import java.util.HashMap;
 public class ExShowProcureCropDetail extends L2GameServerPacket
 {
 
-	private int _cropId;
+	private int cropId;
 
-	private HashMap<Integer, CropProcure> _castleCrops;
+	private HashMap<Integer, CropProcure> castleCrops;
 
 	public ExShowProcureCropDetail(int cropId)
 	{
-		_cropId = cropId;
-		_castleCrops = new HashMap<>();
+		this.cropId = cropId;
+		this.castleCrops = new HashMap<>();
 
 		for (Castle c : CastleManager.getInstance().getCastles())
 		{
-			CropProcure cropItem = c.getCrop(_cropId, CastleManorManager.PERIOD_CURRENT);
+			CropProcure cropItem = c.getCrop(this.cropId, CastleManorManager.PERIOD_CURRENT);
 			if (cropItem != null && cropItem.getAmount() > 0)
 			{
-				_castleCrops.put(c.getCastleId(), cropItem);
+				this.castleCrops.put(c.getCastleId(), cropItem);
 			}
 		}
 	}
@@ -60,12 +60,12 @@ public class ExShowProcureCropDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_cropId); // crop id
-		writeD(_castleCrops.size()); // size
+		writeD(this.cropId); // crop id
+		writeD(this.castleCrops.size()); // size
 
-		for (int manorId : _castleCrops.keySet())
+		for (int manorId : this.castleCrops.keySet())
 		{
-			CropProcure crop = _castleCrops.get(manorId);
+			CropProcure crop = this.castleCrops.get(manorId);
 			writeD(manorId); // manor name
 			writeQ(crop.getAmount()); // buy residual
 			writeQ(crop.getPrice()); // buy price

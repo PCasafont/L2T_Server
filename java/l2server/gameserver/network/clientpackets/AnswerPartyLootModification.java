@@ -24,12 +24,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class AnswerPartyLootModification extends L2GameClientPacket
 {
 
-	public int _answer;
+	public int answer;
 
 	@Override
 	protected void readImpl()
 	{
-		_answer = readD();
+		this.answer = readD();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class AnswerPartyLootModification extends L2GameClientPacket
 		L2Party party = activeChar.getParty();
 		if (party != null)
 		{
-			party.answerLootChangeRequest(activeChar, _answer == 1);
+			party.answerLootChangeRequest(activeChar, this.answer == 1);
 		}
 	}
 }

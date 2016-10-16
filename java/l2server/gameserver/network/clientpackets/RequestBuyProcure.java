@@ -40,20 +40,20 @@ public class RequestBuyProcure extends L2GameClientPacket
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
 	@SuppressWarnings("unused")
-	private int _listId;
-	private Procure[] _items = null;
+	private int listId;
+	private Procure[] items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_listId = readD();
+		this.listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
 		{
 			return;
 		}
 
-		_items = new Procure[count];
+		this.items = new Procure[count];
 		for (int i = 0; i < count; i++)
 		{
 			readD(); //service
@@ -61,10 +61,10 @@ public class RequestBuyProcure extends L2GameClientPacket
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				_items = null;
+				this.items = null;
 				return;
 			}
-			_items[i] = new Procure(itemId, cnt);
+			this.items[i] = new Procure(itemId, cnt);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			return;
 		}
 
-		if (_items == null)
+		if (this.items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -115,7 +115,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		int slots = 0;
 		int weight = 0;
 
-		for (Procure i : _items)
+		for (Procure i : this.items)
 		{
 			i.setReward(castle);
 
@@ -147,7 +147,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		// Proceed the purchase
 		InventoryUpdate playerIU = new InventoryUpdate();
 
-		for (Procure i : _items)
+		for (Procure i : this.items)
 		{
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
@@ -200,35 +200,35 @@ public class RequestBuyProcure extends L2GameClientPacket
 
 	private static class Procure
 	{
-		private final int _itemId;
-		private final long _count;
-		private int _reward;
+		private final int itemId;
+		private final long count;
+		private int reward;
 
 		public Procure(int id, long num)
 		{
-			_itemId = id;
-			_count = num;
+			this.itemId = id;
+			this.count = num;
 		}
 
 		public int getItemId()
 		{
-			return _itemId;
+			return this.itemId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return this.count;
 		}
 
 		public int getReward()
 		{
-			return _reward;
+			return this.reward;
 		}
 
 		public void setReward(Castle c)
 		{
-			_reward = L2Manor.getInstance()
-					.getRewardItem(_itemId, c.getCrop(_itemId, CastleManorManager.PERIOD_CURRENT).getReward());
+			this.reward = L2Manor.getInstance()
+					.getRewardItem(this.itemId, c.getCrop(this.itemId, CastleManorManager.PERIOD_CURRENT).getReward());
 		}
 	}
 }

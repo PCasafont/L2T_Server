@@ -15,6 +15,10 @@
 
 package handlers.skillhandlers;
 
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
@@ -38,11 +42,8 @@ import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
+import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -52,8 +53,8 @@ import java.util.logging.Logger;
 
 public class Pdam implements ISkillHandler
 {
-	private static final Logger _log = Logger.getLogger(Pdam.class.getName());
-	private static final Logger _logDamage = Logger.getLogger("damage");
+	private static final Logger log = Logger.getLogger(Pdam.class.getName());
+	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.PDAM, L2SkillType.FATAL};
 
@@ -72,7 +73,7 @@ public class Pdam implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
+			Log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
 		}
 
 		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
@@ -324,7 +325,7 @@ public class Pdam implements ISkillHandler
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("pdam");
-						_logDamage.log(record);
+						this.logDamage.log(record);
 					}
 
 					// Possibility of a lethal strike

@@ -23,100 +23,100 @@ public class GlobalDropTable implements Reloadable
 {
 	public class GlobalDropCategory
 	{
-		private List<Integer> _itemIds = new ArrayList<>();
-		private String _description;
-		private int _chance;
-		private int _minAmount;
-		private int _maxAmount;
-		private int _mobId;
-		private int _minLevel;
-		private int _maxLevel;
-		private boolean _raidOnly;
-		private int _maxDailyCount;
+		private List<Integer> itemIds = new ArrayList<>();
+		private String description;
+		private int chance;
+		private int minAmount;
+		private int maxAmount;
+		private int mobId;
+		private int minLevel;
+		private int maxLevel;
+		private boolean raidOnly;
+		private int maxDailyCount;
 
-		private TIntIntHashMap _countsPerPlayer = new TIntIntHashMap();
+		private TIntIntHashMap countsPerPlayer = new TIntIntHashMap();
 
 		public GlobalDropCategory(String description, int chance, int minAmount, int maxAmount, int mobId, int minLevel, int maxLevel, boolean raidOnly, int maxDailyCount)
 		{
-			_description = description;
-			_chance = chance;
-			_minAmount = minAmount;
-			_maxAmount = maxAmount;
-			_mobId = mobId;
-			_minLevel = minLevel;
-			_maxLevel = maxLevel;
-			_raidOnly = raidOnly;
-			_maxDailyCount = maxDailyCount;
+			this.description = description;
+			this.chance = chance;
+			this.minAmount = minAmount;
+			this.maxAmount = maxAmount;
+			this.mobId = mobId;
+			this.minLevel = minLevel;
+			this.maxLevel = maxLevel;
+			this.raidOnly = raidOnly;
+			this.maxDailyCount = maxDailyCount;
 		}
 
 		public void addItem(int itemId)
 		{
-			_itemIds.add(itemId);
+			this.itemIds.add(itemId);
 		}
 
 		public String getDescription()
 		{
-			return _description;
+			return this.description;
 		}
 
 		public int getChance()
 		{
-			return _chance;
+			return this.chance;
 		}
 
 		public int getMinAmount()
 		{
-			return _minAmount;
+			return this.minAmount;
 		}
 
 		public int getMaxAmount()
 		{
-			return _maxAmount;
+			return this.maxAmount;
 		}
 
 		public int getMobId()
 		{
-			return _mobId;
+			return this.mobId;
 		}
 
 		public int getMinLevel()
 		{
-			return _minLevel;
+			return this.minLevel;
 		}
 
 		public int getMaxLevel()
 		{
-			return _maxLevel;
+			return this.maxLevel;
 		}
 
 		public List<Integer> getRewards()
 		{
-			return _itemIds;
+			return this.itemIds;
 		}
 
 		public int getRandomReward()
 		{
-			return _itemIds.get(Rnd.get(_itemIds.size()));
+			return this.itemIds.get(Rnd.get(this.itemIds.size()));
 		}
 
 		public boolean isRaidOnly()
 		{
-			return _raidOnly;
+			return this.raidOnly;
 		}
 
 		public int getMaxDailyCount()
 		{
-			return _maxDailyCount;
+			return this.maxDailyCount;
 		}
 
 		public int getCountForPlayer(L2PcInstance player)
 		{
 			int count = 0;
-			synchronized (_countsPerPlayer)
+			synchronized (this.countsPerPlayer)
 			{
-				if (_countsPerPlayer.containsKey(player.getObjectId()))
+				if (this.countsPerPlayer.containsKey(player.getObjectId()))
 				{
-					count = _countsPerPlayer.get(player.getObjectId());
+					count = this.countsPerPlayer.get(player.getObjectId());
 				}
 			}
 
@@ -125,51 +125,51 @@ public class GlobalDropTable implements Reloadable
 
 		public void increaseCountForPlayer(L2PcInstance player)
 		{
-			synchronized (_countsPerPlayer)
+			synchronized (this.countsPerPlayer)
 			{
 				int count = 0;
-				if (_countsPerPlayer.containsKey(player.getObjectId()))
+				if (this.countsPerPlayer.containsKey(player.getObjectId()))
 				{
-					count = _countsPerPlayer.get(player.getObjectId());
+					count = this.countsPerPlayer.get(player.getObjectId());
 				}
 
-				_countsPerPlayer.put(player.getObjectId(), count + 1);
+				this.countsPerPlayer.put(player.getObjectId(), count + 1);
 			}
 		}
 
 		public void resetCountsPerPlayer()
 		{
-			synchronized (_countsPerPlayer)
+			synchronized (this.countsPerPlayer)
 			{
-				_countsPerPlayer.clear();
+				this.countsPerPlayer.clear();
 			}
 		}
 
 		public boolean canLootNow(L2PcInstance player)
 		{
-			if (_maxDailyCount <= 0)
+			if (this.maxDailyCount <= 0)
 			{
 				return true;
 			}
 
-			return getCountForPlayer(player) < _maxDailyCount;
+			return getCountForPlayer(player) < this.maxDailyCount;
 		}
 	}
 
-	private static GlobalDropTable _instance;
+	private static GlobalDropTable instance;
 
-	private static List<GlobalDropCategory> _globalDropCategories = new ArrayList<>();
+	private static List<GlobalDropCategory> globalDropCategories = new ArrayList<>();
 
-	ScheduledFuture<?> _resetSchedule = null;
+	ScheduledFuture<?> resetSchedule = null;
 
 	public static GlobalDropTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new GlobalDropTable();
+			instance = new GlobalDropTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 
 	private GlobalDropTable()
@@ -182,7 +182,7 @@ public class GlobalDropTable implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		_globalDropCategories.clear();
+		this.globalDropCategories.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "globalDrops.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -215,15 +215,15 @@ public class GlobalDropTable implements Reloadable
 								drop.addItem(itemId);
 							}
 						}
-						_globalDropCategories.add(drop);
+						this.globalDropCategories.add(drop);
 					}
 				}
 			}
 		}
 
-		if (_resetSchedule != null)
+		if (this.resetSchedule != null)
 		{
-			_resetSchedule.cancel(false);
+			this.resetSchedule.cancel(false);
 		}
 
 		Calendar firstRun = Calendar.getInstance();
@@ -238,9 +238,9 @@ public class GlobalDropTable implements Reloadable
 		long initial = firstRun.getTimeInMillis() - System.currentTimeMillis();
 		long delay = 24 * 3600 * 1000L;
 
-		_resetSchedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
+		this.resetSchedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 		{
-			for (GlobalDropCategory cat : _globalDropCategories)
+			for (GlobalDropCategory cat : this.globalDropCategories)
 			{
 				cat.resetCountsPerPlayer();
 			}
@@ -257,6 +257,6 @@ public class GlobalDropTable implements Reloadable
 
 	public List<GlobalDropCategory> getGlobalDropCategories()
 	{
-		return _globalDropCategories;
+		return this.globalDropCategories;
 	}
 }

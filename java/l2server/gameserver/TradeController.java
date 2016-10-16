@@ -42,11 +42,11 @@ import java.util.logging.Level;
 public class TradeController implements Reloadable
 {
 
-	private Map<Integer, L2TradeList> _lists = new HashMap<>();
+	private Map<Integer, L2TradeList> lists = new HashMap<>();
 
 	public static TradeController getInstance()
     {
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private TradeController()
@@ -60,7 +60,7 @@ public class TradeController implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		_lists.clear();
+		this.lists.clear();
 		if (!load(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/shops/"))
 		{
 			return false;
@@ -97,7 +97,7 @@ public class TradeController implements Reloadable
 							int id = d.getInt("id");
 							int npcId = d.getInt("npcId");
 
-							if (_lists.containsKey(id))
+							if (this.lists.containsKey(id))
 							{
 								continue;
 							}
@@ -169,14 +169,14 @@ public class TradeController implements Reloadable
 							}
 
 							buy.setNpcId(npcId);
-							_lists.put(id, buy);
+							this.lists.put(id, buy);
 						}
 					}
 				}
 			}
 		}
 
-		Log.info("TradeController: Loaded " + _lists.size() + " Buylists.");
+		Log.info("TradeController: Loaded " + this.lists.size() + " Buylists.");
 		return true;
 	}
 
@@ -202,7 +202,7 @@ public class TradeController implements Reloadable
 				int currentCount = rset.getInt("count");
 				long savedTime = rset.getLong("time");
 
-				L2TradeList tradeList = _lists.get(shopId);
+				L2TradeList tradeList = this.lists.get(shopId);
                 if (tradeList == null)
                 {
                     continue;
@@ -247,13 +247,13 @@ public class TradeController implements Reloadable
 
 	public L2TradeList getBuyList(int listId)
 	{
-		return _lists.get(listId);
+		return this.lists.get(listId);
 	}
 
 	public List<L2TradeList> getBuyListByNpcId(int npcId)
 	{
 		List<L2TradeList> lists = new ArrayList<>();
-		Collection<L2TradeList> values = _lists.values();
+		Collection<L2TradeList> values = this.lists.values();
 
 		for (L2TradeList list : values)
 		{
@@ -280,7 +280,7 @@ public class TradeController implements Reloadable
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement =
 					con.prepareStatement("UPDATE shop_item_counts SET count = ? WHERE shop_id = ? AND item_id = ?");
-			for (L2TradeList list : _lists.values())
+			for (L2TradeList list : this.lists.values())
 			{
 				if (list.hasLimitedStockItem())
 				{
@@ -315,6 +315,6 @@ public class TradeController implements Reloadable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TradeController _instance = new TradeController();
+		protected static final TradeController instance = new TradeController();
 	}
 }

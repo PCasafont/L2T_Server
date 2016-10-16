@@ -29,8 +29,8 @@ import java.util.List;
  */
 public abstract class L2SpawnZone extends L2ZoneType
 {
-	private List<Location> _spawnLocs = null;
-	private List<Location> _chaoticSpawnLocs = null;
+	private List<Location> spawnLocs = null;
+	private List<Location> chaoticSpawnLocs = null;
 
 	public L2SpawnZone(int id)
 	{
@@ -39,46 +39,46 @@ public abstract class L2SpawnZone extends L2ZoneType
 
 	public final void addSpawn(int x, int y, int z)
 	{
-		if (_spawnLocs == null)
+		if (this.spawnLocs == null)
 		{
-			_spawnLocs = new ArrayList<>();
+			this.spawnLocs = new ArrayList<>();
 		}
 
-		_spawnLocs.add(new Location(x, y, z));
+		this.spawnLocs.add(new Location(x, y, z));
 	}
 
 	public final void addChaoticSpawn(int x, int y, int z)
 	{
-		if (_chaoticSpawnLocs == null)
+		if (this.chaoticSpawnLocs == null)
 		{
-			_chaoticSpawnLocs = new ArrayList<>();
+			this.chaoticSpawnLocs = new ArrayList<>();
 		}
 
-		_chaoticSpawnLocs.add(new Location(x, y, z));
+		this.chaoticSpawnLocs.add(new Location(x, y, z));
 	}
 
 	public final List<Location> getSpawns()
 	{
-		return _spawnLocs;
+		return this.spawnLocs;
 	}
 
 	public final Location getSpawnLoc()
 	{
 		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 		{
-			return _spawnLocs.get(Rnd.get(_spawnLocs.size()));
+			return this.spawnLocs.get(Rnd.get(this.spawnLocs.size()));
 		}
 		else
 		{
-			return _spawnLocs.get(0);
+			return this.spawnLocs.get(0);
 		}
 	}
 
 	public final Location getChaoticSpawnLoc()
 	{
-		if (_chaoticSpawnLocs != null)
+		if (this.chaoticSpawnLocs != null)
 		{
-			return _chaoticSpawnLocs.get(Rnd.get(_chaoticSpawnLocs.size()));
+			return this.chaoticSpawnLocs.get(Rnd.get(this.chaoticSpawnLocs.size()));
 		}
 		else
 		{

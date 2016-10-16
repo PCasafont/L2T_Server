@@ -31,65 +31,65 @@ import l2server.gameserver.network.serverpackets.*;
 public final class RequestPartyMatchConfig extends L2GameClientPacket
 {
 
-	private int _auto, _loc, _lvl;
+	private int auto, loc, lvl;
 
 	@Override
 	protected void readImpl()
 	{
-		_auto = readD(); //
-		_loc = readD(); // Location
-		_lvl = readD(); // my level
+		auto = readD(); //
+		loc = readD(); // Location
+		lvl = readD(); // my level
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 
-		if (!_activeChar.isInPartyMatchRoom() && _activeChar.getParty() != null &&
-				_activeChar.getParty().getLeader() != _activeChar)
+		if (!activeChar.isInPartyMatchRoom() && activeChar.getParty() != null &&
+				activeChar.getParty().getLeader() != activeChar)
 		{
-			_activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_VIEW_PARTY_ROOMS));
-			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_VIEW_PARTY_ROOMS));
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		if (_activeChar.isInPartyMatchRoom())
+		if (activeChar.isInPartyMatchRoom())
 		{
 			// If Player is in Room show him room, not list
-			PartyMatchRoomList _list = PartyMatchRoomList.getInstance();
-			if (_list == null)
+			PartyMatchRoomList list = PartyMatchRoomList.getInstance();
+			if (list == null)
 			{
 				return;
 			}
 
-			PartyMatchRoom _room = _list.getPlayerRoom(_activeChar);
-			if (_room == null)
+			PartyMatchRoom room = list.getPlayerRoom(activeChar);
+			if (room == null)
 			{
 				return;
 			}
 
-			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-			_activeChar.sendPacket(new ExPartyRoomMembers(_activeChar, _room, 2));
+			activeChar.sendPacket(new PartyMatchDetail(activeChar, room));
+			activeChar.sendPacket(new ExPartyRoomMembers(activeChar, room, 2));
 
-			_activeChar.setPartyRoom(_room.getId());
+			activeChar.setPartyRoom(room.getId());
 			//_activeChar.setPartyMatching(1);
-			_activeChar.broadcastUserInfo();
+			activeChar.broadcastUserInfo();
 		}
 		else
 		{
 			// Add to waiting list
-			PartyMatchWaitingList.getInstance().addPlayer(_activeChar);
+			PartyMatchWaitingList.getInstance().addPlayer(activeChar);
 
 			// Send Room list
-			ListPartyWaiting matchList = new ListPartyWaiting(_activeChar, _auto, _loc, _lvl);
+			ListPartyWaiting matchList = new ListPartyWaiting(activeChar, auto, loc, lvl);
 
-			_activeChar.sendPacket(matchList);
+			activeChar.sendPacket(matchList);
 		}
 	}
 }

@@ -22,7 +22,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCubeGameCloseUI extends L2GameServerPacket
 {
-	int _seconds;
+	private int seconds;
 
 	/**
 	 * Close Minigame Waiting List

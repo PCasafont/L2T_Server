@@ -28,24 +28,24 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 public final class AttackRequest extends L2GameClientPacket
 {
 	// cddddc
-	private int _objectId;
+	private int objectId;
 	@SuppressWarnings("unused")
-	private int _originX;
+	private int originX;
 	@SuppressWarnings("unused")
-	private int _originY;
+	private int originY;
 	@SuppressWarnings("unused")
-	private int _originZ;
+	private int originZ;
 	@SuppressWarnings("unused")
-	private int _attackId;
+	private int attackId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
-		_attackId = readC(); // 0 for simple click   1 for shift-click
+		this.objectId = readD();
+		this.originX = readD();
+		this.originY = readD();
+		this.originZ = readD();
+		this.attackId = readC(); // 0 for simple click   1 for shift-click
 	}
 
 	@Override
@@ -58,17 +58,17 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		// avoid using expensive operations if not needed
 		L2Object target;
-		if (activeChar.getTargetId() == _objectId)
+		if (activeChar.getTargetId() == this.objectId)
 		{
 			target = activeChar.getTarget();
 		}
 		else
 		{
-			target = L2World.getInstance().findObject(_objectId);
+			target = L2World.getInstance().findObject(this.objectId);
 		}
 		if (target == null)
 		{
-			target = L2World.getInstance().getPlayer(_objectId);
+			target = L2World.getInstance().getPlayer(this.objectId);
 			if (target == null)
 			{
 				return;

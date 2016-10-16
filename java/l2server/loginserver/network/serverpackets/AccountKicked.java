@@ -27,24 +27,24 @@ public final class AccountKicked extends L2LoginServerPacket
 		REASON_7_DAYS_SUSPENDED(0x10),
 		REASON_PERMANENTLY_BANNED(0x20);
 
-		private final int _code;
+		private final int code;
 
 		AccountKickedReason(int code)
 		{
-			_code = code;
+			this.code = code;
 		}
 
 		public final int getCode()
 		{
-			return _code;
+			return this.code;
 		}
 	}
 
-	private AccountKickedReason _reason;
+	private AccountKickedReason reason;
 
 	public AccountKicked(AccountKickedReason reason)
 	{
-		_reason = reason;
+		this.reason = reason;
 	}
 
 	/**
@@ -53,6 +53,6 @@ public final class AccountKicked extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x02);
-		writeD(_reason.getCode());
+		writeD(this.reason.getCode());
 	}
 }

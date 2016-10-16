@@ -24,12 +24,12 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 {
 
 	@SuppressWarnings("unused")
-	private long _auctionID;
+	private long auctionID;
 
 	@Override
 	protected void readImpl()
 	{
-		_auctionID = readQ();
+		this.auctionID = readQ();
 		readD(); // Category - unused
 	}
 
@@ -42,7 +42,7 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();
-		Auctions auction = am.getAuctionById(_auctionID);
+		Auctions auction = am.getAuctionById(this.auctionID);
 		if (auction != null)
 		{
 			if (activeChar.getObjectId() == auction.getPlayerID())

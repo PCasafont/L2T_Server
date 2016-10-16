@@ -25819,36 +25819,36 @@ public final class NpcStringId
 		return new BuilderContainer(builders.toArray(new Builder[builders.size()]));
 	}
 
-	private final int _id;
-	private String _name;
-	private byte _params;
-	private NSLocalisation[] _localisations;
-	private ExShowScreenMessage _staticScreenMessage;
+	private final int id;
+	private String name;
+	private byte params;
+	private NSLocalisation[] localisations;
+	private ExShowScreenMessage staticScreenMessage;
 
 	private NpcStringId(final int id)
 	{
-		_id = id;
-		_localisations = EMPTY_NSL_ARRAY;
+		this.id = id;
+		this.localisations = EMPTY_NSL_ARRAY;
 	}
 
 	public final int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	private void setName(final String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	public final String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public final int getParamCount()
 	{
-		return _params;
+		return this.params;
 	}
 
 	/**
@@ -25870,18 +25870,18 @@ public final class NpcStringId
 
 		if (params != 0)
 		{
-			_staticScreenMessage = null;
+			this.staticScreenMessage = null;
 		}
 
-		_params = (byte) params;
+		this.params = (byte) params;
 	}
 
 	public final NSLocalisation getLocalisation(final String lang)
 	{
 		NSLocalisation nsl;
-		for (int i = _localisations.length; i-- > 0; )
+		for (int i = this.localisations.length; i-- > 0; )
 		{
-			nsl = _localisations[i];
+			nsl = this.localisations[i];
 			if (nsl.getLanguage().hashCode() == lang.hashCode())
 			{
 				return nsl;
@@ -25892,25 +25892,25 @@ public final class NpcStringId
 
 	public final void attachLocalizedText(final String lang, final String text)
 	{
-		final int length = _localisations.length;
-		final NSLocalisation[] localisations = Arrays.copyOf(_localisations, length + 1);
+		final int length = this.localisations.length;
+		final NSLocalisation[] localisations = Arrays.copyOf(this.localisations, length + 1);
 		localisations[length] = new NSLocalisation(lang, text);
-		_localisations = localisations;
+		this.localisations = localisations;
 	}
 
 	public final void removeAllLocalisations()
 	{
-		_localisations = EMPTY_NSL_ARRAY;
+		this.localisations = EMPTY_NSL_ARRAY;
 	}
 
 	public final ExShowScreenMessage getStaticScreenMessage()
 	{
-		return _staticScreenMessage;
+		return this.staticScreenMessage;
 	}
 
 	public final void setStaticSystemMessage(final ExShowScreenMessage ns)
 	{
-		_staticScreenMessage = ns;
+		this.staticScreenMessage = ns;
 	}
 
 	@Override
@@ -25921,23 +25921,23 @@ public final class NpcStringId
 
 	public static final class NSLocalisation
 	{
-		private final String _lang;
-		private final Builder _builder;
+		private final String lang;
+		private final Builder builder;
 
 		public NSLocalisation(final String lang, final String text)
 		{
-			_lang = lang;
-			_builder = newBuilder(text);
+			this.lang = lang;
+			this.builder = newBuilder(text);
 		}
 
 		public final String getLanguage()
 		{
-			return _lang;
+			return this.lang;
 		}
 
 		public final String getLocalisation(final Object... params)
 		{
-			return _builder.toString(params);
+			return this.builder.toString(params);
 		}
 	}
 
@@ -25958,11 +25958,11 @@ public final class NpcStringId
 	 */
 	private static final class BuilderContainer implements Builder
 	{
-		private final Builder[] _builders;
+		private final Builder[] builders;
 
 		public BuilderContainer(final Builder[] builders)
 		{
-			_builders = builders;
+			this.builders = builders;
 		}
 
 		@Override
@@ -25974,7 +25974,7 @@ public final class NpcStringId
 		@Override
 		public final String toString(final Object... params)
 		{
-			final int buildersLength = _builders.length;
+			final int buildersLength = this.builders.length;
 			final int paramsLength = params.length;
 			final String[] builds = new String[buildersLength];
 
@@ -25985,7 +25985,7 @@ public final class NpcStringId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					builder = _builders[i];
+					builder = this.builders[i];
 					paramIndex = builder.getIndex();
 					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) :
 							builder.toString();
@@ -25997,7 +25997,7 @@ public final class NpcStringId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					build = _builders[i].toString();
+					build = this.builders[i].toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -26023,11 +26023,11 @@ public final class NpcStringId
 	 */
 	private static final class BuilderText implements Builder
 	{
-		private final String _text;
+		private final String text;
 
 		public BuilderText(final String text)
 		{
-			_text = text;
+			this.text = text;
 		}
 
 		@Override
@@ -26051,7 +26051,7 @@ public final class NpcStringId
 		@Override
 		public final String toString()
 		{
-			return _text;
+			return this.text;
 		}
 	}
 
@@ -26060,7 +26060,7 @@ public final class NpcStringId
 	 */
 	private static final class BuilderObject implements Builder
 	{
-		private final int _index;
+		private final int index;
 
 		public BuilderObject(final int id)
 		{
@@ -26069,7 +26069,7 @@ public final class NpcStringId
 				throw new RuntimeException("Illegal id " + id);
 			}
 
-			_index = id - 1;
+			this.index = id - 1;
 		}
 
 		@Override
@@ -26092,13 +26092,13 @@ public final class NpcStringId
 		@Override
 		public final int getIndex()
 		{
-			return _index;
+			return this.index;
 		}
 
 		@Override
 		public final String toString()
 		{
-			return "[PARAM-" + (_index + 1) + "]";
+			return "[PARAM-" + (this.index + 1) + "]";
 		}
 	}
 
@@ -26107,24 +26107,24 @@ public final class NpcStringId
 	 */
 	private static final class FastStringBuilder
 	{
-		private final char[] _array;
-		private int _len;
+		private final char[] array;
+		private int len;
 
 		public FastStringBuilder(final int capacity)
 		{
-			_array = new char[capacity];
+			this.array = new char[capacity];
 		}
 
 		public final void append(final String text)
 		{
-			text.getChars(0, text.length(), _array, _len);
-			_len += text.length();
+			text.getChars(0, text.length(), this.array, this.len);
+			this.len += text.length();
 		}
 
 		@Override
 		public final String toString()
 		{
-			return new String(_array);
+			return new String(this.array);
 		}
 	}
 }

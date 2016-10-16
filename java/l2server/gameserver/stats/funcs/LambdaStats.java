@@ -28,17 +28,17 @@ public final class LambdaStats extends Lambda
 		PLAYER_LEVEL, CUBIC_LEVEL, TARGET_LEVEL, PLAYER_MAX_HP, PLAYER_MAX_MP
 	}
 
-	private final StatsType _stat;
+	private final StatsType stat;
 
 	public LambdaStats(StatsType stat)
 	{
-		_stat = stat;
+		this.stat = stat;
 	}
 
 	@Override
 	public double calc(Env env)
 	{
-		switch (_stat)
+		switch (this.stat)
 		{
 			case PLAYER_LEVEL:
 				if (env.player == null)

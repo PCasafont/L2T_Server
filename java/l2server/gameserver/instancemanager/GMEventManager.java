@@ -63,13 +63,13 @@ import java.util.Map.Entry;
 
 public class GMEventManager
 {
-	private static final int _bufferNpcId = 8508;
-	private static final int _dummyArenaSignNpcId = 35608;
-	private static final int _rewardCoinId = 14720;
-	private Map<String, Event> _predefinedEvents = new HashMap<>();
-	private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>();
-	private static Map<String, SubEvent> _subEvents = new HashMap<>();
-	private static Event _currentEvent;
+	private static final int bufferNpcId = 8508;
+	private static final int dummyArenaSignNpcId = 35608;
+	private static final int rewardCoinId = 14720;
+	private Map<String, Event> predefinedEvents = new HashMap<>();
+	private static Map<Integer, CurrencyInfo> currencies = new LinkedHashMap<>();
+	private static Map<String, SubEvent> subEvents = new HashMap<>();
+	private static Event currentEvent;
 
 	public String getCustomEventPanel(L2PcInstance player, int pageToShow)
 	{
@@ -78,13 +78,13 @@ public class GMEventManager
 
 		if (player.isGM())
 		{
-			if (_currentEvent == null || !_currentEvent.isStarted())
+			if (this.currentEvent == null || !this.currentEvent.isStarted())
 			{
 				sb.append("<tr><td><table width=750 border=1>");
-				if (_currentEvent == null || !_currentEvent.isStarted())
+				if (this.currentEvent == null || !this.currentEvent.isStarted())
 				{
 					String subEvents = "";
-					for (Entry<String, SubEvent> event : _subEvents.entrySet())
+					for (Entry<String, SubEvent> event : this.subEvents.entrySet())
 					{
 						subEvents += event.getKey() + ";";
 					}
@@ -94,11 +94,11 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Start sub event:</td><td><combobox width=100 height=17 var=\"subEvent\" list=" +
 										subEvents +
-										"></td><td><button action=\"bypass _bbscustom;action;gEvent;startSubEvent; $subEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
+										"></td><td><button action=\"bypass this.bbscustom;action;gEvent;startSubEvent; $subEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
 					}
 
 					String predefinedEvents = "";
-					for (Entry<String, Event> event : _predefinedEvents.entrySet())
+					for (Entry<String, Event> event : this.predefinedEvents.entrySet())
 					{
 						predefinedEvents += event.getValue().getName() + ";";
 					}
@@ -108,37 +108,37 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Load predefined event:</td><td><combobox width=100 height=17 var=\"loadEvent\" list=" +
 										predefinedEvents +
-										"></td><td><button action=\"bypass _bbscustom;action;gEvent;loadEvent; $loadEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
+										"></td><td><button action=\"bypass this.bbscustom;action;gEvent;loadEvent; $loadEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
 					}
 
 					String eventName =
-							"<td FIXWIDTH=200><edit var=\"eName\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setName; $eName ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getName() != null)
+							"<td FIXWIDTH=200><edit var=\"eName\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setName; $eName ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getName() != null)
 					{
-						eventName = "<td FIXWIDTH=200>" + _currentEvent.getName() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delName;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						eventName = "<td FIXWIDTH=200>" + this.currentEvent.getName() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delName;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String eventDescription =
-							"<td><edit var=\"eDesc\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setDesc; $eDesc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getDescription() != null)
+							"<td><edit var=\"eDesc\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setDesc; $eDesc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getDescription() != null)
 					{
-						eventDescription = "<td>" + _currentEvent.getDescription() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delDesc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						eventDescription = "<td>" + this.currentEvent.getDescription() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delDesc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String eventLocation =
-							"<td><edit var=\"eLoc\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setLoc; $eLoc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getLocation() != null)
+							"<td><edit var=\"eLoc\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setLoc; $eLoc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getLocation() != null)
 					{
-						eventLocation = "<td>" + _currentEvent.getLocation() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						eventLocation = "<td>" + this.currentEvent.getLocation() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String arenaZoneName = "";
-					if (_currentEvent != null && _currentEvent.getArenaZones() != null)
+					if (this.currentEvent != null && this.currentEvent.getArenaZones() != null)
 					{
-						for (L2ArenaZone zone : _currentEvent.getArenaZones())
+						for (L2ArenaZone zone : this.currentEvent.getArenaZones())
 						{
 							if (zone == null)
 							{
@@ -149,9 +149,9 @@ public class GMEventManager
 					}
 
 					String peaceZoneName = "";
-					if (_currentEvent != null && _currentEvent.getPeaceZones() != null)
+					if (this.currentEvent != null && this.currentEvent.getPeaceZones() != null)
 					{
-						for (L2PeaceZone zone : _currentEvent.getPeaceZones())
+						for (L2PeaceZone zone : this.currentEvent.getPeaceZones())
 						{
 							if (zone == null)
 							{
@@ -162,75 +162,75 @@ public class GMEventManager
 					}
 
 					String teamOneSpawn =
-							"<td><button action=\"bypass _bbscustom;action;gEvent;setTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getTeamOneSpawn() != null)
+							"<td><button action=\"bypass this.bbscustom;action;gEvent;setTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getTeamOneSpawn() != null)
 					{
-						teamOneSpawn = "<td>" + _currentEvent.getTeamOneSpawn().getX() + ", " +
-								_currentEvent.getTeamOneSpawn().getY() + ", " + _currentEvent.getTeamOneSpawn().getZ() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						teamOneSpawn = "<td>" + this.currentEvent.getTeamOneSpawn().getX() + ", " +
+								this.currentEvent.getTeamOneSpawn().getY() + ", " + this.currentEvent.getTeamOneSpawn().getZ() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String teamTwoSpawn =
-							"<td><button action=\"bypass _bbscustom;action;gEvent;setTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getTeamTwoSpawn() != null)
+							"<td><button action=\"bypass this.bbscustom;action;gEvent;setTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getTeamTwoSpawn() != null)
 					{
-						teamTwoSpawn = "<td>" + _currentEvent.getTeamTwoSpawn().getX() + ", " +
-								_currentEvent.getTeamTwoSpawn().getY() + ", " + _currentEvent.getTeamTwoSpawn().getZ() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						teamTwoSpawn = "<td>" + this.currentEvent.getTeamTwoSpawn().getX() + ", " +
+								this.currentEvent.getTeamTwoSpawn().getY() + ", " + this.currentEvent.getTeamTwoSpawn().getZ() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnBufferOne =
-							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getSpawnBufferOne() != null)
+							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getSpawnBufferOne() != null)
 					{
-						spawnBufferOne = "<td>" + _currentEvent.getSpawnBufferOne().getX() + ", " +
-								_currentEvent.getSpawnBufferOne().getY() + ", " +
-								_currentEvent.getSpawnBufferOne().getZ() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						spawnBufferOne = "<td>" + this.currentEvent.getSpawnBufferOne().getX() + ", " +
+								this.currentEvent.getSpawnBufferOne().getY() + ", " +
+								this.currentEvent.getSpawnBufferOne().getZ() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnBufferTwo =
-							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getSpawnBufferTwo() != null)
+							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getSpawnBufferTwo() != null)
 					{
-						spawnBufferTwo = "<td>" + _currentEvent.getSpawnBufferTwo().getX() + ", " +
-								_currentEvent.getSpawnBufferTwo().getY() + ", " +
-								_currentEvent.getSpawnBufferTwo().getZ() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						spawnBufferTwo = "<td>" + this.currentEvent.getSpawnBufferTwo().getX() + ", " +
+								this.currentEvent.getSpawnBufferTwo().getY() + ", " +
+								this.currentEvent.getSpawnBufferTwo().getZ() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnLoc =
-							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
-					if (_currentEvent != null && _currentEvent.getTeleportLocation() != null)
+							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+					if (this.currentEvent != null && this.currentEvent.getTeleportLocation() != null)
 					{
-						spawnLoc = "<td>" + _currentEvent.getTeleportLocation().getX() + ", " +
-								_currentEvent.getTeleportLocation().getY() + ", " +
-								_currentEvent.getTeleportLocation().getZ() +
-								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+						spawnLoc = "<td>" + this.currentEvent.getTeleportLocation().getX() + ", " +
+								this.currentEvent.getTeleportLocation().getY() + ", " +
+								this.currentEvent.getTeleportLocation().getZ() +
+								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String doors = "";
-					if (_currentEvent != null && _currentEvent.getDoors() != null)
+					if (this.currentEvent != null && this.currentEvent.getDoors() != null)
 					{
-						for (int i : _currentEvent.getDoors())
+						for (int i : this.currentEvent.getDoors())
 						{
 							doors += i + "<br>";
 						}
 					}
 
 					String arenaSign = "";
-					if (_currentEvent != null && _currentEvent.getArenaSignIds() != null)
+					if (this.currentEvent != null && this.currentEvent.getArenaSignIds() != null)
 					{
-						for (int id : _currentEvent.getArenaSignIds())
+						for (int id : this.currentEvent.getArenaSignIds())
 						{
 							arenaSign += id + "<br1> ";
 						}
 					}
 
 					String arenaSignSpawns = "";
-					if (_currentEvent != null && _currentEvent.getArenaSignSpawns() != null)
+					if (this.currentEvent != null && this.currentEvent.getArenaSignSpawns() != null)
 					{
-						for (Location loc : _currentEvent.getArenaSignSpawns())
+						for (Location loc : this.currentEvent.getArenaSignSpawns())
 						{
 							arenaSignSpawns += loc.getX() + ", " + loc.getY() + ", " + loc.getZ() + "<br1> ";
 						}
@@ -240,81 +240,81 @@ public class GMEventManager
 					sb.append("<tr><td>Enter the Event Description:</td>" + eventDescription + "</tr>");
 					sb.append("<tr><td>Enter the Event Location:</td>" + eventLocation + "</tr>");
 					sb.append("<tr><td>Set Arena Zone:</td><td>" + arenaZoneName +
-							"</td><td><button action=\"bypass _bbscustom;action;gEvent;setArena;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delArena;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><button action=\"bypass this.bbscustom;action;gEvent;setArena;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delArena;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Set Peace Zone:</td><td>" + peaceZoneName +
-							"</td><td><button action=\"bypass _bbscustom;action;gEvent;setPeace;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delPeace;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><button action=\"bypass this.bbscustom;action;gEvent;setPeace;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delPeace;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Team One Spawn:</td>" + teamOneSpawn + "</tr>");
 					sb.append("<tr><td>Team Two Spawn:</td>" + teamTwoSpawn + "</tr>");
 					sb.append("<tr><td>Team One Buffer Spawn:</td>" + spawnBufferOne + "</tr>");
 					sb.append("<tr><td>Team Two Buffer Spawn:</td>" + spawnBufferTwo + "</tr>");
 					sb.append("<tr><td>Event Spawn:</td>" + spawnLoc + "</tr>");
 					sb.append("<tr><td>Doors:</td><td>" + doors +
-							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;setDoor;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delDoor;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;setDoor;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delDoor;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Arena Signs:</td><td>" + arenaSign +
-							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;setArenaSign;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delArenaSign;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;setArenaSign;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delArenaSign;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Arena Sign Spawns:</td><td>" + arenaSignSpawns +
-							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;addSignSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delSignSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;addSignSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delSignSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append(
-							"<tr><td><button value=\"Start\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Restart Config\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;restartConfig;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
+							"<tr><td><button value=\"Start\" width=200 height=24 action=\"bypass this.bbscustom;action;gEvent;startEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Restart Config\" width=200 height=24 action=\"bypass this.bbscustom;action;gEvent;restartConfig;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
 				}
 				sb.append("</table></td></tr>");
 			}
 			else
 			{
 				String reAnnounce =
-						"<button value=\"Re Announce\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;reAnnounce;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Re Announce\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;reAnnounce;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 
 				String manageDoors = "";
-				if (_currentEvent != null && _currentEvent.isStarted() && !_currentEvent.getDoors().isEmpty())
+				if (this.currentEvent != null && this.currentEvent.isStarted() && !this.currentEvent.getDoors().isEmpty())
 				{
 					manageDoors =
-							"<button value=\"Manage Doors\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;manageDoors;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Manage Doors\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;manageDoors;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageFight =
-						"<button value=\"Start Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;startFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
-				if (_currentEvent != null && _currentEvent.isFightStarted())
+						"<button value=\"Start Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;startFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+				if (this.currentEvent != null && this.currentEvent.isFightStarted())
 				{
 					manageFight =
-							"<button value=\"Stop Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;stopFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Stop Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;stopFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageFences =
-						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
-				if (_currentEvent != null && !_currentEvent.getFences().isEmpty())
+						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+				if (this.currentEvent != null && !this.currentEvent.getFences().isEmpty())
 				{
 					manageFences =
-							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageBets =
-						"<button value=\"Open Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
-				if (_currentEvent != null && _currentEvent.getAllowBets())
+						"<button value=\"Open Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;addBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+				if (this.currentEvent != null && this.currentEvent.getAllowBets())
 				{
 					manageBets =
-							"<button value=\"Close Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Close Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;delBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String returnBets = "";
-				if (_currentEvent != null && _currentEvent.hasBets())
+				if (this.currentEvent != null && this.currentEvent.hasBets())
 				{
 					returnBets =
-							"<button value=\"Return Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;returnBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Return Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;returnBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
-				boolean hasBets = _currentEvent != null && _currentEvent.hasBets();
+				boolean hasBets = this.currentEvent != null && this.currentEvent.hasBets();
 
 				sb.append("<tr><td><table width=750 border=0><tr><td>" + reAnnounce + "</td><td>" + manageDoors +
 						"</td><td>" + manageFences + "</td><td>" + manageBets + "</td><td>" + returnBets + "</td><td>" +
 						manageFight +
-						"</td><td><button value=\"Restart Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;restartFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Stop Event\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;stopEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
+						"</td><td><button value=\"Restart Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;restartFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Stop Event\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;stopEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
 				sb.append(
-						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
+						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass this.bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
 								(hasBets ?
-										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;giveBetRewards;1\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
+										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;giveBetRewards;1\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
 										"") + "</td></tr></table></td></tr>");
 				sb.append("<tr><td><table width=750>");
-				for (Entry<Integer, Integer> i : _currentEvent.getParticipants().entrySet())
+				for (Entry<Integer, Integer> i : this.currentEvent.getParticipants().entrySet())
 				{
 					if (i == null)
 					{
@@ -330,7 +330,7 @@ public class GMEventManager
 					if (i.getValue() == 1)
 					{
 						sb.append("<tr><td FIXWIDTH=200>" + pl.getName() +
-								"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delPlayer;" +
+								"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delPlayer;" +
 								pl.getObjectId() +
 								"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					}
@@ -338,12 +338,12 @@ public class GMEventManager
 				sb.append("</table></td></tr>");
 
 				sb.append(
-						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team Two Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount2\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;2; $rCount2 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
+						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team Two Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount2\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass this.bbscustom;action;gEvent;giveReward;2; $rCount2 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
 								(hasBets ?
-										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;giveBetRewards;2\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
+										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;giveBetRewards;2\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
 										"") + "</td></tr></table></td></tr>");
 				sb.append("<tr><td><table width=750>");
-				for (Entry<Integer, Integer> i : _currentEvent.getParticipants().entrySet())
+				for (Entry<Integer, Integer> i : this.currentEvent.getParticipants().entrySet())
 				{
 					if (i == null)
 					{
@@ -359,7 +359,7 @@ public class GMEventManager
 					if (i.getValue() == 2)
 					{
 						sb.append("<tr><td FIXWIDTH=200>" + pl.getName() +
-								"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delPlayer;" +
+								"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delPlayer;" +
 								pl.getObjectId() +
 								"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					}
@@ -369,7 +369,7 @@ public class GMEventManager
 				sb.append(
 						"<tr><td><table width=850 bgcolor=999999 border=0><tr><td FIXWIDTH=750>Banned Players</td></tr></table></td></tr>");
 				sb.append("<tr><td><table width=750>");
-				for (Entry<String, String> i : _currentEvent.getBannedIpsFromEvent().entrySet())
+				for (Entry<String, String> i : this.currentEvent.getBannedIpsFromEvent().entrySet())
 				{
 					if (i == null)
 					{
@@ -377,7 +377,7 @@ public class GMEventManager
 					}
 
 					sb.append("<tr><td FIXWIDTH=200>" + i.getValue() +
-							"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delBan;" +
+							"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delBan;" +
 							i.getKey() +
 							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 				}
@@ -387,7 +387,7 @@ public class GMEventManager
 						"<tr><td><table width=850 bgcolor=999999 border=0><tr><td FIXWIDTH=750>Waiting Players</td></tr></table></td></tr>");
 				sb.append("<tr><td>");
 				List<L2PcInstance> allPlayers = new ArrayList<>();
-				for (L2PeaceZone zone : _currentEvent.getPeaceZones())
+				for (L2PeaceZone zone : this.currentEvent.getPeaceZones())
 				{
 					if (zone == null)
 					{
@@ -437,7 +437,7 @@ public class GMEventManager
 						continue;
 					}
 
-					int participatedTimes = _currentEvent
+					int participatedTimes = currentEvent
 							.getParticipatedTimes(pl.getObjectId(), pl.getExternalIP(), pl.getInternalIP());
 					sb.append("<table width=750 " + (x % 2 == 1 ? "bgcolor=131210" : "") + "><tr><td FIXWIDTH=159>" +
 							pl.getName() + " " + (participatedTimes > 0 ? "(" + participatedTimes + ")" : "") +
@@ -445,13 +445,13 @@ public class GMEventManager
 							PlayerClassTable.getInstance().getClassNameById(pl.getClassId()) + " (Lv. " +
 							pl.getLevel() + ")</td><td FIXWIDTH=159>" +
 							(pl.getClan() != null ? pl.getClan().getName() : "NoClan") +
-							"</td><td FIXWIDTH=120><button value=\"Add to Team One\" width=120 height=20 action=\"bypass _bbscustom;action;gEvent;addPlayer;" +
+							"</td><td FIXWIDTH=120><button value=\"Add to Team One\" width=120 height=20 action=\"bypass this.bbscustom;action;gEvent;addPlayer;" +
 							pl.getObjectId() +
-							";1\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=120><button value=\"Add to Team Two\" width=120 height=20 action=\"bypass _bbscustom;action;gEvent;addPlayer;" +
+							";1\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=120><button value=\"Add to Team Two\" width=120 height=20 action=\"bypass this.bbscustom;action;gEvent;addPlayer;" +
 							pl.getObjectId() +
-							";2\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=16><button action=\"bypass _bbscustom;action;gEvent;kickPlayer;" +
+							";2\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=16><button action=\"bypass this.bbscustom;action;gEvent;kickPlayer;" +
 							pl.getObjectId() +
-							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td><td FIXWIDTH=16><button action=\"bypass _bbscustom;action;gEvent;banPlayer;" +
+							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td><td FIXWIDTH=16><button action=\"bypass this.bbscustom;action;gEvent;banPlayer;" +
 							pl.getObjectId() +
 							"\" value=\" \" width=16 height=16 back=L2UI_CT1.SellingAgencyWnd_df_HelpBtn_down fore=L2UI_CT1.SellingAgencyWnd_df_HelpBtn_down></button></td></tr></table>");
 					x++;
@@ -461,14 +461,14 @@ public class GMEventManager
 		}
 		else
 		{
-			if (_currentEvent == null || !_currentEvent.isStarted())
+			if (this.currentEvent == null || !this.currentEvent.isStarted())
 			{
 				sb.append("<tr><td align=center><font color=LEVEL>There are no GM event right now!</font></td></tr>");
 			}
 			else
 			{
 				boolean isInsidePeaceZone = false;
-				for (L2PeaceZone zone : _currentEvent.getPeaceZones())
+				for (L2PeaceZone zone : this.currentEvent.getPeaceZones())
 				{
 					if (zone == null)
 					{
@@ -486,30 +486,30 @@ public class GMEventManager
 				{
 					sb.append("<tr><td align=center><table width=500 background=L2UI_CH3.refinewnd_back_Pattern>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td><br><br></td></tr>");
-					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Name:</td><td>" + _currentEvent.getName() +
+					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Name:</td><td>" + this.currentEvent.getName() +
 							"</td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Description:</td><td>" +
-							_currentEvent.getDescription() + "</td></tr>");
+							this.currentEvent.getDescription() + "</td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Event Location:</td><td>" +
-							_currentEvent.getLocation() + "</td></tr>");
-					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Powered By:</td><td>" + _currentEvent.getGMName() +
+							this.currentEvent.getLocation() + "</td></tr>");
+					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td>Powered By:</td><td>" + this.currentEvent.getGMName() +
 							"</td></tr>");
 					sb.append("<tr><td FIXWIDTH=30>&nbsp;</td><td><br><br></td></tr>");
 					sb.append("</table></td></tr>");
 
 					sb.append("<tr><td align=center><table>");
-					sb.append("<tr><td><button value=\"Take me to " + _currentEvent.getLocation() +
-							"!\" width=530 height=24 action=\"bypass _bbscustom;action;gEvent;teleToEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
+					sb.append("<tr><td><button value=\"Take me to " + this.currentEvent.getLocation() +
+							"!\" width=530 height=24 action=\"bypass this.bbscustom;action;gEvent;teleToEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
 					sb.append("</table></td></tr>");
 				}
 				else
 				{
-					if (_currentEvent.getAllowBets() && _currentEvent.getCanBetNow() &&
-							!_currentEvent.playerHasBet(player.getObjectId()) &&
-							!_currentEvent.isParticipant(player.getObjectId()))
+					if (this.currentEvent.getAllowBets() && this.currentEvent.getCanBetNow() &&
+							!this.currentEvent.playerHasBet(player.getObjectId()) &&
+							!this.currentEvent.isParticipant(player.getObjectId()))
 					{
 						String options = "";
-						for (Entry<Integer, CurrencyInfo> b : _currencies.entrySet())
+						for (Entry<Integer, CurrencyInfo> b : this.currencies.entrySet())
 						{
 							options += b.getValue().getName() + ";";
 						}
@@ -523,7 +523,7 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Select the team you want to bet for:</td><td><combobox width=100 height=17 var=\"betTeam\" list=blue;red></td></tr>");
 						sb.append(
-								"</table></td></tr><tr><td align=center><table><tr><td><button value=\"Bet!\" width=500 height=24 action=\"bypass _bbscustom;action;gEvent;doBet; $bCoin ; $bet ; $betTeam ;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
+								"</table></td></tr><tr><td align=center><table><tr><td><button value=\"Bet!\" width=500 height=24 action=\"bypass this.bbscustom;action;gEvent;doBet; $bCoin ; $bet ; $betTeam ;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
 					}
 					else
 					{
@@ -540,7 +540,7 @@ public class GMEventManager
 
 	private int getCurrencyId(String coinName)
 	{
-		for (Entry<Integer, CurrencyInfo> i : _currencies.entrySet())
+		for (Entry<Integer, CurrencyInfo> i : this.currencies.entrySet())
 		{
 			if (i.getValue().getName().equalsIgnoreCase(coinName))
 			{
@@ -552,85 +552,85 @@ public class GMEventManager
 
 	private class CurrencyInfo
 	{
-		private String _name;
-		private int _id;
+		private String name;
+		private int id;
 
 		private CurrencyInfo(int id)
 		{
-			_id = id;
-			_name = ItemTable.getInstance().getTemplate(id).getName().replace(" ", "");
+			this.id = id;
+			this.name = ItemTable.getInstance().getTemplate(id).getName().replace(" ", "");
 		}
 
 		private String getName()
 		{
-			return _name;
+			return this.name;
 		}
 
 		private int getId()
 		{
-			return _id;
+			return this.id;
 		}
 	}
 
 	private class SubEvent
 	{
 		@SuppressWarnings("unused")
-		private String _eventName;
-		private String _startBypass;
-		private String _endBypass;
+		private String eventName;
+		private String startBypass;
+		private String endBypass;
 
 		private SubEvent(String eventName, String startBypass, String endBypass)
 		{
-			_eventName = eventName;
-			_startBypass = startBypass;
-			_endBypass = endBypass;
+			this.eventName = eventName;
+			this.startBypass = startBypass;
+			this.endBypass = endBypass;
 		}
 
 		private String getStartBypass()
 		{
-			return _startBypass;
+			return this.startBypass;
 		}
 
 		@SuppressWarnings("unused")
 		private String getEndBypass()
 		{
-			return _endBypass;
+			return this.endBypass;
 		}
 	}
 
 	private class Bets
 	{
-		private int _playerId;
-		private int _itemId;
-		private Long _betAmount;
-		private int _teamId;
+		private int playerId;
+		private int itemId;
+		private Long betAmount;
+		private int teamId;
 
 		private Bets(int playerId, int itemId, long betAmount, int teamId)
 		{
-			_playerId = playerId;
-			_itemId = itemId;
-			_betAmount = betAmount;
-			_teamId = teamId;
+			this.playerId = playerId;
+			this.itemId = itemId;
+			this.betAmount = betAmount;
+			this.teamId = teamId;
 		}
 
 		private int getPlayerId()
 		{
-			return _playerId;
+			return this.playerId;
 		}
 
 		private int getItemId()
 		{
-			return _itemId;
+			return this.itemId;
 		}
 
 		private Long getBetAmount()
 		{
-			return _betAmount;
+			return this.betAmount;
 		}
 
 		private int getTeamId()
 		{
-			return _teamId;
+			return this.teamId;
 		}
 	}
 
@@ -651,7 +651,7 @@ public class GMEventManager
 			switch (String.valueOf(st.nextToken()))
 			{
 				case "loadEvent":
-					_currentEvent = new Event(_predefinedEvents.get(st.nextToken().trim()));
+					this.currentEvent = new Event(this.predefinedEvents.get(st.nextToken().trim()));
 					break;
 
 				case "startSubEvent":
@@ -660,35 +660,35 @@ public class GMEventManager
 					Quest subEvent = QuestManager.getInstance().getQuest(eventName);
 					if (subEvent != null)
 					{
-						subEvent.notifyEvent(_subEvents.get(eventName).getStartBypass(), null, null);
+						subEvent.notifyEvent(this.subEvents.get(eventName).getStartBypass(), null, null);
 					}
 					break;
 				}
 
 				case "setName":
-					if (_currentEvent == null)//new event design
+					if (this.currentEvent == null)//new event design
 					{
-						_currentEvent = new Event(st.nextToken());
+						this.currentEvent = new Event(st.nextToken());
 					}
 					else
 					{
-						_currentEvent.setName(st.nextToken());
+						this.currentEvent.setName(st.nextToken());
 					}
 					break;
 
 				case "setDesc":
-					_currentEvent.setDescription(st.nextToken());
+					this.currentEvent.setDescription(st.nextToken());
 					break;
 
 				case "setLoc":
-					_currentEvent.setLocation(st.nextToken());
+					this.currentEvent.setLocation(st.nextToken());
 					break;
 
 				case "setPeace":
 					L2PeaceZone peace = ZoneManager.getInstance().getZone(player, L2PeaceZone.class);
 					if (peace != null)
 					{
-						_currentEvent.setPeaceZone(peace);
+						this.currentEvent.setPeaceZone(peace);
 					}
 					break;
 
@@ -696,30 +696,30 @@ public class GMEventManager
 					L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
 					if (arena != null)
 					{
-						_currentEvent.setArenaZone(arena);
+						this.currentEvent.setArenaZone(arena);
 					}
 					break;
 
 				case "setTeamOneSpawn":
-					_currentEvent.setTeamOneSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
+					this.currentEvent.setTeamOneSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
 					break;
 
 				case "setTeamTwoSpawn":
-					_currentEvent.setTeamTwoSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
+					this.currentEvent.setTeamTwoSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
 					break;
 
 				case "setSpawnBufferOne":
-					_currentEvent.setSpawnBufferOne(
+					this.currentEvent.setSpawnBufferOne(
 							new Location(player.getX(), player.getY(), player.getZ() + 10, player.getHeading()));
 					break;
 
 				case "setSpawnBufferTwo":
-					_currentEvent.setSpawnBufferTwo(
+					this.currentEvent.setSpawnBufferTwo(
 							new Location(player.getX(), player.getY(), player.getZ() + 10, player.getHeading()));
 					break;
 
 				case "setSpawnLoc":
-					_currentEvent.setTeleportLocation(new Location(player.getX(), player.getY(), player.getZ() + 10));
+					this.currentEvent.setTeleportLocation(new Location(player.getX(), player.getY(), player.getZ() + 10));
 					break;
 
 				case "setArenaSign":
@@ -734,101 +734,101 @@ public class GMEventManager
 					if (arenaSign != null)
 					{
 						staticId = arenaSign.getStaticObjectId();
-						_currentEvent.addArenaSignNpc(staticId);
+						this.currentEvent.addArenaSignNpc(staticId);
 					}
 					break;
 
 				case "delArenaSign":
-					_currentEvent.addArenaSignNpc(0);
+					this.currentEvent.addArenaSignNpc(0);
 					break;
 
 				case "addSignSpawn":
-					_currentEvent.addArenaSignSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
+					this.currentEvent.addArenaSignSpawn(new Location(player.getX(), player.getY(), player.getZ() + 10));
 					break;
 
 				case "addDoor":
-					_currentEvent.addDoor(((L2DoorInstance) player.getTarget()).getDoorId());
+					this.currentEvent.addDoor(((L2DoorInstance) player.getTarget()).getDoorId());
 					break;
 
 				case "delDoor":
-					_currentEvent.addDoor(0);
+					this.currentEvent.addDoor(0);
 					break;
 
 				case "delSignSpawn":
-					_currentEvent.addArenaSignSpawn(null);
+					this.currentEvent.addArenaSignSpawn(null);
 					break;
 
 				case "delName":
-					_currentEvent.setName(null);
+					this.currentEvent.setName(null);
 					break;
 
 				case "delDesc":
-					_currentEvent.setDescription(null);
+					this.currentEvent.setDescription(null);
 					break;
 
 				case "delLoc":
-					_currentEvent.setLocation(null);
+					this.currentEvent.setLocation(null);
 					break;
 
 				case "delPeace":
-					_currentEvent.setPeaceZone(null);
+					this.currentEvent.setPeaceZone(null);
 					break;
 
 				case "delArena":
-					_currentEvent.setArenaZone(null);
+					this.currentEvent.setArenaZone(null);
 					break;
 
 				case "delTeamOneSpawn":
-					_currentEvent.setTeamOneSpawn(null);
+					this.currentEvent.setTeamOneSpawn(null);
 					break;
 
 				case "delTeamTwoSpawn":
-					_currentEvent.setTeamTwoSpawn(null);
+					this.currentEvent.setTeamTwoSpawn(null);
 					break;
 
 				case "delSpawnBufferOne":
-					_currentEvent.setSpawnBufferOne(null);
+					this.currentEvent.setSpawnBufferOne(null);
 					break;
 
 				case "delSpawnBufferTwo":
-					_currentEvent.setSpawnBufferTwo(null);
+					this.currentEvent.setSpawnBufferTwo(null);
 					break;
 
 				case "delSpawnLoc":
-					_currentEvent.setTeleportLocation(null);
+					this.currentEvent.setTeleportLocation(null);
 					break;
 
 				case "startEvent":
-					_currentEvent.startEvent(player.getName());
+					this.currentEvent.startEvent(player.getName());
 					break;
 
 				case "restartConfig":
-					_currentEvent = null;
+					this.currentEvent = null;
 					break;
 
 				case "startFight":
-					_currentEvent.startFight();
+					this.currentEvent.startFight();
 					break;
 
 				case "stopFight":
-					_currentEvent.stopFight();
+					this.currentEvent.stopFight();
 					break;
 
 				case "restartFight":
-					_currentEvent.restartFight();
+					this.currentEvent.restartFight();
 					break;
 
 				case "stopEvent":
-					ArrayList<Integer> copyParticipants = new ArrayList<>(_currentEvent.getParticipants().keySet());
+					ArrayList<Integer> copyParticipants = new ArrayList<>(this.currentEvent.getParticipants().keySet());
 					for (int i : copyParticipants)
 					{
-						_currentEvent.removeParticipant(i);
+						this.currentEvent.removeParticipant(i);
 					}
 
-					_currentEvent.deleteArenaSigns();
-					_currentEvent.removeFences();
+					this.currentEvent.deleteArenaSigns();
+					this.currentEvent.removeFences();
 
-					_currentEvent = null;
+					this.currentEvent = null;
 					Announcements.getInstance()
 							.announceToAll("The GM Event has ended, thanks everyone for participate!");
 					break;
@@ -838,41 +838,41 @@ public class GMEventManager
 					int playerId = Integer.valueOf(st.nextToken());
 					int teamId = Integer.valueOf(st.nextToken());
 
-					_currentEvent.addParticipant(playerId, teamId);
+					this.currentEvent.addParticipant(playerId, teamId);
 					break;
 				}
 				case "delPlayer":
 				{
 					int playerId = Integer.valueOf(st.nextToken());
 
-					_currentEvent.removeParticipant(playerId);
+					this.currentEvent.removeParticipant(playerId);
 					break;
 				}
 				case "kickPlayer":
 				{
 					int playerId = Integer.valueOf(st.nextToken());
-					_currentEvent.kickPlayer(playerId);
+					this.currentEvent.kickPlayer(playerId);
 					break;
 				}
 				case "banPlayer":
 				{
 					int playerId = Integer.valueOf(st.nextToken());
-					_currentEvent.addBannedIp(playerId);
+					this.currentEvent.addBannedIp(playerId);
 					break;
 				}
 				case "delBan":
 				{
 					String ip = st.nextToken();
-					_currentEvent.removeBannedIp(ip);
+					this.currentEvent.removeBannedIp(ip);
 					break;
 				}
 
 				case "reAnnounce":
-					_currentEvent.reAnnounce();
+					this.currentEvent.reAnnounce();
 					break;
 
 				case "manageDoors":
-					for (int i : _currentEvent.getDoors())
+					for (int i : this.currentEvent.getDoors())
 					{
 						L2DoorInstance door = DoorTable.getInstance().getDoor(i);
 						if (door == null)
@@ -892,31 +892,31 @@ public class GMEventManager
 					break;
 
 				case "addFences":
-					_currentEvent.addFeances();
+					this.currentEvent.addFeances();
 					break;
 
 				case "delFences":
-					_currentEvent.removeFences();
+					this.currentEvent.removeFences();
 					break;
 
 				case "addBets":
-					_currentEvent.setAllowBets(true);
+					this.currentEvent.setAllowBets(true);
 					break;
 
 				case "delBets":
-					_currentEvent.setAllowBets(false);
+					this.currentEvent.setAllowBets(false);
 					break;
 
 				case "returnBets":
-					_currentEvent.returnBets();
+					this.currentEvent.returnBets();
 					break;
 
 				case "giveBetRewards":
-					_currentEvent.giveBetRewards(Integer.valueOf(st.nextToken()));
+					this.currentEvent.giveBetRewards(Integer.valueOf(st.nextToken()));
 					break;
 
 				case "giveReward":
-					_currentEvent.giveReward(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken().trim()));
+					this.currentEvent.giveReward(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken().trim()));
 					break;
 			}
 			CustomCommunityBoard.getInstance().parseCmd("_bbscustom;gmEvent;0", player);
@@ -926,27 +926,27 @@ public class GMEventManager
 			switch (String.valueOf(st.nextToken()))
 			{
 				case "teleToEvent":
-					if (_currentEvent != null && _currentEvent.isStarted() && teleportConditions(player))
+					if (this.currentEvent != null && this.currentEvent.isStarted() && teleportConditions(player))
 					{
-						player.teleToLocation(_currentEvent.getTeleportLocation(), true);
+						player.teleToLocation(this.currentEvent.getTeleportLocation(), true);
 					}
 					break;
 
 				case "acceptRules":
-					if (_currentEvent != null && _currentEvent.isStarted())
+					if (this.currentEvent != null && this.currentEvent.isStarted())
 					{
-						_currentEvent.acceptRules(player.getObjectId());
+						this.currentEvent.acceptRules(player.getObjectId());
 						player.sendPacket(new ExShowScreenMessage("You're now allowed to enter! ", 3000));
 					}
 					break;
 
 				case "getBuff":
-					if (player.getIsInsideGMEvent() && _currentEvent != null && _currentEvent.isStarted() &&
-							_currentEvent.isParticipant(player.getObjectId()))
+					if (player.getIsInsideGMEvent() && this.currentEvent != null && this.currentEvent.isStarted() &&
+							this.currentEvent.isParticipant(player.getObjectId()))
 					{
-						if (_currentEvent.canUseMoreBuffs(player.getObjectId()))
+						if (this.currentEvent.canUseMoreBuffs(player.getObjectId()))
 						{
-							_currentEvent.addUsedBuff(player.getObjectId());
+							this.currentEvent.addUsedBuff(player.getObjectId());
 
 							L2Skill buff = SkillTable.getInstance().getInfo(Integer.valueOf(st.nextToken()), 1);
 							if (buff != null)
@@ -958,9 +958,9 @@ public class GMEventManager
 					break;
 
 				case "doBet":
-					if (_currentEvent == null || !_currentEvent.getCanBetNow() || !_currentEvent.getAllowBets() ||
-							_currentEvent.playerHasBet(player.getObjectId()) &&
-									!_currentEvent.isParticipant(player.getObjectId()))
+					if (this.currentEvent == null || !this.currentEvent.getCanBetNow() || !this.currentEvent.getAllowBets() ||
+							this.currentEvent.playerHasBet(player.getObjectId()) &&
+									!this.currentEvent.isParticipant(player.getObjectId()))
 					{
 						return;
 					}
@@ -974,7 +974,7 @@ public class GMEventManager
 						itemId = getCurrencyId(st.nextToken().trim());
 					}
 
-					if (_currencies.get(itemId) == null)
+					if (this.currencies.get(itemId) == null)
 					{
 						return; //client hack
 					}
@@ -1011,7 +1011,7 @@ public class GMEventManager
 						return;
 					}
 
-					_currentEvent.addBet(player.getObjectId(), itemId, betAmount, teamId);
+					this.currentEvent.addBet(player.getObjectId(), itemId, betAmount, teamId);
 
 					CustomCommunityBoard.getInstance().parseCmd("_bbscustom;gmEvent;0", player);
 					break;
@@ -1036,224 +1036,224 @@ public class GMEventManager
 
 	private class ParticipateRegister
 	{
-		private int _playerId;
-		private String _externalIp;
-		private String _internalIp;
-		private int _participatedTimes;
+		private int playerId;
+		private String externalIp;
+		private String internalIp;
+		private int participatedTimes;
 
 		private ParticipateRegister(int playerId, String externalIp, String internalIp)
 		{
-			_playerId = playerId;
-			_externalIp = externalIp;
-			_internalIp = internalIp;
-			_participatedTimes = 1;
+			this.playerId = playerId;
+			this.externalIp = externalIp;
+			this.internalIp = internalIp;
+			this.participatedTimes = 1;
 		}
 
 		@SuppressWarnings("unused")
 		private int getPlayerId()
 		{
-			return _playerId;
+			return this.playerId;
 		}
 
 		private boolean matchIp(String externalIp, String internalIp)
 		{
-			return _externalIp.equalsIgnoreCase(externalIp) && _internalIp.equalsIgnoreCase(internalIp);
+			return this.externalIp.equalsIgnoreCase(externalIp) && this.internalIp.equalsIgnoreCase(internalIp);
 		}
 
 		private int getParticipatedTimes()
 		{
-			return _participatedTimes;
+			return this.participatedTimes;
 		}
 
 		private void increaseParticipatedTimes()
 		{
-			_participatedTimes++;
+			this.participatedTimes++;
 		}
 	}
 
 	private class Event
 	{
-		private String _gmName;
-		private String _eventName;
-		private String _description;
-		private String _location;
-		private List<Integer> _doors;
-		private List<L2ArenaZone> _arenaZones;
-		private List<L2Npc> _buffers;
-		private List<L2Npc> _arenaSigns;
-		private List<Integer> _rewardedPlayers;
-		private List<L2PeaceZone> _peaceZones;
-		private List<Integer> _arenaSignIds;
-		private List<Location> _arenaSignSpawns;
-		private List<L2ColosseumFence> _areaFences;
-		private Map<Integer, Bets> _bets;
-		private Map<Integer, Integer> _usedBuffs;
-		private Map<Integer, Integer> _participants;
-		private Map<String, String> _bannedIpsFromTheEvent;
-		private Map<Integer, ParticipateRegister> _participatedRegister;
-		private Map<Integer, Boolean> _acceptedEventRules;
-		private Location _eventTeleport;
-		private Location _spawnOne;
-		private Location _spawnTwo;
-		private Location _bufferSpawnOne;
-		private Location _bufferSpawnTwo;
-		private boolean _isStarted;
-		private boolean _isFightStarted;
-		private boolean _allowBets; //The gm can turn it on/off at each combat
-		private boolean _canBetNow;
+		private String gmName;
+		private String eventName;
+		private String description;
+		private String location;
+		private List<Integer> doors;
+		private List<L2ArenaZone> arenaZones;
+		private List<L2Npc> buffers;
+		private List<L2Npc> arenaSigns;
+		private List<Integer> rewardedPlayers;
+		private List<L2PeaceZone> peaceZones;
+		private List<Integer> arenaSignIds;
+		private List<Location> arenaSignSpawns;
+		private List<L2ColosseumFence> areaFences;
+		private Map<Integer, Bets> bets;
+		private Map<Integer, Integer> usedBuffs;
+		private Map<Integer, Integer> participants;
+		private Map<String, String> bannedIpsFromTheEvent;
+		private Map<Integer, ParticipateRegister> participatedRegister;
+		private Map<Integer, Boolean> acceptedEventRules;
+		private Location eventTeleport;
+		private Location spawnOne;
+		private Location spawnTwo;
+		private Location bufferSpawnOne;
+		private Location bufferSpawnTwo;
+		private boolean isStarted;
+		private boolean isFightStarted;
+		private boolean allowBets; //The gm can turn it on/off at each combat
+		private boolean canBetNow;
 
 		private Event(String eventName)
 		{
-			_eventName = eventName;
-			_doors = new ArrayList<>();
-			_arenaZones = new ArrayList<>();
-			_peaceZones = new ArrayList<>();
-			_participants = new HashMap<>();
-			_areaFences = new ArrayList<>();
-			_bannedIpsFromTheEvent = new HashMap<>();
-			_arenaSignSpawns = new ArrayList<>();
-			_arenaSignIds = new ArrayList<>();
-			_acceptedEventRules = new HashMap<>();
-			_participatedRegister = new HashMap<>();
-			_usedBuffs = new HashMap<>();
-			_buffers = new ArrayList<>();
-			_arenaSigns = new ArrayList<>();
-			_rewardedPlayers = new ArrayList<>();
-			_bets = new HashMap<>();
-			_allowBets = false;
+			this.eventName = eventName;
+			this.doors = new ArrayList<>();
+			this.arenaZones = new ArrayList<>();
+			this.peaceZones = new ArrayList<>();
+			this.participants = new HashMap<>();
+			this.areaFences = new ArrayList<>();
+			this.bannedIpsFromTheEvent = new HashMap<>();
+			this.arenaSignSpawns = new ArrayList<>();
+			this.arenaSignIds = new ArrayList<>();
+			this.acceptedEventRules = new HashMap<>();
+			this.participatedRegister = new HashMap<>();
+			this.usedBuffs = new HashMap<>();
+			this.buffers = new ArrayList<>();
+			this.arenaSigns = new ArrayList<>();
+			this.rewardedPlayers = new ArrayList<>();
+			this.bets = new HashMap<>();
+			this.allowBets = false;
 		}
 
 		private Event(String eventName, String description, String locationName, List<Integer> doors, List<L2ArenaZone> arenaZones, List<L2PeaceZone> peaceZones, Location teamOneSpawn, Location teamTwoSpawn, Location bufferTeamOneSpawn, Location bufferTeamTwoSpawn, Location eventSpawn, List<Location> arenaSignSpawns, List<Integer> arenaSigns)
 		{
-			_eventName = eventName;
-			_description = description;
-			_location = locationName;
-			_doors = doors;
-			_arenaZones = arenaZones;
-			_peaceZones = peaceZones;
-			_spawnOne = teamOneSpawn;
-			_spawnTwo = teamTwoSpawn;
-			_bufferSpawnOne = bufferTeamOneSpawn;
-			_bufferSpawnTwo = bufferTeamTwoSpawn;
-			_eventTeleport = eventSpawn;
-			_arenaSignSpawns = arenaSignSpawns;
-			_arenaSignIds = arenaSigns;
-			_participants = new HashMap<>();
-			_areaFences = new ArrayList<>();
-			_bannedIpsFromTheEvent = new HashMap<>();
-			_acceptedEventRules = new HashMap<>();
-			_participatedRegister = new HashMap<>();
-			_usedBuffs = new HashMap<>();
-			_buffers = new ArrayList<>();
-			_arenaSigns = new ArrayList<>();
-			_rewardedPlayers = new ArrayList<>();
-			_bets = new HashMap<>();
-			_allowBets = false;
+			this.eventName = eventName;
+			this.description = description;
+			this.location = locationName;
+			this.doors = doors;
+			this.arenaZones = arenaZones;
+			this.peaceZones = peaceZones;
+			this.spawnOne = teamOneSpawn;
+			this.spawnTwo = teamTwoSpawn;
+			this.bufferSpawnOne = bufferTeamOneSpawn;
+			this.bufferSpawnTwo = bufferTeamTwoSpawn;
+			this.eventTeleport = eventSpawn;
+			this.arenaSignSpawns = arenaSignSpawns;
+			this.arenaSignIds = arenaSigns;
+			this.participants = new HashMap<>();
+			this.areaFences = new ArrayList<>();
+			this.bannedIpsFromTheEvent = new HashMap<>();
+			this.acceptedEventRules = new HashMap<>();
+			this.participatedRegister = new HashMap<>();
+			this.usedBuffs = new HashMap<>();
+			this.buffers = new ArrayList<>();
+			this.arenaSigns = new ArrayList<>();
+			this.rewardedPlayers = new ArrayList<>();
+			this.bets = new HashMap<>();
+			this.allowBets = false;
 		}
 
 		private Event(Event event)
 		{
-			_eventName = event.getName();
-			_description = event.getDescription();
-			_location = event.getLocation();
-			_doors = event.getDoors();
-			_arenaZones = event.getArenaZones();
-			_peaceZones = event.getPeaceZones();
-			_spawnOne = event.getTeamOneSpawn();
-			_spawnTwo = event.getTeamTwoSpawn();
-			_bufferSpawnOne = event.getSpawnBufferOne();
-			_bufferSpawnTwo = event.getSpawnBufferTwo();
-			_eventTeleport = event.getTeleportLocation();
-			_arenaSignSpawns = event.getArenaSignSpawns();
-			_arenaSignIds = event.getArenaSignIds();
-			_arenaSignSpawns = event.getArenaSignSpawns();
-			_participants = new HashMap<>();
-			_areaFences = new ArrayList<>();
-			_bannedIpsFromTheEvent = new HashMap<>();
-			_acceptedEventRules = new HashMap<>();
-			_participatedRegister = new HashMap<>();
-			_usedBuffs = new HashMap<>();
-			_buffers = new ArrayList<>();
-			_arenaSigns = new ArrayList<>();
-			_rewardedPlayers = new ArrayList<>();
-			_bets = new HashMap<>();
-			_allowBets = false;
+			this.eventName = event.getName();
+			this.description = event.getDescription();
+			this.location = event.getLocation();
+			this.doors = event.getDoors();
+			this.arenaZones = event.getArenaZones();
+			this.peaceZones = event.getPeaceZones();
+			this.spawnOne = event.getTeamOneSpawn();
+			this.spawnTwo = event.getTeamTwoSpawn();
+			this.bufferSpawnOne = event.getSpawnBufferOne();
+			this.bufferSpawnTwo = event.getSpawnBufferTwo();
+			this.eventTeleport = event.getTeleportLocation();
+			this.arenaSignSpawns = event.getArenaSignSpawns();
+			this.arenaSignIds = event.getArenaSignIds();
+			this.arenaSignSpawns = event.getArenaSignSpawns();
+			this.participants = new HashMap<>();
+			this.areaFences = new ArrayList<>();
+			this.bannedIpsFromTheEvent = new HashMap<>();
+			this.acceptedEventRules = new HashMap<>();
+			this.participatedRegister = new HashMap<>();
+			this.usedBuffs = new HashMap<>();
+			this.buffers = new ArrayList<>();
+			this.arenaSigns = new ArrayList<>();
+			this.rewardedPlayers = new ArrayList<>();
+			this.bets = new HashMap<>();
+			this.allowBets = false;
 		}
 
 		private String getName()
 		{
-			return _eventName;
+			return this.eventName;
 		}
 
 		private void setName(String n)
 		{
-			_eventName = n;
+			this.eventName = n;
 		}
 
 		private String getGMName()
 		{
-			return _gmName;
+			return this.gmName;
 		}
 
 		private void setDescription(String d)
 		{
-			_description = d;
+			this.description = d;
 		}
 
 		private String getDescription()
 		{
-			return _description;
+			return this.description;
 		}
 
 		private void setLocation(String b)
 		{
-			_location = b;
+			this.location = b;
 		}
 
 		private String getLocation()
 		{
-			return _location;
+			return this.location;
 		}
 
 		private boolean isStarted()
 		{
-			return _isStarted;
+			return this.isStarted;
 		}
 
 		private boolean isFightStarted()
 		{
-			return _isFightStarted;
+			return this.isFightStarted;
 		}
 
 		private List<L2ColosseumFence> getFences()
 		{
-			return _areaFences;
+			return this.areaFences;
 		}
 
 		private List<Integer> getDoors()
 		{
-			return _doors;
+			return this.doors;
 		}
 
 		private List<L2ArenaZone> getArenaZones()
 		{
-			return _arenaZones;
+			return this.arenaZones;
 		}
 
 		private List<L2PeaceZone> getPeaceZones()
 		{
-			return _peaceZones;
+			return this.peaceZones;
 		}
 
 		private void setArenaZone(L2ArenaZone z)
 		{
 			if (z == null)
 			{
-				_arenaZones.clear();
+				this.arenaZones.clear();
 			}
-			else if (!_arenaZones.contains(z))
+			else if (!this.arenaZones.contains(z))
 			{
-				_arenaZones.add(z);
+				this.arenaZones.add(z);
 			}
 		}
 
@@ -1261,100 +1261,100 @@ public class GMEventManager
 		{
 			if (z == null)
 			{
-				_peaceZones.clear();
+				this.peaceZones.clear();
 			}
-			else if (!_peaceZones.contains(z))
+			else if (!this.peaceZones.contains(z))
 			{
-				_peaceZones.add(z);
+				this.peaceZones.add(z);
 			}
 		}
 
 		private void setTeleportLocation(Location l)
 		{
-			_eventTeleport = l;
+			this.eventTeleport = l;
 		}
 
 		private Location getTeleportLocation()
 		{
-			return _eventTeleport;
+			return this.eventTeleport;
 		}
 
 		private void setTeamOneSpawn(Location loc)
 		{
-			_spawnOne = loc;
+			this.spawnOne = loc;
 		}
 
 		private void setTeamTwoSpawn(Location loc)
 		{
-			_spawnTwo = loc;
+			this.spawnTwo = loc;
 		}
 
 		private boolean isParticipant(int playerId)
 		{
-			return _participants.containsKey(playerId);
+			return this.participants.containsKey(playerId);
 		}
 
 		private Map<Integer, Integer> getParticipants()
 		{
-			return _participants;
+			return this.participants;
 		}
 
 		private void setSpawnBufferOne(Location l)
 		{
-			_bufferSpawnOne = l;
+			this.bufferSpawnOne = l;
 		}
 
 		private void setSpawnBufferTwo(Location l)
 		{
-			_bufferSpawnTwo = l;
+			this.bufferSpawnTwo = l;
 		}
 
 		private Location getSpawnBufferOne()
 		{
-			return _bufferSpawnOne;
+			return this.bufferSpawnOne;
 		}
 
 		private Location getSpawnBufferTwo()
 		{
-			return _bufferSpawnTwo;
+			return this.bufferSpawnTwo;
 		}
 
 		private boolean canUseMoreBuffs(int playerId)
 		{
-			return !_usedBuffs.containsKey(playerId) || _usedBuffs.get(playerId) < 5;
+			return !this.usedBuffs.containsKey(playerId) || this.usedBuffs.get(playerId) < 5;
 		}
 
 		private void addUsedBuff(int playerId)
 		{
-			if (_usedBuffs.containsKey(playerId))
+			if (this.usedBuffs.containsKey(playerId))
 			{
-				_usedBuffs.put(playerId, _usedBuffs.get(playerId) + 1);
+				this.usedBuffs.put(playerId, this.usedBuffs.get(playerId) + 1);
 			}
 			else
 			{
-				_usedBuffs.put(playerId, 1);
+				this.usedBuffs.put(playerId, 1);
 			}
 		}
 
 		private Location getTeamOneSpawn()
 		{
-			return _spawnOne;
+			return this.spawnOne;
 		}
 
 		private Location getTeamTwoSpawn()
 		{
-			return _spawnTwo;
+			return this.spawnTwo;
 		}
 
 		private void addDoor(int door)
 		{
 			if (door == 0)
 			{
-				_doors.clear();
+				this.doors.clear();
 			}
 			else
 			{
-				_doors.add(door);
+				this.doors.add(door);
 			}
 		}
 
@@ -1362,40 +1362,40 @@ public class GMEventManager
 		{
 			if (loc == null)
 			{
-				_arenaSignSpawns.clear();
+				this.arenaSignSpawns.clear();
 			}
 			else
 			{
-				_arenaSignSpawns.add(loc);
+				this.arenaSignSpawns.add(loc);
 			}
 		}
 
 		private List<Location> getArenaSignSpawns()
 		{
-			return _arenaSignSpawns;
+			return this.arenaSignSpawns;
 		}
 
 		private List<Integer> getArenaSignIds()
 		{
-			return _arenaSignIds;
+			return this.arenaSignIds;
 		}
 
 		private void addArenaSignNpc(int id)
 		{
 			if (id == 0)
 			{
-				_arenaSignIds.clear();
+				this.arenaSignIds.clear();
 			}
 			else
 			{
-				_arenaSignIds.add(id);
+				this.arenaSignIds.add(id);
 			}
 		}
 
 		private int getParticipatedTimes(int playerId, String externalIp, String internalIp)
 		{
 			int times = 0;
-			for (Entry<Integer, ParticipateRegister> reg : _participatedRegister.entrySet())
+			for (Entry<Integer, ParticipateRegister> reg : this.participatedRegister.entrySet())
 			{
 				ParticipateRegister i = reg.getValue();
 				if (i == null)
@@ -1413,12 +1413,12 @@ public class GMEventManager
 
 		private Map<String, String> getBannedIpsFromEvent()
 		{
-			return _bannedIpsFromTheEvent;
+			return this.bannedIpsFromTheEvent;
 		}
 
 		private boolean isBannedIp(String eIp)
 		{
-			return _bannedIpsFromTheEvent.containsKey(eIp);
+			return this.bannedIpsFromTheEvent.containsKey(eIp);
 		}
 
 		private void addBannedIp(int playerId)
@@ -1429,12 +1429,12 @@ public class GMEventManager
 				return;
 			}
 
-			_bannedIpsFromTheEvent.put(player.getExternalIP(), player.getName());
+			this.bannedIpsFromTheEvent.put(player.getExternalIP(), player.getName());
 
 			kickPlayer(playerId);
 
 			//Revalidate the zone to kick dualbox
-			for (L2PeaceZone zone : _peaceZones)
+			for (L2PeaceZone zone : this.peaceZones)
 			{
 				if (zone == null)
 				{
@@ -1454,60 +1454,60 @@ public class GMEventManager
 
 		private void removeBannedIp(String b)
 		{
-			_bannedIpsFromTheEvent.remove(b);
+			this.bannedIpsFromTheEvent.remove(b);
 		}
 
 		private boolean hasBets()
 		{
-			return !_bets.isEmpty();
+			return !this.bets.isEmpty();
 		}
 
 		private void setCanBetNow(boolean b)
 		{
-			_canBetNow = b;
+			this.canBetNow = b;
 
-			if (_allowBets)
+			if (this.allowBets)
 			{
 				sendPacketToWaitingPlayers(
-						new CreatureSay(1, 15, "", "The bets are now " + (_canBetNow ? "open" : "closed") + "! :"));
+						new CreatureSay(1, 15, "", "The bets are now " + (this.canBetNow ? "open" : "closed") + "! :"));
 			}
 		}
 
 		private boolean getCanBetNow()
 		{
-			return _canBetNow;
+			return this.canBetNow;
 		}
 
 		private void setAllowBets(boolean b)
 		{
-			_allowBets = b;
+			this.allowBets = b;
 		}
 
 		private boolean getAllowBets()
 		{
-			return _allowBets;
+			return this.allowBets;
 		}
 
 		private void addBet(int playerId, int itemId, long betAmount, int teamId)
 		{
-			synchronized (_bets)
+			synchronized (this.bets)
 			{
-				_bets.put(playerId, new Bets(playerId, itemId, betAmount, teamId));
+				this.bets.put(playerId, new Bets(playerId, itemId, betAmount, teamId));
 
 				String charName = CharNameTable.getInstance().getNameById(playerId);
-				Util.logToFile(charName + " did a bet " + _currencies.get(itemId).getName() + "(" + betAmount +
+				Util.logToFile(charName + " did a bet " + currencies.get(itemId).getName() + "(" + betAmount +
 						") for the team " + (teamId == 1 ? "blue" : "red"), "GMEvents", true);
 			}
 		}
 
 		private boolean playerHasBet(int playerId)
 		{
-			return _bets.containsKey(playerId);
+			return this.bets.containsKey(playerId);
 		}
 
 		private void giveBetRewards(int winnerTeam)
 		{
-			for (Entry<Integer, CurrencyInfo> currency : _currencies.entrySet())
+			for (Entry<Integer, CurrencyInfo> currency : currencies.entrySet())
 			{
 				CurrencyInfo coin = currency.getValue();
 				if (coin == null)
@@ -1516,7 +1516,7 @@ public class GMEventManager
 				}
 
 				int winnerTeamSize = 0;
-				for (Entry<Integer, Integer> i : _participants.entrySet())
+				for (Entry<Integer, Integer> i : this.participants.entrySet())
 				{
 					if (i.getValue() == winnerTeam)
 					{
@@ -1526,7 +1526,7 @@ public class GMEventManager
 
 				long totalBet = 0;
 				long fighterTotalBet = 0;
-				for (Entry<Integer, Bets> bets : _bets.entrySet())
+				for (Entry<Integer, Bets> bets : this.bets.entrySet())
 				{
 					Bets bet = bets.getValue();
 					if (bet == null)
@@ -1553,7 +1553,7 @@ public class GMEventManager
 
 				//Reward the fighter players
 				long winnerBetReward = Math.round(totalBet * 0.1f / winnerTeamSize);
-				for (Entry<Integer, Integer> i : _participants.entrySet())
+				for (Entry<Integer, Integer> i : this.participants.entrySet())
 				{
 					if (i.getValue() == winnerTeam)
 					{
@@ -1563,7 +1563,7 @@ public class GMEventManager
 				}
 
 				//Reward the winner waiting players
-				for (Entry<Integer, Bets> bets : _bets.entrySet())
+				for (Entry<Integer, Bets> bets : this.bets.entrySet())
 				{
 					Bets bet = bets.getValue();
 					if (bet == null)
@@ -1579,20 +1579,20 @@ public class GMEventManager
 					}
 				}
 			}
-			_bets.clear();
+			this.bets.clear();
 		}
 
 		private void reAnnounce()
 		{
 			Announcements.getInstance()
-					.announceToAll(_eventName + " at " + _location + " join with ALT + B > GM EVENT!");
+					.announceToAll(this.eventName + " at " + this.location + " join with ALT + B > GM EVENT!");
 		}
 
 		private void returnBets()
 		{
-			_canBetNow = false;
+			this.canBetNow = false;
 
-			for (Entry<Integer, Bets> bets : _bets.entrySet())
+			for (Entry<Integer, Bets> bets : this.bets.entrySet())
 			{
 				Bets bet = bets.getValue();
 				if (bet == null)
@@ -1602,36 +1602,36 @@ public class GMEventManager
 
 				sendRewardMail(bet.getPlayerId(), bet.getItemId(), bet.getBetAmount(), "Bet Refound!");
 			}
-			_bets.clear();
+			this.bets.clear();
 		}
 
 		private boolean hasAcceptedRules(int playerId)
 		{
-			return _acceptedEventRules.containsKey(playerId) && _acceptedEventRules.get(playerId);
+			return this.acceptedEventRules.containsKey(playerId) && this.acceptedEventRules.get(playerId);
 		}
 
 		private void acceptRules(int charId)
 		{
-			_acceptedEventRules.put(charId, true);
+			this.acceptedEventRules.put(charId, true);
 		}
 
 		private void addFeances()
 		{
-			if (!_arenaZones.isEmpty() && _arenaZones.size() == 1)
+			if (!this.arenaZones.isEmpty() && this.arenaZones.size() == 1)
 			{
 				L2ColosseumFence feance =
-						addDynamic(_arenaZones.get(0).getZone().getCenterX(), _arenaZones.get(0).getZone().getCenterY(),
+						addDynamic(this.arenaZones.get(0).getZone().getCenterX(), this.arenaZones.get(0).getZone().getCenterY(),
 								-3775, -3775 + 100, -3775 - 100, 1100, 1100);
 				if (feance != null)
 				{
-					_areaFences.add(feance);
+					this.areaFences.add(feance);
 				}
 			}
 		}
 
 		private void removeFences()
 		{
-			for (L2ColosseumFence fence : _areaFences)
+			for (L2ColosseumFence fence : this.areaFences)
 			{
 				if (fence == null)
 				{
@@ -1641,12 +1641,12 @@ public class GMEventManager
 				fence.decayMe();
 				fence.getKnownList().removeAllKnownObjects();
 			}
-			_areaFences.clear();
+			this.areaFences.clear();
 		}
 
 		private void startFight()
 		{
-			_isFightStarted = true;
+			this.isFightStarted = true;
 
 			spawnBuffers();
 
@@ -1662,7 +1662,7 @@ public class GMEventManager
 
 				deleteBuffers();
 
-				for (Entry<Integer, Integer> i : _currentEvent.getParticipants().entrySet())
+				for (Entry<Integer, Integer> i : currentEvent.getParticipants().entrySet())
 				{
 					L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
 					if (player != null)
@@ -1678,34 +1678,34 @@ public class GMEventManager
 
 		private void spawnBuffers()
 		{
-			L2Npc bufferOne = NpcUtil.addSpawn(_bufferNpcId, _bufferSpawnOne.getX(), _bufferSpawnOne.getY(),
-					_bufferSpawnOne.getZ(), _bufferSpawnOne.getHeading(), false, 0, false, 0);
-			_buffers.add(bufferOne);
+			L2Npc bufferOne = NpcUtil.addSpawn(bufferNpcId, this.bufferSpawnOne.getX(), this.bufferSpawnOne.getY(),
+					this.bufferSpawnOne.getZ(), this.bufferSpawnOne.getHeading(), false, 0, false, 0);
+			this.buffers.add(bufferOne);
 
-			L2Npc bufferTwo = NpcUtil.addSpawn(_bufferNpcId, _bufferSpawnTwo.getX(), _bufferSpawnTwo.getY(),
-					_bufferSpawnTwo.getZ(), _bufferSpawnTwo.getHeading(), false, 0, false, 0);
-			_buffers.add(bufferTwo);
+			L2Npc bufferTwo = NpcUtil.addSpawn(bufferNpcId, this.bufferSpawnTwo.getX(), this.bufferSpawnTwo.getY(),
+					this.bufferSpawnTwo.getZ(), this.bufferSpawnTwo.getHeading(), false, 0, false, 0);
+			this.buffers.add(bufferTwo);
 		}
 
 		private void spawnArenaSigns()
 		{
-			if (_arenaSignIds.isEmpty())
+			if (this.arenaSignIds.isEmpty())
 			{
-				for (Location loc : _arenaSignSpawns)
+				for (Location loc : this.arenaSignSpawns)
 				{
 					L2Npc npc =
-							NpcUtil.addSpawn(_dummyArenaSignNpcId, loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(),
+							NpcUtil.addSpawn(dummyArenaSignNpcId, loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(),
 									false, 0, false, 0);
-					_arenaSigns.add(npc);
+					this.arenaSigns.add(npc);
 				}
 			}
 		}
 
 		private void deleteArenaSigns()
 		{
-			if (_arenaSignIds.isEmpty())
+			if (this.arenaSignIds.isEmpty())
 			{
-				for (L2Npc arenaSign : _arenaSigns)
+				for (L2Npc arenaSign : this.arenaSigns)
 				{
 					arenaSign.deleteMe();
 				}
@@ -1714,7 +1714,7 @@ public class GMEventManager
 
 		private void deleteBuffers()
 		{
-			for (L2Npc buffer : _buffers)
+			for (L2Npc buffer : this.buffers)
 			{
 				buffer.deleteMe();
 			}
@@ -1722,7 +1722,7 @@ public class GMEventManager
 
 		private void sendPacketToFighterPlayers(L2GameServerPacket p)
 		{
-			for (L2ArenaZone zone : _arenaZones)
+			for (L2ArenaZone zone : this.arenaZones)
 			{
 				if (zone == null)
 				{
@@ -1734,7 +1734,7 @@ public class GMEventManager
 
 		private void kickPlayersFromPeaceZones()
 		{
-			for (L2PeaceZone zone : _peaceZones)
+			for (L2PeaceZone zone : this.peaceZones)
 			{
 				if (zone == null)
 				{
@@ -1746,7 +1746,7 @@ public class GMEventManager
 
 		private void kickPlayersFromArenaZones()
 		{
-			for (L2ArenaZone zone : _arenaZones)
+			for (L2ArenaZone zone : this.arenaZones)
 			{
 				if (zone == null)
 				{
@@ -1758,7 +1758,7 @@ public class GMEventManager
 
 		private void sendPacketToWaitingPlayers(L2GameServerPacket p)
 		{
-			for (L2PeaceZone zone : _peaceZones)
+			for (L2PeaceZone zone : this.peaceZones)
 			{
 				if (zone == null)
 				{
@@ -1770,23 +1770,23 @@ public class GMEventManager
 
 		private void stopFight()
 		{
-			_isFightStarted = false;
+			this.isFightStarted = false;
 
-			ArrayList<Integer> copyParticipants = new ArrayList<>(_currentEvent.getParticipants().keySet());
+			ArrayList<Integer> copyParticipants = new ArrayList<>(currentEvent.getParticipants().keySet());
 			for (int i : copyParticipants)
 			{
 				removeParticipant(i);
 			}
 
-			_usedBuffs.clear();
-			_rewardedPlayers.clear();
+			this.usedBuffs.clear();
+			this.rewardedPlayers.clear();
 		}
 
 		private void restartFight()
 		{
-			_isFightStarted = false;
+			this.isFightStarted = false;
 
-			for (Entry<Integer, Integer> i : _participants.entrySet())
+			for (Entry<Integer, Integer> i : this.participants.entrySet())
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
 				if (player == null)
@@ -1808,27 +1808,27 @@ public class GMEventManager
 				//Spawn
 				if (i.getValue() == 1)
 				{
-					player.teleToLocation(_spawnOne, false);
+					player.teleToLocation(this.spawnOne, false);
 				}
 				else
 				{
-					player.teleToLocation(_spawnTwo, false);
+					player.teleToLocation(this.spawnTwo, false);
 				}
 
 				player.broadcastUserInfo();
 			}
 
-			_usedBuffs.clear();
-			_rewardedPlayers.clear();
+			this.usedBuffs.clear();
+			this.rewardedPlayers.clear();
 		}
 
 		private void startEvent(String gmName)
 		{
-			_isStarted = true;
+			this.isStarted = true;
 
-			_gmName = gmName;
+			this.gmName = gmName;
 
-			Announcements.getInstance().announceToAll("GM Event: " + _eventName +
+			Announcements.getInstance().announceToAll("GM Event: " + this.eventName +
 					" has started (Giran Arena), check the community board for more information!");
 
 			//Kick already-inside players
@@ -1861,9 +1861,9 @@ public class GMEventManager
 			player.removeSkillReuse(true);
 			player.setTeam(team);
 			player.setIsInsideGMEvent(true);
-			player.teleToLocation(team == 1 ? _spawnOne : _spawnTwo, false);
+			player.teleToLocation(team == 1 ? this.spawnOne : this.spawnTwo, false);
 
-			_participants.put(playerId, team);
+			this.participants.put(playerId, team);
 
 			sendPacketToWaitingPlayers(
 					new ExShowScreenMessage(player.getName() + " joined the " + (team == 1 ? "blue" : "red") + " side!",
@@ -1876,7 +1876,7 @@ public class GMEventManager
 		{
 			if (isParticipant(playerId))
 			{
-				_participants.remove(playerId);
+				this.participants.remove(playerId);
 
 				L2PcInstance player = L2World.getInstance().getPlayer(playerId);
 				if (player != null)
@@ -1890,16 +1890,16 @@ public class GMEventManager
 
 					player.setTeam(0);
 					player.setIsInsideGMEvent(false);
-					player.teleToLocation(_eventTeleport, true);
+					player.teleToLocation(this.eventTeleport, true);
 
-					ParticipateRegister register = _participatedRegister.get(playerId);
+					ParticipateRegister register = this.participatedRegister.get(playerId);
 					if (register != null)
 					{
 						register.increaseParticipatedTimes();
 					}
 					else
 					{
-						_participatedRegister.put(playerId,
+						this.participatedRegister.put(playerId,
 								new ParticipateRegister(playerId, player.getExternalIP(), player.getInternalIP()));
 					}
 				}
@@ -1910,7 +1910,7 @@ public class GMEventManager
 		{
 			if (hasAcceptedRules(playerId))
 			{
-				_acceptedEventRules.remove(playerId);
+				this.acceptedEventRules.remove(playerId);
 			}
 
 			L2PcInstance toKick = L2World.getInstance().getPlayer(playerId);
@@ -1922,9 +1922,9 @@ public class GMEventManager
 
 		private void giveReward(int team, int count)
 		{
-			synchronized (_rewardedPlayers)
+			synchronized (this.rewardedPlayers)
 			{
-				for (Entry<Integer, Integer> i : _participants.entrySet())
+				for (Entry<Integer, Integer> i : this.participants.entrySet())
 				{
 					if (i.getValue() != team)
 					{
@@ -1937,18 +1937,18 @@ public class GMEventManager
 						continue;
 					}
 
-					if (_rewardedPlayers.contains(player.getObjectId()))
+					if (this.rewardedPlayers.contains(player.getObjectId()))
 					{
 						continue;
 					}
 
-					_rewardedPlayers.add(player.getObjectId());
+					this.rewardedPlayers.add(player.getObjectId());
 
-					player.addItem("GMEvent", _rewardCoinId, count, player, true);
+					player.addItem("GMEvent", rewardCoinId, count, player, true);
 
 					GmListTable.broadcastMessageToGMs(
 							"GMEvent: " + player.getName() + " has been rewarded with " + count + " Apigas!");
-					Util.logToFile(_gmName + ": " + player.getName() + " has been rewarded with " + count + " Apigas!",
+					Util.logToFile(this.gmName + ": " + player.getName() + " has been rewarded with " + count + " Apigas!",
 							"GMEvents", true);
 				}
 			}
@@ -1968,12 +1968,12 @@ public class GMEventManager
 		if (message.contains("Refound"))
 		{
 			Util.logToFile("GMEvent Bet: " + playerName + " get his bet refounded " + amount + " " +
-					_currencies.get(itemId).getName() + "", "GMEvents", true);
+					this.currencies.get(itemId).getName() + "", "GMEvents", true);
 		}
 		else
 		{
 			Util.logToFile("GMEvent Bet: " + playerName + " has been rewarded with " + amount + " " +
-					_currencies.get(itemId).getName() + "", "GMEvents", true);
+					this.currencies.get(itemId).getName() + "", "GMEvents", true);
 		}
 	}
 
@@ -1986,21 +1986,21 @@ public class GMEventManager
 
 	public void onKill(L2Character killer, L2Character killed)
 	{
-		if (killer == null || killed == null || _currentEvent == null)
+		if (killer == null || killed == null || this.currentEvent == null)
 		{
 			return;
 		}
 
-		if (_currentEvent.isStarted() && _currentEvent.isFightStarted())
+		if (this.currentEvent.isStarted() && this.currentEvent.isFightStarted())
 		{
 			if (killer.getActingPlayer() != null && killed.getActingPlayer() != null)
 			{
-				_currentEvent.sendPacketToWaitingPlayers(new ExShowScreenMessage(
+				this.currentEvent.sendPacketToWaitingPlayers(new ExShowScreenMessage(
 						killed.getActingPlayer().getName() + " has been killed by " +
 								killer.getActingPlayer().getName() + "!", 2000));
 
 				//Winner animation only if is 1vs1
-				if (_currentEvent.getParticipants().size() == 2)
+				if (this.currentEvent.getParticipants().size() == 2)
 				{
 					killer.broadcastPacket(new SocialAction(killer.getActingPlayer().getObjectId(), 22));
 				}
@@ -2022,30 +2022,30 @@ public class GMEventManager
 			return true;
 		}
 
-		if (_currentEvent != null && _currentEvent.isStarted() && !player.isGM())
+		if (this.currentEvent != null && this.currentEvent.isStarted() && !player.isGM())
 		{
-			if (zone instanceof L2ArenaZone && _currentEvent.getArenaZones().contains(zone))
+			if (zone instanceof L2ArenaZone && this.currentEvent.getArenaZones().contains(zone))
 			{
 				if (!player.getIsInsideGMEvent())
 				{
-					_currentEvent.kickPlayer(character.getObjectId());
+					this.currentEvent.kickPlayer(character.getObjectId());
 					return false;
 				}
 			}
-			else if (zone instanceof L2PeaceZone && _currentEvent.getPeaceZones().contains(zone))
+			else if (zone instanceof L2PeaceZone && this.currentEvent.getPeaceZones().contains(zone))
 			{
-				if (_currentEvent.isBannedIp(player.getExternalIP()))
+				if (this.currentEvent.isBannedIp(player.getExternalIP()))
 				{
 					player.sendPacket(new ExShowScreenMessage(" ", 5000));
-					_currentEvent.kickPlayer(character.getObjectId());
+					this.currentEvent.kickPlayer(character.getObjectId());
 					return false;
 				}
 
-				if (!_currentEvent.hasAcceptedRules(player.getObjectId()))
+				if (!this.currentEvent.hasAcceptedRules(player.getObjectId()))
 				{
 					player.sendPacket(new ExShowScreenMessage(
 							"You should accept the Event rules (on the Arena Sign) before enter to the zone! ", 5000));
-					player.teleToLocation(_currentEvent.getTeleportLocation(), true);
+					player.teleToLocation(this.currentEvent.getTeleportLocation(), true);
 					return false;
 				}
 			}
@@ -2056,18 +2056,18 @@ public class GMEventManager
 
 	public void onNpcTalk(L2Object obj, L2PcInstance player)
 	{
-		if (obj == null || player == null || _currentEvent == null)
+		if (obj == null || player == null || this.currentEvent == null)
 		{
 			return;
 		}
 
-		if (_currentEvent.isStarted())
+		if (this.currentEvent.isStarted())
 		{
 			if (obj instanceof L2StaticObjectInstance &&
-					_currentEvent.getArenaSignIds().contains(((L2StaticObjectInstance) obj).getStaticObjectId()) ||
-					obj instanceof L2NpcInstance && ((L2NpcInstance) obj).getNpcId() == _dummyArenaSignNpcId)
+					this.currentEvent.getArenaSignIds().contains(((L2StaticObjectInstance) obj).getStaticObjectId()) ||
+					obj instanceof L2NpcInstance && ((L2NpcInstance) obj).getNpcId() == this.dummyArenaSignNpcId)
 			{
-				CustomCommunityBoard.getInstance().parseCmd("bypass _bbscustom;info;gmEventRules", player);
+				CustomCommunityBoard.getInstance().parseCmd("bypass this.bbscustom;info;gmEventRules", player);
 			}
 		}
 	}
@@ -2120,7 +2120,7 @@ public class GMEventManager
 					if (d.getName().equalsIgnoreCase("currency"))
 					{
 						int itemId = d.getInt("itemId");
-						_currencies.put(itemId, new CurrencyInfo(itemId));
+						this.currencies.put(itemId, new CurrencyInfo(itemId));
 					}
 					else if (d.getName().equalsIgnoreCase("event"))
 					{
@@ -2205,7 +2205,7 @@ public class GMEventManager
 								new Location(Integer.valueOf(eventSpawnCords[0]), Integer.valueOf(eventSpawnCords[1]),
 										Integer.valueOf(eventSpawnCords[2]), Integer.valueOf(eventSpawnCords[3]));
 
-						_predefinedEvents.put(name,
+						this.predefinedEvents.put(name,
 								new Event(name, description, locationName, doorList, arenaZones, peaceZones,
 										spawnTeamOne, spawnTeamTwo, bufferSpawnTeamOne, bufferSpawnTeamTwo, eventSpawmn,
 										arenaSignSpawnList, arenaSignList));
@@ -2215,14 +2215,14 @@ public class GMEventManager
 						String eventName = d.getString("eventName");
 						String startBypass = d.getString("startBypass");
 						String endBypass = d.getString("endBypass");
-						_subEvents.put(eventName, new SubEvent(eventName, startBypass, endBypass));
+						this.subEvents.put(eventName, new SubEvent(eventName, startBypass, endBypass));
 					}
 				}
 			}
 		}
 
-		Log.info("GMEventManager: loaded " + _predefinedEvents.size() + " predefinied events " + _currencies.size() +
-				" bet currencies and " + _subEvents.size() + " sub events!");
+		Log.info("GMEventManager: loaded " + this.predefinedEvents.size() + " predefinied events " + this.currencies.size() +
+				" bet currencies and " + this.subEvents.size() + " sub events!");
 	}
 
 	private GMEventManager()
@@ -2232,12 +2232,12 @@ public class GMEventManager
 
 	public static GMEventManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GMEventManager _instance = new GMEventManager();
+		protected static final GMEventManager instance = new GMEventManager();
 	}
 }

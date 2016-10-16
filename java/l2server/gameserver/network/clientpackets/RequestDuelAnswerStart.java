@@ -27,17 +27,17 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestDuelAnswerStart extends L2GameClientPacket
 {
-	private int _partyDuel;
+	private int partyDuel;
 	@SuppressWarnings("unused")
-	private int _unk1;
-	private int _response;
+	private int unk1;
+	private int response;
 
 	@Override
 	protected void readImpl()
 	{
-		_partyDuel = readD();
-		_unk1 = readD();
-		_response = readD();
+		this.partyDuel = readD();
+		this.unk1 = readD();
+		this.response = readD();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public final class RequestDuelAnswerStart extends L2GameClientPacket
 			return;
 		}
 
-		if (_response == 1)
+		if (this.response == 1)
 		{
 			SystemMessage msg1 = null, msg2 = null;
 			if (requestor.isInDuel())
@@ -75,7 +75,7 @@ public final class RequestDuelAnswerStart extends L2GameClientPacket
 				return;
 			}
 
-			if (_partyDuel == 1)
+			if (this.partyDuel == 1)
 			{
 				msg1 = SystemMessage.getSystemMessage(
 						SystemMessageId.YOU_HAVE_ACCEPTED_C1_CHALLENGE_TO_A_PARTY_DUEL_THE_DUEL_WILL_BEGIN_IN_A_FEW_MOMENTS);
@@ -99,9 +99,9 @@ public final class RequestDuelAnswerStart extends L2GameClientPacket
 			player.sendPacket(msg1);
 			requestor.sendPacket(msg2);
 
-			DuelManager.getInstance().addDuel(requestor, player, _partyDuel);
+			DuelManager.getInstance().addDuel(requestor, player, this.partyDuel);
 		}
-		else if (_response == -1)
+		else if (this.response == -1)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_DUEL_REQUEST);
 			sm.addPcName(player);
@@ -110,7 +110,7 @@ public final class RequestDuelAnswerStart extends L2GameClientPacket
 		else
 		{
 			SystemMessage msg = null;
-			if (_partyDuel == 1)
+			if (this.partyDuel == 1)
 			{
 				msg = SystemMessage
 						.getSystemMessage(SystemMessageId.THE_OPPOSING_PARTY_HAS_DECLINED_YOUR_CHALLENGE_TO_A_DUEL);

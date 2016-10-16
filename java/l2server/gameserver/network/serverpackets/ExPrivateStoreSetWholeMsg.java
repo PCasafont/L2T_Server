@@ -22,13 +22,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 {
-	private final int _objectId;
-	private final String _msg;
+	private final int objectId;
+	private final String msg;
 
 	public ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
 	{
-		_objectId = player.getObjectId();
-		_msg = msg;
+		this.objectId = player.getObjectId();
+		this.msg = msg;
 	}
 
 	public ExPrivateStoreSetWholeMsg(L2PcInstance player)
@@ -46,7 +46,7 @@ public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeS(_msg);
+		writeD(this.objectId);
+		writeS(this.msg);
 	}
 }

@@ -28,18 +28,18 @@ import java.util.Map;
 public class ExInstanceList extends L2GameServerPacket
 {
 
-	private int _current = -1;
-	private int _objId;
+	private int current = -1;
+	private int objId;
 
 	public ExInstanceList(L2PcInstance player)
 	{
-		_objId = player.getObjectId();
+		this.objId = player.getObjectId();
 
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 
 		if (world != null)
 		{
-			_current = world.templateId;
+			this.current = world.templateId;
 		}
 	}
 
@@ -49,27 +49,27 @@ public class ExInstanceList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_current);
+		writeD(this.current);
 
-		Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(_objId);
+		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(this.objId);
 
-		int size = _instanceTimes.size();
+		int size = instanceTimes.size();
 
-		if (_instanceTimes.containsKey(_current))
+		if (instanceTimes.containsKey(this.current))
 		{
 			size--;
 		}
 
 		writeD(size);
 
-		for (int instanceId : _instanceTimes.keySet())
+		for (int instanceId : instanceTimes.keySet())
 		{
-			if (_current == instanceId)
+			if (this.current == instanceId)
 			{
 				continue;
 			}
 
-			int remainingTime = (int) ((_instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000);
+			int remainingTime = (int) ((instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000);
 
 			if (remainingTime < 0)
 			{

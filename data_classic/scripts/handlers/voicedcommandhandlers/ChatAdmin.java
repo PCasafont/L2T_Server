@@ -15,13 +15,13 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.util.StringTokenizer;
+
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.StringTokenizer;
 
 public class ChatAdmin implements IVoicedCommandHandler
 {

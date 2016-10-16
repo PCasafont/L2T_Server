@@ -27,12 +27,12 @@ import java.util.logging.Level;
  */
 public class DateRange
 {
-	private Date _startDate, _endDate;
+	private Date startDate, endDate;
 
 	public DateRange(Date from, Date to)
 	{
-		_startDate = from;
-		_endDate = to;
+		this.startDate = from;
+		this.endDate = to;
 	}
 
 	public static DateRange parse(String dateRange, DateFormat format)
@@ -57,21 +57,21 @@ public class DateRange
 
 	public boolean isValid()
 	{
-		return _startDate == null || _endDate == null;
+		return this.startDate == null || this.endDate == null;
 	}
 
 	public boolean isWithinRange(Date date)
 	{
-		return date.after(_startDate) && date.before(_endDate);
+		return date.after(this.startDate) && date.before(this.endDate);
 	}
 
 	public Date getEndDate()
 	{
-		return _endDate;
+		return this.endDate;
 	}
 
 	public Date getStartDate()
 	{
-		return _startDate;
+		return this.startDate;
 	}
 }

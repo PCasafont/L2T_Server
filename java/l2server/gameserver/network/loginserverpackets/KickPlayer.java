@@ -20,7 +20,7 @@ import l2server.util.network.BaseRecievePacket;
 public class KickPlayer extends BaseRecievePacket
 {
 
-	private String _account;
+	private String account;
 
 	/**
 	 * @param decrypt
@@ -28,7 +28,7 @@ public class KickPlayer extends BaseRecievePacket
 	public KickPlayer(byte[] decrypt)
 	{
 		super(decrypt);
-		_account = readS();
+		this.account = readS();
 	}
 
 	/**
@@ -36,6 +36,6 @@ public class KickPlayer extends BaseRecievePacket
 	 */
 	public String getAccount()
 	{
-		return _account;
+		return this.account;
 	}
 }

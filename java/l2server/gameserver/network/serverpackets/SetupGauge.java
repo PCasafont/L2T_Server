@@ -29,37 +29,37 @@ public final class SetupGauge extends L2GameServerPacket
 	public static final int GREEN_MINI = 3;
 	public static final int REC_MINI = 4;
 
-	private int _color;
-	private int _time;
-	private int _time2;
-	private int _charObjId;
+	private int color;
+	private int time;
+	private int time2;
+	private int charObjId;
 
 	public SetupGauge(int dat1, int time)
 	{
-		_color = dat1;
-		_time = time;
-		_time2 = time;
+		this.color = dat1;
+		this.time = time;
+		this.time2 = time;
 	}
 
 	public SetupGauge(int color, int currentTime, int maxTime)
 	{
-		_color = color;
-		_time = currentTime;
-		_time2 = maxTime;
+		this.color = color;
+		this.time = currentTime;
+		this.time2 = maxTime;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_color);
-		writeD(_time);
-		writeD(_time2);
+		writeD(this.charObjId);
+		writeD(this.color);
+		writeD(this.time);
+		writeD(this.time2);
 	}
 
 	@Override
 	public void runImpl()
 	{
-		_charObjId = getClient().getActiveChar().getObjectId();
+		this.charObjId = getClient().getActiveChar().getObjectId();
 	}
 }

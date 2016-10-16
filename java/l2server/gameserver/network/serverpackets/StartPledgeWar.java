@@ -17,19 +17,19 @@ package l2server.gameserver.network.serverpackets;
 
 public class StartPledgeWar extends L2GameServerPacket
 {
-	private String _pledgeName;
-	private String _playerName;
+	private String pledgeName;
+	private String playerName;
 
 	public StartPledgeWar(String pledge, String charName)
 	{
-		_pledgeName = pledge;
-		_playerName = charName;
+		this.pledgeName = pledge;
+		this.playerName = charName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_playerName);
-		writeS(_pledgeName);
+		writeS(this.playerName);
+		writeS(this.pledgeName);
 	}
 }

@@ -15,6 +15,8 @@
 
 package handlers.targethandlers;
 
+import java.util.ArrayList;
+
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
@@ -24,8 +26,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2TrapInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetDirection;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
-
-import java.util.ArrayList;
 
 /**
  * Used by all skills that are used by Traps.

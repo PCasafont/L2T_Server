@@ -21,19 +21,19 @@ package l2server.gameserver.network.serverpackets;
 public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket
 {
 
-	private int _refinerItemObjId;
-	private int _lifestoneItemId;
-	private int _gemstoneItemId;
-	private int _gemstoneCount;
-	private int _unk2;
+	private int refinerItemObjId;
+	private int lifestoneItemId;
+	private int gemstoneItemId;
+	private int gemstoneCount;
+	private int unk2;
 
 	public ExPutIntensiveResultForVariationMake(int refinerItemObjId, int lifeStoneId, int gemstoneItemId, int gemstoneCount)
 	{
-		_refinerItemObjId = refinerItemObjId;
-		_lifestoneItemId = lifeStoneId;
-		_gemstoneItemId = gemstoneItemId;
-		_gemstoneCount = gemstoneCount;
-		_unk2 = 1;
+		this.refinerItemObjId = refinerItemObjId;
+		this.lifestoneItemId = lifeStoneId;
+		this.gemstoneItemId = gemstoneItemId;
+		this.gemstoneCount = gemstoneCount;
+		this.unk2 = 1;
 	}
 
 	/**
@@ -41,10 +41,10 @@ public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_refinerItemObjId);
-		writeD(_lifestoneItemId);
-		writeD(_gemstoneItemId);
-		writeQ(_gemstoneCount);
-		writeD(_unk2);
+		writeD(this.refinerItemObjId);
+		writeD(this.lifestoneItemId);
+		writeD(this.gemstoneItemId);
+		writeQ(this.gemstoneCount);
+		writeD(this.unk2);
 	}
 }

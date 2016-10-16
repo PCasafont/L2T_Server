@@ -21,21 +21,21 @@ package l2server.gameserver.network.serverpackets;
 public class Ex2ndPasswordAck extends L2GameServerPacket
 {
 
-	int _response;
+	int response;
 
 	public static int SUCCESS = 0x00;
 	public static int WRONG_PATTERN = 0x01;
 
 	public Ex2ndPasswordAck(int response)
 	{
-		_response = response;
+		this.response = response;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		if (_response == WRONG_PATTERN)
+		if (this.response == WRONG_PATTERN)
 		{
 			writeD(0x01);
 		}

@@ -32,9 +32,9 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 	public static final int MAX_Z = 6105;
 	public static final int STEP = 300;
 
-	private int _command;
-	private int _param1;
-	private int _param2 = 0;
+	private int command;
+	private int param1;
+	private int param2 = 0;
 
 	public TaskPriority getPriority()
 	{
@@ -44,11 +44,11 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_command = readD();
-		_param1 = readD();
-		if (_buf.remaining() > 0)
+		this.command = readD();
+		this.param1 = readD();
+		if (this.buf.remaining() > 0)
 		{
-			_param2 = readD();
+			this.param2 = readD();
 		}
 	}
 
@@ -74,17 +74,17 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 
 		int z = ship.getZ();
 
-		switch (_command)
+		switch (this.command)
 		{
 			case 0:
 				if (!ship.canBeControlled())
 				{
 					return;
 				}
-				if (_param1 < L2World.GRACIA_MAX_X)
+				if (this.param1 < L2World.GRACIA_MAX_X)
 				{
 					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(_param1, _param2, z, 0));
+							new L2CharPosition(this.param1, this.param2, z, 0));
 				}
 				break;
 			case 1:
@@ -125,14 +125,14 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 				}
 
 				final VehiclePathPoint[] dst =
-						AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), _param1);
+						AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), this.param1);
 				if (dst == null)
 				{
 					return;
 				}
 
 				// Consume fuel, if needed
-				final int fuelConsumption = AirShipManager.getInstance().getFuelConsumption(ship.getDockId(), _param1);
+				final int fuelConsumption = AirShipManager.getInstance().getFuelConsumption(ship.getDockId(), this.param1);
 				if (fuelConsumption > 0)
 				{
 					if (fuelConsumption > ship.getFuel())

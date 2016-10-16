@@ -24,11 +24,11 @@ import l2server.gameserver.stats.Env;
  */
 public abstract class Condition implements ConditionListener
 {
-	private ConditionListener _listener;
-	private String _msg;
-	private int _msgId;
-	private boolean _addName = false;
-	private boolean _result;
+	private ConditionListener listener;
+	private String msg;
+	private int msgId;
+	private boolean addName = false;
+	private boolean result;
 
 	/**
 	 * Sets the message.
@@ -37,7 +37,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final void setMessage(String msg)
 	{
-		_msg = msg;
+		this.msg = msg;
 	}
 
 	/**
@@ -47,7 +47,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final String getMessage()
 	{
-		return _msg;
+		return this.msg;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final void setMessageId(int msgId)
 	{
-		_msgId = msgId;
+		this.msgId = msgId;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final int getMessageId()
 	{
-		return _msgId;
+		return this.msgId;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final void addName()
 	{
-		_addName = true;
+		this.addName = true;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final boolean isAddName()
 	{
-		return _addName;
+		return this.addName;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	void setListener(ConditionListener listener)
 	{
-		_listener = listener;
+		this.listener = listener;
 		notifyChanged();
 	}
 
@@ -106,7 +106,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	final ConditionListener getListener()
 	{
-		return _listener;
+		return this.listener;
 	}
 
 	/**
@@ -118,9 +118,9 @@ public abstract class Condition implements ConditionListener
 	public final boolean test(Env env)
 	{
 		boolean res = testImpl(env);
-		if (_listener != null && res != _result)
+		if (this.listener != null && res != this.result)
 		{
-			_result = res;
+			this.result = res;
 			notifyChanged();
 		}
 		return res;
@@ -140,9 +140,9 @@ public abstract class Condition implements ConditionListener
 	@Override
 	public void notifyChanged()
 	{
-		if (_listener != null)
+		if (this.listener != null)
 		{
-			_listener.notifyChanged();
+			this.listener.notifyChanged();
 		}
 	}
 }

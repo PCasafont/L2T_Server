@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerCharges extends Condition
 {
 
-	private final int _charges;
+	private final int charges;
 
 	/**
 	 * Instantiates a new condition player charges.
@@ -33,7 +33,7 @@ public class ConditionPlayerCharges extends Condition
 	 */
 	public ConditionPlayerCharges(int charges)
 	{
-		_charges = charges;
+		this.charges = charges;
 	}
 
 	/* (non-Javadoc)
@@ -45,7 +45,7 @@ public class ConditionPlayerCharges extends Condition
 		//This can be used by monsters but getCharges not exist
 		if (env.player instanceof L2PcInstance)
 		{
-			return ((L2PcInstance) env.player).getCharges() >= _charges;
+			return ((L2PcInstance) env.player).getCharges() >= this.charges;
 		}
 
 		return false;

@@ -15,6 +15,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.Map;
+
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2ItemInstance;
@@ -22,8 +24,6 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.SkillHolder;
-
-import java.util.Map;
 
 public class ExtraPass implements IItemHandler
 {
@@ -59,14 +59,14 @@ public class ExtraPass implements IItemHandler
 		}
 
 		int instanceId = (int) instanceSkill.getPower();
-		Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
-		if (_instanceTimes.isEmpty() || !_instanceTimes.containsKey(instanceId))
+		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
+		if (instanceTimes.isEmpty() || !instanceTimes.containsKey(instanceId))
 		{
 			activeChar.sendMessage("You don't have reuse!");
 			return;
 		}
 
-		for (int instId : _instanceTimes.keySet())
+		for (int instId : instanceTimes.keySet())
 		{
 			if (instId == instanceId)
 			{

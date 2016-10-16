@@ -38,16 +38,16 @@ import java.util.logging.Logger;
 
 public final class RequestEnchantItem extends L2GameClientPacket
 {
-	protected static final Logger _logEnchant = Logger.getLogger("enchant");
+	protected static final Logger logEnchant = Logger.getLogger("enchant");
 
-	private int _objectId = 0;
-	private int _supportId;
+	private int objectId = 0;
+	private int supportId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
-		_supportId = readD();
+		this.objectId = readD();
+		this.supportId = readD();
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null || _objectId == 0)
+		if (activeChar == null || this.objectId == 0)
 		{
 			return;
 		}
@@ -73,7 +73,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
 
@@ -96,7 +96,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		EnchantSupportItem supportTemplate = null;
 		if (support != null)
 		{
-			if (support.getObjectId() != _supportId)
+			if (support.getObjectId() != this.supportId)
 			{
 				activeChar.setActiveEnchantItem(null);
 				return;

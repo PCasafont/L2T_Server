@@ -34,7 +34,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 {
 
 	// cd
-	private int _slot;
+	private int slot;
 
 	/**
 	 * packet type id 0x11
@@ -43,7 +43,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_slot = readD();
+		this.slot = readD();
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 	{
 		if (Config.DEBUG)
 		{
-			Log.fine("request unequip slot " + _slot);
+			Log.fine("request unequip slot " + this.slot);
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
@@ -61,21 +61,21 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
+		L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(this.slot);
 		if (item == null)
 		{
 			// Wear-items are not to be unequipped
 			return;
 		}
 		// Prevent of unequiping a cursed weapon
-		if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
+		if (this.slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
 		{
 			// Message ?
 			return;
 		}
 
 		// arrows and bolts
-		if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
+		if (this.slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
 		{
 			// Message ?
 			return;
@@ -98,7 +98,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
+		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(this.slot);
 
 		// show the update in the inventory
 		InventoryUpdate iu = new InventoryUpdate();

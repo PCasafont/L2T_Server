@@ -17,37 +17,37 @@ import java.util.Calendar;
  */
 public class Curfew
 {
-	public static Curfew _instance = null;
+	public static Curfew instance = null;
 
-	private CurfewTask _ctask;
-	private StartTask _task;
+	private CurfewTask ctask;
+	private StartTask task;
 
-	private int _eventTown = 9;
+	private int eventTown = 9;
 	private String eventTownName = "Giran";
 	public long curfewEnd = 0;
 
 	public static Curfew getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new Curfew();
+			instance = new Curfew();
 		}
-		return _instance;
+		return instance;
 	}
 
 	public void initialize()
 	{
-		_eventTown = Rnd.get(19) + 1;
-		if (_eventTown == 16)
+		this.eventTown = Rnd.get(19) + 1;
+		if (this.eventTown == 16)
 		{
-			_eventTown = 20;
+			this.eventTown = 20;
 		}
-		else if (_eventTown == 18)
+		else if (this.eventTown == 18)
 		{
-			_eventTown = 22;
+			this.eventTown = 22;
 		}
 
-		eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
+		eventTownName = MapRegionTable.getInstance().getTownName(this.eventTown);
 	}
 
 	public void start()
@@ -55,7 +55,7 @@ public class Curfew
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (!(player.isInsideZone(L2Character.ZONE_PEACE) &&
-					TownManager.getClosestTown(player).getTownId() == _eventTown))
+					TownManager.getClosestTown(player).getTownId() == this.eventTown))
 			{
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 			}
@@ -80,7 +80,7 @@ public class Curfew
 
 	private void stop()
 	{
-		_eventTown = -1;
+		this.eventTown = -1;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) &&
@@ -101,17 +101,17 @@ public class Curfew
 
 	class CurfewTask implements Runnable
 	{
-		private long _startTime;
+		private long startTime;
 
 		public CurfewTask(long startTime)
 		{
-			_startTime = startTime;
+			this.startTime = startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = Math.round((_startTime - System.currentTimeMillis()) / 1000);
+			int delay = Math.round((this.startTime - System.currentTimeMillis()) / 1000);
 
 			if (delay > 0)
 			{
@@ -128,8 +128,8 @@ public class Curfew
 	{
 		try
 		{
-			_ctask = new CurfewTask(curfewEnd);
-			ThreadPoolManager.getInstance().executeTask(_ctask);
+			this.ctask = new CurfewTask(curfewEnd);
+			ThreadPoolManager.getInstance().executeTask(this.ctask);
 		}
 		catch (Exception e)
 		{
@@ -154,8 +154,8 @@ public class Curfew
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			_task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(_task);
+			this.task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(this.task);
 		}
 		catch (Exception e)
 		{
@@ -165,14 +165,14 @@ public class Curfew
 
 	public StartTask getStartTask()
 	{
-		return _task;
+		return this.task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(_task.getStartTime());
+		startTime.setTimeInMillis(this.task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -183,7 +183,7 @@ public class Curfew
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = _task.getStartTime() - System.currentTimeMillis();
+		long toStart = this.task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -204,22 +204,22 @@ public class Curfew
 
 	class StartTask implements Runnable
 	{
-		private long _startTime;
+		private long startTime;
 
 		public StartTask(long startTime)
 		{
-			_startTime = startTime;
+			this.startTime = startTime;
 		}
 
 		public long getStartTime()
 		{
-			return _startTime;
+			return this.startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((this.startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

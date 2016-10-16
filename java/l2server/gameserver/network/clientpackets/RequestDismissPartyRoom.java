@@ -25,34 +25,34 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class RequestDismissPartyRoom extends L2GameClientPacket
 {
 
-	private int _roomid;
+	private int roomid;
 	@SuppressWarnings("unused")
-	private int _data2;
+	private int data2;
 
 	@Override
 	protected void readImpl()
 	{
-		_roomid = readD();
-		_data2 = readD();
+		this.roomid = readD();
+		this.data2 = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance _activeChar = getClient().getActiveChar();
+		final L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 
-		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
+		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(this.roomid);
 
-		if (_room == null)
+		if (room == null)
 		{
 			return;
 		}
 
-		PartyMatchRoomList.getInstance().deleteRoom(_roomid);
+		PartyMatchRoomList.getInstance().deleteRoom(this.roomid);
 	}
 }

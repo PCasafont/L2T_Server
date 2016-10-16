@@ -15,6 +15,8 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.util.Map.Entry;
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
@@ -32,8 +34,6 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 
-import java.util.Map.Entry;
-
 /**
  * @author Pere
  * @author LasTravel
@@ -41,7 +41,7 @@ import java.util.Map.Entry;
 
 public class Sell implements IVoicedCommandHandler
 {
-	private static final boolean _logSellCommand = true;
+	private static final boolean logSellCommand = true;
 
 	private static final String[] VOICED_COMMANDS = {"sell"};
 
@@ -371,7 +371,7 @@ public class Sell implements IVoicedCommandHandler
 					player.broadcastPacket(new PrivateStoreMsgSell(player));
 					player.sitDown();
 
-					if (_logSellCommand)
+					if (this.logSellCommand)
 					{
 						String log = player.getName() + " (" + list.getTitle() + ")\n";
 						for (TradeItem item : list.getItems())

@@ -27,16 +27,16 @@ public class ObjectPosition
 
 	// =========================================================
 	// Data Field
-	private L2Object _activeObject;
-	private int _heading = 0;
-	private Point3D _worldPosition;
-	private L2WorldRegion _worldRegion; // Object localization : Used for items/chars that are seen in the world
+	private L2Object activeObject;
+	private int heading = 0;
+	private Point3D worldPosition;
+	private L2WorldRegion worldRegion; // Object localization : Used for items/chars that are seen in the world
 
 	// =========================================================
 	// Constructor
 	public ObjectPosition(L2Object activeObject)
 	{
-		_activeObject = activeObject;
+		this.activeObject = activeObject;
 		setWorldRegion(L2World.getInstance().getRegion(getWorldPosition()));
 	}
 
@@ -44,10 +44,10 @@ public class ObjectPosition
 	// Method - Public
 
 	/**
-	 * Set the x,y,z position of the L2Object and if necessary modify its _worldRegion.<BR><BR>
+	 * Set the x,y,z position of the L2Object and if necessary modify its this.worldRegion.<BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
-	 * <li> _worldRegion != null</li><BR><BR>
+	 * <li> worldRegion != null</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Update position during and after movement, or after teleport </li><BR>
@@ -137,7 +137,7 @@ public class ObjectPosition
 
 			setWorldRegion(newRegion);
 
-			// Add the L2Oject spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
+			// Add the L2Oject spawn to this.visibleObjects and if necessary to this.allplayers of its L2WorldRegion
 			getWorldRegion().addVisibleObject(getActiveObject());
 		}
 	}
@@ -149,17 +149,17 @@ public class ObjectPosition
 	// Property - Public
 	public L2Object getActiveObject()
 	{
-		return _activeObject;
+		return this.activeObject;
 	}
 
 	public final int getHeading()
 	{
-		return _heading;
+		return this.heading;
 	}
 
 	public final void setHeading(int value)
 	{
-		_heading = value;
+		this.heading = value;
 	}
 
 	/**
@@ -203,11 +203,11 @@ public class ObjectPosition
 
 	public final Point3D getWorldPosition()
 	{
-		if (_worldPosition == null)
+		if (this.worldPosition == null)
 		{
-			_worldPosition = new Point3D(0, 0, 0);
+			this.worldPosition = new Point3D(0, 0, 0);
 		}
-		return _worldPosition;
+		return this.worldPosition;
 	}
 
 	public final void setWorldPosition(int x, int y, int z)
@@ -222,24 +222,24 @@ public class ObjectPosition
 
 	public final L2WorldRegion getWorldRegion()
 	{
-		return _worldRegion;
+		return this.worldRegion;
 	}
 
 	public void setWorldRegion(L2WorldRegion value)
 	{
-		if (_worldRegion != null &&
+		if (this.worldRegion != null &&
 				getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
 		{
 			if (value != null)
 			{
-				_worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change
+				this.worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change
 			}
 			else
 			{
-				_worldRegion.removeFromZones((L2Character) getActiveObject()); // at world region change
+				this.worldRegion.removeFromZones((L2Character) getActiveObject()); // at world region change
 			}
 		}
 
-		_worldRegion = value;
+		this.worldRegion = value;
 	}
 }

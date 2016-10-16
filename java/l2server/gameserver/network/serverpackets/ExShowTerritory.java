@@ -24,23 +24,23 @@ import l2server.gameserver.model.L2Territory.Point;
  */
 public final class ExShowTerritory extends L2GameServerPacket
 {
-	private final L2Territory _territory;
+	private final L2Territory territory;
 
 	public ExShowTerritory(L2Territory territory)
 	{
-		_territory = territory;
+		this.territory = territory;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_territory.getMinZ());
-		writeD(_territory.getMaxZ());
-		writeD(_territory.getPoints().size());
-		for (Point p : _territory.getPoints())
+		writeD(this.territory.getMinZ());
+		writeD(this.territory.getMaxZ());
+		writeD(this.territory.getPoints().size());
+		for (Point p : this.territory.getPoints())
 		{
-			writeD(p._x);
-			writeD(p._y);
+			writeD(p.x);
+			writeD(p.y);
 		}
 	}
 }

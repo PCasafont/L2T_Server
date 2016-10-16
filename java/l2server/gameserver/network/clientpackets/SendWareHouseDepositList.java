@@ -43,35 +43,35 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private WarehouseItem _items[] = null;
+	private WarehouseItem items[] = null;
 
 	@Override
 	protected void readImpl()
 	{
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
 		{
 			return;
 		}
 
-		_items = new WarehouseItem[count];
+		this.items = new WarehouseItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
 			long cnt = readQ();
 			if (objId < 1 || cnt < 0)
 			{
-				_items = null;
+				this.items = null;
 				return;
 			}
-			_items[i] = new WarehouseItem(objId, cnt);
+			this.items[i] = new WarehouseItem(objId, cnt);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (_items == null)
+		if (this.items == null)
 		{
 			return;
 		}
@@ -121,11 +121,11 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 
 		// Freight price from config or normal price per item slot (30)
-		final long fee = _items.length * 30;
+		final long fee = this.items.length * 30;
 		long currentAdena = player.getAdena();
 		int slots = 0;
 
-		for (WarehouseItem i : _items)
+		for (WarehouseItem i : this.items)
 		{
 			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (item == null)
@@ -172,7 +172,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (WarehouseItem i : _items)
+		for (WarehouseItem i : this.items)
 		{
 			// Check validity of requested item
 			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
@@ -226,23 +226,23 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 	private static class WarehouseItem
 	{
-		private final int _objectId;
-		private final long _count;
+		private final int objectId;
+		private final long count;
 
 		public WarehouseItem(int id, long num)
 		{
-			_objectId = id;
-			_count = num;
+			this.objectId = id;
+			this.count = num;
 		}
 
 		public int getObjectId()
 		{
-			return _objectId;
+			return this.objectId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return this.count;
 		}
 	}
 }

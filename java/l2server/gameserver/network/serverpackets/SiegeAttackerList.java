@@ -52,28 +52,28 @@ import l2server.gameserver.model.entity.Castle;
 public final class SiegeAttackerList extends L2GameServerPacket
 {
 	//
-	private Castle _castle;
+	private Castle castle;
 
 	public SiegeAttackerList(Castle castle)
 	{
-		_castle = castle;
+		this.castle = castle;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_castle.getCastleId());
+		writeD(this.castle.getCastleId());
 		writeD(0x00); //0
 		writeD(0x01); //1
 		writeD(0x00); //0
-		int size = _castle.getSiege().getAttackerClans().size();
+		int size = this.castle.getSiege().getAttackerClans().size();
 		if (size > 0)
 		{
 			L2Clan clan;
 
 			writeD(size);
 			writeD(size);
-			for (L2SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
+			for (L2SiegeClan siegeclan : this.castle.getSiege().getAttackerClans())
 			{
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				if (clan == null)

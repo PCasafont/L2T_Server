@@ -43,12 +43,12 @@ import java.util.*;
 
 public class WayPointNode extends L2Object
 {
-	private int _id;
-	private String _title, _type;
+	private int id;
+	private String title, type;
 	private static final String NORMAL = "Node", SELECTED = "Selected", LINKED = "Linked";
-	private static int _lineId = 5560;
+	private static int lineId = 5560;
 	private static final String LINE_TYPE = "item";
-	private Map<WayPointNode, List<WayPointNode>> _linkLists;
+	private Map<WayPointNode, List<WayPointNode>> linkLists;
 
 	/**
 	 * @param objectId
@@ -56,7 +56,7 @@ public class WayPointNode extends L2Object
 	public WayPointNode(int objectId)
 	{
 		super(objectId);
-		_linkLists = Collections.synchronizedMap(new WeakHashMap<WayPointNode, List<WayPointNode>>());
+		this.linkLists = Collections.synchronizedMap(new WeakHashMap<WayPointNode, List<WayPointNode>>());
 	}
 
 	/* (non-Javadoc)
@@ -109,19 +109,19 @@ public class WayPointNode extends L2Object
 
 	public void setNormalInfo(String type, int id, String title)
 	{
-		_type = type;
+		this.type = type;
 		changeID(id, title);
 	}
 
 	public void setNormalInfo(String type, int id)
 	{
-		_type = type;
+		this.type = type;
 		changeID(id);
 	}
 
 	private void changeID(int id)
 	{
-		_id = id;
+		this.id = id;
 		toggleVisible();
 		toggleVisible();
 	}
@@ -156,27 +156,27 @@ public class WayPointNode extends L2Object
 
 	public final String getTitle()
 	{
-		return _title;
+		return this.title;
 	}
 
 	public final void setTitle(String title)
 	{
-		_title = title;
+		this.title = title;
 	}
 
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	public String getType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	public void setType(String type)
 	{
-		_type = type;
+		this.type = type;
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class WayPointNode extends L2Object
 			y1 = y1 + modY * diffY / steps;
 			z1 = z1 + modZ * diffZ / steps;
 
-			lineNodes.add(WayPointNode.spawn(LINE_TYPE, _lineId, x1, y1, z1));
+			lineNodes.add(WayPointNode.spawn(LINE_TYPE, lineId, x1, y1, z1));
 		}
 
 		nodeA.addLineInfo(nodeB, lineNodes);
@@ -214,7 +214,7 @@ public class WayPointNode extends L2Object
 
 	public void addLineInfo(WayPointNode node, List<WayPointNode> line)
 	{
-		_linkLists.put(node, line);
+		this.linkLists.put(node, line);
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class WayPointNode extends L2Object
 	 */
 	public void eraseLine(WayPointNode target)
 	{
-		_linkLists.remove(target);
+		this.linkLists.remove(target);
 	}
 
 	/**
@@ -250,19 +250,19 @@ public class WayPointNode extends L2Object
 	 */
 	private List<WayPointNode> getLineInfo(WayPointNode selectedNode)
 	{
-		return _linkLists.get(selectedNode);
+		return this.linkLists.get(selectedNode);
 	}
 
 	public static void setLineId(int line_id)
 	{
-		_lineId = line_id;
+		lineId = line_id;
 	}
 
 	public List<WayPointNode> getLineNodes()
 	{
 		List<WayPointNode> list = new ArrayList<>();
 
-		for (List<WayPointNode> points : _linkLists.values())
+		for (List<WayPointNode> points : this.linkLists.values())
 		{
 			list.addAll(points);
 		}

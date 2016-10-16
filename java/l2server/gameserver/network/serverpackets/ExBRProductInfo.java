@@ -5,22 +5,22 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBRProductInfo extends L2GameServerPacket
 {
-	private int _productId;
-	private int _price;
-	private int _count;
+	private int productId;
+	private int price;
+	private int count;
 
 	public ExBRProductInfo(int productId, int price, int count)
 	{
-		_productId = productId;
-		_price = price;
-		_count = count;
+		this.productId = productId;
+		this.price = price;
+		this.count = count;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_productId);
-		writeD(_price);
-		writeD(_count);
+		writeD(this.productId);
+		writeD(this.price);
+		writeD(this.count);
 	}
 }

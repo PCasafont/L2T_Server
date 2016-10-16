@@ -32,12 +32,12 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 public final class RequestSentPost extends L2GameClientPacket
 {
 
-	private int _msgId;
+	private int msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		_msgId = readD();
+		this.msgId = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class RequestSentPost extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(_msgId);
+		Message msg = MailManager.getInstance().getMessage(this.msgId);
 		if (msg == null)
 		{
 			return;

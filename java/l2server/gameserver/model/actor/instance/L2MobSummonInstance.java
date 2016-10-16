@@ -25,14 +25,14 @@ import java.util.StringTokenizer;
  */
 public class L2MobSummonInstance extends L2SummonInstance
 {
-	private boolean _previousFollowStatus = true;
+	private boolean previousFollowStatus = true;
 
-	private L2ItemInstance _controlItem;
+	private L2ItemInstance controlItem;
 
 	public L2MobSummonInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance controlItem)
 	{
 		super(objectId, template, owner, null);
-		_controlItem = controlItem;
+		this.controlItem = controlItem;
 	}
 
 	@Override
@@ -204,7 +204,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 					getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
 					return;
 				}
-				//if (target.isAutoAttackable(getOwner()) || _ctrlPressed)
+				//if (target.isAutoAttackable(getOwner()) || this.ctrlPressed)
 				if (target instanceof L2MobSummonInstance)
 				{
 					if (target instanceof L2DoorInstance)
@@ -549,12 +549,12 @@ public class L2MobSummonInstance extends L2SummonInstance
 
 	public void setControlItem(L2ItemInstance item)
 	{
-		_controlItem = item;
+		this.controlItem = item;
 	}
 
 	public L2ItemInstance getControlItem()
 	{
-		return _controlItem;
+		return this.controlItem;
 	}
 
 	@Override
@@ -564,9 +564,9 @@ public class L2MobSummonInstance extends L2SummonInstance
 
 		if (value)
 		{
-			_previousFollowStatus = getFollowStatus();
+			this.previousFollowStatus = getFollowStatus();
 			// if immobilized temporarly disable follow mode
-			if (_previousFollowStatus)
+			if (this.previousFollowStatus)
 			{
 				setFollowStatus(false);
 			}
@@ -574,7 +574,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		else
 		{
 			// if not more immobilized restore previous follow mode
-			setFollowStatus(_previousFollowStatus);
+			setFollowStatus(this.previousFollowStatus);
 		}
 	}
 
@@ -636,6 +636,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 	@Override
 	public void setOwner(L2PcInstance newOwner)
 	{
-		_owner = newOwner;
+		this.owner = newOwner;
 	}
 }

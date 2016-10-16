@@ -36,21 +36,21 @@ import java.util.logging.Level;
 
 public class L2SummonInstance extends L2Summon
 {
-	private float _expPenalty = 0; // exp decrease multiplier (i.e. 0.3 (= 30%) for shadow)
-	private int _itemConsumeId;
-	private int _itemConsumeCount;
-	private int _itemConsumeSteps;
-	private final int _totalLifeTime;
-	private final int _timeLostIdle;
-	private final int _timeLostActive;
-	private int _timeRemaining;
-	private int _nextItemConsumeTime;
-	private int _summonSkillId;
-	private L2Skill _summonPrice;
-	private int _summonPoints;
-	public int _lastLifeTimeCheck; // Following FbiAgent's example to avoid sending useless packets
+	private float expPenalty = 0; // exp decrease multiplier (i.e. 0.3 (= 30%) for shadow)
+	private int itemConsumeId;
+	private int itemConsumeCount;
+	private int itemConsumeSteps;
+	private final int totalLifeTime;
+	private final int timeLostIdle;
+	private final int timeLostActive;
+	private int timeRemaining;
+	private int nextItemConsumeTime;
+	private int summonSkillId;
+	private L2Skill summonPrice;
+	private int summonPoints;
+	public int lastLifeTimeCheck; // Following FbiAgent's example to avoid sending useless packets
 
-	private Future<?> _summonLifeTask;
+	private Future<?> summonLifeTask;
 
 	public L2SummonInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
 	{
@@ -61,69 +61,69 @@ public class L2SummonInstance extends L2Summon
 		if (skill != null)
 		{
 			final L2SkillSummon summonSkill = (L2SkillSummon) skill;
-			_itemConsumeId = summonSkill.getItemConsumeIdOT();
-			_itemConsumeCount = summonSkill.getItemConsumeOT();
-			_itemConsumeSteps = summonSkill.getItemConsumeSteps();
-			_totalLifeTime = summonSkill.getTotalLifeTime();
-			_timeLostIdle = summonSkill.getTimeLostIdle();
-			_timeLostActive = summonSkill.getTimeLostActive();
+			this.itemConsumeId = summonSkill.getItemConsumeIdOT();
+			this.itemConsumeCount = summonSkill.getItemConsumeOT();
+			this.itemConsumeSteps = summonSkill.getItemConsumeSteps();
+			this.totalLifeTime = summonSkill.getTotalLifeTime();
+			this.timeLostIdle = summonSkill.getTimeLostIdle();
+			this.timeLostActive = summonSkill.getTimeLostActive();
 			int summonPrice = summonSkill.getSummonPrice();
 			if (summonPrice != 0)
 			{
-				_summonPrice = SkillTable.getInstance().getInfo(summonPrice, 1);
+				this.summonPrice = SkillTable.getInstance().getInfo(summonPrice, 1);
 			}
 			else
 			{
-				_summonPrice = null;
+				this.summonPrice = null;
 			}
-			_summonPoints = summonSkill.getSummonPoints();
-			_summonSkillId = summonSkill.getId();
+			this.summonPoints = summonSkill.getSummonPoints();
+			this.summonSkillId = summonSkill.getId();
 		}
 		else
 		{
 			// defaults
-			_itemConsumeId = 0;
-			_itemConsumeCount = 0;
-			_itemConsumeSteps = 0;
-			_totalLifeTime = -1; // infinite
-			_timeLostIdle = 1000;
-			_timeLostActive = 1000;
-			_summonPrice = null;
-			_summonPoints = 0;
-			_summonSkillId = 0;
+			this.itemConsumeId = 0;
+			this.itemConsumeCount = 0;
+			this.itemConsumeSteps = 0;
+			this.totalLifeTime = -1; // infinite
+			this.timeLostIdle = 1000;
+			this.timeLostActive = 1000;
+			this.summonPrice = null;
+			this.summonPoints = 0;
+			this.summonSkillId = 0;
 		}
 
-		_timeRemaining = _totalLifeTime;
-		_lastLifeTimeCheck = _totalLifeTime;
+		this.timeRemaining = this.totalLifeTime;
+		this.lastLifeTimeCheck = this.totalLifeTime;
 
-		if (_itemConsumeId == 0)
+		if (this.itemConsumeId == 0)
 		{
-			_nextItemConsumeTime = -1; // do not consume
+			this.nextItemConsumeTime = -1; // do not consume
 		}
-		else if (_itemConsumeSteps == 0)
+		else if (this.itemConsumeSteps == 0)
 		{
-			_nextItemConsumeTime = -1; // do not consume
+			this.nextItemConsumeTime = -1; // do not consume
 		}
 		else
 		{
-			_nextItemConsumeTime = _totalLifeTime - _totalLifeTime / (_itemConsumeSteps + 1);
+			this.nextItemConsumeTime = this.totalLifeTime - this.totalLifeTime / (this.itemConsumeSteps + 1);
 		}
 
 		// When no item consume is defined task only need to check when summon life time has ended.
 		// Otherwise have to destroy items from owner's inventory in order to let summon live.
 		int delay = 1000;
 
-		if (Config.DEBUG && _itemConsumeCount != 0)
+		if (Config.DEBUG && this.itemConsumeCount != 0)
 		{
-			Log.warning("L2SummonInstance: Item Consume ID: " + _itemConsumeId + ", Count: " + _itemConsumeCount +
-					", Rate: " + _itemConsumeSteps + " times.");
+			Log.warning("L2SummonInstance: Item Consume ID: " + this.itemConsumeId + ", Count: " + this.itemConsumeCount +
+					", Rate: " + this.itemConsumeSteps + " times.");
 		}
 		if (Config.DEBUG)
 		{
 			Log.warning("L2SummonInstance: Task Delay " + delay / 1000 + " seconds.");
 		}
 
-		_summonLifeTask = ThreadPoolManager.getInstance()
+		this.summonLifeTask = ThreadPoolManager.getInstance()
 				.scheduleGeneralAtFixedRate(new SummonLifetime(getOwner(), this), delay, delay);
 
 		// Restore summon's buffs if there are any stored (Noblesse)
@@ -181,72 +181,72 @@ public class L2SummonInstance extends L2Summon
 
 	public void setExpPenalty(float expPenalty)
 	{
-		_expPenalty = expPenalty;
+		this.expPenalty = expPenalty;
 	}
 
 	public float getExpPenalty()
 	{
-		return _expPenalty;
+		return this.expPenalty;
 	}
 
 	public int getItemConsumeCount()
 	{
-		return _itemConsumeCount;
+		return this.itemConsumeCount;
 	}
 
 	public int getItemConsumeId()
 	{
-		return _itemConsumeId;
+		return this.itemConsumeId;
 	}
 
 	public int getItemConsumeSteps()
 	{
-		return _itemConsumeSteps;
+		return this.itemConsumeSteps;
 	}
 
 	public int getNextItemConsumeTime()
 	{
-		return _nextItemConsumeTime;
+		return this.nextItemConsumeTime;
 	}
 
 	public int getTotalLifeTime()
 	{
-		return _totalLifeTime;
+		return this.totalLifeTime;
 	}
 
 	public int getTimeLostIdle()
 	{
-		return _timeLostIdle;
+		return this.timeLostIdle;
 	}
 
 	public int getTimeLostActive()
 	{
-		return _timeLostActive;
+		return this.timeLostActive;
 	}
 
 	public int getTimeRemaining()
 	{
-		return _timeRemaining;
+		return this.timeRemaining;
 	}
 
 	public int getSummonSkillId()
 	{
-		return _summonSkillId;
+		return this.summonSkillId;
 	}
 
 	public void setNextItemConsumeTime(int value)
 	{
-		_nextItemConsumeTime = value;
+		this.nextItemConsumeTime = value;
 	}
 
 	public void decNextItemConsumeTime(int value)
 	{
-		_nextItemConsumeTime -= value;
+		this.nextItemConsumeTime -= value;
 	}
 
 	public void decTimeRemaining(int value)
 	{
-		_timeRemaining -= value;
+		this.timeRemaining -= value;
 	}
 
 	public void addExpAndSp(int addToExp, int addToSp)
@@ -277,7 +277,7 @@ public class L2SummonInstance extends L2Summon
 		}
 
 		// To prevent players re-summoning their dead summons endlessly
-		if (_summonPoints > 0 && !(getOwner() != null && getOwner().isPlayingEvent() &&
+		if (this.summonPoints > 0 && !(getOwner() != null && getOwner().isPlayingEvent() &&
 				!getOwner().getEvent().isType(EventType.Survival) &&
 				!getOwner().getEvent().isType(EventType.TeamSurvival)))
 		{
@@ -289,10 +289,10 @@ public class L2SummonInstance extends L2Summon
 			Log.warning("L2SummonInstance: " + getTemplate().Name + " (" + getOwner().getName() + ") has been killed.");
 		}
 
-		if (_summonLifeTask != null)
+		if (this.summonLifeTask != null)
 		{
-			_summonLifeTask.cancel(true);
-			_summonLifeTask = null;
+			this.summonLifeTask.cancel(true);
+			this.summonLifeTask = null;
 		}
 		return true;
 	}
@@ -335,13 +335,13 @@ public class L2SummonInstance extends L2Summon
 
 	static class SummonLifetime implements Runnable
 	{
-		private L2PcInstance _activeChar;
-		private L2SummonInstance _summon;
+		private L2PcInstance activeChar;
+		private L2SummonInstance summon;
 
 		SummonLifetime(L2PcInstance activeChar, L2SummonInstance newpet)
 		{
-			_activeChar = activeChar;
-			_summon = newpet;
+			this.activeChar = activeChar;
+			this.summon = newpet;
 		}
 
 		@Override
@@ -349,68 +349,68 @@ public class L2SummonInstance extends L2Summon
 		{
 			if (Config.DEBUG)
 			{
-				Log.warning("L2SummonInstance: " + _summon.getTemplate().Name + " (" + _activeChar.getName() +
+				Log.warning("L2SummonInstance: " + this.summon.getTemplate().Name + " (" + this.activeChar.getName() +
 						") run task.");
 			}
 
 			try
 			{
-				double oldTimeRemaining = _summon.getTimeRemaining();
-				int maxTime = _summon.getTotalLifeTime();
+				double oldTimeRemaining = this.summon.getTimeRemaining();
+				int maxTime = this.summon.getTotalLifeTime();
 				double newTimeRemaining;
 
 				// if pet is attacking
-				if (_summon.isAttackingNow())
+				if (this.summon.isAttackingNow())
 				{
-					_summon.decTimeRemaining(_summon.getTimeLostActive());
+					this.summon.decTimeRemaining(this.summon.getTimeLostActive());
 				}
 				else
 				{
-					_summon.decTimeRemaining(_summon.getTimeLostIdle());
+					this.summon.decTimeRemaining(this.summon.getTimeLostIdle());
 				}
-				newTimeRemaining = _summon.getTimeRemaining();
+				newTimeRemaining = this.summon.getTimeRemaining();
 				// check if the summon's lifetime has ran out
 				if (maxTime > 0 && newTimeRemaining < 0)
 				{
-					_summon.unSummon(_activeChar);
+					this.summon.unSummon(this.activeChar);
 				}
 				// check if it is time to consume another item
-				else if (newTimeRemaining <= _summon.getNextItemConsumeTime() &&
-						oldTimeRemaining > _summon.getNextItemConsumeTime())
+				else if (newTimeRemaining <= this.summon.getNextItemConsumeTime() &&
+						oldTimeRemaining > summon.getNextItemConsumeTime())
 				{
-					_summon.decNextItemConsumeTime(maxTime / (_summon.getItemConsumeSteps() + 1));
+					this.summon.decNextItemConsumeTime(maxTime / (this.summon.getItemConsumeSteps() + 1));
 
 					// check if owner has enought itemConsume, if requested
-					if (_summon.getItemConsumeCount() > 0 && _summon.getItemConsumeId() != 0 && !_summon.isDead() &&
-							!_summon.destroyItemByItemId("Consume", _summon.getItemConsumeId(),
-									_summon.getItemConsumeCount(), _activeChar, true))
+					if (this.summon.getItemConsumeCount() > 0 && this.summon.getItemConsumeId() != 0 && !this.summon.isDead() &&
+							!this.summon.destroyItemByItemId("Consume", this.summon.getItemConsumeId(),
+									this.summon.getItemConsumeCount(), this.activeChar, true))
 					{
-						_summon.unSummon(_activeChar);
+						this.summon.unSummon(this.activeChar);
 					}
 				}
 
 				// prevent useless packet-sending when the difference isn't visible.
-				/*if ((_summon._lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
+				/*if ((this.summon.lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
                 {
-					_summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
-					_summon._lastShowntimeRemaining = (int) newTimeRemaining;
-					_summon.updateEffectIcons();
+					this.summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
+					this.summon.lastShowntimeRemaining = (int) newTimeRemaining;
+					this.summon.updateEffectIcons();
 				}*/
-				if (_summon._lastLifeTimeCheck > 50)
+				if (this.summon.lastLifeTimeCheck > 50)
 				{
-					_summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
-					_summon._lastLifeTimeCheck = 0;
-					if (_summon._summonPrice != null)
+					this.summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
+					this.summon.lastLifeTimeCheck = 0;
+					if (this.summon.summonPrice != null)
 					{
-						_summon._summonPrice.getEffects(_summon, _activeChar);
+						this.summon.summonPrice.getEffects(this.summon, this.activeChar);
 					}
-					_summon.updateEffectIcons();
+					this.summon.updateEffectIcons();
 				}
-				_summon._lastLifeTimeCheck++;
+				this.summon.lastLifeTimeCheck++;
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "Error on player [" + _activeChar.getName() + "] summon item consume task.", e);
+				Log.log(Level.SEVERE, "Error on player [" + this.activeChar.getName() + "] summon item consume task.", e);
 			}
 		}
 	}
@@ -423,16 +423,16 @@ public class L2SummonInstance extends L2Summon
 			Log.warning("L2SummonInstance: " + getTemplate().Name + " (" + owner.getName() + ") unsummoned.");
 		}
 
-		if (_summonLifeTask != null)
+		if (this.summonLifeTask != null)
 		{
-			_summonLifeTask.cancel(true);
-			_summonLifeTask = null;
+			this.summonLifeTask.cancel(true);
+			this.summonLifeTask = null;
 
-			if (_summonPrice != null)
+			if (this.summonPrice != null)
 			{
-				for (L2Abnormal e : _owner.getAllEffects())
+				for (L2Abnormal e : this.owner.getAllEffects())
 				{
-					if (e.getSkill().getId() == _summonPrice.getId())
+					if (e.getSkill().getId() == this.summonPrice.getId())
 					{
 						e.exit();
 					}
@@ -507,11 +507,11 @@ public class L2SummonInstance extends L2Summon
 	 */
 	public boolean isInOlympiadMode()
 	{
-		return _owner != null && _owner.isInOlympiadMode();
+		return this.owner != null && this.owner.isInOlympiadMode();
 	}
 
 	public int getSummonPoints()
 	{
-		return _summonPoints;
+		return this.summonPoints;
 	}
 }

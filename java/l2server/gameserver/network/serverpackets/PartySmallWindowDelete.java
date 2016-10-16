@@ -24,17 +24,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PartySmallWindowDelete extends L2GameServerPacket
 {
-	private L2PcInstance _member;
+	private L2PcInstance member;
 
 	public PartySmallWindowDelete(L2PcInstance member)
 	{
-		_member = member;
+		this.member = member;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_member.getObjectId());
-		writeS(_member.getName());
+		writeD(this.member.getObjectId());
+		writeS(this.member.getName());
 	}
 }

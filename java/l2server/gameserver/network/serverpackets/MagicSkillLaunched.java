@@ -31,56 +31,56 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class MagicSkillLaunched extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _skillId;
-	private int _skillLevel;
-	private int _numberOfTargets;
-	private L2Object[] _targets;
-	private int _singleTargetId;
+	private int charObjId;
+	private int skillId;
+	private int skillLevel;
+	private int numberOfTargets;
+	private L2Object[] targets;
+	private int singleTargetId;
 
 	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
 	{
-		_charObjId = cha.getObjectId();
-		_skillId = skillId;
-		_skillLevel = skillLevel;
+		this.charObjId = cha.getObjectId();
+		this.skillId = skillId;
+		this.skillLevel = skillLevel;
 
 		if (targets != null)
 		{
-			_numberOfTargets = targets.length;
-			_targets = targets;
+			this.numberOfTargets = targets.length;
+			this.targets = targets;
 		}
 		else
 		{
-			_numberOfTargets = 1;
-			_targets = new L2Object[]{cha};
+			this.numberOfTargets = 1;
+			this.targets = new L2Object[]{cha};
 		}
-		_singleTargetId = 0;
+		this.singleTargetId = 0;
 	}
 
 	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel)
 	{
-		_charObjId = cha.getObjectId();
-		_skillId = skillId;
-		_skillLevel = skillLevel;
-		_numberOfTargets = 1;
-		_singleTargetId = cha.getTargetId();
+		this.charObjId = cha.getObjectId();
+		this.skillId = skillId;
+		this.skillLevel = skillLevel;
+		this.numberOfTargets = 1;
+		this.singleTargetId = cha.getTargetId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(0x02); // GoD ??? (if 1, party skills cannot be seen)
-		writeD(_charObjId);
-		writeD(_skillId);
-		writeD(_skillLevel);
-		writeD(_numberOfTargets); // also failed or not?
-		if (_singleTargetId != 0 || _numberOfTargets == 0)
+		writeD(this.charObjId);
+		writeD(this.skillId);
+		writeD(this.skillLevel);
+		writeD(this.numberOfTargets); // also failed or not?
+		if (this.singleTargetId != 0 || this.numberOfTargets == 0)
 		{
-			writeD(_singleTargetId);
+			writeD(this.singleTargetId);
 		}
 		else
 		{
-			for (L2Object target : _targets)
+			for (L2Object target : this.targets)
 			{
 				writeD(target.getObjectId());
 			}

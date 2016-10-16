@@ -1196,7 +1196,7 @@ public class BlowfishEngine
 	private void setKey(byte[] key)
 	{
 		/*
-         * - comments are from _Applied Crypto_, Schneier, p338 please be
+         * - comments are from this.Applied Crypto_, Schneier, p338 please be
 		 * careful comparing the two, AC numbers the arrays from 1, the
 		 * enclosed code from 0.
 		 *

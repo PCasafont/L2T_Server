@@ -22,26 +22,26 @@ import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
  */
 public class ExShuttleMove extends L2GameServerPacket
 {
-	private final int _objId, _x, _y, _z, _moveSpeed, _rotationSpeed;
+	private final int objId, x, y, z, moveSpeed, rotationSpeed;
 
 	public ExShuttleMove(L2ShuttleInstance shut)
 	{
-		_objId = shut.getObjectId();
-		_x = shut.getXdestination();
-		_y = shut.getYdestination();
-		_z = shut.getZdestination();
-		_moveSpeed = (int) shut.getStat().getMoveSpeed();
-		_rotationSpeed = shut.getStat().getRotationSpeed();
+		this.objId = shut.getObjectId();
+		this.x = shut.getXdestination();
+		this.y = shut.getYdestination();
+		this.z = shut.getZdestination();
+		this.moveSpeed = (int) shut.getStat().getMoveSpeed();
+		this.rotationSpeed = shut.getStat().getRotationSpeed();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objId);
-		writeD(_moveSpeed);
-		writeD(_rotationSpeed);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.objId);
+		writeD(this.moveSpeed);
+		writeD(this.rotationSpeed);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 	}
 }

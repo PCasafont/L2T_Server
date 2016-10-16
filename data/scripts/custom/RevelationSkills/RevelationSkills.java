@@ -15,6 +15,9 @@
 
 package custom.RevelationSkills;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
@@ -27,29 +30,26 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author LasTravel
  */
 
 public class RevelationSkills extends Quest
 {
-	private static final String _qn = "RevelationSkills";
+	private static final String qn = "RevelationSkills";
 
-	private static final int _monkOfChaos = 33880;
-	private static final int _chaoticPomander = 37374;
-	private static final int _chaosPomanderDualClass = 37375;
-	private static final long _resetPrice = 100000000L;
+	private static final int monkOfChaos = 33880;
+	private static final int chaoticPomander = 37374;
+	private static final int chaosPomanderDualClass = 37375;
+	private static final long resetPrice = 100000000L;
 	private static final int[] revelationSkills = {1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997};
 
 	public RevelationSkills(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		addStartNpc(_monkOfChaos);
-		addTalkId(_monkOfChaos);
+		addStartNpc(this.monkOfChaos);
+		addTalkId(this.monkOfChaos);
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
@@ -144,9 +144,9 @@ public class RevelationSkills extends Quest
 		}
 		else if (event.equalsIgnoreCase("reset_revelation"))
 		{
-			if (player.getAdena() >= _resetPrice)
+			if (player.getAdena() >= this.resetPrice)
 			{
-				player.reduceAdena(_qn, _resetPrice, player, true);
+				player.reduceAdena(this.qn, this.resetPrice, player, true);
 				for (L2Skill skill : player.getAllSkills())
 				{
 					if (skill == null)
@@ -160,15 +160,15 @@ public class RevelationSkills extends Quest
 					}
 				}
 
-				long promanderCount = player.getInventory().getInventoryItemCount(_chaoticPomander, 0);
-				long promanderDualClassCount = player.getInventory().getInventoryItemCount(_chaosPomanderDualClass, 0);
+				long promanderCount = player.getInventory().getInventoryItemCount(this.chaoticPomander, 0);
+				long promanderDualClassCount = player.getInventory().getInventoryItemCount(this.chaosPomanderDualClass, 0);
 				if (promanderCount > 0)
 				{
-					player.destroyItemByItemId(_qn, _chaoticPomander, 1, npc, true);
+					player.destroyItemByItemId(this.qn, this.chaoticPomander, 1, npc, true);
 				}
 				else if (promanderDualClassCount > 0)
 				{
-					player.destroyItemByItemId(_qn, _chaosPomanderDualClass, 1, npc, true);
+					player.destroyItemByItemId(this.qn, this.chaosPomanderDualClass, 1, npc, true);
 				}
 			}
 			else
@@ -213,6 +213,6 @@ public class RevelationSkills extends Quest
 
 	public static void main(String[] args)
 	{
-		new RevelationSkills(-1, _qn, "custom");
+		new RevelationSkills(-1, qn, "custom");
 	}
 }

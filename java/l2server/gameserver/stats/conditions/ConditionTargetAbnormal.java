@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetAbnormal extends Condition
 {
-	private final int _abnormalId;
+	private final int abnormalId;
 
 	/**
 	 * Instantiates a new condition target abnormal.
@@ -33,7 +33,7 @@ public class ConditionTargetAbnormal extends Condition
 	 */
 	public ConditionTargetAbnormal(int abnormalId)
 	{
-		_abnormalId = abnormalId;
+		this.abnormalId = abnormalId;
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +42,6 @@ public class ConditionTargetAbnormal extends Condition
 	@Override
 	boolean testImpl(Env env)
 	{
-		return env.target.getAbnormalEffect().contains(_abnormalId);
+		return env.target.getAbnormalEffect().contains(this.abnormalId);
 	}
 }

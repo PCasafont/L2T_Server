@@ -1,5 +1,11 @@
 package instances.Pailaka;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
@@ -22,8 +28,6 @@ import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
-
-import java.util.*;
 
 public class PailakaInjuredDragon extends Quest
 {
@@ -106,7 +110,7 @@ public class PailakaInjuredDragon extends Quest
 	private static final int SCROLL_OF_ESCAPE = 736;
 
 	private static int buff_counter = 5;
-	private static boolean _hasDoneAnimation = false;
+	private static boolean hasDoneAnimation = false;
 
 	// Arrays
 	private static final int[] NPCS =
@@ -407,7 +411,7 @@ public class PailakaInjuredDragon extends Quest
 		}
 		else if (event.equalsIgnoreCase("latana_animation"))
 		{
-			_hasDoneAnimation = true;
+			this.hasDoneAnimation = true;
 
 			npc.abortAttack();
 			npc.abortCast();
@@ -843,7 +847,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case LATANA:
 				// Start Latana's Animation
-				if (!_hasDoneAnimation)
+				if (!this.hasDoneAnimation)
 				{
 					startQuestTimer("latana_animation", 500, npc, player);
 					return null;
@@ -866,7 +870,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case LATANA:
 				// Start Latana's Animation
-				if (!_hasDoneAnimation)
+				if (!this.hasDoneAnimation)
 				{
 					final QuestState st = attacker.getQuestState(qn);
 					if (st == null || st.getState() != State.STARTED)
@@ -956,13 +960,13 @@ public class PailakaInjuredDragon extends Quest
 
 	static final class Teleport implements Runnable
 	{
-		private final L2Character _char;
-		private final int _instanceId;
+		private final L2Character cha;
+		private final int instanceId;
 
 		public Teleport(L2Character c, int id)
 		{
-			_char = c;
-			_instanceId = id;
+			this.cha = c;
+			instanceId = id;
 		}
 
 		@Override
@@ -970,7 +974,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			try
 			{
-				teleportPlayer((L2PcInstance) _char, TELEPORT, _instanceId);
+				teleportPlayer((L2PcInstance) this.cha, TELEPORT, instanceId);
 			}
 			catch (Exception e)
 			{
@@ -981,23 +985,23 @@ public class PailakaInjuredDragon extends Quest
 
 	private static class PailakaDrop
 	{
-		private final int _itemId;
-		private final int _chance;
+		private final int itemId;
+		private final int chance;
 
 		public PailakaDrop(int itemId, int chance)
 		{
-			_itemId = itemId;
-			_chance = chance;
+			this.itemId = itemId;
+			this.chance = chance;
 		}
 
 		public int getItemID()
 		{
-			return _itemId;
+			return this.itemId;
 		}
 
 		public int getChance()
 		{
-			return _chance;
+			return this.chance;
 		}
 	}
 

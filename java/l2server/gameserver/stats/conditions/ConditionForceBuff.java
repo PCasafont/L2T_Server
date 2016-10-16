@@ -31,7 +31,7 @@ public final class ConditionForceBuff extends Condition
 	private static final short BATTLE_FORCE = 5104;
 	private static final short SPELL_FORCE = 5105;
 
-	private final byte[] _forces;
+	private final byte[] forces;
 
 	/**
 	 * Instantiates a new condition force buff.
@@ -40,7 +40,7 @@ public final class ConditionForceBuff extends Condition
 	 */
 	public ConditionForceBuff(byte[] forces)
 	{
-		_forces = forces;
+		this.forces = forces;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public final class ConditionForceBuff extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		if (_forces[0] > 0)
+		if (this.forces[0] > 0)
 		{
 			L2Abnormal force = env.player.getFirstEffect(BATTLE_FORCE);
 			if (force == null)
@@ -70,7 +70,7 @@ public final class ConditionForceBuff extends Condition
 				}
 
 				found = true;
-				if (((EffectFusion) effect)._effect < _forces[0])
+				if (((EffectFusion) effect).effect < this.forces[0])
 				{
 					return false;
 				}
@@ -82,7 +82,7 @@ public final class ConditionForceBuff extends Condition
 			}
 		}
 
-		if (_forces[1] > 0)
+		if (this.forces[1] > 0)
 		{
 			L2Abnormal force = env.player.getFirstEffect(SPELL_FORCE);
 			if (force == null)
@@ -99,7 +99,7 @@ public final class ConditionForceBuff extends Condition
 				}
 
 				found = true;
-				if (((EffectFusion) effect)._effect < _forces[1])
+				if (((EffectFusion) effect).effect < this.forces[1])
 				{
 					return false;
 				}

@@ -15,6 +15,8 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -23,8 +25,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExBuyList;
 import l2server.gameserver.network.serverpackets.ExSellList;
-
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands:
@@ -35,7 +36,7 @@ import java.util.logging.Logger;
  */
 public class AdminShop implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminShop.class.getName());
+	private static Logger log = Logger.getLogger(AdminShop.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_buy", "admin_gmshop"};
 
@@ -75,7 +76,7 @@ public class AdminShop implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("admin buylist failed:" + command);
+			Log.warning("admin buylist failed:" + command);
 		}
 
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
@@ -86,13 +87,13 @@ public class AdminShop implements IAdminCommandHandler
 			activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
 			if (Config.DEBUG)
 			{
-				_log.fine(
+				Log.fine(
 						"GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
 			}
 		}
 		else
 		{
-			_log.warning("no buylist with id:" + val);
+			Log.warning("no buylist with id:" + val);
 		}
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}

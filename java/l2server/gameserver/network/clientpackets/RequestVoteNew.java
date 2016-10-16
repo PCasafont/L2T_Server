@@ -24,12 +24,12 @@ import l2server.gameserver.network.serverpackets.UserInfo;
 
 public final class RequestVoteNew extends L2GameClientPacket
 {
-	private int _targetId;
+	private int targetId;
 
 	@Override
 	protected void readImpl()
 	{
-		_targetId = readD();
+		this.targetId = readD();
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 
 		L2PcInstance target = (L2PcInstance) object;
 
-		if (target.getObjectId() != _targetId)
+		if (target.getObjectId() != this.targetId)
 		{
 			return;
 		}

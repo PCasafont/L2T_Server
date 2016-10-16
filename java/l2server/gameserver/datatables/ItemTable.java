@@ -55,80 +55,80 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 public class ItemTable implements Reloadable
 {
 
-	public static final Map<String, Integer> _crystalTypes = new HashMap<>();
-	public static final Map<String, Integer> _slots = new HashMap<>();
-	public static final Map<String, L2WeaponType> _weaponTypes = new HashMap<>();
-	public static final Map<String, L2ArmorType> _armorTypes = new HashMap<>();
+	public static final Map<String, Integer> crystalTypes = new HashMap<>();
+	public static final Map<String, Integer> slots = new HashMap<>();
+	public static final Map<String, L2WeaponType> weaponTypes = new HashMap<>();
+	public static final Map<String, L2ArmorType> armorTypes = new HashMap<>();
 
-	private L2Item[] _allTemplates;
-	private Map<Integer, L2EtcItem> _etcItems;
-	private Map<Integer, L2Armor> _armors;
-	private Map<Integer, L2Weapon> _weapons;
+	private L2Item[] allTemplates;
+	private Map<Integer, L2EtcItem> etcItems;
+	private Map<Integer, L2Armor> armors;
+	private Map<Integer, L2Weapon> weapons;
 
 	static
 	{
-		_crystalTypes.put("r99", L2Item.CRYSTAL_R99);
-		_crystalTypes.put("r95", L2Item.CRYSTAL_R95);
-		_crystalTypes.put("r", L2Item.CRYSTAL_R);
-		_crystalTypes.put("s84", L2Item.CRYSTAL_S84);
-		_crystalTypes.put("s80", L2Item.CRYSTAL_S80);
-		_crystalTypes.put("s", L2Item.CRYSTAL_S);
-		_crystalTypes.put("a", L2Item.CRYSTAL_A);
-		_crystalTypes.put("b", L2Item.CRYSTAL_B);
-		_crystalTypes.put("c", L2Item.CRYSTAL_C);
-		_crystalTypes.put("d", L2Item.CRYSTAL_D);
-		_crystalTypes.put("none", L2Item.CRYSTAL_NONE);
+		crystalTypes.put("r99", L2Item.CRYSTAL_R99);
+		crystalTypes.put("r95", L2Item.CRYSTAL_R95);
+		crystalTypes.put("r", L2Item.CRYSTAL_R);
+		crystalTypes.put("s84", L2Item.CRYSTAL_S84);
+		crystalTypes.put("s80", L2Item.CRYSTAL_S80);
+		crystalTypes.put("s", L2Item.CRYSTAL_S);
+		crystalTypes.put("a", L2Item.CRYSTAL_A);
+		crystalTypes.put("b", L2Item.CRYSTAL_B);
+		crystalTypes.put("c", L2Item.CRYSTAL_C);
+		crystalTypes.put("d", L2Item.CRYSTAL_D);
+		crystalTypes.put("none", L2Item.CRYSTAL_NONE);
 
 		// weapon types
 		for (L2WeaponType type : L2WeaponType.values())
 		{
-			_weaponTypes.put(type.toString(), type);
+			weaponTypes.put(type.toString(), type);
 		}
 
 		// armor types
 		for (L2ArmorType type : L2ArmorType.values())
 		{
-			_armorTypes.put(type.toString(), type);
+			armorTypes.put(type.toString(), type);
 		}
 
-		_slots.put("shirt", L2Item.SLOT_UNDERWEAR);
-		_slots.put("lbracelet", L2Item.SLOT_L_BRACELET);
-		_slots.put("rbracelet", L2Item.SLOT_R_BRACELET);
-		_slots.put("talisman", L2Item.SLOT_DECO);
-		_slots.put("chest", L2Item.SLOT_CHEST);
-		_slots.put("fullarmor", L2Item.SLOT_FULL_ARMOR);
-		_slots.put("head", L2Item.SLOT_HEAD);
-		_slots.put("hair", L2Item.SLOT_HAIR);
-		_slots.put("hairall", L2Item.SLOT_HAIRALL);
-		_slots.put("underwear", L2Item.SLOT_UNDERWEAR);
-		_slots.put("back", L2Item.SLOT_BACK);
-		_slots.put("neck", L2Item.SLOT_NECK);
-		_slots.put("legs", L2Item.SLOT_LEGS);
-		_slots.put("feet", L2Item.SLOT_FEET);
-		_slots.put("gloves", L2Item.SLOT_GLOVES);
-		_slots.put("chest,legs", L2Item.SLOT_CHEST | L2Item.SLOT_LEGS);
-		_slots.put("belt", L2Item.SLOT_BELT);
-		_slots.put("rhand", L2Item.SLOT_R_HAND);
-		_slots.put("lhand", L2Item.SLOT_L_HAND);
-		_slots.put("lrhand", L2Item.SLOT_LR_HAND);
-		_slots.put("rear;lear", L2Item.SLOT_R_EAR | L2Item.SLOT_L_EAR);
-		_slots.put("rfinger;lfinger", L2Item.SLOT_R_FINGER | L2Item.SLOT_L_FINGER);
-		_slots.put("wolf", L2Item.SLOT_WOLF);
-		_slots.put("greatwolf", L2Item.SLOT_GREATWOLF);
-		_slots.put("hatchling", L2Item.SLOT_HATCHLING);
-		_slots.put("strider", L2Item.SLOT_STRIDER);
-		_slots.put("babypet", L2Item.SLOT_BABYPET);
-		_slots.put("brooch", L2Item.SLOT_BROOCH);
-		_slots.put("jewel", L2Item.SLOT_JEWELRY);
-		_slots.put("none", L2Item.SLOT_NONE);
+		slots.put("shirt", L2Item.SLOT_UNDERWEAR);
+		slots.put("lbracelet", L2Item.SLOT_L_BRACELET);
+		slots.put("rbracelet", L2Item.SLOT_R_BRACELET);
+		slots.put("talisman", L2Item.SLOT_DECO);
+		slots.put("chest", L2Item.SLOT_CHEST);
+		slots.put("fullarmor", L2Item.SLOT_FULL_ARMOR);
+		slots.put("head", L2Item.SLOT_HEAD);
+		slots.put("hair", L2Item.SLOT_HAIR);
+		slots.put("hairall", L2Item.SLOT_HAIRALL);
+		slots.put("underwear", L2Item.SLOT_UNDERWEAR);
+		slots.put("back", L2Item.SLOT_BACK);
+		slots.put("neck", L2Item.SLOT_NECK);
+		slots.put("legs", L2Item.SLOT_LEGS);
+		slots.put("feet", L2Item.SLOT_FEET);
+		slots.put("gloves", L2Item.SLOT_GLOVES);
+		slots.put("chest,legs", L2Item.SLOT_CHEST | L2Item.SLOT_LEGS);
+		slots.put("belt", L2Item.SLOT_BELT);
+		slots.put("rhand", L2Item.SLOT_R_HAND);
+		slots.put("lhand", L2Item.SLOT_L_HAND);
+		slots.put("lrhand", L2Item.SLOT_LR_HAND);
+		slots.put("rear;lear", L2Item.SLOT_R_EAR | L2Item.SLOT_L_EAR);
+		slots.put("rfinger;lfinger", L2Item.SLOT_R_FINGER | L2Item.SLOT_L_FINGER);
+		slots.put("wolf", L2Item.SLOT_WOLF);
+		slots.put("greatwolf", L2Item.SLOT_GREATWOLF);
+		slots.put("hatchling", L2Item.SLOT_HATCHLING);
+		slots.put("strider", L2Item.SLOT_STRIDER);
+		slots.put("babypet", L2Item.SLOT_BABYPET);
+		slots.put("brooch", L2Item.SLOT_BROOCH);
+		slots.put("jewel", L2Item.SLOT_JEWELRY);
+		slots.put("none", L2Item.SLOT_NONE);
 
 		//retail compatibility
-		_slots.put("onepiece", L2Item.SLOT_FULL_ARMOR);
-		_slots.put("hair2", L2Item.SLOT_HAIR2);
-		_slots.put("dhair", L2Item.SLOT_HAIRALL);
-		_slots.put("alldress", L2Item.SLOT_ALLDRESS);
-		_slots.put("deco1", L2Item.SLOT_DECO);
-		_slots.put("waist", L2Item.SLOT_BELT);
+		slots.put("onepiece", L2Item.SLOT_FULL_ARMOR);
+		slots.put("hair2", L2Item.SLOT_HAIR2);
+		slots.put("dhair", L2Item.SLOT_HAIRALL);
+		slots.put("alldress", L2Item.SLOT_ALLDRESS);
+		slots.put("deco1", L2Item.SLOT_DECO);
+		slots.put("waist", L2Item.SLOT_BELT);
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class ItemTable implements Reloadable
 	 */
 	public static ItemTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	/**
@@ -146,9 +146,9 @@ public class ItemTable implements Reloadable
 	 */
 	private ItemTable()
 	{
-		_etcItems = new HashMap<>();
-		_armors = new HashMap<>();
-		_weapons = new HashMap<>();
+		this.etcItems = new HashMap<>();
+		this.armors = new HashMap<>();
+		this.weapons = new HashMap<>();
 		load();
 
 		ReloadableManager.getInstance().register("items", this);
@@ -157,9 +157,9 @@ public class ItemTable implements Reloadable
 	private void load()
 	{
 		int highest = 0;
-		_armors.clear();
-		_etcItems.clear();
-		_weapons.clear();
+		this.armors.clear();
+		this.etcItems.clear();
+		this.weapons.clear();
 
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "items");
 		if (!dir.exists())
@@ -237,15 +237,15 @@ public class ItemTable implements Reloadable
 			}
 			if (item.getItem() instanceof L2EtcItem)
 			{
-				_etcItems.put(item.getId(), (L2EtcItem) item.getItem());
+				this.etcItems.put(item.getId(), (L2EtcItem) item.getItem());
 			}
 			else if (item.getItem() instanceof L2Armor)
 			{
-				_armors.put(item.getId(), (L2Armor) item.getItem());
+				this.armors.put(item.getId(), (L2Armor) item.getItem());
 			}
 			else
 			{
-				_weapons.put(item.getId(), (L2Weapon) item.getItem());
+				this.weapons.put(item.getId(), (L2Weapon) item.getItem());
 			}
 		}
 		buildFastLookupTable(highest);
@@ -256,26 +256,26 @@ public class ItemTable implements Reloadable
 	 */
 	private void buildFastLookupTable(int size)
 	{
-		// Create a FastLookUp Table called _allTemplates of size : value of the highest item ID
+		// Create a FastLookUp Table called this.allTemplates of size : value of the highest item ID
 		Log.info("Highest item id used:" + size);
-		_allTemplates = new L2Item[size + 1];
+		this.allTemplates = new L2Item[size + 1];
 
 		// Insert armor item in Fast Look Up Table
-		for (L2Armor item : _armors.values())
+		for (L2Armor item : this.armors.values())
 		{
-			_allTemplates[item.getItemId()] = item;
+			this.allTemplates[item.getItemId()] = item;
 		}
 
 		// Insert weapon item in Fast Look Up Table
-		for (L2Weapon item : _weapons.values())
+		for (L2Weapon item : this.weapons.values())
 		{
-			_allTemplates[item.getItemId()] = item;
+			this.allTemplates[item.getItemId()] = item;
 		}
 
 		// Insert etcItem item in Fast Look Up Table
-		for (L2EtcItem item : _etcItems.values())
+		for (L2EtcItem item : this.etcItems.values())
 		{
-			_allTemplates[item.getItemId()] = item;
+			this.allTemplates[item.getItemId()] = item;
 		}
 	}
 
@@ -287,13 +287,13 @@ public class ItemTable implements Reloadable
 	 */
 	public L2Item getTemplate(int id)
 	{
-		if (id >= _allTemplates.length)
+		if (id >= this.allTemplates.length)
 		{
 			return null;
 		}
 		else
 		{
-			return _allTemplates[id];
+			return this.allTemplates[id];
 		}
 	}
 
@@ -302,7 +302,7 @@ public class ItemTable implements Reloadable
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Create and Init the L2ItemInstance corresponding to the Item Identifier and quantity </li>
-	 * <li>Add the L2ItemInstance object to _allObjects of L2world </li>
+	 * <li>Add the L2ItemInstance object to this.allObjects of L2world </li>
 	 * <li>Logs Item creation according to log settings</li><BR><BR>
 	 *
 	 * @param process   : String Identifier of process triggering this action
@@ -358,7 +358,7 @@ public class ItemTable implements Reloadable
 			Log.fine("ItemTable: Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
 		}
 
-		// Add the L2ItemInstance object to _allObjects of L2world
+		// Add the L2ItemInstance object to this.allObjects of L2world
 		L2World.getInstance().storeObject(item);
 
 		// Set Item parameters
@@ -434,7 +434,7 @@ public class ItemTable implements Reloadable
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Sets L2ItemInstance parameters to be unusable </li>
-	 * <li>Removes the L2ItemInstance object to _allObjects of L2world </li>
+	 * <li>Removes the L2ItemInstance object to this.allObjects of L2world </li>
 	 * <li>Logs Item delettion according to log settings</li><BR><BR>
 	 *
 	 * @param process   : String Identifier of process triggering this action
@@ -542,39 +542,39 @@ public class ItemTable implements Reloadable
 
 	protected static class ResetOwner implements Runnable
 	{
-		L2ItemInstance _item;
+		L2ItemInstance item;
 
 		public ResetOwner(L2ItemInstance item)
 		{
-			_item = item;
+			this.item = item;
 		}
 
 		@Override
 		public void run()
 		{
-			_item.setOwnerId(0);
-			_item.setItemLootShedule(null);
+			this.item.setOwnerId(0);
+			this.item.setItemLootShedule(null);
 		}
 	}
 
 	public Set<Integer> getAllArmorsId()
 	{
-		return _armors.keySet();
+		return this.armors.keySet();
 	}
 
 	public Set<Integer> getAllWeaponsId()
 	{
-		return _weapons.keySet();
+		return this.weapons.keySet();
 	}
 
 	public L2Item[] getAllItems()
 	{
-		return _allTemplates;
+		return this.allTemplates;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ItemTable _instance = new ItemTable();
+		protected static final ItemTable instance = new ItemTable();
 	}
 }

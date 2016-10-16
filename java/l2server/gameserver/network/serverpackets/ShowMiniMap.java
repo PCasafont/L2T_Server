@@ -25,19 +25,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShowMiniMap extends L2GameServerPacket
 {
-	private int _mapId;
+	private int mapId;
 
 	/**
 	 */
 	public ShowMiniMap(int mapId)
 	{
-		_mapId = mapId;
+		this.mapId = mapId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_mapId);
+		writeD(this.mapId);
 		writeC(0);
 	}
 }

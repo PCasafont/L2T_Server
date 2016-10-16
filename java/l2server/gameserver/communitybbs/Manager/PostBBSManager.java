@@ -32,15 +32,15 @@ import java.util.*;
 
 public class PostBBSManager extends BaseBBSManager
 {
-	private final Map<Topic, Post> _postByTopic = new HashMap<>();
+	private final Map<Topic, Post> postByTopic = new HashMap<>();
 
 	public Post getGPosttByTopic(Topic t)
 	{
-		Post post = _postByTopic.get(t);
+		Post post = this.postByTopic.get(t);
 		if (post == null)
 		{
 			post = new Post(t);
-			_postByTopic.put(t, post);
+			this.postByTopic.put(t, post);
 		}
 		return post;
 	}
@@ -50,12 +50,12 @@ public class PostBBSManager extends BaseBBSManager
 	 */
 	public void delPostByTopic(Topic t)
 	{
-		_postByTopic.remove(t);
+		this.postByTopic.remove(t);
 	}
 
 	public void addPostByTopic(Post p, Topic t)
 	{
-		_postByTopic.putIfAbsent(t, p);
+		this.postByTopic.putIfAbsent(t, p);
 	}
 
 	@Override
@@ -203,11 +203,11 @@ public class PostBBSManager extends BaseBBSManager
 						dateFormat.format(p.getCPost(0).postDate),
 						"</font></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=0><tr><td fixwidth=5></td><td FIXWIDTH=600 align=left>",
 						mes,
-						"</td><td fixqqwidth=5></td></tr></table><br><img src=\"L2UI.squareblank\" width=\"1\" height=\"5\"><img src=\"L2UI.squaregray\" width=\"610\" height=\"1\"><img src=\"L2UI.squareblank\" width=\"1\" height=\"5\"><table border=0 cellspacing=0 cellpadding=0 FIXWIDTH=610><tr><td width=50><button value=\"&$422;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"></td><td width=560 align=right><table border=0 cellspacing=0><tr><td FIXWIDTH=300></td><td><button value = \"&$424;\" action=\"bypass _bbsposts;edit;",
+						"</td><td fixqqwidth=5></td></tr></table><br><img src=\"L2UI.squareblank\" width=\"1\" height=\"5\"><img src=\"L2UI.squaregray\" width=\"610\" height=\"1\"><img src=\"L2UI.squareblank\" width=\"1\" height=\"5\"><table border=0 cellspacing=0 cellpadding=0 FIXWIDTH=610><tr><td width=50><button value=\"&$422;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"></td><td width=560 align=right><table border=0 cellspacing=0><tr><td FIXWIDTH=300></td><td><button value = \"&$424;\" action=\"bypass this.bbsposts;edit;",
 						String.valueOf(forum.getID()), ";", String.valueOf(topic.getID()),
-						";0\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;<td><button value = \"&$425;\" action=\"bypass _bbstopics;del;",
+						";0\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;<td><button value = \"&$425;\" action=\"bypass this.bbstopics;del;",
 						String.valueOf(forum.getID()), ";", String.valueOf(topic.getID()),
-						"\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;<td><button value = \"&$421;\" action=\"bypass _bbstopics;crea;",
+						"\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;<td><button value = \"&$421;\" action=\"bypass this.bbstopics;crea;",
 						String.valueOf(forum.getID()),
 						"\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;</tr></table></td></tr></table><br><br><br></center></body></html>");
 		separateAndSend(html, activeChar);
@@ -268,11 +268,11 @@ public class PostBBSManager extends BaseBBSManager
 
 	public static PostBBSManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final PostBBSManager _instance = new PostBBSManager();
+		protected static final PostBBSManager instance = new PostBBSManager();
 	}
 }

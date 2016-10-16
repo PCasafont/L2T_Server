@@ -25,8 +25,8 @@ import l2server.log.Log;
 
 public final class RequestMakeMacro extends L2GameClientPacket
 {
-	private L2Macro _macro;
-	private int _commandsLenght = 0;
+	private L2Macro macro;
+	private int commandsLenght = 0;
 
 	private static final int MAX_MACRO_LENGTH = 12;
 
@@ -54,40 +54,40 @@ public final class RequestMakeMacro extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		int _id = readD();
-		String _name = readS();
-		String _desc = readS();
-		String _acronym = readS();
+		int id = readD();
+		String name = readS();
+		String desc = readS();
+		String acronym = readS();
 		readH(); // ???
-		int _icon = readH();
-		int _count = readC();
-		if (_count > MAX_MACRO_LENGTH)
+		int icon = readH();
+		int count = readC();
+		if (count > MAX_MACRO_LENGTH)
 		{
-			_count = MAX_MACRO_LENGTH;
+			count = MAX_MACRO_LENGTH;
 		}
 
-		L2MacroCmd[] commands = new L2MacroCmd[_count];
+		L2MacroCmd[] commands = new L2MacroCmd[count];
 
 		if (Config.DEBUG)
 		{
-			Log.info("Make macro id:" + _id + "\tname:" + _name + "\tdesc:" + _desc + "\tacronym:" + _acronym +
-					"\ticon:" + _icon + "\tcount:" + _count);
+			Log.info("Make macro id:" + id + "\tname:" + name + "\tdesc:" + desc + "\tacronym:" + acronym +
+					"\ticon:" + icon + "\tcount:" + count);
 		}
-		for (int i = 0; i < _count; i++)
+		for (int i = 0; i < count; i++)
 		{
 			int entry = readC();
 			int type = readC(); // 1 = skill, 3 = action, 4 = shortcut
 			int d1 = readD(); // skill or page number for shortcuts
 			int d2 = readC();
 			String command = readS();
-			_commandsLenght += command.length();
+			commandsLenght += command.length();
 			commands[i] = new L2MacroCmd(entry, type, d1, d2, command);
 			if (Config.DEBUG)
 			{
 				Log.info("entry:" + entry + "\ttype:" + type + "\td1:" + d1 + "\td2:" + d2 + "\tcommand:" + command);
 			}
 		}
-		_macro = new L2Macro(_id, _icon, _name, _desc, _acronym, commands);
+		macro = new L2Macro(id, icon, name, desc, acronym, commands);
 	}
 
 	@Override
@@ -98,7 +98,7 @@ public final class RequestMakeMacro extends L2GameClientPacket
 		{
 			return;
 		}
-		if (_commandsLenght > 255)
+		if (commandsLenght > 255)
 		{
 			//Invalid macro. Refer to the Help file for instructions.
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVALID_MACRO));
@@ -110,18 +110,18 @@ public final class RequestMakeMacro extends L2GameClientPacket
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_MAY_CREATE_UP_TO_48_MACROS));
 			return;
 		}
-		if (_macro.name.length() == 0)
+		if (macro.name.length() == 0)
 		{
 			//Enter the name of the macro.
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTER_THE_MACRO_NAME));
 			return;
 		}
-		if (_macro.descr.length() > 32)
+		if (macro.descr.length() > 32)
 		{
 			//Macro descriptions may contain up to 32 characters.
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MACRO_DESCRIPTION_MAX_32_CHARS));
 			return;
 		}
-		player.registerMacro(_macro);
+		player.registerMacro(macro);
 	}
 }

@@ -15,6 +15,8 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
@@ -24,8 +26,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.DecayTaskManager;
-
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands:
@@ -117,7 +118,7 @@ public class AdminRes implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
+			Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
 					obj.getObjectId());
 		}
 	}

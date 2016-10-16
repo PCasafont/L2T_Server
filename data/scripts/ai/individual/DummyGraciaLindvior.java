@@ -28,14 +28,14 @@ import l2server.util.Rnd;
 
 public class DummyGraciaLindvior extends Quest
 {
-	private int _eachHours = 1;
-	private int _chance = 100000;
+	private int eachHours = 1;
+	private int chance = 100000;
 
 	public DummyGraciaLindvior(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		startQuestTimer("showMovie", _eachHours * 60000, null, null, true);
+		startQuestTimer("showMovie", this.eachHours * 60000, null, null, true);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class DummyGraciaLindvior extends Quest
 	{
 		if (event.equalsIgnoreCase("showMovie"))
 		{
-			if (Rnd.get(100000) >= _chance)
+			if (Rnd.get(100000) >= this.chance)
 			{
 				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values())
 				{

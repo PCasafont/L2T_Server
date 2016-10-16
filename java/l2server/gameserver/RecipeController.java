@@ -31,34 +31,31 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 
 public class RecipeController
 {
 
-	private Map<Integer, L2RecipeList> _lists;
-	private static final Map<Integer, RecipeItemMaker> _activeMakers = new HashMap<>();
+	private Map<Integer, L2RecipeList> lists;
+	private static final Map<Integer, RecipeItemMaker> activeMakers = new HashMap<>();
 	private static final String RECIPES_FILE = "recipes.xml";
 
 	public static RecipeController getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private RecipeController()
 	{
-		_lists = new HashMap<>();
+		this.lists = new HashMap<>();
 
 		try
 		{
 			loadFromXML();
-			Log.info("RecipeController: Loaded " + _lists.size() + " recipes.");
+			Log.info("RecipeController: Loaded " + this.lists.size() + " recipes.");
 		}
 		catch (Exception e)
 		{
@@ -68,17 +65,17 @@ public class RecipeController
 
 	public int getRecipesCount()
 	{
-		return _lists.size();
+		return this.lists.size();
 	}
 
 	public L2RecipeList getRecipeList(int listId)
 	{
-		return _lists.get(listId);
+		return this.lists.get(listId);
 	}
 
 	public L2RecipeList getRecipeByItemId(int itemId)
 	{
-		for (L2RecipeList find : _lists.values())
+		for (L2RecipeList find : this.lists.values())
 		{
 			if (find.getRecipeId() == itemId)
 			{
@@ -90,9 +87,9 @@ public class RecipeController
 
 	public int[] getAllItemIds()
 	{
-		int[] idList = new int[_lists.size()];
+		int[] idList = new int[this.lists.size()];
 		int i = 0;
-		for (L2RecipeList rec : _lists.values())
+		for (L2RecipeList rec : this.lists.values())
 		{
 			idList[i++] = rec.getRecipeId();
 		}
@@ -104,7 +101,7 @@ public class RecipeController
 		RecipeItemMaker maker = null;
 		if (Config.ALT_GAME_CREATION)
 		{
-			maker = _activeMakers.get(player.getObjectId());
+			maker = this.activeMakers.get(player.getObjectId());
 		}
 
 		if (maker == null)
@@ -120,7 +117,7 @@ public class RecipeController
 
 	public synchronized void requestMakeItemAbort(L2PcInstance player)
 	{
-		_activeMakers.remove(player.getObjectId());
+		this.activeMakers.remove(player.getObjectId());
 	}
 
 	public synchronized void requestManufactureItem(L2PcInstance manufacturer, int recipeListId, L2PcInstance player)
@@ -146,18 +143,18 @@ public class RecipeController
 		RecipeItemMaker maker;
 
 		if (Config.ALT_GAME_CREATION &&
-				(maker = _activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
+				(maker = this.activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
 		{
 			player.sendMessage("Manufacturer is busy, please try later.");
 			return;
 		}
 
 		maker = new RecipeItemMaker(manufacturer, recipeList, player);
-		if (maker._isValid)
+		if (maker.isValid)
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
-				_activeMakers.put(manufacturer.getObjectId(), maker);
+				this.activeMakers.put(manufacturer.getObjectId(), maker);
 				ThreadPoolManager.getInstance().scheduleGeneral(maker, 100);
 			}
 			else
@@ -196,7 +193,7 @@ public class RecipeController
 		RecipeItemMaker maker;
 
 		// check if already busy (possible in alt mode only)
-		if (Config.ALT_GAME_CREATION && (maker = _activeMakers.get(player.getObjectId())) != null)
+		if (Config.ALT_GAME_CREATION && (maker = this.activeMakers.get(player.getObjectId())) != null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S1);
 			sm.addItemName(recipeList.getItemId());
@@ -206,11 +203,11 @@ public class RecipeController
 		}
 
 		maker = new RecipeItemMaker(player, recipeList, player);
-		if (maker._isValid)
+		if (maker.isValid)
 		{
 			if (Config.ALT_GAME_CREATION)
 			{
-				_activeMakers.put(player.getObjectId(), maker);
+				this.activeMakers.put(player.getObjectId(), maker);
 				ThreadPoolManager.getInstance().scheduleGeneral(maker, 100);
 			}
 			else
@@ -326,7 +323,7 @@ public class RecipeController
 								recipeList.addAltStatChange(recipeAltStatChange);
 							}
 
-							_lists.put(id, recipeList);
+							this.lists.put(id, recipeList);
 						}
 					}
 				}
@@ -340,92 +337,92 @@ public class RecipeController
 
 	private static class RecipeItemMaker implements Runnable
 	{
-		protected boolean _isValid;
-		protected List<TempItem> _items = null;
-		protected final L2RecipeList _recipeList;
-		protected final L2PcInstance _player; // "crafter"
-		protected final L2PcInstance _target; // "customer"
-		protected final L2Skill _skill;
-		protected final int _skillId;
-		protected final int _skillLevel;
-		protected int _creationPasses = 1;
-		protected int _itemGrab;
-		protected int _exp = -1;
-		protected int _sp = -1;
-		protected long _price;
-		protected int _totalItems;
+		protected boolean isValid;
+		protected List<TempItem> items = null;
+		protected final L2RecipeList recipeList;
+		protected final L2PcInstance player; // "crafter"
+		protected final L2PcInstance target; // "customer"
+		protected final L2Skill skill;
+		protected final int skillId;
+		protected final int skillLevel;
+		protected int creationPasses = 1;
+		protected int itemGrab;
+		protected int exp = -1;
+		protected int sp = -1;
+		protected long price;
+		protected int totalItems;
 		@SuppressWarnings("unused")
-		protected int _materialsRefPrice;
-		protected int _delay;
+		protected int materialsRefPrice;
+		protected int delay;
 
 		public RecipeItemMaker(L2PcInstance pPlayer, L2RecipeList pRecipeList, L2PcInstance pTarget)
 		{
-			_player = pPlayer;
-			_target = pTarget;
-			_recipeList = pRecipeList;
+			this.player = pPlayer;
+			this.target = pTarget;
+			this.recipeList = pRecipeList;
 
-			_isValid = false;
-			_skillId = _recipeList.isDwarvenRecipe() ? L2Skill.SKILL_CREATE_DWARVEN : L2Skill.SKILL_CREATE_COMMON;
-			_skillLevel = _player.getSkillLevelHash(_skillId);
-			_skill = _player.getKnownSkill(_skillId);
+			this.isValid = false;
+			this.skillId = this.recipeList.isDwarvenRecipe() ? L2Skill.SKILL_CREATE_DWARVEN : L2Skill.SKILL_CREATE_COMMON;
+			this.skillLevel = this.player.getSkillLevelHash(this.skillId);
+			this.skill = this.player.getKnownSkill(this.skillId);
 
-			_player.isInCraftMode(true);
+			this.player.isInCraftMode(true);
 
-			if (_player.isAlikeDead())
+			if (this.player.isAlikeDead())
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				this.player.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
-			if (_target.isAlikeDead())
+			if (this.target.isAlikeDead())
 			{
-				_target.sendPacket(ActionFailed.STATIC_PACKET);
+				this.target.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
-			if (_target.isProcessingTransaction())
+			if (this.target.isProcessingTransaction())
 			{
-				_target.sendPacket(ActionFailed.STATIC_PACKET);
+				this.target.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
-			if (_player.isProcessingTransaction())
+			if (this.player.isProcessingTransaction())
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				this.player.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
 			// validate recipe list
-			if (_recipeList.getRecipes().length == 0)
+			if (this.recipeList.getRecipes().length == 0)
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				this.player.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
 			// validate skill level
-			if (_recipeList.getLevel() > _skillLevel)
+			if (this.recipeList.getLevel() > skillLevel)
 			{
-				_player.sendPacket(ActionFailed.STATIC_PACKET);
+				this.player.sendPacket(ActionFailed.STATIC_PACKET);
 				abort();
 				return;
 			}
 
 			// check that customer can afford to pay for creation services
-			if (_player != _target)
+			if (this.player != this.target)
 			{
-				for (L2ManufactureItem temp : _player.getCreateList().getList())
+				for (L2ManufactureItem temp : this.player.getCreateList().getList())
 				{
-					if (temp.getRecipeId() == _recipeList.getId()) // find recipe for item we want manufactured
+					if (temp.getRecipeId() == this.recipeList.getId()) // find recipe for item we want manufactured
 					{
-						_price = temp.getCost();
-						if (_target.getAdena() < _price) // check price
+						this.price = temp.getCost();
+						if (this.target.getAdena() < this.price) // check price
 						{
-							_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+							this.target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 							abort();
 							return;
 						}
@@ -435,17 +432,17 @@ public class RecipeController
 			}
 
 			// make temporary items
-			if ((_items = listItems(false)) == null)
+			if ((this.items = listItems(false)) == null)
 			{
 				abort();
 				return;
 			}
 
 			// calculate reference price
-			for (TempItem i : _items)
+			for (TempItem i : this.items)
 			{
-				_materialsRefPrice += i.getReferencePrice() * i.getQuantity();
-				_totalItems += i.getQuantity();
+				this.materialsRefPrice += i.getReferencePrice() * i.getQuantity();
+				this.totalItems += i.getQuantity();
 			}
 
 			// initial statUse checks
@@ -465,8 +462,8 @@ public class RecipeController
 			updateCurMp();
 			updateCurLoad();
 
-			_player.isInCraftMode(false);
-			_isValid = true;
+			this.player.isInCraftMode(false);
+			this.isValid = true;
 		}
 
 		@Override
@@ -474,42 +471,42 @@ public class RecipeController
 		{
 			if (!Config.IS_CRAFTING_ENABLED)
 			{
-				_target.sendMessage("Item creation is currently disabled.");
+				this.target.sendMessage("Item creation is currently disabled.");
 				abort();
 				return;
 			}
 
-			if (_player == null || _target == null)
+			if (this.player == null || this.target == null)
 			{
-				Log.warning("player or target == null (disconnected?), aborting" + _target + _player);
+				Log.warning("player or target == null (disconnected?), aborting" + this.target + this.player);
 				abort();
 				return;
 			}
 
-			if (!_player.isOnline() || !_target.isOnline())
+			if (!this.player.isOnline() || !this.target.isOnline())
 			{
-				Log.warning("player or target is not online, aborting " + _target + _player);
+				Log.warning("player or target is not online, aborting " + this.target + this.player);
 				abort();
 				return;
 			}
 
-			if (Config.ALT_GAME_CREATION && _activeMakers.get(_player.getObjectId()) == null)
+			if (Config.ALT_GAME_CREATION && activeMakers.get(this.player.getObjectId()) == null)
 			{
-				if (_target != _player)
+				if (this.target != this.player)
 				{
-					_target.sendMessage("Manufacture aborted");
-					_player.sendMessage("Manufacture aborted");
+					this.target.sendMessage("Manufacture aborted");
+					this.player.sendMessage("Manufacture aborted");
 				}
 				else
 				{
-					_player.sendMessage("Item creation aborted");
+					this.player.sendMessage("Item creation aborted");
 				}
 
 				abort();
 				return;
 			}
 
-			if (Config.ALT_GAME_CREATION && !_items.isEmpty())
+			if (Config.ALT_GAME_CREATION && !this.items.isEmpty())
 			{
 
 				if (!calculateStatUse(true, true))
@@ -521,28 +518,28 @@ public class RecipeController
 				grabSomeItems(); // grab (equip) some more items with a nice msg to player
 
 				// if still not empty, schedule another pass
-				if (!_items.isEmpty())
+				if (!this.items.isEmpty())
 				{
 					// divided by RATE_CONSUMABLES_COST to remove craft time increase on higher consumables rates
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) *
+					this.delay = (int) (Config.ALT_GAME_CREATION_SPEED * this.player.getMReuseRate(this.skill) *
 							TimeController.TICKS_PER_SECOND / Config.RATE_CONSUMABLE_COST) *
 							TimeController.MILLIS_IN_TICK;
 
 					// This packet won't show crafting (client-side change in the Create Item skill)
-					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
-					_player.broadcastPacket(msk);
+					MagicSkillUse msk = new MagicSkillUse(this.player, this.skillId, this.skillLevel, this.delay, 0);
+					this.player.broadcastPacket(msk);
 
-					_player.sendPacket(new SetupGauge(0, _delay));
-					ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
+					this.player.sendPacket(new SetupGauge(0, this.delay));
+					ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + this.delay);
 				}
 				else
 				{
 					// for alt mode, sleep delay msec before finishing
-					_player.sendPacket(new SetupGauge(0, _delay));
+					this.player.sendPacket(new SetupGauge(0, this.delay));
 
 					try
 					{
-						Thread.sleep(_delay);
+						Thread.sleep(this.delay);
 					}
 					catch (InterruptedException e)
 					{
@@ -568,24 +565,24 @@ public class RecipeController
 			}
 
 			// first take adena for manufacture
-			if (_target != _player && _price > 0) // customer must pay for services
+			if (this.target != this.player && this.price > 0) // customer must pay for services
 			{
 				// attempt to pay for item
 				L2ItemInstance adenatransfer =
-						_target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(),
-								_price, _player.getInventory(), _player);
+						this.target.transferItem("PayManufacture", this.target.getInventory().getAdenaInstance().getObjectId(),
+								this.price, this.player.getInventory(), this.player);
 
 				if (adenatransfer == null)
 				{
-					_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
+					this.target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 					abort();
 					return;
 				}
 			}
 
 			//Calculate the chance with the LUC stat
-			int chance = (int) (_recipeList.getSuccessRate() + (_player.getLUC() - 20) * 0.2);
-			if ((_items = listItems(true)) == null) // this line actually takes materials from inventory
+			int chance = (int) (this.recipeList.getSuccessRate() + (this.player.getLUC() - 20) * 0.2);
+			if ((this.items = listItems(true)) == null) // this line actually takes materials from inventory
 			{ // handle possible cheaters here
 				// (they click craft then try to get rid of items in order to get free craft)
 			}
@@ -596,67 +593,67 @@ public class RecipeController
 			}
 			else
 			{
-				if (_target != _player)
+				if (this.target != this.player)
 				{
 					SystemMessage msg =
 							SystemMessage.getSystemMessage(SystemMessageId.CREATION_OF_S2_FOR_C1_AT_S3_ADENA_FAILED);
-					msg.addString(_target.getName());
-					msg.addItemName(_recipeList.getItemId());
-					msg.addItemNumber(_price);
-					_player.sendPacket(msg);
+					msg.addString(this.target.getName());
+					msg.addItemName(this.recipeList.getItemId());
+					msg.addItemNumber(this.price);
+					this.player.sendPacket(msg);
 
 					msg = SystemMessage.getSystemMessage(SystemMessageId.C1_FAILED_TO_CREATE_S2_FOR_S3_ADENA);
-					msg.addString(_player.getName());
-					msg.addItemName(_recipeList.getItemId());
-					msg.addItemNumber(_price);
-					_target.sendPacket(msg);
+					msg.addString(this.player.getName());
+					msg.addItemName(this.recipeList.getItemId());
+					msg.addItemNumber(this.price);
+					this.target.sendPacket(msg);
 				}
 				else
 				{
-					_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_MIXING_FAILED));
+					this.target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_MIXING_FAILED));
 				}
 				updateMakeInfo(false);
 			}
 			// update load and mana bar of craft window
 			updateCurMp();
 			updateCurLoad();
-			_activeMakers.remove(_player.getObjectId());
-			_player.isInCraftMode(false);
-			_target.sendPacket(new ItemList(_target, false));
+			activeMakers.remove(this.player.getObjectId());
+			this.player.isInCraftMode(false);
+			this.target.sendPacket(new ItemList(this.target, false));
 		}
 
 		private void updateMakeInfo(boolean success)
 		{
-			if (_target == _player)
+			if (this.target == this.player)
 			{
-				_target.sendPacket(new RecipeItemMakeInfo(_recipeList.getId(), _target, success));
+				this.target.sendPacket(new RecipeItemMakeInfo(this.recipeList.getId(), this.target, success));
 			}
 			else
 			{
-				_target.sendPacket(new RecipeShopItemInfo(_player, _recipeList.getId()));
+				this.target.sendPacket(new RecipeShopItemInfo(this.player, this.recipeList.getId()));
 			}
 		}
 
 		private void updateCurLoad()
 		{
-			StatusUpdate su = new StatusUpdate(_target);
-			su.addAttribute(StatusUpdate.CUR_LOAD, _target.getCurrentLoad());
-			_target.sendPacket(su);
+			StatusUpdate su = new StatusUpdate(this.target);
+			su.addAttribute(StatusUpdate.CUR_LOAD, this.target.getCurrentLoad());
+			this.target.sendPacket(su);
 		}
 
 		private void updateCurMp()
 		{
-			StatusUpdate su = new StatusUpdate(_target);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) _target.getCurrentMp());
-			_target.sendPacket(su);
+			StatusUpdate su = new StatusUpdate(this.target);
+			su.addAttribute(StatusUpdate.CUR_MP, (int) this.target.getCurrentMp());
+			this.target.sendPacket(su);
 		}
 
 		private void grabSomeItems()
 		{
-			int grabItems = _itemGrab;
-			while (grabItems > 0 && !_items.isEmpty())
+			int grabItems = this.itemGrab;
+			while (grabItems > 0 && !this.items.isEmpty())
 			{
-				TempItem item = _items.get(0);
+				TempItem item = this.items.get(0);
 
 				int count = item.getQuantity();
 				if (count >= grabItems)
@@ -667,27 +664,27 @@ public class RecipeController
 				item.setQuantity(item.getQuantity() - count);
 				if (item.getQuantity() <= 0)
 				{
-					_items.remove(0);
+					this.items.remove(0);
 				}
 				else
 				{
-					_items.set(0, item);
+					this.items.set(0, item);
 				}
 
 				grabItems -= count;
 
-				if (_target == _player)
+				if (this.target == this.player)
 				{
 					SystemMessage sm =
 							SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED); // you equipped ...
 					sm.addItemNumber(count);
 					sm.addItemName(item.getItemId());
-					_player.sendPacket(sm);
+					this.player.sendPacket(sm);
 				}
 				else
 				{
-					_target.sendMessage(
-							"Manufacturer " + _player.getName() + " used " + count + " " + item.getItemName());
+					this.target.sendMessage(
+							"Manufacturer " + this.player.getName() + " used " + count + " " + item.getItemName());
 				}
 			}
 		}
@@ -695,28 +692,28 @@ public class RecipeController
 		// AltStatChange parameters make their effect here
 		private void calculateAltStatChange()
 		{
-			_itemGrab = _skillLevel;
+			this.itemGrab = this.skillLevel;
 
-			for (L2RecipeStatInstance altStatChange : _recipeList.getAltStatChange())
+			for (L2RecipeStatInstance altStatChange : this.recipeList.getAltStatChange())
 			{
 				if (altStatChange.getType() == L2RecipeStatInstance.StatType.XP)
 				{
-					_exp = altStatChange.getValue();
+					this.exp = altStatChange.getValue();
 				}
 				else if (altStatChange.getType() == L2RecipeStatInstance.StatType.SP)
 				{
-					_sp = altStatChange.getValue();
+					this.sp = altStatChange.getValue();
 				}
 				else if (altStatChange.getType() == L2RecipeStatInstance.StatType.GIM)
 				{
-					_itemGrab *= altStatChange.getValue();
+					this.itemGrab *= altStatChange.getValue();
 				}
 			}
 			// determine number of creation passes needed
-			_creationPasses = _totalItems / _itemGrab + (_totalItems % _itemGrab != 0 ? 1 : 0);
-			if (_creationPasses < 1)
+			this.creationPasses = this.totalItems / this.itemGrab + (this.totalItems % this.itemGrab != 0 ? 1 : 0);
+			if (this.creationPasses < 1)
 			{
-				_creationPasses = 1;
+				this.creationPasses = 1;
 			}
 		}
 
@@ -724,60 +721,60 @@ public class RecipeController
 		private boolean calculateStatUse(boolean isWait, boolean isReduce)
 		{
 			boolean ret = true;
-			for (L2RecipeStatInstance statUse : _recipeList.getStatUse())
+			for (L2RecipeStatInstance statUse : this.recipeList.getStatUse())
 			{
-				double modifiedValue = statUse.getValue() / _creationPasses;
+				double modifiedValue = statUse.getValue() / this.creationPasses;
 				if (statUse.getType() == L2RecipeStatInstance.StatType.HP)
 				{
 					// we do not want to kill the player, so its CurrentHP must be greater than the reduce value
-					if (_player.getCurrentHp() <= modifiedValue)
+					if (this.player.getCurrentHp() <= modifiedValue)
 					{
 						// rest (wait for HP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(0, _delay));
-							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
+							this.player.sendPacket(new SetupGauge(0, this.delay));
+							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + this.delay);
 						}
 						else
 						// no rest - report no hp
 						{
-							_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_HP));
+							this.target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_HP));
 							abort();
 						}
 						ret = false;
 					}
 					else if (isReduce)
 					{
-						_player.reduceCurrentHp(modifiedValue, _player, _skill);
+						this.player.reduceCurrentHp(modifiedValue, this.player, this.skill);
 					}
 				}
 				else if (statUse.getType() == L2RecipeStatInstance.StatType.MP)
 				{
-					if (_player.getCurrentMp() < modifiedValue)
+					if (this.player.getCurrentMp() < modifiedValue)
 					{
 						// rest (wait for MP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(0, _delay));
-							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
+							this.player.sendPacket(new SetupGauge(0, this.delay));
+							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + this.delay);
 						}
 						else
 						// no rest - report no mana
 						{
-							_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_MP));
+							this.target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_MP));
 							abort();
 						}
 						ret = false;
 					}
 					else if (isReduce)
 					{
-						_player.reduceCurrentMp(modifiedValue);
+						this.player.reduceCurrentMp(modifiedValue);
 					}
 				}
 				else
 				{
 					// there is an unknown StatUse value
-					_target.sendMessage("Recipe error!!!, please tell this to your GM.");
+					this.target.sendMessage("Recipe error!!!, please tell this to your GM.");
 					ret = false;
 					abort();
 				}
@@ -787,14 +784,14 @@ public class RecipeController
 
 		private List<TempItem> listItems(boolean remove)
 		{
-			L2RecipeInstance[] recipes = _recipeList.getRecipes();
-			Inventory inv = _target.getInventory();
+			L2RecipeInstance[] recipes = this.recipeList.getRecipes();
+			Inventory inv = this.target.getInventory();
 			List<TempItem> materials = new ArrayList<>();
 			SystemMessage sm;
 
 			for (L2RecipeInstance recipe : recipes)
 			{
-				int quantity = _recipeList.isConsumable() ? (int) (recipe.getQuantity() * Config.RATE_CONSUMABLE_COST) :
+				int quantity = this.recipeList.isConsumable() ? (int) (recipe.getQuantity() * Config.RATE_CONSUMABLE_COST) :
 						recipe.getQuantity();
 
 				if (quantity > 0)
@@ -808,7 +805,7 @@ public class RecipeController
 						sm = SystemMessage.getSystemMessage(SystemMessageId.MISSING_S2_S1_TO_CREATE);
 						sm.addItemName(recipe.getItemId());
 						sm.addItemNumber(quantity - itemQuantityAmount);
-						_target.sendPacket(sm);
+						this.target.sendPacket(sm);
 
 						abort();
 						return null;
@@ -825,20 +822,20 @@ public class RecipeController
 			{
 				for (TempItem tmp : materials)
 				{
-					inv.destroyItemByItemId("Manufacture", tmp.getItemId(), tmp.getQuantity(), _target, _player);
+					inv.destroyItemByItemId("Manufacture", tmp.getItemId(), tmp.getQuantity(), this.target, this.player);
 
 					if (tmp.getQuantity() > 1)
 					{
 						sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S1_DISAPPEARED);
 						sm.addItemName(tmp.getItemId());
 						sm.addItemNumber(tmp.getQuantity());
-						_target.sendPacket(sm);
+						this.target.sendPacket(sm);
 					}
 					else
 					{
 						sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
 						sm.addItemName(tmp.getItemId());
-						_target.sendPacket(sm);
+						this.target.sendPacket(sm);
 					}
 				}
 			}
@@ -848,8 +845,8 @@ public class RecipeController
 		private void abort()
 		{
 			updateMakeInfo(false);
-			_player.isInCraftMode(false);
-			_activeMakers.remove(_player.getObjectId());
+			this.player.isInCraftMode(false);
+			activeMakers.remove(this.player.getObjectId());
 		}
 
 		/**
@@ -861,10 +858,10 @@ public class RecipeController
 		 */
 		private class TempItem
 		{ // no object id stored, this will be only "list" of items with it's owner
-			private int _itemId;
-			private int _quantity;
-			private int _referencePrice;
-			private String _itemName;
+			private int itemId;
+			private int quantity;
+			private int referencePrice;
+			private String itemName;
 
 			/**
 			 * @param item
@@ -873,10 +870,10 @@ public class RecipeController
 			public TempItem(L2ItemInstance item, int quantity)
 			{
 				super();
-				_itemId = item.getItemId();
-				_quantity = quantity;
-				_itemName = item.getItem().getName();
-				_referencePrice = item.getReferencePrice();
+				this.itemId = item.getItemId();
+				this.quantity = quantity;
+				this.itemName = item.getItem().getName();
+				this.referencePrice = item.getReferencePrice();
 			}
 
 			/**
@@ -884,7 +881,7 @@ public class RecipeController
 			 */
 			public int getQuantity()
 			{
-				return _quantity;
+				return this.quantity;
 			}
 
 			/**
@@ -892,12 +889,12 @@ public class RecipeController
 			 */
 			public void setQuantity(int quantity)
 			{
-				_quantity = quantity;
+				this.quantity = quantity;
 			}
 
 			public int getReferencePrice()
 			{
-				return _referencePrice;
+				return this.referencePrice;
 			}
 
 			/**
@@ -905,7 +902,7 @@ public class RecipeController
 			 */
 			public int getItemId()
 			{
-				return _itemId;
+				return this.itemId;
 			}
 
 			/**
@@ -913,63 +910,63 @@ public class RecipeController
 			 */
 			public String getItemName()
 			{
-				return _itemName;
+				return this.itemName;
 			}
 		}
 
 		private void rewardPlayer()
 		{
-			int rareProdId = _recipeList.getRareItemId();
-			int itemId = _recipeList.getItemId();
-			int itemCount = _recipeList.getCount();
+			int rareProdId = this.recipeList.getRareItemId();
+			int itemId = this.recipeList.getItemId();
+			int itemCount = this.recipeList.getCount();
 			L2Item template = ItemTable.getInstance().getTemplate(itemId);
 
 			// check that the current recipe has a rare production or not
 			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK))
 			{
-				if (Rnd.get(100) < _recipeList.getRarity())
+				if (Rnd.get(100) < this.recipeList.getRarity())
 				{
 					itemId = rareProdId;
-					itemCount = _recipeList.getRareCount();
+					itemCount = this.recipeList.getRareCount();
 				}
 			}
 
-			_target.getInventory().addItem("Manufacture", itemId, itemCount, _target, _player);
+			this.target.getInventory().addItem("Manufacture", itemId, itemCount, this.target, this.player);
 
 			// inform customer of earned item
 			SystemMessage sm = null;
-			if (_target != _player)
+			if (this.target != this.player)
 			{
 				// inform manufacturer of earned profit
 				if (itemCount == 1)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.S2_CREATED_FOR_C1_FOR_S3_ADENA);
-					sm.addString(_target.getName());
+					sm.addString(this.target.getName());
 					sm.addItemName(itemId);
-					sm.addItemNumber(_price);
-					_player.sendPacket(sm);
+					sm.addItemNumber(this.price);
+					this.player.sendPacket(sm);
 
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CREATED_S2_FOR_S3_ADENA);
-					sm.addString(_player.getName());
+					sm.addString(this.player.getName());
 					sm.addItemName(itemId);
-					sm.addItemNumber(_price);
-					_target.sendPacket(sm);
+					sm.addItemNumber(this.price);
+					this.target.sendPacket(sm);
 				}
 				else
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S3_S_CREATED_FOR_C1_FOR_S4_ADENA);
-					sm.addString(_target.getName());
+					sm.addString(this.target.getName());
 					sm.addNumber(itemCount);
 					sm.addItemName(itemId);
-					sm.addItemNumber(_price);
-					_player.sendPacket(sm);
+					sm.addItemNumber(this.price);
+					this.player.sendPacket(sm);
 
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CREATED_S2_S3_S_FOR_S4_ADENA);
-					sm.addString(_player.getName());
+					sm.addString(this.player.getName());
 					sm.addNumber(itemCount);
 					sm.addItemName(itemId);
-					sm.addItemNumber(_price);
-					_target.sendPacket(sm);
+					sm.addItemNumber(this.price);
+					this.target.sendPacket(sm);
 				}
 			}
 
@@ -978,50 +975,50 @@ public class RecipeController
 				sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S2_S1_S);
 				sm.addItemName(itemId);
 				sm.addItemNumber(itemCount);
-				_target.sendPacket(sm);
+				this.target.sendPacket(sm);
 			}
 			else
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
 				sm.addItemName(itemId);
-				_target.sendPacket(sm);
+				this.target.sendPacket(sm);
 			}
 
 			if (Config.ALT_GAME_CREATION)
 			{
-				int recipeLevel = _recipeList.getLevel();
-				if (_exp < 0)
+				int recipeLevel = this.recipeList.getLevel();
+				if (this.exp < 0)
 				{
-					_exp = template.getReferencePrice() * itemCount;
-					_exp /= recipeLevel;
+					this.exp = template.getReferencePrice() * itemCount;
+					this.exp /= recipeLevel;
 				}
-				if (_sp < 0)
+				if (this.sp < 0)
 				{
-					_sp = _exp / 10;
+					this.sp = this.exp / 10;
 				}
 				if (itemId == rareProdId)
 				{
-					_exp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
-					_sp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
+					this.exp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
+					this.sp *= Config.ALT_GAME_CREATION_RARE_XPSP_RATE;
 				}
 
 				// one variation
 
 				// exp -= materialsRefPrice;   // mat. ref. price is not accurate so other method is better
 
-				if (_exp < 0)
+				if (this.exp < 0)
 				{
-					_exp = 0;
+					this.exp = 0;
 				}
-				if (_sp < 0)
+				if (this.sp < 0)
 				{
-					_sp = 0;
+					this.sp = 0;
 				}
 
-				for (int i = _skillLevel; i > recipeLevel; i--)
+				for (int i = this.skillLevel; i > recipeLevel; i--)
 				{
-					_exp /= 4;
-					_sp /= 4;
+					this.exp /= 4;
+					this.sp /= 4;
 				}
 
 				// Added multiplication of Creation speed with XP/SP gain
@@ -1029,10 +1026,10 @@ public class RecipeController
 				// you can use ALT_GAME_CREATION_XP_RATE/SP to
 				// modify XP/SP gained (default = 1)
 
-				_player.addExpAndSp((int) _player.calcStat(Stats.EXP_RATE,
-						_exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null),
-						(int) _player.calcStat(Stats.SP_RATE,
-								_sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
+				this.player.addExpAndSp((int) this.player.calcStat(Stats.EXP_RATE,
+						this.exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null),
+						(int) this.player.calcStat(Stats.SP_RATE,
+								this.sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
 			}
 			updateMakeInfo(true); // success
 		}
@@ -1054,6 +1051,6 @@ public class RecipeController
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final RecipeController _instance = new RecipeController();
+		protected static final RecipeController instance = new RecipeController();
 	}
 }

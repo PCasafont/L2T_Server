@@ -15,6 +15,9 @@
 
 package vehicles;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
@@ -22,16 +25,14 @@ import l2server.gameserver.model.actor.instance.L2BoatInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * @author DS
  */
 public class BoatGludinRune implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(BoatGludinRune.class.getName());
+	private static final Logger log = Logger.getLogger(BoatGludinRune.class.getName());
 
 	// Time: 1151s
 	private static final VehiclePathPoint[] GLUDIN_TO_RUNE = {
@@ -94,9 +95,9 @@ public class BoatGludinRune implements Runnable
 
 	private static final VehiclePathPoint[] GLUDIN_DOCK = {new VehiclePathPoint(-95686, 150514, -3610, 150, 800)};
 
-	private final L2BoatInstance _boat;
-	private int _cycle = 0;
-	private int _shoutCount = 0;
+	private final L2BoatInstance boat;
+	private int cycle = 0;
+	private int shoutCount = 0;
 
 	private final CreatureSay ARRIVED_AT_GLUDIN;
 	private final CreatureSay ARRIVED_AT_GLUDIN_2;
@@ -127,7 +128,7 @@ public class BoatGludinRune implements Runnable
 
 	public BoatGludinRune(L2BoatInstance boat)
 	{
-		_boat = boat;
+		this.boat = boat;
 
 		ARRIVED_AT_GLUDIN = new CreatureSay(0, Say2.BOAT, 801, 986);
 		ARRIVED_AT_GLUDIN_2 = new CreatureSay(0, Say2.BOAT, 801, 1625);
@@ -153,9 +154,9 @@ public class BoatGludinRune implements Runnable
 		ARRIVAL_GLUDIN5 = new CreatureSay(0, Say2.BOAT, 801, 1632);
 		ARRIVAL_GLUDIN1 = new CreatureSay(0, Say2.BOAT, 801, 1633);
 
-		GLUDIN_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), GLUDIN_DOCK[0].x,
+		GLUDIN_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), GLUDIN_DOCK[0].x,
 				GLUDIN_DOCK[0].y, GLUDIN_DOCK[0].z);
-		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), RUNE_DOCK[0].x,
+		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), RUNE_DOCK[0].x,
 				RUNE_DOCK[0].y, RUNE_DOCK[0].z);
 	}
 
@@ -164,7 +165,7 @@ public class BoatGludinRune implements Runnable
 	{
 		try
 		{
-			switch (_cycle)
+			switch (this.cycle)
 			{
 				case 0:
 					BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], RUNE_DOCK[0], LEAVE_GLUDIN5);
@@ -181,9 +182,9 @@ public class BoatGludinRune implements Runnable
 				case 3:
 					BoatManager.getInstance().dockShip(BoatManager.GLUDIN_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(GLUDIN_DOCK[0], RUNE_DOCK[0], LEAVING_GLUDIN);
-					_boat.broadcastPacket(GLUDIN_SOUND);
-					_boat.payForRide(7905, 1, -90015, 150422, -3610);
-					_boat.executePath(GLUDIN_TO_RUNE);
+					this.boat.broadcastPacket(GLUDIN_SOUND);
+					this.boat.payForRide(7905, 1, -90015, 150422, -3610);
+					this.boat.executePath(GLUDIN_TO_RUNE);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 250000);
 					break;
 				case 4:
@@ -204,27 +205,27 @@ public class BoatGludinRune implements Runnable
 				case 8:
 					if (BoatManager.getInstance().dockBusy(BoatManager.RUNE_HARBOR))
 					{
-						if (_shoutCount == 0)
+						if (this.shoutCount == 0)
 						{
 							BoatManager.getInstance().broadcastPacket(RUNE_DOCK[0], GLUDIN_DOCK[0], BUSY_RUNE);
 						}
 
-						_shoutCount++;
-						if (_shoutCount > 35)
+						this.shoutCount++;
+						if (this.shoutCount > 35)
 						{
-							_shoutCount = 0;
+							this.shoutCount = 0;
 						}
 
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
 						return;
 					}
-					_boat.executePath(RUNE_DOCK);
+					this.boat.executePath(RUNE_DOCK);
 					break;
 				case 9:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, true);
 					BoatManager.getInstance()
 							.broadcastPackets(RUNE_DOCK[0], GLUDIN_DOCK[0], ARRIVED_AT_RUNE, ARRIVED_AT_RUNE_2);
-					_boat.broadcastPacket(RUNE_SOUND);
+					this.boat.broadcastPacket(RUNE_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 				case 10:
@@ -242,9 +243,9 @@ public class BoatGludinRune implements Runnable
 				case 13:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(RUNE_DOCK[0], GLUDIN_DOCK[0], LEAVING_RUNE);
-					_boat.broadcastPacket(RUNE_SOUND);
-					_boat.payForRide(7904, 1, 34513, -38009, -3640);
-					_boat.executePath(RUNE_TO_GLUDIN);
+					this.boat.broadcastPacket(RUNE_SOUND);
+					this.boat.payForRide(7904, 1, 34513, -38009, -3640);
+					this.boat.executePath(RUNE_TO_GLUDIN);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 60000);
 					break;
 				case 14:
@@ -265,40 +266,40 @@ public class BoatGludinRune implements Runnable
 				case 18:
 					if (BoatManager.getInstance().dockBusy(BoatManager.GLUDIN_HARBOR))
 					{
-						if (_shoutCount == 0)
+						if (this.shoutCount == 0)
 						{
 							BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], RUNE_DOCK[0], BUSY_GLUDIN);
 						}
 
-						_shoutCount++;
-						if (_shoutCount > 35)
+						this.shoutCount++;
+						if (this.shoutCount > 35)
 						{
-							_shoutCount = 0;
+							this.shoutCount = 0;
 						}
 
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
 						return;
 					}
-					_boat.executePath(GLUDIN_DOCK);
+					this.boat.executePath(GLUDIN_DOCK);
 					break;
 				case 19:
 					BoatManager.getInstance().dockShip(BoatManager.GLUDIN_HARBOR, true);
 					BoatManager.getInstance()
 							.broadcastPackets(GLUDIN_DOCK[0], RUNE_DOCK[0], ARRIVED_AT_GLUDIN, ARRIVED_AT_GLUDIN_2);
-					_boat.broadcastPacket(GLUDIN_SOUND);
+					this.boat.broadcastPacket(GLUDIN_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}
-			_shoutCount = 0;
-			_cycle++;
-			if (_cycle > 19)
+			this.shoutCount = 0;
+			this.cycle++;
+			if (this.cycle > 19)
 			{
-				_cycle = 0;
+				this.cycle = 0;
 			}
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage());
+			Log.log(Level.WARNING, e.getMessage());
 		}
 	}
 

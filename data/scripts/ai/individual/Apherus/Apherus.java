@@ -40,35 +40,35 @@ import l2server.util.Rnd;
 
 public class Apherus extends L2AttackableAIScript
 {
-	private static final String _qn = "Apherus";
-	private static final int _apherus = 25775;
-	private static final int[] _apherusDoorsNpcs = {33133, 33134, 33135, 33136};
-	private static final int[] _apherusDoors = {26210041, 26210042, 26210043, 26210044};
-	private static final int _apherusKey = 17373;
-	private static final int[] _apreusDoorGuyards = {25776, 25777, 25778};
-	private static final int _apherusZoneId = 60060;
-	private static boolean _doorIsOpen = false;
-	private static L2Npc _apherusRaid = null;
-	private static final L2Skill _gardenApherusRecovery = SkillTable.getInstance().getInfo(14088, 1);
-	private static final L2Skill _apherusInvincibility = SkillTable.getInstance().getInfo(14201, 1);
+	private static final String qn = "Apherus";
+	private static final int apherus = 25775;
+	private static final int[] apherusDoorsNpcs = {33133, 33134, 33135, 33136};
+	private static final int[] apherusDoors = {26210041, 26210042, 26210043, 26210044};
+	private static final int apherusKey = 17373;
+	private static final int[] apreusDoorGuyards = {25776, 25777, 25778};
+	private static final int apherusZoneId = 60060;
+	private static boolean doorIsOpen = false;
+	private static L2Npc apherusRaid = null;
+	private static final L2Skill gardenApherusRecovery = SkillTable.getInstance().getInfo(14088, 1);
+	private static final L2Skill apherusInvincibility = SkillTable.getInstance().getInfo(14201, 1);
 
 	public Apherus(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addAttackId(_apherus);
-		addKillId(_apherus);
-		addEnterZoneId(_apherusZoneId);
-		addExitZoneId(_apherusZoneId);
-		addSpawnId(_apherus);
+		addAttackId(this.apherus);
+		addKillId(this.apherus);
+		addEnterZoneId(this.apherusZoneId);
+		addExitZoneId(this.apherusZoneId);
+		addSpawnId(this.apherus);
 
-		for (int a : _apherusDoorsNpcs)
+		for (int a : this.apherusDoorsNpcs)
 		{
 			addTalkId(a);
 			addStartNpc(a);
 		}
 
-		L2RaidBossInstance boss = BossManager.getInstance().getBoss(_apherus);
+		L2RaidBossInstance boss = BossManager.getInstance().getBoss(this.apherus);
 		if (boss != null)
 		{
 			notifySpawn(boss);
@@ -78,12 +78,12 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		_apherusRaid = npc;
-		_apherusInvincibility.getEffects(npc, npc);
+		this.apherusRaid = npc;
+		this.apherusInvincibility.getEffects(npc, npc);
 
 		//Be sure the doors are closed
-		_doorIsOpen = false;
-		for (int door : _apherusDoors)
+		this.doorIsOpen = false;
+		for (int door : this.apherusDoors)
 		{
 			DoorTable.getInstance().getDoor(door).closeMe();
 		}
@@ -95,11 +95,11 @@ public class Apherus extends L2AttackableAIScript
 	{
 		if (character.isRaid())
 		{
-			character.stopSkillEffects(_gardenApherusRecovery.getId());
+			character.stopSkillEffects(this.gardenApherusRecovery.getId());
 		}
 		else if (character instanceof L2Playable)
 		{
-			if (!_doorIsOpen)
+			if (!this.doorIsOpen)
 			{
 				if (!character.isGM())
 				{
@@ -115,7 +115,7 @@ public class Apherus extends L2AttackableAIScript
 	{
 		if (character.isRaid())
 		{
-			_gardenApherusRecovery.getEffects(character, character);
+			this.gardenApherusRecovery.getEffects(character, character);
 		}
 
 		return super.onExitZone(character, zone);
@@ -124,9 +124,9 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (!_doorIsOpen && BossManager.getInstance().getBoss(_apherus) != null)
+		if (!this.doorIsOpen && BossManager.getInstance().getBoss(this.apherus) != null)
 		{
-			if (!player.destroyItemByItemId(_qn, _apherusKey, 1, player, true))
+			if (!player.destroyItemByItemId(this.qn, this.apherusKey, 1, player, true))
 			{
 				return "apherusDoor-no.html";
 			}
@@ -136,15 +136,15 @@ public class Apherus extends L2AttackableAIScript
 			player.sendMessage("Random = " + random);
 			if (random > 67)
 			{
-				_doorIsOpen = true;
-				for (int door : _apherusDoors)
+				this.doorIsOpen = true;
+				for (int door : this.apherusDoors)
 				{
 					DoorTable.getInstance().getDoor(door).openMe();
 				}
 
 				npc.broadcastPacket(new ExShowScreenMessage(1811740, 3000));
 
-				_apherusRaid.stopSkillEffects(_apherusInvincibility.getId());
+				this.apherusRaid.stopSkillEffects(this.apherusInvincibility.getId());
 			}
 			else
 			{
@@ -153,7 +153,7 @@ public class Apherus extends L2AttackableAIScript
 				for (int a = 0; a < 4; a++)
 				{
 					L2MonsterInstance protector =
-							(L2MonsterInstance) addSpawn(_apreusDoorGuyards[Rnd.get(_apreusDoorGuyards.length)],
+							(L2MonsterInstance) addSpawn(this.apreusDoorGuyards[Rnd.get(this.apreusDoorGuyards.length)],
 									player.getX(), player.getY(), player.getZ(), 0, false, 600000, false);
 					protector.setIsRunning(true);
 					protector.setTarget(player);
@@ -172,8 +172,8 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		_doorIsOpen = false;
-		for (int door : _apherusDoors)
+		this.doorIsOpen = false;
+		for (int door : this.apherusDoors)
 		{
 			DoorTable.getInstance().getDoor(door).closeMe();
 		}
@@ -183,7 +183,7 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
 	{
-		if (!_doorIsOpen) //cheaterzzzzzz
+		if (!this.doorIsOpen) //cheaterzzzzzz
 		{
 			attacker.teleToLocation(TeleportWhereType.Town);
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
@@ -199,6 +199,6 @@ public class Apherus extends L2AttackableAIScript
 
 	public static void main(String[] args)
 	{
-		new Apherus(-1, _qn, "ai/individual");
+		new Apherus(-1, qn, "ai/individual");
 	}
 }

@@ -15,6 +15,9 @@
 
 package handlers.targethandlers;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import l2server.Config;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.events.instanced.EventInstance;
@@ -33,9 +36,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillTargetDirection;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Util;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Used by skills that has unique target abilities.

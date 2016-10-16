@@ -26,18 +26,18 @@ import l2server.log.Log;
 public class ExReplySentPost extends L2ItemListPacket
 {
 
-	private Message _msg;
-	private L2ItemInstance[] _items = null;
+	private Message msg;
+	private L2ItemInstance[] items = null;
 
 	public ExReplySentPost(Message msg)
 	{
-		_msg = msg;
+		this.msg = msg;
 		if (msg.hasAttachments())
 		{
 			final ItemContainer attachments = msg.getAttachments();
 			if (attachments != null && attachments.getSize() > 0)
 			{
-				_items = attachments.getItems();
+				this.items = attachments.getItems();
 			}
 			else
 			{
@@ -53,31 +53,31 @@ public class ExReplySentPost extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_msg.getSendBySystem());
-		writeD(_msg.getId());
-		writeD(_msg.isLocked() ? 1 : 0);
-		writeS(_msg.getReceiverName());
-		writeS(_msg.getSubject());
-		writeS(_msg.getContent());
+		writeD(this.msg.getSendBySystem());
+		writeD(this.msg.getId());
+		writeD(this.msg.isLocked() ? 1 : 0);
+		writeS(this.msg.getReceiverName());
+		writeS(this.msg.getSubject());
+		writeS(this.msg.getContent());
 
-		if (_items != null && _items.length > 0)
+		if (this.items != null && this.items.length > 0)
 		{
-			writeD(_items.length);
-			for (L2ItemInstance item : _items)
+			writeD(this.items.length);
+			for (L2ItemInstance item : this.items)
 			{
 				writeItem(item);
 			}
-			writeQ(_msg.getReqAdena());
-			writeD(_msg.hasAttachments() ? 1 : 0);
-			writeD(_msg.getSendBySystem() > 0 ? 0x00 : 0x01);
-			writeD(_msg.getReceiverId());
+			writeQ(this.msg.getReqAdena());
+			writeD(this.msg.hasAttachments() ? 1 : 0);
+			writeD(this.msg.getSendBySystem() > 0 ? 0x00 : 0x01);
+			writeD(this.msg.getReceiverId());
 		}
 		else
 		{
 			writeD(0x00);
 		}
 
-		_items = null;
-		_msg = null;
+		this.items = null;
+		this.msg = null;
 	}
 }

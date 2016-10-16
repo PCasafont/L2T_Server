@@ -28,8 +28,8 @@ import java.util.logging.Logger;
  */
 public class FaenorEventParser extends FaenorParser
 {
-	static Logger _log = Logger.getLogger(FaenorEventParser.class.getName());
-	private DateRange _eventDates = null;
+	static Logger log = Logger.getLogger(FaenorEventParser.class.getName());
+	private DateRange eventDates = null;
 
 	@Override
 	public void parseScript(final Node eventNode, ScriptContext context)
@@ -41,20 +41,20 @@ public class FaenorEventParser extends FaenorParser
 			Log.fine("Parsing Event \"" + ID + "\"");
 		}
 
-		_eventDates = DateRange.parse(attribute(eventNode, "Active"), DATE_FORMAT);
+		this.eventDates = DateRange.parse(attribute(eventNode, "Active"), DATE_FORMAT);
 
 		Date currentDate = new Date();
-		if (_eventDates.getEndDate().before(currentDate))
+		if (this.eventDates.getEndDate().before(currentDate))
 		{
 			Log.info("Event ID: (" + ID + ") has passed... Ignored.");
 			return;
 		}
 
-		if (_eventDates.getStartDate().after(currentDate))
+		if (this.eventDates.getStartDate().after(currentDate))
 		{
 			Log.info("Event ID: (" + ID + ") is not active yet... Ignored.");
 			ThreadPoolManager.getInstance().scheduleGeneral(() -> parseEventDropAndMessage(eventNode),
-					_eventDates.getStartDate().getTime() - currentDate.getTime());
+					this.eventDates.getStartDate().getTime() - currentDate.getTime());
 			return;
 		}
 
@@ -92,7 +92,7 @@ public class FaenorEventParser extends FaenorParser
 
 			if (type.equalsIgnoreCase("OnJoin"))
 			{
-				_bridge.onPlayerLogin(message, _eventDates);
+				this.bridge.onPlayerLogin(message, this.eventDates);
 			}
 		}
 		catch (Exception e)
@@ -130,7 +130,7 @@ public class FaenorEventParser extends FaenorParser
 			int[] count = IntList.parse(attribute(drop, "Count"));
 			double chance = getPercent(attribute(drop, "Chance"));
 
-			_bridge.addEventDrop(items, count, chance, _eventDates);
+			this.bridge.addEventDrop(items, count, chance, this.eventDates);
 		}
 		catch (Exception e)
 		{

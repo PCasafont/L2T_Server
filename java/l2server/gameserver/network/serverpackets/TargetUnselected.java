@@ -28,28 +28,28 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class TargetUnselected extends L2GameServerPacket
 {
-	private int _targetObjId;
-	private int _x;
-	private int _y;
-	private int _z;
+	private int targetObjId;
+	private int x;
+	private int y;
+	private int z;
 
 	/**
 	 */
 	public TargetUnselected(L2Character character)
 	{
-		_targetObjId = character.getObjectId();
-		_x = character.getX();
-		_y = character.getY();
-		_z = character.getZ();
+		this.targetObjId = character.getObjectId();
+		this.x = character.getX();
+		this.y = character.getY();
+		this.z = character.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.targetObjId);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 		writeD(0x00); //??
 	}
 }

@@ -29,22 +29,22 @@ import java.util.List;
  */
 public class SpawnGroup
 {
-	private final int _minZ;
-	private final int _maxZ;
-	private final L2Territory _territory = new L2Territory(0);
-	private final List<L2Spawn> _spawns = new ArrayList<>();
+	private final int minZ;
+	private final int maxZ;
+	private final L2Territory territory = new L2Territory(0);
+	private final List<L2Spawn> spawns = new ArrayList<>();
 
 	public SpawnGroup(XmlNode node)
 	{
-		_minZ = node.getInt("minZ");
-		_maxZ = node.getInt("maxZ");
+		this.minZ = node.getInt("minZ");
+		this.maxZ = node.getInt("maxZ");
 		for (XmlNode subNode : node.getChildren())
 		{
 			if (subNode.getName().equalsIgnoreCase("vertex"))
 			{
 				int x = subNode.getInt("x");
 				int y = subNode.getInt("y");
-				_territory.add(x, y, _minZ, _maxZ, 0);
+				this.territory.add(x, y, this.minZ, this.maxZ, 0);
 			}
 			else if (subNode.getName().equalsIgnoreCase("spawn"))
 			{
@@ -74,7 +74,7 @@ public class SpawnGroup
 
 						spawn.doSpawn();
 
-						_spawns.add(spawn);
+						this.spawns.add(spawn);
 
 						if (t.Type.equals("L2Monster"))
 						{
@@ -94,16 +94,16 @@ public class SpawnGroup
 
 	public int[] getRandomPoint()
 	{
-		return _territory.getRandomPoint();
+		return this.territory.getRandomPoint();
 	}
 
 	public L2Territory getTerritory()
 	{
-		return _territory;
+		return this.territory;
 	}
 
 	public List<L2Spawn> getSpawns()
 	{
-		return _spawns;
+		return this.spawns;
 	}
 }

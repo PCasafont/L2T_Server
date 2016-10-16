@@ -23,18 +23,18 @@ package l2server.gameserver.model;
 public final class L2PledgeSkillLearn
 {
 	// these two build the primary key
-	private final int _id;
-	private final int _level;
+	private final int id;
+	private final int level;
 
-	private final int _repCost;
-	private final int _baseLvl;
+	private final int repCost;
+	private final int baseLvl;
 
 	public L2PledgeSkillLearn(int id, int lvl, int baseLvl, int cost)
 	{
-		_id = id;
-		_level = lvl;
-		_baseLvl = baseLvl;
-		_repCost = cost;
+		this.id = id;
+		this.level = lvl;
+		this.baseLvl = baseLvl;
+		this.repCost = cost;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getLevel()
 	{
-		return _level;
+		return this.level;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getBaseLevel()
 	{
-		return _baseLvl;
+		return this.baseLvl;
 	}
 
 	/**
@@ -66,6 +66,6 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getRepCost()
 	{
-		return _repCost;
+		return this.repCost;
 	}
 }

@@ -23,11 +23,11 @@ public class OfflineAdminCommandsManager
 
 	private final int TIME_BETWEEN_CHECKS = 60000; // 1 min
 
-	private L2PcInstance _dummy;
+	private L2PcInstance dummy;
 
 	public static OfflineAdminCommandsManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public OfflineAdminCommandsManager()
@@ -54,7 +54,7 @@ public class OfflineAdminCommandsManager
 			{
 				L2PcInstance pal = L2PcInstance.load(rset.getInt("charId"));
 				pal.setClient(null);
-				_dummy = pal;
+				this.dummy = pal;
 			}
 			rset.close();
 			statement.close();
@@ -97,14 +97,14 @@ public class OfflineAdminCommandsManager
 			GMAudit.auditGMAction(author, commandName, "no-target");
 		}
 
-		if (_dummy == null)
+		if (this.dummy == null)
 		{
 			loadDummy();
 		}
 
-		_dummy.setName(author);
-		ach.useAdminCommand(command, _dummy);
-		_dummy.setName("OffDummy");
+		this.dummy.setName(author);
+		ach.useAdminCommand(command, this.dummy);
+		this.dummy.setName("OffDummy");
 		saveCommandExecution(date);
 	}
 
@@ -182,6 +182,6 @@ public class OfflineAdminCommandsManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final OfflineAdminCommandsManager _instance = new OfflineAdminCommandsManager();
+		protected static final OfflineAdminCommandsManager instance = new OfflineAdminCommandsManager();
 	}
 }

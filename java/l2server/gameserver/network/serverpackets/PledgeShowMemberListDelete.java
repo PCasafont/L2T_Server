@@ -22,16 +22,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class PledgeShowMemberListDelete extends L2GameServerPacket
 {
-	private String _player;
+	private String player;
 
 	public PledgeShowMemberListDelete(String playerName)
 	{
-		_player = playerName;
+		this.player = playerName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_player);
+		writeS(this.player);
 	}
 }

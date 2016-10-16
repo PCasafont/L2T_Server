@@ -26,17 +26,17 @@ import java.util.ArrayList;
  */
 public class ListPartyWaiting extends L2GameServerPacket
 {
-	private L2PcInstance _cha;
-	private int _loc;
-	private int _lim;
-	private ArrayList<PartyMatchRoom> _rooms;
+	private L2PcInstance cha;
+	private int loc;
+	private int lim;
+	private ArrayList<PartyMatchRoom> rooms;
 
 	public ListPartyWaiting(L2PcInstance player, int auto, int location, int limit)
 	{
-		_cha = player;
-		_loc = location;
-		_lim = limit;
-		_rooms = new ArrayList<>();
+		this.cha = player;
+		this.loc = location;
+		this.lim = limit;
+		this.rooms = new ArrayList<>();
 		for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms())
 		{
 			if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() ||
@@ -45,25 +45,25 @@ public class ListPartyWaiting extends L2GameServerPacket
 				PartyMatchRoomList.getInstance().deleteRoom(room.getId());
 				continue;
 			}
-			if (_loc > 0 && _loc != room.getLocation())
+			if (this.loc > 0 && this.loc != room.getLocation())
 			{
 				continue;
 			}
-			if (_lim == 0 && (_cha.getLevel() < room.getMinLvl() || _cha.getLevel() > room.getMaxLvl()))
+			if (this.lim == 0 && (this.cha.getLevel() < room.getMinLvl() || this.cha.getLevel() > room.getMaxLvl()))
 			{
 				continue;
 			}
-			_rooms.add(room);
+			this.rooms.add(room);
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_rooms.size() > 0 ? 1 : 0);
+		writeD(this.rooms.size() > 0 ? 1 : 0);
 
-		writeD(_rooms.size());
-		for (PartyMatchRoom room : _rooms)
+		writeD(this.rooms.size());
+		for (PartyMatchRoom room : this.rooms)
 		{
 			writeD(room.getId());
 			writeS(room.getTitle());

@@ -36,28 +36,28 @@ import java.util.Set;
 
 public class DoorTable
 {
-	private static final TIntObjectHashMap<Set<Integer>> _groups = new TIntObjectHashMap<>();
+	private static final TIntObjectHashMap<Set<Integer>> groups = new TIntObjectHashMap<>();
 
-	private final TIntObjectHashMap<L2DoorInstance> _doors;
-	private final TIntObjectHashMap<ArrayList<L2DoorInstance>> _regions;
+	private final TIntObjectHashMap<L2DoorInstance> doors;
+	private final TIntObjectHashMap<ArrayList<L2DoorInstance>> regions;
 
 	public static DoorTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private DoorTable()
 	{
-		_doors = new TIntObjectHashMap<>();
-		_regions = new TIntObjectHashMap<>();
+		this.doors = new TIntObjectHashMap<>();
+		this.regions = new TIntObjectHashMap<>();
 		parseData();
 	}
 
 	public void reload()
 	{
-		_doors.clear();
-		_regions.clear();
-		_groups.clear();
+		this.doors.clear();
+		this.regions.clear();
+		this.groups.clear();
 		parseData();
 	}
 
@@ -91,7 +91,7 @@ public class DoorTable
 				}
 			}
 		}
-		Log.info("DoorTable: Loaded " + _doors.size() + " Door Templates for " + _regions.size() + " regions.");
+		Log.info("DoorTable: Loaded " + this.doors.size() + " Door Templates for " + this.regions.size() + " regions.");
 	}
 
 	public void insertCollisionData(StatsSet set)
@@ -182,33 +182,33 @@ public class DoorTable
 
 	public L2DoorTemplate getDoorTemplate(int doorId)
 	{
-		return _doors.get(doorId).getTemplate();
+		return this.doors.get(doorId).getTemplate();
 	}
 
 	public L2DoorInstance getDoor(int doorId)
 	{
-		return _doors.get(doorId);
+		return this.doors.get(doorId);
 	}
 
 	public void putDoor(L2DoorInstance door, int region)
 	{
-		_doors.put(door.getDoorId(), door);
+		this.doors.put(door.getDoorId(), door);
 
-		if (_regions.contains(region))
+		if (this.regions.contains(region))
 		{
-			_regions.get(region).add(door);
+			this.regions.get(region).add(door);
 		}
 		else
 		{
 			final ArrayList<L2DoorInstance> list = new ArrayList<>();
 			list.add(door);
-			_regions.put(region, list);
+			this.regions.put(region, list);
 		}
 	}
 
 	public L2DoorInstance[] getDoors()
 	{
-		return _doors.getValues(new L2DoorInstance[_doors.size()]);
+		return this.doors.getValues(new L2DoorInstance[this.doors.size()]);
 	}
 
 	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)
@@ -231,7 +231,7 @@ public class DoorTable
 		}
 		else
 		{
-			allDoors = _regions.get(MapRegionTable.getInstance().getMapRegion(x, y));
+			allDoors = this.regions.get(MapRegionTable.getInstance().getMapRegion(x, y));
 		}
 
 		if (allDoors == null)
@@ -285,17 +285,17 @@ public class DoorTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DoorTable _instance = new DoorTable();
+		protected static final DoorTable instance = new DoorTable();
 	}
 
 	public static void addDoorGroup(String groupName, int doorId)
 	{
-		Set<Integer> set = _groups.get(groupName.hashCode());
+		Set<Integer> set = groups.get(groupName.hashCode());
 		if (set == null)
 		{
 			set = new HashSet<>();
 			set.add(doorId);
-			_groups.put(groupName.hashCode(), set);
+			groups.put(groupName.hashCode(), set);
 		}
 		else
 		{
@@ -305,6 +305,6 @@ public class DoorTable
 
 	public static Set<Integer> getDoorsByGroup(String groupName)
 	{
-		return _groups.get(groupName.hashCode());
+		return groups.get(groupName.hashCode());
 	}
 }

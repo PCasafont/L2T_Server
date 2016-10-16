@@ -22,17 +22,17 @@ import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitWaiting
  */
 public class ExPledgeApplicant extends L2GameServerPacket
 {
-	private ClanRecruitWaitingUser _applicant;
+	private ClanRecruitWaitingUser applicant;
 
 	public ExPledgeApplicant(ClanRecruitWaitingUser applicant)
 	{
-		_applicant = applicant;
+		this.applicant = applicant;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_applicant.id);
-		writeS(_applicant.application);
+		writeD(this.applicant.id);
+		writeS(this.applicant.application);
 	}
 }

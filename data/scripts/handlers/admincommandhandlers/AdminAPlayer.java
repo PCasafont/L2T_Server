@@ -1,15 +1,15 @@
 package handlers.admincommandhandlers;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.ArtificialPlayersManager;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
+
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.ArtificialPlayersManager;
+import l2server.gameserver.model.actor.instance.L2ApInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles all commands made for control and manage Artificial Players (APlayers).
@@ -22,7 +22,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers"};
 
-	public static Logger _log = Logger.getLogger(AdminAPlayer.class.getName());
+	public static Logger log = Logger.getLogger(AdminAPlayer.class.getName());
 
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)

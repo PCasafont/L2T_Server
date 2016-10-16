@@ -35,12 +35,12 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 public final class RequestCancelPost extends L2GameClientPacket
 {
 
-	private int _msgId;
+	private int msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		_msgId = readD();
+		this.msgId = readD();
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(_msgId);
+		Message msg = MailManager.getInstance().getMessage(this.msgId);
 		if (msg == null)
 		{
 			return;
@@ -233,12 +233,12 @@ public final class RequestCancelPost extends L2GameClientPacket
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANCELLED_MAIL);
 			sm.addCharName(activeChar);
 			receiver.sendPacket(sm);
-			receiver.sendPacket(new ExChangePostState(true, _msgId, Message.DELETED));
+			receiver.sendPacket(new ExChangePostState(true, this.msgId, Message.DELETED));
 		}
 
-		MailManager.getInstance().deleteMessageInDb(_msgId);
+		MailManager.getInstance().deleteMessageInDb(this.msgId);
 
-		activeChar.sendPacket(new ExChangePostState(false, _msgId, Message.DELETED));
+		activeChar.sendPacket(new ExChangePostState(false, this.msgId, Message.DELETED));
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_CANCELLED));
 	}
 

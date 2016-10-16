@@ -37,49 +37,49 @@ import java.util.logging.Level;
 public final class AuthLogin extends L2GameClientPacket
 {
 	// loginName + keys must match what the loginserver used.
-	private String _loginName;
-	private int _playKey1;
-	private int _playKey2;
-	private int _loginKey1;
-	private int _loginKey2;
+	private String loginName;
+	private int playKey1;
+	private int playKey2;
+	private int loginKey1;
+	private int loginKey2;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		_loginName = readS().toLowerCase();
-		_playKey2 = readD();
-		_playKey1 = readD();
-		_loginKey1 = readD();
-		_loginKey2 = readD();
+		this.loginName = readS().toLowerCase();
+		this.playKey2 = readD();
+		this.playKey1 = readD();
+		this.loginKey1 = readD();
+		this.loginKey2 = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		final L2GameClient client = getClient();
-		if (_loginName.length() == 0 || !client.isProtocolOk())
+		if (this.loginName.length() == 0 || !client.isProtocolOk())
 		{
 			client.close((L2GameServerPacket) null);
 			return;
 		}
-		SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
+		SessionKey key = new SessionKey(this.loginKey1, this.loginKey2, this.playKey1, this.playKey2);
 		if (Config.DEBUG)
 		{
-			Log.info("user:" + _loginName);
+			Log.info("user:" + this.loginName);
 			Log.info("key:" + key);
 		}
 
 		// avoid potential exploits
 		if (client.getAccountName() == null)
 		{
-			if (!_loginName.equalsIgnoreCase("IdEmpty"))
+			if (!this.loginName.equalsIgnoreCase("IdEmpty"))
 			{
-				client.setAccountName(_loginName);
-				LoginServerThread.getInstance().addGameServerLogin(_loginName, client);
+				client.setAccountName(this.loginName);
+				LoginServerThread.getInstance().addGameServerLogin(this.loginName, client);
 			}
-			LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
+			LoginServerThread.getInstance().addWaitingClientAndSendRequest(this.loginName, client, key);
 		}
 		//sendVitalityInfo(client);
 	}
@@ -102,7 +102,7 @@ public final class AuthLogin extends L2GameClientPacket
 				ResultSet rs = statement.executeQuery();
 				if (rs.next())
 				{
-					_vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
+					this.vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
 				}
 				else
 				{

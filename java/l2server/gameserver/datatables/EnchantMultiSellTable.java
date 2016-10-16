@@ -56,7 +56,7 @@ public class EnchantMultiSellTable implements Reloadable
 		}
 	}
 
-	public Map<Integer, EnchantMultiSellCategory> _categories = new HashMap<>();
+	public Map<Integer, EnchantMultiSellCategory> categories = new HashMap<>();
 
 	private EnchantMultiSellTable()
 	{
@@ -106,10 +106,10 @@ public class EnchantMultiSellTable implements Reloadable
 				category.Entries.put(enchantLevel, product);
 			}
 
-			_categories.put(category.Id, category);
+			this.categories.put(category.Id, category);
 		}
 
-		Log.info("EnchantMultisell: Loaded " + _categories.size() + " categories.");
+		Log.info("EnchantMultisell: Loaded " + this.categories.size() + " categories.");
 		return true;
 	}
 
@@ -121,22 +121,22 @@ public class EnchantMultiSellTable implements Reloadable
 
 	public final Collection<EnchantMultiSellCategory> getCategories()
 	{
-		return _categories.values();
+		return this.categories.values();
 	}
 
 	public final EnchantMultiSellCategory getCategory(int id)
 	{
-		return _categories.get(id);
+		return this.categories.get(id);
 	}
 
 	public static EnchantMultiSellTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EnchantMultiSellTable _instance = new EnchantMultiSellTable();
+		protected static final EnchantMultiSellTable instance = new EnchantMultiSellTable();
 	}
 }

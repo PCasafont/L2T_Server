@@ -27,13 +27,13 @@ public class HackingException extends Exception
 	 * Comment for <code>serialVersionUID</code>
 	 */
 	private static final long serialVersionUID = 4050762693478463029L;
-	String _ip;
-	private int _connects;
+	String ip;
+	private int connects;
 
 	public HackingException(String ip, int connects)
 	{
-		_ip = ip;
-		_connects = connects;
+		this.ip = ip;
+		this.connects = connects;
 	}
 
 	/**
@@ -41,11 +41,11 @@ public class HackingException extends Exception
 	 */
 	public String getIP()
 	{
-		return _ip;
+		return this.ip;
 	}
 
 	public int getConnects()
 	{
-		return _connects;
+		return this.connects;
 	}
 }

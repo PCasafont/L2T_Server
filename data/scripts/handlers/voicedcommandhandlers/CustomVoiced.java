@@ -15,6 +15,9 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.text.DecimalFormat;
+import java.util.Calendar;
+
 import l2server.Config;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.HiddenChests;
@@ -29,9 +32,6 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
-
-import java.text.DecimalFormat;
-import java.util.Calendar;
 
 public class CustomVoiced implements IVoicedCommandHandler
 {

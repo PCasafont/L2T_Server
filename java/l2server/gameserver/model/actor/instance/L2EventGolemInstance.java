@@ -12,8 +12,8 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class L2EventGolemInstance extends L2MonsterInstance
 {
-	private EventTeam _team = null;
-	private int _maxHp;
+	private EventTeam team = null;
+	private int maxHp;
 
 	public L2EventGolemInstance(int objectId, L2NpcTemplate template)
 	{
@@ -36,7 +36,7 @@ public class L2EventGolemInstance extends L2MonsterInstance
 	public void reduceCurrentHp(double i, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
 	{
 		if (EventsManager.getInstance().isPlayerParticipant(attacker.getObjectId()) &&
-				!_team.containsPlayer(attacker.getObjectId()))
+				!this.team.containsPlayer(attacker.getObjectId()))
 		{
 			getStatus().reduceHp(1, attacker, awake, isDOT, false);
 		}
@@ -58,22 +58,22 @@ public class L2EventGolemInstance extends L2MonsterInstance
 
 	public EventTeam getTeam()
 	{
-		return _team;
+		return this.team;
 	}
 
 	public void setTeam(EventTeam team)
 	{
-		_team = team;
+		this.team = team;
 	}
 
 	public void setMaxHp(int maxHp)
 	{
-		_maxHp = maxHp;
+		this.maxHp = maxHp;
 	}
 
 	@Override
 	public int getMaxHp()
 	{
-		return _maxHp;
+		return this.maxHp;
 	}
 }

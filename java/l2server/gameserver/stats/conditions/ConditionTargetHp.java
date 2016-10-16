@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionTargetHp extends Condition
 {
-	private final int _hp;
+	private final int hp;
 
 	/**
 	 * Instantiates a new condition player hp.
@@ -32,7 +32,7 @@ public class ConditionTargetHp extends Condition
 	 */
 	public ConditionTargetHp(int hp)
 	{
-		_hp = hp;
+		this.hp = hp;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ConditionTargetHp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= _hp;
+		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= this.hp;
 	}
 }

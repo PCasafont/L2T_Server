@@ -28,12 +28,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ObjectKnownList
 {
-	private L2Object _activeObject;
-	private Map<Integer, L2Object> _knownObjects;
+	private L2Object activeObject;
+	private Map<Integer, L2Object> knownObjects;
 
 	public ObjectKnownList(L2Object activeObject)
 	{
-		_activeObject = activeObject;
+		this.activeObject = activeObject;
 	}
 
 	public boolean addKnownObject(L2Object object)
@@ -122,14 +122,14 @@ public class ObjectKnownList
 				{
 					//synchronized (regi.getVisibleObjects())
 					{
-						for (L2Object _object : vObj)
+						for (L2Object obj : vObj)
 						{
-							if (_object != getActiveObject())
+							if (obj != getActiveObject())
 							{
-								addKnownObject(_object);
-								if (_object instanceof L2Character)
+								addKnownObject(obj);
+								if (obj instanceof L2Character)
 								{
-									_object.getKnownList().addKnownObject(getActiveObject());
+									obj.getKnownList().addKnownObject(getActiveObject());
 								}
 							}
 						}
@@ -148,11 +148,11 @@ public class ObjectKnownList
 					{
 						//synchronized (regi.getVisiblePlayable())
 						{
-							for (L2Object _object : vPls)
+							for (L2Object obj : vPls)
 							{
-								if (_object != getActiveObject())
+								if (obj != getActiveObject())
 								{
-									addKnownObject(_object);
+									addKnownObject(obj);
 								}
 							}
 						}
@@ -162,7 +162,7 @@ public class ObjectKnownList
 		}
 	}
 
-	// Remove invisible and too far L2Object from _knowObject and if necessary from _knownPlayers of the L2Character
+	// Remove invisible and too far L2Object from this.knowObject and if necessary from this.knownPlayers of the L2Character
 	public void forgetObjects(boolean fullCheck)
 	{
 		//synchronized (KnownListUpdateTaskManager.getInstance().getSync())
@@ -202,7 +202,7 @@ public class ObjectKnownList
 
 	public L2Object getActiveObject()
 	{
-		return _activeObject;
+		return this.activeObject;
 	}
 
 	public int getDistanceToForgetObject(L2Object object)
@@ -216,14 +216,14 @@ public class ObjectKnownList
 	}
 
 	/**
-	 * Return the _knownObjects containing all L2Object known by the L2Character.
+	 * Return the this.knownObjects containing all L2Object known by the L2Character.
 	 */
 	public final Map<Integer, L2Object> getKnownObjects()
 	{
-		if (_knownObjects == null)
+		if (this.knownObjects == null)
 		{
-			_knownObjects = new ConcurrentHashMap<>();
+			this.knownObjects = new ConcurrentHashMap<>();
 		}
-		return _knownObjects;
+		return this.knownObjects;
 	}
 }

@@ -38,37 +38,37 @@ public class FarmZoneManager
 {
 	public class FarmZone
 	{
-		private String _name;
-		private Set<L2NpcTemplate> _mobs = new HashSet<>();
+		private String name;
+		private Set<L2NpcTemplate> mobs = new HashSet<>();
 
 		public FarmZone(String name)
 		{
-			_name = name;
+			this.name = name;
 		}
 
 		public void addMob(L2NpcTemplate mob)
 		{
-			_mobs.add(mob);
+			this.mobs.add(mob);
 		}
 
 		public String getName()
 		{
-			return _name;
+			return this.name;
 		}
 
 		public Set<L2NpcTemplate> getMobs()
 		{
-			return _mobs;
+			return this.mobs;
 		}
 	}
 
-	private Map<String, FarmZone> _farmZones = new HashMap<>();
+	private Map<String, FarmZone> farmZones = new HashMap<>();
 
-	private static FarmZoneManager _instance;
+	private static FarmZoneManager instance;
 
 	public static FarmZoneManager getInstance()
 	{
-		return _instance == null ? (_instance = new FarmZoneManager()) : _instance;
+		return instance == null ? (instance = new FarmZoneManager()) : instance;
 	}
 
 	private FarmZoneManager()
@@ -132,12 +132,12 @@ public class FarmZoneManager
 							}
 						}
 
-						_farmZones.put(name, farmZone);
+						this.farmZones.put(name, farmZone);
 					}
 				}
 			}
 		}
-		Log.info("Farm Zone Manager: loaded " + _farmZones.size() + " farm zone definitions.");
+		Log.info("Farm Zone Manager: loaded " + this.farmZones.size() + " farm zone definitions.");
 
 		file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/customFarm.xml");
 		doc = new XmlDocument(file);
@@ -196,7 +196,7 @@ public class FarmZoneManager
 						if (farmNode.hasAttribute("farmZone"))
 						{
 							String name = farmNode.getString("farmZone");
-							FarmZone farmZone = _farmZones.get(name);
+							FarmZone farmZone = this.farmZones.get(name);
 							for (L2NpcTemplate mob : farmZone.getMobs())
 							{
 								mobs.add(mob);

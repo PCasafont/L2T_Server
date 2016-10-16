@@ -17,11 +17,11 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExSendUIEventRemove extends L2GameServerPacket
 {
-	private int _uiType;
+	private int uiType;
 
 	public ExSendUIEventRemove()
 	{
-		_uiType = 1;
+		this.uiType = 1;
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class ExSendUIEventRemove extends L2GameServerPacket
 		}
 
 		writeD(getClient().getActiveChar().getObjectId());
-		writeD(_uiType);
+		writeD(this.uiType);
 	}
 
 	@Override

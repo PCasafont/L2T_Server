@@ -26,31 +26,31 @@ import java.util.List;
  */
 public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 {
-	private L2Character _character;
-	private List<Effect> _effects;
+	private L2Character character;
+	private List<Effect> effects;
 
 	private static class Effect
 	{
-		protected int _skillId;
-		protected int _level;
-		protected int _comboId;
-		protected int _duration;
-		protected int _effector;
+		protected int skillId;
+		protected int level;
+		protected int comboId;
+		protected int duration;
+		protected int effector;
 
 		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
 		{
-			_skillId = pSkillId;
-			_level = pLevel;
-			_comboId = pComboId;
-			_duration = pDuration;
-			_effector = pEffector;
+			this.skillId = pSkillId;
+			this.level = pLevel;
+			this.comboId = pComboId;
+			this.duration = pDuration;
+			this.effector = pEffector;
 		}
 	}
 
 	public AbnormalStatusUpdateFromTarget(L2Character c)
 	{
-		_character = c;
-		_effects = new ArrayList<>();
+		this.character = c;
+		this.effects = new ArrayList<>();
 
 		for (L2Abnormal e : c.getAllEffects())
 		{
@@ -80,31 +80,31 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 			return;
 		}
 
-		_effects.add(new Effect(skillId, level, comboId, duration, effector));
+		this.effects.add(new Effect(skillId, level, comboId, duration, effector));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_character.getObjectId());
+		writeD(this.character.getObjectId());
 
-		writeH(_effects.size());
+		writeH(this.effects.size());
 
-		for (Effect temp : _effects)
+		for (Effect temp : this.effects)
 		{
-			writeD(temp._skillId);
-			writeD(temp._level);
-			writeH(temp._comboId);
-			if (temp._duration == -1)
+			writeD(temp.skillId);
+			writeD(temp.level);
+			writeH(temp.comboId);
+			if (temp.duration == -1)
 			{
 				writeH(-1);
 			}
 			else
 			{
-				writeH(temp._duration / 1000 + 1);
+				writeH(temp.duration / 1000 + 1);
 			}
 
-			writeD(temp._effector);
+			writeD(temp.effector);
 		}
 	}
 }

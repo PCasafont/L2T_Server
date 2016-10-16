@@ -26,54 +26,54 @@ import java.util.ArrayList;
  */
 public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 {
-	private int _itemId;
-	private ArrayList<L2ItemInstance> _inventoryItems;
-	private byte _attribute;
-	private int _level;
-	private long _maxCount;
+	private int itemId;
+	private ArrayList<L2ItemInstance> inventoryItems;
+	private byte attribute;
+	private int level;
+	private long maxCount;
 
 	public ExChooseInventoryAttributeItem(L2PcInstance player, L2ItemInstance item)
 	{
-		_inventoryItems = new ArrayList<>();
-		_itemId = item.getItemId();
-		for (L2ItemInstance _item : player.getInventory().getItems())
+		this.inventoryItems = new ArrayList<>();
+		this.itemId = item.getItemId();
+		for (L2ItemInstance invItem : player.getInventory().getItems())
 		{
-			if (_item.isEquipable())
+			if (invItem.isEquipable())
 			{
-				_inventoryItems.add(_item);
+				this.inventoryItems.add(invItem);
 			}
 		}
-		_attribute = Elementals.getItemElement(_itemId);
-		if (_attribute == Elementals.NONE)
+		this.attribute = Elementals.getItemElement(this.itemId);
+		if (this.attribute == Elementals.NONE)
 		{
 			throw new IllegalArgumentException("Undefined Atribute item: " + item);
 		}
-		_level = Elementals.getMaxElementLevel(_itemId);
+		this.level = Elementals.getMaxElementLevel(this.itemId);
 
 		// Armors have the opposite element
 		if (item.isArmor())
 		{
-			_attribute = Elementals.getOppositeElement(_attribute);
+			this.attribute = Elementals.getOppositeElement(this.attribute);
 		}
 
-		_maxCount = item.getCount();
+		this.maxCount = item.getCount();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_itemId);
-		writeQ(_maxCount); // Maximum items that can be attempted to use
+		writeD(this.itemId);
+		writeQ(this.maxCount); // Maximum items that can be attempted to use
 		// Must be 0x01 for stone/crystal attribute type
-		writeD(_attribute == Elementals.FIRE ? 1 : 0); // Fire
-		writeD(_attribute == Elementals.WATER ? 1 : 0); // Water
-		writeD(_attribute == Elementals.WIND ? 1 : 0); // Wind
-		writeD(_attribute == Elementals.EARTH ? 1 : 0); // Earth
-		writeD(_attribute == Elementals.HOLY ? 1 : 0); // Holy
-		writeD(_attribute == Elementals.DARK ? 1 : 0); // Unholy
-		writeD(_level); // Item max attribute level
-		writeD(_inventoryItems.size()); //equipable items count
-		for (L2ItemInstance item : _inventoryItems)
+		writeD(this.attribute == Elementals.FIRE ? 1 : 0); // Fire
+		writeD(this.attribute == Elementals.WATER ? 1 : 0); // Water
+		writeD(this.attribute == Elementals.WIND ? 1 : 0); // Wind
+		writeD(this.attribute == Elementals.EARTH ? 1 : 0); // Earth
+		writeD(this.attribute == Elementals.HOLY ? 1 : 0); // Holy
+		writeD(this.attribute == Elementals.DARK ? 1 : 0); // Unholy
+		writeD(this.level); // Item max attribute level
+		writeD(this.inventoryItems.size()); //equipable items count
+		for (L2ItemInstance item : this.inventoryItems)
 		{
 			writeD(item.getObjectId());
 		}

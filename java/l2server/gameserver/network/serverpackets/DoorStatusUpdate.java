@@ -32,22 +32,22 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
  */
 public final class DoorStatusUpdate extends L2GameServerPacket
 {
-	private L2DoorInstance _door;
+	private L2DoorInstance door;
 
 	public DoorStatusUpdate(L2DoorInstance door)
 	{
-		_door = door;
+		this.door = door;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_door.getObjectId());
-		writeD(_door.getOpen() ? 0 : 1);
-		writeD(_door.getDamage());
-		writeD(_door.isEnemy() ? 1 : 0);
-		writeD(_door.getDoorId());
-		writeD((int) _door.getCurrentHp());
-		writeD(_door.getMaxVisibleHp());
+		writeD(this.door.getObjectId());
+		writeD(this.door.getOpen() ? 0 : 1);
+		writeD(this.door.getDamage());
+		writeD(this.door.isEnemy() ? 1 : 0);
+		writeD(this.door.getDoorId());
+		writeD((int) this.door.getCurrentHp());
+		writeD(this.door.getMaxVisibleHp());
 	}
 }

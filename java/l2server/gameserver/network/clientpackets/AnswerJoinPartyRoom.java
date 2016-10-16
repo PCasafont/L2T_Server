@@ -23,12 +23,12 @@ package l2server.gameserver.network.clientpackets;
 public final class AnswerJoinPartyRoom extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _requesterID; // not tested, just guessed
+	private int requesterID; // not tested, just guessed
 
 	@Override
 	protected void readImpl()
 	{
-		_requesterID = readD();
+		this.requesterID = readD();
 	}
 
 	/**

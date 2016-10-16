@@ -40,11 +40,11 @@ public class L2Trap extends L2Character
 {
 	protected static final int TICK = 1000; // 1s
 
-	private boolean _isTriggered;
-	private final L2Skill _skill;
-	private final int _lifeTime;
-	private int _timeRemaining;
-	private boolean _hasLifeTime;
+	private boolean isTriggered;
+	private final L2Skill skill;
+	private final int lifeTime;
+	private int timeRemaining;
+	private boolean hasLifeTime;
 
 	/**
 	 * @param objectId
@@ -57,21 +57,21 @@ public class L2Trap extends L2Character
 		setName(template.Name);
 		setIsInvul(false);
 
-		_isTriggered = false;
-		_skill = skill;
-		_hasLifeTime = true;
+		this.isTriggered = false;
+		this.skill = skill;
+		this.hasLifeTime = true;
 		if (lifeTime != 0)
 		{
-			_lifeTime = lifeTime;
+			this.lifeTime = lifeTime;
 		}
 		else
 		{
-			_lifeTime = 30000;
+			this.lifeTime = 30000;
 		}
-		_timeRemaining = _lifeTime;
+		this.timeRemaining = this.lifeTime;
 		if (lifeTime < 0)
 		{
-			_hasLifeTime = false;
+			this.hasLifeTime = false;
 		}
 
 		if (skill != null)
@@ -232,7 +232,7 @@ public class L2Trap extends L2Character
 
 	public L2Skill getSkill()
 	{
-		return _skill;
+		return this.skill;
 	}
 
 	public L2PcInstance getOwner()
@@ -257,7 +257,7 @@ public class L2Trap extends L2Character
 	 */
 	public boolean isTriggered()
 	{
-		return _isTriggered;
+		return this.isTriggered;
 	}
 
 	/**
@@ -299,17 +299,17 @@ public class L2Trap extends L2Character
 		{
 			try
 			{
-				if (!_isTriggered)
+				if (!isTriggered)
 				{
-					if (_hasLifeTime)
+					if (hasLifeTime)
 					{
-						_timeRemaining -= TICK;
-						if (_timeRemaining < _lifeTime - 15000)
+						timeRemaining -= TICK;
+						if (timeRemaining < lifeTime - 15000)
 						{
 							SocialAction sa = new SocialAction(getObjectId(), 2);
 							broadcastPacket(sa);
 						}
-						if (_timeRemaining < 0)
+						if (timeRemaining < 0)
 						{
 							switch (getSkill().getTargetType())
 							{
@@ -326,14 +326,14 @@ public class L2Trap extends L2Character
 						}
 					}
 
-					for (L2Character target : getKnownList().getKnownCharactersInRadius(_skill.getSkillRadius()))
+					for (L2Character target : getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
 					{
 						if (target == getOwner())
 						{
 							continue;
 						}
 
-						if (!getOwner().isAbleToCastOnTarget(target, _skill, false))
+						if (!getOwner().isAbleToCastOnTarget(target, skill, false))
 						{
 							continue;
 						}
@@ -360,7 +360,7 @@ public class L2Trap extends L2Character
 	 */
 	public void trigger(L2Character target)
 	{
-		_isTriggered = true;
+		this.isTriggered = true;
 		broadcastPacket(new NpcInfo(this));
 		setTarget(target);
 
@@ -382,8 +382,8 @@ public class L2Trap extends L2Character
 		{
 			try
 			{
-				doCast(_skill);
-				ThreadPoolManager.getInstance().scheduleGeneral(new UnsummonTask(), _skill.getHitTime() + 300);
+				doCast(skill);
+				ThreadPoolManager.getInstance().scheduleGeneral(new UnsummonTask(), skill.getHitTime() + 300);
 			}
 			catch (Exception e)
 			{
@@ -405,7 +405,7 @@ public class L2Trap extends L2Character
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
-		if (_isTriggered || canSee(activeChar))
+		if (this.isTriggered || canSee(activeChar))
 		{
 			activeChar.sendPacket(new NpcInfo(this));
 		}
@@ -417,7 +417,7 @@ public class L2Trap extends L2Character
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
 		{
-			if (player != null && (_isTriggered || canSee(player)))
+			if (player != null && (this.isTriggered || canSee(player)))
 			{
 				player.sendPacket(mov);
 			}
@@ -436,7 +436,7 @@ public class L2Trap extends L2Character
 			}
 			if (isInsideRadius(player, radiusInKnownlist, false, false))
 			{
-				if (_isTriggered || canSee(player))
+				if (this.isTriggered || canSee(player))
 				{
 					player.sendPacket(mov);
 				}

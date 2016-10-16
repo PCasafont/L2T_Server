@@ -4,6 +4,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
@@ -14,8 +16,7 @@ import l2server.gameserver.model.actor.instance.L2BlockInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 public class EventItem implements IItemHandler
 {
@@ -44,7 +45,7 @@ public class EventItem implements IItemHandler
 				useBlockCheckerItem(activeChar, item);
 				break;
 			default:
-				_log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
+				Log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
 		}
 	}
 
@@ -87,7 +88,7 @@ public class EventItem implements IItemHandler
 		}
 		else
 		{
-			_log.warning(
+			Log.warning(
 					"Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
 		}
 	}

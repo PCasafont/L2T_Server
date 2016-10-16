@@ -33,19 +33,19 @@ import l2server.util.Rnd;
 
 public class Nursery extends L2AttackableAIScript
 {
-    private static final String _qn = "Nursery";
+    private static final String qn = "Nursery";
 
     //Config
-    private static final boolean _debug = false;
-    private static final int _reuseMinutes = 1440;
+    private static final boolean debug = false;
+    private static final int reuseMinutes = 1440;
 
     //Ids
-    private static final int _instanceTemplateId = 171;
-    //private static final int _tissueEnergyCrystal		= 17602;	//Retail reward
-    private static final int _tieId = 33152;
-    private static final int _maguenId = 19037;
-    private static final int[] _energyRegenerationIds = {14228, 14229, 14230};
-    private static final int[] _failedCreations = {80329, 80330, 80331, 80332};
+    private static final int instanceTemplateId = 171;
+    //private static final int tissueEnergyCrystal		= 17602;	//Retail reward
+    private static final int tieId = 33152;
+    private static final int maguenId = 19037;
+    private static final int[] energyRegenerationIds = {14228, 14229, 14230};
+    private static final int[] failedCreations = {80329, 80330, 80331, 80332};
 
     public Nursery(int questId, String name, String descr)
     {
@@ -54,16 +54,16 @@ public class Nursery extends L2AttackableAIScript
         addTalkId(DimensionalDoor.getNpcManagerId());
         addStartNpc(DimensionalDoor.getNpcManagerId());
 
-        addTalkId(_tieId);
-        addStartNpc(_tieId);
-        addFirstTalkId(_tieId);
+        addTalkId(this.tieId);
+        addStartNpc(this.tieId);
+        addFirstTalkId(this.tieId);
 
-        for (int i : _failedCreations)
+        for (int i : this.failedCreations)
         {
             addKillId(i);
         }
 
-        addKillId(_maguenId);
+        addKillId(this.maguenId);
     }
 
     private class NurseryWorld extends InstanceWorld
@@ -83,7 +83,7 @@ public class Nursery extends L2AttackableAIScript
     @Override
     public final String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player.getName());
         }
@@ -101,7 +101,7 @@ public class Nursery extends L2AttackableAIScript
         if (wrld != null && wrld instanceof NurseryWorld)
         {
             NurseryWorld world = (NurseryWorld) wrld;
-            if (npc.getNpcId() == _tieId)
+            if (npc.getNpcId() == this.tieId)
             {
                 if (world.status == 0)
                 {
@@ -119,11 +119,11 @@ public class Nursery extends L2AttackableAIScript
                             int skillId = buff.getSkill().getId();
                             int pointsToGive;
 
-                            if (skillId == _energyRegenerationIds[0])
+                            if (skillId == this.energyRegenerationIds[0])
                             {
                                 pointsToGive = 40;
                             }
-                            else if (skillId == _energyRegenerationIds[1])
+                            else if (skillId == this.energyRegenerationIds[1])
                             {
                                 pointsToGive = 60;
                             }
@@ -151,14 +151,14 @@ public class Nursery extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
         {
-            return _qn + ".html";
+            return this.qn + ".html";
         }
 
         return super.onTalk(npc, player);
@@ -167,7 +167,7 @@ public class Nursery extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -242,7 +242,7 @@ public class Nursery extends L2AttackableAIScript
 
                 for (L2Npc iNpc : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
                 {
-                    if (iNpc == null || iNpc.getNpcId() == _tieId)
+                    if (iNpc == null || iNpc.getNpcId() == this.tieId)
                     {
                         continue;
                     }
@@ -310,12 +310,12 @@ public class Nursery extends L2AttackableAIScript
 
                     if (world.points > 600)
                     {
-                        world.instancePlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), shinyCoins,
+                        world.instancePlayer.addItem(this.qn, DimensionalDoor.getDimensionalDoorRewardId(), shinyCoins,
                                 world.instancePlayer, true);
                     }
 
                     InstanceManager.getInstance()
-                            .setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
+                            .setInstanceReuse(world.instanceId, instanceTemplateId, this.reuseMinutes);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
                 }
             }
@@ -339,7 +339,7 @@ public class Nursery extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (this.debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -354,7 +354,7 @@ public class Nursery extends L2AttackableAIScript
                 return super.onKill(npc, player, isPet);
             }
 
-            if (npc.getNpcId() >= _failedCreations[0] && npc.getNpcId() <= _failedCreations[3])
+            if (npc.getNpcId() >= this.failedCreations[0] && npc.getNpcId() <= this.failedCreations[3])
             {
                 world.points += Rnd.get(1, 10);
 
@@ -365,7 +365,7 @@ public class Nursery extends L2AttackableAIScript
                     world.instancePlayer
                             .sendPacket(new ExShowScreenMessage(1801149, 0, true, 2000)); //Maguen appearance!!!
 
-                    L2MonsterInstance maguen = (L2MonsterInstance) addSpawn(_maguenId, world.instancePlayer.getX(),
+                    L2MonsterInstance maguen = (L2MonsterInstance) addSpawn(this.maguenId, world.instancePlayer.getX(),
                             world.instancePlayer.getY(), world.instancePlayer.getZ(), 0, true, 3000, true,
                             world.instanceId); //5seg
                     maguen.setTarget(world.instancePlayer);
@@ -389,7 +389,7 @@ public class Nursery extends L2AttackableAIScript
                 {
                     if (world.instancePlayer.getFirstEffect(world.energyBuffId) == null)
                     {
-                        world.energyBuffId = _energyRegenerationIds[Rnd.get(_energyRegenerationIds.length)];
+                        world.energyBuffId = this.energyRegenerationIds[Rnd.get(this.energyRegenerationIds.length)];
 
                         world.instancePlayer.sendPacket(
                                 new ExShowScreenMessage(1811179, 0, true, 2000)); //Received Regeneration Energy!!
@@ -399,7 +399,7 @@ public class Nursery extends L2AttackableAIScript
                     }
                 }
             }
-            else if (npc.getNpcId() == _maguenId)
+            else if (npc.getNpcId() == this.maguenId)
             {
                 if (world.isMaguenSpawned)
                 {
@@ -441,13 +441,13 @@ public class Nursery extends L2AttackableAIScript
         }
         else
         {
-            if (!_debug && !InstanceManager.getInstance()
-                    .checkInstanceConditions(player, _instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
+            if (!this.debug && !InstanceManager.getInstance()
+                    .checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
             world = new NurseryWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -475,6 +475,6 @@ public class Nursery extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Nursery(-1, _qn, "instances/DimensionalDoor");
+        new Nursery(-1, qn, "instances/DimensionalDoor");
     }
 }

@@ -15,6 +15,8 @@
 
 package events.CharacterBirthday;
 
+import java.util.Calendar;
+
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.L2Skill;
@@ -26,18 +28,16 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.PlaySound;
 
-import java.util.Calendar;
-
 /**
  * @author Gnacik
  */
 
 public class CharacterBirthday extends Quest
 {
-	private static final int _npc = 32600;
+	private static final int npc = 32600;
 	private static boolean is_spawned = false;
 
-	private static final int[] _gk = {
+	private static final int[] gk = {
 			30006,
 			30059,
 			30080,
@@ -62,10 +62,10 @@ public class CharacterBirthday extends Quest
 	public CharacterBirthday(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_npc);
-		addFirstTalkId(_npc);
-		addTalkId(_npc);
-		for (int id : _gk)
+		addStartNpc(this.npc);
+		addFirstTalkId(this.npc);
+		addTalkId(this.npc);
+		for (int id : this.gk)
 		{
 			addStartNpc(id);
 			addTalkId(id);

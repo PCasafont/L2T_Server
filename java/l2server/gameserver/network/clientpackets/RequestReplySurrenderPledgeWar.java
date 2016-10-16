@@ -22,13 +22,13 @@ public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
 {
 	//
 
-	private int _answer;
+	private int answer;
 
 	@Override
 	protected void readImpl()
 	{
-		@SuppressWarnings("unused") String _reqName = readS();
-		_answer = readD();
+		@SuppressWarnings("unused") String reqName = readS();
+		answer = readD();
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		if (_answer == 1)
+		if (answer == 1)
 		{
 			requestor.deathPenalty(false, false, false, false);
 			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();

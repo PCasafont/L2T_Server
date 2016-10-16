@@ -28,16 +28,16 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 {
-	private String _currPlayerName;
-	private int _set; // 1 set, 0 delete
-	private String _targetPlayerName;
+	private String currPlayerName;
+	private int set; // 1 set, 0 delete
+	private String targetPlayerName;
 
 	@Override
 	protected void readImpl()
 	{
-		_set = readD();
-		_currPlayerName = readS();
-		_targetPlayerName = readS();
+		this.set = readD();
+		this.currPlayerName = readS();
+		this.targetPlayerName = readS();
 	}
 
 	/**
@@ -59,8 +59,8 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 			return;
 		}
 
-		L2ClanMember currentMember = clan.getClanMember(_currPlayerName);
-		L2ClanMember targetMember = clan.getClanMember(_targetPlayerName);
+		L2ClanMember currentMember = clan.getClanMember(this.currPlayerName);
+		L2ClanMember targetMember = clan.getClanMember(this.targetPlayerName);
 		if (currentMember == null || targetMember == null)
 		{
 			return;
@@ -82,7 +82,7 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 		L2PcInstance sponsor = sponsorMember.getPlayerInstance();
 
 		SystemMessage sm = null;
-		if (_set == 0)
+		if (this.set == 0)
 		{
 			// test: do we get the current sponsor & apprentice from this packet or no?
 			if (apprentice != null)

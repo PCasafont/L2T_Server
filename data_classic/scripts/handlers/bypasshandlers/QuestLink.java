@@ -15,6 +15,9 @@
 
 package handlers.bypasshandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IBypassHandler;
@@ -27,10 +30,8 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.log.Log;
 import l2server.util.StringUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuestLink implements IBypassHandler
 {
@@ -224,11 +225,11 @@ public class QuestLink implements IBypassHandler
 			{
 				if (content != null)
 				{
-					_log.fine("Showing quest window for quest " + questId + " html path: " + path);
+					Log.fine("Showing quest window for quest " + questId + " html path: " + path);
 				}
 				else
 				{
-					_log.fine("File not exists for quest " + questId + " html path: " + path);
+					Log.fine("File not exists for quest " + questId + " html path: " + path);
 				}
 			}
 		}

@@ -25,7 +25,7 @@ public class Validator extends Quest
 {
 	// arrays must be sorted
 	@SuppressWarnings("unused")
-	private static final int[] _allCertSkillIds = {
+	private static final int[] allCertSkillIds = {
 			631,
 			632,
 			633,
@@ -66,7 +66,7 @@ public class Validator extends Quest
 			1491
 	};
 	@SuppressWarnings("unused")
-	private static final int[][] _certSkillsByLevel = {
+	private static final int[][] certSkillsByLevel = {
 			{631, 632, 633, 634}, {631, 632, 633, 634}, {
 			637,
 			638,
@@ -99,7 +99,7 @@ public class Validator extends Quest
 	};
 
 	@SuppressWarnings("unused")
-	private static final int[] _allCertItemIds = {
+	private static final int[] allCertItemIds = {
 			10280,
 			10281,
 			10282,
@@ -118,7 +118,7 @@ public class Validator extends Quest
 			10612
 	};
 	@SuppressWarnings("unused")
-	private static final int[][] _certItemsByLevel = {
+	private static final int[][] certItemsByLevel = {
 			{10280},
 			{10280},
 			{10612, 10281, 10282, 10283, 10284, 10285, 10286, 10287},
@@ -229,7 +229,7 @@ public class Validator extends Quest
 							}
 							if (skill != null)
 							{
-								if (!Util.contains(_certSkillsByLevel[i], id))
+								if (!Util.contains(this.certSkillsByLevel[i], id))
 								{
 									// should remove this skill ?
 									Util.handleIllegalPlayerAction(player, "Invalid cert variable WITH skill:" +
@@ -277,7 +277,7 @@ public class Validator extends Quest
 							}
 							if (item != null)
 							{
-								if (!Util.contains(_certItemsByLevel[i], item.getItemId()))
+								if (!Util.contains(this.certItemsByLevel[i], item.getItemId()))
 								{
 									Util.handleIllegalPlayerAction(player, "Invalid cert variable:" +
 											qName + "=" + qValue + " - item found but does not match certificate level", 0);
@@ -355,7 +355,7 @@ public class Validator extends Quest
 		ArrayList<L2Skill> tmp = null;
 		for (L2Skill s : player.getAllSkills())
 		{
-			if (s != null && Arrays.binarySearch(_allCertSkillIds, s.getId()) >= 0)
+			if (s != null && Arrays.binarySearch(this.allCertSkillIds, s.getId()) >= 0)
 			{
 				if (tmp == null)
 					tmp = new ArrayList();
@@ -376,7 +376,7 @@ public class Validator extends Quest
 		ArrayList<L2ItemInstance> tmp = null;
 		for (L2ItemInstance i : player.getInventory().getItems())
 		{
-			if (i != null && Arrays.binarySearch(_allCertItemIds, i.getItemId()) >= 0)
+			if (i != null && Arrays.binarySearch(this.allCertItemIds, i.getItemId()) >= 0)
 			{
 				if (tmp == null)
 					tmp = new ArrayList();

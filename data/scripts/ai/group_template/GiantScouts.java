@@ -15,6 +15,8 @@
 
 package ai.group_template;
 
+import java.util.Collection;
+
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Object;
@@ -26,16 +28,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
-import java.util.Collection;
-
 public class GiantScouts extends L2AttackableAIScript
 {
-	private static final int _scouts[] = {22668, 22669};
+	private static final int scouts[] = {22668, 22669};
 
 	public GiantScouts(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		for (int id : _scouts)
+		for (int id : this.scouts)
 		{
 			addAggroRangeEnterId(id);
 		}

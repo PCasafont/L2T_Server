@@ -42,22 +42,22 @@ public final class ItemAuction
 	private static final long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
 	private static final long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);
 
-	private final int _auctionId;
-	private final int _instanceId;
-	private final long _startingTime;
-	private volatile long _endingTime;
-	private final AuctionItem _auctionItem;
-	private final ArrayList<ItemAuctionBid> _auctionBids;
-	private final Object _auctionStateLock;
+	private final int auctionId;
+	private final int instanceId;
+	private final long startingTime;
+	private volatile long endingTime;
+	private final AuctionItem auctionItem;
+	private final ArrayList<ItemAuctionBid> auctionBids;
+	private final Object auctionStateLock;
 
-	private volatile ItemAuctionState _auctionState;
-	private volatile ItemAuctionExtendState _scheduledAuctionEndingExtendState;
-	private volatile ItemAuctionExtendState _auctionEndingExtendState;
+	private volatile ItemAuctionState auctionState;
+	private volatile ItemAuctionExtendState scheduledAuctionEndingExtendState;
+	private volatile ItemAuctionExtendState auctionEndingExtendState;
 
-	private final ItemInfo _itemInfo;
+	private final ItemInfo itemInfo;
 
-	private ItemAuctionBid _highestBid;
-	private int _lastBidPlayerObjId;
+	private ItemAuctionBid highestBid;
+	private int lastBidPlayerObjId;
 
 	public ItemAuction(final int auctionId, final int instanceId, final long startingTime, final long endingTime, final AuctionItem auctionItem)
 	{
@@ -66,26 +66,26 @@ public final class ItemAuction
 
 	public ItemAuction(final int auctionId, final int instanceId, final long startingTime, final long endingTime, final AuctionItem auctionItem, final ArrayList<ItemAuctionBid> auctionBids, final ItemAuctionState auctionState)
 	{
-		_auctionId = auctionId;
-		_instanceId = instanceId;
-		_startingTime = startingTime;
-		_endingTime = endingTime;
-		_auctionItem = auctionItem;
-		_auctionBids = auctionBids;
-		_auctionState = auctionState;
-		_auctionStateLock = new Object();
-		_scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
-		_auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
+		this.auctionId = auctionId;
+		this.instanceId = instanceId;
+		this.startingTime = startingTime;
+		this.endingTime = endingTime;
+		this.auctionItem = auctionItem;
+		this.auctionBids = auctionBids;
+		this.auctionState = auctionState;
+		this.auctionStateLock = new Object();
+		this.scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
+		this.auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 
-		final L2ItemInstance item = _auctionItem.createNewItemInstance();
-		_itemInfo = new ItemInfo(item);
+		final L2ItemInstance item = this.auctionItem.createNewItemInstance();
+		this.itemInfo = new ItemInfo(item);
 		L2World.getInstance().removeObject(item);
 
-		for (final ItemAuctionBid bid : _auctionBids)
+		for (final ItemAuctionBid bid : this.auctionBids)
 		{
-			if (_highestBid == null || _highestBid.getLastBid() < bid.getLastBid())
+			if (this.highestBid == null || this.highestBid.getLastBid() < bid.getLastBid())
 			{
-				_highestBid = bid;
+				this.highestBid = bid;
 			}
 		}
 	}
@@ -94,9 +94,9 @@ public final class ItemAuction
 	{
 		final ItemAuctionState auctionState;
 
-		synchronized (_auctionStateLock)
+		synchronized (this.auctionStateLock)
 		{
-			auctionState = _auctionState;
+			auctionState = this.auctionState;
 		}
 
 		return auctionState;
@@ -104,14 +104,14 @@ public final class ItemAuction
 
 	public final boolean setAuctionState(final ItemAuctionState expected, final ItemAuctionState wanted)
 	{
-		synchronized (_auctionStateLock)
+		synchronized (this.auctionStateLock)
 		{
-			if (_auctionState != expected)
+			if (this.auctionState != expected)
 			{
 				return false;
 			}
 
-			_auctionState = wanted;
+			this.auctionState = wanted;
 			storeMe();
 			return true;
 		}
@@ -119,57 +119,57 @@ public final class ItemAuction
 
 	public final int getAuctionId()
 	{
-		return _auctionId;
+		return this.auctionId;
 	}
 
 	public final int getInstanceId()
 	{
-		return _instanceId;
+		return instanceId;
 	}
 
 	public final ItemInfo getItemInfo()
 	{
-		return _itemInfo;
+		return this.itemInfo;
 	}
 
 	public final L2ItemInstance createNewItemInstance()
 	{
-		return _auctionItem.createNewItemInstance();
+		return this.auctionItem.createNewItemInstance();
 	}
 
 	public final long getAuctionInitBid()
 	{
-		return _auctionItem.getAuctionInitBid();
+		return this.auctionItem.getAuctionInitBid();
 	}
 
 	public final ItemAuctionBid getHighestBid()
 	{
-		return _highestBid;
+		return this.highestBid;
 	}
 
 	public final ItemAuctionExtendState getAuctionEndingExtendState()
 	{
-		return _auctionEndingExtendState;
+		return this.auctionEndingExtendState;
 	}
 
 	public final ItemAuctionExtendState getScheduledAuctionEndingExtendState()
 	{
-		return _scheduledAuctionEndingExtendState;
+		return this.scheduledAuctionEndingExtendState;
 	}
 
 	public final void setScheduledAuctionEndingExtendState(ItemAuctionExtendState state)
 	{
-		_scheduledAuctionEndingExtendState = state;
+		this.scheduledAuctionEndingExtendState = state;
 	}
 
 	public final long getStartingTime()
 	{
-		return _startingTime;
+		return this.startingTime;
 	}
 
 	public final long getEndingTime()
 	{
-		return _endingTime;
+		return this.endingTime;
 	}
 
 	public final long getStartingTimeRemaining()
@@ -190,13 +190,13 @@ public final class ItemAuction
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO item_auction (auctionId,instanceId,auctionItemId,startingTime,endingTime,auctionStateId) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE auctionStateId=?");
-			statement.setInt(1, _auctionId);
-			statement.setInt(2, _instanceId);
-			statement.setInt(3, _auctionItem.getAuctionItemId());
-			statement.setLong(4, _startingTime);
-			statement.setLong(5, _endingTime);
-			statement.setByte(6, _auctionState.getStateId());
-			statement.setByte(7, _auctionState.getStateId());
+			statement.setInt(1, this.auctionId);
+			statement.setInt(2, instanceId);
+			statement.setInt(3, this.auctionItem.getAuctionItemId());
+			statement.setLong(4, this.startingTime);
+			statement.setLong(5, this.endingTime);
+			statement.setByte(6, this.auctionState.getStateId());
+			statement.setByte(7, this.auctionState.getStateId());
 			statement.execute();
 			statement.close();
 		}
@@ -212,8 +212,8 @@ public final class ItemAuction
 
 	public final int getAndSetLastBidPlayerObjectId(final int playerObjId)
 	{
-		final int lastBid = _lastBidPlayerObjId;
-		_lastBidPlayerObjId = playerObjId;
+		final int lastBid = this.lastBidPlayerObjId;
+		this.lastBidPlayerObjId = playerObjId;
 		return lastBid;
 	}
 
@@ -233,14 +233,14 @@ public final class ItemAuction
 			if (delete)
 			{
 				statement = con.prepareStatement("DELETE FROM item_auction_bid WHERE auctionId=? AND playerObjId=?");
-				statement.setInt(1, _auctionId);
+				statement.setInt(1, this.auctionId);
 				statement.setInt(2, bid.getPlayerObjId());
 			}
 			else
 			{
 				statement = con.prepareStatement(
 						"INSERT INTO item_auction_bid (auctionId,playerObjId,playerBid) VALUES (?,?,?) ON DUPLICATE KEY UPDATE playerBid=?");
-				statement.setInt(1, _auctionId);
+				statement.setInt(1, this.auctionId);
 				statement.setInt(2, bid.getPlayerObjId());
 				statement.setLong(3, bid.getLastBid());
 				statement.setLong(4, bid.getLastBid());
@@ -285,9 +285,9 @@ public final class ItemAuction
 
 		final int playerObjId = player.getObjectId();
 
-		synchronized (_auctionBids)
+		synchronized (this.auctionBids)
 		{
-			if (_highestBid != null && newBid < _highestBid.getLastBid())
+			if (this.highestBid != null && newBid < this.highestBid.getLastBid())
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BID_MUST_BE_HIGHER_THAN_CURRENT_BID));
 				return;
@@ -303,7 +303,7 @@ public final class ItemAuction
 				}
 
 				bid = new ItemAuctionBid(playerObjId, newBid);
-				_auctionBids.add(bid);
+				this.auctionBids.add(bid);
 			}
 			else
 			{
@@ -342,29 +342,29 @@ public final class ItemAuction
 
 	private void onPlayerBid(final L2PcInstance player, final ItemAuctionBid bid)
 	{
-		if (_highestBid == null)
+		if (this.highestBid == null)
 		{
-			_highestBid = bid;
+			this.highestBid = bid;
 		}
-		else if (_highestBid.getLastBid() < bid.getLastBid())
+		else if (this.highestBid.getLastBid() < bid.getLastBid())
 		{
-			final L2PcInstance old = _highestBid.getPlayer();
+			final L2PcInstance old = this.highestBid.getPlayer();
 			if (old != null)
 			{
 				old.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_OUTBID));
 			}
 
-			_highestBid = bid;
+			this.highestBid = bid;
 		}
 
 		if (getEndingTime() - System.currentTimeMillis() <= 1000 * 60 * 10) // 10 minutes
 		{
-			switch (_auctionEndingExtendState)
+			switch (this.auctionEndingExtendState)
 			{
 				case INITIAL:
 				{
-					_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_5_MIN;
-					_endingTime += ENDING_TIME_EXTEND_5;
+					this.auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_5_MIN;
+					this.endingTime += ENDING_TIME_EXTEND_5;
 					broadcastToAllBidders(SystemMessage
 							.getSystemMessage(SystemMessageId.BIDDER_EXISTS_AUCTION_TIME_EXTENDED_BY_5_MINUTES));
 					break;
@@ -373,8 +373,8 @@ public final class ItemAuction
 				{
 					if (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId())
 					{
-						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_3_MIN;
-						_endingTime += ENDING_TIME_EXTEND_3;
+						this.auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_3_MIN;
+						this.endingTime += ENDING_TIME_EXTEND_3;
 						broadcastToAllBidders(SystemMessage
 								.getSystemMessage(SystemMessageId.BIDDER_EXISTS_AUCTION_TIME_EXTENDED_BY_3_MINUTES));
 					}
@@ -385,8 +385,8 @@ public final class ItemAuction
 					{
 						if (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId())
 						{
-							_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
-							_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+							this.auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
+							this.endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
 						}
 					}
 					break;
@@ -394,10 +394,10 @@ public final class ItemAuction
 				{
 					if (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId())
 					{
-						if (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B)
+						if (this.scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B)
 						{
-							_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
-							_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+							this.auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
+							this.endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
 						}
 					}
 					break;
@@ -406,10 +406,10 @@ public final class ItemAuction
 				{
 					if (getAndSetLastBidPlayerObjectId(player.getObjectId()) != player.getObjectId())
 					{
-						if (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A)
+						if (this.scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A)
 						{
-							_endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
-							_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
+							this.endingTime += Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+							this.auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 						}
 					}
 				}
@@ -424,9 +424,9 @@ public final class ItemAuction
 
 	public final void broadcastToAllBiddersInternal(final L2GameServerPacket packet)
 	{
-		for (int i = _auctionBids.size(); i-- > 0; )
+		for (int i = this.auctionBids.size(); i-- > 0; )
 		{
-			final ItemAuctionBid bid = _auctionBids.get(i);
+			final ItemAuctionBid bid = this.auctionBids.get(i);
 			if (bid != null)
 			{
 				final L2PcInstance player = bid.getPlayer();
@@ -451,7 +451,7 @@ public final class ItemAuction
 				return false;
 
 			case FINISHED:
-				if (_startingTime < System.currentTimeMillis() -
+				if (this.startingTime < System.currentTimeMillis() -
 						TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
 				{
 					return false;
@@ -464,9 +464,9 @@ public final class ItemAuction
 
 		final int playerObjId = player.getObjectId();
 
-		synchronized (_auctionBids)
+		synchronized (this.auctionBids)
 		{
-			if (_highestBid == null)
+			if (this.highestBid == null)
 			{
 				return false;
 			}
@@ -477,8 +477,8 @@ public final class ItemAuction
 				return false;
 			}
 
-			final ItemAuctionBid bid = _auctionBids.get(bidIndex);
-			if (bid.getPlayerObjId() == _highestBid.getPlayerObjId())
+			final ItemAuctionBid bid = this.auctionBids.get(bidIndex);
+			if (bid.getPlayerObjId() == this.highestBid.getPlayerObjId())
 			{
 				// can't return winning bid
 				if (getAuctionState() == ItemAuctionState.FINISHED)
@@ -513,9 +513,9 @@ public final class ItemAuction
 			throw new IllegalStateException("Attempt to clear canceled bids for non-finished auction");
 		}
 
-		synchronized (_auctionBids)
+		synchronized (this.auctionBids)
 		{
-			for (ItemAuctionBid bid : _auctionBids)
+			for (ItemAuctionBid bid : this.auctionBids)
 			{
 				if (bid == null || !bid.isCanceled())
 				{
@@ -556,14 +556,14 @@ public final class ItemAuction
 	public final ItemAuctionBid getBidfor(final int playerObjId)
 	{
 		final int index = getBidIndexfor(playerObjId);
-		return index != -1 ? _auctionBids.get(index) : null;
+		return index != -1 ? this.auctionBids.get(index) : null;
 	}
 
 	private int getBidIndexfor(final int playerObjId)
 	{
-		for (int i = _auctionBids.size(); i-- > 0; )
+		for (int i = this.auctionBids.size(); i-- > 0; )
 		{
-			final ItemAuctionBid bid = _auctionBids.get(i);
+			final ItemAuctionBid bid = this.auctionBids.get(i);
 			if (bid != null && bid.getPlayerObjId() == playerObjId)
 			{
 				return i;

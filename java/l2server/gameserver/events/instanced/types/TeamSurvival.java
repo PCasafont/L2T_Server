@@ -29,9 +29,9 @@ public class TeamSurvival extends EventInstance
 
 		int maxAlive = 0;
 		int teamId = 0;
-		for (int i = 0; i < _config.getLocation().getTeamCount(); i++)
+		for (int i = 0; i < this.config.getLocation().getTeamCount(); i++)
 		{
-			int alive = _teams[i].getAlivePlayerCount();
+			int alive = this.teams[i].getAlivePlayerCount();
 			if (alive > maxAlive)
 			{
 				maxAlive = alive;
@@ -39,7 +39,7 @@ public class TeamSurvival extends EventInstance
 			}
 		}
 
-		EventTeam team = _teams[teamId];
+		EventTeam team = this.teams[teamId];
 		rewardTeams(teamId);
 
 		Announcements.getInstance().announceToAll(
@@ -53,9 +53,9 @@ public class TeamSurvival extends EventInstance
 
 		int i = 0;
 		int alive = 0;
-		for (EventTeam team : _teams)
+		for (EventTeam team : this.teams)
 		{
-			if (++i > _config.getLocation().getTeamCount())
+			if (++i > config.getLocation().getTeamCount())
 			{
 				break;
 			}
@@ -146,12 +146,12 @@ public class TeamSurvival extends EventInstance
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
 			}
 			team.cleanMe();
-			if (_config.getLocation().getTeamCount() != 4 && (!_teams[0].isAlive() || !_teams[1].isAlive()) ||
-					_config.getLocation().getTeamCount() == 4 &&
-							(!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[2].isAlive() ||
-									!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[3].isAlive() ||
-									!_teams[0].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive() ||
-									!_teams[1].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive()))
+			if (this.config.getLocation().getTeamCount() != 4 && (!this.teams[0].isAlive() || !this.teams[1].isAlive()) ||
+					this.config.getLocation().getTeamCount() == 4 &&
+							(!this.teams[0].isAlive() && !this.teams[1].isAlive() && !this.teams[2].isAlive() ||
+									!this.teams[0].isAlive() && !this.teams[1].isAlive() && !this.teams[3].isAlive() ||
+									!this.teams[0].isAlive() && !this.teams[2].isAlive() && !this.teams[3].isAlive() ||
+									!this.teams[1].isAlive() && !this.teams[2].isAlive() && !this.teams[3].isAlive()))
 			{
 				stopFight();
 			}

@@ -42,47 +42,47 @@ public class TimeController
 	public static final int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
 	public static final int TICKS_SUN_STATE_CHANGE = TICKS_PER_IG_DAY / 4;
 
-	protected static int _gameTicks;
-	protected static long _gameStartTime;
-	protected static boolean _isNight = false;
-	protected static boolean _interruptRequest = false;
+	protected static int gameTicks;
+	protected static long gameStartTime;
+	protected static boolean isNight = false;
+	protected static boolean interruptRequest = false;
 
-	private static final ConcurrentHashMap<Integer, L2Character> _movingObjects = new ConcurrentHashMap<>();
+	private static final ConcurrentHashMap<Integer, L2Character> movingObjects = new ConcurrentHashMap<>();
 
-	protected static TimerThread _timer;
+	protected static TimerThread timer;
 
 	/**
 	 * one ingame day is 240 real minutes
 	 */
 	public static TimeController getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private TimeController()
 	{
-		_gameStartTime = System.currentTimeMillis() - 3600000; // offset so that the server starts a day begin
-		_gameTicks = 3600000 / MILLIS_IN_TICK; // offset so that the server starts a day begin
+		gameStartTime = System.currentTimeMillis() - 3600000; // offset so that the server starts a day begin
+		gameTicks = 3600000 / MILLIS_IN_TICK; // offset so that the server starts a day begin
 
-		_timer = new TimerThread();
-		_timer.start();
+		timer = new TimerThread();
+		timer.start();
 
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new BroadcastSunState(), 0, 600000);
 	}
 
-	public boolean isNowNight()
+	public static boolean isNowNight()
 	{
-		return _isNight;
+		return isNight;
 	}
 
-	public int getGameTime()
+	public static int getGameTime()
 	{
-		return _gameTicks / (TICKS_PER_SECOND * 10);
+		return gameTicks / (TICKS_PER_SECOND * 10);
 	}
 
 	public static int getGameTicks()
 	{
-		return _gameTicks;
+		return gameTicks;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class TimeController
 			return;
 		}
 
-		_movingObjects.putIfAbsent(cha.getObjectId(), cha);
+		this.movingObjects.putIfAbsent(cha.getObjectId(), cha);
 	}
 
 	/**
@@ -112,18 +112,18 @@ public class TimeController
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Update the position of each L2Character </li>
 	 * <li>If movement is finished, the L2Character is removed from movingObjects </li>
-	 * <li>Create a task to update the _knownObject and _knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
+	 * <li>Create a task to update the this.knownObject and this.knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
 	 */
 	protected void moveObjects()
 	{
 		// Go throw the table containing L2Character in movement
-		Iterator<Map.Entry<Integer, L2Character>> it = _movingObjects.entrySet().iterator();
+		Iterator<Map.Entry<Integer, L2Character>> it = this.movingObjects.entrySet().iterator();
 		while (it.hasNext())
 		{
 			// If movement is finished, the L2Character is removed from
 			// movingObjects and added to the ArrayList ended
 			L2Character ch = it.next().getValue();
-			if (ch.updatePosition(_gameTicks))
+			if (ch.updatePosition(this.gameTicks))
 			{
 				it.remove();
 				ThreadPoolManager.getInstance().executeTask(new MovingObjectArrived(ch));
@@ -133,8 +133,8 @@ public class TimeController
 
 	public void stopTimer()
 	{
-		_interruptRequest = true;
-		_timer.interrupt();
+		this.interruptRequest = true;
+		this.timer.interrupt();
 	}
 
 	class TimerThread extends Thread
@@ -157,17 +157,17 @@ public class TimeController
 			{
 				try
 				{
-					oldTicks = _gameTicks; // save old ticks value to avoid moving objects 2x in same tick
-					runtime = System.currentTimeMillis() - _gameStartTime; // from server boot to now
+					oldTicks = gameTicks; // save old ticks value to avoid moving objects 2x in same tick
+					runtime = System.currentTimeMillis() - gameStartTime; // from server boot to now
 
-					_gameTicks = (int) (runtime / MILLIS_IN_TICK); // new ticks value (ticks now)
+					gameTicks = (int) (runtime / MILLIS_IN_TICK); // new ticks value (ticks now)
 
-					if (oldTicks != _gameTicks)
+					if (oldTicks != gameTicks)
 					{
 						moveObjects(); // Runs possibly too often
 					}
 
-					runtime = System.currentTimeMillis() - _gameStartTime - runtime;
+					runtime = System.currentTimeMillis() - gameStartTime - runtime;
 
 					// calculate sleep time... time needed to next tick minus time it takes to call moveObjects()
 					sleepTime = 1 + MILLIS_IN_TICK - (int) runtime % MILLIS_IN_TICK;
@@ -181,7 +181,7 @@ public class TimeController
 				}
 				catch (InterruptedException ie)
 				{
-					if (_interruptRequest)
+					if (interruptRequest)
 					{
 						return;
 					}
@@ -197,15 +197,15 @@ public class TimeController
 	}
 
 	/**
-	 * Update the _knownObject and _knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED.<BR><BR>
+	 * Update the this.knownObject and this.knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED.<BR><BR>
 	 */
 	private static class MovingObjectArrived implements Runnable
 	{
-		private final L2Character _ended;
+		private final L2Character ended;
 
 		MovingObjectArrived(L2Character ended)
 		{
-			_ended = ended;
+			this.ended = ended;
 		}
 
 		@Override
@@ -213,13 +213,13 @@ public class TimeController
 		{
 			try
 			{
-				if (_ended.hasAI()) // AI could be just disabled due to region turn off
+				if (this.ended.hasAI()) // AI could be just disabled due to region turn off
 				{
 					if (Config.MOVE_BASED_KNOWNLIST)
 					{
-						_ended.getKnownList().findObjects();
+						this.ended.getKnownList().findObjects();
 					}
-					_ended.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
+					this.ended.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				}
 			}
 			catch (NullPointerException e)
@@ -242,9 +242,9 @@ public class TimeController
 			h = getGameTime() / 60 % 24; // Time in hour
 			tempIsNight = h < 6;
 
-			if (tempIsNight != _isNight)
+			if (tempIsNight != isNight)
 			{ // If diff day/night state
-				_isNight = tempIsNight; // Set current day/night varible to value of temp varible
+				isNight = tempIsNight; // Set current day/night varible to value of temp varible
 				DayNightSpawnManager.getInstance().notifyChangeMode();
 			}
 		}
@@ -253,6 +253,6 @@ public class TimeController
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TimeController _instance = new TimeController();
+		protected static final TimeController instance = new TimeController();
 	}
 }

@@ -40,7 +40,7 @@ public class ComboSkillTable
 		public Map<Integer, Integer> skills = new HashMap<>();
 	}
 
-	private Map<Integer, Combo> _combos = new HashMap<>();
+	private Map<Integer, Combo> combos = new HashMap<>();
 
 	private ComboSkillTable()
 	{
@@ -67,26 +67,26 @@ public class ComboSkillTable
 					}
 				}
 
-				_combos.put(id, combo);
+				this.combos.put(id, combo);
 			}
 		}
 
-		Log.info("Combo Skill table: loaded " + _combos.size() + " combos.");
+		Log.info("Combo Skill table: loaded " + this.combos.size() + " combos.");
 	}
 
 	public Combo getCombo(int id)
 	{
-		return _combos.get(id);
+		return this.combos.get(id);
 	}
 
 	public static ComboSkillTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ComboSkillTable _instance = new ComboSkillTable();
+		protected static final ComboSkillTable instance = new ComboSkillTable();
 	}
 }

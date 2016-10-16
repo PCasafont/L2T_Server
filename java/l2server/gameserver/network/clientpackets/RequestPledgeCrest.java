@@ -25,18 +25,18 @@ import l2server.gameserver.network.serverpackets.PledgeCrest;
 public final class RequestPledgeCrest extends L2GameClientPacket
 {
 
-	private int _crestId;
+	private int crestId;
 
 	@Override
 	protected void readImpl()
 	{
-		_crestId = readD();
+		this.crestId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		sendPacket(new PledgeCrest(_crestId));
+		sendPacket(new PledgeCrest(this.crestId));
 	}
 
 	@Override

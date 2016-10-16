@@ -20,41 +20,41 @@ package l2server.gameserver.model;
  */
 public class L2SummonItem
 {
-	private final int _itemId;
-	private final int _npcId;
-	private final byte _type;
-	private final int _despawnDelay;
+	private final int itemId;
+	private final int npcId;
+	private final byte type;
+	private final int despawnDelay;
 
 	public L2SummonItem(int itemId, int npcId, byte type, int despawnDelay)
 	{
-		_itemId = itemId;
-		_npcId = npcId;
-		_type = type;
-		_despawnDelay = despawnDelay;
+		this.itemId = itemId;
+		this.npcId = npcId;
+		this.type = type;
+		this.despawnDelay = despawnDelay;
 	}
 
 	public int getItemId()
 	{
-		return _itemId;
+		return this.itemId;
 	}
 
 	public int getNpcId()
 	{
-		return _npcId;
+		return this.npcId;
 	}
 
 	public byte getType()
 	{
-		return _type;
+		return this.type;
 	}
 
 	public boolean isPetSummon()
 	{
-		return _type == 1 || _type == 2;
+		return this.type == 1 || this.type == 2;
 	}
 
 	public int getDespawnDelay()
 	{
-		return _despawnDelay;
+		return this.despawnDelay;
 	}
 }

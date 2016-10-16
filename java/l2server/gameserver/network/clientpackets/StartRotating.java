@@ -26,14 +26,14 @@ import l2server.gameserver.network.serverpackets.StartRotation;
 public final class StartRotating extends L2GameClientPacket
 {
 
-	private int _degree;
-	private int _side;
+	private int degree;
+	private int side;
 
 	@Override
 	protected void readImpl()
 	{
-		_degree = readD();
-		_side = readD();
+		this.degree = readD();
+		this.side = readD();
 	}
 
 	@Override
@@ -48,12 +48,12 @@ public final class StartRotating extends L2GameClientPacket
 		final StartRotation br;
 		if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
 		{
-			br = new StartRotation(activeChar.getAirShip().getObjectId(), _degree, _side, 0);
+			br = new StartRotation(activeChar.getAirShip().getObjectId(), this.degree, this.side, 0);
 			activeChar.getAirShip().broadcastPacket(br);
 		}
 		else
 		{
-			br = new StartRotation(activeChar.getObjectId(), _degree, _side, 0);
+			br = new StartRotation(activeChar.getObjectId(), this.degree, this.side, 0);
 			activeChar.broadcastPacket(br);
 		}
 	}

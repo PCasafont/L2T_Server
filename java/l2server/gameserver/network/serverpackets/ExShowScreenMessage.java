@@ -20,114 +20,114 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShowScreenMessage extends L2GameServerPacket
 {
-	private int _type;
-	private int _sysMessageId;
-	private int _unk1;
-	private int _unk2;
-	private int _unk3;
-	private int _unk4;
-	private int _size;
-	private int _position;
-	private boolean _effect;
-	private int _npcStringId;
-	private String _text;
-	private int _time;
+	private int type;
+	private int sysMessageId;
+	private int unk1;
+	private int unk2;
+	private int unk3;
+	private int unk4;
+	private int size;
+	private int position;
+	private boolean effect;
+	private int npcStringId;
+	private String text;
+	private int time;
 
 	public ExShowScreenMessage(String text, int time)
 	{
-		_type = 1;
-		_sysMessageId = -1;
-		_unk1 = 0;
-		_unk2 = 0;
-		_unk3 = 0;
-		_unk4 = 0;
-		_position = 0x02;
-		_npcStringId = -1;
-		_text = text;
-		_time = time;
-		_size = 0;
-		_effect = true;
+		this.type = 1;
+		this.sysMessageId = -1;
+		this.unk1 = 0;
+		this.unk2 = 0;
+		this.unk3 = 0;
+		this.unk4 = 0;
+		this.position = 0x02;
+		this.npcStringId = -1;
+		this.text = text;
+		this.time = time;
+		this.size = 0;
+		this.effect = true;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int time)
 	{
-		_type = 1;
-		_sysMessageId = -1;
-		_unk1 = 0;
-		_unk2 = 0;
-		_unk3 = 0;
-		_unk4 = 0;
-		_position = 0x02;
-		_npcStringId = npcStringId;
-		_text = "";
-		_time = time;
-		_size = 0;
-		_effect = false;
+		this.type = 1;
+		this.sysMessageId = -1;
+		this.unk1 = 0;
+		this.unk2 = 0;
+		this.unk3 = 0;
+		this.unk4 = 0;
+		this.position = 0x02;
+		this.npcStringId = npcStringId;
+		this.text = "";
+		this.time = time;
+		this.size = 0;
+		this.effect = false;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int unk, boolean effect, int time)
 	{
-		_type = 1;
-		_sysMessageId = -1;
-		_unk1 = 0;
-		_unk2 = 0;
-		_unk3 = unk;
-		_unk4 = 0;
-		_position = 0x02;
-		_npcStringId = npcStringId;
-		_text = "";
-		_time = time;
-		_size = 0;
-		_effect = effect;
+		this.type = 1;
+		this.sysMessageId = -1;
+		this.unk1 = 0;
+		this.unk2 = 0;
+		this.unk3 = unk;
+		this.unk4 = 0;
+		this.position = 0x02;
+		this.npcStringId = npcStringId;
+		this.text = "";
+		this.time = time;
+		this.size = 0;
+		this.effect = effect;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int pos, int time)
 	{
-		_type = 1;
-		_sysMessageId = -1;
-		_unk1 = 0;
-		_unk2 = 0;
-		_unk3 = 0;
-		_unk4 = 0;
-		_position = pos;
-		_npcStringId = npcStringId;
-		_text = "";
-		_time = time;
-		_size = 0;
-		_effect = false;
+		this.type = 1;
+		this.sysMessageId = -1;
+		this.unk1 = 0;
+		this.unk2 = 0;
+		this.unk3 = 0;
+		this.unk4 = 0;
+		this.position = pos;
+		this.npcStringId = npcStringId;
+		this.text = "";
+		this.time = time;
+		this.size = 0;
+		this.effect = false;
 	}
 
 	public ExShowScreenMessage(int type, int messageId, int position, int unk1, int size, int unk2, int unk3, boolean showEffect, int time, int unk4, String text)
 	{
-		_type = type;
-		_sysMessageId = messageId;
-		_unk1 = unk1;
-		_unk2 = unk2;
-		_unk3 = unk3;
-		_unk4 = unk4;
-		_position = position;
-		_npcStringId = -1;
-		_text = text;
-		_time = time;
-		_size = size;
-		_effect = showEffect;
+		this.type = type;
+		this.sysMessageId = messageId;
+		this.unk1 = unk1;
+		this.unk2 = unk2;
+		this.unk3 = unk3;
+		this.unk4 = unk4;
+		this.position = position;
+		this.npcStringId = -1;
+		this.text = text;
+		this.time = time;
+		this.size = size;
+		this.effect = showEffect;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_type); // 0 - system messages, 1 - your defined text
-		writeD(_sysMessageId); // system message id (_type must be 0 otherwise no effect)
-		writeD(_position); // message position
-		writeD(_unk1); // ?
-		writeD(_size); // font size 0 - normal, 1 - small
-		writeD(_unk2); // ?
-		writeD(_unk3); // ?
-		writeD(_effect ? 1 :
-				0); // upper effect (0 - disabled, 1 enabled) - _position must be 2 (center) otherwise no effect
-		writeD(_time); // time
-		writeD(_unk4); // ?
-		writeD(_npcStringId);
-		writeS(_text); // your text (_type must be 1, otherwise no effect)
+		writeD(this.type); // 0 - system messages, 1 - your defined text
+		writeD(this.sysMessageId); // system message id (this.type must be 0 otherwise no effect)
+		writeD(this.position); // message position
+		writeD(this.unk1); // ?
+		writeD(this.size); // font size 0 - normal, 1 - small
+		writeD(this.unk2); // ?
+		writeD(this.unk3); // ?
+		writeD(this.effect ? 1 :
+				0); // upper effect (0 - disabled, 1 enabled) - this.position must be 2 (center) otherwise no effect
+		writeD(this.time); // time
+		writeD(this.unk4); // ?
+		writeD(this.npcStringId);
+		writeS(this.text); // your text (this.type must be 1, otherwise no effect)
 	}
 }

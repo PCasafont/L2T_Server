@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerMp extends Condition
 {
 
-	private final int _mp;
+	private final int mp;
 
 	/**
 	 * Instantiates a new condition player mp.
@@ -32,7 +32,7 @@ public class ConditionPlayerMp extends Condition
 	 */
 	public ConditionPlayerMp(int mp)
 	{
-		_mp = mp;
+		this.mp = mp;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ConditionPlayerMp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= _mp;
+		return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= this.mp;
 	}
 }

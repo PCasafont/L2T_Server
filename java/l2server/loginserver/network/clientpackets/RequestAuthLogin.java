@@ -36,18 +36,18 @@ import java.util.logging.Level;
  */
 public class RequestAuthLogin extends L2LoginClientPacket
 {
-	private byte[] _raw = new byte[256];
+	private byte[] raw = new byte[256];
 
-	private String _user;
-	private String _password;
-	private int _ncotp;
+	private String user;
+	private String password;
+	private int ncotp;
 
 	/**
 	 * @return
 	 */
 	public String getPassword()
 	{
-		return _password;
+		return this.password;
 	}
 
 	/**
@@ -55,20 +55,20 @@ public class RequestAuthLogin extends L2LoginClientPacket
 	 */
 	public String getUser()
 	{
-		return _user;
+		return this.user;
 	}
 
 	public int getOneTimePassword()
 	{
-		return _ncotp;
+		return this.ncotp;
 	}
 
 	@Override
 	public boolean readImpl()
 	{
-		if (super._buf.remaining() >= 256)
+		if (super.buf.remaining() >= 256)
 		{
-			readB(_raw);
+			readB(this.raw);
 			return true;
 		}
 		else
@@ -87,8 +87,8 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		{
 			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.DECRYPT_MODE, client.getRSAPrivateKey());
-			decrypted = rsaCipher.doFinal(_raw, 0x00, 0x80);
-			decrypted2 = rsaCipher.doFinal(_raw, 0x80, 0x80);
+			decrypted = rsaCipher.doFinal(this.raw, 0x00, 0x80);
+			decrypted2 = rsaCipher.doFinal(this.raw, 0x80, 0x80);
 		}
 		catch (GeneralSecurityException e)
 		{
@@ -96,25 +96,25 @@ public class RequestAuthLogin extends L2LoginClientPacket
 			return;
 		}
 
-		_user = new String(decrypted, 0x4E, 14).trim();
-		_user = _user.toLowerCase();
-		_password = new String(decrypted2, 0x5C, 16).trim();
-		_ncotp = decrypted[0x7c];
-		_ncotp |= decrypted[0x7d] << 8;
-		_ncotp |= decrypted[0x7e] << 16;
-		_ncotp |= decrypted[0x7f] << 24;
+		this.user = new String(decrypted, 0x4E, 14).trim();
+		this.user = this.user.toLowerCase();
+		this.password = new String(decrypted2, 0x5C, 16).trim();
+		this.ncotp = decrypted[0x7c];
+		this.ncotp |= decrypted[0x7d] << 8;
+		this.ncotp |= decrypted[0x7e] << 16;
+		this.ncotp |= decrypted[0x7f] << 24;
 
 		LoginController lc = LoginController.getInstance();
 		/*try
 		{*/
-			LoginController.AuthLoginResult result = lc.tryAuthLogin(_user, _password, client);
+			LoginController.AuthLoginResult result = lc.tryAuthLogin(this.user, this.password, client);
 			switch (result)
 			{
 				case AUTH_SUCCESS:
-					client.setAccount(_user);
-					lc.getCharactersOnAccount(_user);
+					client.setAccount(this.user);
+					lc.getCharactersOnAccount(this.user);
 					client.setState(L2LoginClient.LoginClientState.AUTHED_LOGIN);
-					client.setSessionKey(lc.assignSessionKeyToClient(_user, client));
+					client.setSessionKey(lc.assignSessionKeyToClient(this.user, client));
 					if (Config.SHOW_LICENCE)
 					{
 						client.sendPacket(new LoginOk(getClient().getSessionKey()));
@@ -145,25 +145,25 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					break;
 				case ALREADY_ON_LS:
 					L2LoginClient oldClient;
-					if ((oldClient = lc.getAuthedClient(_user)) != null)
+					if ((oldClient = lc.getAuthedClient(this.user)) != null)
 					{
 						// kick the other client
 						oldClient.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
-						lc.removeAuthedLoginClient(_user);
+						lc.removeAuthedLoginClient(this.user);
 					}
 					// kick also current client
 					client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 					break;
 				case ALREADY_ON_GS:
 					GameServerTable.GameServerInfo gsi;
-					if ((gsi = lc.getAccountOnGameServer(_user)) != null)
+					if ((gsi = lc.getAccountOnGameServer(this.user)) != null)
 					{
 						client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 
 						// kick from there
 						if (gsi.isAuthed())
 						{
-							gsi.getGameServerThread().kickPlayer(_user);
+							gsi.getGameServerThread().kickPlayer(this.user);
 						}
 					}
 					break;

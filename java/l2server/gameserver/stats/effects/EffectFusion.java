@@ -26,14 +26,14 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectFusion extends L2Effect
 {
-	public int _effect;
-	public int _maxEffect;
+	public int effect;
+	public int maxEffect;
 
 	public EffectFusion(Env env, L2EffectTemplate template)
 	{
 		super(env, template);
-		_effect = getSkill().getLevel();
-		_maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
+		this.effect = getSkill().getLevel();
+		this.maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
 	}
 
 	@Override
@@ -53,17 +53,17 @@ public class EffectFusion extends L2Effect
 
 	public void increaseEffect()
 	{
-		if (_effect < _maxEffect)
+		if (this.effect < this.maxEffect)
 		{
-			_effect++;
+			this.effect++;
 			updateBuff();
 		}
 	}
 
 	public void decreaseForce()
 	{
-		_effect--;
-		if (_effect < 1)
+		this.effect--;
+		if (this.effect < 1)
 		{
 			exit();
 		}
@@ -76,6 +76,6 @@ public class EffectFusion extends L2Effect
 	private void updateBuff()
 	{
 		exit();
-		SkillTable.getInstance().getInfo(getSkill().getId(), _effect).getEffects(getEffector(), getEffected());
+		SkillTable.getInstance().getInfo(getSkill().getId(), this.effect).getEffects(getEffector(), getEffected());
 	}
 }

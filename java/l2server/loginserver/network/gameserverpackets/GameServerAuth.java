@@ -43,16 +43,16 @@ import java.util.logging.Logger;
  */
 public class GameServerAuth extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(GameServerAuth.class.getName());
-	GameServerThread _server;
-	private byte[] _hexId;
-	private int _desiredId;
+	protected static Logger log = Logger.getLogger(GameServerAuth.class.getName());
+	GameServerThread server;
+	private byte[] hexId;
+	private int desiredId;
 	@SuppressWarnings("unused")
-	private boolean _hostReserved;
-	private boolean _acceptAlternativeId;
-	private int _maxPlayers;
-	private int _port;
-	private String[] _hosts;
+	private boolean hostReserved;
+	private boolean acceptAlternativeId;
+	private int maxPlayers;
+	private int port;
+	private String[] hosts;
 
 	/**
 	 * @param decrypt
@@ -60,19 +60,19 @@ public class GameServerAuth extends BaseRecievePacket
 	public GameServerAuth(byte[] decrypt, GameServerThread server)
 	{
 		super(decrypt);
-		_server = server;
-		_desiredId = readC();
-		_acceptAlternativeId = readC() != 0;
-		_hostReserved = readC() != 0;
-		_port = readH();
-		_maxPlayers = readD();
+		this.server = server;
+		this.desiredId = readC();
+		this.acceptAlternativeId = readC() != 0;
+		this.hostReserved = readC() != 0;
+		this.port = readH();
+		this.maxPlayers = readD();
 		int size = readD();
-		_hexId = readB(size);
+		this.hexId = readB(size);
 		size = 2 * readD();
-		_hosts = new String[size];
+		this.hosts = new String[size];
 		for (int i = 0; i < size; i++)
 		{
-			_hosts[i] = readS();
+			this.hosts[i] = readS();
 		}
 
 		if (Config.DEBUG)
@@ -96,8 +96,8 @@ public class GameServerAuth extends BaseRecievePacket
 	{
 		GameServerTable gameServerTable = GameServerTable.getInstance();
 
-		int id = _desiredId;
-		byte[] hexId = _hexId;
+		int id = this.desiredId;
+		byte[] hexId = this.hexId;
 
 		GameServerInfo gsi = gameServerTable.getRegisteredGameServerById(id);
 		// is there a gameserver registered with this id?
@@ -111,12 +111,12 @@ public class GameServerAuth extends BaseRecievePacket
 				{
 					if (gsi.isAuthed())
 					{
-						_server.forceClose(LoginServerFail.REASON_ALREADY_LOGGED8IN);
+						this.server.forceClose(LoginServerFail.REASON_ALREADY_LOGGED8IN);
 						return false;
 					}
 					else
 					{
-						_server.attachGameServerInfo(gsi, _port, _hosts, _maxPlayers);
+						this.server.attachGameServerInfo(gsi, this.port, this.hosts, this.maxPlayers);
 					}
 				}
 			}
@@ -124,24 +124,24 @@ public class GameServerAuth extends BaseRecievePacket
 			{
 				// there is already a server registered with the desired id and different hex id
 				// try to register this one with an alternative id
-				if (Config.ACCEPT_NEW_GAMESERVER && _acceptAlternativeId)
+				if (Config.ACCEPT_NEW_GAMESERVER && this.acceptAlternativeId)
 				{
-					gsi = new GameServerInfo(id, hexId, _server);
+					gsi = new GameServerInfo(id, hexId, this.server);
 					if (gameServerTable.registerWithFirstAvaliableId(gsi))
 					{
-						_server.attachGameServerInfo(gsi, _port, _hosts, _maxPlayers);
+						this.server.attachGameServerInfo(gsi, this.port, this.hosts, this.maxPlayers);
 						gameServerTable.registerServerOnDB(gsi);
 					}
 					else
 					{
-						_server.forceClose(LoginServerFail.REASON_NO_FREE_ID);
+						this.server.forceClose(LoginServerFail.REASON_NO_FREE_ID);
 						return false;
 					}
 				}
 				else
 				{
 					// server id is already taken, and we cant get a new one for you
-					_server.forceClose(LoginServerFail.REASON_WRONG_HEXID);
+					this.server.forceClose(LoginServerFail.REASON_WRONG_HEXID);
 					return false;
 				}
 			}
@@ -151,22 +151,22 @@ public class GameServerAuth extends BaseRecievePacket
 			// can we register on this id?
 			if (Config.ACCEPT_NEW_GAMESERVER)
 			{
-				gsi = new GameServerInfo(id, hexId, _server);
+				gsi = new GameServerInfo(id, hexId, this.server);
 				if (gameServerTable.register(id, gsi))
 				{
-					_server.attachGameServerInfo(gsi, _port, _hosts, _maxPlayers);
+					this.server.attachGameServerInfo(gsi, this.port, this.hosts, this.maxPlayers);
 					gameServerTable.registerServerOnDB(gsi);
 				}
 				else
 				{
 					// some one took this ID meanwhile
-					_server.forceClose(LoginServerFail.REASON_ID_RESERVED);
+					this.server.forceClose(LoginServerFail.REASON_ID_RESERVED);
 					return false;
 				}
 			}
 			else
 			{
-				_server.forceClose(LoginServerFail.REASON_WRONG_HEXID);
+				this.server.forceClose(LoginServerFail.REASON_WRONG_HEXID);
 				return false;
 			}
 		}

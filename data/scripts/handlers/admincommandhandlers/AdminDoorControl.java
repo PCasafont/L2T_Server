@@ -43,7 +43,7 @@ import l2server.gameserver.model.entity.Castle;
  */
 public class AdminDoorControl implements IAdminCommandHandler
 {
-	private static DoorTable _doorTable = DoorTable.getInstance();
+	private static DoorTable doorTable = DoorTable.getInstance();
 	private static final String[] ADMIN_COMMANDS = {"admin_open", "admin_close", "admin_openall", "admin_closeall"};
 
 	@Override
@@ -54,9 +54,9 @@ public class AdminDoorControl implements IAdminCommandHandler
 			if (command.startsWith("admin_open "))
 			{
 				int doorId = Integer.parseInt(command.substring(11));
-				if (_doorTable.getDoor(doorId) != null)
+				if (this.doorTable.getDoor(doorId) != null)
 				{
-					_doorTable.getDoor(doorId).openMe();
+					this.doorTable.getDoor(doorId).openMe();
 				}
 				else
 				{
@@ -72,9 +72,9 @@ public class AdminDoorControl implements IAdminCommandHandler
 			else if (command.startsWith("admin_close "))
 			{
 				int doorId = Integer.parseInt(command.substring(12));
-				if (_doorTable.getDoor(doorId) != null)
+				if (this.doorTable.getDoor(doorId) != null)
 				{
-					_doorTable.getDoor(doorId).closeMe();
+					this.doorTable.getDoor(doorId).closeMe();
 				}
 				else
 				{
@@ -89,7 +89,7 @@ public class AdminDoorControl implements IAdminCommandHandler
 			}
 			if (command.equals("admin_closeall"))
 			{
-				for (L2DoorInstance door : _doorTable.getDoors())
+				for (L2DoorInstance door : this.doorTable.getDoors())
 				{
 					door.closeMe();
 				}
@@ -103,7 +103,7 @@ public class AdminDoorControl implements IAdminCommandHandler
 			}
 			if (command.equals("admin_openall"))
 			{
-				for (L2DoorInstance door : _doorTable.getDoors())
+				for (L2DoorInstance door : this.doorTable.getDoors())
 				{
 					door.openMe();
 				}

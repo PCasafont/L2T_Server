@@ -32,16 +32,16 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	private static final int TYPE_CHANGE_ENCHANT = 3;
 	private static final int TYPE_IMMORTAL_ENCHANT = 4;
 
-	private int _bookId = 0;
-	private int _reqCount = 0;
-	private int _multi = 1;
-	private final int _type;
-	private final int _skillId;
-	private final int _skillLvl;
-	private final int _skillEnch;
-	private final int _chance;
-	private int _sp;
-	private final int _adenacount;
+	private int bookId = 0;
+	private int reqCount = 0;
+	private int multi = 1;
+	private final int type;
+	private final int skillId;
+	private final int skillLvl;
+	private final int skillEnch;
+	private final int chance;
+	private int sp;
+	private final int adenacount;
 
 	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, L2PcInstance ply)
 	{
@@ -65,52 +65,52 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			throw new IllegalArgumentException("Skill " + skillId + " dont have enchant data for level " + skillLvl);
 		}
 
-		_chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
-		_sp = esd.getSpCost();
+		this.chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
+		this.sp = esd.getSpCost();
 		if (type == TYPE_NORMAL_ENCHANT)
 		{
-			_multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
+			this.multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_SAFE_ENCHANT)
 		{
-			_multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
+			this.multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_IMMORTAL_ENCHANT)
 		{
-			_multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
+			this.multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_UNTRAIN_ENCHANT)
 		{
-			_sp = (int) (0.8 * _sp);
+			this.sp = (int) (0.8 * this.sp);
 		}
-		_adenacount = esd.getAdenaCost() * _multi;
+		this.adenacount = esd.getAdenaCost() * this.multi;
 
-		_type = type;
-		_skillId = skillId;
-		_skillLvl = skillLvl;
-		_skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
+		this.type = type;
+		this.skillId = skillId;
+		this.skillLvl = skillLvl;
+		this.skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
 
-		_reqCount = 1;
+		this.reqCount = 1;
 		switch (type)
 		{
 			case TYPE_NORMAL_ENCHANT:
-				_bookId = esd.getRange().getNormalBook();
+				this.bookId = esd.getRange().getNormalBook();
 				if (skillEnchLvl % 10 > 1)
 				{
-					_reqCount = 0;
+					this.reqCount = 0;
 				}
 				break;
 			case TYPE_SAFE_ENCHANT:
-				_bookId = esd.getRange().getSafeBook();
+				this.bookId = esd.getRange().getSafeBook();
 				break;
 			case TYPE_UNTRAIN_ENCHANT:
-				_bookId = esd.getRange().getUntrainBook();
+				this.bookId = esd.getRange().getUntrainBook();
 				break;
 			case TYPE_CHANGE_ENCHANT:
-				_bookId = esd.getRange().getChangeBook();
+				this.bookId = esd.getRange().getChangeBook();
 				break;
 			case TYPE_IMMORTAL_ENCHANT:
-				_bookId = esd.getRange().getImmortalBook();
+				this.bookId = esd.getRange().getImmortalBook();
 				break;
 			default:
 				return;
@@ -118,7 +118,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 
 		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
 		{
-			_reqCount = 0;
+			this.reqCount = 0;
 		}
 	}
 
@@ -132,16 +132,16 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_type);
-		writeD(_skillId);
-		writeH(_skillLvl);
-		writeH(_skillEnch);
-		writeQ(_sp * _multi); // sp
-		writeD(_chance); // exp
+		writeD(this.type);
+		writeD(this.skillId);
+		writeH(this.skillLvl);
+		writeH(this.skillEnch);
+		writeQ(this.sp * this.multi); // sp
+		writeD(this.chance); // exp
 		writeD(2); // items count?
 		writeD(57); // adena //TODO unhardcode me
-		writeD(_adenacount); // adena count
-		writeD(_bookId); // ItemId Required
-		writeD(_reqCount);
+		writeD(this.adenacount); // adena count
+		writeD(this.bookId); // ItemId Required
+		writeD(this.reqCount);
 	}
 }

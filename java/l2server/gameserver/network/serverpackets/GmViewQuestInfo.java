@@ -27,19 +27,19 @@ import l2server.gameserver.model.quest.QuestState;
 public class GmViewQuestInfo extends L2GameServerPacket
 {
 
-	private L2PcInstance _activeChar;
+	private L2PcInstance activeChar;
 
 	public GmViewQuestInfo(L2PcInstance cha)
 	{
-		_activeChar = cha;
+		this.activeChar = cha;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_activeChar.getName());
+		writeS(this.activeChar.getName());
 
-		Quest[] questList = _activeChar.getAllActiveQuests();
+		Quest[] questList = this.activeChar.getAllActiveQuests();
 
 		if (questList.length == 0)
 		{
@@ -55,7 +55,7 @@ public class GmViewQuestInfo extends L2GameServerPacket
 		{
 			writeD(q.getQuestIntId());
 
-			QuestState qs = _activeChar.getQuestState(q.getName());
+			QuestState qs = this.activeChar.getQuestState(q.getName());
 
 			if (qs == null)
 			{

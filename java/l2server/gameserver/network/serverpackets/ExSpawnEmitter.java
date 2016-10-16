@@ -23,13 +23,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExSpawnEmitter extends L2GameServerPacket
 {
-	private final int _playerObjectId;
-	private final int _npcObjectId;
+	private final int playerObjectId;
+	private final int npcObjectId;
 
 	public ExSpawnEmitter(int playerObjectId, int npcObjectId)
 	{
-		_playerObjectId = playerObjectId;
-		_npcObjectId = npcObjectId;
+		this.playerObjectId = playerObjectId;
+		this.npcObjectId = npcObjectId;
 	}
 
 	public ExSpawnEmitter(L2PcInstance player, L2Npc npc)
@@ -47,8 +47,8 @@ public class ExSpawnEmitter extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_npcObjectId);
-		writeD(_playerObjectId);
+		writeD(this.npcObjectId);
+		writeD(this.playerObjectId);
 		writeD(0x00); // ?
 	}
 }

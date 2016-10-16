@@ -15,6 +15,8 @@
 
 package handlers.chathandlers;
 
+import java.util.Collection;
+
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.MapRegionTable;
@@ -26,8 +28,6 @@ import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-
-import java.util.Collection;
 
 /**
  * Shout chat handler.

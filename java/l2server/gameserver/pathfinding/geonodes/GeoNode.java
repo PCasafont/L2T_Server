@@ -23,40 +23,40 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
  */
 public class GeoNode extends AbstractNode
 {
-	private final int _neighborsIdx;
-	private short _cost;
-	private GeoNode[] _neighbors;
+	private final int neighborsIdx;
+	private short cost;
+	private GeoNode[] neighbors;
 
 	public GeoNode(AbstractNodeLoc Loc, int Neighbors_idx)
 	{
 		super(Loc);
-		_neighborsIdx = Neighbors_idx;
+		this.neighborsIdx = Neighbors_idx;
 	}
 
 	public short getCost()
 	{
-		return _cost;
+		return this.cost;
 	}
 
 	public void setCost(int cost)
 	{
-		_cost = (short) cost;
+		this.cost = (short) cost;
 	}
 
 	public GeoNode[] getNeighbors()
 	{
-		return _neighbors;
+		return this.neighbors;
 	}
 
 	public void attachNeighbors()
 	{
 		if (getLoc() == null)
 		{
-			_neighbors = null;
+			this.neighbors = null;
 		}
 		else
 		{
-			_neighbors = GeoPathFinding.getInstance().readNeighbors(this, _neighborsIdx);
+			this.neighbors = GeoPathFinding.getInstance().readNeighbors(this, this.neighborsIdx);
 		}
 	}
 }

@@ -22,14 +22,14 @@ import l2server.gameserver.network.serverpackets.ExLoadStatWorldRank;
  */
 public final class RequestWorldStatistics extends L2GameClientPacket
 {
-	private int _pId1;
-	private int _pId2;
+	private int pId1;
+	private int pId2;
 
 	@Override
 	protected void readImpl()
 	{
-		_pId1 = readD();
-		_pId2 = readD();
+		this.pId1 = readD();
+		this.pId2 = readD();
 	}
 
 	/**
@@ -38,11 +38,11 @@ public final class RequestWorldStatistics extends L2GameClientPacket
 	protected void runImpl()
 	{
 		if (getClient().getActiveChar() == null)
-		//|| MuseumStatistic.get(_pId1, _pId2) == null)
+		//|| MuseumStatistic.get(this.pId1, this.pId2) == null)
 		{
 			return;
 		}
 
-		sendPacket(new ExLoadStatWorldRank(_pId1, _pId2));
+		sendPacket(new ExLoadStatWorldRank(this.pId1, this.pId2));
 	}
 }

@@ -27,16 +27,16 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 
 public final class RequestRegistBeauty extends L2GameClientPacket
 {
-	private int _hair;
-	private int _face;
-	private int _hairColor;
+	private int hair;
+	private int face;
+	private int hairColor;
 
 	@Override
 	protected final void readImpl()
 	{
-		_hair = readD();
-		_face = readD();
-		_hairColor = readD();
+		this.hair = readD();
+		this.face = readD();
+		this.hairColor = readD();
 	}
 
 	@Override
@@ -52,30 +52,30 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 		//Get the price
 		BeautyInfo styleInfo = null;
 
-		if (_hair > 0)
+		if (this.hair > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(_hair);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(this.hair);
 		}
-		else if (_face > 0)
+		else if (this.face > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(_face);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(this.face);
 		}
 
 		if (styleInfo != null)
 		{
-			if (_face == -1)
+			if (this.face == -1)
 			{
-				_face = activeChar.getAppearance().getFace();
+				this.face = activeChar.getAppearance().getFace();
 			}
 
-			if (_hair == -1)
+			if (this.hair == -1)
 			{
-				_hair = activeChar.getAppearance().getHairStyle();
+				this.hair = activeChar.getAppearance().getHairStyle();
 			}
 
-			if (_hairColor == -1)
+			if (this.hairColor == -1)
 			{
-				_hairColor = activeChar.getAppearance().getHairColor();
+				this.hairColor = activeChar.getAppearance().getHairColor();
 			}
 
 			/*L2ItemInstance playerTickets = activeChar.getInventory().getItemByItemId(36308);
@@ -102,14 +102,14 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 				activeChar.destroyItemByItemId("Beauty shop", 36308, ticketPrice, activeChar, true);
 			}*/
 
-			activeChar.getAppearance().setHairStyle(_hair);
+			activeChar.getAppearance().setHairStyle(this.hair);
 
-			activeChar.getAppearance().setFace(_face);
+			activeChar.getAppearance().setFace(this.face);
 
-			activeChar.getAppearance().setHairColor(_hairColor);
+			activeChar.getAppearance().setHairColor(this.hairColor);
 
 			activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
-					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
+					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, this.hair, this.face, this.hairColor));
 
 			//activeChar.sendPacket(new ExResponseBeautyListPacket());
 
@@ -119,7 +119,7 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
 
-			//Log.info("INFO: Hair: " + _hair + ", Face: " + _face + ", COLOR: " + _hairColor);
+			//Log.info("INFO: Hair: " + this.hair + ", Face: " + this.face + ", COLOR: " + this.hairColor);
 			//Log.info("END OK");
 		}
 	}

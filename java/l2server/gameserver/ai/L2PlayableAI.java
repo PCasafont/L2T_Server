@@ -52,37 +52,37 @@ public abstract class L2PlayableAI extends L2CharacterAI
 		if (target instanceof L2Playable)
 		{
 			if (target.getActingPlayer().getProtectionBlessing() &&
-					_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
-					_actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(L2Character.ZONE_PVP))
+					this.actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
+					this.actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
 				return;
 			}
 
-			if (_actor.getActingPlayer().getProtectionBlessing() &&
-					target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel() >= 10 &&
+			if (this.actor.getActingPlayer().getProtectionBlessing() &&
+					target.getActingPlayer().getLevel() - this.actor.getActingPlayer().getLevel() >= 10 &&
 					target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
 				return;
 			}
 
-			if (target.getActingPlayer().isCursedWeaponEquipped() && _actor.getActingPlayer().getLevel() <= 20)
+			if (target.getActingPlayer().isCursedWeaponEquipped() && this.actor.getActingPlayer().getLevel() <= 20)
 			{
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
 				return;
 			}
 
-			if (_actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
+			if (this.actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
 			{
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
 				return;
 			}
@@ -100,48 +100,48 @@ public abstract class L2PlayableAI extends L2CharacterAI
 		if (target instanceof L2Playable && skill.isOffensive())
 		{
 			if (target.getActingPlayer().getProtectionBlessing() &&
-					_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
-					_actor.getActingPlayer().getReputation() < 0 &&
+					this.actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 &&
+					this.actor.getActingPlayer().getReputation() < 0 &&
 					!((L2Playable) target).isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
-				_actor.setIsCastingNow2(false);
+				this.actor.setIsCastingNow(false);
+				this.actor.setIsCastingNow2(false);
 				return;
 			}
 
-			if (_actor.getActingPlayer().getProtectionBlessing() &&
-					target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel() >= 10 &&
+			if (this.actor.getActingPlayer().getProtectionBlessing() &&
+					target.getActingPlayer().getLevel() - this.actor.getActingPlayer().getLevel() >= 10 &&
 					target.getActingPlayer().getReputation() < 0 &&
 					!((L2Playable) target).isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
-				_actor.setIsCastingNow2(false);
+				this.actor.setIsCastingNow(false);
+				this.actor.setIsCastingNow2(false);
 				return;
 			}
 
-			if (target.getActingPlayer().isCursedWeaponEquipped() && _actor.getActingPlayer().getLevel() <= 20)
+			if (target.getActingPlayer().isCursedWeaponEquipped() && this.actor.getActingPlayer().getLevel() <= 20)
 			{
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
-				_actor.setIsCastingNow2(false);
+				this.actor.setIsCastingNow(false);
+				this.actor.setIsCastingNow2(false);
 				return;
 			}
 
-			if (_actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
+			if (this.actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
 			{
-				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+				this.actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
-				_actor.setIsCastingNow(false);
-				_actor.setIsCastingNow2(false);
+				this.actor.setIsCastingNow(false);
+				this.actor.setIsCastingNow2(false);
 				return;
 			}
 		}

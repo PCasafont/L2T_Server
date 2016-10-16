@@ -41,20 +41,20 @@ public final class RelationChanged extends L2GameServerPacket
 
 	private static class Relation
 	{
-		int _objId, _relation, _autoAttackable, _reputation, _pvpFlag;
+		int objId, relation, autoAttackable, reputation, pvpFlag;
 	}
 
-	private Relation _relation;
+	private Relation relation;
 
-	public RelationChanged(L2Playable activeChar, int relation, boolean autoattackable)
+	public RelationChanged(L2Playable activeChar, int relationType, boolean autoattackable)
 	{
-		_relation = new Relation();
-		_relation._objId = activeChar.getObjectId();
-		_relation._relation = relation;
-		_relation._autoAttackable = autoattackable ? 1 : 0;
-		_relation._reputation = activeChar.getReputation();
-		_relation._pvpFlag = activeChar.getPvpFlag();
-		_invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ?
+		relation = new Relation();
+		relation.objId = activeChar.getObjectId();
+		relation.relation = relationType;
+		relation.autoAttackable = autoattackable ? 1 : 0;
+		relation.reputation = activeChar.getReputation();
+		relation.pvpFlag = activeChar.getPvpFlag();
+		invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ?
 				activeChar.getActingPlayer().getObjectId() : 0;
 	}
 
@@ -64,10 +64,10 @@ public final class RelationChanged extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(2);
-		writeD(_relation._objId);
-		writeD(_relation._relation);
-		writeC(_relation._autoAttackable);
-		writeD(_relation._reputation);
-		writeC(_relation._pvpFlag);
+		writeD(relation.objId);
+		writeD(relation.relation);
+		writeC(relation.autoAttackable);
+		writeD(relation.reputation);
+		writeC(relation.pvpFlag);
 	}
 }

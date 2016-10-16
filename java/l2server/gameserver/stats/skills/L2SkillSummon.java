@@ -40,66 +40,66 @@ import l2server.util.Rnd;
 
 public class L2SkillSummon extends L2Skill
 {
-	private int _npcId;
-	private float _expPenalty;
-	private final boolean _isCubic;
+	private int npcId;
+	private float expPenalty;
+	private final boolean isCubic;
 
 	// cubic AI
 	// Activation time for a cubic
-	private final int _activationtime;
+	private final int activationtime;
 	// Activation chance for a cubic.
-	private final int _activationchance;
+	private final int activationchance;
 	// Maximum casts made by the cubic until it goes idle.
-	private final int _maxcount;
+	private final int maxcount;
 
 	// What is the total lifetime of summons (in millisecs)
-	private final int _summonTotalLifeTime;
+	private final int summonTotalLifeTime;
 	// How much lifetime is lost per second of idleness (non-fighting)
-	private final int _summonTimeLostIdle;
+	private final int summonTimeLostIdle;
 	// How much time is lost per second of activity (fighting)
-	private final int _summonTimeLostActive;
+	private final int summonTimeLostActive;
 
 	// item consume time in milliseconds
-	private final int _itemConsumeTime;
+	private final int itemConsumeTime;
 	// item consume count over time
-	private final int _itemConsumeOT;
+	private final int itemConsumeOT;
 	// item consume id over time
-	private final int _itemConsumeIdOT;
+	private final int itemConsumeIdOT;
 	// how many times to consume an item
-	private final int _itemConsumeSteps;
+	private final int itemConsumeSteps;
 
 	// id of the debuff skill got during the summon's life
-	private final int _summonPrice;
+	private final int summonPrice;
 	// summon points that it consumes
-	private final int _summonPoints;
+	private final int summonPoints;
 
-	private final int _summonAmount;
+	private final int summonAmount;
 
 	public L2SkillSummon(StatsSet set)
 	{
 		super(set);
 
-		_npcId = set.getInteger("npcId", 0); // default for undescribed skills
-		_expPenalty = set.getFloat("expPenalty", 0.0f);
-		_isCubic = set.getBool("isCubic", false);
+		this.npcId = set.getInteger("npcId", 0); // default for undescribed skills
+		this.expPenalty = set.getFloat("expPenalty", 0.0f);
+		this.isCubic = set.getBool("isCubic", false);
 
-		_activationtime = set.getInteger("activationtime", 8);
-		_activationchance = set.getInteger("activationchance", 30);
-		_maxcount = set.getInteger("maxcount", -1);
+		this.activationtime = set.getInteger("activationtime", 8);
+		this.activationchance = set.getInteger("activationchance", 30);
+		this.maxcount = set.getInteger("maxcount", -1);
 
-		_summonTotalLifeTime = set.getInteger("summonTotalLifeTime", -1); // infinite default
-		_summonTimeLostIdle = set.getInteger("summonTimeLostIdle", 0);
-		_summonTimeLostActive = set.getInteger("summonTimeLostActive", 0);
+		this.summonTotalLifeTime = set.getInteger("summonTotalLifeTime", -1); // infinite default
+		this.summonTimeLostIdle = set.getInteger("summonTimeLostIdle", 0);
+		this.summonTimeLostActive = set.getInteger("summonTimeLostActive", 0);
 
-		_itemConsumeOT = set.getInteger("itemConsumeCountOT", 0);
-		_itemConsumeIdOT = set.getInteger("itemConsumeIdOT", 0);
-		_itemConsumeTime = set.getInteger("itemConsumeTime", 0);
-		_itemConsumeSteps = set.getInteger("itemConsumeSteps", 0);
+		this.itemConsumeOT = set.getInteger("itemConsumeCountOT", 0);
+		this.itemConsumeIdOT = set.getInteger("itemConsumeIdOT", 0);
+		this.itemConsumeTime = set.getInteger("itemConsumeTime", 0);
+		this.itemConsumeSteps = set.getInteger("itemConsumeSteps", 0);
 
-		_summonPrice = set.getInteger("summonPrice", 0);
-		_summonPoints = set.getInteger("summonPoints", 0);
+		this.summonPrice = set.getInteger("summonPrice", 0);
+		this.summonPoints = set.getInteger("summonPoints", 0);
 
-		_summonAmount = set.getInteger("summonAmount", 1);
+		this.summonAmount = set.getInteger("summonAmount", 1);
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class L2SkillSummon extends L2Skill
 							continue;
 						}
 
-						if (cubic.getId() == _npcId)
+						if (cubic.getId() == this.npcId)
 						{
 							cubic.stopAction();
 
@@ -166,7 +166,7 @@ public class L2SkillSummon extends L2Skill
 					}
 				}*/
 
-				if (_summonPoints > 0 && player.getSpentSummonPoints() + _summonPoints > player.getMaxSummonPoints())
+				if (this.summonPoints > 0 && player.getSpentSummonPoints() + this.summonPoints > player.getMaxSummonPoints())
 				{
 					activeChar.sendMessage("You don't have enough summon points.");
 					return false;
@@ -200,13 +200,13 @@ public class L2SkillSummon extends L2Skill
 
 		L2PcInstance activeChar = (L2PcInstance) caster;
 
-		if (_npcId == 0)
+		if (this.npcId == 0)
 		{
 			activeChar.sendMessage("Summon skill " + getId() + " not described yet");
 			return;
 		}
 
-		if (_isCubic)
+		if (this.isCubic)
 		{
 			// Gnacik :
 			// If skill is enchanted calculate cubic skill level based on enchant
@@ -237,12 +237,12 @@ public class L2SkillSummon extends L2Skill
 						player.getCubics().clear();
 					}
 					// TODO: Should remove first cubic summoned and replace with new cubic
-					if (player.getCubics().containsKey(_npcId))
+					if (player.getCubics().containsKey(this.npcId))
 					{
-						L2CubicInstance cubic = player.getCubic(_npcId);
+						L2CubicInstance cubic = player.getCubic(this.npcId);
 						cubic.stopAction();
 						cubic.cancelDisappear();
-						player.delCubic(_npcId);
+						player.delCubic(this.npcId);
 					}
 					if (player.getCubics().size() > cubicMastery)
 					{
@@ -250,14 +250,14 @@ public class L2SkillSummon extends L2Skill
 					}
 					if (player == activeChar)
 					{
-						player.addCubic(_npcId, cubicSkillLevel, getPower(), _activationtime, _activationchance,
-								_maxcount, _summonTotalLifeTime, false);
+						player.addCubic(this.npcId, cubicSkillLevel, getPower(), this.activationtime, this.activationchance,
+								this.maxcount, this.summonTotalLifeTime, false);
 					}
 					else
 					// given by other player
 					{
-						player.addCubic(_npcId, cubicSkillLevel, getPower(), _activationtime, _activationchance,
-								_maxcount, _summonTotalLifeTime, true);
+						player.addCubic(this.npcId, cubicSkillLevel, getPower(), this.activationtime, this.activationchance,
+								this.maxcount, this.summonTotalLifeTime, true);
 					}
 					if (hasEffects())
 					{
@@ -271,12 +271,12 @@ public class L2SkillSummon extends L2Skill
 			// Normal cubic skill
 			{
 				int cubicMastery = activeChar.getCubicMastery();
-				if (activeChar.getCubics().containsKey(_npcId))
+				if (activeChar.getCubics().containsKey(this.npcId))
 				{
-					L2CubicInstance cubic = activeChar.getCubic(_npcId);
+					L2CubicInstance cubic = activeChar.getCubic(this.npcId);
 					cubic.stopAction();
 					cubic.cancelDisappear();
-					activeChar.delCubic(_npcId);
+					activeChar.delCubic(this.npcId);
 				}
 				if (activeChar.getCubics().size() > cubicMastery)
 				{
@@ -287,8 +287,8 @@ public class L2SkillSummon extends L2Skill
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CUBIC_SUMMONING_FAILED));
 					return;
 				}
-				activeChar.addCubic(_npcId, cubicSkillLevel, getPower(), _activationtime, _activationchance, _maxcount,
-						_summonTotalLifeTime, false);
+				activeChar.addCubic(this.npcId, cubicSkillLevel, getPower(), this.activationtime, this.activationchance, this.maxcount,
+						this.summonTotalLifeTime, false);
 
 				if (hasEffects())
 				{
@@ -300,7 +300,7 @@ public class L2SkillSummon extends L2Skill
 			}
 		}
 
-		if (_summonPoints > 0 && activeChar.getSpentSummonPoints() + _summonPoints > activeChar.getMaxSummonPoints())
+		if (this.summonPoints > 0 && activeChar.getSpentSummonPoints() + this.summonPoints > activeChar.getMaxSummonPoints())
 		{
 			return;
 		}
@@ -368,13 +368,13 @@ public class L2SkillSummon extends L2Skill
 			}
 		}
 
-		for (int i = 0; i < _summonAmount; i++)
+		for (int i = 0; i < this.summonAmount; i++)
 		{
 			L2SummonInstance summon;
-			L2NpcTemplate summonTemplate = NpcTable.getInstance().getTemplate(_npcId);
+			L2NpcTemplate summonTemplate = NpcTable.getInstance().getTemplate(this.npcId);
 			if (summonTemplate == null)
 			{
-				Log.warning("Summon attempt for nonexisting NPC ID:" + _npcId + ", skill ID:" + getId());
+				Log.warning("Summon attempt for nonexisting NPC ID:" + this.npcId + ", skill ID:" + getId());
 				return; // npcID doesn't exist
 			}
 			if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon"))
@@ -398,7 +398,7 @@ public class L2SkillSummon extends L2Skill
 
 			summon.setName(summonTemplate.Name);
 			summon.setTitle(activeChar.getName());
-			summon.setExpPenalty(_expPenalty);
+			summon.setExpPenalty(this.expPenalty);
 			if (summon.getLevel() > Config.MAX_LEVEL)
 			{
 				summon.getStat().setExp(Experience.getAbsoluteExp(Config.MAX_LEVEL));
@@ -467,22 +467,22 @@ public class L2SkillSummon extends L2Skill
 
 	public final boolean isCubic()
 	{
-		return _isCubic;
+		return this.isCubic;
 	}
 
 	public final int getTotalLifeTime()
 	{
-		return _summonTotalLifeTime;
+		return this.summonTotalLifeTime;
 	}
 
 	public final int getTimeLostIdle()
 	{
-		return _summonTimeLostIdle;
+		return this.summonTimeLostIdle;
 	}
 
 	public final int getTimeLostActive()
 	{
-		return _summonTimeLostActive;
+		return this.summonTimeLostActive;
 	}
 
 	/**
@@ -490,7 +490,7 @@ public class L2SkillSummon extends L2Skill
 	 */
 	public final int getItemConsumeOT()
 	{
-		return _itemConsumeOT;
+		return this.itemConsumeOT;
 	}
 
 	/**
@@ -498,12 +498,12 @@ public class L2SkillSummon extends L2Skill
 	 */
 	public final int getItemConsumeIdOT()
 	{
-		return _itemConsumeIdOT;
+		return this.itemConsumeIdOT;
 	}
 
 	public final int getItemConsumeSteps()
 	{
-		return _itemConsumeSteps;
+		return this.itemConsumeSteps;
 	}
 
 	/**
@@ -511,21 +511,21 @@ public class L2SkillSummon extends L2Skill
 	 */
 	public final int getItemConsumeTime()
 	{
-		return _itemConsumeTime;
+		return this.itemConsumeTime;
 	}
 
 	public final int getSummonPrice()
 	{
-		return _summonPrice;
+		return this.summonPrice;
 	}
 
 	public final int getSummonPoints()
 	{
-		return _summonPoints;
+		return this.summonPoints;
 	}
 
 	public final int getNpcId()
 	{
-		return _npcId;
+		return this.npcId;
 	}
 }

@@ -982,7 +982,7 @@ public final class Config
 
 	public static String CONFIG_FILE = "default.cfg";
 
-	private static List<ConfigVar> _configs = new ArrayList<>();
+	private static List<ConfigVar> configs = new ArrayList<>();
 
 	static class ConfigVar
 	{
@@ -1234,7 +1234,7 @@ public final class Config
 					conf.confName = n.getString("name");
 					conf.fieldName = n.getString("var");
 					conf.deflt = n.getString("default");
-					_configs.add(conf);
+					configs.add(conf);
 				}
 			}
 		}
@@ -1253,7 +1253,7 @@ public final class Config
 			is = new FileInputStream(new File(CONFIG_DIRECTORY + CONFIG_FILE));
 			settings.load(is);
 
-			for (ConfigVar conf : _configs)
+			for (ConfigVar conf : configs)
 			{
 				Field field;
 				try

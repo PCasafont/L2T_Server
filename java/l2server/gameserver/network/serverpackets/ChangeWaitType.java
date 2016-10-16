@@ -29,9 +29,9 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class ChangeWaitType extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _moveType;
-	private int _x, _y, _z;
+	private int charObjId;
+	private int moveType;
+	private int x, y, z;
 
 	public static final int WT_SITTING = 0;
 	public static final int WT_STANDING = 1;
@@ -40,21 +40,21 @@ public class ChangeWaitType extends L2GameServerPacket
 
 	public ChangeWaitType(L2Character character, int newMoveType)
 	{
-		_charObjId = character.getObjectId();
-		_moveType = newMoveType;
+		this.charObjId = character.getObjectId();
+		this.moveType = newMoveType;
 
-		_x = character.getX();
-		_y = character.getY();
-		_z = character.getZ();
+		this.x = character.getX();
+		this.y = character.getY();
+		this.z = character.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_moveType);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(this.charObjId);
+		writeD(this.moveType);
+		writeD(this.x);
+		writeD(this.y);
+		writeD(this.z);
 	}
 }

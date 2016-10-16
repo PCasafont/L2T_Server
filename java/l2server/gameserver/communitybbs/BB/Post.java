@@ -43,23 +43,23 @@ public class Post
 		public String postTxt;
 	}
 
-	private List<CPost> _post;
+	private List<CPost> post;
 
 	/**
 	 */
 	//public enum ConstructorType {REPLY, CREATE };
-	public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
+	public Post(String PostOwner, int PostOwnerID, long date, int tid, int PostForumID, String txt)
 	{
-		_post = new ArrayList<>();
+		post = new ArrayList<>();
 		CPost cp = new CPost();
 		cp.postId = 0;
-		cp.postOwner = _PostOwner;
-		cp.postOwnerId = _PostOwnerID;
+		cp.postOwner = PostOwner;
+		cp.postOwnerId = PostOwnerID;
 		cp.postDate = date;
 		cp.postTopicId = tid;
-		cp.postForumId = _PostForumID;
+		cp.postForumId = PostForumID;
 		cp.postTxt = txt;
-		_post.add(cp);
+		post.add(cp);
 		insertindb(cp);
 	}
 
@@ -93,14 +93,14 @@ public class Post
 
 	public Post(Topic t)
 	{
-		_post = new ArrayList<>();
+		post = new ArrayList<>();
 		load(t);
 	}
 
 	public CPost getCPost(int id)
 	{
 		int i = 0;
-		for (CPost cp : _post)
+		for (CPost cp : post)
 		{
 			if (i++ == id)
 			{
@@ -158,7 +158,7 @@ public class Post
 				cp.postTopicId = result.getInt("post_topic_id");
 				cp.postForumId = result.getInt("post_forum_id");
 				cp.postTxt = result.getString("post_txt");
-				_post.add(cp);
+				post.add(cp);
 			}
 			result.close();
 			statement.close();

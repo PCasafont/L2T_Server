@@ -69,29 +69,29 @@ public class L2AEnchanterAI extends L2APlayerAI
 			return true;
 		}
 
-		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
-				_player.getTarget() instanceof L2Playable)
+		if (this.player.getCurrentMp() > player.getMaxMp() * 0.7 || this.player.getCurrentHp() < this.player.getMaxHp() * 0.5 ||
+				this.player.getTarget() instanceof L2Playable)
 		{
 			// First, let's try to Rush
-			if (target != null && 600 - _player.getDistanceSq(target) > 100)
+			if (target != null && 600 - this.player.getDistanceSq(target) > 100)
 			{
-				L2Skill skill = _player.getKnownSkill(ASSAULT_RUSH);
+				L2Skill skill = this.player.getKnownSkill(ASSAULT_RUSH);
 
 				if (skill != null)
 				{
-					_player.useMagic(skill, true, false);
+					this.player.useMagic(skill, true, false);
 				}
 			}
 
 			// Then, let's attack!
-			for (L2Skill skill : _player.getAllSkills())
+			for (L2Skill skill : this.player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 				{
 					continue;
 				}
 
-				if (_player.useMagic(skill, true, false))
+				if (this.player.useMagic(skill, true, false))
 				{
 					break;
 				}
@@ -125,8 +125,8 @@ public class L2AEnchanterAI extends L2APlayerAI
 
 			if (!hasBuff)
 			{
-				L2Skill skill = _player.getKnownSkill(sonata);
-				if (skill != null && _player.useMagic(skill, true, false))
+				L2Skill skill = this.player.getKnownSkill(sonata);
+				if (skill != null && this.player.useMagic(skill, true, false))
 				{
 					return false;
 				}
@@ -141,7 +141,7 @@ public class L2AEnchanterAI extends L2APlayerAI
 	{
 		super.think();
 
-		if (_player.getParty() == null)
+		if (this.player.getParty() == null)
 		{
 			return;
 		}
@@ -150,9 +150,9 @@ public class L2AEnchanterAI extends L2APlayerAI
 		L2PcInstance mostHarmed = null;
 		int leastHealth = 100;
 		int totalHealth = 0;
-		for (L2PcInstance member : _player.getParty().getPartyMembers())
+		for (L2PcInstance member : this.player.getParty().getPartyMembers())
 		{
-			if (_player.getDistanceSq(member) > 1000 * 1000)
+			if (this.player.getDistanceSq(member) > 1000 * 1000)
 			{
 				continue;
 			}
@@ -174,24 +174,24 @@ public class L2AEnchanterAI extends L2APlayerAI
 
 		if (meanHealth < 80 || leastHealth < 60)
 		{
-			_player.setTarget(mostHarmed);
+			this.player.setTarget(mostHarmed);
 
-			for (L2Skill skill : _player.getAllSkills())
+			for (L2Skill skill : this.player.getAllSkills())
 			{
 				if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC &&
 						skill.getSkillType() != L2SkillType.HEAL_PERCENT &&
 						skill.getSkillType() != L2SkillType.CHAIN_HEAL &&
 						skill.getSkillType() != L2SkillType.OVERHEAL ||
 						skill.getTargetType() != L2SkillTargetType.TARGET_ONE &&
-								(skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) &&
+								(skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != this.player) &&
 								(skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER ||
-										mostHarmed == _player) &&
+										mostHarmed == this.player) &&
 								skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
 				{
 					continue;
 				}
 
-				if (_player.useMagic(skill, true, false))
+				if (this.player.useMagic(skill, true, false))
 				{
 					break;
 				}

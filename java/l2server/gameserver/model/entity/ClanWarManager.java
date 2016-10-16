@@ -23,9 +23,9 @@ import java.util.logging.Level;
  */
 public class ClanWarManager
 {
-	private static ClanWarManager _instance = null;
+	private static ClanWarManager instance = null;
 
-	private List<ClanWar> _wars = new ArrayList<>();
+	private List<ClanWar> wars = new ArrayList<>();
 
 	private ClanWarManager()
 	{
@@ -35,17 +35,17 @@ public class ClanWarManager
 
 	public static ClanWarManager getInstance()
 	{
-		return _instance == null ? (_instance = new ClanWarManager()) : _instance;
+		return instance == null ? (instance = new ClanWarManager()) : instance;
 	}
 
 	public final void load()
 	{
 		List<ClanWar> wars = new ArrayList<>();
-		for (ClanWar war : _wars)
+		for (ClanWar war : this.wars)
 		{
 			wars.add(war);
 		}
-		_wars.clear();
+		this.wars.clear();
 		Connection con = null;
 		try
 		{
@@ -110,13 +110,13 @@ public class ClanWarManager
 							rset.getInt("clan1_shown_score"), rset.getInt("clan2_shown_score"), warstate,
 							rset.getInt("loserId"), rset.getInt("winnerId"), rset.getLong("start_time"),
 							rset.getLong("end_time"), rset.getLong("delete_time"));
-					_wars.add(war);
+					this.wars.add(war);
 					ClanTable.getInstance().getClan(rset.getInt("clan1")).addWar(war);
 					ClanTable.getInstance().getClan(rset.getInt("clan2")).addWar(war);
 				}
 			}
 			statement.close();
-			Log.info("Loaded " + _wars.size() + " clan wars.");
+			Log.info("Loaded " + this.wars.size() + " clan wars.");
 		}
 		catch (Exception e)
 		{
@@ -156,7 +156,7 @@ public class ClanWarManager
 		L2Clan clan1 = ClanTable.getInstance().getClan(clanId1);
 		L2Clan clan2 = ClanTable.getInstance().getClan(clanId2);
 
-		for (ClanWar war : _wars)
+		for (ClanWar war : this.wars)
 		{
 			if (war.getClan1() == clan1 && war.getClan2() == clan2 ||
 					war.getClan2() == clan1 && war.getClan1() == clan2)
@@ -211,7 +211,7 @@ public class ClanWarManager
 			ClanWar war = new ClanWar(clanId1, clanId2, 0, 0, declaratorCharId, 0, 0, 0, 0, WarState.DECLARED, 0, 0,
 					startTime, 0, 0);
 
-			_wars.add(war);
+			this.wars.add(war);
 
 			clan1.addWar(war);
 			clan2.addWar(war);
@@ -254,7 +254,7 @@ public class ClanWarManager
 
 	public ClanWar getWar(L2Clan clan1, L2Clan clan2)
 	{
-		for (ClanWar war : _wars)
+		for (ClanWar war : this.wars)
 		{
 			if (war.getClan1() == clan1 && war.getClan2() == clan2 ||
 					war.getClan1() == clan2 && war.getClan2() == clan1)
@@ -267,17 +267,17 @@ public class ClanWarManager
 
 	public void storeWarData()
 	{
-		for (ClanWar war : _wars)
+		for (ClanWar war : this.wars)
 		{
 			war.saveData();
 		}
 
-		Log.log(Level.INFO, "Saved " + _wars.size() + " wars data.");
+		Log.log(Level.INFO, "Saved " + this.wars.size() + " wars data.");
 	}
 
 	public void removeWar(ClanWar war)
 	{
-		_wars.remove(war);
+		this.wars.remove(war);
 	}
 
 	public static class ClanWar
@@ -292,53 +292,53 @@ public class ClanWarManager
 			DOMINATING, SUPERIOR, EVENLYMATCHED, INFERIOR, OVERWHELMED
 		}
 
-		private L2Clan _clan1;
-		private L2Clan _clan2;
-		private int _score1;
-		private int _score2;
-		private int _declarator1;
-		private int _declarator2;
-		private WarState _warState;
-		private long _startTime;
-		private long _endTime;
-		private long _deleteTime;
-		private WarSituation _situation1;
-		private WarSituation _situation2;
-		private int _clan1DeathsForWar;
-		private int _clan1Score;
-		private int _clan2Score;
-		private L2Clan _loser;
-		private L2Clan _winner;
-		private boolean _tie = false;
-		private ScheduledFuture<?> _task = null;
+		private L2Clan clan1;
+		private L2Clan clan2;
+		private int score1;
+		private int score2;
+		private int declarator1;
+		private int declarator2;
+		private WarState warState;
+		private long startTime;
+		private long endTime;
+		private long deleteTime;
+		private WarSituation situation1;
+		private WarSituation situation2;
+		private int clan1DeathsForWar;
+		private int clan1Score;
+		private int clan2Score;
+		private L2Clan loser;
+		private L2Clan winner;
+		private boolean tie = false;
+		private ScheduledFuture<?> task = null;
 
 		public ClanWar(int clanId1, int clanId2, int clanScore1, int clanScore2, int clanWarDeclarator1, int clanWarDeclarator2, int clan1DeathsForWar, int clan1ShownScore, int clan2ShownScore, WarState warState, int loserId, int winnerId, long start_time, long end_time, long delete_time)
 		{
-			_clan1 = ClanTable.getInstance().getClan(clanId1);
-			_clan2 = ClanTable.getInstance().getClan(clanId2);
-			_score1 = clanScore1;
-			_score2 = clanScore2;
-			_declarator1 = clanWarDeclarator1;
-			_declarator2 = clanWarDeclarator2;
-			_warState = warState;
-			_startTime = start_time;
-			_endTime = end_time;
-			_deleteTime = delete_time;
-			_clan1DeathsForWar = clan1DeathsForWar;
-			_clan1Score = clan1ShownScore;
-			_clan2Score = clan2ShownScore;
+			this.clan1 = ClanTable.getInstance().getClan(clanId1);
+			this.clan2 = ClanTable.getInstance().getClan(clanId2);
+			this.score1 = clanScore1;
+			this.score2 = clanScore2;
+			this.declarator1 = clanWarDeclarator1;
+			this.declarator2 = clanWarDeclarator2;
+			this.warState = warState;
+			this.startTime = start_time;
+			this.endTime = end_time;
+			this.deleteTime = delete_time;
+			this.clan1DeathsForWar = clan1DeathsForWar;
+			this.clan1Score = clan1ShownScore;
+			this.clan2Score = clan2ShownScore;
 			if (loserId != 0 && winnerId != 0)
 			{
-				_loser = ClanTable.getInstance().getClan(loserId);
-				_winner = ClanTable.getInstance().getClan(winnerId);
+				this.loser = ClanTable.getInstance().getClan(loserId);
+				this.winner = ClanTable.getInstance().getClan(winnerId);
 			}
 			else
 			{
-				_tie = true;
+				this.tie = true;
 			}
 			calculatePosition1();
 			calculatePosition2();
-			switch (_warState)
+			switch (this.warState)
 			{
 				case DECLARED:
 					scheduleStart();
@@ -354,49 +354,49 @@ public class ClanWarManager
 
 		private void scheduleStart()
 		{
-			if (_task != null && !_task.isDone())
+			if (this.task != null && !this.task.isDone())
 			{
-				_task.cancel(true);
+				this.task.cancel(true);
 			}
-			_task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+			this.task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (_warState == WarState.DECLARED)
+				if (this.warState == WarState.DECLARED)
 				{
 					delete();
-					_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() +
+					this.clan1.broadcastMessageToOnlineMembers("Clan war against " + this.clan2.getName() +
 							" has been stopped. Didn't accept declaration!"); // TODO: System message.
 				}
-			}, _startTime - System.currentTimeMillis());
+			}, this.startTime - System.currentTimeMillis());
 		}
 
 		private void scheduleStop()
 		{
-			if (_task != null && !_task.isDone())
+			if (this.task != null && !this.task.isDone())
 			{
-				_task.cancel(true);
+				this.task.cancel(true);
 			}
-			_task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+			this.task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (_warState == WarState.STARTED)
+				if (this.warState == WarState.STARTED)
 				{
 					stop();
 				}
-			}, _endTime - System.currentTimeMillis());
+			}, this.endTime - System.currentTimeMillis());
 		}
 
 		private void scheduleDelete()
 		{
-			if (_task != null && !_task.isDone())
+			if (this.task != null && !this.task.isDone())
 			{
-				_task.cancel(true);
+				this.task.cancel(true);
 			}
-			_task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+			this.task = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (_warState == WarState.REPOSE)
+				if (this.warState == WarState.REPOSE)
 				{
 					delete();
 				}
-			}, _deleteTime - System.currentTimeMillis());
+			}, this.deleteTime - System.currentTimeMillis());
 		}
 
 		public void declare(L2Clan declarator)
@@ -404,47 +404,47 @@ public class ClanWarManager
 			Connection con = null;
 			try
 			{
-				if (declarator != _clan1)
+				if (declarator != this.clan1)
 				{
-					_clan2 = _clan1;
-					_clan1 = declarator;
+					this.clan2 = this.clan1;
+					this.clan1 = declarator;
 
-					int temp = _score1;
-					_score1 = _score2;
-					_score2 = temp;
+					int temp = this.score1;
+					this.score1 = this.score2;
+					this.score2 = temp;
 
-					temp = _declarator1;
-					_declarator1 = _declarator2;
-					_declarator2 = temp;
+					temp = this.declarator1;
+					this.declarator1 = this.declarator2;
+					this.declarator2 = temp;
 
-					temp = _clan1Score;
-					_clan1Score = _clan2Score;
-					_clan2Score = temp;
+					temp = this.clan1Score;
+					this.clan1Score = this.clan2Score;
+					this.clan2Score = temp;
 
-					WarSituation tempSit = _situation1;
-					_situation1 = _situation2;
-					_situation2 = tempSit;
+					WarSituation tempSit = this.situation1;
+					this.situation1 = this.situation2;
+					this.situation2 = tempSit;
 				}
-				_startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
-				_endTime = 0;
-				_deleteTime = 0;
+				this.startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
+				this.endTime = 0;
+				this.deleteTime = 0;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement(
 						"UPDATE clan_wars SET start_time=?, end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
-				statement.setLong(1, _startTime);
-				statement.setLong(2, _endTime);
-				statement.setLong(3, _deleteTime);
-				statement.setInt(4, _clan1.getClanId());
-				statement.setInt(5, _clan2.getClanId());
+				statement.setLong(1, this.startTime);
+				statement.setLong(2, this.endTime);
+				statement.setLong(3, this.deleteTime);
+				statement.setInt(4, this.clan1.getClanId());
+				statement.setInt(5, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 
-				_warState = WarState.DECLARED;
-				_clan1DeathsForWar = 0;
+				this.warState = WarState.DECLARED;
+				this.clan1DeathsForWar = 0;
 
-				_clan1.broadcastClanStatus();
-				_clan2.broadcastClanStatus();
+				this.clan1.broadcastClanStatus();
+				this.clan2.broadcastClanStatus();
 
 				scheduleStart();
 			}
@@ -457,8 +457,8 @@ public class ClanWarManager
 				L2DatabaseFactory.close(con);
 			}
 
-			_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has been aborted.");
-			_clan2.broadcastMessageToOnlineMembers("Clan war against " + _clan1.getName() + " has been aborted.");
+			this.clan1.broadcastMessageToOnlineMembers("Clan war against " + this.clan2.getName() + " has been aborted.");
+			this.clan2.broadcastMessageToOnlineMembers("Clan war against " + this.clan1.getName() + " has been aborted.");
 		}
 
 		public void start()
@@ -466,25 +466,25 @@ public class ClanWarManager
 			Connection con = null;
 			try
 			{
-				_startTime = System.currentTimeMillis();
-				long endTime = _startTime + Config.BATTLE_WAR_PERIOD * 3600000L;
+				this.startTime = System.currentTimeMillis();
+				long endTime = this.startTime + Config.BATTLE_WAR_PERIOD * 3600000L;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement =
 						con.prepareStatement("UPDATE clan_wars SET start_time=?, end_time=? WHERE clan1=? AND clan2=?");
-				statement.setLong(1, _startTime);
+				statement.setLong(1, this.startTime);
 				statement.setLong(2, endTime);
-				statement.setInt(3, _clan1.getClanId());
-				statement.setInt(4, _clan2.getClanId());
+				statement.setInt(3, this.clan1.getClanId());
+				statement.setInt(4, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 
-				_warState = WarState.STARTED;
+				this.warState = WarState.STARTED;
 
-				_endTime = endTime;
+				this.endTime = endTime;
 
-				_clan1.broadcastClanStatus();
-				_clan2.broadcastClanStatus();
+				this.clan1.broadcastClanStatus();
+				this.clan2.broadcastClanStatus();
 
 				scheduleStop();
 			}
@@ -497,12 +497,12 @@ public class ClanWarManager
 				L2DatabaseFactory.close(con);
 			}
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.CLAN_S1_DECLARED_WAR);
-			msg.addString(_clan2.getName());
-			_clan1.broadcastToOnlineMembers(msg);
+			msg.addString(this.clan2.getName());
+			this.clan1.broadcastToOnlineMembers(msg);
 
 			msg = SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_AGAINST_S1_IF_KILLED_LOSE_LOW_EXP);
-			msg.addString(_clan1.getName());
-			_clan2.broadcastToOnlineMembers(msg);
+			msg.addString(this.clan1.getName());
+			this.clan2.broadcastToOnlineMembers(msg);
 		}
 
 		public void stop()
@@ -510,25 +510,25 @@ public class ClanWarManager
 			Connection con = null;
 			try
 			{
-				_endTime = System.currentTimeMillis();
-				long deleteTime = _endTime + Config.EXPIRE_NORMAL_WAR_PERIOD * 3600000L;
+				this.endTime = System.currentTimeMillis();
+				long deleteTime = this.endTime + Config.EXPIRE_NORMAL_WAR_PERIOD * 3600000L;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement(
 						"UPDATE clan_wars SET end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
-				statement.setLong(1, _endTime);
+				statement.setLong(1, this.endTime);
 				statement.setLong(2, deleteTime);
-				statement.setInt(3, _clan1.getClanId());
-				statement.setInt(4, _clan2.getClanId());
+				statement.setInt(3, this.clan1.getClanId());
+				statement.setInt(4, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 
-				_warState = WarState.REPOSE;
+				this.warState = WarState.REPOSE;
 
-				_deleteTime = deleteTime;
+				this.deleteTime = deleteTime;
 
-				_clan1.broadcastClanStatus();
-				_clan2.broadcastClanStatus();
+				this.clan1.broadcastClanStatus();
+				this.clan2.broadcastClanStatus();
 
 				scheduleDelete();
 			}
@@ -543,8 +543,8 @@ public class ClanWarManager
 
 			calculateOutcome();
 
-			_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has ended.");
-			_clan2.broadcastMessageToOnlineMembers("Clan war against " + _clan1.getName() + " has ended.");
+			this.clan1.broadcastMessageToOnlineMembers("Clan war against " + this.clan2.getName() + " has ended.");
+			this.clan2.broadcastMessageToOnlineMembers("Clan war against " + this.clan1.getName() + " has ended.");
 		}
 
 		public void delete()
@@ -554,13 +554,13 @@ public class ClanWarManager
 			{
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("DELETE FROM clan_wars WHERE clan1=? AND clan2=?");
-				statement.setInt(1, _clan1.getClanId());
-				statement.setInt(2, _clan2.getClanId());
+				statement.setInt(1, this.clan1.getClanId());
+				statement.setInt(2, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 
-				_clan1.removeWar(this);
-				_clan2.removeWar(this);
+				this.clan1.removeWar(this);
+				this.clan2.removeWar(this);
 
 				ClanWarManager.getInstance().removeWar(this);
 			}
@@ -582,13 +582,13 @@ public class ClanWarManager
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"UPDATE clan_wars SET clan1_score=?, clan2_score=?, clan1_deaths_for_war=?, clan1_shown_score=?, clan2_shown_score=? WHERE clan1=? AND clan2=?");
-				statement.setInt(1, _score1);
-				statement.setInt(2, _score2);
-				statement.setInt(3, _clan1DeathsForWar);
-				statement.setInt(4, _clan1Score);
-				statement.setInt(5, _clan2Score);
-				statement.setInt(6, _clan1.getClanId());
-				statement.setInt(7, _clan2.getClanId());
+				statement.setInt(1, this.score1);
+				statement.setInt(2, this.score2);
+				statement.setInt(3, this.clan1DeathsForWar);
+				statement.setInt(4, this.clan1Score);
+				statement.setInt(5, this.clan2Score);
+				statement.setInt(6, this.clan1.getClanId());
+				statement.setInt(7, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 			}
@@ -604,7 +604,7 @@ public class ClanWarManager
 
 		public void setWarDeclarator(int charId)
 		{
-			_declarator2 = charId;
+			this.declarator2 = charId;
 			Connection con = null;
 			try
 			{
@@ -612,8 +612,8 @@ public class ClanWarManager
 				PreparedStatement statement =
 						con.prepareStatement("UPDATE clan_wars set clan2_war_declarator=? WHERE clan1=? AND clan2=?");
 				statement.setInt(1, charId);
-				statement.setInt(2, _clan1.getClanId());
-				statement.setInt(3, _clan2.getClanId());
+				statement.setInt(2, this.clan1.getClanId());
+				statement.setInt(3, this.clan2.getClanId());
 				statement.execute();
 				statement.close();
 			}
@@ -657,8 +657,8 @@ public class ClanWarManager
 							"UPDATE clan_wars set loserId=?, winnerId=? WHERE clan1=? AND clan2=?");
 					statement.setInt(1, getLoser().getClanId());
 					statement.setInt(2, getWinner().getClanId());
-					statement.setInt(3, _clan1.getClanId());
-					statement.setInt(4, _clan2.getClanId());
+					statement.setInt(3, this.clan1.getClanId());
+					statement.setInt(4, this.clan2.getClanId());
 					statement.execute();
 					statement.close();
 				}
@@ -677,218 +677,218 @@ public class ClanWarManager
 
 		private void calculatePosition1()
 		{
-			int maxResult = _score1 + _score2;
+			int maxResult = this.score1 + this.score2;
 			if (maxResult == 0)
 			{
-				_situation1 = WarSituation.EVENLYMATCHED;
+				this.situation1 = WarSituation.EVENLYMATCHED;
 				return;
 			}
 
-			int percent = _score1 * 100 / maxResult;
+			int percent = this.score1 * 100 / maxResult;
 			if (percent >= 85)
 			{
-				_situation1 = WarSituation.DOMINATING;
+				this.situation1 = WarSituation.DOMINATING;
 			}
 			else if (percent >= 65 && percent < 85)
 			{
-				_situation1 = WarSituation.SUPERIOR;
+				this.situation1 = WarSituation.SUPERIOR;
 			}
 			else if (percent >= 35 && percent < 65)
 			{
-				_situation1 = WarSituation.EVENLYMATCHED;
+				this.situation1 = WarSituation.EVENLYMATCHED;
 			}
 			else if (percent >= 15 && percent < 35)
 			{
-				_situation1 = WarSituation.INFERIOR;
+				this.situation1 = WarSituation.INFERIOR;
 			}
 			else
 			{
-				_situation1 = WarSituation.OVERWHELMED;
+				this.situation1 = WarSituation.OVERWHELMED;
 			}
 		}
 
 		private void calculatePosition2()
 		{
-			int maxResult = _score1 + _score2;
+			int maxResult = this.score1 + this.score2;
 			if (maxResult == 0)
 			{
-				_situation2 = WarSituation.EVENLYMATCHED;
+				this.situation2 = WarSituation.EVENLYMATCHED;
 				return;
 			}
-			int percent = _score2 * 100 / maxResult;
+			int percent = this.score2 * 100 / maxResult;
 			if (percent >= 85)
 			{
-				_situation2 = WarSituation.DOMINATING;
+				this.situation2 = WarSituation.DOMINATING;
 			}
 			else if (percent >= 65 && percent < 85)
 			{
-				_situation2 = WarSituation.SUPERIOR;
+				this.situation2 = WarSituation.SUPERIOR;
 			}
 			else if (percent >= 35 && percent < 65)
 			{
-				_situation2 = WarSituation.EVENLYMATCHED;
+				this.situation2 = WarSituation.EVENLYMATCHED;
 			}
 			else if (percent >= 15 && percent < 35)
 			{
-				_situation2 = WarSituation.INFERIOR;
+				this.situation2 = WarSituation.INFERIOR;
 			}
 			else
 			{
-				_situation2 = WarSituation.OVERWHELMED;
+				this.situation2 = WarSituation.OVERWHELMED;
 			}
 		}
 
 		public L2Clan getClan1()
 		{
-			return _clan1;
+			return this.clan1;
 		}
 
 		public L2Clan getClan2()
 		{
-			return _clan2;
+			return this.clan2;
 		}
 
 		public WarState getState()
 		{
-			return _warState;
+			return this.warState;
 		}
 
 		public int getDeclarator1()
 		{
-			return _declarator1;
+			return this.declarator1;
 		}
 
 		public int getDeclarator2()
 		{
-			return _declarator2;
+			return this.declarator2;
 		}
 
 		public long getStartTimeInMilis()
 		{
-			return _startTime;
+			return this.startTime;
 		}
 
 		public long getEndTimeInMilis()
 		{
-			return _endTime;
+			return this.endTime;
 		}
 
 		public long getExpirationTimeInMilis()
 		{
-			return _deleteTime;
+			return this.deleteTime;
 		}
 
 		public int getElapsedTime()
 		{
-			switch (_warState)
+			switch (this.warState)
 			{
 				case DECLARED:
 					return Config.PREPARE_MUTUAL_WAR_PERIOD * 3600 -
-							(int) ((_startTime - System.currentTimeMillis()) / 1000);
+							(int) ((this.startTime - System.currentTimeMillis()) / 1000);
 				case STARTED:
-					return Config.BATTLE_WAR_PERIOD * 3600 - (int) ((_endTime - System.currentTimeMillis()) / 1000);
+					return Config.BATTLE_WAR_PERIOD * 3600 - (int) ((this.endTime - System.currentTimeMillis()) / 1000);
 			}
 			return 0;
 		}
 
 		public int getClan1Score()
 		{
-			return _score1;
+			return this.score1;
 		}
 
 		public int getclan2Score()
 		{
-			return _score2;
+			return this.score2;
 		}
 
 		public WarSituation getSituation1()
 		{
-			return _situation1;
+			return this.situation1;
 		}
 
 		public WarSituation getSituation2()
 		{
-			return _situation2;
+			return this.situation2;
 		}
 
 		public void raiseClan1Score()
 		{
-			_score1++;
+			this.score1++;
 		}
 
 		public void raisClan2Score()
 		{
-			_score2++;
+			this.score2++;
 		}
 
 		public void increaseClan1DeathsForClanWar()
 		{
-			_clan1DeathsForWar++;
+			this.clan1DeathsForWar++;
 		}
 
 		public int getClan1DeathsForClanWar()
 		{
-			return _clan1DeathsForWar;
+			return this.clan1DeathsForWar;
 		}
 
 		public void increaseClan1Score()
 		{
-			_clan1Score++;
+			this.clan1Score++;
 		}
 
 		public void decreaseClan1Score()
 		{
-			_clan1Score--;
+			this.clan1Score--;
 		}
 
 		public int getClan1Scores()
 		{
-			return _clan1Score;
+			return this.clan1Score;
 		}
 
 		public void increaseClan2Score()
 		{
-			_clan2Score++;
+			this.clan2Score++;
 		}
 
 		public void decreaseClan2Score()
 		{
-			_clan2Score--;
+			this.clan2Score--;
 		}
 
 		public int getClan2Scores()
 		{
-			return _clan2Score;
+			return this.clan2Score;
 		}
 
 		public void setLoser(L2Clan clan)
 		{
-			_loser = clan;
+			this.loser = clan;
 		}
 
 		public L2Clan getLoser()
 		{
-			return _loser;
+			return this.loser;
 		}
 
 		public void setWinner(L2Clan clan)
 		{
-			_winner = clan;
+			this.winner = clan;
 		}
 
 		public L2Clan getWinner()
 		{
-			return _winner;
+			return this.winner;
 		}
 
 		public void setTie()
 		{
-			_tie = true;
+			this.tie = true;
 		}
 
 		public boolean getTie()
 		{
-			return _tie;
+			return this.tie;
 		}
 
 		public boolean isMutual()

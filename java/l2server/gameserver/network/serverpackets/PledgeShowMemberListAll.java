@@ -66,76 +66,76 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PledgeShowMemberListAll extends L2GameServerPacket
 {
-	private L2Clan _clan;
-	private L2PcInstance _activeChar;
-	private L2ClanMember[] _members;
-	private int _pledgeType;
+	private L2Clan clan;
+	private L2PcInstance activeChar;
+	private L2ClanMember[] members;
+	private int pledgeType;
 
 	//
 
 	public PledgeShowMemberListAll(L2Clan clan, L2PcInstance activeChar)
 	{
-		_clan = clan;
-		_activeChar = activeChar;
-		_members = _clan.getMembers();
+		this.clan = clan;
+		this.activeChar = activeChar;
+		this.members = this.clan.getMembers();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		_pledgeType = 0;
+		this.pledgeType = 0;
 		writePledge(0);
 
-		for (SubPledge subPledge : _clan.getAllSubPledges())
+		for (SubPledge subPledge : this.clan.getAllSubPledges())
 		{
-			_activeChar.sendPacket(new PledgeReceiveSubPledgeCreated(subPledge, _clan));
+			this.activeChar.sendPacket(new PledgeReceiveSubPledgeCreated(subPledge, this.clan));
 		}
 
-		for (L2ClanMember m : _members)
+		for (L2ClanMember m : this.members)
 		{
 			if (m.getPledgeType() == 0)
 			{
 				continue;
 			}
-			_activeChar.sendPacket(new PledgeShowMemberListAdd(m));
+			this.activeChar.sendPacket(new PledgeShowMemberListAdd(m));
 		}
 
 		// unless this is sent sometimes, the client doesn't recognize the player as the leader
-		//_activeChar.sendPacket(new ExUserInfo(_activeChar));
-		//_activeChar.sendPacket(new ExBrExtraUserInfo(_activeChar));
+		//_activeChar.sendPacket(new ExUserInfo(this.activeChar));
+		//_activeChar.sendPacket(new ExBrExtraUserInfo(this.activeChar));
 
 	}
 
 	void writePledge(int mainOrSubpledge)
 	{
 		writeD(mainOrSubpledge);
-		writeD(_clan.getClanId());
+		writeD(this.clan.getClanId());
 		writeD(Config.SERVER_ID); // server id?
-		writeD(_pledgeType);
-		writeS(_clan.getName());
-		writeS(_clan.getLeaderName());
+		writeD(this.pledgeType);
+		writeS(this.clan.getName());
+		writeS(this.clan.getLeaderName());
 
-		writeD(_clan.getCrestId()); // crest id .. is used again
-		writeD(_clan.getLevel());
+		writeD(this.clan.getCrestId()); // crest id .. is used again
+		writeD(this.clan.getLevel());
 		writeD(0); // GoD ???
-		writeD(_clan.getHasCastle());
-		writeD(_clan.getHasHideout());
-		writeD(_clan.getHasFort());
-		writeD(_clan.getRank());
-		writeD(_clan.getReputationScore());
+		writeD(this.clan.getHasCastle());
+		writeD(this.clan.getHasHideout());
+		writeD(this.clan.getHasFort());
+		writeD(this.clan.getRank());
+		writeD(this.clan.getReputationScore());
 		writeD(0); //0
 		writeD(0); //0
-		writeD(_clan.getAllyId());
-		writeS(_clan.getAllyName());
-		writeD(_clan.getAllyCrestId());
-		writeD(_clan.isAtWar() ? 1 : 0);// new c3
+		writeD(this.clan.getAllyId());
+		writeS(this.clan.getAllyName());
+		writeD(this.clan.getAllyCrestId());
+		writeD(this.clan.isAtWar() ? 1 : 0);// new c3
 		writeD(0); // Territory castle ID
 		//writeD(0); // GoD ???
-		writeD(_clan.getSubPledgeMembersCount(_pledgeType));
+		writeD(this.clan.getSubPledgeMembersCount(this.pledgeType));
 
-		for (L2ClanMember m : _members)
+		for (L2ClanMember m : this.members)
 		{
-			if (m.getPledgeType() != _pledgeType)
+			if (m.getPledgeType() != this.pledgeType)
 			{
 				continue;
 			}

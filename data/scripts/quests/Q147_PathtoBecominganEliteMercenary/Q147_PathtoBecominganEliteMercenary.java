@@ -31,7 +31,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 {
 	private static final String qn = "147_PathtoBecominganEliteMercenary";
 	// NPCs
-	private static final int[] _merc = {36481, 36482, 36483, 36484, 36485, 36486, 36487, 36488, 36489};
+	private static final int[] merc = {36481, 36482, 36483, 36484, 36485, 36486, 36487, 36488, 36489};
 	// Items
 	private static final int _cert_ordinary = 13766;
 	private static final int _cert_elite = 13767;
@@ -47,7 +47,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(_merc, npc.getNpcId()))
+		if (Util.contains(this.merc, npc.getNpcId()))
 		{
 			if (event.equalsIgnoreCase("elite-02.htm"))
 			{
@@ -77,7 +77,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(_merc, npc.getNpcId()))
+		if (Util.contains(this.merc, npc.getNpcId()))
 		{
 			switch (st.getState())
 			{
@@ -118,10 +118,10 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 	{
 		super(questId, name, descr);
 
-		for (int _npc : _merc)
+		for (int npc : this.merc)
 		{
-			addStartNpc(_npc);
-			addTalkId(_npc);
+			addStartNpc(npc);
+			addTalkId(npc);
 		}
 	}
 

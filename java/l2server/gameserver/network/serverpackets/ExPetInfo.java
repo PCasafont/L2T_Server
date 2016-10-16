@@ -28,16 +28,16 @@ import java.util.Set;
  */
 public final class ExPetInfo extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _val;
-	private byte[] _data1;
-	private byte[] _data2;
-	private Set<Integer> _abnormals;
+	private int objectId;
+	private int val;
+	private byte[] data1;
+	private byte[] data2;
+	private Set<Integer> abnormals;
 
 	public ExPetInfo(L2PetInstance pet, L2Character attacker, int val)
 	{
-		_objectId = pet.getObjectId();
-		_val = 0;//pet.isShowSummonAnimation() ? 2 : val;
+		this.objectId = pet.getObjectId();
+		this.val = 0;//pet.isShowSummonAnimation() ? 2 : val;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -55,8 +55,8 @@ public final class ExPetInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		_data1 = new byte[size];
-		buffer.get(_data1, 0, size);
+		this.data1 = new byte[size];
+		buffer.get(this.data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -131,21 +131,21 @@ public final class ExPetInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		_data2 = new byte[size];
-		buffer.get(_data2, 0, size);
+		this.data2 = new byte[size];
+		buffer.get(this.data2, 0, size);
 
-		_abnormals = pet.getAbnormalEffect();
+		this.abnormals = pet.getAbnormalEffect();
 		if (pet.getOwner().getAppearance().getInvisible())
 		{
-			_abnormals.add(VisualEffect.STEALTH.getId());
+			this.abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeC(_val); // 0=teleported 1=default 2=summoned
+		writeD(this.objectId);
+		writeC(this.val); // 0=teleported 1=default 2=summoned
 		writeH(0x0025);
 		writeC(0xfd);
 		writeC(0xbf);
@@ -153,14 +153,14 @@ public final class ExPetInfo extends L2GameServerPacket
 		writeC(0xf3);
 		writeC(0xec);
 
-		writeC(_data1.length);
-		writeB(_data1);
+		writeC(this.data1.length);
+		writeB(this.data1);
 
-		writeH(_data2.length);
-		writeB(_data2);
+		writeH(this.data2.length);
+		writeB(this.data2);
 
-		writeH(_abnormals.size());
-		for (int abnormal : _abnormals)
+		writeH(this.abnormals.size());
+		for (int abnormal : this.abnormals)
 		{
 			writeH(abnormal);
 		}

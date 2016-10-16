@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class ServerStatus extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(ServerStatus.class.getName());
+	protected static Logger log = Logger.getLogger(ServerStatus.class.getName());
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
 

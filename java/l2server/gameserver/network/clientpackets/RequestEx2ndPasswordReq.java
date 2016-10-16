@@ -30,17 +30,17 @@ import l2server.gameserver.security.SecondaryPasswordAuth;
 public class RequestEx2ndPasswordReq extends L2GameClientPacket
 {
 	//
-	int _changePass;
-	String _password, _newPassword;
+	int changePass;
+	String password, newPassword;
 
 	@Override
 	protected void readImpl()
 	{
-		_changePass = readC();
-		_password = readS();
-		if (_changePass == 2)
+		this.changePass = readC();
+		this.password = readS();
+		if (this.changePass == 2)
 		{
-			_newPassword = readS();
+			this.newPassword = readS();
 		}
 	}
 
@@ -55,13 +55,13 @@ public class RequestEx2ndPasswordReq extends L2GameClientPacket
 		SecondaryPasswordAuth spa = getClient().getSecondaryAuth();
 		boolean exVal = false;
 
-		if (_changePass == 0 && !spa.passwordExist())
+		if (this.changePass == 0 && !spa.passwordExist())
 		{
-			exVal = spa.savePassword(_password);
+			exVal = spa.savePassword(this.password);
 		}
-		else if (_changePass == 2 && spa.passwordExist())
+		else if (this.changePass == 2 && spa.passwordExist())
 		{
-			exVal = spa.changePassword(_password, _newPassword);
+			exVal = spa.changePassword(this.password, this.newPassword);
 		}
 
 		if (exVal)

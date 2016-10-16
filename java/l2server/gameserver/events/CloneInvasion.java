@@ -19,17 +19,17 @@ import java.util.Calendar;
  */
 public class CloneInvasion
 {
-	public static CloneInvasion _instance = null;
+	public static CloneInvasion instance = null;
 
-	private StartTask _task;
+	private StartTask task;
 
 	public static CloneInvasion getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new CloneInvasion();
+			instance = new CloneInvasion();
 		}
-		return _instance;
+		return instance;
 	}
 
 	public void start()
@@ -162,8 +162,8 @@ public class CloneInvasion
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			_task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(_task);
+			this.task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(this.task);
 		}
 		catch (Exception e)
 		{
@@ -173,14 +173,14 @@ public class CloneInvasion
 
 	public StartTask getStartTask()
 	{
-		return _task;
+		return this.task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(_task.getStartTime());
+		startTime.setTimeInMillis(this.task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -191,7 +191,7 @@ public class CloneInvasion
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = _task.getStartTime() - System.currentTimeMillis();
+		long toStart = this.task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -212,22 +212,22 @@ public class CloneInvasion
 
 	class StartTask implements Runnable
 	{
-		private long _startTime;
+		private long startTime;
 
 		public StartTask(long startTime)
 		{
-			_startTime = startTime;
+			this.startTime = startTime;
 		}
 
 		public long getStartTime()
 		{
-			return _startTime;
+			return this.startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((this.startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

@@ -20,11 +20,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCompoundSuccess extends L2GameServerPacket
 {
-	private final int _itemId;
+	private final int itemId;
 
 	public ExCompoundSuccess(int itemId)
 	{
-		_itemId = itemId;
+		this.itemId = itemId;
 	}
 
     /*
@@ -37,6 +37,6 @@ public class ExCompoundSuccess extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_itemId); // Resulting item id
+		writeD(this.itemId); // Resulting item id
 	}
 }

@@ -27,7 +27,7 @@ import java.util.List;
 public class ExResponseCommissionItemList extends L2ItemListPacket
 {
 
-	private List<L2ItemInstance> _items = new ArrayList<>();
+	private List<L2ItemInstance> items = new ArrayList<>();
 
 	public ExResponseCommissionItemList(L2PcInstance player)
 	{
@@ -36,7 +36,7 @@ public class ExResponseCommissionItemList extends L2ItemListPacket
 			if (item.isSellable() && item.isTradeable() && !item.isEquipped() && item.getItemId() != 57 &&
 					!item.isQuestItem())
 			{
-				_items.add(item);
+				this.items.add(item);
 			}
 		}
 	}
@@ -44,9 +44,9 @@ public class ExResponseCommissionItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_items.size());
+		writeD(this.items.size());
 
-		for (L2ItemInstance item : _items)
+		for (L2ItemInstance item : this.items)
 		{
 			writeItem(item);
 		}

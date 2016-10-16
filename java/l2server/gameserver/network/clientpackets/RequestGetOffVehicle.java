@@ -25,15 +25,15 @@ import l2server.gameserver.network.serverpackets.StopMoveInVehicle;
  */
 public final class RequestGetOffVehicle extends L2GameClientPacket
 {
-	private int _boatId, _x, _y, _z;
+	private int boatId, x, y, z;
 
 	@Override
 	protected void readImpl()
 	{
-		_boatId = readD();
-		_x = readD();
-		_y = readD();
-		_z = readD();
+		this.boatId = readD();
+		this.x = readD();
+		this.y = readD();
+		this.z = readD();
 	}
 
 	@Override
@@ -44,19 +44,19 @@ public final class RequestGetOffVehicle extends L2GameClientPacket
 		{
 			return;
 		}
-		if (!activeChar.isInBoat() || activeChar.getBoat().getObjectId() != _boatId ||
-				activeChar.getBoat().isMoving() || !activeChar.isInsideRadius(_x, _y, _z, 1000, true, false))
+		if (!activeChar.isInBoat() || activeChar.getBoat().getObjectId() != this.boatId ||
+				activeChar.getBoat().isMoving() || !activeChar.isInsideRadius(this.x, this.y, this.z, 1000, true, false))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		activeChar.broadcastPacket(new StopMoveInVehicle(activeChar, _boatId));
+		activeChar.broadcastPacket(new StopMoveInVehicle(activeChar, this.boatId));
 		activeChar.setVehicle(null);
 		activeChar.setInVehiclePosition(null);
 		sendPacket(ActionFailed.STATIC_PACKET);
-		activeChar.broadcastPacket(new GetOffVehicle(activeChar.getObjectId(), _boatId, _x, _y, _z));
-		activeChar.setXYZ(_x, _y, _z + 50);
+		activeChar.broadcastPacket(new GetOffVehicle(activeChar.getObjectId(), this.boatId, this.x, this.y, this.z));
+		activeChar.setXYZ(this.x, this.y, this.z + 50);
 		activeChar.revalidateZone(true);
 	}
 }

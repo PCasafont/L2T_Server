@@ -25,28 +25,28 @@ import java.util.Set;
  */
 public final class ExUserEffects extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _transformId;
-	private Set<Integer> _abnormals;
+	private int objectId;
+	private int transformId;
+	private Set<Integer> abnormals;
 
 	public ExUserEffects(L2PcInstance character)
 	{
-		_objectId = character.getObjectId();
-		_transformId = character.getTransformationId();
-		_abnormals = character.getAbnormalEffect();
+		this.objectId = character.getObjectId();
+		this.transformId = character.getTransformationId();
+		this.abnormals = character.getAbnormalEffect();
 		if (character.getAppearance().getInvisible())
 		{
-			_abnormals.add(VisualEffect.STEALTH.getId());
+			this.abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_transformId);
-		writeD(_abnormals.size());
-		for (int abnormalId : _abnormals)
+		writeD(this.objectId);
+		writeD(this.transformId);
+		writeD(this.abnormals.size());
+		for (int abnormalId : this.abnormals)
 		{
 			writeH(abnormalId);
 		}

@@ -25,8 +25,8 @@ import l2server.gameserver.model.L2Skill;
  */
 public class PledgeSkillList extends L2GameServerPacket
 {
-	private L2Skill[] _skills;
-	private SubPledgeSkill[] _subSkills;
+	private L2Skill[] skills;
+	private SubPledgeSkill[] subSkills;
 
 	public static class SubPledgeSkill
 	{
@@ -45,8 +45,8 @@ public class PledgeSkillList extends L2GameServerPacket
 
 	public PledgeSkillList(L2Clan clan)
 	{
-		_skills = clan.getAllSkills();
-		_subSkills = clan.getAllSubSkills();
+		this.skills = clan.getAllSkills();
+		this.subSkills = clan.getAllSubSkills();
 	}
 
 	/**
@@ -54,14 +54,14 @@ public class PledgeSkillList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_skills.length);
-		writeD(_subSkills.length); // squad skill length
-		for (L2Skill sk : _skills)
+		writeD(this.skills.length);
+		writeD(this.subSkills.length); // squad skill length
+		for (L2Skill sk : this.skills)
 		{
 			writeD(sk.getId());
 			writeD(sk.getLevelHash());
 		}
-		for (SubPledgeSkill sk : _subSkills)
+		for (SubPledgeSkill sk : this.subSkills)
 		{
 			writeD(sk.subType); // clan Sub-unit types
 			writeD(sk.skillId);

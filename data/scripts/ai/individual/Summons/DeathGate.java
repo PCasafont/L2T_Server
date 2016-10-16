@@ -15,14 +15,14 @@
 
 package ai.individual.Summons;
 
+import java.util.concurrent.ScheduledFuture;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -33,14 +33,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class DeathGate extends L2AttackableAIScript
 {
-	private static final int[] _deathGateIds = {14927, 15200, 15201, 15202};
-	private static final int _summonDeathGateId = 11266;
+	private static final int[] deathGateIds = {14927, 15200, 15201, 15202};
+	private static final int summonDeathGateId = 11266;
 
 	public DeathGate(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int i : _deathGateIds)
+		for (int i : this.deathGateIds)
 		{
 			addSpawnId(i);
 		}
@@ -61,63 +61,63 @@ public class DeathGate extends L2AttackableAIScript
 
 	class DeathGateAI implements Runnable
 	{
-		private L2Skill _gateVortex;
-		private L2Skill _gateRoot;
+		private L2Skill gateVortex;
+		private L2Skill gateRoot;
 		private L2Skill lastSkillUsed;
-		private L2Npc _deathGate;
-		private L2PcInstance _owner;
-		private ScheduledFuture<?> _schedule = null;
+		private L2Npc deathGate;
+		private L2PcInstance owner;
+		private ScheduledFuture<?> schedule = null;
 
 		protected DeathGateAI(L2Npc npc, L2PcInstance owner)
 		{
-			_deathGate = npc;
+			this.deathGate = npc;
 
-			_owner = owner;
-			if (_owner == null)
+			this.owner = owner;
+			if (this.owner == null)
 			{
 				return;
 			}
 
-			int skillLevel = _owner.getSkillLevel(_summonDeathGateId);
+			int skillLevel = this.owner.getSkillLevel(summonDeathGateId);
 			if (skillLevel == -1)
 			{
 				return;
 			}
 
-			_gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
-			_gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
+			this.gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
+			this.gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
 		{
-			_schedule = schedule;
+			this.schedule = schedule;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_deathGate == null || _deathGate.isDead() || _deathGate.isDecayed() ||
-					_deathGate.getOwner().isAlikeDead())
+			if (this.deathGate == null || this.deathGate.isDead() || this.deathGate.isDecayed() ||
+					this.deathGate.getOwner().isAlikeDead())
 			{
-				if (_schedule != null)
+				if (this.schedule != null)
 				{
-					_schedule.cancel(true);
+					this.schedule.cancel(true);
 					return;
 				}
 			}
 
-			_deathGate.setTarget(_deathGate);
+			this.deathGate.setTarget(this.deathGate);
 
-			if (lastSkillUsed == _gateVortex)
+			if (lastSkillUsed == this.gateVortex)
 			{
-				lastSkillUsed = _gateRoot;
+				lastSkillUsed = this.gateRoot;
 			}
 			else
 			{
-				lastSkillUsed = _gateVortex;
+				lastSkillUsed = this.gateVortex;
 			}
 
-			_deathGate.doCast(lastSkillUsed);
+			this.deathGate.doCast(lastSkillUsed);
 		}
 	}
 

@@ -22,14 +22,14 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExUseSharedGroupItem extends L2GameServerPacket
 {
-	private int _itemId, _grpId, _remainedTime, _totalTime;
+	private int itemId, grpId, remainedTime, totalTime;
 
 	public ExUseSharedGroupItem(int itemId, int grpId, int remainedTime, int totalTime)
 	{
-		_itemId = itemId;
-		_grpId = grpId;
-		_remainedTime = remainedTime / 1000;
-		_totalTime = totalTime / 1000;
+		this.itemId = itemId;
+		this.grpId = grpId;
+		this.remainedTime = remainedTime / 1000;
+		this.totalTime = totalTime / 1000;
 	}
 
 	/**
@@ -37,9 +37,9 @@ public class ExUseSharedGroupItem extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_itemId);
-		writeD(_grpId);
-		writeD(_remainedTime);
-		writeD(_totalTime);
+		writeD(this.itemId);
+		writeD(this.grpId);
+		writeD(this.remainedTime);
+		writeD(this.totalTime);
 	}
 }

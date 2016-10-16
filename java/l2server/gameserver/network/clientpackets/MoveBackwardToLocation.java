@@ -35,19 +35,19 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 {
 	//
 	// cdddddd
-	private int _targetX;
-	private int _targetY;
-	private int _targetZ;
-	private int _originX;
-	private int _originY;
-	private int _originZ;
-	private int _moveMovement;
+	private int targetX;
+	private int targetY;
+	private int targetZ;
+	private int originX;
+	private int originY;
+	private int originZ;
+	private int moveMovement;
 
 	//For geodata
-	private int _curX;
-	private int _curY;
+	private int curX;
+	private int curY;
 	@SuppressWarnings("unused")
-	private int _curZ;
+	private int curZ;
 
 	public TaskPriority getPriority()
 	{
@@ -57,13 +57,13 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
-		_moveMovement = readD(); // is 0 if cursor keys are used  1 if mouse is used
+		this.targetX = readD();
+		this.targetY = readD();
+		this.targetZ = readD();
+		this.originX = readD();
+		this.originY = readD();
+		this.originZ = readD();
+		this.moveMovement = readD(); // is 0 if cursor keys are used  1 if mouse is used
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 
-		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
+		if (this.targetX == this.originX && this.targetY == this.originY && this.targetZ == this.originZ)
 		{
 			activeChar.sendPacket(new StopMove(activeChar));
 			return;
@@ -87,11 +87,11 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		// L2J uses floor, not head level as char coordinates. This is some
 		// sort of incompatibility fix.
 		// Validate position packets sends head level.
-		_targetZ += activeChar.getTemplate().collisionHeight;
+		this.targetZ += activeChar.getTemplate().collisionHeight;
 
-		_curX = activeChar.getX();
-		_curY = activeChar.getY();
-		_curZ = activeChar.getZ();
+		this.curX = activeChar.getX();
+		this.curY = activeChar.getY();
+		this.curZ = activeChar.getZ();
 
 		activeChar.stopWatcherMode();
 
@@ -104,8 +104,8 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			if (activeChar.getTeleMode() == 3)
 			{
-				activeChar.sendPacket(new ExFlyMove(activeChar, 100, -1, _targetX, _targetY, _targetZ));
-				ExFlyMoveBroadcast packet = new ExFlyMoveBroadcast(activeChar, _targetX, _targetY, _targetZ);
+				activeChar.sendPacket(new ExFlyMove(activeChar, 100, -1, this.targetX, this.targetY, this.targetZ));
+				ExFlyMoveBroadcast packet = new ExFlyMoveBroadcast(activeChar, this.targetX, this.targetY, this.targetZ);
 				for (L2PcInstance known : activeChar.getKnownList().getKnownPlayers().values())
 				{
 					known.sendPacket(packet);
@@ -113,20 +113,20 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			}
 			else
 			{
-				activeChar.teleToLocation(_targetX, _targetY, _targetZ, false);
+				activeChar.teleToLocation(this.targetX, this.targetY, this.targetZ, false);
 			}
 			return;
 		}
 
-		if (_moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() ||
+		if (this.moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() ||
 				activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 		else
 		{
-			double dx = _targetX - _curX;
-			double dy = _targetY - _curY;
+			double dx = this.targetX - this.curX;
+			double dy = this.targetY - this.curY;
 			// Can't move if character is confused, or trying to move a huge distance
 			if (activeChar.isOutOfControl() || dx * dx + dy * dy > 98010000) // 9900*9900
 			{
@@ -135,7 +135,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			}
 
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-					new L2CharPosition(_targetX, _targetY, _targetZ, 0));
+					new L2CharPosition(this.targetX, this.targetY, this.targetZ, 0));
 
 			//if (activeChar.isInOlympiadMode())
 			//	activeChar.broadcastPacket(new ValidateLocation(activeChar));

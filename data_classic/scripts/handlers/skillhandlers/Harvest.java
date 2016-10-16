@@ -15,6 +15,8 @@
 
 package handlers.skillhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -29,9 +31,8 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.logging.Logger;
 
 /**
  * @author l3x
@@ -62,7 +63,7 @@ public class Harvest implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			_log.info("Casting harvest");
+			Log.info("Casting harvest");
 		}
 
 		L2MonsterInstance target;

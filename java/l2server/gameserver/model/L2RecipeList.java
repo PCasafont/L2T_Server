@@ -26,95 +26,95 @@ public class L2RecipeList
 	/**
 	 * The table containing all L2RecipeInstance (1 line of the recipe : Item-Quantity needed) of the L2RecipeList
 	 */
-	private L2RecipeInstance[] _recipes;
+	private L2RecipeInstance[] recipes;
 
 	/**
 	 * The table containing all L2RecipeStatInstance for the statUse parameter of the L2RecipeList
 	 */
-	private L2RecipeStatInstance[] _statUse;
+	private L2RecipeStatInstance[] statUse;
 
 	/**
 	 * The table containing all L2RecipeStatInstance for the altStatChange parameter of the L2RecipeList
 	 */
-	private L2RecipeStatInstance[] _altStatChange;
+	private L2RecipeStatInstance[] altStatChange;
 
 	/**
 	 * The Identifier of the Instance
 	 */
-	private int _id;
+	private int id;
 
 	/**
 	 * The crafting level needed to use this L2RecipeList
 	 */
-	private int _level;
+	private int level;
 
 	/**
 	 * The Identifier of the L2RecipeList
 	 */
-	private int _recipeId;
+	private int recipeId;
 
 	/**
 	 * The name of the L2RecipeList
 	 */
-	private String _recipeName;
+	private String recipeName;
 
 	/**
 	 * The crafting success rate when using the L2RecipeList
 	 */
-	private int _successRate;
+	private int successRate;
 
 	/**
 	 * The Identifier of the Item crafted with this L2RecipeList
 	 */
-	private int _itemId;
+	private int itemId;
 
 	/**
 	 * The quantity of Item crafted when using this L2RecipeList
 	 */
-	private int _count;
+	private int count;
 
 	/**
 	 * The Identifier of the Rare Item crafted with this L2RecipeList
 	 */
-	private int _rareItemId;
+	private int rareItemId;
 
 	/**
 	 * The quantity of Rare Item crafted when using this L2RecipeList
 	 */
-	private int _rareCount;
+	private int rareCount;
 
 	/**
 	 * The chance of Rare Item crafted when using this L2RecipeList
 	 */
-	private int _rarity;
+	private int rarity;
 
 	/**
 	 * If this a common or a dwarven recipe
 	 */
-	private boolean _isDwarvenRecipe;
+	private boolean isDwarvenRecipe;
 
 	/**
 	 * Constructor of L2RecipeList (create a new Recipe).<BR><BR>
 	 */
 	public L2RecipeList(StatsSet set, boolean haveRare)
 	{
-		_recipes = new L2RecipeInstance[0];
-		_statUse = new L2RecipeStatInstance[0];
-		_altStatChange = new L2RecipeStatInstance[0];
-		_id = set.getInteger("id");
-		_level = set.getInteger("craftLevel");
-		_recipeId = set.getInteger("recipeId");
-		_recipeName = set.getString("recipeName");
-		_successRate = set.getInteger("successRate");
-		_itemId = set.getInteger("itemId");
-		_count = set.getInteger("count");
+		this.recipes = new L2RecipeInstance[0];
+		this.statUse = new L2RecipeStatInstance[0];
+		this.altStatChange = new L2RecipeStatInstance[0];
+		this.id = set.getInteger("id");
+		this.level = set.getInteger("craftLevel");
+		this.recipeId = set.getInteger("recipeId");
+		this.recipeName = set.getString("recipeName");
+		this.successRate = set.getInteger("successRate");
+		this.itemId = set.getInteger("itemId");
+		this.count = set.getInteger("count");
 		if (haveRare)
 		{
-			_rareItemId = set.getInteger("rareItemId");
-			_rareCount = set.getInteger("rareCount");
-			_rarity = set.getInteger("rarity");
+			this.rareItemId = set.getInteger("rareItemId");
+			this.rareCount = set.getInteger("rareCount");
+			this.rarity = set.getInteger("rarity");
 		}
-		_isDwarvenRecipe = set.getBool("isDwarvenRecipe");
+		this.isDwarvenRecipe = set.getBool("isDwarvenRecipe");
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class L2RecipeList
 	 */
 	public void addRecipe(L2RecipeInstance recipe)
 	{
-		int len = _recipes.length;
+		int len = this.recipes.length;
 		L2RecipeInstance[] tmp = new L2RecipeInstance[len + 1];
-		System.arraycopy(_recipes, 0, tmp, 0, len);
+		System.arraycopy(this.recipes, 0, tmp, 0, len);
 		tmp[len] = recipe;
-		_recipes = tmp;
+		this.recipes = tmp;
 	}
 
 	/**
@@ -134,11 +134,11 @@ public class L2RecipeList
 	 */
 	public void addStatUse(L2RecipeStatInstance statUse)
 	{
-		int len = _statUse.length;
+		int len = this.statUse.length;
 		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len + 1];
-		System.arraycopy(_statUse, 0, tmp, 0, len);
+		System.arraycopy(this.statUse, 0, tmp, 0, len);
 		tmp[len] = statUse;
-		_statUse = tmp;
+		this.statUse = tmp;
 	}
 
 	/**
@@ -146,11 +146,11 @@ public class L2RecipeList
 	 */
 	public void addAltStatChange(L2RecipeStatInstance statChange)
 	{
-		int len = _altStatChange.length;
+		int len = this.altStatChange.length;
 		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len + 1];
-		System.arraycopy(_altStatChange, 0, tmp, 0, len);
+		System.arraycopy(this.altStatChange, 0, tmp, 0, len);
 		tmp[len] = statChange;
-		_altStatChange = tmp;
+		this.altStatChange = tmp;
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class L2RecipeList
 	 */
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class L2RecipeList
 	 */
 	public int getLevel()
 	{
-		return _level;
+		return this.level;
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class L2RecipeList
 	 */
 	public int getRecipeId()
 	{
-		return _recipeId;
+		return this.recipeId;
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class L2RecipeList
 	 */
 	public String getRecipeName()
 	{
-		return _recipeName;
+		return this.recipeName;
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class L2RecipeList
 	 */
 	public int getSuccessRate()
 	{
-		return _successRate;
+		return this.successRate;
 	}
 
 	/**
@@ -198,10 +198,10 @@ public class L2RecipeList
 	 */
 	public boolean isConsumable()
 	{
-		return _itemId >= 1463 && _itemId <= 1467 // Soulshots
-				|| _itemId >= 2509 && _itemId <= 2514 // Spiritshots
-				|| _itemId >= 3947 && _itemId <= 3952 // Blessed Spiritshots
-				|| _itemId >= 1341 && _itemId <= 1345;
+		return this.itemId >= 1463 && this.itemId <= 1467 // Soulshots
+				|| this.itemId >= 2509 && this.itemId <= 2514 // Spiritshots
+				|| this.itemId >= 3947 && this.itemId <= 3952 // Blessed Spiritshots
+				|| this.itemId >= 1341 && this.itemId <= 1345;
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class L2RecipeList
 	 */
 	public int getItemId()
 	{
-		return _itemId;
+		return this.itemId;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class L2RecipeList
 	 */
 	public int getCount()
 	{
-		return _count;
+		return this.count;
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class L2RecipeList
 	 */
 	public int getRareItemId()
 	{
-		return _rareItemId;
+		return this.rareItemId;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class L2RecipeList
 	 */
 	public int getRareCount()
 	{
-		return _rareCount;
+		return this.rareCount;
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class L2RecipeList
 	 */
 	public int getRarity()
 	{
-		return _rarity;
+		return this.rarity;
 	}
 
 	/**
@@ -249,7 +249,7 @@ public class L2RecipeList
 	 */
 	public boolean isDwarvenRecipe()
 	{
-		return _isDwarvenRecipe;
+		return this.isDwarvenRecipe;
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class L2RecipeList
 	 */
 	public L2RecipeInstance[] getRecipes()
 	{
-		return _recipes;
+		return this.recipes;
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class L2RecipeList
 	 */
 	public L2RecipeStatInstance[] getStatUse()
 	{
-		return _statUse;
+		return this.statUse;
 	}
 
 	/**
@@ -273,6 +273,6 @@ public class L2RecipeList
 	 */
 	public L2RecipeStatInstance[] getAltStatChange()
 	{
-		return _altStatChange;
+		return this.altStatChange;
 	}
 }

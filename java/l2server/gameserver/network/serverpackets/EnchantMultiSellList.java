@@ -48,12 +48,12 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 	public static int ShopId = 4000000;
 	public static int ItemIdMod = 100000000;
 
-	private final Map<Integer, List<L2ItemInstance>> _mainIngredients = new LinkedHashMap<>();
-	private final MerchantPriceConfig _mpc;
+	private final Map<Integer, List<L2ItemInstance>> mainIngredients = new LinkedHashMap<>();
+	private final MerchantPriceConfig mpc;
 
 	public EnchantMultiSellList(L2PcInstance player)
 	{
-		_mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(player);
+		this.mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(player);
 		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
 		{
 			List<L2ItemInstance> mainIngredients = new ArrayList<>();
@@ -66,7 +66,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				}
 			}
 
-			_mainIngredients.put(category.Id, mainIngredients);
+			this.mainIngredients.put(category.Id, mainIngredients);
 		}
 	}
 
@@ -74,7 +74,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		int ingredientsSize = 0;
-		for (List<L2ItemInstance> items : _mainIngredients.values())
+		for (List<L2ItemInstance> items : this.mainIngredients.values())
 		{
 			ingredientsSize += items.size();
 		}
@@ -91,7 +91,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 
 		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
 		{
-			for (L2ItemInstance item : _mainIngredients.get(category.Id))
+			for (L2ItemInstance item : this.mainIngredients.get(category.Id))
 			{
 				EnchantMultiSellEntry entry = category.Entries.get(item.getEnchantLevel() + 1);
 
@@ -196,7 +196,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				long ingCount = item.getCount();
 				if (item.getItemId() == 57)
 				{
-					ingCount = (long) (item.getCount() * (1.0 + _mpc.getCastleTaxRate()));
+					ingCount = (long) (item.getCount() * (1.0 + this.mpc.getCastleTaxRate()));
 				}
 				writeQ(ingCount);
 				writeH(item.getEnchantLevel()); // enchant lvl

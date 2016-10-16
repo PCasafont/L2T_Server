@@ -111,10 +111,10 @@ public final class Evolve
 		}
 
 		// Fix for non-linear baby pet exp
-		long _minimumexp = petSummon.getStat().getExpForLevel(petminlvl);
-		if (petexp < _minimumexp)
+		long minimumexp = petSummon.getStat().getExpForLevel(petminlvl);
+		if (petexp < minimumexp)
 		{
-			petexp = _minimumexp;
+			petexp = minimumexp;
 		}
 
 		petSummon.getStat().addExp(petexp);
@@ -202,9 +202,9 @@ public final class Evolve
 			return false;
 		}
 
-		long _maxexp = petSummon.getStat().getExpForLevel(oldpetlvl);
+		long maxexp = petSummon.getStat().getExpForLevel(oldpetlvl);
 
-		petSummon.getStat().addExp(_maxexp);
+		petSummon.getStat().addExp(maxexp);
 		petSummon.setCurrentHp(petSummon.getMaxHp());
 		petSummon.setCurrentMp(petSummon.getMaxMp());
 		petSummon.setCurrentFed(petSummon.getMaxFed());
@@ -270,13 +270,13 @@ public final class Evolve
 
 	static final class EvolveFeedWait implements Runnable
 	{
-		private final L2PcInstance _activeChar;
-		private final L2PetInstance _petSummon;
+		private final L2PcInstance activeChar;
+		private final L2PetInstance petSummon;
 
 		EvolveFeedWait(L2PcInstance activeChar, L2PetInstance petSummon)
 		{
-			_activeChar = activeChar;
-			_petSummon = petSummon;
+			this.activeChar = activeChar;
+			this.petSummon = petSummon;
 		}
 
 		@Override
@@ -284,13 +284,13 @@ public final class Evolve
 		{
 			try
 			{
-				if (_petSummon.getCurrentFed() <= 0)
+				if (this.petSummon.getCurrentFed() <= 0)
 				{
-					_petSummon.unSummon(_activeChar);
+					this.petSummon.unSummon(this.activeChar);
 				}
 				else
 				{
-					_petSummon.startFeed();
+					this.petSummon.startFeed();
 				}
 			}
 			catch (Exception e)
@@ -302,13 +302,13 @@ public final class Evolve
 
 	static final class EvolveFinalizer implements Runnable
 	{
-		private final L2PcInstance _activeChar;
-		private final L2PetInstance _petSummon;
+		private final L2PcInstance activeChar;
+		private final L2PetInstance petSummon;
 
 		EvolveFinalizer(L2PcInstance activeChar, L2PetInstance petSummon)
 		{
-			_activeChar = activeChar;
-			_petSummon = petSummon;
+			this.activeChar = activeChar;
+			this.petSummon = petSummon;
 		}
 
 		@Override
@@ -316,9 +316,9 @@ public final class Evolve
 		{
 			try
 			{
-				_activeChar.sendPacket(new MagicSkillLaunched(_activeChar, 2046, 1));
-				_petSummon.setFollowStatus(true);
-				_petSummon.setShowSummonAnimation(false);
+				this.activeChar.sendPacket(new MagicSkillLaunched(this.activeChar, 2046, 1));
+				this.petSummon.setFollowStatus(true);
+				this.petSummon.setShowSummonAnimation(false);
 			}
 			catch (Throwable e)
 			{

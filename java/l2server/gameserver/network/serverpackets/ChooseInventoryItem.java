@@ -18,16 +18,16 @@ package l2server.gameserver.network.serverpackets;
 public final class ChooseInventoryItem extends L2GameServerPacket
 {
 
-	private int _itemId;
+	private int itemId;
 
 	public ChooseInventoryItem(int itemId)
 	{
-		_itemId = itemId;
+		this.itemId = itemId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_itemId);
+		writeD(this.itemId);
 	}
 }

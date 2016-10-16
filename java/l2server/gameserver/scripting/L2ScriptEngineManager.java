@@ -39,16 +39,16 @@ public final class L2ScriptEngineManager
 
 	public static L2ScriptEngineManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private final Map<String, ScriptEngine> _nameEngines = new HashMap<>();
-	private final Map<String, ScriptEngine> _extEngines = new HashMap<>();
-	private final List<ScriptManager<?>> _scriptManagers = new LinkedList<>();
+	private final Map<String, ScriptEngine> nameEngines = new HashMap<>();
+	private final Map<String, ScriptEngine> extEngines = new HashMap<>();
+	private final List<ScriptManager<?>> scriptManagers = new LinkedList<>();
 
-	private final CompiledScriptCache _cache;
+	private final CompiledScriptCache cache;
 
-	private File _currentLoadingScript;
+	private File currentLoadingScript;
 
 	// Configs
 	// TODO move to config file
@@ -82,11 +82,11 @@ public final class L2ScriptEngineManager
 		List<ScriptEngineFactory> factories = scriptEngineManager.getEngineFactories();
 		if (USE_COMPILED_CACHE)
 		{
-			_cache = loadCompiledScriptCache();
+			this.cache = loadCompiledScriptCache();
 		}
 		else
 		{
-			_cache = null;
+			this.cache = null;
 		}
 		Log.info("Initializing Script Engine Manager");
 
@@ -98,7 +98,7 @@ public final class L2ScriptEngineManager
 				boolean reg = false;
 				for (String name : factory.getNames())
 				{
-					ScriptEngine existentEngine = _nameEngines.get(name);
+					ScriptEngine existentEngine = this.nameEngines.get(name);
 
 					if (existentEngine != null)
 					{
@@ -112,7 +112,7 @@ public final class L2ScriptEngineManager
 					}
 
 					reg = true;
-					_nameEngines.put(name, engine);
+					this.nameEngines.put(name, engine);
 				}
 
 				if (reg)
@@ -126,7 +126,7 @@ public final class L2ScriptEngineManager
 				{
 					if (!ext.equals("java") || factory.getLanguageName().equals("java"))
 					{
-						_extEngines.put(ext, engine);
+						this.extEngines.put(ext, engine);
 					}
 				}
 			}
@@ -158,12 +158,12 @@ public final class L2ScriptEngineManager
 
 	private ScriptEngine getEngineByName(String name)
 	{
-		return _nameEngines.get(name);
+		return this.nameEngines.get(name);
 	}
 
 	private ScriptEngine getEngineByExtension(String ext)
 	{
-		return _extEngines.get(ext);
+		return this.extEngines.get(ext);
 	}
 
 	public void executeScriptList(File list) throws IOException
@@ -316,7 +316,7 @@ public final class L2ScriptEngineManager
 
 	public CompiledScriptCache getCompiledScriptCache()
 	{
-		return _cache;
+		return this.cache;
 	}
 
 	public CompiledScriptCache loadCompiledScriptCache()
@@ -443,7 +443,7 @@ public final class L2ScriptEngineManager
 				engine.setContext(context);
 				if (USE_COMPILED_CACHE)
 				{
-					CompiledScript cs = _cache.loadCompiledScript(engine, file);
+					CompiledScript cs = this.cache.loadCompiledScript(engine, file);
 					cs.eval(context);
 				}
 				else
@@ -571,17 +571,17 @@ public final class L2ScriptEngineManager
 
 	public void registerScriptManager(ScriptManager<?> manager)
 	{
-		_scriptManagers.add(manager);
+		this.scriptManagers.add(manager);
 	}
 
 	public void removeScriptManager(ScriptManager<?> manager)
 	{
-		_scriptManagers.remove(manager);
+		this.scriptManagers.remove(manager);
 	}
 
 	public List<ScriptManager<?>> getScriptManagers()
 	{
-		return _scriptManagers;
+		return this.scriptManagers;
 	}
 
 	/**
@@ -589,7 +589,7 @@ public final class L2ScriptEngineManager
 	 */
 	protected void setCurrentLoadingScript(File currentLoadingScript)
 	{
-		_currentLoadingScript = currentLoadingScript;
+		this.currentLoadingScript = currentLoadingScript;
 	}
 
 	/**
@@ -597,12 +597,12 @@ public final class L2ScriptEngineManager
 	 */
 	protected File getCurrentLoadingScript()
 	{
-		return _currentLoadingScript;
+		return this.currentLoadingScript;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final L2ScriptEngineManager _instance = new L2ScriptEngineManager();
+		protected static final L2ScriptEngineManager instance = new L2ScriptEngineManager();
 	}
 }

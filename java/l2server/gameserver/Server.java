@@ -70,13 +70,13 @@ import java.util.logging.LogManager;
  */
 public class Server
 {
-	private final Core<L2GameClient> _selectorThread;
-	private final L2GamePacketHandler _gamePacketHandler;
-	private final DeadLockDetector _deadDetectThread;
-	private final IdFactory _idFactory;
+	private final Core<L2GameClient> selectorThread;
+	private final L2GamePacketHandler gamePacketHandler;
+	private final DeadLockDetector deadDetectThread;
+	private final IdFactory idFactory;
 	public static Server gameServer;
 	public static ServerGui gui;
-	private LoginServerThread _loginThread;
+	private LoginServerThread loginThread;
 	public static final Calendar dateTimeServerStarted = Calendar.getInstance();
 
 	public long getUsedMemoryMB()
@@ -86,17 +86,17 @@ public class Server
 
 	public Core<L2GameClient> getSelectorThread()
 	{
-		return _selectorThread;
+		return this.selectorThread;
 	}
 
 	public L2GamePacketHandler getL2GamePacketHandler()
 	{
-		return _gamePacketHandler;
+		return this.gamePacketHandler;
 	}
 
 	public DeadLockDetector getDeadLockDetectorThread()
 	{
-		return _deadDetectThread;
+		return this.deadDetectThread;
 	}
 
 	public Server() throws Exception
@@ -106,9 +106,9 @@ public class Server
 		gameServer = this;
 		Log.finest("used mem:" + getUsedMemoryMB() + "MB");
 
-		_idFactory = IdFactory.getInstance();
+		this.idFactory = IdFactory.getInstance();
 
-		if (!_idFactory.isInitialized())
+		if (!this.idFactory.isInitialized())
 		{
 			Log.severe("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
@@ -139,7 +139,6 @@ public class Server
 		SkillTreeTable.getInstance();
 		PledgeSkillTree.getInstance();
 		NobleSkillTable.getInstance();
-		GMSkillTable.getInstance();
 		HeroSkillTable.getInstance();
 		ResidentialSkillTable.getInstance();
 		SubPledgeSkillTree.getInstance();
@@ -424,13 +423,13 @@ public class Server
 
 		if (Config.DEADLOCK_DETECTOR)
 		{
-			_deadDetectThread = new DeadLockDetector();
-			_deadDetectThread.setDaemon(true);
-			_deadDetectThread.start();
+			this.deadDetectThread = new DeadLockDetector();
+			this.deadDetectThread.setDaemon(true);
+			this.deadDetectThread.start();
 		}
 		else
 		{
-			_deadDetectThread = null;
+			this.deadDetectThread = null;
 		}
 
 		//LameGuard.getInstance();
@@ -444,8 +443,8 @@ public class Server
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
 
-		_loginThread = LoginServerThread.getInstance();
-		_loginThread.start();
+		this.loginThread = LoginServerThread.getInstance();
+		this.loginThread.start();
 
 		final CoreConfig sc = new CoreConfig();
 		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
@@ -453,8 +452,8 @@ public class Server
 		sc.SLEEP_TIME = Config.MMO_SELECTOR_SLEEP_TIME;
 		sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
 
-		_gamePacketHandler = new L2GamePacketHandler();
-		_selectorThread = new Core<>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler, new IPv4Filter());
+		this.gamePacketHandler = new L2GamePacketHandler();
+		this.selectorThread = new Core<>(sc, this.gamePacketHandler, this.gamePacketHandler, this.gamePacketHandler, new IPv4Filter());
 
 		InetAddress bindAddress = null;
 		if (!Config.GAMESERVER_HOSTNAME.equals("*"))
@@ -473,14 +472,14 @@ public class Server
 
 		try
 		{
-			_selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
+			this.selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		_selectorThread.start();
+		this.selectorThread.start();
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
@@ -533,13 +532,13 @@ public class Server
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 	}
 
-	static long _t = 0;
+	private static long t = 0;
 
 	public static void printSection(String s)
 	{
-		//if (_t > 0)
-		//	Log.info("Time spent in last section: " + (t - _t) / 1000 + "s");
-		_t = System.currentTimeMillis();
+		//if (this.t > 0)
+		//	Log.info("Time spent in last section: " + (t - this.t) / 1000 + "s");
+		t = System.currentTimeMillis();
 
 		s = "=[ " + s + " ]";
 		while (s.length() < 78)

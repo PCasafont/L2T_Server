@@ -1,5 +1,8 @@
 package instances.Pailaka;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
@@ -21,9 +24,6 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PailakaDevilsLegacy extends Quest
 {
@@ -77,10 +77,10 @@ public class PailakaDevilsLegacy extends Quest
 	private static final int DEFENCE_POTION = 13059;
 	private static final int PAILAKA_KEY = 13150;
 
-	private static boolean _isTeleportScheduled = false;
-	private static boolean _isOnShip = false;
-	private static L2Npc _lematanNpc = null;
-	private List<L2Npc> _followerslist;
+	private static boolean isTeleportScheduled = false;
+	private static boolean isOnShip = false;
+	private static L2Npc lematanNpc = null;
+	private List<L2Npc> followerslist;
 
 	private static final int[] ITEMS = {
 			SWORD,
@@ -211,7 +211,7 @@ public class PailakaDevilsLegacy extends Quest
 			world.allowed.add(player.getObjectId());
 			teleportPlayer(player, TELEPORT, instanceId);
 
-			_lematanNpc = addSpawn(LEMATAN, 88108, -209252, -3744, 64255, false, 0, false, instanceId);
+			this.lematanNpc = addSpawn(LEMATAN, 88108, -209252, -3744, 64255, false, 0, false, instanceId);
 		}
 	}
 
@@ -221,9 +221,9 @@ public class PailakaDevilsLegacy extends Quest
 		// Must be here, because of player == null
 		if (npc.getNpcId() == FOLLOWERS && event.equals("follower_cast"))
 		{
-			if (!npc.isCastingNow() && !npc.isDead() && !_lematanNpc.isDead())
+			if (!npc.isCastingNow() && !npc.isDead() && !this.lematanNpc.isDead())
 			{
-				npc.setTarget(_lematanNpc);
+				npc.setTarget(this.lematanNpc);
 				npc.doCast(energy_skill);
 			}
 			startQuestTimer("follower_cast", 2000 + Rnd.get(100, 1000), npc, null);
@@ -295,7 +295,7 @@ public class PailakaDevilsLegacy extends Quest
 		}
 		else if (event.equalsIgnoreCase("lematan_teleport"))
 		{
-			if (npc.getNpcId() == LEMATAN && !npc.isMovementDisabled() && !_isOnShip)
+			if (npc.getNpcId() == LEMATAN && !npc.isMovementDisabled() && !this.isOnShip)
 			{
 				// Reduce Hate
 				((L2Attackable) npc).reduceHate(player, 9999);
@@ -308,16 +308,16 @@ public class PailakaDevilsLegacy extends Quest
 			}
 			else
 			{
-				_isTeleportScheduled = false;
+				this.isTeleportScheduled = false;
 			}
 			return null;
 		}
-		else if (npc.getNpcId() == LEMATAN && event.equalsIgnoreCase("lematan_finish_teleport") && !_isOnShip)
+		else if (npc.getNpcId() == LEMATAN && event.equalsIgnoreCase("lematan_finish_teleport") && !this.isOnShip)
 		{
 			// Teleport Lematan
 			npc.teleToLocation(84973, -208721, -3340);
 			// Set onShip
-			_isOnShip = true;
+			this.isOnShip = true;
 			// Set Spawn loc to ship. If he loose aggro he should stay on board ;)
 			npc.getSpawn().setX(84973);
 			npc.getSpawn().setY(-208721);
@@ -325,14 +325,14 @@ public class PailakaDevilsLegacy extends Quest
 			// To be sure, reduce again
 			((L2Attackable) npc).reduceHate(player, 9999);
 			// Spawn followers
-			_followerslist = new ArrayList<L2Npc>();
+			this.followerslist = new ArrayList<L2Npc>();
 			for (int[] SPAWN : FOLLOWERS_SPAWNS)
 			{
-				L2Npc _follower = addSpawn(FOLLOWERS, SPAWN[0], SPAWN[1], SPAWN[2], SPAWN[3], false, 0, true,
+				L2Npc follower = addSpawn(FOLLOWERS, SPAWN[0], SPAWN[1], SPAWN[2], SPAWN[3], false, 0, true,
 						player.getInstanceId());
-				if (_follower != null)
+				if (follower != null)
 				{
-					_followerslist.add(_follower);
+					this.followerslist.add(follower);
 				}
 			}
 			return null;
@@ -514,7 +514,7 @@ public class PailakaDevilsLegacy extends Quest
 				npc.doDie(attacker);
 			}
 		}
-		else if (npc.getNpcId() == LEMATAN && npc.getCurrentHp() < npc.getMaxHp() / 2 && !_isTeleportScheduled)
+		else if (npc.getNpcId() == LEMATAN && npc.getCurrentHp() < npc.getMaxHp() / 2 && !this.isTeleportScheduled)
 		{
 			startQuestTimer("lematan_teleport", 1000, npc, attacker);
 		}
@@ -553,13 +553,13 @@ public class PailakaDevilsLegacy extends Quest
 				}
 				break;
 			case LEMATAN:
-				if (_followerslist != null && !_followerslist.isEmpty())
+				if (this.followerslist != null && !this.followerslist.isEmpty())
 				{
-					for (L2Npc _follower : _followerslist)
+					for (L2Npc follower : this.followerslist)
 					{
-						_follower.deleteMe();
+						follower.deleteMe();
 					}
-					_followerslist.clear();
+					this.followerslist.clear();
 				}
 				st.set("cond", "4");
 				st.playSound("ItemSound.quest_middle");
@@ -604,13 +604,13 @@ public class PailakaDevilsLegacy extends Quest
 
 	static final class Teleport implements Runnable
 	{
-		private final L2Character _char;
-		private final int _instanceId;
+		private final L2Character cha;
+		private final int instanceId;
 
 		public Teleport(L2Character c, int id)
 		{
-			_char = c;
-			_instanceId = id;
+			this.cha = c;
+			instanceId = id;
 		}
 
 		@Override
@@ -618,7 +618,7 @@ public class PailakaDevilsLegacy extends Quest
 		{
 			try
 			{
-				teleportPlayer((L2PcInstance) _char, TELEPORT, _instanceId);
+				teleportPlayer((L2PcInstance) this.cha, TELEPORT, instanceId);
 			}
 			catch (Exception e)
 			{

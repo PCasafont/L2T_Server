@@ -15,6 +15,8 @@
 
 package handlers.usercommandhandlers;
 
+import java.util.logging.Level;
+
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
@@ -29,8 +31,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.util.Broadcast;
-
-import java.util.logging.Level;
+import l2server.log.Log;
 
 /**
  *
@@ -141,32 +142,32 @@ public class Escape implements IUserCommandHandler
 
 	static class EscapeFinalizer implements Runnable
 	{
-		private L2PcInstance _activeChar;
+		private L2PcInstance activeChar;
 
 		EscapeFinalizer(L2PcInstance activeChar)
 		{
-			_activeChar = activeChar;
+			this.activeChar = activeChar;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_activeChar.isDead())
+			if (this.activeChar.isDead())
 			{
 				return;
 			}
 
-			_activeChar.enableAllSkills();
-			_activeChar.setIsCastingNow(false);
-			_activeChar.setInstanceId(0);
+			this.activeChar.enableAllSkills();
+			this.activeChar.setIsCastingNow(false);
+			this.activeChar.setInstanceId(0);
 
 			try
 			{
-				_activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+				this.activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				Log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

@@ -31,11 +31,11 @@ public class PlayerTableRenderer extends DefaultTableCellRenderer implements Tab
 {
 	private static final long serialVersionUID = 1L;
 	@SuppressWarnings("unused")
-	private PlayerTableModel _table;
+	private PlayerTableModel table;
 
 	public PlayerTableRenderer(PlayerTableModel table)
 	{
-		_table = table;
+		this.table = table;
 	}
 
 	@Override

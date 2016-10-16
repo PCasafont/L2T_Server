@@ -32,11 +32,11 @@ import java.util.Set;
  */
 public final class NpcInfo extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _val;
-	private byte[] _data1;
-	private byte[] _data2;
-	private Set<Integer> _abnormals;
+	private int objectId;
+	private int val;
+	private byte[] data1;
+	private byte[] data2;
+	private Set<Integer> abnormals;
 
 	public NpcInfo(L2Npc npc, L2Character attacker)
 	{
@@ -46,8 +46,8 @@ public final class NpcInfo extends L2GameServerPacket
 			return;
 		}
 
-		_objectId = npc.getObjectId();
-		_val = npc.isShowSummonAnimation() ? 2 : 0;
+		this.objectId = npc.getObjectId();
+		this.val = npc.isShowSummonAnimation() ? 2 : 0;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -86,8 +86,8 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		_data1 = new byte[size];
-		buffer.get(_data1, 0, size);
+		this.data1 = new byte[size];
+		buffer.get(this.data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -196,24 +196,24 @@ public final class NpcInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		_data2 = new byte[size];
-		buffer.get(_data2, 0, size);
+		this.data2 = new byte[size];
+		buffer.get(this.data2, 0, size);
 
-		_abnormals = npc.getAbnormalEffect();
+		this.abnormals = npc.getAbnormalEffect();
 		if (npc.isChampion())
 		{
-			_abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
+			this.abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
 		}
 		if (npc.getNpcId() >= 40000 && npc.getNpcId() < 40006 && npc.getInstanceId() == 0)
 		{
-			_abnormals.add(VisualEffect.BIG_BODY.getId());
+			this.abnormals.add(VisualEffect.BIG_BODY.getId());
 		}
 	}
 
 	public NpcInfo(L2CloneInstance npc)
 	{
-		_objectId = npc.getObjectId();
-		_val = npc.isShowSummonAnimation() ? 2 : 0;
+		this.objectId = npc.getObjectId();
+		this.val = npc.isShowSummonAnimation() ? 2 : 0;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -229,8 +229,8 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		_data1 = new byte[size];
-		buffer.get(_data1, 0, size);
+		this.data1 = new byte[size];
+		buffer.get(this.data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -328,17 +328,17 @@ public final class NpcInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		_data2 = new byte[size];
-		buffer.get(_data2, 0, size);
+		this.data2 = new byte[size];
+		buffer.get(this.data2, 0, size);
 
-		_abnormals = npc.getAbnormalEffect();
+		this.abnormals = npc.getAbnormalEffect();
 	}
 
 	public NpcInfo(L2Trap trap)
 	{
-		_objectId = trap.getObjectId();
+		this.objectId = trap.getObjectId();
 
-		_data1 = new byte[7];
+		this.data1 = new byte[7];
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -417,22 +417,22 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		_data2 = new byte[size];
-		buffer.get(_data2, 0, size);
+		this.data2 = new byte[size];
+		buffer.get(this.data2, 0, size);
 
-		_abnormals = trap.getAbnormalEffect();
+		this.abnormals = trap.getAbnormalEffect();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (_data1 == null)
+		if (this.data1 == null)
 		{
 			return;
 		}
 
-		writeD(_objectId);
-		writeC(_val); // 0=teleported 1=default 2=summoned
+		writeD(this.objectId);
+		writeC(this.val); // 0=teleported 1=default 2=summoned
 		writeH(0x25);
 		writeC(0xff);
 		writeC(0xff);
@@ -440,14 +440,14 @@ public final class NpcInfo extends L2GameServerPacket
 		writeC(0xff);
 		writeC(0xff);
 
-		writeC(_data1.length);
-		writeB(_data1);
+		writeC(this.data1.length);
+		writeB(this.data1);
 
-		writeH(_data2.length);
-		writeB(_data2);
+		writeH(this.data2.length);
+		writeB(this.data2);
 
-		writeH(_abnormals.size());
-		for (int abnormal : _abnormals)
+		writeH(this.abnormals.size());
+		for (int abnormal : this.abnormals)
 		{
 			writeH(abnormal);
 		}

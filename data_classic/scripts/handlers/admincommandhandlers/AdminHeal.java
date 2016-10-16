@@ -15,6 +15,9 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.Collection;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
@@ -23,9 +26,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-
-import java.util.Collection;
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands:
@@ -58,7 +59,7 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Heal error: " + e);
+					Log.warning("Heal error: " + e);
 				}
 				activeChar.sendMessage("Incorrect target/radius specified.");
 			}
@@ -132,7 +133,7 @@ public class AdminHeal implements IAdminCommandHandler
 			}
 			if (Config.DEBUG)
 			{
-				_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
+				Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
 						target.getName());
 			}
 		}

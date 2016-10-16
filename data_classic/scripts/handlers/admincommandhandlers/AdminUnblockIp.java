@@ -15,10 +15,11 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * This class handles following admin commands:
@@ -71,7 +72,7 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	private boolean unblockIp(String ipAddress, L2PcInstance activeChar)
 	{
 		//LoginServerThread.getInstance().unBlockip(ipAddress);
-		_log.warning("IP removed by GM " + activeChar.getName());
+		Log.warning("IP removed by GM " + activeChar.getName());
 		return true;
 	}
 }

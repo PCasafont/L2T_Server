@@ -29,18 +29,18 @@ import l2server.log.Log;
 public final class CannotMoveAnymore extends L2GameClientPacket
 {
 
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _heading;
+	private int x;
+	private int y;
+	private int z;
+	private int heading;
 
 	@Override
 	protected void readImpl()
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
+		this.x = readD();
+		this.y = readD();
+		this.z = readD();
+		this.heading = readD();
 	}
 
 	@Override
@@ -55,13 +55,13 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		if (Config.DEBUG)
 		{
 			Log.fine(
-					"client: x:" + _x + " y:" + _y + " z:" + _z + " server x:" + player.getX() + " y:" + player.getY() +
+					"client: x:" + this.x + " y:" + this.y + " z:" + this.z + " server x:" + player.getX() + " y:" + player.getY() +
 							" z:" + player.getZ());
 		}
 
 		if (player.getAI() != null)
 		{
-			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(_x, _y, _z, _heading));
+			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(this.x, this.y, this.z, this.heading));
 		}
 		/*if (player.getParty() != null)
         {
@@ -78,7 +78,7 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		// getClient().getActiveChar().broadcastPacket(smwl);
 		//
 		// StopRotation sr = new StopRotation(getClient().getActiveChar(),
-		// _heading);
+		// this.heading);
 		// getClient().getActiveChar().sendPacket(sr);
 		// getClient().getActiveChar().broadcastPacket(sr);
 	}

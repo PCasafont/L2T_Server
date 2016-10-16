@@ -54,64 +54,64 @@ import java.util.Set;
  */
 public class CharInfo extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
-	private PcInventory _inv;
-	private int _objId;
-	private int _x, _y, _z, _heading;
-	private int _mAtkSpd, _pAtkSpd;
+	private L2PcInstance activeChar;
+	private PcInventory inv;
+	private int objId;
+	private int x, y, z, heading;
+	private int mAtkSpd, pAtkSpd;
 
 	/**
 	 * Run speed, swimming run speed and flying run speed
 	 */
-	private int _runSpd;
+	private int runSpd;
 	/**
 	 * Walking speed, swimming walking speed and flying walking speed
 	 */
-	private int _walkSpd;
-	private float _moveMultiplier, _attackSpeedMultiplier;
-	//private int _territoryId;
-	//private boolean _isDisguised;
+	private int walkSpd;
+	private float moveMultiplier, attackSpeedMultiplier;
+	//private int territoryId;
+	//private boolean isDisguised;
 
-	private int _vehicleId, _airShipHelm;
+	private int vehicleId, airShipHelm;
 
 	/**
 	 */
 	public CharInfo(L2PcInstance cha)
 	{
-		_activeChar = cha;
-		_objId = cha.getObjectId();
-		_inv = cha.getInventory();
-		if (_activeChar.getVehicle() != null && _activeChar.getInVehiclePosition() != null)
+		this.activeChar = cha;
+		this.objId = cha.getObjectId();
+		this.inv = cha.getInventory();
+		if (this.activeChar.getVehicle() != null && this.activeChar.getInVehiclePosition() != null)
 		{
-			_x = _activeChar.getInVehiclePosition().getX();
-			_y = _activeChar.getInVehiclePosition().getY();
-			_z = _activeChar.getInVehiclePosition().getZ();
-			_vehicleId = _activeChar.getVehicle().getObjectId();
-			if (_activeChar.isInAirShip() && _activeChar.getAirShip().isCaptain(_activeChar))
+			this.x = this.activeChar.getInVehiclePosition().getX();
+			this.y = this.activeChar.getInVehiclePosition().getY();
+			this.z = this.activeChar.getInVehiclePosition().getZ();
+			this.vehicleId = this.activeChar.getVehicle().getObjectId();
+			if (this.activeChar.isInAirShip() && this.activeChar.getAirShip().isCaptain(this.activeChar))
 			{
-				_airShipHelm = _activeChar.getAirShip().getHelmItemId();
+				this.airShipHelm = this.activeChar.getAirShip().getHelmItemId();
 			}
 			else
 			{
-				_airShipHelm = 0;
+				this.airShipHelm = 0;
 			}
 		}
 		else
 		{
-			_x = _activeChar.getX();
-			_y = _activeChar.getY();
-			_z = _activeChar.getZ();
-			_vehicleId = 0;
-			_airShipHelm = 0;
+			this.x = this.activeChar.getX();
+			this.y = this.activeChar.getY();
+			this.z = this.activeChar.getZ();
+			this.vehicleId = 0;
+			this.airShipHelm = 0;
 		}
-		_heading = _activeChar.getHeading();
-		_mAtkSpd = _activeChar.getMAtkSpd();
-		_pAtkSpd = _activeChar.getPAtkSpd();
-		_moveMultiplier = _activeChar.getMovementSpeedMultiplier();
-		_attackSpeedMultiplier = _activeChar.getAttackSpeedMultiplier();
-		_runSpd = (int) _activeChar.getTemplate().baseRunSpd;
-		_walkSpd = (int) _activeChar.getTemplate().baseWalkSpd;
-		_invisibleCharacter = cha.getAppearance().getInvisible() ? cha.getObjectId() : 0;
+		this.heading = this.activeChar.getHeading();
+		this.mAtkSpd = this.activeChar.getMAtkSpd();
+		this.pAtkSpd = this.activeChar.getPAtkSpd();
+		this.moveMultiplier = this.activeChar.getMovementSpeedMultiplier();
+		this.attackSpeedMultiplier = this.activeChar.getAttackSpeedMultiplier();
+		this.runSpd = (int) this.activeChar.getTemplate().baseRunSpd;
+		this.walkSpd = (int) this.activeChar.getTemplate().baseWalkSpd;
+		this.invisibleCharacter = cha.getAppearance().getInvisible() ? cha.getObjectId() : 0;
 		//_territoryId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(cha);
 		//_isDisguised = TerritoryWarManager.getInstance().isDisguised(cha.getObjectId());
 	}
@@ -119,64 +119,64 @@ public class CharInfo extends L2GameServerPacket
 	public CharInfo(L2DecoyInstance decoy)
 	{
 		this(decoy.getActingPlayer()); // init
-		_vehicleId = 0;
-		_airShipHelm = 0;
-		_objId = decoy.getObjectId();
-		_x = decoy.getX();
-		_y = decoy.getY();
-		_z = decoy.getZ();
-		_heading = decoy.getHeading();
+		this.vehicleId = 0;
+		this.airShipHelm = 0;
+		this.objId = decoy.getObjectId();
+		this.x = decoy.getX();
+		this.y = decoy.getY();
+		this.z = decoy.getZ();
+		this.heading = decoy.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		boolean gmSeeInvis = false;
-		if (_invisibleCharacter != 0)
+		if (this.invisibleCharacter != 0)
 		{
 			L2PcInstance tmp = getClient().getActiveChar();
-			if (tmp != null && (tmp.isGM() || tmp.isInSameParty(_activeChar)))
+			if (tmp != null && (tmp.isGM() || tmp.isInSameParty(this.activeChar)))
 			{
 				gmSeeInvis = true;
 			}
 		}
 
-		if (_activeChar.getPoly().isMorphed())
+		if (this.activeChar.getPoly().isMorphed())
 		{
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(_activeChar.getPoly().getPolyId());
+			L2NpcTemplate template = NpcTable.getInstance().getTemplate(this.activeChar.getPoly().getPolyId());
 
 			if (template != null)
 			{
 				writeC(0x0c);
-				writeD(_objId);
-				writeD(_activeChar.getPoly().getPolyId() + 1000000); // npctype id
-				writeD(_activeChar.getReputation() < 0 ? 1 : 0);
-				writeD(_x);
-				writeD(_y);
-				writeD(_z);
-				writeD(_heading);
+				writeD(this.objId);
+				writeD(this.activeChar.getPoly().getPolyId() + 1000000); // npctype id
+				writeD(this.activeChar.getReputation() < 0 ? 1 : 0);
+				writeD(this.x);
+				writeD(this.y);
+				writeD(this.z);
+				writeD(this.heading);
 				writeD(0x00);
-				writeD(_mAtkSpd);
-				writeD(_pAtkSpd);
-				writeD(_runSpd); // TODO: the order of the speeds should be confirmed
-				writeD(_walkSpd);
-				writeD(_runSpd); // swim run speed
-				writeD(_walkSpd); // swim walk speed
-				writeD(_runSpd); // fly run speed
-				writeD(_walkSpd); // fly walk speed
-				writeD(_runSpd); // fly run speed ?
-				writeD(_walkSpd); // fly walk speed ?
-				writeF(_moveMultiplier);
-				writeF(_attackSpeedMultiplier);
+				writeD(this.mAtkSpd);
+				writeD(this.pAtkSpd);
+				writeD(this.runSpd); // TODO: the order of the speeds should be confirmed
+				writeD(this.walkSpd);
+				writeD(this.runSpd); // swim run speed
+				writeD(this.walkSpd); // swim walk speed
+				writeD(this.runSpd); // fly run speed
+				writeD(this.walkSpd); // fly walk speed
+				writeD(this.runSpd); // fly run speed ?
+				writeD(this.walkSpd); // fly walk speed ?
+				writeF(this.moveMultiplier);
+				writeF(this.attackSpeedMultiplier);
 				writeF(template.fCollisionRadius);
 				writeF(template.fCollisionHeight);
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND)); // right hand weapon
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND)); // right hand weapon
 				writeD(0);
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND)); // left hand weapon
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND)); // left hand weapon
 				writeC(1); // name above char 1=true ... ??
-				writeC(_activeChar.isRunning() ? 1 : 0);
-				writeC(_activeChar.isInCombat() ? 1 : 0);
-				writeC(_activeChar.isAlikeDead() ? 1 : 0);
+				writeC(this.activeChar.isRunning() ? 1 : 0);
+				writeC(this.activeChar.isInCombat() ? 1 : 0);
+				writeC(this.activeChar.isAlikeDead() ? 1 : 0);
 
 				if (gmSeeInvis)
 				{
@@ -184,27 +184,27 @@ public class CharInfo extends L2GameServerPacket
 				}
 				else
 				{
-					writeC(_invisibleCharacter != 0 ? 1 :
+					writeC(this.invisibleCharacter != 0 ? 1 :
 							0); // invisible ?? 0=false  1=true   2=summoned (only works if model has a summon animation)
 				}
 
-				writeS(_activeChar.getAppearance().getVisibleName());
+				writeS(this.activeChar.getAppearance().getVisibleName());
 
-				if (gmSeeInvis || _activeChar.getAppearance().getInvisible())
+				if (gmSeeInvis || this.activeChar.getAppearance().getInvisible())
 				{
 					writeS("Invisible");
 				}
 				else
 				{
-					writeS(_activeChar.getAppearance().getVisibleTitle());
+					writeS(this.activeChar.getAppearance().getVisibleTitle());
 				}
 
 				writeD(0);
 				writeD(0);
 				writeD(0); // hmm karma ??
 
-				writeD(_activeChar.getClanId()); //clan id
-				writeD(_activeChar.getClanCrestId()); //crest id
+				writeD(this.activeChar.getClanId()); //clan id
+				writeD(this.activeChar.getClanCrestId()); //crest id
 				writeD(0); // C2
 				writeD(0); // C2
 				writeC(0); // C2
@@ -221,52 +221,52 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				Log.warning("Character " + _activeChar.getName() + " (" + _activeChar.getObjectId() +
-						") morphed in a Npc (" + _activeChar.getPoly().getPolyId() + ") w/o template.");
+				Log.warning("Character " + this.activeChar.getName() + " (" + this.activeChar.getObjectId() +
+						") morphed in a Npc (" + this.activeChar.getPoly().getPolyId() + ") w/o template.");
 			}
 		}
 		else
 		{
-			writeD(_x);
-			writeD(_y);
-			writeD(_z);
-			writeD(_vehicleId);
-			writeD(_objId);
-			writeS(_activeChar.getAppearance().getVisibleName());
-			writeH(_activeChar.getVisibleTemplate().race.ordinal());
-			writeC(_activeChar.getAppearance().getSex() ? 1 : 0);
+			writeD(this.x);
+			writeD(this.y);
+			writeD(this.z);
+			writeD(this.vehicleId);
+			writeD(this.objId);
+			writeS(this.activeChar.getAppearance().getVisibleName());
+			writeH(this.activeChar.getVisibleTemplate().race.ordinal());
+			writeC(this.activeChar.getAppearance().getSex() ? 1 : 0);
 
-			writeD(_activeChar.getVisibleTemplate().startingClassId);
+			writeD(this.activeChar.getVisibleTemplate().startingClassId);
 
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-			if (_airShipHelm == 0)
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
+			if (this.airShipHelm == 0)
 			{
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
 			}
 			else
 			{
-				writeD(_airShipHelm);
+				writeD(this.airShipHelm);
 				writeD(0);
 			}
 
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
 
 			int cloakId = 0;
-			if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK) != 0)
+			if (this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK) != 0)
 			{
-				cloakId = _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
+				cloakId = this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
 			}
 			else
 			{
-				cloakId = _inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
+				cloakId = this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
 			}
 
-			if (_activeChar.isCloakHidden())
+			if (this.activeChar.isCloakHidden())
 			{
 				cloakId = 0;
 			}
@@ -276,21 +276,21 @@ public class CharInfo extends L2GameServerPacket
 				case 34996: // Cloak of Radiant Light
 				case 34997: //Cloak of Cold Darkness
 				{
-					if (!_activeChar.isClanLeader() || _activeChar.getClan().getLevel() < 11 ||
-							_activeChar.getClan().getHasCastle() == 0)
+					if (!this.activeChar.isClanLeader() || this.activeChar.getClan().getLevel() < 11 ||
+							this.activeChar.getClan().getHasCastle() == 0)
 					{
-						cloakId = _inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
+						cloakId = this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
 					}
 				}
 			}
 
 			writeD(cloakId);
 
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-			if (_activeChar.isShowingHat())
+			writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
+			if (this.activeChar.isShowingHat())
 			{
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
 			}
 			else
 			{
@@ -298,74 +298,74 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0x00);
 			}
 			// c6 new h's
-			writeQ(_inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_UNDER));
-			writeQ(_inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_HEAD));
-			if (_airShipHelm == 0)
+			writeQ(this.inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_UNDER));
+			writeQ(this.inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_HEAD));
+			if (this.airShipHelm == 0)
 			{
-				writeQ(_inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
+				writeQ(this.inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_RHAND));
 			}
 			else
 			{
 				writeQ(0);
 			}
 
-			writeC(_activeChar.getArmorEnchant());
+			writeC(this.activeChar.getArmorEnchant());
 
 			// T1 new d's
-			if (_airShipHelm == 0)
+			if (this.airShipHelm == 0)
 			{
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_LHAND));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_RHAND));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_LHAND));
 			}
 			else
 			{
 				writeD(0);
 				writeD(0);
 			}
-			/*if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
+			/*if (this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
             {
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
+				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
 			}
 			else*/
 			{
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_HEAD));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_GLOVES));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_LEGS));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_FEET));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_HAIR));
-				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_HAIR2));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_HEAD));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_GLOVES));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_LEGS));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_FEET));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_HAIR));
+				writeD(this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_HAIR2));
 			}
 
 			// end of t1 new d's
-			writeC(_activeChar.getPvpFlag());
-			writeD(_activeChar.getReputation());
+			writeC(this.activeChar.getPvpFlag());
+			writeD(this.activeChar.getReputation());
 
-			writeD(_mAtkSpd);
-			writeD(_pAtkSpd);
+			writeD(this.mAtkSpd);
+			writeD(this.pAtkSpd);
 
-			writeH(_runSpd); // TODO: the order of the speeds should be confirmed
-			writeH(_walkSpd);
-			writeH(_runSpd); // swim run speed
-			writeH(_walkSpd); // swim walk speed
-			writeH(_runSpd); // fly run speed
-			writeH(_walkSpd); // fly walk speed
-			writeH(_runSpd); // fly run speed ?
-			writeH(_walkSpd); // fly walk speed ?
-			writeF(_activeChar.getMovementSpeedMultiplier()); // _activeChar.getProperMultiplier()
-			writeF(_activeChar.getAttackSpeedMultiplier()); // _activeChar.getAttackSpeedMultiplier()
-			L2Transformation transform = _activeChar.getTransformation();
+			writeH(this.runSpd); // TODO: the order of the speeds should be confirmed
+			writeH(this.walkSpd);
+			writeH(this.runSpd); // swim run speed
+			writeH(this.walkSpd); // swim walk speed
+			writeH(this.runSpd); // fly run speed
+			writeH(this.walkSpd); // fly walk speed
+			writeH(this.runSpd); // fly run speed ?
+			writeH(this.walkSpd); // fly walk speed ?
+			writeF(this.activeChar.getMovementSpeedMultiplier()); // this.activeChar.getProperMultiplier()
+			writeF(this.activeChar.getAttackSpeedMultiplier()); // this.activeChar.getAttackSpeedMultiplier()
+			L2Transformation transform = this.activeChar.getTransformation();
 
-			if (_activeChar.getMountType() != 0)
+			if (this.activeChar.getMountType() != 0)
 			{
-				writeF(NpcTable.getInstance().getTemplate(_activeChar.getMountNpcId()).fCollisionRadius);
-				writeF(NpcTable.getInstance().getTemplate(_activeChar.getMountNpcId()).fCollisionHeight);
+				writeF(NpcTable.getInstance().getTemplate(this.activeChar.getMountNpcId()).fCollisionRadius);
+				writeF(NpcTable.getInstance().getTemplate(this.activeChar.getMountNpcId()).fCollisionHeight);
 			}
 			else if (transform != null)
 			{
@@ -374,32 +374,32 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				writeF(_activeChar.getCollisionRadius());
-				writeF(_activeChar.getCollisionHeight());
+				writeF(this.activeChar.getCollisionRadius());
+				writeF(this.activeChar.getCollisionHeight());
 			}
 
-			writeD(_activeChar.getAppearance().getHairStyle());
-			writeD(_activeChar.getAppearance().getHairColor());
-			writeD(_activeChar.getAppearance().getFace());
+			writeD(this.activeChar.getAppearance().getHairStyle());
+			writeD(this.activeChar.getAppearance().getHairColor());
+			writeD(this.activeChar.getAppearance().getFace());
 
-			if (gmSeeInvis || _activeChar.getAppearance().getInvisible())
+			if (gmSeeInvis || this.activeChar.getAppearance().getInvisible())
 			{
 				writeS("Invisible");
 			}
 			else
 			{
-				writeS(_activeChar.getAppearance().getVisibleTitle());
+				writeS(this.activeChar.getAppearance().getVisibleTitle());
 			}
 
-			if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() &&
-					(_activeChar.getEvent().getType() == EventType.DeathMatch ||
-							_activeChar.getEvent().getType() == EventType.Survival ||
-							_activeChar.getEvent().getType() == EventType.KingOfTheHill)))
+			if (!this.activeChar.isCursedWeaponEquipped() && !(this.activeChar.isPlayingEvent() &&
+					(this.activeChar.getEvent().getType() == EventType.DeathMatch ||
+							this.activeChar.getEvent().getType() == EventType.Survival ||
+							this.activeChar.getEvent().getType() == EventType.KingOfTheHill)))
 			{
-				writeD(_activeChar.getClanId());
-				writeD(_activeChar.getClanCrestId());
-				writeD(_activeChar.getAllyId());
-				writeD(_activeChar.getAllyCrestId());
+				writeD(this.activeChar.getClanId());
+				writeD(this.activeChar.getClanCrestId());
+				writeD(this.activeChar.getAllyId());
+				writeD(this.activeChar.getAllyCrestId());
 			}
 			else
 			{
@@ -409,17 +409,17 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0);
 			}
 
-			writeC(_activeChar.isSitting() ? 0 : 1); // standing = 1  sitting = 0
-			writeC(_activeChar.isRunning() ? 1 : 0); // running = 1   walking = 0
-			writeC(_activeChar.isInCombat() ? 1 : 0);
+			writeC(this.activeChar.isSitting() ? 0 : 1); // standing = 1  sitting = 0
+			writeC(this.activeChar.isRunning() ? 1 : 0); // running = 1   walking = 0
+			writeC(this.activeChar.isInCombat() ? 1 : 0);
 
-			if (_activeChar.isInOlympiadMode())
+			if (this.activeChar.isInOlympiadMode())
 			{
 				writeC(0);
 			}
 			else
 			{
-				writeC(_activeChar.isAlikeDead() ? 1 : 0);
+				writeC(this.activeChar.isAlikeDead() ? 1 : 0);
 			}
 
 			if (gmSeeInvis)
@@ -428,58 +428,58 @@ public class CharInfo extends L2GameServerPacket
 			}
 			else
 			{
-				writeC(_invisibleCharacter != 0 ? 1 : 0); // invisible = 1  visible = 0
+				writeC(this.invisibleCharacter != 0 ? 1 : 0); // invisible = 1  visible = 0
 			}
 
-			writeC(_activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-			writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
-					_activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+			writeC(this.activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
+			writeC(this.activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
+					this.activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 
-			writeH(_activeChar.getCubics().size());
-			_activeChar.getCubics().keySet().forEach(this::writeH);
+			writeH(this.activeChar.getCubics().size());
+			this.activeChar.getCubics().keySet().forEach(this::writeH);
 
-			writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
+			writeC(this.activeChar.isInPartyMatchRoom() ? 1 : 0);
 
-			writeC(_activeChar.isFlyingMounted() ? 2 : 0);
+			writeC(this.activeChar.isFlyingMounted() ? 2 : 0);
 
-			writeH(_activeChar.getRecomHave()); //Blue value for name (0 = white, 255 = pure blue)
-			writeD(_activeChar.getMountNpcId() + 1000000);
-			writeD(_activeChar.getCurrentClass().getId());
+			writeH(this.activeChar.getRecomHave()); //Blue value for name (0 = white, 255 = pure blue)
+			writeD(this.activeChar.getMountNpcId() + 1000000);
+			writeD(this.activeChar.getCurrentClass().getId());
 			writeD(0x00); //?
-			writeC(_activeChar.isMounted() || _airShipHelm != 0 ? 0 : _activeChar.getEnchantEffect());
+			writeC(this.activeChar.isMounted() || this.airShipHelm != 0 ? 0 : this.activeChar.getEnchantEffect());
 
-			writeC(_activeChar.getTeam());
+			writeC(this.activeChar.getTeam());
 
-			writeD(_activeChar.getClanCrestLargeId());
-			writeC(_activeChar.isNoble() ? 1 : 0); // Symbol on char menu ctrl+I
-			writeC(_activeChar.hasHeroAura() ? 1 : 0); // Hero Aura
+			writeD(this.activeChar.getClanCrestLargeId());
+			writeC(this.activeChar.isNoble() ? 1 : 0); // Symbol on char menu ctrl+I
+			writeC(this.activeChar.hasHeroAura() ? 1 : 0); // Hero Aura
 
-			writeC(_activeChar.isFishing() ? 1 : 0); //0x01: Fishing Mode (Cant be undone by setting back to 0)
-			writeD(_activeChar.getFishx());
-			writeD(_activeChar.getFishy());
-			writeD(_activeChar.getFishz());
+			writeC(this.activeChar.isFishing() ? 1 : 0); //0x01: Fishing Mode (Cant be undone by setting back to 0)
+			writeD(this.activeChar.getFishx());
+			writeD(this.activeChar.getFishy());
+			writeD(this.activeChar.getFishz());
 
-			writeD(_activeChar.getAppearance().getNameColor());
+			writeD(this.activeChar.getAppearance().getNameColor());
 
-			writeD(_heading);
+			writeD(this.heading);
 
-			writeC(_activeChar.getPledgeClass());
-			writeH(_activeChar.getPledgeType());
+			writeC(this.activeChar.getPledgeClass());
+			writeH(this.activeChar.getPledgeType());
 
-			writeD(_activeChar.getAppearance().getTitleColor());
+			writeD(this.activeChar.getAppearance().getTitleColor());
 
-			if (_activeChar.isCursedWeaponEquipped())
+			if (this.activeChar.isCursedWeaponEquipped())
 			{
-				writeC(CursedWeaponsManager.getInstance().getLevel(_activeChar.getCursedWeaponEquippedId()));
+				writeC(CursedWeaponsManager.getInstance().getLevel(this.activeChar.getCursedWeaponEquippedId()));
 			}
 			else
 			{
 				writeC(0x00);
 			}
 
-			if (_activeChar.getClanId() > 0)
+			if (this.activeChar.getClanId() > 0)
 			{
-				writeD(_activeChar.getClan().getReputationScore());
+				writeD(this.activeChar.getClan().getReputationScore());
 			}
 			else
 			{
@@ -487,33 +487,33 @@ public class CharInfo extends L2GameServerPacket
 			}
 
 			// T1
-			writeH(_activeChar.getTransformationId());
+			writeH(this.activeChar.getTransformationId());
 			writeH(0x00);
 
 			//writeC(0x00);
-			writeH(_activeChar.getAgathionId());
+			writeH(this.activeChar.getAgathionId());
 			writeH(0x00);
 			writeC(0x01);
 
 			writeD(0x00); // GoD ???;
-			writeD((int) Math.round(_activeChar.getCurrentHp()));
-			writeD(_activeChar.getMaxHp());
-			writeD((int) Math.round(_activeChar.getCurrentMp()));
-			writeD(_activeChar.getMaxMp());
+			writeD((int) Math.round(this.activeChar.getCurrentHp()));
+			writeD(this.activeChar.getMaxHp());
+			writeD((int) Math.round(this.activeChar.getCurrentMp()));
+			writeD(this.activeChar.getMaxMp());
 
-			writeC(_activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
+			writeC(this.activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
 
-			Set<Integer> abnormals = _activeChar.getAbnormalEffect();
-			if (_activeChar.getAppearance().getInvisible())
+			Set<Integer> abnormals = this.activeChar.getAbnormalEffect();
+			if (this.activeChar.getAppearance().getInvisible())
 			{
 				abnormals.add(VisualEffect.STEALTH.getId());
 			}
 			writeD(abnormals.size());
 			abnormals.forEach(this::writeH);
 
-			//writeC(_inv.getMaxTalismanCount());
-			writeC(_activeChar.hasCoCAura() ? 100 : 0x00);
-			writeC(_inv.getCloakStatus());
+			//writeC(this.inv.getMaxTalismanCount());
+			writeC(this.activeChar.hasCoCAura() ? 100 : 0x00);
+			writeC(this.inv.getCloakStatus());
 			boolean showWings = true;
 			if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
 			{
@@ -521,7 +521,7 @@ public class CharInfo extends L2GameServerPacket
 				showWings = !player.isNickNameWingsDisabled() && !player.isPlayingEvent();
 			}
 
-			writeC(showWings ? _activeChar.getSpentAbilityPoints() : 0x00);
+			writeC(showWings ? this.activeChar.getSpentAbilityPoints() : 0x00);
 		}
 	}
 }

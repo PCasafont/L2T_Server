@@ -42,41 +42,41 @@ import java.util.concurrent.ScheduledFuture;
 
 public class CustomWorldAltars
 {
-	private static List<Integer> _bosssIds = new ArrayList<>();
-	private static List<AltarsSpawns> _spawnInfo = new ArrayList<>();
-	private static List<WorldAltarsInfo> _altarsList = new ArrayList<>();
-	private static int _baseRespawnMinutes;
-	private static int _randomRespawnMinutes;
-	private static int _cursedChance;
+	private static List<Integer> bosssIds = new ArrayList<>();
+	private static List<AltarsSpawns> spawnInfo = new ArrayList<>();
+	private static List<WorldAltarsInfo> altarsList = new ArrayList<>();
+	private static int baseRespawnMinutes;
+	private static int randomRespawnMinutes;
+	private static int cursedChance;
 
 	private class AltarsSpawns
 	{
-		private String _spawnName;
-		private int _zoneId;
-		private Location _spawnLoc;
-		private boolean _isUnderUse;
+		private String spawnName;
+		private int zoneId;
+		private Location spawnLoc;
+		private boolean isUnderUse;
 
 		private AltarsSpawns(String spawnName, int zoneId, Location spawnLoc)
 		{
-			_spawnName = spawnName;
-			_zoneId = zoneId;
-			_spawnLoc = spawnLoc;
-			_isUnderUse = false;
+			this.spawnName = spawnName;
+			this.zoneId = zoneId;
+			this.spawnLoc = spawnLoc;
+			this.isUnderUse = false;
 		}
 
 		private String getSpawnName()
 		{
-			return _spawnName;
+			return this.spawnName;
 		}
 
 		private int getZoneId()
 		{
-			return _zoneId;
+			return this.zoneId;
 		}
 
 		private Location getSpawn()
 		{
-			return _spawnLoc;
+			return this.spawnLoc;
 		}
 
 		private boolean isZoneActive()
@@ -91,7 +91,7 @@ public class CustomWorldAltars
 
 		private void setInUse(boolean zoneInUse, boolean shouldBePvp)
 		{
-			_isUnderUse = zoneInUse;
+			this.isUnderUse = zoneInUse;
 
 			L2SiegeZone zone = ZoneManager.getInstance().getZoneById(getZoneId(), L2SiegeZone.class);
 			if (zone != null)
@@ -103,76 +103,76 @@ public class CustomWorldAltars
 
 		private boolean getIsInUse()
 		{
-			return _isUnderUse;
+			return this.isUnderUse;
 		}
 	}
 
 	private class WorldAltarsInfo
 	{
-		private int _altarImageId;
-		private String _altarName;
-		private int _altarId;
-		private L2Npc _altarNpc;
-		private L2Npc _bossNpc;
-		private AltarsSpawns _currentSpawn;
+		private int altarImageId;
+		private String altarName;
+		private int altarId;
+		private L2Npc altarNpc;
+		private L2Npc bossNpc;
+		private AltarsSpawns currentSpawn;
 		@SuppressWarnings("unused")
-		private ScheduledFuture<?> _spawnTask;
-		private long _nextRespawn;
-		private boolean _isCursed;
+		private ScheduledFuture<?> spawnTask;
+		private long nextRespawn;
+		private boolean isCursed;
 
 		private WorldAltarsInfo(int altarImageId, String altarName, int altarId)
 		{
-			_altarImageId = altarImageId;
-			_altarName = altarName;
-			_altarId = altarId;
+			this.altarImageId = altarImageId;
+			this.altarName = altarName;
+			this.altarId = altarId;
 			respawnAltar();
 		}
 
 		private L2Npc getBossNpc()
 		{
-			return _bossNpc;
+			return this.bossNpc;
 		}
 
 		private int getAltarImageId()
 		{
-			return _altarImageId;
+			return this.altarImageId;
 		}
 
 		private String getAltarName()
 		{
-			return _altarName;
+			return this.altarName;
 		}
 
 		private int getAltarId()
 		{
-			return _altarId;
+			return this.altarId;
 		}
 
 		private AltarsSpawns getCurrentSpawn()
 		{
-			return _currentSpawn;
+			return this.currentSpawn;
 		}
 
 		private boolean isCursed()
 		{
-			return _isCursed;
+			return this.isCursed;
 		}
 
 		private String getNextRespawn()
 		{
-			if (_nextRespawn > System.currentTimeMillis())
+			if (this.nextRespawn > System.currentTimeMillis())
 			{
-				Long remainingTime = (_nextRespawn - System.currentTimeMillis()) / 1000;
+				Long remainingTime = (this.nextRespawn - System.currentTimeMillis()) / 1000;
 				int minutes = (int) (remainingTime % 3600 / 60);
-				if (minutes >= _baseRespawnMinutes)
+				if (minutes >= baseRespawnMinutes)
 				{
 					return "It will take long to come!";
 				}
-				else if (minutes < _baseRespawnMinutes && minutes >= _baseRespawnMinutes / 2)
+				else if (minutes < baseRespawnMinutes && minutes >= baseRespawnMinutes / 2)
 				{
 					return "It will appear in quite a few time!";
 				}
-				else if (minutes > 1 && minutes < _baseRespawnMinutes / 2)
+				else if (minutes > 1 && minutes < baseRespawnMinutes / 2)
 				{
 					return "It will be there soon!";
 				}
@@ -187,51 +187,51 @@ public class CustomWorldAltars
 
 		private boolean getIsBossUnderAttack()
 		{
-			return _bossNpc.isInCombat();
+			return this.bossNpc.isInCombat();
 		}
 
 		private void respawnAltar()
 		{
-			_isCursed = Rnd.get(100) <= _cursedChance;
+			this.isCursed = Rnd.get(100) <= cursedChance;
 
-			if (_altarNpc != null)
+			if (this.altarNpc != null)
 			{
-				_altarNpc.deleteMe();
+				this.altarNpc.deleteMe();
 			}
 
-			if (_bossNpc != null)
+			if (this.bossNpc != null)
 			{
-				_bossNpc = null;
+				this.bossNpc = null;
 			}
 
-			if (_currentSpawn != null)
+			if (this.currentSpawn != null)
 			{
-				_currentSpawn.setInUse(false, false);
+				this.currentSpawn.setInUse(false, false);
 			}
 
-			_currentSpawn = null;
+			this.currentSpawn = null;
 
-			int randomSpawnTime = Rnd.get(1, _randomRespawnMinutes);
-			_spawnTask = ThreadPoolManager.getInstance()
-					.scheduleGeneral(new AltarRespawn(), (_baseRespawnMinutes + randomSpawnTime) * 60000);
-			_nextRespawn = System.currentTimeMillis() + (_baseRespawnMinutes + randomSpawnTime) * 60000;
+			int randomSpawnTime = Rnd.get(1, randomRespawnMinutes);
+			this.spawnTask = ThreadPoolManager.getInstance()
+					.scheduleGeneral(new AltarRespawn(), (baseRespawnMinutes + randomSpawnTime) * 60000);
+			this.nextRespawn = System.currentTimeMillis() + (baseRespawnMinutes + randomSpawnTime) * 60000;
 		}
 
 		private void spawnBoss()
 		{
-			int rndBoss = _bosssIds.get(Rnd.get(_bosssIds.size()));
-			_bossNpc = NpcUtil.addSpawn(rndBoss, _currentSpawn.getSpawn().getX() + Rnd.get(300),
-					_currentSpawn.getSpawn().getY() + Rnd.get(300), _currentSpawn.getSpawn().getZ() + 50,
-					_currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
-			if (_isCursed)
+			int rndBoss = bosssIds.get(Rnd.get(bosssIds.size()));
+			this.bossNpc = NpcUtil.addSpawn(rndBoss, this.currentSpawn.getSpawn().getX() + Rnd.get(300),
+					this.currentSpawn.getSpawn().getY() + Rnd.get(300), this.currentSpawn.getSpawn().getZ() + 50,
+					this.currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
+			if (this.isCursed)
 			{
-				((L2Attackable) _bossNpc).setChampion(true);
+				((L2Attackable) this.bossNpc).setChampion(true);
 			}
 
-			_altarNpc.broadcastPacket(new Earthquake(_altarNpc.getX(), _altarNpc.getY(), _altarNpc.getZ(), 8, 10));
-			_altarNpc.broadcastPacket(new MagicSkillUse(_altarNpc, _altarNpc, 14497, 1, 1, 1, 0));
-			_altarNpc.broadcastPacket(new ExShowScreenMessage(
-					_altarNpc.getTemplate().Name + "'s seal has been broken and " + _bossNpc.getTemplate().Name +
+			this.altarNpc.broadcastPacket(new Earthquake(this.altarNpc.getX(), this.altarNpc.getY(), this.altarNpc.getZ(), 8, 10));
+			this.altarNpc.broadcastPacket(new MagicSkillUse(this.altarNpc, this.altarNpc, 14497, 1, 1, 1, 0));
+			this.altarNpc.broadcastPacket(new ExShowScreenMessage(
+					this.altarNpc.getTemplate().Name + "'s seal has been broken and " + this.bossNpc.getTemplate().Name +
 							" has been liberated!", 5000));
 		}
 
@@ -240,15 +240,15 @@ public class CustomWorldAltars
 			@Override
 			public void run()
 			{
-				synchronized (_spawnInfo)
+				synchronized (spawnInfo)
 				{
-					List<AltarsSpawns> _notUsed = new ArrayList<>();
+					List<AltarsSpawns> notUsed = new ArrayList<>();
 					int pvpZones = 0;
-					for (AltarsSpawns spawn : _spawnInfo)
+					for (AltarsSpawns spawn : spawnInfo)
 					{
 						if (!spawn.getIsInUse())
 						{
-							_notUsed.add(spawn);
+							notUsed.add(spawn);
 						}
 						else
 						{
@@ -259,18 +259,18 @@ public class CustomWorldAltars
 						}
 					}
 
-					AltarsSpawns randomSpawn = _notUsed.get(Rnd.get(_notUsed.size()));
+					AltarsSpawns randomSpawn = notUsed.get(Rnd.get(notUsed.size()));
 					if (randomSpawn != null)
 					{
-						_currentSpawn = randomSpawn;
-						_currentSpawn.setInUse(true, pvpZones < 2);
-						_altarNpc = NpcUtil.addSpawn(_altarId, _currentSpawn.getSpawn().getX(),
-								_currentSpawn.getSpawn().getY(), _currentSpawn.getSpawn().getZ(),
-								_currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
+						currentSpawn = randomSpawn;
+						currentSpawn.setInUse(true, pvpZones < 2);
+						altarNpc = NpcUtil.addSpawn(altarId, currentSpawn.getSpawn().getX(),
+								currentSpawn.getSpawn().getY(), currentSpawn.getSpawn().getZ(),
+								currentSpawn.getSpawn().getHeading(), false, 0, true, 0);
 
 						Announcements.getInstance().announceToAll(
-								"World Altars: The altar " + _altarNpc.getName() + " has respawned in " +
-										_currentSpawn.getSpawnName() + "!");
+								"World Altars: The altar " + altarNpc.getName() + " has respawned in " +
+										currentSpawn.getSpawnName() + "!");
 					}
 				}
 			}
@@ -279,9 +279,9 @@ public class CustomWorldAltars
 
 	public void notifyBossKilled(L2Npc npc)
 	{
-		synchronized (_altarsList)
+		synchronized (this.altarsList)
 		{
-			for (WorldAltarsInfo altar : _altarsList)
+			for (WorldAltarsInfo altar : this.altarsList)
 			{
 				if (altar.getBossNpc() == null)
 				{
@@ -299,9 +299,9 @@ public class CustomWorldAltars
 
 	public boolean notifyTrySpawnBosss(L2Npc npc)
 	{
-		synchronized (_altarsList)
+		synchronized (this.altarsList)
 		{
-			for (WorldAltarsInfo altar : _altarsList)
+			for (WorldAltarsInfo altar : this.altarsList)
 			{
 				if (altar.getAltarId() == npc.getNpcId())
 				{
@@ -320,7 +320,7 @@ public class CustomWorldAltars
 	public String getAltarsInfo(boolean isGM)
 	{
 		StringBuilder sb = new StringBuilder();
-		for (WorldAltarsInfo i : _altarsList)
+		for (WorldAltarsInfo i : this.altarsList)
 		{
 			sb.append("<table width=710 border=0 bgcolor=" + (i.isCursed() ? "FF6F79" : "999999") +
 					"><tr><td align=center FIXWIDTH=710>" + i.getAltarName() + "</td></tr></table>");
@@ -331,7 +331,7 @@ public class CustomWorldAltars
 			if (i.getCurrentSpawn() != null)
 			{
 				sb.append("<tr><td>Spawn Location:</td><td><a action=\"" +
-						(isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" +
+						(isGM ? "bypass -h admin_move_to " : "bypass this.bbscustom;action;showRadar; ") + "" +
 						i.getCurrentSpawn().getSpawn().getX() + " " + i.getCurrentSpawn().getSpawn().getY() + " " +
 						i.getCurrentSpawn().getSpawn().getZ() + "\"> " + i.getCurrentSpawn().getSpawnName() +
 						"</a></td></tr>");
@@ -362,8 +362,8 @@ public class CustomWorldAltars
 				sb.append("<tr><td>Spawned Boss:</td><td>None</td></tr>");
 			}
 
-			sb.append("<tr><td FIXWIDTH=150>Altar Respawn:</td><td FIXWIDTH=300> " + _baseRespawnMinutes +
-					" minute(s) + " + _randomRespawnMinutes + " random.</td></tr>");
+			sb.append("<tr><td FIXWIDTH=150>Altar Respawn:</td><td FIXWIDTH=300> " + this.baseRespawnMinutes +
+					" minute(s) + " + this.randomRespawnMinutes + " random.</td></tr>");
 			sb.append("<tr><td>Next Respawn in:</td><td> " + i.getNextRespawn() + "</td></tr>");
 			sb.append("</table></td></tr></table>");
 		}
@@ -382,9 +382,9 @@ public class CustomWorldAltars
 				{
 					if (d.getName().equalsIgnoreCase("respawnInfo"))
 					{
-						_baseRespawnMinutes = d.getInt("baseRespawnMinutes");
-						_randomRespawnMinutes = d.getInt("randomRespawnMinutes");
-						_cursedChance = d.getInt("cursedChance");
+						this.baseRespawnMinutes = d.getInt("baseRespawnMinutes");
+						this.randomRespawnMinutes = d.getInt("randomRespawnMinutes");
+						this.cursedChance = d.getInt("cursedChance");
 					}
 					else if (d.getName().equalsIgnoreCase("possibleSpawns"))
 					{
@@ -398,7 +398,7 @@ public class CustomWorldAltars
 								int y = a.getInt("y");
 								int z = a.getInt("z");
 								int heading = a.getInt("heading");
-								_spawnInfo.add(new AltarsSpawns(name, zoneId, new Location(x, y, z, heading)));
+								this.spawnInfo.add(new AltarsSpawns(name, zoneId, new Location(x, y, z, heading)));
 							}
 						}
 					}
@@ -411,7 +411,7 @@ public class CustomWorldAltars
 								String name = a.getString("name");
 								int imageId = a.getInt("imageId");
 								int altarId = a.getInt("altarId");
-								_altarsList.add(new WorldAltarsInfo(imageId, name, altarId));
+								this.altarsList.add(new WorldAltarsInfo(imageId, name, altarId));
 							}
 						}
 					}
@@ -422,7 +422,7 @@ public class CustomWorldAltars
 							if (a.getName().equalsIgnoreCase("boss"))
 							{
 								int bossId = a.getInt("id");
-								_bosssIds.add(bossId);
+								this.bosssIds.add(bossId);
 							}
 						}
 					}
@@ -430,8 +430,8 @@ public class CustomWorldAltars
 			}
 		}
 
-		Log.info("WorldAltars: Loaded: " + _spawnInfo.size() + " altar spawns, " + _altarsList.size() + " altars and " +
-				_bosssIds.size() + " bosses!");
+		Log.info("WorldAltars: Loaded: " + this.spawnInfo.size() + " altar spawns, " + this.altarsList.size() + " altars and " +
+				this.bosssIds.size() + " bosses!");
 	}
 
 	private CustomWorldAltars()
@@ -444,12 +444,12 @@ public class CustomWorldAltars
 
 	public static CustomWorldAltars getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CustomWorldAltars _instance = new CustomWorldAltars();
+		protected static final CustomWorldAltars instance = new CustomWorldAltars();
 	}
 }

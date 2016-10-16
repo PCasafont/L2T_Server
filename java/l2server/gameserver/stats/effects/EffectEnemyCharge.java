@@ -29,7 +29,7 @@ import l2server.log.Log;
 
 public class EffectEnemyCharge extends L2Effect
 {
-	private int _x, _y, _z;
+	private int x, y, z;
 
 	public EffectEnemyCharge(Env env, L2EffectTemplate template)
 	{
@@ -85,25 +85,25 @@ public class EffectEnemyCharge extends L2Effect
 		cos = dx / distance;
 
 		// Calculate the new destination with offset included
-		_x = curX + (int) ((distance - offset) * cos);
-		_y = curY + (int) ((distance - offset) * sin);
-		_z = getEffected().getZ();
+		this.x = curX + (int) ((distance - offset) * cos);
+		this.y = curY + (int) ((distance - offset) * sin);
+		this.z = getEffected().getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z,
+					.moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), this.x, this.y, this.z,
 							getEffector().getInstanceId());
-			if (destiny.getX() != _x || destiny.getY() != _y)
+			if (destiny.getX() != this.x || destiny.getY() != this.y)
 			{
-				_x = destiny.getX() - (int) (cos * 10);
-				_y = destiny.getY() - (int) (sin * 10);
+				this.x = destiny.getX() - (int) (cos * 10);
+				this.y = destiny.getY() - (int) (sin * 10);
 			}
 		}
-		getEffector().broadcastPacket(new FlyToLocation(getEffector(), _x, _y, _z, FlyType.CHARGE));
+		getEffector().broadcastPacket(new FlyToLocation(getEffector(), this.x, this.y, this.z, FlyType.CHARGE));
 
 		// maybe is need force set X,Y,Z
-		getEffector().setXYZ(_x, _y, _z);
+		getEffector().setXYZ(this.x, this.y, this.z);
 		getEffector().broadcastPacket(new ValidateLocation(getEffector()));
 
 		return true;

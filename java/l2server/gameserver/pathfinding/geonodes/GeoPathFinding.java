@@ -39,12 +39,12 @@ import java.util.logging.Level;
 public class GeoPathFinding extends PathFinding
 {
 
-	private static Map<Short, ByteBuffer> _pathNodes = new HashMap<>();
-	private static Map<Short, IntBuffer> _pathNodesIndex = new HashMap<>();
+	private static Map<Short, ByteBuffer> pathNodes = new HashMap<>();
+	private static Map<Short, IntBuffer> pathNodesIndex = new HashMap<>();
 
 	public static GeoPathFinding getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class GeoPathFinding extends PathFinding
 	@Override
 	public boolean pathNodesExist(short regionoffset)
 	{
-		return _pathNodesIndex.containsKey(regionoffset);
+		return this.pathNodesIndex.containsKey(regionoffset);
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class GeoPathFinding extends PathFinding
 		//short node_z = n.getLoc().getZ();
 
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
-		ByteBuffer pn = _pathNodes.get(regoffset);
+		ByteBuffer pn = this.pathNodes.get(regoffset);
 
 		List<AbstractNode> Neighbors = new ArrayList<>(8);
 		GeoNode newNode;
@@ -336,8 +336,8 @@ public class GeoPathFinding extends PathFinding
 		}
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
-		int idx = _pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
-		ByteBuffer pn = _pathNodes.get(regoffset);
+		int idx = this.pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
+		ByteBuffer pn = this.pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx);
 		idx += layer * 10 + 1;//byte + layer*10byte
@@ -361,8 +361,8 @@ public class GeoPathFinding extends PathFinding
 		}
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
-		int idx = _pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
-		ByteBuffer pn = _pathNodes.get(regoffset);
+		int idx = this.pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
+		ByteBuffer pn = this.pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx++);
 		int idx2 = 0; //create index to nearlest node by z
@@ -474,8 +474,8 @@ public class GeoPathFinding extends PathFinding
 				indexs.put(node++, index);
 				index += layer * 10 + 1;
 			}
-			_pathNodesIndex.put(regionoffset, indexs);
-			_pathNodes.put(regionoffset, nodes);
+			this.pathNodesIndex.put(regionoffset, indexs);
+			this.pathNodes.put(regionoffset, nodes);
 		}
 		catch (Exception e)
 		{
@@ -497,6 +497,6 @@ public class GeoPathFinding extends PathFinding
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GeoPathFinding _instance = new GeoPathFinding();
+		protected static final GeoPathFinding instance = new GeoPathFinding();
 	}
 }

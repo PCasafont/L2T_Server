@@ -24,11 +24,11 @@ import java.util.Map;
  */
 public class ShopPreviewInfo extends L2GameServerPacket
 {
-	private Map<Integer, Integer> _itemlist;
+	private Map<Integer, Integer> itemlist;
 
 	public ShopPreviewInfo(Map<Integer, Integer> itemlist)
 	{
-		_itemlist = itemlist;
+		this.itemlist = itemlist;
 	}
 
 	@Override
@@ -59,6 +59,6 @@ public class ShopPreviewInfo extends L2GameServerPacket
 
 	private int getFromList(int key)
 	{
-		return _itemlist.get(key) != null ? _itemlist.get(key) : 0;
+		return this.itemlist.get(key) != null ? this.itemlist.get(key) : 0;
 	}
 }

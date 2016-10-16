@@ -36,22 +36,22 @@ import l2server.util.Rnd;
 
 public class Cocoons extends L2AttackableAIScript
 {
-	private static final int _cocoon = 32919;
-	private static final int _largeCocoon = 32920;
-	private static final int _contaminatedLargeCocoon = 19394;
-	private static final int _contaminatedCocoon = 19393;
+	private static final int cocoon = 32919;
+	private static final int largeCocoon = 32920;
+	private static final int contaminatedLargeCocoon = 19394;
+	private static final int contaminatedCocoon = 19393;
 
-	private static final int[] _normalMobs = {22863, 22879, 22903, 22895, 22887, 22871};
-	private static final int[] _wickedMobs = {22864, 22880, 22904, 22896, 22888, 22872};
-	private static final int[] _violentMobs = {22867, 22883, 22907, 22899, 22891, 22875};
-	private static final int[] _brutalMobs = {22868, 22884, 22908, 22900, 22892, 22876};
-	private static final int[] _slightlyMobs = {22870, 22886, 22910, 22902, 22894, 22878};
+	private static final int[] normalMobs = {22863, 22879, 22903, 22895, 22887, 22871};
+	private static final int[] wickedMobs = {22864, 22880, 22904, 22896, 22888, 22872};
+	private static final int[] violentMobs = {22867, 22883, 22907, 22899, 22891, 22875};
+	private static final int[] brutalMobs = {22868, 22884, 22908, 22900, 22892, 22876};
+	private static final int[] slightlyMobs = {22870, 22886, 22910, 22902, 22894, 22878};
 
 	public Cocoons(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int a = _cocoon; a <= _largeCocoon; a++)
+		for (int a = this.cocoon; a <= this.largeCocoon; a++)
 		{
 			addAttackId(a);
 			addStartNpc(a);
@@ -60,7 +60,7 @@ public class Cocoons extends L2AttackableAIScript
 			addSpawnId(a);
 		}
 
-		addSpawnId(_contaminatedCocoon);
+		addSpawnId(this.contaminatedCocoon);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -69,7 +69,7 @@ public class Cocoons extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == _cocoon || spawn.getNpcId() == _largeCocoon)
+			if (spawn.getNpcId() == this.cocoon || spawn.getNpcId() == this.largeCocoon)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -93,28 +93,28 @@ public class Cocoons extends L2AttackableAIScript
 			if (!npc.isDead() && !npc.isDecayed())
 			{
 				npc.doDie(null);
-				if (npc.getNpcId() == _cocoon)
+				if (npc.getNpcId() == this.cocoon)
 				{
 					if (Rnd.get(10) > 7)
 					{
-						addSpawn(_contaminatedCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
-						mobs = _wickedMobs;
+						addSpawn(this.contaminatedCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
+						mobs = this.wickedMobs;
 					}
 					else
 					{
-						mobs = _normalMobs;
+						mobs = this.normalMobs;
 					}
 				}
 				else
 				{
 					if (Rnd.get(10) > 7)
 					{
-						addSpawn(_contaminatedLargeCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
-						mobs = _brutalMobs;
+						addSpawn(this.contaminatedLargeCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
+						mobs = this.brutalMobs;
 					}
 					else
 					{
-						mobs = _violentMobs;
+						mobs = this.violentMobs;
 					}
 				}
 			}
@@ -124,13 +124,13 @@ public class Cocoons extends L2AttackableAIScript
 			if (!npc.isDead() && !npc.isDecayed())
 			{
 				npc.doDie(null);
-				if (npc.getNpcId() == _cocoon)
+				if (npc.getNpcId() == this.cocoon)
 				{
-					mobs = _wickedMobs;
+					mobs = this.wickedMobs;
 				}
 				else
 				{
-					mobs = _slightlyMobs;
+					mobs = this.slightlyMobs;
 				}
 			}
 		}

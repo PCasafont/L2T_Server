@@ -42,33 +42,33 @@ import java.util.logging.Level;
  */
 public class Instance
 {
-	private int _id;
-	private String _name;
+	private int id;
+	private String name;
 
-	private TIntHashSet _players = new TIntHashSet();
-	private final EjectPlayerProcedure _ejectProc;
+	private TIntHashSet players = new TIntHashSet();
+	private final EjectPlayerProcedure ejectProc;
 
-	private CopyOnWriteArrayList<L2Npc> _npcs = new CopyOnWriteArrayList<>();
-	private ArrayList<L2DoorInstance> _doors = null;
-	private int[] _spawnLoc = new int[3];
-	private boolean _allowSummon = true;
-	private long _emptyDestroyTime = -1;
-	private long _lastLeft = -1;
-	private long _instanceStartTime = -1;
-	private long _instanceEndTime = -1;
-	private boolean _isPvPInstance = false;
-	private boolean _isPeaceInstance = false;
-	private boolean _showTimer = false;
-	private boolean _isTimerIncrease = true;
-	private String _timerText = "";
+	private CopyOnWriteArrayList<L2Npc> npcs = new CopyOnWriteArrayList<>();
+	private ArrayList<L2DoorInstance> doors = null;
+	private int[] spawnLoc = new int[3];
+	private boolean allowSummon = true;
+	private long emptyDestroyTime = -1;
+	private long lastLeft = -1;
+	private long instanceStartTime = -1;
+	private long instanceEndTime = -1;
+	private boolean isPvPInstance = false;
+	private boolean isPeaceInstance = false;
+	private boolean showTimer = false;
+	private boolean isTimerIncrease = true;
+	private String timerText = "";
 
-	protected ScheduledFuture<?> _CheckTimeUpTask = null;
+	protected ScheduledFuture<?> CheckTimeUpTask = null;
 
 	public Instance(int id)
 	{
-		_id = id;
-		_ejectProc = new EjectPlayerProcedure();
-		_instanceStartTime = System.currentTimeMillis();
+		this.id = id;
+		this.ejectProc = new EjectPlayerProcedure();
+		instanceStartTime = System.currentTimeMillis();
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class Instance
 	 */
 	public int getId()
 	{
-		return _id;
+		return this.id;
 	}
 
 	/**
@@ -84,12 +84,12 @@ public class Instance
 	 */
 	public String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	public void setName(String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class Instance
 	 */
 	public boolean isSummonAllowed()
 	{
-		return _allowSummon;
+		return this.allowSummon;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class Instance
 	 */
 	public void setAllowSummon(boolean b)
 	{
-		_allowSummon = b;
+		this.allowSummon = b;
 	}
 
 	/*
@@ -113,7 +113,7 @@ public class Instance
 	 */
 	public boolean isPvPInstance()
 	{
-		return _isPvPInstance;
+		return this.isPvPInstance;
 	}
 
 	/*
@@ -121,17 +121,17 @@ public class Instance
 	 */
 	public void setPvPInstance(boolean b)
 	{
-		_isPvPInstance = b;
+		this.isPvPInstance = b;
 	}
 
 	public void setPeaceInstance(boolean b)
 	{
-		_isPeaceInstance = b;
+		this.isPeaceInstance = b;
 	}
 
 	public boolean isPeaceInstance()
 	{
-		return _isPeaceInstance;
+		return this.isPeaceInstance;
 	}
 
 	/**
@@ -141,13 +141,13 @@ public class Instance
 	 */
 	public void setDuration(int duration)
 	{
-		if (_CheckTimeUpTask != null)
+		if (this.CheckTimeUpTask != null)
 		{
-			_CheckTimeUpTask.cancel(true);
+			this.CheckTimeUpTask.cancel(true);
 		}
 
-		_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
-		_instanceEndTime = System.currentTimeMillis() + duration + 500;
+		this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
+		instanceEndTime = System.currentTimeMillis() + duration + 500;
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class Instance
 	 */
 	public void setEmptyDestroyTime(long time)
 	{
-		_emptyDestroyTime = time;
+		this.emptyDestroyTime = time;
 	}
 
 	/**
@@ -168,7 +168,7 @@ public class Instance
 	 */
 	public boolean containsPlayer(int objectId)
 	{
-		return _players.contains(objectId);
+		return this.players.contains(objectId);
 	}
 
 	/**
@@ -178,9 +178,9 @@ public class Instance
 	 */
 	public void addPlayer(int objectId)
 	{
-		synchronized (_players)
+		synchronized (this.players)
 		{
-			_players.add(objectId);
+			this.players.add(objectId);
 		}
 	}
 
@@ -191,15 +191,15 @@ public class Instance
 	 */
 	public void removePlayer(int objectId)
 	{
-		synchronized (_players)
+		synchronized (this.players)
 		{
-			_players.remove(objectId);
+			this.players.remove(objectId);
 		}
 
-		if (_players.isEmpty() && _emptyDestroyTime >= 0)
+		if (this.players.isEmpty() && this.emptyDestroyTime >= 0)
 		{
-			_lastLeft = System.currentTimeMillis();
-			setDuration((int) (_instanceEndTime - System.currentTimeMillis() - 500));
+			this.lastLeft = System.currentTimeMillis();
+			setDuration((int) (instanceEndTime - System.currentTimeMillis() - 500));
 		}
 	}
 
@@ -228,7 +228,7 @@ public class Instance
 
 	public void addNpc(L2Npc npc)
 	{
-		_npcs.add(npc);
+		this.npcs.add(npc);
 	}
 
 	public void removeNpc(L2Npc npc)
@@ -238,7 +238,7 @@ public class Instance
 			npc.getSpawn().stopRespawn();
 		}
 		//npc.deleteMe();
-		_npcs.remove(npc);
+		this.npcs.remove(npc);
 	}
 
 	/**
@@ -248,12 +248,12 @@ public class Instance
 	 */
 	public void addDoor(int doorId, StatsSet set)
 	{
-		if (_doors == null)
+		if (this.doors == null)
 		{
-			_doors = new ArrayList<>(2);
+			this.doors = new ArrayList<>(2);
 		}
 
-		for (L2DoorInstance door : _doors)
+		for (L2DoorInstance door : this.doors)
 		{
 			if (door.getDoorId() == doorId)
 			{
@@ -267,22 +267,22 @@ public class Instance
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(temp.posX, temp.posY, temp.posZ);
-		_doors.add(newdoor);
+		this.doors.add(newdoor);
 	}
 
 	public TIntHashSet getPlayers()
 	{
-		return _players;
+		return this.players;
 	}
 
 	public CopyOnWriteArrayList<L2Npc> getNpcs()
 	{
-		return _npcs;
+		return this.npcs;
 	}
 
 	public ArrayList<L2DoorInstance> getDoors()
 	{
-		return _doors;
+		return this.doors;
 	}
 
 	public L2DoorInstance getDoor(int id)
@@ -299,27 +299,27 @@ public class Instance
 
 	public long getInstanceEndTime()
 	{
-		return _instanceEndTime;
+		return instanceEndTime;
 	}
 
 	public long getInstanceStartTime()
 	{
-		return _instanceStartTime;
+		return instanceStartTime;
 	}
 
 	public boolean isShowTimer()
 	{
-		return _showTimer;
+		return this.showTimer;
 	}
 
 	public boolean isTimerIncrease()
 	{
-		return _isTimerIncrease;
+		return this.isTimerIncrease;
 	}
 
 	public String getTimerText()
 	{
-		return _timerText;
+		return this.timerText;
 	}
 
 	/**
@@ -329,7 +329,7 @@ public class Instance
 	 */
 	public int[] getSpawnLoc()
 	{
-		return _spawnLoc;
+		return this.spawnLoc;
 	}
 
 	/**
@@ -341,22 +341,22 @@ public class Instance
 		{
 			return;
 		}
-		System.arraycopy(loc, 0, _spawnLoc, 0, 3);
+		System.arraycopy(loc, 0, this.spawnLoc, 0, 3);
 	}
 
 	public void removePlayers()
 	{
-		_players.forEach(_ejectProc);
+		this.players.forEach(this.ejectProc);
 
-		synchronized (_players)
+		synchronized (this.players)
 		{
-			_players.clear();
+			this.players.clear();
 		}
 	}
 
 	public void removeNpcs()
 	{
-		for (L2Npc mob : _npcs)
+		for (L2Npc mob : this.npcs)
 		{
 			if (mob != null)
 			{
@@ -368,17 +368,17 @@ public class Instance
 				mob.setInstanceId(0);
 			}
 		}
-		_npcs.clear();
+		this.npcs.clear();
 	}
 
 	public void removeDoors()
 	{
-		if (_doors == null)
+		if (this.doors == null)
 		{
 			return;
 		}
 
-		for (L2DoorInstance door : _doors)
+		for (L2DoorInstance door : this.doors)
 		{
 			if (door != null)
 			{
@@ -394,8 +394,8 @@ public class Instance
 				L2World.getInstance().removeObject(door);
 			}
 		}
-		_doors.clear();
-		_doors = null;
+		this.doors.clear();
+		this.doors = null;
 	}
 
 	public void loadInstanceTemplate(String filename)
@@ -437,9 +437,9 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					_CheckTimeUpTask = ThreadPoolManager.getInstance()
+					this.CheckTimeUpTask = ThreadPoolManager.getInstance()
 							.scheduleGeneral(new CheckTimeUp(n.getInt("val") * 60000), 15000);
-					_instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
+					instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
 				}
 			}
 			/*			else if (n.getName().equalsIgnoreCase("timeDelay"))
@@ -459,22 +459,22 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					_emptyDestroyTime = n.getLong("val") * 1000;
+					this.emptyDestroyTime = n.getLong("val") * 1000;
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("showTimer"))
 			{
 				if (n.hasAttribute("val"))
 				{
-					_showTimer = n.getBool("val");
+					this.showTimer = n.getBool("val");
 				}
 				if (n.hasAttribute("increase"))
 				{
-					_isTimerIncrease = n.getBool("increase");
+					this.isTimerIncrease = n.getBool("increase");
 				}
 				if (n.hasAttribute("text"))
 				{
-					_timerText = n.getString("text");
+					this.timerText = n.getString("text");
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("PvPInstance"))
@@ -563,14 +563,14 @@ public class Instance
 			{
 				try
 				{
-					_spawnLoc[0] = n.getInt("spawnX");
-					_spawnLoc[1] = n.getInt("spawnY");
-					_spawnLoc[2] = n.getInt("spawnZ");
+					this.spawnLoc[0] = n.getInt("spawnX");
+					this.spawnLoc[1] = n.getInt("spawnY");
+					this.spawnLoc[2] = n.getInt("spawnZ");
 				}
 				catch (Exception e)
 				{
 					Log.log(Level.WARNING, "Error parsing instance xml: " + e.getMessage(), e);
-					_spawnLoc = new int[3];
+					this.spawnLoc = new int[3];
 				}
 			}
 		}
@@ -586,15 +586,15 @@ public class Instance
 		int timeLeft;
 		int interval;
 
-		if (_players.isEmpty() && _emptyDestroyTime == 0)
+		if (this.players.isEmpty() && this.emptyDestroyTime == 0)
 		{
 			remaining = 0;
 			interval = 500;
 		}
-		else if (_players.isEmpty() && _emptyDestroyTime > 0)
+		else if (this.players.isEmpty() && this.emptyDestroyTime > 0)
 		{
 
-			Long emptyTimeLeft = _lastLeft + _emptyDestroyTime - System.currentTimeMillis();
+			Long emptyTimeLeft = this.lastLeft + this.emptyDestroyTime - System.currentTimeMillis();
 			if (emptyTimeLeft <= 0)
 			{
 				interval = 0;
@@ -655,42 +655,42 @@ public class Instance
 		}
 		if (cs != null)
 		{
-			_players.forEach(new SendPacketToPlayerProcedure(cs));
+			this.players.forEach(new SendPacketToPlayerProcedure(cs));
 		}
 
 		cancelTimer();
-		//System.out.println(_id + " (" + getName() + "): " + remaining + " " + interval);
+		//System.out.println(this.id + " (" + getName() + "): " + remaining + " " + interval);
 		if (remaining >= 10000)
 		{
-			_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
+			this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
 		}
 		else
 		{
-			_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
+			this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
 		}
 	}
 
 	public void cancelTimer()
 	{
-		if (_CheckTimeUpTask != null)
+		if (this.CheckTimeUpTask != null)
 		{
-			_CheckTimeUpTask.cancel(true);
+			this.CheckTimeUpTask.cancel(true);
 		}
 	}
 
 	public class CheckTimeUp implements Runnable
 	{
-		private int _remaining;
+		private int remaining;
 
 		public CheckTimeUp(int remaining)
 		{
-			_remaining = remaining;
+			this.remaining = remaining;
 		}
 
 		@Override
 		public void run()
 		{
-			doCheckTimeUp(_remaining);
+			doCheckTimeUp(this.remaining);
 		}
 	}
 
@@ -720,11 +720,11 @@ public class Instance
 
 	private final class SendPacketToPlayerProcedure implements TIntProcedure
 	{
-		private final L2GameServerPacket _packet;
+		private final L2GameServerPacket packet;
 
 		SendPacketToPlayerProcedure(final L2GameServerPacket packet)
 		{
-			_packet = packet;
+			this.packet = packet;
 		}
 
 		@Override
@@ -734,7 +734,7 @@ public class Instance
 
 			if (player.getInstanceId() == getId())
 			{
-				player.sendPacket(_packet);
+				player.sendPacket(this.packet);
 			}
 			return true;
 		}

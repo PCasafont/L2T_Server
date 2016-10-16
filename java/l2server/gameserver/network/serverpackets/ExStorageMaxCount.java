@@ -34,29 +34,29 @@ import l2server.gameserver.stats.Stats;
  */
 public class ExStorageMaxCount extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
-	private int _inventory;
-	private int _warehouse;
-	private int _clan;
-	private int _privateSell;
-	private int _privateBuy;
-	private int _receipeD;
-	private int _recipe;
-	private int _inventoryExtraSlots;
-	private int _inventoryQuestItems;
+	private L2PcInstance activeChar;
+	private int inventory;
+	private int warehouse;
+	private int clan;
+	private int privateSell;
+	private int privateBuy;
+	private int receipeD;
+	private int recipe;
+	private int inventoryExtraSlots;
+	private int inventoryQuestItems;
 
 	public ExStorageMaxCount(L2PcInstance character)
 	{
-		_activeChar = character;
-		_inventory = _activeChar.getInventoryLimit();
-		_warehouse = _activeChar.getWareHouseLimit();
-		_privateSell = _activeChar.getPrivateSellStoreLimit();
-		_privateBuy = _activeChar.getPrivateBuyStoreLimit();
-		_clan = Config.WAREHOUSE_SLOTS_CLAN;
-		_receipeD = _activeChar.getDwarfRecipeLimit();
-		_recipe = _activeChar.getCommonRecipeLimit();
-		_inventoryExtraSlots = (int) _activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
-		_inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
+		this.activeChar = character;
+		this.inventory = this.activeChar.getInventoryLimit();
+		this.warehouse = this.activeChar.getWareHouseLimit();
+		this.privateSell = this.activeChar.getPrivateSellStoreLimit();
+		this.privateBuy = this.activeChar.getPrivateBuyStoreLimit();
+		this.clan = Config.WAREHOUSE_SLOTS_CLAN;
+		this.receipeD = this.activeChar.getDwarfRecipeLimit();
+		this.recipe = this.activeChar.getCommonRecipeLimit();
+		this.inventoryExtraSlots = (int) this.activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
+		this.inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 
 	/* (non-Javadoc)
@@ -65,15 +65,15 @@ public class ExStorageMaxCount extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_inventory);
-		writeD(_warehouse);
-		writeD(_clan);
-		writeD(_privateSell);
-		writeD(_privateBuy);
-		writeD(_receipeD);
-		writeD(_recipe);
-		writeD(_inventoryExtraSlots); // Belt inventory slots increase count
-		writeD(_inventoryQuestItems);
+		writeD(this.inventory);
+		writeD(this.warehouse);
+		writeD(this.clan);
+		writeD(this.privateSell);
+		writeD(this.privateBuy);
+		writeD(this.receipeD);
+		writeD(this.recipe);
+		writeD(this.inventoryExtraSlots); // Belt inventory slots increase count
+		writeD(this.inventoryQuestItems);
 		writeD(40);
 		writeD(40);
 	}

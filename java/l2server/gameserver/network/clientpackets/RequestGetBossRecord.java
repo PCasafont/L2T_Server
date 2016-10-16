@@ -29,12 +29,12 @@ import java.util.Map;
  */
 public class RequestGetBossRecord extends L2GameClientPacket
 {
-	private int _bossId;
+	private int bossId;
 
 	@Override
 	protected void readImpl()
 	{
-		_bossId = readD();
+		this.bossId = readD();
 	}
 
 	/**
@@ -48,9 +48,9 @@ public class RequestGetBossRecord extends L2GameClientPacket
 			return;
 		}
 
-		if (_bossId != 0)
+		if (this.bossId != 0)
 		{
-			Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " +
+			Log.info("C5: RequestGetBossRecord: d: " + this.bossId + " ActiveChar: " +
 					activeChar); // should be always 0, log it if isnt 0 for furture research
 		}
 

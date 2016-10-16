@@ -22,24 +22,24 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPCCafePointInfo extends L2GameServerPacket
 {
-	private int _unk1, _unk2, _unk3, _unk4, _unk5 = 0;
+	private int unk1, unk2, unk3, unk4, unk5 = 0;
 
 	public ExPCCafePointInfo(int val1, int val2, int val3, int val4, int val5)
 	{
-		_unk1 = val1;
-		_unk2 = val2;
-		_unk3 = val3;
-		_unk4 = val4;
-		_unk5 = val5;
+		this.unk1 = val1;
+		this.unk2 = val2;
+		this.unk3 = val3;
+		this.unk4 = val4;
+		this.unk5 = val5;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_unk1); // num points
-		writeD(_unk2); // points inc display
-		writeC(_unk3); // period(0=don't show window,1=acquisition,2=use points)
-		writeD(_unk4); // period hours left
-		writeC(_unk5); // points inc display color(0=yellow,1=cyan-blue,2=red,all other black)
+		writeD(this.unk1); // num points
+		writeD(this.unk2); // points inc display
+		writeC(this.unk3); // period(0=don't show window,1=acquisition,2=use points)
+		writeD(this.unk4); // period hours left
+		writeC(this.unk5); // points inc display color(0=yellow,1=cyan-blue,2=red,all other black)
 	}
 }

@@ -26,30 +26,30 @@ import l2server.util.Point3D;
 public class ValidateLocationInVehicle extends L2GameServerPacket
 {
 
-	private int _charObjId;
-	private int _boatObjId;
-	private int _heading;
-	private Point3D _pos;
+	private int charObjId;
+	private int boatObjId;
+	private int heading;
+	private Point3D pos;
 
 	/**
 	 * 0x80 ValidateLocationInVehicle		 hdd
 	 */
 	public ValidateLocationInVehicle(L2PcInstance player)
 	{
-		_charObjId = player.getObjectId();
-		_boatObjId = player.getBoat().getObjectId();
-		_heading = player.getHeading();
-		_pos = player.getInVehiclePosition();
+		this.charObjId = player.getObjectId();
+		this.boatObjId = player.getBoat().getObjectId();
+		this.heading = player.getHeading();
+		this.pos = player.getInVehiclePosition();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
-		writeD(_heading);
+		writeD(this.charObjId);
+		writeD(this.boatObjId);
+		writeD(this.pos.getX());
+		writeD(this.pos.getY());
+		writeD(this.pos.getZ());
+		writeD(this.heading);
 	}
 }

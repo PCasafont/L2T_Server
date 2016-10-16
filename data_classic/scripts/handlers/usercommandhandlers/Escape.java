@@ -15,6 +15,8 @@
 
 package handlers.usercommandhandlers;
 
+import java.util.logging.Level;
+
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
@@ -29,8 +31,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.util.Broadcast;
-
-import java.util.logging.Level;
+import l2server.log.Log;
 
 /**
  *
@@ -166,7 +167,7 @@ public class Escape implements IUserCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				Log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

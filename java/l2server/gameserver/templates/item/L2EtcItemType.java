@@ -58,8 +58,8 @@ public enum L2EtcItemType implements L2ItemType
 	SHOT(33, "Shot"),
 	HERB(34, "Herb");
 
-	final int _id;
-	final String _name;
+	final int id;
+	final String name;
 
 	/**
 	 * Constructor of the L2EtcItemType.
@@ -69,8 +69,8 @@ public enum L2EtcItemType implements L2ItemType
 	 */
 	L2EtcItemType(int id, String name)
 	{
-		_id = id;
-		_name = name;
+		this.id = id;
+		this.name = name;
 	}
 
 	/**
@@ -92,6 +92,6 @@ public enum L2EtcItemType implements L2ItemType
 	@Override
 	public String toString()
 	{
-		return _name;
+		return this.name;
 	}
 }

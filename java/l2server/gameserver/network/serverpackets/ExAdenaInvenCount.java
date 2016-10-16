@@ -20,19 +20,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExAdenaInvenCount extends L2GameServerPacket
 {
-	private final long _adena;
-	private final int _count;
+	private final long adena;
+	private final int count;
 
 	public ExAdenaInvenCount(long adena, int count)
 	{
-		_adena = adena;
-		_count = count;
+		this.adena = adena;
+		this.count = count;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(_adena);
-		writeH(_count);
+		writeQ(this.adena);
+		writeH(this.count);
 	}
 }

@@ -22,6 +22,8 @@
 
 package l2server.util.lib;
 
+import l2server.log.Log;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -32,13 +34,13 @@ import java.util.logging.Logger;
 
 public class LoginLog
 {
-	private static final Logger _log = Logger.getLogger(LoginLog.class.getName());
+	private static final Logger log = Logger.getLogger(LoginLog.class.getName());
 
 	public static void add(String text, String cat)
 	{
 		/*
-         * Logger _log = logs.get(cat); if (_log == null) { _log =
-		 * Logger.getLogger(cat); logs.put(cat, _log); }
+         * Logger this.log = logs.get(cat); if (this.log == null) { this.log =
+		 * Logger.getLogger(cat); logs.put(cat, this.log); }
 		 */
 
 		String date = new SimpleDateFormat("yy.MM.dd H:mm:ss").format(new Date());
@@ -55,7 +57,7 @@ public class LoginLog
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.WARNING, "Error saving logfile: ", e);
+			Log.log(Level.WARNING, "Error saving logfile: ", e);
 		}
 		finally
 		{

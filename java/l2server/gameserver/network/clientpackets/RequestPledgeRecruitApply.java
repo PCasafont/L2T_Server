@@ -29,16 +29,16 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
  */
 public final class RequestPledgeRecruitApply extends L2GameClientPacket
 {
-	private int _enter;
-	private int _clanId;
-	private String _application;
+	private int enter;
+	private int clanId;
+	private String application;
 
 	@Override
 	protected void readImpl()
 	{
-		_enter = readD();
-		_clanId = readD();
-		_application = readS();
+		this.enter = readD();
+		this.clanId = readD();
+		this.application = readS();
 	}
 
 	@Override
@@ -50,13 +50,13 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
 			return;
 		}
 
-		if (_enter == 1)
+		if (this.enter == 1)
 		{
-			if (ClanRecruitManager.getInstance().addApplicant(activeChar, _clanId, _application))
+			if (ClanRecruitManager.getInstance().addApplicant(activeChar, this.clanId, this.application))
 			{
 				activeChar.sendPacket(new ExPledgeRecruitApplyInfo(2));
 				//activeChar.sendMessage(4039);
-				L2Clan clan = ClanTable.getInstance().getClan(_clanId);
+				L2Clan clan = ClanTable.getInstance().getClan(this.clanId);
 
 				Message msg = new Message(clan.getLeaderId(), "Clan Application",
 						"There's a new applicant for your clan! Check out the clan entry for further information.",

@@ -39,29 +39,29 @@ import java.util.Map.Entry;
 
 public class SearchDropManager
 {
-	private static Map<Integer, Drops> _allDrops = new HashMap<>();
+	private static Map<Integer, Drops> allDrops = new HashMap<>();
 
 	private class Drops
 	{
-		private int _itemId;
-		private String _iemName;
-		private String _itemIcon;
-		private List<L2NpcTemplate> _droppedBy = new ArrayList<>();
-		private List<L2NpcTemplate> _spoilBy = new ArrayList<>();
+		private int itemId;
+		private String iemName;
+		private String itemIcon;
+		private List<L2NpcTemplate> droppedBy = new ArrayList<>();
+		private List<L2NpcTemplate> spoilBy = new ArrayList<>();
 
 		private Drops(int itemId, L2NpcTemplate npc, boolean isSpoil)
 		{
-			_itemId = itemId;
+			this.itemId = itemId;
 			L2Item temp = ItemTable.getInstance().getTemplate(itemId);
-			_iemName = temp.getName();
-			_itemIcon = temp.getIcon();
+			this.iemName = temp.getName();
+			this.itemIcon = temp.getIcon();
 			if (isSpoil)
 			{
-				_spoilBy.add(npc);
+				this.spoilBy.add(npc);
 			}
 			else
 			{
-				_droppedBy.add(npc);
+				this.droppedBy.add(npc);
 			}
 		}
 
@@ -69,35 +69,35 @@ public class SearchDropManager
 		{
 			if (isSpoil)
 			{
-				return _spoilBy;
+				return this.spoilBy;
 			}
-			return _droppedBy;
+			return this.droppedBy;
 		}
 
 		private int getItemId()
 		{
-			return _itemId;
+			return this.itemId;
 		}
 
 		private String getName()
 		{
-			return _iemName;
+			return this.iemName;
 		}
 
 		private String getIcon()
 		{
-			return _itemIcon;
+			return this.itemIcon;
 		}
 
 		private void addMonster(L2NpcTemplate t, boolean isSpoil)
 		{
 			if (isSpoil)
 			{
-				_spoilBy.add(t);
+				this.spoilBy.add(t);
 			}
 			else
 			{
-				_droppedBy.add(t);
+				this.droppedBy.add(t);
 			}
 		}
 	}
@@ -106,7 +106,7 @@ public class SearchDropManager
 	{
 		List<Drops> toReturn = new ArrayList<>();
 		List<String> itemNames = new ArrayList<>();
-		for (Entry<Integer, Drops> i : _allDrops.entrySet())
+		for (Entry<Integer, Drops> i : this.allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			if (d.getName().toLowerCase().trim().contains(name.toLowerCase()))
@@ -188,35 +188,35 @@ public class SearchDropManager
 		for (Entry<L2DropData, Float> i : drops.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (_allDrops.containsKey(data.getItemId()))
+			if (this.allDrops.containsKey(data.getItemId()))
 			{
-				_allDrops.get(data.getItemId()).addMonster(temp, false);
+				this.allDrops.get(data.getItemId()).addMonster(temp, false);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, false);
-				_allDrops.put(data.getItemId(), d);
+				this.allDrops.put(data.getItemId(), d);
 			}
 		}
 
 		for (Entry<L2DropData, Float> i : spoilDrop.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (_allDrops.containsKey(data.getItemId()))
+			if (this.allDrops.containsKey(data.getItemId()))
 			{
-				_allDrops.get(data.getItemId()).addMonster(temp, true);
+				this.allDrops.get(data.getItemId()).addMonster(temp, true);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, true);
-				_allDrops.put(data.getItemId(), d);
+				this.allDrops.put(data.getItemId(), d);
 			}
 		}
 	}
 
 	public String getDrops(L2PcInstance player, int itemId, boolean isSpoil, int pageToShow)
 	{
-		Drops i = _allDrops.get(itemId);
+		Drops i = this.allDrops.get(itemId);
 		if (i == null)
 		{
 			return "ERROR";
@@ -321,7 +321,7 @@ public class SearchDropManager
 		for (Drops d : drops)
 		{
 			sb.append("<tr><td><img src=" + d.getIcon() +
-					" width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;" +
+					" width=32 height=32></td><td width=568><a action=\"bypass this.bbscustom;action;searchDrop;" +
 					d.getItemId() + ";" + spoil + ";0\">" + d.getName() + "</a></td></tr>");
 		}
 		sb.append("</table>");
@@ -374,7 +374,7 @@ public class SearchDropManager
 
 	public void overrideDrops(L2NpcTemplate temp)
 	{
-		for (Entry<Integer, Drops> i : _allDrops.entrySet())
+		for (Entry<Integer, Drops> i : this.allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			List<L2NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));
@@ -399,12 +399,12 @@ public class SearchDropManager
 
 	public static SearchDropManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SearchDropManager _instance = new SearchDropManager();
+		protected static final SearchDropManager instance = new SearchDropManager();
 	}
 }

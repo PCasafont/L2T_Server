@@ -37,11 +37,11 @@ import l2server.gameserver.model.actor.L2ColosseumFence;
  */
 public class ExColosseumFenceInfo extends L2GameServerPacket
 {
-	private final L2ColosseumFence _fence;
+	private final L2ColosseumFence fence;
 
 	public ExColosseumFenceInfo(L2ColosseumFence fence)
 	{
-		_fence = fence;
+		this.fence = fence;
 	}
 
 	@Override
@@ -50,12 +50,12 @@ public class ExColosseumFenceInfo extends L2GameServerPacket
 		writeC(0xfe);
 		writeH(0x0003);
 
-		writeD(_fence.getObjectId());
-		writeD(_fence.getFenceState().ordinal());
-		writeD(_fence.getX());
-		writeD(_fence.getY());
-		writeD(_fence.getZ());
-		writeD(_fence.getFenceWidth());
-		writeD(_fence.getFenceHeight());
+		writeD(this.fence.getObjectId());
+		writeD(this.fence.getFenceState().ordinal());
+		writeD(this.fence.getX());
+		writeD(this.fence.getY());
+		writeD(this.fence.getZ());
+		writeD(this.fence.getFenceWidth());
+		writeD(this.fence.getFenceHeight());
 	}
 }

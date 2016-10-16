@@ -32,17 +32,17 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
  */
 public final class DoorInfo extends L2GameServerPacket
 {
-	private final L2DoorInstance _door;
+	private final L2DoorInstance door;
 
 	public DoorInfo(L2DoorInstance door)
 	{
-		_door = door;
+		this.door = door;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_door.getObjectId());
-		writeD(_door.getDoorId());
+		writeD(this.door.getObjectId());
+		writeD(this.door.getDoorId());
 	}
 }

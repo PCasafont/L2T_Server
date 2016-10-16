@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExTodoListHtml extends L2GameServerPacket
 {
-	private int _unk;
+	private int unk;
 
 	public ExTodoListHtml(int unk)
 	{
-		_unk = unk;
+		this.unk = unk;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeH(_unk);
+		writeH(this.unk);
 	}
 }

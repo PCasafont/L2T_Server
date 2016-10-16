@@ -31,7 +31,7 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestHennaEquip extends L2GameClientPacket
 {
-	private int _symbolId;
+	private int symbolId;
 
 	// format  cd
 
@@ -42,7 +42,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_symbolId = readD();
+		this.symbolId = readD();
 	}
 
 	@Override
@@ -59,13 +59,13 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			return;
 		}
 
-		L2Henna henna = HennaTable.getInstance().getTemplate(_symbolId);
+		L2Henna henna = HennaTable.getInstance().getTemplate(this.symbolId);
 		if (henna == null)
 		{
 			return;
 		}
 
-		long _count = 0;
+		long count = 0;
 
         /*
 		   Prevents henna drawing exploit:
@@ -86,7 +86,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		}
 		try
 		{
-			_count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
+			count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
 		}
 		catch (Exception ignored)
 		{
@@ -108,7 +108,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			}
 		}
 
-		if (!cheater && _count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() &&
+		if (!cheater && count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() &&
 				activeChar.addHenna(henna))
 		{
 			activeChar.destroyItemByItemId("Henna", henna.getDyeId(), henna.getAmountDyeRequire(), activeChar, true);

@@ -15,6 +15,8 @@
 
 package handlers.skillhandlers;
 
+import java.util.logging.Level;
+
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
@@ -25,15 +27,14 @@ import l2server.gameserver.network.serverpackets.ConfirmDlg;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
-
-import java.util.logging.Level;
+import l2server.log.Log;
 
 /**
  * @authors BiTi, Sami
  */
 public class SummonFriend implements ISkillHandler
 {
-	//private static Logger _log = Logger.getLogger(SummonFriend.class.getName());
+	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SUMMON_FRIEND};
 
 	/**
@@ -102,7 +103,7 @@ public class SummonFriend implements ISkillHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			Log.log(Level.SEVERE, "", e);
 		}
 	}
 

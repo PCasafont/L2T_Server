@@ -23,12 +23,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class RequestTodoList extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _unk;
+	private int unk;
 
 	@Override
 	protected void readImpl()
 	{
-		_unk = readH();
+		this.unk = readH();
 	}
 
 	@Override

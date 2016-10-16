@@ -27,8 +27,8 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 {
-	private boolean _init = false;
-	private ClanHall _clanHall = null;
+	private boolean init = false;
+	private ClanHall clanHall = null;
 
 	public L2ClanHallTeleporterInstance(int objectID, L2NpcTemplate template)
 	{
@@ -78,18 +78,18 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 	@Override
 	protected final void openDoors(L2PcInstance player, String command)
 	{
-		Location _loc = getClanHall().getZone().getSpawnLoc();
+		Location loc = getClanHall().getZone().getSpawnLoc();
 
-		if (_loc != null)
+		if (loc != null)
 		{
-			player.teleToLocation(_loc, false);
+			player.teleToLocation(loc, false);
 			if (player.getPet() != null)
 			{
-				player.getPet().teleToLocation(_loc, false);
+				player.getPet().teleToLocation(loc, false);
 			}
 			for (L2SummonInstance summon : player.getSummons())
 			{
-				summon.teleToLocation(_loc, false);
+				summon.teleToLocation(loc, false);
 			}
 		}
 	}
@@ -97,17 +97,17 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 	@Override
 	protected final void closeDoors(L2PcInstance player, String command)
 	{
-		Location _loc = getClanHall().getZone().getChaoticSpawnLoc();
-		if (_loc != null)
+		Location loc = getClanHall().getZone().getChaoticSpawnLoc();
+		if (loc != null)
 		{
-			player.teleToLocation(_loc, false);
+			player.teleToLocation(loc, false);
 			if (player.getPet() != null)
 			{
-				player.getPet().teleToLocation(_loc, false);
+				player.getPet().teleToLocation(loc, false);
 			}
 			for (L2SummonInstance summon : player.getSummons())
 			{
-				summon.teleToLocation(_loc, false);
+				summon.teleToLocation(loc, false);
 			}
 		}
 		else
@@ -126,18 +126,18 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 
 	private ClanHall getClanHall()
 	{
-		if (!_init)
+		if (!this.init)
 		{
 			synchronized (this)
 			{
-				if (!_init)
+				if (!this.init)
 				{
-					_clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
-					_init = true;
+					this.clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
+					this.init = true;
 				}
 			}
 		}
-		return _clanHall;
+		return this.clanHall;
 	}
 
 	@Override

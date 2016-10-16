@@ -33,7 +33,7 @@ import java.util.Map;
 public class ScenePlayerDataTable implements Reloadable
 {
 
-	private Map<Integer, Integer> _sceneDataTable;
+	private Map<Integer, Integer> sceneDataTable;
 
 	@Override
 	public boolean reload()
@@ -53,11 +53,11 @@ public class ScenePlayerDataTable implements Reloadable
 
 						int time = d.getInt("time");
 
-						_sceneDataTable.put(id, time);
+						this.sceneDataTable.put(id, time);
 					}
 				}
 
-				Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
+				Log.info("ScenePlayerTable: Loaded: " + this.sceneDataTable.size() + " scenes!");
 			}
 		}
 
@@ -66,22 +66,22 @@ public class ScenePlayerDataTable implements Reloadable
 
 	public static ScenePlayerDataTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public Map<Integer, Integer> getSceneTable()
 	{
-		return _sceneDataTable;
+		return this.sceneDataTable;
 	}
 
 	public int getVideoDuration(int vidId)
 	{
-		return _sceneDataTable.get(vidId);
+		return this.sceneDataTable.get(vidId);
 	}
 
 	private ScenePlayerDataTable()
 	{
-		_sceneDataTable = new HashMap<>();
+		this.sceneDataTable = new HashMap<>();
 
 		reload();
 
@@ -97,6 +97,6 @@ public class ScenePlayerDataTable implements Reloadable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ScenePlayerDataTable _instance = new ScenePlayerDataTable();
+		protected static final ScenePlayerDataTable instance = new ScenePlayerDataTable();
 	}
 }

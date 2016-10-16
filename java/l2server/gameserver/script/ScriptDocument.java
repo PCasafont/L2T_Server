@@ -32,18 +32,18 @@ import java.util.logging.Level;
  */
 public class ScriptDocument
 {
-	private Document _document;
-	private String _name;
+	private Document document;
+	private String name;
 
 	public ScriptDocument(String name, InputStream input)
 	{
-		_name = name;
+		this.name = name;
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try
 		{
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			_document = builder.parse(input);
+			this.document = builder.parse(input);
 		}
 		catch (SAXException sxe)
 		{
@@ -64,20 +64,20 @@ public class ScriptDocument
 
 	public Document getDocument()
 	{
-		return _document;
+		return this.document;
 	}
 
 	/**
-	 * @return Returns the _name.
+	 * @return Returns the this.name.
 	 */
 	public String getName()
 	{
-		return _name;
+		return this.name;
 	}
 
 	@Override
 	public String toString()
 	{
-		return _name;
+		return this.name;
 	}
 }

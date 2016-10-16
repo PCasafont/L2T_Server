@@ -15,6 +15,8 @@
 
 package ai.individual.Summons;
 
+import java.util.concurrent.ScheduledFuture;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
@@ -23,8 +25,6 @@ import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -35,15 +35,15 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ProtectionStone extends L2AttackableAIScript
 {
-    private static final int _protectionStoneId = 13423;
-    private static final int _arcaneProtectionId = 11360;
-    private static final int _summonProtectionStoneId = 11359;
+    private static final int protectionStoneId = 13423;
+    private static final int arcaneProtectionId = 11360;
+    private static final int summonProtectionStoneId = 11359;
 
     public ProtectionStone(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addSpawnId(_protectionStoneId);
+        addSpawnId(this.protectionStoneId);
     }
 
     @Override
@@ -60,41 +60,41 @@ public class ProtectionStone extends L2AttackableAIScript
 
     class ProtectionStoneAI implements Runnable
     {
-        private L2Npc _protectionStone;
-        private L2PcInstance _owner;
-        private ScheduledFuture<?> _schedule = null;
+        private L2Npc protectionStone;
+        private L2PcInstance owner;
+        private ScheduledFuture<?> schedule = null;
         @SuppressWarnings("unused")
-        private L2Skill _arcaneProtection;
+        private L2Skill arcaneProtection;
 
         protected ProtectionStoneAI(L2Npc npc)
         {
-            _protectionStone = npc;
-            _owner = npc.getOwner();
-            _arcaneProtection = SkillTable.getInstance()
-                    .getInfo(_arcaneProtectionId, _owner.getSkillLevelHash(_summonProtectionStoneId));
+            this.protectionStone = npc;
+            this.owner = npc.getOwner();
+            this.arcaneProtection = SkillTable.getInstance()
+                    .getInfo(arcaneProtectionId, this.owner.getSkillLevelHash(summonProtectionStoneId));
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
         {
-            _schedule = schedule;
+            this.schedule = schedule;
         }
 
         @Override
         public void run()
         {
-            if (_protectionStone == null || _protectionStone.isDead() || _protectionStone.isDecayed())
+            if (this.protectionStone == null || this.protectionStone.isDead() || this.protectionStone.isDecayed())
             {
-                if (_schedule != null)
+                if (this.schedule != null)
                 {
-                    _schedule.cancel(true);
+                    this.schedule.cancel(true);
                     return;
                 }
             }
 
-            L2Party party = _owner.getParty();
-            for (L2PcInstance player : _protectionStone.getKnownList().getKnownPlayersInRadius(250))
+            L2Party party = this.owner.getParty();
+            for (L2PcInstance player : this.protectionStone.getKnownList().getKnownPlayersInRadius(250))
             {
-                if (player != _owner && (player.getParty() == null || player.getParty() != party))
+                if (player != this.owner && (player.getParty() == null || player.getParty() != party))
                 {
                     continue;
                 }
@@ -115,7 +115,7 @@ public class ProtectionStone extends L2AttackableAIScript
 
                 final L2Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
 
-                skill.getEffects(_protectionStone, player);
+                skill.getEffects(this.protectionStone, player);
             }
         }
     }

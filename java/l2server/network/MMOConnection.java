@@ -34,49 +34,49 @@ import java.nio.channels.WritableByteChannel;
  */
 public class MMOConnection<T extends MMOClient<?>>
 {
-	private final Core<T> _selectorThread;
+	private final Core<T> selectorThread;
 
-	private final Socket _socket;
+	private final Socket socket;
 
-	private final InetAddress _address;
+	private final InetAddress address;
 
-	private final ReadableByteChannel _readableByteChannel;
+	private final ReadableByteChannel readableByteChannel;
 
-	private final WritableByteChannel _writableByteChannel;
+	private final WritableByteChannel writableByteChannel;
 
-	private final int _port;
+	private final int port;
 
-	private final NioNetStackList<SendablePacket<T>> _sendQueue;
+	private final NioNetStackList<SendablePacket<T>> sendQueue;
 
-	private final SelectionKey _selectionKey;
+	private final SelectionKey selectionKey;
 
-	// private SendablePacket<T> _closePacket;
+	// private SendablePacket<T> closePacket;
 
-	private ByteBuffer _readBuffer;
+	private ByteBuffer readBuffer;
 
-	private ByteBuffer _primaryWriteBuffer;
+	private ByteBuffer primaryWriteBuffer;
 
-	private ByteBuffer _secondaryWriteBuffer;
+	private ByteBuffer secondaryWriteBuffer;
 
-	private volatile boolean _pendingClose;
+	private volatile boolean pendingClose;
 
-	private T _client;
+	private T client;
 
 	public MMOConnection(final Core<T> selectorThread, final Socket socket, final SelectionKey key, boolean tcpNoDelay)
 	{
-		_selectorThread = selectorThread;
-		_socket = socket;
-		_address = socket.getInetAddress();
-		_readableByteChannel = socket.getChannel();
-		_writableByteChannel = socket.getChannel();
-		_port = socket.getPort();
-		_selectionKey = key;
+		this.selectorThread = selectorThread;
+		this.socket = socket;
+		this.address = socket.getInetAddress();
+		this.readableByteChannel = socket.getChannel();
+		this.writableByteChannel = socket.getChannel();
+		this.port = socket.getPort();
+		this.selectionKey = key;
 
-		_sendQueue = new NioNetStackList<>();
+		this.sendQueue = new NioNetStackList<>();
 
 		try
 		{
-			_socket.setTcpNoDelay(tcpNoDelay);
+			this.socket.setTcpNoDelay(tcpNoDelay);
 		}
 		catch (SocketException e)
 		{
@@ -86,33 +86,33 @@ public class MMOConnection<T extends MMOClient<?>>
 
 	final void setClient(final T client)
 	{
-		_client = client;
+		this.client = client;
 	}
 
 	public final T getClient()
 	{
-		return _client;
+		return this.client;
 	}
 
 	public final void sendPacket(final SendablePacket<T> sp)
 	{
-		sp._client = _client;
+		sp.client = this.client;
 
-		if (_pendingClose)
+		if (this.pendingClose)
 		{
 			return;
 		}
 
 		synchronized (getSendQueue())
 		{
-			_sendQueue.addLast(sp);
+			this.sendQueue.addLast(sp);
 		}
 
-		if (!_sendQueue.isEmpty())
+		if (!this.sendQueue.isEmpty())
 		{
 			try
 			{
-				_selectionKey.interestOps(_selectionKey.interestOps() | SelectionKey.OP_WRITE);
+				this.selectionKey.interestOps(this.selectionKey.interestOps() | SelectionKey.OP_WRITE);
 			}
 			catch (CancelledKeyException e)
 			{
@@ -123,104 +123,104 @@ public class MMOConnection<T extends MMOClient<?>>
 
 	final SelectionKey getSelectionKey()
 	{
-		return _selectionKey;
+		return this.selectionKey;
 	}
 
 	public final InetAddress getInetAddress()
 	{
-		return _address;
+		return this.address;
 	}
 
 	public final int getPort()
 	{
-		return _port;
+		return this.port;
 	}
 
 	final void close() throws IOException
 	{
-		_socket.close();
+		this.socket.close();
 	}
 
 	final int read(final ByteBuffer buf) throws IOException
 	{
-		return _readableByteChannel.read(buf);
+		return this.readableByteChannel.read(buf);
 	}
 
 	final int write(final ByteBuffer buf) throws IOException
 	{
-		return _writableByteChannel.write(buf);
+		return this.writableByteChannel.write(buf);
 	}
 
 	final void createWriteBuffer(final ByteBuffer buf)
 	{
-		if (_primaryWriteBuffer == null)
+		if (this.primaryWriteBuffer == null)
 		{
-			_primaryWriteBuffer = _selectorThread.getPooledBuffer();
-			_primaryWriteBuffer.put(buf);
+			this.primaryWriteBuffer = this.selectorThread.getPooledBuffer();
+			this.primaryWriteBuffer.put(buf);
 		}
 		else
 		{
-			final ByteBuffer temp = _selectorThread.getPooledBuffer();
+			final ByteBuffer temp = this.selectorThread.getPooledBuffer();
 			temp.put(buf);
 
 			final int remaining = temp.remaining();
-			_primaryWriteBuffer.flip();
-			final int limit = _primaryWriteBuffer.limit();
+			this.primaryWriteBuffer.flip();
+			final int limit = this.primaryWriteBuffer.limit();
 
-			if (remaining >= _primaryWriteBuffer.remaining())
+			if (remaining >= this.primaryWriteBuffer.remaining())
 			{
-				temp.put(_primaryWriteBuffer);
-				_selectorThread.recycleBuffer(_primaryWriteBuffer);
-				_primaryWriteBuffer = temp;
+				temp.put(this.primaryWriteBuffer);
+				this.selectorThread.recycleBuffer(this.primaryWriteBuffer);
+				this.primaryWriteBuffer = temp;
 			}
 			else
 			{
-				_primaryWriteBuffer.limit(remaining);
-				temp.put(_primaryWriteBuffer);
-				_primaryWriteBuffer.limit(limit);
-				_primaryWriteBuffer.compact();
-				_secondaryWriteBuffer = _primaryWriteBuffer;
-				_primaryWriteBuffer = temp;
+				this.primaryWriteBuffer.limit(remaining);
+				temp.put(this.primaryWriteBuffer);
+				this.primaryWriteBuffer.limit(limit);
+				this.primaryWriteBuffer.compact();
+				this.secondaryWriteBuffer = this.primaryWriteBuffer;
+				this.primaryWriteBuffer = temp;
 			}
 		}
 	}
 
 	final boolean hasPendingWriteBuffer()
 	{
-		return _primaryWriteBuffer != null;
+		return this.primaryWriteBuffer != null;
 	}
 
 	final void movePendingWriteBufferTo(final ByteBuffer dest)
 	{
-		_primaryWriteBuffer.flip();
-		dest.put(_primaryWriteBuffer);
-		_selectorThread.recycleBuffer(_primaryWriteBuffer);
-		_primaryWriteBuffer = _secondaryWriteBuffer;
-		_secondaryWriteBuffer = null;
+		this.primaryWriteBuffer.flip();
+		dest.put(this.primaryWriteBuffer);
+		this.selectorThread.recycleBuffer(this.primaryWriteBuffer);
+		this.primaryWriteBuffer = this.secondaryWriteBuffer;
+		this.secondaryWriteBuffer = null;
 	}
 
 	final void setReadBuffer(final ByteBuffer buf)
 	{
-		_readBuffer = buf;
+		this.readBuffer = buf;
 	}
 
 	final ByteBuffer getReadBuffer()
 	{
-		return _readBuffer;
+		return this.readBuffer;
 	}
 
 	public final boolean isClosed()
 	{
-		return _pendingClose;
+		return this.pendingClose;
 	}
 
 	final NioNetStackList<SendablePacket<T>> getSendQueue()
 	{
-		return _sendQueue;
+		return this.sendQueue;
 	}
 
 	/*
-	 * final SendablePacket<T> getClosePacket() { return _closePacket; }
+	 * final SendablePacket<T> getClosePacket() { return this.closePacket; }
 	 */
 
 	@SuppressWarnings("unchecked")
@@ -232,55 +232,55 @@ public class MMOConnection<T extends MMOClient<?>>
 
 	public final void close(final SendablePacket<T>[] closeList)
 	{
-		if (_pendingClose)
+		if (this.pendingClose)
 		{
 			return;
 		}
 
 		synchronized (getSendQueue())
 		{
-			if (!_pendingClose)
+			if (!this.pendingClose)
 			{
-				_pendingClose = true;
-				_sendQueue.clear();
+				this.pendingClose = true;
+				this.sendQueue.clear();
 				for (SendablePacket<T> sp : closeList)
 				{
-					_sendQueue.addLast(sp);
+					this.sendQueue.addLast(sp);
 				}
 			}
 		}
 
 		try
 		{
-			_selectionKey.interestOps(_selectionKey.interestOps() & ~SelectionKey.OP_WRITE);
+			this.selectionKey.interestOps(this.selectionKey.interestOps() & ~SelectionKey.OP_WRITE);
 		}
 		catch (CancelledKeyException e)
 		{
 			// ignore
 		}
 
-		// _closePacket = sp;
-		_selectorThread.closeConnection(this);
+		// this.closePacket = sp;
+		this.selectorThread.closeConnection(this);
 	}
 
 	final void releaseBuffers()
 	{
-		if (_primaryWriteBuffer != null)
+		if (this.primaryWriteBuffer != null)
 		{
-			_selectorThread.recycleBuffer(_primaryWriteBuffer);
-			_primaryWriteBuffer = null;
+			this.selectorThread.recycleBuffer(this.primaryWriteBuffer);
+			this.primaryWriteBuffer = null;
 
-			if (_secondaryWriteBuffer != null)
+			if (this.secondaryWriteBuffer != null)
 			{
-				_selectorThread.recycleBuffer(_secondaryWriteBuffer);
-				_secondaryWriteBuffer = null;
+				this.selectorThread.recycleBuffer(this.secondaryWriteBuffer);
+				this.secondaryWriteBuffer = null;
 			}
 		}
 
-		if (_readBuffer != null)
+		if (this.readBuffer != null)
 		{
-			_selectorThread.recycleBuffer(_readBuffer);
-			_readBuffer = null;
+			this.selectorThread.recycleBuffer(this.readBuffer);
+			this.readBuffer = null;
 		}
 	}
 }

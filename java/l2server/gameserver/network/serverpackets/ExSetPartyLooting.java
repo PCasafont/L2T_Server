@@ -21,19 +21,19 @@ package l2server.gameserver.network.serverpackets;
 public class ExSetPartyLooting extends L2GameServerPacket
 {
 
-	private int _result;
-	private byte _mode;
+	private int result;
+	private byte mode;
 
 	public ExSetPartyLooting(int result, byte mode)
 	{
-		_result = result;
-		_mode = mode;
+		this.result = result;
+		this.mode = mode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_result);
-		writeD(_mode);
+		writeD(this.result);
+		writeD(this.mode);
 	}
 }

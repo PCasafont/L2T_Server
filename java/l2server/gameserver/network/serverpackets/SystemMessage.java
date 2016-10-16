@@ -45,43 +45,43 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private static final class SMParam
 	{
-		private final byte _type;
-		private final Object _value;
+		private final byte type;
+		private final Object value;
 
 		public SMParam(final byte type, final Object value)
 		{
-			_type = type;
-			_value = value;
+			this.type = type;
+			this.value = value;
 		}
 
 		public final byte getType()
 		{
-			return _type;
+			return this.type;
 		}
 
 		public final Object getValue()
 		{
-			return _value;
+			return this.value;
 		}
 
 		public final String getStringValue()
 		{
-			return (String) _value;
+			return (String) this.value;
 		}
 
 		public final int getIntValue()
 		{
-			return (Integer) _value;
+			return (Integer) this.value;
 		}
 
 		public final long getLongValue()
 		{
-			return (Long) _value;
+			return (Long) this.value;
 		}
 
 		public final int[] getIntArrayValue()
 		{
-			return (int[]) _value;
+			return (int[]) this.value;
 		}
 	}
 
@@ -143,15 +143,15 @@ public final class SystemMessage extends L2GameServerPacket
 		return getSystemMessage(SystemMessageId.getSystemMessageId(id));
 	}
 
-	private final SystemMessageId _smId;
-	private SMParam[] _params;
-	private int _paramIndex;
+	private final SystemMessageId smId;
+	private SMParam[] params;
+	private int paramIndex;
 
 	private SystemMessage(final SystemMessageId smId)
 	{
 		final int paramCount = smId.getParamCount();
-		_smId = smId;
-		_params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
+		this.smId = smId;
+		this.params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
 	}
 
 	/**
@@ -167,14 +167,14 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private void append(final SMParam param)
 	{
-		if (_paramIndex >= _params.length)
+		if (this.paramIndex >= this.params.length)
 		{
-			_params = Arrays.copyOf(_params, _paramIndex + 1);
-			_smId.setParamCount(_paramIndex + 1);
-			Log.log(Level.INFO, "Wrong parameter count '" + (_paramIndex + 1) + "' for SystemMessageId: " + _smId);
+			this.params = Arrays.copyOf(this.params, this.paramIndex + 1);
+			this.smId.setParamCount(this.paramIndex + 1);
+			Log.log(Level.INFO, "Wrong parameter count '" + (this.paramIndex + 1) + "' for SystemMessageId: " + this.smId);
 		}
 
-		_params[_paramIndex++] = param;
+		this.params[this.paramIndex++] = param;
 	}
 
 	public final SystemMessage addString(final String text)
@@ -364,29 +364,29 @@ public final class SystemMessage extends L2GameServerPacket
 
 	public final SystemMessageId getSystemMessageId()
 	{
-		return _smId;
+		return this.smId;
 	}
 
 	public final SystemMessage getLocalizedMessage(final String lang)
 	{
-		if (_smId == SystemMessageId.S1)
+		if (this.smId == SystemMessageId.S1)
 		{
 			return this;
 		}
 
-		final SMLocalisation sml = _smId.getLocalisation(lang);
+		final SMLocalisation sml = this.smId.getLocalisation(lang);
 		if (sml == null)
 		{
 			return this;
 		}
 
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
-		final Object[] params = new Object[_paramIndex];
+		final Object[] params = new Object[this.paramIndex];
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < this.paramIndex; i++)
 		{
-			param = _params[i];
+			param = this.params[i];
 
 			switch (param.getType())
 			{
@@ -476,13 +476,13 @@ public final class SystemMessage extends L2GameServerPacket
 	{
 		out.println(0x62);
 
-		out.println(_smId.getId());
-		out.println(_paramIndex);
+		out.println(this.smId.getId());
+		out.println(this.paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < this.paramIndex; i++)
 		{
-			param = _params[i];
+			param = this.params[i];
 			out.println(param.getType());
 
 			switch (param.getType())
@@ -535,13 +535,13 @@ public final class SystemMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(_smId.getId());
-		writeC(_paramIndex);
+		writeH(this.smId.getId());
+		writeC(this.paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < this.paramIndex; i++)
 		{
-			param = _params[i];
+			param = this.params[i];
 			writeC(param.getType());
 
 			switch (param.getType())

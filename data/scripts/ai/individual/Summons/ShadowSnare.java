@@ -15,13 +15,13 @@
 
 package ai.individual.Summons;
 
+import java.util.concurrent.ScheduledFuture;
+
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
-
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
@@ -32,14 +32,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ShadowSnare extends L2AttackableAIScript
 {
-	private static final int[] _whisperOfFearIds = {13323, 13324, 13325};
-	private static final L2Skill _shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
+	private static final int[] whisperOfFearIds = {13323, 13324, 13325};
+	private static final L2Skill shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
 
 	public ShadowSnare(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int i : _whisperOfFearIds)
+		for (int i : this.whisperOfFearIds)
 		{
 			addSpawnId(i);
 		}
@@ -59,34 +59,34 @@ public class ShadowSnare extends L2AttackableAIScript
 
 	class ShadowSnareAI implements Runnable
 	{
-		private L2Npc _whisperOfFear;
-		private ScheduledFuture<?> _schedule = null;
+		private L2Npc whisperOfFear;
+		private ScheduledFuture<?> schedule = null;
 
 		protected ShadowSnareAI(L2Npc npc)
 		{
-			_whisperOfFear = npc;
+			this.whisperOfFear = npc;
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
 		{
-			_schedule = schedule;
+			this.schedule = schedule;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_whisperOfFear == null || _whisperOfFear.isDead() || _whisperOfFear.isDecayed() ||
-					_whisperOfFear.getOwner().isAlikeDead())
+			if (this.whisperOfFear == null || this.whisperOfFear.isDead() || this.whisperOfFear.isDecayed() ||
+					this.whisperOfFear.getOwner().isAlikeDead())
 			{
-				if (_schedule != null)
+				if (this.schedule != null)
 				{
-					_schedule.cancel(true);
+					this.schedule.cancel(true);
 					return;
 				}
 			}
 
-			_whisperOfFear.setTarget(_whisperOfFear);
-			_whisperOfFear.doCast(_shadowSnareZone);
+			this.whisperOfFear.setTarget(this.whisperOfFear);
+			this.whisperOfFear.doCast(shadowSnareZone);
 		}
 	}
 

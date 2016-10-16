@@ -15,6 +15,9 @@
 
 package ai.group_template;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
@@ -22,9 +25,6 @@ import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ZombieGatekeepers extends L2AttackableAIScript
 {
@@ -35,7 +35,7 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 		super.addAggroRangeEnterId(22136);
 	}
 
-	private HashMap<Integer, ArrayList<L2Character>> _attackersList = new HashMap<Integer, ArrayList<L2Character>>();
+	private HashMap<Integer, ArrayList<L2Character>> attackersList = new HashMap<Integer, ArrayList<L2Character>>();
 
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
@@ -44,15 +44,15 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 
 		L2Character target = isPet ? attacker.getPet() : attacker;
 
-		if (_attackersList.get(npcObjId) == null)
+		if (this.attackersList.get(npcObjId) == null)
 		{
 			ArrayList<L2Character> player = new ArrayList<L2Character>();
 			player.add(target);
-			_attackersList.put(npcObjId, player);
+			this.attackersList.put(npcObjId, player);
 		}
-		else if (!_attackersList.get(npcObjId).contains(target))
+		else if (!this.attackersList.get(npcObjId).contains(target))
 		{
-			_attackersList.get(npcObjId).add(target);
+			this.attackersList.get(npcObjId).add(target);
 		}
 
 		return super.onAttack(npc, attacker, damage, isPet);
@@ -80,7 +80,7 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 		}
 		else
 		{
-			if (_attackersList.get(npcObjId) == null || !_attackersList.get(npcObjId).contains(target))
+			if (this.attackersList.get(npcObjId) == null || !this.attackersList.get(npcObjId).contains(target))
 			{
 				((L2Attackable) npc).getAggroList().remove(target);
 			}
@@ -98,9 +98,9 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
 		int npcObjId = npc.getObjectId();
-		if (_attackersList.get(npcObjId) != null)
+		if (this.attackersList.get(npcObjId) != null)
 		{
-			_attackersList.get(npcObjId).clear();
+			this.attackersList.get(npcObjId).clear();
 		}
 
 		return super.onKill(npc, killer, isPet);

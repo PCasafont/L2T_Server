@@ -20,38 +20,38 @@ import l2server.gameserver.model.L2Clan;
 public class ManagePledgePower extends L2GameServerPacket
 {
 
-	private int _action;
-	private L2Clan _clan;
-	private int _rank;
-	private int _privs;
+	private int action;
+	private L2Clan clan;
+	private int rank;
+	private int privs;
 
 	public ManagePledgePower(L2Clan clan, int action, int rank)
 	{
-		_clan = clan;
-		_action = action;
-		_rank = rank;
+		this.clan = clan;
+		this.action = action;
+		this.rank = rank;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (_action == 1)
+		if (this.action == 1)
 		{
-			_privs = _clan.getRankPrivs(_rank);
+			this.privs = this.clan.getRankPrivs(this.rank);
 		}
 		else
 		{
 			return;
 			/*
-            if (L2World.getInstance().findObject(_clanId) == null)
+            if (L2World.getInstance().findObject(this.clanId) == null)
 				return;
 
-			privs = ((L2PcInstance)L2World.getInstance().findObject(_clanId)).getClanPrivileges();
+			privs = ((L2PcInstance)L2World.getInstance().findObject(this.clanId)).getClanPrivileges();
 			 */
 		}
 
 		writeD(0);
 		writeD(0);
-		writeD(_privs);
+		writeD(this.privs);
 	}
 }

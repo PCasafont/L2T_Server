@@ -34,8 +34,8 @@ public class L2PcTemplate extends L2CharTemplate
 	public final double fCollisionHeightFemale;
 	public final double fCollisionRadiusFemale;
 
-	private List<PcTemplateItem> _items = new ArrayList<>();
-	private List<Integer> _skillIds = new ArrayList<>();
+	private List<PcTemplateItem> items = new ArrayList<>();
+	private List<Integer> skillIds = new ArrayList<>();
 
 	public L2PcTemplate(StatsSet set)
 	{
@@ -60,13 +60,13 @@ public class L2PcTemplate extends L2CharTemplate
 	{
 		if (amount == 1 || !equipped)
 		{
-			_items.add(new PcTemplateItem(itemId, amount, equipped));
+			this.items.add(new PcTemplateItem(itemId, amount, equipped));
 		}
 		else
 		{
 			for (int i = 0; i < amount; i++)
 			{
-				_items.add(new PcTemplateItem(itemId, 1, equipped));
+				this.items.add(new PcTemplateItem(itemId, 1, equipped));
 			}
 		}
 	}
@@ -76,14 +76,14 @@ public class L2PcTemplate extends L2CharTemplate
 	 */
 	public List<PcTemplateItem> getItems()
 	{
-		return _items;
+		return this.items;
 	}
 
 	public static final class PcTemplateItem
 	{
-		private final int _itemId;
-		private final int _amount;
-		private final boolean _equipped;
+		private final int itemId;
+		private final int amount;
+		private final boolean equipped;
 
 		/**
 		 * @param amount
@@ -91,9 +91,9 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public PcTemplateItem(int itemId, int amount, boolean equipped)
 		{
-			_itemId = itemId;
-			_amount = amount;
-			_equipped = equipped;
+			this.itemId = itemId;
+			this.amount = amount;
+			this.equipped = equipped;
 		}
 
 		/**
@@ -101,7 +101,7 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public int getItemId()
 		{
-			return _itemId;
+			return this.itemId;
 		}
 
 		/**
@@ -109,7 +109,7 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public int getAmount()
 		{
-			return _amount;
+			return this.amount;
 		}
 
 		/**
@@ -117,18 +117,18 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public boolean isEquipped()
 		{
-			return _equipped;
+			return this.equipped;
 		}
 	}
 
 	public void addSkill(int id)
 	{
-		_skillIds.add(id);
+		this.skillIds.add(id);
 	}
 
 	public List<Integer> getSkillIds()
 	{
-		return _skillIds;
+		return this.skillIds;
 	}
 
 	public final int getFallHeight()

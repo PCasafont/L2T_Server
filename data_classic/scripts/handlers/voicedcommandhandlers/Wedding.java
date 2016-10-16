@@ -15,6 +15,11 @@
 
 package handlers.voicedcommandhandlers;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -30,14 +35,14 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.ConfirmDlg;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SetupGauge;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Broadcast;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import l2server.log.Log;
 
 /**
  * @author evill33t
@@ -222,7 +227,7 @@ public class Wedding implements IVoicedCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("could not read friend data:" + e);
+			Log.warning("could not read friend data:" + e);
 		}
 		finally
 		{
@@ -255,7 +260,7 @@ public class Wedding implements IVoicedCommandHandler
 		if (activeChar.getPartnerId() == 0)
 		{
 			activeChar.sendMessage("Couldn't find your fiance in the Database - Inform a Gamemaster.");
-			_log.severe("Married but couldn't find parter for " + activeChar.getName());
+			Log.severe("Married but couldn't find parter for " + activeChar.getName());
 			return false;
 		}
 		else if (activeChar.getIsInsideGMEvent())
@@ -450,7 +455,7 @@ public class Wedding implements IVoicedCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				Log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

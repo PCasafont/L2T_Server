@@ -24,14 +24,14 @@ import l2server.gameserver.model.L2ClanMember;
  */
 public class PledgeReceivePowerInfo extends L2GameServerPacket
 {
-	private L2ClanMember _member;
+	private L2ClanMember member;
 
 	/**
 	 * @param member
 	 */
 	public PledgeReceivePowerInfo(L2ClanMember member)
 	{
-		_member = member;
+		this.member = member;
 	}
 
 	/**
@@ -39,8 +39,8 @@ public class PledgeReceivePowerInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_member.getPowerGrade()); //power grade
-		writeS(_member.getName());
-		writeD(_member.getClan().getRankPrivs(_member.getPowerGrade())); //privileges
+		writeD(this.member.getPowerGrade()); //power grade
+		writeS(this.member.getName());
+		writeD(this.member.getClan().getRankPrivs(this.member.getPowerGrade())); //privileges
 	}
 }

@@ -36,18 +36,18 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class PlayerClassTable implements Reloadable
 {
-	private Map<Integer, PlayerClass> _classes = new HashMap<>();
+	private Map<Integer, PlayerClass> classes = new HashMap<>();
 
-	private Map<Long, Integer> _minSkillLevels = new HashMap<>();
+	private Map<Long, Integer> minSkillLevels = new HashMap<>();
 
-	private final List<Integer> _mainSubclassSet = new ArrayList<>();
-	private final List<Integer> _neverSubclassed = new ArrayList<>();
+	private final List<Integer> mainSubclassSet = new ArrayList<>();
+	private final List<Integer> neverSubclassed = new ArrayList<>();
 
-	private final Map<Integer, List<Integer>> _awakeningBannedSubclasses = new HashMap<>();
+	private final Map<Integer, List<Integer>> awakeningBannedSubclasses = new HashMap<>();
 
 	public static PlayerClassTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private PlayerClassTable()
@@ -86,7 +86,7 @@ public class PlayerClassTable implements Reloadable
 						int level = classNode.getInt("level");
 
 						PlayerClass cl =
-								new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level);
+								new PlayerClass(id, name, this.classes.get(parentId), awakensTo, isMage, raceId, level);
 
 						if (cl.getParent() != null)
 						{
@@ -95,7 +95,7 @@ public class PlayerClassTable implements Reloadable
 
 						if (classNode.hasAttribute("pickSkillsFrom"))
 						{
-							PlayerClass pickSkillsFrom = _classes.get(classNode.getInt("pickSkillsFrom"));
+							PlayerClass pickSkillsFrom = this.classes.get(classNode.getInt("pickSkillsFrom"));
 							cl.getSkills().putAll(pickSkillsFrom.getSkills());
 						}
 
@@ -131,7 +131,7 @@ public class PlayerClassTable implements Reloadable
 									}
 
 									cl.addSkill(hash, sl);
-									_minSkillLevels.put(hash, minLevel);
+									this.minSkillLevels.put(hash, minLevel);
 								}
 							}
 							else if (subNode.getName().equalsIgnoreCase("skillReplacement"))
@@ -237,7 +237,7 @@ public class PlayerClassTable implements Reloadable
 							}
 						}
 
-						_classes.put(id, cl);
+						this.classes.put(id, cl);
 						count++;
 					}
 					else if (classNode.getName().equalsIgnoreCase("skill"))
@@ -256,13 +256,13 @@ public class PlayerClassTable implements Reloadable
 						{
 							int skillLevel = Integer.valueOf(mls);
 							long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
-							for (int PlayerClass : _classes.keySet())
+							for (int PlayerClass : this.classes.keySet())
 							{
-								_classes.get(PlayerClass).addSkill(hash,
+								this.classes.get(PlayerClass).addSkill(hash,
 										new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
 												learnFromPanel, learnFromFS, isTransfer, autoGet));
 							}
-							_minSkillLevels.put(hash, minLevel);
+							this.minSkillLevels.put(hash, minLevel);
 						}
 					}
 				}
@@ -275,27 +275,27 @@ public class PlayerClassTable implements Reloadable
 			return;
 		}
 
-		_neverSubclassed.clear();
-		_neverSubclassed.add(51); // Overlord
-		_neverSubclassed.add(57); // Warsmith
-		_neverSubclassed.add(184); // Marauder
-		_neverSubclassed.add(185); // Cloud Breaker
+		this.neverSubclassed.clear();
+		this.neverSubclassed.add(51); // Overlord
+		this.neverSubclassed.add(57); // Warsmith
+		this.neverSubclassed.add(184); // Marauder
+		this.neverSubclassed.add(185); // Cloud Breaker
 
-		_mainSubclassSet.clear();
-		_mainSubclassSet.addAll(getList(null, 40));
-		_mainSubclassSet.removeAll(_neverSubclassed);
+		this.mainSubclassSet.clear();
+		this.mainSubclassSet.addAll(getList(null, 40));
+		this.mainSubclassSet.removeAll(this.neverSubclassed);
 
-		_awakeningBannedSubclasses.clear();
-		for (PlayerClass pc : _classes.values())
+		this.awakeningBannedSubclasses.clear();
+		for (PlayerClass pc : this.classes.values())
 		{
 			if (pc.getLevel() == 40)
 			{
-				if (!_awakeningBannedSubclasses.containsKey(getAwakening(pc.getId())))
+				if (!this.awakeningBannedSubclasses.containsKey(getAwakening(pc.getId())))
 				{
 					List<Integer> list = new ArrayList<>();
-					_awakeningBannedSubclasses.put(getAwakening(pc.getId()), list);
+					this.awakeningBannedSubclasses.put(getAwakening(pc.getId()), list);
 				}
-				_awakeningBannedSubclasses.get(getAwakening(pc.getId())).add(pc.getId());
+				this.awakeningBannedSubclasses.get(getAwakening(pc.getId())).add(pc.getId());
 			}
 		}
 	}
@@ -323,12 +323,12 @@ public class PlayerClassTable implements Reloadable
 
 	public final Collection<PlayerClass> getAllClasses()
 	{
-		return _classes.values();
+		return this.classes.values();
 	}
 
 	public final PlayerClass getClassById(int PlayerClass)
 	{
-		PlayerClass cl = _classes.get(PlayerClass);
+		PlayerClass cl = this.classes.get(PlayerClass);
 		if (cl == null)
 		{
 			throw new IllegalArgumentException("No template for PlayerClass: " + PlayerClass);
@@ -339,7 +339,7 @@ public class PlayerClassTable implements Reloadable
 
 	public final String getClassNameById(int PlayerClass)
 	{
-		PlayerClass cl = _classes.get(PlayerClass);
+		PlayerClass cl = this.classes.get(PlayerClass);
 		if (cl == null)
 		{
 			throw new IllegalArgumentException("No template for PlayerClass: " + PlayerClass);
@@ -352,9 +352,9 @@ public class PlayerClassTable implements Reloadable
 		//if (level >= 100)
 		//	level = SkillTable.getInstance().getMaxLevel(id);
 		long hash = SkillTable.getSkillHashCode(id, level);
-		if (_minSkillLevels.containsKey(hash))
+		if (this.minSkillLevels.containsKey(hash))
 		{
-			return _minSkillLevels.get(hash);
+			return this.minSkillLevels.get(hash);
 		}
 		return 0;
 	}
@@ -369,10 +369,10 @@ public class PlayerClassTable implements Reloadable
 		List<Integer> subclasses = new CopyOnWriteArrayList<>();
 		if (player.getRace() != Race.Kamael)
 		{
-			subclasses.addAll(_mainSubclassSet);
+			subclasses.addAll(this.mainSubclassSet);
 
 			// Remove all the same awakening subclasses from selection
-			List<Integer> bannedSubs = _awakeningBannedSubclasses.get(getAwakening(baseClassId));
+			List<Integer> bannedSubs = this.awakeningBannedSubclasses.get(getAwakening(baseClassId));
 			if (bannedSubs != null)
 			{
 				subclasses.removeAll(bannedSubs);
@@ -395,10 +395,10 @@ public class PlayerClassTable implements Reloadable
 		}
 		else
 		{
-			subclasses.addAll(_mainSubclassSet);
+			subclasses.addAll(this.mainSubclassSet);
 
 			// Remove all the same awakening subclasses from selection
-			List<Integer> bannedSubs = _awakeningBannedSubclasses.get(getAwakening(baseClassId));
+			List<Integer> bannedSubs = this.awakeningBannedSubclasses.get(getAwakening(baseClassId));
 			if (bannedSubs != null)
 			{
 				subclasses.removeAll(bannedSubs);
@@ -431,7 +431,7 @@ public class PlayerClassTable implements Reloadable
 			List<Integer> awakened = new ArrayList<>();
 			for (int subId : subclasses)
 			{
-				for (PlayerClass cl : _classes.values())
+				for (PlayerClass cl : this.classes.values())
 				{
 					if (cl.getLevel() == 85 && cl.getParent() != null && cl.getParent().getParent() != null &&
 							cl.getParent().getParent().getId() == subId)
@@ -451,7 +451,7 @@ public class PlayerClassTable implements Reloadable
 	private List<Integer> getList(Race race, int level)
 	{
 		List<Integer> list = new ArrayList<>();
-		for (PlayerClass cl : _classes.values())
+		for (PlayerClass cl : this.classes.values())
 		{
 			if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level))
 			{
@@ -464,7 +464,7 @@ public class PlayerClassTable implements Reloadable
 
 	public final int getAwakening(int classId)
 	{
-		PlayerClass pc = _classes.get(classId);
+		PlayerClass pc = this.classes.get(classId);
 		if (pc.getLevel() < 40 || pc.getRace() == Race.Ertheia)
 		{
 			return -1;
@@ -483,7 +483,7 @@ public class PlayerClassTable implements Reloadable
 			int sec = 0;
 			while (awakeningId == -1 && sec < 150)
 			{
-				supportPc = _classes.get(classId + i);
+				supportPc = this.classes.get(classId + i);
 				if (supportPc != null && supportPc.getParent() != null && pc.getId() == supportPc.getParent().getId())
 				{
 					if (supportPc.getAwakeningClassId() != -1)
@@ -494,7 +494,7 @@ public class PlayerClassTable implements Reloadable
 					}
 					else
 					{
-						pc = _classes.get(classId + 1);
+						pc = this.classes.get(classId + 1);
 					}
 				}
 				i++;
@@ -512,7 +512,7 @@ public class PlayerClassTable implements Reloadable
 			return 170;
 		}
 
-		for (PlayerClass cl : _classes.values())
+		for (PlayerClass cl : this.classes.values())
 		{
 			if (cl.getParent() == pc)
 			{
@@ -526,6 +526,6 @@ public class PlayerClassTable implements Reloadable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PlayerClassTable _instance = new PlayerClassTable();
+		protected static final PlayerClassTable instance = new PlayerClassTable();
 	}
 }

@@ -54,13 +54,13 @@ public class ClanRecruitManager
 		public ClanRecruitData recruitData = null;
 	}
 
-	private Map<Integer, ClanRecruitData> _recruitData = new HashMap<>();
-	private Map<Integer, ClanRecruitWaitingUser> _allApplicants = new HashMap<>();
-	private Map<Integer, ClanRecruitWaitingUser> _waitingUsers = new HashMap<>();
+	private Map<Integer, ClanRecruitData> recruitData = new HashMap<>();
+	private Map<Integer, ClanRecruitWaitingUser> allApplicants = new HashMap<>();
+	private Map<Integer, ClanRecruitWaitingUser> waitingUsers = new HashMap<>();
 
 	public static ClanRecruitManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private ClanRecruitManager()
@@ -89,7 +89,7 @@ public class ClanRecruitManager
 				data.karma = rset.getInt("karma");
 				data.introduction = rset.getString("introduction");
 				data.largeIntroduction = rset.getString("large_introduction");
-				_recruitData.put(clan.getClanId(), data);
+				this.recruitData.put(clan.getClanId(), data);
 			}
 			rset.close();
 			statement.close();
@@ -100,7 +100,7 @@ public class ClanRecruitManager
 			while (rset.next())
 			{
 				int applicantId = rset.getInt("applicant_id");
-				ClanRecruitData data = _recruitData.get(rset.getInt("clan_id"));
+				ClanRecruitData data = this.recruitData.get(rset.getInt("clan_id"));
 
 				Connection con2 = null;
 				try
@@ -124,11 +124,11 @@ public class ClanRecruitManager
 						if (data != null)
 						{
 							data.applicants.put(applicantId, applicant);
-							_allApplicants.put(applicantId, applicant);
+							this.allApplicants.put(applicantId, applicant);
 						}
 						else
 						{
-							_waitingUsers.put(applicantId, applicant);
+							this.waitingUsers.put(applicantId, applicant);
 						}
 					}
 					rset2.close();
@@ -159,7 +159,7 @@ public class ClanRecruitManager
 
 	public boolean addClan(L2Clan clan, int karma, String introduction, String largeIntroduction)
 	{
-		if (_recruitData.containsKey(clan.getClanId()))
+		if (this.recruitData.containsKey(clan.getClanId()))
 		{
 			return false;
 		}
@@ -169,7 +169,7 @@ public class ClanRecruitManager
 		data.karma = karma;
 		data.introduction = introduction;
 		data.largeIntroduction = largeIntroduction;
-		_recruitData.put(clan.getClanId(), data);
+		this.recruitData.put(clan.getClanId(), data);
 
 		Connection con = null;
 		try
@@ -198,7 +198,7 @@ public class ClanRecruitManager
 
 	public void updateClan(L2Clan clan, int karma, String introduction, String largeIntroduction)
 	{
-		ClanRecruitData data = _recruitData.get(clan.getClanId());
+		ClanRecruitData data = this.recruitData.get(clan.getClanId());
 		if (data == null)
 		{
 			return;
@@ -233,7 +233,7 @@ public class ClanRecruitManager
 
 	public boolean removeClan(L2Clan clan)
 	{
-		ClanRecruitData data = _recruitData.get(clan.getClanId());
+		ClanRecruitData data = this.recruitData.get(clan.getClanId());
 		if (data == null)
 		{
 			return false;
@@ -245,7 +245,7 @@ public class ClanRecruitManager
 			removeApplicant(applicant.id);
 		}
 
-		_recruitData.remove(clan.getClanId());
+		this.recruitData.remove(clan.getClanId());
 
 		Connection con = null;
 		try
@@ -270,12 +270,12 @@ public class ClanRecruitManager
 
 	public Map<Integer, ClanRecruitData> getRecruitData()
 	{
-		return _recruitData;
+		return this.recruitData;
 	}
 
 	public ClanRecruitData getRecruitData(int clanId)
 	{
-		return _recruitData.get(clanId);
+		return this.recruitData.get(clanId);
 	}
 
 	public List<ClanRecruitData> getRecruitData(int level, int karma, boolean clanName, String name, final int sortBy, final boolean desc)
@@ -283,7 +283,7 @@ public class ClanRecruitManager
 		name = name.toLowerCase();
 		List<ClanRecruitData> list = new ArrayList<>();
 
-		for (ClanRecruitData data : _recruitData.values())
+		for (ClanRecruitData data : this.recruitData.values())
 		{
 			if (level > -1 && data.clan.getLevel() != level || karma > -1 && data.karma != karma)
 			{
@@ -347,12 +347,12 @@ public class ClanRecruitManager
 
 	public boolean addApplicant(L2PcInstance player, int clanId, String application)
 	{
-		if (_allApplicants.containsKey(player.getObjectId()))
+		if (this.allApplicants.containsKey(player.getObjectId()))
 		{
 			return false;
 		}
 
-		ClanRecruitData data = _recruitData.get(clanId);
+		ClanRecruitData data = this.recruitData.get(clanId);
 		if (data == null)
 		{
 			return false;
@@ -367,7 +367,7 @@ public class ClanRecruitManager
 		applicant.recruitData = data;
 
 		data.applicants.put(player.getObjectId(), applicant);
-		_allApplicants.put(player.getObjectId(), applicant);
+		this.allApplicants.put(player.getObjectId(), applicant);
 
 		Connection con = null;
 		try
@@ -395,14 +395,14 @@ public class ClanRecruitManager
 
 	public boolean removeApplicant(int playerId)
 	{
-		ClanRecruitWaitingUser applicant = _allApplicants.get(playerId);
+		ClanRecruitWaitingUser applicant = this.allApplicants.get(playerId);
 		if (applicant == null)
 		{
 			return false;
 		}
 
 		applicant.recruitData.applicants.remove(playerId);
-		_allApplicants.remove(playerId);
+		this.allApplicants.remove(playerId);
 
 		Connection con = null;
 		try
@@ -428,12 +428,12 @@ public class ClanRecruitManager
 
 	public ClanRecruitWaitingUser getApplicant(int playerId)
 	{
-		return _allApplicants.get(playerId);
+		return this.allApplicants.get(playerId);
 	}
 
 	public boolean addWaitingUser(L2PcInstance player, int karma)
 	{
-		if (_waitingUsers.containsKey(player.getObjectId()) || _allApplicants.containsKey(player.getObjectId()))
+		if (this.waitingUsers.containsKey(player.getObjectId()) || this.allApplicants.containsKey(player.getObjectId()))
 		{
 			return false;
 		}
@@ -445,7 +445,7 @@ public class ClanRecruitManager
 		waitingUser.level = player.getLevel();
 		waitingUser.karma = karma;
 
-		_waitingUsers.put(player.getObjectId(), waitingUser);
+		this.waitingUsers.put(player.getObjectId(), waitingUser);
 
 		Connection con = null;
 		try
@@ -471,13 +471,13 @@ public class ClanRecruitManager
 
 	public boolean removeWaitingUser(L2PcInstance player)
 	{
-		ClanRecruitWaitingUser waitingUser = _waitingUsers.get(player.getObjectId());
+		ClanRecruitWaitingUser waitingUser = this.waitingUsers.get(player.getObjectId());
 		if (waitingUser == null)
 		{
 			return false;
 		}
 
-		_waitingUsers.remove(waitingUser.id);
+		this.waitingUsers.remove(waitingUser.id);
 
 		Connection con = null;
 		try
@@ -503,14 +503,14 @@ public class ClanRecruitManager
 
 	public ClanRecruitWaitingUser getWaitingUser(int playerId)
 	{
-		return _waitingUsers.get(playerId);
+		return this.waitingUsers.get(playerId);
 	}
 
 	public List<ClanRecruitWaitingUser> getWaitingUsers(int minLevel, int maxLevel, int role, final int sortBy, final boolean desc, String name)
 	{
 		name = name.toLowerCase();
 		List<ClanRecruitWaitingUser> result = new ArrayList<>();
-		for (ClanRecruitWaitingUser user : _waitingUsers.values())
+		for (ClanRecruitWaitingUser user : this.waitingUsers.values())
 		{
 			if (user.level < minLevel || user.level > maxLevel)
 			{
@@ -633,6 +633,6 @@ public class ClanRecruitManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ClanRecruitManager _instance = new ClanRecruitManager();
+		protected static final ClanRecruitManager instance = new ClanRecruitManager();
 	}
 }

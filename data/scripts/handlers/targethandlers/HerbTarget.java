@@ -15,6 +15,8 @@
 
 package handlers.targethandlers;
 
+import java.util.ArrayList;
+
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Object;
@@ -24,8 +26,6 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
-
-import java.util.ArrayList;
 
 /**
  * Used by all herb skills.
@@ -40,7 +40,7 @@ public class HerbTarget implements ISkillTargetTypeHandler
 		L2PcInstance aPlayer = null;
 		L2Summon aSummon = null;
 
-		final ArrayList<L2Character> _aResult = new ArrayList<L2Character>();
+		final ArrayList<L2Character> aResult = new ArrayList<L2Character>();
 
 		if (activeChar instanceof L2PcInstance)
 		{
@@ -60,21 +60,21 @@ public class HerbTarget implements ISkillTargetTypeHandler
 		if (aPlayer != null)
 		{
 			// Affect the player.
-			_aResult.add(aPlayer);
+			aResult.add(aPlayer);
 
 			// As well as his summon, if it's a summon and NOT a pet.
 			if (aSummon != null && !(aSummon instanceof L2PetInstance))
 			{
-				_aResult.add(aSummon);
+				aResult.add(aSummon);
 			}
 		}
 		else
 		{
 			// Otherwise, a summon picked it up. Only the summon is affected in this case.
-			_aResult.add(aSummon);
+			aResult.add(aSummon);
 		}
 
-		return _aResult.toArray(new L2Character[_aResult.size()]);
+		return aResult.toArray(new L2Character[aResult.size()]);
 	}
 
 	@Override

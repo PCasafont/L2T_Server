@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionWithSkill extends Condition
 {
-	private final boolean _skill;
+	private final boolean skill;
 
 	/**
 	 * Instantiates a new condition with skill.
@@ -33,7 +33,7 @@ public class ConditionWithSkill extends Condition
 	 */
 	public ConditionWithSkill(boolean skill)
 	{
-		_skill = skill;
+		this.skill = skill;
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +42,6 @@ public class ConditionWithSkill extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return !(!_skill && env.skill != null);
+		return !(!this.skill && env.skill != null);
 	}
 }

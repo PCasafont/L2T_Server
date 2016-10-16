@@ -15,6 +15,19 @@
 
 package handlers.admincommandhandlers;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ai.CtrlIntention;
@@ -29,14 +42,19 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.CharInfo;
+import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
+import l2server.gameserver.network.serverpackets.GMViewItemList;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.PartySmallWindowAll;
+import l2server.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
+import l2server.gameserver.network.serverpackets.SetSummonRemainTime;
+import l2server.gameserver.network.serverpackets.StatusUpdate;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.util.Util;
+import l2server.log.Log;
 import l2server.util.StringUtil;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.*;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -72,7 +90,7 @@ import java.util.logging.Logger;
  */
 public class AdminEditChar implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
+	private static Logger log = Logger.getLogger(AdminEditChar.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_edit_character", "admin_current_player", "admin_nokarma",
@@ -247,7 +265,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set karma error: " + e);
+					Log.warning("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
@@ -277,7 +295,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pk error: " + e);
+					Log.warning("Set pk error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
@@ -307,7 +325,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pvp error: " + e);
+					Log.warning("Set pvp error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
@@ -337,7 +355,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set Fame error: " + e);
+					Log.warning("Set Fame error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
@@ -1051,7 +1069,7 @@ public class AdminEditChar implements IAdminCommandHandler
 						").");
 		if (Config.DEBUG)
 		{
-			_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
+			Log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
 					oldKarma + ") to (" + newKarma + ").");
 		}
 	}
@@ -1117,7 +1135,7 @@ public class AdminEditChar implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
+			Log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
 					" MP: " + mpval + " CP: " + cpval + " PvP: " + pvpflagval + " / " + pvpkillsval);
 		}
 

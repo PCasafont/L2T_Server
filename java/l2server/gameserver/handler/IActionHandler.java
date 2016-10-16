@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 public interface IActionHandler
 {
-	Logger _log = Logger.getLogger(IActionHandler.class.getName());
+	Logger log = Logger.getLogger(IActionHandler.class.getName());
 
 	boolean action(L2PcInstance activeChar, L2Object target, boolean interact);
 

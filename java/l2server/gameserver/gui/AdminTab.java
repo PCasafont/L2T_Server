@@ -30,34 +30,34 @@ import java.awt.*;
 public class AdminTab extends JPanel
 {
 	private static final long serialVersionUID = 1L;
-	private GridBagConstraints _cons = new GridBagConstraints();
-	private GridBagLayout _layout = new GridBagLayout();
-	private JPanel _listPanel = new PlayerTablePane();
-	private JPanel _infoPanel = new JPanel();
+	private GridBagConstraints cons = new GridBagConstraints();
+	private GridBagLayout layout = new GridBagLayout();
+	private JPanel listPanel = new PlayerTablePane();
+	private JPanel infoPanel = new JPanel();
 
 	public AdminTab()
 	{
-		setLayout(_layout);
-		_cons.fill = GridBagConstraints.HORIZONTAL;
+		setLayout(this.layout);
+		this.cons.fill = GridBagConstraints.HORIZONTAL;
 
-		_infoPanel.setLayout(_layout);
+		this.infoPanel.setLayout(this.layout);
 
-		_cons.insets = new Insets(5, 5, 5, 5);
-		_cons.gridwidth = 3;
-		_cons.gridheight = 20;
-		_cons.weightx = 1;
-		_cons.weighty = 1;
-		_cons.gridx = 0;
-		_cons.gridy = 2;
-		_infoPanel.add(new JLabel(""), _cons);
-		_infoPanel.setPreferredSize(new Dimension(235, _infoPanel.getHeight()));
+		this.cons.insets = new Insets(5, 5, 5, 5);
+		this.cons.gridwidth = 3;
+		this.cons.gridheight = 20;
+		this.cons.weightx = 1;
+		this.cons.weighty = 1;
+		this.cons.gridx = 0;
+		this.cons.gridy = 2;
+		this.infoPanel.add(new JLabel(""), this.cons);
+		this.infoPanel.setPreferredSize(new Dimension(235, this.infoPanel.getHeight()));
 
-		_cons.fill = GridBagConstraints.BOTH;
-		_cons.weightx = 1;
-		_cons.weighty = 1;
-		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _listPanel, _infoPanel);
+		this.cons.fill = GridBagConstraints.BOTH;
+		this.cons.weightx = 1;
+		this.cons.weighty = 1;
+		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, this.listPanel, this.infoPanel);
 		splitPane.setResizeWeight(0.3);
 		splitPane.setDividerLocation(535);
-		add(splitPane, _cons);
+		add(splitPane, this.cons);
 	}
 }

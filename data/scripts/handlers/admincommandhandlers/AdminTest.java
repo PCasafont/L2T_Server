@@ -24,16 +24,39 @@
 
 package handlers.admincommandhandlers;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.PlayerClassTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CustomAuctionManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2CharPosition;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
@@ -48,22 +71,22 @@ import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.AllyCrest;
+import l2server.gameserver.network.serverpackets.CharSelected;
+import l2server.gameserver.network.serverpackets.CharSelectionInfo;
+import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2server.gameserver.network.serverpackets.ExOlympiadMode;
+import l2server.gameserver.network.serverpackets.ExUserEffects;
+import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.RestartResponse;
+import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
 
 /**
  * This class ...
@@ -76,8 +99,8 @@ public class AdminTest implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
-	private List<L2NpcTemplate> _npcTemplates = new ArrayList<L2NpcTemplate>();
-	private List<Location> _coords = new ArrayList<Location>();
+	private List<L2NpcTemplate> npcTemplates = new ArrayList<L2NpcTemplate>();
+	private List<Location> coords = new ArrayList<Location>();
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
@@ -700,19 +723,19 @@ public class AdminTest implements IAdminCommandHandler
 			}
 			else if (secondaryCommand.equals("GrabPosition"))
 			{
-				_coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
+				this.coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
 
 				activeChar.sendMessage("Recorded current position.");
 			}
 			else if (secondaryCommand.equals("ClearPositions"))
 			{
-				_coords.clear();
+				this.coords.clear();
 
 				activeChar.sendMessage("Cleared recorded positions.");
 			}
 			else if (secondaryCommand.equals("PrintPositions"))
 			{
-				for (Location l : _coords)
+				for (Location l : this.coords)
 				{
 					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
 				}
@@ -725,25 +748,25 @@ public class AdminTest implements IAdminCommandHandler
 					{
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 
-						if (_npcTemplates.contains(monster.getTemplate()))
+						if (this.npcTemplates.contains(monster.getTemplate()))
 						{
 							continue;
 						}
 
-						_npcTemplates.add(monster.getTemplate());
+						this.npcTemplates.add(monster.getTemplate());
 						activeChar.sendMessage("Added " + monster.getName() + ".");
 					}
 				}
 			}
 			else if (secondaryCommand.equals("ClearNpcs"))
 			{
-				_npcTemplates.clear();
+				this.npcTemplates.clear();
 
 				activeChar.sendMessage("Templates cleared.");
 			}
 			else if (secondaryCommand.equals("PrintDropsForNpcs"))
 			{
-				for (L2NpcTemplate npcTemplate : _npcTemplates)
+				for (L2NpcTemplate npcTemplate : this.npcTemplates)
 				{
 					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
 					System.out.println("\t\t<droplist>");
@@ -1206,19 +1229,19 @@ public class AdminTest implements IAdminCommandHandler
 			caster = (L2Character) target;
 		}
 
-		L2Skill _skill = SkillTable.getInstance().getInfo(id, 1);
-		if (_skill != null)
+		L2Skill skill = SkillTable.getInstance().getInfo(id, 1);
+		if (skill != null)
 		{
 			caster.setTarget(activeChar);
 			if (msu)
 			{
 				caster.broadcastPacket(
-						new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill.getReuseDelay(),
-								_skill.getReuseHashCode(), 0, 0));
+						new MagicSkillUse(caster, activeChar, id, 1, skill.getHitTime(), skill.getReuseDelay(),
+								skill.getReuseHashCode(), 0, 0));
 			}
 			else
 			{
-				caster.doCast(_skill);
+				caster.doCast(skill);
 			}
 		}
 	}

@@ -30,10 +30,10 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SkillTrap extends L2SkillSummon
 {
-	private int _triggerSkillId = 0;
-	private int _triggerSkillLvl = 0;
-	private int _trapNpcId = 0;
-	protected L2Spawn _trapSpawn;
+	private int triggerSkillId = 0;
+	private int triggerSkillLvl = 0;
+	private int trapNpcId = 0;
+	protected L2Spawn trapSpawn;
 
 	/**
 	 * @param set
@@ -41,14 +41,14 @@ public class L2SkillTrap extends L2SkillSummon
 	public L2SkillTrap(StatsSet set)
 	{
 		super(set);
-		_triggerSkillId = set.getInteger("triggerSkillId");
-		_triggerSkillLvl = set.getInteger("triggerSkillLvl");
-		_trapNpcId = set.getInteger("trapNpcId");
+		this.triggerSkillId = set.getInteger("triggerSkillId");
+		this.triggerSkillLvl = set.getInteger("triggerSkillLvl");
+		this.trapNpcId = set.getInteger("trapNpcId");
 	}
 
 	public int getTriggerSkillId()
 	{
-		return _triggerSkillId;
+		return this.triggerSkillId;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class L2SkillTrap extends L2SkillSummon
 			return;
 		}
 
-		if (_trapNpcId == 0)
+		if (this.trapNpcId == 0)
 		{
 			return;
 		}
@@ -79,7 +79,7 @@ public class L2SkillTrap extends L2SkillSummon
 			return;
 		}
 
-		if (_triggerSkillId == 0 || _triggerSkillLvl == 0)
+		if (this.triggerSkillId == 0 || this.triggerSkillLvl == 0)
 		{
 			return;
 		}
@@ -90,14 +90,14 @@ public class L2SkillTrap extends L2SkillSummon
 			trap.unSummon();
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(_triggerSkillId, _triggerSkillLvl);
+		L2Skill skill = SkillTable.getInstance().getInfo(this.triggerSkillId, this.triggerSkillLvl);
 
 		if (skill == null)
 		{
 			return;
 		}
 
-		L2NpcTemplate TrapTemplate = NpcTable.getInstance().getTemplate(_trapNpcId);
+		L2NpcTemplate TrapTemplate = NpcTable.getInstance().getTemplate(this.trapNpcId);
 		trap = new L2TrapInstance(IdFactory.getInstance().getNextId(), TrapTemplate, activeChar, getTotalLifeTime(),
 				skill);
 		trap.setCurrentHp(trap.getMaxHp());

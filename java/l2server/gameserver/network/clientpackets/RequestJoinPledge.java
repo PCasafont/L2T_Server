@@ -30,14 +30,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestJoinPledge extends L2GameClientPacket
 {
 
-	private int _target;
-	private int _pledgeType;
+	private int target;
+	private int pledgeType;
 
 	@Override
 	protected void readImpl()
 	{
-		_target = readD();
-		_pledgeType = readD();
+		this.target = readD();
+		this.pledgeType = readD();
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance target = L2World.getInstance().getPlayer(_target);
+		final L2PcInstance target = L2World.getInstance().getPlayer(this.target);
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
@@ -69,7 +69,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 
-		if (!clan.checkClanJoinCondition(activeChar, target, _pledgeType))
+		if (!clan.checkClanJoinCondition(activeChar, target, this.pledgeType))
 		{
 			return;
 		}
@@ -80,13 +80,13 @@ public final class RequestJoinPledge extends L2GameClientPacket
 		}
 
 		final String pledgeName = activeChar.getClan().getName();
-		final String subPledgeName = activeChar.getClan().getSubPledge(_pledgeType) != null ?
-				activeChar.getClan().getSubPledge(_pledgeType).getName() : null;
-		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, _pledgeType, pledgeName));
+		final String subPledgeName = activeChar.getClan().getSubPledge(this.pledgeType) != null ?
+				activeChar.getClan().getSubPledge(this.pledgeType).getName() : null;
+		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, this.pledgeType, pledgeName));
 	}
 
 	public int getPledgeType()
 	{
-		return _pledgeType;
+		return this.pledgeType;
 	}
 }

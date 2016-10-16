@@ -24,22 +24,22 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreMsgBuy extends L2GameServerPacket
 {
-	private int _objId;
-	private String _storeMsg;
+	private int objId;
+	private String storeMsg;
 
 	public PrivateStoreMsgBuy(L2PcInstance player)
 	{
-		_objId = player.getObjectId();
+		this.objId = player.getObjectId();
 		if (player.getBuyList() != null)
 		{
-			_storeMsg = player.getBuyList().getTitle();
+			this.storeMsg = player.getBuyList().getTitle();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objId);
-		writeS(_storeMsg);
+		writeD(this.objId);
+		writeS(this.storeMsg);
 	}
 }

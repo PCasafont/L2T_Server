@@ -30,10 +30,10 @@ import java.util.List;
 public class ExSellList extends L2ItemListPacket
 {
 
-	private List<L2TradeItem> _buyList = new ArrayList<>();
-	private L2ItemInstance[] _sellList = null;
-	private L2ItemInstance[] _refundList = null;
-	private boolean _done;
+	private List<L2TradeItem> buyList = new ArrayList<>();
+	private L2ItemInstance[] sellList = null;
+	private L2ItemInstance[] refundList = null;
+	private boolean done;
 
 	public ExSellList(L2PcInstance player, L2TradeList list, double taxRate, boolean done)
 	{
@@ -43,14 +43,14 @@ public class ExSellList extends L2ItemListPacket
 			{
 				continue;
 			}
-			_buyList.add(item);
+			this.buyList.add(item);
 		}
-		_sellList = player.getInventory().getAvailableItems(false, true);
+		this.sellList = player.getInventory().getAvailableItems(false, true);
 		if (player.hasRefund())
 		{
-			_refundList = player.getRefund().getItems();
+			this.refundList = player.getRefund().getItems();
 		}
-		_done = done;
+		this.done = done;
 	}
 
 	@Override
@@ -58,10 +58,10 @@ public class ExSellList extends L2ItemListPacket
 	{
 		writeD(0x00); // GoD ???
 
-		if (_sellList != null && _sellList.length > 0)
+		if (this.sellList != null && this.sellList.length > 0)
 		{
-			writeH(_sellList.length);
-			for (L2ItemInstance item : _sellList)
+			writeH(this.sellList.length);
+			for (L2ItemInstance item : this.sellList)
 			{
 				writeItem(item);
 
@@ -73,11 +73,11 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		if (_refundList != null && _refundList.length > 0)
+		if (this.refundList != null && this.refundList.length > 0)
 		{
-			writeH(_refundList.length);
+			writeH(this.refundList.length);
 			int itemIndex = 0;
-			for (L2ItemInstance item : _refundList)
+			for (L2ItemInstance item : this.refundList)
 			{
 				writeItem(item);
 
@@ -90,8 +90,8 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		writeC(_done ? 0x01 : 0x00);
+		writeC(this.done ? 0x01 : 0x00);
 
-		_buyList.clear();
+		this.buyList.clear();
 	}
 }

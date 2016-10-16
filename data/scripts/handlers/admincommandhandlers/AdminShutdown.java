@@ -15,6 +15,9 @@
 
 package handlers.admincommandhandlers;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import l2server.Config;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.TimeController;
@@ -22,9 +25,6 @@ import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * This class handles following admin commands:
@@ -34,7 +34,7 @@ import java.util.Calendar;
  */
 public class AdminShutdown implements IAdminCommandHandler
 {
-	//private static Logger _log = Logger.getLogger(AdminShutdown.class.getName());
+	//private static Logger log = Logger.getLogger(AdminShutdown.class.getName());
 
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_server_shutdown", "admin_server_restart", "admin_server_abort"};

@@ -24,20 +24,20 @@ import l2server.gameserver.stats.Env;
 public class ConditionTargetActiveEffect extends Condition
 {
 
-	private final String _effectName;
+	private final String effectName;
 
 	/**
 	 * Instantiates a new condition target active effect id.
 	 */
 	public ConditionTargetActiveEffect(String effectName)
 	{
-		_effectName = effectName;
+		this.effectName = effectName;
 	}
 
 	@Override
 	public boolean testImpl(Env env)
 	{
-		final L2Abnormal e = env.target.getFirstEffectByName(_effectName);
+		final L2Abnormal e = env.target.getFirstEffectByName(this.effectName);
 		return e != null;
 
 	}

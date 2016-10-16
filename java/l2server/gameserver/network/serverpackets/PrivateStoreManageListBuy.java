@@ -26,37 +26,37 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreManageListBuy extends L2ItemListPacket
 {
-	private int _objId;
-	private long _playerAdena;
-	private L2ItemInstance[] _itemList;
-	private TradeList.TradeItem[] _buyList;
+	private int objId;
+	private long playerAdena;
+	private L2ItemInstance[] itemList;
+	private TradeList.TradeItem[] buyList;
 
 	public PrivateStoreManageListBuy(L2PcInstance player)
 	{
-		_objId = player.getObjectId();
-		_playerAdena = player.getAdena();
-		_itemList = player.getInventory().getUniqueItems(false, true);
-		_buyList = player.getBuyList().getItems();
+		this.objId = player.getObjectId();
+		this.playerAdena = player.getAdena();
+		this.itemList = player.getInventory().getUniqueItems(false, true);
+		this.buyList = player.getBuyList().getItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		//section 1
-		writeD(_objId);
-		writeQ(_playerAdena);
+		writeD(this.objId);
+		writeQ(this.playerAdena);
 
 		//section2
-		writeD(_itemList.length); // inventory items for potential buy
-		for (L2ItemInstance item : _itemList)
+		writeD(this.itemList.length); // inventory items for potential buy
+		for (L2ItemInstance item : this.itemList)
 		{
 			writeItem(item);
 			writeQ(item.getItem().getReferencePrice() * 2);
 		}
 
 		//section 3
-		writeD(_buyList.length); //count for all items already added for buy
-		for (TradeList.TradeItem item : _buyList)
+		writeD(this.buyList.length); //count for all items already added for buy
+		for (TradeList.TradeItem item : this.buyList)
 		{
 			writeItem(item);
 

@@ -26,7 +26,7 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class ConditionChangeWeapon extends Condition
 {
-	private final boolean _required;
+	private final boolean required;
 
 	/**
 	 * Instantiates a new condition change weapon.
@@ -35,7 +35,7 @@ public class ConditionChangeWeapon extends Condition
 	 */
 	public ConditionChangeWeapon(boolean required)
 	{
-		_required = required;
+		this.required = required;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ConditionChangeWeapon extends Condition
 			return false;
 		}
 
-		if (_required)
+		if (this.required)
 		{
 			L2Weapon weaponItem = env.player.getActiveWeaponItem();
 
