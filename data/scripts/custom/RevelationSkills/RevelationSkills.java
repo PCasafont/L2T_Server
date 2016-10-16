@@ -15,9 +15,6 @@
 
 package custom.RevelationSkills;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
@@ -29,6 +26,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author LasTravel
@@ -123,7 +123,7 @@ public class RevelationSkills extends Quest
 				return "";
 			}
 			player.broadcastPacket(new InventoryUpdate());
-			 */
+			*/
 
 			//Anti exploit
 			if (getRevelationCount(player) < 2)

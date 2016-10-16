@@ -13,6 +13,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
@@ -24,8 +25,8 @@ public final class L2ArmorSet
 {
 	private final int id;
 	private final int parts;
-	private final TIntIntHashMap skills;
-	private final int shieldSkillId;
+	@Getter private final TIntIntHashMap skills;
+	@Getter private final int shieldSkillId;
 	private final int enchant6Skill;
 
 	public L2ArmorSet(int id, int parts, TIntIntHashMap skills, int enchant6skill, int shield_skill_id)
@@ -99,15 +100,7 @@ public final class L2ArmorSet
 
 	}
 
-	public TIntIntHashMap getSkills()
-	{
-		return skills;
-	}
 
-	public int getShieldSkillId()
-	{
-		return shieldSkillId;
-	}
 
 	public int getEnchant6skillId()
 	{

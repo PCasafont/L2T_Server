@@ -2366,7 +2366,7 @@ public final class Formulas
 			attacker = ((L2NpcInstance)attacker).getOwner();
 		else if (attacker instanceof L2GuardInstance && ((L2GuardInstance)attacker).getOwner() != null)
 			attacker = ((L2GuardInstance)attacker).getOwner();
-		 */
+		*/
 
 		double pAtk = attacker.calcStat(Stats.CRITICAL_ATTACK, attacker.getPAtk(target), target, skill);
 		double levelMod = attacker.getLevelMod();

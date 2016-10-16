@@ -85,10 +85,6 @@ public class L2MerchantInstance extends L2NpcInstance
 		return "merchant/" + pom + ".htm";
 	}
 
-	/**
-	 * @return Returns the mpc.
-	 */
-
 	public final void showBuyWindow(L2PcInstance player, int val)
 	{
 		double taxRate = 0;

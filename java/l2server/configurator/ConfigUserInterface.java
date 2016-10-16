@@ -562,19 +562,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		IPv4(Inet4Address.class),
 		STRING(String.class);
 
-		private final Class<?> type;
+		@Getter private final Class<?> type;
 
 		ValueType(Class<?> type)
 		{
 			this.type = type;
-		}
-
-		/**
-		 * @return Returns the type.
-		 */
-		public Class<?> getType()
-		{
-			return type;
 		}
 
 		public static ValueType firstTypeMatch(Object value)

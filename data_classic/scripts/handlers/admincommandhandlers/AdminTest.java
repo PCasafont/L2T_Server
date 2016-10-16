@@ -991,14 +991,14 @@ public class AdminTest implements IAdminCommandHandler
 					toLog += "\t\t<production id=\"" + itemTemplates[2].getItemId() + "\" count=\"1\" chance=\"10\" /> <!-- " + itemTemplates[2].getName() + " -->\n";
 					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" chance=\"90\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
 					toLog += "\t</item>\n";
-					 */
+					*/
 
 					/*
 					toLog += "\t<item id=\"" + itemId + "\" type=\"Weapon\" name=\"" + baseItemName + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[0].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[0].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[1].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[1].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[2].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[2].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
-					 */
+					*/
 
 					toLog += "case " + itemId + ": // " + baseItemName + "\n";
 					toLog += "case " + itemTemplates[0].getItemId() + ": // " + itemTemplates[0].getName() + "\n";

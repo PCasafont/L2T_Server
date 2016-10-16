@@ -97,7 +97,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private CharSelectInfoPackage[] charSlotMapping = null;
 
 	// floodprotectors
-	private final FloodProtectors floodProtectors = new FloodProtectors(this);
+	@Getter private final FloodProtectors floodProtectors = new FloodProtectors(this);
 
 	// Task
 	protected ScheduledFuture<?> autoSaveInDB;
@@ -111,7 +111,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 	private boolean isDetached = false;
 
-	private boolean protocolOk;
+	@Getter private boolean protocolOk;
 	@Getter private int protocolVersion;
 
 	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> packetQueue;
@@ -209,10 +209,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	}
 
 
-	public FloodProtectors getFloodProtectors()
-	{
-		return floodProtectors;
-	}
 
 	public void setGameGuardOk(boolean val)
 	{
@@ -393,7 +389,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
         /*if (getActiveChar() != null)
 		{
 			saveCharToDisk (getActiveChar());
-			if (Config.DEBUG) Logozo.fine("active Char saved");
+			if (Config.DEBUG) Log.fine("active Char saved");
 			this.setActiveChar(null);
 		}*/
 
@@ -1078,10 +1074,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 
-	public boolean isProtocolOk()
-	{
-		return protocolOk;
-	}
 
 	public void setProtocolOk(boolean b)
 	{

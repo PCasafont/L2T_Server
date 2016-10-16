@@ -15,14 +15,15 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * @author -Nemesiss-, Zoey76
  */
 public class L2ExtractableProductItem
 {
-	private final int[] id;
-	private final int[] ammount;
-	private final double chance;
+	@Getter private final int[] id;
+	@Getter private final int[] ammount;
+	@Getter private final double chance;
 
 	public L2ExtractableProductItem(int[] id, int[] ammount, double chance)
 	{
@@ -31,18 +32,6 @@ public class L2ExtractableProductItem
 		this.chance = chance;
 	}
 
-	public int[] getId()
-	{
-		return id;
-	}
 
-	public int[] getAmmount()
-	{
-		return ammount;
-	}
 
-	public double getChance()
-	{
-		return chance;
-	}
 }

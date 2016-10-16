@@ -64,7 +64,7 @@ public class FaenorScriptEngine extends ScriptEngine
 	private void loadPackages()
 	{
 		File packDirectory =
-				new File(Config.DATAPACK_ROOT, PACKAGE_DIRECTORY);//Logozo.sss(packDirectory.getAbsolutePath());
+				new File(Config.DATAPACK_ROOT, PACKAGE_DIRECTORY);//Log.sss(packDirectory.getAbsolutePath());
 
 		FileFilter fileFilter = file -> file.getName().endsWith(".zip");
 
@@ -110,13 +110,13 @@ public class FaenorScriptEngine extends ScriptEngine
 		}
 		/*for (ScriptDocument script : scripts)
          {
-		 Logozo.sss("Script: "+script);
+		 Log.sss("Script: "+script);
 		 }
-		 Logozo.sss("Sorting");
+		 Log.sss("Sorting");
 		 orderScripts();
 		 for (ScriptDocument script : scripts)
 		 {
-		 Logozo.sss("Script: "+script);
+		 Log.sss("Script: "+script);
 		 }*/
 	}
 

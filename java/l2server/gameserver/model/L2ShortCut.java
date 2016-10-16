@@ -30,12 +30,12 @@ public class L2ShortCut
 	public static final int TYPE_RECIPE = 5;
 	public static final int TYPE_TPBOOKMARK = 6;
 
-	private final int slot;
-	private final int page;
-	private final int type;
-	private final int id;
-	private final int level;
-	private final int characterType;
+	@Getter private final int slot;
+	@Getter private final int page;
+	@Getter private final int type;
+	@Getter private final int id;
+	@Getter private final int level;
+	@Getter private final int characterType;
 	@Getter private int sharedReuseGroup = -1;
 
 	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType)
@@ -48,35 +48,11 @@ public class L2ShortCut
 		this.characterType = characterType;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
-	public int getLevel()
-	{
-		return level;
-	}
 
-	public int getPage()
-	{
-		return page;
-	}
 
-	public int getSlot()
-	{
-		return slot;
-	}
 
-	public int getType()
-	{
-		return type;
-	}
 
-	public int getCharacterType()
-	{
-		return characterType;
-	}
 
 
 	public void setSharedReuseGroup(int g)

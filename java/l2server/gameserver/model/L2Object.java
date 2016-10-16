@@ -330,11 +330,6 @@ public abstract class L2Object
 	}
 
 	/**
-	 * @return The id of the instance zone the object is in - id 0 is global
-	 * since everything like dropped items, mobs, players can be in a instanciated area, it must be in l2object
-	 */
-
-	/**
 	 * @param instanceId The id of the instance zone the object is in - id 0 is global
 	 */
 	public void setInstanceId(int instanceId)

@@ -111,7 +111,7 @@ public class EventDroplist
 		for (DateDrop drop : allNpcDateDrops)
 		{
 			Date currentDate = new Date();
-			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
+			//Log.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
 			if (drop.dateRange.isWithinRange(currentDate))
 			{
 				list.add(drop);

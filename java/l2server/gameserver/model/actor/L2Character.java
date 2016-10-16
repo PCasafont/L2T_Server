@@ -1100,7 +1100,6 @@ public abstract class L2Character extends L2Object
 			 * As soon as we know that our hit landed, we must discharge any active soulshots.
 			 * This must be done so to avoid unwanted soulshot consumption.
 			 */
-
 			// If we didn't miss the hit, discharge the shoulshots, if any
 			if (this instanceof L2Summon && !(this instanceof L2PetInstance && weaponInst != null))
 			{
@@ -5253,7 +5252,7 @@ public abstract class L2Character extends L2Object
 			distFraction = distPassed / delta;
 		}
 
-		// if (Config.DEVELOPER) Logozo.warning("Move Ticks:" + (gameTicks - m.moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
+		// if (Config.DEVELOPER) Log.warning("Move Ticks:" + (gameTicks - m.moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
 
 		if (distFraction > 1) // already there
 		{
@@ -6099,7 +6098,7 @@ public abstract class L2Character extends L2Object
 	//	stopMove();
 	//
 	//	if (Config.DEBUG)
-	//	Logozo.fine(getName() +":: target reached at: x "+getX()+" y "+getY()+ " z:" + getZ());
+	//	Log.fine(getName() +":: target reached at: x "+getX()+" y "+getY()+ " z:" + getZ());
 	//
 	//	if (getPawnTarget() != null)
 	//	{
@@ -6140,7 +6139,7 @@ public abstract class L2Character extends L2Object
 	//	}
 	//	else
 	//	{
-	//	Logozo.info("multiple attacks want to start in parallel. prevented.");
+	//	Log.info("multiple attacks want to start in parallel. prevented.");
 	//	}
 	//	}
 	//
@@ -6584,7 +6583,7 @@ public abstract class L2Character extends L2Object
 						weapon.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
 				}
 			}
-			 */
+			*/
 
 			return;
 		}
@@ -7382,7 +7381,7 @@ public abstract class L2Character extends L2Object
 				//else
 				//{
 				//	if (Config.DEBUG)
-				//		Logozo.warning("Class cast bad: "+targets[i].getClass().toString());
+				//		Log.warning("Class cast bad: "+targets[i].getClass().toString());
 				//}
 			}
 

@@ -72,15 +72,11 @@ public class L2PcTemplate extends L2CharTemplate
 		}
 	}
 
-	/**
-	 * @return itemIds of all the starter equipment
-	 */
-
 	public static final class PcTemplateItem
 	{
-		private final int itemId;
-		private final int amount;
-		private final boolean equipped;
+		@Getter private final int itemId;
+		@Getter private final int amount;
+		@Getter private final boolean equipped;
 
 		/**
 		 * @param amount
@@ -93,29 +89,6 @@ public class L2PcTemplate extends L2CharTemplate
 			this.equipped = equipped;
 		}
 
-		/**
-		 * @return Returns the itemId.
-		 */
-		public int getItemId()
-		{
-			return itemId;
-		}
-
-		/**
-		 * @return Returns the amount.
-		 */
-		public int getAmount()
-		{
-			return amount;
-		}
-
-		/**
-		 * @return Returns the if the item should be equipped after char creation.
-		 */
-		public boolean isEquipped()
-		{
-			return equipped;
-		}
 	}
 
 	public void addSkill(int id)

@@ -42,9 +42,9 @@ public class HeroInfo
 		public String result;
 	}
 
-	private final int id;
-	private final String name;
-	private final int classId;
+	@Getter private final int id;
+	@Getter private final String name;
+	@Getter private final int classId;
 
 	@Getter @Setter private int victories;
 	@Getter @Setter private int defeats;
@@ -80,20 +80,8 @@ public class HeroInfo
 		this.played = played;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
-	public String getName()
-	{
-		return name;
-	}
 
-	public int getClassId()
-	{
-		return classId;
-	}
 
 
 

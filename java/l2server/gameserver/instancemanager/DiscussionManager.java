@@ -15,6 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
+import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class DiscussionManager
 	private List<Integer> voted = new ArrayList<>();
 	private int[] votes = new int[10];
 	private boolean votesEnabled = false;
-	private boolean globalChatDisabled = false;
+	@Getter private boolean globalChatDisabled = false;
 
 	public static DiscussionManager getInstance()
 	{
@@ -68,10 +69,6 @@ public class DiscussionManager
 		globalChatDisabled = chatDisabled;
 	}
 
-	public boolean isGlobalChatDisabled()
-	{
-		return globalChatDisabled;
-	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

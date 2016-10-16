@@ -47,10 +47,6 @@ public class RequestServerList extends L2LoginClientPacket
 		return skey2;
 	}
 
-	/**
-	 * @return
-	 */
-
 	@Override
 	public boolean readImpl()
 	{

@@ -1184,7 +1184,7 @@ public class FourSepulchersManager
 							if (Rnd.get(48) == 0)
 							{
 								spawnKeyBoxMob = true;
-								// Logozo.info("FourSepulchersManager.SpawnMonster:
+								// Log.info("FourSepulchersManager.SpawnMonster:
 								// Set to spawn Church of Viscount Key Mob.");
 							}
 							break;
@@ -1411,7 +1411,7 @@ public class FourSepulchersManager
 	protected void locationShadowSpawns()
 	{
 		int locNo = Rnd.get(4);
-		// Logozo.info("FourSepulchersManager.LocationShadowSpawns: Location index
+		// Log.info("FourSepulchersManager.LocationShadowSpawns: Location index
 		// is " + locNo + ".");
 		final int[] gateKeeper = {31929, 31934, 31939, 31944};
 
@@ -1680,7 +1680,7 @@ public class FourSepulchersManager
 		@Override
 		public void run()
 		{
-			// Logozo.info("FourSepulchersManager:In Entry Time");
+			// Log.info("FourSepulchersManager:In Entry Time");
 			inEntryTime = true;
 			inWarmUpTime = false;
 			inAttackTime = false;
@@ -1718,7 +1718,7 @@ public class FourSepulchersManager
 		@Override
 		public void run()
 		{
-			// Logozo.info("FourSepulchersManager:In Warm-Up Time");
+			// Log.info("FourSepulchersManager:In Warm-Up Time");
 			inEntryTime = true;
 			inWarmUpTime = false;
 			inAttackTime = false;
@@ -1752,7 +1752,7 @@ public class FourSepulchersManager
 		@Override
 		public void run()
 		{
-			// Logozo.info("FourSepulchersManager:In Attack Time");
+			// Log.info("FourSepulchersManager:In Attack Time");
 			inEntryTime = false;
 			inWarmUpTime = false;
 			inAttackTime = true;
@@ -1821,7 +1821,7 @@ public class FourSepulchersManager
 		@Override
 		public void run()
 		{
-			// Logozo.info("FourSepulchersManager:In Cool-Down Time");
+			// Log.info("FourSepulchersManager:In Cool-Down Time");
 			inEntryTime = false;
 			inWarmUpTime = false;
 			inAttackTime = false;

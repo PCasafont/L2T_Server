@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import java.util.List;
 
 /**
@@ -22,11 +23,11 @@ import java.util.List;
  */
 public class L2WalkRoute
 {
-	private final int id;
+	@Getter private final int id;
 	private final List<L2NpcWalkerNode> nodeList; // List of nodes
 	private final boolean repeatWalk; // Does repeat walk, after arriving into last point in list, or not
 	private boolean stopAfterCycle; // Make only one cycle or endlessly
-	private final byte repeatType;
+	@Getter private final byte repeatType;
 	// Repeat style: 0 - go back, 1 - go to first point (circle style), 2 - teleport to first point (conveyor style), 3 - random walking between points
 	private boolean debug;
 
@@ -40,10 +41,6 @@ public class L2WalkRoute
 		debug = false;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
 	public List<L2NpcWalkerNode> getNodeList()
 	{
@@ -65,10 +62,6 @@ public class L2WalkRoute
 		return stopAfterCycle;
 	}
 
-	public byte getRepeatType()
-	{
-		return repeatType;
-	}
 
 	public int getNodesCount()
 	{

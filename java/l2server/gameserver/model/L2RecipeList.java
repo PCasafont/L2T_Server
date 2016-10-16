@@ -155,26 +155,6 @@ public class L2RecipeList
 	}
 
 	/**
-	 * Return the Identifier of the Instance.<BR><BR>
-	 */
-
-	/**
-	 * Return the crafting level needed to use this L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the Identifier of the L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the name of the L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the crafting success rate when using the L2RecipeList.<BR><BR>
-	 */
-
-	/**
 	 * Return rue if the Item crafted with this L2RecipeList is consumable (shot, arrow,...).<BR><BR>
 	 */
 	public boolean isConsumable()
@@ -186,26 +166,6 @@ public class L2RecipeList
 	}
 
 	/**
-	 * Return the Identifier of the Item crafted with this L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the quantity of Item crafted when using this L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the Identifier of the Rare Item crafted with this L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the quantity of Rare Item crafted when using this L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the chance of Rare Item crafted when using this L2RecipeList.<BR><BR>
-	 */
-
-	/**
 	 * Return <B>true</B> if this a Dwarven recipe or <B>false</B> if its a Common recipe
 	 */
 	public boolean isDwarvenRecipe()
@@ -213,15 +173,4 @@ public class L2RecipeList
 		return isDwarvenRecipe;
 	}
 
-	/**
-	 * Return the table containing all L2RecipeInstance (1 line of the recipe : Item-Quantity needed) of the L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the table containing all L2RecipeStatInstance of the statUse parameter of the L2RecipeList.<BR><BR>
-	 */
-
-	/**
-	 * Return the table containing all L2RecipeStatInstance of the AltStatChange parameter of the L2RecipeList.<BR><BR>
-	 */
 }

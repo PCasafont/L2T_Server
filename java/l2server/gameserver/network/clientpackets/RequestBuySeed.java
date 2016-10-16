@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.CastleManager;
@@ -199,8 +200,8 @@ public class RequestBuySeed extends L2GameClientPacket
 
 	private static class Seed
 	{
-		private final int seedId;
-		private final long count;
+		@Getter private final int seedId;
+		@Getter private final long count;
 		SeedProduction seed;
 
 		public Seed(int id, long num)
@@ -209,15 +210,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getSeedId()
-		{
-			return seedId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 
 		public long getPrice()
 		{

@@ -37,6 +37,6 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 	protected void runImpl()
 	{
 		// TODO
-		//Logozo.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
+		//Log.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
 	}
 }

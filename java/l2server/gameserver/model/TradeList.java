@@ -41,7 +41,7 @@ public class TradeList
 	public static class TradeItem implements ItemInstanceInfo
 	{
 		@Getter @Setter private int objectId;
-		private final L2Item item;
+		@Getter private final L2Item item;
 		private int location;
 		@Setter private int enchant;
 		private int type1;
@@ -145,12 +145,6 @@ public class TradeList
 		}
 
 		@Override
-		public L2Item getItem()
-		{
-			return item;
-		}
-
-		@Override
 		public int getLocationSlot()
 		{
 			return location;
@@ -234,14 +228,14 @@ public class TradeList
 		}
 	}
 
-	private final L2PcInstance owner;
+	@Getter private final L2PcInstance owner;
 	@Getter @Setter private L2PcInstance partner;
 	private final List<TradeItem> items;
 	@Getter @Setter private String title;
-	private boolean packaged;
+	@Getter private boolean packaged;
 
-	private boolean confirmed = false;
-	private boolean locked = false;
+	@Getter private boolean confirmed = false;
+	@Getter private boolean locked = false;
 
 	public TradeList(L2PcInstance owner)
 	{
@@ -249,29 +243,13 @@ public class TradeList
 		this.owner = owner;
 	}
 
-	public L2PcInstance getOwner()
-	{
-		return owner;
-	}
 
 
 
 
 
-	public boolean isLocked()
-	{
-		return locked;
-	}
 
-	public boolean isConfirmed()
-	{
-		return confirmed;
-	}
 
-	public boolean isPackaged()
-	{
-		return packaged;
-	}
 
 	public void setPackaged(boolean value)
 	{

@@ -146,7 +146,7 @@ public abstract class PathFinding
 		//No Path found
 		return null;
 	}
-	 */
+	*/
 
 	/**
 	 * Convert geodata position to pathnode position

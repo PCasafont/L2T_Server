@@ -43,10 +43,6 @@ public class GMHennaInfo extends L2GameServerPacket
 		count = j;
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

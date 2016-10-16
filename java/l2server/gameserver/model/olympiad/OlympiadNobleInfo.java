@@ -22,9 +22,9 @@ import lombok.Setter;
  */
 public class OlympiadNobleInfo
 {
-	private final int id;
-	private final String name;
-	private final int classId;
+	@Getter private final int id;
+	@Getter private final String name;
+	@Getter private final int classId;
 
 	@Getter @Setter private int points = Olympiad.DEFAULT_POINTS;
 	@Getter private int matches = 0;
@@ -70,20 +70,8 @@ public class OlympiadNobleInfo
 		nonClassedMatches = 0;
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
-	public String getName()
-	{
-		return name;
-	}
 
-	public int getClassId()
-	{
-		return classId;
-	}
 
 
 

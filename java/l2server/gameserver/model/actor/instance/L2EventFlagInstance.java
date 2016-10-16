@@ -21,7 +21,7 @@ import lombok.Setter;
  */
 public class L2EventFlagInstance extends L2NpcInstance
 {
-	private boolean toDelete = false;
+	@Getter private boolean toDelete = false;
 	private EventInstance event = null;
 	@Getter @Setter private EventTeam team = null;
 	private EventType type;
@@ -138,8 +138,4 @@ public class L2EventFlagInstance extends L2NpcInstance
 		toDelete = true;
 	}
 
-	public boolean isToDelete()
-	{
-		return toDelete;
-	}
 }

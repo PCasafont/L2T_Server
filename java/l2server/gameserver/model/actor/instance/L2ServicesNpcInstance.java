@@ -445,7 +445,6 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
                      * If the character is less than level 75 on any of their previously chosen
 					 * classes then disallow them to change to their most recently added sub-class choice.
 					 */
-
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
@@ -520,7 +519,6 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					 *
 					 * Note: paramOne = classIndex
 					 */
-
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
@@ -602,7 +600,6 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					 * Warning: the information about this subclass will be removed from the
 					 * subclass list even if false!
 					 */
-
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");

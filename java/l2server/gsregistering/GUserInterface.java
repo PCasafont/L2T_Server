@@ -1,5 +1,6 @@
 package l2server.gsregistering;
 
+import lombok.Getter;
 import l2server.images.ImagesTable;
 import l2server.loginserver.GameServerTable;
 
@@ -28,7 +29,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
-	private final JFrame frame;
+	@Getter private final JFrame frame;
 
 	JTableModel dtm;
 	JProgressBar progressBar;
@@ -254,14 +255,6 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 				}
 				break;
 		}
-	}
-
-	/**
-	 * @return Returns the frame.
-	 */
-	public JFrame getFrame()
-	{
-		return frame;
 	}
 
 	class ButtonCellRenderer implements TableCellRenderer

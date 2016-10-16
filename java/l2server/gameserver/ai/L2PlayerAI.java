@@ -63,7 +63,7 @@ public class L2PlayerAI extends L2PlayableAI
 	{
 		/*
          if (Config.DEBUG)
-		 Logozo.warning("L2PlayerAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
+		 Log.warning("L2PlayerAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
 		 */
 
 		// do nothing unless CAST intention
@@ -149,7 +149,7 @@ public class L2PlayerAI extends L2PlayableAI
 			{
                 /*
 				 if (Config.DEBUG)
-				 Logozo.warning("L2PlayerAI: no previous intention set... Setting it to IDLE");
+				 Log.warning("L2PlayerAI: no previous intention set... Setting it to IDLE");
 				 */
 				// set intention to idle if skill doesn't change intention.
 				setIntention(AI_INTENTION_IDLE);
@@ -357,8 +357,8 @@ public class L2PlayerAI extends L2PlayableAI
 		
 		/*
 		 if (Config.DEBUG)
-		 Logozo.warning("L2PlayerAI: onEvtThink -> Check intention");
-		 */
+		 Log.warning("L2PlayerAI: onEvtThink -> Check intention");
+		*/
 
 		thinking = true;
 		try

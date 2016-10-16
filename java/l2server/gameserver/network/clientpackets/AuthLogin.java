@@ -118,7 +118,7 @@ public final class AuthLogin extends L2GameClientPacket
 			}
 			catch (Exception e)
 			{
-				Logozo.log(Level.WARNING, "Could not load player vitality items used count: " + e.getMessage(), e);
+				Log.log(Level.WARNING, "Could not load player vitality items used count: " + e.getMessage(), e);
 			}
 			finally
 			{

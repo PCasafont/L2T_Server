@@ -31,10 +31,10 @@ import java.util.List;
  */
 public class L2Henna
 {
-	private final int symbolId;
+	@Getter private final int symbolId;
 	private final int dye;
-	private final String name;
-	private final long price;
+	@Getter private final String name;
+	@Getter private final long price;
 	private final int INT;
 	private final int STR;
 	private final int CON;
@@ -47,7 +47,7 @@ public class L2Henna
 	private final int elemVal;
 
 	//Temp dyes values
-	private final long maxTime;
+	@Getter private final long maxTime;
 	@Getter private long expiryTime;
 	private final boolean isFourthSlot;
 	@Getter private List<SkillHolder> skills;
@@ -94,10 +94,6 @@ public class L2Henna
 		}
 	}
 
-	public int getSymbolId()
-	{
-		return symbolId;
-	}
 
 	/**
 	 * @return
@@ -105,22 +101,6 @@ public class L2Henna
 	public int getDyeId()
 	{
 		return dye;
-	}
-
-	/**
-	 * @return
-	 */
-	public String getName()
-	{
-		return name;
-	}
-
-	/**
-	 * @return
-	 */
-	public long getPrice()
-	{
-		return price;
 	}
 
 	/**
@@ -216,10 +196,6 @@ public class L2Henna
 		return elemVal;
 	}
 
-	public long getMaxTime()
-	{
-		return maxTime;
-	}
 
 	public boolean isFourthSlot()
 	{

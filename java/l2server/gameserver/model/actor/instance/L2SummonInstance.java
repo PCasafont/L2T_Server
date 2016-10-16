@@ -41,9 +41,9 @@ public class L2SummonInstance extends L2Summon
 	@Getter private int itemConsumeId;
 	@Getter private int itemConsumeCount;
 	@Getter private int itemConsumeSteps;
-	private final int totalLifeTime;
-	private final int timeLostIdle;
-	private final int timeLostActive;
+	@Getter private final int totalLifeTime;
+	@Getter private final int timeLostIdle;
+	@Getter private final int timeLostActive;
 	@Getter private int timeRemaining;
 	@Getter private int nextItemConsumeTime;
 	@Getter private int summonSkillId;
@@ -194,20 +194,8 @@ public class L2SummonInstance extends L2Summon
 
 
 
-	public int getTotalLifeTime()
-	{
-		return totalLifeTime;
-	}
 
-	public int getTimeLostIdle()
-	{
-		return timeLostIdle;
-	}
 
-	public int getTimeLostActive()
-	{
-		return timeLostActive;
-	}
 
 
 

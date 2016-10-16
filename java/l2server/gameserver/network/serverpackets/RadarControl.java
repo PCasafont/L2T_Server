@@ -26,7 +26,6 @@ public class RadarControl extends L2GameServerPacket
 	/**
 	 * 0xEB RadarControl		 ddddd
 	 */
-
 	public RadarControl(int showRadar, int type, int x, int y, int z)
 	{
 		this.showRadar = showRadar; // showRader?? 0 = showradar; 1 = delete radar;

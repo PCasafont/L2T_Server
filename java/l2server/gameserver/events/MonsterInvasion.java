@@ -232,7 +232,7 @@ public class MonsterInvasion
 		}
 		catch (Exception e)
 		{
-			//Logozo.warning("Error spawning ivasion army:");
+			//Log.warning("Error spawning ivasion army:");
 			e.printStackTrace();
 		}
 
@@ -326,7 +326,7 @@ public class MonsterInvasion
 			{
 				armyCommanderSpawn.getNpc().setIsInvul(false);
 			}
-			//Logozo.warning("Error moving ivasion army:");
+			//Log.warning("Error moving ivasion army:");
 			e.printStackTrace();
 		}
 	}

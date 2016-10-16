@@ -45,11 +45,11 @@ public class CursedWeapon
 {
 
 	// this.name is the name of the cursed weapon associated with its ID.
-	private final String name;
+	@Getter private final String name;
 	// this.itemId is the Item ID of the cursed weapon.
-	private final int itemId;
+	@Getter private final int itemId;
 	// this.skillId is the skills ID.
-	private final int skillId;
+	@Getter private final int skillId;
 	private final int skillMaxLevel;
 	@Setter private int dropRate;
 	@Setter private int duration;
@@ -157,7 +157,7 @@ public class CursedWeapon
 					statement.setInt(2, this.skillId);
 					if (statement.executeUpdate() != 1)
 					{
-						Logozo.warning("Error while deleting skillId "+ this.skillId +" from userId "+_playerId);
+						Log.warning("Error while deleting skillId "+ this.skillId +" from userId "+_playerId);
 					}
 					 */
 					// Restore the karma
@@ -633,20 +633,8 @@ public class CursedWeapon
 	}
 
 
-	public String getName()
-	{
-		return name;
-	}
 
-	public int getItemId()
-	{
-		return itemId;
-	}
 
-	public int getSkillId()
-	{
-		return skillId;
-	}
 
 
 	public L2PcInstance getPlayer()

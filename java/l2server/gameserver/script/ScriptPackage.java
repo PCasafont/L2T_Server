@@ -42,14 +42,6 @@ public class ScriptPackage
 	}
 
 	/**
-	 * @return Returns the otherFiles.
-	 */
-
-	/**
-	 * @return Returns the scriptFiles.
-	 */
-
-	/**
 	 */
 	private void addFiles(ZipFile pack)
 	{
@@ -74,10 +66,6 @@ public class ScriptPackage
 			}
 		}
 	}
-
-	/**
-	 * @return Returns the name.
-	 */
 
 	@Override
 	public String toString()

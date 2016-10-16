@@ -29,11 +29,6 @@ import java.util.logging.Level;
  */
 public final class FloodProtectorAction
 {
-
-    /*
-	  Logger
-     */
-
 	/**
 	 * Client for this instance of flood protector.
 	 */

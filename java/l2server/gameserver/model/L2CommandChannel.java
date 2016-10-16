@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -30,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class L2CommandChannel
 {
-	private final List<L2Party> partys;
+	@Getter private final List<L2Party> partys;
 	private L2PcInstance commandLeader = null;
 	private int channelLvl;
 
@@ -167,14 +168,6 @@ public class L2CommandChannel
 				}
 			}
 		}
-	}
-
-	/**
-	 * @return list of Parties in Command Channel
-	 */
-	public List<L2Party> getPartys()
-	{
-		return partys;
 	}
 
 	/**

@@ -24,7 +24,7 @@ import lombok.Getter;
 public class PlayerAuthResponse extends BaseRecievePacket
 {
 	@Getter private String account;
-	private boolean authed;
+	@Getter private boolean authed;
 
 	/**
 	 * @param decrypt
@@ -37,15 +37,4 @@ public class PlayerAuthResponse extends BaseRecievePacket
 		authed = readC() != 0;
 	}
 
-	/**
-	 * @return Returns the account.
-	 */
-
-	/**
-	 * @return Returns the authed state.
-	 */
-	public boolean isAuthed()
-	{
-		return authed;
-	}
 }

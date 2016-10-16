@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import lombok.Getter;
 import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2EnchantSkillLearn;
@@ -38,13 +39,13 @@ public class EnchantCostsTable
 
 	public static class EnchantSkillRange
 	{
-		private final int startLevel;
-		private final int maxLevel;
-		private final int normalBook;
-		private final int safeBook;
-		private final int changeBook;
-		private final int untrainBook;
-		private final int immortalBook;
+		@Getter private final int startLevel;
+		@Getter private final int maxLevel;
+		@Getter private final int normalBook;
+		@Getter private final int safeBook;
+		@Getter private final int changeBook;
+		@Getter private final int untrainBook;
+		@Getter private final int immortalBook;
 
 		public EnchantSkillRange(int startLevel, int maxLevel, int normalBook, int safeBook, int changeBook, int untrainBook, int immortalBook)
 		{
@@ -57,49 +58,21 @@ public class EnchantCostsTable
 			this.immortalBook = immortalBook;
 		}
 
-		public int getStartLevel()
-		{
-			return startLevel;
-		}
 
-		public int getMaxLevel()
-		{
-			return maxLevel;
-		}
 
-		public int getNormalBook()
-		{
-			return normalBook;
-		}
 
-		public int getSafeBook()
-		{
-			return safeBook;
-		}
 
-		public int getChangeBook()
-		{
-			return changeBook;
-		}
 
-		public int getUntrainBook()
-		{
-			return untrainBook;
-		}
 
-		public int getImmortalBook()
-		{
-			return immortalBook;
-		}
 	}
 
 	public static class EnchantSkillDetail
 	{
-		private final int level;
-		private final int adenaCost;
-		private final int spCost;
+		@Getter private final int level;
+		@Getter private final int adenaCost;
+		@Getter private final int spCost;
 		private final byte[] rates;
-		private final EnchantSkillRange range;
+		@Getter private final EnchantSkillRange range;
 
 		public EnchantSkillDetail(int lvl, int adena, int sp, byte[] rates, EnchantSkillRange range)
 		{
@@ -111,25 +84,9 @@ public class EnchantCostsTable
 		}
 
 		/**
-		 * @return Returns the level.
-		 */
-		public int getLevel()
-		{
-			return level;
-		}
-
-		/**
 		 * @return Returns the spCost.
 		 */
-		public int getSpCost()
-		{
-			return spCost;
-		}
 
-		public int getAdenaCost()
-		{
-			return adenaCost;
-		}
 
 		public byte getRate(L2PcInstance ply)
 		{
@@ -141,10 +98,6 @@ public class EnchantCostsTable
 			return rates[ply.getLevel() - 85];
 		}
 
-		public EnchantSkillRange getRange()
-		{
-			return range;
-		}
 	}
 
 	private TIntObjectHashMap<L2EnchantSkillLearn> enchantSkillTrees = new TIntObjectHashMap<>();

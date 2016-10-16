@@ -130,12 +130,6 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	/**
-	 * Returns this zones town id (if any)
-	 *
-	 * @return
-	 */
-
-	/**
 	 * Returns this town zones castle id
 	 *
 	 * @return

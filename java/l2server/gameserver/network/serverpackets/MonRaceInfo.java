@@ -59,7 +59,7 @@ public class MonRaceInfo extends L2GameServerPacket
 
 		for (int i = 0; i < 8; i++)
 		{
-			//Logozo.info("MOnster "+(i+1)+" npcid "+_monsters[i].getNpcTemplate().getNpcId());
+			//Log.info("MOnster "+(i+1)+" npcid "+_monsters[i].getNpcTemplate().getNpcId());
 			writeD(monsters[i].getObjectId()); //npcObjectID
 			writeD(monsters[i].getTemplate().NpcId + 1000000); //npcID
 			writeD(14107); //origin X

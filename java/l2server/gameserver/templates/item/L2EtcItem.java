@@ -29,7 +29,7 @@ public final class L2EtcItem extends L2Item
 {
 	// private final String[] skill;
 	private String handler;
-	private final int sharedReuseGroup;
+	@Getter private final int sharedReuseGroup;
 	private L2EtcItemType type;
 	private final boolean isBlessed;
 	@Getter private L2ExtractableProduct[] extractableItems = null;
@@ -143,21 +143,10 @@ public final class L2EtcItem extends L2Item
 	/**
 	 * @return
 	 */
-	public int getSharedReuseGroup()
-	{
-		return sharedReuseGroup;
-	}
-
-	/**
-	 * @return
-	 */
 	@Override
 	public final boolean isBlessed()
 	{
 		return isBlessed;
 	}
 
-	/**
-	 * @return the _extractable_items
-	 */
 }

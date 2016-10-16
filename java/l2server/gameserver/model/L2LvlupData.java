@@ -41,9 +41,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param hpAdd The this.classHpAdd to set.
-	 */
 	public void setClassHpAdd(float hpAdd)
 	{
 		classHpAdd = hpAdd;
@@ -54,9 +51,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param hpBase The this.classHpBase to set.
-	 */
 	public void setClassHpBase(float hpBase)
 	{
 		classHpBase = hpBase;
@@ -67,9 +61,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param hpModifier The this.classHpModifier to set.
-	 */
 	public void setClassHpModifier(float hpModifier)
 	{
 		classHpModifier = hpModifier;
@@ -80,8 +71,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 */
 	public void setClassCpAdd(float cpAdd)
 	{
 		classCpAdd = cpAdd;
@@ -92,8 +81,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 */
 	public void setClassCpBase(float cpBase)
 	{
 		classCpBase = cpBase;
@@ -104,9 +91,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param cpModifier The this.classCpModifier to set.
-	 */
 	public void setClassCpModifier(float cpModifier)
 	{
 		classCpModifier = cpModifier;
@@ -132,9 +116,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param lvl The this.classLvl to set.
-	 */
 	public void setClassLvl(int lvl)
 	{
 		classLvl = lvl;
@@ -145,9 +126,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param mpAdd The this.classMpAdd to set.
-	 */
 	public void setClassMpAdd(float mpAdd)
 	{
 		classMpAdd = mpAdd;
@@ -158,9 +136,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param mpBase The this.classMpBase to set.
-	 */
 	public void setClassMpBase(float mpBase)
 	{
 		classMpBase = mpBase;
@@ -171,9 +146,6 @@ public class L2LvlupData
 	 */
 	@Deprecated
 
-	/**
-	 * @param mpModifier The this.classMpModifier to set.
-	 */
 	public void setClassMpModifier(float mpModifier)
 	{
 		classMpModifier = mpModifier;

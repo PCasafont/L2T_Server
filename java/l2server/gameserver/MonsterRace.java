@@ -75,7 +75,7 @@ public class MonsterRace
 			{
 				Log.log(Level.WARNING, "", e);
 			}
-			//Logozo.info("Monster "+i+" is id: "+(id+random));
+			//Log.info("Monster "+i+" is id: "+(id+random));
 		}
 		newSpeeds();
 	}
@@ -115,14 +115,6 @@ public class MonsterRace
 			}
 		}
 	}
-
-	/**
-	 * @return Returns the monsters.
-	 */
-
-	/**
-	 * @return Returns the speeds.
-	 */
 
 	public int getFirstPlace()
 	{

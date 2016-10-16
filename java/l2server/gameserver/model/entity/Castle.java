@@ -910,7 +910,7 @@ public class Castle
 				doors.add(door);
 			}
 		}
-		//Logozo.info("Castle "+this+" loaded "+_doors.size()+" doors.");
+		//Log.info("Castle "+this+" loaded "+_doors.size()+" doors.");
 	}
 
 	private void updateOwnerInDB(L2Clan clan)

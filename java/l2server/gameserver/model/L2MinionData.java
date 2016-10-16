@@ -52,10 +52,6 @@ public class L2MinionData
 	}
 
 	/**
-	 * Return the Identifier of the Minion to spawn.<BR><BR>
-	 */
-
-	/**
 	 * Set the minimum of minions to amount.<BR><BR>
 	 *
 	 * @param amountMin The minimum quantity of this Minion type to spawn

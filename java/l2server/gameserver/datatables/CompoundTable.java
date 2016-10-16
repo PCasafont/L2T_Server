@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -36,10 +37,10 @@ public class CompoundTable implements Reloadable
 {
 	public class Combination
 	{
-		private final int item1;
-		private final int item2;
-		private final int result;
-		private final int chance;
+		@Getter private final int item1;
+		@Getter private final int item2;
+		@Getter private final int result;
+		@Getter private final int chance;
 
 		public Combination(int item1, int item2, int result, int chance)
 		{
@@ -49,25 +50,9 @@ public class CompoundTable implements Reloadable
 			this.chance = chance;
 		}
 
-		public int getItem1()
-		{
-			return item1;
-		}
 
-		public int getItem2()
-		{
-			return item2;
-		}
 
-		public int getResult()
-		{
-			return result;
-		}
 
-		public int getChance()
-		{
-			return chance;
-		}
 	}
 
 	private final Map<Integer, Combination> combinations = new HashMap<>();

@@ -52,7 +52,7 @@ public class GameServerThread extends Thread
 	private InputStream in;
 	private OutputStream out;
 	private final RSAPublicKey publicKey;
-	private final RSAPrivateKey privateKey;
+	@Getter private final RSAPrivateKey privateKey;
 	private NewCrypt blowfish;
 	@Getter private GameServerState loginConnectionState = GameServerState.CONNECTED;
 
@@ -347,10 +347,6 @@ public class GameServerThread extends Thread
 		return -1;
 	}
 
-	public RSAPrivateKey getPrivateKey()
-	{
-		return privateKey;
-	}
 
 	public void SetBlowFish(NewCrypt blowfish)
 	{

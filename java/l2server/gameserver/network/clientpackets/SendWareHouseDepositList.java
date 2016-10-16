@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Npc;
@@ -226,8 +227,8 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 	private static class WarehouseItem
 	{
-		private final int objectId;
-		private final long count;
+		@Getter private final int objectId;
+		@Getter private final long count;
 
 		public WarehouseItem(int id, long num)
 		{
@@ -235,14 +236,6 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getObjectId()
-		{
-			return objectId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 	}
 }

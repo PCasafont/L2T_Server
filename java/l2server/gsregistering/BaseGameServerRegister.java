@@ -44,7 +44,7 @@ import java.util.ResourceBundle;
  */
 public abstract class BaseGameServerRegister
 {
-	private boolean loaded = false;
+	@Getter private boolean loaded = false;
 	@Getter @Setter private ResourceBundle bundle;
 
 	public static void main(String[] args)
@@ -320,10 +320,6 @@ public abstract class BaseGameServerRegister
 		loaded = true;
 	}
 
-	public boolean isLoaded()
-	{
-		return loaded;
-	}
 
 	public abstract void showError(String msg, Throwable t);
 

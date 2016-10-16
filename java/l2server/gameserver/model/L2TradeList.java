@@ -36,7 +36,7 @@ import java.util.logging.Level;
 public class L2TradeList
 {
 	private final Map<Integer, L2TradeItem> items = new LinkedHashMap<>();
-	private final int listId;
+	@Getter private final int listId;
 
 	private String buystorename, sellstorename;
 	@Setter private boolean hasLimitedStockItem;
@@ -74,14 +74,6 @@ public class L2TradeList
 	public void removeItem(int itemID)
 	{
 		items.remove(itemID);
-	}
-
-	/**
-	 * @return Returns the listId.
-	 */
-	public int getListId()
-	{
-		return listId;
 	}
 
 	/**
@@ -154,9 +146,9 @@ public class L2TradeList
 	 */
 	public static class L2TradeItem
 	{
-		private final int listId;
-		private final int itemId;
-		private final L2Item template;
+		@Getter private final int listId;
+		@Getter private final int itemId;
+		@Getter private final L2Item template;
 		@Getter @Setter private long price;
 
 		// count related
@@ -170,19 +162,6 @@ public class L2TradeList
 			this.listId = listId;
 			this.itemId = itemId;
 			template = ItemTable.getInstance().getTemplate(itemId);
-		}
-
-		/**
-		 * @return Returns the itemId.
-		 */
-		public int getItemId()
-		{
-			return itemId;
-		}
-
-		public L2Item getTemplate()
-		{
-			return template;
 		}
 
 		/**
@@ -230,14 +209,6 @@ public class L2TradeList
 			saveDataTimer();
 		}
 
-		/**
-		 * @param maxCount The maxCount to set.
-		 */
-
-		/**
-		 * @return Returns the maxCount.
-		 */
-
 		public boolean hasLimitedStock()
 		{
 			return getMaxCount() > -1;
@@ -250,16 +221,6 @@ public class L2TradeList
 		{
 			this.restoreDelay = restoreDelay * 60 * 60 * 1000;
 		}
-
-		/**
-		 * @return Returns the restoreDelay (in milis)
-		 */
-
-		/**
-		 * For resuming when server loads
-		 *
-		 * @param nextRestoreTime The nextRestoreTime to set.
-		 */
 
 		protected void saveDataTimer()
 		{

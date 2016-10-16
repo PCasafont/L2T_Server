@@ -15,6 +15,7 @@
 
 package l2server.gsregistering;
 
+import lombok.Getter;
 import l2server.loginserver.GameServerTable;
 
 import javax.swing.*;
@@ -108,29 +109,13 @@ public class RegisterDialog extends JDialog implements ActionListener
 
 	class ComboServer
 	{
-		private final int id;
-		private final String name;
+		@Getter private final int id;
+		@Getter private final String name;
 
 		public ComboServer(int id, String name)
 		{
 			this.id = id;
 			this.name = name;
-		}
-
-		/**
-		 * @return Returns the id.
-		 */
-		public int getId()
-		{
-			return id;
-		}
-
-		/**
-		 * @return Returns the name.
-		 */
-		public String getName()
-		{
-			return name;
 		}
 
 		@Override

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.events.instanced;
 
+import lombok.Getter;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlNode;
 
@@ -39,9 +40,9 @@ public abstract class EventPrize
 
 	public static class EventPrizeItem extends EventPrize
 	{
-		private final int id;
-		private final int min;
-		private final int max;
+		@Getter private final int id;
+		@Getter private final int min;
+		@Getter private final int max;
 
 		public EventPrizeItem(XmlNode node)
 		{
@@ -51,20 +52,8 @@ public abstract class EventPrize
 			max = node.getInt("max");
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public int getMin()
-		{
-			return min;
-		}
 
-		public int getMax()
-		{
-			return max;
-		}
 
 		@Override
 		public EventPrizeItem getItem()

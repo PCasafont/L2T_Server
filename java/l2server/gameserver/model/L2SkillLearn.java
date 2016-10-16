@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 import java.util.ArrayList;
@@ -30,20 +31,20 @@ import java.util.Map;
 public final class L2SkillLearn
 {
 	// these two build the primary key
-	private final int id;
-	private final int level;
+	@Getter private final int id;
+	@Getter private final int level;
 
-	private final int spCost;
-	private final int minLevel;
-	private final int minDualLevel;
+	@Getter private final int spCost;
+	@Getter private final int minLevel;
+	@Getter private final int minDualLevel;
 
-	private final boolean learnedFromPanel;
+	@Getter private final boolean learnedFromPanel;
 	private final boolean learnedByFs;
 	private final boolean isTransfer;
 	private final boolean isAutoGet;
 
-	private final Map<Integer, Integer> costItems = new HashMap<>();
-	private final List<Integer> costSkills = new ArrayList<>();
+	@Getter private final Map<Integer, Integer> costItems = new HashMap<>();
+	@Getter private final List<Integer> costSkills = new ArrayList<>();
 
 	private boolean isRemember = false;
 
@@ -60,50 +61,6 @@ public final class L2SkillLearn
 		isAutoGet = autoget;
 	}
 
-	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return id;
-	}
-
-	/**
-	 * @return Returns the level.
-	 */
-	public int getLevel()
-	{
-		return level;
-	}
-
-	/**
-	 * @return Returns the minLevel.
-	 */
-	public int getMinLevel()
-	{
-		return minLevel;
-	}
-
-	public int getMinDualLevel()
-	{
-		return minDualLevel;
-	}
-
-	/**
-	 * @return Returns the spCost.
-	 */
-	public int getSpCost()
-	{
-		return spCost;
-	}
-
-	/**
-	 * Return true if skill can be learned by teachers
-	 */
-	public boolean isLearnedFromPanel()
-	{
-		return learnedFromPanel;
-	}
 
 	/**
 	 * Return true if skill can be learned by forgotten scroll
@@ -128,20 +85,12 @@ public final class L2SkillLearn
 		costItems.put(itemId, count);
 	}
 
-	public Map<Integer, Integer> getCostItems()
-	{
-		return costItems;
-	}
 
 	public void addCostSkill(int skillId)
 	{
 		costSkills.add(skillId);
 	}
 
-	public List<Integer> getCostSkills()
-	{
-		return costSkills;
-	}
 
 	public Map<Integer, Integer> getCostSkills(L2PcInstance player)
 	{

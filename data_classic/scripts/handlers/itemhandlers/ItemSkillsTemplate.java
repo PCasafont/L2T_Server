@@ -66,7 +66,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		 */
+		*/
 
 		//LasTravel
 		if (activeChar.getIsInsideGMEvent())

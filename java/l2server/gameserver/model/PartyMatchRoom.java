@@ -35,8 +35,8 @@ public class PartyMatchRoom
 	@Getter @Setter private String title;
 	private int loot;
 	@Getter private int location;
-	private int minlvl;
-	private int maxlvl;
+	private int minLvl;
+	private int maxLvl;
 	private int maxmem;
 	private final List<L2PcInstance> members = new ArrayList<>();
 
@@ -46,8 +46,8 @@ public class PartyMatchRoom
 		this.title = title;
 		this.loot = loot;
 		location = TownManager.getClosestLocation(owner);
-		this.minlvl = minlvl;
-		this.maxlvl = maxlvl;
+		this.minLvl = minlvl;
+		this.maxLvl = maxlvl;
 		this.maxmem = maxmem;
 		members.add(owner);
 	}
@@ -118,12 +118,12 @@ public class PartyMatchRoom
 
 	public int getMinLvl()
 	{
-		return minlvl;
+		return minLvl;
 	}
 
 	public int getMaxLvl()
 	{
-		return maxlvl;
+		return maxLvl;
 	}
 
 
@@ -143,16 +143,14 @@ public class PartyMatchRoom
 		return members.get(0);
 	}
 
-	/* SET  */
-
 	public void setMinLvl(int minlvl)
 	{
-		this.minlvl = minlvl;
+		this.minLvl = minlvl;
 	}
 
 	public void setMaxLvl(int maxlvl)
 	{
-		this.maxlvl = maxlvl;
+		this.maxLvl = maxlvl;
 	}
 
 	public void setLocation(int loc)

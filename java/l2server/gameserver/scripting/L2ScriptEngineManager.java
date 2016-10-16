@@ -15,6 +15,7 @@
 
 package l2server.gameserver.scripting;
 
+import lombok.Getter;
 import com.l2jserver.script.jython.JythonScriptEngine;
 import l2server.Config;
 import l2server.log.Log;
@@ -44,7 +45,7 @@ public final class L2ScriptEngineManager
 
 	private final Map<String, ScriptEngine> nameEngines = new HashMap<>();
 	private final Map<String, ScriptEngine> extEngines = new HashMap<>();
-	private final List<ScriptManager<?>> scriptManagers = new LinkedList<>();
+	@Getter private final List<ScriptManager<?>> scriptManagers = new LinkedList<>();
 
 	private final CompiledScriptCache cache;
 
@@ -303,7 +304,7 @@ public final class L2ScriptEngineManager
 					catch (ScriptException e)
 					{
 						reportScriptFileError(file, e);
-						//Logozo.log(Level.WARNING, "", e);
+						//Log.log(Level.WARNING, "", e);
 					}
 				}
 			}
@@ -579,10 +580,6 @@ public final class L2ScriptEngineManager
 		scriptManagers.remove(manager);
 	}
 
-	public List<ScriptManager<?>> getScriptManagers()
-	{
-		return scriptManagers;
-	}
 
 	/**
 	 * @param currentLoadingScript The currentLoadingScript to set.

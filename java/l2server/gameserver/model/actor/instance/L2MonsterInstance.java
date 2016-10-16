@@ -251,22 +251,12 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public int getMaxMp()
 	{
-		/*
-        if (getTemplate().isMiniRaid())
-			return getStat().getMaxMp() * 10;
-		 */
-
 		return getStat().getMaxMp();
 	}
 
 	@Override
 	public int getMaxHp()
 	{
-        /*
-		if (getTemplate().isMiniRaid())
-			return getStat().getMaxMp() * 10;
-		 */
-
 		return getStat().getMaxHp();
 	}
 }

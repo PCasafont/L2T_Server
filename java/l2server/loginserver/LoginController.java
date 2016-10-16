@@ -65,7 +65,7 @@ public class LoginController
 	 */
 	protected ConcurrentHashMap<String, L2LoginClient> loginServerClients = new ConcurrentHashMap<>();
 
-	private final Map<String, BanInfo> bannedIps = new HashMap<>();
+	@Getter private final Map<String, BanInfo> bannedIps = new HashMap<>();
 
 	private final Map<InetAddress, FailedLoginAttempt> hackProtection;
 
@@ -298,10 +298,6 @@ public class LoginController
 		return false;
 	}
 
-	public Map<String, BanInfo> getBannedIps()
-	{
-		return bannedIps;
-	}
 
 	/**
 	 * Remove the specified address from the ban list

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.datatables.ItemTable;
@@ -347,8 +348,8 @@ public final class RequestBuyItem extends L2GameClientPacket
 
 	private static class Item
 	{
-		private final int itemId;
-		private final long count;
+		@Getter private final int itemId;
+		@Getter private final long count;
 
 		public Item(int id, long num)
 		{
@@ -356,14 +357,6 @@ public final class RequestBuyItem extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getItemId()
-		{
-			return itemId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 	}
 }

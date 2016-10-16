@@ -212,10 +212,10 @@ public class RequestProcureCropList extends L2GameClientPacket
 
 	private static class Crop
 	{
-		private final int objectId;
-		private final int itemId;
+		@Getter private final int objectId;
+		@Getter private final int itemId;
 		private final int manorId;
-		private final long count;
+		@Getter private final long count;
 		@Getter private int reward = 0;
 		private CropProcure crop = null;
 
@@ -227,20 +227,8 @@ public class RequestProcureCropList extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getObjectId()
-		{
-			return objectId;
-		}
 
-		public int getItemId()
-		{
-			return itemId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 
 
 		public long getPrice()

@@ -27,7 +27,7 @@ public class L2DropCategory
 {
 	@Getter private float chance;
 	private ArrayList<L2DropData> drops;
-	private boolean custom = false;
+	@Getter private boolean custom = false;
 
 	public L2DropCategory(float chance)
 	{
@@ -59,10 +59,6 @@ public class L2DropCategory
 		custom = true;
 	}
 
-	public boolean isCustom()
-	{
-		return custom;
-	}
 
 	/**
 	 * useful for seeded conditions...the category will attempt to drop only among

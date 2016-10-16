@@ -172,7 +172,7 @@ public class TimeController
 					// calculate sleep time... time needed to next tick minus time it takes to call moveObjects()
 					sleepTime = 1 + MILLIS_IN_TICK - (int) runtime % MILLIS_IN_TICK;
 
-					//Logozo.finest("TICK: "+_gameTicks);
+					//Log.finest("TICK: "+_gameTicks);
 
 					if (sleepTime > 0)
 					{

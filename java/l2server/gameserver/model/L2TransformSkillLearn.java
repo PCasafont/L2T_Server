@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 /**
  * This class ...
  *
@@ -26,7 +27,7 @@ public final class L2TransformSkillLearn
 	private final int _race_id;
 	private final int _skill_id;
 	private final int _item_id;
-	private final int level;
+	@Getter private final int level;
 
 	private final int sp;
 	private final int _min_level;
@@ -47,14 +48,6 @@ public final class L2TransformSkillLearn
 	public int getId()
 	{
 		return _skill_id;
-	}
-
-	/**
-	 * @return Returns the level.
-	 */
-	public int getLevel()
-	{
-		return level;
 	}
 
 	/**

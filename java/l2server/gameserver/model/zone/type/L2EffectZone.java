@@ -44,7 +44,7 @@ public class L2EffectZone extends L2ZoneType
 	@Getter private int chance;
 	private int initialDelay;
 	private int reuse;
-	private boolean enabled;
+	@Getter private boolean enabled;
 	private boolean bypassConditions;
 	private boolean isShowDangerIcon;
 	private Future<?> task;
@@ -179,10 +179,6 @@ public class L2EffectZone extends L2ZoneType
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);
 	}
 
-	public boolean isEnabled()
-	{
-		return enabled;
-	}
 
 
 	public void addSkill(int skillId, int skillLvL)
@@ -203,7 +199,7 @@ public class L2EffectZone extends L2ZoneType
 			}
 		}
 		skills.put(skillId, skillLvL);
-		//Logozo.info("Zone: "+this+" adding skill: "+skillId+" lvl: "+skillLvL);
+		//Log.info("Zone: "+this+" adding skill: "+skillId+" lvl: "+skillLvL);
 	}
 
 	public void removeSkill(int skillId)

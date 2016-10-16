@@ -51,10 +51,6 @@ public final class FlyToLocation extends L2GameServerPacket
 		this(cha, dest.getX(), dest.getY(), dest.getZ(), type);
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

@@ -564,7 +564,7 @@ public final class BlockCheckerEngine
 			ThreadPoolManager.getInstance().scheduleGeneral(new EndEvent(), 5000);
 		}
 	}
-	 */
+	*/
 
 	/**
 	 * This class erase all event parameters on player

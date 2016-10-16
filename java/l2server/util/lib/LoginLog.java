@@ -38,11 +38,6 @@ public class LoginLog
 
 	public static void add(String text, String cat)
 	{
-		/*
-         * Logger this.log = logs.get(cat); if (this.log == null) { this.log =
-		 * Logger.getLogger(cat); logs.put(cat, this.log); }
-		 */
-
 		String date = new SimpleDateFormat("yy.MM.dd H:mm:ss").format(new Date());
 		String curr = new SimpleDateFormat("yyyy-MM-dd-").format(new Date());
 		new File("log/game").mkdirs();

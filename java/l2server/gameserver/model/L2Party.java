@@ -116,12 +116,6 @@ public class L2Party
 	}
 
 	/**
-	 * Check if another player can start invitation process
-	 *
-	 * @return boolean if party waits for invitation respond
-	 */
-
-	/**
 	 * set invitation process flag and store time for expiration
 	 * happens when: player join party or player decline to join
 	 */

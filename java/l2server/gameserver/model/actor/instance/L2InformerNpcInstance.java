@@ -136,7 +136,7 @@ public class L2InformerNpcInstance extends L2NpcInstance
 		}
 		catch (Exception e)
 		{
-			//Logozo.log(Level.SEVERE, "Error with Informer NPC: " + e.getMessage(), e);
+			//Log.log(Level.SEVERE, "Error with Informer NPC: " + e.getMessage(), e);
 		}
 		finally
 		{

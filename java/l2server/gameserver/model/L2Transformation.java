@@ -23,8 +23,8 @@ import lombok.Getter;
  */
 public abstract class L2Transformation implements Cloneable, Runnable
 {
-	private final int id;
-	private final int graphicalId;
+	@Getter private final int id;
+	@Getter private final int graphicalId;
 	private double collisionRadius;
 	private double collisionHeight;
 	private final boolean isStance;
@@ -73,22 +73,6 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	}
 
 	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return id;
-	}
-
-	/**
-	 * @return Returns the graphicalId.
-	 */
-	public int getGraphicalId()
-	{
-		return graphicalId;
-	}
-
-	/**
 	 * Return true if this is a stance (vanguard/inquisitor)
 	 *
 	 * @return
@@ -134,10 +118,6 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		this.player = player;
 	}
-
-	/**
-	 * @return Returns the player.
-	 */
 
 	public void start()
 	{

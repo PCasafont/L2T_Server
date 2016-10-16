@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.actor;
 
+import lombok.Getter;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
@@ -41,7 +42,7 @@ public class L2Trap extends L2Character
 	protected static final int TICK = 1000; // 1s
 
 	private boolean isTriggered;
-	private final L2Skill skill;
+	@Getter private final L2Skill skill;
 	private final int lifeTime;
 	private int timeRemaining;
 	private boolean hasLifeTime;
@@ -230,10 +231,6 @@ public class L2Trap extends L2Character
 
 	}
 
-	public L2Skill getSkill()
-	{
-		return skill;
-	}
 
 	public L2PcInstance getOwner()
 	{

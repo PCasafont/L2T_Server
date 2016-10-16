@@ -50,7 +50,7 @@ public class L2HelperBuff
 	 */
 	private boolean isMagicClass;
 
-	private boolean forSummon = false;
+	@Getter private boolean forSummon = false;
 
 	/**
 	 * Constructor of L2HelperBuff.<BR><BR>
@@ -70,30 +70,6 @@ public class L2HelperBuff
 	}
 
 	/**
-	 * Returns the lower level that the L2PcInstance must achieve in order to obtain this buff
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Returns the upper level that the L2PcInstance mustn't exceed in order to obtain this buff
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Returns the ID of the buff that the L2PcInstance will receive
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Returns the Level of the buff that the L2PcInstance will receive
-	 *
-	 * @return int
-	 */
-
-	/**
 	 * Returns if this Buff can be cast on a fighter or a mystic
 	 *
 	 * @return boolean : False if it's a fighter class Buff
@@ -103,8 +79,4 @@ public class L2HelperBuff
 		return isMagicClass;
 	}
 
-	public boolean isForSummon()
-	{
-		return forSummon;
-	}
 }

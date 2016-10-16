@@ -35,12 +35,6 @@ public final class StatsSet
 	@Getter private final Map<String, Object> set = new HashMap<>();
 
 	/**
-	 * Returns the set of values
-	 *
-	 * @return HashMap
-	 */
-
-	/**
 	 * Add a set of couple values in the current set
 	 *
 	 * @param newSet : StatsSet pointing out the list of couples to add in the current set

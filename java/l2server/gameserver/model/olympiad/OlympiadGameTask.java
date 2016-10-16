@@ -53,8 +53,8 @@ public final class OlympiadGameTask implements Runnable
 	private boolean needAnnounce = false;
 	private int countDown = 0;
 
-	private final List<L2DoorInstance> doors;
-	private final List<L2Spawn> buffers;
+	@Getter private final List<L2DoorInstance> doors;
+	@Getter private final List<L2Spawn> buffers;
 
 	private enum GameState
 	{
@@ -588,13 +588,5 @@ public final class OlympiadGameTask implements Runnable
 		}
 	}
 
-	public List<L2DoorInstance> getDoors()
-	{
-		return doors;
-	}
 
-	public List<L2Spawn> getBuffers()
-	{
-		return buffers;
-	}
 }

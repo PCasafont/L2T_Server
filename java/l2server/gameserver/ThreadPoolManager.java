@@ -15,6 +15,7 @@
 
 package l2server.gameserver;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.log.Log;
 import l2server.util.StringUtil;
@@ -98,7 +99,7 @@ public class ThreadPoolManager
 	 */
 	private static final long MAX_DELAY = Long.MAX_VALUE / 1000000 / 2;
 
-	private boolean shutdown;
+	@Getter private boolean shutdown;
 
 	public static ThreadPoolManager getInstance()
 	{
@@ -375,10 +376,6 @@ public class ThreadPoolManager
 		}
 	}
 
-	public boolean isShutdown()
-	{
-		return shutdown;
-	}
 
 	public void purge()
 	{

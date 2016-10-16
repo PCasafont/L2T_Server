@@ -89,7 +89,6 @@ public class QuestList extends L2GameServerPacket
           However, the sequence "1000 0000 0000 0000 0000 0010 1101 1111" indicates that the current step is
           the 10th but the 6th and 9th are not to be shown at all (not completed, either).
          */
-
 		if (quests != null)
 		{
 			writeH(quests.length);

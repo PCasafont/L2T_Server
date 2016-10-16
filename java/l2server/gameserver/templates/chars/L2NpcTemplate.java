@@ -165,7 +165,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	@Getter private StatsSet baseSet;
 	@Getter private L2NpcTemplate baseTemplate;
 
-	private final List<L2Spawn> allSpawns = new ArrayList<>();
+	@Getter private final List<L2Spawn> allSpawns = new ArrayList<>();
 
 	/**
 	 * Constructor of L2Character.<BR><BR>
@@ -1675,8 +1675,4 @@ public final class L2NpcTemplate extends L2CharTemplate
 		}
 	}
 
-	public List<L2Spawn> getAllSpawns()
-	{
-		return allSpawns;
-	}
 }

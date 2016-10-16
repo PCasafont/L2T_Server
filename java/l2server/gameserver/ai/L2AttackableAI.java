@@ -751,7 +751,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				}
 			}
 
-			//Logozo.debug("Current pos ("+getX()+", "+getY()+"), moving to ("+x1+", "+y1+").");
+			//Log.debug("Current pos ("+getX()+", "+getY()+"), moving to ("+x1+", "+y1+").");
 			// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet CharMoveToLocation (broadcast)
 			moveTo(x1, y1, z1);
 		}

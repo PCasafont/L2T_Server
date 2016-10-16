@@ -15,6 +15,7 @@
 
 package l2server.gameserver.pathfinding.geonodes;
 
+import lombok.Getter;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 
@@ -25,7 +26,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 {
 	private final short x;
 	private final short y;
-	private final short z;
+	@Getter private final short z;
 
 	public GeoNodeLoc(short x, short y, short z)
 	{
@@ -50,15 +51,6 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	public int getY()
 	{
 		return L2World.MAP_MIN_Y + y * 128 + 48;
-	}
-
-	/**
-	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getZ()
-	 */
-	@Override
-	public short getZ()
-	{
-		return z;
 	}
 
 	@Override

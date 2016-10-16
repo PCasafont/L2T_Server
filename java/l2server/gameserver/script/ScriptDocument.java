@@ -63,11 +63,6 @@ public class ScriptDocument
 		}
 	}
 
-
-	/**
-	 * @return Returns the this.name.
-	 */
-
 	@Override
 	public String toString()
 	{

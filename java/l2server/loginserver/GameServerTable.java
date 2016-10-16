@@ -52,7 +52,7 @@ public class GameServerTable
 	@Getter private static GameServerTable instance;
 
 	// Server Names Config
-	private static Map<Integer, String> serverNames = new HashMap<>();
+	@Getter private static Map<Integer, String> serverNames = new HashMap<>();
 
 	// Game Server Table
 	private Map<Integer, GameServerInfo> gameServerTable = new ConcurrentHashMap<>();
@@ -228,10 +228,6 @@ public class GameServerTable
 		return getServerNames().get(id);
 	}
 
-	public Map<Integer, String> getServerNames()
-	{
-		return serverNames;
-	}
 
 	public KeyPair getKeyPair()
 	{

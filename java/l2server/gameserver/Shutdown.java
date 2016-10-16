@@ -15,6 +15,7 @@
 
 package l2server.gameserver;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ClanTable;
@@ -55,7 +56,7 @@ public class Shutdown extends Thread
 	private int shutdownMode = SIGTERM;
 	private static ShutdownTask task = null;
 
-	private boolean shuttingDown = false;
+	@Getter private boolean shuttingDown = false;
 
 	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart)
 	{
@@ -406,10 +407,6 @@ public class Shutdown extends Thread
 		}
 	}
 
-	public boolean isShuttingDown()
-	{
-		return shuttingDown;
-	}
 
 	private class ShutdownTask extends Thread
 	{

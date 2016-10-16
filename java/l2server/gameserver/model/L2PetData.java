@@ -132,9 +132,9 @@ public class L2PetData
 
 	public static final class L2PetSkillLearn
 	{
-		private final int id;
-		private final int level;
-		private final int minLevel;
+		@Getter private final int id;
+		@Getter private final int level;
+		@Getter private final int minLevel;
 
 		public L2PetSkillLearn(int id, int lvl, int minLvl)
 		{
@@ -143,19 +143,7 @@ public class L2PetData
 			minLevel = minLvl;
 		}
 
-		public int getId()
-		{
-			return id;
-		}
 
-		public int getLevel()
-		{
-			return level;
-		}
 
-		public int getMinLevel()
-		{
-			return minLevel;
-		}
 	}
 }

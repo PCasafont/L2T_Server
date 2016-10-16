@@ -54,7 +54,7 @@ public class L2Spawn
 	/**
 	 * The link on the L2NpcTemplate object containing generic and static properties of this spawn (ex : RewardExp, RewardSP, AggroRange...)
 	 */
-	private final L2Npc npc;
+	@Getter private final L2Npc npc;
 
 	/**
 	 * The location area where L2NpcInstance can be spawned
@@ -64,7 +64,7 @@ public class L2Spawn
 	/**
 	 * Is it spawned currently?
 	 */
-	private boolean spawned = false;
+	@Getter private boolean spawned = false;
 
 	/**
 	 * Is it scheduled for respawn?
@@ -442,10 +442,6 @@ public class L2Spawn
 	}
 
 	/**
-	 * Return the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
-	 */
-
-	/**
 	 * Return the X position of the spwan point.<BR><BR>
 	 */
 	public int getX()
@@ -478,22 +474,6 @@ public class L2Spawn
 	}
 
 	/**
-	 * Return the heading of L2NpcInstance when they are spawned.<BR><BR>
-	 */
-
-	/**
-	 * Return the delay between a L2NpcInstance remove and its re-spawn.<BR><BR>
-	 */
-
-	/**
-	 * Return Random RaidBoss Spawn delay.<BR><BR>
-	 */
-
-	/**
-	 * Set the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
-	 */
-
-	/**
 	 * Set the X position of the spwan point.<BR><BR>
 	 */
 	public void setX(int locx)
@@ -516,10 +496,6 @@ public class L2Spawn
 	{
 		locZ = locz;
 	}
-
-	/**
-	 * Set the heading of L2NpcInstance when they are spawned.<BR><BR>
-	 */
 
 	public void setRandomCoords(List<int[]> coords)
 	{
@@ -589,10 +565,6 @@ public class L2Spawn
 		randomRespawnDelay = i * 1000;
 	}
 
-	public L2Npc getNpc()
-	{
-		return npc;
-	}
 
 	private void respawnNpc()
 	{
@@ -610,10 +582,6 @@ public class L2Spawn
 	}
 
 
-	public boolean isSpawned()
-	{
-		return spawned;
-	}
 
 
 

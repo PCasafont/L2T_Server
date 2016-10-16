@@ -442,7 +442,7 @@ public class GeoPathFinding extends PathFinding
 		}
 		String fname = "./data/pathnode/" + rx + "_" + ry + ".pn";
 		short regionoffset = getRegionOffset(rx, ry);
-		//Logozo.info("PathFinding Engine: - Loading: " + fname + " -> region offset: " + regionoffset + "X: " + rx + " Y: " + ry);
+		//Log.info("PathFinding Engine: - Loading: " + fname + " -> region offset: " + regionoffset + "X: " + rx + " Y: " + ry);
 		File Pn = new File(fname);
 		int node = 0, size, index = 0;
 		FileChannel roChannel = null;

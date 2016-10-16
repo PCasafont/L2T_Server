@@ -56,7 +56,7 @@ public class L2Attackable extends L2Npc
 {
 	@Setter private boolean isRaid = false;
 	private boolean isRaidMinion = false;
-	private boolean champion = false;
+	@Getter @Setter private boolean champion = false;
 
 	/**
 	 * This class contains all AggroInfo of the L2Attackable against the attacker L2Character.
@@ -293,11 +293,11 @@ public class L2Attackable extends L2Npc
 	private RewardItem[] sweepItems;
 
 	private RewardItem[] harvestItems;
-	private boolean seeded;
+	@Getter private boolean seeded;
 	@Getter private int seedType = 0;
 	private int seederObjId = 0;
 
-	private boolean overhit;
+	@Getter private boolean overhit;
 
 	@Getter private double overhitDamage;
 
@@ -307,7 +307,7 @@ public class L2Attackable extends L2Npc
 	@Getter private CommandChannelTimer commandChannelTimer = null;
 	@Getter private long commandChannelLastAttack = 0;
 
-	private boolean absorbed;
+	@Getter private boolean absorbed;
 
 	@Getter private ConcurrentHashMap<Integer, AbsorberInfo> absorbersList = new ConcurrentHashMap<>();
 
@@ -2278,27 +2278,11 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return True if the L2Attackable was hit by an over-hit enabled skill.
-	 */
-	public boolean isOverhit()
-	{
-		return overhit;
-	}
-
-	/**
 	 * Activate the absorbed soul condition on the L2Attackable.
 	 */
 	public void absorbSoul()
 	{
 		absorbed = true;
-	}
-
-	/**
-	 * Return True if the L2Attackable had his soul absorbed.
-	 */
-	public boolean isAbsorbed()
-	{
-		return absorbed;
 	}
 
 	/**
@@ -2600,10 +2584,6 @@ public class L2Attackable extends L2Npc
 	}
 
 
-	public boolean isSeeded()
-	{
-		return seeded;
-	}
 
 	/**
 	 * Set delay for onKill() call, in ms
@@ -2761,17 +2741,6 @@ public class L2Attackable extends L2Npc
 	public L2Attackable getLeader()
 	{
 		return null;
-	}
-
-	public void setChampion(boolean champ)
-	{
-		champion = champ;
-	}
-
-	@Override
-	public boolean isChampion()
-	{
-		return champion;
 	}
 
 	public void escape(String message)

@@ -95,10 +95,6 @@ public class L2StaticObjectInstance extends L2Character
 	}
 
 	/**
-	 * @return Returns the StaticObjectId.
-	 */
-
-	/**
 	 */
 	public L2StaticObjectInstance(int objectId, L2CharTemplate template, int staticId)
 	{

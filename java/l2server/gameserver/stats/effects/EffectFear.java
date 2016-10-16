@@ -95,7 +95,7 @@ public class EffectFear extends L2Effect
 					return false;
 			}
 		}
-		 */
+		*/
 
 		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
 				getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||

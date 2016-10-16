@@ -15,8 +15,6 @@
 
 package handlers.itemhandlers;
 
-import java.util.Map;
-
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.L2ItemInstance;
@@ -32,6 +30,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.log.Log;
+
+import java.util.Map;
 
 /**
  * Template for item skills handler
@@ -66,7 +66,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		 */
+		*/
 
 		//LasTravel
 		if (activeChar.getIsInsideGMEvent())

@@ -195,18 +195,14 @@ abstract class AbstractAI implements Ctrl
 		return intention;
 	}
 
-	protected void setCastTarget(L2Character target)
+	protected void setCastTarget(L2Character castTarget)
 	{
-		castTarget = target;
+		this.castTarget = castTarget;
 	}
 
-	/**
-	 * Return the current cast target.<BR><BR>
-	 */
-
-	protected void setAttackTarget(L2Character target)
+	protected void setAttackTarget(L2Character attackTarget)
 	{
-		attackTarget = target;
+		this.attackTarget = attackTarget;
 	}
 
 	/**
@@ -235,8 +231,8 @@ abstract class AbstractAI implements Ctrl
 	{
 		/*
          if (Config.DEBUG)
-		 Logozo.warning("AbstractAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
-		 */
+		 Log.warning("AbstractAI: changeIntention -> " + intention + " " + arg0 + " " + arg1);
+		*/
 
 		this.intention = intention;
 		intentionArg0 = arg0;
@@ -307,8 +303,8 @@ abstract class AbstractAI implements Ctrl
 	{
 		/*
 		 if (Config.DEBUG)
-		 Logozo.warning("AbstractAI: setIntention -> " + intention + " " + arg0 + " " + arg1);
-		 */
+		 Log.warning("AbstractAI: setIntention -> " + intention + " " + arg0 + " " + arg1);
+		*/
 
 		// Stop the follow mode if necessary
 		if (intention != AI_INTENTION_FOLLOW && intention != AI_INTENTION_ATTACK)
@@ -407,7 +403,7 @@ abstract class AbstractAI implements Ctrl
 			this.ai.notifyEvent(this.evt, this.arg0, this.arg1);
 		}
 	}
-	 */
+	*/
 
 	/**
 	 * Launch the L2CharacterAI onEvt method corresponding to the Event.<BR><BR>
@@ -429,8 +425,8 @@ abstract class AbstractAI implements Ctrl
 		
 		/*
 		 if (Config.DEBUG)
-		 Logozo.warning("AbstractAI: notifyEvent -> " + evt + " " + arg0 + " " + arg1);
-		 */
+		 Log.warning("AbstractAI: notifyEvent -> " + evt + " " + arg0 + " " + arg1);
+		*/
 
 		switch (evt)
 		{
@@ -732,8 +728,8 @@ abstract class AbstractAI implements Ctrl
 	{
 		/*
 		 if (Config.DEBUG)
-		 Logozo.warning("clientStopMoving();");
-		 */
+		 Log.warning("clientStopMoving();");
+		*/
 
 		// Stop movement of the L2Character
 		if (actor.isMoving())

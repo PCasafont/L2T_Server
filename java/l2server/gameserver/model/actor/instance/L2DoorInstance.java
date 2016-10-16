@@ -261,10 +261,6 @@ public class L2DoorInstance extends L2Character
 	}
 
 	/**
-	 * @return Returns the open.
-	 */
-
-	/**
 	 * @param open The open to set.
 	 */
 	private void setOpen(boolean open)
@@ -744,7 +740,7 @@ public class L2DoorInstance extends L2Character
 				openMe();
 			}
 
-			//Logozo.info("Door "+L2DoorInstance.this+ " switched state "+open);
+			//Log.info("Door "+L2DoorInstance.this+ " switched state "+open);
 			int delay = open ? closeTime : openTime;
 			if (randomTime > 0)
 			{

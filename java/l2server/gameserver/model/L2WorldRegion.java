@@ -52,9 +52,9 @@ public final class L2WorldRegion
 
 	@Getter private List<L2WorldRegion> surroundingRegions;
 	private int tileX, tileY;
-	private boolean active = false;
+	@Getter private boolean active = false;
 	private ScheduledFuture<?> neighborsTask = null;
-	private final ArrayList<L2ZoneType> zones;
+	@Getter private final ArrayList<L2ZoneType> zones;
 
 	public L2WorldRegion(int pTileX, int pTileY)
 	{
@@ -70,10 +70,6 @@ public final class L2WorldRegion
 		zones = new ArrayList<>();
 	}
 
-	public ArrayList<L2ZoneType> getZones()
-	{
-		return zones;
-	}
 
 	public void addZone(L2ZoneType zone)
 	{
@@ -301,10 +297,6 @@ public final class L2WorldRegion
 		}
 	}
 
-	public boolean isActive()
-	{
-		return active;
-	}
 
 	// check if all 9 neighbors (including self) are inactive or active but with no players.
 	// returns true if the above condition is met.
@@ -469,10 +461,6 @@ public final class L2WorldRegion
 	{
 		surroundingRegions.add(region);
 	}
-
-	/**
-	 * Return the ArrayList this.surroundingRegions containing all L2WorldRegion around the current L2WorldRegion
-	 */
 
 	public Map<Integer, L2Playable> getVisiblePlayable()
 	{

@@ -32,10 +32,6 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 		this.fortress = fortress;
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

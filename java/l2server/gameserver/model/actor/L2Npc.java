@@ -1652,10 +1652,6 @@ public class L2Npc extends L2Character
 		return true;
 	}
 
-	/**
-	 * Set the spawn of the L2NpcInstance.<BR><BR>
-	 */
-
 	@Override
 	public void onSpawn()
 	{
@@ -1768,10 +1764,6 @@ public class L2Npc extends L2Character
 
 		super.deleteMe();
 	}
-
-	/**
-	 * Return the L2Spawn object that manage this L2NpcInstance.<BR><BR>
-	 */
 
 	@Override
 	public String toString()

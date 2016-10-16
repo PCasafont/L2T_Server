@@ -280,7 +280,7 @@ public class CursedWeaponsManager
 						statement.setInt(2, cw.getSkillId());
 						if (statement.executeUpdate() != 1)
 						{
-							Logozo.warning("Error while deleting cursed weapon "+itemId+" skill from userId "+playerId);
+							Log.warning("Error while deleting cursed weapon "+itemId+" skill from userId "+playerId);
 						}
 						 */
 						// Restore the player's old karma and pk count

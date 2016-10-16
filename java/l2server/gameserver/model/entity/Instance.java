@@ -59,7 +59,7 @@ public class Instance
 	@Getter private long instanceEndTime = -1;
 	private boolean isPvPInstance = false;
 	private boolean isPeaceInstance = false;
-	private boolean showTimer = false;
+	@Getter private boolean showTimer = false;
 	private boolean isTimerIncrease = true;
 	@Getter private String timerText = "";
 
@@ -267,10 +267,6 @@ public class Instance
 
 
 
-	public boolean isShowTimer()
-	{
-		return showTimer;
-	}
 
 	public boolean isTimerIncrease()
 	{

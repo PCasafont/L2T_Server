@@ -33,7 +33,7 @@ import java.util.logging.Level;
  */
 public class Mail extends ItemContainer
 {
-	private final int ownerId;
+	@Getter private final int ownerId;
 	@Getter private int messageId;
 
 	public Mail(int objectId, int messageId)
@@ -164,11 +164,5 @@ public class Mail extends ItemContainer
 		{
 			L2DatabaseFactory.close(con);
 		}
-	}
-
-	@Override
-	public int getOwnerId()
-	{
-		return ownerId;
 	}
 }

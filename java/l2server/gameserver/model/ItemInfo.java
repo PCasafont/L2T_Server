@@ -70,7 +70,7 @@ public class ItemInfo implements ItemInstanceInfo
 	/**
 	 * If True the L2ItemInstance is equipped
 	 */
-	private boolean equipped;
+	@Getter private boolean equipped;
 
 	/**
 	 * The action to do clientside (1=ADD, 2=MODIFY, 3=REMOVE)
@@ -280,13 +280,6 @@ public class ItemInfo implements ItemInstanceInfo
 	{
 		return type2;
 	}
-
-	@Override
-	public boolean isEquipped()
-	{
-		return equipped;
-	}
-
 
 	@Override
 	public int getRemainingTime()

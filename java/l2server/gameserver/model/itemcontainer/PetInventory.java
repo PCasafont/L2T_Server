@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.itemcontainer;
 
+import lombok.Getter;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
@@ -24,17 +25,11 @@ import l2server.gameserver.templates.item.L2Item;
 
 public class PetInventory extends Inventory
 {
-	private final L2PetInstance owner;
+	@Getter private final L2PetInstance owner;
 
 	public PetInventory(L2PetInstance owner)
 	{
 		this.owner = owner;
-	}
-
-	@Override
-	public L2PetInstance getOwner()
-	{
-		return owner;
 	}
 
 	@Override

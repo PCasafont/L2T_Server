@@ -36,10 +36,6 @@ public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 		this(player, player.getSellList().getTitle());
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

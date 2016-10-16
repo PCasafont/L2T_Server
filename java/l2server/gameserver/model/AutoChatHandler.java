@@ -254,7 +254,7 @@ public class AutoChatHandler implements SpawnListener
 		protected int npcId;
 		@Getter private long defaultDelay = DEFAULT_CHAT_DELAY;
 		@Getter private String[] defaultTexts;
-		private boolean defaultRandom = false;
+		@Getter private boolean defaultRandom = false;
 
 		private boolean globalChat = false;
 		private boolean isActive;
@@ -364,16 +364,6 @@ public class AutoChatHandler implements SpawnListener
 		public boolean isGlobal()
 		{
 			return globalChat;
-		}
-
-		/**
-		 * Tests if random order is the DEFAULT for new chat definitions.
-		 *
-		 * @return boolean isRandom
-		 */
-		public boolean isDefaultRandom()
-		{
-			return defaultRandom;
 		}
 
 		/**

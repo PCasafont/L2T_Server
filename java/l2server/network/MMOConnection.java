@@ -217,10 +217,6 @@ public class MMOConnection<T extends MMOClient<?>>
 		return sendQueue;
 	}
 
-	/*
-	 * final SendablePacket<T> getClosePacket() { return this.closePacket; }
-	 */
-
 	@SuppressWarnings("unchecked")
 	public final void close(final SendablePacket<T> sp)
 	{

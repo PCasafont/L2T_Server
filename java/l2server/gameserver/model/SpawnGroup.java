@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
@@ -31,8 +32,8 @@ public class SpawnGroup
 {
 	private final int minZ;
 	private final int maxZ;
-	private final L2Territory territory = new L2Territory(0);
-	private final List<L2Spawn> spawns = new ArrayList<>();
+	@Getter private final L2Territory territory = new L2Territory(0);
+	@Getter private final List<L2Spawn> spawns = new ArrayList<>();
 
 	public SpawnGroup(XmlNode node)
 	{
@@ -97,13 +98,5 @@ public class SpawnGroup
 		return territory.getRandomPoint();
 	}
 
-	public L2Territory getTerritory()
-	{
-		return territory;
-	}
 
-	public List<L2Spawn> getSpawns()
-	{
-		return spawns;
-	}
 }

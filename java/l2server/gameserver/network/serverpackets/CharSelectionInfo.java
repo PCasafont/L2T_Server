@@ -458,7 +458,6 @@ public class CharSelectionInfo extends L2GameServerPacket
 		 * This prevents chars created before base class was introduced
 		 * from being displayed incorrectly.
 		 */
-
 		charInfopackage.setDeleteTimer(deletetime);
 		charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())

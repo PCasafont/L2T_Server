@@ -193,7 +193,7 @@ public class L2Clan
 	@Getter @Setter private int rank = 0;
 
 	private String notice;
-	private boolean noticeEnabled = false;
+	@Getter private boolean noticeEnabled = false;
 	private static final int MAX_NOTICE_LENGTH = 8192;
 
 	/**
@@ -957,10 +957,6 @@ public class L2Clan
 		storeNotice(notice, noticeEnabled);
 	}
 
-	public boolean isNoticeEnabled()
-	{
-		return noticeEnabled;
-	}
 
 	public String getNotice()
 	{
@@ -1921,7 +1917,7 @@ public class L2Clan
 	{
 		if (subPledges.get(pledgeType) != null)
 		{
-			//Logozo.warning("found sub-unit with id: "+pledgeType);
+			//Log.warning("found sub-unit with id: "+pledgeType);
 			switch (pledgeType)
 			{
 				case SUBUNIT_ACADEMY:
@@ -1987,7 +1983,7 @@ public class L2Clan
 			PreparedStatement statement =
 					con.prepareStatement("SELECT privs,rank,party FROM clan_privs WHERE clan_id=?");
 			statement.setInt(1, getClanId());
-			//Logozo.warning("clanPrivs restore for ClanId : "+getClanId());
+			//Log.warning("clanPrivs restore for ClanId : "+getClanId());
 			ResultSet rset = statement.executeQuery();
 
 			// Go though the recordset of this SQL query
@@ -2055,7 +2051,7 @@ public class L2Clan
 
 			try
 			{
-				//Logozo.warning("requested store clan privs in db for rank: "+rank+", privs: "+privs);
+				//Log.warning("requested store clan privs in db for rank: "+rank+", privs: "+privs);
 				// Retrieve all skills of this L2PcInstance from the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
@@ -2100,7 +2096,7 @@ public class L2Clan
 
 			try
 			{
-				//Logozo.warning("requested store clan new privs in db for rank: "+rank);
+				//Log.warning("requested store clan new privs in db for rank: "+rank);
 				// Retrieve all skills of this L2PcInstance from the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement =

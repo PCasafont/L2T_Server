@@ -281,7 +281,7 @@ public class MultiSellChoose extends L2GameClientPacket
 
 						/*if (itemToTake.isEquipped())
 						{ //this is a cheat, transaction will be aborted and if any items already taken will not be returned back to inventory!
-							Logozo.severe("Character: " + player.getName() + " is trying to cheat in multisell, exchanging equipped item, merchatnt id:" + merchant.getNpcId());
+							Log.severe("Character: " + player.getName() + " is trying to cheat in multisell, exchanging equipped item, merchatnt id:" + merchant.getNpcId());
 							player.setMultiSell(null);
 							return;
 						}*/
@@ -373,7 +373,6 @@ public class MultiSellChoose extends L2GameClientPacket
 									 * If, in the future, it becomes necessary that we optimize, the above discussion should make it clear
 									 * what optimization exactly is necessary (based on the comments under "IDEALLY").
 									 */
-
 									// choice 1.  Small number of items exchanged.  No sorting.
 									for (int i = 1; i <= e.getItemCount() * amount; i++)
 									{

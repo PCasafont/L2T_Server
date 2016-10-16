@@ -51,7 +51,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class L2ZoneType
 {
-	private final int id;
+	@Getter private final int id;
 	protected L2ZoneForm zone;
 	protected ConcurrentHashMap<Integer, L2Character> characterList;
 
@@ -81,14 +81,6 @@ public abstract class L2ZoneType
 
 		race = null;
 		clazz = null;
-	}
-
-	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return id;
 	}
 
 	/**
@@ -284,18 +276,6 @@ public abstract class L2ZoneType
 	{
 		return zone;
 	}
-
-	/**
-	 * Set the zone name.
-	 *
-	 * @param name
-	 */
-
-	/**
-	 * Returns zone name
-	 *
-	 * @return
-	 */
 
 	/**
 	 * Checks if the given coordinates are within zone's plane

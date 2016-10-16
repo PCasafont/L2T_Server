@@ -179,12 +179,12 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	 */
 	public static final class MerchantPriceConfig
 	{
-		private final int id;
-		private final String name;
-		private final int baseTax;
+		@Getter private final int id;
+		@Getter private final String name;
+		@Getter private final int baseTax;
 		private final int castleId;
 		@Getter private Castle castle;
-		private final int zoneId;
+		@Getter private final int zoneId;
 
 		public MerchantPriceConfig(final int id, final String name, final int baseTax, final int castleId, final int zoneId)
 		{
@@ -196,30 +196,6 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		}
 
 		/**
-		 * @return Returns the id.
-		 */
-		public int getId()
-		{
-			return id;
-		}
-
-		/**
-		 * @return Returns the name.
-		 */
-		public String getName()
-		{
-			return name;
-		}
-
-		/**
-		 * @return Returns the baseTax.
-		 */
-		public int getBaseTax()
-		{
-			return baseTax;
-		}
-
-		/**
 		 * @return Returns the baseTax / 100.0.
 		 */
 		public double getBaseTaxRate()
@@ -228,16 +204,8 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		}
 
 		/**
-		 * @return Returns the castle.
-		 */
-
-		/**
 		 * @return Returns the zoneId.
 		 */
-		public int getZoneId()
-		{
-			return zoneId;
-		}
 
 		public boolean hasCastle()
 		{

@@ -29,10 +29,6 @@ public final class ExPartyPetWindowAdd extends L2GameServerPacket
 		this.summon = summon;
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
@@ -38,12 +39,12 @@ public class MainTownManager
 {
 	public class MainTownInfo
 	{
-		private final int townId;
-		private final String name;
-		private final int startX;
-		private final int startY;
-		private final int startZ;
-		private final int startRandom;
+		@Getter private final int townId;
+		@Getter private final String name;
+		@Getter private final int startX;
+		@Getter private final int startY;
+		@Getter private final int startZ;
+		@Getter private final int startRandom;
 
 		public MainTownInfo(int townId, String name, int startX, int startY, int startZ, int startRandom)
 		{
@@ -55,35 +56,11 @@ public class MainTownManager
 			this.startRandom = startRandom;
 		}
 
-		public int getTownId()
-		{
-			return townId;
-		}
 
-		public String getName()
-		{
-			return name;
-		}
 
-		public int getStartX()
-		{
-			return startX;
-		}
 
-		public int getStartY()
-		{
-			return startY;
-		}
 
-		public int getStartZ()
-		{
-			return startZ;
-		}
 
-		public int getStartRandom()
-		{
-			return startRandom;
-		}
 
 		public void spawnNpcs()
 		{

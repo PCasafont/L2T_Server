@@ -32,7 +32,4 @@ public class RequestCharacters extends BaseRecievePacket
 		account = readS();
 	}
 
-	/**
-	 * @return Return account name
-	 */
 }

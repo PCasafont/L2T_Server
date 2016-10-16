@@ -636,10 +636,6 @@ public class LoginServerThread extends Thread
 	}
 
 	/**
-	 * @return Returns the maxPlayer.
-	 */
-
-	/**
 	 */
 	public void sendServerStatus(int id, int value)
 	{
@@ -693,10 +689,6 @@ public class LoginServerThread extends Thread
 	{
 		return Config.SERVER_LIST_BRACKET;
 	}
-
-	/**
-	 * @return Returns the serverName.
-	 */
 
 	public void setServerStatus(int status)
 	{

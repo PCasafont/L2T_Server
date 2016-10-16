@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.funcs.Func;
@@ -27,9 +28,9 @@ import java.util.List;
  */
 public class EnchantEffect
 {
-	private final int id;
-	private final int rarity;
-	private final int slot;
+	@Getter private final int id;
+	@Getter private final int rarity;
+	@Getter private final int slot;
 
 	private int skillId = 0;
 	private int skillLevel = 0;
@@ -53,20 +54,8 @@ public class EnchantEffect
 		funcs.add(func);
 	}
 
-	public int getId()
-	{
-		return id;
-	}
 
-	public int getRarity()
-	{
-		return rarity;
-	}
 
-	public int getSlot()
-	{
-		return slot;
-	}
 
 	public L2Skill getSkill()
 	{

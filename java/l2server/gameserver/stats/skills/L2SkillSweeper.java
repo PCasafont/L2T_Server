@@ -26,7 +26,7 @@ import lombok.Getter;
  */
 public class L2SkillSweeper extends L2Skill
 {
-	private boolean absorbHp;
+	@Getter private boolean absorbHp;
 	@Getter private int absorbAbs;
 
 	/**
@@ -45,9 +45,5 @@ public class L2SkillSweeper extends L2Skill
 		// not used
 	}
 
-	public boolean isAbsorbHp()
-	{
-		return absorbHp;
-	}
 
 }

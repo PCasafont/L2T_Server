@@ -36,10 +36,6 @@ public class ExUISetting extends L2GameServerPacket
 		calcSize();
 	}
 
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-
 	private void calcSize()
 	{
 		int size = 16; //initial header and footer

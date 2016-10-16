@@ -42,22 +42,6 @@ public class L2TeleportLocation
 	}
 
 	/**
-	 * @param locX
-	 */
-
-	/**
-	 * @param locY
-	 */
-
-	/**
-	 * @param locZ
-	 */
-
-	/**
-	 * @param price
-	 */
-
-	/**
 	 * @param val
 	 */
 	public void setIsForNoble(boolean val)
@@ -76,34 +60,10 @@ public class L2TeleportLocation
 	/**
 	 * @return
 	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
-
-	/**
-	 * @return
-	 */
 	public boolean getIsForNoble()
 	{
 		return forNoble;
 	}
-
-	/**
-	 * @return
-	 */
 
 
 }

@@ -578,7 +578,7 @@ public class L2FortSiegeGuardAI extends L2CharacterAI implements Runnable
 		}
 		catch (NullPointerException e)
 		{
-			//Logozo.warning("AttackableAI: Attack target is NULL.");
+			//Log.warning("AttackableAI: Attack target is NULL.");
 			actor.setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;

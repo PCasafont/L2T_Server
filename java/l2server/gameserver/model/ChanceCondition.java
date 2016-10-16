@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.Rnd;
@@ -85,7 +86,7 @@ public final class ChanceCondition
 		}
 	}
 
-	private final TriggerType triggerType;
+	@Getter private final TriggerType triggerType;
 	private final double chance;
 	private final double critChance;
 	private final int mindmg;
@@ -242,10 +243,6 @@ public final class ChanceCondition
 		}
 	}
 
-	public TriggerType getTriggerType()
-	{
-		return triggerType;
-	}
 
 	@Override
 	public String toString()

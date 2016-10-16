@@ -92,12 +92,12 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	/**
 	 * ID of the item
 	 */
-	private final int itemId;
+	@Getter private final int itemId;
 
 	/**
 	 * Object L2Item associated to the item
 	 */
-	private final L2Item item;
+	@Getter private final L2Item item;
 
 	/**
 	 * Location of the item : Inventory, PaperDoll, WareHouse
@@ -144,7 +144,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 
 	@Getter private long dropTime;
 
-	private boolean published = false;
+	@Getter private boolean published = false;
 
 	public static final double CHARGED_NONE = 1.0;
 	public static final double CHARGED_SOULSHOT = 2.0;
@@ -386,12 +386,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	}
 
 	/**
-	 * Returns the ownerID of the item
-	 *
-	 * @return int : ownerID of the item
-	 */
-
-	/**
 	 * Sets the location of the item
 	 *
 	 * @param loc : ItemLocation (enumeration)
@@ -584,17 +578,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		return locData;
 	}
 
-	/**
-	 * Returns the characteristics of the item
-	 *
-	 * @return L2Item
-	 */
-	@Override
-	public L2Item getItem()
-	{
-		return item;
-	}
-
 	public int getCustomType1()
 	{
 		return type1;
@@ -629,16 +612,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	public L2ItemType getItemType()
 	{
 		return item.getItemType();
-	}
-
-	/**
-	 * Returns the ID of the item
-	 *
-	 * @return int
-	 */
-	public int getItemId()
-	{
-		return itemId;
 	}
 
 	/**
@@ -957,12 +930,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 *
 	 * @return augmentation
 	 */
-
-	/**
-	 * Returns the augmentation object for this item
-	 *
-	 * @return augmentation
-	 */
 	@Override
 	public int[] getEnsoulEffectIds()
 	{
@@ -1067,12 +1034,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	{
 		return augmentation != null;
 	}
-
-	/**
-	 * Returns the augmentation object for this item
-	 *
-	 * @return augmentation
-	 */
 
 	/**
 	 * Returns the augmentation bonus for this item
@@ -2384,10 +2345,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		}
 	}
 
-	public boolean isPublished()
-	{
-		return published;
-	}
 
 	public void publish()
 	{

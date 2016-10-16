@@ -49,7 +49,6 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value the value
 	 * @param self  the self
 	 */
-
 	public ConditionSiegeZone(int value, boolean self)
 	{
 		this.value = value;

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.model.L2ItemInstance;
@@ -39,8 +40,6 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public final class RequestSellItem extends L2GameClientPacket
 {
-	//
-
 	private static final int BATCH_LENGTH = 16; // length of the one item
 
 	private int listId;
@@ -65,7 +64,6 @@ public final class RequestSellItem extends L2GameClientPacket
 	 * <p>
 	 * format:		cdd (ddd)
 	 */
-
 	@Override
 	protected void readImpl()
 	{
@@ -247,8 +245,8 @@ public final class RequestSellItem extends L2GameClientPacket
 
 	private static class Item
 	{
-		private final int objectId;
-		private final long count;
+		@Getter private final int objectId;
+		@Getter private final long count;
 
 		public Item(int objId, int id, long num)
 		{
@@ -256,14 +254,6 @@ public final class RequestSellItem extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getObjectId()
-		{
-			return objectId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 	}
 }

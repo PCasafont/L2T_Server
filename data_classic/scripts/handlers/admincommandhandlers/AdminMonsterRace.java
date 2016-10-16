@@ -65,7 +65,6 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		 *
 		 * 8003 to 8027
 		 */
-
 		int[][] codes = {{-1, 0}, {0, 15322}, {13765, -1}, {-1, 0}};
 		MonsterRace race = MonsterRace.getInstance();
 

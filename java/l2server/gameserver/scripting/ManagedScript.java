@@ -74,10 +74,6 @@ public abstract class ManagedScript
 	}
 
 	/**
-	 * @return Returns the scriptFile.
-	 */
-
-	/**
 	 * @param lastLoadTime The lastLoadTime to set.
 	 */
 	protected void setLastLoadTime(long lastLoadTime)

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
 
@@ -23,7 +24,7 @@ import l2server.gameserver.model.L2Skill;
  */
 public class NobleSkillTable
 {
-	private static final L2Skill[] nobleSkills = new L2Skill[8];
+	@Getter private static final L2Skill[] nobleSkills = new L2Skill[8];
 
 	private NobleSkillTable()
 	{
@@ -47,10 +48,6 @@ public class NobleSkillTable
 		return SingletonHolder.instance;
 	}
 
-	public L2Skill[] getNobleSkills()
-	{
-		return nobleSkills;
-	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.RecipeController;
 import l2server.gameserver.model.L2ManufactureItem;
@@ -151,7 +152,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 
 	private static class Recipe
 	{
-		private final int recipeId;
+		@Getter private final int recipeId;
 		private final long cost;
 
 		public Recipe(int id, long c)
@@ -171,9 +172,5 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			return true;
 		}
 
-		public int getRecipeId()
-		{
-			return recipeId;
-		}
 	}
 }

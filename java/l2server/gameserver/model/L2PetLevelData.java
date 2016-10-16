@@ -130,20 +130,12 @@ public class L2PetLevelData
 	}
 
 	/**
-	 * @return the _petSoulShot
-	 */
-
-	/**
 	 * @param soulShot the this.petSoulShot to set
 	 */
 	public void setPetSoulShot(short soulShot)
 	{
 		petSoulShot = soulShot;
 	}
-
-	/**
-	 * @return the _petSpiritShot
-	 */
 
 	/**
 	 * @param spiritShot the this.petSpiritShot to set

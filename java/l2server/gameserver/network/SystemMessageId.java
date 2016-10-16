@@ -13487,8 +13487,8 @@ public final class SystemMessageId
 	 * ID: 2322<br>
 	 * Message: Current location: Inside Nia Kamaloka
 	 */
-
 	public static final SystemMessageId LOC_NIA_KAMALOKA;
+
 	/**
 	 * ID: 2323<br>
 	 * Message: Current location: Inside Rim Kamaloka

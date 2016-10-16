@@ -172,10 +172,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 * Target type of the skill : SELF, PARTY, CLAN, PET...
 	 */
 	@Getter private final L2SkillTargetType targetType;
-	private final L2SkillTargetDirection targetDirection;
+	@Getter private final L2SkillTargetDirection targetDirection;
 	private final L2SkillBehaviorType behaviorType;
 
-	private final int feed;
+	@Getter private final int feed;
 	// base success chance
 	@Getter private final double power;
 	private final double pvpPower;
@@ -187,7 +187,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final boolean ignoreImmunity;
 	@Getter private final int minChance;
 	@Getter private final int maxChance;
-	private final int blowChance;
+	@Getter private final int blowChance;
 
 	private final boolean isNeutral;
 	// Effecting area of the skill, in radius.
@@ -224,30 +224,30 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	@Getter private final int weaponsAllowed;
 	@Getter private final int armorsAllowed;
 
-	private final int minPledgeClass;
+	@Getter private final int minPledgeClass;
 	private final boolean isOffensive;
 	@Getter private final int maxCharges;
 	@Getter private final int numCharges;
 	@Getter private final int maxChargeConsume;
-	private final int triggeredId;
-	private final int triggeredLevel;
-	private final int triggeredEnchantRoute;
-	private final int triggeredEnchantLevel;
+	@Getter private final int triggeredId;
+	@Getter private final int triggeredLevel;
+	@Getter private final int triggeredEnchantRoute;
+	@Getter private final int triggeredEnchantLevel;
 	private final String chanceType;
 	private final int soulMaxConsume;
 	private final int soulConsume;
 	@Getter private final int numSouls;
 	@Getter private final int expNeeded;
 	@Getter private final int critChance;
-	private final float dependOnTargetBuff;
-	private final int[] dependOnTargetEffectId;
-	private final double[] damageDepend;
+	@Getter private final float dependOnTargetBuff;
+	@Getter private final int[] dependOnTargetEffectId;
+	@Getter private final double[] damageDepend;
 
 	@Getter private final int transformId;
 	@Getter private final int transformDuration;
 
-	private final int afterEffectId;
-	private final int afterEffectLvl;
+	@Getter private final int afterEffectId;
+	@Getter private final int afterEffectLvl;
 	private final boolean isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean isGMSkill; // True if skill is GM skill
 
@@ -289,8 +289,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final boolean canBeDispeled;
 
 	private final boolean isClanSkill;
-	private final boolean excludedFromCheck;
-	private final boolean simultaneousCast;
+	@Getter private final boolean excludedFromCheck;
+	@Getter private final boolean simultaneousCast;
 
 	private L2ExtractableSkill extractableItems = null;
 
@@ -836,14 +836,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 	/**
-	 * Return minimum skill/effect land rate (default is 1).
-	 */
-
-	/**
-	 * Return maximum skill/effect land rate (default is 99).
-	 */
-
-	/**
 	 * Return true if skill effects should be removed on any action except movement
 	 */
 	public final boolean isRemovedOnAction()
@@ -872,10 +864,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 
 	/**
-	 * Return the additional effect Id.<BR><BR>
-	 */
-
-	/**
 	 * Return the additional effect level.<BR><BR>
 	 */
 	public final int getEffectLvl()
@@ -902,30 +890,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 	/**
-	 * @return Returns the buffDuration.
-	 */
-
-	/**
-	 * @return Returns the castRange.
-	 */
-
-	/**
-	 * @return Returns the cpConsume;
-	 */
-
-	/**
-	 * @return Returns the effectRange.
-	 */
-
-	/**
-	 * @return Returns the hpConsume.
-	 */
-
-	/**
-	 * @return Returns the id.
-	 */
-
-	/**
 	 * @return Returns the boolean this.isDebuff.
 	 */
 	public final boolean isDebuff()
@@ -939,58 +903,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		displayId = id;
 	}
 
-	public int getTriggeredId()
-	{
-		return triggeredId;
-	}
 
-	public int getTriggeredLevel()
-	{
-		return triggeredLevel;
-	}
 
-	public int getTriggeredEnchantRoute()
-	{
-		return triggeredEnchantRoute;
-	}
 
-	public int getTriggeredEnchantLevel()
-	{
-		return triggeredEnchantLevel;
-	}
 
 	public boolean triggerAnotherSkill()
 	{
 		return triggeredId > 1;
 	}
-
-	/**
-	 * Return skill saveVs base stat (STR, INT ...).<BR><BR>
-	 */
-
-	/**
-	 * @return Returns the this.targetConsumeId.
-	 */
-
-	/**
-	 * @return Returns the targetConsume.
-	 */
-
-	/**
-	 * @return Returns the itemConsume.
-	 */
-
-	/**
-	 * @return Returns the itemConsumeId.
-	 */
-
-	/**
-	 * @return Returns the fameConsume.
-	 */
-
-	/**
-	 * @return Returns the clanRepConsume.
-	 */
 
 	/**
 	 * @return Returns the level.
@@ -1032,30 +952,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return staticHitTime;
 	}
 
-	/**
-	 * @return Returns the mpConsume.
-	 */
-
-	/**
-	 * @return Returns the name.
-	 */
-
-	/**
-	 * @return Returns the reuseDelay.
-	 */
-
-
-
-
 	public final int getHitCounts()
 	{
 		return hitTimings.length;
 	}
-
-
-	/**
-	 * @return Returns the coolTime.
-	 */
 
 	public final int getSkillRadius()
 	{
@@ -1131,10 +1031,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 
-	public int getMinPledgeClass()
-	{
-		return minPledgeClass;
-	}
 
 	public final boolean isPvpSkill()
 	{
@@ -2722,14 +2618,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 	/**
-	 * @return pet food
-	 */
-	public int getFeed()
-	{
-		return feed;
-	}
-
-	/**
 	 * used for tracking item id in case that item consume cannot be used
 	 *
 	 * @return reference item id
@@ -2740,15 +2628,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 
-	public int getAfterEffectId()
-	{
-		return afterEffectId;
-	}
 
-	public int getAfterEffectLvl()
-	{
-		return afterEffectLvl;
-	}
 
 	@Override
 	public boolean triggersChanceSkill()
@@ -2791,14 +2671,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return attribute;
 	}
 
-	/**
-	 * @return the _blowChance
-	 */
-	public int getBlowChance()
-	{
-		return blowChance;
-	}
-
 	public boolean ignoreShield()
 	{
 		return ignoreShield;
@@ -2824,20 +2696,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return isClanSkill;
 	}
 
-	public boolean isExcludedFromCheck()
-	{
-		return excludedFromCheck;
-	}
 
-	public float getDependOnTargetBuff()
-	{
-		return dependOnTargetBuff;
-	}
 
-	public boolean isSimultaneousCast()
-	{
-		return simultaneousCast;
-	}
 
 	/**
 	 * @param skillId
@@ -2947,15 +2807,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return alterIconTime;
 	}
 
-	public int[] getDependOnTargetEffectId()
-	{
-		return dependOnTargetEffectId;
-	}
 
-	public double[] getDamageDepend()
-	{
-		return damageDepend;
-	}
 
 	public boolean isElemental()
 	{
@@ -3106,10 +2958,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return false;
 	}
 
-	public L2SkillTargetDirection getTargetDirection()
-	{
-		return targetDirection;
-	}
 
 	public final boolean isFishingSkill()
 	{

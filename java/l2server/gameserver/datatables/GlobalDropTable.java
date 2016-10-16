@@ -32,7 +32,7 @@ public class GlobalDropTable implements Reloadable
 		@Getter private int mobId;
 		@Getter private int minLevel;
 		@Getter private int maxLevel;
-		private boolean raidOnly;
+		@Getter private boolean raidOnly;
 		@Getter private int maxDailyCount;
 
 		private TIntIntHashMap countsPerPlayer = new TIntIntHashMap();
@@ -72,10 +72,6 @@ public class GlobalDropTable implements Reloadable
 			return itemIds.get(Rnd.get(itemIds.size()));
 		}
 
-		public boolean isRaidOnly()
-		{
-			return raidOnly;
-		}
 
 
 		public int getCountForPlayer(L2PcInstance player)
@@ -127,7 +123,7 @@ public class GlobalDropTable implements Reloadable
 
 	private static GlobalDropTable instance;
 
-	private static List<GlobalDropCategory> globalDropCategories = new ArrayList<>();
+	@Getter private static List<GlobalDropCategory> globalDropCategories = new ArrayList<>();
 
 	ScheduledFuture<?> resetSchedule = null;
 
@@ -224,8 +220,4 @@ public class GlobalDropTable implements Reloadable
 		return "Global Drops reloaded";
 	}
 
-	public List<GlobalDropCategory> getGlobalDropCategories()
-	{
-		return globalDropCategories;
-	}
 }

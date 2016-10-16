@@ -41,8 +41,8 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		//Logozo.info("C5: RequestPledgeWarList d:"+_unk1);
-		//Logozo.info("C5: RequestPledgeWarList d:"+_tab);
+		//Log.info("C5: RequestPledgeWarList d:"+_unk1);
+		//Log.info("C5: RequestPledgeWarList d:"+_tab);
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{

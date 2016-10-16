@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.datatables.CharNameTable;
@@ -408,8 +409,8 @@ public final class RequestSendPost extends L2GameClientPacket
 
 	private static class AttachmentItem
 	{
-		private final int objectId;
-		private final long count;
+		@Getter private final int objectId;
+		@Getter private final long count;
 
 		public AttachmentItem(int id, long num)
 		{
@@ -417,15 +418,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getObjectId()
-		{
-			return objectId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 	}
 
 	@Override

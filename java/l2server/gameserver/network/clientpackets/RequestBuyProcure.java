@@ -201,8 +201,8 @@ public class RequestBuyProcure extends L2GameClientPacket
 
 	private static class Procure
 	{
-		private final int itemId;
-		private final long count;
+		@Getter private final int itemId;
+		@Getter private final long count;
 		@Getter private int reward;
 
 		public Procure(int id, long num)
@@ -211,15 +211,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			count = num;
 		}
 
-		public int getItemId()
-		{
-			return itemId;
-		}
 
-		public long getCount()
-		{
-			return count;
-		}
 
 
 		public void setReward(Castle c)

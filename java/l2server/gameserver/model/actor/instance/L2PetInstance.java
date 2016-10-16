@@ -62,9 +62,9 @@ public class L2PetInstance extends L2Summon
 {
 	private int curFed;
 	@Getter private PetInventory inventory;
-	private final int controlObjectId;
-	private boolean respawned;
-	private boolean mountable;
+	@Getter private final int controlObjectId;
+	@Getter private boolean respawned;
+	@Getter private boolean mountable;
 	private Future<?> feedTask;
 	private L2PetData data;
 	private L2PetLevelData leveldata;
@@ -110,7 +110,6 @@ public class L2PetInstance extends L2Summon
 	 * <li>If pet has food in inventory and feed level drops below 55% then consume food from inventory</li>
 	 * <li>Send a broadcastStatusUpdate packet for this L2PetInstance</li><BR><BR>
 	 */
-
 	class FeedTask implements Runnable
 	{
 		@Override
@@ -316,21 +315,11 @@ public class L2PetInstance extends L2Summon
 		setStat(new PetStat(this));
 	}
 
-	public boolean isRespawned()
-	{
-		return respawned;
-	}
 
 	@Override
 	public int getSummonType()
 	{
 		return 2;
-	}
-
-	@Override
-	public int getControlObjectId()
-	{
-		return controlObjectId;
 	}
 
 	public L2ItemInstance getControlItem()
@@ -858,15 +847,6 @@ public class L2PetInstance extends L2Summon
 			Log.finer("Item id to drop: " + dropit.getItemId() + " amount: " + dropit.getCount());
 			dropit.dropMe(this, getX(), getY(), getZ() + 100);
 		}
-	}
-
-	/**
-	 * @return Returns the mount able.
-	 */
-	@Override
-	public boolean isMountable()
-	{
-		return mountable;
 	}
 
 	private static L2PetInstance restore(L2ItemInstance control, L2NpcTemplate template, L2PcInstance owner)

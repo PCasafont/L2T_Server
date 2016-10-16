@@ -634,9 +634,9 @@ public class AutoSpawnHandler
 
 		private List<Location> locList = new Vector<>();
 
-		private boolean spawnActive;
+		@Getter private boolean spawnActive;
 
-		private boolean randomSpawn = false;
+		@Getter private boolean randomSpawn = false;
 
 		private boolean broadcastAnnouncement = false;
 
@@ -718,15 +718,7 @@ public class AutoSpawnHandler
 			broadcastAnnouncement = broadcastValue;
 		}
 
-		public boolean isSpawnActive()
-		{
-			return spawnActive;
-		}
 
-		public boolean isRandomSpawn()
-		{
-			return randomSpawn;
-		}
 
 		public boolean isBroadcasting()
 		{

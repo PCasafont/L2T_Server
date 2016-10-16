@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
@@ -44,7 +45,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 {
 	private static final long serialVersionUID = 1L;
 
-	private final L2Character owner;
+	@Getter private final L2Character owner;
 
 	public ChanceSkillList(L2Character owner)
 	{
@@ -52,10 +53,6 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 		this.owner = owner;
 	}
 
-	public L2Character getOwner()
-	{
-		return owner;
-	}
 
 	public void onHit(L2Character target, int damage, boolean ownerWasHit, boolean isSummon, boolean wasCrit)
 	{

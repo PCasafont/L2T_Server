@@ -76,7 +76,7 @@ public class L2Abnormal
 	private AbnormalState state;
 
 	// period, seconds
-	private final int duration;
+	@Getter private final int duration;
 	@Getter private int periodStartTicks;
 	private int periodFirstTime;
 
@@ -127,12 +127,12 @@ public class L2Abnormal
 	/**
 	 * The Identifier of the stack group
 	 */
-	private final String[] stackType;
+	@Getter private final String[] stackType;
 
 	/**
 	 * The position of the effect in the stack group
 	 */
-	private final byte stackLvl;
+	@Getter private final byte stackLvl;
 
 	@Getter private boolean inUse = false;
 	private boolean startConditionsCorrect = true;
@@ -248,10 +248,6 @@ public class L2Abnormal
 		return icon;
 	}
 
-	public int getDuration()
-	{
-		return duration;
-	}
 
 	public int getTime()
 	{
@@ -288,15 +284,7 @@ public class L2Abnormal
 		return startConditionsCorrect;
 	}
 
-	public String[] getStackType()
-	{
-		return stackType;
-	}
 
-	public byte getStackLvl()
-	{
-		return stackLvl;
-	}
 
 
 

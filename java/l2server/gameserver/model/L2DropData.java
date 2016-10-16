@@ -38,7 +38,7 @@ public class L2DropData
 	@Getter private float chance;
 	@Getter @Setter private String questID = null;
 	private String[] stateID = null;
-	private boolean custom = false;
+	@Getter private boolean custom = false;
 
 	public L2DropData(int itemId, int min, int max, float chance)
 	{
@@ -47,36 +47,6 @@ public class L2DropData
 		maxDrop = max;
 		this.chance = chance;
 	}
-
-	/**
-	 * Returns the ID of the item dropped
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Sets the ID of the item dropped
-	 *
-	 * @param itemId : int designating the ID of the item
-	 */
-
-	/**
-	 * Returns the minimum quantity of items dropped
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Returns the maximum quantity of items dropped
-	 *
-	 * @return int
-	 */
-
-	/**
-	 * Returns the chance of having a drop
-	 *
-	 * @return float
-	 */
 
 	/**
 	 * Sets the value for minimal quantity of dropped items
@@ -91,11 +61,11 @@ public class L2DropData
 	/**
 	 * Sets the value for maximal quantity of dopped items
 	 *
-	 * @param maxdrop : int designating the quantity of dropped items
+	 * @param maxDrop : int designating the quantity of dropped items
 	 */
-	public void setMaxDrop(int maxdrop)
+	public void setMaxDrop(int maxDrop)
 	{
-		maxDrop = maxdrop;
+		this.maxDrop = maxDrop;
 	}
 
 	/**
@@ -129,16 +99,6 @@ public class L2DropData
 	}
 
 	/**
-	 * Returns the questID.
-	 *
-	 * @return String designating the ID of the quest
-	 */
-
-	/**
-	 * Sets the questID
-	 */
-
-	/**
 	 * Returns if the dropped item is requested for a quest
 	 *
 	 * @return boolean
@@ -153,10 +113,6 @@ public class L2DropData
 		custom = true;
 	}
 
-	public boolean isCustom()
-	{
-		return custom;
-	}
 
 	/**
 	 * Returns a report of the object

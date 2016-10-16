@@ -35,10 +35,6 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 		this.enchanted = enchanted;
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model;
 
+import lombok.Getter;
 import gnu.trove.TIntHashSet;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
@@ -26,7 +27,7 @@ import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
  */
 public final class L2EnchantSkillLearn
 {
-	private final int id;
+	@Getter private final int id;
 	private final int baseLvl;
 	private final TIntHashSet enchantRoutes = new TIntHashSet();
 
@@ -39,14 +40,6 @@ public final class L2EnchantSkillLearn
 	public void addNewEnchantRoute(int route)
 	{
 		enchantRoutes.add(route);
-	}
-
-	/**
-	 * @return Returns the id.
-	 */
-	public int getId()
-	{
-		return id;
 	}
 
 	/**

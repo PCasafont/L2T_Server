@@ -176,7 +176,7 @@ public class DoorTable
 		{
 			clanhall.getDoors().add(door);
 			door.setClanHall(clanhall);
-			//Logozo.info("door " + door.getDoorName() + " attached to ch " + clanhall.getName());
+			//Log.info("door " + door.getDoorName() + " attached to ch " + clanhall.getName());
 		}
 	}
 

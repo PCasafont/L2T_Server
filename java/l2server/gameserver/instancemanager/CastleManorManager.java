@@ -15,6 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -66,8 +67,8 @@ public class CastleManorManager
 	private Calendar manorRefresh;
 	private Calendar periodApprove;
 
-	private boolean underMaintenance;
-	private boolean disabled;
+	@Getter private boolean underMaintenance;
+	@Getter private boolean disabled;
 
 	protected ScheduledFuture<?> scheduledManorRefresh;
 	protected ScheduledFuture<?> scheduledMaintenanceEnd;
@@ -581,20 +582,12 @@ public class CastleManorManager
 		return crops;
 	}
 
-	public boolean isUnderMaintenance()
-	{
-		return underMaintenance;
-	}
 
 	public void setUnderMaintenance(boolean mode)
 	{
 		underMaintenance = mode;
 	}
 
-	public boolean isDisabled()
-	{
-		return disabled;
-	}
 
 	public void setDisabled(boolean mode)
 	{

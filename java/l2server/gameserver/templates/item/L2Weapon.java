@@ -15,6 +15,7 @@
 
 package l2server.gameserver.templates.item;
 
+import lombok.Getter;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -52,11 +53,11 @@ public final class L2Weapon extends L2Item
 	private final L2WeaponType type;
 	private final boolean isMagicWeapon;
 	private final int rndDam;
-	private final int soulShotCount;
-	private final int spiritShotCount;
-	private final int mpConsume;
+	@Getter private final int soulShotCount;
+	@Getter private final int spiritShotCount;
+	@Getter private final int mpConsume;
 	private SkillHolder enchant4Skill = null; // skill that activates when item is enchanted +4 (for duals)
-	private final int changeWeaponId;
+	@Getter private final int changeWeaponId;
 	// private final String[] skill;
 
 	// Attached skills for Special Abilities
@@ -65,7 +66,7 @@ public final class L2Weapon extends L2Item
 	private SkillHolder skillsOnCrit;
 	private Condition skillsOnCritCondition = null;
 
-	private final int reuseDelay;
+	@Getter private final int reuseDelay;
 
 	/**
 	 * Constructor for Weapon.<BR><BR>
@@ -230,26 +231,6 @@ public final class L2Weapon extends L2Item
 	}
 
 	/**
-	 * Returns the quantity of SoulShot used.
-	 *
-	 * @return int
-	 */
-	public int getSoulShotCount()
-	{
-		return soulShotCount;
-	}
-
-	/**
-	 * Returns the quatity of SpiritShot used.
-	 *
-	 * @return int
-	 */
-	public int getSpiritShotCount()
-	{
-		return spiritShotCount;
-	}
-
-	/**
 	 * Returns the random damage inflicted by the weapon
 	 *
 	 * @return int
@@ -257,26 +238,6 @@ public final class L2Weapon extends L2Item
 	public int getRandomDamage()
 	{
 		return rndDam;
-	}
-
-	/**
-	 * Return the Reuse Delay of the L2Weapon.<BR><BR>
-	 *
-	 * @return int
-	 */
-	public int getReuseDelay()
-	{
-		return reuseDelay;
-	}
-
-	/**
-	 * Returns the MP consumption with the weapon
-	 *
-	 * @return int
-	 */
-	public int getMpConsume()
-	{
-		return mpConsume;
 	}
 
 	/**
@@ -291,16 +252,6 @@ public final class L2Weapon extends L2Item
 			return null;
 		}
 		return enchant4Skill.getSkill();
-	}
-
-	/**
-	 * Returns the Id in wich weapon this weapon can be changed
-	 *
-	 * @return
-	 */
-	public int getChangeWeaponId()
-	{
-		return changeWeaponId;
 	}
 
 	/**

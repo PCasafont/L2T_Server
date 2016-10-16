@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.quest;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -76,9 +77,9 @@ public class Quest extends ManagedScript
 	private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 
 	private final int questId;
-	private final String name;
-	private final String descr;
-	private final byte initialState = State.CREATED;
+	@Getter private final String name;
+	@Getter private final String descr;
+	@Getter private final byte initialState = State.CREATED;
 	protected boolean onEnterWorld = false;
 	// NOTE: questItemIds will be overridden by child classes.  Ideally, it should be
 	// protected instead of public.  However, quest scripts written in Jython will
@@ -228,36 +229,6 @@ public class Quest extends ManagedScript
 	public QuestState newQuestState(L2PcInstance player)
 	{
 		return new QuestState(this, player, getInitialState());
-	}
-
-	/**
-	 * Return initial state of the quest
-	 *
-	 * @return State
-	 */
-	public byte getInitialState()
-	{
-		return initialState;
-	}
-
-	/**
-	 * Return name of the quest
-	 *
-	 * @return String
-	 */
-	public String getName()
-	{
-		return name;
-	}
-
-	/**
-	 * Return description of the quest
-	 *
-	 * @return String
-	 */
-	public String getDescr()
-	{
-		return descr;
 	}
 
 	/**

@@ -1190,7 +1190,6 @@ public abstract class Inventory extends ItemContainer
 	 *
 	 * @return int
 	 */
-
 	public int getSlotFromItem(L2ItemInstance item)
 	{
 		int slot = -1;

@@ -46,10 +46,6 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 		csize2 = this.fort.getCommanderSpawns().size();
 	}
 
-    /*
-	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

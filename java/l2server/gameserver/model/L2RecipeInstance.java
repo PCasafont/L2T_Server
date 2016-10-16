@@ -40,11 +40,4 @@ public class L2RecipeInstance
 		this.quantity = quantity;
 	}
 
-	/**
-	 * Return the Identifier of the L2RecipeInstance Item needed.<BR><BR>
-	 */
-
-	/**
-	 * Return the Item quantity needed of the L2RecipeInstance.<BR><BR>
-	 */
 }

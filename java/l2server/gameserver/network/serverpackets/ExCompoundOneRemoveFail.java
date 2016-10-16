@@ -20,10 +20,6 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCompoundOneRemoveFail extends L2GameServerPacket
 {
-	/*
-      @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-     */
-
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */

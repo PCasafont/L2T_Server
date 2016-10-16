@@ -1,5 +1,6 @@
 package l2server.gameserver.gui;
 
+import lombok.Getter;
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,11 +18,11 @@ public class ServerGui
 
 	//private ActionListener menuListener = new MenuActionListener();
 
-	private static JTabbedPane tabPane = new JTabbedPane();
+	@Getter private static JTabbedPane tabPane = new JTabbedPane();
 
-	private static ConsoleTab consoleTab;
+	@Getter private static ConsoleTab consoleTab;
 
-	private static AdminTab adminTab;
+	@Getter private static AdminTab adminTab;
 
 	public void init()
 	{
@@ -67,10 +68,6 @@ public class ServerGui
 		Frame.setVisible(true);
 	}
 
-	public JTabbedPane getTabPane()
-	{
-		return tabPane;
-	}
 
 	private void addListeners()
 	{
@@ -102,13 +99,5 @@ public class ServerGui
 		return Frame;
 	}
 
-	public ConsoleTab getConsoleTab()
-	{
-		return consoleTab;
-	}
 
-	public AdminTab getAdminTab()
-	{
-		return adminTab;
-	}
 }

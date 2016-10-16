@@ -487,14 +487,6 @@ public class L2SkillSummon extends L2Skill
 		return summonTimeLostActive;
 	}
 
-	/**
-	 * @return Returns the itemConsume count over time.
-	 */
-
-	/**
-	 * @return Returns the itemConsumeId over time.
-	 */
-
 
 	/**
 	 * @return Returns the itemConsume time in milliseconds.

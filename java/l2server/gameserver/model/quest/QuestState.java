@@ -53,12 +53,12 @@ public final class QuestState
 	/**
 	 * Quest associated to the QuestState
 	 */
-	private final String questName;
+	@Getter private final String questName;
 
 	/**
 	 * Player who engaged the quest
 	 */
-	private final L2PcInstance player;
+	@Getter private final L2PcInstance player;
 
 	/**
 	 * State of the quest
@@ -102,10 +102,6 @@ public final class QuestState
 		this.state = state;
 	}
 
-	public String getQuestName()
-	{
-		return questName;
-	}
 
 	/**
 	 * Return the quest
@@ -116,22 +112,6 @@ public final class QuestState
 	{
 		return QuestManager.getInstance().getQuest(questName);
 	}
-
-	/**
-	 * Return the L2PcInstance
-	 *
-	 * @return L2PcInstance
-	 */
-	public L2PcInstance getPlayer()
-	{
-		return player;
-	}
-
-	/**
-	 * Return the state of the quest
-	 *
-	 * @return State
-	 */
 
 	/**
 	 * Return true if quest just created, false otherwise
@@ -1084,12 +1064,6 @@ public final class QuestState
 	{
 		return isExitQuestOnCleanUp;
 	}
-
-	/**
-	 * Return the QuestTimer object with the specified name
-	 *
-	 * @return QuestTimer<BR> Return null if name does not exist
-	 */
 
 	/**
 	 * Start a timer for quest.<BR><BR>

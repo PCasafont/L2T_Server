@@ -49,7 +49,7 @@ public class PcInventory extends Inventory
 	public static final int ANCIENT_ADENA_ID = 5575;
 	public static final long MAX_ADENA = 1000000000000000L;
 
-	private final L2PcInstance owner;
+	@Getter private final L2PcInstance owner;
 	private L2ItemInstance adena;
 	private L2ItemInstance ancientAdena;
 
@@ -69,12 +69,6 @@ public class PcInventory extends Inventory
 	public PcInventory(L2PcInstance owner)
 	{
 		this.owner = owner;
-	}
-
-	@Override
-	public L2PcInstance getOwner()
-	{
-		return owner;
 	}
 
 	@Override
@@ -933,10 +927,10 @@ public class PcInventory extends Inventory
 
 	/**
 	 * Set inventory block for specified IDs<br>
-	 * array reference is used for {@link PcInventory#_blockItems}
+	 * array reference is used for {@link PcInventory#blockItems}
 	 *
 	 * @param items array of Ids to block/allow
-	 * @param mode  blocking mode {@link PcInventory#_blockMode}
+	 * @param mode  blocking mode {@link PcInventory#blockMode}
 	 */
 	public void setInventoryBlock(int[] items, int mode)
 	{
@@ -975,18 +969,6 @@ public class PcInventory extends Inventory
 		// temp fix, some id must be sent
 		setInventoryBlock(new int[]{ItemTable.getInstance().getAllItems().length + 2}, 1);
 	}
-
-	/**
-	 * Return block mode
-	 *
-	 * @return int  {@link PcInventory#_blockMode}
-	 */
-
-	/**
-	 * Return TIntArrayList with blocked item ids
-	 *
-	 * @return TIntArrayList
-	 */
 
 	/**
 	 * Check if player can use item by itemid

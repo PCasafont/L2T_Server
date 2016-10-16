@@ -98,9 +98,9 @@ public final class AttackRequest extends L2GameClientPacket
 			if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 &&
 					activeChar.getActiveRequester() == null)
 			{
-				//Logozo.debug("Starting ForcedAttack");
+				//Log.debug("Starting ForcedAttack");
 				target.onForcedAttack(activeChar);
-				//Logozo.debug("Ending ForcedAttack");
+				//Log.debug("Ending ForcedAttack");
 			}
 			else
 			{

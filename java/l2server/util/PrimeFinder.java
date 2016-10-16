@@ -79,7 +79,6 @@ public final class PrimeFinder
 	 * <p>
 	 * If you are stingy, then delete every second or fourth chunk.
 	 */
-
 	private static final int[] PRIME_CAPACITIES = {
 			//chunk #0
 			LARGEST_PRIME,

@@ -44,7 +44,7 @@ public class Duel
 	private int duelId;
 	@Getter private L2PcInstance playerA;
 	@Getter private L2PcInstance playerB;
-	private boolean partyDuel;
+	@Getter private boolean partyDuel;
 	private Calendar duelEndTime;
 	private int surrenderRequest = 0;
 	private int countdown = 4;
@@ -518,19 +518,9 @@ public class Duel
 		return (int) (duelEndTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
 	}
 
-	/**
-	 * Returns whether this is a party duel or not
-	 *
-	 * @return is party duel
-	 */
-	public boolean isPartyDuel()
+	public void setFinished(boolean finished)
 	{
-		return partyDuel;
-	}
-
-	public void setFinished(boolean mode)
-	{
-		finished = mode;
+		this.finished = finished;
 	}
 
 

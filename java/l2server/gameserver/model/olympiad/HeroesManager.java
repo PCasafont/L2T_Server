@@ -19,6 +19,7 @@
 
 package l2server.gameserver.model.olympiad;
 
+import lombok.Getter;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.cache.HtmCache;
@@ -70,7 +71,7 @@ public class HeroesManager
 			"DELETE FROM items WHERE item_id IN (6842, 6611, 6612, 6613, 6614, 6615, 6616, 6617, 6618, 6619, 6620, 6621, 9388, 9389, 9390) AND owner_id NOT IN (SELECT charId FROM characters WHERE accesslevel > 0)";
 	private static final String DELETE_HERO = "DELETE FROM heroes WHERE charId = ?";
 
-	private static Map<Integer, HeroInfo> heroes = new HashMap<>();
+	@Getter private static Map<Integer, HeroInfo> heroes = new HashMap<>();
 	private static Map<Integer, HeroInfo> pastAndCurrentHeroes = new HashMap<>();
 
 	public static final String COUNT = "count";
@@ -465,10 +466,6 @@ public class HeroesManager
 		}
 	}
 
-	public Map<Integer, HeroInfo> getHeroes()
-	{
-		return heroes;
-	}
 
 	public int getHeroByClass(int classid)
 	{

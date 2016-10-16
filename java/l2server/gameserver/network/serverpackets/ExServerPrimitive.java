@@ -19,6 +19,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
+import lombok.Getter;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ import java.util.List;
  */
 public class ExServerPrimitive extends L2GameServerPacket
 {
-	private final String name;
+	@Getter private final String name;
 	private int x;
 	private int y;
 	private int z;
@@ -242,12 +243,12 @@ public class ExServerPrimitive extends L2GameServerPacket
 
 	private static class Point
 	{
-		private final String name;
-		private final int color;
+		@Getter private final String name;
+		@Getter private final int color;
 		private final boolean isNameColored;
-		private final int x;
-		private final int y;
-		private final int z;
+		@Getter private final int x;
+		@Getter private final int y;
+		@Getter private final int z;
 
 		public Point(String name, int color, boolean isNameColored, int x, int y, int z)
 		{
@@ -260,22 +261,6 @@ public class ExServerPrimitive extends L2GameServerPacket
 		}
 
 		/**
-		 * @return the name
-		 */
-		public String getName()
-		{
-			return name;
-		}
-
-		/**
-		 * @return the color
-		 */
-		public int getColor()
-		{
-			return color;
-		}
-
-		/**
 		 * @return the isNameColored
 		 */
 		public boolean isNameColored()
@@ -283,36 +268,13 @@ public class ExServerPrimitive extends L2GameServerPacket
 			return isNameColored;
 		}
 
-		/**
-		 * @return the x
-		 */
-		public int getX()
-		{
-			return x;
-		}
-
-		/**
-		 * @return the y
-		 */
-		public int getY()
-		{
-			return y;
-		}
-
-		/**
-		 * @return the z
-		 */
-		public int getZ()
-		{
-			return z;
-		}
 	}
 
 	private static class Line extends Point
 	{
-		private final int x2;
-		private final int y2;
-		private final int z2;
+		@Getter private final int x2;
+		@Getter private final int y2;
+		@Getter private final int z2;
 
 		public Line(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
 		{
@@ -322,28 +284,5 @@ public class ExServerPrimitive extends L2GameServerPacket
 			this.z2 = z2;
 		}
 
-		/**
-		 * @return the x2
-		 */
-		public int getX2()
-		{
-			return x2;
-		}
-
-		/**
-		 * @return the y2
-		 */
-		public int getY2()
-		{
-			return y2;
-		}
-
-		/**
-		 * @return the z2
-		 */
-		public int getZ2()
-		{
-			return z2;
-		}
 	}
 }

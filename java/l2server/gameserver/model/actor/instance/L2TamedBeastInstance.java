@@ -484,7 +484,6 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				if (this.tamedBeast.isTooFarFromHome())
 					this.tamedBeast.setRemainingTime(-1);
 				 */
-
 				if (tamedBeast.getRemainingTime() <= 0)
 				{
 					tamedBeast.deleteMe();

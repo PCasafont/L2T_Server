@@ -55,11 +55,4 @@ public class L2RecipeStatInstance
 		this.value = value;
 	}
 
-	/**
-	 * Return the the type of the L2RecipeStatInstance.<BR><BR>
-	 */
-
-	/**
-	 * Return the value of the L2RecipeStatInstance.<BR><BR>
-	 */
 }
