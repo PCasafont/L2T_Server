@@ -10323,10 +10323,10 @@ public class L2PcInstance extends L2Playable
 					if (henna != null)
 					{
 						//Check the dye time?
-						long expireTime = rset.getLong("expireTime");
+						long expiryTime = rset.getLong("expiry_time");
 						if (henna.isFourthSlot())
 						{
-							if (expireTime < System.currentTimeMillis())
+							if (expiryTime < System.currentTimeMillis())
 							{
 								//In order to delete the dye from the db we should first assing it
 								_henna[slot - 1] = henna;
@@ -10339,9 +10339,9 @@ public class L2PcInstance extends L2Playable
 						_henna[slot - 1] = henna;
 						if (henna.isFourthSlot())
 						{
-							if (expireTime > 0)
+							if (expiryTime > 0)
 							{
-								_henna[slot - 1].setExpireTime(expireTime);
+								_henna[slot - 1].setExpiryTime(expiryTime);
 							}
 							addHennaSkills(henna);
 						}
@@ -10544,7 +10544,7 @@ public class L2PcInstance extends L2Playable
 
 				if (henna.isFourthSlot())
 				{
-					henna.setExpireTime(System.currentTimeMillis() + henna.getMaxTime());
+					henna.setExpiryTime(System.currentTimeMillis() + henna.getMaxTime());
 				}
 
 				// Send Server->Client HennaInfo packet to this L2PcInstance

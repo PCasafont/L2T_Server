@@ -73,7 +73,7 @@ public class GMHennaInfo extends L2GameServerPacket
 		if (specialDye != null)
 		{
 			writeD(specialDye.getSymbolId());
-			writeD((int) (specialDye.getExpireTime() - System.currentTimeMillis()) / 1000); // Seconds
+			writeD((int) (specialDye.getExpiryTime() - System.currentTimeMillis()) / 1000); // Seconds
 			writeD(0x01);
 		}
 	}

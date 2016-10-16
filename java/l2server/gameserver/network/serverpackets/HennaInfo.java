@@ -71,7 +71,7 @@ public final class HennaInfo extends L2GameServerPacket
 		if (dye != null)
 		{
 			writeD(dye.getSymbolId());
-			writeD((int) (dye.getExpireTime() - System.currentTimeMillis()) / 1000); // Seconds
+			writeD((int) (dye.getExpiryTime() - System.currentTimeMillis()) / 1000); // Seconds
 			writeD(0x01);
 		}
 		else

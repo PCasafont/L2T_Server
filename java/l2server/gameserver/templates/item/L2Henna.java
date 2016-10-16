@@ -47,7 +47,7 @@ public class L2Henna
 
 	//Temp dyes values
 	private final long maxTime;
-	private long expireTime;
+	private long expiryTime;
 	private final boolean isFourthSlot;
 	private List<SkillHolder> skills;
 
@@ -230,13 +230,13 @@ public class L2Henna
 		return skills;
 	}
 
-	public void setExpireTime(long time)
+	public void setExpiryTime(long time)
 	{
-		expireTime = time;
+		expiryTime = time;
 	}
 
-	public long getExpireTime()
+	public long getExpiryTime()
 	{
-		return expireTime;
+		return expiryTime;
 	}
 }
