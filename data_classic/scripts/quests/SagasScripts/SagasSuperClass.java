@@ -14,6 +14,11 @@
  */
 package quests.SagasScripts;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.QuestManager;
@@ -32,11 +37,6 @@ import l2server.gameserver.model.quest.jython.QuestJython;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class SagasSuperClass extends QuestJython
 {

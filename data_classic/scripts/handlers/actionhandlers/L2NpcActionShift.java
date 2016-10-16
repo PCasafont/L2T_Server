@@ -15,6 +15,8 @@
 
 package handlers.actionhandlers;
 
+import java.util.Map.Entry;
+
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IActionHandler;
@@ -37,8 +39,6 @@ import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.util.StringUtil;
-
-import java.util.Map.Entry;
 
 public class L2NpcActionShift implements IActionHandler
 {

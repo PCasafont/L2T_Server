@@ -28,7 +28,13 @@ import l2server.gameserver.model.actor.instance.L2CloneInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.MyTargetSelected;
+import l2server.gameserver.network.serverpackets.PetStatusShow;
+import l2server.gameserver.network.serverpackets.StatusUpdate;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 

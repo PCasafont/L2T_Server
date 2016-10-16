@@ -15,6 +15,13 @@
 
 package handlers.admincommandhandlers;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
@@ -25,7 +32,11 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2CharPosition;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -38,13 +49,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.StringUtil;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:

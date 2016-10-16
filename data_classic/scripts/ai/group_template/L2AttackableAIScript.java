@@ -14,6 +14,8 @@
  */
 package ai.group_template;
 
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+
 import l2server.Config;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
@@ -32,8 +34,6 @@ import l2server.gameserver.util.MinionList;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 
 /**
  * Overarching Superclass for all mob AI

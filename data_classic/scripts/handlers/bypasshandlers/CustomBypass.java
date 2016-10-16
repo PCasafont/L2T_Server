@@ -16,7 +16,12 @@
 package handlers.bypasshandlers;
 
 import l2server.Config;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.datatables.CharTemplateTable;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.PledgeSkillTree;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.L2Clan;

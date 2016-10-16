@@ -15,6 +15,11 @@
 
 package handlers.bypasshandlers;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.StringTokenizer;
+
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IBypassHandler;
@@ -29,11 +34,6 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.StringTokenizer;
 
 public class Teleport implements IBypassHandler
 {

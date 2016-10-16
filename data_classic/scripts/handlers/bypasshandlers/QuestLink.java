@@ -15,6 +15,9 @@
 
 package handlers.bypasshandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IBypassHandler;
@@ -29,9 +32,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.StringUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuestLink implements IBypassHandler
 {

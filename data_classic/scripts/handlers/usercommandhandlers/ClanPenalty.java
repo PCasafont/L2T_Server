@@ -15,12 +15,12 @@
 
 package handlers.usercommandhandlers;
 
+import java.text.SimpleDateFormat;
+
 import l2server.gameserver.handler.IUserCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
-
-import java.text.SimpleDateFormat;
 
 /**
  * Support for clan penalty user command.

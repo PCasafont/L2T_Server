@@ -15,14 +15,14 @@
 
 package handlers.admincommandhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
-
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:

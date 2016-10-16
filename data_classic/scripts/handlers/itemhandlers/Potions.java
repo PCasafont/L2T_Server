@@ -15,6 +15,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.Map;
+
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
@@ -25,8 +27,6 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-
-import java.util.Map;
 
 /**
  * temp handler

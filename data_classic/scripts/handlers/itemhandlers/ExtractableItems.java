@@ -15,6 +15,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IItemHandler;
@@ -27,8 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2EtcItem;
 import l2server.log.Log;
 import l2server.util.Rnd;
-
-import java.util.logging.Logger;
 
 /**
  * @author FBIagent 11/12/2006

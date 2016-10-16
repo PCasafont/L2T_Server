@@ -4,6 +4,8 @@
 
 package handlers.itemhandlers;
 
+import java.util.logging.Logger;
+
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
@@ -15,8 +17,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
-
-import java.util.logging.Logger;
 
 public class EventItem implements IItemHandler
 {

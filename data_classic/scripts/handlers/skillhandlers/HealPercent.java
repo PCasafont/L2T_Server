@@ -15,6 +15,11 @@
 
 package handlers.skillhandlers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
@@ -34,11 +39,6 @@ import l2server.gameserver.templates.skills.L2SkillTargetDirection;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.ValueSortMap;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class HealPercent implements ISkillHandler
 {
