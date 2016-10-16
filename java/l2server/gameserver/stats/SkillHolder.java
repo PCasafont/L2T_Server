@@ -35,22 +35,22 @@ public final class SkillHolder
 
 	public SkillHolder(L2Skill skill)
 	{
-		this.skillId = skill.getId();
-		this.skillLvl = skill.getLevelHash();
+		skillId = skill.getId();
+		skillLvl = skill.getLevelHash();
 	}
 
 	public final int getSkillId()
 	{
-		return this.skillId;
+		return skillId;
 	}
 
 	public final int getSkillLvl()
 	{
-		return this.skillLvl;
+		return skillLvl;
 	}
 
 	public final L2Skill getSkill()
 	{
-		return SkillTable.getInstance().getInfo(this.skillId, this.skillLvl);
+		return SkillTable.getInstance().getInfo(skillId, skillLvl);
 	}
 }

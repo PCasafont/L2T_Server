@@ -46,12 +46,12 @@ public class ConditionTargetNpcId extends Condition
 	{
 		if (env.target instanceof L2Npc)
 		{
-			return this.npcIds.contains(((L2Npc) env.target).getNpcId());
+			return npcIds.contains(((L2Npc) env.target).getNpcId());
 		}
 
 		if (env.target instanceof L2DoorInstance)
 		{
-			return this.npcIds.contains(((L2DoorInstance) env.target).getDoorId());
+			return npcIds.contains(((L2DoorInstance) env.target).getDoorId());
 		}
 
 		return false;

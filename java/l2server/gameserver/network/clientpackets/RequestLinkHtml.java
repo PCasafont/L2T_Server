@@ -33,7 +33,7 @@ public final class RequestLinkHtml extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.link = readS();
+		link = readS();
 	}
 
 	@Override
@@ -45,14 +45,14 @@ public final class RequestLinkHtml extends L2GameClientPacket
 			return;
 		}
 
-		if (this.link.contains("..") || !this.link.contains(".htm"))
+		if (link.contains("..") || !link.contains(".htm"))
 		{
-			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + this.link + "', skipped");
+			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + link + "', skipped");
 			return;
 		}
 		try
 		{
-			String filename = "" + this.link;
+			String filename = "" + link;
 			NpcHtmlMessage msg = new NpcHtmlMessage(0);
 			msg.disableValidation();
 			msg.setFile(actor.getHtmlPrefix(), filename);

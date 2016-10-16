@@ -38,13 +38,13 @@ public final class ClanWarehouse extends Warehouse
 	@Override
 	public int getOwnerId()
 	{
-		return this.clan.getLeaderId();
+		return clan.getLeaderId();
 	}
 
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.clan.getLeader() != null ? this.clan.getLeader().getPlayerInstance() : null;
+		return clan.getLeader() != null ? clan.getLeader().getPlayerInstance() : null;
 	}
 
 	@Override
@@ -56,13 +56,13 @@ public final class ClanWarehouse extends Warehouse
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return this.items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
+		return items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
 	}
 
 	public void updateItemsOwnerId()
 	{
 		int newOwnerId = getOwnerId();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			item.setOwnerId(newOwnerId);
 		}

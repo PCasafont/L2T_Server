@@ -33,14 +33,14 @@ public class PlaySound extends L2GameServerPacket
 
 	public PlaySound(String soundFile)
 	{
-		this.unknown1 = 0;
+		unknown1 = 0;
 		this.soundFile = soundFile;
-		this.unknown3 = 0;
-		this.unknown4 = 0;
-		this.unknown5 = 0;
-		this.unknown6 = 0;
-		this.unknown7 = 0;
-		this.unknown8 = 0;
+		unknown3 = 0;
+		unknown4 = 0;
+		unknown5 = 0;
+		unknown6 = 0;
+		unknown7 = 0;
+		unknown8 = 0;
 	}
 
 	public PlaySound(int unknown1, String soundFile, int unknown3, int unknown4, int unknown5, int unknown6, int unknown7)
@@ -52,19 +52,19 @@ public class PlaySound extends L2GameServerPacket
 		this.unknown5 = unknown5;
 		this.unknown6 = unknown6;
 		this.unknown7 = unknown7;
-		this.unknown8 = 0;
+		unknown8 = 0;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.unknown1); //unknown 0 for quest and ship;
-		writeS(this.soundFile);
-		writeD(this.unknown3); //unknown 0 for quest; 1 for ship;
-		writeD(this.unknown4); //0 for quest; objectId of ship
-		writeD(this.unknown5); //x
-		writeD(this.unknown6); //y
-		writeD(this.unknown7); //z
-		writeD(this.unknown8);
+		writeD(unknown1); //unknown 0 for quest and ship;
+		writeS(soundFile);
+		writeD(unknown3); //unknown 0 for quest; 1 for ship;
+		writeD(unknown4); //0 for quest; objectId of ship
+		writeD(unknown5); //x
+		writeD(unknown6); //y
+		writeD(unknown7); //z
+		writeD(unknown8);
 	}
 }

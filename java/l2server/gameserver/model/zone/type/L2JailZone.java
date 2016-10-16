@@ -97,13 +97,13 @@ public class L2JailZone extends L2ZoneType
 
 		BackToJail(L2Character character)
 		{
-			this.activeChar = (L2PcInstance) character;
+			activeChar = (L2PcInstance) character;
 		}
 
 		@Override
 		public void run()
 		{
-			this.activeChar.teleToLocation(-114356, -249645, -2984); // Jail
+			activeChar.teleToLocation(-114356, -249645, -2984); // Jail
 		}
 	}
 }

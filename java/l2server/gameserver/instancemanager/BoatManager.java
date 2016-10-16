@@ -45,9 +45,9 @@ public class BoatManager
 
 	private BoatManager()
 	{
-		for (int i = 0; i < this.docksBusy.length; i++)
+		for (int i = 0; i < docksBusy.length; i++)
 		{
-			this.docksBusy[i] = false;
+			docksBusy[i] = false;
 		}
 	}
 
@@ -97,7 +97,7 @@ public class BoatManager
 		npcDat.set("mDef", 100);
 		L2CharTemplate template = new L2CharTemplate(npcDat);
 		L2BoatInstance boat = new L2BoatInstance(IdFactory.getInstance().getNextId(), template);
-		this.boats.put(boat.getObjectId(), boat);
+		boats.put(boat.getObjectId(), boat);
 		boat.setHeading(heading);
 		boat.setXYZInvisible(x, y, z);
 		boat.spawnMe();
@@ -110,7 +110,7 @@ public class BoatManager
 	 */
 	public L2BoatInstance getBoat(int boatId)
 	{
-		return this.boats.get(boatId);
+		return boats.get(boatId);
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class BoatManager
 	{
 		try
 		{
-			this.docksBusy[h] = value;
+			docksBusy[h] = value;
 		}
 		catch (ArrayIndexOutOfBoundsException ignored)
 		{
@@ -140,7 +140,7 @@ public class BoatManager
 	{
 		try
 		{
-			return this.docksBusy[h];
+			return docksBusy[h];
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{

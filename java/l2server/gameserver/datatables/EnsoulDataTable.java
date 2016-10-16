@@ -90,11 +90,11 @@ public class EnsoulDataTable
 					}
 				}
 
-				this.effects.put(id, effect);
+				effects.put(id, effect);
 			}
 		}
 
-		Log.info("EnsoulDataTable: Loaded " + this.effects.size() + " ensoul effects.");
+		Log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
 
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
 		if (!file.exists())
@@ -125,24 +125,24 @@ public class EnsoulDataTable
 				for (XmlNode effectNode : crystalNode.getChildren())
 				{
 					int effectId = effectNode.getInt("id");
-					sc.addEffect(this.effects.get(effectId));
+					sc.addEffect(effects.get(effectId));
 				}
 
-				this.crystals.put(id, sc);
+				crystals.put(id, sc);
 			}
 		}
 
-		Log.info("EnsoulDataTable: Loaded " + this.crystals.size() + " soul crystals.");
+		Log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
 	}
 
 	public final EnsoulEffect getEffect(int id)
 	{
-		return this.effects.get(id);
+		return effects.get(id);
 	}
 
 	public final SoulCrystal getCrystal(int id)
 	{
-		return this.crystals.get(id);
+		return crystals.get(id);
 	}
 
 	private FuncTemplate parseFunc(XmlNode n)

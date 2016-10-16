@@ -19,8 +19,8 @@ public class ExEventMatchSpelledInfo extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.numberofeffects);
-		writeD(this.type);
-		writeD(this.objectID);
+		writeD(numberofeffects);
+		writeD(type);
+		writeD(objectID);
 	}
 }

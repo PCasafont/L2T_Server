@@ -35,13 +35,13 @@ public class PartyMatchDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.room.getId()); //	Room ID
-		writeD(this.room.getMaxMembers()); //	Max Members
-		writeD(this.room.getMinLvl()); //	Level Min
-		writeD(this.room.getMaxLvl()); //	Level Max
-		writeD(this.room.getLootType()); //	Loot Type
-		writeD(this.room.getLocation()); //	Room Location
-		writeS(this.room.getTitle()); //	Room title
+		writeD(room.getId()); //	Room ID
+		writeD(room.getMaxMembers()); //	Max Members
+		writeD(room.getMinLvl()); //	Level Min
+		writeD(room.getMaxLvl()); //	Level Max
+		writeD(room.getLootType()); //	Loot Type
+		writeD(room.getLocation()); //	Room Location
+		writeS(room.getTitle()); //	Room title
 		writeC(0x05); // ???
 		writeC(0x01); // ???
 	}

@@ -32,13 +32,13 @@ public class ExPledgeRecruitApplication extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.applicant.recruitData.clan.getClanId());
-		writeS(this.applicant.recruitData.clan.getName());
-		writeS(this.applicant.recruitData.clan.getLeaderName());
-		writeD(this.applicant.recruitData.clan.getLevel());
-		writeD(this.applicant.recruitData.clan.getMembersCount());
-		writeD(this.applicant.recruitData.karma);
-		writeS(this.applicant.recruitData.introduction);
-		writeS(this.applicant.application);
+		writeD(applicant.recruitData.clan.getClanId());
+		writeS(applicant.recruitData.clan.getName());
+		writeS(applicant.recruitData.clan.getLeaderName());
+		writeD(applicant.recruitData.clan.getLevel());
+		writeD(applicant.recruitData.clan.getMembersCount());
+		writeD(applicant.recruitData.karma);
+		writeS(applicant.recruitData.introduction);
+		writeS(applicant.application);
 	}
 }

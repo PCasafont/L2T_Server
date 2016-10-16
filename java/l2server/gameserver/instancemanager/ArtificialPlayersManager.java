@@ -71,7 +71,7 @@ public class ArtificialPlayersManager implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		this.players.clear();
+		players.clear();
 
 		Connection con = null;
 		try
@@ -98,7 +98,7 @@ public class ArtificialPlayersManager implements Reloadable
 				//player.setAI(null);
 				//player.getAI();
 
-				this.players.add(player);
+				players.add(player);
 			}
 		}
 		catch (Exception e)
@@ -119,22 +119,22 @@ public class ArtificialPlayersManager implements Reloadable
 
 		//createRandomParty();
 
-		Log.info("Loaded " + this.players.size() + " artificial players.");
+		Log.info("Loaded " + players.size() + " artificial players.");
 
-		if (this.pvpCheck != null)
+		if (pvpCheck != null)
 		{
-			this.pvpCheck.cancel(false);
+			pvpCheck.cancel(false);
 		}
 
-		this.pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
+		pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 		{
-			for (L2Party party : this.partiesSent)
+			for (L2Party party : partiesSent)
 			{
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 
-			this.partiesSent.clear();
-			if (this.partiesSent.isEmpty())
+			partiesSent.clear();
+			if (partiesSent.isEmpty())
 			{
 				return;
 			}
@@ -182,7 +182,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 			if (biggestAlly - smallestAlly > 5)
 			{
-				while (this.partiesSent.size() * 7 < biggestAlly)
+				while (partiesSent.size() * 7 < biggestAlly)
 				{
 					L2Party party = createRandomParty();
 					for (L2PcInstance member : party.getPartyMembers())
@@ -191,12 +191,12 @@ public class ArtificialPlayersManager implements Reloadable
 						member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
 						member.startPvPFlag();
 					}
-					this.partiesSent.add(party);
+					partiesSent.add(party);
 				}
 			}
 			else if (pvpers < 5)
 			{
-				while (this.partiesSent.size() < 2)
+				while (partiesSent.size() < 2)
 				{
 					L2Party party = createRandomParty();
 					for (L2PcInstance member : party.getPartyMembers())
@@ -204,12 +204,12 @@ public class ArtificialPlayersManager implements Reloadable
 						member.teleToLocation(-24501, 187976, -3975, true);
 						member.startPvPFlag();
 					}
-					this.partiesSent.add(party);
+					partiesSent.add(party);
 				}
 			}
-			else if (this.partiesSent.size() > 0 && pvpers > 20)
+			else if (partiesSent.size() > 0 && pvpers > 20)
 			{
-				L2Party party = this.partiesSent.remove(0);
+				L2Party party = partiesSent.remove(0);
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 		}, 100000L, 100000L);
@@ -317,7 +317,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 		//player.setOnlineStatus(true, false);
 		//player.spawnMe();
-		this.players.add(player);
+		players.add(player);
 
 		return player;
 	}
@@ -330,7 +330,7 @@ public class ArtificialPlayersManager implements Reloadable
 	public L2Party createParty(List<Integer> classCombination)
 	{
 		List<L2ApInstance> available =
-				this.players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
+				players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
 
 		List<L2ApInstance> members = new ArrayList<>();
 		available.stream().filter(player -> classCombination.contains(player.getClassId())).forEachOrdered(player ->
@@ -421,7 +421,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 	public List<L2ApInstance> getAllAPlayers()
 	{
-		return this.players;
+		return players;
 	}
 
 	@SuppressWarnings("synthetic-access")

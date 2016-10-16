@@ -340,12 +340,12 @@ public enum Stats
 
 	public String getValue()
 	{
-		return this.value;
+		return value;
 	}
 
 	Stats(String s)
 	{
-		this.value = s;
+		value = s;
 	}
 
 	public static Stats fromString(String name)

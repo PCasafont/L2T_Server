@@ -122,7 +122,7 @@ public class PriestOfBlessing extends Quest
 
 				if (System.currentTimeMillis() > _reuse_time)
 				{
-					int[] hg = this.hourglasses[index];
+					int[] hg = hourglasses[index];
 					int _nevit_hourglass = hg[Rnd.get(0, hg.length - 1)];
 
 					st.setState(State.STARTED);
@@ -208,16 +208,16 @@ public class PriestOfBlessing extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.priest);
-		addFirstTalkId(this.priest);
-		addTalkId(this.priest);
-		if (!this.spawned)
+		addStartNpc(priest);
+		addFirstTalkId(priest);
+		addTalkId(priest);
+		if (!spawned)
 		{
-			for (int[] spawn : this.spawns)
+			for (int[] spawn : spawns)
 			{
-				addSpawn(this.priest, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+				addSpawn(priest, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 			}
-			this.spawned = true;
+			spawned = true;
 		}
 	}
 

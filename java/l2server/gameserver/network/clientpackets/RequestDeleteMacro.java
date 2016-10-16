@@ -22,7 +22,7 @@ public final class RequestDeleteMacro extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.id = readD();
+		id = readD();
 	}
 
 	@Override
@@ -32,6 +32,6 @@ public final class RequestDeleteMacro extends L2GameClientPacket
 		{
 			return;
 		}
-		getClient().getActiveChar().deleteMacro(this.id);
+		getClient().getActiveChar().deleteMacro(id);
 	}
 }

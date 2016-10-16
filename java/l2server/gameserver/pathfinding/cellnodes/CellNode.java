@@ -31,17 +31,17 @@ public class CellNode extends AbstractNode
 
 	public boolean isInUse()
 	{
-		return this.isInUse;
+		return isInUse;
 	}
 
 	public void setInUse()
 	{
-		this.isInUse = true;
+		isInUse = true;
 	}
 
 	public CellNode getNext()
 	{
-		return this.next;
+		return next;
 	}
 
 	public void setNext(CellNode next)
@@ -51,7 +51,7 @@ public class CellNode extends AbstractNode
 
 	public float getCost()
 	{
-		return this.cost;
+		return cost;
 	}
 
 	public void setCost(double cost)
@@ -62,8 +62,8 @@ public class CellNode extends AbstractNode
 	public void free()
 	{
 		setParent(null);
-		this.cost = -1000;
-		this.isInUse = false;
-		this.next = null;
+		cost = -1000;
+		isInUse = false;
+		next = null;
 	}
 }

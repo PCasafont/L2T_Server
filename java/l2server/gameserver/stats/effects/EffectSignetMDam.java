@@ -99,7 +99,7 @@ public class EffectSignetMDam extends L2Effect
 		effectPoint.setIsInvul(true);
 		effectPoint.spawnMe(x, y, z);
 
-		this.actor = effectPoint;
+		actor = effectPoint;
 		return true;
 	}
 
@@ -128,7 +128,7 @@ public class EffectSignetMDam extends L2Effect
 
 		ArrayList<L2Character> targets = new ArrayList<>();
 
-		for (L2Character cha : this.actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (cha == null || cha == caster)
 			{
@@ -213,9 +213,9 @@ public class EffectSignetMDam extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (this.actor != null)
+		if (actor != null)
 		{
-			this.actor.deleteMe();
+			actor.deleteMe();
 		}
 	}
 }

@@ -37,7 +37,7 @@ public class VIPTeamVsTeam extends EventInstance
 		}
 
 		// Iterate over all teams
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			team.setVIP(team.selectRandomParticipant());
 			int antiLock = 0;
@@ -55,12 +55,12 @@ public class VIPTeamVsTeam extends EventInstance
 	public void calculateRewards()
 	{
 		EventTeam team;
-		if (this.config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (this.teams[0].getPoints() == this.teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (this.teams[0].getParticipatedPlayerCount() == 0 || this.teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -82,9 +82,9 @@ public class VIPTeamVsTeam extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = this.teams[this.teams[0].getPoints() > this.teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == this.teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -97,29 +97,29 @@ public class VIPTeamVsTeam extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (this.teams[0].getPoints() > this.teams[1].getPoints() && this.teams[0].getPoints() > this.teams[2].getPoints() &&
-					this.teams[0].getPoints() > this.teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = this.teams[0];
+				team = teams[0];
 			}
-			else if (this.teams[1].getPoints() > this.teams[0].getPoints() && this.teams[1].getPoints() > this.teams[2].getPoints() &&
-					this.teams[1].getPoints() > this.teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = this.teams[1];
+				team = teams[1];
 			}
-			else if (this.teams[2].getPoints() > this.teams[0].getPoints() && this.teams[2].getPoints() > this.teams[1].getPoints() &&
-					this.teams[2].getPoints() > this.teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = this.teams[2];
+				team = teams[2];
 			}
-			else if (this.teams[3].getPoints() > this.teams[0].getPoints() && this.teams[3].getPoints() > this.teams[1].getPoints() &&
-					this.teams[3].getPoints() > this.teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = this.teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -136,7 +136,7 @@ public class VIPTeamVsTeam extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getVIP() == null)
 			{
@@ -177,7 +177,7 @@ public class VIPTeamVsTeam extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, this.teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, teams[killedTeamId].getCoords(), false, false);
 
 		if (killerCharacter == null ||
 				getParticipantTeam(killedPlayerInstance.getObjectId()).getVIP() != killedPlayerInstance)
@@ -210,14 +210,14 @@ public class VIPTeamVsTeam extends EventInstance
 		boolean friendlyDeath = killerTeamId == killedTeamId;
 		if (killerTeamId != -1 && killedTeamId != -1 && !friendlyDeath)
 		{
-			EventTeam killerTeam = this.teams[killerTeamId];
+			EventTeam killerTeam = teams[killerTeamId];
 
 			killerTeam.increasePoints();
 
 			CreatureSay cs =
 					new CreatureSay(killerPlayerInstance.getObjectId(), Say2.TELL, killerPlayerInstance.getName(),
 							"I have killed " + killedPlayerInstance.getName() + "!");
-			for (L2PcInstance playerInstance : this.teams[killerTeamId].getParticipatedPlayers().values())
+			for (L2PcInstance playerInstance : teams[killerTeamId].getParticipatedPlayers().values())
 			{
 				if (playerInstance != null)
 				{
@@ -243,7 +243,7 @@ public class VIPTeamVsTeam extends EventInstance
 			return false;
 		}
 
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getVIP() == null || team.getVIP().getObjectId() == playerObjectId)
 			{

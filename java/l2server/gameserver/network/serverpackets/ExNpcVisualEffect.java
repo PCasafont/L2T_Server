@@ -16,7 +16,7 @@ public class ExNpcVisualEffect extends L2GameServerPacket
 	public void writeImpl()
 	{
 		writeD(0x00); // unk2
-		writeD(this.objId);
+		writeD(objId);
 		writeD(0x00); // unk1
 	}
 }

@@ -37,17 +37,17 @@ public class Curfew
 
 	public void initialize()
 	{
-		this.eventTown = Rnd.get(19) + 1;
-		if (this.eventTown == 16)
+		eventTown = Rnd.get(19) + 1;
+		if (eventTown == 16)
 		{
-			this.eventTown = 20;
+			eventTown = 20;
 		}
-		else if (this.eventTown == 18)
+		else if (eventTown == 18)
 		{
-			this.eventTown = 22;
+			eventTown = 22;
 		}
 
-		eventTownName = MapRegionTable.getInstance().getTownName(this.eventTown);
+		eventTownName = MapRegionTable.getInstance().getTownName(eventTown);
 	}
 
 	public void start()
@@ -55,7 +55,7 @@ public class Curfew
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (!(player.isInsideZone(L2Character.ZONE_PEACE) &&
-					TownManager.getClosestTown(player).getTownId() == this.eventTown))
+					TownManager.getClosestTown(player).getTownId() == eventTown))
 			{
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 			}
@@ -80,7 +80,7 @@ public class Curfew
 
 	private void stop()
 	{
-		this.eventTown = -1;
+		eventTown = -1;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) &&
@@ -111,7 +111,7 @@ public class Curfew
 		@Override
 		public void run()
 		{
-			int delay = Math.round((this.startTime - System.currentTimeMillis()) / 1000);
+			int delay = Math.round((startTime - System.currentTimeMillis()) / 1000);
 
 			if (delay > 0)
 			{
@@ -128,8 +128,8 @@ public class Curfew
 	{
 		try
 		{
-			this.ctask = new CurfewTask(curfewEnd);
-			ThreadPoolManager.getInstance().executeTask(this.ctask);
+			ctask = new CurfewTask(curfewEnd);
+			ThreadPoolManager.getInstance().executeTask(ctask);
 		}
 		catch (Exception e)
 		{
@@ -154,8 +154,8 @@ public class Curfew
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			this.task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(this.task);
+			task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(task);
 		}
 		catch (Exception e)
 		{
@@ -165,14 +165,14 @@ public class Curfew
 
 	public StartTask getStartTask()
 	{
-		return this.task;
+		return task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(this.task.getStartTime());
+		startTime.setTimeInMillis(task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -183,7 +183,7 @@ public class Curfew
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = this.task.getStartTime() - System.currentTimeMillis();
+		long toStart = task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -213,13 +213,13 @@ public class Curfew
 
 		public long getStartTime()
 		{
-			return this.startTime;
+			return startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((this.startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

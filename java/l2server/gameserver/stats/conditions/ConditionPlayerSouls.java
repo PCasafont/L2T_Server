@@ -42,6 +42,6 @@ public class ConditionPlayerSouls extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((L2PcInstance) env.player).getSouls() >= this.souls;
+		return ((L2PcInstance) env.player).getSouls() >= souls;
 	}
 }

@@ -50,32 +50,32 @@ public class AbilityTable
 
 		public int getType()
 		{
-			return this.type;
+			return type;
 		}
 
 		public int getSkillId()
 		{
-			return this.skillId;
+			return skillId;
 		}
 
 		public int getMaxLevel()
 		{
-			return this.maxLevel;
+			return maxLevel;
 		}
 
 		public int getReqPoints()
 		{
-			return this.reqPoints;
+			return reqPoints;
 		}
 
 		public int getReqSkill()
 		{
-			return this.reqSkill;
+			return reqSkill;
 		}
 
 		public int getReqSkillLvl()
 		{
-			return this.reqSkillLvl;
+			return reqSkillLvl;
 		}
 	}
 
@@ -126,18 +126,18 @@ public class AbilityTable
 							reqSkillLvl = abilityNode.getInt("reqSkillLvl");
 						}
 
-						this.abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
+						abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
 					}
 				}
 			}
 		}
 
-		Log.info("AbilityTable: Loaded " + this.abilities.size() + " abilities.");
+		Log.info("AbilityTable: Loaded " + abilities.size() + " abilities.");
 	}
 
 	public Ability getAbility(int skillId)
 	{
-		return this.abilities.get(skillId);
+		return abilities.get(skillId);
 	}
 
 	public int getMaxPoints()

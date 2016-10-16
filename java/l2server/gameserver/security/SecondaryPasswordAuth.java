@@ -62,9 +62,9 @@ public class SecondaryPasswordAuth
 	public SecondaryPasswordAuth(L2GameClient activeClient)
 	{
 		this.activeClient = activeClient;
-		this.password = null;
-		this.wrongAttempts = 0;
-		this.authed = false;
+		password = null;
+		wrongAttempts = 0;
+		authed = false;
 		loadPassword();
 	}
 
@@ -77,7 +77,7 @@ public class SecondaryPasswordAuth
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_PASSWORD);
-			statement.setString(1, this.activeClient.getAccountName());
+			statement.setString(1, activeClient.getAccountName());
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
 			{
@@ -86,11 +86,11 @@ public class SecondaryPasswordAuth
 
 				if (var.equals(VAR_PWD))
 				{
-					this.password = value;
+					password = value;
 				}
 				else if (var.equals(VAR_WTE))
 				{
-					this.wrongAttempts = Integer.parseInt(value);
+					wrongAttempts = Integer.parseInt(value);
 				}
 			}
 			statement.close();
@@ -104,9 +104,9 @@ public class SecondaryPasswordAuth
 			L2DatabaseFactory.close(con);
 		}
 
-		if (this.password != null && this.password.equals("DISABLED"))
+		if (password != null && password.equals("DISABLED"))
 		{
-			this.authed = true;
+			authed = true;
 		}
 	}
 
@@ -114,14 +114,14 @@ public class SecondaryPasswordAuth
 	{
 		if (passwordExist())
 		{
-			Log.warning("[SecondaryPasswordAuth]" + this.activeClient.getAccountName() + " forced savePassword");
-			this.activeClient.closeNow();
+			Log.warning("[SecondaryPasswordAuth]" + activeClient.getAccountName() + " forced savePassword");
+			activeClient.closeNow();
 			return false;
 		}
 
 		if (!validatePassword(password))
 		{
-			this.activeClient.sendPacket(new Ex2ndPasswordAck(Ex2ndPasswordAck.WRONG_PATTERN));
+			activeClient.sendPacket(new Ex2ndPasswordAck(Ex2ndPasswordAck.WRONG_PATTERN));
 			return false;
 		}
 
@@ -132,7 +132,7 @@ public class SecondaryPasswordAuth
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(INSERT_PASSWORD);
-			statement.setString(1, this.activeClient.getAccountName());
+			statement.setString(1, activeClient.getAccountName());
 			statement.setString(2, VAR_PWD);
 			statement.setString(3, password);
 			statement.execute();
@@ -158,7 +158,7 @@ public class SecondaryPasswordAuth
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(INSERT_ATTEMPT);
-			statement.setString(1, this.activeClient.getAccountName());
+			statement.setString(1, activeClient.getAccountName());
 			statement.setString(2, VAR_WTE);
 			statement.setString(3, Integer.toString(attempts));
 			statement.setString(4, Integer.toString(attempts));
@@ -181,8 +181,8 @@ public class SecondaryPasswordAuth
 	{
 		if (!passwordExist())
 		{
-			Log.warning("[SecondaryPasswordAuth]" + this.activeClient.getAccountName() + " forced changePassword");
-			this.activeClient.closeNow();
+			Log.warning("[SecondaryPasswordAuth]" + activeClient.getAccountName() + " forced changePassword");
+			activeClient.closeNow();
 			return false;
 		}
 
@@ -193,7 +193,7 @@ public class SecondaryPasswordAuth
 
 		if (!validatePassword(newPassword))
 		{
-			this.activeClient.sendPacket(new Ex2ndPasswordAck(Ex2ndPasswordAck.WRONG_PATTERN));
+			activeClient.sendPacket(new Ex2ndPasswordAck(Ex2ndPasswordAck.WRONG_PATTERN));
 			return false;
 		}
 
@@ -205,7 +205,7 @@ public class SecondaryPasswordAuth
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(UPDATE_PASSWORD);
 			statement.setString(1, newPassword);
-			statement.setString(2, this.activeClient.getAccountName());
+			statement.setString(2, activeClient.getAccountName());
 			statement.setString(3, VAR_PWD);
 			statement.execute();
 			statement.close();
@@ -219,8 +219,8 @@ public class SecondaryPasswordAuth
 		{
 			L2DatabaseFactory.close(con);
 		}
-		this.password = newPassword;
-		this.authed = false;
+		password = newPassword;
+		authed = false;
 		return true;
 	}
 
@@ -230,30 +230,30 @@ public class SecondaryPasswordAuth
 
 		if (!password.equals(this.password))
 		{
-			this.wrongAttempts++;
-			if (this.wrongAttempts < Config.SECOND_AUTH_MAX_ATTEMPTS)
+			wrongAttempts++;
+			if (wrongAttempts < Config.SECOND_AUTH_MAX_ATTEMPTS)
 			{
-				this.activeClient.sendPacket(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_WRONG, this.wrongAttempts));
-				insertWrongAttempt(this.wrongAttempts);
+				activeClient.sendPacket(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_WRONG, wrongAttempts));
+				insertWrongAttempt(wrongAttempts);
 				return false;
 			}
 			else
 			{
-				LoginServerThread.getInstance().sendTempBan(this.activeClient.getAccountName(),
-						this.activeClient.getConnectionAddress().getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
-				Log.warning(this.activeClient.getAccountName() + " - (" +
-						this.activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " +
-						this.wrongAttempts + " times in row.");
+				LoginServerThread.getInstance().sendTempBan(activeClient.getAccountName(),
+						activeClient.getConnectionAddress().getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
+				Log.warning(activeClient.getAccountName() + " - (" +
+						activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " +
+						wrongAttempts + " times in row.");
 				insertWrongAttempt(0);
-				this.activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN,
+				activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN,
 						Config.SECOND_AUTH_MAX_ATTEMPTS));
 				return false;
 			}
 		}
 		if (!skipAuth)
 		{
-			this.authed = true;
-			this.activeClient.sendPacket(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_OK, this.wrongAttempts));
+			authed = true;
+			activeClient.sendPacket(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_OK, wrongAttempts));
 		}
 		insertWrongAttempt(0);
 		return true;
@@ -261,24 +261,24 @@ public class SecondaryPasswordAuth
 
 	public boolean passwordExist()
 	{
-		return this.password != null;
+		return password != null;
 	}
 
 	public void openDialog()
 	{
 		if (passwordExist())
 		{
-			this.activeClient.sendPacket(new Ex2ndPasswordCheck(Ex2ndPasswordCheck.PASSWORD_PROMPT));
+			activeClient.sendPacket(new Ex2ndPasswordCheck(Ex2ndPasswordCheck.PASSWORD_PROMPT));
 		}
 		else
 		{
-			this.activeClient.sendPacket(new Ex2ndPasswordCheck(Ex2ndPasswordCheck.PASSWORD_NEW));
+			activeClient.sendPacket(new Ex2ndPasswordCheck(Ex2ndPasswordCheck.PASSWORD_NEW));
 		}
 	}
 
 	public boolean isAuthed()
 	{
-		return this.authed;
+		return authed;
 	}
 
 	private String cryptPassword(String password)
@@ -336,7 +336,7 @@ public class SecondaryPasswordAuth
 			else if (toChk.contains(chkEr.reverse()))
 				return false;
 		}*/
-		this.wrongAttempts = 0;
+		wrongAttempts = 0;
 		return true;
 	}
 }

@@ -45,13 +45,13 @@ public class MoveToLocationInShuttle extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.shuttleId = readD();
-		this.targetX = readD();
-		this.targetY = readD();
-		this.targetZ = readD();
-		this.originX = readD();
-		this.originY = readD();
-		this.originZ = readD();
+		shuttleId = readD();
+		targetX = readD();
+		targetY = readD();
+		targetZ = readD();
+		originX = readD();
+		originY = readD();
+		originZ = readD();
 	}
 
 	@Override
@@ -63,9 +63,9 @@ public class MoveToLocationInShuttle extends L2GameClientPacket
 			return;
 		}
 
-		if (this.targetX == this.originX && this.targetY == this.originY && this.targetZ == this.originZ)
+		if (targetX == originX && targetY == originY && targetZ == originZ)
 		{
-			activeChar.sendPacket(new ExStopMoveInShuttle(activeChar, this.shuttleId));
+			activeChar.sendPacket(new ExStopMoveInShuttle(activeChar, shuttleId));
 			return;
 		}
 
@@ -89,13 +89,13 @@ public class MoveToLocationInShuttle extends L2GameClientPacket
 		}
 
 		final L2ShuttleInstance shuttle = activeChar.getShuttle();
-		if (shuttle.getObjectId() != this.shuttleId)
+		if (shuttle.getObjectId() != shuttleId)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		activeChar.setInVehiclePosition(new Point3D(this.targetX, this.targetY, this.targetZ));
+		activeChar.setInVehiclePosition(new Point3D(targetX, targetY, targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInShuttle(activeChar));
 	}
 }

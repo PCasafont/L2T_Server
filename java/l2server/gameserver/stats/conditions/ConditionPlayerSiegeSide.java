@@ -33,7 +33,7 @@ public class ConditionPlayerSiegeSide extends Condition
 	 */
 	public ConditionPlayerSiegeSide(int side)
 	{
-		this.siegeSide = side;
+		siegeSide = side;
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +42,6 @@ public class ConditionPlayerSiegeSide extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((L2PcInstance) env.player).getSiegeSide() == this.siegeSide;
+		return ((L2PcInstance) env.player).getSiegeSide() == siegeSide;
 	}
 }

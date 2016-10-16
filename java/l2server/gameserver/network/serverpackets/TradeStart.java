@@ -31,27 +31,27 @@ public final class TradeStart extends L2ItemListPacket
 
 	public TradeStart(L2PcInstance player)
 	{
-		this.activeChar = player;
-		this.itemList = this.activeChar.getInventory()
-				.getAvailableItems(true, this.activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
+		activeChar = player;
+		itemList = activeChar.getInventory()
+				.getAvailableItems(true, activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.activeChar.getActiveTradeList() == null || this.activeChar.getActiveTradeList().getPartner() == null)
+		if (activeChar.getActiveTradeList() == null || activeChar.getActiveTradeList().getPartner() == null)
 		{
 			return;
 		}
 
-		writeD(this.activeChar.getActiveTradeList().getPartner().getObjectId());
+		writeD(activeChar.getActiveTradeList().getPartner().getObjectId());
 		//writeD((this.activeChar != null || this.activeChar.getTransactionRequester() != null)? this.activeChar.getTransactionRequester().getObjectId() : 0);
 
 		writeC(0x00); // Relationship mask
-		writeC(this.activeChar.getLevel());
+		writeC(activeChar.getLevel());
 
-		writeH(this.itemList.length);
-		for (L2ItemInstance item : this.itemList)
+		writeH(itemList.length);
+		for (L2ItemInstance item : itemList)
 		{
 			writeItem(item);
 		}

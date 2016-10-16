@@ -58,7 +58,7 @@ public final class ConditionPlayerHasClanHall extends Condition
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
 		if (clan == null)
 		{
-			return this.clanHall.size() == 1 && this.clanHall.get(0) == 0;
+			return clanHall.size() == 1 && clanHall.get(0) == 0;
 		}
 
 		if (env.player.isGM())
@@ -67,11 +67,11 @@ public final class ConditionPlayerHasClanHall extends Condition
 		}
 
 		// All Clan Hall
-		if (this.clanHall.size() == 1 && this.clanHall.get(0) == -1)
+		if (clanHall.size() == 1 && clanHall.get(0) == -1)
 		{
 			return clan.getHasHideout() > 0;
 		}
 
-		return this.clanHall.contains(clan.getHasHideout());
+		return clanHall.contains(clan.getHasHideout());
 	}
 }

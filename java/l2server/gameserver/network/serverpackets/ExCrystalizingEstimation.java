@@ -37,13 +37,13 @@ public class ExCrystalizingEstimation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (Config.ENABLE_CRYSTALLIZE_REWARDS && this.item.getCrystallizeRewards() != null)
+		if (Config.ENABLE_CRYSTALLIZE_REWARDS && item.getCrystallizeRewards() != null)
 		{
-			writeD(this.item.getCrystallizeRewards().length + 1);
-			writeD(this.item.getCrystalItemId());
-			writeQ(this.crystalCount);
+			writeD(item.getCrystallizeRewards().length + 1);
+			writeD(item.getCrystalItemId());
+			writeQ(crystalCount);
 			writeF(100.0);
-			for (L2CrystallizeReward reward : this.item.getCrystallizeRewards())
+			for (L2CrystallizeReward reward : item.getCrystallizeRewards())
 			{
 				writeD(reward.getItemId());
 				writeQ(reward.getCount());
@@ -53,8 +53,8 @@ public class ExCrystalizingEstimation extends L2GameServerPacket
 		else
 		{
 			writeD(1);
-			writeD(this.item.getCrystalItemId());
-			writeQ(this.crystalCount);
+			writeD(item.getCrystalItemId());
+			writeQ(crystalCount);
 			writeF(100.0);
 		}
 	}

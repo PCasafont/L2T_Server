@@ -71,7 +71,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))
 				{
 					ThreadPoolManager.getInstance()
-							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), this.onKillDelay);
+							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), onKillDelay);
 				}
 			}
 		}
@@ -82,7 +82,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	@Override
 	public void addDamageHate(L2Character attacker, int damage, int aggro)
 	{
-		if (!this.isPassive && !(attacker instanceof L2PcInstance))
+		if (!isPassive && !(attacker instanceof L2PcInstance))
 		{
 			super.addDamageHate(attacker, damage, aggro);
 		}
@@ -90,23 +90,23 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 
 	public void setPassive(boolean state)
 	{
-		this.isPassive = state;
+		isPassive = state;
 	}
 
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return this.isAutoAttackable && !(attacker instanceof L2PcInstance);
+		return isAutoAttackable && !(attacker instanceof L2PcInstance);
 	}
 
 	@Override
 	public void setAutoAttackable(boolean state)
 	{
-		this.isAutoAttackable = state;
+		isAutoAttackable = state;
 	}
 
 	public boolean isPassive()
 	{
-		return this.isPassive;
+		return isPassive;
 	}
 }

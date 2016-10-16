@@ -42,8 +42,8 @@ public class AntiFeedManager
 
 	private AntiFeedManager()
 	{
-		this.lastDeathTimes = new ConcurrentHashMap<>();
-		this.eventIPs = new TIntObjectHashMap<>();
+		lastDeathTimes = new ConcurrentHashMap<>();
+		eventIPs = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class AntiFeedManager
 	 */
 	public final void setLastDeathTime(int objectId)
 	{
-		this.lastDeathTimes.put(objectId, System.currentTimeMillis());
+		lastDeathTimes.put(objectId, System.currentTimeMillis());
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class AntiFeedManager
 	 */
 	public final void clear()
 	{
-		this.lastDeathTimes.clear();
+		lastDeathTimes.clear();
 	}
 
 	/**
@@ -154,9 +154,9 @@ public class AntiFeedManager
 	 */
 	public final void registerEvent(int eventId)
 	{
-		if (!this.eventIPs.containsKey(eventId))
+		if (!eventIPs.containsKey(eventId))
 		{
-			this.eventIPs.put(eventId, new HashMap<>());
+			eventIPs.put(eventId, new HashMap<>());
 		}
 	}
 
@@ -231,7 +231,7 @@ public class AntiFeedManager
 			return false; // unable to determine IP address
 		}
 
-		final Map<Integer, Connections> event = this.eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event == null)
 		{
 			return false; // no such event registered
@@ -266,7 +266,7 @@ public class AntiFeedManager
 		}
 
 		final Integer addrHash = client.getConnectionAddress().hashCode();
-		this.eventIPs.forEachValue(new DisconnectProcedure(addrHash));
+		eventIPs.forEachValue(new DisconnectProcedure(addrHash));
 	}
 
 	/**
@@ -276,7 +276,7 @@ public class AntiFeedManager
 	 */
 	public final void clear(int eventId)
 	{
-		final Map<Integer, Connections> event = this.eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event != null)
 		{
 			event.clear();
@@ -325,9 +325,9 @@ public class AntiFeedManager
 		@SuppressWarnings("unused")
 		public final synchronized boolean testAndIncrement(int max)
 		{
-			if (this.num < max)
+			if (num < max)
 			{
-				this.num++;
+				num++;
 				return true;
 			}
 			return false;
@@ -338,12 +338,12 @@ public class AntiFeedManager
 		 */
 		public final synchronized boolean testAndDecrement()
 		{
-			if (this.num > 0)
+			if (num > 0)
 			{
-				this.num--;
+				num--;
 			}
 
-			return this.num == 0;
+			return num == 0;
 		}
 	}
 
@@ -359,14 +359,14 @@ public class AntiFeedManager
 		@Override
 		public final boolean execute(Map<Integer, Connections> event)
 		{
-			final Connections conns = event.get(this.addrHash);
+			final Connections conns = event.get(addrHash);
 			if (conns != null)
 			{
 				synchronized (event)
 				{
 					if (conns.testAndDecrement())
 					{
-						event.remove(this.addrHash);
+						event.remove(addrHash);
 					}
 				}
 			}

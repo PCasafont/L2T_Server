@@ -62,14 +62,14 @@ public class ExBrBroadcastEventState extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.eventId);
-		writeD(this.eventState);
-		writeD(this.param0);
-		writeD(this.param1);
-		writeD(this.param2);
-		writeD(this.param3);
-		writeD(this.param4);
-		writeS(this.param5);
-		writeS(this.param6);
+		writeD(eventId);
+		writeD(eventState);
+		writeD(param0);
+		writeD(param1);
+		writeD(param2);
+		writeD(param3);
+		writeD(param4);
+		writeS(param5);
+		writeS(param6);
 	}
 }

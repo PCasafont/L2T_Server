@@ -28,7 +28,7 @@ public final class DeleteObject extends L2GameServerPacket
 
 	public DeleteObject(L2Object obj)
 	{
-		this.objectId = obj.getObjectId();
+		objectId = obj.getObjectId();
 	}
 
 	public DeleteObject(int objectId)
@@ -39,7 +39,7 @@ public final class DeleteObject extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
+		writeD(objectId);
 		writeC(0x00); //c2
 	}
 }

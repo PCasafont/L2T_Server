@@ -32,7 +32,7 @@ public class FairyTrees extends L2AttackableAIScript
 	public FairyTrees(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		this.registerMobs(mobs, QuestEventType.ON_KILL);
+		registerMobs(mobs, QuestEventType.ON_KILL);
 		super.addSpawnId(27189);
 	}
 

@@ -43,10 +43,10 @@ public class L2Request
 
 	protected void clear()
 	{
-		this.partner = null;
-		this.requestPacket = null;
-		this.isRequestor = false;
-		this.isAnswerer = false;
+		partner = null;
+		requestPacket = null;
+		isRequestor = false;
+		isAnswerer = false;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class L2Request
 	 */
 	public L2PcInstance getPartner()
 	{
-		return this.partner;
+		return partner;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class L2Request
 	 */
 	private synchronized void setRequestPacket(L2GameClientPacket packet)
 	{
-		this.requestPacket = packet;
+		requestPacket = packet;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class L2Request
 	 */
 	public L2GameClientPacket getRequestPacket()
 	{
-		return this.requestPacket;
+		return requestPacket;
 	}
 
 	/**
@@ -88,27 +88,27 @@ public class L2Request
 	{
 		if (partner == null)
 		{
-			this.player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 			return false;
 		}
 		if (partner.getRequest().isProcessingRequest())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
 			sm.addString(partner.getName());
-			this.player.sendPacket(sm);
+			player.sendPacket(sm);
 			sm = null;
 			return false;
 		}
 		if (isProcessingRequest())
 		{
-			this.player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
 			return false;
 		}
 
 		this.partner = partner;
-		this.requestPacket = packet;
+		requestPacket = packet;
 		setOnRequestTimer(true);
-		this.partner.getRequest().setPartner(this.player);
+		this.partner.getRequest().setPartner(player);
 		this.partner.getRequest().setRequestPacket(packet);
 		this.partner.getRequest().setOnRequestTimer(false);
 		return true;
@@ -117,7 +117,7 @@ public class L2Request
 	private void setOnRequestTimer(boolean isRequestor)
 	{
 		this.isRequestor = isRequestor;
-		this.isAnswerer = !isRequestor;
+		isAnswerer = !isRequestor;
 		ThreadPoolManager.getInstance().scheduleGeneral(this::clear, REQUEST_TIMEOUT * 1000);
 	}
 
@@ -126,9 +126,9 @@ public class L2Request
 	 */
 	public void onRequestResponse()
 	{
-		if (this.partner != null)
+		if (partner != null)
 		{
-			this.partner.getRequest().clear();
+			partner.getRequest().clear();
 		}
 		clear();
 	}
@@ -138,6 +138,6 @@ public class L2Request
 	 */
 	public boolean isProcessingRequest()
 	{
-		return this.partner != null;
+		return partner != null;
 	}
 }

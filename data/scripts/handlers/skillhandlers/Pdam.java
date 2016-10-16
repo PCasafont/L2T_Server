@@ -325,7 +325,7 @@ public class Pdam implements ISkillHandler
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("pdam");
-						this.logDamage.log(record);
+						logDamage.log(record);
 					}
 
 					// Possibility of a lethal strike

@@ -38,7 +38,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.msgId = readD();
+		msgId = readD();
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(this.msgId);
+		Message msg = MailManager.getInstance().getMessage(msgId);
 		if (msg == null)
 		{
 			return;
@@ -87,7 +87,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		MailManager.getInstance().sendMessage(new Message(msg));
 
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
-		activeChar.sendPacket(new ExChangePostState(true, this.msgId, Message.REJECTED));
+		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.REJECTED));
 
 		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
 		if (sender != null)

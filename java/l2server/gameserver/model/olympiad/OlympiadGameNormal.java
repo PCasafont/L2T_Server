@@ -49,11 +49,11 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	{
 		super(id);
 
-		this.playerOne = opponents[0];
-		this.playerTwo = opponents[1];
+		playerOne = opponents[0];
+		playerTwo = opponents[1];
 
-		this.playerOne.player.setOlympiadGameId(id);
-		this.playerTwo.player.setOlympiadGameId(id);
+		playerOne.player.setOlympiadGameId(id);
+		playerTwo.player.setOlympiadGameId(id);
 	}
 
 	protected static OlympiadParticipant[] createListOfParticipants(List<Integer> list)
@@ -213,36 +213,36 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	public final boolean containsParticipant(int playerId)
 	{
-		return this.playerOne.objectId == playerId || this.playerTwo.objectId == playerId;
+		return playerOne.objectId == playerId || playerTwo.objectId == playerId;
 	}
 
 	@Override
 	public final void sendOlympiadInfo(L2Character player)
 	{
-		player.sendPacket(new ExOlympiadUserInfo(this.playerOne));
-		player.sendPacket(new ExOlympiadUserInfo(this.playerTwo));
+		player.sendPacket(new ExOlympiadUserInfo(playerOne));
+		player.sendPacket(new ExOlympiadUserInfo(playerTwo));
 	}
 
 	@Override
 	public final void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium)
 	{
-		broadcastPacket(new ExOlympiadUserInfo(this.playerOne), stadium);
-		broadcastPacket(new ExOlympiadUserInfo(this.playerTwo), stadium);
+		broadcastPacket(new ExOlympiadUserInfo(playerOne), stadium);
+		broadcastPacket(new ExOlympiadUserInfo(playerTwo), stadium);
 	}
 
 	@Override
 	protected final void broadcastPacketToParticipants(L2GameServerPacket packet)
 	{
-		this.playerOne.updatePlayer();
-		if (this.playerOne.player != null)
+		playerOne.updatePlayer();
+		if (playerOne.player != null)
 		{
-			this.playerOne.player.sendPacket(packet);
+			playerOne.player.sendPacket(packet);
 		}
 
-		this.playerTwo.updatePlayer();
-		if (this.playerTwo.player != null)
+		playerTwo.updatePlayer();
+		if (playerTwo.player != null)
 		{
-			this.playerTwo.player.sendPacket(packet);
+			playerTwo.player.sendPacket(packet);
 		}
 	}
 
@@ -252,8 +252,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		boolean result = true;
 		try
 		{
-			result &= portPlayerToArena(this.playerOne, spawns.get(0), this.gameId);
-			result &= portPlayerToArena(this.playerTwo, spawns.get(spawns.size() / 2), this.gameId);
+			result &= portPlayerToArena(playerOne, spawns.get(0), gameId);
+			result &= portPlayerToArena(playerTwo, spawns.get(spawns.size() / 2), gameId);
 		}
 		catch (Exception e)
 		{
@@ -272,13 +272,13 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	protected final void removals()
 	{
-		if (this.aborted)
+		if (aborted)
 		{
 			return;
 		}
 
-		removals(this.playerOne.player, true);
-		removals(this.playerTwo.player, true);
+		removals(playerOne.player, true);
+		removals(playerTwo.player, true);
 	}
 
 	@Override
@@ -289,99 +289,99 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 			return false;
 		}
 
-		if (this.playerOne.player == null || this.playerTwo.player == null)
+		if (playerOne.player == null || playerTwo.player == null)
 		{
 			return false;
 		}
 
-		this.playerOne.player.setIsOlympiadStart(true);
-		this.playerOne.player.updateEffectIcons();
-		this.playerTwo.player.setIsOlympiadStart(true);
-		this.playerTwo.player.updateEffectIcons();
+		playerOne.player.setIsOlympiadStart(true);
+		playerOne.player.updateEffectIcons();
+		playerTwo.player.setIsOlympiadStart(true);
+		playerTwo.player.updateEffectIcons();
 		return true;
 	}
 
 	@Override
 	protected final void cleanEffects()
 	{
-		if (this.playerOne.player != null && !this.playerOne.defaulted && !this.playerOne.disconnected &&
-				this.playerOne.player.getOlympiadGameId() == this.gameId)
+		if (playerOne.player != null && !playerOne.defaulted && !playerOne.disconnected &&
+				playerOne.player.getOlympiadGameId() == gameId)
 		{
-			cleanEffects(this.playerOne.player);
+			cleanEffects(playerOne.player);
 		}
 
-		if (this.playerTwo.player != null && !this.playerTwo.defaulted && !this.playerTwo.disconnected &&
-				this.playerTwo.player.getOlympiadGameId() == this.gameId)
+		if (playerTwo.player != null && !playerTwo.defaulted && !playerTwo.disconnected &&
+				playerTwo.player.getOlympiadGameId() == gameId)
 		{
-			cleanEffects(this.playerTwo.player);
+			cleanEffects(playerTwo.player);
 		}
 	}
 
 	@Override
 	protected final void portPlayersBack()
 	{
-		if (this.playerOne.player != null && !this.playerOne.defaulted && !this.playerOne.disconnected)
+		if (playerOne.player != null && !playerOne.defaulted && !playerOne.disconnected)
 		{
-			portPlayerBack(this.playerOne.player);
+			portPlayerBack(playerOne.player);
 		}
-		if (this.playerTwo.player != null && !this.playerTwo.defaulted && !this.playerTwo.disconnected)
+		if (playerTwo.player != null && !playerTwo.defaulted && !playerTwo.disconnected)
 		{
-			portPlayerBack(this.playerTwo.player);
+			portPlayerBack(playerTwo.player);
 		}
 	}
 
 	@Override
 	protected final void playersStatusBack()
 	{
-		if (this.playerOne.player != null && !this.playerOne.defaulted && !this.playerOne.disconnected &&
-				this.playerOne.player.getOlympiadGameId() == this.gameId)
+		if (playerOne.player != null && !playerOne.defaulted && !playerOne.disconnected &&
+				playerOne.player.getOlympiadGameId() == gameId)
 		{
-			playerStatusBack(this.playerOne.player);
+			playerStatusBack(playerOne.player);
 		}
 
-		if (this.playerTwo.player != null && !this.playerTwo.defaulted && !this.playerTwo.disconnected &&
-				this.playerTwo.player.getOlympiadGameId() == this.gameId)
+		if (playerTwo.player != null && !playerTwo.defaulted && !playerTwo.disconnected &&
+				playerTwo.player.getOlympiadGameId() == gameId)
 		{
-			playerStatusBack(this.playerTwo.player);
+			playerStatusBack(playerTwo.player);
 		}
 	}
 
 	@Override
 	protected final void clearPlayers()
 	{
-		this.playerOne.player = null;
-		this.playerOne = null;
-		this.playerTwo.player = null;
-		this.playerTwo = null;
+		playerOne.player = null;
+		playerOne = null;
+		playerTwo.player = null;
+		playerTwo = null;
 	}
 
 	@Override
 	protected final void handleDisconnect(L2PcInstance player)
 	{
-		if (player.getObjectId() == this.playerOne.objectId)
+		if (player.getObjectId() == playerOne.objectId)
 		{
-			this.playerOne.disconnected = true;
+			playerOne.disconnected = true;
 		}
-		else if (player.getObjectId() == this.playerTwo.objectId)
+		else if (player.getObjectId() == playerTwo.objectId)
 		{
-			this.playerTwo.disconnected = true;
+			playerTwo.disconnected = true;
 		}
 	}
 
 	@Override
 	protected final boolean checkBattleStatus()
 	{
-		if (this.aborted)
+		if (aborted)
 		{
 			return false;
 		}
 
-		if (this.playerOne.player == null || this.playerOne.disconnected)
+		if (playerOne.player == null || playerOne.disconnected)
 		{
 			return false;
 		}
 
-		return !(this.playerTwo.player == null || this.playerTwo.disconnected);
+		return !(playerTwo.player == null || playerTwo.disconnected);
 
 	}
 
@@ -396,9 +396,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		boolean playerOneLost = true;
 		try
 		{
-			if (this.playerOne.player.getOlympiadGameId() == this.gameId)
+			if (playerOne.player.getOlympiadGameId() == gameId)
 			{
-				playerOneLost = this.playerOne.player.isDead();
+				playerOneLost = playerOne.player.isDead();
 			}
 		}
 		catch (Exception e)
@@ -409,9 +409,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		boolean playerTwoLost = true;
 		try
 		{
-			if (this.playerTwo.player.getOlympiadGameId() == this.gameId)
+			if (playerTwo.player.getOlympiadGameId() == gameId)
 			{
-				playerTwoLost = this.playerTwo.player.isDead();
+				playerTwoLost = playerTwo.player.isDead();
 			}
 		}
 		catch (Exception e)
@@ -425,16 +425,16 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	protected void validateWinner(L2OlympiadStadiumZone stadium)
 	{
-		if (this.aborted)
+		if (aborted)
 		{
 			return;
 		}
 
-		final boolean pOneCrash = this.playerOne.player == null || this.playerOne.disconnected;
-		final boolean pTwoCrash = this.playerTwo.player == null || this.playerTwo.disconnected;
+		final boolean pOneCrash = playerOne.player == null || playerOne.disconnected;
+		final boolean pTwoCrash = playerTwo.player == null || playerTwo.disconnected;
 
-		final int playerOnePoints = this.playerOne.nobleInfo.getPoints();
-		final int playerTwoPoints = this.playerTwo.nobleInfo.getPoints();
+		final int playerOnePoints = playerOne.nobleInfo.getPoints();
+		final int playerTwoPoints = playerTwo.nobleInfo.getPoints();
 		int pointDiff = Math.min(playerOnePoints, playerTwoPoints) / getDivider();
 		if (pointDiff <= 0)
 		{
@@ -449,20 +449,20 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		SystemMessage sm;
 
 		// Check for if a player defaulted before battle started
-		if (this.playerOne.defaulted || this.playerTwo.defaulted)
+		if (playerOne.defaulted || playerTwo.defaulted)
 		{
 			try
 			{
-				if (this.playerOne.defaulted)
+				if (playerOne.defaulted)
 				{
 					try
 					{
 						points = Math.min(playerOnePoints / 5, Config.ALT_OLY_MAX_POINTS);
-						removePointsFromParticipant(this.playerOne, points);
+						removePointsFromParticipant(playerOne, points);
 
-						if (Config.ALT_OLY_LOG_FIGHTS && this.playerOne.player != null && this.playerOne.player != null)
+						if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 						{
-							logFight(this.playerOne.player.getObjectId(), this.playerTwo.player.getObjectId(), 0, 0, 0, 0,
+							logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
 									points, getType().toString());
 						}
 					}
@@ -471,20 +471,20 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 						Log.log(Level.WARNING, "Exception on validateWinner(): " + e.getMessage(), e);
 					}
 				}
-				if (this.playerTwo.defaulted)
+				if (playerTwo.defaulted)
 				{
 					try
 					{
 						points = Math.min(playerTwoPoints / 5, Config.ALT_OLY_MAX_POINTS);
-						removePointsFromParticipant(this.playerTwo, points);
+						removePointsFromParticipant(playerTwo, points);
 
-						if (Config.ALT_OLY_LOG_FIGHTS && this.playerOne.player != null && this.playerOne.player != null)
+						if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 						{
-							LogRecord record = new LogRecord(Level.INFO, this.playerTwo.name + " default");
+							LogRecord record = new LogRecord(Level.INFO, playerTwo.name + " default");
 							record.setParameters(new Object[]{
-									this.playerOne.name, this.playerTwo.name, 0, 0, 0, 0, points, getType().toString()
+									playerOne.name, playerTwo.name, 0, 0, 0, 0, points, getType().toString()
 							});
-							this.logResults.log(record);
+							logResults.log(record);
 						}
 					}
 					catch (Exception e)
@@ -509,63 +509,63 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				if (pTwoCrash && !pOneCrash)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_GAME);
-					sm.addString(this.playerOne.name);
+					sm.addString(playerOne.name);
 					broadcastPacket(sm, stadium);
 
-					this.playerOne.nobleInfo.increaseVictories();
-					addPointsToParticipant(this.playerOne, pointDiff);
+					playerOne.nobleInfo.increaseVictories();
+					addPointsToParticipant(playerOne, pointDiff);
 
-					this.playerTwo.nobleInfo.increaseDefeats();
-					removePointsFromParticipant(this.playerTwo, pointDiff);
+					playerTwo.nobleInfo.increaseDefeats();
+					removePointsFromParticipant(playerTwo, pointDiff);
 
 					int[][] reward = getReward().clone();
-					rewardParticipant(this.playerOne.player, reward);
+					rewardParticipant(playerOne.player, reward);
 					for (int i = 0; i < reward.length; i++)
 					{
 						reward[i][1] = reward[i][1] * 6 / 10;
 					}
-					rewardParticipant(this.playerTwo.player, reward);
+					rewardParticipant(playerTwo.player, reward);
 
 					broadcastPacket(new ExOlympiadResult(
-									new Object[]{0, this.playerOne.name, 1, pointDiff, this.playerOne.player, this.playerTwo.player}),
+									new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}),
 							stadium);
 
-					if (Config.ALT_OLY_LOG_FIGHTS && this.playerOne.player != null && this.playerOne.player != null)
+					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
-						LogRecord record = new LogRecord(Level.INFO, this.playerTwo.name + " crash");
+						LogRecord record = new LogRecord(Level.INFO, playerTwo.name + " crash");
 						record.setParameters(new Object[]{
-								this.playerOne.name, this.playerTwo.name, 0, 0, 0, 0, pointDiff, getType().toString()
+								playerOne.name, playerTwo.name, 0, 0, 0, 0, pointDiff, getType().toString()
 						});
-						this.logResults.log(record);
+						logResults.log(record);
 					}
 				}
 				else if (pOneCrash && !pTwoCrash)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_GAME);
-					sm.addString(this.playerTwo.name);
+					sm.addString(playerTwo.name);
 					broadcastPacket(sm, stadium);
 
-					this.playerTwo.nobleInfo.increaseVictories();
-					addPointsToParticipant(this.playerTwo, pointDiff);
+					playerTwo.nobleInfo.increaseVictories();
+					addPointsToParticipant(playerTwo, pointDiff);
 
-					this.playerOne.nobleInfo.increaseDefeats();
-					removePointsFromParticipant(this.playerOne, pointDiff);
+					playerOne.nobleInfo.increaseDefeats();
+					removePointsFromParticipant(playerOne, pointDiff);
 
 					int[][] reward = getReward().clone();
-					rewardParticipant(this.playerTwo.player, reward);
+					rewardParticipant(playerTwo.player, reward);
 					for (int i = 0; i < reward.length; i++)
 					{
 						reward[i][1] = reward[i][1] * 6 / 10;
 					}
-					rewardParticipant(this.playerOne.player, reward);
+					rewardParticipant(playerOne.player, reward);
 
 					broadcastPacket(new ExOlympiadResult(
-									new Object[]{1, this.playerTwo.name, 1, pointDiff, this.playerOne.player, this.playerTwo.player}),
+									new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}),
 							stadium);
 
-					if (Config.ALT_OLY_LOG_FIGHTS && this.playerOne.player != null && this.playerOne.player != null)
+					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
-						logFight(this.playerOne.player.getObjectId(), this.playerTwo.player.getObjectId(), 0, 0, 0, 0,
+						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
 								pointDiff, getType().toString());
 					}
 				}
@@ -573,30 +573,30 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				{
 					broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_ENDED_IN_A_TIE), stadium);
 
-					this.playerOne.nobleInfo.increaseDefeats();
-					removePointsFromParticipant(this.playerOne, pointDiff);
+					playerOne.nobleInfo.increaseDefeats();
+					removePointsFromParticipant(playerOne, pointDiff);
 
-					this.playerTwo.nobleInfo.increaseDefeats();
-					removePointsFromParticipant(this.playerTwo, pointDiff);
+					playerTwo.nobleInfo.increaseDefeats();
+					removePointsFromParticipant(playerTwo, pointDiff);
 
-					if (Config.ALT_OLY_LOG_FIGHTS && this.playerOne.player != null && this.playerOne.player != null)
+					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
-						logFight(this.playerOne.player.getObjectId(), this.playerTwo.player.getObjectId(), 0, 0, 0, 0,
+						logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), 0, 0, 0, 0,
 								pointDiff, getType().toString());
 					}
 				}
 
-				this.playerOne.nobleInfo.increaseMatches();
-				this.playerTwo.nobleInfo.increaseMatches();
+				playerOne.nobleInfo.increaseMatches();
+				playerTwo.nobleInfo.increaseMatches();
 				if (getType() == CompetitionType.CLASSED)
 				{
-					this.playerOne.nobleInfo.increaseClassedMatches();
-					this.playerTwo.nobleInfo.increaseClassedMatches();
+					playerOne.nobleInfo.increaseClassedMatches();
+					playerTwo.nobleInfo.increaseClassedMatches();
 				}
 				else
 				{
-					this.playerOne.nobleInfo.increaseNonClassedMatches();
-					this.playerTwo.nobleInfo.increaseNonClassedMatches();
+					playerOne.nobleInfo.increaseNonClassedMatches();
+					playerTwo.nobleInfo.increaseNonClassedMatches();
 				}
 			}
 			catch (Exception e)
@@ -610,12 +610,12 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		try
 		{
 			// Calculate Fight time
-			long fightTime = System.currentTimeMillis() - this.startTime;
+			long fightTime = System.currentTimeMillis() - startTime;
 
 			double playerOneHp = 0;
-			if (this.playerOne.player != null && !this.playerOne.player.isDead())
+			if (playerOne.player != null && !playerOne.player.isDead())
 			{
-				playerOneHp = this.playerOne.player.getCurrentHp() + this.playerOne.player.getCurrentCp();
+				playerOneHp = playerOne.player.getCurrentHp() + playerOne.player.getCurrentCp();
 				if (playerOneHp < 0.5)
 				{
 					playerOneHp = 0;
@@ -623,9 +623,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 			}
 
 			double playerTwoHp = 0;
-			if (this.playerTwo.player != null && !this.playerTwo.player.isDead())
+			if (playerTwo.player != null && !playerTwo.player.isDead())
 			{
-				playerTwoHp = this.playerTwo.player.getCurrentHp() + this.playerTwo.player.getCurrentCp();
+				playerTwoHp = playerTwo.player.getCurrentHp() + playerTwo.player.getCurrentCp();
 				if (playerTwoHp < 0.5)
 				{
 					playerTwoHp = 0;
@@ -633,117 +633,117 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 			}
 
 			// if players crashed, search if they've relogged
-			this.playerOne.updatePlayer();
-			this.playerTwo.updatePlayer();
+			playerOne.updatePlayer();
+			playerTwo.updatePlayer();
 
-			if ((this.playerOne.player == null || !this.playerOne.player.isOnline()) &&
-					(this.playerTwo.player == null || !this.playerTwo.player.isOnline()))
+			if ((playerOne.player == null || !playerOne.player.isOnline()) &&
+					(playerTwo.player == null || !playerTwo.player.isOnline()))
 			{
-				this.playerOne.nobleInfo.increaseDraws();
-				this.playerTwo.nobleInfo.increaseDraws();
+				playerOne.nobleInfo.increaseDraws();
+				playerTwo.nobleInfo.increaseDraws();
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_ENDED_IN_A_TIE);
 				broadcastPacket(sm, stadium);
 			}
-			else if (this.playerTwo.player == null || !this.playerTwo.player.isOnline() ||
+			else if (playerTwo.player == null || !playerTwo.player.isOnline() ||
 					playerTwoHp == 0 && playerOneHp != 0 ||
-					this.playerOne.player.getOlyGivenDmg() > playerTwo.player.getOlyGivenDmg() && playerTwoHp != 0 &&
+					playerOne.player.getOlyGivenDmg() > playerTwo.player.getOlyGivenDmg() && playerTwoHp != 0 &&
 							playerOneHp != 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_GAME);
-				sm.addString(this.playerOne.name);
+				sm.addString(playerOne.name);
 				broadcastPacket(sm, stadium);
 
-				this.playerOne.nobleInfo.increaseVictories();
-				this.playerTwo.nobleInfo.increaseDefeats();
+				playerOne.nobleInfo.increaseVictories();
+				playerTwo.nobleInfo.increaseDefeats();
 
-				addPointsToParticipant(this.playerOne, pointDiff);
-				removePointsFromParticipant(this.playerTwo, pointDiff);
+				addPointsToParticipant(playerOne, pointDiff);
+				removePointsFromParticipant(playerTwo, pointDiff);
 
 				// Save Fight Result
-				saveResults(this.playerOne, this.playerTwo, 1, this.startTime, fightTime, getType());
+				saveResults(playerOne, playerTwo, 1, startTime, fightTime, getType());
 				int[][] reward = getReward().clone();
-				rewardParticipant(this.playerOne.player, reward);
+				rewardParticipant(playerOne.player, reward);
 				for (int i = 0; i < reward.length; i++)
 				{
 					reward[i][1] = reward[i][1] * 6 / 10;
 				}
-				rewardParticipant(this.playerTwo.player, reward);
+				rewardParticipant(playerTwo.player, reward);
 
 				broadcastPacket(new ExOlympiadResult(
-						new Object[]{0, this.playerOne.name, 1, pointDiff, this.playerOne.player, this.playerTwo.player}), stadium);
+						new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
 
-				this.playerOne.competitionDone(getType(), true);
-				this.playerTwo.competitionDone(getType(), false);
+				playerOne.competitionDone(getType(), true);
+				playerTwo.competitionDone(getType(), false);
 			}
-			else if (this.playerOne.player == null || !this.playerOne.player.isOnline() ||
+			else if (playerOne.player == null || !playerOne.player.isOnline() ||
 					playerOneHp == 0 && playerTwoHp != 0 ||
-					this.playerTwo.player.getOlyGivenDmg() > playerOne.player.getOlyGivenDmg() && playerOneHp != 0 &&
+					playerTwo.player.getOlyGivenDmg() > playerOne.player.getOlyGivenDmg() && playerOneHp != 0 &&
 							playerTwoHp != 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_GAME);
-				sm.addString(this.playerTwo.name);
+				sm.addString(playerTwo.name);
 				broadcastPacket(sm, stadium);
 
-				this.playerTwo.nobleInfo.increaseVictories();
-				this.playerOne.nobleInfo.increaseDefeats();
+				playerTwo.nobleInfo.increaseVictories();
+				playerOne.nobleInfo.increaseDefeats();
 
-				addPointsToParticipant(this.playerTwo, pointDiff);
-				removePointsFromParticipant(this.playerOne, pointDiff);
+				addPointsToParticipant(playerTwo, pointDiff);
+				removePointsFromParticipant(playerOne, pointDiff);
 
 				// Save Fight Result
-				saveResults(this.playerOne, this.playerTwo, 2, this.startTime, fightTime, getType());
+				saveResults(playerOne, playerTwo, 2, startTime, fightTime, getType());
 				int[][] reward = getReward().clone();
-				rewardParticipant(this.playerTwo.player, reward);
+				rewardParticipant(playerTwo.player, reward);
 				for (int i = 0; i < reward.length; i++)
 				{
 					reward[i][1] = reward[i][1] * 6 / 10;
 				}
-				rewardParticipant(this.playerOne.player, reward);
+				rewardParticipant(playerOne.player, reward);
 
 				broadcastPacket(new ExOlympiadResult(
-						new Object[]{1, this.playerTwo.name, 1, pointDiff, this.playerOne.player, this.playerTwo.player}), stadium);
+						new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
 
-				this.playerOne.competitionDone(getType(), false);
-				this.playerTwo.competitionDone(getType(), true);
+				playerOne.competitionDone(getType(), false);
+				playerTwo.competitionDone(getType(), true);
 			}
 			else
 			{
 				// Save Fight Result
-				saveResults(this.playerOne, this.playerTwo, 0, this.startTime, fightTime, getType());
+				saveResults(playerOne, playerTwo, 0, startTime, fightTime, getType());
 
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_ENDED_IN_A_TIE);
 				broadcastPacket(sm, stadium);
 
-				removePointsFromParticipant(this.playerOne,
+				removePointsFromParticipant(playerOne,
 						Math.min(playerOnePoints / getDivider(), Config.ALT_OLY_MAX_POINTS));
-				removePointsFromParticipant(this.playerTwo,
+				removePointsFromParticipant(playerTwo,
 						Math.min(playerTwoPoints / getDivider(), Config.ALT_OLY_MAX_POINTS));
 
 				broadcastPacket(
-						new ExOlympiadResult(new Object[]{-1, "", 1, pointDiff, this.playerOne.player, this.playerTwo.player}),
+						new ExOlympiadResult(new Object[]{-1, "", 1, pointDiff, playerOne.player, playerTwo.player}),
 						stadium);
 
-				this.playerOne.competitionDone(getType(), false);
-				this.playerTwo.competitionDone(getType(), false);
+				playerOne.competitionDone(getType(), false);
+				playerTwo.competitionDone(getType(), false);
 			}
 
-			this.playerOne.nobleInfo.increaseMatches();
-			this.playerTwo.nobleInfo.increaseMatches();
+			playerOne.nobleInfo.increaseMatches();
+			playerTwo.nobleInfo.increaseMatches();
 			if (getType() == CompetitionType.CLASSED)
 			{
-				this.playerOne.nobleInfo.increaseClassedMatches();
-				this.playerTwo.nobleInfo.increaseClassedMatches();
+				playerOne.nobleInfo.increaseClassedMatches();
+				playerTwo.nobleInfo.increaseClassedMatches();
 			}
 			else
 			{
-				this.playerOne.nobleInfo.increaseNonClassedMatches();
-				this.playerTwo.nobleInfo.increaseNonClassedMatches();
+				playerOne.nobleInfo.increaseNonClassedMatches();
+				playerTwo.nobleInfo.increaseNonClassedMatches();
 			}
 
 			if (Config.ALT_OLY_LOG_FIGHTS)
 			{
-				logFight(this.playerOne.player.getObjectId(), this.playerTwo.player.getObjectId(), playerOneHp, playerTwoHp,
-						this.playerOne.player.getOlyGivenDmg(), this.playerTwo.player.getOlyGivenDmg(), pointDiff,
+				logFight(playerOne.player.getObjectId(), playerTwo.player.getObjectId(), playerOneHp, playerTwoHp,
+						playerOne.player.getOlyGivenDmg(), playerTwo.player.getOlyGivenDmg(), pointDiff,
 						getType().toString());
 			}
 		}
@@ -797,37 +797,37 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	public final String[] getPlayerNames()
 	{
-		return new String[]{this.playerOne.name, this.playerTwo.name};
+		return new String[]{playerOne.name, playerTwo.name};
 	}
 
 	@Override
 	public final boolean checkDefaulted()
 	{
 		SystemMessage reason;
-		this.playerOne.updatePlayer();
-		this.playerTwo.updatePlayer();
+		playerOne.updatePlayer();
+		playerTwo.updatePlayer();
 
-		reason = checkDefaulted(this.playerOne);
+		reason = checkDefaulted(playerOne);
 		if (reason != null)
 		{
-			this.playerOne.defaulted = true;
-			if (this.playerTwo.player != null)
+			playerOne.defaulted = true;
+			if (playerTwo.player != null)
 			{
-				this.playerTwo.player.sendPacket(reason);
+				playerTwo.player.sendPacket(reason);
 			}
 		}
 
-		reason = checkDefaulted(this.playerTwo);
+		reason = checkDefaulted(playerTwo);
 		if (reason != null)
 		{
-			this.playerTwo.defaulted = true;
-			if (this.playerOne.player != null)
+			playerTwo.defaulted = true;
+			if (playerOne.player != null)
 			{
-				this.playerOne.player.sendPacket(reason);
+				playerOne.player.sendPacket(reason);
 			}
 		}
 
-		return this.playerOne.defaulted || this.playerTwo.defaulted;
+		return playerOne.defaulted || playerTwo.defaulted;
 	}
 
 	@Override

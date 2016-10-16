@@ -39,7 +39,7 @@ public class ShadowSnare extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int i : this.whisperOfFearIds)
+		for (int i : whisperOfFearIds)
 		{
 			addSpawnId(i);
 		}
@@ -64,7 +64,7 @@ public class ShadowSnare extends L2AttackableAIScript
 
 		protected ShadowSnareAI(L2Npc npc)
 		{
-			this.whisperOfFear = npc;
+			whisperOfFear = npc;
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -75,18 +75,18 @@ public class ShadowSnare extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if (this.whisperOfFear == null || this.whisperOfFear.isDead() || this.whisperOfFear.isDecayed() ||
-					this.whisperOfFear.getOwner().isAlikeDead())
+			if (whisperOfFear == null || whisperOfFear.isDead() || whisperOfFear.isDecayed() ||
+					whisperOfFear.getOwner().isAlikeDead())
 			{
-				if (this.schedule != null)
+				if (schedule != null)
 				{
-					this.schedule.cancel(true);
+					schedule.cancel(true);
 					return;
 				}
 			}
 
-			this.whisperOfFear.setTarget(this.whisperOfFear);
-			this.whisperOfFear.doCast(shadowSnareZone);
+			whisperOfFear.setTarget(whisperOfFear);
+			whisperOfFear.doCast(shadowSnareZone);
 		}
 	}
 

@@ -37,7 +37,7 @@ public final class TargetSelected extends L2GameServerPacket
 	public TargetSelected(int objectId, int targetId, int x, int y, int z)
 	{
 		this.objectId = objectId;
-		this.targetObjId = targetId;
+		targetObjId = targetId;
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -46,11 +46,11 @@ public final class TargetSelected extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.targetObjId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(objectId);
+		writeD(targetObjId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeD(0x00);
 	}
 }

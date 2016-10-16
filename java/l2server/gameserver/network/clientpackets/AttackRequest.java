@@ -41,11 +41,11 @@ public final class AttackRequest extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.originX = readD();
-		this.originY = readD();
-		this.originZ = readD();
-		this.attackId = readC(); // 0 for simple click   1 for shift-click
+		objectId = readD();
+		originX = readD();
+		originY = readD();
+		originZ = readD();
+		attackId = readC(); // 0 for simple click   1 for shift-click
 	}
 
 	@Override
@@ -58,17 +58,17 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		// avoid using expensive operations if not needed
 		L2Object target;
-		if (activeChar.getTargetId() == this.objectId)
+		if (activeChar.getTargetId() == objectId)
 		{
 			target = activeChar.getTarget();
 		}
 		else
 		{
-			target = L2World.getInstance().findObject(this.objectId);
+			target = L2World.getInstance().findObject(objectId);
 		}
 		if (target == null)
 		{
-			target = L2World.getInstance().getPlayer(this.objectId);
+			target = L2World.getInstance().getPlayer(objectId);
 			if (target == null)
 			{
 				return;

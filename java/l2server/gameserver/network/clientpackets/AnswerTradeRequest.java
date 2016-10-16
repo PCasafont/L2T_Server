@@ -36,7 +36,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 			return;
 		}
 
-		if (this.response == 1 && !partner.isRequestExpired())
+		if (response == 1 && !partner.isRequestExpired())
 		{
 			player.startTrade(partner);
 		}

@@ -36,27 +36,27 @@ public final class KeyPacket extends L2GameServerPacket
 
 	public KeyPacket(byte data[])
 	{
-		this.key = data;
-		this.id = 2;
+		key = data;
+		id = 2;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.id == 2)
+		if (id == 2)
 		{
-			writeC(this.key == null ? 0x00 : 0x01);
-			if (this.key != null)
+			writeC(key == null ? 0x00 : 0x01);
+			if (key != null)
 			{
-				writeB(this.key);
+				writeB(key);
 			}
 		}
 		else
 		{
-			writeC(this.id); //0 - wrong protocol, 1 - protocol ok
+			writeC(id); //0 - wrong protocol, 1 - protocol ok
 			for (int i = 0; i < 8; i++)
 			{
-				writeC(this.key[i]); // key
+				writeC(key[i]); // key
 			}
 		}
 		writeD(0x01);

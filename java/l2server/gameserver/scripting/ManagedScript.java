@@ -32,7 +32,7 @@ public abstract class ManagedScript
 
 	public ManagedScript()
 	{
-		this.scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
+		scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
 		setLastLoadTime(System.currentTimeMillis());
 	}
 
@@ -63,12 +63,12 @@ public abstract class ManagedScript
 
 	public void setActive(boolean status)
 	{
-		this.isActive = status;
+		isActive = status;
 	}
 
 	public boolean isActive()
 	{
-		return this.isActive;
+		return isActive;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public abstract class ManagedScript
 	 */
 	public File getScriptFile()
 	{
-		return this.scriptFile;
+		return scriptFile;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public abstract class ManagedScript
 	 */
 	protected long getLastLoadTime()
 	{
-		return this.lastLoadTime;
+		return lastLoadTime;
 	}
 
 	public abstract String getScriptName();

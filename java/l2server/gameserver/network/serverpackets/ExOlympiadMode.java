@@ -36,6 +36,6 @@ public class ExOlympiadMode extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.mode);
+		writeC(mode);
 	}
 }

@@ -37,27 +37,27 @@ public class DimensionalDoor extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.npcManagerId);
-		addTalkId(this.npcManagerId);
-		addFirstTalkId(this.npcManagerId);
+		addStartNpc(npcManagerId);
+		addTalkId(npcManagerId);
+		addFirstTalkId(npcManagerId);
 
-		for (int[] i : this.availableSkillsIds)
+		for (int[] i : availableSkillsIds)
 		{
-			this.availableSkills.put(i[0], i[1]);
+			availableSkills.put(i[0], i[1]);
 		}
 	}
 
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (this.debug)
+		if (debug)
 		{
 			Log.warning(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("main"))
 		{
-			return this.qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+			return qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 		}
 		else if (event.equalsIgnoreCase("learnSkills"))
 		{
@@ -66,13 +66,13 @@ public class DimensionalDoor extends Quest
 		else if (event.startsWith("claim_"))
 		{
 			int rewardId = Integer.valueOf(event.replace("claim_", ""));
-			if (this.availableSkills.containsKey(rewardId))
+			if (availableSkills.containsKey(rewardId))
 			{
 				int maxLevel = SkillTable.getInstance().getMaxLevel(rewardId);
 				int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(rewardId), maxLevel);
 				if (skillLevelToLearn != -1)
 				{
-					if (!player.destroyItemByItemId(this.qn, this.shinyCoin, this.availableSkills.get(rewardId), npc, true))
+					if (!player.destroyItemByItemId(qn, shinyCoin, availableSkills.get(rewardId), npc, true))
 					{
 						return "";
 					}
@@ -99,12 +99,12 @@ public class DimensionalDoor extends Quest
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (this.debug)
+		if (debug)
 		{
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		}
 
-		return this.qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+		return qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 	}
 
 	public static int getNpcManagerId()

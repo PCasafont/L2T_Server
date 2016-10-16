@@ -35,7 +35,7 @@ public class Ex2ndPasswordAck extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		if (this.response == WRONG_PATTERN)
+		if (response == WRONG_PATTERN)
 		{
 			writeD(0x01);
 		}

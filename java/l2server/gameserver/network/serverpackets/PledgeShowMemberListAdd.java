@@ -33,31 +33,31 @@ public final class PledgeShowMemberListAdd extends L2GameServerPacket
 
 	public PledgeShowMemberListAdd(L2PcInstance player)
 	{
-		this.name = player.getName();
-		this.lvl = player.getLevel();
-		this.classId = player.getCurrentClass().getId();
-		this.isOnline = player.isOnline() ? player.getObjectId() : 0;
-		this.pledgeType = player.getPledgeType();
+		name = player.getName();
+		lvl = player.getLevel();
+		classId = player.getCurrentClass().getId();
+		isOnline = player.isOnline() ? player.getObjectId() : 0;
+		pledgeType = player.getPledgeType();
 	}
 
 	public PledgeShowMemberListAdd(L2ClanMember cm)
 	{
-		this.name = cm.getName();
-		this.lvl = cm.getLevel();
-		this.classId = cm.getCurrentClass();
-		this.isOnline = cm.isOnline() ? cm.getObjectId() : 0;
-		this.pledgeType = cm.getPledgeType();
+		name = cm.getName();
+		lvl = cm.getLevel();
+		classId = cm.getCurrentClass();
+		isOnline = cm.isOnline() ? cm.getObjectId() : 0;
+		pledgeType = cm.getPledgeType();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.name);
-		writeD(this.lvl);
-		writeD(this.classId);
+		writeS(name);
+		writeD(lvl);
+		writeD(classId);
 		writeD(0);
 		writeD(1);
-		writeD(this.isOnline); // 1=online 0=offline
-		writeD(this.pledgeType);
+		writeD(isOnline); // 1=online 0=offline
+		writeD(pledgeType);
 	}
 }

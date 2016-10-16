@@ -1679,21 +1679,21 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	 */
 	public final ClanHall getClanHall()
 	{
-		if (this.clanHallId < 0)
+		if (clanHallId < 0)
 		{
 			ClanHall temp = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
 
 			if (temp != null)
 			{
-				this.clanHallId = temp.getId();
+				clanHallId = temp.getId();
 			}
 
-			if (this.clanHallId < 0)
+			if (clanHallId < 0)
 			{
 				return null;
 			}
 		}
-		return ClanHallManager.getInstance().getClanHallById(this.clanHallId);
+		return ClanHallManager.getInstance().getClanHallById(clanHallId);
 	}
 
 	private void doTeleport(L2PcInstance player, int val)

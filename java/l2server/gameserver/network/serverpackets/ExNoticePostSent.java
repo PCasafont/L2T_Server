@@ -32,7 +32,7 @@ public class ExNoticePostSent extends L2GameServerPacket
 
 	public ExNoticePostSent(boolean showAnimation)
 	{
-		this.showAnim = showAnimation;
+		showAnim = showAnimation;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ExNoticePostSent extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.showAnim ? 0x01 : 0x00);
+		writeD(showAnim ? 0x01 : 0x00);
 	}
 }

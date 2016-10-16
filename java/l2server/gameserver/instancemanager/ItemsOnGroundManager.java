@@ -45,11 +45,11 @@ public class ItemsOnGroundManager
 	{
 		if (Config.SAVE_DROPPED_ITEM)
 		{
-			this.items = new ArrayList<>();
+			items = new ArrayList<>();
 		}
 		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
 		{
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this.task, Config.SAVE_DROPPED_ITEM_INTERVAL,
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, Config.SAVE_DROPPED_ITEM_INTERVAL,
 					Config.SAVE_DROPPED_ITEM_INTERVAL);
 		}
 		load();
@@ -135,7 +135,7 @@ public class ItemsOnGroundManager
 				item.setProtected(result.getLong(8) == -1);
 				item.setIsVisible(true);
 				L2World.getInstance().addVisibleObject(item, item.getPosition().getWorldRegion());
-				this.items.add(item);
+				items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
 				if (!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
@@ -181,25 +181,25 @@ public class ItemsOnGroundManager
 		{
 			return;
 		}
-		this.items.add(item);
+		items.add(item);
 	}
 
 	public void removeObject(L2ItemInstance item)
 	{
-		if (Config.SAVE_DROPPED_ITEM && this.items != null)
+		if (Config.SAVE_DROPPED_ITEM && items != null)
 		{
-			this.items.remove(item);
+			items.remove(item);
 		}
 	}
 
 	public void saveInDb()
 	{
-		this.task.run();
+		task.run();
 	}
 
 	public void cleanUp()
 	{
-		this.items.clear();
+		items.clear();
 	}
 
 	public void emptyTable()

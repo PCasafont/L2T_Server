@@ -29,7 +29,7 @@ public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.id = readD();
+		id = readD();
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
 			return;
 		}
 
-		RecipeItemMakeInfo response = new RecipeItemMakeInfo(this.id, player);
+		RecipeItemMakeInfo response = new RecipeItemMakeInfo(id, player);
 		sendPacket(response);
 	}
 }

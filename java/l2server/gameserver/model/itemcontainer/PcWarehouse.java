@@ -38,7 +38,7 @@ public class PcWarehouse extends Warehouse
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
@@ -64,6 +64,6 @@ public class PcWarehouse extends Warehouse
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return this.items.size() + slots <= this.owner.getWareHouseLimit();
+		return items.size() + slots <= owner.getWareHouseLimit();
 	}
 }

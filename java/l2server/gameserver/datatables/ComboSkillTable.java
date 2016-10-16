@@ -67,16 +67,16 @@ public class ComboSkillTable
 					}
 				}
 
-				this.combos.put(id, combo);
+				combos.put(id, combo);
 			}
 		}
 
-		Log.info("Combo Skill table: loaded " + this.combos.size() + " combos.");
+		Log.info("Combo Skill table: loaded " + combos.size() + " combos.");
 	}
 
 	public Combo getCombo(int id)
 	{
-		return this.combos.get(id);
+		return combos.get(id);
 	}
 
 	public static ComboSkillTable getInstance()

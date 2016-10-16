@@ -68,44 +68,44 @@ public class DamageManager
 
 		private DamageInfo(int classid, int newdmg, String newname, int playerid, String hwId)
 		{
-			this.classId = classid;
-			this.newDamage = newdmg;
-			this.newName = newname;
-			this.playerId = playerid;
+			classId = classid;
+			newDamage = newdmg;
+			newName = newname;
+			playerId = playerid;
 			this.hwId = hwId;
 		}
 
 		private void reset()
 		{
-			this.newDamage = 0;
-			this.newName = "";
-			this.playerId = 0;
-			this.hwId = "";
+			newDamage = 0;
+			newName = "";
+			playerId = 0;
+			hwId = "";
 		}
 
 		private int getClassId()
 		{
-			return this.classId;
+			return classId;
 		}
 
 		private int getCurrentDamage()
 		{
-			return this.newDamage;
+			return newDamage;
 		}
 
 		private String getNewName()
 		{
-			return this.newName;
+			return newName;
 		}
 
 		private int getPlayerId()
 		{
-			return this.playerId;
+			return playerId;
 		}
 
 		private String gethwId()
 		{
-			return this.hwId;
+			return hwId;
 		}
 
 		private void setNewData(int dmg, L2PcInstance pl)
@@ -114,10 +114,10 @@ public class DamageManager
 					.replace("$1", PlayerClassTable.getInstance().getClassNameById(pl.getClassId()))
 					.replace("$2", String.valueOf(dmg))));
 
-			this.newDamage = dmg;
-			this.newName = pl.getName();
-			this.playerId = pl.getObjectId();
-			this.hwId = pl.getHWID();
+			newDamage = dmg;
+			newName = pl.getName();
+			playerId = pl.getObjectId();
+			hwId = pl.getHWID();
 		}
 	}
 
@@ -313,7 +313,7 @@ public class DamageManager
 			L2DatabaseFactory.close(con);
 		}
 
-		this.saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
+		saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
 	}
 
 	private DamageManager()

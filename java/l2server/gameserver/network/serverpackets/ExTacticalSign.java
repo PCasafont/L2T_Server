@@ -25,14 +25,14 @@ public final class ExTacticalSign extends L2GameServerPacket
 
 	public ExTacticalSign(int objId, int type)
 	{
-		this.objectId = objId;
+		objectId = objId;
 		this.type = type;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.type);
+		writeD(objectId);
+		writeD(type);
 	}
 }

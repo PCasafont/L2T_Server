@@ -41,7 +41,7 @@ public class DuelManager
 	private DuelManager()
 	{
 		Log.info("Initializing DuelManager");
-		this.duels = new ArrayList<>();
+		duels = new ArrayList<>();
 	}
 
 	// =========================================================
@@ -52,9 +52,9 @@ public class DuelManager
 		// In case someone wants to run the server forever :)
 		if (++currentDuelId >= 2147483640)
 		{
-			this.currentDuelId = 1;
+			currentDuelId = 1;
 		}
-		return this.currentDuelId;
+		return currentDuelId;
 	}
 
 	// =========================================================
@@ -62,7 +62,7 @@ public class DuelManager
 
 	public Duel getDuel(int duelId)
 	{
-		for (Duel duel : this.duels)
+		for (Duel duel : duels)
 		{
 			if (duel != null && duel.getId() == duelId)
 			{
@@ -128,12 +128,12 @@ public class DuelManager
 		}
 
 		Duel duel = new Duel(playerA, playerB, partyDuel, getNextDuelId());
-		this.duels.add(duel);
+		duels.add(duel);
 	}
 
 	public void removeDuel(Duel duel)
 	{
-		this.duels.remove(duel);
+		duels.remove(duel);
 	}
 
 	public void doSurrender(L2PcInstance player)

@@ -49,18 +49,18 @@ public class LifeStoneTable
 
 		public EnchantEffectSet(List<EnchantEffect> effects, float chance)
 		{
-			this.enchantEffects = effects;
+			enchantEffects = effects;
 			this.chance = chance;
 		}
 
 		public final EnchantEffect getRandomEnchantEffect()
 		{
-			return this.enchantEffects.get(Rnd.get(this.enchantEffects.size()));
+			return enchantEffects.get(Rnd.get(enchantEffects.size()));
 		}
 
 		public final float getChance()
 		{
-			return this.chance;
+			return chance;
 		}
 	}
 
@@ -77,7 +77,7 @@ public class LifeStoneTable
 		{
 			float random = Rnd.get(10000) / 100.0f;
 			float current = 0.0f;
-			for (EnchantEffectSet set : this.effects)
+			for (EnchantEffectSet set : effects)
 			{
 				if (random < current + set.getChance())
 				{
@@ -87,7 +87,7 @@ public class LifeStoneTable
 				current += set.getChance();
 			}
 
-			return this.effects.get(0).getRandomEnchantEffect();
+			return effects.get(0).getRandomEnchantEffect();
 		}
 	}
 
@@ -108,26 +108,26 @@ public class LifeStoneTable
 
 		public final int getLevel()
 		{
-			return this.level;
+			return level;
 		}
 
 		public final int getGrade()
 		{
-			return this.grade;
+			return grade;
 		}
 
 		public final int getPlayerLevel()
 		{
-			return LEVELS[this.level];
+			return LEVELS[level];
 		}
 
 		public final void setEffectGroup(String type, int order, EnchantEffectGroup group)
 		{
-			EnchantEffectGroup[] augments = this.effects.get(type);
+			EnchantEffectGroup[] augments = effects.get(type);
 			if (augments == null)
 			{
 				augments = new EnchantEffectGroup[2];
-				this.effects.put(type, augments);
+				effects.put(type, augments);
 			}
 
 			augments[order] = group;
@@ -135,7 +135,7 @@ public class LifeStoneTable
 
 		public final EnchantEffect getRandomEffect(String type, int order)
 		{
-			EnchantEffectGroup[] augments = this.effects.get(type);
+			EnchantEffectGroup[] augments = effects.get(type);
 			if (augments == null || augments[order] == null)
 			{
 				Log.warning("Null augment: " + type + ", " + order);
@@ -176,7 +176,7 @@ public class LifeStoneTable
 
 	public final void load()
 	{
-		this.lifeStones.clear();
+		lifeStones.clear();
 
 		// Load the skillmap
 		// Note: the skillmap data is only used when generating new augmentations
@@ -267,11 +267,11 @@ public class LifeStoneTable
 						}
 					}
 
-					this.lifeStones.put(id, lifeStone);
+					lifeStones.put(id, lifeStone);
 				}
 			}
 
-			Log.info("LifeStoneTable: Loaded " + this.lifeStones.size() + " life stones.");
+			Log.info("LifeStoneTable: Loaded " + lifeStones.size() + " life stones.");
 		}
 		catch (Exception e)
 		{
@@ -314,7 +314,7 @@ public class LifeStoneTable
 
 	public final LifeStone getLifeStone(int itemId)
 	{
-		return this.lifeStones.get(itemId);
+		return lifeStones.get(itemId);
 	}
 
 	/*

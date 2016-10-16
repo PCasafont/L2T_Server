@@ -40,12 +40,12 @@ public class ExResponseBeautyRegistPacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.adena);
-		writeQ(this.tickets);
+		writeQ(adena);
+		writeQ(tickets);
 		writeD(0x00); // 1 ? restore to previous : change
-		writeD(this.type);
-		writeD(this.hair);
-		writeD(this.face);
-		writeD(this.hairColor);
+		writeD(type);
+		writeD(hair);
+		writeD(face);
+		writeD(hairColor);
 	}
 }

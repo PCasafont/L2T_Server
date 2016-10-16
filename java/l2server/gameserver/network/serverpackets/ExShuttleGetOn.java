@@ -29,19 +29,19 @@ public class ExShuttleGetOn extends L2GameServerPacket
 
 	public ExShuttleGetOn(L2PcInstance player, L2Character shuttle)
 	{
-		this.playerId = player.getObjectId();
-		this.shuttleId = shuttle.getObjectId();
-		this.pos = player.getInVehiclePosition();
+		playerId = player.getObjectId();
+		shuttleId = shuttle.getObjectId();
+		pos = player.getInVehiclePosition();
 		player.gotOnOffShuttle();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.playerId);
-		writeD(this.shuttleId);
-		writeD(this.pos.getX());
-		writeD(this.pos.getY());
-		writeD(this.pos.getZ());
+		writeD(playerId);
+		writeD(shuttleId);
+		writeD(pos.getX());
+		writeD(pos.getY());
+		writeD(pos.getZ());
 	}
 }

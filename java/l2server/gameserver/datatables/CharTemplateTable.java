@@ -44,7 +44,7 @@ public final class CharTemplateTable implements Reloadable
 
 	private CharTemplateTable()
 	{
-		this.templates = new L2PcTemplate[Race.values().length * 2];
+		templates = new L2PcTemplate[Race.values().length * 2];
 		load();
 
 		ReloadableManager.getInstance().register("chartemplates", this);
@@ -142,13 +142,13 @@ public final class CharTemplateTable implements Reloadable
 									}
 								}
 
-								this.templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
+								templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
 								count++;
 							}
 							else if (raceNode.getName().equalsIgnoreCase("skill"))
 							{
-								this.templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								this.templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
+								templates[raceId * 2].addSkill(raceNode.getInt("id"));
+								templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
 							}
 						}
 					}
@@ -160,7 +160,7 @@ public final class CharTemplateTable implements Reloadable
 
 						if (ItemTable.getInstance().getTemplate(itemId) != null)
 						{
-							for (L2PcTemplate pct : this.templates)
+							for (L2PcTemplate pct : templates)
 							{
 								if (pct != null)
 								{
@@ -185,7 +185,7 @@ public final class CharTemplateTable implements Reloadable
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			player.setTemplate(this.templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
+			player.setTemplate(templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;
@@ -199,7 +199,7 @@ public final class CharTemplateTable implements Reloadable
 
 	public L2PcTemplate getTemplate(int tId)
 	{
-		return this.templates[tId];
+		return templates[tId];
 	}
 
 	@SuppressWarnings("synthetic-access")

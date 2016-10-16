@@ -11,7 +11,7 @@ public class NCGuardSendDataToServer extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.size = readD();
+		size = readD();
 		readB(new byte[1]); // data (TODO: check size)
 	}
 

@@ -32,9 +32,9 @@ public class CoreMessageTable
 	private CoreMessageTable()
 	{
 		CoreMessage cm = new CoreMessage("(Unknown Text)");
-		this.messages.put(-1, cm);
+		messages.put(-1, cm);
 		cm = new CoreMessage("$s1");
-		this.messages.put(0, cm);
+		messages.put(0, cm);
 		readMessageTable();
 	}
 
@@ -49,29 +49,29 @@ public class CoreMessageTable
 			{
 				int id = n.getInt("id");
 				String text = n.getString("text");
-				this.messages.put(id, new CoreMessage(text));
+				messages.put(id, new CoreMessage(text));
 			}
 		}
 
-		Log.info("Message Table: Loading " + this.messages.size() + " Core Messages Sucessfully");
+		Log.info("Message Table: Loading " + messages.size() + " Core Messages Sucessfully");
 	}
 
 	public CoreMessage getMessage(int id)
 	{
-		if (this.messages.containsKey(id))
+		if (messages.containsKey(id))
 		{
-			return this.messages.get(id);
+			return messages.get(id);
 		}
 		else
 		{
 			Log.warning("Unknown text: " + id);
-			return this.messages.get(-1);
+			return messages.get(-1);
 		}
 	}
 
 	public void reload()
 	{
-		this.messages.clear();
+		messages.clear();
 		readMessageTable();
 	}
 }

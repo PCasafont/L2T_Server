@@ -35,7 +35,7 @@ public class ExManagePartyRoomMember extends L2GameServerPacket
 
 	public ExManagePartyRoomMember(L2PcInstance player, PartyMatchRoom room, int mode)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.room = room;
 		this.mode = mode;
 	}
@@ -43,18 +43,18 @@ public class ExManagePartyRoomMember extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.mode);
-		writeD(this.activeChar.getObjectId());
-		writeS(this.activeChar.getName());
-		writeD(this.activeChar.getClassId());
-		writeD(this.activeChar.getLevel());
-		writeD(TownManager.getClosestLocation(this.activeChar));
-		if (this.room.getOwner().equals(this.activeChar))
+		writeD(mode);
+		writeD(activeChar.getObjectId());
+		writeS(activeChar.getName());
+		writeD(activeChar.getClassId());
+		writeD(activeChar.getLevel());
+		writeD(TownManager.getClosestLocation(activeChar));
+		if (room.getOwner().equals(activeChar))
 		{
 			writeD(1);
 		}
-		else if (this.room.getOwner().isInParty() && this.activeChar.isInParty() &&
-				this.room.getOwner().getParty().getPartyLeaderOID() == this.activeChar.getParty().getPartyLeaderOID())
+		else if (room.getOwner().isInParty() && activeChar.isInParty() &&
+				room.getOwner().getParty().getPartyLeaderOID() == activeChar.getParty().getPartyLeaderOID())
 		{
 			writeD(2);
 		}

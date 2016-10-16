@@ -75,13 +75,13 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 	public L2LoginClient(MMOConnection<L2LoginClient> con)
 	{
 		super(con);
-		this.state = LoginClientState.CONNECTED;
-		this.scrambledPair = LoginController.getInstance().getScrambledRSAKeyPair();
-		this.blowfishKey = LoginController.getInstance().getBlowfishKey();
-		this.sessionId = Rnd.nextInt();
-		this.connectionStartTime = System.currentTimeMillis();
-		this.loginCrypt = new LoginCrypt();
-		this.loginCrypt.setKey(this.blowfishKey);
+		state = LoginClientState.CONNECTED;
+		scrambledPair = LoginController.getInstance().getScrambledRSAKeyPair();
+		blowfishKey = LoginController.getInstance().getBlowfishKey();
+		sessionId = Rnd.nextInt();
+		connectionStartTime = System.currentTimeMillis();
+		loginCrypt = new LoginCrypt();
+		loginCrypt.setKey(blowfishKey);
 	}
 
 	@Override
@@ -90,7 +90,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		boolean ret = false;
 		try
 		{
-			ret = this.loginCrypt.decrypt(buf.array(), buf.position(), size);
+			ret = loginCrypt.decrypt(buf.array(), buf.position(), size);
 		}
 		catch (IOException e)
 		{
@@ -119,7 +119,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		final int offset = buf.position();
 		try
 		{
-			size = this.loginCrypt.encrypt(buf.array(), offset, size);
+			size = loginCrypt.encrypt(buf.array(), offset, size);
 		}
 		catch (IOException e)
 		{
@@ -133,7 +133,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public LoginClientState getState()
 	{
-		return this.state;
+		return state;
 	}
 
 	public void setState(LoginClientState state)
@@ -143,22 +143,22 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public byte[] getBlowfishKey()
 	{
-		return this.blowfishKey;
+		return blowfishKey;
 	}
 
 	public byte[] getScrambledModulus()
 	{
-		return this.scrambledPair.scrambledModulus;
+		return scrambledPair.scrambledModulus;
 	}
 
 	public RSAPrivateKey getRSAPrivateKey()
 	{
-		return (RSAPrivateKey) this.scrambledPair.pair.getPrivate();
+		return (RSAPrivateKey) scrambledPair.pair.getPrivate();
 	}
 
 	public String getAccount()
 	{
-		return this.account;
+		return account;
 	}
 
 	public void setAccount(String account)
@@ -173,7 +173,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public int getAccessLevel()
 	{
-		return this.accessLevel;
+		return accessLevel;
 	}
 
 	public void setLastServer(int lastServer)
@@ -183,22 +183,22 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public int getLastServer()
 	{
-		return this.lastServer;
+		return lastServer;
 	}
 
 	public int getSessionId()
 	{
-		return this.sessionId;
+		return sessionId;
 	}
 
 	public boolean hasJoinedGS()
 	{
-		return this.joinedGS;
+		return joinedGS;
 	}
 
 	public void setJoinedGS(boolean val)
 	{
-		this.joinedGS = val;
+		joinedGS = val;
 	}
 
 	public void setSessionKey(SessionKey sessionKey)
@@ -208,12 +208,12 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public SessionKey getSessionKey()
 	{
-		return this.sessionKey;
+		return sessionKey;
 	}
 
 	public long getConnectionStartTime()
 	{
-		return this.connectionStartTime;
+		return connectionStartTime;
 	}
 
 	public void sendPacket(L2LoginServerPacket lsp)
@@ -238,30 +238,30 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public void setCharsOnServ(int servId, int chars)
 	{
-		if (this.charsOnServers == null)
+		if (charsOnServers == null)
 		{
-			this.charsOnServers = new HashMap<>();
+			charsOnServers = new HashMap<>();
 		}
-		this.charsOnServers.put(servId, chars);
+		charsOnServers.put(servId, chars);
 	}
 
 	public Map<Integer, Integer> getCharsOnServ()
 	{
-		return this.charsOnServers;
+		return charsOnServers;
 	}
 
 	public void serCharsWaitingDelOnServ(int servId, long[] charsToDel)
 	{
-		if (this.charsToDelete == null)
+		if (charsToDelete == null)
 		{
-			this.charsToDelete = new HashMap<>();
+			charsToDelete = new HashMap<>();
 		}
-		this.charsToDelete.put(servId, charsToDel);
+		charsToDelete.put(servId, charsToDel);
 	}
 
 	public Map<Integer, long[]> getCharsWaitingDelOnServ()
 	{
-		return this.charsToDelete;
+		return charsToDelete;
 	}
 
 	@Override

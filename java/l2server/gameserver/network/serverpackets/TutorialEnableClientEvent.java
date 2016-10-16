@@ -21,12 +21,12 @@ public class TutorialEnableClientEvent extends L2GameServerPacket
 
 	public TutorialEnableClientEvent(int event)
 	{
-		this.eventId = event;
+		eventId = event;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.eventId);
+		writeD(eventId);
 	}
 }

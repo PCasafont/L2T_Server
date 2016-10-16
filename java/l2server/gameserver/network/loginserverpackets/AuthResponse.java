@@ -32,8 +32,8 @@ public class AuthResponse extends BaseRecievePacket
 	public AuthResponse(byte[] decrypt)
 	{
 		super(decrypt);
-		this.serverId = readC();
-		this.serverName = readS();
+		serverId = readC();
+		serverName = readS();
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class AuthResponse extends BaseRecievePacket
 	 */
 	public int getServerId()
 	{
-		return this.serverId;
+		return serverId;
 	}
 
 	/**
@@ -49,6 +49,6 @@ public class AuthResponse extends BaseRecievePacket
 	 */
 	public String getServerName()
 	{
-		return this.serverName;
+		return serverName;
 	}
 }

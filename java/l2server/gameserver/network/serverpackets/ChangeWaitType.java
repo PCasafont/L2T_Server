@@ -40,21 +40,21 @@ public class ChangeWaitType extends L2GameServerPacket
 
 	public ChangeWaitType(L2Character character, int newMoveType)
 	{
-		this.charObjId = character.getObjectId();
-		this.moveType = newMoveType;
+		charObjId = character.getObjectId();
+		moveType = newMoveType;
 
-		this.x = character.getX();
-		this.y = character.getY();
-		this.z = character.getZ();
+		x = character.getX();
+		y = character.getY();
+		z = character.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.moveType);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(charObjId);
+		writeD(moveType);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

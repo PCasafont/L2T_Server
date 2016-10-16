@@ -35,7 +35,7 @@ public class BypassUserCmd extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.command = readD();
+		command = readD();
 	}
 
 	@Override
@@ -47,18 +47,18 @@ public class BypassUserCmd extends L2GameClientPacket
 			return;
 		}
 
-		IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(this.command);
+		IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(command);
 
 		if (handler == null)
 		{
 			if (player.isGM())
 			{
-				player.sendMessage("User commandID " + this.command + " not implemented yet.");
+				player.sendMessage("User commandID " + command + " not implemented yet.");
 			}
 		}
 		else
 		{
-			handler.useUserCommand(this.command, getClient().getActiveChar());
+			handler.useUserCommand(command, getClient().getActiveChar());
 		}
 	}
 }

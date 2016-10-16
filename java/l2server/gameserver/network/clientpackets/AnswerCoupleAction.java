@@ -36,30 +36,30 @@ public class AnswerCoupleAction extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.actionId = readD();
-		this.answer = readD();
-		this.charObjId = readD();
+		actionId = readD();
+		answer = readD();
+		charObjId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		L2PcInstance target = L2World.getInstance().getPlayer(this.charObjId);
+		L2PcInstance target = L2World.getInstance().getPlayer(charObjId);
 		if (activeChar == null || target == null)
 		{
 			return;
 		}
-		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != this.actionId)
+		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != actionId)
 		{
 			return;
 		}
-		if (this.answer == 0) // cancel
+		if (answer == 0) // cancel
 		{
 			target.setMultiSocialAction(0, 0);
 			target.sendPacket(SystemMessageId.COUPLE_ACTION_DENIED);
 		}
-		else if (this.answer == 1) // approve
+		else if (answer == 1) // approve
 		{
 			double distance = activeChar.getPlanDistanceSq(target);
 			if (distance > 2000 || distance < 70)
@@ -74,10 +74,10 @@ public class AnswerCoupleAction extends L2GameClientPacket
 			heading = Util.calculateHeadingFrom(target, activeChar);
 			target.setHeading(heading);
 			target.broadcastPacket(new ExRotation(target.getObjectId(), heading));
-			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), this.actionId));
-			target.broadcastPacket(new SocialAction(target.getObjectId(), this.actionId));
+			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), actionId));
+			target.broadcastPacket(new SocialAction(target.getObjectId(), actionId));
 		}
-		else if (this.answer == -1) // refused
+		else if (answer == -1) // refused
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_COUPLE_ACTIONS);
 			sm.addPcName(activeChar);

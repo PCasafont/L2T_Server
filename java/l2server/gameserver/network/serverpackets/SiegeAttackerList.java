@@ -62,18 +62,18 @@ public final class SiegeAttackerList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.castle.getCastleId());
+		writeD(castle.getCastleId());
 		writeD(0x00); //0
 		writeD(0x01); //1
 		writeD(0x00); //0
-		int size = this.castle.getSiege().getAttackerClans().size();
+		int size = castle.getSiege().getAttackerClans().size();
 		if (size > 0)
 		{
 			L2Clan clan;
 
 			writeD(size);
 			writeD(size);
-			for (L2SiegeClan siegeclan : this.castle.getSiege().getAttackerClans())
+			for (L2SiegeClan siegeclan : castle.getSiege().getAttackerClans())
 			{
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				if (clan == null)

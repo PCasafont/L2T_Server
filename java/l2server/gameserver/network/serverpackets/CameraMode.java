@@ -34,6 +34,6 @@ public class CameraMode extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.mode);
+		writeD(mode);
 	}
 }

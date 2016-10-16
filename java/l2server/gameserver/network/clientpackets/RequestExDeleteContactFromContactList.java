@@ -31,7 +31,7 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 			return;
 		}
 
-		if (this.name == null)
+		if (name == null)
 		{
 			return;
 		}
@@ -53,6 +53,6 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.getContactList().remove(this.name);
+		activeChar.getContactList().remove(name);
 	}
 }

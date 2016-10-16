@@ -50,19 +50,19 @@ public class DecayTaskManager
 
 	public void addDecayTask(L2Character actor)
 	{
-		this.decayTasks.put(actor, System.currentTimeMillis());
+		decayTasks.put(actor, System.currentTimeMillis());
 	}
 
 	public void addDecayTask(L2Character actor, int interval)
 	{
-		this.decayTasks.put(actor, System.currentTimeMillis() + interval);
+		decayTasks.put(actor, System.currentTimeMillis() + interval);
 	}
 
 	public void cancelDecayTask(L2Character actor)
 	{
 		try
 		{
-			this.decayTasks.remove(actor);
+			decayTasks.remove(actor);
 		}
 		catch (NoSuchElementException e)
 		{
@@ -125,14 +125,14 @@ public class DecayTaskManager
 	public String toString()
 	{
 		String ret = "============= DecayTask Manager Report ============\r\n";
-		ret += "Tasks count: " + this.decayTasks.size() + "\r\n";
+		ret += "Tasks count: " + decayTasks.size() + "\r\n";
 		ret += "Tasks dump:\r\n";
 
 		Long current = System.currentTimeMillis();
-		for (L2Character actor : this.decayTasks.keySet())
+		for (L2Character actor : decayTasks.keySet())
 		{
 			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " +
-					(current - this.decayTasks.get(actor)) + "\r\n";
+					(current - decayTasks.get(actor)) + "\r\n";
 		}
 
 		return ret;
@@ -143,7 +143,7 @@ public class DecayTaskManager
 	 */
 	public Map<L2Character, Long> getTasks()
 	{
-		return this.decayTasks;
+		return decayTasks;
 	}
 
 	@SuppressWarnings("synthetic-access")

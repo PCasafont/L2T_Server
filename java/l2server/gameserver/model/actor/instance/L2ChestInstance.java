@@ -40,37 +40,37 @@ public class L2ChestInstance extends L2MonsterInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ChestInstance);
-		this.isInteracted = false;
-		this.specialDrop = false;
+		isInteracted = false;
+		specialDrop = false;
 	}
 
 	@Override
 	public void onSpawn()
 	{
 		super.onSpawn();
-		this.isInteracted = false;
-		this.specialDrop = false;
+		isInteracted = false;
+		specialDrop = false;
 		setMustRewardExpSp(true);
 	}
 
 	public synchronized boolean isInteracted()
 	{
-		return this.isInteracted;
+		return isInteracted;
 	}
 
 	public synchronized void setInteracted()
 	{
-		this.isInteracted = true;
+		isInteracted = true;
 	}
 
 	public synchronized boolean isSpecialDrop()
 	{
-		return this.specialDrop;
+		return specialDrop;
 	}
 
 	public synchronized void setSpecialDrop()
 	{
-		this.specialDrop = true;
+		specialDrop = true;
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class L2ChestInstance extends L2MonsterInstance
 	{
 		int id = getTemplate().NpcId;
 
-		if (!this.specialDrop)
+		if (!specialDrop)
 		{
 			if (id >= 18265 && id <= 18286)
 			{

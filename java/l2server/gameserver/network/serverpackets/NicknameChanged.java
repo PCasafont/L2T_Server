@@ -28,14 +28,14 @@ public class NicknameChanged extends L2GameServerPacket
 
 	public NicknameChanged(L2PcInstance cha)
 	{
-		this.objectId = cha.getObjectId();
-		this.title = cha.getTitle();
+		objectId = cha.getObjectId();
+		title = cha.getTitle();
 	}
 
 	public NicknameChanged(L2Character cha)
 	{
-		this.objectId = cha.getObjectId();
-		this.title = cha.getTitle();
+		objectId = cha.getObjectId();
+		title = cha.getTitle();
 	}
 
 	public NicknameChanged(final int objectId, final String title)
@@ -50,7 +50,7 @@ public class NicknameChanged extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeS(this.title);
+		writeD(objectId);
+		writeS(title);
 	}
 }

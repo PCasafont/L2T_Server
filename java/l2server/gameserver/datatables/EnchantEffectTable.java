@@ -124,7 +124,7 @@ public class EnchantEffectTable
 							}
 						}
 
-						this.effects.put(id, effect);
+						effects.put(id, effect);
 					}
 				}
 			}
@@ -135,12 +135,12 @@ public class EnchantEffectTable
 			}
 		}
 
-		Log.info("EnchantEffectTable: Loaded " + this.effects.size() + " enchant effects.");
+		Log.info("EnchantEffectTable: Loaded " + effects.size() + " enchant effects.");
 	}
 
 	public final EnchantEffect getEffect(int id)
 	{
-		return this.effects.get(id);
+		return effects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")

@@ -53,7 +53,7 @@ public class PledgeSkillTree
 
 	private void load()
 	{
-		this.skillTree.clear();
+		skillTree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/pledgeSkillTree.xml");
 		if (file.exists())
 		{
@@ -106,20 +106,20 @@ public class PledgeSkillTree
 								continue;
 							}
 
-							this.skillTree.put(SkillTable.getSkillHashCode(skill),
+							skillTree.put(SkillTable.getSkillHashCode(skill),
 									new L2PledgeSkillLearn(skillId, skillLvl, clanLvl, reputation));
 						}
 					}
 				}
 			}
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + this.skillTree.size() + " Pledge Skills");
+		Log.info(getClass().getSimpleName() + ": Loaded " + skillTree.size() + " Pledge Skills");
 	}
 
 	public L2PledgeSkillLearn[] getAvailableSkills(L2PcInstance cha)
 	{
 		List<L2PledgeSkillLearn> result = new ArrayList<>();
-		Map<Long, L2PledgeSkillLearn> skills = this.skillTree;
+		Map<Long, L2PledgeSkillLearn> skills = skillTree;
 
 		if (skills == null)
 		{

@@ -25,7 +25,7 @@ public final class RequestShowBeautyList extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		this.isFace = readD() != 0;
+		isFace = readD() != 0;
 	}
 
 	@Override
@@ -39,6 +39,6 @@ public final class RequestShowBeautyList extends L2GameClientPacket
 
 		activeChar.sendPacket(
 				new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0),
-						this.isFace));
+						isFace));
 	}
 }

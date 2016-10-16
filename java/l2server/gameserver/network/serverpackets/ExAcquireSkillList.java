@@ -78,24 +78,24 @@ public final class ExAcquireSkillList extends L2GameServerPacket
 
 	public ExAcquireSkillList(SkillType type)
 	{
-		this.skillType = type;
+		skillType = type;
 	}
 
 	public void addSkill(int id, int nextLevel, int maxLevel, int spCost, int requirements)
 	{
-		if (this.skills == null)
+		if (skills == null)
 		{
-			this.skills = new ArrayList<>();
+			skills = new ArrayList<>();
 		}
-		this.skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
+		skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(this.skillType.ordinal());
-		writeH(this.skills.size());
-		for (Skill temp : this.skills)
+		writeH(skillType.ordinal());
+		writeH(skills.size());
+		for (Skill temp : skills)
 		{
 			writeD(temp.id);
 			writeH(temp.nextLevel);

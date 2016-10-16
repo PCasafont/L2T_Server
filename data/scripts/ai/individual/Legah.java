@@ -37,13 +37,13 @@ public class Legah extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addKillId(this.legah);
+		addKillId(legah);
 	}
 
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		addSpawn(this.legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+		addSpawn(legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 
 		return super.onKill(npc, killer, isPet);
 	}

@@ -32,11 +32,11 @@ public final class ExNpcSpeedInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.npc.getObjectId());
+		writeD(npc.getObjectId());
 		writeH(8); // Size
 		writeC(0xc0); // Mask (0x80 run spd multiplier, 0x40 atk spd multiplier, ...)
-		writeFl(this.npc.getMovementSpeedMultiplier());
-		writeFl(this.npc.getAttackSpeedMultiplier());
+		writeFl(npc.getMovementSpeedMultiplier());
+		writeFl(npc.getAttackSpeedMultiplier());
 		//writeH((short)_npc.getTemplate().baseRunSpd);
 		//writeH((short)_npc.getTemplate().baseWalkSpd);
 	}

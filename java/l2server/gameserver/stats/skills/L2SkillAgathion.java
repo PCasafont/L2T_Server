@@ -30,7 +30,7 @@ public class L2SkillAgathion extends L2Skill
 	public L2SkillAgathion(StatsSet set)
 	{
 		super(set);
-		this.npcId = set.getInteger("npcId", 0);
+		npcId = set.getInteger("npcId", 0);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class L2SkillAgathion extends L2Skill
 			return;
 		}
 
-		activeChar.setAgathionId(this.npcId);
+		activeChar.setAgathionId(npcId);
 		activeChar.broadcastUserInfo();
 	}
 }

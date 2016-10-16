@@ -39,51 +39,51 @@ public class L2ShortCut
 
 	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType)
 	{
-		this.slot = slotId;
-		this.page = pageId;
-		this.type = shortcutType;
-		this.id = shortcutId;
-		this.level = shortcutLevel;
+		slot = slotId;
+		page = pageId;
+		type = shortcutType;
+		id = shortcutId;
+		level = shortcutLevel;
 		this.characterType = characterType;
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	public int getPage()
 	{
-		return this.page;
+		return page;
 	}
 
 	public int getSlot()
 	{
-		return this.slot;
+		return slot;
 	}
 
 	public int getType()
 	{
-		return this.type;
+		return type;
 	}
 
 	public int getCharacterType()
 	{
-		return this.characterType;
+		return characterType;
 	}
 
 	public int getSharedReuseGroup()
 	{
-		return this.sharedReuseGroup;
+		return sharedReuseGroup;
 	}
 
 	public void setSharedReuseGroup(int g)
 	{
-		this.sharedReuseGroup = g;
+		sharedReuseGroup = g;
 	}
 }

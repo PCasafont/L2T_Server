@@ -49,13 +49,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.shipId = readD();
-		this.targetX = readD();
-		this.targetY = readD();
-		this.targetZ = readD();
-		this.originX = readD();
-		this.originY = readD();
-		this.originZ = readD();
+		shipId = readD();
+		targetX = readD();
+		targetY = readD();
+		targetZ = readD();
+		originX = readD();
+		originY = readD();
+		originZ = readD();
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 			return;
 		}
 
-		if (this.targetX == this.originX && this.targetY == this.originY && this.targetZ == this.originZ)
+		if (targetX == originX && targetY == originY && targetZ == originZ)
 		{
-			activeChar.sendPacket(new StopMoveInVehicle(activeChar, this.shipId));
+			activeChar.sendPacket(new StopMoveInVehicle(activeChar, shipId));
 			return;
 		}
 
@@ -93,13 +93,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 		}
 
 		final L2AirShipInstance airShip = activeChar.getAirShip();
-		if (airShip.getObjectId() != this.shipId)
+		if (airShip.getObjectId() != shipId)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		activeChar.setInVehiclePosition(new Point3D(this.targetX, this.targetY, this.targetZ));
+		activeChar.setInVehiclePosition(new Point3D(targetX, targetY, targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInAirShip(activeChar));
 	}
 }

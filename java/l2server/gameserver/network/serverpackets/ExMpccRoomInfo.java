@@ -25,13 +25,13 @@ public class ExMpccRoomInfo extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.maxLvl);
-		writeD(this.maxParties);
-		writeS(this.leaderName);
+		writeD(maxLvl);
+		writeD(maxParties);
+		writeS(leaderName);
 		writeH(0x00); // unk2
 		writeD(0x00); // unk1
-		writeD(this.id);
-		writeD(this.minLvl);
-		writeD(this.curParties);
+		writeD(id);
+		writeD(minLvl);
+		writeD(curParties);
 	}
 }

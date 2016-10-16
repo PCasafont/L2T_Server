@@ -26,7 +26,7 @@ public class RequestTutorialLinkHtml extends L2GameClientPacket
 	protected void readImpl()
 	{
 		readD(); // GoD ???
-		this.bypass = readS();
+		bypass = readS();
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class RequestTutorialLinkHtml extends L2GameClientPacket
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent(this.bypass, null, player);
+			qs.getQuest().notifyEvent(bypass, null, player);
 		}
 	}
 }

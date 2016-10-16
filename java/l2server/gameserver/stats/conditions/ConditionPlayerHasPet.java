@@ -37,11 +37,11 @@ public class ConditionPlayerHasPet extends Condition
 	{
 		if (itemIds.size() == 1 && itemIds.get(0) == 0)
 		{
-			this.controlItemIds = null;
+			controlItemIds = null;
 		}
 		else
 		{
-			this.controlItemIds = itemIds;
+			controlItemIds = itemIds;
 		}
 	}
 
@@ -61,7 +61,7 @@ public class ConditionPlayerHasPet extends Condition
 			return false;
 		}
 
-		if (this.controlItemIds == null)
+		if (controlItemIds == null)
 		{
 			return true;
 		}
@@ -72,6 +72,6 @@ public class ConditionPlayerHasPet extends Condition
 			return false;
 		}
 
-		return this.controlItemIds.contains(controlItem.getItemId());
+		return controlItemIds.contains(controlItem.getItemId());
 	}
 }

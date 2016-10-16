@@ -44,8 +44,8 @@ public class ExShowSellCropList extends L2GameServerPacket
 	public ExShowSellCropList(L2PcInstance player, int manorId, List<CropProcure> crops)
 	{
 		this.manorId = manorId;
-		this.castleCrops = new HashMap<>();
-		this.cropsItems = new HashMap<>();
+		castleCrops = new HashMap<>();
+		cropsItems = new HashMap<>();
 
 		ArrayList<Integer> allCrops = L2Manor.getInstance().getAllCrops();
 		for (int cropId : allCrops)
@@ -53,15 +53,15 @@ public class ExShowSellCropList extends L2GameServerPacket
 			L2ItemInstance item = player.getInventory().getItemByItemId(cropId);
 			if (item != null)
 			{
-				this.cropsItems.put(cropId, item);
+				cropsItems.put(cropId, item);
 			}
 		}
 
 		for (CropProcure crop : crops)
 		{
-			if (this.cropsItems.containsKey(crop.getId()) && crop.getAmount() > 0)
+			if (cropsItems.containsKey(crop.getId()) && crop.getAmount() > 0)
 			{
-				this.castleCrops.put(crop.getId(), crop);
+				castleCrops.put(crop.getId(), crop);
 			}
 		}
 	}
@@ -75,10 +75,10 @@ public class ExShowSellCropList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.manorId); // manor id
-		writeD(this.cropsItems.size()); // size
+		writeD(manorId); // manor id
+		writeD(cropsItems.size()); // size
 
-		for (L2ItemInstance item : this.cropsItems.values())
+		for (L2ItemInstance item : cropsItems.values())
 		{
 			writeD(item.getObjectId()); // Object id
 			writeD(item.getItemId()); // crop id
@@ -88,10 +88,10 @@ public class ExShowSellCropList extends L2GameServerPacket
 			writeC(1);
 			writeD(L2Manor.getInstance().getRewardItem(item.getItemId(), 2)); // reward 2 id
 
-			if (this.castleCrops.containsKey(item.getItemId()))
+			if (castleCrops.containsKey(item.getItemId()))
 			{
-				CropProcure crop = this.castleCrops.get(item.getItemId());
-				writeD(this.manorId); // manor
+				CropProcure crop = castleCrops.get(item.getItemId());
+				writeD(manorId); // manor
 				writeQ(crop.getAmount()); // buy residual
 				writeQ(crop.getPrice()); // buy price
 				writeC(crop.getReward()); // reward

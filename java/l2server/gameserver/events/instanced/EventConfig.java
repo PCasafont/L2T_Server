@@ -17,7 +17,7 @@ public class EventConfig
 	{
 		selectEvent();
 
-		if (this.location.getTeamCount() == 4)
+		if (location.getTeamCount() == 4)
 		{
 			while (selectTeamNames(Rnd.get(4)))
 			{
@@ -39,7 +39,7 @@ public class EventConfig
 			selectEvent();
 		}
 
-		if (this.location.getTeamCount() == 4)
+		if (location.getTeamCount() == 4)
 		{
 			while (selectTeamNames(Rnd.get(4)))
 			{
@@ -60,47 +60,47 @@ public class EventConfig
 
 	public EventType getType()
 	{
-		return this.type;
+		return type;
 	}
 
 	public boolean isAllVsAll()
 	{
-		return this.type == EventType.Survival || this.type == EventType.DeathMatch || this.type == EventType.KingOfTheHill ||
-				this.type == EventType.CursedBattle || this.type == EventType.StalkedSalkers || this.type == EventType.SimonSays;
+		return type == EventType.Survival || type == EventType.DeathMatch || type == EventType.KingOfTheHill ||
+				type == EventType.CursedBattle || type == EventType.StalkedSalkers || type == EventType.SimonSays;
 	}
 
 	public boolean needsClosedArena()
 	{
-		return this.type == EventType.CaptureTheFlag || this.type == EventType.VIP || this.type == EventType.Survival ||
-				this.type == EventType.TeamSurvival || this.type == EventType.CursedBattle || this.type == EventType.StalkedSalkers;
+		return type == EventType.CaptureTheFlag || type == EventType.VIP || type == EventType.Survival ||
+				type == EventType.TeamSurvival || type == EventType.CursedBattle || type == EventType.StalkedSalkers;
 	}
 
 	public boolean spawnsPlayersRandomly()
 	{
-		return this.type == EventType.Survival || this.type == EventType.DeathMatch || this.type == EventType.CursedBattle ||
-				this.type == EventType.StalkedSalkers || this.type == EventType.SimonSays;
+		return type == EventType.Survival || type == EventType.DeathMatch || type == EventType.CursedBattle ||
+				type == EventType.StalkedSalkers || type == EventType.SimonSays;
 	}
 
 	public boolean needsRandomCoords()
 	{
-		return spawnsPlayersRandomly() || this.type == EventType.LuckyChests;
+		return spawnsPlayersRandomly() || type == EventType.LuckyChests;
 	}
 
 	public boolean hasNoLevelLimits()
 	{
-		return this.type == EventType.LuckyChests || this.type == EventType.StalkedSalkers || this.type == EventType.SimonSays;
+		return type == EventType.LuckyChests || type == EventType.StalkedSalkers || type == EventType.SimonSays;
 	}
 
 	public boolean isPvp()
 	{
-		return this.type == EventType.TVT || this.type == EventType.CaptureTheFlag || this.type == EventType.VIP ||
-				this.type == EventType.Survival || this.type == EventType.DeathMatch || this.type == EventType.TeamSurvival ||
-				this.type == EventType.CursedBattle;
+		return type == EventType.TVT || type == EventType.CaptureTheFlag || type == EventType.VIP ||
+				type == EventType.Survival || type == EventType.DeathMatch || type == EventType.TeamSurvival ||
+				type == EventType.CursedBattle;
 	}
 
 	public String getTeamName(int id)
 	{
-		return this.teamNames[id];
+		return teamNames[id];
 	}
 
 	public boolean selectTeamNames(int name)
@@ -109,27 +109,27 @@ public class EventConfig
 		switch (name)
 		{
 			case 0:
-				this.teamNames[0] = "Blue";
-				this.teamNames[1] = "Red";
+				teamNames[0] = "Blue";
+				teamNames[1] = "Red";
 				dual = true;
 				break;
 			case 1:
-				this.teamNames[0] = "Water";
-				this.teamNames[1] = "Fire";
-				this.teamNames[2] = "Earth";
-				this.teamNames[3] = "Wind";
+				teamNames[0] = "Water";
+				teamNames[1] = "Fire";
+				teamNames[2] = "Earth";
+				teamNames[3] = "Wind";
 				break;
 			case 2:
-				this.teamNames[0] = "Winter";
-				this.teamNames[1] = "Autumn";
-				this.teamNames[2] = "Summer";
-				this.teamNames[3] = "Spring";
+				teamNames[0] = "Winter";
+				teamNames[1] = "Autumn";
+				teamNames[2] = "Summer";
+				teamNames[3] = "Spring";
 				break;
 			case 3:
-				this.teamNames[0] = "Blue";
-				this.teamNames[1] = "Red";
-				this.teamNames[2] = "Yellow";
-				this.teamNames[3] = "Green";
+				teamNames[0] = "Blue";
+				teamNames[1] = "Red";
+				teamNames[2] = "Yellow";
+				teamNames[3] = "Green";
 		}
 
 		return dual;
@@ -175,7 +175,7 @@ public class EventConfig
 
 	public EventLocation getLocation()
 	{
-		return this.location;
+		return location;
 	}
 
 	public void setLocation(EventLocation location)
@@ -185,37 +185,37 @@ public class EventConfig
 
 	public void selectLocation()
 	{
-		this.location = EventsManager.getInstance().getRandomLocation();
+		location = EventsManager.getInstance().getRandomLocation();
 
 		if (needsClosedArena() || needsRandomCoords())
 		{
-			while (this.location.getZone() == null)
+			while (location.getZone() == null)
 			{
-				this.location = EventsManager.getInstance().getRandomLocation();
+				location = EventsManager.getInstance().getRandomLocation();
 			}
 		}
 		else if (isType(EventType.KingOfTheHill))
 		{
-			while (!this.location.isHill())
+			while (!location.isHill())
 			{
-				this.location = EventsManager.getInstance().getRandomLocation();
+				location = EventsManager.getInstance().getRandomLocation();
 			}
 		}
 	}
 
 	public int getMaxTeamPlayers()
 	{
-		return isAllVsAll() ? this.location.getMaxPlayers() : this.location.getMaxTeamPlayers();
+		return isAllVsAll() ? location.getMaxPlayers() : location.getMaxTeamPlayers();
 	}
 
 	public int getMinPlayers()
 	{
-		return isAllVsAll() ? 2 : this.location.getTeamCount();
+		return isAllVsAll() ? 2 : location.getTeamCount();
 	}
 
 	public EventInstance createInstance(int id)
 	{
-		switch (this.type)
+		switch (type)
 		{
 			case TVT:
 				return new TeamVsTeam(id, this);
@@ -248,15 +248,15 @@ public class EventConfig
 
 	public String getEventName()
 	{
-		if (this.location == null)
+		if (location == null)
 		{
 			return "No event";
 		}
 
-		switch (this.type)
+		switch (type)
 		{
 			case CaptureTheFlag:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "Four teams Capture the Flag";
 				}
@@ -264,7 +264,7 @@ public class EventConfig
 				return "Capture the Flag";
 
 			case VIP:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "VIP TvTvTvT";
 				}
@@ -278,7 +278,7 @@ public class EventConfig
 				return "Death Match";
 
 			case LuckyChests:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "Four teams Lucky Chests";
 				}
@@ -289,7 +289,7 @@ public class EventConfig
 				return "King of The Hill";
 
 			case TeamSurvival:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "Team Survival";
 				}
@@ -300,7 +300,7 @@ public class EventConfig
 				return "Cursed Battle";
 
 			case DestroyTheGolem:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "Four teams Destroy the Golem";
 				}
@@ -308,7 +308,7 @@ public class EventConfig
 				return "Destroy the Golem";
 
 			case FieldDomination:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "Four teams Field Domination";
 				}
@@ -322,7 +322,7 @@ public class EventConfig
 				return "Simon Says";
 
 			default:
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					return "TvTvTvT";
 				}
@@ -333,17 +333,17 @@ public class EventConfig
 
 	public String getEventLocationName()
 	{
-		if (this.location == null)
+		if (location == null)
 		{
 			return "No event";
 		}
 
-		return this.location.getName();
+		return location.getName();
 	}
 
 	public int getEventImageId()
 	{
-		switch (this.type)
+		switch (type)
 		{
 			case TVT:
 				return 20012;
@@ -378,24 +378,24 @@ public class EventConfig
 
 	public String getEventString()
 	{
-		if (this.location == null)
+		if (location == null)
 		{
 			return "No event";
 		}
 
 		String eventString;
-		switch (this.type)
+		switch (type)
 		{
 			case CaptureTheFlag:
 				eventString = "Capture the Flag";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "Four teams Capture the Flag";
 				}
 				break;
 			case VIP:
 				eventString = "VIP TvT";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "VIP TvTvTvT";
 				}
@@ -408,7 +408,7 @@ public class EventConfig
 				break;
 			case LuckyChests:
 				eventString = "Lucky Chests";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "Four teams Lucky Chests";
 				}
@@ -418,7 +418,7 @@ public class EventConfig
 				break;
 			case TeamSurvival:
 				eventString = "Team Survival";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "Four Teams Survival";
 				}
@@ -428,14 +428,14 @@ public class EventConfig
 				break;
 			case DestroyTheGolem:
 				eventString = "Destroy the Golem";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "Four teams Destroy the Golem";
 				}
 				break;
 			case FieldDomination:
 				eventString = "Field Domination";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "Four teams Field Domination";
 				}
@@ -448,13 +448,13 @@ public class EventConfig
 				break;
 			default:
 				eventString = "Team vs Team";
-				if (this.location.getTeamCount() == 4)
+				if (location.getTeamCount() == 4)
 				{
 					eventString = "TvTvTvT";
 				}
 		}
 
-		eventString += " at " + this.location.getName();
+		eventString += " at " + location.getName();
 
 		return eventString;
 	}

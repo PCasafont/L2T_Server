@@ -42,13 +42,13 @@ public class UITable
 
 	private UITable()
 	{
-		this.storedKeys = new HashMap<>();
-		this.storedCategories = new HashMap<>();
+		storedKeys = new HashMap<>();
+		storedCategories = new HashMap<>();
 
 		parseCatData();
 		parseKeyData();
-		Log.info("UITable: Loaded " + this.storedCategories.size() + " Categories.");
-		Log.info("UITable: Loaded " + this.storedKeys.size() + " Keys.");
+		Log.info("UITable: Loaded " + storedCategories.size() + " Categories.");
+		Log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
 	}
 
 	private void parseCatData()
@@ -100,41 +100,41 @@ public class UITable
 
 	private void insertCategory(int cat, int cmd)
 	{
-		if (this.storedCategories.containsKey(cat))
+		if (storedCategories.containsKey(cat))
 		{
-			this.storedCategories.get(cat).add(cmd);
+			storedCategories.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			this.storedCategories.put(cat, tmp);
+			storedCategories.put(cat, tmp);
 		}
 	}
 
 	private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (this.storedKeys.containsKey(cat))
+		if (storedKeys.containsKey(cat))
 		{
-			this.storedKeys.get(cat).add(tmk);
+			storedKeys.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			this.storedKeys.put(cat, tmp);
+			storedKeys.put(cat, tmp);
 		}
 	}
 
 	public Map<Integer, List<Integer>> getCategories()
 	{
-		return this.storedCategories;
+		return storedCategories;
 	}
 
 	public Map<Integer, List<ActionKey>> getKeys()
 	{
-		return this.storedKeys;
+		return storedKeys;
 	}
 
 	@SuppressWarnings("synthetic-access")

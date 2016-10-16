@@ -37,7 +37,7 @@ public class Mail extends ItemContainer
 
 	public Mail(int objectId, int messageId)
 	{
-		this.ownerId = objectId;
+		ownerId = objectId;
 		this.messageId = messageId;
 	}
 
@@ -61,13 +61,13 @@ public class Mail extends ItemContainer
 
 	public int getMessageId()
 	{
-		return this.messageId;
+		return messageId;
 	}
 
 	public void setNewMessageId(int messageId)
 	{
 		this.messageId = messageId;
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -82,7 +82,7 @@ public class Mail extends ItemContainer
 
 	public void returnToWh(ItemContainer wh)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -103,7 +103,7 @@ public class Mail extends ItemContainer
 	protected void addItem(L2ItemInstance item)
 	{
 		super.addItem(item);
-		item.setLocation(getBaseLocation(), this.messageId);
+		item.setLocation(getBaseLocation(), messageId);
 	}
 
 	/*
@@ -112,7 +112,7 @@ public class Mail extends ItemContainer
 	@Override
 	public void updateDatabase()
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null)
 			{
@@ -172,6 +172,6 @@ public class Mail extends ItemContainer
 	@Override
 	public int getOwnerId()
 	{
-		return this.ownerId;
+		return ownerId;
 	}
 }

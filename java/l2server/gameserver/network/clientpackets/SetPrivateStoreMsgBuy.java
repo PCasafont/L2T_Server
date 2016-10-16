@@ -36,7 +36,7 @@ public final class SetPrivateStoreMsgBuy extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.storeMsg = readS();
+		storeMsg = readS();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public final class SetPrivateStoreMsgBuy extends L2GameClientPacket
 			return;
 		}
 
-		if (this.storeMsg != null && this.storeMsg.length() > MAX_MSG_LENGTH)
+		if (storeMsg != null && storeMsg.length() > MAX_MSG_LENGTH)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Player " + player.getName() + " tried to overflow private store buy message",
@@ -56,7 +56,7 @@ public final class SetPrivateStoreMsgBuy extends L2GameClientPacket
 			return;
 		}
 
-		player.getBuyList().setTitle(this.storeMsg);
+		player.getBuyList().setTitle(storeMsg);
 		player.sendPacket(new PrivateStoreMsgBuy(player));
 	}
 }

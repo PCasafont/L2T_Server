@@ -36,7 +36,7 @@ public class BrokenBodiedGolem extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addKillId(this.brokenGolem);
+		addKillId(brokenGolem);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class BrokenBodiedGolem extends L2AttackableAIScript
 	{
 		for (int a = 0; a < 2; a++)
 		{
-			L2Npc minion = addSpawn(this.summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+			L2Npc minion = addSpawn(summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 			minion.setIsRunning(true);
 			minion.setTarget(killer);
 			((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);

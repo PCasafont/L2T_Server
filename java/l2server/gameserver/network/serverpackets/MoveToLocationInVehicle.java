@@ -34,8 +34,8 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
 	 */
 	public MoveToLocationInVehicle(L2PcInstance player, Point3D destination, Point3D origin)
 	{
-		this.charObjId = player.getObjectId();
-		this.boatId = player.getBoat().getObjectId();
+		charObjId = player.getObjectId();
+		boatId = player.getBoat().getObjectId();
 		this.destination = destination;
 		this.origin = origin;
 	}
@@ -46,13 +46,13 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.boatId);
-		writeD(this.destination.getX());
-		writeD(this.destination.getY());
-		writeD(this.destination.getZ());
-		writeD(this.origin.getX());
-		writeD(this.origin.getY());
-		writeD(this.origin.getZ());
+		writeD(charObjId);
+		writeD(boatId);
+		writeD(destination.getX());
+		writeD(destination.getY());
+		writeD(destination.getZ());
+		writeD(origin.getX());
+		writeD(origin.getY());
+		writeD(origin.getZ());
 	}
 }

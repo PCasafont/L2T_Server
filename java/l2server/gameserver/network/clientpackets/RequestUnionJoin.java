@@ -13,7 +13,7 @@ public class RequestUnionJoin extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.unk = readD();
+		unk = readD();
 	}
 
 	@Override

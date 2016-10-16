@@ -39,24 +39,24 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket
 
 	public WareHouseWithdrawalList(L2PcInstance player, int type)
 	{
-		this.activeChar = player;
-		this.whType = type;
+		activeChar = player;
+		whType = type;
 
-		this.playerAdena = this.activeChar.getAdena();
-		if (this.activeChar.getActiveWarehouse() == null)
+		playerAdena = activeChar.getAdena();
+		if (activeChar.getActiveWarehouse() == null)
 		{
 			// Something went wrong!
-			Log.warning("error while sending withdraw request to: " + this.activeChar.getName());
+			Log.warning("error while sending withdraw request to: " + activeChar.getName());
 			return;
 		}
 		else
 		{
-			this.items = this.activeChar.getActiveWarehouse().getItems();
+			items = activeChar.getActiveWarehouse().getItems();
 		}
 
 		if (Config.DEBUG)
 		{
-			for (L2ItemInstance item : this.items)
+			for (L2ItemInstance item : items)
 			{
 				Log.fine("item:" + item.getItem().getName() + " type1:" + item.getItem().getType1() + " type2:" +
 						item.getItem().getType2());
@@ -71,13 +71,13 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket
          * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
-		writeH(this.whType);
-		writeQ(this.playerAdena);
-		writeH(this.items.length);
+		writeH(whType);
+		writeQ(playerAdena);
+		writeH(items.length);
 		writeH(0x00); // GoD ???
 		writeD(0x00); // TODO: Amount of already deposited items
 
-		for (L2ItemInstance item : this.items)
+		for (L2ItemInstance item : items)
 		{
 			writeItem(item);
 

@@ -42,7 +42,7 @@ public class AngelCat extends Quest
 		addTalkId(angelCat);
 		addFirstTalkId(angelCat);
 
-		for (int[] spawn : this.spawns)
+		for (int[] spawn : spawns)
 		{
 			addSpawn(angelCat, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}

@@ -36,7 +36,7 @@ public final class ExSummonInfo extends L2GameServerPacket
 
 	public ExSummonInfo(L2SummonInstance summon, L2Character attacker, int val)
 	{
-		this.objectId = summon.getObjectId();
+		objectId = summon.getObjectId();
 		this.val = 0;//summon.isShowSummonAnimation() ? 2 : val;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
@@ -57,8 +57,8 @@ public final class ExSummonInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		this.data1 = new byte[size];
-		buffer.get(this.data1, 0, size);
+		data1 = new byte[size];
+		buffer.get(data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -128,21 +128,21 @@ public final class ExSummonInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		this.data2 = new byte[size];
-		buffer.get(this.data2, 0, size);
+		data2 = new byte[size];
+		buffer.get(data2, 0, size);
 
-		this.abnormals = summon.getAbnormalEffect();
+		abnormals = summon.getAbnormalEffect();
 		if (summon.getOwner().getAppearance().getInvisible())
 		{
-			this.abnormals.add(VisualEffect.STEALTH.getId());
+			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeC(this.val); // 0=teleported 1=default 2=summoned
+		writeD(objectId);
+		writeC(val); // 0=teleported 1=default 2=summoned
 		writeH(0x0025);
 		writeC(0xfd);
 		writeC(0xbf);
@@ -150,14 +150,14 @@ public final class ExSummonInfo extends L2GameServerPacket
 		writeC(0xf3);
 		writeC(0xec);
 
-		writeC(this.data1.length);
-		writeB(this.data1);
+		writeC(data1.length);
+		writeB(data1);
 
-		writeH(this.data2.length);
-		writeB(this.data2);
+		writeH(data2.length);
+		writeB(data2);
 
-		writeH(this.abnormals.size());
-		for (int abnormal : this.abnormals)
+		writeH(abnormals.size());
+		for (int abnormal : abnormals)
 		{
 			writeH(abnormal);
 		}

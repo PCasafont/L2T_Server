@@ -31,7 +31,7 @@ public class FleeNpc extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		for (int element : this.npcId)
+		for (int element : npcId)
 		{
 			addEventId(element, Quest.QuestEventType.ON_ATTACK);
 		}

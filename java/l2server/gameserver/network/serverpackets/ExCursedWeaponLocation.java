@@ -38,10 +38,10 @@ public class ExCursedWeaponLocation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (!this.cursedWeaponInfo.isEmpty())
+		if (!cursedWeaponInfo.isEmpty())
 		{
-			writeD(this.cursedWeaponInfo.size());
-			for (CursedWeaponInfo w : this.cursedWeaponInfo)
+			writeD(cursedWeaponInfo.size());
+			for (CursedWeaponInfo w : cursedWeaponInfo)
 			{
 				writeD(w.id);
 				writeD(w.activated);

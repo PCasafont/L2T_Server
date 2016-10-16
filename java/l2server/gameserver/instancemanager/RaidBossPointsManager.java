@@ -52,7 +52,7 @@ public class RaidBossPointsManager
 
 	private void init()
 	{
-		this.list = new HashMap<>();
+		list = new HashMap<>();
 		Connection con = null;
 		try
 		{
@@ -65,19 +65,19 @@ public class RaidBossPointsManager
 				int charId = rset.getInt("charId");
 				int bossId = rset.getInt("boss_id");
 				int points = rset.getInt("points");
-				Map<Integer, Integer> values = this.list.get(charId);
+				Map<Integer, Integer> values = list.get(charId);
 				if (values == null)
 				{
 					values = new HashMap<>();
 					values.put(0, 0);
-					this.list.put(charId, values);
+					list.put(charId, values);
 				}
 				values.put(bossId, points);
 				values.put(0, values.get(0) + points);
 			}
 			rset.close();
 			statement.close();
-			Log.info(getClass().getSimpleName() + ": Loaded " + this.list.size() + " Characters Raid Points.");
+			Log.info(getClass().getSimpleName() + ": Loaded " + list.size() + " Characters Raid Points.");
 		}
 		catch (SQLException e)
 		{
@@ -122,7 +122,7 @@ public class RaidBossPointsManager
 		}
 
 		int ownerId = player.getObjectId();
-		Map<Integer, Integer> tmpPoint = this.list.get(ownerId);
+		Map<Integer, Integer> tmpPoint = list.get(ownerId);
 		if (tmpPoint == null)
 		{
 			tmpPoint = new HashMap<>();
@@ -140,13 +140,13 @@ public class RaidBossPointsManager
 			updatePointsInDB(player, bossId, currentPoints);
 			updatePointsInDB(player, 0, tmpPoint.get(0));
 		}
-		this.list.put(ownerId, tmpPoint);
+		list.put(ownerId, tmpPoint);
 	}
 
 	public final int getPointsByOwnerId(int ownerId)
 	{
 		Map<Integer, Integer> tmpPoint;
-		tmpPoint = this.list.get(ownerId);
+		tmpPoint = list.get(ownerId);
 
 		if (tmpPoint == null || tmpPoint.isEmpty())
 		{
@@ -178,7 +178,7 @@ public class RaidBossPointsManager
 			statement = con.prepareStatement("DELETE from character_raid_points WHERE charId > 0");
 			statement.executeUpdate();
 			statement.close();
-			this.list.clear();
+			list.clear();
 		}
 		catch (Exception e)
 		{
@@ -205,7 +205,7 @@ public class RaidBossPointsManager
 		Map<Integer, Integer> tmpRanking = new HashMap<>();
 		Map<Integer, Integer> tmpPoints = new HashMap<>();
 
-		for (int ownerId : this.list.keySet())
+		for (int ownerId : list.keySet())
 		{
 			int totalPoints = getPointsByOwnerId(ownerId);
 			if (totalPoints != 0)
@@ -215,7 +215,7 @@ public class RaidBossPointsManager
 		}
 		ArrayList<Entry<Integer, Integer>> list = new ArrayList<>(tmpPoints.entrySet());
 
-		Collections.sort(list, this.comparator);
+		Collections.sort(list, comparator);
 
 		int ranking = 1;
 		for (Map.Entry<Integer, Integer> entry : list)

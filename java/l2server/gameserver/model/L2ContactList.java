@@ -53,13 +53,13 @@ public class L2ContactList
 	public L2ContactList(L2PcInstance player)
 	{
 		activeChar = player;
-		this.contacts = new CopyOnWriteArrayList<>();
+		contacts = new CopyOnWriteArrayList<>();
 		restore();
 	}
 
 	public void restore()
 	{
-		this.contacts.clear();
+		contacts.clear();
 
 		Connection con = null;
 
@@ -82,7 +82,7 @@ public class L2ContactList
 					continue;
 				}
 
-				this.contacts.add(contactName);
+				contacts.add(contactName);
 			}
 
 			rset.close();
@@ -103,7 +103,7 @@ public class L2ContactList
 		SystemMessage sm;
 
 		int contactId = CharNameTable.getInstance().getIdByName(name);
-		if (this.contacts.contains(name))
+		if (contacts.contains(name))
 		{
 			activeChar.sendPacket(SystemMessageId.NAME_ALREADY_EXIST_ON_CONTACT_LIST);
 			return false;
@@ -113,7 +113,7 @@ public class L2ContactList
 			activeChar.sendPacket(SystemMessageId.CANNOT_ADD_YOUR_NAME_ON_CONTACT_LIST);
 			return false;
 		}
-		else if (this.contacts.size() >= 100)
+		else if (contacts.size() >= 100)
 		{
 			activeChar.sendPacket(SystemMessageId.CONTACT_LIST_LIMIT_REACHED);
 			return false;
@@ -127,7 +127,7 @@ public class L2ContactList
 		}
 		else
 		{
-			for (String contactName : this.contacts)
+			for (String contactName : contacts)
 			{
 				if (contactName.equalsIgnoreCase(name))
 				{
@@ -147,7 +147,7 @@ public class L2ContactList
 			statement.execute();
 			statement.close();
 
-			this.contacts.add(name);
+			contacts.add(name);
 
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SUCCESSFULLY_ADDED_TO_CONTACT_LIST);
 			sm.addString(name);
@@ -168,7 +168,7 @@ public class L2ContactList
 	{
 		int contactId = CharNameTable.getInstance().getIdByName(name);
 
-		if (!this.contacts.contains(name))
+		if (!contacts.contains(name))
 		{
 			activeChar.sendPacket(SystemMessageId.NAME_NOT_REGISTERED_ON_CONTACT_LIST);
 			return;
@@ -180,7 +180,7 @@ public class L2ContactList
 			return;
 		}
 
-		this.contacts.remove(name);
+		contacts.remove(name);
 
 		Connection con = null;
 
@@ -208,6 +208,6 @@ public class L2ContactList
 
 	public List<String> getAllContacts()
 	{
-		return this.contacts;
+		return contacts;
 	}
 }

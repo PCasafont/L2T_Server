@@ -32,45 +32,45 @@ public class DiscussionManager
 
 	public boolean vote(int objectId, byte option)
 	{
-		if (this.voted.contains(objectId))
+		if (voted.contains(objectId))
 		{
 			return false;
 		}
-		this.voted.add(objectId);
-		this.votes[option]++;
+		voted.add(objectId);
+		votes[option]++;
 		return true;
 	}
 
 	public void startVotations()
 	{
-		this.voted.clear();
-		for (int i = 0; i < this.votes.length; i++)
+		voted.clear();
+		for (int i = 0; i < votes.length; i++)
 		{
-			this.votes[i] = 0;
+			votes[i] = 0;
 		}
-		this.votesEnabled = true;
+		votesEnabled = true;
 	}
 
 	public int[] endVotations()
 	{
-		this.voted.clear();
-		this.votesEnabled = false;
-		return this.votes;
+		voted.clear();
+		votesEnabled = false;
+		return votes;
 	}
 
 	public boolean areVotesEnabled()
 	{
-		return this.votesEnabled;
+		return votesEnabled;
 	}
 
 	public void setGlobalChatDisabled(boolean chatDisabled)
 	{
-		this.globalChatDisabled = chatDisabled;
+		globalChatDisabled = chatDisabled;
 	}
 
 	public boolean isGlobalChatDisabled()
 	{
-		return this.globalChatDisabled;
+		return globalChatDisabled;
 	}
 
 	@SuppressWarnings("synthetic-access")

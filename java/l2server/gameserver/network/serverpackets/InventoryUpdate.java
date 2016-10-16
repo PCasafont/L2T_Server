@@ -54,7 +54,7 @@ public class InventoryUpdate extends L2ItemListPacket
 
 	public InventoryUpdate()
 	{
-		this.items = new ArrayList<>();
+		items = new ArrayList<>();
 		if (Config.DEBUG)
 		{
 			showDebug();
@@ -77,7 +77,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			this.items.add(new ItemInfo(item));
+			items.add(new ItemInfo(item));
 		}
 	}
 
@@ -85,7 +85,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			this.items.add(new ItemInfo(item, 1));
+			items.add(new ItemInfo(item, 1));
 		}
 	}
 
@@ -93,7 +93,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			this.items.add(new ItemInfo(item, 2));
+			items.add(new ItemInfo(item, 2));
 		}
 	}
 
@@ -101,7 +101,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			this.items.add(new ItemInfo(item, 3));
+			items.add(new ItemInfo(item, 3));
 		}
 	}
 
@@ -121,7 +121,7 @@ public class InventoryUpdate extends L2ItemListPacket
 
 	private void showDebug()
 	{
-		for (ItemInfo item : this.items)
+		for (ItemInfo item : items)
 		{
 			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
 					" last change:" + item.getChange());
@@ -131,14 +131,14 @@ public class InventoryUpdate extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		int count = this.items.size();
+		int count = items.size();
 		writeH(count);
-		for (ItemInfo item : this.items)
+		for (ItemInfo item : items)
 		{
 			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
 			writeItem(item);
 		}
-		this.items.clear();
-		this.items = null;
+		items.clear();
+		items = null;
 	}
 }

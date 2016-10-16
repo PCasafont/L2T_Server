@@ -36,7 +36,7 @@ public final class TeleportToLocation extends L2GameServerPacket
 
 	public TeleportToLocation(L2Object obj, int x, int y, int z, int heading)
 	{
-		this.targetObjId = obj.getObjectId();
+		targetObjId = obj.getObjectId();
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -46,12 +46,12 @@ public final class TeleportToLocation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.targetObjId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(targetObjId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeD(0x00); // isValidation ??
-		writeD(this.heading); // nYaw
+		writeD(heading); // nYaw
 		writeD(0x00);
 	}
 }

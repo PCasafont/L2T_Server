@@ -38,7 +38,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance player = L2World.getInstance().getPlayer(this.name);
+		L2PcInstance player = L2World.getInstance().getPlayer(name);
 		if (player == null)
 		{
 			return;

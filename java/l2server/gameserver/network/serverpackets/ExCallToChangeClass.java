@@ -27,15 +27,15 @@ public final class ExCallToChangeClass extends L2GameServerPacket
 
 	public ExCallToChangeClass(int classId, boolean show)
 	{
-		this.awakeningId = PlayerClassTable.getInstance().getAwakening(classId);
+		awakeningId = PlayerClassTable.getInstance().getAwakening(classId);
 		this.show = show;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.awakeningId);
-		writeD(this.show ? 1 : 0);
+		writeD(awakeningId);
+		writeD(show ? 1 : 0);
 		writeD(0x01);
 	}
 }

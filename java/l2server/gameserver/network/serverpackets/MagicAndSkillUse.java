@@ -26,13 +26,13 @@ public final class MagicAndSkillUse extends L2GameServerPacket
 
 	public MagicAndSkillUse(L2PcInstance player)
 	{
-		this.objId = player.getObjectId();
+		objId = player.getObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
+		writeD(objId);
 		writeD(133560);
 		writeD(730502);
 	}

@@ -121,7 +121,7 @@ public class Quest extends ManagedScript
 		}
 		else
 		{
-			this.allEventsS.put(name, this);
+			allEventsS.put(name, this);
 		}
 		init_LoadGlobalData();
 	}
@@ -204,7 +204,7 @@ public class Quest extends ManagedScript
 
 		public boolean isMultipleRegistrationAllowed()
 		{
-			return this.allowMultipleRegistration;
+			return allowMultipleRegistration;
 		}
 
 	}
@@ -216,7 +216,7 @@ public class Quest extends ManagedScript
 	 */
 	public int getQuestIntId()
 	{
-		return this.questId;
+		return questId;
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class Quest extends ManagedScript
 	 */
 	public byte getInitialState()
 	{
-		return this.initialState;
+		return initialState;
 	}
 
 	/**
@@ -247,7 +247,7 @@ public class Quest extends ManagedScript
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class Quest extends ManagedScript
 	 */
 	public String getDescr()
 	{
-		return this.descr;
+		return descr;
 	}
 
 	/**
@@ -296,7 +296,7 @@ public class Quest extends ManagedScript
 		{
 			timers = new CopyOnWriteArrayList<>();
 			timers.add(new QuestTimer(this, name, time, npc, player, repeating));
-			this.allEventTimers.put(name, timers);
+			allEventTimers.put(name, timers);
 		}
 		// a timer with this name exists, but may not be for the same set of npc and player
 		else
@@ -307,12 +307,12 @@ public class Quest extends ManagedScript
 			{
 				try
 				{
-					this.rwLock.writeLock().lock();
+					rwLock.writeLock().lock();
 					timers.add(new QuestTimer(this, name, time, npc, player, repeating));
 				}
 				finally
 				{
-					this.rwLock.writeLock().unlock();
+					rwLock.writeLock().unlock();
 				}
 			}
 		}
@@ -328,7 +328,7 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			this.rwLock.readLock().lock();
+			rwLock.readLock().lock();
 			for (QuestTimer timer : qt)
 			{
 				if (timer != null)
@@ -342,14 +342,14 @@ public class Quest extends ManagedScript
 		}
 		finally
 		{
-			this.rwLock.readLock().unlock();
+			rwLock.readLock().unlock();
 		}
 		return null;
 	}
 
 	private List<QuestTimer> getQuestTimers(String name)
 	{
-		return this.allEventTimers.get(name);
+		return allEventTimers.get(name);
 	}
 
 	public void cancelQuestTimers(String name)
@@ -361,7 +361,7 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			this.rwLock.writeLock().lock();
+			rwLock.writeLock().lock();
 			for (QuestTimer timer : timers)
 			{
 				if (timer != null)
@@ -372,7 +372,7 @@ public class Quest extends ManagedScript
 		}
 		finally
 		{
-			this.rwLock.writeLock().unlock();
+			rwLock.writeLock().unlock();
 		}
 	}
 
@@ -399,12 +399,12 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			this.rwLock.writeLock().lock();
+			rwLock.writeLock().lock();
 			timers.remove(timer);
 		}
 		finally
 		{
-			this.rwLock.writeLock().unlock();
+			rwLock.writeLock().unlock();
 		}
 	}
 
@@ -680,13 +680,13 @@ public class Quest extends ManagedScript
 			String res = null;
 			try
 			{
-				res = onSkillSee(this.npc, this.caster, this.skill, this.targets, this.isPet);
+				res = onSkillSee(npc, caster, skill, targets, isPet);
 			}
 			catch (Exception e)
 			{
-				showError(this.caster, e);
+				showError(caster, e);
 			}
-			showResult(this.caster, res);
+			showResult(caster, res);
 		}
 	}
 
@@ -729,13 +729,13 @@ public class Quest extends ManagedScript
 			String res = null;
 			try
 			{
-				res = onAggroRangeEnter(this.npc, this.pc, this.isPet);
+				res = onAggroRangeEnter(npc, pc, isPet);
 			}
 			catch (Exception e)
 			{
-				showError(this.pc, e);
+				showError(pc, e);
 			}
-			showResult(this.pc, res);
+			showResult(pc, res);
 		}
 	}
 
@@ -1926,7 +1926,7 @@ public class Quest extends ManagedScript
 	{
 		boolean questwindow = true;
 		if (fileName.endsWith(".html") ||
-				player.getQuestState(this.name) != null && player.getQuestState(this.name).getState() >= State.STARTED)
+				player.getQuestState(name) != null && player.getQuestState(name).getState() >= State.STARTED)
 		{
 			questwindow = false;
 		}
@@ -2142,14 +2142,14 @@ public class Quest extends ManagedScript
 		// if timers ought to be restarted, the quest can take care of it
 		// with its code (example: save global data indicating what timer must
 		// be restarted).
-		for (List<QuestTimer> timers : this.allEventTimers.values())
+		for (List<QuestTimer> timers : allEventTimers.values())
 		{
 			for (QuestTimer timer : timers)
 			{
 				timer.cancel();
 			}
 		}
-		this.allEventTimers.clear();
+		allEventTimers.clear();
 		if (removeFromList)
 		{
 			return QuestManager.getInstance().removeQuest(this);
@@ -2168,12 +2168,12 @@ public class Quest extends ManagedScript
 
 	public void setOnEnterWorld(boolean val)
 	{
-		this.onEnterWorld = val;
+		onEnterWorld = val;
 	}
 
 	public boolean getOnEnterWorld()
 	{
-		return this.onEnterWorld;
+		return onEnterWorld;
 	}
 
 	public int getOnKillDelay(int npcId)

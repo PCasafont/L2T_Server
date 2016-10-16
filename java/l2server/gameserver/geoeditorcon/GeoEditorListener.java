@@ -57,17 +57,17 @@ public class GeoEditorListener extends Thread
 
 	private GeoEditorListener() throws IOException
 	{
-		this.serverSocket = new ServerSocket(PORT);
+		serverSocket = new ServerSocket(PORT);
 	}
 
 	public GeoEditorThread getThread()
 	{
-		return this.geoEditor;
+		return geoEditor;
 	}
 
 	public String getStatus()
 	{
-		if (this.geoEditor != null && this.geoEditor.isWorking())
+		if (geoEditor != null && geoEditor.isWorking())
 		{
 			return "Geoeditor connected.";
 		}
@@ -82,16 +82,16 @@ public class GeoEditorListener extends Thread
 		{
 			while (true)
 			{
-				connection = this.serverSocket.accept();
-				if (this.geoEditor != null && this.geoEditor.isWorking())
+				connection = serverSocket.accept();
+				if (geoEditor != null && geoEditor.isWorking())
 				{
 					Log.warning("Geoeditor already connected!");
 					connection.close();
 					continue;
 				}
 				Log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
-				this.geoEditor = new GeoEditorThread(connection);
-				this.geoEditor.start();
+				geoEditor = new GeoEditorThread(connection);
+				geoEditor.start();
 			}
 		}
 		catch (Exception e)
@@ -109,7 +109,7 @@ public class GeoEditorListener extends Thread
 		{
 			try
 			{
-				this.serverSocket.close();
+				serverSocket.close();
 			}
 			catch (IOException io)
 			{

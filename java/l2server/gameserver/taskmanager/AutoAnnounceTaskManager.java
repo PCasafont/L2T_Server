@@ -80,7 +80,7 @@ public class AutoAnnounceTaskManager
 		@Override
 		public void run()
 		{
-			Broadcast.announceToOnlinePlayers(this.text);
+			Broadcast.announceToOnlinePlayers(text);
 		}
 	}
 

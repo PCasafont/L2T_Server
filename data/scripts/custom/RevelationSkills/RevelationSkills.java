@@ -48,8 +48,8 @@ public class RevelationSkills extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.monkOfChaos);
-		addTalkId(this.monkOfChaos);
+		addStartNpc(monkOfChaos);
+		addTalkId(monkOfChaos);
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
@@ -144,9 +144,9 @@ public class RevelationSkills extends Quest
 		}
 		else if (event.equalsIgnoreCase("reset_revelation"))
 		{
-			if (player.getAdena() >= this.resetPrice)
+			if (player.getAdena() >= resetPrice)
 			{
-				player.reduceAdena(this.qn, this.resetPrice, player, true);
+				player.reduceAdena(qn, resetPrice, player, true);
 				for (L2Skill skill : player.getAllSkills())
 				{
 					if (skill == null)
@@ -160,15 +160,15 @@ public class RevelationSkills extends Quest
 					}
 				}
 
-				long promanderCount = player.getInventory().getInventoryItemCount(this.chaoticPomander, 0);
-				long promanderDualClassCount = player.getInventory().getInventoryItemCount(this.chaosPomanderDualClass, 0);
+				long promanderCount = player.getInventory().getInventoryItemCount(chaoticPomander, 0);
+				long promanderDualClassCount = player.getInventory().getInventoryItemCount(chaosPomanderDualClass, 0);
 				if (promanderCount > 0)
 				{
-					player.destroyItemByItemId(this.qn, this.chaoticPomander, 1, npc, true);
+					player.destroyItemByItemId(qn, chaoticPomander, 1, npc, true);
 				}
 				else if (promanderDualClassCount > 0)
 				{
-					player.destroyItemByItemId(this.qn, this.chaosPomanderDualClass, 1, npc, true);
+					player.destroyItemByItemId(qn, chaosPomanderDualClass, 1, npc, true);
 				}
 			}
 			else

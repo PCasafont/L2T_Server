@@ -143,7 +143,7 @@ public class SuperMewCatZ extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			int delay = moveTheFucker(this.npc);
+			int delay = moveTheFucker(npc);
 
 			ThreadPoolManager.getInstance().scheduleGeneral(this, delay);
 		}

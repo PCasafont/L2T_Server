@@ -32,8 +32,8 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.unk1 = readD();
-		this.tab = readD();
+		unk1 = readD();
+		tab = readD();
 	}
 
 	/**
@@ -54,6 +54,6 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 		}
 
 		//do we need powers to do that??
-		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), this.tab));
+		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), tab));
 	}
 }

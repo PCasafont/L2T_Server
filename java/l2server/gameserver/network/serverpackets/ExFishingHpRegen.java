@@ -36,11 +36,11 @@ public class ExFishingHpRegen extends L2GameServerPacket
 
 	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
 	{
-		this.activeChar = character;
+		activeChar = character;
 		this.time = time;
 		this.fishHP = fishHP;
-		this.hpMode = HPmode;
-		this.goodUse = GoodUse;
+		hpMode = HPmode;
+		goodUse = GoodUse;
 		this.anim = anim;
 		this.penalty = penalty;
 		this.hpBarColor = hpBarColor;
@@ -52,13 +52,13 @@ public class ExFishingHpRegen extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeD(this.time);
-		writeD(this.fishHP);
-		writeC(this.hpMode); // 0 = HP stop, 1 = HP raise
-		writeC(this.goodUse); // 0 = none, 1 = success, 2 = failed
-		writeC(this.anim); // Anim: 0 = none, 1 = reeling, 2 = pumping
-		writeD(this.penalty); // Penalty
-		writeC(this.hpBarColor); // 0 = normal hp bar, 1 = purple hp bar
+		writeD(activeChar.getObjectId());
+		writeD(time);
+		writeD(fishHP);
+		writeC(hpMode); // 0 = HP stop, 1 = HP raise
+		writeC(goodUse); // 0 = none, 1 = success, 2 = failed
+		writeC(anim); // Anim: 0 = none, 1 = reeling, 2 = pumping
+		writeD(penalty); // Penalty
+		writeC(hpBarColor); // 0 = normal hp bar, 1 = purple hp bar
 	}
 }

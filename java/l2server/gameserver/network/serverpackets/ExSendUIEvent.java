@@ -48,7 +48,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.text = text;
-		this.npcString = -1;
+		npcString = -1;
 	}
 
 	/**
@@ -66,8 +66,8 @@ public class ExSendUIEvent extends L2GameServerPacket
 		this.isIncrease = isIncrease;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.text = "";
-		this.npcString = npcStringId;
+		text = "";
+		npcString = npcStringId;
 	}
 
 	/**
@@ -81,11 +81,11 @@ public class ExSendUIEvent extends L2GameServerPacket
 	public ExSendUIEvent(int uiType, int currentPoints, int maxPoints, int npcStringId)
 	{
 		this.uiType = uiType;
-		this.isIncrease = -1;
-		this.startTime = currentPoints;
-		this.endTime = maxPoints;
-		this.text = "";
-		this.npcString = npcStringId;
+		isIncrease = -1;
+		startTime = currentPoints;
+		endTime = maxPoints;
+		text = "";
+		npcString = npcStringId;
 	}
 
 	@Override
@@ -97,43 +97,41 @@ public class ExSendUIEvent extends L2GameServerPacket
 		}
 
 		writeD(getClient().getActiveChar().getObjectId());
-		writeD(this.uiType);
+		writeD(uiType);
 		writeD(0x00); // unknown
 		writeD(0x00); // unknown
 
-		switch (this.uiType)
+		switch (uiType)
 		{
 			case 2:
-				writeS(String.valueOf(this.startTime)); // Seconds
-				writeS(String.valueOf(this.endTime)); // % done
+				writeS(String.valueOf(startTime)); // Seconds
+				writeS(String.valueOf(endTime)); // % done
 				writeS(String.valueOf(0)); // Should be 0
 				writeD(0x00); // % symbol on the bar
-				writeD(this.npcString); //npcString
+				writeD(npcString); //npcString
 				writeD(122520);
 
 				break;
 
 			case 5:
-				writeS(String.valueOf(this.isIncrease));
-				writeS(String.valueOf(this.startTime));
-				writeS(String.valueOf(this.endTime));
+				writeS(String.valueOf(isIncrease));
+				writeS(String.valueOf(startTime));
+				writeS(String.valueOf(endTime));
 				writeD(0x00);
 				//	writeD(0x00);
-				writeD(this.npcString);
+				writeD(npcString);
 
 				break;
 
 			default:
-				writeS(String.valueOf(this.isIncrease)); // "0": count negative, "1": count positive
-				writeS(String.valueOf(this.startTime / 60)); // timer starting minute(s)
-				writeS(String.valueOf(this.startTime % 60)); // timer starting second(s)
+				writeS(String.valueOf(isIncrease)); // "0": count negative, "1": count positive
+				writeS(String.valueOf(startTime / 60)); // timer starting minute(s)
+				writeS(String.valueOf(startTime % 60)); // timer starting second(s)
 				writeD(0x00); // unknown
-				writeD(this.npcString); // TODO: npcString
-				writeS(this.text); // text above timer
-				writeS(String.valueOf(
-						this.endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
-				writeS(String.valueOf(
-						this.endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
+				writeD(npcString); // TODO: npcString
+				writeS(text); // text above timer
+				writeS(String.valueOf(endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
+				writeS(String.valueOf(endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
 
 				break;
 		}

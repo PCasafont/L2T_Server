@@ -26,28 +26,28 @@ public class L2PremiumItem
 
 	public L2PremiumItem(int itemid, long count, String sender)
 	{
-		this.itemId = itemid;
+		itemId = itemid;
 		this.count = count;
 		this.sender = sender;
 	}
 
 	public void updateCount(long newcount)
 	{
-		this.count = newcount;
+		count = newcount;
 	}
 
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public long getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	public String getSender()
 	{
-		return this.sender;
+		return sender;
 	}
 }

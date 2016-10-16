@@ -41,17 +41,17 @@ public class L2SkillTeleport extends L2Skill
 	{
 		super(set);
 
-		this.recallType = set.getString("recallType", "");
+		recallType = set.getString("recallType", "");
 		String coords = set.getString("teleCoords", null);
 		if (coords != null)
 		{
 			String[] valuesSplit = coords.split(",");
-			this.loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
+			loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
 					Integer.parseInt(valuesSplit[2]));
 		}
 		else
 		{
-			this.loc = null;
+			loc = null;
 		}
 	}
 
@@ -155,17 +155,17 @@ public class L2SkillTeleport extends L2Skill
 				}
 				else
 				{
-					if (this.recallType.equalsIgnoreCase("Castle"))
+					if (recallType.equalsIgnoreCase("Castle"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Castle);
 					}
-					else if (this.recallType.equalsIgnoreCase("ClanHall"))
+					else if (recallType.equalsIgnoreCase("ClanHall"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.ClanHall);
 					}
-					else if (this.recallType.equalsIgnoreCase("Fortress"))
+					else if (recallType.equalsIgnoreCase("Fortress"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Fortress);

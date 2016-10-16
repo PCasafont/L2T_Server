@@ -70,15 +70,15 @@ public class QuestTimer
 		this.quest = quest;
 		this.player = player;
 		this.npc = npc;
-		this.isRepeating = repeating;
+		isRepeating = repeating;
 		if (repeating)
 		{
-			this.schedular = ThreadPoolManager.getInstance()
+			schedular = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new ScheduleTimerTask(), time, time); // Prepare auto end task
 		}
 		else
 		{
-			this.schedular = ThreadPoolManager.getInstance()
+			schedular = ThreadPoolManager.getInstance()
 					.scheduleGeneral(new ScheduleTimerTask(), time); // Prepare auto end task
 		}
 	}
@@ -97,11 +97,11 @@ public class QuestTimer
 	// Method - Public
 	public void cancel()
 	{
-		this.isActive = false;
+		isActive = false;
 
-		if (this.schedular != null)
+		if (schedular != null)
 		{
-			this.schedular.cancel(false);
+			schedular.cancel(false);
 		}
 
 		getQuest().removeQuestTimer(this);
@@ -132,37 +132,37 @@ public class QuestTimer
 	// Property - Public
 	public final boolean getIsActive()
 	{
-		return this.isActive;
+		return isActive;
 	}
 
 	public final boolean getIsRepeating()
 	{
-		return this.isRepeating;
+		return isRepeating;
 	}
 
 	public final Quest getQuest()
 	{
-		return this.quest;
+		return quest;
 	}
 
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public final L2Npc getNpc()
 	{
-		return this.npc;
+		return npc;
 	}
 
 	public final L2PcInstance getPlayer()
 	{
-		return this.player;
+		return player;
 	}
 
 	@Override
 	public final String toString()
 	{
-		return this.name;
+		return name;
 	}
 }

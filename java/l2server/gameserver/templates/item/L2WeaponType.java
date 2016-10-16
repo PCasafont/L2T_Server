@@ -55,7 +55,7 @@ public enum L2WeaponType implements L2ItemType
 	 */
 	L2WeaponType(String name)
 	{
-		this.mask = 1 << ordinal();
+		mask = 1 << ordinal();
 		this.name = name;
 	}
 
@@ -67,7 +67,7 @@ public enum L2WeaponType implements L2ItemType
 	@Override
 	public int mask()
 	{
-		return this.mask;
+		return mask;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public enum L2WeaponType implements L2ItemType
 	@Override
 	public String toString()
 	{
-		return this.name;
+		return name;
 	}
 
 }

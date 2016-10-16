@@ -51,13 +51,13 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 		for (int zoneId = 60028; zoneId <= 60051; zoneId++)
 		{
 			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
-			this.roomInfo.put(zone, new zoneInfo());
+			roomInfo.put(zone, new zoneInfo());
 
 			//Spawn the normal mobs here
 			SpawnTable.getInstance().spawnSpecificTable(zone.getName().replace(" ", "_"));
 		}
 
-		for (int npc : this.normalMobs)
+		for (int npc : normalMobs)
 		{
 			addKillId(npc);
 			addSpawnId(npc);
@@ -205,7 +205,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		for (Entry<L2ZoneType, zoneInfo> currentZone : this.roomInfo.entrySet())
+		for (Entry<L2ZoneType, zoneInfo> currentZone : roomInfo.entrySet())
 		{
 			if (currentZone.getKey().isInsideZone(npc))
 			{

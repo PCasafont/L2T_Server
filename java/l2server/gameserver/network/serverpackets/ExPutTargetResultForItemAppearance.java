@@ -34,8 +34,8 @@ public class ExPutTargetResultForItemAppearance extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.answer);
-		writeQ(this.cost);
+		writeD(answer);
+		writeQ(cost);
 		writeD(1);
 	}
 }

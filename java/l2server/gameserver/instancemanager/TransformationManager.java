@@ -35,12 +35,12 @@ public class TransformationManager
 
 	private TransformationManager()
 	{
-		this.transformations = new TIntObjectHashMap<>();
+		transformations = new TIntObjectHashMap<>();
 	}
 
 	public void report()
 	{
-		Log.info("Loaded: " + this.transformations.size() + " transformations.");
+		Log.info("Loaded: " + transformations.size() + " transformations.");
 	}
 
 	public boolean transformPlayer(int id, L2PcInstance player)
@@ -60,12 +60,12 @@ public class TransformationManager
 
 	public L2Transformation getTransformationById(int id)
 	{
-		return this.transformations.get(id);
+		return transformations.get(id);
 	}
 
 	public L2Transformation registerTransformation(L2Transformation transformation)
 	{
-		return this.transformations.put(transformation.getId(), transformation);
+		return transformations.put(transformation.getId(), transformation);
 	}
 
 	@SuppressWarnings("synthetic-access")

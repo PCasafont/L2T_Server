@@ -32,8 +32,8 @@ public final class StartRotating extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.degree = readD();
-		this.side = readD();
+		degree = readD();
+		side = readD();
 	}
 
 	@Override
@@ -48,12 +48,12 @@ public final class StartRotating extends L2GameClientPacket
 		final StartRotation br;
 		if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
 		{
-			br = new StartRotation(activeChar.getAirShip().getObjectId(), this.degree, this.side, 0);
+			br = new StartRotation(activeChar.getAirShip().getObjectId(), degree, side, 0);
 			activeChar.getAirShip().broadcastPacket(br);
 		}
 		else
 		{
-			br = new StartRotation(activeChar.getObjectId(), this.degree, this.side, 0);
+			br = new StartRotation(activeChar.getObjectId(), degree, side, 0);
 			activeChar.broadcastPacket(br);
 		}
 	}

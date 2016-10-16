@@ -26,7 +26,7 @@ public class StopRotation extends L2GameServerPacket
 
 	public StopRotation(int objectId, int degree, int speed)
 	{
-		this.charObjId = objectId;
+		charObjId = objectId;
 		this.degree = degree;
 		this.speed = speed;
 	}
@@ -34,9 +34,9 @@ public class StopRotation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.degree);
-		writeD(this.speed);
+		writeD(charObjId);
+		writeD(degree);
+		writeD(speed);
 		writeD(-1); // GoD ???
 	}
 }

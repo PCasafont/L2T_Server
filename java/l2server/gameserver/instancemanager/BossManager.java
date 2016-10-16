@@ -34,22 +34,22 @@ public class BossManager
 
 	public void registerBoss(L2RaidBossInstance boss)
 	{
-		this.bosses.put(boss.getNpcId(), boss);
+		bosses.put(boss.getNpcId(), boss);
 	}
 
 	public Map<Integer, L2RaidBossInstance> getBosses()
 	{
-		return this.bosses;
+		return bosses;
 	}
 
 	public L2RaidBossInstance getBoss(int id)
 	{
-		return this.bosses.get(id);
+		return bosses.get(id);
 	}
 
 	public boolean isAlive(int id)
 	{
-		L2RaidBossInstance boss = this.bosses.get(id);
+		L2RaidBossInstance boss = bosses.get(id);
 		return boss != null && !boss.isDead();
 	}
 

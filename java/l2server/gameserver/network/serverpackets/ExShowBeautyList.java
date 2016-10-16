@@ -48,13 +48,13 @@ public final class ExShowBeautyList extends L2GameServerPacket
 			return;
 		}
 
-		writeQ(this.adena);
-		writeQ(this.tickets);
+		writeQ(adena);
+		writeQ(tickets);
 
-		writeD(this.isFace ? 1 : 0);
+		writeD(isFace ? 1 : 0);
 
 		Map<Integer, BeautyInfo> styles = null;
-		if (!this.isFace)
+		if (!isFace)
 		{
 			styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
 		}

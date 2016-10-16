@@ -62,21 +62,21 @@ public final class ConditionSiegeZone extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		L2Character target = this.self ? env.player : env.target;
+		L2Character target = self ? env.player : env.target;
 		Castle castle = CastleManager.getInstance().getCastle(target);
 		Fort fort = FortManager.getInstance().getFort(target);
 
 		if (castle == null && fort == null)
 		{
-			return (this.value & COND_NOT_ZONE) != 0;
+			return (value & COND_NOT_ZONE) != 0;
 		}
 		if (castle != null)
 		{
-			return checkIfOk(target, castle, this.value);
+			return checkIfOk(target, castle, value);
 		}
 		else
 		{
-			return checkIfOk(target, fort, this.value);
+			return checkIfOk(target, fort, value);
 		}
 	}
 

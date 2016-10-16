@@ -44,7 +44,7 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		readD(); // ???
 		readC(); // ???
 		readH(); // ???
-		this.authKey = readString();
+		authKey = readString();
 		readC(); // ???
 		readH(); // ???
 		readD(); // ???
@@ -80,10 +80,10 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		/*try
 		{*/
 			AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
-			String user = lc.loginValid(this.authKey, client);
+			String user = lc.loginValid(authKey, client);
 			if (user != null)
 			{
-				result = lc.tryAuthLogin(this.authKey, client, user);
+				result = lc.tryAuthLogin(authKey, client, user);
 			}
 
 			switch (result)

@@ -40,7 +40,7 @@ public final class OlympiadAnnouncer implements Runnable
 		{
 			if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
 			{
-				this.managers.add(spawn);
+				managers.add(spawn);
 			}
 		}
 	}
@@ -49,14 +49,14 @@ public final class OlympiadAnnouncer implements Runnable
 	public void run()
 	{
 		OlympiadGameTask task;
-		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; this.currentStadium++)
+		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; currentStadium++)
 		{
-			if (this.currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
+			if (currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
 			{
-				this.currentStadium = 0;
+				currentStadium = 0;
 			}
 
-			task = OlympiadGameManager.getInstance().getOlympiadTask(this.currentStadium);
+			task = OlympiadGameManager.getInstance().getOlympiadTask(currentStadium);
 			if (task != null && task.getGame() != null && task.needAnnounce())
 			{
 				int msg;
@@ -77,7 +77,7 @@ public final class OlympiadAnnouncer implements Runnable
 
 				L2Npc manager;
 				NpcSay packet;
-				for (L2Spawn spawn : this.managers)
+				for (L2Spawn spawn : managers)
 				{
 					manager = spawn.getNpc();
 					if (manager != null)

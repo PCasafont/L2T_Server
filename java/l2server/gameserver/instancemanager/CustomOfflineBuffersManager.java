@@ -69,65 +69,65 @@ public class CustomOfflineBuffersManager
 
 		private BufferTable(Integer bufferId)
 		{
-			this.playerId = bufferId;
-			this.coinName = "Adena";
-			this.buffs = new HashMap<>();
+			playerId = bufferId;
+			coinName = "Adena";
+			buffs = new HashMap<>();
 		}
 
 		private void setCointId(int i)
 		{
-			this.coinId = i;
-			this.coinName = i != 0 ? ItemTable.getInstance().getTemplate(this.coinId).getName() : null;
+			coinId = i;
+			coinName = i != 0 ? ItemTable.getInstance().getTemplate(coinId).getName() : null;
 		}
 
 		private int getCointId()
 		{
-			return this.coinId;
+			return coinId;
 		}
 
 		private void addBuff(int skillId, long skillPrice)
 		{
-			this.buffs.put(skillId, skillPrice);
+			buffs.put(skillId, skillPrice);
 		}
 
 		private Map<Integer, Long> getBuffs()
 		{
-			return this.buffs;
+			return buffs;
 		}
 
 		private String getDescription()
 		{
-			return this.description;
+			return description;
 		}
 
 		private void setDescription(String desc)
 		{
-			this.description = desc;
+			description = desc;
 		}
 
 		private int getPlayerId()
 		{
-			return this.playerId;
+			return playerId;
 		}
 
 		private void addBuffs(Map<Integer, Long> playerBuffs)
 		{
-			this.buffs = playerBuffs;
+			buffs = playerBuffs;
 		}
 
 		private String getCoinName()
 		{
-			return this.coinName;
+			return coinName;
 		}
 
 		private L2PcInstance getBuffer(boolean deleteIfIllegal)
 		{
-			L2PcInstance buffer = L2World.getInstance().getPlayer(this.playerId);
+			L2PcInstance buffer = L2World.getInstance().getPlayer(playerId);
 			if (buffer != null && deleteIfIllegal && !buffer.getIsOfflineBuffer())
 			{
 				synchronized (customBufferTable)
 				{
-					customBufferTable.remove(this.playerId);
+					customBufferTable.remove(playerId);
 					return null;
 				}
 			}
@@ -138,10 +138,10 @@ public class CustomOfflineBuffersManager
 	public String getOfflineBuffersPage(int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
 			int maxPlayersPerPage = 20;
-			int playersSize = this.customBufferTable.size();
+			int playersSize = customBufferTable.size();
 			int maxPages = playersSize / maxPlayersPerPage;
 			if (playersSize > maxPlayersPerPage * maxPages)
 			{
@@ -167,7 +167,7 @@ public class CustomOfflineBuffersManager
 			sb.append(
 					"<table width=750 bgcolor=999999><tr><td FIXWIDTH=50>Name</td><td FIXWIDTH=60>Class</td><td FIXWIDTH=35 align=center>Mana</td><td FIXWIDTH=80 align=center>Description</td><td FIXWIDTH=30>Buffs Count</td><td FIXWIDTH=35 align=center>Coin</td></tr></table>");
 
-			for (Entry<Integer, BufferTable> i : this.customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : customBufferTable.entrySet())
 			{
 				BufferTable buffTable = i.getValue();
 				if (buffTable == null)
@@ -205,9 +205,9 @@ public class CustomOfflineBuffersManager
 		}
 
 		StringBuilder sb = new StringBuilder();
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(playerId);
+			BufferTable buffTable = customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -271,9 +271,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(playerId);
+			BufferTable buffTable = customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -287,7 +287,7 @@ public class CustomOfflineBuffersManager
 
 			if (buffer.getClient() == null || !buffer.getClient().isDetached() || !buffer.getIsOfflineBuffer())
 			{
-				this.customBufferTable.remove(playerId);
+				customBufferTable.remove(playerId);
 				return;
 			}
 
@@ -388,7 +388,7 @@ public class CustomOfflineBuffersManager
 		{
 			return;
 		}
-		BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+		BufferTable buffTable = customBufferTable.get(player.getObjectId());
 		List<L2Skill> buffSkills = new ArrayList<>();
 		for (L2Skill sk : player.getAllSkills())
 		{
@@ -509,13 +509,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				this.customBufferTable.put(player.getObjectId(), buffTable);
+				customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			if (player.getSkillLevelHash(skillId) != -1)
@@ -540,16 +540,16 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.getBuffs().remove(skillId);
 
 				if (buffTable.getBuffs().size() == 0)
 				{
-					this.customBufferTable.remove(player.getObjectId());
+					customBufferTable.remove(player.getObjectId());
 				}
 
 				player.sendMessage("World Buffers: Buff removed!");
@@ -566,13 +566,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				this.customBufferTable.put(player.getObjectId(), buffTable);
+				customBufferTable.put(player.getObjectId(), buffTable);
 			}
 			buffTable.setDescription(description);
 			player.sendMessage("World Buffers: Description updated!");
@@ -588,13 +588,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				this.customBufferTable.put(player.getObjectId(), buffTable);
+				customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			buffTable.setCointId(coin != null ? TenkaiAuctionManager.getInstance().getCurrencyId(coin) : 0);
@@ -611,9 +611,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.setDescription("");
@@ -634,9 +634,9 @@ public class CustomOfflineBuffersManager
 			return true;
 		}
 
-		synchronized (this.customBufferTable)
+		synchronized (customBufferTable)
 		{
-			BufferTable buffTable = this.customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				if (buffTable.getBuffs().size() > 0 && buffTable.getCointId() != 0)
@@ -714,7 +714,7 @@ public class CustomOfflineBuffersManager
 					table.setCointId(coinId);
 					player.setIsOfflineBuffer(true);
 
-					this.customBufferTable.put(charId, table);
+					customBufferTable.put(charId, table);
 				}
 				catch (Exception e)
 				{
@@ -740,7 +740,7 @@ public class CustomOfflineBuffersManager
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("CustomOfflineBuffers: restored " + this.customBufferTable.size() + " offline buffers!");
+		Log.info("CustomOfflineBuffers: restored " + customBufferTable.size() + " offline buffers!");
 	}
 
 	public void storeOfflineBuffers()
@@ -750,7 +750,7 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		if (this.customBufferTable.isEmpty())
+		if (customBufferTable.isEmpty())
 		{
 			return;
 		}
@@ -761,7 +761,7 @@ public class CustomOfflineBuffersManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement sq = con.prepareStatement(STORE_BUFFERS);
 
-			for (Entry<Integer, BufferTable> i : this.customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : customBufferTable.entrySet())
 			{
 				BufferTable table = i.getValue();
 				if (table.getBuffs().isEmpty())

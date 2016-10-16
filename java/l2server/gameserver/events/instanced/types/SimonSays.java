@@ -51,26 +51,26 @@ public class SimonSays extends EventInstance
 	public void calculateRewards()
 	{
 		L2PcInstance winner = null;
-		if (this.teams[0].getParticipatedPlayerCount() != 1)
+		if (teams[0].getParticipatedPlayerCount() != 1)
 		{
 			Announcements.getInstance().announceToAll("The event has ended in a tie");
 			return;
 		}
 
-		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			winner = playerInstance;
 		}
 
 		if (winner != null)
 		{
-			this.winners.add(0, winner);
+			winners.add(0, winner);
 		}
 
-		if (!this.winners.isEmpty())
+		if (!winners.isEmpty())
 		{
-			rewardPlayers(this.winners);
-			Announcements.getInstance().announceToAll("The event has ended. The player " + this.winners.get(0).getName() +
+			rewardPlayers(winners);
+			Announcements.getInstance().announceToAll("The event has ended. The player " + winners.get(0).getName() +
 					" has won being the last one standing!");
 		}
 		else
@@ -84,10 +84,10 @@ public class SimonSays extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		if (this.teams[0].getParticipatedPlayerCount() > 0)
+		if (teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Players staying:<br>";
-			for (L2PcInstance participant : this.teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
@@ -113,44 +113,44 @@ public class SimonSays extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, this.teams[0].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, teams[0].getCoords(), false, false);
 	}
 
 	public void onSocialAction(L2PcInstance player, int actionId)
 	{
-		if (this.simonSaysTask.isWaiting() || !isPlayerParticipant(player.getObjectId()))
+		if (simonSaysTask.isWaiting() || !isPlayerParticipant(player.getObjectId()))
 		{
 			return;
 		}
 
-		if (actionId == this.currentSocialActionId)
+		if (actionId == currentSocialActionId)
 		{
-			this.actedPlayers.add(player.getObjectId());
+			actedPlayers.add(player.getObjectId());
 			player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events", "Ok!"));
 
-			player.addEventPoints(this.winners.size() + this.teams[0].getParticipatedPlayers().size() - this.actedPlayers.size());
+			player.addEventPoints(winners.size() + teams[0].getParticipatedPlayers().size() - actedPlayers.size());
 		}
 		else
 		{
-			this.someoneFailed = true;
+			someoneFailed = true;
 			player.sendPacket(
 					new CreatureSay(0, Say2.TELL, "Instanced Events", "Ooh, error! You have been disqualified."));
 			removeParticipant(player.getObjectId());
-			this.winners.add(0, player);
+			winners.add(0, player);
 			new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
 		}
 	}
 
 	public void simonSays()
 	{
-		this.currentSocialActionId = Rnd.get(16) + 2;
-		if (this.currentSocialActionId > 15)
+		currentSocialActionId = Rnd.get(16) + 2;
+		if (currentSocialActionId > 15)
 		{
-			this.currentSocialActionId += 12;
+			currentSocialActionId += 12;
 		}
 
-		CreatureSay cs = new CreatureSay(0, Say2.BATTLEFIELD, "Simon", getActionString(this.currentSocialActionId));
-		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
+		CreatureSay cs = new CreatureSay(0, Say2.BATTLEFIELD, "Simon", getActionString(currentSocialActionId));
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -224,31 +224,32 @@ public class SimonSays extends EventInstance
 		CreatureSay cs3 =
 				new CreatureSay(0, Say2.TELL, "Instanced Events", "You have been disqualified for not doing anything!");
 
-		List<L2PcInstance> participants = new ArrayList<>(this.teams[0].getParticipatedPlayers().values());
+		List<L2PcInstance> participants = new ArrayList<>(teams[0].getParticipatedPlayers().values());
 		for (L2PcInstance playerInstance : participants)
 		{
-			if (playerInstance != null && !this.actedPlayers.contains(playerInstance.getObjectId()))
+			if (playerInstance != null && !actedPlayers.contains(playerInstance.getObjectId()))
 			{
-				this.someoneFailed = true;
+				someoneFailed = true;
 				removeParticipant(playerInstance.getObjectId());
 				new EventTeleporter(playerInstance, new Point3D(0, 0, 0), false, true);
 				playerInstance.sendPacket(cs3);
 			}
 		}
 
-		if (!this.someoneFailed && getParticipatedPlayersCount() > 1)
+		if (!someoneFailed && getParticipatedPlayersCount() > 1)
 		{
-			L2PcInstance player = this.teams[0].getParticipatedPlayers().get(this.actedPlayers.get(this.actedPlayers.size() - 1));
+			L2PcInstance player = teams[0].getParticipatedPlayers().get(actedPlayers.get(
+					actedPlayers.size() - 1));
 			if (player != null)
 			{
 				removeParticipant(player.getObjectId());
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
-				this.winners.add(0, player);
+				winners.add(0, player);
 				player.sendPacket(cs2);
 			}
 		}
 
-		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -261,8 +262,8 @@ public class SimonSays extends EventInstance
 			stopFight();
 		}
 
-		this.someoneFailed = false;
-		this.actedPlayers.clear();
+		someoneFailed = false;
+		actedPlayers.clear();
 	}
 
 	class SimonSaysTask implements Runnable
@@ -273,10 +274,10 @@ public class SimonSays extends EventInstance
 		@Override
 		public void run()
 		{
-			if (!this.stop && isState(EventState.STARTED))
+			if (!stop && isState(EventState.STARTED))
 			{
 				int delay;
-				if (this.waiting)
+				if (waiting)
 				{
 					simonSays();
 					delay = 15000;
@@ -286,7 +287,7 @@ public class SimonSays extends EventInstance
 					endSimonSaysRound();
 					delay = 5000;
 				}
-				this.waiting = !this.waiting;
+				waiting = !waiting;
 
 				ThreadPoolManager.getInstance().scheduleGeneral(this, delay);
 			}
@@ -294,27 +295,27 @@ public class SimonSays extends EventInstance
 
 		public void stop()
 		{
-			this.stop = true;
+			stop = true;
 		}
 
 		public boolean isStopped()
 		{
-			return this.stop;
+			return stop;
 		}
 
 		public boolean isWaiting()
 		{
-			return this.waiting;
+			return waiting;
 		}
 	}
 
 	public void startSimonSaysTask()
 	{
-		if (this.simonSaysTask != null && !this.simonSaysTask.isStopped())
+		if (simonSaysTask != null && !simonSaysTask.isStopped())
 		{
-			this.simonSaysTask.stop();
+			simonSaysTask.stop();
 		}
-		this.simonSaysTask = new SimonSaysTask();
-		ThreadPoolManager.getInstance().scheduleGeneral(this.simonSaysTask, 30000);
+		simonSaysTask = new SimonSaysTask();
+		ThreadPoolManager.getInstance().scheduleGeneral(simonSaysTask, 30000);
 	}
 }

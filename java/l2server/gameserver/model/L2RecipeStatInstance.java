@@ -59,7 +59,7 @@ public class L2RecipeStatInstance
 	 */
 	public StatType getType()
 	{
-		return this.type;
+		return type;
 	}
 
 	/**
@@ -67,6 +67,6 @@ public class L2RecipeStatInstance
 	 */
 	public int getValue()
 	{
-		return this.value;
+		return value;
 	}
 }

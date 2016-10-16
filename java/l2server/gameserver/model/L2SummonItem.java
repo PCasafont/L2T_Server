@@ -35,26 +35,26 @@ public class L2SummonItem
 
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public int getNpcId()
 	{
-		return this.npcId;
+		return npcId;
 	}
 
 	public byte getType()
 	{
-		return this.type;
+		return type;
 	}
 
 	public boolean isPetSummon()
 	{
-		return this.type == 1 || this.type == 2;
+		return type == 1 || type == 2;
 	}
 
 	public int getDespawnDelay()
 	{
-		return this.despawnDelay;
+		return despawnDelay;
 	}
 }

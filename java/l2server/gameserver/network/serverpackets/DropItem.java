@@ -47,22 +47,22 @@ public class DropItem extends L2GameServerPacket
 	public DropItem(L2ItemInstance item, int playerObjId)
 	{
 		this.item = item;
-		this.charObjId = playerObjId;
+		charObjId = playerObjId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.item.getObjectId());
-		writeD(this.item.getItemId());
+		writeD(charObjId);
+		writeD(item.getObjectId());
+		writeD(item.getItemId());
 
-		writeD(this.item.getX());
-		writeD(this.item.getY());
-		writeD(this.item.getZ());
+		writeD(item.getX());
+		writeD(item.getY());
+		writeD(item.getZ());
 		// only show item count if it is a stackable item
-		writeC(this.item.isStackable() ? 0x01 : 0x00);
-		writeQ(this.item.getCount());
+		writeC(item.isStackable() ? 0x01 : 0x00);
+		writeQ(item.getCount());
 
 		writeC(0); // unknown
 	}

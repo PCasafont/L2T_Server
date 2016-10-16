@@ -56,7 +56,7 @@ public class ImageTable
 
 				id = Integer.valueOf(imgName.substring(0, imgName.length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				this.images.put(id, new PledgeCrest(id, array));
+				images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -79,7 +79,7 @@ public class ImageTable
 				}
 				id = Integer.valueOf(image.getName().substring(0, image.getName().length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				this.images.put(id, new PledgeCrest(id, array));
+				images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -88,16 +88,16 @@ public class ImageTable
 			e.printStackTrace();
 		}
 
-		Log.info("ImageTable: Loaded " + this.images.size() + " custom images.");
+		Log.info("ImageTable: Loaded " + images.size() + " custom images.");
 	}
 
 	public void sendImages(L2PcInstance player)
 	{
-		for (int imageId : this.images.keySet())
+		for (int imageId : images.keySet())
 		{
-			if (this.images.get(imageId) != null)
+			if (images.get(imageId) != null)
 			{
-				player.sendPacket(this.images.get(imageId));
+				player.sendPacket(images.get(imageId));
 			}
 		}
 	}

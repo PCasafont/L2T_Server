@@ -43,7 +43,7 @@ public class HennaTable implements Reloadable
 
 	private HennaTable()
 	{
-		this.henna = new TIntObjectHashMap<>();
+		henna = new TIntObjectHashMap<>();
 		if (!Config.IS_CLASSIC)
 		{
 			restoreHennaData();
@@ -149,12 +149,12 @@ public class HennaTable implements Reloadable
 				}
 			}
 		}
-		Log.info("HennaTable: Loaded " + this.henna.size() + " Templates.");
+		Log.info("HennaTable: Loaded " + henna.size() + " Templates.");
 	}
 
 	public L2Henna getTemplate(int id)
 	{
-		return this.henna.get(id);
+		return henna.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
@@ -166,7 +166,7 @@ public class HennaTable implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		this.henna.clear();
+		henna.clear();
 		restoreHennaData();
 		return true;
 	}

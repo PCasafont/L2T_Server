@@ -37,10 +37,10 @@ public class GMHennaInfo extends L2GameServerPacket
 			L2Henna h = this.activeChar.getHenna(i + 1);
 			if (h != null)
 			{
-				this.hennas[j++] = h;
+				hennas[j++] = h;
 			}
 		}
-		this.count = j;
+		count = j;
 	}
 
     /*
@@ -53,23 +53,23 @@ public class GMHennaInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.activeChar.getHennaStatINT());
-		writeC(this.activeChar.getHennaStatSTR());
-		writeC(this.activeChar.getHennaStatCON());
-		writeC(this.activeChar.getHennaStatMEN());
-		writeC(this.activeChar.getHennaStatDEX());
-		writeC(this.activeChar.getHennaStatWIT());
-		writeC(this.activeChar.getHennaStatLUC());
-		writeC(this.activeChar.getHennaStatCHA());
+		writeC(activeChar.getHennaStatINT());
+		writeC(activeChar.getHennaStatSTR());
+		writeC(activeChar.getHennaStatCON());
+		writeC(activeChar.getHennaStatMEN());
+		writeC(activeChar.getHennaStatDEX());
+		writeC(activeChar.getHennaStatWIT());
+		writeC(activeChar.getHennaStatLUC());
+		writeC(activeChar.getHennaStatCHA());
 		writeD(4); // slots?
-		writeD(this.count); //size
-		for (int i = 0; i < this.count; i++)
+		writeD(count); //size
+		for (int i = 0; i < count; i++)
 		{
-			writeD(this.hennas[i].getSymbolId());
+			writeD(hennas[i].getSymbolId());
 			writeD(0x01);
 		}
 
-		L2Henna specialDye = this.activeChar.getHenna(4);
+		L2Henna specialDye = activeChar.getHenna(4);
 		if (specialDye != null)
 		{
 			writeD(specialDye.getSymbolId());

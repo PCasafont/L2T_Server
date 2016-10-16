@@ -60,13 +60,13 @@ public class L2PcTemplate extends L2CharTemplate
 	{
 		if (amount == 1 || !equipped)
 		{
-			this.items.add(new PcTemplateItem(itemId, amount, equipped));
+			items.add(new PcTemplateItem(itemId, amount, equipped));
 		}
 		else
 		{
 			for (int i = 0; i < amount; i++)
 			{
-				this.items.add(new PcTemplateItem(itemId, 1, equipped));
+				items.add(new PcTemplateItem(itemId, 1, equipped));
 			}
 		}
 	}
@@ -76,7 +76,7 @@ public class L2PcTemplate extends L2CharTemplate
 	 */
 	public List<PcTemplateItem> getItems()
 	{
-		return this.items;
+		return items;
 	}
 
 	public static final class PcTemplateItem
@@ -101,7 +101,7 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		/**
@@ -109,7 +109,7 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public int getAmount()
 		{
-			return this.amount;
+			return amount;
 		}
 
 		/**
@@ -117,18 +117,18 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public boolean isEquipped()
 		{
-			return this.equipped;
+			return equipped;
 		}
 	}
 
 	public void addSkill(int id)
 	{
-		this.skillIds.add(id);
+		skillIds.add(id);
 	}
 
 	public List<Integer> getSkillIds()
 	{
-		return this.skillIds;
+		return skillIds;
 	}
 
 	public final int getFallHeight()

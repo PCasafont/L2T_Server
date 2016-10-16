@@ -47,8 +47,8 @@ public class ExSpawnEmitter extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.npcObjectId);
-		writeD(this.playerObjectId);
+		writeD(npcObjectId);
+		writeD(playerObjectId);
 		writeD(0x00); // ?
 	}
 }

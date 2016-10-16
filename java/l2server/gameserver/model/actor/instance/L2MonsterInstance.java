@@ -151,11 +151,11 @@ public class L2MonsterInstance extends L2Attackable
 			return;
 		}
 
-		if (this.maintenanceTask == null)
+		if (maintenanceTask == null)
 		{
-			this.maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+			maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (this.enableMinions)
+				if (enableMinions)
 				{
 					getMinionList().spawnMinions();
 				}
@@ -186,10 +186,10 @@ public class L2MonsterInstance extends L2Attackable
 			}
 		}
 
-		if (this.maintenanceTask != null)
+		if (maintenanceTask != null)
 		{
-			this.maintenanceTask.cancel(false); // doesn't do it?
-			this.maintenanceTask = null;
+			maintenanceTask.cancel(false); // doesn't do it?
+			maintenanceTask = null;
 		}
 
 		return true;
@@ -198,10 +198,10 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public void deleteMe()
 	{
-		if (this.maintenanceTask != null)
+		if (maintenanceTask != null)
 		{
-			this.maintenanceTask.cancel(false);
-			this.maintenanceTask = null;
+			maintenanceTask.cancel(false);
+			maintenanceTask = null;
 		}
 
 		if (hasMinions())
@@ -220,32 +220,32 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public L2MonsterInstance getLeader()
 	{
-		return this.master;
+		return master;
 	}
 
 	public void setLeader(L2MonsterInstance leader)
 	{
-		this.master = leader;
+		master = leader;
 	}
 
 	public void enableMinions(boolean b)
 	{
-		this.enableMinions = b;
+		enableMinions = b;
 	}
 
 	public boolean hasMinions()
 	{
-		return this.minionList != null;
+		return minionList != null;
 	}
 
 	public MinionList getMinionList()
 	{
-		if (this.minionList == null)
+		if (minionList == null)
 		{
-			this.minionList = new MinionList(this);
+			minionList = new MinionList(this);
 		}
 
-		return this.minionList;
+		return minionList;
 	}
 
 	@Override

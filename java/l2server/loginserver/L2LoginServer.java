@@ -145,7 +145,7 @@ public class L2LoginServer
 		final SelectorHelper sh = new SelectorHelper();
 		try
 		{
-			this.selectorThread = new Core<>(sc, sh, lph, sh, sh);
+			selectorThread = new Core<>(sc, sh, lph, sh, sh);
 		}
 		catch (IOException e)
 		{
@@ -155,8 +155,8 @@ public class L2LoginServer
 
 		try
 		{
-			this.gameServerListener = new GameServerListener();
-			this.gameServerListener.start();
+			gameServerListener = new GameServerListener();
+			gameServerListener.start();
 			Log.info("Listening for GameServers on " + Config.GAME_SERVER_LOGIN_HOST + ":" +
 					Config.GAME_SERVER_LOGIN_PORT);
 		}
@@ -168,14 +168,14 @@ public class L2LoginServer
 
 		try
 		{
-			this.selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
+			selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		this.selectorThread.start();
+		selectorThread.start();
 
 		Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" +
 				Config.PORT_LOGIN);
@@ -183,7 +183,7 @@ public class L2LoginServer
 
 	public GameServerListener getGameServerListener()
 	{
-		return this.gameServerListener;
+		return gameServerListener;
 	}
 
 	private void loadBanFile()

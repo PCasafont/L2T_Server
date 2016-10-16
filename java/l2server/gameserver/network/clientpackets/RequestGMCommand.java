@@ -38,8 +38,8 @@ public final class RequestGMCommand extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.targetName = readS();
-		this.command = readD();
+		targetName = readS();
+		command = readD();
 		//_unknown  = readD();
 	}
 
@@ -52,12 +52,12 @@ public final class RequestGMCommand extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance player = L2World.getInstance().getPlayer(this.targetName);
+		L2PcInstance player = L2World.getInstance().getPlayer(targetName);
 		if (player == null)
 		{
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 			{
-				if (pl != null && pl.getName().equalsIgnoreCase(this.targetName))
+				if (pl != null && pl.getName().equalsIgnoreCase(targetName))
 				{
 					player = pl;
 					break;
@@ -65,15 +65,15 @@ public final class RequestGMCommand extends L2GameClientPacket
 			}
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClanByName(this.targetName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(targetName);
 
 		// player name was incorrect?
-		if (player == null && (clan == null || this.command != 6))
+		if (player == null && (clan == null || command != 6))
 		{
 			return;
 		}
 
-		switch (this.command)
+		switch (command)
 		{
 			case 1: // player status
 			{

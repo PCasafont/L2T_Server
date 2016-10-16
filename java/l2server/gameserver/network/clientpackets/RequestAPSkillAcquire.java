@@ -32,7 +32,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.totalCount = readD(); // Total count
+		totalCount = readD(); // Total count
 
 		// Knight skills
 		int count = readD();
@@ -40,7 +40,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			this.abilities.put(id, level);
+			abilities.put(id, level);
 		}
 
 		// Knight skills
@@ -49,7 +49,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			this.abilities.put(id, level);
+			abilities.put(id, level);
 		}
 
 		// Knight skills
@@ -58,7 +58,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			this.abilities.put(id, level);
+			abilities.put(id, level);
 		}
 	}
 
@@ -73,7 +73,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			return;
 		}
 
-		if (this.totalCount != this.abilities.size())
+		if (totalCount != abilities.size())
 		{
 			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 			return;
@@ -86,20 +86,20 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		}
 
 		// We don't trust the client, let's count how many of each type we got
-		for (int skillId : this.abilities.keys())
+		for (int skillId : abilities.keys())
 		{
-			counts[AbilityTable.getInstance().getAbility(skillId).getType() - 1] += this.abilities.get(skillId);
+			counts[AbilityTable.getInstance().getAbility(skillId).getType() - 1] += abilities.get(skillId);
 		}
 
 		int remainingPoints = player.getAbilityPoints();
-		for (int skillId : this.abilities.keys())
+		for (int skillId : abilities.keys())
 		{
-			int level = this.abilities.get(skillId);
+			int level = abilities.get(skillId);
 			Ability ability = AbilityTable.getInstance().getAbility(skillId);
 			if (level > ability.getMaxLevel() || level > remainingPoints ||
 					counts[ability.getType() - 1] < ability.getReqPoints() || ability.getReqSkill() > 0 &&
-					(!this.abilities.containsKey(ability.getReqSkill()) ||
-							this.abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))
+					(!abilities.containsKey(ability.getReqSkill()) ||
+							abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))
 			{
 				sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 				return;
@@ -108,7 +108,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			remainingPoints -= level;
 		}
 
-		player.setAbilities(this.abilities);
+		player.setAbilities(abilities);
 
 		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
 	}

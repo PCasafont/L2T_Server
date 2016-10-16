@@ -45,6 +45,6 @@ public class ConditionPlayerIsClanLeader extends Condition
 		{
 			return false;
 		}
-		return ((L2PcInstance) env.player).isClanLeader() == this.val;
+		return ((L2PcInstance) env.player).isClanLeader() == val;
 	}
 }

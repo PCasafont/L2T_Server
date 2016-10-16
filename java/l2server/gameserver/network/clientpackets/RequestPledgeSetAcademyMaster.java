@@ -35,9 +35,9 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.set = readD();
-		this.currPlayerName = readS();
-		this.targetPlayerName = readS();
+		set = readD();
+		currPlayerName = readS();
+		targetPlayerName = readS();
 	}
 
 	/**
@@ -59,8 +59,8 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 			return;
 		}
 
-		L2ClanMember currentMember = clan.getClanMember(this.currPlayerName);
-		L2ClanMember targetMember = clan.getClanMember(this.targetPlayerName);
+		L2ClanMember currentMember = clan.getClanMember(currPlayerName);
+		L2ClanMember targetMember = clan.getClanMember(targetPlayerName);
 		if (currentMember == null || targetMember == null)
 		{
 			return;
@@ -82,7 +82,7 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
 		L2PcInstance sponsor = sponsorMember.getPlayerInstance();
 
 		SystemMessage sm = null;
-		if (this.set == 0)
+		if (set == 0)
 		{
 			// test: do we get the current sponsor & apprentice from this packet or no?
 			if (apprentice != null)

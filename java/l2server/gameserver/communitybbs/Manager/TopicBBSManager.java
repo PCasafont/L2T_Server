@@ -38,13 +38,13 @@ public class TopicBBSManager extends BaseBBSManager
 
 	protected TopicBBSManager()
 	{
-		this.table = new ArrayList<>();
-		this.maxId = new ConcurrentHashMap<>();
+		table = new ArrayList<>();
+		maxId = new ConcurrentHashMap<>();
 	}
 
 	public void addTopic(Topic tt)
 	{
-		this.table.add(tt);
+		table.add(tt);
 	}
 
 	/**
@@ -52,17 +52,17 @@ public class TopicBBSManager extends BaseBBSManager
 	 */
 	public void delTopic(Topic topic)
 	{
-		this.table.remove(topic);
+		table.remove(topic);
 	}
 
 	public void setMaxID(int id, Forum f)
 	{
-		this.maxId.put(f, id);
+		maxId.put(f, id);
 	}
 
 	public int getMaxID(Forum f)
 	{
-		Integer i = this.maxId.get(f);
+		Integer i = maxId.get(f);
 		if (i == null)
 		{
 			return 0;
@@ -72,7 +72,7 @@ public class TopicBBSManager extends BaseBBSManager
 
 	public Topic getTopicByID(int idf)
 	{
-		for (Topic t : this.table)
+		for (Topic t : table)
 		{
 			if (t.getID() == idf)
 			{

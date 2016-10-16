@@ -51,26 +51,26 @@ public class Attack extends L2GameServerPacket
 
 		Hit(L2Object target, int damage, boolean miss, boolean crit, byte shld)
 		{
-			this.targetId = target.getObjectId();
+			targetId = target.getObjectId();
 			this.damage = damage;
 			if (miss)
 			{
-				this.flags = HITFLAG_MISS;
+				flags = HITFLAG_MISS;
 				return;
 			}
 			if (crit)
 			{
-				this.flags |= HITFLAG_CRIT;
+				flags |= HITFLAG_CRIT;
 			}
 			if (soulshotCharge > L2ItemInstance.CHARGED_NONE)
 			{
-				this.flags |= HITFLAG_USESS;
-				this.ssGrade = Attack.this.ssGrade;
+				flags |= HITFLAG_USESS;
+				ssGrade = Attack.this.ssGrade;
 			}
 			// dirty fix for lags on olympiad
 			if (shld > 0 && !(target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode()))
 			{
-				this.flags |= HITFLAG_SHLD;
+				flags |= HITFLAG_SHLD;
 			}
 			//			if (shld > 0)
 			//				this.flags |= HITFLAG_SHLD;
@@ -97,16 +97,16 @@ public class Attack extends L2GameServerPacket
 	 */
 	public Attack(L2Character attacker, L2Object target, double ssCharge, int ssGrade)
 	{
-		this.attackerObjId = attacker.getObjectId();
-		this.targetObjId = target.getObjectId();
+		attackerObjId = attacker.getObjectId();
+		targetObjId = target.getObjectId();
 		soulshotCharge = ssCharge;
 		this.ssGrade = ssGrade > 6 ? 6 : ssGrade;
-		this.x = attacker.getX();
-		this.y = attacker.getY();
-		this.z = attacker.getZ();
-		this.tx = target.getX();
-		this.ty = target.getY();
-		this.tz = target.getZ();
+		x = attacker.getX();
+		y = attacker.getY();
+		z = attacker.getZ();
+		tx = target.getX();
+		ty = target.getY();
+		tz = target.getZ();
 	}
 
 	public Hit createHit(L2Object target, int damage, boolean miss, boolean crit, byte shld)
@@ -134,37 +134,37 @@ public class Attack extends L2GameServerPacket
 	 */
 	public boolean hasHits()
 	{
-		return this.hits != null;
+		return hits != null;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.attackerObjId);
-		writeD(this.targetObjId);
+		writeD(attackerObjId);
+		writeD(targetObjId);
 		writeD(0); // ???
-		writeD(this.hits[0].damage);
-		writeD(this.hits[0].flags); // GoD ??? 0 normal, 1 miss, 2 move a bit, 4 crit
-		writeD(this.hits[0].ssGrade); // Soulshot ID
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(hits[0].damage);
+		writeD(hits[0].flags); // GoD ??? 0 normal, 1 miss, 2 move a bit, 4 crit
+		writeD(hits[0].ssGrade); // Soulshot ID
+		writeD(x);
+		writeD(y);
+		writeD(z);
 
-		writeH(this.hits.length - 1);
+		writeH(hits.length - 1);
 		// prevent sending useless packet while there is only one target.
-		if (this.hits.length > 1)
+		if (hits.length > 1)
 		{
-			for (int i = 1; i < this.hits.length; i++)
+			for (int i = 1; i < hits.length; i++)
 			{
-				writeD(this.hits[i].targetId);
-				writeD(this.hits[i].damage);
-				writeD(this.hits[0].flags); // GoD ??? 0 normal, 1 miss, 2 move a bit, 4 crit
-				writeD(this.hits[0].ssGrade); // Soulshot ID
+				writeD(hits[i].targetId);
+				writeD(hits[i].damage);
+				writeD(hits[0].flags); // GoD ??? 0 normal, 1 miss, 2 move a bit, 4 crit
+				writeD(hits[0].ssGrade); // Soulshot ID
 			}
 		}
 
-		writeD(this.tx);
-		writeD(this.ty);
-		writeD(this.tz);
+		writeD(tx);
+		writeD(ty);
+		writeD(tz);
 	}
 }

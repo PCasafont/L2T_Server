@@ -58,7 +58,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 	public final void broadcastStatusUpdate(L2PcInstance player)
 	{
 		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
-		for (L2Character character : this.characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character instanceof L2PcInstance && character.getInstanceId() == player.getInstanceId())
 			{
@@ -73,7 +73,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 
 	public final void broadcastPacketToObservers(L2GameServerPacket packet, int gameId)
 	{
-		for (L2Character character : this.characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character instanceof L2PcInstance && ((L2PcInstance) character).inObserverMode() &&
 					character.getInstanceId() - Olympiad.BASE_INSTANCE_ID == gameId)
@@ -177,7 +177,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 			sm = SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE);
 		}
 
-		for (L2Character character : this.characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character == null || character.getInstanceId() - Olympiad.BASE_INSTANCE_ID != gameId)
 			{
@@ -226,20 +226,20 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		@Override
 		public void run()
 		{
-			if (this.player != null)
+			if (player != null)
 			{
-				final L2Summon pet = this.player.getPet();
+				final L2Summon pet = player.getPet();
 				if (pet != null)
 				{
-					pet.unSummon(this.player);
+					pet.unSummon(player);
 				}
-				for (L2SummonInstance summon : this.player.getSummons())
+				for (L2SummonInstance summon : player.getSummons())
 				{
-					summon.unSummon(this.player);
+					summon.unSummon(player);
 				}
 
-				this.player.teleToLocation(MapRegionTable.TeleportWhereType.Town);
-				this.player = null;
+				player.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+				player = null;
 			}
 		}
 	}

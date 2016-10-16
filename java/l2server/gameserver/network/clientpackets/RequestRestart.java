@@ -97,7 +97,7 @@ public final class RequestRestart extends L2GameClientPacket
 
 		LogRecord record = new LogRecord(Level.INFO, "Logged out");
 		record.setParameters(new Object[]{client});
-		this.logAccounting.log(record);
+		logAccounting.log(record);
 
 		// detach the client from the char so that the connection isnt closed in the deleteMe
 		player.setClient(null);

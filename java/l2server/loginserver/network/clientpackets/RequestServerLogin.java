@@ -45,7 +45,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 	 */
 	public int getSessionKey1()
 	{
-		return this.skey1;
+		return skey1;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 	 */
 	public int getSessionKey2()
 	{
-		return this.skey2;
+		return skey2;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 	 */
 	public int getServerID()
 	{
-		return this.serverId;
+		return serverId;
 	}
 
 	@Override
@@ -69,9 +69,9 @@ public class RequestServerLogin extends L2LoginClientPacket
 	{
 		if (super.buf.remaining() >= 9)
 		{
-			this.skey1 = readD();
-			this.skey2 = readD();
-			this.serverId = readC();
+			skey1 = readD();
+			skey2 = readD();
+			serverId = readC();
 			return true;
 		}
 		else
@@ -88,13 +88,13 @@ public class RequestServerLogin extends L2LoginClientPacket
 		SessionKey sk = getClient().getSessionKey();
 
 		// if we didnt showed the license we cant check these values
-		if (!Config.SHOW_LICENCE || sk.checkLoginPair(this.skey1, this.skey2))
+		if (!Config.SHOW_LICENCE || sk.checkLoginPair(skey1, skey2))
 		{
 			//System.out.println("Logging Into Server " + this.serverId);
 			int logIntoDimensionId = 0;
-			if (this.serverId == 32)
+			if (serverId == 32)
 			{
-				this.serverId = 31;
+				serverId = 31;
 
 				logIntoDimensionId = 1;
 
@@ -106,7 +106,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 				}*/
 			}
 
-			if (LoginController.getInstance().isLoginPossible(getClient(), this.serverId))
+			if (LoginController.getInstance().isLoginPossible(getClient(), serverId))
 			{
 				getClient().setJoinedGS(true);
 				getClient().sendPacket(new PlayOk(sk));

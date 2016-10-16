@@ -37,7 +37,7 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 			final ItemContainer attachments = msg.getAttachments();
 			if (attachments != null && attachments.getSize() > 0)
 			{
-				this.items = attachments.getItems();
+				items = attachments.getItems();
 			}
 			else
 			{
@@ -53,8 +53,8 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.msg.getSendBySystem());
-		if (this.msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
+		writeD(msg.getSendBySystem());
+		if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
 		{
 			writeD(0x00);// unknown1
 			writeD(0x00);// unknown2
@@ -64,37 +64,37 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 			writeD(0x00);// unknown6
 			writeD(0x00);// unknown7
 			writeD(0x00);// unknown8
-			writeD(this.msg.getSystemMessage1());
-			writeD(this.msg.getSystemMessage2());
+			writeD(msg.getSystemMessage1());
+			writeD(msg.getSystemMessage2());
 		}
 
-		writeD(this.msg.getId());
-		writeD(this.msg.isLocked() ? 1 : 0);
+		writeD(msg.getId());
+		writeD(msg.isLocked() ? 1 : 0);
 		writeD(0x00); //Unknown
-		writeS(this.msg.getSenderName());
-		writeS(this.msg.getSubject());
-		writeS(this.msg.getContent());
+		writeS(msg.getSenderName());
+		writeS(msg.getSubject());
+		writeS(msg.getContent());
 
-		if (this.items != null && this.items.length > 0)
+		if (items != null && items.length > 0)
 		{
-			writeD(this.items.length);
-			for (L2ItemInstance item : this.items)
+			writeD(items.length);
+			for (L2ItemInstance item : items)
 			{
 				writeItem(item);
 				writeD(item.getObjectId());
 			}
-			this.items = null;
+			items = null;
 		}
 		else
 		{
 			writeD(0x00);
 		}
 
-		writeQ(this.msg.getReqAdena());
-		writeD(this.msg.hasAttachments() ? 1 : 0);
-		writeD(this.msg.getSendBySystem() > 0 ? 0x00 : 0x01);
-		writeD(this.msg.getReceiverId());
+		writeQ(msg.getReqAdena());
+		writeD(msg.hasAttachments() ? 1 : 0);
+		writeD(msg.getSendBySystem() > 0 ? 0x00 : 0x01);
+		writeD(msg.getReceiverId());
 
-		this.msg = null;
+		msg = null;
 	}
 }

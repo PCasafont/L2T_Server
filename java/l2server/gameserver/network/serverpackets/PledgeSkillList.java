@@ -45,8 +45,8 @@ public class PledgeSkillList extends L2GameServerPacket
 
 	public PledgeSkillList(L2Clan clan)
 	{
-		this.skills = clan.getAllSkills();
-		this.subSkills = clan.getAllSubSkills();
+		skills = clan.getAllSkills();
+		subSkills = clan.getAllSubSkills();
 	}
 
 	/**
@@ -54,14 +54,14 @@ public class PledgeSkillList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.skills.length);
-		writeD(this.subSkills.length); // squad skill length
-		for (L2Skill sk : this.skills)
+		writeD(skills.length);
+		writeD(subSkills.length); // squad skill length
+		for (L2Skill sk : skills)
 		{
 			writeD(sk.getId());
 			writeD(sk.getLevelHash());
 		}
-		for (SubPledgeSkill sk : this.subSkills)
+		for (SubPledgeSkill sk : subSkills)
 		{
 			writeD(sk.subType); // clan Sub-unit types
 			writeD(sk.skillId);

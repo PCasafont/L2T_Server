@@ -55,8 +55,8 @@ public class Gainak extends Quest
 	{
 		super(questId, name, descr);
 
-		addDieZoneId(this.gainakSiegeZoneId);
-		addEnterZoneId(this.gainakSiegeZoneId);
+		addDieZoneId(gainakSiegeZoneId);
+		addEnterZoneId(gainakSiegeZoneId);
 
 		startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 	}
@@ -81,9 +81,9 @@ public class Gainak extends Quest
 	{
 		if (character instanceof L2PcInstance)
 		{
-			if (this.isInSiege)
+			if (isInSiege)
 			{
-				character.broadcastPacket(new EventTrigger(this.siegeEffect, true));
+				character.broadcastPacket(new EventTrigger(siegeEffect, true));
 			}
 		}
 		return null;
@@ -92,7 +92,7 @@ public class Gainak extends Quest
 	@Override
 	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
 	{
-		if (this.isInSiege)
+		if (isInSiege)
 		{
 			L2PcInstance player = killer.getActingPlayer();
 			if (player != null)
@@ -108,17 +108,17 @@ public class Gainak extends Quest
 	{
 		if (event.equalsIgnoreCase("gainak_change"))
 		{
-			if (this.isInSiege)
+			if (isInSiege)
 			{
 				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
 
-				this.isInSiege = false;
+				isInSiege = false;
 
-				this.gainakPeaceZone.setZoneEnabled(true);
-				this.gainakSiegeZone.setIsActive(false);
-				this.gainakSiegeZone.updateZoneStatusForCharactersInside();
-				this.gainakPeaceZone.broadcastPacket(new EventTrigger(this.siegeEffect, false));
-				this.gainakPeaceZone.broadcastPacket(new ExShowScreenMessage(1600066, 0, true, 5000));
+				gainakPeaceZone.setZoneEnabled(true);
+				gainakSiegeZone.setIsActive(false);
+				gainakSiegeZone.updateZoneStatusForCharactersInside();
+				gainakPeaceZone.broadcastPacket(new EventTrigger(siegeEffect, false));
+				gainakPeaceZone.broadcastPacket(new ExShowScreenMessage(1600066, 0, true, 5000));
 
 				startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 
@@ -130,13 +130,13 @@ public class Gainak extends Quest
 			{
 				SpawnTable.getInstance().spawnSpecificTable("gainak_siege");
 
-				this.isInSiege = true;
+				isInSiege = true;
 
-				this.gainakPeaceZone.setZoneEnabled(false);
-				this.gainakSiegeZone.setIsActive(true);
-				this.gainakSiegeZone.updateZoneStatusForCharactersInside();
-				this.gainakSiegeZone.broadcastPacket(new EventTrigger(this.siegeEffect, true));
-				this.gainakSiegeZone.broadcastPacket(new ExShowScreenMessage(1600063, 0, true, 5000));
+				gainakPeaceZone.setZoneEnabled(false);
+				gainakSiegeZone.setIsActive(true);
+				gainakSiegeZone.updateZoneStatusForCharactersInside();
+				gainakSiegeZone.broadcastPacket(new EventTrigger(siegeEffect, true));
+				gainakSiegeZone.broadcastPacket(new ExShowScreenMessage(1600063, 0, true, 5000));
 
 				startQuestTimer("gainak_change", getSiegeDuration() * 60000, null, null);
 

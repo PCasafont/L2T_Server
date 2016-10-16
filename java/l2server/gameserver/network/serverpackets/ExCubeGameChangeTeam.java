@@ -48,8 +48,8 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.player.getObjectId());
-		writeD(this.fromRedTeam ? 0x01 : 0x00);
-		writeD(this.fromRedTeam ? 0x00 : 0x01);
+		writeD(player.getObjectId());
+		writeD(fromRedTeam ? 0x01 : 0x00);
+		writeD(fromRedTeam ? 0x00 : 0x01);
 	}
 }

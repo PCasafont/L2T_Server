@@ -43,13 +43,13 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.storePlayerId = readD();
+		storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
-		this.items = new HashSet<>();
+		items = new HashSet<>();
 
 		for (int i = 0; i < count; i++)
 		{
@@ -59,11 +59,11 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 
 			if (objectId < 1 || cnt < 1 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
 
-			this.items.add(new ItemRequest(objectId, cnt, price));
+			items.add(new ItemRequest(objectId, cnt, price));
 		}
 	}
 
@@ -76,7 +76,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			player.sendMessage("Couldn't find the items you are trying to buy.");
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -89,7 +89,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 
-		L2Object object = L2World.getInstance().getPlayer(this.storePlayerId);
+		L2Object object = L2World.getInstance().getPlayer(storePlayerId);
 		if (object == null)
 		{
 			player.sendMessage("ERR1.");
@@ -156,7 +156,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			}
 		}
 
-		int result = storeList.privateStoreBuy(player, this.items);
+		int result = storeList.privateStoreBuy(player, items);
 
 		if (result > 0)
 		{
@@ -215,7 +215,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	@Override
 	protected void cleanUp()
 	{
-		this.items = null;
+		items = null;
 	}
 
 	@Override

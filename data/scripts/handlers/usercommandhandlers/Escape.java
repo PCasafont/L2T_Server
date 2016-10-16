@@ -152,18 +152,18 @@ public class Escape implements IUserCommandHandler
 		@Override
 		public void run()
 		{
-			if (this.activeChar.isDead())
+			if (activeChar.isDead())
 			{
 				return;
 			}
 
-			this.activeChar.enableAllSkills();
-			this.activeChar.setIsCastingNow(false);
-			this.activeChar.setInstanceId(0);
+			activeChar.enableAllSkills();
+			activeChar.setIsCastingNow(false);
+			activeChar.setInstanceId(0);
 
 			try
 			{
-				this.activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
 			catch (Exception e)
 			{

@@ -35,10 +35,10 @@ public class MonsterRace
 
 	private MonsterRace()
 	{
-		this.monsters = new L2Npc[8];
-		this.speeds = new int[8][20];
-		this.first = new int[2];
-		this.second = new int[2];
+		monsters = new L2Npc[8];
+		speeds = new int[8][20];
+		first = new int[2];
+		second = new int[2];
 	}
 
 	public static MonsterRace getInstance()
@@ -56,7 +56,7 @@ public class MonsterRace
 			random = Rnd.get(24);
 			for (int j = i - 1; j >= 0; j--)
 			{
-				if (this.monsters[j].getTemplate().NpcId == id + random)
+				if (monsters[j].getTemplate().NpcId == id + random)
 				{
 					random = Rnd.get(24);
 				}
@@ -65,10 +65,10 @@ public class MonsterRace
 			try
 			{
 				L2NpcTemplate template = NpcTable.getInstance().getTemplate(id + random);
-				this.constructor = Class.forName("l2server.gameserver.model.actor.instance." + template.Type + "Instance")
+				constructor = Class.forName("l2server.gameserver.model.actor.instance." + template.Type + "Instance")
 						.getConstructors()[0];
 				int objectId = IdFactory.getInstance().getNextId();
-				this.monsters[i] = (L2Npc) this.constructor.newInstance(objectId, template);
+				monsters[i] = (L2Npc) constructor.newInstance(objectId, template);
 			}
 			catch (Exception e)
 			{
@@ -81,10 +81,10 @@ public class MonsterRace
 
 	public void newSpeeds()
 	{
-		this.speeds = new int[8][20];
+		speeds = new int[8][20];
 		int total = 0;
-		this.first[1] = 0;
-		this.second[1] = 0;
+		first[1] = 0;
+		second[1] = 0;
 		for (int i = 0; i < 8; i++)
 		{
 			total = 0;
@@ -92,25 +92,25 @@ public class MonsterRace
 			{
 				if (j == 19)
 				{
-					this.speeds[i][j] = 100;
+					speeds[i][j] = 100;
 				}
 				else
 				{
-					this.speeds[i][j] = Rnd.get(60) + 65;
+					speeds[i][j] = Rnd.get(60) + 65;
 				}
-				total += this.speeds[i][j];
+				total += speeds[i][j];
 			}
-			if (total >= this.first[1])
+			if (total >= first[1])
 			{
-				this.second[0] = this.first[0];
-				this.second[1] = this.first[1];
-				this.first[0] = 8 - i;
-				this.first[1] = total;
+				second[0] = first[0];
+				second[1] = first[1];
+				first[0] = 8 - i;
+				first[1] = total;
 			}
-			else if (total >= this.second[1])
+			else if (total >= second[1])
 			{
-				this.second[0] = 8 - i;
-				this.second[1] = total;
+				second[0] = 8 - i;
+				second[1] = total;
 			}
 		}
 	}
@@ -120,7 +120,7 @@ public class MonsterRace
 	 */
 	public L2Npc[] getMonsters()
 	{
-		return this.monsters;
+		return monsters;
 	}
 
 	/**
@@ -128,17 +128,17 @@ public class MonsterRace
 	 */
 	public int[][] getSpeeds()
 	{
-		return this.speeds;
+		return speeds;
 	}
 
 	public int getFirstPlace()
 	{
-		return this.first[0];
+		return first[0];
 	}
 
 	public int getSecondPlace()
 	{
-		return this.second[0];
+		return second[0];
 	}
 
 	@SuppressWarnings("synthetic-access")

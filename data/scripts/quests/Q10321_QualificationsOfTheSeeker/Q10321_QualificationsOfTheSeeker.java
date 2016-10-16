@@ -37,9 +37,9 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	public Q10321_QualificationsOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.theodore);
-		addTalkId(this.theodore);
-		addTalkId(this.shannon);
+		addStartNpc(theodore);
+		addTalkId(theodore);
+		addTalkId(shannon);
 	}
 
 	@Override
@@ -53,13 +53,13 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.theodore && event.equalsIgnoreCase("32975-03.htm"))
+		if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == this.shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 5000);
@@ -83,7 +83,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.theodore)
+		if (npc.getNpcId() == theodore)
 		{
 			switch (st.getState())
 			{
@@ -105,7 +105,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.shannon && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == shannon && st.getInt("cond") == 1)
 		{
 			htmltext = "32974-01.htm";
 		}

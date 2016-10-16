@@ -42,27 +42,27 @@ public class L2FlyMove
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public void addStep(int id, Point3D s)
 	{
-		this.steps.put(id, s);
+		steps.put(id, s);
 	}
 
 	public Point3D getStep(int id)
 	{
-		return this.steps.get(id);
+		return steps.get(id);
 	}
 
 	public void addChoose(int id, L2FlyMoveChoose c)
 	{
-		this.chooses.put(id, c);
+		chooses.put(id, c);
 	}
 
 	public L2FlyMoveChoose getChoose(int id)
 	{
-		return this.chooses.get(id);
+		return chooses.get(id);
 	}
 
 	public class L2FlyMoveChoose
@@ -77,17 +77,17 @@ public class L2FlyMove
 
 		public int getAt()
 		{
-			return this.at;
+			return at;
 		}
 
 		public void addOption(L2FlyMoveOption o)
 		{
-			this.options.add(o);
+			options.add(o);
 		}
 
 		public List<L2FlyMoveOption> getOptions()
 		{
-			return this.options;
+			return options;
 		}
 	}
 
@@ -106,17 +106,17 @@ public class L2FlyMove
 
 		public int getStart()
 		{
-			return this.start;
+			return start;
 		}
 
 		public int getEnd()
 		{
-			return this.end;
+			return end;
 		}
 
 		public int getLast()
 		{
-			return this.last;
+			return last;
 		}
 	}
 }

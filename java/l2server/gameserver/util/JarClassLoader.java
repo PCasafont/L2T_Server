@@ -37,7 +37,7 @@ public class JarClassLoader extends ClassLoader
 
 	public void addJarFile(String filename)
 	{
-		this.jars.add(filename);
+		jars.add(filename);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class JarClassLoader extends ClassLoader
 	private byte[] loadClassData(String name) throws IOException
 	{
 		byte[] classData = null;
-		for (String jarFile : this.jars)
+		for (String jarFile : jars)
 		{
 			ZipFile zipFile = null;
 			DataInputStream zipStream = null;
@@ -103,7 +103,7 @@ public class JarClassLoader extends ClassLoader
 		}
 		if (classData == null)
 		{
-			throw new IOException("class not found in " + this.jars);
+			throw new IOException("class not found in " + jars);
 		}
 		return classData;
 	}

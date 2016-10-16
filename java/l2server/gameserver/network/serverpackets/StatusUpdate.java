@@ -107,8 +107,8 @@ public final class StatusUpdate extends L2GameServerPacket
 	 */
 	public StatusUpdate(L2Object object)
 	{
-		this.attributes = new ArrayList<>();
-		this.objectId = object.getObjectId();
+		attributes = new ArrayList<>();
+		objectId = object.getObjectId();
 		/*if (object instanceof L2Attackable || object instanceof L2Playable
                 && getClient() != null && getClient().getActiveChar() != null
 				&& getClient().getActiveChar().getObjectId() != this.objectId)
@@ -118,7 +118,7 @@ public final class StatusUpdate extends L2GameServerPacket
 	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display)
 	{
 		this(object);
-		this.causerId = causer != null ? causer.getObjectId() : 0;
+		causerId = causer != null ? causer.getObjectId() : 0;
 		this.display = display.ordinal();
 	}
 
@@ -134,18 +134,18 @@ public final class StatusUpdate extends L2GameServerPacket
 			else if (id == MAX_HP)
 				level = HP_MOD;
 		}*/
-		this.attributes.add(new Attribute(id, level));
+		attributes.add(new Attribute(id, level));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.causerId);
-		writeC(this.display);
-		writeC(this.attributes.size());
+		writeD(objectId);
+		writeD(causerId);
+		writeC(display);
+		writeC(attributes.size());
 
-		for (Attribute temp : this.attributes)
+		for (Attribute temp : attributes)
 		{
 			writeC(temp.id);
 			writeD(temp.value);

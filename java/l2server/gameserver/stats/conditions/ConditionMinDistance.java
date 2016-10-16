@@ -46,6 +46,6 @@ public class ConditionMinDistance extends Condition
 		{
 			return false;
 		}
-		return env.player.getDistanceSq(env.target) >= this.sqDistance;
+		return env.player.getDistanceSq(env.target) >= sqDistance;
 	}
 }

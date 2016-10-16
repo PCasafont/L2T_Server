@@ -64,17 +64,17 @@ public class L2AKnightAI extends L2APlayerAI
 			return true;
 		}
 
-		if (this.player.getCurrentMp() > player.getMaxMp() * 0.7 || this.player.getCurrentHp() < this.player.getMaxHp() * 0.5 ||
-				this.player.getTarget() instanceof L2Playable)
+		if (player.getCurrentMp() > player.getMaxMp() * 0.7 || player.getCurrentHp() < player.getMaxHp() * 0.5 ||
+				player.getTarget() instanceof L2Playable)
 		{
-			for (L2Skill skill : this.player.getAllSkills())
+			for (L2Skill skill : player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 				{
 					continue;
 				}
 
-				if (this.player.useMagic(skill, true, false))
+				if (player.useMagic(skill, true, false))
 				{
 					break;
 				}

@@ -41,18 +41,18 @@ public class AllyCrest extends L2GameServerPacket
 	public AllyCrest(int crestId)
 	{
 		this.crestId = crestId;
-		this.data = CrestCache.getInstance().getAllyCrest(this.crestId);
+		data = CrestCache.getInstance().getAllyCrest(this.crestId);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(Config.SERVER_ID); // server id?
-		writeD(this.crestId);
-		if (this.data != null)
+		writeD(crestId);
+		if (data != null)
 		{
-			writeD(this.data.length);
-			writeB(this.data);
+			writeD(data.length);
+			writeB(data);
 		}
 		else
 		{

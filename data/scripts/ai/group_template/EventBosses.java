@@ -15,9 +15,6 @@
 
 package ai.group_template;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.ItemTable;
@@ -28,6 +25,9 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Rnd;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author LasTravel
@@ -101,26 +101,26 @@ public class EventBosses extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
 	{
-		if (!this.attackerIps.containsValue(player.getExternalIP()))
+		if (!attackerIps.containsValue(player.getExternalIP()))
 		{
-			this.attackerIps.put(player, player.getExternalIP());
+			attackerIps.put(player, player.getExternalIP());
 		}
 
-		if (this.bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
+		if (bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
 		{
-			this.bossStatus = 1;
+			bossStatus = 1;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "WooooooooaHHH!"));
 
-			this.knightFrenzy.getEffects(npc, npc);
+			knightFrenzy.getEffects(npc, npc);
 		}
-		else if (this.bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
+		else if (bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 		{
-			this.bossStatus = 2;
+			bossStatus = 2;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "NOO! NOOO!!"));
 
-			this.finalUltimateDefense.getEffects(npc, npc);
+			finalUltimateDefense.getEffects(npc, npc);
 		}
 
 		return super.onAttack(npc, player, damage, isPet, skill);
@@ -131,7 +131,7 @@ public class EventBosses extends L2AttackableAIScript
 	{
 		if (npc != null && npc.getInstanceId() == 0)
 		{
-			for (Map.Entry<L2PcInstance, String> playerInfo : this.attackerIps.entrySet())
+			for (Map.Entry<L2PcInstance, String> playerInfo : attackerIps.entrySet())
 			{
 				if (playerInfo == null)
 				{
@@ -148,7 +148,7 @@ public class EventBosses extends L2AttackableAIScript
 
 				boolean rewarded = false;
 
-				for (String[] i : this.individualDrop)
+				for (String[] i : individualDrop)
 				{
 					if (Integer.valueOf(i[0]) == npc.getNpcId()) //Id found
 					{
@@ -196,11 +196,11 @@ public class EventBosses extends L2AttackableAIScript
 			}
 
 			//End event
-			this.isBossActive = false;
+			isBossActive = false;
 
-			this.bossStatus = 0;
+			bossStatus = 0;
 
-			this.attackerIps.clear();
+			attackerIps.clear();
 		}
 
 		return super.onKill(npc, player, isPet);
@@ -215,7 +215,7 @@ public class EventBosses extends L2AttackableAIScript
 
 			spawn.stopRespawn();
 
-			if (this.isBossActive) //Already active
+			if (isBossActive) //Already active
 			{
 				npc.deleteMe();
 
@@ -230,9 +230,9 @@ public class EventBosses extends L2AttackableAIScript
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 1, npc.getName(), "Is the time to die noobs!"));
 
-			this.isBossActive = true;
+			isBossActive = true;
 
-			this.bossStatus = 0;
+			bossStatus = 0;
 		}
 
 		return super.onSpawn(npc);

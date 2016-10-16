@@ -29,9 +29,9 @@ public class TeamSurvival extends EventInstance
 
 		int maxAlive = 0;
 		int teamId = 0;
-		for (int i = 0; i < this.config.getLocation().getTeamCount(); i++)
+		for (int i = 0; i < config.getLocation().getTeamCount(); i++)
 		{
-			int alive = this.teams[i].getAlivePlayerCount();
+			int alive = teams[i].getAlivePlayerCount();
 			if (alive > maxAlive)
 			{
 				maxAlive = alive;
@@ -39,7 +39,7 @@ public class TeamSurvival extends EventInstance
 			}
 		}
 
-		EventTeam team = this.teams[teamId];
+		EventTeam team = teams[teamId];
 		rewardTeams(teamId);
 
 		Announcements.getInstance().announceToAll(
@@ -53,7 +53,7 @@ public class TeamSurvival extends EventInstance
 
 		int i = 0;
 		int alive = 0;
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			if (++i > config.getLocation().getTeamCount())
 			{
@@ -146,12 +146,12 @@ public class TeamSurvival extends EventInstance
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
 			}
 			team.cleanMe();
-			if (this.config.getLocation().getTeamCount() != 4 && (!this.teams[0].isAlive() || !this.teams[1].isAlive()) ||
-					this.config.getLocation().getTeamCount() == 4 &&
-							(!this.teams[0].isAlive() && !this.teams[1].isAlive() && !this.teams[2].isAlive() ||
-									!this.teams[0].isAlive() && !this.teams[1].isAlive() && !this.teams[3].isAlive() ||
-									!this.teams[0].isAlive() && !this.teams[2].isAlive() && !this.teams[3].isAlive() ||
-									!this.teams[1].isAlive() && !this.teams[2].isAlive() && !this.teams[3].isAlive()))
+			if (config.getLocation().getTeamCount() != 4 && (!teams[0].isAlive() || !teams[1].isAlive()) ||
+					config.getLocation().getTeamCount() == 4 &&
+							(!teams[0].isAlive() && !teams[1].isAlive() && !teams[2].isAlive() ||
+									!teams[0].isAlive() && !teams[1].isAlive() && !teams[3].isAlive() ||
+									!teams[0].isAlive() && !teams[2].isAlive() && !teams[3].isAlive() ||
+									!teams[1].isAlive() && !teams[2].isAlive() && !teams[3].isAlive()))
 			{
 				stopFight();
 			}

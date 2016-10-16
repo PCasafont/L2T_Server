@@ -32,7 +32,7 @@ public class ExPledgeApplicant extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.applicant.id);
-		writeS(this.applicant.application);
+		writeD(applicant.id);
+		writeS(applicant.application);
 	}
 }

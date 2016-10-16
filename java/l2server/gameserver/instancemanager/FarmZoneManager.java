@@ -48,17 +48,17 @@ public class FarmZoneManager
 
 		public void addMob(L2NpcTemplate mob)
 		{
-			this.mobs.add(mob);
+			mobs.add(mob);
 		}
 
 		public String getName()
 		{
-			return this.name;
+			return name;
 		}
 
 		public Set<L2NpcTemplate> getMobs()
 		{
-			return this.mobs;
+			return mobs;
 		}
 	}
 
@@ -132,12 +132,12 @@ public class FarmZoneManager
 							}
 						}
 
-						this.farmZones.put(name, farmZone);
+						farmZones.put(name, farmZone);
 					}
 				}
 			}
 		}
-		Log.info("Farm Zone Manager: loaded " + this.farmZones.size() + " farm zone definitions.");
+		Log.info("Farm Zone Manager: loaded " + farmZones.size() + " farm zone definitions.");
 
 		file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/customFarm.xml");
 		doc = new XmlDocument(file);
@@ -196,7 +196,7 @@ public class FarmZoneManager
 						if (farmNode.hasAttribute("farmZone"))
 						{
 							String name = farmNode.getString("farmZone");
-							FarmZone farmZone = this.farmZones.get(name);
+							FarmZone farmZone = farmZones.get(name);
 							for (L2NpcTemplate mob : farmZone.getMobs())
 							{
 								mobs.add(mob);

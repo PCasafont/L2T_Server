@@ -33,15 +33,15 @@ public class L2SyncList<T> implements List<T>
 {
 	private final List<T> list;
 	private final ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
-	private final ReadLock rl = this.rw.readLock();
-	private final WriteLock wl = this.rw.writeLock();
+	private final ReadLock rl = rw.readLock();
+	private final WriteLock wl = rw.writeLock();
 
 	/**
 	 * Default constructor use ArrayList as it internal
 	 */
 	public L2SyncList()
 	{
-		this.list = new ArrayList<>();
+		list = new ArrayList<>();
 	}
 
 	public L2SyncList(List<T> list)
@@ -52,280 +52,280 @@ public class L2SyncList<T> implements List<T>
 	@Override
 	public T get(int index)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.get(index);
+			return list.get(index);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.equals(o);
+			return list.equals(o);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public int hashCode()
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.hashCode();
+			return list.hashCode();
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public T set(int index, T element)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			return this.list.set(index, element);
+			return list.set(index, element);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public void add(int index, T element)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			this.list.add(index, element);
+			list.add(index, element);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean add(T element)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			return this.list.add(element);
+			return list.add(element);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public T remove(int index)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			return this.list.remove(index);
+			return list.remove(index);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean remove(Object value)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			return this.list.remove(value);
+			return list.remove(value);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> list)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
 			return this.list.removeAll(list);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> list)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
 			return this.list.retainAll(list);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public int indexOf(Object o)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.indexOf(o);
+			return list.indexOf(o);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean contains(Object o)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.contains(o);
+			return list.contains(o);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean containsAll(Collection<?> list)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
 			return this.list.containsAll(list);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public int lastIndexOf(Object o)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.lastIndexOf(o);
+			return list.lastIndexOf(o);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends T> list)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
 			return this.list.addAll(list);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends T> c)
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			return this.list.addAll(index, c);
+			return list.addAll(index, c);
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public List<T> subList(int fromIndex, int toIndex)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return new L2SyncList<>(this.list.subList(fromIndex, toIndex));
+			return new L2SyncList<>(list.subList(fromIndex, toIndex));
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public void clear()
 	{
-		this.wl.lock();
+		wl.lock();
 		try
 		{
-			this.list.clear();
+			list.clear();
 		}
 		finally
 		{
-			this.wl.unlock();
+			wl.unlock();
 		}
 	}
 
 	@Override
 	public int size()
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.size();
+			return list.size();
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean isEmpty()
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.isEmpty();
+			return list.isEmpty();
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
@@ -358,7 +358,7 @@ public class L2SyncList<T> implements List<T>
 	@SuppressWarnings("unchecked")
 	public Iterator<T> iterator()
 	{
-		return new Itr((T[]) this.list.toArray());
+		return new Itr((T[]) list.toArray());
 	}
 
 	private class Itr implements Iterator<T>
@@ -410,14 +410,14 @@ public class L2SyncList<T> implements List<T>
 	@Override
 	public Object[] toArray()
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.toArray();
+			return list.toArray();
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 
@@ -425,14 +425,14 @@ public class L2SyncList<T> implements List<T>
 	@SuppressWarnings("hiding")
 	public <T> T[] toArray(T[] a)
 	{
-		this.rl.lock();
+		rl.lock();
 		try
 		{
-			return this.list.toArray(a);
+			return list.toArray(a);
 		}
 		finally
 		{
-			this.rl.unlock();
+			rl.unlock();
 		}
 	}
 }

@@ -129,25 +129,25 @@ public class Antharas extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addStartNpc(this.enterNpc);
-        addTalkId(this.enterNpc);
+        addStartNpc(enterNpc);
+        addTalkId(enterNpc);
 
-        for (int a : this.allGuards)
+        for (int a : allGuards)
         {
             addSpawnId(a);
         }
 
-        addAttackId(this.antharasId);
-        addSpellFinishedId(this.antharasId);
-        addStartNpc(this.rashId);
-        addTalkId(this.rashId);
-        addFirstTalkId(this.rashId);
+        addAttackId(antharasId);
+        addSpellFinishedId(antharasId);
+        addStartNpc(rashId);
+        addTalkId(rashId);
+        addFirstTalkId(rashId);
     }
 
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player.getName());
         }
@@ -177,7 +177,7 @@ public class Antharas extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -200,7 +200,7 @@ public class Antharas extends L2AttackableAIScript
         if (wrld != null && wrld instanceof AntharasWorld)
         {
             AntharasWorld world = (AntharasWorld) wrld;
-            if (npc.getNpcId() == this.antharasId)
+            if (npc.getNpcId() == antharasId)
             {
                 switch (skill.getId())
                 {
@@ -211,12 +211,12 @@ public class Antharas extends L2AttackableAIScript
                         if (Rnd.get(5) > 3)
                         {
                             //Spawn Behemoth and Tarrasque?
-                            L2Npc behemoth = addSpawn(this.behemothId, world.antharas.getX(), world.antharas.getY(),
+                            L2Npc behemoth = addSpawn(behemothId, world.antharas.getX(), world.antharas.getY(),
                                     world.antharas.getZ(), world.antharas.getHeading(), true, 0, false,
                                     world.instanceId);
                             behemoth.setIsRunning(true);
 
-                            L2Npc tarrasque = addSpawn(this.tarrasqueId, world.antharas.getX(), world.antharas.getY(),
+                            L2Npc tarrasque = addSpawn(tarrasqueId, world.antharas.getX(), world.antharas.getY(),
                                     world.antharas.getZ(), world.antharas.getHeading(), true, 0, false,
                                     world.instanceId);
                             tarrasque.setIsRunning(true);
@@ -300,7 +300,7 @@ public class Antharas extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -326,7 +326,7 @@ public class Antharas extends L2AttackableAIScript
             if (event.equalsIgnoreCase("stage_1_start"))
             {
                 //Spawn Antharas
-                world.antharas = addSpawn(this.antharasId, 177480, 114887, -7710, 32675, false, 0, false, world.instanceId);
+                world.antharas = addSpawn(antharasId, 177480, 114887, -7710, 32675, false, 0, false, world.instanceId);
                 world.antharas.setCurrentHp(world.antharas.getMaxHp() / 2);
                 world.antharas.getStatus().stopHpMpRegeneration();
                 world.antharas.setIsInvul(true);
@@ -342,11 +342,11 @@ public class Antharas extends L2AttackableAIScript
                 ((L2Attackable) world.antharas).setCanReturnToSpawnPoint(false);
 
                 //Spawn Fellow
-                world.fellow = addSpawn(this.fellowId, 175324, 114864, -7710, 64957, false, 0, false, world.instanceId);
+                world.fellow = addSpawn(fellowId, 175324, 114864, -7710, 64957, false, 0, false, world.instanceId);
                 //Spawn Ateld
-                world.ateld = addSpawn(this.ateldId, 175323, 114936, -7710, 64122, false, 0, false, world.instanceId);
+                world.ateld = addSpawn(ateldId, 175323, 114936, -7710, 64122, false, 0, false, world.instanceId);
                 //Comando
-                world.commando = addSpawn(this.commandoId, 175309, 114004, -7710, 1245, false, 0, false, world.instanceId);
+                world.commando = addSpawn(commandoId, 175309, 114004, -7710, 1245, false, 0, false, world.instanceId);
 
                 //Delay messages...
                 sendMessage(world, world.fellow, 17178318, 15000); //I think we hurt him good. We can defeat him!
@@ -484,7 +484,7 @@ public class Antharas extends L2AttackableAIScript
                 for (int a = 0; a < 300; a++)
                 {
                     int[] point = zone.getZone().getRandomPoint();
-                    L2Npc minion = addSpawn(this.dragonBomberId, point[0], point[1], point[2], 64122, true, 0, false,
+                    L2Npc minion = addSpawn(dragonBomberId, point[0], point[1], point[2], 64122, true, 0, false,
                             world.instanceId);
                     minion.setIsRunning(true);
                     world.minions.add(minion);
@@ -549,8 +549,8 @@ public class Antharas extends L2AttackableAIScript
                     {
                         world.rewardedPlayers.add(player);
 
-                        player.addItem(this.qn, this.expeditionVolunteerRewardBox, 1, npc, true);
-                        player.addItem(this.qn, this.expeditionVolunteerCrystalPouch, 1, npc, true);
+                        player.addItem(qn, expeditionVolunteerRewardBox, 1, npc, true);
+                        player.addItem(qn, expeditionVolunteerCrystalPouch, 1, npc, true);
                     }
                     else
                     {
@@ -579,7 +579,7 @@ public class Antharas extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -588,7 +588,7 @@ public class Antharas extends L2AttackableAIScript
         if (tmpWorld instanceof AntharasWorld)
         {
             final AntharasWorld world = (AntharasWorld) tmpWorld;
-            if (npc.getNpcId() == this.antharasId)
+            if (npc.getNpcId() == antharasId)
             {
                 if (world.status < 3)
                 {
@@ -608,11 +608,11 @@ public class Antharas extends L2AttackableAIScript
                     //Spawn treater's
                     for (int a = 0; a < 7; a++)
                     {
-                        L2Npc treater = addSpawn(this.treaterId, world.antharas.getX(), world.antharas.getY(),
+                        L2Npc treater = addSpawn(treaterId, world.antharas.getX(), world.antharas.getY(),
                                 world.antharas.getZ(), world.antharas.getHeading(), true, 0, false, world.instanceId);
                         treater.setIsRunning(true);
                         treater.setTarget(world.antharas);
-                        treater.doCast(this.sacrifice);
+                        treater.doCast(sacrifice);
                     }
 
                     sendMessage(world, null, 17178308, 10000); //Your sacrifices will become a new rescue...
@@ -628,11 +628,11 @@ public class Antharas extends L2AttackableAIScript
                     //Spawn treater's
                     for (int a = 0; a < 7; a++)
                     {
-                        L2Npc treater = addSpawn(this.treaterId, world.antharas.getX(), world.antharas.getY(),
+                        L2Npc treater = addSpawn(treaterId, world.antharas.getX(), world.antharas.getY(),
                                 world.antharas.getZ(), world.antharas.getHeading(), true, 0, false, world.instanceId);
                         treater.setIsRunning(true);
                         treater.setTarget(world.antharas);
-                        treater.doCast(this.sacrifice);
+                        treater.doCast(sacrifice);
                     }
 
                     sendMessage(world, null, 17178310, 10000); //Lowly beings! Can you handle my wrath!
@@ -658,9 +658,9 @@ public class Antharas extends L2AttackableAIScript
                     world.antharas.deleteMe();
 
                     //Spawn Rash Army
-                    world.rash = addSpawn(this.rashId, 179059, 114955, -7712, 64337, false, 0, false, world.instanceId);
+                    world.rash = addSpawn(rashId, 179059, 114955, -7712, 64337, false, 0, false, world.instanceId);
 
-                    for (int[] a : this.rashArmy)
+                    for (int[] a : rashArmy)
                     {
                         addSpawn(a[0], a[1], a[2], a[3], a[4], false, 0, false, world.instanceId);
                     }
@@ -677,7 +677,7 @@ public class Antharas extends L2AttackableAIScript
                             30000); //Are there those who didn't receive the rewards yet? Come and get it from me.
 
                     //Finish world
-                    InstanceManager.getInstance().setInstanceReuse(world.instanceId, this.template, true);
+                    InstanceManager.getInstance().setInstanceReuse(world.instanceId, template, true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, false);
                 }
             }
@@ -709,13 +709,13 @@ public class Antharas extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
-        if (npcId == this.enterNpc)
+        if (npcId == enterNpc)
         {
             return "Theodric.html";
         }
@@ -726,7 +726,7 @@ public class Antharas extends L2AttackableAIScript
     @Override
     public String onSpawn(L2Npc npc)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpawn: " + npc.getName());
         }
@@ -767,22 +767,22 @@ public class Antharas extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
-                    .checkInstanceConditions(player, this.template, Config.ANTHARAS_INSTANCED_MIN_PLAYERS, 35, 92, 99))
+            if (!debug && !InstanceManager.getInstance()
+                    .checkInstanceConditions(player, template, Config.ANTHARAS_INSTANCED_MIN_PLAYERS, 35, 92, 99))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new AntharasWorld();
             world.instanceId = instanceId;
-            world.templateId = this.template;
+            world.templateId = template;
             world.status = 1;
 
             InstanceManager.getInstance().addWorld(world);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -803,12 +803,12 @@ public class Antharas extends L2AttackableAIScript
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(this.enterLoc, true);
+                enterPlayer.teleToLocation(enterLoc, true);
             }
 
             startQuestTimer("stage_1_start", 2000, null, player);
 
-            Log.fine(getName() + ": [" + this.template + "] instance started: " + instanceId + " created by player: " +
+            Log.fine(getName() + ": [" + template + "] instance started: " + instanceId + " created by player: " +
                     player.getName());
 
             return;

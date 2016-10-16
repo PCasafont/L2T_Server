@@ -15,6 +15,6 @@ public class ExEnsoulResult extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.success ? 1 : 0);
+		writeD(success ? 1 : 0);
 	}
 }

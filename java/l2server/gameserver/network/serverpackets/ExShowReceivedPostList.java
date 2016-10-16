@@ -30,7 +30,7 @@ public class ExShowReceivedPostList extends L2GameServerPacket
 
 	public ExShowReceivedPostList(int objectId)
 	{
-		this.inbox = MailManager.getInstance().getInbox(objectId);
+		inbox = MailManager.getInstance().getInbox(objectId);
 	}
 
 	/* (non-Javadoc)
@@ -40,10 +40,10 @@ public class ExShowReceivedPostList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD((int) (System.currentTimeMillis() / 1000));
-		if (this.inbox != null && this.inbox.size() > 0)
+		if (inbox != null && inbox.size() > 0)
 		{
-			writeD(this.inbox.size());
-			for (Message msg : this.inbox)
+			writeD(inbox.size());
+			for (Message msg : inbox)
 			{
 				writeD(msg.getSendBySystem());
 				if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())

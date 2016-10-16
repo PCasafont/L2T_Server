@@ -50,14 +50,14 @@ public class FaenorScriptEngine extends ScriptEngine
 
 	private FaenorScriptEngine()
 	{
-		this.scripts = new LinkedList<>();
+		scripts = new LinkedList<>();
 		loadPackages();
 		parsePackages();
 	}
 
 	public void reloadPackages()
 	{
-		this.scripts = new LinkedList<>();
+		scripts = new LinkedList<>();
 		parsePackages();
 	}
 
@@ -97,7 +97,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			List<ScriptDocument> scrpts = module.getScriptFiles();
 			for (ScriptDocument script : scrpts)
 			{
-				this.scripts.add(script);
+				scripts.add(script);
 			}
 			try
 			{
@@ -122,15 +122,15 @@ public class FaenorScriptEngine extends ScriptEngine
 
 	public void orderScripts()
 	{
-		if (this.scripts.size() > 1)
+		if (scripts.size() > 1)
 		{
 			//ScriptDocument npcInfo = null;
 
-			for (int i = 0; i < this.scripts.size(); )
+			for (int i = 0; i < scripts.size(); )
 			{
-				if (this.scripts.get(i).getName().contains("NpcStatData"))
+				if (scripts.get(i).getName().contains("NpcStatData"))
 				{
-					this.scripts.addFirst(this.scripts.remove(i));
+					scripts.addFirst(scripts.remove(i));
 					//scripts.set(i, scripts.get(0));
 					//scripts.set(0, npcInfo);
 				}
@@ -151,7 +151,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			sem.eval("beanshell", "double log1p(double d) { return Math.log1p(d); }");
 			sem.eval("beanshell", "double pow(double d, double p) { return Math.pow(d,p); }");
 
-			for (ScriptDocument script : this.scripts)
+			for (ScriptDocument script : scripts)
 			{
 				parseScript(script, context);
 			}
@@ -202,14 +202,14 @@ public class FaenorScriptEngine extends ScriptEngine
 	@Override
 	public String toString()
 	{
-		if (this.scripts.isEmpty())
+		if (scripts.isEmpty())
 		{
 			return "No Packages Loaded.";
 		}
 
 		String out = "Script Packages currently loaded:\n";
 
-		for (ScriptDocument script : this.scripts)
+		for (ScriptDocument script : scripts)
 		{
 			out += script;
 		}

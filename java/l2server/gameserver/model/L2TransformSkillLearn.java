@@ -54,7 +54,7 @@ public final class L2TransformSkillLearn
 	 */
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public final class L2TransformSkillLearn
 	 */
 	public int getSpCost()
 	{
-		return this.sp;
+		return sp;
 	}
 
 	public int getRace()

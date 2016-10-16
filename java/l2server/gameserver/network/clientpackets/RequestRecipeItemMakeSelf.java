@@ -30,7 +30,7 @@ public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.id = readD();
+		id = readD();
 	}
 
 	@Override
@@ -59,6 +59,6 @@ public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 			return;
 		}
 
-		RecipeController.getInstance().requestMakeItem(activeChar, this.id);
+		RecipeController.getInstance().requestMakeItem(activeChar, id);
 	}
 }

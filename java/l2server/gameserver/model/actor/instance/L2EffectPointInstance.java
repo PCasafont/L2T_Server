@@ -36,7 +36,7 @@ public class L2EffectPointInstance extends L2Npc
 	@Override
 	public L2PcInstance getActingPlayer()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	/**

@@ -39,7 +39,7 @@ public class SummonItemsData
 
 	private SummonItemsData()
 	{
-		this.summonitems = new TIntObjectHashMap<>();
+		summonitems = new TIntObjectHashMap<>();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -58,26 +58,26 @@ public class SummonItemsData
 						int despawnTime = d.getInt("despawn", -1);
 
 						L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
-						this.summonitems.put(itemId, summonitem);
+						summonitems.put(itemId, summonitem);
 					}
 				}
 			}
 		}
 
-		Log.info("Summon items data: Loaded " + this.summonitems.size() + " summon items.");
+		Log.info("Summon items data: Loaded " + summonitems.size() + " summon items.");
 	}
 
 	public L2SummonItem getSummonItem(int itemId)
 	{
-		return this.summonitems.get(itemId);
+		return summonitems.get(itemId);
 	}
 
 	public int[] itemIDs()
 	{
-		int size = this.summonitems.size();
+		int size = summonitems.size();
 		int[] result = new int[size];
 		int i = 0;
-		for (Object si : this.summonitems.getValues())
+		for (Object si : summonitems.getValues())
 		{
 			result[i++] = ((L2SummonItem) si).getItemId();
 		}

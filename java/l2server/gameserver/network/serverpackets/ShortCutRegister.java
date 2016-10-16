@@ -49,24 +49,24 @@ public final class ShortCutRegister extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.shortcut.getType());
-		writeD(this.shortcut.getSlot() + this.shortcut.getPage() * 12); // C4 Client
-		switch (this.shortcut.getType())
+		writeD(shortcut.getType());
+		writeD(shortcut.getSlot() + shortcut.getPage() * 12); // C4 Client
+		switch (shortcut.getType())
 		{
 			case L2ShortCut.TYPE_ITEM: //1
-				writeD(this.shortcut.getId());
-				writeD(this.shortcut.getCharacterType());
-				writeD(this.shortcut.getSharedReuseGroup());
+				writeD(shortcut.getId());
+				writeD(shortcut.getCharacterType());
+				writeD(shortcut.getSharedReuseGroup());
 				writeD(0x00); // unknown
 				writeD(0x00); // unknown
 				writeQ(0x00); // item augment id
 				break;
 			case L2ShortCut.TYPE_SKILL: //2
-				writeD(this.shortcut.getId());
-				writeD(this.shortcut.getLevel());
-				writeD(this.shortcut.getSharedReuseGroup());
+				writeD(shortcut.getId());
+				writeD(shortcut.getLevel());
+				writeD(shortcut.getSharedReuseGroup());
 				writeC(0x00); // C5
-				writeD(this.shortcut.getCharacterType());
+				writeD(shortcut.getCharacterType());
 				break;
 			/* these are same as default case, no need to duplicate, enable if packet get changed
              */
@@ -85,8 +85,8 @@ public final class ShortCutRegister extends L2GameServerPacket
 			 */
 			default:
 			{
-				writeD(this.shortcut.getId());
-				writeD(this.shortcut.getCharacterType());
+				writeD(shortcut.getId());
+				writeD(shortcut.getCharacterType());
 			}
 		}
 	}

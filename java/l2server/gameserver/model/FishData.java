@@ -32,31 +32,31 @@ public class FishData
 	public FishData(int id, int lvl, String name, int HP, int HpRegen, int type, int group, int fish_guts, int guts_check_time, int wait_time, int combat_time)
 	{
 		this.id = id;
-		this.level = lvl;
+		level = lvl;
 		this.name = name.intern();
-		this.hp = HP;
-		this.hpRegen = HpRegen;
+		hp = HP;
+		hpRegen = HpRegen;
 		this.type = type;
 		this.group = group;
-		this.fishGuts = fish_guts;
-		this.gutsCheckTime = guts_check_time;
-		this.waitTime = wait_time;
-		this.combatTime = combat_time;
+		fishGuts = fish_guts;
+		gutsCheckTime = guts_check_time;
+		waitTime = wait_time;
+		combatTime = combat_time;
 	}
 
 	public FishData(FishData copyOf)
 	{
-		this.id = copyOf.getId();
-		this.level = copyOf.getLevel();
-		this.name = copyOf.getName();
-		this.hp = copyOf.getHP();
-		this.hpRegen = copyOf.getHpRegen();
-		this.type = copyOf.getType();
-		this.group = copyOf.getGroup();
-		this.fishGuts = copyOf.getFishGuts();
-		this.gutsCheckTime = copyOf.getGutsCheckTime();
-		this.waitTime = copyOf.getWaitTime();
-		this.combatTime = copyOf.getCombatTime();
+		id = copyOf.getId();
+		level = copyOf.getLevel();
+		name = copyOf.getName();
+		hp = copyOf.getHP();
+		hpRegen = copyOf.getHpRegen();
+		type = copyOf.getType();
+		group = copyOf.getGroup();
+		fishGuts = copyOf.getFishGuts();
+		gutsCheckTime = copyOf.getGutsCheckTime();
+		waitTime = copyOf.getWaitTime();
+		combatTime = copyOf.getCombatTime();
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class FishData
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class FishData
 	 */
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	/**
@@ -80,47 +80,47 @@ public class FishData
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public int getHP()
 	{
-		return this.hp;
+		return hp;
 	}
 
 	public int getHpRegen()
 	{
-		return this.hpRegen;
+		return hpRegen;
 	}
 
 	public int getType()
 	{
-		return this.type;
+		return type;
 	}
 
 	public int getGroup()
 	{
-		return this.group;
+		return group;
 	}
 
 	public int getFishGuts()
 	{
-		return this.fishGuts;
+		return fishGuts;
 	}
 
 	public int getGutsCheckTime()
 	{
-		return this.gutsCheckTime;
+		return gutsCheckTime;
 	}
 
 	public int getWaitTime()
 	{
-		return this.waitTime;
+		return waitTime;
 	}
 
 	public int getCombatTime()
 	{
-		return this.combatTime;
+		return combatTime;
 	}
 
 	public void setType(int type)

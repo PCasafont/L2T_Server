@@ -35,21 +35,21 @@ public class SkillTargetTypeHandler
 
 	private SkillTargetTypeHandler()
 	{
-		this.datatable = new HashMap<>();
+		datatable = new HashMap<>();
 	}
 
 	public void registerSkillTargetType(ISkillTargetTypeHandler handler)
 	{
 		Enum<L2SkillTargetType> ids = handler.getTargetType();
-		this.datatable.put(ids, handler);
+		datatable.put(ids, handler);
 	}
 
 	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType)
 	{
 
-		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (this.datatable.get(
+		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(
 				skillTargetType) != null));
-		return this.datatable.get(skillTargetType);
+		return datatable.get(skillTargetType);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class SkillTargetTypeHandler
 	 */
 	public int size()
 	{
-		return this.datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")

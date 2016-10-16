@@ -33,12 +33,12 @@ public class CharCreateFail extends L2GameServerPacket
 
 	public CharCreateFail(int errorCode)
 	{
-		this.error = errorCode;
+		error = errorCode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.error);
+		writeD(error);
 	}
 }

@@ -34,7 +34,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 */
 	public int getInvisibleCharacter()
 	{
-		return this.invisibleCharacter;
+		return invisibleCharacter;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 */
 	public void setInvisibleCharacter(final int objectId)
 	{
-		this.invisibleCharacter = objectId;
+		invisibleCharacter = objectId;
 	}
 
 	/**

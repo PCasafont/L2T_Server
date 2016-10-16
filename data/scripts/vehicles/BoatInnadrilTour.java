@@ -114,7 +114,7 @@ public class BoatInnadrilTour implements Runnable
 	{
 		try
 		{
-			switch (this.cycle)
+			switch (cycle)
 			{
 				case 0:
 					BoatManager.getInstance().broadcastPacket(DOCK, DOCK, LEAVE_INNADRIL5);
@@ -130,8 +130,8 @@ public class BoatInnadrilTour implements Runnable
 					break;
 				case 3:
 					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, LEAVING_INNADRIL, INNADRIL_SOUND);
-					this.boat.payForRide(0, 1, 107092, 219098, -3952);
-					this.boat.executePath(TOUR);
+					boat.payForRide(0, 1, 107092, 219098, -3952);
+					boat.executePath(TOUR);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 650000);
 					break;
 				case 4:
@@ -158,10 +158,10 @@ public class BoatInnadrilTour implements Runnable
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}
-			this.cycle++;
-			if (this.cycle > 9)
+			cycle++;
+			if (cycle > 9)
 			{
-				this.cycle = 0;
+				cycle = 0;
 			}
 		}
 		catch (Exception e)

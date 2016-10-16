@@ -44,7 +44,7 @@ public class ItemHandler
 	 */
 	public int size()
 	{
-		return this.datatable.size();
+		return datatable.size();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class ItemHandler
 	 */
 	private ItemHandler()
 	{
-		this.datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ItemHandler
 	 */
 	public void registerItemHandler(IItemHandler handler)
 	{
-		this.datatable.put(handler.getClass().getSimpleName().intern().hashCode(), handler);
+		datatable.put(handler.getClass().getSimpleName().intern().hashCode(), handler);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class ItemHandler
 		{
 			return null;
 		}
-		return this.datatable.get(item.getHandlerName().hashCode());
+		return datatable.get(item.getHandlerName().hashCode());
 	}
 
 	@SuppressWarnings("synthetic-access")

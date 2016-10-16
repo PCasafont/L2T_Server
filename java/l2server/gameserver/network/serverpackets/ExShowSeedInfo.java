@@ -60,15 +60,15 @@ public class ExShowSeedInfo extends L2GameServerPacket
 	{ // Id
 		writeH(0x24); // SubId
 		writeC(0);
-		writeD(this.manorId); // Manor ID
+		writeD(manorId); // Manor ID
 		writeD(0);
-		if (this.seeds == null)
+		if (seeds == null)
 		{
 			writeD(0);
 			return;
 		}
-		writeD(this.seeds.size());
-		for (SeedProduction seed : this.seeds)
+		writeD(seeds.size());
+		for (SeedProduction seed : seeds)
 		{
 			writeD(seed.getId()); // Seed id
 			writeQ(seed.getCanProduce()); // Left to buy

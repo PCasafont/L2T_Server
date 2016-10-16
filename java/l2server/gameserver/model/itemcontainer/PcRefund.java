@@ -44,7 +44,7 @@ public class PcRefund extends ItemContainer
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
@@ -62,9 +62,9 @@ public class PcRefund extends ItemContainer
 			if (getSize() > 12)
 			{
 				L2ItemInstance removedItem = null;
-				synchronized (this.items)
+				synchronized (items)
 				{
-					removedItem = this.items.remove(0);
+					removedItem = items.remove(0);
 				}
 
 				if (removedItem != null)
@@ -90,7 +90,7 @@ public class PcRefund extends ItemContainer
 	{
 		try
 		{
-			for (L2ItemInstance item : this.items.values())
+			for (L2ItemInstance item : items.values())
 			{
 				if (item != null)
 				{
@@ -103,7 +103,7 @@ public class PcRefund extends ItemContainer
 		{
 			Log.log(Level.SEVERE, "deleteMe()", e);
 		}
-		this.items.clear();
+		items.clear();
 	}
 
 	@Override

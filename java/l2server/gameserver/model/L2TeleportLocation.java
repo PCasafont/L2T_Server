@@ -36,7 +36,7 @@ public class L2TeleportLocation
 	 */
 	public void setTeleId(int id)
 	{
-		this.teleId = id;
+		teleId = id;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class L2TeleportLocation
 	 */
 	public void setIsForNoble(boolean val)
 	{
-		this.forNoble = val;
+		forNoble = val;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class L2TeleportLocation
 	 */
 	public void setItemId(int val)
 	{
-		this.itemId = val;
+		itemId = val;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class L2TeleportLocation
 	 */
 	public int getTeleId()
 	{
-		return this.teleId;
+		return teleId;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocX()
 	{
-		return this.locX;
+		return locX;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocY()
 	{
-		return this.locY;
+		return locY;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocZ()
 	{
-		return this.locZ;
+		return locZ;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class L2TeleportLocation
 	 */
 	public int getPrice()
 	{
-		return this.price;
+		return price;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class L2TeleportLocation
 	 */
 	public boolean getIsForNoble()
 	{
-		return this.forNoble;
+		return forNoble;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class L2TeleportLocation
 	 */
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public void setDescription(String description)
@@ -150,6 +150,6 @@ public class L2TeleportLocation
 
 	public String getDescription()
 	{
-		return this.description;
+		return description;
 	}
 }

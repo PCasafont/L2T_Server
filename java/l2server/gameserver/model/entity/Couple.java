@@ -45,7 +45,7 @@ public class Couple
 	// Constructor
 	public Couple(int coupleId)
 	{
-		this.Id = coupleId;
+		Id = coupleId;
 
 		Connection con = null;
 		try
@@ -56,20 +56,20 @@ public class Couple
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			statement = con.prepareStatement("SELECT * FROM mods_wedding WHERE id = ?");
-			statement.setInt(1, this.Id);
+			statement.setInt(1, Id);
 			rs = statement.executeQuery();
 
 			while (rs.next())
 			{
-				this.player1Id = rs.getInt("player1Id");
-				this.player2Id = rs.getInt("player2Id");
-				this.maried = rs.getBoolean("married");
+				player1Id = rs.getInt("player1Id");
+				player2Id = rs.getInt("player2Id");
+				maried = rs.getBoolean("married");
 
-				this.affiancedDate = Calendar.getInstance();
-				this.affiancedDate.setTimeInMillis(rs.getLong("affianceDate"));
+				affiancedDate = Calendar.getInstance();
+				affiancedDate.setTimeInMillis(rs.getLong("affianceDate"));
 
-				this.weddingDate = Calendar.getInstance();
-				this.weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
+				weddingDate = Calendar.getInstance();
+				weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
 			}
 			statement.close();
 		}
@@ -88,29 +88,29 @@ public class Couple
 		int tempPlayer1Id = player1.getObjectId();
 		int tempPlayer2Id = player2.getObjectId();
 
-		this.player1Id = tempPlayer1Id;
-		this.player2Id = tempPlayer2Id;
+		player1Id = tempPlayer1Id;
+		player2Id = tempPlayer2Id;
 
-		this.affiancedDate = Calendar.getInstance();
-		this.affiancedDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
+		affiancedDate = Calendar.getInstance();
+		affiancedDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
 
-		this.weddingDate = Calendar.getInstance();
-		this.weddingDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
+		weddingDate = Calendar.getInstance();
+		weddingDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
 
 		Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
-			this.Id = IdFactory.getInstance().getNextId();
+			Id = IdFactory.getInstance().getNextId();
 			statement = con.prepareStatement(
 					"INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?, ?, ?, ?, ?, ?)");
-			statement.setInt(1, this.Id);
-			statement.setInt(2, this.player1Id);
-			statement.setInt(3, this.player2Id);
+			statement.setInt(1, Id);
+			statement.setInt(2, player1Id);
+			statement.setInt(3, player2Id);
 			statement.setBoolean(4, false);
-			statement.setLong(5, this.affiancedDate.getTimeInMillis());
-			statement.setLong(6, this.weddingDate.getTimeInMillis());
+			statement.setLong(5, affiancedDate.getTimeInMillis());
+			statement.setLong(6, weddingDate.getTimeInMillis());
 			statement.execute();
 			statement.close();
 		}
@@ -134,12 +134,12 @@ public class Couple
 
 			statement = con.prepareStatement("UPDATE mods_wedding set married = ?, weddingDate = ? where id = ?");
 			statement.setBoolean(1, true);
-			this.weddingDate = Calendar.getInstance();
-			statement.setLong(2, this.weddingDate.getTimeInMillis());
-			statement.setInt(3, this.Id);
+			weddingDate = Calendar.getInstance();
+			statement.setLong(2, weddingDate.getTimeInMillis());
+			statement.setInt(3, Id);
 			statement.execute();
 			statement.close();
-			this.maried = true;
+			maried = true;
 		}
 		catch (Exception e)
 		{
@@ -160,7 +160,7 @@ public class Couple
 			PreparedStatement statement;
 
 			statement = con.prepareStatement("DELETE FROM mods_wedding WHERE id=?");
-			statement.setInt(1, this.Id);
+			statement.setInt(1, Id);
 			statement.execute();
 			statement.close();
 		}
@@ -176,31 +176,31 @@ public class Couple
 
 	public final int getId()
 	{
-		return this.Id;
+		return Id;
 	}
 
 	public final int getPlayer1Id()
 	{
-		return this.player1Id;
+		return player1Id;
 	}
 
 	public final int getPlayer2Id()
 	{
-		return this.player2Id;
+		return player2Id;
 	}
 
 	public final boolean getMaried()
 	{
-		return this.maried;
+		return maried;
 	}
 
 	public final Calendar getAffiancedDate()
 	{
-		return this.affiancedDate;
+		return affiancedDate;
 	}
 
 	public final Calendar getWeddingDate()
 	{
-		return this.weddingDate;
+		return weddingDate;
 	}
 }

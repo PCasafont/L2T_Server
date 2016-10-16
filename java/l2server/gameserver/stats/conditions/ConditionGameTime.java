@@ -59,11 +59,11 @@ public class ConditionGameTime extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		switch (this.check)
+		switch (check)
 		{
 			case NIGHT:
-				return TimeController.getInstance().isNowNight() == this.required;
+				return TimeController.getInstance().isNowNight() == required;
 		}
-		return !this.required;
+		return !required;
 	}
 }

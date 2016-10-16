@@ -65,52 +65,52 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			throw new IllegalArgumentException("Skill " + skillId + " dont have enchant data for level " + skillLvl);
 		}
 
-		this.chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
-		this.sp = esd.getSpCost();
+		chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
+		sp = esd.getSpCost();
 		if (type == TYPE_NORMAL_ENCHANT)
 		{
-			this.multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
+			multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_SAFE_ENCHANT)
 		{
-			this.multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
+			multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_IMMORTAL_ENCHANT)
 		{
-			this.multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
+			multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_UNTRAIN_ENCHANT)
 		{
-			this.sp = (int) (0.8 * this.sp);
+			sp = (int) (0.8 * sp);
 		}
-		this.adenacount = esd.getAdenaCost() * this.multi;
+		adenacount = esd.getAdenaCost() * multi;
 
 		this.type = type;
 		this.skillId = skillId;
 		this.skillLvl = skillLvl;
-		this.skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
+		skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
 
-		this.reqCount = 1;
+		reqCount = 1;
 		switch (type)
 		{
 			case TYPE_NORMAL_ENCHANT:
-				this.bookId = esd.getRange().getNormalBook();
+				bookId = esd.getRange().getNormalBook();
 				if (skillEnchLvl % 10 > 1)
 				{
-					this.reqCount = 0;
+					reqCount = 0;
 				}
 				break;
 			case TYPE_SAFE_ENCHANT:
-				this.bookId = esd.getRange().getSafeBook();
+				bookId = esd.getRange().getSafeBook();
 				break;
 			case TYPE_UNTRAIN_ENCHANT:
-				this.bookId = esd.getRange().getUntrainBook();
+				bookId = esd.getRange().getUntrainBook();
 				break;
 			case TYPE_CHANGE_ENCHANT:
-				this.bookId = esd.getRange().getChangeBook();
+				bookId = esd.getRange().getChangeBook();
 				break;
 			case TYPE_IMMORTAL_ENCHANT:
-				this.bookId = esd.getRange().getImmortalBook();
+				bookId = esd.getRange().getImmortalBook();
 				break;
 			default:
 				return;
@@ -118,7 +118,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 
 		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
 		{
-			this.reqCount = 0;
+			reqCount = 0;
 		}
 	}
 
@@ -132,16 +132,16 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.type);
-		writeD(this.skillId);
-		writeH(this.skillLvl);
-		writeH(this.skillEnch);
-		writeQ(this.sp * this.multi); // sp
-		writeD(this.chance); // exp
+		writeD(type);
+		writeD(skillId);
+		writeH(skillLvl);
+		writeH(skillEnch);
+		writeQ(sp * multi); // sp
+		writeD(chance); // exp
 		writeD(2); // items count?
 		writeD(57); // adena //TODO unhardcode me
-		writeD(this.adenacount); // adena count
-		writeD(this.bookId); // ItemId Required
-		writeD(this.reqCount);
+		writeD(adenacount); // adena count
+		writeD(bookId); // ItemId Required
+		writeD(reqCount);
 	}
 }

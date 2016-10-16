@@ -48,8 +48,8 @@ public class CharNameTable
 
 	private CharNameTable()
 	{
-		this.chars = new ConcurrentHashMap<>();
-		this.accessLevels = new HashMap<>();
+		chars = new ConcurrentHashMap<>();
+		accessLevels = new HashMap<>();
 		if (Config.CACHE_CHAR_NAMES)
 		{
 			loadAll();
@@ -66,7 +66,7 @@ public class CharNameTable
 		if (player != null)
 		{
 			addName(player.getObjectId(), player.getName());
-			this.accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
+			accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
 		}
 	}
 
@@ -74,17 +74,17 @@ public class CharNameTable
 	{
 		if (name != null)
 		{
-			if (!name.equalsIgnoreCase(this.chars.get(objId)))
+			if (!name.equalsIgnoreCase(chars.get(objId)))
 			{
-				this.chars.put(objId, name);
+				chars.put(objId, name);
 			}
 		}
 	}
 
 	public final void removeName(int objId)
 	{
-		this.chars.remove(objId);
-		this.accessLevels.remove(objId);
+		chars.remove(objId);
+		accessLevels.remove(objId);
 	}
 
 	public final int getIdByName(String name)
@@ -94,7 +94,7 @@ public class CharNameTable
 			return -1;
 		}
 
-		Iterator<Entry<Integer, String>> it = this.chars.entrySet().iterator();
+		Iterator<Entry<Integer, String>> it = chars.entrySet().iterator();
 
 		Map.Entry<Integer, String> pair;
 		while (it.hasNext())
@@ -139,8 +139,8 @@ public class CharNameTable
 		}
 		if (id > 0)
 		{
-			this.chars.put(id, name);
-			this.accessLevels.put(id, accessLevel);
+			chars.put(id, name);
+			accessLevels.put(id, accessLevel);
 			return id;
 		}
 
@@ -154,7 +154,7 @@ public class CharNameTable
 			return null;
 		}
 
-		String name = this.chars.get(id);
+		String name = chars.get(id);
 		if (name != null)
 		{
 			return name;
@@ -192,8 +192,8 @@ public class CharNameTable
 		}
 		if (name != null && !name.isEmpty())
 		{
-			this.chars.put(id, name);
-			this.accessLevels.put(id, accessLevel);
+			chars.put(id, name);
+			accessLevels.put(id, accessLevel);
 			return name;
 		}
 
@@ -204,7 +204,7 @@ public class CharNameTable
 	{
 		if (getNameById(objectId) != null)
 		{
-			return this.accessLevels.get(objectId);
+			return accessLevels.get(objectId);
 		}
 		else
 		{
@@ -287,8 +287,8 @@ public class CharNameTable
 				id = rset.getInt(1);
 				name = rset.getString(2);
 				accessLevel = rset.getInt(3);
-				this.chars.put(id, name);
-				this.accessLevels.put(id, accessLevel);
+				chars.put(id, name);
+				accessLevels.put(id, accessLevel);
 			}
 			rset.close();
 			statement.close();
@@ -301,7 +301,7 @@ public class CharNameTable
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + this.chars.size() + " char names.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
 	}
 
 	public boolean setCharNameConditions(L2PcInstance player, String name)

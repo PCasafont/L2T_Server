@@ -73,13 +73,13 @@ public class Balok extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addTalkId(this.crystalPortal);
-        addStartNpc(this.crystalPortal);
-        addKillId(this.minionId);
-        addKillId(this.balokId);
-        addAttackId(this.balokId);
-        addSpellFinishedId(this.balokId);
-        addKillId(this.minionId);
+        addTalkId(crystalPortal);
+        addStartNpc(crystalPortal);
+        addKillId(minionId);
+        addKillId(balokId);
+        addAttackId(balokId);
+        addSpellFinishedId(balokId);
+        addKillId(minionId);
     }
 
     private class CrystalPrisonWorld extends InstanceWorld
@@ -97,7 +97,7 @@ public class Balok extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -120,7 +120,7 @@ public class Balok extends L2AttackableAIScript
         if (wrld != null && wrld instanceof CrystalPrisonWorld)
         {
             CrystalPrisonWorld world = (CrystalPrisonWorld) wrld;
-            if (skill == this.darknessDrain)
+            if (skill == darknessDrain)
             {
                 if (!world.currentMinion.isDead())
                 {
@@ -135,7 +135,7 @@ public class Balok extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -174,7 +174,7 @@ public class Balok extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_spawn_balok"))
             {
-                world.balok = addSpawn(this.balokId, 153573, 142071, -12738, 16565, false, 0, false, world.instanceId);
+                world.balok = addSpawn(balokId, 153573, 142071, -12738, 16565, false, 0, false, world.instanceId);
             }
             else if (event.equalsIgnoreCase("stage_last_send_minions"))
             {
@@ -203,14 +203,14 @@ public class Balok extends L2AttackableAIScript
                 }
                 else
                 {
-                    L2Abnormal invul = npc.getFirstEffect(this.invincibilityActivation);
+                    L2Abnormal invul = npc.getFirstEffect(invincibilityActivation);
                     if (invul != null)
                     {
                         invul.exit();
                     }
 
                     world.balok.setTarget(npc);
-                    world.balok.doCast(this.darknessDrain);
+                    world.balok.doCast(darknessDrain);
                 }
             }
         }
@@ -232,7 +232,7 @@ public class Balok extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -247,19 +247,19 @@ public class Balok extends L2AttackableAIScript
                 {
                     world.status = 1;
 
-                    for (int[] a : this.minionSpawns)
+                    for (int[] a : minionSpawns)
                     {
-                        L2Npc minion = addSpawn(this.minionId, a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
+                        L2Npc minion = addSpawn(minionId, a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
                         world.minionList.add(minion);
 
-                        this.invincibilityActivation.getEffects(minion, minion);
+						invincibilityActivation.getEffects(minion, minion);
                     }
                 }
                 else if (npc.getCurrentHp() < npc.getMaxHp() * 0.25 && world.status == 1)
                 {
                     world.status = 2;
 
-                    this.invincibilityActivation.getEffects(world.balok, world.balok);
+					invincibilityActivation.getEffects(world.balok, world.balok);
 
                     //Jail random players?
                     for (L2PcInstance instPlayer : world.balok.getKnownList().getKnownPlayers().values())
@@ -269,7 +269,7 @@ public class Balok extends L2AttackableAIScript
                             continue;
                         }
 
-                        int[] randomJail = this.prisonsSpawns[Rnd.get(this.prisonsSpawns.length)]; //Random jail
+                        int[] randomJail = prisonsSpawns[Rnd.get(prisonsSpawns.length)]; //Random jail
 
                         instPlayer.teleToLocation(randomJail[0], randomJail[1], randomJail[2]);
 
@@ -287,7 +287,7 @@ public class Balok extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -316,7 +316,7 @@ public class Balok extends L2AttackableAIScript
                         }
                         else
                         {
-                            world.balok.getFirstEffect(this.invincibilityActivation).exit();
+                            world.balok.getFirstEffect(invincibilityActivation).exit();
                         }
                     }
                 }
@@ -329,14 +329,14 @@ public class Balok extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
 
-        if (npcId == this.crystalPortal)
+        if (npcId == crystalPortal)
         {
             return "EntrancePortal.html";
         }
@@ -370,13 +370,13 @@ public class Balok extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, instanceTemplateId, Config.BALOK_MIN_PLAYERS, 21, 92, 99))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new CrystalPrisonWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -384,7 +384,7 @@ public class Balok extends L2AttackableAIScript
             InstanceManager.getInstance().addWorld(world);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -401,13 +401,13 @@ public class Balok extends L2AttackableAIScript
                     continue;
                 }
 
-                enterPlayer.deleteAllItemsById(this.prisonKey);
+                enterPlayer.deleteAllItemsById(prisonKey);
 
                 world.allowed.add(enterPlayer.getObjectId());
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(this.enterCords, true);
+                enterPlayer.teleToLocation(enterCords, true);
             }
 
             startQuestTimer("stage_1_start", 60000, null, player);

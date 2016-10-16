@@ -36,7 +36,7 @@ public class ExResponseCommissionItemList extends L2ItemListPacket
 			if (item.isSellable() && item.isTradeable() && !item.isEquipped() && item.getItemId() != 57 &&
 					!item.isQuestItem())
 			{
-				this.items.add(item);
+				items.add(item);
 			}
 		}
 	}
@@ -44,9 +44,9 @@ public class ExResponseCommissionItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.items.size());
+		writeD(items.size());
 
-		for (L2ItemInstance item : this.items)
+		for (L2ItemInstance item : items)
 		{
 			writeItem(item);
 		}

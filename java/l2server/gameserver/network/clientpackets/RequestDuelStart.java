@@ -37,8 +37,8 @@ public final class RequestDuelStart extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.player = readS();
-		this.partyDuel = readD();
+		player = readS();
+		partyDuel = readD();
 	}
 
 	/**
@@ -47,7 +47,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		L2PcInstance targetChar = L2World.getInstance().getPlayer(this.player);
+		L2PcInstance targetChar = L2World.getInstance().getPlayer(player);
 		if (activeChar == null)
 		{
 			return;
@@ -88,7 +88,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 		}
 
 		// Duel is a party duel
-		if (this.partyDuel == 1)
+		if (partyDuel == 1)
 		{
 			// Player must be in a party & the party leader
 			if (!activeChar.isInParty() || !(activeChar.isInParty() && activeChar.getParty().isLeader(activeChar)))
@@ -138,7 +138,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 			if (!partyLeader.isProcessingRequest())
 			{
 				activeChar.onTransactionRequest(partyLeader);
-				partyLeader.sendPacket(new ExDuelAskStart(activeChar.getName(), this.partyDuel));
+				partyLeader.sendPacket(new ExDuelAskStart(activeChar.getName(), partyDuel));
 
 				if (Config.DEBUG)
 				{
@@ -167,7 +167,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 			if (!targetChar.isProcessingRequest())
 			{
 				activeChar.onTransactionRequest(targetChar);
-				targetChar.sendPacket(new ExDuelAskStart(activeChar.getName(), this.partyDuel));
+				targetChar.sendPacket(new ExDuelAskStart(activeChar.getName(), partyDuel));
 
 				if (Config.DEBUG)
 				{

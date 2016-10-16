@@ -43,8 +43,8 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 	@Override
 	protected void readImpl()
 	{
-		this.objectId1 = readD();
-		this.objectId2 = readD();
+		objectId1 = readD();
+		objectId2 = readD();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 	@Override
 	protected void runImpl()
 	{
-		if (this.objectId1 == this.objectId2)
+		if (objectId1 == objectId2)
 		{
 			return;
 		}
@@ -69,13 +69,13 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 			return;
 		}
 
-		L2ItemInstance target = player.getInventory().getItemByObjectId(this.objectId1);
+		L2ItemInstance target = player.getInventory().getItemByObjectId(objectId1);
 		if (target == null)
 		{
 			return;
 		}
 
-		L2ItemInstance template = player.getInventory().getItemByObjectId(this.objectId2);
+		L2ItemInstance template = player.getInventory().getItemByObjectId(objectId2);
 		if (template == null)
 		{
 			return;

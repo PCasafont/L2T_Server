@@ -31,6 +31,6 @@ public class ExResponseCommissionDelete extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.success ? 0x01 : 0x00);
+		writeD(success ? 0x01 : 0x00);
 	}
 }

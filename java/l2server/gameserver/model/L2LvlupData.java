@@ -41,7 +41,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassHpAdd()
 	{
-		return this.classHpAdd;
+		return classHpAdd;
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class L2LvlupData
 	 */
 	public void setClassHpAdd(float hpAdd)
 	{
-		this.classHpAdd = hpAdd;
+		classHpAdd = hpAdd;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassHpBase()
 	{
-		return this.classHpBase;
+		return classHpBase;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class L2LvlupData
 	 */
 	public void setClassHpBase(float hpBase)
 	{
-		this.classHpBase = hpBase;
+		classHpBase = hpBase;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassHpModifier()
 	{
-		return this.classHpModifier;
+		return classHpModifier;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class L2LvlupData
 	 */
 	public void setClassHpModifier(float hpModifier)
 	{
-		this.classHpModifier = hpModifier;
+		classHpModifier = hpModifier;
 	}
 
 	/**
@@ -92,14 +92,14 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassCpAdd()
 	{
-		return this.classCpAdd;
+		return classCpAdd;
 	}
 
 	/**
 	 */
 	public void setClassCpAdd(float cpAdd)
 	{
-		this.classCpAdd = cpAdd;
+		classCpAdd = cpAdd;
 	}
 
 	/**
@@ -108,14 +108,14 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassCpBase()
 	{
-		return this.classCpBase;
+		return classCpBase;
 	}
 
 	/**
 	 */
 	public void setClassCpBase(float cpBase)
 	{
-		this.classCpBase = cpBase;
+		classCpBase = cpBase;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassCpModifier()
 	{
-		return this.classCpModifier;
+		return classCpModifier;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class L2LvlupData
 	 */
 	public void setClassCpModifier(float cpModifier)
 	{
-		this.classCpModifier = cpModifier;
+		classCpModifier = cpModifier;
 	}
 
 	/**
@@ -140,14 +140,14 @@ public class L2LvlupData
 	 */
 	public int getCurrentClass()
 	{
-		return this.classid;
+		return classid;
 	}
 
 	/**
 	 */
 	public void setClassid(int pClassid)
 	{
-		this.classid = pClassid;
+		classid = pClassid;
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class L2LvlupData
 	@Deprecated
 	public int getClassLvl()
 	{
-		return this.classLvl;
+		return classLvl;
 	}
 
 	/**
@@ -164,7 +164,7 @@ public class L2LvlupData
 	 */
 	public void setClassLvl(int lvl)
 	{
-		this.classLvl = lvl;
+		classLvl = lvl;
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassMpAdd()
 	{
-		return this.classMpAdd;
+		return classMpAdd;
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class L2LvlupData
 	 */
 	public void setClassMpAdd(float mpAdd)
 	{
-		this.classMpAdd = mpAdd;
+		classMpAdd = mpAdd;
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassMpBase()
 	{
-		return this.classMpBase;
+		return classMpBase;
 	}
 
 	/**
@@ -198,7 +198,7 @@ public class L2LvlupData
 	 */
 	public void setClassMpBase(float mpBase)
 	{
-		this.classMpBase = mpBase;
+		classMpBase = mpBase;
 	}
 
 	/**
@@ -207,7 +207,7 @@ public class L2LvlupData
 	@Deprecated
 	public float getClassMpModifier()
 	{
-		return this.classMpModifier;
+		return classMpModifier;
 	}
 
 	/**
@@ -215,6 +215,6 @@ public class L2LvlupData
 	 */
 	public void setClassMpModifier(float mpModifier)
 	{
-		this.classMpModifier = mpModifier;
+		classMpModifier = mpModifier;
 	}
 }

@@ -32,18 +32,18 @@ public class ActionHandler
 
 	private ActionHandler()
 	{
-		this.actions = new HashMap<>();
-		this.actionsShift = new HashMap<>();
+		actions = new HashMap<>();
+		actionsShift = new HashMap<>();
 	}
 
 	public void registerActionHandler(IActionHandler handler)
 	{
-		this.actions.put(handler.getInstanceType(), handler);
+		actions.put(handler.getInstanceType(), handler);
 	}
 
 	public void registerActionShiftHandler(IActionHandler handler)
 	{
-		this.actionsShift.put(handler.getInstanceType(), handler);
+		actionsShift.put(handler.getInstanceType(), handler);
 	}
 
 	public IActionHandler getActionHandler(InstanceType iType)
@@ -51,7 +51,7 @@ public class ActionHandler
 		IActionHandler result = null;
 		for (InstanceType t = iType; t != null; t = t.getParent())
 		{
-			result = this.actions.get(t);
+			result = actions.get(t);
 			if (result != null)
 			{
 				break;
@@ -65,7 +65,7 @@ public class ActionHandler
 		IActionHandler result = null;
 		for (InstanceType t = iType; t != null; t = t.getParent())
 		{
-			result = this.actionsShift.get(t);
+			result = actionsShift.get(t);
 			if (result != null)
 			{
 				break;
@@ -76,12 +76,12 @@ public class ActionHandler
 
 	public int size()
 	{
-		return this.actions.size();
+		return actions.size();
 	}
 
 	public int sizeShift()
 	{
-		return this.actionsShift.size();
+		return actionsShift.size();
 	}
 
 	@SuppressWarnings("synthetic-access")

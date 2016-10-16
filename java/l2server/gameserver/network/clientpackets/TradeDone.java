@@ -36,7 +36,7 @@ public final class TradeDone extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public final class TradeDone extends L2GameClientPacket
 			return;
 		}
 
-		if (this.response == 1)
+		if (response == 1)
 		{
 			if (trade.getPartner() == null || L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null)
 			{

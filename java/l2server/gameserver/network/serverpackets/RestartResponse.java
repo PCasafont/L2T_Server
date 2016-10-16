@@ -40,6 +40,6 @@ public final class RestartResponse extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.result ? 1 : 0);
+		writeD(result ? 1 : 0);
 	}
 }

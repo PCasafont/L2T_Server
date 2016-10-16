@@ -32,7 +32,7 @@ public class RequestFortressMapInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.fortressId = readD();
+		fortressId = readD();
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class RequestFortressMapInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		Fort fort = FortManager.getInstance().getFortById(this.fortressId);
+		Fort fort = FortManager.getInstance().getFortById(fortressId);
 		sendPacket(new ExShowFortressMapInfo(fort));
 	}
 }

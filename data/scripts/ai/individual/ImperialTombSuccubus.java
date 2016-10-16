@@ -42,7 +42,7 @@ public class ImperialTombSuccubus extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int a : this.succubusIds)
+		for (int a : succubusIds)
 		{
 			addKillId(a);
 		}
@@ -54,7 +54,7 @@ public class ImperialTombSuccubus extends L2AttackableAIScript
 				continue;
 			}
 
-			if (Util.contains(this.succubusIds, spawn.getNpcId()))
+			if (Util.contains(succubusIds, spawn.getNpcId()))
 			{
 				spawn.getNpc().setShowSummonAnimation(true);
 			}
@@ -66,7 +66,7 @@ public class ImperialTombSuccubus extends L2AttackableAIScript
 	{
 		if (Rnd.get(100) > 50)
 		{
-			SkillTable.getInstance().getInfo(this.buffIds[Rnd.get(this.buffIds.length)], 1).getEffects(killer, killer);
+			SkillTable.getInstance().getInfo(buffIds[Rnd.get(buffIds.length)], 1).getEffects(killer, killer);
 		}
 
 		return super.onKill(npc, killer, isPet);

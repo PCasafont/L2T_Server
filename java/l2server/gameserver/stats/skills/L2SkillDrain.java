@@ -49,8 +49,8 @@ public class L2SkillDrain extends L2Skill
 	{
 		super(set);
 
-		this.absorbPart = set.getFloat("absorbPart", 0.f);
-		this.absorbAbs = set.getInteger("absorbAbs", 0);
+		absorbPart = set.getFloat("absorbPart", 0.f);
+		absorbAbs = set.getInteger("absorbAbs", 0);
 	}
 
 	@Override
@@ -121,7 +121,7 @@ public class L2SkillDrain extends L2Skill
 				}
 			}
 
-			double hpAdd = this.absorbAbs + this.absorbPart * drain;
+			double hpAdd = absorbAbs + absorbPart * drain;
 			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
 					activeChar.getCurrentHp() + hpAdd;
 
@@ -162,7 +162,7 @@ public class L2SkillDrain extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
-					this.logDamage.log(record);
+					logDamage.log(record);
 				}
 
 				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
@@ -237,7 +237,7 @@ public class L2SkillDrain extends L2Skill
 				Log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
 			}
 
-			double hpAdd = this.absorbAbs + this.absorbPart * damage;
+			double hpAdd = absorbAbs + absorbPart * damage;
 			L2PcInstance owner = activeCubic.getOwner();
 			double hp =
 					owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;

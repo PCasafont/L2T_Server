@@ -41,7 +41,7 @@ public class ExRegistWaitingSubstituteOk extends L2GameServerPacket
 		writeC(0x00); // TODO: Unknown
 		writeC(0x00); // TODO: Unknown
 		writeD(0x00); // TODO: Unknown
-		writeD(this.player.getInstanceId() > 0 ? 0x01 : 0x00);
-		writeD(this.classId);
+		writeD(player.getInstanceId() > 0 ? 0x01 : 0x00);
+		writeD(classId);
 	}
 }

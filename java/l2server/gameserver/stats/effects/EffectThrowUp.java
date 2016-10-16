@@ -98,40 +98,40 @@ public class EffectThrowUp extends L2Effect
 
 		if (getSkill().getFlyRadius() == -1)
 		{
-			this.x = getEffector().getX() + Rnd.get(10);
-			this.y = getEffector().getY() + Rnd.get(10);
-			this.z = getEffector().getZ() + 5;
+			x = getEffector().getX() + Rnd.get(10);
+			y = getEffector().getY() + Rnd.get(10);
+			z = getEffector().getZ() + 5;
 			if (Config.GEODATA > 0)
 			{
 				Location destiny = GeoData.getInstance()
-						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
+						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
 								getEffected().getInstanceId());
-				this.x = destiny.getX();
-				this.y = destiny.getY();
+				x = destiny.getX();
+				y = destiny.getY();
 			}
 		}
 		else
 		{
 			// Calculate the new destination with offset included
-			this.x = getEffector().getX() - (int) (offset * cos);
-			this.y = getEffector().getY() - (int) (offset * sin);
-			this.z = getEffected().getZ();
+			x = getEffector().getX() - (int) (offset * cos);
+			y = getEffector().getY() - (int) (offset * sin);
+			z = getEffected().getZ();
 
 			if (Config.GEODATA > 0)
 			{
 				Location destiny = GeoData.getInstance()
-						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
+						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
 								getEffected().getInstanceId());
-				if (destiny.getX() != this.x || destiny.getY() != this.y)
+				if (destiny.getX() != x || destiny.getY() != y)
 				{
-					this.x = destiny.getX() + (int) (cos * 10);
-					this.y = destiny.getY() + (int) (sin * 10);
+					x = destiny.getX() + (int) (cos * 10);
+					y = destiny.getY() + (int) (sin * 10);
 				}
 			}
 		}
 
 		getEffected().startStunning();
-		getEffected().broadcastPacket(new FlyToLocation(getEffected(), this.x, this.y, this.z, FlyType.THROW_UP));
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.THROW_UP));
 		return true;
 	}
 
@@ -151,7 +151,7 @@ public class EffectThrowUp extends L2Effect
 	public void onExit()
 	{
 		getEffected().stopStunning(false);
-		getEffected().setXYZ(this.x, this.y, this.z);
+		getEffected().setXYZ(x, y, z);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 	}
 }

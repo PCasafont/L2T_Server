@@ -57,6 +57,6 @@ public class ConditionTargetUsesWeaponKind extends Condition
 			return false;
 		}
 
-		return (item.getItemType().mask() & this.weaponMask) != 0;
+		return (item.getItemType().mask() & weaponMask) != 0;
 	}
 }

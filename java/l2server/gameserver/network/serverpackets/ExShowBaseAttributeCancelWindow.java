@@ -27,14 +27,14 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 
 	public ExShowBaseAttributeCancelWindow(L2PcInstance player)
 	{
-		this.items = player.getInventory().getElementItems();
+		items = player.getInventory().getElementItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.items.length);
-		for (L2ItemInstance item : this.items)
+		writeD(items.length);
+		for (L2ItemInstance item : items)
 		{
 			writeD(item.getObjectId());
 			writeQ(getPrice(item));
@@ -48,65 +48,65 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 			case L2Item.CRYSTAL_S:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 50000;
+					price = 50000;
 				}
 				else
 				{
-					this.price = 40000;
+					price = 40000;
 				}
 				break;
 			case L2Item.CRYSTAL_S80:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 100000;
+					price = 100000;
 				}
 				else
 				{
-					this.price = 80000;
+					price = 80000;
 				}
 				break;
 			case L2Item.CRYSTAL_S84:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 200000;
+					price = 200000;
 				}
 				else
 				{
-					this.price = 160000;
+					price = 160000;
 				}
 				break;
 			case L2Item.CRYSTAL_R:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 250000;
+					price = 250000;
 				}
 				else
 				{
-					this.price = 240000;
+					price = 240000;
 				}
 				break;
 			case L2Item.CRYSTAL_R95:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 300000;
+					price = 300000;
 				}
 				else
 				{
-					this.price = 280000;
+					price = 280000;
 				}
 				break;
 			case L2Item.CRYSTAL_R99:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					this.price = 350000;
+					price = 350000;
 				}
 				else
 				{
-					this.price = 320000;
+					price = 320000;
 				}
 				break;
 		}
 
-		return this.price;
+		return price;
 	}
 }

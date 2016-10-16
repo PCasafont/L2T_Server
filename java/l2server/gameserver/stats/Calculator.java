@@ -49,7 +49,7 @@ public final class Calculator
 	 */
 	public Calculator()
 	{
-		this.functions = this.emptyFuncs;
+		functions = emptyFuncs;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public final class Calculator
 	 */
 	public Calculator(Calculator c)
 	{
-		this.functions = c.functions;
+		functions = c.functions;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public final class Calculator
 	 */
 	public int size()
 	{
-		return this.functions.length;
+		return functions.length;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public final class Calculator
 	 */
 	public synchronized void addFunc(Func f)
 	{
-		Func[] funcs = this.functions;
+		Func[] funcs = functions;
 		Func[] tmp = new Func[funcs.length + 1];
 
 		final int order = f.getOrder();
@@ -134,7 +134,7 @@ public final class Calculator
 			tmp[i + 1] = funcs[i];
 		}
 
-		this.functions = tmp;
+		functions = tmp;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public final class Calculator
 	 */
 	public synchronized void removeFunc(Func f)
 	{
-		Func[] funcs = this.functions;
+		Func[] funcs = functions;
 		Func[] tmp = new Func[funcs.length - 1];
 
 		int i;
@@ -164,11 +164,11 @@ public final class Calculator
 
 		if (tmp.length == 0)
 		{
-			this.functions = this.emptyFuncs;
+			functions = emptyFuncs;
 		}
 		else
 		{
-			this.functions = tmp;
+			functions = tmp;
 		}
 	}
 
@@ -179,7 +179,7 @@ public final class Calculator
 	{
 		ArrayList<Stats> modifiedStats = new ArrayList<>();
 
-		for (Func func : this.functions)
+		for (Func func : functions)
 		{
 			if (func.funcOwner == owner)
 			{
@@ -195,7 +195,7 @@ public final class Calculator
 	 */
 	public void calc(Env env)
 	{
-		for (Func func : this.functions)
+		for (Func func : functions)
 		{
 			func.calc(env);
 		}

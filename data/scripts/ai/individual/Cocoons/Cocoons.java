@@ -51,7 +51,7 @@ public class Cocoons extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int a = this.cocoon; a <= this.largeCocoon; a++)
+		for (int a = cocoon; a <= largeCocoon; a++)
 		{
 			addAttackId(a);
 			addStartNpc(a);
@@ -60,7 +60,7 @@ public class Cocoons extends L2AttackableAIScript
 			addSpawnId(a);
 		}
 
-		addSpawnId(this.contaminatedCocoon);
+		addSpawnId(contaminatedCocoon);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -69,7 +69,7 @@ public class Cocoons extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == this.cocoon || spawn.getNpcId() == this.largeCocoon)
+			if (spawn.getNpcId() == cocoon || spawn.getNpcId() == largeCocoon)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -93,28 +93,28 @@ public class Cocoons extends L2AttackableAIScript
 			if (!npc.isDead() && !npc.isDecayed())
 			{
 				npc.doDie(null);
-				if (npc.getNpcId() == this.cocoon)
+				if (npc.getNpcId() == cocoon)
 				{
 					if (Rnd.get(10) > 7)
 					{
-						addSpawn(this.contaminatedCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
-						mobs = this.wickedMobs;
+						addSpawn(contaminatedCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
+						mobs = wickedMobs;
 					}
 					else
 					{
-						mobs = this.normalMobs;
+						mobs = normalMobs;
 					}
 				}
 				else
 				{
 					if (Rnd.get(10) > 7)
 					{
-						addSpawn(this.contaminatedLargeCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
-						mobs = this.brutalMobs;
+						addSpawn(contaminatedLargeCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
+						mobs = brutalMobs;
 					}
 					else
 					{
-						mobs = this.violentMobs;
+						mobs = violentMobs;
 					}
 				}
 			}
@@ -124,13 +124,13 @@ public class Cocoons extends L2AttackableAIScript
 			if (!npc.isDead() && !npc.isDecayed())
 			{
 				npc.doDie(null);
-				if (npc.getNpcId() == this.cocoon)
+				if (npc.getNpcId() == cocoon)
 				{
-					mobs = this.wickedMobs;
+					mobs = wickedMobs;
 				}
 				else
 				{
-					mobs = this.slightlyMobs;
+					mobs = slightlyMobs;
 				}
 			}
 		}

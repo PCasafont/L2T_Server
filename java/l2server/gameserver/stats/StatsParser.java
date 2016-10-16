@@ -50,8 +50,8 @@ public abstract class StatsParser
 
 	StatsParser(XmlNode node)
 	{
-		this.id = node.getInt("id");
-		this.name = node.getString("name");
+		id = node.getInt("id");
+		name = node.getString("name");
 		this.node = node;
 	}
 
@@ -256,7 +256,7 @@ public abstract class StatsParser
 
 		if (cond.conditions == null || cond.conditions.length == 0)
 		{
-			Log.severe("Empty <and> condition in " + this.name);
+			Log.severe("Empty <and> condition in " + name);
 		}
 		return cond;
 	}
@@ -271,7 +271,7 @@ public abstract class StatsParser
 
 		if (cond.conditions == null || cond.conditions.length == 0)
 		{
-			Log.severe("Empty <or> condition in " + this.name);
+			Log.severe("Empty <or> condition in " + name);
 		}
 		return cond;
 	}
@@ -283,7 +283,7 @@ public abstract class StatsParser
 			return new ConditionLogicNot(parseCondition(node.getFirstChild(), template));
 		}
 
-		Log.severe("Empty <not> condition in " + this.name);
+		Log.severe("Empty <not> condition in " + name);
 		return null;
 	}
 
@@ -642,7 +642,7 @@ public abstract class StatsParser
 
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <player> condition in " + this.name);
+			Log.severe("Unrecognized <player> condition in " + name);
 		}
 		return cond;
 	}
@@ -811,7 +811,7 @@ public abstract class StatsParser
 			}
 			else
 			{
-				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + this.name);
+				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + name);
 			}
 		}
 		return cond;
@@ -877,7 +877,7 @@ public abstract class StatsParser
 		}
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <using> condition in " + this.name);
+			Log.severe("Unrecognized <using> condition in " + name);
 		}
 		return cond;
 	}
@@ -905,7 +905,7 @@ public abstract class StatsParser
 		}
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <game> condition in " + this.name);
+			Log.severe("Unrecognized <game> condition in " + name);
 		}
 		return cond;
 	}
@@ -988,11 +988,11 @@ public abstract class StatsParser
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 }

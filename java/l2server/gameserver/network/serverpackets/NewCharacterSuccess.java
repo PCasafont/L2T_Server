@@ -37,15 +37,15 @@ public class NewCharacterSuccess extends L2GameServerPacket
 
 	public void addChar(L2PcTemplate template)
 	{
-		this.chars.add(template);
+		chars.add(template);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.chars.size());
+		writeD(chars.size());
 
-		for (L2PcTemplate temp : this.chars)
+		for (L2PcTemplate temp : chars)
 		{
 			if (temp == null)
 			{

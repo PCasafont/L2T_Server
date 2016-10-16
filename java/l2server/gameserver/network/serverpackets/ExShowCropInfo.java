@@ -61,15 +61,15 @@ public class ExShowCropInfo extends L2GameServerPacket
 	{ // Id
 		writeH(0x24); // SubId
 		writeC(0);
-		writeD(this.manorId); // Manor ID
+		writeD(manorId); // Manor ID
 		writeD(0);
-		if (this.crops == null)
+		if (crops == null)
 		{
 			writeD(0);
 			return;
 		}
-		writeD(this.crops.size());
-		for (CropProcure crop : this.crops)
+		writeD(crops.size());
+		for (CropProcure crop : crops)
 		{
 			writeD(crop.getId()); // Crop id
 			writeQ(crop.getAmount()); // Buy residual

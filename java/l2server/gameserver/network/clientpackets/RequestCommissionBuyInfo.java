@@ -29,7 +29,7 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.auctionID = readQ();
+		auctionID = readQ();
 		readD(); // Category - unused
 	}
 

@@ -34,42 +34,42 @@ public class ExFlyMove extends L2GameServerPacket
 
 	public ExFlyMove(L2PcInstance activeChar, int id, Map<Integer, Point3D> options)
 	{
-		this.objectId = activeChar.getObjectId();
-		this.type = L2FlyMoveType.CHOOSE;
+		objectId = activeChar.getObjectId();
+		type = L2FlyMoveType.CHOOSE;
 		this.id = id;
-		this.moves = options;
-		if (this.moves.containsKey(-1))
+		moves = options;
+		if (moves.containsKey(-1))
 		{
-			this.type = L2FlyMoveType.START;
-			activeChar.setXYZ(this.moves.get(-1).getX(), this.moves.get(-1).getY(), this.moves.get(-1).getZ());
+			type = L2FlyMoveType.START;
+			activeChar.setXYZ(moves.get(-1).getX(), moves.get(-1).getY(), moves.get(-1).getZ());
 		}
 	}
 
 	public ExFlyMove(L2PcInstance activeChar, int id, int ordinal, int x, int y, int z)
 	{
-		this.objectId = activeChar.getObjectId();
-		this.type = L2FlyMoveType.MOVE;
+		objectId = activeChar.getObjectId();
+		type = L2FlyMoveType.MOVE;
 		this.id = id;
-		this.moves = new HashMap<>();
-		this.moves.put(ordinal, new Point3D(x, y, z));
+		moves = new HashMap<>();
+		moves.put(ordinal, new Point3D(x, y, z));
 		activeChar.setXYZ(x, y, z);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.type.ordinal());
+		writeD(objectId);
+		writeD(type.ordinal());
 		writeD(0x00); // GoD ???
-		writeD(this.id);
-		writeD(this.moves.size());
-		for (int moveId : this.moves.keySet())
+		writeD(id);
+		writeD(moves.size());
+		for (int moveId : moves.keySet())
 		{
 			writeD(moveId);
 			writeD(0x00); // GoD ???
-			writeD(this.moves.get(moveId).getX());
-			writeD(this.moves.get(moveId).getY());
-			writeD(this.moves.get(moveId).getZ());
+			writeD(moves.get(moveId).getX());
+			writeD(moves.get(moveId).getY());
+			writeD(moves.get(moveId).getZ());
 		}
 	}
 }

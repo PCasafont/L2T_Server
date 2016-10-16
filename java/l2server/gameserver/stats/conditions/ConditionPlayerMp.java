@@ -41,6 +41,6 @@ public class ConditionPlayerMp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= this.mp;
+		return env.player.getCurrentMp() * 100 / env.player.getMaxMp() <= mp;
 	}
 }

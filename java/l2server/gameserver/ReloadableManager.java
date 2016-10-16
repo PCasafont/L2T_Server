@@ -29,12 +29,12 @@ public class ReloadableManager
 
 	public void register(String name, Reloadable r)
 	{
-		this.reloadables.put(name, r);
+		reloadables.put(name, r);
 	}
 
 	public String reload(String name)
 	{
-		Reloadable r = this.reloadables.get(name);
+		Reloadable r = reloadables.get(name);
 		if (r == null)
 		{
 			return "Couldn't find a reloadable called \"" + name + "\"";

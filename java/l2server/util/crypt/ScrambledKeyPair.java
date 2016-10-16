@@ -32,8 +32,8 @@ public class ScrambledKeyPair
 
 	public ScrambledKeyPair(KeyPair pPair)
 	{
-		this.pair = pPair;
-		this.scrambledModulus = scrambleModulus(((RSAPublicKey) this.pair.getPublic()).getModulus());
+		pair = pPair;
+		scrambledModulus = scrambleModulus(((RSAPublicKey) pair.getPublic()).getModulus());
 	}
 
 	private byte[] scrambleModulus(BigInteger modulus)

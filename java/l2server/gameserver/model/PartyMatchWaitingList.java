@@ -29,30 +29,30 @@ public class PartyMatchWaitingList
 
 	private PartyMatchWaitingList()
 	{
-		this.members = new ArrayList<>();
+		members = new ArrayList<>();
 	}
 
 	public void addPlayer(L2PcInstance player)
 	{
 		// player.setPartyWait(1);
-		if (!this.members.contains(player))
+		if (!members.contains(player))
 		{
-			this.members.add(player);
+			members.add(player);
 		}
 	}
 
 	public void removePlayer(L2PcInstance player)
 	{
 		//player.setPartyWait(0);
-		if (this.members.contains(player))
+		if (members.contains(player))
 		{
-			this.members.remove(player);
+			members.remove(player);
 		}
 	}
 
 	public List<L2PcInstance> getPlayers()
 	{
-		return this.members;
+		return members;
 	}
 
 	public static PartyMatchWaitingList getInstance()

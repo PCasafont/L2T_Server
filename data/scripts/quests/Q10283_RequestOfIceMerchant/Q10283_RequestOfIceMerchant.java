@@ -39,11 +39,11 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.rafforty);
-		addTalkId(this.rafforty);
-		addTalkId(this.kier);
-		addFirstTalkId(this.jinia);
-		addTalkId(this.jinia);
+		addStartNpc(rafforty);
+		addTalkId(rafforty);
+		addTalkId(kier);
+		addFirstTalkId(jinia);
+		addTalkId(jinia);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.rafforty)
+		if (npc.getNpcId() == rafforty)
 		{
 			if (event.equalsIgnoreCase("32020-03.htm"))
 			{
@@ -71,12 +71,12 @@ public class Q10283_RequestOfIceMerchant extends Quest
 				st.playSound("ItemSound.quest_middle");
 			}
 		}
-		else if (npc.getNpcId() == this.kier && event.equalsIgnoreCase("spawn"))
+		else if (npc.getNpcId() == kier && event.equalsIgnoreCase("spawn"))
 		{
-			addSpawn(this.jinia, 104322, -107669, -3680, 44954, false, 60000);
+			addSpawn(jinia, 104322, -107669, -3680, 44954, false, 60000);
 			return null;
 		}
-		else if (npc.getNpcId() == this.jinia && event.equalsIgnoreCase("32760-04.html"))
+		else if (npc.getNpcId() == jinia && event.equalsIgnoreCase("32760-04.html"))
 		{
 			st.giveItems(57, 190000);
 			st.addExpAndSp(627000, 50300);
@@ -97,7 +97,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.rafforty)
+		if (npc.getNpcId() == rafforty)
 		{
 			switch (st.getState())
 			{
@@ -127,11 +127,11 @@ public class Q10283_RequestOfIceMerchant extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.kier && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == kier && st.getInt("cond") == 2)
 		{
 			htmltext = "32022-01.html";
 		}
-		else if (npc.getNpcId() == this.jinia && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
 		{
 			htmltext = "32760-02.html";
 		}
@@ -146,7 +146,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 		{
 			return null;
 		}
-		if (npc.getNpcId() == this.jinia && st.getInt("cond") == 2)
+		if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
 		{
 			return "32760-01.html";
 		}

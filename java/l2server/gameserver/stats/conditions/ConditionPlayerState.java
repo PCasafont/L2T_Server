@@ -51,49 +51,49 @@ public class ConditionPlayerState extends Condition
 	{
 		final L2Character character = env.player;
 		L2PcInstance player = null;
-		switch (this.check)
+		switch (check)
 		{
 			case RESTING:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.isSitting() == this.required;
+					return player.isSitting() == required;
 				}
-				return !this.required;
+				return !required;
 			case MOVING:
-				return character.isMoving() == this.required;
+				return character.isMoving() == required;
 			case RUNNING:
-				return character.isRunning() == this.required;
+				return character.isRunning() == required;
 			case STANDING:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return this.required != (player.isSitting() || player.isMoving());
+					return required != (player.isSitting() || player.isMoving());
 				}
-				return this.required != character.isMoving();
+				return required != character.isMoving();
 			case COMBAT:
 				return AttackStanceTaskManager.getInstance().getAttackStanceTask(character);
 			case FLYING:
-				return character.isFlying() == this.required;
+				return character.isFlying() == required;
 			case BEHIND:
-				return character.isBehindTarget() == this.required;
+				return character.isBehindTarget() == required;
 			case FRONT:
-				return character.isInFrontOfTarget() == this.required;
+				return character.isInFrontOfTarget() == required;
 			case CHAOTIC:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.getReputation() < 0 == this.required;
+					return player.getReputation() < 0 == required;
 				}
-				return !this.required;
+				return !required;
 			case OLYMPIAD:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.isInOlympiadMode() == this.required;
+					return player.isInOlympiadMode() == required;
 				}
-				return !this.required;
+				return !required;
 		}
-		return !this.required;
+		return !required;
 	}
 }

@@ -35,7 +35,7 @@ class PlayerTableModel extends AbstractTableModel
 	@Override
 	public int getRowCount()
 	{
-		return this.players.length;
+		return players.length;
 	}
 
 	@Override
@@ -50,11 +50,11 @@ class PlayerTableModel extends AbstractTableModel
 		switch (col)
 		{
 			case 0:
-				return this.players[row].getObjectId();
+				return players[row].getObjectId();
 			case 1:
-				return this.players[row].getName();
+				return players[row].getName();
 			case 2:
-				return this.players[row].getLevel();
+				return players[row].getLevel();
 		}
 		return "";
 	}

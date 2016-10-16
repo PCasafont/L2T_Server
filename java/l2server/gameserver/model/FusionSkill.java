@@ -40,23 +40,23 @@ public final class FusionSkill
 
 	public L2Character getCaster()
 	{
-		return this.caster;
+		return caster;
 	}
 
 	public L2Character getTarget()
 	{
-		return this.target;
+		return target;
 	}
 
 	public FusionSkill(L2Character caster, L2Character target, L2Skill skill)
 	{
-		this.skillCastRange = skill.getCastRange();
+		skillCastRange = skill.getCastRange();
 		this.caster = caster;
 		this.target = target;
-		this.fusionId = skill.getTriggeredId();
-		this.fusionLevel = skill.getTriggeredLevel();
+		fusionId = skill.getTriggeredId();
+		fusionLevel = skill.getTriggeredLevel();
 
-		L2Abnormal effect = this.target.getFirstEffect(this.fusionId);
+		L2Abnormal effect = this.target.getFirstEffect(fusionId);
 		if (effect != null)
 		{
 			for (L2Effect eff : effect.getEffects())
@@ -69,24 +69,24 @@ public final class FusionSkill
 		}
 		else
 		{
-			L2Skill force = SkillTable.getInstance().getInfo(this.fusionId, this.fusionLevel);
+			L2Skill force = SkillTable.getInstance().getInfo(fusionId, fusionLevel);
 			if (force != null)
 			{
 				force.getEffects(this.caster, this.target, null);
 			}
 			else
 			{
-				Log.warning("Triggered skill [" + this.fusionId + ";" + this.fusionLevel + "] not found!");
+				Log.warning("Triggered skill [" + fusionId + ";" + fusionLevel + "] not found!");
 			}
 		}
-		this.geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
+		geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
 	}
 
 	public void onCastAbort()
 	{
-		this.caster.setFusionSkill(null);
-		this.caster.setContinuousDebuffTargets(null);
-		L2Abnormal effect = this.target.getFirstEffect(this.fusionId);
+		caster.setFusionSkill(null);
+		caster.setContinuousDebuffTargets(null);
+		L2Abnormal effect = target.getFirstEffect(fusionId);
 		if (effect != null)
 		{
 			for (L2Effect eff : effect.getEffects())
@@ -98,7 +98,7 @@ public final class FusionSkill
 			}
 		}
 
-		this.geoCheckTask.cancel(true);
+		geoCheckTask.cancel(true);
 	}
 
 	public class GeoCheckTask implements Runnable

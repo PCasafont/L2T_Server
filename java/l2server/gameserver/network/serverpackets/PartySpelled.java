@@ -40,25 +40,25 @@ public class PartySpelled extends L2GameServerPacket
 
 		public Effect(int pSkillId, int pDat, int pDuration)
 		{
-			this.skillId = pSkillId;
-			this.dat = pDat;
-			this.duration = pDuration;
+			skillId = pSkillId;
+			dat = pDat;
+			duration = pDuration;
 		}
 	}
 
 	public PartySpelled(L2Character cha)
 	{
-		this.effects = new ArrayList<>();
-		this.activeChar = cha;
+		effects = new ArrayList<>();
+		activeChar = cha;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar instanceof L2SummonInstance ? 2 : this.activeChar instanceof L2PetInstance ? 1 : 0);
-		writeD(this.activeChar.getObjectId());
-		writeD(this.effects.size());
-		for (Effect temp : this.effects)
+		writeD(activeChar instanceof L2SummonInstance ? 2 : activeChar instanceof L2PetInstance ? 1 : 0);
+		writeD(activeChar.getObjectId());
+		writeD(effects.size());
+		for (Effect temp : effects)
 		{
 			writeD(temp.skillId);
 			writeD(temp.dat);
@@ -69,6 +69,6 @@ public class PartySpelled extends L2GameServerPacket
 
 	public void addPartySpelledEffect(int skillId, int dat, int duration)
 	{
-		this.effects.add(new Effect(skillId, dat, duration));
+		effects.add(new Effect(skillId, dat, duration));
 	}
 }

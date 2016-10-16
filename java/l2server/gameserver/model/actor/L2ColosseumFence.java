@@ -51,7 +51,7 @@ public final class L2ColosseumFence extends L2Object
 		this.minZ = minZ;
 		this.maxZ = maxZ;
 		this.state = state;
-		this.bounds = new Rectangle(x - width / 2, y - height / 2, width, height);
+		bounds = new Rectangle(x - width / 2, y - height / 2, width, height);
 	}
 
 	/**
@@ -80,37 +80,37 @@ public final class L2ColosseumFence extends L2Object
 
 	public int getFenceX()
 	{
-		return this.bounds.x;
+		return bounds.x;
 	}
 
 	public int getFenceY()
 	{
-		return this.bounds.y;
+		return bounds.y;
 	}
 
 	public int getFenceMinZ()
 	{
-		return this.minZ;
+		return minZ;
 	}
 
 	public int getFenceMaxZ()
 	{
-		return this.maxZ;
+		return maxZ;
 	}
 
 	public int getFenceWidth()
 	{
-		return this.bounds.width;
+		return bounds.width;
 	}
 
 	public int getFenceHeight()
 	{
-		return this.bounds.height;
+		return bounds.height;
 	}
 
 	public FenceState getFenceState()
 	{
-		return this.state;
+		return state;
 	}
 
 	@Override
@@ -121,7 +121,8 @@ public final class L2ColosseumFence extends L2Object
 
 	public boolean isInsideFence(int x, int y, int z)
 	{
-		return x >= this.bounds.x && y >= this.bounds.y && z >= this.minZ && z <= this.maxZ && x <= this.bounds.x + this.bounds.width &&
-				y <= this.bounds.y + this.bounds.width;
+		return x >= bounds.x && y >= bounds.y && z >= minZ && z <= maxZ && x <= bounds.x +
+				bounds.width &&
+				y <= bounds.y + bounds.width;
 	}
 }

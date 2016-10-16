@@ -41,10 +41,10 @@ public final class RequestRefine extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.targetItemObjId = readD();
-		this.refinerItemObjId = readD();
-		this.gemStoneItemObjId = readD();
-		this.gemStoneCount = readQ();
+		targetItemObjId = readD();
+		refinerItemObjId = readD();
+		gemStoneItemObjId = readD();
+		gemStoneCount = readQ();
 	}
 
 	/**
@@ -57,17 +57,17 @@ public final class RequestRefine extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(this.targetItemObjId);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
-		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(this.refinerItemObjId);
+		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;
 		}
-		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(this.gemStoneItemObjId);
+		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(gemStoneItemObjId);
 		if (gemStoneItem == null)
 		{
 			return;
@@ -87,7 +87,7 @@ public final class RequestRefine extends L2GameClientPacket
 			return;
 		}
 
-		if (this.gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+		if (gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
 		{
 			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
 			activeChar.sendPacket(SystemMessage
@@ -117,7 +117,7 @@ public final class RequestRefine extends L2GameClientPacket
 		}
 
 		// consume the gemstones
-		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, this.gemStoneCount, null, false))
+		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, gemStoneCount, null, false))
 		{
 			return;
 		}

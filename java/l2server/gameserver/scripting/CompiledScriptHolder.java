@@ -40,8 +40,8 @@ public class CompiledScriptHolder implements Serializable
 	public CompiledScriptHolder(CompiledScript compiledScript, File scriptFile)
 	{
 		this.compiledScript = compiledScript;
-		this.lastModified = scriptFile.lastModified();
-		this.size = scriptFile.length();
+		lastModified = scriptFile.lastModified();
+		size = scriptFile.length();
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class CompiledScriptHolder implements Serializable
 	 */
 	public long getLastModified()
 	{
-		return this.lastModified;
+		return lastModified;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class CompiledScriptHolder implements Serializable
 	 */
 	public long getSize()
 	{
-		return this.size;
+		return size;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class CompiledScriptHolder implements Serializable
 	 */
 	public CompiledScript getCompiledScript()
 	{
-		return this.compiledScript;
+		return compiledScript;
 	}
 
 	/**

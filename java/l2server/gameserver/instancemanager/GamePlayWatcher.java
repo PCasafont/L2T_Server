@@ -69,25 +69,24 @@ public class GamePlayWatcher
 		@Override
 		public void run()
 		{
-			if (!this.watcher.isOnline() || !this.watcher.isInWatcherMode())
+			if (!watcher.isOnline() || !watcher.isInWatcherMode())
 			{
-				if (this.schedule != null)
+				if (schedule != null)
 				{
-					this.schedule.cancel(false);
+					schedule.cancel(false);
 				}
 
 				return;
 			}
 
-			if (this.checkForAnotherPivotTimer < System.currentTimeMillis() || this.pivot == null ||
-					!AttackStanceTaskManager.getInstance().getAttackStanceTask(this.pivot) ||
-					this.pivot.isInsidePeaceZone(this.pivot) || this.pivot.isDead())
+			if (checkForAnotherPivotTimer < System.currentTimeMillis() || pivot == null ||
+					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) || pivot.isInsidePeaceZone(pivot) || pivot.isDead())
 			{
-				this.pivot = null;
-				this.checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
+				pivot = null;
+				checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
 			}
 
-			if (this.pivot == null)
+			if (pivot == null)
 			{
 				int bestCombatPvPCount = 0;
 				int bestCombatPvECount = 0;
@@ -95,7 +94,7 @@ public class GamePlayWatcher
 				{
 					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) ||
 							player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() ||
-							player == this.watcher)
+							player == watcher)
 					{
 						continue;
 					}
@@ -132,7 +131,7 @@ public class GamePlayWatcher
 					if (flaggedCount > bestCombatPvPCount || combatPvPCount > bestCombatPvPCount ||
 							bestCombatPvPCount < 2 && combatPvECount > bestCombatPvECount)
 					{
-						this.pivot = player;
+						pivot = player;
 						bestCombatPvPCount = Math.max(combatPvPCount, flaggedCount);
 						bestCombatPvECount = combatPvECount;
 					}
@@ -141,19 +140,19 @@ public class GamePlayWatcher
 
 			//_pivot = L2World.getInstance().getPlayer("pere");
 
-			if (this.pivot == null || this.watcher.isTeleporting())
+			if (pivot == null || watcher.isTeleporting())
 			{
 				// We stream Gludio when no mini game is going on.
 				//if (Config.isServer(Config.FUSION))
 				{
-					if (!this.watcher.isTeleporting())
+					if (!watcher.isTeleporting())
 					{
-						if (!this.watcher.isInsideRadius(-14504, 123799, 500, false))
+						if (!watcher.isInsideRadius(-14504, 123799, 500, false))
 						{
-							this.watcher.teleToLocation(-14504, 123799, -3114);
+							watcher.teleToLocation(-14504, 123799, -3114);
 						}
 
-						this.watcher.sendPacket(new SpecialCamera(this.watcher.getObjectId(), Rnd.get(50, 150), // Distance
+						watcher.sendPacket(new SpecialCamera(watcher.getObjectId(), Rnd.get(50, 150), // Distance
 								(int) (System.currentTimeMillis() / 100), // Yaw
 								Rnd.get(15, 25), // Pitch
 								2000, // Time
@@ -169,23 +168,23 @@ public class GamePlayWatcher
 				return;
 			}
 
-			if (!Util.checkIfInRange(5000, this.watcher, this.pivot, true))
+			if (!Util.checkIfInRange(5000, watcher, pivot, true))
 			{
-				this.watcher.setInstanceId(this.pivot.getInstanceId());
-				this.watcher.teleToLocation(this.pivot.getX(), this.pivot.getY(), this.pivot.getZ());
+				watcher.setInstanceId(pivot.getInstanceId());
+				watcher.teleToLocation(pivot.getX(), pivot.getY(), pivot.getZ());
 				return;
 			}
 
-			if (!Util.checkIfInRange(500, this.watcher, this.pivot, true))
+			if (!Util.checkIfInRange(500, watcher, pivot, true))
 			{
-				this.watcher.setXYZ(this.pivot.getX(), this.pivot.getY(), this.pivot.getZ());
-				this.watcher.broadcastUserInfo();
+				watcher.setXYZ(pivot.getX(), pivot.getY(), pivot.getZ());
+				watcher.broadcastUserInfo();
 			}
 
-			if (this.pivot.getTarget() == null || this.pivot.getTarget() == this.pivot)
+			if (pivot.getTarget() == null || pivot.getTarget() == pivot)
 			{
 				// 3rd person cam
-				this.watcher.sendPacket(new SpecialCamera(this.pivot.getObjectId(), Rnd.get(50, 150), // Distance
+				watcher.sendPacket(new SpecialCamera(pivot.getObjectId(), Rnd.get(50, 150), // Distance
 						0, // Yaw
 						Rnd.get(15, 25), // Pitch
 						2000, // Time
@@ -198,21 +197,21 @@ public class GamePlayWatcher
 			}
 			else
 			{
-				double yaw = Math.toDegrees(Math.atan2(this.pivot.getX() - this.pivot.getTarget().getX(),
-						this.pivot.getY() - this.pivot.getTarget().getY())) + 90;
+				double yaw = Math.toDegrees(Math.atan2(pivot.getX() - pivot.getTarget().getX(),
+						pivot.getY() - pivot.getTarget().getY())) + 90;
 				double angle = 180 - yaw;
-				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(this.pivot, this.pivot.getTarget(), false));
+				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(pivot, pivot.getTarget(), false));
 				if (pitch < 15)
 				{
 					pitch = 15;
 				}
 				double distance = 250;
 				Point3D cameraPos =
-						new Point3D((int) Math.round(this.pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-								(int) Math.round(this.pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+						new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+								(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
 										Math.cos(pitch * Math.PI / 180.0)),
-								(int) Math.round(this.pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
-				while (!GeoEngine.getInstance().canSeeTarget(this.pivot, cameraPos))
+								(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+				while (!GeoEngine.getInstance().canSeeTarget(pivot, cameraPos))
 				{
 					distance -= 100;
 
@@ -223,14 +222,14 @@ public class GamePlayWatcher
 					}
 
 					cameraPos =
-							new Point3D((int) Math.round(this.pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-									(int) Math.round(this.pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+							new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+									(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
 											Math.cos(pitch * Math.PI / 180.0)),
-									(int) Math.round(this.pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+									(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
 				}
 
 				// 3rd person cam
-				this.watcher.sendPacket(new SpecialCamera(this.pivot.getObjectId(), Rnd.get(50, 150), // Distance
+				watcher.sendPacket(new SpecialCamera(pivot.getObjectId(), Rnd.get(50, 150), // Distance
 						(int) Math.round(yaw), // Yaw
 						Rnd.get(15, 25), // Pitch
 						2000, // Time

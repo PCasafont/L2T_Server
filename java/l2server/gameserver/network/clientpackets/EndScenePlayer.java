@@ -29,7 +29,7 @@ public final class EndScenePlayer extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.movieId = readD();
+		movieId = readD();
 	}
 
 	@Override
@@ -40,13 +40,13 @@ public final class EndScenePlayer extends L2GameClientPacket
 		{
 			return;
 		}
-		if (this.movieId == 0)
+		if (movieId == 0)
 		{
 			return;
 		}
-		if (activeChar.getMovieId() != this.movieId)
+		if (activeChar.getMovieId() != movieId)
 		{
-			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + this.movieId);
+			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + movieId);
 			return;
 		}
 		activeChar.setMovieId(0);

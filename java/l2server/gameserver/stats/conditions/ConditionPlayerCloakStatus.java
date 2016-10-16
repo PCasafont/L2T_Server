@@ -46,6 +46,6 @@ public class ConditionPlayerCloakStatus extends Condition
 			return false;
 		}
 
-		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= this.val;
+		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= val;
 	}
 }

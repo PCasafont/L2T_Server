@@ -44,86 +44,86 @@ public class MacroList
 	public MacroList(L2PcInstance owner)
 	{
 		this.owner = owner;
-		this.revision = 1;
-		this.macroId = 1000;
+		revision = 1;
+		macroId = 1000;
 	}
 
 	public int getRevision()
 	{
-		return this.revision;
+		return revision;
 	}
 
 	public L2Macro[] getAllMacroses()
 	{
-		return this.macroses.values().toArray(new L2Macro[this.macroses.size()]);
+		return macroses.values().toArray(new L2Macro[macroses.size()]);
 	}
 
 	public L2Macro getMacro(int id)
 	{
-		return this.macroses.get(id - 1);
+		return macroses.get(id - 1);
 	}
 
 	public void registerMacro(L2Macro macro)
 	{
 		if (macro.id == 0)
 		{
-			macro.id = this.macroId++;
-			while (this.macroses.get(macro.id) != null)
+			macro.id = macroId++;
+			while (macroses.get(macro.id) != null)
 			{
-				macro.id = this.macroId++;
+				macro.id = macroId++;
 			}
-			this.macroses.put(macro.id, macro);
+			macroses.put(macro.id, macro);
 			registerMacroInDb(macro);
-			this.owner.sendPacket(new SendMacroList(1, 1, macro));
+			owner.sendPacket(new SendMacroList(1, 1, macro));
 		}
 		else
 		{
-			L2Macro old = this.macroses.put(macro.id, macro);
+			L2Macro old = macroses.put(macro.id, macro);
 			if (old != null)
 			{
 				deleteMacroFromDb(old);
 			}
 			registerMacroInDb(macro);
-			this.owner.sendPacket(new SendMacroList(2, 1, macro));
+			owner.sendPacket(new SendMacroList(2, 1, macro));
 		}
 	}
 
 	public void deleteMacro(int id)
 	{
-		L2Macro toRemove = this.macroses.get(id);
+		L2Macro toRemove = macroses.get(id);
 		if (toRemove != null)
 		{
 			deleteMacroFromDb(toRemove);
 		}
-		this.macroses.remove(id);
+		macroses.remove(id);
 
-		L2ShortCut[] allShortCuts = this.owner.getAllShortCuts();
+		L2ShortCut[] allShortCuts = owner.getAllShortCuts();
 		for (L2ShortCut sc : allShortCuts)
 		{
 			if (sc.getId() == id && sc.getType() == L2ShortCut.TYPE_MACRO)
 			{
-				this.owner.deleteShortCut(sc.getSlot(), sc.getPage());
+				owner.deleteShortCut(sc.getSlot(), sc.getPage());
 			}
 		}
 
-		this.owner.sendPacket(new SendMacroList(0, 0, toRemove));
+		owner.sendPacket(new SendMacroList(0, 0, toRemove));
 	}
 
 	public void sendUpdate()
 	{
-		this.revision++;
+		revision++;
 		L2Macro[] all = getAllMacroses();
 
 		// This part put all existing macroses to your list.
 		if (all.length == 0)
 		{
-			this.owner.sendPacket(new SendMacroList(1, all.length, null));
+			owner.sendPacket(new SendMacroList(1, all.length, null));
 		}
 		else
 		{
 			for (L2Macro m : all)
 			{
-				this.owner.sendPacket(new SendMacroList(1, all.length, m));
+				owner.sendPacket(new SendMacroList(1, all.length, m));
 			}
 		}
 	}
@@ -137,7 +137,7 @@ public class MacroList
 
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
-			statement.setInt(1, this.owner.getObjectId());
+			statement.setInt(1, owner.getObjectId());
 			statement.setInt(2, macro.id);
 			statement.setInt(3, macro.icon);
 			statement.setString(4, macro.name);
@@ -187,7 +187,7 @@ public class MacroList
 
 			PreparedStatement statement =
 					con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
-			statement.setInt(1, this.owner.getObjectId());
+			statement.setInt(1, owner.getObjectId());
 			statement.setInt(2, macro.id);
 			statement.execute();
 			statement.close();
@@ -204,14 +204,14 @@ public class MacroList
 
 	public void restore()
 	{
-		this.macroses.clear();
+		macroses.clear();
 		Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
-			statement.setInt(1, this.owner.getObjectId());
+			statement.setInt(1, owner.getObjectId());
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
@@ -243,7 +243,7 @@ public class MacroList
 
 				L2Macro m =
 						new L2Macro(id, icon, name, descr, acronym, commands.toArray(new L2MacroCmd[commands.size()]));
-				this.macroses.put(m.id, m);
+				macroses.put(m.id, m);
 			}
 			rset.close();
 			statement.close();

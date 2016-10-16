@@ -25,14 +25,14 @@ public class AltarOfSouls extends Quest
     {
         super(questId, name, descr);
 
-        addFirstTalkId(this.altarOfSoulsId);
-        addStartNpc(this.altarOfSoulsId);
-        addTalkId(this.altarOfSoulsId);
+        addFirstTalkId(altarOfSoulsId);
+        addStartNpc(altarOfSoulsId);
+        addTalkId(altarOfSoulsId);
 
-        for (int i : this.raidIds)
+        for (int i : raidIds)
         {
             addKillId(i);
-            this.spawnInfo.put(i, false);
+			spawnInfo.put(i, false);
         }
     }
 
@@ -49,17 +49,17 @@ public class AltarOfSouls extends Quest
         {
             int bossId = Integer.valueOf(event.split(" ")[1]);
             int stoneId = 0;
-            if (bossId == this.raidIds[0])
+            if (bossId == raidIds[0])
             {
-                stoneId = this.stoneIds[0];
+                stoneId = stoneIds[0];
             }
-            else if (bossId == this.raidIds[1])
+            else if (bossId == raidIds[1])
             {
-                stoneId = this.stoneIds[1];
+                stoneId = stoneIds[1];
             }
             else
             {
-                stoneId = this.stoneIds[2];
+                stoneId = stoneIds[2];
             }
 
             if (stoneId == 0) //Cheating?
@@ -67,16 +67,16 @@ public class AltarOfSouls extends Quest
                 return null;
             }
 
-            synchronized (this.spawnInfo)
+            synchronized (spawnInfo)
             {
-                if (!this.spawnInfo.get(bossId))
+                if (!spawnInfo.get(bossId))
                 {
-                    if (!player.destroyItemByItemId(this.qn, stoneId, 1, player, true))
+                    if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
                     {
                         return stoneId + "-no.html";
                     }
 
-                    this.spawnInfo.put(bossId, true); //Boss is spawned
+					spawnInfo.put(bossId, true); //Boss is spawned
 
                     L2Attackable boss =
                             (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0,
@@ -95,9 +95,9 @@ public class AltarOfSouls extends Quest
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        synchronized (this.spawnInfo)
+        synchronized (spawnInfo)
         {
-            this.spawnInfo.put(npc.getNpcId(), false);
+			spawnInfo.put(npc.getNpcId(), false);
         }
 
         return super.onKill(npc, player, isPet);

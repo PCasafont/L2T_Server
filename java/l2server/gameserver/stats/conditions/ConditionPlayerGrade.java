@@ -58,7 +58,7 @@ public final class ConditionPlayerGrade extends Condition
 		{
 			byte expIndex = (byte) ((L2PcInstance) env.player).getExpertiseIndex();
 
-			return this.value == expIndex;
+			return value == expIndex;
 		}
 		return false;
 	}

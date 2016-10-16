@@ -63,30 +63,30 @@ public class EffectTeleport extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		this.actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
+		actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
 
-		if (this.actor.isMovementDisabled())
+		if (actor.isMovementDisabled())
 		{
 			return false;
 		}
 
 		int radius = getSkill().getFlyRadius();
 
-		double angle = Util.convertHeadingToDegree(this.actor.getHeading());
+		double angle = Util.convertHeadingToDegree(actor.getHeading());
 		double radian = Math.toRadians(angle);
 		double course = Math.toRadians(getSkill().getFlyCourse());
 
 		float x1 = (float) Math.cos(Math.PI + radian + course);
 		float y1 = (float) Math.sin(Math.PI + radian + course);
 
-		int x = this.actor.getX() + (int) (x1 * radius);
-		int y = this.actor.getY() + (int) (y1 * radius);
-		int z = this.actor.getZ();
+		int x = actor.getX() + (int) (x1 * radius);
+		int y = actor.getY() + (int) (y1 * radius);
+		int z = actor.getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(this.actor.getX(), this.actor.getY(), this.actor.getZ(), x, y, z, this.actor.getInstanceId());
+					.moveCheck(actor.getX(), actor.getY(), actor.getZ(), x, y, z, actor.getInstanceId());
 			if (destiny.getX() != x || destiny.getY() != y)
 			{
 				x = destiny.getX() - (int) (x1 * 10);
@@ -97,12 +97,12 @@ public class EffectTeleport extends L2Effect
 
 		// TODO: check if this AI intention is retail-like. This stops player's
 		// previous movement
-		this.actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		actor.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 
-		this.actor.broadcastPacket(new FlyToLocation(this.actor, x, y, z, FlyType.MAGIC));
+		actor.broadcastPacket(new FlyToLocation(actor, x, y, z, FlyType.MAGIC));
 
-		this.actor.setXYZ(x, y, z);
-		this.actor.broadcastPacket(new ValidateLocation(this.actor));
+		actor.setXYZ(x, y, z);
+		actor.broadcastPacket(new ValidateLocation(actor));
 
 		return true;
 	}

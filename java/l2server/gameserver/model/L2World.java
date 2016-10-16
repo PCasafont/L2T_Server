@@ -105,9 +105,9 @@ public final class L2World
 	private L2World()
 	{
 		//_allGms	 = new HashMap<String, L2PcInstance>();
-		this.allPlayers = new ConcurrentHashMap<>();
-		this.petsInstance = new ConcurrentHashMap<>();
-		this.allObjects = new ConcurrentHashMap<>();
+		allPlayers = new ConcurrentHashMap<>();
+		petsInstance = new ConcurrentHashMap<>();
+		allObjects = new ConcurrentHashMap<>();
 
 		initRegions();
 	}
@@ -129,9 +129,9 @@ public final class L2World
 	 */
 	public void storeObject(L2Object object)
 	{
-		assert !this.allObjects.containsKey(object.getObjectId());
+		assert !allObjects.containsKey(object.getObjectId());
 
-		if (this.allObjects.containsKey(object.getObjectId()))
+		if (allObjects.containsKey(object.getObjectId()))
 		{
 			if (!Config.isServer(Config.TENKAI))
 			{
@@ -141,13 +141,13 @@ public final class L2World
 			return;
 		}
 
-		this.allObjects.put(object.getObjectId(), object);
+		allObjects.put(object.getObjectId(), object);
 	}
 
 	public long timeStoreObject(L2Object object)
 	{
 		long time = System.nanoTime();
-		this.allObjects.put(object.getObjectId(), object);
+		allObjects.put(object.getObjectId(), object);
 		time = System.nanoTime() - time;
 		return time;
 	}
@@ -164,7 +164,7 @@ public final class L2World
 	 */
 	public void removeObject(L2Object object)
 	{
-		this.allObjects.remove(object.getObjectId()); // suggestion by whatev
+		allObjects.remove(object.getObjectId()); // suggestion by whatev
 		//IdFactory.getInstance().releaseId(object.getObjectId());
 	}
 
@@ -174,7 +174,7 @@ public final class L2World
 		{
 			if (o != null)
 			{
-				this.allObjects.remove(o.getObjectId()); // suggestion by whatev
+				allObjects.remove(o.getObjectId()); // suggestion by whatev
 			}
 		}
 		//IdFactory.getInstance().releaseId(object.getObjectId());
@@ -184,7 +184,7 @@ public final class L2World
 	{
 		for (L2Object o : objects)
 		{
-			this.allObjects.remove(o.getObjectId()); // suggestion by whatev
+			allObjects.remove(o.getObjectId()); // suggestion by whatev
 		}
 		//IdFactory.getInstance().releaseId(object.getObjectId());
 	}
@@ -192,7 +192,7 @@ public final class L2World
 	public long timeRemoveObject(L2Object object)
 	{
 		long time = System.nanoTime();
-		this.allObjects.remove(object.getObjectId());
+		allObjects.remove(object.getObjectId());
 		time = System.nanoTime() - time;
 		return time;
 	}
@@ -207,13 +207,13 @@ public final class L2World
 	 */
 	public L2Object findObject(int oID)
 	{
-		return this.allObjects.get(oID);
+		return allObjects.get(oID);
 	}
 
 	public long timeFindObject(int objectID)
 	{
 		long time = System.nanoTime();
-		this.allObjects.get(objectID);
+		allObjects.get(objectID);
 		time = System.nanoTime() - time;
 		return time;
 	}
@@ -229,7 +229,7 @@ public final class L2World
 	@Deprecated
 	public final Map<Integer, L2Object> getAllVisibleObjects()
 	{
-		return this.allObjects;
+		return allObjects;
 	}
 
 	/**
@@ -239,7 +239,7 @@ public final class L2World
 	 */
 	public final int getAllVisibleObjectsCount()
 	{
-		return this.allObjects.size();
+		return allObjects.size();
 	}
 
 	/**
@@ -252,12 +252,12 @@ public final class L2World
 
 	public Map<Integer, L2PcInstance> getAllPlayers()
 	{
-		return this.allPlayers;
+		return allPlayers;
 	}
 
 	public final Collection<L2PcInstance> getAllPlayersArray()
 	{
-		return this.allPlayers.values();
+		return allPlayers.values();
 	}
 
 	/**
@@ -267,7 +267,7 @@ public final class L2World
 	 */
 	public int getAllPlayersCount()
 	{
-		return this.allPlayers.size();
+		return allPlayers.size();
 	}
 
 	/**
@@ -289,7 +289,7 @@ public final class L2World
 	 */
 	public L2PcInstance getPlayer(int playerObjId)
 	{
-		return this.allPlayers.get(playerObjId);
+		return allPlayers.get(playerObjId);
 	}
 
 	/**
@@ -299,7 +299,7 @@ public final class L2World
 	 */
 	public L2PetInstance getPet(int ownerId)
 	{
-		return this.petsInstance.get(ownerId);
+		return petsInstance.get(ownerId);
 	}
 
 	/**
@@ -310,7 +310,7 @@ public final class L2World
 	 */
 	public L2PetInstance addPet(int ownerId, L2PetInstance pet)
 	{
-		return this.petsInstance.put(ownerId, pet);
+		return petsInstance.put(ownerId, pet);
 	}
 
 	/**
@@ -320,7 +320,7 @@ public final class L2World
 	 */
 	public void removePet(int ownerId)
 	{
-		this.petsInstance.remove(ownerId);
+		petsInstance.remove(ownerId);
 	}
 
 	/**
@@ -330,7 +330,7 @@ public final class L2World
 	 */
 	public void removePet(L2PetInstance pet)
 	{
-		this.petsInstance.remove(pet.getOwner().getObjectId());
+		petsInstance.remove(pet.getOwner().getObjectId());
 	}
 
 	/**
@@ -362,9 +362,9 @@ public final class L2World
 	 */
 	public void addVisibleObject(L2Object object, L2WorldRegion newRegion)
 	{
-		if (!this.allObjects.containsKey(object.getObjectId()))
+		if (!allObjects.containsKey(object.getObjectId()))
 		{
-			this.allObjects.put(object.getObjectId(), object);
+			allObjects.put(object.getObjectId(), object);
 		}
 
 		// If selected L2Object is a L2PcIntance, add it in L2ObjectHashSet(L2PcInstance) this.allPlayers of L2World
@@ -375,7 +375,7 @@ public final class L2World
 
 			if (!player.isTeleporting())
 			{
-				L2PcInstance tmp = this.allPlayers.get(player.getObjectId());
+				L2PcInstance tmp = allPlayers.get(player.getObjectId());
 				if (tmp != null)
 				{
 					Log.warning("Duplicate character!? Closing both characters (" + player.getName() + ")");
@@ -383,7 +383,7 @@ public final class L2World
 					tmp.logout();
 					return;
 				}
-				this.allPlayers.put(player.getObjectId(), player);
+				allPlayers.put(player.getObjectId(), player);
 			}
 		}
 
@@ -427,7 +427,7 @@ public final class L2World
 	 */
 	public void addToAllPlayers(L2PcInstance cha)
 	{
-		this.allPlayers.put(cha.getObjectId(), cha);
+		allPlayers.put(cha.getObjectId(), cha);
 	}
 
 	/**
@@ -438,7 +438,7 @@ public final class L2World
 	 */
 	public void removeFromAllPlayers(L2PcInstance cha)
 	{
-		this.allPlayers.remove(cha.getObjectId());
+		allPlayers.remove(cha.getObjectId());
 	}
 
 	/**
@@ -761,12 +761,12 @@ public final class L2World
 	 */
 	public L2WorldRegion getRegion(Point3D point)
 	{
-		return this.worldRegions[(point.getX() >> SHIFT_BY) + OFFSET_X][(point.getY() >> SHIFT_BY) + OFFSET_Y];
+		return worldRegions[(point.getX() >> SHIFT_BY) + OFFSET_X][(point.getY() >> SHIFT_BY) + OFFSET_Y];
 	}
 
 	public L2WorldRegion getRegion(int x, int y)
 	{
-		return this.worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y];
+		return worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y];
 	}
 
 	/**
@@ -777,7 +777,7 @@ public final class L2World
 	 */
 	public L2WorldRegion[][] getAllWorldRegions()
 	{
-		return this.worldRegions;
+		return worldRegions;
 	}
 
 	/**
@@ -806,13 +806,13 @@ public final class L2World
 	 */
 	private void initRegions()
 	{
-		this.worldRegions = new L2WorldRegion[REGIONS_X + 1][REGIONS_Y + 1];
+		worldRegions = new L2WorldRegion[REGIONS_X + 1][REGIONS_Y + 1];
 
 		for (int i = 0; i <= REGIONS_X; i++)
 		{
 			for (int j = 0; j <= REGIONS_Y; j++)
 			{
-				this.worldRegions[i][j] = new L2WorldRegion(i, j);
+				worldRegions[i][j] = new L2WorldRegion(i, j);
 			}
 		}
 
@@ -826,7 +826,7 @@ public final class L2World
 					{
 						if (validRegion(x + a, y + b))
 						{
-							this.worldRegions[x + a][y + b].addSurroundingRegion(this.worldRegions[x][y]);
+							worldRegions[x + a][y + b].addSurroundingRegion(worldRegions[x][y]);
 						}
 					}
 				}
@@ -846,7 +846,7 @@ public final class L2World
 		{
 			for (int j = 0; j <= REGIONS_Y; j++)
 			{
-				this.worldRegions[i][j].deleteVisibleNpcSpawns();
+				worldRegions[i][j].deleteVisibleNpcSpawns();
 			}
 		}
 		Log.info("All visible NPC's deleted.");

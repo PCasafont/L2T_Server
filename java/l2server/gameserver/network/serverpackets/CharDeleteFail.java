@@ -31,12 +31,12 @@ public class CharDeleteFail extends L2GameServerPacket
 
 	public CharDeleteFail(int errorCode)
 	{
-		this.error = errorCode;
+		error = errorCode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.error);
+		writeD(error);
 	}
 }

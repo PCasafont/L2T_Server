@@ -34,8 +34,8 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.vitality);
-		writeD(this.effectId);
+		writeD(vitality);
+		writeD(effectId);
 		writeH(0);
 		writeH(999);
 		writeH(999);

@@ -35,7 +35,7 @@ public final class RequestReplyStopPledgeWar extends L2GameClientPacket
 	protected void readImpl()
 	{
 		@SuppressWarnings("unused") String reqName = readS();
-		this.answer = readD();
+		answer = readD();
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public final class RequestReplyStopPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		if (this.answer == 1)
+		if (answer == 1)
 		{
 			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
 		}

@@ -723,19 +723,19 @@ public class AdminTest implements IAdminCommandHandler
 			}
 			else if (secondaryCommand.equals("GrabPosition"))
 			{
-				this.coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
+				coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
 
 				activeChar.sendMessage("Recorded current position.");
 			}
 			else if (secondaryCommand.equals("ClearPositions"))
 			{
-				this.coords.clear();
+				coords.clear();
 
 				activeChar.sendMessage("Cleared recorded positions.");
 			}
 			else if (secondaryCommand.equals("PrintPositions"))
 			{
-				for (Location l : this.coords)
+				for (Location l : coords)
 				{
 					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
 				}
@@ -748,25 +748,25 @@ public class AdminTest implements IAdminCommandHandler
 					{
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 
-						if (this.npcTemplates.contains(monster.getTemplate()))
+						if (npcTemplates.contains(monster.getTemplate()))
 						{
 							continue;
 						}
 
-						this.npcTemplates.add(monster.getTemplate());
+						npcTemplates.add(monster.getTemplate());
 						activeChar.sendMessage("Added " + monster.getName() + ".");
 					}
 				}
 			}
 			else if (secondaryCommand.equals("ClearNpcs"))
 			{
-				this.npcTemplates.clear();
+				npcTemplates.clear();
 
 				activeChar.sendMessage("Templates cleared.");
 			}
 			else if (secondaryCommand.equals("PrintDropsForNpcs"))
 			{
-				for (L2NpcTemplate npcTemplate : this.npcTemplates)
+				for (L2NpcTemplate npcTemplate : npcTemplates)
 				{
 					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
 					System.out.println("\t\t<droplist>");

@@ -18,6 +18,6 @@ public class ExBRGamePoint extends L2GameServerPacket
 		writeD(0x00); // unk2
 		writeD(0x00); // unk3
 		writeD(0x00); // unk1
-		writeD(this.userId);
+		writeD(userId);
 	}
 }

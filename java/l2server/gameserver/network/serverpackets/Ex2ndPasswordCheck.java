@@ -39,7 +39,7 @@ public class Ex2ndPasswordCheck extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.windowType);
+		writeD(windowType);
 		writeD(0x00);
 	}
 }

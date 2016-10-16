@@ -35,9 +35,9 @@ public class ConditionPlayerSurvivalEvent extends Condition
 		if (player == null || !player.isPlayingEvent() ||
 				!(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival)))
 		{
-			return !this.val;
+			return !val;
 		}
 
-		return this.val;
+		return val;
 	}
 }

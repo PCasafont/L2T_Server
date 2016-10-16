@@ -31,7 +31,7 @@ public class CharSelected extends L2GameServerPacket
 	 */
 	public CharSelected(L2PcInstance cha, int sessionId)
 	{
-		this.activeChar = cha;
+		activeChar = cha;
 		this.sessionId = sessionId;
 	}
 
@@ -39,32 +39,32 @@ public class CharSelected extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.activeChar.getName());
-		writeD(this.activeChar.getCharId()); // ??
-		writeS(this.activeChar.getTitle());
-		writeD(this.sessionId);
-		writeD(this.activeChar.getClanId());
+		writeS(activeChar.getName());
+		writeD(activeChar.getCharId()); // ??
+		writeS(activeChar.getTitle());
+		writeD(sessionId);
+		writeD(activeChar.getClanId());
 		writeD(0x00); // ??
-		writeD(this.activeChar.getAppearance().getSex() ? 1 : 0);
-		writeD(this.activeChar.getRace().ordinal());
-		writeD(this.activeChar.getCurrentClass().getId());
+		writeD(activeChar.getAppearance().getSex() ? 1 : 0);
+		writeD(activeChar.getRace().ordinal());
+		writeD(activeChar.getCurrentClass().getId());
 		writeD(0x01); // active ??
-		writeD(this.activeChar.getX());
-		writeD(this.activeChar.getY());
-		writeD(this.activeChar.getZ());
+		writeD(activeChar.getX());
+		writeD(activeChar.getY());
+		writeD(activeChar.getZ());
 
-		writeF(this.activeChar.getCurrentHp());
-		writeF(this.activeChar.getCurrentMp());
-		writeQ(this.activeChar.getSp());
-		writeQ(this.activeChar.getExp());
-		writeD(this.activeChar.getLevel());
-		writeD(this.activeChar.getReputation()); // thx evill33t
-		writeD(this.activeChar.getPkKills());
+		writeF(activeChar.getCurrentHp());
+		writeF(activeChar.getCurrentMp());
+		writeQ(activeChar.getSp());
+		writeQ(activeChar.getExp());
+		writeD(activeChar.getLevel());
+		writeD(activeChar.getReputation()); // thx evill33t
+		writeD(activeChar.getPkKills());
 
 		writeD(TimeController.getInstance().getGameTime() % (24 * 60)); // "reset" on 24th hour
 		writeD(0x00);
 
-		writeD(this.activeChar.getCurrentClass().getId());
+		writeD(activeChar.getCurrentClass().getId());
 
 		writeD(0x00);
 		writeD(0x00);

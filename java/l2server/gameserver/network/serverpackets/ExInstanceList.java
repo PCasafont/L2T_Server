@@ -33,13 +33,13 @@ public class ExInstanceList extends L2GameServerPacket
 
 	public ExInstanceList(L2PcInstance player)
 	{
-		this.objId = player.getObjectId();
+		objId = player.getObjectId();
 
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 
 		if (world != null)
 		{
-			this.current = world.templateId;
+			current = world.templateId;
 		}
 	}
 
@@ -49,13 +49,13 @@ public class ExInstanceList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.current);
+		writeD(current);
 
-		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(this.objId);
+		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(objId);
 
 		int size = instanceTimes.size();
 
-		if (instanceTimes.containsKey(this.current))
+		if (instanceTimes.containsKey(current))
 		{
 			size--;
 		}
@@ -64,7 +64,7 @@ public class ExInstanceList extends L2GameServerPacket
 
 		for (int instanceId : instanceTimes.keySet())
 		{
-			if (this.current == instanceId)
+			if (current == instanceId)
 			{
 				continue;
 			}

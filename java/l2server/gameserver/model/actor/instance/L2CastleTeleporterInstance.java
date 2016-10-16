@@ -144,11 +144,11 @@ public final class L2CastleTeleporterInstance extends L2Npc
 
 	public boolean getTask()
 	{
-		return this.currentTask;
+		return currentTask;
 	}
 
 	public void setTask(boolean state)
 	{
-		this.currentTask = state;
+		currentTask = state;
 	}
 }

@@ -34,10 +34,10 @@ public class NewCrypt
 	 */
 	public NewCrypt(byte[] blowfishKey)
 	{
-		this.crypt = new BlowfishEngine();
-		this.crypt.init(true, blowfishKey);
-		this.decrypt = new BlowfishEngine();
-		this.decrypt.init(false, blowfishKey);
+		crypt = new BlowfishEngine();
+		crypt.init(true, blowfishKey);
+		decrypt = new BlowfishEngine();
+		decrypt.init(false, blowfishKey);
 	}
 
 	public NewCrypt(String key)
@@ -174,7 +174,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			this.decrypt.processBlock(raw, i * 8, result, i * 8);
+			decrypt.processBlock(raw, i * 8, result, i * 8);
 		}
 
 		return result;
@@ -187,7 +187,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			this.decrypt.processBlock(raw, offset + i * 8, result, i * 8);
+			decrypt.processBlock(raw, offset + i * 8, result, i * 8);
 		}
 
 		System.arraycopy(result, 0, raw, offset, size);
@@ -200,7 +200,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			this.crypt.processBlock(raw, i * 8, result, i * 8);
+			crypt.processBlock(raw, i * 8, result, i * 8);
 		}
 
 		return result;
@@ -213,7 +213,7 @@ public class NewCrypt
 
 		for (int i = 0; i < count; i++)
 		{
-			this.crypt.processBlock(raw, offset + i * 8, result, i * 8);
+			crypt.processBlock(raw, offset + i * 8, result, i * 8);
 		}
 
 		System.arraycopy(result, 0, raw, offset, size);

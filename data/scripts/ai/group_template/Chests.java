@@ -114,7 +114,7 @@ public class Chests extends L2AttackableAIScript
 		// firstly, don't forget to call the parent constructor to prepare the event triggering
 		// mechanisms etc.
 		super(questId, name, descr);
-		this.registerMobs(NPC_IDS, QuestEventType.ON_ATTACK, QuestEventType.ON_SKILL_SEE);
+		registerMobs(NPC_IDS, QuestEventType.ON_ATTACK, QuestEventType.ON_SKILL_SEE);
 	}
 
 	@Override

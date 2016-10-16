@@ -101,12 +101,12 @@ public final class L2AuctioneerInstance extends L2Npc
 						Auction a =
 								new Auction(player.getClan().getHasHideout(), player.getClan(), days * 86400000L, bid,
 										ClanHallManager.getInstance().getClanHallByOwner(player.getClan()).getName());
-						if (this.pendingAuctions.get(a.getId()) != null)
+						if (pendingAuctions.get(a.getId()) != null)
 						{
-							this.pendingAuctions.remove(a.getId());
+							pendingAuctions.remove(a.getId());
 						}
 
-						this.pendingAuctions.put(a.getId(), a);
+						pendingAuctions.put(a.getId(), a);
 
 						String filename = "auction/AgitSale3.htm";
 						NpcHtmlMessage html = new NpcHtmlMessage(1);
@@ -139,9 +139,9 @@ public final class L2AuctioneerInstance extends L2Npc
 			{
 				try
 				{
-					Auction a = this.pendingAuctions.get(player.getClan().getHasHideout());
+					Auction a = pendingAuctions.get(player.getClan().getHasHideout());
 					a.confirmAuction();
-					this.pendingAuctions.remove(player.getClan().getHasHideout());
+					pendingAuctions.remove(player.getClan().getHasHideout());
 				}
 				catch (Exception e)
 				{

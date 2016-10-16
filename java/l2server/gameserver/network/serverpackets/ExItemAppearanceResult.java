@@ -36,15 +36,15 @@ public class ExItemAppearanceResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.answer);
-		if (this.answer == 1)
+		writeD(answer);
+		if (answer == 1)
 		{
-			writeD(this.result.getItemId());
+			writeD(result.getItemId());
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
-			writeD(this.result.getAppearance());
+			writeD(result.getAppearance());
 		}
 	}
 }

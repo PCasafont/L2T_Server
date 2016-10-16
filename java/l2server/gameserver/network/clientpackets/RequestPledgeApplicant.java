@@ -31,7 +31,7 @@ public final class RequestPledgeApplicant extends L2GameClientPacket
 	protected void readImpl()
 	{
 		readD(); // Useless clanId
-		this.applicantId = readD();
+		applicantId = readD();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public final class RequestPledgeApplicant extends L2GameClientPacket
 			return;
 		}
 
-		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(this.applicantId);
+		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(applicantId);
 		if (applicant == null)
 		{
 			return;

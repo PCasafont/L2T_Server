@@ -60,23 +60,23 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	public Q10322_SearchingForTheMysteriousPower(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.shannon);
-		addTalkId(this.shannon);
-		addTalkId(this.yibein);
-		addTalkId(this.newbieHelper);
-		addKillId(this.scarecrow);
+		addStartNpc(shannon);
+		addTalkId(shannon);
+		addTalkId(yibein);
+		addTalkId(newbieHelper);
+		addKillId(scarecrow);
 
-		addEventId(this.guideId, QuestEventType.ON_ARRIVED);
-		addEventId(this.guideId, QuestEventType.ON_PLAYER_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_PLAYER_ARRIVED);
 
-		this.guideRoute.add(new L2NpcWalkerNode(-111487, 255894, -1440, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-111610, 255776, -1440, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-111972, 255433, -1440, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-112565, 254658, -1528, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-112304, 254244, -1536, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-111704, 254022, -1672, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110981, 253740, -1760, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-111319, 253871, -1736, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-111487, 255894, -1440, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-111610, 255776, -1440, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-111972, 255433, -1440, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-112565, 254658, -1528, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-112304, 254244, -1536, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-111704, 254022, -1672, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110981, 253740, -1760, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-111319, 253871, -1736, 0, "", true));
 	}
 
 	@Override
@@ -90,17 +90,17 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.shannon && event.equalsIgnoreCase("32974-03.htm"))
+		if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(this.guideId, -111487, 255894, -1440, 1000, false, 600000);
+			final L2Npc guide = addSpawn(guideId, -111487, 255894, -1440, 1000, false, 600000);
 			final L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
 			guide.setAI(guideAI);
 
-			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), this.guideFirstChatId);
+			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
 
@@ -136,7 +136,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				}
 			}, 2000);
 		}
-		else if (npc.getNpcId() == this.newbieHelper)
+		else if (npc.getNpcId() == newbieHelper)
 		{
 			if (event.equalsIgnoreCase("32981-02.htm"))
 			{
@@ -175,7 +175,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.shannon)
+		if (npc.getNpcId() == shannon)
 		{
 			switch (st.getState())
 			{
@@ -197,7 +197,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.yibein)
+		else if (npc.getNpcId() == yibein)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -239,7 +239,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				htmltext = "33464-04.htm";
 			}
 		}
-		else if (npc.getNpcId() == this.newbieHelper)
+		else if (npc.getNpcId() == newbieHelper)
 		{
 			if (st.getInt("cond") == 4)
 			{
@@ -268,7 +268,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 			return null;
 		}
 
-		if (st.getState() == State.STARTED && npc.getNpcId() == this.scarecrow)
+		if (st.getState() == State.STARTED && npc.getNpcId() == scarecrow)
 		{
 			if (st.getInt("cond") == 2)
 			{
@@ -288,18 +288,18 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
-				guideAI.getCurrentPos() == this.guideRoute.size() - 2)
+				guideAI.getCurrentPos() == guideRoute.size() - 2)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
 				guideAI.setWaiting(true);
 				return null;
 			}
-			int chatId = this.guideLastChatId;
-			if (guideAI.getCurrentPos() != this.guideRoute.size() - 2)
+			int chatId = guideLastChatId;
+			if (guideAI.getCurrentPos() != guideRoute.size() - 2)
 			{
 				guideAI.walkToGuided(40);
-				chatId = this.guideWaitChatId;
+				chatId = guideWaitChatId;
 			}
 
 			NpcSay ns =
@@ -319,7 +319,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == this.guideRoute.size() - 2)
+		if (guideAI.getCurrentPos() == guideRoute.size() - 2)
 		{
 			// Walk and delete in 1.5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -329,10 +329,10 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				@Override
 				public void run()
 				{
-					if (!this.delete)
+					if (!delete)
 					{
 						guideAI.walkToLocation();
-						this.delete = true;
+						delete = true;
 						ThreadPoolManager.getInstance().scheduleAi(this, 500);
 						return;
 					}
@@ -352,7 +352,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	@Override
 	public int getOnKillDelay(int npcId)
 	{
-		if (npcId == this.scarecrow)
+		if (npcId == scarecrow)
 		{
 			return 0;
 		}

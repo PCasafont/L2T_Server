@@ -146,9 +146,9 @@ public class ItemTable implements Reloadable
 	 */
 	private ItemTable()
 	{
-		this.etcItems = new HashMap<>();
-		this.armors = new HashMap<>();
-		this.weapons = new HashMap<>();
+		etcItems = new HashMap<>();
+		armors = new HashMap<>();
+		weapons = new HashMap<>();
 		load();
 
 		ReloadableManager.getInstance().register("items", this);
@@ -157,9 +157,9 @@ public class ItemTable implements Reloadable
 	private void load()
 	{
 		int highest = 0;
-		this.armors.clear();
-		this.etcItems.clear();
-		this.weapons.clear();
+		armors.clear();
+		etcItems.clear();
+		weapons.clear();
 
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "items");
 		if (!dir.exists())
@@ -237,15 +237,15 @@ public class ItemTable implements Reloadable
 			}
 			if (item.getItem() instanceof L2EtcItem)
 			{
-				this.etcItems.put(item.getId(), (L2EtcItem) item.getItem());
+				etcItems.put(item.getId(), (L2EtcItem) item.getItem());
 			}
 			else if (item.getItem() instanceof L2Armor)
 			{
-				this.armors.put(item.getId(), (L2Armor) item.getItem());
+				armors.put(item.getId(), (L2Armor) item.getItem());
 			}
 			else
 			{
-				this.weapons.put(item.getId(), (L2Weapon) item.getItem());
+				weapons.put(item.getId(), (L2Weapon) item.getItem());
 			}
 		}
 		buildFastLookupTable(highest);
@@ -258,24 +258,24 @@ public class ItemTable implements Reloadable
 	{
 		// Create a FastLookUp Table called this.allTemplates of size : value of the highest item ID
 		Log.info("Highest item id used:" + size);
-		this.allTemplates = new L2Item[size + 1];
+		allTemplates = new L2Item[size + 1];
 
 		// Insert armor item in Fast Look Up Table
-		for (L2Armor item : this.armors.values())
+		for (L2Armor item : armors.values())
 		{
-			this.allTemplates[item.getItemId()] = item;
+			allTemplates[item.getItemId()] = item;
 		}
 
 		// Insert weapon item in Fast Look Up Table
-		for (L2Weapon item : this.weapons.values())
+		for (L2Weapon item : weapons.values())
 		{
-			this.allTemplates[item.getItemId()] = item;
+			allTemplates[item.getItemId()] = item;
 		}
 
 		// Insert etcItem item in Fast Look Up Table
-		for (L2EtcItem item : this.etcItems.values())
+		for (L2EtcItem item : etcItems.values())
 		{
-			this.allTemplates[item.getItemId()] = item;
+			allTemplates[item.getItemId()] = item;
 		}
 	}
 
@@ -287,13 +287,13 @@ public class ItemTable implements Reloadable
 	 */
 	public L2Item getTemplate(int id)
 	{
-		if (id >= this.allTemplates.length)
+		if (id >= allTemplates.length)
 		{
 			return null;
 		}
 		else
 		{
-			return this.allTemplates[id];
+			return allTemplates[id];
 		}
 	}
 
@@ -552,24 +552,24 @@ public class ItemTable implements Reloadable
 		@Override
 		public void run()
 		{
-			this.item.setOwnerId(0);
-			this.item.setItemLootShedule(null);
+			item.setOwnerId(0);
+			item.setItemLootShedule(null);
 		}
 	}
 
 	public Set<Integer> getAllArmorsId()
 	{
-		return this.armors.keySet();
+		return armors.keySet();
 	}
 
 	public Set<Integer> getAllWeaponsId()
 	{
-		return this.weapons.keySet();
+		return weapons.keySet();
 	}
 
 	public L2Item[] getAllItems()
 	{
-		return this.allTemplates;
+		return allTemplates;
 	}
 
 	@SuppressWarnings("synthetic-access")

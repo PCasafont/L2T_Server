@@ -33,10 +33,10 @@ public class ExPledgeApplicantList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.data.applicants.size());
-		for (int playerId : this.data.applicants.keySet())
+		writeD(data.applicants.size());
+		for (int playerId : data.applicants.keySet())
 		{
-			ClanRecruitWaitingUser applicant = this.data.applicants.get(playerId);
+			ClanRecruitWaitingUser applicant = data.applicants.get(playerId);
 			writeD(playerId);
 			writeS(applicant.name);
 			writeD(applicant.classId);

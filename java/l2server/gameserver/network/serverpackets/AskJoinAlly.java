@@ -47,7 +47,7 @@ public class AskJoinAlly extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.requestorObjId);
-		writeS(this.requestorName);
+		writeD(requestorObjId);
+		writeS(requestorName);
 	}
 }

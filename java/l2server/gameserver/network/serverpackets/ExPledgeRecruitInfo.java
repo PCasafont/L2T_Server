@@ -32,10 +32,10 @@ public class ExPledgeRecruitInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.data.clan.getName());
-		writeS(this.data.clan.getLeaderName());
-		writeD(this.data.karma);
-		writeD(this.data.clan.getMembersCount());
+		writeS(data.clan.getName());
+		writeS(data.clan.getLeaderName());
+		writeD(data.karma);
+		writeD(data.clan.getMembersCount());
 		writeD(0x00);
 	}
 }

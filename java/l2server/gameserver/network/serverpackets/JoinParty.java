@@ -43,6 +43,6 @@ public final class JoinParty extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.response);
+		writeD(response);
 	}
 }

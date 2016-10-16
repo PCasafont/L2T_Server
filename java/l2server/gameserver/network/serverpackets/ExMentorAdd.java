@@ -26,14 +26,14 @@ public class ExMentorAdd extends L2GameServerPacket
 
 	public ExMentorAdd(L2PcInstance activeChar)
 	{
-		this.player = activeChar;
+		player = activeChar;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.player.getName());
-		writeD(this.player.getClassId());
-		writeD(this.player.getLevel());
+		writeS(player.getName());
+		writeD(player.getClassId());
+		writeD(player.getLevel());
 	}
 }

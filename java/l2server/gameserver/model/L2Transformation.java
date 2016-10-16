@@ -47,7 +47,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 		this.graphicalId = graphicalId;
 		this.collisionRadius = collisionRadius;
 		this.collisionHeight = collisionHeight;
-		this.isStance = false;
+		isStance = false;
 	}
 
 	/**
@@ -67,8 +67,8 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	public L2Transformation(int id)
 	{
 		this.id = id;
-		this.graphicalId = id;
-		this.isStance = true;
+		graphicalId = id;
+		isStance = true;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public int getGraphicalId()
 	{
-		return this.graphicalId;
+		return graphicalId;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public boolean isStance()
 	{
-		return this.isStance;
+		return isStance;
 	}
 
 	/**
@@ -104,9 +104,9 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		if (isStance())
 		{
-			return this.player.getCollisionRadius();
+			return player.getCollisionRadius();
 		}
-		return this.collisionRadius;
+		return collisionRadius;
 	}
 
 	/**
@@ -116,9 +116,9 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		if (isStance())
 		{
-			return this.player.getCollisionHeight();
+			return player.getCollisionHeight();
 		}
-		return this.collisionHeight;
+		return collisionHeight;
 	}
 
 	// Scriptable Events
@@ -139,7 +139,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public L2PcInstance getPlayer()
 	{
-		return this.player;
+		return player;
 	}
 
 	public void start()
@@ -203,7 +203,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + " [_id=" + this.id + ", _graphicalId=" + this.graphicalId + ", _collisionRadius=" +
-				this.collisionRadius + ", _collisionHeight=" + this.collisionHeight + ", _isStance=" + this.isStance + "]";
+		return getClass().getSimpleName() + " [_id=" + id + ", _graphicalId=" + graphicalId + ", _collisionRadius=" +
+				collisionRadius + ", _collisionHeight=" + collisionHeight + ", _isStance=" + isStance + "]";
 	}
 }

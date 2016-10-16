@@ -40,7 +40,7 @@ public final class SubClass
 
 	public SubClass(int classId, long exp, long sp, byte level, int classIndex, boolean isDual)
 	{
-		this.playerClass = PlayerClassTable.getInstance().getClassById(classId);
+		playerClass = PlayerClassTable.getInstance().getClassById(classId);
 		this.exp = exp;
 		this.sp = sp;
 		this.level = level;
@@ -51,16 +51,16 @@ public final class SubClass
 	public SubClass(int classId, int classIndex)
 	{
 		// Used for defining a sub class using default values for XP, SP and player level.
-		this.playerClass = PlayerClassTable.getInstance().getClassById(classId);
+		playerClass = PlayerClassTable.getInstance().getClassById(classId);
 		this.classIndex = classIndex;
 		if (Config.STARTING_LEVEL > 40)
 		{
-			this.level = Config.STARTING_LEVEL;
-			if (this.level > getMaxLevel())
+			level = Config.STARTING_LEVEL;
+			if (level > getMaxLevel())
 			{
-				this.level = getMaxLevel();
+				level = getMaxLevel();
 			}
-			this.exp = Experience.getAbsoluteExp(this.level);
+			exp = Experience.getAbsoluteExp(level);
 		}
 	}
 
@@ -70,63 +70,63 @@ public final class SubClass
 		// using the preset default values.
 		if (Config.STARTING_LEVEL > 40)
 		{
-			this.level = Config.STARTING_LEVEL;
-			if (this.level > getMaxLevel())
+			level = Config.STARTING_LEVEL;
+			if (level > getMaxLevel())
 			{
-				this.level = getMaxLevel();
+				level = getMaxLevel();
 			}
-			this.exp = Experience.getAbsoluteExp(this.level);
+			exp = Experience.getAbsoluteExp(level);
 		}
 	}
 
 	public PlayerClass getClassDefinition()
 	{
-		return this.playerClass;
+		return playerClass;
 	}
 
 	public int getClassId()
 	{
-		return this.playerClass.getId();
+		return playerClass.getId();
 	}
 
 	public long getExp()
 	{
-		return this.exp;
+		return exp;
 	}
 
 	public long getSp()
 	{
-		return this.sp;
+		return sp;
 	}
 
 	public byte getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	public int getClassIndex()
 	{
-		return this.classIndex;
+		return classIndex;
 	}
 
 	public boolean isDual()
 	{
-		return this.isDual;
+		return isDual;
 	}
 
 	public int getCertificates()
 	{
-		return this.certificates;
+		return certificates;
 	}
 
 	public byte getMaxLevel()
 	{
-		return this.isDual ? Config.MAX_LEVEL : this.maxLevel;
+		return isDual ? Config.MAX_LEVEL : maxLevel;
 	}
 
 	public void setClassId(int classId)
 	{
-		this.playerClass = PlayerClassTable.getInstance().getClassById(classId);
+		playerClass = PlayerClassTable.getInstance().getClassById(classId);
 	}
 
 	public void setExp(long expValue)
@@ -136,12 +136,12 @@ public final class SubClass
 			expValue = Experience.getAbsoluteExp(getMaxLevel() + 1) - 1;
 		}
 
-		this.exp = expValue;
+		exp = expValue;
 	}
 
 	public void setSp(long spValue)
 	{
-		this.sp = spValue;
+		sp = spValue;
 	}
 
 	public void setClassIndex(int classIndex)
@@ -170,7 +170,7 @@ public final class SubClass
 			levelValue = 40;
 		}
 
-		this.level = levelValue;
+		level = levelValue;
 	}
 
 	public void incLevel()
@@ -180,7 +180,7 @@ public final class SubClass
 			return;
 		}
 
-		this.level++;
+		level++;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}
 
@@ -191,7 +191,7 @@ public final class SubClass
 			return;
 		}
 
-		this.level--;
+		level--;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}
 }

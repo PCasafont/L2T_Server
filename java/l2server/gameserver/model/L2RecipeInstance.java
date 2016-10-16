@@ -44,7 +44,7 @@ public class L2RecipeInstance
 	 */
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	/**
@@ -52,6 +52,6 @@ public class L2RecipeInstance
 	 */
 	public int getQuantity()
 	{
-		return this.quantity;
+		return quantity;
 	}
 }

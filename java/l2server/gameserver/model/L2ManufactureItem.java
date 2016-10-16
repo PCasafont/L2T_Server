@@ -33,21 +33,21 @@ public class L2ManufactureItem
 		this.recipeId = recipeId;
 		this.cost = cost;
 
-		this.isDwarven = RecipeController.getInstance().getRecipeList(this.recipeId).isDwarvenRecipe();
+		isDwarven = RecipeController.getInstance().getRecipeList(this.recipeId).isDwarvenRecipe();
 	}
 
 	public int getRecipeId()
 	{
-		return this.recipeId;
+		return recipeId;
 	}
 
 	public long getCost()
 	{
-		return this.cost;
+		return cost;
 	}
 
 	public boolean isDwarven()
 	{
-		return this.isDwarven;
+		return isDwarven;
 	}
 }

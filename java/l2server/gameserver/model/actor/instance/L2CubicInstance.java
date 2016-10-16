@@ -99,57 +99,57 @@ public class L2CubicInstance
 	{
 		this.owner = owner;
 		this.id = id;
-		this.matk = mAtk;
+		matk = mAtk;
 		this.activationtime = activationtime * 1000;
 		this.activationchance = activationchance;
 		this.maxcount = maxcount;
-		this.currentcount = 0;
-		this.active = false;
+		currentcount = 0;
+		active = false;
 		this.givenByOther = givenByOther;
 
 		switch (this.id)
 		{
 			case STORM_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4049, level));
+				skills.add(SkillTable.getInstance().getInfo(4049, level));
 				break;
 			case VAMPIRIC_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4050, level));
+				skills.add(SkillTable.getInstance().getInfo(4050, level));
 				break;
 			case LIFE_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4051, level));
+				skills.add(SkillTable.getInstance().getInfo(4051, level));
 				doAction();
 				break;
 			case VIPER_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4052, level));
+				skills.add(SkillTable.getInstance().getInfo(4052, level));
 				break;
 			case POLTERGEIST_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4053, level));
-				this.skills.add(SkillTable.getInstance().getInfo(4054, level));
-				this.skills.add(SkillTable.getInstance().getInfo(4055, level));
+				skills.add(SkillTable.getInstance().getInfo(4053, level));
+				skills.add(SkillTable.getInstance().getInfo(4054, level));
+				skills.add(SkillTable.getInstance().getInfo(4055, level));
 				break;
 			case BINDING_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4164, level));
+				skills.add(SkillTable.getInstance().getInfo(4164, level));
 				break;
 			case AQUA_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4165, level));
+				skills.add(SkillTable.getInstance().getInfo(4165, level));
 				break;
 			case SPARK_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(4166, level));
+				skills.add(SkillTable.getInstance().getInfo(4166, level));
 				break;
 			case ATTRACT_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(5115, level));
-				this.skills.add(SkillTable.getInstance().getInfo(5116, level));
+				skills.add(SkillTable.getInstance().getInfo(5115, level));
+				skills.add(SkillTable.getInstance().getInfo(5116, level));
 				break;
 			case SMART_CUBIC_ARCANALORD:
 				// this.skills.add(SkillTable.getInstance().getInfo(4049,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4051, 7)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4051, 7)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
@@ -157,7 +157,7 @@ public class L2CubicInstance
 				// cubic skills list
 				break;
 			case SMART_CUBIC_ELEMENTALMASTER:
-				this.skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
@@ -166,17 +166,17 @@ public class L2CubicInstance
 				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4166, 9)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4166, 9)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case SMART_CUBIC_SPECTRALMASTER:
-				this.skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4052, 6)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4052, 6)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
@@ -193,11 +193,11 @@ public class L2CubicInstance
 				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4053, 8)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4053, 8)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
@@ -205,7 +205,7 @@ public class L2CubicInstance
 				// cubic skills list
 				break;
 			case SMART_CUBIC_SHILLIENTEMPLAR:
-				this.skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
@@ -215,61 +215,61 @@ public class L2CubicInstance
 				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
-				this.skills.add(SkillTable.getInstance().getInfo(5115, 4)); // have animation
+				skills.add(SkillTable.getInstance().getInfo(5115, 4)); // have animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
 				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case KNIGHT_CUBIC:
 				//_skills.add(SkillTable.getInstance().getInfo(10055, 1));
-				this.skills.add(SkillTable.getInstance().getInfo(10056, level));
+				skills.add(SkillTable.getInstance().getInfo(10056, level));
 				//_skills.add(SkillTable.getInstance().getInfo(10057, 1));
 				doAction();
 				break;
 			case AVENGING_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(11292, Math.min(level, 8)));
-				this.skills.add(SkillTable.getInstance().getInfo(11293, Math.min(level, 8)));
-				this.skills.add(SkillTable.getInstance().getInfo(11294, level));
+				skills.add(SkillTable.getInstance().getInfo(11292, Math.min(level, 8)));
+				skills.add(SkillTable.getInstance().getInfo(11293, Math.min(level, 8)));
+				skills.add(SkillTable.getInstance().getInfo(11294, level));
 				doAction();
 				break;
 			case FAIRY_OF_LIFE:
-				this.skills.add(SkillTable.getInstance().getInfo(11807, level));
+				skills.add(SkillTable.getInstance().getInfo(11807, level));
 				doAction();
 				break;
 			case BUFF_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(10082, level));
+				skills.add(SkillTable.getInstance().getInfo(10082, level));
 				doAction();
 				break;
 			case MIND_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(10084, level));
+				skills.add(SkillTable.getInstance().getInfo(10084, level));
 				doAction();
 				break;
 			case PHANTOM_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(10085, level));
+				skills.add(SkillTable.getInstance().getInfo(10085, level));
 				doAction();
 				break;
 			case HEX_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(10086, level));
+				skills.add(SkillTable.getInstance().getInfo(10086, level));
 				doAction();
 				break;
 			case GUARDIAN_CUBIC:
-				this.skills.add(SkillTable.getInstance().getInfo(10093, level));
+				skills.add(SkillTable.getInstance().getInfo(10093, level));
 				doAction();
 				break;
 		}
-		this.disappearTask = ThreadPoolManager.getInstance().scheduleGeneral(new Disappear(), totallifetime); // disappear
+		disappearTask = ThreadPoolManager.getInstance().scheduleGeneral(new Disappear(), totallifetime); // disappear
 	}
 
 	public synchronized void doAction()
 	{
-		if (this.active)
+		if (active)
 		{
 			return;
 		}
 
-		this.active = true;
+		active = true;
 
-		switch (this.id)
+		switch (id)
 		{
 			case AQUA_CUBIC:
 			case BINDING_CUBIC:
@@ -290,58 +290,60 @@ public class L2CubicInstance
 			case HEX_CUBIC:
 			case PHANTOM_CUBIC:
 			case GUARDIAN_CUBIC:
-				this.actionTask = ThreadPoolManager.getInstance()
-						.scheduleEffectAtFixedRate(new Action(this.activationchance), this.activationtime / 2, this.activationtime);
+				actionTask = ThreadPoolManager.getInstance()
+						.scheduleEffectAtFixedRate(new Action(activationchance), activationtime / 2,
+								activationtime);
 				break;
 
 			case LIFE_CUBIC:
 			case BUFF_CUBIC:
 			case MIND_CUBIC:
-				this.actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new Heal(), 0, this.activationtime);
+				actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new Heal(), 0,
+						activationtime);
 				break;
 		}
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	public final int getMCriticalHit(L2Character target, L2Skill skill)
 	{
 		// TODO: Temporary now mcrit for cubics is the baseMCritRate of its owner
-		return this.owner.getTemplate().baseMCritRate;
+		return owner.getTemplate().baseMCritRate;
 	}
 
 	public int getMAtk()
 	{
-		return this.matk;
+		return matk;
 	}
 
 	public void stopAction()
 	{
-		this.target = null;
+		target = null;
 
-		if (this.actionTask != null)
+		if (actionTask != null)
 		{
-			this.actionTask.cancel(true);
-			this.actionTask = null;
+			actionTask.cancel(true);
+			actionTask = null;
 		}
 
-		this.active = false;
+		active = false;
 	}
 
 	public void cancelDisappear()
 	{
-		if (this.disappearTask != null)
+		if (disappearTask != null)
 		{
-			this.disappearTask.cancel(true);
-			this.disappearTask = null;
+			disappearTask.cancel(true);
+			disappearTask = null;
 		}
 	}
 
@@ -352,7 +354,7 @@ public class L2CubicInstance
 	{
 		try
 		{
-			this.target = null;
+			target = null;
 		}
 		catch (Exception e)
 		{

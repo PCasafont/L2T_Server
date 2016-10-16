@@ -36,14 +36,14 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 	public ExShowFortressSiegeInfo(Fort fort)
 	{
 		this.fort = fort;
-		this.fortId = fort.getFortId();
-		this.size = fort.getFortSize();
+		fortId = fort.getFortId();
+		size = fort.getFortSize();
 		List<L2Spawn> commanders = fort.getCommanderSpawns();
 		if (commanders != null)
 		{
-			this.csize = commanders.size();
+			csize = commanders.size();
 		}
-		this.csize2 = this.fort.getCommanderSpawns().size();
+		csize2 = this.fort.getCommanderSpawns().size();
 	}
 
     /*
@@ -56,14 +56,14 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.fortId); // Fortress Id
-		writeD(this.size); // Total Barracks Count
-		if (this.csize > 0)
+		writeD(fortId); // Fortress Id
+		writeD(size); // Total Barracks Count
+		if (csize > 0)
 		{
-			switch (this.csize)
+			switch (csize)
 			{
 				case 3:
-					switch (this.csize2)
+					switch (csize2)
 					{
 						case 0:
 							writeD(0x03);
@@ -80,7 +80,7 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 					}
 					break;
 				case 4: // TODO: change 4 to 5 once control room supported
-					switch (this.csize2)
+					switch (csize2)
 					// TODO: once control room supported, update writeD(0x0x) to support 5th room
 					{
 						case 0:
@@ -104,7 +104,7 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 		}
 		else
 		{
-			for (int i = 0; i < this.size; i++)
+			for (int i = 0; i < size; i++)
 			{
 				writeD(0x00);
 			}

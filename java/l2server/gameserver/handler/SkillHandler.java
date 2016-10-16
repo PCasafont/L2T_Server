@@ -34,7 +34,7 @@ public class SkillHandler
 
 	private SkillHandler()
 	{
-		this.datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerSkillHandler(ISkillHandler handler)
@@ -42,13 +42,13 @@ public class SkillHandler
 		L2SkillType[] types = handler.getSkillIds();
 		for (L2SkillType t : types)
 		{
-			this.datatable.put(t.ordinal(), handler);
+			datatable.put(t.ordinal(), handler);
 		}
 	}
 
 	public ISkillHandler getSkillHandler(L2SkillType skillType)
 	{
-		return this.datatable.get(skillType.ordinal());
+		return datatable.get(skillType.ordinal());
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class SkillHandler
 	 */
 	public int size()
 	{
-		return this.datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")

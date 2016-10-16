@@ -22,14 +22,14 @@ public class StartPledgeWar extends L2GameServerPacket
 
 	public StartPledgeWar(String pledge, String charName)
 	{
-		this.pledgeName = pledge;
-		this.playerName = charName;
+		pledgeName = pledge;
+		playerName = charName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.playerName);
-		writeS(this.pledgeName);
+		writeS(playerName);
+		writeS(pledgeName);
 	}
 }

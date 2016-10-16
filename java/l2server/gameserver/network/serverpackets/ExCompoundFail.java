@@ -37,6 +37,6 @@ public class ExCompoundFail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.itemId); // Remaining item id
+		writeD(itemId); // Remaining item id
 	}
 }

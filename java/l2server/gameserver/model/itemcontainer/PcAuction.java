@@ -39,7 +39,7 @@ public class PcAuction extends ItemContainer
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
@@ -51,6 +51,6 @@ public class PcAuction extends ItemContainer
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return this.items.size() + slots <= 10;
+		return items.size() + slots <= 10;
 	}
 }

@@ -107,11 +107,11 @@ public class ShuttleTable
 						}
 
 						shuttle.moveToNextRoutePoint();
-						this.shuttles.put(id, shuttle);
+						shuttles.put(id, shuttle);
 					}
 				}
 			}
 		}
-		Log.info("ShuttleTable: Loaded " + this.shuttles.size() + " shuttles.");
+		Log.info("ShuttleTable: Loaded " + shuttles.size() + " shuttles.");
 	}
 }

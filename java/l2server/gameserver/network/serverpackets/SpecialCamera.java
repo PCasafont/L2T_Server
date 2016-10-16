@@ -37,10 +37,10 @@ public class SpecialCamera extends L2GameServerPacket
 		this.pitch = pitch;
 		this.time = time;
 		this.duration = duration;
-		this.turn = 0;
-		this.rise = 0;
-		this.widescreen = 0;
-		this.unknown = 0;
+		turn = 0;
+		rise = 0;
+		widescreen = 0;
+		unknown = 0;
 	}
 
 	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration, int turn, int rise, int widescreen, int unk)
@@ -54,21 +54,21 @@ public class SpecialCamera extends L2GameServerPacket
 		this.turn = turn;
 		this.rise = rise;
 		this.widescreen = widescreen;
-		this.unknown = unk;
+		unknown = unk;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.id);
-		writeD(this.dist);
-		writeD(this.yaw);
-		writeD(this.pitch);
-		writeD(this.time);
-		writeD(this.duration);
-		writeD(this.turn);
-		writeD(this.rise);
-		writeD(this.widescreen);
-		writeD(this.unknown);
+		writeD(id);
+		writeD(dist);
+		writeD(yaw);
+		writeD(pitch);
+		writeD(time);
+		writeD(duration);
+		writeD(turn);
+		writeD(rise);
+		writeD(widescreen);
+		writeD(unknown);
 	}
 }

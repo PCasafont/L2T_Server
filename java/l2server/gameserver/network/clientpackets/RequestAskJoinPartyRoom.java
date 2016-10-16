@@ -29,13 +29,13 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.player = readS();
+		player = readS();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		// TODO
-		Log.info("C5:RequestAskJoinPartyRoom: S: " + this.player);
+		Log.info("C5:RequestAskJoinPartyRoom: S: " + player);
 	}
 }

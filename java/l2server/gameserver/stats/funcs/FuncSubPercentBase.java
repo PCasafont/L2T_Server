@@ -42,7 +42,7 @@ public class FuncSubPercentBase extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value -= env.baseValue * (this.lambda.calc(env) / 100.0);
+			env.value -= env.baseValue * (lambda.calc(env) / 100.0);
 		}
 	}
 }

@@ -651,13 +651,11 @@ public class DarkCloudMansion extends Quest
 			FifthRoom.npcList.add(thisnpc);
 			if (temp[idx] == 1 && Rnd.get(100) < 95)
 			{
-				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
-						this.spawnChat[Rnd.get(this.spawnChat.length)]));
+				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			else if (temp[idx] != 1 && Rnd.get(100) < 67)
 			{
-				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
-						this.spawnChat[Rnd.get(this.spawnChat.length)]));
+				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			idx++;
 		}
@@ -743,16 +741,14 @@ public class DarkCloudMansion extends Quest
 					mob.count = 1;
 					if (mob.status == 1)
 					{
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								this.successChat[Rnd.get(this.successChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), successChat[Rnd.get(successChat.length)]));
 						FifthRoom.founded += 1;
 						startQuestTimer("decayMe", 1500, npc, player);
 					}
 					else
 					{
 						FifthRoom.reset = 1;
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								this.faildChat[Rnd.get(this.faildChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), faildChat[Rnd.get(faildChat.length)]));
 						startQuestTimer("decayChatBelethSamples", 4000, npc, player);
 						startQuestTimer("decayBelethSamples", 4500, npc, player);
 					}
@@ -922,8 +918,7 @@ public class DarkCloudMansion extends Quest
 				{
 					if (mob.status == 1)
 					{
-						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								this.decayChat[Rnd.get(this.decayChat.length)]));
+						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(), decayChat[Rnd.get(decayChat.length)]));
 					}
 				}
 			}

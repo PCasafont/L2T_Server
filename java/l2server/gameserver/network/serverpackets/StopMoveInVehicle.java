@@ -30,10 +30,10 @@ public class StopMoveInVehicle extends L2GameServerPacket
 
 	public StopMoveInVehicle(L2PcInstance player, int boatId)
 	{
-		this.charObjId = player.getObjectId();
+		charObjId = player.getObjectId();
 		this.boatId = boatId;
-		this.pos = player.getInVehiclePosition();
-		this.heading = player.getHeading();
+		pos = player.getInVehiclePosition();
+		heading = player.getHeading();
 	}
 
 	/* (non-Javadoc)
@@ -42,11 +42,11 @@ public class StopMoveInVehicle extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.boatId);
-		writeD(this.pos.getX());
-		writeD(this.pos.getY());
-		writeD(this.pos.getZ());
-		writeD(this.heading);
+		writeD(charObjId);
+		writeD(boatId);
+		writeD(pos.getX());
+		writeD(pos.getY());
+		writeD(pos.getZ());
+		writeD(heading);
 	}
 }

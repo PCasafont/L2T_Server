@@ -31,15 +31,15 @@ public final class AcquireSkillList extends L2GameServerPacket
 
 	public AcquireSkillList(L2PcInstance player)
 	{
-		this.skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
+		skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
 		this.player = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(this.skills.length);
-		for (L2SkillLearn sk : this.skills)
+		writeH(skills.length);
+		for (L2SkillLearn sk : skills)
 		{
 			writeD(sk.getId());
 			writeH(sk.getLevel());
@@ -55,7 +55,7 @@ public final class AcquireSkillList extends L2GameServerPacket
 				writeQ(sk.getCostItems().get(itemId));
 			}
 
-			Map<Integer, Integer> costSkills = sk.getCostSkills(this.player);
+			Map<Integer, Integer> costSkills = sk.getCostSkills(player);
 			writeC(costSkills.size());
 			for (int skillId : costSkills.keySet())
 			{

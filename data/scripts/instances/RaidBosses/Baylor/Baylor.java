@@ -83,7 +83,7 @@ public class Baylor extends L2AttackableAIScript
 
         private BaylorWorld()
         {
-            this.cameraMinions = new ArrayList<L2Npc>();
+			cameraMinions = new ArrayList<L2Npc>();
         }
     }
 
@@ -91,19 +91,19 @@ public class Baylor extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addTalkId(this.crystalPortal);
-        addStartNpc(this.crystalPortal);
+        addTalkId(crystalPortal);
+        addStartNpc(crystalPortal);
 
-        addAttackId(this.baylorId);
-        addKillId(this.baylorId);
+        addAttackId(baylorId);
+        addKillId(baylorId);
 
-        addKillId(this.alarmId);
+        addKillId(alarmId);
     }
 
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -132,14 +132,14 @@ public class Baylor extends L2AttackableAIScript
                 InstanceManager.getInstance().stopWholeInstance(world.instanceId);
 
                 world.baylorOne =
-                        addSpawn(this.baylorId, 153751, 142333, -12738, 10617, false, 0, false, world.instanceId);
+                        addSpawn(baylorId, 153751, 142333, -12738, 10617, false, 0, false, world.instanceId);
                 world.baylorOne.setIsParalyzed(true);
 
                 world.baylorTwo =
-                        addSpawn(this.baylorId, 153832, 141930, -12738, 60191, false, 0, false, world.instanceId);
+                        addSpawn(baylorId, 153832, 141930, -12738, 60191, false, 0, false, world.instanceId);
                 world.baylorTwo.setIsParalyzed(true);
 
-                world.camera = addSpawn(this.cameraId, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
+                world.camera = addSpawn(cameraId, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
                 world.camera.broadcastPacket(
                         new SpecialCamera(world.camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
 
@@ -153,7 +153,7 @@ public class Baylor extends L2AttackableAIScript
                     int x = (int) (radius * Math.cos(i * 0.618));
                     int y = (int) (radius * Math.sin(i * 0.618));
 
-                    L2Npc mob = addSpawn(this.cameraMinionId, 153571 + x, 142075 + y, -12737, 0, false, 0, false,
+                    L2Npc mob = addSpawn(cameraMinionId, 153571 + x, 142075 + y, -12737, 0, false, 0, false,
                             world.instanceId);
                     mob.setIsParalyzed(true);
                     world.cameraMinions.add(mob);
@@ -224,9 +224,9 @@ public class Baylor extends L2AttackableAIScript
 
                 if (Rnd.nextBoolean())
                 {
-                    int[] rndAlarm = this.alarmSpawns[Rnd.get(this.alarmSpawns.length)];
+                    int[] rndAlarm = alarmSpawns[Rnd.get(alarmSpawns.length)];
                     L2Npc alarm =
-                            addSpawn(this.alarmId, rndAlarm[0], rndAlarm[1], rndAlarm[2], rndAlarm[3], false, 0, false,
+                            addSpawn(alarmId, rndAlarm[0], rndAlarm[1], rndAlarm[2], rndAlarm[3], false, 0, false,
                                     world.instanceId);
                     alarm.broadcastPacket(new NpcSay(alarm.getObjectId(), 0, alarm.getTemplate().TemplateId, 1800031));
 
@@ -240,17 +240,17 @@ public class Baylor extends L2AttackableAIScript
             else if (event.equalsIgnoreCase("stage_all_alarm_check"))
             {
                 //At this point the alarm hasn't been killed
-                startQuestTimer("stage_all_spawn_alarm", this.alarmReuse * 60000, npc, null);
+                startQuestTimer("stage_all_spawn_alarm", alarmReuse * 60000, npc, null);
 
                 npc.decayMe();
 
                 if (world.baylorOne != null && !world.baylorOne.isDead())
                 {
-                    this.baylorBerserk.getEffects(world.baylorOne, world.baylorOne);
+					baylorBerserk.getEffects(world.baylorOne, world.baylorOne);
                 }
                 if (world.baylorTwo != null && !world.baylorTwo.isDead())
                 {
-                    this.baylorBerserk.getEffects(world.baylorTwo, world.baylorTwo);
+					baylorBerserk.getEffects(world.baylorTwo, world.baylorTwo);
                 }
             }
         }
@@ -272,7 +272,7 @@ public class Baylor extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -280,9 +280,9 @@ public class Baylor extends L2AttackableAIScript
         final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
         if (tmpWorld instanceof BaylorWorld)
         {
-            if (npc.getNpcId() == this.baylorId)
+            if (npc.getNpcId() == baylorId)
             {
-                L2Abnormal ab = npc.getFirstEffect(this.baylorInvincibility);
+                L2Abnormal ab = npc.getFirstEffect(baylorInvincibility);
                 if (ab != null)
                 {
                     if (attacker.isBehindTarget())
@@ -301,7 +301,7 @@ public class Baylor extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -310,7 +310,7 @@ public class Baylor extends L2AttackableAIScript
         if (tmpworld instanceof BaylorWorld)
         {
             BaylorWorld world = (BaylorWorld) tmpworld;
-            if (npc.getNpcId() == this.baylorId)
+            if (npc.getNpcId() == baylorId)
             {
                 npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getTemplate().TemplateId, 1800067));
                 if (world.baylorOne.isDead() && world.baylorTwo.isDead())
@@ -319,13 +319,13 @@ public class Baylor extends L2AttackableAIScript
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
                 }
             }
-            else if (npc.getNpcId() == this.alarmId)
+            else if (npc.getNpcId() == alarmId)
             {
                 QuestTimer activityTimer = getQuestTimer("stage_all_alarm_check", npc, null);
                 if (activityTimer != null)
                 {
                     activityTimer.cancel();
-                    startQuestTimer("stage_all_spawn_alarm", this.alarmReuse * 60000, npc, null);
+                    startQuestTimer("stage_all_spawn_alarm", alarmReuse * 60000, npc, null);
                 }
             }
         }
@@ -335,12 +335,12 @@ public class Baylor extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == this.crystalPortal)
+        if (npc.getNpcId() == crystalPortal)
         {
             return "EntrancePortal.html";
         }
@@ -373,14 +373,14 @@ public class Baylor extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, instanceTemplateId, Config.BAYLOR_MIN_PLAYERS, 7, 99,
                             Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new BaylorWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -388,7 +388,7 @@ public class Baylor extends L2AttackableAIScript
             InstanceManager.getInstance().addWorld(world);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -406,7 +406,7 @@ public class Baylor extends L2AttackableAIScript
 
                 world.allowed.add(enterPlayer.getObjectId());
 
-                enterPlayer.deleteAllItemsById(this.prisonKey);
+                enterPlayer.deleteAllItemsById(prisonKey);
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);

@@ -32,6 +32,6 @@ public class ExDuelEnd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.unk1);
+		writeD(unk1);
 	}
 }

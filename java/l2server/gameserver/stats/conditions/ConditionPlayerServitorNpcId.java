@@ -64,17 +64,17 @@ public class ConditionPlayerServitorNpcId extends Condition
 		}
 
 		boolean hasInSummons = false;
-		if (this.npcIds != null)
+		if (npcIds != null)
 		{
 			for (L2SummonInstance summon : player.getSummons())
 			{
-				if (!summon.isDead() && this.npcIds.contains(summon.getNpcId()))
+				if (!summon.isDead() && npcIds.contains(summon.getNpcId()))
 				{
 					hasInSummons = true;
 				}
 			}
 		}
 
-		return this.npcIds == null || this.npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
+		return npcIds == null || npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
 	}
 }

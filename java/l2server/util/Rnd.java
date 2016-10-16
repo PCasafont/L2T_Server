@@ -48,7 +48,7 @@ public final class Rnd
 		@Override
 		public final int next(final int bits)
 		{
-			return (int) ((this.seed = this.seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
+			return (int) ((seed = seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 		}
 
 		@Override
@@ -72,7 +72,7 @@ public final class Rnd
 
 		public final Random directRandom()
 		{
-			return this.random;
+			return random;
 		}
 
 		/**
@@ -83,7 +83,7 @@ public final class Rnd
 		 */
 		public final double get()
 		{
-			return this.random.nextDouble();
+			return random.nextDouble();
 		}
 
 		/**
@@ -94,7 +94,7 @@ public final class Rnd
 		 */
 		public final int get(final int n)
 		{
-			return (int) (this.random.nextDouble() * n);
+			return (int) (random.nextDouble() * n);
 		}
 
 		/**
@@ -106,7 +106,7 @@ public final class Rnd
 		 */
 		public final int get(final int min, final int max)
 		{
-			return min + (int) (this.random.nextDouble() * (max - min + 1));
+			return min + (int) (random.nextDouble() * (max - min + 1));
 		}
 
 		/**
@@ -118,7 +118,7 @@ public final class Rnd
 		 */
 		public final long get(final long min, final long max)
 		{
-			return min + (long) (this.random.nextDouble() * (max - min + 1));
+			return min + (long) (random.nextDouble() * (max - min + 1));
 		}
 
 		/**
@@ -129,7 +129,7 @@ public final class Rnd
 		 */
 		public final boolean nextBoolean()
 		{
-			return this.random.nextBoolean();
+			return random.nextBoolean();
 		}
 
 		/**
@@ -140,7 +140,7 @@ public final class Rnd
 		 */
 		public final void nextBytes(final byte[] array)
 		{
-			this.random.nextBytes(array);
+			random.nextBytes(array);
 		}
 
 		/**
@@ -151,7 +151,7 @@ public final class Rnd
 		 */
 		public final double nextDouble()
 		{
-			return this.random.nextDouble();
+			return random.nextDouble();
 		}
 
 		/**
@@ -162,7 +162,7 @@ public final class Rnd
 		 */
 		public final float nextFloat()
 		{
-			return this.random.nextFloat();
+			return random.nextFloat();
 		}
 
 		/**
@@ -173,7 +173,7 @@ public final class Rnd
 		 */
 		public final double nextGaussian()
 		{
-			return this.random.nextGaussian();
+			return random.nextGaussian();
 		}
 
 		/**
@@ -184,7 +184,7 @@ public final class Rnd
 		 */
 		public final int nextInt()
 		{
-			return this.random.nextInt();
+			return random.nextInt();
 		}
 
 		/**
@@ -195,7 +195,7 @@ public final class Rnd
 		 */
 		public final long nextLong()
 		{
-			return this.random.nextLong();
+			return random.nextLong();
 		}
 	}
 
@@ -258,7 +258,7 @@ public final class Rnd
 
 			final int next(final int bits)
 			{
-				return (int) ((this.seed = this.seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
+				return (int) ((seed = seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 			}
 
 			final void setSeed(final long seed)
@@ -272,7 +272,7 @@ public final class Rnd
 
 		public ThreadLocalRandom()
 		{
-			this.seedLocal = new ThreadLocal<Seed>()
+			seedLocal = new ThreadLocal<Seed>()
 			{
 				@Override
 				public final Seed initialValue()
@@ -284,7 +284,7 @@ public final class Rnd
 
 		public ThreadLocalRandom(final long seed)
 		{
-			this.seedLocal = new ThreadLocal<Seed>()
+			seedLocal = new ThreadLocal<Seed>()
 			{
 				@Override
 				public final Seed initialValue()
@@ -297,15 +297,15 @@ public final class Rnd
 		@Override
 		public final int next(final int bits)
 		{
-			return this.seedLocal.get().next(bits);
+			return seedLocal.get().next(bits);
 		}
 
 		@Override
 		public final void setSeed(final long seed)
 		{
-			if (this.seedLocal != null)
+			if (seedLocal != null)
 			{
-				this.seedLocal.get().setSeed(seed);
+				seedLocal.get().setSeed(seed);
 			}
 		}
 	}

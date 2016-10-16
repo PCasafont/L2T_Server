@@ -40,7 +40,7 @@ public class DeathGate extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int i : this.deathGateIds)
+		for (int i : deathGateIds)
 		{
 			addSpawnId(i);
 		}
@@ -70,7 +70,7 @@ public class DeathGate extends L2AttackableAIScript
 
 		protected DeathGateAI(L2Npc npc, L2PcInstance owner)
 		{
-			this.deathGate = npc;
+			deathGate = npc;
 
 			this.owner = owner;
 			if (this.owner == null)
@@ -84,8 +84,8 @@ public class DeathGate extends L2AttackableAIScript
 				return;
 			}
 
-			this.gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
-			this.gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
+			gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
+			gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -96,28 +96,28 @@ public class DeathGate extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if (this.deathGate == null || this.deathGate.isDead() || this.deathGate.isDecayed() ||
-					this.deathGate.getOwner().isAlikeDead())
+			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() ||
+					deathGate.getOwner().isAlikeDead())
 			{
-				if (this.schedule != null)
+				if (schedule != null)
 				{
-					this.schedule.cancel(true);
+					schedule.cancel(true);
 					return;
 				}
 			}
 
-			this.deathGate.setTarget(this.deathGate);
+			deathGate.setTarget(deathGate);
 
-			if (lastSkillUsed == this.gateVortex)
+			if (lastSkillUsed == gateVortex)
 			{
-				lastSkillUsed = this.gateRoot;
+				lastSkillUsed = gateRoot;
 			}
 			else
 			{
-				lastSkillUsed = this.gateVortex;
+				lastSkillUsed = gateVortex;
 			}
 
-			this.deathGate.doCast(lastSkillUsed);
+			deathGate.doCast(lastSkillUsed);
 		}
 	}
 

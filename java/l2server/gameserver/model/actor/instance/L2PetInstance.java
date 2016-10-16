@@ -78,27 +78,27 @@ public class L2PetInstance extends L2Summon
 
 	public final L2PetLevelData getPetLevelData()
 	{
-		if (this.leveldata == null)
+		if (leveldata == null)
 		{
-			this.leveldata = PetDataTable.getInstance().getPetLevelData(getTemplate().NpcId, getStat().getLevel());
+			leveldata = PetDataTable.getInstance().getPetLevelData(getTemplate().NpcId, getStat().getLevel());
 		}
 
-		return this.leveldata;
+		return leveldata;
 	}
 
 	public final L2PetData getPetData()
 	{
-		if (this.data == null)
+		if (data == null)
 		{
-			this.data = PetDataTable.getInstance().getPetData(getTemplate().NpcId);
+			data = PetDataTable.getInstance().getPetData(getTemplate().NpcId);
 		}
 
-		return this.data;
+		return data;
 	}
 
 	public final void setPetData(L2PetLevelData value)
 	{
-		this.leveldata = value;
+		leveldata = value;
 	}
 
 	/**
@@ -290,15 +290,15 @@ public class L2PetInstance extends L2Summon
 		super(objectId, template, owner);
 		setInstanceType(InstanceType.L2PetInstance);
 
-		this.controlObjectId = control.getObjectId();
+		controlObjectId = control.getObjectId();
 
 		getStat().setLevel((byte) Math.max(level, PetDataTable.getInstance().getPetMinLevel(template.NpcId)));
 
-		this.inventory = new PetInventory(this);
-		this.inventory.restore();
+		inventory = new PetInventory(this);
+		inventory.restore();
 
 		int npcId = template.NpcId;
-		this.mountable = PetDataTable.isMountable(npcId);
+		mountable = PetDataTable.isMountable(npcId);
 		getPetData();
 		getPetLevelData();
 	}
@@ -317,7 +317,7 @@ public class L2PetInstance extends L2Summon
 
 	public boolean isRespawned()
 	{
-		return this.respawned;
+		return respawned;
 	}
 
 	@Override
@@ -329,22 +329,22 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public int getControlObjectId()
 	{
-		return this.controlObjectId;
+		return controlObjectId;
 	}
 
 	public L2ItemInstance getControlItem()
 	{
-		return getOwner().getInventory().getItemByObjectId(this.controlObjectId);
+		return getOwner().getInventory().getItemByObjectId(controlObjectId);
 	}
 
 	public int getCurrentFed()
 	{
-		return this.curFed;
+		return curFed;
 	}
 
 	public void setCurrentFed(int num)
 	{
-		this.curFed = num > getMaxFed() ? getMaxFed() : num;
+		curFed = num > getMaxFed() ? getMaxFed() : num;
 	}
 
 	/**
@@ -398,7 +398,7 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public PetInventory getInventory()
 	{
-		return this.inventory;
+		return inventory;
 	}
 
 	/**
@@ -414,7 +414,7 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public boolean destroyItem(String process, int objectId, long count, L2Object reference, boolean sendMessage)
 	{
-		L2ItemInstance item = this.inventory.destroyItem(process, objectId, count, getOwner(), reference);
+		L2ItemInstance item = inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		if (item == null)
 		{
 			if (sendMessage)
@@ -462,7 +462,7 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
 	{
-		L2ItemInstance item = this.inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
+		L2ItemInstance item = inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
 
 		if (item == null)
 		{
@@ -544,14 +544,14 @@ public class L2PetInstance extends L2Summon
 				return;
 			}
 
-			if (!this.inventory.validateCapacity(target))
+			if (!inventory.validateCapacity(target))
 			{
 				getOwner().sendPacket(
 						SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
 				return;
 			}
 
-			if (!this.inventory.validateWeight(target, target.getCount()))
+			if (!inventory.validateWeight(target, target.getCount()))
 			{
 				getOwner().sendPacket(SystemMessage
 						.getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
@@ -871,7 +871,7 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public boolean isMountable()
 	{
-		return this.mountable;
+		return mountable;
 	}
 
 	private static L2PetInstance restore(L2ItemInstance control, L2NpcTemplate template, L2PcInstance owner)
@@ -986,7 +986,7 @@ public class L2PetInstance extends L2Summon
 			statement.setInt(8, getControlObjectId());
 			statement.executeUpdate();
 			statement.close();
-			this.respawned = true;
+			respawned = true;
 		}
 		catch (Exception e)
 		{
@@ -1007,10 +1007,10 @@ public class L2PetInstance extends L2Summon
 
 	public synchronized void stopFeed()
 	{
-		if (this.feedTask != null)
+		if (feedTask != null)
 		{
-			this.feedTask.cancel(false);
-			this.feedTask = null;
+			feedTask.cancel(false);
+			feedTask = null;
 			if (Config.DEBUG)
 			{
 				Log.fine("Pet [#" + getObjectId() + "] feed task stop");
@@ -1025,7 +1025,7 @@ public class L2PetInstance extends L2Summon
 		stopFeed();
 		if (!isDead() && getOwner().getPet() == this)
 		{
-			this.feedTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new FeedTask(), 10000, 10000);
+			feedTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new FeedTask(), 10000, 10000);
 		}
 	}
 
@@ -1052,11 +1052,11 @@ public class L2PetInstance extends L2Summon
 	 */
 	public void restoreExp(double restorePercent)
 	{
-		if (this.expBeforeDeath > 0)
+		if (expBeforeDeath > 0)
 		{
 			// Restore the specified % of lost experience.
-			getStat().addExp(Math.round((this.expBeforeDeath - getStat().getExp()) * restorePercent / 100));
-			this.expBeforeDeath = 0;
+			getStat().addExp(Math.round((expBeforeDeath - getStat().getExp()) * restorePercent / 100));
+			expBeforeDeath = 0;
 		}
 	}
 
@@ -1078,10 +1078,10 @@ public class L2PetInstance extends L2Summon
 		long lostExp = Math.round((nextLevelExp - levelExp) * percentLost / 100);
 
 		// Get the Experience before applying penalty
-		this.expBeforeDeath = getStat().getExp();
+		expBeforeDeath = getStat().getExp();
 		if (lostExp > expBeforeDeath - levelExp)
 		{
-			lostExp = this.expBeforeDeath - levelExp;
+			lostExp = expBeforeDeath - levelExp;
 		}
 
 		// Set the new Experience value of the L2PetInstance
@@ -1165,7 +1165,7 @@ public class L2PetInstance extends L2Summon
 
 	public int getCurrentLoad()
 	{
-		return this.inventory.getTotalWeight();
+		return inventory.getTotalWeight();
 	}
 
 	@Override
@@ -1207,9 +1207,9 @@ public class L2PetInstance extends L2Summon
 				newWeightPenalty = 4;
 			}
 
-			if (this.curWeightPenalty != newWeightPenalty)
+			if (curWeightPenalty != newWeightPenalty)
 			{
-				this.curWeightPenalty = newWeightPenalty;
+				curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0)
 				{
 					addSkill(SkillTable.getInstance().getInfo(4270, newWeightPenalty));
@@ -1315,6 +1315,6 @@ public class L2PetInstance extends L2Summon
 
 	public boolean canEatFoodId(int itemId)
 	{
-		return Util.contains(this.data.getFood(), itemId);
+		return Util.contains(data.getFood(), itemId);
 	}
 }

@@ -48,7 +48,7 @@ public class LoginFail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.reason);
+		writeD(reason);
 		writeD(0x00);
 	}
 }

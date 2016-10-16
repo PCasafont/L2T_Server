@@ -145,7 +145,7 @@ public class AdminManor implements IAdminCommandHandler
 	@Override
 	public String[] getAdminCommandList()
 	{
-		return this.adminCommands;
+		return adminCommands;
 	}
 
 	private String formatTime(long millis)

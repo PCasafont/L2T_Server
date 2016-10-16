@@ -26,7 +26,7 @@ public class RequestTutorialQuestionMark extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.number = readD();
+		number = readD();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class RequestTutorialQuestionMark extends L2GameClientPacket
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent("QM" + this.number + "", null, player);
+			qs.getQuest().notifyEvent("QM" + number + "", null, player);
 		}
 	}
 }

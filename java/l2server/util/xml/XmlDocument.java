@@ -51,7 +51,7 @@ public class XmlDocument
 		Document doc = null;
 		try
 		{
-			doc = this.factory.newDocumentBuilder().parse(file);
+			doc = factory.newDocumentBuilder().parse(file);
 		}
 		catch (Exception e)
 		{
@@ -62,23 +62,23 @@ public class XmlDocument
 		{
 			if (baseNode.getNodeType() == Node.ELEMENT_NODE)
 			{
-				this.children.add(new XmlNode(baseNode));
+				children.add(new XmlNode(baseNode));
 			}
 		}
 	}
 
 	public XmlNode getFirstChild()
 	{
-		if (this.children.isEmpty())
+		if (children.isEmpty())
 		{
 			return null;
 		}
 
-		return this.children.get(0);
+		return children.get(0);
 	}
 
 	public List<XmlNode> getChildren()
 	{
-		return this.children;
+		return children;
 	}
 }

@@ -41,6 +41,6 @@ public class ConditionTargetHp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= this.hp;
+		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= hp;
 	}
 }

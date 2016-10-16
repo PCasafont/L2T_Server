@@ -46,7 +46,7 @@ public class GmListTable
 	public ArrayList<L2PcInstance> getAllGms(boolean includeHidden)
 	{
 		ArrayList<L2PcInstance> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : this.gmList.entrySet())
+		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
 		{
 			if (includeHidden || !n.getValue())
 			{
@@ -60,7 +60,7 @@ public class GmListTable
 	public ArrayList<String> getAllGmNames(boolean includeHidden)
 	{
 		ArrayList<String> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : this.gmList.entrySet())
+		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
 		{
 			if (!n.getValue())
 			{
@@ -77,7 +77,7 @@ public class GmListTable
 
 	private GmListTable()
 	{
-		this.gmList = new ConcurrentHashMap<>();
+		gmList = new ConcurrentHashMap<>();
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class GmListTable
 		{
 			Log.fine("added gm: " + player.getName());
 		}
-		this.gmList.put(player, hidden);
+		gmList.put(player, hidden);
 	}
 
 	public void deleteGm(L2PcInstance player)
@@ -99,7 +99,7 @@ public class GmListTable
 			Log.fine("deleted gm: " + player.getName());
 		}
 
-		this.gmList.remove(player);
+		gmList.remove(player);
 	}
 
 	/**
@@ -109,9 +109,9 @@ public class GmListTable
 	 */
 	public void showGm(L2PcInstance player)
 	{
-		if (this.gmList.containsKey(player))
+		if (gmList.containsKey(player))
 		{
-			this.gmList.put(player, false);
+			gmList.put(player, false);
 		}
 	}
 
@@ -122,15 +122,15 @@ public class GmListTable
 	 */
 	public void hideGm(L2PcInstance player)
 	{
-		if (this.gmList.containsKey(player))
+		if (gmList.containsKey(player))
 		{
-			this.gmList.put(player, true);
+			gmList.put(player, true);
 		}
 	}
 
 	public boolean isGmOnline(boolean includeHidden)
 	{
-		for (boolean gmStatus : this.gmList.values())
+		for (boolean gmStatus : gmList.values())
 		{
 			if (includeHidden || !gmStatus)
 			{

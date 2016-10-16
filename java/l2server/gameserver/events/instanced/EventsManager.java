@@ -64,17 +64,17 @@ public class EventsManager implements Reloadable
 		loadConfig();
 		ReloadableManager.getInstance().register("eventLocations", this);
 
-		this.task = new EventManagerTask();
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this.task, 10000L, 60000L);
+		task = new EventManagerTask();
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, 10000L, 60000L);
 
-		this.currentConfig = new EventConfig();
+		currentConfig = new EventConfig();
 
 		Log.info("Instanced Events started.");
 	}
 
 	public void loadConfig()
 	{
-		this.locations.clear();
+		locations.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventsConfig.xml"));
 		if (doc.getFirstChild() == null)
@@ -96,7 +96,7 @@ public class EventsManager implements Reloadable
 				if (node.getName().equals("location"))
 				{
 					EventLocation loc = new EventLocation(node);
-					this.locations.put(loc.getId(), loc);
+					locations.put(loc.getId(), loc);
 
 					locCount++;
 				}
@@ -108,22 +108,22 @@ public class EventsManager implements Reloadable
 
 	public EventLocation getRandomLocation()
 	{
-		EventLocation loc = this.locations.get(Rnd.get(100));
+		EventLocation loc = locations.get(Rnd.get(100));
 		while (loc == null)
 		{
-			loc = this.locations.get(Rnd.get(100));
+			loc = locations.get(Rnd.get(100));
 		}
 		return loc;
 	}
 
 	public EventLocation getLocation(int id)
 	{
-		return this.locations.get(id);
+		return locations.get(id);
 	}
 
 	public EventManagerTask getTask()
 	{
-		return this.task;
+		return task;
 	}
 
 	class EventManagerTask implements Runnable
@@ -132,7 +132,7 @@ public class EventsManager implements Reloadable
 
 		public EventManagerTask()
 		{
-			this.minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
+			minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 		}
 
 		@Override
@@ -165,9 +165,9 @@ public class EventsManager implements Reloadable
 				instances.remove(eventId);
 			}
 
-			this.minutesToStart--;
+			minutesToStart--;
 
-			if (this.minutesToStart <= 0)
+			if (minutesToStart <= 0)
 			{
 				// Prepare an instance
 				if (!prepare())
@@ -177,9 +177,10 @@ public class EventsManager implements Reloadable
 				}
 
 				currentConfig = new EventConfig();
-				this.minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
+				minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 			}
-			else if (this.minutesToStart == 10 || this.minutesToStart == 5 || this.minutesToStart == 2 || this.minutesToStart == 1)
+			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 ||
+					minutesToStart == 1)
 			{
 				// Auto join!
 				/*if (this.minutesToStart == 1)
@@ -194,8 +195,8 @@ public class EventsManager implements Reloadable
 				}*/
 
 				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-						"The " + currentConfig.getEventName() + " will start in " + this.minutesToStart + " minute" +
-								(this.minutesToStart > 1 ? "s" : "") + ".", 5000));
+						"The " + currentConfig.getEventName() + " will start in " + minutesToStart + " minute" +
+								(minutesToStart > 1 ? "s" : "") + ".", 5000));
 				ThreadPoolManager.getInstance().scheduleGeneral(() -> Broadcast.toAllOnlinePlayers(
 						new ExShowScreenMessage("Use the Community Board's (ALT+B) \"Join Events\" menu to join.",
 								5000)), 5000L);
@@ -204,31 +205,31 @@ public class EventsManager implements Reloadable
 
 		public int getMinutesToStart()
 		{
-			return this.minutesToStart;
+			return minutesToStart;
 		}
 	}
 
 	public EventConfig getCurrentConfig()
 	{
-		return this.currentConfig;
+		return currentConfig;
 	}
 
 	public Map<Integer, L2PcInstance> getRegisteredPlayers()
 	{
-		return this.registeredPlayers;
+		return registeredPlayers;
 	}
 
 	private boolean prepare()
 	{
-		if (this.registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			return false;
 		}
 
 		// First sort the registered players
-		int[][] sorted = new int[this.registeredPlayers.size()][2];
+		int[][] sorted = new int[registeredPlayers.size()][2];
 		int i = 0;
-		for (L2PcInstance player : this.registeredPlayers.values())
+		for (L2PcInstance player : registeredPlayers.values())
 		{
 			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
 					player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
@@ -279,7 +280,7 @@ public class EventsManager implements Reloadable
 				j++;
 			}
 
-			if (j < this.currentConfig.getMinPlayers())
+			if (j < currentConfig.getMinPlayers())
 			{
 				if (!groups.isEmpty())
 				{
@@ -296,7 +297,7 @@ public class EventsManager implements Reloadable
 		// And finally create the event instances according to the generated groups
 		for (List<Integer> group : groups)
 		{
-			EventInstance ei = createInstance(this.nextInstanceId++, group, this.currentConfig);
+			EventInstance ei = createInstance(nextInstanceId++, group, currentConfig);
 			if (ei != null)
 			{
 				instances.put(ei.getId(), ei);
@@ -307,7 +308,7 @@ public class EventsManager implements Reloadable
 				{
 					for (int memberId : team.getParticipatedPlayers().keySet())
 					{
-						this.registeredPlayers.remove(memberId);
+						registeredPlayers.remove(memberId);
 					}
 				}
 			}
@@ -431,7 +432,7 @@ public class EventsManager implements Reloadable
 			return false;
 		}
 
-		this.registeredPlayers.put(playerInstance.getObjectId(), playerInstance);
+		registeredPlayers.put(playerInstance.getObjectId(), playerInstance);
 
 		return true;
 	}
@@ -457,7 +458,7 @@ public class EventsManager implements Reloadable
 
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if (this.registeredPlayers.remove(playerObjectId) != null)
+		if (registeredPlayers.remove(playerObjectId) != null)
 		{
 			return true;
 		}
@@ -496,14 +497,14 @@ public class EventsManager implements Reloadable
 		}
 
 		//PvP Event
-		result = result.replace("%pvpEventName%", this.currentConfig.getEventName());
-		result = result.replace("%pvpEventLocation%", this.currentConfig.getEventLocationName());
+		result = result.replace("%pvpEventName%", currentConfig.getEventName());
+		result = result.replace("%pvpEventLocation%", currentConfig.getEventLocationName());
 		result = result.replace("%pvpEventTime%",
-				this.task.getMinutesToStart() + " minute" + (this.task.getMinutesToStart() > 1 ? "s" : ""));
-		result = result.replace("%pvpEventId%", String.valueOf(this.currentConfig.getEventImageId()));
-		result = result.replace("%pvpInfoLink%", String.valueOf(this.currentConfig.getType()));
+				task.getMinutesToStart() + " minute" + (task.getMinutesToStart() > 1 ? "s" : ""));
+		result = result.replace("%pvpEventId%", String.valueOf(currentConfig.getEventImageId()));
+		result = result.replace("%pvpInfoLink%", String.valueOf(currentConfig.getType()));
 
-		if (this.registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			result = result.replace("%pvpEventPlayers%", "");
 			result = result.replace("Registered Players for the Event", "");
@@ -588,12 +589,12 @@ public class EventsManager implements Reloadable
 	{
 		String result = "";
 
-		if (this.registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			return result;
 		}
 
-		for (L2PcInstance participant : this.registeredPlayers.values())
+		for (L2PcInstance participant : registeredPlayers.values())
 		{
 			if (participant == null)
 			{
@@ -701,7 +702,7 @@ public class EventsManager implements Reloadable
 
 	public boolean isPlayerParticipant(int playerObjectId)
 	{
-		if (this.registeredPlayers.containsKey(playerObjectId))
+		if (registeredPlayers.containsKey(playerObjectId))
 		{
 			return true;
 		}
@@ -777,7 +778,7 @@ public class EventsManager implements Reloadable
 			return false;
 		}
 
-		for (L2PcInstance registered : this.registeredPlayers.values())
+		for (L2PcInstance registered : registeredPlayers.values())
 		{
 			if (registered == null)
 			{
@@ -850,7 +851,7 @@ public class EventsManager implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		this.locations.clear();
+		locations.clear();
 		loadConfig();
 		return true;
 	}

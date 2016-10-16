@@ -109,9 +109,9 @@ public class L2ControlTowerInstance extends L2Npc
 		{
 			getCastle().getSiege().killedCT(this);
 
-			if (this.guards != null && !this.guards.isEmpty())
+			if (guards != null && !guards.isEmpty())
 			{
-				for (L2Spawn spawn : this.guards)
+				for (L2Spawn spawn : guards)
 				{
 					if (spawn == null)
 					{
@@ -126,7 +126,7 @@ public class L2ControlTowerInstance extends L2Npc
 					{
 					}
 				}
-				this.guards.clear();
+				guards.clear();
 			}
 		}
 		return super.doDie(killer);
@@ -139,17 +139,17 @@ public class L2ControlTowerInstance extends L2Npc
 
 	public final List<L2Spawn> getGuards()
 	{
-		if (this.guards == null)
+		if (guards == null)
 		{
 			synchronized (this)
 			{
-				if (this.guards == null)
+				if (guards == null)
 				{
-					this.guards = new ArrayList<>();
+					guards = new ArrayList<>();
 				}
 			}
 		}
 
-		return this.guards;
+		return guards;
 	}
 }

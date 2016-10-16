@@ -185,13 +185,13 @@ public class SiegeManager
 			siegeSettings.load(is);
 
 			// Siege setting
-			this.attackerMaxClans = Integer.decode(siegeSettings.getProperty("AttackerMaxClans", "500"));
-			this.attackerRespawnDelay = Integer.decode(siegeSettings.getProperty("AttackerRespawn", "0"));
-			this.defenderMaxClans = Integer.decode(siegeSettings.getProperty("DefenderMaxClans", "500"));
-			this.flagMaxCount = Integer.decode(siegeSettings.getProperty("MaxFlags", "1"));
-			this.siegeClanMinLevel = Integer.decode(siegeSettings.getProperty("SiegeClanMinLevel", "5"));
-			this.siegeLength = Integer.decode(siegeSettings.getProperty("SiegeLength", "120"));
-			this.bloodAllianceReward = Integer.decode(siegeSettings.getProperty("BloodAllianceReward", "0"));
+			attackerMaxClans = Integer.decode(siegeSettings.getProperty("AttackerMaxClans", "500"));
+			attackerRespawnDelay = Integer.decode(siegeSettings.getProperty("AttackerRespawn", "0"));
+			defenderMaxClans = Integer.decode(siegeSettings.getProperty("DefenderMaxClans", "500"));
+			flagMaxCount = Integer.decode(siegeSettings.getProperty("MaxFlags", "1"));
+			siegeClanMinLevel = Integer.decode(siegeSettings.getProperty("SiegeClanMinLevel", "5"));
+			siegeLength = Integer.decode(siegeSettings.getProperty("SiegeLength", "120"));
+			bloodAllianceReward = Integer.decode(siegeSettings.getProperty("BloodAllianceReward", "0"));
 
 			for (Castle castle : CastleManager.getInstance().getCastles())
 			{
@@ -223,22 +223,22 @@ public class SiegeManager
 	// Property - Public
 	public final int getAttackerMaxClans()
 	{
-		return this.attackerMaxClans;
+		return attackerMaxClans;
 	}
 
 	public final int getAttackerRespawnDelay()
 	{
-		return this.attackerRespawnDelay;
+		return attackerRespawnDelay;
 	}
 
 	public final int getDefenderMaxClans()
 	{
-		return this.defenderMaxClans;
+		return defenderMaxClans;
 	}
 
 	public final int getFlagMaxCount()
 	{
-		return this.flagMaxCount;
+		return flagMaxCount;
 	}
 
 	public final Siege getSiege(L2Object activeObject)
@@ -260,17 +260,17 @@ public class SiegeManager
 
 	public final int getSiegeClanMinLevel()
 	{
-		return this.siegeClanMinLevel;
+		return siegeClanMinLevel;
 	}
 
 	public final int getSiegeLength()
 	{
-		return this.siegeLength;
+		return siegeLength;
 	}
 
 	public final int getBloodAllianceReward()
 	{
-		return this.bloodAllianceReward;
+		return bloodAllianceReward;
 	}
 
 	public final List<Siege> getSieges()
@@ -293,44 +293,44 @@ public class SiegeManager
 
 		public SiegeSpawn(int castle_id, int x, int y, int z, int heading, int npc_id)
 		{
-			this.castleId = castle_id;
-			this.location = new Location(x, y, z, heading);
+			castleId = castle_id;
+			location = new Location(x, y, z, heading);
 			this.heading = heading;
-			this.npcId = npc_id;
+			npcId = npc_id;
 		}
 
 		public SiegeSpawn(int castle_id, int x, int y, int z, int heading, int npc_id, int hp)
 		{
-			this.castleId = castle_id;
-			this.location = new Location(x, y, z, heading);
+			castleId = castle_id;
+			location = new Location(x, y, z, heading);
 			this.heading = heading;
-			this.npcId = npc_id;
+			npcId = npc_id;
 			this.hp = hp;
 		}
 
 		public int getCastleId()
 		{
-			return this.castleId;
+			return castleId;
 		}
 
 		public int getNpcId()
 		{
-			return this.npcId;
+			return npcId;
 		}
 
 		public int getHeading()
 		{
-			return this.heading;
+			return heading;
 		}
 
 		public int getHp()
 		{
-			return this.hp;
+			return hp;
 		}
 
 		public Location getLocation()
 		{
-			return this.location;
+			return location;
 		}
 	}
 

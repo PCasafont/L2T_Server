@@ -36,56 +36,56 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 
 	public PledgeShowMemberListUpdate(L2PcInstance player)
 	{
-		this.pledgeType = player.getPledgeType();
-		if (this.pledgeType == L2Clan.SUBUNIT_ACADEMY)
+		pledgeType = player.getPledgeType();
+		if (pledgeType == L2Clan.SUBUNIT_ACADEMY)
 		{
-			this.hasSponsor = player.getSponsor() != 0 ? 1 : 0;
+			hasSponsor = player.getSponsor() != 0 ? 1 : 0;
 		}
 		else
 		{
-			this.hasSponsor = 0;
+			hasSponsor = 0;
 		}
-		this.name = player.getName();
-		this.level = player.getLevel();
-		this.classId = player.getCurrentClass().getId();
-		this.race = player.getRace().ordinal();
-		this.sex = player.getAppearance().getSex() ? 1 : 0;
-		this.objectId = player.getObjectId();
-		this.isOnline = player.isOnline();
+		name = player.getName();
+		level = player.getLevel();
+		classId = player.getCurrentClass().getId();
+		race = player.getRace().ordinal();
+		sex = player.getAppearance().getSex() ? 1 : 0;
+		objectId = player.getObjectId();
+		isOnline = player.isOnline();
 	}
 
 	public PledgeShowMemberListUpdate(L2ClanMember member)
 	{
-		this.name = member.getName();
-		this.level = member.getLevel();
-		this.classId = member.getCurrentClass();
-		this.objectId = member.getObjectId();
-		this.isOnline = member.isOnline();
-		this.pledgeType = member.getPledgeType();
-		this.race = member.getRaceOrdinal();
-		this.sex = member.getSex() ? 1 : 0;
-		if (this.pledgeType == L2Clan.SUBUNIT_ACADEMY)
+		name = member.getName();
+		level = member.getLevel();
+		classId = member.getCurrentClass();
+		objectId = member.getObjectId();
+		isOnline = member.isOnline();
+		pledgeType = member.getPledgeType();
+		race = member.getRaceOrdinal();
+		sex = member.getSex() ? 1 : 0;
+		if (pledgeType == L2Clan.SUBUNIT_ACADEMY)
 		{
-			this.hasSponsor = member.getSponsor() != 0 ? 1 : 0;
+			hasSponsor = member.getSponsor() != 0 ? 1 : 0;
 		}
 		else
 		{
-			this.hasSponsor = 0;
+			hasSponsor = 0;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.name);
-		writeD(this.level);
-		writeD(this.classId);
-		writeD(this.sex);
-		writeD(this.race);
-		if (this.isOnline)
+		writeS(name);
+		writeD(level);
+		writeD(classId);
+		writeD(sex);
+		writeD(race);
+		if (isOnline)
 		{
-			writeD(this.objectId);
-			writeD(this.pledgeType);
+			writeD(objectId);
+			writeD(pledgeType);
 		}
 		else
 		{
@@ -93,6 +93,6 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 			writeD(0);
 			writeD(0);
 		}
-		writeD(this.hasSponsor);
+		writeD(hasSponsor);
 	}
 }

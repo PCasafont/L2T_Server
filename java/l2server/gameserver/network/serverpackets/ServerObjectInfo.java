@@ -35,25 +35,25 @@ public final class ServerObjectInfo extends L2GameServerPacket
 	public ServerObjectInfo(L2Npc activeChar, L2Character actor)
 	{
 		this.activeChar = activeChar;
-		this.idTemplate = this.activeChar.getTemplate().TemplateId + 1000000;
-		this.isAttackable = this.activeChar.isAutoAttackable(actor);
-		this.collisionHeight = this.activeChar.getCollisionHeight();
-		this.collisionRadius = this.activeChar.getCollisionRadius();
-		this.x = this.activeChar.getX();
-		this.y = this.activeChar.getY();
-		this.z = this.activeChar.getZ();
-		this.heading = this.activeChar.getHeading();
-		this.name = this.activeChar.getTemplate().ServerSideName ? this.activeChar.getTemplate().Name : "";
-		this.type = 4;
+		idTemplate = this.activeChar.getTemplate().TemplateId + 1000000;
+		isAttackable = this.activeChar.isAutoAttackable(actor);
+		collisionHeight = this.activeChar.getCollisionHeight();
+		collisionRadius = this.activeChar.getCollisionRadius();
+		x = this.activeChar.getX();
+		y = this.activeChar.getY();
+		z = this.activeChar.getZ();
+		heading = this.activeChar.getHeading();
+		name = this.activeChar.getTemplate().ServerSideName ? this.activeChar.getTemplate().Name : "";
+		type = 4;
 
 		if (this.activeChar instanceof L2StatueInstance)
 		{
-			this.idTemplate = 0;
-			this.name = this.activeChar.getName();
-			this.isAttackable = false;
-			this.collisionHeight = 30;
-			this.collisionRadius = 40;
-			this.type = 7;
+			idTemplate = 0;
+			name = this.activeChar.getName();
+			isAttackable = false;
+			collisionHeight = 30;
+			collisionRadius = 40;
+			type = 7;
 		}
 	}
 
@@ -63,26 +63,26 @@ public final class ServerObjectInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeD(this.idTemplate);
-		writeS(this.name); // name
-		writeD(this.isAttackable ? 1 : 0);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(activeChar.getObjectId());
+		writeD(idTemplate);
+		writeS(name); // name
+		writeD(isAttackable ? 1 : 0);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 		writeF(1.0); // movement multiplier
 		writeF(1.0); // attack speed multiplier
-		writeF(this.collisionRadius);
-		writeF(this.collisionHeight);
-		writeD((int) (this.isAttackable ? this.activeChar.getCurrentHp() : 0));
-		writeD(this.isAttackable ? this.activeChar.getMaxVisibleHp() : 0);
-		writeD(this.type); // object type
+		writeF(collisionRadius);
+		writeF(collisionHeight);
+		writeD((int) (isAttackable ? activeChar.getCurrentHp() : 0));
+		writeD(isAttackable ? activeChar.getMaxVisibleHp() : 0);
+		writeD(type); // object type
 		writeD(0x00); // special effects
 
-		if (this.type == 7)
+		if (type == 7)
 		{
-			L2StatueInstance statue = (L2StatueInstance) this.activeChar;
+			L2StatueInstance statue = (L2StatueInstance) activeChar;
 			writeD(statue.getRecordId());
 			writeD(0x00); // ???
 			writeD(statue.getSocialId());

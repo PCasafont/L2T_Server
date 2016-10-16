@@ -55,7 +55,7 @@ public class AcquireSkillInfo extends L2GameServerPacket
 
 	public AcquireSkillInfo(int id, int level, int spCost, int mode)
 	{
-		this.reqs = new ArrayList<>();
+		reqs = new ArrayList<>();
 		this.id = id;
 		this.level = level;
 		this.spCost = spCost;
@@ -64,20 +64,20 @@ public class AcquireSkillInfo extends L2GameServerPacket
 
 	public void addRequirement(int type, int id, int count, int unk)
 	{
-		this.reqs.add(new Req(type, id, count, unk));
+		reqs.add(new Req(type, id, count, unk));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.id);
-		writeD(this.level);
-		writeQ(this.spCost);
-		writeD(this.mode); //c4
+		writeD(id);
+		writeD(level);
+		writeQ(spCost);
+		writeD(mode); //c4
 
-		writeD(this.reqs.size());
+		writeD(reqs.size());
 
-		for (Req temp : this.reqs)
+		for (Req temp : reqs)
 		{
 			writeD(temp.type);
 			writeD(temp.itemId);

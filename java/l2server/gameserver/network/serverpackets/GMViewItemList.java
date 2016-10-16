@@ -31,27 +31,27 @@ public class GMViewItemList extends L2ItemListPacket
 
 	public GMViewItemList(L2PcInstance cha)
 	{
-		this.items = cha.getInventory().getItems();
-		this.playerName = cha.getName();
-		this.limit = cha.getInventoryLimit();
+		items = cha.getInventory().getItems();
+		playerName = cha.getName();
+		limit = cha.getInventoryLimit();
 	}
 
 	public GMViewItemList(L2PetInstance cha)
 	{
-		this.items = cha.getInventory().getItems();
-		this.playerName = cha.getName();
-		this.limit = cha.getInventoryLimit();
+		items = cha.getInventory().getItems();
+		playerName = cha.getName();
+		limit = cha.getInventoryLimit();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.playerName);
-		writeD(this.limit); // inventory limit
+		writeS(playerName);
+		writeD(limit); // inventory limit
 		writeH(0x01); // show window ??
-		writeH(this.items.length);
+		writeH(items.length);
 
-		for (L2ItemInstance item : this.items)
+		for (L2ItemInstance item : items)
 		{
 			writeItem(item);
 		}

@@ -40,16 +40,16 @@ public class SSQStatus extends L2GameServerPacket
 
 	public SSQStatus(int objectId, int recordPage)
 	{
-		this.page = recordPage;
+		page = recordPage;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.page);
+		writeC(page);
 		writeC(0); // current period?
 
-		switch (this.page)
+		switch (page)
 		{
 			case 1:
 				// [ddd cc dd ddd c ddd c]

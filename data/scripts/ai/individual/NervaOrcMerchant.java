@@ -42,8 +42,8 @@ public class NervaOrcMerchant extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addAttackId(this.merchant);
-		addSpawnId(this.merchant);
+		addAttackId(merchant);
+		addSpawnId(merchant);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -52,9 +52,9 @@ public class NervaOrcMerchant extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == this.merchant)
+			if (spawn.getNpcId() == merchant)
 			{
-				this.notifySpawn(spawn.getNpc());
+				notifySpawn(spawn.getNpc());
 			}
 		}
 	}

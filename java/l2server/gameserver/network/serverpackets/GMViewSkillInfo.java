@@ -26,27 +26,27 @@ public class GMViewSkillInfo extends L2GameServerPacket
 
 	public GMViewSkillInfo(L2PcInstance cha)
 	{
-		this.activeChar = cha;
-		this.skills = this.activeChar.getAllSkills();
-		if (this.skills.length == 0)
+		activeChar = cha;
+		skills = activeChar.getAllSkills();
+		if (skills.length == 0)
 		{
-			this.skills = new L2Skill[0];
+			skills = new L2Skill[0];
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.activeChar.getName());
-		writeD(this.skills.length);
+		writeS(activeChar.getName());
+		writeD(skills.length);
 
 		boolean isDisabled = false;
-		if (this.activeChar.getClan() != null)
+		if (activeChar.getClan() != null)
 		{
-			isDisabled = this.activeChar.getClan().getReputationScore() < 0;
+			isDisabled = activeChar.getClan().getReputationScore() < 0;
 		}
 
-		for (L2Skill skill : this.skills)
+		for (L2Skill skill : skills)
 		{
 			writeD(skill.isPassive() ? 1 : 0);
 			writeD(skill.getLevelHash());

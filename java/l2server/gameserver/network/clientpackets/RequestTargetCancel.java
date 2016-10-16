@@ -33,7 +33,7 @@ public final class RequestTargetCancel extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.unselect = readH();
+		unselect = readH();
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public final class RequestTargetCancel extends L2GameClientPacket
 			return;
 		}
 
-		if (this.unselect == 0)
+		if (unselect == 0)
 		{
 			if (activeChar.isCastingNow() && activeChar.canAbortCast())
 			{

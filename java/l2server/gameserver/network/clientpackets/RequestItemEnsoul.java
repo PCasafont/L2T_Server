@@ -31,7 +31,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.targetItem = readD();
+		targetItem = readD();
 		int count = readC();
 		for (int i = 0; i < count; i++)
 		{
@@ -40,7 +40,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			ced.order = readC(); // Crystal order
 			ced.crystalId = readD();
 			ced.effectId = readD();
-			this.effectData.add(ced);
+			effectData.add(ced);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			return;
 		}
 
-		for (CrystalEffectData ced : this.effectData)
+		for (CrystalEffectData ced : effectData)
 		{
 			int index = ced.order - 1;
 			if (index < 0 || index >= 2)

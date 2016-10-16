@@ -35,8 +35,8 @@ public class ExAlterSkillRequest extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.nextSkillId);
-		writeD(this.currentSkillId);
-		writeD(this.alterTime);
+		writeD(nextSkillId);
+		writeD(currentSkillId);
+		writeD(alterTime);
 	}
 }

@@ -31,8 +31,8 @@ public class DateRange
 
 	public DateRange(Date from, Date to)
 	{
-		this.startDate = from;
-		this.endDate = to;
+		startDate = from;
+		endDate = to;
 	}
 
 	public static DateRange parse(String dateRange, DateFormat format)
@@ -57,21 +57,21 @@ public class DateRange
 
 	public boolean isValid()
 	{
-		return this.startDate == null || this.endDate == null;
+		return startDate == null || endDate == null;
 	}
 
 	public boolean isWithinRange(Date date)
 	{
-		return date.after(this.startDate) && date.before(this.endDate);
+		return date.after(startDate) && date.before(endDate);
 	}
 
 	public Date getEndDate()
 	{
-		return this.endDate;
+		return endDate;
 	}
 
 	public Date getStartDate()
 	{
-		return this.startDate;
+		return startDate;
 	}
 }

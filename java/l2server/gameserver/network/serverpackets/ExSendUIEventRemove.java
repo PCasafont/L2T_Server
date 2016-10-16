@@ -21,7 +21,7 @@ public class ExSendUIEventRemove extends L2GameServerPacket
 
 	public ExSendUIEventRemove()
 	{
-		this.uiType = 1;
+		uiType = 1;
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class ExSendUIEventRemove extends L2GameServerPacket
 		}
 
 		writeD(getClient().getActiveChar().getObjectId());
-		writeD(this.uiType);
+		writeD(uiType);
 	}
 
 	@Override

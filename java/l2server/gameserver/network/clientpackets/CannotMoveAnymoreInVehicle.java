@@ -33,11 +33,11 @@ public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.boatId = readD();
-		this.x = readD();
-		this.y = readD();
-		this.z = readD();
-		this.heading = readD();
+		boatId = readD();
+		x = readD();
+		y = readD();
+		z = readD();
+		heading = readD();
 	}
 
 	@Override
@@ -50,11 +50,11 @@ public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
 		}
 		if (player.isInBoat())
 		{
-			if (player.getBoat().getObjectId() == this.boatId)
+			if (player.getBoat().getObjectId() == boatId)
 			{
-				player.setInVehiclePosition(new Point3D(this.x, this.y, this.z));
-				player.getPosition().setHeading(this.heading);
-				StopMoveInVehicle msg = new StopMoveInVehicle(player, this.boatId);
+				player.setInVehiclePosition(new Point3D(x, y, z));
+				player.getPosition().setHeading(heading);
+				StopMoveInVehicle msg = new StopMoveInVehicle(player, boatId);
 				player.broadcastPacket(msg);
 			}
 		}

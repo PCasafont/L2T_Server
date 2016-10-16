@@ -32,7 +32,7 @@ public final class RequestCompoundTwo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objId = readD();
+		objId = readD();
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public final class RequestCompoundTwo extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(this.objId);
+		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(objId);
 		if (compoundItem == null)
 		{
 			sendPacket(new ExCompoundTwoFail());

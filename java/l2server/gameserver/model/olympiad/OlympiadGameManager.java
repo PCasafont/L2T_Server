@@ -42,18 +42,18 @@ public class OlympiadGameManager implements Runnable
 			throw new Error("No olympiad stadium zones defined !");
 		}
 
-		this.tasks = new OlympiadGameTask[zones.size() * 40];
+		tasks = new OlympiadGameTask[zones.size() * 40];
 		int i = 0;
 		for (L2OlympiadStadiumZone zone : zones)
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				this.tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
+				tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
 			}
 			i++;
 		}
 
-		Log.info("Olympiad System: Loaded " + this.tasks.length + " stadium instances.");
+		Log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
 	}
 
 	public static OlympiadGameManager getInstance()
@@ -63,12 +63,12 @@ public class OlympiadGameManager implements Runnable
 
 	protected final boolean isBattleStarted()
 	{
-		return this.battleStarted;
+		return battleStarted;
 	}
 
 	protected final void startBattle()
 	{
-		this.battleStarted = true;
+		battleStarted = true;
 	}
 
 	@Override
@@ -112,9 +112,9 @@ public class OlympiadGameManager implements Runnable
 			if (readyClassed != null || readyNonClassed)
 			{
 				// set up the games queue
-				for (int i = 0; i < this.tasks.length; i++)
+				for (int i = 0; i < tasks.length; i++)
 				{
-					task = this.tasks[i];
+					task = tasks[i];
 					synchronized (task)
 					{
 						if (!task.isRunning())
@@ -158,17 +158,17 @@ public class OlympiadGameManager implements Runnable
 				}
 			}
 		}
-		else if (isAllTasksFinished() && this.battleStarted)
+		else if (isAllTasksFinished() && battleStarted)
 		{
 			OlympiadManager.getInstance().clearRegistered();
-			this.battleStarted = false;
+			battleStarted = false;
 			Log.info("Olympiad System: All current games finished.");
 		}
 	}
 
 	public final boolean isAllTasksFinished()
 	{
-		for (OlympiadGameTask task : this.tasks)
+		for (OlympiadGameTask task : tasks)
 		{
 			if (task.isRunning())
 			{
@@ -180,17 +180,17 @@ public class OlympiadGameManager implements Runnable
 
 	public final OlympiadGameTask getOlympiadTask(int id)
 	{
-		if (id < 0 || id >= this.tasks.length)
+		if (id < 0 || id >= tasks.length)
 		{
 			return null;
 		}
 
-		return this.tasks[id];
+		return tasks[id];
 	}
 
 	public final int getNumberOfStadiums()
 	{
-		return this.tasks.length;
+		return tasks.length;
 	}
 
 	public final void notifyCompetitorDamage(L2PcInstance player, int damage)
@@ -201,12 +201,12 @@ public class OlympiadGameManager implements Runnable
 		}
 
 		final int id = player.getOlympiadGameId();
-		if (id < 0 || id >= this.tasks.length)
+		if (id < 0 || id >= tasks.length)
 		{
 			return;
 		}
 
-		final AbstractOlympiadGame game = this.tasks[id].getGame();
+		final AbstractOlympiadGame game = tasks[id].getGame();
 		if (game != null)
 		{
 			game.addDamage(player, damage);

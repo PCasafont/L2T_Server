@@ -40,9 +40,9 @@ public final class L2SkillSignet extends L2Skill
 	public L2SkillSignet(StatsSet set)
 	{
 		super(set);
-		this.effectNpcId = set.getInteger("effectNpcId", -1);
-		this.effectId = set.getInteger("effectId", -1);
-		this.effectLevel = set.getInteger("effectLevel", 1);
+		effectNpcId = set.getInteger("effectNpcId", -1);
+		effectId = set.getInteger("effectId", -1);
+		effectLevel = set.getInteger("effectLevel", 1);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public final class L2SkillSignet extends L2Skill
 			return;
 		}
 
-		L2NpcTemplate template = NpcTable.getInstance().getTemplate(this.effectNpcId);
+		L2NpcTemplate template = NpcTable.getInstance().getTemplate(effectNpcId);
 		L2EffectPointInstance effectPoint =
 				new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, caster);
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());

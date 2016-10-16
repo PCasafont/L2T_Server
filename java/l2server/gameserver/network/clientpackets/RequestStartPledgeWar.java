@@ -38,7 +38,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.pledgeName = readS();
+		pledgeName = readS();
 	}
 
 	@Override
@@ -50,14 +50,14 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		this.clan = getClient().getActiveChar().getClan();
-		if (this.clan == null)
+		clan = getClient().getActiveChar().getClan();
+		if (clan == null)
 		{
 			return;
 		}
 
-		if (this.clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL ||
-				!player.isGM() && this.clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
+		if (clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL ||
+				!player.isGM() && clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
 		{
 			SystemMessage sm =
 					SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
@@ -73,7 +73,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClanByName(this.pledgeName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(pledgeName);
 		if (clan == null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_CANNOT_DECLARED_CLAN_NOT_EXIST);

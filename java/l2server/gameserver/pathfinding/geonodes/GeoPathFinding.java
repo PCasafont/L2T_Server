@@ -52,7 +52,7 @@ public class GeoPathFinding extends PathFinding
 	@Override
 	public boolean pathNodesExist(short regionoffset)
 	{
-		return this.pathNodesIndex.containsKey(regionoffset);
+		return pathNodesIndex.containsKey(regionoffset);
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class GeoPathFinding extends PathFinding
 		//short node_z = n.getLoc().getZ();
 
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
-		ByteBuffer pn = this.pathNodes.get(regoffset);
+		ByteBuffer pn = pathNodes.get(regoffset);
 
 		List<AbstractNode> Neighbors = new ArrayList<>(8);
 		GeoNode newNode;
@@ -336,8 +336,8 @@ public class GeoPathFinding extends PathFinding
 		}
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
-		int idx = this.pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
-		ByteBuffer pn = this.pathNodes.get(regoffset);
+		int idx = pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
+		ByteBuffer pn = pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx);
 		idx += layer * 10 + 1;//byte + layer*10byte
@@ -361,8 +361,8 @@ public class GeoPathFinding extends PathFinding
 		}
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
-		int idx = this.pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
-		ByteBuffer pn = this.pathNodes.get(regoffset);
+		int idx = pathNodesIndex.get(regoffset).get((nby << 8) + nbx);
+		ByteBuffer pn = pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx++);
 		int idx2 = 0; //create index to nearlest node by z
@@ -474,8 +474,8 @@ public class GeoPathFinding extends PathFinding
 				indexs.put(node++, index);
 				index += layer * 10 + 1;
 			}
-			this.pathNodesIndex.put(regionoffset, indexs);
-			this.pathNodes.put(regionoffset, nodes);
+			pathNodesIndex.put(regionoffset, indexs);
+			pathNodes.put(regionoffset, nodes);
 		}
 		catch (Exception e)
 		{

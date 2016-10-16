@@ -36,11 +36,11 @@ public class PostBBSManager extends BaseBBSManager
 
 	public Post getGPosttByTopic(Topic t)
 	{
-		Post post = this.postByTopic.get(t);
+		Post post = postByTopic.get(t);
 		if (post == null)
 		{
 			post = new Post(t);
-			this.postByTopic.put(t, post);
+			postByTopic.put(t, post);
 		}
 		return post;
 	}
@@ -50,12 +50,12 @@ public class PostBBSManager extends BaseBBSManager
 	 */
 	public void delPostByTopic(Topic t)
 	{
-		this.postByTopic.remove(t);
+		postByTopic.remove(t);
 	}
 
 	public void addPostByTopic(Post p, Topic t)
 	{
-		this.postByTopic.putIfAbsent(t, p);
+		postByTopic.putIfAbsent(t, p);
 	}
 
 	@Override

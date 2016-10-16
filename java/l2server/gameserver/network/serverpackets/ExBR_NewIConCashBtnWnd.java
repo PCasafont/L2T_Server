@@ -15,6 +15,6 @@ public class ExBR_NewIConCashBtnWnd extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeH(this.unk);
+		writeH(unk);
 	}
 }

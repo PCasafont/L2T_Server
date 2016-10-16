@@ -50,13 +50,13 @@ public final class BuyListSeed extends L2GameServerPacket
 
 	public BuyListSeed(long currentMoney, int castleId, List<SeedProduction> seeds)
 	{
-		this.money = currentMoney;
-		this.manorId = castleId;
+		money = currentMoney;
+		manorId = castleId;
 
 		if (seeds != null && seeds.size() > 0)
 		{
-			this.list = new ArrayList<>();
-			this.list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
+			list = new ArrayList<>();
+			list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
 					.map(s -> new Seed(s.getId(), s.getCanProduce(), s.getPrice())).collect(Collectors.toList()));
 		}
 	}
@@ -64,13 +64,13 @@ public final class BuyListSeed extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.money); // current money
-		writeD(this.manorId); // manor id
+		writeQ(money); // current money
+		writeD(manorId); // manor id
 
-		if (this.list != null && this.list.size() > 0)
+		if (list != null && list.size() > 0)
 		{
-			writeH(this.list.size()); // list length
-			for (Seed s : this.list)
+			writeH(list.size()); // list length
+			for (Seed s : list)
 			{
 				writeD(s.itemId);
 				writeD(s.itemId);
@@ -97,7 +97,7 @@ public final class BuyListSeed extends L2GameServerPacket
 				writeH(0x00);
 				writeQ(s.price); // price
 			}
-			this.list.clear();
+			list.clear();
 		}
 		else
 		{

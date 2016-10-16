@@ -31,12 +31,12 @@ public final class Revive extends L2GameServerPacket
 
 	public Revive(L2Object obj)
 	{
-		this.objectId = obj.getObjectId();
+		objectId = obj.getObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
+		writeD(objectId);
 	}
 }

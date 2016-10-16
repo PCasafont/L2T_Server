@@ -72,7 +72,7 @@ public final class LoginFail extends L2LoginServerPacket
 
 		public final int getCode()
 		{
-			return this.code;
+			return code;
 		}
 	}
 
@@ -89,6 +89,6 @@ public final class LoginFail extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x01);
-		writeC(this.reason.getCode());
+		writeC(reason.getCode());
 	}
 }

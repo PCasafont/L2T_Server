@@ -49,7 +49,7 @@ public class EventPrizesTable implements Reloadable
 
 	public void load()
 	{
-		this.prizes.clear();
+		prizes.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
 		if (doc.getFirstChild() == null)
@@ -76,11 +76,11 @@ public class EventPrizesTable implements Reloadable
 				String name = prizeNode.getString("name");
 				for (XmlNode node : prizeNode.getChildren())
 				{
-					List<EventPrize> list = this.prizes.get(name);
+					List<EventPrize> list = prizes.get(name);
 					if (list == null)
 					{
 						list = new ArrayList<>();
-						this.prizes.put(name, list);
+						prizes.put(name, list);
 					}
 
 					if (node.getName().equalsIgnoreCase("prizeItem"))
@@ -97,12 +97,12 @@ public class EventPrizesTable implements Reloadable
 			}
 		}
 
-		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + this.prizes.size() + " categories.");
+		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + prizes.size() + " categories.");
 	}
 
 	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier)
 	{
-		List<EventPrize> list = this.prizes.get(prizeName);
+		List<EventPrize> list = prizes.get(prizeName);
 		if (list == null)
 		{
 			return;

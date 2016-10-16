@@ -44,14 +44,14 @@ public class Wisps extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addSpawnId(this.wisp);
-		addSpawnId(this.largeWisp);
+		addSpawnId(wisp);
+		addSpawnId(largeWisp);
 
-		addAggroRangeEnterId(this.wisp);
-		addAggroRangeEnterId(this.largeWisp);
+		addAggroRangeEnterId(wisp);
+		addAggroRangeEnterId(largeWisp);
 
-		addSpellFinishedId(this.wisp);
-		addSpellFinishedId(this.largeWisp);
+		addSpellFinishedId(wisp);
+		addSpellFinishedId(largeWisp);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -60,7 +60,7 @@ public class Wisps extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == this.wisp || spawn.getNpcId() == this.largeWisp)
+			if (spawn.getNpcId() == wisp || spawn.getNpcId() == largeWisp)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -85,7 +85,7 @@ public class Wisps extends L2AttackableAIScript
 		}
 
 		npc.setTarget(player);
-		npc.doCast(this.healSkill);
+		npc.doCast(healSkill);
 
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}

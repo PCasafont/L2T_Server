@@ -34,8 +34,8 @@ public final class LoginOk extends L2LoginServerPacket
 
 	public LoginOk(SessionKey sessionKey)
 	{
-		this.loginOk1 = sessionKey.loginOkID1;
-		this.loginOk2 = sessionKey.loginOkID2;
+		loginOk1 = sessionKey.loginOkID1;
+		loginOk2 = sessionKey.loginOkID2;
 	}
 
 	/**
@@ -44,8 +44,8 @@ public final class LoginOk extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x03);
-		writeD(this.loginOk1);
-		writeD(this.loginOk2);
+		writeD(loginOk1);
+		writeD(loginOk2);
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x000003ea);

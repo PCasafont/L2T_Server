@@ -34,7 +34,7 @@ public class ExBaseAttributeCancelResult extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(1); // result
-		writeD(this.objId);
-		writeD(this.attribute);
+		writeD(objId);
+		writeD(attribute);
 	}
 }

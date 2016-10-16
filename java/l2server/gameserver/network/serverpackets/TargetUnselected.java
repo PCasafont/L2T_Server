@@ -37,19 +37,19 @@ public class TargetUnselected extends L2GameServerPacket
 	 */
 	public TargetUnselected(L2Character character)
 	{
-		this.targetObjId = character.getObjectId();
-		this.x = character.getX();
-		this.y = character.getY();
-		this.z = character.getZ();
+		targetObjId = character.getObjectId();
+		x = character.getX();
+		y = character.getY();
+		z = character.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.targetObjId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(targetObjId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeD(0x00); //??
 	}
 }

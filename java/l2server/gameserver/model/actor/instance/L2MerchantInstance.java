@@ -48,7 +48,7 @@ public class L2MerchantInstance extends L2NpcInstance
 	public void onSpawn()
 	{
 		super.onSpawn();
-		this.mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(this);
+		mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(this);
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class L2MerchantInstance extends L2NpcInstance
 	 */
 	public MerchantPriceConfig getMpc()
 	{
-		return this.mpc;
+		return mpc;
 	}
 
 	public final void showBuyWindow(L2PcInstance player, int val)

@@ -46,14 +46,14 @@ public class RequestBuyProcure extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.listId = readD();
+		listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Procure[count];
+		items = new Procure[count];
 		for (int i = 0; i < count; i++)
 		{
 			readD(); //service
@@ -61,10 +61,10 @@ public class RequestBuyProcure extends L2GameClientPacket
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new Procure(itemId, cnt);
+			items[i] = new Procure(itemId, cnt);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -115,7 +115,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		int slots = 0;
 		int weight = 0;
 
-		for (Procure i : this.items)
+		for (Procure i : items)
 		{
 			i.setReward(castle);
 
@@ -147,7 +147,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		// Proceed the purchase
 		InventoryUpdate playerIU = new InventoryUpdate();
 
-		for (Procure i : this.items)
+		for (Procure i : items)
 		{
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
@@ -206,29 +206,29 @@ public class RequestBuyProcure extends L2GameClientPacket
 
 		public Procure(int id, long num)
 		{
-			this.itemId = id;
-			this.count = num;
+			itemId = id;
+			count = num;
 		}
 
 		public int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		public long getCount()
 		{
-			return this.count;
+			return count;
 		}
 
 		public int getReward()
 		{
-			return this.reward;
+			return reward;
 		}
 
 		public void setReward(Castle c)
 		{
-			this.reward = L2Manor.getInstance()
-					.getRewardItem(this.itemId, c.getCrop(this.itemId, CastleManorManager.PERIOD_CURRENT).getReward());
+			reward = L2Manor.getInstance()
+					.getRewardItem(itemId, c.getCrop(itemId, CastleManorManager.PERIOD_CURRENT).getReward());
 		}
 	}
 }

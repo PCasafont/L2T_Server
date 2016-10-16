@@ -87,10 +87,10 @@ public class L2DatabaseFactory
 			//config.setCloseConnectionWatch(true);
 			//config.setCloseConnectionWatchTimeout(300000);
 
-			this.gameDatabase = new BoneCP(config);
+			gameDatabase = new BoneCP(config);
 
 			// Test the connection
-			this.gameDatabase.getConnection().close();
+			gameDatabase.getConnection().close();
 
 			if (Config.DEBUG)
 			{
@@ -99,11 +99,11 @@ public class L2DatabaseFactory
 
 			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft"))
 			{
-				this.providerType = ProviderType.MsSql;
+				providerType = ProviderType.MsSql;
 			}
 			else
 			{
-				this.providerType = ProviderType.MySql;
+				providerType = ProviderType.MySql;
 			}
 		}
 		catch (Exception e)
@@ -134,9 +134,9 @@ public class L2DatabaseFactory
 			config.setPassword("f00ky0gr4np4");
 			config.setTransactionRecoveryEnabled(true);
 
-			this.webDatabase = new BoneCP(config);
+			webDatabase = new BoneCP(config);
 
-			this.webDatabase.getConnection().close();
+			webDatabase.getConnection().close();
 		}
 		catch (Exception e)
 		{
@@ -167,35 +167,35 @@ public class L2DatabaseFactory
 
 	public void shutdown()
 	{
-		Log.info("During this session the connection pool initialized " + this.gameDatabase.getTotalCreatedConnections() +
+		Log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() +
 				" connections.");
-		if (this.gameDatabase.getTotalLeased() > 0)
+		if (gameDatabase.getTotalLeased() > 0)
 		{
-			Log.info(this.gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
+			Log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
 		Log.info("Shutting down pool...");
 
 		try
 		{
-			this.gameDatabase.close();
+			gameDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		this.gameDatabase = null;
+		gameDatabase = null;
 
 		try
 		{
-			this.webDatabase.close();
+			webDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		this.webDatabase = null;
+		webDatabase = null;
 	}
 
 	public final String safetyString(String... whatToCheck)
@@ -253,7 +253,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = this.gameDatabase.getConnection();
+				con = gameDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -273,7 +273,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = this.webDatabase.getConnection();
+				con = webDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -304,16 +304,16 @@ public class L2DatabaseFactory
 
 	public int getBusyConnectionCount()
 	{
-		return this.gameDatabase.getTotalLeased();
+		return gameDatabase.getTotalLeased();
 	}
 
 	public int getIdleConnectionCount()
 	{
-		return this.gameDatabase.getTotalFree();
+		return gameDatabase.getTotalFree();
 	}
 
 	public final ProviderType getProviderType()
 	{
-		return this.providerType;
+		return providerType;
 	}
 }

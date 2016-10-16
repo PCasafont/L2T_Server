@@ -38,30 +38,30 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.activeChar.getName());
-		writeD(this.clan.getClanId());
+		writeS(activeChar.getName());
+		writeD(clan.getClanId());
 		writeD(0x00);
-		writeS(this.clan.getName());
-		writeS(this.clan.getLeaderName());
-		writeD(this.clan.getCrestId()); // -> no, it's no longer used (nuocnam) fix by game
-		writeD(this.clan.getLevel());
-		writeD(this.clan.getHasCastle());
-		writeD(this.clan.getHasHideout());
-		writeD(this.clan.getHasFort());
-		writeD(this.clan.getRank());
-		writeD(this.clan.getReputationScore());
+		writeS(clan.getName());
+		writeS(clan.getLeaderName());
+		writeD(clan.getCrestId()); // -> no, it's no longer used (nuocnam) fix by game
+		writeD(clan.getLevel());
+		writeD(clan.getHasCastle());
+		writeD(clan.getHasHideout());
+		writeD(clan.getHasFort());
+		writeD(clan.getRank());
+		writeD(clan.getReputationScore());
 		writeD(0);
 		writeD(0);
 
-		writeD(this.clan.getAllyId()); //c2
-		writeS(this.clan.getAllyName()); //c2
-		writeD(this.clan.getAllyCrestId()); //c2
-		writeD(this.clan.isAtWar() ? 1 : 0); //c3
+		writeD(clan.getAllyId()); //c2
+		writeS(clan.getAllyName()); //c2
+		writeD(clan.getAllyCrestId()); //c2
+		writeD(clan.isAtWar() ? 1 : 0); //c3
 		writeD(0); // T3 Unknown
 		//writeD(0); // GoD ???
-		writeD(this.clan.getMembers().length);
+		writeD(clan.getMembers().length);
 
-		for (L2ClanMember member : this.clan.getMembers())
+		for (L2ClanMember member : clan.getMembers())
 		{
 			if (member != null)
 			{

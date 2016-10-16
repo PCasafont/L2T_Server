@@ -79,7 +79,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		setBundle(bundle);
 		setTitle(bundle.getString("toolName"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(750, 500);
+		setSize(750, 500);
 		setLayout(new GridBagLayout());
 
 		GridBagConstraints cons = new GridBagConstraints();
@@ -113,14 +113,14 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		toolBar.setFloatable(false);
 		toolBar.setRollover(true);
 		toolBar.add(createToolButton("disk.png", bundle.getString("save"), "save"));
-		this.add(toolBar, cons);
+		add(toolBar, cons);
 
 		cons.gridy++;
 		cons.fill = GridBagConstraints.BOTH;
 		cons.weighty = 1;
 		loadConfigs();
 		buildInterface();
-		this.add(this.tabPane, cons);
+		add(tabPane, cons);
 	}
 
 	private JButton createToolButton(String image, String text, String action)
@@ -191,7 +191,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			cons.gridy++;
 			cons.weighty = 1;
 			panel.add(new JLabel(), cons); // filler
-			this.tabPane.addTab(cf.getName(), new JScrollPane(panel));
+			tabPane.addTab(cf.getName(), new JScrollPane(panel));
 		}
 	}
 
@@ -359,22 +359,22 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		public void addConfigProperty(String name, Object value, ValueType type, String comments)
 		{
-			this.configs.add(new ConfigProperty(name, value, type, comments));
+			configs.add(new ConfigProperty(name, value, type, comments));
 		}
 
 		public void addConfigComment(String comment)
 		{
-			this.configs.add(new ConfigComment(comment));
+			configs.add(new ConfigComment(comment));
 		}
 
 		public void addConfigProperty(String name, Object value, String comments)
 		{
-			this.addConfigProperty(name, value, ValueType.firstTypeMatch(value), comments);
+			addConfigProperty(name, value, ValueType.firstTypeMatch(value), comments);
 		}
 
 		public List<ConfigComment> getConfigProperties()
 		{
-			return this.configs;
+			return configs;
 		}
 
 		/**
@@ -390,7 +390,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		 */
 		public String getName()
 		{
-			return this.name;
+			return name;
 		}
 
 		public void save() throws IOException
@@ -398,8 +398,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			BufferedWriter bufWriter = null;
 			try
 			{
-				bufWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.file)));
-				for (ConfigComment cc : this.configs)
+				bufWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+				for (ConfigComment cc : configs)
 				{
 					cc.save(bufWriter);
 				}
@@ -431,7 +431,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getComments()
 			{
-				return this.comments;
+				return comments;
 			}
 
 			/**
@@ -472,7 +472,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 				{
 					throw new IllegalArgumentException("Value Instance Type doesn't match the type argument.");
 				}
-				this.propname = name;
+				propname = name;
 				this.type = type;
 				this.value = value;
 			}
@@ -482,7 +482,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getName()
 			{
-				return this.propname;
+				return propname;
 			}
 
 			/**
@@ -490,7 +490,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getDisplayName()
 			{
-				return unCamelize(this.propname);
+				return unCamelize(propname);
 			}
 
 			/**
@@ -498,7 +498,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public void setName(String name)
 			{
-				this.propname = name;
+				propname = name;
 			}
 
 			/**
@@ -506,7 +506,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public Object getValue()
 			{
-				return this.value;
+				return value;
 			}
 
 			/**
@@ -522,7 +522,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public ValueType getType()
 			{
-				return this.type;
+				return type;
 			}
 
 			/**
@@ -535,11 +535,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 			public JComponent getValueComponent()
 			{
-				if (this.component == null)
+				if (component == null)
 				{
-					this.component = createValueComponent();
+					component = createValueComponent();
 				}
-				return this.component;
+				return component;
 			}
 
 			public JComponent createValueComponent()
@@ -630,7 +630,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		 */
 		public Class<?> getType()
 		{
-			return this.type;
+			return type;
 		}
 
 		public static ValueType firstTypeMatch(Object value)
@@ -659,7 +659,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		switch (cmd)
 		{
 			case "save":
-				for (ConfigFile cf : ConfigUserInterface.this.getConfigs())
+				for (ConfigFile cf : getConfigs())
 				{
 					try
 					{
@@ -709,7 +709,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public List<ConfigFile> getConfigs()
 	{
-		return this.configs;
+		return configs;
 	}
 
 	/**
@@ -748,6 +748,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public ResourceBundle getBundle()
 	{
-		return this.bundle;
+		return bundle;
 	}
 }

@@ -37,19 +37,19 @@ public class ExAcquireSkillInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.skill.getId());
-		writeD(this.skill.getLevel());
-		writeQ(this.skill.getSpCost());
-		writeH(this.skill.getMinLevel());
-		writeH(this.skill.getMinDualLevel());
-		writeD(this.skill.getCostItems().size());
-		for (int itemId : this.skill.getCostItems().keySet())
+		writeD(skill.getId());
+		writeD(skill.getLevel());
+		writeQ(skill.getSpCost());
+		writeH(skill.getMinLevel());
+		writeH(skill.getMinDualLevel());
+		writeD(skill.getCostItems().size());
+		for (int itemId : skill.getCostItems().keySet())
 		{
 			writeD(itemId);
-			writeQ(this.skill.getCostItems().get(itemId));
+			writeQ(skill.getCostItems().get(itemId));
 		}
 
-		Map<Integer, Integer> costSkills = this.skill.getCostSkills(this.player);
+		Map<Integer, Integer> costSkills = skill.getCostSkills(player);
 		writeD(costSkills.size());
 		for (int skillId : costSkills.keySet())
 		{

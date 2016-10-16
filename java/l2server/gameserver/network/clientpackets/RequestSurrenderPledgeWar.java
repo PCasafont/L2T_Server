@@ -32,7 +32,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.pledgeName = readS();
+		pledgeName = readS();
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClanByName(this.pledgeName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(pledgeName);
 		if (clan == null)
 		{
 			activeChar.sendMessage("No such clan.");
@@ -59,7 +59,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 		}
 
 		Log.info("RequestSurrenderPledgeWar by " + getClient().getActiveChar().getClan().getName() + " with " +
-				this.pledgeName);
+				pledgeName);
 
 		if (!playerClan.isAtWarWith(clan.getClanId()))
 		{
@@ -69,7 +69,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 		}
 
 		SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SURRENDERED_TO_THE_S1_CLAN);
-		msg.addString(this.pledgeName);
+		msg.addString(pledgeName);
 		activeChar.sendPacket(msg);
 		msg = null;
 		activeChar.deathPenalty(false, false, false, false);

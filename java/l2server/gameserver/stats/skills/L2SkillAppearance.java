@@ -32,9 +32,9 @@ public class L2SkillAppearance extends L2Skill
 	{
 		super(set);
 
-		this.faceId = set.getInteger("faceId", -1);
-		this.hairColorId = set.getInteger("hairColorId", -1);
-		this.hairStyleId = set.getInteger("hairStyleId", -1);
+		faceId = set.getInteger("faceId", -1);
+		hairColorId = set.getInteger("hairColorId", -1);
+		hairStyleId = set.getInteger("hairStyleId", -1);
 	}
 
 	@Override

@@ -90,7 +90,7 @@ public final class QuestState
 	 */
 	public QuestState(Quest quest, L2PcInstance player, byte state)
 	{
-		this.questName = quest.getName();
+		questName = quest.getName();
 		this.player = player;
 
 		// Save the state of the quest for the player in the player's list of quest onwed
@@ -102,7 +102,7 @@ public final class QuestState
 
 	public String getQuestName()
 	{
-		return this.questName;
+		return questName;
 	}
 
 	/**
@@ -112,7 +112,7 @@ public final class QuestState
 	 */
 	public Quest getQuest()
 	{
-		return QuestManager.getInstance().getQuest(this.questName);
+		return QuestManager.getInstance().getQuest(questName);
 	}
 
 	/**
@@ -122,7 +122,7 @@ public final class QuestState
 	 */
 	public L2PcInstance getPlayer()
 	{
-		return this.player;
+		return player;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public final class QuestState
 	 */
 	public byte getState()
 	{
-		return this.state;
+		return state;
 	}
 
 	/**
@@ -219,9 +219,9 @@ public final class QuestState
 	 */
 	public String setInternal(String var, String val)
 	{
-		if (this.vars == null)
+		if (vars == null)
 		{
-			this.vars = new ConcurrentHashMap<>();
+			vars = new ConcurrentHashMap<>();
 		}
 
 		if (val == null)
@@ -229,7 +229,7 @@ public final class QuestState
 			val = "";
 		}
 
-		this.vars.put(var, val);
+		vars.put(var, val);
 		return val;
 	}
 
@@ -249,9 +249,9 @@ public final class QuestState
 	 */
 	public String set(String var, String val)
 	{
-		if (this.vars == null)
+		if (vars == null)
 		{
-			this.vars = new HashMap<>();
+			vars = new HashMap<>();
 		}
 
 		if (val == null)
@@ -260,7 +260,7 @@ public final class QuestState
 		}
 
 		// HashMap.put() returns previous value associated with specified key, or null if there was no mapping for key.
-		String old = this.vars.put(var, val);
+		String old = vars.put(var, val);
 
 		if (old != null)
 		{
@@ -419,12 +419,12 @@ public final class QuestState
 	 */
 	public String unset(String var)
 	{
-		if (this.vars == null)
+		if (vars == null)
 		{
 			return null;
 		}
 
-		String old = this.vars.remove(var);
+		String old = vars.remove(var);
 
 		if (old != null)
 		{
@@ -452,7 +452,7 @@ public final class QuestState
 			PreparedStatement statement;
 			statement =
 					con.prepareStatement("REPLACE INTO character_quest_global_data (charId,var,value) VALUES (?,?,?)");
-			statement.setInt(1, this.player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			statement.setString(3, value);
 			statement.executeUpdate();
@@ -488,7 +488,7 @@ public final class QuestState
 			PreparedStatement statement;
 			statement =
 					con.prepareStatement("SELECT value FROM character_quest_global_data WHERE charId = ? AND var = ?");
-			statement.setInt(1, this.player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			ResultSet rs = statement.executeQuery();
 			if (rs.first())
@@ -522,7 +522,7 @@ public final class QuestState
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 			statement = con.prepareStatement("DELETE FROM character_quest_global_data WHERE charId = ? AND var = ?");
-			statement.setInt(1, this.player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			statement.executeUpdate();
 			statement.close();
@@ -545,12 +545,12 @@ public final class QuestState
 	 */
 	public String get(String var)
 	{
-		if (this.vars == null)
+		if (vars == null)
 		{
 			return null;
 		}
 
-		return this.vars.get(var);
+		return vars.get(var);
 	}
 
 	/**
@@ -561,12 +561,12 @@ public final class QuestState
 	 */
 	public int getInt(String var)
 	{
-		if (this.vars == null)
+		if (vars == null)
 		{
 			return 0;
 		}
 
-		final String variable = this.vars.get(var);
+		final String variable = vars.get(var);
 		if (variable == null || variable.length() == 0)
 		{
 			return 0;
@@ -1084,7 +1084,7 @@ public final class QuestState
 	 */
 	public final boolean isExitQuestOnCleanUp()
 	{
-		return this.isExitQuestOnCleanUp;
+		return isExitQuestOnCleanUp;
 	}
 
 	/**
@@ -1222,7 +1222,7 @@ public final class QuestState
 	public QuestState exitQuest(boolean repeatable)
 	{
 		// remove this quest from the notifyDeath list of this character if its on this list
-		this.player.removeNotifyQuestOfDeath(this);
+		player.removeNotifyQuestOfDeath(this);
 
 		if (isCompleted() || isCreated())
 		{
@@ -1248,14 +1248,14 @@ public final class QuestState
 			getPlayer().delQuestState(getQuestName());
 			Quest.deleteQuestInDb(this);
 
-			this.vars = null;
+			vars = null;
 		}
 		else
 		{
 			// Otherwise, delete variables for quest and update database (quest CANNOT be created again => not repeatable)
-			if (this.vars != null)
+			if (vars != null)
 			{
-				Map<String, String> toIterate = new HashMap<>(this.vars);
+				Map<String, String> toIterate = new HashMap<>(vars);
 				for (String var : toIterate.keySet())
 				{
 					unset(var);
@@ -1309,23 +1309,23 @@ public final class QuestState
 
 	public TIntIntHashMap getNpcLogs()
 	{
-		return this.npcLogs;
+		return npcLogs;
 	}
 
 	public int getNpcLog(int npcId)
 	{
-		return this.npcLogs.get(npcId);
+		return npcLogs.get(npcId);
 	}
 
 	public void increaseNpcLog(int npcId)
 	{
-		if (!this.npcLogs.contains(npcId))
+		if (!npcLogs.contains(npcId))
 		{
-			this.npcLogs.put(npcId, 1);
+			npcLogs.put(npcId, 1);
 		}
 		else
 		{
-			this.npcLogs.put(npcId, this.npcLogs.get(npcId) + 1);
+			npcLogs.put(npcId, npcLogs.get(npcId) + 1);
 		}
 	}
 }

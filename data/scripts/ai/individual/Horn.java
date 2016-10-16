@@ -41,7 +41,7 @@ public class Horn extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int a : this.hornIds)
+		for (int a : hornIds)
 		{
 			addKillId(a);
 		}
@@ -69,14 +69,14 @@ public class Horn extends L2AttackableAIScript
 			case 19461: //Blue
 				for (int a = 0; a < 5; a++)
 				{
-					addSpawn(this.chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
+					addSpawn(chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
 				}
 				break;
 
 			case 19462: //Red
 				for (int a = 0; a < 8; a++)
 				{
-					addSpawn(this.poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
+					addSpawn(poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
 				}
 				break;
 		}

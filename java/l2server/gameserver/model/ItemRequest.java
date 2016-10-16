@@ -42,12 +42,12 @@ public class ItemRequest
 
 	public int getObjectId()
 	{
-		return this.objectId;
+		return objectId;
 	}
 
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public void setCount(long count)
@@ -57,12 +57,12 @@ public class ItemRequest
 
 	public long getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	public long getPrice()
 	{
-		return this.price;
+		return price;
 	}
 
 	/* (non-Javadoc)
@@ -71,7 +71,7 @@ public class ItemRequest
 	@Override
 	public int hashCode()
 	{
-		return this.objectId;
+		return objectId;
 	}
 
 	/* (non-Javadoc)
@@ -93,6 +93,6 @@ public class ItemRequest
 			return false;
 		}
 		ItemRequest other = (ItemRequest) obj;
-		return this.objectId == other.objectId;
+		return objectId == other.objectId;
 	}
 }

@@ -42,11 +42,11 @@ public class RecipeShopManageList extends L2GameServerPacket
 
 		if (this.isDwarven && this.seller.hasDwarvenCraft())
 		{
-			this.recipes = this.seller.getDwarvenRecipeBook();
+			recipes = this.seller.getDwarvenRecipeBook();
 		}
 		else
 		{
-			this.recipes = this.seller.getCommonRecipeBook();
+			recipes = this.seller.getCommonRecipeBook();
 		}
 
 		// clean previous recipes
@@ -67,33 +67,33 @@ public class RecipeShopManageList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.seller.getObjectId());
-		writeD((int) this.seller.getAdena());
-		writeD(this.isDwarven ? 0x00 : 0x01);
+		writeD(seller.getObjectId());
+		writeD((int) seller.getAdena());
+		writeD(isDwarven ? 0x00 : 0x01);
 
-		if (this.recipes == null)
+		if (recipes == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			writeD(this.recipes.length);//number of items in recipe book
+			writeD(recipes.length);//number of items in recipe book
 
-			for (int i = 0; i < this.recipes.length; i++)
+			for (int i = 0; i < recipes.length; i++)
 			{
-				L2RecipeList temp = this.recipes[i];
+				L2RecipeList temp = recipes[i];
 				writeD(temp.getId());
 				writeD(i + 1);
 			}
 		}
 
-		if (this.seller.getCreateList() == null)
+		if (seller.getCreateList() == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			L2ManufactureList list = this.seller.getCreateList();
+			L2ManufactureList list = seller.getCreateList();
 			writeD(list.size());
 
 			for (L2ManufactureItem item : list.getList())

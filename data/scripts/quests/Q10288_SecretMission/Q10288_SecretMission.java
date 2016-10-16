@@ -49,26 +49,26 @@ public class Q10288_SecretMission extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.dominic)
+		if (npc.getNpcId() == dominic)
 		{
 			if (event.equalsIgnoreCase("31350-05.htm"))
 			{
 				st.setState(State.STARTED);
 				st.set("cond", "1");
-				st.giveItems(this.letter, 1);
+				st.giveItems(letter, 1);
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == this.greymore && event.equalsIgnoreCase("32757-03.htm"))
+		else if (npc.getNpcId() == greymore && event.equalsIgnoreCase("32757-03.htm"))
 		{
 			st.unset("cond");
-			st.takeItems(this.letter, -1);
+			st.takeItems(letter, -1);
 			st.giveItems(57, 106583);
 			st.addExpAndSp(417788, 46320);
 			st.playSound("ItemSound.quest_finish");
 			st.exitQuest(false);
 		}
-		else if (npc.getNpcId() == this.aquilani)
+		else if (npc.getNpcId() == aquilani)
 		{
 			if (st.getState() == State.STARTED)
 			{
@@ -97,7 +97,7 @@ public class Q10288_SecretMission extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.dominic)
+		if (npc.getNpcId() == dominic)
 		{
 			switch (st.getState())
 			{
@@ -126,7 +126,7 @@ public class Q10288_SecretMission extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.aquilani)
+		else if (npc.getNpcId() == aquilani)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -137,7 +137,7 @@ public class Q10288_SecretMission extends Quest
 				htmltext = "32780-06.html";
 			}
 		}
-		else if (npc.getNpcId() == this.greymore && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == greymore && st.getInt("cond") == 2)
 		{
 			return "32757-01.htm";
 		}
@@ -153,7 +153,7 @@ public class Q10288_SecretMission extends Quest
 			Quest q = QuestManager.getInstance().getQuest(qn);
 			st = q.newQuestState(player);
 		}
-		if (npc.getNpcId() == this.aquilani)
+		if (npc.getNpcId() == aquilani)
 		{
 			if (st.getState() == State.COMPLETED)
 			{
@@ -171,12 +171,12 @@ public class Q10288_SecretMission extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.dominic);
-		addStartNpc(this.aquilani);
-		addTalkId(this.dominic);
-		addTalkId(this.greymore);
-		addTalkId(this.aquilani);
-		addFirstTalkId(this.aquilani);
+		addStartNpc(dominic);
+		addStartNpc(aquilani);
+		addTalkId(dominic);
+		addTalkId(greymore);
+		addTalkId(aquilani);
+		addFirstTalkId(aquilani);
 	}
 
 	public static void main(String[] args)

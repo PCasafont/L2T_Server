@@ -84,7 +84,7 @@ public class FuncEnchant extends Func
 			}
 		}
 
-		double baseAddVal = this.lambda.calc(env);
+		double baseAddVal = lambda.calc(env);
 		if (baseAddVal > 0.0)
 		{
 			env.value += baseAddVal * overenchant;

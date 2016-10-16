@@ -117,28 +117,28 @@ public final class FloodProtectors
 	public FloodProtectors(final L2GameClient client)
 	{
 		super();
-		this.pickUp = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
-		this.useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
-		this.rollDice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ROLL_DICE);
-		this.firework = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_FIREWORK);
-		this.itemPetSummon = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_PET_SUMMON);
-		this.heroVoice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_HERO_VOICE);
-		this.shoutChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SHOUT_CHAT);
-		this.tradeChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRADE_CHAT);
-		this.globalChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_GLOBAL_CHAT);
-		this.subclass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SUBCLASS);
-		this.dropItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_DROP_ITEM);
-		this.serverBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SERVER_BYPASS);
-		this.multiSell = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MULTISELL);
-		this.transaction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRANSACTION);
-		this.manufacture = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANUFACTURE);
-		this.manor = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANOR);
-		this.sendMail = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SENDMAIL);
-		this.characterSelect = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_CHARACTER_SELECT);
-		this.itemAuction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_AUCTION);
-		this.magicGem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MAGICGEM);
-		this.eventBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_EVENTBYPASS);
-		this.reportBot = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_REPORT_BOT);
+		pickUp = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
+		useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
+		rollDice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ROLL_DICE);
+		firework = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_FIREWORK);
+		itemPetSummon = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_PET_SUMMON);
+		heroVoice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_HERO_VOICE);
+		shoutChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SHOUT_CHAT);
+		tradeChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRADE_CHAT);
+		globalChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_GLOBAL_CHAT);
+		subclass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SUBCLASS);
+		dropItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_DROP_ITEM);
+		serverBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SERVER_BYPASS);
+		multiSell = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MULTISELL);
+		transaction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRANSACTION);
+		manufacture = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANUFACTURE);
+		manor = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANOR);
+		sendMail = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SENDMAIL);
+		characterSelect = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_CHARACTER_SELECT);
+		itemAuction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_AUCTION);
+		magicGem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MAGICGEM);
+		eventBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_EVENTBYPASS);
+		reportBot = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_REPORT_BOT);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getUseItem()
 	{
-		return this.useItem;
+		return useItem;
 	}
 
 	/**
@@ -158,7 +158,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getRollDice()
 	{
-		return this.rollDice;
+		return rollDice;
 	}
 
 	/**
@@ -168,7 +168,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getFirework()
 	{
-		return this.firework;
+		return firework;
 	}
 
 	/**
@@ -178,7 +178,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getItemPetSummon()
 	{
-		return this.itemPetSummon;
+		return itemPetSummon;
 	}
 
 	/**
@@ -188,7 +188,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getHeroVoice()
 	{
-		return this.heroVoice;
+		return heroVoice;
 	}
 
 	/**
@@ -198,7 +198,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getShoutChat()
 	{
-		return this.shoutChat;
+		return shoutChat;
 	}
 
 	/**
@@ -208,7 +208,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getTradeChat()
 	{
-		return this.tradeChat;
+		return tradeChat;
 	}
 
 	/**
@@ -218,7 +218,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getGlobalChat()
 	{
-		return this.globalChat;
+		return globalChat;
 	}
 
 	/**
@@ -228,7 +228,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getSubclass()
 	{
-		return this.subclass;
+		return subclass;
 	}
 
 	/**
@@ -238,7 +238,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getDropItem()
 	{
-		return this.dropItem;
+		return dropItem;
 	}
 
 	/**
@@ -248,7 +248,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getServerBypass()
 	{
-		return this.serverBypass;
+		return serverBypass;
 	}
 
 	/**
@@ -258,7 +258,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getMultiSell()
 	{
-		return this.multiSell;
+		return multiSell;
 	}
 
 	/**
@@ -268,7 +268,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getTransaction()
 	{
-		return this.transaction;
+		return transaction;
 	}
 
 	/**
@@ -278,7 +278,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getManufacture()
 	{
-		return this.manufacture;
+		return manufacture;
 	}
 
 	/**
@@ -288,7 +288,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getManor()
 	{
-		return this.manor;
+		return manor;
 	}
 
 	/**
@@ -298,7 +298,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getSendMail()
 	{
-		return this.sendMail;
+		return sendMail;
 	}
 
 	/**
@@ -308,7 +308,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getCharacterSelect()
 	{
-		return this.characterSelect;
+		return characterSelect;
 	}
 
 	/**
@@ -318,7 +318,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getItemAuction()
 	{
-		return this.itemAuction;
+		return itemAuction;
 	}
 
 	/**
@@ -328,7 +328,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getMagicGem()
 	{
-		return this.magicGem;
+		return magicGem;
 	}
 
 	/**
@@ -338,7 +338,7 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getEventBypass()
 	{
-		return this.eventBypass;
+		return eventBypass;
 	}
 
 	/**
@@ -348,11 +348,11 @@ public final class FloodProtectors
 	 */
 	public FloodProtectorAction getPickUpItem()
 	{
-		return this.pickUp;
+		return pickUp;
 	}
 
 	public FloodProtectorAction getReportBot()
 	{
-		return this.reportBot;
+		return reportBot;
 	}
 }

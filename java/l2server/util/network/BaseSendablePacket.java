@@ -29,39 +29,39 @@ public abstract class BaseSendablePacket
 
 	protected BaseSendablePacket()
 	{
-		this.bao = new ByteArrayOutputStream();
+		bao = new ByteArrayOutputStream();
 	}
 
 	protected void writeD(int value)
 	{
-		this.bao.write(value & 0xff);
-		this.bao.write(value >> 8 & 0xff);
-		this.bao.write(value >> 16 & 0xff);
-		this.bao.write(value >> 24 & 0xff);
+		bao.write(value & 0xff);
+		bao.write(value >> 8 & 0xff);
+		bao.write(value >> 16 & 0xff);
+		bao.write(value >> 24 & 0xff);
 	}
 
 	protected void writeH(int value)
 	{
-		this.bao.write(value & 0xff);
-		this.bao.write(value >> 8 & 0xff);
+		bao.write(value & 0xff);
+		bao.write(value >> 8 & 0xff);
 	}
 
 	protected void writeC(int value)
 	{
-		this.bao.write(value & 0xff);
+		bao.write(value & 0xff);
 	}
 
 	protected void writeF(double org)
 	{
 		long value = Double.doubleToRawLongBits(org);
-		this.bao.write((int) (value & 0xff));
-		this.bao.write((int) (value >> 8 & 0xff));
-		this.bao.write((int) (value >> 16 & 0xff));
-		this.bao.write((int) (value >> 24 & 0xff));
-		this.bao.write((int) (value >> 32 & 0xff));
-		this.bao.write((int) (value >> 40 & 0xff));
-		this.bao.write((int) (value >> 48 & 0xff));
-		this.bao.write((int) (value >> 56 & 0xff));
+		bao.write((int) (value & 0xff));
+		bao.write((int) (value >> 8 & 0xff));
+		bao.write((int) (value >> 16 & 0xff));
+		bao.write((int) (value >> 24 & 0xff));
+		bao.write((int) (value >> 32 & 0xff));
+		bao.write((int) (value >> 40 & 0xff));
+		bao.write((int) (value >> 48 & 0xff));
+		bao.write((int) (value >> 56 & 0xff));
 	}
 
 	protected void writeS(String text)
@@ -70,7 +70,7 @@ public abstract class BaseSendablePacket
 		{
 			if (text != null)
 			{
-				this.bao.write(text.getBytes("UTF-16LE"));
+				bao.write(text.getBytes("UTF-16LE"));
 			}
 		}
 		catch (Exception e)
@@ -78,15 +78,15 @@ public abstract class BaseSendablePacket
 			e.printStackTrace();
 		}
 
-		this.bao.write(0);
-		this.bao.write(0);
+		bao.write(0);
+		bao.write(0);
 	}
 
 	protected void writeB(byte[] array)
 	{
 		try
 		{
-			this.bao.write(array);
+			bao.write(array);
 		}
 		catch (IOException e)
 		{
@@ -96,19 +96,19 @@ public abstract class BaseSendablePacket
 
 	protected void writeQ(long value)
 	{
-		this.bao.write((int) (value & 0xff));
-		this.bao.write((int) (value >> 8 & 0xff));
-		this.bao.write((int) (value >> 16 & 0xff));
-		this.bao.write((int) (value >> 24 & 0xff));
-		this.bao.write((int) (value >> 32 & 0xff));
-		this.bao.write((int) (value >> 40 & 0xff));
-		this.bao.write((int) (value >> 48 & 0xff));
-		this.bao.write((int) (value >> 56 & 0xff));
+		bao.write((int) (value & 0xff));
+		bao.write((int) (value >> 8 & 0xff));
+		bao.write((int) (value >> 16 & 0xff));
+		bao.write((int) (value >> 24 & 0xff));
+		bao.write((int) (value >> 32 & 0xff));
+		bao.write((int) (value >> 40 & 0xff));
+		bao.write((int) (value >> 48 & 0xff));
+		bao.write((int) (value >> 56 & 0xff));
 	}
 
 	public int getLength()
 	{
-		return this.bao.size() + 2;
+		return bao.size() + 2;
 	}
 
 	public byte[] getBytes()
@@ -118,7 +118,7 @@ public abstract class BaseSendablePacket
 
 		writeD(0x00); // reserve for checksum
 
-		int padding = this.bao.size() % 8;
+		int padding = bao.size() % 8;
 		if (padding != 0)
 		{
 			for (int i = padding; i < 8; i++)
@@ -127,7 +127,7 @@ public abstract class BaseSendablePacket
 			}
 		}
 
-		return this.bao.toByteArray();
+		return bao.toByteArray();
 	}
 
 	public abstract byte[] getContent();

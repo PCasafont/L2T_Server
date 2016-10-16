@@ -51,9 +51,9 @@ public class EffectSpatialTrap extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		this.trapX = getEffector().getX();
-		this.trapY = getEffector().getY();
-		this.trapZ = getEffector().getZ();
+		trapX = getEffector().getX();
+		trapY = getEffector().getY();
+		trapZ = getEffector().getZ();
 
 		return true;
 	}
@@ -69,16 +69,16 @@ public class EffectSpatialTrap extends L2Effect
 
 	public final int getTrapX()
 	{
-		return this.trapX;
+		return trapX;
 	}
 
 	public final int getTrapY()
 	{
-		return this.trapY;
+		return trapY;
 	}
 
 	public final int getTrapZ()
 	{
-		return this.trapZ;
+		return trapZ;
 	}
 }

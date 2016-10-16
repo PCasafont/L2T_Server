@@ -27,22 +27,22 @@ public abstract class AbstractNode
 
 	public void setParent(AbstractNode p)
 	{
-		this.parent = p;
+		parent = p;
 	}
 
 	public AbstractNode getParent()
 	{
-		return this.parent;
+		return parent;
 	}
 
 	public AbstractNodeLoc getLoc()
 	{
-		return this.loc;
+		return loc;
 	}
 
 	public void setLoc(AbstractNodeLoc l)
 	{
-		this.loc = l;
+		loc = l;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public abstract class AbstractNode
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (this.loc == null ? 0 : this.loc.hashCode());
+		result = prime * result + (loc == null ? 0 : loc.hashCode());
 		return result;
 	}
 
@@ -76,14 +76,14 @@ public abstract class AbstractNode
 			return false;
 		}
 		final AbstractNode other = (AbstractNode) obj;
-		if (this.loc == null)
+		if (loc == null)
 		{
 			if (other.loc != null)
 			{
 				return false;
 			}
 		}
-		else if (!this.loc.equals(other.loc))
+		else if (!loc.equals(other.loc))
 		{
 			return false;
 		}

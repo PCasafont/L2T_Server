@@ -56,11 +56,11 @@ public class CharacterSelect extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.charSlot = readD();
-		this.unk1 = readH();
-		this.unk2 = readD();
-		this.unk3 = readD();
-		this.unk4 = readD();
+		charSlot = readD();
+		unk1 = readH();
+		unk2 = readD();
+		unk3 = readD();
+		unk4 = readD();
 	}
 
 	@Override
@@ -92,7 +92,7 @@ public class CharacterSelect extends L2GameClientPacket
 							.tryAddClient(AntiFeedManager.GAME_ID, getClient(),
 									Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
-						final CharSelectInfoPackage info = getClient().getCharSelection(this.charSlot);
+						final CharSelectInfoPackage info = getClient().getCharSelection(charSlot);
 						if (info == null)
 						{
 							return;
@@ -109,11 +109,11 @@ public class CharacterSelect extends L2GameClientPacket
 					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
 					if (Config.DEBUG)
 					{
-						Log.fine("selected slot:" + this.charSlot);
+						Log.fine("selected slot:" + charSlot);
 					}
 
 					//load up character from disk
-					L2PcInstance cha = getClient().loadCharFromDisk(this.charSlot);
+					L2PcInstance cha = getClient().loadCharFromDisk(charSlot);
 					if (cha == null)
 					{
 						return; // handled in L2GameClient
@@ -146,7 +146,7 @@ public class CharacterSelect extends L2GameClientPacket
 
 			LogRecord record = new LogRecord(Level.INFO, "Logged in");
 			record.setParameters(new Object[]{getClient()});
-			this.logAccounting.log(record);
+			logAccounting.log(record);
 		}
 	}
 }

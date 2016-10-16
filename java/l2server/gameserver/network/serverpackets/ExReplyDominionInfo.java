@@ -15,7 +15,7 @@ public class ExReplyDominionInfo extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.dominonCount);
+		writeD(dominonCount);
 	}
 }
 

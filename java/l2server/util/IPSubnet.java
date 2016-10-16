@@ -29,27 +29,27 @@ public class IPSubnet
 		int idx = input.indexOf("/");
 		if (idx > 0)
 		{
-			this.addr = InetAddress.getByName(input.substring(0, idx)).getAddress();
-			this.mask = getMask(Integer.parseInt(input.substring(idx + 1)), this.addr.length);
-			this.isIPv4 = this.addr.length == 4;
+			addr = InetAddress.getByName(input.substring(0, idx)).getAddress();
+			mask = getMask(Integer.parseInt(input.substring(idx + 1)), addr.length);
+			isIPv4 = addr.length == 4;
 
-			if (!applyMask(this.addr))
+			if (!applyMask(addr))
 			{
 				throw new UnknownHostException(input);
 			}
 		}
 		else
 		{
-			this.addr = InetAddress.getByName(input).getAddress();
-			this.mask = getMask(this.addr.length * 8, this.addr.length); // host, no need to check mask
-			this.isIPv4 = this.addr.length == 4;
+			addr = InetAddress.getByName(input).getAddress();
+			mask = getMask(addr.length * 8, addr.length); // host, no need to check mask
+			isIPv4 = addr.length == 4;
 		}
 	}
 
 	public IPSubnet(InetAddress addr, int mask) throws UnknownHostException
 	{
 		this.addr = addr.getAddress();
-		this.isIPv4 = this.addr.length == 4;
+		isIPv4 = this.addr.length == 4;
 		this.mask = getMask(mask, this.addr.length);
 		if (!applyMask(this.addr))
 		{
@@ -59,17 +59,17 @@ public class IPSubnet
 
 	public byte[] getAddress()
 	{
-		return this.addr;
+		return addr;
 	}
 
 	public boolean applyMask(byte[] addr)
 	{
 		// V4 vs V4 or V6 vs V6 checks
-		if (this.isIPv4 == (addr.length == 4))
+		if (isIPv4 == (addr.length == 4))
 		{
 			for (int i = 0; i < this.addr.length; i++)
 			{
-				if ((addr[i] & this.mask[i]) != this.addr[i])
+				if ((addr[i] & mask[i]) != this.addr[i])
 				{
 					return false;
 				}
@@ -78,12 +78,12 @@ public class IPSubnet
 		else
 		{
 			// check for embedded v4 in v6 addr (not done !)
-			if (this.isIPv4)
+			if (isIPv4)
 			{
 				// my V4 vs V6
 				for (int i = 0; i < this.addr.length; i++)
 				{
-					if ((addr[i + 12] & this.mask[i]) != this.addr[i])
+					if ((addr[i + 12] & mask[i]) != this.addr[i])
 					{
 						return false;
 					}
@@ -94,7 +94,7 @@ public class IPSubnet
 				// my V6 vs V4
 				for (int i = 0; i < this.addr.length; i++)
 				{
-					if ((addr[i] & this.mask[i + 12]) != this.addr[i + 12])
+					if ((addr[i] & mask[i + 12]) != this.addr[i + 12])
 					{
 						return false;
 					}
@@ -109,14 +109,14 @@ public class IPSubnet
 	public String toString()
 	{
 		int size = 0;
-		for (byte element : this.mask)
+		for (byte element : mask)
 		{
 			size += Integer.bitCount(element & 0xFF);
 		}
 
 		try
 		{
-			return InetAddress.getByAddress(this.addr).toString() + "/" + size;
+			return InetAddress.getByAddress(addr).toString() + "/" + size;
 		}
 		catch (UnknownHostException e)
 		{

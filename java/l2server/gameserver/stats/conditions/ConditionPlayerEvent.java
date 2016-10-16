@@ -33,9 +33,9 @@ public class ConditionPlayerEvent extends Condition
 		final L2PcInstance player = env.player.getActingPlayer();
 		if (player == null || !player.isPlayingEvent())
 		{
-			return !this.val;
+			return !val;
 		}
 
-		return this.val;
+		return val;
 	}
 }

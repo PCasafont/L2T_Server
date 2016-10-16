@@ -41,8 +41,8 @@ public final class AuctionDateGenerator
 
 	public AuctionDateGenerator(final StatsSet config) throws IllegalArgumentException
 	{
-		this.calendar = Calendar.getInstance();
-		this.interval = config.getInteger(FIELD_INTERVAL, -1);
+		calendar = Calendar.getInstance();
+		interval = config.getInteger(FIELD_INTERVAL, -1);
 		_day_of_week = config.getInteger(FIELD_DAY_OF_WEEK, -1);
 		_hour_of_day = config.getInteger(FIELD_HOUR_OF_DAY, -1);
 		_minute_of_hour = config.getInteger(FIELD_MINUTE_OF_HOUR, -1);
@@ -54,19 +54,19 @@ public final class AuctionDateGenerator
 
 	public synchronized final long nextDate(final long date)
 	{
-		this.calendar.setTimeInMillis(date);
-		this.calendar.set(Calendar.MILLISECOND, 0);
-		this.calendar.set(Calendar.SECOND, 0);
+		calendar.setTimeInMillis(date);
+		calendar.set(Calendar.MILLISECOND, 0);
+		calendar.set(Calendar.SECOND, 0);
 
-		this.calendar.set(Calendar.MINUTE, _minute_of_hour);
-		this.calendar.set(Calendar.HOUR_OF_DAY, _hour_of_day);
+		calendar.set(Calendar.MINUTE, _minute_of_hour);
+		calendar.set(Calendar.HOUR_OF_DAY, _hour_of_day);
 		if (_day_of_week > 0)
 		{
-			this.calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
-			return calcDestTime(this.calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
+			calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
+			return calcDestTime(calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
 		}
 
-		return calcDestTime(this.calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(this.interval, TimeUnit.DAYS));
+		return calcDestTime(calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(interval, TimeUnit.DAYS));
 	}
 
 	private long calcDestTime(long time, final long date, final long add)
@@ -86,14 +86,14 @@ public final class AuctionDateGenerator
 	{
 		if (_day_of_week < 1 || _day_of_week > 7)
 		{
-			if (defaultValue == -1 && this.interval < 1)
+			if (defaultValue == -1 && interval < 1)
 			{
 				throw new IllegalArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " +
 						(_day_of_week == -1 ? "not found" : _day_of_week));
 			}
 			_day_of_week = defaultValue;
 		}
-		else if (this.interval > 1)
+		else if (interval > 1)
 		{
 			throw new IllegalArgumentException("Illegal params for '" + FIELD_INTERVAL + "' and '" + FIELD_DAY_OF_WEEK +
 					"': you can use only one, not both");

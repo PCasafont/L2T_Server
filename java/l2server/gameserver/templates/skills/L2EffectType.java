@@ -62,6 +62,6 @@ public enum L2EffectType
 
 	public long getMask()
 	{
-		return this.mask;
+		return mask;
 	}
 }

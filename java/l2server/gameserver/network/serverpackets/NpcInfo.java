@@ -46,8 +46,8 @@ public final class NpcInfo extends L2GameServerPacket
 			return;
 		}
 
-		this.objectId = npc.getObjectId();
-		this.val = npc.isShowSummonAnimation() ? 2 : 0;
+		objectId = npc.getObjectId();
+		val = npc.isShowSummonAnimation() ? 2 : 0;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -86,8 +86,8 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		this.data1 = new byte[size];
-		buffer.get(this.data1, 0, size);
+		data1 = new byte[size];
+		buffer.get(data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -196,24 +196,24 @@ public final class NpcInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		this.data2 = new byte[size];
-		buffer.get(this.data2, 0, size);
+		data2 = new byte[size];
+		buffer.get(data2, 0, size);
 
-		this.abnormals = npc.getAbnormalEffect();
+		abnormals = npc.getAbnormalEffect();
 		if (npc.isChampion())
 		{
-			this.abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
+			abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
 		}
 		if (npc.getNpcId() >= 40000 && npc.getNpcId() < 40006 && npc.getInstanceId() == 0)
 		{
-			this.abnormals.add(VisualEffect.BIG_BODY.getId());
+			abnormals.add(VisualEffect.BIG_BODY.getId());
 		}
 	}
 
 	public NpcInfo(L2CloneInstance npc)
 	{
-		this.objectId = npc.getObjectId();
-		this.val = npc.isShowSummonAnimation() ? 2 : 0;
+		objectId = npc.getObjectId();
+		val = npc.isShowSummonAnimation() ? 2 : 0;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -229,8 +229,8 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		this.data1 = new byte[size];
-		buffer.get(this.data1, 0, size);
+		data1 = new byte[size];
+		buffer.get(data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -328,17 +328,17 @@ public final class NpcInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		this.data2 = new byte[size];
-		buffer.get(this.data2, 0, size);
+		data2 = new byte[size];
+		buffer.get(data2, 0, size);
 
-		this.abnormals = npc.getAbnormalEffect();
+		abnormals = npc.getAbnormalEffect();
 	}
 
 	public NpcInfo(L2Trap trap)
 	{
-		this.objectId = trap.getObjectId();
+		objectId = trap.getObjectId();
 
-		this.data1 = new byte[7];
+		data1 = new byte[7];
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -417,22 +417,22 @@ public final class NpcInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		this.data2 = new byte[size];
-		buffer.get(this.data2, 0, size);
+		data2 = new byte[size];
+		buffer.get(data2, 0, size);
 
-		this.abnormals = trap.getAbnormalEffect();
+		abnormals = trap.getAbnormalEffect();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.data1 == null)
+		if (data1 == null)
 		{
 			return;
 		}
 
-		writeD(this.objectId);
-		writeC(this.val); // 0=teleported 1=default 2=summoned
+		writeD(objectId);
+		writeC(val); // 0=teleported 1=default 2=summoned
 		writeH(0x25);
 		writeC(0xff);
 		writeC(0xff);
@@ -440,14 +440,14 @@ public final class NpcInfo extends L2GameServerPacket
 		writeC(0xff);
 		writeC(0xff);
 
-		writeC(this.data1.length);
-		writeB(this.data1);
+		writeC(data1.length);
+		writeB(data1);
 
-		writeH(this.data2.length);
-		writeB(this.data2);
+		writeH(data2.length);
+		writeB(data2);
 
-		writeH(this.abnormals.size());
-		for (int abnormal : this.abnormals)
+		writeH(abnormals.size());
+		for (int abnormal : abnormals)
 		{
 			writeH(abnormal);
 		}

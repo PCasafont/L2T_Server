@@ -65,24 +65,24 @@ public class Duel
 		this.playerB = playerB;
 		this.partyDuel = partyDuel == 1;
 
-		this.duelEndTime = Calendar.getInstance();
+		duelEndTime = Calendar.getInstance();
 		if (this.partyDuel)
 		{
-			this.duelEndTime.add(Calendar.SECOND, 300);
+			duelEndTime.add(Calendar.SECOND, 300);
 		}
 		else
 		{
-			this.duelEndTime.add(Calendar.SECOND, 120);
+			duelEndTime.add(Calendar.SECOND, 120);
 		}
 
-		this.playerConditions = new ArrayList<>();
+		playerConditions = new ArrayList<>();
 
 		setFinished(false);
 
 		if (this.partyDuel)
 		{
 			// increase countdown so that start task can teleport players
-			this.countdown++;
+			countdown++;
 			// inform players that they will be portet shortly
 			SystemMessage sm = SystemMessage.getSystemMessage(
 					SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
@@ -113,36 +113,36 @@ public class Duel
 				return;
 			}
 			this.player = player;
-			this.hp = this.player.getCurrentHp();
-			this.mp = this.player.getCurrentMp();
-			this.cp = this.player.getCurrentCp();
-			this.paDuel = partyDuel;
+			hp = this.player.getCurrentHp();
+			mp = this.player.getCurrentMp();
+			cp = this.player.getCurrentCp();
+			paDuel = partyDuel;
 
-			if (this.paDuel)
+			if (paDuel)
 			{
-				this.x = this.player.getX();
-				this.y = this.player.getY();
-				this.z = this.player.getZ();
+				x = this.player.getX();
+				y = this.player.getY();
+				z = this.player.getZ();
 			}
 		}
 
 		public void restoreCondition()
 		{
-			if (this.player == null)
+			if (player == null)
 			{
 				return;
 			}
-			this.player.setCurrentHp(this.hp);
-			this.player.setCurrentMp(this.mp);
-			this.player.setCurrentCp(this.cp);
+			player.setCurrentHp(hp);
+			player.setCurrentMp(mp);
+			player.setCurrentCp(cp);
 
-			if (this.paDuel)
+			if (paDuel)
 			{
 				teleportBack();
 			}
-			if (this.debuffs != null) // Debuff removal
+			if (debuffs != null) // Debuff removal
 			{
-				for (L2Abnormal temp : this.debuffs)
+				for (L2Abnormal temp : debuffs)
 				{
 					if (temp != null)
 					{
@@ -154,25 +154,25 @@ public class Duel
 
 		public void registerDebuff(L2Abnormal debuff)
 		{
-			if (this.debuffs == null)
+			if (debuffs == null)
 			{
-				this.debuffs = new ArrayList<>();
+				debuffs = new ArrayList<>();
 			}
 
-			this.debuffs.add(debuff);
+			debuffs.add(debuff);
 		}
 
 		public void teleportBack()
 		{
-			if (this.paDuel)
+			if (paDuel)
 			{
-				this.player.teleToLocation(this.x, this.y, this.z);
+				player.teleToLocation(x, y, z);
 			}
 		}
 
 		public L2PcInstance getPlayer()
 		{
-			return this.player;
+			return player;
 		}
 	}
 
@@ -192,19 +192,19 @@ public class Duel
 		{
 			try
 			{
-				DuelResultEnum status = this.duel.checkEndDuelCondition();
+				DuelResultEnum status = duel.checkEndDuelCondition();
 
 				if (status == DuelResultEnum.Canceled)
 				{
 					// do not schedule duel end if it was interrupted
 					setFinished(true);
-					this.duel.endDuel(status);
+					duel.endDuel(status);
 				}
 				else if (status != DuelResultEnum.Continue)
 				{
 					setFinished(true);
 					playKneelAnimation();
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndDuelTask(this.duel, status), 5000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndDuelTask(duel, status), 5000);
 				}
 				else
 				{
@@ -233,14 +233,14 @@ public class Duel
 			try
 			{
 				// start/continue countdown
-				int count = this.duel.countdown();
+				int count = duel.countdown();
 
 				if (count == 4)
 				{
 					// players need to be teleportet first
 					//TODO: stadia manager needs a function to return an unused stadium for duels
 					// currently only teleports to the same stadium
-					this.duel.teleportPlayers(-83760, -238825, -3331);
+					duel.teleportPlayers(-83760, -238825, -3331);
 
 					// give players 20 seconds to complete teleport and get ready (its ought to be 30 on offical..)
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 20000);
@@ -251,7 +251,7 @@ public class Duel
 				}
 				else
 				{
-					this.duel.startDuel();
+					duel.startDuel();
 				}
 			}
 			catch (Exception e)
@@ -277,7 +277,7 @@ public class Duel
 		{
 			try
 			{
-				this.duel.endDuel(this.result);
+				duel.endDuel(result);
 			}
 			catch (Exception e)
 			{
@@ -296,16 +296,16 @@ public class Duel
 	private void stopFighting()
 	{
 		ActionFailed af = ActionFailed.STATIC_PACKET;
-		if (this.partyDuel)
+		if (partyDuel)
 		{
-			for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 			{
 				temp.abortCast();
 				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				temp.setTarget(null);
 				temp.sendPacket(af);
 			}
-			for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 			{
 				temp.abortCast();
 				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -315,14 +315,14 @@ public class Duel
 		}
 		else
 		{
-			this.playerA.abortCast();
-			this.playerB.abortCast();
-			this.playerA.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-			this.playerA.setTarget(null);
-			this.playerB.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-			this.playerB.setTarget(null);
-			this.playerA.sendPacket(af);
-			this.playerB.sendPacket(af);
+			playerA.abortCast();
+			playerB.abortCast();
+			playerA.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+			playerA.setTarget(null);
+			playerB.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+			playerB.setTarget(null);
+			playerA.sendPacket(af);
+			playerB.sendPacket(af);
 		}
 	}
 
@@ -336,18 +336,18 @@ public class Duel
 	 */
 	public boolean isDuelistInPvp(boolean sendMessage)
 	{
-		if (this.partyDuel)
+		if (partyDuel)
 		{
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if (this.playerA.getPvpFlag() != 0 || this.playerB.getPvpFlag() != 0)
+		else if (playerA.getPvpFlag() != 0 || playerB.getPvpFlag() != 0)
 		{
 			if (sendMessage)
 			{
 				String engagedInPvP = "The duel was canceled because a duelist engaged in PvP combat.";
-				this.playerA.sendMessage(engagedInPvP);
-				this.playerB.sendMessage(engagedInPvP);
+				playerA.sendMessage(engagedInPvP);
+				playerB.sendMessage(engagedInPvP);
 			}
 			return true;
 		}
@@ -362,31 +362,31 @@ public class Duel
 		// Save player Conditions
 		savePlayerConditions();
 
-		if (this.playerA == null || this.playerB == null || this.playerA.isInDuel() || this.playerB.isInDuel())
+		if (playerA == null || playerB == null || playerA.isInDuel() || playerB.isInDuel())
 		{
 			// clean up
-			this.playerConditions.clear();
-			this.playerConditions = null;
+			playerConditions.clear();
+			playerConditions = null;
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
 
-		if (this.partyDuel)
+		if (partyDuel)
 		{
 			// set isInDuel() state
 			// cancel all active trades, just in case? xD
-			for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 			{
 				temp.cancelActiveTrade();
-				temp.setIsInDuel(this.duelId);
+				temp.setIsInDuel(duelId);
 				temp.setTeam(1);
 				temp.broadcastUserInfo();
 				broadcastToTeam2(new ExDuelUpdateUserInfo(temp));
 			}
-			for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 			{
 				temp.cancelActiveTrade();
-				temp.setIsInDuel(this.duelId);
+				temp.setIsInDuel(duelId);
 				temp.setTeam(2);
 				temp.broadcastUserInfo();
 				broadcastToTeam1(new ExDuelUpdateUserInfo(temp));
@@ -404,10 +404,10 @@ public class Duel
 		else
 		{
 			// set isInDuel() state
-			this.playerA.setIsInDuel(this.duelId);
-			this.playerA.setTeam(1);
-			this.playerB.setIsInDuel(this.duelId);
-			this.playerB.setTeam(2);
+			playerA.setIsInDuel(duelId);
+			playerA.setTeam(1);
+			playerB.setIsInDuel(duelId);
+			playerB.setTeam(2);
 
 			// Send duel Start packets
 			ExDuelReady ready = new ExDuelReady(0);
@@ -418,11 +418,11 @@ public class Duel
 			broadcastToTeam1(start);
 			broadcastToTeam2(start);
 
-			broadcastToTeam1(new ExDuelUpdateUserInfo(this.playerB));
-			broadcastToTeam2(new ExDuelUpdateUserInfo(this.playerA));
+			broadcastToTeam1(new ExDuelUpdateUserInfo(playerB));
+			broadcastToTeam2(new ExDuelUpdateUserInfo(playerA));
 
-			this.playerA.broadcastUserInfo();
-			this.playerB.broadcastUserInfo();
+			playerA.broadcastUserInfo();
+			playerB.broadcastUserInfo();
 		}
 
 		// play sound
@@ -439,21 +439,21 @@ public class Duel
 	 */
 	public void savePlayerConditions()
 	{
-		if (this.partyDuel)
+		if (partyDuel)
 		{
-			for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 			{
-				this.playerConditions.add(new PlayerCondition(temp, this.partyDuel));
+				playerConditions.add(new PlayerCondition(temp, partyDuel));
 			}
-			for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 			{
-				this.playerConditions.add(new PlayerCondition(temp, this.partyDuel));
+				playerConditions.add(new PlayerCondition(temp, partyDuel));
 			}
 		}
 		else
 		{
-			this.playerConditions.add(new PlayerCondition(this.playerA, this.partyDuel));
-			this.playerConditions.add(new PlayerCondition(this.playerB, this.partyDuel));
+			playerConditions.add(new PlayerCondition(playerA, partyDuel));
+			playerConditions.add(new PlayerCondition(playerB, partyDuel));
 		}
 	}
 
@@ -463,15 +463,15 @@ public class Duel
 	public void restorePlayerConditions(boolean abnormalDuelEnd)
 	{
 		// update isInDuel() state for all players
-		if (this.partyDuel)
+		if (partyDuel)
 		{
-			for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 			{
 				temp.setIsInDuel(0);
 				temp.setTeam(0);
 				temp.broadcastUserInfo();
 			}
-			for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 			{
 				temp.setIsInDuel(0);
 				temp.setTeam(0);
@@ -480,12 +480,12 @@ public class Duel
 		}
 		else
 		{
-			this.playerA.setIsInDuel(0);
-			this.playerA.setTeam(0);
-			this.playerA.broadcastUserInfo();
-			this.playerB.setIsInDuel(0);
-			this.playerB.setTeam(0);
-			this.playerB.broadcastUserInfo();
+			playerA.setIsInDuel(0);
+			playerA.setTeam(0);
+			playerA.broadcastUserInfo();
+			playerB.setIsInDuel(0);
+			playerB.setTeam(0);
+			playerB.broadcastUserInfo();
 		}
 
 		// if it is an abnormal DuelEnd do not restore hp, mp, cp
@@ -495,7 +495,7 @@ public class Duel
 		}
 
 		// restore player conditions
-		for (PlayerCondition pc : this.playerConditions)
+		for (PlayerCondition pc : playerConditions)
 		{
 			pc.restoreCondition();
 		}
@@ -508,7 +508,7 @@ public class Duel
 	 */
 	public int getId()
 	{
-		return this.duelId;
+		return duelId;
 	}
 
 	/**
@@ -518,7 +518,7 @@ public class Duel
 	 */
 	public int getRemainingTime()
 	{
-		return (int) (this.duelEndTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
+		return (int) (duelEndTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
 	}
 
 	/**
@@ -528,7 +528,7 @@ public class Duel
 	 */
 	public L2PcInstance getPlayerA()
 	{
-		return this.playerA;
+		return playerA;
 	}
 
 	/**
@@ -538,7 +538,7 @@ public class Duel
 	 */
 	public L2PcInstance getPlayerB()
 	{
-		return this.playerB;
+		return playerB;
 	}
 
 	/**
@@ -548,17 +548,17 @@ public class Duel
 	 */
 	public boolean isPartyDuel()
 	{
-		return this.partyDuel;
+		return partyDuel;
 	}
 
 	public void setFinished(boolean mode)
 	{
-		this.finished = mode;
+		finished = mode;
 	}
 
 	public boolean getFinished()
 	{
-		return this.finished;
+		return finished;
 	}
 
 	/**
@@ -571,19 +571,19 @@ public class Duel
 	public void teleportPlayers(int x, int y, int z)
 	{
 		//TODO: adjust the values if needed... or implement something better (especially using more then 1 arena)
-		if (!this.partyDuel)
+		if (!partyDuel)
 		{
 			return;
 		}
 		int offset = 0;
 
-		for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+		for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 		{
 			temp.teleToLocation(x + offset - 180, y - 150, z);
 			offset += 40;
 		}
 		offset = 0;
-		for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+		for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 		{
 			temp.teleToLocation(x + offset - 180, y + 150, z);
 			offset += 40;
@@ -595,21 +595,21 @@ public class Duel
 	 */
 	public void broadcastToTeam1(L2GameServerPacket packet)
 	{
-		if (this.playerA == null)
+		if (playerA == null)
 		{
 			return;
 		}
 
-		if (this.partyDuel && this.playerA.getParty() != null)
+		if (partyDuel && playerA.getParty() != null)
 		{
-			for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 			{
 				temp.sendPacket(packet);
 			}
 		}
 		else
 		{
-			this.playerA.sendPacket(packet);
+			playerA.sendPacket(packet);
 		}
 	}
 
@@ -618,21 +618,21 @@ public class Duel
 	 */
 	public void broadcastToTeam2(L2GameServerPacket packet)
 	{
-		if (this.playerB == null)
+		if (playerB == null)
 		{
 			return;
 		}
 
-		if (this.partyDuel && this.playerB.getParty() != null)
+		if (partyDuel && playerB.getParty() != null)
 		{
-			for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+			for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 			{
 				temp.sendPacket(packet);
 			}
 		}
 		else
 		{
-			this.playerB.sendPacket(packet);
+			playerB.sendPacket(packet);
 		}
 	}
 
@@ -643,17 +643,17 @@ public class Duel
 	 */
 	public L2PcInstance getWinner()
 	{
-		if (!getFinished() || this.playerA == null || this.playerB == null)
+		if (!getFinished() || playerA == null || playerB == null)
 		{
 			return null;
 		}
-		if (this.playerA.getDuelState() == DUELSTATE_WINNER)
+		if (playerA.getDuelState() == DUELSTATE_WINNER)
 		{
-			return this.playerA;
+			return playerA;
 		}
-		if (this.playerB.getDuelState() == DUELSTATE_WINNER)
+		if (playerB.getDuelState() == DUELSTATE_WINNER)
 		{
-			return this.playerB;
+			return playerB;
 		}
 		return null;
 	}
@@ -665,17 +665,17 @@ public class Duel
 	 */
 	public L2PcInstance getLooser()
 	{
-		if (!getFinished() || this.playerA == null || this.playerB == null)
+		if (!getFinished() || playerA == null || playerB == null)
 		{
 			return null;
 		}
-		if (this.playerA.getDuelState() == DUELSTATE_WINNER)
+		if (playerA.getDuelState() == DUELSTATE_WINNER)
 		{
-			return this.playerB;
+			return playerB;
 		}
-		else if (this.playerB.getDuelState() == DUELSTATE_WINNER)
+		else if (playerB.getDuelState() == DUELSTATE_WINNER)
 		{
-			return this.playerA;
+			return playerA;
 		}
 		return null;
 	}
@@ -692,7 +692,7 @@ public class Duel
 			return;
 		}
 
-		if (this.partyDuel && looser.getParty() != null)
+		if (partyDuel && looser.getParty() != null)
 		{
 			for (L2PcInstance temp : looser.getParty().getPartyMembers())
 			{
@@ -712,19 +712,19 @@ public class Duel
 	 */
 	public int countdown()
 	{
-		this.countdown--;
+		countdown--;
 
-		if (this.countdown > 3)
+		if (countdown > 3)
 		{
-			return this.countdown;
+			return countdown;
 		}
 
 		// Broadcast countdown to duelists
 		SystemMessage sm = null;
-		if (this.countdown > 0)
+		if (countdown > 0)
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_DUEL_WILL_BEGIN_IN_S1_SECONDS);
-			sm.addNumber(this.countdown);
+			sm.addNumber(countdown);
 		}
 		else
 		{
@@ -734,7 +734,7 @@ public class Duel
 		broadcastToTeam1(sm);
 		broadcastToTeam2(sm);
 
-		return this.countdown;
+		return countdown;
 	}
 
 	/**
@@ -742,11 +742,11 @@ public class Duel
 	 */
 	public void endDuel(DuelResultEnum result)
 	{
-		if (this.playerA == null || this.playerB == null)
+		if (playerA == null || playerB == null)
 		{
 			//clean up
-			this.playerConditions.clear();
-			this.playerConditions = null;
+			playerConditions.clear();
+			playerConditions = null;
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
@@ -759,7 +759,7 @@ public class Duel
 			case Team2Surrender:
 				restorePlayerConditions(false);
 				// send SystemMessage
-				if (this.partyDuel)
+				if (partyDuel)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_PARTY_HAS_WON_THE_DUEL);
 				}
@@ -767,7 +767,7 @@ public class Duel
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_DUEL);
 				}
-				sm.addString(this.playerA.getName());
+				sm.addString(playerA.getName());
 
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
@@ -776,7 +776,7 @@ public class Duel
 			case Team2Win:
 				restorePlayerConditions(false);
 				// send SystemMessage
-				if (this.partyDuel)
+				if (partyDuel)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_PARTY_HAS_WON_THE_DUEL);
 				}
@@ -784,7 +784,7 @@ public class Duel
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_WON_THE_DUEL);
 				}
-				sm.addString(this.playerB.getName());
+				sm.addString(playerB.getName());
 
 				broadcastToTeam1(sm);
 				broadcastToTeam2(sm);
@@ -814,7 +814,7 @@ public class Duel
 
 		// Send end duel packet
 		ExDuelEnd duelEnd = null;
-		if (this.partyDuel)
+		if (partyDuel)
 		{
 			duelEnd = new ExDuelEnd(1);
 		}
@@ -827,8 +827,8 @@ public class Duel
 		broadcastToTeam2(duelEnd);
 
 		//clean up
-		this.playerConditions.clear();
-		this.playerConditions = null;
+		playerConditions.clear();
+		playerConditions = null;
 		DuelManager.getInstance().removeDuel(this);
 	}
 
@@ -840,15 +840,15 @@ public class Duel
 	public DuelResultEnum checkEndDuelCondition()
 	{
 		// one of the players might leave during duel
-		if (this.playerA == null || this.playerB == null)
+		if (playerA == null || playerB == null)
 		{
 			return DuelResultEnum.Canceled;
 		}
 
 		// got a duel surrender request?
-		if (this.surrenderRequest != 0)
+		if (surrenderRequest != 0)
 		{
-			if (this.surrenderRequest == 1)
+			if (surrenderRequest == 1)
 			{
 				return DuelResultEnum.Team1Surrender;
 			}
@@ -863,13 +863,13 @@ public class Duel
 			return DuelResultEnum.Timeout;
 		}
 		// Has a player been declared winner yet?
-		else if (this.playerA.getDuelState() == DUELSTATE_WINNER)
+		else if (playerA.getDuelState() == DUELSTATE_WINNER)
 		{
 			// If there is a Winner already there should be no more fighting going on
 			stopFighting();
 			return DuelResultEnum.Team1Win;
 		}
-		else if (this.playerB.getDuelState() == DUELSTATE_WINNER)
+		else if (playerB.getDuelState() == DUELSTATE_WINNER)
 		{
 			// If there is a Winner already there should be no more fighting going on
 			stopFighting();
@@ -877,16 +877,16 @@ public class Duel
 		}
 
 		// More end duel conditions for 1on1 duels
-		else if (!this.partyDuel)
+		else if (!partyDuel)
 		{
 			// Duel was interrupted e.g.: player was attacked by mobs / other players
-			if (this.playerA.getDuelState() == DUELSTATE_INTERRUPTED || this.playerB.getDuelState() == DUELSTATE_INTERRUPTED)
+			if (playerA.getDuelState() == DUELSTATE_INTERRUPTED || playerB.getDuelState() == DUELSTATE_INTERRUPTED)
 			{
 				return DuelResultEnum.Canceled;
 			}
 
 			// Are the players too far apart?
-			if (!this.playerA.isInsideRadius(this.playerB, 1600, false, false))
+			if (!playerA.isInsideRadius(playerB, 1600, false, false))
 			{
 				return DuelResultEnum.Canceled;
 			}
@@ -898,9 +898,9 @@ public class Duel
 			}
 
 			// is one of the players in a Siege, Peace or PvP zone?
-			if (this.playerA.isInsideZone(L2Character.ZONE_PEACE) || this.playerB.isInsideZone(L2Character.ZONE_PEACE) ||
-					this.playerA.isInsideZone(L2Character.ZONE_SIEGE) || this.playerB.isInsideZone(L2Character.ZONE_SIEGE) ||
-					this.playerA.isInsideZone(L2Character.ZONE_PVP) || this.playerB.isInsideZone(L2Character.ZONE_PVP))
+			if (playerA.isInsideZone(L2Character.ZONE_PEACE) || playerB.isInsideZone(L2Character.ZONE_PEACE) ||
+					playerA.isInsideZone(L2Character.ZONE_SIEGE) || playerB.isInsideZone(L2Character.ZONE_SIEGE) ||
+					playerA.isInsideZone(L2Character.ZONE_PVP) || playerB.isInsideZone(L2Character.ZONE_PVP))
 			{
 				return DuelResultEnum.Canceled;
 			}
@@ -917,7 +917,7 @@ public class Duel
 	public void doSurrender(L2PcInstance player)
 	{
 		// already recived a surrender request
-		if (this.surrenderRequest != 0)
+		if (surrenderRequest != 0)
 		{
 			return;
 		}
@@ -926,28 +926,28 @@ public class Duel
 		stopFighting();
 
 		// TODO: Can every party member cancel a party duel? or only the party leaders?
-		if (this.partyDuel)
+		if (partyDuel)
 		{
-			if (this.playerA.getParty().getPartyMembers().contains(player))
+			if (playerA.getParty().getPartyMembers().contains(player))
 			{
-				this.surrenderRequest = 1;
-				for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+				surrenderRequest = 1;
+				for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 				{
 					temp.setDuelState(DUELSTATE_DEAD);
 				}
-				for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+				for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 				{
 					temp.setDuelState(DUELSTATE_WINNER);
 				}
 			}
-			else if (this.playerB.getParty().getPartyMembers().contains(player))
+			else if (playerB.getParty().getPartyMembers().contains(player))
 			{
-				this.surrenderRequest = 2;
-				for (L2PcInstance temp : this.playerB.getParty().getPartyMembers())
+				surrenderRequest = 2;
+				for (L2PcInstance temp : playerB.getParty().getPartyMembers())
 				{
 					temp.setDuelState(DUELSTATE_DEAD);
 				}
-				for (L2PcInstance temp : this.playerA.getParty().getPartyMembers())
+				for (L2PcInstance temp : playerA.getParty().getPartyMembers())
 				{
 					temp.setDuelState(DUELSTATE_WINNER);
 				}
@@ -955,17 +955,17 @@ public class Duel
 		}
 		else
 		{
-			if (player == this.playerA)
+			if (player == playerA)
 			{
-				this.surrenderRequest = 1;
-				this.playerA.setDuelState(DUELSTATE_DEAD);
-				this.playerB.setDuelState(DUELSTATE_WINNER);
+				surrenderRequest = 1;
+				playerA.setDuelState(DUELSTATE_DEAD);
+				playerB.setDuelState(DUELSTATE_WINNER);
 			}
-			else if (player == this.playerB)
+			else if (player == playerB)
 			{
-				this.surrenderRequest = 2;
-				this.playerB.setDuelState(DUELSTATE_DEAD);
-				this.playerA.setDuelState(DUELSTATE_WINNER);
+				surrenderRequest = 2;
+				playerB.setDuelState(DUELSTATE_DEAD);
+				playerA.setDuelState(DUELSTATE_WINNER);
 			}
 		}
 	}
@@ -978,7 +978,7 @@ public class Duel
 		// Set player as defeated
 		player.setDuelState(DUELSTATE_DEAD);
 
-		if (this.partyDuel)
+		if (partyDuel)
 		{
 			boolean teamdefeated = true;
 			for (L2PcInstance temp : player.getParty().getPartyMembers())
@@ -992,10 +992,10 @@ public class Duel
 
 			if (teamdefeated)
 			{
-				L2PcInstance winner = this.playerA;
-				if (this.playerA.getParty().getPartyMembers().contains(player))
+				L2PcInstance winner = playerA;
+				if (playerA.getParty().getPartyMembers().contains(player))
 				{
-					winner = this.playerB;
+					winner = playerB;
 				}
 
 				for (L2PcInstance temp : winner.getParty().getPartyMembers())
@@ -1006,18 +1006,18 @@ public class Duel
 		}
 		else
 		{
-			if (player != this.playerA && player != this.playerB)
+			if (player != playerA && player != playerB)
 			{
 				Log.warning("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
 			}
 
-			if (this.playerA == player)
+			if (playerA == player)
 			{
-				this.playerB.setDuelState(DUELSTATE_WINNER);
+				playerB.setDuelState(DUELSTATE_WINNER);
 			}
 			else
 			{
-				this.playerA.setDuelState(DUELSTATE_WINNER);
+				playerA.setDuelState(DUELSTATE_WINNER);
 			}
 		}
 	}
@@ -1028,33 +1028,33 @@ public class Duel
 	public void onRemoveFromParty(L2PcInstance player)
 	{
 		// if it isnt a party duel ignore this
-		if (!this.partyDuel)
+		if (!partyDuel)
 		{
 			return;
 		}
 
 		// this player is leaving his party during party duel
 		// if hes either playerA or playerB cancel the duel and port the players back
-		if (player == this.playerA || player == this.playerB)
+		if (player == playerA || player == playerB)
 		{
-			for (PlayerCondition pc : this.playerConditions)
+			for (PlayerCondition pc : playerConditions)
 			{
 				pc.teleportBack();
 				pc.getPlayer().setIsInDuel(0);
 			}
 
-			this.playerA = null;
-			this.playerB = null;
+			playerA = null;
+			playerB = null;
 		}
 		else
 		// teleport the player back & delete his PlayerCondition record
 		{
-			for (PlayerCondition pc : this.playerConditions)
+			for (PlayerCondition pc : playerConditions)
 			{
 				if (pc.getPlayer() == player)
 				{
 					pc.teleportBack();
-					this.playerConditions.remove(pc);
+					playerConditions.remove(pc);
 					break;
 				}
 			}
@@ -1064,7 +1064,7 @@ public class Duel
 
 	public void onBuff(L2PcInstance player, L2Abnormal debuff)
 	{
-		for (PlayerCondition pc : this.playerConditions)
+		for (PlayerCondition pc : playerConditions)
 		{
 			if (pc.getPlayer() == player)
 			{

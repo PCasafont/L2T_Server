@@ -34,8 +34,8 @@ public class L2SkillSweeper extends L2Skill
 	public L2SkillSweeper(StatsSet set)
 	{
 		super(set);
-		this.absorbHp = set.getBool("absorbHp", true);
-		this.absorbAbs = set.getInteger("absorbAbs", -1);
+		absorbHp = set.getBool("absorbHp", true);
+		absorbAbs = set.getInteger("absorbAbs", -1);
 	}
 
 	@Override
@@ -46,11 +46,11 @@ public class L2SkillSweeper extends L2Skill
 
 	public boolean isAbsorbHp()
 	{
-		return this.absorbHp;
+		return absorbHp;
 	}
 
 	public int getAbsorbAbs()
 	{
-		return this.absorbAbs;
+		return absorbAbs;
 	}
 }

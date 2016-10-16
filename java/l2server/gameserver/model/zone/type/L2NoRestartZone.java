@@ -41,11 +41,11 @@ public class L2NoRestartZone extends L2ZoneType
 	{
 		if (name.equalsIgnoreCase("EnabledByDefault"))
 		{
-			this.enabled = Boolean.parseBoolean(value);
+			enabled = Boolean.parseBoolean(value);
 		}
 		else if (name.equalsIgnoreCase("restartAllowedTime"))
 		{
-			this.restartAllowedTime = Integer.parseInt(value);
+			restartAllowedTime = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("restartTime"))
 		{
@@ -68,7 +68,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (!this.enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -89,7 +89,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (!this.enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -114,12 +114,12 @@ public class L2NoRestartZone extends L2ZoneType
 
 	public int getRestartAllowedTime()
 	{
-		return this.restartAllowedTime;
+		return restartAllowedTime;
 	}
 
 	public void setRestartAllowedTime(int time)
 	{
-		this.restartAllowedTime = time;
+		restartAllowedTime = time;
 	}
 
 	private static class TeleportTask implements Runnable
@@ -134,7 +134,7 @@ public class L2NoRestartZone extends L2ZoneType
 		@Override
 		public void run()
 		{
-			this.player.teleToLocation(TeleportWhereType.Town);
+			player.teleToLocation(TeleportWhereType.Town);
 		}
 	}
 }

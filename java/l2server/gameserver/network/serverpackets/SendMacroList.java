@@ -50,25 +50,25 @@ public class SendMacroList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.rev); // 0 - remove / 1 - add / 2 - edit
-		writeD(this.macro != null ? this.macro.id : 0); // Macro ID
-		writeC(this.count); // count of Macros
-		writeC(this.rev == 0 ? 0 : 1); // unknown
+		writeC(rev); // 0 - remove / 1 - add / 2 - edit
+		writeD(macro != null ? macro.id : 0); // Macro ID
+		writeC(count); // count of Macros
+		writeC(rev == 0 ? 0 : 1); // unknown
 
-		if (this.macro != null && this.rev != 0)
+		if (macro != null && rev != 0)
 		{
-			writeD(this.macro.id); // Macro ID
-			writeS(this.macro.name); // Macro Name
-			writeS(this.macro.descr); // Desc
-			writeS(this.macro.acronym); // acronym
+			writeD(macro.id); // Macro ID
+			writeS(macro.name); // Macro Name
+			writeS(macro.descr); // Desc
+			writeS(macro.acronym); // acronym
 			writeH(104); // ???
-			writeH(this.macro.icon); // icon
+			writeH(macro.icon); // icon
 
-			writeC(this.macro.commands.length); // count
+			writeC(macro.commands.length); // count
 
-			for (int i = 0; i < this.macro.commands.length; i++)
+			for (int i = 0; i < macro.commands.length; i++)
 			{
-				L2Macro.L2MacroCmd cmd = this.macro.commands[i];
+				L2Macro.L2MacroCmd cmd = macro.commands[i];
 				writeC(i + 1); // i of count
 				writeC(cmd.type); // type 1 = skill, 3 = action, 4 = shortcut
 				writeD(cmd.d1); // skill id

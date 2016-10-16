@@ -36,11 +36,11 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	{
 		super(env, template);
 
-		this.triggeredId = template.triggeredId;
-		this.triggeredLevel = template.triggeredLevel;
-		this.triggeredEnchantRoute = template.triggeredEnchantRoute;
-		this.triggeredEnchantLevel = template.triggeredEnchantLevel;
-		this.chanceCondition = template.chanceCondition;
+		triggeredId = template.triggeredId;
+		triggeredLevel = template.triggeredLevel;
+		triggeredEnchantRoute = template.triggeredEnchantRoute;
+		triggeredEnchantLevel = template.triggeredEnchantLevel;
+		chanceCondition = template.chanceCondition;
 	}
 
 	// Special constructor to steal this effect
@@ -48,11 +48,11 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	{
 		super(env, effect);
 
-		this.triggeredId = effect.getTemplate().triggeredId;
-		this.triggeredLevel = effect.getTemplate().triggeredLevel;
-		this.triggeredEnchantRoute = effect.getTemplate().triggeredEnchantRoute;
-		this.triggeredEnchantLevel = effect.getTemplate().triggeredEnchantLevel;
-		this.chanceCondition = effect.getTemplate().chanceCondition;
+		triggeredId = effect.getTemplate().triggeredId;
+		triggeredLevel = effect.getTemplate().triggeredLevel;
+		triggeredEnchantRoute = effect.getTemplate().triggeredEnchantRoute;
+		triggeredEnchantLevel = effect.getTemplate().triggeredEnchantLevel;
+		chanceCondition = effect.getTemplate().chanceCondition;
 	}
 
 	@Override
@@ -72,12 +72,12 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	@Override
 	public boolean onActionTime()
 	{
-		L2Abnormal activeEffect = getEffected().getFirstEffect(this.triggeredId);
+		L2Abnormal activeEffect = getEffected().getFirstEffect(triggeredId);
 		if (activeEffect != null)
 		{
-			if (activeEffect.getLevel() == this.triggeredLevel &&
-					activeEffect.getEnchantRouteId() == this.triggeredEnchantRoute &&
-					activeEffect.getEnchantLevel() == this.triggeredEnchantLevel)
+			if (activeEffect.getLevel() == triggeredLevel &&
+					activeEffect.getEnchantRouteId() == triggeredEnchantRoute &&
+					activeEffect.getEnchantLevel() == triggeredEnchantLevel)
 			{
 				return true;
 			}
@@ -124,36 +124,36 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	@Override
 	public int getTriggeredChanceId()
 	{
-		return this.triggeredId;
+		return triggeredId;
 	}
 
 	@Override
 	public int getTriggeredChanceLevel()
 	{
-		return this.triggeredLevel;
+		return triggeredLevel;
 	}
 
 	@Override
 	public int getTriggeredChanceEnchantRoute()
 	{
-		return this.triggeredEnchantRoute;
+		return triggeredEnchantRoute;
 	}
 
 	@Override
 	public int getTriggeredChanceEnchantLevel()
 	{
-		return this.triggeredEnchantLevel;
+		return triggeredEnchantLevel;
 	}
 
 	@Override
 	public boolean triggersChanceSkill()
 	{
-		return this.triggeredId > 1;
+		return triggeredId > 1;
 	}
 
 	@Override
 	public ChanceCondition getTriggeredChanceCondition()
 	{
-		return this.chanceCondition;
+		return chanceCondition;
 	}
 }

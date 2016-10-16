@@ -46,17 +46,17 @@ public class ServerGui
 		this.frame.setJMenuBar(this.menuBar);*/
 
 		// Console Tab
-		this.consoleTab = new ConsoleTab(true);
-		this.adminTab = new AdminTab();
+		consoleTab = new ConsoleTab(true);
+		adminTab = new AdminTab();
 
 		Frame.setLayout(new BorderLayout());
 		Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		this.tabPane.add("Console", this.consoleTab);
-		this.tabPane.add("Admin", this.adminTab);
+		tabPane.add("Console", consoleTab);
+		tabPane.add("Admin", adminTab);
 
 		//build the frame
-		Frame.add(this.tabPane, BorderLayout.CENTER);
+		Frame.add(tabPane, BorderLayout.CENTER);
 
 		//add the window listeners
 		addListeners();
@@ -69,7 +69,7 @@ public class ServerGui
 
 	public JTabbedPane getTabPane()
 	{
-		return this.tabPane;
+		return tabPane;
 	}
 
 	private void addListeners()
@@ -104,11 +104,11 @@ public class ServerGui
 
 	public ConsoleTab getConsoleTab()
 	{
-		return this.consoleTab;
+		return consoleTab;
 	}
 
 	public AdminTab getAdminTab()
 	{
-		return this.adminTab;
+		return adminTab;
 	}
 }

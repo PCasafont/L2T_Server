@@ -34,7 +34,7 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
+		objectId = readD();
 	}
 
 	/**
@@ -54,7 +54,7 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = player.getInventory().getItemByObjectId(this.objectId);
+		L2ItemInstance item = player.getInventory().getItemByObjectId(objectId);
 		if (item == null)
 		{
 			return;

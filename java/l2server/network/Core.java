@@ -87,19 +87,19 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		STRING_BUFFER = new NioNetStringBuffer(64 * 1024);
 
-		this.pendingClose = new NioNetStackList<>();
-		this.bufferPool = new ArrayList<>();
+		pendingClose = new NioNetStackList<>();
+		bufferPool = new ArrayList<>();
 
 		for (int i = 0; i < HELPER_BUFFER_COUNT; i++)
 		{
-			this.bufferPool.add(ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER));
+			bufferPool.add(ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER));
 		}
 
 		this.acceptFilter = acceptFilter;
 		this.packetHandler = packetHandler;
 		this.clientFactory = clientFactory;
 		this.executor = executor;
-		this.selector = Selector.open();
+		selector = Selector.open();
 	}
 
 	public final void openServerSocket(InetAddress address, int tcpPort) throws IOException
@@ -118,25 +118,25 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			ss.bind(new InetSocketAddress(address, tcpPort));
 		}
 
-		selectable.register(this.selector, SelectionKey.OP_ACCEPT);
+		selectable.register(selector, SelectionKey.OP_ACCEPT);
 	}
 
 	final ByteBuffer getPooledBuffer()
 	{
-		if (this.bufferPool.isEmpty())
+		if (bufferPool.isEmpty())
 		{
 			return ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER);
 		}
 
-		return this.bufferPool.remove(0);
+		return bufferPool.remove(0);
 	}
 
 	final void recycleBuffer(final ByteBuffer buf)
 	{
-		if (this.bufferPool.size() < HELPER_BUFFER_COUNT)
+		if (bufferPool.size() < HELPER_BUFFER_COUNT)
 		{
 			buf.clear();
-			this.bufferPool.add(buf);
+			bufferPool.add(buf);
 		}
 	}
 
@@ -151,11 +151,11 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		Iterator<SelectionKey> selectedKeys;
 
-		while (!this.shutdown)
+		while (!shutdown)
 		{
 			try
 			{
-				selectedKeysCount = this.selector.selectNow();
+				selectedKeysCount = selector.selectNow();
 			}
 			catch (IOException e)
 			{
@@ -164,7 +164,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 			if (selectedKeysCount > 0)
 			{
-				selectedKeys = this.selector.selectedKeys().iterator();
+				selectedKeys = selector.selectedKeys().iterator();
 
 				while (selectedKeys.hasNext())
 				{
@@ -198,13 +198,13 @@ public final class Core<T extends MMOClient<?>> extends Thread
 				}
 			}
 
-			synchronized (this.pendingClose)
+			synchronized (pendingClose)
 			{
-				while (!this.pendingClose.isEmpty())
+				while (!pendingClose.isEmpty())
 				{
 					try
 					{
-						con = this.pendingClose.removeFirst();
+						con = pendingClose.removeFirst();
 						writeClosePacket(con);
 						closeConnectionImpl(con.getSelectionKey(), con);
 					}
@@ -256,12 +256,12 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		{
 			while ((sc = ssc.accept()) != null)
 			{
-				if (this.acceptFilter == null || this.acceptFilter.accept(sc))
+				if (acceptFilter == null || acceptFilter.accept(sc))
 				{
 					sc.configureBlocking(false);
-					SelectionKey clientKey = sc.register(this.selector, SelectionKey.OP_READ);
+					SelectionKey clientKey = sc.register(selector, SelectionKey.OP_READ);
 					con = new MMOConnection<>(this, sc.socket(), clientKey, TCP_NODELAY);
-					con.setClient(this.clientFactory.create(con));
+					con.setClient(clientFactory.create(con));
 					clientKey.attach(con);
 				}
 				else
@@ -446,7 +446,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			// apply limit
 			final int limit = buf.limit();
 			buf.limit(pos + dataSize);
-			final ReceivablePacket<T> cp = this.packetHandler.handlePacket(buf, client);
+			final ReceivablePacket<T> cp = packetHandler.handlePacket(buf, client);
 
 			if (cp != null)
 			{
@@ -456,7 +456,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 				if (cp.read())
 				{
-					this.executor.execute(cp);
+					executor.execute(cp);
 				}
 
 				cp.buf = null;
@@ -642,9 +642,9 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 	final void closeConnection(final MMOConnection<T> con)
 	{
-		synchronized (this.pendingClose)
+		synchronized (pendingClose)
 		{
-			this.pendingClose.addLast(con);
+			pendingClose.addLast(con);
 		}
 	}
 
@@ -679,12 +679,12 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 	public final void shutdown()
 	{
-		this.shutdown = true;
+		shutdown = true;
 	}
 
 	protected void closeSelectorThread()
 	{
-		for (final SelectionKey key : this.selector.keys())
+		for (final SelectionKey key : selector.keys())
 		{
 			try
 			{
@@ -698,7 +698,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		try
 		{
-			this.selector.close();
+			selector.close();
 		}
 		catch (IOException e)
 		{

@@ -100,7 +100,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 			if (currencyId != -1 && !item.isEquipped() && EnchantItemTable.isEnchantable(item) &&
 					item.getEnchantLevel() < this.config.enchantLevel)
 			{
-				this.mainIngredients.add(item);
+				mainIngredients.add(item);
 			}
 		}
 	}
@@ -109,18 +109,18 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeD(this.config.shopId); // list id
+		writeD(config.shopId); // list id
 		writeC(0x00);
 		writeD(0x01); // page
 		writeD(0x01); // finished
 		writeD(MultiSell.PAGE_SIZE); // size of pages
-		writeD(this.mainIngredients.size()); //list length
+		writeD(mainIngredients.size()); //list length
 		writeC(0x00); // Old or modern format
 		writeD(0x00);
 
-		if (!this.mainIngredients.isEmpty())
+		if (!mainIngredients.isEmpty())
 		{
-			for (L2ItemInstance item : this.mainIngredients)
+			for (L2ItemInstance item : mainIngredients)
 			{
 				writeD(item.getObjectId()); // entry id
 				writeC(0x00); // stackable
@@ -147,7 +147,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 				writeQ(item.getItem().getBodyPart());
 				writeH(item.getItem().getType2());
 				writeQ(item.getCount());
-				writeH(this.config.enchantLevel); //enchant lvl
+				writeH(config.enchantLevel); //enchant lvl
 				writeD(100); // Chance
 				if (item.isAugmented())
 				{
@@ -211,13 +211,13 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 				}
 
 				// Currency
-				int currencyId = item.isWeapon() ? this.config.weaponMaterialId :
+				int currencyId = item.isWeapon() ? config.weaponMaterialId :
 						item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR &&
-								item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? this.config.jewelMaterialId :
-								this.config.armorMaterialId;
+								item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? config.jewelMaterialId :
+								config.armorMaterialId;
 				writeD(currencyId);
 				writeH(ItemTable.getInstance().getTemplate(currencyId).getType2());
-				writeQ(item.isWeapon() ? this.config.costCount : (int) (this.config.costCount / this.config.priceDividerForArmor));
+				writeQ(item.isWeapon() ? config.costCount : (int) (config.costCount / config.priceDividerForArmor));
 				writeH(0x00); // enchant lvl
 				writeQ(0x00); // augmentation
 				writeH(0x00); // T1 element id

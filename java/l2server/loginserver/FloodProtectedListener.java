@@ -42,11 +42,11 @@ public abstract class FloodProtectedListener extends Thread
 		this.listenIp = listenIp;
 		if (this.listenIp.equals("*"))
 		{
-			this.serverSocket = new ServerSocket(this.port);
+			serverSocket = new ServerSocket(this.port);
 		}
 		else
 		{
-			this.serverSocket = new ServerSocket(this.port, 50, InetAddress.getByName(this.listenIp));
+			serverSocket = new ServerSocket(this.port, 50, InetAddress.getByName(this.listenIp));
 		}
 	}
 
@@ -59,10 +59,10 @@ public abstract class FloodProtectedListener extends Thread
 		{
 			try
 			{
-				connection = this.serverSocket.accept();
+				connection = serverSocket.accept();
 				if (Config.FLOOD_PROTECTION)
 				{
-					ForeignConnection fConnection = this.floodProtection.get(connection.getInetAddress().getHostAddress());
+					ForeignConnection fConnection = floodProtection.get(connection.getInetAddress().getHostAddress());
 					if (fConnection != null)
 					{
 						fConnection.connectionNumber += 1;
@@ -93,7 +93,7 @@ public abstract class FloodProtectedListener extends Thread
 					else
 					{
 						fConnection = new ForeignConnection(System.currentTimeMillis());
-						this.floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
+						floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
 					}
 				}
 				addClient(connection);
@@ -112,7 +112,7 @@ public abstract class FloodProtectedListener extends Thread
 					// shutdown?
 					try
 					{
-						this.serverSocket.close();
+						serverSocket.close();
 					}
 					catch (IOException io)
 					{
@@ -148,13 +148,13 @@ public abstract class FloodProtectedListener extends Thread
 		{
 			return;
 		}
-		ForeignConnection fConnection = this.floodProtection.get(ip);
+		ForeignConnection fConnection = floodProtection.get(ip);
 		if (fConnection != null)
 		{
 			fConnection.connectionNumber -= 1;
 			if (fConnection.connectionNumber == 0)
 			{
-				this.floodProtection.remove(ip);
+				floodProtection.remove(ip);
 			}
 		}
 		else
@@ -167,7 +167,7 @@ public abstract class FloodProtectedListener extends Thread
 	{
 		try
 		{
-			this.serverSocket.close();
+			serverSocket.close();
 		}
 		catch (IOException e)
 		{

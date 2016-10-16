@@ -34,9 +34,9 @@ public final class ExShowBeautyMenuPacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.isRestore ? 1 : 0); //0 add 1 remove
-		writeD(this.player.getAppearance().getHairStyle());
-		writeD(this.player.getAppearance().getHairColor());
-		writeD(this.player.getAppearance().getFace());
+		writeD(isRestore ? 1 : 0); //0 add 1 remove
+		writeD(player.getAppearance().getHairStyle());
+		writeD(player.getAppearance().getHairColor());
+		writeD(player.getAppearance().getFace());
 	}
 }

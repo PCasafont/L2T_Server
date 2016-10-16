@@ -34,7 +34,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.change = readD() == 1;
+		change = readD() == 1;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!this.change)
+		if (!change)
 		{
 			return;
 		}

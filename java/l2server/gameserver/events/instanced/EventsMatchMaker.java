@@ -44,10 +44,10 @@ public class EventsMatchMaker
 	{
 		if (Config.INSTANCED_EVENT_ENABLED)
 		{
-			this.pvpTask = new MatchMakingTask(true);
-			this.specialTask = new MatchMakingTask(false);
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this.pvpTask, 60000L, 10000L);
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this.specialTask, 60000L, 10000L);
+			pvpTask = new MatchMakingTask(true);
+			specialTask = new MatchMakingTask(false);
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(pvpTask, 60000L, 10000L);
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(specialTask, 60000L, 10000L);
 			Log.info("Instanced Events scheduled.");
 		}
 		else
@@ -58,12 +58,12 @@ public class EventsMatchMaker
 
 	public MatchMakingTask getPvpTask()
 	{
-		return this.pvpTask;
+		return pvpTask;
 	}
 
 	public MatchMakingTask getSpecialTask()
 	{
-		return this.specialTask;
+		return specialTask;
 	}
 
 	class MatchMakingTask implements Runnable
@@ -77,7 +77,7 @@ public class EventsMatchMaker
 		MatchMakingTask(boolean pvp)
 		{
 			this.pvp = pvp;
-			this.currentConfig = new EventConfig(this.pvp);
+			currentConfig = new EventConfig(this.pvp);
 		}
 
 		@Override
@@ -118,30 +118,30 @@ public class EventsMatchMaker
 
 		public EventConfig getCurrentConfig()
 		{
-			return this.currentConfig;
+			return currentConfig;
 		}
 
 		public Map<Integer, L2PcInstance> getRegisteredPlayers()
 		{
-			return this.registeredPlayers;
+			return registeredPlayers;
 		}
 
 		public int getFillProgress()
 		{
-			return this.fillProgress;
+			return fillProgress;
 		}
 
 		private boolean prepare()
 		{
-			if (this.registeredPlayers.isEmpty())
+			if (registeredPlayers.isEmpty())
 			{
 				return false;
 			}
 
 			// First sort the registered players
-			int[][] sorted = new int[this.registeredPlayers.size()][2];
+			int[][] sorted = new int[registeredPlayers.size()][2];
 			int i = 0;
-			for (L2PcInstance player : this.registeredPlayers.values())
+			for (L2PcInstance player : registeredPlayers.values())
 			{
 				if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
 						player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
@@ -181,22 +181,22 @@ public class EventsMatchMaker
 			int bestFillProgress = 0;
 			while (i < sorted.length)
 			{
-				group = new int[this.currentConfig.getLocation().getMaxPlayers()];
+				group = new int[currentConfig.getLocation().getMaxPlayers()];
 				int points = sorted[i][1];
 				int j = 0;
-				while (i + j < sorted.length && (j < this.currentConfig.getMinPlayers() ||
-						j < this.currentConfig.getLocation().getMaxPlayers() &&
-								(points - sorted[i + j][1] < 15000 || this.currentConfig.hasNoLevelLimits())))
+				while (i + j < sorted.length && (j < currentConfig.getMinPlayers() ||
+						j < currentConfig.getLocation().getMaxPlayers() &&
+								(points - sorted[i + j][1] < 15000 || currentConfig.hasNoLevelLimits())))
 				{
 					group[j] = sorted[i + j][0];
 					j++;
 				}
 
-				int minPlayers = this.currentConfig.getMinPlayers();
-				if (this.prepareAttempts < 100)
+				int minPlayers = currentConfig.getMinPlayers();
+				if (prepareAttempts < 100)
 				{
-					minPlayers += (this.currentConfig.getLocation().getMaxPlayers() - this.currentConfig.getMinPlayers()) *
-							(100 - this.prepareAttempts) / 100;
+					minPlayers += (currentConfig.getLocation().getMaxPlayers() - currentConfig.getMinPlayers()) *
+							(100 - prepareAttempts) / 100;
 				}
 
 				if (j >= minPlayers)
@@ -214,28 +214,28 @@ public class EventsMatchMaker
 				i += j;
 			}
 
-			this.fillProgress = bestFillProgress;
+			fillProgress = bestFillProgress;
 
 			// And finally create the event instances according to the generated groups
 			if (group != null)
 			{
-				EventInstance ei = createInstance(nextInstanceId++, group, this.currentConfig);
+				EventInstance ei = createInstance(nextInstanceId++, group, currentConfig);
 				if (ei != null)
 				{
 					Instances.put(ei.getId(), ei);
-					this.currentConfig = new EventConfig(this.pvp);
-					this.prepareAttempts = 0;
-					this.fillProgress = 0;
-					String type = this.pvp ? "PvP" : "special";
+					currentConfig = new EventConfig(pvp);
+					prepareAttempts = 0;
+					fillProgress = 0;
+					String type = pvp ? "PvP" : "special";
 					Announcements.getInstance().announceToAll(
 							"The " + type + " event has been set up to start. The next event will be a " +
-									this.currentConfig.getEventString() + ". Type .event to join.");
+									currentConfig.getEventString() + ". Type .event to join.");
 
 					for (EventTeam team : ei.getTeams())
 					{
 						for (int memberId : team.getParticipatedPlayers().keySet())
 						{
-							this.registeredPlayers.remove(memberId);
+							registeredPlayers.remove(memberId);
 						}
 					}
 				}
@@ -245,16 +245,16 @@ public class EventsMatchMaker
 
 			prepareAttempts++;
 
-			if (this.prepareAttempts > 200)
+			if (prepareAttempts > 200)
 			{
-				this.currentConfig = new EventConfig(this.pvp);
-				this.prepareAttempts = 0;
-				this.fillProgress = 0;
-				String type = this.pvp ? "PvP" : "special";
+				currentConfig = new EventConfig(pvp);
+				prepareAttempts = 0;
+				fillProgress = 0;
+				String type = pvp ? "PvP" : "special";
 				Announcements.getInstance().announceToAll(
 						"The " + type + " event couldn't start after almost an hour waiting, shuffling configuration.");
 				Announcements.getInstance().announceToAll(
-						"The new " + type + " event will be a " + this.currentConfig.getEventString() +
+						"The new " + type + " event will be a " + currentConfig.getEventString() +
 								". Type .event to join.");
 			}
 
@@ -375,11 +375,11 @@ public class EventsMatchMaker
 
 		if (pvp)
 		{
-			this.pvpTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
+			pvpTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
 		}
 		else
 		{
-			this.specialTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
+			specialTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
 		}
 
 		return true;
@@ -406,8 +406,8 @@ public class EventsMatchMaker
 
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if (this.pvpTask.getRegisteredPlayers().remove(playerObjectId) != null ||
-				this.specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
+		if (pvpTask.getRegisteredPlayers().remove(playerObjectId) != null ||
+				specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
 		{
 			return true;
 		}
@@ -450,7 +450,7 @@ public class EventsMatchMaker
 		a = a.replace("%pvpEventId%", String.valueOf(getInstance().getPvpTask().getCurrentConfig().getEventImageId()));
 		a = a.replace("%pvpInfoLink%", String.valueOf(getInstance().getPvpTask().getCurrentConfig().getType()));
 
-		if (this.pvpTask.getRegisteredPlayers().isEmpty())
+		if (pvpTask.getRegisteredPlayers().isEmpty())
 		{
 			a = a.replace("%pvpEventPlayers%", "");
 			a = a.replace("Registred Players At PvP Event", "");
@@ -469,7 +469,7 @@ public class EventsMatchMaker
 				String.valueOf(getInstance().getSpecialTask().getCurrentConfig().getEventImageId()));
 		a = a.replace("%specialInfoLink%", String.valueOf(getInstance().getSpecialTask().getCurrentConfig().getType()));
 
-		if (this.specialTask.getRegisteredPlayers().isEmpty())
+		if (specialTask.getRegisteredPlayers().isEmpty())
 		{
 			a = a.replace("%specialEventPlayers%", "");
 			a = a.replace("Registred Players At Special Event", "");
@@ -559,12 +559,12 @@ public class EventsMatchMaker
 	{
 		String a = "";
 
-		if (this.pvpTask.getRegisteredPlayers().isEmpty())
+		if (pvpTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
 
-		for (L2PcInstance participant : this.pvpTask.getRegisteredPlayers().values())
+		for (L2PcInstance participant : pvpTask.getRegisteredPlayers().values())
 		{
 			if (participant == null)
 			{
@@ -585,12 +585,12 @@ public class EventsMatchMaker
 	{
 		String a = "";
 
-		if (this.specialTask.getRegisteredPlayers().isEmpty())
+		if (specialTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
 
-		for (L2PcInstance participant : this.specialTask.getRegisteredPlayers().values())
+		for (L2PcInstance participant : specialTask.getRegisteredPlayers().values())
 		{
 			if (participant == null)
 			{
@@ -696,8 +696,8 @@ public class EventsMatchMaker
 
 	public boolean isPlayerParticipant(int playerObjectId)
 	{
-		if (this.pvpTask.getRegisteredPlayers().containsKey(playerObjectId) ||
-				this.specialTask.getRegisteredPlayers().containsKey(playerObjectId))
+		if (pvpTask.getRegisteredPlayers().containsKey(playerObjectId) ||
+				specialTask.getRegisteredPlayers().containsKey(playerObjectId))
 		{
 			return true;
 		}
@@ -773,7 +773,7 @@ public class EventsMatchMaker
 			return false;
 		}
 
-		for (L2PcInstance registered : this.pvpTask.getRegisteredPlayers().values())
+		for (L2PcInstance registered : pvpTask.getRegisteredPlayers().values())
 		{
 			if (registered == null)
 			{
@@ -787,7 +787,7 @@ public class EventsMatchMaker
 			}
 		}
 
-		for (L2PcInstance registered : this.specialTask.getRegisteredPlayers().values())
+		for (L2PcInstance registered : specialTask.getRegisteredPlayers().values())
 		{
 			if (registered == null)
 			{

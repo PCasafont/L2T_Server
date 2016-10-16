@@ -31,7 +31,7 @@ public class PetDelete extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.petType);
-		writeD(this.petObjId);
+		writeD(petType);
+		writeD(petObjId);
 	}
 }

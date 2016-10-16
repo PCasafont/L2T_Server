@@ -29,7 +29,7 @@ public class ExChangeAttributeInfo extends L2GameServerPacket
 	{
 		this.itemOID = itemOID;
 		this.attributeOID = attributeOID;
-		this.attributes = attribute;
+		attributes = attribute;
 	}
 
 	@Override

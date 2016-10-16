@@ -43,7 +43,7 @@ public class ExtraDropTable
 
 	private ExtraDropTable()
 	{
-		this.extraGroups = new TIntObjectHashMap<>();
+		extraGroups = new TIntObjectHashMap<>();
 		if (!Config.IS_CLASSIC)
 		{
 			restoreData();
@@ -99,7 +99,7 @@ public class ExtraDropTable
 								extraGroup.add(dc);
 							}
 						}
-						this.extraGroups.put(id, extraGroup);
+						extraGroups.put(id, extraGroup);
 					}
 				}
 			}
@@ -108,7 +108,7 @@ public class ExtraDropTable
 
 	public ArrayList<L2DropCategory> getExtraDroplist(int groupId)
 	{
-		return this.extraGroups.get(groupId);
+		return extraGroups.get(groupId);
 	}
 
 	@SuppressWarnings("synthetic-access")

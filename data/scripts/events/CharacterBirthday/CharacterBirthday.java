@@ -62,10 +62,10 @@ public class CharacterBirthday extends Quest
 	public CharacterBirthday(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.npc);
-		addFirstTalkId(this.npc);
-		addTalkId(this.npc);
-		for (int id : this.gk)
+		addStartNpc(npc);
+		addFirstTalkId(npc);
+		addTalkId(npc);
+		for (int id : gk)
 		{
 			addStartNpc(id);
 			addTalkId(id);

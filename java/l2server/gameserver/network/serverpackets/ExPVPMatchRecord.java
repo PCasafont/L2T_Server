@@ -17,9 +17,9 @@ public class ExPVPMatchRecord extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.kills);
+		writeD(kills);
 		writeD(0x00); // ranking2
-		writeD(this.teamsSize);
+		writeD(teamsSize);
 		writeD(0x00); // ranking1
 		writeD(0x00); // kills3
 	}

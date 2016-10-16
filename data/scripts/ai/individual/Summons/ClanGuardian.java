@@ -42,7 +42,7 @@ public class ClanGuardian extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addSpawnId(this.clanGuardian);
+        addSpawnId(clanGuardian);
     }
 
     @Override
@@ -63,8 +63,8 @@ public class ClanGuardian extends L2AttackableAIScript
 
         protected ClanGuardianAI(L2Summon npc)
         {
-            this.clanGuardian = npc;
-            this.owner = npc.getOwner();
+			clanGuardian = npc;
+			owner = npc.getOwner();
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
@@ -75,23 +75,24 @@ public class ClanGuardian extends L2AttackableAIScript
         @Override
         public void run()
         {
-            if (this.clanGuardian == null || this.clanGuardian.isDead() || !this.owner.getSummons().contains(this.clanGuardian))
+            if (clanGuardian == null || clanGuardian.isDead() || !owner.getSummons().contains(
+					clanGuardian))
             {
-                if (this.schedule != null)
+                if (schedule != null)
                 {
-                    this.schedule.cancel(true);
+					schedule.cancel(true);
                     return;
                 }
             }
 
-            Collection<L2PcInstance> players = this.clanGuardian.getKnownList().getKnownPlayersInRadius(500);
+            Collection<L2PcInstance> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
 
             for (L2PcInstance player : players)
             {
-                if (isValidTarget(player, this.clanGuardian))
+                if (isValidTarget(player, clanGuardian))
                 {
-                    this.clanGuardian.setTarget(player);
-                    this.clanGuardian.doCast(clanGuardianRecovery);
+					clanGuardian.setTarget(player);
+					clanGuardian.doCast(clanGuardianRecovery);
                 }
             }
         }

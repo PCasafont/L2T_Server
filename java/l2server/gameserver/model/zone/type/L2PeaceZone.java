@@ -32,13 +32,13 @@ public class L2PeaceZone extends L2ZoneType
 	{
 		super(id);
 
-		this.enabled = true;
+		enabled = true;
 	}
 
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (!this.enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -69,12 +69,12 @@ public class L2PeaceZone extends L2ZoneType
 
 	public boolean isEnabled()
 	{
-		return this.enabled;
+		return enabled;
 	}
 
 	public void setZoneEnabled(boolean val)
 	{
-		this.enabled = val;
+		enabled = val;
 
 		for (L2Character chara : getCharactersInside().values())
 		{
@@ -83,7 +83,7 @@ public class L2PeaceZone extends L2ZoneType
 				continue;
 			}
 
-			if (this.enabled)
+			if (enabled)
 			{
 				onEnter(chara);
 			}

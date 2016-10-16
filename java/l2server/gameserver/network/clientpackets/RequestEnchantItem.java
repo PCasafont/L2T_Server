@@ -46,8 +46,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.supportId = readD();
+		objectId = readD();
+		supportId = readD();
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null || this.objectId == 0)
+		if (activeChar == null || objectId == 0)
 		{
 			return;
 		}
@@ -73,7 +73,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
 
@@ -96,7 +96,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		EnchantSupportItem supportTemplate = null;
 		if (support != null)
 		{
-			if (support.getObjectId() != this.supportId)
+			if (support.getObjectId() != supportId)
 			{
 				activeChar.setActiveEnchantItem(null);
 				return;

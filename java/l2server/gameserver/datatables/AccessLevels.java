@@ -69,7 +69,7 @@ public class AccessLevels
 	private AccessLevels()
 	{
 		loadAccessLevels();
-		this.accessLevels.put(this.userAccessLevelNum, this.userAccessLevel);
+		accessLevels.put(userAccessLevelNum, userAccessLevel);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class AccessLevels
 	 */
 	private void loadAccessLevels()
 	{
-		this.accessLevels.clear();
+		accessLevels.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -87,18 +87,18 @@ public class AccessLevels
 			{
 				int accessLevel = n.getInt("id");
 				String name = n.getString("name");
-				if (accessLevel == this.userAccessLevelNum)
+				if (accessLevel == userAccessLevelNum)
 				{
 					Log.warning(
 							"AccessLevels: Access level with name " + name + " is using reserved user access level " +
-									this.userAccessLevelNum + ". Ignoring it!");
+									userAccessLevelNum + ". Ignoring it!");
 					continue;
 				}
-				else if (accessLevel == this.masterAccessLevelNum)
+				else if (accessLevel == masterAccessLevelNum)
 				{
 					Log.warning(
 							"AccessLevels: Access level with name " + name + " is using reserved master access level " +
-									this.masterAccessLevelNum + ". Ignoring it!");
+									masterAccessLevelNum + ". Ignoring it!");
 					continue;
 				}
 				else if (accessLevel < 0)
@@ -138,14 +138,14 @@ public class AccessLevels
 				boolean takeAggro = n.getBool("takeAggro");
 				boolean gainExp = n.getBool("gainExp");
 
-				this.accessLevels.put(accessLevel,
+				accessLevels.put(accessLevel,
 						new L2AccessLevel(accessLevel, name, nameColor, titleColor, childs.isEmpty() ? null : childs,
 								isGm, allowPeaceAttack, allowFixedRes, allowTransaction, allowAltG, giveDamage,
 								takeAggro, gainExp));
 			}
 		}
 
-		Log.info("AccessLevels: Loaded " + this.accessLevels.size() + " access levels.");
+		Log.info("AccessLevels: Loaded " + accessLevels.size() + " access levels.");
 	}
 
 	/**
@@ -158,23 +158,23 @@ public class AccessLevels
 	{
 		L2AccessLevel accessLevel = null;
 
-		synchronized (this.accessLevels)
+		synchronized (accessLevels)
 		{
-			accessLevel = this.accessLevels.get(accessLevelNum);
+			accessLevel = accessLevels.get(accessLevelNum);
 		}
 		return accessLevel;
 	}
 
 	public void addBanAccessLevel(int accessLevel)
 	{
-		synchronized (this.accessLevels)
+		synchronized (accessLevels)
 		{
 			if (accessLevel > -1)
 			{
 				return;
 			}
 
-			this.accessLevels.put(accessLevel,
+			accessLevels.put(accessLevel,
 					new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false,
 							false, false));
 		}

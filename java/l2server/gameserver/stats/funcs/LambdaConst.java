@@ -33,6 +33,6 @@ public final class LambdaConst extends Lambda
 	@Override
 	public double calc(Env env)
 	{
-		return this.value;
+		return value;
 	}
 }

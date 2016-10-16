@@ -27,19 +27,19 @@ public class FastNodeList
 
 	public FastNodeList(int size)
 	{
-		this.list = new AbstractNode[size];
+		list = new AbstractNode[size];
 	}
 
 	public void add(AbstractNode n)
 	{
-		this.list[this.size++] = n;
+		list[size++] = n;
 	}
 
 	public boolean contains(AbstractNode n)
 	{
-		for (int i = 0; i < this.size; i++)
+		for (int i = 0; i < size; i++)
 		{
-			if (this.list[i].equals(n))
+			if (list[i].equals(n))
 			{
 				return true;
 			}
@@ -49,9 +49,9 @@ public class FastNodeList
 
 	public boolean containsRev(AbstractNode n)
 	{
-		for (int i = this.size - 1; i >= 0; i--)
+		for (int i = size - 1; i >= 0; i--)
 		{
-			if (this.list[i].equals(n))
+			if (list[i].equals(n))
 			{
 				return true;
 			}

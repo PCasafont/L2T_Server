@@ -53,8 +53,8 @@ public class ClientStats
 	public ClientStats()
 	{
 		BUFFER_SIZE = Config.CLIENT_PACKET_QUEUE_MEASURE_INTERVAL;
-		this.packetsInSecond = new int[BUFFER_SIZE];
-		this.head = BUFFER_SIZE - 1;
+		packetsInSecond = new int[BUFFER_SIZE];
+		head = BUFFER_SIZE - 1;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class ClientStats
 	 */
 	protected final boolean dropPacket()
 	{
-		final boolean result = this.floodDetected || this.queueOverflowDetected;
+		final boolean result = floodDetected || queueOverflowDetected;
 		if (result)
 		{
 			droppedPackets++;
@@ -82,9 +82,9 @@ public class ClientStats
 		{
 			maxQueueSize = queueSize;
 		}
-		if (this.queueOverflowDetected && queueSize < 2)
+		if (queueOverflowDetected && queueSize < 2)
 		{
-			this.queueOverflowDetected = false;
+			queueOverflowDetected = false;
 		}
 
 		return countPacket();
@@ -98,15 +98,15 @@ public class ClientStats
 		unknownPackets++;
 
 		final long tick = System.currentTimeMillis();
-		if (tick - this.unknownPacketStartTick > 60000)
+		if (tick - unknownPacketStartTick > 60000)
 		{
-			this.unknownPacketStartTick = tick;
-			this.unknownPacketsInMin = 1;
+			unknownPacketStartTick = tick;
+			unknownPacketsInMin = 1;
 			return false;
 		}
 
-		this.unknownPacketsInMin++;
-		return this.unknownPacketsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN;
+		unknownPacketsInMin++;
+		return unknownPacketsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN;
 	}
 
 	/**
@@ -135,19 +135,19 @@ public class ClientStats
 	 */
 	protected final boolean countQueueOverflow()
 	{
-		this.queueOverflowDetected = true;
+		queueOverflowDetected = true;
 		totalQueueOverflows++;
 
 		final long tick = System.currentTimeMillis();
-		if (tick - this.overflowStartTick > 60000)
+		if (tick - overflowStartTick > 60000)
 		{
-			this.overflowStartTick = tick;
-			this.overflowsInMin = 1;
+			overflowStartTick = tick;
+			overflowsInMin = 1;
 			return false;
 		}
 
-		this.overflowsInMin++;
-		return this.overflowsInMin > Config.CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN;
+		overflowsInMin++;
+		return overflowsInMin > Config.CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN;
 	}
 
 	/**
@@ -158,15 +158,15 @@ public class ClientStats
 		totalUnderflowExceptions++;
 
 		final long tick = System.currentTimeMillis();
-		if (tick - this.underflowReadStartTick > 60000)
+		if (tick - underflowReadStartTick > 60000)
 		{
-			this.underflowReadStartTick = tick;
-			this.underflowReadsInMin = 1;
+			underflowReadStartTick = tick;
+			underflowReadsInMin = 1;
 			return false;
 		}
 
-		this.underflowReadsInMin++;
-		return this.underflowReadsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN;
+		underflowReadsInMin++;
+		return underflowReadsInMin > Config.CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN;
 	}
 
 	/**
@@ -174,12 +174,12 @@ public class ClientStats
 	 */
 	protected final boolean countFloods()
 	{
-		return this.floodsInMin > Config.CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN;
+		return floodsInMin > Config.CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN;
 	}
 
 	private boolean longFloodDetected()
 	{
-		return this.totalCount / BUFFER_SIZE > Config.CLIENT_PACKET_QUEUE_MAX_AVERAGE_PACKETS_PER_SECOND;
+		return totalCount / BUFFER_SIZE > Config.CLIENT_PACKET_QUEUE_MAX_AVERAGE_PACKETS_PER_SECOND;
 	}
 
 	/**
@@ -188,33 +188,33 @@ public class ClientStats
 	 */
 	private synchronized boolean countPacket()
 	{
-		this.totalCount++;
+		totalCount++;
 		final long tick = System.currentTimeMillis();
-		if (tick - this.packetCountStartTick > 1000)
+		if (tick - packetCountStartTick > 1000)
 		{
-			this.packetCountStartTick = tick;
+			packetCountStartTick = tick;
 
 			// clear flag if no more flooding during last seconds
-			if (this.floodDetected && !longFloodDetected() &&
-					this.packetsInSecond[this.head] < Config.CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND / 2)
+			if (floodDetected && !longFloodDetected() &&
+					packetsInSecond[head] < Config.CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND / 2)
 			{
-				this.floodDetected = false;
+				floodDetected = false;
 			}
 
 			// wrap head of the buffer around the tail
-			if (this.head <= 0)
+			if (head <= 0)
 			{
-				this.head = BUFFER_SIZE;
+				head = BUFFER_SIZE;
 			}
-			this.head--;
+			head--;
 
-			this.totalCount -= this.packetsInSecond[this.head];
-			this.packetsInSecond[this.head] = 1;
-			return this.floodDetected;
+			totalCount -= packetsInSecond[head];
+			packetsInSecond[head] = 1;
+			return floodDetected;
 		}
 
-		final int count = ++packetsInSecond[this.head];
-		if (!this.floodDetected)
+		final int count = ++packetsInSecond[head];
+		if (!floodDetected)
 		{
 			if (count > Config.CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND)
 			{
@@ -229,15 +229,15 @@ public class ClientStats
 				return false;
 			}
 
-			this.floodDetected = true;
-			if (tick - this.floodStartTick > 60000)
+			floodDetected = true;
+			if (tick - floodStartTick > 60000)
 			{
-				this.floodStartTick = tick;
-				this.floodsInMin = 1;
+				floodStartTick = tick;
+				floodsInMin = 1;
 			}
 			else
 			{
-				this.floodsInMin++;
+				floodsInMin++;
 			}
 
 			return true; // Return true only in the beginning of the flood

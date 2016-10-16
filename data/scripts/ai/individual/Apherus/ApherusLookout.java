@@ -32,17 +32,17 @@ public class ApherusLookout extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addKillId(this.apherusLookout);
+		addKillId(apherusLookout);
 	}
 
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (npc.getNpcId() == this.apherusLookout)
+		if (npc.getNpcId() == apherusLookout)
 		{
 			for (int a = 0; a < 3; a++)
 			{
-				L2Npc aPackage = addSpawn(this.apherusPackage, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000, false);
+				L2Npc aPackage = addSpawn(apherusPackage, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000, false);
 				aPackage.setIsImmobilized(true);
 			}
 		}

@@ -43,12 +43,12 @@ public class ExSellList extends L2ItemListPacket
 			{
 				continue;
 			}
-			this.buyList.add(item);
+			buyList.add(item);
 		}
-		this.sellList = player.getInventory().getAvailableItems(false, true);
+		sellList = player.getInventory().getAvailableItems(false, true);
 		if (player.hasRefund())
 		{
-			this.refundList = player.getRefund().getItems();
+			refundList = player.getRefund().getItems();
 		}
 		this.done = done;
 	}
@@ -58,10 +58,10 @@ public class ExSellList extends L2ItemListPacket
 	{
 		writeD(0x00); // GoD ???
 
-		if (this.sellList != null && this.sellList.length > 0)
+		if (sellList != null && sellList.length > 0)
 		{
-			writeH(this.sellList.length);
-			for (L2ItemInstance item : this.sellList)
+			writeH(sellList.length);
+			for (L2ItemInstance item : sellList)
 			{
 				writeItem(item);
 
@@ -73,11 +73,11 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		if (this.refundList != null && this.refundList.length > 0)
+		if (refundList != null && refundList.length > 0)
 		{
-			writeH(this.refundList.length);
+			writeH(refundList.length);
 			int itemIndex = 0;
-			for (L2ItemInstance item : this.refundList)
+			for (L2ItemInstance item : refundList)
 			{
 				writeItem(item);
 
@@ -90,8 +90,8 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		writeC(this.done ? 0x01 : 0x00);
+		writeC(done ? 0x01 : 0x00);
 
-		this.buyList.clear();
+		buyList.clear();
 	}
 }

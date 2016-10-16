@@ -31,7 +31,7 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 	{
 		if (name.length() < 1 || name.length() > 16)
 		{
-			this.result = CharCreateFail.REASON_16_ENG_CHARS;
+			result = CharCreateFail.REASON_16_ENG_CHARS;
 			return;
 		}
 
@@ -41,7 +41,7 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 			{
 				if (name.toLowerCase().contains(st.toLowerCase()))
 				{
-					this.result = CharCreateFail.REASON_INCORRECT_NAME;
+					result = CharCreateFail.REASON_INCORRECT_NAME;
 					return;
 				}
 			}
@@ -50,22 +50,22 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 		// Last Verified: May 30, 2009 - Gracia Final
 		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name))
 		{
-			this.result = CharCreateFail.REASON_INCORRECT_NAME;
+			result = CharCreateFail.REASON_INCORRECT_NAME;
 			return;
 		}
 
 		if (CharNameTable.getInstance().doesCharNameExist(name))
 		{
-			this.result = CharCreateFail.REASON_NAME_ALREADY_EXISTS;
+			result = CharCreateFail.REASON_NAME_ALREADY_EXISTS;
 			return;
 		}
 
-		this.result = -1;
+		result = -1;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.result);
+		writeD(result);
 	}
 }

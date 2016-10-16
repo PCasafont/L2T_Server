@@ -31,7 +31,7 @@ public final class RequestExMPCCShowPartyMembersInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.partyLeaderId = readD();
+		partyLeaderId = readD();
 	}
 
 	/**
@@ -39,7 +39,7 @@ public final class RequestExMPCCShowPartyMembersInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = L2World.getInstance().getPlayer(this.partyLeaderId);
+		L2PcInstance player = L2World.getInstance().getPlayer(partyLeaderId);
 		if (player != null && player.getParty() != null)
 		{
 			getClient().getActiveChar().sendPacket(new ExMPCCShowPartyMemberInfo(player.getParty()));

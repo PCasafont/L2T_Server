@@ -36,15 +36,15 @@ public class ChangeMoveType extends L2GameServerPacket
 
 	public ChangeMoveType(L2Character character)
 	{
-		this.charObjId = character.getObjectId();
-		this.running = character.isRunning();
+		charObjId = character.getObjectId();
+		running = character.isRunning();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.running ? RUN : WALK);
+		writeD(charObjId);
+		writeD(running ? RUN : WALK);
 		writeD(0); //c2
 	}
 }

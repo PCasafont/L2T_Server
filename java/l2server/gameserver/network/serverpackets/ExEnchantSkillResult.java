@@ -45,6 +45,6 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.enchanted ? 1 : 0);
+		writeD(enchanted ? 1 : 0);
 	}
 }

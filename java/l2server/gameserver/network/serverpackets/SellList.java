@@ -39,33 +39,33 @@ public class SellList extends L2GameServerPacket
 
 	public SellList(L2PcInstance player)
 	{
-		this.activeChar = player;
-		this.lease = null;
-		this.money = this.activeChar.getAdena();
+		activeChar = player;
+		lease = null;
+		money = activeChar.getAdena();
 		doLease();
 	}
 
 	public SellList(L2PcInstance player, L2MerchantInstance lease)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.lease = lease;
-		this.money = this.activeChar.getAdena();
+		money = activeChar.getAdena();
 		doLease();
 	}
 
 	private void doLease()
 	{
-		if (this.lease == null)
+		if (lease == null)
 		{
-			for (L2ItemInstance item : this.activeChar.getInventory().getItems())
+			for (L2ItemInstance item : activeChar.getInventory().getItems())
 			{
 				if (!item.isEquipped() && // Not equipped
 						item.isSellable() && // Item is sellable
-						(this.activeChar.getPet() == null || // Pet not summoned or
-								item.getObjectId() != this.activeChar.getPet()
+						(activeChar.getPet() == null || // Pet not summoned or
+								item.getObjectId() != activeChar.getPet()
 										.getControlObjectId())) // Pet is summoned and not the item that summoned the pet
 				{
-					this.selllist.add(item);
+					selllist.add(item);
 					if (Config.DEBUG)
 					{
 						Log.fine("item added to selllist: " + item.getItem().getName());
@@ -78,11 +78,11 @@ public class SellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.money);
-		writeD(this.lease == null ? 0x00 : 1000000 + this.lease.getTemplate().NpcId);
-		writeH(this.selllist.size());
+		writeQ(money);
+		writeD(lease == null ? 0x00 : 1000000 + lease.getTemplate().NpcId);
+		writeH(selllist.size());
 
-		for (L2ItemInstance item : this.selllist)
+		for (L2ItemInstance item : selllist)
 		{
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());

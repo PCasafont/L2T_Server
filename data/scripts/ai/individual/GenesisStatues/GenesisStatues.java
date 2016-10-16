@@ -48,7 +48,7 @@ public class GenesisStatues extends L2AttackableAIScript
             addTalkId(statues);
             addStartNpc(statues);
 
-            this.spawns.put(statues, 0L);
+			spawns.put(statues, 0L);
         }
 
         for (int keepers : this.keepers)
@@ -61,7 +61,7 @@ public class GenesisStatues extends L2AttackableAIScript
     public String onTalk(L2Npc npc, L2PcInstance player)
     {
         long currentTime = System.currentTimeMillis();
-        if (!this.spawns.containsKey(npc.getNpcId()) || this.spawns.get(npc.getNpcId()) + 3600000 > currentTime)
+        if (!spawns.containsKey(npc.getNpcId()) || spawns.get(npc.getNpcId()) + 3600000 > currentTime)
         {
             //final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
 
@@ -70,7 +70,7 @@ public class GenesisStatues extends L2AttackableAIScript
         }
         else
         {
-            this.spawns.put(npc.getNpcId(), currentTime);
+			spawns.put(npc.getNpcId(), currentTime);
 
             L2MonsterInstance angelStatue =
                     (L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player.getY(), player.getZ(), 0,
@@ -85,7 +85,7 @@ public class GenesisStatues extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        this.blessingOfGarden.getEffects(killer, killer);
+		blessingOfGarden.getEffects(killer, killer);
 
         return super.onKill(npc, killer, isPet);
     }

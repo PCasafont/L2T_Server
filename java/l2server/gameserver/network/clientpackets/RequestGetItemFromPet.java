@@ -37,9 +37,9 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.amount = readQ();
-		this.unknown = readD();// = 0 for most trades
+		objectId = readD();
+		amount = readQ();
+		unknown = readD();// = 0 for most trades
 	}
 
 	@Override
@@ -62,20 +62,20 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
 		{
 			return;
 		}
-		if (this.amount < 0)
+		if (amount < 0)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"[RequestGetItemFromPet] Character " + player.getName() + " of account " + player.getAccountName() +
-							" tried to get item with oid " + this.objectId + " from pet but has count < 0!",
+							" tried to get item with oid " + objectId + " from pet but has count < 0!",
 					Config.DEFAULT_PUNISH);
 			return;
 		}
-		else if (this.amount == 0)
+		else if (amount == 0)
 		{
 			return;
 		}
 
-		if (pet.transferItem("Transfer", this.objectId, this.amount, player.getInventory(), player, pet) == null)
+		if (pet.transferItem("Transfer", objectId, amount, player.getInventory(), player, pet) == null)
 		{
 			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
 		}

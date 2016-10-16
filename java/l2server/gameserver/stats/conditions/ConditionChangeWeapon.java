@@ -53,7 +53,7 @@ public class ConditionChangeWeapon extends Condition
 			return false;
 		}
 
-		if (this.required)
+		if (required)
 		{
 			L2Weapon weaponItem = env.player.getActiveWeaponItem();
 

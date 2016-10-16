@@ -27,30 +27,30 @@ public class ExAirShipInfo extends L2GameServerPacket
 	public ExAirShipInfo(L2AirShipInstance ship)
 	{
 		this.ship = ship;
-		this.x = ship.getX();
-		this.y = ship.getY();
-		this.z = ship.getZ();
-		this.heading = ship.getHeading();
-		this.moveSpeed = (int) ship.getStat().getMoveSpeed();
-		this.rotationSpeed = ship.getStat().getRotationSpeed();
-		this.captain = ship.getCaptainId();
-		this.helm = ship.getHelmObjectId();
+		x = ship.getX();
+		y = ship.getY();
+		z = ship.getZ();
+		heading = ship.getHeading();
+		moveSpeed = (int) ship.getStat().getMoveSpeed();
+		rotationSpeed = ship.getStat().getRotationSpeed();
+		captain = ship.getCaptainId();
+		helm = ship.getHelmObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.ship.getObjectId());
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(ship.getObjectId());
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 
-		writeD(this.captain);
-		writeD(this.moveSpeed);
-		writeD(this.rotationSpeed);
-		writeD(this.helm);
-		if (this.helm != 0)
+		writeD(captain);
+		writeD(moveSpeed);
+		writeD(rotationSpeed);
+		writeD(helm);
+		if (helm != 0)
 		{
 			writeD(0x16e); // Controller X
 			writeD(0x00); // Controller Y
@@ -69,7 +69,7 @@ public class ExAirShipInfo extends L2GameServerPacket
 			writeD(0x00);
 		}
 
-		writeD(this.ship.getFuel());
-		writeD(this.ship.getMaxFuel());
+		writeD(ship.getFuel());
+		writeD(ship.getMaxFuel());
 	}
 }

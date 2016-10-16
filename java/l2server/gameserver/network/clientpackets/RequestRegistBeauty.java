@@ -34,9 +34,9 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		this.hair = readD();
-		this.face = readD();
-		this.hairColor = readD();
+		hair = readD();
+		face = readD();
+		hairColor = readD();
 	}
 
 	@Override
@@ -52,30 +52,30 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 		//Get the price
 		BeautyInfo styleInfo = null;
 
-		if (this.hair > 0)
+		if (hair > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(this.hair);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(hair);
 		}
-		else if (this.face > 0)
+		else if (face > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(this.face);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(face);
 		}
 
 		if (styleInfo != null)
 		{
-			if (this.face == -1)
+			if (face == -1)
 			{
-				this.face = activeChar.getAppearance().getFace();
+				face = activeChar.getAppearance().getFace();
 			}
 
-			if (this.hair == -1)
+			if (hair == -1)
 			{
-				this.hair = activeChar.getAppearance().getHairStyle();
+				hair = activeChar.getAppearance().getHairStyle();
 			}
 
-			if (this.hairColor == -1)
+			if (hairColor == -1)
 			{
-				this.hairColor = activeChar.getAppearance().getHairColor();
+				hairColor = activeChar.getAppearance().getHairColor();
 			}
 
 			/*L2ItemInstance playerTickets = activeChar.getInventory().getItemByItemId(36308);
@@ -102,14 +102,14 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 				activeChar.destroyItemByItemId("Beauty shop", 36308, ticketPrice, activeChar, true);
 			}*/
 
-			activeChar.getAppearance().setHairStyle(this.hair);
+			activeChar.getAppearance().setHairStyle(hair);
 
-			activeChar.getAppearance().setFace(this.face);
+			activeChar.getAppearance().setFace(face);
 
-			activeChar.getAppearance().setHairColor(this.hairColor);
+			activeChar.getAppearance().setHairColor(hairColor);
 
 			activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
-					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, this.hair, this.face, this.hairColor));
+					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, hair, face, hairColor));
 
 			//activeChar.sendPacket(new ExResponseBeautyListPacket());
 

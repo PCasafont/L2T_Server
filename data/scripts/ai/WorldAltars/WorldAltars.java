@@ -39,14 +39,14 @@ public class WorldAltars extends Quest
 	public WorldAltars(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		for (int i : this.altarIds)
+		for (int i : altarIds)
 		{
 			addTalkId(i);
 			addStartNpc(i);
 			addFirstTalkId(i);
 		}
 
-		for (int i : this.bossIds)
+		for (int i : bossIds)
 		{
 			addKillId(i);
 		}
@@ -63,7 +63,7 @@ public class WorldAltars extends Quest
 	{
 		if (event.startsWith("trySpawnBoss"))
 		{
-			if (!this.debug)
+			if (!debug)
 			{
 				L2Party party = player.getParty();
 				if (party == null)

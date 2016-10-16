@@ -53,14 +53,14 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		addSpawnId(this.firstBoss);
-		addSpawnId(this.secondBoss);
-		addAttackId(this.firstBoss);
-		addAttackId(this.secondBoss);
-		addAttackId(this.thirdBoss);
-		addKillId(this.thirdBoss);
+		addSpawnId(firstBoss);
+		addSpawnId(secondBoss);
+		addAttackId(firstBoss);
+		addAttackId(secondBoss);
+		addAttackId(thirdBoss);
+		addKillId(thirdBoss);
 
-		L2RaidBossInstance boss = BossManager.getInstance().getBoss(this.firstBoss);
+		L2RaidBossInstance boss = BossManager.getInstance().getBoss(firstBoss);
 
 		if (boss != null) //boss is spawned
 		{
@@ -71,14 +71,14 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (this.bossStage == 3 && npc.getNpcId() == this.thirdBoss)
+		if (bossStage == 3 && npc.getNpcId() == thirdBoss)
 		{
 			//Update the first boss to killed
-			this.firstBossInstance.doDie(killer);
+			firstBossInstance.doDie(killer);
 
-			this.bossStage = 0;
+			bossStage = 0;
 
-			this.firstBossInstance = null;
+			firstBossInstance = null;
 
 			Log.info("GuillotineOfDeath AI: " + npc.getName() + ", has been killed by: " + killer.getName() + " at: " +
 					System.currentTimeMillis());
@@ -90,13 +90,13 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (npc.getNpcId() == this.firstBoss)
+		if (npc.getNpcId() == firstBoss)
 		{
-			if (this.bossStage == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
+			if (bossStage == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 			{
-				this.bossStage = 1;
+				bossStage = 1;
 
-				this.firstBossInstance = (L2RaidBossInstance) npc;
+				firstBossInstance = (L2RaidBossInstance) npc;
 
 				//Spawns tumors here
 
@@ -106,27 +106,27 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
 				npc.deleteMe();
 
-				addSpawn(this.secondBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
+				addSpawn(secondBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
 			}
 		}
-		else if (npc.getNpcId() == this.secondBoss)
+		else if (npc.getNpcId() == secondBoss)
 		{
-			if (this.bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
+			if (bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 			{
-				this.bossStage = 2;
+				bossStage = 2;
 
 				npc.setIsInvul(true);
 
 				npc.deleteMe();
 
-				addSpawn(this.thirdBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
+				addSpawn(thirdBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
 			}
 		}
-		else if (npc.getNpcId() == this.thirdBoss)
+		else if (npc.getNpcId() == thirdBoss)
 		{
-			if (this.bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
+			if (bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
 			{
-				this.bossStage = 3;
+				bossStage = 3;
 
 				npc.broadcastPacket(new ExShowUsmPacket(12));
 
@@ -134,9 +134,9 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
 				for (int a = 0; a <= 50; a++)
 				{
-					rnd = this.strainSpawns[Rnd.get(this.strainSpawns.length)];
+					rnd = strainSpawns[Rnd.get(strainSpawns.length)];
 
-					addSpawn(this.strainId, rnd[0], rnd[1], rnd[2], rnd[3], false, 0, true);
+					addSpawn(strainId, rnd[0], rnd[1], rnd[2], rnd[3], false, 0, true);
 				}
 			}
 		}

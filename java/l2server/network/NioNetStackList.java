@@ -37,29 +37,29 @@ public final class NioNetStackList<E>
 
 	public final void addLast(final E elem)
 	{
-		final NioNetStackNode newEndNode = this.buf.removeFirst();
-		this.end.value = elem;
-		this.end.next = newEndNode;
-		this.end = newEndNode;
+		final NioNetStackNode newEndNode = buf.removeFirst();
+		end.value = elem;
+		end.next = newEndNode;
+		end = newEndNode;
 	}
 
 	public final E removeFirst()
 	{
-		final NioNetStackNode old = this.start.next;
+		final NioNetStackNode old = start.next;
 		final E value = old.value;
-		this.start.next = old.next;
-		this.buf.addLast(old);
+		start.next = old.next;
+		buf.addLast(old);
 		return value;
 	}
 
 	public final boolean isEmpty()
 	{
-		return this.start.next == this.end;
+		return start.next == end;
 	}
 
 	public final void clear()
 	{
-		this.start.next = this.end;
+		start.next = end;
 	}
 
 	protected final class NioNetStackNode
@@ -77,26 +77,26 @@ public final class NioNetStackList<E>
 
 		NioNetStackNodeBuf()
 		{
-			this.start.next = this.end;
+			start.next = end;
 		}
 
 		final void addLast(final NioNetStackNode node)
 		{
 			node.next = null;
 			node.value = null;
-			this.end.next = node;
-			this.end = node;
+			end.next = node;
+			end = node;
 		}
 
 		final NioNetStackNode removeFirst()
 		{
-			if (this.start.next == this.end)
+			if (start.next == end)
 			{
 				return new NioNetStackNode();
 			}
 
-			final NioNetStackNode old = this.start.next;
-			this.start.next = old.next;
+			final NioNetStackNode old = start.next;
+			start.next = old.next;
 			return old;
 		}
 	}

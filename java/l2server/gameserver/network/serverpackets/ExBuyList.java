@@ -64,22 +64,22 @@ public final class ExBuyList extends L2ItemListPacket
 
 	public ExBuyList(L2TradeList list, long currentMoney, double taxRate)
 	{
-		this.listId = list.getListId();
+		listId = list.getListId();
 		this.list = list.getItems();
-		this.money = currentMoney;
+		money = currentMoney;
 		this.taxRate = taxRate;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.money); // current money
-		writeD(this.listId);
+		writeQ(money); // current money
+		writeD(listId);
 		writeD(0x00); // GoD ???
 
-		writeH(this.list.size());
+		writeH(list.size());
 
-		for (L2TradeItem item : this.list)
+		for (L2TradeItem item : list)
 		{
 			if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
 			{
@@ -99,11 +99,11 @@ public final class ExBuyList extends L2ItemListPacket
 
 				if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
 				{
-					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + this.taxRate)));
+					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + taxRate)));
 				}
 				else
 				{
-					writeQ((long) (item.getPrice() * (1 + this.taxRate)));
+					writeQ((long) (item.getPrice() * (1 + taxRate)));
 				}
 			}
 		}

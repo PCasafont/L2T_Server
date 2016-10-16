@@ -45,7 +45,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 	@Override
 	public void onBypassFeedback(L2PcInstance player, String command)
 	{
-		if (this.hasEvolve && command.startsWith("evolve"))
+		if (hasEvolve && command.startsWith("evolve"))
 		{
 			if (isOwnerClan(player))
 			{
@@ -103,7 +103,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 			L2Clan owner = ClanTable.getInstance().getClan(getClanHall().getOwnerId());
 			if (isOwnerClan(player))
 			{
-				if (this.hasEvolve)
+				if (hasEvolve)
 				{
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen2.htm");
 					html.replace("%clanname%", owner.getName());
@@ -160,23 +160,23 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 
 	private ClanHall getClanHall()
 	{
-		if (!this.init)
+		if (!init)
 		{
 			synchronized (this)
 			{
-				if (!this.init)
+				if (!init)
 				{
-					this.clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
-					if (this.clanHall != null)
+					clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
+					if (clanHall != null)
 					{
-						this.hasEvolve = Arrays.binarySearch(CH_WITH_EVOLVE, this.clanHall.getId()) >= 0;
+						hasEvolve = Arrays.binarySearch(CH_WITH_EVOLVE, clanHall.getId()) >= 0;
 					}
 
-					this.init = true;
+					init = true;
 				}
 			}
 		}
-		return this.clanHall;
+		return clanHall;
 	}
 
 	@Override

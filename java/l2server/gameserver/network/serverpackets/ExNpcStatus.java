@@ -32,11 +32,11 @@ public final class ExNpcStatus extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.npc.getObjectId());
+		writeD(npc.getObjectId());
 		writeH(4); // Unk
 		writeC(0xff); // Mask
-		writeC(this.npc.isAlikeDead() ? 0x01 : 0x00);
-		writeC(this.npc.isInCombat() ? 0x01 : 0x00);
+		writeC(npc.isAlikeDead() ? 0x01 : 0x00);
+		writeC(npc.isInCombat() ? 0x01 : 0x00);
 		writeC(0x00); // Unk
 		writeC(0x00); // Unk
 		writeC(0x00); // Unk

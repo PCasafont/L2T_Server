@@ -46,8 +46,8 @@ public final class ItemAuctionManager
 
 	private ItemAuctionManager()
 	{
-		this.managerInstances = new TIntObjectHashMap<>();
-		this.auctionIds = new AtomicInteger(1);
+		managerInstances = new TIntObjectHashMap<>();
+		auctionIds = new AtomicInteger(1);
 
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC)
 		{
@@ -64,7 +64,7 @@ public final class ItemAuctionManager
 			ResultSet rset = statement.executeQuery();
 			if (rset.next())
 			{
-				this.auctionIds.set(rset.getInt(1) + 1);
+				auctionIds.set(rset.getInt(1) + 1);
 			}
 		}
 		catch (final SQLException e)
@@ -96,18 +96,18 @@ public final class ItemAuctionManager
 						{
 							final int instanceId = nb.getInt("id");
 
-							if (this.managerInstances.containsKey(instanceId))
+							if (managerInstances.containsKey(instanceId))
 							{
 								throw new Exception("Dublicated instanceId " + instanceId);
 							}
 
-							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, this.auctionIds, nb);
-							this.managerInstances.put(instanceId, instance);
+							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, auctionIds, nb);
+							managerInstances.put(instanceId, instance);
 						}
 					}
 				}
 			}
-			Log.info("ItemAuctionManager: Loaded " + this.managerInstances.size() + " instance(s).");
+			Log.info("ItemAuctionManager: Loaded " + managerInstances.size() + " instance(s).");
 		}
 		catch (Exception e)
 		{
@@ -117,8 +117,7 @@ public final class ItemAuctionManager
 
 	public final void shutdown()
 	{
-		final ItemAuctionInstance[] instances =
-				this.managerInstances.getValues(new ItemAuctionInstance[this.managerInstances.size()]);
+		final ItemAuctionInstance[] instances = managerInstances.getValues(new ItemAuctionInstance[managerInstances.size()]);
 		for (final ItemAuctionInstance instance : instances)
 		{
 			instance.shutdown();
@@ -127,12 +126,12 @@ public final class ItemAuctionManager
 
 	public final ItemAuctionInstance getManagerInstance(final int instanceId)
 	{
-		return this.managerInstances.get(instanceId);
+		return managerInstances.get(instanceId);
 	}
 
 	public final int getNextAuctionId()
 	{
-		return this.auctionIds.getAndIncrement();
+		return auctionIds.getAndIncrement();
 	}
 
 	public static void deleteAuction(final int auctionId)

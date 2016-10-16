@@ -29,7 +29,7 @@ public final class CSShowComBoard extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x01); //c4 1 to show community 00 to hide
-		writeB(this.html);
+		writeB(html);
 	}
 
 	@Override

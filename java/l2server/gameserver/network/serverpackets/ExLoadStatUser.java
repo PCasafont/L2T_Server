@@ -36,7 +36,7 @@ public class ExLoadStatUser extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.player == null)
+		if (player == null)
 		{
 		}
 

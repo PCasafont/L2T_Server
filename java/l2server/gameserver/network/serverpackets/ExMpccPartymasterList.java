@@ -15,6 +15,6 @@ public class ExMpccPartymasterList extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.size);
+		writeD(size);
 	}
 }

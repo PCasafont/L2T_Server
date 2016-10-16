@@ -31,22 +31,22 @@ public final class ExUserEffects extends L2GameServerPacket
 
 	public ExUserEffects(L2PcInstance character)
 	{
-		this.objectId = character.getObjectId();
-		this.transformId = character.getTransformationId();
-		this.abnormals = character.getAbnormalEffect();
+		objectId = character.getObjectId();
+		transformId = character.getTransformationId();
+		abnormals = character.getAbnormalEffect();
 		if (character.getAppearance().getInvisible())
 		{
-			this.abnormals.add(VisualEffect.STEALTH.getId());
+			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.transformId);
-		writeD(this.abnormals.size());
-		for (int abnormalId : this.abnormals)
+		writeD(objectId);
+		writeD(transformId);
+		writeD(abnormals.size());
+		for (int abnormalId : abnormals)
 		{
 			writeH(abnormalId);
 		}

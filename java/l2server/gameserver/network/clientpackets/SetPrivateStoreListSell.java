@@ -42,14 +42,14 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.packageSale = readD() == 1;
+		packageSale = readD() == 1;
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Item[count];
+		items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -58,10 +58,10 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 			if (itemId < 1 || cnt < 1 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new Item(itemId, cnt, price);
+			items[i] = new Item(itemId, cnt, price);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT));
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
@@ -91,23 +91,23 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel())
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
-			player.sendPacket(new PrivateStoreManageListSell(player, this.packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
 		{
-			player.sendPacket(new PrivateStoreManageListSell(player, this.packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		// Check maximum number of allowed slots for pvt shops
-		if (this.items.length > player.getPrivateSellStoreLimit())
+		if (items.length > player.getPrivateSellStoreLimit())
 		{
-			player.sendPacket(new PrivateStoreManageListSell(player, this.packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_QUANTITY_THAT_CAN_BE_INPUTTED));
 			return;
@@ -118,7 +118,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 			if (!(c instanceof L2PcInstance &&
 					((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
 			{
-				player.sendPacket(new PrivateStoreManageListSell(player, this.packageSale));
+				player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				return;
 			}
@@ -126,10 +126,10 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		TradeList tradeList = player.getSellList();
 		tradeList.clear();
-		tradeList.setPackaged(this.packageSale);
+		tradeList.setPackaged(packageSale);
 
 		long totalCost = player.getAdena();
-		for (Item i : this.items)
+		for (Item i : items)
 		{
 			if (!i.addToTradeList(tradeList))
 			{
@@ -153,7 +153,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		player.sitDown();
 
-		if (this.packageSale)
+		if (packageSale)
 		{
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_PACKAGE_SELL);
 		}
@@ -164,7 +164,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		player.broadcastUserInfo();
 
-		if (this.packageSale)
+		if (packageSale)
 		{
 			player.broadcastPacket(new ExPrivateStoreSetWholeMsg(player));
 		}
@@ -182,25 +182,25 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		public Item(int id, long num, long pri)
 		{
-			this.itemId = id;
-			this.count = num;
-			this.price = pri;
+			itemId = id;
+			count = num;
+			price = pri;
 		}
 
 		public boolean addToTradeList(TradeList list)
 		{
-			if (MAX_ADENA / this.count < this.price)
+			if (MAX_ADENA / count < price)
 			{
 				return false;
 			}
 
-			list.addItem(this.itemId, this.count, this.price);
+			list.addItem(itemId, count, price);
 			return true;
 		}
 
 		public long getPrice()
 		{
-			return this.count * this.price;
+			return count * price;
 		}
 	}
 }

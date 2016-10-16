@@ -97,19 +97,19 @@ public class Anakim extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addStartNpc(this.enterCubic);
-        addTalkId(this.enterCubic);
+        addStartNpc(enterCubic);
+        addTalkId(enterCubic);
 
-        addStartNpc(this.exitCubic);
-        addTalkId(this.exitCubic);
+        addStartNpc(exitCubic);
+        addTalkId(exitCubic);
 
-        addStartNpc(this.anakimCubic);
-        addTalkId(this.anakimCubic);
+        addStartNpc(anakimCubic);
+        addTalkId(anakimCubic);
 
-        addSpawnId(this.remnant);
-        addSpellFinishedId(this.remnant);
+        addSpawnId(remnant);
+        addSpellFinishedId(remnant);
 
-        for (int i : this.allMobs)
+        for (int i : allMobs)
         {
             addAttackId(i);
             addKillId(i);
@@ -117,22 +117,22 @@ public class Anakim extends L2AttackableAIScript
         }
 
         //Unlock
-        startQuestTimer("unlock_anakim", GrandBossManager.getInstance().getUnlockTime(this.anakimId), null, null);
+        startQuestTimer("unlock_anakim", GrandBossManager.getInstance().getUnlockTime(anakimId), null, null);
     }
 
     @Override
     public String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
 
-        if (npcId == this.enterCubic || npcId == this.anakimCubic)
+        if (npcId == enterCubic || npcId == anakimCubic)
         {
-            int anakimStatus = GrandBossManager.getInstance().getBossStatus(this.anakimId);
+            int anakimStatus = GrandBossManager.getInstance().getBossStatus(anakimId);
 
             final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
@@ -142,7 +142,7 @@ public class Anakim extends L2AttackableAIScript
             }
             else
             {
-                if (!this.debug)
+                if (!debug)
                 {
                     if (anakimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance()
                             .checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
@@ -161,38 +161,38 @@ public class Anakim extends L2AttackableAIScript
                 }
             }
 
-            if (anakimStatus == GrandBossManager.getInstance().ALIVE && npcId == this.enterCubic)
+            if (anakimStatus == GrandBossManager.getInstance().ALIVE && npcId == enterCubic)
             {
-                GrandBossManager.getInstance().setBossStatus(this.anakimId, GrandBossManager.getInstance().WAITING);
+                GrandBossManager.getInstance().setBossStatus(anakimId, GrandBossManager.getInstance().WAITING);
 
                 SpawnTable.getInstance().spawnSpecificTable("pre_anakim");
 
-                this.remnants.clear();
+				remnants.clear();
 
                 notifyEvent("spawn_remant", null, null);
 
-                this.lastAction = System.currentTimeMillis();
+				lastAction = System.currentTimeMillis();
 
                 startQuestTimer("check_activity_task", 60000, null, null, true);
             }
-            else if (anakimStatus == GrandBossManager.getInstance().WAITING && npcId == this.anakimCubic)
+            else if (anakimStatus == GrandBossManager.getInstance().WAITING && npcId == anakimCubic)
             {
-                if (!this.remnants.isEmpty())
+                if (!remnants.isEmpty())
                 {
                     return "You must kill all minions before you can engage in a fight with Anakim.";
                 }
 
-                GrandBossManager.getInstance().setBossStatus(this.anakimId, GrandBossManager.getInstance().FIGHTING);
+                GrandBossManager.getInstance().setBossStatus(anakimId, GrandBossManager.getInstance().FIGHTING);
 
                 //Spawn the rb
-                this.anakimBoss = addSpawn(this.anakimId, 185080, -12613, -5499, 16550, false, 0);
+				anakimBoss = addSpawn(anakimId, 185080, -12613, -5499, 16550, false, 0);
 
-                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) this.anakimBoss);
+                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) anakimBoss);
 
                 startQuestTimer("end_anakim", 60 * 60000, null, null); //1h
             }
 
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -203,7 +203,7 @@ public class Anakim extends L2AttackableAIScript
                         player.getParty().getPartyMembers());
             }
 
-            Location enterLoc = npcId == this.enterCubic ? this.enterLoc : this.enterAnakimLoc;
+            Location enterLoc = npcId == enterCubic ? this.enterLoc : enterAnakimLoc;
             for (L2PcInstance enterPlayer : allPlayers)
             {
                 if (enterPlayer == null)
@@ -211,19 +211,19 @@ public class Anakim extends L2AttackableAIScript
                     continue;
                 }
 
-                if (npcId == this.anakimCubic)
+                if (npcId == anakimCubic)
                 {
-                    this.bossZone.allowPlayerEntry(enterPlayer, 7200);
+					bossZone.allowPlayerEntry(enterPlayer, 7200);
                 }
                 else
                 {
-                    this.preAnakimZone.allowPlayerEntry(enterPlayer, 7200);
+					preAnakimZone.allowPlayerEntry(enterPlayer, 7200);
                 }
 
                 enterPlayer.teleToLocation(enterLoc, true);
             }
         }
-        else if (npc.getNpcId() == this.exitCubic)
+        else if (npc.getNpcId() == exitCubic)
         {
             player.teleToLocation(TeleportWhereType.Town);
         }
@@ -233,18 +233,18 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
 
         if (event.equalsIgnoreCase("unlock_anakim"))
         {
-            GrandBossManager.getInstance().setBossStatus(this.anakimId, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(anakimId, GrandBossManager.getInstance().ALIVE);
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(this.anakimId, this.lastAction))
+            if (!GrandBossManager.getInstance().isActive(anakimId, lastAction))
             {
                 notifyEvent("end_anakim", null, null);
             }
@@ -265,7 +265,7 @@ public class Anakim extends L2AttackableAIScript
                     {
                         L2Npc remnant = addSpawn(this.remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(),
                                 randomSpawn.getHeading(), true, 0, false, 0);
-                        this.remnants.add(remnant);
+						remnants.add(remnant);
                     }
                 }
             }
@@ -297,18 +297,18 @@ public class Anakim extends L2AttackableAIScript
         {
             notifyEvent("cancel_timers", null, null);
 
-            if (this.anakimBoss != null)
+            if (anakimBoss != null)
             {
-                this.anakimBoss.deleteMe();
+				anakimBoss.deleteMe();
             }
 
-            this.bossZone.oustAllPlayers();
+			bossZone.oustAllPlayers();
 
-            this.preAnakimZone.oustAllPlayers();
+			preAnakimZone.oustAllPlayers();
 
             SpawnTable.getInstance().despawnSpecificTable("pre_anakim");
 
-            for (L2Npc remnant : this.remnants)
+            for (L2Npc remnant : remnants)
             {
                 if (remnant == null)
                 {
@@ -318,9 +318,9 @@ public class Anakim extends L2AttackableAIScript
                 remnant.deleteMe();
             }
 
-            if (GrandBossManager.getInstance().getBossStatus(this.anakimId) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(anakimId) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(this.anakimId, GrandBossManager.getInstance().ALIVE);
+                GrandBossManager.getInstance().setBossStatus(anakimId, GrandBossManager.getInstance().ALIVE);
             }
         }
         return super.onAdvEvent(event, npc, player);
@@ -329,28 +329,28 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        this.lastAction = System.currentTimeMillis();
+		lastAction = System.currentTimeMillis();
 
         if (npc.isMinion() || npc.isRaid())//Anakim and minions
         {
             //Anti BUGGERS
-            if (!this.bossZone.isInsideZone(attacker)) //Character attacking out of zone
+            if (!bossZone.isInsideZone(attacker)) //Character attacking out of zone
             {
                 attacker.doDie(null);
 
-                if (this.debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                             " out of the boss zone!");
                 }
             }
 
-            if (!this.bossZone.isInsideZone(npc)) //Npc moved out of the zone
+            if (!bossZone.isInsideZone(npc)) //Npc moved out of the zone
             {
                 L2Spawn spawn = npc.getSpawn();
 
@@ -359,7 +359,7 @@ public class Anakim extends L2AttackableAIScript
                     npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
                 }
 
-                if (this.debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                             " wich is out of the boss zone!");
@@ -367,13 +367,13 @@ public class Anakim extends L2AttackableAIScript
             }
         }
 
-        if (npc.getNpcId() == this.remnant)
+        if (npc.getNpcId() == remnant)
         {
             if (npc.getCurrentHp() < npc.getMaxHp() * 0.30)
             {
                 if (!npc.isCastingNow() && Rnd.get(100) > 95)
                 {
-                    npc.doCast(this.remantTele);
+                    npc.doCast(remantTele);
                 }
             }
         }
@@ -384,30 +384,30 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == this.anakimId)
+        if (npc.getNpcId() == anakimId)
         {
-            GrandBossManager.getInstance().notifyBossKilled(this.anakimId);
+            GrandBossManager.getInstance().notifyBossKilled(anakimId);
 
             notifyEvent("cancel_timers", null, null);
 
-            addSpawn(this.exitCubic, 185082, -12606, -5499, 6133, false, 900000); //15min
+            addSpawn(exitCubic, 185082, -12606, -5499, 6133, false, 900000); //15min
 
-            startQuestTimer("unlock_anakim", GrandBossManager.getInstance().getUnlockTime(this.anakimId), null, null);
+            startQuestTimer("unlock_anakim", GrandBossManager.getInstance().getUnlockTime(anakimId), null, null);
 
             startQuestTimer("end_anakim", 900000, null, null);
         }
-        else if (npc.getNpcId() == this.remnant)
+        else if (npc.getNpcId() == remnant)
         {
-            this.remnants.remove(npc);
+			remnants.remove(npc);
 
-            if (this.remnants.isEmpty())
+            if (remnants.isEmpty())
             {
-                addSpawn(this.anakimCubic, 183225, -11911, -4897, 32768, false, 60 * 60000, false, 0);
+                addSpawn(anakimCubic, 183225, -11911, -4897, 32768, false, 60 * 60000, false, 0);
             }
         }
 
@@ -417,14 +417,14 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + npc.getName());
         }
 
-        if (npc.getNpcId() == this.remnant && this.preAnakimZone.isInsideZone(npc))
+        if (npc.getNpcId() == remnant && preAnakimZone.isInsideZone(npc))
         {
-            if (skill == this.remantTele)
+            if (skill == remantTele)
             {
                 notifyEvent("spawn_remant", npc, null);
             }
@@ -435,17 +435,17 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSkillSee: " + npc.getName());
         }
 
-        if (Util.contains(this.anakimMinions, npc.getNpcId()) && Rnd.get(2) == 1)
+        if (Util.contains(anakimMinions, npc.getNpcId()) && Rnd.get(2) == 1)
         {
             if (skill.getSkillType().toString().contains("HEAL"))
             {
                 if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster &&
-                        npc.getTarget() != this.anakimBoss) //Don't call minions if are healing Anakim
+                        npc.getTarget() != anakimBoss) //Don't call minions if are healing Anakim
                 {
                     ((L2Attackable) npc).clearAggroList();
                     npc.setTarget(caster);
@@ -461,7 +461,7 @@ public class Anakim extends L2AttackableAIScript
     @Override
     public String onSpawn(L2Npc npc)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " +
                     npc.getZ());

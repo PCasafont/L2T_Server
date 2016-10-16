@@ -40,7 +40,7 @@ public class L2FortZone extends L2SpawnZone
 	{
 		if (name.equals("fortId"))
 		{
-			this.fortId = Integer.parseInt(value);
+			fortId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -82,7 +82,7 @@ public class L2FortZone extends L2SpawnZone
 	 */
 	public void banishForeigners(L2Clan owningClan)
 	{
-		for (L2Character temp : this.characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -100,6 +100,6 @@ public class L2FortZone extends L2SpawnZone
 
 	public int getFortId()
 	{
-		return this.fortId;
+		return fortId;
 	}
 }

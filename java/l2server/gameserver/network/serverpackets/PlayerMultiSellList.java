@@ -51,22 +51,22 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeD(this.player.getObjectId()); // list id
+		writeD(player.getObjectId()); // list id
 		writeC(0x00);
 		writeD(1); // page started from 1
 		writeD(1); // finished
 		writeD(PAGE_SIZE); // size of pages
-		writeD(this.player.getCustomSellList().getItemCount()); //list length
+		writeD(player.getCustomSellList().getItemCount()); //list length
 		writeC(0x00); // Old or modern format
 		writeD(0x00);
 
 		int i = 1;
-		for (TradeItem item : this.player.getCustomSellList().getItems())
+		for (TradeItem item : player.getCustomSellList().getItems())
 		{
 			if (item.getAppearance() > 0)
 			{
 				L2Item app = ItemTable.getInstance().getTemplate(item.getAppearance());
-				getClient().sendPacket(new CreatureSay(this.player.getObjectId(), Say2.TELL, this.player.getName(),
+				getClient().sendPacket(new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
 						"WARNING: The " + item.getItem().getName() + " has appearance of " + app.getName() + "!"));
 			}
 
@@ -142,10 +142,11 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			i++;
 		}
 
-		if (this.player.getClient() != null && this.player.getClient().isDetached() && this.player.getCustomSellList() != null &&
-				this.player.getCustomSellList().getItemCount() == 0)
+		if (player.getClient() != null && player.getClient().isDetached() &&
+				player.getCustomSellList() != null &&
+				player.getCustomSellList().getItemCount() == 0)
 		{
-			this.player.logout();
+			player.logout();
 		}
 	}
 

@@ -56,50 +56,50 @@ public class L2Territory
 
 	public L2Territory(int terr)
 	{
-		this.points = new ArrayList<>();
+		points = new ArrayList<>();
 		this.terr = terr;
-		this.xMin = 999999;
-		this.xMax = -999999;
-		this.yMin = 999999;
-		this.yMax = -999999;
-		this.zMin = 999999;
-		this.zMax = -999999;
-		this.procMax = 0;
+		xMin = 999999;
+		xMax = -999999;
+		yMin = 999999;
+		yMax = -999999;
+		zMin = 999999;
+		zMax = -999999;
+		procMax = 0;
 	}
 
 	public void add(int x, int y, int zmin, int zmax, int proc)
 	{
-		this.points.add(new Point(x, y, zmin, zmax, proc));
-		if (x < this.xMin)
+		points.add(new Point(x, y, zmin, zmax, proc));
+		if (x < xMin)
 		{
-			this.xMin = x;
+			xMin = x;
 		}
-		if (y < this.yMin)
+		if (y < yMin)
 		{
-			this.yMin = y;
+			yMin = y;
 		}
 		if (x > xMax)
 		{
-			this.xMax = x;
+			xMax = x;
 		}
 		if (y > yMax)
 		{
-			this.yMax = y;
+			yMax = y;
 		}
-		if (zmin < this.zMin)
+		if (zmin < zMin)
 		{
-			this.zMin = zmin;
+			zMin = zmin;
 		}
 		if (zmax > zMax)
 		{
-			this.zMax = zmax;
+			zMax = zmax;
 		}
-		this.procMax += proc;
+		procMax += proc;
 	}
 
 	public void print()
 	{
-		for (Point p : this.points)
+		for (Point p : points)
 		{
 			Log.info("(" + p.x + "," + p.y + ")");
 		}
@@ -136,10 +136,10 @@ public class L2Territory
 	public boolean isInside(int x, int y)
 	{
 		int intersect_count = 0;
-		for (int i = 0; i < this.points.size(); i++)
+		for (int i = 0; i < points.size(); i++)
 		{
-			Point p1 = this.points.get(i > 0 ? i - 1 : this.points.size() - 1);
-			Point p2 = this.points.get(i);
+			Point p1 = points.get(i > 0 ? i - 1 : points.size() - 1);
+			Point p2 = points.get(i);
 
 			if (isIntersect(x, y, p1, p2))
 			{
@@ -153,11 +153,11 @@ public class L2Territory
 	public int[] getRandomPoint()
 	{
 		int[] p = new int[4];
-		if (this.procMax > 0)
+		if (procMax > 0)
 		{
 			int pos = 0;
-			int rnd = Rnd.nextInt(this.procMax);
-			for (Point p1 : this.points)
+			int rnd = Rnd.nextInt(procMax);
+			for (Point p1 : points)
 			{
 				pos += p1.proc;
 				if (rnd <= pos)
@@ -172,14 +172,14 @@ public class L2Territory
 		}
 		for (int i = 0; i < 100; i++)
 		{
-			p[0] = Rnd.get(this.xMin, this.xMax);
-			p[1] = Rnd.get(this.yMin, this.yMax);
+			p[0] = Rnd.get(xMin, xMax);
+			p[1] = Rnd.get(yMin, yMax);
 			if (isInside(p[0], p[1]))
 			{
 				double curdistance = 0;
-				p[2] = this.zMin + 100;
-				p[3] = this.zMax;
-				for (Point p1 : this.points)
+				p[2] = zMin + 100;
+				p[3] = zMax;
+				for (Point p1 : points)
 				{
 					double dx = p1.x - p[0];
 					double dy = p1.y - p[1];
@@ -193,27 +193,27 @@ public class L2Territory
 				return p;
 			}
 		}
-		Log.warning("Can't make point for territory " + this.terr);
+		Log.warning("Can't make point for territory " + terr);
 		return p;
 	}
 
 	public int getProcMax()
 	{
-		return this.procMax;
+		return procMax;
 	}
 
 	public int getMinZ()
 	{
-		return this.zMin;
+		return zMin;
 	}
 
 	public int getMaxZ()
 	{
-		return this.zMax;
+		return zMax;
 	}
 
 	public List<Point> getPoints()
 	{
-		return this.points;
+		return points;
 	}
 }

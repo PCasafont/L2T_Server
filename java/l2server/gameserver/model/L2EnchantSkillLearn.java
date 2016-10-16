@@ -38,7 +38,7 @@ public final class L2EnchantSkillLearn
 
 	public void addNewEnchantRoute(int route)
 	{
-		this.enchantRoutes.add(route);
+		enchantRoutes.add(route);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public final class L2EnchantSkillLearn
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -54,17 +54,17 @@ public final class L2EnchantSkillLearn
 	 */
 	public int getBaseLevel()
 	{
-		return this.baseLvl;
+		return baseLvl;
 	}
 
 	public int[] getAllRoutes()
 	{
-		return this.enchantRoutes.toArray();
+		return enchantRoutes.toArray();
 	}
 
 	public boolean isMaxEnchant(int route, int level)
 	{
-		if (route < 1 || !this.enchantRoutes.contains(route))
+		if (route < 1 || !enchantRoutes.contains(route))
 		{
 			return false;
 		}
@@ -75,7 +75,7 @@ public final class L2EnchantSkillLearn
 
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
 	{
-		if (route < 1 || !this.enchantRoutes.contains(route))
+		if (route < 1 || !enchantRoutes.contains(route))
 		{
 			return null;
 		}

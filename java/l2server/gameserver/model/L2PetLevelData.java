@@ -41,143 +41,143 @@ public class L2PetLevelData
 	//  Max Exp
 	public long getPetMaxExp()
 	{
-		return this.petMaxExp;
+		return petMaxExp;
 	}
 
 	public void setPetMaxExp(long pPetMaxExp)
 	{
-		this.petMaxExp = pPetMaxExp;
+		petMaxExp = pPetMaxExp;
 	}
 
 	public int getOwnerExpTaken()
 	{
-		return this.ownerExpTaken;
+		return ownerExpTaken;
 	}
 
 	public void setOwnerExpTaken(int pOwnerExpTaken)
 	{
-		this.ownerExpTaken = pOwnerExpTaken;
+		ownerExpTaken = pOwnerExpTaken;
 	}
 
 	//  Max HP
 	public int getPetMaxHP()
 	{
-		return this.petMaxHP;
+		return petMaxHP;
 	}
 
 	public void setPetMaxHP(int pPetMaxHP)
 	{
-		this.petMaxHP = pPetMaxHP;
+		petMaxHP = pPetMaxHP;
 	}
 
 	//  Max Mp
 	public int getPetMaxMP()
 	{
-		return this.petMaxMP;
+		return petMaxMP;
 	}
 
 	public void setPetMaxMP(int pPetMaxMP)
 	{
-		this.petMaxMP = pPetMaxMP;
+		petMaxMP = pPetMaxMP;
 	}
 
 	//  PAtk
 	public int getPetPAtk()
 	{
-		return this.petPAtk;
+		return petPAtk;
 	}
 
 	public void setPetPAtk(int pPetPAtk)
 	{
-		this.petPAtk = pPetPAtk;
+		petPAtk = pPetPAtk;
 	}
 
 	//  PDef
 	public int getPetPDef()
 	{
-		return this.petPDef;
+		return petPDef;
 	}
 
 	public void setPetPDef(int pPetPDef)
 	{
-		this.petPDef = pPetPDef;
+		petPDef = pPetPDef;
 	}
 
 	//  MAtk
 	public int getPetMAtk()
 	{
-		return this.petMAtk;
+		return petMAtk;
 	}
 
 	public void setPetMAtk(int pPetMAtk)
 	{
-		this.petMAtk = pPetMAtk;
+		petMAtk = pPetMAtk;
 	}
 
 	//  MDef
 	public int getPetMDef()
 	{
-		return this.petMDef;
+		return petMDef;
 	}
 
 	public void setPetMDef(int pPetMDef)
 	{
-		this.petMDef = pPetMDef;
+		petMDef = pPetMDef;
 	}
 
 	//  MaxFeed
 	public int getPetMaxFeed()
 	{
-		return this.petMaxFeed;
+		return petMaxFeed;
 	}
 
 	public void setPetMaxFeed(int pPetMaxFeed)
 	{
-		this.petMaxFeed = pPetMaxFeed;
+		petMaxFeed = pPetMaxFeed;
 	}
 
 	//  Normal Feed
 	public int getPetFeedNormal()
 	{
-		return this.petFeedNormal;
+		return petFeedNormal;
 	}
 
 	public void setPetFeedNormal(int pPetFeedNormal)
 	{
-		this.petFeedNormal = pPetFeedNormal;
+		petFeedNormal = pPetFeedNormal;
 	}
 
 	//  Battle Feed
 	public int getPetFeedBattle()
 	{
-		return this.petFeedBattle;
+		return petFeedBattle;
 	}
 
 	public void setPetFeedBattle(int pPetFeedBattle)
 	{
-		this.petFeedBattle = pPetFeedBattle;
+		petFeedBattle = pPetFeedBattle;
 	}
 
 	//  Regen HP
 	public int getPetRegenHP()
 	{
-		return this.petRegenHP;
+		return petRegenHP;
 	}
 
 	public void setPetRegenHP(int pPetRegenHP)
 	{
-		this.petRegenHP = pPetRegenHP;
+		petRegenHP = pPetRegenHP;
 	}
 
 	//  Regen MP
 	public int getPetRegenMP()
 	{
-		return this.petRegenMP;
+		return petRegenMP;
 	}
 
 	public void setPetRegenMP(int pPetRegenMP)
 	{
-		this.petRegenMP = pPetRegenMP;
+		petRegenMP = pPetRegenMP;
 	}
 
 	/**
@@ -185,7 +185,7 @@ public class L2PetLevelData
 	 */
 	public short getPetSoulShot()
 	{
-		return this.petSoulShot;
+		return petSoulShot;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class L2PetLevelData
 	 */
 	public void setPetSoulShot(short soulShot)
 	{
-		this.petSoulShot = soulShot;
+		petSoulShot = soulShot;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class L2PetLevelData
 	 */
 	public short getPetSpiritShot()
 	{
-		return this.petSpiritShot;
+		return petSpiritShot;
 	}
 
 	/**
@@ -209,6 +209,6 @@ public class L2PetLevelData
 	 */
 	public void setPetSpiritShot(short spiritShot)
 	{
-		this.petSpiritShot = spiritShot;
+		petSpiritShot = spiritShot;
 	}
 }

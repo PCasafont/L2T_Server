@@ -49,7 +49,7 @@ public class L2TrapInstance extends L2Trap
 		setInstanceId(owner.getInstanceId());
 
 		this.owner = owner;
-		this.level = owner.getLevel();
+		level = owner.getLevel();
 	}
 
 	public L2TrapInstance(int objectId, L2NpcTemplate template, int instanceId, int lifeTime, L2Skill skill)
@@ -59,50 +59,50 @@ public class L2TrapInstance extends L2Trap
 
 		setInstanceId(instanceId);
 
-		this.owner = null;
+		owner = null;
 		if (skill != null)
 		{
-			this.level = skill.getLevelHash();
+			level = skill.getLevelHash();
 		}
 		else
 		{
-			this.level = 1;
+			level = 1;
 		}
 	}
 
 	@Override
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
 	public L2PcInstance getActingPlayer()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
 	public void onSpawn()
 	{
 		super.onSpawn();
-		this.isInArena = isInsideZone(ZONE_PVP) && !isInsideZone(ZONE_SIEGE);
-		this.playersWhoDetectedMe.clear();
+		isInArena = isInsideZone(ZONE_PVP) && !isInsideZone(ZONE_SIEGE);
+		playersWhoDetectedMe.clear();
 	}
 
 	@Override
 	public void deleteMe()
 	{
-		if (this.owner != null)
+		if (owner != null)
 		{
-			this.owner.setTrap(null);
-			this.owner = null;
+			owner.setTrap(null);
+			owner = null;
 		}
 		super.deleteMe();
 	}
@@ -110,10 +110,10 @@ public class L2TrapInstance extends L2Trap
 	@Override
 	public void unSummon()
 	{
-		if (this.owner != null)
+		if (owner != null)
 		{
-			this.owner.setTrap(null);
-			this.owner = null;
+			owner.setTrap(null);
+			owner = null;
 		}
 		super.unSummon();
 	}
@@ -121,32 +121,32 @@ public class L2TrapInstance extends L2Trap
 	@Override
 	public int getKarma()
 	{
-		return this.owner != null ? this.owner.getReputation() : 0;
+		return owner != null ? owner.getReputation() : 0;
 	}
 
 	@Override
 	public byte getPvpFlag()
 	{
-		return this.owner != null ? this.owner.getPvpFlag() : 0;
+		return owner != null ? owner.getPvpFlag() : 0;
 	}
 
 	@Override
 	public void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
-		if (miss || this.owner == null)
+		if (miss || owner == null)
 		{
 			return;
 		}
 
-		if (this.owner.isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode() &&
-				((L2PcInstance) target).getOlympiadGameId() == this.owner.getOlympiadGameId())
+		if (owner.isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode() &&
+				((L2PcInstance) target).getOlympiadGameId() == owner.getOlympiadGameId())
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 		}
 
 		final SystemMessage sm;
 
-		if (target.isInvul(this.owner) && !(target instanceof L2NpcInstance))
+		if (target.isInvul(owner) && !(target instanceof L2NpcInstance))
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.ATTACK_WAS_BLOCKED);
 		}
@@ -158,22 +158,22 @@ public class L2TrapInstance extends L2Trap
 			sm.addNumber(damage);
 		}
 
-		this.owner.sendPacket(sm);
+		owner.sendPacket(sm);
 	}
 
 	@Override
 	public boolean canSee(L2Character cha)
 	{
-		if (cha != null && this.playersWhoDetectedMe.contains(cha.getObjectId()))
+		if (cha != null && playersWhoDetectedMe.contains(cha.getObjectId()))
 		{
 			return true;
 		}
 
-		if (this.owner == null || cha == null)
+		if (owner == null || cha == null)
 		{
 			return false;
 		}
-		if (cha == this.owner)
+		if (cha == owner)
 		{
 			return true;
 		}
@@ -187,37 +187,37 @@ public class L2TrapInstance extends L2Trap
 			}
 
 			// olympiad competitors can't see trap
-			if (this.owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() &&
-					((L2PcInstance) cha).getOlympiadSide() != this.owner.getOlympiadSide())
+			if (owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() &&
+					((L2PcInstance) cha).getOlympiadSide() != owner.getOlympiadSide())
 			{
 				return false;
 			}
 		}
 
-		if (this.isInArena)
+		if (isInArena)
 		{
 			return true;
 		}
 
-		return this.owner.isInParty() && cha.isInParty() &&
-				this.owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID();
+		return owner.isInParty() && cha.isInParty() &&
+				owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID();
 
 	}
 
 	@Override
 	public void setDetected(L2Character detector)
 	{
-		if (this.isInArena)
+		if (isInArena)
 		{
 			super.setDetected(detector);
 			return;
 		}
-		if (this.owner != null && this.owner.getPvpFlag() == 0 && this.owner.getReputation() == 0)
+		if (owner != null && owner.getPvpFlag() == 0 && owner.getReputation() == 0)
 		{
 			return;
 		}
 
-		this.playersWhoDetectedMe.add(detector.getObjectId());
+		playersWhoDetectedMe.add(detector.getObjectId());
 		if (getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null)
 		{
 			for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION))
@@ -231,7 +231,7 @@ public class L2TrapInstance extends L2Trap
 	@Override
 	protected boolean checkTarget(L2Character target)
 	{
-		if (!L2Skill.checkForAreaOffensiveSkills(this, target, getSkill(), this.isInArena))
+		if (!L2Skill.checkForAreaOffensiveSkills(this, target, getSkill(), isInArena))
 		{
 			return false;
 		}
@@ -243,22 +243,22 @@ public class L2TrapInstance extends L2Trap
 		}
 
 		// olympiad own team and their summons not attacked
-		if (this.owner != null && this.owner.isInOlympiadMode())
+		if (owner != null && owner.isInOlympiadMode())
 		{
 			final L2PcInstance player = target.getActingPlayer();
-			if (player != null && player.isInOlympiadMode() && player.getOlympiadSide() == this.owner.getOlympiadSide())
+			if (player != null && player.isInOlympiadMode() && player.getOlympiadSide() == owner.getOlympiadSide())
 			{
 				return false;
 			}
 		}
 
-		if (this.isInArena)
+		if (isInArena)
 		{
 			return true;
 		}
 
 		// trap owned by players not attack non-flagged players
-		if (this.owner != null)
+		if (owner != null)
 		{
 			final L2PcInstance player = target.getActingPlayer();
 			if (target instanceof L2Attackable)

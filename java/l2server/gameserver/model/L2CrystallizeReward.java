@@ -33,16 +33,16 @@ public class L2CrystallizeReward
 
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public int getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	public double getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 }

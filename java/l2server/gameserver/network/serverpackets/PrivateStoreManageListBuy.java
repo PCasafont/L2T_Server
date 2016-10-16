@@ -33,30 +33,30 @@ public class PrivateStoreManageListBuy extends L2ItemListPacket
 
 	public PrivateStoreManageListBuy(L2PcInstance player)
 	{
-		this.objId = player.getObjectId();
-		this.playerAdena = player.getAdena();
-		this.itemList = player.getInventory().getUniqueItems(false, true);
-		this.buyList = player.getBuyList().getItems();
+		objId = player.getObjectId();
+		playerAdena = player.getAdena();
+		itemList = player.getInventory().getUniqueItems(false, true);
+		buyList = player.getBuyList().getItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		//section 1
-		writeD(this.objId);
-		writeQ(this.playerAdena);
+		writeD(objId);
+		writeQ(playerAdena);
 
 		//section2
-		writeD(this.itemList.length); // inventory items for potential buy
-		for (L2ItemInstance item : this.itemList)
+		writeD(itemList.length); // inventory items for potential buy
+		for (L2ItemInstance item : itemList)
 		{
 			writeItem(item);
 			writeQ(item.getItem().getReferencePrice() * 2);
 		}
 
 		//section 3
-		writeD(this.buyList.length); //count for all items already added for buy
-		for (TradeList.TradeItem item : this.buyList)
+		writeD(buyList.length); //count for all items already added for buy
+		for (TradeList.TradeItem item : buyList)
 		{
 			writeItem(item);
 

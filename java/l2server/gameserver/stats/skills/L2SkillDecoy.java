@@ -36,8 +36,8 @@ public class L2SkillDecoy extends L2Skill
 	public L2SkillDecoy(StatsSet set)
 	{
 		super(set);
-		this.npcId = set.getInteger("npcId", 0);
-		this.summonTotalLifeTime = set.getInteger("summonTotalLifeTime", 20000);
+		npcId = set.getInteger("npcId", 0);
+		summonTotalLifeTime = set.getInteger("summonTotalLifeTime", 20000);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class L2SkillDecoy extends L2Skill
 			return;
 		}
 
-		if (this.npcId == 0)
+		if (npcId == 0)
 		{
 			return;
 		}
@@ -65,7 +65,7 @@ public class L2SkillDecoy extends L2Skill
 			return;
 		}
 
-		L2NpcTemplate decoyTemplate = NpcTable.getInstance().getTemplate(this.npcId);
+		L2NpcTemplate decoyTemplate = NpcTable.getInstance().getTemplate(npcId);
 
 		//TODO LasTravel, let's fix it by skill name, because for example Confusion Decoy have same npcIds as clone attak...
 		if (getName().equalsIgnoreCase("Clone Attack"))
@@ -117,6 +117,6 @@ public class L2SkillDecoy extends L2Skill
 
 	public final int getTotalLifeTime()
 	{
-		return this.summonTotalLifeTime;
+		return summonTotalLifeTime;
 	}
 }

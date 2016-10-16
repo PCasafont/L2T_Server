@@ -36,7 +36,7 @@ public class Ex2ndPasswordVerify extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.mode);
-		writeD(this.wrongTentatives);
+		writeD(mode);
+		writeD(wrongTentatives);
 	}
 }

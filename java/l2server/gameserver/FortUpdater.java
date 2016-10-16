@@ -47,7 +47,7 @@ public class FortUpdater implements Runnable
 		this.fort = fort;
 		this.clan = clan;
 		this.runCount = runCount;
-		this.updaterType = ut;
+		updaterType = ut;
 	}
 
 	@Override
@@ -55,42 +55,42 @@ public class FortUpdater implements Runnable
 	{
 		try
 		{
-			switch (this.updaterType)
+			switch (updaterType)
 			{
 				case PERIODIC_UPDATE:
-					this.runCount++;
-					if (this.fort.getOwnerClan() == null || this.fort.getOwnerClan() != this.clan)
+					runCount++;
+					if (fort.getOwnerClan() == null || fort.getOwnerClan() != clan)
 					{
 						return;
 					}
 
-					this.fort.setBloodOathReward(this.fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
-					if (this.fort.getFortState() == 2)
+					fort.setBloodOathReward(fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
+					if (fort.getFortState() == 2)
 					{
-						if (this.clan.getWarehouse().getAdena() >= Config.FS_FEE_FOR_CASTLE)
+						if (clan.getWarehouse().getAdena() >= Config.FS_FEE_FOR_CASTLE)
 						{
-							this.clan.getWarehouse()
+							clan.getWarehouse()
 									.destroyItemByItemId("FS_fee_for_Castle", 57, Config.FS_FEE_FOR_CASTLE, null, null);
-							CastleManager.getInstance().getCastleById(this.fort.getCastleId())
+							CastleManager.getInstance().getCastleById(fort.getCastleId())
 									.addToTreasuryNoTax(Config.FS_FEE_FOR_CASTLE);
-							this.fort.raiseSupplyLvL();
+							fort.raiseSupplyLvL();
 						}
 						else
 						{
-							this.fort.setFortState(1, 0);
+							fort.setFortState(1, 0);
 						}
 					}
-					this.fort.saveFortVariables();
+					fort.saveFortVariables();
 					break;
 				case MAX_OWN_TIME:
-					if (this.fort.getOwnerClan() == null || this.fort.getOwnerClan() != this.clan)
+					if (fort.getOwnerClan() == null || fort.getOwnerClan() != clan)
 					{
 						return;
 					}
-					if (this.fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
+					if (fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
 					{
-						this.fort.removeOwner(true);
-						this.fort.setFortState(0, 0);
+						fort.removeOwner(true);
+						fort.setFortState(0, 0);
 					}
 					break;
 			}

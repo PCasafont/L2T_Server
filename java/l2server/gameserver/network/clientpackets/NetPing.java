@@ -13,7 +13,7 @@ public class NetPing extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.pingID = readD();
+		pingID = readD();
 		readD(); // unk2
 		readD(); // unk1
 	}

@@ -37,7 +37,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.id = readD();
+		id = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance ob = L2World.getInstance().getPlayer(this.id);
+		L2PcInstance ob = L2World.getInstance().getPlayer(id);
 
 		if (ob == null)
 		{

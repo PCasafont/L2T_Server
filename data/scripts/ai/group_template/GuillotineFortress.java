@@ -70,7 +70,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		npc.doCast(this.chaosShield);
+		npc.doCast(chaosShield);
 
 		return super.onSpawn(npc);
 	}
@@ -79,7 +79,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		for (int id : this.npcIds)
+		for (int id : npcIds)
 		{
 			addAttackId(id);
 
@@ -93,7 +93,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 				continue;
 			}
 
-			if (Util.contains(this.npcIds, spawn.getNpcId()))
+			if (Util.contains(npcIds, spawn.getNpcId()))
 			{
 				notifySpawn(spawn.getNpc());
 			}

@@ -12,26 +12,26 @@ public class TestPacket extends L2GameServerPacket
 
 	public void writeChar(int x)
 	{
-		this.buffer.put((byte) x);
+		buffer.put((byte) x);
 	}
 
 	public void writeShort(int x)
 	{
-		this.buffer.putShort((short) x);
+		buffer.putShort((short) x);
 	}
 
 	public void writeInt(int x)
 	{
-		this.buffer.putInt(x);
+		buffer.putInt(x);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		this.buffer.flip();
-		while (this.buffer.position() < this.buffer.limit())
+		buffer.flip();
+		while (buffer.position() < buffer.limit())
 		{
-			writeC(this.buffer.get());
+			writeC(buffer.get());
 		}
 	}
 }

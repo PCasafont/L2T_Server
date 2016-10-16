@@ -35,7 +35,7 @@ public abstract class MMOClient<T extends MMOConnection<?>>
 
 	public T getConnection()
 	{
-		return this.con;
+		return con;
 	}
 
 	public abstract boolean decrypt(final ByteBuffer buf, final int size);

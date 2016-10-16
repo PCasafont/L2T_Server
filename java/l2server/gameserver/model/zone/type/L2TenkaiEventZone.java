@@ -73,40 +73,40 @@ public class L2TenkaiEventZone extends L2ZoneType
 		@Override
 		public void run()
 		{
-			if (!isInsideZone(this.player) && this.player.isPlayingEvent())
+			if (!isInsideZone(player) && player.isPlayingEvent())
 			{
-				if (getDistanceToZone(this.player) > 500 || getZone().getHighZ() < this.player.getZ() ||
+				if (getDistanceToZone(player) > 500 || getZone().getHighZ() < player.getZ() ||
 						getZone().getLowZ() > player.getZ())
 				{
-					if (this.delay > 0)
+					if (delay > 0)
 					{
-						if (!this.warned)
+						if (!warned)
 						{
-							this.player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
+							player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
 									"You left the event zone. If you don't return in 10 seconds your character will die!"));
-							this.warned = true;
+							warned = true;
 						}
-						else if (this.delay <= 5)
+						else if (delay <= 5)
 						{
-							this.player.sendPacket(
-									new CreatureSay(0, Say2.TELL, "Instanced Events", this.delay + " seconds to return."));
+							player.sendPacket(
+									new CreatureSay(0, Say2.TELL, "Instanced Events", delay + " seconds to return."));
 						}
 
-						this.delay--;
+						delay--;
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
 					}
 					else
 					{
-						if (this.player.getEvent().isType(EventType.VIP))
+						if (player.getEvent().isType(EventType.VIP))
 						{
-							this.player.getEvent().getParticipantTeam(this.player.getObjectId()).decreasePoints();
+							player.getEvent().getParticipantTeam(player.getObjectId()).decreasePoints();
 						}
-						this.player.doDie(this.player);
+						player.doDie(player);
 					}
 				}
 				else
 				{
-					this.delay = 10;
+					delay = 10;
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
 				}
 			}

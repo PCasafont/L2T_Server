@@ -38,10 +38,10 @@ public class L2TownZone extends L2SpawnZone
 	{
 		super(id);
 
-		this.taxById = 0;
+		taxById = 0;
 
 		// Default not peace zone
-		this.isPeaceZone = false;
+		isPeaceZone = false;
 	}
 
 	@Override
@@ -50,13 +50,13 @@ public class L2TownZone extends L2SpawnZone
 		switch (name)
 		{
 			case "townId":
-				this.townId = Integer.parseInt(value);
+				townId = Integer.parseInt(value);
 				break;
 			case "taxById":
-				this.taxById = Integer.parseInt(value);
+				taxById = Integer.parseInt(value);
 				break;
 			case "isPeaceZone":
-				this.isPeaceZone = Boolean.parseBoolean(value);
+				isPeaceZone = Boolean.parseBoolean(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -88,8 +88,8 @@ public class L2TownZone extends L2SpawnZone
 			//ThreadPoolManager.getInstance().scheduleGeneral(new MusicTask((L2PcInstance)character), 2000);
 		}
 
-		if (this.isPeaceZone && Config.ZONE_TOWN != 2 &&
-				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == this.townId))
+		if (isPeaceZone && Config.ZONE_TOWN != 2 &&
+				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == townId))
 		{
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 		}
@@ -101,7 +101,7 @@ public class L2TownZone extends L2SpawnZone
 	protected void onExit(L2Character character)
 	{
 		// TODO: there should be no exit if there was possibly no enter
-		if (this.isPeaceZone)
+		if (isPeaceZone)
 		{
 			character.setInsideZone(L2Character.ZONE_PEACE, false);
 		}
@@ -135,7 +135,7 @@ public class L2TownZone extends L2SpawnZone
 	 */
 	public int getTownId()
 	{
-		return this.townId;
+		return townId;
 	}
 
 	/**
@@ -145,18 +145,18 @@ public class L2TownZone extends L2SpawnZone
 	 */
 	public final int getTaxById()
 	{
-		return this.taxById;
+		return taxById;
 	}
 
 	public final boolean isPeaceZone()
 	{
-		return this.isPeaceZone;
+		return isPeaceZone;
 	}
 
 	@SuppressWarnings("unused")
 	private boolean isInHostileTown(L2PcInstance player)
 	{
-		switch (this.townId)
+		switch (townId)
 		{
 			case 7:
 				return player.isAtWarWithCastle(1);
@@ -194,7 +194,7 @@ public class L2TownZone extends L2SpawnZone
 		public void run()
 		{
 			int rnd = Rnd.get(4) + 1;
-			this.player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
+			player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
 		}
 	}
 }

@@ -73,7 +73,7 @@ public class AttackStanceTaskManager
 			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance)
 					.forEach(summon -> summon.unSummon(player));
 		}
-		this.attackStanceTasks.put(actor, System.currentTimeMillis());
+		attackStanceTasks.put(actor, System.currentTimeMillis());
 	}
 
 	public void removeAttackStanceTask(L2Character actor)
@@ -88,7 +88,7 @@ public class AttackStanceTaskManager
 			((L2PcInstance) actor).onCombatStanceEnd();
 		}
 
-		this.attackStanceTasks.remove(actor);
+		attackStanceTasks.remove(actor);
 	}
 
 	public boolean getAttackStanceTask(L2Character actor)
@@ -99,7 +99,7 @@ public class AttackStanceTaskManager
 			actor = summon.getOwner();
 		}
 
-		return this.attackStanceTasks.containsKey(actor);
+		return attackStanceTasks.containsKey(actor);
 	}
 
 	private class FightModeScheduler implements Runnable

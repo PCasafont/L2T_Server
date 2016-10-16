@@ -39,7 +39,7 @@ public class SpiculaCaptain extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == this.captain)
+			if (spawn.getNpcId() == captain)
 			{
 				spawn.getNpc().setShowSummonAnimation(true);
 

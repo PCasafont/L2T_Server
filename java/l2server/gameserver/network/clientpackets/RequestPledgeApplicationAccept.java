@@ -39,9 +39,9 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.accept = readD() == 1;
-		this.applicantId = readD();
-		this.pledgeType = readD();
+		accept = readD() == 1;
+		applicantId = readD();
+		pledgeType = readD();
 	}
 
 	@Override
@@ -53,13 +53,13 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 			return;
 		}
 
-		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(this.applicantId);
+		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(applicantId);
 		if (applicant == null)
 		{
 			return;
 		}
 
-		if (this.accept)
+		if (accept)
 		{
 			final L2Clan clan = activeChar.getClan();
 			if (clan == null)
@@ -67,7 +67,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 				return;
 			}
 
-			final L2PcInstance target = L2World.getInstance().getPlayer(this.applicantId);
+			final L2PcInstance target = L2World.getInstance().getPlayer(applicantId);
 			if (target == null)
 			{
 				activeChar
@@ -75,7 +75,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 				return;
 			}
 
-			if (!clan.checkClanJoinCondition(activeChar, target, this.pledgeType))
+			if (!clan.checkClanJoinCondition(activeChar, target, pledgeType))
 			{
 				return;
 			}
@@ -87,22 +87,22 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 
 			final String pledgeName = clan.getName();
 			final String subPledgeName =
-					clan.getSubPledge(this.pledgeType) != null ? activeChar.getClan().getSubPledge(this.pledgeType).getName() :
+					clan.getSubPledge(pledgeType) != null ? activeChar.getClan().getSubPledge(pledgeType).getName() :
 							null;
-			target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, this.pledgeType, pledgeName));
+			target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, pledgeType, pledgeName));
 		}
 		else
 		{
-			Message msg = new Message(this.applicantId, "Clan Application Rejected",
+			Message msg = new Message(applicantId, "Clan Application Rejected",
 					"Sorry, your clan application has been rejected.", SendBySystem.SYSTEM);
 			MailManager.getInstance().sendMessage(msg);
 
-			ClanRecruitManager.getInstance().removeApplicant(this.applicantId);
+			ClanRecruitManager.getInstance().removeApplicant(applicantId);
 		}
 	}
 
 	public int getPledgeType()
 	{
-		return this.pledgeType;
+		return pledgeType;
 	}
 }

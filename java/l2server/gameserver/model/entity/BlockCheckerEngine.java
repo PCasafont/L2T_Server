@@ -100,11 +100,11 @@ public final class BlockCheckerEngine
 
 		for (L2PcInstance player : holder.getRedPlayers())
 		{
-			this.redTeamPoints.put(player, 0);
+			redTeamPoints.put(player, 0);
 		}
 		for (L2PcInstance player : holder.getBluePlayers())
 		{
-			this.blueTeamPoints.put(player, 0);
+			blueTeamPoints.put(player, 0);
 		}
 	}
 
@@ -127,7 +127,7 @@ public final class BlockCheckerEngine
 	 */
 	public ArenaParticipantsHolder getHolder()
 	{
-		return this.holder;
+		return holder;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public final class BlockCheckerEngine
 	 */
 	public int getArena()
 	{
-		return this.arena;
+		return arena;
 	}
 
 	/**
@@ -149,7 +149,7 @@ public final class BlockCheckerEngine
 	 */
 	public long getStarterTime()
 	{
-		return this.startedTime;
+		return startedTime;
 	}
 
 	/**
@@ -161,7 +161,7 @@ public final class BlockCheckerEngine
 	{
 		synchronized (this)
 		{
-			return this.redPoints;
+			return redPoints;
 		}
 	}
 
@@ -174,7 +174,7 @@ public final class BlockCheckerEngine
 	{
 		synchronized (this)
 		{
-			return this.bluePoints;
+			return bluePoints;
 		}
 	}
 
@@ -187,18 +187,18 @@ public final class BlockCheckerEngine
 	 */
 	public int getPlayerPoints(L2PcInstance player, boolean isRed)
 	{
-		if (!this.redTeamPoints.containsKey(player) && !this.blueTeamPoints.containsKey(player))
+		if (!redTeamPoints.containsKey(player) && !blueTeamPoints.containsKey(player))
 		{
 			return 0;
 		}
 
 		if (isRed)
 		{
-			return this.redTeamPoints.get(player);
+			return redTeamPoints.get(player);
 		}
 		else
 		{
-			return this.blueTeamPoints.get(player);
+			return blueTeamPoints.get(player);
 		}
 	}
 
@@ -217,17 +217,17 @@ public final class BlockCheckerEngine
 
 		if (team == 0)
 		{
-			int points = this.redTeamPoints.get(player) + 1;
-			this.redTeamPoints.put(player, points);
-			this.redPoints++;
-			this.bluePoints--;
+			int points = redTeamPoints.get(player) + 1;
+			redTeamPoints.put(player, points);
+			redPoints++;
+			bluePoints--;
 		}
 		else
 		{
-			int points = this.blueTeamPoints.get(player) + 1;
-			this.blueTeamPoints.put(player, points);
-			this.bluePoints++;
-			this.redPoints--;
+			int points = blueTeamPoints.get(player) + 1;
+			blueTeamPoints.put(player, points);
+			bluePoints++;
+			redPoints--;
 		}
 	}
 
@@ -241,7 +241,7 @@ public final class BlockCheckerEngine
 	{
 		if (item != null)
 		{
-			this.drops.add(item);
+			drops.add(item);
 		}
 	}
 
@@ -253,7 +253,7 @@ public final class BlockCheckerEngine
 	 */
 	public boolean isStarted()
 	{
-		return this.isStarted;
+		return isStarted;
 	}
 
 	/**
@@ -262,7 +262,7 @@ public final class BlockCheckerEngine
 	 */
 	private void broadcastRelationChanged(L2PcInstance plr)
 	{
-		for (L2PcInstance p : this.holder.getAllPlayers())
+		for (L2PcInstance p : holder.getAllPlayers())
 		{
 			p.sendPacket(new RelationChanged(plr, plr.getRelation(p), plr.isAutoAttackable(p)));
 		}
@@ -278,26 +278,26 @@ public final class BlockCheckerEngine
 		{
 			synchronized (this)
 			{
-				this.isStarted = false;
+				isStarted = false;
 
-				if (this.task != null)
+				if (task != null)
 				{
-					this.task.cancel(true);
+					task.cancel(true);
 				}
 
-				this.abnormalEnd = true;
+				abnormalEnd = true;
 
 				ThreadPoolManager.getInstance().executeTask(new EndEvent());
 
 				if (Config.DEBUG)
 				{
-					Log.config("Handys Block Checker Event at arena " + this.arena + " ended due lack of players!");
+					Log.config("Handys Block Checker Event at arena " + arena + " ended due lack of players!");
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.SEVERE, "Couldnt end Block Checker event at " + this.arena, e);
+			Log.log(Level.SEVERE, "Couldnt end Block Checker event at " + arena, e);
 		}
 	}
 
@@ -315,9 +315,9 @@ public final class BlockCheckerEngine
 		public StartEvent()
 		{
 			// Initialize all used skills
-			this.freeze = SkillTable.getInstance().getInfo(6034, 1);
-			this.transformationRed = SkillTable.getInstance().getInfo(6035, 1);
-			this.transformationBlue = SkillTable.getInstance().getInfo(6036, 1);
+			freeze = SkillTable.getInstance().getInfo(6034, 1);
+			transformationRed = SkillTable.getInstance().getInfo(6035, 1);
+			transformationBlue = SkillTable.getInstance().getInfo(6036, 1);
 		}
 
 		/**
@@ -383,22 +383,22 @@ public final class BlockCheckerEngine
 
 				// Give the player start up effects
 				// Freeze
-				this.freeze.getEffects(player, player);
+				freeze.getEffects(player, player);
 				// Tranformation
 				if (holder.getPlayerTeam(player) == 0)
 				{
-					this.transformationRed.getEffects(player, player);
+					transformationRed.getEffects(player, player);
 				}
 				else
 				{
-					this.transformationBlue.getEffects(player, player);
+					transformationBlue.getEffects(player, player);
 				}
 				// Set the current player arena
 				player.setBlockCheckerArena((byte) arena);
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 				// Send needed packets
 				player.sendPacket(initialPoints);
-				player.sendPacket(this.closeUserInterface);
+				player.sendPacket(closeUserInterface);
 				// ExBasicActionList
 				final ExBasicActionList actionList = ExBasicActionList.getStaticPacket(player);
 				player.sendPacket(actionList);
@@ -436,7 +436,7 @@ public final class BlockCheckerEngine
 
 		SpawnRound(int numberOfBoxes, int round)
 		{
-			this.numOfBoxes = numberOfBoxes;
+			numOfBoxes = numberOfBoxes;
 			this.round = round;
 		}
 
@@ -448,7 +448,7 @@ public final class BlockCheckerEngine
 				return;
 			}
 
-			switch (this.round)
+			switch (round)
 			{
 				case 1:
 					// Schedule second spawn round
@@ -472,7 +472,7 @@ public final class BlockCheckerEngine
 			try
 			{
 				// Creates 50 new blocks
-				for (int i = 0; i < this.numOfBoxes; i++)
+				for (int i = 0; i < numOfBoxes; i++)
 				{
 					L2Spawn spawn = new L2Spawn(template);
 					spawn.setX(arenaCoordinates[arena][4] + Rnd.get(-400, 400));
@@ -505,7 +505,7 @@ public final class BlockCheckerEngine
 			}
 
 			// Spawn the block carrying girl
-			if (this.round == 1 || this.round == 2)
+			if (round == 1 || round == 2)
 			{
 				L2NpcTemplate girl = NpcTable.getInstance().getTemplate(18676);
 				try
@@ -532,8 +532,8 @@ public final class BlockCheckerEngine
 				}
 			}
 
-			redPoints += this.numOfBoxes / 2;
-			bluePoints += this.numOfBoxes / 2;
+			redPoints += numOfBoxes / 2;
+			bluePoints += numOfBoxes / 2;
 
 			int timeLeft = (int) ((getStarterTime() - System.currentTimeMillis()) / 1000);
 			ExCubeGameChangePoints changePoints = new ExCubeGameChangePoints(timeLeft, getBluePoints(), getRedPoints());
@@ -553,14 +553,14 @@ public final class BlockCheckerEngine
 		@Override
 		public void run()
 		{
-			if (this.spawn == null)
+			if (spawn == null)
 			{
 				Log.warning("HBCE: Block Carrying Girl is null");
 				return;
 			}
-			SpawnTable.getInstance().deleteSpawn(this.spawn, false);
-			this.spawn.stopRespawn();
-			this.spawn.getNpc().deleteMe();
+			SpawnTable.getInstance().deleteSpawn(spawn, false);
+			spawn.stopRespawn();
+			spawn.getNpc().deleteMe();
 		}
 	}
 

@@ -47,49 +47,48 @@ public final class AuctionItem
 
 	public final boolean checkItemExists()
 	{
-		final L2Item item = ItemTable.getInstance().getTemplate(this.itemId);
+		final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 		return item != null;
 	}
 
 	public final int getAuctionItemId()
 	{
-		return this.auctionItemId;
+		return auctionItemId;
 	}
 
 	public final int getAuctionLength()
 	{
-		return this.auctionLength;
+		return auctionLength;
 	}
 
 	public final long getAuctionInitBid()
 	{
-		return this.auctionInitBid;
+		return auctionInitBid;
 	}
 
 	public final int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public final long getItemCount()
 	{
-		return this.itemCount;
+		return itemCount;
 	}
 
 	public final L2ItemInstance createNewItemInstance()
 	{
-		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", this.itemId, this.itemCount, null, null);
+		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", itemId, itemCount, null, null);
 
-		final int enchantLevel = this.itemExtra.getInteger("enchant_level", 0);
+		final int enchantLevel = itemExtra.getInteger("enchant_level", 0);
 		item.setEnchantLevel(enchantLevel);
 
-		final int augmentationId = this.itemExtra.getInteger("augmentation_id", 0);
+		final int augmentationId = itemExtra.getInteger("augmentation_id", 0);
 		if (augmentationId != 0)
 		{
-			@SuppressWarnings("unused") final int augmentationSkillId =
-					this.itemExtra.getInteger("augmentation_skill_id", 0);
+			@SuppressWarnings("unused") final int augmentationSkillId = itemExtra.getInteger("augmentation_skill_id", 0);
 			@SuppressWarnings("unused") final int augmentationSkillLevel =
-					this.itemExtra.getInteger("augmentation_skill_lvl", 0);
+					itemExtra.getInteger("augmentation_skill_lvl", 0);
 			item.setAugmentation(new L2Augmentation(augmentationId));
 		}
 

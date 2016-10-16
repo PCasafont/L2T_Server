@@ -151,20 +151,20 @@ public class FortSiegeManager
 
 	public final List<FortSiege> getSieges()
 	{
-		if (this.sieges == null)
+		if (sieges == null)
 		{
-			this.sieges = new ArrayList<>();
+			sieges = new ArrayList<>();
 		}
-		return this.sieges;
+		return sieges;
 	}
 
 	public final void addSiege(FortSiege fortSiege)
 	{
-		if (this.sieges == null)
+		if (sieges == null)
 		{
-			this.sieges = new ArrayList<>();
+			sieges = new ArrayList<>();
 		}
-		this.sieges.add(fortSiege);
+		sieges.add(fortSiege);
 	}
 
 	public boolean isCombat(int itemId)
@@ -254,36 +254,36 @@ public class FortSiegeManager
 
 		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id)
 		{
-			this.fortId = fort_id;
-			this.location = new Location(x, y, z, heading);
+			fortId = fort_id;
+			location = new Location(x, y, z, heading);
 			this.heading = heading;
-			this.npcId = npc_id;
+			npcId = npc_id;
 			this.id = id;
 		}
 
 		public int getFortId()
 		{
-			return this.fortId;
+			return fortId;
 		}
 
 		public int getNpcId()
 		{
-			return this.npcId;
+			return npcId;
 		}
 
 		public int getHeading()
 		{
-			return this.heading;
+			return heading;
 		}
 
 		public int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		public Location getLocation()
 		{
-			return this.location;
+			return location;
 		}
 	}
 

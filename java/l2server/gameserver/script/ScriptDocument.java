@@ -43,7 +43,7 @@ public class ScriptDocument
 		try
 		{
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			this.document = builder.parse(input);
+			document = builder.parse(input);
 		}
 		catch (SAXException sxe)
 		{
@@ -64,7 +64,7 @@ public class ScriptDocument
 
 	public Document getDocument()
 	{
-		return this.document;
+		return document;
 	}
 
 	/**
@@ -72,12 +72,12 @@ public class ScriptDocument
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	@Override
 	public String toString()
 	{
-		return this.name;
+		return name;
 	}
 }

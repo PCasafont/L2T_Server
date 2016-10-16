@@ -43,7 +43,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -61,9 +61,9 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			return;
 		}
 
-		requestor.sendPacket(new JoinParty(this.response));
+		requestor.sendPacket(new JoinParty(response));
 
-		if (this.response == 1)
+		if (response == 1)
 		{
 			if (requestor.isInParty() && requestor.getParty().getMemberCount() >= Config.MAX_MEMBERS_IN_PARTY)
 			{
@@ -118,7 +118,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 				}
 			}
 		}
-		else if (this.response == -1)
+		else if (response == -1)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_PARTY_REQUEST);
 			sm.addPcName(player);

@@ -51,7 +51,7 @@ public class AdminForgePacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		for (Part p : this.parts)
+		for (Part p : parts)
 		{
 			generate(p.b, p.str);
 		}
@@ -103,6 +103,6 @@ public class AdminForgePacket extends L2GameServerPacket
 
 	public void addPart(byte b, String string)
 	{
-		this.parts.add(new Part(b, string));
+		parts.add(new Part(b, string));
 	}
 }

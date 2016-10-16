@@ -46,8 +46,8 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.message = readS();
-		this.reciever = readS();
+		message = readS();
+		reciever = readS();
 	}
 
 	@Override
@@ -59,12 +59,12 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			return;
 		}
 
-		if (this.message == null || this.message.isEmpty() || this.message.length() > 300)
+		if (message == null || message.isEmpty() || message.length() > 300)
 		{
 			return;
 		}
 
-		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(this.reciever);
+		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(reciever);
 		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
@@ -84,8 +84,8 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 				statement.setLong(1, System.currentTimeMillis());
 				statement.setString(2, "TELL");
 				statement.setString(3, activeChar.getName());
-				statement.setString(4, this.reciever);
-				statement.setString(5, this.message);
+				statement.setString(4, reciever);
+				statement.setString(5, message);
 				statement.execute();
 				statement.close();
 			}
@@ -104,6 +104,6 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			this.logChat.log(record);*/
 		}
 
-		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), this.reciever, this.message));
+		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), reciever, message));
 	}
 }

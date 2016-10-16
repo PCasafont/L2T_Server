@@ -54,15 +54,15 @@ public class FriendPacket extends L2GameServerPacket
 	public FriendPacket(boolean action, int objId, L2PcInstance activeChar)
 	{
 		this.action = action;
-		this.objid = objId;
-		this.name = CharNameTable.getInstance().getNameById(objId);
-		this.online = L2World.getInstance().getPlayer(objId) != null;
-		this.player = L2World.getInstance().getPlayer(objId);
-		this.memo = activeChar.getFriendMemo(objId);
-		if (this.player != null)
+		objid = objId;
+		name = CharNameTable.getInstance().getNameById(objId);
+		online = L2World.getInstance().getPlayer(objId) != null;
+		player = L2World.getInstance().getPlayer(objId);
+		memo = activeChar.getFriendMemo(objId);
+		if (player != null)
 		{
-			this.level = this.player.getLevel();
-			this.classId = this.player.getClassId();
+			level = player.getLevel();
+			classId = player.getClassId();
 		}
 		else
 		{
@@ -73,14 +73,14 @@ public class FriendPacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.action ? 1 : 3); // 1-add 3-remove
-		writeD(this.objid);
-		writeS(this.name);
-		writeD(this.online ? 1 : 0);
-		writeD(this.online ? this.objid : 0);
-		writeD(this.level);
-		writeD(this.classId);
-		writeS(this.memo);
+		writeD(action ? 1 : 3); // 1-add 3-remove
+		writeD(objid);
+		writeS(name);
+		writeD(online ? 1 : 0);
+		writeD(online ? objid : 0);
+		writeD(level);
+		writeD(classId);
+		writeS(memo);
 	}
 
 	private void offlineFriendInfo(int objId)
@@ -101,7 +101,7 @@ public class FriendPacket extends L2GameServerPacket
 			while (rset.next())
 			{
 				level = rset.getByte("level");
-				this.classId = rset.getInt("classid");
+				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
 			}
 			rset.close();
@@ -116,7 +116,7 @@ public class FriendPacket extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (this.classId != bClassId)
+		if (classId != bClassId)
 		{
 			try
 			{
@@ -126,7 +126,7 @@ public class FriendPacket extends L2GameServerPacket
 				PreparedStatement statement =
 						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
-				statement.setInt(2, this.classId);
+				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
 
 				while (rset.next())

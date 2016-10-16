@@ -60,15 +60,15 @@ public class EffectSignet extends L2Effect
 	{
 		if (getSkill() instanceof L2SkillSignet)
 		{
-			this.skill = SkillTable.getInstance()
+			skill = SkillTable.getInstance()
 					.getInfo(((L2SkillSignet) getSkill()).effectId, ((L2SkillSignet) getSkill()).effectLevel);
 		}
 		else if (getSkill() instanceof L2SkillSignetCasttime)
 		{
-			this.skill = SkillTable.getInstance().getInfo(((L2SkillSignetCasttime) getSkill()).effectId, getLevel());
+			skill = SkillTable.getInstance().getInfo(((L2SkillSignetCasttime) getSkill()).effectId, getLevel());
 		}
-		this.actor = (L2EffectPointInstance) getEffected();
-		this.srcInArena =
+		actor = (L2EffectPointInstance) getEffected();
+		srcInArena =
 				getEffector().isInsideZone(L2Character.ZONE_PVP) && !getEffector().isInsideZone(L2Character.ZONE_SIEGE);
 		return true;
 	}
@@ -79,12 +79,12 @@ public class EffectSignet extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (this.skill == null)
+		if (skill == null)
 		{
 			return true;
 		}
 
-		int mpConsume = this.skill.getMpConsume();
+		int mpConsume = skill.getMpConsume();
 
 		if (mpConsume > getEffector().getCurrentMp())
 		{
@@ -99,14 +99,15 @@ public class EffectSignet extends L2Effect
 		boolean signetActor = calc() != 0;
 
 		final ArrayList<L2Character> targets = new ArrayList<>();
-		for (L2Character cha : this.actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (cha == null)
 			{
 				continue;
 			}
 
-			if (this.skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, this.skill, this.srcInArena))
+			if (skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, skill,
+					srcInArena))
 			{
 				continue;
 			}
@@ -123,7 +124,7 @@ public class EffectSignet extends L2Effect
 			// there doesn't seem to be a visible effect with MagicSkillLaunched packet...
 			if (!signetActor)
 			{
-				this.actor.broadcastPacket(new MagicSkillUse(this.actor, cha, this.skill.getId(), this.skill.getLevelHash(), 0, 0, 0));
+				actor.broadcastPacket(new MagicSkillUse(actor, cha, skill.getId(), skill.getLevelHash(), 0, 0, 0));
 			}
 			targets.add(cha);
 		}
@@ -131,7 +132,7 @@ public class EffectSignet extends L2Effect
 		if (signetActor)
 		{
 			//_actor.broadcastPacket(new TargetSelected(this.actor.getObjectId(), this.actor.getObjectId(), this.actor.getX(), this.actor.getY(), this.actor.getZ()));
-			this.actor.broadcastPacket(new MagicSkillUse(this.actor, this.skill.getId(), this.skill.getLevelHash(), 0, 0));
+			actor.broadcastPacket(new MagicSkillUse(actor, skill.getId(), skill.getLevelHash(), 0, 0));
 			//_actor.broadcastPacket(new MagicSkillLaunched(this.actor, this.skill.getId(), this.skill.getLevel(), targets.toArray(new L2Character[targets.size()])));
 		}
 
@@ -139,11 +140,11 @@ public class EffectSignet extends L2Effect
 		{
 			if (!signetActor)
 			{
-				getEffector().callSkill(this.skill, targets.toArray(new L2Character[targets.size()]));
+				getEffector().callSkill(skill, targets.toArray(new L2Character[targets.size()]));
 			}
 			else
 			{
-				this.actor.callSkill(this.skill, targets.toArray(new L2Character[targets.size()]));
+				actor.callSkill(skill, targets.toArray(new L2Character[targets.size()]));
 			}
 		}
 		return true;
@@ -155,9 +156,9 @@ public class EffectSignet extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (this.actor != null)
+		if (actor != null)
 		{
-			this.actor.deleteMe();
+			actor.deleteMe();
 		}
 	}
 }

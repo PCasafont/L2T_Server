@@ -32,10 +32,10 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.action = readD();
-		this.karma = readD();
-		this.introduction = readS();
-		this.largeIntroduction = readS();
+		action = readD();
+		karma = readD();
+		introduction = readS();
+		largeIntroduction = readS();
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 			return;
 		}
 
-		switch (this.action)
+		switch (action)
 		{
 			case 0:
 				if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan()))
@@ -57,14 +57,14 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 				break;
 			case 1:
 				if (ClanRecruitManager.getInstance()
-						.addClan(activeChar.getClan(), this.karma, this.introduction, this.largeIntroduction))
+						.addClan(activeChar.getClan(), karma, introduction, largeIntroduction))
 				{
 					sendPacket(new ExPledgeRecruitApplyInfo(1));
 				}
 				break;
 			case 2:
 				ClanRecruitManager.getInstance()
-						.updateClan(activeChar.getClan(), this.karma, this.introduction, this.largeIntroduction);
+						.updateClan(activeChar.getClan(), karma, introduction, largeIntroduction);
 				break;
 		}
 	}

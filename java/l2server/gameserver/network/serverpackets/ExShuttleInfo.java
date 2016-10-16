@@ -33,19 +33,19 @@ public class ExShuttleInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.shuttle.getObjectId());
-		writeD(this.shuttle.getX());
-		writeD(this.shuttle.getY());
-		writeD(this.shuttle.getZ());
-		writeD(this.shuttle.getHeading());
-		writeD(this.shuttle.getId());
-		writeD(this.shuttle.getStops().size());
-		for (ShuttleStop door : this.shuttle.getStops())
+		writeD(shuttle.getObjectId());
+		writeD(shuttle.getX());
+		writeD(shuttle.getY());
+		writeD(shuttle.getZ());
+		writeD(shuttle.getHeading());
+		writeD(shuttle.getId());
+		writeD(shuttle.getStops().size());
+		for (ShuttleStop door : shuttle.getStops())
 		{
 			writeD(door.getId());
 			writeD(0x00);
 			writeD(0x00);
-			writeD(this.shuttle.getId() == 3 ? -115 : -50);//Related with shuttle doors
+			writeD(shuttle.getId() == 3 ? -115 : -50);//Related with shuttle doors
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x00);

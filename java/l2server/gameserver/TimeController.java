@@ -100,7 +100,7 @@ public class TimeController
 			return;
 		}
 
-		this.movingObjects.putIfAbsent(cha.getObjectId(), cha);
+		movingObjects.putIfAbsent(cha.getObjectId(), cha);
 	}
 
 	/**
@@ -117,13 +117,13 @@ public class TimeController
 	protected void moveObjects()
 	{
 		// Go throw the table containing L2Character in movement
-		Iterator<Map.Entry<Integer, L2Character>> it = this.movingObjects.entrySet().iterator();
+		Iterator<Map.Entry<Integer, L2Character>> it = movingObjects.entrySet().iterator();
 		while (it.hasNext())
 		{
 			// If movement is finished, the L2Character is removed from
 			// movingObjects and added to the ArrayList ended
 			L2Character ch = it.next().getValue();
-			if (ch.updatePosition(this.gameTicks))
+			if (ch.updatePosition(gameTicks))
 			{
 				it.remove();
 				ThreadPoolManager.getInstance().executeTask(new MovingObjectArrived(ch));
@@ -133,8 +133,8 @@ public class TimeController
 
 	public void stopTimer()
 	{
-		this.interruptRequest = true;
-		this.timer.interrupt();
+		interruptRequest = true;
+		timer.interrupt();
 	}
 
 	class TimerThread extends Thread
@@ -213,13 +213,13 @@ public class TimeController
 		{
 			try
 			{
-				if (this.ended.hasAI()) // AI could be just disabled due to region turn off
+				if (ended.hasAI()) // AI could be just disabled due to region turn off
 				{
 					if (Config.MOVE_BASED_KNOWNLIST)
 					{
-						this.ended.getKnownList().findObjects();
+						ended.getKnownList().findObjects();
 					}
-					this.ended.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
+					ended.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				}
 			}
 			catch (NullPointerException e)

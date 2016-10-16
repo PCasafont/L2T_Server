@@ -44,7 +44,7 @@ public class ExHeroList extends L2GameServerPacket
 
 	public ExHeroList()
 	{
-		this.heroList = HeroesManager.getInstance().getHeroes();
+		heroList = HeroesManager.getInstance().getHeroes();
 	}
 
 	/* (non-Javadoc)
@@ -53,9 +53,9 @@ public class ExHeroList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.heroList.size());
+		writeD(heroList.size());
 
-		for (HeroInfo hero : this.heroList.values())
+		for (HeroInfo hero : heroList.values())
 		{
 			writeS(hero.getName());
 			writeD(hero.getClassId());

@@ -37,6 +37,6 @@ public class ExCompoundSuccess extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.itemId); // Resulting item id
+		writeD(itemId); // Resulting item id
 	}
 }

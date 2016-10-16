@@ -35,22 +35,22 @@ public final class TradeItem
 
 	public void setObjectId(int id)
 	{
-		this.objectId = id;
+		objectId = id;
 	}
 
 	public int getObjectId()
 	{
-		return this.objectId;
+		return objectId;
 	}
 
 	public void setItemId(int id)
 	{
-		this.itemId = id;
+		itemId = id;
 	}
 
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public void setOwnersPrice(long price)
@@ -60,17 +60,17 @@ public final class TradeItem
 
 	public long getOwnersPrice()
 	{
-		return this.price;
+		return price;
 	}
 
 	public void setstorePrice(long price)
 	{
-		this.storePrice = price;
+		storePrice = price;
 	}
 
 	public long getStorePrice()
 	{
-		return this.storePrice;
+		return storePrice;
 	}
 
 	public void setCount(long count)
@@ -80,16 +80,16 @@ public final class TradeItem
 
 	public long getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	public void setEnchantLevel(int enchant)
 	{
-		this.enchantLevel = enchant;
+		enchantLevel = enchant;
 	}
 
 	public int getEnchantLevel()
 	{
-		return this.enchantLevel;
+		return enchantLevel;
 	}
 }

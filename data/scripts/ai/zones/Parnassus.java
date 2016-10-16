@@ -18,8 +18,8 @@ public class Parnassus extends Quest
 	{
 		super(id, name, descr);
 
-		addCreatureSeeId(this.crystalPrisonEntrance);
-		addCreatureSeeId(this.crystalCavernsEntrance);
+		addCreatureSeeId(crystalPrisonEntrance);
+		addCreatureSeeId(crystalCavernsEntrance);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class Parnassus extends Quest
 	{
 		if (player != null)
 		{
-			if (npc.getNpcId() == this.crystalPrisonEntrance)
+			if (npc.getNpcId() == crystalPrisonEntrance)
 			{
 				player.sendPacket(new EventTrigger(24230010, true));
 				player.sendPacket(new EventTrigger(24230012, true));

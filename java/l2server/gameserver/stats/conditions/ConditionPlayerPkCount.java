@@ -46,6 +46,6 @@ public class ConditionPlayerPkCount extends Condition
 			return false;
 		}
 
-		return ((L2PcInstance) env.player).getPkKills() <= this.pk;
+		return ((L2PcInstance) env.player).getPkKills() <= pk;
 	}
 }

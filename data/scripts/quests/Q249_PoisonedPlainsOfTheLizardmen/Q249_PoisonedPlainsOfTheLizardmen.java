@@ -43,7 +43,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.mouen)
+		if (npc.getNpcId() == mouen)
 		{
 			if (event.equalsIgnoreCase("30196-03.htm"))
 			{
@@ -52,7 +52,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == this.johnny && event.equalsIgnoreCase("32744-03.htm"))
+		else if (npc.getNpcId() == johnny && event.equalsIgnoreCase("32744-03.htm"))
 		{
 			st.unset("cond");
 			st.giveItems(57, 83056);
@@ -73,7 +73,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.mouen)
+		if (npc.getNpcId() == mouen)
 		{
 			switch (st.getState())
 			{
@@ -98,7 +98,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.johnny)
+		else if (npc.getNpcId() == johnny)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -116,9 +116,9 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.mouen);
-		addTalkId(this.mouen);
-		addTalkId(this.johnny);
+		addStartNpc(mouen);
+		addTalkId(mouen);
+		addTalkId(johnny);
 	}
 
 	public static void main(String[] args)

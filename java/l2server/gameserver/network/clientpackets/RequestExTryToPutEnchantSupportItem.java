@@ -39,8 +39,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.supportObjectId = readD();
-		this.enchantObjectId = readD();
+		supportObjectId = readD();
+		enchantObjectId = readD();
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		{
 			if (activeChar.isEnchanting())
 			{
-				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.enchantObjectId);
-				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(this.supportObjectId);
+				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(enchantObjectId);
+				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(supportObjectId);
 
 				if (item == null || support == null)
 				{
@@ -77,7 +77,7 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 
 				activeChar.setIsEnchanting(true);
 				activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
-				activeChar.sendPacket(new ExPutEnchantSupportItemResult(this.supportObjectId));
+				activeChar.sendPacket(new ExPutEnchantSupportItemResult(supportObjectId));
 				activeChar.sendPacket(new ExEnchantItemAllowed());
 			}
 		}

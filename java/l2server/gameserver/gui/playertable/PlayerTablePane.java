@@ -56,13 +56,13 @@ public class PlayerTablePane extends JPanel
 
 	public PlayerTablePane()
 	{
-		setLayout(this.layout);
+		setLayout(layout);
 
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.insets = new Insets(5, 5, 5, 5);
 
 		JPanel smallPane = new JPanel();
-		smallPane.setLayout(this.layout);
+		smallPane.setLayout(layout);
 
 		/*ButtonListeners buttonListeners = new ButtonListeners();
 
@@ -80,14 +80,14 @@ public class PlayerTablePane extends JPanel
 		cons.fill = GridBagConstraints.HORIZONTAL;
 		add(smallPane, cons);*/
 
-		this.playerTableModel = new PlayerTableModel();
-		this.playerTable = new JTable(this.playerTableModel);
-		this.playerTable.addMouseListener(new PlayerTableMouseListener(this));
-		this.playerTable.setDefaultRenderer(Object.class, new PlayerTableRenderer(this.playerTableModel));
-		this.playerTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		this.playerTable.getSelectionModel().addListSelectionListener(new PlayerSelectionListener());
-		this.playerTable.getColumnModel().getColumn(0).setMaxWidth(100);
-		JScrollPane scrollPane = new JScrollPane(this.playerTable);
+		playerTableModel = new PlayerTableModel();
+		playerTable = new JTable(playerTableModel);
+		playerTable.addMouseListener(new PlayerTableMouseListener(this));
+		playerTable.setDefaultRenderer(Object.class, new PlayerTableRenderer(playerTableModel));
+		playerTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		playerTable.getSelectionModel().addListSelectionListener(new PlayerSelectionListener());
+		playerTable.getColumnModel().getColumn(0).setMaxWidth(100);
+		JScrollPane scrollPane = new JScrollPane(playerTable);
 		scrollPane.setMinimumSize(new Dimension(250, 500));
 		cons.weightx = 0.5;
 		cons.weighty = 0.95;
@@ -111,7 +111,7 @@ public class PlayerTablePane extends JPanel
 	{
 		SwingUtilities.invokeLater(() ->
 		{
-			if (this.playerTableModel.updateData())
+			if (playerTableModel.updateData())
 			{
 				getPlayerTable().updateUI();
 			}
@@ -120,12 +120,12 @@ public class PlayerTablePane extends JPanel
 
 	public JTable getPlayerTable()
 	{
-		return this.playerTable;
+		return playerTable;
 	}
 
 	public PlayerTableModel getPlayerTableModel()
 	{
-		return this.playerTableModel;
+		return playerTableModel;
 	}
 
 	public void updateCurrentPlayer()
@@ -135,12 +135,12 @@ public class PlayerTablePane extends JPanel
 
 	public void updateCurrentPlayer(boolean forced)
 	{
-		if (!forced && this.currentSelectedPlayer == this.playerTable.getSelectedRow())
+		if (!forced && currentSelectedPlayer == playerTable.getSelectedRow())
 		{
 		}
 		else
 		{
-			this.currentSelectedPlayer = this.playerTable.getSelectedRow();
+			currentSelectedPlayer = playerTable.getSelectedRow();
 		}
 
 		//Player player = World.getInstance().getPlayer((Integer)_playerTableModel.getValueAt(this.playerTable.getSelectedRow(), 0));
@@ -148,8 +148,8 @@ public class PlayerTablePane extends JPanel
 
 	public void setTableSelectByMouseEvent(MouseEvent e)
 	{
-		int rowNumber = this.playerTable.rowAtPoint(e.getPoint());
-		this.playerTable.getSelectionModel().setSelectionInterval(rowNumber, rowNumber);
+		int rowNumber = playerTable.rowAtPoint(e.getPoint());
+		playerTable.getSelectionModel().setSelectionInterval(rowNumber, rowNumber);
 	}
 
 	public class PlayerSelectionListener implements ListSelectionListener

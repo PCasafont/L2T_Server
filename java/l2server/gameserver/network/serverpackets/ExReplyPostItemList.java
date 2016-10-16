@@ -30,7 +30,7 @@ public class ExReplyPostItemList extends L2ItemListPacket
 	public ExReplyPostItemList(L2PcInstance activeChar)
 	{
 		this.activeChar = activeChar;
-		this.itemList = this.activeChar.getInventory().getAvailableItems(true, false);
+		itemList = this.activeChar.getInventory().getAvailableItems(true, false);
 	}
 
 	/* (non-Javadoc)
@@ -39,8 +39,8 @@ public class ExReplyPostItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.itemList.length);
-		for (L2ItemInstance item : this.itemList)
+		writeD(itemList.length);
+		for (L2ItemInstance item : itemList)
 		{
 			writeItem(item);
 		}

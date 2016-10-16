@@ -30,7 +30,7 @@ public class ExShowSentPostList extends L2GameServerPacket
 
 	public ExShowSentPostList(int objectId)
 	{
-		this.outbox = MailManager.getInstance().getOutbox(objectId);
+		outbox = MailManager.getInstance().getOutbox(objectId);
 	}
 
 	/* (non-Javadoc)
@@ -40,10 +40,10 @@ public class ExShowSentPostList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD((int) (System.currentTimeMillis() / 1000));
-		if (this.outbox != null && this.outbox.size() > 0)
+		if (outbox != null && outbox.size() > 0)
 		{
-			writeD(this.outbox.size());
-			for (Message msg : this.outbox)
+			writeD(outbox.size());
+			for (Message msg : outbox)
 			{
 				writeD(msg.getId());
 				writeS(msg.getSubject());

@@ -65,12 +65,12 @@ public class CharSelectInfoPackage
 	{
 		setObjectId(objectId);
 		this.name = name;
-		this.paperdoll = PcInventory.restoreVisibleInventory(objectId);
+		paperdoll = PcInventory.restoreVisibleInventory(objectId);
 	}
 
 	public int getObjectId()
 	{
-		return this.objectId;
+		return objectId;
 	}
 
 	public void setObjectId(int objectId)
@@ -80,7 +80,7 @@ public class CharSelectInfoPackage
 
 	public int getCharId()
 	{
-		return this.charId;
+		return charId;
 	}
 
 	public void setCharId(int charId)
@@ -90,7 +90,7 @@ public class CharSelectInfoPackage
 
 	public int getClanId()
 	{
-		return this.clanId;
+		return clanId;
 	}
 
 	public void setClanId(int clanId)
@@ -100,7 +100,7 @@ public class CharSelectInfoPackage
 
 	public int getCurrentClass()
 	{
-		return this.classId;
+		return classId;
 	}
 
 	public void setClassId(int classId)
@@ -110,7 +110,7 @@ public class CharSelectInfoPackage
 
 	public double getCurrentHp()
 	{
-		return this.currentHp;
+		return currentHp;
 	}
 
 	public void setCurrentHp(double currentHp)
@@ -120,7 +120,7 @@ public class CharSelectInfoPackage
 
 	public double getCurrentMp()
 	{
-		return this.currentMp;
+		return currentMp;
 	}
 
 	public void setCurrentMp(double currentMp)
@@ -130,7 +130,7 @@ public class CharSelectInfoPackage
 
 	public long getDeleteTimer()
 	{
-		return this.deleteTimer;
+		return deleteTimer;
 	}
 
 	public void setDeleteTimer(long deleteTimer)
@@ -140,7 +140,7 @@ public class CharSelectInfoPackage
 
 	public long getLastAccess()
 	{
-		return this.lastAccess;
+		return lastAccess;
 	}
 
 	public void setLastAccess(long lastAccess)
@@ -150,7 +150,7 @@ public class CharSelectInfoPackage
 
 	public long getExp()
 	{
-		return this.exp;
+		return exp;
 	}
 
 	public void setExp(long exp)
@@ -160,7 +160,7 @@ public class CharSelectInfoPackage
 
 	public int getFace()
 	{
-		return this.face;
+		return face;
 	}
 
 	public void setFace(int face)
@@ -170,7 +170,7 @@ public class CharSelectInfoPackage
 
 	public int getHairColor()
 	{
-		return this.hairColor;
+		return hairColor;
 	}
 
 	public void setHairColor(int hairColor)
@@ -180,7 +180,7 @@ public class CharSelectInfoPackage
 
 	public int getHairStyle()
 	{
-		return this.hairStyle;
+		return hairStyle;
 	}
 
 	public void setHairStyle(int hairStyle)
@@ -190,17 +190,17 @@ public class CharSelectInfoPackage
 
 	public int getPaperdollObjectId(int slot)
 	{
-		return this.paperdoll[slot][0];
+		return paperdoll[slot][0];
 	}
 
 	public int getPaperdollItemId(int slot)
 	{
-		return this.paperdoll[slot][1];
+		return paperdoll[slot][1];
 	}
 
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	public void setLevel(int level)
@@ -210,7 +210,7 @@ public class CharSelectInfoPackage
 
 	public int getMaxHp()
 	{
-		return this.maxHp;
+		return maxHp;
 	}
 
 	public void setMaxHp(int maxHp)
@@ -220,7 +220,7 @@ public class CharSelectInfoPackage
 
 	public int getMaxMp()
 	{
-		return this.maxMp;
+		return maxMp;
 	}
 
 	public void setMaxMp(int maxMp)
@@ -230,7 +230,7 @@ public class CharSelectInfoPackage
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name)
@@ -240,17 +240,17 @@ public class CharSelectInfoPackage
 
 	public L2PcTemplate getTemplate()
 	{
-		return this.template;
+		return template;
 	}
 
 	public void setTemplate(L2PcTemplate t)
 	{
-		this.template = t;
+		template = t;
 	}
 
 	public int getSex()
 	{
-		return this.sex;
+		return sex;
 	}
 
 	public void setSex(int sex)
@@ -260,7 +260,7 @@ public class CharSelectInfoPackage
 
 	public long getSp()
 	{
-		return this.sp;
+		return sp;
 	}
 
 	public void setSp(long sp)
@@ -270,21 +270,21 @@ public class CharSelectInfoPackage
 
 	public int getEnchantEffect()
 	{
-		if (this.paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0)
+		if (paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0)
 		{
-			return this.paperdoll[Inventory.PAPERDOLL_RHAND][2];
+			return paperdoll[Inventory.PAPERDOLL_RHAND][2];
 		}
-		return this.paperdoll[Inventory.PAPERDOLL_RHAND][2];
+		return paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
 
 	public void setReputation(int k)
 	{
-		this.reputation = k;
+		reputation = k;
 	}
 
 	public int getReputation()
 	{
-		return this.reputation;
+		return reputation;
 	}
 
 	public void setAugmentationId(long augmentationId)
@@ -294,52 +294,52 @@ public class CharSelectInfoPackage
 
 	public long getAugmentationId()
 	{
-		return this.augmentationId;
+		return augmentationId;
 	}
 
 	public void setPkKills(int PkKills)
 	{
-		this.pkKills = PkKills;
+		pkKills = PkKills;
 	}
 
 	public int getPkKills()
 	{
-		return this.pkKills;
+		return pkKills;
 	}
 
 	public void setPvPKills(int PvPKills)
 	{
-		this.pvpKills = PvPKills;
+		pvpKills = PvPKills;
 	}
 
 	public int getPvPKills()
 	{
-		return this.pvpKills;
+		return pvpKills;
 	}
 
 	public int getTransformId()
 	{
-		return this.transformId;
+		return transformId;
 	}
 
 	public void setTransformId(int id)
 	{
-		this.transformId = id;
+		transformId = id;
 	}
 
 	public int getX()
 	{
-		return this.x;
+		return x;
 	}
 
 	public int getY()
 	{
-		return this.y;
+		return y;
 	}
 
 	public int getZ()
 	{
-		return this.z;
+		return z;
 	}
 
 	public void setX(int x)
@@ -359,7 +359,7 @@ public class CharSelectInfoPackage
 
 	public boolean isShowingHat()
 	{
-		return this.showHat;
+		return showHat;
 	}
 
 	public void setShowHat(boolean showHat)
@@ -369,7 +369,7 @@ public class CharSelectInfoPackage
 
 	public int getVitalityPoints()
 	{
-		return this.vitalityPoints;
+		return vitalityPoints;
 	}
 
 	public void setVitalityPoints(int vitalityPoints)
@@ -379,6 +379,6 @@ public class CharSelectInfoPackage
 
 	public int getVitalityLevel()
 	{
-		return this.vitalityLevel;
+		return vitalityLevel;
 	}
 }

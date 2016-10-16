@@ -17,7 +17,7 @@ public class ExMpccRoomMembers extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.unk);
-		writeD(this.listsize);
+		writeD(unk);
+		writeD(listsize);
 	}
 }

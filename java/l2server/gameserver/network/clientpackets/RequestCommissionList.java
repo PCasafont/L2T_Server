@@ -35,10 +35,10 @@ public final class RequestCommissionList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.category = readQ();
-		this.type = readD();
-		this.grade = readD();
-		this.searchName = readS();
+		category = readQ();
+		type = readD();
+		grade = readD();
+		searchName = readS();
 	}
 
 	@Override

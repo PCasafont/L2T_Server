@@ -59,7 +59,7 @@ public class AdminCommandAccessRights
 	 */
 	private void loadAdminCommandAccessRights()
 	{
-		this.adminCommandAccessRights = new HashMap<>();
+		adminCommandAccessRights = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
 		XmlDocument doc = new XmlDocument(file);
@@ -73,7 +73,7 @@ public class AdminCommandAccessRights
 							.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
 				}));
 
-		Log.info("AdminCommandAccessRights: Loaded " + this.adminCommandAccessRights.size() + " from xml.");
+		Log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
 	}
 
 	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel)
@@ -83,7 +83,7 @@ public class AdminCommandAccessRights
 			return true;
 		}
 
-		L2AdminCommandAccessRight acar = this.adminCommandAccessRights.get(adminCommand);
+		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(adminCommand);
 
 		if (acar == null)
 		{
@@ -96,13 +96,13 @@ public class AdminCommandAccessRights
 
 	public boolean requireConfirm(String command)
 	{
-		L2AdminCommandAccessRight acar = this.adminCommandAccessRights.get(command);
+		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(command);
 		if (acar == null)
 		{
 			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
 			return false;
 		}
-		return this.adminCommandAccessRights.get(command).getRequireConfirm();
+		return adminCommandAccessRights.get(command).getRequireConfirm();
 	}
 
 	public void reloadAdminCommandAccessRights()

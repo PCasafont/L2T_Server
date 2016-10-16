@@ -37,9 +37,9 @@ public class ExUseSharedGroupItem extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.itemId);
-		writeD(this.grpId);
-		writeD(this.remainedTime);
-		writeD(this.totalTime);
+		writeD(itemId);
+		writeD(grpId);
+		writeD(remainedTime);
+		writeD(totalTime);
 	}
 }

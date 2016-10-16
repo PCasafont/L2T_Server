@@ -50,12 +50,12 @@ public class ExColosseumFenceInfo extends L2GameServerPacket
 		writeC(0xfe);
 		writeH(0x0003);
 
-		writeD(this.fence.getObjectId());
-		writeD(this.fence.getFenceState().ordinal());
-		writeD(this.fence.getX());
-		writeD(this.fence.getY());
-		writeD(this.fence.getZ());
-		writeD(this.fence.getFenceWidth());
-		writeD(this.fence.getFenceHeight());
+		writeD(fence.getObjectId());
+		writeD(fence.getFenceState().ordinal());
+		writeD(fence.getX());
+		writeD(fence.getY());
+		writeD(fence.getZ());
+		writeD(fence.getFenceWidth());
+		writeD(fence.getFenceHeight());
 	}
 }

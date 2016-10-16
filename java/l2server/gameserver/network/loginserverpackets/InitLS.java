@@ -24,12 +24,12 @@ public class InitLS extends BaseRecievePacket
 
 	public int getRevision()
 	{
-		return this.rev;
+		return rev;
 	}
 
 	public byte[] getRSAKey()
 	{
-		return this.key;
+		return key;
 	}
 
 	/**
@@ -38,8 +38,8 @@ public class InitLS extends BaseRecievePacket
 	public InitLS(byte[] decrypt)
 	{
 		super(decrypt);
-		this.rev = readD();
+		rev = readD();
 		int size = readD();
-		this.key = readB(size);
+		key = readB(size);
 	}
 }

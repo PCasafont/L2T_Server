@@ -24,11 +24,11 @@ public class ExMoveToTargetInAirShip extends L2GameServerPacket
 	public void writeImpl()
 	{
 		writeD(0x00); // heading1
-		writeD(this.objID);
-		writeD(this.x);
+		writeD(objID);
+		writeD(x);
 		writeD(0x00); // heading2
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.vehicleid);
+		writeD(y);
+		writeD(z);
+		writeD(vehicleid);
 	}
 }

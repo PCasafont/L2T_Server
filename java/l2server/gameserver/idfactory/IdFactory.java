@@ -331,7 +331,7 @@ public abstract class IdFactory
 
 	public boolean isInitialized()
 	{
-		return this.initialized;
+		return initialized;
 	}
 
 	public static IdFactory getInstance()

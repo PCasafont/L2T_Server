@@ -32,8 +32,8 @@ public class RequestDismissPartyRoom extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.roomid = readD();
-		this.data2 = readD();
+		roomid = readD();
+		data2 = readD();
 	}
 
 	@Override
@@ -46,13 +46,13 @@ public class RequestDismissPartyRoom extends L2GameClientPacket
 			return;
 		}
 
-		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(this.roomid);
+		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
 
 		if (room == null)
 		{
 			return;
 		}
 
-		PartyMatchRoomList.getInstance().deleteRoom(this.roomid);
+		PartyMatchRoomList.getInstance().deleteRoom(roomid);
 	}
 }

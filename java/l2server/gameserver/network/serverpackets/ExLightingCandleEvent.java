@@ -15,6 +15,6 @@ public class ExLightingCandleEvent extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeH(this.state);
+		writeH(state);
 	}
 }

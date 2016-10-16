@@ -49,11 +49,11 @@ public class HtmCache implements Reloadable
 	{
 		if (Config.LAZY_CACHE)
 		{
-			this.cache = new ConcurrentHashMap<>();
+			cache = new ConcurrentHashMap<>();
 		}
 		else
 		{
-			this.cache = new HashMap<>();
+			cache = new HashMap<>();
 		}
 		reload();
 
@@ -85,9 +85,9 @@ public class HtmCache implements Reloadable
 		}
 		else
 		{
-			this.cache.clear();
-			this.loadedFiles = 0;
-			this.bytesBuffLen = 0;
+			cache.clear();
+			loadedFiles = 0;
+			bytesBuffLen = 0;
 			Log.info("Cache[HTML]: Running lazy cache");
 		}
 	}
@@ -100,12 +100,12 @@ public class HtmCache implements Reloadable
 
 	public double getMemoryUsage()
 	{
-		return (float) this.bytesBuffLen / 1048576;
+		return (float) bytesBuffLen / 1048576;
 	}
 
 	public int getLoadedFiles()
 	{
-		return this.loadedFiles;
+		return loadedFiles;
 	}
 
 	private static class HtmFilter implements FileFilter
@@ -162,19 +162,19 @@ public class HtmCache implements Reloadable
 				content = new String(raw, "ISO-8859-1");
 				content = content.replaceAll("\r\n", "\n");
 
-				String oldContent = this.cache.get(hashcode);
+				String oldContent = cache.get(hashcode);
 
 				if (oldContent == null)
 				{
-					this.bytesBuffLen += bytes;
-					this.loadedFiles++;
+					bytesBuffLen += bytes;
+					loadedFiles++;
 				}
 				else
 				{
-					this.bytesBuffLen = this.bytesBuffLen - oldContent.length() + bytes;
+					bytesBuffLen = bytesBuffLen - oldContent.length() + bytes;
 				}
 
-				this.cache.put(hashcode, content);
+				cache.put(hashcode, content);
 
 				return content;
 			}
@@ -242,10 +242,10 @@ public class HtmCache implements Reloadable
 
 		if (content != null)
 		{
-			this.cache.put(customPath.hashCode(), content);
+			cache.put(customPath.hashCode(), content);
 			if (newPath != null)
 			{
-				this.cache.put(newPath.hashCode(), content);
+				cache.put(newPath.hashCode(), content);
 			}
 		}
 
@@ -260,7 +260,7 @@ public class HtmCache implements Reloadable
 		}
 
 		final int hashCode = path.hashCode();
-		String content = this.cache.get(hashCode);
+		String content = cache.get(hashCode);
 
 		if (Config.LAZY_CACHE && content == null)
 		{
@@ -272,7 +272,7 @@ public class HtmCache implements Reloadable
 
 	public boolean contains(String path)
 	{
-		return this.cache.containsKey(path.hashCode());
+		return cache.containsKey(path.hashCode());
 	}
 
 	/**

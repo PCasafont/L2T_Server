@@ -35,9 +35,9 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 	@Override
 	public L2Character getMostHated()
 	{
-		if (this.ptk != null)
+		if (ptk != null)
 		{
-			return this.ptk; //always attack only one person
+			return ptk; //always attack only one person
 		}
 		else
 		{
@@ -51,7 +51,7 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 		{
 			CreatureSay cs =
 					new CreatureSay(getObjectId(), Say2.ALL_NOT_RECORDED, getName(), "mmm your bait was delicious");
-			this.broadcastPacket(cs);
+			broadcastPacket(cs);
 		}
 		this.ptk = ptk;
 		addDamageHate(ptk, 0, 10);
@@ -71,7 +71,7 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 		{
 			CreatureSay cs = new CreatureSay(getObjectId(), Say2.ALL_NOT_RECORDED, getName(),
 					"I will tell fishes not to take your bait");
-			this.broadcastPacket(cs);
+			broadcastPacket(cs);
 		}
 		return true;
 	}

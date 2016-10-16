@@ -35,7 +35,7 @@ public final class RequestHennaItemRemoveInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.symbolId = readD();
+		symbolId = readD();
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public final class RequestHennaItemRemoveInfo extends L2GameClientPacket
 			return;
 		}
 
-		L2Henna template = HennaTable.getInstance().getTemplate(this.symbolId);
+		L2Henna template = HennaTable.getInstance().getTemplate(symbolId);
 		if (template == null)
 		{
 			return;

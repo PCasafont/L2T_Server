@@ -45,9 +45,9 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.colorNum = readD();
-		this.title = readS();
-		this.itemObjectId = readD();
+		colorNum = readD();
+		title = readS();
+		itemObjectId = readD();
 	}
 
 	/**
@@ -62,12 +62,12 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 			return;
 		}
 
-		if (this.colorNum < 0 || this.colorNum >= COLORS.length)
+		if (colorNum < 0 || colorNum >= COLORS.length)
 		{
 			return;
 		}
 
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.itemObjectId);
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjectId);
 		if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
 				!item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
 		{
@@ -76,8 +76,8 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 
 		if (activeChar.destroyItem("Consume", item, 1, null, true))
 		{
-			activeChar.setTitle(this.title);
-			activeChar.getAppearance().setTitleColor(COLORS[this.colorNum]);
+			activeChar.setTitle(title);
+			activeChar.getAppearance().setTitleColor(COLORS[colorNum]);
 			activeChar.broadcastUserInfo();
 		}
 	}

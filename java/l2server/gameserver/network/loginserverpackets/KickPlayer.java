@@ -28,7 +28,7 @@ public class KickPlayer extends BaseRecievePacket
 	public KickPlayer(byte[] decrypt)
 	{
 		super(decrypt);
-		this.account = readS();
+		account = readS();
 	}
 
 	/**
@@ -36,6 +36,6 @@ public class KickPlayer extends BaseRecievePacket
 	 */
 	public String getAccount()
 	{
-		return this.account;
+		return account;
 	}
 }

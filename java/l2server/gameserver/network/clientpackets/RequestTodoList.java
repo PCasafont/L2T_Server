@@ -28,7 +28,7 @@ public final class RequestTodoList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.unk = readH();
+		unk = readH();
 	}
 
 	@Override

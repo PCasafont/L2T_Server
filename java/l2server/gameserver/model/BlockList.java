@@ -61,30 +61,30 @@ public class BlockList
 	public BlockList(L2PcInstance owner)
 	{
 		this.owner = owner;
-		this.blockList = this.offlineList.get(owner.getObjectId());
-		if (this.blockList == null)
+		blockList = offlineList.get(owner.getObjectId());
+		if (blockList == null)
 		{
-			this.blockList = loadList(this.owner.getObjectId());
+			blockList = loadList(this.owner.getObjectId());
 		}
 	}
 
 	private synchronized void addToBlockList(int target)
 	{
-		this.blockList.add(target);
+		blockList.add(target);
 		updateInDB(target, true);
-		this.owner.sendPacket(new ExBlockAddResult(target));
+		owner.sendPacket(new ExBlockAddResult(target));
 	}
 
 	private synchronized void removeFromBlockList(int target)
 	{
-		this.blockList.remove(Integer.valueOf(target));
+		blockList.remove(Integer.valueOf(target));
 		updateInDB(target, false);
-		this.owner.sendPacket(new ExBlockRemoveResult(target));
+		owner.sendPacket(new ExBlockRemoveResult(target));
 	}
 
 	public void playerLogout()
 	{
-		this.offlineList.put(this.owner.getObjectId(), this.blockList);
+		offlineList.put(owner.getObjectId(), blockList);
 	}
 
 	private static List<Integer> loadList(int ObjId)
@@ -137,7 +137,7 @@ public class BlockList
 			{
 				statement = con.prepareStatement(
 						"INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
-				statement.setInt(1, this.owner.getObjectId());
+				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
 			else
@@ -145,7 +145,7 @@ public class BlockList
 			{
 				statement = con.prepareStatement(
 						"DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
-				statement.setInt(1, this.owner.getObjectId());
+				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
 			statement.execute();
@@ -163,17 +163,17 @@ public class BlockList
 
 	public boolean isInBlockList(L2PcInstance target)
 	{
-		return this.blockList.contains(target.getObjectId());
+		return blockList.contains(target.getObjectId());
 	}
 
 	public boolean isInBlockList(int targetId)
 	{
-		return this.blockList.contains(targetId);
+		return blockList.contains(targetId);
 	}
 
 	private boolean isBlockAll()
 	{
-		return this.owner.getMessageRefusal();
+		return owner.getMessageRefusal();
 	}
 
 	public static boolean isBlocked(L2PcInstance listOwner, L2PcInstance target)
@@ -190,12 +190,12 @@ public class BlockList
 
 	private void setBlockAll(boolean state)
 	{
-		this.owner.setMessageRefusal(state);
+		owner.setMessageRefusal(state);
 	}
 
 	public List<Integer> getBlockList()
 	{
-		return this.blockList;
+		return blockList;
 	}
 
 	public static void addToBlockList(L2PcInstance listOwner, int targetId)

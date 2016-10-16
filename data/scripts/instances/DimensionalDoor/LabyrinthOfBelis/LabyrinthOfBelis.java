@@ -67,19 +67,19 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
         addTalkId(DimensionalDoor.getNpcManagerId());
         addStartNpc(DimensionalDoor.getNpcManagerId());
-        addFirstTalkId(this.combatOfficer);
-        addTalkId(this.combatOfficer);
-        addStartNpc(this.combatOfficer);
-        addFirstTalkId(this.belisVerificationSystem);
-        addTalkId(this.belisVerificationSystem);
-        addStartNpc(this.belisVerificationSystem);
-        addKillId(this.operativeId);
-        addKillId(this.handymanId);
-        addAttackId(this.operativeId);
-        addAttackId(this.handymanId);
-        addKillId(this.generatorId);
-        addKillId(this.bossId);
-        addAggroRangeEnterId(this.generatorId);
+        addFirstTalkId(combatOfficer);
+        addTalkId(combatOfficer);
+        addStartNpc(combatOfficer);
+        addFirstTalkId(belisVerificationSystem);
+        addTalkId(belisVerificationSystem);
+        addStartNpc(belisVerificationSystem);
+        addKillId(operativeId);
+        addKillId(handymanId);
+        addAttackId(operativeId);
+        addAttackId(handymanId);
+        addKillId(generatorId);
+        addKillId(bossId);
+        addAggroRangeEnterId(generatorId);
     }
 
     private class LabyrinthOfBelisWorld extends InstanceWorld
@@ -113,7 +113,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAggroRangeEnter: " + player.getName());
         }
@@ -131,7 +131,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
         if (wrld != null && wrld instanceof LabyrinthOfBelisWorld)
         {
             LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) wrld;
-            if (npc.getNpcId() == this.generatorId)
+            if (npc.getNpcId() == generatorId)
             {
                 player.doDie(world.generator);
             }
@@ -142,7 +142,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public final String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player.getName());
         }
@@ -160,7 +160,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
         if (wrld != null && wrld instanceof LabyrinthOfBelisWorld)
         {
             LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) wrld;
-            if (npc.getNpcId() == this.combatOfficer)
+            if (npc.getNpcId() == combatOfficer)
             {
                 switch (world.status)
                 {
@@ -174,7 +174,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                         return "4.html";
                 }
             }
-            else if (npc.getNpcId() == this.belisVerificationSystem)
+            else if (npc.getNpcId() == belisVerificationSystem)
             {
                 return "33215.html";
             }
@@ -185,14 +185,14 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
         {
-            return this.qn + ".html";
+            return qn + ".html";
         }
 
         return super.onTalk(npc, player);
@@ -201,7 +201,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -231,18 +231,18 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                 InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16240001).openMe();
 
                 world.generator =
-                        addSpawn(this.generatorId, -118253, 214706, -8584, 57541, false, 0, false, world.instanceId);
+                        addSpawn(generatorId, -118253, 214706, -8584, 57541, false, 0, false, world.instanceId);
                 world.generator.setIsMortal(false);
 
-                world.officer = (L2GuardInstance) addSpawn(this.combatOfficer, -119061, 211151, -8592, 142, false, 0, false,
+                world.officer = (L2GuardInstance) addSpawn(combatOfficer, -119061, 211151, -8592, 142, false, 0, false,
                         world.instanceId);
                 world.officer.setIsInvul(true);
                 world.officer.setIsMortal(false);
                 world.officer.setCanReturnToSpawnPoint(false);
 
-                for (int[] spawn : this.operativeSpawns)
+                for (int[] spawn : operativeSpawns)
                 {
-                    L2Npc operative = addSpawn(this.operativeId, spawn[0], spawn[1], spawn[2], spawn[3], false, 0, false,
+                    L2Npc operative = addSpawn(operativeId, spawn[0], spawn[1], spawn[2], spawn[3], false, 0, false,
                             world.instanceId);
                     synchronized (world.operativeList)
                     {
@@ -276,12 +276,12 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_2_check_belis"))
             {
-                long belisCount = player.getInventory().getInventoryItemCount(this.markOfBelis, 0);
+                long belisCount = player.getInventory().getInventoryItemCount(markOfBelis, 0);
                 if (belisCount >= 3)
                 {
                     world.status = 4;
 
-                    player.destroyItemByItemId(this.qn, this.markOfBelis, belisCount, player, true);
+                    player.destroyItemByItemId(qn, markOfBelis, belisCount, player, true);
 
                     InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16240005).openMe();
                 }
@@ -318,21 +318,21 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 
                 if (Rnd.get(2) == 0)
                 {
-                    guardId = this.operativeId;
+                    guardId = operativeId;
                 }
                 else
                 {
-                    guardId = this.handymanId;
+                    guardId = handymanId;
                 }
 
                 world.walkingGuard =
                         addSpawn(guardId, -116772, 213344, -8599, 24341, false, 0, false, world.instanceId);
                 world.walkingGuard.broadcastPacket(
                         new NpcSay(world.walkingGuard.getObjectId(), 0, world.walkingGuard.getTemplate().TemplateId,
-                                guardId == this.operativeId ? 1811196 : 1811195));
+                                guardId == operativeId ? 1811196 : 1811195));
 
                 world.instancePlayer.sendPacket(
-                        new ExShowScreenMessage(guardId == this.operativeId ? 1811194 : 1811194, 0, true, 5000));
+                        new ExShowScreenMessage(guardId == operativeId ? 1811194 : 1811194, 0, true, 5000));
 
                 startQuestTimer("stage_3_guard_attack", 1000, world.walkingGuard, null);
             }
@@ -372,7 +372,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_last_spawn_boss"))
             {
-                addSpawn(this.bossId, -118337, 212976, -8679, 24463, false, 0, false, world.instanceId);
+                addSpawn(bossId, -118337, 212976, -8679, 24463, false, 0, false, world.instanceId);
             }
             else if (event.equalsIgnoreCase("stage_all_officer_process"))
             {
@@ -480,7 +480,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -489,7 +489,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
         if (tmpworld instanceof LabyrinthOfBelisWorld)
         {
             LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) tmpworld;
-            if (world.status == 5 && (npc.getNpcId() == this.operativeId || npc.getNpcId() == this.handymanId))
+            if (world.status == 5 && (npc.getNpcId() == operativeId || npc.getNpcId() == handymanId))
             {
                 if (!world.isGuardAttacked)
                 {
@@ -507,7 +507,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -547,7 +547,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                         world.instancePlayer.sendPacket(new ExShowScreenMessage(1811199, 0, true, 5000));
                         if (Rnd.get(10) > 6)
                         {
-                            ((L2MonsterInstance) npc).dropItem(player, this.markOfBelis, 1);
+                            ((L2MonsterInstance) npc).dropItem(player, markOfBelis, 1);
                         }
                     }
                     else if (world.status == 5)
@@ -570,10 +570,10 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
                     world.instancePlayer.showQuestMovie(44);
 
                     InstanceManager.getInstance()
-                            .setInstanceReuse(world.instanceId, instanceTemplateId, this.reuseMinutes);
+                            .setInstanceReuse(world.instanceId, instanceTemplateId, reuseMinutes);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
 
-                    player.addItem(this.qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                    player.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(),
                             Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(),
                                     6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                     break;
@@ -599,7 +599,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
             {
                 if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
                 {
-                    player.deleteAllItemsById(this.markOfBelis);
+                    player.deleteAllItemsById(markOfBelis);
                     player.setInstanceId(world.instanceId);
                     player.teleToLocation(-119941, 211146, -8590, true);
 
@@ -610,13 +610,13 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new LabyrinthOfBelisWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -626,7 +626,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
             world.allowed.add(player.getObjectId());
 
             player.stopAllEffectsExceptThoseThatLastThroughDeath();
-            player.deleteAllItemsById(this.markOfBelis);
+            player.deleteAllItemsById(markOfBelis);
             player.setInstanceId(instanceId);
             player.teleToLocation(-119941, 211146, -8590, true);
 

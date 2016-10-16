@@ -47,6 +47,6 @@ public class ConditionGameChance extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return Rnd.get(100) < this.chance;
+		return Rnd.get(100) < chance;
 	}
 }

@@ -61,8 +61,8 @@ public class PcAppearance
 	public PcAppearance(int face, int hColor, int hStyle, boolean sex)
 	{
 		this.face = face;
-		this.hairColor = hColor;
-		this.hairStyle = hStyle;
+		hairColor = hColor;
+		hairStyle = hStyle;
 		this.sex = sex;
 	}
 
@@ -85,18 +85,18 @@ public class PcAppearance
 	 */
 	public final String getVisibleName()
 	{
-		if (this.owner.isPlayingEvent() && (this.owner.getEvent().getType() == EventType.DeathMatch ||
-				this.owner.getEvent().getType() == EventType.Survival ||
-				this.owner.getEvent().getType() == EventType.KingOfTheHill))
+		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch ||
+				owner.getEvent().getType() == EventType.Survival ||
+				owner.getEvent().getType() == EventType.KingOfTheHill))
 		{
 			return "Event Participant";
 		}
 
-		if (this.visibleName == null)
+		if (visibleName == null)
 		{
-			this.visibleName = getOwner().getName();
+			visibleName = getOwner().getName();
 		}
-		return this.visibleName;
+		return visibleName;
 	}
 
 	/**
@@ -112,72 +112,72 @@ public class PcAppearance
 	 */
 	public final String getVisibleTitle()
 	{
-		if (this.owner.isPlayingEvent() && (this.owner.getEvent().getType() == EventType.DeathMatch ||
-				this.owner.getEvent().getType() == EventType.Survival ||
-				this.owner.getEvent().getType() == EventType.KingOfTheHill))
+		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch ||
+				owner.getEvent().getType() == EventType.Survival ||
+				owner.getEvent().getType() == EventType.KingOfTheHill))
 		{
 			return "";
 		}
 
-		if (this.owner instanceof L2ApInstance)
+		if (owner instanceof L2ApInstance)
 		{
 			String title = "L2 Tenkai";
-			if (this.owner.getParty() != null)
+			if (owner.getParty() != null)
 			{
-				title += " #" + this.owner.getParty().getLeader().getObjectId() % 100;
+				title += " #" + owner.getParty().getLeader().getObjectId() % 100;
 			}
 			return title;
 		}
 
-		if (this.visibleTitle == null)
+		if (visibleTitle == null)
 		{
-			this.visibleTitle = getOwner().getTitle();
+			visibleTitle = getOwner().getTitle();
 		}
 
-		if (this.visibleTitle.equalsIgnoreCase("wtb ballance") || this.visibleTitle.equalsIgnoreCase("wtb balance"))
+		if (visibleTitle.equalsIgnoreCase("wtb ballance") || visibleTitle.equalsIgnoreCase("wtb balance"))
 		{
 			return "WTB BRAIN";
 		}
 
-		return this.visibleTitle;
+		return visibleTitle;
 	}
 
 	// =========================================================
 	// Property - Public
 	public final int getFace()
 	{
-		return this.face;
+		return face;
 	}
 
 	/**
 	 */
 	public final void setFace(int value)
 	{
-		this.face = value;
+		face = value;
 	}
 
 	public final int getHairColor()
 	{
-		return this.hairColor;
+		return hairColor;
 	}
 
 	/**
 	 */
 	public final void setHairColor(int value)
 	{
-		this.hairColor = value;
+		hairColor = value;
 	}
 
 	public final int getHairStyle()
 	{
-		return this.hairStyle;
+		return hairStyle;
 	}
 
 	/**
 	 */
 	public final void setHairStyle(int value)
 	{
-		this.hairStyle = value;
+		hairStyle = value;
 	}
 
 	/**
@@ -185,34 +185,34 @@ public class PcAppearance
 	 */
 	public final boolean getSex()
 	{
-		return this.sex;
+		return sex;
 	}
 
 	/**
 	 */
 	public final void setSex(boolean isfemale)
 	{
-		this.sex = isfemale;
+		sex = isfemale;
 	}
 
 	public void setInvisible()
 	{
-		this.invisible = true;
+		invisible = true;
 	}
 
 	public void setVisible()
 	{
-		this.invisible = false;
+		invisible = false;
 	}
 
 	public boolean getInvisible()
 	{
-		return this.invisible;
+		return invisible;
 	}
 
 	public int getNameColor()
 	{
-		return this.nameColor;
+		return nameColor;
 	}
 
 	public void setNameColor(int nameColor)
@@ -227,12 +227,12 @@ public class PcAppearance
 
 	public void setNameColor(int red, int green, int blue)
 	{
-		this.nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
+		nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 
 	public int getTitleColor()
 	{
-		return this.titleColor;
+		return titleColor;
 	}
 
 	public void setTitleColor(int titleColor)
@@ -247,7 +247,7 @@ public class PcAppearance
 
 	public void setTitleColor(int red, int green, int blue)
 	{
-		this.titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
+		titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 
 	/**
@@ -263,6 +263,6 @@ public class PcAppearance
 	 */
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 }

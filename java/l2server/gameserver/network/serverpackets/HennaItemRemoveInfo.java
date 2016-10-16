@@ -27,33 +27,33 @@ public class HennaItemRemoveInfo extends L2GameServerPacket
 	public HennaItemRemoveInfo(L2Henna henna, L2PcInstance player)
 	{
 		this.henna = henna;
-		this.activeChar = player;
+		activeChar = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.henna.getSymbolId()); //symbol Id
-		writeD(this.henna.getDyeId()); //item id of dye
+		writeD(henna.getSymbolId()); //symbol Id
+		writeD(henna.getDyeId()); //item id of dye
 		writeQ(0x00); // total amount of dye require
-		writeQ(this.henna.getPrice() / 5); //total amount of aden require to remove symbol
+		writeQ(henna.getPrice() / 5); //total amount of aden require to remove symbol
 		writeD(1); //able to remove or not 0 is false and 1 is true
-		writeQ(this.activeChar.getAdena());
-		writeD(this.activeChar.getINT()); //current INT
-		writeC(this.activeChar.getINT() - this.henna.getStatINT()); //equip INT
-		writeD(this.activeChar.getSTR()); //current STR
-		writeC(this.activeChar.getSTR() - this.henna.getStatSTR()); //equip STR
-		writeD(this.activeChar.getCON()); //current CON
-		writeC(this.activeChar.getCON() - this.henna.getStatCON()); //equip CON
-		writeD(this.activeChar.getMEN()); //current MEM
-		writeC(this.activeChar.getMEN() - this.henna.getStatMEM()); //equip MEM
-		writeD(this.activeChar.getDEX()); //current DEX
-		writeC(this.activeChar.getDEX() - this.henna.getStatDEX()); //equip DEX
-		writeD(this.activeChar.getWIT()); //current WIT
-		writeC(this.activeChar.getWIT() - this.henna.getStatWIT()); //equip WIT
-		writeD(this.activeChar.getLUC()); //current LUC
-		writeC(this.activeChar.getLUC() - this.henna.getStatLUC()); //equip LUC
-		writeD(this.activeChar.getCHA()); //current CHA
-		writeC(this.activeChar.getCHA() - this.henna.getStatCHA()); //equip CHA
+		writeQ(activeChar.getAdena());
+		writeD(activeChar.getINT()); //current INT
+		writeC(activeChar.getINT() - henna.getStatINT()); //equip INT
+		writeD(activeChar.getSTR()); //current STR
+		writeC(activeChar.getSTR() - henna.getStatSTR()); //equip STR
+		writeD(activeChar.getCON()); //current CON
+		writeC(activeChar.getCON() - henna.getStatCON()); //equip CON
+		writeD(activeChar.getMEN()); //current MEM
+		writeC(activeChar.getMEN() - henna.getStatMEM()); //equip MEM
+		writeD(activeChar.getDEX()); //current DEX
+		writeC(activeChar.getDEX() - henna.getStatDEX()); //equip DEX
+		writeD(activeChar.getWIT()); //current WIT
+		writeC(activeChar.getWIT() - henna.getStatWIT()); //equip WIT
+		writeD(activeChar.getLUC()); //current LUC
+		writeC(activeChar.getLUC() - henna.getStatLUC()); //equip LUC
+		writeD(activeChar.getCHA()); //current CHA
+		writeC(activeChar.getCHA() - henna.getStatCHA()); //equip CHA
 	}
 }

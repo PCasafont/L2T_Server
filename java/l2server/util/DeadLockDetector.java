@@ -87,7 +87,7 @@ public class DeadLockDetector extends Thread
 						Shutdown.getInstance().startShutdown("DeadLockDetector - Auto Restart", 60, true);
 					}
 				}
-				Thread.sleep(this.sleepTime);
+				Thread.sleep(sleepTime);
 			}
 			catch (Exception e)
 			{

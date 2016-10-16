@@ -90,26 +90,26 @@ public final class PetitionManager
 		public Petition(L2PcInstance petitioner, String petitionText, int petitionType)
 		{
 			petitionType--;
-			this.id = IdFactory.getInstance().getNextId();
+			id = IdFactory.getInstance().getNextId();
 			if (petitionType >= PetitionType.values().length)
 			{
 				Log.warning(
 						"PetitionManager:Petition : invalid petition type (received type was +1) : " + petitionType);
 			}
-			this.type = PetitionType.values()[petitionType];
-			this.content = petitionText;
+			type = PetitionType.values()[petitionType];
+			content = petitionText;
 
 			this.petitioner = petitioner;
 		}
 
 		protected boolean addLogMessage(CreatureSay cs)
 		{
-			return this.messageLog.add(cs);
+			return messageLog.add(cs);
 		}
 
 		protected List<CreatureSay> getLogMessages()
 		{
-			return this.messageLog;
+			return messageLog;
 		}
 
 		public boolean endPetitionConsultation(PetitionState endState)
@@ -152,37 +152,37 @@ public final class PetitionManager
 
 		public String getContent()
 		{
-			return this.content;
+			return content;
 		}
 
 		public int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		public L2PcInstance getPetitioner()
 		{
-			return this.petitioner;
+			return petitioner;
 		}
 
 		public L2PcInstance getResponder()
 		{
-			return this.responder;
+			return responder;
 		}
 
 		public long getSubmitTime()
 		{
-			return this.submitTime;
+			return submitTime;
 		}
 
 		public PetitionState getState()
 		{
-			return this.state;
+			return state;
 		}
 
 		public String getTypeAsString()
 		{
-			return this.type.toString().replace("_", " ");
+			return type.toString().replace("_", " ");
 		}
 
 		public void sendPetitionerPacket(L2GameServerPacket responsePacket)
@@ -222,15 +222,15 @@ public final class PetitionManager
 				return;
 			}
 
-			this.responder = respondingAdmin;
+			responder = respondingAdmin;
 		}
 	}
 
 	private PetitionManager()
 	{
 		Log.info("Initializing PetitionManager");
-		this.pendingPetitions = new HashMap<>();
-		this.completedPetitions = new HashMap<>();
+		pendingPetitions = new HashMap<>();
+		completedPetitions = new HashMap<>();
 	}
 
 	public void clearCompletedPetitions()
@@ -352,12 +352,12 @@ public final class PetitionManager
 
 	protected Map<Integer, Petition> getCompletedPetitions()
 	{
-		return this.completedPetitions;
+		return completedPetitions;
 	}
 
 	protected Map<Integer, Petition> getPendingPetitions()
 	{
-		return this.pendingPetitions;
+		return pendingPetitions;
 	}
 
 	public int getPendingPetitionCount()

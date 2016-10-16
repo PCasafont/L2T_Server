@@ -36,16 +36,16 @@ public class ConditionPlayerRangeFromNpc extends Condition
 	@Override
 	boolean testImpl(Env env)
 	{
-		if (this.npcId == 0 || this.radius == 0)
+		if (npcId == 0 || radius == 0)
 		{
 			return false;
 		}
 
-		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(this.radius))
+		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(radius))
 		{
 			if (target instanceof L2Npc)
 			{
-				if (((L2Npc) target).getNpcId() == this.npcId)
+				if (((L2Npc) target).getNpcId() == npcId)
 				{
 					return true;
 				}

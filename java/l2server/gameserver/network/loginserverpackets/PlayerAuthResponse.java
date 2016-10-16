@@ -32,8 +32,8 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	{
 		super(decrypt);
 
-		this.account = readS();
-		this.authed = readC() != 0;
+		account = readS();
+		authed = readC() != 0;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	 */
 	public String getAccount()
 	{
-		return this.account;
+		return account;
 	}
 
 	/**
@@ -49,6 +49,6 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	 */
 	public boolean isAuthed()
 	{
-		return this.authed;
+		return authed;
 	}
 }

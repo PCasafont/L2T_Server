@@ -120,7 +120,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 
 	public void setUseRaidCurse(boolean val)
 	{
-		this.useRaidCurse = val;
+		useRaidCurse = val;
 	}
 
 	/* (non-Javadoc)
@@ -129,6 +129,6 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	@Override
 	public boolean giveRaidCurse()
 	{
-		return this.useRaidCurse;
+		return useRaidCurse;
 	}
 }

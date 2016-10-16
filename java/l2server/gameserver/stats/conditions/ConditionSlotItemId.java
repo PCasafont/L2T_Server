@@ -56,11 +56,11 @@ public final class ConditionSlotItemId extends ConditionInventory
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
-		L2ItemInstance item = inv.getPaperdollItem(this.slot);
+		L2ItemInstance item = inv.getPaperdollItem(slot);
 		if (item == null)
 		{
-			return this.itemId == 0;
+			return itemId == 0;
 		}
-		return item.getItemId() == this.itemId && item.getEnchantLevel() >= this.enchantLevel;
+		return item.getItemId() == itemId && item.getEnchantLevel() >= enchantLevel;
 	}
 }

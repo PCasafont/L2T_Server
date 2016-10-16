@@ -86,17 +86,17 @@ public class Server
 
 	public Core<L2GameClient> getSelectorThread()
 	{
-		return this.selectorThread;
+		return selectorThread;
 	}
 
 	public L2GamePacketHandler getL2GamePacketHandler()
 	{
-		return this.gamePacketHandler;
+		return gamePacketHandler;
 	}
 
 	public DeadLockDetector getDeadLockDetectorThread()
 	{
-		return this.deadDetectThread;
+		return deadDetectThread;
 	}
 
 	public Server() throws Exception
@@ -106,9 +106,9 @@ public class Server
 		gameServer = this;
 		Log.finest("used mem:" + getUsedMemoryMB() + "MB");
 
-		this.idFactory = IdFactory.getInstance();
+		idFactory = IdFactory.getInstance();
 
-		if (!this.idFactory.isInitialized())
+		if (!idFactory.isInitialized())
 		{
 			Log.severe("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
@@ -423,13 +423,13 @@ public class Server
 
 		if (Config.DEADLOCK_DETECTOR)
 		{
-			this.deadDetectThread = new DeadLockDetector();
-			this.deadDetectThread.setDaemon(true);
-			this.deadDetectThread.start();
+			deadDetectThread = new DeadLockDetector();
+			deadDetectThread.setDaemon(true);
+			deadDetectThread.start();
 		}
 		else
 		{
-			this.deadDetectThread = null;
+			deadDetectThread = null;
 		}
 
 		//LameGuard.getInstance();
@@ -443,8 +443,8 @@ public class Server
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
 
-		this.loginThread = LoginServerThread.getInstance();
-		this.loginThread.start();
+		loginThread = LoginServerThread.getInstance();
+		loginThread.start();
 
 		final CoreConfig sc = new CoreConfig();
 		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
@@ -452,8 +452,8 @@ public class Server
 		sc.SLEEP_TIME = Config.MMO_SELECTOR_SLEEP_TIME;
 		sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
 
-		this.gamePacketHandler = new L2GamePacketHandler();
-		this.selectorThread = new Core<>(sc, this.gamePacketHandler, this.gamePacketHandler, this.gamePacketHandler, new IPv4Filter());
+		gamePacketHandler = new L2GamePacketHandler();
+		selectorThread = new Core<>(sc, gamePacketHandler, gamePacketHandler, gamePacketHandler, new IPv4Filter());
 
 		InetAddress bindAddress = null;
 		if (!Config.GAMESERVER_HOSTNAME.equals("*"))
@@ -472,14 +472,14 @@ public class Server
 
 		try
 		{
-			this.selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
+			selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		this.selectorThread.start();
+		selectorThread.start();
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");

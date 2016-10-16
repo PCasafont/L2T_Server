@@ -225,12 +225,12 @@ public enum VisualEffect
 
 	public final int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public static VisualEffect getByName(String name)

@@ -54,7 +54,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 	public L2Character getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	public void onHit(L2Character target, int damage, boolean ownerWasHit, boolean isSummon, boolean wasCrit)
@@ -133,17 +133,17 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 	public void onStart(L2Skill skill, byte element)
 	{
-		onEvent(ChanceCondition.EVT_ON_START, 0, false, this.owner, skill, element);
+		onEvent(ChanceCondition.EVT_ON_START, 0, false, owner, skill, element);
 	}
 
 	public void onActionTime(L2Skill skill, byte element)
 	{
-		onEvent(ChanceCondition.EVT_ON_ACTION_TIME, 0, false, this.owner, skill, element);
+		onEvent(ChanceCondition.EVT_ON_ACTION_TIME, 0, false, owner, skill, element);
 	}
 
 	public void onExit(L2Skill skill, byte element)
 	{
-		onEvent(ChanceCondition.EVT_ON_EXIT, 0, false, this.owner, skill, element);
+		onEvent(ChanceCondition.EVT_ON_EXIT, 0, false, owner, skill, element);
 	}
 
 	public void onKill(L2Character target)
@@ -153,7 +153,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 	public void onEvent(int event, int damage, boolean critical, L2Character target, L2Skill skill, byte element)
 	{
-		if (this.owner.isDead())
+		if (owner.isDead())
 		{
 			return;
 		}
@@ -189,7 +189,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 	{
 		try
 		{
-			if (skill.getWeaponDependancy(this.owner, true) && skill.checkCondition(this.owner, target, false))
+			if (skill.getWeaponDependancy(owner, true) && skill.checkCondition(owner, target, false))
 			{
 				if (skill.triggersChanceSkill() && skill.getTriggeredChanceLevel() >
 						-1) //skill will trigger another skill, but only if its not chance skill
@@ -198,7 +198,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 					int level = skill.getTriggeredChanceLevel();
 					if (level == 0)
 					{
-						L2Abnormal effect = this.owner.getFirstEffect(skill.getTriggeredChanceId());
+						L2Abnormal effect = owner.getFirstEffect(skill.getTriggeredChanceId());
 						if (effect != null)
 						{
 							int maxLevel = SkillTable.getInstance().getMaxLevel(skill.getTriggeredChanceId());
@@ -226,22 +226,22 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 					skill.setIsTriggered();
 				}
 
-				if (this.owner.isSkillDisabled(skill) || target.isDead())
+				if (owner.isSkillDisabled(skill) || target.isDead())
 				{
 					return;
 				}
 
-				if (!skill.checkCondition(this.owner, target, false))
+				if (!skill.checkCondition(owner, target, false))
 				{
 					return;
 				}
 
 				if (skill.getReuseDelay() > 0)
 				{
-					this.owner.disableSkill(skill, skill.getReuseDelay());
+					owner.disableSkill(skill, skill.getReuseDelay());
 				}
 
-				L2Object[] targets = skill.getTargetList(this.owner, false, target);
+				L2Object[] targets = skill.getTargetList(owner, false, target);
 
 				if (targets == null || targets.length == 0)
 				{
@@ -252,20 +252,20 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 				ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(skill.getSkillType());
 
-				this.owner.broadcastPacket(
-						new MagicSkillLaunched(this.owner, skill.getDisplayId(), skill.getLevelHash(), targets));
-				this.owner.broadcastPacket(
-						new MagicSkillUse(this.owner, firstTarget, skill.getDisplayId(), skill.getLevelHash(), 0, 0, 0));
+				owner.broadcastPacket(
+						new MagicSkillLaunched(owner, skill.getDisplayId(), skill.getLevelHash(), targets));
+				owner.broadcastPacket(
+						new MagicSkillUse(owner, firstTarget, skill.getDisplayId(), skill.getLevelHash(), 0, 0, 0));
 
 				// Launch the magic skill and calculate its effects
 				// TODO: once core will support all possible effects, use effects (not handler)
 				if (handler != null)
 				{
-					handler.useSkill(this.owner, skill, targets);
+					handler.useSkill(owner, skill, targets);
 				}
 				else
 				{
-					skill.useSkill(this.owner, targets);
+					skill.useSkill(owner, targets);
 				}
 			}
 		}
@@ -337,14 +337,14 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 			triggered.setIsTriggered();
 			L2Character caster =
-					triggered.getTargetType() == L2SkillTargetType.TARGET_SELF ? this.owner : effect.getEffector();
+					triggered.getTargetType() == L2SkillTargetType.TARGET_SELF ? owner : effect.getEffector();
 
 			if (caster == null || triggered.getSkillType() == L2SkillType.NOTDONE || caster.isSkillDisabled(triggered))
 			{
 				return;
 			}
 
-			if (!triggered.checkCondition(this.owner, target, false))
+			if (!triggered.checkCondition(owner, target, false))
 			{
 				return;
 			}
@@ -385,10 +385,10 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 
 			if (effect.getTriggeredChanceCondition().getTriggerType() != TriggerType.ON_ACTION_TIME)
 			{
-				this.owner.broadcastPacket(
-						new MagicSkillLaunched(this.owner, triggered.getDisplayId(), triggered.getLevelHash(), targets));
-				this.owner.broadcastPacket(
-						new MagicSkillUse(this.owner, firstTarget, triggered.getDisplayId(), triggered.getLevelHash(), 0, 0,
+				owner.broadcastPacket(
+						new MagicSkillLaunched(owner, triggered.getDisplayId(), triggered.getLevelHash(), targets));
+				owner.broadcastPacket(
+						new MagicSkillUse(owner, firstTarget, triggered.getDisplayId(), triggered.getLevelHash(), 0, 0,
 								0));
 			}
 

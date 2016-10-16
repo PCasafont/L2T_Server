@@ -78,38 +78,38 @@ public class Baium extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addStartNpc(this.vortex);
-        addTalkId(this.vortex);
+        addStartNpc(vortex);
+        addTalkId(vortex);
 
-        addStartNpc(this.stoneBaium);
-        addTalkId(this.stoneBaium);
+        addStartNpc(stoneBaium);
+        addTalkId(stoneBaium);
 
-        addStartNpc(this.exitCubic);
-        addTalkId(this.exitCubic);
+        addStartNpc(exitCubic);
+        addTalkId(exitCubic);
 
-        addSpawnId(this.archangel);
+        addSpawnId(archangel);
 
-        for (int i : this.allMobs)
+        for (int i : allMobs)
         {
             addAttackId(i);
             addKillId(i);
         }
 
         //Unlock
-        startQuestTimer("unlock_baium", GrandBossManager.getInstance().getUnlockTime(this.liveBaium), null, null);
+        startQuestTimer("unlock_baium", GrandBossManager.getInstance().getUnlockTime(liveBaium), null, null);
     }
 
     @Override
     public String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == this.vortex)
+        if (npc.getNpcId() == vortex)
         {
-            int baiumStatus = GrandBossManager.getInstance().getBossStatus(this.liveBaium);
+            int baiumStatus = GrandBossManager.getInstance().getBossStatus(liveBaium);
 
             final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
@@ -119,7 +119,7 @@ public class Baium extends L2AttackableAIScript
             }
             else
             {
-                if (!this.debug)
+                if (!debug)
                 {
                     int maxLvl = 84;
                     if (Config.isServer(Config.TENKAI_ESTHUS))
@@ -145,14 +145,14 @@ public class Baium extends L2AttackableAIScript
 
             if (baiumStatus == GrandBossManager.getInstance().ALIVE)
             {
-                GrandBossManager.getInstance().setBossStatus(this.liveBaium, GrandBossManager.getInstance().WAITING);
+                GrandBossManager.getInstance().setBossStatus(liveBaium, GrandBossManager.getInstance().WAITING);
 
-                this.lastAction = System.currentTimeMillis();
+				lastAction = System.currentTimeMillis();
 
                 startQuestTimer("check_activity_task", 60000, null, null, true);
             }
 
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -172,16 +172,16 @@ public class Baium extends L2AttackableAIScript
                     continue;
                 }
 
-                this.bossZone.allowPlayerEntry(enterPlayer, 7200);
+				bossZone.allowPlayerEntry(enterPlayer, 7200);
 
                 enterPlayer.teleToLocation(113100, 14500, 10077, true);
             }
         }
-        else if (npc.getNpcId() == this.stoneBaium)
+        else if (npc.getNpcId() == stoneBaium)
         {
             notifyEvent("wake_up_baium", npc, player);
         }
-        else if (npc.getNpcId() == this.exitCubic)
+        else if (npc.getNpcId() == exitCubic)
         {
             player.teleToLocation(TeleportWhereType.Town);
         }
@@ -191,90 +191,90 @@ public class Baium extends L2AttackableAIScript
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
 
         if (event.equalsIgnoreCase("unlock_baium"))
         {
-            this.baiumBoss = addSpawn(this.stoneBaium, 116033, 17447, 10104, 40188, false, 0);
+			baiumBoss = addSpawn(stoneBaium, 116033, 17447, 10104, 40188, false, 0);
 
-            GrandBossManager.getInstance().setBossStatus(this.liveBaium, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(liveBaium, GrandBossManager.getInstance().ALIVE);
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(this.liveBaium, this.lastAction))
+            if (!GrandBossManager.getInstance().isActive(liveBaium, lastAction))
             {
                 notifyEvent("end_baium", null, null);
             }
         }
         else if (event.equalsIgnoreCase("wake_up_baium"))
         {
-            if (GrandBossManager.getInstance().getBossStatus(this.liveBaium) == GrandBossManager.getInstance().WAITING)
+            if (GrandBossManager.getInstance().getBossStatus(liveBaium) == GrandBossManager.getInstance().WAITING)
             {
                 npc.deleteMe();
 
-                GrandBossManager.getInstance().setBossStatus(this.liveBaium, GrandBossManager.getInstance().FIGHTING);
+                GrandBossManager.getInstance().setBossStatus(liveBaium, GrandBossManager.getInstance().FIGHTING);
 
-                this.baiumBoss = addSpawn(this.liveBaium, 116033, 17447, 10107, -25348, false, 0);
+				baiumBoss = addSpawn(liveBaium, 116033, 17447, 10107, -25348, false, 0);
 
-                this.baiumBoss.setIsInvul(true);
+				baiumBoss.setIsInvul(true);
 
-                this.baiumBoss.disableCoreAI(true);
+				baiumBoss.disableCoreAI(true);
 
-                this.baiumBoss.setRunning();
+				baiumBoss.setRunning();
 
-                this.firstAttacker = player;
+				firstAttacker = player;
 
-                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) this.baiumBoss);
+                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) baiumBoss);
 
-                this.bossZone.sendDelayedPacketToZone(50, new SocialAction(this.baiumBoss.getObjectId(), 2));
+				bossZone.sendDelayedPacketToZone(50, new SocialAction(baiumBoss.getObjectId(), 2));
 
-                startQuestTimer("wake_up_intro_1", 5000, this.baiumBoss, null);
+                startQuestTimer("wake_up_intro_1", 5000, baiumBoss, null);
             }
         }
         else if (event.equalsIgnoreCase("wake_up_intro_1"))
         {
-            this.bossZone.broadcastPacket(new Earthquake(this.baiumBoss.getX(), this.baiumBoss.getY(), this.baiumBoss.getZ(), 40, 10));
-            this.bossZone.broadcastPacket(new PlaySound("BS02_A"));
-            this.bossZone.sendDelayedPacketToZone(8000, new SocialAction(this.baiumBoss.getObjectId(), 3));
+			bossZone.broadcastPacket(new Earthquake(baiumBoss.getX(), baiumBoss.getY(), baiumBoss.getZ(), 40, 10));
+			bossZone.broadcastPacket(new PlaySound("BS02_A"));
+			bossZone.sendDelayedPacketToZone(8000, new SocialAction(baiumBoss.getObjectId(), 3));
 
             startQuestTimer("baium_spawn_minions", 17000, null, null);
         }
         else if (event.equalsIgnoreCase("baium_spawn_minions"))
         {
-            this.baiumBoss.broadcastPacket(new SocialAction(this.baiumBoss.getObjectId(), 1));
+			baiumBoss.broadcastPacket(new SocialAction(baiumBoss.getObjectId(), 1));
 
-            if (!this.firstAttacker.isOnline() || !this.bossZone.isInsideZone(this.firstAttacker)) //Get random one in case
+            if (!firstAttacker.isOnline() || !bossZone.isInsideZone(firstAttacker)) //Get random one in case
             {
-                this.firstAttacker = this.baiumBoss.getKnownList().getKnownPlayers()
-                        .get(Rnd.get(this.baiumBoss.getKnownList().getKnownPlayers().size())); //if is empty...
+				firstAttacker = baiumBoss.getKnownList().getKnownPlayers()
+                        .get(Rnd.get(baiumBoss.getKnownList().getKnownPlayers().size())); //if is empty...
             }
 
-            if (!this.firstAttacker.isInsideRadius(this.baiumBoss, this.baiumGift.getEffectRange(), false, false))
+            if (!firstAttacker.isInsideRadius(baiumBoss, baiumGift.getEffectRange(), false, false))
             {
-                this.firstAttacker.teleToLocation(115910, 17337, 10105);
+				firstAttacker.teleToLocation(115910, 17337, 10105);
             }
 
-            if (this.firstAttacker != null)
+            if (firstAttacker != null)
             {
-                this.baiumBoss.setTarget(this.firstAttacker);
+				baiumBoss.setTarget(firstAttacker);
 
-                this.baiumBoss.doCast(this.baiumGift);
+				baiumBoss.doCast(baiumGift);
 
-                this.baiumBoss.broadcastPacket(new CreatureSay(this.baiumBoss.getObjectId(), 0, this.baiumBoss.getName(),
-                        this.firstAttacker.getName() + ", How dare you wake me! Now you shall die!"));
+				baiumBoss.broadcastPacket(new CreatureSay(baiumBoss.getObjectId(), 0, baiumBoss.getName(),
+						firstAttacker.getName() + ", How dare you wake me! Now you shall die!"));
             }
 
-            for (L2PcInstance players : this.bossZone.getPlayersInside())
+            for (L2PcInstance players : bossZone.getPlayersInside())
             {
                 if (players == null || !players.isHero())
                 {
                     continue;
                 }
 
-                this.bossZone.broadcastPacket(new ExShowScreenMessage(
+				bossZone.broadcastPacket(new ExShowScreenMessage(
                         "Not even the gods themselves could touch me. But you, $s1, you dare challenge me?! Ignorant mortal!"
                                 .replace("$1", players.getName()), 4000));//1000521
             }
@@ -283,19 +283,19 @@ public class Baium extends L2AttackableAIScript
 
             startQuestTimer("minions_attack_task", 60000, null, null, true);
 
-            this.baiumBoss.setIsInvul(false);
+			baiumBoss.setIsInvul(false);
 
-            this.baiumBoss.disableCoreAI(false);
+			baiumBoss.disableCoreAI(false);
         }
         else if (event.equalsIgnoreCase("minions_attack_task"))
         {
             //Let's do it simple, minions should attack baium & players, by default due the enemy clan attacks almost all time baium instead of players so call this each time..
-            List<L2PcInstance> insidePlayers = this.bossZone.getPlayersInside();
+            List<L2PcInstance> insidePlayers = bossZone.getPlayersInside();
             L2Character target = null;
 
             if (insidePlayers != null && !insidePlayers.isEmpty())
             {
-                for (L2Npc zoneMob : this.bossZone.getNpcsInside())
+                for (L2Npc zoneMob : bossZone.getNpcsInside())
                 {
                     if (!(zoneMob instanceof L2MonsterInstance))
                     {
@@ -304,20 +304,20 @@ public class Baium extends L2AttackableAIScript
 
                     if (zoneMob.getTarget() != null) //Only if default core ai are doing some shit
                     {
-                        if (zoneMob.getTarget() == this.baiumBoss)
+                        if (zoneMob.getTarget() == baiumBoss)
                         {
                             target = insidePlayers.get(Rnd.get(insidePlayers.size()));
                         }
                         else
                         {
                             //Lets use that code to take a lil look into the baiums target, if baim is attacking a minion set a random player as a target
-                            if (zoneMob == this.baiumBoss && zoneMob.getTarget() instanceof L2MonsterInstance)
+                            if (zoneMob == baiumBoss && zoneMob.getTarget() instanceof L2MonsterInstance)
                             {
                                 target = insidePlayers.get(Rnd.get(insidePlayers.size()));
                             }
                             else
                             {
-                                target = this.baiumBoss;
+                                target = baiumBoss;
                             }
                         }
                         if (target != null)
@@ -349,19 +349,19 @@ public class Baium extends L2AttackableAIScript
         {
             notifyEvent("cancel_timers", null, null);
 
-            this.bossZone.oustAllPlayers();
+			bossZone.oustAllPlayers();
 
-            if (this.baiumBoss != null)
+            if (baiumBoss != null)
             {
-                this.baiumBoss.deleteMe();
+				baiumBoss.deleteMe();
             }
 
             SpawnTable.getInstance().despawnSpecificTable("baium_minions");
 
-            if (GrandBossManager.getInstance().getBossStatus(this.liveBaium) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(liveBaium) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(this.liveBaium, GrandBossManager.getInstance().ALIVE);
-                this.baiumBoss = addSpawn(this.stoneBaium, 116033, 17447, 10104, 40188, false, 0);
+                GrandBossManager.getInstance().setBossStatus(liveBaium, GrandBossManager.getInstance().ALIVE);
+				baiumBoss = addSpawn(stoneBaium, 116033, 17447, 10104, 40188, false, 0);
             }
         }
         else if (event.equalsIgnoreCase("31862-03.html"))
@@ -375,26 +375,26 @@ public class Baium extends L2AttackableAIScript
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        this.lastAction = System.currentTimeMillis();
+		lastAction = System.currentTimeMillis();
 
         //Anti BUGGERS
-        if (!this.bossZone.isInsideZone(attacker)) //Character attacking out of zone
+        if (!bossZone.isInsideZone(attacker)) //Character attacking out of zone
         {
             attacker.doDie(null);
 
-            if (this.debug)
+            if (debug)
             {
                 Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                         " out of the boss zone!");
             }
         }
 
-        if (!this.bossZone.isInsideZone(npc)) //Npc moved out of the zone
+        if (!bossZone.isInsideZone(npc)) //Npc moved out of the zone
         {
             L2Spawn spawn = npc.getSpawn();
 
@@ -403,7 +403,7 @@ public class Baium extends L2AttackableAIScript
                 npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
             }
 
-            if (this.debug)
+            if (debug)
             {
                 Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                         " wich is out of the boss zone!");
@@ -416,24 +416,24 @@ public class Baium extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == this.liveBaium)
+        if (npc.getNpcId() == liveBaium)
         {
-            GrandBossManager.getInstance().notifyBossKilled(this.liveBaium);
+            GrandBossManager.getInstance().notifyBossKilled(liveBaium);
 
             notifyEvent("cancel_timers", null, null);
 
             SpawnTable.getInstance().despawnSpecificTable("baium_minions");
 
-            this.bossZone.broadcastPacket(new PlaySound("BS01"));
+			bossZone.broadcastPacket(new PlaySound("BS01"));
 
-            addSpawn(this.exitCubic, 115017, 15549, 10090, 0, false, 600000); //10min
+            addSpawn(exitCubic, 115017, 15549, 10090, 0, false, 600000); //10min
 
-            startQuestTimer("unlock_baium", GrandBossManager.getInstance().getUnlockTime(this.liveBaium), null, null);
+            startQuestTimer("unlock_baium", GrandBossManager.getInstance().getUnlockTime(liveBaium), null, null);
 
             startQuestTimer("end_baium", 900000, null, null);
         }
@@ -444,7 +444,7 @@ public class Baium extends L2AttackableAIScript
     @Override
     public String onSpawn(L2Npc npc)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpawn: " + npc.getName());
         }

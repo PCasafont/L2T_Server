@@ -50,38 +50,38 @@ public class EnchantEffect
 
 	public void addFunc(Func func)
 	{
-		this.funcs.add(func);
+		funcs.add(func);
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public int getRarity()
 	{
-		return this.rarity;
+		return rarity;
 	}
 
 	public int getSlot()
 	{
-		return this.slot;
+		return slot;
 	}
 
 	public L2Skill getSkill()
 	{
-		if (this.skillId == 0)
+		if (skillId == 0)
 		{
 			return null;
 		}
 
-		return SkillTable.getInstance().getInfo(this.skillId, this.skillLevel);
+		return SkillTable.getInstance().getInfo(skillId, skillLevel);
 	}
 
 	public void applyBonus(L2PcInstance player)
 	{
 		player.removeStatsOwner(this);
-		for (Func f : this.funcs)
+		for (Func f : funcs)
 		{
 			player.addStatFunc(f);
 		}

@@ -30,8 +30,8 @@ public final class L2Augmentation
 
 	public L2Augmentation(EnchantEffect augment1, EnchantEffect augment2)
 	{
-		this.effect1 = augment1;
-		this.effect2 = augment2;
+		effect1 = augment1;
+		effect2 = augment2;
 	}
 
 	public L2Augmentation(long id)
@@ -46,9 +46,9 @@ public final class L2Augmentation
 			id2 = (int) (id - (id1 << 16));
 		}
 
-		this.effect1 = EnchantEffectTable.getInstance().getEffect(id1);
-		this.effect2 = EnchantEffectTable.getInstance().getEffect(id2);
-		if (this.effect1 == null)
+		effect1 = EnchantEffectTable.getInstance().getEffect(id1);
+		effect2 = EnchantEffectTable.getInstance().getEffect(id2);
+		if (effect1 == null)
 		{
 			Log.warning("Null augment1 for augment with id = " + id + " and calculated id1 = " + id1);
 		}
@@ -58,12 +58,12 @@ public final class L2Augmentation
 
 	public EnchantEffect getAugment1()
 	{
-		return this.effect1;
+		return effect1;
 	}
 
 	public EnchantEffect getAugment2()
 	{
-		return this.effect2;
+		return effect2;
 	}
 
 	/**
@@ -73,24 +73,24 @@ public final class L2Augmentation
 	 */
 	public long getId()
 	{
-		long id = (long) this.effect1.getId() << 32;
-		if (this.effect2 != null)
+		long id = (long) effect1.getId() << 32;
+		if (effect2 != null)
 		{
-			id += this.effect2.getId();
+			id += effect2.getId();
 		}
 		return id;
 	}
 
 	public L2Skill getSkill()
 	{
-		if (this.effect2 != null && this.effect2.getSkill() != null)
+		if (effect2 != null && effect2.getSkill() != null)
 		{
-			return this.effect2.getSkill();
+			return effect2.getSkill();
 		}
 
-		if (this.effect1 != null)
+		if (effect1 != null)
 		{
-			return this.effect1.getSkill();
+			return effect1.getSkill();
 		}
 
 		return null;
@@ -103,10 +103,10 @@ public final class L2Augmentation
 	 */
 	public void applyBonus(L2PcInstance player)
 	{
-		this.effect1.applyBonus(player);
-		if (this.effect2 != null)
+		effect1.applyBonus(player);
+		if (effect2 != null)
 		{
-			this.effect2.applyBonus(player);
+			effect2.applyBonus(player);
 		}
 
 		boolean updateTimeStamp = false;
@@ -151,10 +151,10 @@ public final class L2Augmentation
 	 */
 	public void removeBonus(L2PcInstance player)
 	{
-		this.effect1.removeBonus(player);
-		if (this.effect2 != null)
+		effect1.removeBonus(player);
+		if (effect2 != null)
 		{
-			this.effect2.removeBonus(player);
+			effect2.removeBonus(player);
 		}
 
 		// remove the skill if any

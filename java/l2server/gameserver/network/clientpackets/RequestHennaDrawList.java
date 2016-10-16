@@ -33,7 +33,7 @@ public final class RequestHennaDrawList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.unknown = readD(); // ??
+		unknown = readD(); // ??
 	}
 
 	@Override

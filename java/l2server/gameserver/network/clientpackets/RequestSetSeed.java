@@ -58,14 +58,14 @@ public class RequestSetSeed extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.manorId = readD();
+		manorId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Seed[count];
+		items = new Seed[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -73,17 +73,17 @@ public class RequestSetSeed extends L2GameClientPacket
 			long price = readQ();
 			if (itemId < 1 || sales < 0 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new Seed(itemId, sales, price);
+			items[i] = new Seed(itemId, sales, price);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (this.items == null)
+		if (items == null)
 		{
 			return;
 		}
@@ -96,7 +96,7 @@ public class RequestSetSeed extends L2GameClientPacket
 		}
 
 		// check castle owner
-		Castle currentCastle = CastleManager.getInstance().getCastleById(this.manorId);
+		Castle currentCastle = CastleManager.getInstance().getCastleById(manorId);
 		if (currentCastle.getOwnerId() != player.getClanId())
 		{
 			return;
@@ -124,8 +124,8 @@ public class RequestSetSeed extends L2GameClientPacket
 			return;
 		}
 
-		List<SeedProduction> seeds = new ArrayList<>(this.items.length);
-		for (Seed i : this.items)
+		List<SeedProduction> seeds = new ArrayList<>(items.length);
+		for (Seed i : items)
 		{
 			SeedProduction s = i.getSeed();
 			if (s == null)
@@ -153,19 +153,19 @@ public class RequestSetSeed extends L2GameClientPacket
 
 		public Seed(int id, long s, long p)
 		{
-			this.itemId = id;
-			this.sales = s;
-			this.price = p;
+			itemId = id;
+			sales = s;
+			price = p;
 		}
 
 		public SeedProduction getSeed()
 		{
-			if (this.sales != 0 && MAX_ADENA / this.sales < this.price)
+			if (sales != 0 && MAX_ADENA / sales < price)
 			{
 				return null;
 			}
 
-			return CastleManorManager.getInstance().getNewSeedProduction(this.itemId, this.sales, this.price, this.sales);
+			return CastleManorManager.getInstance().getNewSeedProduction(itemId, sales, price, sales);
 		}
 	}
 }

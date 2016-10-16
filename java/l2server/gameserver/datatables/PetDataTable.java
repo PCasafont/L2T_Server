@@ -39,13 +39,13 @@ public class PetDataTable
 
 	private PetDataTable()
 	{
-		this.petTable = new TIntObjectHashMap<>();
+		petTable = new TIntObjectHashMap<>();
 		load();
 	}
 
 	public void load()
 	{
-		this.petTable.clear();
+		petTable.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "PetData.xml");
 		if (file.exists())
 		{
@@ -180,7 +180,7 @@ public class PetDataTable
 								break;
 						}
 					}
-					this.petTable.put(npcId, data);
+					petTable.put(npcId, data);
 				}
 			}
 		}
@@ -189,26 +189,26 @@ public class PetDataTable
 			Log.warning("Not found PetData.xml");
 		}
 
-		Log.info(getClass().getSimpleName() + ": Loaded " + this.petTable.size() + " Pets.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
 	}
 
 	public L2PetLevelData getPetLevelData(int petID, int petLevel)
 	{
-		return this.petTable.get(petID).getPetLevelData(petLevel);
+		return petTable.get(petID).getPetLevelData(petLevel);
 	}
 
 	public L2PetData getPetData(int petID)
 	{
-		if (!this.petTable.contains(petID))
+		if (!petTable.contains(petID))
 		{
 			Log.info("Missing pet data for npcid: " + petID);
 		}
-		return this.petTable.get(petID);
+		return petTable.get(petID);
 	}
 
 	public int getPetMinLevel(int petID)
 	{
-		return this.petTable.get(petID).getMinLevel();
+		return petTable.get(petID).getMinLevel();
 	}
 
 	/*

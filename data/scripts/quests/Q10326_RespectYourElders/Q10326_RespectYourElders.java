@@ -51,22 +51,22 @@ public class Q10326_RespectYourElders extends Quest
 	public Q10326_RespectYourElders(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.gallint);
-		addTalkId(this.gallint);
-		addTalkId(this.pantheon);
+		addStartNpc(gallint);
+		addTalkId(gallint);
+		addTalkId(pantheon);
 
-		addEventId(this.guideId, QuestEventType.ON_ARRIVED);
-		addEventId(this.guideId, QuestEventType.ON_PLAYER_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_PLAYER_ARRIVED);
 
-		this.guideRoute.add(new L2NpcWalkerNode(-116572, 255510, -1424, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-116567, 255628, -1432, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-116545, 256251, -1456, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-116478, 257207, -1512, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-116424, 257578, -1512, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-116380, 257815, -1512, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-114955, 257765, -1136, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-114420, 257222, -1136, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-114330, 257299, -1136, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116572, 255510, -1424, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116567, 255628, -1432, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116545, 256251, -1456, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116478, 257207, -1512, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116424, 257578, -1512, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-116380, 257815, -1512, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-114955, 257765, -1136, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-114420, 257222, -1136, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-114330, 257299, -1136, 0, "", true));
 	}
 
 	@Override
@@ -80,19 +80,19 @@ public class Q10326_RespectYourElders extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.gallint && event.equalsIgnoreCase("32980-03.htm"))
+		if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(this.guideId, -116572, 255510, -1424, 0, false, 600000);
+			final L2Npc guide = addSpawn(guideId, -116572, 255510, -1424, 0, false, 600000);
 			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
 			guide.setAI(guideAI);
-			guideAI.initializeRoute(this.guideRoute, player);
+			guideAI.initializeRoute(guideRoute, player);
 			guideAI.setWaiting(true);
 
-			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), this.guideFirstChatId);
+			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
 
@@ -117,7 +117,7 @@ public class Q10326_RespectYourElders extends Quest
 				}
 			}, 60000);
 		}
-		else if (npc.getNpcId() == this.pantheon && event.equalsIgnoreCase("32972-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 14000);
@@ -141,7 +141,7 @@ public class Q10326_RespectYourElders extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.gallint)
+		if (npc.getNpcId() == gallint)
 		{
 			switch (st.getState())
 			{
@@ -163,7 +163,7 @@ public class Q10326_RespectYourElders extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.pantheon && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == pantheon && st.getInt("cond") == 1)
 		{
 			htmltext = "32972-01.htm";
 		}
@@ -174,18 +174,18 @@ public class Q10326_RespectYourElders extends Quest
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
-				guideAI.getCurrentPos() == this.guideRoute.size() - 1)
+				guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
 				guideAI.setWaiting(true);
 				return null;
 			}
-			int chatId = this.guideLastChatId;
-			if (guideAI.getCurrentPos() != this.guideRoute.size() - 1)
+			int chatId = guideLastChatId;
+			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
-				chatId = this.guideWaitChatId;
+				chatId = guideWaitChatId;
 			}
 			NpcSay ns =
 					new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
@@ -204,7 +204,7 @@ public class Q10326_RespectYourElders extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == this.guideRoute.size() - 1)
+		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()

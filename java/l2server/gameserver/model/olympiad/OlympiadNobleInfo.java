@@ -40,7 +40,7 @@ public class OlympiadNobleInfo
 		this.id = id;
 		this.name = name;
 		this.classId = classId;
-		this.toSave = true;
+		toSave = true;
 	}
 
 	public OlympiadNobleInfo(int id, String name, int classId, int points, int matches, int victories, int defeats, int draws, int classedMatches, int nonClassedMatches, boolean settled)
@@ -61,31 +61,31 @@ public class OlympiadNobleInfo
 
 	public void addWeeklyPoints(int weeklyPoints)
 	{
-		this.points += weeklyPoints;
+		points += weeklyPoints;
 
 		// Also reset the competitions that the player could do this week
-		this.classedMatches = 0;
-		this.nonClassedMatches = 0;
+		classedMatches = 0;
+		nonClassedMatches = 0;
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public int getClassId()
 	{
-		return this.classId;
+		return classId;
 	}
 
 	public int getPoints()
 	{
-		return this.points;
+		return points;
 	}
 
 	public void setPoints(int points)
@@ -95,72 +95,72 @@ public class OlympiadNobleInfo
 
 	public void increaseMatches()
 	{
-		this.matches++;
+		matches++;
 	}
 
 	public void increaseVictories()
 	{
-		this.victories++;
+		victories++;
 	}
 
 	public void increaseDefeats()
 	{
-		this.defeats++;
+		defeats++;
 	}
 
 	public void increaseDraws()
 	{
-		this.draws++;
+		draws++;
 	}
 
 	public void increaseClassedMatches()
 	{
-		this.classedMatches++;
+		classedMatches++;
 	}
 
 	public void increaseNonClassedMatches()
 	{
-		this.nonClassedMatches++;
+		nonClassedMatches++;
 	}
 
 	public int getMatches()
 	{
-		return this.matches;
+		return matches;
 	}
 
 	public int getVictories()
 	{
-		return this.victories;
+		return victories;
 	}
 
 	public int getDefeats()
 	{
-		return this.defeats;
+		return defeats;
 	}
 
 	public int getDraws()
 	{
-		return this.draws;
+		return draws;
 	}
 
 	public int getClassedMatches()
 	{
-		return this.classedMatches;
+		return classedMatches;
 	}
 
 	public int getNonClassedMatches()
 	{
-		return this.nonClassedMatches;
+		return nonClassedMatches;
 	}
 
 	public int getMatchesThisWeek()
 	{
-		return this.classedMatches + this.nonClassedMatches;
+		return classedMatches + nonClassedMatches;
 	}
 
 	public boolean isSettled()
 	{
-		return this.settled;
+		return settled;
 	}
 
 	public void setSettled(boolean settled)
@@ -170,7 +170,7 @@ public class OlympiadNobleInfo
 
 	public boolean isToSave()
 	{
-		return this.toSave;
+		return toSave;
 	}
 
 	public void setToSave(boolean toSave)

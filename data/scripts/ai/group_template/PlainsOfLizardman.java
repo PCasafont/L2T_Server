@@ -52,7 +52,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		registerMobs(this.MOBS, QuestEventType.ON_ATTACK);
+		registerMobs(MOBS, QuestEventType.ON_ATTACK);
 	}
 
 	public static void main(String[] args)

@@ -73,7 +73,7 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			this.constructor = this.func.getConstructor(Env.class, L2EffectTemplate.class);
+			constructor = this.func.getConstructor(Env.class, L2EffectTemplate.class);
 		}
 		catch (NoSuchMethodException e)
 		{
@@ -85,7 +85,7 @@ public class L2EffectTemplate
 	{
 		try
 		{
-			return (L2Effect) this.constructor.newInstance(env, this);
+			return (L2Effect) constructor.newInstance(env, this);
 		}
 		catch (IllegalAccessException e)
 		{
@@ -99,7 +99,7 @@ public class L2EffectTemplate
 		}
 		catch (InvocationTargetException e)
 		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + this.func + " Exception was: " +
+			Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " +
 					e.getTargetException().getMessage(), e.getTargetException());
 			return null;
 		}

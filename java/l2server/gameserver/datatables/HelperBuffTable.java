@@ -67,7 +67,7 @@ public class HelperBuffTable
 	 */
 	private HelperBuffTable()
 	{
-		this.helperBuff = new ArrayList<>();
+		helperBuff = new ArrayList<>();
 		restoreHelperBuffData();
 	}
 
@@ -101,47 +101,47 @@ public class HelperBuffTable
 
 						if (!isMagicClass)
 						{
-							if (lowerLevel < this.physicClassLowestLevel)
+							if (lowerLevel < physicClassLowestLevel)
 							{
-								this.physicClassLowestLevel = lowerLevel;
+								physicClassLowestLevel = lowerLevel;
 							}
 
 							if (upperLevel > physicClassHighestLevel)
 							{
-								this.physicClassHighestLevel = upperLevel;
+								physicClassHighestLevel = upperLevel;
 							}
 						}
 						else
 						{
-							if (lowerLevel < this.magicClassLowestLevel)
+							if (lowerLevel < magicClassLowestLevel)
 							{
-								this.magicClassLowestLevel = lowerLevel;
+								magicClassLowestLevel = lowerLevel;
 							}
 
 							if (upperLevel > magicClassHighestLevel)
 							{
-								this.magicClassHighestLevel = upperLevel;
+								magicClassHighestLevel = upperLevel;
 							}
 						}
 						if (forSummon)
 						{
-							if (lowerLevel < this.servitorLowestLevel)
+							if (lowerLevel < servitorLowestLevel)
 							{
-								this.servitorLowestLevel = lowerLevel;
+								servitorLowestLevel = lowerLevel;
 							}
 
 							if (upperLevel > servitorHighestLevel)
 							{
-								this.servitorHighestLevel = upperLevel;
+								servitorHighestLevel = upperLevel;
 							}
 						}
 						L2HelperBuff template = new L2HelperBuff(helperBuffDat);
-						this.helperBuff.add(template);
+						helperBuff.add(template);
 					}
 				}
 			}
 		}
-		Log.info("HelperBuffTable: Loaded: " + this.helperBuff.size() + " buffs!");
+		Log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class HelperBuffTable
 	 */
 	public List<L2HelperBuff> getHelperBuffTable()
 	{
-		return this.helperBuff;
+		return helperBuff;
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class HelperBuffTable
 	 */
 	public int getMagicClassHighestLevel()
 	{
-		return this.magicClassHighestLevel;
+		return magicClassHighestLevel;
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class HelperBuffTable
 	 */
 	public int getMagicClassLowestLevel()
 	{
-		return this.magicClassLowestLevel;
+		return magicClassLowestLevel;
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class HelperBuffTable
 	 */
 	public int getPhysicClassHighestLevel()
 	{
-		return this.physicClassHighestLevel;
+		return physicClassHighestLevel;
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class HelperBuffTable
 	 */
 	public int getPhysicClassLowestLevel()
 	{
-		return this.physicClassLowestLevel;
+		return physicClassLowestLevel;
 	}
 
 	/**
@@ -189,7 +189,7 @@ public class HelperBuffTable
 	 */
 	public int getServitorLowestLevel()
 	{
-		return this.servitorLowestLevel;
+		return servitorLowestLevel;
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class HelperBuffTable
 	 */
 	public int getServitorHighestLevel()
 	{
-		return this.servitorHighestLevel;
+		return servitorHighestLevel;
 	}
 
 	@SuppressWarnings("synthetic-access")

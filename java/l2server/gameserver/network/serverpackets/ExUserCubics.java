@@ -26,18 +26,18 @@ public final class ExUserCubics extends L2GameServerPacket
 
 	public ExUserCubics(L2PcInstance character)
 	{
-		this.player = character;
+		player = character;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.player.getObjectId());
-		writeH(this.player.getCubics().size());
-		for (int id : this.player.getCubics().keySet())
+		writeD(player.getObjectId());
+		writeH(player.getCubics().size());
+		for (int id : player.getCubics().keySet())
 		{
 			writeH(id);
 		}
-		writeD(this.player.getAgathionId());
+		writeD(player.getAgathionId());
 	}
 }

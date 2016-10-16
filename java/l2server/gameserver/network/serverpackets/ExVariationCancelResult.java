@@ -33,6 +33,6 @@ public class ExVariationCancelResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.result);
+		writeD(result);
 	}
 }

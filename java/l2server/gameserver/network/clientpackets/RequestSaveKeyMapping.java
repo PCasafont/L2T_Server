@@ -45,8 +45,8 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 
 		readD(); // Unknown
 		readD(); // Unknown
-		this.tabNum = readD();
-		for (int i = 0; i < this.tabNum; i++)
+		tabNum = readD();
+		for (int i = 0; i < tabNum; i++)
 		{
 			int cmd1Size = readC();
 			for (int j = 0; j < cmd1Size; j++)
@@ -81,30 +81,30 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 
 	public void insertCategory(int cat, int cmd)
 	{
-		if (this.catMap.containsKey(cat))
+		if (catMap.containsKey(cat))
 		{
-			this.catMap.get(cat).add(cmd);
+			catMap.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			this.catMap.put(cat, tmp);
+			catMap.put(cat, tmp);
 		}
 	}
 
 	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (this.keyMap.containsKey(cat))
+		if (keyMap.containsKey(cat))
 		{
-			this.keyMap.get(cat).add(tmk);
+			keyMap.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			this.keyMap.put(cat, tmp);
+			keyMap.put(cat, tmp);
 		}
 	}
 
@@ -126,7 +126,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 		}
 		if (Config.STORE_UI_SETTINGS)
 		{
-			player.getUISettings().storeAll(this.catMap, this.keyMap);
+			player.getUISettings().storeAll(catMap, keyMap);
 		}
 	}
 }

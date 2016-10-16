@@ -34,7 +34,7 @@ public class ConditionPlayerClassIdRestriction extends Condition
 	 */
 	public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId)
 	{
-		this.classIds = classId;
+		classIds = classId;
 	}
 
 	/* (non-Javadoc)
@@ -47,6 +47,6 @@ public class ConditionPlayerClassIdRestriction extends Condition
 		{
 			return false;
 		}
-		return this.classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
+		return classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
 	}
 }

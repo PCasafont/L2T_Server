@@ -59,12 +59,12 @@ public class GiftOfVitality extends Quest
 	public GiftOfVitality(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.jack);
-		addFirstTalkId(this.jack);
-		addTalkId(this.jack);
-		for (int[] spawn : this.spawns)
+		addStartNpc(jack);
+		addFirstTalkId(jack);
+		addTalkId(jack);
+		for (int[] spawn : spawns)
 		{
-			addSpawn(this.jack, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+			addSpawn(jack, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 
@@ -101,7 +101,7 @@ public class GiftOfVitality extends Quest
 				npc.setTarget(player);
 				npc.doCast(SkillTable.getInstance().getInfo(23179, 1)); // Gift of Vitality
 				st.setState(State.STARTED);
-				st.set("reuse", String.valueOf(System.currentTimeMillis() + this.hours * 60 * 60 * 1000));
+				st.set("reuse", String.valueOf(System.currentTimeMillis() + hours * 60 * 60 * 1000));
 				htmltext = "4306-okvitality.htm";
 			}
 		}

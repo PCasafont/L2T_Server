@@ -272,7 +272,7 @@ public abstract class L2Playable extends L2Character
 	// after resurrect
 	public final boolean isNoblesseBlessed()
 	{
-		return this.effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
+		return effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
 
 	public final void stopNoblesseBlessing(L2Abnormal effect)
@@ -291,7 +291,7 @@ public abstract class L2Playable extends L2Character
 	// Support for Soul of the Phoenix and Salvation skills
 	public final boolean isPhoenixBlessed()
 	{
-		return this.effects.isAffected(L2EffectType.PHOENIX_BLESSING.getMask());
+		return effects.isAffected(L2EffectType.PHOENIX_BLESSING.getMask());
 	}
 
 	public final void stopPhoenixBlessing(L2Abnormal effect)
@@ -313,13 +313,13 @@ public abstract class L2Playable extends L2Character
 	 */
 	public boolean isSilentMoving()
 	{
-		return this.effects.isAffected(L2EffectType.SILENT_MOVE.getMask());
+		return effects.isAffected(L2EffectType.SILENT_MOVE.getMask());
 	}
 
 	// for Newbie Protection Blessing skill, keeps you safe from an attack by a chaotic character >= 10 levels apart from you
 	public final boolean getProtectionBlessing()
 	{
-		return this.effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
+		return effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
 	}
 
 	/**
@@ -341,7 +341,7 @@ public abstract class L2Playable extends L2Character
 	//Charm of Luck - During a Raid/Boss war, decreased chance for death penalty
 	public final boolean getCharmOfLuck()
 	{
-		return this.effects.isAffected(L2EffectType.CHARM_OF_LUCK.getMask());
+		return effects.isAffected(L2EffectType.CHARM_OF_LUCK.getMask());
 	}
 
 	public final void stopCharmOfLuck(L2Abnormal effect)
@@ -361,22 +361,22 @@ public abstract class L2Playable extends L2Character
 	@Override
 	public void updateEffectIcons(boolean partyOnly)
 	{
-		this.effects.updateEffectIcons(partyOnly);
+		effects.updateEffectIcons(partyOnly);
 	}
 
 	public boolean isLockedTarget()
 	{
-		return this.lockedTarget != null;
+		return lockedTarget != null;
 	}
 
 	public L2Character getLockedTarget()
 	{
-		return this.lockedTarget;
+		return lockedTarget;
 	}
 
 	public void setLockedTarget(L2Character cha)
 	{
-		this.lockedTarget = cha;
+		lockedTarget = cha;
 	}
 
 	L2PcInstance transferDmgTo;

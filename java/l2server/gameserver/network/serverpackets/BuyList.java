@@ -19,8 +19,8 @@ public class BuyList extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.listID);
-		writeQ(this.money);
-		writeH(this.listsize);
+		writeD(listID);
+		writeQ(money);
+		writeH(listsize);
 	}
 }

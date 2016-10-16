@@ -52,7 +52,7 @@ public class GameServerRegister extends BaseGameServerRegister
 
 	public void consoleUI() throws IOException
 	{
-		this.in = new LineNumberReader(new InputStreamReader(System.in));
+		in = new LineNumberReader(new InputStreamReader(System.in));
 		boolean choiceOk = false;
 		String choice;
 
@@ -70,7 +70,7 @@ public class GameServerRegister extends BaseGameServerRegister
 			do
 			{
 				System.out.print(getBundle().getString("yourChoice") + ' ');
-				choice = this.in.readLine();
+				choice = in.readLine();
 				try
 				{
 					int choiceNumber = Integer.parseInt(choice);
@@ -202,7 +202,7 @@ public class GameServerRegister extends BaseGameServerRegister
 			System.out.println("2 - " + getBundle().getString("no"));
 			System.out.print(getBundle().getString("yourChoice") + ' ');
 			String choice;
-			choice = this.in.readLine();
+			choice = in.readLine();
 			switch (choice)
 			{
 				case "1":
@@ -228,7 +228,7 @@ public class GameServerRegister extends BaseGameServerRegister
 		do
 		{
 			System.out.print(getBundle().getString("enterDesiredId") + ' ');
-			line = this.in.readLine();
+			line = in.readLine();
 			try
 			{
 				id = Integer.parseInt(line);
@@ -275,7 +275,7 @@ public class GameServerRegister extends BaseGameServerRegister
 		do
 		{
 			System.out.println(getBundle().getString("enterDesiredId"));
-			line = this.in.readLine();
+			line = in.readLine();
 			try
 			{
 				id = Integer.parseInt(line);

@@ -31,13 +31,13 @@ public class ExOlympiadInfoList extends L2GameServerPacket
 
 	public ExOlympiadInfoList()
 	{
-		this.tasks = new ArrayList<>();
+		tasks = new ArrayList<>();
 		for (int i = 0; i < 160; i++)
 		{
 			OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(i);
 			if (task.isRunning())
 			{
-				this.tasks.add(task);
+				tasks.add(task);
 			}
 		}
 	}
@@ -45,9 +45,9 @@ public class ExOlympiadInfoList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.tasks.size());
+		writeD(tasks.size());
 		writeD(0x00); // This value makes the list be repeated multiple times
-		for (OlympiadGameTask task : this.tasks)
+		for (OlympiadGameTask task : tasks)
 		{
 			if (task == null || task.getGame() == null)
 			{

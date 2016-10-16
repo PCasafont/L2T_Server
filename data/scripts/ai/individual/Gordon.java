@@ -111,12 +111,12 @@ public class Gordon extends L2AttackableAIScript
 		// wait 2 minutes after Start AI
 		startQuestTimer("check_ai", 120000, null, null, true);
 
-		this.isSpawned = false;
-		this.isAttacked = false;
-		this.isWalkTo = 1;
-		this.npcMoveX = 0;
-		this.npcMoveY = 0;
-		this.npcBlock = 0;
+		isSpawned = false;
+		isAttacked = false;
+		isWalkTo = 1;
+		npcMoveX = 0;
+		npcMoveY = 0;
+		npcBlock = 0;
 	}
 
 	public L2Npc findTemplate(int npcId)
@@ -136,12 +136,12 @@ public class Gordon extends L2AttackableAIScript
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		X = WALKS[this.isWalkTo - 1][0];
-		Y = WALKS[this.isWalkTo - 1][1];
-		Z = WALKS[this.isWalkTo - 1][2];
+		X = WALKS[isWalkTo - 1][0];
+		Y = WALKS[isWalkTo - 1][1];
+		Z = WALKS[isWalkTo - 1][2];
 		if (event.equalsIgnoreCase("time_isAttacked"))
 		{
-			this.isAttacked = false;
+			isAttacked = false;
 			if (npc.getNpcId() == GORDON)
 			{
 				npc.setWalking();
@@ -151,12 +151,12 @@ public class Gordon extends L2AttackableAIScript
 		else if (event.equalsIgnoreCase("check_ai"))
 		{
 			cancelQuestTimer("check_ai", null, null);
-			if (this.isSpawned == false)
+			if (isSpawned == false)
 			{
 				L2Npc gordon_ai = findTemplate(GORDON);
 				if (gordon_ai != null)
 				{
-					this.isSpawned = true;
+					isSpawned = true;
 					startQuestTimer("Start", 1000, gordon_ai, null, true);
 					return super.onAdvEvent(event, npc, player);
 				}
@@ -164,7 +164,7 @@ public class Gordon extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("Start"))
 		{
-			if (npc != null && this.isSpawned == true)
+			if (npc != null && isSpawned == true)
 			{
 				// check if player have Cursed Weapon and in radius
 				if (npc.getNpcId() == GORDON)
@@ -179,7 +179,7 @@ public class Gordon extends L2AttackableAIScript
 								npc.setRunning();
 								((L2Attackable) npc).addDamageHate(pc, 0, 9999);
 								npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pc);
-								this.isAttacked = true;
+								isAttacked = true;
 								cancelQuestTimer("time_isAttacked", null, null);
 								startQuestTimer("time_isAttacked", 180000, npc, null);
 								return super.onAdvEvent(event, npc, player);
@@ -188,41 +188,41 @@ public class Gordon extends L2AttackableAIScript
 					}
 				}
 				// end check
-				if (this.isAttacked == true)
+				if (isAttacked == true)
 				{
 					return super.onAdvEvent(event, npc, player);
 				}
 				if (npc.getNpcId() == GORDON && npc.getX() - 50 <= X && npc.getX() + 50 >= X && npc.getY() - 50 <= Y &&
 						npc.getY() + 50 >= Y)
 				{
-					this.isWalkTo++;
-					if (this.isWalkTo > 55)
+					isWalkTo++;
+					if (isWalkTo > 55)
 					{
-						this.isWalkTo = 1;
+						isWalkTo = 1;
 					}
-					X = WALKS[this.isWalkTo - 1][0];
-					Y = WALKS[this.isWalkTo - 1][1];
-					Z = WALKS[this.isWalkTo - 1][2];
+					X = WALKS[isWalkTo - 1][0];
+					Y = WALKS[isWalkTo - 1][1];
+					Z = WALKS[isWalkTo - 1][2];
 					npc.setWalking();
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(X, Y, Z, 0));
 				}
 
 				// Test for unblock Npc
-				if (npc.getX() != this.npcMoveX && npc.getY() != this.npcMoveY)
+				if (npc.getX() != npcMoveX && npc.getY() != npcMoveY)
 				{
-					this.npcMoveX = npc.getX();
-					this.npcMoveY = npc.getY();
-					this.npcBlock = 0;
+					npcMoveX = npc.getX();
+					npcMoveY = npc.getY();
+					npcBlock = 0;
 				}
 				else if (npc.getNpcId() == GORDON)
 				{
-					this.npcBlock++;
-					if (this.npcBlock > 2)
+					npcBlock++;
+					if (npcBlock > 2)
 					{
 						npc.teleToLocation(X, Y, Z);
 						return super.onAdvEvent(event, npc, player);
 					}
-					if (this.npcBlock > 0)
+					if (npcBlock > 0)
 					{
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(X, Y, Z, 0));
 					}
@@ -236,10 +236,10 @@ public class Gordon extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		if (npc.getNpcId() == GORDON && this.npcBlock == 0)
+		if (npc.getNpcId() == GORDON && npcBlock == 0)
 		{
-			this.isSpawned = true;
-			this.isWalkTo = 1;
+			isSpawned = true;
+			isWalkTo = 1;
 			startQuestTimer("Start", 1000, npc, null, true);
 		}
 		return super.onSpawn(npc);
@@ -250,7 +250,7 @@ public class Gordon extends L2AttackableAIScript
 	{
 		if (npc.getNpcId() == GORDON)
 		{
-			this.isAttacked = true;
+			isAttacked = true;
 			cancelQuestTimer("time_isAttacked", null, null);
 			startQuestTimer("time_isAttacked", 180000, npc, null);
 			if (player != null)
@@ -270,7 +270,7 @@ public class Gordon extends L2AttackableAIScript
 		{
 			cancelQuestTimer("Start", null, null);
 			cancelQuestTimer("time_isAttacked", null, null);
-			this.isSpawned = false;
+			isSpawned = false;
 		}
 		return super.onKill(npc, killer, isPet);
 	}

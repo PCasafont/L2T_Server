@@ -36,20 +36,20 @@ public class ExGetPremiumItemList extends L2GameServerPacket
 	public ExGetPremiumItemList(L2PcInstance activeChar)
 	{
 		this.activeChar = activeChar;
-		this.map = this.activeChar.getPremiumItemList();
+		map = this.activeChar.getPremiumItemList();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (!this.map.isEmpty())
+		if (!map.isEmpty())
 		{
-			writeD(this.map.size());
-			for (Entry<Integer, L2PremiumItem> entry : this.map.entrySet())
+			writeD(map.size());
+			for (Entry<Integer, L2PremiumItem> entry : map.entrySet())
 			{
 				L2PremiumItem item = entry.getValue();
 				writeD(entry.getKey());
-				writeD(this.activeChar.getObjectId());
+				writeD(activeChar.getObjectId());
 				writeD(item.getItemId());
 				writeQ(item.getCount());
 				writeD(0);

@@ -32,8 +32,8 @@ public final class RequestCrystallizeEstimate extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.itemObjId = readD();
-		this.itemCount = readQ(); // For some use???
+		itemObjId = readD();
+		itemCount = readQ(); // For some use???
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public final class RequestCrystallizeEstimate extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = player.getInventory().getItemByObjectId(this.itemObjId);
+		L2ItemInstance item = player.getInventory().getItemByObjectId(itemObjId);
 		if (item != null)
 		{
 			sendPacket(new ExCrystalizingEstimation(item.getItem(), item.getCrystalCount()));

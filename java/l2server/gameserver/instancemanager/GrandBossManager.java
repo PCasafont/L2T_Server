@@ -90,11 +90,11 @@ public class GrandBossManager
 
 	private void init()
 	{
-		this.zones = new ArrayList<>();
+		zones = new ArrayList<>();
 
-		this.bosses = new HashMap<>();
-		this.storedInfo = new TIntObjectHashMap<>();
-		this.bossStatus = new TIntIntHashMap();
+		bosses = new HashMap<>();
+		storedInfo = new TIntObjectHashMap<>();
+		bossStatus = new TIntIntHashMap();
 		Connection con = null;
 		try
 		{
@@ -127,8 +127,8 @@ public class GrandBossManager
 				int true_MP = (int) MP;
 				info.set("currentMP", true_MP);
 				int status = rset.getInt("status");
-				this.bossStatus.put(bossId, status);
-				this.storedInfo.put(bossId, info);
+				bossStatus.put(bossId, status);
+				storedInfo.put(bossId, info);
 				Log.fine("GrandBossManager: " + boss.getName() + " (" + bossId + ") status is " + status + ".");
 				if (status > 0)
 				{
@@ -139,7 +139,7 @@ public class GrandBossManager
 				info = null;
 			}
 
-			Log.info("GrandBossManager: Loaded " + this.storedInfo.size() + " Instances");
+			Log.info("GrandBossManager: Loaded " + storedInfo.size() + " Instances");
 
 			rset.close();
 			statement.close();
@@ -229,17 +229,17 @@ public class GrandBossManager
 
 	public void addZone(L2BossZone zone)
 	{
-		if (this.zones != null)
+		if (zones != null)
 		{
-			this.zones.add(zone);
+			zones.add(zone);
 		}
 	}
 
 	public final L2BossZone getZone(L2Character character)
 	{
-		if (this.zones != null)
+		if (zones != null)
 		{
-			for (L2BossZone temp : this.zones)
+			for (L2BossZone temp : zones)
 			{
 				if (temp.isCharacterInZone(character))
 				{
@@ -252,9 +252,9 @@ public class GrandBossManager
 
 	public final L2BossZone getZone(int x, int y, int z)
 	{
-		if (this.zones != null)
+		if (zones != null)
 		{
-			for (L2BossZone temp : this.zones)
+			for (L2BossZone temp : zones)
 			{
 				if (temp.isInsideZone(x, y, z))
 				{
@@ -292,12 +292,12 @@ public class GrandBossManager
 	 */
 	public int getBossStatus(int bossId)
 	{
-		return this.bossStatus.get(bossId);
+		return bossStatus.get(bossId);
 	}
 
 	public void setBossStatus(int bossId, int status)
 	{
-		this.bossStatus.put(bossId, status);
+		bossStatus.put(bossId, status);
 		Log.info(
 				getClass().getSimpleName() + ": Updated " + NpcTable.getInstance().getTemplate(bossId).getName() + "(" +
 						bossId + ") status to " + status);
@@ -311,23 +311,23 @@ public class GrandBossManager
 	{
 		if (boss != null)
 		{
-			this.bosses.put(boss.getNpcId(), boss);
+			bosses.put(boss.getNpcId(), boss);
 		}
 	}
 
 	public L2GrandBossInstance getBoss(int bossId)
 	{
-		return this.bosses.get(bossId);
+		return bosses.get(bossId);
 	}
 
 	public StatsSet getStatsSet(int bossId)
 	{
-		return this.storedInfo.get(bossId);
+		return storedInfo.get(bossId);
 	}
 
 	public void setStatsSet(int bossId, StatsSet info)
 	{
-		this.storedInfo.put(bossId, info);
+		storedInfo.put(bossId, info);
 		updateDb(bossId, false);
 	}
 
@@ -343,7 +343,7 @@ public class GrandBossManager
 			deleteStatement.close();
 
 			PreparedStatement insertStatement = con.prepareStatement(INSERT_GRAND_BOSS_LIST);
-			for (L2BossZone zone : this.zones)
+			for (L2BossZone zone : zones)
 			{
 				if (zone == null)
 				{
@@ -367,13 +367,13 @@ public class GrandBossManager
 
 			PreparedStatement updateStatement1 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
 			PreparedStatement updateStatement2 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA);
-			for (Integer bossId : this.storedInfo.keys())
+			for (Integer bossId : storedInfo.keys())
 			{
-				L2GrandBossInstance boss = this.bosses.get(bossId);
-				StatsSet info = this.storedInfo.get(bossId);
+				L2GrandBossInstance boss = bosses.get(bossId);
+				StatsSet info = storedInfo.get(bossId);
 				if (boss == null || info == null)
 				{
-					updateStatement1.setInt(1, this.bossStatus.get(bossId));
+					updateStatement1.setInt(1, bossStatus.get(bossId));
 					updateStatement1.setInt(2, bossId);
 					updateStatement1.executeUpdate();
 					updateStatement1.clearParameters();
@@ -394,7 +394,7 @@ public class GrandBossManager
 					}
 					updateStatement2.setDouble(6, hp);
 					updateStatement2.setDouble(7, mp);
-					updateStatement2.setInt(8, this.bossStatus.get(bossId));
+					updateStatement2.setInt(8, bossStatus.get(bossId));
 					updateStatement2.setInt(9, bossId);
 					updateStatement2.executeUpdate();
 					updateStatement2.clearParameters();
@@ -420,13 +420,13 @@ public class GrandBossManager
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-			L2GrandBossInstance boss = this.bosses.get(bossId);
-			StatsSet info = this.storedInfo.get(bossId);
+			L2GrandBossInstance boss = bosses.get(bossId);
+			StatsSet info = storedInfo.get(bossId);
 
 			if (statusOnly || boss == null || info == null)
 			{
 				statement = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
-				statement.setInt(1, this.bossStatus.get(bossId));
+				statement.setInt(1, bossStatus.get(bossId));
 				statement.setInt(2, bossId);
 			}
 			else
@@ -446,7 +446,7 @@ public class GrandBossManager
 				}
 				statement.setDouble(6, hp);
 				statement.setDouble(7, mp);
-				statement.setInt(8, this.bossStatus.get(bossId));
+				statement.setInt(8, bossStatus.get(bossId));
 				statement.setInt(9, bossId);
 			}
 			statement.executeUpdate();
@@ -470,15 +470,15 @@ public class GrandBossManager
 	{
 		storeToDb();
 
-		this.bosses.clear();
-		this.storedInfo.clear();
-		this.bossStatus.clear();
-		this.zones.clear();
+		bosses.clear();
+		storedInfo.clear();
+		bossStatus.clear();
+		zones.clear();
 	}
 
 	public ArrayList<L2BossZone> getZones()
 	{
-		return this.zones;
+		return zones;
 	}
 
 	//LasTravel

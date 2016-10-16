@@ -35,38 +35,38 @@ public class L2RandomMinionData
 	 */
 	public L2RandomMinionData(L2RandomMinionData rhs)
 	{
-		this.randomMinionIds = new ArrayList<>(rhs.randomMinionIds);
-		this.lastSpawnedMinionIds = new ArrayList<>(rhs.lastSpawnedMinionIds);
-		this.minionAmount = rhs.minionAmount;
+		randomMinionIds = new ArrayList<>(rhs.randomMinionIds);
+		lastSpawnedMinionIds = new ArrayList<>(rhs.lastSpawnedMinionIds);
+		minionAmount = rhs.minionAmount;
 	}
 
 	public void addMinionId(int id)
 	{
-		this.randomMinionIds.add(id);
+		randomMinionIds.add(id);
 	}
 
 	public void addLastSpawnedMinionId(int id)
 	{
-		this.lastSpawnedMinionIds.add(id);
+		lastSpawnedMinionIds.add(id);
 	}
 
 	public List<Integer> getMinionIds()
 	{
-		return this.randomMinionIds;
+		return randomMinionIds;
 	}
 
 	public List<Integer> getLastSpawnedMinionIds()
 	{
-		return this.lastSpawnedMinionIds;
+		return lastSpawnedMinionIds;
 	}
 
 	public void setAmount(int amount)
 	{
-		this.minionAmount = amount;
+		minionAmount = amount;
 	}
 
 	public int getAmount()
 	{
-		return this.minionAmount;
+		return minionAmount;
 	}
 }

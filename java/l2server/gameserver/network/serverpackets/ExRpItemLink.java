@@ -39,6 +39,6 @@ public final class ExRpItemLink extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeItem(this.item);
+		writeItem(item);
 	}
 }

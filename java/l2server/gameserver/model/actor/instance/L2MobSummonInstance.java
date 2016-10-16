@@ -549,12 +549,12 @@ public class L2MobSummonInstance extends L2SummonInstance
 
 	public void setControlItem(L2ItemInstance item)
 	{
-		this.controlItem = item;
+		controlItem = item;
 	}
 
 	public L2ItemInstance getControlItem()
 	{
-		return this.controlItem;
+		return controlItem;
 	}
 
 	@Override
@@ -564,9 +564,9 @@ public class L2MobSummonInstance extends L2SummonInstance
 
 		if (value)
 		{
-			this.previousFollowStatus = getFollowStatus();
+			previousFollowStatus = getFollowStatus();
 			// if immobilized temporarly disable follow mode
-			if (this.previousFollowStatus)
+			if (previousFollowStatus)
 			{
 				setFollowStatus(false);
 			}
@@ -574,7 +574,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		else
 		{
 			// if not more immobilized restore previous follow mode
-			setFollowStatus(this.previousFollowStatus);
+			setFollowStatus(previousFollowStatus);
 		}
 	}
 
@@ -636,6 +636,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 	@Override
 	public void setOwner(L2PcInstance newOwner)
 	{
-		this.owner = newOwner;
+		owner = newOwner;
 	}
 }

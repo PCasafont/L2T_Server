@@ -50,18 +50,18 @@ public class L2DamageZone extends L2ZoneType
 		super(id);
 
 		// Setup default damage
-		this.damageHPPerSec = 200;
-		this.damageMPPerSec = 0;
+		damageHPPerSec = 200;
+		damageMPPerSec = 0;
 
 		// Setup default start / reuse time
-		this.startTask = 10;
-		this.reuseTask = 5000;
+		startTask = 10;
+		reuseTask = 5000;
 
 		// no castle by default
-		this.castleId = 0;
-		this.castle = null;
+		castleId = 0;
+		castle = null;
 
-		this.enabled = true;
+		enabled = true;
 
 		setTargetType(InstanceType.L2Playable); // default only playabale
 	}
@@ -71,27 +71,27 @@ public class L2DamageZone extends L2ZoneType
 	{
 		if (name.equalsIgnoreCase("dmgHPSec"))
 		{
-			this.damageHPPerSec = Integer.parseInt(value);
+			damageHPPerSec = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("dmgMPSec"))
 		{
-			this.damageMPPerSec = Integer.parseInt(value);
+			damageMPPerSec = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("castleId"))
 		{
-			this.castleId = Integer.parseInt(value);
+			castleId = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("initialDelay"))
 		{
-			this.startTask = Integer.parseInt(value);
+			startTask = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("reuse"))
 		{
-			this.reuseTask = Integer.parseInt(value);
+			reuseTask = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("enabled"))
 		{
-			this.enabled = Boolean.parseBoolean(value);
+			enabled = Boolean.parseBoolean(value);
 		}
 		else
 		{
@@ -102,7 +102,7 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (this.task == null && (this.damageHPPerSec != 0 || this.damageMPPerSec != 0))
+		if (task == null && (damageHPPerSec != 0 || damageMPPerSec != 0))
 		{
 			L2PcInstance player = character.getActingPlayer();
 			if (getCastle() != null) // Castle zone
@@ -115,10 +115,10 @@ public class L2DamageZone extends L2ZoneType
 			}
 			synchronized (this)
 			{
-				if (this.task == null)
+				if (task == null)
 				{
-					this.task = ThreadPoolManager.getInstance()
-							.scheduleGeneralAtFixedRate(new ApplyDamage(this), this.startTask, this.reuseTask);
+					task = ThreadPoolManager.getInstance()
+							.scheduleGeneralAtFixedRate(new ApplyDamage(this), startTask, reuseTask);
 				}
 			}
 		}
@@ -127,7 +127,7 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (this.characterList.isEmpty() && this.task != null)
+		if (characterList.isEmpty() && task != null)
 		{
 			stopTask();
 		}
@@ -135,36 +135,36 @@ public class L2DamageZone extends L2ZoneType
 
 	protected Collection<L2Character> getCharacterList()
 	{
-		return this.characterList.values();
+		return characterList.values();
 	}
 
 	protected int getHPDamagePerSecond()
 	{
-		return this.damageHPPerSec;
+		return damageHPPerSec;
 	}
 
 	protected int getMPDamagePerSecond()
 	{
-		return this.damageMPPerSec;
+		return damageMPPerSec;
 	}
 
 	protected void stopTask()
 	{
-		if (this.task != null)
+		if (task != null)
 		{
-			this.task.cancel(false);
-			this.task = null;
+			task.cancel(false);
+			task = null;
 		}
 	}
 
 	private Castle getCastle()
 	{
-		if (this.castleId > 0 && this.castle == null)
+		if (castleId > 0 && castle == null)
 		{
-			this.castle = CastleManager.getInstance().getCastleById(this.castleId);
+			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
 
-		return this.castle;
+		return castle;
 	}
 
 	class ApplyDamage implements Runnable
@@ -174,8 +174,8 @@ public class L2DamageZone extends L2ZoneType
 
 		ApplyDamage(L2DamageZone zone)
 		{
-			this.dmgZone = zone;
-			this.castle = zone.getCastle();
+			dmgZone = zone;
+			castle = zone.getCastle();
 		}
 
 		@Override
@@ -183,13 +183,13 @@ public class L2DamageZone extends L2ZoneType
 		{
 			boolean siege = false;
 
-			if (this.castle != null)
+			if (castle != null)
 			{
-				siege = this.castle.getSiege().getIsInProgress();
+				siege = castle.getSiege().getIsInProgress();
 				// castle zones active only during siege
 				if (!siege)
 				{
-					this.dmgZone.stopTask();
+					dmgZone.stopTask();
 					return;
 				}
 			}
@@ -199,7 +199,7 @@ public class L2DamageZone extends L2ZoneType
 				return;
 			}
 
-			for (L2Character temp : this.dmgZone.getCharacterList())
+			for (L2Character temp : dmgZone.getCharacterList())
 			{
 				if (temp != null && !temp.isDead())
 				{
@@ -215,11 +215,11 @@ public class L2DamageZone extends L2ZoneType
 
 					if (getHPDamagePerSecond() != 0)
 					{
-						temp.reduceCurrentHp(this.dmgZone.getHPDamagePerSecond(), null, null);
+						temp.reduceCurrentHp(dmgZone.getHPDamagePerSecond(), null, null);
 					}
 					if (getMPDamagePerSecond() != 0)
 					{
-						temp.reduceCurrentMp(this.dmgZone.getMPDamagePerSecond());
+						temp.reduceCurrentMp(dmgZone.getMPDamagePerSecond());
 					}
 				}
 			}
@@ -228,7 +228,7 @@ public class L2DamageZone extends L2ZoneType
 
 	public void setEnabled(boolean state)
 	{
-		this.enabled = state;
+		enabled = state;
 	}
 
 	@Override

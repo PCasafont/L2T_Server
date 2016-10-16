@@ -50,10 +50,10 @@ public class ExOlympiadMatchList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.games.size());
+		writeD(games.size());
 		writeD(0x00);
 
-		for (OlympiadGameTask curGame : this.games)
+		for (OlympiadGameTask curGame : games)
 		{
 			writeD(curGame.getGame().getGameId()); // Stadium Id (Arena 1 = 0)
 

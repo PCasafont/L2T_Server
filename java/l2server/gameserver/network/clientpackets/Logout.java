@@ -85,7 +85,7 @@ public final class Logout extends L2GameClientPacket
 
 		LogRecord record = new LogRecord(Level.INFO, "Disconnected");
 		record.setParameters(new Object[]{getClient()});
-		this.logAccounting.log(record);
+		logAccounting.log(record);
 
 		player.logout();
 	}

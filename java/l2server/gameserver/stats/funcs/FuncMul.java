@@ -39,7 +39,7 @@ public class FuncMul extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value *= this.lambda.calc(env);
+			env.value *= lambda.calc(env);
 		}
 	}
 }

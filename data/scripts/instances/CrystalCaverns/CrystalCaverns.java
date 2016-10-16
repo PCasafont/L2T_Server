@@ -1820,7 +1820,7 @@ public class CrystalCaverns extends Quest
 						new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 				Instance baylorInstance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 				baylorInstance.setDuration(300000);
-				this.startQuestTimer("spawn_oracle", 1000, npc, null);
+				startQuestTimer("spawn_oracle", 1000, npc, null);
 				giveRewards(player, npc.getInstanceId(), -1, true);
 			}
 		}

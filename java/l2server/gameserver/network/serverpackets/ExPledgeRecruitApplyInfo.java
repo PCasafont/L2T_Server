@@ -30,6 +30,6 @@ public class ExPledgeRecruitApplyInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.info);
+		writeD(info);
 	}
 }

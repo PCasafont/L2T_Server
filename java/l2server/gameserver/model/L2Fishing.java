@@ -53,21 +53,21 @@ public class L2Fishing implements Runnable
 	@Override
 	public void run()
 	{
-		if (this.fisher == null)
+		if (fisher == null)
 		{
 			return;
 		}
 
-		if (this.fishCurHp >= this.fishMaxHp * 2)
+		if (fishCurHp >= fishMaxHp * 2)
 		{
 			// The fish got away
-			this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_STOLEN_BY_FISH));
+			fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_STOLEN_BY_FISH));
 			doDie(false);
 		}
-		else if (this.time <= 0)
+		else if (time <= 0)
 		{
 			// Time is up, so that fish got away
-			this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_SPIT_THE_HOOK));
+			fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_SPIT_THE_HOOK));
 			doDie(false);
 		}
 		else
@@ -79,56 +79,58 @@ public class L2Fishing implements Runnable
 	// =========================================================
 	public L2Fishing(L2PcInstance Fisher, FishData fish, boolean isNoob, boolean isUpperGrade)
 	{
-		this.fisher = Fisher;
-		this.fishMaxHp = fish.getHP();
-		this.fishCurHp = this.fishMaxHp;
-		this.regenHp = fish.getHpRegen();
-		this.fishId = fish.getId();
-		this.time = fish.getCombatTime() / 1000;
+		fisher = Fisher;
+		fishMaxHp = fish.getHP();
+		fishCurHp = fishMaxHp;
+		regenHp = fish.getHpRegen();
+		fishId = fish.getId();
+		time = fish.getCombatTime() / 1000;
 		this.isUpperGrade = isUpperGrade;
 		if (isUpperGrade)
 		{
-			this.deceptiveMode = Rnd.get(100) >= 90 ? 1 : 0;
-			this.lureType = 2;
+			deceptiveMode = Rnd.get(100) >= 90 ? 1 : 0;
+			lureType = 2;
 		}
 		else
 		{
-			this.deceptiveMode = 0;
-			this.lureType = isNoob ? 0 : 1;
+			deceptiveMode = 0;
+			lureType = isNoob ? 0 : 1;
 		}
-		this.mode = Rnd.get(100) >= 80 ? 1 : 0;
+		mode = Rnd.get(100) >= 80 ? 1 : 0;
 
 		ExFishingStartCombat efsc =
-				new ExFishingStartCombat(this.fisher, this.time, this.fishMaxHp, this.mode, this.lureType, this.deceptiveMode);
-		this.fisher.broadcastPacket(efsc);
-		this.fisher.sendPacket(new PlaySound(1, "SF_S_01", 0, 0, 0, 0, 0));
+				new ExFishingStartCombat(fisher, time, fishMaxHp, mode, lureType,
+						deceptiveMode);
+		fisher.broadcastPacket(efsc);
+		fisher.sendPacket(new PlaySound(1, "SF_S_01", 0, 0, 0, 0, 0));
 		// Succeeded in getting a bite
-		this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GOT_A_BITE));
+		fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GOT_A_BITE));
 
-		if (this.fishAiTask == null)
+		if (fishAiTask == null)
 		{
-			this.fishAiTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(this, 1000, 1000);
+			fishAiTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(this, 1000, 1000);
 		}
 	}
 
 	public void changeHp(int hp, int pen)
 	{
-		this.fishCurHp -= hp;
-		if (this.fishCurHp < 0)
+		fishCurHp -= hp;
+		if (fishCurHp < 0)
 		{
-			this.fishCurHp = 0;
+			fishCurHp = 0;
 		}
 
 		ExFishingHpRegen efhr =
-				new ExFishingHpRegen(this.fisher, this.time, this.fishCurHp, this.mode, this.goodUse, this.anim, pen, this.deceptiveMode);
-		this.fisher.broadcastPacket(efhr);
-		this.anim = 0;
-		if (this.fishCurHp > fishMaxHp * 2)
+				new ExFishingHpRegen(fisher, time, fishCurHp, mode, goodUse, anim, pen,
+						deceptiveMode);
+		fisher.broadcastPacket(efhr);
+		anim = 0;
+		if (fishCurHp > fishMaxHp * 2)
 		{
-			this.fishCurHp = this.fishMaxHp * 2;
+			fishCurHp = fishMaxHp * 2;
 			doDie(false);
 		}
-		else if (this.fishCurHp == 0)
+		else if (fishCurHp == 0)
 		{
 			doDie(true);
 		}
@@ -136,13 +138,13 @@ public class L2Fishing implements Runnable
 
 	public synchronized void doDie(boolean win)
 	{
-		if (this.fishAiTask != null)
+		if (fishAiTask != null)
 		{
-			this.fishAiTask.cancel(false);
-			this.fishAiTask = null;
+			fishAiTask.cancel(false);
+			fishAiTask = null;
 		}
 
-		if (this.fisher == null)
+		if (fisher == null)
 		{
 			return;
 		}
@@ -156,106 +158,107 @@ public class L2Fishing implements Runnable
 			}
 			else
 			{
-				this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CAUGHT_SOMETHING));
-				this.fisher.addItem("Fishing", this.fishId, 1, null, true);
+				fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CAUGHT_SOMETHING));
+				fisher.addItem("Fishing", fishId, 1, null, true);
 			}
 		}
-		this.fisher.endFishing(win);
-		this.fisher = null;
+		fisher.endFishing(win);
+		fisher = null;
 	}
 
 	protected void aiTask()
 	{
-		if (this.thinking)
+		if (thinking)
 		{
 			return;
 		}
-		this.thinking = true;
-		this.time--;
+		thinking = true;
+		time--;
 
 		try
 		{
-			if (this.mode == 1)
+			if (mode == 1)
 			{
-				if (this.deceptiveMode == 0)
+				if (deceptiveMode == 0)
 				{
-					this.fishCurHp += (int) this.regenHp;
+					fishCurHp += (int) regenHp;
 				}
 			}
 			else
 			{
-				if (this.deceptiveMode == 1)
+				if (deceptiveMode == 1)
 				{
-					this.fishCurHp += (int) this.regenHp;
+					fishCurHp += (int) regenHp;
 				}
 			}
-			if (this.stop == 0)
+			if (stop == 0)
 			{
-				this.stop = 1;
+				stop = 1;
 				int check = Rnd.get(100);
 				if (check >= 70)
 				{
-					this.mode = this.mode == 0 ? 1 : 0;
+					mode = mode == 0 ? 1 : 0;
 				}
-				if (this.isUpperGrade)
+				if (isUpperGrade)
 				{
 					check = Rnd.get(100);
 					if (check >= 90)
 					{
-						this.deceptiveMode = this.deceptiveMode == 0 ? 1 : 0;
+						deceptiveMode = deceptiveMode == 0 ? 1 : 0;
 					}
 				}
 			}
 			else
 			{
-				this.stop--;
+				stop--;
 			}
 		}
 		finally
 		{
-			this.thinking = false;
+			thinking = false;
 			ExFishingHpRegen efhr =
-					new ExFishingHpRegen(this.fisher, this.time, this.fishCurHp, this.mode, 0, this.anim, 0, this.deceptiveMode);
-			if (this.anim != 0)
+					new ExFishingHpRegen(fisher, time, fishCurHp, mode, 0, anim, 0,
+							deceptiveMode);
+			if (anim != 0)
 			{
-				this.fisher.broadcastPacket(efhr);
+				fisher.broadcastPacket(efhr);
 			}
 			else
 			{
-				this.fisher.sendPacket(efhr);
+				fisher.sendPacket(efhr);
 			}
 		}
 	}
 
 	public void useRealing(int dmg, int pen)
 	{
-		this.anim = 2;
+		anim = 2;
 		if (Rnd.get(100) > 90)
 		{
-			this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
-			this.goodUse = 0;
+			fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
+			goodUse = 0;
 			changeHp(0, pen);
 			return;
 		}
-		if (this.fisher == null)
+		if (fisher == null)
 		{
 			return;
 		}
-		if (this.mode == 1)
+		if (mode == 1)
 		{
-			if (this.deceptiveMode == 0)
+			if (deceptiveMode == 0)
 			{
 				// Reeling is successful, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
+				fisher.sendPacket(sm);
 				if (pen == 50)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
-					this.fisher.sendPacket(sm);
+					fisher.sendPacket(sm);
 				}
-				this.goodUse = 1;
+				goodUse = 1;
 				changeHp(dmg, pen);
 			}
 			else
@@ -263,20 +266,20 @@ public class L2Fishing implements Runnable
 				// Reeling failed, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_REELING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
-				this.goodUse = 2;
+				fisher.sendPacket(sm);
+				goodUse = 2;
 				changeHp(-dmg, pen);
 			}
 		}
 		else
 		{
-			if (this.deceptiveMode == 0)
+			if (deceptiveMode == 0)
 			{
 				// Reeling failed, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_REELING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
-				this.goodUse = 2;
+				fisher.sendPacket(sm);
+				goodUse = 2;
 				changeHp(-dmg, pen);
 			}
 			else
@@ -284,14 +287,14 @@ public class L2Fishing implements Runnable
 				// Reeling is successful, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
+				fisher.sendPacket(sm);
 				if (pen == 50)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
-					this.fisher.sendPacket(sm);
+					fisher.sendPacket(sm);
 				}
-				this.goodUse = 1;
+				goodUse = 1;
 				changeHp(dmg, pen);
 			}
 		}
@@ -299,33 +302,33 @@ public class L2Fishing implements Runnable
 
 	public void usePomping(int dmg, int pen)
 	{
-		this.anim = 1;
+		anim = 1;
 		if (Rnd.get(100) > 90)
 		{
-			this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
-			this.goodUse = 0;
+			fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
+			goodUse = 0;
 			changeHp(0, pen);
 			return;
 		}
-		if (this.fisher == null)
+		if (fisher == null)
 		{
 			return;
 		}
-		if (this.mode == 0)
+		if (mode == 0)
 		{
-			if (this.deceptiveMode == 0)
+			if (deceptiveMode == 0)
 			{
 				// Pumping is successful. Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
+				fisher.sendPacket(sm);
 				if (pen == 50)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
-					this.fisher.sendPacket(sm);
+					fisher.sendPacket(sm);
 				}
-				this.goodUse = 1;
+				goodUse = 1;
 				changeHp(dmg, pen);
 			}
 			else
@@ -333,20 +336,20 @@ public class L2Fishing implements Runnable
 				// Pumping failed, Regained: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_PUMPING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
-				this.goodUse = 2;
+				fisher.sendPacket(sm);
+				goodUse = 2;
 				changeHp(-dmg, pen);
 			}
 		}
 		else
 		{
-			if (this.deceptiveMode == 0)
+			if (deceptiveMode == 0)
 			{
 				// Pumping failed, Regained: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_PUMPING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
-				this.goodUse = 2;
+				fisher.sendPacket(sm);
+				goodUse = 2;
 				changeHp(-dmg, pen);
 			}
 			else
@@ -354,14 +357,14 @@ public class L2Fishing implements Runnable
 				// Pumping is successful. Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
-				this.fisher.sendPacket(sm);
+				fisher.sendPacket(sm);
 				if (pen == 50)
 				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
-					this.fisher.sendPacket(sm);
+					fisher.sendPacket(sm);
 				}
-				this.goodUse = 1;
+				goodUse = 1;
 				changeHp(dmg, pen);
 			}
 		}
@@ -369,11 +372,11 @@ public class L2Fishing implements Runnable
 
 	private void PenaltyMonster()
 	{
-		int lvl = (int) Math.round(this.fisher.getLevel() * 0.1);
+		int lvl = (int) Math.round(fisher.getLevel() * 0.1);
 
 		int npcid;
 
-		this.fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CAUGHT_SOMETHING_SMELLY_THROW_IT_BACK));
+		fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CAUGHT_SOMETHING_SMELLY_THROW_IT_BACK));
 		switch (lvl)
 		{
 			case 0:
@@ -413,14 +416,14 @@ public class L2Fishing implements Runnable
 			try
 			{
 				L2Spawn spawn = new L2Spawn(temp);
-				spawn.setX(this.fisher.getX());
-				spawn.setY(this.fisher.getY());
-				spawn.setZ(this.fisher.getZ() + 20);
-				spawn.setHeading(this.fisher.getHeading());
+				spawn.setX(fisher.getX());
+				spawn.setY(fisher.getY());
+				spawn.setZ(fisher.getZ() + 20);
+				spawn.setHeading(fisher.getHeading());
 				spawn.stopRespawn();
 				spawn.doSpawn();
 				spawn.getNpc().scheduleDespawn(3 * 60 * 1000);
-				((L2PenaltyMonsterInstance) spawn.getNpc()).setPlayerToKill(this.fisher);
+				((L2PenaltyMonsterInstance) spawn.getNpc()).setPlayerToKill(fisher);
 			}
 			catch (Exception e)
 			{

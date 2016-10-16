@@ -59,37 +59,37 @@ public class EnchantCostsTable
 
 		public int getStartLevel()
 		{
-			return this.startLevel;
+			return startLevel;
 		}
 
 		public int getMaxLevel()
 		{
-			return this.maxLevel;
+			return maxLevel;
 		}
 
 		public int getNormalBook()
 		{
-			return this.normalBook;
+			return normalBook;
 		}
 
 		public int getSafeBook()
 		{
-			return this.safeBook;
+			return safeBook;
 		}
 
 		public int getChangeBook()
 		{
-			return this.changeBook;
+			return changeBook;
 		}
 
 		public int getUntrainBook()
 		{
-			return this.untrainBook;
+			return untrainBook;
 		}
 
 		public int getImmortalBook()
 		{
-			return this.immortalBook;
+			return immortalBook;
 		}
 	}
 
@@ -103,9 +103,9 @@ public class EnchantCostsTable
 
 		public EnchantSkillDetail(int lvl, int adena, int sp, byte[] rates, EnchantSkillRange range)
 		{
-			this.level = lvl;
-			this.adenaCost = adena;
-			this.spCost = sp;
+			level = lvl;
+			adenaCost = adena;
+			spCost = sp;
 			this.rates = rates;
 			this.range = range;
 		}
@@ -115,7 +115,7 @@ public class EnchantCostsTable
 		 */
 		public int getLevel()
 		{
-			return this.level;
+			return level;
 		}
 
 		/**
@@ -123,12 +123,12 @@ public class EnchantCostsTable
 		 */
 		public int getSpCost()
 		{
-			return this.spCost;
+			return spCost;
 		}
 
 		public int getAdenaCost()
 		{
-			return this.adenaCost;
+			return adenaCost;
 		}
 
 		public byte getRate(L2PcInstance ply)
@@ -138,12 +138,12 @@ public class EnchantCostsTable
 				return 0;
 			}
 
-			return this.rates[ply.getLevel() - 85];
+			return rates[ply.getLevel() - 85];
 		}
 
 		public EnchantSkillRange getRange()
 		{
-			return this.range;
+			return range;
 		}
 	}
 
@@ -171,8 +171,8 @@ public class EnchantCostsTable
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		this.enchantSkillTrees.clear();
-		this.enchantDetails.clear();
+		enchantSkillTrees.clear();
+		enchantDetails.clear();
 
 		for (XmlNode n : doc.getChildren())
 		{
@@ -194,7 +194,7 @@ public class EnchantCostsTable
 										untrainBook, immortalBook);
 						for (int lvl = startLevel; lvl < maxLevel; lvl++)
 						{
-							this.enchantRanges.put(lvl, range);
+							enchantRanges.put(lvl, range);
 						}
 					}
 					else if (enchantNode.getName().equalsIgnoreCase("enchant"))
@@ -211,7 +211,7 @@ public class EnchantCostsTable
 						for (String ls : levels)
 						{
 							int enchLvl = Integer.valueOf(ls);
-							EnchantSkillRange range = this.enchantRanges.get(enchLvl - 1);
+							EnchantSkillRange range = enchantRanges.get(enchLvl - 1);
 							if (range == null)
 							{
 								continue;
@@ -251,11 +251,11 @@ public class EnchantCostsTable
 
 	public int addNewRouteForSkill(int skillId, int maxLvL, int route)
 	{
-		L2EnchantSkillLearn enchantableSkill = this.enchantSkillTrees.get(skillId);
+		L2EnchantSkillLearn enchantableSkill = enchantSkillTrees.get(skillId);
 		if (enchantableSkill == null)
 		{
 			enchantableSkill = new L2EnchantSkillLearn(skillId, maxLvL);
-			this.enchantSkillTrees.put(skillId, enchantableSkill);
+			enchantSkillTrees.put(skillId, enchantableSkill);
 		}
 
 		enchantableSkill.addNewEnchantRoute(route);
@@ -275,12 +275,12 @@ public class EnchantCostsTable
 
 	public L2EnchantSkillLearn getSkillEnchantmentBySkillId(int skillId)
 	{
-		return this.enchantSkillTrees.get(skillId);
+		return enchantSkillTrees.get(skillId);
 	}
 
 	public int getEnchantSkillSpCost(L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = this.enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -296,7 +296,7 @@ public class EnchantCostsTable
 
 	public int getEnchantSkillAdenaCost(L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = this.enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -312,7 +312,7 @@ public class EnchantCostsTable
 
 	public byte getEnchantSkillRate(L2PcInstance player, L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = this.enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -328,12 +328,12 @@ public class EnchantCostsTable
 
 	public void addEnchantDetail(EnchantSkillDetail detail)
 	{
-		this.enchantDetails.add(detail);
+		enchantDetails.add(detail);
 	}
 
 	public List<EnchantSkillDetail> getEnchantGroupDetails()
 	{
-		return this.enchantDetails;
+		return enchantDetails;
 	}
 
 	@SuppressWarnings("synthetic-access")

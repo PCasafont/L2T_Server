@@ -58,7 +58,7 @@ public class Announcements
 
 	public void loadAnnouncements()
 	{
-		this.announcements.clear();
+		announcements.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/announcements.txt");
 		if (file.exists())
@@ -81,13 +81,13 @@ public class Announcements
 
 	public void showAnnouncements(L2PcInstance activeChar)
 	{
-		for (String announcement : this.announcements)
+		for (String announcement : announcements)
 		{
 			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), announcement);
 			activeChar.sendPacket(cs);
 		}
 
-		for (List<Object> entry : this.eventAnnouncements)
+		for (List<Object> entry : eventAnnouncements)
 		{
 			DateRange validDateRange = (DateRange) entry.get(0);
 			String[] msg = (String[]) entry.get(1);
@@ -110,7 +110,7 @@ public class Announcements
 		List<Object> entry = new ArrayList<>();
 		entry.add(validDateRange);
 		entry.add(msg);
-		this.eventAnnouncements.add(entry);
+		eventAnnouncements.add(entry);
 	}
 
 	public void listAnnouncements(L2PcInstance activeChar)
@@ -119,9 +119,9 @@ public class Announcements
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);
 		final StringBuilder replyMSG = StringUtil.startAppend(500, "<br>");
-		for (int i = 0; i < this.announcements.size(); i++)
+		for (int i = 0; i < announcements.size(); i++)
 		{
-			StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", this.announcements.get(i),
+			StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", announcements.get(i),
 					"</td><td width=40>" + "<button value=\"Delete\" action=\"bypass -h admin_del_announcement ",
 					String.valueOf(i),
 					"\" width=60 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
@@ -132,13 +132,13 @@ public class Announcements
 
 	public void addAnnouncement(String text)
 	{
-		this.announcements.add(text);
+		announcements.add(text);
 		saveToDisk();
 	}
 
 	public void delAnnouncement(int line)
 	{
-		this.announcements.remove(line);
+		announcements.remove(line);
 		saveToDisk();
 	}
 
@@ -156,7 +156,7 @@ public class Announcements
 				if (st.hasMoreTokens())
 				{
 					String announcement = st.nextToken();
-					this.announcements.add(announcement);
+					announcements.add(announcement);
 
 					i++;
 				}
@@ -192,7 +192,7 @@ public class Announcements
 		try
 		{
 			save = new FileWriter(file);
-			for (String announcement : this.announcements)
+			for (String announcement : announcements)
 			{
 				save.write(announcement);
 				save.write("\r\n");

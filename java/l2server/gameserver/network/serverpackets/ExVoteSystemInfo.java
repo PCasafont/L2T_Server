@@ -32,20 +32,20 @@ public class ExVoteSystemInfo extends L2GameServerPacket
 
 	public ExVoteSystemInfo(L2PcInstance player)
 	{
-		this.recomLeft = player.getRecomLeft();
-		this.recomHave = player.getRecomHave();
-		this.bonusTime = player.getRecomBonusTime();
-		this.bonusVal = RecoBonus.getRecoBonus(player);
-		this.bonusType = player.getRecomBonusType();
+		recomLeft = player.getRecomLeft();
+		recomHave = player.getRecomHave();
+		bonusTime = player.getRecomBonusTime();
+		bonusVal = RecoBonus.getRecoBonus(player);
+		bonusType = player.getRecomBonusType();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.recomLeft);
-		writeD(this.recomHave);
-		writeD(this.bonusTime);
-		writeD(this.bonusVal);
-		writeD(this.bonusType);
+		writeD(recomLeft);
+		writeD(recomHave);
+		writeD(bonusTime);
+		writeD(bonusVal);
+		writeD(bonusType);
 	}
 }

@@ -31,6 +31,6 @@ public class ExResponseCommissionRegister extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.success ? 1 : 0); // Success
+		writeD(success ? 1 : 0); // Success
 	}
 }

@@ -32,10 +32,10 @@ public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
 	{
 		this.gemstoneObjId = gemstoneObjId;
 		this.itemId = itemId;
-		this.gemstoneCount = count;
-		this.unk1 = 0;
-		this.unk2 = 0;
-		this.unk3 = 1;
+		gemstoneCount = count;
+		unk1 = 0;
+		unk2 = 0;
+		unk3 = 1;
 	}
 
 	/**
@@ -43,11 +43,11 @@ public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.gemstoneObjId);
-		writeD(this.itemId);
-		writeQ(this.gemstoneCount);
-		writeD(this.unk1);
-		writeD(this.unk2);
-		writeD(this.unk3);
+		writeD(gemstoneObjId);
+		writeD(itemId);
+		writeQ(gemstoneCount);
+		writeD(unk1);
+		writeD(unk2);
+		writeD(unk3);
 	}
 }

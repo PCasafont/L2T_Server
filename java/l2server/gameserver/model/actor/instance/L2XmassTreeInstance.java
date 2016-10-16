@@ -50,18 +50,18 @@ public class L2XmassTreeInstance extends L2Npc
 		@Override
 		public void run()
 		{
-			if (this.skill == null || this.caster.isInsideZone(ZONE_PEACE))
+			if (skill == null || caster.isInsideZone(ZONE_PEACE))
 			{
-				this.caster.aiTask.cancel(false);
-				this.caster.aiTask = null;
+				caster.aiTask.cancel(false);
+				caster.aiTask = null;
 				return;
 			}
 			Collection<L2PcInstance> plrs = getKnownList().getKnownPlayersInRadius(200);
 			for (L2PcInstance player : plrs)
 			{
-				if (player.getFirstEffect(this.skill.getId()) == null)
+				if (player.getFirstEffect(skill.getId()) == null)
 				{
-					this.skill.getEffects(player, player);
+					skill.getEffects(player, player);
 				}
 			}
 		}
@@ -73,7 +73,7 @@ public class L2XmassTreeInstance extends L2Npc
 		setInstanceType(InstanceType.L2XmassTreeInstance);
 		if (template.NpcId == SPECIAL_TREE_ID)
 		{
-			this.aiTask = ThreadPoolManager.getInstance()
+			aiTask = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance().getInfo(2139, 1)), 3000,
 							3000);
 		}
@@ -82,9 +82,9 @@ public class L2XmassTreeInstance extends L2Npc
 	@Override
 	public void deleteMe()
 	{
-		if (this.aiTask != null)
+		if (aiTask != null)
 		{
-			this.aiTask.cancel(true);
+			aiTask.cancel(true);
 		}
 
 		super.deleteMe();

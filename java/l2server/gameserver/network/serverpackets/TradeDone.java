@@ -32,6 +32,6 @@ public class TradeDone extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.num);
+		writeD(num);
 	}
 }

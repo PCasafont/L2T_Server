@@ -29,7 +29,7 @@ public class VehicleStarted extends L2GameServerPacket
 	 */
 	public VehicleStarted(L2Character boat, int state)
 	{
-		this.objectId = boat.getObjectId();
+		objectId = boat.getObjectId();
 		this.state = state;
 	}
 
@@ -41,7 +41,7 @@ public class VehicleStarted extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.state);
+		writeD(objectId);
+		writeD(state);
 	}
 }

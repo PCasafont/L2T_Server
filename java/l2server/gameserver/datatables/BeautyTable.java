@@ -47,22 +47,22 @@ public class BeautyTable implements Reloadable
 
 		public int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		public Map<Integer, BeautyInfo> getHairStyles()
 		{
-			return this.hairStyles;
+			return hairStyles;
 		}
 
 		public Map<Integer, BeautyInfo> getFaceStyles()
 		{
-			return this.faceStyles;
+			return faceStyles;
 		}
 
 		public Map<Integer, BeautyInfo> getHairColors()
 		{
-			return this.hairColors;
+			return hairColors;
 		}
 	}
 
@@ -79,33 +79,33 @@ public class BeautyTable implements Reloadable
 			this.id = id;
 			this.parentId = parentId;
 			this.unk = unk;
-			this.adenaCost = adena;
-			this.ticketCost = tickets;
+			adenaCost = adena;
+			ticketCost = tickets;
 		}
 
 		public int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		public int getParentId()
 		{
-			return this.parentId;
+			return parentId;
 		}
 
 		public int getUnk()
 		{
-			return this.unk;
+			return unk;
 		}
 
 		public int getAdenaPrice()
 		{
-			return this.adenaCost;
+			return adenaCost;
 		}
 
 		public int getTicketPrice()
 		{
-			return this.ticketCost;
+			return ticketCost;
 		}
 	}
 
@@ -126,7 +126,7 @@ public class BeautyTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
 
 		XmlDocument doc = new XmlDocument(file);
-		this.beautyTable.clear();
+		beautyTable.clear();
 		doc.getChildren().stream().filter(n -> n.getName().equalsIgnoreCase("list")).forEachOrdered(n ->
 		{
 			BeautyTemplate template = new BeautyTemplate(0);
@@ -160,7 +160,7 @@ public class BeautyTable implements Reloadable
 				}
 			}
 
-			this.beautyTable.put(0, template);
+			beautyTable.put(0, template);
 
 			Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
 					template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
@@ -178,7 +178,7 @@ public class BeautyTable implements Reloadable
 
 	public BeautyTemplate getTemplate(int id)
 	{
-		return this.beautyTable.get(id);
+		return beautyTable.get(id);
 	}
 
 	public static BeautyTable getInstance()

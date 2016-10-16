@@ -29,7 +29,7 @@ public class RequestPartyLootModification extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.mode = (byte) readD();
+		mode = (byte) readD();
 	}
 
 	@Override
@@ -40,15 +40,15 @@ public class RequestPartyLootModification extends L2GameClientPacket
 		{
 			return;
 		}
-		if (this.mode < 0 || this.mode > L2Party.ITEM_ORDER_SPOIL)
+		if (mode < 0 || mode > L2Party.ITEM_ORDER_SPOIL)
 		{
 			return;
 		}
 		L2Party party = activeChar.getParty();
-		if (party == null || this.mode == party.getLootDistribution() || party.getLeader() != activeChar)
+		if (party == null || mode == party.getLootDistribution() || party.getLeader() != activeChar)
 		{
 			return;
 		}
-		party.requestLootChange(this.mode);
+		party.requestLootChange(mode);
 	}
 }

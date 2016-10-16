@@ -32,7 +32,7 @@ public class ExAdenaInvenCount extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.adena);
-		writeH(this.count);
+		writeQ(adena);
+		writeH(count);
 	}
 }

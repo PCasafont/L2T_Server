@@ -29,7 +29,7 @@ public final class RequestDivideAdenaConfirm extends L2GameClientPacket
 	protected void readImpl()
 	{
 		readD(); // object id
-		this.adenaCount = readQ();
+		adenaCount = readQ();
 	}
 
 	/**
@@ -43,6 +43,6 @@ public final class RequestDivideAdenaConfirm extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExDivideAdenaDone(1, this.adenaCount, this.adenaCount, player.getName()));
+		sendPacket(new ExDivideAdenaDone(1, adenaCount, adenaCount, player.getName()));
 	}
 }

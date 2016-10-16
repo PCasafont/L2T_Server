@@ -35,7 +35,7 @@ public class GiantScouts extends L2AttackableAIScript
 	public GiantScouts(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		for (int id : this.scouts)
+		for (int id : scouts)
 		{
 			addAggroRangeEnterId(id);
 		}

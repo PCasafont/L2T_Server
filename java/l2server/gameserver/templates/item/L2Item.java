@@ -181,42 +181,42 @@ public abstract class L2Item
 	 */
 	protected L2Item(StatsSet set)
 	{
-		this.itemId = set.getInteger("id");
-		this.name = set.getString("name");
-		this.icon = set.getString("icon", null);
-		this.weight = set.getInteger("weight", 0);
-		this.duration = set.getInteger("duration", -1);
-		this.time = set.getInteger("time", -1);
-		this.autoDestroyTime = set.getInteger("autoDestroyTime", -1) * 1000;
-		this.bodyPart = ItemTable.slots.get(set.getString("bodypart", "none"));
-		this.bodyPartName = set.getString("bodypart", "none");
-		this.referencePrice = set.getInteger("price", 0);
-		this.crystalType = ItemTable.crystalTypes.get(set.getString("crystalType", "none")); // default to none-grade
-		this.crystalCount = set.getInteger("crystalCount", 0);
-		this.boundItem = set.getInteger("boundItem", -1);
-		this.standardItem = set.getInteger("standardItem", -1);
-		this.blessedItem = set.getInteger("blessedItem", -1);
+		itemId = set.getInteger("id");
+		name = set.getString("name");
+		icon = set.getString("icon", null);
+		weight = set.getInteger("weight", 0);
+		duration = set.getInteger("duration", -1);
+		time = set.getInteger("time", -1);
+		autoDestroyTime = set.getInteger("autoDestroyTime", -1) * 1000;
+		bodyPart = ItemTable.slots.get(set.getString("bodypart", "none"));
+		bodyPartName = set.getString("bodypart", "none");
+		referencePrice = set.getInteger("price", 0);
+		crystalType = ItemTable.crystalTypes.get(set.getString("crystalType", "none")); // default to none-grade
+		crystalCount = set.getInteger("crystalCount", 0);
+		boundItem = set.getInteger("boundItem", -1);
+		standardItem = set.getInteger("standardItem", -1);
+		blessedItem = set.getInteger("blessedItem", -1);
 
-		this.stackable = set.getBool("isStackable", false);
-		this.sellable = set.getBool("isSellable", true);
-		this.dropable = set.getBool("isDropable", true);
-		this.destroyable = set.getBool("isDestroyable", true);
-		this.tradeable = set.getBool("isTradable", true);
-		this.depositable = set.getBool("isDepositable", true);
-		this.questItem = set.getBool("isQuestitem", false);
-		this.vitality = set.getBool("isVitality", false);
-		this.isOlyRestricted = set.getBool("isOlyRestricted", false);
-		this.isBlessed = set.getBool("isBlessed", false);
-		this.canBeUsedAsApp = set.getBool("canBeUsedAsApp", true);
-		this.isEnchantable = set.getBool("isEnchantable", true);
-		this.isAttributable = set.getBool("isAttributable", true);
-		this.isAugmentable = set.getBool("isAugmentable", true);
-		this.isEpic = set.getBool("isEpic", false);
+		stackable = set.getBool("isStackable", false);
+		sellable = set.getBool("isSellable", true);
+		dropable = set.getBool("isDropable", true);
+		destroyable = set.getBool("isDestroyable", true);
+		tradeable = set.getBool("isTradable", true);
+		depositable = set.getBool("isDepositable", true);
+		questItem = set.getBool("isQuestitem", false);
+		vitality = set.getBool("isVitality", false);
+		isOlyRestricted = set.getBool("isOlyRestricted", false);
+		isBlessed = set.getBool("isBlessed", false);
+		canBeUsedAsApp = set.getBool("canBeUsedAsApp", true);
+		isEnchantable = set.getBool("isEnchantable", true);
+		isAttributable = set.getBool("isAttributable", true);
+		isAugmentable = set.getBool("isAugmentable", true);
+		isEpic = set.getBool("isEpic", false);
 
 		//_immediate_effect - herb
 		_ex_immediate_effect = set.getInteger("exImmediateEffect", 0) > 0;
 		//used for custom type select
-		this.defaultAction = set.getEnum("defaultAction", L2ActionType.class, L2ActionType.none);
+		defaultAction = set.getEnum("defaultAction", L2ActionType.class, L2ActionType.none);
 
 		String equip_condition = set.getString("equipCondition", null);
 		if (equip_condition != null)
@@ -257,7 +257,7 @@ public abstract class L2Item
 					equip_condition.contains("upgrade_baby_pet_group") ||
 					equip_condition.contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group"))
 			{
-				this.isForPet = true;
+				isForPet = true;
 			}
 
 			if (cond.conditions.length > 0)
@@ -266,13 +266,16 @@ public abstract class L2Item
 			}
 		}
 
-		this.common = this.itemId >= 12006 && this.itemId <= 12361;
-		this.heroItem = set.getBool("isHeroItem", false);
-		this.pvpItem = this.itemId >= 10667 && this.itemId <= 10835 || this.itemId >= 12852 && this.itemId <= 12977 ||
-				this.itemId >= 14363 && this.itemId <= 14525 || this.itemId == 14528 || this.itemId == 14529 || this.itemId == 14558 ||
-				this.itemId >= 15913 && this.itemId <= 16024 || this.itemId >= 16134 && this.itemId <= 16147 || this.itemId == 16149 ||
-				this.itemId == 16151 || this.itemId == 16153 || this.itemId == 16155 || this.itemId == 16157 || this.itemId == 16159 ||
-				this.itemId >= 16168 && this.itemId <= 16176 || this.itemId >= 16179 && this.itemId <= 16220;
+		common = itemId >= 12006 && itemId <= 12361;
+		heroItem = set.getBool("isHeroItem", false);
+		pvpItem = itemId >= 10667 && itemId <= 10835 || itemId >= 12852 && itemId <= 12977 ||
+				itemId >= 14363 && itemId <= 14525 || itemId == 14528 || itemId == 14529 ||
+				itemId == 14558 ||
+				itemId >= 15913 && itemId <= 16024 || itemId >= 16134 && itemId <= 16147 ||
+				itemId == 16149 ||
+				itemId == 16151 || itemId == 16153 || itemId == 16155 || itemId == 16157 ||
+				itemId == 16159 ||
+				itemId >= 16168 && itemId <= 16176 || itemId >= 16179 && itemId <= 16220;
 	}
 
 	/**
@@ -289,7 +292,7 @@ public abstract class L2Item
 	 */
 	public final int getDuration()
 	{
-		return this.duration;
+		return duration;
 	}
 
 	/**
@@ -299,7 +302,7 @@ public abstract class L2Item
 	 */
 	public final int getTime()
 	{
-		return this.time;
+		return time;
 	}
 
 	/**
@@ -307,7 +310,7 @@ public abstract class L2Item
 	 */
 	public final int getAutoDestroyTime()
 	{
-		return this.autoDestroyTime;
+		return autoDestroyTime;
 	}
 
 	/**
@@ -317,7 +320,7 @@ public abstract class L2Item
 	 */
 	public final int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public abstract int getItemMask();
@@ -329,7 +332,7 @@ public abstract class L2Item
 	 */
 	public final int getType2()
 	{
-		return this.type2;
+		return type2;
 	}
 
 	/**
@@ -339,7 +342,7 @@ public abstract class L2Item
 	 */
 	public final int getWeight()
 	{
-		return this.weight;
+		return weight;
 	}
 
 	/**
@@ -349,7 +352,7 @@ public abstract class L2Item
 	 */
 	public final boolean isCrystallizable()
 	{
-		return this.crystalType != L2Item.CRYSTAL_NONE && this.crystalCount > 0;
+		return crystalType != L2Item.CRYSTAL_NONE && crystalCount > 0;
 	}
 
 	/**
@@ -359,7 +362,7 @@ public abstract class L2Item
 	 */
 	public final int getCrystalType()
 	{
-		return this.crystalType;
+		return crystalType;
 	}
 
 	/**
@@ -369,7 +372,7 @@ public abstract class L2Item
 	 */
 	public final int getCrystalItemId()
 	{
-		return crystalItemId[this.crystalType];
+		return crystalItemId[crystalType];
 	}
 
 	/**
@@ -412,7 +415,7 @@ public abstract class L2Item
 	 */
 	public final int getCrystalCount()
 	{
-		return this.crystalCount;
+		return crystalCount;
 	}
 
 	/**
@@ -424,49 +427,49 @@ public abstract class L2Item
 	{
 		if (enchantLevel > 3)
 		{
-			switch (this.type2)
+			switch (type2)
 			{
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
-					return this.crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * (3 * enchantLevel - 6);
+					return crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * (3 * enchantLevel - 6);
 				case TYPE2_WEAPON:
-					return this.crystalCount;// + crystalEnchantBonusWeapon[getCrystalType()] * (2 * enchantLevel - 3);
+					return crystalCount;// + crystalEnchantBonusWeapon[getCrystalType()] * (2 * enchantLevel - 3);
 				default:
-					return this.crystalCount;
+					return crystalCount;
 			}
 		}
 		else if (enchantLevel > 0)
 		{
-			switch (this.type2)
+			switch (type2)
 			{
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
-					return this.crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * enchantLevel;
+					return crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * enchantLevel;
 				case TYPE2_WEAPON:
-					return this.crystalCount;// + crystalEnchantBonusWeapon[getCrystalType()] * enchantLevel;
+					return crystalCount;// + crystalEnchantBonusWeapon[getCrystalType()] * enchantLevel;
 				default:
-					return this.crystalCount;
+					return crystalCount;
 			}
 		}
 		else
 		{
-			return this.crystalCount;
+			return crystalCount;
 		}
 	}
 
 	public final int getBoundItem()
 	{
-		return this.boundItem;
+		return boundItem;
 	}
 
 	public final int getStandardItem()
 	{
-		return this.standardItem;
+		return standardItem;
 	}
 
 	public final int getBlessedItem()
 	{
-		return this.blessedItem;
+		return blessedItem;
 	}
 
 	/**
@@ -476,7 +479,7 @@ public abstract class L2Item
 	 */
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -486,12 +489,12 @@ public abstract class L2Item
 	 */
 	public final Elementals[] getElementals()
 	{
-		return this.elementals;
+		return elementals;
 	}
 
 	public Elementals getElemental(byte attribute)
 	{
-		for (Elementals elm : this.elementals)
+		for (Elementals elm : elementals)
 		{
 			if (elm.getElement() == attribute)
 			{
@@ -506,10 +509,10 @@ public abstract class L2Item
 	 */
 	public void setElementals(Elementals element)
 	{
-		if (this.elementals == null)
+		if (elementals == null)
 		{
-			this.elementals = new Elementals[1];
-			this.elementals[0] = element;
+			elementals = new Elementals[1];
+			elementals[0] = element;
 		}
 		else
 		{
@@ -521,10 +524,10 @@ public abstract class L2Item
 			else
 			{
 				elm = element;
-				Elementals[] array = new Elementals[this.elementals.length + 1];
-				System.arraycopy(this.elementals, 0, array, 0, this.elementals.length);
-				array[this.elementals.length] = elm;
-				this.elementals = array;
+				Elementals[] array = new Elementals[elementals.length + 1];
+				System.arraycopy(elementals, 0, array, 0, elementals.length);
+				array[elementals.length] = elm;
+				elementals = array;
 			}
 		}
 	}
@@ -536,7 +539,7 @@ public abstract class L2Item
 	 */
 	public final int getBodyPart()
 	{
-		return this.bodyPart;
+		return bodyPart;
 	}
 
 	/**
@@ -546,7 +549,7 @@ public abstract class L2Item
 	 */
 	public final int getType1()
 	{
-		return this.type1;
+		return type1;
 	}
 
 	/**
@@ -556,7 +559,7 @@ public abstract class L2Item
 	 */
 	public final boolean isStackable()
 	{
-		return this.stackable;
+		return stackable;
 	}
 
 	/**
@@ -581,28 +584,28 @@ public abstract class L2Item
 	 */
 	public final int getReferencePrice()
 	{
-		if (this.referencePrice == 0)
+		if (referencePrice == 0)
 		{
 			return 2;
 		}
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
-			return (int) Math.sqrt(this.referencePrice);
+			return (int) Math.sqrt(referencePrice);
 		}
-		return isConsumable() ? (int) (this.referencePrice * Config.RATE_CONSUMABLE_COST) : this.referencePrice;
+		return isConsumable() ? (int) (referencePrice * Config.RATE_CONSUMABLE_COST) : referencePrice;
 	}
 
 	private int salePrice;
 
 	public final void setSalePrice(final int price)
 	{
-		this.salePrice = price;
+		salePrice = price;
 	}
 
 	public final int getSalePrice()
 	{
-		return this.salePrice;
+		return salePrice;
 	}
 
 	/**
@@ -612,7 +615,7 @@ public abstract class L2Item
 	 */
 	public final boolean isSellable()
 	{
-		return this.sellable;
+		return sellable;
 	}
 
 	/**
@@ -622,7 +625,7 @@ public abstract class L2Item
 	 */
 	public final boolean isDropable()
 	{
-		return this.dropable;
+		return dropable;
 	}
 
 	/**
@@ -632,7 +635,7 @@ public abstract class L2Item
 	 */
 	public final boolean isDestroyable()
 	{
-		return this.destroyable;
+		return destroyable;
 	}
 
 	/**
@@ -642,7 +645,7 @@ public abstract class L2Item
 	 */
 	public final boolean isTradeable()
 	{
-		return this.tradeable;
+		return tradeable;
 	}
 
 	/**
@@ -652,7 +655,7 @@ public abstract class L2Item
 	 */
 	public final boolean isDepositable()
 	{
-		return this.depositable;
+		return depositable;
 	}
 
 	/**
@@ -662,7 +665,7 @@ public abstract class L2Item
 	 */
 	public final boolean isCommon()
 	{
-		return this.common;
+		return common;
 	}
 
 	/**
@@ -672,7 +675,7 @@ public abstract class L2Item
 	 */
 	public final boolean isHeroItem()
 	{
-		return this.heroItem;
+		return heroItem;
 	}
 
 	/**
@@ -682,7 +685,7 @@ public abstract class L2Item
 	 */
 	public final boolean isPvpItem()
 	{
-		return this.pvpItem;
+		return pvpItem;
 	}
 
 	public boolean isPotion()
@@ -703,15 +706,15 @@ public abstract class L2Item
 	 */
 	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if (this.funcTemplates == null || this.funcTemplates.length == 0)
+		if (funcTemplates == null || funcTemplates.length == 0)
 		{
-			return this.emptyFunctionSet;
+			return emptyFunctionSet;
 		}
 
-		ArrayList<Func> funcs = new ArrayList<>(this.funcTemplates.length);
+		ArrayList<Func> funcs = new ArrayList<>(funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : this.funcTemplates)
+		for (FuncTemplate t : funcTemplates)
 		{
 			f = t.getFunc(this); // skill is owner
 			if (f != null)
@@ -722,7 +725,7 @@ public abstract class L2Item
 
 		if (funcs.isEmpty())
 		{
-			return this.emptyFunctionSet;
+			return emptyFunctionSet;
 		}
 
 		return funcs.toArray(new Func[funcs.size()]);
@@ -737,9 +740,9 @@ public abstract class L2Item
 	 */
 	public L2Abnormal[] getEffects(L2ItemInstance instance, L2Character player)
 	{
-		if (this.effectTemplates == null || this.effectTemplates.length == 0)
+		if (effectTemplates == null || effectTemplates.length == 0)
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		ArrayList<L2Abnormal> effects = new ArrayList<>();
@@ -751,7 +754,7 @@ public abstract class L2Item
 
 		L2Abnormal e;
 
-		for (L2AbnormalTemplate et : this.effectTemplates)
+		for (L2AbnormalTemplate et : effectTemplates)
 		{
 
 			e = et.getEffect(env);
@@ -764,7 +767,7 @@ public abstract class L2Item
 
 		if (effects.isEmpty())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		return effects.toArray(new L2Abnormal[effects.size()]);
@@ -799,23 +802,23 @@ public abstract class L2Item
 
 	public void attach(SkillHolder skill)
 	{
-		if (this.skillHolder == null)
+		if (skillHolder == null)
 		{
-			this.skillHolder = new SkillHolder[]{skill};
+			skillHolder = new SkillHolder[]{skill};
 		}
 		else
 		{
-			int len = this.skillHolder.length;
+			int len = skillHolder.length;
 			SkillHolder[] tmp = new SkillHolder[len + 1];
-			System.arraycopy(this.skillHolder, 0, tmp, 0, len);
+			System.arraycopy(skillHolder, 0, tmp, 0, len);
 			tmp[len] = skill;
-			this.skillHolder = tmp;
+			skillHolder = tmp;
 		}
 	}
 
 	public FuncTemplate[] getFuncs()
 	{
-		return this.funcTemplates;
+		return funcTemplates;
 	}
 
 	/**
@@ -853,19 +856,19 @@ public abstract class L2Item
 				break;
 		}
 		// If this.functTemplates is empty, create it and add the FuncTemplate f in it
-		if (this.funcTemplates == null)
+		if (funcTemplates == null)
 		{
-			this.funcTemplates = new FuncTemplate[]{f};
+			funcTemplates = new FuncTemplate[]{f};
 		}
 		else
 		{
-			int len = this.funcTemplates.length;
+			int len = funcTemplates.length;
 			FuncTemplate[] tmp = new FuncTemplate[len + 1];
 			// Definition : arraycopy(array source, begins copy at this position of source, array destination, begins copy at this position in dest,
 			//						  number of components to be copied)
-			System.arraycopy(this.funcTemplates, 0, tmp, 0, len);
+			System.arraycopy(funcTemplates, 0, tmp, 0, len);
 			tmp[len] = f;
-			this.funcTemplates = tmp;
+			funcTemplates = tmp;
 		}
 	}
 
@@ -876,36 +879,36 @@ public abstract class L2Item
 	 */
 	public void attach(L2AbnormalTemplate effect)
 	{
-		if (this.effectTemplates == null)
+		if (effectTemplates == null)
 		{
-			this.effectTemplates = new L2AbnormalTemplate[]{effect};
+			effectTemplates = new L2AbnormalTemplate[]{effect};
 		}
 		else
 		{
-			int len = this.effectTemplates.length;
+			int len = effectTemplates.length;
 			L2AbnormalTemplate[] tmp = new L2AbnormalTemplate[len + 1];
 			// Definition : arraycopy(array source, begins copy at this position of source, array destination, begins copy at this position in dest,
 			//						  number of components to be copied)
-			System.arraycopy(this.effectTemplates, 0, tmp, 0, len);
+			System.arraycopy(effectTemplates, 0, tmp, 0, len);
 			tmp[len] = effect;
-			this.effectTemplates = tmp;
+			effectTemplates = tmp;
 		}
 	}
 
 	public final List<Condition> getConditions()
 	{
-		return this.preConditions;
+		return preConditions;
 	}
 
 	public final void attach(Condition c)
 	{
-		if (this.preConditions == null)
+		if (preConditions == null)
 		{
-			this.preConditions = new ArrayList<>();
+			preConditions = new ArrayList<>();
 		}
-		if (!this.preConditions.contains(c))
+		if (!preConditions.contains(c))
 		{
-			this.preConditions.add(c);
+			preConditions.add(c);
 		}
 	}
 
@@ -919,7 +922,7 @@ public abstract class L2Item
 	 */
 	public final SkillHolder[] getSkills()
 	{
-		return this.skillHolder;
+		return skillHolder;
 	}
 
 	public boolean checkCondition(L2Character activeChar, L2Object target, boolean sendMessage)
@@ -929,7 +932,7 @@ public abstract class L2Item
 			return true;
 		}
 
-		if (this.preConditions == null)
+		if (preConditions == null)
 		{
 			return true;
 		}
@@ -941,7 +944,7 @@ public abstract class L2Item
 			env.target = (L2Character) target;
 		}
 
-		for (Condition preCondition : this.preConditions)
+		for (Condition preCondition : preConditions)
 		{
 			if (preCondition == null)
 			{
@@ -970,7 +973,7 @@ public abstract class L2Item
 						SystemMessage sm = SystemMessage.getSystemMessage(msgId);
 						if (preCondition.isAddName())
 						{
-							sm.addItemName(this.itemId);
+							sm.addItemName(itemId);
 						}
 						activeChar.getActingPlayer().sendPacket(sm);
 					}
@@ -983,33 +986,33 @@ public abstract class L2Item
 
 	public boolean isConditionAttached()
 	{
-		return this.preConditions != null && !this.preConditions.isEmpty();
+		return preConditions != null && !preConditions.isEmpty();
 	}
 
 	public void attach(L2CrystallizeReward reward)
 	{
-		if (this.crystallizeRewards == null)
+		if (crystallizeRewards == null)
 		{
-			this.crystallizeRewards = new L2CrystallizeReward[]{reward};
+			crystallizeRewards = new L2CrystallizeReward[]{reward};
 		}
 		else
 		{
-			int len = this.crystallizeRewards.length;
+			int len = crystallizeRewards.length;
 			L2CrystallizeReward[] tmp = new L2CrystallizeReward[len + 1];
-			System.arraycopy(this.crystallizeRewards, 0, tmp, 0, len);
+			System.arraycopy(crystallizeRewards, 0, tmp, 0, len);
 			tmp[len] = reward;
-			this.crystallizeRewards = tmp;
+			crystallizeRewards = tmp;
 		}
 	}
 
 	public final L2CrystallizeReward[] getCrystallizeRewards()
 	{
-		return this.crystallizeRewards;
+		return crystallizeRewards;
 	}
 
 	public boolean isQuestItem()
 	{
-		return this.questItem;
+		return questItem;
 	}
 
 	/**
@@ -1020,7 +1023,7 @@ public abstract class L2Item
 	@Override
 	public String toString()
 	{
-		return this.name + "(" + this.itemId + ")";
+		return name + "(" + itemId + ")";
 	}
 
 	/**
@@ -1036,7 +1039,7 @@ public abstract class L2Item
 	 */
 	public L2ActionType getDefaultAction()
 	{
-		return this.defaultAction;
+		return defaultAction;
 	}
 
 	/**
@@ -1044,7 +1047,7 @@ public abstract class L2Item
 	 */
 	public boolean isForPet()
 	{
-		return this.isForPet;
+		return isForPet;
 	}
 
 	/**
@@ -1052,7 +1055,7 @@ public abstract class L2Item
 	 */
 	public String getBodyPartName()
 	{
-		return this.bodyPartName;
+		return bodyPartName;
 	}
 
 	/**
@@ -1062,47 +1065,47 @@ public abstract class L2Item
 	 */
 	public String getIcon()
 	{
-		return this.icon;
+		return icon;
 	}
 
 	public final boolean isVitality()
 	{
-		return this.vitality;
+		return vitality;
 	}
 
 	public final boolean isOlyRestricted()
 	{
-		return this.isOlyRestricted;
+		return isOlyRestricted;
 	}
 
 	public boolean isBlessed()
 	{
-		return this.isBlessed;
+		return isBlessed;
 	}
 
 	public boolean canBeUsedAsApp()
 	{
-		return this.canBeUsedAsApp;
+		return canBeUsedAsApp;
 	}
 
 	public boolean isEnchantable()
 	{
-		return this.isEnchantable;
+		return isEnchantable;
 	}
 
 	public boolean isAttributable()
 	{
-		return this.isAttributable;
+		return isAttributable;
 	}
 
 	public boolean isAugmentable()
 	{
-		return this.isAugmentable;
+		return isAugmentable;
 	}
 
 	public boolean isEpic()
 	{
-		return this.isEpic;
+		return isEpic;
 	}
 
 	public int getShotTypeIndex()

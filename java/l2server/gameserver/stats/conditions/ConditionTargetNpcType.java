@@ -33,7 +33,7 @@ public class ConditionTargetNpcType extends Condition
 	 */
 	public ConditionTargetNpcType(InstanceType[] type)
 	{
-		this.npcType = type;
+		npcType = type;
 	}
 
 	/* (non-Javadoc)
@@ -47,6 +47,6 @@ public class ConditionTargetNpcType extends Condition
 			return false;
 		}
 
-		return env.target.getInstanceType().isTypes(this.npcType);
+		return env.target.getInstanceType().isTypes(npcType);
 	}
 }

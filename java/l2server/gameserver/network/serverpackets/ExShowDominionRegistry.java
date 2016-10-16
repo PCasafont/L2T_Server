@@ -31,18 +31,18 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.currentTime);
-		writeS(this.territoryOwner);
-		writeS(this.ownerAlliance);
+		writeD(currentTime);
+		writeS(territoryOwner);
+		writeS(ownerAlliance);
 		writeD(0x00); // unk2
 		writeD(0x00); // unk3
-		writeD(this.territoryCount);
-		writeD(this.territoryId);
-		writeD(this.mercRequest);
+		writeD(territoryCount);
+		writeD(territoryId);
+		writeD(mercRequest);
 		writeD(0x00); // unk1
-		writeD(this.clanRequest);
-		writeS(this.ownerClan);
-		writeD(this.warTime);
+		writeD(clanRequest);
+		writeS(ownerClan);
+		writeD(warTime);
 	}
 }
 

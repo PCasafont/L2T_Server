@@ -130,7 +130,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			getMinionList().spawnMinions();
 		}
 
-		this.maintenanceTask = ThreadPoolManager.getInstance()
+		maintenanceTask = ThreadPoolManager.getInstance()
 				.scheduleGeneralAtFixedRate(this::checkAndReturnToSpawn, 60000,
 						getMaintenanceInterval() + Rnd.get(5000));
 	}
@@ -190,7 +190,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 
 	public void setUseRaidCurse(boolean val)
 	{
-		this.useRaidCurse = val;
+		useRaidCurse = val;
 	}
 
 	/* (non-Javadoc)
@@ -199,6 +199,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	public boolean giveRaidCurse()
 	{
-		return this.useRaidCurse;
+		return useRaidCurse;
 	}
 }

@@ -39,10 +39,10 @@ public class Q10363_RequestOfTheSeeker extends Quest
 	public Q10363_RequestOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.nagel);
-		addTalkId(this.nagel);
-		addTalkId(this.celin);
-		for (int npcId : this.bodies)
+		addStartNpc(nagel);
+		addTalkId(nagel);
+		addTalkId(celin);
+		for (int npcId : bodies)
 		{
 			addEventId(npcId, QuestEventType.ON_SOCIAL_ACTION);
 		}
@@ -59,13 +59,13 @@ public class Q10363_RequestOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.nagel && event.equalsIgnoreCase("33450-03.htm"))
+		if (npc.getNpcId() == nagel && event.equalsIgnoreCase("33450-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == this.celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
+		else if (npc.getNpcId() == celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
 		{
 			st.unset("cond");
 			st.giveItems(1060, 100);
@@ -91,7 +91,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.nagel)
+		if (npc.getNpcId() == nagel)
 		{
 			switch (st.getState())
 			{
@@ -126,7 +126,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.celin && st.getInt("cond") == 7)
+		else if (npc.getNpcId() == celin && st.getInt("cond") == 7)
 		{
 			htmltext = "33451-01.htm";
 		}

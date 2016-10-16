@@ -51,22 +51,22 @@ public class CompoundTable implements Reloadable
 
 		public int getItem1()
 		{
-			return this.item1;
+			return item1;
 		}
 
 		public int getItem2()
 		{
-			return this.item2;
+			return item2;
 		}
 
 		public int getResult()
 		{
-			return this.result;
+			return result;
 		}
 
 		public int getChance()
 		{
-			return this.chance;
+			return chance;
 		}
 	}
 
@@ -89,7 +89,7 @@ public class CompoundTable implements Reloadable
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-		this.combinations.clear();
+		combinations.clear();
 
 		for (XmlNode d : doc.getFirstChild().getChildren())
 		{
@@ -99,13 +99,13 @@ public class CompoundTable implements Reloadable
 				int item2 = d.getInt("item2");
 				int result = d.getInt("result");
 				int chance = d.getInt("chance");
-				this.combinations.put(getHash(item1, item2), new Combination(item2, item2, result, chance));
-				this.combinable.add(item1);
-				this.combinable.add(item2);
+				combinations.put(getHash(item1, item2), new Combination(item2, item2, result, chance));
+				combinable.add(item1);
+				combinable.add(item2);
 			}
 		}
 
-		Log.info("CompoundTable: Loaded " + this.combinations.size() + " combinations.");
+		Log.info("CompoundTable: Loaded " + combinations.size() + " combinations.");
 		return true;
 	}
 
@@ -117,12 +117,12 @@ public class CompoundTable implements Reloadable
 
 	public Combination getCombination(int item1, int item2)
 	{
-		return this.combinations.get(getHash(item1, item2));
+		return combinations.get(getHash(item1, item2));
 	}
 
 	public boolean isCombinable(int itemId)
 	{
-		return this.combinable.contains(itemId);
+		return combinable.contains(itemId);
 	}
 
 	private int getHash(int item1, int item2)

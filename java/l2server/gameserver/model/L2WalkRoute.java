@@ -34,54 +34,54 @@ public class L2WalkRoute
 	{
 
 		this.id = id;
-		this.nodeList = route;
+		nodeList = route;
 		this.repeatType = repeatType;
-		this.repeatWalk = (this.repeatType >= 0 && this.repeatType <= 2) && repeat;
-		this.debug = false;
+		repeatWalk = (this.repeatType >= 0 && this.repeatType <= 2) && repeat;
+		debug = false;
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public List<L2NpcWalkerNode> getNodeList()
 	{
-		return this.nodeList;
+		return nodeList;
 	}
 
 	public L2NpcWalkerNode getLastNode()
 	{
-		return this.nodeList.get(this.nodeList.size() - 1);
+		return nodeList.get(nodeList.size() - 1);
 	}
 
 	public boolean repeatWalk()
 	{
-		return this.repeatWalk;
+		return repeatWalk;
 	}
 
 	public boolean doOnce()
 	{
-		return this.stopAfterCycle;
+		return stopAfterCycle;
 	}
 
 	public byte getRepeatType()
 	{
-		return this.repeatType;
+		return repeatType;
 	}
 
 	public int getNodesCount()
 	{
-		return this.nodeList.size();
+		return nodeList.size();
 	}
 
 	public void setDebug(boolean val)
 	{
-		this.debug = val;
+		debug = val;
 	}
 
 	public boolean debug()
 	{
-		return this.debug;
+		return debug;
 	}
 }

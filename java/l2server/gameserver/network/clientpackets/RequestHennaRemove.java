@@ -38,7 +38,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.symbolId = readD();
+		symbolId = readD();
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 		for (int i = 1; i <= 4; i++)
 		{
 			L2Henna henna = activeChar.getHenna(i);
-			if (henna != null && henna.getSymbolId() == this.symbolId)
+			if (henna != null && henna.getSymbolId() == symbolId)
 			{
 				if (activeChar.getAdena() >= henna.getPrice() / 5)
 				{

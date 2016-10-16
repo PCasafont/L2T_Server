@@ -37,7 +37,7 @@ public final class UserInfo extends L2GameServerPacket
 
 	public UserInfo(L2PcInstance player)
 	{
-		this.objectId = player.getObjectId();
+		objectId = player.getObjectId();
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -288,15 +288,15 @@ public final class UserInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		this.data = new byte[size];
-		buffer.get(this.data, 0, size);
+		data = new byte[size];
+		buffer.get(data, 0, size);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.data.length);
-		writeB(this.data);
+		writeD(objectId);
+		writeD(data.length);
+		writeB(data);
 	}
 }

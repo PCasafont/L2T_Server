@@ -55,28 +55,28 @@ public final class MagicSkillUse extends L2GameServerPacket
 
 	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, boolean ground, int skillActionId)
 	{
-		this.charObjId = cha.getObjectId();
-		this.targetId = target.getObjectId();
+		charObjId = cha.getObjectId();
+		targetId = target.getObjectId();
 		this.gauge = gauge;
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 		this.hitTime = hitTime;
 		this.reuseDelay = reuseDelay;
 		this.reuseGroup = reuseGroup;
-		this.x = cha.getX();
-		this.y = cha.getY();
-		this.z = cha.getZ();
-		this.tx = target.getX();
-		this.ty = target.getY();
-		this.tz = target.getZ();
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
+		tx = target.getX();
+		ty = target.getY();
+		tz = target.getZ();
 		//_flags |= 0x20;
 
 		this.ground = ground;
 		if (this.ground)
 		{
-			this.groundX = cha.getSkillCastPosition().getX();
-			this.groundY = cha.getSkillCastPosition().getY();
-			this.groundZ = this.z + 10;
+			groundX = cha.getSkillCastPosition().getX();
+			groundY = cha.getSkillCastPosition().getY();
+			groundZ = z + 10;
 		}
 
 		this.skillActionId = skillActionId;
@@ -84,56 +84,56 @@ public final class MagicSkillUse extends L2GameServerPacket
 
 	public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this.charObjId = cha.getObjectId();
-		this.targetId = cha.getTargetId();
-		this.gauge = 0;
+		charObjId = cha.getObjectId();
+		targetId = cha.getTargetId();
+		gauge = 0;
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 		this.hitTime = hitTime;
 		this.reuseDelay = reuseDelay;
-		this.reuseGroup = reuseDelay > 0 ? 0 : -1;
-		this.x = cha.getX();
-		this.y = cha.getY();
-		this.z = cha.getZ();
-		this.tx = cha.getX();
-		this.ty = cha.getY();
-		this.tz = cha.getZ();
+		reuseGroup = reuseDelay > 0 ? 0 : -1;
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
+		tx = cha.getX();
+		ty = cha.getY();
+		tz = cha.getZ();
 		//_flags |= 0x20;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.gauge); // Don't show casting bar if 1
-		writeD(this.charObjId);
-		writeD(this.targetId);
-		writeD(this.skillId);
-		writeD(this.skillLevel);
-		writeD(this.hitTime);
-		writeD(this.reuseGroup);
-		writeD(this.reuseDelay);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(gauge); // Don't show casting bar if 1
+		writeD(charObjId);
+		writeD(targetId);
+		writeD(skillId);
+		writeD(skillLevel);
+		writeD(hitTime);
+		writeD(reuseGroup);
+		writeD(reuseDelay);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeH(0x00);
 
-		if (this.ground)
+		if (ground)
 		{
 			writeH(0x01);
-			writeD(this.groundX);
-			writeD(this.groundY);
-			writeD(this.groundZ);
+			writeD(groundX);
+			writeD(groundY);
+			writeD(groundZ);
 		}
 		else
 		{
 			writeH(0x00);
 		}
 
-		writeD(this.tx);
-		writeD(this.ty);
-		writeD(this.tz);
+		writeD(tx);
+		writeD(ty);
+		writeD(tz);
 
-		if (this.skillActionId == 0)
+		if (skillActionId == 0)
 		{
 			writeD(0x00);
 			writeD(0x00);
@@ -141,7 +141,7 @@ public final class MagicSkillUse extends L2GameServerPacket
 		else
 		{
 			writeD(0x01);
-			writeD(this.skillActionId);
+			writeD(skillActionId);
 		}
 	}
 }

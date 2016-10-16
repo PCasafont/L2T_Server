@@ -284,13 +284,13 @@ public final class Evolve
 		{
 			try
 			{
-				if (this.petSummon.getCurrentFed() <= 0)
+				if (petSummon.getCurrentFed() <= 0)
 				{
-					this.petSummon.unSummon(this.activeChar);
+					petSummon.unSummon(activeChar);
 				}
 				else
 				{
-					this.petSummon.startFeed();
+					petSummon.startFeed();
 				}
 			}
 			catch (Exception e)
@@ -316,9 +316,9 @@ public final class Evolve
 		{
 			try
 			{
-				this.activeChar.sendPacket(new MagicSkillLaunched(this.activeChar, 2046, 1));
-				this.petSummon.setFollowStatus(true);
-				this.petSummon.setShowSummonAnimation(false);
+				activeChar.sendPacket(new MagicSkillLaunched(activeChar, 2046, 1));
+				petSummon.setFollowStatus(true);
+				petSummon.setShowSummonAnimation(false);
 			}
 			catch (Throwable e)
 			{

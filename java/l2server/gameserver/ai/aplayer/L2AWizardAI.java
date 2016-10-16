@@ -69,36 +69,36 @@ public class L2AWizardAI extends L2APlayerAI
 
 		if (target != null)
 		{
-			if (this.player.isInsideRadius(target, 100, true, true))
+			if (player.isInsideRadius(target, 100, true, true))
 			{
-				L2Skill skill = this.player.getKnownSkill(MAGICAL_EVASION);
-				if (skill != null && this.player.useMagic(skill, true, false))
+				L2Skill skill = player.getKnownSkill(MAGICAL_EVASION);
+				if (skill != null && player.useMagic(skill, true, false))
 				{
 					return true;
 				}
 			}
-			else if (!this.player.isInsideRadius(target, 1000, true, true))
+			else if (!player.isInsideRadius(target, 1000, true, true))
 			{
-				L2Skill skill = this.player.getKnownSkill(MAGICAL_CHARGE);
-				if (skill != null && this.player.useMagic(skill, true, false))
+				L2Skill skill = player.getKnownSkill(MAGICAL_CHARGE);
+				if (skill != null && player.useMagic(skill, true, false))
 				{
 					return true;
 				}
 			}
 		}
 
-		for (L2Character attacker : this.player.getKnownList().getKnownCharactersInRadius(100))
+		for (L2Character attacker : player.getKnownList().getKnownCharactersInRadius(100))
 		{
-			if (this.player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == this.player)
+			if (player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == player)
 			{
-				L2Skill skill = this.player.getKnownSkill(MAGICAL_CHARGE);
-				if (skill != null && this.player.useMagic(skill, true, false))
+				L2Skill skill = player.getKnownSkill(MAGICAL_CHARGE);
+				if (skill != null && player.useMagic(skill, true, false))
 				{
 					return true;
 				}
 
-				skill = this.player.getKnownSkill(MAGICAL_EVASION);
-				if (skill != null && this.player.useMagic(skill, true, false))
+				skill = player.getKnownSkill(MAGICAL_EVASION);
+				if (skill != null && player.useMagic(skill, true, false))
 				{
 					return true;
 				}
@@ -109,7 +109,7 @@ public class L2AWizardAI extends L2APlayerAI
 		//		|| this.player.getCurrentHp() < this.player.getMaxHp() * 0.5
 		//		|| this.player.getTarget() instanceof L2Playable)
 		{
-			for (L2Skill skill : this.player.getAllSkills())
+			for (L2Skill skill : player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE ||
 						skill.getHitTime() > 5000)
@@ -117,22 +117,22 @@ public class L2AWizardAI extends L2APlayerAI
 					continue;
 				}
 
-				if (this.player.useMagic(skill, true, false))
+				if (player.useMagic(skill, true, false))
 				{
 					break;
 				}
 			}
 
-			for (L2Skill skill : this.player.getAllSkills())
+			for (L2Skill skill : player.getAllSkills())
 			{
 				if (!skill.isStanceSwitch())
 				{
 					continue;
 				}
 
-				this.player.setElementalStance(1);
+				player.setElementalStance(1);
 
-				int stance = this.player.getElementalStance();
+				int stance = player.getElementalStance();
 				if (stance > 4)
 				{
 					stance = 5;
@@ -140,7 +140,7 @@ public class L2AWizardAI extends L2APlayerAI
 
 				L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + stance, skill.getLevelHash());
 				if (magic.getPower() > 150 && magic.getTargetType() == L2SkillTargetType.TARGET_ONE &&
-						this.player.useMagic(magic, true, false))
+						player.useMagic(magic, true, false))
 				{
 					break;
 				}

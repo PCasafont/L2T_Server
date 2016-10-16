@@ -42,12 +42,12 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.x = readD();
-		this.y = readD();
-		this.z = readD();
-		this.skillId = readD();
-		this.ctrlPressed = readD() != 0;
-		this.shiftPressed = readC() != 0;
+		x = readD();
+		y = readD();
+		z = readD();
+		skillId = readD();
+		ctrlPressed = readD() != 0;
+		shiftPressed = readC() != 0;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		}
 
 		// Get the level of the used skill
-		int level = activeChar.getSkillLevelHash(this.skillId);
+		int level = activeChar.getSkillLevelHash(skillId);
 		if (level <= 0)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -72,23 +72,23 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		}
 
 		// Get the L2Skill template corresponding to the skillID received from the client
-		L2Skill skill = SkillTable.getInstance().getInfo(this.skillId, level);
+		L2Skill skill = SkillTable.getInstance().getInfo(skillId, level);
 
 		// Check the validity of the skill
 		if (skill != null)
 		{
-			activeChar.setSkillCastPosition(new Point3D(this.x, this.y, this.z));
+			activeChar.setSkillCastPosition(new Point3D(x, y, z));
 
 			// normally magicskilluse packet turns char client side but for these skills, it doesn't (even with correct target)
-			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), this.x, this.y));
+			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), x, y));
 			activeChar.broadcastPacket(new ValidateLocation(activeChar));
 
-			activeChar.useMagic(skill, this.ctrlPressed, this.shiftPressed);
+			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
 		}
 		else
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("No skill found with id " + this.skillId + " and level " + level + " !!");
+			Log.warning("No skill found with id " + skillId + " and level " + level + " !!");
 		}
 	}
 }

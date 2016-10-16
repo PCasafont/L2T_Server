@@ -37,7 +37,7 @@ public class ShowMiniMap extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.mapId);
+		writeD(mapId);
 		writeC(0);
 	}
 }

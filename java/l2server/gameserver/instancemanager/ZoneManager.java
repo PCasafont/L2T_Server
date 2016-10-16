@@ -104,7 +104,7 @@ public class ZoneManager
 		Log.info("Loading zones...");
 		Connection con = null;
 		PreparedStatement statement = null;
-		this.classZones.clear();
+		classZones.clear();
 
 		// Get the world regions
 		L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
@@ -172,7 +172,7 @@ public class ZoneManager
 								}
 								else
 								{
-									zoneId = this.lastDynamicId++;
+									zoneId = lastDynamicId++;
 								}
 
 								zoneName = d.getString("name", null);
@@ -463,13 +463,13 @@ public class ZoneManager
 			L2DatabaseFactory.close(con);
 		}
 
-		Log.info("Zone: loaded " + this.classZones.size() + " zone classes and " + getSize() + " zones.");
+		Log.info("Zone: loaded " + classZones.size() + " zone classes and " + getSize() + " zones.");
 	}
 
 	public int getSize()
 	{
 		int i = 0;
-		for (Map<Integer, ? extends L2ZoneType> map : this.classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			i += map.size();
 		}
@@ -478,7 +478,7 @@ public class ZoneManager
 
 	public boolean checkId(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : this.classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -497,12 +497,12 @@ public class ZoneManager
 	public <T extends L2ZoneType> void addZone(Integer id, T zone)
 	{
 		//_zones.put(id, zone);
-		Map<Integer, T> map = (Map<Integer, T>) this.classZones.get(zone.getClass());
+		Map<Integer, T> map = (Map<Integer, T>) classZones.get(zone.getClass());
 		if (map == null)
 		{
 			map = new LinkedHashMap<>();
 			map.put(id, zone);
-			this.classZones.put(zone.getClass(), map);
+			classZones.put(zone.getClass(), map);
 		}
 		else
 		{
@@ -521,7 +521,7 @@ public class ZoneManager
 	public Collection<L2ZoneType> getAllZones()
 	{
 		ArrayList<L2ZoneType> zones = new ArrayList<>();
-		for (Map<Integer, ? extends L2ZoneType> map : this.classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			zones.addAll(map.values());
 		}
@@ -538,7 +538,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> Collection<T> getAllZones(Class<T> zoneType)
 	{
-		return (Collection<T>) this.classZones.get(zoneType).values();
+		return (Collection<T>) classZones.get(zoneType).values();
 	}
 
 	/**
@@ -550,7 +550,7 @@ public class ZoneManager
 	 */
 	public L2ZoneType getZoneById(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : this.classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -563,7 +563,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> T getZoneByName(String name, Class<T> type)
 	{
-		for (L2ZoneType zones : this.classZones.get(type).values())
+		for (L2ZoneType zones : classZones.get(type).values())
 		{
 			if (zones == null)
 			{
@@ -587,7 +587,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> T getZoneById(int id, Class<T> zoneType)
 	{
-		return (T) this.classZones.get(zoneType).get(id);
+		return (T) classZones.get(zoneType).get(id);
 	}
 
 	/**
@@ -733,7 +733,7 @@ public class ZoneManager
 		if (zone == null)
 		{
 			double closestdis = Double.MAX_VALUE;
-			for (T temp : (Collection<T>) this.classZones.get(type).values())
+			for (T temp : (Collection<T>) classZones.get(type).values())
 			{
 				double distance = temp.getDistanceToZone(obj);
 				if (distance < closestdis)

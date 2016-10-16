@@ -46,13 +46,13 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.boatId = readD(); //objectId of boat
-		this.targetX = readD();
-		this.targetY = readD();
-		this.targetZ = readD();
-		this.originX = readD();
-		this.originY = readD();
-		this.originZ = readD();
+		boatId = readD(); //objectId of boat
+		targetX = readD();
+		targetY = readD();
+		targetZ = readD();
+		originX = readD();
+		originY = readD();
+		originZ = readD();
 	}
 
 	/* (non-Javadoc)
@@ -67,9 +67,9 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 			return;
 		}
 
-		if (this.targetX == this.originX && this.targetY == this.originY && this.targetZ == this.originZ)
+		if (targetX == originX && targetY == originY && targetZ == originZ)
 		{
-			activeChar.sendPacket(new StopMoveInVehicle(activeChar, this.boatId));
+			activeChar.sendPacket(new StopMoveInVehicle(activeChar, boatId));
 			return;
 		}
 
@@ -104,7 +104,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 		if (activeChar.isInBoat())
 		{
 			boat = activeChar.getBoat();
-			if (boat.getObjectId() != this.boatId)
+			if (boat.getObjectId() != boatId)
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -112,7 +112,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 		}
 		else
 		{
-			boat = BoatManager.getInstance().getBoat(this.boatId);
+			boat = BoatManager.getInstance().getBoat(boatId);
 			if (boat == null || !boat.isInsideRadius(activeChar, 300, true, false))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -121,8 +121,8 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 			activeChar.setVehicle(boat);
 		}
 
-		final Point3D pos = new Point3D(this.targetX, this.targetY, this.targetZ);
-		final Point3D originPos = new Point3D(this.originX, this.originY, this.originZ);
+		final Point3D pos = new Point3D(targetX, targetY, targetZ);
+		final Point3D originPos = new Point3D(originX, originY, originZ);
 		activeChar.setInVehiclePosition(pos);
 		activeChar.broadcastPacket(new MoveToLocationInVehicle(activeChar, pos, originPos));
 	}

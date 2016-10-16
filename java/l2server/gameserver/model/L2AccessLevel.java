@@ -121,7 +121,7 @@ public class L2AccessLevel
 	 */
 	public int getLevel()
 	{
-		return this.accessLevel;
+		return accessLevel;
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class L2AccessLevel
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class L2AccessLevel
 	 */
 	public int getNameColor()
 	{
-		return this.nameColor;
+		return nameColor;
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class L2AccessLevel
 	 */
 	public int getTitleColor()
 	{
-		return this.titleColor;
+		return titleColor;
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class L2AccessLevel
 	 */
 	public boolean isGm()
 	{
-		return this.isGm;
+		return isGm;
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowPeaceAttack()
 	{
-		return this.allowPeaceAttack;
+		return allowPeaceAttack;
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowFixedRes()
 	{
-		return this.allowFixedRes;
+		return allowFixedRes;
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowTransaction()
 	{
-		return this.allowTransaction;
+		return allowTransaction;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowAltG()
 	{
-		return this.allowAltG;
+		return allowAltG;
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class L2AccessLevel
 	 */
 	public boolean canGiveDamage()
 	{
-		return this.giveDamage;
+		return giveDamage;
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class L2AccessLevel
 	 */
 	public boolean canTakeAggro()
 	{
-		return this.takeAggro;
+		return takeAggro;
 	}
 
 	/**
@@ -231,7 +231,7 @@ public class L2AccessLevel
 	 */
 	public boolean canGainExp()
 	{
-		return this.gainExp;
+		return gainExp;
 	}
 
 	/**
@@ -242,15 +242,15 @@ public class L2AccessLevel
 	 */
 	public boolean hasChildAccess(L2AccessLevel accessLevel)
 	{
-		if (this.childsAccessLevel == null)
+		if (childsAccessLevel == null)
 		{
-			if (this.childs == null)
+			if (childs == null)
 			{
 				return false;
 			}
 
-			setChildAccess(this.childs);
-			for (L2AccessLevel childAccess : this.childsAccessLevel)
+			setChildAccess(childs);
+			for (L2AccessLevel childAccess : childsAccessLevel)
 			{
 				if (childAccess != null &&
 						(childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
@@ -261,7 +261,7 @@ public class L2AccessLevel
 		}
 		else
 		{
-			for (L2AccessLevel childAccess : this.childsAccessLevel)
+			for (L2AccessLevel childAccess : childsAccessLevel)
 			{
 				if (childAccess != null &&
 						(childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
@@ -277,7 +277,7 @@ public class L2AccessLevel
 	{
 		String[] childsSplit = childs.split(";");
 
-		this.childsAccessLevel = new L2AccessLevel[childsSplit.length];
+		childsAccessLevel = new L2AccessLevel[childsSplit.length];
 
 		for (int i = 0; i < childsSplit.length; ++i)
 		{
@@ -291,12 +291,12 @@ public class L2AccessLevel
 
 			if (accessLevelInst.hasChildAccess(this))
 			{
-				Log.warning("AccessLevel: Child access tree overlapping for " + this.name + " and " +
+				Log.warning("AccessLevel: Child access tree overlapping for " + name + " and " +
 						accessLevelInst.getName());
 				continue;
 			}
 
-			this.childsAccessLevel[i] = accessLevelInst;
+			childsAccessLevel[i] = accessLevelInst;
 		}
 	}
 }

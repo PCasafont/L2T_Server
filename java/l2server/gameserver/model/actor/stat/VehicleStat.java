@@ -30,21 +30,21 @@ public class VehicleStat extends CharStat
 	@Override
 	public float getMoveSpeed()
 	{
-		return this.moveSpeed;
+		return moveSpeed;
 	}
 
 	public final void setMoveSpeed(float speed)
 	{
-		this.moveSpeed = speed;
+		moveSpeed = speed;
 	}
 
 	public final int getRotationSpeed()
 	{
-		return this.rotationSpeed;
+		return rotationSpeed;
 	}
 
 	public final void setRotationSpeed(int speed)
 	{
-		this.rotationSpeed = speed;
+		rotationSpeed = speed;
 	}
 }

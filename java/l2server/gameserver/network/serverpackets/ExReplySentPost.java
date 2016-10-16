@@ -37,7 +37,7 @@ public class ExReplySentPost extends L2ItemListPacket
 			final ItemContainer attachments = msg.getAttachments();
 			if (attachments != null && attachments.getSize() > 0)
 			{
-				this.items = attachments.getItems();
+				items = attachments.getItems();
 			}
 			else
 			{
@@ -53,31 +53,31 @@ public class ExReplySentPost extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.msg.getSendBySystem());
-		writeD(this.msg.getId());
-		writeD(this.msg.isLocked() ? 1 : 0);
-		writeS(this.msg.getReceiverName());
-		writeS(this.msg.getSubject());
-		writeS(this.msg.getContent());
+		writeD(msg.getSendBySystem());
+		writeD(msg.getId());
+		writeD(msg.isLocked() ? 1 : 0);
+		writeS(msg.getReceiverName());
+		writeS(msg.getSubject());
+		writeS(msg.getContent());
 
-		if (this.items != null && this.items.length > 0)
+		if (items != null && items.length > 0)
 		{
-			writeD(this.items.length);
-			for (L2ItemInstance item : this.items)
+			writeD(items.length);
+			for (L2ItemInstance item : items)
 			{
 				writeItem(item);
 			}
-			writeQ(this.msg.getReqAdena());
-			writeD(this.msg.hasAttachments() ? 1 : 0);
-			writeD(this.msg.getSendBySystem() > 0 ? 0x00 : 0x01);
-			writeD(this.msg.getReceiverId());
+			writeQ(msg.getReqAdena());
+			writeD(msg.hasAttachments() ? 1 : 0);
+			writeD(msg.getSendBySystem() > 0 ? 0x00 : 0x01);
+			writeD(msg.getReceiverId());
 		}
 		else
 		{
 			writeD(0x00);
 		}
 
-		this.items = null;
-		this.msg = null;
+		items = null;
+		msg = null;
 	}
 }

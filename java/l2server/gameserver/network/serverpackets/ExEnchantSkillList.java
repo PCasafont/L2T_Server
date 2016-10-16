@@ -42,13 +42,13 @@ public class ExEnchantSkillList extends L2GameServerPacket
 
 	public void addSkill(int id, int level)
 	{
-		this.skills.add(new Skill(id, level));
+		skills.add(new Skill(id, level));
 	}
 
 	public ExEnchantSkillList(EnchantSkillType type)
 	{
 		this.type = type;
-		this.skills = new ArrayList<>();
+		skills = new ArrayList<>();
 	}
 
 	/* (non-Javadoc)
@@ -57,9 +57,9 @@ public class ExEnchantSkillList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.type.ordinal());
-		writeD(this.skills.size());
-		for (Skill sk : this.skills)
+		writeD(type.ordinal());
+		writeD(skills.size());
+		for (Skill sk : skills)
 		{
 			writeD(sk.id);
 			writeD(sk.nextLevel);

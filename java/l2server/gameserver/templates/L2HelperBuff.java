@@ -56,16 +56,16 @@ public class L2HelperBuff
 	 */
 	public L2HelperBuff(StatsSet set)
 	{
-		this.lowerLevel = set.getInteger("lowerLevel");
-		this.upperLevel = set.getInteger("upperLevel");
-		this.skillID = set.getInteger("skillID");
-		this.skillLevel = set.getInteger("skillLevel");
+		lowerLevel = set.getInteger("lowerLevel");
+		upperLevel = set.getInteger("upperLevel");
+		skillID = set.getInteger("skillID");
+		skillLevel = set.getInteger("skillLevel");
 		if ("true".equals(set.getString("forSummon")))
 		{
-			this.forSummon = true;
+			forSummon = true;
 		}
 
-		this.isMagicClass = !"false".equals(set.getString("isMagicClass"));
+		isMagicClass = !"false".equals(set.getString("isMagicClass"));
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class L2HelperBuff
 	 */
 	public int getLowerLevel()
 	{
-		return this.lowerLevel;
+		return lowerLevel;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class L2HelperBuff
 	 */
 	public int getUpperLevel()
 	{
-		return this.upperLevel;
+		return upperLevel;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class L2HelperBuff
 	 */
 	public int getSkillID()
 	{
-		return this.skillID;
+		return skillID;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class L2HelperBuff
 	 */
 	public int getSkillLevel()
 	{
-		return this.skillLevel;
+		return skillLevel;
 	}
 
 	/**
@@ -115,11 +115,11 @@ public class L2HelperBuff
 	 */
 	public boolean isMagicClassBuff()
 	{
-		return this.isMagicClass;
+		return isMagicClass;
 	}
 
 	public boolean isForSummon()
 	{
-		return this.forSummon;
+		return forSummon;
 	}
 }

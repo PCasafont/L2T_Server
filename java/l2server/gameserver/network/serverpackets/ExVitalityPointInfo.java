@@ -26,7 +26,7 @@ public class ExVitalityPointInfo extends L2GameServerPacket
 
 	public ExVitalityPointInfo(int vitPoints)
 	{
-		this.vitalityPoints = vitPoints;
+		vitalityPoints = vitPoints;
 	}
 
 	/* (non-Javadoc)
@@ -35,6 +35,6 @@ public class ExVitalityPointInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.vitalityPoints);
+		writeD(vitalityPoints);
 	}
 }

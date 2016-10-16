@@ -47,7 +47,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final String getMessage()
 	{
-		return this.msg;
+		return msg;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final int getMessageId()
 	{
-		return this.msgId;
+		return msgId;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final void addName()
 	{
-		this.addName = true;
+		addName = true;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	public final boolean isAddName()
 	{
-		return this.addName;
+		return addName;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public abstract class Condition implements ConditionListener
 	 */
 	final ConditionListener getListener()
 	{
-		return this.listener;
+		return listener;
 	}
 
 	/**
@@ -118,9 +118,9 @@ public abstract class Condition implements ConditionListener
 	public final boolean test(Env env)
 	{
 		boolean res = testImpl(env);
-		if (this.listener != null && res != this.result)
+		if (listener != null && res != result)
 		{
-			this.result = res;
+			result = res;
 			notifyChanged();
 		}
 		return res;
@@ -140,9 +140,9 @@ public abstract class Condition implements ConditionListener
 	@Override
 	public void notifyChanged()
 	{
-		if (this.listener != null)
+		if (listener != null)
 		{
-			this.listener.notifyChanged();
+			listener.notifyChanged();
 		}
 	}
 }

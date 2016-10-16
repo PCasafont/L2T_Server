@@ -60,12 +60,12 @@ public final class ConditionPlayerPledgeClass extends Condition
 			return false;
 		}
 
-		if (this.pledgeClass == -1)
+		if (pledgeClass == -1)
 		{
 			return player.isClanLeader();
 		}
 
 		//System.out.println(player.getName() + " Pledge = " + player.getPledgeClass());
-		return player.getPledgeClass() >= this.pledgeClass;
+		return player.getPledgeClass() >= pledgeClass;
 	}
 }

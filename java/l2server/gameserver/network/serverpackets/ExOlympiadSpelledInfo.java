@@ -40,29 +40,29 @@ public class ExOlympiadSpelledInfo extends L2GameServerPacket
 
 		public Effect(int pSkillId, int pLevel, int pDuration)
 		{
-			this.skillId = pSkillId;
-			this.level = pLevel;
-			this.duration = pDuration;
+			skillId = pSkillId;
+			level = pLevel;
+			duration = pDuration;
 		}
 	}
 
 	public ExOlympiadSpelledInfo(L2PcInstance player)
 	{
-		this.effects = new ArrayList<>();
-		this.playerID = player.getObjectId();
+		effects = new ArrayList<>();
+		playerID = player.getObjectId();
 	}
 
 	public void addEffect(int skillId, int level, int duration)
 	{
-		this.effects.add(new Effect(skillId, level, duration));
+		effects.add(new Effect(skillId, level, duration));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.playerID);
-		writeD(this.effects.size());
-		for (Effect temp : this.effects)
+		writeD(playerID);
+		writeD(effects.size());
+		for (Effect temp : effects)
 		{
 			writeD(temp.skillId);
 			writeD(temp.level);

@@ -33,9 +33,9 @@ public class ScriptPackage
 
 	public ScriptPackage(ZipFile pack)
 	{
-		this.scriptFiles = new ArrayList<>();
-		this.otherFiles = new ArrayList<>();
-		this.name = pack.getName();
+		scriptFiles = new ArrayList<>();
+		otherFiles = new ArrayList<>();
+		name = pack.getName();
 		addFiles(pack);
 	}
 
@@ -44,7 +44,7 @@ public class ScriptPackage
 	 */
 	public List<String> getOtherFiles()
 	{
-		return this.otherFiles;
+		return otherFiles;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class ScriptPackage
 	 */
 	public List<ScriptDocument> getScriptFiles()
 	{
-		return this.scriptFiles;
+		return scriptFiles;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ScriptPackage
 				try
 				{
 					ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
-					this.scriptFiles.add(newScript);
+					scriptFiles.add(newScript);
 				}
 				catch (IOException e1)
 				{
@@ -76,7 +76,7 @@ public class ScriptPackage
 			}
 			else if (!entry.isDirectory())
 			{
-				this.otherFiles.add(entry.getName());
+				otherFiles.add(entry.getName());
 			}
 		}
 	}
@@ -86,7 +86,7 @@ public class ScriptPackage
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	@Override

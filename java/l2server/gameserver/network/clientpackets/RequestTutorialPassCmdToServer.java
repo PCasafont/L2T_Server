@@ -25,7 +25,7 @@ public class RequestTutorialPassCmdToServer extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.bypass = readS();
+		bypass = readS();
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class RequestTutorialPassCmdToServer extends L2GameClientPacket
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent(this.bypass, null, player);
+			qs.getQuest().notifyEvent(bypass, null, player);
 		}
 	}
 }

@@ -52,8 +52,8 @@ public final class RequestDestroyItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.count = readQ();
+		objectId = readD();
+		count = readQ();
 	}
 
 	@Override
@@ -65,13 +65,13 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			return;
 		}
 
-		if (this.count <= 0)
+		if (count <= 0)
 		{
-			if (this.count < 0)
+			if (count < 0)
 			{
 				Util.handleIllegalPlayerAction(activeChar,
 						"[RequestDestroyItem] Character " + activeChar.getName() + " of account " +
-								activeChar.getAccountName() + " tried to destroy item with oid " + this.objectId +
+								activeChar.getAccountName() + " tried to destroy item with oid " + objectId +
 								" but has count < 0!", Config.DEFAULT_PUNISH);
 			}
 			return;
@@ -97,7 +97,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(this.objectId);
+		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(objectId);
 		// if we can't find the requested item, its actually a cheat
 		if (itemToRemove == null)
 		{
@@ -146,7 +146,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestDestroyItem] Character " + activeChar.getName() + " of account " +
 							activeChar.getAccountName() + " tried to destroy a non-stackable item with oid " +
-							this.objectId + " but has count > 1!", Config.DEFAULT_PUNISH);
+							objectId + " but has count > 1!", Config.DEFAULT_PUNISH);
 			return;
 		}
 
@@ -181,7 +181,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			Connection con = null;
 			try
 			{
-				if (activeChar.getPet() != null && activeChar.getPet().getControlObjectId() == this.objectId)
+				if (activeChar.getPet() != null && activeChar.getPet().getControlObjectId() == objectId)
 				{
 					activeChar.getPet().unSummon(activeChar);
 				}
@@ -189,7 +189,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 				// if it's a pet control item, delete the pet
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?");
-				statement.setInt(1, this.objectId);
+				statement.setInt(1, objectId);
 				statement.execute();
 				statement.close();
 			}
@@ -256,7 +256,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			{
 				// remove from inventory
 				L2ItemInstance removedItem =
-						activeChar.getInventory().destroyItem("Crystalize", this.objectId, this.count, activeChar, null);
+						activeChar.getInventory().destroyItem("Crystalize", objectId, this.count, activeChar, null);
 				if (removedItem == null)
 				{
 					return;
@@ -312,7 +312,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		}
 
 		L2ItemInstance removedItem =
-				activeChar.getInventory().destroyItem("Destroy", this.objectId, count, activeChar, null);
+				activeChar.getInventory().destroyItem("Destroy", objectId, count, activeChar, null);
 
 		if (removedItem == null)
 		{

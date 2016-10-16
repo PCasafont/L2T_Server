@@ -35,19 +35,19 @@ public class ExAcquireAPSkillList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.success ? 0x01 : 0x00);
+		writeD(success ? 0x01 : 0x00);
 
 		writeQ(AbilityTable.getInstance().getAdenaCostForReset());
-		writeQ(AbilityTable.getInstance().getSpCostPerPoint(this.player.getAbilityPoints()));
+		writeQ(AbilityTable.getInstance().getSpCostPerPoint(player.getAbilityPoints()));
 		writeD(AbilityTable.getInstance().getMaxPoints());
-		writeD(this.player.getAbilityPoints());
-		writeD(this.player.getSpentAbilityPoints());
+		writeD(player.getAbilityPoints());
+		writeD(player.getSpentAbilityPoints());
 
-		writeD(this.player.getAbilities().size());
-		for (int skillId : this.player.getAbilities().keys())
+		writeD(player.getAbilities().size());
+		for (int skillId : player.getAbilities().keys())
 		{
 			writeD(skillId);
-			writeD(this.player.getAbilities().get(skillId));
+			writeD(player.getAbilities().get(skillId));
 		}
 
 		writeD(0x01);

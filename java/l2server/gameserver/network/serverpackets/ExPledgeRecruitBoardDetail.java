@@ -32,9 +32,9 @@ public class ExPledgeRecruitBoardDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.data.clan.getClanId());
-		writeD(this.data.karma);
-		writeS(this.data.introduction);
-		writeS(this.data.largeIntroduction);
+		writeD(data.clan.getClanId());
+		writeD(data.karma);
+		writeS(data.introduction);
+		writeS(data.largeIntroduction);
 	}
 }

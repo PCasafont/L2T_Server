@@ -43,13 +43,13 @@ public class Q10325_SearchingForNewPower extends Quest
 	public Q10325_SearchingForNewPower(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.gallint);
-		addTalkId(this.gallint);
-		addTalkId(this.talbot);
-		addTalkId(this.cindet);
-		addTalkId(this.black);
-		addTalkId(this.herz);
-		addTalkId(this.kincaid);
+		addStartNpc(gallint);
+		addTalkId(gallint);
+		addTalkId(talbot);
+		addTalkId(cindet);
+		addTalkId(black);
+		addTalkId(herz);
+		addTalkId(kincaid);
 		// TODO Kamael
 	}
 
@@ -64,7 +64,7 @@ public class Q10325_SearchingForNewPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.gallint && event.equalsIgnoreCase("32980-03.htm"))
+		if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -87,7 +87,7 @@ public class Q10325_SearchingForNewPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.gallint)
+		if (npc.getNpcId() == gallint)
 		{
 			switch (st.getState())
 			{
@@ -121,31 +121,31 @@ public class Q10325_SearchingForNewPower extends Quest
 				player.setGlobalQuestFlag(GlobalQuest.STARTING, 6);
 			}
 		}
-		else if (npc.getNpcId() == this.talbot && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == talbot && st.getInt("cond") == 2)
 		{
 			htmltext = "32156-01.htm";
 			st.set("cond", "8");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == this.cindet && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == cindet && st.getInt("cond") == 3)
 		{
 			htmltext = "32148-01.htm";
 			st.set("cond", "9");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == this.black && st.getInt("cond") == 4)
+		else if (npc.getNpcId() == black && st.getInt("cond") == 4)
 		{
 			htmltext = "32161-01.htm";
 			st.set("cond", "10");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == this.herz && st.getInt("cond") == 5)
+		else if (npc.getNpcId() == herz && st.getInt("cond") == 5)
 		{
 			htmltext = "32151-01.htm";
 			st.set("cond", "11");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == this.kincaid && st.getInt("cond") == 6)
+		else if (npc.getNpcId() == kincaid && st.getInt("cond") == 6)
 		{
 			htmltext = "32159-01.htm";
 			st.set("cond", "12");

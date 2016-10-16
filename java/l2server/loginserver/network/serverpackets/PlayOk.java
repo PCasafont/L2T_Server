@@ -26,8 +26,8 @@ public final class PlayOk extends L2LoginServerPacket
 
 	public PlayOk(SessionKey sessionKey)
 	{
-		this.playOk1 = sessionKey.playOkID1;
-		this.playOk2 = sessionKey.playOkID2;
+		playOk1 = sessionKey.playOkID1;
+		playOk2 = sessionKey.playOkID2;
 	}
 
 	/**
@@ -36,7 +36,7 @@ public final class PlayOk extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x07);
-		writeD(this.playOk1);
-		writeD(this.playOk2);
+		writeD(playOk1);
+		writeD(playOk2);
 	}
 }

@@ -70,29 +70,29 @@ public class InstanceManager
 
 	public long getInstanceTime(int playerObjId, int id)
 	{
-		if (!this.playerInstanceTimes.containsKey(playerObjId))
+		if (!playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
-		if (this.playerInstanceTimes.get(playerObjId).containsKey(id))
+		if (playerInstanceTimes.get(playerObjId).containsKey(id))
 		{
-			return this.playerInstanceTimes.get(playerObjId).get(id);
+			return playerInstanceTimes.get(playerObjId).get(id);
 		}
 		return -1;
 	}
 
 	public Map<Integer, Long> getAllInstanceTimes(int playerObjId)
 	{
-		if (!this.playerInstanceTimes.containsKey(playerObjId))
+		if (!playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
-		return this.playerInstanceTimes.get(playerObjId);
+		return playerInstanceTimes.get(playerObjId);
 	}
 
 	public void setInstanceTime(int playerObjId, int id, long time)
 	{
-		if (!this.playerInstanceTimes.containsKey(playerObjId))
+		if (!playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
@@ -108,7 +108,7 @@ public class InstanceManager
 			statement.setLong(4, time);
 			statement.execute();
 			statement.close();
-			this.playerInstanceTimes.get(playerObjId).put(id, time);
+			playerInstanceTimes.get(playerObjId).put(id, time);
 		}
 		catch (Exception e)
 		{
@@ -132,7 +132,7 @@ public class InstanceManager
 			statement.setInt(2, id);
 			statement.execute();
 			statement.close();
-			this.playerInstanceTimes.get(playerObjId).remove(id);
+			playerInstanceTimes.get(playerObjId).remove(id);
 		}
 		catch (Exception e)
 		{
@@ -146,11 +146,11 @@ public class InstanceManager
 
 	public void restoreInstanceTimes(int playerObjId)
 	{
-		if (this.playerInstanceTimes.containsKey(playerObjId))
+		if (playerInstanceTimes.containsKey(playerObjId))
 		{
 			return; // already restored
 		}
-		this.playerInstanceTimes.put(playerObjId, new HashMap<>());
+		playerInstanceTimes.put(playerObjId, new HashMap<>());
 		Connection con = null;
 		try
 		{
@@ -169,7 +169,7 @@ public class InstanceManager
 				}
 				else
 				{
-					this.playerInstanceTimes.get(playerObjId).put(id, time);
+					playerInstanceTimes.get(playerObjId).put(id, time);
 				}
 			}
 
@@ -362,17 +362,17 @@ public class InstanceManager
 	public int createDynamicInstance(String template)
 	{
 
-		while (getInstance(this.dynamic) != null)
+		while (getInstance(dynamic) != null)
 		{
-			this.dynamic++;
-			if (this.dynamic == Integer.MAX_VALUE)
+			dynamic++;
+			if (dynamic == Integer.MAX_VALUE)
 			{
 				Log.warning("InstanceManager: More then " + (Integer.MAX_VALUE - 300000) + " instances created");
-				this.dynamic = 300000;
+				dynamic = 300000;
 			}
 		}
-		Instance instance = new Instance(this.dynamic);
-		instanceList.put(this.dynamic, instance);
+		Instance instance = new Instance(dynamic);
+		instanceList.put(dynamic, instance);
 		if (template != null)
 		{
 			try
@@ -386,7 +386,7 @@ public class InstanceManager
 						e);
 			}
 		}
-		return this.dynamic;
+		return dynamic;
 	}
 
 	/**

@@ -46,11 +46,11 @@ public final class RequestDropItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.count = readQ();
-		this.x = readD();
-		this.y = readD();
-		this.z = readD();
+		objectId = readD();
+		count = readQ();
+		x = readD();
+		y = readD();
+		z = readD();
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 
-		if (item == null || this.count == 0 || !activeChar.validateItemManipulation(this.objectId, "drop") ||
+		if (item == null || count == 0 || !activeChar.validateItemManipulation(objectId, "drop") ||
 				!Config.ALLOW_DISCARDITEM && !activeChar.isGM() ||
 				!item.isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) ||
 				item.getItemType() == L2EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
@@ -84,7 +84,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (this.count > item.getCount())
+		if (count > item.getCount())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 			return;
@@ -96,20 +96,20 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (this.count < 0)
+		if (count < 0)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestDropItem] Character " + activeChar.getName() + " of account " +
-							activeChar.getAccountName() + " tried to drop item with oid " + this.objectId +
+							activeChar.getAccountName() + " tried to drop item with oid " + objectId +
 							" but has count < 0!", Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		if (!item.isStackable() && this.count > 1)
+		if (!item.isStackable() && count > 1)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestDropItem] Character " + activeChar.getName() + " of account " +
-							activeChar.getAccountName() + " tried to drop non-stackable item with oid " + this.objectId +
+							activeChar.getAccountName() + " tried to drop non-stackable item with oid " + objectId +
 							" but has count > 1!", Config.DEFAULT_PUNISH);
 			return;
 		}
@@ -176,7 +176,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (!activeChar.isInsideRadius(this.x, this.y, 150, false) || Math.abs(this.z - activeChar.getZ()) > 50)
+		if (!activeChar.isInsideRadius(x, y, 150, false) || Math.abs(z - activeChar.getZ()) > 50)
 		{
 			if (Config.DEBUG)
 			{
@@ -194,7 +194,8 @@ public final class RequestDropItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine("requested drop item " + this.objectId + " (" + item.getCount() + ") at " + this.x + "/" + this.y + "/" + this.z);
+			Log.fine("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" +
+					z);
 		}
 
 		if (item.isEquipped())
@@ -214,11 +215,11 @@ public final class RequestDropItem extends L2GameClientPacket
 			activeChar.sendPacket(il);
 		}
 
-		L2ItemInstance dropedItem = activeChar.dropItem("Drop", this.objectId, this.count, this.x, this.y, this.z, null, false);
+		L2ItemInstance dropedItem = activeChar.dropItem("Drop", objectId, count, x, y, z, null, false);
 
 		if (Config.DEBUG)
 		{
-			Log.fine("dropping " + this.objectId + " item(" + this.count + ") at: " + this.x + " " + this.y + " " + this.z);
+			Log.fine("dropping " + objectId + " item(" + count + ") at: " + x + " " + y + " " + z);
 		}
 
 		// activeChar.broadcastUserInfo();

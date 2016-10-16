@@ -77,54 +77,54 @@ public final class ServerList extends L2LoginServerPacket
 		{
 			try
 			{
-				this.ip = InetAddress.getByName(gsi.getServerAddress(client.getConnection().getInetAddress())).getAddress();
+				ip = InetAddress.getByName(gsi.getServerAddress(client.getConnection().getInetAddress())).getAddress();
 			}
 			catch (UnknownHostException e)
 			{
 				e.printStackTrace();
-				this.ip = new byte[4];
-				this.ip[0] = 127;
-				this.ip[1] = 0;
-				this.ip[2] = 0;
-				this.ip[3] = 1;
+				ip = new byte[4];
+				ip[0] = 127;
+				ip[1] = 0;
+				ip[2] = 0;
+				ip[3] = 1;
 			}
 
-			this.port = gsi.getPort();
-			this.pvp = gsi.isPvp();
-			this.serverType = gsi.getServerType();
-			this.currentPlayers = gsi.getCurrentPlayerCount();
-			this.maxPlayers = gsi.getMaxPlayers();
-			this.ageLimit = 0;
-			this.brackets = gsi.isShowingBrackets();
+			port = gsi.getPort();
+			pvp = gsi.isPvp();
+			serverType = gsi.getServerType();
+			currentPlayers = gsi.getCurrentPlayerCount();
+			maxPlayers = gsi.getMaxPlayers();
+			ageLimit = 0;
+			brackets = gsi.isShowingBrackets();
 			// If server GM-only - show status only to GMs
-			this.status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() :
+			status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() :
 					client.getAccessLevel() >= 10 ? gsi.getStatus() : ServerStatus.STATUS_DOWN;
-			this.serverId = gsi.getId();
+			serverId = gsi.getId();
 		}
 	}
 
 	public ServerList(L2LoginClient client)
 	{
-		this.servers = new ArrayList<>(GameServerTable.getInstance().getRegisteredGameServers().size());
-		this.lastServer = client.getLastServer();
+		servers = new ArrayList<>(GameServerTable.getInstance().getRegisteredGameServers().size());
+		lastServer = client.getLastServer();
 		for (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values())
 		{
 			//if (gsi.getStatus() != ServerStatus.STATUS_GM_ONLY
 			//		|| client.getAccessLevel() > 0)
-			this.servers.add(new ServerData(client, gsi));
+			servers.add(new ServerData(client, gsi));
 		}
 
-		this.charsOnServers = client.getCharsOnServ();
-		this.charsToDelete = client.getCharsWaitingDelOnServ();
+		charsOnServers = client.getCharsOnServ();
+		charsToDelete = client.getCharsWaitingDelOnServ();
 	}
 
 	@Override
 	public void write()
 	{
 		writeC(0x04);
-		writeC(this.servers.size());
-		writeC(this.lastServer);
-		for (ServerData server : this.servers)
+		writeC(servers.size());
+		writeC(lastServer);
+		for (ServerData server : servers)
 		{
 			writeC(server.serverId); // server id
 
@@ -155,13 +155,13 @@ public final class ServerList extends L2LoginServerPacket
 		}
 
 		writeH(0x00); // unknown
-		if (this.charsOnServers != null)
+		if (charsOnServers != null)
 		{
 			//writeC(this.charsOnServers.size());
-			for (int servId : this.charsOnServers.keySet())
+			for (int servId : charsOnServers.keySet())
 			{
 				writeC(servId);
-				writeC(this.charsOnServers.get(servId));
+				writeC(charsOnServers.get(servId));
 				/*if (this.charsToDelete == null || !this.charsToDelete.containsKey(servId))
                     writeC(0x00);
 				else

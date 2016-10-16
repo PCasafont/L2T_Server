@@ -42,8 +42,8 @@ public class StackIDFactory extends IdFactory
 	protected StackIDFactory()
 	{
 		super();
-		this.curOID = FIRST_OID;
-		this.tempOID = FIRST_OID;
+		curOID = FIRST_OID;
+		tempOID = FIRST_OID;
 
 		Connection con = null;
 		try
@@ -54,9 +54,9 @@ public class StackIDFactory extends IdFactory
 			int[] tmp_obj_ids = extractUsedObjectIDTable();
 			if (tmp_obj_ids.length > 0)
 			{
-				this.curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
+				curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
 			}
-			Log.info("Max Id = " + this.curOID);
+			Log.info("Max Id = " + curOID);
 
 			int N = tmp_obj_ids.length;
 			for (int idx = 0; idx < N; idx++)
@@ -64,9 +64,9 @@ public class StackIDFactory extends IdFactory
 				N = insertUntil(tmp_obj_ids, idx, N, con);
 			}
 
-			this.curOID++;
-			Log.info("IdFactory: Next usable Object ID is: " + this.curOID);
-			this.initialized = true;
+			curOID++;
+			Log.info("IdFactory: Next usable Object ID is: " + curOID);
+			initialized = true;
 		}
 		catch (Exception e)
 		{
@@ -81,9 +81,9 @@ public class StackIDFactory extends IdFactory
 	private int insertUntil(int[] tmp_obj_ids, int idx, int N, Connection con) throws SQLException
 	{
 		int id = tmp_obj_ids[idx];
-		if (id == this.tempOID)
+		if (id == tempOID)
 		{
-			this.tempOID++;
+			tempOID++;
 			return N;
 		}
 		// check these IDs not present in DB
@@ -92,7 +92,7 @@ public class StackIDFactory extends IdFactory
 			for (String check : ID_CHECKS)
 			{
 				PreparedStatement ps = con.prepareStatement(check);
-				ps.setInt(1, this.tempOID);
+				ps.setInt(1, tempOID);
 				//ps.setInt(1, this.curOID);
 				ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();
@@ -108,7 +108,7 @@ public class StackIDFactory extends IdFactory
 		}
 
 		//int hole = id - this.curOID;
-		int hole = id - this.tempOID;
+		int hole = id - tempOID;
 		if (hole > N - idx)
 		{
 			hole = N - idx;
@@ -116,13 +116,13 @@ public class StackIDFactory extends IdFactory
 		for (int i = 1; i <= hole; i++)
 		{
 			//log.info("Free ID added " + (this.tempOID));
-			this.freeOIDStack.push(this.tempOID);
-			this.tempOID++;
+			freeOIDStack.push(tempOID);
+			tempOID++;
 			//_curOID++;
 		}
 		if (hole < N - idx)
 		{
-			this.tempOID++;
+			tempOID++;
 		}
 		return N - hole;
 	}
@@ -136,14 +136,14 @@ public class StackIDFactory extends IdFactory
 	public synchronized int getNextId()
 	{
 		int id;
-		if (!this.freeOIDStack.empty())
+		if (!freeOIDStack.empty())
 		{
-			id = this.freeOIDStack.pop();
+			id = freeOIDStack.pop();
 		}
 		else
 		{
-			id = this.curOID;
-			this.curOID = this.curOID + 1;
+			id = curOID;
+			curOID = curOID + 1;
 		}
 		return id;
 	}
@@ -154,12 +154,12 @@ public class StackIDFactory extends IdFactory
 	@Override
 	public synchronized void releaseId(int id)
 	{
-		this.freeOIDStack.push(id);
+		freeOIDStack.push(id);
 	}
 
 	@Override
 	public int size()
 	{
-		return FREE_OBJECT_ID_SIZE - this.curOID + FIRST_OID + this.freeOIDStack.size();
+		return FREE_OBJECT_ID_SIZE - curOID + FIRST_OID + freeOIDStack.size();
 	}
 }

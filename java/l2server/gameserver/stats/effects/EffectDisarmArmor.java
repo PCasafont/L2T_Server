@@ -82,9 +82,9 @@ public class EffectDisarmArmor extends L2Effect
 			{
 				iu.addModifiedItem(itm);
 
-				synchronized (this.armors)
+				synchronized (armors)
 				{
-					this.armors.put(player.getObjectId(), itm.getObjectId());
+					armors.put(player.getObjectId(), itm.getObjectId());
 				}
 			}
 
@@ -130,11 +130,11 @@ public class EffectDisarmArmor extends L2Effect
 			return;
 		}
 
-		synchronized (this.armors)
+		synchronized (armors)
 		{
-			if (this.armors.containsKey(player.getObjectId()))
+			if (armors.containsKey(player.getObjectId()))
 			{
-				L2ItemInstance armor = player.getInventory().getItemByObjectId(this.armors.get(player.getObjectId()));
+				L2ItemInstance armor = player.getInventory().getItemByObjectId(armors.get(player.getObjectId()));
 				if (player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST) == null)
 				{
 					if (armor != null)
@@ -142,7 +142,7 @@ public class EffectDisarmArmor extends L2Effect
 						player.useEquippableItem(armor, false);
 					}
 				}
-				this.armors.remove(player.getObjectId());
+				armors.remove(player.getObjectId());
 			}
 		}
 		player.broadcastUserInfo();

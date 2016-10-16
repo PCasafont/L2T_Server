@@ -17,7 +17,7 @@ public class NpcInfoState extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeC(this.state);
-		writeD(this.objectId);
+		writeC(state);
+		writeD(objectId);
 	}
 }

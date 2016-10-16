@@ -39,24 +39,24 @@ public class ItemFilter implements Filter
 		{
 			return false;
 		}
-		if (this.excludeProcess != null)
+		if (excludeProcess != null)
 		{
 			//			if (record.getMessage() == null) return true;
 			String[] messageList = record.getMessage().split(":");
-			if (messageList.length < 2 || !this.excludeProcess.contains(messageList[1]))
+			if (messageList.length < 2 || !excludeProcess.contains(messageList[1]))
 			{
 				return true;
 			}
 		}
-		if (this.excludeItemType != null)
+		if (excludeItemType != null)
 		{
 			//			if (record.getParameters() == null || record.getParameters().length == 0 || !(record.getParameters()[0] instanceof L2ItemInstance)) return true;
 			L2ItemInstance item = (L2ItemInstance) record.getParameters()[0];
-			if (!this.excludeItemType.contains(item.getItemType().toString()))
+			if (!excludeItemType.contains(item.getItemType().toString()))
 			{
 				return true;
 			}
 		}
-		return this.excludeProcess == null && this.excludeItemType == null;
+		return excludeProcess == null && excludeItemType == null;
 	}
 }

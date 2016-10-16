@@ -106,9 +106,9 @@ public final class Say2 extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.text = readS();
-		this.type = readD();
-		this.target = this.type == TELL ? readS() : null;
+		text = readS();
+		type = readD();
+		target = type == TELL ? readS() : null;
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public final class Say2 extends L2GameClientPacket
 	{
 		if (Config.DEBUG)
 		{
-			Log.info("Say2: Msg Type = '" + this.type + "' Text = '" + this.text + "'.");
+			Log.info("Say2: Msg Type = '" + type + "' Text = '" + text + "'.");
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
@@ -125,16 +125,16 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 
-		if (this.type < 0 || this.type >= CHAT_NAMES.length)
+		if (type < 0 || type >= CHAT_NAMES.length)
 		{
-			Log.warning("Say2: Invalid type: " + this.type + " Player : " + activeChar.getName() + " text: " +
-					String.valueOf(this.text));
+			Log.warning("Say2: Invalid type: " + type + " Player : " + activeChar.getName() + " text: " +
+					String.valueOf(text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
 		}
 
-		if (this.text.isEmpty())
+		if (text.isEmpty())
 		{
 			Log.warning(activeChar.getName() + ": sending empty text. Possible packet hack!");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -142,16 +142,17 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 
-		if (!this.text.contains("Type="))
+		if (!text.contains("Type="))
 		{
-			this.text = this.text.replaceAll("\\s+", " ");
+			text = text.replaceAll("\\s+", " ");
 		}
 
 		// Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
 		// April 27, 2009 - Verified on Gracia P2 & Final official client as 105
 		// Allow higher limit if player shift some item (text is longer then)
 		if (!activeChar.isGM() &&
-				(this.text.indexOf(8) >= 0 && this.text.length() > 500 || this.text.indexOf(8) < 0 && this.text.length() > 105))
+				(text.indexOf(8) >= 0 && text.length() > 500 || text.indexOf(8) < 0 &&
+						text.length() > 105))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
@@ -171,7 +172,7 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}*/
 
-		if (!this.text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
+		if (!text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
 				(activeChar.getEvent().isType(EventType.DeathMatch) ||
 						activeChar.getEvent().isType(EventType.Survival) ||
 						activeChar.getEvent().isType(EventType.KingOfTheHill)))
@@ -180,7 +181,7 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 
-		if (activeChar.isCursedWeaponEquipped() && (this.type == TRADE || this.type == SHOUT || this.type == GLOBAL))
+		if (activeChar.isCursedWeaponEquipped() && (type == TRADE || type == SHOUT || type == GLOBAL))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(
 					SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
@@ -189,7 +190,8 @@ public final class Say2 extends L2GameClientPacket
 
 		if (activeChar.isChatBanned())
 		{
-			if (this.type == ALL || this.type == SHOUT || this.type == TRADE || this.type == HERO_VOICE || this.type == GLOBAL)
+			if (type == ALL || type == SHOUT || type == TRADE || type == HERO_VOICE ||
+					type == GLOBAL)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;
@@ -198,27 +200,27 @@ public final class Say2 extends L2GameClientPacket
 
 		if (activeChar.isInJail() && Config.JAIL_DISABLE_CHAT)
 		{
-			if (this.type != ALL)
+			if (type != ALL)
 			{
 				activeChar.sendMessage("You can not chat with players outside of the jail.");
 				return;
 			}
 		}
 
-		if (this.type == PETITION_PLAYER && activeChar.isGM())
+		if (type == PETITION_PLAYER && activeChar.isGM())
 		{
-			this.type = PETITION_GM;
+			type = PETITION_GM;
 		}
 
 		if (Config.LOG_CHAT)
 		{
-			if (this.type == CLAN && activeChar.getClan() != null)
+			if (type == CLAN && activeChar.getClan() != null)
 			{
-				this.target = activeChar.getClan().getName();
+				target = activeChar.getClan().getName();
 			}
-			else if (this.type == ALLIANCE && activeChar.getClan() != null)
+			else if (type == ALLIANCE && activeChar.getClan() != null)
 			{
-				this.target = activeChar.getClan().getAllyName();
+				target = activeChar.getClan().getAllyName();
 			}
 
 			Connection con = null;
@@ -230,10 +232,10 @@ public final class Say2 extends L2GameClientPacket
 						"REPLACE INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
 
 				statement.setLong(1, System.currentTimeMillis());
-				statement.setString(2, CHAT_NAMES[this.type]);
+				statement.setString(2, CHAT_NAMES[type]);
 				statement.setString(3, activeChar.getName());
-				statement.setString(4, this.target);
-				statement.setString(5, this.text);
+				statement.setString(4, target);
+				statement.setString(5, text);
 				statement.execute();
 				statement.close();
 			}
@@ -257,7 +259,7 @@ public final class Say2 extends L2GameClientPacket
 			this.logChat.log(record);*/
 		}
 
-		if (this.text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
+		if (text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
 		{
 			return;
 		}
@@ -268,46 +270,46 @@ public final class Say2 extends L2GameClientPacket
 			checkText();
 		}
 
-		IChatHandler handler = ChatHandler.getInstance().getChatHandler(this.type);
+		IChatHandler handler = ChatHandler.getInstance().getChatHandler(type);
 		if (handler != null)
 		{
 			// Elcardia -> Elcopia OP replacement
 			//_text = this.text.replaceAll("([lLiI1][ -._]*[cCkK][ -._]*)[aA4]"
 			//		+ "([ -._]*)[rR]([ -._]*)[dD]", "$1o$2$3p");
 
-			handler.handleChat(this.type, activeChar, this.target, this.text);
+			handler.handleChat(type, activeChar, target, text);
 		}
 		else
 		{
-			Log.info("No handler registered for ChatType: " + this.type + " Player: " + getClient());
+			Log.info("No handler registered for ChatType: " + type + " Player: " + getClient());
 		}
 	}
 
 	private void checkText()
 	{
-		String filteredText = this.text;
+		String filteredText = text;
 		for (String pattern : Config.FILTER_LIST)
 		{
 			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
 		}
-		this.text = filteredText;
+		text = filteredText;
 	}
 
 	private boolean parseAndPublishItem(L2PcInstance owner)
 	{
 		int pos1 = -1;
-		while ((pos1 = this.text.indexOf(8, pos1)) > -1)
+		while ((pos1 = text.indexOf(8, pos1)) > -1)
 		{
-			int pos = this.text.indexOf("ID=", pos1);
+			int pos = text.indexOf("ID=", pos1);
 			if (pos == -1)
 			{
 				return false;
 			}
 			StringBuilder result = new StringBuilder(9);
 			pos += 3;
-			while (Character.isDigit(this.text.charAt(pos)))
+			while (Character.isDigit(text.charAt(pos)))
 			{
-				result.append(this.text.charAt(pos++));
+				result.append(text.charAt(pos++));
 			}
 			int id = Integer.parseInt(result.toString());
 			L2Object item = L2World.getInstance().findObject(id);
@@ -325,7 +327,7 @@ public final class Say2 extends L2GameClientPacket
 				Log.info(getClient() + " trying publish object which is not item! Object:" + item);
 				return false;
 			}
-			pos1 = this.text.indexOf(8, pos) + 1;
+			pos1 = text.indexOf(8, pos) + 1;
 			if (pos1 == 0) // missing ending tag
 			{
 				Log.info(getClient() + " sent invalid publish item msg! ID:" + id);

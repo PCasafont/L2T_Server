@@ -32,8 +32,8 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.member = readS();
-		this.powerGrade = readD();
+		member = readS();
+		powerGrade = readD();
 	}
 
 	/**
@@ -76,7 +76,7 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 			return;
 		}
 
-		member.setPowerGrade(this.powerGrade);
+		member.setPowerGrade(powerGrade);
 		clan.broadcastClanStatus();
 	}
 }

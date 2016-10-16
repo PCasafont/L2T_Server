@@ -99,6 +99,6 @@ public class ExCaptureOrc extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeB(this.test);
+		writeB(test);
 	}
 }

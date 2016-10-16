@@ -28,9 +28,9 @@ public class RequestMenteeSearch extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.page = readD();
-		this.minLevel = readD();
-		this.maxLevel = readD();
+		page = readD();
+		minLevel = readD();
+		maxLevel = readD();
 	}
 
 	@Override
@@ -42,6 +42,6 @@ public class RequestMenteeSearch extends L2GameClientPacket
 		{
 			return;
 		}
-		activeChar.sendPacket(new ExMenteeSearch(this.page, this.minLevel, this.maxLevel));
+		activeChar.sendPacket(new ExMenteeSearch(page, minLevel, maxLevel));
 	}
 }

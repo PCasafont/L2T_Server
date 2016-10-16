@@ -79,42 +79,42 @@ public class Zaken extends L2AttackableAIScript
     private static final Map<Location, Integer> barrelSpawnsInfo = new HashMap<Location, Integer>();
 
     {
-        this.barrelSpawnsInfo.put(new Location(53312, 220128, -3484), 120114); //ok
-        this.barrelSpawnsInfo.put(new Location(54241, 221062, -3479), 120114); //ok
-        this.barrelSpawnsInfo.put(new Location(54333, 219104, -3484), 120113); //ok
-        this.barrelSpawnsInfo.put(new Location(53312, 218079, -3484), 120111); //ok
-        this.barrelSpawnsInfo.put(new Location(55260, 218171, -3484), 120113); //ok
-        this.barrelSpawnsInfo.put(new Location(55266, 220042, -3484), 120113); //ok
-        this.barrelSpawnsInfo.put(new Location(56288, 221056, -3484), 120115); //ok
-        this.barrelSpawnsInfo.put(new Location(57200, 220128, -3484), 120115); //ok
-        this.barrelSpawnsInfo.put(new Location(56192, 219104, -3484), 120113); //ok
-        this.barrelSpawnsInfo.put(new Location(57216, 218080, -3484), 120112); //ok
-        this.barrelSpawnsInfo.put(new Location(56286, 217156, -3484), 120112); //ok
-        this.barrelSpawnsInfo.put(new Location(54240, 217168, -3484), 120111); //ok
-        this.barrelSpawnsInfo.put(new Location(53332, 220128, -3207), 120119); //ok
-        this.barrelSpawnsInfo.put(new Location(54240, 221040, -3212), 120119); //ok
-        this.barrelSpawnsInfo.put(new Location(54336, 219104, -3212), 120118); //ok
-        this.barrelSpawnsInfo.put(new Location(53312, 218080, -3212), 120116); //ok
-        this.barrelSpawnsInfo.put(new Location(55270, 218176, -3212), 120118); //ok
-        this.barrelSpawnsInfo.put(new Location(55264, 220032, -3212), 120118); //ok
-        this.barrelSpawnsInfo.put(new Location(56288, 221040, -3212), 120120); //ok
-        this.barrelSpawnsInfo.put(new Location(57200, 220128, -3212), 120120); //ok
-        this.barrelSpawnsInfo.put(new Location(56192, 219104, -3212), 120118); //ok
-        this.barrelSpawnsInfo.put(new Location(57213, 218080, -3209), 120117); //ok
-        this.barrelSpawnsInfo.put(new Location(56293, 217149, -3211), 120117); //ok
-        this.barrelSpawnsInfo.put(new Location(54240, 217152, -3212), 120116); //ok
-        this.barrelSpawnsInfo.put(new Location(53328, 220128, -2940), 120124); //ok
-        this.barrelSpawnsInfo.put(new Location(54240, 221040, -2940), 120124); //ok
-        this.barrelSpawnsInfo.put(new Location(54331, 219104, -2940), 120123); //ok
-        this.barrelSpawnsInfo.put(new Location(53328, 218080, -2936), 120121); //ok
-        this.barrelSpawnsInfo.put(new Location(55264, 218165, -2940), 120123); //ok
-        this.barrelSpawnsInfo.put(new Location(55264, 220016, -2940), 120123); //ok
-        this.barrelSpawnsInfo.put(new Location(56288, 221024, -2940), 120125); //ok
-        this.barrelSpawnsInfo.put(new Location(57200, 220128, -2940), 120125); //ok
-        this.barrelSpawnsInfo.put(new Location(56192, 219104, -2940), 120123); //ok
-        this.barrelSpawnsInfo.put(new Location(57200, 218080, -2940), 120122); //ok
-        this.barrelSpawnsInfo.put(new Location(56288, 217152, -2940), 120122); //ok
-        this.barrelSpawnsInfo.put(new Location(54240, 217152, -2940), 120121); //ok
+		barrelSpawnsInfo.put(new Location(53312, 220128, -3484), 120114); //ok
+		barrelSpawnsInfo.put(new Location(54241, 221062, -3479), 120114); //ok
+		barrelSpawnsInfo.put(new Location(54333, 219104, -3484), 120113); //ok
+		barrelSpawnsInfo.put(new Location(53312, 218079, -3484), 120111); //ok
+		barrelSpawnsInfo.put(new Location(55260, 218171, -3484), 120113); //ok
+		barrelSpawnsInfo.put(new Location(55266, 220042, -3484), 120113); //ok
+		barrelSpawnsInfo.put(new Location(56288, 221056, -3484), 120115); //ok
+		barrelSpawnsInfo.put(new Location(57200, 220128, -3484), 120115); //ok
+		barrelSpawnsInfo.put(new Location(56192, 219104, -3484), 120113); //ok
+		barrelSpawnsInfo.put(new Location(57216, 218080, -3484), 120112); //ok
+		barrelSpawnsInfo.put(new Location(56286, 217156, -3484), 120112); //ok
+		barrelSpawnsInfo.put(new Location(54240, 217168, -3484), 120111); //ok
+		barrelSpawnsInfo.put(new Location(53332, 220128, -3207), 120119); //ok
+		barrelSpawnsInfo.put(new Location(54240, 221040, -3212), 120119); //ok
+		barrelSpawnsInfo.put(new Location(54336, 219104, -3212), 120118); //ok
+		barrelSpawnsInfo.put(new Location(53312, 218080, -3212), 120116); //ok
+		barrelSpawnsInfo.put(new Location(55270, 218176, -3212), 120118); //ok
+		barrelSpawnsInfo.put(new Location(55264, 220032, -3212), 120118); //ok
+		barrelSpawnsInfo.put(new Location(56288, 221040, -3212), 120120); //ok
+		barrelSpawnsInfo.put(new Location(57200, 220128, -3212), 120120); //ok
+		barrelSpawnsInfo.put(new Location(56192, 219104, -3212), 120118); //ok
+		barrelSpawnsInfo.put(new Location(57213, 218080, -3209), 120117); //ok
+		barrelSpawnsInfo.put(new Location(56293, 217149, -3211), 120117); //ok
+		barrelSpawnsInfo.put(new Location(54240, 217152, -3212), 120116); //ok
+		barrelSpawnsInfo.put(new Location(53328, 220128, -2940), 120124); //ok
+		barrelSpawnsInfo.put(new Location(54240, 221040, -2940), 120124); //ok
+		barrelSpawnsInfo.put(new Location(54331, 219104, -2940), 120123); //ok
+		barrelSpawnsInfo.put(new Location(53328, 218080, -2936), 120121); //ok
+		barrelSpawnsInfo.put(new Location(55264, 218165, -2940), 120123); //ok
+		barrelSpawnsInfo.put(new Location(55264, 220016, -2940), 120123); //ok
+		barrelSpawnsInfo.put(new Location(56288, 221024, -2940), 120125); //ok
+		barrelSpawnsInfo.put(new Location(57200, 220128, -2940), 120125); //ok
+		barrelSpawnsInfo.put(new Location(56192, 219104, -2940), 120123); //ok
+		barrelSpawnsInfo.put(new Location(57200, 218080, -2940), 120122); //ok
+		barrelSpawnsInfo.put(new Location(56288, 217152, -2940), 120122); //ok
+		barrelSpawnsInfo.put(new Location(54240, 217152, -2940), 120121); //ok
     }
 
     ;
@@ -144,26 +144,26 @@ public class Zaken extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addStartNpc(this.pathfinderId);
-        addTalkId(this.pathfinderId);
-        addFirstTalkId(this.pathfinderId);
-        addFirstTalkId(this.barrelId);
-        addKillId(this.zakenNightTime);
-        addKillId(this.zakenDayTimeEasy);
-        addKillId(this.zakenDayTimeHard);
+        addStartNpc(pathfinderId);
+        addTalkId(pathfinderId);
+        addFirstTalkId(pathfinderId);
+        addFirstTalkId(barrelId);
+        addKillId(zakenNightTime);
+        addKillId(zakenDayTimeEasy);
+        addKillId(zakenDayTimeHard);
 
         for (int zoneId = 120111; zoneId <= 120125; zoneId++)
         {
             L2ZoneType zakenRoom = ZoneManager.getInstance().getZoneById(zoneId);
 
-            this.zakenRooms.add(zakenRoom);
+			zakenRooms.add(zakenRoom);
         }
     }
 
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -191,10 +191,10 @@ public class Zaken extends L2AttackableAIScript
                 InstanceManager.getInstance()
                         .sendPacket(world.instanceId, new ExSendUIEvent(0, 1, 0, 0, 1911119)); //Elapsed Time
 
-                world.zakenLocation = this.zakenSpawns[Rnd.get(this.zakenSpawns.length)];
+                world.zakenLocation = zakenSpawns[Rnd.get(zakenSpawns.length)];
 
                 //Zaken is already spawned on the Night Time Instance
-                if (world.templateId == this.nightTimeEpic)
+                if (world.templateId == nightTimeEpic)
                 {
                     world.zakenBoss = addSpawn(world.zakenId, world.zakenLocation.getX(), world.zakenLocation.getY(),
                             world.zakenLocation.getZ(), 0, false, 0, false, world.instanceId);
@@ -202,9 +202,9 @@ public class Zaken extends L2AttackableAIScript
                 else
                 {
                     //Barrels
-                    for (Entry<Location, Integer> barrelInfo : this.barrelSpawnsInfo.entrySet())
+                    for (Entry<Location, Integer> barrelInfo : barrelSpawnsInfo.entrySet())
                     {
-                        L2Npc barrel = addSpawn(this.barrelId, barrelInfo.getKey().getX(), barrelInfo.getKey().getY(),
+                        L2Npc barrel = addSpawn(barrelId, barrelInfo.getKey().getX(), barrelInfo.getKey().getY(),
                                 barrelInfo.getKey().getZ(), 0, false, 0, false, world.instanceId);
                         world.barrelInfo.put(barrel, barrelInfo.getValue());
                     }
@@ -212,7 +212,7 @@ public class Zaken extends L2AttackableAIScript
                             new ExShowScreenMessage(1800866, 10000)); //The candles can lead you to Zaken. Destroy him
                 }
 
-                if (this.debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Zaken will be spawned on cords: " + world.zakenLocation.getX() + ", " +
                             world.zakenLocation.getY() + ", " + world.zakenLocation.getZ());
@@ -253,13 +253,13 @@ public class Zaken extends L2AttackableAIScript
                     npc.setDisplayEffect(2);
 
                     //Spawn Minions
-                    for (L2ZoneType zakenRoom : this.zakenRooms)
+                    for (L2ZoneType zakenRoom : zakenRooms)
                     {
                         if (world.barrelInfo.get(npc) == zakenRoom.getId())
                         {
                             int[] randomSpawn = null;
 
-                            if (this.debug)
+                            if (debug)
                             {
                                 Log.warning(getName() + ": Found the nearest zone!");
                             }
@@ -298,13 +298,13 @@ public class Zaken extends L2AttackableAIScript
             }
         }
 
-        if (npc != null && npc.getNpcId() == this.pathfinderId)
+        if (npc != null && npc.getNpcId() == pathfinderId)
         {
             if (event.endsWith(".html"))
             {
                 return event;
             }
-            else if (Util.isDigit(event) && Util.contains(this.templates, Integer.valueOf(event)))
+            else if (Util.isDigit(event) && Util.contains(templates, Integer.valueOf(event)))
             {
                 try
                 {
@@ -322,7 +322,7 @@ public class Zaken extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance attacker, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + attacker.getName());
         }
@@ -336,7 +336,7 @@ public class Zaken extends L2AttackableAIScript
             {
                 InstanceManager.getInstance().sendPacket(world.instanceId, new ExSendUIEventRemove());
                 InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
-                        world.templateId == this.dayTimeEasy ? false : world.templateId == this.dayTimeHard ? false : true);
+                        world.templateId == dayTimeEasy ? false : world.templateId == dayTimeHard ? false : true);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -347,12 +347,12 @@ public class Zaken extends L2AttackableAIScript
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == this.barrelId)
+        if (npc.getNpcId() == barrelId)
         {
             if (npc.getDisplayEffect() == 0)
             {
@@ -361,7 +361,7 @@ public class Zaken extends L2AttackableAIScript
                 startQuestTimer("stage_all_check_barrel", 5000, npc, player);
             }
         }
-        else if (npc.getNpcId() == this.pathfinderId)
+        else if (npc.getNpcId() == pathfinderId)
         {
             return "32713.html";
         }
@@ -371,13 +371,13 @@ public class Zaken extends L2AttackableAIScript
 
     private void setupIDs(ZakenWorld world, int template_id)
     {
-        if (template_id == this.nightTimeEpic) //Cavern of the Pirate Captain (Nightmare)
+        if (template_id == nightTimeEpic) //Cavern of the Pirate Captain (Nightmare)
         {
-            world.zakenId = this.zakenNightTime;
+            world.zakenId = zakenNightTime;
         }
-        else if (template_id == this.dayTimeEasy) //Cavern of the Pirate Captain (Daydream)
+        else if (template_id == dayTimeEasy) //Cavern of the Pirate Captain (Daydream)
         {
-            world.zakenId = this.zakenDayTimeEasy;
+            world.zakenId = zakenDayTimeEasy;
             world.dollBladerId = 29023;
             world.valeMasterId = 29024;
             world.zombieCaptainId = 29026;
@@ -386,7 +386,7 @@ public class Zaken extends L2AttackableAIScript
         else
         //135 Cavern of the Pirate Captain (Distant Daydream)
         {
-            world.zakenId = this.zakenDayTimeHard;
+            world.zakenId = zakenDayTimeHard;
             world.dollBladerId = 29182;
             world.valeMasterId = 29183;
             world.zombieCaptainId = 29184;
@@ -412,7 +412,7 @@ public class Zaken extends L2AttackableAIScript
                 if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
                 {
                     player.setInstanceId(world.instanceId);
-                    player.teleToLocation(this.playerEnter, true);
+                    player.teleToLocation(playerEnter, true);
                 }
             }
             return;
@@ -420,25 +420,25 @@ public class Zaken extends L2AttackableAIScript
         else
         {
             //DAFUK!
-            int minPlayers = template_id == this.dayTimeEasy ? 7 : template_id == this.dayTimeHard ? 7 : 14;
-            int maxPlayers = template_id == this.dayTimeEasy ? 21 : template_id == this.dayTimeHard ? 21 : 350;
-            int minLevel = template_id == this.dayTimeEasy ? 53 : template_id == this.dayTimeHard ? 76 : 53;
-            int maxLevel = template_id == this.dayTimeEasy ? 68 : template_id == this.dayTimeHard ? 90 : 68;
+            int minPlayers = template_id == dayTimeEasy ? 7 : template_id == dayTimeHard ? 7 : 14;
+            int maxPlayers = template_id == dayTimeEasy ? 21 : template_id == dayTimeHard ? 21 : 350;
+            int minLevel = template_id == dayTimeEasy ? 53 : template_id == dayTimeHard ? 76 : 53;
+            int maxLevel = template_id == dayTimeEasy ? 68 : template_id == dayTimeHard ? 90 : 68;
 
-            if (Config.isServer(Config.TENKAI_ESTHUS) && template_id == this.dayTimeHard)
+            if (Config.isServer(Config.TENKAI_ESTHUS) && template_id == dayTimeHard)
             {
                 minPlayers = 7;
                 maxLevel = Config.MAX_LEVEL;
             }
 
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, template_id, minPlayers, maxPlayers, minLevel, maxLevel))
             {
                 return;
             }
 
-            String template = template_id == this.dayTimeEasy ? "Zaken-daytime" :
-                    template_id == this.dayTimeHard ? "Zaken-daytime83" : "Zaken-nighttime";
+            String template = template_id == dayTimeEasy ? "Zaken-daytime" :
+                    template_id == dayTimeHard ? "Zaken-daytime83" : "Zaken-nighttime";
             final int instanceId = InstanceManager.getInstance().createDynamicInstance(template + ".xml");
             world = new ZakenWorld();
             world.instanceId = instanceId;
@@ -450,7 +450,7 @@ public class Zaken extends L2AttackableAIScript
             setupIDs((ZakenWorld) world, template_id);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -477,7 +477,7 @@ public class Zaken extends L2AttackableAIScript
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(this.playerEnter, true);
+                enterPlayer.teleToLocation(playerEnter, true);
             }
 
             startQuestTimer("stage_0_start", 5000, null, player);

@@ -36,7 +36,7 @@ public final class RequestQuestAbort extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.questId = readD();
+		questId = readD();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public final class RequestQuestAbort extends L2GameClientPacket
 			return;
 		}
 
-		Quest qe = QuestManager.getInstance().getQuest(this.questId);
+		Quest qe = QuestManager.getInstance().getQuest(questId);
 		if (qe != null)
 		{
 			QuestState qs = activeChar.getQuestState(qe.getName());
@@ -70,7 +70,7 @@ public final class RequestQuestAbort extends L2GameClientPacket
 		{
 			if (Config.DEBUG)
 			{
-				Log.warning("Quest (id='" + this.questId + "') not found.");
+				Log.warning("Quest (id='" + questId + "') not found.");
 			}
 		}
 	}

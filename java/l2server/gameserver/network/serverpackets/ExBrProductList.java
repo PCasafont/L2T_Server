@@ -21,9 +21,9 @@ public class ExBrProductList extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeQ(this.adena);
-		writeQ(this.herocoins);
-		writeC(this.type0list1history2fav);
-		writeD(this.itemssize);
+		writeQ(adena);
+		writeQ(herocoins);
+		writeC(type0list1history2fav);
+		writeD(itemssize);
 	}
 }

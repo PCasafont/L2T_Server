@@ -42,7 +42,7 @@ public class DimensionalToIVortex extends Quest
 	{
 		super(questId, name, descr);
 
-		for (int npcId : this.dimensionalVortexNpcs)
+		for (int npcId : dimensionalVortexNpcs)
 		{
 			addStartNpc(npcId);
 
@@ -51,23 +51,23 @@ public class DimensionalToIVortex extends Quest
 			addFirstTalkId(npcId);
 		}
 
-		for (int npcId : this.dimensionalStoneNpcs)
+		for (int npcId : dimensionalStoneNpcs)
 		{
 			addStartNpc(npcId);
 
 			addTalkId(npcId);
 		}
 
-		this.teleports.put(1, new Location(114679, 13436, -5101));
-		this.teleports.put(2, new Location(114665, 12697, -3609));
-		this.teleports.put(3, new Location(111249, 16031, -2127));
-		this.teleports.put(4, new Location(114605, 19371, -645));
-		this.teleports.put(5, new Location(117996, 16103, 843));
-		this.teleports.put(6, new Location(114743, 19707, 1947));
-		this.teleports.put(7, new Location(114552, 12354, 2957));
-		this.teleports.put(8, new Location(110963, 16147, 3967));
-		this.teleports.put(9, new Location(117356, 18462, 4977));
-		this.teleports.put(10, new Location(118250, 15858, 5897));
+		teleports.put(1, new Location(114679, 13436, -5101));
+		teleports.put(2, new Location(114665, 12697, -3609));
+		teleports.put(3, new Location(111249, 16031, -2127));
+		teleports.put(4, new Location(114605, 19371, -645));
+		teleports.put(5, new Location(117996, 16103, 843));
+		teleports.put(6, new Location(114743, 19707, 1947));
+		teleports.put(7, new Location(114552, 12354, 2957));
+		teleports.put(8, new Location(110963, 16147, 3967));
+		teleports.put(9, new Location(117356, 18462, 4977));
+		teleports.put(10, new Location(118250, 15858, 5897));
 	}
 
 	@Override
@@ -91,20 +91,20 @@ public class DimensionalToIVortex extends Quest
 
 			if (event.equalsIgnoreCase("buyGreenStone"))
 			{
-				stoneId = this.greenDimensionalStone;
+				stoneId = greenDimensionalStone;
 			}
 			else if (event.equalsIgnoreCase("buyBlueStone"))
 			{
-				stoneId = this.blueDimensionalStone;
+				stoneId = blueDimensionalStone;
 			}
 			else
 			{
-				stoneId = this.redDimensionalStone;
+				stoneId = redDimensionalStone;
 			}
 
-			if (player.destroyItemByItemId(this.qn, 57, 10000, player, true))
+			if (player.destroyItemByItemId(qn, 57, 10000, player, true))
 			{
-				player.addItem(this.qn, stoneId, 1, npc, true);
+				player.addItem(qn, stoneId, 1, npc, true);
 			}
 		}
 		else
@@ -115,24 +115,24 @@ public class DimensionalToIVortex extends Quest
 
 			if (teleportId >= 1 && teleportId <= 3)
 			{
-				stoneId = this.greenDimensionalStone;
+				stoneId = greenDimensionalStone;
 			}
 			else if (teleportId >= 4 && teleportId <= 6)
 			{
-				stoneId = this.blueDimensionalStone;
+				stoneId = blueDimensionalStone;
 			}
 			else
 			{
-				stoneId = this.redDimensionalStone;
+				stoneId = redDimensionalStone;
 			}
 
-			if (!player.destroyItemByItemId(this.qn, stoneId, 1, player, true))
+			if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
 			{
 				return "no.html";
 			}
 			else
 			{
-				player.teleToLocation(this.teleports.get(teleportId), true);
+				player.teleToLocation(teleports.get(teleportId), true);
 			}
 		}
 

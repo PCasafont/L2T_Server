@@ -33,12 +33,12 @@ public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.minLevel = readD();
-		this.maxLevel = readD();
-		this.role = readD();
-		this.name = readS();
-		this.sortBy = readD();
-		this.desc = readD() == 1;
+		minLevel = readD();
+		maxLevel = readD();
+		role = readD();
+		name = readS();
+		sortBy = readD();
+		desc = readD() == 1;
 	}
 
 	@Override
@@ -55,6 +55,6 @@ public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExPledgeWaitingListSearch(this.minLevel, this.maxLevel, this.role, this.sortBy, this.desc, this.name));
+		sendPacket(new ExPledgeWaitingListSearch(minLevel, maxLevel, role, sortBy, desc, name));
 	}
 }

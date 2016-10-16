@@ -457,7 +457,7 @@ public class PailakaSongOfIceAndFire extends Quest
 
 		public Teleport(L2Character c, int id)
 		{
-			this.cha = c;
+			cha = c;
 			instanceId = id;
 		}
 
@@ -466,7 +466,7 @@ public class PailakaSongOfIceAndFire extends Quest
 		{
 			try
 			{
-				teleportPlayer((L2PcInstance) this.cha, TELEPORT, instanceId);
+				teleportPlayer((L2PcInstance) cha, TELEPORT, instanceId);
 			}
 			catch (Exception e)
 			{

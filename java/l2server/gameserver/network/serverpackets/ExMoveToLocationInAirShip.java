@@ -29,10 +29,10 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket
 	 */
 	public ExMoveToLocationInAirShip(L2PcInstance player)
 	{
-		this.charObjId = player.getObjectId();
-		this.airShipId = player.getAirShip().getObjectId();
-		this.destination = player.getInVehiclePosition();
-		this.heading = player.getHeading();
+		charObjId = player.getObjectId();
+		airShipId = player.getAirShip().getObjectId();
+		destination = player.getInVehiclePosition();
+		heading = player.getHeading();
 	}
 
 	/* (non-Javadoc)
@@ -41,11 +41,11 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.airShipId);
-		writeD(this.destination.getX());
-		writeD(this.destination.getY());
-		writeD(this.destination.getZ());
-		writeD(this.heading);
+		writeD(charObjId);
+		writeD(airShipId);
+		writeD(destination.getX());
+		writeD(destination.getY());
+		writeD(destination.getZ());
+		writeD(heading);
 	}
 }

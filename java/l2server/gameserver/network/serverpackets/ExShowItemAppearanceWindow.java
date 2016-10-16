@@ -34,8 +34,8 @@ public class ExShowItemAppearanceWindow extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.type);
+		writeD(type);
 		writeD(0x00); // GoD ???
-		writeD(this.stoneId);
+		writeD(stoneId);
 	}
 }

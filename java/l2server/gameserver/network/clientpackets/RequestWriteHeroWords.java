@@ -36,7 +36,7 @@ public final class RequestWriteHeroWords extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.heroWords = readS();
+		heroWords = readS();
 	}
 
 	@Override
@@ -48,11 +48,11 @@ public final class RequestWriteHeroWords extends L2GameClientPacket
 			return;
 		}
 
-		if (this.heroWords == null || this.heroWords.length() > 300)
+		if (heroWords == null || heroWords.length() > 300)
 		{
 			return;
 		}
 
-		HeroesManager.getInstance().setHeroMessage(player, this.heroWords);
+		HeroesManager.getInstance().setHeroMessage(player, heroWords);
 	}
 }

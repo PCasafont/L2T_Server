@@ -103,57 +103,57 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 */
 	public SortedWareHouseWithdrawalList(L2PcInstance player, int type, WarehouseListType itemtype, byte sortorder)
 	{
-		this.activeChar = player;
-		this.whType = type;
+		activeChar = player;
+		whType = type;
 		this.itemtype = itemtype;
 		this.sortorder = sortorder;
 
-		this.playerAdena = this.activeChar.getAdena();
-		if (this.activeChar.getActiveWarehouse() == null)
+		playerAdena = activeChar.getAdena();
+		if (activeChar.getActiveWarehouse() == null)
 		{
 			// Something went wrong!
-			Log.warning("error while sending withdraw request to: " + this.activeChar.getName());
+			Log.warning("error while sending withdraw request to: " + activeChar.getName());
 			return;
 		}
 
 		switch (this.itemtype)
 		{
 			case WEAPON:
-				this.objects = createWeaponList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createWeaponList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case ARMOR:
-				this.objects = createArmorList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createArmorList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case ETCITEM:
-				this.objects = createEtcItemList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createEtcItemList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case RECIPE:
-				this.objects = createRecipeList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createRecipeList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case AMULETT:
-				this.objects = createAmulettList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createAmulettList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case SPELLBOOK:
-				this.objects = createSpellbookList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createSpellbookList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case CONSUMABLE:
-				this.objects = createConsumableList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createConsumableList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case SHOT:
-				this.objects = createShotList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createShotList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case SCROLL:
-				this.objects = createScrollList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createScrollList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case SEED:
-				this.objects = createSeedList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createSeedList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case OTHER:
-				this.objects = createOtherList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createOtherList(activeChar.getActiveWarehouse().getItems());
 				break;
 			case ALL:
 			default:
-				this.objects = createAllList(this.activeChar.getActiveWarehouse().getItems());
+				objects = createAllList(activeChar.getActiveWarehouse().getItems());
 				break;
 		}
 
@@ -163,27 +163,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 			{
 				case A2Z:
 				case Z2A:
-					Collections.sort(this.objects, new WarehouseItemNameComparator(this.sortorder));
+					Collections.sort(objects, new WarehouseItemNameComparator(this.sortorder));
 					break;
 				case GRADE:
 					if (this.itemtype == WarehouseListType.ARMOR || this.itemtype == WarehouseListType.WEAPON)
 					{
-						Collections.sort(this.objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(this.objects, new WarehouseItemGradeComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemGradeComparator(A2Z));
 					}
 					break;
 				case LEVEL:
 					if (this.itemtype == WarehouseListType.RECIPE)
 					{
-						Collections.sort(this.objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(this.objects, new WarehouseItemRecipeComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemRecipeComparator(A2Z));
 					}
 					break;
 				case WEAR:
 					if (this.itemtype == WarehouseListType.ARMOR)
 					{
-						Collections.sort(this.objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(this.objects, new WarehouseItemBodypartComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(objects, new WarehouseItemBodypartComparator(A2Z));
 					}
 					break;
 			}
@@ -730,13 +730,13 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
          * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
-		writeH(this.whType);
-		writeQ(this.playerAdena);
-		writeH(this.objects.size());
+		writeH(whType);
+		writeQ(playerAdena);
+		writeH(objects.size());
 		writeH(0x00); // GoD ???
 		writeD(0x00); // TODO: Amount of already deposited items
 
-		for (L2WarehouseItem item : this.objects)
+		for (L2WarehouseItem item : objects)
 		{
 			writeItem(item);
 

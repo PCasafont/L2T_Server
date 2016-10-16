@@ -15,6 +15,6 @@ public class ExTodoListInzone extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeH(this.unk);
+		writeH(unk);
 	}
 }

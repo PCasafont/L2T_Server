@@ -32,9 +32,9 @@ public final class L2PledgeSkillLearn
 	public L2PledgeSkillLearn(int id, int lvl, int baseLvl, int cost)
 	{
 		this.id = id;
-		this.level = lvl;
+		level = lvl;
 		this.baseLvl = baseLvl;
-		this.repCost = cost;
+		repCost = cost;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getBaseLevel()
 	{
-		return this.baseLvl;
+		return baseLvl;
 	}
 
 	/**
@@ -66,6 +66,6 @@ public final class L2PledgeSkillLearn
 	 */
 	public int getRepCost()
 	{
-		return this.repCost;
+		return repCost;
 	}
 }

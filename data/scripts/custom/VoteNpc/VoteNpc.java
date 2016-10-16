@@ -48,8 +48,8 @@ public class VoteNpc extends Quest
 	{
 		super(questId, name, descr);
 
-		addTalkId(this.voteNpcId);
-		addStartNpc(this.voteNpcId);
+		addTalkId(voteNpcId);
+		addStartNpc(voteNpcId);
 
 		//load();
 	}
@@ -213,7 +213,7 @@ public class VoteNpc extends Quest
 		{
 			if (canGetReward(player))
 			{
-				if (!this.debug)
+				if (!debug)
 				{
 					String varReuse = Long.toString(System.currentTimeMillis() + 12 * 3600000);
 					saveGlobalQuestVar(player.getAccountName(), varReuse);
@@ -221,7 +221,7 @@ public class VoteNpc extends Quest
 					//saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
 				}
 
-				player.addItem(this.qn, 4356, 70, npc, true);
+				player.addItem(qn, 4356, 70, npc, true);
 
 				Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward",
 						"VoteSystem", true);
@@ -407,7 +407,7 @@ public class VoteNpc extends Quest
 			return true;
 		}
 
-		if (this.debug)
+		if (debug)
 		{
 			return true;
 		}

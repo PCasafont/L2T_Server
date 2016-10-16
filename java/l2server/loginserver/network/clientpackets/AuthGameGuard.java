@@ -33,27 +33,27 @@ public class AuthGameGuard extends L2LoginClientPacket
 
 	public int getSessionId()
 	{
-		return this.sessionId;
+		return sessionId;
 	}
 
 	public int getData1()
 	{
-		return this.data1;
+		return data1;
 	}
 
 	public int getData2()
 	{
-		return this.data2;
+		return data2;
 	}
 
 	public int getData3()
 	{
-		return this.data3;
+		return data3;
 	}
 
 	public int getData4()
 	{
-		return this.data4;
+		return data4;
 	}
 
 	/**
@@ -63,11 +63,11 @@ public class AuthGameGuard extends L2LoginClientPacket
 	{
 		if (super.buf.remaining() >= 20)
 		{
-			this.sessionId = readD();
-			this.data1 = readD();
-			this.data2 = readD();
-			this.data3 = readD();
-			this.data4 = readD();
+			sessionId = readD();
+			data1 = readD();
+			data2 = readD();
+			data3 = readD();
+			data4 = readD();
 			return true;
 		}
 		else
@@ -81,7 +81,7 @@ public class AuthGameGuard extends L2LoginClientPacket
 	@Override
 	public void run()
 	{
-		if (this.sessionId == getClient().getSessionId())
+		if (sessionId == getClient().getSessionId())
 		{
 			getClient().setState(LoginClientState.AUTHED_GG);
 			getClient().sendPacket(new GGAuth(getClient().getSessionId()));

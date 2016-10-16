@@ -69,13 +69,13 @@ public class CustomAuctionManager
 
 		private AuctionTemplate(int auctionId, int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, int highestCurrency, long initialPrice, int initialDuration, boolean init)
 		{
-			this.id = auctionId;
+			id = auctionId;
 			this.itemId = itemId;
 			this.count = count;
 			this.repeatTime = repeatTime;
 			this.randomRepeatTime = randomRepeatTime;
-			this.initialCurrencyId = initialCurrency;
-			this.highestCurrencyId = highestCurrency;
+			initialCurrencyId = initialCurrency;
+			highestCurrencyId = highestCurrency;
 			this.initialPrice = initialPrice;
 			this.initialDuration = initialDuration;
 
@@ -87,9 +87,9 @@ public class CustomAuctionManager
 
 		private void initialize()
 		{
-			if (this.repeatTime == 0)
+			if (repeatTime == 0)
 			{
-				System.out.println("The auction " + this.id + " will not repeat.");
+				System.out.println("The auction " + id + " will not repeat.");
 				return;
 			}
 
@@ -100,13 +100,13 @@ public class CustomAuctionManager
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement =
 						con.prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
-				statement.setInt(1, this.id);
+				statement.setInt(1, id);
 				ResultSet rs = statement.executeQuery();
 				if (rs.next())
 				{
 					long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-					nextAuction = lastAuctionCreation + (this.initialDuration + this.repeatTime) * 1000L +
-							Rnd.get(this.randomRepeatTime) * 1000L - System.currentTimeMillis();
+					nextAuction = lastAuctionCreation + (initialDuration + repeatTime) * 1000L +
+							Rnd.get(randomRepeatTime) * 1000L - System.currentTimeMillis();
 					if (nextAuction < 0)
 					{
 						nextAuction = 0;
@@ -128,7 +128,7 @@ public class CustomAuctionManager
 				@Override
 				public void run()
 				{
-					startAuction(AuctionTemplate.this.getId());
+					startAuction(getId());
 
 					Connection con = null;
 					try
@@ -158,43 +158,43 @@ public class CustomAuctionManager
 
 		private int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		private int getRandomItemId()
 		{
-			return this.itemId[Rnd.get(this.itemId.length)];
+			return itemId[Rnd.get(itemId.length)];
 		}
 
 		private int getCount()
 		{
-			return this.count;
+			return count;
 		}
 
 		@SuppressWarnings("unused")
 		private int getRepeatTime()
 		{
-			return this.repeatTime;
+			return repeatTime;
 		}
 
 		private int getInitialCurrencyId()
 		{
-			return this.initialCurrencyId;
+			return initialCurrencyId;
 		}
 
 		private int getHighestCurrencyId()
 		{
-			return this.highestCurrencyId;
+			return highestCurrencyId;
 		}
 
 		private long getInitialPrice()
 		{
-			return this.initialPrice;
+			return initialPrice;
 		}
 
 		private int getInitialDuration()
 		{
-			return this.initialDuration;
+			return initialDuration;
 		}
 	}
 
@@ -213,15 +213,15 @@ public class CustomAuctionManager
 
 		private Auction(int auctionId, int itemId, AuctionTemplate info)
 		{
-			this.id = auctionId;
+			id = auctionId;
 			this.itemId = itemId;
-			this.template = info;
+			template = info;
 
-			this.currentCurrencyId = info.getInitialCurrencyId();
-			this.currentPrice = info.getInitialPrice();
+			currentCurrencyId = info.getInitialCurrencyId();
+			currentPrice = info.getInitialPrice();
 
 			//Set the end task?
-			this.endAuctionTask = ThreadPoolManager.getInstance()
+			endAuctionTask = ThreadPoolManager.getInstance()
 					.scheduleGeneral(new CurrentAuctionEnd(), info.getInitialDuration() * 1000L);
 
 			Connection con = null;
@@ -230,12 +230,12 @@ public class CustomAuctionManager
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, this.id);
+				statement.setInt(1, id);
 				statement.setInt(2, this.itemId);
-				statement.setInt(3, this.template.getId());
-				statement.setInt(4, this.currentCurrencyId);
-				statement.setLong(5, this.currentPrice);
-				statement.setInt(6, this.currentAuctionOwner);
+				statement.setInt(3, template.getId());
+				statement.setInt(4, currentCurrencyId);
+				statement.setLong(5, currentPrice);
+				statement.setInt(6, currentAuctionOwner);
 				statement.setLong(7, (System.currentTimeMillis() + getRemainingTime()) / 1000L);
 				statement.execute();
 				statement.close();
@@ -252,42 +252,42 @@ public class CustomAuctionManager
 
 		private Auction(int auctionId, int itemId, AuctionTemplate info, int currencyId, long currentBid, int ownerId, long remainingTime)
 		{
-			this.id = auctionId;
+			id = auctionId;
 			this.itemId = itemId;
-			this.template = info;
+			template = info;
 
-			this.currentCurrencyId = currencyId;
-			this.currentPrice = currentBid;
-			this.currentAuctionOwner = ownerId;
+			currentCurrencyId = currencyId;
+			currentPrice = currentBid;
+			currentAuctionOwner = ownerId;
 
 			//Set the end task?
-			this.endAuctionTask = ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), remainingTime);
+			endAuctionTask = ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), remainingTime);
 		}
 
 		private int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		private int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		private AuctionTemplate getTemplate()
 		{
-			return this.template;
+			return template;
 		}
 
 		@SuppressWarnings("unused")
 		private ScheduledFuture<?> getEndTask()
 		{
-			return this.endAuctionTask;
+			return endAuctionTask;
 		}
 
 		private String getRemainingTimeString()
 		{
-			Long remainingTime = this.endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
+			Long remainingTime = endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
 
 			int hours = (int) (remainingTime / 3600);
 			int minutes = (int) (remainingTime % 3600 / 60);
@@ -298,48 +298,48 @@ public class CustomAuctionManager
 
 		private Long getRemainingTime()
 		{
-			return this.endAuctionTask.getDelay(TimeUnit.MILLISECONDS);
+			return endAuctionTask.getDelay(TimeUnit.MILLISECONDS);
 		}
 
 		private String getCurrentOwnerName()
 		{
-			if (this.currentAuctionOwner == 0)
+			if (currentAuctionOwner == 0)
 			{
 				return "None";
 			}
 
-			return CharNameTable.getInstance().getNameById(this.currentAuctionOwner);
+			return CharNameTable.getInstance().getNameById(currentAuctionOwner);
 		}
 
 		private int getCurrentOwnerId()
 		{
-			return this.currentAuctionOwner;
+			return currentAuctionOwner;
 		}
 
 		private int getCurrentCurrency()
 		{
-			return this.currentCurrencyId;
+			return currentCurrencyId;
 		}
 
 		private long getCurrentPrice()
 		{
-			return this.currentPrice;
+			return currentPrice;
 		}
 
 		public void setCurrentCurrency(int itemId)
 		{
-			this.currentCurrencyId = itemId;
+			currentCurrencyId = itemId;
 		}
 
 		private void setOwner(int playerId, long playerBid)
 		{
-			this.currentAuctionOwner = playerId;
-			this.currentPrice = playerBid;
+			currentAuctionOwner = playerId;
+			currentPrice = playerBid;
 
 			if (getRemainingTime() < ADDED_DURATION)
 			{
-				this.endAuctionTask.cancel(true);
-				this.endAuctionTask =
+				endAuctionTask.cancel(true);
+				endAuctionTask =
 						ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
 			}
 
@@ -349,11 +349,11 @@ public class CustomAuctionManager
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
-				statement.setInt(1, this.currentCurrencyId);
-				statement.setLong(2, this.currentPrice);
-				statement.setInt(3, this.currentAuctionOwner);
+				statement.setInt(1, currentCurrencyId);
+				statement.setLong(2, currentPrice);
+				statement.setInt(3, currentAuctionOwner);
 				statement.setLong(4, (System.currentTimeMillis() + getRemainingTime()) / 1000L);
-				statement.setInt(5, this.id);
+				statement.setInt(5, id);
 				statement.execute();
 				statement.close();
 			}
@@ -369,7 +369,7 @@ public class CustomAuctionManager
 
 		private void endAuction()
 		{
-			auctions.remove(this.id);
+			auctions.remove(id);
 
 			giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate().getCount(),
 					"Congrats! You've won this bid!");
@@ -379,7 +379,7 @@ public class CustomAuctionManager
 			{
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("DELETE FROM `custom_auctions` WHERE id = ?");
-				statement.setInt(1, this.id);
+				statement.setInt(1, id);
 				statement.execute();
 				statement.close();
 			}
@@ -418,11 +418,11 @@ public class CustomAuctionManager
 	{
 		int auctionId = IdFactory.getInstance().getNextId();
 
-		AuctionTemplate auctionTemplate = this.auctionTemplates.get(templateId);
+		AuctionTemplate auctionTemplate = auctionTemplates.get(templateId);
 
 		int itemId = auctionTemplate.getRandomItemId();
 
-		this.auctions.put(auctionId, new Auction(auctionId, itemId, auctionTemplate));
+		auctions.put(auctionId, new Auction(auctionId, itemId, auctionTemplate));
 
 		L2NpcInstance auctionManager = null;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
@@ -443,12 +443,12 @@ public class CustomAuctionManager
 
 	public final Auction getAuctionById(final int auctionId)
 	{
-		if (!this.auctions.containsKey(auctionId))
+		if (!auctions.containsKey(auctionId))
 		{
 			return null;
 		}
 
-		return this.auctions.get(auctionId);
+		return auctions.get(auctionId);
 	}
 
 	/**
@@ -462,7 +462,7 @@ public class CustomAuctionManager
 		StringBuilder sb = new StringBuilder();
 
 		int count = 0;
-		int size = this.auctions.size();
+		int size = auctions.size();
 
 		if (size == 0)
 		{
@@ -473,7 +473,7 @@ public class CustomAuctionManager
 
 		sb.append("<table width=700>");
 
-		for (Entry<Integer, Auction> currentAuction : this.auctions.entrySet())
+		for (Entry<Integer, Auction> currentAuction : auctions.entrySet())
 		{
 			Auction currentAuctionInfo = currentAuction.getValue();
 
@@ -656,13 +656,13 @@ public class CustomAuctionManager
 						AuctionTemplate itemAuction =
 								new AuctionTemplate(auctionId, auctionItems, count, repeatTime, randomRepeatTime,
 										initialCurrencyId, highestCurrencyId, initialPrice, initialDuration, !reload);
-						this.auctionTemplates.put(auctionId, itemAuction);
+						auctionTemplates.put(auctionId, itemAuction);
 					}
 				}
 			}
 		}
 
-		Log.info("ItemAuction: Loaded: " + this.auctionTemplates.size() + " auctions!");
+		Log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
 
 		if (!reload)
 		{
@@ -683,7 +683,7 @@ public class CustomAuctionManager
 						remainingTime = ADDED_DURATION;
 					}
 
-					AuctionTemplate template = this.auctionTemplates.get(rs.getInt("templateId"));
+					AuctionTemplate template = auctionTemplates.get(rs.getInt("templateId"));
 					if (template == null)
 					{
 						Log.warning("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
@@ -691,7 +691,7 @@ public class CustomAuctionManager
 					}
 					Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"),
 							rs.getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
-					this.auctions.put(auctionId, auction);
+					auctions.put(auctionId, auction);
 				}
 				statement.close();
 			}
@@ -731,7 +731,7 @@ public class CustomAuctionManager
 			return;
 		}
 
-		Auction bid = this.auctions.get(bidId);
+		Auction bid = auctions.get(bidId);
 		if (bid == null)
 		{
 			return;

@@ -48,6 +48,6 @@ public class ConditionPlayerRace extends Condition
 			return false;
 		}
 
-		return Util.contains(this.races, env.player.getActingPlayer().getRace());
+		return Util.contains(races, env.player.getActingPlayer().getRace());
 	}
 }

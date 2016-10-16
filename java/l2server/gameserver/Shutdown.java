@@ -117,14 +117,14 @@ public class Shutdown extends Thread
 			}
 		}
 
-		if (this.task != null)
+		if (task != null)
 		{
-			this.task.abort();
+			task.abort();
 		}
 
 		//		 the main instance should only run for shutdown hook, so we start a new instance
-		this.task = new ShutdownTask(seconds, restart);
-		this.task.start();
+		task = new ShutdownTask(seconds, restart);
+		task.start();
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class Shutdown extends Thread
 	{
 		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " +
 				MODE_TEXT[shutdownMode] + " has been stopped!");
-		if (this.task != null)
+		if (task != null)
 		{
-			this.task.abort();
+			task.abort();
 			Announcements an = Announcements.getInstance();
 			an.announceToAll("Server aborts " + MODE_TEXT[shutdownMode] + " and continues normal operation!");
 		}
@@ -185,7 +185,7 @@ public class Shutdown extends Thread
 	@Override
 	public void run()
 	{
-		this.shuttingDown = true;
+		shuttingDown = true;
 		try
 		{
 			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
@@ -408,7 +408,7 @@ public class Shutdown extends Thread
 
 	public boolean isShuttingDown()
 	{
-		return this.shuttingDown;
+		return shuttingDown;
 	}
 
 	private class ShutdownTask extends Thread
@@ -427,7 +427,7 @@ public class Shutdown extends Thread
 			{
 				seconds = 0;
 			}
-			this.secondsShut = seconds;
+			secondsShut = seconds;
 			if (restart)
 			{
 				shutdownMode = GM_RESTART;
@@ -472,9 +472,9 @@ public class Shutdown extends Thread
 		{
 			try
 			{
-				while (this.secondsShut > 0)
+				while (secondsShut > 0)
 				{
-					switch (this.secondsShut)
+					switch (secondsShut)
 					{
 						case 540:
 							sendServerQuit(540, shutdownMode == GM_RESTART);
@@ -526,7 +526,7 @@ public class Shutdown extends Thread
 							break;
 					}
 
-					this.secondsShut--;
+					secondsShut--;
 
 					int delay = 1000; //milliseconds
 					Thread.sleep(delay);

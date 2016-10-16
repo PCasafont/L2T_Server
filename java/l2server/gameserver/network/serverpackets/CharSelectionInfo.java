@@ -56,27 +56,27 @@ public class CharSelectionInfo extends L2GameServerPacket
 	{
 		this.sessionId = sessionId;
 		this.loginName = loginName;
-		this.characterPackages = loadCharacterSelectInfo(this.loginName);
-		this.activeId = -1;
+		characterPackages = loadCharacterSelectInfo(this.loginName);
+		activeId = -1;
 	}
 
 	public CharSelectionInfo(String loginName, int sessionId, int activeId)
 	{
 		this.sessionId = sessionId;
 		this.loginName = loginName;
-		this.characterPackages = loadCharacterSelectInfo(this.loginName);
+		characterPackages = loadCharacterSelectInfo(this.loginName);
 		this.activeId = activeId;
 	}
 
 	public CharSelectInfoPackage[] getCharInfo()
 	{
-		return this.characterPackages;
+		return characterPackages;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		int size = this.characterPackages.length;
+		int size = characterPackages.length;
 		writeD(size);
 
 		// Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
@@ -89,26 +89,26 @@ public class CharSelectionInfo extends L2GameServerPacket
 
 		long lastAccess = 0L;
 
-		if (this.activeId == -1)
+		if (activeId == -1)
 		{
 			for (int i = 0; i < size; i++)
 			{
-				if (lastAccess < this.characterPackages[i].getLastAccess())
+				if (lastAccess < characterPackages[i].getLastAccess())
 				{
-					lastAccess = this.characterPackages[i].getLastAccess();
-					this.activeId = i;
+					lastAccess = characterPackages[i].getLastAccess();
+					activeId = i;
 				}
 			}
 		}
 
 		for (int i = 0; i < size; i++)
 		{
-			CharSelectInfoPackage charInfoPackage = this.characterPackages[i];
+			CharSelectInfoPackage charInfoPackage = characterPackages[i];
 
 			writeS(charInfoPackage.getName());
 			writeD(charInfoPackage.getCharId());
-			writeS(this.loginName);
-			writeD(this.sessionId);
+			writeS(loginName);
+			writeD(sessionId);
 			writeD(charInfoPackage.getClanId());
 			writeD(0x00); // ??
 
@@ -211,7 +211,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			// delete .. if != 0
 			// then char is inactive
 			writeD(charInfoPackage.getCurrentClass());
-			if (i == this.activeId)
+			if (i == activeId)
 			{
 				writeD(0x01);
 			}

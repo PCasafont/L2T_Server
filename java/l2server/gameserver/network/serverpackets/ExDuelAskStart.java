@@ -28,7 +28,7 @@ public class ExDuelAskStart extends L2GameServerPacket
 
 	public ExDuelAskStart(String requestor, int partyDuel)
 	{
-		this.requestorName = requestor;
+		requestorName = requestor;
 		this.partyDuel = partyDuel;
 	}
 
@@ -37,7 +37,7 @@ public class ExDuelAskStart extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.requestorName);
-		writeD(this.partyDuel);
+		writeS(requestorName);
+		writeD(partyDuel);
 	}
 }

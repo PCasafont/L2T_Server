@@ -37,8 +37,8 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.targetItemObjId = readD();
-		this.refinerItemObjId = readD();
+		targetItemObjId = readD();
+		refinerItemObjId = readD();
 	}
 
 	@Override
@@ -50,13 +50,13 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 			return;
 		}
 
-		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(this.targetItemObjId);
+		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
 
-		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(this.refinerItemObjId);
+		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;
@@ -75,6 +75,6 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 		final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
 
 		activeChar.sendPacket(
-				new ExPutIntensiveResultForVariationMake(this.refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
+				new ExPutIntensiveResultForVariationMake(refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
 	}
 }

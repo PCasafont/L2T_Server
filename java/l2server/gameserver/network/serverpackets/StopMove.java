@@ -53,10 +53,10 @@ public final class StopMove extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(objectId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 	}
 }

@@ -98,23 +98,23 @@ public class L2RecipeList
 	 */
 	public L2RecipeList(StatsSet set, boolean haveRare)
 	{
-		this.recipes = new L2RecipeInstance[0];
-		this.statUse = new L2RecipeStatInstance[0];
-		this.altStatChange = new L2RecipeStatInstance[0];
-		this.id = set.getInteger("id");
-		this.level = set.getInteger("craftLevel");
-		this.recipeId = set.getInteger("recipeId");
-		this.recipeName = set.getString("recipeName");
-		this.successRate = set.getInteger("successRate");
-		this.itemId = set.getInteger("itemId");
-		this.count = set.getInteger("count");
+		recipes = new L2RecipeInstance[0];
+		statUse = new L2RecipeStatInstance[0];
+		altStatChange = new L2RecipeStatInstance[0];
+		id = set.getInteger("id");
+		level = set.getInteger("craftLevel");
+		recipeId = set.getInteger("recipeId");
+		recipeName = set.getString("recipeName");
+		successRate = set.getInteger("successRate");
+		itemId = set.getInteger("itemId");
+		count = set.getInteger("count");
 		if (haveRare)
 		{
-			this.rareItemId = set.getInteger("rareItemId");
-			this.rareCount = set.getInteger("rareCount");
-			this.rarity = set.getInteger("rarity");
+			rareItemId = set.getInteger("rareItemId");
+			rareCount = set.getInteger("rareCount");
+			rarity = set.getInteger("rarity");
 		}
-		this.isDwarvenRecipe = set.getBool("isDwarvenRecipe");
+		isDwarvenRecipe = set.getBool("isDwarvenRecipe");
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class L2RecipeList
 	 */
 	public void addRecipe(L2RecipeInstance recipe)
 	{
-		int len = this.recipes.length;
+		int len = recipes.length;
 		L2RecipeInstance[] tmp = new L2RecipeInstance[len + 1];
-		System.arraycopy(this.recipes, 0, tmp, 0, len);
+		System.arraycopy(recipes, 0, tmp, 0, len);
 		tmp[len] = recipe;
-		this.recipes = tmp;
+		recipes = tmp;
 	}
 
 	/**
@@ -146,11 +146,11 @@ public class L2RecipeList
 	 */
 	public void addAltStatChange(L2RecipeStatInstance statChange)
 	{
-		int len = this.altStatChange.length;
+		int len = altStatChange.length;
 		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len + 1];
-		System.arraycopy(this.altStatChange, 0, tmp, 0, len);
+		System.arraycopy(altStatChange, 0, tmp, 0, len);
 		tmp[len] = statChange;
-		this.altStatChange = tmp;
+		altStatChange = tmp;
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class L2RecipeList
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class L2RecipeList
 	 */
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class L2RecipeList
 	 */
 	public int getRecipeId()
 	{
-		return this.recipeId;
+		return recipeId;
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class L2RecipeList
 	 */
 	public String getRecipeName()
 	{
-		return this.recipeName;
+		return recipeName;
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class L2RecipeList
 	 */
 	public int getSuccessRate()
 	{
-		return this.successRate;
+		return successRate;
 	}
 
 	/**
@@ -198,10 +198,10 @@ public class L2RecipeList
 	 */
 	public boolean isConsumable()
 	{
-		return this.itemId >= 1463 && this.itemId <= 1467 // Soulshots
-				|| this.itemId >= 2509 && this.itemId <= 2514 // Spiritshots
-				|| this.itemId >= 3947 && this.itemId <= 3952 // Blessed Spiritshots
-				|| this.itemId >= 1341 && this.itemId <= 1345;
+		return itemId >= 1463 && itemId <= 1467 // Soulshots
+				|| itemId >= 2509 && itemId <= 2514 // Spiritshots
+				|| itemId >= 3947 && itemId <= 3952 // Blessed Spiritshots
+				|| itemId >= 1341 && itemId <= 1345;
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class L2RecipeList
 	 */
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class L2RecipeList
 	 */
 	public int getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class L2RecipeList
 	 */
 	public int getRareItemId()
 	{
-		return this.rareItemId;
+		return rareItemId;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class L2RecipeList
 	 */
 	public int getRareCount()
 	{
-		return this.rareCount;
+		return rareCount;
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class L2RecipeList
 	 */
 	public int getRarity()
 	{
-		return this.rarity;
+		return rarity;
 	}
 
 	/**
@@ -249,7 +249,7 @@ public class L2RecipeList
 	 */
 	public boolean isDwarvenRecipe()
 	{
-		return this.isDwarvenRecipe;
+		return isDwarvenRecipe;
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class L2RecipeList
 	 */
 	public L2RecipeInstance[] getRecipes()
 	{
-		return this.recipes;
+		return recipes;
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class L2RecipeList
 	 */
 	public L2RecipeStatInstance[] getStatUse()
 	{
-		return this.statUse;
+		return statUse;
 	}
 
 	/**
@@ -273,6 +273,6 @@ public class L2RecipeList
 	 */
 	public L2RecipeStatInstance[] getAltStatChange()
 	{
-		return this.altStatChange;
+		return altStatChange;
 	}
 }

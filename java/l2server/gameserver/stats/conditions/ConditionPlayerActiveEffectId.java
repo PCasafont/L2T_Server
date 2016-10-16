@@ -35,7 +35,7 @@ public class ConditionPlayerActiveEffectId extends Condition
 	public ConditionPlayerActiveEffectId(int effectId)
 	{
 		this.effectId = effectId;
-		this.effectLvl = -1;
+		effectLvl = -1;
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class ConditionPlayerActiveEffectId extends Condition
 	public ConditionPlayerActiveEffectId(int effectId, int effectLevel)
 	{
 		this.effectId = effectId;
-		this.effectLvl = effectLevel;
+		effectLvl = effectLevel;
 	}
 
 	/* (non-Javadoc)
@@ -56,8 +56,8 @@ public class ConditionPlayerActiveEffectId extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		final L2Abnormal e = env.player.getFirstEffect(this.effectId);
-		return e != null && (this.effectLvl == -1 || this.effectLvl <= e.getSkill().getLevel());
+		final L2Abnormal e = env.player.getFirstEffect(effectId);
+		return e != null && (effectLvl == -1 || effectLvl <= e.getSkill().getLevel());
 
 	}
 }

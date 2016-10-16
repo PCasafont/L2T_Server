@@ -38,12 +38,12 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 
 	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.page = page;
 		this.minlvl = minlvl;
 		this.maxlvl = maxlvl;
 		this.mode = mode;
-		this.members = new ArrayList<>();
+		members = new ArrayList<>();
 		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
 		{
 			if (cha == null)
@@ -62,7 +62,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 				continue;
 			}
 
-			this.members.add(cha);
+			members.add(cha);
 		}
 	}
 
@@ -76,9 +76,9 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 			return;
 		}*/
 
-		writeD(this.members.size());
-		writeD(this.members.size());
-		for (L2PcInstance member : this.members)
+		writeD(members.size());
+		writeD(members.size());
+		for (L2PcInstance member : members)
 		{
 			writeS(member.getName());
 			writeD(member.getClassId());

@@ -47,7 +47,7 @@ public class ObjectPoly
 	// Property - Public
 	public final L2Object getActiveObject()
 	{
-		return this.activeObject;
+		return activeObject;
 	}
 
 	public final boolean isMorphed()
@@ -57,21 +57,21 @@ public class ObjectPoly
 
 	public final int getPolyId()
 	{
-		return this.polyId;
+		return polyId;
 	}
 
 	public final void setPolyId(int value)
 	{
-		this.polyId = value;
+		polyId = value;
 	}
 
 	public final String getPolyType()
 	{
-		return this.polyType;
+		return polyType;
 	}
 
 	public final void setPolyType(String value)
 	{
-		this.polyType = value;
+		polyType = value;
 	}
 }

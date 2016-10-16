@@ -34,9 +34,9 @@ public class RequestChangeAttributeItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.attributeOID = readD();
-		this.itemOID = readD();
-		this.newAttributeID = readD();
+		attributeOID = readD();
+		itemOID = readD();
+		newAttributeID = readD();
 	}
 
 	@Override
@@ -47,8 +47,8 @@ public class RequestChangeAttributeItem extends L2GameClientPacket
 		{
 			return;
 		}
-		Log.info(this.itemOID + "");
-		L2ItemInstance item = player.getInventory().getItemByObjectId(this.itemOID);
+		Log.info(itemOID + "");
+		L2ItemInstance item = player.getInventory().getItemByObjectId(itemOID);
 
 		if (player.getPrivateStoreType() != 0)
 		{
@@ -65,18 +65,18 @@ public class RequestChangeAttributeItem extends L2GameClientPacket
 		if (!item.isWeapon())
 		{
 			player.setActiveEnchantAttrItem(null);
-			player.sendPacket(new ExChangeAttributeItemList(player, this.attributeOID));
+			player.sendPacket(new ExChangeAttributeItemList(player, attributeOID));
 			return;
 		}
 
-		if (this.newAttributeID == -1)
+		if (newAttributeID == -1)
 		{
 			player.setActiveEnchantAttrItem(null);
-			player.sendPacket(new ExChangeAttributeItemList(player, this.attributeOID));
+			player.sendPacket(new ExChangeAttributeItemList(player, attributeOID));
 			return;
 		}
-		L2ItemInstance attribute = player.getInventory().getItemByObjectId(this.attributeOID);
-		player.getInventory().destroyItem("ChangingAttribute", this.attributeOID, 1, player, null);
+		L2ItemInstance attribute = player.getInventory().getItemByObjectId(attributeOID);
+		player.getInventory().destroyItem("ChangingAttribute", attributeOID, 1, player, null);
 
 		if (Rnd.get(100) < Config.CHANGE_CHANCE_ELEMENT)
 		{
@@ -84,9 +84,9 @@ public class RequestChangeAttributeItem extends L2GameClientPacket
 					.getSystemMessage(SystemMessageId.S1S_S2_ATTRIBUTE_HAS_SUCCESSFULLY_CHANGED_TO_S3_ATTRIBUTE);
 			sm.addItemName(item);
 			sm.addElemental(item.getAttackElementType());
-			sm.addElemental(this.newAttributeID);
+			sm.addElemental(newAttributeID);
 
-			item.changeAttribute((byte) this.newAttributeID, item.getAttackElementPower());
+			item.changeAttribute((byte) newAttributeID, item.getAttackElementPower());
 			if (item.isEquipped())
 			{
 				item.updateElementAttrBonus(player);
@@ -106,7 +106,7 @@ public class RequestChangeAttributeItem extends L2GameClientPacket
 		player.sendPacket(new ExStorageMaxCount(player));
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(item);
-		if (player.getInventory().getItemByObjectId(this.attributeOID) == null)
+		if (player.getInventory().getItemByObjectId(attributeOID) == null)
 		{
 			iu.addRemovedItem(attribute);
 		}

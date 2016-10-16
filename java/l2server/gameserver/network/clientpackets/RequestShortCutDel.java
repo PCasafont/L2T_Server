@@ -32,8 +32,8 @@ public final class RequestShortCutDel extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int id = readD();
-		this.slot = id % 12;
-		this.page = id / 12;
+		slot = id % 12;
+		page = id / 12;
 	}
 
 	@Override
@@ -45,12 +45,12 @@ public final class RequestShortCutDel extends L2GameClientPacket
 			return;
 		}
 
-		if (this.page > 10 || this.page < 0)
+		if (page > 10 || page < 0)
 		{
 			return;
 		}
 
-		activeChar.deleteShortCut(this.slot, this.page);
+		activeChar.deleteShortCut(slot, page);
 		// client needs no confirmation. this packet is just to inform the server
 	}
 

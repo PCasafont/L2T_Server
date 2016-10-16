@@ -43,8 +43,8 @@ public class TaskJython extends Task
 	@Override
 	public void onTimeElapsed(ExecutedTask task)
 	{
-		this.python.cleanup();
-		this.python.exec("import sys");
-		this.python.execfile(Config.DATA_FOLDER + "scripts/cron/" + task.getParams()[2]);
+		python.cleanup();
+		python.exec("import sys");
+		python.execfile(Config.DATA_FOLDER + "scripts/cron/" + task.getParams()[2]);
 	}
 }

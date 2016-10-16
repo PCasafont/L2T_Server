@@ -38,9 +38,9 @@ public class Q10330_ToTheYeSagiraRuins extends Quest
 	public Q10330_ToTheYeSagiraRuins(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.atran);
-		addTalkId(this.atran);
-		addTalkId(this.lakcis);
+		addStartNpc(atran);
+		addTalkId(atran);
+		addTalkId(lakcis);
 	}
 
 	@Override
@@ -54,13 +54,13 @@ public class Q10330_ToTheYeSagiraRuins extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.atran && event.equalsIgnoreCase("33448-03.htm"))
+		if (npc.getNpcId() == atran && event.equalsIgnoreCase("33448-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == this.lakcis && event.equalsIgnoreCase("32977-03.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == lakcis && event.equalsIgnoreCase("32977-03.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(22, 1);
@@ -87,7 +87,7 @@ public class Q10330_ToTheYeSagiraRuins extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.atran)
+		if (npc.getNpcId() == atran)
 		{
 			switch (st.getState())
 			{
@@ -109,7 +109,7 @@ public class Q10330_ToTheYeSagiraRuins extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.lakcis && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == lakcis && st.getInt("cond") == 1)
 		{
 			htmltext = "32977-01.htm";
 		}

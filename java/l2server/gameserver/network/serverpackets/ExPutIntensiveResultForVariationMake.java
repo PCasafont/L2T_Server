@@ -30,10 +30,10 @@ public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket
 	public ExPutIntensiveResultForVariationMake(int refinerItemObjId, int lifeStoneId, int gemstoneItemId, int gemstoneCount)
 	{
 		this.refinerItemObjId = refinerItemObjId;
-		this.lifestoneItemId = lifeStoneId;
+		lifestoneItemId = lifeStoneId;
 		this.gemstoneItemId = gemstoneItemId;
 		this.gemstoneCount = gemstoneCount;
-		this.unk2 = 1;
+		unk2 = 1;
 	}
 
 	/**
@@ -41,10 +41,10 @@ public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.refinerItemObjId);
-		writeD(this.lifestoneItemId);
-		writeD(this.gemstoneItemId);
-		writeQ(this.gemstoneCount);
-		writeD(this.unk2);
+		writeD(refinerItemObjId);
+		writeD(lifestoneItemId);
+		writeD(gemstoneItemId);
+		writeQ(gemstoneCount);
+		writeD(unk2);
 	}
 }

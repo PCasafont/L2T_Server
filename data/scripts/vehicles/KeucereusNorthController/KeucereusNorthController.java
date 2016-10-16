@@ -60,23 +60,23 @@ public class KeucereusNorthController extends AirShipController
 		addFirstTalkId(CONTROLLER_ID);
 		addTalkId(CONTROLLER_ID);
 
-		this.dockZone = DOCK_ZONE;
+		dockZone = DOCK_ZONE;
 		addEnterZoneId(DOCK_ZONE);
 		addExitZoneId(DOCK_ZONE);
 
-		this.shipSpawnX = -184145;
-		this.shipSpawnY = 242373;
-		this.shipSpawnZ = 3000;
+		shipSpawnX = -184145;
+		shipSpawnY = 242373;
+		shipSpawnZ = 3000;
 
-		this.oustLoc = new Location(-183900, 239384, 1320);
+		oustLoc = new Location(-183900, 239384, 1320);
 
-		this.locationId = LOCATION;
-		this.arrivalPath = ARRIVAL;
-		this.departPath = DEPART;
-		this.teleportsTable = TELEPORTS;
-		this.fuelTable = FUEL;
+		locationId = LOCATION;
+		arrivalPath = ARRIVAL;
+		departPath = DEPART;
+		teleportsTable = TELEPORTS;
+		fuelTable = FUEL;
 
-		this.movieId = 1001;
+		movieId = 1001;
 
 		validityCheck();
 	}

@@ -39,24 +39,24 @@ public final class CreatureSay extends L2GameServerPacket
 	public CreatureSay(int objectId, int messageType, String charName, String text)
 	{
 		this.objectId = objectId;
-		this.textType = messageType;
+		textType = messageType;
 		this.charName = charName;
 		this.text = text;
 	}
 
 	public CreatureSay(L2Character activeChar, int messageType, String charName, String text)
 	{
-		this.objectId = activeChar.getObjectId();
-		this.textType = messageType;
+		objectId = activeChar.getObjectId();
+		textType = messageType;
 		this.charName = charName;
 		this.text = text;
-		this.level = (byte) activeChar.getLevel();
+		level = (byte) activeChar.getLevel();
 	}
 
 	public CreatureSay(int objectId, int messageType, int charId, int msgId)
 	{
 		this.objectId = objectId;
-		this.textType = messageType;
+		textType = messageType;
 		this.charId = charId;
 		this.msgId = msgId;
 	}
@@ -64,23 +64,23 @@ public final class CreatureSay extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.textType);
-		if (this.charName != null)
+		writeD(objectId);
+		writeD(textType);
+		if (charName != null)
 		{
-			writeS(this.charName);
+			writeS(charName);
 		}
 		else
 		{
-			writeD(this.charId);
+			writeD(charId);
 		}
-		writeD(this.msgId);
-		if (this.text != null)
+		writeD(msgId);
+		if (text != null)
 		{
-			writeS(this.text);
+			writeS(text);
 		}
 		writeC(0x00);
-		writeC(this.level);
+		writeC(level);
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public final class CreatureSay extends L2GameServerPacket
 		L2PcInstance pci = getClient().getActiveChar();
 		if (pci != null)
 		{
-			pci.broadcastSnoop(this.textType, this.charName, this.text);
+			pci.broadcastSnoop(textType, charName, text);
 		}
 	}
 }

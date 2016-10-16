@@ -42,32 +42,32 @@ public class EnsoulEffect
 
 	public void addFunc(Func func)
 	{
-		this.funcs.add(func);
+		funcs.add(func);
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public int getGroup()
 	{
-		return this.group;
+		return group;
 	}
 
 	public int getStage()
 	{
-		return this.stage;
+		return stage;
 	}
 
 	public void applyBonus(L2PcInstance player)
 	{
-		for (Func f : this.funcs)
+		for (Func f : funcs)
 		{
 			player.addStatFunc(f);
 		}

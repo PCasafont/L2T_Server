@@ -45,7 +45,7 @@ public class RankingKillInfo
 		}
 
 		//Killed
-		KillInfo map = this.specificKillInfo.get(killedPlayer.getName());
+		KillInfo map = specificKillInfo.get(killedPlayer.getName());
 		if (map != null)
 		{
 			if (map.getKillingSpree() >= 3)
@@ -56,7 +56,7 @@ public class RankingKillInfo
 		}
 
 		//Killer
-		map = this.specificKillInfo.get(killerPlayer.getName());
+		map = specificKillInfo.get(killerPlayer.getName());
 		if (map != null) // The player have specific info
 		{
 			map.increaseKills(killerPlayer, killedPlayer.getName());
@@ -65,7 +65,7 @@ public class RankingKillInfo
 		{
 			KillInfo info = new KillInfo();
 			info.increaseKills(killerPlayer, killedPlayer.getName());
-			this.specificKillInfo.put(killerPlayer.getName(), info);
+			specificKillInfo.put(killerPlayer.getName(), info);
 		}
 
 		//Send the info
@@ -227,15 +227,15 @@ public class RankingKillInfo
 
 		private KillInfo()
 		{
-			this.killerList = new HashMap<>();
+			killerList = new HashMap<>();
 		}
 
 		private int getKillInfo(String name)
 		{
 			int i = 0;
-			if (this.killerList.containsKey(name))
+			if (killerList.containsKey(name))
 			{
-				return this.killerList.get(name);
+				return killerList.get(name);
 			}
 			return i;
 		}
@@ -247,20 +247,20 @@ public class RankingKillInfo
 				return;
 			}
 
-			if (this.killerList.containsKey(killedName))
+			if (killerList.containsKey(killedName))
 			{
-				this.killerList.put(killedName, this.killerList.get(killedName) + 1);
+				killerList.put(killedName, killerList.get(killedName) + 1);
 			}
 			else
 			{
-				this.killerList.put(killedName, 1);
+				killerList.put(killedName, 1);
 			}
 
-			this.killingSpree++;
+			killingSpree++;
 
 			String message = null;
 			int skillLevel = 0;
-			switch (this.killingSpree)
+			switch (killingSpree)
 			{
 				case 3:
 					message = " is on a Killing Spree!";
@@ -302,12 +302,12 @@ public class RankingKillInfo
 
 		private int getKillingSpree()
 		{
-			return this.killingSpree;
+			return killingSpree;
 		}
 
 		private void notifyDead()
 		{
-			this.killingSpree = 0;
+			killingSpree = 0;
 		}
 	}
 
@@ -333,9 +333,9 @@ public class RankingKillInfo
 
 	private int getSpecificKillsInfo(String killerName, String killedName)
 	{
-		if (this.specificKillInfo.get(killerName) != null)
+		if (specificKillInfo.get(killerName) != null)
 		{
-			return this.specificKillInfo.get(killerName).getKillInfo(killedName);
+			return specificKillInfo.get(killerName).getKillInfo(killedName);
 		}
 		return 0;
 	}

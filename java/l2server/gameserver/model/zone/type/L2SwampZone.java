@@ -40,9 +40,9 @@ public class L2SwampZone extends L2ZoneType
 
 		// Setup default speed reduce (in %)
 		_move_bonus = -50;
-		this.castleId = 0;
-		this.eventId = 0;
-		this.castle = null;
+		castleId = 0;
+		eventId = 0;
+		castle = null;
 	}
 
 	@Override
@@ -54,10 +54,10 @@ public class L2SwampZone extends L2ZoneType
 				_move_bonus = Integer.parseInt(value);
 				break;
 			case "castleId":
-				this.castleId = Integer.parseInt(value);
+				castleId = Integer.parseInt(value);
 				break;
 			case "eventId":
-				this.eventId = Integer.parseInt(value);
+				eventId = Integer.parseInt(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -67,12 +67,12 @@ public class L2SwampZone extends L2ZoneType
 
 	private Castle getCastle()
 	{
-		if (this.castleId > 0 && this.castle == null)
+		if (castleId > 0 && castle == null)
 		{
-			this.castle = CastleManager.getInstance().getCastleById(this.castleId);
+			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
 
-		return this.castle;
+		return castle;
 	}
 
 	@Override
@@ -90,9 +90,9 @@ public class L2SwampZone extends L2ZoneType
 			if (player != null)
 			{
 				//Send it to all, even defenders
-				if (this.eventId > 0)
+				if (eventId > 0)
 				{
-					player.sendPacket(new EventTrigger(this.eventId, isTrapActive));
+					player.sendPacket(new EventTrigger(eventId, isTrapActive));
 				}
 
 				if (!isTrapActive)

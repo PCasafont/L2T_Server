@@ -30,22 +30,22 @@ public class ExStopMoveInShuttle extends L2GameServerPacket
 
 	public ExStopMoveInShuttle(L2PcInstance player, int boatId)
 	{
-		this.charObjId = player.getObjectId();
-		this.shuttleId = boatId;
-		this.pos = player.getInVehiclePosition();
-		this.heading = player.getHeading();
+		charObjId = player.getObjectId();
+		shuttleId = boatId;
+		pos = player.getInVehiclePosition();
+		heading = player.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.shuttleId);
-		if (this.pos != null)
+		writeD(charObjId);
+		writeD(shuttleId);
+		if (pos != null)
 		{
-			writeD(this.pos.getX());
-			writeD(this.pos.getY());
-			writeD(this.pos.getZ());
+			writeD(pos.getX());
+			writeD(pos.getY());
+			writeD(pos.getZ());
 		}
 		else
 		{
@@ -53,6 +53,6 @@ public class ExStopMoveInShuttle extends L2GameServerPacket
 			writeD(0x00);
 			writeD(0x00);
 		}
-		writeD(this.heading);
+		writeD(heading);
 	}
 }

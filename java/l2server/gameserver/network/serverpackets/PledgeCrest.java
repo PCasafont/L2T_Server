@@ -40,7 +40,7 @@ public final class PledgeCrest extends L2GameServerPacket
 	public PledgeCrest(int crestId)
 	{
 		this.crestId = crestId;
-		this.data = CrestCache.getInstance().getPledgeCrest(this.crestId);
+		data = CrestCache.getInstance().getPledgeCrest(this.crestId);
 	}
 
 	public PledgeCrest(int crestId, byte[] data)
@@ -53,11 +53,11 @@ public final class PledgeCrest extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(Config.SERVER_ID); // server id?
-		writeD(this.crestId);
-		if (this.data != null)
+		writeD(crestId);
+		if (data != null)
 		{
-			writeD(this.data.length);
-			writeB(this.data);
+			writeD(data.length);
+			writeB(data);
 		}
 		else
 		{

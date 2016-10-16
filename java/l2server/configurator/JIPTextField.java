@@ -47,7 +47,7 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		initIPTextField(textIp);
 
-		for (JTextField textField : this.textFields)
+		for (JTextField textField : textFields)
 		{
 			textField.addFocusListener(this);
 		}
@@ -71,7 +71,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		final ActionListener nextfocusaction = evt -> ((Component) evt.getSource()).transferFocus();
 
 		setLayout(new GridBagLayout());
-		this.textFields = new JTextField[4];
+		textFields = new JTextField[4];
 
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.anchor = GridBagConstraints.PAGE_START;
@@ -93,15 +93,15 @@ public class JIPTextField extends JPanel implements FocusListener
 				cons.gridx++;
 			}
 			MaxLengthDocument maxDoc = new MaxLengthDocument(3);
-			this.textFields[i] = new JTextField(maxDoc, str, 3);
+			textFields[i] = new JTextField(maxDoc, str, 3);
 			if (previous != null)
 			{
-				previous.setNext(this.textFields[i]);
+				previous.setNext(textFields[i]);
 			}
 			previous = maxDoc;
 			//ic.weightx = 1;
-			add(this.textFields[i], cons);
-			this.textFields[i].addActionListener(nextfocusaction);
+			add(textFields[i], cons);
+			textFields[i].addActionListener(nextfocusaction);
 			cons.gridx++;
 		}
 	}
@@ -109,23 +109,23 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void addFocusListener(FocusListener fl)
 	{
-		if (this.focusListeners == null)
+		if (focusListeners == null)
 		{
-			this.focusListeners = new LinkedList<>();
+			focusListeners = new LinkedList<>();
 		}
 
-		if (fl != null && !this.focusListeners.contains(fl))
+		if (fl != null && !focusListeners.contains(fl))
 		{
-			this.focusListeners.add(fl);
+			focusListeners.add(fl);
 		}
 	}
 
 	@Override
 	public void removeFocusListener(FocusListener fl)
 	{
-		if (this.focusListeners != null)
+		if (focusListeners != null)
 		{
-			this.focusListeners.remove(fl);
+			focusListeners.remove(fl);
 		}
 	}
 
@@ -134,13 +134,13 @@ public class JIPTextField extends JPanel implements FocusListener
 		String str = "";
 		for (int i = 0; i < 4; i++)
 		{
-			if (this.textFields[i].getText().length() == 0)
+			if (textFields[i].getText().length() == 0)
 			{
 				str += "0";
 			}
 			else
 			{
-				str += this.textFields[i].getText();
+				str += textFields[i].getText();
 			}
 			if (i < 3)
 			{
@@ -164,11 +164,11 @@ public class JIPTextField extends JPanel implements FocusListener
 				// byte always have a sign in Java, IP addresses aren't
 				if (b[i] >= 0)
 				{
-					this.textFields[i].setText(Byte.toString(b[i]));
+					textFields[i].setText(Byte.toString(b[i]));
 				}
 				else
 				{
-					this.textFields[i].setText(Integer.toString(b[i] + 256));
+					textFields[i].setText(Integer.toString(b[i] + 256));
 				}
 			}
 			return;
@@ -178,14 +178,14 @@ public class JIPTextField extends JPanel implements FocusListener
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			this.textFields[i].setText("");
+			textFields[i].setText("");
 		}
 	}
 
 	@Override
 	public void setEnabled(boolean enabled)
 	{
-		for (JTextField textField : this.textFields)
+		for (JTextField textField : textFields)
 		{
 			if (textField != null)
 			{
@@ -198,7 +198,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (this.textFields[i].getText().length() != 0)
+			if (textFields[i].getText().length() != 0)
 			{
 				return false;
 			}
@@ -210,7 +210,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (this.textFields[i].getText().length() == 0)
+			if (textFields[i].getText().length() == 0)
 			{
 				return false;
 			}
@@ -221,9 +221,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void focusGained(FocusEvent event)
 	{
-		if (this.focusListeners != null)
+		if (focusListeners != null)
 		{
-			for (FocusListener fl : this.focusListeners)
+			for (FocusListener fl : focusListeners)
 			{
 				fl.focusGained(event);
 			}
@@ -235,9 +235,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		if (isCorrect() || isEmpty())
 		{
-			if (this.focusListeners != null)
+			if (focusListeners != null)
 			{
-				for (FocusListener fl : this.focusListeners)
+				for (FocusListener fl : focusListeners)
 				{
 					fl.focusLost(event);
 				}
@@ -263,7 +263,7 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		public MaxLengthDocument(int maxLength, JTextField next)
 		{
-			this.max = maxLength;
+			max = maxLength;
 			setNext(next);
 		}
 
@@ -308,7 +308,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		 */
 		public JTextField getNext()
 		{
-			return this.next;
+			return next;
 		}
 	}
 }

@@ -78,7 +78,7 @@ public class MapRegionTable
 				int region = Integer.parseInt(st.nextToken().trim());
 				for (int j = 0; j < 16; j++)
 				{
-					this.regions[j][region] = Integer.parseInt(st.nextToken().trim());
+					regions[j][region] = Integer.parseInt(st.nextToken().trim());
 					//Log.fine(j+","+region+" -> "+rset.getInt(j+2));
 				}
 			}
@@ -108,7 +108,7 @@ public class MapRegionTable
 	{
 		try
 		{
-			return this.regions[getMapRegionX(posX)][getMapRegionY(posY)];
+			return regions[getMapRegionX(posX)][getMapRegionY(posY)];
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{

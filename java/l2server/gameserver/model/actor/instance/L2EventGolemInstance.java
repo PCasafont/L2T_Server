@@ -36,7 +36,7 @@ public class L2EventGolemInstance extends L2MonsterInstance
 	public void reduceCurrentHp(double i, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
 	{
 		if (EventsManager.getInstance().isPlayerParticipant(attacker.getObjectId()) &&
-				!this.team.containsPlayer(attacker.getObjectId()))
+				!team.containsPlayer(attacker.getObjectId()))
 		{
 			getStatus().reduceHp(1, attacker, awake, isDOT, false);
 		}
@@ -58,7 +58,7 @@ public class L2EventGolemInstance extends L2MonsterInstance
 
 	public EventTeam getTeam()
 	{
-		return this.team;
+		return team;
 	}
 
 	public void setTeam(EventTeam team)
@@ -74,6 +74,6 @@ public class L2EventGolemInstance extends L2MonsterInstance
 	@Override
 	public int getMaxHp()
 	{
-		return this.maxHp;
+		return maxHp;
 	}
 }

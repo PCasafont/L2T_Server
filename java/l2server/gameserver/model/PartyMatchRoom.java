@@ -43,37 +43,37 @@ public class PartyMatchRoom
 		this.id = id;
 		this.title = title;
 		this.loot = loot;
-		this.location = TownManager.getClosestLocation(owner);
+		location = TownManager.getClosestLocation(owner);
 		this.minlvl = minlvl;
 		this.maxlvl = maxlvl;
 		this.maxmem = maxmem;
-		this.members.add(owner);
+		members.add(owner);
 	}
 
 	public List<L2PcInstance> getPartyMembers()
 	{
-		return this.members;
+		return members;
 	}
 
 	public void addMember(L2PcInstance player)
 	{
-		this.members.add(player);
+		members.add(player);
 	}
 
 	public void deleteMember(L2PcInstance player)
 	{
 		if (player != getOwner())
 		{
-			this.members.remove(player);
+			members.remove(player);
 			notifyMembersAboutExit(player);
 		}
-		else if (this.members.size() == 1)
+		else if (members.size() == 1)
 		{
-			PartyMatchRoomList.getInstance().deleteRoom(this.id);
+			PartyMatchRoomList.getInstance().deleteRoom(id);
 		}
 		else
 		{
-			changeLeader(this.members.get(1));
+			changeLeader(members.get(1));
 			deleteMember(player);
 		}
 	}
@@ -92,13 +92,13 @@ public class PartyMatchRoom
 	public void changeLeader(L2PcInstance newLeader)
 	{
 		// Get current leader
-		L2PcInstance oldLeader = this.members.get(0);
+		L2PcInstance oldLeader = members.get(0);
 		// Remove new leader
-		this.members.remove(newLeader);
+		members.remove(newLeader);
 		// Move him to first position
-		this.members.set(0, newLeader);
+		members.set(0, newLeader);
 		// Add old leader as normal member
-		this.members.add(oldLeader);
+		members.add(oldLeader);
 		// Broadcast change
 		for (L2PcInstance member : getPartyMembers())
 		{
@@ -110,47 +110,47 @@ public class PartyMatchRoom
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public int getLootType()
 	{
-		return this.loot;
+		return loot;
 	}
 
 	public int getMinLvl()
 	{
-		return this.minlvl;
+		return minlvl;
 	}
 
 	public int getMaxLvl()
 	{
-		return this.maxlvl;
+		return maxlvl;
 	}
 
 	public int getLocation()
 	{
-		return this.location;
+		return location;
 	}
 
 	public int getMembers()
 	{
-		return this.members.size();
+		return members.size();
 	}
 
 	public int getMaxMembers()
 	{
-		return this.maxmem;
+		return maxmem;
 	}
 
 	public String getTitle()
 	{
-		return this.title;
+		return title;
 	}
 
 	public L2PcInstance getOwner()
 	{
-		return this.members.get(0);
+		return members.get(0);
 	}
 
 	/* SET  */
@@ -167,7 +167,7 @@ public class PartyMatchRoom
 
 	public void setLocation(int loc)
 	{
-		this.location = loc;
+		location = loc;
 	}
 
 	public void setLootType(int loot)

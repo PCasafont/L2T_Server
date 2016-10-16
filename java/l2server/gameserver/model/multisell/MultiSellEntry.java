@@ -32,8 +32,8 @@ public class MultiSellEntry
 	public MultiSellEntry(int entryId)
 	{
 		this.entryId = entryId;
-		this.products = new ArrayList<>();
-		this.ingredients = new ArrayList<>();
+		products = new ArrayList<>();
+		ingredients = new ArrayList<>();
 	}
 
 	/**
@@ -46,42 +46,42 @@ public class MultiSellEntry
 
 	public final void setEntryId(int id)
 	{
-		this.entryId = id;
+		entryId = id;
 	}
 
 	public final int getEntryId()
 	{
-		return this.entryId;
+		return entryId;
 	}
 
 	public final void addProduct(Ingredient product)
 	{
-		this.products.add(product);
+		products.add(product);
 
 		if (!product.isStackable())
 		{
-			this.stackable = false;
+			stackable = false;
 		}
 	}
 
 	public final List<Ingredient> getProducts()
 	{
-		return this.products;
+		return products;
 	}
 
 	public final void addIngredient(Ingredient ingredient)
 	{
-		this.ingredients.add(ingredient);
+		ingredients.add(ingredient);
 	}
 
 	public final List<Ingredient> getIngredients()
 	{
-		return this.ingredients;
+		return ingredients;
 	}
 
 	public final boolean isStackable()
 	{
-		return this.stackable;
+		return stackable;
 	}
 
 	public long getTaxAmount()

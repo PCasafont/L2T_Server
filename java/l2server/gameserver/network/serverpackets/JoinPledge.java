@@ -33,6 +33,6 @@ public final class JoinPledge extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.pledgeId);
+		writeD(pledgeId);
 	}
 }

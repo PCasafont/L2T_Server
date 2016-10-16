@@ -47,7 +47,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(this.merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			if (event.equalsIgnoreCase("elite-02.htm"))
 			{
@@ -77,7 +77,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(this.merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			switch (st.getState())
 			{
@@ -118,7 +118,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 	{
 		super(questId, name, descr);
 
-		for (int npc : this.merc)
+		for (int npc : merc)
 		{
 			addStartNpc(npc);
 			addTalkId(npc);

@@ -45,7 +45,7 @@ public class ConditionPlayerCharges extends Condition
 		//This can be used by monsters but getCharges not exist
 		if (env.player instanceof L2PcInstance)
 		{
-			return ((L2PcInstance) env.player).getCharges() >= this.charges;
+			return ((L2PcInstance) env.player).getCharges() >= charges;
 		}
 
 		return false;

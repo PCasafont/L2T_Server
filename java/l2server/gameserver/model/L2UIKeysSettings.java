@@ -51,31 +51,31 @@ public class L2UIKeysSettings
 
 	public void storeAll(Map<Integer, List<Integer>> catMap, Map<Integer, List<ActionKey>> keyMap)
 	{
-		this.saved = false;
-		this.storedCategories = catMap;
-		this.storedKeys = keyMap;
+		saved = false;
+		storedCategories = catMap;
+		storedKeys = keyMap;
 	}
 
 	public void storeCategories(Map<Integer, List<Integer>> catMap)
 	{
-		this.saved = false;
-		this.storedCategories = catMap;
+		saved = false;
+		storedCategories = catMap;
 	}
 
 	public Map<Integer, List<Integer>> getCategories()
 	{
-		return this.storedCategories;
+		return storedCategories;
 	}
 
 	public void storeKeys(Map<Integer, List<ActionKey>> keyMap)
 	{
-		this.saved = false;
-		this.storedKeys = keyMap;
+		saved = false;
+		storedKeys = keyMap;
 	}
 
 	public Map<Integer, List<ActionKey>> getKeys()
 	{
-		return this.storedKeys;
+		return storedKeys;
 	}
 
 	public void loadFromDB()
@@ -90,18 +90,18 @@ public class L2UIKeysSettings
 	public void saveInDB()
 	{
 		String query;
-		int playerId = this.player.getObjectId();
+		int playerId = player.getObjectId();
 
-		if (this.saved)
+		if (saved)
 		{
 			return;
 		}
 
 		query = "REPLACE INTO character_ui_categories (`charId`, `catId`, `order`, `cmdId`) VALUES ";
-		for (int category : this.storedCategories.keySet())
+		for (int category : storedCategories.keySet())
 		{
 			int order = 0;
-			for (int key : this.storedCategories.get(category))
+			for (int key : storedCategories.get(category))
 			{
 				query += "(" + playerId + ", " + category + ", " + order++ + ", " + key + "),";
 			}
@@ -126,7 +126,7 @@ public class L2UIKeysSettings
 
 		query =
 				"REPLACE INTO character_ui_actions (`charId`, `cat`, `order`, `cmd`, `key`, `tgKey1`, `tgKey2`, `show`) VALUES";
-		for (List<ActionKey> keyLst : this.storedKeys.values())
+		for (List<ActionKey> keyLst : storedKeys.values())
 		{
 			int order = 0;
 			for (ActionKey key : keyLst)
@@ -155,18 +155,18 @@ public class L2UIKeysSettings
 		{
 			L2DatabaseFactory.close(con);
 		}
-		this.saved = true;
+		saved = true;
 	}
 
 	public void getCatsFromDB()
 	{
 
-		if (this.storedCategories != null)
+		if (storedCategories != null)
 		{
 			return;
 		}
 
-		this.storedCategories = new HashMap<>();
+		storedCategories = new HashMap<>();
 
 		Connection con = null;
 		try
@@ -174,7 +174,7 @@ public class L2UIKeysSettings
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement(
 					"SELECT * FROM character_ui_categories WHERE `charId` = ? ORDER BY `catId`, `order`");
-			stmt.setInt(1, this.player.getObjectId());
+			stmt.setInt(1, player.getObjectId());
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next())
@@ -195,20 +195,20 @@ public class L2UIKeysSettings
 			L2DatabaseFactory.close(con);
 		}
 
-		if (this.storedCategories.size() < 1)
+		if (storedCategories.size() < 1)
 		{
-			this.storedCategories = UITable.getInstance().getCategories();
+			storedCategories = UITable.getInstance().getCategories();
 		}
 	}
 
 	public void getKeysFromDB()
 	{
-		if (this.storedKeys != null)
+		if (storedKeys != null)
 		{
 			return;
 		}
 
-		this.storedKeys = new HashMap<>();
+		storedKeys = new HashMap<>();
 
 		Connection con = null;
 		try
@@ -216,7 +216,7 @@ public class L2UIKeysSettings
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement(
 					"SELECT * FROM character_ui_actions WHERE `charId` = ? ORDER BY `cat`, `order`");
-			stmt.setInt(1, this.player.getObjectId());
+			stmt.setInt(1, player.getObjectId());
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next())
@@ -241,43 +241,43 @@ public class L2UIKeysSettings
 			L2DatabaseFactory.close(con);
 		}
 
-		if (this.storedKeys.size() < 1)
+		if (storedKeys.size() < 1)
 		{
-			this.storedKeys = UITable.getInstance().getKeys();
+			storedKeys = UITable.getInstance().getKeys();
 		}
 	}
 
 	public void insertCategory(int cat, int cmd)
 	{
-		if (this.storedCategories.containsKey(cat))
+		if (storedCategories.containsKey(cat))
 		{
-			this.storedCategories.get(cat).add(cmd);
+			storedCategories.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			this.storedCategories.put(cat, tmp);
+			storedCategories.put(cat, tmp);
 		}
 	}
 
 	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (this.storedKeys.containsKey(cat))
+		if (storedKeys.containsKey(cat))
 		{
-			this.storedKeys.get(cat).add(tmk);
+			storedKeys.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			this.storedKeys.put(cat, tmp);
+			storedKeys.put(cat, tmp);
 		}
 	}
 
 	public boolean isSaved()
 	{
-		return this.saved;
+		return saved;
 	}
 }

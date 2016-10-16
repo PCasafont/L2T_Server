@@ -38,28 +38,28 @@ public final class NpcSay extends L2GameServerPacket
 	public NpcSay(int objectId, int messageType, int npcId, String text)
 	{
 		this.objectId = objectId;
-		this.textType = messageType;
+		textType = messageType;
 		this.npcId = 1000000 + npcId;
-		this.npcString = -1;
+		npcString = -1;
 		this.text = text;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, int npcString)
 	{
 		this.objectId = objectId;
-		this.textType = messageType;
+		textType = messageType;
 		this.npcId = 1000000 + npcId;
 		this.npcString = npcString;
-		this.text = null;
+		text = null;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, NpcStringId npcStringId)
 	{
 		this.objectId = objectId;
-		this.textType = messageType;
+		textType = messageType;
 		this.npcId = 1000000 + npcId;
-		this.npcString = npcStringId.getId();
-		this.text = null;
+		npcString = npcStringId.getId();
+		text = null;
 	}
 
 	/**
@@ -69,29 +69,29 @@ public final class NpcSay extends L2GameServerPacket
 	 */
 	public void addStringParameter(String text)
 	{
-		if (this.parameters == null)
+		if (parameters == null)
 		{
-			this.parameters = new ArrayList<>();
+			parameters = new ArrayList<>();
 		}
-		this.parameters.add(text);
+		parameters.add(text);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.textType);
-		writeD(this.npcId);
-		writeD(this.npcString);
-		if (this.npcString == -1)
+		writeD(objectId);
+		writeD(textType);
+		writeD(npcId);
+		writeD(npcString);
+		if (npcString == -1)
 		{
-			writeS(this.text);
+			writeS(text);
 		}
 		else
 		{
-			if (this.parameters != null)
+			if (parameters != null)
 			{
-				for (String s : this.parameters)
+				for (String s : parameters)
 				{
 					writeS(s);
 				}

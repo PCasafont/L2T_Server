@@ -33,7 +33,7 @@ public class TeleportPortal extends Quest
 	{
 		super(id, name, descr);
 
-		addAggroRangeEnterId(this.portal);
+		addAggroRangeEnterId(portal);
 	}
 
 	@Override

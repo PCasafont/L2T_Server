@@ -140,13 +140,13 @@ public class ClanHallAuctionManager
 	private ClanHallAuctionManager()
 	{
 		Log.info("Initializing AuctionManager");
-		this.auctions = new ArrayList<>();
+		auctions = new ArrayList<>();
 		load();
 	}
 
 	public void reload()
 	{
-		this.auctions.clear();
+		auctions.clear();
 		load();
 	}
 
@@ -162,7 +162,7 @@ public class ClanHallAuctionManager
 			rs = statement.executeQuery();
 			while (rs.next())
 			{
-				this.auctions.add(new Auction(rs.getInt("id")));
+				auctions.add(new Auction(rs.getInt("id")));
 			}
 			statement.close();
 			Log.info("Loaded: " + getAuctions().size() + " auction(s)");
@@ -204,7 +204,7 @@ public class ClanHallAuctionManager
 
 	public final List<Auction> getAuctions()
 	{
-		return this.auctions;
+		return auctions;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class ClanHallAuctionManager
 					con.prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
 			statement.execute();
 			statement.close();
-			this.auctions.add(new Auction(id));
+			auctions.add(new Auction(id));
 			Log.info("Created auction for ClanHall: " + id);
 		}
 		catch (Exception e)

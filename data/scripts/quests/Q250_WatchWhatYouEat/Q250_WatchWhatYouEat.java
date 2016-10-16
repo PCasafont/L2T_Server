@@ -47,7 +47,7 @@ public class Q250_WatchWhatYouEat extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.sally)
+		if (npc.getNpcId() == sally)
 		{
 			if (event.equalsIgnoreCase("32743-03.htm"))
 			{
@@ -81,7 +81,7 @@ public class Q250_WatchWhatYouEat extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.sally)
+		if (npc.getNpcId() == sally)
 		{
 			switch (st.getState())
 			{
@@ -102,11 +102,11 @@ public class Q250_WatchWhatYouEat extends Quest
 					}
 					else if (st.getInt("cond") == 2)
 					{
-						if (st.hasQuestItems(this.mobs[0][1]) && st.hasQuestItems(this.mobs[1][1]) &&
-								st.hasQuestItems(this.mobs[2][1]))
+						if (st.hasQuestItems(mobs[0][1]) && st.hasQuestItems(mobs[1][1]) &&
+								st.hasQuestItems(mobs[2][1]))
 						{
 							htmltext = "32743-05.htm";
-							for (int items[] : this.mobs)
+							for (int items[] : mobs)
 							{
 								st.takeItems(items[1], -1);
 							}
@@ -135,7 +135,7 @@ public class Q250_WatchWhatYouEat extends Quest
 		}
 		if (st.getState() == State.STARTED && st.getInt("cond") == 1)
 		{
-			for (int mob[] : this.mobs)
+			for (int mob[] : mobs)
 			{
 				if (npc.getNpcId() == mob[0])
 				{
@@ -146,7 +146,7 @@ public class Q250_WatchWhatYouEat extends Quest
 					}
 				}
 			}
-			if (st.hasQuestItems(this.mobs[0][1]) && st.hasQuestItems(this.mobs[1][1]) && st.hasQuestItems(this.mobs[2][1]))
+			if (st.hasQuestItems(mobs[0][1]) && st.hasQuestItems(mobs[1][1]) && st.hasQuestItems(mobs[2][1]))
 			{
 				st.set("cond", "2");
 				st.playSound("ItemSound.quest_middle");
@@ -165,7 +165,7 @@ public class Q250_WatchWhatYouEat extends Quest
 			st = q.newQuestState(player);
 		}
 
-		if (npc.getNpcId() == this.sally)
+		if (npc.getNpcId() == sally)
 		{
 			return "32743-20.html";
 		}
@@ -179,11 +179,11 @@ public class Q250_WatchWhatYouEat extends Quest
 
 		questItemIds = new int[]{15493, 15494, 15495};
 
-		addStartNpc(this.sally);
-		addFirstTalkId(this.sally);
-		addTalkId(this.sally);
+		addStartNpc(sally);
+		addFirstTalkId(sally);
+		addTalkId(sally);
 
-		for (int i[] : this.mobs)
+		for (int i[] : mobs)
 		{
 			addKillId(i[0]);
 		}

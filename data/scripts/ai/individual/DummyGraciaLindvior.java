@@ -35,7 +35,7 @@ public class DummyGraciaLindvior extends Quest
 	{
 		super(id, name, descr);
 
-		startQuestTimer("showMovie", this.eachHours * 60000, null, null, true);
+		startQuestTimer("showMovie", eachHours * 60000, null, null, true);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class DummyGraciaLindvior extends Quest
 	{
 		if (event.equalsIgnoreCase("showMovie"))
 		{
-			if (Rnd.get(100000) >= this.chance)
+			if (Rnd.get(100000) >= chance)
 			{
 				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values())
 				{

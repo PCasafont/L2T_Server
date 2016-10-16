@@ -35,9 +35,9 @@ public class ManagePledgePower extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.action == 1)
+		if (action == 1)
 		{
-			this.privs = this.clan.getRankPrivs(this.rank);
+			privs = clan.getRankPrivs(rank);
 		}
 		else
 		{
@@ -52,6 +52,6 @@ public class ManagePledgePower extends L2GameServerPacket
 
 		writeD(0);
 		writeD(0);
-		writeD(this.privs);
+		writeD(privs);
 	}
 }

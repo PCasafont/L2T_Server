@@ -35,21 +35,21 @@ public class SoulCrystal
 
 	public void addEffect(EnsoulEffect effect)
 	{
-		this.effects.add(effect);
+		effects.add(effect);
 	}
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public boolean isSpecial()
 	{
-		return this.special;
+		return special;
 	}
 
 	public List<EnsoulEffect> getEffects()
 	{
-		return this.effects;
+		return effects;
 	}
 }

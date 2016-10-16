@@ -29,7 +29,7 @@ public class ExStopMoveInAirShip extends L2GameServerPacket
 
 	public ExStopMoveInAirShip(L2PcInstance player, int shipObjId)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.shipObjId = shipObjId;
 		x = player.getInVehiclePosition().getX();
 		y = player.getInVehiclePosition().getY();
@@ -40,8 +40,8 @@ public class ExStopMoveInAirShip extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeD(this.shipObjId);
+		writeD(activeChar.getObjectId());
+		writeD(shipObjId);
 		writeD(x);
 		writeD(y);
 		writeD(z);

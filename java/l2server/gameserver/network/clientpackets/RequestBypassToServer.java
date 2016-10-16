@@ -61,7 +61,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.command = readS();
+		command = readS();
 	}
 
 	@Override
@@ -73,12 +73,12 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction(this.command))
+		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction(command))
 		{
 			return;
 		}
 
-		if (this.command.isEmpty())
+		if (command.isEmpty())
 		{
 			Log.info(activeChar.getName() + " send empty requestbypass");
 			activeChar.logout();
@@ -87,7 +87,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 
 		try
 		{
-			if (this.command.startsWith("admin_")) //&& activeChar.getAccessLevel() >= Config.GM_ACCESSLEVEL)
+			if (command.startsWith("admin_")) //&& activeChar.getAccessLevel() >= Config.GM_ACCESSLEVEL)
 			{
 				String command = this.command.split(" ")[0];
 
@@ -130,26 +130,26 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					ach.useAdminCommand(this.command, activeChar);
 				}
 			}
-			else if (this.command.equals("come_here") && activeChar.isGM())
+			else if (command.equals("come_here") && activeChar.isGM())
 			{
 				comeHere(activeChar);
 			}
-			else if (this.command.startsWith("npc_"))
+			else if (command.startsWith("npc_"))
 			{
-				if (!activeChar.validateBypass(this.command))
+				if (!activeChar.validateBypass(command))
 				{
 					return;
 				}
 
-				int endOfId = this.command.indexOf('_', 5);
+				int endOfId = command.indexOf('_', 5);
 				String id;
 				if (endOfId > 0)
 				{
-					id = this.command.substring(4, endOfId);
+					id = command.substring(4, endOfId);
 				}
 				else
 				{
-					id = this.command.substring(4);
+					id = command.substring(4);
 				}
 				try
 				{
@@ -158,7 +158,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					if (object instanceof L2Npc && endOfId > 0 && activeChar
 							.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false))
 					{
-						((L2Npc) object).onBypassFeedback(activeChar, this.command.substring(endOfId + 1));
+						((L2Npc) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
 
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -167,22 +167,22 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 				}
 			}
-			else if (this.command.startsWith("summon_"))
+			else if (command.startsWith("summon_"))
 			{
-				if (!activeChar.validateBypass(this.command))
+				if (!activeChar.validateBypass(command))
 				{
 					return;
 				}
 
-				int endOfId = this.command.indexOf('_', 8);
+				int endOfId = command.indexOf('_', 8);
 				String id;
 				if (endOfId > 0)
 				{
-					id = this.command.substring(7, endOfId);
+					id = command.substring(7, endOfId);
 				}
 				else
 				{
-					id = this.command.substring(7);
+					id = command.substring(7);
 				}
 				try
 				{
@@ -192,7 +192,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 							activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
 					{
 						((L2MerchantSummonInstance) object)
-								.onBypassFeedback(activeChar, this.command.substring(endOfId + 1));
+								.onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
 
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -202,29 +202,29 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 			}
 			// Navigate through Manor windows
-			else if (this.command.startsWith("manor_menu_select"))
+			else if (command.startsWith("manor_menu_select"))
 			{
 				final IBypassHandler manor = BypassHandler.getInstance().getBypassHandler("manor_menu_select");
 				if (manor != null)
 				{
-					manor.useBypass(this.command, activeChar, null);
+					manor.useBypass(command, activeChar, null);
 				}
 			}
-			else if (this.command.startsWith("_bbs"))
+			else if (command.startsWith("_bbs"))
 			{
-				CommunityBoard.getInstance().handleCommands(getClient(), this.command);
+				CommunityBoard.getInstance().handleCommands(getClient(), command);
 			}
-			else if (this.command.startsWith("_mail"))
+			else if (command.startsWith("_mail"))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CB_OFFLINE));
 			}
-			else if (this.command.startsWith("_friend"))
+			else if (command.startsWith("_friend"))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CB_OFFLINE));
 			}
-			else if (this.command.startsWith("Quest "))
+			else if (command.startsWith("Quest "))
 			{
-				if (!activeChar.validateBypass(this.command))
+				if (!activeChar.validateBypass(command))
 				{
 					return;
 				}
@@ -235,7 +235,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					return;
 				}
 
-				String p = this.command.substring(6).trim();
+				String p = command.substring(6).trim();
 				int idx = p.indexOf(' ');
 				if (idx < 0)
 				{
@@ -246,7 +246,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					player.processQuestEvent(p.substring(0, idx), p.substring(idx).trim());
 				}
 			}
-			else if (this.command.startsWith("_match"))
+			else if (command.startsWith("_match"))
 			{
 				L2PcInstance player = getClient().getActiveChar();
 				if (player == null)
@@ -254,7 +254,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					return;
 				}
 
-				String params = this.command.substring(this.command.indexOf("?") + 1);
+				String params = command.substring(command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
@@ -264,7 +264,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					HeroesManager.getInstance().showHeroFights(player, heroclass, heroid, heropage);
 				}
 			}
-			else if (this.command.startsWith("_diary"))
+			else if (command.startsWith("_diary"))
 			{
 				L2PcInstance player = getClient().getActiveChar();
 				if (player == null)
@@ -272,7 +272,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					return;
 				}
 
-				String params = this.command.substring(this.command.indexOf("?") + 1);
+				String params = command.substring(command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
@@ -282,7 +282,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					HeroesManager.getInstance().showHeroDiary(player, heroclass, heroid, heropage);
 				}
 			}
-			else if (this.command.startsWith("MobSummon"))
+			else if (command.startsWith("MobSummon"))
 			{
 				for (L2Summon summon : activeChar.getSummons())
 				{
@@ -292,27 +292,27 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					}
 
 					L2MobSummonInstance mobSummon = (L2MobSummonInstance) summon;
-					mobSummon.onBypass(activeChar, this.command.substring(10));
+					mobSummon.onBypass(activeChar, command.substring(10));
 				}
 			}
-			else if (this.command.startsWith("InstancedEvent"))
+			else if (command.startsWith("InstancedEvent"))
 			{
-				EventsManager.getInstance().handleBypass(activeChar, this.command);
+				EventsManager.getInstance().handleBypass(activeChar, command);
 			}
-			else if (this.command.startsWith("WatchDrops"))
+			else if (command.startsWith("WatchDrops"))
 			{
-				IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(this.command);
+				IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(command);
 				if (handler != null)
 				{
-					handler.useBypass(this.command, activeChar, null);
+					handler.useBypass(command, activeChar, null);
 				}
 			}
-			else if (this.command.startsWith("Captcha"))
+			else if (command.startsWith("Captcha"))
 			{
 				String text = "";
-				if (this.command.length() > 8)
+				if (command.length() > 8)
 				{
-					text = this.command.substring(8);
+					text = command.substring(8);
 				}
 				if (text.equalsIgnoreCase(activeChar.getCaptcha()))
 				{
@@ -335,12 +335,12 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					}
 				}
 			}
-			else if (this.command.startsWith("NickName"))
+			else if (command.startsWith("NickName"))
 			{
 				String text = "";
-				if (this.command.length() > 9)
+				if (command.length() > 9)
 				{
-					text = this.command.substring(9);
+					text = command.substring(9);
 				}
 				if (CharNameTable.getInstance().doesCharNameExist(text))
 				{
@@ -370,11 +370,11 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					activeChar.startCaptchaTask();
 				}
 			}
-			else if (this.command.startsWith("Survey"))
+			else if (command.startsWith("Survey"))
 			{
-				if (this.command.length() > 6)
+				if (command.length() > 6)
 				{
-					if (this.command.equals("SurveyInfo"))
+					if (command.equals("SurveyInfo"))
 					{
 						String html = "<html><title>Survey System</title><body>" +
 								SurveyManager.getInstance().getDescription() +
@@ -382,11 +382,11 @@ public final class RequestBypassToServer extends L2GameClientPacket
 								"</body></html>";
 						activeChar.sendPacket(new NpcHtmlMessage(0, html));
 					}
-					else if (this.command.startsWith("SurveyAnswer"))
+					else if (command.startsWith("SurveyAnswer"))
 					{
 						String message = "Thank you!";
 						if (!SurveyManager.getInstance()
-								.storeAnswer(activeChar.getObjectId(), Integer.valueOf(this.command.substring(13))))
+								.storeAnswer(activeChar.getObjectId(), Integer.valueOf(command.substring(13))))
 						{
 							message = "You already answered!";
 						}
@@ -410,11 +410,11 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					activeChar.sendPacket(new NpcHtmlMessage(0, html));
 				}
 			}
-			else if (this.command.startsWith("_olympiad"))
+			else if (command.startsWith("_olympiad"))
 			{
-				if (this.command.substring(18).startsWith("move_op_field"))
+				if (command.substring(18).startsWith("move_op_field"))
 				{
-					final int arenaId = Integer.parseInt(this.command.substring(38));
+					final int arenaId = Integer.parseInt(command.substring(38));
 					final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId - 1);
 					if (nextArena != null && nextArena.getGame() != null && !activeChar.isInOlympiadMode() &&
 							!OlympiadManager.getInstance().isRegistered(activeChar) &&
@@ -425,32 +425,32 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					}
 				}
 			}
-			else if (this.command.equals("treasure"))
+			else if (command.equals("treasure"))
 			{
 				HiddenChests.getInstance().showInfo(activeChar);
 			}
 			else
 			{
-				final IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(this.command);
+				final IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(command);
 				if (handler != null)
 				{
-					handler.useBypass(this.command, activeChar, null);
+					handler.useBypass(command, activeChar, null);
 				}
 				else
 				{
-					Log.log(Level.WARNING, getClient() + " sent not handled RequestBypassToServer: [" + this.command + "]");
+					Log.log(Level.WARNING, getClient() + " sent not handled RequestBypassToServer: [" + command + "]");
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, getClient() + " sent bad RequestBypassToServer: \"" + this.command + "\"", e);
+			Log.log(Level.WARNING, getClient() + " sent bad RequestBypassToServer: \"" + command + "\"", e);
 			if (activeChar.isGM())
 			{
 				StringBuilder sb = new StringBuilder(200);
 				sb.append("<html><body>");
 				sb.append("Bypass error: " + e + "<br1>");
-				sb.append("Bypass command: " + this.command + "<br1>");
+				sb.append("Bypass command: " + command + "<br1>");
 				sb.append("StackTrace:<br1>");
 				for (StackTraceElement ste : e.getStackTrace())
 				{

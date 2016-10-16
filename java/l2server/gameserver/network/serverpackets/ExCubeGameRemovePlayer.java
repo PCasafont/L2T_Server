@@ -50,7 +50,7 @@ public class ExCubeGameRemovePlayer extends L2GameServerPacket
 	{
 		writeD(0xffffffff);
 
-		writeD(this.isRedTeam ? 0x01 : 0x00);
-		writeD(this.player.getObjectId());
+		writeD(isRedTeam ? 0x01 : 0x00);
+		writeD(player.getObjectId());
 	}
 }

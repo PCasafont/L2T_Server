@@ -126,18 +126,18 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 
 	private ClanHall getClanHall()
 	{
-		if (!this.init)
+		if (!init)
 		{
 			synchronized (this)
 			{
-				if (!this.init)
+				if (!init)
 				{
-					this.clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
-					this.init = true;
+					clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
+					init = true;
 				}
 			}
 		}
-		return this.clanHall;
+		return clanHall;
 	}
 
 	@Override

@@ -28,8 +28,8 @@ public final class RequestWorldStatistics extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.pId1 = readD();
-		this.pId2 = readD();
+		pId1 = readD();
+		pId2 = readD();
 	}
 
 	/**
@@ -43,6 +43,6 @@ public final class RequestWorldStatistics extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExLoadStatWorldRank(this.pId1, this.pId2));
+		sendPacket(new ExLoadStatWorldRank(pId1, pId2));
 	}
 }

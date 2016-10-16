@@ -15,6 +15,6 @@ public class ExPeriodicItemList extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.unk);
+		writeD(unk);
 	}
 }

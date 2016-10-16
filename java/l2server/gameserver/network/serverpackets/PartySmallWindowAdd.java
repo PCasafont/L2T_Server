@@ -33,26 +33,26 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 	public PartySmallWindowAdd(L2PcInstance member, L2Party party)
 	{
 		this.member = member;
-		this.leaderId = party.getPartyLeaderOID();
-		this.distribution = party.getLootDistribution();
+		leaderId = party.getPartyLeaderOID();
+		distribution = party.getLootDistribution();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.leaderId); // c3
-		writeD(this.distribution);//writeD(0x04); ?? //c3
-		writeD(this.member.getObjectId());
-		writeS(this.member.getName());
-		writeD((int) this.member.getCurrentCp()); //c4
-		writeD(this.member.getMaxCp()); //c4
-		writeD((int) this.member.getCurrentHp());
-		writeD(this.member.getMaxVisibleHp());
-		writeD((int) this.member.getCurrentMp());
-		writeD(this.member.getMaxMp());
-		writeD(this.member.getVitalityPoints());
-		writeC(this.member.getLevel());
-		writeH(this.member.getCurrentClass().getId());
+		writeD(leaderId); // c3
+		writeD(distribution);//writeD(0x04); ?? //c3
+		writeD(member.getObjectId());
+		writeS(member.getName());
+		writeD((int) member.getCurrentCp()); //c4
+		writeD(member.getMaxCp()); //c4
+		writeD((int) member.getCurrentHp());
+		writeD(member.getMaxVisibleHp());
+		writeD((int) member.getCurrentMp());
+		writeD(member.getMaxMp());
+		writeD(member.getVitalityPoints());
+		writeC(member.getLevel());
+		writeH(member.getCurrentClass().getId());
 		/*writeD(this.member.getVitalityPoints());
         writeC(0x01); // ???
 		writeC(this.member.getRace().ordinal());

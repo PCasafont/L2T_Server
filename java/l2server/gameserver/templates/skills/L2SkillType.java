@@ -190,7 +190,7 @@ public enum L2SkillType
 	{
 		try
 		{
-			Constructor<? extends L2Skill> c = this.clazz.getConstructor(StatsSet.class);
+			Constructor<? extends L2Skill> c = clazz.getConstructor(StatsSet.class);
 
 			return c.newInstance(set);
 		}
@@ -202,11 +202,11 @@ public enum L2SkillType
 
 	L2SkillType()
 	{
-		this.clazz = L2SkillDefault.class;
+		clazz = L2SkillDefault.class;
 	}
 
 	L2SkillType(Class<? extends L2Skill> classType)
 	{
-		this.clazz = classType;
+		clazz = classType;
 	}
 }

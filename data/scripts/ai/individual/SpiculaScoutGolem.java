@@ -38,8 +38,8 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addKillId(this.spiculaScoutGolem);
-		addFirstTalkId(this.golemGenerator);
+		addKillId(spiculaScoutGolem);
+		addFirstTalkId(golemGenerator);
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 
 		for (int a = 0; a < Rnd.get(2, 3); a++)
 		{
-			L2Npc golem = addSpawn(this.battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
+			L2Npc golem = addSpawn(battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
 
 			golem.setIsRunning(true);
 
@@ -68,7 +68,7 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 	{
 		if (Rnd.get(10) > 7)
 		{
-			addSpawn(this.golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
+			addSpawn(golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
 		}
 
 		return super.onKill(npc, killer, isPet);

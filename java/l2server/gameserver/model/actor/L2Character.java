@@ -197,7 +197,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isDebug()
 	{
-		return this.debugger != null;
+		return debugger != null;
 	}
 
 	/**
@@ -207,7 +207,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public void setDebug(L2Character d)
 	{
-		this.debugger = d;
+		debugger = d;
 	}
 
 	/**
@@ -217,9 +217,9 @@ public abstract class L2Character extends L2Object
 	 */
 	public void sendDebugPacket(L2GameServerPacket pkt)
 	{
-		if (this.debugger != null)
+		if (debugger != null)
 		{
-			this.debugger.sendPacket(pkt);
+			debugger.sendPacket(pkt);
 		}
 	}
 
@@ -230,9 +230,9 @@ public abstract class L2Character extends L2Object
 	 */
 	public void sendDebugMessage(String msg)
 	{
-		if (this.debugger != null)
+		if (debugger != null)
 		{
-			this.debugger.sendMessage(msg);
+			debugger.sendMessage(msg);
 		}
 	}
 
@@ -273,7 +273,7 @@ public abstract class L2Character extends L2Object
 				{
 					return true; //_zones[ZONE_PEACE] == 0;
 				}
-				return this.zones[ZONE_PVP] > 0 && this.zones[ZONE_PEACE] == 0;
+				return zones[ZONE_PVP] > 0 && zones[ZONE_PEACE] == 0;
 			case ZONE_PEACE:
 				if (instance != null && instance.isPvPInstance() ||
 						getActingPlayer() != null && getActingPlayer().isPlayingEvent())
@@ -281,7 +281,7 @@ public abstract class L2Character extends L2Object
 					return false;
 				}
 		}
-		return this.zones[zone] > 0;
+		return zones[zone] > 0;
 	}
 
 	/**
@@ -292,14 +292,14 @@ public abstract class L2Character extends L2Object
 	{
 		if (state)
 		{
-			this.zones[zone]++;
+			zones[zone]++;
 		}
 		else
 		{
-			this.zones[zone]--;
-			if (this.zones[zone] < 0)
+			zones[zone]--;
+			if (zones[zone] < 0)
 			{
-				this.zones[zone] = 0;
+				zones[zone] = 0;
 			}
 		}
 	}
@@ -376,16 +376,16 @@ public abstract class L2Character extends L2Object
 		if (this instanceof L2DoorInstance || this instanceof L2Npc)
 		{
 			// Copy the Standard Calcultors of the L2NPCInstance in _calculators
-			this.calculators = NPC_STD_CALCULATOR;
+			calculators = NPC_STD_CALCULATOR;
 		}
 		else
 		{
 			// If L2Character is a L2PcInstance or a L2Summon, create the basic calculator set
-			this.calculators = new Calculator[Stats.NUM_STATS];
+			calculators = new Calculator[Stats.NUM_STATS];
 			Formulas.addFuncsToNewCharacter(this);
 		}
 
-		this.skills = new ConcurrentHashMap<>();
+		skills = new ConcurrentHashMap<>();
 		if (template != null && (this instanceof L2Npc || this instanceof L2Summon))
 		{
 			// Copy the skills of the NPC from its template to the L2Character Instance
@@ -405,9 +405,9 @@ public abstract class L2Character extends L2Object
 
 	protected void initCharStatusUpdateValues()
 	{
-		this.hpUpdateIncCheck = getMaxVisibleHp();
-		this.hpUpdateInterval = this.hpUpdateIncCheck / 352.0; // MAX_HP div MAX_HP_BAR_PX
-		this.hpUpdateDecCheck = this.hpUpdateIncCheck - this.hpUpdateInterval;
+		hpUpdateIncCheck = getMaxVisibleHp();
+		hpUpdateInterval = hpUpdateIncCheck / 352.0; // MAX_HP div MAX_HP_BAR_PX
+		hpUpdateDecCheck = hpUpdateIncCheck - hpUpdateInterval;
 	}
 
 	// =========================================================
@@ -447,7 +447,7 @@ public abstract class L2Character extends L2Object
 
 		setIsTeleporting(false);
 
-		if (this.isPendingRevive)
+		if (isPendingRevive)
 		{
 			doRevive();
 		}
@@ -528,20 +528,20 @@ public abstract class L2Character extends L2Object
 			return true;
 		}
 
-		if (currentHp <= this.hpUpdateDecCheck || currentHp >= this.hpUpdateIncCheck)
+		if (currentHp <= hpUpdateDecCheck || currentHp >= hpUpdateIncCheck)
 		{
 			if (currentHp == maxHp)
 			{
-				this.hpUpdateIncCheck = currentHp + 1;
-				this.hpUpdateDecCheck = currentHp - this.hpUpdateInterval;
+				hpUpdateIncCheck = currentHp + 1;
+				hpUpdateDecCheck = currentHp - hpUpdateInterval;
 			}
 			else
 			{
-				double doubleMulti = currentHp / this.hpUpdateInterval;
+				double doubleMulti = currentHp / hpUpdateInterval;
 				int intMulti = (int) doubleMulti;
 
-				this.hpUpdateDecCheck = this.hpUpdateInterval * (doubleMulti < intMulti ? intMulti-- : intMulti);
-				this.hpUpdateIncCheck = this.hpUpdateDecCheck + this.hpUpdateInterval;
+				hpUpdateDecCheck = hpUpdateInterval * (doubleMulti < intMulti ? intMulti-- : intMulti);
+				hpUpdateIncCheck = hpUpdateDecCheck + hpUpdateInterval;
 			}
 
 			return true;
@@ -886,7 +886,7 @@ public abstract class L2Character extends L2Object
 					}
 
 					// Verify if the bow can be use
-					if (this.disableBowAttackEndTime <= TimeController.getGameTicks())
+					if (disableBowAttackEndTime <= TimeController.getGameTicks())
 					{
 						// Verify if L2PcInstance owns enough MP
 						int saMpConsume = (int) getStat().calcStat(Stats.MP_CONSUME, 0, null, null);
@@ -909,7 +909,7 @@ public abstract class L2Character extends L2Object
 						}
 
 						// Set the period of bow no re-use
-						this.disableBowAttackEndTime = 5 * TimeController.TICKS_PER_SECOND + TimeController.getGameTicks();
+						disableBowAttackEndTime = 5 * TimeController.TICKS_PER_SECOND + TimeController.getGameTicks();
 					}
 					else
 					{
@@ -946,10 +946,10 @@ public abstract class L2Character extends L2Object
 					}
 
 					// Verify if the crossbow can be use
-					if (this.disableCrossBowAttackEndTime <= TimeController.getGameTicks())
+					if (disableCrossBowAttackEndTime <= TimeController.getGameTicks())
 					{
 						// Set the period of crossbow no re-use
-						this.disableCrossBowAttackEndTime =
+						disableCrossBowAttackEndTime =
 								5 * TimeController.TICKS_PER_SECOND + TimeController.getGameTicks();
 					}
 					else
@@ -962,7 +962,7 @@ public abstract class L2Character extends L2Object
 				}
 				else if (this instanceof L2Npc)
 				{
-					if (this.disableCrossBowAttackEndTime > TimeController.getGameTicks())
+					if (disableCrossBowAttackEndTime > TimeController.getGameTicks())
 					{
 						return;
 					}
@@ -1014,9 +1014,9 @@ public abstract class L2Character extends L2Object
 		int timeAtk = calculateTimeBetweenAttacks(target, weaponItem);
 		// the hit is calculated to happen halfway to the animation - might need further tuning e.g. in bow case
 		int timeToHit = timeAtk / 2;
-		this.attackEndTime = TimeController.getGameTicks();
-		this.attackEndTime += timeAtk / TimeController.MILLIS_IN_TICK;
-		this.attackEndTime -= 1;
+		attackEndTime = TimeController.getGameTicks();
+		attackEndTime += timeAtk / TimeController.MILLIS_IN_TICK;
+		attackEndTime -= 1;
 
 		int ssGrade = 0;
 		if (weaponItem != null)
@@ -1171,7 +1171,7 @@ public abstract class L2Character extends L2Object
 		// Consume arrows
 		reduceArrowCount(false);
 
-		this.move = null;
+		move = null;
 
 		// Check if hit isn't missed
 		if (!miss1)
@@ -1202,7 +1202,7 @@ public abstract class L2Character extends L2Object
 				.scheduleAi(new HitTask(target, damage1, crit1, miss1, attack.soulshotCharge, shld1), sAtk);
 
 		// Calculate and set the disable delay of the bow in function of the Attack Speed
-		this.disableBowAttackEndTime = (sAtk + reuse) / TimeController.MILLIS_IN_TICK + TimeController.getGameTicks();
+		disableBowAttackEndTime = (sAtk + reuse) / TimeController.MILLIS_IN_TICK + TimeController.getGameTicks();
 
 		// Add this hit to the Server-Client packet Attack
 		attack.hit(attack.createHit(target, damage1, miss1, crit1, shld1));
@@ -1242,7 +1242,7 @@ public abstract class L2Character extends L2Object
 		// Consume bolts
 		reduceArrowCount(true);
 
-		this.move = null;
+		move = null;
 
 		// Check if hit isn't missed
 		if (!miss1)
@@ -1292,7 +1292,7 @@ public abstract class L2Character extends L2Object
 		}
 
 		// Calculate and set the disable delay of the bow in function of the Attack Speed
-		this.disableCrossBowAttackEndTime = (sAtk + reuse) / TimeController.MILLIS_IN_TICK + TimeController.getGameTicks();
+		disableCrossBowAttackEndTime = (sAtk + reuse) / TimeController.MILLIS_IN_TICK + TimeController.getGameTicks();
 
 		// Add this hit to the Server-Client packet Attack
 		attack.hit(attack.createHit(target, damage1, miss1, crit1, shld1));
@@ -2028,7 +2028,7 @@ public abstract class L2Character extends L2Object
 		// Note: this.castEndTime = GameTimeController.getGameTicks() + (coolTime + hitTime) / GameTimeController.MILLIS_IN_TICK;
 		if (!simultaneously)
 		{
-			this.castInterruptTime = -2 + TimeController.getGameTicks() + hitTime / TimeController.MILLIS_IN_TICK;
+			castInterruptTime = -2 + TimeController.getGameTicks() + hitTime / TimeController.MILLIS_IN_TICK;
 			setLastSkillCast(skill);
 		}
 		else
@@ -2410,42 +2410,42 @@ public abstract class L2Character extends L2Object
 
 			if (simultaneously)
 			{
-				Future<?> future = this.simultSkillCast;
+				Future<?> future = simultSkillCast;
 				if (future != null)
 				{
 					future.cancel(true);
-					this.simultSkillCast = null;
+					simultSkillCast = null;
 				}
 
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
-				this.simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
+				simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
 			}
 			else if (second)
 			{
-				Future<?> future = this.skillCast2;
+				Future<?> future = skillCast2;
 				if (future != null)
 				{
 					future.cancel(true);
-					this.skillCast2 = null;
+					skillCast2 = null;
 				}
 
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
-				this.skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
+				skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
 			}
 			else
 			{
-				Future<?> future = this.skillCast;
+				Future<?> future = skillCast;
 				if (future != null)
 				{
 					future.cancel(true);
-					this.skillCast = null;
+					skillCast = null;
 				}
 
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
-				this.skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
+				skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime - 400);
 			}
 		}
 		else
@@ -2671,20 +2671,20 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 
-		if (this.fusionSkill == null)
+		if (fusionSkill == null)
 		{
-			this.fusionSkill = new FusionSkill(this, target, skill);
+			fusionSkill = new FusionSkill(this, target, skill);
 		}
 	}
 
 	public void setSkillCastPosition(Point3D position)
 	{
-		this.skillCastPosition = position;
+		skillCastPosition = position;
 	}
 
 	public Point3D getSkillCastPosition()
 	{
-		return this.skillCastPosition;
+		return skillCastPosition;
 	}
 
 	/**
@@ -2800,7 +2800,7 @@ public abstract class L2Character extends L2Object
 		}
 		try
 		{
-			if (this.fusionSkill != null || this.continuousDebuffTargets != null)
+			if (fusionSkill != null || continuousDebuffTargets != null)
 			{
 				abortCast();
 			}
@@ -2861,16 +2861,16 @@ public abstract class L2Character extends L2Object
 			}
 			if (restorefull)
 			{
-				this.status.setCurrentCp(getCurrentCp()); //this is not confirmed, so just trigger regeneration
-				this.status.setCurrentHp(getMaxHp(), true); //confirmed
-				this.status.setCurrentMp(getMaxMp(), true); //and also confirmed
+				status.setCurrentCp(getCurrentCp()); //this is not confirmed, so just trigger regeneration
+				status.setCurrentHp(getMaxHp(), true); //confirmed
+				status.setCurrentMp(getMaxMp(), true); //and also confirmed
 			}
 			else
 			{
-				this.status.setCurrentHp(getMaxHp() * Config.RESPAWN_RESTORE_HP, true);
+				status.setCurrentHp(getMaxHp() * Config.RESPAWN_RESTORE_HP, true);
 			}
-			this.status.setCurrentCp(getMaxCp() * Config.RESPAWN_RESTORE_CP);
-			this.status.setCurrentMp(getMaxMp() * Config.RESPAWN_RESTORE_MP);
+			status.setCurrentCp(getMaxCp() * Config.RESPAWN_RESTORE_CP);
+			status.setCurrentMp(getMaxMp() * Config.RESPAWN_RESTORE_MP);
 
 			// Start broadcast status
 			broadcastPacket(new Revive(this));
@@ -2923,7 +2923,7 @@ public abstract class L2Character extends L2Object
 		{
 			oldAI.stopAITask();
 		}
-		this.ai = newAI;
+		ai = newAI;
 	}
 
 	/**
@@ -2931,7 +2931,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean hasAI()
 	{
-		return this.ai != null;
+		return ai != null;
 	}
 
 	/**
@@ -2963,39 +2963,39 @@ public abstract class L2Character extends L2Object
 	 */
 	public final Set<L2Character> getAttackByList()
 	{
-		if (this.attackByList != null)
+		if (attackByList != null)
 		{
-			return this.attackByList;
+			return attackByList;
 		}
 
 		synchronized (this)
 		{
-			if (this.attackByList == null)
+			if (attackByList == null)
 			{
-				this.attackByList = new CopyOnWriteArraySet<>();
+				attackByList = new CopyOnWriteArraySet<>();
 			}
 		}
-		return this.attackByList;
+		return attackByList;
 	}
 
 	public final L2Skill getLastSimultaneousSkillCast()
 	{
-		return this.lastSimultaneousSkillCast;
+		return lastSimultaneousSkillCast;
 	}
 
 	public void setLastSimultaneousSkillCast(L2Skill skill)
 	{
-		this.lastSimultaneousSkillCast = skill;
+		lastSimultaneousSkillCast = skill;
 	}
 
 	public final L2Skill getLastSkillCast()
 	{
-		return this.lastSkillCast;
+		return lastSkillCast;
 	}
 
 	public void setLastSkillCast(L2Skill skill)
 	{
-		this.lastSkillCast = skill;
+		lastSkillCast = skill;
 	}
 
 	public final boolean isAfraid()
@@ -3013,7 +3013,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean isAllSkillsDisabled()
 	{
-		return this.allSkillsDisabled || isStunned() || isSleeping() || isParalyzed();
+		return allSkillsDisabled || isStunned() || isSleeping() || isParalyzed();
 	}
 
 	/**
@@ -3021,13 +3021,13 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isAttackingDisabled()
 	{
-		return isFlying() || isStunned() || isSleeping() || this.attackEndTime > TimeController.getGameTicks() ||
+		return isFlying() || isStunned() || isSleeping() || attackEndTime > TimeController.getGameTicks() ||
 				isAlikeDead() || isParalyzed() || isPhysicalAttackMuted() || isCoreAIDisabled();
 	}
 
 	public final Calculator[] getCalculators()
 	{
-		return this.calculators;
+		return calculators;
 	}
 
 	public final boolean isConfused()
@@ -3040,7 +3040,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isAlikeDead()
 	{
-		return this.isDead;
+		return isDead;
 	}
 
 	/**
@@ -3048,22 +3048,22 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean isDead()
 	{
-		return this.isDead;
+		return isDead;
 	}
 
 	public final void setIsDead(boolean value)
 	{
-		this.isDead = value;
+		isDead = value;
 	}
 
 	public boolean isImmobilized()
 	{
-		return this.isImmobilized;
+		return isImmobilized;
 	}
 
 	public void setIsImmobilized(boolean value)
 	{
-		this.isImmobilized = value;
+		isImmobilized = value;
 	}
 
 	public final boolean isMuted()
@@ -3101,7 +3101,7 @@ public abstract class L2Character extends L2Object
 
 	public final boolean isOverloaded()
 	{
-		return this.isOverloaded;
+		return isOverloaded;
 	}
 
 	/**
@@ -3109,28 +3109,28 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void setIsOverloaded(boolean value)
 	{
-		this.isOverloaded = value;
+		isOverloaded = value;
 	}
 
 	public final boolean isParalyzed()
 	{
-		return this.isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()) ||
+		return isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()) ||
 				isAffected(L2EffectType.PETRIFY.getMask());
 	}
 
 	public final void setIsParalyzed(boolean value)
 	{
-		this.isParalyzed = value;
+		isParalyzed = value;
 	}
 
 	public final boolean isPendingRevive()
 	{
-		return isDead() && this.isPendingRevive;
+		return isDead() && isPendingRevive;
 	}
 
 	public final void setIsPendingRevive(boolean value)
 	{
-		this.isPendingRevive = value;
+		isPendingRevive = value;
 	}
 
 	public boolean isDisarmed()
@@ -3153,7 +3153,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isRunning()
 	{
-		return this.isRunning;
+		return isRunning;
 	}
 
 	public final void setIsRunning(boolean value)
@@ -3163,7 +3163,7 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 
-		this.isRunning = value;
+		isRunning = value;
 
 		if (this instanceof L2Npc && ((L2Npc) this).getIsInvisible())
 		{
@@ -3181,7 +3181,7 @@ public abstract class L2Character extends L2Object
 		}
 		else if (this instanceof L2Summon)
 		{
-			this.broadcastStatusUpdate();
+			broadcastStatusUpdate();
 		}
 		else if (this instanceof L2Npc)
 		{
@@ -3241,32 +3241,32 @@ public abstract class L2Character extends L2Object
 
 	public final boolean isTeleporting()
 	{
-		return this.isTeleporting;
+		return isTeleporting;
 	}
 
 	public void setIsTeleporting(boolean value)
 	{
-		this.isTeleporting = value;
+		isTeleporting = value;
 	}
 
 	public void setIsInvul(boolean b)
 	{
-		this.isInvul = b;
+		isInvul = b;
 	}
 
 	public boolean isInvul()
 	{
-		return this.isInvul || this.isTeleporting || isAffected(L2EffectType.INVINCIBLE.getMask());
+		return isInvul || isTeleporting || isAffected(L2EffectType.INVINCIBLE.getMask());
 	}
 
 	public void setIsMortal(boolean b)
 	{
-		this.isMortal = b;
+		isMortal = b;
 	}
 
 	public boolean isMortal()
 	{
-		return this.isMortal;
+		return isMortal;
 	}
 
 	public boolean isUndead()
@@ -3281,12 +3281,12 @@ public abstract class L2Character extends L2Object
 
 	public final boolean isFlying()
 	{
-		return this.isFlying;
+		return isFlying;
 	}
 
 	public final void setIsFlying(boolean mode)
 	{
-		this.isFlying = mode;
+		isFlying = mode;
 	}
 
 	public boolean isInvul(L2Character attacker)
@@ -3318,7 +3318,7 @@ public abstract class L2Character extends L2Object
 
 	public CharStat getStat()
 	{
-		return this.stat;
+		return stat;
 	}
 
 	/**
@@ -3329,17 +3329,17 @@ public abstract class L2Character extends L2Object
 	 */
 	public void initCharStat()
 	{
-		this.stat = new CharStat(this);
+		stat = new CharStat(this);
 	}
 
 	public final void setStat(CharStat value)
 	{
-		this.stat = value;
+		stat = value;
 	}
 
 	public CharStatus getStatus()
 	{
-		return this.status;
+		return status;
 	}
 
 	/**
@@ -3350,12 +3350,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public void initCharStatus()
 	{
-		this.status = new CharStatus(this);
+		status = new CharStatus(this);
 	}
 
 	public final void setStatus(CharStatus value)
 	{
-		this.status = value;
+		status = value;
 	}
 
 	@Override
@@ -3372,7 +3372,7 @@ public abstract class L2Character extends L2Object
 
 	public L2CharTemplate getTemplate()
 	{
-		return this.template;
+		return template;
 	}
 
 	/**
@@ -3398,7 +3398,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final String getTitle()
 	{
-		return this.title;
+		return title;
 	}
 
 	/**
@@ -3408,11 +3408,11 @@ public abstract class L2Character extends L2Object
 	{
 		if (value == null)
 		{
-			this.title = "";
+			title = "";
 		}
 		else
 		{
-			this.title = value.length() > 16 ? value.substring(0, 15) : value;
+			title = value.length() > 16 ? value.substring(0, 15) : value;
 		}
 	}
 
@@ -3447,7 +3447,7 @@ public abstract class L2Character extends L2Object
 
 		public HitTask(L2Character target, int damage, boolean crit, boolean miss, double soulshot, byte shld)
 		{
-			this.hitTarget = target;
+			hitTarget = target;
 			this.damage = damage;
 			this.crit = crit;
 			this.shld = shld;
@@ -3460,11 +3460,11 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				onHitTimer(this.hitTarget, this.damage, this.crit, this.miss, this.soulshot, this.shld, false);
+				onHitTimer(hitTarget, damage, crit, miss, soulshot, shld, false);
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "Failed executing HitTask. Hit target: " + this.hitTarget);
+				Log.log(Level.SEVERE, "Failed executing HitTask. Hit target: " + hitTarget);
 				e.printStackTrace();
 			}
 		}
@@ -3564,7 +3564,7 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				this.currPlayer.useMagic(this.queuedSkill, this.isCtrlPressed, this.isShiftPressed);
+				currPlayer.useMagic(queuedSkill, isCtrlPressed, isShiftPressed);
 			}
 			catch (Exception e)
 			{
@@ -3590,7 +3590,7 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				getAI().notifyEvent(this.evt, null);
+				getAI().notifyEvent(evt, null);
 			}
 			catch (Exception e)
 			{
@@ -3628,13 +3628,13 @@ public abstract class L2Character extends L2Object
 			try
 			{
 				//_actor.setXYZ(this.x, this.y, this.z);
-				broadcastPacket(new ValidateLocation(this.actor));
+				broadcastPacket(new ValidateLocation(actor));
 
 				// Dirty fix for... summons not attacking targets automatically after jumping.
-				if (this.actor instanceof L2Summon)
+				if (actor instanceof L2Summon)
 				{
-					this.actor.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, this.actor.getTarget());
-					this.actor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this.actor.getTarget());
+					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, actor.getTarget());
+					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, actor.getTarget());
 				}
 			}
 			catch (Exception e)
@@ -3675,7 +3675,7 @@ public abstract class L2Character extends L2Object
 		if (newEffect.getEffector() instanceof L2PcInstance)
 		{
 			// Player characters who used custom command to refuse buffs, will only receive from party
-			if (this instanceof L2PcInstance && this.refuseBuffs && newEffect.getEffector() != newEffect.getEffected() &&
+			if (this instanceof L2PcInstance && refuseBuffs && newEffect.getEffector() != newEffect.getEffected() &&
 					newEffect.getSkill().getSkillType() == L2SkillType.BUFF)
 			{
 				//if (Config.isServer(Config.TENKAI))
@@ -3695,7 +3695,7 @@ public abstract class L2Character extends L2Object
 			}
 		}
 
-		this.effects.queueEffect(newEffect, false);
+		effects.queueEffect(newEffect, false);
 	}
 
 	/**
@@ -3718,7 +3718,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void removeEffect(L2Abnormal effect)
 	{
-		this.effects.queueEffect(effect, true);
+		effects.queueEffect(effect, true);
 	}
 
 	/**
@@ -3726,13 +3726,13 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void startVisualEffect(VisualEffect effect)
 	{
-		this.abnormalEffects.add(effect.getId());
+		abnormalEffects.add(effect.getId());
 		updateAbnormalEffect();
 	}
 
 	public final void startVisualEffect(int effectId)
 	{
-		this.abnormalEffects.add(effectId);
+		abnormalEffects.add(effectId);
 		updateAbnormalEffect();
 	}
 
@@ -3872,13 +3872,13 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopVisualEffect(VisualEffect effect)
 	{
-		this.abnormalEffects.remove(effect.getId());
+		abnormalEffects.remove(effect.getId());
 		updateAbnormalEffect();
 	}
 
 	public final void stopVisualEffect(int effectId)
 	{
-		this.abnormalEffects.remove(effectId);
+		abnormalEffects.remove(effectId);
 		updateAbnormalEffect();
 	}
 
@@ -3887,12 +3887,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public void stopAllEffects()
 	{
-		this.effects.stopAllEffects();
+		effects.stopAllEffects();
 	}
 
 	public void stopAllEffectsExceptThoseThatLastThroughDeath()
 	{
-		this.effects.stopAllEffectsExceptThoseThatLastThroughDeath();
+		effects.stopAllEffectsExceptThoseThatLastThroughDeath();
 	}
 
 	/**
@@ -3932,7 +3932,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopSkillEffects(int skillId)
 	{
-		this.effects.stopSkillEffects(skillId);
+		effects.stopSkillEffects(skillId);
 	}
 
 	/**
@@ -3951,12 +3951,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopEffects(L2AbnormalType type)
 	{
-		this.effects.stopEffects(type);
+		effects.stopEffects(type);
 	}
 
 	public final void stopEffects(L2EffectType type)
 	{
-		this.effects.stopEffects(type);
+		effects.stopEffects(type);
 	}
 
 	/**
@@ -3965,7 +3965,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopEffectsOnAction(L2Skill skill)
 	{
-		this.effects.stopEffectsOnAction(skill);
+		effects.stopEffectsOnAction(skill);
 	}
 
 	/**
@@ -3974,7 +3974,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopEffectsOnDamage(boolean awake, int damage)
 	{
-		this.effects.stopEffectsOnDamage(awake, damage);
+		effects.stopEffectsOnDamage(awake, damage);
 	}
 
 	/**
@@ -3983,7 +3983,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final void stopEffectsOnDebuffBlock()
 	{
-		this.effects.stopEffectsOnDebuffBlock();
+		effects.stopEffectsOnDebuffBlock();
 	}
 
 	/**
@@ -4173,7 +4173,7 @@ public abstract class L2Character extends L2Object
 		{
 			if (((L2PcInstance) this).getTransformation() != null)
 			{
-				this.unTransform(removeEffects);
+				unTransform(removeEffects);
 			}
 		}
 
@@ -4237,9 +4237,9 @@ public abstract class L2Character extends L2Object
 	public Set<Integer> getAbnormalEffect()
 	{
 		Set<Integer> result = new HashSet<>();
-		synchronized (this.abnormalEffects)
+		synchronized (abnormalEffects)
 		{
-			result.addAll(this.abnormalEffects);
+			result.addAll(abnormalEffects);
 		}
 
 		return result;
@@ -4256,12 +4256,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public final L2Abnormal[] getAllEffects()
 	{
-		return this.effects.getAllEffects();
+		return effects.getAllEffects();
 	}
 
 	public final L2Abnormal[] getAllDebuffs()
 	{
-		return this.effects.getAllDebuffs();
+		return effects.getAllDebuffs();
 	}
 
 	/**
@@ -4275,17 +4275,17 @@ public abstract class L2Character extends L2Object
 	 */
 	public final L2Abnormal getFirstEffect(int skillId)
 	{
-		return this.effects.getFirstEffect(skillId);
+		return effects.getFirstEffect(skillId);
 	}
 
 	public final L2Abnormal getFirstEffect(final String stackType)
 	{
-		return this.effects.getFirstEffect(stackType);
+		return effects.getFirstEffect(stackType);
 	}
 
 	public L2Abnormal getFirstEffectByName(String effectName)
 	{
-		return this.effects.getFirstEffectByName(effectName);
+		return effects.getFirstEffectByName(effectName);
 	}
 
 	/**
@@ -4299,7 +4299,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final L2Abnormal getFirstEffect(L2Skill skill)
 	{
-		return this.effects.getFirstEffect(skill);
+		return effects.getFirstEffect(skill);
 	}
 
 	/**
@@ -4313,7 +4313,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final L2Abnormal getFirstEffect(L2AbnormalType tp)
 	{
-		return this.effects.getFirstEffect(tp);
+		return effects.getFirstEffect(tp);
 	}
 
 	// =========================================================
@@ -4507,19 +4507,19 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 
-		synchronized (this.calculators)
+		synchronized (calculators)
 		{
 			// Check if Calculator set is linked to the standard Calculator set of NPC
-			if (this.calculators == NPC_STD_CALCULATOR)
+			if (calculators == NPC_STD_CALCULATOR)
 			{
 				// Create a copy of the standard NPC Calculator set
-				this.calculators = new Calculator[Stats.NUM_STATS];
+				calculators = new Calculator[Stats.NUM_STATS];
 
 				for (int i = 0; i < Stats.NUM_STATS; i++)
 				{
 					if (NPC_STD_CALCULATOR[i] != null)
 					{
-						this.calculators[i] = new Calculator(NPC_STD_CALCULATOR[i]);
+						calculators[i] = new Calculator(NPC_STD_CALCULATOR[i]);
 					}
 				}
 			}
@@ -4527,13 +4527,13 @@ public abstract class L2Character extends L2Object
 			// Select the Calculator of the affected state in the Calculator set
 			int stat = f.stat.ordinal();
 
-			if (this.calculators[stat] == null)
+			if (calculators[stat] == null)
 			{
-				this.calculators[stat] = new Calculator();
+				calculators[stat] = new Calculator();
 			}
 
 			// Add the Func to the calculator corresponding to the state
-			this.calculators[stat].addFunc(f);
+			calculators[stat].addFunc(f);
 		}
 	}
 
@@ -4596,19 +4596,19 @@ public abstract class L2Character extends L2Object
 		// Select the Calculator of the affected state in the Calculator set
 		int stat = f.stat.ordinal();
 
-		synchronized (this.calculators)
+		synchronized (calculators)
 		{
-			if (this.calculators[stat] == null)
+			if (calculators[stat] == null)
 			{
 				return;
 			}
 
 			// Remove the Func object from the Calculator
-			this.calculators[stat].removeFunc(f);
+			calculators[stat].removeFunc(f);
 
-			if (this.calculators[stat].size() == 0)
+			if (calculators[stat].size() == 0)
 			{
-				this.calculators[stat] = null;
+				calculators[stat] = null;
 			}
 
 			// If possible, free the memory and just create a link on NPC_STD_CALCULATOR
@@ -4617,7 +4617,7 @@ public abstract class L2Character extends L2Object
 				int i = 0;
 				for (; i < Stats.NUM_STATS; i++)
 				{
-					if (!Calculator.equalsCals(this.calculators[i], NPC_STD_CALCULATOR[i]))
+					if (!Calculator.equalsCals(calculators[i], NPC_STD_CALCULATOR[i]))
 					{
 						break;
 					}
@@ -4625,7 +4625,7 @@ public abstract class L2Character extends L2Object
 
 				if (i >= Stats.NUM_STATS)
 				{
-					this.calculators = NPC_STD_CALCULATOR;
+					calculators = NPC_STD_CALCULATOR;
 				}
 			}
 		}
@@ -4691,9 +4691,9 @@ public abstract class L2Character extends L2Object
 
 		int i = 0;
 		// Go through the Calculator set
-		synchronized (this.calculators)
+		synchronized (calculators)
 		{
-			for (Calculator calc : this.calculators)
+			for (Calculator calc : calculators)
 			{
 				if (calc != null)
 				{
@@ -4709,7 +4709,7 @@ public abstract class L2Character extends L2Object
 
 					if (calc.size() == 0)
 					{
-						this.calculators[i] = null;
+						calculators[i] = null;
 					}
 				}
 				i++;
@@ -4721,7 +4721,7 @@ public abstract class L2Character extends L2Object
 				i = 0;
 				for (; i < Stats.NUM_STATS; i++)
 				{
-					if (!Calculator.equalsCals(this.calculators[i], NPC_STD_CALCULATOR[i]))
+					if (!Calculator.equalsCals(calculators[i], NPC_STD_CALCULATOR[i]))
 					{
 						break;
 					}
@@ -4729,7 +4729,7 @@ public abstract class L2Character extends L2Object
 
 				if (i >= Stats.NUM_STATS)
 				{
-					this.calculators = NPC_STD_CALCULATOR;
+					calculators = NPC_STD_CALCULATOR;
 				}
 			}
 
@@ -4878,7 +4878,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final int getHeading()
 	{
-		return this.heading;
+		return heading;
 	}
 
 	/**
@@ -4891,7 +4891,7 @@ public abstract class L2Character extends L2Object
 
 	public final int getXdestination()
 	{
-		MoveData m = this.move;
+		MoveData m = move;
 
 		if (m != null)
 		{
@@ -4906,7 +4906,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final int getYdestination()
 	{
-		MoveData m = this.move;
+		MoveData m = move;
 
 		if (m != null)
 		{
@@ -4921,7 +4921,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final int getZdestination()
 	{
-		MoveData m = this.move;
+		MoveData m = move;
 
 		if (m != null)
 		{
@@ -4944,7 +4944,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean isMoving()
 	{
-		return this.move != null;
+		return move != null;
 	}
 
 	/**
@@ -4952,7 +4952,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean isOnGeodataPath()
 	{
-		MoveData m = this.move;
+		MoveData m = move;
 		if (m == null)
 		{
 			return false;
@@ -4971,15 +4971,15 @@ public abstract class L2Character extends L2Object
 	{
 		if (canDoubleCast())
 		{
-			return this.isCastingNow || this.isCastingNow2;
+			return isCastingNow || isCastingNow2;
 		}
 
-		return this.isCastingNow;
+		return isCastingNow;
 	}
 
 	public boolean isCastingNow1()
 	{
-		return this.isCastingNow;
+		return isCastingNow;
 	}
 
 	public final boolean canCastNow(L2Skill skill)
@@ -4998,39 +4998,39 @@ public abstract class L2Character extends L2Object
 
 		if (canDoubleCast() && skill.isElemental())
 		{
-			return !this.isCastingNow || !this.isCastingNow2;
+			return !isCastingNow || !isCastingNow2;
 		}
 
-		return !this.isCastingNow;
+		return !isCastingNow;
 	}
 
 	private boolean lastCast1;
 
 	public final boolean wasLastCast1()
 	{
-		return this.lastCast1;
+		return lastCast1;
 	}
 
 	public void setIsCastingNow(boolean value)
 	{
-		this.isCastingNow = value;
-		this.lastCast1 = true;
+		isCastingNow = value;
+		lastCast1 = true;
 	}
 
 	public void setIsCastingNow2(boolean value)
 	{
-		this.isCastingNow2 = value;
-		this.lastCast1 = !value;
+		isCastingNow2 = value;
+		lastCast1 = !value;
 	}
 
 	public final boolean isCastingSimultaneouslyNow()
 	{
-		return this.isCastingSimultaneouslyNow;
+		return isCastingSimultaneouslyNow;
 	}
 
 	public void setIsCastingSimultaneouslyNow(boolean value)
 	{
-		this.isCastingSimultaneouslyNow = value;
+		isCastingSimultaneouslyNow = value;
 	}
 
 	/**
@@ -5038,12 +5038,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean canAbortCast()
 	{
-		return this.castInterruptTime > TimeController.getGameTicks();
+		return castInterruptTime > TimeController.getGameTicks();
 	}
 
 	public int getCastInterruptTime()
 	{
-		return this.castInterruptTime;
+		return castInterruptTime;
 	}
 
 	public boolean canDoubleCast()
@@ -5056,7 +5056,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isAttackingNow()
 	{
-		return this.attackEndTime > TimeController.getGameTicks();
+		return attackEndTime > TimeController.getGameTicks();
 	}
 
 	/**
@@ -5064,7 +5064,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final boolean isAttackAborted()
 	{
-		return this.attacking <= 0;
+		return attacking <= 0;
 	}
 
 	/**
@@ -5074,7 +5074,7 @@ public abstract class L2Character extends L2Object
 	{
 		if (isAttackingNow())
 		{
-			this.attacking = 0;
+			attacking = 0;
 			sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
@@ -5084,7 +5084,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final int getAttackingBodyPart()
 	{
-		return this.attacking;
+		return attacking;
 	}
 
 	/**
@@ -5094,24 +5094,24 @@ public abstract class L2Character extends L2Object
 	{
 		if (isCastingNow() || isCastingSimultaneouslyNow())
 		{
-			Future<?> future = this.skillCast;
+			Future<?> future = skillCast;
 			// cancels the skill hit scheduled task
 			if (future != null)
 			{
 				future.cancel(true);
-				this.skillCast = null;
+				skillCast = null;
 			}
-			future = this.skillCast2;
+			future = skillCast2;
 			if (future != null)
 			{
 				future.cancel(true);
-				this.skillCast2 = null;
+				skillCast2 = null;
 			}
-			future = this.simultSkillCast;
+			future = simultSkillCast;
 			if (future != null)
 			{
 				future.cancel(true);
-				this.simultSkillCast = null;
+				simultSkillCast = null;
 			}
 
 			if (getFusionSkill() != null)
@@ -5130,7 +5130,7 @@ public abstract class L2Character extends L2Object
 				mog.exit();
 			}
 
-			if (this.allSkillsDisabled)
+			if (allSkillsDisabled)
 			{
 				enableAllSkills(); // this remains for forced skill use, e.g. scroll of escape
 			}
@@ -5138,7 +5138,7 @@ public abstract class L2Character extends L2Object
 			setIsCastingNow2(false);
 			setIsCastingSimultaneouslyNow(false);
 			// safeguard for cannot be interrupt any more
-			this.castInterruptTime = 0;
+			castInterruptTime = 0;
 			if (this instanceof L2PcInstance)
 			{
 				getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING); // setting back previous intention
@@ -5172,7 +5172,7 @@ public abstract class L2Character extends L2Object
 	public boolean updatePosition(int gameTicks)
 	{
 		// Get movement data
-		MoveData m = this.move;
+		MoveData m = move;
 
 		if (m == null)
 		{
@@ -5181,7 +5181,7 @@ public abstract class L2Character extends L2Object
 
 		if (!isVisible())
 		{
-			this.move = null;
+			move = null;
 			return true;
 		}
 
@@ -5300,14 +5300,14 @@ public abstract class L2Character extends L2Object
 		// This function is called too often from movement code
 		if (force)
 		{
-			this.zoneValidateCounter = 4;
+			zoneValidateCounter = 4;
 		}
 		else
 		{
-			this.zoneValidateCounter--;
-			if (this.zoneValidateCounter < 0)
+			zoneValidateCounter--;
+			if (zoneValidateCounter < 0)
 			{
-				this.zoneValidateCounter = 4;
+				zoneValidateCounter = 4;
 			}
 			else
 			{
@@ -5337,7 +5337,7 @@ public abstract class L2Character extends L2Object
 	public void stopMove(L2CharPosition pos, boolean updateKnownObjects)
 	{
 		// Delete movement data of the L2Character
-		this.move = null;
+		move = null;
 
 		//if (getAI() != null)
 		//  getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -5362,7 +5362,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isShowSummonAnimation()
 	{
-		return this.showSummonAnimation;
+		return showSummonAnimation;
 	}
 
 	/**
@@ -5397,13 +5397,13 @@ public abstract class L2Character extends L2Object
 			object = null;
 		}
 
-		if (object != null && object != this.target)
+		if (object != null && object != target)
 		{
 			getKnownList().addKnownObject(object);
 			object.getKnownList().addKnownObject(this);
 		}
 
-		this.target = object;
+		target = object;
 	}
 
 	/**
@@ -5411,9 +5411,9 @@ public abstract class L2Character extends L2Object
 	 */
 	public final int getTargetId()
 	{
-		if (this.target != null)
+		if (target != null)
 		{
-			return this.target.getObjectId();
+			return target.getObjectId();
 		}
 
 		return -1;
@@ -5424,7 +5424,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public final L2Object getTarget()
 	{
-		return this.target;
+		return target;
 	}
 
 	// called from AIAccessor only
@@ -5620,13 +5620,13 @@ public abstract class L2Character extends L2Object
 				{
 					try
 					{
-						if (gtx == this.move.geoPathGtx && gty == this.move.geoPathGty)
+						if (gtx == move.geoPathGtx && gty == move.geoPathGty)
 						{
 							return;
 						}
 						else
 						{
-							this.move.onGeodataPathIndex = -1; // Set not on geodata path
+							move.onGeodataPathIndex = -1; // Set not on geodata path
 						}
 					}
 					catch (NullPointerException e)
@@ -5786,7 +5786,7 @@ public abstract class L2Character extends L2Object
 		m.moveStartTime = TimeController.getGameTicks();
 
 		// Set the L2Character this.move object to MoveData object
-		this.move = m;
+		move = m;
 
 		// Adding 2 ticks to fight ping a bit
 		if (isOnGeodataPath())
@@ -5813,7 +5813,7 @@ public abstract class L2Character extends L2Object
 		if (!isOnGeodataPath())
 		{
 			// Cancel the move action
-			this.move = null;
+			move = null;
 			return false;
 		}
 
@@ -5822,11 +5822,11 @@ public abstract class L2Character extends L2Object
 		if (speed <= 0 || isMovementDisabled())
 		{
 			// Cancel the move action
-			this.move = null;
+			move = null;
 			return false;
 		}
 
-		MoveData md = this.move;
+		MoveData md = move;
 		if (md == null)
 		{
 			return false;
@@ -5878,7 +5878,7 @@ public abstract class L2Character extends L2Object
 		}
 
 		// Set the L2Character this.move object to MoveData object
-		this.move = m;
+		move = m;
 
 		// Add the L2Character to movingObjects of the GameTimeController
 		// The GameTimeController manage objects movement
@@ -5902,7 +5902,7 @@ public abstract class L2Character extends L2Object
 
 	public boolean validateMovementHeading(int heading)
 	{
-		MoveData m = this.move;
+		MoveData m = move;
 
 		if (m == null)
 		{
@@ -6163,7 +6163,7 @@ public abstract class L2Character extends L2Object
 	 */
 	public void setAttackingBodypart()
 	{
-		this.attacking = Inventory.PAPERDOLL_CHEST;
+		attacking = Inventory.PAPERDOLL_CHEST;
 	}
 
 	/**
@@ -6416,7 +6416,7 @@ public abstract class L2Character extends L2Object
 
 					if (this instanceof L2PcInstance)
 					{
-						this.sendMessage("Target reflected to you " + reflectedDamage + " damage.");
+						sendMessage("Target reflected to you " + reflectedDamage + " damage.");
 					}
 					else if (this instanceof L2Summon)
 					{
@@ -6533,13 +6533,13 @@ public abstract class L2Character extends L2Object
 				}
 
 				// Maybe launch chance skills on us
-				if (this.chanceSkills != null && !wasHeavyPunch)
+				if (chanceSkills != null && !wasHeavyPunch)
 				{
-					this.chanceSkills.onHit(target, damage, false, false, crit);
+					chanceSkills.onHit(target, damage, false, false, crit);
 					// Reflect triggers onHit
 					if (reflectedDamage > 0)
 					{
-						this.chanceSkills.onHit(target, damage, true, false, false);
+						chanceSkills.onHit(target, damage, true, false, false);
 					}
 				}
 
@@ -6768,7 +6768,7 @@ public abstract class L2Character extends L2Object
 
 		if (this instanceof L2Playable && target instanceof L2Playable)
 		{
-			final L2PcInstance player = this.getActingPlayer();
+			final L2PcInstance player = getActingPlayer();
 			final L2PcInstance targetedPlayer = target.getActingPlayer();
 
 			if (player.getDuelId() != 0 && player.getDuelId() == targetedPlayer.getDuelId())
@@ -6979,7 +6979,7 @@ public abstract class L2Character extends L2Object
 			// Add Func objects of newSkill to the calculator set of the L2Character
 			addStatFuncs(newSkill.getStatFuncs(this));
 
-			if (oldSkill != null && this.chanceSkills != null)
+			if (oldSkill != null && chanceSkills != null)
 			{
 				removeChanceSkill(oldSkill.getId());
 			}
@@ -7105,7 +7105,7 @@ public abstract class L2Character extends L2Object
 				((L2PcInstance) this).dismount();
 			}
 
-			if (oldSkill.isChance() && this.chanceSkills != null)
+			if (oldSkill.isChance() && chanceSkills != null)
 			{
 				removeChanceSkill(oldSkill.getId());
 			}
@@ -7126,14 +7126,14 @@ public abstract class L2Character extends L2Object
 
 	public void removeChanceSkill(int id)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			return;
 		}
 
-		synchronized (this.chanceSkills)
+		synchronized (chanceSkills)
 		{
-			for (IChanceSkillTrigger trigger : this.chanceSkills.keySet())
+			for (IChanceSkillTrigger trigger : chanceSkills.keySet())
 			{
 				if (!(trigger instanceof L2Skill))
 				{
@@ -7141,7 +7141,7 @@ public abstract class L2Character extends L2Object
 				}
 				if (((L2Skill) trigger).getId() == id)
 				{
-					this.chanceSkills.remove(trigger);
+					chanceSkills.remove(trigger);
 				}
 			}
 		}
@@ -7149,57 +7149,57 @@ public abstract class L2Character extends L2Object
 
 	public void addChanceTrigger(IChanceSkillTrigger trigger)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			synchronized (this)
 			{
-				if (this.chanceSkills == null)
+				if (chanceSkills == null)
 				{
-					this.chanceSkills = new ChanceSkillList(this);
+					chanceSkills = new ChanceSkillList(this);
 				}
 			}
 		}
-		this.chanceSkills.put(trigger, trigger.getTriggeredChanceCondition());
+		chanceSkills.put(trigger, trigger.getTriggeredChanceCondition());
 	}
 
 	public void removeChanceEffect(EffectChanceSkillTrigger effect)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			return;
 		}
 
-		this.chanceSkills.remove(effect);
+		chanceSkills.remove(effect);
 	}
 
 	public void onStartChanceEffect(L2Skill skill, byte element)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			return;
 		}
 
-		this.chanceSkills.onStart(skill, element);
+		chanceSkills.onStart(skill, element);
 	}
 
 	public void onActionTimeChanceEffect(L2Skill skill, byte element)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			return;
 		}
 
-		this.chanceSkills.onActionTime(skill, element);
+		chanceSkills.onActionTime(skill, element);
 	}
 
 	public void onExitChanceEffect(L2Skill skill, byte element)
 	{
-		if (this.chanceSkills == null)
+		if (chanceSkills == null)
 		{
 			return;
 		}
 
-		this.chanceSkills.onExit(skill, element);
+		chanceSkills.onExit(skill, element);
 	}
 
 	/**
@@ -7210,17 +7210,17 @@ public abstract class L2Character extends L2Object
 	 */
 	public L2Skill[] getAllSkills()
 	{
-		if (this.skills == null)
+		if (skills == null)
 		{
 			return new L2Skill[0];
 		}
 
-		return this.skills.values().toArray(new L2Skill[this.skills.values().size()]);
+		return skills.values().toArray(new L2Skill[skills.values().size()]);
 	}
 
 	public ChanceSkillList getChanceSkills()
 	{
-		return this.chanceSkills;
+		return chanceSkills;
 	}
 
 	/**
@@ -7263,12 +7263,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public L2Skill getKnownSkill(int skillId)
 	{
-		if (this.skills == null)
+		if (skills == null)
 		{
 			return null;
 		}
 
-		return this.skills.get(skillId);
+		return skills.get(skillId);
 	}
 
 	/**
@@ -7278,12 +7278,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public int getBuffCount()
 	{
-		return this.effects.getBuffCount();
+		return effects.getBuffCount();
 	}
 
 	public int getDanceCount()
 	{
-		return this.effects.getDanceCount();
+		return effects.getDanceCount();
 	}
 
 	/**
@@ -7462,11 +7462,11 @@ public abstract class L2Character extends L2Object
 		}
 		else if (mut.second)
 		{
-			this.skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, 400);
+			skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, 400);
 		}
 		else
 		{
-			this.skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, 400);
+			skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, 400);
 		}
 	}
 
@@ -7490,17 +7490,17 @@ public abstract class L2Character extends L2Object
 		{
 			if (mut.simultaneously)
 			{
-				this.simultSkillCast = null;
+				simultSkillCast = null;
 				setIsCastingSimultaneouslyNow(false);
 			}
 			else if (mut.second)
 			{
-				this.skillCast2 = null;
+				skillCast2 = null;
 				setIsCastingNow2(false);
 			}
 			else
 			{
-				this.skillCast = null;
+				skillCast = null;
 				setIsCastingNow(false);
 			}
 			if (getFusionSkill() != null)
@@ -7525,17 +7525,17 @@ public abstract class L2Character extends L2Object
 		{
 			if (mut.simultaneously)
 			{
-				this.simultSkillCast = null;
+				simultSkillCast = null;
 				setIsCastingSimultaneouslyNow(false);
 			}
 			else if (mut.second)
 			{
-				this.skillCast2 = null;
+				skillCast2 = null;
 				setIsCastingNow2(false);
 			}
 			else
 			{
-				this.skillCast = null;
+				skillCast = null;
 				setIsCastingNow(false);
 			}
 			mog.exit();
@@ -7703,15 +7703,15 @@ public abstract class L2Character extends L2Object
 				int hitTime = mut.hitTime * skill.getHitTimings()[mut.count] / 100;
 				if (mut.simultaneously)
 				{
-					this.simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
+					simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
 				}
 				else if (mut.second)
 				{
-					this.skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
+					skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
 				}
 				else
 				{
-					this.skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
+					skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, hitTime);
 				}
 				return;
 			}
@@ -7726,15 +7726,15 @@ public abstract class L2Character extends L2Object
 		{
 			if (mut.simultaneously)
 			{
-				this.simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
+				simultSkillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
 			}
 			else if (mut.second)
 			{
-				this.skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
+				skillCast2 = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
 			}
 			else
 			{
-				this.skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
+				skillCast = ThreadPoolManager.getInstance().scheduleEffect(mut, mut.coolTime);
 			}
 		}
 	}
@@ -7746,21 +7746,21 @@ public abstract class L2Character extends L2Object
 	{
 		if (mut.simultaneously)
 		{
-			this.simultSkillCast = null;
+			simultSkillCast = null;
 			setIsCastingSimultaneouslyNow(false);
 			return;
 		}
 		else if (mut.second)
 		{
-			this.skillCast2 = null;
+			skillCast2 = null;
 			setIsCastingNow2(false);
-			this.castInterruptTime = 0;
+			castInterruptTime = 0;
 		}
 		else
 		{
-			this.skillCast = null;
+			skillCast = null;
 			setIsCastingNow(false);
-			this.castInterruptTime = 0;
+			castInterruptTime = 0;
 		}
 
 		final L2Skill skill = mut.skill;
@@ -7821,7 +7821,7 @@ public abstract class L2Character extends L2Object
 
 	public Map<Integer, Long> getDisabledSkills()
 	{
-		return this.disabledSkills;
+		return disabledSkills;
 	}
 
 	/**
@@ -7834,12 +7834,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public void enableSkill(L2Skill skill)
 	{
-		if (skill == null || this.disabledSkills == null)
+		if (skill == null || disabledSkills == null)
 		{
 			return;
 		}
 
-		this.disabledSkills.remove(skill.getReuseHashCode());
+		disabledSkills.remove(skill.getReuseHashCode());
 	}
 
 	/**
@@ -7855,12 +7855,12 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 
-		if (this.disabledSkills == null)
+		if (disabledSkills == null)
 		{
-			this.disabledSkills = Collections.synchronizedMap(new HashMap<Integer, Long>());
+			disabledSkills = Collections.synchronizedMap(new HashMap<Integer, Long>());
 		}
 
-		this.disabledSkills.put(skill.getReuseHashCode(), delay > 10 ? System.currentTimeMillis() + delay : Long.MAX_VALUE);
+		disabledSkills.put(skill.getReuseHashCode(), delay > 10 ? System.currentTimeMillis() + delay : Long.MAX_VALUE);
 	}
 
 	/**
@@ -7912,12 +7912,12 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isSkillDisabled(int reuseHashcode)
 	{
-		if (this.disabledSkills == null)
+		if (disabledSkills == null)
 		{
 			return false;
 		}
 
-		final Long timeStamp = this.disabledSkills.get(reuseHashcode);
+		final Long timeStamp = disabledSkills.get(reuseHashcode);
 		if (timeStamp == null)
 		{
 			return false;
@@ -7925,7 +7925,7 @@ public abstract class L2Character extends L2Object
 
 		if (timeStamp < System.currentTimeMillis())
 		{
-			this.disabledSkills.remove(reuseHashcode);
+			disabledSkills.remove(reuseHashcode);
 			return false;
 		}
 
@@ -7941,7 +7941,7 @@ public abstract class L2Character extends L2Object
 		{
 			Log.fine("all skills disabled");
 		}
-		this.allSkillsDisabled = true;
+		allSkillsDisabled = true;
 	}
 
 	/**
@@ -7953,7 +7953,7 @@ public abstract class L2Character extends L2Object
 		{
 			Log.fine("all skills enabled");
 		}
-		this.allSkillsDisabled = false;
+		allSkillsDisabled = false;
 	}
 
 	/**
@@ -8068,9 +8068,9 @@ public abstract class L2Character extends L2Object
 							}
 
 							// Maybe launch chance skills on us
-							if (this.chanceSkills != null)
+							if (chanceSkills != null)
 							{
-								this.chanceSkills.onSkillHit(target, skill, false, false);
+								chanceSkills.onSkillHit(target, skill, false, false);
 							}
 							// Maybe launch chance skills on target
 							if (target.getChanceSkills() != null)
@@ -8378,7 +8378,7 @@ public abstract class L2Character extends L2Object
 
 	public final void setSkillCast(Future<?> newSkillCast)
 	{
-		this.skillCast = newSkillCast;
+		skillCast = newSkillCast;
 	}
 
 	/**
@@ -8388,7 +8388,7 @@ public abstract class L2Character extends L2Object
 	{
 		setIsCastingNow(true);
 		// for interrupt -400 ms
-		this.castInterruptTime = newSkillCastEndTick - 4;
+		castInterruptTime = newSkillCastEndTick - 4;
 	}
 
 	private boolean AIdisabled = false;
@@ -8420,7 +8420,7 @@ public abstract class L2Character extends L2Object
 
 	public int getAttackEndTime()
 	{
-		return this.attackEndTime;
+		return attackEndTime;
 	}
 
 	/**
@@ -8886,34 +8886,34 @@ public abstract class L2Character extends L2Object
 
 	public FusionSkill getFusionSkill()
 	{
-		return this.fusionSkill;
+		return fusionSkill;
 	}
 
 	public void setFusionSkill(FusionSkill fb)
 	{
-		this.fusionSkill = fb;
+		fusionSkill = fb;
 	}
 
 	protected L2Object[] continuousDebuffTargets = null;
 
 	public L2Object[] getContinuousDebuffTargets()
 	{
-		return this.continuousDebuffTargets;
+		return continuousDebuffTargets;
 	}
 
 	public void setContinuousDebuffTargets(L2Object[] targets)
 	{
-		this.continuousDebuffTargets = targets;
+		continuousDebuffTargets = targets;
 	}
 
 	public void abortContinuousDebuff(L2Skill skill)
 	{
-		if (this.continuousDebuffTargets == null || skill == null)
+		if (continuousDebuffTargets == null || skill == null)
 		{
 			return;
 		}
 
-		for (L2Object obj : this.continuousDebuffTargets)
+		for (L2Object obj : continuousDebuffTargets)
 		{
 			if (!(obj instanceof L2Character))
 			{
@@ -8930,7 +8930,7 @@ public abstract class L2Character extends L2Object
 			}
 		}
 
-		this.continuousDebuffTargets = null;
+		continuousDebuffTargets = null;
 	}
 
 	public byte getAttackElement()
@@ -8972,12 +8972,12 @@ public abstract class L2Character extends L2Object
 
 	public void disableCoreAI(boolean val)
 	{
-		this.AIdisabled = val;
+		AIdisabled = val;
 	}
 
 	public boolean isCoreAIDisabled()
 	{
-		return this.AIdisabled;
+		return AIdisabled;
 	}
 
 	/**
@@ -8999,7 +8999,7 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				this.activeChar.doSimultaneousCast(this.skill);
+				activeChar.doSimultaneousCast(skill);
 			}
 			catch (Exception e)
 			{
@@ -9025,17 +9025,17 @@ public abstract class L2Character extends L2Object
 	 */
 	public boolean isAffected(long flag)
 	{
-		return this.effects.isAffected(flag);
+		return effects.isAffected(flag);
 	}
 
 	public void setRefuseBuffs(boolean refuses)
 	{
-		this.refuseBuffs = refuses;
+		refuseBuffs = refuses;
 	}
 
 	public boolean isRefusingBuffs()
 	{
-		return this.refuseBuffs;
+		return refuseBuffs;
 	}
 
 	public float getMezMod(int type)
@@ -9066,7 +9066,7 @@ public abstract class L2Character extends L2Object
 
 	public L2Character getFaceoffTarget()
 	{
-		return this.faceoffTarget;
+		return faceoffTarget;
 	}
 
 	public void addSkillEffect(L2Skill newSkill)
@@ -9140,7 +9140,7 @@ public abstract class L2Character extends L2Object
 				((L2PcInstance) this).dismount();
 			}
 
-			if (oldSkill.isChance() && this.chanceSkills != null)
+			if (oldSkill.isChance() && chanceSkills != null)
 			{
 				removeChanceSkill(oldSkill.getId());
 			}
@@ -9161,7 +9161,7 @@ public abstract class L2Character extends L2Object
 
 	public Map<Integer, L2Skill> getSkills()
 	{
-		return this.skills;
+		return skills;
 	}
 
 	/**

@@ -46,12 +46,12 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Item[count];
+		items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -63,7 +63,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 
 			if (itemId < 1 || cnt < 1 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
 			readD(); // Unk
@@ -74,7 +74,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			readD(); // GoD ???
 			readH(); // GoD ???
 
-			this.items[i] = new Item(itemId, cnt, price);
+			items[i] = new Item(itemId, cnt, price);
 		}
 	}
 
@@ -87,7 +87,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
@@ -132,7 +132,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		tradeList.clear();
 
 		// Check maximum number of allowed slots for pvt shops
-		if (this.items.length > player.getPrivateBuyStoreLimit())
+		if (items.length > player.getPrivateBuyStoreLimit())
 		{
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(
@@ -152,7 +152,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		}
 
 		long totalCost = 0;
-		for (Item i : this.items)
+		for (Item i : items)
 		{
 			if (!i.addToTradeList(tradeList))
 			{
@@ -197,25 +197,25 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 
 		public Item(int id, long num, long pri)
 		{
-			this.itemId = id;
-			this.count = num;
-			this.price = pri;
+			itemId = id;
+			count = num;
+			price = pri;
 		}
 
 		public boolean addToTradeList(TradeList list)
 		{
-			if (MAX_ADENA / this.count < this.price)
+			if (MAX_ADENA / count < price)
 			{
 				return false;
 			}
 
-			list.addItemByItemId(this.itemId, this.count, this.price);
+			list.addItemByItemId(itemId, count, price);
 			return true;
 		}
 
 		public long getCost()
 		{
-			return this.count * this.price;
+			return count * price;
 		}
 	}
 }

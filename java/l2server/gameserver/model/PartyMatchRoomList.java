@@ -33,13 +33,13 @@ public class PartyMatchRoomList
 
 	private PartyMatchRoomList()
 	{
-		this.rooms = new HashMap<>();
+		rooms = new HashMap<>();
 	}
 
 	public synchronized void addPartyMatchRoom(int id, PartyMatchRoom room)
 	{
-		this.rooms.put(id, room);
-		this.maxid++;
+		rooms.put(id, room);
+		maxid++;
 	}
 
 	public void deleteRoom(int id)
@@ -58,32 +58,32 @@ public class PartyMatchRoomList
 			//_member.setPartyMatching(0);
 			member.broadcastUserInfo();
 		}
-		this.rooms.remove(id);
+		rooms.remove(id);
 	}
 
 	public PartyMatchRoom getRoom(int id)
 	{
-		return this.rooms.get(id);
+		return rooms.get(id);
 	}
 
 	public PartyMatchRoom[] getRooms()
 	{
-		return this.rooms.values().toArray(new PartyMatchRoom[this.rooms.size()]);
+		return rooms.values().toArray(new PartyMatchRoom[rooms.size()]);
 	}
 
 	public int getPartyMatchRoomCount()
 	{
-		return this.rooms.size();
+		return rooms.size();
 	}
 
 	public int getMaxId()
 	{
-		return this.maxid;
+		return maxid;
 	}
 
 	public PartyMatchRoom getPlayerRoom(L2PcInstance player)
 	{
-		for (PartyMatchRoom room : this.rooms.values())
+		for (PartyMatchRoom room : rooms.values())
 		{
 			for (L2PcInstance member : room.getPartyMembers())
 			{
@@ -98,7 +98,7 @@ public class PartyMatchRoomList
 
 	public int getPlayerRoomId(L2PcInstance player)
 	{
-		for (PartyMatchRoom room : this.rooms.values())
+		for (PartyMatchRoom room : rooms.values())
 		{
 			for (L2PcInstance member : room.getPartyMembers())
 			{

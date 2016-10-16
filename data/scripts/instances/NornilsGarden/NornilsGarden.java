@@ -640,7 +640,7 @@ public class NornilsGarden extends Quest
 			return null;
 		}
 
-		for (int[] gk : this.gatekeepers)
+		for (int[] gk : gatekeepers)
 		{
 			if (npc.getNpcId() == gk[0])
 			{
@@ -679,7 +679,7 @@ public class NornilsGarden extends Quest
 		addFirstTalkId(_garden_guard);
 		addTalkId(_garden_guard);
 
-		for (int i[] : this.gatekeepers)
+		for (int i[] : gatekeepers)
 		{
 			addKillId(i[0]);
 		}

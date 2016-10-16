@@ -33,7 +33,7 @@ public class ListContainer
 
 	public ListContainer()
 	{
-		this.entries = new ArrayList<>();
+		entries = new ArrayList<>();
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class ListContainer
 
 	public final List<MultiSellEntry> getEntries()
 	{
-		return this.entries;
+		return entries;
 	}
 
 	public final void setListId(int listId)
@@ -57,7 +57,7 @@ public class ListContainer
 
 	public final int getListId()
 	{
-		return this.listId;
+		return listId;
 	}
 
 	public final void setApplyTaxes(boolean applyTaxes)
@@ -67,7 +67,7 @@ public class ListContainer
 
 	public final boolean getApplyTaxes()
 	{
-		return this.applyTaxes;
+		return applyTaxes;
 	}
 
 	public final void setMaintainEnchantment(boolean maintainEnchantment)
@@ -77,7 +77,7 @@ public class ListContainer
 
 	public final boolean getMaintainEnchantment()
 	{
-		return this.maintainEnchantment;
+		return maintainEnchantment;
 	}
 
 	public final void setIsChance(boolean isChance)
@@ -87,7 +87,7 @@ public class ListContainer
 
 	public final boolean isChance()
 	{
-		return this.isChance;
+		return isChance;
 	}
 
 	public final void setTimeLimit(final int timeLimit)
@@ -97,6 +97,6 @@ public class ListContainer
 
 	public final int getTimeLimit()
 	{
-		return this.timeLimit;
+		return timeLimit;
 	}
 }

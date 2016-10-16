@@ -41,7 +41,7 @@ public class L2AdminCommandAccessRight
 	public L2AdminCommandAccessRight(String adminCommand, String accessLevels, boolean confirm)
 	{
 		this.adminCommand = adminCommand;
-		this.requireConfirm = confirm;
+		requireConfirm = confirm;
 
 		String[] accessLevelsSplit = accessLevels.split(",");
 		int numLevels = accessLevelsSplit.length;
@@ -68,7 +68,7 @@ public class L2AdminCommandAccessRight
 	 */
 	public String getAdminCommand()
 	{
-		return this.adminCommand;
+		return adminCommand;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class L2AdminCommandAccessRight
 	 */
 	public boolean hasAccess(L2AccessLevel characterAccessLevel)
 	{
-		for (L2AccessLevel accessLevel : this.accessLevels)
+		for (L2AccessLevel accessLevel : accessLevels)
 		{
 			if (accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
 					characterAccessLevel.hasChildAccess(accessLevel)))
@@ -93,6 +93,6 @@ public class L2AdminCommandAccessRight
 
 	public boolean getRequireConfirm()
 	{
-		return this.requireConfirm;
+		return requireConfirm;
 	}
 }

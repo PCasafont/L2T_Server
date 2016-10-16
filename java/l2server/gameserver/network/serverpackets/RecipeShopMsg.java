@@ -28,13 +28,13 @@ public class RecipeShopMsg extends L2GameServerPacket
 
 	public RecipeShopMsg(L2PcInstance player)
 	{
-		this.activeChar = player;
+		activeChar = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeS(this.activeChar.getCreateList().getStoreName());//_activeChar.getTradeList().getSellStoreName());
+		writeD(activeChar.getObjectId());
+		writeS(activeChar.getCreateList().getStoreName());//_activeChar.getTradeList().getSellStoreName());
 	}
 }

@@ -33,7 +33,7 @@ public final class RequestExOustFromMPCC extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	/* (non-Javadoc)
@@ -42,7 +42,7 @@ public final class RequestExOustFromMPCC extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance target = L2World.getInstance().getPlayer(this.name);
+		L2PcInstance target = L2World.getInstance().getPlayer(name);
 		L2PcInstance activeChar = getClient().getActiveChar();
 
 		if (target != null && target.isInParty() && activeChar.isInParty() &&

@@ -35,11 +35,11 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.itemOID = readD();
-		this.itemName = readS();
-		this.price = readQ();
-		this.count = readQ();
-		this.duration = readD();
+		itemOID = readD();
+		itemName = readS();
+		price = readQ();
+		count = readQ();
+		duration = readD();
 		readQ(); // Unknown
 	}
 

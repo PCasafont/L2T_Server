@@ -52,21 +52,21 @@ public class L2SepulcherNpcInstance extends L2Npc
 		setInstanceType(InstanceType.L2SepulcherNpcInstance);
 		setShowSummonAnimation(true);
 
-		if (this.closeTask != null)
+		if (closeTask != null)
 		{
-			this.closeTask.cancel(true);
+			closeTask.cancel(true);
 		}
-		if (this.spawnNextMysteriousBoxTask != null)
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			this.spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask.cancel(true);
 		}
-		if (this.spawnMonsterTask != null)
+		if (spawnMonsterTask != null)
 		{
-			this.spawnMonsterTask.cancel(true);
+			spawnMonsterTask.cancel(true);
 		}
-		this.closeTask = null;
-		this.spawnNextMysteriousBoxTask = null;
-		this.spawnMonsterTask = null;
+		closeTask = null;
+		spawnNextMysteriousBoxTask = null;
+		spawnMonsterTask = null;
 	}
 
 	@Override
@@ -79,20 +79,20 @@ public class L2SepulcherNpcInstance extends L2Npc
 	@Override
 	public void deleteMe()
 	{
-		if (this.closeTask != null)
+		if (closeTask != null)
 		{
-			this.closeTask.cancel(true);
-			this.closeTask = null;
+			closeTask.cancel(true);
+			closeTask = null;
 		}
-		if (this.spawnNextMysteriousBoxTask != null)
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			this.spawnNextMysteriousBoxTask.cancel(true);
-			this.spawnNextMysteriousBoxTask = null;
+			spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask = null;
 		}
-		if (this.spawnMonsterTask != null)
+		if (spawnMonsterTask != null)
 		{
-			this.spawnMonsterTask.cancel(true);
-			this.spawnMonsterTask = null;
+			spawnMonsterTask.cancel(true);
+			spawnMonsterTask = null;
 		}
 		super.deleteMe();
 	}
@@ -226,11 +226,11 @@ public class L2SepulcherNpcInstance extends L2Npc
 			case 31487:
 				setIsInvul(false);
 				reduceCurrentHp(getMaxHp() + 1, player, null);
-				if (this.spawnMonsterTask != null)
+				if (spawnMonsterTask != null)
 				{
-					this.spawnMonsterTask.cancel(true);
+					spawnMonsterTask.cancel(true);
 				}
-				this.spawnMonsterTask = ThreadPoolManager.getInstance().scheduleEffect(new SpawnMonster(getNpcId()), 3500);
+				spawnMonsterTask = ThreadPoolManager.getInstance().scheduleEffect(new SpawnMonster(getNpcId()), 3500);
 				break;
 
 			case 31455:
@@ -377,16 +377,16 @@ public class L2SepulcherNpcInstance extends L2Npc
 		DoorTable doorTable = DoorTable.getInstance();
 		doorTable.getDoor(doorId).openMe();
 
-		if (this.closeTask != null)
+		if (closeTask != null)
 		{
-			this.closeTask.cancel(true);
+			closeTask.cancel(true);
 		}
-		this.closeTask = ThreadPoolManager.getInstance().scheduleEffect(new CloseNextDoor(doorId), 10000);
-		if (this.spawnNextMysteriousBoxTask != null)
+		closeTask = ThreadPoolManager.getInstance().scheduleEffect(new CloseNextDoor(doorId), 10000);
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			this.spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask.cancel(true);
 		}
-		this.spawnNextMysteriousBoxTask =
+		spawnNextMysteriousBoxTask =
 				ThreadPoolManager.getInstance().scheduleEffect(new SpawnNextMysteriousBox(npcId), 0);
 	}
 
@@ -398,7 +398,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 
 		public CloseNextDoor(int doorId)
 		{
-			this.DoorId = doorId;
+			DoorId = doorId;
 		}
 
 		@Override
@@ -406,7 +406,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 		{
 			try
 			{
-				doorTable.getDoor(this.DoorId).closeMe();
+				doorTable.getDoor(DoorId).closeMe();
 			}
 			catch (Exception e)
 			{
@@ -421,13 +421,13 @@ public class L2SepulcherNpcInstance extends L2Npc
 
 		public SpawnNextMysteriousBox(int npcId)
 		{
-			this.NpcId = npcId;
+			NpcId = npcId;
 		}
 
 		@Override
 		public void run()
 		{
-			FourSepulchersManager.getInstance().spawnMysteriousBox(this.NpcId);
+			FourSepulchersManager.getInstance().spawnMysteriousBox(NpcId);
 		}
 	}
 
@@ -437,13 +437,13 @@ public class L2SepulcherNpcInstance extends L2Npc
 
 		public SpawnMonster(int npcId)
 		{
-			this.NpcId = npcId;
+			NpcId = npcId;
 		}
 
 		@Override
 		public void run()
 		{
-			FourSepulchersManager.getInstance().spawnMonster(this.NpcId);
+			FourSepulchersManager.getInstance().spawnMonster(NpcId);
 		}
 	}
 

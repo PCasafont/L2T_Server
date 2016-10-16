@@ -74,13 +74,13 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addString(String text)
 	{
-		this.info.add(new CnfDlgData(TYPE_TEXT, text));
+		info.add(new CnfDlgData(TYPE_TEXT, text));
 		return this;
 	}
 
 	public ConfirmDlg addNumber(int number)
 	{
-		this.info.add(new CnfDlgData(TYPE_NUMBER, number));
+		info.add(new CnfDlgData(TYPE_NUMBER, number));
 		return this;
 	}
 
@@ -127,7 +127,7 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addNpcName(int id)
 	{
-		this.info.add(new CnfDlgData(TYPE_NPC_NAME, id));
+		info.add(new CnfDlgData(TYPE_NPC_NAME, id));
 		return this;
 	}
 
@@ -144,14 +144,14 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addItemName(int id)
 	{
-		this.info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
+		info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
 		return this;
 	}
 
 	public ConfirmDlg addZoneName(int x, int y, int z)
 	{
 		Integer[] coord = {x, y, z};
-		this.info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
+		info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
 		return this;
 	}
 
@@ -176,8 +176,8 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addSkillName(int id, int lvl)
 	{
-		this.info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
-		this.skillLvL = lvl;
+		info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
+		skillLvL = lvl;
 		return this;
 	}
 
@@ -189,26 +189,26 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addRequesterId(int id)
 	{
-		this.requesterId = id;
+		requesterId = id;
 		return this;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.messageId);
+		writeD(messageId);
 
-		if (this.info.isEmpty())
+		if (info.isEmpty())
 		{
 			writeD(0x00);
-			writeD(this.time);
-			writeD(this.requesterId);
+			writeD(time);
+			writeD(requesterId);
 		}
 		else
 		{
-			writeD(this.info.size());
+			writeD(info.size());
 
-			for (CnfDlgData data : this.info)
+			for (CnfDlgData data : info)
 			{
 				writeD(data.type);
 
@@ -224,7 +224,7 @@ public class ConfirmDlg extends L2GameServerPacket
 						break;
 					case TYPE_SKILL_NAME:
 						writeD((Integer) data.value); // Skill Id
-						writeD(this.skillLvL); // Skill lvl
+						writeD(skillLvL); // Skill lvl
 						break;
 					case TYPE_ZONE_NAME:
 						Integer[] array = (Integer[]) data.value;
@@ -234,13 +234,13 @@ public class ConfirmDlg extends L2GameServerPacket
 						break;
 				}
 			}
-			if (this.time != 0)
+			if (time != 0)
 			{
-				writeD(this.time);
+				writeD(time);
 			}
-			if (this.requesterId != 0)
+			if (requesterId != 0)
 			{
-				writeD(this.requesterId);
+				writeD(requesterId);
 			}
 		}
 	}

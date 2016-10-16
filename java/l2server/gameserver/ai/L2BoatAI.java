@@ -35,39 +35,39 @@ public class L2BoatAI extends L2VehicleAI
 	@Override
 	protected void moveTo(int x, int y, int z)
 	{
-		if (!this.actor.isMovementDisabled())
+		if (!actor.isMovementDisabled())
 		{
-			if (!this.clientMoving)
+			if (!clientMoving)
 			{
-				this.actor.broadcastPacket(new VehicleStarted(getActor(), 1));
+				actor.broadcastPacket(new VehicleStarted(getActor(), 1));
 			}
 
-			this.clientMoving = true;
-			this.accessor.moveTo(x, y, z);
-			this.actor.broadcastPacket(new VehicleDeparture(getActor()));
+			clientMoving = true;
+			accessor.moveTo(x, y, z);
+			actor.broadcastPacket(new VehicleDeparture(getActor()));
 		}
 	}
 
 	@Override
 	protected void clientStopMoving(L2CharPosition pos)
 	{
-		if (this.actor.isMoving())
+		if (actor.isMoving())
 		{
-			this.accessor.stopMove(pos);
+			accessor.stopMove(pos);
 		}
 
-		if (this.clientMoving || pos != null)
+		if (clientMoving || pos != null)
 		{
-			this.clientMoving = false;
-			this.actor.broadcastPacket(new VehicleStarted(getActor(), 0));
-			this.actor.broadcastPacket(new VehicleInfo(getActor()));
+			clientMoving = false;
+			actor.broadcastPacket(new VehicleStarted(getActor(), 0));
+			actor.broadcastPacket(new VehicleInfo(getActor()));
 		}
 	}
 
 	@Override
 	public void describeStateToPlayer(L2PcInstance player)
 	{
-		if (this.clientMoving)
+		if (clientMoving)
 		{
 			player.sendPacket(new VehicleDeparture(getActor()));
 		}
@@ -76,6 +76,6 @@ public class L2BoatAI extends L2VehicleAI
 	@Override
 	public L2BoatInstance getActor()
 	{
-		return (L2BoatInstance) this.actor;
+		return (L2BoatInstance) actor;
 	}
 }

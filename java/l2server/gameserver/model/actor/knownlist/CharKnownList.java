@@ -241,29 +241,29 @@ public class CharKnownList extends ObjectKnownList
 
 	public final Map<Integer, L2PcInstance> getKnownPlayers()
 	{
-		if (this.knownPlayers == null)
+		if (knownPlayers == null)
 		{
-			this.knownPlayers = new ConcurrentHashMap<>();
+			knownPlayers = new ConcurrentHashMap<>();
 		}
-		return this.knownPlayers;
+		return knownPlayers;
 	}
 
 	public final Map<Integer, Integer> getKnownRelations()
 	{
-		if (this.knownRelations == null)
+		if (knownRelations == null)
 		{
-			this.knownRelations = new ConcurrentHashMap<>();
+			knownRelations = new ConcurrentHashMap<>();
 		}
-		return this.knownRelations;
+		return knownRelations;
 	}
 
 	public final Map<Integer, L2Summon> getKnownSummons()
 	{
-		if (this.knownSummons == null)
+		if (knownSummons == null)
 		{
-			this.knownSummons = new ConcurrentHashMap<>();
+			knownSummons = new ConcurrentHashMap<>();
 		}
-		return this.knownSummons;
+		return knownSummons;
 	}
 
 	public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius)

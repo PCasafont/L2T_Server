@@ -39,20 +39,20 @@ public final class ShortCutInit extends L2GameServerPacket
 			return;
 		}
 
-		this.shortCuts = this.activeChar.getAllShortCuts();
+		shortCuts = this.activeChar.getAllShortCuts();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.shortCuts.length);
+		writeD(shortCuts.length);
 
 		if (getClient().getActiveChar() != null)
 		{
-			getClient().getActiveChar().sendSysMessage("Shortcuts Length = " + this.shortCuts.length);
+			getClient().getActiveChar().sendSysMessage("Shortcuts Length = " + shortCuts.length);
 		}
 
-		for (L2ShortCut sc : this.shortCuts)
+		for (L2ShortCut sc : shortCuts)
 		{
 			if (sc == null)
 			{

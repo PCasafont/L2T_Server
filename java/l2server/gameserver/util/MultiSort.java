@@ -56,8 +56,8 @@ public class MultiSort
 
 	public MultiSort(Map<?, Integer> valueMap)
 	{
-		this.keyList = getList(valueMap.keySet());
-		this.valueList = getIntList(valueMap.values());
+		keyList = getList(valueMap.keySet());
+		valueList = getIntList(valueMap.values());
 	}
 
 	private List<Integer> getIntList(Collection<Integer> valueList)
@@ -111,12 +111,12 @@ public class MultiSort
 
 	public final List<?> getKeys()
 	{
-		if (this.keyList == null)
+		if (keyList == null)
 		{
 			return new ArrayList<>();
 		}
 
-		return this.keyList;
+		return keyList;
 	}
 
 	public final int getFrequency(int checkValue)
@@ -191,27 +191,27 @@ public class MultiSort
 
 	public final List<Integer> getValues()
 	{
-		if (this.valueList == null)
+		if (valueList == null)
 		{
 			return new ArrayList<>();
 		}
 
-		return this.valueList;
+		return valueList;
 	}
 
 	public final boolean isSortDescending()
 	{
-		return this.isSortDescending;
+		return isSortDescending;
 	}
 
 	public final boolean isSorted()
 	{
-		return this.isSorted;
+		return isSorted;
 	}
 
 	public final void setSortDescending(boolean isDescending)
 	{
-		this.isSortDescending = isDescending;
+		isSortDescending = isDescending;
 	}
 
 	public boolean sort()
@@ -297,9 +297,9 @@ public class MultiSort
 				}
 			}
 
-			this.keyList = newKeyList;
-			this.valueList = newValueList;
-			this.isSorted = true;
+			keyList = newKeyList;
+			valueList = newValueList;
+			isSorted = true;
 			return true;
 		}
 		catch (Exception e)

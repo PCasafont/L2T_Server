@@ -29,18 +29,18 @@ public class PrivateStoreMsgSell extends L2GameServerPacket
 
 	public PrivateStoreMsgSell(L2PcInstance player)
 	{
-		this.objId = player.getObjectId();
-		this.storeMsg = player.getSellList().getTitle();
+		objId = player.getObjectId();
+		storeMsg = player.getSellList().getTitle();
 		if (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL)
 		{
-			this.storeMsg = player.getCustomSellList().getTitle();
+			storeMsg = player.getCustomSellList().getTitle();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeS(this.storeMsg);
+		writeD(objId);
+		writeS(storeMsg);
 	}
 }

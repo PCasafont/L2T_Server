@@ -37,7 +37,7 @@ public class ConditionTargetRaceId extends Condition
 	 */
 	public ConditionTargetRaceId(ArrayList<Integer> raceId)
 	{
-		this.raceIds = raceId;
+		raceIds = raceId;
 	}
 
 	/* (non-Javadoc)
@@ -50,6 +50,6 @@ public class ConditionTargetRaceId extends Condition
 		{
 			return false;
 		}
-		return this.raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
+		return raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
 	}
 }

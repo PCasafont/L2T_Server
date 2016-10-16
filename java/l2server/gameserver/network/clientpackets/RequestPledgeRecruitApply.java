@@ -36,9 +36,9 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.enter = readD();
-		this.clanId = readD();
-		this.application = readS();
+		enter = readD();
+		clanId = readD();
+		application = readS();
 	}
 
 	@Override
@@ -50,13 +50,13 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
 			return;
 		}
 
-		if (this.enter == 1)
+		if (enter == 1)
 		{
-			if (ClanRecruitManager.getInstance().addApplicant(activeChar, this.clanId, this.application))
+			if (ClanRecruitManager.getInstance().addApplicant(activeChar, clanId, application))
 			{
 				activeChar.sendPacket(new ExPledgeRecruitApplyInfo(2));
 				//activeChar.sendMessage(4039);
-				L2Clan clan = ClanTable.getInstance().getClan(this.clanId);
+				L2Clan clan = ClanTable.getInstance().getClan(clanId);
 
 				Message msg = new Message(clan.getLeaderId(), "Clan Application",
 						"There's a new applicant for your clan! Check out the clan entry for further information.",

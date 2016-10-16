@@ -109,7 +109,7 @@ public class Mark implements ISkillHandler
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 					record.setLoggerName("mdam");
-					this.logDamage.log(record);
+					logDamage.log(record);
 				}
 			}
 

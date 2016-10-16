@@ -35,15 +35,15 @@ public class ExShowContactList extends L2GameServerPacket
 
 	public ExShowContactList(L2PcInstance player)
 	{
-		this.contacts = new ArrayList<>();
-		this.contacts.addAll(player.getContactList().getAllContacts());
+		contacts = new ArrayList<>();
+		contacts.addAll(player.getContactList().getAllContacts());
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.contacts.size());
-		for (String name : this.contacts)
+		writeD(contacts.size());
+		for (String name : contacts)
 		{
 			writeS(name);
 		}

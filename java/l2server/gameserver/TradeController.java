@@ -60,7 +60,7 @@ public class TradeController implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		this.lists.clear();
+		lists.clear();
 		if (!load(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/shops/"))
 		{
 			return false;
@@ -97,7 +97,7 @@ public class TradeController implements Reloadable
 							int id = d.getInt("id");
 							int npcId = d.getInt("npcId");
 
-							if (this.lists.containsKey(id))
+							if (lists.containsKey(id))
 							{
 								continue;
 							}
@@ -169,14 +169,14 @@ public class TradeController implements Reloadable
 							}
 
 							buy.setNpcId(npcId);
-							this.lists.put(id, buy);
+							lists.put(id, buy);
 						}
 					}
 				}
 			}
 		}
 
-		Log.info("TradeController: Loaded " + this.lists.size() + " Buylists.");
+		Log.info("TradeController: Loaded " + lists.size() + " Buylists.");
 		return true;
 	}
 
@@ -202,7 +202,7 @@ public class TradeController implements Reloadable
 				int currentCount = rset.getInt("count");
 				long savedTime = rset.getLong("time");
 
-				L2TradeList tradeList = this.lists.get(shopId);
+				L2TradeList tradeList = lists.get(shopId);
                 if (tradeList == null)
                 {
                     continue;
@@ -247,7 +247,7 @@ public class TradeController implements Reloadable
 
 	public L2TradeList getBuyList(int listId)
 	{
-		return this.lists.get(listId);
+		return lists.get(listId);
 	}
 
 	public List<L2TradeList> getBuyListByNpcId(int npcId)
@@ -280,7 +280,7 @@ public class TradeController implements Reloadable
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement =
 					con.prepareStatement("UPDATE shop_item_counts SET count = ? WHERE shop_id = ? AND item_id = ?");
-			for (L2TradeList list : this.lists.values())
+			for (L2TradeList list : lists.values())
 			{
 				if (list.hasLimitedStockItem())
 				{

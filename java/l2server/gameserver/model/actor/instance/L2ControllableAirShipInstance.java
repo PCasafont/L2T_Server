@@ -48,7 +48,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ControllableAirShipInstance);
 		this.ownerId = ownerId;
-		this.helmId = IdFactory.getInstance().getNextId(); // not forget to release !
+		helmId = IdFactory.getInstance().getNextId(); // not forget to release !
 	}
 
 	@Override
@@ -72,36 +72,36 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public boolean isOwner(L2PcInstance player)
 	{
-		if (this.ownerId == 0)
+		if (ownerId == 0)
 		{
 			return false;
 		}
 
-		return player.getClanId() == this.ownerId || player.getObjectId() == this.ownerId;
+		return player.getClanId() == ownerId || player.getObjectId() == ownerId;
 	}
 
 	@Override
 	public int getOwnerId()
 	{
-		return this.ownerId;
+		return ownerId;
 	}
 
 	@Override
 	public boolean isCaptain(L2PcInstance player)
 	{
-		return this.captain != null && player == this.captain;
+		return captain != null && player == captain;
 	}
 
 	@Override
 	public int getCaptainId()
 	{
-		return this.captain != null ? this.captain.getObjectId() : 0;
+		return captain != null ? captain.getObjectId() : 0;
 	}
 
 	@Override
 	public int getHelmObjectId()
 	{
-		return this.helmId;
+		return helmId;
 	}
 
 	@Override
@@ -115,11 +115,11 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	{
 		if (player == null)
 		{
-			this.captain = null;
+			captain = null;
 		}
 		else
 		{
-			if (this.captain == null && player.getAirShip() == this)
+			if (captain == null && player.getAirShip() == this)
 			{
 				final int x = player.getInVehiclePosition().getX() - 0x16e;
 				final int y = player.getInVehiclePosition().getY();
@@ -190,7 +190,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 							.getSystemMessage(SystemMessageId.YOU_CANNOT_CONTROL_THE_HELM_WHILE_IN_A_DUEL));
 					return false;
 				}
-				this.captain = player;
+				captain = player;
 				player.broadcastUserInfo();
 			}
 			else
@@ -205,32 +205,32 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public int getFuel()
 	{
-		return this.fuel;
+		return fuel;
 	}
 
 	@Override
 	public void setFuel(int f)
 	{
 
-		final int old = this.fuel;
+		final int old = fuel;
 		if (f < 0)
 		{
-			this.fuel = 0;
+			fuel = 0;
 		}
 		else if (f > maxFuel)
 		{
-			this.fuel = this.maxFuel;
+			fuel = maxFuel;
 		}
 		else
 		{
-			this.fuel = f;
+			fuel = f;
 		}
 
-		if (this.fuel == 0 && old > 0)
+		if (fuel == 0 && old > 0)
 		{
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_RUN_OUT));
 		}
-		else if (this.fuel < LOW_FUEL)
+		else if (fuel < LOW_FUEL)
 		{
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_SOON_RUN_OUT));
 		}
@@ -239,19 +239,19 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public int getMaxFuel()
 	{
-		return this.maxFuel;
+		return maxFuel;
 	}
 
 	@Override
 	public void setMaxFuel(int mf)
 	{
-		this.maxFuel = mf;
+		maxFuel = mf;
 	}
 
 	@Override
 	public void oustPlayer(L2PcInstance player)
 	{
-		if (player == this.captain)
+		if (player == captain)
 		{
 			setCaptain(null); // no need to broadcast userinfo here
 		}
@@ -262,7 +262,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		player.sendPacket(new MyTargetSelected(this.helmId, 0));
+		player.sendPacket(new MyTargetSelected(helmId, 0));
 		super.onAction(player, interact);
 	}
 
@@ -270,8 +270,8 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	public void onSpawn()
 	{
 		super.onSpawn();
-		this.checkTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckTask(), 60000, 10000);
-		this.consumeFuelTask =
+		checkTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckTask(), 60000, 10000);
+		consumeFuelTask =
 				ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new ConsumeFuelTask(), 60000, 60000);
 	}
 
@@ -280,20 +280,20 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	{
 		super.deleteMe();
 
-		if (this.checkTask != null)
+		if (checkTask != null)
 		{
-			this.checkTask.cancel(false);
-			this.checkTask = null;
+			checkTask.cancel(false);
+			checkTask = null;
 		}
-		if (this.consumeFuelTask != null)
+		if (consumeFuelTask != null)
 		{
-			this.consumeFuelTask.cancel(false);
-			this.consumeFuelTask = null;
+			consumeFuelTask.cancel(false);
+			consumeFuelTask = null;
 		}
 
 		try
 		{
-			broadcastPacket(new DeleteObject(this.helmId));
+			broadcastPacket(new DeleteObject(helmId));
 		}
 		catch (Exception e)
 		{
@@ -305,17 +305,17 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	public void refreshID()
 	{
 		super.refreshID();
-		IdFactory.getInstance().releaseId(this.helmId);
-		this.helmId = IdFactory.getInstance().getNextId();
+		IdFactory.getInstance().releaseId(helmId);
+		helmId = IdFactory.getInstance().getNextId();
 	}
 
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
 		super.sendInfo(activeChar);
-		if (this.captain != null)
+		if (captain != null)
 		{
-			this.captain.sendInfo(activeChar);
+			captain.sendInfo(activeChar);
 		}
 	}
 

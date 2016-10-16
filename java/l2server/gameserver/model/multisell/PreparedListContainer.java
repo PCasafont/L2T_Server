@@ -30,19 +30,19 @@ public class PreparedListContainer extends ListContainer
 	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, L2Npc npc)
 	{
 		super(template.getListId());
-		this.maintainEnchantment = template.getMaintainEnchantment();
+		maintainEnchantment = template.getMaintainEnchantment();
 
-		this.applyTaxes = false;
-		this.isChance = template.isChance();
-		this.timeLimit = template.getTimeLimit();
+		applyTaxes = false;
+		isChance = template.isChance();
+		timeLimit = template.getTimeLimit();
 
 		double taxRate = 0;
 		if (npc != null)
 		{
-			this.npcObjectId = npc.getObjectId();
+			npcObjectId = npc.getObjectId();
 			if (template.getApplyTaxes() && npc.getIsInTown() && npc.getCastle().getOwnerId() > 0)
 			{
-				this.applyTaxes = true;
+				applyTaxes = true;
 				taxRate = npc.getCastle().getTaxRate();
 			}
 		}
@@ -55,7 +55,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			final L2ItemInstance[] items;
-			if (this.maintainEnchantment)
+			if (maintainEnchantment)
 			{
 				items = player.getInventory().getUniqueItemsByEnchantLevel(false, false, false);
 			}
@@ -65,7 +65,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			// size is not known - using ArrayList
-			this.entries = new ArrayList<>();
+			entries = new ArrayList<>();
 			for (L2ItemInstance item : items)
 			{
 				// only do the matchup on equipable items that are not currently equipped
@@ -80,7 +80,7 @@ public class PreparedListContainer extends ListContainer
 						{
 							if (item.getItemId() == ing.getItemId())
 							{
-								this.entries.add(new PreparedEntry(ent, item, this.applyTaxes, this.maintainEnchantment, taxRate));
+								entries.add(new PreparedEntry(ent, item, applyTaxes, maintainEnchantment, taxRate));
 								break; // next entry
 							}
 						}
@@ -90,10 +90,10 @@ public class PreparedListContainer extends ListContainer
 		}
 		else
 		{
-			this.entries = new ArrayList<>(template.getEntries().size());
+			entries = new ArrayList<>(template.getEntries().size());
 			for (MultiSellEntry ent : template.getEntries())
 			{
-				this.entries.add(new PreparedEntry(ent, null, this.applyTaxes, false, taxRate));
+				entries.add(new PreparedEntry(ent, null, applyTaxes, false, taxRate));
 			}
 		}
 	}

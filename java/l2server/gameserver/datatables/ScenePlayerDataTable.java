@@ -53,11 +53,11 @@ public class ScenePlayerDataTable implements Reloadable
 
 						int time = d.getInt("time");
 
-						this.sceneDataTable.put(id, time);
+						sceneDataTable.put(id, time);
 					}
 				}
 
-				Log.info("ScenePlayerTable: Loaded: " + this.sceneDataTable.size() + " scenes!");
+				Log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
 			}
 		}
 
@@ -71,17 +71,17 @@ public class ScenePlayerDataTable implements Reloadable
 
 	public Map<Integer, Integer> getSceneTable()
 	{
-		return this.sceneDataTable;
+		return sceneDataTable;
 	}
 
 	public int getVideoDuration(int vidId)
 	{
-		return this.sceneDataTable.get(vidId);
+		return sceneDataTable.get(vidId);
 	}
 
 	private ScenePlayerDataTable()
 	{
-		this.sceneDataTable = new HashMap<>();
+		sceneDataTable = new HashMap<>();
 
 		reload();
 

@@ -58,7 +58,7 @@ public class CellPathFinding extends PathFinding
 		{
 			String[] array = Config.PATHFIND_BUFFERS.split(";");
 
-			this.allBuffers = new BufferInfo[array.length];
+			allBuffers = new BufferInfo[array.length];
 
 			String buf;
 			String[] args;
@@ -71,7 +71,7 @@ public class CellPathFinding extends PathFinding
 					throw new Exception("Invalid buffer definition: " + buf);
 				}
 
-				this.allBuffers[i] = new BufferInfo(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+				allBuffers[i] = new BufferInfo(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 			}
 		}
 		catch (Exception e)
@@ -118,13 +118,13 @@ public class CellPathFinding extends PathFinding
 
 		if (debug)
 		{
-			if (this.debugItems == null)
+			if (debugItems == null)
 			{
-				this.debugItems = new ArrayList<>();
+				debugItems = new ArrayList<>();
 			}
 			else
 			{
-				for (L2ItemInstance item : this.debugItems)
+				for (L2ItemInstance item : debugItems)
 				{
 					if (item == null)
 					{
@@ -133,7 +133,7 @@ public class CellPathFinding extends PathFinding
 					item.decayMe();
 				}
 
-				this.debugItems.clear();
+				debugItems.clear();
 			}
 		}
 
@@ -160,7 +160,7 @@ public class CellPathFinding extends PathFinding
 
 			if (result == null)
 			{
-				this.findFails++;
+				findFails++;
 				return null;
 			}
 
@@ -178,15 +178,15 @@ public class CellPathFinding extends PathFinding
 
 		if (path.size() < 3 || Config.MAX_POSTFILTER_PASSES <= 0)
 		{
-			this.findSuccess++;
+			findSuccess++;
 			return path;
 		}
 
 		long timeStamp = System.currentTimeMillis();
-		this.postFilterUses++;
+		postFilterUses++;
 		if (playable)
 		{
-			this.postFilterPlayableUses++;
+			postFilterPlayableUses++;
 		}
 
 		int currentX, currentY, currentZ;
@@ -197,7 +197,7 @@ public class CellPathFinding extends PathFinding
 		do
 		{
 			pass++;
-			this.postFilterPasses++;
+			postFilterPasses++;
 
 			remove = false;
 			middlePoint = path.listIterator();
@@ -242,8 +242,8 @@ public class CellPathFinding extends PathFinding
 			}
 		}
 
-		this.findSuccess++;
-		this.postFilterElapsed += System.currentTimeMillis() - timeStamp;
+		findSuccess++;
+		postFilterElapsed += System.currentTimeMillis() - timeStamp;
 		return path;
 	}
 
@@ -296,7 +296,7 @@ public class CellPathFinding extends PathFinding
 	private CellNodeBuffer alloc(int size, boolean playable)
 	{
 		CellNodeBuffer current = null;
-		for (BufferInfo i : this.allBuffers)
+		for (BufferInfo i : allBuffers)
 		{
 			if (i.mapSize >= size)
 			{
@@ -352,7 +352,7 @@ public class CellPathFinding extends PathFinding
 		final L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(loc.getX(), loc.getY(), loc.getZ());
-		this.debugItems.add(item);
+		debugItems.add(item);
 	}
 
 	private static final class BufferInfo
@@ -395,24 +395,24 @@ public class CellPathFinding extends PathFinding
 	@Override
 	public String[] getStat()
 	{
-		final String[] result = new String[this.allBuffers.length + 1];
-		for (int i = 0; i < this.allBuffers.length; i++)
+		final String[] result = new String[allBuffers.length + 1];
+		for (int i = 0; i < allBuffers.length; i++)
 		{
-			result[i] = this.allBuffers[i].toString();
+			result[i] = allBuffers[i].toString();
 		}
 
 		final StringBuilder stat = new StringBuilder(100);
-		StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(this.postFilterUses), "/",
-				String.valueOf(this.postFilterPlayableUses));
-		if (this.postFilterUses > 0)
+		StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(postFilterUses), "/",
+				String.valueOf(postFilterPlayableUses));
+		if (postFilterUses > 0)
 		{
-			StringUtil.append(stat, " total/avg(ms):", String.valueOf(this.postFilterElapsed), "/",
-					String.format("%1.2f", (double) this.postFilterElapsed / this.postFilterUses), " passes total/avg:",
-					String.valueOf(this.postFilterPasses), "/",
-					String.format("%1.1f", (double) this.postFilterPasses / this.postFilterUses), "\r\n");
+			StringUtil.append(stat, " total/avg(ms):", String.valueOf(postFilterElapsed), "/",
+					String.format("%1.2f", (double) postFilterElapsed / postFilterUses), " passes total/avg:",
+					String.valueOf(postFilterPasses), "/",
+					String.format("%1.1f", (double) postFilterPasses / postFilterUses), "\r\n");
 		}
 		StringUtil
-				.append(stat, "Pathfind success/fail:", String.valueOf(this.findSuccess), "/", String.valueOf(this.findFails));
+				.append(stat, "Pathfind success/fail:", String.valueOf(findSuccess), "/", String.valueOf(findFails));
 		result[result.length - 1] = stat.toString();
 
 		return result;

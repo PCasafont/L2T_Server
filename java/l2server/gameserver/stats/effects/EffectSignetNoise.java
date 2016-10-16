@@ -48,7 +48,7 @@ public class EffectSignetNoise extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		this.actor = (L2EffectPointInstance) getEffected();
+		actor = (L2EffectPointInstance) getEffected();
 		return true;
 	}
 
@@ -70,7 +70,7 @@ public class EffectSignetNoise extends L2Effect
 
 		L2PcInstance caster = (L2PcInstance) getEffector();
 
-		for (L2Character target : this.actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character target : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (target == null || target == caster)
 			{
@@ -110,9 +110,9 @@ public class EffectSignetNoise extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (this.actor != null)
+		if (actor != null)
 		{
-			this.actor.deleteMe();
+			actor.deleteMe();
 		}
 	}
 }

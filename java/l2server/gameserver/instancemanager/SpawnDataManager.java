@@ -65,7 +65,7 @@ public class SpawnDataManager
 				dbsd.currentHp = rset.getInt("current_hp");
 				dbsd.currentMp = rset.getInt("current_mp");
 
-				this.dbSpawnData.put(rset.getString("name"), dbsd);
+				dbSpawnData.put(rset.getString("name"), dbsd);
 			}
 
 			rset.close();
@@ -88,8 +88,8 @@ public class SpawnDataManager
 
 	public DbSpawnData popDbSpawnData(String dbName)
 	{
-		DbSpawnData dbsd = this.dbSpawnData.get(dbName);
-		this.dbSpawnData.remove(dbName);
+		DbSpawnData dbsd = dbSpawnData.get(dbName);
+		dbSpawnData.remove(dbName);
 		return dbsd;
 	}
 

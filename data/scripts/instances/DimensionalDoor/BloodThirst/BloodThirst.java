@@ -45,7 +45,7 @@ public class BloodThirst extends L2AttackableAIScript
         addTalkId(DimensionalDoor.getNpcManagerId());
         addStartNpc(DimensionalDoor.getNpcManagerId());
 
-        addKillId(this.bloodThirstId);
+        addKillId(bloodThirstId);
     }
 
     private class BloodThirstWorld extends InstanceWorld
@@ -60,7 +60,7 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -89,7 +89,7 @@ public class BloodThirst extends L2AttackableAIScript
                 InstanceManager.getInstance().showVidToInstance(109, world.instanceId);
 
                 world.bloodThirst =
-                        addSpawn(this.bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
+                        addSpawn(bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
 
                 for (L2Spawn iSpawn : SpawnTable.getInstance().getSpecificSpawns("blood_thirst"))
                 {
@@ -134,7 +134,7 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -145,11 +145,11 @@ public class BloodThirst extends L2AttackableAIScript
             BloodThirstWorld world = (BloodThirstWorld) tmpworld;
             if (npc == world.bloodThirst)
             {
-                player.addItem(this.qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                player.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(),
                         Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(),
                                 6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 
-                InstanceManager.getInstance().setInstanceReuse(world.instanceId, instanceTemplateId, this.reuseMinutes);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, instanceTemplateId, reuseMinutes);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -159,14 +159,14 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
         {
-            return this.qn + ".html";
+            return qn + ".html";
         }
 
         return super.onTalk(npc, player);
@@ -198,13 +198,13 @@ public class BloodThirst extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new BloodThirstWorld();
             world.instanceId = instanceId;
             world.status = 0;

@@ -37,27 +37,27 @@ public class AdminTab extends JPanel
 
 	public AdminTab()
 	{
-		setLayout(this.layout);
-		this.cons.fill = GridBagConstraints.HORIZONTAL;
+		setLayout(layout);
+		cons.fill = GridBagConstraints.HORIZONTAL;
 
-		this.infoPanel.setLayout(this.layout);
+		infoPanel.setLayout(layout);
 
-		this.cons.insets = new Insets(5, 5, 5, 5);
-		this.cons.gridwidth = 3;
-		this.cons.gridheight = 20;
-		this.cons.weightx = 1;
-		this.cons.weighty = 1;
-		this.cons.gridx = 0;
-		this.cons.gridy = 2;
-		this.infoPanel.add(new JLabel(""), this.cons);
-		this.infoPanel.setPreferredSize(new Dimension(235, this.infoPanel.getHeight()));
+		cons.insets = new Insets(5, 5, 5, 5);
+		cons.gridwidth = 3;
+		cons.gridheight = 20;
+		cons.weightx = 1;
+		cons.weighty = 1;
+		cons.gridx = 0;
+		cons.gridy = 2;
+		infoPanel.add(new JLabel(""), cons);
+		infoPanel.setPreferredSize(new Dimension(235, infoPanel.getHeight()));
 
-		this.cons.fill = GridBagConstraints.BOTH;
-		this.cons.weightx = 1;
-		this.cons.weighty = 1;
-		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, this.listPanel, this.infoPanel);
+		cons.fill = GridBagConstraints.BOTH;
+		cons.weightx = 1;
+		cons.weighty = 1;
+		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, infoPanel);
 		splitPane.setResizeWeight(0.3);
 		splitPane.setDividerLocation(535);
-		add(splitPane, this.cons);
+		add(splitPane, cons);
 	}
 }

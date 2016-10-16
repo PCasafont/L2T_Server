@@ -35,10 +35,10 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.isMemberSelected = readD();
-		this.memberName = readS();
-		this.newPledgeType = readD();
-		this.selectedMember = readS();
+		isMemberSelected = readD();
+		memberName = readS();
+		newPledgeType = readD();
+		selectedMember = readS();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 			return;
 		}
 
-		if (this.isMemberSelected == 0 && this.memberName.length() == 0)
+		if (isMemberSelected == 0 && memberName.length() == 0)
 		{
 			activeChar.sendMessage("You did not select any member.");
 			return;
@@ -71,7 +71,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 			return;
 		}
 
-		final L2ClanMember member1 = clan.getClanMember(this.memberName);
+		final L2ClanMember member1 = clan.getClanMember(memberName);
 		if (member1 == null || member1.getObjectId() == clan.getLeaderId())
 		{
 			activeChar.sendMessage("The selected member could not be found.");
@@ -79,16 +79,16 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		}
 
 		final int oldPledgeType = member1.getPledgeType();
-		if (oldPledgeType == this.newPledgeType)
+		if (oldPledgeType == newPledgeType)
 		{
 			activeChar.sendMessage(member1.getName() + " is already in the selected squad.");
 			return;
 		}
 
-		member1.setPledgeType(this.newPledgeType);
-		if (this.selectedMember.length() != 0)
+		member1.setPledgeType(newPledgeType);
+		if (selectedMember.length() != 0)
 		{
-			final L2ClanMember member2 = clan.getClanMember(this.selectedMember);
+			final L2ClanMember member2 = clan.getClanMember(selectedMember);
 			if (member2 == null || member2.getObjectId() == clan.getLeaderId())
 			{
 				activeChar.sendMessage("You did not select the member to swap " + member1.getName() + " with.");

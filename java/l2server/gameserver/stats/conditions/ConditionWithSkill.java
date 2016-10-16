@@ -42,6 +42,6 @@ public class ConditionWithSkill extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return !(!this.skill && env.skill != null);
+		return !(!skill && env.skill != null);
 	}
 }

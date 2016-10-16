@@ -26,22 +26,22 @@ public class ExShuttleMove extends L2GameServerPacket
 
 	public ExShuttleMove(L2ShuttleInstance shut)
 	{
-		this.objId = shut.getObjectId();
-		this.x = shut.getXdestination();
-		this.y = shut.getYdestination();
-		this.z = shut.getZdestination();
-		this.moveSpeed = (int) shut.getStat().getMoveSpeed();
-		this.rotationSpeed = shut.getStat().getRotationSpeed();
+		objId = shut.getObjectId();
+		x = shut.getXdestination();
+		y = shut.getYdestination();
+		z = shut.getZdestination();
+		moveSpeed = (int) shut.getStat().getMoveSpeed();
+		rotationSpeed = shut.getStat().getRotationSpeed();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeD(this.moveSpeed);
-		writeD(this.rotationSpeed);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(objId);
+		writeD(moveSpeed);
+		writeD(rotationSpeed);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

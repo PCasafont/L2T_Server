@@ -88,50 +88,50 @@ public class CastleManorManager
 
 		public CropProcure(int id)
 		{
-			this.cropId = id;
-			this.buyResidual = 0;
-			this.rewardType = 0;
-			this.buy = 0;
-			this.price = 0;
+			cropId = id;
+			buyResidual = 0;
+			rewardType = 0;
+			buy = 0;
+			price = 0;
 		}
 
 		public CropProcure(int id, long amount, int type, long buy, long price)
 		{
-			this.cropId = id;
-			this.buyResidual = amount;
-			this.rewardType = type;
+			cropId = id;
+			buyResidual = amount;
+			rewardType = type;
 			this.buy = buy;
 			this.price = price;
 		}
 
 		public int getReward()
 		{
-			return this.rewardType;
+			return rewardType;
 		}
 
 		public int getId()
 		{
-			return this.cropId;
+			return cropId;
 		}
 
 		public long getAmount()
 		{
-			return this.buyResidual;
+			return buyResidual;
 		}
 
 		public long getStartAmount()
 		{
-			return this.buy;
+			return buy;
 		}
 
 		public long getPrice()
 		{
-			return this.price;
+			return price;
 		}
 
 		public void setAmount(long amount)
 		{
-			this.buyResidual = amount;
+			buyResidual = amount;
 		}
 	}
 
@@ -144,43 +144,43 @@ public class CastleManorManager
 
 		public SeedProduction(int id)
 		{
-			this.seedId = id;
-			this.residual = 0;
-			this.price = 0;
-			this.sales = 0;
+			seedId = id;
+			residual = 0;
+			price = 0;
+			sales = 0;
 		}
 
 		public SeedProduction(int id, long amount, long price, long sales)
 		{
-			this.seedId = id;
-			this.residual = amount;
+			seedId = id;
+			residual = amount;
 			this.price = price;
 			this.sales = sales;
 		}
 
 		public int getId()
 		{
-			return this.seedId;
+			return seedId;
 		}
 
 		public long getCanProduce()
 		{
-			return this.residual;
+			return residual;
 		}
 
 		public long getPrice()
 		{
-			return this.price;
+			return price;
 		}
 
 		public long getStartProduce()
 		{
-			return this.sales;
+			return sales;
 		}
 
 		public void setCanProduce(long amount)
 		{
-			this.residual = amount;
+			residual = amount;
 		}
 	}
 
@@ -189,19 +189,19 @@ public class CastleManorManager
 		Log.info("Initializing CastleManorManager");
 		load(); // load data from database
 		init(); // schedule all manor related events
-		this.underMaintenance = false;
-		this.disabled = !Config.ALLOW_MANOR;
+		underMaintenance = false;
+		disabled = !Config.ALLOW_MANOR;
 
 		boolean isApproved;
-		if (this.periodApprove.getTimeInMillis() > manorRefresh.getTimeInMillis())
+		if (periodApprove.getTimeInMillis() > manorRefresh.getTimeInMillis())
 		// Next approve period already scheduled
 		{
-			isApproved = this.manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
+			isApproved = manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
 		}
 		else
 		{
-			isApproved = this.periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() &&
-					this.manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
+			isApproved = periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() &&
+					manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
 		}
 
 		for (Castle c : CastleManager.getInstance().getCastles())
@@ -299,13 +299,13 @@ public class CastleManorManager
 
 	private void init()
 	{
-		this.manorRefresh = Calendar.getInstance();
-		this.manorRefresh.set(Calendar.HOUR_OF_DAY, MANOR_REFRESH);
-		this.manorRefresh.set(Calendar.MINUTE, MANOR_REFRESH_MIN);
+		manorRefresh = Calendar.getInstance();
+		manorRefresh.set(Calendar.HOUR_OF_DAY, MANOR_REFRESH);
+		manorRefresh.set(Calendar.MINUTE, MANOR_REFRESH_MIN);
 
-		this.periodApprove = Calendar.getInstance();
-		this.periodApprove.set(Calendar.HOUR_OF_DAY, NEXT_PERIOD_APPROVE);
-		this.periodApprove.set(Calendar.MINUTE, NEXT_PERIOD_APPROVE_MIN);
+		periodApprove = Calendar.getInstance();
+		periodApprove.set(Calendar.HOUR_OF_DAY, NEXT_PERIOD_APPROVE);
+		periodApprove.set(Calendar.MINUTE, NEXT_PERIOD_APPROVE_MIN);
 
 		updateManorRefresh();
 		updatePeriodApprove();
@@ -315,14 +315,14 @@ public class CastleManorManager
 	{
 		Log.info("Manor System: Manor refresh updated");
 
-		this.scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+		scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
 			if (!isDisabled())
 			{
 				setUnderMaintenance(true);
 				Log.info("Manor System: Under maintenance mode started");
 
-				this.scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+				scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 				{
 					Log.info("Manor System: Next period started");
 					setNextPeriod();
@@ -345,7 +345,7 @@ public class CastleManorManager
 	{
 		Log.info("Manor System: Manor period approve updated");
 
-		this.scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+		scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
 			if (!isDisabled())
 			{
@@ -359,45 +359,45 @@ public class CastleManorManager
 	public long getMillisToManorRefresh()
 	{
 		// use safe interval 120s to prevent double run
-		if (this.manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
+		if (manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
 		{
 			setNewManorRefresh();
 		}
 
-		Log.info("Manor System: New Schedule for manor refresh @ " + this.manorRefresh.getTime());
+		Log.info("Manor System: New Schedule for manor refresh @ " + manorRefresh.getTime());
 
-		return this.manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+		return manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
 
 	public void setNewManorRefresh()
 	{
-		this.manorRefresh = Calendar.getInstance();
-		this.manorRefresh.set(Calendar.HOUR_OF_DAY, MANOR_REFRESH);
-		this.manorRefresh.set(Calendar.MINUTE, MANOR_REFRESH_MIN);
-		this.manorRefresh.set(Calendar.SECOND, 0);
-		this.manorRefresh.add(Calendar.HOUR_OF_DAY, 24);
+		manorRefresh = Calendar.getInstance();
+		manorRefresh.set(Calendar.HOUR_OF_DAY, MANOR_REFRESH);
+		manorRefresh.set(Calendar.MINUTE, MANOR_REFRESH_MIN);
+		manorRefresh.set(Calendar.SECOND, 0);
+		manorRefresh.add(Calendar.HOUR_OF_DAY, 24);
 	}
 
 	public long getMillisToNextPeriodApprove()
 	{
 		// use safe interval 120s to prevent double run
-		if (this.periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
+		if (periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
 		{
 			setNewPeriodApprove();
 		}
 
-		Log.info("Manor System: New Schedule for period approve @ " + this.periodApprove.getTime());
+		Log.info("Manor System: New Schedule for period approve @ " + periodApprove.getTime());
 
-		return this.periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+		return periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
 
 	public void setNewPeriodApprove()
 	{
-		this.periodApprove = Calendar.getInstance();
-		this.periodApprove.set(Calendar.HOUR_OF_DAY, NEXT_PERIOD_APPROVE);
-		this.periodApprove.set(Calendar.MINUTE, NEXT_PERIOD_APPROVE_MIN);
-		this.periodApprove.set(Calendar.SECOND, 0);
-		this.periodApprove.add(Calendar.HOUR_OF_DAY, 24);
+		periodApprove = Calendar.getInstance();
+		periodApprove.set(Calendar.HOUR_OF_DAY, NEXT_PERIOD_APPROVE);
+		periodApprove.set(Calendar.MINUTE, NEXT_PERIOD_APPROVE_MIN);
+		periodApprove.set(Calendar.SECOND, 0);
+		periodApprove.add(Calendar.HOUR_OF_DAY, 24);
 	}
 
 	public void setNextPeriod()
@@ -583,22 +583,22 @@ public class CastleManorManager
 
 	public boolean isUnderMaintenance()
 	{
-		return this.underMaintenance;
+		return underMaintenance;
 	}
 
 	public void setUnderMaintenance(boolean mode)
 	{
-		this.underMaintenance = mode;
+		underMaintenance = mode;
 	}
 
 	public boolean isDisabled()
 	{
-		return this.disabled;
+		return disabled;
 	}
 
 	public void setDisabled(boolean mode)
 	{
-		this.disabled = mode;
+		disabled = mode;
 	}
 
 	public SeedProduction getNewSeedProduction(int id, long amount, long price, long sales)

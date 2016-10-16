@@ -58,28 +58,28 @@ public class CustomCommunityBoard
 
 		private String getDate()
 		{
-			long timestamp = Long.parseLong(this.postDate);
+			long timestamp = Long.parseLong(postDate);
 			return new SimpleDateFormat("dd/MM/yyyy").format(new Date(timestamp * 1000));
 		}
 
 		private String getUrl()
 		{
-			return this.postUrl;
+			return postUrl;
 		}
 
 		private String getTitle()
 		{
-			if (this.postTitle.length() > 40)
+			if (postTitle.length() > 40)
 			{
-				this.postTitle = this.postTitle.substring(0, 40) + "...";
+				postTitle = postTitle.substring(0, 40) + "...";
 			}
-			return this.postTitle.replace("&#33;", "!");
+			return postTitle.replace("&#33;", "!");
 		}
 
 		private cmboard(String date, String title, String postUrl)
 		{
-			this.postDate = date;
-			this.postTitle = title;
+			postDate = date;
+			postTitle = title;
 			this.postUrl = postUrl;
 		}
 	}
@@ -381,7 +381,7 @@ public class CustomCommunityBoard
 		int spawnTime = 0;
 		int randomSpawnTime = 0;
 
-		for (Object id : this.bossIds)
+		for (Object id : bossIds)
 		{
 			int bossId = (Integer) id;
 			if (bossId == 29054 || bossId == 29065)
@@ -516,7 +516,7 @@ public class CustomCommunityBoard
 				"<html><body>%menu%<br><center><table><tr><td><img src=\"icon.etc_alphabet_r_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_a_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_d_i00\" width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_n_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_f_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_o_i00\" width=32 height=32></td></tr></table></center><br><br>");
 
 		int maxBossesPerPage = 15;
-		int bossSize = this.raidIds.size();
+		int bossSize = raidIds.size();
 		int maxPages = bossSize / maxBossesPerPage;
 		if (bossSize > maxBossesPerPage * maxPages)
 		{
@@ -543,7 +543,7 @@ public class CustomCommunityBoard
 		Long respawn = null; // Just the respawn time
 		for (int i = pageStart; i < pageEnd; i++)
 		{
-			npc = NpcTable.getInstance().getTemplate((Integer) this.raidIds.get(i));
+			npc = NpcTable.getInstance().getTemplate((Integer) raidIds.get(i));
 			if (npc == null)
 			{
 				continue;

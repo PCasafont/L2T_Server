@@ -71,7 +71,7 @@ public abstract class ItemContainer
 	 */
 	public int getSize()
 	{
-		return this.items.size();
+		return items.size();
 	}
 
 	/**
@@ -81,9 +81,9 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance[] getItems()
 	{
-		synchronized (this.items)
+		synchronized (items)
 		{
-			return this.items.values().toArray(new L2ItemInstance[this.items.size()]);
+			return items.values().toArray(new L2ItemInstance[items.size()]);
 		}
 	}
 
@@ -95,7 +95,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByItemId(int itemId)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId)
 			{
@@ -115,7 +115,7 @@ public abstract class ItemContainer
 	public List<L2ItemInstance> getItemsByItemId(int itemId)
 	{
 		List<L2ItemInstance> returnList = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId)
 			{
@@ -135,7 +135,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByItemId(int itemId, L2ItemInstance itemToIgnore)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId && !item.equals(itemToIgnore))
 			{
@@ -154,7 +154,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByObjectId(int objectId)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -189,7 +189,7 @@ public abstract class ItemContainer
 	{
 		long count = 0;
 
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item.getItemId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) &&
 					(includeEquipped || !item.isEquipped()))
@@ -443,7 +443,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
 	{
-		return this.destroyItem(process, item, item.getCount(), actor, reference);
+		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
 
 	/**
@@ -514,7 +514,7 @@ public abstract class ItemContainer
 		{
 			return null;
 		}
-		return this.destroyItem(process, item, count, actor, reference);
+		return destroyItem(process, item, count, actor, reference);
 	}
 
 	/**
@@ -534,7 +534,7 @@ public abstract class ItemContainer
 		{
 			return null;
 		}
-		return this.destroyItem(process, item, count, actor, reference);
+		return destroyItem(process, item, count, actor, reference);
 	}
 
 	/**
@@ -546,7 +546,7 @@ public abstract class ItemContainer
 	 */
 	public synchronized void destroyAllItems(String process, L2PcInstance actor, Object reference)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null)
 			{
@@ -562,7 +562,7 @@ public abstract class ItemContainer
 	{
 		long count = 0;
 
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == 57)
 			{
@@ -581,9 +581,9 @@ public abstract class ItemContainer
 	 */
 	protected void addItem(L2ItemInstance item)
 	{
-		synchronized (this.items)
+		synchronized (items)
 		{
-			this.items.put(item.getObjectId(), item);
+			items.put(item.getObjectId(), item);
 		}
 	}
 
@@ -594,9 +594,9 @@ public abstract class ItemContainer
 	 */
 	protected boolean removeItem(L2ItemInstance item)
 	{
-		synchronized (this.items)
+		synchronized (items)
 		{
-			return this.items.remove(item.getObjectId()) != null;
+			return items.remove(item.getObjectId()) != null;
 		}
 	}
 
@@ -633,7 +633,7 @@ public abstract class ItemContainer
 	{
 		if (getOwner() != null)
 		{
-			for (L2ItemInstance item : this.items.values())
+			for (L2ItemInstance item : items.values())
 			{
 				if (item != null)
 				{

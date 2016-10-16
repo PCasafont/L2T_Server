@@ -56,7 +56,7 @@ public class NpcWalkersTable
 
 	public void load()
 	{
-		this.routes.clear();
+		routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
 		if (file.exists())
 		{
@@ -111,17 +111,17 @@ public class NpcWalkersTable
 			}
 		}
 
-		for (Object list : this.routes.getValues())
+		for (Object list : routes.getValues())
 		{
 			((ArrayList<?>) list).trimToSize();
 		}
 
-		Log.info("WalkerRoutesTable: Loaded " + this.routes.size() + " Npc Walker Routes.");
+		Log.info("WalkerRoutesTable: Loaded " + routes.size() + " Npc Walker Routes.");
 	}
 
 	public List<L2NpcWalkerNode> getRouteForNpc(int id)
 	{
-		return this.routes.get(id);
+		return routes.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")

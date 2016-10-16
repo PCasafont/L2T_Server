@@ -33,10 +33,10 @@ public class ListPartyWaiting extends L2GameServerPacket
 
 	public ListPartyWaiting(L2PcInstance player, int auto, int location, int limit)
 	{
-		this.cha = player;
-		this.loc = location;
-		this.lim = limit;
-		this.rooms = new ArrayList<>();
+		cha = player;
+		loc = location;
+		lim = limit;
+		rooms = new ArrayList<>();
 		for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms())
 		{
 			if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() ||
@@ -45,25 +45,25 @@ public class ListPartyWaiting extends L2GameServerPacket
 				PartyMatchRoomList.getInstance().deleteRoom(room.getId());
 				continue;
 			}
-			if (this.loc > 0 && this.loc != room.getLocation())
+			if (loc > 0 && loc != room.getLocation())
 			{
 				continue;
 			}
-			if (this.lim == 0 && (this.cha.getLevel() < room.getMinLvl() || this.cha.getLevel() > room.getMaxLvl()))
+			if (lim == 0 && (cha.getLevel() < room.getMinLvl() || cha.getLevel() > room.getMaxLvl()))
 			{
 				continue;
 			}
-			this.rooms.add(room);
+			rooms.add(room);
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.rooms.size() > 0 ? 1 : 0);
+		writeD(rooms.size() > 0 ? 1 : 0);
 
-		writeD(this.rooms.size());
-		for (PartyMatchRoom room : this.rooms)
+		writeD(rooms.size());
+		for (PartyMatchRoom room : rooms)
 		{
 			writeD(room.getId());
 			writeS(room.getTitle());

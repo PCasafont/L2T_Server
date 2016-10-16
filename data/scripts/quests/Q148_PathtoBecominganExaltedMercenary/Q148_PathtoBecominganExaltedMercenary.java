@@ -47,7 +47,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(this.merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			if (event.equalsIgnoreCase("exalted-00b.htm"))
 			{
@@ -73,7 +73,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(this.merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			switch (st.getState())
 			{
@@ -126,7 +126,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 	{
 		super(questId, name, descr);
 
-		for (int npc : this.merc)
+		for (int npc : merc)
 		{
 			addStartNpc(npc);
 			addTalkId(npc);

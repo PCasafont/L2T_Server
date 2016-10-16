@@ -474,9 +474,9 @@ public class AdminTenkai implements IAdminCommandHandler
 			{
 				L2Npc target = (L2Npc) obj;
 
-				if (!this.mobIds.contains(target.getNpcId()))
+				if (!mobIds.contains(target.getNpcId()))
 				{
-					this.mobIds.add(target.getNpcId());
+					mobIds.add(target.getNpcId());
 				}
 
 				L2Spawn spawn = target.getSpawn();
@@ -486,7 +486,7 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				}
 
-				this.deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+				deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 				target.deleteMe();
 
@@ -506,14 +506,14 @@ public class AdminTenkai implements IAdminCommandHandler
 		{
 			L2Npc target = (L2Npc) obj;
 
-			if (!this.mobIds.contains(target.getNpcId()))
+			if (!mobIds.contains(target.getNpcId()))
 			{
-				this.mobIds.add(target.getNpcId());
+				mobIds.add(target.getNpcId());
 			}
 
 			L2Spawn spawn = target.getSpawn();
 
-			this.deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+			deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 			target.deleteMe();
 
@@ -538,30 +538,30 @@ public class AdminTenkai implements IAdminCommandHandler
 
 		public SpawnInfo(int ID, int X, int Y, int Z)
 		{
-			this.id = ID;
-			this.x = X;
-			this.y = Y;
-			this.z = Z;
+			id = ID;
+			x = X;
+			y = Y;
+			z = Z;
 		}
 
 		private int getId()
 		{
-			return this.id;
+			return id;
 		}
 
 		private int getX()
 		{
-			return this.x;
+			return x;
 		}
 
 		private int getY()
 		{
-			return this.y;
+			return y;
 		}
 
 		private int getZ()
 		{
-			return this.z;
+			return z;
 		}
 	}
 

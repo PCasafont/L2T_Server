@@ -27,11 +27,11 @@ public class VehicleInfo extends L2GameServerPacket
 
 	public VehicleInfo(L2BoatInstance boat)
 	{
-		this.objId = boat.getObjectId();
-		this.x = boat.getX();
-		this.y = boat.getY();
-		this.z = boat.getZ();
-		this.heading = boat.getHeading();
+		objId = boat.getObjectId();
+		x = boat.getX();
+		y = boat.getY();
+		z = boat.getZ();
+		heading = boat.getHeading();
 	}
 
 	/* (non-Javadoc)
@@ -40,10 +40,10 @@ public class VehicleInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(objId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 	}
 }

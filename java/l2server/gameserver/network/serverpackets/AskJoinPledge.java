@@ -39,15 +39,15 @@ public final class AskJoinPledge extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.requestorObjId);
-		if (this.subPledgeName != null)
+		writeD(requestorObjId);
+		if (subPledgeName != null)
 		{
-			writeS(this.pledgeType > 0 ? this.subPledgeName : this.pledgeName);
+			writeS(pledgeType > 0 ? subPledgeName : pledgeName);
 		}
-		if (this.pledgeType != 0)
+		if (pledgeType != 0)
 		{
-			writeD(this.pledgeType);
+			writeD(pledgeType);
 		}
-		writeS(this.pledgeName);
+		writeS(pledgeName);
 	}
 }

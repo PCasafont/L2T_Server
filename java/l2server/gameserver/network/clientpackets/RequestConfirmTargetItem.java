@@ -34,7 +34,7 @@ public final class RequestConfirmTargetItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.itemObjId = readD();
+		itemObjId = readD();
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public final class RequestConfirmTargetItem extends L2GameClientPacket
 			return;
 		}
 
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.itemObjId);
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjId);
 		if (item == null)
 		{
 			return;
@@ -66,6 +66,6 @@ public final class RequestConfirmTargetItem extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.sendPacket(new ExPutItemResultForVariationMake(this.itemObjId, item.getItemId()));
+		activeChar.sendPacket(new ExPutItemResultForVariationMake(itemObjId, item.getItemId()));
 	}
 }

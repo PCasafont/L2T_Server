@@ -29,7 +29,7 @@ public final class RequestCommissionInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.itemOID = readD();
+		itemOID = readD();
 	}
 
 	@Override
@@ -40,6 +40,6 @@ public final class RequestCommissionInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		player.sendPacket(new ExResponseCommissionInfo(player, this.itemOID, true));
+		player.sendPacket(new ExResponseCommissionInfo(player, itemOID, true));
 	}
 }

@@ -236,9 +236,9 @@ public class FinalEmperialTomb extends Quest
 									continue;
 								}
 								int flag = d.getInt("flag");
-								if (!this.spawnList.contains(flag))
+								if (!spawnList.contains(flag))
 								{
-									this.spawnList.put(flag, new ArrayList<FETSpawn>());
+									spawnList.put(flag, new ArrayList<FETSpawn>());
 								}
 
 								for (XmlNode cd : d.getChildren())
@@ -287,9 +287,9 @@ public class FinalEmperialTomb extends Quest
 										spw.isNeededNextFlag = cd.getBool("mustKill", false);
 										if (spw.isNeededNextFlag)
 										{
-											this.mustKillMobsId.add(npcId);
+											mustKillMobsId.add(npcId);
 										}
-										this.spawnList.get(flag).add(spw);
+										spawnList.get(flag).add(spw);
 										//spawnCount++;
 									}
 									else if (cd.getName().equalsIgnoreCase("zone"))
@@ -319,9 +319,9 @@ public class FinalEmperialTomb extends Quest
 										spw.isNeededNextFlag = cd.getBool("mustKill", false);
 										if (spw.isNeededNextFlag)
 										{
-											this.mustKillMobsId.add(npcId);
+											mustKillMobsId.add(npcId);
 										}
-										this.spawnList.get(flag).add(spw);
+										spawnList.get(flag).add(spw);
 										//spawnCount++;
 									}
 								}
@@ -385,7 +385,7 @@ public class FinalEmperialTomb extends Quest
 									}
 								}
 
-								this.spawnZoneList.put(id, ter);
+								spawnZoneList.put(id, ter);
 							}
 						}
 					}
@@ -400,7 +400,7 @@ public class FinalEmperialTomb extends Quest
 
 		if (debug)
 		{
-			Log.info("[Final Emperial Tomb] Loaded " + this.spawnZoneList.size() + " spawn zones data.");
+			Log.info("[Final Emperial Tomb] Loaded " + spawnZoneList.size() + " spawn zones data.");
 			//Log.info("[Final Emperial Tomb] Loaded " + spawnCount + " spawns data.");
 		}
 	}
@@ -501,15 +501,15 @@ public class FinalEmperialTomb extends Quest
 		{
 			try
 			{
-				for (FETSpawn spw : this.spawnList.get(flag))
+				for (FETSpawn spw : spawnList.get(flag))
 				{
 					if (spw.isZone)
 					{
 						for (int i = 0; i < spw.count; i++)
 						{
-							if (this.spawnZoneList.contains(spw.zone))
+							if (spawnZoneList.contains(spw.zone))
 							{
-								int[] point = this.spawnZoneList.get(spw.zone).getRandomPoint();
+								int[] point = spawnZoneList.get(spw.zone).getRandomPoint();
 								spawn(world, spw.npcId, point[0], point[1], GeoData.getInstance()
 												.getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd.get(65535),
 										spw.isNeededNextFlag);
@@ -669,7 +669,7 @@ public class FinalEmperialTomb extends Quest
 		@Override
 		public void run()
 		{
-			if (InstanceManager.getInstance().getWorld(this.world.instanceId) != this.world || this.world.portraits.isEmpty())
+			if (InstanceManager.getInstance().getWorld(world.instanceId) != world || world.portraits.isEmpty())
 			{
 				if (debug)
 				{
@@ -677,19 +677,18 @@ public class FinalEmperialTomb extends Quest
 				}
 				return;
 			}
-			for (int i : this.world.portraits.values())
+			for (int i : world.portraits.values())
 			{
-				if (this.world.demons.size() > MAX_DEMONS)
+				if (world.demons.size() > MAX_DEMONS)
 				{
 					break;
 				}
 				L2MonsterInstance demon = (L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0] + 2, PORTRAIT_SPAWNS[i][5],
-						PORTRAIT_SPAWNS[i][6], PORTRAIT_SPAWNS[i][7], PORTRAIT_SPAWNS[i][8], false, 0, false,
-						this.world.instanceId);
-				updateKnownList(this.world, demon);
-				this.world.demons.add(demon);
+						PORTRAIT_SPAWNS[i][6], PORTRAIT_SPAWNS[i][7], PORTRAIT_SPAWNS[i][8], false, 0, false, world.instanceId);
+				updateKnownList(world, demon);
+				world.demons.add(demon);
 			}
-			ThreadPoolManager.getInstance().scheduleGeneral(new DemonSpawnTask(this.world), TIME_BETWEEN_DEMON_SPAWNS);
+			ThreadPoolManager.getInstance().scheduleGeneral(new DemonSpawnTask(world), TIME_BETWEEN_DEMON_SPAWNS);
 		}
 	}
 
@@ -707,35 +706,35 @@ public class FinalEmperialTomb extends Quest
 		@Override
 		public void run()
 		{
-			if (InstanceManager.getInstance().getWorld(this.world.instanceId) != this.world)
+			if (InstanceManager.getInstance().getWorld(world.instanceId) != world)
 			{
 				return;
 			}
-			switch (this.status)
+			switch (status)
 			{
 				case 0: // new song play
-					if (this.world.isVideo)
+					if (world.isVideo)
 					{
-						this.world.songTask =
-								ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(this.world, 0), 1000);
+						world.songTask =
+								ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(world, 0), 1000);
 					}
-					else if (this.world.frintezza != null && !this.world.frintezza.isDead())
+					else if (world.frintezza != null && !world.frintezza.isDead())
 					{
 						int rnd = Rnd.get(100);
 						for (FrintezzaSong element : FRINTEZZASONGLIST)
 						{
 							if (rnd < element.chance)
 							{
-								this.world.OnSong = element;
-								broadCastPacket(this.world, new ExShowScreenMessage(element.songName.getId(), 3000));
-								broadCastPacket(this.world, new MagicSkillUse(this.world.frintezza, this.world.frintezza,
+								world.OnSong = element;
+								broadCastPacket(world, new ExShowScreenMessage(element.songName.getId(), 3000));
+								broadCastPacket(world, new MagicSkillUse(world.frintezza, world.frintezza,
 										element.skill.getSkillId(), element.skill.getSkillLvl(),
 										element.skill.getSkill().getHitTime(), 0, 0));
-								this.world.songEffectTask = ThreadPoolManager.getInstance()
-										.scheduleGeneral(new SongTask(this.world, 1),
+								world.songEffectTask = ThreadPoolManager.getInstance()
+										.scheduleGeneral(new SongTask(world, 1),
 												element.skill.getSkill().getHitTime() - 10000);
-								this.world.songTask = ThreadPoolManager.getInstance()
-										.scheduleGeneral(new SongTask(this.world, 0),
+								world.songTask = ThreadPoolManager.getInstance()
+										.scheduleGeneral(new SongTask(world, 0),
 												element.skill.getSkill().getHitTime());
 								break;
 							}
@@ -743,23 +742,23 @@ public class FinalEmperialTomb extends Quest
 					}
 					break;
 				case 1: // Frintezza song effect
-					this.world.songEffectTask = null;
-					L2Skill skill = this.world.OnSong.effectSkill.getSkill();
+					world.songEffectTask = null;
+					L2Skill skill = world.OnSong.effectSkill.getSkill();
 					if (skill == null)
 					{
 						return;
 					}
 
-					if (this.world.frintezza != null && !this.world.frintezza.isDead() && this.world.activeScarlet != null &&
-							!this.world.activeScarlet.isDead())
+					if (world.frintezza != null && !world.frintezza.isDead() && world.activeScarlet != null &&
+							!world.activeScarlet.isDead())
 					{
 						List<L2Character> targetList = new ArrayList<L2Character>();
 						if (skill.getSkillType() == L2SkillType.DEBUFF)
 						{
-							for (int objId : this.world.allowed)
+							for (int objId : world.allowed)
 							{
 								L2PcInstance player = L2World.getInstance().getPlayer(objId);
-								if (player != null && player.isOnline() && player.getInstanceId() == this.world.instanceId)
+								if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 								{
 									if (!player.isDead())
 									{
@@ -774,18 +773,18 @@ public class FinalEmperialTomb extends Quest
 						}
 						else
 						{
-							targetList.add(this.world.activeScarlet);
+							targetList.add(world.activeScarlet);
 						}
 						if (targetList.size() > 0)
 						{
-							this.world.frintezza.doCast(skill, targetList.get(0),
+							world.frintezza.doCast(skill, targetList.get(0),
 									targetList.toArray(new L2Character[targetList.size()]));
 						}
 					}
 					break;
 				case 2: // finish morph
-					this.world.activeScarlet.setRHandId(SECOND_SCARLET_WEAPON);
-					this.world.activeScarlet.setIsInvul(false);
+					world.activeScarlet.setRHandId(SECOND_SCARLET_WEAPON);
+					world.activeScarlet.setIsInvul(false);
 					break;
 			}
 		}
@@ -805,214 +804,213 @@ public class FinalEmperialTomb extends Quest
 		@Override
 		public void run()
 		{
-			switch (this.status)
+			switch (status)
 			{
 				case 0:
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 1), 27000);
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 2), 30000);
-					broadCastPacket(this.world, new Earthquake(-87784, -155083, -9087, 45, 27));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 1), 27000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 2), 30000);
+					broadCastPacket(world, new Earthquake(-87784, -155083, -9087, 45, 27));
 					break;
 				case 1:
 					for (int doorId : FIRST_ROOM_DOORS)
 					{
-						closeDoor(doorId, this.world.instanceId);
+						closeDoor(doorId, world.instanceId);
 					}
 					for (int doorId : FIRST_ROUTE_DOORS)
 					{
-						closeDoor(doorId, this.world.instanceId);
+						closeDoor(doorId, world.instanceId);
 					}
 					for (int doorId : SECOND_ROOM_DOORS)
 					{
-						closeDoor(doorId, this.world.instanceId);
+						closeDoor(doorId, world.instanceId);
 					}
 					for (int doorId : SECOND_ROUTE_DOORS)
 					{
-						closeDoor(doorId, this.world.instanceId);
+						closeDoor(doorId, world.instanceId);
 					}
-					addSpawn(29061, -87904, -141296, -9168, 0, false, 0, false, this.world.instanceId);
+					addSpawn(29061, -87904, -141296, -9168, 0, false, 0, false, world.instanceId);
 					break;
 				case 2:
-					this.world.frintezzaDummy =
-							addSpawn(29052, -87784, -155083, -9087, 16048, false, 0, false, this.world.instanceId);
-					this.world.frintezzaDummy.setIsInvul(true);
-					this.world.frintezzaDummy.setIsImmobilized(true);
+					world.frintezzaDummy =
+							addSpawn(29052, -87784, -155083, -9087, 16048, false, 0, false, world.instanceId);
+					world.frintezzaDummy.setIsInvul(true);
+					world.frintezzaDummy.setIsImmobilized(true);
 
-					this.world.overheadDummy =
-							addSpawn(29052, -87784, -153298, -9175, 16384, false, 0, false, this.world.instanceId);
-					this.world.overheadDummy.setIsInvul(true);
-					this.world.overheadDummy.setIsImmobilized(true);
-					this.world.overheadDummy.setCollisionHeight(600);
-					broadCastPacket(this.world, new NpcInfo(this.world.overheadDummy, null));
+					world.overheadDummy =
+							addSpawn(29052, -87784, -153298, -9175, 16384, false, 0, false, world.instanceId);
+					world.overheadDummy.setIsInvul(true);
+					world.overheadDummy.setIsImmobilized(true);
+					world.overheadDummy.setCollisionHeight(600);
+					broadCastPacket(world, new NpcInfo(world.overheadDummy, null));
 
-					this.world.portraitDummy1 =
-							addSpawn(29052, -89566, -153168, -9165, 16048, false, 0, false, this.world.instanceId);
-					this.world.portraitDummy1.setIsImmobilized(true);
-					this.world.portraitDummy1.setIsInvul(true);
+					world.portraitDummy1 =
+							addSpawn(29052, -89566, -153168, -9165, 16048, false, 0, false, world.instanceId);
+					world.portraitDummy1.setIsImmobilized(true);
+					world.portraitDummy1.setIsInvul(true);
 
-					this.world.portraitDummy3 =
-							addSpawn(29052, -86004, -153168, -9165, 16048, false, 0, false, this.world.instanceId);
-					this.world.portraitDummy3.setIsImmobilized(true);
-					this.world.portraitDummy3.setIsInvul(true);
+					world.portraitDummy3 =
+							addSpawn(29052, -86004, -153168, -9165, 16048, false, 0, false, world.instanceId);
+					world.portraitDummy3.setIsImmobilized(true);
+					world.portraitDummy3.setIsInvul(true);
 
-					this.world.scarletDummy =
-							addSpawn(29053, -87784, -153298, -9175, 16384, false, 0, false, this.world.instanceId);
-					this.world.scarletDummy.setIsInvul(true);
-					this.world.scarletDummy.setIsImmobilized(true);
+					world.scarletDummy =
+							addSpawn(29053, -87784, -153298, -9175, 16384, false, 0, false, world.instanceId);
+					world.scarletDummy.setIsInvul(true);
+					world.scarletDummy.setIsImmobilized(true);
 
 					stopPc();
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 3), 1000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 3), 1000);
 					break;
 				case 3:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.overheadDummy.getObjectId(), 300, 90, -10, 6500, 7000, 0, 0, 1,
+					broadCastPacket(world,
+							new SpecialCamera(world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.overheadDummy.getObjectId(), 0, 75, -89, 0, 100, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.overheadDummy.getObjectId(), 300, 90, -10, 6500, 7000, 0, 0, 1,
 									0));
 
-					this.world.frintezza =
+					world.frintezza =
 							(L2GrandBossInstance) addSpawn(FRINTEZZA, -87784, -155083, -9087, 16048, false, 0, false,
-									this.world.instanceId);
-					this.world.frintezza.setIsImmobilized(true);
-					this.world.frintezza.setIsInvul(true);
-					this.world.frintezza.disableAllSkills();
-					updateKnownList(this.world, this.world.frintezza);
+									world.instanceId);
+					world.frintezza.setIsImmobilized(true);
+					world.frintezza.setIsInvul(true);
+					world.frintezza.disableAllSkills();
+					updateKnownList(world, world.frintezza);
 
 					for (int[] element : PORTRAIT_SPAWNS)
 					{
 						L2MonsterInstance demon =
 								(L2MonsterInstance) addSpawn(element[0] + 2, element[5], element[6], element[7],
-										element[8], false, 0, false, this.world.instanceId);
+										element[8], false, 0, false, world.instanceId);
 						demon.setIsImmobilized(true);
 						demon.disableAllSkills();
-						updateKnownList(this.world, demon);
-						this.world.demons.add(demon);
+						updateKnownList(world, demon);
+						world.demons.add(demon);
 					}
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 4), 6500);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 4), 6500);
 					break;
 				case 4:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezzaDummy.getObjectId(), 1800, 90, 8, 6500, 7000, 0, 0, 1,
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezzaDummy.getObjectId(), 1800, 90, 8, 6500, 7000, 0, 0, 1,
 									0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 5), 900);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 5), 900);
 					break;
 				case 5:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezzaDummy.getObjectId(), 140, 90, 10, 2500, 4500, 0, 0, 1,
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezzaDummy.getObjectId(), 140, 90, 10, 2500, 4500, 0, 0, 1,
 									0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 6), 4000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 6), 4000);
 					break;
 				case 6:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 40, 75, -10, 0, 1000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 40, 75, -10, 0, 12000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 7), 1350);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 40, 75, -10, 0, 1000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 40, 75, -10, 0, 12000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 7), 1350);
 					break;
 				case 7:
-					broadCastPacket(this.world, new SocialAction(this.world.frintezza.getObjectId(), 2));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 8), 7000);
+					broadCastPacket(world, new SocialAction(world.frintezza.getObjectId(), 2));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 8), 7000);
 					break;
 				case 8:
-					this.world.frintezzaDummy.deleteMe();
-					this.world.frintezzaDummy = null;
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 9), 1000);
+					world.frintezzaDummy.deleteMe();
+					world.frintezzaDummy = null;
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 9), 1000);
 					break;
 				case 9:
-					broadCastPacket(this.world, new SocialAction(this.world.demons.get(1).getObjectId(), 1));
-					broadCastPacket(this.world, new SocialAction(this.world.demons.get(2).getObjectId(), 1));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 10), 400);
+					broadCastPacket(world, new SocialAction(world.demons.get(1).getObjectId(), 1));
+					broadCastPacket(world, new SocialAction(world.demons.get(2).getObjectId(), 1));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 10), 400);
 					break;
 				case 10:
-					broadCastPacket(this.world, new SocialAction(this.world.demons.get(0).getObjectId(), 1));
-					broadCastPacket(this.world, new SocialAction(this.world.demons.get(3).getObjectId(), 1));
+					broadCastPacket(world, new SocialAction(world.demons.get(0).getObjectId(), 1));
+					broadCastPacket(world, new SocialAction(world.demons.get(3).getObjectId(), 1));
 					sendPacketX(
-							new SpecialCamera(this.world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 1000, 0, 0, 1, 0),
-							new SpecialCamera(this.world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 1000, 0, 0, 1, 0),
+							new SpecialCamera(world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 1000, 0, 0, 1, 0),
+							new SpecialCamera(world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 1000, 0, 0, 1, 0),
 							-87784);
 					sendPacketX(
-							new SpecialCamera(this.world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 10000, 0, 0, 1, 0),
-							new SpecialCamera(this.world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 10000, 0, 0, 1, 0),
+							new SpecialCamera(world.portraitDummy1.getObjectId(), 1000, 118, 0, 0, 10000, 0, 0, 1, 0),
+							new SpecialCamera(world.portraitDummy3.getObjectId(), 1000, 62, 0, 0, 10000, 0, 0, 1, 0),
 							-87784);
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 11), 2000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 11), 2000);
 					break;
 				case 11:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 240, 90, 0, 0, 1000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 240, 90, 25, 5500, 10000, 0, 0, 1, 0));
-					broadCastPacket(this.world, new SocialAction(this.world.frintezza.getObjectId(), 3));
-					this.world.portraitDummy1.deleteMe();
-					this.world.portraitDummy3.deleteMe();
-					this.world.portraitDummy1 = null;
-					this.world.portraitDummy3 = null;
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 12), 4500);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 240, 90, 0, 0, 1000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 240, 90, 25, 5500, 10000, 0, 0, 1, 0));
+					broadCastPacket(world, new SocialAction(world.frintezza.getObjectId(), 3));
+					world.portraitDummy1.deleteMe();
+					world.portraitDummy3.deleteMe();
+					world.portraitDummy1 = null;
+					world.portraitDummy3 = null;
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 12), 4500);
 					break;
 				case 12:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 13), 700);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 13), 700);
 					break;
 				case 13:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 14), 1300);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 100, 195, 35, 0, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 14), 1300);
 					break;
 				case 14:
-					broadCastPacket(this.world,
+					broadCastPacket(world,
 							new ExShowScreenMessage(NpcStringId.MOURNFUL_CHORALE_PRELUDE.getId(), 5000));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 120, 180, 45, 1500, 10000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new MagicSkillUse(this.world.frintezza, this.world.frintezza, 5006, 1, 34000, 0, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 15), 1500);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 120, 180, 45, 1500, 10000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new MagicSkillUse(world.frintezza, world.frintezza, 5006, 1, 34000, 0, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 15), 1500);
 					break;
 				case 15:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 520, 135, 45, 8000, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 16), 7500);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 520, 135, 45, 8000, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 16), 7500);
 					break;
 				case 16:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 1500, 110, 25, 10000, 13000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 17), 9500);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 1500, 110, 25, 10000, 13000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 17), 9500);
 					break;
 				case 17:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.overheadDummy.getObjectId(), 930, 160, -20, 0, 1000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.overheadDummy.getObjectId(), 600, 180, -25, 0, 10000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new MagicSkillUse(this.world.scarletDummy, this.world.overheadDummy, 5004, 1, 5800, 0, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.overheadDummy.getObjectId(), 930, 160, -20, 0, 1000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.overheadDummy.getObjectId(), 600, 180, -25, 0, 10000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new MagicSkillUse(world.scarletDummy, world.overheadDummy, 5004, 1, 5800, 0, 0));
 
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 18), 5000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 18), 5000);
 					break;
 				case 18:
-					this.world.activeScarlet =
-							(L2GrandBossInstance) addSpawn(29046, -87784, -153298, -9165, 16384, false, 0, false,
-									this.world.instanceId);
-					this.world.activeScarlet.setRHandId(FIRST_SCARLET_WEAPON);
-					this.world.activeScarlet.setIsInvul(true);
-					this.world.activeScarlet.setIsImmobilized(true);
-					this.world.activeScarlet.disableAllSkills();
-					updateKnownList(this.world, this.world.activeScarlet);
-					broadCastPacket(this.world, new SocialAction(this.world.activeScarlet.getObjectId(), 3));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.scarletDummy.getObjectId(), 800, 180, 10, 1000, 10000, 0, 0, 1,
+					world.activeScarlet =
+							(L2GrandBossInstance) addSpawn(29046, -87784, -153298, -9165, 16384, false, 0, false, world.instanceId);
+					world.activeScarlet.setRHandId(FIRST_SCARLET_WEAPON);
+					world.activeScarlet.setIsInvul(true);
+					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.disableAllSkills();
+					updateKnownList(world, world.activeScarlet);
+					broadCastPacket(world, new SocialAction(world.activeScarlet.getObjectId(), 3));
+					broadCastPacket(world,
+							new SpecialCamera(world.scarletDummy.getObjectId(), 800, 180, 10, 1000, 10000, 0, 0, 1,
 									0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 19), 2100);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 19), 2100);
 					break;
 				case 19:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 300, 60, 8, 0, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 20), 2000);
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 300, 60, 8, 0, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 20), 2000);
 					break;
 				case 20:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 500, 90, 10, 3000, 5000, 0, 0, 1, 0));
-					this.world.songTask = ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(this.world, 0), 100);
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 21), 3000);
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 500, 90, 10, 3000, 5000, 0, 0, 1, 0));
+					world.songTask = ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(world, 0), 100);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 21), 3000);
 					break;
 				case 21:
 					for (int i = 0; i < PORTRAIT_SPAWNS.length; i++)
@@ -1020,151 +1018,151 @@ public class FinalEmperialTomb extends Quest
 						L2MonsterInstance portrait =
 								(L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0], PORTRAIT_SPAWNS[i][1],
 										PORTRAIT_SPAWNS[i][2], PORTRAIT_SPAWNS[i][3], PORTRAIT_SPAWNS[i][4], false, 0,
-										false, this.world.instanceId);
-						updateKnownList(this.world, portrait);
-						this.world.portraits.put(portrait, i);
+										false, world.instanceId);
+						updateKnownList(world, portrait);
+						world.portraits.put(portrait, i);
 					}
 
-					this.world.overheadDummy.deleteMe();
-					this.world.scarletDummy.deleteMe();
-					this.world.overheadDummy = null;
-					this.world.scarletDummy = null;
+					world.overheadDummy.deleteMe();
+					world.scarletDummy.deleteMe();
+					world.overheadDummy = null;
+					world.scarletDummy = null;
 
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 22), 2000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 22), 2000);
 					break;
 				case 22:
-					for (L2MonsterInstance demon : this.world.demons)
+					for (L2MonsterInstance demon : world.demons)
 					{
 						demon.setIsImmobilized(false);
 						demon.enableAllSkills();
 					}
-					this.world.activeScarlet.setIsInvul(false);
-					this.world.activeScarlet.setIsImmobilized(false);
-					this.world.activeScarlet.enableAllSkills();
-					this.world.activeScarlet.setRunning();
-					this.world.activeScarlet.doCast(INTRO_SKILL.getSkill());
-					this.world.frintezza.enableAllSkills();
-					this.world.frintezza.disableCoreAI(true);
-					this.world.frintezza.setIsMortal(false);
+					world.activeScarlet.setIsInvul(false);
+					world.activeScarlet.setIsImmobilized(false);
+					world.activeScarlet.enableAllSkills();
+					world.activeScarlet.setRunning();
+					world.activeScarlet.doCast(INTRO_SKILL.getSkill());
+					world.frintezza.enableAllSkills();
+					world.frintezza.disableCoreAI(true);
+					world.frintezza.setIsMortal(false);
 					startPc();
 
 					ThreadPoolManager.getInstance()
-							.scheduleGeneral(new DemonSpawnTask(this.world), TIME_BETWEEN_DEMON_SPAWNS);
+							.scheduleGeneral(new DemonSpawnTask(world), TIME_BETWEEN_DEMON_SPAWNS);
 					break;
 				case 23:
-					broadCastPacket(this.world, new SocialAction(this.world.frintezza.getObjectId(), 4));
+					broadCastPacket(world, new SocialAction(world.frintezza.getObjectId(), 4));
 					break;
 				case 24:
 					stopPc();
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 250, 120, 15, 0, 1000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 250, 120, 15, 0, 10000, 0, 0, 1, 0));
-					this.world.activeScarlet.abortAttack();
-					this.world.activeScarlet.abortCast();
-					this.world.activeScarlet.setIsInvul(true);
-					this.world.activeScarlet.setIsImmobilized(true);
-					this.world.activeScarlet.disableAllSkills();
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 25), 7000);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 250, 120, 15, 0, 1000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 250, 120, 15, 0, 10000, 0, 0, 1, 0));
+					world.activeScarlet.abortAttack();
+					world.activeScarlet.abortCast();
+					world.activeScarlet.setIsInvul(true);
+					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.disableAllSkills();
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 25), 7000);
 					break;
 				case 25:
-					broadCastPacket(this.world,
-							new MagicSkillUse(this.world.frintezza, this.world.frintezza, 5006, 1, 34000, 0, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 500, 70, 15, 3000, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 26), 3000);
+					broadCastPacket(world,
+							new MagicSkillUse(world.frintezza, world.frintezza, 5006, 1, 34000, 0, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 500, 70, 15, 3000, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 26), 3000);
 					break;
 				case 26:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 2500, 90, 12, 6000, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 27), 3000);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 2500, 90, 12, 6000, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 27), 3000);
 					break;
 				case 27:
-					this.world.scarlet_x = this.world.activeScarlet.getX();
-					this.world.scarlet_y = this.world.activeScarlet.getY();
-					this.world.scarlet_z = this.world.activeScarlet.getZ();
-					this.world.scarlet_h = this.world.activeScarlet.getHeading();
-					if (this.world.scarlet_h < 32768)
+					world.scarlet_x = world.activeScarlet.getX();
+					world.scarlet_y = world.activeScarlet.getY();
+					world.scarlet_z = world.activeScarlet.getZ();
+					world.scarlet_h = world.activeScarlet.getHeading();
+					if (world.scarlet_h < 32768)
 					{
-						this.world.scarlet_a = Math.abs(180 - (int) (this.world.scarlet_h / 182.044444444));
+						world.scarlet_a = Math.abs(180 - (int) (world.scarlet_h / 182.044444444));
 					}
 					else
 					{
-						this.world.scarlet_a = Math.abs(540 - (int) (this.world.scarlet_h / 182.044444444));
+						world.scarlet_a = Math.abs(540 - (int) (world.scarlet_h / 182.044444444));
 					}
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 250, this.world.scarlet_a, 12, 0, 1000, 0,
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 250, world.scarlet_a, 12, 0, 1000, 0,
 									0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 250, this.world.scarlet_a, 12, 0, 10000,
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 250, world.scarlet_a, 12, 0, 10000,
 									0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 28), 500);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 28), 500);
 					break;
 				case 28:
-					this.world.activeScarlet.doDie(this.world.activeScarlet);
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 450, this.world.scarlet_a, 14, 8000, 8000,
+					world.activeScarlet.doDie(world.activeScarlet);
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 450, world.scarlet_a, 14, 8000, 8000,
 									0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 29), 6250);
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 30), 7200);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 29), 6250);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 30), 7200);
 					break;
 				case 29:
-					this.world.activeScarlet.deleteMe();
-					this.world.activeScarlet = null;
+					world.activeScarlet.deleteMe();
+					world.activeScarlet = null;
 					break;
 				case 30:
-					this.world.activeScarlet = (L2GrandBossInstance) addSpawn(SCARLET2, this.world.scarlet_x, this.world.scarlet_y,
-							this.world.scarlet_z, this.world.scarlet_h, false, 0, false, this.world.instanceId);
-					this.world.activeScarlet.setIsInvul(true);
-					this.world.activeScarlet.setIsImmobilized(true);
-					this.world.activeScarlet.disableAllSkills();
-					updateKnownList(this.world, this.world.activeScarlet);
+					world.activeScarlet = (L2GrandBossInstance) addSpawn(SCARLET2, world.scarlet_x, world.scarlet_y,
+							world.scarlet_z, world.scarlet_h, false, 0, false, world.instanceId);
+					world.activeScarlet.setIsInvul(true);
+					world.activeScarlet.setIsImmobilized(true);
+					world.activeScarlet.disableAllSkills();
+					updateKnownList(world, world.activeScarlet);
 
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 450, this.world.scarlet_a, 12, 500, 14000,
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 450, world.scarlet_a, 12, 500, 14000,
 									0, 0, 1, 0));
 
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 31), 8100);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 31), 8100);
 					break;
 				case 31:
-					broadCastPacket(this.world, new SocialAction(this.world.activeScarlet.getObjectId(), 2));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 32), 9000);
+					broadCastPacket(world, new SocialAction(world.activeScarlet.getObjectId(), 2));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 32), 9000);
 					break;
 				case 32:
 					startPc();
-					this.world.activeScarlet.setIsInvul(false);
-					this.world.activeScarlet.setIsImmobilized(false);
-					this.world.activeScarlet.enableAllSkills();
-					this.world.isVideo = false;
+					world.activeScarlet.setIsInvul(false);
+					world.activeScarlet.setIsImmobilized(false);
+					world.activeScarlet.enableAllSkills();
+					world.isVideo = false;
 					break;
 				case 33:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 300, this.world.scarlet_a - 180, 5, 0,
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 300, world.scarlet_a - 180, 5, 0,
 									7000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.activeScarlet.getObjectId(), 200, this.world.scarlet_a, 85, 4000,
+					broadCastPacket(world,
+							new SpecialCamera(world.activeScarlet.getObjectId(), 200, world.scarlet_a, 85, 4000,
 									10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 34), 7400);
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 35), 7500);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 34), 7400);
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 35), 7500);
 					break;
 				case 34:
-					this.world.frintezza.doDie(this.world.frintezza);
+					world.frintezza.doDie(world.frintezza);
 					break;
 				case 35:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 100, 120, 5, 0, 7000, 0, 0, 1, 0));
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 100, 90, 5, 5000, 15000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 36), 7000);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 100, 120, 5, 0, 7000, 0, 0, 1, 0));
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 100, 90, 5, 5000, 15000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 36), 7000);
 					break;
 				case 36:
-					broadCastPacket(this.world,
-							new SpecialCamera(this.world.frintezza.getObjectId(), 900, 90, 25, 7000, 10000, 0, 0, 1, 0));
-					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(this.world, 37), 9000);
+					broadCastPacket(world,
+							new SpecialCamera(world.frintezza.getObjectId(), 900, 90, 25, 7000, 10000, 0, 0, 1, 0));
+					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(world, 37), 9000);
 					break;
 				case 37:
-					controlStatus(this.world);
-					this.world.isVideo = false;
+					controlStatus(world);
+					world.isVideo = false;
 					startPc();
 					break;
 			}
@@ -1172,10 +1170,10 @@ public class FinalEmperialTomb extends Quest
 
 		private void stopPc()
 		{
-			for (int objId : this.world.allowed)
+			for (int objId : world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if (player != null && player.isOnline() && player.getInstanceId() == this.world.instanceId)
+				if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 				{
 					player.abortAttack();
 					player.abortCast();
@@ -1190,10 +1188,10 @@ public class FinalEmperialTomb extends Quest
 
 		private void startPc()
 		{
-			for (int objId : this.world.allowed)
+			for (int objId : world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if (player != null && player.isOnline() && player.getInstanceId() == this.world.instanceId)
+				if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 				{
 					player.enableAllSkills();
 					player.setIsImmobilized(false);
@@ -1203,10 +1201,10 @@ public class FinalEmperialTomb extends Quest
 
 		private void sendPacketX(L2GameServerPacket packet1, L2GameServerPacket packet2, int x)
 		{
-			for (int objId : this.world.allowed)
+			for (int objId : world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if (player != null && player.isOnline() && player.getInstanceId() == this.world.instanceId)
+				if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 				{
 					if (player.getX() < x)
 					{
@@ -1235,48 +1233,48 @@ public class FinalEmperialTomb extends Quest
 		@Override
 		public void run()
 		{
-			if (InstanceManager.getInstance().getWorld(this.world.instanceId) != this.world)
+			if (InstanceManager.getInstance().getWorld(world.instanceId) != world)
 			{
 				return;
 			}
-			switch (this.status)
+			switch (status)
 			{
 				case 0:
-					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(this.world, 1), 2000);
+					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 1), 2000);
 					for (int doorId : FIRST_ROOM_DOORS)
 					{
-						openDoor(doorId, this.world.instanceId);
+						openDoor(doorId, world.instanceId);
 					}
 					break;
 				case 1:
 					addAggroToMobs();
 					break;
 				case 2:
-					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(this.world, 3), 100);
+					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 3), 100);
 					for (int doorId : SECOND_ROOM_DOORS)
 					{
-						openDoor(doorId, this.world.instanceId);
+						openDoor(doorId, world.instanceId);
 					}
 					break;
 				case 3:
 					addAggroToMobs();
 					break;
 				case 4:
-					controlStatus(this.world);
+					controlStatus(world);
 					break;
 			}
 		}
 
 		private void addAggroToMobs()
 		{
-			L2PcInstance target = L2World.getInstance().getPlayer(this.world.allowed.get(Rnd.get(this.world.allowed.size())));
-			if (target == null || target.getInstanceId() != this.world.instanceId || target.isDead() ||
+			L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
+			if (target == null || target.getInstanceId() != world.instanceId || target.isDead() ||
 					target.isFakeDeath())
 			{
-				for (int objId : this.world.allowed)
+				for (int objId : world.allowed)
 				{
 					target = L2World.getInstance().getPlayer(objId);
-					if (target != null && target.getInstanceId() == this.world.instanceId && !target.isDead() &&
+					if (target != null && target.getInstanceId() == world.instanceId && !target.isDead() &&
 							!target.isFakeDeath())
 					{
 						break;
@@ -1284,7 +1282,7 @@ public class FinalEmperialTomb extends Quest
 					target = null;
 				}
 			}
-			for (L2Npc mob : this.world.npcList)
+			for (L2Npc mob : world.npcList)
 			{
 				mob.setRunning();
 				if (target != null)
@@ -1489,7 +1487,7 @@ public class FinalEmperialTomb extends Quest
 		{
 			addKillId(mobId);
 		}
-		for (int mobId : this.mustKillMobsId)
+		for (int mobId : mustKillMobsId)
 		{
 			addKillId(mobId);
 		}

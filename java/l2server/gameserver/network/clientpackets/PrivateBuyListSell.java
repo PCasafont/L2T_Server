@@ -19,10 +19,10 @@ public class PrivateBuyListSell extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.adena = readD();
-		this.isPackageSale = readD();
-		this.listSize = readD();
-		this.objectId = readD();
+		adena = readD();
+		isPackageSale = readD();
+		listSize = readD();
+		objectId = readD();
 	}
 
 	@Override

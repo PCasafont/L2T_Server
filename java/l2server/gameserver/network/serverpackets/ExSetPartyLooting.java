@@ -33,7 +33,7 @@ public class ExSetPartyLooting extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.result);
-		writeD(this.mode);
+		writeD(result);
+		writeD(mode);
 	}
 }

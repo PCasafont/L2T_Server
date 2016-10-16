@@ -33,52 +33,52 @@ public class ItemInfo
 
 	public ItemInfo(L2ItemInstance item)
 	{
-		this.enchantLevel = item.getEnchantLevel();
-		this.ensoulEffectIds = item.getEnsoulEffectIds();
-		this.ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
-		this.augmentId = item.getAugmentation() != null ? item.getAugmentation().getId() : 0;
-		this.elementId = item.getAttackElementType();
-		this.elementPower = item.getAttackElementPower();
-		this.elementals[0] = item.getElementDefAttr(Elementals.FIRE);
-		this.elementals[1] = item.getElementDefAttr(Elementals.WATER);
-		this.elementals[2] = item.getElementDefAttr(Elementals.WIND);
-		this.elementals[3] = item.getElementDefAttr(Elementals.EARTH);
-		this.elementals[4] = item.getElementDefAttr(Elementals.HOLY);
-		this.elementals[5] = item.getElementDefAttr(Elementals.DARK);
+		enchantLevel = item.getEnchantLevel();
+		ensoulEffectIds = item.getEnsoulEffectIds();
+		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
+		augmentId = item.getAugmentation() != null ? item.getAugmentation().getId() : 0;
+		elementId = item.getAttackElementType();
+		elementPower = item.getAttackElementPower();
+		elementals[0] = item.getElementDefAttr(Elementals.FIRE);
+		elementals[1] = item.getElementDefAttr(Elementals.WATER);
+		elementals[2] = item.getElementDefAttr(Elementals.WIND);
+		elementals[3] = item.getElementDefAttr(Elementals.EARTH);
+		elementals[4] = item.getElementDefAttr(Elementals.HOLY);
+		elementals[5] = item.getElementDefAttr(Elementals.DARK);
 	}
 
 	public final int getEnchantLevel()
 	{
-		return this.enchantLevel;
+		return enchantLevel;
 	}
 
 	public int[] getEnsoulEffectIds()
 	{
-		return this.ensoulEffectIds;
+		return ensoulEffectIds;
 	}
 
 	public int[] getEnsoulSpecialEffectIds()
 	{
-		return this.ensoulSpecialEffectIds;
+		return ensoulSpecialEffectIds;
 	}
 
 	public final long getAugmentId()
 	{
-		return this.augmentId;
+		return augmentId;
 	}
 
 	public final byte getElementId()
 	{
-		return this.elementId;
+		return elementId;
 	}
 
 	public final int getElementPower()
 	{
-		return this.elementPower;
+		return elementPower;
 	}
 
 	public final int[] getElementals()
 	{
-		return this.elementals;
+		return elementals;
 	}
 }

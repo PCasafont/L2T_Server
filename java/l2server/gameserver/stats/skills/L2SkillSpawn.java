@@ -44,11 +44,11 @@ public class L2SkillSpawn extends L2Skill
 	public L2SkillSpawn(StatsSet set)
 	{
 		super(set);
-		this.npcId = set.getInteger("npcId", 0);
-		this.despawnDelay = set.getInteger("despawnDelay", 0);
-		this.summonSpawn = set.getBool("isSummonSpawn", false);
-		this.randomOffset = set.getBool("randomOffset", true);
-		this.count = set.getInteger("count", 1);
+		npcId = set.getInteger("npcId", 0);
+		despawnDelay = set.getInteger("despawnDelay", 0);
+		summonSpawn = set.getBool("isSummonSpawn", false);
+		randomOffset = set.getBool("randomOffset", true);
+		count = set.getInteger("count", 1);
 	}
 
 	@Override
@@ -59,16 +59,16 @@ public class L2SkillSpawn extends L2Skill
 			return;
 		}
 
-		if (this.npcId == 0)
+		if (npcId == 0)
 		{
 			Log.warning("NPC ID not defined for skill ID:" + getId());
 			return;
 		}
 
-		final L2NpcTemplate template = NpcTable.getInstance().getTemplate(this.npcId);
+		final L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 		if (template == null)
 		{
-			Log.warning("Spawn of the nonexisting NPC ID:" + this.npcId + ", skill ID:" + getId());
+			Log.warning("Spawn of the nonexisting NPC ID:" + npcId + ", skill ID:" + getId());
 			return;
 		}
 
@@ -85,7 +85,7 @@ public class L2SkillSpawn extends L2Skill
 				first = -count;
 			}
 
-			for (int i = first; i < this.count; i++)
+			for (int i = first; i < count; i++)
 			{
 				final L2Spawn spawn = new L2Spawn(template);
 
@@ -105,7 +105,7 @@ public class L2SkillSpawn extends L2Skill
 				}
 				else
 				{
-					if (this.randomOffset)
+					if (randomOffset)
 					{
 						x = caster.getX() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
 						y = caster.getY() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
@@ -133,18 +133,18 @@ public class L2SkillSpawn extends L2Skill
 				}
 
 				npc.setIsRunning(true);
-				spawn.doSpawn(this.summonSpawn);
+				spawn.doSpawn(summonSpawn);
 
-				if (this.despawnDelay > 0)
+				if (despawnDelay > 0)
 				{
-					npc.scheduleDespawn(this.despawnDelay);
+					npc.scheduleDespawn(despawnDelay);
 				}
 			}
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING,
-					"Exception while spawning NPC ID: " + this.npcId + ", skill ID: " + getId() + ", exception: " +
+					"Exception while spawning NPC ID: " + npcId + ", skill ID: " + getId() + ", exception: " +
 							e.getMessage(), e);
 		}
 

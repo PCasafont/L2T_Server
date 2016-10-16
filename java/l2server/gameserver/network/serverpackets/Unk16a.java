@@ -28,17 +28,17 @@ public final class Unk16a extends L2GameServerPacket
 
 	public Unk16a(L2PcInstance character)
 	{
-		this.objectId = character.getObjectId();
+		objectId = character.getObjectId();
 
-		this.unk1 = 9259;
-		this.unk2 = 69483;
+		unk1 = 9259;
+		unk2 = 69483;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.unk1);
-		writeD(this.unk2);
+		writeD(objectId);
+		writeD(unk1);
+		writeD(unk2);
 	}
 }

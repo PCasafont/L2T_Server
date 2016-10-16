@@ -41,11 +41,11 @@ public class HackingException extends Exception
 	 */
 	public String getIP()
 	{
-		return this.ip;
+		return ip;
 	}
 
 	public int getConnects()
 	{
-		return this.connects;
+		return connects;
 	}
 }

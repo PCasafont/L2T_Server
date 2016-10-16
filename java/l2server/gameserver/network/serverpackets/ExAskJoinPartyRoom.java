@@ -32,6 +32,6 @@ public class ExAskJoinPartyRoom extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.charName);
+		writeS(charName);
 	}
 }

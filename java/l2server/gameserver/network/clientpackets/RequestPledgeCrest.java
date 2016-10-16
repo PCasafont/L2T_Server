@@ -30,13 +30,13 @@ public final class RequestPledgeCrest extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.crestId = readD();
+		crestId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		sendPacket(new PledgeCrest(this.crestId));
+		sendPacket(new PledgeCrest(crestId));
 	}
 
 	@Override

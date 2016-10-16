@@ -102,9 +102,9 @@ public class L2DefenderInstance extends L2Attackable
 		L2PcInstance player = attacker.getActingPlayer();
 
 		// Check if siege is in progress
-		if (this.fort != null && this.fort.getZone().isActive() || this.castle != null && this.castle.getZone().isActive())
+		if (fort != null && fort.getZone().isActive() || castle != null && castle.getZone().isActive())
 		{
-			int activeSiegeId = this.fort != null ? this.fort.getFortId() : this.castle != null ? this.castle.getCastleId() : 0;
+			int activeSiegeId = fort != null ? fort.getFortId() : castle != null ? castle.getCastleId() : 0;
 
 			// Check if player is an enemy of this defender npc
 			if (player != null && (player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(activeSiegeId) ||
@@ -158,9 +158,9 @@ public class L2DefenderInstance extends L2Attackable
 	{
 		super.onSpawn();
 
-		this.fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
-		this.castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
-		if (this.fort == null && this.castle == null)
+		fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
+		castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
+		if (fort == null && castle == null)
 		{
 			Log.warning("L2DefenderInstance spawned outside of Fortress or Castle Zone! NpcId: " + getNpcId() + " x=" +
 					getX() + " y=" + getY() + " z=" + getZ());
@@ -240,9 +240,10 @@ public class L2DefenderInstance extends L2Attackable
 			{
 				L2PcInstance player = attacker.getActingPlayer();
 				// Check if siege is in progress
-				if (this.fort != null && this.fort.getZone().isActive() || this.castle != null && this.castle.getZone().isActive())
+				if (fort != null && fort.getZone().isActive() || castle != null && castle.getZone().isActive())
 				{
-					int activeSiegeId = this.fort != null ? this.fort.getFortId() : this.castle != null ? this.castle.getCastleId() : 0;
+					int activeSiegeId = fort != null ? fort.getFortId() :
+							castle != null ? castle.getCastleId() : 0;
 					if (player != null &&
 							(player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId)))
 					{

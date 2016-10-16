@@ -48,38 +48,38 @@ public final class AuthLogin extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.loginName = readS().toLowerCase();
-		this.playKey2 = readD();
-		this.playKey1 = readD();
-		this.loginKey1 = readD();
-		this.loginKey2 = readD();
+		loginName = readS().toLowerCase();
+		playKey2 = readD();
+		playKey1 = readD();
+		loginKey1 = readD();
+		loginKey2 = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		final L2GameClient client = getClient();
-		if (this.loginName.length() == 0 || !client.isProtocolOk())
+		if (loginName.length() == 0 || !client.isProtocolOk())
 		{
 			client.close((L2GameServerPacket) null);
 			return;
 		}
-		SessionKey key = new SessionKey(this.loginKey1, this.loginKey2, this.playKey1, this.playKey2);
+		SessionKey key = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
 		if (Config.DEBUG)
 		{
-			Log.info("user:" + this.loginName);
+			Log.info("user:" + loginName);
 			Log.info("key:" + key);
 		}
 
 		// avoid potential exploits
 		if (client.getAccountName() == null)
 		{
-			if (!this.loginName.equalsIgnoreCase("IdEmpty"))
+			if (!loginName.equalsIgnoreCase("IdEmpty"))
 			{
-				client.setAccountName(this.loginName);
-				LoginServerThread.getInstance().addGameServerLogin(this.loginName, client);
+				client.setAccountName(loginName);
+				LoginServerThread.getInstance().addGameServerLogin(loginName, client);
 			}
-			LoginServerThread.getInstance().addWaitingClientAndSendRequest(this.loginName, client, key);
+			LoginServerThread.getInstance().addWaitingClientAndSendRequest(loginName, client, key);
 		}
 		//sendVitalityInfo(client);
 	}

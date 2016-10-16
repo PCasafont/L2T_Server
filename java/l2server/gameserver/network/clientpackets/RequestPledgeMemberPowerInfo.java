@@ -34,8 +34,8 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.unk1 = readD();
-		this.player = readS();
+		unk1 = readD();
+		player = readS();
 	}
 
 	/**
@@ -56,7 +56,7 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ClanMember member = clan.getClanMember(this.player);
+		L2ClanMember member = clan.getClanMember(player);
 		if (member == null)
 		{
 			return;

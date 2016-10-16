@@ -43,7 +43,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 
 	public WorldObjectSet()
 	{
-		this.objectMap = new ConcurrentHashMap<>();
+		objectMap = new ConcurrentHashMap<>();
 	}
 
 	/* (non-Javadoc)
@@ -52,7 +52,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public int size()
 	{
-		return this.objectMap.size();
+		return objectMap.size();
 	}
 
 	/* (non-Javadoc)
@@ -61,7 +61,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public boolean isEmpty()
 	{
-		return this.objectMap.isEmpty();
+		return objectMap.isEmpty();
 	}
 
 	/* (non-Javadoc)
@@ -70,7 +70,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public void clear()
 	{
-		this.objectMap.clear();
+		objectMap.clear();
 	}
 
 	/* (non-Javadoc)
@@ -79,7 +79,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public void put(T obj)
 	{
-		this.objectMap.put(obj.getObjectId(), obj);
+		objectMap.put(obj.getObjectId(), obj);
 	}
 
 	/* (non-Javadoc)
@@ -88,7 +88,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public void remove(T obj)
 	{
-		this.objectMap.remove(obj.getObjectId());
+		objectMap.remove(obj.getObjectId());
 	}
 
 	/* (non-Javadoc)
@@ -97,7 +97,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public boolean contains(T obj)
 	{
-		return this.objectMap.containsKey(obj.getObjectId());
+		return objectMap.containsKey(obj.getObjectId());
 	}
 
 	/* (non-Javadoc)
@@ -106,6 +106,6 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	@Override
 	public Iterator<T> iterator()
 	{
-		return this.objectMap.values().iterator();
+		return objectMap.values().iterator();
 	}
 }

@@ -58,7 +58,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
 		{
 			if (activeChar == null || !(activeChar instanceof L2Playable) ||
-					this.alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
+					alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
 			{
 				continue;
 			}
@@ -142,7 +142,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				}
 			}
 
-			this.alreadyBuffed.add(playable.getObjectId());
+			alreadyBuffed.add(playable.getObjectId());
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
 				@Override

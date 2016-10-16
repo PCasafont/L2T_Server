@@ -43,10 +43,10 @@ public class ExBrLoadEventTopRankers extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.eventId);
-		writeD(this.day);
-		writeD(this.count);
-		writeD(this.bestScore);
-		writeD(this.myScore);
+		writeD(eventId);
+		writeD(day);
+		writeD(count);
+		writeD(bestScore);
+		writeD(myScore);
 	}
 }

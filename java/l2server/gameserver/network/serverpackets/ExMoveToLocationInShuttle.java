@@ -28,20 +28,20 @@ public class ExMoveToLocationInShuttle extends L2GameServerPacket
 
 	public ExMoveToLocationInShuttle(L2PcInstance player)
 	{
-		this.charObjId = player.getObjectId();
-		this.shuttleId = player.getShuttle().getObjectId();
-		this.destination = player.getInVehiclePosition();
-		this.heading = player.getHeading();
+		charObjId = player.getObjectId();
+		shuttleId = player.getShuttle().getObjectId();
+		destination = player.getInVehiclePosition();
+		heading = player.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.shuttleId);
-		writeD(this.destination.getX());
-		writeD(this.destination.getY());
-		writeD(this.destination.getZ());
+		writeD(charObjId);
+		writeD(shuttleId);
+		writeD(destination.getX());
+		writeD(destination.getY());
+		writeD(destination.getZ());
 		writeD(0x00); // ???
 		writeD(0x00); // ???
 		writeD(0x00); // ???

@@ -49,15 +49,15 @@ public final class MultiSellList extends L2GameServerPacket
 	{
 		this.list = list;
 		this.index = index;
-		this.size = list.getEntries().size() - index;
-		if (this.size > MultiSell.PAGE_SIZE)
+		size = list.getEntries().size() - index;
+		if (size > MultiSell.PAGE_SIZE)
 		{
-			this.finished = false;
-			this.size = MultiSell.PAGE_SIZE;
+			finished = false;
+			size = MultiSell.PAGE_SIZE;
 		}
 		else
 		{
-			this.finished = true;
+			finished = true;
 		}
 	}
 
@@ -65,20 +65,20 @@ public final class MultiSellList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeD(this.list.getListId()); // list id
+		writeD(list.getListId()); // list id
 		writeC(0x00);
-		writeD(1 + this.index / MultiSell.PAGE_SIZE); // page started from 1
-		writeD(this.finished ? 1 : 0); // finished
+		writeD(1 + index / MultiSell.PAGE_SIZE); // page started from 1
+		writeD(finished ? 1 : 0); // finished
 		writeD(MultiSell.PAGE_SIZE); // size of pages
-		writeD(this.size); //list length
-		writeC(this.list.isChance() ? 0x01 : 0x00); // Old or modern format
+		writeD(size); //list length
+		writeC(list.isChance() ? 0x01 : 0x00); // Old or modern format
 		writeD(0);
 
 		//String toLog = "";
 		MultiSellEntry ent;
-		while (this.size-- > 0)
+		while (size-- > 0)
 		{
-			ent = this.list.getEntries().get(this.index++);
+			ent = list.getEntries().get(index++);
 
 			final Ingredient product = ent.getProducts().get(0);
 

@@ -37,10 +37,10 @@ public class ExDivideAdenaDone extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeH(0x00);
-		writeD(this.friendCount); // Friend count
-		writeQ(this.adena); // Your adena
-		writeQ(this.totalAdena); // Total adena
+		writeD(friendCount); // Friend count
+		writeQ(adena); // Your adena
+		writeQ(totalAdena); // Total adena
 
-		writeS(this.sender); // Sender name
+		writeS(sender); // Sender name
 	}
 }

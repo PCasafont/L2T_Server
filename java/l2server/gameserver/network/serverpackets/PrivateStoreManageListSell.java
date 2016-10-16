@@ -42,32 +42,32 @@ public class PrivateStoreManageListSell extends L2ItemListPacket
 
 	public PrivateStoreManageListSell(L2PcInstance player, boolean isPackageSale)
 	{
-		this.objId = player.getObjectId();
-		this.playerAdena = player.getAdena();
+		objId = player.getObjectId();
+		playerAdena = player.getAdena();
 		player.getSellList().updateItems();
-		this.packageSale = isPackageSale;
-		this.itemList = player.getInventory().getAvailableItems(player.getSellList());
-		this.sellList = player.getSellList().getItems();
+		packageSale = isPackageSale;
+		itemList = player.getInventory().getAvailableItems(player.getSellList());
+		sellList = player.getSellList().getItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		//section 1
-		writeD(this.objId);
-		writeD(this.packageSale ? 1 : 0); // Package sell
-		writeQ(this.playerAdena);
+		writeD(objId);
+		writeD(packageSale ? 1 : 0); // Package sell
+		writeQ(playerAdena);
 
 		//section2
-		writeD(this.itemList.length); //for potential sells
-		for (TradeList.TradeItem item : this.itemList)
+		writeD(itemList.length); //for potential sells
+		for (TradeList.TradeItem item : itemList)
 		{
 			writeItem(item);
 			writeQ(item.getItem().getReferencePrice() * 2);
 		}
 		//section 3
-		writeD(this.sellList.length); //count for any items already added for sell
-		for (TradeList.TradeItem item : this.sellList)
+		writeD(sellList.length); //count for any items already added for sell
+		for (TradeList.TradeItem item : sellList)
 		{
 			writeItem(item);
 

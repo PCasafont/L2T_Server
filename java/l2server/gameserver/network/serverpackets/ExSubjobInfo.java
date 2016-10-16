@@ -34,16 +34,16 @@ public final class ExSubjobInfo extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00); // GoD ???
-		writeD(this.activeChar.getCurrentClass().getId()); // Current Class
+		writeD(activeChar.getCurrentClass().getId()); // Current Class
 		writeD(0x00); // GoD ???
 
-		writeD(this.activeChar.getSubClasses().size() + 1); // Class amount
+		writeD(activeChar.getSubClasses().size() + 1); // Class amount
 
 		writeD(0x00); // Base class index
-		writeD(this.activeChar.getBaseClass());
-		writeD(this.activeChar.getBaseClassLevel());
+		writeD(activeChar.getBaseClass());
+		writeD(activeChar.getBaseClassLevel());
 		writeC(0x00); // 0x00 Red (base)
-		for (SubClass sc : this.activeChar.getSubClasses().values())
+		for (SubClass sc : activeChar.getSubClasses().values())
 		{
 			writeD(sc.getClassIndex());
 			writeD(sc.getClassId());

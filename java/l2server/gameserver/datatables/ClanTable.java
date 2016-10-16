@@ -79,7 +79,7 @@ public class ClanTable
 
 	public L2Clan[] getTopTenClansByMemberCount()
 	{
-		return this.topClansByMemberCount;
+		return topClansByMemberCount;
 	}
 
 	public static ClanTable getInstance()
@@ -89,7 +89,7 @@ public class ClanTable
 
 	public L2Clan[] getClans()
 	{
-		return this.clans.values().toArray(new L2Clan[this.clans.size()]);
+		return clans.values().toArray(new L2Clan[clans.size()]);
 	}
 
 	private ClanTable()
@@ -100,7 +100,7 @@ public class ClanTable
 			ForumsBBSManager.getInstance().initRoot();
 		}
 
-		this.clans = new HashMap<>();
+		clans = new HashMap<>();
 		L2Clan clan;
 		Connection con = null;
 		try
@@ -116,7 +116,7 @@ public class ClanTable
 			while (result.next())
 			{
 				int clanId = result.getInt("clan_id");
-				this.clans.put(clanId, new L2Clan(clanId));
+				clans.put(clanId, new L2Clan(clanId));
 				clan = getClan(clanId);
 				if (clan.getDissolvingExpiryTime() != 0)
 				{
@@ -151,13 +151,13 @@ public class ClanTable
 	{
 		Comparator<L2Clan> byMemberCount = new ClanByMemberCountComparator();
 
-		ArrayList<L2Clan> sortedClans = new ArrayList<>(this.clans.values());
+		ArrayList<L2Clan> sortedClans = new ArrayList<>(clans.values());
 		Collections.sort(sortedClans, byMemberCount);
 
 		List<L2Clan> temp = sortedClans.subList(0, Math.min(10, sortedClans.size()));
-		for (int i = 0; i < this.topClansByMemberCount.length && i < temp.size(); i++)
+		for (int i = 0; i < topClansByMemberCount.length && i < temp.size(); i++)
 		{
-			this.topClansByMemberCount[i] = temp.get(i);
+			topClansByMemberCount[i] = temp.get(i);
 		}
 	}
 
@@ -168,7 +168,7 @@ public class ClanTable
 	public L2Clan getClan(int clanId)
 	{
 
-		return this.clans.get(clanId);
+		return clans.get(clanId);
 	}
 
 	public L2Clan getClanByName(String clanName)
@@ -264,7 +264,7 @@ public class ClanTable
 			Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
 		}
 
-		this.clans.put(clan.getClanId(), clan);
+		clans.put(clan.getClanId(), clan);
 
 		//should be update packet only
 		player.sendPacket(new PledgeShowInfoUpdate(clan));
@@ -343,7 +343,7 @@ public class ClanTable
 			clan.removeClanMember(member.getObjectId(), 0);
 		}
 
-		this.clans.remove(clanId);
+		clans.remove(clanId);
 		IdFactory.getInstance().releaseId(clanId);
 
 		Connection con = null;
@@ -447,12 +447,12 @@ public class ClanTable
 	 */
 	private void allianceCheck()
 	{
-		for (L2Clan clan : this.clans.values())
+		for (L2Clan clan : clans.values())
 		{
 			int allyId = clan.getAllyId();
 			if (allyId != 0 && clan.getClanId() != allyId)
 			{
-				if (!this.clans.containsKey(allyId))
+				if (!clans.containsKey(allyId))
 				{
 					clan.setAllyId(0);
 					clan.setAllyName(null);
@@ -466,7 +466,7 @@ public class ClanTable
 
 	public void storeClanScore()
 	{
-		for (L2Clan clan : this.clans.values())
+		for (L2Clan clan : clans.values())
 		{
 			clan.updateClanScoreInDB();
 		}

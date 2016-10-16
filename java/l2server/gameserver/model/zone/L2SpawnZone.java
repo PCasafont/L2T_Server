@@ -39,46 +39,46 @@ public abstract class L2SpawnZone extends L2ZoneType
 
 	public final void addSpawn(int x, int y, int z)
 	{
-		if (this.spawnLocs == null)
+		if (spawnLocs == null)
 		{
-			this.spawnLocs = new ArrayList<>();
+			spawnLocs = new ArrayList<>();
 		}
 
-		this.spawnLocs.add(new Location(x, y, z));
+		spawnLocs.add(new Location(x, y, z));
 	}
 
 	public final void addChaoticSpawn(int x, int y, int z)
 	{
-		if (this.chaoticSpawnLocs == null)
+		if (chaoticSpawnLocs == null)
 		{
-			this.chaoticSpawnLocs = new ArrayList<>();
+			chaoticSpawnLocs = new ArrayList<>();
 		}
 
-		this.chaoticSpawnLocs.add(new Location(x, y, z));
+		chaoticSpawnLocs.add(new Location(x, y, z));
 	}
 
 	public final List<Location> getSpawns()
 	{
-		return this.spawnLocs;
+		return spawnLocs;
 	}
 
 	public final Location getSpawnLoc()
 	{
 		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 		{
-			return this.spawnLocs.get(Rnd.get(this.spawnLocs.size()));
+			return spawnLocs.get(Rnd.get(spawnLocs.size()));
 		}
 		else
 		{
-			return this.spawnLocs.get(0);
+			return spawnLocs.get(0);
 		}
 	}
 
 	public final Location getChaoticSpawnLoc()
 	{
-		if (this.chaoticSpawnLocs != null)
+		if (chaoticSpawnLocs != null)
 		{
-			return this.chaoticSpawnLocs.get(Rnd.get(this.chaoticSpawnLocs.size()));
+			return chaoticSpawnLocs.get(Rnd.get(chaoticSpawnLocs.size()));
 		}
 		else
 		{

@@ -28,7 +28,7 @@ public class RequestFriendDetailInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.charName = readS();
+		charName = readS();
 	}
 
 	@Override
@@ -40,6 +40,6 @@ public class RequestFriendDetailInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		activeChar.sendPacket(new ExFriendDetailInfo(activeChar, this.charName));
+		activeChar.sendPacket(new ExFriendDetailInfo(activeChar, charName));
 	}
 }

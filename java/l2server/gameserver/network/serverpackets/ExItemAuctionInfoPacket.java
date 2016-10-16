@@ -40,11 +40,11 @@ public final class ExItemAuctionInfoPacket extends L2GameServerPacket
 
 		if (currentAuction.getAuctionState() != ItemAuctionState.STARTED)
 		{
-			this.timeRemaining = 0;
+			timeRemaining = 0;
 		}
 		else
 		{
-			this.timeRemaining = (int) (currentAuction.getFinishingTimeRemaining() / 1000); // in seconds
+			timeRemaining = (int) (currentAuction.getFinishingTimeRemaining() / 1000); // in seconds
 		}
 
 		this.refresh = refresh;
@@ -55,20 +55,20 @@ public final class ExItemAuctionInfoPacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.refresh ? 0x00 : 0x01);
-		writeD(this.currentAuction.getInstanceId());
+		writeC(refresh ? 0x00 : 0x01);
+		writeD(currentAuction.getInstanceId());
 
-		final ItemAuctionBid highestBid = this.currentAuction.getHighestBid();
-		writeQ(highestBid != null ? highestBid.getLastBid() : this.currentAuction.getAuctionInitBid());
+		final ItemAuctionBid highestBid = currentAuction.getHighestBid();
+		writeQ(highestBid != null ? highestBid.getLastBid() : currentAuction.getAuctionInitBid());
 
-		writeD(this.timeRemaining);
-		writeItemInfo(this.currentAuction.getItemInfo());
+		writeD(timeRemaining);
+		writeItemInfo(currentAuction.getItemInfo());
 
-		if (this.nextAuction != null)
+		if (nextAuction != null)
 		{
-			writeQ(this.nextAuction.getAuctionInitBid());
-			writeD((int) (this.nextAuction.getStartingTime() / 1000)); // unix time in seconds
-			writeItemInfo(this.nextAuction.getItemInfo());
+			writeQ(nextAuction.getAuctionInitBid());
+			writeD((int) (nextAuction.getStartingTime() / 1000)); // unix time in seconds
+			writeItemInfo(nextAuction.getItemInfo());
 		}
 	}
 

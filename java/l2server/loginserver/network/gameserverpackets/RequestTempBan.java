@@ -38,13 +38,13 @@ public class RequestTempBan extends BaseRecievePacket
 	public RequestTempBan(byte[] decrypt)
 	{
 		super(decrypt);
-		this.accountName = readS();
-		this.ip = readS();
-		this.banTime = readQ();
+		accountName = readS();
+		ip = readS();
+		banTime = readQ();
 		boolean haveReason = readC() != 0;
 		if (haveReason)
 		{
-			this.banReason = readS();
+			banReason = readS();
 		}
 		banUser();
 	}
@@ -57,10 +57,10 @@ public class RequestTempBan extends BaseRecievePacket
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement =
 					con.prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
-			statement.setString(1, this.accountName);
+			statement.setString(1, accountName);
 			statement.setString(2, "ban_temp");
-			statement.setString(3, Long.toString(this.banTime));
-			statement.setString(4, Long.toString(this.banTime));
+			statement.setString(3, Long.toString(banTime));
+			statement.setString(4, Long.toString(banTime));
 			statement.execute();
 			statement.close();
 		}
@@ -75,7 +75,7 @@ public class RequestTempBan extends BaseRecievePacket
 
 		try
 		{
-			LoginController.getInstance().addBanForAddress(this.ip, this.banTime);
+			LoginController.getInstance().addBanForAddress(ip, banTime);
 		}
 		catch (UnknownHostException e)
 		{

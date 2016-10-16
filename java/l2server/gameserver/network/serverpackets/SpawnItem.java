@@ -42,38 +42,38 @@ public final class SpawnItem extends L2GameServerPacket
 
 	public SpawnItem(L2Object obj)
 	{
-		this.objectId = obj.getObjectId();
-		this.x = obj.getX();
-		this.y = obj.getY();
-		this.z = obj.getZ();
+		objectId = obj.getObjectId();
+		x = obj.getX();
+		y = obj.getY();
+		z = obj.getZ();
 
 		if (obj instanceof L2ItemInstance)
 		{
 			L2ItemInstance item = (L2ItemInstance) obj;
-			this.itemId = item.getItemId();
-			this.stackable = item.isStackable() ? 0x01 : 0x00;
-			this.count = item.getCount();
+			itemId = item.getItemId();
+			stackable = item.isStackable() ? 0x01 : 0x00;
+			count = item.getCount();
 		}
 		else
 		{
-			this.itemId = obj.getPoly().getPolyId();
-			this.stackable = 0;
-			this.count = 1;
+			itemId = obj.getPoly().getPolyId();
+			stackable = 0;
+			count = 1;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.itemId);
+		writeD(objectId);
+		writeD(itemId);
 
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		// only show item count if it is a stackable item
-		writeD(this.stackable);
-		writeQ(this.count);
+		writeD(stackable);
+		writeQ(count);
 		writeH(0x00); // c2
 		writeH(0x00); // freya unk
 	}

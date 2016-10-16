@@ -47,11 +47,11 @@ public class ExPledgeCrestLarge extends L2GameServerPacket
 	{
 		writeD(Config.SERVER_ID); // server id?
 		writeD(0x00); //unk
-		writeD(this.crestId);
-		writeD(this.subId); //subId
+		writeD(crestId);
+		writeD(subId); //subId
 		writeD(0x10080); //???
-		writeD(this.data.length);
+		writeD(data.length);
 
-		writeB(this.data);
+		writeB(data);
 	}
 }

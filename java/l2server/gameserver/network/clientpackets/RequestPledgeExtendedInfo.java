@@ -30,7 +30,7 @@ public class RequestPledgeExtendedInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override

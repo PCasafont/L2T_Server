@@ -34,10 +34,10 @@ public class ExGetOnShuttle extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.shuttleId = readD();
-		this.posX = readD();
-		this.posY = readD();
-		this.posZ = readD();
+		shuttleId = readD();
+		posX = readD();
+		posY = readD();
+		posZ = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class ExGetOnShuttle extends L2GameClientPacket
 			return;
 		}
 
-		L2Object obj = L2World.getInstance().findObject(this.shuttleId);
+		L2Object obj = L2World.getInstance().findObject(shuttleId);
 		if (!(obj instanceof L2ShuttleInstance))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -63,6 +63,6 @@ public class ExGetOnShuttle extends L2GameClientPacket
 			return;
 		}
 
-		shuttle.addPassenger(player, this.posX, this.posY, this.posZ);
+		shuttle.addPassenger(player, posX, posY, posZ);
 	}
 }

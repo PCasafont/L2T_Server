@@ -27,8 +27,8 @@ public class ExVariationResult extends L2GameServerPacket
 
 	public ExVariationResult(int unk1, int unk2, int unk3)
 	{
-		this.stat12 = unk1;
-		this.stat34 = unk2;
+		stat12 = unk1;
+		stat34 = unk2;
 		this.unk3 = unk3;
 	}
 
@@ -37,8 +37,8 @@ public class ExVariationResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.stat12);
-		writeD(this.stat34);
-		writeD(this.unk3);
+		writeD(stat12);
+		writeD(stat34);
+		writeD(unk3);
 	}
 }

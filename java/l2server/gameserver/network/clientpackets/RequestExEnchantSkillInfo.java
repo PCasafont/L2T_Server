@@ -40,9 +40,9 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.skillId = readD();
-		this.skillLvl = readH();
-		this.skillEnchant = readH();
+		skillId = readD();
+		skillLvl = readH();
+		skillEnchant = readH();
 	}
 
 	/* (non-Javadoc)
@@ -51,7 +51,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (this.skillId <= 0 || this.skillLvl <= 0) // minimal sanity check
+		if (skillId <= 0 || skillLvl <= 0) // minimal sanity check
 		{
 			return;
 		}
@@ -75,23 +75,24 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())
 			return;*/
 
-		L2Skill skill = SkillTable.getInstance().getInfo(this.skillId, this.skillLvl, this.skillEnchant);
-		if (skill == null || skill.getId() != this.skillId)
+		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchant);
+		if (skill == null || skill.getId() != skillId)
 		{
 			return;
 		}
 
-		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(this.skillId) == null)
+		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(skillId) == null)
 		{
 			return;
 		}
 
-		int playerSkillLvl = activeChar.getSkillLevelHash(this.skillId);
-		if (playerSkillLvl == -1 || playerSkillLvl != this.skillLvl + (this.skillEnchant << 16))
+		int playerSkillLvl = activeChar.getSkillLevelHash(skillId);
+		if (playerSkillLvl == -1 || playerSkillLvl != skillLvl + (skillEnchant << 16))
 		{
 			return;
 		}
 
-		activeChar.sendPacket(new ExEnchantSkillInfo(this.skillId, this.skillLvl, this.skillEnchant / 1000, this.skillEnchant % 1000));
+		activeChar.sendPacket(new ExEnchantSkillInfo(skillId, skillLvl, skillEnchant / 1000,
+				skillEnchant % 1000));
 	}
 }

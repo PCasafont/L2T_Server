@@ -38,12 +38,12 @@ public class ExTeleportToLocationActivate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(objId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeD(0x00);
-		writeD(this.heading);
+		writeD(heading);
 		writeD(0x00);
 	}
 }

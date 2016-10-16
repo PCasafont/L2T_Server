@@ -81,7 +81,7 @@ abstract class AbstractAI implements Ctrl
 					return;
 				}
 
-				if (!actor.isInsideRadius(followTarget, this.range, true, false))
+				if (!actor.isInsideRadius(followTarget, range, true, false))
 				{
 					if (!actor.isInsideRadius(followTarget, 3000, true, false))
 					{
@@ -95,7 +95,7 @@ abstract class AbstractAI implements Ctrl
 						return;
 					}
 
-					moveToPawn(followTarget, this.range);
+					moveToPawn(followTarget, range);
 				}
 			}
 			catch (Exception e)
@@ -191,12 +191,12 @@ abstract class AbstractAI implements Ctrl
 	@Override
 	public CtrlIntention getIntention()
 	{
-		return this.intention;
+		return intention;
 	}
 
 	protected void setCastTarget(L2Character target)
 	{
-		this.castTarget = target;
+		castTarget = target;
 	}
 
 	/**
@@ -204,12 +204,12 @@ abstract class AbstractAI implements Ctrl
 	 */
 	public L2Character getCastTarget()
 	{
-		return this.castTarget;
+		return castTarget;
 	}
 
 	protected void setAttackTarget(L2Character target)
 	{
-		this.attackTarget = target;
+		attackTarget = target;
 	}
 
 	/**
@@ -218,7 +218,7 @@ abstract class AbstractAI implements Ctrl
 	@Override
 	public L2Character getAttackTarget()
 	{
-		return this.attackTarget;
+		return attackTarget;
 	}
 
 	/**
@@ -242,8 +242,8 @@ abstract class AbstractAI implements Ctrl
 		 */
 
 		this.intention = intention;
-		this.intentionArg0 = arg0;
-		this.intentionArg1 = arg1;
+		intentionArg0 = arg0;
+		intentionArg1 = arg1;
 	}
 
 	/**
@@ -600,11 +600,11 @@ abstract class AbstractAI implements Ctrl
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			boolean sendPacket = true;
-			if (this.clientMoving && this.target == pawn)
+			if (clientMoving && target == pawn)
 			{
-				if (this.clientMovingToPawnOffset == offset)
+				if (clientMovingToPawnOffset == offset)
 				{
-					if (TimeController.getGameTicks() < this.moveToPawnTimeout)
+					if (TimeController.getGameTicks() < moveToPawnTimeout)
 					{
 						return;
 					}
@@ -613,7 +613,7 @@ abstract class AbstractAI implements Ctrl
 				else if (actor.isOnGeodataPath())
 				{
 					// minimum time to calculate new route is 2 seconds
-					if (TimeController.getGameTicks() < this.moveToPawnTimeout + 10)
+					if (TimeController.getGameTicks() < moveToPawnTimeout + 10)
 					{
 						return;
 					}
@@ -621,13 +621,13 @@ abstract class AbstractAI implements Ctrl
 			}
 
 			// Set AI movement data
-			this.clientMoving = true;
-			this.clientMovingToPawnOffset = offset;
-			this.target = pawn;
-			this.moveToPawnTimeout = TimeController.getGameTicks();
-			this.moveToPawnTimeout += 1000 / TimeController.MILLIS_IN_TICK;
+			clientMoving = true;
+			clientMovingToPawnOffset = offset;
+			target = pawn;
+			moveToPawnTimeout = TimeController.getGameTicks();
+			moveToPawnTimeout += 1000 / TimeController.MILLIS_IN_TICK;
 
-			if (pawn == null || this.accessor == null)
+			if (pawn == null || accessor == null)
 			{
 				return;
 			}
@@ -657,16 +657,16 @@ abstract class AbstractAI implements Ctrl
 
 				if (tries > 0)
 				{
-					this.accessor.moveTo(position.getX(), position.getY(), position.getZ(), 0);
+					accessor.moveTo(position.getX(), position.getY(), position.getZ(), 0);
 				}
 				else
 				{
-					this.accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
+					accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 				}
 			}
 			else
 			{
-				this.accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
+				accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 			}
 
 			if (!actor.isMoving())
@@ -681,7 +681,7 @@ abstract class AbstractAI implements Ctrl
 				if (!(actor instanceof L2PcInstance) || actor.isOnGeodataPath())
 				{
 					actor.broadcastPacket(new MoveToLocation(actor));
-					this.clientMovingToPawnOffset = 0;
+					clientMovingToPawnOffset = 0;
 				}
 				else if (sendPacket) // don't repeat unnecessarily
 				{
@@ -710,11 +710,11 @@ abstract class AbstractAI implements Ctrl
 		if (!actor.isMovementDisabled())
 		{
 			// Set AI movement data
-			this.clientMoving = true;
-			this.clientMovingToPawnOffset = 0;
+			clientMoving = true;
+			clientMovingToPawnOffset = 0;
 
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
-			this.accessor.moveTo(x, y, z);
+			accessor.moveTo(x, y, z);
 
 			// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
 			MoveToLocation msg = new MoveToLocation(actor);
@@ -741,14 +741,14 @@ abstract class AbstractAI implements Ctrl
 		// Stop movement of the L2Character
 		if (actor.isMoving())
 		{
-			this.accessor.stopMove(pos);
+			accessor.stopMove(pos);
 		}
 
-		this.clientMovingToPawnOffset = 0;
+		clientMovingToPawnOffset = 0;
 
-		if (this.clientMoving || pos != null)
+		if (clientMoving || pos != null)
 		{
-			this.clientMoving = false;
+			clientMoving = false;
 
 			// Send a Server->Client packet StopMove to the actor and all L2PcInstance in its _knownPlayers
 			StopMove msg = new StopMove(actor);
@@ -767,18 +767,18 @@ abstract class AbstractAI implements Ctrl
 	// Client has already arrived to target, no need to force StopMove packet
 	protected void clientStoppedMoving()
 	{
-		if (this.clientMovingToPawnOffset > 0) // movetoPawn needs to be stopped
+		if (clientMovingToPawnOffset > 0) // movetoPawn needs to be stopped
 		{
-			this.clientMovingToPawnOffset = 0;
+			clientMovingToPawnOffset = 0;
 			StopMove msg = new StopMove(actor);
 			actor.broadcastPacket(msg);
 		}
-		this.clientMoving = false;
+		clientMoving = false;
 	}
 
 	public boolean isAutoAttacking()
 	{
-		return this.clientAutoAttacking;
+		return clientAutoAttacking;
 	}
 
 	public void setAutoAttacking(boolean isAutoAttacking)
@@ -792,7 +792,7 @@ abstract class AbstractAI implements Ctrl
 			}
 			return;
 		}
-		this.clientAutoAttacking = isAutoAttacking;
+		clientAutoAttacking = isAutoAttacking;
 	}
 
 	/**
@@ -876,10 +876,10 @@ abstract class AbstractAI implements Ctrl
 		actor.broadcastPacket(msg);
 
 		// Init AI
-		this.intention = AI_INTENTION_IDLE;
-		this.target = null;
-		this.castTarget = null;
-		this.attackTarget = null;
+		intention = AI_INTENTION_IDLE;
+		target = null;
+		castTarget = null;
+		attackTarget = null;
 
 		// Cancel the follow task if necessary
 		stopFollow();
@@ -894,12 +894,12 @@ abstract class AbstractAI implements Ctrl
 	 */
 	public void describeStateToPlayer(L2PcInstance player)
 	{
-		if (this.clientMoving)
+		if (clientMoving)
 		{
-			if (this.clientMovingToPawnOffset != 0 && this.followTarget != null)
+			if (clientMovingToPawnOffset != 0 && followTarget != null)
 			{
 				// Send a Server->Client packet MoveToPawn to the actor and all L2PcInstance in its _knownPlayers
-				MoveToPawn msg = new MoveToPawn(actor, this.followTarget, this.clientMovingToPawnOffset);
+				MoveToPawn msg = new MoveToPawn(actor, followTarget, clientMovingToPawnOffset);
 				player.sendPacket(msg);
 			}
 			else
@@ -918,15 +918,15 @@ abstract class AbstractAI implements Ctrl
 	 */
 	public synchronized void startFollow(L2Character target)
 	{
-		if (this.followTask != null)
+		if (followTask != null)
 		{
-			this.followTask.cancel(false);
-			this.followTask = null;
+			followTask.cancel(false);
+			followTask = null;
 		}
 
 		// Create and Launch an AI Follow Task to execute every 1s
-		this.followTarget = target;
-		this.followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(), 5, FOLLOW_INTERVAL);
+		followTarget = target;
+		followTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(), 5, FOLLOW_INTERVAL);
 	}
 
 	/**
@@ -936,14 +936,14 @@ abstract class AbstractAI implements Ctrl
 	 */
 	public synchronized void startFollow(L2Character target, int range)
 	{
-		if (this.followTask != null)
+		if (followTask != null)
 		{
-			this.followTask.cancel(false);
-			this.followTask = null;
+			followTask.cancel(false);
+			followTask = null;
 		}
 
-		this.followTarget = target;
-		this.followTask =
+		followTarget = target;
+		followTask =
 				ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FollowTask(range), 5, ATTACK_FOLLOW_INTERVAL);
 	}
 
@@ -952,23 +952,23 @@ abstract class AbstractAI implements Ctrl
 	 */
 	public synchronized void stopFollow()
 	{
-		if (this.followTask != null)
+		if (followTask != null)
 		{
 			// Stop the Follow Task
-			this.followTask.cancel(false);
-			this.followTask = null;
+			followTask.cancel(false);
+			followTask = null;
 		}
-		this.followTarget = null;
+		followTarget = null;
 	}
 
 	protected L2Character getFollowTarget()
 	{
-		return this.followTarget;
+		return followTarget;
 	}
 
 	protected L2Object getTarget()
 	{
-		return this.target;
+		return target;
 	}
 
 	protected void setTarget(L2Object target)

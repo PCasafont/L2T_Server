@@ -46,6 +46,6 @@ public final class ConditionUsingSkill extends Condition
 		{
 			return false;
 		}
-		return env.skill.getId() == this.skillId;
+		return env.skill.getId() == skillId;
 	}
 }

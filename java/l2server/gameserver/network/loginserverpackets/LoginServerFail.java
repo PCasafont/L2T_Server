@@ -38,16 +38,16 @@ public class LoginServerFail extends BaseRecievePacket
 	public LoginServerFail(byte[] decrypt)
 	{
 		super(decrypt);
-		this.reason = readC();
+		reason = readC();
 	}
 
 	public String getReasonString()
 	{
-		return REASONS[this.reason];
+		return REASONS[reason];
 	}
 
 	public int getReason()
 	{
-		return this.reason;
+		return reason;
 	}
 }

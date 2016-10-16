@@ -47,6 +47,6 @@ public class ConditionTargetRace extends Condition
 		{
 			return false;
 		}
-		return Util.contains(this.races, env.target.getActingPlayer().getRace());
+		return Util.contains(races, env.target.getActingPlayer().getRace());
 	}
 }

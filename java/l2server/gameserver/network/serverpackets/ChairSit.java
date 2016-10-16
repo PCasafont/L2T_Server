@@ -35,14 +35,14 @@ public class ChairSit extends L2GameServerPacket
 	 */
 	public ChairSit(L2PcInstance player, int staticObjectId)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.staticObjectId = staticObjectId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeD(this.staticObjectId);
+		writeD(activeChar.getObjectId());
+		writeD(staticObjectId);
 	}
 }

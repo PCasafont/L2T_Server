@@ -37,7 +37,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FortCommanderInstance);
-		this.canTalk = true;
+		canTalk = true;
 	}
 
 	/**
@@ -169,12 +169,12 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 
 	void setCanTalk(boolean val)
 	{
-		this.canTalk = val;
+		canTalk = val;
 	}
 
 	private boolean canTalk()
 	{
-		return this.canTalk;
+		return canTalk;
 	}
 
 	@Override

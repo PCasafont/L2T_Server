@@ -53,55 +53,55 @@ public class CellNodeBuffer
 
 	public CellNodeBuffer(int size)
 	{
-		this.mapSize = size;
-		this.buffer = new CellNode[this.mapSize][this.mapSize];
+		mapSize = size;
+		buffer = new CellNode[mapSize][mapSize];
 	}
 
 	public final boolean lock()
 	{
-		return this.lock.tryLock();
+		return lock.tryLock();
 	}
 
 	public final CellNode findPath(int x, int y, short z, int tx, int ty, short tz)
 	{
-		this.timeStamp = System.currentTimeMillis();
-		this.baseX = x + (tx - x - this.mapSize) / 2; // middle of the line (x,y) - (tx,ty)
-		this.baseY = y + (ty - y - this.mapSize) / 2; // will be in the center of the buffer
-		this.targetX = tx;
-		this.targetY = ty;
-		this.targetZ = tz;
-		this.current = getNode(x, y, z);
-		this.current.setCost(getCost(x, y, z, Config.HIGH_WEIGHT));
+		timeStamp = System.currentTimeMillis();
+		baseX = x + (tx - x - mapSize) / 2; // middle of the line (x,y) - (tx,ty)
+		baseY = y + (ty - y - mapSize) / 2; // will be in the center of the buffer
+		targetX = tx;
+		targetY = ty;
+		targetZ = tz;
+		current = getNode(x, y, z);
+		current.setCost(getCost(x, y, z, Config.HIGH_WEIGHT));
 
 		for (int count = 0; count < MAX_ITERATIONS; count++)
 		{
-			if (this.current.getLoc().getNodeX() == this.targetX && this.current.getLoc().getNodeY() == this.targetY &&
-					Math.abs(this.current.getLoc().getZ() - this.targetZ) < 64)
+			if (current.getLoc().getNodeX() == targetX && current.getLoc().getNodeY() == targetY &&
+					Math.abs(current.getLoc().getZ() - targetZ) < 64)
 			{
-				return this.current; // found
+				return current; // found
 			}
 
 			getNeighbors();
-			if (this.current.getNext() == null)
+			if (current.getNext() == null)
 			{
 				return null; // no more ways
 			}
 
-			this.current = this.current.getNext();
+			current = current.getNext();
 		}
 		return null;
 	}
 
 	public final void free()
 	{
-		this.current = null;
+		current = null;
 
 		CellNode node;
-		for (int i = 0; i < this.mapSize; i++)
+		for (int i = 0; i < mapSize; i++)
 		{
-			for (int j = 0; j < this.mapSize; j++)
+			for (int j = 0; j < mapSize; j++)
 			{
-				node = this.buffer[i][j];
+				node = buffer[i][j];
 				if (node != null)
 				{
 					node.free();
@@ -109,30 +109,30 @@ public class CellNodeBuffer
 			}
 		}
 
-		this.lock.unlock();
-		this.lastElapsedTime = System.currentTimeMillis() - this.timeStamp;
+		lock.unlock();
+		lastElapsedTime = System.currentTimeMillis() - timeStamp;
 	}
 
 	public final long getElapsedTime()
 	{
-		return this.lastElapsedTime;
+		return lastElapsedTime;
 	}
 
 	public final ArrayList<CellNode> debugPath()
 	{
 		ArrayList<CellNode> result = new ArrayList<>();
 
-		for (CellNode n = this.current; n.getParent() != null; n = (CellNode) n.getParent())
+		for (CellNode n = current; n.getParent() != null; n = (CellNode) n.getParent())
 		{
 			result.add(n);
 			n.setCost(-n.getCost());
 		}
 
-		for (int i = 0; i < this.mapSize; i++)
+		for (int i = 0; i < mapSize; i++)
 		{
-			for (int j = 0; j < this.mapSize; j++)
+			for (int j = 0; j < mapSize; j++)
 			{
-				CellNode n = this.buffer[i][j];
+				CellNode n = buffer[i][j];
 				if (n == null || !n.isInUse() || n.getCost() <= 0)
 				{
 					continue;
@@ -147,15 +147,15 @@ public class CellNodeBuffer
 
 	private void getNeighbors()
 	{
-		final short NSWE = ((NodeLoc) this.current.getLoc()).getNSWE();
+		final short NSWE = ((NodeLoc) current.getLoc()).getNSWE();
 		if (NSWE == NSWE_NONE)
 		{
 			return;
 		}
 
-		final int x = this.current.getLoc().getNodeX();
-		final int y = this.current.getLoc().getNodeY();
-		final short z = this.current.getLoc().getZ();
+		final int x = current.getLoc().getNodeX();
+		final int y = current.getLoc().getNodeY();
+		final short z = current.getLoc().getZ();
 
 		CellNode nodeE = null;
 		CellNode nodeS = null;
@@ -232,23 +232,23 @@ public class CellNodeBuffer
 
 	private CellNode getNode(int x, int y, short z)
 	{
-		final int aX = x - this.baseX;
-		if (aX < 0 || aX >= this.mapSize)
+		final int aX = x - baseX;
+		if (aX < 0 || aX >= mapSize)
 		{
 			return null;
 		}
 
-		final int aY = y - this.baseY;
-		if (aY < 0 || aY >= this.mapSize)
+		final int aY = y - baseY;
+		if (aY < 0 || aY >= mapSize)
 		{
 			return null;
 		}
 
-		CellNode result = this.buffer[aX][aY];
+		CellNode result = buffer[aX][aY];
 		if (result == null)
 		{
 			result = new CellNode(new NodeLoc(x, y, z));
-			this.buffer[aX][aY] = result;
+			buffer[aX][aY] = result;
 		}
 		else if (!result.isInUse())
 		{
@@ -281,7 +281,7 @@ public class CellNodeBuffer
 
 		final short geoZ = newNode.getLoc().getZ();
 
-		final int stepZ = Math.abs(geoZ - this.current.getLoc().getZ());
+		final int stepZ = Math.abs(geoZ - current.getLoc().getZ());
 		float weight = diagonal ? Config.DIAGONAL_WEIGHT : Config.LOW_WEIGHT;
 
 		if (((NodeLoc) newNode.getLoc()).getNSWE() != NSWE_ALL || stepZ > 16)
@@ -308,10 +308,10 @@ public class CellNodeBuffer
 			}
 		}
 
-		newNode.setParent(this.current);
+		newNode.setParent(current);
 		newNode.setCost(getCost(x, y, geoZ, weight));
 
-		CellNode node = this.current;
+		CellNode node = current;
 		int count = 0;
 		while (node.getNext() != null && count < MAX_ITERATIONS * 4)
 		{
@@ -355,9 +355,9 @@ public class CellNodeBuffer
 
 	private double getCost(int x, int y, short z, float weight)
 	{
-		final int dX = x - this.targetX;
-		final int dY = y - this.targetY;
-		final int dZ = z - this.targetZ;
+		final int dX = x - targetX;
+		final int dY = y - targetY;
+		final int dZ = z - targetZ;
 		// Math.abs(dx) + Math.abs(dy) + Math.abs(dz) / 16
 		double result = Math.sqrt(dX * dX + dY * dY + dZ * dZ / 256);
 		if (result > weight)

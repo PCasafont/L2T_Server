@@ -19,8 +19,8 @@ public class ExBRProductInfo extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.productId);
-		writeD(this.price);
-		writeD(this.count);
+		writeD(productId);
+		writeD(price);
+		writeD(count);
 	}
 }

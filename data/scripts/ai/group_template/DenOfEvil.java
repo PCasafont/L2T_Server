@@ -186,7 +186,7 @@ public class DenOfEvil extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], this.x, this.y, this.z, this.h, false, 0);
+			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], x, y, z, h, false, 0);
 		}
 	}
 
@@ -208,7 +208,7 @@ public class DenOfEvil extends L2AttackableAIScript
 			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
 				// test 3 skills if some is lvl 4
-				if (this.zone.getSkillLevel(i) > 3)
+				if (zone.getSkillLevel(i) > 3)
 				{
 					destroyZone();
 					break;
@@ -218,7 +218,7 @@ public class DenOfEvil extends L2AttackableAIScript
 
 		private void destroyZone()
 		{
-			for (L2Character character : this.zone.getCharactersInside().values())
+			for (L2Character character : zone.getCharactersInside().values())
 			{
 				if (character == null)
 				{
@@ -248,7 +248,7 @@ public class DenOfEvil extends L2AttackableAIScript
 			}
 			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
-				this.zone.removeSkill(i);
+				zone.removeSkill(i);
 			}
 		}
 	}

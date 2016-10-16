@@ -30,6 +30,6 @@ public class ExRequestChangeNicknameColor extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.itemObjectId);
+		writeD(itemObjectId);
 	}
 }

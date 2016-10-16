@@ -68,7 +68,7 @@ public class QuestManager extends ScriptManager<Quest>
 	 */
 	public final boolean reload(int questId)
 	{
-		Quest q = this.getQuest(questId);
+		Quest q = getQuest(questId);
 		if (q == null)
 		{
 			return false;
@@ -82,7 +82,7 @@ public class QuestManager extends ScriptManager<Quest>
 		try
 		{
 			// unload all scripts
-			for (Quest quest : this.quests.values())
+			for (Quest quest : quests.values())
 			{
 				if (quest != null)
 				{
@@ -90,7 +90,7 @@ public class QuestManager extends ScriptManager<Quest>
 				}
 			}
 
-			this.quests.clear();
+			quests.clear();
 			// now load all scripts
 			File scripts = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts.cfg");
 			L2ScriptEngineManager.getInstance().executeScriptList(scripts);
@@ -111,12 +111,12 @@ public class QuestManager extends ScriptManager<Quest>
 
 	public final void report()
 	{
-		Log.info("Loaded: " + this.quests.size() + " quests");
+		Log.info("Loaded: " + quests.size() + " quests");
 	}
 
 	public final void save()
 	{
-		for (Quest q : this.quests.values())
+		for (Quest q : quests.values())
 		{
 			q.saveGlobalData();
 		}
@@ -126,12 +126,12 @@ public class QuestManager extends ScriptManager<Quest>
 	// Property - Public
 	public final Quest getQuest(String name)
 	{
-		return this.quests.get(name);
+		return quests.get(name);
 	}
 
 	public final Quest getQuest(int questId)
 	{
-		for (Quest q : this.quests.values())
+		for (Quest q : quests.values())
 		{
 			if (q.getQuestIntId() == questId)
 			{
@@ -147,7 +147,7 @@ public class QuestManager extends ScriptManager<Quest>
 		{
 			throw new IllegalArgumentException("Quest argument cannot be null");
 		}
-		Quest old = this.quests.get(newQuest.getName());
+		Quest old = quests.get(newQuest.getName());
 
 		// FIXME: unloading the old quest at this point is a tad too late.
 		// the new quest has already initialized itself and read the data, starting
@@ -163,12 +163,12 @@ public class QuestManager extends ScriptManager<Quest>
 			old.unload();
 			Log.info("Replaced: (" + old.getName() + ") with a new version (" + newQuest.getName() + ")");
 		}
-		this.quests.put(newQuest.getName(), newQuest);
+		quests.put(newQuest.getName(), newQuest);
 	}
 
 	public final boolean removeQuest(Quest q)
 	{
-		return this.quests.remove(q.getName()) != null;
+		return quests.remove(q.getName()) != null;
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class QuestManager extends ScriptManager<Quest>
 	@Override
 	public Iterable<Quest> getAllManagedScripts()
 	{
-		return this.quests.values();
+		return quests.values();
 	}
 
 	/**

@@ -32,6 +32,6 @@ public abstract class AbstractPacket<T extends MMOClient<?>>
 
 	public final T getClient()
 	{
-		return this.client;
+		return client;
 	}
 }

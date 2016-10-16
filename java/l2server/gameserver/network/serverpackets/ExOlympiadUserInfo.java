@@ -39,61 +39,61 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 		this.player = player;
 		if (this.player != null)
 		{
-			this.curHp = (int) this.player.getCurrentHp();
-			this.maxHp = this.player.getMaxVisibleHp();
-			this.curCp = (int) this.player.getCurrentCp();
-			this.maxCp = this.player.getMaxCp();
+			curHp = (int) this.player.getCurrentHp();
+			maxHp = this.player.getMaxVisibleHp();
+			curCp = (int) this.player.getCurrentCp();
+			maxCp = this.player.getMaxCp();
 		}
 		else
 		{
-			this.curHp = 0;
-			this.maxHp = 100;
-			this.curCp = 0;
-			this.maxCp = 100;
+			curHp = 0;
+			maxHp = 100;
+			curCp = 0;
+			maxCp = 100;
 		}
 	}
 
 	public ExOlympiadUserInfo(OlympiadParticipant par)
 	{
 		this.par = par;
-		this.player = par.player;
-		if (this.player != null)
+		player = par.player;
+		if (player != null)
 		{
-			this.curHp = (int) this.player.getCurrentHp();
-			this.maxHp = this.player.getMaxVisibleHp();
-			this.curCp = (int) this.player.getCurrentCp();
-			this.maxCp = this.player.getMaxCp();
+			curHp = (int) player.getCurrentHp();
+			maxHp = player.getMaxVisibleHp();
+			curCp = (int) player.getCurrentCp();
+			maxCp = player.getMaxCp();
 		}
 		else
 		{
-			this.curHp = 0;
-			this.maxHp = 100;
-			this.curCp = 0;
-			this.maxCp = 100;
+			curHp = 0;
+			maxHp = 100;
+			curCp = 0;
+			maxCp = 100;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (this.player != null)
+		if (player != null)
 		{
-			writeC(this.player.getOlympiadSide());
-			writeD(this.player.getObjectId());
-			writeS(this.player.getName());
-			writeD(this.player.getCurrentClass().getId());
+			writeC(player.getOlympiadSide());
+			writeD(player.getObjectId());
+			writeS(player.getName());
+			writeD(player.getCurrentClass().getId());
 		}
 		else
 		{
-			writeC(this.par.side);
-			writeD(this.par.objectId);
-			writeS(this.par.name);
-			writeD(this.par.baseClass);
+			writeC(par.side);
+			writeD(par.objectId);
+			writeS(par.name);
+			writeD(par.baseClass);
 		}
 
-		writeD(this.curHp);
-		writeD(this.maxHp);
-		writeD(this.curCp);
-		writeD(this.maxCp);
+		writeD(curHp);
+		writeD(maxHp);
+		writeD(curCp);
+		writeD(maxCp);
 	}
 }

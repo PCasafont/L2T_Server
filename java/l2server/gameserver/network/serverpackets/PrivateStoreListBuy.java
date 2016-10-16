@@ -31,22 +31,22 @@ public class PrivateStoreListBuy extends L2ItemListPacket
 
 	public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer)
 	{
-		this.objId = storePlayer.getObjectId();
-		this.playerAdena = player.getAdena();
+		objId = storePlayer.getObjectId();
+		playerAdena = player.getAdena();
 		storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed
-		this.items = storePlayer.getBuyList().getAvailableItems(player.getInventory());
+		items = storePlayer.getBuyList().getAvailableItems(player.getInventory());
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeQ(this.playerAdena);
+		writeD(objId);
+		writeQ(playerAdena);
 		writeD(0x00); // GoD ???
 
-		writeD(this.items.length);
+		writeD(items.length);
 
-		for (TradeList.TradeItem item : this.items)
+		for (TradeList.TradeItem item : items)
 		{
 			writeItem(item);
 

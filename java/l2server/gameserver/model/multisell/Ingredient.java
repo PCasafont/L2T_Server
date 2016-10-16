@@ -42,7 +42,7 @@ public class Ingredient implements Cloneable
 		this.maintainIngredient = maintainIngredient;
 		if (this.itemId > 0)
 		{
-			this.template = ItemTable.getInstance().getTemplate(this.itemId);
+			template = ItemTable.getInstance().getTemplate(this.itemId);
 		}
 	}
 
@@ -61,27 +61,27 @@ public class Ingredient implements Cloneable
 
 	public final L2Item getTemplate()
 	{
-		return this.template;
+		return template;
 	}
 
 	public final void setItemInfo(L2ItemInstance item)
 	{
-		this.itemInfo = new ItemInfo(item);
+		itemInfo = new ItemInfo(item);
 	}
 
 	public final void setItemInfo(ItemInfo info)
 	{
-		this.itemInfo = info;
+		itemInfo = info;
 	}
 
 	public final ItemInfo getItemInfo()
 	{
-		return this.itemInfo;
+		return itemInfo;
 	}
 
 	public final int getEnchantLevel()
 	{
-		return this.itemInfo != null ? this.itemInfo.getEnchantLevel() : 0;
+		return itemInfo != null ? itemInfo.getEnchantLevel() : 0;
 	}
 
 	public final void setItemId(int itemId)
@@ -91,7 +91,7 @@ public class Ingredient implements Cloneable
 
 	public final int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	public final void setItemCount(long itemCount)
@@ -101,7 +101,7 @@ public class Ingredient implements Cloneable
 
 	public final long getItemCount()
 	{
-		return this.itemCount;
+		return itemCount;
 	}
 
 	public final void setChance(float chance)
@@ -111,7 +111,7 @@ public class Ingredient implements Cloneable
 
 	public final float getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 
 	public final void setIsTaxIngredient(boolean isTaxIngredient)
@@ -121,7 +121,7 @@ public class Ingredient implements Cloneable
 
 	public final boolean isTaxIngredient()
 	{
-		return this.isTaxIngredient;
+		return isTaxIngredient;
 	}
 
 	public final void setMaintainIngredient(boolean maintainIngredient)
@@ -131,21 +131,21 @@ public class Ingredient implements Cloneable
 
 	public final boolean getMaintainIngredient()
 	{
-		return this.maintainIngredient;
+		return maintainIngredient;
 	}
 
 	public final boolean isStackable()
 	{
-		return this.template == null || this.template.isStackable();
+		return template == null || template.isStackable();
 	}
 
 	public final boolean isArmorOrWeapon()
 	{
-		return this.template != null && (this.template instanceof L2Armor || this.template instanceof L2Weapon);
+		return template != null && (template instanceof L2Armor || template instanceof L2Weapon);
 	}
 
 	public final int getWeight()
 	{
-		return this.template == null ? 0 : this.template.getWeight();
+		return template == null ? 0 : template.getWeight();
 	}
 }

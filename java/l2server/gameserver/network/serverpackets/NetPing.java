@@ -15,6 +15,6 @@ public class NetPing extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.pingid);
+		writeD(pingid);
 	}
 }

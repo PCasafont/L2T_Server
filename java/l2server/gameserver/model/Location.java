@@ -39,17 +39,17 @@ public final class Location
 
 	public Location(L2Object obj)
 	{
-		this.x = obj.getX();
-		this.y = obj.getY();
-		this.z = obj.getZ();
+		x = obj.getX();
+		y = obj.getY();
+		z = obj.getZ();
 	}
 
 	public Location(L2Character obj)
 	{
-		this.x = obj.getX();
-		this.y = obj.getY();
-		this.z = obj.getZ();
-		this.heading = obj.getHeading();
+		x = obj.getX();
+		y = obj.getY();
+		z = obj.getZ();
+		heading = obj.getHeading();
 	}
 
 	public Location(int x, int y, int z, int heading)
@@ -62,21 +62,21 @@ public final class Location
 
 	public int getX()
 	{
-		return this.x;
+		return x;
 	}
 
 	public int getY()
 	{
-		return this.y;
+		return y;
 	}
 
 	public int getZ()
 	{
-		return this.z;
+		return z;
 	}
 
 	public int getHeading()
 	{
-		return this.heading;
+		return heading;
 	}
 }

@@ -30,7 +30,7 @@ public class ExFishingStart extends L2GameServerPacket
 
 	public ExFishingStart(L2Character character, int fishType, int x, int y, int z, boolean isNightLure)
 	{
-		this.activeChar = character;
+		activeChar = character;
 		this.fishType = fishType;
 		this.x = x;
 		this.y = y;
@@ -44,11 +44,11 @@ public class ExFishingStart extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeC(this.fishType); // fish type
-		writeD(this.x); // x position
-		writeD(this.y); // y position
-		writeD(this.z); // z position
-		writeC(this.isNightLure ? 0x01 : 0x00); // night lure
+		writeD(activeChar.getObjectId());
+		writeC(fishType); // fish type
+		writeD(x); // x position
+		writeD(y); // y position
+		writeD(z); // z position
+		writeC(isNightLure ? 0x01 : 0x00); // night lure
 	}
 }

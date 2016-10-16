@@ -31,28 +31,28 @@ public class EventTrigger extends L2GameServerPacket
 
 	public EventTrigger(L2DoorInstance door, boolean opened)
 	{
-		this.emitterId = door.getEmitter();
+		emitterId = door.getEmitter();
 
 		if (Util.contains(_reverse_doors, door.getDoorId()))
 		{
-			this.active = !opened;
+			active = !opened;
 		}
 		else
 		{
-			this.active = opened;
+			active = opened;
 		}
 	}
 
 	public EventTrigger(int trapId, boolean active)
 	{
-		this.emitterId = trapId;
+		emitterId = trapId;
 		this.active = active;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.emitterId); // trap object id
-		writeC(this.active ? 1 : 0); // trap activity 1 or 0
+		writeD(emitterId); // trap object id
+		writeC(active ? 1 : 0); // trap activity 1 or 0
 	}
 }

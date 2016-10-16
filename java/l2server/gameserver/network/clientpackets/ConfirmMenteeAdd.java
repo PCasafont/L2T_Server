@@ -38,7 +38,7 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 				return;
 			}
 
-			if (this.response == 1)
+			if (response == 1)
 			{
 				Connection con = null;
 				try

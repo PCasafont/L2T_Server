@@ -76,7 +76,7 @@ public class EventDroplist
 	 */
 	private EventDroplist()
 	{
-		this.allNpcDateDrops = new ArrayList<>();
+		allNpcDateDrops = new ArrayList<>();
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class EventDroplist
 		date.max = count[1];
 		date.chance = chance;
 
-		this.allNpcDateDrops.add(date);
+		allNpcDateDrops.add(date);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class EventDroplist
 	{
 		List<DateDrop> list = new ArrayList<>();
 
-		for (DateDrop drop : this.allNpcDateDrops)
+		for (DateDrop drop : allNpcDateDrops)
 		{
 			Date currentDate = new Date();
 			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);

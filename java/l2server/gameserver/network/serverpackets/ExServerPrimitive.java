@@ -84,7 +84,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public void addPoint(String name, int color, boolean isNameColored, int x, int y, int z)
 	{
-		this.points.add(new Point(name, color, isNameColored, x, y, z));
+		points.add(new Point(name, color, isNameColored, x, y, z));
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 	 */
 	public void addLine(String name, int color, boolean isNameColored, int x, int y, int z, int x2, int y2, int z2)
 	{
-		this.lines.add(new Line(name, color, isNameColored, x, y, z, x2, y2, z2));
+		lines.add(new Line(name, color, isNameColored, x, y, z, x2, y2, z2));
 	}
 
 	/**
@@ -199,16 +199,16 @@ public class ExServerPrimitive extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.name);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeS(name);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 		writeD(65535); // has to do something with display range and angle
 		writeD(65535); // has to do something with display range and angle
 
-		writeD(this.points.size() + this.lines.size());
+		writeD(points.size() + lines.size());
 
-		for (Point point : this.points)
+		for (Point point : points)
 		{
 			writeC(1); // Its the type in this case Point
 			writeS(point.getName());
@@ -222,7 +222,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 			writeD(point.getZ());
 		}
 
-		for (Line line : this.lines)
+		for (Line line : lines)
 		{
 			writeC(2); // Its the type in this case Line
 			writeS(line.getName());
@@ -264,7 +264,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public String getName()
 		{
-			return this.name;
+			return name;
 		}
 
 		/**
@@ -272,7 +272,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getColor()
 		{
-			return this.color;
+			return color;
 		}
 
 		/**
@@ -280,7 +280,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public boolean isNameColored()
 		{
-			return this.isNameColored;
+			return isNameColored;
 		}
 
 		/**
@@ -288,7 +288,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getX()
 		{
-			return this.x;
+			return x;
 		}
 
 		/**
@@ -296,7 +296,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getY()
 		{
-			return this.y;
+			return y;
 		}
 
 		/**
@@ -304,7 +304,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getZ()
 		{
-			return this.z;
+			return z;
 		}
 	}
 
@@ -327,7 +327,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getX2()
 		{
-			return this.x2;
+			return x2;
 		}
 
 		/**
@@ -335,7 +335,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getY2()
 		{
-			return this.y2;
+			return y2;
 		}
 
 		/**
@@ -343,7 +343,7 @@ public class ExServerPrimitive extends L2GameServerPacket
 		 */
 		public int getZ2()
 		{
-			return this.z2;
+			return z2;
 		}
 	}
 }

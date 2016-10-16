@@ -32,7 +32,7 @@ public class RequestMenteeAdd extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class RequestMenteeAdd extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance mentee = L2World.getInstance().getPlayer(this.name);
+		final L2PcInstance mentee = L2World.getInstance().getPlayer(name);
 
 		SystemMessage sm;
 		// can't use mentee invite for locating invisible characters

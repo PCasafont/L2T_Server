@@ -35,7 +35,7 @@ public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.response = readD();
+		response = readD();
 	}
 
 	/* (non-Javadoc)
@@ -54,7 +54,7 @@ public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 				return;
 			}
 
-			if (this.response == 1)
+			if (response == 1)
 			{
 				boolean newCc = false;
 

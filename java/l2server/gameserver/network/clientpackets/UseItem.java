@@ -79,8 +79,8 @@ public final class UseItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
-		this.ctrlPressed = readD() != 0;
+		objectId = readD();
+		ctrlPressed = readD() != 0;
 	}
 
 	@Override
@@ -98,7 +98,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(this.objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 		if (item == null)
 		{
 			return;
@@ -443,7 +443,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 
-		this.itemId = item.getItemId();
+		itemId = item.getItemId();
         /*
 		 * Alt game - Karma punishment // SOE
 		 * 736  	Scroll of Escape
@@ -487,7 +487,7 @@ public final class UseItem extends L2GameClientPacket
 		 */
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0)
 		{
-			switch (this.itemId)
+			switch (itemId)
 			{
 				case 736:
 				case 1538:
@@ -511,13 +511,13 @@ public final class UseItem extends L2GameClientPacket
 					return;
 			}
 
-			if (this.itemId >= 7117 && this.itemId <= 7135)
+			if (itemId >= 7117 && itemId <= 7135)
 			{
 				return;
 			}
 		}
 
-		if (activeChar.isFishing() && (this.itemId < 6535 || this.itemId > 6540))
+		if (activeChar.isFishing() && (itemId < 6535 || itemId > 6540))
 		{
 			// You cannot do anything else while fishing
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
@@ -562,7 +562,7 @@ public final class UseItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.finest(activeChar.getObjectId() + ": use item " + this.objectId);
+			Log.finest(activeChar.getObjectId() + ": use item " + objectId);
 		}
 
 		if (!item.isEquipped() && !item.getItem().checkCondition(activeChar, activeChar, true))
@@ -742,7 +742,7 @@ public final class UseItem extends L2GameClientPacket
 				}
 			}
 
-			if (activeChar.isCursedWeaponEquipped() && this.itemId == 6408) // Don't allow to put formal wear
+			if (activeChar.isCursedWeaponEquipped() && itemId == 6408) // Don't allow to put formal wear
 			{
 				return;
 			}
@@ -768,7 +768,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 		else
 		{
-			if (activeChar.isInOlympiadMode() && this.itemId == 37041)
+			if (activeChar.isInOlympiadMode() && itemId == 37041)
 			{
 				return;
 			}
@@ -802,7 +802,7 @@ public final class UseItem extends L2GameClientPacket
 				}
 				else
 				{
-					handler.useItem(activeChar, item, this.ctrlPressed);
+					handler.useItem(activeChar, item, ctrlPressed);
 				}
 			}
 		}
@@ -812,6 +812,6 @@ public final class UseItem extends L2GameClientPacket
 	@Override
 	protected boolean triggersOnActionRequest()
 	{
-		return !Config.SPAWN_PROTECTION_ALLOWED_ITEMS.contains(this.itemId);
+		return !Config.SPAWN_PROTECTION_ALLOWED_ITEMS.contains(itemId);
 	}
 }

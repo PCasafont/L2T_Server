@@ -46,7 +46,7 @@ public final class GGAuth extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x0b);
-		writeD(this.response);
+		writeD(response);
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x00);

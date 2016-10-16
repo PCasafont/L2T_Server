@@ -57,14 +57,14 @@ public class RequestSetCrop extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.manorId = readD();
+		manorId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Crop[count];
+		items = new Crop[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -73,17 +73,17 @@ public class RequestSetCrop extends L2GameClientPacket
 			int type = readC();
 			if (itemId < 1 || sales < 0 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new Crop(itemId, sales, price, type);
+			items[i] = new Crop(itemId, sales, price, type);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (this.items == null)
+		if (items == null)
 		{
 			return;
 		}
@@ -96,7 +96,7 @@ public class RequestSetCrop extends L2GameClientPacket
 		}
 
 		// check castle owner
-		Castle currentCastle = CastleManager.getInstance().getCastleById(this.manorId);
+		Castle currentCastle = CastleManager.getInstance().getCastleById(manorId);
 		if (currentCastle.getOwnerId() != player.getClanId())
 		{
 			return;
@@ -124,8 +124,8 @@ public class RequestSetCrop extends L2GameClientPacket
 			return;
 		}
 
-		List<CropProcure> crops = new ArrayList<>(this.items.length);
-		for (Crop i : this.items)
+		List<CropProcure> crops = new ArrayList<>(items.length);
+		for (Crop i : items)
 		{
 			CropProcure s = i.getCrop();
 			if (s == null)
@@ -154,20 +154,21 @@ public class RequestSetCrop extends L2GameClientPacket
 
 		public Crop(int id, long s, long p, int t)
 		{
-			this.itemId = id;
-			this.sales = s;
-			this.price = p;
-			this.type = t;
+			itemId = id;
+			sales = s;
+			price = p;
+			type = t;
 		}
 
 		public CropProcure getCrop()
 		{
-			if (this.sales != 0 && MAX_ADENA / this.sales < this.price)
+			if (sales != 0 && MAX_ADENA / sales < price)
 			{
 				return null;
 			}
 
-			return CastleManorManager.getInstance().getNewCropProcure(this.itemId, this.sales, this.type, this.price, this.sales);
+			return CastleManorManager.getInstance().getNewCropProcure(itemId, sales, type, price,
+					sales);
 		}
 	}
 }

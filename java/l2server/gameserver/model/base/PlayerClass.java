@@ -59,84 +59,85 @@ public class PlayerClass
 		this.parent = parent;
 		this.awakensTo = awakensTo;
 		this.isMage = isMage;
-		this.race = raceId < 0 ? null : Race.values()[raceId];
+		race = raceId < 0 ? null : Race.values()[raceId];
 		this.level = level;
 	}
 
 	public final int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public final PlayerClass getParent()
 	{
-		return this.parent;
+		return parent;
 	}
 
 	public final int getAwakeningClassId()
 	{
-		return this.awakensTo;
+		return awakensTo;
 	}
 
 	public final boolean isMage()
 	{
-		return this.isMage;
+		return isMage;
 	}
 
 	public final int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	public final Race getRace()
 	{
-		return this.race;
+		return race;
 	}
 
 	public final void addSkill(long hash, L2SkillLearn skill)
 	{
-		this.skills.put(hash, skill);
+		skills.put(hash, skill);
 	}
 
 	public final Map<Long, L2SkillLearn> getSkills()
 	{
-		return this.skills;
+		return skills;
 	}
 
 	public void addAllowedDye(L2Henna henna)
 	{
-		this.allowedDyes.add(henna);
+		allowedDyes.add(henna);
 	}
 
 	public final List<L2Henna> getAllowedDyes()
 	{
-		return this.allowedDyes;
+		return allowedDyes;
 	}
 
 	public final boolean isSummoner()
 	{
-		return this.id == 14 || this.id == 28 || this.id == 41 || this.id == 96 || this.id == 104 || this.id == 111 || this.id == 146 ||
-				this.id == 176 || this.id == 177 || this.id == 178;
+		return id == 14 || id == 28 || id == 41 || id == 96 || id == 104 || id == 111 ||
+				id == 146 ||
+				id == 176 || id == 177 || id == 178;
 	}
 
 	public final boolean childOf(PlayerClass cl)
 	{
-		if (this.parent == null)
+		if (parent == null)
 		{
 			return false;
 		}
 
-		if (this.parent == cl)
+		if (parent == cl)
 		{
 			return true;
 		}
 
-		return this.parent.childOf(cl);
+		return parent.childOf(cl);
 	}
 
 	public final boolean equalsOrChildOf(PlayerClass cl)
@@ -146,16 +147,16 @@ public class PlayerClass
 
 	public final int level()
 	{
-		if (this.parent == null)
+		if (parent == null)
 		{
 			return 0;
 		}
 
-		if (this.id == 184 || this.id == 185)
+		if (id == 184 || id == 185)
 		{
 			return 2;
 		}
 
-		return 1 + this.parent.level();
+		return 1 + parent.level();
 	}
 }

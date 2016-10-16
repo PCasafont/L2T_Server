@@ -33,16 +33,16 @@ public class L2ExtractableProductItem
 
 	public int[] getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public int[] getAmmount()
 	{
-		return this.ammount;
+		return ammount;
 	}
 
 	public double getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 }

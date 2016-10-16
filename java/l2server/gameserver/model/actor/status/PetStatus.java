@@ -61,12 +61,12 @@ public class PetStatus extends SummonStatus
 
 	public int getCurrentFed()
 	{
-		return this.currentFed;
+		return currentFed;
 	}
 
 	public void setCurrentFed(int value)
 	{
-		this.currentFed = value;
+		currentFed = value;
 	}
 
 	@Override

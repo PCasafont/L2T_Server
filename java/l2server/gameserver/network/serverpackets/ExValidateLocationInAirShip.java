@@ -28,8 +28,8 @@ public class ExValidateLocationInAirShip extends L2GameServerPacket
 
 	public ExValidateLocationInAirShip(L2PcInstance player)
 	{
-		this.activeChar = player;
-		shipId = this.activeChar.getAirShip().getObjectId();
+		activeChar = player;
+		shipId = activeChar.getAirShip().getObjectId();
 		x = player.getInVehiclePosition().getX();
 		y = player.getInVehiclePosition().getY();
 		z = player.getInVehiclePosition().getZ();
@@ -39,7 +39,7 @@ public class ExValidateLocationInAirShip extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
+		writeD(activeChar.getObjectId());
 		writeD(shipId);
 		writeD(x);
 		writeD(y);

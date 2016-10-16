@@ -34,7 +34,7 @@ public class RequestGetBossRecord extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.bossId = readD();
+		bossId = readD();
 	}
 
 	/**
@@ -48,9 +48,9 @@ public class RequestGetBossRecord extends L2GameClientPacket
 			return;
 		}
 
-		if (this.bossId != 0)
+		if (bossId != 0)
 		{
-			Log.info("C5: RequestGetBossRecord: d: " + this.bossId + " ActiveChar: " +
+			Log.info("C5: RequestGetBossRecord: d: " + bossId + " ActiveChar: " +
 					activeChar); // should be always 0, log it if isnt 0 for furture research
 		}
 

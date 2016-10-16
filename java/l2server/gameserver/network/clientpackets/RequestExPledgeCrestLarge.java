@@ -35,7 +35,7 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.crestId = readD();
+		crestId = readD();
 		@SuppressWarnings("unused") int unk = readD();
 		//Log.info(unk + "");
 	}
@@ -43,7 +43,7 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final byte[][] data = CrestCache.getInstance().getPledgeCrestLarge(this.crestId);
+		final byte[][] data = CrestCache.getInstance().getPledgeCrestLarge(crestId);
 		if (data != null)
 		{
 			for (int i = 0; i < data.length; i++)
@@ -53,7 +53,7 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket
 					break;
 				}
 
-				sendPacket(new ExPledgeCrestLarge(this.crestId, i, data[i]));
+				sendPacket(new ExPledgeCrestLarge(crestId, i, data[i]));
 			}
 		}
 	}

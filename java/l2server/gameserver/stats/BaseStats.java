@@ -52,19 +52,19 @@ public enum BaseStats
 
 	public final String getValue()
 	{
-		return this.stat.getClass().getSimpleName();
+		return stat.getClass().getSimpleName();
 	}
 
 	BaseStats(BaseStat s)
 	{
-		this.stat = s;
+		stat = s;
 	}
 
 	public final double calcBonus(L2Character actor)
 	{
 		if (actor != null)
 		{
-			return this.stat.calcBonus(actor);
+			return stat.calcBonus(actor);
 		}
 
 		return 1;

@@ -42,27 +42,27 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(0x01);
-		writeD(this.subPledge.getId());
-		writeS(this.subPledge.getName());
+		writeD(subPledge.getId());
+		writeS(subPledge.getName());
 		writeS(getLeaderName());
 	}
 
 	private String getLeaderName()
 	{
-		int leaderId = this.subPledge.getLeaderId();
-		if (this.subPledge.getId() == L2Clan.SUBUNIT_ACADEMY || leaderId == 0)
+		int leaderId = subPledge.getLeaderId();
+		if (subPledge.getId() == L2Clan.SUBUNIT_ACADEMY || leaderId == 0)
 		{
 			return "";
 		}
-		else if (this.clan.getClanMember(leaderId) == null)
+		else if (clan.getClanMember(leaderId) == null)
 		{
 			//Log.warning("SubPledgeLeader: "+ leaderId + " is missing from clan: "+ this.clan.getName()+"["+_clan.getClanId()+"]");
 			String name = "";
-			for (L2ClanMember temp : this.clan.getMembers())
+			for (L2ClanMember temp : clan.getMembers())
 			{
-				if (temp.getPledgeType() == this.subPledge.getId())
+				if (temp.getPledgeType() == subPledge.getId())
 				{
-					this.subPledge.setLeaderId(temp.getObjectId());
+					subPledge.setLeaderId(temp.getObjectId());
 					name = temp.getName();
 				}
 			}
@@ -71,7 +71,7 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
 		}
 		else
 		{
-			return this.clan.getClanMember(leaderId).getName();
+			return clan.getClanMember(leaderId).getName();
 		}
 	}
 }

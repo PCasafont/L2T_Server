@@ -32,19 +32,19 @@ public class NodeLoc extends AbstractNodeLoc
 	{
 		this.x = x;
 		this.y = y;
-		this.geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
+		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
 	public void set(int x, int y, short z)
 	{
 		this.x = x;
 		this.y = y;
-		this.geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
+		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
 	public short getNSWE()
 	{
-		return (short) (this.geoHeightAndNSWE & 0x0f);
+		return (short) (geoHeightAndNSWE & 0x0f);
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return (this.x << 4) + L2World.MAP_MIN_X;
+		return (x << 4) + L2World.MAP_MIN_X;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return (this.y << 4) + L2World.MAP_MIN_Y;
+		return (y << 4) + L2World.MAP_MIN_Y;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public short getZ()
 	{
-		short height = (short) (this.geoHeightAndNSWE & 0x0fff0);
+		short height = (short) (geoHeightAndNSWE & 0x0fff0);
 		return (short) (height >> 1);
 	}
 
@@ -87,7 +87,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeX()
 	{
-		return this.x;
+		return x;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeY()
 	{
-		return this.y;
+		return y;
 	}
 
 	/**
@@ -107,9 +107,9 @@ public class NodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + this.x;
-		result = prime * result + this.y;
-		result = prime * result + this.geoHeightAndNSWE;
+		result = prime * result + x;
+		result = prime * result + y;
+		result = prime * result + geoHeightAndNSWE;
 		return result;
 	}
 
@@ -132,14 +132,14 @@ public class NodeLoc extends AbstractNodeLoc
 			return false;
 		}
 		final NodeLoc other = (NodeLoc) obj;
-		if (this.x != other.x)
+		if (x != other.x)
 		{
 			return false;
 		}
-		if (this.y != other.y)
+		if (y != other.y)
 		{
 			return false;
 		}
-		return this.geoHeightAndNSWE == other.geoHeightAndNSWE;
+		return geoHeightAndNSWE == other.geoHeightAndNSWE;
 	}
 }

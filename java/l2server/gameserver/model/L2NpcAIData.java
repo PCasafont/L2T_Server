@@ -143,7 +143,7 @@ public class L2NpcAIData
 
 	public void setLongRangeChance(int longrangechance)
 	{
-		this.shortrangechance = longrangechance;
+		shortrangechance = longrangechance;
 	}
 
 	public void setSwitchRangeChance(int switchrangechance)
@@ -211,27 +211,27 @@ public class L2NpcAIData
 	{
 		if (ai.equalsIgnoreCase("archer"))
 		{
-			this.aiType = AIType.ARCHER;
+			aiType = AIType.ARCHER;
 		}
 		else if (ai.equalsIgnoreCase("balanced"))
 		{
-			this.aiType = AIType.BALANCED;
+			aiType = AIType.BALANCED;
 		}
 		else if (ai.equalsIgnoreCase("mage"))
 		{
-			this.aiType = AIType.MAGE;
+			aiType = AIType.MAGE;
 		}
 		else if (ai.equalsIgnoreCase("healer"))
 		{
-			this.aiType = AIType.HEALER;
+			aiType = AIType.HEALER;
 		}
 		else if (ai.equalsIgnoreCase("corpse"))
 		{
-			this.aiType = AIType.CORPSE;
+			aiType = AIType.CORPSE;
 		}
 		else
 		{
-			this.aiType = AIType.FIGHTER;
+			aiType = AIType.FIGHTER;
 		}
 	}
 
@@ -263,97 +263,97 @@ public class L2NpcAIData
 
 	public boolean canMove()
 	{
-		return this.canMove;
+		return canMove;
 	}
 
 	public int getSoulShot()
 	{
-		return this.soulshot;
+		return soulshot;
 	}
 
 	public int getSpiritShot()
 	{
-		return this.spiritshot;
+		return spiritshot;
 	}
 
 	public int getSoulShotChance()
 	{
-		return this.soulshotchance;
+		return soulshotchance;
 	}
 
 	public int getSpiritShotChance()
 	{
-		return this.spiritshotchance;
+		return spiritshotchance;
 	}
 
 	public int getShortRangeSkill()
 	{
-		return this.shortrangeskill;
+		return shortrangeskill;
 	}
 
 	public int getShortRangeChance()
 	{
-		return this.shortrangechance;
+		return shortrangechance;
 	}
 
 	public int getLongRangeSkill()
 	{
-		return this.longrangeskill;
+		return longrangeskill;
 	}
 
 	public int getLongRangeChance()
 	{
-		return this.longrangechance;
+		return longrangechance;
 	}
 
 	public int getSwitchRangeChance()
 	{
-		return this.switchrangechance;
+		return switchrangechance;
 	}
 
 	public int getIsChaos()
 	{
-		return this.ischaos;
+		return ischaos;
 	}
 
 	public String getClan()
 	{
-		return this.clan;
+		return clan;
 	}
 
 	public int getClanRange()
 	{
-		return this.clanRange;
+		return clanRange;
 	}
 
 	public String getEnemyClan()
 	{
-		return this.enemyClan;
+		return enemyClan;
 	}
 
 	public int getEnemyRange()
 	{
-		return this.enemyRange;
+		return enemyRange;
 	}
 
 	public int getDodge()
 	{
-		return this.dodge;
+		return dodge;
 	}
 
 	public int getMinSocial(boolean second)
 	{
-		return !second ? this.minSocial1 : this.minSocial2;
+		return !second ? minSocial1 : minSocial2;
 	}
 
 	public int getMaxSocial(boolean second)
 	{
-		return !second ? this.maxSocial1 : this.maxSocial2;
+		return !second ? maxSocial1 : maxSocial2;
 	}
 
 	public AIType getAiType()
 	{
-		return this.aiType;
+		return aiType;
 	}
 
 	/*

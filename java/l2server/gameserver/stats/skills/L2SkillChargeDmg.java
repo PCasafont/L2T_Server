@@ -156,7 +156,7 @@ public class L2SkillChargeDmg extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{caster, " did damage ", (int) damage, this, " to ", target});
 					record.setLoggerName("pdam");
-					this.logDamage.log(record);
+					logDamage.log(record);
 				}
 
 				target.reduceCurrentHp(finalDamage, caster, this);

@@ -61,11 +61,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		if (this.route != null)
 		{
 			walkToLocation();
-			this.task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 400);
+			task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 400);
 		}
 		else
 		{
-			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + this.actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + actor);
 		}
 	}
 
@@ -77,11 +77,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		// Constructor of L2NpcWalkerAI is called faster then ai object is attached in L2NpcWalkerInstance
 		if (this.route != null)
 		{
-			this.task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 200);
+			task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 200);
 		}
 		else
 		{
-			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + this.actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + actor);
 		}
 
 		this.guided = guided;
@@ -90,27 +90,27 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	@Override
 	public void run()
 	{
-		if (this.route == null)
+		if (route == null)
 		{
-			this.task.cancel(false);
+			task.cancel(false);
 			return;
 		}
 
-		if (System.currentTimeMillis() < this.nextMoveTime || this.waitingForQuestResponse)
+		if (System.currentTimeMillis() < nextMoveTime || waitingForQuestResponse)
 		{
 			return;
 		}
 
-		int x = this.route.get(this.currentPos).getMoveX();
-		int y = this.route.get(this.currentPos).getMoveY();
-		int z = this.route.get(this.currentPos).getMoveZ();
+		int x = route.get(currentPos).getMoveX();
+		int y = route.get(currentPos).getMoveY();
+		int z = route.get(currentPos).getMoveZ();
 
-		if (this.isWaiting)
+		if (isWaiting)
 		{
-			if (getActor().isInsideRadius(this.guided, this.waitRadius, false, false) &&
+			if (getActor().isInsideRadius(guided, waitRadius, false, false) &&
 					getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
 			{
-				this.waitingForQuestResponse = true;
+				waitingForQuestResponse = true;
 				for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
 				{
 					quest.notifyPlayerArrived(this);
@@ -121,20 +121,20 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 		if (!getActor().isInsideRadius(x, y, z, 40, false, false))
 		{
-			if (this.nextMoveTime != 0 && System.currentTimeMillis() > nextMoveTime + 10000L)
+			if (nextMoveTime != 0 && System.currentTimeMillis() > nextMoveTime + 10000L)
 			{
-				int destX = this.route.get(this.currentPos).getMoveX();
-				int destY = this.route.get(this.currentPos).getMoveY();
-				int destZ = this.route.get(this.currentPos).getMoveZ();
+				int destX = route.get(currentPos).getMoveX();
+				int destY = route.get(currentPos).getMoveY();
+				int destZ = route.get(currentPos).getMoveZ();
 				setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(destX, destY, destZ, 0));
-				this.nextMoveTime = System.currentTimeMillis();
+				nextMoveTime = System.currentTimeMillis();
 			}
 			return;
 		}
 
 		if (getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED) != null)
 		{
-			this.waitingForQuestResponse = true;
+			waitingForQuestResponse = true;
 			for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED))
 			{
 				quest.notifyArrived(this);
@@ -146,11 +146,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			walkToLocation();
 		}
 
-		int id = this.route.get(this.currentPos).getChatId();
+		int id = route.get(currentPos).getChatId();
 		String chat = null;
 		if (id == 0)
 		{
-			chat = this.route.get(this.currentPos).getChatText();
+			chat = route.get(currentPos).getChatText();
 		}
 
 		if (id > 0 || chat != null && !chat.isEmpty())
@@ -159,7 +159,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		}
 
 		//time in millis
-		long delay = this.route.get(this.currentPos).getDelay() * 1000;
+		long delay = route.get(currentPos).getDelay() * 1000;
 
 		//delay += (getActor().getPosition().getWorldPosition().distanceSquaredTo(new Point3D(x, y, z)) / (float)getActor().getWalkSpeed()) * 1000;
 
@@ -174,7 +174,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			}
 		}
 
-		this.nextMoveTime = System.currentTimeMillis() + delay;
+		nextMoveTime = System.currentTimeMillis() + delay;
 	}
 
 	/**
@@ -185,13 +185,13 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	@Override
 	protected void onEvtArrivedBlocked(L2CharPosition blocked_at_pos)
 	{
-		Log.warning("Npc Walker ID: " + getActor().getNpcId() + ": Blocked at route position [" + this.currentPos +
+		Log.warning("Npc Walker ID: " + getActor().getNpcId() + ": Blocked at route position [" + currentPos +
 				"], coords: " + blocked_at_pos.x + ", " + blocked_at_pos.y + ", " + blocked_at_pos.z +
 				". Teleporting to next point");
 
-		int destinationX = this.route.get(this.currentPos).getMoveX();
-		int destinationY = this.route.get(this.currentPos).getMoveY();
-		int destinationZ = this.route.get(this.currentPos).getMoveZ();
+		int destinationX = route.get(currentPos).getMoveX();
+		int destinationY = route.get(currentPos).getMoveY();
+		int destinationZ = route.get(currentPos).getMoveZ();
 
 		getActor().teleToLocation(destinationX, destinationY, destinationZ, false);
 		super.onEvtArrivedBlocked(blocked_at_pos);
@@ -199,16 +199,16 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public void walkToLocation()
 	{
-		if (this.currentPos < this.route.size() - 1)
+		if (currentPos < route.size() - 1)
 		{
-			this.currentPos++;
+			currentPos++;
 		}
 		else
 		{
-			this.currentPos = 0;
+			currentPos = 0;
 		}
 
-		boolean moveType = this.route.get(this.currentPos).getRunning();
+		boolean moveType = route.get(currentPos).getRunning();
 
 		if (moveType)
 		{
@@ -220,9 +220,9 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		}
 
 		//now we define destination
-		int destinationX = this.route.get(this.currentPos).getMoveX();
-		int destinationY = this.route.get(this.currentPos).getMoveY();
-		int destinationZ = this.route.get(this.currentPos).getMoveZ();
+		int destinationX = route.get(currentPos).getMoveX();
+		int destinationY = route.get(currentPos).getMoveY();
+		int destinationZ = route.get(currentPos).getMoveZ();
 
 		setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
 				new L2CharPosition(destinationX, destinationY, destinationZ, 0));
@@ -230,14 +230,14 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public void walkToGuided(int distance)
 	{
-		if (this.guided == null)
+		if (guided == null)
 		{
 			return;
 		}
 
-		int dx = this.guided.getX() - getActor().getX();
-		int dy = this.guided.getY() - getActor().getY();
-		int dz = this.guided.getZ() - getActor().getZ();
+		int dx = guided.getX() - getActor().getX();
+		int dy = guided.getY() - getActor().getY();
+		int dz = guided.getZ() - getActor().getZ();
 
 		double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
@@ -257,37 +257,37 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public int getCurrentPos()
 	{
-		return this.currentPos;
+		return currentPos;
 	}
 
 	public L2PcInstance getGuided()
 	{
-		return this.guided;
+		return guided;
 	}
 
 	public boolean isWaiting()
 	{
-		return this.isWaiting;
+		return isWaiting;
 	}
 
 	public void setWaiting(boolean waiting)
 	{
-		this.isWaiting = waiting;
-		this.waitingForQuestResponse = false;
+		isWaiting = waiting;
+		waitingForQuestResponse = false;
 	}
 
 	public int getWaitRadius()
 	{
-		return this.waitRadius;
+		return waitRadius;
 	}
 
 	public void setWaitRadius(int radius)
 	{
-		this.waitRadius = radius;
+		waitRadius = radius;
 	}
 
 	public void cancelTask()
 	{
-		this.task.cancel(false);
+		task.cancel(false);
 	}
 }

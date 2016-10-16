@@ -45,13 +45,13 @@ public class CastleUpdater implements Runnable
 		try
 		{
 			// Move current castle treasury to clan warehouse every 2 hour
-			ItemContainer warehouse = this.clan.getWarehouse();
-			if (warehouse != null && this.clan.getHasCastle() > 0)
+			ItemContainer warehouse = clan.getWarehouse();
+			if (warehouse != null && clan.getHasCastle() > 0)
 			{
-				Castle castle = CastleManager.getInstance().getCastleById(this.clan.getHasCastle());
+				Castle castle = CastleManager.getInstance().getCastleById(clan.getHasCastle());
 				if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 				{
-					if (this.runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0)
+					if (runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0)
 					{
 						castle.saveSeedData();
 						castle.saveCropData();
@@ -61,7 +61,7 @@ public class CastleUpdater implements Runnable
 						}
 					}
 				}
-				CastleUpdater cu = new CastleUpdater(this.clan, ++runCount);
+				CastleUpdater cu = new CastleUpdater(clan, ++runCount);
 				ThreadPoolManager.getInstance().scheduleGeneral(cu, 3600000);
 			}
 		}

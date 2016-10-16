@@ -25,11 +25,11 @@ public class AllianceInfo extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeS(this.leadclan);
-		writeD(this.online);
-		writeD(this.clanscount);
-		writeS(this.clanLeader);
-		writeD(this.allymembers);
-		writeS(this.allyName);
+		writeS(leadclan);
+		writeD(online);
+		writeD(clanscount);
+		writeS(clanLeader);
+		writeD(allymembers);
+		writeS(allyName);
 	}
 }

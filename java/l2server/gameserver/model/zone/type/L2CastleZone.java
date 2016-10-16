@@ -42,7 +42,7 @@ public class L2CastleZone extends L2SpawnZone
 	{
 		if (name.equals("castleId"))
 		{
-			this.castleId = Integer.parseInt(value);
+			castleId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -85,7 +85,7 @@ public class L2CastleZone extends L2SpawnZone
 	 */
 	public void banishForeigners(int owningClanId)
 	{
-		for (L2Character temp : this.characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -108,15 +108,15 @@ public class L2CastleZone extends L2SpawnZone
 
 	public int getCastleId()
 	{
-		return this.castleId;
+		return castleId;
 	}
 
 	private Castle getCastle()
 	{
-		if (this.castle == null)
+		if (castle == null)
 		{
-			this.castle = CastleManager.getInstance().getCastleById(this.castleId);
+			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
-		return this.castle;
+		return castle;
 	}
 }

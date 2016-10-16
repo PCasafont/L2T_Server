@@ -30,7 +30,7 @@ public class ExFishingStartCombat extends L2GameServerPacket
 
 	public ExFishingStartCombat(L2Character character, int time, int hp, int mode, int lureType, int deceptiveMode)
 	{
-		this.activeChar = character;
+		activeChar = character;
 		this.time = time;
 		this.hp = hp;
 		this.mode = mode;
@@ -44,11 +44,11 @@ public class ExFishingStartCombat extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeD(this.time);
-		writeD(this.hp);
-		writeC(this.mode); // mode: 0 = resting, 1 = fighting
-		writeC(this.lureType); // 0 = newbie lure, 1 = normal lure, 2 = night lure
-		writeC(this.deceptiveMode); // Fish Deceptive Mode: 0 = no, 1 = yes
+		writeD(activeChar.getObjectId());
+		writeD(time);
+		writeD(hp);
+		writeC(mode); // mode: 0 = resting, 1 = fighting
+		writeC(lureType); // 0 = newbie lure, 1 = normal lure, 2 = night lure
+		writeC(deceptiveMode); // Fish Deceptive Mode: 0 = no, 1 = yes
 	}
 }

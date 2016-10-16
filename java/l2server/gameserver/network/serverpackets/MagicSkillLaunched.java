@@ -40,47 +40,47 @@ public class MagicSkillLaunched extends L2GameServerPacket
 
 	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
 	{
-		this.charObjId = cha.getObjectId();
+		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 
 		if (targets != null)
 		{
-			this.numberOfTargets = targets.length;
+			numberOfTargets = targets.length;
 			this.targets = targets;
 		}
 		else
 		{
-			this.numberOfTargets = 1;
+			numberOfTargets = 1;
 			this.targets = new L2Object[]{cha};
 		}
-		this.singleTargetId = 0;
+		singleTargetId = 0;
 	}
 
 	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel)
 	{
-		this.charObjId = cha.getObjectId();
+		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
-		this.numberOfTargets = 1;
-		this.singleTargetId = cha.getTargetId();
+		numberOfTargets = 1;
+		singleTargetId = cha.getTargetId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(0x02); // GoD ??? (if 1, party skills cannot be seen)
-		writeD(this.charObjId);
-		writeD(this.skillId);
-		writeD(this.skillLevel);
-		writeD(this.numberOfTargets); // also failed or not?
-		if (this.singleTargetId != 0 || this.numberOfTargets == 0)
+		writeD(charObjId);
+		writeD(skillId);
+		writeD(skillLevel);
+		writeD(numberOfTargets); // also failed or not?
+		if (singleTargetId != 0 || numberOfTargets == 0)
 		{
-			writeD(this.singleTargetId);
+			writeD(singleTargetId);
 		}
 		else
 		{
-			for (L2Object target : this.targets)
+			for (L2Object target : targets)
 			{
 				writeD(target.getObjectId());
 			}

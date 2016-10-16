@@ -40,7 +40,7 @@ public class DayNightSpawnManager
 
 	private DayNightSpawnManager()
 	{
-		this.bosses = new HashMap<>();
+		bosses = new HashMap<>();
 
 		Log.info("DayNightSpawnManager: Day/Night handler initialized");
 	}
@@ -108,6 +108,6 @@ public class DayNightSpawnManager
 
 	public void cleanUp()
 	{
-		this.bosses.clear();
+		bosses.clear();
 	}
 }

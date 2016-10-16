@@ -31,15 +31,15 @@ public final class RequestPledgePower extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.rank = readD();
-		this.action = readD();
-		if (this.action == 2)
+		rank = readD();
+		action = readD();
+		if (action == 2)
 		{
-			this.privs = readD();
+			privs = readD();
 		}
 		else
 		{
-			this.privs = 0;
+			privs = 0;
 		}
 	}
 
@@ -52,11 +52,11 @@ public final class RequestPledgePower extends L2GameClientPacket
 			return;
 		}
 
-		if (this.action == 2)
+		if (action == 2)
 		{
 			if (player.getClan() != null && player.isClanLeader())
 			{
-				if (this.rank == 9)
+				if (rank == 9)
 				{
 					//The rights below cannot be bestowed upon Academy members:
 					//Join a clan or be dismissed
@@ -65,15 +65,15 @@ public final class RequestPledgePower extends L2GameClientPacket
 					//Clan war, right to dismiss, set functions
 					//Auction, manage taxes, attack/defend registration, mercenary management
 					//=> Leaves only CP_CL_VIEW_WAREHOUSE, CP_CH_OPEN_DOOR, CP_CS_OPEN_DOOR?
-					this.privs = (this.privs & L2Clan.CP_CL_VIEW_WAREHOUSE) + (this.privs & L2Clan.CP_CH_OPEN_DOOR) +
-							(this.privs & L2Clan.CP_CS_OPEN_DOOR);
+					privs = (privs & L2Clan.CP_CL_VIEW_WAREHOUSE) + (privs & L2Clan.CP_CH_OPEN_DOOR) +
+							(privs & L2Clan.CP_CS_OPEN_DOOR);
 				}
-				player.getClan().setRankPrivs(this.rank, this.privs);
+				player.getClan().setRankPrivs(rank, privs);
 			}
 		}
 		else
 		{
-			ManagePledgePower mpp = new ManagePledgePower(getClient().getActiveChar().getClan(), this.action, this.rank);
+			ManagePledgePower mpp = new ManagePledgePower(getClient().getActiveChar().getClan(), action, rank);
 			player.sendPacket(mpp);
 		}
 	}

@@ -32,7 +32,7 @@ public class RequestExAddContactToContactList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class RequestExAddContactToContactList extends L2GameClientPacket
 			return;
 		}
 
-		if (this.name == null)
+		if (name == null)
 		{
 			return;
 		}
@@ -54,7 +54,7 @@ public class RequestExAddContactToContactList extends L2GameClientPacket
 			return;
 		}
 
-		boolean charAdded = activeChar.getContactList().add(this.name);
-		activeChar.sendPacket(new ExConfirmAddingContact(this.name, charAdded));
+		boolean charAdded = activeChar.getContactList().add(name);
+		activeChar.sendPacket(new ExConfirmAddingContact(name, charAdded));
 	}
 }

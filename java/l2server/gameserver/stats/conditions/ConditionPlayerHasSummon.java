@@ -46,10 +46,10 @@ public class ConditionPlayerHasSummon extends Condition
 		{
 			if (!summon.isDead())
 			{
-				return this.value;
+				return value;
 			}
 		}
 
-		return !this.value;
+		return !value;
 	}
 }

@@ -47,7 +47,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public int size()
 	{
-		return this.objectMap.size();
+		return objectMap.size();
 	}
 
 	/* (non-Javadoc)
@@ -56,7 +56,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public boolean isEmpty()
 	{
-		return this.objectMap.isEmpty();
+		return objectMap.isEmpty();
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +65,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public void clear()
 	{
-		this.objectMap.clear();
+		objectMap.clear();
 	}
 
 	/* (non-Javadoc)
@@ -76,7 +76,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			this.objectMap.put(obj.getObjectId(), obj);
+			objectMap.put(obj.getObjectId(), obj);
 		}
 	}
 
@@ -88,7 +88,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			this.objectMap.remove(obj.getObjectId());
+			objectMap.remove(obj.getObjectId());
 		}
 	}
 
@@ -98,7 +98,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public T get(int id)
 	{
-		return this.objectMap.get(id);
+		return objectMap.get(id);
 	}
 
 	/* (non-Javadoc)
@@ -111,7 +111,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 		{
 			return false;
 		}
-		return this.objectMap.get(obj.getObjectId()) != null;
+		return objectMap.get(obj.getObjectId()) != null;
 	}
 
 	/* (non-Javadoc)
@@ -120,6 +120,6 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public Iterator<T> iterator()
 	{
-		return this.objectMap.values().iterator();
+		return objectMap.values().iterator();
 	}
 }

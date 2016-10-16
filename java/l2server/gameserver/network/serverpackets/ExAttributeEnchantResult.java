@@ -38,9 +38,9 @@ public class ExAttributeEnchantResult extends L2GameServerPacket
 		writeD(0);
 		writeC(0);
 		writeH(4); // ???
-		writeH(this.addedPower);
-		writeH(this.totalPower);
-		writeH(this.succeeded); // Successful stones
-		writeH(this.failed); // Failed stones
+		writeH(addedPower);
+		writeH(totalPower);
+		writeH(succeeded); // Successful stones
+		writeH(failed); // Failed stones
 	}
 }

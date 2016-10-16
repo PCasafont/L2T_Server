@@ -65,26 +65,26 @@ public class Q10323_GoingIntoARealWar extends Quest
 	public Q10323_GoingIntoARealWar(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.yibein);
-		addTalkId(this.yibein);
-		addTalkId(this.holden);
-		addTalkId(this.shannon);
-		addFirstTalkId(this.trainerGuard);
-		addTalkId(this.trainerGuard);
-		addTalkId(this.teleporterGuard);
-		addKillId(this.monster1);
-		addKillId(this.monster2);
+		addStartNpc(yibein);
+		addTalkId(yibein);
+		addTalkId(holden);
+		addTalkId(shannon);
+		addFirstTalkId(trainerGuard);
+		addTalkId(trainerGuard);
+		addTalkId(teleporterGuard);
+		addKillId(monster1);
+		addKillId(monster2);
 
-		addEventId(this.guideId, QuestEventType.ON_ARRIVED);
-		addEventId(this.guideId, QuestEventType.ON_PLAYER_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_PLAYER_ARRIVED);
 
-		this.guideRoute.add(new L2NpcWalkerNode(-110596, 253644, -1784, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110486, 253523, -1776, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110381, 253406, -1776, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110308, 253249, -1800, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110199, 252963, -1856, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110127, 252685, -1960, 0, "", true));
-		this.guideRoute.add(new L2NpcWalkerNode(-110172, 252528, -1984, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110596, 253644, -1784, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110486, 253523, -1776, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110381, 253406, -1776, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110308, 253249, -1800, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110199, 252963, -1856, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110127, 252685, -1960, 0, "", true));
+		guideRoute.add(new L2NpcWalkerNode(-110172, 252528, -1984, 0, "", true));
 	}
 
 	@Override
@@ -98,19 +98,19 @@ public class Q10323_GoingIntoARealWar extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.yibein && event.equalsIgnoreCase("33464-03.htm"))
+		if (npc.getNpcId() == yibein && event.equalsIgnoreCase("33464-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(this.guideId, -110596, 253644, -1784, 0, false, 600000);
+			final L2Npc guide = addSpawn(guideId, -110596, 253644, -1784, 0, false, 600000);
 			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
 			guide.setAI(guideAI);
-			guideAI.initializeRoute(this.guideRoute, player);
+			guideAI.initializeRoute(guideRoute, player);
 			guideAI.setWaiting(true);
 
-			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), this.guideFirstChatId);
+			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
 
@@ -135,12 +135,12 @@ public class Q10323_GoingIntoARealWar extends Quest
 				}
 			}, 60000);
 
-			st.giveItems(this.key, 1);
+			st.giveItems(key, 1);
 		}
-		else if (npc.getNpcId() == this.shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8)
+		else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8)
 		{
 			st.unset("cond");
-			st.takeItems(this.key, -1);
+			st.takeItems(key, -1);
 			st.giveItems(57, 9000);
 			st.addExpAndSp(300, 1500);
 			st.playSound("ItemSound.quest_finish");
@@ -163,7 +163,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.trainerGuard)
+		if (npc.getNpcId() == trainerGuard)
 		{
 			if (st.getInt("cond") == 3)
 			{
@@ -200,10 +200,10 @@ public class Q10323_GoingIntoARealWar extends Quest
 			{
 				st.set("cond", "7");
 				st.playSound("ItemSound.quest_middle");
-				addSpawn(this.monster1, -114047, 248425, -7872, 0, false, 0, false, player.getObjectId());
-				addSpawn(this.monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
-				addSpawn(this.monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
-				addSpawn(this.monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
+				addSpawn(monster1, -114047, 248425, -7872, 0, false, 0, false, player.getObjectId());
+				addSpawn(monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
+				addSpawn(monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
+				addSpawn(monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
 
 				if (player.isMageClass())
 				{
@@ -230,7 +230,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.yibein)
+		if (npc.getNpcId() == yibein)
 		{
 			switch (st.getState())
 			{
@@ -252,7 +252,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7)
+		else if (npc.getNpcId() == holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -261,29 +261,29 @@ public class Q10323_GoingIntoARealWar extends Quest
 			}
 
 			InstanceManager.getInstance().createInstance(player.getObjectId());
-			addSpawn(this.trainerGuard, -114875, 248336, -7872, 62000, false, 0, false, player.getObjectId());
-			addSpawn(this.teleporterGuard, -114014, 247680, -7872, 13665, false, 0, false, player.getObjectId());
-			addSpawn(this.trainingGuard, -114998, 248222, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.trainingGuard, -114974, 247888, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.trainingGuard, -114101, 248388, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.trainingGuard, -114541, 248601, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.monster1, -114047, 248425, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
-			addSpawn(this.monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(trainerGuard, -114875, 248336, -7872, 62000, false, 0, false, player.getObjectId());
+			addSpawn(teleporterGuard, -114014, 247680, -7872, 13665, false, 0, false, player.getObjectId());
+			addSpawn(trainingGuard, -114998, 248222, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(trainingGuard, -114974, 247888, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(trainingGuard, -114101, 248388, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(trainingGuard, -114541, 248601, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(monster1, -114047, 248425, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
+			addSpawn(monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
 
 			player.setInstanceId(player.getObjectId());
 			player.teleToLocation(-113814, 247731, -7872, false);
 			return null;
 		}
-		else if (npc.getNpcId() == this.teleporterGuard && st.getInt("cond") == 8)
+		else if (npc.getNpcId() == teleporterGuard && st.getInt("cond") == 8)
 		{
 			player.teleToLocation(-110415, 252423, -1992, false);
 			player.setInstanceId(0);
 			InstanceManager.getInstance().destroyInstance(player.getObjectId());
 			return null;
 		}
-		else if (npc.getNpcId() == this.shannon && st.getInt("cond") == 8)
+		else if (npc.getNpcId() == shannon && st.getInt("cond") == 8)
 		{
 			htmltext = "32974-01.htm";
 		}
@@ -299,7 +299,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			return null;
 		}
 
-		if (npc.getNpcId() == this.monster1 || npc.getNpcId() == this.monster2)
+		if (npc.getNpcId() == monster1 || npc.getNpcId() == monster2)
 		{
 			if (st.getInt("cond") == 2)
 			{
@@ -341,18 +341,18 @@ public class Q10323_GoingIntoARealWar extends Quest
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
-				guideAI.getCurrentPos() == this.guideRoute.size() - 1)
+				guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
 				guideAI.setWaiting(true);
 				return null;
 			}
-			int chatId = this.guideLastChatId;
-			if (guideAI.getCurrentPos() != this.guideRoute.size() - 1)
+			int chatId = guideLastChatId;
+			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
-				chatId = this.guideWaitChatId;
+				chatId = guideWaitChatId;
 			}
 			NpcSay ns =
 					new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
@@ -371,7 +371,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == this.guideRoute.size() - 1)
+		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -395,7 +395,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public int getOnKillDelay(int npcId)
 	{
-		if (npcId == this.monster1 || npcId == this.monster2)
+		if (npcId == monster1 || npcId == monster2)
 		{
 			return 0;
 		}

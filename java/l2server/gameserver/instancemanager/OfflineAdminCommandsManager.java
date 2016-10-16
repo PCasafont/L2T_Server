@@ -54,7 +54,7 @@ public class OfflineAdminCommandsManager
 			{
 				L2PcInstance pal = L2PcInstance.load(rset.getInt("charId"));
 				pal.setClient(null);
-				this.dummy = pal;
+				dummy = pal;
 			}
 			rset.close();
 			statement.close();
@@ -97,14 +97,14 @@ public class OfflineAdminCommandsManager
 			GMAudit.auditGMAction(author, commandName, "no-target");
 		}
 
-		if (this.dummy == null)
+		if (dummy == null)
 		{
 			loadDummy();
 		}
 
-		this.dummy.setName(author);
-		ach.useAdminCommand(command, this.dummy);
-		this.dummy.setName("OffDummy");
+		dummy.setName(author);
+		ach.useAdminCommand(command, dummy);
+		dummy.setName("OffDummy");
 		saveCommandExecution(date);
 	}
 

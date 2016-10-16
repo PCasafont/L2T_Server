@@ -64,23 +64,23 @@ public abstract class AbstractOlympiadGame
 
 	protected AbstractOlympiadGame(int id)
 	{
-		this.gameId = id;
+		gameId = id;
 	}
 
 	public final boolean isAborted()
 	{
-		return this.aborted;
+		return aborted;
 	}
 
 	public final int getGameId()
 	{
-		return this.gameId;
+		return gameId;
 	}
 
 	protected boolean makeCompetitionStart()
 	{
-		this.startTime = System.currentTimeMillis();
-		return !this.aborted;
+		startTime = System.currentTimeMillis();
+		return !aborted;
 	}
 
 	protected final void addPointsToParticipant(OlympiadParticipant par, int points)
@@ -494,7 +494,7 @@ public abstract class AbstractOlympiadGame
 	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
 	{
 		broadcastPacketToParticipants(packet);
-		stadium.broadcastPacketToObservers(packet, this.gameId);
+		stadium.broadcastPacketToObservers(packet, gameId);
 	}
 
 	public abstract CompetitionType getType();

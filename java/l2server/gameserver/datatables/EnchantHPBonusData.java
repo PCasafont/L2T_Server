@@ -56,7 +56,7 @@ public class EnchantHPBonusData
 
 	private void load()
 	{
-		this.armorHPBonus.clear();
+		armorHPBonus.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantHPBonus.xml");
 
 		if (file.exists())
@@ -95,12 +95,12 @@ public class EnchantHPBonusData
 								}
 								bonus[i] = value;
 							}
-							this.armorHPBonus.put(grade, bonus);
+							armorHPBonus.put(grade, bonus);
 						}
 					}
 				}
 			}
-			if (this.armorHPBonus.isEmpty())
+			if (armorHPBonus.isEmpty())
 			{
 				return;
 			}
@@ -155,7 +155,7 @@ public class EnchantHPBonusData
 
 	public final int getHPBonus(L2ItemInstance item)
 	{
-		final Integer[] values = this.armorHPBonus.get(item.getItem().getItemGradePlain());
+		final Integer[] values = armorHPBonus.get(item.getItem().getItemGradePlain());
 
 		if (values == null || values.length == 0)
 		{

@@ -37,16 +37,16 @@ public class SellListProcure extends L2GameServerPacket
 
 	public SellListProcure(L2PcInstance player, int castleId)
 	{
-		this.money = player.getAdena();
-		this.activeChar = player;
-		this.castle = castleId;
-		this.procureList = CastleManager.getInstance().getCastleById(this.castle).getCropProcure(0);
-		for (CropProcure c : this.procureList)
+		money = player.getAdena();
+		activeChar = player;
+		castle = castleId;
+		procureList = CastleManager.getInstance().getCastleById(castle).getCropProcure(0);
+		for (CropProcure c : procureList)
 		{
-			L2ItemInstance item = this.activeChar.getInventory().getItemByItemId(c.getId());
+			L2ItemInstance item = activeChar.getInventory().getItemByItemId(c.getId());
 			if (item != null && c.getAmount() > 0)
 			{
-				this.sellList.put(item, c.getAmount());
+				sellList.put(item, c.getAmount());
 			}
 		}
 	}
@@ -54,16 +54,16 @@ public class SellListProcure extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(this.money); // money
+		writeQ(money); // money
 		writeD(0x00); // lease ?
-		writeH(this.sellList.size()); // list size
+		writeH(sellList.size()); // list size
 
-		for (L2ItemInstance item : this.sellList.keySet())
+		for (L2ItemInstance item : sellList.keySet())
 		{
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());
 			writeD(item.getItemId());
-			writeQ(this.sellList.get(item)); // count
+			writeQ(sellList.get(item)); // count
 			writeH(item.getItem().getType2());
 			writeH(0); // unknown
 			writeQ(0); // price, u shouldnt get any adena for crops, only raw materials

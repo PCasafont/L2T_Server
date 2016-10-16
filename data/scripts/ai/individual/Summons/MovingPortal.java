@@ -43,17 +43,17 @@ public class MovingPortal extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addSkillSeeId(this.portalId);
+        addSkillSeeId(portalId);
     }
 
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (skill.getId() == this.instantTeleport.getId())
+        if (skill.getId() == instantTeleport.getId())
         {
             if (!caster.isPlayingEvent() && npc.getOwner() == caster &&
                     GeoData.getInstance().canSeeTarget(npc, caster) &&
-                    caster.isInsideRadius(npc, this.instantTeleport.getSkillRadius(), true, false))
+                    caster.isInsideRadius(npc, instantTeleport.getSkillRadius(), true, false))
             {
                 int x = npc.getX() + Rnd.get(-50, 50);
                 int y = npc.getY() + Rnd.get(-50, 50);

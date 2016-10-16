@@ -47,143 +47,143 @@ public class PetInfo extends L2GameServerPacket
 	public PetInfo(L2Summon summon, int val)
 	{
 		this.summon = summon;
-		this.isSummoned = this.summon.isShowSummonAnimation();
-		this.x = this.summon.getX();
-		this.y = this.summon.getY();
-		this.z = this.summon.getZ();
-		this.heading = this.summon.getHeading();
-		this.mAtkSpd = this.summon.getMAtkSpd();
-		this.pAtkSpd = this.summon.getPAtkSpd();
-		this.multiplier = this.summon.getMovementSpeedMultiplier();
-		this.runSpd = Math.round(this.summon.getTemplate().baseRunSpd);
-		this.walkSpd = Math.round(this.summon.getTemplate().baseWalkSpd);
-		this.swimRunSpd = this.flRunSpd = this.flyRunSpd = this.runSpd;
-		this.swimWalkSpd = this.flWalkSpd = this.flyWalkSpd = this.walkSpd;
-		this.maxHp = this.summon.getMaxVisibleHp();
-		this.maxMp = this.summon.getMaxMp();
+		isSummoned = this.summon.isShowSummonAnimation();
+		x = this.summon.getX();
+		y = this.summon.getY();
+		z = this.summon.getZ();
+		heading = this.summon.getHeading();
+		mAtkSpd = this.summon.getMAtkSpd();
+		pAtkSpd = this.summon.getPAtkSpd();
+		multiplier = this.summon.getMovementSpeedMultiplier();
+		runSpd = Math.round(this.summon.getTemplate().baseRunSpd);
+		walkSpd = Math.round(this.summon.getTemplate().baseWalkSpd);
+		swimRunSpd = flRunSpd = flyRunSpd = runSpd;
+		swimWalkSpd = flWalkSpd = flyWalkSpd = walkSpd;
+		maxHp = this.summon.getMaxVisibleHp();
+		maxMp = this.summon.getMaxMp();
 		this.val = val;
 		if (this.summon instanceof L2PetInstance)
 		{
 			L2PetInstance pet = (L2PetInstance) this.summon;
-			this.curFed = pet.getCurrentFed(); // how fed it is
-			this.maxFed = pet.getMaxFed(); //max fed it can be
+			curFed = pet.getCurrentFed(); // how fed it is
+			maxFed = pet.getMaxFed(); //max fed it can be
 		}
 		else if (this.summon instanceof L2SummonInstance)
 		{
 			L2SummonInstance sum = (L2SummonInstance) this.summon;
-			this.curFed = sum.getTimeRemaining();
-			this.maxFed = sum.getTotalLifeTime();
+			curFed = sum.getTimeRemaining();
+			maxFed = sum.getTotalLifeTime();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.summon.getSummonType());
-		writeD(this.summon.getObjectId());
-		writeD(this.summon.getTemplate().TemplateId + 1000000);
+		writeC(summon.getSummonType());
+		writeD(summon.getObjectId());
+		writeD(summon.getTemplate().TemplateId + 1000000);
 
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
-		writeD(this.mAtkSpd);
-		writeD(this.pAtkSpd);
-		writeH(this.runSpd);
-		writeH(this.walkSpd);
-		writeH(this.swimRunSpd);
-		writeH(this.swimWalkSpd);
-		writeH(this.flRunSpd);
-		writeH(this.flWalkSpd);
-		writeH(this.flyRunSpd);
-		writeH(this.flyWalkSpd);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
+		writeD(mAtkSpd);
+		writeD(pAtkSpd);
+		writeH(runSpd);
+		writeH(walkSpd);
+		writeH(swimRunSpd);
+		writeH(swimWalkSpd);
+		writeH(flRunSpd);
+		writeH(flWalkSpd);
+		writeH(flyRunSpd);
+		writeH(flyWalkSpd);
 
-		writeF(this.multiplier); // movement multiplier
-		writeF(this.summon.getAttackSpeedMultiplier()); // attack speed multiplier
-		writeF(this.summon.getTemplate().fCollisionRadius);
-		writeF(this.summon.getTemplate().fCollisionHeight);
-		writeD(this.summon.getWeapon()); // right hand weapon
-		writeD(this.summon.getArmor()); // body armor
+		writeF(multiplier); // movement multiplier
+		writeF(summon.getAttackSpeedMultiplier()); // attack speed multiplier
+		writeF(summon.getTemplate().fCollisionRadius);
+		writeF(summon.getTemplate().fCollisionHeight);
+		writeD(summon.getWeapon()); // right hand weapon
+		writeD(summon.getArmor()); // body armor
 		writeD(0); // left hand weapon
-		writeC(this.isSummoned ? 2 : this.val); //  0=teleported  1=default   2=summoned
+		writeC(isSummoned ? 2 : val); //  0=teleported  1=default   2=summoned
 		writeD(-1); // High Five NPCStringId
-		writeS(this.summon.getName()); // summon name
+		writeS(summon.getName()); // summon name
 		writeD(-1); // High Five NPCStringId
-		writeS(this.summon.getTitle()); // owner name
-		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getPvpFlag() :
+		writeS(summon.getTitle()); // owner name
+		writeC(summon.getOwner() != null ? summon.getOwner().getPvpFlag() :
 				0); //0 = white,2= purpleblink, if its greater then karma = purple
-		writeD(this.summon.getOwner() != null ? this.summon.getOwner().getReputation() : 0); // karma
-		writeD(this.curFed); // how fed it is
-		writeD(this.maxFed); //max fed it can be
-		writeD((int) this.summon.getCurrentHp());//current hp
-		writeD(this.maxHp);// max hp
-		writeD((int) this.summon.getCurrentMp());//current mp
-		writeD(this.maxMp);//max mp
-		writeQ(this.summon.getStat().getSp()); //sp
-		writeC(this.summon.getLevel());// lvl
-		writeQ(this.summon.getStat().getExp());
+		writeD(summon.getOwner() != null ? summon.getOwner().getReputation() : 0); // karma
+		writeD(curFed); // how fed it is
+		writeD(maxFed); //max fed it can be
+		writeD((int) summon.getCurrentHp());//current hp
+		writeD(maxHp);// max hp
+		writeD((int) summon.getCurrentMp());//current mp
+		writeD(maxMp);//max mp
+		writeQ(summon.getStat().getSp()); //sp
+		writeC(summon.getLevel());// lvl
+		writeQ(summon.getStat().getExp());
 
-		if (this.summon.getExpForThisLevel() > summon.getStat().getExp())
+		if (summon.getExpForThisLevel() > summon.getStat().getExp())
 		{
-			writeQ(this.summon.getStat().getExp());// 0%  absolute value
+			writeQ(summon.getStat().getExp());// 0%  absolute value
 		}
 		else
 		{
-			writeQ(this.summon.getExpForThisLevel());// 0%  absolute value
+			writeQ(summon.getExpForThisLevel());// 0%  absolute value
 		}
 
-		writeQ(this.summon.getExpForNextLevel());// 100% absoulte value
-		writeD(this.summon instanceof L2PetInstance ? this.summon.getInventory().getTotalWeight() : 0);//weight
-		writeD(this.summon.getMaxLoad());//max weight it can carry
-		writeD(this.summon.getPAtk(null));//patk
-		writeD(this.summon.getPDef(null));//pdef
-		writeD(this.summon.getAccuracy());//accuracy
-		writeD(this.summon.getEvasionRate(null));//evasion
-		writeD(this.summon.getCriticalHit(null, null));//critical
-		writeD(this.summon.getMAtk(null, null));//matk
-		writeD(this.summon.getMDef(null, null));//mdef
-		writeD(this.summon.getMAccuracy()); // M. Accuracy
-		writeD(this.summon.getMEvasionRate(null)); // M. Evasion
+		writeQ(summon.getExpForNextLevel());// 100% absoulte value
+		writeD(summon instanceof L2PetInstance ? summon.getInventory().getTotalWeight() : 0);//weight
+		writeD(summon.getMaxLoad());//max weight it can carry
+		writeD(summon.getPAtk(null));//patk
+		writeD(summon.getPDef(null));//pdef
+		writeD(summon.getAccuracy());//accuracy
+		writeD(summon.getEvasionRate(null));//evasion
+		writeD(summon.getCriticalHit(null, null));//critical
+		writeD(summon.getMAtk(null, null));//matk
+		writeD(summon.getMDef(null, null));//mdef
+		writeD(summon.getMAccuracy()); // M. Accuracy
+		writeD(summon.getMEvasionRate(null)); // M. Evasion
 		//Log.info(this.summon.getMEvasionRate(null)); // M. Evasion
-		writeD(this.summon.getMCriticalHit(null, null)); // M. Critical
-		writeD((int) this.summon.getStat().getMoveSpeed());//speed
-		writeD(this.summon.getPAtkSpd());//atkspeed
-		writeD(this.summon.getMAtkSpd());//casting speed
+		writeD(summon.getMCriticalHit(null, null)); // M. Critical
+		writeD((int) summon.getStat().getMoveSpeed());//speed
+		writeD(summon.getPAtkSpd());//atkspeed
+		writeD(summon.getMAtkSpd());//casting speed
 
-		int npcId = this.summon.getTemplate().NpcId;
-		writeC(this.summon.isMountable() ? 1 : 0);//c2	ride button
+		int npcId = summon.getTemplate().NpcId;
+		writeC(summon.isMountable() ? 1 : 0);//c2	ride button
 
-		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getTeam() : 0); // team aura (1 = blue, 2 = red)
-		writeC(this.summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit
-		writeC(this.summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
+		writeC(summon.getOwner() != null ? summon.getOwner().getTeam() : 0); // team aura (1 = blue, 2 = red)
+		writeC(summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit
+		writeC(summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
 
 		int form = 0;
 		if (npcId == 16041 || npcId == 16042)
 		{
-			if (this.summon.getLevel() > 84)
+			if (summon.getLevel() > 84)
 			{
 				form = 3;
 			}
-			else if (this.summon.getLevel() > 79)
+			else if (summon.getLevel() > 79)
 			{
 				form = 2;
 			}
-			else if (this.summon.getLevel() > 74)
+			else if (summon.getLevel() > 74)
 			{
 				form = 1;
 			}
 		}
 		else if (npcId == 16025 || npcId == 16037)
 		{
-			if (this.summon.getLevel() > 69)
+			if (summon.getLevel() > 69)
 			{
 				form = 3;
 			}
-			else if (this.summon.getLevel() > 64)
+			else if (summon.getLevel() > 64)
 			{
 				form = 2;
 			}
-			else if (this.summon.getLevel() > 59)
+			else if (summon.getLevel() > 59)
 			{
 				form = 1;
 			}
@@ -193,11 +193,11 @@ public class PetInfo extends L2GameServerPacket
 		writeH(0x00); // ???
 		writeH(0x00); // ???
 
-		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getSpentSummonPoints() : 0); // Consumed summon points
-		writeC(this.summon.getOwner() != null ? this.summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
+		writeC(summon.getOwner() != null ? summon.getOwner().getSpentSummonPoints() : 0); // Consumed summon points
+		writeC(summon.getOwner() != null ? summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
 
-		Set<Integer> abnormal = this.summon.getAbnormalEffect();
-		if (this.summon.getOwner().getAppearance().getInvisible())
+		Set<Integer> abnormal = summon.getAbnormalEffect();
+		if (summon.getOwner().getAppearance().getInvisible())
 		{
 			abnormal.add(VisualEffect.STEALTH.getId());
 		}

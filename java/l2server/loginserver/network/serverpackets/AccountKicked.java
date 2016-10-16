@@ -36,7 +36,7 @@ public final class AccountKicked extends L2LoginServerPacket
 
 		public final int getCode()
 		{
-			return this.code;
+			return code;
 		}
 	}
 
@@ -53,6 +53,6 @@ public final class AccountKicked extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x02);
-		writeD(this.reason.getCode());
+		writeD(reason.getCode());
 	}
 }

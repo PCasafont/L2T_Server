@@ -63,11 +63,11 @@ public final class SiegeDefenderList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.castle.getCastleId());
+		writeD(castle.getCastleId());
 		writeD(0x00); //0
 		writeD(0x01); //1
 		writeD(0x00); //0
-		int size = this.castle.getSiege().getDefenderClans().size() + this.castle.getSiege().getDefenderWaitingClans().size();
+		int size = castle.getSiege().getDefenderClans().size() + castle.getSiege().getDefenderWaitingClans().size();
 		if (size > 0)
 		{
 			L2Clan clan;
@@ -75,7 +75,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 			writeD(size);
 			writeD(size);
 			// Listing the Lord and the approved clans
-			for (L2SiegeClan siegeclan : this.castle.getSiege().getDefenderClans())
+			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderClans())
 			{
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				if (clan == null)
@@ -108,7 +108,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 				writeS(""); //AllyLeaderName
 				writeD(clan.getAllyCrestId());
 			}
-			for (L2SiegeClan siegeclan : this.castle.getSiege().getDefenderWaitingClans())
+			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderWaitingClans())
 			{
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				writeD(clan.getClanId());

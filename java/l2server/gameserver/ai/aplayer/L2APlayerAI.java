@@ -56,17 +56,17 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	public L2APlayerAI(AIAccessor accessor)
 	{
 		super(accessor);
-		this.player = (L2ApInstance) this.accessor.getActor();
-		this.task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 5000, 1000);
+		player = (L2ApInstance) this.accessor.getActor();
+		task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 5000, 1000);
 
 		// The players always run
-		this.player.setRunning();
+		player.setRunning();
 
 		//_player.setTitle("L2 Tenkai");
 
 		checkGear();
 
-		for (L2ItemInstance item : this.player.getInventory().getItems())
+		for (L2ItemInstance item : player.getInventory().getItems())
 		{
 			if (item == null || !item.isEquipped())
 			{
@@ -125,21 +125,21 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 
 	private void checkGear()
 	{
-		if (this.player.getActiveWeaponItem() != null && this.player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D)
+		if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D)
 		{
 			return;
 		}
 
 		for (int itemId : getRandomGear())
 		{
-			L2ItemInstance item = this.player.getInventory().addItem("", itemId, 1, this.player, this.player);
+			L2ItemInstance item = player.getInventory().addItem("", itemId, 1, player, player);
 			if (item != null && EnchantItemTable.isEnchantable(item))
 			{
 				item.setEnchantLevel(10 + Rnd.get(5));
 			}
 		}
 
-		for (L2ItemInstance item : this.player.getInventory().getItems())
+		for (L2ItemInstance item : player.getInventory().getItems())
 		{
 			if (item == null)
 			{
@@ -150,11 +150,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			{
 				if (item.getItem().getCrystalType() > L2Item.CRYSTAL_D)
 				{
-					this.player.useEquippableItem(item, false);
+					player.useEquippableItem(item, false);
 				}
 				else
 				{
-					this.player.destroyItem("Destroy", item, this.player, false);
+					player.destroyItem("Destroy", item, player, false);
 				}
 			}
 		}
@@ -162,14 +162,14 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 
 	protected L2Character decideTarget()
 	{
-		L2Character target = this.player.getTarget() instanceof L2Character ? (L2Character) this.player.getTarget() : null;
+		L2Character target = player.getTarget() instanceof L2Character ? (L2Character) player.getTarget() : null;
 
-		if (this.player.getParty() != null)
+		if (player.getParty() != null)
 		{
-			target = this.player.getParty().getTarget();
+			target = player.getParty().getTarget();
 			//if (!this.player.isInsideRadius(target, 3000, false, false))
 			//	this.player.teleToLocation(target.getX(), target.getY(), target.getZ());
-			for (L2PcInstance member : this.player.getParty().getPartyMembers())
+			for (L2PcInstance member : player.getParty().getPartyMembers())
 			{
 				if (member.isDead() && member.getClassId() == 146)
 				{
@@ -181,11 +181,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		//if (target == null || target.isDead())
 		//	L2World.getInstance().getPlayer("lolol");
 
-		if (target == null || target.getDistanceSq(this.player) > 2000 * 2000 || !target.isVisible())
+		if (target == null || target.getDistanceSq(player) > 2000 * 2000 || !target.isVisible())
 		{
-			for (L2Character cha : this.player.getKnownList().getKnownCharacters())
+			for (L2Character cha : player.getKnownList().getKnownCharacters())
 			{
-				if (!cha.isDead() && cha.isVisible() && this.player.isEnemy(cha))
+				if (!cha.isDead() && cha.isVisible() && player.isEnemy(cha))
 				{
 					target = cha;
 					break;
@@ -193,20 +193,20 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			}
 		}
 
-		if (target != null && !this.player.isEnemy(target))
+		if (target != null && !player.isEnemy(target))
 		{
 			target = null;
 		}
 
-		this.player.setTarget(target);
+		player.setTarget(target);
 
 		return target;
 	}
 
 	protected void travelTo(L2Character target)
 	{
-		Point3D direction = new Point3D(target.getX() - this.player.getX(), target.getY() - this.player.getY(),
-				target.getZ() - this.player.getZ());
+		Point3D direction = new Point3D(target.getX() - player.getX(), target.getY() - player.getY(),
+				target.getZ() - player.getZ());
 		double length = Math.sqrt(
 				(long) direction.getX() * (long) direction.getX() + (long) direction.getY() * (long) direction.getY());
 		double angle = Math.acos(direction.getX() / length);
@@ -215,21 +215,21 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			angle = Math.PI * 2 - angle;
 		}
 
-		int newX = this.player.getX() + (int) (1000 * Math.cos(angle));
-		int newY = this.player.getY() + (int) (1000 * Math.sin(angle));
-		int newZ = GeoData.getInstance().getHeight(newX, newY, this.player.getZ());
+		int newX = player.getX() + (int) (1000 * Math.cos(angle));
+		int newY = player.getY() + (int) (1000 * Math.sin(angle));
+		int newZ = GeoData.getInstance().getHeight(newX, newY, player.getZ());
 		//int newX = target.getX();
 		//int newY = target.getY();
 		//int newZ = target.getZ();
 
 		double offset = 0.1;
 		while (!GeoData.getInstance()
-				.canMoveFromToTarget(this.player.getX(), this.player.getY(), this.player.getZ(), newX, newY, newZ, 0) &&
+				.canMoveFromToTarget(player.getX(), player.getY(), player.getZ(), newX, newY, newZ, 0) &&
 				offset < Math.PI)
 		{
-			newX = this.player.getX() + (int) (1000 * Math.cos(angle + offset));
-			newY = this.player.getY() + (int) (1000 * Math.sin(angle + offset));
-			newZ = GeoData.getInstance().getHeight(newX, newY, this.player.getZ() + 50);
+			newX = player.getX() + (int) (1000 * Math.cos(angle + offset));
+			newY = player.getY() + (int) (1000 * Math.sin(angle + offset));
+			newZ = GeoData.getInstance().getHeight(newX, newY, player.getZ() + 50);
 			// This makes offset alternate direction and increment a bit at each loop
 			offset += offset * -2.01;
 		}
@@ -242,35 +242,35 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 
 	protected boolean interactWith(L2Character target)
 	{
-		if (this.player.isAlly(target))
+		if (player.isAlly(target))
 		{
 			if (target.isDead())
 			{
 				// TODO: Resurrect (in healers override it)
 
-				for (L2PcInstance member : this.player.getParty().getPartyMembers())
+				for (L2PcInstance member : player.getParty().getPartyMembers())
 				{
 					if (member.getClassId() == 146 && !member.isDead() || member.isCastingNow())
 					{
 						return false;
 					}
 				}
-				if (!this.player.isCastingNow())
+				if (!player.isCastingNow())
 				{
-					for (L2Skill skill : this.player.getAllSkills())
+					for (L2Skill skill : player.getAllSkills())
 					{
 						if (skill.getSkillType() != L2SkillType.RESURRECT)
 						{
 							continue;
 						}
 
-						if (this.player.useMagic(skill, true, false))
+						if (player.useMagic(skill, true, false))
 						{
 							return true;
 						}
 					}
 
-					L2ItemInstance scroll = this.player.getInventory().addItem("", 737, 1, this.player, this.player);
+					L2ItemInstance scroll = player.getInventory().addItem("", 737, 1, player, player);
 					IItemHandler handler = ItemHandler.getInstance().getItemHandler(scroll.getEtcItem());
 					if (handler == null)
 					{
@@ -278,8 +278,8 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 					}
 					else
 					{
-						this.player.setTarget(target);
-						handler.useItem(this.player, scroll, false);
+						player.setTarget(target);
+						handler.useItem(player, scroll, false);
 					}
 				}
 			}
@@ -296,28 +296,28 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	protected void think()
 	{
 		// If this object no longer belongs to the player, cancel the task
-		if (this != this.accessor.getActor().getAI())
+		if (this != accessor.getActor().getAI())
 		{
-			this.task.cancel(false);
+			task.cancel(false);
 			return;
 		}
 
 		// If the player left, cancel the task
-		if (!this.player.isOnline())
+		if (!player.isOnline())
 		{
-			this.task.cancel(false);
+			task.cancel(false);
 			return;
 		}
 
-		if (this.player.getParty() != null && this.player.getParty().getLeader() == this.player)
+		if (player.getParty() != null && player.getParty().getLeader() == player)
 		{
-			this.player.getParty().think();
+			player.getParty().think();
 		}
 
 		// If dead, make a little timer
-		if (this.player.isDead())
+		if (player.isDead())
 		{
-			this.player.setReputation(0);
+			player.setReputation(0);
 
 			// If there's some nearby ally, wait
 			for (L2PcInstance player : this.player.getKnownList().getKnownPlayers().values())
@@ -329,55 +329,55 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 				}
 			}
 
-			if (this.timer == 0)
+			if (timer == 0)
 			{
-				this.timer = System.currentTimeMillis() + 5000L;
+				timer = System.currentTimeMillis() + 5000L;
 			}
-			else if (this.timer < System.currentTimeMillis())
+			else if (timer < System.currentTimeMillis())
 			{
-				this.player.doRevive();
-				this.player.teleToLocation(TeleportWhereType.Town);
-				this.timer = 0;
+				player.doRevive();
+				player.teleToLocation(TeleportWhereType.Town);
+				timer = 0;
 			}
 			return;
 		}
 
 		// Check if the player was disarmed and try to equip the weapon again
-		if (this.player.getActiveWeaponInstance() == null && !this.player.isDisarmed())
+		if (player.getActiveWeaponInstance() == null && !player.isDisarmed())
 		{
-			for (L2ItemInstance item : this.player.getInventory().getItems())
+			for (L2ItemInstance item : player.getInventory().getItems())
 			{
 				if (item.isWeapon() && item.getItem().getCrystalType() > L2Item.CRYSTAL_D)
 				{
-					this.player.useEquippableItem(item, false);
+					player.useEquippableItem(item, false);
 					break;
 				}
 			}
 
-			if (this.player.getActiveWeaponInstance() == null)
+			if (player.getActiveWeaponInstance() == null)
 			{
 				checkGear();
 			}
 		}
 
 		// Check shots
-		L2ItemInstance item = this.player.getInventory().getItemByItemId(17754);
+		L2ItemInstance item = player.getInventory().getItemByItemId(17754);
 		if (item == null || item.getCount() < 1000)
 		{
-			this.player.getInventory().addItem("", 17754, 1000, this.player, this.player);
+			player.getInventory().addItem("", 17754, 1000, player, player);
 		}
-		item = this.player.getInventory().getItemByItemId(19442);
+		item = player.getInventory().getItemByItemId(19442);
 		if (item == null || item.getCount() < 1000)
 		{
-			this.player.getInventory().addItem("", 19442, 1000, this.player, this.player);
+			player.getInventory().addItem("", 19442, 1000, player, player);
 		}
-		this.player.checkAutoShots();
+		player.checkAutoShots();
 
 		// Check spirit ores
-		item = this.player.getInventory().getItemByItemId(3031);
+		item = player.getInventory().getItemByItemId(3031);
 		if (item == null || item.getCount() < 100)
 		{
-			this.player.getInventory().addItem("", 3031, 100, this.player, this.player);
+			player.getInventory().addItem("", 3031, 100, player, player);
 		}
 
 		SkillTable.getInstance().getInfo(14779, 1).getEffects(getActor(), getActor());
@@ -409,29 +409,29 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		getActor().setCurrentHpMp(getActor().getMaxHp(), getActor().getMaxMp());
 
 		// Artificially using the NPC heal whenever possible
-		if (getIntention() == CtrlIntention.AI_INTENTION_IDLE && !this.player.isInCombat() &&
-				(this.player.getPvpFlag() == 0 || this.player.isInsideZone(L2Character.ZONE_PEACE)))
+		if (getIntention() == CtrlIntention.AI_INTENTION_IDLE && !player.isInCombat() &&
+				(player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE)))
 		{
-			this.player.setCurrentHp(this.player.getMaxHp());
-			this.player.setCurrentMp(this.player.getMaxMp());
-			this.player.setCurrentCp(this.player.getMaxCp());
-			this.player.broadcastUserInfo();
+			player.setCurrentHp(player.getMaxHp());
+			player.setCurrentMp(player.getMaxMp());
+			player.setCurrentCp(player.getMaxCp());
+			player.broadcastUserInfo();
 		}
 
-		if (!this.player.isNoblesseBlessed())
+		if (!player.isNoblesseBlessed())
 		{
-			this.player.setTarget(this.player);
-			L2Skill skill = this.player.getKnownSkill(1323);
+			player.setTarget(player);
+			L2Skill skill = player.getKnownSkill(1323);
 			if (skill != null)
 			{
-				this.player.useMagic(skill, true, false);
+				player.useMagic(skill, true, false);
 			}
 		}
 
 		boolean forceEnabled = false;
-		for (L2Abnormal e : this.player.getAllEffects())
+		for (L2Abnormal e : player.getAllEffects())
 		{
-			if (e.getSkill().getName().endsWith(this.player.getName() + " Force"))
+			if (e.getSkill().getName().endsWith(player.getName() + " Force"))
 			{
 				forceEnabled = true;
 				break;
@@ -440,11 +440,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 
 		if (!forceEnabled)
 		{
-			for (L2Skill force : this.player.getAllSkills())
+			for (L2Skill force : player.getAllSkills())
 			{
 				if (force.getName().endsWith(" Force"))
 				{
-					this.player.useMagic(force, true, false);
+					player.useMagic(force, true, false);
 				}
 			}
 		}
@@ -467,13 +467,13 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		if (target == null)
 		{
 			setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			if (this.player.isInParty())
+			if (player.isInParty())
 			{
-				for (L2PcInstance member : this.player.getParty().getPartyMembers())
+				for (L2PcInstance member : player.getParty().getPartyMembers())
 				{
-					if (member != this.player && (this.player.isInsideRadius(member, 30, false, false) ||
-							!this.player.isInsideRadius(member, 200, false, false) &&
-									this.player.isInsideRadius(member, 3000, false, false)))
+					if (member != player && (player.isInsideRadius(member, 30, false, false) ||
+							!player.isInsideRadius(member, 200, false, false) &&
+									player.isInsideRadius(member, 3000, false, false)))
 					{
 						setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
 								new L2CharPosition(member.getX() + Rnd.get(100) - 50, member.getY() + Rnd.get(100) - 50,
@@ -484,11 +484,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			}
 			else
 			{
-				L2PcInstance mostPvP = L2World.getInstance().getMostPvP(this.player.isInParty(), true);
+				L2PcInstance mostPvP = L2World.getInstance().getMostPvP(player.isInParty(), true);
 
-				if (mostPvP != null && this.player.getPvpFlag() == 0)
+				if (mostPvP != null && player.getPvpFlag() == 0)
 				{
-					this.player.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
+					player.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
 				}
 				return;
 			}

@@ -41,20 +41,20 @@ public class FaenorEventParser extends FaenorParser
 			Log.fine("Parsing Event \"" + ID + "\"");
 		}
 
-		this.eventDates = DateRange.parse(attribute(eventNode, "Active"), DATE_FORMAT);
+		eventDates = DateRange.parse(attribute(eventNode, "Active"), DATE_FORMAT);
 
 		Date currentDate = new Date();
-		if (this.eventDates.getEndDate().before(currentDate))
+		if (eventDates.getEndDate().before(currentDate))
 		{
 			Log.info("Event ID: (" + ID + ") has passed... Ignored.");
 			return;
 		}
 
-		if (this.eventDates.getStartDate().after(currentDate))
+		if (eventDates.getStartDate().after(currentDate))
 		{
 			Log.info("Event ID: (" + ID + ") is not active yet... Ignored.");
 			ThreadPoolManager.getInstance().scheduleGeneral(() -> parseEventDropAndMessage(eventNode),
-					this.eventDates.getStartDate().getTime() - currentDate.getTime());
+					eventDates.getStartDate().getTime() - currentDate.getTime());
 			return;
 		}
 
@@ -92,7 +92,7 @@ public class FaenorEventParser extends FaenorParser
 
 			if (type.equalsIgnoreCase("OnJoin"))
 			{
-				this.bridge.onPlayerLogin(message, this.eventDates);
+				bridge.onPlayerLogin(message, eventDates);
 			}
 		}
 		catch (Exception e)
@@ -130,7 +130,7 @@ public class FaenorEventParser extends FaenorParser
 			int[] count = IntList.parse(attribute(drop, "Count"));
 			double chance = getPercent(attribute(drop, "Chance"));
 
-			this.bridge.addEventDrop(items, count, chance, this.eventDates);
+			bridge.addEventDrop(items, count, chance, eventDates);
 		}
 		catch (Exception e)
 		{

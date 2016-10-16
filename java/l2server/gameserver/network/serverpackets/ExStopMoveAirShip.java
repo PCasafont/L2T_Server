@@ -27,20 +27,20 @@ public class ExStopMoveAirShip extends L2GameServerPacket
 
 	public ExStopMoveAirShip(L2Character ship)
 	{
-		this.objectId = ship.getObjectId();
-		this.x = ship.getX();
-		this.y = ship.getY();
-		this.z = ship.getZ();
-		this.heading = ship.getHeading();
+		objectId = ship.getObjectId();
+		x = ship.getX();
+		y = ship.getY();
+		z = ship.getZ();
+		heading = ship.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(objectId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 	}
 }

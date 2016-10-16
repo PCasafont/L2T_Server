@@ -38,7 +38,7 @@ public final class LambdaStats extends Lambda
 	@Override
 	public double calc(Env env)
 	{
-		switch (this.stat)
+		switch (stat)
 		{
 			case PLAYER_LEVEL:
 				if (env.player == null)

@@ -28,7 +28,7 @@ public class ExDuelUpdateUserInfo extends L2GameServerPacket
 
 	public ExDuelUpdateUserInfo(L2PcInstance cha)
 	{
-		this.activeChar = cha;
+		activeChar = cha;
 	}
 
 	/**
@@ -36,15 +36,15 @@ public class ExDuelUpdateUserInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.activeChar.getName());
-		writeD(this.activeChar.getObjectId());
-		writeD(this.activeChar.getCurrentClass().getId());
-		writeD(this.activeChar.getLevel());
-		writeD((int) this.activeChar.getCurrentHp());
-		writeD(this.activeChar.getMaxVisibleHp());
-		writeD((int) this.activeChar.getCurrentMp());
-		writeD(this.activeChar.getMaxMp());
-		writeD((int) this.activeChar.getCurrentCp());
-		writeD(this.activeChar.getMaxCp());
+		writeS(activeChar.getName());
+		writeD(activeChar.getObjectId());
+		writeD(activeChar.getCurrentClass().getId());
+		writeD(activeChar.getLevel());
+		writeD((int) activeChar.getCurrentHp());
+		writeD(activeChar.getMaxVisibleHp());
+		writeD((int) activeChar.getCurrentMp());
+		writeD(activeChar.getMaxMp());
+		writeD((int) activeChar.getCurrentCp());
+		writeD(activeChar.getMaxCp());
 	}
 }

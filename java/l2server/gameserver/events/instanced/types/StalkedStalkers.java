@@ -43,7 +43,7 @@ public class StalkedStalkers extends EventInstance
 		}
 
 		// Iterate over all participated players
-		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -54,7 +54,7 @@ public class StalkedStalkers extends EventInstance
 					randomStalkedPlayer = selectRandomParticipant();
 					limit++;
 				}
-				this.assignedStalkers.put(playerInstance.getObjectId(), randomStalkedPlayer.getName());
+				assignedStalkers.put(playerInstance.getObjectId(), randomStalkedPlayer.getName());
 				stalkerMessage(playerInstance, -1);
 				playerInstance.addEventPoints(5);
 			}
@@ -67,7 +67,7 @@ public class StalkedStalkers extends EventInstance
 	public void calculateRewards()
 	{
 		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : this.teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			boolean added = false;
 			int index = 0;
@@ -96,7 +96,7 @@ public class StalkedStalkers extends EventInstance
 	@Override
 	public void stopFight()
 	{
-		this.assignedStalkers.clear();
+		assignedStalkers.clear();
 		super.stopFight();
 	}
 
@@ -104,10 +104,10 @@ public class StalkedStalkers extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		if (this.teams[0].getParticipatedPlayerCount() > 0)
+		if (teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Participant points:<br>";
-			for (L2PcInstance participant : this.teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
@@ -131,7 +131,7 @@ public class StalkedStalkers extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, this.teams[0].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, teams[0].getCoords(), false, false);
 
 		if (killerCharacter == null)
 		{
@@ -158,15 +158,15 @@ public class StalkedStalkers extends EventInstance
 			return;
 		}
 
-		if (killedPlayerInstance.getName().equalsIgnoreCase(this.assignedStalkers.get(killerPlayerInstance.getObjectId())))
+		if (killedPlayerInstance.getName().equalsIgnoreCase(assignedStalkers.get(killerPlayerInstance.getObjectId())))
 		{
-			this.assignedStalkers.remove(killerPlayerInstance.getObjectId());
+			assignedStalkers.remove(killerPlayerInstance.getObjectId());
 			L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 			while (randomStalkedPlayer.getObjectId() == killerPlayerInstance.getObjectId())
 			{
 				randomStalkedPlayer = selectRandomParticipant();
 			}
-			this.assignedStalkers.put(killerPlayerInstance.getObjectId(), randomStalkedPlayer.getName());
+			assignedStalkers.put(killerPlayerInstance.getObjectId(), randomStalkedPlayer.getName());
 			stalkerMessage(killerPlayerInstance, -2);
 			killerPlayerInstance.addEventPoints(3);
 		}
@@ -202,16 +202,16 @@ public class StalkedStalkers extends EventInstance
 		}
 		if (level > 0)
 		{
-			player = L2World.getInstance().getPlayer(this.assignedStalkers.get(stalker.getObjectId()));
+			player = L2World.getInstance().getPlayer(assignedStalkers.get(stalker.getObjectId()));
 			if (player == null || player.getEvent() != this)
 			{
-				this.assignedStalkers.remove(stalker.getObjectId());
+				assignedStalkers.remove(stalker.getObjectId());
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalker.getObjectId())
 				{
 					randomStalkedPlayer = selectRandomParticipant();
 				}
-				this.assignedStalkers.put(stalker.getObjectId(), randomStalkedPlayer.getName());
+				assignedStalkers.put(stalker.getObjectId(), randomStalkedPlayer.getName());
 				level = -3;
 			}
 		}
@@ -271,18 +271,18 @@ public class StalkedStalkers extends EventInstance
 
 		String playerName = CharNameTable.getInstance().getNameById(playerObjectId);
 
-		List<Integer> toIterate = new ArrayList<>(this.assignedStalkers.keySet());
+		List<Integer> toIterate = new ArrayList<>(assignedStalkers.keySet());
 		for (int stalkerObjId : toIterate)
 		{
-			if (this.assignedStalkers.get(stalkerObjId).equals(playerName))
+			if (assignedStalkers.get(stalkerObjId).equals(playerName))
 			{
-				this.assignedStalkers.remove(stalkerObjId);
+				assignedStalkers.remove(stalkerObjId);
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalkerObjId)
 				{
 					randomStalkedPlayer = selectRandomParticipant();
 				}
-				this.assignedStalkers.put(stalkerObjId, randomStalkedPlayer.getName());
+				assignedStalkers.put(stalkerObjId, randomStalkedPlayer.getName());
 				stalkerMessage(L2World.getInstance().getAllPlayers().get(stalkerObjId), -3);
 			}
 		}

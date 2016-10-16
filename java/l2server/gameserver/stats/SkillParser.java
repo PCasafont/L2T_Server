@@ -72,7 +72,7 @@ public final class SkillParser extends StatsParser
 	@Override
 	protected StatsSet getStatsSet()
 	{
-		return this.sets[this.currentLevel];
+		return sets[currentLevel];
 	}
 
 	protected String getTableValue(String name)
@@ -81,26 +81,26 @@ public final class SkillParser extends StatsParser
 		{
 			String[] table = null;
 			int level = 0;
-			if (this.currentEnchantRoute > 0)
+			if (currentEnchantRoute > 0)
 			{
-				Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = this.enchantTables.get(name);
+				Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = enchantTables.get(name);
 				if (nameMap != null)
 				{
-					Map<Integer, SkillEnchantBonusData> routeMap = nameMap.get(this.currentEnchantRoute);
+					Map<Integer, SkillEnchantBonusData> routeMap = nameMap.get(currentEnchantRoute);
 					if (routeMap != null)
 					{
-						SkillEnchantBonusData routeTable = routeMap.get(this.currentLevel);
+						SkillEnchantBonusData routeTable = routeMap.get(currentLevel);
 						if (routeTable != null)
 						{
 							table = routeTable.data;
-							level = this.currentEnchantLevel;
+							level = currentEnchantLevel;
 
 							// Operations
 							if (routeTable.type != SkillEnchantBonusType.SET)
 							{
 								float value = Float.parseFloat(table[level - 1]);
-								String[] mainTable = this.tables.get(name);
-								int mainLevel = this.currentLevel;
+								String[] mainTable = tables.get(name);
+								int mainLevel = currentLevel;
 								if (mainLevel > mainTable.length)
 								{
 									mainLevel = 1;
@@ -127,8 +127,8 @@ public final class SkillParser extends StatsParser
 
 			if (table == null)
 			{
-				table = this.tables.get(name);
-				level = this.currentLevel;
+				table = tables.get(name);
+				level = currentLevel;
 			}
 
 			if (table.length == 0)
@@ -145,7 +145,7 @@ public final class SkillParser extends StatsParser
 		}
 		catch (RuntimeException e)
 		{
-			Log.log(Level.SEVERE, "Error in table: " + name + " of Skill Id " + this.id, e);
+			Log.log(Level.SEVERE, "Error in table: " + name + " of Skill Id " + id, e);
 			return null;
 		}
 	}
@@ -170,7 +170,7 @@ public final class SkillParser extends StatsParser
 			array.add(data.nextToken());
 		}
 
-		this.tables.put(name, array.toArray(new String[array.size()]));
+		tables.put(name, array.toArray(new String[array.size()]));
 
 		if (!n.getChildren().isEmpty())
 		{
@@ -214,7 +214,7 @@ public final class SkillParser extends StatsParser
 				}
 			}
 
-			this.enchantTables.put(name, nameMap);
+			enchantTables.put(name, nameMap);
 		}
 	}
 
@@ -222,24 +222,24 @@ public final class SkillParser extends StatsParser
 	public void parse() throws RuntimeException
 	{
 		// Basic data
-		int levels = this.node.getInt("levels");
-		this.sets = new StatsSet[levels];
+		int levels = node.getInt("levels");
+		sets = new StatsSet[levels];
 		for (int i = 0; i < levels; i++)
 		{
-			this.sets[i] = new StatsSet();
-			this.sets[i].set("skill_id", this.id);
-			this.sets[i].set("level", i + 1);
-			this.sets[i].set("name", this.name);
+			sets[i] = new StatsSet();
+			sets[i].set("skill_id", id);
+			sets[i].set("level", i + 1);
+			sets[i].set("name", name);
 		}
 
-		if (this.sets.length != levels)
+		if (sets.length != levels)
 		{
 			throw new RuntimeException(
-					"Skill id=" + this.id + " number of levels missmatch, " + levels + " levels expected");
+					"Skill id=" + id + " number of levels missmatch, " + levels + " levels expected");
 		}
 
 		// Enchant routes
-		for (XmlNode n : this.node.getChildren())
+		for (XmlNode n : node.getChildren())
 		{
 			boolean enabled = n.getBool("enabled", true);
 			if (Config.isServer(Config.TENKAI))
@@ -252,26 +252,26 @@ public final class SkillParser extends StatsParser
 				int route = n.getInt("id");
 				String[] routeLevels = n.getString("level").split(",");
 				int enchantLevels = EnchantCostsTable.getInstance()
-						.addNewRouteForSkill(this.id, Integer.parseInt(routeLevels[0]), route);
+						.addNewRouteForSkill(id, Integer.parseInt(routeLevels[0]), route);
 				for (String routeLevel : routeLevels)
 				{
 					int level = Integer.parseInt(routeLevel);
-					Map<Integer, StatsSet[]> levelEnchants = this.enchantSets.get(level);
+					Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(level);
 					if (levelEnchants == null)
 					{
 						levelEnchants = new HashMap<>();
-						this.enchantSets.put(level, levelEnchants);
+						enchantSets.put(level, levelEnchants);
 					}
 
 					StatsSet[] enchSets = new StatsSet[enchantLevels];
 					for (int i = 0; i < enchantLevels; i++)
 					{
 						enchSets[i] = new StatsSet();
-						enchSets[i].set("skill_id", this.id);
+						enchSets[i].set("skill_id", id);
 						enchSets[i].set("level", level);
 						enchSets[i].set("enchantRouteId", route);
 						enchSets[i].set("enchantLevel", i + 1);
-						enchSets[i].set("name", this.name);
+						enchSets[i].set("name", name);
 					}
 
 					levelEnchants.put(route, enchSets);
@@ -280,7 +280,7 @@ public final class SkillParser extends StatsParser
 		}
 
 		// Tables
-		for (XmlNode n : this.node.getChildren())
+		for (XmlNode n : node.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("table"))
 			{
@@ -289,33 +289,33 @@ public final class SkillParser extends StatsParser
 		}
 
 		// Sets
-		for (XmlNode n : this.node.getChildren())
+		for (XmlNode n : node.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("set"))
 			{
-				this.currentLevel = 1;
-				while (this.currentLevel <= levels)
+				currentLevel = 1;
+				while (currentLevel <= levels)
 				{
-					this.currentEnchantRoute = 0;
-					Map<Integer, StatsSet[]> levelEnchants = this.enchantSets.get(this.currentLevel);
-					parseBeanSet(n, this.sets[this.currentLevel - 1]);
+					currentEnchantRoute = 0;
+					Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(currentLevel);
+					parseBeanSet(n, sets[currentLevel - 1]);
 
 					if (levelEnchants != null)
 					{
 						for (int route : levelEnchants.keySet())
 						{
-							this.currentEnchantRoute = route;
-							this.currentEnchantLevel = 1;
+							currentEnchantRoute = route;
+							currentEnchantLevel = 1;
 							StatsSet[] enchSets = levelEnchants.get(route);
-							while (this.currentEnchantLevel <= enchSets.length)
+							while (currentEnchantLevel <= enchSets.length)
 							{
-								parseBeanSet(n, enchSets[this.currentEnchantLevel - 1]);
-								this.currentEnchantLevel++;
+								parseBeanSet(n, enchSets[currentEnchantLevel - 1]);
+								currentEnchantLevel++;
 							}
 						}
 					}
 
-					this.currentLevel++;
+					currentLevel++;
 				}
 			}
 		}
@@ -323,8 +323,8 @@ public final class SkillParser extends StatsParser
 		// Creating the skill instances
 		for (int i = 0; i < levels; i++)
 		{
-			this.skills.put(i + 1, this.sets[i].getEnum("skillType", L2SkillType.class).makeSkill(this.sets[i]));
-			Map<Integer, StatsSet[]> levelEnchants = this.enchantSets.get(i + 1);
+			skills.put(i + 1, sets[i].getEnum("skillType", L2SkillType.class).makeSkill(sets[i]));
+			Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(i + 1);
 			if (levelEnchants != null)
 			{
 				for (int route : levelEnchants.keySet())
@@ -333,43 +333,43 @@ public final class SkillParser extends StatsParser
 					for (int j = 0; j < enchSets.length; j++)
 					{
 						int hash = (i + 1) * 1000000 + route * 1000 + j + 1;
-						this.skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
+						skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
 					}
 				}
 			}
 		}
 
 		// Parsing the <for>s
-		this.currentLevel = 1;
-		while (this.currentLevel <= levels)
+		currentLevel = 1;
+		while (currentLevel <= levels)
 		{
-			this.currentEnchantRoute = 0;
-			Map<Integer, StatsSet[]> levelEnchants = this.enchantSets.get(this.currentLevel);
-			for (XmlNode n : this.node.getChildren())
+			currentEnchantRoute = 0;
+			Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(currentLevel);
+			for (XmlNode n : node.getChildren())
 			{
 				if (n.getName().equalsIgnoreCase("for"))
 				{
-					parseTemplate(n, this.skills.get(this.currentLevel));
+					parseTemplate(n, skills.get(currentLevel));
 
 					if (levelEnchants != null)
 					{
 						for (int route : levelEnchants.keySet())
 						{
-							this.currentEnchantRoute = route;
-							this.currentEnchantLevel = 1;
+							currentEnchantRoute = route;
+							currentEnchantLevel = 1;
 							StatsSet[] enchSets = levelEnchants.get(route);
-							while (this.currentEnchantLevel <= enchSets.length)
+							while (currentEnchantLevel <= enchSets.length)
 							{
-								int hash = this.currentLevel * 1000000 + route * 1000 + this.currentEnchantLevel;
-								parseTemplate(n, this.skills.get(hash));
-								this.currentEnchantLevel++;
+								int hash = currentLevel * 1000000 + route * 1000 + currentEnchantLevel;
+								parseTemplate(n, skills.get(hash));
+								currentEnchantLevel++;
 							}
 						}
 					}
 				}
 			}
 
-			this.currentLevel++;
+			currentLevel++;
 		}
 	}
 
@@ -620,6 +620,6 @@ public final class SkillParser extends StatsParser
 
 	public Map<Integer, L2Skill> getSkills()
 	{
-		return this.skills;
+		return skills;
 	}
 }

@@ -178,9 +178,9 @@ public final class TaskManager
 	public void registerTask(Task task)
 	{
 		int key = task.getName().hashCode();
-		if (!this.tasks.containsKey(key))
+		if (!tasks.containsKey(key))
 		{
-			this.tasks.put(key, task);
+			tasks.put(key, task);
 			task.initialize();
 		}
 	}
@@ -196,7 +196,7 @@ public final class TaskManager
 
 			while (rset.next())
 			{
-				Task task = this.tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
+				Task task = tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
 
 				if (task == null)
 				{
@@ -210,7 +210,7 @@ public final class TaskManager
 					ExecutedTask current = new ExecutedTask(task, type, rset);
 					if (launchTask(current))
 					{
-						this.currentTasks.add(current);
+						currentTasks.add(current);
 					}
 				}
 			}

@@ -43,7 +43,7 @@ public class ProtectionStone extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addSpawnId(this.protectionStoneId);
+        addSpawnId(protectionStoneId);
     }
 
     @Override
@@ -68,10 +68,10 @@ public class ProtectionStone extends L2AttackableAIScript
 
         protected ProtectionStoneAI(L2Npc npc)
         {
-            this.protectionStone = npc;
-            this.owner = npc.getOwner();
-            this.arcaneProtection = SkillTable.getInstance()
-                    .getInfo(arcaneProtectionId, this.owner.getSkillLevelHash(summonProtectionStoneId));
+			protectionStone = npc;
+			owner = npc.getOwner();
+			arcaneProtection = SkillTable.getInstance()
+                    .getInfo(arcaneProtectionId, owner.getSkillLevelHash(summonProtectionStoneId));
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
@@ -82,19 +82,19 @@ public class ProtectionStone extends L2AttackableAIScript
         @Override
         public void run()
         {
-            if (this.protectionStone == null || this.protectionStone.isDead() || this.protectionStone.isDecayed())
+            if (protectionStone == null || protectionStone.isDead() || protectionStone.isDecayed())
             {
-                if (this.schedule != null)
+                if (schedule != null)
                 {
-                    this.schedule.cancel(true);
+					schedule.cancel(true);
                     return;
                 }
             }
 
-            L2Party party = this.owner.getParty();
-            for (L2PcInstance player : this.protectionStone.getKnownList().getKnownPlayersInRadius(250))
+            L2Party party = owner.getParty();
+            for (L2PcInstance player : protectionStone.getKnownList().getKnownPlayersInRadius(250))
             {
-                if (player != this.owner && (player.getParty() == null || player.getParty() != party))
+                if (player != owner && (player.getParty() == null || player.getParty() != party))
                 {
                     continue;
                 }
@@ -115,7 +115,7 @@ public class ProtectionStone extends L2AttackableAIScript
 
                 final L2Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
 
-                skill.getEffects(this.protectionStone, player);
+                skill.getEffects(protectionStone, player);
             }
         }
     }

@@ -39,12 +39,12 @@ public class L2SkillLearnSkill extends L2Skill
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
-		this.learnSkillId = ar2;
+		learnSkillId = ar2;
 
 		ar = set.getString("learnSkillLvl", "1").split(",");
-		ar2 = new int[this.learnSkillId.length];
+		ar2 = new int[learnSkillId.length];
 
-		for (int i = 0; i < this.learnSkillId.length; i++)
+		for (int i = 0; i < learnSkillId.length; i++)
 		{
 			ar2[i] = 1;
 		}
@@ -54,7 +54,7 @@ public class L2SkillLearnSkill extends L2Skill
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
-		this.learnSkillLvl = ar2;
+		learnSkillLvl = ar2;
 	}
 
 	@Override
@@ -68,11 +68,11 @@ public class L2SkillLearnSkill extends L2Skill
 		final L2PcInstance player = (L2PcInstance) activeChar;
 		L2Skill newSkill;
 
-		for (int i = 0; i < this.learnSkillId.length; i++)
+		for (int i = 0; i < learnSkillId.length; i++)
 		{
-			if (player.getSkillLevelHash(this.learnSkillId[i]) < this.learnSkillLvl[i] && this.learnSkillId[i] != 0)
+			if (player.getSkillLevelHash(learnSkillId[i]) < learnSkillLvl[i] && learnSkillId[i] != 0)
 			{
-				newSkill = SkillTable.getInstance().getInfo(this.learnSkillId[i], this.learnSkillLvl[i]);
+				newSkill = SkillTable.getInstance().getInfo(learnSkillId[i], learnSkillLvl[i]);
 				if (newSkill != null)
 				{
 					player.addSkill(newSkill, true);

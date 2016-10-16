@@ -43,21 +43,21 @@ public class L2ExtractableProduct
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public int getMin()
 	{
-		return this.min;
+		return min;
 	}
 
 	public int getMax()
 	{
-		return this.max;
+		return max;
 	}
 
 	public int getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 }

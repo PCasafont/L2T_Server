@@ -34,41 +34,41 @@ public class PetStatusUpdate extends L2GameServerPacket
 	public PetStatusUpdate(L2Summon summon)
 	{
 		this.summon = summon;
-		this.maxHp = this.summon.getMaxVisibleHp();
-		this.maxMp = this.summon.getMaxMp();
+		maxHp = this.summon.getMaxVisibleHp();
+		maxMp = this.summon.getMaxMp();
 		if (this.summon instanceof L2PetInstance)
 		{
 			L2PetInstance pet = (L2PetInstance) this.summon;
-			this.curFed = pet.getCurrentFed(); // how fed it is
-			this.maxFed = pet.getMaxFed(); //max fed it can be
+			curFed = pet.getCurrentFed(); // how fed it is
+			maxFed = pet.getMaxFed(); //max fed it can be
 		}
 		else if (this.summon instanceof L2SummonInstance)
 		{
 			L2SummonInstance sum = (L2SummonInstance) this.summon;
-			this.curFed = sum.getTimeRemaining();
-			this.maxFed = sum.getTotalLifeTime();
+			curFed = sum.getTimeRemaining();
+			maxFed = sum.getTotalLifeTime();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.summon.getSummonType());
-		writeD(this.summon.getObjectId());
-		writeD(this.summon.getX());
-		writeD(this.summon.getY());
-		writeD(this.summon.getZ());
+		writeD(summon.getSummonType());
+		writeD(summon.getObjectId());
+		writeD(summon.getX());
+		writeD(summon.getY());
+		writeD(summon.getZ());
 		writeS("");
-		writeD(this.curFed);
-		writeD(this.maxFed);
-		writeD((int) this.summon.getCurrentHp());
-		writeD(this.maxHp);
-		writeD((int) this.summon.getCurrentMp());
-		writeD(this.maxMp);
-		writeD(this.summon.getLevel());
-		writeQ(this.summon.getStat().getExp());
-		writeQ(this.summon.getExpForThisLevel()); // 0% absolute value
-		writeQ(this.summon.getExpForNextLevel()); // 100% absolute value
+		writeD(curFed);
+		writeD(maxFed);
+		writeD((int) summon.getCurrentHp());
+		writeD(maxHp);
+		writeD((int) summon.getCurrentMp());
+		writeD(maxMp);
+		writeD(summon.getLevel());
+		writeQ(summon.getStat().getExp());
+		writeQ(summon.getExpForThisLevel()); // 0% absolute value
+		writeQ(summon.getExpForNextLevel()); // 100% absolute value
 		writeD(0); // ???
 	}
 }

@@ -37,11 +37,11 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int x, y, z;
-		this.boatId = readD();
+		boatId = readD();
 		x = readD();
 		y = readD();
 		z = readD();
-		this.pos = new Point3D(x, y, z);
+		pos = new Point3D(x, y, z);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 		if (activeChar.isInBoat())
 		{
 			boat = activeChar.getBoat();
-			if (boat.getObjectId() != this.boatId)
+			if (boat.getObjectId() != boatId)
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -65,7 +65,7 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 		}
 		else
 		{
-			boat = BoatManager.getInstance().getBoat(this.boatId);
+			boat = BoatManager.getInstance().getBoat(boatId);
 			if (boat == null || boat.isMoving() || !activeChar.isInsideRadius(boat, 1000, true, false))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -73,9 +73,9 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 			}
 		}
 
-		activeChar.setInVehiclePosition(this.pos);
+		activeChar.setInVehiclePosition(pos);
 		activeChar.setVehicle(boat);
-		activeChar.broadcastPacket(new GetOnVehicle(activeChar.getObjectId(), boat.getObjectId(), this.pos));
+		activeChar.broadcastPacket(new GetOnVehicle(activeChar.getObjectId(), boat.getObjectId(), pos));
 
 		activeChar.setXYZ(boat.getX(), boat.getY(), boat.getZ());
 		activeChar.revalidateZone(true);

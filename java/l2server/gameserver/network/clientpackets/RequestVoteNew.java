@@ -29,7 +29,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.targetId = readD();
+		targetId = readD();
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 
 		L2PcInstance target = (L2PcInstance) object;
 
-		if (target.getObjectId() != this.targetId)
+		if (target.getObjectId() != targetId)
 		{
 			return;
 		}

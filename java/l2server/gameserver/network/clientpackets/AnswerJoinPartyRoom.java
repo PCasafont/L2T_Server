@@ -28,7 +28,7 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.requesterID = readD();
+		requesterID = readD();
 	}
 
 	/**

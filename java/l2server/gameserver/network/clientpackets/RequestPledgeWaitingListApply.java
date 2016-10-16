@@ -30,8 +30,8 @@ public final class RequestPledgeWaitingListApply extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.apply = readD() == 1;
-		this.karma = readD();
+		apply = readD() == 1;
+		karma = readD();
 	}
 
 	@Override
@@ -43,9 +43,9 @@ public final class RequestPledgeWaitingListApply extends L2GameClientPacket
 			return;
 		}
 
-		if (this.apply)
+		if (apply)
 		{
-			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, this.karma))
+			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, karma))
 			{
 			}
 			sendPacket(new ExPledgeRecruitApplyInfo(3));

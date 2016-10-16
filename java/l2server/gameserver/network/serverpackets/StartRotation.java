@@ -21,7 +21,7 @@ public final class StartRotation extends L2GameServerPacket
 
 	public StartRotation(int objectId, int degree, int side, int speed)
 	{
-		this.charObjId = objectId;
+		charObjId = objectId;
 		this.degree = degree;
 		this.side = side;
 		this.speed = speed;
@@ -30,9 +30,9 @@ public final class StartRotation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.degree);
-		writeD(this.side);
-		writeD(this.speed);
+		writeD(charObjId);
+		writeD(degree);
+		writeD(side);
+		writeD(speed);
 	}
 }

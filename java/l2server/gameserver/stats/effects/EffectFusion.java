@@ -32,8 +32,8 @@ public class EffectFusion extends L2Effect
 	public EffectFusion(Env env, L2EffectTemplate template)
 	{
 		super(env, template);
-		this.effect = getSkill().getLevel();
-		this.maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
+		effect = getSkill().getLevel();
+		maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
 	}
 
 	@Override
@@ -53,17 +53,17 @@ public class EffectFusion extends L2Effect
 
 	public void increaseEffect()
 	{
-		if (this.effect < this.maxEffect)
+		if (effect < maxEffect)
 		{
-			this.effect++;
+			effect++;
 			updateBuff();
 		}
 	}
 
 	public void decreaseForce()
 	{
-		this.effect--;
-		if (this.effect < 1)
+		effect--;
+		if (effect < 1)
 		{
 			exit();
 		}
@@ -76,6 +76,6 @@ public class EffectFusion extends L2Effect
 	private void updateBuff()
 	{
 		exit();
-		SkillTable.getInstance().getInfo(getSkill().getId(), this.effect).getEffects(getEffector(), getEffected());
+		SkillTable.getInstance().getInfo(getSkill().getId(), effect).getEffects(getEffector(), getEffected());
 	}
 }

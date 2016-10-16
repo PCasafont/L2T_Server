@@ -39,7 +39,7 @@ public class FuncMulBase extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value += env.baseValue * (this.lambda.calc(env) - 1.0);
+			env.value += env.baseValue * (lambda.calc(env) - 1.0);
 		}
 	}
 }

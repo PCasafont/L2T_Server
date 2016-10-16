@@ -51,31 +51,31 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 
 	public ExFriendDetailInfo(L2PcInstance activeChar, String charName)
 	{
-		this.player = activeChar;
-		this.friendObjId = CharNameTable.getInstance().getIdByName(charName);
-		this.name = charName;
-		this.isOnline = L2World.getInstance().getPlayer(this.friendObjId) != null &&
-				L2World.getInstance().getPlayer(this.friendObjId).isOnline() ? 1 : 0;
-		this.memo = activeChar.getFriendMemo(this.friendObjId);
-		if (this.isOnline == 1)
+		player = activeChar;
+		friendObjId = CharNameTable.getInstance().getIdByName(charName);
+		name = charName;
+		isOnline = L2World.getInstance().getPlayer(friendObjId) != null &&
+				L2World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
+		memo = activeChar.getFriendMemo(friendObjId);
+		if (isOnline == 1)
 		{
-			L2PcInstance friend = L2World.getInstance().getPlayer(this.friendObjId);
-			this.level = friend.getLevel();
-			this.classId = friend.getClassId();
-			this.clanId = friend.getClanId();
-			this.clanCrestId = friend.getClanCrestId();
-			this.clanName = friend.getClan() != null ? friend.getClan().getName() : "";
-			this.allyId = friend.getAllyId();
-			this.allyCrestId = friend.getAllyCrestId();
-			this.allyName = friend.getClan() != null ? friend.getClan().getAllyName() : "";
+			L2PcInstance friend = L2World.getInstance().getPlayer(friendObjId);
+			level = friend.getLevel();
+			classId = friend.getClassId();
+			clanId = friend.getClanId();
+			clanCrestId = friend.getClanCrestId();
+			clanName = friend.getClan() != null ? friend.getClan().getName() : "";
+			allyId = friend.getAllyId();
+			allyCrestId = friend.getAllyCrestId();
+			allyName = friend.getClan() != null ? friend.getClan().getAllyName() : "";
 			Calendar createDate = Calendar.getInstance();
 			createDate.setTimeInMillis(friend.getCreateTime());
-			this.createdMonth = createDate.get(Calendar.MONTH) + 1;
-			this.createdDay = createDate.get(Calendar.DAY_OF_MONTH);
+			createdMonth = createDate.get(Calendar.MONTH) + 1;
+			createdDay = createDate.get(Calendar.DAY_OF_MONTH);
 		}
 		else
 		{
-			offlineFriendInfo(this.friendObjId);
+			offlineFriendInfo(friendObjId);
 		}
 	}
 
@@ -97,10 +97,10 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 			while (rset.next())
 			{
 				level = rset.getByte("level");
-				this.classId = rset.getInt("classid");
+				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
-				this.clanId = rset.getInt("clanid");
-				this.lastLogin = rset.getLong("lastAccess");
+				clanId = rset.getInt("clanid");
+				lastLogin = rset.getLong("lastAccess");
 				createDate = rset.getLong("createTime");
 			}
 			statement.execute();
@@ -117,7 +117,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (this.classId != bClassId)
+		if (classId != bClassId)
 		{
 			try
 			{
@@ -127,7 +127,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				PreparedStatement statement =
 						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
-				statement.setInt(2, this.classId);
+				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
 
 				while (rset.next())
@@ -153,7 +153,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		{
 			this.level = level;
 		}
-		if (this.clanId != 0)
+		if (clanId != 0)
 		{
 			try
 			{
@@ -161,15 +161,15 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				con = L2DatabaseFactory.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM clan_data WHERE clan_id=?");
-				statement.setInt(1, this.clanId);
+				statement.setInt(1, clanId);
 				ResultSet rset = statement.executeQuery();
 				while (rset.next())
 				{
-					this.clanName = rset.getString("clan_name");
-					this.clanCrestId = rset.getInt("crest_id");
-					this.allyId = rset.getInt("ally_id");
-					this.allyName = rset.getString("ally_name");
-					this.allyCrestId = rset.getInt("ally_crest_id");
+					clanName = rset.getString("clan_name");
+					clanCrestId = rset.getInt("crest_id");
+					allyId = rset.getInt("ally_id");
+					allyName = rset.getString("ally_name");
+					allyCrestId = rset.getInt("ally_crest_id");
 				}
 				statement.execute();
 				rset.close();
@@ -187,28 +187,28 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		}
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(createDate);
-		this.createdMonth = c.get(Calendar.MONTH) + 1;
-		this.createdDay = c.get(Calendar.DAY_OF_MONTH);
+		createdMonth = c.get(Calendar.MONTH) + 1;
+		createdDay = c.get(Calendar.DAY_OF_MONTH);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.player.getObjectId()); // Character ID
-		writeS(this.name); // Name
-		writeD(this.isOnline); // Online
-		writeD(this.isOnline == 1 ? this.friendObjId : 0x00); // Friend OID
-		writeH(this.level); // Level
-		writeH(this.classId); // Class
-		writeD(this.clanId); // Pledge ID
-		writeD(this.clanCrestId); // Pledge crest ID
-		writeS(this.clanName); // Pledge name
-		writeD(this.allyId); // Alliance ID
-		writeD(this.allyCrestId); // Alliance crest ID
-		writeS(this.allyName); // Alliance name
-		writeC(this.createdMonth); // Creation month
-		writeC(this.createdDay); // Creation day
-		writeD(this.isOnline == 1 ? -1 : (int) (System.currentTimeMillis() - this.lastLogin) / 1000);
-		writeS(this.memo); // Memo
+		writeD(player.getObjectId()); // Character ID
+		writeS(name); // Name
+		writeD(isOnline); // Online
+		writeD(isOnline == 1 ? friendObjId : 0x00); // Friend OID
+		writeH(level); // Level
+		writeH(classId); // Class
+		writeD(clanId); // Pledge ID
+		writeD(clanCrestId); // Pledge crest ID
+		writeS(clanName); // Pledge name
+		writeD(allyId); // Alliance ID
+		writeD(allyCrestId); // Alliance crest ID
+		writeS(allyName); // Alliance name
+		writeC(createdMonth); // Creation month
+		writeC(createdDay); // Creation day
+		writeD(isOnline == 1 ? -1 : (int) (System.currentTimeMillis() - lastLogin) / 1000);
+		writeS(memo); // Memo
 	}
 }

@@ -95,7 +95,7 @@ public class SubPledgeSkillTree
 
 	private void load()
 	{
-		this.skilltree.clear();
+		skilltree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/subpledgeskilltree.xml");
 		if (file.exists())
 		{
@@ -164,25 +164,25 @@ public class SubPledgeSkillTree
 								continue;
 							}
 
-							this.skilltree.put(SkillTable.getSkillHashCode(skill),
+							skilltree.put(SkillTable.getSkillHashCode(skill),
 									new SubUnitSkill(skill, clanLvl, reputation, itemId, count));
 						}
 					}
 				}
 			}
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + this.skilltree.size() + " SubUnit Skills");
+		Log.info(getClass().getSimpleName() + ": Loaded " + skilltree.size() + " SubUnit Skills");
 	}
 
 	public SubUnitSkill getSkill(long skillhash)
 	{
-		return this.skilltree.get(skillhash);
+		return skilltree.get(skillhash);
 	}
 
 	public SubUnitSkill[] getAvailableSkills(L2Clan clan)
 	{
 		ArrayList<SubUnitSkill> list = new ArrayList<>();
-		for (Object obj : this.skilltree.getValues())
+		for (Object obj : skilltree.getValues())
 		{
 			SubUnitSkill skill = (SubUnitSkill) obj;
 			if (skill.getClanLvl() <= clan.getLevel())

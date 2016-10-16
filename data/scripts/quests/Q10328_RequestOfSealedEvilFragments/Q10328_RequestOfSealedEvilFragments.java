@@ -39,9 +39,9 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	public Q10328_RequestOfSealedEvilFragments(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.pantheon);
-		addTalkId(this.pantheon);
-		addTalkId(this.kakai);
+		addStartNpc(pantheon);
+		addTalkId(pantheon);
+		addTalkId(kakai);
 	}
 
 	@Override
@@ -55,23 +55,23 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.pantheon && event.equalsIgnoreCase("32972-04.htm"))
+		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-04.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
-			st.giveItems(this.evilFragment, 1);
+			st.giveItems(evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == this.kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
 		{
 			if (event.equalsIgnoreCase("30565-02.htm"))
 			{
-				st.takeItems(this.evilFragment, -1);
+				st.takeItems(evilFragment, -1);
 			}
 			else if (event.equalsIgnoreCase("30565-03.htm"))
 			{
 				st.unset("cond");
-				st.takeItems(this.evilFragment, -1);
+				st.takeItems(evilFragment, -1);
 				st.giveItems(57, 20000);
 				st.addExpAndSp(13000, 4000);
 				st.playSound("ItemSound.quest_finish");
@@ -94,7 +94,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.pantheon)
+		if (npc.getNpcId() == pantheon)
 		{
 			switch (st.getState())
 			{
@@ -116,7 +116,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
 		{
 			htmltext = "30565-01.htm";
 		}

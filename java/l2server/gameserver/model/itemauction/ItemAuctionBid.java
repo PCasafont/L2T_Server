@@ -34,12 +34,12 @@ public final class ItemAuctionBid
 
 	public final int getPlayerObjId()
 	{
-		return this.playerObjId;
+		return playerObjId;
 	}
 
 	public final long getLastBid()
 	{
-		return this.lastBid;
+		return lastBid;
 	}
 
 	final void setLastBid(final long lastBid)
@@ -49,16 +49,16 @@ public final class ItemAuctionBid
 
 	final void cancelBid()
 	{
-		this.lastBid = -1;
+		lastBid = -1;
 	}
 
 	final boolean isCanceled()
 	{
-		return this.lastBid <= 0;
+		return lastBid <= 0;
 	}
 
 	final L2PcInstance getPlayer()
 	{
-		return L2World.getInstance().getPlayer(this.playerObjId);
+		return L2World.getInstance().getPlayer(playerObjId);
 	}
 }

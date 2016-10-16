@@ -37,7 +37,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 	{
 		super(id);
 
-		this.spawnLoc = new int[5];
+		spawnLoc = new int[5];
 	}
 
 	@Override
@@ -46,22 +46,22 @@ public class L2CastleTeleportZone extends L2ZoneType
 		switch (name)
 		{
 			case "castleId":
-				this.castleId = Integer.parseInt(value);
+				castleId = Integer.parseInt(value);
 				break;
 			case "spawnMinX":
-				this.spawnLoc[0] = Integer.parseInt(value);
+				spawnLoc[0] = Integer.parseInt(value);
 				break;
 			case "spawnMaxX":
-				this.spawnLoc[1] = Integer.parseInt(value);
+				spawnLoc[1] = Integer.parseInt(value);
 				break;
 			case "spawnMinY":
-				this.spawnLoc[2] = Integer.parseInt(value);
+				spawnLoc[2] = Integer.parseInt(value);
 				break;
 			case "spawnMaxY":
-				this.spawnLoc[3] = Integer.parseInt(value);
+				spawnLoc[3] = Integer.parseInt(value);
 				break;
 			case "spawnZ":
-				this.spawnLoc[4] = Integer.parseInt(value);
+				spawnLoc[4] = Integer.parseInt(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -100,7 +100,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 	{
 		ArrayList<L2PcInstance> players = new ArrayList<>();
 
-		for (L2Character temp : this.characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (temp instanceof L2PcInstance)
 			{
@@ -114,15 +114,15 @@ public class L2CastleTeleportZone extends L2ZoneType
 	@Override
 	public void oustAllPlayers()
 	{
-		if (this.characterList == null)
+		if (characterList == null)
 		{
 			return;
 		}
-		if (this.characterList.isEmpty())
+		if (characterList.isEmpty())
 		{
 			return;
 		}
-		for (L2Character character : this.characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character == null)
 			{
@@ -133,8 +133,9 @@ public class L2CastleTeleportZone extends L2ZoneType
 				L2PcInstance player = (L2PcInstance) character;
 				if (player.isOnline())
 				{
-					player.teleToLocation(Rnd.get(this.spawnLoc[0], this.spawnLoc[1]), Rnd.get(this.spawnLoc[2], this.spawnLoc[3]),
-							this.spawnLoc[4]);
+					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2],
+							spawnLoc[3]),
+							spawnLoc[4]);
 				}
 			}
 		}
@@ -142,7 +143,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 
 	public int getCastleId()
 	{
-		return this.castleId;
+		return castleId;
 	}
 
 	/**
@@ -152,6 +153,6 @@ public class L2CastleTeleportZone extends L2ZoneType
 	 */
 	public int[] getSpawn()
 	{
-		return this.spawnLoc;
+		return spawnLoc;
 	}
 }

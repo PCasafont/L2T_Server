@@ -33,7 +33,7 @@ public class BlackAnvilGuild extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int a : this.guildGolems)
+		for (int a : guildGolems)
 		{
 			addSpawnId(a);
 		}
@@ -45,7 +45,7 @@ public class BlackAnvilGuild extends L2AttackableAIScript
 				continue;
 			}
 
-			if (Util.contains(this.guildGolems, spawn.getNpcId()))
+			if (Util.contains(guildGolems, spawn.getNpcId()))
 			{
 				notifySpawn(spawn.getNpc());
 			}

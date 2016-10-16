@@ -34,33 +34,33 @@ public class L2AirShipAI extends L2VehicleAI
 	@Override
 	protected void moveTo(int x, int y, int z)
 	{
-		if (!this.actor.isMovementDisabled())
+		if (!actor.isMovementDisabled())
 		{
-			this.clientMoving = true;
-			this.accessor.moveTo(x, y, z);
-			this.actor.broadcastPacket(new ExMoveToLocationAirShip(getActor()));
+			clientMoving = true;
+			accessor.moveTo(x, y, z);
+			actor.broadcastPacket(new ExMoveToLocationAirShip(getActor()));
 		}
 	}
 
 	@Override
 	protected void clientStopMoving(L2CharPosition pos)
 	{
-		if (this.actor.isMoving())
+		if (actor.isMoving())
 		{
-			this.accessor.stopMove(pos);
+			accessor.stopMove(pos);
 		}
 
-		if (this.clientMoving || pos != null)
+		if (clientMoving || pos != null)
 		{
-			this.clientMoving = false;
-			this.actor.broadcastPacket(new ExStopMoveAirShip(getActor()));
+			clientMoving = false;
+			actor.broadcastPacket(new ExStopMoveAirShip(getActor()));
 		}
 	}
 
 	@Override
 	public void describeStateToPlayer(L2PcInstance player)
 	{
-		if (this.clientMoving)
+		if (clientMoving)
 		{
 			player.sendPacket(new ExMoveToLocationAirShip(getActor()));
 		}
@@ -69,6 +69,6 @@ public class L2AirShipAI extends L2VehicleAI
 	@Override
 	public L2AirShipInstance getActor()
 	{
-		return (L2AirShipInstance) this.actor;
+		return (L2AirShipInstance) actor;
 	}
 }

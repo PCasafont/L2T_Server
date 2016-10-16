@@ -53,15 +53,15 @@ public class SearchDropManager
 		{
 			this.itemId = itemId;
 			L2Item temp = ItemTable.getInstance().getTemplate(itemId);
-			this.iemName = temp.getName();
-			this.itemIcon = temp.getIcon();
+			iemName = temp.getName();
+			itemIcon = temp.getIcon();
 			if (isSpoil)
 			{
-				this.spoilBy.add(npc);
+				spoilBy.add(npc);
 			}
 			else
 			{
-				this.droppedBy.add(npc);
+				droppedBy.add(npc);
 			}
 		}
 
@@ -69,35 +69,35 @@ public class SearchDropManager
 		{
 			if (isSpoil)
 			{
-				return this.spoilBy;
+				return spoilBy;
 			}
-			return this.droppedBy;
+			return droppedBy;
 		}
 
 		private int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		private String getName()
 		{
-			return this.iemName;
+			return iemName;
 		}
 
 		private String getIcon()
 		{
-			return this.itemIcon;
+			return itemIcon;
 		}
 
 		private void addMonster(L2NpcTemplate t, boolean isSpoil)
 		{
 			if (isSpoil)
 			{
-				this.spoilBy.add(t);
+				spoilBy.add(t);
 			}
 			else
 			{
-				this.droppedBy.add(t);
+				droppedBy.add(t);
 			}
 		}
 	}
@@ -106,7 +106,7 @@ public class SearchDropManager
 	{
 		List<Drops> toReturn = new ArrayList<>();
 		List<String> itemNames = new ArrayList<>();
-		for (Entry<Integer, Drops> i : this.allDrops.entrySet())
+		for (Entry<Integer, Drops> i : allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			if (d.getName().toLowerCase().trim().contains(name.toLowerCase()))
@@ -188,35 +188,35 @@ public class SearchDropManager
 		for (Entry<L2DropData, Float> i : drops.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (this.allDrops.containsKey(data.getItemId()))
+			if (allDrops.containsKey(data.getItemId()))
 			{
-				this.allDrops.get(data.getItemId()).addMonster(temp, false);
+				allDrops.get(data.getItemId()).addMonster(temp, false);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, false);
-				this.allDrops.put(data.getItemId(), d);
+				allDrops.put(data.getItemId(), d);
 			}
 		}
 
 		for (Entry<L2DropData, Float> i : spoilDrop.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (this.allDrops.containsKey(data.getItemId()))
+			if (allDrops.containsKey(data.getItemId()))
 			{
-				this.allDrops.get(data.getItemId()).addMonster(temp, true);
+				allDrops.get(data.getItemId()).addMonster(temp, true);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, true);
-				this.allDrops.put(data.getItemId(), d);
+				allDrops.put(data.getItemId(), d);
 			}
 		}
 	}
 
 	public String getDrops(L2PcInstance player, int itemId, boolean isSpoil, int pageToShow)
 	{
-		Drops i = this.allDrops.get(itemId);
+		Drops i = allDrops.get(itemId);
 		if (i == null)
 		{
 			return "ERROR";
@@ -374,7 +374,7 @@ public class SearchDropManager
 
 	public void overrideDrops(L2NpcTemplate temp)
 	{
-		for (Entry<Integer, Drops> i : this.allDrops.entrySet())
+		for (Entry<Integer, Drops> i : allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			List<L2NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));

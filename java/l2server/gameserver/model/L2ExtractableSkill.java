@@ -28,16 +28,16 @@ public class L2ExtractableSkill
 	public L2ExtractableSkill(long hash, ArrayList<L2ExtractableProductItem> products)
 	{
 		this.hash = hash;
-		this.product = products;
+		product = products;
 	}
 
 	public long getSkillHash()
 	{
-		return this.hash;
+		return hash;
 	}
 
 	public ArrayList<L2ExtractableProductItem> getProductItemsArray()
 	{
-		return this.product;
+		return product;
 	}
 }

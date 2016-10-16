@@ -33,21 +33,21 @@ public class PrivateStoreListSell extends L2ItemListPacket
 	// player's private shop
 	public PrivateStoreListSell(L2PcInstance player, L2PcInstance storePlayer)
 	{
-		this.objId = storePlayer.getObjectId();
-		this.playerAdena = player.getAdena();
-		this.items = storePlayer.getSellList().getItems();
-		this.packageSale = storePlayer.getSellList().isPackaged();
+		objId = storePlayer.getObjectId();
+		playerAdena = player.getAdena();
+		items = storePlayer.getSellList().getItems();
+		packageSale = storePlayer.getSellList().isPackaged();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeD(this.packageSale ? 1 : 0);
-		writeQ(this.playerAdena);
+		writeD(objId);
+		writeD(packageSale ? 1 : 0);
+		writeQ(playerAdena);
 		writeD(0x00); // GoD ???
-		writeD(this.items.length);
-		for (TradeList.TradeItem item : this.items)
+		writeD(items.length);
+		for (TradeList.TradeItem item : items)
 		{
 			writeItem(item);
 

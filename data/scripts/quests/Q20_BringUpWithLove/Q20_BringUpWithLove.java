@@ -49,7 +49,7 @@ public class Q20_BringUpWithLove extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.tunatun)
+		if (npc.getNpcId() == tunatun)
 		{
 			if (event.equalsIgnoreCase("31537-12.htm"))
 			{
@@ -71,8 +71,8 @@ public class Q20_BringUpWithLove extends Quest
 			else if (event.equalsIgnoreCase("31537-15.htm"))
 			{
 				st.unset("cond");
-				st.takeItems(this.jewel, -1);
-				st.giveItems(this.crystal, 1);
+				st.takeItems(jewel, -1);
+				st.giveItems(crystal, 1);
 				st.playSound("ItemSound.quest_finish");
 				st.exitQuest(false);
 			}
@@ -102,7 +102,7 @@ public class Q20_BringUpWithLove extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.tunatun)
+		if (npc.getNpcId() == tunatun)
 		{
 			switch (st.getState())
 			{
@@ -147,9 +147,9 @@ public class Q20_BringUpWithLove extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(this.tunatun);
-		addTalkId(this.tunatun);
-		addFirstTalkId(this.tunatun);
+		addStartNpc(tunatun);
+		addTalkId(tunatun);
+		addFirstTalkId(tunatun);
 	}
 
 	public static void main(String[] args)

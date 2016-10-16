@@ -93,19 +93,19 @@ public class Lilith extends L2AttackableAIScript
     {
         super(id, name, descr);
 
-        addStartNpc(this.enterCubic);
-        addTalkId(this.enterCubic);
+        addStartNpc(enterCubic);
+        addTalkId(enterCubic);
 
-        addStartNpc(this.exitCubic);
-        addTalkId(this.exitCubic);
+        addStartNpc(exitCubic);
+        addTalkId(exitCubic);
 
-        addStartNpc(this.lilithCubic);
-        addTalkId(this.lilithCubic);
+        addStartNpc(lilithCubic);
+        addTalkId(lilithCubic);
 
-        addSpawnId(this.remnant);
-        addSpellFinishedId(this.remnant);
+        addSpawnId(remnant);
+        addSpellFinishedId(remnant);
 
-        for (int i : this.allMobs)
+        for (int i : allMobs)
         {
             addAttackId(i);
             addKillId(i);
@@ -113,22 +113,22 @@ public class Lilith extends L2AttackableAIScript
         }
 
         //Unlock
-        startQuestTimer("unlock_lilith", GrandBossManager.getInstance().getUnlockTime(this.lilithId), null, null);
+        startQuestTimer("unlock_lilith", GrandBossManager.getInstance().getUnlockTime(lilithId), null, null);
     }
 
     @Override
     public String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
 
-        if (npcId == this.enterCubic || npcId == this.lilithCubic)
+        if (npcId == enterCubic || npcId == lilithCubic)
         {
-            int lilithStatus = GrandBossManager.getInstance().getBossStatus(this.lilithId);
+            int lilithStatus = GrandBossManager.getInstance().getBossStatus(lilithId);
 
             final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 
@@ -138,7 +138,7 @@ public class Lilith extends L2AttackableAIScript
             }
             else
             {
-                if (!this.debug)
+                if (!debug)
                 {
                     if (lilithStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance()
                             .checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
@@ -158,38 +158,38 @@ public class Lilith extends L2AttackableAIScript
                 }
             }
 
-            if (lilithStatus == GrandBossManager.getInstance().ALIVE && npcId == this.enterCubic)
+            if (lilithStatus == GrandBossManager.getInstance().ALIVE && npcId == enterCubic)
             {
-                GrandBossManager.getInstance().setBossStatus(this.lilithId, GrandBossManager.getInstance().WAITING);
+                GrandBossManager.getInstance().setBossStatus(lilithId, GrandBossManager.getInstance().WAITING);
 
                 SpawnTable.getInstance().spawnSpecificTable("pre_lilith");
 
-                this.remnants.clear();
+				remnants.clear();
 
                 notifyEvent("spawn_remant", null, null);
 
-                this.lastAction = System.currentTimeMillis();
+				lastAction = System.currentTimeMillis();
 
                 startQuestTimer("check_activity_task", 60000, null, null, true);
             }
-            else if (lilithStatus == GrandBossManager.getInstance().WAITING && npcId == this.lilithCubic)
+            else if (lilithStatus == GrandBossManager.getInstance().WAITING && npcId == lilithCubic)
             {
-                if (!this.remnants.isEmpty())
+                if (!remnants.isEmpty())
                 {
                     return "";
                 }
 
-                GrandBossManager.getInstance().setBossStatus(this.lilithId, GrandBossManager.getInstance().FIGHTING);
+                GrandBossManager.getInstance().setBossStatus(lilithId, GrandBossManager.getInstance().FIGHTING);
 
                 //Spawn the rb
-                this.lilithBoss = addSpawn(this.lilithId, 185062, -9605, -5499, 15640, false, 0);
+				lilithBoss = addSpawn(lilithId, 185062, -9605, -5499, 15640, false, 0);
 
-                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) this.lilithBoss);
+                GrandBossManager.getInstance().addBoss((L2GrandBossInstance) lilithBoss);
 
                 startQuestTimer("end_lilith", 60 * 60000, null, null); //1h
             }
 
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -200,7 +200,7 @@ public class Lilith extends L2AttackableAIScript
                         player.getParty().getPartyMembers());
             }
 
-            Location enterLoc = npcId == this.enterCubic ? this.enterLoc : this.enterLilithLoc;
+            Location enterLoc = npcId == enterCubic ? this.enterLoc : enterLilithLoc;
             for (L2PcInstance enterPlayer : allPlayers)
             {
                 if (enterPlayer == null)
@@ -208,19 +208,19 @@ public class Lilith extends L2AttackableAIScript
                     continue;
                 }
 
-                if (npcId == this.lilithCubic)
+                if (npcId == lilithCubic)
                 {
-                    this.bossZone.allowPlayerEntry(enterPlayer, 7200);
+					bossZone.allowPlayerEntry(enterPlayer, 7200);
                 }
                 else
                 {
-                    this.preLilithZone.allowPlayerEntry(enterPlayer, 7200);
+					preLilithZone.allowPlayerEntry(enterPlayer, 7200);
                 }
 
                 enterPlayer.teleToLocation(enterLoc, true);
             }
         }
-        else if (npc.getNpcId() == this.exitCubic)
+        else if (npc.getNpcId() == exitCubic)
         {
             player.teleToLocation(TeleportWhereType.Town);
         }
@@ -230,18 +230,18 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
 
         if (event.equalsIgnoreCase("unlock_lilith"))
         {
-            GrandBossManager.getInstance().setBossStatus(this.lilithId, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(lilithId, GrandBossManager.getInstance().ALIVE);
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(this.lilithId, this.lastAction))
+            if (!GrandBossManager.getInstance().isActive(lilithId, lastAction))
             {
                 notifyEvent("end_lilith", null, null);
             }
@@ -262,7 +262,7 @@ public class Lilith extends L2AttackableAIScript
                     {
                         L2Npc remnant = addSpawn(this.remnant, randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(),
                                 randomSpawn.getHeading(), true, 0, false, 0);
-                        this.remnants.add(remnant);
+						remnants.add(remnant);
                     }
                 }
             }
@@ -294,18 +294,18 @@ public class Lilith extends L2AttackableAIScript
         {
             notifyEvent("cancel_timers", null, null);
 
-            if (this.lilithBoss != null)
+            if (lilithBoss != null)
             {
-                this.lilithBoss.deleteMe();
+				lilithBoss.deleteMe();
             }
 
-            this.bossZone.oustAllPlayers();
+			bossZone.oustAllPlayers();
 
-            this.preLilithZone.oustAllPlayers();
+			preLilithZone.oustAllPlayers();
 
             SpawnTable.getInstance().despawnSpecificTable("pre_lilith");
 
-            for (L2Npc remnant : this.remnants)
+            for (L2Npc remnant : remnants)
             {
                 if (remnant == null)
                 {
@@ -315,9 +315,9 @@ public class Lilith extends L2AttackableAIScript
                 remnant.deleteMe();
             }
 
-            if (GrandBossManager.getInstance().getBossStatus(this.lilithId) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(lilithId) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(this.lilithId, GrandBossManager.getInstance().ALIVE);
+                GrandBossManager.getInstance().setBossStatus(lilithId, GrandBossManager.getInstance().ALIVE);
             }
         }
         return super.onAdvEvent(event, npc, player);
@@ -326,28 +326,28 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        this.lastAction = System.currentTimeMillis();
+		lastAction = System.currentTimeMillis();
 
         if (npc.isMinion() || npc.isRaid())//Lilith and minions
         {
             //Anti BUGGERS
-            if (!this.bossZone.isInsideZone(attacker)) //Character attacking out of zone
+            if (!bossZone.isInsideZone(attacker)) //Character attacking out of zone
             {
                 attacker.doDie(null);
 
-                if (this.debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                             " out of the boss zone!");
                 }
             }
 
-            if (!this.bossZone.isInsideZone(npc)) //Npc moved out of the zone
+            if (!bossZone.isInsideZone(npc)) //Npc moved out of the zone
             {
                 L2Spawn spawn = npc.getSpawn();
 
@@ -356,7 +356,7 @@ public class Lilith extends L2AttackableAIScript
                     npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
                 }
 
-                if (this.debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                             " wich is out of the boss zone!");
@@ -364,13 +364,13 @@ public class Lilith extends L2AttackableAIScript
             }
         }
 
-        if (npc.getNpcId() == this.remnant)
+        if (npc.getNpcId() == remnant)
         {
             if (npc.getCurrentHp() < npc.getMaxHp() * 0.30)
             {
                 if (!npc.isCastingNow() && Rnd.get(100) > 95)
                 {
-                    npc.doCast(this.remantTele);
+                    npc.doCast(remantTele);
                 }
             }
         }
@@ -381,30 +381,30 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == this.lilithId)
+        if (npc.getNpcId() == lilithId)
         {
-            GrandBossManager.getInstance().notifyBossKilled(this.lilithId);
+            GrandBossManager.getInstance().notifyBossKilled(lilithId);
 
             notifyEvent("cancel_timers", null, null);
 
-            addSpawn(this.exitCubic, 185062, -9605, -5499, 15640, false, 900000); //15min
+            addSpawn(exitCubic, 185062, -9605, -5499, 15640, false, 900000); //15min
 
-            startQuestTimer("unlock_lilith", GrandBossManager.getInstance().getUnlockTime(this.lilithId), null, null);
+            startQuestTimer("unlock_lilith", GrandBossManager.getInstance().getUnlockTime(lilithId), null, null);
 
             startQuestTimer("end_lilith", 900000, null, null);
         }
-        else if (npc.getNpcId() == this.remnant)
+        else if (npc.getNpcId() == remnant)
         {
-            this.remnants.remove(npc);
+			remnants.remove(npc);
 
-            if (this.remnants.isEmpty())
+            if (remnants.isEmpty())
             {
-                addSpawn(this.lilithCubic, -19410, 23805, -4903, 62917, false, 60 * 60000, false, 0);
+                addSpawn(lilithCubic, -19410, 23805, -4903, 62917, false, 60 * 60000, false, 0);
             }
         }
 
@@ -414,14 +414,14 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + npc.getName());
         }
 
-        if (npc.getNpcId() == this.remnant && this.preLilithZone.isInsideZone(npc))
+        if (npc.getNpcId() == remnant && preLilithZone.isInsideZone(npc))
         {
-            if (skill == this.remantTele)
+            if (skill == remantTele)
             {
                 notifyEvent("spawn_remant", npc, null);
             }
@@ -432,17 +432,17 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSkillSee: " + npc.getName());
         }
 
-        if (Util.contains(this.lilithMinions, npc.getNpcId()) && Rnd.get(2) == 1)
+        if (Util.contains(lilithMinions, npc.getNpcId()) && Rnd.get(2) == 1)
         {
             if (skill.getSkillType().toString().contains("HEAL"))
             {
                 if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster &&
-                        npc.getTarget() != this.lilithBoss) //Don't call minions if are healing Lilith
+                        npc.getTarget() != lilithBoss) //Don't call minions if are healing Lilith
                 {
                     ((L2Attackable) npc).clearAggroList();
                     npc.setTarget(caster);
@@ -458,7 +458,7 @@ public class Lilith extends L2AttackableAIScript
     @Override
     public String onSpawn(L2Npc npc)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpawn: " + npc.getName() + ": " + npc.getX() + ", " + npc.getY() + ", " +
                     npc.getZ());

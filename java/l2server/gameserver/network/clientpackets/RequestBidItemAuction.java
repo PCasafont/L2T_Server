@@ -33,7 +33,7 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 	protected final void readImpl()
 	{
 		instanceId = super.readD();
-		this.bid = super.readQ();
+		bid = super.readQ();
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 			return;
 		}
 
-		if (this.bid < 0 || this.bid > PcInventory.MAX_ADENA)
+		if (bid < 0 || bid > PcInventory.MAX_ADENA)
 		{
 			return;
 		}
@@ -63,7 +63,7 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 			final ItemAuction auction = instance.getCurrentAuction();
 			if (auction != null)
 			{
-				auction.registerBid(activeChar, this.bid);
+				auction.registerBid(activeChar, bid);
 			}
 		}
 	}

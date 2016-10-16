@@ -15,8 +15,8 @@ public class RequestJoinMpccRoom extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.unk = readD();
-		this.id = readD();
+		unk = readD();
+		id = readD();
 	}
 
 	@Override

@@ -36,15 +36,15 @@ public class SpawnGroup
 
 	public SpawnGroup(XmlNode node)
 	{
-		this.minZ = node.getInt("minZ");
-		this.maxZ = node.getInt("maxZ");
+		minZ = node.getInt("minZ");
+		maxZ = node.getInt("maxZ");
 		for (XmlNode subNode : node.getChildren())
 		{
 			if (subNode.getName().equalsIgnoreCase("vertex"))
 			{
 				int x = subNode.getInt("x");
 				int y = subNode.getInt("y");
-				this.territory.add(x, y, this.minZ, this.maxZ, 0);
+				territory.add(x, y, minZ, maxZ, 0);
 			}
 			else if (subNode.getName().equalsIgnoreCase("spawn"))
 			{
@@ -74,7 +74,7 @@ public class SpawnGroup
 
 						spawn.doSpawn();
 
-						this.spawns.add(spawn);
+						spawns.add(spawn);
 
 						if (t.Type.equals("L2Monster"))
 						{
@@ -94,16 +94,16 @@ public class SpawnGroup
 
 	public int[] getRandomPoint()
 	{
-		return this.territory.getRandomPoint();
+		return territory.getRandomPoint();
 	}
 
 	public L2Territory getTerritory()
 	{
-		return this.territory;
+		return territory;
 	}
 
 	public List<L2Spawn> getSpawns()
 	{
-		return this.spawns;
+		return spawns;
 	}
 }

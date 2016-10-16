@@ -73,9 +73,9 @@ public class NornilsCave extends L2AttackableAIScript
 
         private NornilsCaveWorld()
         {
-            this.firstBossAttack = false;
-            this.roomMobs = new ArrayList<L2Npc>();
-            this.bozMobs = new ArrayList<L2Npc>();
+			firstBossAttack = false;
+			roomMobs = new ArrayList<L2Npc>();
+			bozMobs = new ArrayList<L2Npc>();
             rewardedPlayers = new ArrayList<L2PcInstance>();
         }
     }
@@ -87,22 +87,22 @@ public class NornilsCave extends L2AttackableAIScript
         addTalkId(DimensionalDoor.getNpcManagerId());
         addStartNpc(DimensionalDoor.getNpcManagerId());
 
-        for (int i : this.caveMobs)
+        for (int i : caveMobs)
         {
             addKillId(i);
         }
 
-        addAttackId(this.spiculaZeroId);
-        addKillId(this.spiculaZeroId);
+        addAttackId(spiculaZeroId);
+        addKillId(spiculaZeroId);
 
-        addKillId(this.bozId);
-        addAttackId(this.bozId);
+        addKillId(bozId);
+        addAttackId(bozId);
     }
 
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -129,11 +129,11 @@ public class NornilsCave extends L2AttackableAIScript
             {
                 world.status = 1;
 
-                InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[0]).openMe();
+                InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[0]).openMe();
 
-                for (int[] i : this.bozSpawns[0])
+                for (int[] i : bozSpawns[0])
                 {
-                    L2Npc boz = addSpawn(this.bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
+                    L2Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
                     world.bozMobs.add(boz);
                     boz.setIsParalyzed(true);
                     boz.setIsInvul(true);
@@ -153,7 +153,7 @@ public class NornilsCave extends L2AttackableAIScript
                     {
                         for (int i = 0; i < Rnd.get(5, 8); i++)
                         {
-                            L2Npc roomMob = addSpawn(this.caveMobs[Rnd.get(this.caveMobs.length)], npc.getX() + Rnd.get(50),
+                            L2Npc roomMob = addSpawn(caveMobs[Rnd.get(caveMobs.length)], npc.getX() + Rnd.get(50),
                                     npc.getY() + Rnd.get(50), npc.getZ(), npc.getHeading(), false, 0, true,
                                     world.instanceId);
                             world.roomMobs.add(roomMob);
@@ -171,9 +171,9 @@ public class NornilsCave extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_2_start"))
             {
-                for (int[] i : this.bozSpawns[1])
+                for (int[] i : bozSpawns[1])
                 {
-                    L2Npc boz = addSpawn(this.bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
+                    L2Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
                     world.bozMobs.add(boz);
                     boz.setIsParalyzed(true);
                     boz.setIsInvul(true);
@@ -182,9 +182,9 @@ public class NornilsCave extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_3_start"))
             {
-                for (int[] i : this.bozSpawns[2])
+                for (int[] i : bozSpawns[2])
                 {
-                    L2Npc boz = addSpawn(this.bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
+                    L2Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, true, world.instanceId);
                     world.bozMobs.add(boz);
                     boz.setIsParalyzed(true);
                     boz.setIsInvul(true);
@@ -193,10 +193,10 @@ public class NornilsCave extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_4_start"))
             {
-                addSpawn(this.spiculaZeroId, -119994, 87179, -12601, 64277, false, 0, false, world.instanceId);
-                for (int[] i : this.bozSpawns[3])
+                addSpawn(spiculaZeroId, -119994, 87179, -12601, 64277, false, 0, false, world.instanceId);
+                for (int[] i : bozSpawns[3])
                 {
-                    L2Npc boz = addSpawn(this.bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
+                    L2Npc boz = addSpawn(bozId, i[0], i[1], i[2], i[3], false, 0, false, world.instanceId);
                     world.bozMobs.add(boz);
                     boz.setIsParalyzed(true);
                     boz.setIsInvul(true);
@@ -222,14 +222,14 @@ public class NornilsCave extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
         {
-            return this.qn + ".html";
+            return qn + ".html";
         }
 
         return super.onTalk(npc, player);
@@ -238,7 +238,7 @@ public class NornilsCave extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
@@ -247,12 +247,12 @@ public class NornilsCave extends L2AttackableAIScript
         if (tmpWorld instanceof NornilsCaveWorld)
         {
             NornilsCaveWorld world = (NornilsCaveWorld) tmpWorld;
-            if (npc.getNpcId() == this.spiculaZeroId)
+            if (npc.getNpcId() == spiculaZeroId)
             {
                 if (!world.firstBossAttack)
                 {
                     world.firstBossAttack = true;
-                    InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[3]).closeMe();
+                    InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[3]).closeMe();
                 }
             }
         }
@@ -262,7 +262,7 @@ public class NornilsCave extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (this.debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -271,7 +271,7 @@ public class NornilsCave extends L2AttackableAIScript
         if (tmpworld instanceof NornilsCaveWorld)
         {
             NornilsCaveWorld world = (NornilsCaveWorld) tmpworld;
-            if (Util.contains(this.caveMobs, npc.getNpcId()))
+            if (Util.contains(caveMobs, npc.getNpcId()))
             {
                 synchronized (world.roomMobs)
                 {
@@ -289,7 +289,7 @@ public class NornilsCave extends L2AttackableAIScript
                     }
                 }
             }
-            else if (npc.getNpcId() == this.bozId)
+            else if (npc.getNpcId() == bozId)
             {
                 QuestTimer activityTimer = getQuestTimer("stage_all_spicula_spawns", npc, null);
                 if (activityTimer != null)
@@ -310,8 +310,8 @@ public class NornilsCave extends L2AttackableAIScript
                         {
                             world.status = 2;
 
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[0]).closeMe();
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[1]).openMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[0]).closeMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[1]).openMe();
 
                             notifyEvent("stage_2_start", npc, null);
                         }
@@ -319,8 +319,8 @@ public class NornilsCave extends L2AttackableAIScript
                         {
                             world.status = 3;
 
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[1]).closeMe();
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[2]).openMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[1]).closeMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[2]).openMe();
 
                             notifyEvent("stage_3_start", npc, null);
                         }
@@ -328,15 +328,15 @@ public class NornilsCave extends L2AttackableAIScript
                         {
                             world.status = 4;
 
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[2]).closeMe();
-                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(this.doorIds[3]).openMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[2]).closeMe();
+                            InstanceManager.getInstance().getInstance(world.instanceId).getDoor(doorIds[3]).openMe();
 
                             notifyEvent("stage_4_start", npc, null);
                         }
                     }
                 }
             }
-            else if (npc.getNpcId() == this.spiculaZeroId)
+            else if (npc.getNpcId() == spiculaZeroId)
             {
                 if (player.isInParty())
                 {
@@ -350,7 +350,7 @@ public class NornilsCave extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
                         {
                             world.rewardedPlayers.add(pMember);
-                            pMember.addItem(this.qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                            pMember.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(),
                                     Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(),
                                             10 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
                         }
@@ -392,13 +392,13 @@ public class NornilsCave extends L2AttackableAIScript
         }
         else
         {
-            if (!this.debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, instanceTemplateId, 7, 7, 99, Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(this.qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new NornilsCaveWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -406,7 +406,7 @@ public class NornilsCave extends L2AttackableAIScript
             InstanceManager.getInstance().addWorld(world);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (this.debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }

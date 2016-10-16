@@ -40,7 +40,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return L2World.MAP_MIN_X + this.x * 128 + 48;
+		return L2World.MAP_MIN_X + x * 128 + 48;
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return L2World.MAP_MIN_Y + this.y * 128 + 48;
+		return L2World.MAP_MIN_Y + y * 128 + 48;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public short getZ()
 	{
-		return this.z;
+		return z;
 	}
 
 	@Override
@@ -70,13 +70,13 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeX()
 	{
-		return this.x;
+		return x;
 	}
 
 	@Override
 	public int getNodeY()
 	{
-		return this.y;
+		return y;
 	}
 
 	/**
@@ -87,9 +87,9 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + this.x;
-		result = prime * result + this.y;
-		result = prime * result + this.z;
+		result = prime * result + x;
+		result = prime * result + y;
+		result = prime * result + z;
 		return result;
 	}
 
@@ -112,14 +112,14 @@ public class GeoNodeLoc extends AbstractNodeLoc
 			return false;
 		}
 		final GeoNodeLoc other = (GeoNodeLoc) obj;
-		if (this.x != other.x)
+		if (x != other.x)
 		{
 			return false;
 		}
-		if (this.y != other.y)
+		if (y != other.y)
 		{
 			return false;
 		}
-		return this.z == other.z;
+		return z == other.z;
 	}
 }

@@ -51,17 +51,17 @@ public final class RequestRefundItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.listId = readD();
+		listId = readD();
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new int[count];
+		items = new int[count];
 		for (int i = 0; i < count; i++)
 		{
-			this.items[i] = readD();
+			items[i] = readD();
 		}
 	}
 
@@ -80,7 +80,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -137,12 +137,12 @@ public final class RequestRefundItem extends L2GameClientPacket
 				{
 					Util.handleIllegalPlayerAction(player,
 							"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-									" sent a false BuyList list_id " + this.listId, Config.DEFAULT_PUNISH);
+									" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 					return;
 				}
 				for (L2TradeList tradeList : lists)
 				{
-					if (tradeList.getListId() == this.listId)
+					if (tradeList.getListId() == listId)
 					{
 						list = tradeList;
 					}
@@ -150,19 +150,19 @@ public final class RequestRefundItem extends L2GameClientPacket
 			}
 			else
 			{
-				list = TradeController.getInstance().getBuyList(this.listId);
+				list = TradeController.getInstance().getBuyList(listId);
 			}
 		}
 		else
 		{
-			list = TradeController.getInstance().getBuyList(this.listId);
+			list = TradeController.getInstance().getBuyList(listId);
 		}
 
 		if (list == null)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-							" sent a false BuyList list_id " + this.listId, Config.DEFAULT_PUNISH);
+							" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 			return;
 		}
 
@@ -171,11 +171,11 @@ public final class RequestRefundItem extends L2GameClientPacket
 		long slots = 0;
 
 		L2ItemInstance[] refund = player.getRefund().getItems();
-		int[] objectIds = new int[this.items.length];
+		int[] objectIds = new int[items.length];
 
-		for (int i = 0; i < this.items.length; i++)
+		for (int i = 0; i < items.length; i++)
 		{
-			int idx = this.items[i];
+			int idx = items[i];
 			if (idx < 0 || idx >= refund.length)
 			{
 				Util.handleIllegalPlayerAction(player,
@@ -185,9 +185,9 @@ public final class RequestRefundItem extends L2GameClientPacket
 			}
 
 			// check for duplicates - indexes
-			for (int j = i + 1; j < this.items.length; j++)
+			for (int j = i + 1; j < items.length; j++)
 			{
-				if (idx == this.items[j])
+				if (idx == items[j])
 				{
 					Util.handleIllegalPlayerAction(player,
 							"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
@@ -246,7 +246,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 			return;
 		}
 
-		for (int i = 0; i < this.items.length; i++)
+		for (int i = 0; i < items.length; i++)
 		{
 			L2ItemInstance item = player.getRefund()
 					.transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player,

@@ -39,18 +39,18 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 
 		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
 		{
-			this.skillId = pSkillId;
-			this.level = pLevel;
-			this.comboId = pComboId;
-			this.duration = pDuration;
-			this.effector = pEffector;
+			skillId = pSkillId;
+			level = pLevel;
+			comboId = pComboId;
+			duration = pDuration;
+			effector = pEffector;
 		}
 	}
 
 	public AbnormalStatusUpdateFromTarget(L2Character c)
 	{
-		this.character = c;
-		this.effects = new ArrayList<>();
+		character = c;
+		effects = new ArrayList<>();
 
 		for (L2Abnormal e : c.getAllEffects())
 		{
@@ -80,17 +80,17 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 			return;
 		}
 
-		this.effects.add(new Effect(skillId, level, comboId, duration, effector));
+		effects.add(new Effect(skillId, level, comboId, duration, effector));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.character.getObjectId());
+		writeD(character.getObjectId());
 
-		writeH(this.effects.size());
+		writeH(effects.size());
 
-		for (Effect temp : this.effects)
+		for (Effect temp : effects)
 		{
 			writeD(temp.skillId);
 			writeD(temp.level);

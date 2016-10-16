@@ -142,12 +142,12 @@ public class SagasSuperClass extends QuestJython
 
 	public void AddSpawn(QuestState st, L2Npc mob)
 	{
-		this.SpawnList.put(mob, st.getPlayer().getObjectId());
+		SpawnList.put(mob, st.getPlayer().getObjectId());
 	}
 
 	public L2Npc FindSpawn(L2PcInstance player, L2Npc npc)
 	{
-		if (this.SpawnList.containsKey(npc) && this.SpawnList.get(npc) == player.getObjectId())
+		if (SpawnList.containsKey(npc) && SpawnList.get(npc) == player.getObjectId())
 		{
 			return npc;
 		}
@@ -156,9 +156,9 @@ public class SagasSuperClass extends QuestJython
 
 	public void DeleteSpawn(QuestState st, L2Npc npc)
 	{
-		if (this.SpawnList.containsKey(npc))
+		if (SpawnList.containsKey(npc))
 		{
-			this.SpawnList.remove(npc);
+			SpawnList.remove(npc);
 			npc.deleteMe();
 		}
 	}
@@ -167,9 +167,9 @@ public class SagasSuperClass extends QuestJython
 	{
 		L2PcInstance player = null;
 		QuestState st = null;
-		if (this.SpawnList.containsKey(npc))
+		if (SpawnList.containsKey(npc))
 		{
-			player = L2World.getInstance().getPlayer(this.SpawnList.get(npc));
+			player = L2World.getInstance().getPlayer(SpawnList.get(npc));
 			if (player != null)
 			{
 				st = player.getQuestState(qn);
@@ -967,9 +967,9 @@ public class SagasSuperClass extends QuestJython
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance player, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (this.SpawnList.containsKey(npc) && this.SpawnList.get(npc) != player.getObjectId())
+		if (SpawnList.containsKey(npc) && SpawnList.get(npc) != player.getObjectId())
 		{
-			L2PcInstance quest_player = (L2PcInstance) L2World.getInstance().findObject(this.SpawnList.get(npc));
+			L2PcInstance quest_player = (L2PcInstance) L2World.getInstance().findObject(SpawnList.get(npc));
 			if (quest_player == null)
 			{
 				return null;
@@ -1163,21 +1163,21 @@ public class SagasSuperClass extends QuestJython
 	public boolean unload()
 	{
 		// if sub classes aren't loaded, just unload superclass
-		if (this.scripts.size() == 0)
+		if (scripts.size() == 0)
 		{
 			return super.unload();
 		}
 
 		// unload all subclasses
-		for (int index = 0; index < this.scripts.size(); index++)
+		for (int index = 0; index < scripts.size(); index++)
 		{
-			if (this.scripts.get(index) == null)
+			if (scripts.get(index) == null)
 			{
 				continue;
 			}
-			QuestManager.getInstance().removeQuest(this.scripts.get(index));
+			QuestManager.getInstance().removeQuest(scripts.get(index));
 		}
-		this.scripts.clear();
+		scripts.clear();
 
 		// now unload superclass
 		return super.unload();

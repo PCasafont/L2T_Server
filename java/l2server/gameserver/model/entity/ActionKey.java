@@ -49,37 +49,37 @@ public class ActionKey
 
 	public int getCategory()
 	{
-		return this.cat;
+		return cat;
 	}
 
 	public int getCommandId()
 	{
-		return this.cmd;
+		return cmd;
 	}
 
 	public int getKeyId()
 	{
-		return this.key;
+		return key;
 	}
 
 	public int getToogleKey1()
 	{
-		return this.tgKey1;
+		return tgKey1;
 	}
 
 	public int getToogleKey2()
 	{
-		return this.tgKey2;
+		return tgKey2;
 	}
 
 	public int getShowStatus()
 	{
-		return this.show;
+		return show;
 	}
 
 	public String getSqlSaveString(int playerId, int order)
 	{
-		return "(" + playerId + ", " + this.cat + ", " + order + ", " + this.cmd + "," + this.key + ", " + this.tgKey1 + ", " +
-				this.tgKey2 + ", " + this.show + ")";
+		return "(" + playerId + ", " + cat + ", " + order + ", " + cmd + "," + key + ", " + tgKey1 + ", " +
+				tgKey2 + ", " + show + ")";
 	}
 }

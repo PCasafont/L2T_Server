@@ -47,16 +47,16 @@ public class ExStorageMaxCount extends L2GameServerPacket
 
 	public ExStorageMaxCount(L2PcInstance character)
 	{
-		this.activeChar = character;
-		this.inventory = this.activeChar.getInventoryLimit();
-		this.warehouse = this.activeChar.getWareHouseLimit();
-		this.privateSell = this.activeChar.getPrivateSellStoreLimit();
-		this.privateBuy = this.activeChar.getPrivateBuyStoreLimit();
-		this.clan = Config.WAREHOUSE_SLOTS_CLAN;
-		this.receipeD = this.activeChar.getDwarfRecipeLimit();
-		this.recipe = this.activeChar.getCommonRecipeLimit();
-		this.inventoryExtraSlots = (int) this.activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
-		this.inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
+		activeChar = character;
+		inventory = activeChar.getInventoryLimit();
+		warehouse = activeChar.getWareHouseLimit();
+		privateSell = activeChar.getPrivateSellStoreLimit();
+		privateBuy = activeChar.getPrivateBuyStoreLimit();
+		clan = Config.WAREHOUSE_SLOTS_CLAN;
+		receipeD = activeChar.getDwarfRecipeLimit();
+		recipe = activeChar.getCommonRecipeLimit();
+		inventoryExtraSlots = (int) activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
+		inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 
 	/* (non-Javadoc)
@@ -65,15 +65,15 @@ public class ExStorageMaxCount extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.inventory);
-		writeD(this.warehouse);
-		writeD(this.clan);
-		writeD(this.privateSell);
-		writeD(this.privateBuy);
-		writeD(this.receipeD);
-		writeD(this.recipe);
-		writeD(this.inventoryExtraSlots); // Belt inventory slots increase count
-		writeD(this.inventoryQuestItems);
+		writeD(inventory);
+		writeD(warehouse);
+		writeD(clan);
+		writeD(privateSell);
+		writeD(privateBuy);
+		writeD(receipeD);
+		writeD(recipe);
+		writeD(inventoryExtraSlots); // Belt inventory slots increase count
+		writeD(inventoryQuestItems);
 		writeD(40);
 		writeD(40);
 	}

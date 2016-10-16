@@ -32,26 +32,26 @@ public final class MoveToLocation extends L2GameServerPacket
 
 	public MoveToLocation(L2Character cha)
 	{
-		this.charObjId = cha.getObjectId();
-		this.x = cha.getX();
-		this.y = cha.getY();
-		this.z = cha.getZ();
-		this.xDst = cha.getXdestination();
-		this.yDst = cha.getYdestination();
-		this.zDst = cha.getZdestination();
+		charObjId = cha.getObjectId();
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
+		xDst = cha.getXdestination();
+		yDst = cha.getYdestination();
+		zDst = cha.getZdestination();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
+		writeD(charObjId);
 
-		writeD(this.xDst);
-		writeD(this.yDst);
-		writeD(this.zDst);
+		writeD(xDst);
+		writeD(yDst);
+		writeD(zDst);
 
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

@@ -37,25 +37,25 @@ public class ChessEventSide
 	public ChessEventSide(byte id)
 	{
 		this.id = id;
-		this.pieceSpawns = new L2Spawn[16];
-		this.board = new int[8][8];
+		pieceSpawns = new L2Spawn[16];
+		board = new int[8][8];
 		for (int i = 0; i < 8; i++)
 		{
 			for (int j = 0; j < 8; j++)
 			{
-				this.board[i][j] = 0;
+				board[i][j] = 0;
 			}
 		}
 		if (id == 0)
 		{
-			this.startX = -60215;
+			startX = -60215;
 		}
 		else
 		{
-			this.startX = -59800;
+			startX = -59800;
 		}
-		this.startY = -59595;
-		this.startZ = -1932;
+		startY = -59595;
+		startZ = -1932;
 	}
 
 	public boolean setPlayer(L2PcInstance playerInstance)
@@ -65,24 +65,24 @@ public class ChessEventSide
 			return false;
 		}
 		removePlayer();
-		this.player = playerInstance;
-		this.player.setTeam(getId() + 1);
+		player = playerInstance;
+		player.setTeam(getId() + 1);
 		//_player.broadcastUserInfo();
-		this.endX = this.player.getX();
-		this.endY = this.player.getY();
-		this.endZ = this.player.getZ();
-		this.player.teleToLocation(this.startX, this.startY, this.startZ);
+		endX = player.getX();
+		endY = player.getY();
+		endZ = player.getZ();
+		player.teleToLocation(startX, startY, startZ);
 		return true;
 	}
 
 	public void removePlayer()
 	{
-		if (this.player != null)
+		if (player != null)
 		{
-			this.player.setTeam(0);
+			player.setTeam(0);
 			//_player.broadcastUserInfo();
-			this.player.teleToLocation(this.endX, this.endY, this.endZ);
-			this.player = null;
+			player.teleToLocation(endX, endY, endZ);
+			player = null;
 		}
 	}
 
@@ -100,37 +100,37 @@ public class ChessEventSide
 
 	public boolean containsPlayer(int playerObjectId)
 	{
-		return this.player != null && this.player.getObjectId() == playerObjectId;
+		return player != null && player.getObjectId() == playerObjectId;
 	}
 
 	public byte getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public L2PcInstance getPlayer()
 	{
-		return this.player;
+		return player;
 	}
 
 	public L2Spawn getPieceSpawn(int i)
 	{
-		return this.pieceSpawns[i];
+		return pieceSpawns[i];
 	}
 
 	public void setPieceSpawn(L2Spawn spawn, int i)
 	{
-		this.pieceSpawns[i] = spawn;
+		pieceSpawns[i] = spawn;
 	}
 
 	public int[][] getBoard()
 	{
-		return this.board;
+		return board;
 	}
 
 	public void setBoard(int i, int j, int value)
 	{
-		this.board[i][j] = value;
+		board[i][j] = value;
 	}
 
 	public void spawnPieces()
@@ -215,28 +215,28 @@ public class ChessEventSide
 					leftX += costatCasella * 7;
 					heading = 32768;
 				}
-				this.pieceSpawns[i] = new L2Spawn(tmpl);
+				pieceSpawns[i] = new L2Spawn(tmpl);
 
-				this.pieceSpawns[i].setX(baseX + leftX);
-				this.pieceSpawns[i].setY(baseY + i * costatCasella - downY);
-				this.pieceSpawns[i].setZ(baseZ);
-				this.pieceSpawns[i].setHeading(heading);
+				pieceSpawns[i].setX(baseX + leftX);
+				pieceSpawns[i].setY(baseY + i * costatCasella - downY);
+				pieceSpawns[i].setZ(baseZ);
+				pieceSpawns[i].setHeading(heading);
 
-				SpawnTable.getInstance().addNewSpawn(this.pieceSpawns[i], false);
+				SpawnTable.getInstance().addNewSpawn(pieceSpawns[i], false);
 
-				this.pieceSpawns[i].stopRespawn();
-				this.pieceSpawns[i].doSpawn();
+				pieceSpawns[i].stopRespawn();
+				pieceSpawns[i].doSpawn();
 				//_pieceSpawns[i].getNpc().spawnMe(this.pieceSpawns[i].getNpc().getX(), this.pieceSpawns[i].getNpc().getY(), this.pieceSpawns[i].getNpc().getZ());
-				L2ChessPieceInstance piece = (L2ChessPieceInstance) this.pieceSpawns[i].getNpc();
+				L2ChessPieceInstance piece = (L2ChessPieceInstance) pieceSpawns[i].getNpc();
 				if (piece.getType() == 6)
 				{
-					this.king = piece;
+					king = piece;
 				}
 			}
 			for (i = 0; i < 8; i++)
 			{
-				this.board[i][0] = 1;
-				this.board[i][1] = 1;
+				board[i][0] = 1;
+				board[i][1] = 1;
 				getEnemy().setBoard(i, 6, 2);
 				getEnemy().setBoard(i, 7, 2);
 			}
@@ -252,13 +252,13 @@ public class ChessEventSide
 		int i;
 		for (i = 0; i < 16; i++)
 		{
-			if (this.pieceSpawns[i] != null)
+			if (pieceSpawns[i] != null)
 			{
-				this.pieceSpawns[i].getNpc().deleteMe();
-				this.pieceSpawns[i].getNpc().deleteMe();
-				this.pieceSpawns[i].getNpc().deleteMe();
-				this.pieceSpawns[i].stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(this.pieceSpawns[i], true);
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].stopRespawn();
+				SpawnTable.getInstance().deleteSpawn(pieceSpawns[i], true);
 			}
 		}
 	}
@@ -268,11 +268,11 @@ public class ChessEventSide
 		int i;
 		for (i = 0; i < 16; i++)
 		{
-			if (this.pieceSpawns[i] != null)
+			if (pieceSpawns[i] != null)
 			{
-				this.pieceSpawns[i].stopRespawn();
-				this.pieceSpawns[i].getNpc().doDie(this.pieceSpawns[i].getNpc());
-				SpawnTable.getInstance().deleteSpawn(this.pieceSpawns[i], true);
+				pieceSpawns[i].stopRespawn();
+				pieceSpawns[i].getNpc().doDie(pieceSpawns[i].getNpc());
+				SpawnTable.getInstance().deleteSpawn(pieceSpawns[i], true);
 			}
 		}
 	}
@@ -294,12 +294,12 @@ public class ChessEventSide
 
 	public boolean containsAPlayer()
 	{
-		return this.player != null;
+		return player != null;
 	}
 
 	public ChessEventSide getEnemy()
 	{
-		if (this.id == 0)
+		if (id == 0)
 		{
 			return ChessEvent.getSide(1);
 		}
@@ -321,7 +321,7 @@ public class ChessEventSide
 
 	public L2ChessPieceInstance getKing()
 	{
-		return this.king;
+		return king;
 	}
 
 	public void setCanTheKingBeKilled(boolean canTheKingBeKilled)
@@ -333,9 +333,9 @@ public class ChessEventSide
 	{
 		if (!check)
 		{
-			return this.canTheKingBeKilled;
+			return canTheKingBeKilled;
 		}
-		this.canTheKingBeKilled = false;
+		canTheKingBeKilled = false;
 		for (int i = 0; i < 8; i++)
 		{
 			for (L2ChessPieceInstance piece : ChessEvent.getBoard(getId())[i])
@@ -343,16 +343,16 @@ public class ChessEventSide
 				if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() &&
 						piece.canKillTheKing())
 				{
-					this.canTheKingBeKilled = true;
+					canTheKingBeKilled = true;
 				}
 			}
 		}
-		return this.canTheKingBeKilled;
+		return canTheKingBeKilled;
 	}
 
 	public boolean hasWon()
 	{
-		return this.hasWon;
+		return hasWon;
 	}
 
 	public void setHasWon(boolean hasWon)

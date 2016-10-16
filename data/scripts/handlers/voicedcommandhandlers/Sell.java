@@ -371,7 +371,7 @@ public class Sell implements IVoicedCommandHandler
 					player.broadcastPacket(new PrivateStoreMsgSell(player));
 					player.sitDown();
 
-					if (this.logSellCommand)
+					if (logSellCommand)
 					{
 						String log = player.getName() + " (" + list.getTitle() + ")\n";
 						for (TradeItem item : list.getItems())

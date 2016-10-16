@@ -159,7 +159,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 
 	public void isFirstTalk()
 	{
-		this.isFirstTalk = true;
+		isFirstTalk = true;
 	}
 
 	/**
@@ -167,13 +167,13 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	 */
 	public void disableValidation()
 	{
-		this.validate = false;
+		validate = false;
 	}
 
 	@Override
 	public void runImpl()
 	{
-		if (Config.BYPASS_VALIDATION && this.validate)
+		if (Config.BYPASS_VALIDATION && validate)
 		{
 			buildBypassCache(getClient().getActiveChar());
 		}
@@ -186,7 +186,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 			text = "<html><body>" + text + "</body></html>";
 		}
 
-		this.html = text;
+		html = text;
 	}
 
 	public boolean setFile(String prefix, String path)
@@ -206,7 +206,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 
 	public void replace(String pattern, String value)
 	{
-		this.html = this.html.replaceAll(pattern, value.replaceAll("\\$", "\\\\\\$"));
+		html = html.replaceAll(pattern, value.replaceAll("\\$", "\\\\\\$"));
 	}
 
 	private void buildBypassCache(L2PcInstance activeChar)
@@ -217,17 +217,17 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 		}
 
 		activeChar.clearBypass();
-		int len = this.html.length();
+		int len = html.length();
 		for (int i = 0; i < len; i++)
 		{
-			int start = this.html.indexOf("\"bypass ", i);
-			int finish = this.html.indexOf("\"", start + 1);
+			int start = html.indexOf("\"bypass ", i);
+			int finish = html.indexOf("\"", start + 1);
 			if (start < 0 || finish < 0)
 			{
 				break;
 			}
 
-			if (this.html.substring(start + 8, start + 10).equals("-h"))
+			if (html.substring(start + 8, start + 10).equals("-h"))
 			{
 				start += 11;
 			}
@@ -237,14 +237,14 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 			}
 
 			i = finish;
-			int finish2 = this.html.indexOf("$", start);
+			int finish2 = html.indexOf("$", start);
 			if (finish2 < finish && finish2 > 0)
 			{
-				activeChar.addBypass2(this.html.substring(start, finish2).trim());
+				activeChar.addBypass2(html.substring(start, finish2).trim());
 			}
 			else
 			{
-				activeChar.addBypass(this.html.substring(start, finish).trim());
+				activeChar.addBypass(html.substring(start, finish).trim());
 			}
 		}
 	}
@@ -252,9 +252,9 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.npcObjId);
-		writeS(this.html);
-		writeD(this.itemId);
-		writeD(this.isFirstTalk ? 0x00 : 0x01);
+		writeD(npcObjId);
+		writeS(html);
+		writeD(itemId);
+		writeD(isFirstTalk ? 0x00 : 0x01);
 	}
 }

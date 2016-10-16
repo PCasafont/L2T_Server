@@ -50,29 +50,29 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new WarehouseItem[count];
+		items = new WarehouseItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
 			long cnt = readQ();
 			if (objId < 1 || cnt < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new WarehouseItem(objId, cnt);
+			items[i] = new WarehouseItem(objId, cnt);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (this.items == null)
+		if (items == null)
 		{
 			return;
 		}
@@ -148,7 +148,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		int weight = 0;
 		int slots = 0;
 
-		for (WarehouseItem i : this.items)
+		for (WarehouseItem i : items)
 		{
 			// Calculate needed slots
 			L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
@@ -187,7 +187,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (WarehouseItem i : this.items)
+		for (WarehouseItem i : items)
 		{
 			L2ItemInstance oldItem = warehouse.getItemByObjectId(i.getObjectId());
 			if (oldItem == null || oldItem.getCount() < i.getCount())
@@ -240,18 +240,18 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
 		public WarehouseItem(int id, long num)
 		{
-			this.objectId = id;
-			this.count = num;
+			objectId = id;
+			count = num;
 		}
 
 		public int getObjectId()
 		{
-			return this.objectId;
+			return objectId;
 		}
 
 		public long getCount()
 		{
-			return this.count;
+			return count;
 		}
 	}
 }

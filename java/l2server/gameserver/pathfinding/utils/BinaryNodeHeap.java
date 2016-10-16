@@ -27,23 +27,23 @@ public class BinaryNodeHeap
 
 	public BinaryNodeHeap(int size)
 	{
-		this.list = new GeoNode[size + 1];
+		list = new GeoNode[size + 1];
 		this.size = 0;
 	}
 
 	public void add(GeoNode n)
 	{
-		this.size++;
-		int pos = this.size;
-		this.list[pos] = n;
+		size++;
+		int pos = size;
+		list[pos] = n;
 		while (pos != 1)
 		{
 			int p2 = pos / 2;
-			if (this.list[pos].getCost() <= this.list[p2].getCost())
+			if (list[pos].getCost() <= list[p2].getCost())
 			{
-				GeoNode temp = this.list[p2];
-				this.list[p2] = this.list[pos];
-				this.list[pos] = temp;
+				GeoNode temp = list[p2];
+				list[p2] = list[pos];
+				list[pos] = temp;
 				pos = p2;
 			}
 			else
@@ -55,10 +55,10 @@ public class BinaryNodeHeap
 
 	public GeoNode removeFirst()
 	{
-		GeoNode first = this.list[1];
-		this.list[1] = this.list[this.size];
-		this.list[this.size] = null;
-		this.size--;
+		GeoNode first = list[1];
+		list[1] = list[size];
+		list[size] = null;
+		size--;
 		int pos = 1;
 		int cpos;
 		int dblcpos;
@@ -67,20 +67,20 @@ public class BinaryNodeHeap
 		{
 			cpos = pos;
 			dblcpos = cpos * 2;
-			if (dblcpos + 1 <= this.size)
+			if (dblcpos + 1 <= size)
 			{
-				if (this.list[cpos].getCost() >= this.list[dblcpos].getCost())
+				if (list[cpos].getCost() >= list[dblcpos].getCost())
 				{
 					pos = dblcpos;
 				}
-				if (this.list[pos].getCost() >= this.list[dblcpos + 1].getCost())
+				if (list[pos].getCost() >= list[dblcpos + 1].getCost())
 				{
 					pos = dblcpos + 1;
 				}
 			}
-			else if (dblcpos <= this.size)
+			else if (dblcpos <= size)
 			{
-				if (this.list[cpos].getCost() >= this.list[dblcpos].getCost())
+				if (list[cpos].getCost() >= list[dblcpos].getCost())
 				{
 					pos = dblcpos;
 				}
@@ -88,9 +88,9 @@ public class BinaryNodeHeap
 
 			if (cpos != pos)
 			{
-				temp = this.list[cpos];
-				this.list[cpos] = this.list[pos];
-				this.list[pos] = temp;
+				temp = list[cpos];
+				list[cpos] = list[pos];
+				list[pos] = temp;
 			}
 			else
 			{
@@ -102,13 +102,13 @@ public class BinaryNodeHeap
 
 	public boolean contains(GeoNode n)
 	{
-		if (this.size == 0)
+		if (size == 0)
 		{
 			return false;
 		}
-		for (int i = 1; i <= this.size; i++)
+		for (int i = 1; i <= size; i++)
 		{
-			if (this.list[i].equals(n))
+			if (list[i].equals(n))
 			{
 				return true;
 			}
@@ -118,6 +118,6 @@ public class BinaryNodeHeap
 
 	public boolean isEmpty()
 	{
-		return this.size == 0;
+		return size == 0;
 	}
 }

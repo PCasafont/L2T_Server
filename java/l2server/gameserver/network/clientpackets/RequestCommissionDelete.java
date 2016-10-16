@@ -30,9 +30,9 @@ public final class RequestCommissionDelete extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.auctionID = readQ();
-		this.category = readD();
-		this.duration = readD();
+		auctionID = readQ();
+		category = readD();
+		duration = readD();
 	}
 
 	@Override

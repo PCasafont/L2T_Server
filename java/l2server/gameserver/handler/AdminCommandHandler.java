@@ -36,7 +36,7 @@ public class AdminCommandHandler
 
 	private AdminCommandHandler()
 	{
-		this.datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerAdminCommandHandler(IAdminCommandHandler handler)
@@ -48,7 +48,7 @@ public class AdminCommandHandler
 			{
 				Log.fine("Adding handler for command " + id);
 			}
-			this.datatable.put(id.hashCode(), handler);
+			datatable.put(id.hashCode(), handler);
 		}
 	}
 
@@ -61,11 +61,11 @@ public class AdminCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("getting handler for command: " + command + " -> " + (this.datatable.get(command.hashCode()) != null));
+			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
 		//Log.info(command);
 
-		return this.datatable.get(command.hashCode());
+		return datatable.get(command.hashCode());
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class AdminCommandHandler
 	 */
 	public int size()
 	{
-		return this.datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")

@@ -34,7 +34,7 @@ public class ExCastleTendency extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.castleId);
-		writeD(this.tendency);
+		writeD(castleId);
+		writeD(tendency);
 	}
 }

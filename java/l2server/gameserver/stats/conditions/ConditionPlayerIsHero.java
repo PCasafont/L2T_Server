@@ -45,6 +45,6 @@ public class ConditionPlayerIsHero extends Condition
 		{
 			return false;
 		}
-		return ((L2PcInstance) env.player).isHero() == this.val;
+		return ((L2PcInstance) env.player).isHero() == val;
 	}
 }

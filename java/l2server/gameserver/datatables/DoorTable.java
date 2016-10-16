@@ -48,16 +48,16 @@ public class DoorTable
 
 	private DoorTable()
 	{
-		this.doors = new TIntObjectHashMap<>();
-		this.regions = new TIntObjectHashMap<>();
+		doors = new TIntObjectHashMap<>();
+		regions = new TIntObjectHashMap<>();
 		parseData();
 	}
 
 	public void reload()
 	{
-		this.doors.clear();
-		this.regions.clear();
-		this.groups.clear();
+		doors.clear();
+		regions.clear();
+		groups.clear();
 		parseData();
 	}
 
@@ -91,7 +91,7 @@ public class DoorTable
 				}
 			}
 		}
-		Log.info("DoorTable: Loaded " + this.doors.size() + " Door Templates for " + this.regions.size() + " regions.");
+		Log.info("DoorTable: Loaded " + doors.size() + " Door Templates for " + regions.size() + " regions.");
 	}
 
 	public void insertCollisionData(StatsSet set)
@@ -182,33 +182,33 @@ public class DoorTable
 
 	public L2DoorTemplate getDoorTemplate(int doorId)
 	{
-		return this.doors.get(doorId).getTemplate();
+		return doors.get(doorId).getTemplate();
 	}
 
 	public L2DoorInstance getDoor(int doorId)
 	{
-		return this.doors.get(doorId);
+		return doors.get(doorId);
 	}
 
 	public void putDoor(L2DoorInstance door, int region)
 	{
-		this.doors.put(door.getDoorId(), door);
+		doors.put(door.getDoorId(), door);
 
-		if (this.regions.contains(region))
+		if (regions.contains(region))
 		{
-			this.regions.get(region).add(door);
+			regions.get(region).add(door);
 		}
 		else
 		{
 			final ArrayList<L2DoorInstance> list = new ArrayList<>();
 			list.add(door);
-			this.regions.put(region, list);
+			regions.put(region, list);
 		}
 	}
 
 	public L2DoorInstance[] getDoors()
 	{
-		return this.doors.getValues(new L2DoorInstance[this.doors.size()]);
+		return doors.getValues(new L2DoorInstance[doors.size()]);
 	}
 
 	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)
@@ -231,7 +231,7 @@ public class DoorTable
 		}
 		else
 		{
-			allDoors = this.regions.get(MapRegionTable.getInstance().getMapRegion(x, y));
+			allDoors = regions.get(MapRegionTable.getInstance().getMapRegion(x, y));
 		}
 
 		if (allDoors == null)

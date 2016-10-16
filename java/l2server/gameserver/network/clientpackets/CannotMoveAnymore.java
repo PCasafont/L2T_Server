@@ -37,10 +37,10 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.x = readD();
-		this.y = readD();
-		this.z = readD();
-		this.heading = readD();
+		x = readD();
+		y = readD();
+		z = readD();
+		heading = readD();
 	}
 
 	@Override
@@ -55,13 +55,14 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		if (Config.DEBUG)
 		{
 			Log.fine(
-					"client: x:" + this.x + " y:" + this.y + " z:" + this.z + " server x:" + player.getX() + " y:" + player.getY() +
+					"client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() +
 							" z:" + player.getZ());
 		}
 
 		if (player.getAI() != null)
 		{
-			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(this.x, this.y, this.z, this.heading));
+			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(x, y, z,
+					heading));
 		}
 		/*if (player.getParty() != null)
         {

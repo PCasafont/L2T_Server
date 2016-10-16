@@ -73,7 +73,7 @@ public class PcInventory extends Inventory
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return this.owner;
+		return owner;
 	}
 
 	@Override
@@ -90,23 +90,23 @@ public class PcInventory extends Inventory
 
 	public L2ItemInstance getAdenaInstance()
 	{
-		return this.adena;
+		return adena;
 	}
 
 	@Override
 	public long getAdena()
 	{
-		return this.adena != null ? this.adena.getCount() : 0;
+		return adena != null ? adena.getCount() : 0;
 	}
 
 	public L2ItemInstance getAncientAdenaInstance()
 	{
-		return this.ancientAdena;
+		return ancientAdena;
 	}
 
 	public long getAncientAdena()
 	{
-		return this.ancientAdena != null ? this.ancientAdena.getCount() : 0;
+		return ancientAdena != null ? ancientAdena.getCount() : 0;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (!allowAdena && item.getItemId() == 57)
 			{
@@ -170,7 +170,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -221,7 +221,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getAllItemsByItemId(int itemId, boolean includeEquipped)
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -256,7 +256,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped)
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -281,7 +281,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getAvailableItems(boolean allowAdena, boolean allowNonTradeable)
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.isAvailable(getOwner(), allowAdena, allowNonTradeable) &&
 					canManipulateWithItemId(item.getItemId()))
@@ -301,7 +301,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getAugmentedItems()
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.isAugmented())
 			{
@@ -320,7 +320,7 @@ public class PcInventory extends Inventory
 	public L2ItemInstance[] getElementItems()
 	{
 		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getElementals() != null)
 			{
@@ -339,7 +339,7 @@ public class PcInventory extends Inventory
 	public TradeList.TradeItem[] getAvailableItems(TradeList tradeList)
 	{
 		ArrayList<TradeList.TradeItem> list = new ArrayList<>();
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.isAvailable(getOwner(), false, false))
 			{
@@ -356,7 +356,7 @@ public class PcInventory extends Inventory
 
 	public L2ItemInstance getWeaponByTypeAndGrade(final L2WeaponType weaponType, final int crystalType)
 	{
-		for (L2ItemInstance item : this.items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null || !(item.getItem() instanceof L2Weapon))
 			{
@@ -500,14 +500,14 @@ public class PcInventory extends Inventory
 	{
 		item = super.addItem(process, item, actor, reference);
 
-		if (item != null && item.getItemId() == ADENA_ID && !item.equals(this.adena))
+		if (item != null && item.getItemId() == ADENA_ID && !item.equals(adena))
 		{
-			this.adena = item;
+			adena = item;
 		}
 
-		if (item != null && item.getItemId() == ANCIENT_ADENA_ID && !item.equals(this.ancientAdena))
+		if (item != null && item.getItemId() == ANCIENT_ADENA_ID && !item.equals(ancientAdena))
 		{
-			this.ancientAdena = item;
+			ancientAdena = item;
 		}
 
 		return item;
@@ -528,14 +528,14 @@ public class PcInventory extends Inventory
 	{
 		L2ItemInstance item = super.addItem(process, itemId, count, actor, reference);
 
-		if (item != null && item.getItemId() == ADENA_ID && !item.equals(this.adena))
+		if (item != null && item.getItemId() == ADENA_ID && !item.equals(adena))
 		{
-			this.adena = item;
+			adena = item;
 		}
 
-		if (item != null && item.getItemId() == ANCIENT_ADENA_ID && !item.equals(this.ancientAdena))
+		if (item != null && item.getItemId() == ANCIENT_ADENA_ID && !item.equals(ancientAdena))
 		{
-			this.ancientAdena = item;
+			ancientAdena = item;
 		}
 		if (item != null && actor != null)
 		{
@@ -580,14 +580,14 @@ public class PcInventory extends Inventory
 	{
 		L2ItemInstance item = super.transferItem(process, objectId, count, target, actor, reference);
 
-		if (this.adena != null && (this.adena.getCount() <= 0 || this.adena.getOwnerId() != getOwnerId()))
+		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId()))
 		{
-			this.adena = null;
+			adena = null;
 		}
 
-		if (this.ancientAdena != null && (this.ancientAdena.getCount() <= 0 || this.ancientAdena.getOwnerId() != getOwnerId()))
+		if (ancientAdena != null && (ancientAdena.getCount() <= 0 || ancientAdena.getOwnerId() != getOwnerId()))
 		{
-			this.ancientAdena = null;
+			ancientAdena = null;
 		}
 
 		return item;
@@ -605,7 +605,7 @@ public class PcInventory extends Inventory
 	@Override
 	public L2ItemInstance destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
 	{
-		return this.destroyItem(process, item, item.getCount(), actor, reference);
+		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
 
 	/**
@@ -622,14 +622,14 @@ public class PcInventory extends Inventory
 	{
 		item = super.destroyItem(process, item, count, actor, reference);
 
-		if (this.adena != null && this.adena.getCount() <= 0)
+		if (adena != null && adena.getCount() <= 0)
 		{
-			this.adena = null;
+			adena = null;
 		}
 
-		if (this.ancientAdena != null && this.ancientAdena.getCount() <= 0)
+		if (ancientAdena != null && ancientAdena.getCount() <= 0)
 		{
-			this.ancientAdena = null;
+			ancientAdena = null;
 		}
 
 		//Runes Skills
@@ -645,9 +645,9 @@ public class PcInventory extends Inventory
 					{
 						continue;
 					}
-					this.owner.removeSkill(skill.getSkill());
+					owner.removeSkill(skill.getSkill());
 				}
-				this.owner.sendSkillList();
+				owner.sendSkillList();
 			}
 		}
 		return item;
@@ -671,7 +671,7 @@ public class PcInventory extends Inventory
 		{
 			return null;
 		}
-		return this.destroyItem(process, item, count, actor, reference);
+		return destroyItem(process, item, count, actor, reference);
 	}
 
 	/**
@@ -692,7 +692,7 @@ public class PcInventory extends Inventory
 		{
 			return null;
 		}
-		return this.destroyItem(process, item, count, actor, reference);
+		return destroyItem(process, item, count, actor, reference);
 	}
 
 	/**
@@ -709,14 +709,14 @@ public class PcInventory extends Inventory
 	{
 		item = super.dropItem(process, item, actor, reference);
 
-		if (this.adena != null && (this.adena.getCount() <= 0 || this.adena.getOwnerId() != getOwnerId()))
+		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId()))
 		{
-			this.adena = null;
+			adena = null;
 		}
 
-		if (this.ancientAdena != null && (this.ancientAdena.getCount() <= 0 || this.ancientAdena.getOwnerId() != getOwnerId()))
+		if (ancientAdena != null && (ancientAdena.getCount() <= 0 || ancientAdena.getOwnerId() != getOwnerId()))
 		{
-			this.ancientAdena = null;
+			ancientAdena = null;
 		}
 
 		return item;
@@ -737,14 +737,14 @@ public class PcInventory extends Inventory
 	{
 		L2ItemInstance item = super.dropItem(process, objectId, count, actor, reference);
 
-		if (this.adena != null && (this.adena.getCount() <= 0 || this.adena.getOwnerId() != getOwnerId()))
+		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId()))
 		{
-			this.adena = null;
+			adena = null;
 		}
 
-		if (this.ancientAdena != null && (this.ancientAdena.getCount() <= 0 || this.ancientAdena.getOwnerId() != getOwnerId()))
+		if (ancientAdena != null && (ancientAdena.getCount() <= 0 || ancientAdena.getOwnerId() != getOwnerId()))
 		{
-			this.ancientAdena = null;
+			ancientAdena = null;
 		}
 
 		return item;
@@ -769,21 +769,21 @@ public class PcInventory extends Inventory
 
 		if (item.getItemId() == ADENA_ID)
 		{
-			this.adena = null;
+			adena = null;
 		}
 		else if (item.getItemId() == ANCIENT_ADENA_ID)
 		{
-			this.ancientAdena = null;
+			ancientAdena = null;
 		}
 
-		synchronized (this.items)
+		synchronized (items)
 		{
 			if (item.isQuestItem())
 			{
-				this.questSlots--;
-				if (this.questSlots < 0)
+				questSlots--;
+				if (questSlots < 0)
 				{
-					this.questSlots = 0;
+					questSlots = 0;
 					Log.warning(this + ": QuestInventory size < 0!");
 				}
 			}
@@ -809,8 +809,8 @@ public class PcInventory extends Inventory
 	public void restore()
 	{
 		super.restore();
-		this.adena = getItemByItemId(ADENA_ID);
-		this.ancientAdena = getItemByItemId(ANCIENT_ADENA_ID);
+		adena = getItemByItemId(ADENA_ID);
+		ancientAdena = getItemByItemId(ANCIENT_ADENA_ID);
 	}
 
 	public static int[][] restoreVisibleInventory(int objectId)
@@ -912,22 +912,22 @@ public class PcInventory extends Inventory
 	{
 		if (!questItem)
 		{
-			return this.items.size() - this.questSlots + slots <= this.owner.getInventoryLimit();
+			return items.size() - questSlots + slots <= owner.getInventoryLimit();
 		}
 		else
 		{
-			return this.questSlots + slots <= this.owner.getQuestInventoryLimit();
+			return questSlots + slots <= owner.getQuestInventoryLimit();
 		}
 	}
 
 	@Override
 	public boolean validateWeight(long weight)
 	{
-		if (this.owner.isGM() && this.owner.getAccessLevel().allowTransaction())
+		if (owner.isGM() && owner.getAccessLevel().allowTransaction())
 		{
 			return true; // disable weight check for GM
 		}
-		return this.totalWeight + weight <= this.owner.getMaxLoad();
+		return totalWeight + weight <= owner.getMaxLoad();
 	}
 
 	/**
@@ -939,10 +939,10 @@ public class PcInventory extends Inventory
 	 */
 	public void setInventoryBlock(int[] items, int mode)
 	{
-		this.blockMode = mode;
-		this.blockItems = items;
+		blockMode = mode;
+		blockItems = items;
 
-		this.owner.sendPacket(new ItemList(this.owner, false));
+		owner.sendPacket(new ItemList(owner, false));
 	}
 
 	/**
@@ -950,10 +950,10 @@ public class PcInventory extends Inventory
 	 */
 	public void unblock()
 	{
-		this.blockMode = -1;
-		this.blockItems = null;
+		blockMode = -1;
+		blockItems = null;
 
-		this.owner.sendPacket(new ItemList(this.owner, false));
+		owner.sendPacket(new ItemList(owner, false));
 	}
 
 	/**
@@ -963,7 +963,7 @@ public class PcInventory extends Inventory
 	 */
 	public boolean hasInventoryBlock()
 	{
-		return this.blockMode > -1 && this.blockItems != null && this.blockItems.length > 0;
+		return blockMode > -1 && blockItems != null && blockItems.length > 0;
 	}
 
 	/**
@@ -982,7 +982,7 @@ public class PcInventory extends Inventory
 	 */
 	public int getBlockMode()
 	{
-		return this.blockMode;
+		return blockMode;
 	}
 
 	/**
@@ -992,7 +992,7 @@ public class PcInventory extends Inventory
 	 */
 	public int[] getBlockItems()
 	{
-		return this.blockItems;
+		return blockItems;
 	}
 
 	/**
@@ -1003,18 +1003,18 @@ public class PcInventory extends Inventory
 	 */
 	public boolean canManipulateWithItemId(int itemId)
 	{
-		return !(this.blockMode == 0 && Util.contains(this.blockItems, itemId) ||
-				this.blockMode == 1 && !Util.contains(this.blockItems, itemId));
+		return !(blockMode == 0 && Util.contains(blockItems, itemId) ||
+				blockMode == 1 && !Util.contains(blockItems, itemId));
 	}
 
 	@Override
 	protected void addItem(L2ItemInstance item)
 	{
-		synchronized (this.items)
+		synchronized (items)
 		{
 			if (item.isQuestItem())
 			{
-				this.questSlots++;
+				questSlots++;
 			}
 
 			super.addItem(item);
@@ -1032,9 +1032,9 @@ public class PcInventory extends Inventory
 					{
 						continue;
 					}
-					this.owner.addSkill(skill.getSkill());
+					owner.addSkill(skill.getSkill());
 				}
-				this.owner.sendSkillList();
+				owner.sendSkillList();
 			}
 		}
 	}
@@ -1043,11 +1043,11 @@ public class PcInventory extends Inventory
 	{
 		if (quest)
 		{
-			return this.questSlots;
+			return questSlots;
 		}
 		else
 		{
-			return getSize() - this.questSlots;
+			return getSize() - questSlots;
 		}
 	}
 
@@ -1072,6 +1072,6 @@ public class PcInventory extends Inventory
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + "[" + this.owner + "]";
+		return getClass().getSimpleName() + "[" + owner + "]";
 	}
 }

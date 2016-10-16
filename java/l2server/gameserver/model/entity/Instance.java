@@ -67,7 +67,7 @@ public class Instance
 	public Instance(int id)
 	{
 		this.id = id;
-		this.ejectProc = new EjectPlayerProcedure();
+		ejectProc = new EjectPlayerProcedure();
 		instanceStartTime = System.currentTimeMillis();
 	}
 
@@ -76,7 +76,7 @@ public class Instance
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class Instance
 	 */
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name)
@@ -97,7 +97,7 @@ public class Instance
 	 */
 	public boolean isSummonAllowed()
 	{
-		return this.allowSummon;
+		return allowSummon;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class Instance
 	 */
 	public void setAllowSummon(boolean b)
 	{
-		this.allowSummon = b;
+		allowSummon = b;
 	}
 
 	/*
@@ -113,7 +113,7 @@ public class Instance
 	 */
 	public boolean isPvPInstance()
 	{
-		return this.isPvPInstance;
+		return isPvPInstance;
 	}
 
 	/*
@@ -121,17 +121,17 @@ public class Instance
 	 */
 	public void setPvPInstance(boolean b)
 	{
-		this.isPvPInstance = b;
+		isPvPInstance = b;
 	}
 
 	public void setPeaceInstance(boolean b)
 	{
-		this.isPeaceInstance = b;
+		isPeaceInstance = b;
 	}
 
 	public boolean isPeaceInstance()
 	{
-		return this.isPeaceInstance;
+		return isPeaceInstance;
 	}
 
 	/**
@@ -141,12 +141,12 @@ public class Instance
 	 */
 	public void setDuration(int duration)
 	{
-		if (this.CheckTimeUpTask != null)
+		if (CheckTimeUpTask != null)
 		{
-			this.CheckTimeUpTask.cancel(true);
+			CheckTimeUpTask.cancel(true);
 		}
 
-		this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
+		CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
 		instanceEndTime = System.currentTimeMillis() + duration + 500;
 	}
 
@@ -157,7 +157,7 @@ public class Instance
 	 */
 	public void setEmptyDestroyTime(long time)
 	{
-		this.emptyDestroyTime = time;
+		emptyDestroyTime = time;
 	}
 
 	/**
@@ -168,7 +168,7 @@ public class Instance
 	 */
 	public boolean containsPlayer(int objectId)
 	{
-		return this.players.contains(objectId);
+		return players.contains(objectId);
 	}
 
 	/**
@@ -178,9 +178,9 @@ public class Instance
 	 */
 	public void addPlayer(int objectId)
 	{
-		synchronized (this.players)
+		synchronized (players)
 		{
-			this.players.add(objectId);
+			players.add(objectId);
 		}
 	}
 
@@ -191,14 +191,14 @@ public class Instance
 	 */
 	public void removePlayer(int objectId)
 	{
-		synchronized (this.players)
+		synchronized (players)
 		{
-			this.players.remove(objectId);
+			players.remove(objectId);
 		}
 
-		if (this.players.isEmpty() && this.emptyDestroyTime >= 0)
+		if (players.isEmpty() && emptyDestroyTime >= 0)
 		{
-			this.lastLeft = System.currentTimeMillis();
+			lastLeft = System.currentTimeMillis();
 			setDuration((int) (instanceEndTime - System.currentTimeMillis() - 500));
 		}
 	}
@@ -228,7 +228,7 @@ public class Instance
 
 	public void addNpc(L2Npc npc)
 	{
-		this.npcs.add(npc);
+		npcs.add(npc);
 	}
 
 	public void removeNpc(L2Npc npc)
@@ -238,7 +238,7 @@ public class Instance
 			npc.getSpawn().stopRespawn();
 		}
 		//npc.deleteMe();
-		this.npcs.remove(npc);
+		npcs.remove(npc);
 	}
 
 	/**
@@ -248,12 +248,12 @@ public class Instance
 	 */
 	public void addDoor(int doorId, StatsSet set)
 	{
-		if (this.doors == null)
+		if (doors == null)
 		{
-			this.doors = new ArrayList<>(2);
+			doors = new ArrayList<>(2);
 		}
 
-		for (L2DoorInstance door : this.doors)
+		for (L2DoorInstance door : doors)
 		{
 			if (door.getDoorId() == doorId)
 			{
@@ -267,22 +267,22 @@ public class Instance
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(temp.posX, temp.posY, temp.posZ);
-		this.doors.add(newdoor);
+		doors.add(newdoor);
 	}
 
 	public TIntHashSet getPlayers()
 	{
-		return this.players;
+		return players;
 	}
 
 	public CopyOnWriteArrayList<L2Npc> getNpcs()
 	{
-		return this.npcs;
+		return npcs;
 	}
 
 	public ArrayList<L2DoorInstance> getDoors()
 	{
-		return this.doors;
+		return doors;
 	}
 
 	public L2DoorInstance getDoor(int id)
@@ -309,17 +309,17 @@ public class Instance
 
 	public boolean isShowTimer()
 	{
-		return this.showTimer;
+		return showTimer;
 	}
 
 	public boolean isTimerIncrease()
 	{
-		return this.isTimerIncrease;
+		return isTimerIncrease;
 	}
 
 	public String getTimerText()
 	{
-		return this.timerText;
+		return timerText;
 	}
 
 	/**
@@ -329,7 +329,7 @@ public class Instance
 	 */
 	public int[] getSpawnLoc()
 	{
-		return this.spawnLoc;
+		return spawnLoc;
 	}
 
 	/**
@@ -341,22 +341,22 @@ public class Instance
 		{
 			return;
 		}
-		System.arraycopy(loc, 0, this.spawnLoc, 0, 3);
+		System.arraycopy(loc, 0, spawnLoc, 0, 3);
 	}
 
 	public void removePlayers()
 	{
-		this.players.forEach(this.ejectProc);
+		players.forEach(ejectProc);
 
-		synchronized (this.players)
+		synchronized (players)
 		{
-			this.players.clear();
+			players.clear();
 		}
 	}
 
 	public void removeNpcs()
 	{
-		for (L2Npc mob : this.npcs)
+		for (L2Npc mob : npcs)
 		{
 			if (mob != null)
 			{
@@ -368,17 +368,17 @@ public class Instance
 				mob.setInstanceId(0);
 			}
 		}
-		this.npcs.clear();
+		npcs.clear();
 	}
 
 	public void removeDoors()
 	{
-		if (this.doors == null)
+		if (doors == null)
 		{
 			return;
 		}
 
-		for (L2DoorInstance door : this.doors)
+		for (L2DoorInstance door : doors)
 		{
 			if (door != null)
 			{
@@ -394,8 +394,8 @@ public class Instance
 				L2World.getInstance().removeObject(door);
 			}
 		}
-		this.doors.clear();
-		this.doors = null;
+		doors.clear();
+		doors = null;
 	}
 
 	public void loadInstanceTemplate(String filename)
@@ -437,7 +437,7 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					this.CheckTimeUpTask = ThreadPoolManager.getInstance()
+					CheckTimeUpTask = ThreadPoolManager.getInstance()
 							.scheduleGeneral(new CheckTimeUp(n.getInt("val") * 60000), 15000);
 					instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
 				}
@@ -459,22 +459,22 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					this.emptyDestroyTime = n.getLong("val") * 1000;
+					emptyDestroyTime = n.getLong("val") * 1000;
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("showTimer"))
 			{
 				if (n.hasAttribute("val"))
 				{
-					this.showTimer = n.getBool("val");
+					showTimer = n.getBool("val");
 				}
 				if (n.hasAttribute("increase"))
 				{
-					this.isTimerIncrease = n.getBool("increase");
+					isTimerIncrease = n.getBool("increase");
 				}
 				if (n.hasAttribute("text"))
 				{
-					this.timerText = n.getString("text");
+					timerText = n.getString("text");
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("PvPInstance"))
@@ -563,14 +563,14 @@ public class Instance
 			{
 				try
 				{
-					this.spawnLoc[0] = n.getInt("spawnX");
-					this.spawnLoc[1] = n.getInt("spawnY");
-					this.spawnLoc[2] = n.getInt("spawnZ");
+					spawnLoc[0] = n.getInt("spawnX");
+					spawnLoc[1] = n.getInt("spawnY");
+					spawnLoc[2] = n.getInt("spawnZ");
 				}
 				catch (Exception e)
 				{
 					Log.log(Level.WARNING, "Error parsing instance xml: " + e.getMessage(), e);
-					this.spawnLoc = new int[3];
+					spawnLoc = new int[3];
 				}
 			}
 		}
@@ -586,15 +586,15 @@ public class Instance
 		int timeLeft;
 		int interval;
 
-		if (this.players.isEmpty() && this.emptyDestroyTime == 0)
+		if (players.isEmpty() && emptyDestroyTime == 0)
 		{
 			remaining = 0;
 			interval = 500;
 		}
-		else if (this.players.isEmpty() && this.emptyDestroyTime > 0)
+		else if (players.isEmpty() && emptyDestroyTime > 0)
 		{
 
-			Long emptyTimeLeft = this.lastLeft + this.emptyDestroyTime - System.currentTimeMillis();
+			Long emptyTimeLeft = lastLeft + emptyDestroyTime - System.currentTimeMillis();
 			if (emptyTimeLeft <= 0)
 			{
 				interval = 0;
@@ -655,26 +655,26 @@ public class Instance
 		}
 		if (cs != null)
 		{
-			this.players.forEach(new SendPacketToPlayerProcedure(cs));
+			players.forEach(new SendPacketToPlayerProcedure(cs));
 		}
 
 		cancelTimer();
 		//System.out.println(this.id + " (" + getName() + "): " + remaining + " " + interval);
 		if (remaining >= 10000)
 		{
-			this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
+			CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
 		}
 		else
 		{
-			this.CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
+			CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
 		}
 	}
 
 	public void cancelTimer()
 	{
-		if (this.CheckTimeUpTask != null)
+		if (CheckTimeUpTask != null)
 		{
-			this.CheckTimeUpTask.cancel(true);
+			CheckTimeUpTask.cancel(true);
 		}
 	}
 
@@ -690,7 +690,7 @@ public class Instance
 		@Override
 		public void run()
 		{
-			doCheckTimeUp(this.remaining);
+			doCheckTimeUp(remaining);
 		}
 	}
 
@@ -734,7 +734,7 @@ public class Instance
 
 			if (player.getInstanceId() == getId())
 			{
-				player.sendPacket(this.packet);
+				player.sendPacket(packet);
 			}
 			return true;
 		}

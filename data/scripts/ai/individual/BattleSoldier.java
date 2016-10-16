@@ -50,7 +50,7 @@ public class BattleSoldier extends L2AttackableAIScript
 
 		for (int[] coord : WALK_ROUTE)
 		{
-			this.route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
+			route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
 		}
 
 		addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
@@ -81,7 +81,7 @@ public class BattleSoldier extends L2AttackableAIScript
 
 		npc.setIsInvul(true);
 
-		battleSoldierAI.initializeRoute(this.route, null);
+		battleSoldierAI.initializeRoute(route, null);
 
 		battleSoldierAI.walkToLocation();
 

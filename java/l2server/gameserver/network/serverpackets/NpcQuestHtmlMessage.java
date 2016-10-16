@@ -155,7 +155,7 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 			text = "<html><body>" + text + "</body></html>";
 		}
 
-		this.html = text;
+		html = text;
 	}
 
 	public boolean setFile(String path)
@@ -175,7 +175,7 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 
 	public void replace(String pattern, String value)
 	{
-		this.html = this.html.replaceAll(pattern, value);
+		html = html.replaceAll(pattern, value);
 	}
 
 	private void buildBypassCache(L2PcInstance activeChar)
@@ -186,11 +186,11 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 		}
 
 		activeChar.clearBypass();
-		int len = this.html.length();
+		int len = html.length();
 		for (int i = 0; i < len; i++)
 		{
-			int start = this.html.indexOf("bypass -h", i);
-			int finish = this.html.indexOf("\"", start);
+			int start = html.indexOf("bypass -h", i);
+			int finish = html.indexOf("\"", start);
 
 			if (start < 0 || finish < 0)
 			{
@@ -199,14 +199,14 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 
 			start += 10;
 			i = finish;
-			int finish2 = this.html.indexOf("$", start);
+			int finish2 = html.indexOf("$", start);
 			if (finish2 < finish && finish2 > 0)
 			{
-				activeChar.addBypass2(this.html.substring(start, finish2).trim());
+				activeChar.addBypass2(html.substring(start, finish2).trim());
 			}
 			else
 			{
-				activeChar.addBypass(this.html.substring(start, finish).trim());
+				activeChar.addBypass(html.substring(start, finish).trim());
 			}
 		}
 	}
@@ -214,8 +214,8 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.npcObjId);
-		writeS(this.html);
-		writeD(this.questId);
+		writeD(npcObjId);
+		writeS(html);
+		writeD(questId);
 	}
 }

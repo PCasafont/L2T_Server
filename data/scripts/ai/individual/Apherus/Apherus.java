@@ -56,19 +56,19 @@ public class Apherus extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addAttackId(this.apherus);
-		addKillId(this.apherus);
-		addEnterZoneId(this.apherusZoneId);
-		addExitZoneId(this.apherusZoneId);
-		addSpawnId(this.apherus);
+		addAttackId(apherus);
+		addKillId(apherus);
+		addEnterZoneId(apherusZoneId);
+		addExitZoneId(apherusZoneId);
+		addSpawnId(apherus);
 
-		for (int a : this.apherusDoorsNpcs)
+		for (int a : apherusDoorsNpcs)
 		{
 			addTalkId(a);
 			addStartNpc(a);
 		}
 
-		L2RaidBossInstance boss = BossManager.getInstance().getBoss(this.apherus);
+		L2RaidBossInstance boss = BossManager.getInstance().getBoss(apherus);
 		if (boss != null)
 		{
 			notifySpawn(boss);
@@ -78,12 +78,12 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		this.apherusRaid = npc;
-		this.apherusInvincibility.getEffects(npc, npc);
+		apherusRaid = npc;
+		apherusInvincibility.getEffects(npc, npc);
 
 		//Be sure the doors are closed
-		this.doorIsOpen = false;
-		for (int door : this.apherusDoors)
+		doorIsOpen = false;
+		for (int door : apherusDoors)
 		{
 			DoorTable.getInstance().getDoor(door).closeMe();
 		}
@@ -95,11 +95,11 @@ public class Apherus extends L2AttackableAIScript
 	{
 		if (character.isRaid())
 		{
-			character.stopSkillEffects(this.gardenApherusRecovery.getId());
+			character.stopSkillEffects(gardenApherusRecovery.getId());
 		}
 		else if (character instanceof L2Playable)
 		{
-			if (!this.doorIsOpen)
+			if (!doorIsOpen)
 			{
 				if (!character.isGM())
 				{
@@ -115,7 +115,7 @@ public class Apherus extends L2AttackableAIScript
 	{
 		if (character.isRaid())
 		{
-			this.gardenApherusRecovery.getEffects(character, character);
+			gardenApherusRecovery.getEffects(character, character);
 		}
 
 		return super.onExitZone(character, zone);
@@ -124,9 +124,9 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (!this.doorIsOpen && BossManager.getInstance().getBoss(this.apherus) != null)
+		if (!doorIsOpen && BossManager.getInstance().getBoss(apherus) != null)
 		{
-			if (!player.destroyItemByItemId(this.qn, this.apherusKey, 1, player, true))
+			if (!player.destroyItemByItemId(qn, apherusKey, 1, player, true))
 			{
 				return "apherusDoor-no.html";
 			}
@@ -136,15 +136,15 @@ public class Apherus extends L2AttackableAIScript
 			player.sendMessage("Random = " + random);
 			if (random > 67)
 			{
-				this.doorIsOpen = true;
-				for (int door : this.apherusDoors)
+				doorIsOpen = true;
+				for (int door : apherusDoors)
 				{
 					DoorTable.getInstance().getDoor(door).openMe();
 				}
 
 				npc.broadcastPacket(new ExShowScreenMessage(1811740, 3000));
 
-				this.apherusRaid.stopSkillEffects(this.apherusInvincibility.getId());
+				apherusRaid.stopSkillEffects(apherusInvincibility.getId());
 			}
 			else
 			{
@@ -153,7 +153,7 @@ public class Apherus extends L2AttackableAIScript
 				for (int a = 0; a < 4; a++)
 				{
 					L2MonsterInstance protector =
-							(L2MonsterInstance) addSpawn(this.apreusDoorGuyards[Rnd.get(this.apreusDoorGuyards.length)],
+							(L2MonsterInstance) addSpawn(apreusDoorGuyards[Rnd.get(apreusDoorGuyards.length)],
 									player.getX(), player.getY(), player.getZ(), 0, false, 600000, false);
 					protector.setIsRunning(true);
 					protector.setTarget(player);
@@ -172,8 +172,8 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		this.doorIsOpen = false;
-		for (int door : this.apherusDoors)
+		doorIsOpen = false;
+		for (int door : apherusDoors)
 		{
 			DoorTable.getInstance().getDoor(door).closeMe();
 		}
@@ -183,7 +183,7 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
 	{
-		if (!this.doorIsOpen) //cheaterzzzzzz
+		if (!doorIsOpen) //cheaterzzzzzz
 		{
 			attacker.teleToLocation(TeleportWhereType.Town);
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());

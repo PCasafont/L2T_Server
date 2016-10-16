@@ -38,9 +38,9 @@ public class StaticObjects
 
 	private StaticObjects()
 	{
-		this.staticObjects = new TIntObjectHashMap<>();
+		staticObjects = new TIntObjectHashMap<>();
 		parseData();
-		Log.info("StaticObject: Loaded " + this.staticObjects.size() + " StaticObject Templates.");
+		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
 
 	private void parseData()
@@ -108,14 +108,14 @@ public class StaticObjects
 				obj.setMap(texture, map_x, map_y);
 				obj.spawnMe();
 
-				this.staticObjects.put(obj.getStaticObjectId(), obj);
+				staticObjects.put(obj.getStaticObjectId(), obj);
 			}
 		}
 	}
 
 	public L2StaticObjectInstance getObject(int id)
 	{
-		return this.staticObjects.get(id);
+		return staticObjects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")

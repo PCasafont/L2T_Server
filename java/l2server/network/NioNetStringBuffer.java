@@ -15,21 +15,21 @@ public final class NioNetStringBuffer
 
 	public NioNetStringBuffer(final int size)
 	{
-		this.buf = new char[size];
+		buf = new char[size];
 		this.size = size;
-		this.len = 0;
+		len = 0;
 	}
 
 	public final void clear()
 	{
-		this.len = 0;
+		len = 0;
 	}
 
 	public final void append(final char c)
 	{
-		if (this.len < this.size)
+		if (len < size)
 		{
-			this.buf[this.len++] = c;
+			buf[len++] = c;
 		}
 		else
 		{
@@ -40,6 +40,6 @@ public final class NioNetStringBuffer
 	@Override
 	public final String toString()
 	{
-		return new String(this.buf, 0, this.len);
+		return new String(buf, 0, len);
 	}
 }

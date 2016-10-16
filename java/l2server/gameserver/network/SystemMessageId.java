@@ -21715,12 +21715,12 @@ public final class SystemMessageId
 	private SystemMessageId(final int id)
 	{
 		this.id = id;
-		this.localisations = EMPTY_SML_ARRAY;
+		localisations = EMPTY_SML_ARRAY;
 	}
 
 	public final int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	private void setName(final String name)
@@ -21730,12 +21730,12 @@ public final class SystemMessageId
 
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public final int getParamCount()
 	{
-		return this.params;
+		return params;
 	}
 
 	/**
@@ -21757,7 +21757,7 @@ public final class SystemMessageId
 
 		if (params != 0)
 		{
-			this.staticSystemMessage = null;
+			staticSystemMessage = null;
 		}
 
 		this.params = (byte) params;
@@ -21766,9 +21766,9 @@ public final class SystemMessageId
 	public final SMLocalisation getLocalisation(final String lang)
 	{
 		SMLocalisation sml;
-		for (int i = this.localisations.length; i-- > 0; )
+		for (int i = localisations.length; i-- > 0; )
 		{
-			sml = this.localisations[i];
+			sml = localisations[i];
 			if (sml.getLanguage().hashCode() == lang.hashCode())
 			{
 				return sml;
@@ -21779,7 +21779,7 @@ public final class SystemMessageId
 
 	public final void attachLocalizedText(final String lang, final String text)
 	{
-		final int length = this.localisations.length;
+		final int length = localisations.length;
 		final SMLocalisation[] localisations = Arrays.copyOf(this.localisations, length + 1);
 		localisations[length] = new SMLocalisation(lang, text);
 		this.localisations = localisations;
@@ -21787,17 +21787,17 @@ public final class SystemMessageId
 
 	public final void removeAllLocalisations()
 	{
-		this.localisations = EMPTY_SML_ARRAY;
+		localisations = EMPTY_SML_ARRAY;
 	}
 
 	public final SystemMessage getStaticSystemMessage()
 	{
-		return this.staticSystemMessage;
+		return staticSystemMessage;
 	}
 
 	public final void setStaticSystemMessage(final SystemMessage sm)
 	{
-		this.staticSystemMessage = sm;
+		staticSystemMessage = sm;
 	}
 
 	@Override
@@ -21814,17 +21814,17 @@ public final class SystemMessageId
 		public SMLocalisation(final String lang, final String text)
 		{
 			this.lang = lang;
-			this.builder = newBuilder(text);
+			builder = newBuilder(text);
 		}
 
 		public final String getLanguage()
 		{
-			return this.lang;
+			return lang;
 		}
 
 		public final String getLocalisation(final Object... params)
 		{
-			return this.builder.toString(params);
+			return builder.toString(params);
 		}
 	}
 
@@ -21861,7 +21861,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString(final Object... params)
 		{
-			final int buildersLength = this.builders.length;
+			final int buildersLength = builders.length;
 			final int paramsLength = params.length;
 			final String[] builds = new String[buildersLength];
 
@@ -21872,7 +21872,7 @@ public final class SystemMessageId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					builder = this.builders[i];
+					builder = builders[i];
 					paramIndex = builder.getIndex();
 					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) :
 							builder.toString();
@@ -21884,7 +21884,7 @@ public final class SystemMessageId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					build = this.builders[i].toString();
+					build = builders[i].toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -21938,7 +21938,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString()
 		{
-			return this.text;
+			return text;
 		}
 	}
 
@@ -21956,7 +21956,7 @@ public final class SystemMessageId
 				throw new RuntimeException("Illegal id " + id);
 			}
 
-			this.index = id - 1;
+			index = id - 1;
 		}
 
 		@Override
@@ -21979,13 +21979,13 @@ public final class SystemMessageId
 		@Override
 		public final int getIndex()
 		{
-			return this.index;
+			return index;
 		}
 
 		@Override
 		public final String toString()
 		{
-			return "[PARAM-" + (this.index + 1) + "]";
+			return "[PARAM-" + (index + 1) + "]";
 		}
 	}
 
@@ -21999,19 +21999,19 @@ public final class SystemMessageId
 
 		public FastStringBuilder(final int capacity)
 		{
-			this.array = new char[capacity];
+			array = new char[capacity];
 		}
 
 		public final void append(final String text)
 		{
-			text.getChars(0, text.length(), this.array, this.len);
-			this.len += text.length();
+			text.getChars(0, text.length(), array, len);
+			len += text.length();
 		}
 
 		@Override
 		public final String toString()
 		{
-			return new String(this.array);
+			return new String(array);
 		}
 	}
 }

@@ -27,7 +27,7 @@ public final class RequestFlyMove extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.stepId = readD();
+		stepId = readD();
 	}
 
 	/**
@@ -41,7 +41,7 @@ public final class RequestFlyMove extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.flyMoveStep(this.stepId);
+		activeChar.flyMoveStep(stepId);
 		//Log.info(getType() + ": " + this.stepId);
 	}
 }

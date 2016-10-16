@@ -68,9 +68,9 @@ public class LotterySystem
 		}
 
 		List<Integer> numbers = new ArrayList<>();
-		if (this.allNumbers.get(pl.getObjectId()) != null)
+		if (allNumbers.get(pl.getObjectId()) != null)
 		{
-			numbers = this.allNumbers.get(pl.getObjectId());
+			numbers = allNumbers.get(pl.getObjectId());
 			if (numbers.contains(number))
 			{
 				pl.sendMessage("You already have this number!");
@@ -91,15 +91,15 @@ public class LotterySystem
 			return;
 		}
 
-		this.collectedCoins += Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
+		collectedCoins += Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
 		numbers.add(number);
-		this.allNumbers.put(pl.getObjectId(), numbers);
+		allNumbers.put(pl.getObjectId(), numbers);
 		pl.sendMessage("You bought the number " + number + " correctly!");
 
 		CustomCommunityBoard.getInstance().parseCmd("_bbscustom;lottery", pl);
 
 		//Manage few announcements
-		long totalReward = this.collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
+		long totalReward = collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
 		if (totalReward % 100000000 == 0)
 		{
 			Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " +
@@ -110,10 +110,10 @@ public class LotterySystem
 	public void giveRewardsAndReset()
 	{
 		int luckyNumber = Rnd.get(1, 99);
-		long totalCoins = this.collectedCoins;
+		long totalCoins = collectedCoins;
 
 		List<String> winnerNames = new ArrayList<>();
-		for (Map.Entry<Integer, List<Integer>> entry : this.allNumbers.entrySet())
+		for (Map.Entry<Integer, List<Integer>> entry : allNumbers.entrySet())
 		{
 			if (entry == null)
 			{
@@ -132,7 +132,7 @@ public class LotterySystem
 		if (winnerNames.isEmpty())
 		{
 			Announcements.getInstance().announceToAll(
-					"Lottery System: The Lottery ends with: " + this.allNumbers.size() + " participants! " + luckyNumber +
+					"Lottery System: The Lottery ends with: " + allNumbers.size() + " participants! " + luckyNumber +
 							" was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
 		}
 		else
@@ -160,20 +160,20 @@ public class LotterySystem
 
 			// Announce
 			Announcements.getInstance().announceToAll(
-					"Lottery System: The Lotery ends with: " + this.allNumbers.size() + " participants (" +
+					"Lottery System: The Lotery ends with: " + allNumbers.size() + " participants (" +
 							totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT + " numbers bought)! " + luckyNumber +
 							" is the winner number! " + winnerNames.size() + " winners has been rewarded with: " +
 							NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 
 			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " +
-					totalCoins + " and " + winnerNames.size() + " winners (" + this.allNumbers.size() +
+					totalCoins + " and " + winnerNames.size() + " winners (" + allNumbers.size() +
 					" participants), with: " + eachReward + " coins for each player!");
 		}
 
 		Log.warning("Lottery System: Cleaning info...!");
 
-		this.allNumbers.clear();
-		this.collectedCoins = 0;
+		allNumbers.clear();
+		collectedCoins = 0;
 
 		truncateTable();
 	}
@@ -220,8 +220,8 @@ public class LotterySystem
 					numbers.add(Integer.valueOf(st.nextToken().trim()));
 				}
 
-				this.allNumbers.put(rs.getInt("ownerId"), numbers);
-				this.collectedCoins += numbers.size() * Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
+				allNumbers.put(rs.getInt("ownerId"), numbers);
+				collectedCoins += numbers.size() * Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
 			}
 			rs.close();
 			statement.close();
@@ -235,12 +235,12 @@ public class LotterySystem
 			L2DatabaseFactory.close(con);
 		}
 
-		this.saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
+		saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
 	}
 
 	public void saveData()
 	{
-		if (this.allNumbers.isEmpty())
+		if (allNumbers.isEmpty())
 		{
 			return;
 		}
@@ -252,7 +252,7 @@ public class LotterySystem
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = null;
 
-			for (Map.Entry<Integer, List<Integer>> entry : this.allNumbers.entrySet())
+			for (Map.Entry<Integer, List<Integer>> entry : allNumbers.entrySet())
 			{
 				if (entry == null)
 				{
@@ -288,17 +288,17 @@ public class LotterySystem
 
 	public long getTotalCoins()
 	{
-		return this.collectedCoins;
+		return collectedCoins;
 	}
 
 	public long getTotalPrize()
 	{
-		return this.collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
+		return collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
 	}
 
 	public String getAvailableNumbers(L2PcInstance pl)
 	{
-		List<Integer> playerNumbers = this.allNumbers.get(pl.getObjectId());
+		List<Integer> playerNumbers = allNumbers.get(pl.getObjectId());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table width=320>");

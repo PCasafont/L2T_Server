@@ -111,11 +111,11 @@ public class CharStatus
 	 */
 	public final Set<L2Character> getStatusListener()
 	{
-		if (this.statusListener == null)
+		if (statusListener == null)
 		{
-			this.statusListener = new CopyOnWriteArraySet<>();
+			statusListener = new CopyOnWriteArraySet<>();
 		}
-		return this.statusListener;
+		return statusListener;
 	}
 
 	// place holder, only PcStatus has CP
@@ -262,7 +262,7 @@ public class CharStatus
 	 */
 	public final synchronized void startHpMpRegeneration()
 	{
-		if (this.regTask == null && !getActiveChar().isDead())
+		if (regTask == null && !getActiveChar().isDead())
 		{
 			if (Config.DEBUG)
 			{
@@ -273,7 +273,7 @@ public class CharStatus
 			int period = Formulas.getRegeneratePeriod(getActiveChar());
 
 			// Create the HP/MP/CP Regeneration task
-			this.regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new RegenTask(), period, period);
+			regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new RegenTask(), period, period);
 		}
 	}
 
@@ -286,7 +286,7 @@ public class CharStatus
 	 */
 	public final synchronized void stopHpMpRegeneration()
 	{
-		if (this.regTask != null)
+		if (regTask != null)
 		{
 			if (Config.DEBUG)
 			{
@@ -294,11 +294,11 @@ public class CharStatus
 			}
 
 			// Stop the HP/MP/CP Regeneration task
-			this.regTask.cancel(false);
-			this.regTask = null;
+			regTask.cancel(false);
+			regTask = null;
 
 			// Set the RegenActive flag to false
-			this.flagsRegenActive = 0;
+			flagsRegenActive = 0;
 		}
 	}
 
@@ -315,7 +315,7 @@ public class CharStatus
 
 	public final double getCurrentHp()
 	{
-		return this.currentHp;
+		return currentHp;
 	}
 
 	public final void setCurrentHp(double newHp)
@@ -343,11 +343,11 @@ public class CharStatus
 			if (newHp >= maxHp)
 			{
 				// Set the RegenActive flag to false
-				this.currentHp = maxHp;
-				this.flagsRegenActive &= ~REGEN_FLAG_HP;
+				currentHp = maxHp;
+				flagsRegenActive &= ~REGEN_FLAG_HP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (this.flagsRegenActive == 0)
+				if (flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -355,8 +355,8 @@ public class CharStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				this.currentHp = newHp;
-				this.flagsRegenActive |= REGEN_FLAG_HP;
+				currentHp = newHp;
+				flagsRegenActive |= REGEN_FLAG_HP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
@@ -378,7 +378,7 @@ public class CharStatus
 
 	public final double getCurrentMp()
 	{
-		return this.currentMp;
+		return currentMp;
 	}
 
 	public final void setCurrentMp(double newMp)
@@ -401,11 +401,11 @@ public class CharStatus
 			if (newMp >= maxMp)
 			{
 				// Set the RegenActive flag to false
-				this.currentMp = maxMp;
-				this.flagsRegenActive &= ~REGEN_FLAG_MP;
+				currentMp = maxMp;
+				flagsRegenActive &= ~REGEN_FLAG_MP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (this.flagsRegenActive == 0)
+				if (flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -413,8 +413,8 @@ public class CharStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				this.currentMp = newMp;
-				this.flagsRegenActive |= REGEN_FLAG_MP;
+				currentMp = newMp;
+				flagsRegenActive |= REGEN_FLAG_MP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
@@ -480,6 +480,6 @@ public class CharStatus
 
 	public L2Character getActiveChar()
 	{
-		return this.activeChar;
+		return activeChar;
 	}
 }

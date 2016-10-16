@@ -31,8 +31,8 @@ public class L2SkillMount extends L2Skill
 	public L2SkillMount(StatsSet set)
 	{
 		super(set);
-		this.npcId = set.getInteger("npcId", 0);
-		this.itemId = set.getInteger("itemId", 0);
+		npcId = set.getInteger("npcId", 0);
+		itemId = set.getInteger("itemId", 0);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class L2SkillMount extends L2Skill
 		}
 
 		// Dismount Action
-		if (this.npcId == 0)
+		if (npcId == 0)
 		{
 			activePlayer.dismount();
 			return;
@@ -92,6 +92,6 @@ public class L2SkillMount extends L2Skill
 			return;
 		}
 
-		activePlayer.mount(this.npcId, this.itemId, false);
+		activePlayer.mount(npcId, itemId, false);
 	}
 }

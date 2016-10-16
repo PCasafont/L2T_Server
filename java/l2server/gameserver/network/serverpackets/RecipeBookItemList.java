@@ -36,26 +36,26 @@ public class RecipeBookItemList extends L2GameServerPacket
 
 	public void addRecipes(L2RecipeList[] recipeBook)
 	{
-		this.recipes = recipeBook;
+		recipes = recipeBook;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
-		writeD(this.maxMp);
+		writeD(isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
+		writeD(maxMp);
 
-		if (this.recipes == null)
+		if (recipes == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			writeD(this.recipes.length);//number of items in recipe book
+			writeD(recipes.length);//number of items in recipe book
 
-			for (int i = 0; i < this.recipes.length; i++)
+			for (int i = 0; i < recipes.length; i++)
 			{
-				L2RecipeList temp = this.recipes[i];
+				L2RecipeList temp = recipes[i];
 				writeD(temp.getId());
 				writeD(i + 1);
 			}

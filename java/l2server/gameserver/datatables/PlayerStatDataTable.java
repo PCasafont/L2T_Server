@@ -60,7 +60,7 @@ public class PlayerStatDataTable
 
 	public void parseData()
 	{
-		this.regenData.clear();
+		regenData.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getFirstChild().getChildren())
@@ -74,12 +74,12 @@ public class PlayerStatDataTable
 			float hp = n.getFloat("hp");
 			float mp = n.getFloat("mp");
 			float cp = n.getFloat("cp");
-			this.regenData.put(level, new PlayerStatData(hp, mp, cp));
+			regenData.put(level, new PlayerStatData(hp, mp, cp));
 		}
 
-		Log.info("PlayerStatData: Loaded regen data for " + this.regenData.size() + " levels.");
+		Log.info("PlayerStatData: Loaded regen data for " + regenData.size() + " levels.");
 
-		this.classMaxData.clear();
+		classMaxData.clear();
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
 		doc = new XmlDocument(file);
 		for (XmlNode n : doc.getFirstChild().getChildren())
@@ -107,16 +107,16 @@ public class PlayerStatDataTable
 			String[] classIds = n.getString("id").split(",");
 			for (String classId : classIds)
 			{
-				this.classMaxData.put(Integer.parseInt(classId), statData);
+				classMaxData.put(Integer.parseInt(classId), statData);
 			}
 		}
 
-		Log.info("PlayerStatData: Loaded class max stat data for " + this.classMaxData.size() + " classes.");
+		Log.info("PlayerStatData: Loaded class max stat data for " + classMaxData.size() + " classes.");
 	}
 
 	public float getHpRegen(int level)
 	{
-		PlayerStatData data = this.regenData.get(level);
+		PlayerStatData data = regenData.get(level);
 		if (data == null)
 		{
 			return 0.0f;
@@ -127,7 +127,7 @@ public class PlayerStatDataTable
 
 	public float getMpRegen(int level)
 	{
-		PlayerStatData data = this.regenData.get(level);
+		PlayerStatData data = regenData.get(level);
 		if (data == null)
 		{
 			return 0.0f;
@@ -138,7 +138,7 @@ public class PlayerStatDataTable
 
 	public float getCpRegen(int level)
 	{
-		PlayerStatData data = this.regenData.get(level);
+		PlayerStatData data = regenData.get(level);
 		if (data == null)
 		{
 			return 0.0f;
@@ -149,7 +149,7 @@ public class PlayerStatDataTable
 
 	public float getMaxHp(int classId, int level)
 	{
-		Map<Integer, PlayerStatData> classData = this.classMaxData.get(classId);
+		Map<Integer, PlayerStatData> classData = classMaxData.get(classId);
 		if (classData == null)
 		{
 			return 0.0f;
@@ -166,7 +166,7 @@ public class PlayerStatDataTable
 
 	public float getMaxMp(int classId, int level)
 	{
-		Map<Integer, PlayerStatData> classData = this.classMaxData.get(classId);
+		Map<Integer, PlayerStatData> classData = classMaxData.get(classId);
 		if (classData == null)
 		{
 			return 0.0f;
@@ -183,7 +183,7 @@ public class PlayerStatDataTable
 
 	public float getMaxCp(int classId, int level)
 	{
-		Map<Integer, PlayerStatData> classData = this.classMaxData.get(classId);
+		Map<Integer, PlayerStatData> classData = classMaxData.get(classId);
 		if (classData == null)
 		{
 			return 0.0f;

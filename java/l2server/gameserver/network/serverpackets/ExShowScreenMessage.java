@@ -35,99 +35,99 @@ public class ExShowScreenMessage extends L2GameServerPacket
 
 	public ExShowScreenMessage(String text, int time)
 	{
-		this.type = 1;
-		this.sysMessageId = -1;
-		this.unk1 = 0;
-		this.unk2 = 0;
-		this.unk3 = 0;
-		this.unk4 = 0;
-		this.position = 0x02;
-		this.npcStringId = -1;
+		type = 1;
+		sysMessageId = -1;
+		unk1 = 0;
+		unk2 = 0;
+		unk3 = 0;
+		unk4 = 0;
+		position = 0x02;
+		npcStringId = -1;
 		this.text = text;
 		this.time = time;
-		this.size = 0;
-		this.effect = true;
+		size = 0;
+		effect = true;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int time)
 	{
-		this.type = 1;
-		this.sysMessageId = -1;
-		this.unk1 = 0;
-		this.unk2 = 0;
-		this.unk3 = 0;
-		this.unk4 = 0;
-		this.position = 0x02;
+		type = 1;
+		sysMessageId = -1;
+		unk1 = 0;
+		unk2 = 0;
+		unk3 = 0;
+		unk4 = 0;
+		position = 0x02;
 		this.npcStringId = npcStringId;
-		this.text = "";
+		text = "";
 		this.time = time;
-		this.size = 0;
-		this.effect = false;
+		size = 0;
+		effect = false;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int unk, boolean effect, int time)
 	{
-		this.type = 1;
-		this.sysMessageId = -1;
-		this.unk1 = 0;
-		this.unk2 = 0;
-		this.unk3 = unk;
-		this.unk4 = 0;
-		this.position = 0x02;
+		type = 1;
+		sysMessageId = -1;
+		unk1 = 0;
+		unk2 = 0;
+		unk3 = unk;
+		unk4 = 0;
+		position = 0x02;
 		this.npcStringId = npcStringId;
-		this.text = "";
+		text = "";
 		this.time = time;
-		this.size = 0;
+		size = 0;
 		this.effect = effect;
 	}
 
 	public ExShowScreenMessage(int npcStringId, int pos, int time)
 	{
-		this.type = 1;
-		this.sysMessageId = -1;
-		this.unk1 = 0;
-		this.unk2 = 0;
-		this.unk3 = 0;
-		this.unk4 = 0;
-		this.position = pos;
+		type = 1;
+		sysMessageId = -1;
+		unk1 = 0;
+		unk2 = 0;
+		unk3 = 0;
+		unk4 = 0;
+		position = pos;
 		this.npcStringId = npcStringId;
-		this.text = "";
+		text = "";
 		this.time = time;
-		this.size = 0;
-		this.effect = false;
+		size = 0;
+		effect = false;
 	}
 
 	public ExShowScreenMessage(int type, int messageId, int position, int unk1, int size, int unk2, int unk3, boolean showEffect, int time, int unk4, String text)
 	{
 		this.type = type;
-		this.sysMessageId = messageId;
+		sysMessageId = messageId;
 		this.unk1 = unk1;
 		this.unk2 = unk2;
 		this.unk3 = unk3;
 		this.unk4 = unk4;
 		this.position = position;
-		this.npcStringId = -1;
+		npcStringId = -1;
 		this.text = text;
 		this.time = time;
 		this.size = size;
-		this.effect = showEffect;
+		effect = showEffect;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.type); // 0 - system messages, 1 - your defined text
-		writeD(this.sysMessageId); // system message id (this.type must be 0 otherwise no effect)
-		writeD(this.position); // message position
-		writeD(this.unk1); // ?
-		writeD(this.size); // font size 0 - normal, 1 - small
-		writeD(this.unk2); // ?
-		writeD(this.unk3); // ?
-		writeD(this.effect ? 1 :
+		writeD(type); // 0 - system messages, 1 - your defined text
+		writeD(sysMessageId); // system message id (this.type must be 0 otherwise no effect)
+		writeD(position); // message position
+		writeD(unk1); // ?
+		writeD(size); // font size 0 - normal, 1 - small
+		writeD(unk2); // ?
+		writeD(unk3); // ?
+		writeD(effect ? 1 :
 				0); // upper effect (0 - disabled, 1 enabled) - this.position must be 2 (center) otherwise no effect
-		writeD(this.time); // time
-		writeD(this.unk4); // ?
-		writeD(this.npcStringId);
-		writeS(this.text); // your text (this.type must be 1, otherwise no effect)
+		writeD(time); // time
+		writeD(unk4); // ?
+		writeD(npcStringId);
+		writeS(text); // your text (this.type must be 1, otherwise no effect)
 	}
 }

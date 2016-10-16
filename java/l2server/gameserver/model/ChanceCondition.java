@@ -81,7 +81,7 @@ public final class ChanceCondition
 
 		public final boolean check(int event)
 		{
-			return (this.mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
+			return (mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
 		}
 	}
 
@@ -95,18 +95,18 @@ public final class ChanceCondition
 
 	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		this.triggerType = trigger;
+		triggerType = trigger;
 		this.chance = chance;
 		this.mindmg = mindmg;
 		this.elements = elements;
 		this.pvpOnly = pvpOnly;
 		this.activationSkills = activationSkills;
-		this.critChance = -1;
+		critChance = -1;
 	}
 
 	private ChanceCondition(TriggerType trigger, double chance, double critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		this.triggerType = trigger;
+		triggerType = trigger;
 		this.chance = chance;
 		this.mindmg = mindmg;
 		this.elements = elements;
@@ -202,24 +202,24 @@ public final class ChanceCondition
 
 	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill)
 	{
-		if (this.pvpOnly && !playable)
+		if (pvpOnly && !playable)
 		{
 			return false;
 		}
 
-		if (this.elements != null && Arrays.binarySearch(this.elements, element) < 0)
+		if (elements != null && Arrays.binarySearch(elements, element) < 0)
 		{
 			return false;
 		}
 
-		if (this.activationSkills != null)
+		if (activationSkills != null)
 		{
 			if (skill == null)
 			{
 				return false;
 			}
 
-			if (Arrays.binarySearch(this.activationSkills, skill.getId()) < 0)
+			if (Arrays.binarySearch(activationSkills, skill.getId()) < 0)
 			{
 				return false;
 			}
@@ -227,29 +227,29 @@ public final class ChanceCondition
 
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if (this.mindmg > -1 && this.mindmg > damage)
+		if (mindmg > -1 && mindmg > damage)
 		{
 			return false;
 		}
 
-		if (!crit || this.critChance == -1)
+		if (!crit || critChance == -1)
 		{
-			return this.triggerType.check(event) && (this.chance < 0 || Rnd.get(100) < this.chance);
+			return triggerType.check(event) && (chance < 0 || Rnd.get(100) < chance);
 		}
 		else
 		{
-			return this.triggerType.check(event) && (this.critChance < 0 || Rnd.get(100) < this.critChance);
+			return triggerType.check(event) && (critChance < 0 || Rnd.get(100) < critChance);
 		}
 	}
 
 	public TriggerType getTriggerType()
 	{
-		return this.triggerType;
+		return triggerType;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "Trigger[" + this.chance + ";" + this.triggerType.toString() + "]";
+		return "Trigger[" + chance + ";" + triggerType.toString() + "]";
 	}
 }

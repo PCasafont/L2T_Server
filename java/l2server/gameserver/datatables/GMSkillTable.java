@@ -35,9 +35,9 @@ public class GMSkillTable
 			return;
 		}
 
-		for (int i = 0; i < this.gmSkillsId.length; i++)
+		for (int i = 0; i < gmSkillsId.length; i++)
 		{
-			this.gmSkills[i] = SkillTable.getInstance().getInfo(this.gmSkillsId[i], 1);
+			gmSkills[i] = SkillTable.getInstance().getInfo(gmSkillsId[i], 1);
 		}
 	}
 

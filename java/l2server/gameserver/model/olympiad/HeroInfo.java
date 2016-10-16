@@ -60,12 +60,12 @@ public class HeroInfo
 
 	public HeroInfo(OlympiadNobleInfo nobleInfo)
 	{
-		this.id = nobleInfo.getId();
-		this.name = nobleInfo.getName();
-		this.classId = nobleInfo.getClassId();
-		this.victories = nobleInfo.getVictories();
-		this.defeats = nobleInfo.getDefeats();
-		this.draws = nobleInfo.getDraws();
+		id = nobleInfo.getId();
+		name = nobleInfo.getName();
+		classId = nobleInfo.getClassId();
+		victories = nobleInfo.getVictories();
+		defeats = nobleInfo.getDefeats();
+		draws = nobleInfo.getDraws();
 	}
 
 	public HeroInfo(int id, String name, int classId, int count, boolean played)
@@ -79,22 +79,22 @@ public class HeroInfo
 
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	public int getClassId()
 	{
-		return this.classId;
+		return classId;
 	}
 
 	public int getVictories()
 	{
-		return this.victories;
+		return victories;
 	}
 
 	public void setVictories(int victories)
@@ -104,7 +104,7 @@ public class HeroInfo
 
 	public int getDefeats()
 	{
-		return this.defeats;
+		return defeats;
 	}
 
 	public void setDefeats(int defeats)
@@ -114,7 +114,7 @@ public class HeroInfo
 
 	public int getDraws()
 	{
-		return this.draws;
+		return draws;
 	}
 
 	public void setDraws(int draws)
@@ -124,17 +124,17 @@ public class HeroInfo
 
 	public int getCount()
 	{
-		return this.count;
+		return count;
 	}
 
 	public void increaseCount()
 	{
-		this.count++;
+		count++;
 	}
 
 	public boolean getPlayed()
 	{
-		return this.played;
+		return played;
 	}
 
 	public void setPlayed(boolean played)
@@ -144,7 +144,7 @@ public class HeroInfo
 
 	public String getClanName()
 	{
-		return this.clanName;
+		return clanName;
 	}
 
 	public void setClanName(String clanName)
@@ -154,7 +154,7 @@ public class HeroInfo
 
 	public int getClanCrest()
 	{
-		return this.clanCrest;
+		return clanCrest;
 	}
 
 	public void setClanCrest(int clanCrest)
@@ -164,7 +164,7 @@ public class HeroInfo
 
 	public String getAllyName()
 	{
-		return this.allyName;
+		return allyName;
 	}
 
 	public void setAllyName(String allyName)
@@ -174,7 +174,7 @@ public class HeroInfo
 
 	public int getAllyCrest()
 	{
-		return this.allyCrest;
+		return allyCrest;
 	}
 
 	public void setAllyCrest(int allyCrest)
@@ -184,7 +184,7 @@ public class HeroInfo
 
 	public String getMessage()
 	{
-		return this.message;
+		return message;
 	}
 
 	public void setMessage(String message)
@@ -194,21 +194,21 @@ public class HeroInfo
 
 	public void addDiaryEntry(DiaryEntry entry)
 	{
-		this.diary.add(entry);
+		diary.add(entry);
 	}
 
 	public List<DiaryEntry> getDiary()
 	{
-		return this.diary;
+		return diary;
 	}
 
 	public void addFight(FightInfo fight)
 	{
-		this.fights.add(fight);
+		fights.add(fight);
 	}
 
 	public List<FightInfo> getFights()
 	{
-		return this.fights;
+		return fights;
 	}
 }

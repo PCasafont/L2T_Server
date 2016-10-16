@@ -45,7 +45,7 @@ public class ExEventMatchMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(this.type);
-		writeS(this.message);
+		writeC(type);
+		writeS(message);
 	}
 }

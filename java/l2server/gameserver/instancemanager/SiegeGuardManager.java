@@ -155,7 +155,7 @@ public class SiegeGuardManager
 			boolean isHired = getCastle().getOwnerId() > 0;
 			if (isHired)
 			{
-				int hiredCount = 0, hiredMax = MercTicketManager.getInstance().getMaxAllowedMerc(this.castle.getCastleId());
+				int hiredCount = 0, hiredMax = MercTicketManager.getInstance().getMaxAllowedMerc(castle.getCastleId());
 				loadSiegeGuard();
 				for (L2Spawn spawn : getSiegeGuardSpawn())
 				{
@@ -240,7 +240,7 @@ public class SiegeGuardManager
 					spawn1.setHeading(rs.getInt("heading"));
 					spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
 
-					this.siegeGuardSpawn.add(spawn1);
+					siegeGuardSpawn.add(spawn1);
 				}
 				else
 				{
@@ -305,11 +305,11 @@ public class SiegeGuardManager
 
 	public final Castle getCastle()
 	{
-		return this.castle;
+		return castle;
 	}
 
 	public final List<L2Spawn> getSiegeGuardSpawn()
 	{
-		return this.siegeGuardSpawn;
+		return siegeGuardSpawn;
 	}
 }

@@ -34,28 +34,28 @@ public class GMViewWarehouseWithdrawList extends L2ItemListPacket
 
 	public GMViewWarehouseWithdrawList(L2PcInstance cha)
 	{
-		this.activeChar = cha;
-		this.items = this.activeChar.getWarehouse().getItems();
-		this.playerName = this.activeChar.getName();
-		this.money = this.activeChar.getWarehouse().getAdena();
+		activeChar = cha;
+		items = activeChar.getWarehouse().getItems();
+		playerName = activeChar.getName();
+		money = activeChar.getWarehouse().getAdena();
 	}
 
 	public GMViewWarehouseWithdrawList(L2Clan clan)
 	{
-		this.playerName = clan.getLeaderName();
-		this.items = clan.getWarehouse().getItems();
-		this.money = clan.getWarehouse().getAdena();
+		playerName = clan.getLeaderName();
+		items = clan.getWarehouse().getItems();
+		money = clan.getWarehouse().getAdena();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.playerName);
-		writeQ(this.money);
-		writeH(this.items.length);
+		writeS(playerName);
+		writeQ(money);
+		writeH(items.length);
 		writeD(0x00); // GoD ???
 
-		for (L2ItemInstance item : this.items)
+		for (L2ItemInstance item : items)
 		{
 			writeItem(item);
 		}

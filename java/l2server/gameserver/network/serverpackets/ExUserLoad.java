@@ -32,8 +32,8 @@ public final class ExUserLoad extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.player.getObjectId());
-		writeD(this.player.getCurrentLoad());
-		writeD(this.player.getMaxLoad());
+		writeD(player.getObjectId());
+		writeD(player.getCurrentLoad());
+		writeD(player.getMaxLoad());
 	}
 }

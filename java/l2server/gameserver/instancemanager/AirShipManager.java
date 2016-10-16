@@ -89,14 +89,14 @@ public class AirShipManager
 		npcDat.set("mpReg", 3.e-3f);
 		npcDat.set("pDef", 100);
 		npcDat.set("mDef", 100);
-		this.airShipTemplate = new L2CharTemplate(npcDat);
+		airShipTemplate = new L2CharTemplate(npcDat);
 
 		load();
 	}
 
 	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading)
 	{
-		final L2AirShipInstance airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), this.airShipTemplate);
+		final L2AirShipInstance airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), airShipTemplate);
 
 		airShip.setHeading(heading);
 		airShip.setXYZInvisible(x, y, z);
@@ -108,22 +108,22 @@ public class AirShipManager
 
 	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading, int ownerId)
 	{
-		final StatsSet info = this.airShipsInfo.get(ownerId);
+		final StatsSet info = airShipsInfo.get(ownerId);
 		if (info == null)
 		{
 			return null;
 		}
 
 		final L2AirShipInstance airShip;
-		if (this.airShips.containsKey(ownerId))
+		if (airShips.containsKey(ownerId))
 		{
-			airShip = this.airShips.get(ownerId);
+			airShip = airShips.get(ownerId);
 			airShip.refreshID();
 		}
 		else
 		{
-			airShip = new L2ControllableAirShipInstance(IdFactory.getInstance().getNextId(), this.airShipTemplate, ownerId);
-			this.airShips.put(ownerId, airShip);
+			airShip = new L2ControllableAirShipInstance(IdFactory.getInstance().getNextId(), airShipTemplate, ownerId);
+			airShips.put(ownerId, airShip);
 
 			airShip.setMaxFuel(600);
 			airShip.setFuel(info.getInteger("fuel"));
@@ -142,7 +142,7 @@ public class AirShipManager
 		if (ship.getOwnerId() != 0)
 		{
 			storeInDb(ship.getOwnerId());
-			final StatsSet info = this.airShipsInfo.get(ship.getOwnerId());
+			final StatsSet info = airShipsInfo.get(ship.getOwnerId());
 			if (info != null)
 			{
 				info.set("fuel", ship.getFuel());
@@ -152,17 +152,17 @@ public class AirShipManager
 
 	public boolean hasAirShipLicense(int ownerId)
 	{
-		return this.airShipsInfo.contains(ownerId);
+		return airShipsInfo.contains(ownerId);
 	}
 
 	public void registerLicense(int ownerId)
 	{
-		if (!this.airShipsInfo.contains(ownerId))
+		if (!airShipsInfo.contains(ownerId))
 		{
 			final StatsSet info = new StatsSet();
 			info.set("fuel", 600);
 
-			this.airShipsInfo.put(ownerId, info);
+			airShipsInfo.put(ownerId, info);
 
 			Connection con = null;
 			try
@@ -193,7 +193,7 @@ public class AirShipManager
 
 	public boolean hasAirShip(int ownerId)
 	{
-		final L2AirShipInstance ship = this.airShips.get(ownerId);
+		final L2AirShipInstance ship = airShips.get(ownerId);
 		return !(ship == null || !(ship.isVisible() || ship.isTeleporting()));
 
 	}
@@ -205,7 +205,7 @@ public class AirShipManager
 			return;
 		}
 
-		this.teleports.put(dockId, new AirShipTeleportList(locationId, fuelConsumption, tp));
+		teleports.put(dockId, new AirShipTeleportList(locationId, fuelConsumption, tp));
 	}
 
 	public void sendAirShipTeleportList(L2PcInstance player)
@@ -222,18 +222,18 @@ public class AirShipManager
 		}
 
 		int dockId = ship.getDockId();
-		if (!this.teleports.contains(dockId))
+		if (!teleports.contains(dockId))
 		{
 			return;
 		}
 
-		final AirShipTeleportList all = this.teleports.get(dockId);
+		final AirShipTeleportList all = teleports.get(dockId);
 		player.sendPacket(new ExAirShipTeleportList(all.location, all.routes, all.fuel));
 	}
 
 	public VehiclePathPoint[] getTeleportDestination(int dockId, int index)
 	{
-		final AirShipTeleportList all = this.teleports.get(dockId);
+		final AirShipTeleportList all = teleports.get(dockId);
 		if (all == null)
 		{
 			return null;
@@ -249,7 +249,7 @@ public class AirShipManager
 
 	public int getFuelConsumption(int dockId, int index)
 	{
-		final AirShipTeleportList all = this.teleports.get(dockId);
+		final AirShipTeleportList all = teleports.get(dockId);
 		if (all == null)
 		{
 			return 0;
@@ -278,7 +278,7 @@ public class AirShipManager
 				StatsSet info = new StatsSet();
 				info.set("fuel", rset.getInt("fuel"));
 
-				this.airShipsInfo.put(rset.getInt("owner_id"), info);
+				airShipsInfo.put(rset.getInt("owner_id"), info);
 				info = null;
 			}
 
@@ -299,12 +299,12 @@ public class AirShipManager
 			L2DatabaseFactory.close(con);
 		}
 
-		Log.info(getClass().getSimpleName() + ": Loaded " + this.airShipsInfo.size() + " private airships");
+		Log.info(getClass().getSimpleName() + ": Loaded " + airShipsInfo.size() + " private airships");
 	}
 
 	private void storeInDb(int ownerId)
 	{
-		StatsSet info = this.airShipsInfo.get(ownerId);
+		StatsSet info = airShipsInfo.get(ownerId);
 		if (info == null)
 		{
 			return;

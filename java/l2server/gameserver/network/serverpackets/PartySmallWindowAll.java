@@ -40,20 +40,20 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 	{
 		this.exclude = exclude;
 		this.party = party;
-		this.LeaderOID = this.party.getPartyLeaderOID();
-		this.dist = this.party.getLootDistribution();
+		LeaderOID = this.party.getPartyLeaderOID();
+		dist = this.party.getLootDistribution();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.LeaderOID);
-		writeC(this.dist);
-		writeC(this.party.getMemberCount() - 1);
+		writeD(LeaderOID);
+		writeC(dist);
+		writeC(party.getMemberCount() - 1);
 
-		for (L2PcInstance member : this.party.getPartyMembers())
+		for (L2PcInstance member : party.getPartyMembers())
 		{
-			if (member != null && member != this.exclude)
+			if (member != null && member != exclude)
 			{
 				writeD(member.getObjectId());
 				writeS(member.getName());

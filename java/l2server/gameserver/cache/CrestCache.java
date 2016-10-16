@@ -65,12 +65,12 @@ public class CrestCache
 		byte[] content;
 		synchronized (this)
 		{
-			this.loadedFiles = 0;
-			this.bytesBuffLen = 0;
+			loadedFiles = 0;
+			bytesBuffLen = 0;
 
-			this.mapPledge.clear();
-			this.mapPledgeLarge.clear();
-			this.mapAlly.clear();
+			mapPledge.clear();
+			mapPledgeLarge.clear();
+			mapAlly.clear();
 		}
 
 		for (File file : files)
@@ -88,27 +88,27 @@ public class CrestCache
 					{
 						int subId = Integer.valueOf(file.getName().substring(12, 13));
 						int id = Integer.valueOf(file.getName().substring(14, file.getName().length() - 4));
-						byte[][] array = this.mapPledgeLarge.get(id);
+						byte[][] array = mapPledgeLarge.get(id);
 						if (array == null)
 						{
 							array = new byte[10][];
 						}
 
 						array[subId] = content;
-						this.mapPledgeLarge.put(id, array);
+						mapPledgeLarge.put(id, array);
 					}
 					else if (file.getName().startsWith("Crest_"))
 					{
-						this.mapPledge.put(Integer.valueOf(file.getName().substring(6, file.getName().length() - 4)),
+						mapPledge.put(Integer.valueOf(file.getName().substring(6, file.getName().length() - 4)),
 								content);
 					}
 					else if (file.getName().startsWith("AllyCrest_"))
 					{
-						this.mapAlly.put(Integer.valueOf(file.getName().substring(10, file.getName().length() - 4)),
+						mapAlly.put(Integer.valueOf(file.getName().substring(10, file.getName().length() - 4)),
 								content);
 					}
-					this.loadedFiles++;
-					this.bytesBuffLen += content.length;
+					loadedFiles++;
+					bytesBuffLen += content.length;
 				}
 				catch (Exception e)
 				{
@@ -187,33 +187,33 @@ public class CrestCache
 
 	public float getMemoryUsage()
 	{
-		return (float) this.bytesBuffLen / 1048576;
+		return (float) bytesBuffLen / 1048576;
 	}
 
 	public int getLoadedFiles()
 	{
-		return this.loadedFiles;
+		return loadedFiles;
 	}
 
 	public byte[] getPledgeCrest(int id)
 	{
-		return this.mapPledge.get(id);
+		return mapPledge.get(id);
 	}
 
 	public byte[][] getPledgeCrestLarge(int id)
 	{
-		return this.mapPledgeLarge.get(id);
+		return mapPledgeLarge.get(id);
 	}
 
 	public byte[] getAllyCrest(int id)
 	{
-		return this.mapAlly.get(id);
+		return mapAlly.get(id);
 	}
 
 	public void removePledgeCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Crest_" + id + ".bmp");
-		this.mapPledge.remove(id);
+		mapPledge.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -227,7 +227,7 @@ public class CrestCache
 	public void removePledgeCrestLarge(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Crest_Large_" + id + ".bmp");
-		this.mapPledgeLarge.remove(id);
+		mapPledgeLarge.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -254,7 +254,7 @@ public class CrestCache
 	public void removeAllyCrest(int id)
 	{
 		File crestFile = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/AllyCrest_" + id + ".bmp");
-		this.mapAlly.remove(id);
+		mapAlly.remove(id);
 		try
 		{
 			crestFile.delete();
@@ -273,7 +273,7 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			this.mapPledge.put(newId, data);
+			mapPledge.put(newId, data);
 			return true;
 		}
 		catch (IOException e)
@@ -303,13 +303,13 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			byte[][] array = this.mapPledgeLarge.get(newId);
+			byte[][] array = mapPledgeLarge.get(newId);
 			if (array == null)
 			{
 				array = new byte[10][];
 			}
 			array[subId] = data;
-			this.mapPledgeLarge.put(newId, array);
+			mapPledgeLarge.put(newId, array);
 			return true;
 		}
 		catch (IOException e)
@@ -338,7 +338,7 @@ public class CrestCache
 		{
 			out = new FileOutputStream(crestFile);
 			out.write(data);
-			this.mapAlly.put(newId, data);
+			mapAlly.put(newId, data);
 			return true;
 		}
 		catch (IOException e)

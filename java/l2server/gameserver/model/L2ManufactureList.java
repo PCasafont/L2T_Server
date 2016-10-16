@@ -31,23 +31,23 @@ public class L2ManufactureList
 
 	public L2ManufactureList()
 	{
-		this.list = new ArrayList<>();
-		this.confirmed = false;
+		list = new ArrayList<>();
+		confirmed = false;
 	}
 
 	public int size()
 	{
-		return this.list.size();
+		return list.size();
 	}
 
 	public void setConfirmedTrade(boolean x)
 	{
-		this.confirmed = x;
+		confirmed = x;
 	}
 
 	public boolean hasConfirmed()
 	{
-		return this.confirmed;
+		return confirmed;
 	}
 
 	/**
@@ -62,17 +62,17 @@ public class L2ManufactureList
 	 */
 	public String getStoreName()
 	{
-		return this.manufactureStoreName;
+		return manufactureStoreName;
 	}
 
 	public void add(L2ManufactureItem item)
 	{
-		this.list.add(item);
+		list.add(item);
 	}
 
 	public List<L2ManufactureItem> getList()
 	{
-		return this.list;
+		return list;
 	}
 
 	public void setList(List<L2ManufactureItem> list)

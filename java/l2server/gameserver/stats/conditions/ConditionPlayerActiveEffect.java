@@ -34,7 +34,7 @@ public class ConditionPlayerActiveEffect extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		final L2Abnormal e = env.player.getFirstEffectByName(this.effectName);
+		final L2Abnormal e = env.player.getFirstEffectByName(effectName);
 		return e != null;
 	}
 }

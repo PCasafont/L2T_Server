@@ -41,8 +41,8 @@ public class L2SkillSiegeFlag extends L2Skill
 	public L2SkillSiegeFlag(StatsSet set)
 	{
 		super(set);
-		this.isAdvanced = set.getBool("isAdvanced", false);
-		this.isOutpost = set.getBool("isOutpost", false);
+		isAdvanced = set.getBool("isAdvanced", false);
+		isOutpost = set.getBool("isOutpost", false);
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class L2SkillSiegeFlag extends L2Skill
 			return;
 		}
 
-		if (!checkIfOkToPlaceFlag(player, true, this.isOutpost))
+		if (!checkIfOkToPlaceFlag(player, true, isOutpost))
 		{
 			return;
 		}
@@ -73,7 +73,7 @@ public class L2SkillSiegeFlag extends L2Skill
 		{
 			// Spawn a new flag
 			L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(),
-					NpcTable.getInstance().getTemplate(35062), this.isAdvanced, false);
+					NpcTable.getInstance().getTemplate(35062), isAdvanced, false);
 			flag.setTitle(player.getClan().getName());
 			flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 			flag.setHeading(player.getHeading());

@@ -40,8 +40,8 @@ public class L2DropData
 	public L2DropData(int itemId, int min, int max, float chance)
 	{
 		this.itemId = itemId;
-		this.minDrop = min;
-		this.maxDrop = max;
+		minDrop = min;
+		maxDrop = max;
 		this.chance = chance;
 	}
 
@@ -52,7 +52,7 @@ public class L2DropData
 	 */
 	public int getItemId()
 	{
-		return this.itemId;
+		return itemId;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class L2DropData
 	 */
 	public int getMinDrop()
 	{
-		return this.minDrop;
+		return minDrop;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class L2DropData
 	 */
 	public int getMaxDrop()
 	{
-		return this.maxDrop;
+		return maxDrop;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class L2DropData
 	 */
 	public float getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class L2DropData
 	 */
 	public void setMinDrop(int mindrop)
 	{
-		this.minDrop = mindrop;
+		minDrop = mindrop;
 	}
 
 	/**
@@ -112,7 +112,7 @@ public class L2DropData
 	 */
 	public void setMaxDrop(int maxdrop)
 	{
-		this.maxDrop = maxdrop;
+		maxDrop = maxdrop;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class L2DropData
 	 */
 	public String[] getStateIDs()
 	{
-		return this.stateID;
+		return stateID;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class L2DropData
 	 */
 	public void addStates(String[] list)
 	{
-		this.stateID = list;
+		stateID = list;
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class L2DropData
 	 */
 	public String getQuestID()
 	{
-		return this.questID;
+		return questID;
 	}
 
 	/**
@@ -170,17 +170,17 @@ public class L2DropData
 	 */
 	public boolean isQuestDrop()
 	{
-		return this.questID != null && this.stateID != null;
+		return questID != null && stateID != null;
 	}
 
 	public void setCustom()
 	{
-		this.custom = true;
+		custom = true;
 	}
 
 	public boolean isCustom()
 	{
-		return this.custom;
+		return custom;
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class L2DropData
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + this.itemId;
+		result = prime * result + itemId;
 		return result;
 	}
 
@@ -232,6 +232,6 @@ public class L2DropData
 			return false;
 		}
 		final L2DropData other = (L2DropData) obj;
-		return this.itemId == other.itemId;
+		return itemId == other.itemId;
 	}
 }

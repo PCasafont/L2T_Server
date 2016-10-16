@@ -48,8 +48,8 @@ public class L2SkillContinuousDrain extends L2Skill
 	{
 		super(set);
 
-		this.absorbPart = set.getFloat("absorbPart", 0.0f) / 100;
-		this.absorbTime = set.getInteger("absorbTime", 0);
+		absorbPart = set.getFloat("absorbPart", 0.0f) / 100;
+		absorbTime = set.getInteger("absorbTime", 0);
 	}
 
 	@Override
@@ -73,17 +73,17 @@ public class L2SkillContinuousDrain extends L2Skill
 		@Override
 		public void run()
 		{
-			if (!drain(this.activeChar, this.targets))
+			if (!drain(activeChar, targets))
 			{
 				return;
 			}
 
-			if (this.count > 0)
+			if (count > 0)
 			{
 				ThreadPoolManager.getInstance().scheduleEffect(this, 1000);
 			}
 
-			this.count--;
+			count--;
 		}
 	}
 
@@ -160,7 +160,7 @@ public class L2SkillContinuousDrain extends L2Skill
 				}
 			}
 
-			double hpAdd = this.absorbPart * drain;
+			double hpAdd = absorbPart * drain;
 			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
 					activeChar.getCurrentHp() + hpAdd;
 
@@ -181,7 +181,7 @@ public class L2SkillContinuousDrain extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
-					this.logDamage.log(record);
+					logDamage.log(record);
 				}
 
 				target.reduceCurrentHp(damage, activeChar, this);

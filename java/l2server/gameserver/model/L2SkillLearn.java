@@ -50,14 +50,14 @@ public final class L2SkillLearn
 	public L2SkillLearn(int id, int lvl, int cost, int minLvl, int minDualLvl, boolean panel, boolean fs, boolean transfer, boolean autoget)
 	{
 		this.id = id;
-		this.level = lvl;
-		this.minLevel = minLvl;
-		this.minDualLevel = minDualLvl;
-		this.spCost = cost;
-		this.learnedFromPanel = panel;
-		this.learnedByFs = fs;
-		this.isTransfer = transfer;
-		this.isAutoGet = autoget;
+		level = lvl;
+		minLevel = minLvl;
+		minDualLevel = minDualLvl;
+		spCost = cost;
+		learnedFromPanel = panel;
+		learnedByFs = fs;
+		isTransfer = transfer;
+		isAutoGet = autoget;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public final class L2SkillLearn
 	 */
 	public int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public final class L2SkillLearn
 	 */
 	public int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	/**
@@ -81,12 +81,12 @@ public final class L2SkillLearn
 	 */
 	public int getMinLevel()
 	{
-		return this.minLevel;
+		return minLevel;
 	}
 
 	public int getMinDualLevel()
 	{
-		return this.minDualLevel;
+		return minDualLevel;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public final class L2SkillLearn
 	 */
 	public int getSpCost()
 	{
-		return this.spCost;
+		return spCost;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public final class L2SkillLearn
 	 */
 	public boolean isLearnedFromPanel()
 	{
-		return this.learnedFromPanel;
+		return learnedFromPanel;
 	}
 
 	/**
@@ -110,37 +110,37 @@ public final class L2SkillLearn
 	 */
 	public boolean isLearnedByFS()
 	{
-		return this.learnedByFs;
+		return learnedByFs;
 	}
 
 	public boolean isTransferSkill()
 	{
-		return this.isTransfer;
+		return isTransfer;
 	}
 
 	public boolean isAutoGetSkill()
 	{
-		return this.isAutoGet;
+		return isAutoGet;
 	}
 
 	public void addCostItem(int itemId, int count)
 	{
-		this.costItems.put(itemId, count);
+		costItems.put(itemId, count);
 	}
 
 	public Map<Integer, Integer> getCostItems()
 	{
-		return this.costItems;
+		return costItems;
 	}
 
 	public void addCostSkill(int skillId)
 	{
-		this.costSkills.add(skillId);
+		costSkills.add(skillId);
 	}
 
 	public List<Integer> getCostSkills()
 	{
-		return this.costSkills;
+		return costSkills;
 	}
 
 	public Map<Integer, Integer> getCostSkills(L2PcInstance player)
@@ -159,11 +159,11 @@ public final class L2SkillLearn
 
 	public void setIsRemember(boolean remember)
 	{
-		this.isRemember = remember;
+		isRemember = remember;
 	}
 
 	public boolean isRemember()
 	{
-		return this.isRemember;
+		return isRemember;
 	}
 }

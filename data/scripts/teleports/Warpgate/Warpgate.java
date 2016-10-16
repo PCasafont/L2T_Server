@@ -81,7 +81,7 @@ public class Warpgate extends Quest
 
 		public Teleport(L2Character c)
 		{
-			this.cha = c;
+			cha = c;
 		}
 
 		@Override
@@ -89,7 +89,7 @@ public class Warpgate extends Quest
 		{
 			try
 			{
-				this.cha.teleToLocation(-16555, 209375, -3670, true);
+				cha.teleToLocation(-16555, 209375, -3670, true);
 			}
 			catch (Exception e)
 			{

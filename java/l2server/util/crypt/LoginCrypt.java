@@ -49,12 +49,12 @@ public class LoginCrypt
 
 	public void setKey(byte[] key)
 	{
-		this.crypt = new NewCrypt(key);
+		crypt = new NewCrypt(key);
 	}
 
 	public boolean decrypt(byte[] raw, final int offset, final int size) throws IOException
 	{
-		this.crypt.decrypt(raw, offset, size);
+		crypt.decrypt(raw, offset, size);
 		return NewCrypt.verifyChecksum(raw, offset, size);
 	}
 
@@ -63,7 +63,7 @@ public class LoginCrypt
 		// reserve checksum
 		size += 4;
 
-		if (this.isStatic)
+		if (isStatic)
 		{
 			// reserve for XOR "key"
 			size += 4;
@@ -71,16 +71,16 @@ public class LoginCrypt
 			// padding
 			size += 8 - size % 8;
 			NewCrypt.encXORPass(raw, offset, size, Rnd.nextInt());
-			this.staticCrypt.crypt(raw, offset, size);
+			staticCrypt.crypt(raw, offset, size);
 
-			this.isStatic = false;
+			isStatic = false;
 		}
 		else
 		{
 			// padding
 			size += 8 - size % 8;
 			NewCrypt.appendChecksum(raw, offset, size);
-			this.crypt.crypt(raw, offset, size);
+			crypt.crypt(raw, offset, size);
 		}
 		return size;
 	}

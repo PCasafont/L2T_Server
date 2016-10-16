@@ -107,25 +107,25 @@ public class EffectDrag extends L2Effect
 		cos = dx / distance;
 
 		// Calculate the new destination with offset included
-		this.x = curX + (int) (offset * cos);
-		this.y = curY + (int) (offset * sin);
-		this.z = curZ;
+		x = curX + (int) (offset * cos);
+		y = curY + (int) (offset * sin);
+		z = curZ;
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), this.x, this.y, this.z,
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
 							getEffected().getInstanceId());
-			if (destiny.getX() != this.x || destiny.getY() != this.y)
+			if (destiny.getX() != x || destiny.getY() != y)
 			{
-				this.x = destiny.getX() - (int) (cos * 10);
-				this.y = destiny.getY() - (int) (sin * 10);
+				x = destiny.getX() - (int) (cos * 10);
+				y = destiny.getY() - (int) (sin * 10);
 			}
 		}
 		getEffected().setIsParalyzed(true);
 		getEffected().startParalyze();
-		getEffected().broadcastPacket(new FlyToLocation(getEffected(), this.x, this.y, this.z, FlyType.DRAG));
-		getEffected().setXYZ(this.x, this.y, this.z);
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.DRAG));
+		getEffected().setXYZ(x, y, z);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 		return true;
 	}

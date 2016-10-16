@@ -22,14 +22,14 @@ public final class StopPledgeWar extends L2GameServerPacket
 
 	public StopPledgeWar(String pledge, String charName)
 	{
-		this.pledgeName = pledge;
-		this.playerName = charName;
+		pledgeName = pledge;
+		playerName = charName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.pledgeName);
-		writeS(this.playerName);
+		writeS(pledgeName);
+		writeS(playerName);
 	}
 }

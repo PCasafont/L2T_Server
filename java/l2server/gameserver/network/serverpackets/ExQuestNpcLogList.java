@@ -27,19 +27,19 @@ public class ExQuestNpcLogList extends L2GameServerPacket
 
 	public ExQuestNpcLogList(QuestState st)
 	{
-		this.state = st;
+		state = st;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.state.getQuest().getQuestIntId());
-		writeC(this.state.getNpcLogs().size());
-		for (int npcId : this.state.getNpcLogs().keys())
+		writeD(state.getQuest().getQuestIntId());
+		writeC(state.getNpcLogs().size());
+		for (int npcId : state.getNpcLogs().keys())
 		{
 			writeD(npcId + 1000000);
 			writeC(0x00); // ???
-			writeD(this.state.getNpcLogs().get(npcId));
+			writeD(state.getNpcLogs().get(npcId));
 		}
 	}
 }

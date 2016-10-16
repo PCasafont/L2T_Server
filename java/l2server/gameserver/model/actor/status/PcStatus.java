@@ -411,7 +411,7 @@ public class PcStatus extends PlayableStatus
 	@Override
 	public final double getCurrentCp()
 	{
-		return this.currentCp;
+		return currentCp;
 	}
 
 	@Override
@@ -440,11 +440,11 @@ public class PcStatus extends PlayableStatus
 			if (newCp >= maxCp)
 			{
 				// Set the RegenActive flag to false
-				this.currentCp = maxCp;
-				this.flagsRegenActive &= ~REGEN_FLAG_CP;
+				currentCp = maxCp;
+				flagsRegenActive &= ~REGEN_FLAG_CP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (this.flagsRegenActive == 0)
+				if (flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -452,8 +452,8 @@ public class PcStatus extends PlayableStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				this.currentCp = newCp;
-				this.flagsRegenActive |= REGEN_FLAG_CP;
+				currentCp = newCp;
+				flagsRegenActive |= REGEN_FLAG_CP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();

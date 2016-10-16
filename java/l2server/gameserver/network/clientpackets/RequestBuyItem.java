@@ -53,24 +53,24 @@ public final class RequestBuyItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.listId = readD();
+		listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		this.items = new Item[count];
+		items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new Item(itemId, cnt);
+			items[i] = new Item(itemId, cnt);
 		}
 	}
 
@@ -89,7 +89,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -152,12 +152,12 @@ public final class RequestBuyItem extends L2GameClientPacket
 				{
 					Util.handleIllegalPlayerAction(player,
 							"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-									" sent a false BuyList list_id " + this.listId, Config.DEFAULT_PUNISH);
+									" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 					return;
 				}
 				for (L2TradeList tradeList : lists)
 				{
-					if (tradeList.getListId() == this.listId)
+					if (tradeList.getListId() == listId)
 					{
 						list = tradeList;
 					}
@@ -165,30 +165,30 @@ public final class RequestBuyItem extends L2GameClientPacket
 			}
 			else
 			{
-				list = TradeController.getInstance().getBuyList(this.listId);
+				list = TradeController.getInstance().getBuyList(listId);
 			}
 		}
 		else
 		{
-			list = TradeController.getInstance().getBuyList(this.listId);
+			list = TradeController.getInstance().getBuyList(listId);
 		}
 
 		if (list == null)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-							" sent a false BuyList list_id " + this.listId, Config.DEFAULT_PUNISH);
+							" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		this.listId = list.getListId();
+		listId = list.getListId();
 
 		long subTotal = 0;
 
 		// Check for buylist validity and calculates summary values
 		long slots = 0;
 		long weight = 0;
-		for (Item i : this.items)
+		for (Item i : items)
 		{
 			long price = -1;
 
@@ -197,7 +197,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + this.listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				return;
 			}
@@ -308,14 +308,14 @@ public final class RequestBuyItem extends L2GameClientPacket
 		}
 
 		// Proceed the purchase
-		for (Item i : this.items)
+		for (Item i : items)
 		{
 			L2TradeItem tradeItem = list.getItemById(i.getItemId());
 			if (tradeItem == null)
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + this.listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				continue;
 			}
@@ -352,18 +352,18 @@ public final class RequestBuyItem extends L2GameClientPacket
 
 		public Item(int id, long num)
 		{
-			this.itemId = id;
-			this.count = num;
+			itemId = id;
+			count = num;
 		}
 
 		public int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		public long getCount()
 		{
-			return this.count;
+			return count;
 		}
 	}
 }

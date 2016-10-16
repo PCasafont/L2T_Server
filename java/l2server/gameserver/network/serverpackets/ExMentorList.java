@@ -66,7 +66,7 @@ public class ExMentorList extends L2GameServerPacket
 					getClassIdAndLevel(partnerInfo);
 					partnerInfo.online = false;
 				}
-				this.partners.add(partnerInfo);
+				partners.add(partnerInfo);
 			}
 		}
 		else if (activeChar.isMentee())
@@ -87,10 +87,10 @@ public class ExMentorList extends L2GameServerPacket
 				getClassIdAndLevel(partnerInfo);
 				partnerInfo.online = false;
 			}
-			this.partners.add(partnerInfo);
+			partners.add(partnerInfo);
 		}
 
-		this.player = activeChar;
+		player = activeChar;
 	}
 
 	private void getClassIdAndLevel(PartnerInfo partnerInfo)
@@ -126,11 +126,10 @@ public class ExMentorList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.player.isMentor() ? 0x01 :
-				this.player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+		writeD(player.isMentor() ? 0x01 : player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
 		writeD(0x00); // ???
-		writeD(this.partners.size());
-		for (PartnerInfo menteeInfo : this.partners)
+		writeD(partners.size());
+		for (PartnerInfo menteeInfo : partners)
 		{
 			writeD(menteeInfo.objId);
 			writeS(menteeInfo.name);

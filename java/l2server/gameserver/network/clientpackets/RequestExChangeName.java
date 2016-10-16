@@ -35,9 +35,9 @@ public class RequestExChangeName extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.type = readD();
-		this.newName = readS();
-		this.charSlot = readD();
+		type = readD();
+		newName = readS();
+		charSlot = readD();
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public class RequestExChangeName extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		Log.info("Recieved " + getType() + " name: " + this.newName + " type: " + this.type + " CharSlot: " + this.charSlot);
+		Log.info("Recieved " + getType() + " name: " + newName + " type: " + type + " CharSlot: " + charSlot);
 	}
 }

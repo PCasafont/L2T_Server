@@ -34,13 +34,13 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.level = readD();
-		this.karma = readD();
-		this.clanName = readD() == 1;
-		this.name = readS();
-		this.sortBy = readD();
-		this.desc = readD() == 1;
-		this.page = readD();
+		level = readD();
+		karma = readD();
+		clanName = readD() == 1;
+		name = readS();
+		sortBy = readD();
+		desc = readD() == 1;
+		page = readD();
 	}
 
 	@Override
@@ -57,6 +57,7 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExPledgeRecruitBoardSearch(this.level, this.karma, this.clanName, this.name, this.sortBy, this.desc, this.page));
+		sendPacket(new ExPledgeRecruitBoardSearch(level, karma, clanName, name, sortBy, desc,
+				page));
 	}
 }

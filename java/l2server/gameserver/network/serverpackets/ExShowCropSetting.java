@@ -52,44 +52,44 @@ public class ExShowCropSetting extends L2GameServerPacket
 		this.manorId = manorId;
 		Castle c = CastleManager.getInstance().getCastleById(this.manorId);
 		ArrayList<Integer> crops = L2Manor.getInstance().getCropsForCastle(this.manorId);
-		this.count = crops.size();
-		this.cropData = new long[this.count * 14];
+		count = crops.size();
+		cropData = new long[count * 14];
 		int i = 0;
 		for (int cr : crops)
 		{
-			this.cropData[i * 14] = cr;
-			this.cropData[i * 14 + 1] = L2Manor.getInstance().getSeedLevelByCrop(cr);
-			this.cropData[i * 14 + 2] = L2Manor.getInstance().getRewardItem(cr, 1);
-			this.cropData[i * 14 + 3] = L2Manor.getInstance().getRewardItem(cr, 2);
-			this.cropData[i * 14 + 4] = L2Manor.getInstance().getCropPuchaseLimit(cr);
-			this.cropData[i * 14 + 5] = 0; // Looks like not used
-			this.cropData[i * 14 + 6] = L2Manor.getInstance().getCropBasicPrice(cr) * 60 / 100;
-			this.cropData[i * 14 + 7] = L2Manor.getInstance().getCropBasicPrice(cr) * 10;
+			cropData[i * 14] = cr;
+			cropData[i * 14 + 1] = L2Manor.getInstance().getSeedLevelByCrop(cr);
+			cropData[i * 14 + 2] = L2Manor.getInstance().getRewardItem(cr, 1);
+			cropData[i * 14 + 3] = L2Manor.getInstance().getRewardItem(cr, 2);
+			cropData[i * 14 + 4] = L2Manor.getInstance().getCropPuchaseLimit(cr);
+			cropData[i * 14 + 5] = 0; // Looks like not used
+			cropData[i * 14 + 6] = L2Manor.getInstance().getCropBasicPrice(cr) * 60 / 100;
+			cropData[i * 14 + 7] = L2Manor.getInstance().getCropBasicPrice(cr) * 10;
 			CropProcure cropPr = c.getCrop(cr, CastleManorManager.PERIOD_CURRENT);
 			if (cropPr != null)
 			{
-				this.cropData[i * 14 + 8] = cropPr.getStartAmount();
-				this.cropData[i * 14 + 9] = cropPr.getPrice();
-				this.cropData[i * 14 + 10] = cropPr.getReward();
+				cropData[i * 14 + 8] = cropPr.getStartAmount();
+				cropData[i * 14 + 9] = cropPr.getPrice();
+				cropData[i * 14 + 10] = cropPr.getReward();
 			}
 			else
 			{
-				this.cropData[i * 14 + 8] = 0;
-				this.cropData[i * 14 + 9] = 0;
-				this.cropData[i * 14 + 10] = 0;
+				cropData[i * 14 + 8] = 0;
+				cropData[i * 14 + 9] = 0;
+				cropData[i * 14 + 10] = 0;
 			}
 			cropPr = c.getCrop(cr, CastleManorManager.PERIOD_NEXT);
 			if (cropPr != null)
 			{
-				this.cropData[i * 14 + 11] = cropPr.getStartAmount();
-				this.cropData[i * 14 + 12] = cropPr.getPrice();
-				this.cropData[i * 14 + 13] = cropPr.getReward();
+				cropData[i * 14 + 11] = cropPr.getStartAmount();
+				cropData[i * 14 + 12] = cropPr.getPrice();
+				cropData[i * 14 + 13] = cropPr.getReward();
 			}
 			else
 			{
-				this.cropData[i * 14 + 11] = 0;
-				this.cropData[i * 14 + 12] = 0;
-				this.cropData[i * 14 + 13] = 0;
+				cropData[i * 14 + 11] = 0;
+				cropData[i * 14 + 12] = 0;
+				cropData[i * 14 + 13] = 0;
 			}
 			i++;
 		}
@@ -98,30 +98,30 @@ public class ExShowCropSetting extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.manorId); // manor id
-		writeD(this.count); // size
+		writeD(manorId); // manor id
+		writeD(count); // size
 
-		for (int i = 0; i < this.count; i++)
+		for (int i = 0; i < count; i++)
 		{
-			writeD((int) this.cropData[i * 14]); // crop id
-			writeD((int) this.cropData[i * 14 + 1]); // seed level
+			writeD((int) cropData[i * 14]); // crop id
+			writeD((int) cropData[i * 14 + 1]); // seed level
 			writeC(1);
-			writeD((int) this.cropData[i * 14 + 2]); // reward 1 id
+			writeD((int) cropData[i * 14 + 2]); // reward 1 id
 			writeC(1);
-			writeD((int) this.cropData[i * 14 + 3]); // reward 2 id
+			writeD((int) cropData[i * 14 + 3]); // reward 2 id
 
-			writeD((int) this.cropData[i * 14 + 4]); // next sale limit
-			writeD((int) this.cropData[i * 14 + 5]); // ???
-			writeD((int) this.cropData[i * 14 + 6]); // min crop price
-			writeD((int) this.cropData[i * 14 + 7]); // max crop price
+			writeD((int) cropData[i * 14 + 4]); // next sale limit
+			writeD((int) cropData[i * 14 + 5]); // ???
+			writeD((int) cropData[i * 14 + 6]); // min crop price
+			writeD((int) cropData[i * 14 + 7]); // max crop price
 
-			writeQ(this.cropData[i * 14 + 8]); // today buy
-			writeQ(this.cropData[i * 14 + 9]); // today price
-			writeC((int) this.cropData[i * 14 + 10]); // today reward
+			writeQ(cropData[i * 14 + 8]); // today buy
+			writeQ(cropData[i * 14 + 9]); // today price
+			writeC((int) cropData[i * 14 + 10]); // today reward
 
-			writeQ(this.cropData[i * 14 + 11]); // next buy
-			writeQ(this.cropData[i * 14 + 12]); // next price
-			writeC((int) this.cropData[i * 14 + 13]); // next reward
+			writeQ(cropData[i * 14 + 11]); // next buy
+			writeQ(cropData[i * 14 + 12]); // next price
+			writeC((int) cropData[i * 14 + 13]); // next reward
 		}
 	}
 }

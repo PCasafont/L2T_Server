@@ -39,7 +39,7 @@ public class L2FlyMoveZone extends L2ZoneType
 
 	public void setFlyMove(L2FlyMove move)
 	{
-		this.flyMove = move;
+		flyMove = move;
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class L2FlyMoveZone extends L2ZoneType
 			return;
 		}
 
-		player.setFlyMove(this.flyMove);
+		player.setFlyMove(flyMove);
 
 		ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance) character), 10L);
 	}
@@ -96,14 +96,14 @@ public class L2FlyMoveZone extends L2ZoneType
 		@Override
 		public void run()
 		{
-			if (!isCharacterInZone(this.player))
+			if (!isCharacterInZone(player))
 			{
 				return;
 			}
 
-			if (!(this.player.isPerformingFlyMove() && this.player.isChoosingFlyMove()))
+			if (!(player.isPerformingFlyMove() && player.isChoosingFlyMove()))
 			{
-				this.player.sendPacket(new ExNotifyFlyMoveStart());
+				player.sendPacket(new ExNotifyFlyMoveStart());
 			}
 
 			ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);

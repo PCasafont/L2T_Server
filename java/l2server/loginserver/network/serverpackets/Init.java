@@ -44,8 +44,8 @@ public final class Init extends L2LoginServerPacket
 	public Init(byte[] publickey, byte[] blowfishkey, int sessionId)
 	{
 		this.sessionId = sessionId;
-		this.publicKey = publickey;
-		this.blowfishKey = blowfishkey;
+		publicKey = publickey;
+		blowfishKey = blowfishkey;
 	}
 
 	/**
@@ -55,10 +55,10 @@ public final class Init extends L2LoginServerPacket
 	{
 		writeC(0x00); // init packet id
 
-		writeD(this.sessionId); // session id
+		writeD(sessionId); // session id
 		writeD(0x0000c621); // protocol revision
 
-		writeB(this.publicKey); // RSA Public Key
+		writeB(publicKey); // RSA Public Key
 
 		// unk GG related?
 		writeD(0x29DD954E);
@@ -66,7 +66,7 @@ public final class Init extends L2LoginServerPacket
 		writeD(0x97ADB620);
 		writeD(0x07BDE0F7);
 
-		writeB(this.blowfishKey); // BlowFish key
+		writeB(blowfishKey); // BlowFish key
 		writeC(0x00030402);
 	}
 }

@@ -61,20 +61,20 @@ public final class SkillList extends L2GameServerPacket
 
 	public SkillList()
 	{
-		this.skills = new ArrayList<>();
+		skills = new ArrayList<>();
 	}
 
 	public void addSkill(int id, int level, int reuseGroup, boolean passive, boolean disabled, boolean enchanted)
 	{
-		this.skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
+		skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.skills.size());
+		writeD(skills.size());
 
-		for (Skill temp : this.skills)
+		for (Skill temp : skills)
 		{
 			writeD(temp.passive ? 1 : 0);
 			writeD(temp.level);

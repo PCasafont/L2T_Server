@@ -73,30 +73,30 @@ public final class IllegalPlayerAction implements Runnable
 	@Override
 	public void run()
 	{
-		if (this.actor.isGM())
+		if (actor.isGM())
 		{
 			return;
 		}
 
-		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + this.message);
+		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + message);
 		record.setLoggerName("audit");
-		record.setParameters(new Object[]{this.actor, this.punishment});
-		this.logAudit.log(record);
+		record.setParameters(new Object[]{actor, punishment});
+		logAudit.log(record);
 
-		Broadcast.toGameMasters(this.message);
+		Broadcast.toGameMasters(message);
 
-		switch (this.punishment)
+		switch (punishment)
 		{
 			case PUNISH_BROADCAST:
 				return;
 			case PUNISH_KICK:
-				this.actor.logout(false);
+				actor.logout(false);
 				break;
 			case PUNISH_KICKBAN:
-				this.actor.logout();
+				actor.logout();
 				break;
 			case PUNISH_JAIL:
-				this.actor.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
+				actor.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
 				break;
 		}
 	}

@@ -38,15 +38,15 @@ public class SocialAction extends L2GameServerPacket
 	 */
 	public SocialAction(int objectId, int actionId)
 	{
-		this.charObjId = objectId;
+		charObjId = objectId;
 		this.actionId = actionId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.actionId);
+		writeD(charObjId);
+		writeD(actionId);
 		writeD(0x00); // GoD ??? (maybe npcstringId or npcTextId)
 	}
 }

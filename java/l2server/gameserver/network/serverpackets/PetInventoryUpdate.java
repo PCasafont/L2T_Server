@@ -54,22 +54,22 @@ public class PetInventoryUpdate extends L2ItemListPacket
 
 	public void addItem(L2ItemInstance item)
 	{
-		this.items.add(new ItemInfo(item));
+		items.add(new ItemInfo(item));
 	}
 
 	public void addNewItem(L2ItemInstance item)
 	{
-		this.items.add(new ItemInfo(item, 1));
+		items.add(new ItemInfo(item, 1));
 	}
 
 	public void addModifiedItem(L2ItemInstance item)
 	{
-		this.items.add(new ItemInfo(item, 2));
+		items.add(new ItemInfo(item, 2));
 	}
 
 	public void addRemovedItem(L2ItemInstance item)
 	{
-		this.items.add(new ItemInfo(item, 3));
+		items.add(new ItemInfo(item, 3));
 	}
 
 	public void addItems(List<L2ItemInstance> items)
@@ -82,7 +82,7 @@ public class PetInventoryUpdate extends L2ItemListPacket
 
 	private void showDebug()
 	{
-		for (ItemInfo item : this.items)
+		for (ItemInfo item : items)
 		{
 			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
 					" last change:" + item.getChange());
@@ -92,9 +92,9 @@ public class PetInventoryUpdate extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		int count = this.items.size();
+		int count = items.size();
 		writeH(count);
-		for (ItemInfo item : this.items)
+		for (ItemInfo item : items)
 		{
 			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
 			writeItem(item);

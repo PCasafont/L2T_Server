@@ -33,20 +33,20 @@ public class ValidateLocation extends L2GameServerPacket
 
 	public ValidateLocation(L2Character cha)
 	{
-		this.charObjId = cha.getObjectId();
-		this.x = cha.getX();
-		this.y = cha.getY();
-		this.z = cha.getZ();
-		this.heading = cha.getHeading();
+		charObjId = cha.getObjectId();
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
+		heading = cha.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
-		writeD(this.heading);
+		writeD(charObjId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
+		writeD(heading);
 	}
 }

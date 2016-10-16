@@ -40,23 +40,23 @@ public class CombatFlag
 	// Constructor
 	public CombatFlag(int x, int y, int z, int heading, int item_id)
 	{
-		this.location = new Location(x, y, z, heading);
-		this.itemId = item_id;
+		location = new Location(x, y, z, heading);
+		itemId = item_id;
 	}
 
 	public synchronized void spawnMe()
 	{
 		// Init the dropped L2ItemInstance and add it in the world as a visible object at the position where mob was last
-		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", this.itemId, 1, null, null);
+		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", itemId, 1, null, null);
 		// Remove it from the world because spawnme will insert it again
 		L2World.getInstance().removeObject(i);
-		i.spawnMe(this.location.getX(), this.location.getY(), this.location.getZ());
+		i.spawnMe(location.getX(), location.getY(), location.getZ());
 		itemInstance = i;
 	}
 
 	public synchronized void unSpawnMe()
 	{
-		if (this.player != null)
+		if (player != null)
 		{
 			dropIt();
 		}
@@ -108,13 +108,13 @@ public class CombatFlag
 	public void dropIt()
 	{
 		// Reset player stats
-		this.player.setCombatFlagEquipped(false);
-		int slot = this.player.getInventory().getSlotFromItem(this.item);
-		this.player.getInventory().unEquipItemInBodySlot(slot);
-		this.player.destroyItem("CombatFlag", this.item, null, true);
-		this.item = null;
-		this.player.broadcastUserInfo();
-		this.player = null;
+		player.setCombatFlagEquipped(false);
+		int slot = player.getInventory().getSlotFromItem(item);
+		player.getInventory().unEquipItemInBodySlot(slot);
+		player.destroyItem("CombatFlag", item, null, true);
+		item = null;
+		player.broadcastUserInfo();
+		player = null;
 		playerId = 0;
 	}
 }

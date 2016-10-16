@@ -18,18 +18,18 @@ public class JTableButtonMouseListener implements MouseListener
 
 	private void forwardEvent(MouseEvent e)
 	{
-		TableColumnModel columnModel = this.table.getColumnModel();
+		TableColumnModel columnModel = table.getColumnModel();
 		int column = columnModel.getColumnIndexAtX(e.getX());
-		int row = e.getY() / this.table.getRowHeight();
+		int row = e.getY() / table.getRowHeight();
 		Object value;
 		JComponent c;
 
-		if (row >= this.table.getRowCount() || row < 0 || column >= this.table.getColumnCount() || column < 0)
+		if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0)
 		{
 			return;
 		}
 
-		value = this.table.getValueAt(row, column);
+		value = table.getValueAt(row, column);
 
 		if (!(value instanceof JComponent))
 		{

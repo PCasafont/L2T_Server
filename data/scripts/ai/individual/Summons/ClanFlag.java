@@ -46,7 +46,7 @@ public class ClanFlag extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addSpawnId(this.clanFlagId);
+		addSpawnId(clanFlagId);
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class ClanFlag extends L2AttackableAIScript
 
 		protected ClanFlagAI(L2Npc npc)
 		{
-			this.clanFlag = npc;
+			clanFlag = npc;
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -79,21 +79,21 @@ public class ClanFlag extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if (this.clanFlag == null || this.clanFlag.isDead() || this.clanFlag.isDecayed())
+			if (clanFlag == null || clanFlag.isDead() || clanFlag.isDecayed())
 			{
-				if (this.schedule != null)
+				if (schedule != null)
 				{
-					this.schedule.cancel(true);
+					schedule.cancel(true);
 					return;
 				}
 			}
 
-			this.clanFlag.setTitle(this.clanFlag.getOwner().getClan().getName());
+			clanFlag.setTitle(clanFlag.getOwner().getClan().getName());
 
-			Collection<L2PcInstance> players = this.clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			Collection<L2PcInstance> players = clanFlag.getKnownList().getKnownPlayersInRadius(2000);
 			for (L2PcInstance player : players)
 			{
-				doAction(player, this.clanFlag);
+				doAction(player, clanFlag);
 			}
 		}
 	}
@@ -122,11 +122,11 @@ public class ClanFlag extends L2AttackableAIScript
 
 		if (target.getClan() == npc.getOwner().getClan())
 		{
-			this.clanRising.getEffects(npc, target);
+			clanRising.getEffects(npc, target);
 		}
 		else
 		{
-			this.clanCurse.getEffects(npc, target);
+			clanCurse.getEffects(npc, target);
 		}
 	}
 

@@ -15,6 +15,6 @@ public class ExEventMatchFirecracker extends L2GameServerPacket
 	@Override
 	public void writeImpl()
 	{
-		writeD(this.fireCrackerId);
+		writeD(fireCrackerId);
 	}
 }

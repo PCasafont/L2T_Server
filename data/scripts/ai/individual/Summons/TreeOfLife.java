@@ -42,7 +42,7 @@ public class TreeOfLife extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		for (int i : this.treeOfLifeIds)
+		for (int i : treeOfLifeIds)
 		{
 			addSpawnId(i);
 		}
@@ -66,8 +66,8 @@ public class TreeOfLife extends L2AttackableAIScript
 
 		protected TreeOfLifeAI(L2Summon npc)
 		{
-			this.treeOfLife = npc;
-			this.owner = npc.getOwner();
+			treeOfLife = npc;
+			owner = npc.getOwner();
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -78,38 +78,38 @@ public class TreeOfLife extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if (this.treeOfLife == null || this.treeOfLife.isDead() || !this.owner.getSummons().contains(this.treeOfLife))
+			if (treeOfLife == null || treeOfLife.isDead() || !owner.getSummons().contains(treeOfLife))
 			{
-				if (this.schedule != null)
+				if (schedule != null)
 				{
-					this.schedule.cancel(true);
+					schedule.cancel(true);
 					return;
 				}
 			}
 
-			L2Party party = this.treeOfLife.getOwner().getParty();
+			L2Party party = treeOfLife.getOwner().getParty();
 
 			if (party != null)
 			{
 				for (L2PcInstance player : party.getPartyMembers())
 				{
-					if (player == null || !GeoData.getInstance().canSeeTarget(this.treeOfLife, player))
+					if (player == null || !GeoData.getInstance().canSeeTarget(treeOfLife, player))
 					{
 						continue;
 					}
 
 					SkillTable.getInstance()
-							.getInfo(blessingOfLifeId, this.treeOfLife.getSkillLevelHash(blessingOfLifeId))
-							.getEffects(this.treeOfLife, player);
+							.getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
+							.getEffects(treeOfLife, player);
 				}
 			}
 			else
 			{
-				if (GeoData.getInstance().canSeeTarget(this.treeOfLife, this.owner))
+				if (GeoData.getInstance().canSeeTarget(treeOfLife, owner))
 				{
 					SkillTable.getInstance()
-							.getInfo(blessingOfLifeId, this.treeOfLife.getSkillLevelHash(blessingOfLifeId))
-							.getEffects(this.treeOfLife, this.owner);
+							.getInfo(blessingOfLifeId, treeOfLife.getSkillLevelHash(blessingOfLifeId))
+							.getEffects(treeOfLife, owner);
 				}
 			}
 		}

@@ -34,17 +34,18 @@ public final class RequestBBSWrite extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		this.url = readS();
-		this.arg1 = readS();
-		this.arg2 = readS();
-		this.arg3 = readS();
-		this.arg4 = readS();
-		this.arg5 = readS();
+		url = readS();
+		arg1 = readS();
+		arg2 = readS();
+		arg3 = readS();
+		arg4 = readS();
+		arg5 = readS();
 	}
 
 	@Override
 	protected final void runImpl()
 	{
-		CommunityBoard.getInstance().handleWriteCommands(getClient(), this.url, this.arg1, this.arg2, this.arg3, this.arg4, this.arg5);
+		CommunityBoard.getInstance().handleWriteCommands(getClient(), url, arg1, arg2, arg3, arg4,
+				arg5);
 	}
 }

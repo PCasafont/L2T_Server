@@ -33,7 +33,7 @@ public class ExListMpccWaiting extends L2GameServerPacket
 
 	public ExListMpccWaiting(L2PcInstance player, int page, int location, int anyLevel)
 	{
-		this.activeChar = player;
+		activeChar = player;
 		this.page = page;
 		this.location = location;
 		this.anyLevel = anyLevel;

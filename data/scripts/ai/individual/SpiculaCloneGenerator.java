@@ -45,10 +45,10 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	{
 		super(id, name, descr);
 
-		addKillId(this.yinFragment);
-		addAttackId(this.yin);
-		addSpawnId(this.yin);
-		addSpawnId(this.yinFragment);
+		addKillId(yinFragment);
+		addAttackId(yin);
+		addSpawnId(yin);
+		addSpawnId(yinFragment);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -57,7 +57,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == this.yin || spawn.getNpcId() == this.yinFragment)
+			if (spawn.getNpcId() == yin || spawn.getNpcId() == yinFragment)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -67,7 +67,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if (npc.getNpcId() == this.yin)
+		if (npc.getNpcId() == yin)
 		{
 			npc.setIsInvul(true);
 		}
@@ -80,18 +80,18 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
 	{
-		if (this.yinControl.containsKey(npc.getObjectId()))
+		if (yinControl.containsKey(npc.getObjectId()))
 		{
-			if (System.currentTimeMillis() >= this.yinControl.get(npc.getObjectId()) + 180000)
+			if (System.currentTimeMillis() >= yinControl.get(npc.getObjectId()) + 180000)
 			{
-				this.yinControl.put(npc.getObjectId(), System.currentTimeMillis());
+				yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 				spawnSpiculas(npc, attacker);
 			}
 		}
 		else
 		{
-			this.yinControl.put(npc.getObjectId(), System.currentTimeMillis());
+			yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 			spawnSpiculas(npc, attacker);
 		}
@@ -113,9 +113,9 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 				"$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
 				3000)); //id: 1802277
 
-		for (int a = 0; a <= (npc.getNpcId() == this.yinFragment ? 2 : 4); a++)
+		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++)
 		{
-			L2Npc minion = addSpawn(this.spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
+			L2Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 
 			minion.setIsRunning(true);
 

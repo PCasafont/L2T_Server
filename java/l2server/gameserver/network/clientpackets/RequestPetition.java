@@ -41,8 +41,8 @@ public final class RequestPetition extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.content = readS();
-		this.type = readD();
+		content = readS();
+		type = readD();
 	}
 
 	@Override
@@ -90,13 +90,13 @@ public final class RequestPetition extends L2GameClientPacket
 			return;
 		}
 
-		if (this.content.length() > 255)
+		if (content.length() > 255)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PETITION_MAX_CHARS_255));
 			return;
 		}
 
-		int petitionId = PetitionManager.getInstance().submitPetition(activeChar, this.content, this.type);
+		int petitionId = PetitionManager.getInstance().submitPetition(activeChar, content, type);
 
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PETITION_ACCEPTED_RECENT_NO_S1);
 		sm.addNumber(petitionId);

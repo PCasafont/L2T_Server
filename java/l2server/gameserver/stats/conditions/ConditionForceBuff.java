@@ -53,7 +53,7 @@ public final class ConditionForceBuff extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		if (this.forces[0] > 0)
+		if (forces[0] > 0)
 		{
 			L2Abnormal force = env.player.getFirstEffect(BATTLE_FORCE);
 			if (force == null)
@@ -70,7 +70,7 @@ public final class ConditionForceBuff extends Condition
 				}
 
 				found = true;
-				if (((EffectFusion) effect).effect < this.forces[0])
+				if (((EffectFusion) effect).effect < forces[0])
 				{
 					return false;
 				}
@@ -82,7 +82,7 @@ public final class ConditionForceBuff extends Condition
 			}
 		}
 
-		if (this.forces[1] > 0)
+		if (forces[1] > 0)
 		{
 			L2Abnormal force = env.player.getFirstEffect(SPELL_FORCE);
 			if (force == null)
@@ -99,7 +99,7 @@ public final class ConditionForceBuff extends Condition
 				}
 
 				found = true;
-				if (((EffectFusion) effect).effect < this.forces[1])
+				if (((EffectFusion) effect).effect < forces[1])
 				{
 					return false;
 				}

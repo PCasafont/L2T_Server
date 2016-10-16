@@ -37,7 +37,7 @@ public final class RequestSentPost extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.msgId = readD();
+		msgId = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class RequestSentPost extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(this.msgId);
+		Message msg = MailManager.getInstance().getMessage(msgId);
 		if (msg == null)
 		{
 			return;

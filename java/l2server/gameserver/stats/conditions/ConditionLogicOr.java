@@ -26,7 +26,7 @@ public class ConditionLogicOr extends Condition
 {
 
 	private static Condition[] emptyConditions = new Condition[0];
-	public Condition[] conditions = this.emptyConditions;
+	public Condition[] conditions = emptyConditions;
 
 	/**
 	 * Adds the.

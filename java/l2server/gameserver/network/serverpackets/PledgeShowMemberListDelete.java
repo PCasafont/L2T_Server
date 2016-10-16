@@ -26,12 +26,12 @@ public class PledgeShowMemberListDelete extends L2GameServerPacket
 
 	public PledgeShowMemberListDelete(String playerName)
 	{
-		this.player = playerName;
+		player = playerName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.player);
+		writeS(player);
 	}
 }

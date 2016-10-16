@@ -15,8 +15,8 @@ public class RequestBRBuyProduct extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.productId = readD();
-		this.count = readD();
+		productId = readD();
+		count = readD();
 	}
 
 	@Override

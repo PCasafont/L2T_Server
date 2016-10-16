@@ -32,10 +32,10 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 
 	public ExEnchantSkillInfo(int id, int lvl, int enchRoute, int enchLvl)
 	{
-		this.routes = new ArrayList<>();
+		routes = new ArrayList<>();
 		this.id = id;
 		this.lvl = lvl;
-		this.enchant = enchRoute * 1000 + enchLvl;
+		enchant = enchRoute * 1000 + enchLvl;
 
 		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(this.id);
 		// do we have this skill?
@@ -44,7 +44,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 			// skill already enchanted?
 			if (enchRoute > 0)
 			{
-				this.maxEnchanted = enchantLearn.isMaxEnchant(enchRoute, enchLvl);
+				maxEnchanted = enchantLearn.isMaxEnchant(enchRoute, enchLvl);
 
 				// get detail for next level
 				EnchantSkillDetail esd = enchantLearn.getEnchantSkillDetail(enchRoute, enchLvl);
@@ -52,7 +52,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				// if it exists add it
 				if (esd != null)
 				{
-					this.routes.add(this.lvl + (enchRoute * 1000 + enchLvl + (this.maxEnchanted ? 0 : 1) << 16));
+					routes.add(this.lvl + (enchRoute * 1000 + enchLvl + (maxEnchanted ? 0 : 1) << 16));
 				}
 
 				for (int route : enchantLearn.getAllRoutes())
@@ -63,7 +63,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 					}
 					// add other levels of all routes - same lvl as enchanted
 					// lvl
-					this.routes.add(this.lvl + (route * 1000 + enchLvl << 16));
+					routes.add(this.lvl + (route * 1000 + enchLvl << 16));
 				}
 			}
 			else
@@ -72,7 +72,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				for (int route : enchantLearn.getAllRoutes())
 				{
 					// add first level (+1) of all routes
-					this.routes.add(this.lvl + (route * 1000 + 1 << 16));
+					routes.add(this.lvl + (route * 1000 + 1 << 16));
 				}
 			}
 		}
@@ -86,14 +86,14 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.id);
-		writeH(this.lvl);
-		writeH(this.enchant);
-		writeD(this.maxEnchanted ? 0 : 1);
-		writeD(this.lvl > 100 ? 1 : 0); // enchanted?
+		writeD(id);
+		writeH(lvl);
+		writeH(enchant);
+		writeD(maxEnchanted ? 0 : 1);
+		writeD(lvl > 100 ? 1 : 0); // enchanted?
 
-		writeD(this.routes.size());
-		for (Integer level : this.routes)
+		writeD(routes.size());
+		for (Integer level : routes)
 		{
 			writeD(level);
 		}

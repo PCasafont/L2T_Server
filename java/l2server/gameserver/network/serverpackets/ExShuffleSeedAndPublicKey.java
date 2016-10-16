@@ -16,6 +16,6 @@ public class ExShuffleSeedAndPublicKey extends L2GameServerPacket
 	public void writeImpl()
 	{
 		writeB(new byte[1]); // seed (TODO: check size)
-		writeH(this.publicKeySize);
+		writeH(publicKeySize);
 	}
 }

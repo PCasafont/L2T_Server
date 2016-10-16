@@ -39,13 +39,13 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.storePlayerId = readD();
+		storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != this.buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
-		this.items = new ItemRequest[count];
+		items = new ItemRequest[count];
 
 		for (int i = 0; i < count; i++)
 		{
@@ -59,10 +59,10 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 
 			if (objectId < 1 || itemId < 1 || cnt < 1 || price < 0)
 			{
-				this.items = null;
+				items = null;
 				return;
 			}
-			this.items[i] = new ItemRequest(objectId, itemId, cnt, price);
+			items[i] = new ItemRequest(objectId, itemId, cnt, price);
 		}
 	}
 
@@ -75,7 +75,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		if (this.items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -87,7 +87,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance object = L2World.getInstance().getPlayer(this.storePlayerId);
+		L2PcInstance object = L2World.getInstance().getPlayer(storePlayerId);
 		if (object == null)
 		{
 			return;
@@ -123,7 +123,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		if (!storeList.privateStoreSell(player, this.items))
+		if (!storeList.privateStoreSell(player, items))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("PrivateStore sell has failed due to invalid list or request. Player: " + player.getName() +

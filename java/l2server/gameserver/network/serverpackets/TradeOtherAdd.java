@@ -36,6 +36,6 @@ public final class TradeOtherAdd extends L2ItemListPacket
 	protected final void writeImpl()
 	{
 		writeH(1); // item count
-		writeItem(this.item);
+		writeItem(item);
 	}
 }

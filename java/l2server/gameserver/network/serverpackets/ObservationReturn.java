@@ -31,15 +31,15 @@ public class ObservationReturn extends L2GameServerPacket
 	 */
 	public ObservationReturn(L2PcInstance observer)
 	{
-		this.activeChar = observer;
+		activeChar = observer;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0xec);
-		writeD(this.activeChar.getLastX());
-		writeD(this.activeChar.getLastY());
-		writeD(this.activeChar.getLastZ());
+		writeD(activeChar.getLastX());
+		writeD(activeChar.getLastY());
+		writeD(activeChar.getLastZ());
 	}
 }

@@ -34,10 +34,10 @@ public final class ExShowTerritory extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.territory.getMinZ());
-		writeD(this.territory.getMaxZ());
-		writeD(this.territory.getPoints().size());
-		for (Point p : this.territory.getPoints())
+		writeD(territory.getMinZ());
+		writeD(territory.getMaxZ());
+		writeD(territory.getPoints().size());
+		for (Point p : territory.getPoints())
 		{
 			writeD(p.x);
 			writeD(p.y);

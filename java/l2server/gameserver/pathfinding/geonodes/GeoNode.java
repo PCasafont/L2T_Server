@@ -30,12 +30,12 @@ public class GeoNode extends AbstractNode
 	public GeoNode(AbstractNodeLoc Loc, int Neighbors_idx)
 	{
 		super(Loc);
-		this.neighborsIdx = Neighbors_idx;
+		neighborsIdx = Neighbors_idx;
 	}
 
 	public short getCost()
 	{
-		return this.cost;
+		return cost;
 	}
 
 	public void setCost(int cost)
@@ -45,18 +45,18 @@ public class GeoNode extends AbstractNode
 
 	public GeoNode[] getNeighbors()
 	{
-		return this.neighbors;
+		return neighbors;
 	}
 
 	public void attachNeighbors()
 	{
 		if (getLoc() == null)
 		{
-			this.neighbors = null;
+			neighbors = null;
 		}
 		else
 		{
-			this.neighbors = GeoPathFinding.getInstance().readNeighbors(this, this.neighborsIdx);
+			neighbors = GeoPathFinding.getInstance().readNeighbors(this, neighborsIdx);
 		}
 	}
 }

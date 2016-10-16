@@ -30,12 +30,12 @@ public final class AutoAttackStart extends L2GameServerPacket
 	 */
 	public AutoAttackStart(int targetId)
 	{
-		this.targetObjId = targetId;
+		targetObjId = targetId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.targetObjId);
+		writeD(targetObjId);
 	}
 }

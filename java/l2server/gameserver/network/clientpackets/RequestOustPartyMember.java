@@ -32,7 +32,7 @@ public final class RequestOustPartyMember extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public final class RequestOustPartyMember extends L2GameClientPacket
 
 		if (activeChar.isInParty() && activeChar.getParty().isLeader(activeChar))
 		{
-			activeChar.getParty().removePartyMember(this.name, messageType.Expelled);
+			activeChar.getParty().removePartyMember(name, messageType.Expelled);
 		}
 	}
 }

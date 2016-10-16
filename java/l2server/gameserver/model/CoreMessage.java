@@ -23,39 +23,39 @@ public class CoreMessage
 	public CoreMessage(int cmId)
 	{
 		CoreMessage cm = CoreMessageTable.getInstance().getMessage(cmId);
-		this.message = cm.message;
+		message = cm.message;
 	}
 
 	public CoreMessage(CoreMessage cm)
 	{
-		this.message = cm.message;
+		message = cm.message;
 	}
 
 	public String getString()
 	{
-		return this.message;
+		return message;
 	}
 
 	public void addString(String text)
 	{
-		this.value.add(text);
+		value.add(text);
 	}
 
 	public void addNumber(double num)
 	{
-		this.value.add(String.valueOf(num));
+		value.add(String.valueOf(num));
 	}
 
 	public void addNumber(long num)
 	{
-		this.value.add(String.valueOf(num));
+		value.add(String.valueOf(num));
 	}
 
 	public String renderMsg(String language)
 	{
 		String message = this.message;
 		int i = 0;
-		for (String text : this.value)
+		for (String text : value)
 		{
 			i++;
 			message = message.replace("$s" + i, text);

@@ -37,7 +37,7 @@ public class RequestExRqItemLink extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.objectId = readD();
+		objectId = readD();
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class RequestExRqItemLink extends L2GameClientPacket
 		L2GameClient client = getClient();
 		if (client != null)
 		{
-			L2Object object = L2World.getInstance().findObject(this.objectId);
+			L2Object object = L2World.getInstance().findObject(objectId);
 			if (object instanceof L2ItemInstance)
 			{
 				L2ItemInstance item = (L2ItemInstance) object;
@@ -61,8 +61,7 @@ public class RequestExRqItemLink extends L2GameClientPacket
 				{
 					if (Config.DEBUG)
 					{
-						Log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" +
-								this.objectId);
+						Log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" + objectId);
 					}
 				}
 			}

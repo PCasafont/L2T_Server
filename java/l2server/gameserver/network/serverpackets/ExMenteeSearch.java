@@ -30,14 +30,14 @@ public class ExMenteeSearch extends L2GameServerPacket
 
 	public ExMenteeSearch(int page, int minLevel, int maxLevel)
 	{
-		this.mentees = new ArrayList<>();
+		mentees = new ArrayList<>();
 		this.page = page;
-		this.playersInPage = 64;
+		playersInPage = 64;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
 			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
 			{
-				this.mentees.add(player);
+				mentees.add(player);
 			}
 		}
 	}
@@ -45,15 +45,15 @@ public class ExMenteeSearch extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.page);
-		if (!this.mentees.isEmpty())
+		writeD(page);
+		if (!mentees.isEmpty())
 		{
-			writeD(this.mentees.size());
-			writeD(this.mentees.size() % this.playersInPage);
+			writeD(mentees.size());
+			writeD(mentees.size() % playersInPage);
 			int i = 1;
-			for (L2PcInstance player : this.mentees)
+			for (L2PcInstance player : mentees)
 			{
-				if (i <= this.playersInPage * this.page && i > playersInPage * (this.page - 1))
+				if (i <= playersInPage * page && i > playersInPage * (page - 1))
 				{
 					writeS(player.getName());
 					writeD(player.getClassId());

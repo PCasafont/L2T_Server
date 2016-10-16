@@ -62,7 +62,7 @@ public class L2DynamicZone extends L2ZoneType
 			{
 				character.sendMessage("You have entered a temporary zone!");
 			}
-			this.skill.getEffects(this.owner, character);
+			skill.getEffects(owner, character);
 		}
 		catch (NullPointerException e)
 		{
@@ -77,54 +77,54 @@ public class L2DynamicZone extends L2ZoneType
 		{
 			character.sendMessage("You have left a temporary zone!");
 		}
-		if (character == this.owner)
+		if (character == owner)
 		{
 			remove();
 			return;
 		}
-		character.stopSkillEffects(this.skill.getId());
+		character.stopSkillEffects(skill.getId());
 	}
 
 	protected void remove()
 	{
-		if (this.task == null)
+		if (task == null)
 		{
 			return;
 		}
-		this.task.cancel(false);
-		this.task = null;
+		task.cancel(false);
+		task = null;
 
-		this.region.removeZone(this);
-		for (L2Character member : this.characterList.values())
+		region.removeZone(this);
+		for (L2Character member : characterList.values())
 		{
 			try
 			{
-				member.stopSkillEffects(this.skill.getId());
+				member.stopSkillEffects(skill.getId());
 			}
 			catch (NullPointerException e)
 			{
 				e.printStackTrace();
 			}
 		}
-		this.owner.stopSkillEffects(this.skill.getId());
+		owner.stopSkillEffects(skill.getId());
 	}
 
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)
 	{
-		if (character == this.owner)
+		if (character == owner)
 		{
 			remove();
 		}
 		else
 		{
-			character.stopSkillEffects(this.skill.getId());
+			character.stopSkillEffects(skill.getId());
 		}
 	}
 
 	@Override
 	public void onReviveInside(L2Character character)
 	{
-		this.skill.getEffects(this.owner, character);
+		skill.getEffects(owner, character);
 	}
 }

@@ -39,7 +39,7 @@ public class LuckyChests extends EventInstance
 			return false;
 		}
 
-		if (!this.chestsSpawned)
+		if (!chestsSpawned)
 		{
 			spawnChests();
 		}
@@ -51,12 +51,12 @@ public class LuckyChests extends EventInstance
 	public void calculateRewards()
 	{
 		EventTeam team;
-		if (this.config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (this.teams[0].getPoints() == this.teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (this.teams[0].getParticipatedPlayerCount() == 0 || this.teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -78,9 +78,9 @@ public class LuckyChests extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = this.teams[this.teams[0].getPoints() > this.teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == this.teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -93,29 +93,29 @@ public class LuckyChests extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (this.teams[0].getPoints() > this.teams[1].getPoints() && this.teams[0].getPoints() > this.teams[2].getPoints() &&
-					this.teams[0].getPoints() > this.teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = this.teams[0];
+				team = teams[0];
 			}
-			else if (this.teams[1].getPoints() > this.teams[0].getPoints() && this.teams[1].getPoints() > this.teams[2].getPoints() &&
-					this.teams[1].getPoints() > this.teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = this.teams[1];
+				team = teams[1];
 			}
-			else if (this.teams[2].getPoints() > this.teams[0].getPoints() && this.teams[2].getPoints() > this.teams[1].getPoints() &&
-					this.teams[2].getPoints() > this.teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = this.teams[2];
+				team = teams[2];
 			}
-			else if (this.teams[3].getPoints() > this.teams[0].getPoints() && this.teams[3].getPoints() > this.teams[1].getPoints() &&
-					this.teams[3].getPoints() > this.teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = this.teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -139,7 +139,7 @@ public class LuckyChests extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getParticipatedPlayerCount() > 0)
 			{
@@ -213,7 +213,7 @@ public class LuckyChests extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, this.teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, teams[killedTeamId].getCoords(), false, false);
 	}
 
 	private void spawnChests()
@@ -227,37 +227,37 @@ public class LuckyChests extends EventInstance
 			{
 				chestAmount = 200;
 			}
-			else if (this.config.getLocation().getTeamCount() == 4)
+			else if (config.getLocation().getTeamCount() == 4)
 			{
-				chestAmount = this.teams[0].getParticipatedPlayerCount() * 10;
+				chestAmount = teams[0].getParticipatedPlayerCount() * 10;
 			}
 			else
 			{
-				chestAmount = this.teams[0].getParticipatedPlayerCount() * 5;
+				chestAmount = teams[0].getParticipatedPlayerCount() * 5;
 			}
 			int i;
 			for (i = 0; i < chestAmount && i < 200; i++)
 			{
-				this.chestSpawns[i] = new L2Spawn(tmpl);
+				chestSpawns[i] = new L2Spawn(tmpl);
 
-				int[] pos = this.config.getLocation().getZone().getZone().getRandomPoint();
-				this.chestSpawns[i].setX(pos[0]);
-				this.chestSpawns[i].setY(pos[1]);
-				this.chestSpawns[i].setZ(pos[2]);
-				this.chestSpawns[i].setHeading(Rnd.get(65536));
-				this.chestSpawns[i].setRespawnDelay(10);
-				this.chestSpawns[i].setInstanceId(getInstanceId());
+				int[] pos = config.getLocation().getZone().getZone().getRandomPoint();
+				chestSpawns[i].setX(pos[0]);
+				chestSpawns[i].setY(pos[1]);
+				chestSpawns[i].setZ(pos[2]);
+				chestSpawns[i].setHeading(Rnd.get(65536));
+				chestSpawns[i].setRespawnDelay(10);
+				chestSpawns[i].setInstanceId(getInstanceId());
 
-				SpawnTable.getInstance().addNewSpawn(this.chestSpawns[i], false);
+				SpawnTable.getInstance().addNewSpawn(chestSpawns[i], false);
 
-				this.chestSpawns[i].stopRespawn();
-				this.chestSpawns[i].doSpawn();
+				chestSpawns[i].stopRespawn();
+				chestSpawns[i].doSpawn();
 			}
-			this.chestsSpawned = true;
+			chestsSpawned = true;
 		}
 		catch (Exception e)
 		{
-			Log.warning("Chest event exception (" + this.config.getLocation().getName() + "):");
+			Log.warning("Chest event exception (" + config.getLocation().getName() + "):");
 			e.printStackTrace();
 		}
 	}
@@ -267,14 +267,14 @@ public class LuckyChests extends EventInstance
 		int i;
 		for (i = 0; i < 200; i++)
 		{
-			if (this.chestSpawns[i] != null)
+			if (chestSpawns[i] != null)
 			{
-				this.chestSpawns[i].getNpc().deleteMe();
-				this.chestSpawns[i].stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(this.chestSpawns[i], false);
+				chestSpawns[i].getNpc().deleteMe();
+				chestSpawns[i].stopRespawn();
+				SpawnTable.getInstance().deleteSpawn(chestSpawns[i], false);
 			}
 		}
-		this.chestsSpawned = false;
+		chestsSpawned = false;
 	}
 
 	class UnspawnChestsTask implements Runnable

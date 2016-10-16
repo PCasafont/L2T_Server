@@ -41,7 +41,7 @@ public class CaptureTheFlag extends EventInstance
 			return false;
 		}
 
-		if (!this.flagsSpawned)
+		if (!flagsSpawned)
 		{
 			spawnFlags();
 		}
@@ -53,12 +53,12 @@ public class CaptureTheFlag extends EventInstance
 	public void calculateRewards()
 	{
 		EventTeam team;
-		if (this.config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (this.teams[0].getPoints() == this.teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (this.teams[0].getParticipatedPlayerCount() == 0 || this.teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -81,9 +81,9 @@ public class CaptureTheFlag extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = this.teams[this.teams[0].getPoints() > this.teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == this.teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -96,29 +96,29 @@ public class CaptureTheFlag extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (this.teams[0].getPoints() > this.teams[1].getPoints() && this.teams[0].getPoints() > this.teams[2].getPoints() &&
-					this.teams[0].getPoints() > this.teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = this.teams[0];
+				team = teams[0];
 			}
-			else if (this.teams[1].getPoints() > this.teams[0].getPoints() && this.teams[1].getPoints() > this.teams[2].getPoints() &&
-					this.teams[1].getPoints() > this.teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = this.teams[1];
+				team = teams[1];
 			}
-			else if (this.teams[2].getPoints() > this.teams[0].getPoints() && this.teams[2].getPoints() > this.teams[1].getPoints() &&
-					this.teams[2].getPoints() > this.teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = this.teams[2];
+				team = teams[2];
 			}
-			else if (this.teams[3].getPoints() > this.teams[0].getPoints() && this.teams[3].getPoints() > this.teams[1].getPoints() &&
-					this.teams[3].getPoints() > this.teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = this.teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -142,7 +142,7 @@ public class CaptureTheFlag extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getParticipatedPlayerCount() > 0)
 			{
@@ -240,28 +240,28 @@ public class CaptureTheFlag extends EventInstance
 			assistant.addEventPoints(killValue);
 		}
 
-		new EventTeleporter(killedPlayer, this.teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayer, teams[killedTeamId].getCoords(), false, false);
 	}
 
 	private void spawnFlags()
 	{
-		spawnFlag(this.teams[0]);
-		spawnFlag(this.teams[1]);
-		if (this.config.getLocation().getTeamCount() == 4)
+		spawnFlag(teams[0]);
+		spawnFlag(teams[1]);
+		if (config.getLocation().getTeamCount() == 4)
 		{
-			spawnFlag(this.teams[2]);
-			spawnFlag(this.teams[3]);
+			spawnFlag(teams[2]);
+			spawnFlag(teams[3]);
 		}
-		this.flagsSpawned = true;
+		flagsSpawned = true;
 	}
 
 	private void unspawnFlags()
 	{
-		for (EventTeam team : this.teams)
+		for (EventTeam team : teams)
 		{
 			unspawnFlag(team);
 		}
-		this.flagsSpawned = false;
+		flagsSpawned = false;
 	}
 
 	public void spawnFlag(EventTeam team)
@@ -272,13 +272,13 @@ public class CaptureTheFlag extends EventInstance
 		{
 			int x = 0;
 			int y = 0;
-			for (int i = 0; i < this.config.getLocation().getTeamCount(); i++)
+			for (int i = 0; i < config.getLocation().getTeamCount(); i++)
 			{
-				x += this.teams[i].getCoords().getX();
-				y += this.teams[i].getCoords().getY();
+				x += teams[i].getCoords().getX();
+				y += teams[i].getCoords().getY();
 			}
-			x /= this.config.getLocation().getTeamCount();
-			y /= this.config.getLocation().getTeamCount();
+			x /= config.getLocation().getTeamCount();
+			y /= config.getLocation().getTeamCount();
 
 			L2Spawn flagSpawn = new L2Spawn(tmpl);
 

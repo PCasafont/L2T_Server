@@ -35,7 +35,7 @@ public class ConditionTargetActiveSkillId extends Condition
 	public ConditionTargetActiveSkillId(int skillId)
 	{
 		this.skillId = skillId;
-		this.skillLevel = -1;
+		skillLevel = -1;
 	}
 
 	/**
@@ -60,9 +60,9 @@ public class ConditionTargetActiveSkillId extends Condition
 		{
 			if (sk != null)
 			{
-				if (sk.getId() == this.skillId)
+				if (sk.getId() == skillId)
 				{
-					if (this.skillLevel == -1 || this.skillLevel <= sk.getLevel())
+					if (skillLevel == -1 || skillLevel <= sk.getLevel())
 					{
 						return true;
 					}

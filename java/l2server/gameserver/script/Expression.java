@@ -70,16 +70,16 @@ public class Expression
 
 	private Expression(ScriptContext pContext, String pLang, String pCode)
 	{
-		this.context = pContext;
-		this.lang = pLang;
-		this.code = pCode;
+		context = pContext;
+		lang = pLang;
+		code = pCode;
 	}
 
 	public <T> void addDynamicVariable(String name, T value)
 	{
 		try
 		{
-			this.context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
+			context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{
@@ -91,7 +91,7 @@ public class Expression
 	{
 		try
 		{
-			this.context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
+			context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{

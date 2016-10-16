@@ -204,16 +204,16 @@ public class CastleManager implements InstanceListManager
 
 	public final List<Castle> getCastles()
 	{
-		if (this.castles == null)
+		if (castles == null)
 		{
-			this.castles = new ArrayList<>();
+			castles = new ArrayList<>();
 		}
-		return this.castles;
+		return castles;
 	}
 
 	public final void validateTaxes()
 	{
-		for (Castle castle : this.castles)
+		for (Castle castle : castles)
 		{
 			int maxTax = castle.getTendency() == 2 ? 30 : 0;
 			if (castle.getTaxPercent() > maxTax)
@@ -227,14 +227,14 @@ public class CastleManager implements InstanceListManager
 
 	public int getCirclet()
 	{
-		return getCircletByCastleId(this.castleId);
+		return getCircletByCastleId(castleId);
 	}
 
 	public int getCircletByCastleId(int castleId)
 	{
 		if (castleId > 0 && castleId < 10)
 		{
-			return this.castleCirclets[castleId];
+			return castleCirclets[castleId];
 		}
 
 		return 0;
@@ -349,7 +349,7 @@ public class CastleManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		this.castles.forEach(Castle::activateInstance);
+		castles.forEach(Castle::activateInstance);
 	}
 
 	public void spawnCastleTendencyNPCs()

@@ -40,7 +40,7 @@ public final class ConditionUsingItemType extends Condition
 	public ConditionUsingItemType(int mask)
 	{
 		this.mask = mask;
-		this.armor = (this.mask & (L2ArmorType.MAGIC.mask() | L2ArmorType.LIGHT.mask() | L2ArmorType.HEAVY.mask())) != 0;
+		armor = (this.mask & (L2ArmorType.MAGIC.mask() | L2ArmorType.LIGHT.mask() | L2ArmorType.HEAVY.mask())) != 0;
 	}
 
 	/* (non-Javadoc)
@@ -56,7 +56,7 @@ public final class ConditionUsingItemType extends Condition
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
 
 		//If ConditionUsingItemType is one between Light, Heavy or Magic
-		if (this.armor)
+		if (armor)
 		{
 			//Get the itemMask of the weared chest (if exists)
 			L2ItemInstance chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
@@ -67,7 +67,7 @@ public final class ConditionUsingItemType extends Condition
 			int chestMask = chest.getItem().getItemMask();
 
 			//If chest armor is different from the condition one return false
-			if ((this.mask & chestMask) == 0)
+			if ((mask & chestMask) == 0)
 			{
 				return false;
 			}
@@ -89,9 +89,9 @@ public final class ConditionUsingItemType extends Condition
 				}
 				int legMask = legs.getItem().getItemMask();
 				//return true if legs armor matches too
-				return (this.mask & legMask) != 0;
+				return (mask & legMask) != 0;
 			}
 		}
-		return (this.mask & inv.getWearedMask()) != 0;
+		return (mask & inv.getWearedMask()) != 0;
 	}
 }

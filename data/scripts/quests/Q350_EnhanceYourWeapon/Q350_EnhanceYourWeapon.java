@@ -74,17 +74,17 @@ public class Q350_EnhanceYourWeapon extends Quest
 
 		public final int getLevel()
 		{
-			return this.level;
+			return level;
 		}
 
 		public final int getItemId()
 		{
-			return this.itemId;
+			return itemId;
 		}
 
 		public final int getLeveledItemId()
 		{
-			return this.leveledItemId;
+			return leveledItemId;
 		}
 	}
 
@@ -103,17 +103,17 @@ public class Q350_EnhanceYourWeapon extends Quest
 
 		public final AbsorbCrystalType getAbsorbCrystalType()
 		{
-			return this.absorbCrystalType;
+			return absorbCrystalType;
 		}
 
 		public final boolean isSkillNeeded()
 		{
-			return this.isSkillNeeded;
+			return isSkillNeeded;
 		}
 
 		public final int getChance()
 		{
-			return this.chance;
+			return chance;
 		}
 	}
 
@@ -176,7 +176,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 								}
 								int leveledItemId = d.getInt("leveledItemId");
 
-								this.soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
+								soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
 							}
 						}
 					}
@@ -263,7 +263,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 											"[EnhanceYourWeapon] No leveling info for npcId: " + npcId + ", skipping");
 									continue;
 								}
-								this.npcLevelingInfos.put(npcId, temp);
+								npcLevelingInfos.put(npcId, temp);
 							}
 						}
 					}
@@ -274,8 +274,8 @@ public class Q350_EnhanceYourWeapon extends Quest
 		{
 			Log.log(Level.WARNING, "[EnhanceYourWeapon] Could not parse data.xml file: " + e.getMessage(), e);
 		}
-		Log.info("[EnhanceYourWeapon] Loaded " + this.soulCrystals.size() + " Soul Crystal data.");
-		Log.info("[EnhanceYourWeapon] Loaded " + this.npcLevelingInfos.size() + " npc Leveling info data.");
+		Log.info("[EnhanceYourWeapon] Loaded " + soulCrystals.size() + " Soul Crystal data.");
+		Log.info("[EnhanceYourWeapon] Loaded " + npcLevelingInfos.size() + " npc Leveling info data.");
 	}
 
 	public Q350_EnhanceYourWeapon(int questId, String name, String descr)
@@ -289,7 +289,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 		}
 
 		load();
-		for (int npcId : this.npcLevelingInfos.keySet())
+		for (int npcId : npcLevelingInfos.keySet())
 		{
 			addSkillSeeId(npcId);
 			addKillId(npcId);
@@ -309,7 +309,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 		{
 			return null;
 		}
-		if (!(npc instanceof L2Attackable) || npc.isDead() || !this.npcLevelingInfos.containsKey(npc.getNpcId()))
+		if (!(npc instanceof L2Attackable) || npc.isDead() || !npcLevelingInfos.containsKey(npc.getNpcId()))
 		{
 			return null;
 		}
@@ -328,7 +328,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (npc instanceof L2Attackable && this.npcLevelingInfos.containsKey(npc.getNpcId()))
+		if (npc instanceof L2Attackable && npcLevelingInfos.containsKey(npc.getNpcId()))
 		{
 			levelSoulCrystals((L2Attackable) npc, killer);
 		}
@@ -434,7 +434,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 				}
 
 				players.put(pl, sc);
-				if (maxSCLevel < sc.getLevel() && this.npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
+				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
 				{
 					maxSCLevel = sc.getLevel();
 				}
@@ -446,14 +446,14 @@ public class Q350_EnhanceYourWeapon extends Quest
 			if (sc != null)
 			{
 				players.put(killer, sc);
-				if (maxSCLevel < sc.getLevel() && this.npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
+				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
 				{
 					maxSCLevel = sc.getLevel();
 				}
 			}
 		}
 		//Init some useful vars
-		LevelingInfo mainlvlInfo = this.npcLevelingInfos.get(mob.getNpcId()).get(maxSCLevel);
+		LevelingInfo mainlvlInfo = npcLevelingInfos.get(mob.getNpcId()).get(maxSCLevel);
 
 		if (mainlvlInfo == null)
 			/*throw new NullPointerException("Target: "+mob+ " player: "+killer+" level: "+maxSCLevel);*/
@@ -551,7 +551,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 
 	private boolean isPartyLevelingMonster(int npcId)
 	{
-		for (LevelingInfo li : this.npcLevelingInfos.get(npcId).values())
+		for (LevelingInfo li : npcLevelingInfos.get(npcId).values())
 		{
 			if (li.getAbsorbCrystalType() != AbsorbCrystalType.LAST_HIT)
 			{
@@ -574,7 +574,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 		for (L2ItemInstance item : inv)
 		{
 			int itemId = item.getItemId();
-			if (!this.soulCrystals.containsKey(itemId))
+			if (!soulCrystals.containsKey(itemId))
 			{
 				continue;
 			}
@@ -585,7 +585,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 			}
 			else
 			{
-				ret = this.soulCrystals.get(itemId);
+				ret = soulCrystals.get(itemId);
 			}
 		}
 		return ret;
@@ -593,19 +593,19 @@ public class Q350_EnhanceYourWeapon extends Quest
 
 	private boolean tryToLevelCrystal(L2PcInstance player, SoulCrystal sc, L2Attackable mob)
 	{
-		if (sc == null || !this.npcLevelingInfos.containsKey(mob.getNpcId()))
+		if (sc == null || !npcLevelingInfos.containsKey(mob.getNpcId()))
 		{
 			return false;
 		}
 
 		// If the crystal level is way too high for this mob, say that we can't increase it
-		if (!this.npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
+		if (!npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_REFUSED));
 			return true;
 		}
 
-		if (Rnd.get(100) <= this.npcLevelingInfos.get(mob.getNpcId()).get(sc.getLevel()).getChance())
+		if (Rnd.get(100) <= npcLevelingInfos.get(mob.getNpcId()).get(sc.getLevel()).getChance())
 		{
 			exchangeCrystal(player, mob, sc.getItemId(), sc.getLeveledItemId(), false);
 		}

@@ -33,7 +33,7 @@ public class ExFishingEnd extends L2GameServerPacket
 	public ExFishingEnd(boolean win, L2PcInstance character)
 	{
 		this.win = win;
-		this.activeChar = character;
+		activeChar = character;
 	}
 
 	/* (non-Javadoc)
@@ -42,7 +42,7 @@ public class ExFishingEnd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.activeChar.getObjectId());
-		writeC(this.win ? 1 : 0);
+		writeD(activeChar.getObjectId());
+		writeC(win ? 1 : 0);
 	}
 }

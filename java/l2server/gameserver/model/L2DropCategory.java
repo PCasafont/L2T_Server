@@ -31,22 +31,22 @@ public class L2DropCategory
 	public L2DropCategory(float chance)
 	{
 		this.chance = chance;
-		this.drops = new ArrayList<>();
+		drops = new ArrayList<>();
 	}
 
 	public void addDropData(L2DropData drop)
 	{
-		this.drops.add(drop);
+		drops.add(drop);
 	}
 
 	public ArrayList<L2DropData> getAllDrops()
 	{
-		return this.drops;
+		return drops;
 	}
 
 	public void clearAllDrops()
 	{
-		this.drops.clear();
+		drops.clear();
 	}
 
 	// this returns the chance for the category to be visited in order to check if
@@ -54,17 +54,17 @@ public class L2DropCategory
 	// (but may return 0 or many drops)
 	public float getChance()
 	{
-		return this.chance;
+		return chance;
 	}
 
 	public void setCustom()
 	{
-		this.custom = true;
+		custom = true;
 	}
 
 	public boolean isCustom()
 	{
-		return this.custom;
+		return custom;
 	}
 
 	/**

@@ -101,26 +101,26 @@ public class LoginServerThread extends Thread
 	private LoginServerThread()
 	{
 		super("LoginServerThread");
-		this.port = Config.GAME_SERVER_LOGIN_PORT;
-		this.gamePort = Config.PORT_GAME;
-		this.hostname = Config.GAME_SERVER_LOGIN_HOST;
-		this.hexID = Config.HEX_ID;
-		if (this.hexID == null)
+		port = Config.GAME_SERVER_LOGIN_PORT;
+		gamePort = Config.PORT_GAME;
+		hostname = Config.GAME_SERVER_LOGIN_HOST;
+		hexID = Config.HEX_ID;
+		if (hexID == null)
 		{
-			this.requestID = Config.REQUEST_ID;
-			this.hexID = Util.generateHex(16);
+			requestID = Config.REQUEST_ID;
+			hexID = Util.generateHex(16);
 		}
 		else
 		{
-			this.requestID = Config.SERVER_ID;
+			requestID = Config.SERVER_ID;
 		}
-		this.acceptAlternate = Config.ACCEPT_ALTERNATE_ID;
-		this.reserveHost = Config.RESERVE_HOST_ON_LOGIN;
-		this.subnets = Config.GAME_SERVER_SUBNETS;
-		this.hosts = Config.GAME_SERVER_HOSTS;
-		this.waitingClients = new ArrayList<>();
-		this.accountsInGameServer = new ConcurrentHashMap<>();
-		this.maxPlayer = Config.MAXIMUM_ONLINE_USERS;
+		acceptAlternate = Config.ACCEPT_ALTERNATE_ID;
+		reserveHost = Config.RESERVE_HOST_ON_LOGIN;
+		subnets = Config.GAME_SERVER_SUBNETS;
+		hosts = Config.GAME_SERVER_HOSTS;
+		waitingClients = new ArrayList<>();
+		accountsInGameServer = new ConcurrentHashMap<>();
+		maxPlayer = Config.MAXIMUM_ONLINE_USERS;
 	}
 
 	public static LoginServerThread getInstance()
@@ -140,18 +140,18 @@ public class LoginServerThread extends Thread
 			try
 			{
 				// Connection
-				Log.info("Connecting to login on " + this.hostname + ":" + this.port);
-				this.loginSocket = new Socket(this.hostname, this.port);
-				this.in = this.loginSocket.getInputStream();
-				this.out = new BufferedOutputStream(this.loginSocket.getOutputStream());
+				Log.info("Connecting to login on " + hostname + ":" + port);
+				loginSocket = new Socket(hostname, port);
+				in = loginSocket.getInputStream();
+				out = new BufferedOutputStream(loginSocket.getOutputStream());
 
 				//init Blowfish
-				this.blowfishKey = Util.generateHex(40);
-				this.blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
+				blowfishKey = Util.generateHex(40);
+				blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
 				while (!isInterrupted())
 				{
-					lengthLo = this.in.read();
-					lengthHi = this.in.read();
+					lengthLo = in.read();
+					lengthHi = in.read();
 					length = lengthHi * 256 + lengthLo;
 
 					if (lengthHi < 0)
@@ -167,7 +167,7 @@ public class LoginServerThread extends Thread
 					int left = length - 2;
 					while (newBytes != -1 && receivedBytes < length - 2)
 					{
-						newBytes = this.in.read(incoming, receivedBytes, left);
+						newBytes = in.read(incoming, receivedBytes, left);
 						receivedBytes = receivedBytes + newBytes;
 						left -= newBytes;
 					}
@@ -179,7 +179,7 @@ public class LoginServerThread extends Thread
 					}
 
 					// decrypt if we have a key
-					byte[] decrypt = this.blowfish.decrypt(incoming);
+					byte[] decrypt = blowfish.decrypt(incoming);
 					checksumOk = NewCrypt.verifyChecksum(decrypt);
 
 					if (!checksumOk)
@@ -213,7 +213,7 @@ public class LoginServerThread extends Thread
 								KeyFactory kfac = KeyFactory.getInstance("RSA");
 								BigInteger modulus = new BigInteger(init.getRSAKey());
 								RSAPublicKeySpec kspec1 = new RSAPublicKeySpec(modulus, RSAKeyGenParameterSpec.F4);
-								this.publicKey = (RSAPublicKey) kfac.generatePublic(kspec1);
+								publicKey = (RSAPublicKey) kfac.generatePublic(kspec1);
 								if (Config.DEBUG)
 								{
 									Log.info("RSA key set up");
@@ -226,21 +226,22 @@ public class LoginServerThread extends Thread
 								break;
 							}
 							//send the blowfish key through the rsa encryption
-							BlowFishKey bfk = new BlowFishKey(this.blowfishKey, this.publicKey);
+							BlowFishKey bfk = new BlowFishKey(blowfishKey, publicKey);
 							sendPacket(bfk);
 							if (Config.DEBUG)
 							{
 								Log.info("Sent new blowfish key");
 							}
 							//now, only accept paket with the new encryption
-							this.blowfish = new NewCrypt(this.blowfishKey);
+							blowfish = new NewCrypt(blowfishKey);
 							if (Config.DEBUG)
 							{
 								Log.info("Changed blowfish key");
 							}
 							AuthRequest ar =
-									new AuthRequest(this.requestID, this.acceptAlternate, this.hexID, this.gamePort, this.reserveHost,
-											this.maxPlayer, this.subnets, this.hosts);
+									new AuthRequest(requestID, acceptAlternate, hexID, gamePort,
+											reserveHost,
+											maxPlayer, subnets, hosts);
 							sendPacket(ar);
 							if (Config.DEBUG)
 							{
@@ -254,10 +255,10 @@ public class LoginServerThread extends Thread
 							break;
 						case 0x02:
 							AuthResponse aresp = new AuthResponse(decrypt);
-							this.serverID = aresp.getServerId();
-							this.serverName = aresp.getServerName();
-							Config.saveHexid(this.serverID, hexToString(this.hexID));
-							Log.info("Registered on login as Server " + this.serverID + " : " + this.serverName);
+							serverID = aresp.getServerId();
+							serverName = aresp.getServerName();
+							Config.saveHexid(serverID, hexToString(hexID));
+							Log.info("Registered on login as Server " + serverID + " : " + serverName);
 							ServerStatus st = new ServerStatus();
 							if (Config.SERVER_LIST_BRACKET)
 							{
@@ -314,9 +315,9 @@ public class LoginServerThread extends Thread
 								playKey1 = par.getAccount().split(";")[1];
 							}
 							WaitingClient wcToRemove = null;
-							synchronized (this.waitingClients)
+							synchronized (waitingClients)
 							{
-								for (WaitingClient wc : this.waitingClients)
+								for (WaitingClient wc : waitingClients)
 								{
 									if (playKey1 == null && wc.account.equals(account) ||
 											wc.session.playOkID1 == Integer.parseInt(playKey1))
@@ -344,7 +345,7 @@ public class LoginServerThread extends Thread
 											wcToRemove.gameClient.getSessionId().playOkID1);
 									wcToRemove.gameClient.getConnection().sendPacket(cl);
 									wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
-									this.accountsInGameServer.put(account, wcToRemove.gameClient);
+									accountsInGameServer.put(account, wcToRemove.gameClient);
 								}
 								else
 								{
@@ -353,9 +354,9 @@ public class LoginServerThread extends Thread
 													".");
 									//wcToRemove.gameClient.getConnection().sendPacket(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));
 									wcToRemove.gameClient.close(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));
-									this.accountsInGameServer.remove(account);
+									accountsInGameServer.remove(account);
 								}
-								this.waitingClients.remove(wcToRemove);
+								waitingClients.remove(wcToRemove);
 							}
 							break;
 						case 0x04:
@@ -388,7 +389,7 @@ public class LoginServerThread extends Thread
 			{
 				try
 				{
-					this.loginSocket.close();
+					loginSocket.close();
 					if (isInterrupted())
 					{
 						return;
@@ -418,9 +419,9 @@ public class LoginServerThread extends Thread
 			Log.info(String.valueOf(key));
 		}
 		WaitingClient wc = new WaitingClient(acc, client, key);
-		synchronized (this.waitingClients)
+		synchronized (waitingClients)
 		{
-			this.waitingClients.add(wc);
+			waitingClients.add(wc);
 		}
 		PlayerAuthRequest par = new PlayerAuthRequest(acc, key);
 		try
@@ -440,9 +441,9 @@ public class LoginServerThread extends Thread
 	public void removeWaitingClient(L2GameClient client)
 	{
 		WaitingClient toRemove = null;
-		synchronized (this.waitingClients)
+		synchronized (waitingClients)
 		{
-			for (WaitingClient c : this.waitingClients)
+			for (WaitingClient c : waitingClients)
 			{
 				if (c.gameClient == client)
 				{
@@ -451,7 +452,7 @@ public class LoginServerThread extends Thread
 			}
 			if (toRemove != null)
 			{
-				this.waitingClients.remove(toRemove);
+				waitingClients.remove(toRemove);
 			}
 		}
 	}
@@ -478,13 +479,13 @@ public class LoginServerThread extends Thread
 		}
 		finally
 		{
-			this.accountsInGameServer.remove(account);
+			accountsInGameServer.remove(account);
 		}
 	}
 
 	public void addGameServerLogin(String account, L2GameClient client)
 	{
-		this.accountsInGameServer.put(account, client);
+		accountsInGameServer.put(account, client);
 	}
 
 	public void sendAccessLevel(String account, int level)
@@ -542,12 +543,12 @@ public class LoginServerThread extends Thread
 
 	public void doKickPlayer(String account)
 	{
-		L2GameClient client = this.accountsInGameServer.get(account);
+		L2GameClient client = accountsInGameServer.get(account);
 		if (client != null)
 		{
 			LogRecord record = new LogRecord(Level.WARNING, "Kicked by login");
 			record.setParameters(new Object[]{client});
-			this.logAccounting.log(record);
+			logAccounting.log(record);
 			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_LOGIN_WITH_ACCOUNT));
 			client.closeNow();
 		}
@@ -612,15 +613,15 @@ public class LoginServerThread extends Thread
 		{
 			Log.finest("[S]\n" + Util.printData(data));
 		}
-		data = this.blowfish.crypt(data);
+		data = blowfish.crypt(data);
 
 		int len = data.length + 2;
-		synchronized (this.out) //avoids tow threads writing in the mean time
+		synchronized (out) //avoids tow threads writing in the mean time
 		{
-			this.out.write(len & 0xff);
-			this.out.write(len >> 8 & 0xff);
-			this.out.write(data);
-			this.out.flush();
+			out.write(len & 0xff);
+			out.write(len >> 8 & 0xff);
+			out.write(data);
+			out.flush();
 		}
 	}
 
@@ -638,7 +639,7 @@ public class LoginServerThread extends Thread
 	 */
 	public int getMaxPlayer()
 	{
-		return this.maxPlayer;
+		return maxPlayer;
 	}
 
 	/**
@@ -685,7 +686,7 @@ public class LoginServerThread extends Thread
 	 */
 	public String getStatusString()
 	{
-		return ServerStatus.STATUS_STRING[this.status];
+		return ServerStatus.STATUS_STRING[status];
 	}
 
 	/**
@@ -701,7 +702,7 @@ public class LoginServerThread extends Thread
 	 */
 	public String getServerName()
 	{
-		return this.serverName;
+		return serverName;
 	}
 
 	public void setServerStatus(int status)

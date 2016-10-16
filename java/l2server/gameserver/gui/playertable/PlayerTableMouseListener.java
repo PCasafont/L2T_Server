@@ -21,7 +21,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	public PlayerTableMouseListener(PlayerTablePane parent)
 	{
 		this.parent = parent;
-		this.popupMenu = new JPopupMenu();
+		popupMenu = new JPopupMenu();
 
 		/*JMenuItem itemOpenGo = new JMenuItem("Do not show this");
 		itemOpenGo.setActionCommand("mark");
@@ -102,10 +102,10 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 
 	private void checkPopup(MouseEvent e)
 	{
-		this.parent.setTableSelectByMouseEvent(e);
+		parent.setTableSelectByMouseEvent(e);
 		if (e.isPopupTrigger())
 		{
-			this.popupMenu.show(this.parent.getPlayerTable(), e.getX(), e.getY());
+			popupMenu.show(parent.getPlayerTable(), e.getX(), e.getY());
 		}
 	}
 }

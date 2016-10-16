@@ -36,30 +36,30 @@ public final class SetupGauge extends L2GameServerPacket
 
 	public SetupGauge(int dat1, int time)
 	{
-		this.color = dat1;
+		color = dat1;
 		this.time = time;
-		this.time2 = time;
+		time2 = time;
 	}
 
 	public SetupGauge(int color, int currentTime, int maxTime)
 	{
 		this.color = color;
-		this.time = currentTime;
-		this.time2 = maxTime;
+		time = currentTime;
+		time2 = maxTime;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.color);
-		writeD(this.time);
-		writeD(this.time2);
+		writeD(charObjId);
+		writeD(color);
+		writeD(time);
+		writeD(time2);
 	}
 
 	@Override
 	public void runImpl()
 	{
-		this.charObjId = getClient().getActiveChar().getObjectId();
+		charObjId = getClient().getActiveChar().getObjectId();
 	}
 }

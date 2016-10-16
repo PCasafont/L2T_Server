@@ -315,12 +315,12 @@ public abstract class BaseGameServerRegister
 		Config.load();
 		GameServerTable.load();
 
-		this.loaded = true;
+		loaded = true;
 	}
 
 	public boolean isLoaded()
 	{
-		return this.loaded;
+		return loaded;
 	}
 
 	/**
@@ -336,7 +336,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public ResourceBundle getBundle()
 	{
-		return this.bundle;
+		return bundle;
 	}
 
 	public abstract void showError(String msg, Throwable t);
@@ -441,7 +441,7 @@ public abstract class BaseGameServerRegister
 		 */
 		public ResourceBundle getBundle()
 		{
-			return this.bundle;
+			return bundle;
 		}
 
 		public void showError(String msg, Throwable t)
@@ -491,9 +491,9 @@ public abstract class BaseGameServerRegister
 		{
 			try
 			{
-				if (this.id < 0)
+				if (id < 0)
 				{
-					int registeredId = BaseGameServerRegister.registerFirstAvailable(this.outDir);
+					int registeredId = BaseGameServerRegister.registerFirstAvailable(outDir);
 
 					if (registeredId < 0)
 					{
@@ -506,21 +506,21 @@ public abstract class BaseGameServerRegister
 				}
 				else
 				{
-					System.out.printf(getBundle().getString("checkingIdInUse") + '\n', this.id);
-					if (GameServerTable.getInstance().hasRegisteredGameServerOnId(this.id))
+					System.out.printf(getBundle().getString("checkingIdInUse") + '\n', id);
+					if (GameServerTable.getInstance().hasRegisteredGameServerOnId(id))
 					{
 						System.out.println(getBundle().getString("yes"));
-						if (this.force)
+						if (force)
 						{
-							System.out.printf(getBundle().getString("forcingRegistration") + '\n', this.id);
-							BaseGameServerRegister.unregisterGameServer(this.id);
-							BaseGameServerRegister.registerGameServer(this.id, this.outDir);
-							System.out.printf(getBundle().getString("registrationOk") + '\n', this.id);
+							System.out.printf(getBundle().getString("forcingRegistration") + '\n', id);
+							BaseGameServerRegister.unregisterGameServer(id);
+							BaseGameServerRegister.registerGameServer(id, outDir);
+							System.out.printf(getBundle().getString("registrationOk") + '\n', id);
 						}
-						else if (this.fallback)
+						else if (fallback)
 						{
 							System.out.println(getBundle().getString("fallingBack"));
-							int registeredId = BaseGameServerRegister.registerFirstAvailable(this.outDir);
+							int registeredId = BaseGameServerRegister.registerFirstAvailable(outDir);
 
 							if (registeredId < 0)
 							{
@@ -539,7 +539,7 @@ public abstract class BaseGameServerRegister
 					else
 					{
 						System.out.println(getBundle().getString("no"));
-						BaseGameServerRegister.registerGameServer(this.id, this.outDir);
+						BaseGameServerRegister.registerGameServer(id, outDir);
 					}
 				}
 			}
@@ -569,10 +569,10 @@ public abstract class BaseGameServerRegister
 		@Override
 		public void run()
 		{
-			System.out.printf(getBundle().getString("removingGsId") + '\n', this.id);
+			System.out.printf(getBundle().getString("removingGsId") + '\n', id);
 			try
 			{
-				BaseGameServerRegister.unregisterGameServer(this.id);
+				BaseGameServerRegister.unregisterGameServer(id);
 			}
 			catch (SQLException e)
 			{

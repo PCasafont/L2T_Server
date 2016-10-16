@@ -44,16 +44,16 @@ public class L2MotherTreeZone extends L2ZoneType
 		switch (name)
 		{
 			case "enterMsgId":
-				this.enterMsg = Integer.valueOf(value);
+				enterMsg = Integer.valueOf(value);
 				break;
 			case "leaveMsgId":
-				this.leaveMsg = Integer.valueOf(value);
+				leaveMsg = Integer.valueOf(value);
 				break;
 			case "MpRegenBonus":
-				this.mpRegen = Integer.valueOf(value);
+				mpRegen = Integer.valueOf(value);
 				break;
 			case "HpRegenBonus":
-				this.hpRegen = Integer.valueOf(value);
+				hpRegen = Integer.valueOf(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -68,9 +68,9 @@ public class L2MotherTreeZone extends L2ZoneType
 		{
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
-			if (this.enterMsg != 0)
+			if (enterMsg != 0)
 			{
-				player.sendPacket(SystemMessage.getSystemMessage(this.enterMsg));
+				player.sendPacket(SystemMessage.getSystemMessage(enterMsg));
 			}
 		}
 	}
@@ -82,9 +82,9 @@ public class L2MotherTreeZone extends L2ZoneType
 		{
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
-			if (this.leaveMsg != 0)
+			if (leaveMsg != 0)
 			{
-				player.sendPacket(SystemMessage.getSystemMessage(this.leaveMsg));
+				player.sendPacket(SystemMessage.getSystemMessage(leaveMsg));
 			}
 		}
 	}
@@ -104,7 +104,7 @@ public class L2MotherTreeZone extends L2ZoneType
 	 */
 	public int getMpRegenBonus()
 	{
-		return this.mpRegen;
+		return mpRegen;
 	}
 
 	/**
@@ -112,6 +112,6 @@ public class L2MotherTreeZone extends L2ZoneType
 	 */
 	public int getHpRegenBonus()
 	{
-		return this.hpRegen;
+		return hpRegen;
 	}
 }

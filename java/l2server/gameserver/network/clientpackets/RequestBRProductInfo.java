@@ -13,7 +13,7 @@ public class RequestBRProductInfo extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		this.productId = readD();
+		productId = readD();
 	}
 
 	@Override

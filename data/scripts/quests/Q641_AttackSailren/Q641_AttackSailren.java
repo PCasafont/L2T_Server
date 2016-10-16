@@ -44,9 +44,9 @@ public class Q641_AttackSailren extends Quest
 	public Q641_AttackSailren(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addTalkId(this.statue);
-		addStartNpc(this.statue);
-		for (int npcId : this.mobs)
+		addTalkId(statue);
+		addStartNpc(statue);
+		for (int npcId : mobs)
 		{
 			addKillId(npcId);
 		}
@@ -111,7 +111,7 @@ public class Q641_AttackSailren extends Quest
 		}
 
 		String htmltext = getNoQuestMsg(player);
-		if (npc.getNpcId() == this.statue)
+		if (npc.getNpcId() == statue)
 		{
 			QuestState st = player.getQuestState(qn);
 			if (st == null)
@@ -186,7 +186,7 @@ public class Q641_AttackSailren extends Quest
 			player.sendMessage("onKill: " + npc.getNpcId());
 		}
 
-		for (int npcId : this.mobs)
+		for (int npcId : mobs)
 		{
 			if (npc.getNpcId() == npcId)
 			{

@@ -34,40 +34,40 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket
 
 	public ExFlyMoveBroadcast(L2PcInstance activeChar, int x, int y, int z)
 	{
-		this.objectId = activeChar.getObjectId();
-		this.type = L2FlyMoveType.MOVE;
-		this.originX = activeChar.getX();
-		this.originY = activeChar.getY();
-		this.originZ = activeChar.getZ();
-		this.targetX = x;
-		this.targetY = y;
-		this.targetZ = z;
+		objectId = activeChar.getObjectId();
+		type = L2FlyMoveType.MOVE;
+		originX = activeChar.getX();
+		originY = activeChar.getY();
+		originZ = activeChar.getZ();
+		targetX = x;
+		targetY = y;
+		targetZ = z;
 	}
 
 	public ExFlyMoveBroadcast(L2PcInstance activeChar, boolean start)
 	{
-		this.objectId = activeChar.getObjectId();
-		this.type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
-		this.originX = activeChar.getX();
-		this.originY = activeChar.getY();
-		this.originZ = activeChar.getZ();
-		this.targetX = activeChar.getX();
-		this.targetY = activeChar.getY();
-		this.targetZ = activeChar.getZ();
+		objectId = activeChar.getObjectId();
+		type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
+		originX = activeChar.getX();
+		originY = activeChar.getY();
+		originZ = activeChar.getZ();
+		targetX = activeChar.getX();
+		targetY = activeChar.getY();
+		targetZ = activeChar.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeD(this.type.ordinal());
+		writeD(objectId);
+		writeD(type.ordinal());
 		writeD(0);
-		writeD(this.originX);
-		writeD(this.originY);
-		writeD(this.originZ);
+		writeD(originX);
+		writeD(originY);
+		writeD(originZ);
 		writeD(0);
-		writeD(this.targetX);
-		writeD(this.targetY);
-		writeD(this.targetZ);
+		writeD(targetX);
+		writeD(targetY);
+		writeD(targetZ);
 	}
 }

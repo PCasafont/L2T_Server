@@ -32,6 +32,6 @@ public enum CompetitionType
 	@Override
 	public final String toString()
 	{
-		return this.name;
+		return name;
 	}
 }

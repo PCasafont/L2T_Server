@@ -39,14 +39,14 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.length = readD();
-		if (this.length > 192)
+		length = readD();
+		if (length > 192)
 		{
 			return;
 		}
 
-		this.data = new byte[this.length];
-		readB(this.data);
+		data = new byte[length];
+		readB(data);
 	}
 
 	@Override
@@ -58,12 +58,12 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 			return;
 		}
 
-		if (this.length < 0)
+		if (length < 0)
 		{
 			activeChar.sendMessage("File transfer error.");
 			return;
 		}
-		if (this.length > 192)
+		if (length > 192)
 		{
 			activeChar.sendMessage("The ally crest file size was too big (max 192 bytes).");
 			return;
@@ -79,7 +79,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 			}
 
 			boolean remove = false;
-			if (this.length == 0 || this.data.length == 0)
+			if (length == 0 || data.length == 0)
 			{
 				remove = true;
 			}
@@ -90,7 +90,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 				newId = IdFactory.getInstance().getNextId();
 			}
 
-			if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, this.data))
+			if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, data))
 			{
 				Log.log(Level.INFO,
 						"Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() +

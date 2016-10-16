@@ -16,17 +16,17 @@ public class ProtocolVersion extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		if (this.buf.remaining() >= 0x04)
+		if (buf.remaining() >= 0x04)
 		{
-			this.version = readD();
+			version = readD();
 		}
 
-		if (this.buf.remaining() == 0x104)
+		if (buf.remaining() == 0x104)
 		{
-			this.data = new byte[0x100];
-			this.check = new byte[4];
-			readB(this.data);
-			readB(this.check);
+			data = new byte[0x100];
+			check = new byte[4];
+			readB(data);
+			readB(check);
 		}
 	}
 
@@ -34,18 +34,18 @@ public class ProtocolVersion extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2GameClient client = getClient();
-		client.setProtocolVersion(this.version);
-		if (this.version == -2L)
+		client.setProtocolVersion(version);
+		if (version == -2L)
 		{
 			client.closeNow();
 			return;
 		}
-		else if (this.version == -3L)
+		else if (version == -3L)
 		{
 			client.closeNow();
 			return;
 		}
-		else if (this.version == 64)
+		else if (version == 64)
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);

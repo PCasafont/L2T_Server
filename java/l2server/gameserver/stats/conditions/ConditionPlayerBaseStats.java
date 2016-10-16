@@ -59,24 +59,24 @@ public class ConditionPlayerBaseStats extends Condition
 			return false;
 		}
 		L2PcInstance player = (L2PcInstance) env.player;
-		switch (this.stat)
+		switch (stat)
 		{
 			case Int:
-				return player.getINT() >= this.value;
+				return player.getINT() >= value;
 			case Str:
-				return player.getSTR() >= this.value;
+				return player.getSTR() >= value;
 			case Con:
-				return player.getCON() >= this.value;
+				return player.getCON() >= value;
 			case Dex:
-				return player.getDEX() >= this.value;
+				return player.getDEX() >= value;
 			case Men:
-				return player.getMEN() >= this.value;
+				return player.getMEN() >= value;
 			case Wit:
-				return player.getWIT() >= this.value;
+				return player.getWIT() >= value;
 			case Cha:
-				return player.getCHA() >= this.value;
+				return player.getCHA() >= value;
 			case Luc:
-				return player.getLUC() >= this.value;
+				return player.getLUC() >= value;
 		}
 		return false;
 	}

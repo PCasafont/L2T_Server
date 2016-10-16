@@ -39,14 +39,14 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.length = readD();
-		if (this.length > 256)
+		length = readD();
+		if (length > 256)
 		{
 			return;
 		}
 
-		this.data = new byte[this.length];
-		readB(this.data);
+		data = new byte[length];
+		readB(data);
 	}
 
 	@Override
@@ -71,12 +71,12 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 			return;
 		}
 
-		if (this.length < 0)
+		if (length < 0)
 		{
 			activeChar.sendMessage("File transfer error.");
 			return;
 		}
-		if (this.length > 256)
+		if (length > 256)
 		{
 			activeChar.sendMessage("The clan crest file size was too big (max 256 bytes).");
 			return;
@@ -85,7 +85,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 		int crestId = -1;
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
 		{
-			if (this.length == 0 || this.data.length == 0)
+			if (length == 0 || data.length == 0)
 			{
 				if (clan.getCrestId() == 0)
 				{
@@ -106,7 +106,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 				}
 
 				crestId = IdFactory.getInstance().getNextId();
-				if (!CrestCache.getInstance().savePledgeCrest(crestId, this.data))
+				if (!CrestCache.getInstance().savePledgeCrest(crestId, data))
 				{
 					Log.log(Level.INFO,
 							"Error saving crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");

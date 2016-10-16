@@ -40,15 +40,15 @@ public class L2NpcWalkerNode
 
 	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
 	{
-		this.moveX = x;
-		this.moveY = y;
-		this.moveZ = z;
+		moveX = x;
+		moveY = y;
+		moveZ = z;
 		this.delay = delay;
 		this.npcString = npcString;
 		this.chatText = chatText;
 		if (this.chatText.startsWith("#"))
 		{
-			this.chatId = Integer.parseInt(this.chatText.substring(1));
+			chatId = Integer.parseInt(this.chatText.substring(1));
 		}
 		else if (this.chatText.trim().isEmpty())
 		{
@@ -59,40 +59,40 @@ public class L2NpcWalkerNode
 
 	public String getChatText()
 	{
-		if (this.chatId != 0)
+		if (chatId != 0)
 		{
 			throw new IllegalStateException("Chat id is defined for walker route!");
 		}
-		return this.chatText;
+		return chatText;
 	}
 
 	public int getMoveX()
 	{
-		return this.moveX;
+		return moveX;
 	}
 
 	public int getMoveY()
 	{
-		return this.moveY;
+		return moveY;
 	}
 
 	public int getMoveZ()
 	{
-		return this.moveZ;
+		return moveZ;
 	}
 
 	public int getDelay()
 	{
-		return this.delay;
+		return delay;
 	}
 
 	public boolean getRunning()
 	{
-		return this.running;
+		return running;
 	}
 
 	public int getChatId()
 	{
-		return this.chatId;
+		return chatId;
 	}
 }

@@ -36,19 +36,19 @@ public class WarehouseCacheManager
 
 	private WarehouseCacheManager()
 	{
-		this.cacheTime = Config.WAREHOUSE_CACHE_TIME * 60000L; // 60*1000 = 60000
-		this.cachedWh = new ConcurrentHashMap<>();
+		cacheTime = Config.WAREHOUSE_CACHE_TIME * 60000L; // 60*1000 = 60000
+		cachedWh = new ConcurrentHashMap<>();
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new CacheScheduler(), 120000, 60000);
 	}
 
 	public void addCacheTask(L2PcInstance pc)
 	{
-		this.cachedWh.put(pc, System.currentTimeMillis());
+		cachedWh.put(pc, System.currentTimeMillis());
 	}
 
 	public void remCacheTask(L2PcInstance pc)
 	{
-		this.cachedWh.remove(pc);
+		cachedWh.remove(pc);
 	}
 
 	public class CacheScheduler implements Runnable

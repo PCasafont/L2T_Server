@@ -41,6 +41,6 @@ public class ConditionPlayerCp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.player.getCurrentCp() * 100 / env.player.getMaxCp() >= this.cp;
+		return env.player.getCurrentCp() * 100 / env.player.getMaxCp() >= cp;
 	}
 }

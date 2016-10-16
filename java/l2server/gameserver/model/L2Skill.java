@@ -310,40 +310,40 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	protected L2Skill(StatsSet set)
 	{
-		this.id = set.getInteger("skill_id");
-		this.level = set.getInteger("level");
-		this.enchantRouteId = set.getInteger("enchantRouteId", 0);
-		this.enchantLevel = set.getInteger("enchantLevel", 0);
-		this.refId = set.getInteger("referenceId", 0);
-		this.displayId = set.getInteger("displayId", this.id);
-		this.name = set.getString("name");
-		this.operateType = set.getEnum("operateType", SkillOpType.class);
-		this.magic = set.getBool("isMagic", false);
-		this.staticReuse = set.getBool("staticReuse", false);
-		this.staticHitTime = set.getBool("staticHitTime", false);
-		this.isPotion = set.getBool("isPotion", false);
-		this.mpConsume = set.getInteger("mpConsume", 0);
-		this.hpConsume = set.getInteger("hpConsume", 0);
-		this.cpConsume = set.getInteger("cpConsume", 0);
-		this.targetConsume = set.getInteger("targetConsumeCount", 0);
-		this.targetConsumeId = set.getInteger("targetConsumeId", 0);
-		this.itemConsume = set.getInteger("itemConsumeCount", 0);
-		this.itemConsumeId = set.getInteger("itemConsumeId", 0);
-		this.fameConsume = set.getInteger("fameConsume", 0);
-		this.clanRepConsume = set.getInteger("clanRepConsume", 0);
-		this.afterEffectId = set.getInteger("afterEffectId", 0);
-		this.afterEffectLvl = set.getInteger("afterEffectLvl", 1);
-		this.castRange = (int) set.getFloat("castRange", -1);
-		this.effectRange = (int) set.getFloat("effectRange", -1);
-		this.abnormalLvl = set.getInteger("abnormalLvl", -1);
-		this.effectAbnormalLvl = set.getInteger("effectAbnormalLvl",
+		id = set.getInteger("skill_id");
+		level = set.getInteger("level");
+		enchantRouteId = set.getInteger("enchantRouteId", 0);
+		enchantLevel = set.getInteger("enchantLevel", 0);
+		refId = set.getInteger("referenceId", 0);
+		displayId = set.getInteger("displayId", id);
+		name = set.getString("name");
+		operateType = set.getEnum("operateType", SkillOpType.class);
+		magic = set.getBool("isMagic", false);
+		staticReuse = set.getBool("staticReuse", false);
+		staticHitTime = set.getBool("staticHitTime", false);
+		isPotion = set.getBool("isPotion", false);
+		mpConsume = set.getInteger("mpConsume", 0);
+		hpConsume = set.getInteger("hpConsume", 0);
+		cpConsume = set.getInteger("cpConsume", 0);
+		targetConsume = set.getInteger("targetConsumeCount", 0);
+		targetConsumeId = set.getInteger("targetConsumeId", 0);
+		itemConsume = set.getInteger("itemConsumeCount", 0);
+		itemConsumeId = set.getInteger("itemConsumeId", 0);
+		fameConsume = set.getInteger("fameConsume", 0);
+		clanRepConsume = set.getInteger("clanRepConsume", 0);
+		afterEffectId = set.getInteger("afterEffectId", 0);
+		afterEffectLvl = set.getInteger("afterEffectLvl", 1);
+		castRange = (int) set.getFloat("castRange", -1);
+		effectRange = (int) set.getFloat("effectRange", -1);
+		abnormalLvl = set.getInteger("abnormalLvl", -1);
+		effectAbnormalLvl = set.getInteger("effectAbnormalLvl",
 				-1); // support for a separate effect abnormal lvl, e.g. poison inside a different skill
-		this.attribute = set.getString("attribute", "");
+		attribute = set.getString("attribute", "");
 		String str = set.getString("negateStats", "");
 
 		if (Objects.equals(str, ""))
 		{
-			this.negateStats = new L2AbnormalType[0];
+			negateStats = new L2AbnormalType[0];
 		}
 		else
 		{
@@ -360,12 +360,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				catch (Exception e)
 				{
 					throw new IllegalArgumentException(
-							"SkillId: " + this.id + " Enum value of type L2AbnormalType required, but found: " + stats[i]);
+							"SkillId: " + id + " Enum value of type L2AbnormalType required, but found: " + stats[i]);
 				}
 
 				array[i] = type;
 			}
-			this.negateStats = array;
+			negateStats = array;
 		}
 
 		String negateAbnormals = set.getString("negateAbnormals", null);
@@ -388,14 +388,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					catch (Exception e)
 					{
 						throw new IllegalArgumentException(
-								"SkillId: " + this.id + " Byte value required, but found: " + ngt[1]);
+								"SkillId: " + id + " Byte value required, but found: " + ngt[1]);
 					}
 				}
 				else
 				// If not both from above, then smth is messed up... throw an error.
 				{
 					throw new IllegalArgumentException(
-							"SkillId: " + this.id + ": Incorrect negate Abnormals for " + ngtStack +
+							"SkillId: " + id + ": Incorrect negate Abnormals for " + ngtStack +
 									". Lvl: abnormalType1,abnormalLvl1;abnormalType2,abnormalLvl2;abnormalType3,abnormalLvl3... or abnormalType1;abnormalType2;abnormalType3...");
 				}
 			}
@@ -419,15 +419,15 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		{
 			this.negateId = new int[0];
 		}
-		this.minNegatedEffects = set.getInteger("minNegated", 0);
-		this.maxNegatedEffects = set.getInteger("maxNegated", 0);
+		minNegatedEffects = set.getInteger("minNegated", 0);
+		maxNegatedEffects = set.getInteger("maxNegated", 0);
 
-		this.stayAfterDeath = set.getBool("stayAfterDeath", false);
+		stayAfterDeath = set.getBool("stayAfterDeath", false);
 
-		this.killByDOT = set.getBool("killByDOT", false);
-		this.absorbDOT = set.getBool("absorbDOT", false);
-		this.isNeutral = set.getBool("neutral", false);
-		this.hitTime = set.getInteger("hitTime", 0);
+		killByDOT = set.getBool("killByDOT", false);
+		absorbDOT = set.getBool("absorbDOT", false);
+		isNeutral = set.getBool("neutral", false);
+		hitTime = set.getInteger("hitTime", 0);
 		String hitTimings = set.getString("hitTimings", null);
 		if (hitTimings != null)
 		{
@@ -442,7 +442,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			}
 			catch (Exception e)
 			{
-				throw new IllegalArgumentException("SkillId: " + this.id + " invalid hitTimings value: " + hitTimings +
+				throw new IllegalArgumentException("SkillId: " + id + " invalid hitTimings value: " + hitTimings +
 						", \"percent,percent,...percent\" required");
 			}
 		}
@@ -451,8 +451,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			this.hitTimings = new int[0];
 		}
 
-		this.coolTime = set.getInteger("coolTime", 0);
-		this.feed = set.getInteger("feed", 0);
+		coolTime = set.getInteger("coolTime", 0);
+		feed = set.getInteger("feed", 0);
 
 		String reuseHash = set.getString("sharedReuse", null);
 		if (reuseHash != null)
@@ -462,89 +462,89 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				String[] valuesSplit = reuseHash.split("-");
 				if (valuesSplit.length > 1)
 				{
-					this.reuseHashCode = Integer.parseInt(valuesSplit[0]) * 1000 + Integer.parseInt(valuesSplit[1]);
+					reuseHashCode = Integer.parseInt(valuesSplit[0]) * 1000 + Integer.parseInt(valuesSplit[1]);
 				}
 				else
 				{
-					this.reuseHashCode = Integer.parseInt(valuesSplit[0]) * 1000 + this.level;
+					reuseHashCode = Integer.parseInt(valuesSplit[0]) * 1000 + level;
 				}
 			}
 			catch (Exception e)
 			{
-				throw new IllegalArgumentException("SkillId: " + this.id + " invalid sharedReuse value: " + reuseHash +
+				throw new IllegalArgumentException("SkillId: " + id + " invalid sharedReuse value: " + reuseHash +
 						", \"skillId-skillLvl\" required");
 			}
 		}
 		else
 		{
-			this.reuseHashCode = this.id * 1000 + this.level;
+			reuseHashCode = id * 1000 + level;
 		}
 
-		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.containsKey(this.id))
+		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.containsKey(id))
 		{
 			if (Config.DEBUG)
 			{
-				Log.info("*** Skill " + this.name + " (" + this.level + ") changed reuse from " +
-						set.getInteger("reuseDelay", 0) + " to " + Config.SKILL_REUSE_LIST.get(this.id) + " seconds.");
+				Log.info("*** Skill " + name + " (" + level + ") changed reuse from " +
+						set.getInteger("reuseDelay", 0) + " to " + Config.SKILL_REUSE_LIST.get(id) + " seconds.");
 			}
-			this.reuseDelay = Config.SKILL_REUSE_LIST.get(this.id);
+			reuseDelay = Config.SKILL_REUSE_LIST.get(id);
 		}
 		else
 		{
-			this.reuseDelay = set.getInteger("reuseDelay", 0);
+			reuseDelay = set.getInteger("reuseDelay", 0);
 		}
 
-		this.buffDuration = set.getInteger("buffDuration", 0);
+		buffDuration = set.getInteger("buffDuration", 0);
 
-		this.equipDelay = set.getInteger("equipDelay", 0);
+		equipDelay = set.getInteger("equipDelay", 0);
 
-		this.skillRadius = set.getInteger("skillRadius", 80);
+		skillRadius = set.getInteger("skillRadius", 80);
 
-		this.skillSafeRadius = set.getInteger("skillSafeRadius", 0);
+		skillSafeRadius = set.getInteger("skillSafeRadius", 0);
 
-		this.targetType = set.getEnum("target", L2SkillTargetType.class);
-		this.targetDirection = set.getEnum("targetDirection", L2SkillTargetDirection.class, L2SkillTargetDirection.DEFAULT);
-		this.behaviorType = set.getEnum("behaviorType", L2SkillBehaviorType.class, L2SkillBehaviorType.UNKNOWN);
-		if (this.skillRadius == 80 && this.targetType == L2SkillTargetType.TARGET_FRIENDS)
+		targetType = set.getEnum("target", L2SkillTargetType.class);
+		targetDirection = set.getEnum("targetDirection", L2SkillTargetDirection.class, L2SkillTargetDirection.DEFAULT);
+		behaviorType = set.getEnum("behaviorType", L2SkillBehaviorType.class, L2SkillBehaviorType.UNKNOWN);
+		if (skillRadius == 80 && targetType == L2SkillTargetType.TARGET_FRIENDS)
 		{
-			this.skillRadius = 900;
+			skillRadius = 900;
 		}
 
-		this.power = set.getFloat("power", 0.f);
-		this.pvpPower = set.getFloat("pvpPower", (float) getPower());
-		this.pvePower = set.getFloat("pvePower", (float) getPower());
-		this.stunPower = set.getFloat("stunPower", (float) getPower());
-		this.magicLevel = set.getInteger("magicLvl", PlayerClassTable.getInstance().getMinSkillLevel(this.id, this.level));
-		this.levelDepend = set.getInteger("lvlDepend", 0);
-		this.ignoreResists = set.getBool("ignoreResists", false);
-		this.ignoreImmunity = set.getBool("ignoreImmunity", false);
-		this.minChance = set.getInteger("minChance", 10);
-		this.maxChance = set.getInteger("maxChance", 90);
-		this.ignoreShield = set.getBool("ignoreShld", false);
-		this.skillType = set.getEnum("skillType", L2SkillType.class);
-		this.effectId = set.getInteger("effectId", 0);
-		this.effectLvl = set.getInteger("effectLevel", 0);
+		power = set.getFloat("power", 0.f);
+		pvpPower = set.getFloat("pvpPower", (float) getPower());
+		pvePower = set.getFloat("pvePower", (float) getPower());
+		stunPower = set.getFloat("stunPower", (float) getPower());
+		magicLevel = set.getInteger("magicLvl", PlayerClassTable.getInstance().getMinSkillLevel(id, level));
+		levelDepend = set.getInteger("lvlDepend", 0);
+		ignoreResists = set.getBool("ignoreResists", false);
+		ignoreImmunity = set.getBool("ignoreImmunity", false);
+		minChance = set.getInteger("minChance", 10);
+		maxChance = set.getInteger("maxChance", 90);
+		ignoreShield = set.getBool("ignoreShld", false);
+		skillType = set.getEnum("skillType", L2SkillType.class);
+		effectId = set.getInteger("effectId", 0);
+		effectLvl = set.getInteger("effectLevel", 0);
 
-		this.nextActionIsAttack = set.getBool("nextActionAttack", false);
-		this.nextActionIsAttackMob = set.getBool("nextActionAttackMob", false);
+		nextActionIsAttack = set.getBool("nextActionAttack", false);
+		nextActionIsAttackMob = set.getBool("nextActionAttackMob", false);
 
-		this.removedOnAction = set.getBool("removedOnAction", false);
-		this.removedOnDamage = set.getBool("removedOnDamage", false);
-		this.removedOnDamageChance = set.getInteger("removedOnDamageChance", this.removedOnDamage ? 100 : 0);
-		this.strikesToRemove = set.getInteger("strikesToRemove", 0);
-		this.damageToRemove = set.getInteger("damageToRemove", 0);
-		this.removedOnDebuffBlock = set.getBool("removedOnDebuffBlock", false);
-		this.debuffBlocksToRemove = set.getInteger("debuffBlocksToRemove", 0);
+		removedOnAction = set.getBool("removedOnAction", false);
+		removedOnDamage = set.getBool("removedOnDamage", false);
+		removedOnDamageChance = set.getInteger("removedOnDamageChance", removedOnDamage ? 100 : 0);
+		strikesToRemove = set.getInteger("strikesToRemove", 0);
+		damageToRemove = set.getInteger("damageToRemove", 0);
+		removedOnDebuffBlock = set.getBool("removedOnDebuffBlock", false);
+		debuffBlocksToRemove = set.getInteger("debuffBlocksToRemove", 0);
 
-		this.element = set.getByte("element", (byte) -1);
-		this.elementPower = set.getInteger("elementPower", 0);
+		element = set.getByte("element", (byte) -1);
+		elementPower = set.getInteger("elementPower", 0);
 
-		this.saveVs = set.getEnum("saveVs", BaseStats.class, null);
+		saveVs = set.getEnum("saveVs", BaseStats.class, null);
 
-		this.condition = set.getInteger("condition", 0);
-		this.conditionValue = set.getInteger("conditionValue", 0);
-		this.overhit = set.getBool("overHit", false);
-		this.isSuicideAttack = set.getBool("isSuicideAttack", false);
+		condition = set.getInteger("condition", 0);
+		conditionValue = set.getInteger("conditionValue", 0);
+		overhit = set.getBool("overHit", false);
+		isSuicideAttack = set.getBool("isSuicideAttack", false);
 
 		String weaponsAllowedString = set.getString("weaponsAllowed", null);
 		if (weaponsAllowedString != null && !weaponsAllowedString.trim().isEmpty())
@@ -575,66 +575,66 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					Log.info("[weaponsAllowed] Unknown item type name: " + item);
 				}
 			}
-			this.weaponsAllowed = mask;
+			weaponsAllowed = mask;
 		}
 		else
 		{
-			this.weaponsAllowed = 0;
+			weaponsAllowed = 0;
 		}
 
-		this.armorsAllowed = set.getInteger("armorsAllowed", 0);
+		armorsAllowed = set.getInteger("armorsAllowed", 0);
 
-		this.minPledgeClass = set.getInteger("minPledgeClass", 0);
-		this.isOffensive = set.getBool("offensive", isSkillTypeOffensive());
-		this.isDebuff = set.getBool("isDebuff", isSkillTypeOffensive());
+		minPledgeClass = set.getInteger("minPledgeClass", 0);
+		isOffensive = set.getBool("offensive", isSkillTypeOffensive());
+		isDebuff = set.getBool("isDebuff", isSkillTypeOffensive());
 		//_isDebuff = set.getBool("isDebuff", isSkillTypeDebuff());
-		this.maxCharges = set.getInteger("maxCharges", 0);
-		this.numCharges = set.getInteger("numCharges", 0);
-		this.maxChargeConsume = set.getInteger("maxChargeConsume", 0);
-		this.triggeredId = set.getInteger("triggeredId", -1);
-		this.triggeredLevel = set.getInteger("triggeredLevel", 0);
-		this.triggeredEnchantRoute = set.getInteger("triggeredEnchantRoute", 0);
-		this.triggeredEnchantLevel = set.getInteger("triggeredEnchantLevel", 0);
-		this.chanceType = set.getString("chanceType", "");
-		if (!Objects.equals(this.chanceType, "") && !this.chanceType.isEmpty())
+		maxCharges = set.getInteger("maxCharges", 0);
+		numCharges = set.getInteger("numCharges", 0);
+		maxChargeConsume = set.getInteger("maxChargeConsume", 0);
+		triggeredId = set.getInteger("triggeredId", -1);
+		triggeredLevel = set.getInteger("triggeredLevel", 0);
+		triggeredEnchantRoute = set.getInteger("triggeredEnchantRoute", 0);
+		triggeredEnchantLevel = set.getInteger("triggeredEnchantLevel", 0);
+		chanceType = set.getString("chanceType", "");
+		if (!Objects.equals(chanceType, "") && !chanceType.isEmpty())
 		{
-			this.chanceCondition = ChanceCondition.parse(set);
+			chanceCondition = ChanceCondition.parse(set);
 		}
 
-		this.numSouls = set.getInteger("num_souls", 0);
-		this.soulMaxConsume = set.getInteger("soulMaxConsumeCount", 0);
-		this.soulConsume = set.getInteger("soulConsumeCount", 0);
-		this.blowChance = set.getInteger("blowChance", 0);
-		this.expNeeded = set.getInteger("expNeeded", 0);
-		this.critChance = set.getInteger("critChance", 0);
+		numSouls = set.getInteger("num_souls", 0);
+		soulMaxConsume = set.getInteger("soulMaxConsumeCount", 0);
+		soulConsume = set.getInteger("soulConsumeCount", 0);
+		blowChance = set.getInteger("blowChance", 0);
+		expNeeded = set.getInteger("expNeeded", 0);
+		critChance = set.getInteger("critChance", 0);
 
-		this.transformId = set.getInteger("transformId", 0);
-		this.transformDuration = set.getInteger("transformDuration", 0);
+		transformId = set.getInteger("transformId", 0);
+		transformDuration = set.getInteger("transformDuration", 0);
 
-		this.isHeroSkill = HeroSkillTable.isHeroSkill(this.id);
-		this.isGMSkill = GMSkillTable.isGMSkill(this.id);
+		isHeroSkill = HeroSkillTable.isHeroSkill(id);
+		isGMSkill = GMSkillTable.isGMSkill(id);
 
-		this.baseCritRate = set.getFloat("baseCritRate", 0);
-		this.lethalEffect1 = set.getInteger("lethal1", 0);
-		this.lethalEffect2 = set.getInteger("lethal2", 0);
+		baseCritRate = set.getFloat("baseCritRate", 0);
+		lethalEffect1 = set.getInteger("lethal1", 0);
+		lethalEffect2 = set.getInteger("lethal2", 0);
 
-		this.directHpDmg = set.getBool("dmgDirectlyToHp", false);
-		this.isDance = set.getBool("isDance", false);
-		this.nextDanceCost = set.getInteger("nextDanceCost", 0);
-		this.aggroPoints = Math.round(set.getFloat("aggroPoints", 0));
-		this.ignoredDefPercent = set.getFloat("ignoredDefPercent", 0.0f);
-		this.canBeUsedWhenDisabled = set.getBool("canBeUsedWhenDisabled", false);
+		directHpDmg = set.getBool("dmgDirectlyToHp", false);
+		isDance = set.getBool("isDance", false);
+		nextDanceCost = set.getInteger("nextDanceCost", 0);
+		aggroPoints = Math.round(set.getFloat("aggroPoints", 0));
+		ignoredDefPercent = set.getFloat("ignoredDefPercent", 0.0f);
+		canBeUsedWhenDisabled = set.getBool("canBeUsedWhenDisabled", false);
 
-		this.flyType = set.getString("flyType", null);
-		this.flyRadius = set.getInteger("flyRadius", 0);
-		this.flyCourse = set.getFloat("flyCourse", 0);
-		this.canBeReflected = set.getBool("canBeReflected", true);
-		this.canBeSharedWithSummon = set.getBool("canBeSharedWithSummon", true);
-		this.canBeDispeled = set.getBool("canBeDispeled", true);
+		flyType = set.getString("flyType", null);
+		flyRadius = set.getInteger("flyRadius", 0);
+		flyCourse = set.getFloat("flyCourse", 0);
+		canBeReflected = set.getBool("canBeReflected", true);
+		canBeSharedWithSummon = set.getBool("canBeSharedWithSummon", true);
+		canBeDispeled = set.getBool("canBeDispeled", true);
 
-		this.isClanSkill = set.getBool("isClanSkill", false);
-		this.excludedFromCheck = set.getBool("excludedFromCheck", false);
-		this.dependOnTargetBuff = set.getFloat("dependOnTargetBuff", 0);
+		isClanSkill = set.getBool("isClanSkill", false);
+		excludedFromCheck = set.getBool("excludedFromCheck", false);
+		dependOnTargetBuff = set.getFloat("dependOnTargetBuff", 0);
 
 		String dependOnTargetEffectId = set.getString("dependOnTargetEffectId", null);
 		if (dependOnTargetEffectId != null)
@@ -666,63 +666,63 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			this.damageDepend = new double[0];
 		}
 
-		this.simultaneousCast = set.getBool("simultaneousCast", false);
+		simultaneousCast = set.getBool("simultaneousCast", false);
 
 		String capsuled_items = set.getString("capsuled_items_skill", null);
 		if (capsuled_items != null)
 		{
 			if (capsuled_items.isEmpty())
 			{
-				Log.warning("Empty Extractable Item Skill data in Skill Id: " + this.id);
+				Log.warning("Empty Extractable Item Skill data in Skill Id: " + id);
 			}
 
-			this.extractableItems = parseExtractableSkill(this.id, this.level, capsuled_items);
+			extractableItems = parseExtractableSkill(id, level, capsuled_items);
 		}
 
-		this.partyChangeSkill = set.getInteger("partyChangeSkill", -1);
-		this.partyChangeSkillLevel = set.getInteger("partyChangeSkillLevel", 1);
-		this.partyChangeSkillEnchantRoute = set.getInteger("partyChangeSkillEnchantRoute", 0);
-		this.partyChangeSkillEnchantLevel = set.getInteger("partyChangeSkillEnchantLevel", 0);
-		this.isCastedToParty = set.getBool("isCastedToParty", true);
-		this.skillActionId = set.getInteger("skillActionId", 0);
-		this.alterSkillId = set.getInteger("alterSkillId", -1);
-		this.alterSkillLevel = set.getInteger("alterSkillLevel", -1);
-		this.alterIconTime = set.getInteger("alterIconTime", -1);
+		partyChangeSkill = set.getInteger("partyChangeSkill", -1);
+		partyChangeSkillLevel = set.getInteger("partyChangeSkillLevel", 1);
+		partyChangeSkillEnchantRoute = set.getInteger("partyChangeSkillEnchantRoute", 0);
+		partyChangeSkillEnchantLevel = set.getInteger("partyChangeSkillEnchantLevel", 0);
+		isCastedToParty = set.getBool("isCastedToParty", true);
+		skillActionId = set.getInteger("skillActionId", 0);
+		alterSkillId = set.getInteger("alterSkillId", -1);
+		alterSkillLevel = set.getInteger("alterSkillLevel", -1);
+		alterIconTime = set.getInteger("alterIconTime", -1);
 
-		this.isElemental = set.getBool("isElemental", false);
-		this.isStanceSwitch = set.getBool("isStanceSwitch", false);
+		isElemental = set.getBool("isElemental", false);
+		isStanceSwitch = set.getBool("isStanceSwitch", false);
 	}
 
 	public abstract void useSkill(L2Character caster, L2Object[] targets);
 
 	public final boolean isPotion()
 	{
-		return this.isPotion;
+		return isPotion;
 	}
 
 	public final int getArmorsAllowed()
 	{
-		return this.armorsAllowed;
+		return armorsAllowed;
 	}
 
 	public final int getConditionValue()
 	{
-		return this.conditionValue;
+		return conditionValue;
 	}
 
 	public final L2SkillType getSkillType()
 	{
-		return this.skillType;
+		return skillType;
 	}
 
 	public final byte getElement()
 	{
-		return this.element;
+		return element;
 	}
 
 	public final int getElementPower()
 	{
-		return this.elementPower;
+		return elementPower;
 	}
 
 	/**
@@ -730,32 +730,32 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final L2SkillTargetType getTargetType()
 	{
-		return this.targetType;
+		return targetType;
 	}
 
 	public final int getCondition()
 	{
-		return this.condition;
+		return condition;
 	}
 
 	public final boolean isOverhit()
 	{
-		return this.overhit;
+		return overhit;
 	}
 
 	public final boolean killByDOT()
 	{
-		return this.killByDOT;
+		return killByDOT;
 	}
 
 	public final boolean absorbDOT()
 	{
-		return this.absorbDOT;
+		return absorbDOT;
 	}
 
 	public final boolean isSuicideAttack()
 	{
-		return this.isSuicideAttack;
+		return isSuicideAttack;
 	}
 
 	public final boolean allowOnTransform()
@@ -776,10 +776,10 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		double power = getPower(isPvP, isPvE);
 		if (target != null && target.isStunned())
 		{
-			power = this.stunPower;
+			power = stunPower;
 		}
 
-		switch (this.skillType)
+		switch (skillType)
 		{
 			case DEATHLINK:
 			{
@@ -805,58 +805,58 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final double getPower()
 	{
-		return this.power;
+		return power;
 	}
 
 	public final double getPower(boolean isPvP, boolean isPvE)
 	{
-		return isPvP ? this.pvpPower : isPvE ? this.pvePower : this.power;
+		return isPvP ? pvpPower : isPvE ? pvePower : power;
 	}
 
 	public final L2AbnormalType[] getNegateStats()
 	{
-		return this.negateStats;
+		return negateStats;
 	}
 
 	public final Map<String, Byte> getNegateAbnormals()
 	{
-		return this.negateAbnormals;
+		return negateAbnormals;
 	}
 
 	public final int getAbnormalLvl()
 	{
-		return this.abnormalLvl;
+		return abnormalLvl;
 	}
 
 	public final int[] getNegateId()
 	{
-		return this.negateId;
+		return negateId;
 	}
 
 	public final int getMagicLevel()
 	{
-		if (this.magicLevel == 0)
+		if (magicLevel == 0)
 		{
 			int skillMaxLevel = SkillTable.getInstance().getMaxLevel(getId());
-			return PlayerClassTable.getInstance().getMinSkillLevel(this.id, skillMaxLevel);
+			return PlayerClassTable.getInstance().getMinSkillLevel(id, skillMaxLevel);
 		}
 
-		return this.magicLevel;
+		return magicLevel;
 	}
 
 	public final int getMinNegatedEffects()
 	{
-		return this.minNegatedEffects;
+		return minNegatedEffects;
 	}
 
 	public final int getMaxNegatedEffects()
 	{
-		return this.maxNegatedEffects;
+		return maxNegatedEffects;
 	}
 
 	public final int getLevelDepend()
 	{
-		return this.levelDepend;
+		return levelDepend;
 	}
 
 	/**
@@ -864,7 +864,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean ignoreResists()
 	{
-		return this.ignoreResists;
+		return ignoreResists;
 	}
 
 	/**
@@ -872,7 +872,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean ignoreImmunity()
 	{
-		return this.ignoreImmunity;
+		return ignoreImmunity;
 	}
 
 	/**
@@ -880,7 +880,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getMinChance()
 	{
-		return this.minChance;
+		return minChance;
 	}
 
 	/**
@@ -888,7 +888,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getMaxChance()
 	{
-		return this.maxChance;
+		return maxChance;
 	}
 
 	/**
@@ -896,7 +896,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isRemovedOnAction()
 	{
-		return this.removedOnAction;
+		return removedOnAction;
 	}
 
 	/**
@@ -904,22 +904,22 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isRemovedOnDamage()
 	{
-		return this.removedOnDamage;
+		return removedOnDamage;
 	}
 
 	public final int getRemovedOnDamageChance()
 	{
-		return this.removedOnDamageChance;
+		return removedOnDamageChance;
 	}
 
 	public final int getStrikesToRemove()
 	{
-		return this.strikesToRemove;
+		return strikesToRemove;
 	}
 
 	public final int getDamageToRemove()
 	{
-		return this.damageToRemove;
+		return damageToRemove;
 	}
 
 	/**
@@ -927,12 +927,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isRemovedOnDebuffBlock()
 	{
-		return this.removedOnDebuffBlock;
+		return removedOnDebuffBlock;
 	}
 
 	public final int getDebuffBlocksToRemove()
 	{
-		return this.debuffBlocksToRemove;
+		return debuffBlocksToRemove;
 	}
 
 	/**
@@ -940,7 +940,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getEffectId()
 	{
-		return this.effectId;
+		return effectId;
 	}
 
 	/**
@@ -948,12 +948,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getEffectLvl()
 	{
-		return this.effectLvl;
+		return effectLvl;
 	}
 
 	public final int getEffectAbnormalLvl()
 	{
-		return this.effectAbnormalLvl;
+		return effectAbnormalLvl;
 	}
 
 	/**
@@ -961,12 +961,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean nextActionIsAttack()
 	{
-		return this.nextActionIsAttack;
+		return nextActionIsAttack;
 	}
 
 	public final boolean nextActionIsAttackMob()
 	{
-		return this.nextActionIsAttackMob;
+		return nextActionIsAttackMob;
 	}
 
 	/**
@@ -974,7 +974,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getBuffDuration()
 	{
-		return this.buffDuration;
+		return buffDuration;
 	}
 
 	/**
@@ -982,7 +982,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getCastRange()
 	{
-		return this.castRange;
+		return castRange;
 	}
 
 	/**
@@ -990,7 +990,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getCpConsume()
 	{
-		return this.cpConsume;
+		return cpConsume;
 	}
 
 	/**
@@ -998,7 +998,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getEffectRange()
 	{
-		return this.effectRange;
+		return effectRange;
 	}
 
 	/**
@@ -1006,7 +1006,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getHpConsume()
 	{
-		return this.hpConsume;
+		return hpConsume;
 	}
 
 	/**
@@ -1014,7 +1014,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getId()
 	{
-		return this.id;
+		return id;
 	}
 
 	/**
@@ -1022,42 +1022,42 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isDebuff()
 	{
-		return this.isDebuff;
+		return isDebuff;
 	}
 
 	public int getDisplayId()
 	{
-		return this.displayId;
+		return displayId;
 	}
 
 	public void setDisplayId(int id)
 	{
-		this.displayId = id;
+		displayId = id;
 	}
 
 	public int getTriggeredId()
 	{
-		return this.triggeredId;
+		return triggeredId;
 	}
 
 	public int getTriggeredLevel()
 	{
-		return this.triggeredLevel;
+		return triggeredLevel;
 	}
 
 	public int getTriggeredEnchantRoute()
 	{
-		return this.triggeredEnchantRoute;
+		return triggeredEnchantRoute;
 	}
 
 	public int getTriggeredEnchantLevel()
 	{
-		return this.triggeredEnchantLevel;
+		return triggeredEnchantLevel;
 	}
 
 	public boolean triggerAnotherSkill()
 	{
-		return this.triggeredId > 1;
+		return triggeredId > 1;
 	}
 
 	/**
@@ -1065,7 +1065,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final BaseStats getSaveVs()
 	{
-		return this.saveVs;
+		return saveVs;
 	}
 
 	/**
@@ -1073,7 +1073,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getTargetConsumeId()
 	{
-		return this.targetConsumeId;
+		return targetConsumeId;
 	}
 
 	/**
@@ -1081,7 +1081,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getTargetConsume()
 	{
-		return this.targetConsume;
+		return targetConsume;
 	}
 
 	/**
@@ -1089,7 +1089,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getItemConsume()
 	{
-		return this.itemConsume;
+		return itemConsume;
 	}
 
 	/**
@@ -1097,7 +1097,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getItemConsumeId()
 	{
-		return this.itemConsumeId;
+		return itemConsumeId;
 	}
 
 	/**
@@ -1105,7 +1105,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getFameConsume()
 	{
-		return this.fameConsume;
+		return fameConsume;
 	}
 
 	/**
@@ -1113,7 +1113,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getClanRepConsume()
 	{
-		return this.clanRepConsume;
+		return clanRepConsume;
 	}
 
 	/**
@@ -1121,27 +1121,27 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getLevel()
 	{
-		return this.level;
+		return level;
 	}
 
 	public final int getEnchantRouteId()
 	{
-		return this.enchantRouteId;
+		return enchantRouteId;
 	}
 
 	public final int getEnchantLevel()
 	{
-		return this.enchantLevel;
+		return enchantLevel;
 	}
 
 	public final int getLevelHash()
 	{
-		return this.level | getEnchantHash() << 16;
+		return level | getEnchantHash() << 16;
 	}
 
 	public final int getEnchantHash()
 	{
-		return this.enchantRouteId * 1000 + this.enchantLevel;
+		return enchantRouteId * 1000 + enchantLevel;
 	}
 
 	/**
@@ -1149,7 +1149,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isMagic()
 	{
-		return this.magic;
+		return magic;
 	}
 
 	/**
@@ -1157,7 +1157,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isStaticReuse()
 	{
-		return this.staticReuse;
+		return staticReuse;
 	}
 
 	/**
@@ -1165,7 +1165,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final boolean isStaticHitTime()
 	{
-		return this.staticHitTime;
+		return staticHitTime;
 	}
 
 	/**
@@ -1173,7 +1173,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getMpConsume()
 	{
-		return this.mpConsume;
+		return mpConsume;
 	}
 
 	/**
@@ -1181,7 +1181,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final String getName()
 	{
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -1189,32 +1189,32 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getReuseDelay()
 	{
-		return this.reuseDelay;
+		return reuseDelay;
 	}
 
 	public final int getReuseHashCode()
 	{
-		return this.reuseHashCode;
+		return reuseHashCode;
 	}
 
 	public final int getEquipDelay()
 	{
-		return this.equipDelay;
+		return equipDelay;
 	}
 
 	public final int getHitTime()
 	{
-		return this.hitTime;
+		return hitTime;
 	}
 
 	public final int getHitCounts()
 	{
-		return this.hitTimings.length;
+		return hitTimings.length;
 	}
 
 	public final int[] getHitTimings()
 	{
-		return this.hitTimings;
+		return hitTimings;
 	}
 
 	/**
@@ -1222,62 +1222,62 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getCoolTime()
 	{
-		return this.coolTime;
+		return coolTime;
 	}
 
 	public final int getSkillRadius()
 	{
-		return this.skillRadius;
+		return skillRadius;
 	}
 
 	public final int getSkillSafeRadius()
 	{
-		return this.skillSafeRadius;
+		return skillSafeRadius;
 	}
 
 	public final boolean isActive()
 	{
-		return this.operateType == SkillOpType.OP_ACTIVE;
+		return operateType == SkillOpType.OP_ACTIVE;
 	}
 
 	public final boolean isPassive()
 	{
-		return this.operateType == SkillOpType.OP_PASSIVE;
+		return operateType == SkillOpType.OP_PASSIVE;
 	}
 
 	public final boolean isToggle()
 	{
-		return this.operateType == SkillOpType.OP_TOGGLE;
+		return operateType == SkillOpType.OP_TOGGLE;
 	}
 
 	public final boolean isChance()
 	{
-		return this.chanceCondition != null && isPassive();
+		return chanceCondition != null && isPassive();
 	}
 
 	public final boolean isDance()
 	{
-		return this.isDance;
+		return isDance;
 	}
 
 	public final int getNextDanceMpCost()
 	{
-		return this.nextDanceCost;
+		return nextDanceCost;
 	}
 
 	public final int getAggroPoints()
 	{
-		return this.aggroPoints;
+		return aggroPoints;
 	}
 
 	public final float getIgnoredDefPercent()
 	{
-		return this.ignoredDefPercent;
+		return ignoredDefPercent;
 	}
 
 	public boolean canBeUsedWhenDisabled()
 	{
-		return this.canBeUsedWhenDisabled;
+		return canBeUsedWhenDisabled;
 	}
 
 	public final boolean useSoulShot()
@@ -1312,17 +1312,17 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final int getWeaponsAllowed()
 	{
-		return this.weaponsAllowed;
+		return weaponsAllowed;
 	}
 
 	public int getMinPledgeClass()
 	{
-		return this.minPledgeClass;
+		return minPledgeClass;
 	}
 
 	public final boolean isPvpSkill()
 	{
-		switch (this.skillType)
+		switch (skillType)
 		{
 			case DEBUFF:
 			case AGGDEBUFF:
@@ -1341,107 +1341,107 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final boolean isOffensive()
 	{
-		return this.isOffensive;
+		return isOffensive;
 	}
 
 	public final boolean isNeutral()
 	{
-		return this.isNeutral;
+		return isNeutral;
 	}
 
 	public final boolean isHeroSkill()
 	{
-		return this.isHeroSkill;
+		return isHeroSkill;
 	}
 
 	public final boolean isGMSkill()
 	{
-		return this.isGMSkill;
+		return isGMSkill;
 	}
 
 	public final int getNumCharges()
 	{
-		return this.numCharges;
+		return numCharges;
 	}
 
 	public final int getMaxChargeConsume()
 	{
-		return this.maxChargeConsume;
+		return maxChargeConsume;
 	}
 
 	public final int getNumSouls()
 	{
-		return this.numSouls;
+		return numSouls;
 	}
 
 	public final int getMaxSoulConsumeCount()
 	{
-		return this.soulMaxConsume;
+		return soulMaxConsume;
 	}
 
 	public final int getSoulConsumeCount()
 	{
-		return this.soulConsume;
+		return soulConsume;
 	}
 
 	public final int getExpNeeded()
 	{
-		return this.expNeeded;
+		return expNeeded;
 	}
 
 	public final int getCritChance()
 	{
-		return this.critChance;
+		return critChance;
 	}
 
 	public final int getTransformId()
 	{
-		return this.transformId;
+		return transformId;
 	}
 
 	public final int getTransformDuration()
 	{
-		return this.transformDuration;
+		return transformDuration;
 	}
 
 	public final float getBaseCritRate()
 	{
-		return this.baseCritRate;
+		return baseCritRate;
 	}
 
 	public final int getLethalChance1()
 	{
-		return this.lethalEffect1;
+		return lethalEffect1;
 	}
 
 	public final int getLethalChance2()
 	{
-		return this.lethalEffect2;
+		return lethalEffect2;
 	}
 
 	public final boolean getDmgDirectlyToHP()
 	{
-		return this.directHpDmg;
+		return directHpDmg;
 	}
 
 	public final String getFlyType()
 	{
-		return this.flyType;
+		return flyType;
 	}
 
 	public final int getFlyRadius()
 	{
-		return this.flyRadius;
+		return flyRadius;
 	}
 
 	public final float getFlyCourse()
 	{
-		return this.flyCourse;
+		return flyCourse;
 	}
 
 	public final boolean isSkillTypeOffensive()
 	{
-		switch (this.skillType)
+		switch (skillType)
 		{
 			case PDAM:
 			case MDAM:
@@ -1480,7 +1480,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			case MARK:
 				return true;
 			case DUMMY:
-				if (this.id == 998) // blazing boost
+				if (id == 998) // blazing boost
 				{
 					return true;
 				}
@@ -1491,7 +1491,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final boolean isSkillTypeDebuff()
 	{
-		switch (this.skillType)
+		switch (skillType)
 		{
 			case AGGDAMAGE:
 			case DEBUFF:
@@ -1517,7 +1517,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			case RESET:
 				return true;
 			case DUMMY:
-				if (this.id == 998) // blazing boost
+				if (id == 998) // blazing boost
 				{
 					return true;
 				}
@@ -1528,12 +1528,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final boolean is7Signs()
 	{
-		return this.id > 4360 && this.id < 4367;
+		return id > 4360 && id < 4367;
 	}
 
 	public final boolean isStayAfterDeath()
 	{
-		return this.stayAfterDeath;
+		return stayAfterDeath;
 	}
 
 	public final boolean getWeaponDependancy(L2Character activeChar)
@@ -1601,7 +1601,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		List<Condition> preCondition = this.preCondition;
 		if (itemOrWeapon)
 		{
-			preCondition = this.itemPreCondition;
+			preCondition = itemPreCondition;
 		}
 		if (preCondition == null || preCondition.isEmpty())
 		{
@@ -1627,7 +1627,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					SystemMessage sm = SystemMessage.getSystemMessage(msgId);
 					if (cond.isAddName())
 					{
-						sm.addSkillName(this.id);
+						sm.addSkillName(id);
 					}
 					activeChar.sendPacket(sm);
 				}
@@ -1695,7 +1695,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					}
 				}
 
-				return this.emptyTargetList;
+				return emptyTargetList;
 			}
 			case TARGET_CORPSE_PARTY_CLAN:
 			case TARGET_PARTY_CLAN:
@@ -1709,7 +1709,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 				if (player == null)
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				final boolean isCorpseType = targetType == L2SkillTargetType.TARGET_CORPSE_PARTY_CLAN;
@@ -1934,7 +1934,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			{
 				if (!(activeChar instanceof L2PcInstance))
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				L2PcInstance player = (L2PcInstance) activeChar;
@@ -1942,7 +1942,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				Point3D position = player.getSkillCastPosition();
 				if (position == null)
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				final int radius = getSkillRadius();
@@ -1978,7 +1978,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 				if (targetList.isEmpty())
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				return targetList.toArray(new L2Character[targetList.size()]);
@@ -2193,13 +2193,13 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						else
 						{
 							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-							return this.emptyTargetList;
+							return emptyTargetList;
 						}
 					}
 				}
 				else
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 				return targetList.toArray(new L2Character[targetList.size()]);
 			}
@@ -2226,7 +2226,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						return targetList.toArray(new L2Character[targetList.size()]);
 					}
 				}
-				return this.emptyTargetList;
+				return emptyTargetList;
 			}
 			case TARGET_MENTEE:
 			{
@@ -2242,16 +2242,16 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						}
 						else
 						{
-							return this.emptyTargetList;
+							return emptyTargetList;
 						}
 					}
 					else
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-						return this.emptyTargetList;
+						return emptyTargetList;
 					}
 				}
-				return this.emptyTargetList;
+				return emptyTargetList;
 			}
 			case TARGET_LINE:
 			{
@@ -2259,7 +2259,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						!(target instanceof L2Attackable || target instanceof L2Playable))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				// Tenkai custom - in Duels, area skills attack only Duel enemy. Not checking if same Duel ID, but whatever
@@ -2273,7 +2273,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					}
 					else
 					{
-						return this.emptyTargetList;
+						return emptyTargetList;
 					}
 				}
 
@@ -2333,7 +2333,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 				if (targetList.isEmpty())
 				{
-					return this.emptyTargetList;
+					return emptyTargetList;
 				}
 
 				return targetList.toArray(new L2Character[targetList.size()]);
@@ -2575,20 +2575,20 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final Func[] getStatFuncs(L2Character player)
 	{
-		if (this.funcTemplates == null)
+		if (funcTemplates == null)
 		{
-			return this.emptyFunctionSet;
+			return emptyFunctionSet;
 		}
 
 		if (!(player instanceof L2Playable) && !(player instanceof L2Attackable))
 		{
-			return this.emptyFunctionSet;
+			return emptyFunctionSet;
 		}
 
-		ArrayList<Func> funcs = new ArrayList<>(this.funcTemplates.length);
+		ArrayList<Func> funcs = new ArrayList<>(funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : this.funcTemplates)
+		for (FuncTemplate t : funcTemplates)
 		{
 			f = t.getFunc(this); // skill is owner
 			if (f != null)
@@ -2598,7 +2598,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 		if (funcs.isEmpty())
 		{
-			return this.emptyFunctionSet;
+			return emptyFunctionSet;
 		}
 
 		return funcs.toArray(new Func[funcs.size()]);
@@ -2606,17 +2606,17 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public boolean hasEffects()
 	{
-		return this.effectTemplates != null && this.effectTemplates.length > 0;
+		return effectTemplates != null && effectTemplates.length > 0;
 	}
 
 	public L2AbnormalTemplate[] getEffectTemplates()
 	{
-		return this.effectTemplates;
+		return effectTemplates;
 	}
 
 	public boolean hasSelfEffects()
 	{
-		return this.effectTemplatesSelf != null && this.effectTemplatesSelf.length > 0;
+		return effectTemplatesSelf != null && effectTemplatesSelf.length > 0;
 	}
 
 	/**
@@ -2628,13 +2628,13 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		if (!hasEffects() || isPassive())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		// doors and siege flags cannot receive any effects
 		if (effected instanceof L2DoorInstance || effected instanceof L2SiegeFlagInstance)
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		if (effector != effected && !ignoreImmunity())
@@ -2642,7 +2642,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			if (effected instanceof L2PcInstance && effected.getFaceoffTarget() != null &&
 					effector != effected.getFaceoffTarget())
 			{
-				return this.emptyEffectSet;
+				return emptyEffectSet;
 			}
 
 			if (isOffensive() || isDebuff())
@@ -2660,7 +2660,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 					if (invul)
 					{
-						return this.emptyEffectSet;
+						return emptyEffectSet;
 					}
 				}
 
@@ -2668,13 +2668,13 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				{
 					if (!((L2PcInstance) effector).getAccessLevel().canGiveDamage())
 					{
-						return this.emptyEffectSet;
+						return emptyEffectSet;
 					}
 				}
 			}
 		}
 
-		ArrayList<L2Abnormal> effects = new ArrayList<>(this.effectTemplates.length);
+		ArrayList<L2Abnormal> effects = new ArrayList<>(effectTemplates.length);
 		if (env == null)
 		{
 			env = new Env();
@@ -2682,11 +2682,11 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		if (!isOffensive())
 		{
-			for (L2AbnormalTemplate effect : this.effectTemplates)
+			for (L2AbnormalTemplate effect : effectTemplates)
 			{
 				if (effected.calcStat(Stats.BUFF_IMMUNITY, 0.0, effector, null) > 0.0)
 				{
-					return this.emptyEffectSet;
+					return emptyEffectSet;
 				}
 
 				if (effected.isAffected(L2EffectType.BLOCK_INVUL.getMask()))
@@ -2695,7 +2695,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					{
 						if (eff.funcName.equals("Invincible"))
 						{
-							return this.emptyEffectSet;
+							return emptyEffectSet;
 						}
 					}
 				}
@@ -2706,14 +2706,14 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					{
 						if (eff.funcName.equals("Hide"))
 						{
-							return this.emptyEffectSet;
+							return emptyEffectSet;
 						}
 					}
 				}
 
 				if (effected.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && getName().contains("Talisman"))
 				{
-					return this.emptyEffectSet;
+					return emptyEffectSet;
 				}
 			}
 		}
@@ -2723,7 +2723,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		env.target = effected;
 		env.skill = this;
 
-		for (L2AbnormalTemplate et : this.effectTemplates)
+		for (L2AbnormalTemplate et : effectTemplates)
 		{
 			L2Abnormal e = et.getEffect(env);
 			if (e == null)
@@ -2754,7 +2754,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		if (effects.isEmpty())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		return effects.toArray(new L2Abnormal[effects.size()]);
@@ -2783,7 +2783,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		if (!hasEffects() || isPassive())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		if (effector.getOwner() != effected && !ignoreImmunity())
@@ -2792,17 +2792,17 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			{
 				if (effected.isInvul(effector.getOwner()))
 				{
-					return this.emptyEffectSet;
+					return emptyEffectSet;
 				}
 
 				if (effector.getOwner().isGM() && !effector.getOwner().getAccessLevel().canGiveDamage())
 				{
-					return this.emptyEffectSet;
+					return emptyEffectSet;
 				}
 			}
 		}
 
-		ArrayList<L2Abnormal> effects = new ArrayList<>(this.effectTemplates.length);
+		ArrayList<L2Abnormal> effects = new ArrayList<>(effectTemplates.length);
 
 		if (env == null)
 		{
@@ -2814,7 +2814,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		env.target = effected;
 		env.skill = this;
 
-		for (L2AbnormalTemplate et : this.effectTemplates)
+		for (L2AbnormalTemplate et : effectTemplates)
 		{
 			L2Abnormal e = et.getEffect(env);
 			if (e == null)
@@ -2837,7 +2837,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 		if (effects.isEmpty())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		return effects.toArray(new L2Abnormal[effects.size()]);
@@ -2847,12 +2847,12 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		if (!hasSelfEffects() || isPassive())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
-		List<L2Abnormal> effects = new ArrayList<>(this.effectTemplatesSelf.length);
+		List<L2Abnormal> effects = new ArrayList<>(effectTemplatesSelf.length);
 
-		for (L2AbnormalTemplate et : this.effectTemplatesSelf)
+		for (L2AbnormalTemplate et : effectTemplatesSelf)
 		{
 			Env env = new Env();
 			env.skillMastery = Formulas.calcSkillMastery(effector, this);
@@ -2869,7 +2869,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		}
 		if (effects.isEmpty())
 		{
-			return this.emptyEffectSet;
+			return emptyEffectSet;
 		}
 
 		return effects.toArray(new L2Abnormal[effects.size()]);
@@ -2877,49 +2877,49 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public final void attach(FuncTemplate f)
 	{
-		if (this.funcTemplates == null)
+		if (funcTemplates == null)
 		{
-			this.funcTemplates = new FuncTemplate[]{f};
+			funcTemplates = new FuncTemplate[]{f};
 		}
 		else
 		{
-			int len = this.funcTemplates.length;
+			int len = funcTemplates.length;
 			FuncTemplate[] tmp = new FuncTemplate[len + 1];
-			System.arraycopy(this.funcTemplates, 0, tmp, 0, len);
+			System.arraycopy(funcTemplates, 0, tmp, 0, len);
 			tmp[len] = f;
-			this.funcTemplates = tmp;
+			funcTemplates = tmp;
 		}
 	}
 
 	public final void attach(L2AbnormalTemplate effect)
 	{
-		if (this.effectTemplates == null)
+		if (effectTemplates == null)
 		{
-			this.effectTemplates = new L2AbnormalTemplate[]{effect};
+			effectTemplates = new L2AbnormalTemplate[]{effect};
 		}
 		else
 		{
-			int len = this.effectTemplates.length;
+			int len = effectTemplates.length;
 			L2AbnormalTemplate[] tmp = new L2AbnormalTemplate[len + 1];
-			System.arraycopy(this.effectTemplates, 0, tmp, 0, len);
+			System.arraycopy(effectTemplates, 0, tmp, 0, len);
 			tmp[len] = effect;
-			this.effectTemplates = tmp;
+			effectTemplates = tmp;
 		}
 	}
 
 	public final void attachSelf(L2AbnormalTemplate effect)
 	{
-		if (this.effectTemplatesSelf == null)
+		if (effectTemplatesSelf == null)
 		{
-			this.effectTemplatesSelf = new L2AbnormalTemplate[]{effect};
+			effectTemplatesSelf = new L2AbnormalTemplate[]{effect};
 		}
 		else
 		{
-			int len = this.effectTemplatesSelf.length;
+			int len = effectTemplatesSelf.length;
 			L2AbnormalTemplate[] tmp = new L2AbnormalTemplate[len + 1];
-			System.arraycopy(this.effectTemplatesSelf, 0, tmp, 0, len);
+			System.arraycopy(effectTemplatesSelf, 0, tmp, 0, len);
 			tmp[len] = effect;
-			this.effectTemplatesSelf = tmp;
+			effectTemplatesSelf = tmp;
 		}
 	}
 
@@ -2927,26 +2927,26 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		if (itemOrWeapon)
 		{
-			if (this.itemPreCondition == null)
+			if (itemPreCondition == null)
 			{
-				this.itemPreCondition = new ArrayList<>();
+				itemPreCondition = new ArrayList<>();
 			}
-			this.itemPreCondition.add(c);
+			itemPreCondition.add(c);
 		}
 		else
 		{
-			if (this.preCondition == null)
+			if (preCondition == null)
 			{
-				this.preCondition = new ArrayList<>();
+				preCondition = new ArrayList<>();
 			}
-			this.preCondition.add(c);
+			preCondition.add(c);
 		}
 	}
 
 	@Override
 	public String toString()
 	{
-		return "" + this.name + "[id=" + this.id + ",lvl=" + this.level + "]";
+		return "" + name + "[id=" + id + ",lvl=" + level + "]";
 	}
 
 	/**
@@ -2954,7 +2954,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public int getFeed()
 	{
-		return this.feed;
+		return feed;
 	}
 
 	/**
@@ -2964,63 +2964,63 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public int getReferenceItemId()
 	{
-		return this.refId;
+		return refId;
 	}
 
 	public final int getMaxCharges()
 	{
-		return this.maxCharges;
+		return maxCharges;
 	}
 
 	public int getAfterEffectId()
 	{
-		return this.afterEffectId;
+		return afterEffectId;
 	}
 
 	public int getAfterEffectLvl()
 	{
-		return this.afterEffectLvl;
+		return afterEffectLvl;
 	}
 
 	@Override
 	public boolean triggersChanceSkill()
 	{
-		return this.triggeredId > 0 && isChance();
+		return triggeredId > 0 && isChance();
 	}
 
 	@Override
 	public int getTriggeredChanceId()
 	{
-		return this.triggeredId;
+		return triggeredId;
 	}
 
 	@Override
 	public int getTriggeredChanceLevel()
 	{
-		return this.triggeredLevel;
+		return triggeredLevel;
 	}
 
 	@Override
 	public int getTriggeredChanceEnchantRoute()
 	{
-		return this.triggeredEnchantRoute;
+		return triggeredEnchantRoute;
 	}
 
 	@Override
 	public int getTriggeredChanceEnchantLevel()
 	{
-		return this.triggeredEnchantLevel;
+		return triggeredEnchantLevel;
 	}
 
 	@Override
 	public ChanceCondition getTriggeredChanceCondition()
 	{
-		return this.chanceCondition;
+		return chanceCondition;
 	}
 
 	public String getAttributeName()
 	{
-		return this.attribute;
+		return attribute;
 	}
 
 	/**
@@ -3028,47 +3028,47 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public int getBlowChance()
 	{
-		return this.blowChance;
+		return blowChance;
 	}
 
 	public boolean ignoreShield()
 	{
-		return this.ignoreShield;
+		return ignoreShield;
 	}
 
 	public boolean canBeReflected()
 	{
-		return this.canBeReflected;
+		return canBeReflected;
 	}
 
 	public boolean canBeSharedWithSummon()
 	{
-		return this.canBeSharedWithSummon;
+		return canBeSharedWithSummon;
 	}
 
 	public boolean canBeDispeled()
 	{
-		return this.canBeDispeled;
+		return canBeDispeled;
 	}
 
 	public boolean isClanSkill()
 	{
-		return this.isClanSkill;
+		return isClanSkill;
 	}
 
 	public boolean isExcludedFromCheck()
 	{
-		return this.excludedFromCheck;
+		return excludedFromCheck;
 	}
 
 	public float getDependOnTargetBuff()
 	{
-		return this.dependOnTargetBuff;
+		return dependOnTargetBuff;
 	}
 
 	public boolean isSimultaneousCast()
 	{
-		return this.simultaneousCast;
+		return simultaneousCast;
 	}
 
 	/**
@@ -3140,47 +3140,47 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public L2ExtractableSkill getExtractableSkill()
 	{
-		return this.extractableItems;
+		return extractableItems;
 	}
 
 	public boolean isTriggered()
 	{
-		return this.isTriggered;
+		return isTriggered;
 	}
 
 	public void setIsTriggered()
 	{
-		this.isTriggered = true;
+		isTriggered = true;
 	}
 
 	public boolean isActivation()
 	{
-		return this.isTriggered && !this.isDebuff;
+		return isTriggered && !isDebuff;
 	}
 
 	public int getPartyChangeSkill()
 	{
-		return this.partyChangeSkill;
+		return partyChangeSkill;
 	}
 
 	public int getPartyChangeSkillLevel()
 	{
-		return this.partyChangeSkillLevel;
+		return partyChangeSkillLevel;
 	}
 
 	public int getPartyChangeSkillEnchantRoute()
 	{
-		return this.partyChangeSkillEnchantRoute;
+		return partyChangeSkillEnchantRoute;
 	}
 
 	public int getPartyChangeSkillEnchantLevel()
 	{
-		return this.partyChangeSkillEnchantLevel;
+		return partyChangeSkillEnchantLevel;
 	}
 
 	public boolean isCastedToParty()
 	{
-		return this.isCastedToParty;
+		return isCastedToParty;
 	}
 
 	/**
@@ -3190,37 +3190,37 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 */
 	public final int getAlterSkillId()
 	{
-		return this.alterSkillId;
+		return alterSkillId;
 	}
 
 	public final int getAlterSkillLevel()
 	{
-		return this.alterSkillLevel;
+		return alterSkillLevel;
 	}
 
 	public final int getAlterSkillTime()
 	{
-		return this.alterIconTime;
+		return alterIconTime;
 	}
 
 	public int[] getDependOnTargetEffectId()
 	{
-		return this.dependOnTargetEffectId;
+		return dependOnTargetEffectId;
 	}
 
 	public double[] getDamageDepend()
 	{
-		return this.damageDepend;
+		return damageDepend;
 	}
 
 	public boolean isElemental()
 	{
-		return this.isElemental;
+		return isElemental;
 	}
 
 	public boolean isStanceSwitch()
 	{
-		return this.isStanceSwitch;
+		return isStanceSwitch;
 	}
 
 	public String getFirstEffectStack()
@@ -3239,9 +3239,9 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public L2SkillBehaviorType getSkillBehavior()
 	{
-		if (this.behaviorType != L2SkillBehaviorType.UNKNOWN)
+		if (behaviorType != L2SkillBehaviorType.UNKNOWN)
 		{
-			return this.behaviorType;
+			return behaviorType;
 		}
 
 		// Temporary failsafe
@@ -3364,7 +3364,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public L2SkillTargetDirection getTargetDirection()
 	{
-		return this.targetDirection;
+		return targetDirection;
 	}
 
 	public final boolean isFishingSkill()
@@ -3440,6 +3440,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 
 	public int getActionId()
 	{
-		return this.skillActionId;
+		return skillActionId;
 	}
 }

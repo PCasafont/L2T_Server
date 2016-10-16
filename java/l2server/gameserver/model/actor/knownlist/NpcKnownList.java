@@ -103,19 +103,19 @@ public class NpcKnownList extends CharKnownList
 	//L2Master mod - support for Walking monsters aggro
 	public void startTrackingTask()
 	{
-		if (this.trackingTask == null && getActiveChar().getAggroRange() > 0)
+		if (trackingTask == null && getActiveChar().getAggroRange() > 0)
 		{
-			this.trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
+			trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
 		}
 	}
 
 	//L2Master mod - support for Walking monsters aggro
 	public void stopTrackingTask()
 	{
-		if (this.trackingTask != null)
+		if (trackingTask != null)
 		{
-			this.trackingTask.cancel(true);
-			this.trackingTask = null;
+			trackingTask.cancel(true);
+			trackingTask = null;
 		}
 	}
 

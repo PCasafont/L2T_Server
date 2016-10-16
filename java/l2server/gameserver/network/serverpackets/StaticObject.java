@@ -37,47 +37,47 @@ public class StaticObject extends L2GameServerPacket
 
 	public StaticObject(L2StaticObjectInstance staticObject)
 	{
-		this.staticObjectId = staticObject.getStaticObjectId();
-		this.objectId = staticObject.getObjectId();
-		this.type = 0;
-		this.isTargetable = true;
-		this.meshIndex = staticObject.getMeshIndex();
-		this.isClosed = false;
-		this.isEnemy = false;
-		this.maxHp = 0;
-		this.currentHp = 0;
-		this.showHp = false;
-		this.damageGrade = 0;
+		staticObjectId = staticObject.getStaticObjectId();
+		objectId = staticObject.getObjectId();
+		type = 0;
+		isTargetable = true;
+		meshIndex = staticObject.getMeshIndex();
+		isClosed = false;
+		isEnemy = false;
+		maxHp = 0;
+		currentHp = 0;
+		showHp = false;
+		damageGrade = 0;
 	}
 
 	public StaticObject(L2DoorInstance door, boolean targetable)
 	{
-		this.staticObjectId = door.getDoorId();
-		this.objectId = door.getObjectId();
-		this.type = 1;
-		this.isTargetable = door.isTargetable() || targetable;
-		this.meshIndex = door.getMeshIndex();
-		this.isClosed = !door.getOpen();
-		this.isEnemy = door.isEnemy();
-		this.maxHp = door.getMaxVisibleHp();
-		this.currentHp = (int) door.getCurrentHp();
-		this.showHp = door.getIsShowHp();
-		this.damageGrade = door.getDamage();
+		staticObjectId = door.getDoorId();
+		objectId = door.getObjectId();
+		type = 1;
+		isTargetable = door.isTargetable() || targetable;
+		meshIndex = door.getMeshIndex();
+		isClosed = !door.getOpen();
+		isEnemy = door.isEnemy();
+		maxHp = door.getMaxVisibleHp();
+		currentHp = (int) door.getCurrentHp();
+		showHp = door.getIsShowHp();
+		damageGrade = door.getDamage();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.staticObjectId);
-		writeD(this.objectId);
-		writeD(this.type);
-		writeD(this.isTargetable ? 1 : 0);
-		writeD(this.meshIndex);
-		writeD(this.isClosed ? 1 : 0);
-		writeD(this.isEnemy ? 1 : 0);
-		writeD(this.currentHp);
-		writeD(this.maxHp);
-		writeD(this.showHp ? 1 : 0);
-		writeD(this.damageGrade);
+		writeD(staticObjectId);
+		writeD(objectId);
+		writeD(type);
+		writeD(isTargetable ? 1 : 0);
+		writeD(meshIndex);
+		writeD(isClosed ? 1 : 0);
+		writeD(isEnemy ? 1 : 0);
+		writeD(currentHp);
+		writeD(maxHp);
+		writeD(showHp ? 1 : 0);
+		writeD(damageGrade);
 	}
 }

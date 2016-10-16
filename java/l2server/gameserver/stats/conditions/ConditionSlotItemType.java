@@ -53,11 +53,11 @@ public final class ConditionSlotItemType extends ConditionInventory
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
-		L2ItemInstance item = inv.getPaperdollItem(this.slot);
+		L2ItemInstance item = inv.getPaperdollItem(slot);
 		if (item == null)
 		{
 			return false;
 		}
-		return (item.getItem().getItemMask() & this.mask) != 0;
+		return (item.getItem().getItemMask() & mask) != 0;
 	}
 }

@@ -106,10 +106,10 @@ public class EnchantMultiSellTable implements Reloadable
 				category.Entries.put(enchantLevel, product);
 			}
 
-			this.categories.put(category.Id, category);
+			categories.put(category.Id, category);
 		}
 
-		Log.info("EnchantMultisell: Loaded " + this.categories.size() + " categories.");
+		Log.info("EnchantMultisell: Loaded " + categories.size() + " categories.");
 		return true;
 	}
 
@@ -121,12 +121,12 @@ public class EnchantMultiSellTable implements Reloadable
 
 	public final Collection<EnchantMultiSellCategory> getCategories()
 	{
-		return this.categories.values();
+		return categories.values();
 	}
 
 	public final EnchantMultiSellCategory getCategory(int id)
 	{
-		return this.categories.get(id);
+		return categories.get(id);
 	}
 
 	public static EnchantMultiSellTable getInstance()

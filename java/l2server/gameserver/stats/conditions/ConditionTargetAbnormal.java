@@ -42,6 +42,6 @@ public class ConditionTargetAbnormal extends Condition
 	@Override
 	boolean testImpl(Env env)
 	{
-		return env.target.getAbnormalEffect().contains(this.abnormalId);
+		return env.target.getAbnormalEffect().contains(abnormalId);
 	}
 }

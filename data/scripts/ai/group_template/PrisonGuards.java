@@ -52,23 +52,23 @@ public class PrisonGuards extends L2AttackableAIScript
 		registerMobs(mob);
 
 		// place 1
-		this.guards.put(addSpawn(GUARD2, 160704, 184704, -3704, 49152, false, 0), 0);
-		this.guards.put(addSpawn(GUARD2, 160384, 184704, -3704, 49152, false, 0), 0);
-		this.guards.put(addSpawn(GUARD1, 160528, 185216, -3704, 49152, false, 0), 0);
+		guards.put(addSpawn(GUARD2, 160704, 184704, -3704, 49152, false, 0), 0);
+		guards.put(addSpawn(GUARD2, 160384, 184704, -3704, 49152, false, 0), 0);
+		guards.put(addSpawn(GUARD1, 160528, 185216, -3704, 49152, false, 0), 0);
 		// place 2
-		this.guards.put(addSpawn(GUARD2, 135120, 171856, -3704, 49152, false, 0), 1);
-		this.guards.put(addSpawn(GUARD2, 134768, 171856, -3704, 49152, false, 0), 1);
-		this.guards.put(addSpawn(GUARD1, 134928, 172432, -3704, 49152, false, 0), 1);
+		guards.put(addSpawn(GUARD2, 135120, 171856, -3704, 49152, false, 0), 1);
+		guards.put(addSpawn(GUARD2, 134768, 171856, -3704, 49152, false, 0), 1);
+		guards.put(addSpawn(GUARD1, 134928, 172432, -3704, 49152, false, 0), 1);
 		// place 3
-		this.guards.put(addSpawn(GUARD2, 146880, 151504, -2872, 49152, false, 0), 2);
-		this.guards.put(addSpawn(GUARD2, 146366, 151506, -2872, 49152, false, 0), 2);
-		this.guards.put(addSpawn(GUARD1, 146592, 151888, -2872, 49152, false, 0), 2);
+		guards.put(addSpawn(GUARD2, 146880, 151504, -2872, 49152, false, 0), 2);
+		guards.put(addSpawn(GUARD2, 146366, 151506, -2872, 49152, false, 0), 2);
+		guards.put(addSpawn(GUARD1, 146592, 151888, -2872, 49152, false, 0), 2);
 		// place 4
-		this.guards.put(addSpawn(GUARD2, 155840, 160448, -3352, 0, false, 0), 3);
-		this.guards.put(addSpawn(GUARD2, 155840, 159936, -3352, 0, false, 0), 3);
-		this.guards.put(addSpawn(GUARD1, 155578, 160177, -3352, 0, false, 0), 3);
+		guards.put(addSpawn(GUARD2, 155840, 160448, -3352, 0, false, 0), 3);
+		guards.put(addSpawn(GUARD2, 155840, 159936, -3352, 0, false, 0), 3);
+		guards.put(addSpawn(GUARD1, 155578, 160177, -3352, 0, false, 0), 3);
 
-		for (L2Npc npc : this.guards.keySet())
+		for (L2Npc npc : guards.keySet())
 		{
 			npc.setIsImmobilized(true);
 			if (npc.getNpcId() == GUARD1)
@@ -94,9 +94,9 @@ public class PrisonGuards extends L2AttackableAIScript
 				newGuard.disableCoreAI(true);
 			}
 
-			int place = this.guards.get(npc);
-			this.guards.remove(npc);
-			this.guards.put(newGuard, place);
+			int place = guards.get(npc);
+			guards.remove(npc);
+			guards.put(newGuard, place);
 		}
 		else if (event.equalsIgnoreCase("attackEnd"))
 		{
@@ -127,7 +127,7 @@ public class PrisonGuards extends L2AttackableAIScript
 
 		if (npc.getNpcId() == GUARD2)
 		{
-			if (this.firstAttacked && caster.getFirstEffect(eventTimer) == null)
+			if (firstAttacked && caster.getFirstEffect(eventTimer) == null)
 			{
 				if (caster.getFirstEffect(silence) == null)
 				{
@@ -187,7 +187,7 @@ public class PrisonGuards extends L2AttackableAIScript
 			attacker = player.getSummon(0);
 		}
 
-		this.firstAttacked = true;
+		firstAttacked = true;
 
 		if (attacker.getFirstEffect(eventTimer) == null)
 		{
@@ -217,9 +217,9 @@ public class PrisonGuards extends L2AttackableAIScript
 		}
 		else if (npc.getNpcId() == GUARD1 && Rnd.get(100) < 5)
 		{
-			if (player.getQuestState(qn) != null && player.getQuestState(qn).getInt(GUARDVARS[this.guards.get(npc)]) != 1)
+			if (player.getQuestState(qn) != null && player.getQuestState(qn).getInt(GUARDVARS[guards.get(npc)]) != 1)
 			{
-				player.getQuestState(qn).set(GUARDVARS[this.guards.get(npc)], "1");
+				player.getQuestState(qn).set(GUARDVARS[guards.get(npc)], "1");
 				player.getQuestState(qn).giveItems(STAMP, 1);
 			}
 		}
@@ -230,7 +230,7 @@ public class PrisonGuards extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if (this.guards.containsKey(npc))
+		if (guards.containsKey(npc))
 		{
 			startQuestTimer("Respawn", 20000, npc, null);
 		}

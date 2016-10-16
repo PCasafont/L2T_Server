@@ -52,12 +52,12 @@ public class EventTeleporter implements Runnable
 	@Override
 	public void run()
 	{
-		if (this.playerInstance == null)
+		if (playerInstance == null)
 		{
 			return;
 		}
 
-		EventInstance event = this.playerInstance.getEvent();
+		EventInstance event = playerInstance.getEvent();
 		if (event == null)
 		{
 			return;
@@ -65,7 +65,7 @@ public class EventTeleporter implements Runnable
 
 		try
 		{
-			for (L2Abnormal effect : this.playerInstance.getAllEffects())
+			for (L2Abnormal effect : playerInstance.getAllEffects())
 			{
 				if (effect != null)
 				{
@@ -73,14 +73,14 @@ public class EventTeleporter implements Runnable
 				}
 			}
 
-			L2PetInstance pet = this.playerInstance.getPet();
+			L2PetInstance pet = playerInstance.getPet();
 			if (pet != null)
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (pet.isMountable() || event.isType(EventType.LuckyChests) ||
 						event.isType(EventType.StalkedSalkers) || event.isType(EventType.SimonSays))
 				{
-					pet.unSummon(this.playerInstance);
+					pet.unSummon(playerInstance);
 				}
 				else
 				{
@@ -93,13 +93,13 @@ public class EventTeleporter implements Runnable
 					}
 				}
 			}
-			for (L2SummonInstance summon : this.playerInstance.getSummons())
+			for (L2SummonInstance summon : playerInstance.getSummons())
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (summon.isMountable() || event.isType(EventType.LuckyChests) ||
 						event.isType(EventType.StalkedSalkers) || event.isType(EventType.SimonSays))
 				{
-					summon.unSummon(this.playerInstance);
+					summon.unSummon(playerInstance);
 				}
 				else
 				{
@@ -115,16 +115,16 @@ public class EventTeleporter implements Runnable
 
 			if (event.getConfig().isAllVsAll())
 			{
-				this.playerInstance.leaveParty();
+				playerInstance.leaveParty();
 			}
 
-			for (L2SummonInstance summon : this.playerInstance.getSummons())
+			for (L2SummonInstance summon : playerInstance.getSummons())
 			{
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (event.isType(EventType.LuckyChests) || event.isType(EventType.StalkedSalkers) ||
 						event.isType(EventType.SimonSays))
 				{
-					summon.unSummon(this.playerInstance);
+					summon.unSummon(playerInstance);
 				}
 				else
 				{
@@ -138,23 +138,23 @@ public class EventTeleporter implements Runnable
 				}
 			}
 
-			if (this.playerInstance.isDead())
+			if (playerInstance.isDead())
 			{
-				this.playerInstance.restoreExp(100.0);
-				this.playerInstance.doRevive();
+				playerInstance.restoreExp(100.0);
+				playerInstance.doRevive();
 			}
 
-			if (this.heal)
+			if (heal)
 			{
-				this.playerInstance.setCurrentCp(this.playerInstance.getMaxCp());
-				this.playerInstance.setCurrentHp(this.playerInstance.getMaxHp());
-				this.playerInstance.setCurrentMp(this.playerInstance.getMaxMp());
+				playerInstance.setCurrentCp(playerInstance.getMaxCp());
+				playerInstance.setCurrentHp(playerInstance.getMaxHp());
+				playerInstance.setCurrentMp(playerInstance.getMaxMp());
 			}
 
 			int x = 0, y = 0, z = 0;
-			if (event.isState(EventState.STARTED) && !this.restore)
+			if (event.isState(EventState.STARTED) && !restore)
 			{
-				this.playerInstance.setInstanceId(event.getInstanceId());
+				playerInstance.setInstanceId(event.getInstanceId());
 				if (event.getConfig().spawnsPlayersRandomly())
 				{
 					EventLocation location = event.getConfig().getLocation();
@@ -167,35 +167,35 @@ public class EventTeleporter implements Runnable
 				{
 					float r1 = Rnd.get(1000);
 					int r2 = Rnd.get(100);
-					x = Math.round((float) Math.cos(r1 / 1000 * 2 * Math.PI) * r2 + this.coordinates.getX());
-					y = Math.round((float) Math.sin(r1 / 1000 * 2 * Math.PI) * r2 + this.coordinates.getY());
-					z = GeoData.getInstance().getHeight(x, y, this.coordinates.getZ());
+					x = Math.round((float) Math.cos(r1 / 1000 * 2 * Math.PI) * r2 + coordinates.getX());
+					y = Math.round((float) Math.sin(r1 / 1000 * 2 * Math.PI) * r2 + coordinates.getY());
+					z = GeoData.getInstance().getHeight(x, y, coordinates.getZ());
 				}
 			}
 			else
 			{
-				this.playerInstance.setInstanceId(0);
-				this.playerInstance.setEvent(null);
-				this.playerInstance.returnedFromEvent();
-				if (this.playerInstance.getEventSavedPosition().getX() == 0 &&
-						this.playerInstance.getEventSavedPosition().getY() == 0 &&
-						this.playerInstance.getEventSavedPosition().getZ() == 0)
+				playerInstance.setInstanceId(0);
+				playerInstance.setEvent(null);
+				playerInstance.returnedFromEvent();
+				if (playerInstance.getEventSavedPosition().getX() == 0 &&
+						playerInstance.getEventSavedPosition().getY() == 0 &&
+						playerInstance.getEventSavedPosition().getZ() == 0)
 				{
-					x = this.coordinates.getX();
-					y = this.coordinates.getY();
-					z = GeoData.getInstance().getHeight(this.coordinates.getX(), this.coordinates.getY(), this.coordinates.getZ());
+					x = coordinates.getX();
+					y = coordinates.getY();
+					z = GeoData.getInstance().getHeight(coordinates.getX(), coordinates.getY(), coordinates.getZ());
 				}
 				else
 				{
-					x = this.playerInstance.getEventSavedPosition().getX();
-					y = this.playerInstance.getEventSavedPosition().getY();
-					z = this.playerInstance.getEventSavedPosition().getZ();
+					x = playerInstance.getEventSavedPosition().getX();
+					y = playerInstance.getEventSavedPosition().getY();
+					z = playerInstance.getEventSavedPosition().getZ();
 				}
 
 				// Remove all skills' reuse when the event ends
-				this.playerInstance.removeSkillReuse(true);
+				playerInstance.removeSkillReuse(true);
 			}
-			this.playerInstance.teleToLocation(x, y, z, false);
+			playerInstance.teleToLocation(x, y, z, false);
 		}
 		catch (Exception e)
 		{

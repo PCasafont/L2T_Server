@@ -67,7 +67,7 @@ public class MultiSell implements Reloadable
 	@Override
 	public final boolean reload()
 	{
-		this.entries.clear();
+		entries.clear();
 		load();
 
 		return true;
@@ -102,7 +102,7 @@ public class MultiSell implements Reloadable
 	 */
 	public final void separateAndSend(String listName, L2PcInstance player, L2Npc npc, boolean inventoryOnly)
 	{
-		ListContainer template = this.entries.get(listName);
+		ListContainer template = entries.get(listName);
 		if (template == null)
 		{
 			Log.warning("[MultiSell] can't find list: " + listName + " requested by player: " + player.getName() +
@@ -230,7 +230,7 @@ public class MultiSell implements Reloadable
 			XmlDocument doc = new XmlDocument(f);
 
 			// Already got custom data, skipping default...
-			if (this.entries.containsKey(name))
+			if (entries.containsKey(name))
 			{
 				//Log.log(Level.WARNING, "Already got custom data for Multisell[" + id + "], skipping default...");
 				continue;
@@ -239,8 +239,8 @@ public class MultiSell implements Reloadable
 			try
 			{
 				ListContainer list = parseDocument(doc);
-				list.setListId(this.nextId++);
-				this.entries.put(name, list);
+				list.setListId(nextId++);
+				entries.put(name, list);
 
 				if (name.equals("app_stones"))
 				{
@@ -274,7 +274,7 @@ public class MultiSell implements Reloadable
 			}
 		}
 		verify();
-		Log.info("MultiSell: Loaded " + this.entries.size() + " lists.");
+		Log.info("MultiSell: Loaded " + entries.size() + " lists.");
 	}
 
 	private ListContainer parseDocument(XmlDocument doc)
@@ -364,7 +364,7 @@ public class MultiSell implements Reloadable
 
 	private void verify()
 	{
-		for (ListContainer list : this.entries.values())
+		for (ListContainer list : entries.values())
 		{
 			for (MultiSellEntry ent : list.getEntries())
 			{

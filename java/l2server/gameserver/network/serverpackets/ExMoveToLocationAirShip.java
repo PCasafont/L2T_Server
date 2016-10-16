@@ -24,24 +24,24 @@ public class ExMoveToLocationAirShip extends L2GameServerPacket
 
 	public ExMoveToLocationAirShip(L2Character cha)
 	{
-		this.objId = cha.getObjectId();
-		this.tx = cha.getXdestination();
-		this.ty = cha.getYdestination();
-		this.tz = cha.getZdestination();
-		this.x = cha.getX();
-		this.y = cha.getY();
-		this.z = cha.getZ();
+		objId = cha.getObjectId();
+		tx = cha.getXdestination();
+		ty = cha.getYdestination();
+		tz = cha.getZdestination();
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objId);
-		writeD(this.tx);
-		writeD(this.ty);
-		writeD(this.tz);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(objId);
+		writeD(tx);
+		writeD(ty);
+		writeD(tz);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

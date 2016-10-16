@@ -62,35 +62,35 @@ public class Q10329_BackupSeekers extends Quest
 	public Q10329_BackupSeekers(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.kakai);
-		addTalkId(this.kakai);
-		addTalkId(this.atran);
+		addStartNpc(kakai);
+		addTalkId(kakai);
+		addTalkId(atran);
 
-		addEventId(this.guideId, QuestEventType.ON_ARRIVED);
-		addEventId(this.guideId, QuestEventType.ON_PLAYER_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_ARRIVED);
+		addEventId(guideId, QuestEventType.ON_PLAYER_ARRIVED);
 
-		this.guideRoute1.add(new L2NpcWalkerNode(-117996, 255845, -1320, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-117753, 255781, -1304, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-117602, 255742, -1296, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-116774, 255396, -1416, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-115702, 254779, -1512, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-114683, 254738, -1528, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-114567, 253462, -1528, 0, "", true));
-		this.guideRoute1.add(new L2NpcWalkerNode(-114367, 252764, -1544, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-117996, 255845, -1320, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-117753, 255781, -1304, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-117602, 255742, -1296, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-116774, 255396, -1416, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-115702, 254779, -1512, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-114683, 254738, -1528, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-114567, 253462, -1528, 0, "", true));
+		guideRoute1.add(new L2NpcWalkerNode(-114367, 252764, -1544, 0, "", true));
 
-		this.guideRoute2.add(new L2NpcWalkerNode(-114074, 252514, -1560, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-114280, 252371, -1560, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-114395, 250846, -1760, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-113156, 250431, -1912, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-112726, 250467, -1984, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-112442, 250381, -2032, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-112063, 249669, -2248, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-110915, 249131, -2512, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-110040, 248279, -2704, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-109876, 248027, -2752, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-109713, 246992, -2960, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-109216, 247002, -3080, 0, "", true));
-		this.guideRoute2.add(new L2NpcWalkerNode(-107937, 248639, -3224, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-114074, 252514, -1560, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-114280, 252371, -1560, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-114395, 250846, -1760, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-113156, 250431, -1912, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-112726, 250467, -1984, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-112442, 250381, -2032, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-112063, 249669, -2248, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-110915, 249131, -2512, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-110040, 248279, -2704, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-109876, 248027, -2752, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-109713, 246992, -2960, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-109216, 247002, -3080, 0, "", true));
+		guideRoute2.add(new L2NpcWalkerNode(-107937, 248639, -3224, 0, "", true));
 	}
 
 	@Override
@@ -104,19 +104,19 @@ public class Q10329_BackupSeekers extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.kakai && event.equalsIgnoreCase("30565-03.htm"))
+		if (npc.getNpcId() == kakai && event.equalsIgnoreCase("30565-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(this.guideId, -117996, 255845, -1320, 0, false, 600000);
+			final L2Npc guide = addSpawn(guideId, -117996, 255845, -1320, 0, false, 600000);
 			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
 			guide.setAI(guideAI);
-			guideAI.initializeRoute(this.guideRoute1, player);
+			guideAI.initializeRoute(guideRoute1, player);
 			guideAI.setWaiting(true);
 
-			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), this.guideFirstChatId);
+			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
 
@@ -173,7 +173,7 @@ public class Q10329_BackupSeekers extends Quest
 				}
 			}, 60000);
 		}
-		else if (npc.getNpcId() == this.atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(906, 1);
@@ -187,18 +187,18 @@ public class Q10329_BackupSeekers extends Quest
 			// Main quests state
 			player.setGlobalQuestFlag(GlobalQuest.STARTING, 10);
 		}
-		else if (npc.getNpcId() == this.apprentice && event.equalsIgnoreCase("MountKookaru"))
+		else if (npc.getNpcId() == apprentice && event.equalsIgnoreCase("MountKookaru"))
 		{
 			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
 			st.set("secondRoute", "1");
 
-			final L2Npc guide = addSpawn(this.guideId, -114074, 252514, -1560, 0, false, 600000);
+			final L2Npc guide = addSpawn(guideId, -114074, 252514, -1560, 0, false, 600000);
 			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
 			guide.setAI(guideAI);
-			guideAI.initializeRoute(this.guideRoute2, player);
+			guideAI.initializeRoute(guideRoute2, player);
 			guideAI.setWaiting(true);
 
-			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), this.guideFirstChatId);
+			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
 
@@ -300,7 +300,7 @@ public class Q10329_BackupSeekers extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.kakai)
+		if (npc.getNpcId() == kakai)
 		{
 			switch (st.getState())
 			{
@@ -322,7 +322,7 @@ public class Q10329_BackupSeekers extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.atran && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == atran && st.getInt("cond") == 1)
 		{
 			htmltext = "33448-01.htm";
 		}
@@ -332,13 +332,13 @@ public class Q10329_BackupSeekers extends Quest
 	@Override
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
-		List<L2NpcWalkerNode> guideRoute = this.guideRoute1;
-		int guideLastChatId = this.guideLastChatId1;
+		List<L2NpcWalkerNode> guideRoute = guideRoute1;
+		int guideLastChatId = guideLastChatId1;
 
 		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
 		{
-			guideRoute = this.guideRoute2;
-			guideLastChatId = this.guideLastChatId2;
+			guideRoute = guideRoute2;
+			guideLastChatId = guideLastChatId2;
 		}
 
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
@@ -353,7 +353,7 @@ public class Q10329_BackupSeekers extends Quest
 			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
-				chatId = this.guideWaitChatId;
+				chatId = guideWaitChatId;
 			}
 			NpcSay ns =
 					new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
@@ -372,7 +372,7 @@ public class Q10329_BackupSeekers extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		List<L2NpcWalkerNode> guideRoute = this.guideRoute1;
+		List<L2NpcWalkerNode> guideRoute = guideRoute1;
 
 		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null)
 		{
@@ -381,7 +381,7 @@ public class Q10329_BackupSeekers extends Quest
 
 		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
 		{
-			guideRoute = this.guideRoute2;
+			guideRoute = guideRoute2;
 		}
 
 		if (guideAI.getCurrentPos() == guideRoute.size() - 1)

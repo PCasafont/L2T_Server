@@ -34,9 +34,9 @@ public class EnchantResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.result);
-		writeD(this.crystal);
-		writeQ(this.count);
-		writeD(this.enchantLevel);
+		writeD(result);
+		writeD(crystal);
+		writeQ(count);
+		writeD(enchantLevel);
 	}
 }

@@ -39,7 +39,7 @@ public class ChatHandler
 	 */
 	private ChatHandler()
 	{
-		this.datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class ChatHandler
 			{
 				Log.fine("Adding handler for chat type " + id);
 			}
-			this.datatable.put(id, handler);
+			datatable.put(id, handler);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class ChatHandler
 	 */
 	public IChatHandler getChatHandler(int chatType)
 	{
-		return this.datatable.get(chatType);
+		return datatable.get(chatType);
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class ChatHandler
 	 */
 	public int size()
 	{
-		return this.datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")

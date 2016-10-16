@@ -27,8 +27,8 @@ public class ExShuttleGetOff extends L2GameServerPacket
 
 	public ExShuttleGetOff(L2PcInstance player, L2Character shuttle, int x, int y, int z)
 	{
-		this.playerId = player.getObjectId();
-		this.shuttleId = shuttle.getObjectId();
+		playerId = player.getObjectId();
+		shuttleId = shuttle.getObjectId();
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -38,10 +38,10 @@ public class ExShuttleGetOff extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.playerId);
-		writeD(this.shuttleId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(playerId);
+		writeD(shuttleId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

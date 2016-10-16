@@ -25,12 +25,12 @@ public class ExShowUsmPacket extends L2GameServerPacket
 
 	public ExShowUsmPacket(int id)
 	{
-		this.movieId = id;
+		movieId = id;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.movieId);
+		writeD(movieId);
 	}
 }

@@ -66,10 +66,10 @@ public final class EquipUpdate extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		int bodypart = 0;
-		writeD(this.item.getObjectId());
+		writeD(item.getObjectId());
 		writeD(0x00); // ???
-		writeH(this.change);
-		switch (this.item.getItem().getBodyPart())
+		writeH(change);
+		switch (item.getItem().getBodyPart())
 		{
 			case L2Item.SLOT_L_EAR:
 				bodypart = 0x01;

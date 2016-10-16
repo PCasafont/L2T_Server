@@ -42,7 +42,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	private ForumsBBSManager()
 	{
-		this.table = new ArrayList<>();
+		table = new ArrayList<>();
 
 		Connection con = null;
 		try
@@ -74,12 +74,12 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public void initRoot()
 	{
-		List<Forum> copy = new ArrayList<>(this.table);
+		List<Forum> copy = new ArrayList<>(table);
 		for (Forum f : copy)
 		{
 			f.vload();
 		}
-		Log.info("Loaded " + this.table.size() + " forums. Last forum id used: " + this.lastid);
+		Log.info("Loaded " + table.size() + " forums. Last forum id used: " + lastid);
 	}
 
 	/**
@@ -94,11 +94,11 @@ public class ForumsBBSManager extends BaseBBSManager
 			return;
 		}
 
-		this.table.add(ff);
+		table.add(ff);
 
 		if (ff.getID() > lastid)
 		{
-			this.lastid = ff.getID();
+			lastid = ff.getID();
 		}
 	}
 
@@ -115,7 +115,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByName(String name)
 	{
-		for (Forum f : this.table)
+		for (Forum f : table)
 		{
 			if (f.getName().equals(name))
 			{
@@ -160,7 +160,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByID(int idf)
 	{
-		for (Forum f : this.table)
+		for (Forum f : table)
 		{
 			if (f.getID() == idf)
 			{

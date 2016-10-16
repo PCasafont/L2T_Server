@@ -43,16 +43,16 @@ public class Point3D implements Serializable
 
 	public Point3D(int pX, int pY, int pZ)
 	{
-		this.x = pX;
-		this.y = pY;
-		this.z = pZ;
+		x = pX;
+		y = pY;
+		z = pZ;
 	}
 
 	public Point3D(int pX, int pY)
 	{
-		this.x = pX;
-		this.y = pY;
-		this.z = 0;
+		x = pX;
+		y = pY;
+		z = 0;
 	}
 
 	/**
@@ -62,9 +62,9 @@ public class Point3D implements Serializable
 	{
 		synchronized (worldPosition)
 		{
-			this.x = worldPosition.x;
-			this.y = worldPosition.y;
-			this.z = worldPosition.z;
+			x = worldPosition.x;
+			y = worldPosition.y;
+			z = worldPosition.z;
 		}
 	}
 
@@ -72,22 +72,22 @@ public class Point3D implements Serializable
 	{
 		synchronized (point)
 		{
-			this.x = point.x;
-			this.y = point.y;
-			this.z = point.z;
+			x = point.x;
+			y = point.y;
+			z = point.z;
 		}
 	}
 
 	@Override
 	public String toString()
 	{
-		return "(" + this.x + ", " + this.y + ", " + this.z + ")";
+		return "(" + x + ", " + y + ", " + z + ")";
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return this.x ^ this.y ^ this.z;
+		return x ^ y ^ z;
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class Point3D implements Serializable
 			boolean ret;
 			synchronized (point3D)
 			{
-				ret = point3D.x == this.x && point3D.y == this.y && point3D.z == this.z;
+				ret = point3D.x == x && point3D.y == y && point3D.z == z;
 			}
 			return ret;
 		}
@@ -108,7 +108,7 @@ public class Point3D implements Serializable
 
 	public synchronized boolean equals(int pX, int pY, int pZ)
 	{
-		return this.x == pX && this.y == pY && this.z == pZ;
+		return x == pX && y == pY && z == pZ;
 	}
 
 	public synchronized long distanceSquaredTo(Point3D point)
@@ -116,8 +116,8 @@ public class Point3D implements Serializable
 		long dx, dy;
 		synchronized (point)
 		{
-			dx = this.x - point.x;
-			dy = this.y - point.y;
+			dx = x - point.x;
+			dy = y - point.y;
 		}
 		return dx * dx + dy * dy;
 	}
@@ -143,38 +143,38 @@ public class Point3D implements Serializable
 
 	public int getX()
 	{
-		return this.x;
+		return x;
 	}
 
 	public synchronized void setX(int pX)
 	{
-		this.x = pX;
+		x = pX;
 	}
 
 	public int getY()
 	{
-		return this.y;
+		return y;
 	}
 
 	public synchronized void setY(int pY)
 	{
-		this.y = pY;
+		y = pY;
 	}
 
 	public int getZ()
 	{
-		return this.z;
+		return z;
 	}
 
 	public synchronized void setZ(int pZ)
 	{
-		this.z = pZ;
+		z = pZ;
 	}
 
 	public synchronized void setXYZ(int pX, int pY, int pZ)
 	{
-		this.x = pX;
-		this.y = pY;
-		this.z = pZ;
+		x = pX;
+		y = pY;
+		z = pZ;
 	}
 }

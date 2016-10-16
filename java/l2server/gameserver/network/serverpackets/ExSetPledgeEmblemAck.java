@@ -32,6 +32,6 @@ public class ExSetPledgeEmblemAck extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.ack);
+		writeD(ack);
 	}
 }

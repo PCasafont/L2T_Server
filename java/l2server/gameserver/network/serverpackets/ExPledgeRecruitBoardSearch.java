@@ -35,13 +35,13 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 		this.page = page;
 		List<ClanRecruitData> list =
 				ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
-		this.pageCount = (list.size() - 1) / 12 + 1;
+		pageCount = (list.size() - 1) / 12 + 1;
 
-		this.data = new ArrayList<>();
+		data = new ArrayList<>();
 		int index = (page - 1) * 12;
 		while (index < page * 12 && index < list.size())
 		{
-			this.data.add(list.get(index));
+			data.add(list.get(index));
 			index++;
 		}
 	}
@@ -49,9 +49,9 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.page);
-		writeD(this.pageCount);
-		writeD(this.data.size());
+		writeD(page);
+		writeD(pageCount);
+		writeD(data.size());
 
 		for (ClanRecruitData data : this.data)
 		{

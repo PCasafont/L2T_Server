@@ -38,6 +38,6 @@ public class ExAskJoinMPCC extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(this.requestorName); // name of CCLeader
+		writeS(requestorName); // name of CCLeader
 	}
 }

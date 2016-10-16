@@ -37,9 +37,9 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	public Q10361_RolesOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(this.lakcis);
-		addTalkId(this.lakcis);
-		addTalkId(this.chesha);
+		addStartNpc(lakcis);
+		addTalkId(lakcis);
+		addTalkId(chesha);
 	}
 
 	@Override
@@ -53,13 +53,13 @@ public class Q10361_RolesOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.lakcis && event.equalsIgnoreCase("32977-03.htm"))
+		if (npc.getNpcId() == lakcis && event.equalsIgnoreCase("32977-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == this.chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(22, 1);
@@ -85,7 +85,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == this.lakcis)
+		if (npc.getNpcId() == lakcis)
 		{
 			switch (st.getState())
 			{
@@ -107,7 +107,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == this.chesha && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == chesha && st.getInt("cond") == 1)
 		{
 			htmltext = "33449-01.htm";
 		}

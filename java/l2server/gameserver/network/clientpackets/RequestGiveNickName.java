@@ -38,8 +38,8 @@ public class RequestGiveNickName extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.target = readS();
-		this.title = readS();
+		target = readS();
+		title = readS();
 	}
 
 	@Override
@@ -52,9 +52,9 @@ public class RequestGiveNickName extends L2GameClientPacket
 		}
 
 		// Noblesse can bestow a title to themselves
-		if (activeChar.isNoble() && this.target.matches(activeChar.getName()))
+		if (activeChar.isNoble() && target.matches(activeChar.getName()))
 		{
-			activeChar.setTitle(this.title);
+			activeChar.setTitle(title);
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TITLE_CHANGED);
 			activeChar.sendPacket(sm);
 			activeChar.broadcastTitleInfo();
@@ -70,14 +70,14 @@ public class RequestGiveNickName extends L2GameClientPacket
 				return;
 			}
 
-			L2ClanMember member1 = activeChar.getClan().getClanMember(this.target);
+			L2ClanMember member1 = activeChar.getClan().getClanMember(target);
 			if (member1 != null)
 			{
 				L2PcInstance member = member1.getPlayerInstance();
 				if (member != null)
 				{
 					//is target from the same clan?
-					member.setTitle(this.title);
+					member.setTitle(title);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TITLE_CHANGED);
 					member.sendPacket(sm);
 					member.broadcastTitleInfo();

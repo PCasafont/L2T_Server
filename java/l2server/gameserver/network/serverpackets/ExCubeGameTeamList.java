@@ -66,17 +66,17 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.roomNumber);
+		writeD(roomNumber);
 		writeD(0xffffffff);
 
-		writeD(this.bluePlayers.size());
-		for (L2PcInstance player : this.bluePlayers)
+		writeD(bluePlayers.size());
+		for (L2PcInstance player : bluePlayers)
 		{
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}
-		writeD(this.redPlayers.size());
-		for (L2PcInstance player : this.redPlayers)
+		writeD(redPlayers.size());
+		for (L2PcInstance player : redPlayers)
 		{
 			writeD(player.getObjectId());
 			writeS(player.getName());

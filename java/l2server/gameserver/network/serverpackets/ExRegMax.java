@@ -35,8 +35,8 @@ public class ExRegMax extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(1);
-		writeD(this.count);
-		writeD(this.time);
-		writeF(this.max);
+		writeD(count);
+		writeD(time);
+		writeF(max);
 	}
 }

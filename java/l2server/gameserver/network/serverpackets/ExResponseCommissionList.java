@@ -53,14 +53,14 @@ public class ExResponseCommissionList extends L2GameServerPacket
 		this.category = category;
 		this.type = type;
 		this.grade = grade;
-		this.search = searchName;
-		this.yourAuction = false;
+		search = searchName;
+		yourAuction = false;
 	}
 
 	public ExResponseCommissionList(L2PcInstance player)
 	{
 		this.player = player;
-		this.yourAuction = true;
+		yourAuction = true;
 	}
 
 	@Override

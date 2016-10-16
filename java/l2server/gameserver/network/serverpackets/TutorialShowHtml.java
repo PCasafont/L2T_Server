@@ -32,7 +32,7 @@ public final class TutorialShowHtml extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.type);
-		writeS(this.html);
+		writeD(type);
+		writeS(html);
 	}
 }

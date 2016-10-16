@@ -49,8 +49,8 @@ public class MyTargetSelected extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.objectId);
-		writeH(this.color);
+		writeD(objectId);
+		writeH(color);
 		writeD(0x00);
 	}
 }

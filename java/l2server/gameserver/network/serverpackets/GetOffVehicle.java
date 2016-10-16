@@ -39,10 +39,10 @@ public class GetOffVehicle extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.charObjId);
-		writeD(this.boatObjId);
-		writeD(this.x);
-		writeD(this.y);
-		writeD(this.z);
+		writeD(charObjId);
+		writeD(boatObjId);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

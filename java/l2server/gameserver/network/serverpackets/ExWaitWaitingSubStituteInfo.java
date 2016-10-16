@@ -30,7 +30,7 @@ public class ExWaitWaitingSubStituteInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.turnOn ? 0x01 : 0x00);
+		writeD(turnOn ? 0x01 : 0x00);
 		writeD(0x00); // TODO: Unknown
 	}
 }

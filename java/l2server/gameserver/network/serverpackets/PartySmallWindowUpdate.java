@@ -35,21 +35,21 @@ public final class PartySmallWindowUpdate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.member.getObjectId());
+		writeD(member.getObjectId());
 		//writeS(this.member.getName());
 		writeH(0x03ff); // ???
 
-		writeD((int) this.member.getCurrentCp()); //c4
-		writeD(this.member.getMaxCp()); //c4
+		writeD((int) member.getCurrentCp()); //c4
+		writeD(member.getMaxCp()); //c4
 
-		writeD((int) this.member.getCurrentHp());
-		writeD(this.member.getMaxVisibleHp());
-		writeD((int) this.member.getCurrentMp());
-		writeD(this.member.getMaxMp());
-		writeC(this.member.getLevel());
-		writeH(this.member.getCurrentClass().getId());
-		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(this.member.getObjectId()) ? 0x01 :
+		writeD((int) member.getCurrentHp());
+		writeD(member.getMaxVisibleHp());
+		writeD((int) member.getCurrentMp());
+		writeD(member.getMaxMp());
+		writeC(member.getLevel());
+		writeH(member.getCurrentClass().getId());
+		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 :
 				0x00); // Party Searching
-		writeD(this.member.getVitalityPoints());
+		writeD(member.getVitalityPoints());
 	}
 }

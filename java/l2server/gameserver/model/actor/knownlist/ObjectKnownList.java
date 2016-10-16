@@ -202,7 +202,7 @@ public class ObjectKnownList
 
 	public L2Object getActiveObject()
 	{
-		return this.activeObject;
+		return activeObject;
 	}
 
 	public int getDistanceToForgetObject(L2Object object)
@@ -220,10 +220,10 @@ public class ObjectKnownList
 	 */
 	public final Map<Integer, L2Object> getKnownObjects()
 	{
-		if (this.knownObjects == null)
+		if (knownObjects == null)
 		{
-			this.knownObjects = new ConcurrentHashMap<>();
+			knownObjects = new ConcurrentHashMap<>();
 		}
-		return this.knownObjects;
+		return knownObjects;
 	}
 }

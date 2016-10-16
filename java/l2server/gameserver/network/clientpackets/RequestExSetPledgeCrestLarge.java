@@ -48,14 +48,14 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		this.partId = readD(); // sub id?
+		partId = readD(); // sub id?
 		@SuppressWarnings("unused") int unk = readH(); // ???
 		//System.out.println("i " + subId);
 		@SuppressWarnings("unused") int unk2 = readH(); // ???
 		//System.out.println("s " + unk);
-		this.length = readD();
-		this.data = new byte[this.length];
-		readB(this.data);
+		length = readD();
+		data = new byte[length];
+		readB(data);
 	}
 
 	/* (non-Javadoc)
@@ -76,12 +76,12 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			return;
 		}
 
-		if (this.length <= 0)
+		if (length <= 0)
 		{
 			activeChar.sendMessage("File transfer error.");
 			return;
 		}
-		if (this.length > 15000)
+		if (length > 15000)
 		{
 			activeChar.sendMessage("The insignia file size is greater than 15000 bytes.");
 			return;
@@ -91,7 +91,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 		int largeCrestId = -1;
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
 		{
-			if (this.length == 0 || this.data == null)
+			if (length == 0 || data == null)
 			{
 				if (clan.getLargeCrestId() == 0)
 				{
@@ -111,7 +111,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 					return;
 				}
 
-				if (this.partId == 0)
+				if (partId == 0)
 				{
 					largeCrestId = IdFactory.getInstance().getNextId();
 					clan.setTempLargeCrestId(largeCrestId);
@@ -121,14 +121,14 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 					largeCrestId = clan.getTempLargeCrestId();
 				}
 
-				if (!CrestCache.getInstance().savePledgeCrestLarge(largeCrestId, this.partId, this.data))
+				if (!CrestCache.getInstance().savePledgeCrestLarge(largeCrestId, partId, data))
 				{
 					Log.log(Level.INFO,
 							"Error saving large crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");
 					return;
 				}
 
-				if (this.partId == 4)
+				if (partId == 4)
 				{
 					activeChar.sendPacket(
 							SystemMessage.getSystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
@@ -139,7 +139,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 				}
 				else
 				{
-					activeChar.sendPacket(new ExSetPledgeEmblemAck(this.partId));
+					activeChar.sendPacket(new ExSetPledgeEmblemAck(partId));
 				}
 			}
 		}

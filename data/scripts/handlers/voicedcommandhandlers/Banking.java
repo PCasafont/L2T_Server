@@ -85,6 +85,6 @@ public class Banking implements IVoicedCommandHandler
 	@Override
 	public String[] getVoicedCommandList()
 	{
-		return this.voicedCommands;
+		return voicedCommands;
 	}
 }

@@ -21,7 +21,7 @@ public final class TutorialShowQuestionMark extends L2GameServerPacket
 
 	public TutorialShowQuestionMark(int blink)
 	{
-		this.markId = blink;
+		markId = blink;
 	}
 
 	/* (non-Javadoc)
@@ -30,6 +30,6 @@ public final class TutorialShowQuestionMark extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.markId);
+		writeD(markId);
 	}
 }

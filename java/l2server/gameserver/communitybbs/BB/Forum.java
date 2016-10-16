@@ -63,10 +63,10 @@ public class Forum
 	 */
 	public Forum(int Forumid, Forum FParent)
 	{
-		this.forumId = Forumid;
-		this.fParent = FParent;
-		this.children = new ArrayList<>();
-		this.topic = new HashMap<>();
+		forumId = Forumid;
+		fParent = FParent;
+		children = new ArrayList<>();
+		topic = new HashMap<>();
 
 		/*load();
 		getChildren();	*/
@@ -80,19 +80,19 @@ public class Forum
 	 */
 	public Forum(String name, Forum parent, int type, int perm, int OwnerID)
 	{
-		this.forumName = name;
-		this.forumId = ForumsBBSManager.getInstance().getANewID();
+		forumName = name;
+		forumId = ForumsBBSManager.getInstance().getANewID();
 		//_ForumParent = parent.getID();
-		this.forumType = type;
-		this.forumPost = 0;
-		this.forumPerm = perm;
-		this.fParent = parent;
-		this.ownerID = OwnerID;
-		this.children = new ArrayList<>();
-		this.topic = new HashMap<>();
+		forumType = type;
+		forumPost = 0;
+		forumPerm = perm;
+		fParent = parent;
+		ownerID = OwnerID;
+		children = new ArrayList<>();
+		topic = new HashMap<>();
 		parent.children.add(this);
 		ForumsBBSManager.getInstance().addForum(this);
-		this.loaded = true;
+		loaded = true;
 	}
 
 	/**
@@ -105,24 +105,24 @@ public class Forum
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM forums WHERE forum_id=?");
-			statement.setInt(1, this.forumId);
+			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
 			if (result.next())
 			{
-				this.forumName = result.getString("forum_name");
+				forumName = result.getString("forum_name");
 				//_ForumParent = result.getInt("forum_parent");
-				this.forumPost = result.getInt("forum_post");
-				this.forumType = result.getInt("forum_type");
-				this.forumPerm = result.getInt("forum_perm");
-				this.ownerID = result.getInt("forum_owner_id");
+				forumPost = result.getInt("forum_post");
+				forumType = result.getInt("forum_type");
+				forumPerm = result.getInt("forum_perm");
+				ownerID = result.getInt("forum_owner_id");
 			}
 			result.close();
 			statement.close();
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, "Data error on Forum " + this.forumId + " : " + e.getMessage(), e);
+			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
 		}
 		finally
 		{
@@ -133,7 +133,7 @@ public class Forum
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement =
 					con.prepareStatement("SELECT * FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC");
-			statement.setInt(1, this.forumId);
+			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
 			while (result.next())
@@ -142,7 +142,7 @@ public class Forum
 						result.getInt("topic_forum_id"), result.getString("topic_name"), result.getLong("topic_date"),
 						result.getString("topic_ownername"), result.getInt("topic_ownerid"),
 						result.getInt("topic_type"), result.getInt("topic_reply"));
-				this.topic.put(t.getID(), t);
+				topic.put(t.getID(), t);
 				if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
 				{
 					TopicBBSManager.getInstance().setMaxID(t.getID(), this);
@@ -153,7 +153,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, "Data error on Forum " + this.forumId + " : " + e.getMessage(), e);
+			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
 		}
 		finally
 		{
@@ -171,13 +171,13 @@ public class Forum
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_parent=?");
-			statement.setInt(1, this.forumId);
+			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
 			while (result.next())
 			{
 				Forum f = new Forum(result.getInt("forum_id"), this);
-				this.children.add(f);
+				children.add(f);
 				ForumsBBSManager.getInstance().addForum(f);
 			}
 			result.close();
@@ -196,19 +196,19 @@ public class Forum
 	public int getTopicSize()
 	{
 		vload();
-		return this.topic.size();
+		return topic.size();
 	}
 
 	public Topic getTopic(int j)
 	{
 		vload();
-		return this.topic.get(j);
+		return topic.get(j);
 	}
 
 	public void addTopic(Topic t)
 	{
 		vload();
-		this.topic.put(t.getID(), t);
+		topic.put(t.getID(), t);
 	}
 
 	/**
@@ -216,19 +216,19 @@ public class Forum
 	 */
 	public int getID()
 	{
-		return this.forumId;
+		return forumId;
 	}
 
 	public String getName()
 	{
 		vload();
-		return this.forumName;
+		return forumName;
 	}
 
 	public int getType()
 	{
 		vload();
-		return this.forumType;
+		return forumType;
 	}
 
 	/**
@@ -238,7 +238,7 @@ public class Forum
 	public Forum getChildByName(String name)
 	{
 		vload();
-		for (Forum f : this.children)
+		for (Forum f : children)
 		{
 			if (f.getName().equals(name))
 			{
@@ -253,7 +253,7 @@ public class Forum
 	 */
 	public void rmTopicByID(int id)
 	{
-		this.topic.remove(id);
+		topic.remove(id);
 	}
 
 	/**
@@ -267,13 +267,13 @@ public class Forum
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO forums (forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id) VALUES (?,?,?,?,?,?,?)");
-			statement.setInt(1, this.forumId);
-			statement.setString(2, this.forumName);
-			statement.setInt(3, this.fParent.getID());
-			statement.setInt(4, this.forumPost);
-			statement.setInt(5, this.forumType);
-			statement.setInt(6, this.forumPerm);
-			statement.setInt(7, this.ownerID);
+			statement.setInt(1, forumId);
+			statement.setString(2, forumName);
+			statement.setInt(3, fParent.getID());
+			statement.setInt(4, forumPost);
+			statement.setInt(5, forumType);
+			statement.setInt(6, forumPerm);
+			statement.setInt(7, ownerID);
 			statement.execute();
 			statement.close();
 		}
@@ -292,11 +292,11 @@ public class Forum
 	 */
 	public void vload()
 	{
-		if (!this.loaded)
+		if (!loaded)
 		{
 			load();
 			getChildren();
-			this.loaded = true;
+			loaded = true;
 		}
 	}
 }

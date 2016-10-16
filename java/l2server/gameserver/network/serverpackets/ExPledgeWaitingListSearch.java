@@ -29,15 +29,15 @@ public class ExPledgeWaitingListSearch extends L2GameServerPacket
 
 	public ExPledgeWaitingListSearch(int minLevel, int maxLevel, int role, int sortBy, boolean desc, String name)
 	{
-		this.users = ClanRecruitManager.getInstance().getWaitingUsers(minLevel, maxLevel, role, sortBy, desc, name);
+		users = ClanRecruitManager.getInstance().getWaitingUsers(minLevel, maxLevel, role, sortBy, desc, name);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.users.size());
+		writeD(users.size());
 
-		for (ClanRecruitWaitingUser user : this.users)
+		for (ClanRecruitWaitingUser user : users)
 		{
 			writeD(user.id);
 			writeS(user.name);

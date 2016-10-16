@@ -31,8 +31,8 @@ public class ExGetBossRecord extends L2GameServerPacket
 	public ExGetBossRecord(int ranking, int totalScore, Map<Integer, Integer> list)
 	{
 		this.ranking = ranking;
-		this.totalPoints = totalScore;
-		this.bossRecordInfo = list;
+		totalPoints = totalScore;
+		bossRecordInfo = list;
 	}
 
 	/**
@@ -40,9 +40,9 @@ public class ExGetBossRecord extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(this.ranking);
-		writeD(this.totalPoints);
-		if (this.bossRecordInfo == null)
+		writeD(ranking);
+		writeD(totalPoints);
+		if (bossRecordInfo == null)
 		{
 			writeD(0x00);
 			writeD(0x00);
@@ -51,11 +51,11 @@ public class ExGetBossRecord extends L2GameServerPacket
 		}
 		else
 		{
-			writeD(this.bossRecordInfo.size()); //list size
-			for (int bossId : this.bossRecordInfo.keySet())
+			writeD(bossRecordInfo.size()); //list size
+			for (int bossId : bossRecordInfo.keySet())
 			{
 				writeD(bossId);
-				writeD(this.bossRecordInfo.get(bossId));
+				writeD(bossRecordInfo.get(bossId));
 				writeD(0x00); //??
 			}
 		}
