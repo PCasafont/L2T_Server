@@ -130,9 +130,9 @@ public class EffectSignet extends L2Effect
 
 		if (signetActor)
 		{
-			//_actor.broadcastPacket(new TargetSelected(this.actor.getObjectId(), this.actor.getObjectId(), this.actor.getX(), this.actor.getY(), this.actor.getZ()));
+			//_actor.broadcastPacket(new TargetSelected(actor.getObjectId(), actor.getObjectId(), actor.getX(), actor.getY(), actor.getZ()));
 			actor.broadcastPacket(new MagicSkillUse(actor, skill.getId(), skill.getLevelHash(), 0, 0));
-			//_actor.broadcastPacket(new MagicSkillLaunched(this.actor, this.skill.getId(), this.skill.getLevel(), targets.toArray(new L2Character[targets.size()])));
+			//_actor.broadcastPacket(new MagicSkillLaunched(actor, skill.getId(), skill.getLevel(), targets.toArray(new L2Character[targets.size()])));
 		}
 
 		if (!targets.isEmpty())

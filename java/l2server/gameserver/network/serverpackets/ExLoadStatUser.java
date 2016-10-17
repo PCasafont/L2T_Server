@@ -44,7 +44,7 @@ public class ExLoadStatUser extends L2GameServerPacket
 		for (MuseumStatistic statistic : MuseumStatistic.values())
 		{
 			boolean isClanStatistic = statistic.toString().toLowerCase().contains("clan");
-			int identity = (isClanStatistic && this.player.getClan() != null) ? this.player.getClanId() : this.player.getObjectId();
+			int identity = (isClanStatistic && player.getClan() != null) ? player.getClanId() : player.getObjectId();
 			long score1 = MuseumManager.getInstance().getStatistic(identity, statistic, true);
 			long score2 = MuseumManager.getInstance().getStatistic(identity, statistic, false);
 

@@ -73,7 +73,7 @@ public class L2ARogueAI extends L2APlayerAI
 					continue;
 				}
 
-				//if (this.player.useMagic(skill, true, false))
+				//if (player.useMagic(skill, true, false))
 				//	break;
 				player.useMagic(skill, true, false);
 			}

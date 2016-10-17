@@ -92,7 +92,7 @@ public class StackIDFactory extends IdFactory
 			{
 				PreparedStatement ps = con.prepareStatement(check);
 				ps.setInt(1, tempOID);
-				//ps.setInt(1, this.curOID);
+				//ps.setInt(1, curOID);
 				ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();
 				if (rs.next())
@@ -106,7 +106,7 @@ public class StackIDFactory extends IdFactory
 			}
 		}
 
-		//int hole = id - this.curOID;
+		//int hole = id - curOID;
 		int hole = id - tempOID;
 		if (hole > N - idx)
 		{
@@ -114,7 +114,7 @@ public class StackIDFactory extends IdFactory
 		}
 		for (int i = 1; i <= hole; i++)
 		{
-			//log.info("Free ID added " + (this.tempOID));
+			//log.info("Free ID added " + (tempOID));
 			freeOIDStack.push(tempOID);
 			tempOID++;
 			//_curOID++;

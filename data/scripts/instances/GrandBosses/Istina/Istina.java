@@ -50,7 +50,7 @@ public class Istina extends L2AttackableAIScript
 	private static final int sealingEnergy = 19036;
 	private static final int energyDevice = 17608;
 	private static final int istinasCreationId = 23125;
-	//private static final int	this.failedCreation		= 23037;
+	//private static final int	failedCreation		= 23037;
 	private static final int taklacanId = 23030;
 	private static final int torumbaId = 23031;
 	private static final int dopagen = 23032;

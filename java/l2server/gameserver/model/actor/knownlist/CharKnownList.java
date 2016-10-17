@@ -60,7 +60,7 @@ public class CharKnownList extends ObjectKnownList
 	}
 
 	/**
-	 * Return True if the L2PcInstance is in this.knownPlayer of the L2Character.<BR><BR>
+	 * Return True if the L2PcInstance is in knownPlayer of the L2Character.<BR><BR>
 	 *
 	 * @param player The L2PcInstance to search in _knownPlayer
 	 */
@@ -70,7 +70,7 @@ public class CharKnownList extends ObjectKnownList
 	}
 
 	/**
-	 * Remove all L2Object from this.knownObjects and this.knownPlayer of the L2Character then cancel Attack or Cast and notify AI.
+	 * Remove all L2Object from knownObjects and knownPlayer of the L2Character then cancel Attack or Cast and notify AI.
 	 */
 	@Override
 	public final void removeAllKnownObjects()
@@ -80,7 +80,7 @@ public class CharKnownList extends ObjectKnownList
 		getKnownRelations().clear();
 		getKnownSummons().clear();
 
-		// Set this.target of the L2Character to null
+		// Set target of the L2Character to null
 		// Cancel Attack or Cast
 		getActiveChar().setTarget(null);
 

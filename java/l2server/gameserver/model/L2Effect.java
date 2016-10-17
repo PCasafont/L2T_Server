@@ -36,12 +36,12 @@ public abstract class L2Effect
 		CREATED, ACTING, FINISHING
 	}
 
-	//member this.effector is the instance of L2Character that cast/used the spell/skill that is
+	//member effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
 	@Getter private final L2Character effector;
 
-	//member this.effected is the instance of L2Character that was affected
+	//member effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
 	@Getter private final L2Character effected;

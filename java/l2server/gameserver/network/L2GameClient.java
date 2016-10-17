@@ -198,7 +198,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	{
 		activeChar = pActiveChar;
 		//JIV remove - done on spawn
-		/*if (this.activeChar != null)
+		/*if (activeChar != null)
 		{
 			L2World.getInstance().storeObject(getActiveChar());
 		}*/
@@ -382,7 +382,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			saveCharToDisk (getActiveChar());
 			if (Config.DEBUG) Log.fine("active Char saved");
-			this.setActiveChar(null);
+			setActiveChar(null);
 		}*/
 
 		int objid = getObjectIdForSlot(charslot);
@@ -1000,7 +1000,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				if (autoSaveInDB != null)
 				{
 					autoSaveInDB.cancel(true);
-					//ThreadPoolManager.getInstance().removeGeneral((Runnable) this.autoSaveInDB);
+					//ThreadPoolManager.getInstance().removeGeneral((Runnable) autoSaveInDB);
 				}
 
 				L2PcInstance player = getActiveChar();

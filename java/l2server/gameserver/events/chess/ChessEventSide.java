@@ -213,7 +213,7 @@ public class ChessEventSide
 
 				pieceSpawns[i].stopRespawn();
 				pieceSpawns[i].doSpawn();
-				//_pieceSpawns[i].getNpc().spawnMe(this.pieceSpawns[i].getNpc().getX(), this.pieceSpawns[i].getNpc().getY(), this.pieceSpawns[i].getNpc().getZ());
+				//_pieceSpawns[i].getNpc().spawnMe(pieceSpawns[i].getNpc().getX(), pieceSpawns[i].getNpc().getY(), pieceSpawns[i].getNpc().getZ());
 				L2ChessPieceInstance piece = (L2ChessPieceInstance) pieceSpawns[i].getNpc();
 				if (piece.getType() == 6)
 				{

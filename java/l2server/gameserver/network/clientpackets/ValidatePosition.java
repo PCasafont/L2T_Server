@@ -103,12 +103,12 @@ public class ValidatePosition extends L2GameClientPacket
 		{
 			/*if (Config.COORD_SYNCHRONIZE == 2)
 			{
-				dx = this.x - activeChar.getInVehiclePosition().getX();
-				dy = this.y - activeChar.getInVehiclePosition().getY();
-				dz = this.z - activeChar.getInVehiclePosition().getZ();
+				dx = x - activeChar.getInVehiclePosition().getX();
+				dy = y - activeChar.getInVehiclePosition().getY();
+				dz = z - activeChar.getInVehiclePosition().getZ();
 				diffSq = (dx*dx + dy*dy);
 				if (diffSq > 250000)
-					sendPacket(new GetOnVehicle(activeChar.getObjectId(), this.data, activeChar.getInBoatPosition()));
+					sendPacket(new GetOnVehicle(activeChar.getObjectId(), data, activeChar.getInBoatPosition()));
 			}*/
 			return;
 		}
@@ -124,9 +124,9 @@ public class ValidatePosition extends L2GameClientPacket
 		diffSq = dx * dx + dy * dy;
 
 		/*L2Party party = activeChar.getParty();
-		if (party != null && activeChar.getLastPartyPositionDistance(this.x, this.y, this.z) > 150)
+		if (party != null && activeChar.getLastPartyPositionDistance(x, y, z) > 150)
 		{
-			activeChar.setLastPartyPosition(this.x, this.y, this.z);
+			activeChar.setLastPartyPosition(x, y, z);
 			party.broadcastToPartyMembers(activeChar,new PartyMemberPosition(activeChar));
 		}*/
 
@@ -176,7 +176,7 @@ public class ValidatePosition extends L2GameClientPacket
 			// Important: this code part must work together with L2Character.updatePosition
 			if (Config.GEODATA > 0 && (diffSq > 40000 || Math.abs(dz) > 100))
 			{
-				//if ((this.z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
+				//if ((z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
 
 				if (Math.abs(dz) > 100 && Math.abs(dz) < 1500 && Math.abs(z - activeChar.getClientZ()) < 800)
 				{

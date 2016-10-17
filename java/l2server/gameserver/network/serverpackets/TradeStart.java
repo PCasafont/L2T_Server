@@ -45,7 +45,7 @@ public final class TradeStart extends L2ItemListPacket
 		}
 
 		writeD(activeChar.getActiveTradeList().getPartner().getObjectId());
-		//writeD((this.activeChar != null || this.activeChar.getTransactionRequester() != null)? this.activeChar.getTransactionRequester().getObjectId() : 0);
+		//writeD((activeChar != null || activeChar.getTransactionRequester() != null)? activeChar.getTransactionRequester().getObjectId() : 0);
 
 		writeC(0x00); // Relationship mask
 		writeC(activeChar.getLevel());

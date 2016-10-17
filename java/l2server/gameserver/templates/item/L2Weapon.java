@@ -72,7 +72,7 @@ public final class L2Weapon extends L2Item
 	 * Constructor for Weapon.<BR><BR>
 	 * <U><I>Variables filled :</I></U><BR>
 	 * <LI>_soulShotCount & _spiritShotCount</LI>
-	 * <LI>_pDam & this.mDam & _rndDam</LI>
+	 * <LI>_pDam & mDam & _rndDam</LI>
 	 * <LI>_critical</LI>
 	 * <LI>_hitModifier</LI>
 	 * <LI>_avoidModifier</LI>

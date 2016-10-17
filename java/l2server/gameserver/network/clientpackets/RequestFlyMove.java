@@ -42,6 +42,6 @@ public final class RequestFlyMove extends L2GameClientPacket
 		}
 
 		activeChar.flyMoveStep(stepId);
-		//Log.info(getType() + ": " + this.stepId);
+		//Log.info(getType() + ": " + stepId);
 	}
 }

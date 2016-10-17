@@ -59,85 +59,85 @@ public class ExResponseCommissionList extends L2GameServerPacket
 	{
 		/*writeC(0xFE);
 		writeH(0xF7);
-		if (this.yourAuction)
+		if (yourAuction)
 		{
-			writeD(this.yourAuctionsSize <= 0 ? -2 : 0x02);
+			writeD(yourAuctionsSize <= 0 ? -2 : 0x02);
 			writeD((int)(System.currentTimeMillis()/1000));
 			writeD(0x00);
-			writeD(this.yourAuctionsSize);
-			for (Auctions auction : this.am.getAuctions())
-				if (auction.getPlayerID() == this.player.getObjectId())
+			writeD(yourAuctionsSize);
+			for (Auctions auction : am.getAuctions())
+				if (auction.getPlayerID() == player.getObjectId())
 					writeItems(auction);
 		}
 		else
 		{
-			writeD(this.search != null && this.category == 100 && this.am.getAuctionsSizeById(this.grade,  this.search) > 0 ? 3 : this.am.getAuctionsSizeById(this.grade,  this.search) <= 0 || this.am.getAuctionsSizeById(this.category, this.grade, this.search) <= 0 ? -1 : 3);
+			writeD(search != null && category == 100 && am.getAuctionsSizeById(grade,  search) > 0 ? 3 : am.getAuctionsSizeById(grade,  search) <= 0 || am.getAuctionsSizeById(category, grade, search) <= 0 ? -1 : 3);
 			writeD((int)(System.currentTimeMillis()/1000));
 			writeD(0x00);
-			if (this.category > 60 && this.category < 66 || this.category == 101)
+			if (category > 60 && category < 66 || category == 101)
 			{
-				writeD(this.am.getAuctionsSizeById(this.category, this.grade, this.search));
-				for (Auctions auction : this.am.getAuctions())
+				writeD(am.getAuctionsSizeById(category, grade, search));
+				for (Auctions auction : am.getAuctions())
 				{
-					int cat = this.category == 101 ? 0 : (int)(_category%60);
-					for (int ID : this.categories[cat])
+					int cat = category == 101 ? 0 : (int)(_category%60);
+					for (int ID : categories[cat])
 					{
-						if (this.grade == -1 && this.search.equals(""))
+						if (grade == -1 && search.equals(""))
 						{
 							if (auction.getCategory() == ID)
 								writeItems(auction);
 						}
-						else if (this.grade != -1)
+						else if (grade != -1)
 						{
-							if (this.search.equals(""))
-								if (auction.getCategory() == ID && this.grade == auction.getItem().getItem().getCrystalType())
+							if (search.equals(""))
+								if (auction.getCategory() == ID && grade == auction.getItem().getItem().getCrystalType())
 									writeItems(auction);
-							if (!this.search.equals(""))
-								if (auction.getCategory() == ID && this.grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(this.search))
+							if (!search.equals(""))
+								if (auction.getCategory() == ID && grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 									writeItems(auction);
 						}
-						else if (!this.search.equals(""))
-							if (auction.getCategory() == ID && auction.getItem().getName().contains(this.search))
+						else if (!search.equals(""))
+							if (auction.getCategory() == ID && auction.getItem().getName().contains(search))
 								writeItems(auction);
 					}
 				}
 			}
-			else if (this.category < 60)
+			else if (category < 60)
 			{
-				writeD(this.am.getAuctionsSizeById(this.category, this.grade, this.search)); // Auction count, maybe items putted in auction???
-				for (Auctions auction : this.am.getAuctions())
+				writeD(am.getAuctionsSizeById(category, grade, search)); // Auction count, maybe items putted in auction???
+				for (Auctions auction : am.getAuctions())
 				{
-					if (this.grade == -1 && this.search.equals(""))
+					if (grade == -1 && search.equals(""))
 					{
-						if (auction.getCategory() == this.category)
+						if (auction.getCategory() == category)
 							writeItems(auction);
 					}
-					else if (this.grade != -1)
+					else if (grade != -1)
 					{
-						if (this.search.equals(""))
-							if (auction.getCategory() == this.category && this.grade == auction.getItem().getItem().getCrystalType())
+						if (search.equals(""))
+							if (auction.getCategory() == category && grade == auction.getItem().getItem().getCrystalType())
 								writeItems(auction);
-						if (!this.search.equals(""))
-							if (auction.getCategory() == this.category && this.grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(this.search))
+						if (!search.equals(""))
+							if (auction.getCategory() == category && grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 								writeItems(auction);
 					}
-					else if (!this.search.equals(""))
-						if (auction.getCategory() == this.category && auction.getItem().getName().contains(this.search))
+					else if (!search.equals(""))
+						if (auction.getCategory() == category && auction.getItem().getName().contains(search))
 							writeItems(auction);
 				}
 			}
 			else
 			{
-				if (this.search != null)
+				if (search != null)
 				{
-					writeD(this.am.getAuctionsSizeById(this.grade, this.search)); // Auction count, maybe items putted in auction???
-					for (Auctions auction : this.am.getAuctions())
+					writeD(am.getAuctionsSizeById(grade, search)); // Auction count, maybe items putted in auction???
+					for (Auctions auction : am.getAuctions())
 					{
-							if (this.grade == -1)
-								if (auction.getItem().getName().contains(this.search))
+							if (grade == -1)
+								if (auction.getItem().getName().contains(search))
 									writeItems(auction);
-							if (this.grade != -1)
-								if (this.grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(this.search))
+							if (grade != -1)
+								if (grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 									writeItems(auction);
 					}
 				}

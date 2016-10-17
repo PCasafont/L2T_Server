@@ -61,7 +61,7 @@ public class CharStat
 	 * modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
 	 * <BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(this.player.getDEX())*6+_player.getLevel()<BR>
+	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR>
 	 * <BR>
 	 * <p>
 	 * When the calc method of a calculator is launched, each mathematic
@@ -293,7 +293,7 @@ public class CharStat
 			}
 		}
 
-		/*if (val > Config.MAX_EVASION && !this.activeChar.isGM())
+		/*if (val > Config.MAX_EVASION && !activeChar.isGM())
 			val = Config.MAX_EVASION;*/
 		return val;
 	}
@@ -317,7 +317,7 @@ public class CharStat
 			}
 		}
 
-		/*if (val > 300 && !this.activeChar.isGM())
+		/*if (val > 300 && !activeChar.isGM())
 			val = 300;*/
 		return val;
 	}
@@ -343,9 +343,9 @@ public class CharStat
 	public byte getLevel()
 	{
 		/*
-		if (this.activeChar instanceof L2PcInstance)
+		if (activeChar instanceof L2PcInstance)
 		{
-			final L2PcInstance activeChar = (L2PcInstance) this.activeChar;
+			final L2PcInstance activeChar = (L2PcInstance) activeChar;
 
 			if (activeChar.getTemporaryLevel() != 0)
 				return activeChar.getTemporaryLevel();
@@ -1135,7 +1135,7 @@ public class CharStat
 		
 		/*
 		 * uncomment me once deadlocks in getAllEffects() fixed
-			return this.activeChar.getElementIdFromEffects();
+			return activeChar.getElementIdFromEffects();
 		 */
 	}
 
@@ -1187,7 +1187,7 @@ public class CharStat
 		
 		/*
 		 * uncomment me once deadlocks in getAllEffects() fixed
-			return this.activeChar.getElementIdFromEffects();
+			return activeChar.getElementIdFromEffects();
 		 */
 	}
 

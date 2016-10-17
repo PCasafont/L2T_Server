@@ -346,11 +346,11 @@ public class L2SummonInstance extends L2Summon
 				}
 
 				// prevent useless packet-sending when the difference isn't visible.
-				/*if ((this.summon.lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
+				/*if ((summon.lastShowntimeRemaining - newTimeRemaining) > maxTime / 352)
 				{
-					this.summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
-					this.summon.lastShowntimeRemaining = (int) newTimeRemaining;
-					this.summon.updateEffectIcons();
+					summon.getOwner().sendPacket(new SetSummonRemainTime(maxTime, (int) newTimeRemaining));
+					summon.lastShowntimeRemaining = (int) newTimeRemaining;
+					summon.updateEffectIcons();
 				}*/
 				if (summon.lastLifeTimeCheck > 50)
 				{

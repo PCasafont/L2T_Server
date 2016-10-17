@@ -40,8 +40,8 @@ public class ExLoadStatHotLink extends L2GameServerPacket
 			return;
 		}
 
-		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(this.pid1, this.pid2, true);
-		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(this.pid1, this.pid2, false);
+		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(pid1, pid2, true);
+		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(pid1, pid2, false);
 
 		writeD(pid1);
 		writeD(pid2);

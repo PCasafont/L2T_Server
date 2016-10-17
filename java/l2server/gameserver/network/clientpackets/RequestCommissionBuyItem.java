@@ -42,9 +42,9 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 
 		/*AuctionManager am = AuctionManager.getInstance();
 		Auctions auction;
-		if (am.getAuctionById(this.auctionID) != null)
+		if (am.getAuctionById(auctionID) != null)
 		{
-			auction = am.getAuctionById(this.auctionID);
+			auction = am.getAuctionById(auctionID);
 			long timeToFinish = auction.getFinishTime() - System.currentTimeMillis() / 1000;
 
 			long fee = auction.getPrice();
@@ -69,7 +69,7 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 			if (player.getInventory().getItemByItemId(57) == null || player.getInventory().getItemByItemId(57).getCount() < price)
 			{
 				player.sendPacket(SystemMessageId.YOU_NOT_ENOUGH_ADENA);
-				player.sendPacket(new ExResponseCommissionList(player, this.category, -1, -1, ""));
+				player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
 				player.sendPacket(new ExResponseCommissionItemList(player));
 				return;
 			}
@@ -90,14 +90,14 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 				seller.sendPacket(sm);
 			}
 
-			am.deleteAuction(this.auctionID);
-			player.sendPacket(new ExResponseCommissionList(player, this.category, -1, -1, ""));
+			am.deleteAuction(auctionID);
+			player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
 			player.sendPacket(new ExResponseCommissionItemList(player));
 		}
 		else
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST);
-			player.sendPacket(new ExResponseCommissionList(player, this.category, -1, -1, ""));
+			player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
 			player.sendPacket(new ExResponseCommissionItemList(player));
 		}*/
 	}

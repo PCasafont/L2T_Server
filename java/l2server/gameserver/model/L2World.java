@@ -121,7 +121,7 @@ public final class L2World
 	}
 
 	/**
-	 * Add L2Object object in this.allObjects.<BR><BR>
+	 * Add L2Object object in allObjects.<BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Withdraw an item from the warehouse, create an item</li>
@@ -153,14 +153,14 @@ public final class L2World
 	}
 
 	/**
-	 * Remove L2Object object from this.allObjects of L2World.<BR><BR>
+	 * Remove L2Object object from allObjects of L2World.<BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Delete item from inventory, tranfer Item from inventory to warehouse</li>
 	 * <li> Crystallize item</li>
 	 * <li> Remove NPC/PC/Pet from the world</li><BR>
 	 *
-	 * @param object L2Object to remove from this.allObjects of L2World
+	 * @param object L2Object to remove from allObjects of L2World
 	 */
 	public void removeObject(L2Object object)
 	{
@@ -338,15 +338,15 @@ public final class L2World
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Add the L2Object object in _allPlayers* of L2World </li>
 	 * <li>Add the L2Object object in _gmList** of GmListTable </li>
-	 * <li>Add object in this.knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR>
+	 * <li>Add object in knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR>
 	 * <p>
-	 * <li>If object is a L2Character, add all surrounding L2Object in its this.knownObjects and all surrounding L2PcInstance in its this.knownPlayer </li><BR>
+	 * <li>If object is a L2Character, add all surrounding L2Object in its knownObjects and all surrounding L2PcInstance in its knownPlayer </li><BR>
 	 * <p>
 	 * <I>*  only if object is a L2PcInstance</I><BR>
 	 * <I>** only if object is a GM L2PcInstance</I><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in this.visibleObjects and _allPlayers* of L2WorldRegion (need synchronisation)</B></FONT><BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to this.allObjects and _allPlayers* of L2World (need synchronisation)</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object in visibleObjects and _allPlayers* of L2WorldRegion (need synchronisation)</B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to allObjects and _allPlayers* of L2World (need synchronisation)</B></FONT><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Drop an Item </li>
@@ -362,7 +362,7 @@ public final class L2World
 			allObjects.put(object.getObjectId(), object);
 		}
 
-		// If selected L2Object is a L2PcIntance, add it in L2ObjectHashSet(L2PcInstance) this.allPlayers of L2World
+		// If selected L2Object is a L2PcIntance, add it in L2ObjectHashSet(L2PcInstance) allPlayers of L2World
 		// XXX TODO: this code should be obsoleted by protection in putObject func...
 		if (object instanceof L2PcInstance)
 		{
@@ -387,7 +387,7 @@ public final class L2World
 			return;
 		}
 
-		// Get all visible objects contained in the this.visibleObjects of L2WorldRegions
+		// Get all visible objects contained in the visibleObjects of L2WorldRegions
 		// in a circular area of 2000 units
 		List<L2Object> visibles = getVisibleObjects(object, 2000);
 		if (Config.DEBUG)
@@ -404,21 +404,21 @@ public final class L2World
 				continue;
 			}
 
-			// Add the object in L2ObjectHashSet(L2Object) this.knownObjects of the visible L2Character according to conditions :
+			// Add the object in L2ObjectHashSet(L2Object) knownObjects of the visible L2Character according to conditions :
 			//   - L2Character is visible
 			//   - object is not already known
 			//   - object is in the watch distance
-			// If L2Object is a L2PcInstance, add L2Object in L2ObjectHashSet(L2PcInstance) this.knownPlayer of the visible L2Character
+			// If L2Object is a L2PcInstance, add L2Object in L2ObjectHashSet(L2PcInstance) knownPlayer of the visible L2Character
 			visible.getKnownList().addKnownObject(object);
 
-			// Add the visible L2Object in L2ObjectHashSet(L2Object) this.knownObjects of the object according to conditions
-			// If visible L2Object is a L2PcInstance, add visible L2Object in L2ObjectHashSet(L2PcInstance) this.knownPlayer of the object
+			// Add the visible L2Object in L2ObjectHashSet(L2Object) knownObjects of the object according to conditions
+			// If visible L2Object is a L2PcInstance, add visible L2Object in L2ObjectHashSet(L2PcInstance) knownPlayer of the object
 			object.getKnownList().addKnownObject(visible);
 		}
 	}
 
 	/**
-	 * Add the L2PcInstance to this.allPlayers of L2World.<BR><BR>
+	 * Add the L2PcInstance to allPlayers of L2World.<BR><BR>
 	 */
 	public void addToAllPlayers(L2PcInstance cha)
 	{
@@ -426,7 +426,7 @@ public final class L2World
 	}
 
 	/**
-	 * Remove the L2PcInstance from this.allPlayers of L2World.<BR><BR>
+	 * Remove the L2PcInstance from allPlayers of L2World.<BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Remove a player fom the visible objects </li><BR>
@@ -445,13 +445,13 @@ public final class L2World
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove the L2Object object from _allPlayers* of L2World </li>
-	 * <li>Remove the L2Object object from this.visibleObjects and _allPlayers* of L2WorldRegion </li>
+	 * <li>Remove the L2Object object from visibleObjects and _allPlayers* of L2WorldRegion </li>
 	 * <li>Remove the L2Object object from _gmList** of GmListTable </li>
-	 * <li>Remove object from this.knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR>
+	 * <li>Remove object from knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR>
 	 * <p>
-	 * <li>If object is a L2Character, remove all L2Object from its this.knownObjects and all L2PcInstance from its this.knownPlayer </li><BR><BR>
+	 * <li>If object is a L2Character, remove all L2Object from its knownObjects and all L2PcInstance from its knownPlayer </li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from this.allObjects of L2World</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from allObjects of L2World</B></FONT><BR><BR>
 	 * <p>
 	 * <I>*  only if object is a L2PcInstance</I><BR>
 	 * <I>** only if object is a GM L2PcInstance</I><BR><BR>
@@ -473,8 +473,8 @@ public final class L2World
 
 		if (oldRegion != null)
 		{
-			// Remove the object from the L2ObjectHashSet(L2Object) this.visibleObjects of L2WorldRegion
-			// If object is a L2PcInstance, remove it from the L2ObjectHashSet(L2PcInstance) this.allPlayers of this L2WorldRegion
+			// Remove the object from the L2ObjectHashSet(L2Object) visibleObjects of L2WorldRegion
+			// If object is a L2PcInstance, remove it from the L2ObjectHashSet(L2PcInstance) allPlayers of this L2WorldRegion
 			oldRegion.removeVisibleObject(object);
 
 			// Go through all surrounding L2WorldRegion L2Characters
@@ -502,7 +502,7 @@ public final class L2World
 			// Remove all L2PcInstance from L2ObjectHashSet(L2PcInstance) containing all player ingame detected by the L2Character
 			object.getKnownList().removeAllKnownObjects();
 
-			// If selected L2Object is a L2PcIntance, remove it from L2ObjectHashSet(L2PcInstance) this.allPlayers of L2World
+			// If selected L2Object is a L2PcIntance, remove it from L2ObjectHashSet(L2PcInstance) allPlayers of L2World
 			if (object instanceof L2PcInstance)
 			{
 				if (!((L2PcInstance) object).isTeleporting())
@@ -510,7 +510,7 @@ public final class L2World
 					removeFromAllPlayers((L2PcInstance) object);
 				}
 
-				// If selected L2Object is a GM L2PcInstance, remove it from Set(L2PcInstance) this.gmList of GmListTable
+				// If selected L2Object is a GM L2PcInstance, remove it from Set(L2PcInstance) gmList of GmListTable
 				//if (((L2PcInstance)object).isGM())
 				//GmListTable.getInstance().deleteGm((L2PcInstance)object);
 			}

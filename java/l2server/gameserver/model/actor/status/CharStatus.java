@@ -128,7 +128,7 @@ public class CharStatus
 	 * <p>
 	 * <B><U> Overridden in </U> :</B><BR><BR>
 	 * <li> L2Attackable : Set overhit values</li><BR>
-	 * <li> L2Npc : Update the attacker AggroInfo of the L2Attackable this.aggroList and clear duel status of the attacking players</li><BR><BR>
+	 * <li> L2Npc : Update the attacker AggroInfo of the L2Attackable aggroList and clear duel status of the attacking players</li><BR><BR>
 	 *
 	 * @param attacker The L2Character who attacks
 	 */

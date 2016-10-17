@@ -53,12 +53,12 @@ public class L2Abnormal
 
 	private static final Func[] emptyFunctionSet = new Func[0];
 
-	//member this.effector is the instance of L2Character that cast/used the spell/skill that is
+	//member effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
 	@Getter private final L2Character effector;
 
-	//member this.effected is the instance of L2Character that was affected
+	//member effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
 	@Getter private final L2Character effected;
@@ -156,7 +156,7 @@ public class L2Abnormal
 		count = template.counter;
 		totalCount = count;
 
-		// Support for retail herbs duration when this.effected has a Summon
+		// Support for retail herbs duration when effected has a Summon
 		int temp = template.duration;
 
 		if (skill.getId() > 2277 && skill.getId() < 2286 || skill.getId() >= 2512 && skill.getId() <= 2514)
@@ -354,7 +354,7 @@ public class L2Abnormal
 		{
 			// Cancel the task
 			currentFuture.cancel(false);
-			//ThreadPoolManager.getInstance().removeEffect(this.currentTask);
+			//ThreadPoolManager.getInstance().removeEffect(currentTask);
 
 			currentFuture = null;
 
@@ -746,7 +746,7 @@ public class L2Abnormal
 		return !(!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
 				getSkill().getTargetType() == L2SkillTargetType.TARGET_SELF || getSkill().isToggle() ||
 				getSkill().isDebuff() || getSkill().isHeroSkill() || getSkill().getTransformId() > 0
-				//|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
+				//|| (getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
 				|| getSkill().isPotion() && getSkill().getId() != 2274 && getSkill().getId() != 2341
 				// Hardcode for now :<
 				|| isHerbEffect() || !getSkill().canBeDispeled());
@@ -756,7 +756,7 @@ public class L2Abnormal
 	{
 		return !(!effectCanBeStolen() || getType() == L2AbnormalType.MUTATE || getSkill().isPassive() ||
 				getSkill().isToggle() || getSkill().isDebuff()
-				//|| (this.getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
+				//|| (getSkill().isGMSkill() && getEffected().getInstanceId() == 0)
 				|| !getSkill().canBeDispeled());
 	}
 

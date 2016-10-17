@@ -490,7 +490,7 @@ public class CustomCommunityBoard
 					"<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (pos + 1) +
 							"</td><td FIXWIDTH=50>" + boss.getName() + "</td><td FIXWIDTH=30>" + boss.Level +
 							"</td><td FIXWIDTH=150>" + bossRespawn + "</td><td FIXWIDTH=120>" + bossStatus +
-							"</td><td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass this.bbscustom;info;drop;" +
+							"</td><td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
 							boss.NpcId +
 							";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td></tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
@@ -591,7 +591,7 @@ public class CustomCommunityBoard
 			}
 			String bossIsAggro = isAggro ? "<font color=FF0000>*</font>" : "";
 			String nameString =
-					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass this.bbscustom;action;showRadar; ") +
+					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") +
 							"" + boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
 							"\">" + npc.getName() + "</a>";
 
@@ -600,7 +600,7 @@ public class CustomCommunityBoard
 					npc.Level + "</td>" + "<td FIXWIDTH=50>" + boss.getSpawn().getRespawnDelay() / 3600000 + "-" +
 					(boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000 +
 					" Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" +
-					"<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass this.bbscustom;info;drop;" +
+					"<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
 					npc.NpcId + ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
 		}
@@ -1224,7 +1224,7 @@ public class CustomCommunityBoard
 
 		if (page > 1)
 		{
-			replyMSG += "<td width=120><a action=\"bypass this.bbscustom;info;drop;" + npcId + ";" + (page - 1) +
+			replyMSG += "<td width=120><a action=\"bypass _bbscustom;info;drop;" + npcId + ";" + (page - 1) +
 					"\">Prev Page</a></td>";
 
 			if (!hasMore)
@@ -1240,7 +1240,7 @@ public class CustomCommunityBoard
 			}
 
 			replyMSG +=
-					"<td width=100>Page " + page + "</td><td width=70><a action=\"bypass this.bbscustom;info;drop;" +
+					"<td width=100>Page " + page + "</td><td width=70><a action=\"bypass _bbscustom;info;drop;" +
 							npcId + ";" + (page + 1) + "\">Next Page</a></td>";
 		}
 
@@ -1266,7 +1266,7 @@ public class CustomCommunityBoard
 		String isNickNameWingsDisabled = pl.isNickNameWingsDisabled() ? "Disable" : "Enable";
 
 		a = a.replace("%refuseXp%", "<button value=" + isNoExp +
-				" width=90 height=24 action=\"bypass this.bbscustom;action;voice;noexp\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+				" width=90 height=24 action=\"bypass _bbscustom;action;voice;noexp\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%blockrequests%", "<button value=" + isRefusingRequests +
 				" width=90 height=24 action=\"bypass_bbscustom;action;voice;blockrequests;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%refuseBuffs%", "<button value=" + isRefusingBuffs +
@@ -1280,11 +1280,11 @@ public class CustomCommunityBoard
 		a = a.replace("%stabs%", "<button value=" + isStabs +
 				" width=90 height=24 action=\"bypass_bbscustom;action;voice;stabs;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%disableWeaponGlow%", "<button value=" + isWeaponGlowDisabled +
-				" width=90 height=24 action=\"bypass this.bbscustom;action;voice;disableweaponglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disableweaponglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%disableArmorGlow%", "<button value=" + isArmorGlowDisabled +
-				" width=90 height=24 action=\"bypass this.bbscustom;action;voice;disablearmorglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablearmorglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%disableWings%", "<button value=" + isNickNameWingsDisabled +
-				" width=90 height=24 action=\"bypass this.bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		return a;
 	}
 
@@ -1316,7 +1316,7 @@ public class CustomCommunityBoard
 		}
 
 		sb.append(
-				"<table width=750><tr><td FIXWIDTH=53>Show: &nbsp;<a action=\"bypass this.bbscustom;buyPanel;0;0\">All</a>,&nbsp; <a action=\"bypass this.bbscustom;buyPanel;0;1\">Buy</a>,&nbsp; <a action=\"bypass this.bbscustom;buyPanel;0;2\">Sell</a>,&nbsp; <a action=\"bypass this.bbscustom;buyPanel;0;3\">Craft</a>,&nbsp; <a action=\"bypass this.bbscustom;buyPanel;0;10\">Custom Sell</a></td></tr></table><center><table width=750><tr><td FIXWIDTH=50 align=center>" +
+				"<table width=750><tr><td FIXWIDTH=53>Show: &nbsp;<a action=\"bypass _bbscustom;buyPanel;0;0\">All</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;1\">Buy</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;2\">Sell</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;3\">Craft</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;10\">Custom Sell</a></td></tr></table><center><table width=750><tr><td FIXWIDTH=50 align=center>" +
 						(maxPages > 1 ? createPages(pageToShow, maxPages, "_bbscustom;buyPanel;", ";" + type) : "") +
 						"</td></tr></table></center><br>");
 		sb.append("<center>");
@@ -1339,7 +1339,7 @@ public class CustomCommunityBoard
 			}
 
 			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=25>" + i +
-					"</td><td FIXWIDTH=150><a action=\"bypass this.bbscustom;action;trade;" + shop.getName() + "\">" +
+					"</td><td FIXWIDTH=150><a action=\"bypass _bbscustom;action;trade;" + shop.getName() + "\">" +
 					shop.getName() + "</a></td><td FIXWIDTH=90>" + shop.getShopNameType() + "</td><td FIXWIDTH=110>" +
 					title + "</td></tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");

@@ -333,10 +333,10 @@ public class ShortCuts
 				shortCuts.containsKey(classIndex) && shortCuts.get(classIndex).containsKey(levelRange) &&
 						shortCuts.get(classIndex).get(levelRange).values().size() != 0;
 
-		//if (this.hasPresetForCurrentLevel)
-		//	this.shortCuts.get(this.owner.getClassIndex()).get(this.owner.getGearGradeForCurrentLevel()).clear();
-		//System.out.println("Shortcuts Size = " +  this.shortCuts.get(0).get(8).values().size());
-		//System.out.println("Shortcuts Size = " +  this.shortCuts.get(0).get(10).values().size());
+		//if (hasPresetForCurrentLevel)
+		//	shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).clear();
+		//System.out.println("Shortcuts Size = " +  shortCuts.get(0).get(8).values().size());
+		//System.out.println("Shortcuts Size = " +  shortCuts.get(0).get(10).values().size());
 
 		Connection con = null;
 
@@ -420,7 +420,7 @@ public class ShortCuts
 						shortCuts.get(classIndex).get(levelRange).put(slot + page * 12, sc);
 					}
 
-					//System.out.println("Shortcuts Size = " +  this.shortCuts.get(classIndex).get(levelRange).values().size());
+					//System.out.println("Shortcuts Size = " +  shortCuts.get(classIndex).get(levelRange).values().size());
 
 					rset.close();
 					statement.close();

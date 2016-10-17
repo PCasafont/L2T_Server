@@ -262,8 +262,8 @@ public class Castle
 	public Castle(int castleId)
 	{
 		this.castleId = castleId;
-		/*if (this.castleId == 7 || castleId == 9) // Goddard and Schuttgart
-			this.nbArtifact = 2;*/
+		/*if (castleId == 7 || castleId == 9) // Goddard and Schuttgart
+			nbArtifact = 2;*/
 	}
 
 	// =========================================================
@@ -289,7 +289,7 @@ public class Castle
 		}
 		engrave.put(target.getObjectId(), clan.getClanId());
 
-		//Broadcast.toGameMasters("Engraved = " + this.engrave.size() + ". Arts = " + artAmount);
+		//Broadcast.toGameMasters("Engraved = " + engrave.size() + ". Arts = " + artAmount);
 		if (engrave.size() == artefacts.size())
 		{
 			for (L2ArtefactInstance art : artefacts)

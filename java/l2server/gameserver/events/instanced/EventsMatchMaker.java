@@ -781,7 +781,7 @@ public class EventsMatchMaker
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
 		/*String hwId = player.getClient().getHWId();
-		for (L2PcInstance registered : this.registeredPlayers.values())
+		for (L2PcInstance registered : registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -820,15 +820,15 @@ public class EventsMatchMaker
 			}
 		}
 
-		/*else if (this.command.startsWith("TenkaiEventParticipation"))
+		/*else if (command.startsWith("TenkaiEventParticipation"))
 		{
-			int eventId = Integer.valueOf(this.command.substring(25));
+			int eventId = Integer.valueOf(command.substring(25));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).join(activeChar);
 		}
-		else if (this.command.startsWith("TenkaiEventStatus"))
+		else if (command.startsWith("TenkaiEventStatus"))
 		{
-			int eventId = Integer.valueOf(this.command.substring(18));
+			int eventId = Integer.valueOf(command.substring(18));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).eventInfo(activeChar);
 		}*/

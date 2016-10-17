@@ -46,29 +46,29 @@ public final class RequestCommissionList extends L2GameClientPacket
 
 		/*AuctionManager am = AuctionManager.getInstance();
 
-		if (this.category == 0)
-			this.category = 100;
-		else if (this.category == 1)
-			this.category = 101;
+		if (category == 0)
+			category = 100;
+		else if (category == 1)
+			category = 101;
 
-		if (this.category != 101 && this.category != 100 && this.category % 10000 != 7297 && this.category % 10000 != 4593 && this.category % 10000 != 1889 &&
-				this.category % 10000 != 9185 && this.category % 10000 != 6481)
-			this.category = am.convertCategory((int)(_category/1000));
-		else if (this.category != 101 && this.category != 100)
-			this.category = am.convertMassCategory((int)(_category/1000));
+		if (category != 101 && category != 100 && category % 10000 != 7297 && category % 10000 != 4593 && category % 10000 != 1889 &&
+				category % 10000 != 9185 && category % 10000 != 6481)
+			category = am.convertCategory((int)(_category/1000));
+		else if (category != 101 && category != 100)
+			category = am.convertMassCategory((int)(_category/1000));
 
-		if (this.category > 60 && this.category < 66 || this.category == 101)
+		if (category > 60 && category < 66 || category == 101)
 		{
-			if (am.getAuctionsSizeById(this.category, this.grade, this.searchName) > 999)
+			if (am.getAuctionsSizeById(category, grade, searchName) > 999)
 				activeChar.sendPacket(SystemMessageId.THE_SEARCH_RESULT_EXCEED_THE_MAXIMUM_ALLOWED_RANGE_FOR_OUTPUT);
-			else if (am.getAuctionsSizeById(this.category, this.grade, this.searchName) <= 0)
+			else if (am.getAuctionsSizeById(category, grade, searchName) <= 0)
 				activeChar.sendPacket(SystemMessageId.CURRENTLY_THERE_ARE_NO_REGISTERED_ITEMS);
 		}
-		else if (this.category == 100)
-			if (am.getAuctionsSizeById(this.grade, this.searchName) > 999)
+		else if (category == 100)
+			if (am.getAuctionsSizeById(grade, searchName) > 999)
 				activeChar.sendPacket(SystemMessageId.THE_SEARCH_RESULT_EXCEED_THE_MAXIMUM_ALLOWED_RANGE_FOR_OUTPUT);
 
 		am.checkForAuctionsDeletion();
-		activeChar.sendPacket(new ExResponseCommissionList(activeChar, this.category, this.type, this.grade, this.searchName));*/
+		activeChar.sendPacket(new ExResponseCommissionList(activeChar, category, type, grade, searchName));*/
 	}
 }

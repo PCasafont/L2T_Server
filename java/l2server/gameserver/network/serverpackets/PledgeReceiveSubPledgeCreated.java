@@ -55,7 +55,7 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
 		}
 		else if (clan.getClanMember(leaderId) == null)
 		{
-			//Log.warning("SubPledgeLeader: "+ leaderId + " is missing from clan: "+ this.clan.getName()+"["+_clan.getClanId()+"]");
+			//Log.warning("SubPledgeLeader: "+ leaderId + " is missing from clan: "+ clan.getName()+"["+_clan.getClanId()+"]");
 			String name = "";
 			for (L2ClanMember temp : clan.getMembers())
 			{

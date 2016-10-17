@@ -92,7 +92,7 @@ public class CharEffectList
 		// Add all buffs and all debuffs
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -102,7 +102,7 @@ public class CharEffectList
 		}
 		if (debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -154,7 +154,7 @@ public class CharEffectList
 
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -182,7 +182,7 @@ public class CharEffectList
 		}
 		if (effectNotInUse == null && debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -227,7 +227,7 @@ public class CharEffectList
 				return null;
 			}
 
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (debuffs.isEmpty())
 				{
@@ -262,7 +262,7 @@ public class CharEffectList
 				return null;
 			}
 
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (buffs.isEmpty())
 				{
@@ -303,7 +303,7 @@ public class CharEffectList
 
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -331,7 +331,7 @@ public class CharEffectList
 
 		if (effectNotInUse == null && debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -365,7 +365,7 @@ public class CharEffectList
 		L2Abnormal effectNotInUse = null;
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -402,7 +402,7 @@ public class CharEffectList
 
 		if (effectNotInUse == null && debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -450,7 +450,7 @@ public class CharEffectList
 
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -478,7 +478,7 @@ public class CharEffectList
 
 		if (effectNotInUse == null && debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -520,7 +520,7 @@ public class CharEffectList
 		}
 		int buffCount = 0;
 
-		//synchronized(this.buffs)
+		//synchronized(buffs)
 		{
 			if (buffs.isEmpty())
 			{
@@ -558,7 +558,7 @@ public class CharEffectList
 		}
 		int danceCount = 0;
 
-		//synchronized(this.buffs)
+		//synchronized(buffs)
 		{
 			if (buffs.isEmpty())
 			{
@@ -589,7 +589,7 @@ public class CharEffectList
 		}
 		int danceCount = 0;
 
-		//synchronized(this.buffs)
+		//synchronized(buffs)
 		{
 			if (buffs.isEmpty())
 			{
@@ -650,7 +650,7 @@ public class CharEffectList
 	{
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -671,7 +671,7 @@ public class CharEffectList
 		ArrayList<L2Abnormal> temp = new ArrayList<>();
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -682,7 +682,7 @@ public class CharEffectList
 		}
 		if (debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -708,7 +708,7 @@ public class CharEffectList
 		ArrayList<L2Abnormal> temp = new ArrayList<>();
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -719,7 +719,7 @@ public class CharEffectList
 		}
 		if (debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -745,7 +745,7 @@ public class CharEffectList
 		ArrayList<L2Abnormal> temp = new ArrayList<>();
 		if (buffs != null)
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				if (!buffs.isEmpty())
 				{
@@ -756,7 +756,7 @@ public class CharEffectList
 		}
 		if (debuffs != null)
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				if (!debuffs.isEmpty())
 				{
@@ -1021,14 +1021,14 @@ public class CharEffectList
 					}
 					else
 					{
-						// Update the Stack Group table this.stackedEffects of the L2Character
+						// Update the Stack Group table stackedEffects of the L2Character
 						stackedEffects.put(stackType, stackQueue);
 					}
 				}
 			}
 		}
 
-		// Remove the active skill L2effect from this.effects of the L2Character
+		// Remove the active skill L2effect from effects of the L2Character
 		boolean removed = effectList.remove(effect);
 		if (removed && owner instanceof L2PcInstance && effect.getShowIcon())
 		{
@@ -1360,7 +1360,7 @@ public class CharEffectList
 				stackQueue.add(0, newEffect);
 			}
 
-			// Update the Stack Group table this.stackedEffects of the L2Character
+			// Update the Stack Group table stackedEffects of the L2Character
 			stackedEffects.put(stackType, stackQueue);
 
 			// Get the first stacked effect of the Stack group selected
@@ -1489,7 +1489,7 @@ public class CharEffectList
 
 		if (buffs != null && !buffs.isEmpty())
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				for (L2Abnormal e : buffs)
 				{
@@ -1551,7 +1551,7 @@ public class CharEffectList
 
 		if (debuffs != null && !debuffs.isEmpty())
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				for (L2Abnormal e : debuffs)
 				{
@@ -1647,7 +1647,7 @@ public class CharEffectList
 
 		if (buffs != null && !buffs.isEmpty())
 		{
-			//synchronized (this.buffs)
+			//synchronized (buffs)
 			{
 				for (L2Abnormal e : buffs)
 				{
@@ -1678,7 +1678,7 @@ public class CharEffectList
 
 		if (debuffs != null && !debuffs.isEmpty())
 		{
-			//synchronized (this.debuffs)
+			//synchronized (debuffs)
 			{
 				for (L2Abnormal e : debuffs)
 				{
@@ -1698,7 +1698,7 @@ public class CharEffectList
 	}
 
 	/**
-	 * Returns effect if contains in this.buffs or this.debuffs and null if not found
+	 * Returns effect if contains in buffs or debuffs and null if not found
 	 *
 	 * @param effect
 	 * @return

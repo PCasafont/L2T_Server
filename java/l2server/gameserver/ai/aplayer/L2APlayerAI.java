@@ -167,8 +167,8 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		if (player.getParty() != null)
 		{
 			target = player.getParty().getTarget();
-			//if (!this.player.isInsideRadius(target, 3000, false, false))
-			//	this.player.teleToLocation(target.getX(), target.getY(), target.getZ());
+			//if (!player.isInsideRadius(target, 3000, false, false))
+			//	player.teleToLocation(target.getX(), target.getY(), target.getZ());
 			for (L2PcInstance member : player.getParty().getPartyMembers())
 			{
 				if (member.isDead() && member.getClassId() == 146)
@@ -494,7 +494,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			}
 		}
 
-		/*if (this.player.getDistanceSq(target) > 2000 * 2000)
+		/*if (player.getDistanceSq(target) > 2000 * 2000)
 			travelTo(target);
 		else*/
 		interactWith(target);

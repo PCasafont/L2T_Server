@@ -112,7 +112,7 @@ public class L2DropCategory
 	 * (in order of the list) whose contribution to the sum makes the
 	 * sum greater than the random number, will be dropped.
 	 * <p>
-	 * Edited: How this.categoryBalancedChance works in high rate servers:
+	 * Edited: How categoryBalancedChance works in high rate servers:
 	 * Let's say item1 has a drop chance (when considered alone, without category) of
 	 * 1 % * RATE_DROP_ITEMS and item2 has 20 % * RATE_DROP_ITEMS, and the server's
 	 * RATE_DROP_ITEMS is for example 50x. Without this balancer, the relative chance inside
@@ -120,7 +120,7 @@ public class L2DropCategory
 	 * what rates are used. In high rate servers people usually consider the 1 % individual
 	 * drop chance should become higher than this relative chance (1/26) inside the category,
 	 * since having the both items for example in their own categories would result in having
-	 * a drop chance for item1 50 % and item2 1000 %. this.categoryBalancedChance limits the
+	 * a drop chance for item1 50 % and item2 1000 %. categoryBalancedChance limits the
 	 * individual chances to 100 % max, making the chance for item1 to be selected from this
 	 * category 50/(50+100) = 1/3 and item2 100/150 = 2/3.
 	 * This change doesn't affect calculation when drop_chance * RATE_DROP_ITEMS < 100 %,

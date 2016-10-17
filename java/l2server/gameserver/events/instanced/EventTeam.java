@@ -89,7 +89,7 @@ public class EventTeam
 			/*if (!EventsManager.getInstance().isType(EventType.DM)
 					&& !EventsManager.getInstance().isType(EventType.SS)
 					&& !EventsManager.getInstance().isType(EventType.SS2))
-				this.participatedPlayers.get(playerObjectId).setEvent(null);*/
+				participatedPlayers.get(playerObjectId).setEvent(null);*/
 			participatedPlayers.remove(playerObjectId);
 		}
 	}

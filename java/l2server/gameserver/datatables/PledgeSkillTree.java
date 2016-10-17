@@ -123,7 +123,7 @@ public class PledgeSkillTree
 
 		if (skills == null)
 		{
-			// the this.skillTree for this class is undefined, so we give an empty list
+			// the skillTree for this class is undefined, so we give an empty list
 
 			Log.warning("No clan skills defined!");
 			return new L2PledgeSkillLearn[]{};

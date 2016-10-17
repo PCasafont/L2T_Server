@@ -1315,7 +1315,7 @@ public class L2Party
 		// Balance check
 		/*if (allies.size() * 2 < enemies.size())
 		{
-			this.target = null;
+			target = null;
 			return;
 		}*/
 
@@ -1367,7 +1367,7 @@ public class L2Party
 
 				if (count > 5 || clans.size() < 2)
 				{
-					for (L2PcInstance member : this.members)
+					for (L2PcInstance member : members)
 						member.teleToLocation(mostPvP.getX() + Rnd.get(200), mostPvP.getY() + Rnd.get(200), mostPvP.getZ());
 				}
 			}*/

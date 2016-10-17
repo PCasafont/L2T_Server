@@ -60,8 +60,8 @@ public class PcInventory extends Inventory
 	 * Block modes:
 	 * <UL>
 	 * <LI>-1 - no block
-	 * <LI>0 - block items from this.invItems, allow usage of other items
-	 * <LI>1 - allow usage of items from this.invItems, block other items
+	 * <LI>0 - block items from invItems, allow usage of other items
+	 * <LI>1 - allow usage of items from invItems, block other items
 	 * </UL>
 	 */
 	@Getter private int blockMode = -1;
@@ -482,7 +482,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Adds item in inventory and checks this.adena and _ancientAdena
+	 * Adds item in inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param item      : L2ItemInstance to be added
@@ -509,7 +509,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Adds item in inventory and checks this.adena and _ancientAdena
+	 * Adds item in inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item Identifier of the item to be added
@@ -562,7 +562,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Transfers item to another inventory and checks this.adena and _ancientAdena
+	 * Transfers item to another inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of items to be transfered
@@ -589,7 +589,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Destroy item from inventory and checks this.adena and _ancientAdena
+	 * Destroy item from inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param item      : L2ItemInstance to be destroyed
@@ -604,7 +604,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Destroy item from inventory and checks this.adena and _ancientAdena
+	 * Destroy item from inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param item      : L2ItemInstance to be destroyed
@@ -649,7 +649,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Destroys item from inventory and checks this.adena and _ancientAdena
+	 * Destroys item from inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Instance identifier of the item to be destroyed
@@ -670,7 +670,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Destroy item from inventory by using its <B>itemId</B> and checks this.adena and _ancientAdena
+	 * Destroy item from inventory by using its <B>itemId</B> and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item identifier of the item to be destroyed
@@ -691,7 +691,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Drop item from inventory and checks this.adena and _ancientAdena
+	 * Drop item from inventory and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param item      : L2ItemInstance to be dropped
@@ -718,7 +718,7 @@ public class PcInventory extends Inventory
 	}
 
 	/**
-	 * Drop item from inventory by using its <B>objectID</B> and checks this.adena and _ancientAdena
+	 * Drop item from inventory by using its <B>objectID</B> and checks adena and _ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Instance identifier of the item to be dropped

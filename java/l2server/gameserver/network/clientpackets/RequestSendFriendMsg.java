@@ -97,11 +97,11 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			{
 				L2DatabaseFactory.close(con);
 			}
-			/*LogRecord record = new LogRecord(Level.INFO, this.message);
+			/*LogRecord record = new LogRecord(Level.INFO, message);
 			record.setLoggerName("chat");
-			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ this.reciever +"]"});
+			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ reciever +"]"});
 
-			this.logChat.log(record);*/
+			logChat.log(record);*/
 		}
 
 		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), reciever, message));

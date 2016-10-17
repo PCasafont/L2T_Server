@@ -443,11 +443,11 @@ public class Olympiad
 
 		/*
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.OLYMPIAD_PERIOD_S1_HAS_ENDED);
-		sm.addNumber(this.currentCycle);
+		sm.addNumber(currentCycle);
 		Announcements.getInstance().announceToAll(sm);
 
-		if (this.scheduledWeeklyTask != null)
-			this.scheduledWeeklyTask.cancel(true);
+		if (scheduledWeeklyTask != null)
+			scheduledWeeklyTask.cancel(true);
 
 		saveNobleData();
 
@@ -457,9 +457,9 @@ public class Olympiad
 		updateMonthlyData();
 
 		Calendar validationEnd = Calendar.getInstance();
-		this.validationEnd = validationEnd.getTimeInMillis() + VALIDATION_PERIOD;
+		validationEnd = validationEnd.getTimeInMillis() + VALIDATION_PERIOD;
 
-		this.currentCycle++;
+		currentCycle++;
 		deleteNobles();
 		setNewOlympiadEnd();
 		init();*/
@@ -509,7 +509,7 @@ public class Olympiad
 
 	private void updateCompStatus()
 	{
-		// this.compStarted = false;
+		// compStarted = false;
 
 		long milliToStart = getMillisToCompBegin();
 
@@ -531,7 +531,7 @@ public class Olympiad
 
 	private long getMillisToOlympiadEnd()
 	{
-		// if (this.olympiadEnd > Calendar.getInstance().getTimeInMillis())
+		// if (olympiadEnd > Calendar.getInstance().getTimeInMillis())
 		return olympiadEnd - Calendar.getInstance().getTimeInMillis();
 		// return 10L;
 	}
@@ -631,7 +631,7 @@ public class Olympiad
 
 	protected long getMillisToCompEnd()
 	{
-		// if (this.compEnd > Calendar.getInstance().getTimeInMillis())
+		// if (compEnd > Calendar.getInstance().getTimeInMillis())
 		return compEnd - Calendar.getInstance().getTimeInMillis();
 		// return 10L;
 	}
@@ -863,7 +863,7 @@ public class Olympiad
 
 	public List<String> getClassLeaderBoard(int classId)
 	{
-		// if (this.period != 1) return;
+		// if (period != 1) return;
 
 		List<String> names = new ArrayList<>();
 
@@ -929,7 +929,7 @@ public class Olympiad
 
 		int objId = player.getObjectId();
 
-		//OlympiadNobleInfo noble = this.nobles.get(objId);
+		//OlympiadNobleInfo noble = nobles.get(objId);
 		//if (noble == null || noble.isSettled())
 		//	return 0;
 

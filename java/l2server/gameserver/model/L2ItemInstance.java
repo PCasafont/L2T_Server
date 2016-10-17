@@ -270,10 +270,10 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 * Remove a L2ItemInstance from the world and send server->client GetItem packets.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Send a Server->Client Packet GetItem to player that pick up and its this.knowPlayers member </li>
+	 * <li>Send a Server->Client Packet GetItem to player that pick up and its knowPlayers member </li>
 	 * <li>Remove the L2Object from the world</li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from this.allObjects of L2World </B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from allObjects of L2World </B></FONT><BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
 	 * <li> this instanceof L2ItemInstance</li>
@@ -982,7 +982,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	public boolean setEnsoulEffect(int index, EnsoulEffect effect)
 	{
 		// there shall be no previous effect..?
-		//if (this.ensoulEffects[index] != null)
+		//if (ensoulEffects[index] != null)
 		//	return false;
 
 		ensoulEffects[index] = effect;
@@ -1755,11 +1755,11 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 					{
 						Broadcast.toGameMasters("(1) Deleted " + getCount() + " " + getName() + " from DB because... ");
 
-						if (this.ownerId == 0)
+						if (ownerId == 0)
 							Broadcast.toGameMasters("OwnerId = 0");
-						if (this.loc == ItemLocation.VOID || this.loc == ItemLocation.REFUND)
-							Broadcast.toGameMasters("Location = " + this.loc);
-						if (getCount() == 0 && this.loc != ItemLocation.LEASE)
+						if (loc == ItemLocation.VOID || loc == ItemLocation.REFUND)
+							Broadcast.toGameMasters("Location = " + loc);
+						if (getCount() == 0 && loc != ItemLocation.LEASE)
 							Broadcast.toGameMasters("Count = 0 & Loc != LEASE");
 					}*/
 				}
@@ -1778,11 +1778,11 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 					{
 						Broadcast.toGameMasters("(2) Deleted " + getCount() + " " + getName() + " from DB because... ");
 
-						if (this.ownerId == 0)
+						if (ownerId == 0)
 							Broadcast.toGameMasters("OwnerId = 0");
-						if (this.loc == ItemLocation.VOID || this.loc == ItemLocation.REFUND)
-							Broadcast.toGameMasters("Location = " + this.loc);
-						if (getCount() == 0 && this.loc != ItemLocation.LEASE)
+						if (loc == ItemLocation.VOID || loc == ItemLocation.REFUND)
+							Broadcast.toGameMasters("Location = " + loc);
+						if (getCount() == 0 && loc != ItemLocation.LEASE)
 							Broadcast.toGameMasters("Count = 0 & Loc != LEASE");
 					}*/
 
@@ -1873,11 +1873,11 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 * Init a dropped L2ItemInstance and add it in the world as a visible object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the x,y,z position of the L2ItemInstance dropped and update its this.worldregion </li>
-	 * <li>Add the L2ItemInstance dropped to this.visibleObjects of its L2WorldRegion</li>
+	 * <li>Set the x,y,z position of the L2ItemInstance dropped and update its worldregion </li>
+	 * <li>Add the L2ItemInstance dropped to visibleObjects of its L2WorldRegion</li>
 	 * <li>Add the L2ItemInstance dropped in the world as a <B>visible</B> object</li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to this.allObjects of L2World </B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T ADD the object to allObjects of L2World </B></FONT><BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
 	 * <li> worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR><BR>
@@ -1931,7 +1931,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 				itm.getPosition().setWorldPosition(x, y, z);
 				itm.getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 
-				// Add the L2ItemInstance dropped to this.visibleObjects of its L2WorldRegion
+				// Add the L2ItemInstance dropped to visibleObjects of its L2WorldRegion
 			}
 
 			// this can synchronize on others instancies, so it's out of

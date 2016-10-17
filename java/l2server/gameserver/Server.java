@@ -532,8 +532,8 @@ public class Server
 
 	public static void printSection(String s)
 	{
-		//if (this.t > 0)
-		//	Log.info("Time spent in last section: " + (t - this.t) / 1000 + "s");
+		//if (t > 0)
+		//	Log.info("Time spent in last section: " + (t - t) / 1000 + "s");
 		t = System.currentTimeMillis();
 
 		s = "=[ " + s + " ]";

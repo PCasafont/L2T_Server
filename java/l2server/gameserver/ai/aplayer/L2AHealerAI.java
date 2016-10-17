@@ -86,15 +86,15 @@ public class L2AHealerAI extends L2APlayerAI
 		}
 
 		/*if (getIntention() == CtrlIntention.AI_INTENTION_IDLE
-				&& (this.player.getCurrentMp() > player.getMaxMp() * 0.7
-				|| this.player.getCurrentHp() < this.player.getMaxHp() * 0.5))
+				&& (player.getCurrentMp() > player.getMaxMp() * 0.7
+				|| player.getCurrentHp() < player.getMaxHp() * 0.5))
 		{
-			for (L2Skill skill : this.player.getAllSkills())
+			for (L2Skill skill : player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 					continue;
 
-				if (this.player.useMagic(skill, true, false))
+				if (player.useMagic(skill, true, false))
 					break;
 			}
 		}*/

@@ -112,7 +112,7 @@ public class TimeController
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Update the position of each L2Character </li>
 	 * <li>If movement is finished, the L2Character is removed from movingObjects </li>
-	 * <li>Create a task to update the this.knownObject and this.knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
+	 * <li>Create a task to update the knownObject and knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
 	 */
 	protected void moveObjects()
 	{
@@ -197,7 +197,7 @@ public class TimeController
 	}
 
 	/**
-	 * Update the this.knownObject and this.knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED.<BR><BR>
+	 * Update the knownObject and knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED.<BR><BR>
 	 */
 	private static class MovingObjectArrived implements Runnable
 	{

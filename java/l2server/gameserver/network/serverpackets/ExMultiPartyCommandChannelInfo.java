@@ -42,7 +42,7 @@ public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
 			return;
 		}
 
-		// L2PcInstance player = this.getClient().getActiveChar();
+		// L2PcInstance player = getClient().getActiveChar();
 
 		writeS(channel.getChannelLeader().getName()); // Channelowner
 		writeD(0); // Channelloot 0 or 1

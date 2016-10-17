@@ -41,7 +41,7 @@ import l2server.gameserver.util.Util;
  * if flyCourse = 360 or 0, player will be moved in in front of him. <br>
  * <br>
  * <p>
- * If target is effector, put in XML self = "1". This will make this.actor =
+ * If target is effector, put in XML self = "1". This will make actor =
  * getEffector(). This, combined with target type, allows more complex actions
  * like flying target's backwards or player's backwards.<br>
  * <br>

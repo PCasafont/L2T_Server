@@ -200,12 +200,12 @@ public class L2NpcAIData
 	/*
 	public void setBaseShldRate (int baseShldRate)
 	{
-		this.baseShldRate = baseShldRate;
+		baseShldRate = baseShldRate;
 	}
 
 	public void setBaseShldDef (int baseShldDef)
 	{
-		this.baseShldDef = baseShldDef;
+		baseShldDef = baseShldDef;
 	}
 	*/
 
@@ -291,12 +291,12 @@ public class L2NpcAIData
 
 	public int getBaseShldRate ()
 	{
-		return this.baseShldRate;
+		return baseShldRate;
 	}
 
 	public int getBaseShldDef ()
 	{
-		return this.baseShldDef;
+		return baseShldDef;
 	}
 	 */
 }

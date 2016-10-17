@@ -26,12 +26,12 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 		/*JMenuItem itemOpenGo = new JMenuItem("Do not show this");
 		itemOpenGo.setActionCommand("mark");
 		itemOpenGo.addActionListener(this);
-		this.popupMenu.add(itemOpenGo);
+		popupMenu.add(itemOpenGo);
 
 		JMenuItem itemOpen = new JMenuItem("Mark Yellow (What is this for??)");
 		itemOpen.setActionCommand("yellow");
 		itemOpen.addActionListener(this);
-		this.popupMenu.add(itemOpen);*/
+		popupMenu.add(itemOpen);*/
 	}
 
 	/* (non-Javadoc)
@@ -55,8 +55,8 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	{
 		/*if (e.getActionCommand().equals("yellow"))
 		{
-			JTable table = this.parent.getPlayerTable();
-			/*int row = this.parent.getSelectedPacketindex();
+			JTable table = parent.getPlayerTable();
+			/*int row = parent.getSelectedPacketindex();
 			//int col = table.columnAtPoint(e.getPoint());
 			boolean val = !((PacketTableModel) table.getModel()).getIsMarked(row);
 			((PacketTableModel) table.getModel()).setIsMarked(row, val);

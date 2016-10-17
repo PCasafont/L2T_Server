@@ -515,11 +515,11 @@ public class L2Npc extends L2Character
 	}
 
 	/**
-	 * Send a packet SocialAction to all L2PcInstance in the this.KnownPlayers of the L2NpcInstance and create a new RandomAnimation Task.<BR><BR>
+	 * Send a packet SocialAction to all L2PcInstance in the KnownPlayers of the L2NpcInstance and create a new RandomAnimation Task.<BR><BR>
 	 */
 	public void onRandomAnimation(int animationId)
 	{
-		// Send a packet SocialAction to all L2PcInstance in the this.KnownPlayers of the L2NpcInstance
+		// Send a packet SocialAction to all L2PcInstance in the KnownPlayers of the L2NpcInstance
 		long now = System.currentTimeMillis();
 		if (now - lastSocialBroadcast > minimalSocialInterval)
 		{
@@ -584,7 +584,7 @@ public class L2Npc extends L2Character
 	 * Constructor of L2NpcInstance (use L2Character constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the this.template of the L2Character (copy skills from template to object and link this.calculators to NPC_STD_CALCULATOR)  </li>
+	 * <li>Call the L2Character constructor to set the template of the L2Character (copy skills from template to object and link calculators to NPC_STD_CALCULATOR)  </li>
 	 * <li>Set the name of the L2Character</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *
@@ -593,8 +593,8 @@ public class L2Npc extends L2Character
 	 */
 	public L2Npc(int objectId, L2NpcTemplate template)
 	{
-		// Call the L2Character constructor to set the this.template of the L2Character, copy skills from template to object
-		// and link this.calculators to NPC_STD_CALCULATOR
+		// Call the L2Character constructor to set the template of the L2Character, copy skills from template to object
+		// and link calculators to NPC_STD_CALCULATOR
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Npc);
 		initCharStatusUpdateValues();
@@ -733,7 +733,7 @@ public class L2Npc extends L2Character
 	}
 
 	/**
-	 * Send a packet NpcInfo with state of abnormal effect to all L2PcInstance in the this.KnownPlayers of the L2NpcInstance.<BR><BR>
+	 * Send a packet NpcInfo with state of abnormal effect to all L2PcInstance in the KnownPlayers of the L2NpcInstance.<BR><BR>
 	 */
 	@Override
 	public void updateAbnormalEffect()
@@ -743,7 +743,7 @@ public class L2Npc extends L2Character
 			return;
 		}
 
-		// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the this.KnownPlayers of the L2NpcInstance
+		// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the KnownPlayers of the L2NpcInstance
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		//synchronized (getKnownList().getKnownPlayers())
 		{
@@ -767,7 +767,7 @@ public class L2Npc extends L2Character
 	}
 
 	/**
-	 * Return the distance under which the object must be add to this.knownObject in
+	 * Return the distance under which the object must be add to knownObject in
 	 * function of the object type.<BR>
 	 * <BR>
 	 * <p>
@@ -804,7 +804,7 @@ public class L2Npc extends L2Character
 	}
 
 	/**
-	 * Return the distance after which the object must be remove from this.knownObject in function of the object type.<BR><BR>
+	 * Return the distance after which the object must be remove from knownObject in function of the object type.<BR><BR>
 	 * <p>
 	 * <B><U> Values </U> :</B><BR><BR>
 	 * <li> object is not a L2Character : 0 (don't remember it) </li>
@@ -1677,7 +1677,7 @@ public class L2Npc extends L2Character
 	 * <li>Decrease its spawn counter </li>
 	 * <li>Manage Siege task (killFlag, killCT) </li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from this.allObjects of L2World </B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from allObjects of L2World </B></FONT><BR>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
 	 */
 	@Override
@@ -1705,8 +1705,8 @@ public class L2Npc extends L2Character
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove the L2NpcInstance from the world and update its spawn object </li>
-	 * <li>Remove all L2Object from this.knownObjects and this.knownPlayer of the L2NpcInstance then cancel Attack or Cast and notify AI </li>
-	 * <li>Remove L2Object object from this.allObjects of L2World </li><BR><BR>
+	 * <li>Remove all L2Object from knownObjects and knownPlayer of the L2NpcInstance then cancel Attack or Cast and notify AI </li>
+	 * <li>Remove L2Object object from allObjects of L2World </li><BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
 	 */
@@ -1747,7 +1747,7 @@ public class L2Npc extends L2Character
 			oldRegion.removeFromZones(this);
 		}
 
-		// Remove all L2Object from this.knownObjects and this.knownPlayer of the L2Character then cancel Attak or Cast and notify AI
+		// Remove all L2Object from knownObjects and knownPlayer of the L2Character then cancel Attak or Cast and notify AI
 		try
 		{
 			getKnownList().removeAllKnownObjects();
@@ -1757,7 +1757,7 @@ public class L2Npc extends L2Character
 			Log.log(Level.SEVERE, "Failed removing cleaning knownlist.", e);
 		}
 
-		// Remove L2Object object from this.allObjects of L2World
+		// Remove L2Object object from allObjects of L2World
 		L2World.getInstance().removeObject(this);
 
 		super.deleteMe();

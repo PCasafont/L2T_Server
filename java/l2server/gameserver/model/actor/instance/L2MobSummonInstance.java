@@ -205,7 +205,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 					getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
 					return;
 				}
-				//if (target.isAutoAttackable(getOwner()) || this.ctrlPressed)
+				//if (target.isAutoAttackable(getOwner()) || ctrlPressed)
 				if (target instanceof L2MobSummonInstance)
 				{
 					if (target instanceof L2DoorInstance)

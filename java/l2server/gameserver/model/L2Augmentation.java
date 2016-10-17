@@ -52,7 +52,7 @@ public final class L2Augmentation
 		{
 			Log.warning("Null augment1 for augment with id = " + id + " and calculated id1 = " + id1);
 		}
-		//if (this.augment2 == null)
+		//if (augment2 == null)
 		//	Log.warning("Null augment2 for augment with id = " + id + " and calculated id2 = " + id2);
 	}
 

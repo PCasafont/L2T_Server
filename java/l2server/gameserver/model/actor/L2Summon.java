@@ -449,7 +449,7 @@ public abstract class L2Summon extends L2Playable
 		{
 			// Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2PcInstance of the Party
 			//PartySmallWindowUpdate update = new PartySmallWindowUpdate(this);
-			//party.broadcastToPartyMembers(this.owner, update);
+			//party.broadcastToPartyMembers(owner, update);
 			party.broadcastToPartyMembers(owner, su);
 		}
 

@@ -447,7 +447,7 @@ public class Christmas extends Quest
 						startQuestTimer("santas_random_player_reward", rewardRandomPlayerEach * 3600000, null, null);
 						nextSantaReward = System.currentTimeMillis() + rewardRandomPlayerEach * 3600000;
 					}
-					//System.out.println("CHRISTMAS REWARDING: " + this.player.getName());
+					//System.out.println("CHRISTMAS REWARDING: " + player.getName());
 					GmListTable.broadcastMessageToGMs(
 							"Christmas: Rewarding: " + this.player.getName() + " IP: " + this.player.getExternalIP());
 				}

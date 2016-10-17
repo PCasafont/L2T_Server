@@ -93,8 +93,8 @@ public final class Action extends L2GameClientPacket
 		if (obj == null)
 		{
 			// pressing e.g. pickup many times quickly would get you here
-			// Log.warning("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + this.objectId);
-			//activeChar.sendSysMessage("Obj was null (" + this.objectId);
+			// Log.warning("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + objectId);
+			//activeChar.sendSysMessage("Obj was null (" + objectId);
 
 			obj = L2World.getInstance().getPlayer(objectId);
 			//activeChar.sendSysMessage("Obj = " + obj);

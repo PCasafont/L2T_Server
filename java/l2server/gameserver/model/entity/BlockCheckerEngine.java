@@ -559,7 +559,7 @@ public final class BlockCheckerEngine
 		@Override
 		public void run()
 		{
-			this.holder.broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.BLOCK_CHECKER_ENDS_5));
+			holder.broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.BLOCK_CHECKER_ENDS_5));
 			ThreadPoolManager.getInstance().scheduleGeneral(new EndEvent(), 5000);
 		}
 	}

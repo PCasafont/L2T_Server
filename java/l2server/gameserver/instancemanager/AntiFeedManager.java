@@ -192,7 +192,7 @@ public class AntiFeedManager
 		if (client == null)
 			return false; // unable to determine IP address
 
-		final Map<Integer, Connections> event = this.eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event == null)
 			return false; // no such event registered
 

@@ -317,7 +317,7 @@ public class LotterySystem
 			}
 			else
 			{
-				sb.append("<td><a action=\"bypass this.bbscustom;action;buyNumber;" + i + "\">" + i + "</a></td>");
+				sb.append("<td><a action=\"bypass _bbscustom;action;buyNumber;" + i + "\">" + i + "</a></td>");
 			}
 
 			if (b % 10 == 0)

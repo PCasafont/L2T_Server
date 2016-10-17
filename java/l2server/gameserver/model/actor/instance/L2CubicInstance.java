@@ -141,83 +141,83 @@ public class L2CubicInstance
 				skills.add(SkillTable.getInstance().getInfo(5116, level));
 				break;
 			case SMART_CUBIC_ARCANALORD:
-				// this.skills.add(SkillTable.getInstance().getInfo(4049,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4049,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4051, 7)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
+				// skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case SMART_CUBIC_ELEMENTALMASTER:
 				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4166, 9)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
+				// skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case SMART_CUBIC_SPECTRALMASTER:
 				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4052, 6)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
+				// skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case SMART_CUBIC_EVATEMPLAR:
-				// this.skills.add(SkillTable.getInstance().getInfo(4049,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4049,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4053, 8)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
 				skills.add(SkillTable.getInstance().getInfo(4165, 9)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
+				// skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5115,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case SMART_CUBIC_SHILLIENTEMPLAR:
 				skills.add(SkillTable.getInstance().getInfo(4049, 8)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4050,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4051,7)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4052,6)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4053,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4054,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4055,8)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4164,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4165,9)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(4166,9)); no animation
 				skills.add(SkillTable.getInstance().getInfo(5115, 4)); // have animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
-				// this.skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
+				// skills.add(SkillTable.getInstance().getInfo(5116,4)); no animation
+				// skills.add(SkillTable.getInstance().getInfo(5579,4)); no need to add to the
 				// cubic skills list
 				break;
 			case KNIGHT_CUBIC:

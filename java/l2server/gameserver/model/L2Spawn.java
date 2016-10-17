@@ -196,7 +196,7 @@ public class L2Spawn
 	 * <li>Update the current number of SpawnTask in progress or stand by of this L2Spawn </li>
 	 * <li>Create a new SpawnTask to launch after the respawn Delay </li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : A respawn is possible ONLY if _doRespawn=True and this.scheduledCount + this.currentCount < _maximumCount</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : A respawn is possible ONLY if _doRespawn=True and scheduledCount + currentCount < _maximumCount</B></FONT><BR><BR>
 	 */
 	public void onDecay(L2Npc oldNpc)
 	{
@@ -240,7 +240,7 @@ public class L2Spawn
 	}
 
 	/**
-	 * Set this.doRespawn to False to stop respawn in thios L2Spawn.<BR><BR>
+	 * Set doRespawn to False to stop respawn in thios L2Spawn.<BR><BR>
 	 */
 	public void stopRespawn()
 	{
@@ -248,7 +248,7 @@ public class L2Spawn
 	}
 
 	/**
-	 * Set this.doRespawn to True to start or restart respawn in this L2Spawn.<BR><BR>
+	 * Set doRespawn to True to start or restart respawn in this L2Spawn.<BR><BR>
 	 */
 	public void startRespawn()
 	{

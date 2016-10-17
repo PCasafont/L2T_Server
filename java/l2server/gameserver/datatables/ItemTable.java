@@ -255,7 +255,7 @@ public class ItemTable implements Reloadable
 	 */
 	private void buildFastLookupTable(int size)
 	{
-		// Create a FastLookUp Table called this.allTemplates of size : value of the highest item ID
+		// Create a FastLookUp Table called allTemplates of size : value of the highest item ID
 		Log.info("Highest item id used:" + size);
 		allTemplates = new L2Item[size + 1];
 
@@ -301,7 +301,7 @@ public class ItemTable implements Reloadable
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Create and Init the L2ItemInstance corresponding to the Item Identifier and quantity </li>
-	 * <li>Add the L2ItemInstance object to this.allObjects of L2world </li>
+	 * <li>Add the L2ItemInstance object to allObjects of L2world </li>
 	 * <li>Logs Item creation according to log settings</li><BR><BR>
 	 *
 	 * @param process   : String Identifier of process triggering this action
@@ -357,7 +357,7 @@ public class ItemTable implements Reloadable
 			Log.fine("ItemTable: Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
 		}
 
-		// Add the L2ItemInstance object to this.allObjects of L2world
+		// Add the L2ItemInstance object to allObjects of L2world
 		L2World.getInstance().storeObject(item);
 
 		// Set Item parameters
@@ -433,7 +433,7 @@ public class ItemTable implements Reloadable
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Sets L2ItemInstance parameters to be unusable </li>
-	 * <li>Removes the L2ItemInstance object to this.allObjects of L2world </li>
+	 * <li>Removes the L2ItemInstance object to allObjects of L2world </li>
 	 * <li>Logs Item delettion according to log settings</li><BR><BR>
 	 *
 	 * @param process   : String Identifier of process triggering this action

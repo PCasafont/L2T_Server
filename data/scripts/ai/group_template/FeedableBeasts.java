@@ -447,7 +447,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		}
 		// despawn the old mob
 		//TODO: same code? FIXED?
-		/*if (this.GrowthCapableMobs.get(npcId).getGrowthLevel() == 0)
+		/*if (GrowthCapableMobs.get(npcId).getGrowthLevel() == 0)
 		{
 			npc.deleteMe();
 		}
@@ -582,7 +582,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		// first gather some values on local variables
 		int objectId = npc.getObjectId();
 		int growthLevel =
-				3; // if a mob is in FEEDABLE_BEASTS but not in this.GrowthCapableMobs, then it's at max growth (3)
+				3; // if a mob is in FEEDABLE_BEASTS but not in GrowthCapableMobs, then it's at max growth (3)
 		if (GrowthCapableMobs.containsKey(npcId))
 		{
 			growthLevel = GrowthCapableMobs.get(npcId).getGrowthLevel();

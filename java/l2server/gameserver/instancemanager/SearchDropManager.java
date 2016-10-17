@@ -321,7 +321,7 @@ public class SearchDropManager
 		for (Drops d : drops)
 		{
 			sb.append("<tr><td><img src=" + d.getIcon() +
-					" width=32 height=32></td><td width=568><a action=\"bypass this.bbscustom;action;searchDrop;" +
+					" width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;" +
 					d.getItemId() + ";" + spoil + ";0\">" + d.getName() + "</a></td></tr>");
 		}
 		sb.append("</table>");

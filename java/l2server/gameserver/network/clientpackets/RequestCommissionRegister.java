@@ -51,11 +51,11 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 		{
 		}
 
-		/*long destroyPrice = this.price;
+		/*long destroyPrice = price;
 		AuctionManager am = AuctionManager.getInstance();
 		am.checkForAuctionsDeletion();
 		long timeToAdd = 0;
-		switch (this.duration)
+		switch (duration)
 		{
 			case 0:
 				timeToAdd = 86400000;
@@ -83,21 +83,21 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 			return;
 		}
 
-		if (player.getInventory().getItemByObjectId(this.itemOID) == null)
+		if (player.getInventory().getItemByObjectId(itemOID) == null)
 		{
 			player.sendPacket(SystemMessageId.REGISTRATION_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST);
 			reloadAuction(player, false);
 			return;
 		}
 
-		if (player.getInventory().getItemByObjectId(this.itemOID).isEquipped())
+		if (player.getInventory().getItemByObjectId(itemOID).isEquipped())
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_THAT_IS_CURRENTLY_WORN_CANNOT_BE_REGISTERED);
 			reloadAuction(player, false);
 			return;
 		}
 
-		int itemID = player.getInventory().getItemByObjectId(this.itemOID).getItemId();
+		int itemID = player.getInventory().getItemByObjectId(itemOID).getItemId();
 		L2Item item = ItemTable.getInstance().getTemplate(itemID);
 
 		if ((player.getAuctionInventory().getSize() >= 10 && !player.isGM()) || (player.getAuctionInventory().getSize() >= 99999 && player.isGM()) || !item.isTradeable() || !item.isSellable())
@@ -107,21 +107,21 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 			return;
 		}
 
-		int category = am.getCategoryByItem(player.getInventory().getItemByObjectId(this.itemOID));
+		int category = am.getCategoryByItem(player.getInventory().getItemByObjectId(itemOID));
 		player.getInventory().destroyItemByItemId("CreateAuction", 57, destroyPrice, null, null);
-		player.getInventory().transferItem("CreateAuction", this.itemOID, this.count, player.getAuctionInventory(), player, null);
+		player.getInventory().transferItem("CreateAuction", itemOID, count, player.getAuctionInventory(), player, null);
 		long finishTime = (System.currentTimeMillis() + timeToAdd)/1000;
 
 		int auctionID = IdFactory.getInstance().getNextId();
-		if (player.getAuctionInventory().getItemByObjectId(this.itemOID) == null)
-			am.createAuction(auctionID, player.getObjectId(), this.itemOID, player.getAuctionInventory().getItemByItemId(itemID), this.itemName, this.price, this.count, this.duration, finishTime, category);
+		if (player.getAuctionInventory().getItemByObjectId(itemOID) == null)
+			am.createAuction(auctionID, player.getObjectId(), itemOID, player.getAuctionInventory().getItemByItemId(itemID), itemName, price, count, duration, finishTime, category);
 		else
-			am.createAuction(auctionID, player.getObjectId(), this.itemOID, player.getAuctionInventory().getItemByObjectId(this.itemOID), this.itemName, this.price, this.count, this.duration, finishTime, category);
+			am.createAuction(auctionID, player.getObjectId(), itemOID, player.getAuctionInventory().getItemByObjectId(itemOID), itemName, price, count, duration, finishTime, category);
 		am.insertAuction(am.getAuctionById(auctionID));
 		player.sendPacket(SystemMessageId.THE_ITEM_HAS_BEEN_SUCCESSFULLY_REGISTERED);
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(player.getInventory().getItemByItemId(57));
-		iu.addModifiedItem(player.getInventory().getItemByObjectId(this.itemOID));
+		iu.addModifiedItem(player.getInventory().getItemByObjectId(itemOID));
 		player.sendPacket(iu);
 		reloadAuction(player, true);*/
 	}

@@ -66,7 +66,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		/*if (this.mode == 0)
+		/*if (mode == 0)
 		{
 			writeD(0);
 			writeD(0);

@@ -33,19 +33,19 @@ public class ServerGui
 		//File Menu
 		/*JMenuItem itemExit = new JMenuItem("Exit");
 		itemExit.setActionCommand("Exit");
-		itemExit.addActionListener(this.menuListener);
+		itemExit.addActionListener(menuListener);
 
-		this.fileMenu.add(itemExit);
+		fileMenu.add(itemExit);
 
 		//Help
 		JMenuItem itemAbout = new JMenuItem("About");
 		itemAbout.setActionCommand("About");
-		itemAbout.addActionListener(this.menuListener);
-		this.helpMenu.add(itemAbout);
+		itemAbout.addActionListener(menuListener);
+		helpMenu.add(itemAbout);
 
-		this.menuBar.add(this.fileMenu);
-		this.menuBar.add(this.helpMenu);
-		this.frame.setJMenuBar(this.menuBar);*/
+		menuBar.add(fileMenu);
+		menuBar.add(helpMenu);
+		frame.setJMenuBar(menuBar);*/
 
 		// Console Tab
 		consoleTab = new ConsoleTab(true);

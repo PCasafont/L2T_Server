@@ -58,7 +58,7 @@ public class Octavis extends L2AttackableAIScript
 	//Skills
 	private static final L2Skill heroArrowShaft = SkillTable.getInstance().getInfo(14285, 1);
 	private static final L2Skill heroInfluence1 = SkillTable.getInstance().getInfo(14028, 1); //Stage 1
-	//private static final L2Skill	this.heroInfluence2		= SkillTable.getInstance().getInfo(14029, 1);	//Last stage
+	//private static final L2Skill	heroInfluence2		= SkillTable.getInstance().getInfo(14029, 1);	//Last stage
 	private static final L2Skill lionsAttack = SkillTable.getInstance().getInfo(14024, 1);
 	private static final L2Skill octavisObedience = SkillTable.getInstance().getInfo(14282, 1);
 

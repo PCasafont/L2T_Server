@@ -130,12 +130,12 @@ public class L2BossZone extends L2ZoneType
 	 * except if the time at which they enter the zone is prior to the entry
 	 * expiration time set for that player. Entry expiration times are set by
 	 * any one of the following: 1) A player logs out while in a zone
-	 * (Expiration gets set to logoutTime + this.timeInvade) 2) An external source
+	 * (Expiration gets set to logoutTime + timeInvade) 2) An external source
 	 * (such as a quest or AI of NPC) set up the player for entry.
 	 * <p>
 	 * There exists one more case in which the player will be allowed to enter.
 	 * That is if the server recently rebooted (boot-up time more recent than
-	 * currentTime - this.timeInvade) AND the player was in the zone prior to reboot.
+	 * currentTime - timeInvade) AND the player was in the zone prior to reboot.
 	 */
 	@Override
 	protected void onEnter(L2Character character)
