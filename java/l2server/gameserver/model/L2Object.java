@@ -333,7 +333,7 @@ public abstract class L2Object
 	 */
 	public void setInstanceId(int instanceId)
 	{
-		if (instanceId == instanceId)
+		if (this.instanceId == instanceId)
 		{
 			return;
 		}
