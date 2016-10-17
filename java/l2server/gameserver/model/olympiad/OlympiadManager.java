@@ -385,6 +385,12 @@ public class OlympiadManager
 			return null;
 		}
 
+		if (Config.isServer(Config.TENKAI_ESTHUS) && player.getLevel() < 107)
+		{
+			player.sendMessage("Only level 107 characters can participate in the Grand Olympiad.");
+			return null;
+		}
+
 		if (player.isSubClassActive())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANT_JOIN_THE_OLYMPIAD_WITH_A_SUB_CLASS_CHARACTER);
