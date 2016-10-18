@@ -325,7 +325,7 @@ public class L2Attackable extends L2Npc
 	 * Constructor of L2Attackable (use L2Character and L2NpcInstance constructor).
 	 * <p>
 	 * Actions:
-	 * Call the L2Character constructor to set the this.template of the L2Attackable (copy skills from template to object and link this.calculators to NPC_STD_CALCULATOR)
+	 * Call the L2Character constructor to set the template of the L2Attackable (copy skills from template to object and link calculators to NPC_STD_CALCULATOR)
 	 * Set the name of the L2Attackable
 	 * Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it
 	 *
@@ -478,7 +478,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Reduce the current HP of the L2Attackable, update its this.aggroList and launch the doDie Task if necessary.
+	 * Reduce the current HP of the L2Attackable, update its aggroList and launch the doDie Task if necessary.
 	 *
 	 * @param attacker The L2Character who attacks
 	 * @param awake    The awake state (If True : stop sleeping)
@@ -672,7 +672,7 @@ public class L2Attackable extends L2Npc
 			// While Interating over This Map Removing Object is Not Allowed
 			//synchronized (getAggroList())
 			{
-				// Go through the this.aggroList of the L2Attackable
+				// Go through the aggroList of the L2Attackable
 				for (AggroInfo info : getAggroList().values())
 				{
 					if (info == null)
@@ -1065,7 +1065,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Add damage and hate to the attacker AggroInfo of the L2Attackable this.aggroList.
+	 * Add damage and hate to the attacker AggroInfo of the L2Attackable aggroList.
 	 *
 	 * @param attacker The L2Character that gave damages to this L2Attackable
 	 * @param damage   The number of damages given by the attacker L2Character
@@ -1113,7 +1113,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Add damage and hate to the attacker AggroInfo of the L2Attackable this.aggroList.
+	 * Add damage and hate to the attacker AggroInfo of the L2Attackable aggroList.
 	 *
 	 * @param attacker The L2Character that gave damages to this L2Attackable
 	 * @param damage   The number of damages given by the attacker L2Character
@@ -1148,7 +1148,7 @@ public class L2Attackable extends L2Npc
 		}
 
 		L2PcInstance targetPlayer = attacker.getActingPlayer();
-		// Get the AggroInfo of the attacker L2Character from the this.aggroList of the L2Attackable
+		// Get the AggroInfo of the attacker L2Character from the aggroList of the L2Attackable
 		AggroInfo ai = getAggroList().get(attacker);
 
 		if (ai == null)
@@ -1274,7 +1274,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Clears this.aggroList hate of the L2Character without removing from the list.
+	 * Clears aggroList hate of the L2Character without removing from the list.
 	 */
 	public void stopHating(L2Character target)
 	{
@@ -1290,7 +1290,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the most hated L2Character of the L2Attackable this.aggroList.
+	 * Return the most hated L2Character of the L2Attackable aggroList.
 	 */
 	public L2Character getMostHated()
 	{
@@ -1324,7 +1324,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the 2 most hated L2Character of the L2Attackable this.aggroList.
+	 * Return the 2 most hated L2Character of the L2Attackable aggroList.
 	 */
 	public List<L2Character> get2MostHated()
 	{
@@ -1396,7 +1396,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the hate level of the L2Attackable against this L2Character contained in this.aggroList.
+	 * Return the hate level of the L2Attackable against this L2Character contained in aggroList.
 	 *
 	 * @param target The L2Character whose hate level must be returned
 	 */
@@ -1814,7 +1814,7 @@ public class L2Attackable extends L2Npc
 				}
 				sweepList.add(item);
 			}
-			// Set the table this.sweepItems of this L2Attackable
+			// Set the table sweepItems of this L2Attackable
 			if (!sweepList.isEmpty())
 			{
 				sweepItems = sweepList.toArray(new RewardItem[sweepList.size()]);
@@ -2183,7 +2183,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return True if the this.aggroList of this L2Attackable is Empty.
+	 * Return True if the aggroList of this L2Attackable is Empty.
 	 */
 	public boolean noTarget()
 	{
@@ -2191,9 +2191,9 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return True if the this.aggroList of this L2Attackable contains the L2Character.
+	 * Return True if the aggroList of this L2Attackable contains the L2Character.
 	 *
-	 * @param player The L2Character searched in the this.aggroList of the L2Attackable
+	 * @param player The L2Character searched in the aggroList of the L2Attackable
 	 */
 	public boolean containsTarget(L2Character player)
 	{
@@ -2201,7 +2201,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Clear the this.aggroList of the L2Attackable.
+	 * Clear the aggroList of the L2Attackable.
 	 */
 	public void clearAggroList()
 	{
@@ -2285,7 +2285,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the this.absorbersList.
+	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the absorbersList.
 	 * <p>
 	 * Params:
 	 * attacker - a valid L2PcInstance
@@ -2298,10 +2298,10 @@ public class L2Attackable extends L2Npc
 	 */
 	public void addAbsorber(L2PcInstance attacker)
 	{
-		// If we have no this.absorbersList initiated, do it
+		// If we have no absorbersList initiated, do it
 		AbsorberInfo ai = absorbersList.get(attacker.getObjectId());
 
-		// If the L2Character attacker isn't already in the this.absorbersList of this L2Attackable, add it
+		// If the L2Character attacker isn't already in the absorbersList of this L2Attackable, add it
 		if (ai == null)
 		{
 			ai = new AbsorberInfo(attacker.getObjectId(), getCurrentHp());
@@ -2614,7 +2614,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * @param channelLastAttack the this.commandChannelLastAttack to set
+	 * @param channelLastAttack the commandChannelLastAttack to set
 	 */
 	public void setCommandChannelLastAttack(long channelLastAttack)
 	{

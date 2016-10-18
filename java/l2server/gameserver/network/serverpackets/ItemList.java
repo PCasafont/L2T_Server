@@ -121,7 +121,7 @@ public final class ItemList extends L2ItemListPacket
 	{
 		writeH(showWindow ? 0x01 : 0x00);
 
-		//int count = this.items.length;
+		//int count = items.length;
 		writeH(length);
 
 		for (L2ItemInstance item : items)

@@ -65,7 +65,7 @@ public class GenesisStatues extends L2AttackableAIScript
 		{
 			//final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
 
-			//player.sendMessage("Magic will happen again on the " + dateFormatter.format(this.spawns.get(npc.getNpcId()) + 3600000) + ".");
+			//player.sendMessage("Magic will happen again on the " + dateFormatter.format(spawns.get(npc.getNpcId()) + 3600000) + ".");
 			return npc.getNpcId() + "-no.html";
 		}
 		else

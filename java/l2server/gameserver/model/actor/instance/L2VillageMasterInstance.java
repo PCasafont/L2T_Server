@@ -602,7 +602,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 						 * problems.
 						 */
 						player.setActiveClass(
-								0); // Also updates this.classIndex plus switching this.classid to baseclass.
+								0); // Also updates classIndex plus switching classid to baseclass.
 
 						player.sendMessage(
 								"The sub class could not be added, you have been reverted to your base class.");

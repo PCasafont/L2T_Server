@@ -123,7 +123,7 @@ public class L2MinionData
 
 	public int getMaxRespawn()
 	{
-		//if (this.maxRespawn > 5)
+		//if (maxRespawn > 5)
 		//	return 5;
 
 		return maxRespawn;

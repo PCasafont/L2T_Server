@@ -173,7 +173,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	/**
 	 * Set the Intention of this L2CharacterAI and create an  AI Task executed every 1s (call onEvtThink method) for this L2Attackable.<BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor this.knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT><BR><BR>
 	 *
 	 * @param intention The new Intention to set to the AI
 	 * @param arg0      The first parameter of the Intention
@@ -195,7 +195,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 			{
 				L2Attackable npc = (L2Attackable) actor;
 
-				// If its this.knownPlayer isn't empty set the Intention to AI_INTENTION_ACTIVE
+				// If its knownPlayer isn't empty set the Intention to AI_INTENTION_ACTIVE
 				if (!npc.getKnownList().getKnownPlayers().isEmpty())
 				{
 					intention = AI_INTENTION_ACTIVE;
@@ -247,7 +247,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 		attackTimeout = MAX_ATTACK_TIMEOUT + TimeController.getGameTicks();
 
 		// Manage the Attack Intention : Stop current Attack (if necessary), Start a new Attack and Launch Think Event
-		//if (this.actor.getTarget() != null)
+		//if (actor.getTarget() != null)
 		super.onIntentionAttack(target);
 	}
 
@@ -255,15 +255,15 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	 * Manage AI standard thinks of a L2Attackable (called by onEvtThink).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Update every 1s the this.globalAggro counter to come close to 0</li>
-	 * <li>If the actor is Aggressive and can attack, add all autoAttackable L2Character in its Aggro Range to its this.aggroList, chose a target and order to attack it</li>
+	 * <li>Update every 1s the globalAggro counter to come close to 0</li>
+	 * <li>If the actor is Aggressive and can attack, add all autoAttackable L2Character in its Aggro Range to its aggroList, chose a target and order to attack it</li>
 	 * <li>If the actor  can't attack, order to it to return to its home location</li>
 	 */
 	private void thinkActive()
 	{
 		L2Attackable npc = (L2Attackable) actor;
 
-		// Update every 1s the this.globalAggro counter to come close to 0
+		// Update every 1s the globalAggro counter to come close to 0
 		if (globalAggro != 0)
 		{
 			if (globalAggro < 0)
@@ -276,8 +276,8 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 			}
 		}
 
-		// Add all autoAttackable L2Character in L2Attackable Aggro Range to its this.aggroList with 0 damage and 1 hate
-		// A L2Attackable isn't aggressive during 10s after its spawn because this.globalAggro is set to -10
+		// Add all autoAttackable L2Character in L2Attackable Aggro Range to its aggroList with 0 damage and 1 hate
+		// A L2Attackable isn't aggressive during 10s after its spawn because globalAggro is set to -10
 		if (globalAggro >= 0)
 		{
 			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(attackRange))
@@ -291,7 +291,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 					// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
 					int hating = npc.getHating(target);
 
-					// Add the attacker to the L2Attackable this.aggroList with 0 damage and 1 hate
+					// Add the attacker to the L2Attackable aggroList with 0 damage and 1 hate
 					if (hating == 0)
 					{
 						npc.addDamageHate(target, 0, 1);
@@ -410,7 +410,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 		String faction_id = ((L2Npc) actor).getFactionId();
 
 		// Go through all L2Character that belong to its faction
-		//for (L2Character cha : this.actor.getKnownList().getKnownCharactersInRadius(((L2NpcInstance) this.actor).getFactionRange()+_actor.getTemplate().collisionRadius))
+		//for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(((L2NpcInstance) actor).getFactionRange()+_actor.getTemplate().collisionRadius))
 		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(1000))
 		{
 			if (cha == null)
@@ -475,7 +475,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 			if (npc.getAI() != null) // TODO: possibly check not needed
 			{
 				if (!npc.isDead() && Math.abs(target.getZ() - npc.getZ()) < 600
-						//&& this.actor.getAttackByList().contains(getAttackTarget())
+						//&& actor.getAttackByList().contains(getAttackTarget())
 						&& (npc.getAI().intention == CtrlIntention.AI_INTENTION_IDLE ||
 						npc.getAI().intention == CtrlIntention.AI_INTENTION_ACTIVE)
 						//limiting aggro for siege guards
@@ -785,7 +785,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	@Override
 	protected void onEvtThink()
 	{
-		//	  if (getIntention() != AI_INTENTION_IDLE && (!this.actor.isVisible() || !this.actor.hasAI() || !this.actor.isKnownPlayers()))
+		//	  if (getIntention() != AI_INTENTION_IDLE && (!actor.isVisible() || !actor.hasAI() || !actor.isKnownPlayers()))
 		//		  setIntention(AI_INTENTION_IDLE);
 
 		// Check if the thinking action is already in progress
@@ -820,7 +820,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	 * Launch actions corresponding to the Event Attacked.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Init the attack : Calculate the attack timeout, Set the this.globalAggro to 0, Add the attacker to the actor _aggroList</li>
+	 * <li>Init the attack : Calculate the attack timeout, Set the globalAggro to 0, Add the attacker to the actor _aggroList</li>
 	 * <li>Set the L2Character movement type to run and send Server->Client packet ChangeMoveType to all others L2PcInstance</li>
 	 * <li>Set the Intention to AI_INTENTION_ATTACK</li><BR><BR>
 	 *
@@ -832,13 +832,13 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 		// Calculate the attack timeout
 		attackTimeout = MAX_ATTACK_TIMEOUT + TimeController.getGameTicks();
 
-		// Set the this.globalAggro to 0 to permit attack even just after spawn
+		// Set the globalAggro to 0 to permit attack even just after spawn
 		if (globalAggro < 0)
 		{
 			globalAggro = 0;
 		}
 
-		// Add the attacker to the this.aggroList of the actor
+		// Add the attacker to the aggroList of the actor
 		((L2Attackable) actor).addDamageHate(attacker, 0, 1);
 
 		// Set the L2Character movement type to run and send Server->Client packet ChangeMoveType to all others L2PcInstance
@@ -860,7 +860,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	 * Launch actions corresponding to the Event Aggression.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Add the target to the actor this.aggroList or update hate if already present </li>
+	 * <li>Add the target to the actor aggroList or update hate if already present </li>
 	 * <li>Set the actor Intention to AI_INTENTION_ATTACK (if actor is L2GuardInstance check if it isn't too far from its home location)</li><BR><BR>
 	 *
 	 * @param aggro The value of hate to add to the actor against the target
@@ -876,7 +876,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 
 		if (target != null)
 		{
-			// Add the target to the actor this.aggroList or update hate if already present
+			// Add the target to the actor aggroList or update hate if already present
 			me.addDamageHate(target, 0, aggro);
 
 			// Get the hate of the actor against the target

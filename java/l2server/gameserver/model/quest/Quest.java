@@ -1080,7 +1080,7 @@ public class Quest extends ManagedScript
 	/**
 	 * Add quests to the L2PCInstance of the player.<BR><BR>
 	 * <U><I>Action : </U></I><BR>
-	 * Add state of quests, drops and variables for quests in the HashMap this.quest of L2PcInstance
+	 * Add state of quests, drops and variables for quests in the HashMap quest of L2PcInstance
 	 *
 	 * @param player : Player who is entering the world
 	 */

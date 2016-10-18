@@ -38,7 +38,7 @@ public class L2LvlupData
 	@Getter private float classMpModifier;
 
 	/**
-	 * @return Returns the this.classHpAdd.
+	 * @return Returns the classHpAdd.
 	 */
 	@Deprecated
 
@@ -48,7 +48,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classHpBase.
+	 * @return Returns the classHpBase.
 	 */
 	@Deprecated
 
@@ -58,7 +58,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classHpModifier.
+	 * @return Returns the classHpModifier.
 	 */
 	@Deprecated
 
@@ -68,7 +68,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classCpAdd.
+	 * @return Returns the classCpAdd.
 	 */
 	@Deprecated
 
@@ -78,7 +78,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classCpBase.
+	 * @return Returns the classCpBase.
 	 */
 	@Deprecated
 
@@ -88,7 +88,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classCpModifier.
+	 * @return Returns the classCpModifier.
 	 */
 	@Deprecated
 
@@ -98,7 +98,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classid.
+	 * @return Returns the classid.
 	 */
 	public int getCurrentClass()
 	{
@@ -113,7 +113,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classLvl.
+	 * @return Returns the classLvl.
 	 */
 	@Deprecated
 
@@ -123,7 +123,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classMpAdd.
+	 * @return Returns the classMpAdd.
 	 */
 	@Deprecated
 
@@ -133,7 +133,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classMpBase.
+	 * @return Returns the classMpBase.
 	 */
 	@Deprecated
 
@@ -143,7 +143,7 @@ public class L2LvlupData
 	}
 
 	/**
-	 * @return Returns the this.classMpModifier.
+	 * @return Returns the classMpModifier.
 	 */
 	@Deprecated
 

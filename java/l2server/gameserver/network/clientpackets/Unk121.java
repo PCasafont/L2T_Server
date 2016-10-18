@@ -16,7 +16,7 @@ public class Unk121 extends L2GameClientPacket
 	public void runImpl()
 	{
 		// TODO
-		Log.info(getType() + " was received from " + getClient() + ".");
+		//Log.info(getType() + " was received from " + getClient() + ".");
 	}
 }
 

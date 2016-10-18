@@ -52,14 +52,14 @@ public class Log
 		ConsoleTab.appendMessage(ConsoleFilter.Warnings, msg);
 	}
 
-	//static long this.t = 0;
+	//static long t = 0;
 	public static void info(String msg)
 	{
 		log.info(msg);
 		/*long t = System.currentTimeMillis();
-		if (this.t > 0 && t - this.t > 10)
-			System.out.println("Time spent before last log: " + (t - this.t) + "ms");
-		this.t = t;*/
+		if (t > 0 && t - t > 10)
+			System.out.println("Time spent before last log: " + (t - t) + "ms");
+		t = t;*/
 
 		ConsoleTab.appendMessage(ConsoleFilter.Info, msg);
 	}

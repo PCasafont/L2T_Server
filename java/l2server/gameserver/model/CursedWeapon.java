@@ -43,11 +43,11 @@ import java.util.logging.Level;
 
 public class CursedWeapon
 {
-	// this.name is the name of the cursed weapon associated with its ID.
+	// name is the name of the cursed weapon associated with its ID.
 	@Getter private final String name;
-	// this.itemId is the Item ID of the cursed weapon.
+	// itemId is the Item ID of the cursed weapon.
 	@Getter private final int itemId;
-	// this.skillId is the skills ID.
+	// skillId is the skills ID.
 	@Getter private final int skillId;
 	private final int skillMaxLevel;
 	@Setter private int dropRate;
@@ -152,11 +152,11 @@ public class CursedWeapon
 					/* Yesod: Skill is not stored into database any more.
 					// Delete the skill
 					statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=? AND skill_id=?");
-					statement.setInt(1, this.playerId);
-					statement.setInt(2, this.skillId);
+					statement.setInt(1, playerId);
+					statement.setInt(2, skillId);
 					if (statement.executeUpdate() != 1)
 					{
-						Log.warning("Error while deleting skillId "+ this.skillId +" from userId "+_playerId);
+						Log.warning("Error while deleting skillId "+ skillId +" from userId "+_playerId);
 					}
 					 */
 					// Restore the karma
@@ -293,9 +293,9 @@ public class CursedWeapon
 			this.player.setCursedWeaponEquippedId(0);
 			removeSkill();
 			this.player.abortAttack();
-			//L2ItemInstance item = this.player.getInventory().getItemByItemId(this.itemId);
-			//_player.getInventory().dropItem("DieDrop", item, this.player, null);
-			//_player.getInventory().getItemByItemId(this.itemId).dropMe(this.player, this.player.getX(), this.player.getY(), this.player.getZ());
+			//L2ItemInstance item = player.getInventory().getItemByItemId(itemId);
+			//_player.getInventory().dropItem("DieDrop", item, player, null);
+			//_player.getInventory().getItemByItemId(itemId).dropMe(player, player.getX(), player.getY(), player.getZ());
 		}
 		isDropped = true;
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_WAS_DROPPED_IN_THE_S1_REGION);

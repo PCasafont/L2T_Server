@@ -94,7 +94,7 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Start sub event:</td><td><combobox width=100 height=17 var=\"subEvent\" list=" +
 										subEvents +
-										"></td><td><button action=\"bypass this.bbscustom;action;gEvent;startSubEvent; $subEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
+										"></td><td><button action=\"bypass _bbscustom;action;gEvent;startSubEvent; $subEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
 					}
 
 					String predefinedEvents = "";
@@ -108,31 +108,31 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Load predefined event:</td><td><combobox width=100 height=17 var=\"loadEvent\" list=" +
 										predefinedEvents +
-										"></td><td><button action=\"bypass this.bbscustom;action;gEvent;loadEvent; $loadEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
+										"></td><td><button action=\"bypass _bbscustom;action;gEvent;loadEvent; $loadEvent ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td></tr>");
 					}
 
 					String eventName =
-							"<td FIXWIDTH=200><edit var=\"eName\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setName; $eName ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td FIXWIDTH=200><edit var=\"eName\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setName; $eName ;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getName() != null)
 					{
 						eventName = "<td FIXWIDTH=200>" + currentEvent.getName() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delName;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delName;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String eventDescription =
-							"<td><edit var=\"eDesc\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setDesc; $eDesc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><edit var=\"eDesc\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setDesc; $eDesc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getDescription() != null)
 					{
 						eventDescription = "<td>" + currentEvent.getDescription() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delDesc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delDesc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String eventLocation =
-							"<td><edit var=\"eLoc\" width=100 length=25></td><td><button action=\"bypass this.bbscustom;action;gEvent;setLoc; $eLoc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><edit var=\"eLoc\" width=100 length=25></td><td><button action=\"bypass _bbscustom;action;gEvent;setLoc; $eLoc ; \" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getLocation() != null)
 					{
 						eventLocation = "<td>" + currentEvent.getLocation() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String arenaZoneName = "";
@@ -162,51 +162,51 @@ public class GMEventManager
 					}
 
 					String teamOneSpawn =
-							"<td><button action=\"bypass this.bbscustom;action;gEvent;setTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><button action=\"bypass _bbscustom;action;gEvent;setTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getTeamOneSpawn() != null)
 					{
 						teamOneSpawn = "<td>" + currentEvent.getTeamOneSpawn().getX() + ", " +
 								currentEvent.getTeamOneSpawn().getY() + ", " + currentEvent.getTeamOneSpawn().getZ() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delTeamOneSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String teamTwoSpawn =
-							"<td><button action=\"bypass this.bbscustom;action;gEvent;setTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><button action=\"bypass _bbscustom;action;gEvent;setTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getTeamTwoSpawn() != null)
 					{
 						teamTwoSpawn = "<td>" + currentEvent.getTeamTwoSpawn().getX() + ", " +
 								currentEvent.getTeamTwoSpawn().getY() + ", " + currentEvent.getTeamTwoSpawn().getZ() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delTeamTwoSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnBufferOne =
-							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getSpawnBufferOne() != null)
 					{
 						spawnBufferOne = "<td>" + currentEvent.getSpawnBufferOne().getX() + ", " +
 								currentEvent.getSpawnBufferOne().getY() + ", " +
 								currentEvent.getSpawnBufferOne().getZ() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnBufferOne;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnBufferTwo =
-							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getSpawnBufferTwo() != null)
 					{
 						spawnBufferTwo = "<td>" + currentEvent.getSpawnBufferTwo().getX() + ", " +
 								currentEvent.getSpawnBufferTwo().getY() + ", " +
 								currentEvent.getSpawnBufferTwo().getZ() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnBufferTwo;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String spawnLoc =
-							"<td><button action=\"bypass this.bbscustom;action;gEvent;setSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
+							"<td><button action=\"bypass _bbscustom;action;gEvent;setSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td>";
 					if (currentEvent != null && currentEvent.getTeleportLocation() != null)
 					{
 						spawnLoc = "<td>" + currentEvent.getTeleportLocation().getX() + ", " +
 								currentEvent.getTeleportLocation().getY() + ", " +
 								currentEvent.getTeleportLocation().getZ() +
-								"</td><td><button action=\"bypass this.bbscustom;action;gEvent;delSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
+								"</td><td><button action=\"bypass _bbscustom;action;gEvent;delSpawnLoc;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td>";
 					}
 
 					String doors = "";
@@ -240,66 +240,66 @@ public class GMEventManager
 					sb.append("<tr><td>Enter the Event Description:</td>" + eventDescription + "</tr>");
 					sb.append("<tr><td>Enter the Event Location:</td>" + eventLocation + "</tr>");
 					sb.append("<tr><td>Set Arena Zone:</td><td>" + arenaZoneName +
-							"</td><td><button action=\"bypass this.bbscustom;action;gEvent;setArena;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delArena;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><button action=\"bypass _bbscustom;action;gEvent;setArena;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delArena;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Set Peace Zone:</td><td>" + peaceZoneName +
-							"</td><td><button action=\"bypass this.bbscustom;action;gEvent;setPeace;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delPeace;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><button action=\"bypass _bbscustom;action;gEvent;setPeace;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delPeace;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Team One Spawn:</td>" + teamOneSpawn + "</tr>");
 					sb.append("<tr><td>Team Two Spawn:</td>" + teamTwoSpawn + "</tr>");
 					sb.append("<tr><td>Team One Buffer Spawn:</td>" + spawnBufferOne + "</tr>");
 					sb.append("<tr><td>Team Two Buffer Spawn:</td>" + spawnBufferTwo + "</tr>");
 					sb.append("<tr><td>Event Spawn:</td>" + spawnLoc + "</tr>");
 					sb.append("<tr><td>Doors:</td><td>" + doors +
-							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;setDoor;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delDoor;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;setDoor;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delDoor;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Arena Signs:</td><td>" + arenaSign +
-							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;setArenaSign;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delArenaSign;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;setArenaSign;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delArenaSign;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append("<tr><td>Arena Sign Spawns:</td><td>" + arenaSignSpawns +
-							"</td><td><td><button action=\"bypass this.bbscustom;action;gEvent;addSignSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass this.bbscustom;action;gEvent;delSignSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
+							"</td><td><td><button action=\"bypass _bbscustom;action;gEvent;addSignSpawn;\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></button></td><td><button action=\"bypass _bbscustom;action;gEvent;delSignSpawn;\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					sb.append(
-							"<tr><td><button value=\"Start\" width=200 height=24 action=\"bypass this.bbscustom;action;gEvent;startEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Restart Config\" width=200 height=24 action=\"bypass this.bbscustom;action;gEvent;restartConfig;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
+							"<tr><td><button value=\"Start\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Restart Config\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;restartConfig;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
 				}
 				sb.append("</table></td></tr>");
 			}
 			else
 			{
 				String reAnnounce =
-						"<button value=\"Re Announce\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;reAnnounce;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Re Announce\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;reAnnounce;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 
 				String manageDoors = "";
 				if (currentEvent != null && currentEvent.isStarted() && !currentEvent.getDoors().isEmpty())
 				{
 					manageDoors =
-							"<button value=\"Manage Doors\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;manageDoors;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Manage Doors\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;manageDoors;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageFight =
-						"<button value=\"Start Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;startFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Start Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;startFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				if (currentEvent != null && currentEvent.isFightStarted())
 				{
 					manageFight =
-							"<button value=\"Stop Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;stopFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Stop Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;stopFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageFences =
-						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				if (currentEvent != null && !currentEvent.getFences().isEmpty())
 				{
 					manageFences =
-							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageBets =
-						"<button value=\"Open Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;addBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Open Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				if (currentEvent != null && currentEvent.getAllowBets())
 				{
 					manageBets =
-							"<button value=\"Close Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;delBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Close Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String returnBets = "";
 				if (currentEvent != null && currentEvent.hasBets())
 				{
 					returnBets =
-							"<button value=\"Return Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;returnBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Return Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;returnBets;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				boolean hasBets = currentEvent != null && currentEvent.hasBets();
@@ -307,11 +307,11 @@ public class GMEventManager
 				sb.append("<tr><td><table width=750 border=0><tr><td>" + reAnnounce + "</td><td>" + manageDoors +
 						"</td><td>" + manageFences + "</td><td>" + manageBets + "</td><td>" + returnBets + "</td><td>" +
 						manageFight +
-						"</td><td><button value=\"Restart Fight\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;restartFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Stop Event\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;stopEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
+						"</td><td><button value=\"Restart Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;restartFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Stop Event\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;stopEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
 				sb.append(
-						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass this.bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
+						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
 								(hasBets ?
-										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;giveBetRewards;1\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
+										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;giveBetRewards;1\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
 										"") + "</td></tr></table></td></tr>");
 				sb.append("<tr><td><table width=750>");
 				for (Entry<Integer, Integer> i : currentEvent.getParticipants().entrySet())
@@ -330,7 +330,7 @@ public class GMEventManager
 					if (i.getValue() == 1)
 					{
 						sb.append("<tr><td FIXWIDTH=200>" + pl.getName() +
-								"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delPlayer;" +
+								"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delPlayer;" +
 								pl.getObjectId() +
 								"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					}
@@ -338,9 +338,9 @@ public class GMEventManager
 				sb.append("</table></td></tr>");
 
 				sb.append(
-						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team Two Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount2\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass this.bbscustom;action;gEvent;giveReward;2; $rCount2 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
+						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team Two Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount2\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;2; $rCount2 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
 								(hasBets ?
-										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass this.bbscustom;action;gEvent;giveBetRewards;2\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
+										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;giveBetRewards;2\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
 										"") + "</td></tr></table></td></tr>");
 				sb.append("<tr><td><table width=750>");
 				for (Entry<Integer, Integer> i : currentEvent.getParticipants().entrySet())
@@ -359,7 +359,7 @@ public class GMEventManager
 					if (i.getValue() == 2)
 					{
 						sb.append("<tr><td FIXWIDTH=200>" + pl.getName() +
-								"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delPlayer;" +
+								"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delPlayer;" +
 								pl.getObjectId() +
 								"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 					}
@@ -377,7 +377,7 @@ public class GMEventManager
 					}
 
 					sb.append("<tr><td FIXWIDTH=200>" + i.getValue() +
-							"</td><td FIXWIDTH=550><button action=\"bypass this.bbscustom;action;gEvent;delBan;" +
+							"</td><td FIXWIDTH=550><button action=\"bypass _bbscustom;action;gEvent;delBan;" +
 							i.getKey() +
 							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td></tr>");
 				}
@@ -445,13 +445,13 @@ public class GMEventManager
 							PlayerClassTable.getInstance().getClassNameById(pl.getClassId()) + " (Lv. " +
 							pl.getLevel() + ")</td><td FIXWIDTH=159>" +
 							(pl.getClan() != null ? pl.getClan().getName() : "NoClan") +
-							"</td><td FIXWIDTH=120><button value=\"Add to Team One\" width=120 height=20 action=\"bypass this.bbscustom;action;gEvent;addPlayer;" +
+							"</td><td FIXWIDTH=120><button value=\"Add to Team One\" width=120 height=20 action=\"bypass _bbscustom;action;gEvent;addPlayer;" +
 							pl.getObjectId() +
-							";1\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=120><button value=\"Add to Team Two\" width=120 height=20 action=\"bypass this.bbscustom;action;gEvent;addPlayer;" +
+							";1\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=120><button value=\"Add to Team Two\" width=120 height=20 action=\"bypass _bbscustom;action;gEvent;addPlayer;" +
 							pl.getObjectId() +
-							";2\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=16><button action=\"bypass this.bbscustom;action;gEvent;kickPlayer;" +
+							";2\" back=L2UI_CT1.Button_DF_Calculator_Over fore=L2UI_CT1.Button_DF_Calculator></button></td><td FIXWIDTH=16><button action=\"bypass _bbscustom;action;gEvent;kickPlayer;" +
 							pl.getObjectId() +
-							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td><td FIXWIDTH=16><button action=\"bypass this.bbscustom;action;gEvent;banPlayer;" +
+							"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></button></td><td FIXWIDTH=16><button action=\"bypass _bbscustom;action;gEvent;banPlayer;" +
 							pl.getObjectId() +
 							"\" value=\" \" width=16 height=16 back=L2UI_CT1.SellingAgencyWnd_df_HelpBtn_down fore=L2UI_CT1.SellingAgencyWnd_df_HelpBtn_down></button></td></tr></table>");
 					x++;
@@ -500,7 +500,7 @@ public class GMEventManager
 
 					sb.append("<tr><td align=center><table>");
 					sb.append("<tr><td><button value=\"Take me to " + currentEvent.getLocation() +
-							"!\" width=530 height=24 action=\"bypass this.bbscustom;action;gEvent;teleToEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
+							"!\" width=530 height=24 action=\"bypass _bbscustom;action;gEvent;teleToEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr>");
 					sb.append("</table></td></tr>");
 				}
 				else
@@ -524,7 +524,7 @@ public class GMEventManager
 						sb.append(
 								"<tr><td>Select the team you want to bet for:</td><td><combobox width=100 height=17 var=\"betTeam\" list=blue;red></td></tr>");
 						sb.append(
-								"</table></td></tr><tr><td align=center><table><tr><td><button value=\"Bet!\" width=500 height=24 action=\"bypass this.bbscustom;action;gEvent;doBet; $bCoin ; $bet ; $betTeam ;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
+								"</table></td></tr><tr><td align=center><table><tr><td><button value=\"Bet!\" width=500 height=24 action=\"bypass _bbscustom;action;gEvent;doBet; $bCoin ; $bet ; $betTeam ;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
 					}
 					else
 					{
@@ -2067,7 +2067,7 @@ public class GMEventManager
 					currentEvent.getArenaSignIds().contains(((L2StaticObjectInstance) obj).getStaticObjectId()) ||
 					obj instanceof L2NpcInstance && ((L2NpcInstance) obj).getNpcId() == dummyArenaSignNpcId)
 			{
-				CustomCommunityBoard.getInstance().parseCmd("bypass this.bbscustom;info;gmEventRules", player);
+				CustomCommunityBoard.getInstance().parseCmd("bypass _bbscustom;info;gmEventRules", player);
 			}
 		}
 	}

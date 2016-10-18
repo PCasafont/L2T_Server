@@ -40,7 +40,7 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();
-		Auctions auction = am.getAuctionById(this.auctionID);
+		Auctions auction = am.getAuctionById(auctionID);
 		if (auction != null)
 		{
 			if (activeChar.getObjectId() == auction.getPlayerID())

@@ -333,7 +333,7 @@ public abstract class L2Object
 	 */
 	public void setInstanceId(int instanceId)
 	{
-		if (instanceId == instanceId)
+		if (this.instanceId == instanceId)
 		{
 			return;
 		}
@@ -474,9 +474,9 @@ public abstract class L2Object
 	 * Init the position of a L2Object spawn and add it in the world as a visible object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the x,y,z position of the L2Object spawn and update its this.worldregion </li>
-	 * <li>Add the L2Object spawn in the this.allobjects of L2World </li>
-	 * <li>Add the L2Object spawn to this.visibleObjects of its L2WorldRegion</li>
+	 * <li>Set the x,y,z position of the L2Object spawn and update its worldregion </li>
+	 * <li>Add the L2Object spawn in the allobjects of L2World </li>
+	 * <li>Add the L2Object spawn to visibleObjects of its L2WorldRegion</li>
 	 * <li>Add the L2Object spawn in the world as a <B>visible</B> object</li><BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
@@ -497,10 +497,10 @@ public abstract class L2Object
 			isVisible = true;
 			getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 
-			// Add the L2Object spawn in the this.allobjects of L2World
+			// Add the L2Object spawn in the allobjects of L2World
 			L2World.getInstance().storeObject(this);
 
-			// Add the L2Object spawn to this.visibleObjects and if necessary to this.allplayers of its L2WorldRegion
+			// Add the L2Object spawn to visibleObjects and if necessary to allplayers of its L2WorldRegion
 			getPosition().getWorldRegion().addVisibleObject(this);
 		}
 
@@ -542,13 +542,13 @@ public abstract class L2Object
 			getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 		}
 
-		// Add the L2Object spawn in the this.allobjects of L2World
+		// Add the L2Object spawn in the allobjects of L2World
 		L2World.getInstance().storeObject(this);
 
 		// these can synchronize on others instancies, so they're out of
 		// synchronized, to avoid deadlocks
 
-		// Add the L2Object spawn to this.visibleObjects and if necessary to this.allplayers of its L2WorldRegion
+		// Add the L2Object spawn to visibleObjects and if necessary to allplayers of its L2WorldRegion
 		getPosition().getWorldRegion().addVisibleObject(this);
 
 		// Add the L2Object spawn in the world as a visible object
@@ -594,7 +594,7 @@ public abstract class L2Object
 	 */
 	public final boolean isVisible()
 	{
-		//return getPosition().getWorldRegion() != null && this.IsVisible;
+		//return getPosition().getWorldRegion() != null && IsVisible;
 		return getPosition().getWorldRegion() != null;
 	}
 

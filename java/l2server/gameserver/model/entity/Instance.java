@@ -592,7 +592,7 @@ public class Instance
 		}
 
 		cancelTimer();
-		//System.out.println(this.id + " (" + getName() + "): " + remaining + " " + interval);
+		//System.out.println(id + " (" + getName() + "): " + remaining + " " + interval);
 		if (remaining >= 10000)
 		{
 			CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);

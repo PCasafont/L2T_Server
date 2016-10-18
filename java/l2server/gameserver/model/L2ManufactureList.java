@@ -61,7 +61,7 @@ public class L2ManufactureList
 	}
 
 	/**
-	 * @return Returns the this.manufactureStoreName.
+	 * @return Returns the manufactureStoreName.
 	 */
 	public String getStoreName()
 	{

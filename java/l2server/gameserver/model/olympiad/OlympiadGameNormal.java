@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExOlympiadResult;
 import l2server.gameserver.network.serverpackets.ExOlympiadUserInfo;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -525,9 +524,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 					}
 					rewardParticipant(playerTwo.player, reward);
 
-					broadcastPacket(new ExOlympiadResult(
-									new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}),
-							stadium);
+					//broadcastPacket(new ExOlympiadResult(
+					//				new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}),
+					//		stadium);
 
 					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
@@ -558,9 +557,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 					}
 					rewardParticipant(playerOne.player, reward);
 
-					broadcastPacket(new ExOlympiadResult(
-									new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}),
-							stadium);
+					//broadcastPacket(new ExOlympiadResult(
+					//				new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}),
+					//		stadium);
 
 					if (Config.ALT_OLY_LOG_FIGHTS && playerOne.player != null && playerOne.player != null)
 					{
@@ -667,8 +666,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				}
 				rewardParticipant(playerTwo.player, reward);
 
-				broadcastPacket(new ExOlympiadResult(
-						new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
+				//broadcastPacket(new ExOlympiadResult(
+				//		new Object[]{0, playerOne.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
 
 				playerOne.competitionDone(getType(), true);
 				playerTwo.competitionDone(getType(), false);
@@ -697,8 +696,8 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				}
 				rewardParticipant(playerOne.player, reward);
 
-				broadcastPacket(new ExOlympiadResult(
-						new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
+				//broadcastPacket(new ExOlympiadResult(
+				//		new Object[]{1, playerTwo.name, 1, pointDiff, playerOne.player, playerTwo.player}), stadium);
 
 				playerOne.competitionDone(getType(), false);
 				playerTwo.competitionDone(getType(), true);
@@ -716,9 +715,9 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				removePointsFromParticipant(playerTwo,
 						Math.min(playerTwoPoints / getDivider(), Config.ALT_OLY_MAX_POINTS));
 
-				broadcastPacket(
-						new ExOlympiadResult(new Object[]{-1, "", 1, pointDiff, playerOne.player, playerTwo.player}),
-						stadium);
+				//broadcastPacket(
+				//		new ExOlympiadResult(new Object[]{-1, "", 1, pointDiff, playerOne.player, playerTwo.player}),
+				//		stadium);
 
 				playerOne.competitionDone(getType(), false);
 				playerTwo.competitionDone(getType(), false);

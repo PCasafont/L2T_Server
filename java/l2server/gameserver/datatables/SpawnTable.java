@@ -549,7 +549,7 @@ public class SpawnTable
 
 			/*int radiusToCheck = 3000;
 			int knownChars = 1;
-			for (L2Spawn toCheck : this.spawnTable)
+			for (L2Spawn toCheck : spawnTable)
 			{
 				if (toCheck == null)
 					continue;

@@ -134,8 +134,8 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			// if (this.applayCond != null)
-			// effect.setCondition(this.applayCond);
+			// if (applayCond != null)
+			// effect.setCondition(applayCond);
 			return (L2Effect) stolenCons.newInstance(env, stolen);
 		}
 		catch (IllegalAccessException e)

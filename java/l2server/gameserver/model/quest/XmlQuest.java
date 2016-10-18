@@ -32,11 +32,11 @@ public class XmlQuest extends Quest
 	{
 		super(questId, name, descr);
 
-		/*addStartNpc(this.rafforty);
-		addTalkId(this.rafforty);
-		addTalkId(this.kier);
-		addFirstTalkId(this.jinia);
-		addTalkId(this.jinia);*/
+		/*addStartNpc(rafforty);
+		addTalkId(rafforty);
+		addTalkId(kier);
+		addFirstTalkId(jinia);
+		addTalkId(jinia);*/
 	}
 
 	@Override
@@ -80,6 +80,6 @@ public class XmlQuest extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return true;//player.getLevel() >= this.minLevel && player.getLevel() <= this.maxLevel;
+		return true;//player.getLevel() >= minLevel && player.getLevel() <= maxLevel;
 	}
 }

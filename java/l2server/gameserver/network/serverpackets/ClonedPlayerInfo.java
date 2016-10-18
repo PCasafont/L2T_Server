@@ -146,8 +146,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeH(walkSpd); // fly walk speed
 		writeH(runSpd); // fly run speed ?
 		writeH(walkSpd); // fly walk speed ?
-		writeF(activeChar.getMovementSpeedMultiplier()); // this.activeChar.getProperMultiplier()
-		writeF(activeChar.getAttackSpeedMultiplier()); // this.activeChar.getAttackSpeedMultiplier()
+		writeF(activeChar.getMovementSpeedMultiplier()); // activeChar.getProperMultiplier()
+		writeF(activeChar.getAttackSpeedMultiplier()); // activeChar.getAttackSpeedMultiplier()
 		L2Transformation transform = activeChar.getTransformation();
 
 		if (activeChar.getMountType() != 0)
@@ -290,7 +290,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 			writeH(abnormalId);
 		}
 
-		//writeC(this.inv.getMaxTalismanCount());
+		//writeC(inv.getMaxTalismanCount());
 		writeC(0x00);
 		writeC(inv.getCloakStatus());
 		boolean showWings = true;

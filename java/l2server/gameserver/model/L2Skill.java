@@ -874,7 +874,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	}
 
 	/**
-	 * @return Returns the boolean this.isDebuff.
+	 * @return Returns the boolean isDebuff.
 	 */
 	public final boolean isDebuff()
 	{

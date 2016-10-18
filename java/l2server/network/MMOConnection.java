@@ -251,7 +251,7 @@ public class MMOConnection<T extends MMOClient<?>>
 			// ignore
 		}
 
-		// this.closePacket = sp;
+		// closePacket = sp;
 		selectorThread.closeConnection(this);
 	}
 

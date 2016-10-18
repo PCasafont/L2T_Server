@@ -101,8 +101,8 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 		}
 
 		// unless this is sent sometimes, the client doesn't recognize the player as the leader
-		//_activeChar.sendPacket(new ExUserInfo(this.activeChar));
-		//_activeChar.sendPacket(new ExBrExtraUserInfo(this.activeChar));
+		//_activeChar.sendPacket(new ExUserInfo(activeChar));
+		//_activeChar.sendPacket(new ExBrExtraUserInfo(activeChar));
 	}
 
 	void writePledge(int mainOrSubpledge)

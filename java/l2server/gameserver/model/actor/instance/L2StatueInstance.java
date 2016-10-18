@@ -60,7 +60,7 @@ public class L2StatueInstance extends L2Npc
 		ss.set("type", "L2Npc");
 		ss.set("name", "");
 		L2NpcTemplate t = new L2NpcTemplate(ss);
-		new L2StatueInstance(IdFactory.getInstance().getNextId(), t, 0, this.charObjId, this.x, this.y, this.z, 0);
+		new L2StatueInstance(IdFactory.getInstance().getNextId(), t, 0, charObjId, x, y, z, 0);
 	 */
 	public L2StatueInstance(int objectId, L2NpcTemplate template, int recordId, int playerObjId, int x, int y, int z, int heading)
 	{

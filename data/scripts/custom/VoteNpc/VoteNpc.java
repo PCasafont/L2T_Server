@@ -104,12 +104,12 @@ public class VoteNpc extends Quest
 						String description = d.getString("description");
 						long count = d.getLong("amount", 1);
 
-						this.voteRewards.put(rewardId, new Rewards(rewardId, rewardName, rewardIcon, count, description, isItem, maxSkillLevel));
+						voteRewards.put(rewardId, new Rewards(rewardId, rewardName, rewardIcon, count, description, isItem, maxSkillLevel));
 					}
 				}
 			}
 		}
-		Log.info("VoteNpc: Loaded " + this.voteRewards.size() + " rewards!");
+		Log.info("VoteNpc: Loaded " + voteRewards.size() + " rewards!");
 	}
 
 	private class Rewards
@@ -124,48 +124,48 @@ public class VoteNpc extends Quest
 
 		private Rewards(int rewardId, String rewardName, String rewardIcon, long amount, String description, boolean isItem, int maxSkillLevel)
 		{
-			this.rewardId = rewardId;
-			this.amount = amount;
-			this.description = description;
-			this.rewardName = rewardName;
-			this.rewardIcon = rewardIcon;
-			this.isItem = isItem;
-			this.maxSkillLevel = maxSkillLevel;
+			rewardId = rewardId;
+			amount = amount;
+			description = description;
+			rewardName = rewardName;
+			rewardIcon = rewardIcon;
+			isItem = isItem;
+			maxSkillLevel = maxSkillLevel;
 		}
 
 		private boolean isItem()
 		{
-			return this.isItem;
+			return isItem;
 		}
 
 		private int getMaxSkillLevel()
 		{
-			return this.maxSkillLevel;
+			return maxSkillLevel;
 		}
 
 		private int getRewardId()
 		{
-			return this.rewardId;
+			return rewardId;
 		}
 
 		private long getAmount()
 		{
-			return this.amount;
+			return amount;
 		}
 
 		private String getDescription()
 		{
-			return this.description;
+			return description;
 		}
 
 		private String getName()
 		{
-			return this.rewardName;
+			return rewardName;
 		}
 
 		private String getIcon()
 		{
-			return this.rewardIcon;
+			return rewardIcon;
 		}
 	}*/
 
@@ -178,7 +178,7 @@ public class VoteNpc extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		/*if (!this.debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
+		/*if (!debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 		{
 			player.sendMessage("You can't claim items right now!");
 			return "";
@@ -245,14 +245,14 @@ public class VoteNpc extends Quest
 					.replace("%reuse%", reuseString);
 		}
 		
-		/*if (this.debug)
+		/*if (debug)
 			System.out.println(getName() + ": onAdvEvent: " + event);
 
 		if (event.startsWith("show_rewards_"))
 		{
 			int pageToShow = Integer.valueOf(event.split("_")[2]);
 			int maxItemsPerPage = 15;
-			int bossSize = this.voteRewards.size();
+			int bossSize = voteRewards.size();
 			int maxPages = bossSize / maxItemsPerPage;
 			if (bossSize > (maxItemsPerPage * maxPages))
 				maxPages++;
@@ -270,7 +270,7 @@ public class VoteNpc extends Quest
 
 			sb.append("<table>");
 
-			Object[] data = this.voteRewards.values().toArray();
+			Object[] data = voteRewards.values().toArray();
 			for (int i = pageStart; i < pageEnd; i++)
 			{
 				Rewards reward = (Rewards) data[i];
@@ -301,7 +301,7 @@ public class VoteNpc extends Quest
 		}
 		else if (event.startsWith("claim_"))
 		{
-			if (!this.debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
+			if (!debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 			{
 				player.sendMessage("You can't claim items right now!");
 				return "";
@@ -330,7 +330,7 @@ public class VoteNpc extends Quest
 			if (currentTime > reuse)
 			{
 				int rewardId = Integer.valueOf(event.replace("claim_", ""));
-				Rewards reward = this.voteRewards.get(rewardId);
+				Rewards reward = voteRewards.get(rewardId);
 				if (reward == null)
 				{
 					Log.info("VoteNpc: null reward for id " + rewardId);
@@ -339,7 +339,7 @@ public class VoteNpc extends Quest
 
 				if (canGetReward(player))
 				{
-					if (!this.debug)
+					if (!debug)
 					{
 						String varReuse = Long.toString(System.currentTimeMillis() + (12 * 3600000));
 						saveGlobalQuestVar(player.getAccountName(), varReuse);
@@ -348,7 +348,7 @@ public class VoteNpc extends Quest
 					}
 
 					if (reward.isItem())
-						player.addItem(this.qn, rewardId, reward.getAmount(), npc, true);
+						player.addItem(qn, rewardId, reward.getAmount(), npc, true);
 					else
 					{
 						int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(reward.getRewardId()), reward.getMaxSkillLevel());

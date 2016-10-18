@@ -175,7 +175,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		}
 
 		/*   Lease holders are currently not implemented
-				else if (this.seller != null)
+				else if (seller != null)
 				{
 					// lease shop sell
 					L2MerchantInstance seller = (L2MerchantInstance)_seller;

@@ -480,8 +480,8 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				/* There are too many conflicting reports about whether distance from home should
 				 * be taken into consideration.  Disabled for now.
 				 *
-				if (this.tamedBeast.isTooFarFromHome())
-					this.tamedBeast.setRemainingTime(-1);
+				if (tamedBeast.isTooFarFromHome())
+					tamedBeast.setRemainingTime(-1);
 				 */
 				if (tamedBeast.getRemainingTime() <= 0)
 				{

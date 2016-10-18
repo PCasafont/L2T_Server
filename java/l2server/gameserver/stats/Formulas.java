@@ -1202,7 +1202,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(this.player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR><BR>
 	 * <p>
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 */
@@ -1268,7 +1268,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(this.player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR><BR>
 	 *
 	 * @param cha L2PcInstance or L2Summon that must obtain basic Func objects
 	 */

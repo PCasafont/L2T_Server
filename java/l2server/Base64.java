@@ -1018,7 +1018,7 @@ public class Base64
 		public InputStream(java.io.InputStream pIn, int options)
 		{
 			super(pIn);
-			// this.options = options;
+			// options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
 			encode = (options & ENCODE) == ENCODE;
 			bufferLength = encode ? 4 : 3;
@@ -1249,7 +1249,7 @@ public class Base64
 		public OutputStream(java.io.OutputStream pOut, int options)
 		{
 			super(pOut);
-			// this.options = options;
+			// options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
 			encode = (options & ENCODE) == ENCODE;
 			bufferLength = encode ? 3 : 4;

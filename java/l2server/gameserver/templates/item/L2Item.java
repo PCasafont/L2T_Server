@@ -722,7 +722,7 @@ public abstract class L2Item
 				setElementals(new Elementals(Elementals.DARK, (int) f.lambda.calc(null)));
 				break;
 		}
-		// If this.functTemplates is empty, create it and add the FuncTemplate f in it
+		// If functTemplates is empty, create it and add the FuncTemplate f in it
 		if (funcTemplates == null)
 		{
 			funcTemplates = new FuncTemplate[]{f};

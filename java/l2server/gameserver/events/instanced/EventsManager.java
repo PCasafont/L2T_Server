@@ -178,7 +178,7 @@ public class EventsManager implements Reloadable
 			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 || minutesToStart == 1)
 			{
 				// Auto join!
-				/*if (this.minutesToStart == 1)
+				/*if (minutesToStart == 1)
 				{
 					for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 					{
@@ -254,7 +254,7 @@ public class EventsManager implements Reloadable
 			{
 				group.add(sorted[i + j][0]);
 
-				//if (Config.isServer(Config.TENKAI) && j >= this.currentConfig.getLocation().getMaxPlayers())
+				//if (Config.isServer(Config.TENKAI) && j >= currentConfig.getLocation().getMaxPlayers())
 				//	break;
 
 				j++;
@@ -282,7 +282,7 @@ public class EventsManager implements Reloadable
 			{
 				instances.put(ei.getId(), ei);
 				Announcements.getInstance().announceToAll(
-						"Event registrations closed.");// The next event will be a " + this.currentConfig.getEventString() + ". Type .event to join.");
+						"Event registrations closed.");// The next event will be a " + currentConfig.getEventString() + ". Type .event to join.");
 
 				for (EventTeam team : ei.getTeams())
 				{
@@ -776,7 +776,7 @@ public class EventsManager implements Reloadable
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
         /*String hwId = player.getClient().getHWId();
-		for (L2PcInstance registered : this.registeredPlayers.values())
+		for (L2PcInstance registered : registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -814,15 +814,15 @@ public class EventsManager implements Reloadable
 			}
 		}
 		
-		/*else if (this.command.startsWith("InstancedEventParticipation"))
+		/*else if (command.startsWith("InstancedEventParticipation"))
 		{
-			int eventId = Integer.valueOf(this.command.substring(25));
+			int eventId = Integer.valueOf(command.substring(25));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).join(activeChar);
 		}
-		else if (this.command.startsWith("InstancedEventStatus"))
+		else if (command.startsWith("InstancedEventStatus"))
 		{
-			int eventId = Integer.valueOf(this.command.substring(18));
+			int eventId = Integer.valueOf(command.substring(18));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).eventInfo(activeChar);
 		}*/

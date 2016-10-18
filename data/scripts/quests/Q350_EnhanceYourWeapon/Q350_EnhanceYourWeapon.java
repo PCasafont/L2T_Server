@@ -465,13 +465,13 @@ public class Q350_EnhanceYourWeapon extends Quest
 		if (mainlvlInfo.isSkillNeeded())
 		{
 			// Fail if this L2Attackable isn't absorbed or there's no one in its _absorbersList
-			if (!mob.isAbsorbed() /*|| this.absorbersList == null*/)
+			if (!mob.isAbsorbed() /*|| absorbersList == null*/)
 			{
 				mob.resetAbsorbList();
 				return;
 			}
 
-			// Fail if the killer isn't in the this.absorbersList of this L2Attackable and mob is not boss
+			// Fail if the killer isn't in the absorbersList of this L2Attackable and mob is not boss
 			AbsorberInfo ai = mob.getAbsorbersList().get(killer.getObjectId());
 			boolean isSuccess = true;
 			if (ai == null || ai.objId != killer.getObjectId())

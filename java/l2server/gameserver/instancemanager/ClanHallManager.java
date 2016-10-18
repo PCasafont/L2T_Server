@@ -62,8 +62,8 @@ public class ClanHallManager
     /* Reload All Clan Hall */
 	/*	public final void reload() Cant reload atm - would loose zone info
 		{
-			this.clanHall.clear();
-			this.freeClanHall.clear();
+			clanHall.clear();
+			freeClanHall.clear();
 			load();
 		}
 	*/
@@ -222,10 +222,10 @@ public class ClanHallManager
     /*
 		public final ClanHall getClanHall(int x, int y, int z)
 		{
-			for (Map.Entry<Integer, ClanHall> ch : this.clanHall.entrySet())
+			for (Map.Entry<Integer, ClanHall> ch : clanHall.entrySet())
 				if (ch.getValue().getZone().isInsideZone(x, y, z)) return ch.getValue();
 
-			for (Map.Entry<Integer, ClanHall> ch : this.freeClanHall.entrySet())
+			for (Map.Entry<Integer, ClanHall> ch : freeClanHall.entrySet())
 				if (ch.getValue().getZone().isInsideZone(x, y, z)) return ch.getValue();
 
 			return null;

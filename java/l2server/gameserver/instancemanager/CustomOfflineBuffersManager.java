@@ -187,7 +187,7 @@ public class CustomOfflineBuffersManager
 						"%</td><td FIXWIDTH=80 align=center>" +
 						(buffTable.getDescription() == null ? "" : buffTable.getDescription()) +
 						"</td><td FIXWIDTH=30 align=center><button value=\"" + buffTable.getBuffs().size() +
-						"\" width=50 height=16 action=\"bypass this.bbscustom;action;worldBuff;bufferInfo;" +
+						"\" width=50 height=16 action=\"bypass _bbscustom;action;worldBuff;bufferInfo;" +
 						buffTable.getPlayerId() +
 						"\" back=\"L2UI_CT1.Button_DF_Calculator_Over\" fore=\"L2UI_CT1.Button_DF_Calculator\"></button></td><td FIXWIDTH=35 align=center>" +
 						buffTable.getCoinName() + "</td></tr></table>");
@@ -240,7 +240,7 @@ public class CustomOfflineBuffersManager
 					sb.append("<table width=300 " + (loc % 2 == 0 ? "bgcolor=131210" : "") +
 							" border=0><tr><td FIXWIDTH=32><img src=\"" +
 							getCorrectSkillIcon(buffInfo.getName(), buffInfo.getId()) +
-							"\" width=32 height=32></td><td FIXWIDTH=130><a action=\"bypass this.bbscustom;action;worldBuff;getBuff;" +
+							"\" width=32 height=32></td><td FIXWIDTH=130><a action=\"bypass _bbscustom;action;worldBuff;getBuff;" +
 							playerId + ";" + skillId + "\">" + buffInfo.getName() +
 							"</a></td><td FIXWIDTH=35 align=center>" + buffInfo.getLevelHash() +
 							"</td><td FIXWIDTH=80 align=center>" + i.getValue() + "</td></tr></table>");
@@ -440,13 +440,13 @@ public class CustomOfflineBuffersManager
 		{
 			sb.append("<tr><td align=center><font color=LEVEL>" + buffTable.getDescription() + "</font></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;delDesc\" value=Delete Description! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;delDesc\" value=Delete Description! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		else
 		{
 			sb.append("<tr><td align=center><edit var=\"addDesc\" width=150 type=char length=16></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;addDesc; $addDesc\" value=\"Add Description!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;addDesc; $addDesc\" value=\"Add Description!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		sb.append("</table></center><br>");
 
@@ -455,14 +455,14 @@ public class CustomOfflineBuffersManager
 		{
 			sb.append("<tr><td align=center><font color=LEVEL>" + buffTable.getCoinName() + "</font></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;delCoin\" value=\"Change this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;delCoin\" value=\"Change this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		else
 		{
 			sb.append(
 					"<tr><td align=center><combobox width=150 height=17 var=\"coinType\" list=Adena;SilverShilen;BlueEva;GoldEinhasad></td></tr>");
 			sb.append(
-					"<tr><td align=center><button action=\"bypass this.bbscustom;action;worldBuff;addCoin; $coinType\" value=\"Use this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
+					"<tr><td align=center><button action=\"bypass _bbscustom;action;worldBuff;addCoin; $coinType\" value=\"Use this coin!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></button></td></tr>");
 		}
 		sb.append("</table></center><br>");
 
@@ -481,13 +481,13 @@ public class CustomOfflineBuffersManager
 			if (buffTable != null && buffTable.getBuffs().containsKey(sk.getId()))
 			{
 				sb.append("<tr><td>Price:</td><td>" + buffTable.getBuffs().get(sk.getId()) +
-						"</td><td><button action=\"bypass this.bbscustom;action;worldBuff;delBuff;" + sk.getId() +
+						"</td><td><button action=\"bypass _bbscustom;action;worldBuff;delBuff;" + sk.getId() +
 						"\" value=Remove! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			}
 			else
 			{
 				sb.append("<tr><td>Price:</td><td><edit var=\"addBuff" + sk.getId() +
-						"\" width=100 type=number length=14></td><td><button action=\"bypass this.bbscustom;action;worldBuff;addBuff;" +
+						"\" width=100 type=number length=14></td><td><button action=\"bypass _bbscustom;action;worldBuff;addBuff;" +
 						sk.getId() + "; $addBuff" + sk.getId() +
 						"\" value=Add! width=60 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			}

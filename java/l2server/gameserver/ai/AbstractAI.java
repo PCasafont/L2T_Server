@@ -289,11 +289,11 @@ abstract class AbstractAI implements Ctrl
 		private Object arg0;
 		public InformAIMsg(AbstractAI ai, CtrlIntention intention, Object arg0) {
 			_ai=ai;
-			this.intent = intention;
-			this.arg0 = arg0;
+			intent = intention;
+			arg0 = arg0;
 		}
 		public final void run() {
-			this.ai.setIntention(this.intent, this.arg0, null);
+			ai.setIntention(intent, arg0, null);
 		}
 	}
 	 */
@@ -389,17 +389,17 @@ abstract class AbstractAI implements Ctrl
 	public class InformAIEvent implements Runnable {
 		private AbstractAI ai;
 		private CtrlEvent evt;
-		private Object arg0, this.arg1;
+		private Object arg0, arg1;
 
 		public InformAIEvent(AbstractAI ai, CtrlEvent evt, Object arg0, Object arg1) {
 			_ai=ai;
-			this.evt = evt;
-			this.arg0 = arg0;
-			this.arg1 = arg1;
+			evt = evt;
+			arg0 = arg0;
+			arg1 = arg1;
 		}
 
 		public final void run() {
-			this.ai.notifyEvent(this.evt, this.arg0, this.arg1);
+			ai.notifyEvent(evt, arg0, arg1);
 		}
 	}
 	*/

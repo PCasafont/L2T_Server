@@ -225,7 +225,7 @@ public class AirShipGludioGracia extends Quest implements Runnable
 					ship.executePath(GRACIA_TO_WARPGATE);
 					break;
 				case 5:
-					//					this.ship.teleToLocation(-157261, 255664, 221, 64781, false);
+					//					ship.teleToLocation(-157261, 255664, 221, 64781, false);
 					ship.setOustLoc(OUST_GLUDIO);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
 					break;

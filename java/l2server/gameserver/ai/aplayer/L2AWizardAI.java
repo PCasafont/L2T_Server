@@ -105,9 +105,9 @@ public class L2AWizardAI extends L2APlayerAI
 			}
 		}
 
-		//if (this.player.getCurrentMp() > player.getMaxMp() * 0.7
-		//		|| this.player.getCurrentHp() < this.player.getMaxHp() * 0.5
-		//		|| this.player.getTarget() instanceof L2Playable)
+		//if (player.getCurrentMp() > player.getMaxMp() * 0.7
+		//		|| player.getCurrentHp() < player.getMaxHp() * 0.5
+		//		|| player.getTarget() instanceof L2Playable)
 		{
 			for (L2Skill skill : player.getAllSkills())
 			{

@@ -95,7 +95,7 @@ public class GuardKnownList extends AttackableKnownList
 			return false;
 		}
 
-		// Check if the this.aggroList of the L2GuardInstance is Empty
+		// Check if the aggroList of the L2GuardInstance is Empty
 		if (getActiveChar().noTarget())
 		{
 			//removeAllKnownObjects();

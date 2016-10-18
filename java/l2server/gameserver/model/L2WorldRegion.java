@@ -234,7 +234,7 @@ public final class L2WorldRegion
 		if (!isOn)
 		{
 			Collection<L2Object> vObj = visibleObjects.values();
-			//synchronized (this.visibleObjects)
+			//synchronized (visibleObjects)
 			{
 				for (L2Object o : vObj)
 				{
@@ -275,7 +275,7 @@ public final class L2WorldRegion
 		else
 		{
 			Collection<L2Object> vObj = visibleObjects.values();
-			//synchronized (this.visibleObjects)
+			//synchronized (visibleObjects)
 			{
 				for (L2Object o : vObj)
 				{
@@ -399,7 +399,7 @@ public final class L2WorldRegion
 	}
 
 	/**
-	 * Add the L2Object in the L2ObjectHashSet(L2Object) this.visibleObjects containing L2Object visible in this L2WorldRegion <BR>
+	 * Add the L2Object in the L2ObjectHashSet(L2Object) visibleObjects containing L2Object visible in this L2WorldRegion <BR>
 	 * If L2Object is a L2PcInstance, Add the L2PcInstance in the L2ObjectHashSet(L2PcInstance) _allPlayable
 	 * containing L2PcInstance of all player in game in this L2WorldRegion <BR>
 	 * Assert : object.getCurrentWorldRegion() == this
@@ -428,9 +428,9 @@ public final class L2WorldRegion
 	}
 
 	/**
-	 * Remove the L2Object from the L2ObjectHashSet(L2Object) this.visibleObjects in this L2WorldRegion <BR><BR>
+	 * Remove the L2Object from the L2ObjectHashSet(L2Object) visibleObjects in this L2WorldRegion <BR><BR>
 	 * <p>
-	 * If L2Object is a L2PcInstance, remove it from the L2ObjectHashSet(L2PcInstance) this.allPlayable of this L2WorldRegion <BR>
+	 * If L2Object is a L2PcInstance, remove it from the L2ObjectHashSet(L2PcInstance) allPlayable of this L2WorldRegion <BR>
 	 * Assert : object.getCurrentWorldRegion() == this || object.getCurrentWorldRegion() == null
 	 */
 	public void removeVisibleObject(L2Object object)
@@ -477,7 +477,7 @@ public final class L2WorldRegion
 	{
 		Log.fine("Deleting all visible NPC's in Region: " + getName());
 		Collection<L2Object> vNPC = visibleObjects.values();
-		//synchronized (this.visibleObjects)
+		//synchronized (visibleObjects)
 		{
 			for (L2Object obj : vNPC)
 			{

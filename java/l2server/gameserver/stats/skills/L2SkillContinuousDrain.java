@@ -136,18 +136,18 @@ public class L2SkillContinuousDrain extends L2Skill
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, this, shld, ssMul, mcrit);
 
 			int drain = 0;
-			//int this.cp = (int)target.getCurrentCp();
+			//int cp = (int)target.getCurrentCp();
 			int charHp = (int) target.getCurrentHp();
 
 			if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance &&
 					target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
 			{
-				/*if (this.cp > 0)
+				/*if (cp > 0)
 				{
-					if (damage < this.cp)
-						this.drain = 0;
+					if (damage < cp)
+						drain = 0;
 					else
-						this.drain = damage - this.cp;
+						drain = damage - cp;
 				}
 				else */
 				if (damage > charHp)

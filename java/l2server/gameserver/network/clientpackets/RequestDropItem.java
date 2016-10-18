@@ -233,7 +233,7 @@ public final class RequestDropItem extends L2GameClientPacket
 
 		/*if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
 		{
-			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + this.x + "," + this.y + "," + this.z + ")";
+			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + x + "," + y + "," + z + ")";
 			Log.warning(msg);
 			GmListTable.broadcastMessageToGMs(msg);
 		}*/

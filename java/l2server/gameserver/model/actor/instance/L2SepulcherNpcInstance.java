@@ -179,7 +179,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 				else
 				{
 					// Send a Server->Client packet SocialAction to the all
-					// L2PcInstance on the this.knownPlayer of the L2NpcInstance
+					// L2PcInstance on the knownPlayer of the L2NpcInstance
 					// to display a social action of the L2NpcInstance on their
 					// client
 					SocialAction sa = new SocialAction(getObjectId(), Rnd.get(8));

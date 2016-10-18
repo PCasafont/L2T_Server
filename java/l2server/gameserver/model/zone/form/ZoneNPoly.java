@@ -236,7 +236,7 @@ public class ZoneNPoly extends L2ZoneForm
 		int centerX = minX + (maxX - minX) / 2;
 		int centerY = minY + (maxY - minY) / 2;
 		int radius = (int) Math.sqrt((maxX - minX) * (maxX - minX) + (maxY - minY) * (maxY - minY));
-		int count = 500;//Math.min(Math.max((this.maxX - this.minX) / 50, 5), 100);
+		int count = 500;//Math.min(Math.max((maxX - minX) / 50, 5), 100);
 		int angle = Rnd.get(180);
 		double dirX = Math.cos(angle * Math.PI / 180.0);
 		double dirY = Math.sin(angle * Math.PI / 180.0);

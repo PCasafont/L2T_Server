@@ -336,7 +336,7 @@ public class TopicBBSManager extends BaseBBSManager
 				if (i++ >= 12 * (index - 1))
 				{
 					StringUtil.append(html,
-							"<table border=0 cellspacing=0 cellpadding=5 WIDTH=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=415><a action=\"bypass this.bbsposts;read;",
+							"<table border=0 cellspacing=0 cellpadding=5 WIDTH=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=415><a action=\"bypass _bbsposts;read;",
 							String.valueOf(forum.getID()), ";", String.valueOf(t.getID()), "\">", t.getName(),
 							"</a></td><td FIXWIDTH=120 align=center></td><td FIXWIDTH=70 align=center>",
 							dateFormat.format(new Date(t.getDate())),
@@ -355,7 +355,7 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()),
+			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()),
 					";", String.valueOf(index - 1),
 					"\" back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
 		}
@@ -375,7 +375,7 @@ public class TopicBBSManager extends BaseBBSManager
 			else
 			{
 				StringUtil
-						.append(html, "<td><a action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()), ";",
+						.append(html, "<td><a action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()), ";",
 								String.valueOf(i), "\"> ", String.valueOf(i), " </a></td>");
 			}
 		}
@@ -386,13 +386,13 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass this.bbstopics;read;", String.valueOf(forum.getID()),
+			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()),
 					";", String.valueOf(index + 1),
 					"\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
 		}
 
 		StringUtil.append(html,
-				"</tr></table> </td> <td align=right><button value = \"&$421;\" action=\"bypass this.bbstopics;crea;",
+				"</tr></table> </td> <td align=right><button value = \"&$421;\" action=\"bypass _bbstopics;crea;",
 				String.valueOf(forum.getID()),
 				"\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr> <td></td><td align=center><table border=0><tr><td></td><td><edit var = \"Search\" width=130 height=11></td><td><button value=\"&$420;\" action=\"Write 5 -2 0 Search _ _\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"> </td> </tr></table> </td></tr></table><br><br><br></center></body></html>");
 		separateAndSend(html.toString(), activeChar);

@@ -117,17 +117,17 @@ public class ExShowScreenMessage extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(type); // 0 - system messages, 1 - your defined text
-		writeD(sysMessageId); // system message id (this.type must be 0 otherwise no effect)
+		writeD(sysMessageId); // system message id (type must be 0 otherwise no effect)
 		writeD(position); // message position
 		writeD(unk1); // ?
 		writeD(size); // font size 0 - normal, 1 - small
 		writeD(unk2); // ?
 		writeD(unk3); // ?
 		writeD(effect ? 1 :
-				0); // upper effect (0 - disabled, 1 enabled) - this.position must be 2 (center) otherwise no effect
+				0); // upper effect (0 - disabled, 1 enabled) - position must be 2 (center) otherwise no effect
 		writeD(time); // time
 		writeD(unk4); // ?
 		writeD(npcStringId);
-		writeS(text); // your text (this.type must be 1, otherwise no effect)
+		writeS(text); // your text (type must be 1, otherwise no effect)
 	}
 }

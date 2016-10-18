@@ -245,15 +245,15 @@ public final class Say2 extends L2GameClientPacket
 				L2DatabaseFactory.close(con);
 			}
 
-			/*LogRecord record = new LogRecord(Level.INFO, this.text);
+			/*LogRecord record = new LogRecord(Level.INFO, text);
 			record.setLoggerName("chat");
 
-			if (this.type == TELL)
-				record.setParameters(new Object[]{CHAT_NAMES[this.type], "[" + activeChar.getName() + " to "+_target+"]"});
+			if (type == TELL)
+				record.setParameters(new Object[]{CHAT_NAMES[type], "[" + activeChar.getName() + " to "+_target+"]"});
 			else
-				record.setParameters(new Object[]{CHAT_NAMES[this.type], "[" + activeChar.getName() + "]"});
+				record.setParameters(new Object[]{CHAT_NAMES[type], "[" + activeChar.getName() + "]"});
 
-			this.logChat.log(record);*/
+			logChat.log(record);*/
 		}
 
 		if (text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
@@ -271,7 +271,7 @@ public final class Say2 extends L2GameClientPacket
 		if (handler != null)
 		{
 			// Elcardia -> Elcopia OP replacement
-			//_text = this.text.replaceAll("([lLiI1][ -._]*[cCkK][ -._]*)[aA4]"
+			//_text = text.replaceAll("([lLiI1][ -._]*[cCkK][ -._]*)[aA4]"
 			//		+ "([ -._]*)[rR]([ -._]*)[dD]", "$1o$2$3p");
 
 			handler.handleChat(type, activeChar, target, text);

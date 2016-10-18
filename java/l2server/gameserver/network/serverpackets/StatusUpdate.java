@@ -111,8 +111,8 @@ public final class StatusUpdate extends L2GameServerPacket
 		objectId = object.getObjectId();
 		/*if (object instanceof L2Attackable || object instanceof L2Playable
 				&& getClient() != null && getClient().getActiveChar() != null
-				&& getClient().getActiveChar().getObjectId() != this.objectId)
-			this.maxHp = ((L2Character) object).getMaxVisibleHp();*/
+				&& getClient().getActiveChar().getObjectId() != objectId)
+			maxHp = ((L2Character) object).getMaxVisibleHp();*/
 	}
 
 	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display)
@@ -124,12 +124,12 @@ public final class StatusUpdate extends L2GameServerPacket
 
 	public void addAttribute(int id, int level)
 	{
-        /*if (this.maxHp != -1)
+        /*if (maxHp != -1)
 		{
 			if (id == CUR_HP)
 			{
 				level = (int)((level / (float)_maxHp) * HP_MOD);
-				this.attributes.add(new Attribute(MAX_HP, HP_MOD)); // This is a ninja fix
+				attributes.add(new Attribute(MAX_HP, HP_MOD)); // This is a ninja fix
 			}
 			else if (id == MAX_HP)
 				level = HP_MOD;

@@ -458,7 +458,7 @@ public abstract class L2Vehicle extends L2Character
 			Log.log(Level.SEVERE, "Failed cleaning knownlist.", e);
 		}
 
-		// Remove L2Object object from this.allObjects of L2World
+		// Remove L2Object object from allObjects of L2World
 		L2World.getInstance().removeObject(this);
 
 		super.deleteMe();

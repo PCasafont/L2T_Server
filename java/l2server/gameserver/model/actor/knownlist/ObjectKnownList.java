@@ -163,7 +163,7 @@ public class ObjectKnownList
 		}
 	}
 
-	// Remove invisible and too far L2Object from this.knowObject and if necessary from this.knownPlayers of the L2Character
+	// Remove invisible and too far L2Object from knowObject and if necessary from knownPlayers of the L2Character
 	public void forgetObjects(boolean fullCheck)
 	{
 		//synchronized (KnownListUpdateTaskManager.getInstance().getSync())
@@ -212,7 +212,7 @@ public class ObjectKnownList
 	}
 
 	/**
-	 * Return the this.knownObjects containing all L2Object known by the L2Character.
+	 * Return the knownObjects containing all L2Object known by the L2Character.
 	 */
 	public final Map<Integer, L2Object> getKnownObjects()
 	{

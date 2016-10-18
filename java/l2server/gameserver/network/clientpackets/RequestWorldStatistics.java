@@ -38,7 +38,7 @@ public final class RequestWorldStatistics extends L2GameClientPacket
 	protected void runImpl()
 	{
 		if (getClient().getActiveChar() == null)
-		//|| MuseumStatistic.get(this.pId1, this.pId2) == null)
+		//|| MuseumStatistic.get(pId1, pId2) == null)
 		{
 			return;
 		}

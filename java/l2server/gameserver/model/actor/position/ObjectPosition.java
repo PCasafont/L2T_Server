@@ -44,7 +44,7 @@ public class ObjectPosition
 	// Method - Public
 
 	/**
-	 * Set the x,y,z position of the L2Object and if necessary modify its this.worldRegion.<BR><BR>
+	 * Set the x,y,z position of the L2Object and if necessary modify its worldRegion.<BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
 	 * <li> worldRegion != null</li><BR><BR>
@@ -136,7 +136,7 @@ public class ObjectPosition
 
 			setWorldRegion(newRegion);
 
-			// Add the L2Oject spawn to this.visibleObjects and if necessary to this.allplayers of its L2WorldRegion
+			// Add the L2Oject spawn to visibleObjects and if necessary to allplayers of its L2WorldRegion
 			getWorldRegion().addVisibleObject(getActiveObject());
 		}
 	}

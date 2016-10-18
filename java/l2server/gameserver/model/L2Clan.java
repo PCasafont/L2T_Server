@@ -614,17 +614,17 @@ public class L2Clan
 	public void setLevel(int level)
 	{
 		this.level = level;
-		/*if (this.level >= 2 && this.forum == null && Config.COMMUNITY_TYPE > 0)
+		/*if (level >= 2 && forum == null && Config.COMMUNITY_TYPE > 0)
 		{
 			Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 
 			if (forum != null)
 			{
-				this.forum = forum.getChildByName(this.name);
+				forum = forum.getChildByName(name);
 
-				if (this.forum == null)
+				if (forum == null)
 				{
-					this.forum = ForumsBBSManager.getInstance().createNewForum(this.name, ForumsBBSManager.getInstance().getForumByName("ClanRoot"), Forum.CLAN, Forum.CLANMEMBERONLY, getClanId());
+					forum = ForumsBBSManager.getInstance().createNewForum(name, ForumsBBSManager.getInstance().getForumByName("ClanRoot"), Forum.CLAN, Forum.CLANMEMBERONLY, getClanId());
 				}
 			}
 		}*/

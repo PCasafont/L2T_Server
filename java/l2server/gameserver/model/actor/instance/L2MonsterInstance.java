@@ -57,7 +57,7 @@ public class L2MonsterInstance extends L2Attackable
 	 * Constructor of L2MonsterInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the this.template of the L2MonsterInstance (copy skills from template to object and link this.calculators to NPC_STD_CALCULATOR) </li>
+	 * <li>Call the L2Character constructor to set the template of the L2MonsterInstance (copy skills from template to object and link calculators to NPC_STD_CALCULATOR) </li>
 	 * <li>Set the name of the L2MonsterInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *

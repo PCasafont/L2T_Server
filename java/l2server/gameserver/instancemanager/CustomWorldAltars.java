@@ -330,7 +330,7 @@ public class CustomWorldAltars
 			if (i.getCurrentSpawn() != null)
 			{
 				sb.append("<tr><td>Spawn Location:</td><td><a action=\"" +
-						(isGM ? "bypass -h admin_move_to " : "bypass this.bbscustom;action;showRadar; ") + "" +
+						(isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" +
 						i.getCurrentSpawn().getSpawn().getX() + " " + i.getCurrentSpawn().getSpawn().getY() + " " +
 						i.getCurrentSpawn().getSpawn().getZ() + "\"> " + i.getCurrentSpawn().getSpawnName() +
 						"</a></td></tr>");

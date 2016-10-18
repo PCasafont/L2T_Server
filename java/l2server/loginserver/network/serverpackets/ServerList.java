@@ -156,17 +156,17 @@ public final class ServerList extends L2LoginServerPacket
 		writeH(0x00); // unknown
 		if (charsOnServers != null)
 		{
-			//writeC(this.charsOnServers.size());
+			//writeC(charsOnServers.size());
 			for (int servId : charsOnServers.keySet())
 			{
 				writeC(servId);
 				writeC(charsOnServers.get(servId));
-				/*if (this.charsToDelete == null || !this.charsToDelete.containsKey(servId))
+				/*if (charsToDelete == null || !charsToDelete.containsKey(servId))
 					writeC(0x00);
 				else
 				{
-					writeC(this.charsToDelete.get(servId).length);
-					for (long deleteTime : this.charsToDelete.get(servId))
+					writeC(charsToDelete.get(servId).length);
+					for (long deleteTime : charsToDelete.get(servId))
 					{
 						writeD((int)((deleteTime - System.currentTimeMillis()) / 1000));
 					}

@@ -46,7 +46,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	 * Constructor of L2RaidBossInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the this.template of the L2RaidBossInstance (copy skills from template to object and link this.calculators to NPC_STD_CALCULATOR) </li>
+	 * <li>Call the L2Character constructor to set the template of the L2RaidBossInstance (copy skills from template to object and link calculators to NPC_STD_CALCULATOR) </li>
 	 * <li>Set the name of the L2RaidBossInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *
@@ -167,7 +167,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	}
 
 	/**
-	 * Reduce the current HP of the L2Attackable, update its this.aggroList and launch the doDie Task if necessary.<BR><BR>
+	 * Reduce the current HP of the L2Attackable, update its aggroList and launch the doDie Task if necessary.<BR><BR>
 	 */
 	@Override
 	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)

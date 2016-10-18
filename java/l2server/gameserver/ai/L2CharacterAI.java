@@ -603,9 +603,9 @@ public class L2CharacterAI extends AbstractAI
 	protected void onEvtRooted(L2Character attacker)
 	{
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
-		//_actor.broadcastPacket(new AutoAttackStop(this.actor.getObjectId()));
-		//if (AttackStanceTaskManager.getInstance().getAttackStanceTask(this.actor))
-		//	AttackStanceTaskManager.getInstance().removeAttackStanceTask(this.actor);
+		//_actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
+		//if (AttackStanceTaskManager.getInstance().getAttackStanceTask(actor))
+		//	AttackStanceTaskManager.getInstance().removeAttackStanceTask(actor);
 
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		clientStopMoving(null);
@@ -747,12 +747,12 @@ public class L2CharacterAI extends AbstractAI
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		clientStopMoving(blocked_at_pos);
 
-		/*if (Config.ACTIVATE_POSITION_RECORDER && Universe.getInstance().shouldLog(this.accessor.getActor().getObjectId()))
+		/*if (Config.ACTIVATE_POSITION_RECORDER && Universe.getInstance().shouldLog(accessor.getActor().getObjectId()))
 		{
-			if (!this.accessor.getActor().isFlying())
+			if (!accessor.getActor().isFlying())
 				Universe.getInstance().registerObstacle(blocked_at_pos.x, blocked_at_pos.y, blocked_at_pos.z);
-			if (this.accessor.getActor() instanceof L2PcInstance)
-				((L2PcInstance) this.accessor.getActor()).explore();
+			if (accessor.getActor() instanceof L2PcInstance)
+				((L2PcInstance) accessor.getActor()).explore();
 		}*/
 
 		// Launch actions corresponding to the Event Think

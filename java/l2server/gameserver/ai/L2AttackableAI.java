@@ -214,7 +214,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				return false;
 			}
 
-			//if (this.selfAnalysis.cannotMoveOnLand && !target.isInsideZone(L2Character.ZONE_WATER))
+			//if (selfAnalysis.cannotMoveOnLand && !target.isInsideZone(L2Character.ZONE_WATER))
 			//	return false;
 
 			if (((L2PcInstance) target).isPlayingEvent())
@@ -393,7 +393,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	/**
 	 * Set the Intention of this L2CharacterAI and create an  AI Task executed every 1s (call onEvtThink method) for this L2Attackable.<BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor this.knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : If actor knowPlayer isn't EMPTY, AI_INTENTION_IDLE will be change in AI_INTENTION_ACTIVE</B></FONT><BR><BR>
 	 *
 	 * @param intention The new Intention to set to the AI
 	 * @param arg0      The first parameter of the Intention
@@ -408,7 +408,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			L2Attackable npc = getActiveChar();
 			if (!npc.isAlikeDead())
 			{
-				// If its this.knownPlayer isn't empty set the Intention to AI_INTENTION_ACTIVE
+				// If its knownPlayer isn't empty set the Intention to AI_INTENTION_ACTIVE
 				if (!npc.getKnownList().getKnownPlayers().isEmpty())
 				{
 					intention = AI_INTENTION_ACTIVE;
@@ -506,8 +506,8 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	 * Manage AI standard thinks of a L2Attackable (called by onEvtThink).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Update every 1s the this.globalAggro counter to come close to 0</li>
-	 * <li>If the actor is Aggressive and can attack, add all autoAttackable L2Character in its Aggro Range to its this.aggroList, chose a target and order to attack it</li>
+	 * <li>Update every 1s the globalAggro counter to come close to 0</li>
+	 * <li>If the actor is Aggressive and can attack, add all autoAttackable L2Character in its Aggro Range to its aggroList, chose a target and order to attack it</li>
 	 * <li>If the actor is a L2GuardInstance that can't attack, order to it to return to its home location</li>
 	 * <li>If the actor is a L2MonsterInstance that can't attack, order to it to random walk (1/100)</li><BR><BR>
 	 */
@@ -515,7 +515,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	{
 		L2Attackable npc = getActiveChar();
 
-		// Update every 1s the this.globalAggro counter to come close to 0
+		// Update every 1s the globalAggro counter to come close to 0
 		if (globalAggro != 0)
 		{
 			if (globalAggro < 0)
@@ -528,8 +528,8 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			}
 		}
 
-		// Add all autoAttackable L2Character in L2Attackable Aggro Range to its this.aggroList with 0 damage and 1 hate
-		// A L2Attackable isn't aggressive during 10s after its spawn because this.globalAggro is set to -10
+		// Add all autoAttackable L2Character in L2Attackable Aggro Range to its aggroList with 0 damage and 1 hate
+		// A L2Attackable isn't aggressive during 10s after its spawn because globalAggro is set to -10
 		if (globalAggro >= 0)
 		{
 			// Get all visible objects inside its Aggro Range
@@ -552,7 +552,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						// Get the hate level of the L2Attackable against this L2Character target contained in _aggroList
 						int hating = npc.getHating(target);
 
-						// Add the attacker to the L2Attackable this.aggroList with 0 damage and 0 hate
+						// Add the attacker to the L2Attackable aggroList with 0 damage and 0 hate
 						if (hating == 0)
 						{
 							npc.addDamageHate(target, 0, 0);
@@ -817,7 +817,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			int factionRange = npc.getClanRange() + collision;
 			// Go through all L2Object that belong to its faction
 			Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
-			//synchronized (this.actor.getKnownList().getKnownObjects())
+			//synchronized (actor.getKnownList().getKnownObjects())
 			try
 			{
 				for (L2Object obj : objs)
@@ -890,7 +890,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		}
 
 		/*
-		if (this.actor.getTarget() == null || this.getAttackTarget() == null || this.getAttackTarget().isDead() || ctarget == this.actor)
+		if (actor.getTarget() == null || getAttackTarget() == null || getAttackTarget().isDead() || ctarget == actor)
 			AggroReconsider();
 		*/
 
@@ -1696,7 +1696,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					{
 						clientStopMoving(null);
 						//L2Object target = attackTarget;
-						//_actor.setTarget(this.actor);
+						//_actor.setTarget(actor);
 						caster.doCast(sk);
 						//_actor.setTarget(target);
 						return true;
@@ -1741,7 +1741,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					{
 						clientStopMoving(null);
 						//L2Object target = attackTarget;
-						//_actor.setTarget(this.actor);
+						//_actor.setTarget(actor);
 						caster.doCast(sk);
 						//_actor.setTarget(target);
 						return true;
@@ -1766,7 +1766,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 					{
 						clientStopMoving(null);
 						//L2Object target = attackTarget;
-						//_actor.setTarget(this.actor);
+						//_actor.setTarget(actor);
 						caster.doCast(sk);
 						//_actor.setTarget(target);
 						return true;
@@ -1854,7 +1854,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				{
 					clientStopMoving(null);
 					//L2Object targets = attackTarget;
-					//_actor.setTarget(this.actor);
+					//_actor.setTarget(actor);
 					caster.doCast(sk);
 					//_actor.setTarget(targets);
 					return true;
@@ -1925,7 +1925,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						{
 							clientStopMoving(null);
 							//L2Object target = attackTarget;
-							//_actor.setTarget(this.actor);
+							//_actor.setTarget(actor);
 							npc.doCast(sk);
 							//_actor.setTarget(target);
 							return;
@@ -1953,7 +1953,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						{
 							clientStopMoving(null);
 							//L2Object target = attackTarget;
-							//_actor.setTarget(this.actor);
+							//_actor.setTarget(actor);
 							npc.doCast(sk);
 							//_actor.setTarget(target);
 							return;
@@ -1980,7 +1980,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						{
 							clientStopMoving(null);
 							//L2Object target = attackTarget;
-							//_actor.setTarget(this.actor);
+							//_actor.setTarget(actor);
 							npc.doCast(sk);
 							//_actor.setTarget(target);
 							return;
@@ -2008,7 +2008,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						{
 							clientStopMoving(null);
 							//L2Object target = attackTarget;
-							//_actor.setTarget(this.actor);
+							//_actor.setTarget(actor);
 							npc.doCast(sk);
 							//_actor.setTarget(target);
 							return;
@@ -2035,7 +2035,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 						}
 						clientStopMoving(null);
 						//L2Object target = attackTarget;
-						//_actor.setTarget(this.actor);
+						//_actor.setTarget(actor);
 						npc.doCast(sk);
 						//_actor.setTarget(target);
 						return;
@@ -2044,24 +2044,24 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				//-------------------------------------------------------------
 				//if there is no ATK skill to use, then try Universal skill
 				/*
-				if (this.skillrender.hasUniversalSkill())
+				if (skillrender.hasUniversalSkill())
 				{
 					for (L2Skill sk:_skillrender.universalskills)
 					{
 						if (sk.getMpConsume()>=_actor.getCurrentMp()
-								|| this.actor.isSkillDisabled(sk.getId())
-								||(sk.getCastRange()+ this.actor.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 && !canAura(sk))
+								|| actor.isSkillDisabled(sk.getId())
+								||(sk.getCastRange()+ actor.getTemplate().collisionRadius + attackTarget.getTemplate().collisionRadius <= dist2 && !canAura(sk))
 								||(sk.isMagic()&&_actor.isMuted())
 								||(!sk.isMagic()&&_actor.isPhysicalMuted()))
 						{
 							continue;
 						}
-						if (!GeoData.getInstance().canSeeTarget(this.actor,attackTarget))
+						if (!GeoData.getInstance().canSeeTarget(actor,attackTarget))
 							continue;
 						clientStopMoving(null);
 						L2Object target = attackTarget;
-						//_actor.setTarget(this.actor);
-						this.actor.doCast(sk);
+						//_actor.setTarget(actor);
+						actor.doCast(sk);
 						//_actor.setTarget(target);
 						return;
 					}
@@ -2751,7 +2751,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	 * Launch actions corresponding to the Event Attacked.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Init the attack : Calculate the attack timeout, Set the this.globalAggro to 0, Add the attacker to the actor _aggroList</li>
+	 * <li>Init the attack : Calculate the attack timeout, Set the globalAggro to 0, Add the attacker to the actor _aggroList</li>
 	 * <li>Set the L2Character movement type to run and send Server->Client packet ChangeMoveType to all others L2PcInstance</li>
 	 * <li>Set the Intention to AI_INTENTION_ATTACK</li><BR><BR>
 	 *
@@ -2782,13 +2782,13 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		// Calculate the attack timeout
 		attackTimeout = MAX_ATTACK_TIMEOUT + TimeController.getGameTicks();
 
-		// Set the this.globalAggro to 0 to permit attack even just after spawn
+		// Set the globalAggro to 0 to permit attack even just after spawn
 		if (globalAggro < 0)
 		{
 			globalAggro = 0;
 		}
 
-		// Add the attacker to the this.aggroList of the actor
+		// Add the attacker to the aggroList of the actor
 		me.addDamageHate(attacker, 0, 1);
 
 		// Set the L2Character movement type to run and send Server->Client packet ChangeMoveType to all others L2PcInstance
@@ -2830,7 +2830,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 	 * Launch actions corresponding to the Event Aggression.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Add the target to the actor this.aggroList or update hate if already present </li>
+	 * <li>Add the target to the actor aggroList or update hate if already present </li>
 	 * <li>Set the actor Intention to AI_INTENTION_ATTACK (if actor is L2GuardInstance check if it isn't too far from its home location)</li><BR><BR>
 	 *
 	 * @param aggro The value of hate to add to the actor against the target
@@ -2851,7 +2851,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 				}
 			}
 
-			// Add the target to the actor this.aggroList or update hate if already present
+			// Add the target to the actor aggroList or update hate if already present
 			me.addDamageHate(target, 0, aggro);
 
 			// Set the actor AI Intention to AI_INTENTION_ATTACK

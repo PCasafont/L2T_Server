@@ -76,7 +76,7 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		// getClient().getActiveChar().broadcastPacket(smwl);
 		//
 		// StopRotation sr = new StopRotation(getClient().getActiveChar(),
-		// this.heading);
+		// heading);
 		// getClient().getActiveChar().sendPacket(sr);
 		// getClient().getActiveChar().broadcastPacket(sr);
 	}

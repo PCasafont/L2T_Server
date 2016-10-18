@@ -360,7 +360,7 @@ public class MultiSellChoose extends L2GameClientPacket
 									 *
 									 * IDEALLY:
 									 * In order to best optimize the performance, choose which algorithm to run, based on whether 2^m > n
-									 * if ( (2<<(e.getItemCount() * this.amount)) < inventoryContents.length )
+									 * if ( (2<<(e.getItemCount() * amount)) < inventoryContents.length )
 									 *   // do Algorithm 1, no sorting
 									 * else
 									 *   // do Algorithm 2, sorting

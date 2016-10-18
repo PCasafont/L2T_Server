@@ -102,7 +102,7 @@ public final class AuthLogin extends L2GameClientPacket
 				ResultSet rs = statement.executeQuery();
 				if (rs.next())
 				{
-					this.vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
+					vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
 				}
 				else
 				{

@@ -119,7 +119,7 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
 
-			//Log.info("INFO: Hair: " + this.hair + ", Face: " + this.face + ", COLOR: " + this.hairColor);
+			//Log.info("INFO: Hair: " + hair + ", Face: " + face + ", COLOR: " + hairColor);
 			//Log.info("END OK");
 		}
 	}

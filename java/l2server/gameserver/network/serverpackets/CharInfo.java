@@ -323,15 +323,15 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0);
 				writeD(0);
 			}
-			/*if (this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && this.inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
+			/*if (inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
 			{
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-				writeD(this.inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
+				writeD(inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
 			}
 			else*/
 			{
@@ -359,8 +359,8 @@ public class CharInfo extends L2GameServerPacket
 			writeH(walkSpd); // fly walk speed
 			writeH(runSpd); // fly run speed ?
 			writeH(walkSpd); // fly walk speed ?
-			writeF(activeChar.getMovementSpeedMultiplier()); // this.activeChar.getProperMultiplier()
-			writeF(activeChar.getAttackSpeedMultiplier()); // this.activeChar.getAttackSpeedMultiplier()
+			writeF(activeChar.getMovementSpeedMultiplier()); // activeChar.getProperMultiplier()
+			writeF(activeChar.getAttackSpeedMultiplier()); // activeChar.getAttackSpeedMultiplier()
 			L2Transformation transform = activeChar.getTransformation();
 
 			if (activeChar.getMountType() != 0)
@@ -512,7 +512,7 @@ public class CharInfo extends L2GameServerPacket
 			writeD(abnormals.size());
 			abnormals.forEach(this::writeH);
 
-			//writeC(this.inv.getMaxTalismanCount());
+			//writeC(inv.getMaxTalismanCount());
 			writeC(activeChar.hasCoCAura() ? 100 : 0x00);
 			writeC(inv.getCloakStatus());
 			boolean showWings = true;

@@ -175,7 +175,7 @@ public class GameServerThread extends Thread
 		}
 
 		return (int) Math.round(accountsOnGameServer.size() * multiplier + Rnd.get(1));
-		//return this.accountsOnGameServer.size() * multiplier;
+		//return accountsOnGameServer.size() * multiplier;
 	}
 
 	/**

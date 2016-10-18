@@ -211,7 +211,7 @@ public class RegionBBSManager extends BaseBBSManager
 				if (receiver == null)
 				{
 					StringUtil.append(htmlCode,
-							"Player not found!<br><button value=\"Back\" action=\"bypass this.bbsloc;playerinfo;", ar2,
+							"Player not found!<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;", ar2,
 							"\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
 					separateAndSend(htmlCode.toString(), activeChar);
 					return;
@@ -253,7 +253,7 @@ public class RegionBBSManager extends BaseBBSManager
 					activeChar.sendPacket(
 							new CreatureSay(activeChar.getObjectId(), Say2.TELL, "->" + receiver.getName(), ar3));
 					StringUtil.append(htmlCode,
-							"Message Sent<br><button value=\"Back\" action=\"bypass this.bbsloc;playerinfo;",
+							"Message Sent<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;",
 							receiver.getName(),
 							"\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></body></html>");
 					separateAndSend(htmlCode.toString(), activeChar);
@@ -411,7 +411,7 @@ public class RegionBBSManager extends BaseBBSManager
 					}
 
 					StringUtil.append(htmlCode,
-							"<td align=left valign=top FIXWIDTH=110><a action=\"bypass this.bbsloc;playerinfo;",
+							"<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
 							player.getName(), "\">");
 
 					if (player.isGM())
@@ -456,7 +456,7 @@ public class RegionBBSManager extends BaseBBSManager
 				else
 				{
 					StringUtil.append(htmlCode,
-							"<td align=right width=190><button value=\"Prev\" action=\"bypass this.bbsloc;page;",
+							"<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
 							String.valueOf(page - 1),
 							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
@@ -473,7 +473,7 @@ public class RegionBBSManager extends BaseBBSManager
 				else
 				{
 					StringUtil
-							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
+							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
 									String.valueOf(page + 1),
 									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
@@ -522,7 +522,7 @@ public class RegionBBSManager extends BaseBBSManager
 					}
 
 					StringUtil.append(htmlCode,
-							"<td align=left valign=top FIXWIDTH=110><a action=\"bypass this.bbsloc;playerinfo;",
+							"<td align=left valign=top FIXWIDTH=110><a action=\"bypass _bbsloc;playerinfo;",
 							player.getName(), "\">");
 
 					if (player.isGM())
@@ -568,7 +568,7 @@ public class RegionBBSManager extends BaseBBSManager
 				else
 				{
 					StringUtil.append(htmlCode,
-							"<td align=right width=190><button value=\"Prev\" action=\"bypass this.bbsloc;page;",
+							"<td align=right width=190><button value=\"Prev\" action=\"bypass _bbsloc;page;",
 							String.valueOf(page - 1),
 							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
@@ -586,7 +586,7 @@ public class RegionBBSManager extends BaseBBSManager
 				else
 				{
 					StringUtil
-							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass this.bbsloc;page;",
+							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
 									String.valueOf(page + 1),
 									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}

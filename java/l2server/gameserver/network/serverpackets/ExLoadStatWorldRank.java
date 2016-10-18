@@ -40,14 +40,14 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
 			return;
 		}
 
-		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(this.pid1, this.pid2, true);
-		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(this.pid1, this.pid2, false);
+		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(pid1, pid2, true);
+		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(pid1, pid2, false);
 
 		writeD(pid1);
 		writeD(pid2);
 		/*writeD(lastMap.size() < 100 ? lastMap.size() : 100);
 		int position = 1;
-		boolean isClanStatistic = MuseumStatistic.get(this.pid1, this.pid2).toString().toLowerCase().contains("clan");
+		boolean isClanStatistic = MuseumStatistic.get(pid1, pid2).toString().toLowerCase().contains("clan");
 		for (Integer key : lastMap.keySet())
 		{
 			writeH(position);

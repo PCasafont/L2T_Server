@@ -393,7 +393,7 @@ public abstract class EventInstance
 
 	public void stopFight()
 	{
-		//Announcements.getInstance().announceToAll("The " + this.config.getEventName() + " has ended.");
+		//Announcements.getInstance().announceToAll("The " + config.getEventName() + " has ended.");
 		calculateRewards();
 
 		// Iterate over all teams

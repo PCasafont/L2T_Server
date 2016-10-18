@@ -127,7 +127,7 @@ public class L2SkillSummon extends L2Skill
 							continue;
 						}
 
-						if (cubic.getId() == this.npcId)
+						if (cubic.getId() == npcId)
 						{
 							cubic.stopAction();
 

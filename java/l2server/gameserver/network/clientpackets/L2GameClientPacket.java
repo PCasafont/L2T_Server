@@ -38,7 +38,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 	{
 		//if (getClient() != null && getClient().getAccountName() != null
 		//		&& getClient().getAccountName().equalsIgnoreCase("pere"))
-		//	Log.info("C: " + this.getType());
+		//	Log.info("C: " + getType());
 		try
 		{
 			readImpl();

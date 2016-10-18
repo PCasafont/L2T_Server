@@ -822,7 +822,7 @@ public class FearonSiege extends Quest
 			return;
 		}
 
-		/*if (npc.getNpcId() == this.makkumBossId)
+		/*if (npc.getNpcId() == makkumBossId)
 		{
 			for (int a = 0; a < 3; a++)
 			{
@@ -841,18 +841,18 @@ public class FearonSiege extends Quest
 
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), " drop: " + ItemTable.getInstance().getTemplate(rewardId).getName() + "("+count+")"));
 
-						Log.warning(this.qn + ": Npc: " + npc.getName() + " drops: " + ItemTable.getInstance().getTemplate(rewardId).getName() +"("+count+")");
+						Log.warning(qn + ": Npc: " + npc.getName() + " drops: " + ItemTable.getInstance().getTemplate(rewardId).getName() +"("+count+")");
 
-						synchronized(this.rewardedInfo)
+						synchronized(rewardedInfo)
 						{
-							Long rewardedAmount = this.rewardedInfo.get(rewardId);
+							Long rewardedAmount = rewardedInfo.get(rewardId);
 							if (rewardedAmount != null)
 							{
 								rewardedAmount += count;
-								this.rewardedInfo.put(rewardId, rewardedAmount);
+								rewardedInfo.put(rewardId, rewardedAmount);
 							}
 							else
-								this.rewardedInfo.put(rewardId, (long)count);
+								rewardedInfo.put(rewardId, (long)count);
 						}
 					}
 				}
@@ -860,9 +860,9 @@ public class FearonSiege extends Quest
 		}
 		else
 		{
-			synchronized(this.attackerParty)
+			synchronized(attackerParty)
 			{
-				Map<L2Party, Long> registredAttacks = this.attackerParty.get(npc.getObjectId());
+				Map<L2Party, Long> registredAttacks = attackerParty.get(npc.getObjectId());
 				if (registredAttacks != null)
 				{
 					long mostDamage = 0;
@@ -885,20 +885,20 @@ public class FearonSiege extends Quest
 
 							Integer rndRewardId = (Integer) possibleRewards.keySet().toArray()[Rnd.nextInt(possibleRewards.size())];
 							int count = Rnd.get(possibleRewards.get(rndRewardId)) + 1;
-							partyMember.addItem(this.qn, rndRewardId, count, npc, true);
+							partyMember.addItem(qn, rndRewardId, count, npc, true);
 
-							//Log.warning(this.qn + ": player: " + partyMember.getName() + " rewarded with " + ItemTable.getInstance().getTemplate(rndRewardId).getName() +"("+count+")");
+							//Log.warning(qn + ": player: " + partyMember.getName() + " rewarded with " + ItemTable.getInstance().getTemplate(rndRewardId).getName() +"("+count+")");
 
-							synchronized(this.rewardedInfo)
+							synchronized(rewardedInfo)
 							{
-								Long rewardedAmount = this.rewardedInfo.get(rndRewardId);
+								Long rewardedAmount = rewardedInfo.get(rndRewardId);
 								if (rewardedAmount != null)
 								{
 									rewardedAmount += count;
-									this.rewardedInfo.put(rndRewardId, rewardedAmount);
+									rewardedInfo.put(rndRewardId, rewardedAmount);
 								}
 								else
-									this.rewardedInfo.put(rndRewardId, (long)count);
+									rewardedInfo.put(rndRewardId, (long)count);
 							}
 						}
 					}

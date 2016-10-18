@@ -353,13 +353,13 @@ public abstract class L2Character extends L2Object
 	 * This link is stored in <B>_template</B><BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the this.template of the L2Character </li>
-	 * <li>Set this.overloaded to false (the charcater can take more items)</li><BR><BR>
+	 * <li>Set the template of the L2Character </li>
+	 * <li>Set overloaded to false (the charcater can take more items)</li><BR><BR>
 	 * <p>
 	 * <li>If L2Character is a L2NPCInstance, copy skills from template to object</li>
-	 * <li>If L2Character is a L2NPCInstance, link this.calculators to NPC_STD_CALCULATOR</li><BR><BR>
+	 * <li>If L2Character is a L2NPCInstance, link calculators to NPC_STD_CALCULATOR</li><BR><BR>
 	 * <p>
-	 * <li>If L2Character is NOT a L2NPCInstance, create an empty this.skills slot</li>
+	 * <li>If L2Character is NOT a L2NPCInstance, create an empty skills slot</li>
 	 * <li>If L2Character is a L2PcInstance or L2Summon, copy basic Calculator set to object</li><BR><BR>
 	 *
 	 * @param objectId Identifier of the object to initialized
@@ -418,7 +418,7 @@ public abstract class L2Character extends L2Object
 	/**
 	 * Remove the L2Character from the world when the decay task is launched.<BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from this.allObjects of L2World </B></FONT><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T REMOVE the object from allObjects of L2World </B></FONT><BR>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
 	 */
 	public void onDecay()
@@ -472,11 +472,11 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Send a packet to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character.<BR><BR>
+	 * Send a packet to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * L2PcInstance in the detection area of the L2Character are identified in <B>_knownPlayers</B>.
-	 * In order to inform other players of state modification on the L2Character, server just need to go through this.knownPlayers to send Server->Client Packet<BR><BR>
+	 * In order to inform other players of state modification on the L2Character, server just need to go through knownPlayers to send Server->Client Packet<BR><BR>
 	 */
 	public void broadcastPacket(L2GameServerPacket mov)
 	{
@@ -498,7 +498,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * L2PcInstance in the detection area of the L2Character are identified in <B>_knownPlayers</B>.
-	 * In order to inform other players of state modification on the L2Character, server just need to go through this.knownPlayers to send Server->Client Packet<BR><BR>
+	 * In order to inform other players of state modification on the L2Character, server just need to go through knownPlayers to send Server->Client Packet<BR><BR>
 	 */
 	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
 	{
@@ -563,7 +563,7 @@ public abstract class L2Character extends L2Object
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Create the Server->Client packet StatusUpdate with current HP and MP </li>
 	 * <li>Send the Server->Client packet StatusUpdate with current HP and MP to all
-	 * L2Character called this.statusListener that must be informed of HP/MP updates of this L2Character </li><BR><BR>
+	 * L2Character called statusListener that must be informed of HP/MP updates of this L2Character </li><BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND CP information</B></FONT><BR><BR>
 	 * <p>
@@ -688,7 +688,7 @@ public abstract class L2Character extends L2Object
 			Log.fine("Teleporting to: " + x + ", " + y + ", " + z);
 		}
 
-		// Send a Server->Client packet TeleportToLocationt to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character
+		// Send a Server->Client packet TeleportToLocationt to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character
 		broadcastPacket(new TeleportToLocation(this, x, y, z, heading));
 		sendPacket(new ExTeleportToLocationActivate(getObjectId(), x, y, z, heading));
 
@@ -750,7 +750,7 @@ public abstract class L2Character extends L2Object
 	 * <li>If weapon is a bow, consume MP and set the new period of bow non re-use </li><BR><BR>
 	 * <li>Get the Attack Speed of the L2Character (delay (in milliseconds) before next attack) </li>
 	 * <li>Select the type of attack to start (Simple, Bow, Pole or Dual) and verify if SoulShot are charged then start calculation</li>
-	 * <li>If the Server->Client packet Attack contains at least 1 hit, send the Server->Client packet Attack to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character</li>
+	 * <li>If the Server->Client packet Attack contains at least 1 hit, send the Server->Client packet Attack to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character</li>
 	 * <li>Notify AI with EVT_READY_TO_ACT</li><BR><BR>
 	 *
 	 * @param target The L2Character targeted
@@ -972,7 +972,7 @@ public abstract class L2Character extends L2Object
 			}
 		}
 
-		// Add the L2PcInstance to this.knownObjects and this.knownPlayer of the target
+		// Add the L2PcInstance to knownObjects and knownPlayer of the target
 		target.getKnownList().addKnownObject(this);
 
 		// Reduce the current CP if TIREDNESS configuration is activated
@@ -1131,7 +1131,7 @@ public abstract class L2Character extends L2Object
 		}
 
 		// If the Server->Client packet Attack contains at least 1 hit, send the Server->Client packet Attack
-		// to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character
+		// to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character
 		if (attack.hasHits())
 		{
 			broadcastPacket(attack);
@@ -2009,7 +2009,7 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 
-		// Set the this.castInterruptTime and casting status (L2PcInstance already has this true)
+		// Set the castInterruptTime and casting status (L2PcInstance already has this true)
 		if (simultaneously)
 		{
 			setIsCastingSimultaneouslyNow(true);
@@ -2025,7 +2025,7 @@ public abstract class L2Character extends L2Object
 
 		//setLastCast1(!second);
 
-		// Note: this.castEndTime = GameTimeController.getGameTicks() + (coolTime + hitTime) / GameTimeController.MILLIS_IN_TICK;
+		// Note: castEndTime = GameTimeController.getGameTicks() + (coolTime + hitTime) / GameTimeController.MILLIS_IN_TICK;
 		if (!simultaneously)
 		{
 			castInterruptTime = -2 + TimeController.getGameTicks() + hitTime / TimeController.MILLIS_IN_TICK;
@@ -2243,7 +2243,7 @@ public abstract class L2Character extends L2Object
 		}
 
 		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
-		// to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character
+		// to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character
 		if (!skill.isToggle()) // Toggles should not display animations upon cast
 		{
 			broadcastPacket(
@@ -3608,7 +3608,7 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				//_actor.setXYZ(this.x, this.y, this.z);
+				//_actor.setXYZ(x, y, z);
 				broadcastPacket(new ValidateLocation(actor));
 
 				// Dirty fix for... summons not attacking targets automatically after jumping.
@@ -3636,7 +3636,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All active skills effects in progress on the L2Character are identified in ConcurrentHashMap(Integer,L2Effect) <B>_effects</B>.
-	 * The Integer key of this.effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
+	 * The Integer key of effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
 	 * <p>
 	 * Several same effect can't be used on a L2Character at the same time.
 	 * Indeed, effects are not stackable and the last cast will replace the previous in progress.
@@ -3684,7 +3684,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All active skills effects in progress on the L2Character are identified in ConcurrentHashMap(Integer,L2Effect) <B>_effects</B>.
-	 * The Integer key of this.effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
+	 * The Integer key of effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
 	 * <p>
 	 * Several same effect can't be used on a L2Character at the same time.
 	 * Indeed, effects are not stackable and the last cast will replace the previous in progress.
@@ -3694,7 +3694,7 @@ public abstract class L2Character extends L2Object
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove Func added by this effect from the L2Character Calculator (Stop L2Effect)</li>
 	 * <li>If the L2Effect belongs to a not empty Stack Group, replace theses Funcs by next stacked effect Funcs</li>
-	 * <li>Remove the L2Effect from this.effects of the L2Character</li>
+	 * <li>Remove the L2Effect from effects of the L2Character</li>
 	 * <li>Update active skills in progress icons on player client</li><BR>
 	 */
 	public final void removeEffect(L2Abnormal effect)
@@ -3881,7 +3881,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Confused abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.confused to False </li>
+	 * <li>Set the abnormal effect flag confused to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -3907,7 +3907,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All active skills effects in progress on the L2Character are identified in ConcurrentHashMap(Integer,L2Effect) <B>_effects</B>.
-	 * The Integer key of this.effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
+	 * The Integer key of effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
 	 *
 	 * @param skillId The L2Skill Identifier of the L2Effect to remove from _effects
 	 */
@@ -3921,11 +3921,11 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All active skills effects in progress on the L2Character are identified in ConcurrentHashMap(Integer,L2Effect) <B>_effects</B>.
-	 * The Integer key of this.effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
+	 * The Integer key of effects is the L2Skill Identifier that has created the L2Effect.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove Func added by this effect from the L2Character Calculator (Stop L2Effect)</li>
-	 * <li>Remove the L2Effect from this.effects of the L2Character</li>
+	 * <li>Remove the L2Effect from effects of the L2Character</li>
 	 * <li>Update active skills in progress icons on player client</li><BR><BR>
 	 *
 	 * @param type The type of effect to stop ((ex : BUFF, DMG_OVER_TIME...)
@@ -4001,7 +4001,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Fear abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.affraid to False </li>
+	 * <li>Set the abnormal effect flag affraid to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -4028,7 +4028,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Muted abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.muted to False </li>
+	 * <li>Set the abnormal effect flag muted to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -4057,7 +4057,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Root abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.rooted to False </li>
+	 * <li>Set the abnormal effect flag rooted to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -4080,7 +4080,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Sleep abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.sleeping to False </li>
+	 * <li>Set the abnormal effect flag sleeping to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -4103,7 +4103,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Delete a specified/all (if effect=null) Stun abnormal L2Effect from L2Character and update client magic icon </li>
-	 * <li>Set the abnormal effect flag this.stuned to False </li>
+	 * <li>Set the abnormal effect flag stuned to False </li>
 	 * <li>Notify the L2Character AI</li>
 	 * <li>Send Server->Client UserInfo/CharInfo packet</li><BR><BR>
 	 */
@@ -4231,7 +4231,7 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All active skills effects in progress on the L2Character are identified in <B>_effects</B>.
-	 * The Integer key of this.effects is the L2Skill Identifier that has created the effect.<BR><BR>
+	 * The Integer key of effects is the L2Skill Identifier that has created the effect.<BR><BR>
 	 *
 	 * @return A table containing all active skills effect in progress on the L2Character
 	 */
@@ -4380,11 +4380,11 @@ public abstract class L2Character extends L2Object
 	 * <p>
 	 * <B><U> Data</U> :</B><BR><BR>
 	 * <li>_moveTimestamp : Last time position update</li>
-	 * <li>_xDestination, this.yDestination, this.zDestination : Position of the destination</li>
-	 * <li>_xMoveFrom, this.yMoveFrom, this.zMoveFrom  : Position of the origin</li>
+	 * <li>_xDestination, yDestination, zDestination : Position of the destination</li>
+	 * <li>_xMoveFrom, yMoveFrom, zMoveFrom  : Position of the origin</li>
 	 * <li>_moveStartTime : Start time of the movement</li>
 	 * <li>_ticksToMove : Nb of ticks between the start and the destination</li>
-	 * <li>_xSpeedTicks, this.ySpeedTicks : Speed in unit/ticks</li><BR><BR>
+	 * <li>_xSpeedTicks, ySpeedTicks : Speed in unit/ticks</li><BR><BR>
 	 */
 	public static class MoveData
 	{
@@ -4473,10 +4473,10 @@ public abstract class L2Character extends L2Object
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 * <p>
 	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR
-	 * must be create in its this.calculators before addind new Func object.<BR><BR>
+	 * must be create in its calculators before addind new Func object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>If this.calculators is linked to NPC_STD_CALCULATOR, create a copy of NPC_STD_CALCULATOR in _calculators</li>
+	 * <li>If calculators is linked to NPC_STD_CALCULATOR, create a copy of NPC_STD_CALCULATOR in _calculators</li>
 	 * <li>Add the Func object to _calculators</li><BR><BR>
 	 *
 	 * @param f The Func object to add to the Calculator corresponding to the state affected
@@ -4557,11 +4557,11 @@ public abstract class L2Character extends L2Object
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 * <p>
 	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR
-	 * must be create in its this.calculators before addind new Func object.<BR><BR>
+	 * must be create in its calculators before addind new Func object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove the Func object from _calculators</li><BR><BR>
-	 * <li>If L2Character is a L2NPCInstance and this.calculators is equal to NPC_STD_CALCULATOR,
+	 * <li>If L2Character is a L2NPCInstance and calculators is equal to NPC_STD_CALCULATOR,
 	 * free cache memory and just create a link on NPC_STD_CALCULATOR in _calculators</li><BR><BR>
 	 *
 	 * @param f The Func object to remove from the Calculator corresponding to the state affected
@@ -4650,11 +4650,11 @@ public abstract class L2Character extends L2Object
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 * <p>
 	 * That's why, if a L2NPCInstance is under a skill/spell effect that modify one of its state, a copy of the NPC_STD_CALCULATOR
-	 * must be create in its this.calculators before addind new Func object.<BR><BR>
+	 * must be create in its calculators before addind new Func object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove all Func objects of the selected owner from _calculators</li><BR><BR>
-	 * <li>If L2Character is a L2NPCInstance and this.calculators is equal to NPC_STD_CALCULATOR,
+	 * <li>If L2Character is a L2NPCInstance and calculators is equal to NPC_STD_CALCULATOR,
 	 * free cache memory and just create a link on NPC_STD_CALCULATOR in _calculators</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
@@ -4964,13 +4964,13 @@ public abstract class L2Character extends L2Object
 	{
 		// Horrible hotfix
 		/*if (!canDoubleCast() && _isCastingNow
-				&& (this.skillCast == null || this.skillCast.isDone()))
+				&& (skillCast == null || skillCast.isDone()))
 		{
 			System.out.println(getName() + "'s cast fixed by the horrible hotfix");
 			System.out.println("The fixing cast is " + skill);
-			System.out.println("His last cast was " + this.skillCast);
-			if (this.skillCast != null)
-				System.out.println("Cancelled " + this.skillCast.isCancelled());
+			System.out.println("His last cast was " + skillCast);
+			if (skillCast != null)
+				System.out.println("Cancelled " + skillCast.isCancelled());
 			//_isCastingNow = false;
 		}*/
 
@@ -5178,7 +5178,7 @@ public abstract class L2Character extends L2Object
 
 		double dx, dy, dz;
 		if (Config.COORD_SYNCHRONIZE == 1)
-		// the only method that can modify x,y while moving (otherwise this.move would/should be set null)
+		// the only method that can modify x,y while moving (otherwise move would/should be set null)
 		{
 			dx = m.xDestination - xPrev;
 			dy = m.yDestination - yPrev;
@@ -5298,7 +5298,7 @@ public abstract class L2Character extends L2Object
 	 * <li>Delete movement data of the L2Character </li>
 	 * <li>Set the current position (x,y,z), its current L2WorldRegion if necessary and its heading </li>
 	 * <li>Remove the L2Object object from _gmList** of GmListTable </li>
-	 * <li>Remove object from this.knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR><BR>
+	 * <li>Remove object from knownObjects and _knownPlayer* of all surrounding L2WorldRegion L2Characters </li><BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T send Server->Client packet StopMove/StopRotation </B></FONT><BR><BR>
 	 */
@@ -5347,19 +5347,19 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Target a L2Object (add the target to the L2Character this.target, this.knownObject and L2Character to this.KnownObject of the L2Object).<BR><BR>
+	 * Target a L2Object (add the target to the L2Character target, knownObject and L2Character to KnownObject of the L2Object).<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * The L2Object (including L2Character) targeted is identified in <B>_target</B> of the L2Character<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the this.target of L2Character to L2Object </li>
-	 * <li>If necessary, add L2Object to this.knownObject of the L2Character </li>
-	 * <li>If necessary, add L2Character to this.KnownObject of the L2Object </li>
+	 * <li>Set the target of L2Character to L2Object </li>
+	 * <li>If necessary, add L2Object to knownObject of the L2Character </li>
+	 * <li>If necessary, add L2Character to KnownObject of the L2Object </li>
 	 * <li>If object==null, cancel Attak or Cast </li><BR><BR>
 	 * <p>
 	 * <B><U> Overridden in </U> :</B><BR><BR>
-	 * <li> L2PcInstance : Remove the L2PcInstance from the old target this.statusListener and add it to the new target if it was a L2Character</li><BR><BR>
+	 * <li> L2PcInstance : Remove the L2PcInstance from the old target statusListener and add it to the new target if it was a L2Character</li><BR><BR>
 	 *
 	 * @param object L2object to target
 	 */
@@ -5414,7 +5414,7 @@ public abstract class L2Character extends L2Object
 	 * <li>Get current position of the L2Character </li>
 	 * <li>Calculate distance (dx,dy) between current position and destination including offset </li>
 	 * <li>Create and Init a MoveData object </li>
-	 * <li>Set the L2Character this.move object to MoveData object </li>
+	 * <li>Set the L2Character move object to MoveData object </li>
 	 * <li>Add the L2Character to movingObjects of the GameTimeController </li>
 	 * <li>Create a task to notify the AI that L2Character arrives at a check point of the movement </li><BR><BR>
 	 * <p>
@@ -5758,7 +5758,7 @@ public abstract class L2Character extends L2Object
 
 		m.moveStartTime = TimeController.getGameTicks();
 
-		// Set the L2Character this.move object to MoveData object
+		// Set the L2Character move object to MoveData object
 		move = m;
 
 		// Adding 2 ticks to fight ping a bit
@@ -5850,7 +5850,7 @@ public abstract class L2Character extends L2Object
 			Log.fine("time to target:" + ticksToMove);
 		}
 
-		// Set the L2Character this.move object to MoveData object
+		// Set the L2Character move object to MoveData object
 		move = m;
 
 		// Add the L2Character to movingObjects of the GameTimeController
@@ -6120,9 +6120,9 @@ public abstract class L2Character extends L2Object
 
 	//	protected void startCombat()
 	//	{
-	//	if (this.currentAttackTask == null )//&& !isInCombat())
+	//	if (currentAttackTask == null )//&& !isInCombat())
 	//	{
-	//	this.currentAttackTask = ThreadPoolManager.getInstance().scheduleMed(new AttackTask(), 0);
+	//	currentAttackTask = ThreadPoolManager.getInstance().scheduleMed(new AttackTask(), 0);
 	//	}
 	//	else
 	//	{
@@ -6132,7 +6132,7 @@ public abstract class L2Character extends L2Object
 	//
 
 	/**
-	 * Set this.attacking corresponding to Attacking Body part to CHEST.<BR><BR>
+	 * Set attacking corresponding to Attacking Body part to CHEST.<BR><BR>
 	 */
 	public void setAttackingBodypart()
 	{
@@ -6914,7 +6914,7 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Add a skill to the L2Character this.skills and its Func objects to the calculator set of the L2Character.<BR><BR>
+	 * Add a skill to the L2Character skills and its Func objects to the calculator set of the L2Character.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All skills own by a L2Character are identified in <B>_skills</B><BR><BR>
@@ -6986,7 +6986,7 @@ public abstract class L2Character extends L2Object
 	 * All skills own by a L2Character are identified in <B>_skills</B><BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Remove the skill from the L2Character this.skills </li>
+	 * <li>Remove the skill from the L2Character skills </li>
 	 * <li>Remove all its Func objects from the L2Character calculator set</li><BR><BR>
 	 * <p>
 	 * <B><U> Overridden in </U> :</B><BR><BR>
@@ -7417,7 +7417,7 @@ public abstract class L2Character extends L2Object
 			level = 1;
 		}
 
-		// Send a Server->Client packet MagicSkillLaunched to the L2Character AND to all L2PcInstance in the this.KnownPlayers of the L2Character
+		// Send a Server->Client packet MagicSkillLaunched to the L2Character AND to all L2PcInstance in the KnownPlayers of the L2Character
 		if (!skill.isPotion())
 		{
 			broadcastPacket(new MagicSkillLaunched(this, magicId, level, targets));
@@ -7792,7 +7792,7 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Enable a skill (remove it from this.disabledSkills of the L2Character).<BR><BR>
+	 * Enable a skill (remove it from disabledSkills of the L2Character).<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All skills disabled are identified by their skillId in <B>_disabledSkills</B> of the L2Character <BR><BR>
@@ -7900,7 +7900,7 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Disable all skills (set this.allSkillsDisabled to True).<BR><BR>
+	 * Disable all skills (set allSkillsDisabled to True).<BR><BR>
 	 */
 	public void disableAllSkills()
 	{
@@ -7912,7 +7912,7 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Enable all skills (set this.allSkillsDisabled to False).<BR><BR>
+	 * Enable all skills (set allSkillsDisabled to False).<BR><BR>
 	 */
 	public void enableAllSkills()
 	{
@@ -8349,7 +8349,7 @@ public abstract class L2Character extends L2Object
 	}
 
 	/**
-	 * Sets this.isCastingNow to true and this.castInterruptTime is calculated from end time (ticks)
+	 * Sets isCastingNow to true and castInterruptTime is calculated from end time (ticks)
 	 */
 	public final void forceIsCasting(int newSkillCastEndTick)
 	{

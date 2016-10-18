@@ -73,7 +73,7 @@ public class Attack extends L2GameServerPacket
 				flags |= HITFLAG_SHLD;
 			}
 			//			if (shld > 0)
-			//				this.flags |= HITFLAG_SHLD;
+			//				flags |= HITFLAG_SHLD;
 		}
 	}
 

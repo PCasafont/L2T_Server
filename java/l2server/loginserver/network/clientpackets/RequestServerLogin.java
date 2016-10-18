@@ -90,7 +90,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 		// if we didnt showed the license we cant check these values
 		if (!Config.SHOW_LICENCE || sk.checkLoginPair(skey1, skey2))
 		{
-			//System.out.println("Logging Into Server " + this.serverId);
+			//System.out.println("Logging Into Server " + serverId);
 			int logIntoDimensionId = 0;
 			if (serverId == 32)
 			{

@@ -134,7 +134,7 @@ public class PlayerTablePane extends JPanel
 			currentSelectedPlayer = playerTable.getSelectedRow();
 		}
 
-		//Player player = World.getInstance().getPlayer((Integer)_playerTableModel.getValueAt(this.playerTable.getSelectedRow(), 0));
+		//Player player = World.getInstance().getPlayer((Integer)_playerTableModel.getValueAt(playerTable.getSelectedRow(), 0));
 	}
 
 	public void setTableSelectByMouseEvent(MouseEvent e)

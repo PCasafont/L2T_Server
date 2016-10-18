@@ -228,7 +228,7 @@ public class MainTownManager
 
 	public MainTownInfo getCurrentMainTown()
 	{
-		//for (MainTownInfo inf : this.mainTowns)
+		//for (MainTownInfo inf : mainTowns)
 		//	inf.spawnNpcs();
 		return currentMainTown;
 	}
