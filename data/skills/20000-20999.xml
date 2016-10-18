@@ -1,109 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <!-- Open your mind and stare at the horizon, and you may find a hidden treasure chest. -->
-    <skill id="20000" levels="1" name="Block Checker Search">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="hitTime" val="1500" />
-        <set name="reuseDelay" val="5000" />
-    </skill>
-    <!-- Slams the treasure chest down with a hammer to break it open. -->
-    <skill id="20001" levels="1" name="Block Checker Hammer Punch">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="hitTime" val="1000" />
-        <set name="reuseDelay" val="60000" />
-        <set name="castRange" val="40" />
-        <set name="effectRange" val="400" />
-    </skill>
-    <!-- Powerful blow containing the power of a dragon. Attack targets with 3420 Power added to P. Atk. Over-hit. Critical. -->
-    <skill id="20002" levels="1" name="Dragon Kick">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="mpConsume" val="55" />
-        <set name="power" val="3420" />
-        <set name="hitTime" val="2000" />
-        <set name="coolTime" val="167" />
-        <set name="reuseDelay" val="7000" />
-        <set name="castRange" val="20" />
-        <set name="effectRange" val="400" />
-    </skill>
-    <!-- Powerful blow containing the power of a dragon. Attack targets with 3420 Power added to P. Atk. Over-hit. Critical. -->
-    <skill id="20003" levels="1" name="Dragon Slash">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="mpConsume" val="55" />
-        <set name="power" val="3420" />
-        <set name="hitTime" val="2000" />
-        <set name="coolTime" val="167" />
-        <set name="reuseDelay" val="7000" />
-        <set name="castRange" val="20" />
-        <set name="effectRange" val="400" />
-    </skill>
-    <!-- Increases Speed by 100% for 5 seconds with a dragon's strength. -->
-    <skill id="20004" levels="1" name="Dragon Dash">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isMagic" val="true" />
-        <set name="mpConsume" val="38" />
-        <set name="reuseDelay" val="25000" />
-    </skill>
-    <!-- For 20 minutes, with a dragon's strength, increases Critical Rate by 30% and Critical Damage by 35%. -->
-    <skill id="20005" levels="1" name="Dragon Aura">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isMagic" val="true" />
-        <set name="mpConsume" val="47" />
-        <set name="hitTime" val="4000" />
-        <set name="reuseDelay" val="1800000" />
-        <set name="castRange" val="400" />
-        <set name="effectRange" val="900" />
-    </skill>
-    <!-- Instantly recovers Max HP/CP by 15% and for 10 minutes, and increases your Max HP/CP by 15%. -->
-    <skill id="20006" levels="1" name="Soul Roar">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="HPCPHEAL_PERCENT" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="mpConsume" val="58" />
-        <set name="power" val="15" />
-        <set name="hitTime" val="1500" />
-        <set name="reuseDelay" val="240000" />
-        <set name="aggroPoints" val="379" />
-        <for>
-            <abnormal duration="600" stackLvl="1" stackType="max_hp_cp_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="maxHp" val="15" />
-                <addPercent stat="maxCp" val="15" />
-            </abnormal>
-        </for>
-    </skill>
-    <!-- For 2 min., HP/MP Recovery Bonus increase, and Speed + 5. You cannot receive the Celestial Aegis, Celestial Protection, or the Celestial Party Protection effect. -->
-    <skill id="20007" levels="1" name="Block Invincibility">
-        <set name="target" val="TARGET_SINGLE" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isMagic" val="true" />
-        <set name="ignoreImmunity" val="true" />
-        <for>
-            <abnormal duration="120" stackLvl="1" stackType="lingering_protection">
-                <effect type="Buff" val="0" />
-                <effect type="BlockInvincibility" val="0" />
-                <add stat="runSpd" val="5" />
-                <add stat="regHp" val="5" />
-                <add stat="regMp" val="5" />
-            </abnormal>
-        </for>
-    </skill>
-    <!-- When the clan leader logs in, clan members' P. Atk. / P. Def. / M. Def. + 5%, M. Atk. + 6%, HP/MP Recovery Bonus + 5, and XP gain + 100%. -->
-    <skill id="20008" levels="1" name="Clan Advent (Event)">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-    </skill>
+	<!-- Open your mind and stare at the horizon, and you may find a hidden treasure chest. -->
+	<skill id="20000" levels="1" name="Block Checker Search">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+	</skill>
+	<!-- Slams the treasure chest down with a hammer to break it open. -->
+	<skill id="20001" levels="1" name="Block Checker Hammer Punch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="60000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Powerful blow containing the power of a dragon. Attack targets with 3420 Power added to P. Atk. Over-hit. Critical. -->
+	<skill id="20002" levels="1" name="Dragon Kick">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="55" />
+		<set name="power" val="3420" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="167" />
+		<set name="reuseDelay" val="7000" />
+		<set name="castRange" val="20" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Powerful blow containing the power of a dragon. Attack targets with 3420 Power added to P. Atk. Over-hit. Critical. -->
+	<skill id="20003" levels="1" name="Dragon Slash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="55" />
+		<set name="power" val="3420" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="167" />
+		<set name="reuseDelay" val="7000" />
+		<set name="castRange" val="20" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Increases Speed by 100% for 5 seconds with a dragon's strength. -->
+	<skill id="20004" levels="1" name="Dragon Dash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="38" />
+		<set name="reuseDelay" val="25000" />
+	</skill>
+	<!-- For 20 minutes, with a dragon's strength, increases Critical Rate by 30% and Critical Damage by 35%. -->
+	<skill id="20005" levels="1" name="Dragon Aura">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="47" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Instantly recovers Max HP/CP by 15% and for 10 minutes, and increases your Max HP/CP by 15%. -->
+	<skill id="20006" levels="1" name="Soul Roar">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="HPCPHEAL_PERCENT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="58" />
+		<set name="power" val="15" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="240000" />
+		<set name="aggroPoints" val="379" />
+		<for>
+			<abnormal duration="600" stackLvl="1" stackType="max_hp_cp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxHp" val="15" />
+				<addPercent stat="maxCp" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- For 2 min., HP/MP Recovery Bonus increase, and Speed + 5. You cannot receive the Celestial Aegis, Celestial Protection, or the Celestial Party
+			Protection effect. -->
+	<skill id="20007" levels="1" name="Block Invincibility">
+		<set name="target" val="TARGET_SINGLE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="ignoreImmunity" val="true" />
+		<for>
+			<abnormal duration="120" stackLvl="1" stackType="lingering_protection">
+				<effect type="Buff" val="0" />
+				<effect type="BlockInvincibility" val="0" />
+				<add stat="runSpd" val="5" />
+				<add stat="regHp" val="5" />
+				<add stat="regMp" val="5" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- When the clan leader logs in, clan members' P. Atk. / P. Def. / M. Def. + 5%, M. Atk. + 6%, HP/MP Recovery Bonus + 5, and XP gain + 100%. -->
+	<skill id="20008" levels="1" name="Clan Advent (Event)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
 </list>
