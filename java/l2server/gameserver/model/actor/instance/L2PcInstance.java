@@ -171,9 +171,9 @@ public class L2PcInstance extends L2Playable
 
 	// Character Henna SQL String Definitions:
 	private static final String RESTORE_CHAR_HENNAS =
-			"SELECT slot,symbol_id,expireTime FROM character_hennas WHERE charId=? AND class_index=?";
+			"SELECT slot,symbol_id,expiry_time FROM character_hennas WHERE charId=? AND class_index=?";
 	private static final String ADD_CHAR_HENNA =
-			"INSERT INTO character_hennas (charId,symbol_id,slot,class_index,expireTime) VALUES (?,?,?,?,?)";
+			"INSERT INTO character_hennas (charId,symbol_id,slot,class_index,expiry_time) VALUES (?,?,?,?,?)";
 	private static final String DELETE_CHAR_HENNA =
 			"DELETE FROM character_hennas WHERE charId=? AND slot=? AND class_index=?";
 	private static final String DELETE_CHAR_HENNAS = "DELETE FROM character_hennas WHERE charId=? AND class_index=?";
