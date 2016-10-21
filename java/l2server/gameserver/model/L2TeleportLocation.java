@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * This class ...
  *
@@ -25,21 +22,53 @@ import lombok.Setter;
  */
 public class L2TeleportLocation
 {
-	@Getter private int teleId;
-	@Getter @Setter private int locX;
-	@Getter @Setter private int locY;
-	@Getter @Setter private int locZ;
-	@Getter @Setter private int price;
-	private boolean forNoble;
-	@Getter private int itemId;
-	@Getter @Setter private String description;
+	private int _teleId;
+	private int _locX;
+	private int _locY;
+	private int _locZ;
+	private int _price;
+	private boolean _forNoble;
+	private int _itemId;
+	private String _description;
 
 	/**
 	 * @param id
 	 */
 	public void setTeleId(int id)
 	{
-		teleId = id;
+		_teleId = id;
+	}
+
+	/**
+	 * @param locX
+	 */
+	public void setLocX(int locX)
+	{
+		_locX = locX;
+	}
+
+	/**
+	 * @param locY
+	 */
+	public void setLocY(int locY)
+	{
+		_locY = locY;
+	}
+
+	/**
+	 * @param locZ
+	 */
+	public void setLocZ(int locZ)
+	{
+		_locZ = locZ;
+	}
+
+	/**
+	 * @param price
+	 */
+	public void setPrice(int price)
+	{
+		_price = price;
 	}
 
 	/**
@@ -47,7 +76,7 @@ public class L2TeleportLocation
 	 */
 	public void setIsForNoble(boolean val)
 	{
-		forNoble = val;
+		_forNoble = val;
 	}
 
 	/**
@@ -55,7 +84,47 @@ public class L2TeleportLocation
 	 */
 	public void setItemId(int val)
 	{
-		itemId = val;
+		_itemId = val;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getTeleId()
+	{
+		return _teleId;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getLocX()
+	{
+		return _locX;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getLocY()
+	{
+		return _locY;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getLocZ()
+	{
+		return _locZ;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getPrice()
+	{
+		return _price;
 	}
 
 	/**
@@ -63,6 +132,24 @@ public class L2TeleportLocation
 	 */
 	public boolean getIsForNoble()
 	{
-		return forNoble;
+		return _forNoble;
+	}
+
+	/**
+	 * @return
+	 */
+	public int getItemId()
+	{
+		return _itemId;
+	}
+
+	public void setDescription(String description)
+	{
+		_description = description;
+	}
+
+	public String getDescription()
+	{
+		return _description;
 	}
 }

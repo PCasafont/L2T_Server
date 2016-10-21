@@ -24,13 +24,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class ExReplyPostItemList extends L2ItemListPacket
 {
-	L2PcInstance activeChar;
-	private L2ItemInstance[] itemList;
+	L2PcInstance _activeChar;
+	private L2ItemInstance[] _itemList;
 
 	public ExReplyPostItemList(L2PcInstance activeChar)
 	{
-		this.activeChar = activeChar;
-		itemList = this.activeChar.getInventory().getAvailableItems(true, false);
+		_activeChar = activeChar;
+		_itemList = _activeChar.getInventory().getAvailableItems(true, false);
 	}
 
 	/* (non-Javadoc)
@@ -39,8 +39,8 @@ public class ExReplyPostItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(itemList.length);
-		for (L2ItemInstance item : itemList)
+		writeD(_itemList.length);
+		for (L2ItemInstance item : _itemList)
 		{
 			writeItem(item);
 		}

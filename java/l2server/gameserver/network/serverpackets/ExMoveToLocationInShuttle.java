@@ -20,27 +20,28 @@ import l2server.util.Point3D;
 
 public class ExMoveToLocationInShuttle extends L2GameServerPacket
 {
-	private int charObjId;
-	private int shuttleId;
-	private Point3D destination;
-	@SuppressWarnings("unused") private int heading;
+	private int _charObjId;
+	private int _shuttleId;
+	private Point3D _destination;
+	@SuppressWarnings("unused")
+	private int _heading;
 
 	public ExMoveToLocationInShuttle(L2PcInstance player)
 	{
-		charObjId = player.getObjectId();
-		shuttleId = player.getShuttle().getObjectId();
-		destination = player.getInVehiclePosition();
-		heading = player.getHeading();
+		_charObjId = player.getObjectId();
+		_shuttleId = player.getShuttle().getObjectId();
+		_destination = player.getInVehiclePosition();
+		_heading = player.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(charObjId);
-		writeD(shuttleId);
-		writeD(destination.getX());
-		writeD(destination.getY());
-		writeD(destination.getZ());
+		writeD(_charObjId);
+		writeD(_shuttleId);
+		writeD(_destination.getX());
+		writeD(_destination.getY());
+		writeD(_destination.getZ());
 		writeD(0x00); // ???
 		writeD(0x00); // ???
 		writeD(0x00); // ???

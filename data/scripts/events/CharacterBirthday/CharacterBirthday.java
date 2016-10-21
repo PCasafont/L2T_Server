@@ -34,10 +34,10 @@ import java.util.Calendar;
 
 public class CharacterBirthday extends Quest
 {
-	private static final int npc = 32600;
+	private static final int _npc = 32600;
 	private static boolean is_spawned = false;
 
-	private static final int[] gk = {
+	private static final int[] _gk = {
 			30006,
 			30059,
 			30080,
@@ -62,10 +62,10 @@ public class CharacterBirthday extends Quest
 	public CharacterBirthday(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(npc);
-		addFirstTalkId(npc);
-		addTalkId(npc);
-		for (int id : gk)
+		addStartNpc(_npc);
+		addFirstTalkId(_npc);
+		addTalkId(_npc);
+		for (int id : _gk)
 		{
 			addStartNpc(id);
 			addTalkId(id);

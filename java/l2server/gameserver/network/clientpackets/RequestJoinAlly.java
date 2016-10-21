@@ -29,14 +29,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestJoinAlly extends L2GameClientPacket
 {
+
 	//
 
-	private int id;
+	private int _id;
 
 	@Override
 	protected void readImpl()
 	{
-		id = readD();
+		_id = readD();
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance ob = L2World.getInstance().getPlayer(id);
+		L2PcInstance ob = L2World.getInstance().getPlayer(_id);
 
 		if (ob == null)
 		{

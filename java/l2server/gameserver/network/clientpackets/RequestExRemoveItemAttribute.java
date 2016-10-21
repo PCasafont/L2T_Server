@@ -28,9 +28,9 @@ import l2server.gameserver.templates.item.L2Weapon;
 
 public class RequestExRemoveItemAttribute extends L2GameClientPacket
 {
-	private int objectId;
-	private long price;
-	private byte element;
+	private int _objectId;
+	private long _price;
+	private byte _element;
 
 	public RequestExRemoveItemAttribute()
 	{
@@ -39,8 +39,8 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 	@Override
 	public void readImpl()
 	{
-		objectId = readD();
-		element = (byte) readD();
+		_objectId = readD();
+		_element = (byte) readD();
 	}
 
 	@Override
@@ -52,14 +52,14 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(objectId);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
 
 		if (targetItem == null)
 		{
 			return;
 		}
 
-		if (targetItem.getElementals() == null || targetItem.getElemental(element) == null)
+		if (targetItem.getElementals() == null || targetItem.getElemental(_element) == null)
 		{
 			return;
 		}
@@ -68,16 +68,16 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		{
 			if (targetItem.isEquipped())
 			{
-				targetItem.getElemental(element).removeBonus(activeChar);
+				targetItem.getElemental(_element).removeBonus(activeChar);
 			}
-			targetItem.clearElementAttr(element);
+			targetItem.clearElementAttr(_element);
 			activeChar.sendPacket(new UserInfo(activeChar));
 
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(targetItem);
 			activeChar.sendPacket(iu);
 			SystemMessage sm;
-			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(element) : element;
+			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
 			if (targetItem.getEnchantLevel() > 0)
 			{
 				if (targetItem.isArmor())
@@ -116,7 +116,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 				}
 			}
 			activeChar.sendPacket(sm);
-			activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), element));
+			activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
 		}
 		else
 		{
@@ -132,35 +132,35 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 			case L2Item.CRYSTAL_S:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 50000;
+					_price = 50000;
 				}
 				else
 				{
-					price = 40000;
+					_price = 40000;
 				}
 				break;
 			case L2Item.CRYSTAL_S80:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 100000;
+					_price = 100000;
 				}
 				else
 				{
-					price = 80000;
+					_price = 80000;
 				}
 				break;
 			case L2Item.CRYSTAL_S84:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 200000;
+					_price = 200000;
 				}
 				else
 				{
-					price = 160000;
+					_price = 160000;
 				}
 				break;
 		}
 
-		return price;
+		return _price;
 	}
 }

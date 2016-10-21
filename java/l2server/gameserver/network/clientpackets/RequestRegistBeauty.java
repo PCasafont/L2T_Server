@@ -27,16 +27,16 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 
 public final class RequestRegistBeauty extends L2GameClientPacket
 {
-	private int hair;
-	private int face;
-	private int hairColor;
+	private int _hair;
+	private int _face;
+	private int _hairColor;
 
 	@Override
 	protected final void readImpl()
 	{
-		hair = readD();
-		face = readD();
-		hairColor = readD();
+		_hair = readD();
+		_face = readD();
+		_hairColor = readD();
 	}
 
 	@Override
@@ -52,30 +52,30 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 		//Get the price
 		BeautyInfo styleInfo = null;
 
-		if (hair > 0)
+		if (_hair > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(hair);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(_hair);
 		}
-		else if (face > 0)
+		else if (_face > 0)
 		{
-			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(face);
+			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(_face);
 		}
 
 		if (styleInfo != null)
 		{
-			if (face == -1)
+			if (_face == -1)
 			{
-				face = activeChar.getAppearance().getFace();
+				_face = activeChar.getAppearance().getFace();
 			}
 
-			if (hair == -1)
+			if (_hair == -1)
 			{
-				hair = activeChar.getAppearance().getHairStyle();
+				_hair = activeChar.getAppearance().getHairStyle();
 			}
 
-			if (hairColor == -1)
+			if (_hairColor == -1)
 			{
-				hairColor = activeChar.getAppearance().getHairColor();
+				_hairColor = activeChar.getAppearance().getHairColor();
 			}
 
 			/*L2ItemInstance playerTickets = activeChar.getInventory().getItemByItemId(36308);
@@ -102,14 +102,14 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 				activeChar.destroyItemByItemId("Beauty shop", 36308, ticketPrice, activeChar, true);
 			}*/
 
-			activeChar.getAppearance().setHairStyle(hair);
+			activeChar.getAppearance().setHairStyle(_hair);
 
-			activeChar.getAppearance().setFace(face);
+			activeChar.getAppearance().setFace(_face);
 
-			activeChar.getAppearance().setHairColor(hairColor);
+			activeChar.getAppearance().setHairColor(_hairColor);
 
 			activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
-					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, hair, face, hairColor));
+					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, _hair, _face, _hairColor));
 
 			//activeChar.sendPacket(new ExResponseBeautyListPacket());
 
@@ -119,7 +119,7 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
 
-			//Log.info("INFO: Hair: " + hair + ", Face: " + face + ", COLOR: " + hairColor);
+			//Log.info("INFO: Hair: " + _hair + ", Face: " + _face + ", COLOR: " + _hairColor);
 			//Log.info("END OK");
 		}
 	}

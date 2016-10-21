@@ -20,7 +20,6 @@ import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
-import lombok.Getter;
 
 /**
  * A simple no restart zone
@@ -29,8 +28,8 @@ import lombok.Getter;
  */
 public class L2NoRestartZone extends L2ZoneType
 {
-	@Getter private int restartAllowedTime = 0;
-	private boolean enabled = true;
+	private int _restartAllowedTime = 0;
+	private boolean _enabled = true;
 
 	public L2NoRestartZone(int id)
 	{
@@ -42,11 +41,11 @@ public class L2NoRestartZone extends L2ZoneType
 	{
 		if (name.equalsIgnoreCase("EnabledByDefault"))
 		{
-			enabled = Boolean.parseBoolean(value);
+			_enabled = Boolean.parseBoolean(value);
 		}
 		else if (name.equalsIgnoreCase("restartAllowedTime"))
 		{
-			restartAllowedTime = Integer.parseInt(value);
+			_restartAllowedTime = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("restartTime"))
 		{
@@ -69,7 +68,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (!enabled)
+		if (!_enabled)
 		{
 			return;
 		}
@@ -90,7 +89,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (!enabled)
+		if (!_enabled)
 		{
 			return;
 		}
@@ -113,24 +112,29 @@ public class L2NoRestartZone extends L2ZoneType
 		// Do nothing.
 	}
 
+	public int getRestartAllowedTime()
+	{
+		return _restartAllowedTime;
+	}
+
 	public void setRestartAllowedTime(int time)
 	{
-		restartAllowedTime = time;
+		_restartAllowedTime = time;
 	}
 
 	private static class TeleportTask implements Runnable
 	{
-		private final L2PcInstance player;
+		private final L2PcInstance _player;
 
 		public TeleportTask(L2PcInstance player)
 		{
-			this.player = player;
+			_player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			player.teleToLocation(TeleportWhereType.Town);
+			_player.teleToLocation(TeleportWhereType.Town);
 		}
 	}
 }

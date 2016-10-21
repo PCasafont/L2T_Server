@@ -30,23 +30,23 @@ public class L2Request
 {
 	private static final int REQUEST_TIMEOUT = 15; //in secs
 
-	protected L2PcInstance player;
-	protected L2PcInstance partner;
-	protected boolean isRequestor;
-	protected boolean isAnswerer;
-	protected L2GameClientPacket requestPacket;
+	protected L2PcInstance _player;
+	protected L2PcInstance _partner;
+	protected boolean _isRequestor;
+	protected boolean _isAnswerer;
+	protected L2GameClientPacket _requestPacket;
 
 	public L2Request(L2PcInstance player)
 	{
-		this.player = player;
+		_player = player;
 	}
 
 	protected void clear()
 	{
-		partner = null;
-		requestPacket = null;
-		isRequestor = false;
-		isAnswerer = false;
+		_partner = null;
+		_requestPacket = null;
+		_isRequestor = false;
+		_isAnswerer = false;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class L2Request
 	 */
 	private synchronized void setPartner(L2PcInstance partner)
 	{
-		this.partner = partner;
+		_partner = partner;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class L2Request
 	 */
 	public L2PcInstance getPartner()
 	{
-		return partner;
+		return _partner;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class L2Request
 	 */
 	private synchronized void setRequestPacket(L2GameClientPacket packet)
 	{
-		requestPacket = packet;
+		_requestPacket = packet;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class L2Request
 	 */
 	public L2GameClientPacket getRequestPacket()
 	{
-		return requestPacket;
+		return _requestPacket;
 	}
 
 	/**
@@ -88,36 +88,36 @@ public class L2Request
 	{
 		if (partner == null)
 		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
+			_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 			return false;
 		}
 		if (partner.getRequest().isProcessingRequest())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
 			sm.addString(partner.getName());
-			player.sendPacket(sm);
+			_player.sendPacket(sm);
 			sm = null;
 			return false;
 		}
 		if (isProcessingRequest())
 		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
+			_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
 			return false;
 		}
 
-		this.partner = partner;
-		requestPacket = packet;
+		_partner = partner;
+		_requestPacket = packet;
 		setOnRequestTimer(true);
-		this.partner.getRequest().setPartner(player);
-		this.partner.getRequest().setRequestPacket(packet);
-		this.partner.getRequest().setOnRequestTimer(false);
+		_partner.getRequest().setPartner(_player);
+		_partner.getRequest().setRequestPacket(packet);
+		_partner.getRequest().setOnRequestTimer(false);
 		return true;
 	}
 
 	private void setOnRequestTimer(boolean isRequestor)
 	{
-		this.isRequestor = isRequestor;
-		isAnswerer = !isRequestor;
+		_isRequestor = isRequestor;
+		_isAnswerer = !isRequestor;
 		ThreadPoolManager.getInstance().scheduleGeneral(this::clear, REQUEST_TIMEOUT * 1000);
 	}
 
@@ -126,9 +126,9 @@ public class L2Request
 	 */
 	public void onRequestResponse()
 	{
-		if (partner != null)
+		if (_partner != null)
 		{
-			partner.getRequest().clear();
+			_partner.getRequest().clear();
 		}
 		clear();
 	}
@@ -138,6 +138,6 @@ public class L2Request
 	 */
 	public boolean isProcessingRequest()
 	{
-		return partner != null;
+		return _partner != null;
 	}
 }

@@ -30,15 +30,16 @@ import l2server.log.Log;
  */
 public final class RequestGiveItemToPet extends L2GameClientPacket
 {
-	private int objectId;
 
-	private long amount;
+	private int _objectId;
+
+	private long _amount;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD();
-		amount = readQ();
+		_objectId = readD();
+		_amount = readQ();
 	}
 
 	@Override
@@ -74,7 +75,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 
 		// Exploit Fix for Hero weapons Uses pet Inventory to buy New One.
 		// [L2JOneo]
-		L2ItemInstance item = player.getInventory().getItemByObjectId(objectId);
+		L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
 
 		if (item == null)
 		{
@@ -105,7 +106,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 			return;
 		}
 
-		if (amount < 0)
+		if (_amount < 0)
 		{
 			return;
 		}
@@ -115,14 +116,14 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS));
 			return;
 		}
-		if (!pet.getInventory().validateWeight(item, amount))
+		if (!pet.getInventory().validateWeight(item, _amount))
 		{
 			pet.getOwner().sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED));
 			return;
 		}
 
-		if (player.transferItem("Transfer", objectId, amount, pet.getInventory(), pet) == null)
+		if (player.transferItem("Transfer", _objectId, _amount, pet.getInventory(), pet) == null)
 		{
 			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
 		}

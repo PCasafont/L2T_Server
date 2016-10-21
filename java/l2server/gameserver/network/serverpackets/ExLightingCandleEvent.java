@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExLightingCandleEvent extends L2GameServerPacket
 {
-	private int state;
+	private int _state;
 
 	public ExLightingCandleEvent(int state)
 	{
-		this.state = state;
+		_state = state;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeH(state);
+		writeH(_state);
 	}
 }

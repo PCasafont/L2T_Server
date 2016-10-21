@@ -17,11 +17,11 @@ package l2server.gameserver.network.serverpackets;
 
 public final class TutorialShowQuestionMark extends L2GameServerPacket
 {
-	private int markId;
+	private int _markId;
 
 	public TutorialShowQuestionMark(int blink)
 	{
-		markId = blink;
+		_markId = blink;
 	}
 
 	/* (non-Javadoc)
@@ -30,6 +30,6 @@ public final class TutorialShowQuestionMark extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(markId);
+		writeD(_markId);
 	}
 }

@@ -48,58 +48,58 @@ public class TenkaiAuctionManager implements Reloadable
 	 */
 	private class AuctionTemplate
 	{
-		private final int id;
-		private int[] itemId;
-		private int count;
-		private int repeatTime;
-		private int randomRepeatTime;
-		private int initialCurrencyId;
-		private long initialPrice;
-		private int initialDuration;
-		private boolean acceptAllCoins;
+		private final int _id;
+		private int[] _itemId;
+		private int _count;
+		private int _repeatTime;
+		private int _randomRepeatTime;
+		private int _initialCurrencyId;
+		private long _initialPrice;
+		private int _initialDuration;
+		private boolean _acceptAllCoins;
 
 		private AuctionTemplate(int auctionId, int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, long initialPrice, int initialDuration, boolean acceptAllCoins)
 		{
-			id = auctionId;
-			this.itemId = itemId;
-			this.count = count;
-			this.repeatTime = repeatTime;
-			this.randomRepeatTime = randomRepeatTime;
-			initialCurrencyId = initialCurrency;
-			this.initialPrice = initialPrice;
-			this.initialDuration = initialDuration;
-			this.acceptAllCoins = acceptAllCoins;
+			_id = auctionId;
+			_itemId = itemId;
+			_count = count;
+			_repeatTime = repeatTime;
+			_randomRepeatTime = randomRepeatTime;
+			_initialCurrencyId = initialCurrency;
+			_initialPrice = initialPrice;
+			_initialDuration = initialDuration;
+			_acceptAllCoins = acceptAllCoins;
 
 			initialize();
 		}
 
 		private void overrideInfo(int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, long initialPrice, int initialDuration, boolean acceptAllCoins)
 		{
-			this.itemId = itemId;
-			this.count = count;
-			this.repeatTime = repeatTime;
-			this.randomRepeatTime = randomRepeatTime;
-			initialCurrencyId = initialCurrency;
-			this.initialPrice = initialPrice;
-			this.initialDuration = initialDuration;
-			this.acceptAllCoins = acceptAllCoins;
+			_itemId = itemId;
+			_count = count;
+			_repeatTime = repeatTime;
+			_randomRepeatTime = randomRepeatTime;
+			_initialCurrencyId = initialCurrency;
+			_initialPrice = initialPrice;
+			_initialDuration = initialDuration;
+			_acceptAllCoins = acceptAllCoins;
 		}
 
 		private void initialize()
 		{
-			long nextAuction = 0;//_repeatTime * 1000L + Rnd.get(randomRepeatTime) * 1000L;
+			long nextAuction = 0;//_repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L;
 			Connection con = null;
 			try
 			{
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement =
 						con.prepareStatement("SELECT lastAuctionCreation FROM `custom_auction_templates` WHERE id = ?");
-				statement.setInt(1, id);
+				statement.setInt(1, _id);
 				ResultSet rs = statement.executeQuery();
 				if (rs.next())
 				{
 					long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-					nextAuction = lastAuctionCreation + repeatTime * 1000L + Rnd.get(randomRepeatTime) * 1000L -
+					nextAuction = lastAuctionCreation + _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L -
 							System.currentTimeMillis();
 					if (nextAuction < 0)
 					{
@@ -123,7 +123,7 @@ public class TenkaiAuctionManager implements Reloadable
 				public void run()
 				{
 					int auctionId = IdFactory.getInstance().getNextId();
-					int itemId = getRandomItemId();
+					int itemId = AuctionTemplate.this.getRandomItemId();
 					addAuction(new Auction(auctionId, itemId, AuctionTemplate.this));
 
 					Connection con = null;
@@ -132,7 +132,7 @@ public class TenkaiAuctionManager implements Reloadable
 						con = L2DatabaseFactory.getInstance().getConnection();
 						PreparedStatement statement = con.prepareStatement(
 								"REPLACE INTO `custom_auction_templates` (id, lastAuctionCreation) VALUES (?, ?)");
-						statement.setInt(1, id);
+						statement.setInt(1, _id);
 						statement.setLong(2, System.currentTimeMillis());
 						statement.execute();
 						statement.close();
@@ -151,54 +151,54 @@ public class TenkaiAuctionManager implements Reloadable
 									" has been added to the Item Auction (Alt + B)!");
 
 					ThreadPoolManager.getInstance()
-							.scheduleGeneral(this, repeatTime * 1000L + Rnd.get(randomRepeatTime) * 1000L);
+							.scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
 				}
 			}, nextAuction);
 		}
 
 		private int getId()
 		{
-			return id;
+			return _id;
 		}
 
 		private int getRandomItemId()
 		{
-			return itemId[Rnd.get(itemId.length)];
+			return _itemId[Rnd.get(_itemId.length)];
 		}
 
 		private int getCount()
 		{
-			if (itemId[0] == 36515)
+			if (_itemId[0] == 36515)
 			{
 				return 800;
 			}
-			return count;
+			return _count;
 		}
 
 		@SuppressWarnings("unused")
 		private int getRepeatTime()
 		{
-			return repeatTime;
+			return _repeatTime;
 		}
 
 		private int getInitialCurrencyId()
 		{
-			return initialCurrencyId;
+			return _initialCurrencyId;
 		}
 
 		private long getInitialPrice()
 		{
-			return initialPrice;
+			return _initialPrice;
 		}
 
 		private int getInitialDuration()
 		{
-			return initialDuration;
+			return _initialDuration;
 		}
 
 		private boolean getAcceptAllCoins()
 		{
-			return acceptAllCoins;
+			return _acceptAllCoins;
 		}
 	}
 
@@ -207,25 +207,25 @@ public class TenkaiAuctionManager implements Reloadable
 	 */
 	private class Auction
 	{
-		private final int id;
-		private final int itemId;
-		private final AuctionTemplate template;
-		private int currentAuctionOwner;
-		private int currentCurrencyId;
-		private long currentPrice;
-		private ScheduledFuture<?> endAuctionTask;
+		private final int _id;
+		private final int _itemId;
+		private final AuctionTemplate _template;
+		private int _currentAuctionOwner;
+		private int _currentCurrencyId;
+		private long _currentPrice;
+		private ScheduledFuture<?> _endAuctionTask;
 
 		private Auction(int auctionId, int itemId, AuctionTemplate info)
 		{
-			id = auctionId;
-			this.itemId = itemId;
-			template = info;
+			_id = auctionId;
+			_itemId = itemId;
+			_template = info;
 
-			currentCurrencyId = info.getInitialCurrencyId();
-			currentPrice = info.getInitialPrice();
+			_currentCurrencyId = info.getInitialCurrencyId();
+			_currentPrice = info.getInitialPrice();
 
 			//Set the end task?
-			endAuctionTask = ThreadPoolManager.getInstance()
+			_endAuctionTask = ThreadPoolManager.getInstance()
 					.scheduleGeneral(new CurrentAuctionEnd(), info.getInitialDuration() * 1000L);
 
 			Connection con = null;
@@ -234,12 +234,12 @@ public class TenkaiAuctionManager implements Reloadable
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"INSERT INTO `custom_auctions` (id, itemId, templateId, currencyId, currentBid, ownerId, endTime) VALUES (?, ?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, id);
-				statement.setInt(2, this.itemId);
-				statement.setInt(3, template.getId());
-				statement.setInt(4, currentCurrencyId);
-				statement.setLong(5, currentPrice);
-				statement.setInt(6, currentAuctionOwner);
+				statement.setInt(1, _id);
+				statement.setInt(2, _itemId);
+				statement.setInt(3, _template.getId());
+				statement.setInt(4, _currentCurrencyId);
+				statement.setLong(5, _currentPrice);
+				statement.setInt(6, _currentAuctionOwner);
 				statement.setLong(7, (System.currentTimeMillis() + getRemainingTime()) / 1000L);
 				statement.execute();
 				statement.close();
@@ -256,42 +256,42 @@ public class TenkaiAuctionManager implements Reloadable
 
 		private Auction(int auctionId, int itemId, AuctionTemplate info, int currencyId, long currentBid, int ownerId, long remainingTime)
 		{
-			id = auctionId;
-			this.itemId = itemId;
-			template = info;
+			_id = auctionId;
+			_itemId = itemId;
+			_template = info;
 
-			currentCurrencyId = currencyId;
-			currentPrice = currentBid;
-			currentAuctionOwner = ownerId;
+			_currentCurrencyId = currencyId;
+			_currentPrice = currentBid;
+			_currentAuctionOwner = ownerId;
 
 			//Set the end task?
-			endAuctionTask = ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), remainingTime);
+			_endAuctionTask = ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), remainingTime);
 		}
 
 		private int getId()
 		{
-			return id;
+			return _id;
 		}
 
 		private int getItemId()
 		{
-			return itemId;
+			return _itemId;
 		}
 
 		private AuctionTemplate getTemplate()
 		{
-			return template;
+			return _template;
 		}
 
 		@SuppressWarnings("unused")
 		private ScheduledFuture<?> getEndTask()
 		{
-			return endAuctionTask;
+			return _endAuctionTask;
 		}
 
 		private String getRemainingTimeString()
 		{
-			Long remainingTime = endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
+			Long remainingTime = _endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
 
 			int hours = (int) (remainingTime / 3600);
 			int minutes = (int) (remainingTime % 3600 / 60);
@@ -302,47 +302,47 @@ public class TenkaiAuctionManager implements Reloadable
 
 		private long getRemainingTime()
 		{
-			return endAuctionTask.getDelay(TimeUnit.MILLISECONDS);
+			return _endAuctionTask.getDelay(TimeUnit.MILLISECONDS);
 		}
 
 		private String getCurrentOwnerName()
 		{
-			if (currentAuctionOwner == 0)
+			if (_currentAuctionOwner == 0)
 			{
 				return "None";
 			}
-			return CharNameTable.getInstance().getNameById(currentAuctionOwner);
+			return CharNameTable.getInstance().getNameById(_currentAuctionOwner);
 		}
 
 		private int getCurrentOwnerId()
 		{
-			return currentAuctionOwner;
+			return _currentAuctionOwner;
 		}
 
 		private int getCurrentCurrency()
 		{
-			return currentCurrencyId;
+			return _currentCurrencyId;
 		}
 
 		private long getCurrentPrice()
 		{
-			return currentPrice;
+			return _currentPrice;
 		}
 
 		public void setCurrentCurrency(int itemId)
 		{
-			currentCurrencyId = itemId;
+			_currentCurrencyId = itemId;
 		}
 
 		private void setOwner(int playerId, long playerBid)
 		{
-			currentAuctionOwner = playerId;
-			currentPrice = playerBid;
+			_currentAuctionOwner = playerId;
+			_currentPrice = playerBid;
 
 			if (getRemainingTime() < ADDED_DURATION)
 			{
-				endAuctionTask.cancel(true);
-				endAuctionTask =
+				_endAuctionTask.cancel(true);
+				_endAuctionTask =
 						ThreadPoolManager.getInstance().scheduleGeneral(new CurrentAuctionEnd(), ADDED_DURATION);
 			}
 
@@ -352,11 +352,11 @@ public class TenkaiAuctionManager implements Reloadable
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"UPDATE `custom_auctions` SET currencyId = ?, currentBid = ?, ownerId = ?, endTime = ? WHERE id = ?");
-				statement.setInt(1, currentCurrencyId);
-				statement.setLong(2, currentPrice);
-				statement.setInt(3, currentAuctionOwner);
+				statement.setInt(1, _currentCurrencyId);
+				statement.setLong(2, _currentPrice);
+				statement.setInt(3, _currentAuctionOwner);
 				statement.setLong(4, (System.currentTimeMillis() + getRemainingTime()) / 1000L);
-				statement.setInt(5, id);
+				statement.setInt(5, _id);
 				statement.execute();
 				statement.close();
 			}
@@ -375,7 +375,7 @@ public class TenkaiAuctionManager implements Reloadable
 			@Override
 			public void run()
 			{
-				auctions.remove(id);
+				_auctions.remove(_id);
 
 				String playerName = CharNameTable.getInstance().getNameById(getCurrentOwnerId());
 				if (playerName != null)
@@ -397,7 +397,7 @@ public class TenkaiAuctionManager implements Reloadable
 				{
 					con = L2DatabaseFactory.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("DELETE FROM `custom_auctions` WHERE id = ?");
-					statement.setInt(1, id);
+					statement.setInt(1, _id);
 					statement.execute();
 					statement.close();
 				}
@@ -418,36 +418,36 @@ public class TenkaiAuctionManager implements Reloadable
 	 */
 	private class CurrencyInfo
 	{
-		private int position;
-		private String name;
-		private int id;
+		private int _position;
+		private String _name;
+		private int _id;
 
 		private CurrencyInfo(int position, int id)
 		{
-			this.position = position;
-			this.id = id;
-			name = ItemTable.getInstance().getTemplate(id).getName().replace(" ", "");
+			_position = position;
+			_id = id;
+			_name = ItemTable.getInstance().getTemplate(id).getName().replace(" ", "");
 		}
 
 		private int getPosition()
 		{
-			return position;
+			return _position;
 		}
 
 		private String getName()
 		{
-			return name;
+			return _name;
 		}
 
 		private int getId()
 		{
-			return id;
+			return _id;
 		}
 	}
 
-	private static Map<Integer, CurrencyInfo> currencies = new LinkedHashMap<>(); //Currency info
-	private static Map<Integer, Auction> auctions = new LinkedHashMap<>(); //Current auctions
-	private static Map<Integer, AuctionTemplate> auctionTemplates = new HashMap<>();
+	private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>(); //Currency info
+	private static Map<Integer, Auction> _auctions = new LinkedHashMap<>(); //Current auctions
+	private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<>();
 	//All the auction info
 
 	/**
@@ -460,7 +460,7 @@ public class TenkaiAuctionManager implements Reloadable
 	{
 		StringBuilder sb = new StringBuilder();
 
-		if (!Config.ENABLE_CUSTOM_AUCTIONS || auctions.isEmpty())
+		if (!Config.ENABLE_CUSTOM_AUCTIONS || _auctions.isEmpty())
 		{
 			return sb
 					.append("<center><table><tr><td width=200><font color=LEVEL>There are no auctions at this time!</font></td></tr></table></center>")
@@ -468,7 +468,7 @@ public class TenkaiAuctionManager implements Reloadable
 		}
 
 		int maxAuctionsPerPage = 6;
-		int auctionsSize = auctions.size();
+		int auctionsSize = _auctions.size();
 		int maxPages = auctionsSize / maxAuctionsPerPage;
 		if (auctionsSize > maxAuctionsPerPage * maxPages)
 		{
@@ -497,7 +497,7 @@ public class TenkaiAuctionManager implements Reloadable
 		int totalCount = 0;
 		int totalEnd = pageEnd - pageStart;
 
-		Object[] data = auctions.values().toArray();
+		Object[] data = _auctions.values().toArray();
 		for (int i = pageStart; i < pageEnd; i++)
 		{
 			Auction currentAuctionInfo = (Auction) data[i];
@@ -534,13 +534,13 @@ public class TenkaiAuctionManager implements Reloadable
 			String options = "";
 			if (!currentAuctionInfo.getTemplate().getAcceptAllCoins())
 			{
-				options += currencies.get(currentAuctionInfo.getTemplate().getInitialCurrencyId()).getName() + ";";
+				options += _currencies.get(currentAuctionInfo.getTemplate().getInitialCurrencyId()).getName() + ";";
 			}
 			else
 			{
-				CurrencyInfo currency = currencies.get(currentAuctionInfo.getCurrentCurrency());
+				CurrencyInfo currency = _currencies.get(currentAuctionInfo.getCurrentCurrency());
 				int currentPos = currency.getPosition();
-				for (Entry<Integer, CurrencyInfo> b : currencies.entrySet())
+				for (Entry<Integer, CurrencyInfo> b : _currencies.entrySet())
 				{
 					if (b.getValue().getPosition() < currentPos)
 					{
@@ -549,7 +549,7 @@ public class TenkaiAuctionManager implements Reloadable
 					options += b.getValue().getName() + ";";
 				}
 
-				if (!options.isEmpty() && currentPos < currencies.size())
+				if (!options.isEmpty() && currentPos < _currencies.size())
 				{
 					options = options.substring(0, options.length() - 1);
 					sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" +
@@ -559,10 +559,10 @@ public class TenkaiAuctionManager implements Reloadable
 
 			sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuctionInfo.getId() +
 					"\" width=100 type=number length=14></td></tr>");
-			sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" +
-					currentAuctionInfo.getId() + "; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" +
-					currentAuctionInfo.getId() +
-					"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
+			sb.append(
+					"<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuctionInfo.getId() +
+							"; $plbid" + currentAuctionInfo.getId() + " ; $plcoin" + currentAuctionInfo.getId() +
+							"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 			sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
 			sb.append("</table><br>");
 
@@ -614,7 +614,7 @@ public class TenkaiAuctionManager implements Reloadable
 					remainingTime = ADDED_DURATION;
 				}
 
-				AuctionTemplate template = auctionTemplates.get(rs.getInt("templateId"));
+				AuctionTemplate template = _auctionTemplates.get(rs.getInt("templateId"));
 				if (template == null)
 				{
 					Log.warning("TenkaiAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
@@ -639,8 +639,8 @@ public class TenkaiAuctionManager implements Reloadable
 
 	private void loadTemplates()
 	{
-		currencies.clear();
-		auctionTemplates.clear();
+		_currencies.clear();
+		_auctionTemplates.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/itemAuction.xml");
 		if (!file.exists())
@@ -659,7 +659,7 @@ public class TenkaiAuctionManager implements Reloadable
 					{
 						int position = d.getInt("position");
 						int itemId = d.getInt("itemId");
-						currencies.put(itemId, new CurrencyInfo(position, itemId));
+						_currencies.put(itemId, new CurrencyInfo(position, itemId));
 					}
 					else if (d.getName().equalsIgnoreCase("auction"))
 					{
@@ -677,7 +677,7 @@ public class TenkaiAuctionManager implements Reloadable
 						int initialPrice = d.getInt("initialPrice");
 						int initialDuration = d.getInt("initialDuration") * 3600; // It's in hours
 						boolean acceptAllCoins = d.getBool("acceptAllCoins", true);
-						AuctionTemplate itemAuction = auctionTemplates.get(auctionId);
+						AuctionTemplate itemAuction = _auctionTemplates.get(auctionId);
 						if (itemAuction != null)
 						{
 							itemAuction.overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId,
@@ -685,7 +685,7 @@ public class TenkaiAuctionManager implements Reloadable
 						}
 						else
 						{
-							auctionTemplates.put(auctionId,
+							_auctionTemplates.put(auctionId,
 									new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime,
 											initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
 						}
@@ -694,7 +694,7 @@ public class TenkaiAuctionManager implements Reloadable
 			}
 		}
 
-		Log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
+		Log.info("ItemAuction: Loaded: " + _auctionTemplates.size() + " auctions!");
 	}
 
 	/**
@@ -722,7 +722,7 @@ public class TenkaiAuctionManager implements Reloadable
 			return;
 		}
 
-		Auction bid = auctions.get(bidId);
+		Auction bid = _auctions.get(bidId);
 		if (bid == null)
 		{
 			return;
@@ -757,7 +757,7 @@ public class TenkaiAuctionManager implements Reloadable
 		if (!coin.isEmpty())
 		{
 			CurrencyInfo playerCurrency = null;
-			for (Entry<Integer, CurrencyInfo> i : currencies.entrySet())
+			for (Entry<Integer, CurrencyInfo> i : _currencies.entrySet())
 			{
 				if (i.getValue().getName().equalsIgnoreCase(coin))
 				{
@@ -778,7 +778,7 @@ public class TenkaiAuctionManager implements Reloadable
 
 			if (bid.getTemplate().getAcceptAllCoins() && currencyId != currentCurrencyId)//If we have a new currency..
 			{
-				if (currencies.get(currencyId).getPosition() < currencies.get(currentCurrencyId).getPosition())
+				if (_currencies.get(currencyId).getPosition() < _currencies.get(currentCurrencyId).getPosition())
 				{
 					return; //client hack?
 				}
@@ -847,7 +847,7 @@ public class TenkaiAuctionManager implements Reloadable
 
 	public int getCurrencyId(String coin)
 	{
-		for (Entry<Integer, CurrencyInfo> i : currencies.entrySet())
+		for (Entry<Integer, CurrencyInfo> i : _currencies.entrySet())
 		{
 			if (i.getValue().getName().equalsIgnoreCase(coin))
 			{
@@ -859,11 +859,11 @@ public class TenkaiAuctionManager implements Reloadable
 
 	public void addAuction(Auction auction)
 	{
-		auctions.put(auction.getId(), auction);
+		_auctions.put(auction.getId(), auction);
 
 		// Stupid naive sort
-		Map<Integer, Auction> auctions = new HashMap<>(this.auctions);
-		this.auctions.clear();
+		Map<Integer, Auction> auctions = new HashMap<>(_auctions);
+		_auctions.clear();
 		while (!auctions.isEmpty())
 		{
 			Auction minAuction = null;
@@ -879,12 +879,12 @@ public class TenkaiAuctionManager implements Reloadable
 
 			if (minAuction == null)
 			{
-				this.auctions.putAll(auctions);
+				_auctions.putAll(auctions);
 				break;
 			}
 
 			auctions.remove(minAuction.getId());
-			this.auctions.put(minAuction.getId(), minAuction);
+			_auctions.put(minAuction.getId(), minAuction);
 		}
 	}
 
@@ -908,12 +908,12 @@ public class TenkaiAuctionManager implements Reloadable
 
 	public static TenkaiAuctionManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TenkaiAuctionManager instance = new TenkaiAuctionManager();
+		protected static final TenkaiAuctionManager _instance = new TenkaiAuctionManager();
 	}
 }

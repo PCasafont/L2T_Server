@@ -27,7 +27,8 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionTargetAggro extends Condition
 {
-	private final boolean isAggro;
+
+	private final boolean _isAggro;
 
 	/**
 	 * Instantiates a new condition target aggro.
@@ -36,7 +37,7 @@ public class ConditionTargetAggro extends Condition
 	 */
 	public ConditionTargetAggro(boolean isAggro)
 	{
-		this.isAggro = isAggro;
+		_isAggro = isAggro;
 	}
 
 	/* (non-Javadoc)
@@ -48,7 +49,7 @@ public class ConditionTargetAggro extends Condition
 		L2Character target = env.target;
 		if (target instanceof L2MonsterInstance)
 		{
-			return ((L2MonsterInstance) target).isAggressive() == isAggro;
+			return ((L2MonsterInstance) target).isAggressive() == _isAggro;
 		}
 		if (target instanceof L2PcInstance)
 		{

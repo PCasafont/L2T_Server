@@ -26,13 +26,14 @@ import java.security.interfaces.RSAPublicKey;
  */
 public class ScrambledKeyPair
 {
-	public KeyPair pair;
-	public byte[] scrambledModulus;
+
+	public KeyPair _pair;
+	public byte[] _scrambledModulus;
 
 	public ScrambledKeyPair(KeyPair pPair)
 	{
-		pair = pPair;
-		scrambledModulus = scrambleModulus(((RSAPublicKey) pair.getPublic()).getModulus());
+		_pair = pPair;
+		_scrambledModulus = scrambleModulus(((RSAPublicKey) _pair.getPublic()).getModulus());
 	}
 
 	private byte[] scrambleModulus(BigInteger modulus)

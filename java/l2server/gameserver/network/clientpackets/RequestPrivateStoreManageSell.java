@@ -25,6 +25,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public final class RequestPrivateStoreManageSell extends L2GameClientPacket
 {
+
 	//
 
 	@Override

@@ -25,7 +25,9 @@ import l2server.gameserver.communitybbs.CommunityBoard;
  */
 public final class RequestShowBoard extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int unknown;
+
+	@SuppressWarnings("unused")
+	private int _unknown;
 
 	/**
 	 * packet type id 0x57
@@ -40,7 +42,7 @@ public final class RequestShowBoard extends L2GameClientPacket
 	@Override
 	protected final void readImpl()
 	{
-		unknown = readD();
+		_unknown = readD();
 	}
 
 	@Override

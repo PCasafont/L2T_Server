@@ -101,7 +101,7 @@ public class AdminEffects implements IAdminCommandHandler
 
 		if (command.equals("admin_invis_menu"))
 		{
-			if (!activeChar.getAppearance().isInvisible())
+			if (!activeChar.getAppearance().getInvisible())
 			{
 				activeChar.getAppearance().setInvisible();
 				activeChar.broadcastUserInfo();
@@ -802,9 +802,9 @@ public class AdminEffects implements IAdminCommandHandler
 
 	private void playAdminSound(L2PcInstance activeChar, String sound)
 	{
-		PlaySound snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
-		activeChar.sendPacket(snd);
-		activeChar.broadcastPacket(snd);
+		PlaySound _snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
+		activeChar.sendPacket(_snd);
+		activeChar.broadcastPacket(_snd);
 		activeChar.sendMessage("Playing " + sound + ".");
 	}
 

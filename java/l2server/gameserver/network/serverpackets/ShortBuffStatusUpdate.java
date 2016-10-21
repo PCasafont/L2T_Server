@@ -17,22 +17,22 @@ package l2server.gameserver.network.serverpackets;
 
 public class ShortBuffStatusUpdate extends L2GameServerPacket
 {
-	private int skillId;
-	private int skillLvl;
-	private int duration;
+	private int _skillId;
+	private int _skillLvl;
+	private int _duration;
 
 	public ShortBuffStatusUpdate(int skillId, int skillLvl, int duration)
 	{
-		this.skillId = skillId;
-		this.skillLvl = skillLvl;
-		this.duration = duration;
+		_skillId = skillId;
+		_skillLvl = skillLvl;
+		_duration = duration;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(skillId);
-		writeD(skillLvl);
-		writeD(duration);
+		writeD(_skillId);
+		writeD(_skillLvl);
+		writeD(_duration);
 	}
 }

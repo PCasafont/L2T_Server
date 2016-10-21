@@ -49,19 +49,19 @@ public class Lottery
 	private static final String SELECT_LOTTERY_TICKET =
 			"SELECT number1, number2, prize1, prize2, prize3 FROM games WHERE id = 1 and idnr = ?";
 
-	protected int number;
-	protected long prize;
-	protected boolean isSellingTickets;
-	protected boolean isStarted;
-	protected long enddate;
+	protected int _number;
+	protected long _prize;
+	protected boolean _isSellingTickets;
+	protected boolean _isStarted;
+	protected long _enddate;
 
 	private Lottery()
 	{
-		number = 1;
-		prize = Config.ALT_LOTTERY_PRIZE;
-		isSellingTickets = false;
-		isStarted = false;
-		enddate = System.currentTimeMillis();
+		_number = 1;
+		_prize = Config.ALT_LOTTERY_PRIZE;
+		_isSellingTickets = false;
+		_isStarted = false;
+		_enddate = System.currentTimeMillis();
 
 		if (Config.ALLOW_LOTTERY)
 		{
@@ -71,27 +71,27 @@ public class Lottery
 
 	public static Lottery getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public int getId()
 	{
-		return number;
+		return _number;
 	}
 
 	public long getPrize()
 	{
-		return prize;
+		return _prize;
 	}
 
 	public long getEndDate()
 	{
-		return enddate;
+		return _enddate;
 	}
 
 	public void increasePrize(long count)
 	{
-		prize += count;
+		_prize += count;
 		Connection con = null;
 		try
 		{
@@ -116,12 +116,12 @@ public class Lottery
 
 	public boolean isSellableTickets()
 	{
-		return isSellingTickets;
+		return _isSellingTickets;
 	}
 
 	public boolean isStarted()
 	{
-		return isStarted;
+		return _isStarted;
 	}
 
 	private class startLottery implements Runnable
@@ -144,19 +144,19 @@ public class Lottery
 
 				if (rset.next())
 				{
-					number = rset.getInt("idnr");
+					_number = rset.getInt("idnr");
 
 					if (rset.getInt("finished") == 1)
 					{
-						number++;
-						prize = rset.getLong("newprize");
+						_number++;
+						_prize = rset.getLong("newprize");
 					}
 					else
 					{
-						prize = rset.getLong("prize");
-						enddate = rset.getLong("enddate");
+						_prize = rset.getLong("prize");
+						_enddate = rset.getLong("enddate");
 
-						if (enddate <= System.currentTimeMillis() + 2 * MINUTE)
+						if (_enddate <= System.currentTimeMillis() + 2 * MINUTE)
 						{
 							new finishLottery().run();
 							rset.close();
@@ -164,17 +164,17 @@ public class Lottery
 							return;
 						}
 
-						if (enddate > System.currentTimeMillis())
+						if (_enddate > System.currentTimeMillis())
 						{
-							isStarted = true;
+							_isStarted = true;
 							ThreadPoolManager.getInstance()
-									.scheduleGeneral(new finishLottery(), enddate - System.currentTimeMillis());
+									.scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 
-							if (enddate > System.currentTimeMillis() + 12 * MINUTE)
+							if (_enddate > System.currentTimeMillis() + 12 * MINUTE)
 							{
-								isSellingTickets = true;
+								_isSellingTickets = true;
 								ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(),
-										enddate - System.currentTimeMillis() - 10 * MINUTE);
+										_enddate - System.currentTimeMillis() - 10 * MINUTE);
 							}
 							rset.close();
 							statement.close();
@@ -198,32 +198,32 @@ public class Lottery
 			{
 				Log.info("Lottery: Starting ticket sell for lottery #" + getId() + ".");
 			}
-			isSellingTickets = true;
-			isStarted = true;
+			_isSellingTickets = true;
+			_isStarted = true;
 
 			Announcements.getInstance()
 					.announceToAll("Lottery tickets are now available for Lucky Lottery #" + getId() + ".");
 			Calendar finishtime = Calendar.getInstance();
-			finishtime.setTimeInMillis(enddate);
+			finishtime.setTimeInMillis(_enddate);
 			finishtime.set(Calendar.MINUTE, 0);
 			finishtime.set(Calendar.SECOND, 0);
 
 			if (finishtime.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)
 			{
 				finishtime.set(Calendar.HOUR_OF_DAY, 19);
-				enddate = finishtime.getTimeInMillis();
-				enddate += 604800000;
+				_enddate = finishtime.getTimeInMillis();
+				_enddate += 604800000;
 			}
 			else
 			{
 				finishtime.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
 				finishtime.set(Calendar.HOUR_OF_DAY, 19);
-				enddate = finishtime.getTimeInMillis();
+				_enddate = finishtime.getTimeInMillis();
 			}
 
 			ThreadPoolManager.getInstance()
-					.scheduleGeneral(new stopSellingTickets(), enddate - System.currentTimeMillis() - 10 * MINUTE);
-			ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), enddate - System.currentTimeMillis());
+					.scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
+			ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 
 			try
 			{
@@ -262,7 +262,7 @@ public class Lottery
 			{
 				Log.info("Lottery: Stopping ticket sell for lottery #" + getId() + ".");
 			}
-			isSellingTickets = false;
+			_isSellingTickets = false;
 
 			Announcements.getInstance()
 					.announceToAll(SystemMessage.getSystemMessage(SystemMessageId.LOTTERY_TICKET_SALES_TEMP_SUSPENDED));
@@ -488,9 +488,9 @@ public class Lottery
 			}
 
 			ThreadPoolManager.getInstance().scheduleGeneral(new startLottery(), MINUTE);
-			number++;
+			_number++;
 
-			isStarted = false;
+			_isStarted = false;
 		}
 	}
 
@@ -621,6 +621,6 @@ public class Lottery
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final Lottery instance = new Lottery();
+		protected static final Lottery _instance = new Lottery();
 	}
 }

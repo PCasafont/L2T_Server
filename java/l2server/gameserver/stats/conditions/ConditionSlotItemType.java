@@ -27,7 +27,8 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionSlotItemType extends ConditionInventory
 {
-	private final int mask;
+
+	private final int _mask;
 
 	/**
 	 * Instantiates a new condition slot item type.
@@ -38,7 +39,7 @@ public final class ConditionSlotItemType extends ConditionInventory
 	public ConditionSlotItemType(int slot, int mask)
 	{
 		super(slot);
-		this.mask = mask;
+		_mask = mask;
 	}
 
 	/* (non-Javadoc)
@@ -52,11 +53,11 @@ public final class ConditionSlotItemType extends ConditionInventory
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
-		L2ItemInstance item = inv.getPaperdollItem(slot);
+		L2ItemInstance item = inv.getPaperdollItem(_slot);
 		if (item == null)
 		{
 			return false;
 		}
-		return (item.getItem().getItemMask() & mask) != 0;
+		return (item.getItem().getItemMask() & _mask) != 0;
 	}
 }

@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class NetPing extends L2GameServerPacket
 {
-	private int pingid;
+	private int _pingid;
 
 	public NetPing(int pingid)
 	{
-		this.pingid = pingid;
+		_pingid = pingid;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(pingid);
+		writeD(_pingid);
 	}
 }

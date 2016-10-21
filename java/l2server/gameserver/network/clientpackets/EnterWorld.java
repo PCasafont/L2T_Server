@@ -56,6 +56,7 @@ import java.util.logging.Level;
  */
 public class EnterWorld extends L2GameClientPacket
 {
+
 	private int[][] tracert = new int[5][4];
 
 	public TaskPriority getPriority()
@@ -202,7 +203,7 @@ public class EnterWorld extends L2GameClientPacket
 
 			if (Config.GM_GIVE_SPECIAL_SKILLS)
 			{
-				GMSkillTable.addSkills(activeChar);
+				GMSkillTable.getInstance().addSkills(activeChar);
 			}
 		}
 
@@ -413,7 +414,7 @@ public class EnterWorld extends L2GameClientPacket
 
 		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WELCOME_TO_LINEAGE));
 		/*
-		if (activeChar.getServerInstanceId() == 1)
+        if (activeChar.getServerInstanceId() == 1)
 		{
 			SystemMessage s = SystemMessage.getSystemMessage(SystemMessageId.RED_CHATBOX_S1);
 			s.addString("This new dimension is not yet open. You will now be disconnected.");

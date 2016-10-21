@@ -21,26 +21,26 @@ public final class Ride extends L2GameServerPacket
 {
 	public static final int ACTION_MOUNT = 1;
 	public static final int ACTION_DISMOUNT = 0;
-	private final int id;
-	private final int bRide;
-	private final int rideType;
-	private final int rideClassID;
-	private final int x, y, z;
+	private final int _id;
+	private final int _bRide;
+	private final int _rideType;
+	private final int _rideClassID;
+	private final int _x, _y, _z;
 
 	public Ride(L2PcInstance cha, boolean mount, int rideClassId)
 	{
-		id = cha.getObjectId();
-		bRide = mount ? 1 : 0;
-		rideClassID = rideClassId + 1000000; // npcID
+		_id = cha.getObjectId();
+		_bRide = mount ? 1 : 0;
+		_rideClassID = rideClassId + 1000000; // npcID
 
-		x = cha.getX();
-		y = cha.getY();
-		z = cha.getZ();
+		_x = cha.getX();
+		_y = cha.getY();
+		_z = cha.getZ();
 
 		switch (rideClassId)
 		{
 			case 0: // dismount
-				rideType = 0;
+				_rideType = 0;
 				break;
 			case 12526: // Wind
 			case 12527: // Star
@@ -49,15 +49,15 @@ public final class Ride extends L2GameServerPacket
 			case 16039: // red strider of star
 			case 16040: // red strider of dusk
 			case 16068: // Guardian Strider
-				rideType = 1;
+				_rideType = 1;
 				break;
 			case 12621: // Wyvern
-				rideType = 2;
+				_rideType = 2;
 				break;
 			case 16037: // Great Snow Wolf
 			case 16041: // Fenrir Wolf
 			case 16042: // White Fenrir Wolf
-				rideType = 3;
+				_rideType = 3;
 				break;
 			case 32: // Jet Bike
 			case 13130: // Light Purple Maned Horse
@@ -78,7 +78,7 @@ public final class Ride extends L2GameServerPacket
 			case 13340: //Kukurin
 			case 13390: //Lyn draco
 			case 13391: //Air Bike
-				rideType = 4;
+				_rideType = 4;
 				break;
 			default:
 				throw new IllegalArgumentException("Unsupported mount NpcId: " + rideClassId);
@@ -88,22 +88,23 @@ public final class Ride extends L2GameServerPacket
 	@Override
 	public void runImpl()
 	{
+
 	}
 
 	public int getMountType()
 	{
-		return rideType;
+		return _rideType;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(id);
-		writeD(bRide);
-		writeD(rideType);
-		writeD(rideClassID);
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_id);
+		writeD(_bRide);
+		writeD(_rideType);
+		writeD(_rideClassID);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 	}
 }

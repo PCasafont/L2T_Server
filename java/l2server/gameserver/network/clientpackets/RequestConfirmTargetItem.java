@@ -29,12 +29,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestConfirmTargetItem extends L2GameClientPacket
 {
-	private int itemObjId;
+	private int _itemObjId;
 
 	@Override
 	protected void readImpl()
 	{
-		itemObjId = readD();
+		_itemObjId = readD();
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public final class RequestConfirmTargetItem extends L2GameClientPacket
 			return;
 		}
 
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjId);
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjId);
 		if (item == null)
 		{
 			return;
@@ -66,6 +66,6 @@ public final class RequestConfirmTargetItem extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.sendPacket(new ExPutItemResultForVariationMake(itemObjId, item.getItemId()));
+		activeChar.sendPacket(new ExPutItemResultForVariationMake(_itemObjId, item.getItemId()));
 	}
 }

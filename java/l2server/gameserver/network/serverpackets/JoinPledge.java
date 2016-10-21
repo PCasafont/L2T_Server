@@ -22,16 +22,17 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class JoinPledge extends L2GameServerPacket
 {
-	private int pledgeId;
+
+	private int _pledgeId;
 
 	public JoinPledge(int pledgeId)
 	{
-		this.pledgeId = pledgeId;
+		_pledgeId = pledgeId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(pledgeId);
+		writeD(_pledgeId);
 	}
 }

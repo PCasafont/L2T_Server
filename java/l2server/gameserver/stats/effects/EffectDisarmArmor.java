@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class EffectDisarmArmor extends L2Effect
 {
-	private static Map<Integer, Integer> armors = new HashMap<>();
+	private static Map<Integer, Integer> _armors = new HashMap<>();
 
 	public EffectDisarmArmor(Env env, L2EffectTemplate template)
 	{
@@ -82,9 +82,9 @@ public class EffectDisarmArmor extends L2Effect
 			{
 				iu.addModifiedItem(itm);
 
-				synchronized (armors)
+				synchronized (_armors)
 				{
-					armors.put(player.getObjectId(), itm.getObjectId());
+					_armors.put(player.getObjectId(), itm.getObjectId());
 				}
 			}
 
@@ -130,11 +130,11 @@ public class EffectDisarmArmor extends L2Effect
 			return;
 		}
 
-		synchronized (armors)
+		synchronized (_armors)
 		{
-			if (armors.containsKey(player.getObjectId()))
+			if (_armors.containsKey(player.getObjectId()))
 			{
-				L2ItemInstance armor = player.getInventory().getItemByObjectId(armors.get(player.getObjectId()));
+				L2ItemInstance armor = player.getInventory().getItemByObjectId(_armors.get(player.getObjectId()));
 				if (player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST) == null)
 				{
 					if (armor != null)
@@ -142,7 +142,7 @@ public class EffectDisarmArmor extends L2Effect
 						player.useEquippableItem(armor, false);
 					}
 				}
-				armors.remove(player.getObjectId());
+				_armors.remove(player.getObjectId());
 			}
 		}
 		player.broadcastUserInfo();

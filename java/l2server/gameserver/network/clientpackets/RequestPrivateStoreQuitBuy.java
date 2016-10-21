@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestPrivateStoreQuitBuy extends L2GameClientPacket
 {
+
 	//
 
 	@Override

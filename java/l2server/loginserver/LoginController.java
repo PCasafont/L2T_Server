@@ -26,7 +26,6 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.util.Rnd;
 import l2server.util.crypt.ScrambledKeyPair;
 import l2server.util.lib.LoginLog;
-import lombok.Getter;
 
 import javax.crypto.Cipher;
 import java.net.InetAddress;
@@ -52,7 +51,8 @@ import java.util.logging.Level;
  */
 public class LoginController
 {
-	@Getter private static LoginController instance;
+
+	private static LoginController _instance;
 
 	/**
 	 * Time before kicking the client if he didnt log in yet
@@ -62,26 +62,26 @@ public class LoginController
 	/**
 	 * Authed Clients on LoginServer
 	 */
-	protected ConcurrentHashMap<String, L2LoginClient> loginServerClients = new ConcurrentHashMap<>();
+	protected ConcurrentHashMap<String, L2LoginClient> _loginServerClients = new ConcurrentHashMap<>();
 
-	@Getter private final Map<String, BanInfo> bannedIps = new HashMap<>();
+	private final Map<String, BanInfo> _bannedIps = new HashMap<>();
 
-	private final Map<InetAddress, FailedLoginAttempt> hackProtection;
+	private final Map<InetAddress, FailedLoginAttempt> _hackProtection;
 
-	protected ScrambledKeyPair[] keyPairs;
+	protected ScrambledKeyPair[] _keyPairs;
 
-	private final Thread purge;
+	private final Thread _purge;
 
-	protected byte[][] blowfishKeys;
+	protected byte[][] _blowfishKeys;
 	private static final int BLOWFISH_KEYS = 20;
 
 	public static void load() throws GeneralSecurityException
 	{
 		synchronized (LoginController.class)
 		{
-			if (instance == null)
+			if (_instance == null)
 			{
-				instance = new LoginController();
+				_instance = new LoginController();
 			}
 			else
 			{
@@ -90,13 +90,18 @@ public class LoginController
 		}
 	}
 
+	public static LoginController getInstance()
+	{
+		return _instance;
+	}
+
 	private LoginController() throws GeneralSecurityException
 	{
 		Log.info("Loading LoginController...");
 
-		hackProtection = new HashMap<>();
+		_hackProtection = new HashMap<>();
 
-		keyPairs = new ScrambledKeyPair[10];
+		_keyPairs = new ScrambledKeyPair[10];
 
 		KeyPairGenerator keygen = null;
 
@@ -107,18 +112,18 @@ public class LoginController
 		//generate the initial set of keys
 		for (int i = 0; i < 10; i++)
 		{
-			keyPairs[i] = new ScrambledKeyPair(keygen.generateKeyPair());
+			_keyPairs[i] = new ScrambledKeyPair(keygen.generateKeyPair());
 		}
 		Log.info("Cached 10 KeyPairs for RSA communication");
 
-		testCipher((RSAPrivateKey) keyPairs[0].pair.getPrivate());
+		testCipher((RSAPrivateKey) _keyPairs[0]._pair.getPrivate());
 
 		// Store keys for blowfish communication
 		generateBlowFishKeys();
 
-		purge = new PurgeThread();
-		purge.setDaemon(true);
-		purge.start();
+		_purge = new PurgeThread();
+		_purge.setDaemon(true);
+		_purge.start();
 	}
 
 	/**
@@ -137,16 +142,16 @@ public class LoginController
 
 	private void generateBlowFishKeys()
 	{
-		blowfishKeys = new byte[BLOWFISH_KEYS][16];
+		_blowfishKeys = new byte[BLOWFISH_KEYS][16];
 
 		for (int i = 0; i < BLOWFISH_KEYS; i++)
 		{
-			for (int j = 0; j < blowfishKeys[i].length; j++)
+			for (int j = 0; j < _blowfishKeys[i].length; j++)
 			{
-				blowfishKeys[i][j] = (byte) (Rnd.nextInt(255) + 1);
+				_blowfishKeys[i][j] = (byte) (Rnd.nextInt(255) + 1);
 			}
 		}
-		Log.info("Stored " + blowfishKeys.length + " keys for Blowfish communication");
+		Log.info("Stored " + _blowfishKeys.length + " keys for Blowfish communication");
 	}
 
 	/**
@@ -154,7 +159,7 @@ public class LoginController
 	 */
 	public byte[] getBlowfishKey()
 	{
-		return blowfishKeys[(int) (Math.random() * BLOWFISH_KEYS)];
+		return _blowfishKeys[(int) (Math.random() * BLOWFISH_KEYS)];
 	}
 
 	public SessionKey assignSessionKeyToClient(String account, L2LoginClient client)
@@ -162,7 +167,7 @@ public class LoginController
 		SessionKey key;
 
 		key = new SessionKey(Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt());
-		loginServerClients.put(account, client);
+		_loginServerClients.put(account, client);
 		return key;
 	}
 
@@ -172,17 +177,17 @@ public class LoginController
 		{
 			return;
 		}
-		loginServerClients.remove(account);
+		_loginServerClients.remove(account);
 	}
 
 	public boolean isAccountInLoginServer(String account)
 	{
-		return loginServerClients.containsKey(account);
+		return _loginServerClients.containsKey(account);
 	}
 
 	public L2LoginClient getAuthedClient(String account)
 	{
-		return loginServerClients.get(account);
+		return _loginServerClients.get(account);
 	}
 
 	public enum AuthLoginResult
@@ -203,7 +208,7 @@ public class LoginController
 				// account isnt on any GS verify LS itself
 				ret = AuthLoginResult.ALREADY_ON_LS;
 
-				if (loginServerClients.putIfAbsent(account, client) == null)
+				if (_loginServerClients.putIfAbsent(account, client) == null)
 				{
 					ret = AuthLoginResult.AUTH_SUCCESS;
 				}
@@ -227,7 +232,7 @@ public class LoginController
 			// account isnt on any GS verify LS itself
 			ret = AuthLoginResult.ALREADY_ON_LS;
 
-			if (loginServerClients.putIfAbsent(account, client) == null)
+			if (_loginServerClients.putIfAbsent(account, client) == null)
 			{
 				ret = AuthLoginResult.AUTH_SUCCESS;
 			}
@@ -245,9 +250,9 @@ public class LoginController
 	public void addBanForAddress(String address, long expiration) throws UnknownHostException
 	{
 		InetAddress netAddress = InetAddress.getByName(address);
-		if (!bannedIps.containsKey(netAddress.getHostAddress()))
+		if (!_bannedIps.containsKey(netAddress.getHostAddress()))
 		{
-			bannedIps.put(netAddress.getHostAddress(), new BanInfo(netAddress, expiration));
+			_bannedIps.put(netAddress.getHostAddress(), new BanInfo(netAddress, expiration));
 		}
 	}
 
@@ -259,33 +264,33 @@ public class LoginController
 	 */
 	public void addBanForAddress(InetAddress address, long duration)
 	{
-		if (!bannedIps.containsKey(address.getHostAddress()))
+		if (!_bannedIps.containsKey(address.getHostAddress()))
 		{
-			bannedIps.put(address.getHostAddress(), new BanInfo(address, System.currentTimeMillis() + duration));
+			_bannedIps.put(address.getHostAddress(), new BanInfo(address, System.currentTimeMillis() + duration));
 		}
 	}
 
 	public boolean isBannedAddress(InetAddress address)
 	{
 		String[] parts = address.getHostAddress().split("\\.");
-		BanInfo bi = bannedIps.get(address.getHostAddress());
+		BanInfo bi = _bannedIps.get(address.getHostAddress());
 		if (bi == null)
 		{
-			bi = bannedIps.get(parts[0] + "." + parts[1] + "." + parts[2] + ".0");
+			bi = _bannedIps.get(parts[0] + "." + parts[1] + "." + parts[2] + ".0");
 		}
 		if (bi == null)
 		{
-			bi = bannedIps.get(parts[0] + "." + parts[1] + ".0.0");
+			bi = _bannedIps.get(parts[0] + "." + parts[1] + ".0.0");
 		}
 		if (bi == null)
 		{
-			bi = bannedIps.get(parts[0] + ".0.0.0");
+			bi = _bannedIps.get(parts[0] + ".0.0.0");
 		}
 		if (bi != null)
 		{
 			if (bi.hasExpired())
 			{
-				bannedIps.remove(address.getHostAddress());
+				_bannedIps.remove(address.getHostAddress());
 				return false;
 			}
 			else
@@ -296,6 +301,11 @@ public class LoginController
 		return false;
 	}
 
+	public Map<String, BanInfo> getBannedIps()
+	{
+		return _bannedIps;
+	}
+
 	/**
 	 * Remove the specified address from the ban list
 	 *
@@ -304,7 +314,7 @@ public class LoginController
 	 */
 	public boolean removeBanForAddress(InetAddress address)
 	{
-		return bannedIps.remove(address.getHostAddress()) != null;
+		return _bannedIps.remove(address.getHostAddress()) != null;
 	}
 
 	/**
@@ -317,7 +327,7 @@ public class LoginController
 	{
 		try
 		{
-			return removeBanForAddress(InetAddress.getByName(address));
+			return this.removeBanForAddress(InetAddress.getByName(address));
 		}
 		catch (UnknownHostException e)
 		{
@@ -327,7 +337,7 @@ public class LoginController
 
 	public SessionKey getKeyForAccount(String account)
 	{
-		L2LoginClient client = loginServerClients.get(account);
+		L2LoginClient client = _loginServerClients.get(account);
 		if (client != null)
 		{
 			return client.getSessionKey();
@@ -337,7 +347,7 @@ public class LoginController
 
 	public L2LoginClient getClientForKey(SessionKey sessionKey)
 	{
-		for (L2LoginClient client : loginServerClients.values())
+		for (L2LoginClient client : _loginServerClients.values())
 		{
 			if (client.getSessionKey().equals(sessionKey))
 			{
@@ -533,7 +543,7 @@ public class LoginController
 
 	public void setCharactersOnServer(String account, int charsNum, long[] timeToDel, int serverId)
 	{
-		L2LoginClient client = loginServerClients.get(account);
+		L2LoginClient client = _loginServerClients.get(account);
 		if (client == null)
 		{
 			return;
@@ -598,7 +608,7 @@ public class LoginController
 	 */
 	public ScrambledKeyPair getScrambledRSAKeyPair()
 	{
-		return keyPairs[0];
+		return _keyPairs[0];
 	}
 
 	/**
@@ -698,11 +708,11 @@ public class LoginController
 					}
 
 					Log.warning("Account missing for user " + user);
-					FailedLoginAttempt failedAttempt = hackProtection.get(address);
+					FailedLoginAttempt failedAttempt = _hackProtection.get(address);
 					int failedCount;
 					if (failedAttempt == null)
 					{
-						hackProtection.put(address, new FailedLoginAttempt(address, password));
+						_hackProtection.put(address, new FailedLoginAttempt(address, password));
 						failedCount = 1;
 					}
 					else
@@ -715,7 +725,7 @@ public class LoginController
 					{
 						Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
 								" seconds due to " + failedCount + " invalid user name(" + user + ") attempts");
-						addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
+						this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 					}
 					return false;
 				}
@@ -830,11 +840,11 @@ public class LoginController
 				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginlog");
 			}
 
-			FailedLoginAttempt failedAttempt = hackProtection.get(address);
+			FailedLoginAttempt failedAttempt = _hackProtection.get(address);
 			int failedCount;
 			if (failedAttempt == null)
 			{
-				hackProtection.put(address, new FailedLoginAttempt(address, password));
+				_hackProtection.put(address, new FailedLoginAttempt(address, password));
 				failedCount = 1;
 			}
 			else
@@ -847,12 +857,12 @@ public class LoginController
 			{
 				Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
 						" seconds due to " + failedCount + " invalid user/pass attempts");
-				addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
+				this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			}
 		}
 		else
 		{
-			hackProtection.remove(address);
+			_hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER)
 			{
 				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : LoginOk", "loginlog");
@@ -974,11 +984,11 @@ public class LoginController
 				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginlog");
 			}
 
-			FailedLoginAttempt failedAttempt = hackProtection.get(address);
+			FailedLoginAttempt failedAttempt = _hackProtection.get(address);
 			int failedCount;
 			if (failedAttempt == null)
 			{
-				hackProtection.put(address, new FailedLoginAttempt(address, sessionKey));
+				_hackProtection.put(address, new FailedLoginAttempt(address, sessionKey));
 				failedCount = 1;
 			}
 			else
@@ -991,12 +1001,12 @@ public class LoginController
 			{
 				Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN +
 						" seconds due to " + failedCount + " invalid user/pass attempts");
-				addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
+				this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			}
 		}
 		else
 		{
-			hackProtection.remove(address);
+			_hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER)
 			{
 				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - OK : LoginOk", "loginlog");
@@ -1071,69 +1081,74 @@ public class LoginController
 
 	class FailedLoginAttempt
 	{
-		//private InetAddress ipAddress;
-		@Getter private int count;
-		private long lastAttempTime;
-		private String lastPassword;
+		//private InetAddress _ipAddress;
+		private int _count;
+		private long _lastAttempTime;
+		private String _lastPassword;
 
 		public FailedLoginAttempt(InetAddress address, String lastPassword)
 		{
 			//_ipAddress = address;
-			count = 1;
-			lastAttempTime = System.currentTimeMillis();
-			this.lastPassword = lastPassword;
+			_count = 1;
+			_lastAttempTime = System.currentTimeMillis();
+			_lastPassword = lastPassword;
 		}
 
 		public void increaseCounter(String password)
 		{
-			if (!lastPassword.equals(password))
+			if (!_lastPassword.equals(password))
 			{
 				// check if theres a long time since last wrong try
-				if (System.currentTimeMillis() - lastAttempTime < 300 * 1000)
+				if (System.currentTimeMillis() - _lastAttempTime < 300 * 1000)
 				{
-					count++;
+					_count++;
 				}
 				else
 				{
 					// restart the status
-					count = 1;
+					_count = 1;
 				}
-				lastPassword = password;
-				lastAttempTime = System.currentTimeMillis();
+				_lastPassword = password;
+				_lastAttempTime = System.currentTimeMillis();
 			}
 			else
 			//trying the same password is not brute force
 			{
-				lastAttempTime = System.currentTimeMillis();
+				_lastAttempTime = System.currentTimeMillis();
 			}
+		}
+
+		public int getCount()
+		{
+			return _count;
 		}
 
 		public void increaseCounter()
 		{
-			count++;
+			_count++;
 		}
 	}
 
 	class BanInfo
 	{
-		private final InetAddress ipAddress;
+		private final InetAddress _ipAddress;
 		// Expiration
-		private final long expiration;
+		private final long _expiration;
 
 		public BanInfo(InetAddress ipAddress, long expiration)
 		{
-			this.ipAddress = ipAddress;
-			this.expiration = expiration;
+			_ipAddress = ipAddress;
+			_expiration = expiration;
 		}
 
 		public InetAddress getAddress()
 		{
-			return ipAddress;
+			return _ipAddress;
 		}
 
 		public boolean hasExpired()
 		{
-			return System.currentTimeMillis() > expiration && expiration > 0;
+			return System.currentTimeMillis() > _expiration && _expiration > 0;
 		}
 	}
 
@@ -1149,7 +1164,7 @@ public class LoginController
 		{
 			while (!isInterrupted())
 			{
-				for (L2LoginClient client : loginServerClients.values())
+				for (L2LoginClient client : _loginServerClients.values())
 				{
 					if (client == null)
 					{

@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
@@ -40,7 +39,7 @@ import java.util.logging.Logger;
  */
 public class AdminKill implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminKill.class.getName());
+	private static Logger _log = Logger.getLogger(AdminKill.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_kill", "admin_kill_monster"};
 
 	@Override
@@ -159,7 +158,7 @@ public class AdminKill implements IAdminCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " +
+			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " +
 					target.getObjectId());
 		}
 	}

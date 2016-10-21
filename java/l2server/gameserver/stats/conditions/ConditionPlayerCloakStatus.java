@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerCloakStatus extends Condition
 {
-	private final int val;
+	private final int _val;
 
 	/**
 	 * Instantiates a new condition player cloak status.
@@ -32,7 +32,7 @@ public class ConditionPlayerCloakStatus extends Condition
 	 */
 	public ConditionPlayerCloakStatus(int val)
 	{
-		this.val = val;
+		_val = val;
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public class ConditionPlayerCloakStatus extends Condition
 			return false;
 		}
 
-		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= val;
+		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= _val;
 	}
 }

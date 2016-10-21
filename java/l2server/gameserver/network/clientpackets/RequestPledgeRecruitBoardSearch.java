@@ -23,24 +23,24 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitBoardSearch;
  */
 public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 {
-	private int level;
-	private int karma;
-	private boolean clanName;
-	private String name;
-	private int sortBy;
-	private boolean desc;
-	private int page;
+	private int _level;
+	private int _karma;
+	private boolean _clanName;
+	private String _name;
+	private int _sortBy;
+	private boolean _desc;
+	private int _page;
 
 	@Override
 	protected void readImpl()
 	{
-		level = readD();
-		karma = readD();
-		clanName = readD() == 1;
-		name = readS();
-		sortBy = readD();
-		desc = readD() == 1;
-		page = readD();
+		_level = readD();
+		_karma = readD();
+		_clanName = readD() == 1;
+		_name = readS();
+		_sortBy = readD();
+		_desc = readD() == 1;
+		_page = readD();
 	}
 
 	@Override
@@ -57,6 +57,6 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExPledgeRecruitBoardSearch(level, karma, clanName, name, sortBy, desc, page));
+		sendPacket(new ExPledgeRecruitBoardSearch(_level, _karma, _clanName, _name, _sortBy, _desc, _page));
 	}
 }

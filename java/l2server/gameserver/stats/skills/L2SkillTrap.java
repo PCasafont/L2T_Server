@@ -27,14 +27,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2TrapInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
-import lombok.Getter;
 
 public class L2SkillTrap extends L2SkillSummon
 {
-	@Getter private int triggerSkillId = 0;
-	private int triggerSkillLvl = 0;
-	private int trapNpcId = 0;
-	protected L2Spawn trapSpawn;
+	private int _triggerSkillId = 0;
+	private int _triggerSkillLvl = 0;
+	private int _trapNpcId = 0;
+	protected L2Spawn _trapSpawn;
 
 	/**
 	 * @param set
@@ -42,9 +41,14 @@ public class L2SkillTrap extends L2SkillSummon
 	public L2SkillTrap(StatsSet set)
 	{
 		super(set);
-		triggerSkillId = set.getInteger("triggerSkillId");
-		triggerSkillLvl = set.getInteger("triggerSkillLvl");
-		trapNpcId = set.getInteger("trapNpcId");
+		_triggerSkillId = set.getInteger("triggerSkillId");
+		_triggerSkillLvl = set.getInteger("triggerSkillLvl");
+		_trapNpcId = set.getInteger("trapNpcId");
+	}
+
+	public int getTriggerSkillId()
+	{
+		return _triggerSkillId;
 	}
 
 	/**
@@ -58,7 +62,7 @@ public class L2SkillTrap extends L2SkillSummon
 			return;
 		}
 
-		if (trapNpcId == 0)
+		if (_trapNpcId == 0)
 		{
 			return;
 		}
@@ -75,7 +79,7 @@ public class L2SkillTrap extends L2SkillSummon
 			return;
 		}
 
-		if (triggerSkillId == 0 || triggerSkillLvl == 0)
+		if (_triggerSkillId == 0 || _triggerSkillLvl == 0)
 		{
 			return;
 		}
@@ -86,14 +90,14 @@ public class L2SkillTrap extends L2SkillSummon
 			trap.unSummon();
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(triggerSkillId, triggerSkillLvl);
+		L2Skill skill = SkillTable.getInstance().getInfo(_triggerSkillId, _triggerSkillLvl);
 
 		if (skill == null)
 		{
 			return;
 		}
 
-		L2NpcTemplate TrapTemplate = NpcTable.getInstance().getTemplate(trapNpcId);
+		L2NpcTemplate TrapTemplate = NpcTable.getInstance().getTemplate(_trapNpcId);
 		trap = new L2TrapInstance(IdFactory.getInstance().getNextId(), TrapTemplate, activeChar, getTotalLifeTime(),
 				skill);
 		trap.setCurrentHp(trap.getMaxHp());

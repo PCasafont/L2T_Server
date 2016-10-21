@@ -43,6 +43,7 @@ import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
  */
 public class L2AttackableAIScript extends QuestJython
 {
+
 	/**
 	 * This is used to register all monsters contained in mobs for a particular script<BR>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method register ID for all QuestEventTypes<BR>
@@ -210,6 +211,7 @@ public class L2AttackableAIScript extends QuestJython
 
 			//if (npc.isMinion() && ((L2MonsterInstance) npc).getLeader().isDead())
 			//	((L2MonsterInstance) npc).getLeader().getMinionList().deleteSpawnedMinions();
+
 		}
 		return null;
 	}

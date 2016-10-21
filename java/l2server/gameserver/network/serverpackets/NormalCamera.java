@@ -17,6 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 public class NormalCamera extends L2GameServerPacket
 {
+
 	public NormalCamera()
 	{
 	}

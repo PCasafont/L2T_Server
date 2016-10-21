@@ -1,7 +1,5 @@
 package l2server.gameserver.gui;
 
-import lombok.Getter;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,18 +10,18 @@ public class ServerGui
 {
 	public static JFrame Frame;
 
-	//private JMenuBar menuBar = new JMenuBar();
+	//private JMenuBar _menuBar = new JMenuBar();
 
-	//private JMenu fileMenu = new JMenu("File");
-	//private JMenu helpMenu = new JMenu("Help");
+	//private JMenu _fileMenu = new JMenu("File");
+	//private JMenu _helpMenu = new JMenu("Help");
 
-	//private ActionListener menuListener = new MenuActionListener();
+	//private ActionListener _menuListener = new MenuActionListener();
 
-	@Getter private static JTabbedPane tabPane = new JTabbedPane();
+	private static JTabbedPane _tabPane = new JTabbedPane();
 
-	@Getter private static ConsoleTab consoleTab;
+	private static ConsoleTab _consoleTab;
 
-	@Getter private static AdminTab adminTab;
+	private static AdminTab _adminTab;
 
 	public void init()
 	{
@@ -32,33 +30,33 @@ public class ServerGui
 		//Menu Bar Items
 		//File Menu
 		/*JMenuItem itemExit = new JMenuItem("Exit");
-		itemExit.setActionCommand("Exit");
-		itemExit.addActionListener(menuListener);
+        itemExit.setActionCommand("Exit");
+		itemExit.addActionListener(_menuListener);
 
-		fileMenu.add(itemExit);
+		_fileMenu.add(itemExit);
 
 		//Help
 		JMenuItem itemAbout = new JMenuItem("About");
 		itemAbout.setActionCommand("About");
-		itemAbout.addActionListener(menuListener);
-		helpMenu.add(itemAbout);
+		itemAbout.addActionListener(_menuListener);
+		_helpMenu.add(itemAbout);
 
-		menuBar.add(fileMenu);
-		menuBar.add(helpMenu);
-		frame.setJMenuBar(menuBar);*/
+		_menuBar.add(_fileMenu);
+		_menuBar.add(_helpMenu);
+		_frame.setJMenuBar(_menuBar);*/
 
 		// Console Tab
-		consoleTab = new ConsoleTab(true);
-		adminTab = new AdminTab();
+		_consoleTab = new ConsoleTab(true);
+		_adminTab = new AdminTab();
 
 		Frame.setLayout(new BorderLayout());
 		Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		tabPane.add("Console", consoleTab);
-		tabPane.add("Admin", adminTab);
+		_tabPane.add("Console", _consoleTab);
+		_tabPane.add("Admin", _adminTab);
 
 		//build the frame
-		Frame.add(tabPane, BorderLayout.CENTER);
+		Frame.add(_tabPane, BorderLayout.CENTER);
 
 		//add the window listeners
 		addListeners();
@@ -67,6 +65,11 @@ public class ServerGui
 		Frame.setMinimumSize(new Dimension(930, 700));
 		//_frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		Frame.setVisible(true);
+	}
+
+	public JTabbedPane getTabPane()
+	{
+		return _tabPane;
 	}
 
 	private void addListeners()
@@ -97,5 +100,15 @@ public class ServerGui
 	public JFrame getMainFrame()
 	{
 		return Frame;
+	}
+
+	public ConsoleTab getConsoleTab()
+	{
+		return _consoleTab;
+	}
+
+	public AdminTab getAdminTab()
+	{
+		return _adminTab;
 	}
 }

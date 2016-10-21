@@ -24,15 +24,16 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestShortCutDel extends L2GameClientPacket
 {
-	private int slot;
-	private int page;
+
+	private int _slot;
+	private int _page;
 
 	@Override
 	protected void readImpl()
 	{
 		int id = readD();
-		slot = id % 12;
-		page = id / 12;
+		_slot = id % 12;
+		_page = id / 12;
 	}
 
 	@Override
@@ -44,12 +45,12 @@ public final class RequestShortCutDel extends L2GameClientPacket
 			return;
 		}
 
-		if (page > 10 || page < 0)
+		if (_page > 10 || _page < 0)
 		{
 			return;
 		}
 
-		activeChar.deleteShortCut(slot, page);
+		activeChar.deleteShortCut(_slot, _page);
 		// client needs no confirmation. this packet is just to inform the server
 	}
 

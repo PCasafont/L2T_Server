@@ -26,6 +26,7 @@ import java.util.concurrent.ScheduledFuture;
  */
 public abstract class Task
 {
+
 	public void initialize()
 	{
 		if (Config.DEBUG)

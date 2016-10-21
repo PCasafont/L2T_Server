@@ -12,7 +12,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,30 +24,30 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventsMatchMaker
 {
-	public static EventsMatchMaker instance = null;
+	public static EventsMatchMaker _instance = null;
 
-	@Getter private MatchMakingTask pvpTask;
-	@Getter private MatchMakingTask specialTask;
+	private MatchMakingTask _pvpTask;
+	private MatchMakingTask _specialTask;
 	public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<>();
-	private int nextInstanceId = 1;
+	private int _nextInstanceId = 1;
 
 	public static EventsMatchMaker getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new EventsMatchMaker();
+			_instance = new EventsMatchMaker();
 		}
-		return instance;
+		return _instance;
 	}
 
 	public void start()
 	{
 		if (Config.INSTANCED_EVENT_ENABLED)
 		{
-			pvpTask = new MatchMakingTask(true);
-			specialTask = new MatchMakingTask(false);
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(pvpTask, 60000L, 10000L);
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(specialTask, 60000L, 10000L);
+			_pvpTask = new MatchMakingTask(true);
+			_specialTask = new MatchMakingTask(false);
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(_pvpTask, 60000L, 10000L);
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(_specialTask, 60000L, 10000L);
 			Log.info("Instanced Events scheduled.");
 		}
 		else
@@ -57,18 +56,28 @@ public class EventsMatchMaker
 		}
 	}
 
+	public MatchMakingTask getPvpTask()
+	{
+		return _pvpTask;
+	}
+
+	public MatchMakingTask getSpecialTask()
+	{
+		return _specialTask;
+	}
+
 	class MatchMakingTask implements Runnable
 	{
-		private boolean pvp = true;
-		@Getter private EventConfig currentConfig = null;
-		@Getter private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
-		private int prepareAttempts = 0;
-		@Getter private int fillProgress = 0;
+		private boolean _pvp = true;
+		private EventConfig _currentConfig = null;
+		private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<>();
+		private int _prepareAttempts = 0;
+		private int _fillProgress = 0;
 
 		MatchMakingTask(boolean pvp)
 		{
-			this.pvp = pvp;
-			currentConfig = new EventConfig(this.pvp);
+			_pvp = pvp;
+			_currentConfig = new EventConfig(_pvp);
 		}
 
 		@Override
@@ -107,17 +116,32 @@ public class EventsMatchMaker
 			}
 		}
 
+		public EventConfig getCurrentConfig()
+		{
+			return _currentConfig;
+		}
+
+		public Map<Integer, L2PcInstance> getRegisteredPlayers()
+		{
+			return _registeredPlayers;
+		}
+
+		public int getFillProgress()
+		{
+			return _fillProgress;
+		}
+
 		private boolean prepare()
 		{
-			if (registeredPlayers.isEmpty())
+			if (_registeredPlayers.isEmpty())
 			{
 				return false;
 			}
 
 			// First sort the registered players
-			int[][] sorted = new int[registeredPlayers.size()][2];
+			int[][] sorted = new int[_registeredPlayers.size()][2];
 			int i = 0;
-			for (L2PcInstance player : registeredPlayers.values())
+			for (L2PcInstance player : _registeredPlayers.values())
 			{
 				if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
 						player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
@@ -157,22 +181,22 @@ public class EventsMatchMaker
 			int bestFillProgress = 0;
 			while (i < sorted.length)
 			{
-				group = new int[currentConfig.getLocation().getMaxPlayers()];
+				group = new int[_currentConfig.getLocation().getMaxPlayers()];
 				int points = sorted[i][1];
 				int j = 0;
-				while (i + j < sorted.length && (j < currentConfig.getMinPlayers() ||
-						j < currentConfig.getLocation().getMaxPlayers() &&
-								(points - sorted[i + j][1] < 15000 || currentConfig.hasNoLevelLimits())))
+				while (i + j < sorted.length && (j < _currentConfig.getMinPlayers() ||
+						j < _currentConfig.getLocation().getMaxPlayers() &&
+								(points - sorted[i + j][1] < 15000 || _currentConfig.hasNoLevelLimits())))
 				{
 					group[j] = sorted[i + j][0];
 					j++;
 				}
 
-				int minPlayers = currentConfig.getMinPlayers();
-				if (prepareAttempts < 100)
+				int minPlayers = _currentConfig.getMinPlayers();
+				if (_prepareAttempts < 100)
 				{
-					minPlayers += (currentConfig.getLocation().getMaxPlayers() - currentConfig.getMinPlayers()) *
-							(100 - prepareAttempts) / 100;
+					minPlayers += (_currentConfig.getLocation().getMaxPlayers() - _currentConfig.getMinPlayers()) *
+							(100 - _prepareAttempts) / 100;
 				}
 
 				if (j >= minPlayers)
@@ -190,28 +214,28 @@ public class EventsMatchMaker
 				i += j;
 			}
 
-			fillProgress = bestFillProgress;
+			_fillProgress = bestFillProgress;
 
 			// And finally create the event instances according to the generated groups
 			if (group != null)
 			{
-				EventInstance ei = createInstance(nextInstanceId++, group, currentConfig);
+				EventInstance ei = createInstance(_nextInstanceId++, group, _currentConfig);
 				if (ei != null)
 				{
 					Instances.put(ei.getId(), ei);
-					currentConfig = new EventConfig(pvp);
-					prepareAttempts = 0;
-					fillProgress = 0;
-					String type = pvp ? "PvP" : "special";
+					_currentConfig = new EventConfig(_pvp);
+					_prepareAttempts = 0;
+					_fillProgress = 0;
+					String type = _pvp ? "PvP" : "special";
 					Announcements.getInstance().announceToAll(
 							"The " + type + " event has been set up to start. The next event will be a " +
-									currentConfig.getEventString() + ". Type .event to join.");
+									_currentConfig.getEventString() + ". Type .event to join.");
 
 					for (EventTeam team : ei.getTeams())
 					{
 						for (int memberId : team.getParticipatedPlayers().keySet())
 						{
-							registeredPlayers.remove(memberId);
+							_registeredPlayers.remove(memberId);
 						}
 					}
 				}
@@ -219,18 +243,18 @@ public class EventsMatchMaker
 				return true;
 			}
 
-			prepareAttempts++;
+			_prepareAttempts++;
 
-			if (prepareAttempts > 200)
+			if (_prepareAttempts > 200)
 			{
-				currentConfig = new EventConfig(pvp);
-				prepareAttempts = 0;
-				fillProgress = 0;
-				String type = pvp ? "PvP" : "special";
+				_currentConfig = new EventConfig(_pvp);
+				_prepareAttempts = 0;
+				_fillProgress = 0;
+				String type = _pvp ? "PvP" : "special";
 				Announcements.getInstance().announceToAll(
 						"The " + type + " event couldn't start after almost an hour waiting, shuffling configuration.");
 				Announcements.getInstance().announceToAll(
-						"The new " + type + " event will be a " + currentConfig.getEventString() +
+						"The new " + type + " event will be a " + _currentConfig.getEventString() +
 								". Type .event to join.");
 			}
 
@@ -351,11 +375,11 @@ public class EventsMatchMaker
 
 		if (pvp)
 		{
-			pvpTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
+			_pvpTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
 		}
 		else
 		{
-			specialTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
+			_specialTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
 		}
 
 		return true;
@@ -382,8 +406,8 @@ public class EventsMatchMaker
 
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if (pvpTask.getRegisteredPlayers().remove(playerObjectId) != null ||
-				specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
+		if (_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null ||
+				_specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
 		{
 			return true;
 		}
@@ -426,7 +450,7 @@ public class EventsMatchMaker
 		a = a.replace("%pvpEventId%", String.valueOf(getInstance().getPvpTask().getCurrentConfig().getEventImageId()));
 		a = a.replace("%pvpInfoLink%", String.valueOf(getInstance().getPvpTask().getCurrentConfig().getType()));
 
-		if (pvpTask.getRegisteredPlayers().isEmpty())
+		if (_pvpTask.getRegisteredPlayers().isEmpty())
 		{
 			a = a.replace("%pvpEventPlayers%", "");
 			a = a.replace("Registred Players At PvP Event", "");
@@ -445,7 +469,7 @@ public class EventsMatchMaker
 				String.valueOf(getInstance().getSpecialTask().getCurrentConfig().getEventImageId()));
 		a = a.replace("%specialInfoLink%", String.valueOf(getInstance().getSpecialTask().getCurrentConfig().getType()));
 
-		if (specialTask.getRegisteredPlayers().isEmpty())
+		if (_specialTask.getRegisteredPlayers().isEmpty())
 		{
 			a = a.replace("%specialEventPlayers%", "");
 			a = a.replace("Registred Players At Special Event", "");
@@ -535,12 +559,12 @@ public class EventsMatchMaker
 	{
 		String a = "";
 
-		if (pvpTask.getRegisteredPlayers().isEmpty())
+		if (_pvpTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
 
-		for (L2PcInstance participant : pvpTask.getRegisteredPlayers().values())
+		for (L2PcInstance participant : _pvpTask.getRegisteredPlayers().values())
 		{
 			if (participant == null)
 			{
@@ -561,12 +585,12 @@ public class EventsMatchMaker
 	{
 		String a = "";
 
-		if (specialTask.getRegisteredPlayers().isEmpty())
+		if (_specialTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
 
-		for (L2PcInstance participant : specialTask.getRegisteredPlayers().values())
+		for (L2PcInstance participant : _specialTask.getRegisteredPlayers().values())
 		{
 			if (participant == null)
 			{
@@ -672,8 +696,8 @@ public class EventsMatchMaker
 
 	public boolean isPlayerParticipant(int playerObjectId)
 	{
-		if (pvpTask.getRegisteredPlayers().containsKey(playerObjectId) ||
-				specialTask.getRegisteredPlayers().containsKey(playerObjectId))
+		if (_pvpTask.getRegisteredPlayers().containsKey(playerObjectId) ||
+				_specialTask.getRegisteredPlayers().containsKey(playerObjectId))
 		{
 			return true;
 		}
@@ -749,7 +773,7 @@ public class EventsMatchMaker
 			return false;
 		}
 
-		for (L2PcInstance registered : pvpTask.getRegisteredPlayers().values())
+		for (L2PcInstance registered : _pvpTask.getRegisteredPlayers().values())
 		{
 			if (registered == null)
 			{
@@ -763,7 +787,7 @@ public class EventsMatchMaker
 			}
 		}
 
-		for (L2PcInstance registered : specialTask.getRegisteredPlayers().values())
+		for (L2PcInstance registered : _specialTask.getRegisteredPlayers().values())
 		{
 			if (registered == null)
 			{
@@ -781,7 +805,7 @@ public class EventsMatchMaker
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
 		/*String hwId = player.getClient().getHWId();
-		for (L2PcInstance registered : registeredPlayers.values())
+        for (L2PcInstance registered : _registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -793,26 +817,26 @@ public class EventsMatchMaker
 
 	/**
 	 * @param activeChar
-	 * @param command
+	 * @param _command
 	 */
-	public void handleEventBypass(L2PcInstance activeChar, String command)
+	public void handleEventBypass(L2PcInstance activeChar, String _command)
 	{
 		if (activeChar == null)
 		{
 			return;
 		}
 
-		if (command.startsWith("TenkaiEventJoin"))
+		if (_command.startsWith("TenkaiEventJoin"))
 		{
-			join(activeChar, Boolean.parseBoolean(command.split(" ", 0)[1]));
+			join(activeChar, Boolean.parseBoolean(_command.split(" ", 0)[1]));
 		}
-		else if (command.equals("TenkaiEventLeave"))
+		else if (_command.equals("TenkaiEventLeave"))
 		{
 			leave(activeChar);
 		}
-		else if (command.startsWith("TenkaiEventObserve"))
+		else if (_command.startsWith("TenkaiEventObserve"))
 		{
-			int eventId = Integer.valueOf(command.substring(19));
+			int eventId = Integer.valueOf(_command.substring(19));
 
 			if (Instances.get(eventId) != null)
 			{
@@ -820,15 +844,15 @@ public class EventsMatchMaker
 			}
 		}
 
-		/*else if (command.startsWith("TenkaiEventParticipation"))
+		/*else if (_command.startsWith("TenkaiEventParticipation"))
 		{
-			int eventId = Integer.valueOf(command.substring(25));
+			int eventId = Integer.valueOf(_command.substring(25));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).join(activeChar);
 		}
-		else if (command.startsWith("TenkaiEventStatus"))
+		else if (_command.startsWith("TenkaiEventStatus"))
 		{
-			int eventId = Integer.valueOf(command.substring(18));
+			int eventId = Integer.valueOf(_command.substring(18));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).eventInfo(activeChar);
 		}*/

@@ -26,21 +26,24 @@ import java.util.ArrayList;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 {
-	@SuppressWarnings("unused") private final L2PcInstance activeChar;
-	@SuppressWarnings("unused") private int page;
-	private int minlvl;
-	private int maxlvl;
-	@SuppressWarnings("unused") private int mode;
-	private ArrayList<L2PcInstance> members;
+	@SuppressWarnings("unused")
+	private final L2PcInstance _activeChar;
+	@SuppressWarnings("unused")
+	private int _page;
+	private int _minlvl;
+	private int _maxlvl;
+	@SuppressWarnings("unused")
+	private int _mode;
+	private ArrayList<L2PcInstance> _members;
 
 	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
 	{
-		activeChar = player;
-		this.page = page;
-		this.minlvl = minlvl;
-		this.maxlvl = maxlvl;
-		this.mode = mode;
-		members = new ArrayList<>();
+		_activeChar = player;
+		_page = page;
+		_minlvl = minlvl;
+		_maxlvl = maxlvl;
+		_mode = mode;
+		_members = new ArrayList<>();
 		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
 		{
 			if (cha == null)
@@ -54,28 +57,28 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 				continue;
 			}
 
-			if (cha.getLevel() < this.minlvl || cha.getLevel() > maxlvl)
+			if (cha.getLevel() < _minlvl || cha.getLevel() > _maxlvl)
 			{
 				continue;
 			}
 
-			members.add(cha);
+			_members.add(cha);
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		/*if (mode == 0)
-		{
+		/*if (_mode == 0)
+        {
 			writeD(0);
 			writeD(0);
 			return;
 		}*/
 
-		writeD(members.size());
-		writeD(members.size());
-		for (L2PcInstance member : members)
+		writeD(_members.size());
+		writeD(_members.size());
+		for (L2PcInstance member : _members)
 		{
 			writeS(member.getName());
 			writeD(member.getClassId());

@@ -25,7 +25,7 @@ import java.util.ArrayList;
  */
 public class ConditionPlayerClassIdRestriction extends Condition
 {
-	private final ArrayList<Integer> classIds;
+	private final ArrayList<Integer> _classIds;
 
 	/**
 	 * Instantiates a new condition player class id restriction.
@@ -34,7 +34,7 @@ public class ConditionPlayerClassIdRestriction extends Condition
 	 */
 	public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId)
 	{
-		classIds = classId;
+		_classIds = classId;
 	}
 
 	/* (non-Javadoc)
@@ -47,6 +47,6 @@ public class ConditionPlayerClassIdRestriction extends Condition
 		{
 			return false;
 		}
-		return classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
+		return _classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
 	}
 }

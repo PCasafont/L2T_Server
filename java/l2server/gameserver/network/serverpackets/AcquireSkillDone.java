@@ -23,6 +23,7 @@ public class AcquireSkillDone extends L2GameServerPacket
 {
 	public AcquireSkillDone()
 	{
+
 	}
 
 	@Override

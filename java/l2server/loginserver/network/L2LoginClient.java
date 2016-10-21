@@ -30,8 +30,6 @@ import l2server.network.SendablePacket;
 import l2server.util.Rnd;
 import l2server.util.crypt.LoginCrypt;
 import l2server.util.crypt.ScrambledKeyPair;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -47,28 +45,29 @@ import java.util.Map;
  */
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 {
+
 	public enum LoginClientState
 	{
 		CONNECTED, AUTHED_GG, AUTHED_LOGIN
 	}
 
-	@Getter @Setter private LoginClientState state;
+	private LoginClientState _state;
 
 	// Crypt
-	private LoginCrypt loginCrypt;
-	private ScrambledKeyPair scrambledPair;
-	@Getter private byte[] blowfishKey;
+	private LoginCrypt _loginCrypt;
+	private ScrambledKeyPair _scrambledPair;
+	private byte[] _blowfishKey;
 
-	@Getter @Setter private String account;
-	@Getter @Setter private int accessLevel;
-	@Getter @Setter private int lastServer;
-	@Getter @Setter private SessionKey sessionKey;
-	public int sessionId;
-	private boolean joinedGS;
-	private Map<Integer, Integer> charsOnServers;
-	private Map<Integer, long[]> charsToDelete;
+	private String _account;
+	private int _accessLevel;
+	private int _lastServer;
+	private SessionKey _sessionKey;
+	public int _sessionId;
+	private boolean _joinedGS;
+	private Map<Integer, Integer> _charsOnServers;
+	private Map<Integer, long[]> _charsToDelete;
 
-	@Getter private long connectionStartTime;
+	private long _connectionStartTime;
 
 	/**
 	 * @param con
@@ -76,13 +75,13 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 	public L2LoginClient(MMOConnection<L2LoginClient> con)
 	{
 		super(con);
-		state = LoginClientState.CONNECTED;
-		scrambledPair = LoginController.getInstance().getScrambledRSAKeyPair();
-		blowfishKey = LoginController.getInstance().getBlowfishKey();
-		sessionId = Rnd.nextInt();
-		connectionStartTime = System.currentTimeMillis();
-		loginCrypt = new LoginCrypt();
-		loginCrypt.setKey(blowfishKey);
+		_state = LoginClientState.CONNECTED;
+		_scrambledPair = LoginController.getInstance().getScrambledRSAKeyPair();
+		_blowfishKey = LoginController.getInstance().getBlowfishKey();
+		_sessionId = Rnd.nextInt();
+		_connectionStartTime = System.currentTimeMillis();
+		_loginCrypt = new LoginCrypt();
+		_loginCrypt.setKey(_blowfishKey);
 	}
 
 	@Override
@@ -91,7 +90,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		boolean ret = false;
 		try
 		{
-			ret = loginCrypt.decrypt(buf.array(), buf.position(), size);
+			ret = _loginCrypt.decrypt(buf.array(), buf.position(), size);
 		}
 		catch (IOException e)
 		{
@@ -120,7 +119,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		final int offset = buf.position();
 		try
 		{
-			size = loginCrypt.encrypt(buf.array(), offset, size);
+			size = _loginCrypt.encrypt(buf.array(), offset, size);
 		}
 		catch (IOException e)
 		{
@@ -132,29 +131,89 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		return true;
 	}
 
+	public LoginClientState getState()
+	{
+		return _state;
+	}
+
+	public void setState(LoginClientState state)
+	{
+		_state = state;
+	}
+
+	public byte[] getBlowfishKey()
+	{
+		return _blowfishKey;
+	}
+
 	public byte[] getScrambledModulus()
 	{
-		return scrambledPair.scrambledModulus;
+		return _scrambledPair._scrambledModulus;
 	}
 
 	public RSAPrivateKey getRSAPrivateKey()
 	{
-		return (RSAPrivateKey) scrambledPair.pair.getPrivate();
+		return (RSAPrivateKey) _scrambledPair._pair.getPrivate();
+	}
+
+	public String getAccount()
+	{
+		return _account;
+	}
+
+	public void setAccount(String account)
+	{
+		_account = account;
+	}
+
+	public void setAccessLevel(int accessLevel)
+	{
+		_accessLevel = accessLevel;
+	}
+
+	public int getAccessLevel()
+	{
+		return _accessLevel;
+	}
+
+	public void setLastServer(int lastServer)
+	{
+		_lastServer = lastServer;
+	}
+
+	public int getLastServer()
+	{
+		return _lastServer;
 	}
 
 	public int getSessionId()
 	{
-		return sessionId;
+		return _sessionId;
 	}
 
 	public boolean hasJoinedGS()
 	{
-		return joinedGS;
+		return _joinedGS;
 	}
 
 	public void setJoinedGS(boolean val)
 	{
-		joinedGS = val;
+		_joinedGS = val;
+	}
+
+	public void setSessionKey(SessionKey sessionKey)
+	{
+		_sessionKey = sessionKey;
+	}
+
+	public SessionKey getSessionKey()
+	{
+		return _sessionKey;
+	}
+
+	public long getConnectionStartTime()
+	{
+		return _connectionStartTime;
 	}
 
 	public void sendPacket(L2LoginServerPacket lsp)
@@ -179,30 +238,30 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	public void setCharsOnServ(int servId, int chars)
 	{
-		if (charsOnServers == null)
+		if (_charsOnServers == null)
 		{
-			charsOnServers = new HashMap<>();
+			_charsOnServers = new HashMap<>();
 		}
-		charsOnServers.put(servId, chars);
+		_charsOnServers.put(servId, chars);
 	}
 
 	public Map<Integer, Integer> getCharsOnServ()
 	{
-		return charsOnServers;
+		return _charsOnServers;
 	}
 
 	public void serCharsWaitingDelOnServ(int servId, long[] charsToDel)
 	{
-		if (charsToDelete == null)
+		if (_charsToDelete == null)
 		{
-			charsToDelete = new HashMap<>();
+			_charsToDelete = new HashMap<>();
 		}
-		charsToDelete.put(servId, charsToDel);
+		_charsToDelete.put(servId, charsToDel);
 	}
 
 	public Map<Integer, long[]> getCharsWaitingDelOnServ()
 	{
-		return charsToDelete;
+		return _charsToDelete;
 	}
 
 	@Override
@@ -218,7 +277,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 			LoginController.getInstance().removeAuthedLoginClient(getAccount());
 		}
 		/*ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-		{
+        {
 			public void run()
 			{
 				LoginController.getInstance().removeAuthedLoginClient(getAccount());

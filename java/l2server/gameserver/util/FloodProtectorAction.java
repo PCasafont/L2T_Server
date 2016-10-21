@@ -29,31 +29,36 @@ import java.util.logging.Level;
  */
 public final class FloodProtectorAction
 {
+
+    /*
+	  Logger
+     */
+
 	/**
 	 * Client for this instance of flood protector.
 	 */
-	private final L2GameClient client;
+	private final L2GameClient _client;
 	/**
 	 * Configuration of this instance of flood protector.
 	 */
-	private final FloodProtectorConfig config;
+	private final FloodProtectorConfig _config;
 	/**
 	 * Next game tick when new request is allowed.
 	 */
-	private volatile int nextGameTick = TimeController.getGameTicks();
+	private volatile int _nextGameTick = TimeController.getGameTicks();
 	/**
 	 * Request counter.
 	 */
-	private AtomicInteger count = new AtomicInteger(0);
+	private AtomicInteger _count = new AtomicInteger(0);
 	/**
 	 * Flag determining whether exceeding request has been logged.
 	 */
-	private boolean logged;
+	private boolean _logged;
 	/**
 	 * Flag determining whether punishment application is in progress so that we do not apply
 	 * punisment multiple times (flooding).
 	 */
-	private volatile boolean punishmentInProgress;
+	private volatile boolean _punishmentInProgress;
 
 	/**
 	 * Creates new instance of FloodProtectorAction.
@@ -63,8 +68,8 @@ public final class FloodProtectorAction
 	public FloodProtectorAction(final L2GameClient client, final FloodProtectorConfig config)
 	{
 		super();
-		this.client = client;
-		this.config = config;
+		_client = client;
+		_config = config;
 	}
 
 	/**
@@ -77,54 +82,54 @@ public final class FloodProtectorAction
 	{
 		final int curTick = TimeController.getGameTicks();
 
-		if (curTick < nextGameTick || punishmentInProgress)
+		if (curTick < _nextGameTick || _punishmentInProgress)
 		{
-			if (config.LOG_FLOODING && !logged && Log.isLoggable(Level.WARNING))
+			if (_config.LOG_FLOODING && !_logged && Log.isLoggable(Level.WARNING))
 			{
 				log(" called command ", command, " ~", String.valueOf(
-						(config.FLOOD_PROTECTION_INTERVAL - (nextGameTick - curTick)) * TimeController.MILLIS_IN_TICK),
-						" ms after previous command");
-				logged = true;
+						(_config.FLOOD_PROTECTION_INTERVAL - (_nextGameTick - curTick)) *
+								TimeController.MILLIS_IN_TICK), " ms after previous command");
+				_logged = true;
 			}
 
-			count.incrementAndGet();
+			_count.incrementAndGet();
 
-			if (!punishmentInProgress && config.PUNISHMENT_LIMIT > 0 && count.get() >= config.PUNISHMENT_LIMIT &&
-					config.PUNISHMENT_TYPE != null)
+			if (!_punishmentInProgress && _config.PUNISHMENT_LIMIT > 0 && _count.get() >= _config.PUNISHMENT_LIMIT &&
+					_config.PUNISHMENT_TYPE != null)
 			{
-				punishmentInProgress = true;
+				_punishmentInProgress = true;
 
-				if ("kick".equals(config.PUNISHMENT_TYPE))
+				if ("kick".equals(_config.PUNISHMENT_TYPE))
 				{
 					kickPlayer();
 				}
-				else if ("ban".equals(config.PUNISHMENT_TYPE))
+				else if ("ban".equals(_config.PUNISHMENT_TYPE))
 				{
 					banAccount();
 				}
-				else if ("jail".equals(config.PUNISHMENT_TYPE))
+				else if ("jail".equals(_config.PUNISHMENT_TYPE))
 				{
 					jailChar();
 				}
 
-				punishmentInProgress = false;
+				_punishmentInProgress = false;
 			}
 
 			return false;
 		}
 
-		if (count.get() > 0)
+		if (_count.get() > 0)
 		{
-			if (config.LOG_FLOODING && Log.isLoggable(Level.WARNING))
+			if (_config.LOG_FLOODING && Log.isLoggable(Level.WARNING))
 			{
-				log(" issued ", String.valueOf(count), " extra requests within ~",
-						String.valueOf(config.FLOOD_PROTECTION_INTERVAL * TimeController.MILLIS_IN_TICK), " ms");
+				log(" issued ", String.valueOf(_count), " extra requests within ~",
+						String.valueOf(_config.FLOOD_PROTECTION_INTERVAL * TimeController.MILLIS_IN_TICK), " ms");
 			}
 		}
 
-		nextGameTick = curTick + config.FLOOD_PROTECTION_INTERVAL;
-		logged = false;
-		count.set(0);
+		_nextGameTick = curTick + _config.FLOOD_PROTECTION_INTERVAL;
+		_logged = false;
+		_count.set(0);
 
 		return true;
 	}
@@ -134,13 +139,13 @@ public final class FloodProtectorAction
 	 */
 	private void kickPlayer()
 	{
-		if (client.getActiveChar() != null)
+		if (_client.getActiveChar() != null)
 		{
-			client.getActiveChar().logout(false);
+			_client.getActiveChar().logout(false);
 		}
 		else
 		{
-			client.closeNow();
+			_client.closeNow();
 		}
 
 		if (Log.isLoggable(Level.WARNING))
@@ -154,17 +159,17 @@ public final class FloodProtectorAction
 	 */
 	private void banAccount()
 	{
-		if (client.getActiveChar() != null)
+		if (_client.getActiveChar() != null)
 		{
-			client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.ACC, config.PUNISHMENT_TIME);
+			_client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.ACC, _config.PUNISHMENT_TIME);
 
 			if (Log.isLoggable(Level.WARNING))
 			{
 				log(" banned for flooding ",
-						config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + config.PUNISHMENT_TIME + " mins");
+						_config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + _config.PUNISHMENT_TIME + " mins");
 			}
 
-			client.getActiveChar().logout();
+			_client.getActiveChar().logout();
 		}
 		else
 		{
@@ -177,14 +182,14 @@ public final class FloodProtectorAction
 	 */
 	private void jailChar()
 	{
-		if (client.getActiveChar() != null)
+		if (_client.getActiveChar() != null)
 		{
-			client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.JAIL, config.PUNISHMENT_TIME);
+			_client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.JAIL, _config.PUNISHMENT_TIME);
 
 			if (Log.isLoggable(Level.WARNING))
 			{
 				log(" jailed for flooding ",
-						config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + config.PUNISHMENT_TIME + " mins");
+						_config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + _config.PUNISHMENT_TIME + " mins");
 			}
 		}
 		else
@@ -195,13 +200,13 @@ public final class FloodProtectorAction
 
 	private void log(String... lines)
 	{
-		final StringBuilder output = StringUtil.startAppend(100, config.FLOOD_PROTECTOR_TYPE, ": ");
+		final StringBuilder output = StringUtil.startAppend(100, _config.FLOOD_PROTECTOR_TYPE, ": ");
 		String address = null;
 		try
 		{
-			if (!client.isDetached())
+			if (!_client.isDetached())
 			{
-				address = client.getConnection().getInetAddress().getHostAddress();
+				address = _client.getConnection().getInetAddress().getHostAddress();
 			}
 		}
 		catch (Exception e)
@@ -209,18 +214,18 @@ public final class FloodProtectorAction
 			e.printStackTrace();
 		}
 
-		switch (client.getState())
+		switch (_client.getState())
 		{
 			case IN_GAME:
-				if (client.getActiveChar() != null)
+				if (_client.getActiveChar() != null)
 				{
-					StringUtil.append(output, client.getActiveChar().getName());
-					StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()), ") ");
+					StringUtil.append(output, _client.getActiveChar().getName());
+					StringUtil.append(output, "(", String.valueOf(_client.getActiveChar().getObjectId()), ") ");
 				}
 			case AUTHED:
-				if (client.getAccountName() != null)
+				if (_client.getAccountName() != null)
 				{
-					StringUtil.append(output, client.getAccountName(), " ");
+					StringUtil.append(output, _client.getAccountName(), " ");
 				}
 			case CONNECTED:
 				if (address != null)

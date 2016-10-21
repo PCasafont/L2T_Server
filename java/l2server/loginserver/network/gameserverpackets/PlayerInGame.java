@@ -26,6 +26,7 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class PlayerInGame extends BaseRecievePacket
 {
+
 	/**
 	 * @param decrypt
 	 */

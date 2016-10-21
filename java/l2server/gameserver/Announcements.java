@@ -42,8 +42,9 @@ import java.util.logging.Level;
  */
 public class Announcements
 {
-	private List<String> announcements = new ArrayList<>();
-	private List<List<Object>> eventAnnouncements = new ArrayList<>();
+
+	private List<String> _announcements = new ArrayList<>();
+	private List<List<Object>> _eventAnnouncements = new ArrayList<>();
 
 	private Announcements()
 	{
@@ -52,12 +53,12 @@ public class Announcements
 
 	public static Announcements getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void loadAnnouncements()
 	{
-		announcements.clear();
+		_announcements.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/announcements.txt");
 		if (file.exists())
@@ -80,13 +81,13 @@ public class Announcements
 
 	public void showAnnouncements(L2PcInstance activeChar)
 	{
-		for (String announcement : announcements)
+		for (String _announcement : _announcements)
 		{
-			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), announcement);
+			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), _announcement);
 			activeChar.sendPacket(cs);
 		}
 
-		for (List<Object> entry : eventAnnouncements)
+		for (List<Object> entry : _eventAnnouncements)
 		{
 			DateRange validDateRange = (DateRange) entry.get(0);
 			String[] msg = (String[]) entry.get(1);
@@ -109,7 +110,7 @@ public class Announcements
 		List<Object> entry = new ArrayList<>();
 		entry.add(validDateRange);
 		entry.add(msg);
-		eventAnnouncements.add(entry);
+		_eventAnnouncements.add(entry);
 	}
 
 	public void listAnnouncements(L2PcInstance activeChar)
@@ -118,9 +119,9 @@ public class Announcements
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);
 		final StringBuilder replyMSG = StringUtil.startAppend(500, "<br>");
-		for (int i = 0; i < announcements.size(); i++)
+		for (int i = 0; i < _announcements.size(); i++)
 		{
-			StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", announcements.get(i),
+			StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", _announcements.get(i),
 					"</td><td width=40>" + "<button value=\"Delete\" action=\"bypass -h admin_del_announcement ",
 					String.valueOf(i),
 					"\" width=60 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
@@ -131,13 +132,13 @@ public class Announcements
 
 	public void addAnnouncement(String text)
 	{
-		announcements.add(text);
+		_announcements.add(text);
 		saveToDisk();
 	}
 
 	public void delAnnouncement(int line)
 	{
-		announcements.remove(line);
+		_announcements.remove(line);
 		saveToDisk();
 	}
 
@@ -155,7 +156,7 @@ public class Announcements
 				if (st.hasMoreTokens())
 				{
 					String announcement = st.nextToken();
-					announcements.add(announcement);
+					_announcements.add(announcement);
 
 					i++;
 				}
@@ -191,9 +192,9 @@ public class Announcements
 		try
 		{
 			save = new FileWriter(file);
-			for (String announcement : announcements)
+			for (String _announcement : _announcements)
 			{
-				save.write(announcement);
+				save.write(_announcement);
 				save.write("\r\n");
 			}
 		}
@@ -236,7 +237,7 @@ public class Announcements
 		{
 			// Announce string to everyone on server
 			String text = command.substring(lengthToTrim);
-			SingletonHolder.instance.announceToAll(text);
+			SingletonHolder._instance.announceToAll(text);
 		}
 
 		// No body cares!
@@ -249,6 +250,6 @@ public class Announcements
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final Announcements instance = new Announcements();
+		protected static final Announcements _instance = new Announcements();
 	}
 }

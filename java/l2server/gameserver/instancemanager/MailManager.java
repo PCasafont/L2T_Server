@@ -41,11 +41,11 @@ import java.util.logging.Level;
  */
 public class MailManager
 {
-	private Map<Integer, Message> messages = new ConcurrentHashMap<>();
+	private Map<Integer, Message> _messages = new ConcurrentHashMap<>();
 
 	public static MailManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private MailManager()
@@ -69,10 +69,11 @@ public class MailManager
 			ResultSet rset1 = stmt1.executeQuery();
 			while (rset1.next())
 			{
+
 				Message msg = new Message(rset1);
 
 				int msgId = msg.getId();
-				messages.put(msgId, msg);
+				_messages.put(msgId, msg);
 
 				readed++;
 
@@ -104,13 +105,13 @@ public class MailManager
 
 	public final Message getMessage(int msgId)
 	{
-		return messages.get(msgId);
+		return _messages.get(msgId);
 	}
 
 	public final boolean hasUnreadPost(L2PcInstance player)
 	{
 		final int objectId = player.getObjectId();
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getReceiverId() == objectId && msg.isUnread())
 			{
@@ -123,7 +124,7 @@ public class MailManager
 	public final int getUnreadInboxSize(int objectId)
 	{
 		int size = 0;
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver() && msg.isUnread())
 			{
@@ -136,7 +137,7 @@ public class MailManager
 	public final int getInboxSize(int objectId)
 	{
 		int size = 0;
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 			{
@@ -149,7 +150,7 @@ public class MailManager
 	public final int getOutboxSize(int objectId)
 	{
 		int size = 0;
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 			{
@@ -162,7 +163,7 @@ public class MailManager
 	public final List<Message> getInbox(int objectId)
 	{
 		List<Message> inbox = new ArrayList<>();
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 			{
@@ -175,7 +176,7 @@ public class MailManager
 	public final List<Message> getOutbox(int objectId)
 	{
 		List<Message> outbox = new ArrayList<>();
-		for (Message msg : messages.values())
+		for (Message msg : _messages.values())
 		{
 			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 			{
@@ -187,7 +188,7 @@ public class MailManager
 
 	public void sendMessage(Message msg)
 	{
-		messages.put(msg.getId(), msg);
+		_messages.put(msg.getId(), msg);
 
 		Connection con = null;
 		PreparedStatement stmt = null;
@@ -219,17 +220,17 @@ public class MailManager
 
 	class MessageDeletionTask implements Runnable
 	{
-		final int msgId;
+		final int _msgId;
 
 		public MessageDeletionTask(int msgId)
 		{
-			this.msgId = msgId;
+			_msgId = msgId;
 		}
 
 		@Override
 		public void run()
 		{
-			final Message msg = getMessage(msgId);
+			final Message msg = getMessage(_msgId);
 			if (msg == null)
 			{
 				return;
@@ -391,13 +392,13 @@ public class MailManager
 			L2DatabaseFactory.close(con);
 		}
 
-		messages.remove(msgId);
+		_messages.remove(msgId);
 		IdFactory.getInstance().releaseId(msgId);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MailManager instance = new MailManager();
+		protected static final MailManager _instance = new MailManager();
 	}
 }

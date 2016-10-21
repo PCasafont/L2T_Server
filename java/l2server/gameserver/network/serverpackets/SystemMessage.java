@@ -33,7 +33,6 @@ import l2server.gameserver.network.SystemMessageId.SMLocalisation;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.io.PrintStream;
 import java.util.Arrays;
@@ -41,37 +40,48 @@ import java.util.logging.Level;
 
 public final class SystemMessage extends L2GameServerPacket
 {
+
 	private static final SMParam[] EMPTY_PARAM_ARRAY = new SMParam[0];
 
 	private static final class SMParam
 	{
-		@Getter private final byte type;
-		@Getter private final Object value;
+		private final byte _type;
+		private final Object _value;
 
 		public SMParam(final byte type, final Object value)
 		{
-			this.type = type;
-			this.value = value;
+			_type = type;
+			_value = value;
+		}
+
+		public final byte getType()
+		{
+			return _type;
+		}
+
+		public final Object getValue()
+		{
+			return _value;
 		}
 
 		public final String getStringValue()
 		{
-			return (String) value;
+			return (String) _value;
 		}
 
 		public final int getIntValue()
 		{
-			return (Integer) value;
+			return (Integer) _value;
 		}
 
 		public final long getLongValue()
 		{
-			return (Long) value;
+			return (Long) _value;
 		}
 
 		public final int[] getIntArrayValue()
 		{
-			return (int[]) value;
+			return (int[]) _value;
 		}
 	}
 
@@ -133,15 +143,15 @@ public final class SystemMessage extends L2GameServerPacket
 		return getSystemMessage(SystemMessageId.getSystemMessageId(id));
 	}
 
-	private final SystemMessageId smId;
-	private SMParam[] params;
-	private int paramIndex;
+	private final SystemMessageId _smId;
+	private SMParam[] _params;
+	private int _paramIndex;
 
 	private SystemMessage(final SystemMessageId smId)
 	{
 		final int paramCount = smId.getParamCount();
-		this.smId = smId;
-		params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
+		_smId = smId;
+		_params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
 	}
 
 	/**
@@ -157,14 +167,14 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private void append(final SMParam param)
 	{
-		if (paramIndex >= params.length)
+		if (_paramIndex >= _params.length)
 		{
-			params = Arrays.copyOf(params, paramIndex + 1);
-			smId.setParamCount(paramIndex + 1);
-			Log.log(Level.INFO, "Wrong parameter count '" + (paramIndex + 1) + "' for SystemMessageId: " + smId);
+			_params = Arrays.copyOf(_params, _paramIndex + 1);
+			_smId.setParamCount(_paramIndex + 1);
+			Log.log(Level.INFO, "Wrong parameter count '" + (_paramIndex + 1) + "' for SystemMessageId: " + _smId);
 		}
 
-		params[paramIndex++] = param;
+		_params[_paramIndex++] = param;
 	}
 
 	public final SystemMessage addString(final String text)
@@ -354,29 +364,29 @@ public final class SystemMessage extends L2GameServerPacket
 
 	public final SystemMessageId getSystemMessageId()
 	{
-		return smId;
+		return _smId;
 	}
 
 	public final SystemMessage getLocalizedMessage(final String lang)
 	{
-		if (smId == SystemMessageId.S1)
+		if (_smId == SystemMessageId.S1)
 		{
 			return this;
 		}
 
-		final SMLocalisation sml = smId.getLocalisation(lang);
+		final SMLocalisation sml = _smId.getLocalisation(lang);
 		if (sml == null)
 		{
 			return this;
 		}
 
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
-		final Object[] params = new Object[paramIndex];
+		final Object[] params = new Object[_paramIndex];
 
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
+		for (int i = 0; i < _paramIndex; i++)
 		{
-			param = this.params[i];
+			param = _params[i];
 
 			switch (param.getType())
 			{
@@ -466,13 +476,13 @@ public final class SystemMessage extends L2GameServerPacket
 	{
 		out.println(0x62);
 
-		out.println(smId.getId());
-		out.println(paramIndex);
+		out.println(_smId.getId());
+		out.println(_paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
+		for (int i = 0; i < _paramIndex; i++)
 		{
-			param = params[i];
+			param = _params[i];
 			out.println(param.getType());
 
 			switch (param.getType())
@@ -525,13 +535,13 @@ public final class SystemMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(smId.getId());
-		writeC(paramIndex);
+		writeH(_smId.getId());
+		writeC(_paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
+		for (int i = 0; i < _paramIndex; i++)
 		{
-			param = params[i];
+			param = _params[i];
 			writeC(param.getType());
 
 			switch (param.getType())

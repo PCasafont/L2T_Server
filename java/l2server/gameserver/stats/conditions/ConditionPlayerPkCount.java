@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerPkCount extends Condition
 {
-	public final int pk;
+	public final int _pk;
 
 	/**
 	 * Instantiates a new condition player pk count.
@@ -32,7 +32,7 @@ public class ConditionPlayerPkCount extends Condition
 	 */
 	public ConditionPlayerPkCount(int pk)
 	{
-		this.pk = pk;
+		_pk = pk;
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public class ConditionPlayerPkCount extends Condition
 			return false;
 		}
 
-		return ((L2PcInstance) env.player).getPkKills() <= pk;
+		return ((L2PcInstance) env.player).getPkKills() <= _pk;
 	}
 }

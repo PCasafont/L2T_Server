@@ -29,6 +29,7 @@ import l2server.log.Log;
  */
 public class TaskOlympiadSave extends Task
 {
+
 	public static final String NAME = "olympiad_save";
 
 	/**

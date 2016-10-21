@@ -32,7 +32,8 @@ import java.util.logging.Level;
  */
 public class DecayTaskManager
 {
-	protected Map<L2Character, Long> decayTasks = new ConcurrentHashMap<>();
+
+	protected Map<L2Character, Long> _decayTasks = new ConcurrentHashMap<>();
 
 	public static final int RAID_BOSS_DECAY_TIME = 30000;
 	public static final int ATTACKABLE_DECAY_TIME = 8500;
@@ -44,24 +45,24 @@ public class DecayTaskManager
 
 	public static DecayTaskManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void addDecayTask(L2Character actor)
 	{
-		decayTasks.put(actor, System.currentTimeMillis());
+		_decayTasks.put(actor, System.currentTimeMillis());
 	}
 
 	public void addDecayTask(L2Character actor, int interval)
 	{
-		decayTasks.put(actor, System.currentTimeMillis() + interval);
+		_decayTasks.put(actor, System.currentTimeMillis() + interval);
 	}
 
 	public void cancelDecayTask(L2Character actor)
 	{
 		try
 		{
-			decayTasks.remove(actor);
+			_decayTasks.remove(actor);
 		}
 		catch (NoSuchElementException e)
 		{
@@ -83,7 +84,7 @@ public class DecayTaskManager
 			int delay;
 			try
 			{
-				Iterator<Entry<L2Character, Long>> it = decayTasks.entrySet().iterator();
+				Iterator<Entry<L2Character, Long>> it = _decayTasks.entrySet().iterator();
 				while (it.hasNext())
 				{
 					Entry<L2Character, Long> e = it.next();
@@ -124,14 +125,14 @@ public class DecayTaskManager
 	public String toString()
 	{
 		String ret = "============= DecayTask Manager Report ============\r\n";
-		ret += "Tasks count: " + decayTasks.size() + "\r\n";
+		ret += "Tasks count: " + _decayTasks.size() + "\r\n";
 		ret += "Tasks dump:\r\n";
 
 		Long current = System.currentTimeMillis();
-		for (L2Character actor : decayTasks.keySet())
+		for (L2Character actor : _decayTasks.keySet())
 		{
 			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " +
-					(current - decayTasks.get(actor)) + "\r\n";
+					(current - _decayTasks.get(actor)) + "\r\n";
 		}
 
 		return ret;
@@ -142,12 +143,12 @@ public class DecayTaskManager
 	 */
 	public Map<L2Character, Long> getTasks()
 	{
-		return decayTasks;
+		return _decayTasks;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DecayTaskManager instance = new DecayTaskManager();
+		protected static final DecayTaskManager _instance = new DecayTaskManager();
 	}
 }

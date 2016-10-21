@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.io.File;
 
@@ -32,36 +31,66 @@ public class AbilityTable
 {
 	public class Ability
 	{
-		@Getter private int type;
-		@Getter private int skillId;
-		@Getter private int maxLevel;
-		@Getter private int reqPoints;
-		@Getter private int reqSkill;
-		@Getter private int reqSkillLvl;
+		private int _type;
+		private int _skillId;
+		private int _maxLevel;
+		private int _reqPoints;
+		private int _reqSkill;
+		private int _reqSkillLvl;
 
 		public Ability(int type, int skillId, int maxLevel, int reqPoints, int reqSkill, int reqSkillLvl)
 		{
-			this.type = type;
-			this.skillId = skillId;
-			this.maxLevel = maxLevel;
-			this.reqPoints = reqPoints;
-			this.reqSkill = reqSkill;
-			this.reqSkillLvl = reqSkillLvl;
+			_type = type;
+			_skillId = skillId;
+			_maxLevel = maxLevel;
+			_reqPoints = reqPoints;
+			_reqSkill = reqSkill;
+			_reqSkillLvl = reqSkillLvl;
+		}
+
+		public int getType()
+		{
+			return _type;
+		}
+
+		public int getSkillId()
+		{
+			return _skillId;
+		}
+
+		public int getMaxLevel()
+		{
+			return _maxLevel;
+		}
+
+		public int getReqPoints()
+		{
+			return _reqPoints;
+		}
+
+		public int getReqSkill()
+		{
+			return _reqSkill;
+		}
+
+		public int getReqSkillLvl()
+		{
+			return _reqSkillLvl;
 		}
 	}
 
-	private TIntObjectHashMap<Ability> abilities = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<Ability> _abilities = new TIntObjectHashMap<>();
 
-	private static AbilityTable instance;
+	private static AbilityTable _instance;
 
 	public static AbilityTable getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new AbilityTable();
+			_instance = new AbilityTable();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	private AbilityTable()
@@ -97,18 +126,18 @@ public class AbilityTable
 							reqSkillLvl = abilityNode.getInt("reqSkillLvl");
 						}
 
-						abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
+						_abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
 					}
 				}
 			}
 		}
 
-		Log.info("AbilityTable: Loaded " + abilities.size() + " abilities.");
+		Log.info("AbilityTable: Loaded " + _abilities.size() + " abilities.");
 	}
 
 	public Ability getAbility(int skillId)
 	{
-		return abilities.get(skillId);
+		return _abilities.get(skillId);
 	}
 
 	public int getMaxPoints()
@@ -194,6 +223,7 @@ public class AbilityTable
 					}
 					else
 					{
+
 						int classId = player.getClassId();
 						if (classId > 146 && classId < 188)
 						{

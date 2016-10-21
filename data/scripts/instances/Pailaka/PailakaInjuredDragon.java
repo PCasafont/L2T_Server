@@ -106,7 +106,7 @@ public class PailakaInjuredDragon extends Quest
 	private static final int SCROLL_OF_ESCAPE = 736;
 
 	private static int buff_counter = 5;
-	private static boolean hasDoneAnimation = false;
+	private static boolean _hasDoneAnimation = false;
 
 	// Arrays
 	private static final int[] NPCS =
@@ -407,7 +407,7 @@ public class PailakaInjuredDragon extends Quest
 		}
 		else if (event.equalsIgnoreCase("latana_animation"))
 		{
-			hasDoneAnimation = true;
+			_hasDoneAnimation = true;
 
 			npc.abortAttack();
 			npc.abortCast();
@@ -843,7 +843,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case LATANA:
 				// Start Latana's Animation
-				if (!hasDoneAnimation)
+				if (!_hasDoneAnimation)
 				{
 					startQuestTimer("latana_animation", 500, npc, player);
 					return null;
@@ -866,7 +866,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case LATANA:
 				// Start Latana's Animation
-				if (!hasDoneAnimation)
+				if (!_hasDoneAnimation)
 				{
 					final QuestState st = attacker.getQuestState(qn);
 					if (st == null || st.getState() != State.STARTED)
@@ -890,7 +890,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			for (int mobId : WALL_MONSTERS)
 			{
-				/* Every monster on pailaka should be Aggresive and Active, with the same clan, also
+                /* Every monster on pailaka should be Aggresive and Active, with the same clan, also
 				 * wall mobs cannot move, they all use magic from far, and if you get in combat range
 				 * they hit
 				 */
@@ -956,13 +956,13 @@ public class PailakaInjuredDragon extends Quest
 
 	static final class Teleport implements Runnable
 	{
-		private final L2Character cha;
-		private final int instanceId;
+		private final L2Character _char;
+		private final int _instanceId;
 
 		public Teleport(L2Character c, int id)
 		{
-			cha = c;
-			instanceId = id;
+			_char = c;
+			_instanceId = id;
 		}
 
 		@Override
@@ -970,7 +970,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			try
 			{
-				teleportPlayer((L2PcInstance) cha, TELEPORT, instanceId);
+				teleportPlayer((L2PcInstance) _char, TELEPORT, _instanceId);
 			}
 			catch (Exception e)
 			{
@@ -981,23 +981,23 @@ public class PailakaInjuredDragon extends Quest
 
 	private static class PailakaDrop
 	{
-		private final int itemId;
-		private final int chance;
+		private final int _itemId;
+		private final int _chance;
 
 		public PailakaDrop(int itemId, int chance)
 		{
-			this.itemId = itemId;
-			this.chance = chance;
+			_itemId = itemId;
+			_chance = chance;
 		}
 
 		public int getItemID()
 		{
-			return itemId;
+			return _itemId;
 		}
 
 		public int getChance()
 		{
-			return chance;
+			return _chance;
 		}
 	}
 

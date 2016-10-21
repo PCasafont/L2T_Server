@@ -24,17 +24,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RecipeShopMsg extends L2GameServerPacket
 {
-	private L2PcInstance activeChar;
+	private L2PcInstance _activeChar;
 
 	public RecipeShopMsg(L2PcInstance player)
 	{
-		activeChar = player;
+		_activeChar = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(activeChar.getObjectId());
-		writeS(activeChar.getCreateList().getStoreName());//_activeChar.getTradeList().getSellStoreName());
+		writeD(_activeChar.getObjectId());
+		writeS(_activeChar.getCreateList().getStoreName());//_activeChar.getTradeList().getSellStoreName());
 	}
 }

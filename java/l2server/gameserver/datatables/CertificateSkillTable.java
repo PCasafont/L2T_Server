@@ -22,7 +22,6 @@ import l2server.gameserver.model.base.SubClass;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
 import l2server.gameserver.util.Broadcast;
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,24 +33,39 @@ public class CertificateSkillTable
 
 	public class CertificateSkillLearn
 	{
-		@Getter private int skillId;
-		@Getter private int maxLevel;
-		@Getter private int cost;
+		private int _skillId;
+		private int _maxLevel;
+		private int _cost;
 
 		public CertificateSkillLearn(int skillId, int maxLevel, int cost)
 		{
-			this.skillId = skillId;
-			this.maxLevel = maxLevel;
-			this.cost = cost;
+			_skillId = skillId;
+			_maxLevel = maxLevel;
+			_cost = cost;
+		}
+
+		public int getSkillId()
+		{
+			return _skillId;
+		}
+
+		public int getMaxLevel()
+		{
+			return _maxLevel;
+		}
+
+		public int getCost()
+		{
+			return _cost;
 		}
 	}
 
-	@Getter private Map<Integer, CertificateSkillLearn> subClassSkills = new HashMap<>();
-	@Getter private Map<Integer, CertificateSkillLearn> dualClassSkills = new HashMap<>();
+	private Map<Integer, CertificateSkillLearn> _subClassSkills = new HashMap<>();
+	private Map<Integer, CertificateSkillLearn> _dualClassSkills = new HashMap<>();
 
 	public static CertificateSkillTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private CertificateSkillTable()
@@ -63,65 +77,75 @@ public class CertificateSkillTable
 	private void load()
 	{
 		// Sub - P. Atk./M. Atk. Increase
-		subClassSkills.put(1956, new CertificateSkillLearn(1956, 4, 1));
+		_subClassSkills.put(1956, new CertificateSkillLearn(1956, 4, 1));
 		// Sub - P. Def./M. Def. Increase
-		subClassSkills.put(1957, new CertificateSkillLearn(1957, 4, 1));
+		_subClassSkills.put(1957, new CertificateSkillLearn(1957, 4, 1));
 		// Sub - Atk. Spd./Casting Spd. Increase
-		subClassSkills.put(1958, new CertificateSkillLearn(1958, 4, 1));
+		_subClassSkills.put(1958, new CertificateSkillLearn(1958, 4, 1));
 		// Sub - Critical Rate Increase
-		subClassSkills.put(1959, new CertificateSkillLearn(1959, 4, 1));
+		_subClassSkills.put(1959, new CertificateSkillLearn(1959, 4, 1));
 		// Sub - P. Accuracy/ M. Accuracy Increase
-		subClassSkills.put(1960, new CertificateSkillLearn(1960, 4, 1));
+		_subClassSkills.put(1960, new CertificateSkillLearn(1960, 4, 1));
 		// Sub - P. Evasion/ M. Evasion Increase
-		subClassSkills.put(1961, new CertificateSkillLearn(1961, 4, 1));
+		_subClassSkills.put(1961, new CertificateSkillLearn(1961, 4, 1));
 
 		// Dual - P. Atk./M. Atk. Increase
-		dualClassSkills.put(1962, new CertificateSkillLearn(1962, 4, 1));
+		_dualClassSkills.put(1962, new CertificateSkillLearn(1962, 4, 1));
 		// Dual - P. Def./M. Def. Increase
-		dualClassSkills.put(1963, new CertificateSkillLearn(1963, 4, 1));
+		_dualClassSkills.put(1963, new CertificateSkillLearn(1963, 4, 1));
 		// Dual - Atk. Spd./Casting Spd. Increase
-		dualClassSkills.put(1964, new CertificateSkillLearn(1964, 4, 1));
+		_dualClassSkills.put(1964, new CertificateSkillLearn(1964, 4, 1));
 		// Dual - Max HP Increase
-		dualClassSkills.put(1965, new CertificateSkillLearn(1965, 4, 1));
+		_dualClassSkills.put(1965, new CertificateSkillLearn(1965, 4, 1));
 		// Dual - Max CP Increase
-		dualClassSkills.put(1966, new CertificateSkillLearn(1966, 4, 1));
+		_dualClassSkills.put(1966, new CertificateSkillLearn(1966, 4, 1));
 		// Dual - Max MP Increase
-		dualClassSkills.put(1967, new CertificateSkillLearn(1967, 4, 1));
+		_dualClassSkills.put(1967, new CertificateSkillLearn(1967, 4, 1));
 		// Dual - HP Drain
-		dualClassSkills.put(1968, new CertificateSkillLearn(1968, 1, 2));
+		_dualClassSkills.put(1968, new CertificateSkillLearn(1968, 1, 2));
 		// Dual - MP Drain
-		dualClassSkills.put(1969, new CertificateSkillLearn(1969, 1, 2));
+		_dualClassSkills.put(1969, new CertificateSkillLearn(1969, 1, 2));
 		// Dual - Specialized for P. Atk.
-		dualClassSkills.put(1970, new CertificateSkillLearn(1970, 1, 2));
+		_dualClassSkills.put(1970, new CertificateSkillLearn(1970, 1, 2));
 		// Dual - Specialized for M. Atk.
-		dualClassSkills.put(1971, new CertificateSkillLearn(1971, 1, 2));
+		_dualClassSkills.put(1971, new CertificateSkillLearn(1971, 1, 2));
 		// Dual - Physical Trait Increase
-		dualClassSkills.put(1972, new CertificateSkillLearn(1972, 1, 2));
+		_dualClassSkills.put(1972, new CertificateSkillLearn(1972, 1, 2));
 		// Dual - Mental Trait Increase
-		dualClassSkills.put(1973, new CertificateSkillLearn(1973, 1, 2));
+		_dualClassSkills.put(1973, new CertificateSkillLearn(1973, 1, 2));
 		// Dual - Berserker's Rage
-		dualClassSkills.put(1974, new CertificateSkillLearn(1974, 1, 3));
+		_dualClassSkills.put(1974, new CertificateSkillLearn(1974, 1, 3));
 		// Dual - Master's Rage
-		dualClassSkills.put(1976, new CertificateSkillLearn(1976, 1, 3));
+		_dualClassSkills.put(1976, new CertificateSkillLearn(1976, 1, 3));
 		// Dual - Light of Protection
-		dualClassSkills.put(1978, new CertificateSkillLearn(1978, 1, 3));
+		_dualClassSkills.put(1978, new CertificateSkillLearn(1978, 1, 3));
 		// Dual - Light of Blessing
-		dualClassSkills.put(1980, new CertificateSkillLearn(1980, 1, 3));
+		_dualClassSkills.put(1980, new CertificateSkillLearn(1980, 1, 3));
 		// Dual - Shackles of the Giants
-		dualClassSkills.put(1982, new CertificateSkillLearn(1982, 1, 4));
+		_dualClassSkills.put(1982, new CertificateSkillLearn(1982, 1, 4));
 		// Dual - Silence of the Giants
-		dualClassSkills.put(1983, new CertificateSkillLearn(1983, 1, 4));
+		_dualClassSkills.put(1983, new CertificateSkillLearn(1983, 1, 4));
 		// Dual - Yoke of the Giants
-		dualClassSkills.put(1984, new CertificateSkillLearn(1984, 1, 4));
+		_dualClassSkills.put(1984, new CertificateSkillLearn(1984, 1, 4));
 		// Dual - Shield of the Giants
-		dualClassSkills.put(1985, new CertificateSkillLearn(1985, 1, 4));
+		_dualClassSkills.put(1985, new CertificateSkillLearn(1985, 1, 4));
+	}
+
+	public Map<Integer, CertificateSkillLearn> getSubClassSkills()
+	{
+		return _subClassSkills;
+	}
+
+	public Map<Integer, CertificateSkillLearn> getDualClassSkills()
+	{
+		return _dualClassSkills;
 	}
 
 	public void sendSubClassSkillList(L2PcInstance player)
 	{
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.SubClass);
 		boolean skillAdded = false;
-		for (CertificateSkillLearn csl : subClassSkills.values())
+		for (CertificateSkillLearn csl : _subClassSkills.values())
 		{
 			int curLevel = 0;
 			for (L2Skill skill : player.getAllSkills())
@@ -149,7 +173,7 @@ public class CertificateSkillTable
 	{
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.DualClass);
 		boolean skillAdded = false;
-		for (CertificateSkillLearn csl : dualClassSkills.values())
+		for (CertificateSkillLearn csl : _dualClassSkills.values())
 		{
 			int curLevel = 0;
 			for (L2Skill skill : player.getAllSkills())
@@ -175,7 +199,7 @@ public class CertificateSkillTable
 
 	public int getSubClassSkillCost(int skillId)
 	{
-		CertificateSkillLearn skill = subClassSkills.get(skillId);
+		CertificateSkillLearn skill = _subClassSkills.get(skillId);
 		if (skill != null)
 		{
 			return skill.getCost();
@@ -186,7 +210,7 @@ public class CertificateSkillTable
 
 	public int getDualClassSkillCost(int skillId)
 	{
-		CertificateSkillLearn skill = dualClassSkills.get(skillId);
+		CertificateSkillLearn skill = _dualClassSkills.get(skillId);
 		if (skill != null)
 		{
 			return skill.getCost();
@@ -207,7 +231,7 @@ public class CertificateSkillTable
 		{
 			actualSubCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : subClassSkills.values())
+		for (CertificateSkillLearn csl : _subClassSkills.values())
 		{
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
 			if (skillLevel > 0)
@@ -232,7 +256,7 @@ public class CertificateSkillTable
 		{
 			actualDualCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : dualClassSkills.values())
+		for (CertificateSkillLearn csl : _dualClassSkills.values())
 		{
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
 			if (skillLevel > 0)
@@ -257,7 +281,7 @@ public class CertificateSkillTable
 		{
 			actualDualCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : dualClassSkills.values())
+		for (CertificateSkillLearn csl : _dualClassSkills.values())
 		{
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
 			if (skillLevel > 0)
@@ -277,7 +301,7 @@ public class CertificateSkillTable
 		{
 			actualSubCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : subClassSkills.values())
+		for (CertificateSkillLearn csl : _subClassSkills.values())
 		{
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
 			if (skillLevel > 0)
@@ -299,7 +323,7 @@ public class CertificateSkillTable
 
 		for (L2Skill skill : player.getAllSkills())
 		{
-			if (subClassSkills.containsKey(skill.getId()))
+			if (_subClassSkills.containsKey(skill.getId()))
 			{
 				player.removeSkill(skill, true);
 			}
@@ -321,7 +345,7 @@ public class CertificateSkillTable
 
 		for (L2Skill skill : player.getAllSkills())
 		{
-			if (dualClassSkills.containsKey(skill.getId()))
+			if (_dualClassSkills.containsKey(skill.getId()))
 			{
 				player.removeSkill(skill, true);
 			}
@@ -341,6 +365,6 @@ public class CertificateSkillTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CertificateSkillTable instance = new CertificateSkillTable();
+		protected static final CertificateSkillTable _instance = new CertificateSkillTable();
 	}
 }

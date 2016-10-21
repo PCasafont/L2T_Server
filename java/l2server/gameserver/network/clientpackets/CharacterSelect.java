@@ -38,24 +38,29 @@ import java.util.logging.Logger;
  */
 public class CharacterSelect extends L2GameClientPacket
 {
-	protected static final Logger logAccounting = Logger.getLogger("accounting");
+
+	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
 	// cd
-	private int charSlot;
+	private int _charSlot;
 
-	@SuppressWarnings("unused") private int unk1; // new in C4
-	@SuppressWarnings("unused") private int unk2; // new in C4
-	@SuppressWarnings("unused") private int unk3; // new in C4
-	@SuppressWarnings("unused") private int unk4; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk1; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk2; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk3; // new in C4
+	@SuppressWarnings("unused")
+	private int _unk4; // new in C4
 
 	@Override
 	protected void readImpl()
 	{
-		charSlot = readD();
-		unk1 = readH();
-		unk2 = readD();
-		unk3 = readD();
-		unk4 = readD();
+		_charSlot = readD();
+		_unk1 = readH();
+		_unk2 = readD();
+		_unk3 = readD();
+		_unk4 = readD();
 	}
 
 	@Override
@@ -87,7 +92,7 @@ public class CharacterSelect extends L2GameClientPacket
 							.tryAddClient(AntiFeedManager.GAME_ID, getClient(),
 									Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
-						final CharSelectInfoPackage info = getClient().getCharSelection(charSlot);
+						final CharSelectInfoPackage info = getClient().getCharSelection(_charSlot);
 						if (info == null)
 						{
 							return;
@@ -104,11 +109,11 @@ public class CharacterSelect extends L2GameClientPacket
 					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
 					if (Config.DEBUG)
 					{
-						Log.fine("selected slot:" + charSlot);
+						Log.fine("selected slot:" + _charSlot);
 					}
 
 					//load up character from disk
-					L2PcInstance cha = getClient().loadCharFromDisk(charSlot);
+					L2PcInstance cha = getClient().loadCharFromDisk(_charSlot);
 					if (cha == null)
 					{
 						return; // handled in L2GameClient
@@ -141,7 +146,7 @@ public class CharacterSelect extends L2GameClientPacket
 
 			LogRecord record = new LogRecord(Level.INFO, "Logged in");
 			record.setParameters(new Object[]{getClient()});
-			logAccounting.log(record);
+			_logAccounting.log(record);
 		}
 	}
 }

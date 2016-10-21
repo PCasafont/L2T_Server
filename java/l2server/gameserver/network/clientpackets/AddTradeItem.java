@@ -31,9 +31,10 @@ import l2server.log.Log;
  */
 public final class AddTradeItem extends L2GameClientPacket
 {
-	private int tradeId;
-	private int objectId;
-	private long count;
+
+	private int _tradeId;
+	private int _objectId;
+	private long _count;
 
 	public AddTradeItem()
 	{
@@ -42,9 +43,9 @@ public final class AddTradeItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		tradeId = readD();
-		objectId = readD();
-		count = readQ();
+		_tradeId = readD();
+		_objectId = readD();
+		_count = readQ();
 	}
 
 	@Override
@@ -59,8 +60,8 @@ public final class AddTradeItem extends L2GameClientPacket
 		final TradeList trade = player.getActiveTradeList();
 		if (trade == null)
 		{
-			Log.warning("Character: " + player.getName() + " requested item:" + objectId +
-					" add without active tradelist:" + tradeId);
+			Log.warning("Character: " + player.getName() + " requested item:" + _objectId +
+					" add without active tradelist:" + _tradeId);
 			return;
 		}
 
@@ -71,7 +72,7 @@ public final class AddTradeItem extends L2GameClientPacket
 			// Trade partner not found, cancel trade
 			if (partner != null)
 			{
-				Log.warning("Character:" + player.getName() + " requested invalid trade object: " + objectId);
+				Log.warning("Character:" + player.getName() + " requested invalid trade object: " + _objectId);
 			}
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 			player.sendPacket(msg);
@@ -107,13 +108,13 @@ public final class AddTradeItem extends L2GameClientPacket
 			return;
 		}
 
-		if (!player.validateItemManipulation(objectId, "trade"))
+		if (!player.validateItemManipulation(_objectId, "trade"))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 			return;
 		}
 
-		final TradeList.TradeItem item = trade.addItem(objectId, count);
+		final TradeList.TradeItem item = trade.addItem(_objectId, _count);
 		if (item != null)
 		{
 			player.sendPacket(new TradeOwnAdd(item));

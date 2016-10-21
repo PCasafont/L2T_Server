@@ -37,14 +37,14 @@ import java.util.Map;
  */
 public final class RequestPutTemplateForItemAppearance extends L2GameClientPacket
 {
-	private int objectId1;
-	private int objectId2;
+	private int _objectId1;
+	private int _objectId2;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId1 = readD();
-		objectId2 = readD();
+		_objectId1 = readD();
+		_objectId2 = readD();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 	@Override
 	protected void runImpl()
 	{
-		if (objectId1 == objectId2)
+		if (_objectId1 == _objectId2)
 		{
 			return;
 		}
@@ -69,13 +69,13 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 			return;
 		}
 
-		L2ItemInstance target = player.getInventory().getItemByObjectId(objectId1);
+		L2ItemInstance target = player.getInventory().getItemByObjectId(_objectId1);
 		if (target == null)
 		{
 			return;
 		}
 
-		L2ItemInstance template = player.getInventory().getItemByObjectId(objectId2);
+		L2ItemInstance template = player.getInventory().getItemByObjectId(_objectId2);
 		if (template == null)
 		{
 			return;

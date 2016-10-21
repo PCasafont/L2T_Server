@@ -26,32 +26,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class TradeStart extends L2ItemListPacket
 {
-	private L2PcInstance activeChar;
-	private L2ItemInstance[] itemList;
+	private L2PcInstance _activeChar;
+	private L2ItemInstance[] _itemList;
 
 	public TradeStart(L2PcInstance player)
 	{
-		activeChar = player;
-		itemList = activeChar.getInventory()
-				.getAvailableItems(true, activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
+		_activeChar = player;
+		_itemList = _activeChar.getInventory()
+				.getAvailableItems(true, _activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (activeChar.getActiveTradeList() == null || activeChar.getActiveTradeList().getPartner() == null)
+		if (_activeChar.getActiveTradeList() == null || _activeChar.getActiveTradeList().getPartner() == null)
 		{
 			return;
 		}
 
-		writeD(activeChar.getActiveTradeList().getPartner().getObjectId());
-		//writeD((activeChar != null || activeChar.getTransactionRequester() != null)? activeChar.getTransactionRequester().getObjectId() : 0);
+		writeD(_activeChar.getActiveTradeList().getPartner().getObjectId());
+		//writeD((_activeChar != null || _activeChar.getTransactionRequester() != null)? _activeChar.getTransactionRequester().getObjectId() : 0);
 
 		writeC(0x00); // Relationship mask
-		writeC(activeChar.getLevel());
+		writeC(_activeChar.getLevel());
 
-		writeH(itemList.length);
-		for (L2ItemInstance item : itemList)
+		writeH(_itemList.length);
+		for (L2ItemInstance item : _itemList)
 		{
 			writeItem(item);
 		}

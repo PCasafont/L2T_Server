@@ -28,14 +28,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 {
-	private int response;
+	private int _response;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		response = readD();
+		_response = readD();
 	}
 
 	/* (non-Javadoc)
@@ -54,7 +54,7 @@ public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 				return;
 			}
 
-			if (response == 1)
+			if (_response == 1)
 			{
 				boolean newCc = false;
 

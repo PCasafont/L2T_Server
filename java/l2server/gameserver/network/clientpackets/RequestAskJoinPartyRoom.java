@@ -24,18 +24,18 @@ import l2server.log.Log;
  */
 public class RequestAskJoinPartyRoom extends L2GameClientPacket
 {
-	private String player; // not tested, just guessed
+	private String _player; // not tested, just guessed
 
 	@Override
 	protected void readImpl()
 	{
-		player = readS();
+		_player = readS();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		// TODO
-		Log.info("C5:RequestAskJoinPartyRoom: S: " + player);
+		Log.info("C5:RequestAskJoinPartyRoom: S: " + _player);
 	}
 }

@@ -23,24 +23,24 @@ import l2server.gameserver.model.actor.L2Character;
 public class ExStopMoveAirShip extends L2GameServerPacket
 {
 	// store coords here because they can be changed from other threads
-	final int objectId, x, y, z, heading;
+	final int _objectId, _x, _y, _z, _heading;
 
 	public ExStopMoveAirShip(L2Character ship)
 	{
-		objectId = ship.getObjectId();
-		x = ship.getX();
-		y = ship.getY();
-		z = ship.getZ();
-		heading = ship.getHeading();
+		_objectId = ship.getObjectId();
+		_x = ship.getX();
+		_y = ship.getY();
+		_z = ship.getZ();
+		_heading = ship.getHeading();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(heading);
+		writeD(_objectId);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeD(_heading);
 	}
 }

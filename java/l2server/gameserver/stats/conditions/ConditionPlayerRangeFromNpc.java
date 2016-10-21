@@ -24,28 +24,28 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerRangeFromNpc extends Condition
 {
-	private final int npcId;
-	private final int radius;
+	private final int _npcId;
+	private final int _radius;
 
 	public ConditionPlayerRangeFromNpc(int npcId, int radius)
 	{
-		this.npcId = npcId;
-		this.radius = radius;
+		_npcId = npcId;
+		_radius = radius;
 	}
 
 	@Override
 	boolean testImpl(Env env)
 	{
-		if (npcId == 0 || radius == 0)
+		if (_npcId == 0 || _radius == 0)
 		{
 			return false;
 		}
 
-		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(radius))
+		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(_radius))
 		{
 			if (target instanceof L2Npc)
 			{
-				if (((L2Npc) target).getNpcId() == npcId)
+				if (((L2Npc) target).getNpcId() == _npcId)
 				{
 					return true;
 				}

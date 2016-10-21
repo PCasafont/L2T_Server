@@ -14,13 +14,12 @@ import l2server.gameserver.model.actor.instance.L2BlockInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.util.logging.Logger;
 
 public class EventItem implements IItemHandler
 {
-	private static final Logger log = Logger.getLogger(EventItem.class.getName());
+	private static final Logger _log = Logger.getLogger(EventItem.class.getName());
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
@@ -45,7 +44,7 @@ public class EventItem implements IItemHandler
 				useBlockCheckerItem(activeChar, item);
 				break;
 			default:
-				Log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
+				_log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
 		}
 	}
 
@@ -88,7 +87,8 @@ public class EventItem implements IItemHandler
 		}
 		else
 		{
-			Log.warning("Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
+			_log.warning(
+					"Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
 		}
 	}
 }

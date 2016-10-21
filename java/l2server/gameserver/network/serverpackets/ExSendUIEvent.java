@@ -17,12 +17,12 @@ package l2server.gameserver.network.serverpackets;
 
 public class ExSendUIEvent extends L2GameServerPacket
 {
-	private int uiType;
-	private int isIncrease;
-	private int startTime;
-	private int endTime;
-	private String text;
-	private int npcString;
+	private int _uiType;
+	private int _isIncrease;
+	private int _startTime;
+	private int _endTime;
+	private String _text;
+	private int _npcString;
 
 	//UI Types
 	public static int TYPE_COUNT_DOWN = 0;
@@ -43,12 +43,12 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 */
 	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, String text)
 	{
-		this.uiType = uiType;
-		this.isIncrease = isIncrease;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.text = text;
-		npcString = -1;
+		_uiType = uiType;
+		_isIncrease = isIncrease;
+		_startTime = startTime;
+		_endTime = endTime;
+		_text = text;
+		_npcString = -1;
 	}
 
 	/**
@@ -62,12 +62,12 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 */
 	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, int npcStringId)
 	{
-		this.uiType = uiType;
-		this.isIncrease = isIncrease;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		text = "";
-		npcString = npcStringId;
+		_uiType = uiType;
+		_isIncrease = isIncrease;
+		_startTime = startTime;
+		_endTime = endTime;
+		_text = "";
+		_npcString = npcStringId;
 	}
 
 	/**
@@ -80,12 +80,12 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 */
 	public ExSendUIEvent(int uiType, int currentPoints, int maxPoints, int npcStringId)
 	{
-		this.uiType = uiType;
-		isIncrease = -1;
-		startTime = currentPoints;
-		endTime = maxPoints;
-		text = "";
-		npcString = npcStringId;
+		_uiType = uiType;
+		_isIncrease = -1;
+		_startTime = currentPoints;
+		_endTime = maxPoints;
+		_text = "";
+		_npcString = npcStringId;
 	}
 
 	@Override
@@ -97,43 +97,43 @@ public class ExSendUIEvent extends L2GameServerPacket
 		}
 
 		writeD(getClient().getActiveChar().getObjectId());
-		writeD(uiType);
+		writeD(_uiType);
 		writeD(0x00); // unknown
 		writeD(0x00); // unknown
 
-		switch (uiType)
+		switch (_uiType)
 		{
 			case 2:
-				writeS(String.valueOf(startTime)); // Seconds
-				writeS(String.valueOf(endTime)); // % done
+				writeS(String.valueOf(_startTime)); // Seconds
+				writeS(String.valueOf(_endTime)); // % done
 				writeS(String.valueOf(0)); // Should be 0
 				writeD(0x00); // % symbol on the bar
-				writeD(npcString); //npcString
+				writeD(_npcString); //npcString
 				writeD(122520);
 
 				break;
 
 			case 5:
-				writeS(String.valueOf(isIncrease));
-				writeS(String.valueOf(startTime));
-				writeS(String.valueOf(endTime));
+				writeS(String.valueOf(_isIncrease));
+				writeS(String.valueOf(_startTime));
+				writeS(String.valueOf(_endTime));
 				writeD(0x00);
 				//	writeD(0x00);
-				writeD(npcString);
+				writeD(_npcString);
 
 				break;
 
 			default:
-				writeS(String.valueOf(isIncrease)); // "0": count negative, "1": count positive
-				writeS(String.valueOf(startTime / 60)); // timer starting minute(s)
-				writeS(String.valueOf(startTime % 60)); // timer starting second(s)
+				writeS(String.valueOf(_isIncrease)); // "0": count negative, "1": count positive
+				writeS(String.valueOf(_startTime / 60)); // timer starting minute(s)
+				writeS(String.valueOf(_startTime % 60)); // timer starting second(s)
 				writeD(0x00); // unknown
-				writeD(npcString); // TODO: npcString
-				writeS(text); // text above timer
+				writeD(_npcString); // TODO: npcString
+				writeS(_text); // text above timer
 				writeS(String.valueOf(
-						endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
+						_endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
 				writeS(String.valueOf(
-						endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
+						_endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
 
 				break;
 		}

@@ -28,7 +28,7 @@ import java.util.logging.Logger;
  */
 public class L2JGameServerPacketHandler
 {
-	protected static Logger log = Logger.getLogger(L2JGameServerPacketHandler.class.getName());
+	protected static Logger _log = Logger.getLogger(L2JGameServerPacketHandler.class.getName());
 
 	public enum GameServerState
 	{

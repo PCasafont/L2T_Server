@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class WareHouseDone extends L2GameServerPacket
 {
-	private int unk;
+	private int _unk;
 
 	public WareHouseDone(int unk)
 	{
-		this.unk = unk;
+		_unk = unk;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(unk);
+		writeD(_unk);
 	}
 }

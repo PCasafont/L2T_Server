@@ -22,21 +22,21 @@ import l2server.gameserver.model.actor.L2Npc;
  */
 public final class ExNpcSpeedInfo extends L2GameServerPacket
 {
-	private L2Npc npc;
+	private L2Npc _npc;
 
 	public ExNpcSpeedInfo(L2Npc npc)
 	{
-		this.npc = npc;
+		_npc = npc;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(npc.getObjectId());
+		writeD(_npc.getObjectId());
 		writeH(8); // Size
 		writeC(0xc0); // Mask (0x80 run spd multiplier, 0x40 atk spd multiplier, ...)
-		writeFl(npc.getMovementSpeedMultiplier());
-		writeFl(npc.getAttackSpeedMultiplier());
+		writeFl(_npc.getMovementSpeedMultiplier());
+		writeFl(_npc.getAttackSpeedMultiplier());
 		//writeH((short)_npc.getTemplate().baseRunSpd);
 		//writeH((short)_npc.getTemplate().baseWalkSpd);
 	}

@@ -28,16 +28,17 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 {
-	private int itemNum;
-	private int charId;
-	private long itemcount;
+
+	private int _itemNum;
+	private int _charId;
+	private long _itemcount;
 
 	@Override
 	protected void readImpl()
 	{
-		itemNum = readD();
-		charId = readD();
-		itemcount = readQ();
+		_itemNum = readD();
+		_charId = readD();
+		_itemcount = readQ();
 	}
 
 	@Override
@@ -49,12 +50,12 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 		{
 			return;
 		}
-		if (itemcount <= 0)
+		if (_itemcount <= 0)
 		{
 			return;
 		}
 
-		if (activeChar.getObjectId() != charId)
+		if (activeChar.getObjectId() != _charId)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestWithDrawPremiumItem] Incorrect owner, Player: " + activeChar.getName(),
@@ -79,28 +80,28 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 			return;
 		}
 
-		L2PremiumItem item = activeChar.getPremiumItemList().get(itemNum);
+		L2PremiumItem _item = activeChar.getPremiumItemList().get(_itemNum);
 
-		if (item == null)
+		if (_item == null)
 		{
 			return;
 		}
-		if (item.getCount() < itemcount)
+		if (_item.getCount() < _itemcount)
 		{
 			return;
 		}
 
-		activeChar.addItem("PremiumItem", item.getItemId(), itemcount, null, true);
+		activeChar.addItem("PremiumItem", _item.getItemId(), _itemcount, null, true);
 
-		if (itemcount < item.getCount())
+		if (_itemcount < _item.getCount())
 		{
-			activeChar.getPremiumItemList().get(itemNum).updateCount(item.getCount() - itemcount);
-			activeChar.updatePremiumItem(itemNum, item.getCount() - itemcount);
+			activeChar.getPremiumItemList().get(_itemNum).updateCount(_item.getCount() - _itemcount);
+			activeChar.updatePremiumItem(_itemNum, _item.getCount() - _itemcount);
 		}
 		else
 		{
-			activeChar.getPremiumItemList().remove(itemNum);
-			activeChar.deletePremiumItem(itemNum);
+			activeChar.getPremiumItemList().remove(_itemNum);
+			activeChar.deletePremiumItem(_itemNum);
 		}
 
 		if (activeChar.getPremiumItemList().isEmpty())

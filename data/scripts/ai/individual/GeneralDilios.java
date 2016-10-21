@@ -37,8 +37,8 @@ public class GeneralDilios extends L2AttackableAIScript
 	private static final int generalId = 32549;
 	private static final int guardId = 32619;
 
-	private L2Npc general;
-	private List<L2Npc> guards = new ArrayList<L2Npc>();
+	private L2Npc _general;
+	private List<L2Npc> _guards = new ArrayList<L2Npc>();
 
 	private static final int[] diliosText = {
 			1800695,
@@ -58,7 +58,7 @@ public class GeneralDilios extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 		findNpcs();
-		if (general == null || guards.isEmpty())
+		if (_general == null || _guards.isEmpty())
 		{
 			throw new NullPointerException("Cannot find npcs!");
 		}
@@ -73,11 +73,11 @@ public class GeneralDilios extends L2AttackableAIScript
 			{
 				if (spawn.getNpcId() == generalId)
 				{
-					general = spawn.getNpc();
+					_general = spawn.getNpc();
 				}
 				else if (spawn.getNpcId() == guardId)
 				{
-					guards.add(spawn.getNpc());
+					_guards.add(spawn.getNpc());
 				}
 			}
 		}
@@ -91,22 +91,22 @@ public class GeneralDilios extends L2AttackableAIScript
 			int value = Integer.parseInt(event.substring(8));
 			if (value < 6)
 			{
-				general.broadcastPacket(
-						new NpcSay(general.getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
+				_general.broadcastPacket(
+						new NpcSay(_general.getObjectId(), 0, generalId, 1800704)); // Stabbing three times!
 				startQuestTimer("guard_animation_0", 3400, null, null);
 			}
 			else
 			{
 				value = -1;
-				general.broadcastPacket(
-						new NpcSay(general.getObjectId(), 1, generalId, diliosText[Rnd.get(diliosText.length)]));
+				_general.broadcastPacket(
+						new NpcSay(_general.getObjectId(), 1, generalId, diliosText[Rnd.get(diliosText.length)]));
 			}
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}
 		else if (event.startsWith("guard_animation_"))
 		{
 			int value = Integer.parseInt(event.substring(16));
-			for (L2Npc guard : guards)
+			for (L2Npc guard : _guards)
 			{
 				guard.broadcastPacket(new SocialAction(guard.getObjectId(), 4));
 			}

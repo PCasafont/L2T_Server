@@ -15,10 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -30,8 +26,11 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PledgeSkillList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -420,7 +419,7 @@ public class AdminSkill implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.WARNING, "", e);
+				_log.log(Level.WARNING, "", e);
 			}
 			if (skill != null)
 			{
@@ -433,7 +432,7 @@ public class AdminSkill implements IAdminCommandHandler
 				activeChar.sendMessage("You gave the skill " + name + " to " + player.getName() + ".");
 				if (Config.DEBUG)
 				{
-					Log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
+					_log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
 				}
 				activeChar.sendSkillList();
 			}
@@ -468,7 +467,7 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendMessage("You removed the skill " + skillname + " from " + player.getName() + ".");
 			if (Config.DEBUG)
 			{
-				Log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() +
+				_log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() +
 						".");
 			}
 			activeChar.sendSkillList();

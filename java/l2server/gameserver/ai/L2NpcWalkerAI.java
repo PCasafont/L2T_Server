@@ -24,7 +24,6 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
@@ -33,15 +32,15 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 {
 	private static final int DEFAULT_MOVE_DELAY = 100;
 
-	ScheduledFuture<?> task = null;
-	private List<L2NpcWalkerNode> route = null;
-	@Getter private int currentPos = 0;
-	private long nextMoveTime = 0;
+	ScheduledFuture<?> _task = null;
+	private List<L2NpcWalkerNode> _route = null;
+	private int _currentPos = 0;
+	private long _nextMoveTime = 0;
 
-	@Getter private L2PcInstance guided = null;
-	private boolean isWaiting = false;
-	@Getter private int waitRadius = 100;
-	private boolean waitingForQuestResponse = false;
+	private L2PcInstance _guided = null;
+	private boolean _isWaiting = false;
+	private int _waitRadius = 100;
+	private boolean _waitingForQuestResponse = false;
 
 	/**
 	 * Constructor of L2CharacterAI.<BR><BR>
@@ -55,63 +54,63 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public void initializeRoute(List<L2NpcWalkerNode> route)
 	{
-		this.route = route;
+		_route = route;
 
 		// Here we need 1 second initial delay cause getActor().hasAI() will return null...
 		// Constructor of L2NpcWalkerAI is called faster then ai object is attached in L2NpcWalkerInstance
-		if (this.route != null)
+		if (_route != null)
 		{
 			walkToLocation();
-			task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 400);
+			_task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 400);
 		}
 		else
 		{
-			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + _actor);
 		}
 	}
 
 	public void initializeRoute(List<L2NpcWalkerNode> route, L2PcInstance guided)
 	{
-		this.route = route;
+		_route = route;
 
 		// Here we need 1 second initial delay cause getActor().hasAI() will return null...
 		// Constructor of L2NpcWalkerAI is called faster then ai object is attached in L2NpcWalkerInstance
-		if (this.route != null)
+		if (_route != null)
 		{
-			task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 200);
+			_task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 200);
 		}
 		else
 		{
-			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + _actor);
 		}
 
-		this.guided = guided;
+		_guided = guided;
 	}
 
 	@Override
 	public void run()
 	{
-		if (route == null)
+		if (_route == null)
 		{
-			task.cancel(false);
+			_task.cancel(false);
 			return;
 		}
 
-		if (System.currentTimeMillis() < nextMoveTime || waitingForQuestResponse)
+		if (System.currentTimeMillis() < _nextMoveTime || _waitingForQuestResponse)
 		{
 			return;
 		}
 
-		int x = route.get(currentPos).getMoveX();
-		int y = route.get(currentPos).getMoveY();
-		int z = route.get(currentPos).getMoveZ();
+		int x = _route.get(_currentPos).getMoveX();
+		int y = _route.get(_currentPos).getMoveY();
+		int z = _route.get(_currentPos).getMoveZ();
 
-		if (isWaiting)
+		if (_isWaiting)
 		{
-			if (getActor().isInsideRadius(guided, waitRadius, false, false) &&
+			if (getActor().isInsideRadius(_guided, _waitRadius, false, false) &&
 					getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
 			{
-				waitingForQuestResponse = true;
+				_waitingForQuestResponse = true;
 				for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
 				{
 					quest.notifyPlayerArrived(this);
@@ -122,20 +121,20 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 		if (!getActor().isInsideRadius(x, y, z, 40, false, false))
 		{
-			if (nextMoveTime != 0 && System.currentTimeMillis() > nextMoveTime + 10000L)
+			if (_nextMoveTime != 0 && System.currentTimeMillis() > _nextMoveTime + 10000L)
 			{
-				int destX = route.get(currentPos).getMoveX();
-				int destY = route.get(currentPos).getMoveY();
-				int destZ = route.get(currentPos).getMoveZ();
+				int destX = _route.get(_currentPos).getMoveX();
+				int destY = _route.get(_currentPos).getMoveY();
+				int destZ = _route.get(_currentPos).getMoveZ();
 				setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(destX, destY, destZ, 0));
-				nextMoveTime = System.currentTimeMillis();
+				_nextMoveTime = System.currentTimeMillis();
 			}
 			return;
 		}
 
 		if (getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED) != null)
 		{
-			waitingForQuestResponse = true;
+			_waitingForQuestResponse = true;
 			for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED))
 			{
 				quest.notifyArrived(this);
@@ -147,11 +146,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			walkToLocation();
 		}
 
-		int id = route.get(currentPos).getChatId();
+		int id = _route.get(_currentPos).getChatId();
 		String chat = null;
 		if (id == 0)
 		{
-			chat = route.get(currentPos).getChatText();
+			chat = _route.get(_currentPos).getChatText();
 		}
 
 		if (id > 0 || chat != null && !chat.isEmpty())
@@ -160,7 +159,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		}
 
 		//time in millis
-		long delay = route.get(currentPos).getDelay() * 1000;
+		long delay = _route.get(_currentPos).getDelay() * 1000;
 
 		//delay += (getActor().getPosition().getWorldPosition().distanceSquaredTo(new Point3D(x, y, z)) / (float)getActor().getWalkSpeed()) * 1000;
 
@@ -175,7 +174,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			}
 		}
 
-		nextMoveTime = System.currentTimeMillis() + delay;
+		_nextMoveTime = System.currentTimeMillis() + delay;
 	}
 
 	/**
@@ -186,13 +185,13 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	@Override
 	protected void onEvtArrivedBlocked(L2CharPosition blocked_at_pos)
 	{
-		Log.warning("Npc Walker ID: " + getActor().getNpcId() + ": Blocked at route position [" + currentPos +
+		Log.warning("Npc Walker ID: " + getActor().getNpcId() + ": Blocked at route position [" + _currentPos +
 				"], coords: " + blocked_at_pos.x + ", " + blocked_at_pos.y + ", " + blocked_at_pos.z +
 				". Teleporting to next point");
 
-		int destinationX = route.get(currentPos).getMoveX();
-		int destinationY = route.get(currentPos).getMoveY();
-		int destinationZ = route.get(currentPos).getMoveZ();
+		int destinationX = _route.get(_currentPos).getMoveX();
+		int destinationY = _route.get(_currentPos).getMoveY();
+		int destinationZ = _route.get(_currentPos).getMoveZ();
 
 		getActor().teleToLocation(destinationX, destinationY, destinationZ, false);
 		super.onEvtArrivedBlocked(blocked_at_pos);
@@ -200,16 +199,16 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public void walkToLocation()
 	{
-		if (currentPos < route.size() - 1)
+		if (_currentPos < _route.size() - 1)
 		{
-			currentPos++;
+			_currentPos++;
 		}
 		else
 		{
-			currentPos = 0;
+			_currentPos = 0;
 		}
 
-		boolean moveType = route.get(currentPos).isRunning();
+		boolean moveType = _route.get(_currentPos).getRunning();
 
 		if (moveType)
 		{
@@ -221,9 +220,9 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		}
 
 		//now we define destination
-		int destinationX = route.get(currentPos).getMoveX();
-		int destinationY = route.get(currentPos).getMoveY();
-		int destinationZ = route.get(currentPos).getMoveZ();
+		int destinationX = _route.get(_currentPos).getMoveX();
+		int destinationY = _route.get(_currentPos).getMoveY();
+		int destinationZ = _route.get(_currentPos).getMoveZ();
 
 		setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
 				new L2CharPosition(destinationX, destinationY, destinationZ, 0));
@@ -231,14 +230,14 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 
 	public void walkToGuided(int distance)
 	{
-		if (guided == null)
+		if (_guided == null)
 		{
 			return;
 		}
 
-		int dx = guided.getX() - getActor().getX();
-		int dy = guided.getY() - getActor().getY();
-		int dz = guided.getZ() - getActor().getZ();
+		int dx = _guided.getX() - getActor().getX();
+		int dy = _guided.getY() - getActor().getY();
+		int dz = _guided.getZ() - getActor().getZ();
 
 		double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
@@ -256,24 +255,39 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		return (L2Npc) super.getActor();
 	}
 
+	public int getCurrentPos()
+	{
+		return _currentPos;
+	}
+
+	public L2PcInstance getGuided()
+	{
+		return _guided;
+	}
+
 	public boolean isWaiting()
 	{
-		return isWaiting;
+		return _isWaiting;
 	}
 
 	public void setWaiting(boolean waiting)
 	{
-		isWaiting = waiting;
-		waitingForQuestResponse = false;
+		_isWaiting = waiting;
+		_waitingForQuestResponse = false;
+	}
+
+	public int getWaitRadius()
+	{
+		return _waitRadius;
 	}
 
 	public void setWaitRadius(int radius)
 	{
-		waitRadius = radius;
+		_waitRadius = radius;
 	}
 
 	public void cancelTask()
 	{
-		task.cancel(false);
+		_task.cancel(false);
 	}
 }

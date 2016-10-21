@@ -25,13 +25,13 @@ import java.util.ArrayList;
  */
 public final class L2Radar
 {
-	private L2PcInstance player;
-	private ArrayList<RadarMarker> markers;
+	private L2PcInstance _player;
+	private ArrayList<RadarMarker> _markers;
 
 	public L2Radar(L2PcInstance player)
 	{
-		this.player = player;
-		markers = new ArrayList<>();
+		_player = player;
+		_markers = new ArrayList<>();
 	}
 
 	// Add a marker to player's radar
@@ -39,9 +39,9 @@ public final class L2Radar
 	{
 		RadarMarker newMarker = new RadarMarker(x, y, z);
 
-		markers.add(newMarker);
-		player.sendPacket(new RadarControl(2, 2, x, y, z));
-		player.sendPacket(new RadarControl(0, 1, x, y, z));
+		_markers.add(newMarker);
+		_player.sendPacket(new RadarControl(2, 2, x, y, z));
+		_player.sendPacket(new RadarControl(0, 1, x, y, z));
 	}
 
 	// Remove a marker from player's radar
@@ -49,48 +49,48 @@ public final class L2Radar
 	{
 		RadarMarker newMarker = new RadarMarker(x, y, z);
 
-		markers.remove(newMarker);
-		player.sendPacket(new RadarControl(1, 1, x, y, z));
+		_markers.remove(newMarker);
+		_player.sendPacket(new RadarControl(1, 1, x, y, z));
 	}
 
 	public void removeAllMarkers()
 	{
-		for (RadarMarker tempMarker : markers)
+		for (RadarMarker tempMarker : _markers)
 		{
-			player.sendPacket(new RadarControl(2, 2, tempMarker.x, tempMarker.y, tempMarker.z));
+			_player.sendPacket(new RadarControl(2, 2, tempMarker._x, tempMarker._y, tempMarker._z));
 		}
 
-		markers.clear();
+		_markers.clear();
 	}
 
 	public void loadMarkers()
 	{
-		player.sendPacket(new RadarControl(2, 2, player.getX(), player.getY(), player.getZ()));
-		for (RadarMarker tempMarker : markers)
+		_player.sendPacket(new RadarControl(2, 2, _player.getX(), _player.getY(), _player.getZ()));
+		for (RadarMarker tempMarker : _markers)
 		{
-			player.sendPacket(new RadarControl(0, 1, tempMarker.x, tempMarker.y, tempMarker.z));
+			_player.sendPacket(new RadarControl(0, 1, tempMarker._x, tempMarker._y, tempMarker._z));
 		}
 	}
 
 	public static class RadarMarker
 	{
 		// Simple class to model radar points.
-		public int type, x, y, z;
+		public int _type, _x, _y, _z;
 
 		public RadarMarker(int type, int x, int y, int z)
 		{
-			this.type = type;
-			this.x = x;
-			this.y = y;
-			this.z = z;
+			_type = type;
+			_x = x;
+			_y = y;
+			_z = z;
 		}
 
 		public RadarMarker(int x, int y, int z)
 		{
-			type = 1;
-			this.x = x;
-			this.y = y;
-			this.z = z;
+			_type = 1;
+			_x = x;
+			_y = y;
+			_z = z;
 		}
 
 		/**
@@ -101,10 +101,10 @@ public final class L2Radar
 		{
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + type;
-			result = prime * result + x;
-			result = prime * result + y;
-			result = prime * result + z;
+			result = prime * result + _type;
+			result = prime * result + _x;
+			result = prime * result + _y;
+			result = prime * result + _z;
 			return result;
 		}
 
@@ -127,19 +127,19 @@ public final class L2Radar
 				return false;
 			}
 			final RadarMarker other = (RadarMarker) obj;
-			if (type != other.type)
+			if (_type != other._type)
 			{
 				return false;
 			}
-			if (x != other.x)
+			if (_x != other._x)
 			{
 				return false;
 			}
-			if (y != other.y)
+			if (_y != other._y)
 			{
 				return false;
 			}
-			return z == other.z;
+			return _z == other._z;
 		}
 	}
 }

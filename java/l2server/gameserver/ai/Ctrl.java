@@ -59,6 +59,7 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public interface Ctrl
 {
+
 	/**
 	 * the character this AI serves
 	 */

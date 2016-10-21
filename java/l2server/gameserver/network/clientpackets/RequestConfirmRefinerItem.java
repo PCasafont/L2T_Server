@@ -30,14 +30,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestConfirmRefinerItem extends L2GameClientPacket
 {
-	private int targetItemObjId;
-	private int refinerItemObjId;
+
+	private int _targetItemObjId;
+	private int _refinerItemObjId;
 
 	@Override
 	protected void readImpl()
 	{
-		targetItemObjId = readD();
-		refinerItemObjId = readD();
+		_targetItemObjId = readD();
+		_refinerItemObjId = readD();
 	}
 
 	@Override
@@ -49,13 +50,13 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 			return;
 		}
 
-		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
+		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
 
-		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
+		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;
@@ -74,6 +75,6 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 		final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
 
 		activeChar.sendPacket(
-				new ExPutIntensiveResultForVariationMake(refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
+				new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
 	}
 }

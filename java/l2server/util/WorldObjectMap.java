@@ -39,7 +39,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 {
-	Map<Integer, T> objectMap = new ConcurrentHashMap<>();
+	Map<Integer, T> _objectMap = new ConcurrentHashMap<>();
 
 	/* (non-Javadoc)
 	 * @see l2server.util.L2ObjectMap#size()
@@ -47,7 +47,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public int size()
 	{
-		return objectMap.size();
+		return _objectMap.size();
 	}
 
 	/* (non-Javadoc)
@@ -56,7 +56,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public boolean isEmpty()
 	{
-		return objectMap.isEmpty();
+		return _objectMap.isEmpty();
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +65,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public void clear()
 	{
-		objectMap.clear();
+		_objectMap.clear();
 	}
 
 	/* (non-Javadoc)
@@ -76,7 +76,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			objectMap.put(obj.getObjectId(), obj);
+			_objectMap.put(obj.getObjectId(), obj);
 		}
 	}
 
@@ -88,7 +88,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			objectMap.remove(obj.getObjectId());
+			_objectMap.remove(obj.getObjectId());
 		}
 	}
 
@@ -98,7 +98,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public T get(int id)
 	{
-		return objectMap.get(id);
+		return _objectMap.get(id);
 	}
 
 	/* (non-Javadoc)
@@ -111,7 +111,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 		{
 			return false;
 		}
-		return objectMap.get(obj.getObjectId()) != null;
+		return _objectMap.get(obj.getObjectId()) != null;
 	}
 
 	/* (non-Javadoc)
@@ -120,6 +120,6 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public Iterator<T> iterator()
 	{
-		return objectMap.values().iterator();
+		return _objectMap.values().iterator();
 	}
 }

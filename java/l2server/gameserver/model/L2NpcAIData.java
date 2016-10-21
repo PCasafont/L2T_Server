@@ -21,8 +21,6 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate.AIType;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Author: ShanSoft
@@ -36,29 +34,29 @@ public class L2NpcAIData
 	//Basic AI
 	private int _primary_attack;
 	private int _skill_chance;
-	@Setter private boolean canMove;
-	private int soulshot;
-	private int spiritshot;
-	private int soulshotchance;
-	private int spiritshotchance;
-	private int ischaos;
-	@Getter private String clan = null;
-	@Getter @Setter private int clanRange;
-	@Getter private String enemyClan = null;
-	@Getter @Setter private int enemyRange;
-	//private int baseShldRate;
-	//private int baseShldDef;
-	@Getter @Setter private int dodge;
-	private int longrangeskill;
-	private int shortrangeskill;
-	private int longrangechance;
-	private int shortrangechance;
-	private int switchrangechance;
-	@Setter private int minSocial1;
-	@Setter private int maxSocial1;
-	@Setter private int minSocial2;
-	@Setter private int maxSocial2;
-	@Getter private AIType aiType = AIType.FIGHTER;
+	private boolean _canMove;
+	private int _soulshot;
+	private int _spiritshot;
+	private int _soulshotchance;
+	private int _spiritshotchance;
+	private int _ischaos;
+	private String _clan = null;
+	private int _clanRange;
+	private String _enemyClan = null;
+	private int _enemyRange;
+	//private int _baseShldRate;
+	//private int _baseShldDef;
+	private int _dodge;
+	private int _longrangeskill;
+	private int _shortrangeskill;
+	private int _longrangechance;
+	private int _shortrangechance;
+	private int _switchrangechance;
+	private int _minSocial1;
+	private int _maxSocial1;
+	private int _minSocial2;
+	private int _maxSocial2;
+	private AIType _aiType = AIType.FIGHTER;
 
 	public L2NpcAIData()
 	{
@@ -103,111 +101,152 @@ public class L2NpcAIData
 		_skill_chance = skill_chance;
 	}
 
+	public void setCanMove(boolean canMove)
+	{
+		_canMove = canMove;
+	}
+
 	public void setSoulShot(int soulshot)
 	{
-		this.soulshot = soulshot;
+		_soulshot = soulshot;
 	}
 
 	public void setSpiritShot(int spiritshot)
 	{
-		this.spiritshot = spiritshot;
+		_spiritshot = spiritshot;
 	}
 
 	public void setSoulShotChance(int soulshotchance)
 	{
-		this.soulshotchance = soulshotchance;
+		_soulshotchance = soulshotchance;
 	}
 
 	public void setSpiritShotChance(int spiritshotchance)
 	{
-		this.spiritshotchance = spiritshotchance;
+		_spiritshotchance = spiritshotchance;
 	}
 
 	public void setShortRangeSkill(int shortrangeskill)
 	{
-		this.shortrangeskill = shortrangeskill;
+		_shortrangeskill = shortrangeskill;
 	}
 
 	public void setShortRangeChance(int shortrangechance)
 	{
-		this.shortrangechance = shortrangechance;
+		_shortrangechance = shortrangechance;
 	}
 
 	public void setLongRangeSkill(int longrangeskill)
 	{
-		this.longrangeskill = longrangeskill;
+		_longrangeskill = longrangeskill;
 	}
 
 	public void setLongRangeChance(int longrangechance)
 	{
-		shortrangechance = longrangechance;
+		_shortrangechance = longrangechance;
 	}
 
 	public void setSwitchRangeChance(int switchrangechance)
 	{
-		this.switchrangechance = switchrangechance;
+		_switchrangechance = switchrangechance;
 	}
 
 	public void setIsChaos(int ischaos)
 	{
-		this.ischaos = ischaos;
+		_ischaos = ischaos;
 	}
 
 	public void setClan(String clan)
 	{
 		if (clan != null && !clan.equals("") && !clan.equalsIgnoreCase("null"))
 		{
-			this.clan = clan.intern();
+			_clan = clan.intern();
 		}
+	}
+
+	public void setClanRange(int clanRange)
+	{
+		_clanRange = clanRange;
 	}
 
 	public void setEnemyClan(String enemyClan)
 	{
 		if (enemyClan != null && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
 		{
-			this.enemyClan = enemyClan.intern();
+			_enemyClan = enemyClan.intern();
 		}
+	}
+
+	public void setEnemyRange(int enemyRange)
+	{
+		_enemyRange = enemyRange;
+	}
+
+	public void setDodge(int dodge)
+	{
+		_dodge = dodge;
+	}
+
+	public void setMinSocial1(int minSocial1)
+	{
+		_minSocial1 = minSocial1;
+	}
+
+	public void setMaxSocial1(int maxSocial1)
+	{
+		_maxSocial1 = maxSocial1;
+	}
+
+	public void setMinSocial2(int minSocial2)
+	{
+		_minSocial2 = minSocial2;
+	}
+
+	public void setMaxSocial2(int maxSocial2)
+	{
+		_maxSocial2 = maxSocial2;
 	}
 
 	public void setAi(String ai)
 	{
 		if (ai.equalsIgnoreCase("archer"))
 		{
-			aiType = AIType.ARCHER;
+			_aiType = AIType.ARCHER;
 		}
 		else if (ai.equalsIgnoreCase("balanced"))
 		{
-			aiType = AIType.BALANCED;
+			_aiType = AIType.BALANCED;
 		}
 		else if (ai.equalsIgnoreCase("mage"))
 		{
-			aiType = AIType.MAGE;
+			_aiType = AIType.MAGE;
 		}
 		else if (ai.equalsIgnoreCase("healer"))
 		{
-			aiType = AIType.HEALER;
+			_aiType = AIType.HEALER;
 		}
 		else if (ai.equalsIgnoreCase("corpse"))
 		{
-			aiType = AIType.CORPSE;
+			_aiType = AIType.CORPSE;
 		}
 		else
 		{
-			aiType = AIType.FIGHTER;
+			_aiType = AIType.FIGHTER;
 		}
 	}
 
 	/*
+
 	public void setBaseShldRate (int baseShldRate)
 	{
-		baseShldRate = baseShldRate;
+		_baseShldRate = baseShldRate;
 	}
 
 	public void setBaseShldDef (int baseShldDef)
 	{
-		baseShldDef = baseShldDef;
+		_baseShldDef = baseShldDef;
 	}
-	*/
+	 */
 
 	//--------------------------------------------------------------------------------------------------------------
 	//Data Recall....
@@ -224,79 +263,109 @@ public class L2NpcAIData
 
 	public boolean canMove()
 	{
-		return canMove;
+		return _canMove;
 	}
 
 	public int getSoulShot()
 	{
-		return soulshot;
+		return _soulshot;
 	}
 
 	public int getSpiritShot()
 	{
-		return spiritshot;
+		return _spiritshot;
 	}
 
 	public int getSoulShotChance()
 	{
-		return soulshotchance;
+		return _soulshotchance;
 	}
 
 	public int getSpiritShotChance()
 	{
-		return spiritshotchance;
+		return _spiritshotchance;
 	}
 
 	public int getShortRangeSkill()
 	{
-		return shortrangeskill;
+		return _shortrangeskill;
 	}
 
 	public int getShortRangeChance()
 	{
-		return shortrangechance;
+		return _shortrangechance;
 	}
 
 	public int getLongRangeSkill()
 	{
-		return longrangeskill;
+		return _longrangeskill;
 	}
 
 	public int getLongRangeChance()
 	{
-		return longrangechance;
+		return _longrangechance;
 	}
 
 	public int getSwitchRangeChance()
 	{
-		return switchrangechance;
+		return _switchrangechance;
 	}
 
 	public int getIsChaos()
 	{
-		return ischaos;
+		return _ischaos;
+	}
+
+	public String getClan()
+	{
+		return _clan;
+	}
+
+	public int getClanRange()
+	{
+		return _clanRange;
+	}
+
+	public String getEnemyClan()
+	{
+		return _enemyClan;
+	}
+
+	public int getEnemyRange()
+	{
+		return _enemyRange;
+	}
+
+	public int getDodge()
+	{
+		return _dodge;
 	}
 
 	public int getMinSocial(boolean second)
 	{
-		return !second ? minSocial1 : minSocial2;
+		return !second ? _minSocial1 : _minSocial2;
 	}
 
 	public int getMaxSocial(boolean second)
 	{
-		return !second ? maxSocial1 : maxSocial2;
+		return !second ? _maxSocial1 : _maxSocial2;
+	}
+
+	public AIType getAiType()
+	{
+		return _aiType;
 	}
 
 	/*
 
 	public int getBaseShldRate ()
 	{
-		return baseShldRate;
+		return _baseShldRate;
 	}
 
 	public int getBaseShldDef ()
 	{
-		return baseShldDef;
+		return _baseShldDef;
 	}
 	 */
 }

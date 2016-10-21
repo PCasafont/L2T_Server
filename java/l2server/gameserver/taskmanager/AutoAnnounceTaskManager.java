@@ -29,7 +29,7 @@ public class AutoAnnounceTaskManager
 {
 	public static AutoAnnounceTaskManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private AutoAnnounceTaskManager()
@@ -70,23 +70,23 @@ public class AutoAnnounceTaskManager
 
 	private class AutoAnnouncement implements Runnable
 	{
-		private String text;
+		private String _text;
 
 		private AutoAnnouncement(String text)
 		{
-			this.text = text;
+			_text = text;
 		}
 
 		@Override
 		public void run()
 		{
-			Broadcast.announceToOnlinePlayers(text);
+			Broadcast.announceToOnlinePlayers(_text);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AutoAnnounceTaskManager instance = new AutoAnnounceTaskManager();
+		protected static final AutoAnnounceTaskManager _instance = new AutoAnnounceTaskManager();
 	}
 }

@@ -31,17 +31,17 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	public static String qn = "Q10328_RequestOfSealedEvilFragments";
 
 	// NPC
-	private int pantheon = 32972;
-	private int kakai = 30565;
+	private int _pantheon = 32972;
+	private int _kakai = 30565;
 
-	private int evilFragment = 17577;
+	private int _evilFragment = 17577;
 
 	public Q10328_RequestOfSealedEvilFragments(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(pantheon);
-		addTalkId(pantheon);
-		addTalkId(kakai);
+		addStartNpc(_pantheon);
+		addTalkId(_pantheon);
+		addTalkId(_kakai);
 	}
 
 	@Override
@@ -55,23 +55,23 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-04.htm"))
+		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-04.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
-			st.giveItems(evilFragment, 1);
+			st.giveItems(_evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
 		{
 			if (event.equalsIgnoreCase("30565-02.htm"))
 			{
-				st.takeItems(evilFragment, -1);
+				st.takeItems(_evilFragment, -1);
 			}
 			else if (event.equalsIgnoreCase("30565-03.htm"))
 			{
 				st.unset("cond");
-				st.takeItems(evilFragment, -1);
+				st.takeItems(_evilFragment, -1);
 				st.giveItems(57, 20000);
 				st.addExpAndSp(13000, 4000);
 				st.playSound("ItemSound.quest_finish");
@@ -94,7 +94,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon)
+		if (npc.getNpcId() == _pantheon)
 		{
 			switch (st.getState())
 			{
@@ -116,7 +116,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
 		{
 			htmltext = "30565-01.htm";
 		}

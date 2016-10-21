@@ -36,7 +36,6 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
 import l2server.util.StringUtil;
 
 import java.sql.Connection;
@@ -59,7 +58,7 @@ import java.util.logging.Logger;
  */
 public class AdminTeleport implements IAdminCommandHandler
 {
-	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
+	private static final Logger _log = Logger.getLogger(AdminTeleport.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_show_moves",
@@ -149,7 +148,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			{
 				if (Config.DEBUG)
 				{
-					Log.info("admin_walk: " + e);
+					_log.info("admin_walk: " + e);
 				}
 			}
 		}
@@ -632,7 +631,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (template1 == null)
 			{
 				activeChar.sendMessage("Incorrect monster template.");
-				Log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
 				return;
 			}
 
@@ -640,7 +639,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (spawn == null)
 			{
 				activeChar.sendMessage("Incorrect monster spawn.");
-				Log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
 				return;
 			}
 			int respawnTime = spawn.getRespawnDelay() / 1000;
@@ -676,8 +675,8 @@ public class AdminTeleport implements IAdminCommandHandler
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-					Log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
+					_log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
+					_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
 							target.getObjectId());
 				}
 			}

@@ -40,6 +40,9 @@ import java.io.InputStreamReader;
  */
 public class Base64
 {
+
+	/*  P U B L I C F I E L D S */
+
 	/**
 	 * No options specified. Value is zero.
 	 */
@@ -64,6 +67,8 @@ public class Base64
 	 * Don't break lines when encoding (violates strict Base64 specification)
 	 */
 	public static final int DONT_BREAK_LINES = 8;
+
+	/*  P R I V A T E F I E L D S */
 
 	/**
 	 * Maximum line length (76) of Base64 output.
@@ -229,6 +234,8 @@ public class Base64
 	private Base64()
 	{
 	}
+	
+	/*  E N C O D I N G M E T H O D S */
 
 	// /**
 	// * Encodes the first three bytes of array <var>threeBytes</var>
@@ -652,7 +659,10 @@ public class Base64
 			return new String(outBuff, 0, e);
 		} // end catch
 		// end else: don't compress
+
 	} // end encodeBytes
+	
+	/*  D E C O D I N G M E T H O D S */
 
 	// /**
 	// * Decodes the first four bytes of array <var>fourBytes</var>
@@ -852,6 +862,7 @@ public class Base64
 		if (bytes != null && // In case decoding returned null
 				bytes.length >= 2)
 		{
+
 			int head = bytes[0] & 0xff | bytes[1] << 8 & 0xff00;
 			if (bytes.length >= 4 && // Don't want to get ArrayIndexOutOfBounds
 					java.util.zip.GZIPInputStream.GZIP_MAGIC == head)
@@ -963,6 +974,8 @@ public class Base64
 
 		return obj;
 	} // end decodeObject
+	
+	/*  I N N E R C L A S S I N P U T S T R E A M */
 
 	/**
 	 * A  will read data from another
@@ -1018,7 +1031,7 @@ public class Base64
 		public InputStream(java.io.InputStream pIn, int options)
 		{
 			super(pIn);
-			// options = options;
+			// this.options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
 			encode = (options & ENCODE) == ENCODE;
 			bufferLength = encode ? 4 : 3;
@@ -1193,6 +1206,8 @@ public class Base64
 			return i;
 		} // end read
 	} // end inner class InputStream
+	
+	/*  I N N E R C L A S S O U T P U T S T R E A M */
 
 	/**
 	 * A  will write data to another
@@ -1249,7 +1264,7 @@ public class Base64
 		public OutputStream(java.io.OutputStream pOut, int options)
 		{
 			super(pOut);
-			// options = options;
+			// this.options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
 			encode = (options & ENCODE) == ENCODE;
 			bufferLength = encode ? 3 : 4;

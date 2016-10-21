@@ -28,6 +28,7 @@ package l2server.gameserver.stats.conditions;
  */
 public interface ConditionListener
 {
+
 	/**
 	 * Notify changed.
 	 */

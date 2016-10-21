@@ -22,18 +22,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCommissionList extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private long category;
-	@SuppressWarnings("unused") private int type;
-	@SuppressWarnings("unused") private int grade;
-	@SuppressWarnings("unused") private String searchName;
+
+	@SuppressWarnings("unused")
+	private long _category;
+	@SuppressWarnings("unused")
+	private int _type;
+	@SuppressWarnings("unused")
+	private int _grade;
+	@SuppressWarnings("unused")
+	private String _searchName;
 
 	@Override
 	protected void readImpl()
 	{
-		category = readQ();
-		type = readD();
-		grade = readD();
-		searchName = readS();
+		_category = readQ();
+		_type = readD();
+		_grade = readD();
+		_searchName = readS();
 	}
 
 	@Override
@@ -46,29 +51,29 @@ public final class RequestCommissionList extends L2GameClientPacket
 
 		/*AuctionManager am = AuctionManager.getInstance();
 
-		if (category == 0)
-			category = 100;
-		else if (category == 1)
-			category = 101;
+		if (_category == 0)
+			_category = 100;
+		else if (_category == 1)
+			_category = 101;
 
-		if (category != 101 && category != 100 && category % 10000 != 7297 && category % 10000 != 4593 && category % 10000 != 1889 &&
-				category % 10000 != 9185 && category % 10000 != 6481)
-			category = am.convertCategory((int)(_category/1000));
-		else if (category != 101 && category != 100)
-			category = am.convertMassCategory((int)(_category/1000));
+		if (_category != 101 && _category != 100 && _category % 10000 != 7297 && _category % 10000 != 4593 && _category % 10000 != 1889 &&
+				_category % 10000 != 9185 && _category % 10000 != 6481)
+			_category = am.convertCategory((int)(_category/1000));
+		else if (_category != 101 && _category != 100)
+			_category = am.convertMassCategory((int)(_category/1000));
 
-		if (category > 60 && category < 66 || category == 101)
+		if (_category > 60 && _category < 66 || _category == 101)
 		{
-			if (am.getAuctionsSizeById(category, grade, searchName) > 999)
+			if (am.getAuctionsSizeById(_category, _grade, _searchName) > 999)
 				activeChar.sendPacket(SystemMessageId.THE_SEARCH_RESULT_EXCEED_THE_MAXIMUM_ALLOWED_RANGE_FOR_OUTPUT);
-			else if (am.getAuctionsSizeById(category, grade, searchName) <= 0)
+			else if (am.getAuctionsSizeById(_category, _grade, _searchName) <= 0)
 				activeChar.sendPacket(SystemMessageId.CURRENTLY_THERE_ARE_NO_REGISTERED_ITEMS);
 		}
-		else if (category == 100)
-			if (am.getAuctionsSizeById(grade, searchName) > 999)
+		else if (_category == 100)
+			if (am.getAuctionsSizeById(_grade, _searchName) > 999)
 				activeChar.sendPacket(SystemMessageId.THE_SEARCH_RESULT_EXCEED_THE_MAXIMUM_ALLOWED_RANGE_FOR_OUTPUT);
 
 		am.checkForAuctionsDeletion();
-		activeChar.sendPacket(new ExResponseCommissionList(activeChar, category, type, grade, searchName));*/
+		activeChar.sendPacket(new ExResponseCommissionList(activeChar, _category, _type, _grade, _searchName));*/
 	}
 }

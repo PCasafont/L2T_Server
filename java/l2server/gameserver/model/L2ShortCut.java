@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 /**
  * This class ...
  *
@@ -31,26 +29,61 @@ public class L2ShortCut
 	public static final int TYPE_RECIPE = 5;
 	public static final int TYPE_TPBOOKMARK = 6;
 
-	@Getter private final int slot;
-	@Getter private final int page;
-	@Getter private final int type;
-	@Getter private final int id;
-	@Getter private final int level;
-	@Getter private final int characterType;
-	@Getter private int sharedReuseGroup = -1;
+	private final int _slot;
+	private final int _page;
+	private final int _type;
+	private final int _id;
+	private final int _level;
+	private final int _characterType;
+	private int _sharedReuseGroup = -1;
 
 	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType)
 	{
-		slot = slotId;
-		page = pageId;
-		type = shortcutType;
-		id = shortcutId;
-		level = shortcutLevel;
-		this.characterType = characterType;
+		_slot = slotId;
+		_page = pageId;
+		_type = shortcutType;
+		_id = shortcutId;
+		_level = shortcutLevel;
+		_characterType = characterType;
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public int getLevel()
+	{
+		return _level;
+	}
+
+	public int getPage()
+	{
+		return _page;
+	}
+
+	public int getSlot()
+	{
+		return _slot;
+	}
+
+	public int getType()
+	{
+		return _type;
+	}
+
+	public int getCharacterType()
+	{
+		return _characterType;
+	}
+
+	public int getSharedReuseGroup()
+	{
+		return _sharedReuseGroup;
 	}
 
 	public void setSharedReuseGroup(int g)
 	{
-		sharedReuseGroup = g;
+		_sharedReuseGroup = g;
 	}
 }

@@ -22,28 +22,28 @@ import l2server.gameserver.pathfinding.geonodes.GeoNode;
  */
 public class BinaryNodeHeap
 {
-	private final GeoNode[] list;
-	private int size;
+	private final GeoNode[] _list;
+	private int _size;
 
 	public BinaryNodeHeap(int size)
 	{
-		list = new GeoNode[size + 1];
-		this.size = 0;
+		_list = new GeoNode[size + 1];
+		_size = 0;
 	}
 
 	public void add(GeoNode n)
 	{
-		size++;
-		int pos = size;
-		list[pos] = n;
+		_size++;
+		int pos = _size;
+		_list[pos] = n;
 		while (pos != 1)
 		{
 			int p2 = pos / 2;
-			if (list[pos].getCost() <= list[p2].getCost())
+			if (_list[pos].getCost() <= _list[p2].getCost())
 			{
-				GeoNode temp = list[p2];
-				list[p2] = list[pos];
-				list[pos] = temp;
+				GeoNode temp = _list[p2];
+				_list[p2] = _list[pos];
+				_list[pos] = temp;
 				pos = p2;
 			}
 			else
@@ -55,10 +55,10 @@ public class BinaryNodeHeap
 
 	public GeoNode removeFirst()
 	{
-		GeoNode first = list[1];
-		list[1] = list[size];
-		list[size] = null;
-		size--;
+		GeoNode first = _list[1];
+		_list[1] = _list[_size];
+		_list[_size] = null;
+		_size--;
 		int pos = 1;
 		int cpos;
 		int dblcpos;
@@ -67,20 +67,20 @@ public class BinaryNodeHeap
 		{
 			cpos = pos;
 			dblcpos = cpos * 2;
-			if (dblcpos + 1 <= size)
+			if (dblcpos + 1 <= _size)
 			{
-				if (list[cpos].getCost() >= list[dblcpos].getCost())
+				if (_list[cpos].getCost() >= _list[dblcpos].getCost())
 				{
 					pos = dblcpos;
 				}
-				if (list[pos].getCost() >= list[dblcpos + 1].getCost())
+				if (_list[pos].getCost() >= _list[dblcpos + 1].getCost())
 				{
 					pos = dblcpos + 1;
 				}
 			}
-			else if (dblcpos <= size)
+			else if (dblcpos <= _size)
 			{
-				if (list[cpos].getCost() >= list[dblcpos].getCost())
+				if (_list[cpos].getCost() >= _list[dblcpos].getCost())
 				{
 					pos = dblcpos;
 				}
@@ -88,9 +88,9 @@ public class BinaryNodeHeap
 
 			if (cpos != pos)
 			{
-				temp = list[cpos];
-				list[cpos] = list[pos];
-				list[pos] = temp;
+				temp = _list[cpos];
+				_list[cpos] = _list[pos];
+				_list[pos] = temp;
 			}
 			else
 			{
@@ -102,13 +102,13 @@ public class BinaryNodeHeap
 
 	public boolean contains(GeoNode n)
 	{
-		if (size == 0)
+		if (_size == 0)
 		{
 			return false;
 		}
-		for (int i = 1; i <= size; i++)
+		for (int i = 1; i <= _size; i++)
 		{
-			if (list[i].equals(n))
+			if (_list[i].equals(n))
 			{
 				return true;
 			}
@@ -118,6 +118,6 @@ public class BinaryNodeHeap
 
 	public boolean isEmpty()
 	{
-		return size == 0;
+		return _size == 0;
 	}
 }

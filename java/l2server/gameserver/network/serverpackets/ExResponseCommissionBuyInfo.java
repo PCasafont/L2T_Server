@@ -20,15 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExResponseCommissionBuyInfo extends L2GameServerPacket
 {
+
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(0x01); // Unknown
 
-		/*L2ItemInstance item = auction.getItem();
+		/*L2ItemInstance item = _auction.getItem();
 
-		writeQ(auction.getPrice());
-		writeD(auction.getCategory());
+		writeQ(_auction.getPrice());
+		writeD(_auction.getCategory());
 		writeD(0x00); // Unkown
 		writeD(item.getItemId());
 		writeQ(item.getCount());

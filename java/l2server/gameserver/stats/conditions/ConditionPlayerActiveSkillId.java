@@ -25,8 +25,8 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerActiveSkillId extends Condition
 {
-	private final int skillId;
-	private final int skillLevel;
+	private final int _skillId;
+	private final int _skillLevel;
 
 	/**
 	 * Instantiates a new condition player active skill id.
@@ -35,8 +35,8 @@ public class ConditionPlayerActiveSkillId extends Condition
 	 */
 	public ConditionPlayerActiveSkillId(int skillId)
 	{
-		this.skillId = skillId;
-		skillLevel = -1;
+		_skillId = skillId;
+		_skillLevel = -1;
 	}
 
 	/**
@@ -47,8 +47,8 @@ public class ConditionPlayerActiveSkillId extends Condition
 	 */
 	public ConditionPlayerActiveSkillId(int skillId, int skillLevel)
 	{
-		this.skillId = skillId;
-		this.skillLevel = skillLevel;
+		_skillId = skillId;
+		_skillLevel = skillLevel;
 	}
 
 	/* (non-Javadoc)
@@ -61,9 +61,9 @@ public class ConditionPlayerActiveSkillId extends Condition
 		{
 			if (sk != null)
 			{
-				if (sk.getId() == skillId)
+				if (sk.getId() == _skillId)
 				{
-					if (skillLevel == -1 || skillLevel <= sk.getLevel())
+					if (_skillLevel == -1 || _skillLevel <= sk.getLevel())
 					{
 						return true;
 					}

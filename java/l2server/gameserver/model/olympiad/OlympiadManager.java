@@ -30,34 +30,34 @@ import java.util.*;
  */
 public class OlympiadManager
 {
-	private List<Integer> nonClassBasedRegisters;
-	private Map<Integer, List<Integer>> classBasedRegisters;
+	private List<Integer> _nonClassBasedRegisters;
+	private Map<Integer, List<Integer>> _classBasedRegisters;
 
 	private OlympiadManager()
 	{
-		nonClassBasedRegisters = new ArrayList<>();
-		classBasedRegisters = new LinkedHashMap<>();
+		_nonClassBasedRegisters = new ArrayList<>();
+		_classBasedRegisters = new LinkedHashMap<>();
 	}
 
 	public static OlympiadManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public final List<Integer> getRegisteredNonClassBased()
 	{
-		return nonClassBasedRegisters;
+		return _nonClassBasedRegisters;
 	}
 
 	public final Map<Integer, List<Integer>> getRegisteredClassBased()
 	{
-		return classBasedRegisters;
+		return _classBasedRegisters;
 	}
 
 	protected final List<List<Integer>> hasEnoughRegisteredClassed()
 	{
 		List<List<Integer>> result = null;
-		for (Map.Entry<Integer, List<Integer>> classList : classBasedRegisters.entrySet())
+		for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
 		{
 			if (classList.getValue() != null && classList.getValue().size() >= Config.ALT_OLY_CLASSED)
 			{
@@ -74,13 +74,13 @@ public class OlympiadManager
 
 	protected final boolean hasEnoughRegisteredNonClassed()
 	{
-		return nonClassBasedRegisters.size() >= Config.ALT_OLY_NONCLASSED;
+		return _nonClassBasedRegisters.size() >= Config.ALT_OLY_NONCLASSED;
 	}
 
 	protected final void clearRegistered()
 	{
-		nonClassBasedRegisters.clear();
-		classBasedRegisters.clear();
+		_nonClassBasedRegisters.clear();
+		_classBasedRegisters.clear();
 		AntiFeedManager.getInstance().clear(AntiFeedManager.OLYMPIAD_ID);
 	}
 
@@ -94,7 +94,7 @@ public class OlympiadManager
 		final Integer objId = player.getObjectId();
 		// party may be already dispersed
 
-		if (nonClassBasedRegisters.contains(objId))
+		if (_nonClassBasedRegisters.contains(objId))
 		{
 			if (showMessage)
 			{
@@ -112,7 +112,7 @@ public class OlympiadManager
 		}
 
 		final List<Integer> classed =
-				classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+				_classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
 		if (classed != null && classed.contains(objId))
 		{
 			if (showMessage)
@@ -135,7 +135,7 @@ public class OlympiadManager
 
 	public final boolean isInCompetition(L2PcInstance player, boolean showMessage)
 	{
-		if (!Olympiad.inCompPeriod)
+		if (!Olympiad._inCompPeriod)
 		{
 			return false;
 		}
@@ -201,7 +201,7 @@ public class OlympiadManager
 		}
 
 		SystemMessage sm;
-		if (!Olympiad.inCompPeriod)
+		if (!Olympiad._inCompPeriod)
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_IS_NOT_CURRENTLY_IN_PROGRESS);
 			player.sendPacket(sm);
@@ -240,7 +240,7 @@ public class OlympiadManager
 			case CLASSED:
 			{
 				int classId = player.getCurrentClass().getParent().getAwakeningClassId();
-				List<Integer> classed = classBasedRegisters.get(classId);
+				List<Integer> classed = _classBasedRegisters.get(classId);
 				if (classed != null)
 				{
 					addPlayer(classed, nobleInfo);
@@ -249,7 +249,7 @@ public class OlympiadManager
 				{
 					classed = new ArrayList<>();
 					classed.add(player.getObjectId());
-					classBasedRegisters.put(classId, classed);
+					_classBasedRegisters.put(classId, classed);
 				}
 
 				sm = SystemMessage.getSystemMessage(
@@ -259,7 +259,8 @@ public class OlympiadManager
 			}
 			case NON_CLASSED:
 			{
-				addPlayer(nonClassBasedRegisters, nobleInfo);
+
+				addPlayer(_nonClassBasedRegisters, nobleInfo);
 				sm = SystemMessage
 						.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_NO_CLASS_GAMES);
 				player.sendPacket(sm);
@@ -272,7 +273,7 @@ public class OlympiadManager
 	public final boolean unRegisterNoble(L2PcInstance player)
 	{
 		SystemMessage sm;
-		if (!Olympiad.inCompPeriod)
+		if (!Olympiad._inCompPeriod)
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_IS_NOT_CURRENTLY_IN_PROGRESS);
 			player.sendPacket(sm);
@@ -303,7 +304,7 @@ public class OlympiadManager
 
 		sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_DELETED_FROM_THE_WAITING_LIST_OF_A_GAME);
 		Integer objId = player.getObjectId();
-		if (nonClassBasedRegisters.remove(objId))
+		if (_nonClassBasedRegisters.remove(objId))
 		{
 			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
@@ -315,11 +316,11 @@ public class OlympiadManager
 		}
 
 		int classId = player.getCurrentClass().getParent().getAwakeningClassId();
-		final List<Integer> classed = classBasedRegisters.get(classId);
+		final List<Integer> classed = _classBasedRegisters.get(classId);
 		if (classed != null && classed.remove(objId))
 		{
-			classBasedRegisters.remove(classId);
-			classBasedRegisters.put(classId, classed);
+			_classBasedRegisters.remove(classId);
+			_classBasedRegisters.put(classId, classed);
 
 			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
@@ -341,7 +342,7 @@ public class OlympiadManager
 		}
 
 		final Integer objId = player.getObjectId();
-		if (nonClassBasedRegisters.remove(objId))
+		if (_nonClassBasedRegisters.remove(objId))
 		{
 			return;
 		}
@@ -352,7 +353,7 @@ public class OlympiadManager
 		}
 
 		final List<Integer> classed =
-				classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+				_classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
 		if (classed != null && classed.remove(objId))
 		{
 		}
@@ -382,12 +383,6 @@ public class OlympiadManager
 			//sm.addPcName(noble);
 			//player.sendPacket(sm);
 			player.sendMessage("Only awakened characters can participate in the Grand Olympiad.");
-			return null;
-		}
-
-		if (Config.isServer(Config.TENKAI_ESTHUS) && player.getLevel() < 107)
-		{
-			player.sendMessage("Only level 107 characters can participate in the Grand Olympiad.");
 			return null;
 		}
 
@@ -427,7 +422,7 @@ public class OlympiadManager
 
 		//If we have access to the player HWID we will use it to check dualbox otherwise we will use the external ip and the internal ip
 		/*for (L2PcInstance pl : L2World.getInstance().getAllOlympiadPlayers())
-		{
+        {
 			if (pl == null)
 				continue;
 			if ((player.getHWID() != null) && (pl.getHWID() != null))
@@ -506,6 +501,6 @@ public class OlympiadManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final OlympiadManager instance = new OlympiadManager();
+		protected static final OlympiadManager _instance = new OlympiadManager();
 	}
 }

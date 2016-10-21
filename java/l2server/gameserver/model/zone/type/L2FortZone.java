@@ -20,7 +20,6 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2SpawnZone;
-import lombok.Getter;
 
 /**
  * A castle zone
@@ -29,7 +28,7 @@ import lombok.Getter;
  */
 public class L2FortZone extends L2SpawnZone
 {
-	@Getter private int fortId;
+	private int _fortId;
 
 	public L2FortZone(int id)
 	{
@@ -41,7 +40,7 @@ public class L2FortZone extends L2SpawnZone
 	{
 		if (name.equals("fortId"))
 		{
-			fortId = Integer.parseInt(value);
+			_fortId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -64,6 +63,7 @@ public class L2FortZone extends L2SpawnZone
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)
 	{
+
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class L2FortZone extends L2SpawnZone
 	 */
 	public void banishForeigners(L2Clan owningClan)
 	{
-		for (L2Character temp : characterList.values())
+		for (L2Character temp : _characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -93,7 +93,13 @@ public class L2FortZone extends L2SpawnZone
 				continue;
 			}
 
-			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
+			temp.teleToLocation(
+					MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
 		}
+	}
+
+	public int getFortId()
+	{
+		return _fortId;
 	}
 }

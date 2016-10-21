@@ -20,6 +20,7 @@ import java.util.logging.LogRecord;
 
 public class ChatFilter implements Filter
 {
+
 	@Override
 	public boolean isLoggable(LogRecord record)
 	{

@@ -24,8 +24,8 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillLearnSkill extends L2Skill
 {
-	private final int[] learnSkillId;
-	private final int[] learnSkillLvl;
+	private final int[] _learnSkillId;
+	private final int[] _learnSkillLvl;
 
 	public L2SkillLearnSkill(StatsSet set)
 	{
@@ -39,12 +39,12 @@ public class L2SkillLearnSkill extends L2Skill
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
-		learnSkillId = ar2;
+		_learnSkillId = ar2;
 
 		ar = set.getString("learnSkillLvl", "1").split(",");
-		ar2 = new int[learnSkillId.length];
+		ar2 = new int[_learnSkillId.length];
 
-		for (int i = 0; i < learnSkillId.length; i++)
+		for (int i = 0; i < _learnSkillId.length; i++)
 		{
 			ar2[i] = 1;
 		}
@@ -54,7 +54,7 @@ public class L2SkillLearnSkill extends L2Skill
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
-		learnSkillLvl = ar2;
+		_learnSkillLvl = ar2;
 	}
 
 	@Override
@@ -68,11 +68,11 @@ public class L2SkillLearnSkill extends L2Skill
 		final L2PcInstance player = (L2PcInstance) activeChar;
 		L2Skill newSkill;
 
-		for (int i = 0; i < learnSkillId.length; i++)
+		for (int i = 0; i < _learnSkillId.length; i++)
 		{
-			if (player.getSkillLevelHash(learnSkillId[i]) < learnSkillLvl[i] && learnSkillId[i] != 0)
+			if (player.getSkillLevelHash(_learnSkillId[i]) < _learnSkillLvl[i] && _learnSkillId[i] != 0)
 			{
-				newSkill = SkillTable.getInstance().getInfo(learnSkillId[i], learnSkillLvl[i]);
+				newSkill = SkillTable.getInstance().getInfo(_learnSkillId[i], _learnSkillLvl[i]);
 				if (newSkill != null)
 				{
 					player.addSkill(newSkill, true);

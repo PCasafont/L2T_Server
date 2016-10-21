@@ -29,12 +29,12 @@ import l2server.gameserver.network.serverpackets.SocialAction;
  */
 public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 {
-	private boolean change;
+	private boolean _change;
 
 	@Override
 	protected void readImpl()
 	{
-		change = readD() == 1;
+		_change = readD() == 1;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!change)
+		if (!_change)
 		{
 			return;
 		}

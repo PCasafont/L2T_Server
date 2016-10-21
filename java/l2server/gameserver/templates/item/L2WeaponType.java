@@ -45,8 +45,8 @@ public enum L2WeaponType implements L2ItemType
 	BIGBLUNT("Big Blunt"),
 	BIGSWORD("Big Sword");
 
-	private final int mask;
-	private final String name;
+	private final int _mask;
+	private final String _name;
 
 	/**
 	 * Constructor of the L2WeaponType.
@@ -55,8 +55,8 @@ public enum L2WeaponType implements L2ItemType
 	 */
 	L2WeaponType(String name)
 	{
-		mask = 1 << ordinal();
-		this.name = name;
+		_mask = 1 << ordinal();
+		_name = name;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public enum L2WeaponType implements L2ItemType
 	@Override
 	public int mask()
 	{
-		return mask;
+		return _mask;
 	}
 
 	/**
@@ -78,6 +78,7 @@ public enum L2WeaponType implements L2ItemType
 	@Override
 	public String toString()
 	{
-		return name;
+		return _name;
 	}
+
 }

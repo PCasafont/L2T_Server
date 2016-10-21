@@ -24,14 +24,16 @@ import l2server.gameserver.network.serverpackets.ExCrystalizingEstimation;
  */
 public final class RequestCrystallizeEstimate extends L2GameClientPacket
 {
-	private int itemObjId;
-	@SuppressWarnings("unused") private long itemCount;
+
+	private int _itemObjId;
+	@SuppressWarnings("unused")
+	private long _itemCount;
 
 	@Override
 	protected void readImpl()
 	{
-		itemObjId = readD();
-		itemCount = readQ(); // For some use???
+		_itemObjId = readD();
+		_itemCount = readQ(); // For some use???
 	}
 
 	@Override
@@ -43,7 +45,7 @@ public final class RequestCrystallizeEstimate extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = player.getInventory().getItemByObjectId(itemObjId);
+		L2ItemInstance item = player.getInventory().getItemByObjectId(_itemObjId);
 		if (item != null)
 		{
 			sendPacket(new ExCrystalizingEstimation(item.getItem(), item.getCrystalCount()));

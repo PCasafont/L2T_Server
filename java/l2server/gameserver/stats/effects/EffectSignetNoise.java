@@ -29,7 +29,7 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectSignetNoise extends L2Effect
 {
-	private L2EffectPointInstance actor;
+	private L2EffectPointInstance _actor;
 
 	public EffectSignetNoise(Env env, L2EffectTemplate template)
 	{
@@ -48,7 +48,7 @@ public class EffectSignetNoise extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		actor = (L2EffectPointInstance) getEffected();
+		_actor = (L2EffectPointInstance) getEffected();
 		return true;
 	}
 
@@ -70,7 +70,7 @@ public class EffectSignetNoise extends L2Effect
 
 		L2PcInstance caster = (L2PcInstance) getEffector();
 
-		for (L2Character target : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (target == null || target == caster)
 			{
@@ -110,9 +110,9 @@ public class EffectSignetNoise extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (actor != null)
+		if (_actor != null)
 		{
-			actor.deleteMe();
+			_actor.deleteMe();
 		}
 	}
 }

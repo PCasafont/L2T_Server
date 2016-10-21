@@ -34,9 +34,9 @@ import java.util.ArrayList;
  */
 public class ConfirmDlg extends L2GameServerPacket
 {
-	private int messageId;
+	private int _messageId;
 
-	private int skillLvL = 1;
+	private int _skillLvL = 1;
 
 	private static final int TYPE_ZONE_NAME = 7;
 	private static final int TYPE_SKILL_NAME = 4;
@@ -45,10 +45,10 @@ public class ConfirmDlg extends L2GameServerPacket
 	private static final int TYPE_NUMBER = 1;
 	private static final int TYPE_TEXT = 0;
 
-	private final ArrayList<CnfDlgData> info = new ArrayList<>();
+	private final ArrayList<CnfDlgData> _info = new ArrayList<>();
 
-	private int time = 0;
-	private int requesterId = 0;
+	private int _time = 0;
+	private int _requesterId = 0;
 
 	private static class CnfDlgData
 	{
@@ -64,23 +64,23 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg(int messageId)
 	{
-		this.messageId = messageId;
+		_messageId = messageId;
 	}
 
 	public ConfirmDlg(SystemMessageId messageId)
 	{
-		this.messageId = messageId.getId();
+		_messageId = messageId.getId();
 	}
 
 	public ConfirmDlg addString(String text)
 	{
-		info.add(new CnfDlgData(TYPE_TEXT, text));
+		_info.add(new CnfDlgData(TYPE_TEXT, text));
 		return this;
 	}
 
 	public ConfirmDlg addNumber(int number)
 	{
-		info.add(new CnfDlgData(TYPE_NUMBER, number));
+		_info.add(new CnfDlgData(TYPE_NUMBER, number));
 		return this;
 	}
 
@@ -127,7 +127,7 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addNpcName(int id)
 	{
-		info.add(new CnfDlgData(TYPE_NPC_NAME, id));
+		_info.add(new CnfDlgData(TYPE_NPC_NAME, id));
 		return this;
 	}
 
@@ -144,14 +144,14 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addItemName(int id)
 	{
-		info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
+		_info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
 		return this;
 	}
 
 	public ConfirmDlg addZoneName(int x, int y, int z)
 	{
 		Integer[] coord = {x, y, z};
-		info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
+		_info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
 		return this;
 	}
 
@@ -176,39 +176,39 @@ public class ConfirmDlg extends L2GameServerPacket
 
 	public ConfirmDlg addSkillName(int id, int lvl)
 	{
-		info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
-		skillLvL = lvl;
+		_info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
+		_skillLvL = lvl;
 		return this;
 	}
 
 	public ConfirmDlg addTime(int time)
 	{
-		this.time = time;
+		_time = time;
 		return this;
 	}
 
 	public ConfirmDlg addRequesterId(int id)
 	{
-		requesterId = id;
+		_requesterId = id;
 		return this;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(messageId);
+		writeD(_messageId);
 
-		if (info.isEmpty())
+		if (_info.isEmpty())
 		{
 			writeD(0x00);
-			writeD(time);
-			writeD(requesterId);
+			writeD(_time);
+			writeD(_requesterId);
 		}
 		else
 		{
-			writeD(info.size());
+			writeD(_info.size());
 
-			for (CnfDlgData data : info)
+			for (CnfDlgData data : _info)
 			{
 				writeD(data.type);
 
@@ -224,7 +224,7 @@ public class ConfirmDlg extends L2GameServerPacket
 						break;
 					case TYPE_SKILL_NAME:
 						writeD((Integer) data.value); // Skill Id
-						writeD(skillLvL); // Skill lvl
+						writeD(_skillLvL); // Skill lvl
 						break;
 					case TYPE_ZONE_NAME:
 						Integer[] array = (Integer[]) data.value;
@@ -234,13 +234,13 @@ public class ConfirmDlg extends L2GameServerPacket
 						break;
 				}
 			}
-			if (time != 0)
+			if (_time != 0)
 			{
-				writeD(time);
+				writeD(_time);
 			}
-			if (requesterId != 0)
+			if (_requesterId != 0)
 			{
-				writeD(requesterId);
+				writeD(_requesterId);
 			}
 		}
 	}

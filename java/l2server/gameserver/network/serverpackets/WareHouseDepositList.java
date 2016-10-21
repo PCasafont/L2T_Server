@@ -33,22 +33,22 @@ public final class WareHouseDepositList extends L2ItemListPacket
 	public static final int CLAN = 4;
 	public static final int CASTLE = 3; //not sure
 
-	private final long playerAdena;
-	private final ArrayList<L2ItemInstance> items;
-	private final int whType;
+	private final long _playerAdena;
+	private final ArrayList<L2ItemInstance> _items;
+	private final int _whType;
 
 	public WareHouseDepositList(L2PcInstance player, int type)
 	{
-		whType = type;
-		playerAdena = player.getAdena();
-		items = new ArrayList<>();
+		_whType = type;
+		_playerAdena = player.getAdena();
+		_items = new ArrayList<>();
 
-		final boolean isPrivate = whType == PRIVATE;
+		final boolean isPrivate = _whType == PRIVATE;
 		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate))
 		{
 			if (temp != null && temp.isDepositable(isPrivate))
 			{
-				items.add(temp);
+				_items.add(temp);
 			}
 		}
 	}
@@ -57,13 +57,13 @@ public final class WareHouseDepositList extends L2ItemListPacket
 	protected final void writeImpl()
 	{
 		/* 0x01-Private Warehouse
-		 * 0x02-Clan Warehouse
+         * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
-		writeH(whType);
-		writeQ(playerAdena);
+		writeH(_whType);
+		writeQ(_playerAdena);
 		writeD(0x00); // Already stored items count
-		final int count = items.size();
+		final int count = _items.size();
 		if (Config.DEBUG)
 		{
 			Log.fine("count:" + count);
@@ -71,11 +71,11 @@ public final class WareHouseDepositList extends L2ItemListPacket
 		//writeH(0x00); // Weird count that we don't care about
 		writeH(count);
 
-		for (L2ItemInstance item : items)
+		for (L2ItemInstance item : _items)
 		{
 			writeItem(item);
 			writeD(item.getObjectId());
 		}
-		items.clear();
+		_items.clear();
 	}
 }

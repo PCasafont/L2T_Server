@@ -22,6 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestResetNickname extends L2GameClientPacket
 {
+
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */

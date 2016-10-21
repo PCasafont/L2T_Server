@@ -26,7 +26,6 @@ import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -39,42 +38,72 @@ public class MainTownManager
 {
 	public class MainTownInfo
 	{
-		@Getter private final int townId;
-		@Getter private final String name;
-		@Getter private final int startX;
-		@Getter private final int startY;
-		@Getter private final int startZ;
-		@Getter private final int startRandom;
+		private final int _townId;
+		private final String _name;
+		private final int _startX;
+		private final int _startY;
+		private final int _startZ;
+		private final int _startRandom;
 
 		public MainTownInfo(int townId, String name, int startX, int startY, int startZ, int startRandom)
 		{
-			this.townId = townId;
-			this.name = name;
-			this.startX = startX;
-			this.startY = startY;
-			this.startZ = startZ;
-			this.startRandom = startRandom;
+			_townId = townId;
+			_name = name;
+			_startX = startX;
+			_startY = startY;
+			_startZ = startZ;
+			_startRandom = startRandom;
+		}
+
+		public int getTownId()
+		{
+			return _townId;
+		}
+
+		public String getName()
+		{
+			return _name;
+		}
+
+		public int getStartX()
+		{
+			return _startX;
+		}
+
+		public int getStartY()
+		{
+			return _startY;
+		}
+
+		public int getStartZ()
+		{
+			return _startZ;
+		}
+
+		public int getStartRandom()
+		{
+			return _startRandom;
 		}
 
 		public void spawnNpcs()
 		{
-			SpawnTable.getInstance().spawnSpecificTable(name + "_custom_spawns");
+			SpawnTable.getInstance().spawnSpecificTable(_name + "_custom_spawns");
 		}
 
 		public void despawnNpcs()
 		{
-			SpawnTable.getInstance().despawnSpecificTable(name + "_custom_spawns");
+			SpawnTable.getInstance().despawnSpecificTable(_name + "_custom_spawns");
 		}
 
 		public List<L2PcInstance> getPlayersInside()
 		{
-			L2TownZone zone = TownManager.getTown(townId);
+			L2TownZone zone = TownManager.getTown(_townId);
 			return zone.getPlayersInside();
 		}
 
 		public void teleportPlayers(List<L2PcInstance> players)
 		{
-			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", L2DummyZone.class);
+			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(_name + "DummyZone", L2DummyZone.class);
 			for (L2PcInstance player : players)
 			{
 				int[] coords = zone.getZone().getRandomPoint();
@@ -85,7 +114,7 @@ public class MainTownManager
 
 		public int[] getRandomCoords()
 		{
-			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", L2DummyZone.class);
+			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(_name + "DummyZone", L2DummyZone.class);
 			int[] coords = zone.getZone().getRandomPoint();
 			coords[2] = GeoData.getInstance().getHeight(coords[0], coords[1], coords[2]);
 			return coords;
@@ -94,13 +123,13 @@ public class MainTownManager
 
 	private static final int ROTATION_INTERVAL_DAYS = 2;
 
-	private final List<MainTownInfo> mainTowns = new ArrayList<>();
+	private final List<MainTownInfo> _mainTowns = new ArrayList<>();
 
-	private int rotationIndex = 0;
-	private MainTownInfo currentMainTown = null;
+	private int _rotationIndex = 0;
+	private MainTownInfo _currentMainTown = null;
 
-	private List<MainTownInfo> nextTowns = new ArrayList<>();
-	private long nextTownTimer = 0L;
+	private List<MainTownInfo> _nextTowns = new ArrayList<>();
+	private long _nextTownTimer = 0L;
 
 	public MainTownManager()
 	{
@@ -135,47 +164,48 @@ public class MainTownManager
 			int startY = townNode.getInt("startY");
 			int startZ = townNode.getInt("startZ");
 			int startRandom = townNode.getInt("startRandom");
-			mainTowns.add(new MainTownInfo(townId, name, startX, startY, startZ, startRandom));
+			_mainTowns.add(new MainTownInfo(townId, name, startX, startY, startZ, startRandom));
 		}
 
-		rotationIndex = 0;
+		_rotationIndex = 0;
 		if (GlobalVariablesManager.getInstance().isVariableStored("MTRotationIndex"))
 		{
-			rotationIndex = Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
+			_rotationIndex =
+					Integer.parseInt(GlobalVariablesManager.getInstance().getStoredVariable("MTRotationIndex"));
 		}
 		else
 		{
-			GlobalVariablesManager.getInstance().storeVariable("MTRotationIndex", String.valueOf(rotationIndex));
+			GlobalVariablesManager.getInstance().storeVariable("MTRotationIndex", String.valueOf(_rotationIndex));
 		}
 
 		Random random = new Random(79286);
-		for (int i = 0; i < rotationIndex; i++)
+		for (int i = 0; i < _rotationIndex; i++)
 		{
 			random.nextInt();
 		}
 
 		for (int i = 0; i < 1000; i++)
 		{
-			nextTowns.add(mainTowns.get(random.nextInt(mainTowns.size())));
+			_nextTowns.add(_mainTowns.get(random.nextInt(_mainTowns.size())));
 		}
 
-		currentMainTown = nextTowns.remove(0);
-		currentMainTown.spawnNpcs();
+		_currentMainTown = _nextTowns.remove(0);
+		_currentMainTown.spawnNpcs();
 
 		if (GlobalVariablesManager.getInstance().isVariableStored("MTLastRotation"))
 		{
-			nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("MTLastRotation")) +
+			_nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("MTLastRotation")) +
 					ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
 		}
 
-		if (nextTownTimer - System.currentTimeMillis() < 0)
+		if (_nextTownTimer - System.currentTimeMillis() < 0)
 		{
-			if (nextTownTimer > 0)
+			if (_nextTownTimer > 0)
 			{
-				while (nextTownTimer - System.currentTimeMillis() < 0)
+				while (_nextTownTimer - System.currentTimeMillis() < 0)
 				{
 					changeMainTown();
-					nextTownTimer += ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
+					_nextTownTimer += ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
 				}
 			}
 			else
@@ -188,62 +218,62 @@ public class MainTownManager
 						.storeVariable("MTLastRotation", String.valueOf(cal.getTimeInMillis()));
 
 				cal.roll(Calendar.DAY_OF_YEAR, ROTATION_INTERVAL_DAYS);
-				nextTownTimer = cal.getTimeInMillis();
+				_nextTownTimer = cal.getTimeInMillis();
 			}
 		}
 
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 		{
 			changeMainTown();
-			nextTownTimer = System.currentTimeMillis() + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
-		}, nextTownTimer - System.currentTimeMillis(), ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
+			_nextTownTimer = System.currentTimeMillis() + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
+		}, _nextTownTimer - System.currentTimeMillis(), ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
 		//}, 3600000L * 5, 3600000L * 5);
 
-		Log.info("MainTownManager: Loaded " + mainTowns.size() + " main towns.");
-		Log.info("MainTownManager: The current main town is " + currentMainTown.getName() + ".");
+		Log.info("MainTownManager: Loaded " + _mainTowns.size() + " main towns.");
+		Log.info("MainTownManager: The current main town is " + _currentMainTown.getName() + ".");
 	}
 
 	private void changeMainTown()
 	{
-		MainTownInfo nextMainTown = nextTowns.remove(0);
+		MainTownInfo nextMainTown = _nextTowns.remove(0);
 
-		rotationIndex++;
-		GlobalVariablesManager.getInstance().storeVariable("MTRotationIndex", String.valueOf(rotationIndex));
+		_rotationIndex++;
+		GlobalVariablesManager.getInstance().storeVariable("MTRotationIndex", String.valueOf(_rotationIndex));
 		GlobalVariablesManager.getInstance()
 				.storeVariable("MTLastRotation", String.valueOf(System.currentTimeMillis()));
 
-		if (nextMainTown == currentMainTown)
+		if (nextMainTown == _currentMainTown)
 		{
 			return;
 		}
 
-		currentMainTown.despawnNpcs();
+		_currentMainTown.despawnNpcs();
 		nextMainTown.spawnNpcs();
-		nextMainTown.teleportPlayers(currentMainTown.getPlayersInside());
-		currentMainTown = nextMainTown;
+		nextMainTown.teleportPlayers(_currentMainTown.getPlayersInside());
+		_currentMainTown = nextMainTown;
 
 		Announcements.getInstance()
-				.announceToAll("The main town has changed! Now it's " + currentMainTown.getName() + ".");
+				.announceToAll("The main town has changed! Now it's " + _currentMainTown.getName() + ".");
 	}
 
 	public MainTownInfo getCurrentMainTown()
 	{
-		//for (MainTownInfo inf : mainTowns)
+		//for (MainTownInfo inf : _mainTowns)
 		//	inf.spawnNpcs();
-		return currentMainTown;
+		return _currentMainTown;
 	}
 
 	public String getNextTownsInfo()
 	{
 		String info = "";
-		MainTownInfo prevTown = currentMainTown;
+		MainTownInfo prevTown = _currentMainTown;
 		Date prevDate = null;
 		for (int i = 0; i < 10; i++)
 		{
-			MainTownInfo town = nextTowns.get(i);
+			MainTownInfo town = _nextTowns.get(i);
 			if (town != prevTown)
 			{
-				Date date = new Date(nextTownTimer + (ROTATION_INTERVAL_DAYS * i - 1) * 24 * 3600 * 1000);
+				Date date = new Date(_nextTownTimer + (ROTATION_INTERVAL_DAYS * i - 1) * 24 * 3600 * 1000);
 				String from = "now";
 				if (prevDate != null)
 				{
@@ -260,7 +290,7 @@ public class MainTownManager
 				}
 
 				prevTown = town;
-				prevDate = new Date(nextTownTimer + ROTATION_INTERVAL_DAYS * i * 24 * 3600 * 1000);
+				prevDate = new Date(_nextTownTimer + ROTATION_INTERVAL_DAYS * i * 24 * 3600 * 1000);
 			}
 		}
 		return info;
@@ -268,12 +298,12 @@ public class MainTownManager
 
 	public static MainTownManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MainTownManager instance = new MainTownManager();
+		protected static final MainTownManager _instance = new MainTownManager();
 	}
 }

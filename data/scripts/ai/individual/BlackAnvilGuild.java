@@ -27,13 +27,13 @@ import l2server.gameserver.util.Util;
 
 public class BlackAnvilGuild extends L2AttackableAIScript
 {
-	private static final int[] guildGolems = {19309, 19311, 19313};
+	private static final int[] _guildGolems = {19309, 19311, 19313};
 
 	public BlackAnvilGuild(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int a : guildGolems)
+		for (int a : _guildGolems)
 		{
 			addSpawnId(a);
 		}
@@ -45,7 +45,7 @@ public class BlackAnvilGuild extends L2AttackableAIScript
 				continue;
 			}
 
-			if (Util.contains(guildGolems, spawn.getNpcId()))
+			if (Util.contains(_guildGolems, spawn.getNpcId()))
 			{
 				notifySpawn(spawn.getNpc());
 			}

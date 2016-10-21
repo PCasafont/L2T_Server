@@ -32,7 +32,6 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -260,7 +259,7 @@ public class StealBuffs implements ISkillHandler
 				}
 				catch (RuntimeException e)
 				{
-					Log.log(Level.WARNING,
+					_log.log(Level.WARNING,
 							"Cannot steal effect: " + eff + " Stealer: " + activeChar + " Stolen: " + target, e);
 				}
 			}
@@ -318,7 +317,7 @@ public class StealBuffs implements ISkillHandler
 		}
 		else if (activeChar instanceof L2Npc)
 		{
-			((L2Npc) activeChar).spiritshotcharged = false;
+			((L2Npc) activeChar)._spiritshotcharged = false;
 		}
 	}
 

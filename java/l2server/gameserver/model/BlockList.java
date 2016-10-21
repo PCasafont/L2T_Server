@@ -34,7 +34,6 @@ import l2server.gameserver.network.serverpackets.ExBlockAddResult;
 import l2server.gameserver.network.serverpackets.ExBlockRemoveResult;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,38 +52,39 @@ import java.util.logging.Level;
 
 public class BlockList
 {
-	private static Map<Integer, List<Integer>> offlineList = new HashMap<>();
 
-	private final L2PcInstance owner;
-	@Getter private List<Integer> blockList;
+	private static Map<Integer, List<Integer>> _offlineList = new HashMap<>();
+
+	private final L2PcInstance _owner;
+	private List<Integer> _blockList;
 
 	public BlockList(L2PcInstance owner)
 	{
-		this.owner = owner;
-		blockList = offlineList.get(owner.getObjectId());
-		if (blockList == null)
+		_owner = owner;
+		_blockList = _offlineList.get(owner.getObjectId());
+		if (_blockList == null)
 		{
-			blockList = loadList(this.owner.getObjectId());
+			_blockList = loadList(_owner.getObjectId());
 		}
 	}
 
 	private synchronized void addToBlockList(int target)
 	{
-		blockList.add(target);
+		_blockList.add(target);
 		updateInDB(target, true);
-		owner.sendPacket(new ExBlockAddResult(target));
+		_owner.sendPacket(new ExBlockAddResult(target));
 	}
 
 	private synchronized void removeFromBlockList(int target)
 	{
-		blockList.remove(Integer.valueOf(target));
+		_blockList.remove(Integer.valueOf(target));
 		updateInDB(target, false);
-		owner.sendPacket(new ExBlockRemoveResult(target));
+		_owner.sendPacket(new ExBlockRemoveResult(target));
 	}
 
 	public void playerLogout()
 	{
-		offlineList.put(owner.getObjectId(), blockList);
+		_offlineList.put(_owner.getObjectId(), _blockList);
 	}
 
 	private static List<Integer> loadList(int ObjId)
@@ -137,7 +137,7 @@ public class BlockList
 			{
 				statement = con.prepareStatement(
 						"INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
-				statement.setInt(1, owner.getObjectId());
+				statement.setInt(1, _owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
 			else
@@ -145,7 +145,7 @@ public class BlockList
 			{
 				statement = con.prepareStatement(
 						"DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
-				statement.setInt(1, owner.getObjectId());
+				statement.setInt(1, _owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
 			statement.execute();
@@ -163,17 +163,17 @@ public class BlockList
 
 	public boolean isInBlockList(L2PcInstance target)
 	{
-		return blockList.contains(target.getObjectId());
+		return _blockList.contains(target.getObjectId());
 	}
 
 	public boolean isInBlockList(int targetId)
 	{
-		return blockList.contains(targetId);
+		return _blockList.contains(targetId);
 	}
 
 	private boolean isBlockAll()
 	{
-		return owner.getMessageRefusal();
+		return _owner.getMessageRefusal();
 	}
 
 	public static boolean isBlocked(L2PcInstance listOwner, L2PcInstance target)
@@ -190,7 +190,12 @@ public class BlockList
 
 	private void setBlockAll(boolean state)
 	{
-		owner.setMessageRefusal(state);
+		_owner.setMessageRefusal(state);
+	}
+
+	public List<Integer> getBlockList()
+	{
+		return _blockList;
 	}
 
 	public static void addToBlockList(L2PcInstance listOwner, int targetId)
@@ -288,10 +293,10 @@ public class BlockList
 		{
 			return BlockList.isBlocked(player, targetId);
 		}
-		if (!offlineList.containsKey(ownerId))
+		if (!_offlineList.containsKey(ownerId))
 		{
-			offlineList.put(ownerId, loadList(ownerId));
+			_offlineList.put(ownerId, loadList(ownerId));
 		}
-		return offlineList.get(ownerId).contains(targetId);
+		return _offlineList.get(ownerId).contains(targetId);
 	}
 }

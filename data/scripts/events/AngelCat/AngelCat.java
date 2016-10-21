@@ -19,7 +19,7 @@ public class AngelCat extends Quest
 	private static final int angelCat = 4308;
 	private static final int angelCatBlessing = 35669;
 
-	private static final int[][] spawns = {
+	private static final int[][] _spawns = {
 			{86891, -142848, -1336, 26000},
 			{43908, -47714, -792, 49999},
 			{-14081, 123829, -3120, 40959},
@@ -42,9 +42,9 @@ public class AngelCat extends Quest
 		addTalkId(angelCat);
 		addFirstTalkId(angelCat);
 
-		for (int[] spawn : spawns)
+		for (int[] _spawn : _spawns)
 		{
-			addSpawn(angelCat, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+			addSpawn(angelCat, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
 		}
 	}
 

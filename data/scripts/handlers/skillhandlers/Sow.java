@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.logging.Logger;
@@ -39,7 +38,7 @@ import java.util.logging.Logger;
  */
 public class Sow implements ISkillHandler
 {
-	private static Logger log = Logger.getLogger(Sow.class.getName());
+	private static Logger _log = Logger.getLogger(Sow.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SOW};
 
@@ -62,7 +61,7 @@ public class Sow implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			Log.info("Casting sow");
+			_log.info("Casting sow");
 		}
 
 		L2MonsterInstance target;

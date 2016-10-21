@@ -7,12 +7,13 @@ import l2server.log.Log;
  */
 public class RequestObservingCuriousHouse extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int unk;
+	@SuppressWarnings("unused")
+	private int _unk;
 
 	@Override
 	public void readImpl()
 	{
-		unk = readD();
+		_unk = readD();
 	}
 
 	@Override

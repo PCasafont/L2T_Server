@@ -20,7 +20,6 @@ import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
 
 import java.util.logging.Logger;
 
@@ -32,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class AdminInvul implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminInvul.class.getName());
+	private static Logger _log = Logger.getLogger(AdminInvul.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_invul", "admin_setinvul"};
 
 	@Override
@@ -73,7 +72,7 @@ public class AdminInvul implements IAdminCommandHandler
 			text = activeChar.getName() + " is now mortal";
 			if (Config.DEBUG)
 			{
-				Log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" +
+				_log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" +
 						activeChar.getObjectId() + ")");
 			}
 		}
@@ -83,7 +82,7 @@ public class AdminInvul implements IAdminCommandHandler
 			text = activeChar.getName() + " is now invulnerable";
 			if (Config.DEBUG)
 			{
-				Log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" +
+				_log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" +
 						activeChar.getObjectId() + ")");
 			}
 		}

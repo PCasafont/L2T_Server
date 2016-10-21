@@ -32,6 +32,7 @@ import l2server.util.Rnd;
  */
 public class Chests extends L2AttackableAIScript
 {
+
 	private static final int SKILL_DELUXE_KEY = 2229;
 
 	//Base chance for BOX to be opened
@@ -113,7 +114,7 @@ public class Chests extends L2AttackableAIScript
 		// firstly, don't forget to call the parent constructor to prepare the event triggering
 		// mechanisms etc.
 		super(questId, name, descr);
-		registerMobs(NPC_IDS, QuestEventType.ON_ATTACK, QuestEventType.ON_SKILL_SEE);
+		this.registerMobs(NPC_IDS, QuestEventType.ON_ATTACK, QuestEventType.ON_SKILL_SEE);
 	}
 
 	@Override

@@ -25,11 +25,11 @@ import l2server.gameserver.model.L2Clan;
  */
 public class PledgeShowInfoUpdate extends L2GameServerPacket
 {
-	private L2Clan clan;
+	private L2Clan _clan;
 
 	public PledgeShowInfoUpdate(L2Clan clan)
 	{
-		this.clan = clan;
+		_clan = clan;
 	}
 
 	@Override
@@ -37,22 +37,22 @@ public class PledgeShowInfoUpdate extends L2GameServerPacket
 	{
 		//dddddddddddSdd
 		//sending empty data so client will ask all the info in response ;)
-		writeD(clan.getClanId());
+		writeD(_clan.getClanId());
 		writeD(Config.SERVER_ID);
-		writeD(clan.getCrestId());
-		writeD(clan.getLevel()); //clan level
+		writeD(_clan.getCrestId());
+		writeD(_clan.getLevel()); //clan level
 		writeD(0); // GoD ???
-		writeD(clan.getHasCastle());
-		writeD(clan.getHasHideout());
-		writeD(clan.getHasFort());
-		writeD(clan.getRank());
-		writeD(clan.getReputationScore()); // clan reputation score
+		writeD(_clan.getHasCastle());
+		writeD(_clan.getHasHideout());
+		writeD(_clan.getHasFort());
+		writeD(_clan.getRank());
+		writeD(_clan.getReputationScore()); // clan reputation score
 		writeD(0);
 		writeD(0);
-		writeD(clan.getAllyId());
-		writeS(clan.getAllyName()); //c5
-		writeD(clan.getAllyCrestId()); //c5
-		writeD(clan.isAtWar() ? 1 : 0); //c5
+		writeD(_clan.getAllyId());
+		writeS(_clan.getAllyName()); //c5
+		writeD(_clan.getAllyCrestId()); //c5
+		writeD(_clan.isAtWar() ? 1 : 0); //c5
 		writeD(0); // GoD ???
 		writeD(0); // GoD ???
 	}

@@ -15,16 +15,14 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class L2RandomMinionData
 {
-	private List<Integer> randomMinionIds = new ArrayList<>();
-	@Getter private List<Integer> lastSpawnedMinionIds = new ArrayList<>();
-	private int minionAmount;
+	private List<Integer> _randomMinionIds = new ArrayList<>();
+	private List<Integer> _lastSpawnedMinionIds = new ArrayList<>();
+	private int _minionAmount;
 
 	public L2RandomMinionData()
 	{
@@ -37,33 +35,38 @@ public class L2RandomMinionData
 	 */
 	public L2RandomMinionData(L2RandomMinionData rhs)
 	{
-		randomMinionIds = new ArrayList<>(rhs.randomMinionIds);
-		lastSpawnedMinionIds = new ArrayList<>(rhs.lastSpawnedMinionIds);
-		minionAmount = rhs.minionAmount;
+		_randomMinionIds = new ArrayList<>(rhs._randomMinionIds);
+		_lastSpawnedMinionIds = new ArrayList<>(rhs._lastSpawnedMinionIds);
+		_minionAmount = rhs._minionAmount;
 	}
 
 	public void addMinionId(int id)
 	{
-		randomMinionIds.add(id);
+		_randomMinionIds.add(id);
 	}
 
 	public void addLastSpawnedMinionId(int id)
 	{
-		lastSpawnedMinionIds.add(id);
+		_lastSpawnedMinionIds.add(id);
 	}
 
 	public List<Integer> getMinionIds()
 	{
-		return randomMinionIds;
+		return _randomMinionIds;
+	}
+
+	public List<Integer> getLastSpawnedMinionIds()
+	{
+		return _lastSpawnedMinionIds;
 	}
 
 	public void setAmount(int amount)
 	{
-		minionAmount = amount;
+		_minionAmount = amount;
 	}
 
 	public int getAmount()
 	{
-		return minionAmount;
+		return _minionAmount;
 	}
 }

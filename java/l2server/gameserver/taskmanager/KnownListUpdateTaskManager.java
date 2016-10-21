@@ -32,13 +32,14 @@ import java.util.logging.Level;
 
 public class KnownListUpdateTaskManager
 {
+
 	private static final int FULL_UPDATE_TIMER = 100;
 	public static boolean updatePass = true;
 
 	// Do full update every FULL_UPDATE_TIMER * KNOWNLIST_UPDATE_INTERVAL
-	public static int fullUpdateTimer = FULL_UPDATE_TIMER;
+	public static int _fullUpdateTimer = FULL_UPDATE_TIMER;
 
-	private static final HashSet<L2WorldRegion> failedRegions = new HashSet<>(1);
+	private static final HashSet<L2WorldRegion> _failedRegions = new HashSet<>(1);
 
 	private KnownListUpdateTaskManager()
 	{
@@ -48,7 +49,7 @@ public class KnownListUpdateTaskManager
 
 	public static KnownListUpdateTaskManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private class KnownListUpdate implements Runnable
@@ -70,35 +71,35 @@ public class KnownListUpdateTaskManager
 						// avoid stopping update if something went wrong in updateRegion()
 						try
 						{
-							failed = failedRegions.contains(r); // failed on last pass
+							failed = _failedRegions.contains(r); // failed on last pass
 							if (r.isActive()) // and check only if the region is active
 							{
-								updateRegion(r, fullUpdateTimer == FULL_UPDATE_TIMER || failed, updatePass);
+								updateRegion(r, _fullUpdateTimer == FULL_UPDATE_TIMER || failed, updatePass);
 							}
 							if (failed)
 							{
-								failedRegions.remove(r); // if all ok, remove
+								_failedRegions.remove(r); // if all ok, remove
 							}
 						}
 						catch (Exception e)
 						{
 							Log.log(Level.WARNING,
-									"KnownListUpdateTaskManager: updateRegion(" + fullUpdateTimer + "," + updatePass +
+									"KnownListUpdateTaskManager: updateRegion(" + _fullUpdateTimer + "," + updatePass +
 											") failed for region " + r.getName() + ". Full update scheduled. " +
 											e.getMessage(), e);
-							failedRegions.add(r);
+							_failedRegions.add(r);
 						}
 					}
 				}
 				updatePass = !updatePass;
 
-				if (fullUpdateTimer > 0)
+				if (_fullUpdateTimer > 0)
 				{
-					fullUpdateTimer--;
+					_fullUpdateTimer--;
 				}
 				else
 				{
-					fullUpdateTimer = FULL_UPDATE_TIMER;
+					_fullUpdateTimer = FULL_UPDATE_TIMER;
 				}
 			}
 			catch (Exception e)
@@ -138,11 +139,11 @@ public class KnownListUpdateTaskManager
 							Collection<L2Object> inrObj = regi.getVisibleObjects().values();
 							// synchronized (regi.getVisibleObjects())
 							{
-								for (L2Object obj : inrObj)
+								for (L2Object _object : inrObj)
 								{
-									if (obj != object)
+									if (_object != object)
 									{
-										object.getKnownList().addKnownObject(obj);
+										object.getKnownList().addKnownObject(_object);
 									}
 								}
 							}
@@ -154,11 +155,11 @@ public class KnownListUpdateTaskManager
 								Collection<L2Playable> inrPls = regi.getVisiblePlayable().values();
 								// synchronized (regi.getVisiblePlayable())
 								{
-									for (L2Object obj : inrPls)
+									for (L2Object _object : inrPls)
 									{
-										if (obj != object)
+										if (_object != object)
 										{
-											object.getKnownList().addKnownObject(obj);
+											object.getKnownList().addKnownObject(_object);
 										}
 									}
 								}
@@ -173,6 +174,6 @@ public class KnownListUpdateTaskManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final KnownListUpdateTaskManager instance = new KnownListUpdateTaskManager();
+		protected static final KnownListUpdateTaskManager _instance = new KnownListUpdateTaskManager();
 	}
 }

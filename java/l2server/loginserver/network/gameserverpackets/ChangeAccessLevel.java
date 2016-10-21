@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class ChangeAccessLevel extends BaseRecievePacket
 {
-	protected static Logger log = Logger.getLogger(ChangeAccessLevel.class.getName());
+	protected static Logger _log = Logger.getLogger(ChangeAccessLevel.class.getName());
 
 	/**
 	 * @param decrypt

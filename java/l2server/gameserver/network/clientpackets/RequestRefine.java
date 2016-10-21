@@ -33,18 +33,18 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestRefine extends L2GameClientPacket
 {
-	private int targetItemObjId;
-	private int refinerItemObjId;
-	private int gemStoneItemObjId;
-	private long gemStoneCount;
+	private int _targetItemObjId;
+	private int _refinerItemObjId;
+	private int _gemStoneItemObjId;
+	private long _gemStoneCount;
 
 	@Override
 	protected void readImpl()
 	{
-		targetItemObjId = readD();
-		refinerItemObjId = readD();
-		gemStoneItemObjId = readD();
-		gemStoneCount = readQ();
+		_targetItemObjId = readD();
+		_refinerItemObjId = readD();
+		_gemStoneItemObjId = readD();
+		_gemStoneCount = readQ();
 	}
 
 	/**
@@ -57,17 +57,17 @@ public final class RequestRefine extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
-		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
+		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;
 		}
-		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(gemStoneItemObjId);
+		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemStoneItemObjId);
 		if (gemStoneItem == null)
 		{
 			return;
@@ -87,7 +87,7 @@ public final class RequestRefine extends L2GameClientPacket
 			return;
 		}
 
-		if (gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+		if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
 		{
 			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
 			activeChar.sendPacket(SystemMessage
@@ -117,7 +117,7 @@ public final class RequestRefine extends L2GameClientPacket
 		}
 
 		// consume the gemstones
-		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, gemStoneCount, null, false))
+		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, _gemStoneCount, null, false))
 		{
 			return;
 		}

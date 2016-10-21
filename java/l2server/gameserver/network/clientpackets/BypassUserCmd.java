@@ -28,14 +28,14 @@ import java.util.logging.Logger;
  */
 public class BypassUserCmd extends L2GameClientPacket
 {
-	static Logger log = Logger.getLogger(BypassUserCmd.class.getName());
+	static Logger _log = Logger.getLogger(BypassUserCmd.class.getName());
 
-	private int command;
+	private int _command;
 
 	@Override
 	protected void readImpl()
 	{
-		command = readD();
+		_command = readD();
 	}
 
 	@Override
@@ -47,18 +47,18 @@ public class BypassUserCmd extends L2GameClientPacket
 			return;
 		}
 
-		IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(command);
+		IUserCommandHandler handler = UserCommandHandler.getInstance().getUserCommandHandler(_command);
 
 		if (handler == null)
 		{
 			if (player.isGM())
 			{
-				player.sendMessage("User commandID " + command + " not implemented yet.");
+				player.sendMessage("User commandID " + _command + " not implemented yet.");
 			}
 		}
 		else
 		{
-			handler.useUserCommand(command, getClient().getActiveChar());
+			handler.useUserCommand(_command, getClient().getActiveChar());
 		}
 	}
 }

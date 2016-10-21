@@ -37,54 +37,54 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class L2BossZone extends L2ZoneType
 {
-	private int timeInvade;
-	private boolean enabled = true;
-	private HashMap<Integer, PlayerEntry> playerEntries;
-	protected CopyOnWriteArrayList<L2Character> raidList;
-	private Location exitLocation;
+	private int _timeInvade;
+	private boolean _enabled = true;
+	private HashMap<Integer, PlayerEntry> _playerEntries;
+	protected CopyOnWriteArrayList<L2Character> _raidList;
+	private Location _exitLocation;
 
 	public L2BossZone(int id)
 	{
 		super(id);
 
-		playerEntries = new HashMap<>();
-		raidList = new CopyOnWriteArrayList<>();
+		_playerEntries = new HashMap<>();
+		_raidList = new CopyOnWriteArrayList<>();
 
 		GrandBossManager.getInstance().addZone(this);
 	}
 
 	private class PlayerEntry
 	{
-		private int playerId;
-		private long allowedEntryTime;
-		private ScheduledFuture<?> kickTask;
+		private int _playerId;
+		private long _allowedEntryTime;
+		private ScheduledFuture<?> _kickTask;
 
 		private PlayerEntry(int playerId, long allowedEntryTime)
 		{
-			this.playerId = playerId;
-			this.allowedEntryTime = allowedEntryTime;
+			_playerId = playerId;
+			_allowedEntryTime = allowedEntryTime;
 		}
 
 		private boolean isEntryAllowed()
 		{
-			return allowedEntryTime > System.currentTimeMillis();
+			return _allowedEntryTime > System.currentTimeMillis();
 		}
 
 		private void setAllowedEntryTime(long b)
 		{
-			allowedEntryTime = b;
+			_allowedEntryTime = b;
 		}
 
 		private void startKickTask()
 		{
-			kickTask = ThreadPoolManager.getInstance().scheduleGeneral(new KickTask(), 300000);
+			_kickTask = ThreadPoolManager.getInstance().scheduleGeneral(new KickTask(), 300000);
 		}
 
 		private void stopKickTask()
 		{
-			if (kickTask != null)
+			if (_kickTask != null)
 			{
-				kickTask.cancel(false);
+				_kickTask.cancel(false);
 			}
 		}
 
@@ -93,7 +93,7 @@ public class L2BossZone extends L2ZoneType
 			@Override
 			public void run()
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+				L2PcInstance player = L2World.getInstance().getPlayer(_playerId);
 				if (player != null)
 				{
 					kickPlayerFromEpicZone(player);
@@ -108,13 +108,13 @@ public class L2BossZone extends L2ZoneType
 		switch (name)
 		{
 			case "InvadeTime":
-				timeInvade = Integer.parseInt(value);
+				_timeInvade = Integer.parseInt(value);
 				break;
 			case "EnabledByDefault":
-				enabled = Boolean.parseBoolean(value);
+				_enabled = Boolean.parseBoolean(value);
 				break;
 			case "oustLoc":
-				exitLocation =
+				_exitLocation =
 						new Location(Integer.parseInt(value.split(",")[0]), Integer.parseInt(value.split(",")[1]),
 								Integer.parseInt(value.split(",")[2]));
 				break;
@@ -130,17 +130,17 @@ public class L2BossZone extends L2ZoneType
 	 * except if the time at which they enter the zone is prior to the entry
 	 * expiration time set for that player. Entry expiration times are set by
 	 * any one of the following: 1) A player logs out while in a zone
-	 * (Expiration gets set to logoutTime + timeInvade) 2) An external source
+	 * (Expiration gets set to logoutTime + _timeInvade) 2) An external source
 	 * (such as a quest or AI of NPC) set up the player for entry.
 	 * <p>
 	 * There exists one more case in which the player will be allowed to enter.
 	 * That is if the server recently rebooted (boot-up time more recent than
-	 * currentTime - timeInvade) AND the player was in the zone prior to reboot.
+	 * currentTime - _timeInvade) AND the player was in the zone prior to reboot.
 	 */
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (enabled)
+		if (_enabled)
 		{
 			if (!(character instanceof L2Playable))
 			{
@@ -176,7 +176,7 @@ public class L2BossZone extends L2ZoneType
 				return;
 			}
 
-			PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+			PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
 			if (playerEntry == null || !playerEntry.isEntryAllowed()) //Illegal entry
 			{
 				kickPlayerFromEpicZone(player);
@@ -190,7 +190,7 @@ public class L2BossZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (enabled)
+		if (_enabled)
 		{
 			if (character instanceof L2PcInstance)
 			{
@@ -200,7 +200,7 @@ public class L2BossZone extends L2ZoneType
 					return;
 				}
 
-				PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+				PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
 				if (playerEntry == null)
 				{
 					return;
@@ -210,7 +210,7 @@ public class L2BossZone extends L2ZoneType
 
 				if (!player.isOnline())
 				{
-					playerEntry.setAllowedEntryTime(System.currentTimeMillis() + timeInvade);
+					playerEntry.setAllowedEntryTime(System.currentTimeMillis() + _timeInvade);
 				}
 			}
 		}
@@ -228,17 +228,17 @@ public class L2BossZone extends L2ZoneType
 			return;
 		}
 
-		playerEntries.clear();
+		_playerEntries.clear();
 
 		for (int i : players)
 		{
-			playerEntries.put(i, new PlayerEntry(i, System.currentTimeMillis() + 1200000)); //20 min
+			_playerEntries.put(i, new PlayerEntry(i, System.currentTimeMillis() + 1200000)); //20 min
 		}
 	}
 
 	public Set<Integer> getAllowedPlayers()
 	{
-		return playerEntries.keySet();
+		return _playerEntries.keySet();
 	}
 
 	/**
@@ -252,12 +252,12 @@ public class L2BossZone extends L2ZoneType
 	 */
 	public void movePlayersTo(int x, int y, int z)
 	{
-		if (characterList.isEmpty())
+		if (_characterList.isEmpty())
 		{
 			return;
 		}
 
-		for (L2Character character : characterList.values())
+		for (L2Character character : _characterList.values())
 		{
 			if (character == null)
 			{
@@ -286,12 +286,12 @@ public class L2BossZone extends L2ZoneType
 	@Override
 	public void oustAllPlayers()
 	{
-		if (characterList.isEmpty())
+		if (_characterList.isEmpty())
 		{
 			return;
 		}
 
-		for (L2Character character : characterList.values())
+		for (L2Character character : _characterList.values())
 		{
 			if (character == null)
 			{
@@ -307,7 +307,7 @@ public class L2BossZone extends L2ZoneType
 				}
 			}
 		}
-		playerEntries.clear();
+		_playerEntries.clear();
 	}
 
 	/**
@@ -326,10 +326,10 @@ public class L2BossZone extends L2ZoneType
 			return;
 		}
 
-		PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+		PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
 		if (playerEntry == null)
 		{
-			playerEntries.put(player.getObjectId(),
+			_playerEntries.put(player.getObjectId(),
 					new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + durationInSec * 1000));
 		}
 		else
@@ -347,14 +347,14 @@ public class L2BossZone extends L2ZoneType
 
 		if (!player.isGM())
 		{
-			playerEntries.remove(player.getObjectId());
+			_playerEntries.remove(player.getObjectId());
 		}
 	}
 
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)
 	{
-		if (!enabled)
+		if (!_enabled)
 		{
 			return;
 		}
@@ -362,7 +362,7 @@ public class L2BossZone extends L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) character;
-			PlayerEntry entryPlayer = playerEntries.get(player.getObjectId());
+			PlayerEntry entryPlayer = _playerEntries.get(player.getObjectId());
 			if (entryPlayer == null)
 			{
 				return;
@@ -375,7 +375,7 @@ public class L2BossZone extends L2ZoneType
 	@Override
 	public void onReviveInside(L2Character character)
 	{
-		if (!enabled)
+		if (!_enabled)
 		{
 			return;
 		}
@@ -383,7 +383,7 @@ public class L2BossZone extends L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) character;
-			PlayerEntry entryPlayer = playerEntries.get(player.getObjectId());
+			PlayerEntry entryPlayer = _playerEntries.get(player.getObjectId());
 			if (entryPlayer == null)
 			{
 				return;
@@ -402,9 +402,9 @@ public class L2BossZone extends L2ZoneType
 
 		chara.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
 
-		if (exitLocation != null)
+		if (_exitLocation != null)
 		{
-			chara.teleToLocation(exitLocation, true);
+			chara.teleToLocation(_exitLocation, true);
 		}
 		else
 		{

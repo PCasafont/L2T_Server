@@ -34,16 +34,16 @@ import java.io.File;
  */
 public class HennaTable implements Reloadable
 {
-	private TIntObjectHashMap<L2Henna> henna;
+	private TIntObjectHashMap<L2Henna> _henna;
 
 	public static HennaTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private HennaTable()
 	{
-		henna = new TIntObjectHashMap<>();
+		_henna = new TIntObjectHashMap<>();
 		if (!Config.IS_CLASSIC)
 		{
 			restoreHennaData();
@@ -144,29 +144,29 @@ public class HennaTable implements Reloadable
 							}
 						}
 
-						this.henna.put(id, henna);
+						_henna.put(id, henna);
 					}
 				}
 			}
 		}
-		Log.info("HennaTable: Loaded " + henna.size() + " Templates.");
+		Log.info("HennaTable: Loaded " + _henna.size() + " Templates.");
 	}
 
 	public L2Henna getTemplate(int id)
 	{
-		return henna.get(id);
+		return _henna.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final HennaTable instance = new HennaTable();
+		protected static final HennaTable _instance = new HennaTable();
 	}
 
 	@Override
 	public boolean reload()
 	{
-		henna.clear();
+		_henna.clear();
 		restoreHennaData();
 		return true;
 	}

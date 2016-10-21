@@ -23,14 +23,8 @@ import l2server.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2WarehouseInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.WareHouseDepositList;
-import l2server.gameserver.network.serverpackets.WareHouseWithdrawalList;
-import l2server.log.Log;
 
 public class ClanWarehouse implements IBypassHandler
 {
@@ -108,7 +102,7 @@ public class ClanWarehouse implements IBypassHandler
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+					_log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
 							"; Command: showDepositWindowClan; Message: Showing items to deposit.");
 				}
 
@@ -120,7 +114,7 @@ public class ClanWarehouse implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			Log.info("Exception in " + getClass().getSimpleName());
+			_log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
@@ -156,7 +150,7 @@ public class ClanWarehouse implements IBypassHandler
 
 		if (Config.DEBUG)
 		{
-			Log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+			_log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
 					"; Command: showRetrieveWindowClan; Message: Showing stored items.");
 		}
 	}

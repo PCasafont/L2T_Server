@@ -38,18 +38,18 @@ import java.util.logging.Level;
  */
 public class ItemsOnGroundManager
 {
-	protected List<L2ItemInstance> items = null;
-	private final StoreInDb task = new StoreInDb();
+	protected List<L2ItemInstance> _items = null;
+	private final StoreInDb _task = new StoreInDb();
 
 	private ItemsOnGroundManager()
 	{
 		if (Config.SAVE_DROPPED_ITEM)
 		{
-			items = new ArrayList<>();
+			_items = new ArrayList<>();
 		}
 		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
 		{
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, Config.SAVE_DROPPED_ITEM_INTERVAL,
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(_task, Config.SAVE_DROPPED_ITEM_INTERVAL,
 					Config.SAVE_DROPPED_ITEM_INTERVAL);
 		}
 		load();
@@ -57,7 +57,7 @@ public class ItemsOnGroundManager
 
 	public static ItemsOnGroundManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private void load()
@@ -135,7 +135,7 @@ public class ItemsOnGroundManager
 				item.setProtected(result.getLong(8) == -1);
 				item.setIsVisible(true);
 				L2World.getInstance().addVisibleObject(item, item.getPosition().getWorldRegion());
-				items.add(item);
+				_items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
 				if (!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
@@ -181,25 +181,25 @@ public class ItemsOnGroundManager
 		{
 			return;
 		}
-		items.add(item);
+		_items.add(item);
 	}
 
 	public void removeObject(L2ItemInstance item)
 	{
-		if (Config.SAVE_DROPPED_ITEM && items != null)
+		if (Config.SAVE_DROPPED_ITEM && _items != null)
 		{
-			items.remove(item);
+			_items.remove(item);
 		}
 	}
 
 	public void saveInDb()
 	{
-		task.run();
+		_task.run();
 	}
 
 	public void cleanUp()
 	{
-		items.clear();
+		_items.clear();
 	}
 
 	public void emptyTable()
@@ -234,7 +234,7 @@ public class ItemsOnGroundManager
 
 			emptyTable();
 
-			if (items.isEmpty())
+			if (_items.isEmpty())
 			{
 				if (Config.DEBUG)
 				{
@@ -252,7 +252,7 @@ public class ItemsOnGroundManager
 				statement = con.prepareStatement(
 						"INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
 
-				for (L2ItemInstance item : items)
+				for (L2ItemInstance item : _items)
 				{
 					if (item == null)
 					{
@@ -311,7 +311,7 @@ public class ItemsOnGroundManager
 
 			if (Config.DEBUG)
 			{
-				Log.warning("ItemsOnGroundManager: " + items.size() + " items on ground saved");
+				Log.warning("ItemsOnGroundManager: " + _items.size() + " items on ground saved");
 			}
 		}
 	}
@@ -319,6 +319,6 @@ public class ItemsOnGroundManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ItemsOnGroundManager instance = new ItemsOnGroundManager();
+		protected static final ItemsOnGroundManager _instance = new ItemsOnGroundManager();
 	}
 }

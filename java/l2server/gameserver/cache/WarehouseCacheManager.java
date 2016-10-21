@@ -26,29 +26,29 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class WarehouseCacheManager
 {
-	protected final ConcurrentHashMap<L2PcInstance, Long> cachedWh;
-	protected final long cacheTime;
+	protected final ConcurrentHashMap<L2PcInstance, Long> _cachedWh;
+	protected final long _cacheTime;
 
 	public static WarehouseCacheManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private WarehouseCacheManager()
 	{
-		cacheTime = Config.WAREHOUSE_CACHE_TIME * 60000L; // 60*1000 = 60000
-		cachedWh = new ConcurrentHashMap<>();
+		_cacheTime = Config.WAREHOUSE_CACHE_TIME * 60000L; // 60*1000 = 60000
+		_cachedWh = new ConcurrentHashMap<>();
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new CacheScheduler(), 120000, 60000);
 	}
 
 	public void addCacheTask(L2PcInstance pc)
 	{
-		cachedWh.put(pc, System.currentTimeMillis());
+		_cachedWh.put(pc, System.currentTimeMillis());
 	}
 
 	public void remCacheTask(L2PcInstance pc)
 	{
-		cachedWh.remove(pc);
+		_cachedWh.remove(pc);
 	}
 
 	public class CacheScheduler implements Runnable
@@ -57,12 +57,12 @@ public class WarehouseCacheManager
 		public void run()
 		{
 			long cTime = System.currentTimeMillis();
-			for (L2PcInstance pc : cachedWh.keySet())
+			for (L2PcInstance pc : _cachedWh.keySet())
 			{
-				if (cTime - cachedWh.get(pc) > cacheTime)
+				if (cTime - _cachedWh.get(pc) > _cacheTime)
 				{
 					pc.clearWarehouse();
-					cachedWh.remove(pc);
+					_cachedWh.remove(pc);
 				}
 			}
 		}
@@ -71,6 +71,6 @@ public class WarehouseCacheManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final WarehouseCacheManager instance = new WarehouseCacheManager();
+		protected static final WarehouseCacheManager _instance = new WarehouseCacheManager();
 	}
 }

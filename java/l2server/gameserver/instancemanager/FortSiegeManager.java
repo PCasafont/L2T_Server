@@ -25,7 +25,6 @@ import l2server.gameserver.model.entity.FortSiege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,12 +35,13 @@ import java.util.logging.Level;
 
 public class FortSiegeManager
 {
+
 	public static FortSiegeManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
-	private List<FortSiege> sieges;
+	private List<FortSiege> _sieges;
 
 	public final void addSiegeSkills(L2PcInstance character)
 	{
@@ -151,20 +151,20 @@ public class FortSiegeManager
 
 	public final List<FortSiege> getSieges()
 	{
-		if (sieges == null)
+		if (_sieges == null)
 		{
-			sieges = new ArrayList<>();
+			_sieges = new ArrayList<>();
 		}
-		return sieges;
+		return _sieges;
 	}
 
 	public final void addSiege(FortSiege fortSiege)
 	{
-		if (sieges == null)
+		if (_sieges == null)
 		{
-			sieges = new ArrayList<>();
+			_sieges = new ArrayList<>();
 		}
-		sieges.add(fortSiege);
+		_sieges.add(fortSiege);
 	}
 
 	public boolean isCombat(int itemId)
@@ -246,30 +246,50 @@ public class FortSiegeManager
 
 	public static class SiegeSpawn
 	{
-		Location location;
-		@Getter private int npcId;
-		@Getter private int heading;
-		@Getter private int fortId;
-		@Getter private int id;
+		Location _location;
+		private int _npcId;
+		private int _heading;
+		private int _fortId;
+		private int _id;
 
 		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id)
 		{
-			fortId = fort_id;
-			location = new Location(x, y, z, heading);
-			this.heading = heading;
-			npcId = npc_id;
-			this.id = id;
+			_fortId = fort_id;
+			_location = new Location(x, y, z, heading);
+			_heading = heading;
+			_npcId = npc_id;
+			_id = id;
+		}
+
+		public int getFortId()
+		{
+			return _fortId;
+		}
+
+		public int getNpcId()
+		{
+			return _npcId;
+		}
+
+		public int getHeading()
+		{
+			return _heading;
+		}
+
+		public int getId()
+		{
+			return _id;
 		}
 
 		public Location getLocation()
 		{
-			return location;
+			return _location;
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FortSiegeManager instance = new FortSiegeManager();
+		protected static final FortSiegeManager _instance = new FortSiegeManager();
 	}
 }

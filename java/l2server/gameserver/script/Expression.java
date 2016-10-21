@@ -23,9 +23,11 @@ import java.util.logging.Level;
 
 public class Expression
 {
-	private final ScriptContext context;
-	@SuppressWarnings("unused") private final String lang;
-	@SuppressWarnings("unused") private final String code;
+	private final ScriptContext _context;
+	@SuppressWarnings("unused")
+	private final String _lang;
+	@SuppressWarnings("unused")
+	private final String _code;
 
 	public static Object eval(String lang, String code)
 	{
@@ -68,16 +70,16 @@ public class Expression
 
 	private Expression(ScriptContext pContext, String pLang, String pCode)
 	{
-		context = pContext;
-		lang = pLang;
-		code = pCode;
+		_context = pContext;
+		_lang = pLang;
+		_code = pCode;
 	}
 
 	public <T> void addDynamicVariable(String name, T value)
 	{
 		try
 		{
-			context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
+			_context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{
@@ -89,7 +91,7 @@ public class Expression
 	{
 		try
 		{
-			context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
+			_context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{

@@ -23,7 +23,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,41 +38,97 @@ public class EnchantCostsTable
 
 	public static class EnchantSkillRange
 	{
-		@Getter private final int startLevel;
-		@Getter private final int maxLevel;
-		@Getter private final int normalBook;
-		@Getter private final int safeBook;
-		@Getter private final int changeBook;
-		@Getter private final int untrainBook;
-		@Getter private final int immortalBook;
+		private final int _startLevel;
+		private final int _maxLevel;
+		private final int _normalBook;
+		private final int _safeBook;
+		private final int _changeBook;
+		private final int _untrainBook;
+		private final int _immortalBook;
 
 		public EnchantSkillRange(int startLevel, int maxLevel, int normalBook, int safeBook, int changeBook, int untrainBook, int immortalBook)
 		{
-			this.startLevel = startLevel;
-			this.maxLevel = maxLevel;
-			this.normalBook = normalBook;
-			this.safeBook = safeBook;
-			this.changeBook = changeBook;
-			this.untrainBook = untrainBook;
-			this.immortalBook = immortalBook;
+			_startLevel = startLevel;
+			_maxLevel = maxLevel;
+			_normalBook = normalBook;
+			_safeBook = safeBook;
+			_changeBook = changeBook;
+			_untrainBook = untrainBook;
+			_immortalBook = immortalBook;
+		}
+
+		public int getStartLevel()
+		{
+			return _startLevel;
+		}
+
+		public int getMaxLevel()
+		{
+			return _maxLevel;
+		}
+
+		public int getNormalBook()
+		{
+			return _normalBook;
+		}
+
+		public int getSafeBook()
+		{
+			return _safeBook;
+		}
+
+		public int getChangeBook()
+		{
+			return _changeBook;
+		}
+
+		public int getUntrainBook()
+		{
+			return _untrainBook;
+		}
+
+		public int getImmortalBook()
+		{
+			return _immortalBook;
 		}
 	}
 
 	public static class EnchantSkillDetail
 	{
-		@Getter private final int level;
-		@Getter private final int adenaCost;
-		@Getter private final int spCost;
-		private final byte[] rates;
-		@Getter private final EnchantSkillRange range;
+		private final int _level;
+		private final int _adenaCost;
+		private final int _spCost;
+		private final byte[] _rates;
+		private final EnchantSkillRange _range;
 
 		public EnchantSkillDetail(int lvl, int adena, int sp, byte[] rates, EnchantSkillRange range)
 		{
-			level = lvl;
-			adenaCost = adena;
-			spCost = sp;
-			this.rates = rates;
-			this.range = range;
+			_level = lvl;
+			_adenaCost = adena;
+			_spCost = sp;
+			_rates = rates;
+			_range = range;
+		}
+
+		/**
+		 * @return Returns the level.
+		 */
+		public int getLevel()
+		{
+			return _level;
+		}
+
+		/**
+		 * @return Returns the spCost.
+		 */
+		public int getSpCost()
+		{
+			return _spCost;
+		}
+
+		public int getAdenaCost()
+		{
+			return _adenaCost;
 		}
 
 		public byte getRate(L2PcInstance ply)
@@ -83,18 +138,23 @@ public class EnchantCostsTable
 				return 0;
 			}
 
-			return rates[ply.getLevel() - 85];
+			return _rates[ply.getLevel() - 85];
+		}
+
+		public EnchantSkillRange getRange()
+		{
+			return _range;
 		}
 	}
 
-	private TIntObjectHashMap<L2EnchantSkillLearn> enchantSkillTrees = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<L2EnchantSkillLearn> _enchantSkillTrees = new TIntObjectHashMap<>();
 	//enchant skill list
-	private Map<Integer, EnchantSkillRange> enchantRanges = new HashMap<>();
-	private List<EnchantSkillDetail> enchantDetails = new ArrayList<>();
+	private Map<Integer, EnchantSkillRange> _enchantRanges = new HashMap<>();
+	private List<EnchantSkillDetail> _enchantDetails = new ArrayList<>();
 
 	public static EnchantCostsTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private EnchantCostsTable()
@@ -111,8 +171,8 @@ public class EnchantCostsTable
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		enchantSkillTrees.clear();
-		enchantDetails.clear();
+		_enchantSkillTrees.clear();
+		_enchantDetails.clear();
 
 		for (XmlNode n : doc.getChildren())
 		{
@@ -134,7 +194,7 @@ public class EnchantCostsTable
 										untrainBook, immortalBook);
 						for (int lvl = startLevel; lvl < maxLevel; lvl++)
 						{
-							enchantRanges.put(lvl, range);
+							_enchantRanges.put(lvl, range);
 						}
 					}
 					else if (enchantNode.getName().equalsIgnoreCase("enchant"))
@@ -151,7 +211,7 @@ public class EnchantCostsTable
 						for (String ls : levels)
 						{
 							int enchLvl = Integer.valueOf(ls);
-							EnchantSkillRange range = enchantRanges.get(enchLvl - 1);
+							EnchantSkillRange range = _enchantRanges.get(enchLvl - 1);
 							if (range == null)
 							{
 								continue;
@@ -191,11 +251,11 @@ public class EnchantCostsTable
 
 	public int addNewRouteForSkill(int skillId, int maxLvL, int route)
 	{
-		L2EnchantSkillLearn enchantableSkill = enchantSkillTrees.get(skillId);
+		L2EnchantSkillLearn enchantableSkill = _enchantSkillTrees.get(skillId);
 		if (enchantableSkill == null)
 		{
 			enchantableSkill = new L2EnchantSkillLearn(skillId, maxLvL);
-			enchantSkillTrees.put(skillId, enchantableSkill);
+			_enchantSkillTrees.put(skillId, enchantableSkill);
 		}
 
 		enchantableSkill.addNewEnchantRoute(route);
@@ -215,12 +275,12 @@ public class EnchantCostsTable
 
 	public L2EnchantSkillLearn getSkillEnchantmentBySkillId(int skillId)
 	{
-		return enchantSkillTrees.get(skillId);
+		return _enchantSkillTrees.get(skillId);
 	}
 
 	public int getEnchantSkillSpCost(L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -236,7 +296,7 @@ public class EnchantCostsTable
 
 	public int getEnchantSkillAdenaCost(L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -252,7 +312,7 @@ public class EnchantCostsTable
 
 	public byte getEnchantSkillRate(L2PcInstance player, L2Skill skill)
 	{
-		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
+		L2EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)
 		{
 			EnchantSkillDetail esd =
@@ -268,18 +328,18 @@ public class EnchantCostsTable
 
 	public void addEnchantDetail(EnchantSkillDetail detail)
 	{
-		enchantDetails.add(detail);
+		_enchantDetails.add(detail);
 	}
 
 	public List<EnchantSkillDetail> getEnchantGroupDetails()
 	{
-		return enchantDetails;
+		return _enchantDetails;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EnchantCostsTable instance = new EnchantCostsTable();
+		protected static final EnchantCostsTable _instance = new EnchantCostsTable();
 	}
 
 	public void reload()

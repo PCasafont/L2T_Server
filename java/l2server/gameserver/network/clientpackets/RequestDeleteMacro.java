@@ -17,12 +17,12 @@ package l2server.gameserver.network.clientpackets;
 
 public final class RequestDeleteMacro extends L2GameClientPacket
 {
-	private int id;
+	private int _id;
 
 	@Override
 	protected void readImpl()
 	{
-		id = readD();
+		_id = readD();
 	}
 
 	@Override
@@ -32,6 +32,6 @@ public final class RequestDeleteMacro extends L2GameClientPacket
 		{
 			return;
 		}
-		getClient().getActiveChar().deleteMacro(id);
+		getClient().getActiveChar().deleteMacro(_id);
 	}
 }

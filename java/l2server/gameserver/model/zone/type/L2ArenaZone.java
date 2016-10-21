@@ -29,6 +29,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class L2ArenaZone extends L2SpawnZone
 {
+
 	public L2ArenaZone(int id)
 	{
 		super(id);
@@ -37,6 +38,7 @@ public class L2ArenaZone extends L2SpawnZone
 	@Override
 	protected void onEnter(L2Character character)
 	{
+
 		if (!GMEventManager.getInstance().onEnterZone(character, this))
 		{
 			return;
@@ -49,7 +51,8 @@ public class L2ArenaZone extends L2SpawnZone
 		{
 			if (!character.isInsideZone(L2Character.ZONE_PVP))
 			{
-				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+				character
+						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 		}
 	}

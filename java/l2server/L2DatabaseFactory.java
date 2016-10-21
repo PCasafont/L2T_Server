@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 public class L2DatabaseFactory
 {
-	static Logger log = Logger.getLogger(L2DatabaseFactory.class.getName());
+	static Logger _log = Logger.getLogger(L2DatabaseFactory.class.getName());
 
 	public enum ProviderType
 	{
@@ -35,14 +35,14 @@ public class L2DatabaseFactory
 
 	private static class SingletonHolder
 	{
-		private static final L2DatabaseFactory INSTANCE = new L2DatabaseFactory();
+		private static final L2DatabaseFactory _INSTANCE = new L2DatabaseFactory();
 	}
 
 	// =========================================================
 	// Data Field
-	private ProviderType providerType;
-	private BoneCP gameDatabase;
-	private BoneCP webDatabase;
+	private ProviderType _providerType;
+	private BoneCP _gameDatabase;
+	private BoneCP _webDatabase;
 
 	private final int PARTITION_COUNT = 4;
 
@@ -87,10 +87,10 @@ public class L2DatabaseFactory
 			//config.setCloseConnectionWatch(true);
 			//config.setCloseConnectionWatchTimeout(300000);
 
-			gameDatabase = new BoneCP(config);
+			_gameDatabase = new BoneCP(config);
 
 			// Test the connection
-			gameDatabase.getConnection().close();
+			_gameDatabase.getConnection().close();
 
 			if (Config.DEBUG)
 			{
@@ -99,11 +99,11 @@ public class L2DatabaseFactory
 
 			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft"))
 			{
-				providerType = ProviderType.MsSql;
+				_providerType = ProviderType.MsSql;
 			}
 			else
 			{
-				providerType = ProviderType.MySql;
+				_providerType = ProviderType.MySql;
 			}
 		}
 		catch (Exception e)
@@ -134,9 +134,9 @@ public class L2DatabaseFactory
 			config.setPassword("f00ky0gr4np4");
 			config.setTransactionRecoveryEnabled(true);
 
-			webDatabase = new BoneCP(config);
+			_webDatabase = new BoneCP(config);
 
-			webDatabase.getConnection().close();
+			_webDatabase.getConnection().close();
 		}
 		catch (Exception e)
 		{
@@ -167,35 +167,35 @@ public class L2DatabaseFactory
 
 	public void shutdown()
 	{
-		Log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() +
+		Log.info("During this session the connection pool initialized " + _gameDatabase.getTotalCreatedConnections() +
 				" connections.");
-		if (gameDatabase.getTotalLeased() > 0)
+		if (_gameDatabase.getTotalLeased() > 0)
 		{
-			Log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
+			Log.info(_gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
 		Log.info("Shutting down pool...");
 
 		try
 		{
-			gameDatabase.close();
+			_gameDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		gameDatabase = null;
+		_gameDatabase = null;
 
 		try
 		{
-			webDatabase.close();
+			_webDatabase.close();
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.INFO, "", e);
 		}
 
-		webDatabase = null;
+		_webDatabase = null;
 	}
 
 	public final String safetyString(String... whatToCheck)
@@ -243,7 +243,7 @@ public class L2DatabaseFactory
 	// Property - Public
 	public static L2DatabaseFactory getInstance()
 	{
-		return SingletonHolder.INSTANCE;
+		return SingletonHolder._INSTANCE;
 	}
 
 	public Connection getConnection()
@@ -253,7 +253,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = gameDatabase.getConnection();
+				con = _gameDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -273,7 +273,7 @@ public class L2DatabaseFactory
 		{
 			try
 			{
-				con = webDatabase.getConnection();
+				con = _webDatabase.getConnection();
 			}
 			catch (SQLException e)
 			{
@@ -304,16 +304,16 @@ public class L2DatabaseFactory
 
 	public int getBusyConnectionCount()
 	{
-		return gameDatabase.getTotalLeased();
+		return _gameDatabase.getTotalLeased();
 	}
 
 	public int getIdleConnectionCount()
 	{
-		return gameDatabase.getTotalFree();
+		return _gameDatabase.getTotalFree();
 	}
 
 	public final ProviderType getProviderType()
 	{
-		return providerType;
+		return _providerType;
 	}
 }

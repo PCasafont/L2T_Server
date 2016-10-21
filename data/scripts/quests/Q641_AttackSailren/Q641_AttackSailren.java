@@ -34,8 +34,8 @@ public class Q641_AttackSailren extends Quest
 	public static int DROP_CHANCE = 40;
 
 	// NPC
-	public static int statue = 32109;
-	public static int[] mobs = {22196, 22197, 22198, 22218, 22223, 22199};
+	public static int _statue = 32109;
+	public static int[] _mobs = {22196, 22197, 22198, 22218, 22223, 22199};
 
 	// Quest Items
 	public static int GAZKH_FRAGMENT = 8782;
@@ -44,9 +44,9 @@ public class Q641_AttackSailren extends Quest
 	public Q641_AttackSailren(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addTalkId(statue);
-		addStartNpc(statue);
-		for (int npcId : mobs)
+		addTalkId(_statue);
+		addStartNpc(_statue);
+		for (int npcId : _mobs)
 		{
 			addKillId(npcId);
 		}
@@ -111,7 +111,7 @@ public class Q641_AttackSailren extends Quest
 		}
 
 		String htmltext = getNoQuestMsg(player);
-		if (npc.getNpcId() == statue)
+		if (npc.getNpcId() == _statue)
 		{
 			QuestState st = player.getQuestState(qn);
 			if (st == null)
@@ -186,7 +186,7 @@ public class Q641_AttackSailren extends Quest
 			player.sendMessage("onKill: " + npc.getNpcId());
 		}
 
-		for (int npcId : mobs)
+		for (int npcId : _mobs)
 		{
 			if (npc.getNpcId() == npcId)
 			{

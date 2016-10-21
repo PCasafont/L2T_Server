@@ -25,19 +25,19 @@ import java.util.ArrayList;
  */
 public class ExMenteeSearch extends L2GameServerPacket
 {
-	ArrayList<L2PcInstance> mentees;
-	int page, playersInPage;
+	ArrayList<L2PcInstance> _mentees;
+	int _page, _playersInPage;
 
 	public ExMenteeSearch(int page, int minLevel, int maxLevel)
 	{
-		mentees = new ArrayList<>();
-		this.page = page;
-		playersInPage = 64;
+		_mentees = new ArrayList<>();
+		_page = page;
+		_playersInPage = 64;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
 			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
 			{
-				mentees.add(player);
+				_mentees.add(player);
 			}
 		}
 	}
@@ -45,15 +45,15 @@ public class ExMenteeSearch extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(page);
-		if (!mentees.isEmpty())
+		writeD(_page);
+		if (!_mentees.isEmpty())
 		{
-			writeD(mentees.size());
-			writeD(mentees.size() % playersInPage);
+			writeD(_mentees.size());
+			writeD(_mentees.size() % _playersInPage);
 			int i = 1;
-			for (L2PcInstance player : mentees)
+			for (L2PcInstance player : _mentees)
 			{
-				if (i <= playersInPage * page && i > playersInPage * (page - 1))
+				if (i <= _playersInPage * _page && i > _playersInPage * (_page - 1))
 				{
 					writeS(player.getName());
 					writeD(player.getClassId());

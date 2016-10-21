@@ -20,12 +20,12 @@ import l2server.gameserver.stats.Stats;
 
 public class FuncSet extends Func
 {
-	private final Lambda lambda;
+	private final Lambda _lambda;
 
 	public FuncSet(Stats pStat, Object owner, Lambda lambda)
 	{
 		super(pStat, owner);
-		this.lambda = lambda;
+		_lambda = lambda;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class FuncSet extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value = lambda.calc(env);
+			env.value = _lambda.calc(env);
 		}
 	}
 }

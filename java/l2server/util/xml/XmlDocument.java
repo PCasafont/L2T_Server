@@ -16,7 +16,6 @@
 package l2server.util.xml;
 
 import l2server.log.Log;
-import lombok.Getter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -30,15 +29,15 @@ import java.util.List;
  */
 public class XmlDocument
 {
-	private static DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	private static DocumentBuilderFactory _factory = DocumentBuilderFactory.newInstance();
 
 	static
 	{
-		factory.setValidating(false);
-		factory.setIgnoringComments(true);
+		_factory.setValidating(false);
+		_factory.setIgnoringComments(true);
 	}
 
-	@Getter private List<XmlNode> children = new ArrayList<>();
+	private List<XmlNode> _children = new ArrayList<>();
 
 	public XmlDocument(File file)
 	{
@@ -52,7 +51,7 @@ public class XmlDocument
 		Document doc = null;
 		try
 		{
-			doc = factory.newDocumentBuilder().parse(file);
+			doc = _factory.newDocumentBuilder().parse(file);
 		}
 		catch (Exception e)
 		{
@@ -63,18 +62,23 @@ public class XmlDocument
 		{
 			if (baseNode.getNodeType() == Node.ELEMENT_NODE)
 			{
-				children.add(new XmlNode(baseNode));
+				_children.add(new XmlNode(baseNode));
 			}
 		}
 	}
 
 	public XmlNode getFirstChild()
 	{
-		if (children.isEmpty())
+		if (_children.isEmpty())
 		{
 			return null;
 		}
 
-		return children.get(0);
+		return _children.get(0);
+	}
+
+	public List<XmlNode> getChildren()
+	{
+		return _children;
 	}
 }

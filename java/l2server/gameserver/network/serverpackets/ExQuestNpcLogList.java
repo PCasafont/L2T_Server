@@ -22,23 +22,24 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class ExQuestNpcLogList extends L2GameServerPacket
 {
-	private QuestState state;
+
+	private QuestState _state;
 
 	public ExQuestNpcLogList(QuestState st)
 	{
-		state = st;
+		_state = st;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(state.getQuest().getQuestIntId());
-		writeC(state.getNpcLogs().size());
-		for (int npcId : state.getNpcLogs().keys())
+		writeD(_state.getQuest().getQuestIntId());
+		writeC(_state.getNpcLogs().size());
+		for (int npcId : _state.getNpcLogs().keys())
 		{
 			writeD(npcId + 1000000);
 			writeC(0x00); // ???
-			writeD(state.getNpcLogs().get(npcId));
+			writeD(_state.getNpcLogs().get(npcId));
 		}
 	}
 }

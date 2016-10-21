@@ -15,14 +15,14 @@ import java.util.Map;
 
 public class DimensionalDoor extends Quest
 {
-	private static final String qn = "DimensionalDoor";
-	private static final boolean debug = false;
+	private static final String _qn = "DimensionalDoor";
+	private static final boolean _debug = false;
 
 	//Ids
-	private static final int npcManagerId = 80200;
-	private static final int shinyCoin = 37559;
-	private static final Map<Integer, Integer> availableSkills = new HashMap<Integer, Integer>();
-	private static final int[][] availableSkillsIds = {
+	private static final int _npcManagerId = 80200;
+	private static final int _shinyCoin = 37559;
+	private static final Map<Integer, Integer> _availableSkills = new HashMap<Integer, Integer>();
+	private static final int[][] _availableSkillsIds = {
 			//Skill id, skill price amount
 			{1372, 5}, //Expand Inventory (Fishing skill)
 			{1371, 3}, //Expand Warehouse (Fishing skill)
@@ -37,27 +37,27 @@ public class DimensionalDoor extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(npcManagerId);
-		addTalkId(npcManagerId);
-		addFirstTalkId(npcManagerId);
+		addStartNpc(_npcManagerId);
+		addTalkId(_npcManagerId);
+		addFirstTalkId(_npcManagerId);
 
-		for (int[] i : availableSkillsIds)
+		for (int[] i : _availableSkillsIds)
 		{
-			availableSkills.put(i[0], i[1]);
+			_availableSkills.put(i[0], i[1]);
 		}
 	}
 
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (debug)
+		if (_debug)
 		{
 			Log.warning(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("main"))
 		{
-			return qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+			return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 		}
 		else if (event.equalsIgnoreCase("learnSkills"))
 		{
@@ -66,13 +66,13 @@ public class DimensionalDoor extends Quest
 		else if (event.startsWith("claim_"))
 		{
 			int rewardId = Integer.valueOf(event.replace("claim_", ""));
-			if (availableSkills.containsKey(rewardId))
+			if (_availableSkills.containsKey(rewardId))
 			{
-				int maxLevel = SkillTable.getInstance().getMaxLevel(rewardId);
-				int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(rewardId), maxLevel);
+				int _maxLevel = SkillTable.getInstance().getMaxLevel(rewardId);
+				int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(rewardId), _maxLevel);
 				if (skillLevelToLearn != -1)
 				{
-					if (!player.destroyItemByItemId(qn, shinyCoin, availableSkills.get(rewardId), npc, true))
+					if (!player.destroyItemByItemId(_qn, _shinyCoin, _availableSkills.get(rewardId), npc, true))
 					{
 						return "";
 					}
@@ -99,22 +99,22 @@ public class DimensionalDoor extends Quest
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (debug)
+		if (_debug)
 		{
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		}
 
-		return qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+		return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 	}
 
 	public static int getNpcManagerId()
 	{
-		return npcManagerId;
+		return _npcManagerId;
 	}
 
 	public static int getDimensionalDoorRewardId()
 	{
-		return shinyCoin;
+		return _shinyCoin;
 	}
 
 	public static int getDimensionalDoorRewardRate()
@@ -142,6 +142,6 @@ public class DimensionalDoor extends Quest
 
 	public static void main(String[] args)
 	{
-		new DimensionalDoor(-1, qn, "instances");
+		new DimensionalDoor(-1, _qn, "instances");
 	}
 }

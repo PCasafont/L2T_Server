@@ -21,15 +21,16 @@ import l2server.log.Log;
 
 public final class RequestRecipeBookOpen extends L2GameClientPacket
 {
-	private boolean isDwarvenCraft;
+
+	private boolean _isDwarvenCraft;
 
 	@Override
 	protected void readImpl()
 	{
-		isDwarvenCraft = readD() == 0;
+		_isDwarvenCraft = readD() == 0;
 		if (Config.DEBUG)
 		{
-			Log.info("RequestRecipeBookOpen : " + (isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
+			Log.info("RequestRecipeBookOpen : " + (_isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
 		}
 	}
 
@@ -47,6 +48,6 @@ public final class RequestRecipeBookOpen extends L2GameClientPacket
 			return;
 		}
 
-		RecipeController.getInstance().requestBookOpen(getClient().getActiveChar(), isDwarvenCraft);
+		RecipeController.getInstance().requestBookOpen(getClient().getActiveChar(), _isDwarvenCraft);
 	}
 }

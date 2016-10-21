@@ -40,18 +40,18 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 {
 	private static final int BATCH_LENGTH = 46; // length of the one item
 
-	private Item[] items = null;
+	private Item[] _items = null;
 
 	@Override
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Item[count];
+		_items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -63,7 +63,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 
 			if (itemId < 1 || cnt < 1 || price < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
 			readD(); // Unk
@@ -74,7 +74,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			readD(); // GoD ???
 			readH(); // GoD ???
 
-			items[i] = new Item(itemId, cnt, price);
+			_items[i] = new Item(itemId, cnt, price);
 		}
 	}
 
@@ -87,7 +87,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			return;
 		}
 
-		if (items == null)
+		if (_items == null)
 		{
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
@@ -132,7 +132,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		tradeList.clear();
 
 		// Check maximum number of allowed slots for pvt shops
-		if (items.length > player.getPrivateBuyStoreLimit())
+		if (_items.length > player.getPrivateBuyStoreLimit())
 		{
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(
@@ -152,7 +152,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		}
 
 		long totalCost = 0;
-		for (Item i : items)
+		for (Item i : _items)
 		{
 			if (!i.addToTradeList(tradeList))
 			{
@@ -191,31 +191,31 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 
 	private static class Item
 	{
-		private final int itemId;
-		private final long count;
-		private final long price;
+		private final int _itemId;
+		private final long _count;
+		private final long _price;
 
 		public Item(int id, long num, long pri)
 		{
-			itemId = id;
-			count = num;
-			price = pri;
+			_itemId = id;
+			_count = num;
+			_price = pri;
 		}
 
 		public boolean addToTradeList(TradeList list)
 		{
-			if (MAX_ADENA / count < price)
+			if (MAX_ADENA / _count < _price)
 			{
 				return false;
 			}
 
-			list.addItemByItemId(itemId, count, price);
+			list.addItemByItemId(_itemId, _count, _price);
 			return true;
 		}
 
 		public long getCost()
 		{
-			return count * price;
+			return _count * _price;
 		}
 	}
 }

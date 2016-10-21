@@ -21,23 +21,24 @@ import l2server.util.Point3D;
 
 public class ExGetOnAirShip extends L2GameServerPacket
 {
-	private final int playerId, airShipId;
-	private final Point3D pos;
+
+	private final int _playerId, _airShipId;
+	private final Point3D _pos;
 
 	public ExGetOnAirShip(L2PcInstance player, L2Character ship)
 	{
-		playerId = player.getObjectId();
-		airShipId = ship.getObjectId();
-		pos = player.getInVehiclePosition();
+		_playerId = player.getObjectId();
+		_airShipId = ship.getObjectId();
+		_pos = player.getInVehiclePosition();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(playerId);
-		writeD(airShipId);
-		writeD(pos.getX());
-		writeD(pos.getY());
-		writeD(pos.getZ());
+		writeD(_playerId);
+		writeD(_airShipId);
+		writeD(_pos.getX());
+		writeD(_pos.getY());
+		writeD(_pos.getZ());
 	}
 }

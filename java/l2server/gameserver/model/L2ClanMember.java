@@ -19,7 +19,6 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,19 +30,19 @@ import java.util.logging.Level;
  */
 public class L2ClanMember
 {
-	@Getter private L2Clan clan;
-	private int objectId;
-	private String name;
-	private String title;
-	private int powerGrade;
-	private int level;
-	private int classId;
-	private boolean sex;
-	private int raceOrdinal;
-	private L2PcInstance player;
-	private int pledgeType;
-	private int apprentice;
-	private int sponsor;
+	private L2Clan _clan;
+	private int _objectId;
+	private String _name;
+	private String _title;
+	private int _powerGrade;
+	private int _level;
+	private int _classId;
+	private boolean _sex;
+	private int _raceOrdinal;
+	private L2PcInstance _player;
+	private int _pledgeType;
+	private int _apprentice;
+	private int _sponsor;
 
 	public L2ClanMember(L2Clan clan, String name, int level, int classId, int objectId, int pledgeType, int powerGrade, String title, boolean sex, int raceOrdinal)
 	{
@@ -51,34 +50,34 @@ public class L2ClanMember
 		{
 			throw new IllegalArgumentException("Can not create a ClanMember with a null clan.");
 		}
-		this.clan = clan;
-		this.name = name;
-		this.level = level;
-		this.classId = classId;
-		this.objectId = objectId;
-		this.powerGrade = powerGrade;
-		this.title = title;
-		this.pledgeType = pledgeType;
-		apprentice = 0;
-		sponsor = 0;
-		this.sex = sex;
-		this.raceOrdinal = raceOrdinal;
+		_clan = clan;
+		_name = name;
+		_level = level;
+		_classId = classId;
+		_objectId = objectId;
+		_powerGrade = powerGrade;
+		_title = title;
+		_pledgeType = pledgeType;
+		_apprentice = 0;
+		_sponsor = 0;
+		_sex = sex;
+		_raceOrdinal = raceOrdinal;
 	}
 
 	public L2ClanMember(L2Clan clan, L2PcInstance player)
 	{
-		this.clan = clan;
-		name = player.getName();
-		level = player.getLevel();
-		classId = player.getCurrentClass().getId();
-		objectId = player.getObjectId();
-		pledgeType = player.getPledgeType();
-		powerGrade = player.getPowerGrade();
-		title = player.getTitle();
-		sponsor = 0;
-		apprentice = 0;
-		sex = player.getAppearance().getSex();
-		raceOrdinal = player.getRace().ordinal();
+		_clan = clan;
+		_name = player.getName();
+		_level = player.getLevel();
+		_classId = player.getCurrentClass().getId();
+		_objectId = player.getObjectId();
+		_pledgeType = player.getPledgeType();
+		_powerGrade = player.getPowerGrade();
+		_title = player.getTitle();
+		_sponsor = 0;
+		_apprentice = 0;
+		_sex = player.getAppearance().getSex();
+		_raceOrdinal = player.getRace().ordinal();
 	}
 
 	public L2ClanMember(L2PcInstance player)
@@ -87,71 +86,72 @@ public class L2ClanMember
 		{
 			throw new IllegalArgumentException("Can not create a ClanMember if player has a null clan.");
 		}
-		clan = player.getClan();
-		this.player = player;
-		name = this.player.getName();
-		level = this.player.getLevel();
-		classId = this.player.getCurrentClass().getId();
-		objectId = this.player.getObjectId();
-		powerGrade = this.player.getPowerGrade();
-		pledgeType = this.player.getPledgeType();
-		title = this.player.getTitle();
-		apprentice = 0;
-		sponsor = 0;
-		sex = this.player.getAppearance().getSex();
-		raceOrdinal = this.player.getRace().ordinal();
+		_clan = player.getClan();
+		_player = player;
+		_name = _player.getName();
+		_level = _player.getLevel();
+		_classId = _player.getCurrentClass().getId();
+		_objectId = _player.getObjectId();
+		_powerGrade = _player.getPowerGrade();
+		_pledgeType = _player.getPledgeType();
+		_title = _player.getTitle();
+		_apprentice = 0;
+		_sponsor = 0;
+		_sex = _player.getAppearance().getSex();
+		_raceOrdinal = _player.getRace().ordinal();
 	}
 
 	public void setPlayerInstance(L2PcInstance player)
 	{
-		if (player == null && this.player != null)
+		if (player == null && _player != null)
 		{
 			// this is here to keep the data when the player logs off
-			name = this.player.getName();
-			level = this.player.getLevel();
-			classId = this.player.getCurrentClass().getId();
-			objectId = this.player.getObjectId();
-			powerGrade = this.player.getPowerGrade();
-			pledgeType = this.player.getPledgeType();
-			title = this.player.getTitle();
-			apprentice = this.player.getApprentice();
-			sponsor = this.player.getSponsor();
-			sex = this.player.getAppearance().getSex();
-			raceOrdinal = this.player.getRace().ordinal();
+			_name = _player.getName();
+			_level = _player.getLevel();
+			_classId = _player.getCurrentClass().getId();
+			_objectId = _player.getObjectId();
+			_powerGrade = _player.getPowerGrade();
+			_pledgeType = _player.getPledgeType();
+			_title = _player.getTitle();
+			_apprentice = _player.getApprentice();
+			_sponsor = _player.getSponsor();
+			_sex = _player.getAppearance().getSex();
+			_raceOrdinal = _player.getRace().ordinal();
 		}
 
 		if (player != null)
 		{
-			clan.addSkillEffects(player);
-			if (clan.getLevel() > 3 && player.isClanLeader())
+			_clan.addSkillEffects(player);
+			if (_clan.getLevel() > 3 && player.isClanLeader())
 			{
 				SiegeManager.getInstance().addSiegeSkills(player);
 			}
 			if (player.isClanLeader())
 			{
-				clan.setLeader(this);
+				_clan.setLeader(this);
 			}
 		}
 
-		this.player = player;
+		_player = player;
 	}
 
 	public L2PcInstance getPlayerInstance()
 	{
-		return player;
+		return _player;
 	}
 
 	public boolean isOnline()
 	{
-		if (player == null || !player.isOnline())
+		if (_player == null || !_player.isOnline())
 		{
 			return false;
 		}
-		if (player.getClient() == null)
+		if (_player.getClient() == null)
 		{
 			return false;
 		}
-		return !player.getClient().isDetached();
+		return !_player.getClient().isDetached();
+
 	}
 
 	/**
@@ -159,11 +159,11 @@ public class L2ClanMember
 	 */
 	public int getCurrentClass()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getCurrentClass().getId();
+			return _player.getCurrentClass().getId();
 		}
-		return classId;
+		return _classId;
 	}
 
 	/**
@@ -171,11 +171,11 @@ public class L2ClanMember
 	 */
 	public int getLevel()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getLevel();
+			return _player.getLevel();
 		}
-		return level;
+		return _level;
 	}
 
 	/**
@@ -183,11 +183,11 @@ public class L2ClanMember
 	 */
 	public String getName()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getName();
+			return _player.getName();
 		}
-		return name;
+		return _name;
 	}
 
 	/**
@@ -195,37 +195,37 @@ public class L2ClanMember
 	 */
 	public int getObjectId()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getObjectId();
+			return _player.getObjectId();
 		}
-		return objectId;
+		return _objectId;
 	}
 
 	public String getTitle()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getTitle();
+			return _player.getTitle();
 		}
-		return title;
+		return _title;
 	}
 
 	public int getPledgeType()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getPledgeType();
+			return _player.getPledgeType();
 		}
-		return pledgeType;
+		return _pledgeType;
 	}
 
 	public void setPledgeType(int pledgeType)
 	{
-		this.pledgeType = pledgeType;
-		if (player != null)
+		_pledgeType = pledgeType;
+		if (_player != null)
 		{
-			player.setPledgeType(pledgeType);
+			_player.setPledgeType(pledgeType);
 		}
 		else
 		{
@@ -242,7 +242,7 @@ public class L2ClanMember
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("UPDATE characters SET subpledge=? WHERE charId=?");
-			statement.setLong(1, pledgeType);
+			statement.setLong(1, _pledgeType);
 			statement.setInt(2, getObjectId());
 			statement.execute();
 			statement.close();
@@ -259,11 +259,11 @@ public class L2ClanMember
 
 	public int getPowerGrade()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getPowerGrade();
+			return _player.getPowerGrade();
 		}
-		return powerGrade;
+		return _powerGrade;
 	}
 
 	/**
@@ -271,10 +271,10 @@ public class L2ClanMember
 	 */
 	public void setPowerGrade(int powerGrade)
 	{
-		this.powerGrade = powerGrade;
-		if (player != null)
+		_powerGrade = powerGrade;
+		if (_player != null)
 		{
-			player.setPowerGrade(powerGrade);
+			_player.setPowerGrade(powerGrade);
 		}
 		else
 		{
@@ -294,7 +294,7 @@ public class L2ClanMember
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("UPDATE characters SET power_grade=? WHERE charId=?");
-			statement.setLong(1, powerGrade);
+			statement.setLong(1, _powerGrade);
 			statement.setInt(2, getObjectId());
 			statement.execute();
 			statement.close();
@@ -311,69 +311,69 @@ public class L2ClanMember
 
 	public void initApprenticeAndSponsor(int apprenticeID, int sponsorID)
 	{
-		apprentice = apprenticeID;
-		sponsor = sponsorID;
+		_apprentice = apprenticeID;
+		_sponsor = sponsorID;
 	}
 
 	public int getRaceOrdinal()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getRace().ordinal();
+			return _player.getRace().ordinal();
 		}
 		else
 		{
-			return raceOrdinal;
+			return _raceOrdinal;
 		}
 	}
 
 	public boolean getSex()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getAppearance().getSex();
+			return _player.getAppearance().getSex();
 		}
 		else
 		{
-			return sex;
+			return _sex;
 		}
 	}
 
 	public int getSponsor()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getSponsor();
+			return _player.getSponsor();
 		}
 		else
 		{
-			return sponsor;
+			return _sponsor;
 		}
 	}
 
 	public int getApprentice()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			return player.getApprentice();
+			return _player.getApprentice();
 		}
 		else
 		{
-			return apprentice;
+			return _apprentice;
 		}
 	}
 
 	public String getApprenticeOrSponsorName()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			apprentice = player.getApprentice();
-			sponsor = player.getSponsor();
+			_apprentice = _player.getApprentice();
+			_sponsor = _player.getSponsor();
 		}
 
-		if (apprentice != 0)
+		if (_apprentice != 0)
 		{
-			L2ClanMember apprentice = clan.getClanMember(this.apprentice);
+			L2ClanMember apprentice = _clan.getClanMember(_apprentice);
 			if (apprentice != null)
 			{
 				return apprentice.getName();
@@ -383,9 +383,9 @@ public class L2ClanMember
 				return "Error";
 			}
 		}
-		if (sponsor != 0)
+		if (_sponsor != 0)
 		{
-			L2ClanMember sponsor = clan.getClanMember(this.sponsor);
+			L2ClanMember sponsor = _clan.getClanMember(_sponsor);
 			if (sponsor != null)
 			{
 				return sponsor.getName();
@@ -396,6 +396,11 @@ public class L2ClanMember
 			}
 		}
 		return "";
+	}
+
+	public L2Clan getClan()
+	{
+		return _clan;
 	}
 
 	public int calculatePledgeClass(L2PcInstance player)

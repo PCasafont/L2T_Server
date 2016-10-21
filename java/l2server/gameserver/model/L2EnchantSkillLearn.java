@@ -18,7 +18,6 @@ package l2server.gameserver.model;
 import gnu.trove.TIntHashSet;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
-import lombok.Getter;
 
 /**
  * This class ...
@@ -27,19 +26,27 @@ import lombok.Getter;
  */
 public final class L2EnchantSkillLearn
 {
-	@Getter private final int id;
-	private final int baseLvl;
-	private final TIntHashSet enchantRoutes = new TIntHashSet();
+	private final int _id;
+	private final int _baseLvl;
+	private final TIntHashSet _enchantRoutes = new TIntHashSet();
 
 	public L2EnchantSkillLearn(int id, int baseLvl)
 	{
-		this.id = id;
-		this.baseLvl = baseLvl;
+		_id = id;
+		_baseLvl = baseLvl;
 	}
 
 	public void addNewEnchantRoute(int route)
 	{
-		enchantRoutes.add(route);
+		_enchantRoutes.add(route);
+	}
+
+	/**
+	 * @return Returns the id.
+	 */
+	public int getId()
+	{
+		return _id;
 	}
 
 	/**
@@ -47,27 +54,28 @@ public final class L2EnchantSkillLearn
 	 */
 	public int getBaseLevel()
 	{
-		return baseLvl;
+		return _baseLvl;
 	}
 
 	public int[] getAllRoutes()
 	{
-		return enchantRoutes.toArray();
+		return _enchantRoutes.toArray();
 	}
 
 	public boolean isMaxEnchant(int route, int level)
 	{
-		if (route < 1 || !enchantRoutes.contains(route))
+		if (route < 1 || !_enchantRoutes.contains(route))
 		{
 			return false;
 		}
 
 		return level >= EnchantCostsTable.getInstance().getEnchantGroupDetails().size();
+
 	}
 
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
 	{
-		if (route < 1 || !enchantRoutes.contains(route))
+		if (route < 1 || !_enchantRoutes.contains(route))
 		{
 			return null;
 		}

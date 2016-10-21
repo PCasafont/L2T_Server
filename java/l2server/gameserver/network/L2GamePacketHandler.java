@@ -38,6 +38,7 @@ import java.nio.ByteBuffer;
 public final class L2GamePacketHandler
 		implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient>
 {
+
 	// implementation
 	@Override
 	public ReceivablePacket<L2GameClient> handlePacket(ByteBuffer buf, L2GameClient client)

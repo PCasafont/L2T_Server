@@ -28,30 +28,30 @@ import l2server.gameserver.model.L2Object;
  */
 public final class TeleportToLocation extends L2GameServerPacket
 {
-	private int targetObjId;
-	private int x;
-	private int y;
-	private int z;
-	private int heading;
+	private int _targetObjId;
+	private int _x;
+	private int _y;
+	private int _z;
+	private int _heading;
 
 	public TeleportToLocation(L2Object obj, int x, int y, int z, int heading)
 	{
-		targetObjId = obj.getObjectId();
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.heading = heading;
+		_targetObjId = obj.getObjectId();
+		_x = x;
+		_y = y;
+		_z = z;
+		_heading = heading;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(targetObjId);
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_targetObjId);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 		writeD(0x00); // isValidation ??
-		writeD(heading); // nYaw
+		writeD(_heading); // nYaw
 		writeD(0x00);
 	}
 }

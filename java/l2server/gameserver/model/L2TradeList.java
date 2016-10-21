@@ -19,8 +19,6 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,26 +33,31 @@ import java.util.logging.Level;
  */
 public class L2TradeList
 {
-	private final Map<Integer, L2TradeItem> items = new LinkedHashMap<>();
-	@Getter private final int listId;
+	private final Map<Integer, L2TradeItem> _items = new LinkedHashMap<>();
+	private final int _listId;
 
-	private String buystorename, sellstorename;
-	@Setter private boolean hasLimitedStockItem;
-	@Getter private int npcId;
+	private String _buystorename, _sellstorename;
+	private boolean _hasLimitedStockItem;
+	private int _npcId;
 
 	public L2TradeList(int listId)
 	{
-		this.listId = listId;
+		_listId = listId;
 	}
 
 	public void setNpcId(int id)
 	{
-		npcId = id;
+		_npcId = id;
+	}
+
+	public int getNpcId()
+	{
+		return _npcId;
 	}
 
 	public void addItem(L2TradeItem item)
 	{
-		items.put(item.getItemId(), item);
+		_items.put(item.getItemId(), item);
 		if (item.hasLimitedStock())
 		{
 			setHasLimitedStockItem(true);
@@ -63,7 +66,7 @@ public class L2TradeList
 
 	public void replaceItem(int itemID, long price)
 	{
-		L2TradeItem item = items.get(itemID);
+		L2TradeItem item = _items.get(itemID);
 		if (item != null)
 		{
 			item.setPrice(price);
@@ -72,7 +75,23 @@ public class L2TradeList
 
 	public void removeItem(int itemID)
 	{
-		items.remove(itemID);
+		_items.remove(itemID);
+	}
+
+	/**
+	 * @return Returns the listId.
+	 */
+	public int getListId()
+	{
+		return _listId;
+	}
+
+	/**
+	 * @param hasLimitedStockItem The hasLimitedStockItem to set.
+	 */
+	public void setHasLimitedStockItem(boolean hasLimitedStockItem)
+	{
+		_hasLimitedStockItem = hasLimitedStockItem;
 	}
 
 	/**
@@ -80,27 +99,27 @@ public class L2TradeList
 	 */
 	public boolean hasLimitedStockItem()
 	{
-		return hasLimitedStockItem;
+		return _hasLimitedStockItem;
 	}
 
 	public void setSellStoreName(String name)
 	{
-		sellstorename = name;
+		_sellstorename = name;
 	}
 
 	public String getSellStoreName()
 	{
-		return sellstorename;
+		return _sellstorename;
 	}
 
 	public void setBuyStoreName(String name)
 	{
-		buystorename = name;
+		_buystorename = name;
 	}
 
 	public String getBuyStoreName()
 	{
-		return buystorename;
+		return _buystorename;
 	}
 
 	/**
@@ -108,19 +127,19 @@ public class L2TradeList
 	 */
 	public Collection<L2TradeItem> getItems()
 	{
-		return items.values();
+		return _items.values();
 	}
 
 	public List<L2TradeItem> getItems(int start, int end)
 	{
 		List<L2TradeItem> list = new LinkedList<>();
-		list.addAll(items.values());
+		list.addAll(_items.values());
 		return list.subList(start, end);
 	}
 
 	public long getPriceForItemId(int itemId)
 	{
-		L2TradeItem item = items.get(itemId);
+		L2TradeItem item = _items.get(itemId);
 		if (item != null)
 		{
 			return item.getPrice();
@@ -130,12 +149,12 @@ public class L2TradeList
 
 	public L2TradeItem getItemById(int itemId)
 	{
-		return items.get(itemId);
+		return _items.get(itemId);
 	}
 
 	public boolean containsItemId(int itemId)
 	{
-		return items.containsKey(itemId);
+		return _items.containsKey(itemId);
 	}
 
 	/**
@@ -145,22 +164,51 @@ public class L2TradeList
 	 */
 	public static class L2TradeItem
 	{
-		@Getter private final int listId;
-		@Getter private final int itemId;
-		@Getter private final L2Item template;
-		@Getter @Setter private long price;
+		private final int _listId;
+		private final int _itemId;
+		private final L2Item _template;
+		private long _price;
 
 		// count related
-		private AtomicLong currentCount = new AtomicLong();
-		@Getter @Setter private int maxCount = -1;
-		@Getter private long restoreDelay;
-		@Setter private long nextRestoreTime = 0;
+		private AtomicLong _currentCount = new AtomicLong();
+		private int _maxCount = -1;
+		private long _restoreDelay;
+		private long _nextRestoreTime = 0;
 
 		public L2TradeItem(int listId, int itemId)
 		{
-			this.listId = listId;
-			this.itemId = itemId;
-			template = ItemTable.getInstance().getTemplate(itemId);
+			_listId = listId;
+			_itemId = itemId;
+			_template = ItemTable.getInstance().getTemplate(itemId);
+		}
+
+		/**
+		 * @return Returns the itemId.
+		 */
+		public int getItemId()
+		{
+			return _itemId;
+		}
+
+		/**
+		 * @param price The price to set.
+		 */
+		public void setPrice(long price)
+		{
+			_price = price;
+		}
+
+		/**
+		 * @return Returns the price.
+		 */
+		public long getPrice()
+		{
+			return _price;
+		}
+
+		public L2Item getTemplate()
+		{
+			return _template;
 		}
 
 		/**
@@ -168,12 +216,12 @@ public class L2TradeList
 		 */
 		public void setCurrentCount(long currentCount)
 		{
-			this.currentCount.set(currentCount);
+			_currentCount.set(currentCount);
 		}
 
 		public boolean decreaseCount(long val)
 		{
-			return currentCount.addAndGet(-val) >= 0;
+			return _currentCount.addAndGet(-val) >= 0;
 		}
 
 		/**
@@ -185,27 +233,43 @@ public class L2TradeList
 			{
 				restoreInitialCount();
 			}
-			long ret = currentCount.get();
+			long ret = _currentCount.get();
 			return ret > 0 ? ret : 0;
 		}
 
 		public boolean isPendingStockUpdate()
 		{
-			return System.currentTimeMillis() >= nextRestoreTime && currentCount.get() < maxCount;
+			return System.currentTimeMillis() >= _nextRestoreTime && _currentCount.get() < _maxCount;
 		}
 
 		public void restoreInitialCount()
 		{
 			setCurrentCount(getMaxCount());
-			nextRestoreTime = nextRestoreTime + getRestoreDelay();
+			_nextRestoreTime = _nextRestoreTime + getRestoreDelay();
 
 			// consume until next update is on future
 			if (isPendingStockUpdate() && getRestoreDelay() > 0)
 			{
-				nextRestoreTime = System.currentTimeMillis() + getRestoreDelay();
+				_nextRestoreTime = System.currentTimeMillis() + getRestoreDelay();
 			}
 
 			saveDataTimer();
+		}
+
+		/**
+		 * @param maxCount The maxCount to set.
+		 */
+		public void setMaxCount(int maxCount)
+		{
+			_maxCount = maxCount;
+		}
+
+		/**
+		 * @return Returns the maxCount.
+		 */
+		public int getMaxCount()
+		{
+			return _maxCount;
 		}
 
 		public boolean hasLimitedStock()
@@ -218,7 +282,25 @@ public class L2TradeList
 		 */
 		public void setRestoreDelay(int restoreDelay)
 		{
-			this.restoreDelay = restoreDelay * 60 * 60 * 1000;
+			_restoreDelay = restoreDelay * 60 * 60 * 1000;
+		}
+
+		/**
+		 * @return Returns the restoreDelay (in milis)
+		 */
+		public long getRestoreDelay()
+		{
+			return _restoreDelay;
+		}
+
+		/**
+		 * For resuming when server loads
+		 *
+		 * @param nextRestoreTime The nextRestoreTime to set.
+		 */
+		public void setNextRestoreTime(long nextRestoreTime)
+		{
+			_nextRestoreTime = nextRestoreTime;
 		}
 
 		protected void saveDataTimer()
@@ -229,10 +311,10 @@ public class L2TradeList
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(
 						"REPLACE INTO shop_item_counts (shop_id, item_id, count, time) VALUES (?, ?, ?, ?)");
-				statement.setInt(1, listId);
-				statement.setInt(2, itemId);
-				statement.setInt(3, maxCount);
-				statement.setLong(4, nextRestoreTime);
+				statement.setInt(1, _listId);
+				statement.setInt(2, _itemId);
+				statement.setInt(3, _maxCount);
+				statement.setLong(4, _nextRestoreTime);
 				statement.executeUpdate();
 				statement.close();
 			}

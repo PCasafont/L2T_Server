@@ -26,14 +26,14 @@ import java.util.logging.Logger;
  */
 public final class GGAuth extends L2LoginServerPacket
 {
-	static final Logger log = Logger.getLogger(GGAuth.class.getName());
+	static final Logger _log = Logger.getLogger(GGAuth.class.getName());
 	public static final int SKIP_GG_AUTH_REQUEST = 0x0b;
 
-	private int response;
+	private int _response;
 
 	public GGAuth(int response)
 	{
-		this.response = response;
+		_response = response;
 		if (Config.DEBUG)
 		{
 			Log.warning("Reason Hex: " + Integer.toHexString(response));
@@ -46,7 +46,7 @@ public final class GGAuth extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x0b);
-		writeD(response);
+		writeD(_response);
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x00);

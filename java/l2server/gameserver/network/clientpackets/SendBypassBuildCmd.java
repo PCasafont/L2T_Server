@@ -30,18 +30,19 @@ import l2server.log.Log;
  */
 public final class SendBypassBuildCmd extends L2GameClientPacket
 {
+
 	public static final int GM_MESSAGE = 9;
 	public static final int ANNOUNCEMENT = 10;
 
-	private String command;
+	private String _command;
 
 	@Override
 	protected void readImpl()
 	{
-		command = readS();
-		if (command != null)
+		_command = readS();
+		if (_command != null)
 		{
-			command = command.trim();
+			_command = _command.trim();
 		}
 	}
 
@@ -54,7 +55,7 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 			return;
 		}
 
-		String command = "admin_" + this.command.split(" ")[0];
+		String command = "admin_" + _command.split(" ")[0];
 
 		IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(command);
 
@@ -79,10 +80,10 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 
 		if (Config.GMAUDIT)
 		{
-			GMAudit.auditGMAction(activeChar.getName(), this.command,
+			GMAudit.auditGMAction(activeChar.getName(), _command,
 					activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 		}
 
-		ach.useAdminCommand("admin_" + this.command, activeChar);
+		ach.useAdminCommand("admin_" + _command, activeChar);
 	}
 }

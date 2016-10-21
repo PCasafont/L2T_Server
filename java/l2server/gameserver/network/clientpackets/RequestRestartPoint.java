@@ -35,22 +35,23 @@ import l2server.log.Log;
  */
 public final class RequestRestartPoint extends L2GameClientPacket
 {
-	protected int requestedPointType;
-	protected boolean continuation;
+
+	protected int _requestedPointType;
+	protected boolean _continuation;
 
 	@Override
 	protected void readImpl()
 	{
-		requestedPointType = readD();
+		_requestedPointType = readD();
 	}
 
 	class DeathTask implements Runnable
 	{
 		final L2PcInstance activeChar;
 
-		DeathTask(L2PcInstance activeChar)
+		DeathTask(L2PcInstance _activeChar)
 		{
-			this.activeChar = activeChar;
+			activeChar = _activeChar;
 		}
 
 		@Override
@@ -66,9 +67,9 @@ public final class RequestRestartPoint extends L2GameClientPacket
 			// force jail
 			if (activeChar.isInJail())
 			{
-				requestedPointType = 27;
+				_requestedPointType = 27;
 			}
-			switch (requestedPointType)
+			switch (_requestedPointType)
 			{
 				case 1: // to clanhall
 					if (activeChar.getClan() == null || activeChar.getClan().getHasHideout() == 0)

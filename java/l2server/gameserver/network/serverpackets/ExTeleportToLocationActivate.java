@@ -20,30 +20,30 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExTeleportToLocationActivate extends L2GameServerPacket
 {
-	private final int objId;
-	private final int x;
-	private final int y;
-	private final int z;
-	private final int heading;
+	private final int _objId;
+	private final int _x;
+	private final int _y;
+	private final int _z;
+	private final int _heading;
 
 	public ExTeleportToLocationActivate(int objId, int x, int y, int z, int heading)
 	{
-		this.objId = objId;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.heading = heading;
+		_objId = objId;
+		_x = x;
+		_y = y;
+		_z = z;
+		_heading = heading;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objId);
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_objId);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 		writeD(0x00);
-		writeD(heading);
+		writeD(_heading);
 		writeD(0x00);
 	}
 }

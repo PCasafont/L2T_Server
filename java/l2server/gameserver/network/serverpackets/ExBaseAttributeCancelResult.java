@@ -20,20 +20,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBaseAttributeCancelResult extends L2GameServerPacket
 {
-	private int objId;
-	private byte attribute;
+
+	private int _objId;
+	private byte _attribute;
 
 	public ExBaseAttributeCancelResult(int objId, byte attribute)
 	{
-		this.objId = objId;
-		this.attribute = attribute;
+		_objId = objId;
+		_attribute = attribute;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(1); // result
-		writeD(objId);
-		writeD(attribute);
+		writeD(_objId);
+		writeD(_attribute);
 	}
 }

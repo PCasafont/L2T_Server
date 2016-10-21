@@ -20,7 +20,6 @@ import l2server.gameserver.model.L2WorldRegion;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.util.Util;
-import lombok.Getter;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -29,12 +28,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ObjectKnownList
 {
-	@Getter private L2Object activeObject;
-	private Map<Integer, L2Object> knownObjects;
+	private L2Object _activeObject;
+	private Map<Integer, L2Object> _knownObjects;
 
 	public ObjectKnownList(L2Object activeObject)
 	{
-		this.activeObject = activeObject;
+		_activeObject = activeObject;
 	}
 
 	public boolean addKnownObject(L2Object object)
@@ -123,14 +122,14 @@ public class ObjectKnownList
 				{
 					//synchronized (regi.getVisibleObjects())
 					{
-						for (L2Object obj : vObj)
+						for (L2Object _object : vObj)
 						{
-							if (obj != getActiveObject())
+							if (_object != getActiveObject())
 							{
-								addKnownObject(obj);
-								if (obj instanceof L2Character)
+								addKnownObject(_object);
+								if (_object instanceof L2Character)
 								{
-									obj.getKnownList().addKnownObject(getActiveObject());
+									_object.getKnownList().addKnownObject(getActiveObject());
 								}
 							}
 						}
@@ -149,11 +148,11 @@ public class ObjectKnownList
 					{
 						//synchronized (regi.getVisiblePlayable())
 						{
-							for (L2Object obj : vPls)
+							for (L2Object _object : vPls)
 							{
-								if (obj != getActiveObject())
+								if (_object != getActiveObject())
 								{
-									addKnownObject(obj);
+									addKnownObject(_object);
 								}
 							}
 						}
@@ -163,7 +162,7 @@ public class ObjectKnownList
 		}
 	}
 
-	// Remove invisible and too far L2Object from knowObject and if necessary from knownPlayers of the L2Character
+	// Remove invisible and too far L2Object from _knowObject and if necessary from _knownPlayers of the L2Character
 	public void forgetObjects(boolean fullCheck)
 	{
 		//synchronized (KnownListUpdateTaskManager.getInstance().getSync())
@@ -201,6 +200,11 @@ public class ObjectKnownList
 		}
 	}
 
+	public L2Object getActiveObject()
+	{
+		return _activeObject;
+	}
+
 	public int getDistanceToForgetObject(L2Object object)
 	{
 		return 0;
@@ -212,14 +216,14 @@ public class ObjectKnownList
 	}
 
 	/**
-	 * Return the knownObjects containing all L2Object known by the L2Character.
+	 * Return the _knownObjects containing all L2Object known by the L2Character.
 	 */
 	public final Map<Integer, L2Object> getKnownObjects()
 	{
-		if (knownObjects == null)
+		if (_knownObjects == null)
 		{
-			knownObjects = new ConcurrentHashMap<>();
+			_knownObjects = new ConcurrentHashMap<>();
 		}
-		return knownObjects;
+		return _knownObjects;
 	}
 }

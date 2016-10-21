@@ -36,12 +36,13 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public final class RequestPostAttachment extends L2GameClientPacket
 {
-	private int msgId;
+
+	private int _msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		msgId = readD();
+		_msgId = readD();
 	}
 
 	@Override
@@ -105,7 +106,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			return;
 		}
 
-		final Message msg = MailManager.getInstance().getMessage(msgId);
+		final Message msg = MailManager.getInstance().getMessage(_msgId);
 		if (msg == null)
 		{
 			return;
@@ -300,7 +301,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			sender.sendPacket(sm);
 		}
 
-		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.READED));
+		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RECEIVED));
 	}
 

@@ -31,301 +31,301 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
  */
 public class L2SyncList<T> implements List<T>
 {
-	private final List<T> list;
-	private final ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
-	private final ReadLock rl = rw.readLock();
-	private final WriteLock wl = rw.writeLock();
+	private final List<T> _list;
+	private final ReentrantReadWriteLock _rw = new ReentrantReadWriteLock();
+	private final ReadLock _rl = _rw.readLock();
+	private final WriteLock _wl = _rw.writeLock();
 
 	/**
 	 * Default constructor use ArrayList as it internal
 	 */
 	public L2SyncList()
 	{
-		list = new ArrayList<>();
+		_list = new ArrayList<>();
 	}
 
 	public L2SyncList(List<T> list)
 	{
-		this.list = list;
+		_list = list;
 	}
 
 	@Override
 	public T get(int index)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.get(index);
+			return _list.get(index);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.equals(o);
+			return _list.equals(o);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public int hashCode()
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.hashCode();
+			return _list.hashCode();
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public T set(int index, T element)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return list.set(index, element);
+			return _list.set(index, element);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public void add(int index, T element)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			list.add(index, element);
+			_list.add(index, element);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean add(T element)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return list.add(element);
+			return _list.add(element);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public T remove(int index)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return list.remove(index);
+			return _list.remove(index);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean remove(Object value)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return list.remove(value);
+			return _list.remove(value);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> list)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return this.list.removeAll(list);
+			return _list.removeAll(list);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> list)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return this.list.retainAll(list);
+			return _list.retainAll(list);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public int indexOf(Object o)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.indexOf(o);
+			return _list.indexOf(o);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean contains(Object o)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.contains(o);
+			return _list.contains(o);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean containsAll(Collection<?> list)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return this.list.containsAll(list);
+			return _list.containsAll(list);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public int lastIndexOf(Object o)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.lastIndexOf(o);
+			return _list.lastIndexOf(o);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends T> list)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return this.list.addAll(list);
+			return _list.addAll(list);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends T> c)
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			return list.addAll(index, c);
+			return _list.addAll(index, c);
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public List<T> subList(int fromIndex, int toIndex)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return new L2SyncList<>(list.subList(fromIndex, toIndex));
+			return new L2SyncList<>(_list.subList(fromIndex, toIndex));
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public void clear()
 	{
-		wl.lock();
+		_wl.lock();
 		try
 		{
-			list.clear();
+			_list.clear();
 		}
 		finally
 		{
-			wl.unlock();
+			_wl.unlock();
 		}
 	}
 
 	@Override
 	public int size()
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.size();
+			return _list.size();
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
 	@Override
 	public boolean isEmpty()
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.isEmpty();
+			return _list.isEmpty();
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
@@ -358,7 +358,7 @@ public class L2SyncList<T> implements List<T>
 	@SuppressWarnings("unchecked")
 	public Iterator<T> iterator()
 	{
-		return new Itr((T[]) list.toArray());
+		return new Itr((T[]) _list.toArray());
 	}
 
 	private class Itr implements Iterator<T>
@@ -410,14 +410,14 @@ public class L2SyncList<T> implements List<T>
 	@Override
 	public Object[] toArray()
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.toArray();
+			return _list.toArray();
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 
@@ -425,14 +425,14 @@ public class L2SyncList<T> implements List<T>
 	@SuppressWarnings("hiding")
 	public <T> T[] toArray(T[] a)
 	{
-		rl.lock();
+		_rl.lock();
 		try
 		{
-			return list.toArray(a);
+			return _list.toArray(a);
 		}
 		finally
 		{
-			rl.unlock();
+			_rl.unlock();
 		}
 	}
 }

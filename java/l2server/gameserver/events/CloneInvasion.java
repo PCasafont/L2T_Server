@@ -11,7 +11,6 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -20,17 +19,17 @@ import java.util.Calendar;
  */
 public class CloneInvasion
 {
-	public static CloneInvasion instance = null;
+	public static CloneInvasion _instance = null;
 
-	private StartTask task;
+	private StartTask _task;
 
 	public static CloneInvasion getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new CloneInvasion();
+			_instance = new CloneInvasion();
 		}
-		return instance;
+		return _instance;
 	}
 
 	public void start()
@@ -163,8 +162,8 @@ public class CloneInvasion
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(task);
+			_task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 		catch (Exception e)
 		{
@@ -174,14 +173,14 @@ public class CloneInvasion
 
 	public StartTask getStartTask()
 	{
-		return task;
+		return _task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(task.getStartTime());
+		startTime.setTimeInMillis(_task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -192,7 +191,7 @@ public class CloneInvasion
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = task.getStartTime() - System.currentTimeMillis();
+		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -213,17 +212,22 @@ public class CloneInvasion
 
 	class StartTask implements Runnable
 	{
-		@Getter private long startTime;
+		private long _startTime;
 
 		public StartTask(long startTime)
 		{
-			this.startTime = startTime;
+			_startTime = startTime;
+		}
+
+		public long getStartTime()
+		{
+			return _startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

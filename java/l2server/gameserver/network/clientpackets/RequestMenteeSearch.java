@@ -23,14 +23,14 @@ import l2server.gameserver.network.serverpackets.ExMenteeSearch;
  */
 public class RequestMenteeSearch extends L2GameClientPacket
 {
-	int page, minLevel, maxLevel;
+	int _page, _minLevel, _maxLevel;
 
 	@Override
 	protected void readImpl()
 	{
-		page = readD();
-		minLevel = readD();
-		maxLevel = readD();
+		_page = readD();
+		_minLevel = readD();
+		_maxLevel = readD();
 	}
 
 	@Override
@@ -42,6 +42,6 @@ public class RequestMenteeSearch extends L2GameClientPacket
 		{
 			return;
 		}
-		activeChar.sendPacket(new ExMenteeSearch(page, minLevel, maxLevel));
+		activeChar.sendPacket(new ExMenteeSearch(_page, _minLevel, _maxLevel));
 	}
 }

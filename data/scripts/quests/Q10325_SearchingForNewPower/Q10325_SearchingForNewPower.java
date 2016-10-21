@@ -31,25 +31,25 @@ public class Q10325_SearchingForNewPower extends Quest
 	public static String qn = "Q10325_SearchingForNewPower";
 
 	// NPC
-	private int gallint = 32980;
-	private int talbot = 32156;
-	private int cindet = 32148;
-	private int black = 32161;
-	private int herz = 32151;
-	private int kincaid = 32159;
+	private int _gallint = 32980;
+	private int _talbot = 32156;
+	private int _cindet = 32148;
+	private int _black = 32161;
+	private int _herz = 32151;
+	private int _kincaid = 32159;
 
 	// TODO Kamael
 
 	public Q10325_SearchingForNewPower(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(gallint);
-		addTalkId(gallint);
-		addTalkId(talbot);
-		addTalkId(cindet);
-		addTalkId(black);
-		addTalkId(herz);
-		addTalkId(kincaid);
+		addStartNpc(_gallint);
+		addTalkId(_gallint);
+		addTalkId(_talbot);
+		addTalkId(_cindet);
+		addTalkId(_black);
+		addTalkId(_herz);
+		addTalkId(_kincaid);
 		// TODO Kamael
 	}
 
@@ -64,7 +64,7 @@ public class Q10325_SearchingForNewPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-03.htm"))
+		if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -87,7 +87,7 @@ public class Q10325_SearchingForNewPower extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == gallint)
+		if (npc.getNpcId() == _gallint)
 		{
 			switch (st.getState())
 			{
@@ -121,31 +121,31 @@ public class Q10325_SearchingForNewPower extends Quest
 				player.setGlobalQuestFlag(GlobalQuest.STARTING, 6);
 			}
 		}
-		else if (npc.getNpcId() == talbot && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == _talbot && st.getInt("cond") == 2)
 		{
 			htmltext = "32156-01.htm";
 			st.set("cond", "8");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == cindet && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == _cindet && st.getInt("cond") == 3)
 		{
 			htmltext = "32148-01.htm";
 			st.set("cond", "9");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == black && st.getInt("cond") == 4)
+		else if (npc.getNpcId() == _black && st.getInt("cond") == 4)
 		{
 			htmltext = "32161-01.htm";
 			st.set("cond", "10");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == herz && st.getInt("cond") == 5)
+		else if (npc.getNpcId() == _herz && st.getInt("cond") == 5)
 		{
 			htmltext = "32151-01.htm";
 			st.set("cond", "11");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == kincaid && st.getInt("cond") == 6)
+		else if (npc.getNpcId() == _kincaid && st.getInt("cond") == 6)
 		{
 			htmltext = "32159-01.htm";
 			st.set("cond", "12");

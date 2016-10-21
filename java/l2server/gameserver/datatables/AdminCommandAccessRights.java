@@ -30,7 +30,11 @@ import java.util.Map;
  */
 public class AdminCommandAccessRights
 {
-	private Map<String, L2AdminCommandAccessRight> adminCommandAccessRights;
+	/**
+	 * The logger<br>
+	 */
+
+	private Map<String, L2AdminCommandAccessRight> _adminCommandAccessRights;
 
 	/**
 	 * Returns the one and only instance of this class<br><br>
@@ -39,7 +43,7 @@ public class AdminCommandAccessRights
 	 */
 	public static AdminCommandAccessRights getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	/**
@@ -55,7 +59,7 @@ public class AdminCommandAccessRights
 	 */
 	private void loadAdminCommandAccessRights()
 	{
-		adminCommandAccessRights = new HashMap<>();
+		_adminCommandAccessRights = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
 		XmlDocument doc = new XmlDocument(file);
@@ -65,21 +69,21 @@ public class AdminCommandAccessRights
 					String adminCommand = d.getString("name");
 					String accessLevels = d.getString("accessLevels");
 					boolean confirm = d.getBool("configmDlg", false);
-					adminCommandAccessRights
+					_adminCommandAccessRights
 							.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
 				}));
 
-		Log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
+		Log.info("AdminCommandAccessRights: Loaded " + _adminCommandAccessRights.size() + " from xml.");
 	}
 
 	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel)
 	{
-		if (accessLevel.getLevel() == AccessLevels.masterAccessLevelNum)
+		if (accessLevel.getLevel() == AccessLevels._masterAccessLevelNum)
 		{
 			return true;
 		}
 
-		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(adminCommand);
+		L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(adminCommand);
 
 		if (acar == null)
 		{
@@ -92,13 +96,13 @@ public class AdminCommandAccessRights
 
 	public boolean requireConfirm(String command)
 	{
-		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(command);
+		L2AdminCommandAccessRight acar = _adminCommandAccessRights.get(command);
 		if (acar == null)
 		{
 			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
 			return false;
 		}
-		return adminCommandAccessRights.get(command).isRequireConfirm();
+		return _adminCommandAccessRights.get(command).getRequireConfirm();
 	}
 
 	public void reloadAdminCommandAccessRights()
@@ -109,6 +113,6 @@ public class AdminCommandAccessRights
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AdminCommandAccessRights instance = new AdminCommandAccessRights();
+		protected static final AdminCommandAccessRights _instance = new AdminCommandAccessRights();
 	}
 }

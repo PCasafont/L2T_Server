@@ -38,16 +38,16 @@ public final class ItemAuctionManager
 {
 	public static ItemAuctionManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
-	private final TIntObjectHashMap<ItemAuctionInstance> managerInstances;
-	private final AtomicInteger auctionIds;
+	private final TIntObjectHashMap<ItemAuctionInstance> _managerInstances;
+	private final AtomicInteger _auctionIds;
 
 	private ItemAuctionManager()
 	{
-		managerInstances = new TIntObjectHashMap<>();
-		auctionIds = new AtomicInteger(1);
+		_managerInstances = new TIntObjectHashMap<>();
+		_auctionIds = new AtomicInteger(1);
 
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC)
 		{
@@ -64,7 +64,7 @@ public final class ItemAuctionManager
 			ResultSet rset = statement.executeQuery();
 			if (rset.next())
 			{
-				auctionIds.set(rset.getInt(1) + 1);
+				_auctionIds.set(rset.getInt(1) + 1);
 			}
 		}
 		catch (final SQLException e)
@@ -96,18 +96,18 @@ public final class ItemAuctionManager
 						{
 							final int instanceId = nb.getInt("id");
 
-							if (managerInstances.containsKey(instanceId))
+							if (_managerInstances.containsKey(instanceId))
 							{
 								throw new Exception("Dublicated instanceId " + instanceId);
 							}
 
-							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, auctionIds, nb);
-							managerInstances.put(instanceId, instance);
+							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
+							_managerInstances.put(instanceId, instance);
 						}
 					}
 				}
 			}
-			Log.info("ItemAuctionManager: Loaded " + managerInstances.size() + " instance(s).");
+			Log.info("ItemAuctionManager: Loaded " + _managerInstances.size() + " instance(s).");
 		}
 		catch (Exception e)
 		{
@@ -118,7 +118,7 @@ public final class ItemAuctionManager
 	public final void shutdown()
 	{
 		final ItemAuctionInstance[] instances =
-				managerInstances.getValues(new ItemAuctionInstance[managerInstances.size()]);
+				_managerInstances.getValues(new ItemAuctionInstance[_managerInstances.size()]);
 		for (final ItemAuctionInstance instance : instances)
 		{
 			instance.shutdown();
@@ -127,12 +127,12 @@ public final class ItemAuctionManager
 
 	public final ItemAuctionInstance getManagerInstance(final int instanceId)
 	{
-		return managerInstances.get(instanceId);
+		return _managerInstances.get(instanceId);
 	}
 
 	public final int getNextAuctionId()
 	{
-		return auctionIds.getAndIncrement();
+		return _auctionIds.getAndIncrement();
 	}
 
 	public static void deleteAuction(final int auctionId)
@@ -164,6 +164,6 @@ public final class ItemAuctionManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ItemAuctionManager instance = new ItemAuctionManager();
+		protected static final ItemAuctionManager _instance = new ItemAuctionManager();
 	}
 }

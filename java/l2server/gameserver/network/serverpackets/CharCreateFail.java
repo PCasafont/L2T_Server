@@ -17,6 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 public class CharCreateFail extends L2GameServerPacket
 {
+
 	public static final int REASON_CREATION_FAILED = 0x00; // "Your character creation has failed."
 	public static final int REASON_TOO_MANY_CHARACTERS = 0x01;
 	// "You cannot create another character. Please delete the existing character and try again." Removes all settings that were selected (race, class, etc).
@@ -28,16 +29,16 @@ public class CharCreateFail extends L2GameServerPacket
 	public static final int REASON_CHOOSE_ANOTHER_SVR = 0x06;
 	// "Unable to create character. You are unable to create a new character on the selected server. A restriction is in place which restricts users from creating characters on different servers where no previous character exists. Please choose another server."
 
-	private int error;
+	private int _error;
 
 	public CharCreateFail(int errorCode)
 	{
-		error = errorCode;
+		_error = errorCode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(error);
+		writeD(_error);
 	}
 }

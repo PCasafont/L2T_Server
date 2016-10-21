@@ -22,11 +22,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExLoadStatUser extends L2GameServerPacket
 {
-	L2PcInstance player;
+
+	L2PcInstance _player;
 
 	public ExLoadStatUser(L2PcInstance player)
 	{
-		this.player = player;
+		_player = player;
 	}
 
 	/* (non-Javadoc)
@@ -35,7 +36,7 @@ public class ExLoadStatUser extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (player == null)
+		if (_player == null)
 		{
 		}
 
@@ -44,7 +45,7 @@ public class ExLoadStatUser extends L2GameServerPacket
 		for (MuseumStatistic statistic : MuseumStatistic.values())
 		{
 			boolean isClanStatistic = statistic.toString().toLowerCase().contains("clan");
-			int identity = (isClanStatistic && player.getClan() != null) ? player.getClanId() : player.getObjectId();
+			int identity = (isClanStatistic && _player.getClan() != null) ? _player.getClanId() : _player.getObjectId();
 			long score1 = MuseumManager.getInstance().getStatistic(identity, statistic, true);
 			long score2 = MuseumManager.getInstance().getStatistic(identity, statistic, false);
 

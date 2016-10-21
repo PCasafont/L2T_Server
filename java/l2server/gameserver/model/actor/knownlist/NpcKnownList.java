@@ -30,7 +30,7 @@ public class NpcKnownList extends CharKnownList
 {
 	// =========================================================
 	// Data Field
-	private ScheduledFuture<?> trackingTask = null;
+	private ScheduledFuture<?> _trackingTask = null;
 
 	// =========================================================
 	// Constructor
@@ -103,19 +103,19 @@ public class NpcKnownList extends CharKnownList
 	//L2Master mod - support for Walking monsters aggro
 	public void startTrackingTask()
 	{
-		if (trackingTask == null && getActiveChar().getAggroRange() > 0)
+		if (_trackingTask == null && getActiveChar().getAggroRange() > 0)
 		{
-			trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
+			_trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
 		}
 	}
 
 	//L2Master mod - support for Walking monsters aggro
 	public void stopTrackingTask()
 	{
-		if (trackingTask != null)
+		if (_trackingTask != null)
 		{
-			trackingTask.cancel(true);
-			trackingTask = null;
+			_trackingTask.cancel(true);
+			_trackingTask = null;
 		}
 	}
 

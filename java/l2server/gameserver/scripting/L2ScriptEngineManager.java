@@ -18,7 +18,6 @@ package l2server.gameserver.scripting;
 import com.l2jserver.script.jython.JythonScriptEngine;
 import l2server.Config;
 import l2server.log.Log;
-import lombok.Getter;
 
 import javax.script.*;
 import java.io.*;
@@ -40,16 +39,16 @@ public final class L2ScriptEngineManager
 
 	public static L2ScriptEngineManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
-	private final Map<String, ScriptEngine> nameEngines = new HashMap<>();
-	private final Map<String, ScriptEngine> extEngines = new HashMap<>();
-	@Getter private final List<ScriptManager<?>> scriptManagers = new LinkedList<>();
+	private final Map<String, ScriptEngine> _nameEngines = new HashMap<>();
+	private final Map<String, ScriptEngine> _extEngines = new HashMap<>();
+	private final List<ScriptManager<?>> _scriptManagers = new LinkedList<>();
 
-	private final CompiledScriptCache cache;
+	private final CompiledScriptCache _cache;
 
-	private File currentLoadingScript;
+	private File _currentLoadingScript;
 
 	// Configs
 	// TODO move to config file
@@ -83,11 +82,11 @@ public final class L2ScriptEngineManager
 		List<ScriptEngineFactory> factories = scriptEngineManager.getEngineFactories();
 		if (USE_COMPILED_CACHE)
 		{
-			cache = loadCompiledScriptCache();
+			_cache = loadCompiledScriptCache();
 		}
 		else
 		{
-			cache = null;
+			_cache = null;
 		}
 		Log.info("Initializing Script Engine Manager");
 
@@ -99,7 +98,7 @@ public final class L2ScriptEngineManager
 				boolean reg = false;
 				for (String name : factory.getNames())
 				{
-					ScriptEngine existentEngine = nameEngines.get(name);
+					ScriptEngine existentEngine = _nameEngines.get(name);
 
 					if (existentEngine != null)
 					{
@@ -113,7 +112,7 @@ public final class L2ScriptEngineManager
 					}
 
 					reg = true;
-					nameEngines.put(name, engine);
+					_nameEngines.put(name, engine);
 				}
 
 				if (reg)
@@ -127,7 +126,7 @@ public final class L2ScriptEngineManager
 				{
 					if (!ext.equals("java") || factory.getLanguageName().equals("java"))
 					{
-						extEngines.put(ext, engine);
+						_extEngines.put(ext, engine);
 					}
 				}
 			}
@@ -149,7 +148,7 @@ public final class L2ScriptEngineManager
 		String configScript = "import sys;sys.path.insert(0,'" + dataPackDirForwardSlashes + "');";
 		try
 		{
-			eval("jython", configScript);
+			this.eval("jython", configScript);
 		}
 		catch (ScriptException e)
 		{
@@ -159,12 +158,12 @@ public final class L2ScriptEngineManager
 
 	private ScriptEngine getEngineByName(String name)
 	{
-		return nameEngines.get(name);
+		return _nameEngines.get(name);
 	}
 
 	private ScriptEngine getEngineByExtension(String ext)
 	{
-		return extEngines.get(ext);
+		return _extEngines.get(ext);
 	}
 
 	public void executeScriptList(File list) throws IOException
@@ -257,12 +256,12 @@ public final class L2ScriptEngineManager
 
 	public void executeAllScriptsInDirectory(File dir)
 	{
-		executeAllScriptsInDirectory(dir, false, 0);
+		this.executeAllScriptsInDirectory(dir, false, 0);
 	}
 
 	public void executeAllScriptsInDirectory(File dir, boolean recurseDown, int maxDepth)
 	{
-		executeAllScriptsInDirectory(dir, recurseDown, maxDepth, 0);
+		this.executeAllScriptsInDirectory(dir, recurseDown, maxDepth, 0);
 	}
 
 	private void executeAllScriptsInDirectory(File dir, boolean recurseDown, int maxDepth, int currentDepth)
@@ -304,7 +303,7 @@ public final class L2ScriptEngineManager
 					catch (ScriptException e)
 					{
 						reportScriptFileError(file, e);
-						//Log.log(Level.WARNING, "", e);
+						//Logozo.log(Level.WARNING, "", e);
 					}
 				}
 			}
@@ -317,7 +316,7 @@ public final class L2ScriptEngineManager
 
 	public CompiledScriptCache getCompiledScriptCache()
 	{
-		return cache;
+		return _cache;
 	}
 
 	public CompiledScriptCache loadCompiledScriptCache()
@@ -444,7 +443,7 @@ public final class L2ScriptEngineManager
 				engine.setContext(context);
 				if (USE_COMPILED_CACHE)
 				{
-					CompiledScript cs = cache.loadCompiledScript(engine, file);
+					CompiledScript cs = _cache.loadCompiledScript(engine, file);
 					cs.eval(context);
 				}
 				else
@@ -510,7 +509,7 @@ public final class L2ScriptEngineManager
 		}
 		else
 		{
-			return getScriptContext(engine);
+			return this.getScriptContext(engine);
 		}
 	}
 
@@ -530,7 +529,7 @@ public final class L2ScriptEngineManager
 
 	public Object eval(String engineName, String script) throws ScriptException
 	{
-		return eval(engineName, script, null);
+		return this.eval(engineName, script, null);
 	}
 
 	public Object eval(String engineName, String script, ScriptContext context) throws ScriptException
@@ -542,13 +541,13 @@ public final class L2ScriptEngineManager
 		}
 		else
 		{
-			return eval(engine, script, context);
+			return this.eval(engine, script, context);
 		}
 	}
 
 	public Object eval(ScriptEngine engine, String script) throws ScriptException
 	{
-		return eval(engine, script, null);
+		return this.eval(engine, script, null);
 	}
 
 	public void reportScriptFileError(File script, ScriptException e)
@@ -572,12 +571,17 @@ public final class L2ScriptEngineManager
 
 	public void registerScriptManager(ScriptManager<?> manager)
 	{
-		scriptManagers.add(manager);
+		_scriptManagers.add(manager);
 	}
 
 	public void removeScriptManager(ScriptManager<?> manager)
 	{
-		scriptManagers.remove(manager);
+		_scriptManagers.remove(manager);
+	}
+
+	public List<ScriptManager<?>> getScriptManagers()
+	{
+		return _scriptManagers;
 	}
 
 	/**
@@ -585,7 +589,7 @@ public final class L2ScriptEngineManager
 	 */
 	protected void setCurrentLoadingScript(File currentLoadingScript)
 	{
-		this.currentLoadingScript = currentLoadingScript;
+		_currentLoadingScript = currentLoadingScript;
 	}
 
 	/**
@@ -593,12 +597,12 @@ public final class L2ScriptEngineManager
 	 */
 	protected File getCurrentLoadingScript()
 	{
-		return currentLoadingScript;
+		return _currentLoadingScript;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final L2ScriptEngineManager instance = new L2ScriptEngineManager();
+		protected static final L2ScriptEngineManager _instance = new L2ScriptEngineManager();
 	}
 }

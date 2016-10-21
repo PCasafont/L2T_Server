@@ -38,11 +38,11 @@ import java.util.List;
  */
 public class NpcWalkersTable
 {
-	private TIntObjectHashMap<List<L2NpcWalkerNode>> routes = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<List<L2NpcWalkerNode>> _routes = new TIntObjectHashMap<>();
 
 	public static NpcWalkersTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private NpcWalkersTable()
@@ -56,7 +56,7 @@ public class NpcWalkersTable
 
 	public void load()
 	{
-		routes.clear();
+		_routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
 		if (file.exists())
 		{
@@ -111,22 +111,22 @@ public class NpcWalkersTable
 			}
 		}
 
-		for (Object list : routes.getValues())
+		for (Object list : _routes.getValues())
 		{
 			((ArrayList<?>) list).trimToSize();
 		}
 
-		Log.info("WalkerRoutesTable: Loaded " + routes.size() + " Npc Walker Routes.");
+		Log.info("WalkerRoutesTable: Loaded " + _routes.size() + " Npc Walker Routes.");
 	}
 
 	public List<L2NpcWalkerNode> getRouteForNpc(int id)
 	{
-		return routes.get(id);
+		return _routes.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final NpcWalkersTable instance = new NpcWalkersTable();
+		protected static final NpcWalkersTable _instance = new NpcWalkersTable();
 	}
 }

@@ -45,6 +45,7 @@ public class EffectMDamOverTime extends L2Effect
 	public boolean onStart()
 	{
 		return !getEffected().isDead();
+
 	}
 
 	/**

@@ -29,7 +29,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestWithdrawalPledge extends L2GameClientPacket
 {
-	//static Logger log = Logger.getLogger(RequestWithdrawalPledge.class.getName());
+	//static Logger _log = Logger.getLogger(RequestWithdrawalPledge.class.getName());
 
 	@Override
 	protected void readImpl()

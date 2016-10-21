@@ -53,23 +53,23 @@ import l2server.log.Log;
  */
 public final class EquipUpdate extends L2GameServerPacket
 {
-	private L2ItemInstance item;
-	private int change;
+	private L2ItemInstance _item;
+	private int _change;
 
 	public EquipUpdate(L2ItemInstance item, int change)
 	{
-		this.item = item;
-		this.change = change;
+		_item = item;
+		_change = change;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		int bodypart = 0;
-		writeD(item.getObjectId());
+		writeD(_item.getObjectId());
 		writeD(0x00); // ???
-		writeH(change);
-		switch (item.getItem().getBodyPart())
+		writeH(_change);
+		switch (_item.getItem().getBodyPart())
 		{
 			case L2Item.SLOT_L_EAR:
 				bodypart = 0x01;

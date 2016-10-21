@@ -26,23 +26,23 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class Ingredient implements Cloneable
 {
-	private int itemId;
-	private long itemCount;
-	private float chance = 0;
-	private boolean isTaxIngredient, maintainIngredient;
+	private int _itemId;
+	private long _itemCount;
+	private float _chance = 0;
+	private boolean _isTaxIngredient, _maintainIngredient;
 
-	private L2Item template = null;
-	private ItemInfo itemInfo = null;
+	private L2Item _template = null;
+	private ItemInfo _itemInfo = null;
 
 	public Ingredient(int itemId, long itemCount, boolean isTaxIngredient, boolean maintainIngredient)
 	{
-		this.itemId = itemId;
-		this.itemCount = itemCount;
-		this.isTaxIngredient = isTaxIngredient;
-		this.maintainIngredient = maintainIngredient;
-		if (this.itemId > 0)
+		_itemId = itemId;
+		_itemCount = itemCount;
+		_isTaxIngredient = isTaxIngredient;
+		_maintainIngredient = maintainIngredient;
+		if (_itemId > 0)
 		{
-			template = ItemTable.getInstance().getTemplate(this.itemId);
+			_template = ItemTable.getInstance().getTemplate(_itemId);
 		}
 	}
 
@@ -61,91 +61,91 @@ public class Ingredient implements Cloneable
 
 	public final L2Item getTemplate()
 	{
-		return template;
+		return _template;
 	}
 
 	public final void setItemInfo(L2ItemInstance item)
 	{
-		itemInfo = new ItemInfo(item);
+		_itemInfo = new ItemInfo(item);
 	}
 
 	public final void setItemInfo(ItemInfo info)
 	{
-		itemInfo = info;
+		_itemInfo = info;
 	}
 
 	public final ItemInfo getItemInfo()
 	{
-		return itemInfo;
+		return _itemInfo;
 	}
 
 	public final int getEnchantLevel()
 	{
-		return itemInfo != null ? itemInfo.getEnchantLevel() : 0;
+		return _itemInfo != null ? _itemInfo.getEnchantLevel() : 0;
 	}
 
 	public final void setItemId(int itemId)
 	{
-		this.itemId = itemId;
+		_itemId = itemId;
 	}
 
 	public final int getItemId()
 	{
-		return itemId;
+		return _itemId;
 	}
 
 	public final void setItemCount(long itemCount)
 	{
-		this.itemCount = itemCount;
+		_itemCount = itemCount;
 	}
 
 	public final long getItemCount()
 	{
-		return itemCount;
+		return _itemCount;
 	}
 
 	public final void setChance(float chance)
 	{
-		this.chance = chance;
+		_chance = chance;
 	}
 
 	public final float getChance()
 	{
-		return chance;
+		return _chance;
 	}
 
 	public final void setIsTaxIngredient(boolean isTaxIngredient)
 	{
-		this.isTaxIngredient = isTaxIngredient;
+		_isTaxIngredient = isTaxIngredient;
 	}
 
 	public final boolean isTaxIngredient()
 	{
-		return isTaxIngredient;
+		return _isTaxIngredient;
 	}
 
 	public final void setMaintainIngredient(boolean maintainIngredient)
 	{
-		this.maintainIngredient = maintainIngredient;
+		_maintainIngredient = maintainIngredient;
 	}
 
 	public final boolean getMaintainIngredient()
 	{
-		return maintainIngredient;
+		return _maintainIngredient;
 	}
 
 	public final boolean isStackable()
 	{
-		return template == null || template.isStackable();
+		return _template == null || _template.isStackable();
 	}
 
 	public final boolean isArmorOrWeapon()
 	{
-		return template != null && (template instanceof L2Armor || template instanceof L2Weapon);
+		return _template != null && (_template instanceof L2Armor || _template instanceof L2Weapon);
 	}
 
 	public final int getWeight()
 	{
-		return template == null ? 0 : template.getWeight();
+		return _template == null ? 0 : _template.getWeight();
 	}
 }

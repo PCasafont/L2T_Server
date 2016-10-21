@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.L2Npc;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +26,10 @@ public class L2SiegeClan
 	// Instance
 	// ===============================================================
 	// Data Field
-	private int clanId = 0;
-	private List<L2Npc> flag = new ArrayList<>();
-	private int numFlagsAdded = 0;
-	@Getter private SiegeClanType type;
+	private int _clanId = 0;
+	private List<L2Npc> _flag = new ArrayList<>();
+	private int _numFlagsAdded = 0;
+	private SiegeClanType _type;
 
 	public enum SiegeClanType
 	{
@@ -42,20 +41,20 @@ public class L2SiegeClan
 
 	public L2SiegeClan(int clanId, SiegeClanType type)
 	{
-		this.clanId = clanId;
-		this.type = type;
+		_clanId = clanId;
+		_type = type;
 	}
 
 	// =========================================================
 	// Method - Public
 	public int getNumFlags()
 	{
-		return numFlagsAdded;
+		return _numFlagsAdded;
 	}
 
 	public void addFlag(L2Npc flag)
 	{
-		numFlagsAdded++;
+		_numFlagsAdded++;
 		getFlag().add(flag);
 	}
 
@@ -77,7 +76,7 @@ public class L2SiegeClan
 		}
 
 		flag.deleteMe();
-		numFlagsAdded--;
+		_numFlagsAdded--;
 		return ret;
 	}
 
@@ -93,20 +92,25 @@ public class L2SiegeClan
 	// Property
 	public final int getClanId()
 	{
-		return clanId;
+		return _clanId;
 	}
 
 	public final List<L2Npc> getFlag()
 	{
-		if (flag == null)
+		if (_flag == null)
 		{
-			flag = new ArrayList<>();
+			_flag = new ArrayList<>();
 		}
-		return flag;
+		return _flag;
+	}
+
+	public SiegeClanType getType()
+	{
+		return _type;
 	}
 
 	public void setType(SiegeClanType setType)
 	{
-		type = setType;
+		_type = setType;
 	}
 }

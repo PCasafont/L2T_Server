@@ -30,16 +30,17 @@ import java.util.List;
 
 public class EventDroplist
 {
+
 	//
 
 	/**
 	 * The table containing all DataDrop object
 	 */
-	private List<DateDrop> allNpcDateDrops;
+	private List<DateDrop> _allNpcDateDrops;
 
 	public static EventDroplist getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public static class DateDrop
@@ -75,7 +76,7 @@ public class EventDroplist
 	 */
 	private EventDroplist()
 	{
-		allNpcDateDrops = new ArrayList<>();
+		_allNpcDateDrops = new ArrayList<>();
 	}
 
 	/**
@@ -88,6 +89,7 @@ public class EventDroplist
 	 */
 	public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range)
 	{
+
 		DateDrop date = new DateDrop();
 
 		date.dateRange = range;
@@ -96,7 +98,7 @@ public class EventDroplist
 		date.max = count[1];
 		date.chance = chance;
 
-		allNpcDateDrops.add(date);
+		_allNpcDateDrops.add(date);
 	}
 
 	/**
@@ -106,10 +108,10 @@ public class EventDroplist
 	{
 		List<DateDrop> list = new ArrayList<>();
 
-		for (DateDrop drop : allNpcDateDrops)
+		for (DateDrop drop : _allNpcDateDrops)
 		{
 			Date currentDate = new Date();
-			//Log.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
+			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
 			if (drop.dateRange.isWithinRange(currentDate))
 			{
 				list.add(drop);
@@ -122,6 +124,6 @@ public class EventDroplist
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EventDroplist instance = new EventDroplist();
+		protected static final EventDroplist _instance = new EventDroplist();
 	}
 }

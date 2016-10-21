@@ -20,49 +20,49 @@ package l2server.gameserver.model;
  */
 public class ItemRequest
 {
-	int objectId;
-	int itemId;
-	long count;
-	long price;
+	int _objectId;
+	int _itemId;
+	long _count;
+	long _price;
 
 	public ItemRequest(int objectId, long count, long price)
 	{
-		this.objectId = objectId;
-		this.count = count;
-		this.price = price;
+		_objectId = objectId;
+		_count = count;
+		_price = price;
 	}
 
 	public ItemRequest(int objectId, int itemId, long count, long price)
 	{
-		this.objectId = objectId;
-		this.itemId = itemId;
-		this.count = count;
-		this.price = price;
+		_objectId = objectId;
+		_itemId = itemId;
+		_count = count;
+		_price = price;
 	}
 
 	public int getObjectId()
 	{
-		return objectId;
+		return _objectId;
 	}
 
 	public int getItemId()
 	{
-		return itemId;
+		return _itemId;
 	}
 
 	public void setCount(long count)
 	{
-		this.count = count;
+		_count = count;
 	}
 
 	public long getCount()
 	{
-		return count;
+		return _count;
 	}
 
 	public long getPrice()
 	{
-		return price;
+		return _price;
 	}
 
 	/* (non-Javadoc)
@@ -71,7 +71,7 @@ public class ItemRequest
 	@Override
 	public int hashCode()
 	{
-		return objectId;
+		return _objectId;
 	}
 
 	/* (non-Javadoc)
@@ -93,6 +93,6 @@ public class ItemRequest
 			return false;
 		}
 		ItemRequest other = (ItemRequest) obj;
-		return objectId == other.objectId;
+		return _objectId == other._objectId;
 	}
 }

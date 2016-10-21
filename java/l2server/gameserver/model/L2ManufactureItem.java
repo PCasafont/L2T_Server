@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.RecipeController;
-import lombok.Getter;
 
 /**
  * This class ...
@@ -25,20 +24,30 @@ import lombok.Getter;
  */
 public class L2ManufactureItem
 {
-	@Getter private int recipeId;
-	@Getter private long cost;
-	private boolean isDwarven;
+	private int _recipeId;
+	private long _cost;
+	private boolean _isDwarven;
 
 	public L2ManufactureItem(int recipeId, long cost)
 	{
-		this.recipeId = recipeId;
-		this.cost = cost;
+		_recipeId = recipeId;
+		_cost = cost;
 
-		isDwarven = RecipeController.getInstance().getRecipeList(this.recipeId).isDwarvenRecipe();
+		_isDwarven = RecipeController.getInstance().getRecipeList(_recipeId).isDwarvenRecipe();
+	}
+
+	public int getRecipeId()
+	{
+		return _recipeId;
+	}
+
+	public long getCost()
+	{
+		return _cost;
 	}
 
 	public boolean isDwarven()
 	{
-		return isDwarven;
+		return _isDwarven;
 	}
 }

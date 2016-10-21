@@ -22,14 +22,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCommissionBuyItem extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private long auctionID;
-	@SuppressWarnings("unused") private int category;
+
+	@SuppressWarnings("unused")
+	private long _auctionID;
+	@SuppressWarnings("unused")
+	private int _category;
 
 	@Override
 	protected void readImpl()
 	{
-		auctionID = readQ();
-		category = readD();
+		_auctionID = readQ();
+		_category = readD();
 	}
 
 	@Override
@@ -42,9 +45,9 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 
 		/*AuctionManager am = AuctionManager.getInstance();
 		Auctions auction;
-		if (am.getAuctionById(auctionID) != null)
+		if (am.getAuctionById(_auctionID) != null)
 		{
-			auction = am.getAuctionById(auctionID);
+			auction = am.getAuctionById(_auctionID);
 			long timeToFinish = auction.getFinishTime() - System.currentTimeMillis() / 1000;
 
 			long fee = auction.getPrice();
@@ -69,7 +72,7 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 			if (player.getInventory().getItemByItemId(57) == null || player.getInventory().getItemByItemId(57).getCount() < price)
 			{
 				player.sendPacket(SystemMessageId.YOU_NOT_ENOUGH_ADENA);
-				player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
+				player.sendPacket(new ExResponseCommissionList(player, _category, -1, -1, ""));
 				player.sendPacket(new ExResponseCommissionItemList(player));
 				return;
 			}
@@ -90,14 +93,14 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket
 				seller.sendPacket(sm);
 			}
 
-			am.deleteAuction(auctionID);
-			player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
+			am.deleteAuction(_auctionID);
+			player.sendPacket(new ExResponseCommissionList(player, _category, -1, -1, ""));
 			player.sendPacket(new ExResponseCommissionItemList(player));
 		}
 		else
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST);
-			player.sendPacket(new ExResponseCommissionList(player, category, -1, -1, ""));
+			player.sendPacket(new ExResponseCommissionList(player, _category, -1, -1, ""));
 			player.sendPacket(new ExResponseCommissionItemList(player));
 		}*/
 	}

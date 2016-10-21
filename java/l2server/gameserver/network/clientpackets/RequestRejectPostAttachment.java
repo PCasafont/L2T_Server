@@ -32,12 +32,13 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
  */
 public final class RequestRejectPostAttachment extends L2GameClientPacket
 {
-	private int msgId;
+
+	private int _msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		msgId = readD();
+		_msgId = readD();
 	}
 
 	@Override
@@ -65,7 +66,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(msgId);
+		Message msg = MailManager.getInstance().getMessage(_msgId);
 		if (msg == null)
 		{
 			return;
@@ -86,7 +87,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		MailManager.getInstance().sendMessage(new Message(msg));
 
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
-		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.REJECTED));
+		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
 
 		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
 		if (sender != null)

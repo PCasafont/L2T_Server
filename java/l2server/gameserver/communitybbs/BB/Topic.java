@@ -18,7 +18,6 @@ package l2server.gameserver.communitybbs.BB;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.TopicBBSManager;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,34 +25,36 @@ import java.util.logging.Level;
 
 public class Topic
 {
+
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;
 
-	private int id;
-	private int forumId;
-	private String topicName;
-	@Getter private long date;
-	@Getter private String ownerName;
-	private int ownerId;
-	private int type;
-	private int cReply;
+	private int _id;
+	private int _forumId;
+	private String _topicName;
+	private long _date;
+	private String _ownerName;
+	private int _ownerId;
+	private int _type;
+	private int _cReply;
 
 	/**
 	 */
 	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply)
 	{
-		this.id = id;
-		forumId = fid;
-		topicName = name;
-		this.date = date;
-		ownerName = oname;
-		ownerId = oid;
-		this.type = type;
-		cReply = Creply;
+		_id = id;
+		_forumId = fid;
+		_topicName = name;
+		_date = date;
+		_ownerName = oname;
+		_ownerId = oid;
+		_type = type;
+		_cReply = Creply;
 		TopicBBSManager.getInstance().addTopic(this);
 
 		if (ct == ConstructorType.CREATE)
 		{
+
 			insertindb();
 		}
 	}
@@ -69,14 +70,14 @@ public class Topic
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
-			statement.setInt(1, id);
-			statement.setInt(2, forumId);
-			statement.setString(3, topicName);
-			statement.setLong(4, date);
-			statement.setString(5, ownerName);
-			statement.setInt(6, ownerId);
-			statement.setInt(7, type);
-			statement.setInt(8, cReply);
+			statement.setInt(1, _id);
+			statement.setInt(2, _forumId);
+			statement.setString(3, _topicName);
+			statement.setLong(4, _date);
+			statement.setString(5, _ownerName);
+			statement.setInt(6, _ownerId);
+			statement.setInt(7, _type);
+			statement.setInt(8, _cReply);
 			statement.execute();
 			statement.close();
 		}
@@ -100,12 +101,12 @@ public class Topic
 	 */
 	public int getID()
 	{
-		return id;
+		return _id;
 	}
 
 	public int getForumID()
 	{
-		return forumId;
+		return _forumId;
 	}
 
 	/**
@@ -113,7 +114,12 @@ public class Topic
 	 */
 	public String getName()
 	{
-		return topicName;
+		return _topicName;
+	}
+
+	public String getOwnerName()
+	{
+		return _ownerName;
 	}
 
 	/**
@@ -142,5 +148,13 @@ public class Topic
 		{
 			L2DatabaseFactory.close(con);
 		}
+	}
+
+	/**
+	 * @return
+	 */
+	public long getDate()
+	{
+		return _date;
 	}
 }

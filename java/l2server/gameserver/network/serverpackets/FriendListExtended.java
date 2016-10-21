@@ -46,7 +46,7 @@ import java.util.List;
 public class FriendListExtended extends L2GameServerPacket
 {
 	//
-	private final List<FriendInfo> info;
+	private final List<FriendInfo> _info;
 
 	private static class FriendInfo
 	{
@@ -68,7 +68,7 @@ public class FriendListExtended extends L2GameServerPacket
 
 	public FriendListExtended(L2PcInstance player)
 	{
-		info = new ArrayList<>(player.getFriendList().size());
+		_info = new ArrayList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList())
 		{
 			String name = CharNameTable.getInstance().getNameById(objId);
@@ -90,7 +90,7 @@ public class FriendListExtended extends L2GameServerPacket
 					ResultSet rset = statement.executeQuery();
 					if (rset.next())
 					{
-						info.add(new FriendInfo(objId, rset.getString(1), rset.getInt(2) == 1, rset.getInt(3),
+						_info.add(new FriendInfo(objId, rset.getString(1), rset.getInt(2) == 1, rset.getInt(3),
 								rset.getInt(4)));
 					}
 					else
@@ -118,15 +118,15 @@ public class FriendListExtended extends L2GameServerPacket
 			classid = player1.getCurrentClass().getId(); //getClassId().getId();
 			level = player1.getLevel();
 
-			info.add(new FriendInfo(objId, name, online, classid, level));
+			_info.add(new FriendInfo(objId, name, online, classid, level));
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(info.size());
-		for (FriendInfo info : this.info)
+		writeD(_info.size());
+		for (FriendInfo info : _info)
 		{
 			writeD(info.objId); // character id
 			writeS(info.name);

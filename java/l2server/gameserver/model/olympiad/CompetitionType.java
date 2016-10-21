@@ -22,16 +22,16 @@ public enum CompetitionType
 {
 	CLASSED("classed"), NON_CLASSED("non-classed"), OTHER("other");
 
-	private final String name;
+	private final String _name;
 
 	CompetitionType(String name)
 	{
-		this.name = name;
+		_name = name;
 	}
 
 	@Override
 	public final String toString()
 	{
-		return name;
+		return _name;
 	}
 }

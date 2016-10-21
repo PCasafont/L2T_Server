@@ -27,7 +27,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Siege;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,21 +41,22 @@ import java.util.logging.Level;
 
 public class SiegeManager
 {
+
 	public static SiegeManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
 	// Data Field
-	private int attackerMaxClans = 500; // Max number of clans
-	private int attackerRespawnDelay = 0; // Time in ms. Changeable in siege.config
-	private int defenderMaxClans = 500; // Max number of clans
+	private int _attackerMaxClans = 500; // Max number of clans
+	private int _attackerRespawnDelay = 0; // Time in ms. Changeable in siege.config
+	private int _defenderMaxClans = 500; // Max number of clans
 
-	private int flagMaxCount = 1; // Changeable in siege.config
-	private int siegeClanMinLevel = 5; // Changeable in siege.config
-	private int siegeLength = 120; // Time in minute. Changeable in siege.config
-	private int bloodAllianceReward = 0; // Number of Blood Alliance items reward for successful castle defending
+	private int _flagMaxCount = 1; // Changeable in siege.config
+	private int _siegeClanMinLevel = 5; // Changeable in siege.config
+	private int _siegeLength = 120; // Time in minute. Changeable in siege.config
+	private int _bloodAllianceReward = 0; // Number of Blood Alliance items reward for successful castle defending
 
 	// =========================================================
 	// Constructor
@@ -185,13 +185,13 @@ public class SiegeManager
 			siegeSettings.load(is);
 
 			// Siege setting
-			attackerMaxClans = Integer.decode(siegeSettings.getProperty("AttackerMaxClans", "500"));
-			attackerRespawnDelay = Integer.decode(siegeSettings.getProperty("AttackerRespawn", "0"));
-			defenderMaxClans = Integer.decode(siegeSettings.getProperty("DefenderMaxClans", "500"));
-			flagMaxCount = Integer.decode(siegeSettings.getProperty("MaxFlags", "1"));
-			siegeClanMinLevel = Integer.decode(siegeSettings.getProperty("SiegeClanMinLevel", "5"));
-			siegeLength = Integer.decode(siegeSettings.getProperty("SiegeLength", "120"));
-			bloodAllianceReward = Integer.decode(siegeSettings.getProperty("BloodAllianceReward", "0"));
+			_attackerMaxClans = Integer.decode(siegeSettings.getProperty("AttackerMaxClans", "500"));
+			_attackerRespawnDelay = Integer.decode(siegeSettings.getProperty("AttackerRespawn", "0"));
+			_defenderMaxClans = Integer.decode(siegeSettings.getProperty("DefenderMaxClans", "500"));
+			_flagMaxCount = Integer.decode(siegeSettings.getProperty("MaxFlags", "1"));
+			_siegeClanMinLevel = Integer.decode(siegeSettings.getProperty("SiegeClanMinLevel", "5"));
+			_siegeLength = Integer.decode(siegeSettings.getProperty("SiegeLength", "120"));
+			_bloodAllianceReward = Integer.decode(siegeSettings.getProperty("BloodAllianceReward", "0"));
 
 			for (Castle castle : CastleManager.getInstance().getCastles())
 			{
@@ -223,22 +223,22 @@ public class SiegeManager
 	// Property - Public
 	public final int getAttackerMaxClans()
 	{
-		return attackerMaxClans;
+		return _attackerMaxClans;
 	}
 
 	public final int getAttackerRespawnDelay()
 	{
-		return attackerRespawnDelay;
+		return _attackerRespawnDelay;
 	}
 
 	public final int getDefenderMaxClans()
 	{
-		return defenderMaxClans;
+		return _defenderMaxClans;
 	}
 
 	public final int getFlagMaxCount()
 	{
-		return flagMaxCount;
+		return _flagMaxCount;
 	}
 
 	public final Siege getSiege(L2Object activeObject)
@@ -260,17 +260,17 @@ public class SiegeManager
 
 	public final int getSiegeClanMinLevel()
 	{
-		return siegeClanMinLevel;
+		return _siegeClanMinLevel;
 	}
 
 	public final int getSiegeLength()
 	{
-		return siegeLength;
+		return _siegeLength;
 	}
 
 	public final int getBloodAllianceReward()
 	{
-		return bloodAllianceReward;
+		return _bloodAllianceReward;
 	}
 
 	public final List<Siege> getSieges()
@@ -285,38 +285,58 @@ public class SiegeManager
 
 	public static class SiegeSpawn
 	{
-		Location location;
-		@Getter private int npcId;
-		@Getter private int heading;
-		@Getter private int castleId;
-		@Getter private int hp;
+		Location _location;
+		private int _npcId;
+		private int _heading;
+		private int _castleId;
+		private int _hp;
 
 		public SiegeSpawn(int castle_id, int x, int y, int z, int heading, int npc_id)
 		{
-			castleId = castle_id;
-			location = new Location(x, y, z, heading);
-			this.heading = heading;
-			npcId = npc_id;
+			_castleId = castle_id;
+			_location = new Location(x, y, z, heading);
+			_heading = heading;
+			_npcId = npc_id;
 		}
 
 		public SiegeSpawn(int castle_id, int x, int y, int z, int heading, int npc_id, int hp)
 		{
-			castleId = castle_id;
-			location = new Location(x, y, z, heading);
-			this.heading = heading;
-			npcId = npc_id;
-			this.hp = hp;
+			_castleId = castle_id;
+			_location = new Location(x, y, z, heading);
+			_heading = heading;
+			_npcId = npc_id;
+			_hp = hp;
+		}
+
+		public int getCastleId()
+		{
+			return _castleId;
+		}
+
+		public int getNpcId()
+		{
+			return _npcId;
+		}
+
+		public int getHeading()
+		{
+			return _heading;
+		}
+
+		public int getHp()
+		{
+			return _hp;
 		}
 
 		public Location getLocation()
 		{
-			return location;
+			return _location;
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SiegeManager instance = new SiegeManager();
+		protected static final SiegeManager _instance = new SiegeManager();
 	}
 }

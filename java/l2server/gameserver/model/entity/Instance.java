@@ -28,10 +28,9 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -43,33 +42,54 @@ import java.util.logging.Level;
  */
 public class Instance
 {
-	@Getter private int id;
-	@Getter @Setter private String name;
+	private int _id;
+	private String _name;
 
-	@Getter private TIntHashSet players = new TIntHashSet();
-	private final EjectPlayerProcedure ejectProc;
+	private TIntHashSet _players = new TIntHashSet();
+	private final EjectPlayerProcedure _ejectProc;
 
-	@Getter private CopyOnWriteArrayList<L2Npc> npcs = new CopyOnWriteArrayList<>();
-	@Getter private ArrayList<L2DoorInstance> doors = null;
-	@Getter private int[] spawnLoc = new int[3];
-	private boolean allowSummon = true;
-	private long emptyDestroyTime = -1;
-	private long lastLeft = -1;
-	@Getter private long instanceStartTime = -1;
-	@Getter private long instanceEndTime = -1;
-	private boolean isPvPInstance = false;
-	private boolean isPeaceInstance = false;
-	@Getter private boolean showTimer = false;
-	private boolean isTimerIncrease = true;
-	@Getter private String timerText = "";
+	private CopyOnWriteArrayList<L2Npc> _npcs = new CopyOnWriteArrayList<>();
+	private ArrayList<L2DoorInstance> _doors = null;
+	private int[] _spawnLoc = new int[3];
+	private boolean _allowSummon = true;
+	private long _emptyDestroyTime = -1;
+	private long _lastLeft = -1;
+	private long _instanceStartTime = -1;
+	private long _instanceEndTime = -1;
+	private boolean _isPvPInstance = false;
+	private boolean _isPeaceInstance = false;
+	private boolean _showTimer = false;
+	private boolean _isTimerIncrease = true;
+	private String _timerText = "";
 
-	protected ScheduledFuture<?> CheckTimeUpTask = null;
+	protected ScheduledFuture<?> _CheckTimeUpTask = null;
 
 	public Instance(int id)
 	{
-		this.id = id;
-		ejectProc = new EjectPlayerProcedure();
-		instanceStartTime = System.currentTimeMillis();
+		_id = id;
+		_ejectProc = new EjectPlayerProcedure();
+		_instanceStartTime = System.currentTimeMillis();
+	}
+
+	/**
+	 * Returns the ID of this instance.
+	 */
+	public int getId()
+	{
+		return _id;
+	}
+
+	/**
+	 * Returns the name of this instance
+	 */
+	public String getName()
+	{
+		return _name;
+	}
+
+	public void setName(String name)
+	{
+		_name = name;
 	}
 
 	/**
@@ -77,7 +97,7 @@ public class Instance
 	 */
 	public boolean isSummonAllowed()
 	{
-		return allowSummon;
+		return _allowSummon;
 	}
 
 	/**
@@ -85,7 +105,7 @@ public class Instance
 	 */
 	public void setAllowSummon(boolean b)
 	{
-		allowSummon = b;
+		_allowSummon = b;
 	}
 
 	/*
@@ -93,7 +113,7 @@ public class Instance
 	 */
 	public boolean isPvPInstance()
 	{
-		return isPvPInstance;
+		return _isPvPInstance;
 	}
 
 	/*
@@ -101,17 +121,17 @@ public class Instance
 	 */
 	public void setPvPInstance(boolean b)
 	{
-		isPvPInstance = b;
+		_isPvPInstance = b;
 	}
 
 	public void setPeaceInstance(boolean b)
 	{
-		isPeaceInstance = b;
+		_isPeaceInstance = b;
 	}
 
 	public boolean isPeaceInstance()
 	{
-		return isPeaceInstance;
+		return _isPeaceInstance;
 	}
 
 	/**
@@ -121,13 +141,13 @@ public class Instance
 	 */
 	public void setDuration(int duration)
 	{
-		if (CheckTimeUpTask != null)
+		if (_CheckTimeUpTask != null)
 		{
-			CheckTimeUpTask.cancel(true);
+			_CheckTimeUpTask.cancel(true);
 		}
 
-		CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
-		instanceEndTime = System.currentTimeMillis() + duration + 500;
+		_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(duration), 500);
+		_instanceEndTime = System.currentTimeMillis() + duration + 500;
 	}
 
 	/**
@@ -137,7 +157,7 @@ public class Instance
 	 */
 	public void setEmptyDestroyTime(long time)
 	{
-		emptyDestroyTime = time;
+		_emptyDestroyTime = time;
 	}
 
 	/**
@@ -148,7 +168,7 @@ public class Instance
 	 */
 	public boolean containsPlayer(int objectId)
 	{
-		return players.contains(objectId);
+		return _players.contains(objectId);
 	}
 
 	/**
@@ -158,9 +178,9 @@ public class Instance
 	 */
 	public void addPlayer(int objectId)
 	{
-		synchronized (players)
+		synchronized (_players)
 		{
-			players.add(objectId);
+			_players.add(objectId);
 		}
 	}
 
@@ -171,15 +191,15 @@ public class Instance
 	 */
 	public void removePlayer(int objectId)
 	{
-		synchronized (players)
+		synchronized (_players)
 		{
-			players.remove(objectId);
+			_players.remove(objectId);
 		}
 
-		if (players.isEmpty() && emptyDestroyTime >= 0)
+		if (_players.isEmpty() && _emptyDestroyTime >= 0)
 		{
-			lastLeft = System.currentTimeMillis();
-			setDuration((int) (instanceEndTime - System.currentTimeMillis() - 500));
+			_lastLeft = System.currentTimeMillis();
+			setDuration((int) (_instanceEndTime - System.currentTimeMillis() - 500));
 		}
 	}
 
@@ -208,7 +228,7 @@ public class Instance
 
 	public void addNpc(L2Npc npc)
 	{
-		npcs.add(npc);
+		_npcs.add(npc);
 	}
 
 	public void removeNpc(L2Npc npc)
@@ -218,7 +238,7 @@ public class Instance
 			npc.getSpawn().stopRespawn();
 		}
 		//npc.deleteMe();
-		npcs.remove(npc);
+		_npcs.remove(npc);
 	}
 
 	/**
@@ -228,12 +248,12 @@ public class Instance
 	 */
 	public void addDoor(int doorId, StatsSet set)
 	{
-		if (doors == null)
+		if (_doors == null)
 		{
-			doors = new ArrayList<>(2);
+			_doors = new ArrayList<>(2);
 		}
 
-		for (L2DoorInstance door : doors)
+		for (L2DoorInstance door : _doors)
 		{
 			if (door.getDoorId() == doorId)
 			{
@@ -247,7 +267,22 @@ public class Instance
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(temp.posX, temp.posY, temp.posZ);
-		doors.add(newdoor);
+		_doors.add(newdoor);
+	}
+
+	public TIntHashSet getPlayers()
+	{
+		return _players;
+	}
+
+	public CopyOnWriteArrayList<L2Npc> getNpcs()
+	{
+		return _npcs;
+	}
+
+	public ArrayList<L2DoorInstance> getDoors()
+	{
+		return _doors;
 	}
 
 	public L2DoorInstance getDoor(int id)
@@ -262,9 +297,39 @@ public class Instance
 		return null;
 	}
 
+	public long getInstanceEndTime()
+	{
+		return _instanceEndTime;
+	}
+
+	public long getInstanceStartTime()
+	{
+		return _instanceStartTime;
+	}
+
+	public boolean isShowTimer()
+	{
+		return _showTimer;
+	}
+
 	public boolean isTimerIncrease()
 	{
-		return isTimerIncrease;
+		return _isTimerIncrease;
+	}
+
+	public String getTimerText()
+	{
+		return _timerText;
+	}
+
+	/**
+	 * Returns the spawn location for this instance to be used when leaving the instance
+	 *
+	 * @return int[3]
+	 */
+	public int[] getSpawnLoc()
+	{
+		return _spawnLoc;
 	}
 
 	/**
@@ -276,22 +341,22 @@ public class Instance
 		{
 			return;
 		}
-		System.arraycopy(loc, 0, spawnLoc, 0, 3);
+		System.arraycopy(loc, 0, _spawnLoc, 0, 3);
 	}
 
 	public void removePlayers()
 	{
-		players.forEach(ejectProc);
+		_players.forEach(_ejectProc);
 
-		synchronized (players)
+		synchronized (_players)
 		{
-			players.clear();
+			_players.clear();
 		}
 	}
 
 	public void removeNpcs()
 	{
-		for (L2Npc mob : npcs)
+		for (L2Npc mob : _npcs)
 		{
 			if (mob != null)
 			{
@@ -303,17 +368,17 @@ public class Instance
 				mob.setInstanceId(0);
 			}
 		}
-		npcs.clear();
+		_npcs.clear();
 	}
 
 	public void removeDoors()
 	{
-		if (doors == null)
+		if (_doors == null)
 		{
 			return;
 		}
 
-		for (L2DoorInstance door : doors)
+		for (L2DoorInstance door : _doors)
 		{
 			if (door != null)
 			{
@@ -329,8 +394,8 @@ public class Instance
 				L2World.getInstance().removeObject(door);
 			}
 		}
-		doors.clear();
-		doors = null;
+		_doors.clear();
+		_doors = null;
 	}
 
 	public void loadInstanceTemplate(String filename)
@@ -372,13 +437,13 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					CheckTimeUpTask = ThreadPoolManager.getInstance()
+					_CheckTimeUpTask = ThreadPoolManager.getInstance()
 							.scheduleGeneral(new CheckTimeUp(n.getInt("val") * 60000), 15000);
-					instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
+					_instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
 				}
 			}
 			/*			else if (n.getName().equalsIgnoreCase("timeDelay"))
-						{
+                        {
 							a = n.getString("val");
 							if (a != null)
 								instance.setTimeDelay(Integer.parseInt(a);
@@ -394,22 +459,22 @@ public class Instance
 			{
 				if (n.hasAttribute("val"))
 				{
-					emptyDestroyTime = n.getLong("val") * 1000;
+					_emptyDestroyTime = n.getLong("val") * 1000;
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("showTimer"))
 			{
 				if (n.hasAttribute("val"))
 				{
-					showTimer = n.getBool("val");
+					_showTimer = n.getBool("val");
 				}
 				if (n.hasAttribute("increase"))
 				{
-					isTimerIncrease = n.getBool("increase");
+					_isTimerIncrease = n.getBool("increase");
 				}
 				if (n.hasAttribute("text"))
 				{
-					timerText = n.getString("text");
+					_timerText = n.getString("text");
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("PvPInstance"))
@@ -449,6 +514,7 @@ public class Instance
 
 					if (d.getName().equalsIgnoreCase("spawn"))
 					{
+
 						npcId = d.getInt("npcId");
 						x = d.getInt("x");
 						y = d.getInt("y");
@@ -497,14 +563,14 @@ public class Instance
 			{
 				try
 				{
-					spawnLoc[0] = n.getInt("spawnX");
-					spawnLoc[1] = n.getInt("spawnY");
-					spawnLoc[2] = n.getInt("spawnZ");
+					_spawnLoc[0] = n.getInt("spawnX");
+					_spawnLoc[1] = n.getInt("spawnY");
+					_spawnLoc[2] = n.getInt("spawnZ");
 				}
 				catch (Exception e)
 				{
 					Log.log(Level.WARNING, "Error parsing instance xml: " + e.getMessage(), e);
-					spawnLoc = new int[3];
+					_spawnLoc = new int[3];
 				}
 			}
 		}
@@ -520,14 +586,15 @@ public class Instance
 		int timeLeft;
 		int interval;
 
-		if (players.isEmpty() && emptyDestroyTime == 0)
+		if (_players.isEmpty() && _emptyDestroyTime == 0)
 		{
 			remaining = 0;
 			interval = 500;
 		}
-		else if (players.isEmpty() && emptyDestroyTime > 0)
+		else if (_players.isEmpty() && _emptyDestroyTime > 0)
 		{
-			Long emptyTimeLeft = lastLeft + emptyDestroyTime - System.currentTimeMillis();
+
+			Long emptyTimeLeft = _lastLeft + _emptyDestroyTime - System.currentTimeMillis();
 			if (emptyTimeLeft <= 0)
 			{
 				interval = 0;
@@ -588,42 +655,42 @@ public class Instance
 		}
 		if (cs != null)
 		{
-			players.forEach(new SendPacketToPlayerProcedure(cs));
+			_players.forEach(new SendPacketToPlayerProcedure(cs));
 		}
 
 		cancelTimer();
-		//System.out.println(id + " (" + getName() + "): " + remaining + " " + interval);
+		//System.out.println(_id + " (" + getName() + "): " + remaining + " " + interval);
 		if (remaining >= 10000)
 		{
-			CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
+			_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
 		}
 		else
 		{
-			CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
+			_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), interval);
 		}
 	}
 
 	public void cancelTimer()
 	{
-		if (CheckTimeUpTask != null)
+		if (_CheckTimeUpTask != null)
 		{
-			CheckTimeUpTask.cancel(true);
+			_CheckTimeUpTask.cancel(true);
 		}
 	}
 
 	public class CheckTimeUp implements Runnable
 	{
-		private int remaining;
+		private int _remaining;
 
 		public CheckTimeUp(int remaining)
 		{
-			this.remaining = remaining;
+			_remaining = remaining;
 		}
 
 		@Override
 		public void run()
 		{
-			doCheckTimeUp(remaining);
+			doCheckTimeUp(_remaining);
 		}
 	}
 
@@ -640,6 +707,7 @@ public class Instance
 	{
 		EjectPlayerProcedure()
 		{
+
 		}
 
 		@Override
@@ -652,11 +720,11 @@ public class Instance
 
 	private final class SendPacketToPlayerProcedure implements TIntProcedure
 	{
-		private final L2GameServerPacket packet;
+		private final L2GameServerPacket _packet;
 
 		SendPacketToPlayerProcedure(final L2GameServerPacket packet)
 		{
-			this.packet = packet;
+			_packet = packet;
 		}
 
 		@Override
@@ -666,7 +734,7 @@ public class Instance
 
 			if (player.getInstanceId() == getId())
 			{
-				player.sendPacket(packet);
+				player.sendPacket(_packet);
 			}
 			return true;
 		}

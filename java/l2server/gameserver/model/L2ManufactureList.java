@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,48 +25,58 @@ import java.util.List;
  */
 public class L2ManufactureList
 {
-	@Getter @Setter private List<L2ManufactureItem> list;
-	private boolean confirmed;
-	private String manufactureStoreName;
+	private List<L2ManufactureItem> _list;
+	private boolean _confirmed;
+	private String _manufactureStoreName;
 
 	public L2ManufactureList()
 	{
-		list = new ArrayList<>();
-		confirmed = false;
+		_list = new ArrayList<>();
+		_confirmed = false;
 	}
 
 	public int size()
 	{
-		return list.size();
+		return _list.size();
 	}
 
 	public void setConfirmedTrade(boolean x)
 	{
-		confirmed = x;
+		_confirmed = x;
 	}
 
 	public boolean hasConfirmed()
 	{
-		return confirmed;
+		return _confirmed;
 	}
 
 	/**
 	 */
 	public void setStoreName(String manufactureStoreName)
 	{
-		this.manufactureStoreName = manufactureStoreName;
+		_manufactureStoreName = manufactureStoreName;
 	}
 
 	/**
-	 * @return Returns the manufactureStoreName.
+	 * @return Returns the _manufactureStoreName.
 	 */
 	public String getStoreName()
 	{
-		return manufactureStoreName;
+		return _manufactureStoreName;
 	}
 
 	public void add(L2ManufactureItem item)
 	{
-		list.add(item);
+		_list.add(item);
+	}
+
+	public List<L2ManufactureItem> getList()
+	{
+		return _list;
+	}
+
+	public void setList(List<L2ManufactureItem> list)
+	{
+		_list = list;
 	}
 }

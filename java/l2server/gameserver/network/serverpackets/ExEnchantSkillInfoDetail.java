@@ -32,16 +32,16 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	private static final int TYPE_CHANGE_ENCHANT = 3;
 	private static final int TYPE_IMMORTAL_ENCHANT = 4;
 
-	private int bookId = 0;
-	private int reqCount = 0;
-	private int multi = 1;
-	private final int type;
-	private final int skillId;
-	private final int skillLvl;
-	private final int skillEnch;
-	private final int chance;
-	private int sp;
-	private final int adenacount;
+	private int _bookId = 0;
+	private int _reqCount = 0;
+	private int _multi = 1;
+	private final int _type;
+	private final int _skillId;
+	private final int _skillLvl;
+	private final int _skillEnch;
+	private final int _chance;
+	private int _sp;
+	private final int _adenacount;
 
 	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, L2PcInstance ply)
 	{
@@ -65,52 +65,52 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			throw new IllegalArgumentException("Skill " + skillId + " dont have enchant data for level " + skillLvl);
 		}
 
-		chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
-		sp = esd.getSpCost();
+		_chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
+		_sp = esd.getSpCost();
 		if (type == TYPE_NORMAL_ENCHANT)
 		{
-			multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
+			_multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_SAFE_ENCHANT)
 		{
-			multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
+			_multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_IMMORTAL_ENCHANT)
 		{
-			multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
+			_multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == TYPE_UNTRAIN_ENCHANT)
 		{
-			sp = (int) (0.8 * sp);
+			_sp = (int) (0.8 * _sp);
 		}
-		adenacount = esd.getAdenaCost() * multi;
+		_adenacount = esd.getAdenaCost() * _multi;
 
-		this.type = type;
-		this.skillId = skillId;
-		this.skillLvl = skillLvl;
-		skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
+		_type = type;
+		_skillId = skillId;
+		_skillLvl = skillLvl;
+		_skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
 
-		reqCount = 1;
+		_reqCount = 1;
 		switch (type)
 		{
 			case TYPE_NORMAL_ENCHANT:
-				bookId = esd.getRange().getNormalBook();
+				_bookId = esd.getRange().getNormalBook();
 				if (skillEnchLvl % 10 > 1)
 				{
-					reqCount = 0;
+					_reqCount = 0;
 				}
 				break;
 			case TYPE_SAFE_ENCHANT:
-				bookId = esd.getRange().getSafeBook();
+				_bookId = esd.getRange().getSafeBook();
 				break;
 			case TYPE_UNTRAIN_ENCHANT:
-				bookId = esd.getRange().getUntrainBook();
+				_bookId = esd.getRange().getUntrainBook();
 				break;
 			case TYPE_CHANGE_ENCHANT:
-				bookId = esd.getRange().getChangeBook();
+				_bookId = esd.getRange().getChangeBook();
 				break;
 			case TYPE_IMMORTAL_ENCHANT:
-				bookId = esd.getRange().getImmortalBook();
+				_bookId = esd.getRange().getImmortalBook();
 				break;
 			default:
 				return;
@@ -118,9 +118,13 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 
 		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
 		{
-			reqCount = 0;
+			_reqCount = 0;
 		}
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -128,16 +132,16 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(type);
-		writeD(skillId);
-		writeH(skillLvl);
-		writeH(skillEnch);
-		writeQ(sp * multi); // sp
-		writeD(chance); // exp
+		writeD(_type);
+		writeD(_skillId);
+		writeH(_skillLvl);
+		writeH(_skillEnch);
+		writeQ(_sp * _multi); // sp
+		writeD(_chance); // exp
 		writeD(2); // items count?
 		writeD(57); // adena //TODO unhardcode me
-		writeD(adenacount); // adena count
-		writeD(bookId); // ItemId Required
-		writeD(reqCount);
+		writeD(_adenacount); // adena count
+		writeD(_bookId); // ItemId Required
+		writeD(_reqCount);
 	}
 }

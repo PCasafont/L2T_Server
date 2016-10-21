@@ -27,6 +27,7 @@ import l2server.gameserver.model.actor.instance.L2CubicInstance;
 
 public final class Env
 {
+
 	public L2Character player;
 	public L2CubicInstance cubic;
 	public L2Character target;
@@ -41,6 +42,7 @@ public final class Env
 
 	public Env()
 	{
+
 	}
 
 	public Env(byte shd, double ss)

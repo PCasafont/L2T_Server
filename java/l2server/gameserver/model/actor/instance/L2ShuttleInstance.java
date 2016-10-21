@@ -25,7 +25,6 @@ import l2server.gameserver.network.serverpackets.ExShuttleInfo;
 import l2server.gameserver.network.serverpackets.ExShuttleMove;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.util.Point3D;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,16 +34,16 @@ import java.util.List;
  */
 public class L2ShuttleInstance extends L2Vehicle
 {
-	@Getter private int id;
-	@Getter private List<ShuttleStop> stops = new ArrayList<>();
+	private int _id;
+	private List<ShuttleStop> _stops = new ArrayList<>();
 
-	private int currentStopId = 0;
+	private int _currentStopId = 0;
 
 	public L2ShuttleInstance(int objectId, L2CharTemplate t, int shuttleId)
 	{
 		super(objectId, t);
 		setInstanceType(InstanceType.L2ShuttleInstance);
-		id = shuttleId;
+		_id = shuttleId;
 
 		getStat().setMoveSpeed(300);
 		getAI();
@@ -56,9 +55,19 @@ public class L2ShuttleInstance extends L2Vehicle
 		return true;
 	}
 
+	public int getId()
+	{
+		return _id;
+	}
+
+	public List<ShuttleStop> getStops()
+	{
+		return _stops;
+	}
+
 	public boolean isClosed()
 	{
-		for (ShuttleStop ss : stops)
+		for (ShuttleStop ss : _stops)
 		{
 			if (ss.isDoorOpen())
 			{
@@ -74,28 +83,28 @@ public class L2ShuttleInstance extends L2Vehicle
 		{
 			setXYZ(x, y, z);
 		}
-		stops.add(new ShuttleStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ));
+		_stops.add(new ShuttleStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ));
 	}
 
 	@Override
 	public boolean moveToNextRoutePoint()
 	{
-		ShuttleStop current = stops.get(currentStopId);
+		ShuttleStop current = _stops.get(_currentStopId);
 		current.openDoor();
 
-		currentStopId++;
-		if (currentStopId >= stops.size())
+		_currentStopId++;
+		if (_currentStopId >= _stops.size())
 		{
-			currentStopId = 0;
+			_currentStopId = 0;
 		}
 
-		ShuttleStop next = stops.get(currentStopId);
-		if (passengers.size() > 0)
+		ShuttleStop next = _stops.get(_currentStopId);
+		if (_passengers.size() > 0)
 		{
-			passengers.size();
+			_passengers.size();
 		}
 		List<L2PcInstance> passengersToOust = new ArrayList<>();
-		for (L2PcInstance toOust : passengers)
+		for (L2PcInstance toOust : _passengers)
 		{
 			passengersToOust.add(toOust);
 		}
@@ -149,75 +158,90 @@ public class L2ShuttleInstance extends L2Vehicle
 
 	private class GoTask implements Runnable
 	{
-		private List<L2PcInstance> playersToOust;
-		private ShuttleStop previous, current;
-		private boolean doorClosed = false;
+		private List<L2PcInstance> _playersToOust;
+		private ShuttleStop _previous, _current;
+		private boolean _doorClosed = false;
 
 		public GoTask(List<L2PcInstance> playersToOust, ShuttleStop previous, ShuttleStop current)
 		{
-			this.playersToOust = playersToOust;
-			this.previous = previous;
-			this.current = current;
+			_playersToOust = playersToOust;
+			_previous = previous;
+			_current = current;
 		}
 
 		@Override
 		public void run()
 		{
 			// oust previous players
-			if (!doorClosed)
+			if (!_doorClosed)
 			{
-				Point3D pos = previous.getOustPosition();
-				for (L2PcInstance player : playersToOust)
+				Point3D pos = _previous.getOustPosition();
+				for (L2PcInstance player : _playersToOust)
 				{
-					if (passengers.contains(player))
+					if (L2ShuttleInstance.this._passengers.contains(player))
 					{
 						player.teleToLocation(pos.getX(), pos.getY(), pos.getZ());
-						oustPlayer(player, pos.getX(), pos.getY(), pos.getZ());
+						L2ShuttleInstance.this.oustPlayer(player, pos.getX(), pos.getY(), pos.getZ());
 					}
 				}
-				previous.closeDoor();
-				doorClosed = true;
+				_previous.closeDoor();
+				_doorClosed = true;
 				ThreadPoolManager.getInstance().scheduleGeneral(this, 2000L);
 				return;
 			}
-			current.moveTo();
+			_current.moveTo();
 		}
 	}
 
 	public class ShuttleStop
 	{
-		@Getter private Point3D position;
-		@Getter private int time;
-		private int doorId;
-		private int outerDoorId;
-		@Getter private Point3D oustPosition;
-		private boolean isDoorOpen;
-		private long lastDoorChange;
+		private Point3D _position;
+		private int _time;
+		private int _doorId;
+		private int _outerDoorId;
+		private Point3D _oustPosition;
+		private boolean _isDoorOpen;
+		private long _lastDoorChange;
 
 		public ShuttleStop(int x, int y, int z, int time, int doorId, int outerDoorId, int oustX, int oustY, int oustZ)
 		{
-			position = new Point3D(x, y, z);
-			this.time = time;
-			this.doorId = doorId;
-			this.outerDoorId = outerDoorId;
-			oustPosition = new Point3D(oustX, oustY, oustZ);
-			isDoorOpen = false;
-			lastDoorChange = System.currentTimeMillis();
+			_position = new Point3D(x, y, z);
+			_time = time;
+			_doorId = doorId;
+			_outerDoorId = outerDoorId;
+			_oustPosition = new Point3D(oustX, oustY, oustZ);
+			_isDoorOpen = false;
+			_lastDoorChange = System.currentTimeMillis();
 		}
 
 		public int getId()
 		{
-			return doorId;
+			return _doorId;
+		}
+
+		public Point3D getPosition()
+		{
+			return _position;
+		}
+
+		public Point3D getOustPosition()
+		{
+			return _oustPosition;
+		}
+
+		public int getTime()
+		{
+			return _time;
 		}
 
 		public boolean isDoorOpen()
 		{
-			return isDoorOpen;
+			return _isDoorOpen;
 		}
 
 		public boolean hasDoorChanged()
 		{
-			return System.currentTimeMillis() - lastDoorChange < 1000L;
+			return System.currentTimeMillis() - _lastDoorChange < 1000L;
 		}
 
 		public void moveTo()
@@ -225,13 +249,13 @@ public class L2ShuttleInstance extends L2Vehicle
 			MoveData m = new MoveData();
 			m.disregardingGeodata = false;
 			m.onGeodataPathIndex = -1;
-			m.xDestination = position.getX();
-			m.yDestination = position.getY();
-			m.zDestination = position.getZ();
-			m.heading = 0;
+			m._xDestination = _position.getX();
+			m._yDestination = _position.getY();
+			m._zDestination = _position.getZ();
+			m._heading = 0;
 
-			m.moveStartTime = TimeController.getGameTicks();
-			move = m;
+			m._moveStartTime = TimeController.getGameTicks();
+			_move = m;
 
 			TimeController.getInstance().registerMovingObject(L2ShuttleInstance.this);
 
@@ -240,17 +264,17 @@ public class L2ShuttleInstance extends L2Vehicle
 
 		public void openDoor()
 		{
-			isDoorOpen = true;
-			lastDoorChange = System.currentTimeMillis();
-			DoorTable.getInstance().getDoor(outerDoorId).openMe();
+			_isDoorOpen = true;
+			_lastDoorChange = System.currentTimeMillis();
+			DoorTable.getInstance().getDoor(_outerDoorId).openMe();
 			updateAbnormalEffect();
 		}
 
 		public void closeDoor()
 		{
-			isDoorOpen = false;
-			lastDoorChange = System.currentTimeMillis();
-			DoorTable.getInstance().getDoor(outerDoorId).closeMe();
+			_isDoorOpen = false;
+			_lastDoorChange = System.currentTimeMillis();
+			DoorTable.getInstance().getDoor(_outerDoorId).closeMe();
 			updateAbnormalEffect();
 		}
 	}

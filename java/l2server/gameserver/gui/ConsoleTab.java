@@ -91,9 +91,9 @@ public class ConsoleTab extends JPanel
 		}
 	}
 
-	private static int instanceId = 0;
-	private static List<ConsoleTab> instances = new ArrayList<>();
-	private static List<ConsoleLine> messages = new ArrayList<>();
+	private static int _instanceId = 0;
+	private static List<ConsoleTab> _instances = new ArrayList<>();
+	private static List<ConsoleLine> _messages = new ArrayList<>();
 
 	private class ConsoleFilterInstance
 	{
@@ -106,8 +106,8 @@ public class ConsoleTab extends JPanel
 		}
 	}
 
-	private ConsoleFilterInstance[] filters = new ConsoleFilterInstance[ConsoleFilter.values().length];
-	private JTextPane textPane;
+	private ConsoleFilterInstance[] _filters = new ConsoleFilterInstance[ConsoleFilter.values().length];
+	private JTextPane _textPane;
 
 	public ConsoleTab(boolean main)
 	{
@@ -130,8 +130,8 @@ public class ConsoleTab extends JPanel
 		ConsoleSubFilterListener filterListener = new ConsoleSubFilterListener();
 		for (ConsoleFilter f : ConsoleFilter.values())
 		{
-			filters[f.ordinal()] = new ConsoleFilterInstance();
-			ConsoleFilterInstance fi = filters[f.ordinal()];
+			_filters[f.ordinal()] = new ConsoleFilterInstance();
+			ConsoleFilterInstance fi = _filters[f.ordinal()];
 			int depthLevel = 0;
 			ConsoleFilter child = f.parent;
 			while (child != null)
@@ -181,9 +181,9 @@ public class ConsoleTab extends JPanel
 		cons.fill = GridBagConstraints.BOTH;
 		cons.weightx = 1;
 		cons.weighty = 1;
-		textPane = new JTextPane();
-		textPane.setBackground(new Color(30, 30, 30));
-		JScrollPane console = new JScrollPane(textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+		_textPane = new JTextPane();
+		_textPane.setBackground(new Color(30, 30, 30));
+		JScrollPane console = new JScrollPane(_textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 		cons.weightx = 1;
@@ -193,7 +193,7 @@ public class ConsoleTab extends JPanel
 		splitPane.setDividerLocation(230);
 		add(splitPane, cons);
 
-		instances.add(this);
+		_instances.add(this);
 		if (main)
 		{
 			// Add new console window button
@@ -215,13 +215,13 @@ public class ConsoleTab extends JPanel
 	{
 		try
 		{
-			messages.add(new ConsoleLine(f, msg, extra));
-			while (messages.size() > MSG_STORAGE_LIMIT)
+			_messages.add(new ConsoleLine(f, msg, extra));
+			while (_messages.size() > MSG_STORAGE_LIMIT)
 			{
-				messages.remove(0);
+				_messages.remove(0);
 			}
 
-			for (ConsoleTab tab : instances)
+			for (ConsoleTab tab : _instances)
 			{
 				tab.onAppendMessage(f, msg, extra);
 			}
@@ -234,7 +234,7 @@ public class ConsoleTab extends JPanel
 
 	public synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra)
 	{
-		ConsoleFilterInstance fi = filters[f.ordinal()];
+		ConsoleFilterInstance fi = _filters[f.ordinal()];
 		if (!fi.isEnabled())
 		{
 			return;
@@ -278,7 +278,7 @@ public class ConsoleTab extends JPanel
 		}
 		aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
 
-		Document document = textPane.getDocument();
+		Document document = _textPane.getDocument();
 		Element root = document.getDefaultRootElement();
 		while (root.getElementCount() > MSG_DISPLAY_LIMIT)
 		{
@@ -295,29 +295,29 @@ public class ConsoleTab extends JPanel
 		}
 
 		int len = document.getLength();
-		textPane.setCaretPosition(len);
-		textPane.setCharacterAttributes(aset, false);
-		textPane.replaceSelection(msg);
+		_textPane.setCaretPosition(len);
+		_textPane.setCharacterAttributes(aset, false);
+		_textPane.replaceSelection(msg);
 
 		EventQueue.invokeLater(() ->
 		{
-			Rectangle visibleRect = textPane.getVisibleRect();
-			if (visibleRect.y + 100 > textPane.getHeight() - visibleRect.height)
+			Rectangle visibleRect = _textPane.getVisibleRect();
+			if (visibleRect.y + 100 > _textPane.getHeight() - visibleRect.height)
 			{
-				visibleRect.y = textPane.getHeight() - visibleRect.height;
-				textPane.scrollRectToVisible(visibleRect);
+				visibleRect.y = _textPane.getHeight() - visibleRect.height;
+				_textPane.scrollRectToVisible(visibleRect);
 			}
 		});
 	}
 
 	public synchronized void reloadDoc()
 	{
-		textPane.setText("");
+		_textPane.setText("");
 
-		for (ConsoleLine line : messages)
+		for (ConsoleLine line : _messages)
 		{
 			ConsoleFilter f = line.filter;
-			ConsoleFilterInstance fi = filters[f.ordinal()];
+			ConsoleFilterInstance fi = _filters[f.ordinal()];
 			if (!fi.isEnabled())
 			{
 				continue;
@@ -362,7 +362,7 @@ public class ConsoleTab extends JPanel
 			}
 			aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
 
-			Document document = textPane.getDocument();
+			Document document = _textPane.getDocument();
 			Element root = document.getDefaultRootElement();
 			while (root.getElementCount() > MSG_DISPLAY_LIMIT)
 			{
@@ -379,9 +379,9 @@ public class ConsoleTab extends JPanel
 			}
 
 			int len = document.getLength();
-			textPane.setCaretPosition(len);
-			textPane.setCharacterAttributes(aset, false);
-			textPane.replaceSelection(msg);
+			_textPane.setCaretPosition(len);
+			_textPane.setCharacterAttributes(aset, false);
+			_textPane.replaceSelection(msg);
 		}
 	}
 
@@ -392,8 +392,8 @@ public class ConsoleTab extends JPanel
 		{
 			if (ae.getActionCommand().equalsIgnoreCase("newConsoleWindow"))
 			{
-				instanceId++;
-				JFrame extra = new JFrame("Console View #" + instanceId);
+				_instanceId++;
+				JFrame extra = new JFrame("Console View #" + _instanceId);
 				final ConsoleTab tab = new ConsoleTab(false);
 				extra.add(tab);
 				extra.addWindowListener(new WindowAdapter()
@@ -401,7 +401,7 @@ public class ConsoleTab extends JPanel
 					@Override
 					public void windowClosing(WindowEvent arg0)
 					{
-						instances.remove(tab);
+						_instances.remove(tab);
 					}
 				});
 				extra.setMinimumSize(new Dimension(900, 600));
@@ -417,19 +417,19 @@ public class ConsoleTab extends JPanel
 				return;
 			}
 
-			if (filters[f.ordinal()].isEnabled())
+			if (_filters[f.ordinal()].isEnabled())
 			{
 				for (ConsoleFilter child : f.children)
 				{
-					filters[child.ordinal()].checkBox.setEnabled(true);
+					_filters[child.ordinal()].checkBox.setEnabled(true);
 				}
 			}
 			else
 			{
 				for (ConsoleFilter child : f.children)
 				{
-					filters[child.ordinal()].checkBox.setSelected(false);
-					filters[child.ordinal()].checkBox.setEnabled(false);
+					_filters[child.ordinal()].checkBox.setSelected(false);
+					_filters[child.ordinal()].checkBox.setEnabled(false);
 				}
 			}
 

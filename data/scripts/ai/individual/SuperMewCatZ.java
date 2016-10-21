@@ -133,17 +133,17 @@ public class SuperMewCatZ extends L2AttackableAIScript
 
 	private final class MoveTheFucker implements Runnable
 	{
-		private final L2Npc npc;
+		private final L2Npc _npc;
 
 		public MoveTheFucker(L2Npc npc)
 		{
-			this.npc = npc;
+			_npc = npc;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = moveTheFucker(npc);
+			int delay = moveTheFucker(_npc);
 
 			ThreadPoolManager.getInstance().scheduleGeneral(this, delay);
 		}

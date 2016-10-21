@@ -28,6 +28,7 @@ import java.sql.*;
  */
 public abstract class IdFactory
 {
+
 	protected static final String[] ID_CHECKS = {
 			"SELECT owner_id	FROM items				 WHERE object_id >= ?   AND object_id < ?",
 			"SELECT object_id   FROM items				 WHERE object_id >= ?   AND object_id < ?",
@@ -61,13 +62,13 @@ public abstract class IdFactory
 			"DELETE FROM character_skills_save WHERE restore_type = 1 AND systime <= ?"
 	};
 
-	protected boolean initialized;
+	protected boolean _initialized;
 
 	public static final int FIRST_OID = 0x10000000;
 	public static final int LAST_OID = 0x7FFFFFFF;
 	public static final int FREE_OBJECT_ID_SIZE = LAST_OID - FIRST_OID;
 
-	protected static final IdFactory instance;
+	protected static final IdFactory _instance;
 
 	protected IdFactory()
 	{
@@ -86,13 +87,13 @@ public abstract class IdFactory
 				//_instance = new CompactionIDFactory();
 				//break;
 			case BitSet:
-				instance = new BitSetIDFactory();
+				_instance = new BitSetIDFactory();
 				break;
 			case Stack:
-				instance = new StackIDFactory();
+				_instance = new StackIDFactory();
 				break;
 			default:
-				instance = null;
+				_instance = null;
 				break;
 		}
 	}
@@ -330,12 +331,12 @@ public abstract class IdFactory
 
 	public boolean isInitialized()
 	{
-		return initialized;
+		return _initialized;
 	}
 
 	public static IdFactory getInstance()
 	{
-		return instance;
+		return _instance;
 	}
 
 	public abstract int getNextId();

@@ -28,23 +28,24 @@ import java.util.List;
 public class NewCharacterSuccess extends L2GameServerPacket
 {
 	// dddddddddddddddddddd
-	private List<L2PcTemplate> chars = new ArrayList<>();
+	private List<L2PcTemplate> _chars = new ArrayList<>();
 
 	public NewCharacterSuccess()
 	{
+
 	}
 
 	public void addChar(L2PcTemplate template)
 	{
-		chars.add(template);
+		_chars.add(template);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(chars.size());
+		writeD(_chars.size());
 
-		for (L2PcTemplate temp : chars)
+		for (L2PcTemplate temp : _chars)
 		{
 			if (temp == null)
 			{

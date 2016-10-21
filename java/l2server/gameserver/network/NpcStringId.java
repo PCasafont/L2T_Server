@@ -17,7 +17,6 @@ package l2server.gameserver.network;
 
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -33,6 +32,7 @@ import java.util.logging.Level;
  */
 public final class NpcStringId
 {
+
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
 
@@ -25819,31 +25819,36 @@ public final class NpcStringId
 		return new BuilderContainer(builders.toArray(new Builder[builders.size()]));
 	}
 
-	@Getter private final int id;
-	private String name;
-	private byte params;
-	private NSLocalisation[] localisations;
-	private ExShowScreenMessage staticScreenMessage;
+	private final int _id;
+	private String _name;
+	private byte _params;
+	private NSLocalisation[] _localisations;
+	private ExShowScreenMessage _staticScreenMessage;
 
 	private NpcStringId(final int id)
 	{
-		this.id = id;
-		localisations = EMPTY_NSL_ARRAY;
+		_id = id;
+		_localisations = EMPTY_NSL_ARRAY;
+	}
+
+	public final int getId()
+	{
+		return _id;
 	}
 
 	private void setName(final String name)
 	{
-		this.name = name;
+		_name = name;
 	}
 
 	public final String getName()
 	{
-		return name;
+		return _name;
 	}
 
 	public final int getParamCount()
 	{
-		return params;
+		return _params;
 	}
 
 	/**
@@ -25865,18 +25870,18 @@ public final class NpcStringId
 
 		if (params != 0)
 		{
-			staticScreenMessage = null;
+			_staticScreenMessage = null;
 		}
 
-		this.params = (byte) params;
+		_params = (byte) params;
 	}
 
 	public final NSLocalisation getLocalisation(final String lang)
 	{
 		NSLocalisation nsl;
-		for (int i = localisations.length; i-- > 0; )
+		for (int i = _localisations.length; i-- > 0; )
 		{
-			nsl = localisations[i];
+			nsl = _localisations[i];
 			if (nsl.getLanguage().hashCode() == lang.hashCode())
 			{
 				return nsl;
@@ -25887,25 +25892,25 @@ public final class NpcStringId
 
 	public final void attachLocalizedText(final String lang, final String text)
 	{
-		final int length = localisations.length;
-		final NSLocalisation[] localisations = Arrays.copyOf(this.localisations, length + 1);
+		final int length = _localisations.length;
+		final NSLocalisation[] localisations = Arrays.copyOf(_localisations, length + 1);
 		localisations[length] = new NSLocalisation(lang, text);
-		this.localisations = localisations;
+		_localisations = localisations;
 	}
 
 	public final void removeAllLocalisations()
 	{
-		localisations = EMPTY_NSL_ARRAY;
+		_localisations = EMPTY_NSL_ARRAY;
 	}
 
 	public final ExShowScreenMessage getStaticScreenMessage()
 	{
-		return staticScreenMessage;
+		return _staticScreenMessage;
 	}
 
 	public final void setStaticSystemMessage(final ExShowScreenMessage ns)
 	{
-		staticScreenMessage = ns;
+		_staticScreenMessage = ns;
 	}
 
 	@Override
@@ -25916,23 +25921,23 @@ public final class NpcStringId
 
 	public static final class NSLocalisation
 	{
-		private final String lang;
-		private final Builder builder;
+		private final String _lang;
+		private final Builder _builder;
 
 		public NSLocalisation(final String lang, final String text)
 		{
-			this.lang = lang;
-			builder = newBuilder(text);
+			_lang = lang;
+			_builder = newBuilder(text);
 		}
 
 		public final String getLanguage()
 		{
-			return lang;
+			return _lang;
 		}
 
 		public final String getLocalisation(final Object... params)
 		{
-			return builder.toString(params);
+			return _builder.toString(params);
 		}
 	}
 
@@ -25953,11 +25958,11 @@ public final class NpcStringId
 	 */
 	private static final class BuilderContainer implements Builder
 	{
-		private final Builder[] builders;
+		private final Builder[] _builders;
 
 		public BuilderContainer(final Builder[] builders)
 		{
-			this.builders = builders;
+			_builders = builders;
 		}
 
 		@Override
@@ -25969,7 +25974,7 @@ public final class NpcStringId
 		@Override
 		public final String toString(final Object... params)
 		{
-			final int buildersLength = builders.length;
+			final int buildersLength = _builders.length;
 			final int paramsLength = params.length;
 			final String[] builds = new String[buildersLength];
 
@@ -25980,7 +25985,7 @@ public final class NpcStringId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					builder = builders[i];
+					builder = _builders[i];
 					paramIndex = builder.getIndex();
 					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) :
 							builder.toString();
@@ -25992,7 +25997,7 @@ public final class NpcStringId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					build = builders[i].toString();
+					build = _builders[i].toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -26018,11 +26023,11 @@ public final class NpcStringId
 	 */
 	private static final class BuilderText implements Builder
 	{
-		private final String text;
+		private final String _text;
 
 		public BuilderText(final String text)
 		{
-			this.text = text;
+			_text = text;
 		}
 
 		@Override
@@ -26046,7 +26051,7 @@ public final class NpcStringId
 		@Override
 		public final String toString()
 		{
-			return text;
+			return _text;
 		}
 	}
 
@@ -26055,7 +26060,7 @@ public final class NpcStringId
 	 */
 	private static final class BuilderObject implements Builder
 	{
-		@Getter private final int index;
+		private final int _index;
 
 		public BuilderObject(final int id)
 		{
@@ -26064,7 +26069,7 @@ public final class NpcStringId
 				throw new RuntimeException("Illegal id " + id);
 			}
 
-			index = id - 1;
+			_index = id - 1;
 		}
 
 		@Override
@@ -26085,9 +26090,15 @@ public final class NpcStringId
 		}
 
 		@Override
+		public final int getIndex()
+		{
+			return _index;
+		}
+
+		@Override
 		public final String toString()
 		{
-			return "[PARAM-" + (index + 1) + "]";
+			return "[PARAM-" + (_index + 1) + "]";
 		}
 	}
 
@@ -26096,24 +26107,24 @@ public final class NpcStringId
 	 */
 	private static final class FastStringBuilder
 	{
-		private final char[] array;
-		private int len;
+		private final char[] _array;
+		private int _len;
 
 		public FastStringBuilder(final int capacity)
 		{
-			array = new char[capacity];
+			_array = new char[capacity];
 		}
 
 		public final void append(final String text)
 		{
-			text.getChars(0, text.length(), array, len);
-			len += text.length();
+			text.getChars(0, text.length(), _array, _len);
+			_len += text.length();
 		}
 
 		@Override
 		public final String toString()
 		{
-			return new String(array);
+			return new String(_array);
 		}
 	}
 }

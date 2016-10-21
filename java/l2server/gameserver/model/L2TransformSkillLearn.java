@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 /**
  * This class ...
  *
@@ -28,9 +26,9 @@ public final class L2TransformSkillLearn
 	private final int _race_id;
 	private final int _skill_id;
 	private final int _item_id;
-	@Getter private final int level;
+	private final int _level;
 
-	private final int sp;
+	private final int _sp;
 	private final int _min_level;
 
 	public L2TransformSkillLearn(int race_id, int skill_id, int item_id, int level, int sp, int min_level)
@@ -38,8 +36,8 @@ public final class L2TransformSkillLearn
 		_race_id = race_id;
 		_skill_id = skill_id;
 		_item_id = item_id;
-		this.level = level;
-		this.sp = sp;
+		_level = level;
+		_sp = sp;
 		_min_level = min_level;
 	}
 
@@ -49,6 +47,14 @@ public final class L2TransformSkillLearn
 	public int getId()
 	{
 		return _skill_id;
+	}
+
+	/**
+	 * @return Returns the level.
+	 */
+	public int getLevel()
+	{
+		return _level;
 	}
 
 	/**
@@ -64,7 +70,7 @@ public final class L2TransformSkillLearn
 	 */
 	public int getSpCost()
 	{
-		return sp;
+		return _sp;
 	}
 
 	public int getRace()

@@ -25,13 +25,15 @@ import l2server.gameserver.network.serverpackets.HennaEquipList;
  */
 public final class RequestHennaDrawList extends L2GameClientPacket
 {
+
 	// This is just a trigger packet...
-	@SuppressWarnings("unused") private int unknown;
+	@SuppressWarnings("unused")
+	private int _unknown;
 
 	@Override
 	protected void readImpl()
 	{
-		unknown = readD(); // ??
+		_unknown = readD(); // ??
 	}
 
 	@Override

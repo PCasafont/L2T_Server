@@ -38,7 +38,7 @@ import java.util.logging.Logger;
 
 public class L2SkillChargeDmg extends L2Skill
 {
-	private static final Logger logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
 	public L2SkillChargeDmg(StatsSet set)
 	{
@@ -156,7 +156,7 @@ public class L2SkillChargeDmg extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{caster, " did damage ", (int) damage, this, " to ", target});
 					record.setLoggerName("pdam");
-					logDamage.log(record);
+					_logDamage.log(record);
 				}
 
 				target.reduceCurrentHp(finalDamage, caster, this);

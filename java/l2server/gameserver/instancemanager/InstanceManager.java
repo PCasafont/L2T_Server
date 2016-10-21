@@ -53,13 +53,13 @@ import java.util.logging.Level;
  */
 public class InstanceManager
 {
-	private ConcurrentHashMap<Integer, Instance> instanceList = new ConcurrentHashMap<>();
-	private HashMap<Integer, InstanceWorld> instanceWorlds = new HashMap<>();
-	private int dynamic = 300000;
+	private ConcurrentHashMap<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
+	private HashMap<Integer, InstanceWorld> _instanceWorlds = new HashMap<>();
+	private int _dynamic = 300000;
 
 	// InstanceId Names
-	private static final Map<Integer, String> instanceIdNames = new HashMap<>();
-	private Map<Integer, Map<Integer, Long>> playerInstanceTimes = new HashMap<>();
+	private static final Map<Integer, String> _instanceIdNames = new HashMap<>();
+	private Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new HashMap<>();
 
 	private static final String ADD_INSTANCE_TIME =
 			"INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
@@ -70,29 +70,29 @@ public class InstanceManager
 
 	public long getInstanceTime(int playerObjId, int id)
 	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
+		if (!_playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
-		if (playerInstanceTimes.get(playerObjId).containsKey(id))
+		if (_playerInstanceTimes.get(playerObjId).containsKey(id))
 		{
-			return playerInstanceTimes.get(playerObjId).get(id);
+			return _playerInstanceTimes.get(playerObjId).get(id);
 		}
 		return -1;
 	}
 
 	public Map<Integer, Long> getAllInstanceTimes(int playerObjId)
 	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
+		if (!_playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
-		return playerInstanceTimes.get(playerObjId);
+		return _playerInstanceTimes.get(playerObjId);
 	}
 
 	public void setInstanceTime(int playerObjId, int id, long time)
 	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
+		if (!_playerInstanceTimes.containsKey(playerObjId))
 		{
 			restoreInstanceTimes(playerObjId);
 		}
@@ -108,7 +108,7 @@ public class InstanceManager
 			statement.setLong(4, time);
 			statement.execute();
 			statement.close();
-			playerInstanceTimes.get(playerObjId).put(id, time);
+			_playerInstanceTimes.get(playerObjId).put(id, time);
 		}
 		catch (Exception e)
 		{
@@ -132,7 +132,7 @@ public class InstanceManager
 			statement.setInt(2, id);
 			statement.execute();
 			statement.close();
-			playerInstanceTimes.get(playerObjId).remove(id);
+			_playerInstanceTimes.get(playerObjId).remove(id);
 		}
 		catch (Exception e)
 		{
@@ -146,11 +146,11 @@ public class InstanceManager
 
 	public void restoreInstanceTimes(int playerObjId)
 	{
-		if (playerInstanceTimes.containsKey(playerObjId))
+		if (_playerInstanceTimes.containsKey(playerObjId))
 		{
 			return; // already restored
 		}
-		playerInstanceTimes.put(playerObjId, new HashMap<>());
+		_playerInstanceTimes.put(playerObjId, new HashMap<>());
 		Connection con = null;
 		try
 		{
@@ -169,7 +169,7 @@ public class InstanceManager
 				}
 				else
 				{
-					playerInstanceTimes.get(playerObjId).put(id, time);
+					_playerInstanceTimes.get(playerObjId).put(id, time);
 				}
 			}
 
@@ -188,9 +188,9 @@ public class InstanceManager
 
 	public String getInstanceIdName(int id)
 	{
-		if (instanceIdNames.containsKey(id))
+		if (_instanceIdNames.containsKey(id))
 		{
-			return instanceIdNames.get(id);
+			return _instanceIdNames.get(id);
 		}
 		return "UnknownInstance";
 	}
@@ -207,7 +207,7 @@ public class InstanceManager
 				{
 					int id = node.getInt("id");
 					String name = node.getString("name");
-					instanceIdNames.put(id, name);
+					_instanceIdNames.put(id, name);
 				}
 			}
 		}
@@ -227,17 +227,17 @@ public class InstanceManager
 
 	public void addWorld(InstanceWorld world)
 	{
-		instanceWorlds.put(world.instanceId, world);
+		_instanceWorlds.put(world.instanceId, world);
 	}
 
 	public InstanceWorld getWorld(int instanceId)
 	{
-		return instanceWorlds.get(instanceId);
+		return _instanceWorlds.get(instanceId);
 	}
 
 	public InstanceWorld getPlayerWorld(L2PcInstance player)
 	{
-		for (InstanceWorld temp : instanceWorlds.values())
+		for (InstanceWorld temp : _instanceWorlds.values())
 		{
 			if (temp == null)
 			{
@@ -257,25 +257,25 @@ public class InstanceManager
 	{
 		Log.info("Initializing InstanceManager");
 		loadInstanceNames();
-		Log.info("Loaded " + instanceIdNames.size() + " instance names");
+		Log.info("Loaded " + _instanceIdNames.size() + " instance names");
 		createWorld();
 	}
 
 	public static InstanceManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private void createWorld()
 	{
 		Instance themultiverse = new Instance(-1);
 		themultiverse.setName("multiverse");
-		instanceList.put(-1, themultiverse);
+		_instanceList.put(-1, themultiverse);
 		Log.info("Multiverse Instance created");
 
 		Instance universe = new Instance(0);
 		universe.setName("universe");
-		instanceList.put(0, universe);
+		_instanceList.put(0, universe);
 		Log.info("Universe Instance created");
 	}
 
@@ -285,34 +285,34 @@ public class InstanceManager
 		{
 			return;
 		}
-		Instance temp = instanceList.get(instanceid);
+		Instance temp = _instanceList.get(instanceid);
 		if (temp != null)
 		{
 			temp.removeNpcs();
 			temp.removePlayers();
 			temp.removeDoors();
 			temp.cancelTimer();
-			instanceList.remove(instanceid);
-			if (instanceWorlds.containsKey(instanceid))
+			_instanceList.remove(instanceid);
+			if (_instanceWorlds.containsKey(instanceid))
 			{
-				instanceWorlds.remove(instanceid);
+				_instanceWorlds.remove(instanceid);
 			}
 		}
 	}
 
 	public Instance getInstance(int instanceid)
 	{
-		return instanceList.get(instanceid);
+		return _instanceList.get(instanceid);
 	}
 
 	public ConcurrentHashMap<Integer, Instance> getInstances()
 	{
-		return instanceList;
+		return _instanceList;
 	}
 
 	public int getPlayerInstance(int objectId)
 	{
-		for (Instance temp : instanceList.values())
+		for (Instance temp : _instanceList.values())
 		{
 			if (temp == null)
 			{
@@ -336,7 +336,7 @@ public class InstanceManager
 		}
 
 		Instance instance = new Instance(id);
-		instanceList.put(id, instance);
+		_instanceList.put(id, instance);
 		return true;
 	}
 
@@ -348,7 +348,7 @@ public class InstanceManager
 		}
 
 		Instance instance = new Instance(id);
-		instanceList.put(id, instance);
+		_instanceList.put(id, instance);
 		instance.loadInstanceTemplate(template);
 		return true;
 	}
@@ -361,17 +361,18 @@ public class InstanceManager
 	 */
 	public int createDynamicInstance(String template)
 	{
-		while (getInstance(dynamic) != null)
+
+		while (getInstance(_dynamic) != null)
 		{
-			dynamic++;
-			if (dynamic == Integer.MAX_VALUE)
+			_dynamic++;
+			if (_dynamic == Integer.MAX_VALUE)
 			{
 				Log.warning("InstanceManager: More then " + (Integer.MAX_VALUE - 300000) + " instances created");
-				dynamic = 300000;
+				_dynamic = 300000;
 			}
 		}
-		Instance instance = new Instance(dynamic);
-		instanceList.put(dynamic, instance);
+		Instance instance = new Instance(_dynamic);
+		_instanceList.put(_dynamic, instance);
 		if (template != null)
 		{
 			try
@@ -385,7 +386,7 @@ public class InstanceManager
 						e);
 			}
 		}
-		return dynamic;
+		return _dynamic;
 	}
 
 	/**
@@ -532,15 +533,15 @@ public class InstanceManager
 	 */
 	public List<L2PcInstance> getPlayers(int instanceId)
 	{
-		List<L2PcInstance> instancePlayers = new ArrayList<>();
+		List<L2PcInstance> _instancePlayers = new ArrayList<>();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
 			if (player != null && player.getInstanceId() == instanceId)
 			{
-				instancePlayers.add(player);
+				_instancePlayers.add(player);
 			}
 		}
-		return instancePlayers;
+		return _instancePlayers;
 	}
 
 	/**
@@ -628,7 +629,7 @@ public class InstanceManager
 	 */
 	public void setInstanceReuse(int instanceId, int templateId, boolean isHard)
 	{
-		InstanceWorld instance = instanceWorlds.get(instanceId);
+		InstanceWorld instance = _instanceWorlds.get(instanceId);
 		if (instance != null)
 		{
 			for (int playerId : instance.allowed)
@@ -646,7 +647,7 @@ public class InstanceManager
 	 */
 	public void setInstanceReuse(int instanceId, int templateId, int reuseTime)
 	{
-		InstanceWorld instance = instanceWorlds.get(instanceId);
+		InstanceWorld instance = _instanceWorlds.get(instanceId);
 		if (instance != null)
 		{
 			for (int playerId : instance.allowed)
@@ -664,7 +665,7 @@ public class InstanceManager
 	 */
 	public void setInstanceReuse(int instanceId, int templateId, int hour, int minute)
 	{
-		InstanceWorld instance = instanceWorlds.get(instanceId);
+		InstanceWorld instance = _instanceWorlds.get(instanceId);
 		if (instance != null)
 		{
 			Calendar reenter = Calendar.getInstance();
@@ -897,6 +898,6 @@ public class InstanceManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final InstanceManager instance = new InstanceManager();
+		protected static final InstanceManager _instance = new InstanceManager();
 	}
 }

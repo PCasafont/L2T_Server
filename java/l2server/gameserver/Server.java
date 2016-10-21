@@ -50,7 +50,6 @@ import l2server.network.Core;
 import l2server.network.CoreConfig;
 import l2server.util.DeadLockDetector;
 import l2server.util.IPv4Filter;
-import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -71,13 +70,13 @@ import java.util.logging.LogManager;
  */
 public class Server
 {
-	@Getter private final Core<L2GameClient> selectorThread;
-	private final L2GamePacketHandler gamePacketHandler;
-	private final DeadLockDetector deadDetectThread;
-	private final IdFactory idFactory;
+	private final Core<L2GameClient> _selectorThread;
+	private final L2GamePacketHandler _gamePacketHandler;
+	private final DeadLockDetector _deadDetectThread;
+	private final IdFactory _idFactory;
 	public static Server gameServer;
 	public static ServerGui gui;
-	private LoginServerThread loginThread;
+	private LoginServerThread _loginThread;
 	public static final Calendar dateTimeServerStarted = Calendar.getInstance();
 
 	public long getUsedMemoryMB()
@@ -85,14 +84,19 @@ public class Server
 		return (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576; // ;
 	}
 
+	public Core<L2GameClient> getSelectorThread()
+	{
+		return _selectorThread;
+	}
+
 	public L2GamePacketHandler getL2GamePacketHandler()
 	{
-		return gamePacketHandler;
+		return _gamePacketHandler;
 	}
 
 	public DeadLockDetector getDeadLockDetectorThread()
 	{
-		return deadDetectThread;
+		return _deadDetectThread;
 	}
 
 	public Server() throws Exception
@@ -102,9 +106,9 @@ public class Server
 		gameServer = this;
 		Log.finest("used mem:" + getUsedMemoryMB() + "MB");
 
-		idFactory = IdFactory.getInstance();
+		_idFactory = IdFactory.getInstance();
 
-		if (!idFactory.isInitialized())
+		if (!_idFactory.isInitialized())
 		{
 			Log.severe("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
@@ -135,6 +139,7 @@ public class Server
 		SkillTreeTable.getInstance();
 		PledgeSkillTree.getInstance();
 		NobleSkillTable.getInstance();
+		GMSkillTable.getInstance();
 		HeroSkillTable.getInstance();
 		ResidentialSkillTable.getInstance();
 		SubPledgeSkillTree.getInstance();
@@ -419,13 +424,13 @@ public class Server
 
 		if (Config.DEADLOCK_DETECTOR)
 		{
-			deadDetectThread = new DeadLockDetector();
-			deadDetectThread.setDaemon(true);
-			deadDetectThread.start();
+			_deadDetectThread = new DeadLockDetector();
+			_deadDetectThread.setDaemon(true);
+			_deadDetectThread.start();
 		}
 		else
 		{
-			deadDetectThread = null;
+			_deadDetectThread = null;
 		}
 
 		//LameGuard.getInstance();
@@ -439,8 +444,8 @@ public class Server
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
 
-		loginThread = LoginServerThread.getInstance();
-		loginThread.start();
+		_loginThread = LoginServerThread.getInstance();
+		_loginThread.start();
 
 		final CoreConfig sc = new CoreConfig();
 		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
@@ -448,8 +453,8 @@ public class Server
 		sc.SLEEP_TIME = Config.MMO_SELECTOR_SLEEP_TIME;
 		sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
 
-		gamePacketHandler = new L2GamePacketHandler();
-		selectorThread = new Core<>(sc, gamePacketHandler, gamePacketHandler, gamePacketHandler, new IPv4Filter());
+		_gamePacketHandler = new L2GamePacketHandler();
+		_selectorThread = new Core<>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler, new IPv4Filter());
 
 		InetAddress bindAddress = null;
 		if (!Config.GAMESERVER_HOSTNAME.equals("*"))
@@ -468,14 +473,14 @@ public class Server
 
 		try
 		{
-			selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
+			_selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		selectorThread.start();
+		_selectorThread.start();
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
@@ -528,13 +533,13 @@ public class Server
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 	}
 
-	private static long t = 0;
+	static long _t = 0;
 
 	public static void printSection(String s)
 	{
-		//if (t > 0)
-		//	Log.info("Time spent in last section: " + (t - t) / 1000 + "s");
-		t = System.currentTimeMillis();
+		//if (_t > 0)
+		//	Log.info("Time spent in last section: " + (t - _t) / 1000 + "s");
+		_t = System.currentTimeMillis();
 
 		s = "=[ " + s + " ]";
 		while (s.length() < 78)

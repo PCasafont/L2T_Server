@@ -31,7 +31,7 @@ import l2server.util.Rnd;
 
 public class EffectThrowUp extends L2Effect
 {
-	private int x, y, z;
+	private int _x, _y, _z;
 
 	public EffectThrowUp(Env env, L2EffectTemplate template)
 	{
@@ -44,7 +44,8 @@ public class EffectThrowUp extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
+				getEffected().isRaid())
 		{
 			return false;
 		}
@@ -97,40 +98,40 @@ public class EffectThrowUp extends L2Effect
 
 		if (getSkill().getFlyRadius() == -1)
 		{
-			x = getEffector().getX() + Rnd.get(10);
-			y = getEffector().getY() + Rnd.get(10);
-			z = getEffector().getZ() + 5;
+			_x = getEffector().getX() + Rnd.get(10);
+			_y = getEffector().getY() + Rnd.get(10);
+			_z = getEffector().getZ() + 5;
 			if (Config.GEODATA > 0)
 			{
 				Location destiny = GeoData.getInstance()
-						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
+						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
 								getEffected().getInstanceId());
-				x = destiny.getX();
-				y = destiny.getY();
+				_x = destiny.getX();
+				_y = destiny.getY();
 			}
 		}
 		else
 		{
 			// Calculate the new destination with offset included
-			x = getEffector().getX() - (int) (offset * cos);
-			y = getEffector().getY() - (int) (offset * sin);
-			z = getEffected().getZ();
+			_x = getEffector().getX() - (int) (offset * cos);
+			_y = getEffector().getY() - (int) (offset * sin);
+			_z = getEffected().getZ();
 
 			if (Config.GEODATA > 0)
 			{
 				Location destiny = GeoData.getInstance()
-						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
+						.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
 								getEffected().getInstanceId());
-				if (destiny.getX() != x || destiny.getY() != y)
+				if (destiny.getX() != _x || destiny.getY() != _y)
 				{
-					x = destiny.getX() + (int) (cos * 10);
-					y = destiny.getY() + (int) (sin * 10);
+					_x = destiny.getX() + (int) (cos * 10);
+					_y = destiny.getY() + (int) (sin * 10);
 				}
 			}
 		}
 
 		getEffected().startStunning();
-		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.THROW_UP));
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, FlyType.THROW_UP));
 		return true;
 	}
 
@@ -150,7 +151,7 @@ public class EffectThrowUp extends L2Effect
 	public void onExit()
 	{
 		getEffected().stopStunning(false);
-		getEffected().setXYZ(x, y, z);
+		getEffected().setXYZ(_x, _y, _z);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 	}
 }

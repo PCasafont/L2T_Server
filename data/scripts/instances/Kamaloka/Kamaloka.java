@@ -328,7 +328,7 @@ public class Kamaloka extends Quest
 	// skill is casted on the boss when miniboss is defeated
 	// npcId, x, y, z, skill id, skill level
 	/*
-	 * Miniboss information, null if miniboss not spawned
+     * Miniboss information, null if miniboss not spawned
 	 * Skill is casted on the boss when miniboss is defeated
 	 * Default: 5701 (decrease patk)
 	 *
@@ -432,6 +432,7 @@ public class Kamaloka extends Quest
 
 		public KamaWorld()
 		{
+
 		}
 	}
 

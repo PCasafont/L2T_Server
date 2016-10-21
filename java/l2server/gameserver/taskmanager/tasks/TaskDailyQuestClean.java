@@ -32,6 +32,7 @@ import java.util.logging.Level;
  */
 public class TaskDailyQuestClean extends Task
 {
+
 	private static final String NAME = "daily_quest_clean";
 
 	private static final String[] _daily_names =

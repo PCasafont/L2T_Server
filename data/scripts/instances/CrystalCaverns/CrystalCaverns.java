@@ -43,6 +43,7 @@ import java.util.Map;
 
 public class CrystalCaverns extends Quest
 {
+
 	private static class CrystalGolem
 	{
 		public L2ItemInstance foodItem = null;
@@ -72,14 +73,14 @@ public class CrystalCaverns extends Quest
 		public List<L2Npc> guards = new ArrayList<L2Npc>();
 		public List<L2Npc> oracle = new ArrayList<L2Npc>();
 		// baylor variables
-		private List<L2PcInstance> raiders = new ArrayList<L2PcInstance>();
-		private int raidStatus = 0;
-		private long dragonClawStart = 0;
-		private int dragonClawNeed = 0;
-		private List<L2Npc> animationMobs = new ArrayList<L2Npc>();
-		private L2Npc camera = null;
-		private L2Npc baylor = null;
-		private L2Npc alarm = null;
+		private List<L2PcInstance> _raiders = new ArrayList<L2PcInstance>();
+		private int _raidStatus = 0;
+		private long _dragonClawStart = 0;
+		private int _dragonClawNeed = 0;
+		private List<L2Npc> _animationMobs = new ArrayList<L2Npc>();
+		private L2Npc _camera = null;
+		private L2Npc _baylor = null;
+		private L2Npc _alarm = null;
 
 		public CCWorld(Long time)
 		{
@@ -357,6 +358,7 @@ public class CrystalCaverns extends Quest
 			{22418, 146795, 152641, -12165, 33850}
 			// {22308, 145093, 152502, -12165, 31841},{22308, 146158, 152776, -12165, 30810},
 			// {22308, 146116, 152976, -12133, 32571},
+
 	};
 	private static int[][] STEAM2_SPAWNS = {
 			{22306, 147740, 152767, -12165, 65043},
@@ -375,7 +377,7 @@ public class CrystalCaverns extends Quest
 			{22307, 151058, 152316, -12146, 65342},
 			{22307, 151057, 152461, -12165, 2171}
 	/*{22308, 150794, 152455, -12165, 31613},{22308, 150665, 152383, -12165, 32767},
-	{22308, 151697, 152621, -12167, 31423},{22309, 151061, 152581, -12165, 6228},
+    {22308, 151697, 152621, -12167, 31423},{22309, 151061, 152581, -12165, 6228},
 	{22309, 150653, 152253, -12132, 31343},{22309, 150628, 152431, -12165, 33022},
 	{22309, 151620, 152487, -12165, 30114},{22309, 151672, 152544, -12165, 31846},
 	{22309, 150488, 152350, -12165, 29072},{22310, 151139, 152238, -12132, 1069}*/
@@ -426,7 +428,7 @@ public class CrystalCaverns extends Quest
 		{
 			if (door.getDoorId() == doorId)
 			{
-				if (door.isOpen())
+				if (door.getOpen())
 				{
 					door.closeMe();
 				}
@@ -599,21 +601,21 @@ public class CrystalCaverns extends Quest
 		cos = dx / distance;
 
 		// Calculate the new destination with offset included
-		int x = effector.getX() - (int) (offset * cos);
-		int y = effector.getY() - (int) (offset * sin);
-		int z = effected.getZ();
+		int _x = effector.getX() - (int) (offset * cos);
+		int _y = effector.getY() - (int) (offset * sin);
+		int _z = effected.getZ();
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
-			x = destiny.getX();
-			y = destiny.getY();
+					.moveCheck(effected.getX(), effected.getY(), effected.getZ(), _x, _y, _z, effected.getInstanceId());
+			_x = destiny.getX();
+			_y = destiny.getY();
 		}
-		effected.broadcastPacket(new FlyToLocation(effected, x, y, z, FlyType.THROW_UP));
+		effected.broadcastPacket(new FlyToLocation(effected, _x, _y, _z, FlyType.THROW_UP));
 
 		// maybe is need force set X,Y,Z
-		effected.setXYZ(x, y, z);
+		effected.setXYZ(_x, _y, _z);
 		effected.broadcastPacket(new ValidateLocation(effected));
 	}
 
@@ -851,6 +853,7 @@ public class CrystalCaverns extends Quest
 		addSpawn(29102,154380,143468,-12708,43943,false,0,false,world.instanceId,0);//down power
 		addSpawn(32271,153573,142069,-9722,11175,false,0,false,world.instanceId);
 		world.Baylor = addSpawn(BAYLOR,153557,142089,-12735,11175,false,0,false,world.instanceId,0);
+
 	}*/
 
 	@Override
@@ -915,6 +918,7 @@ public class CrystalCaverns extends Quest
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
+
 		boolean doReturn = true;
 		for (L2Object obj : targets)
 		{
@@ -974,22 +978,22 @@ public class CrystalCaverns extends Quest
 			{
 				CCWorld world = (CCWorld) tmpworld;
 
-				if (world.dragonClawStart + DRAGONCLAWTIME <= System.currentTimeMillis() || world.dragonClawNeed <= 0)
+				if (world._dragonClawStart + DRAGONCLAWTIME <= System.currentTimeMillis() || world._dragonClawNeed <= 0)
 				{
-					world.dragonClawStart = System.currentTimeMillis();
-					world.dragonClawNeed = caster.getParty().getMemberCount() - 1;
+					world._dragonClawStart = System.currentTimeMillis();
+					world._dragonClawNeed = caster.getParty().getMemberCount() - 1;
 				}
 				else
 				{
-					world.dragonClawNeed--;
+					world._dragonClawNeed--;
 				}
-				if (world.dragonClawNeed == 0)
+				if (world._dragonClawNeed == 0)
 				{
 					npc.stopSkillEffects(5225);
 					npc.broadcastPacket(new MagicSkillUse(npc, npc, 5480, 1, 4000, 0, 0));
-					if (world.raidStatus == 3)
+					if (world._raidStatus == 3)
 					{
-						world.raidStatus++;
+						world._raidStatus++;
 					}
 				}
 			}
@@ -1120,7 +1124,7 @@ public class CrystalCaverns extends Quest
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 			if (tmpworld instanceof CCWorld)
 			{
-				((CCWorld) tmpworld).raidStatus++;
+				((CCWorld) tmpworld)._raidStatus++;
 			}
 		}
 		return super.onSpellFinished(npc, player, skill);
@@ -1275,16 +1279,16 @@ public class CrystalCaverns extends Quest
 					int y = (int) (radius * Math.sin(i * 0.618));
 					L2Npc mob = addSpawn(29104, 153571 + x, 142075 + y, -12737, 0, false, 0, false, world.instanceId);
 					mob.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					world.animationMobs.add(mob);
+					world._animationMobs.add(mob);
 				}
 				startQuestTimer("baylorEffect0", 200, npc, null);
 			}
 			else if (event.equalsIgnoreCase("RaidStart"))
 			{
-				world.camera.decayMe();
-				world.camera = null;
+				world._camera.decayMe();
+				world._camera = null;
 				npc.setIsParalyzed(false);
-				for (L2PcInstance p : world.raiders)
+				for (L2PcInstance p : world._raiders)
 				{
 					p.setIsParalyzed(false);
 					Throw(npc, p);
@@ -1293,12 +1297,12 @@ public class CrystalCaverns extends Quest
 						Throw(npc, p.getPet());
 					}
 				}
-				world.raidStatus = 0;
-				for (L2Npc mob : world.animationMobs)
+				world._raidStatus = 0;
+				for (L2Npc mob : world._animationMobs)
 				{
 					mob.doDie(mob);
 				}
-				world.animationMobs.clear();
+				world._animationMobs.clear();
 				startQuestTimer("baylor_despawn", 60000, npc, null, true);
 				startQuestTimer("checkBaylorAttack", 1000, npc, null);
 			}
@@ -1309,7 +1313,7 @@ public class CrystalCaverns extends Quest
 					cancelQuestTimers("checkBaylorAttack");
 					startQuestTimer("baylor_alarm", 40000, npc, null);
 					startQuestTimer("baylor_skill", 5000, npc, null, true);
-					world.raidStatus++;
+					world._raidStatus++;
 				}
 				else
 				{
@@ -1318,22 +1322,22 @@ public class CrystalCaverns extends Quest
 			}
 			else if (event.equalsIgnoreCase("baylor_alarm"))
 			{
-				if (world.alarm == null)
+				if (world._alarm == null)
 				{
 					int[] spawnLoc = ALARMSPAWN[Rnd.get(ALARMSPAWN.length)];
 					npc.addSkill(SkillTable.getInstance().getInfo(5244, 1));
 					npc.addSkill(SkillTable.getInstance().getInfo(5245, 1));
-					world.alarm = addSpawn(ALARMID, spawnLoc[0], spawnLoc[1], spawnLoc[2], 10800, false, 0, false,
+					world._alarm = addSpawn(ALARMID, spawnLoc[0], spawnLoc[1], spawnLoc[2], 10800, false, 0, false,
 							world.instanceId);
-					world.alarm.disableCoreAI(true);
-					world.alarm.setIsImmobilized(true);
-					world.alarm.broadcastPacket(new CreatureSay(world.alarm.getObjectId(), 1, world.alarm.getName(),
+					world._alarm.disableCoreAI(true);
+					world._alarm.setIsImmobilized(true);
+					world._alarm.broadcastPacket(new CreatureSay(world._alarm.getObjectId(), 1, world._alarm.getName(),
 							"Alarm signal was switched off! All will in the danger, if we do not take measures immediately!"));
 				}
 			}
 			else if (event.equalsIgnoreCase("baylor_skill"))
 			{
-				if (world.baylor == null)
+				if (world._baylor == null)
 				{
 					cancelQuestTimers("baylor_skill");
 				}
@@ -1343,10 +1347,10 @@ public class CrystalCaverns extends Quest
 					double nowHp = npc.getStatus().getCurrentHp();
 					int rand = Rnd.get(100);
 
-					if (nowHp < maxHp * 0.2 && world.raidStatus < 3 && npc.getFirstEffect(5224) == null &&
+					if (nowHp < maxHp * 0.2 && world._raidStatus < 3 && npc.getFirstEffect(5224) == null &&
 							npc.getFirstEffect(5225) == null)
 					{
-						if (nowHp < maxHp * 0.15 && world.raidStatus == 2)
+						if (nowHp < maxHp * 0.15 && world._raidStatus == 2)
 						{
 							npc.doCast(SkillTable.getInstance().getInfo(5225, 1));
 							npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 1, npc.getName(),
@@ -1357,7 +1361,7 @@ public class CrystalCaverns extends Quest
 							npc.doCast(SkillTable.getInstance().getInfo(5225, 1));
 							npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 1, npc.getName(),
 									"Demons King Beleth, give me power! Aaaaa!!!"));
-							startQuestTimer("baylor_remove_invul", 30000, world.baylor, null);
+							startQuestTimer("baylor_remove_invul", 30000, world._baylor, null);
 						}
 					}
 					else if (nowHp < maxHp * 0.3 && rand > 50 && npc.getFirstEffect(5225) == null &&
@@ -1367,7 +1371,7 @@ public class CrystalCaverns extends Quest
 					}
 					else if (rand < 33)
 					{
-						npc.setTarget(world.raiders.get(Rnd.get(world.raiders.size())));
+						npc.setTarget(world._raiders.get(Rnd.get(world._raiders.size())));
 						npc.doCast(SkillTable.getInstance().getInfo(5229, 1));
 					}
 				}
@@ -1378,12 +1382,12 @@ public class CrystalCaverns extends Quest
 			}
 			else if (event.equalsIgnoreCase("Baylor"))
 			{
-				world.baylor = addSpawn(29099, 153572, 142075, -12738, 10800, false, 0, false, world.instanceId);
-				world.baylor.setIsParalyzed(true);
-				world.camera = addSpawn(29120, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
-				world.camera.broadcastPacket(
-						new SpecialCamera(world.camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
-				startQuestTimer("baylorMinions", 2000, world.baylor, null);
+				world._baylor = addSpawn(29099, 153572, 142075, -12738, 10800, false, 0, false, world.instanceId);
+				world._baylor.setIsParalyzed(true);
+				world._camera = addSpawn(29120, 153273, 141400, -12738, 10800, false, 0, false, world.instanceId);
+				world._camera.broadcastPacket(
+						new SpecialCamera(world._camera.getObjectId(), 700, -45, 160, 500, 15200, 0, 0, 1, 0));
+				startQuestTimer("baylorMinions", 2000, world._baylor, null);
 			}
 			else if (!event.endsWith("Food"))
 			{
@@ -1782,23 +1786,23 @@ public class CrystalCaverns extends Quest
 			}
 			if (npc.getNpcId() == ALARMID)
 			{
-				world.baylor.removeSkill(5244);
-				world.baylor.removeSkill(5245);
-				world.alarm = null;
-				if (world.baylor.getMaxHp() * 0.3 < world.baylor.getStatus().getCurrentHp())
+				world._baylor.removeSkill(5244);
+				world._baylor.removeSkill(5245);
+				world._alarm = null;
+				if (world._baylor.getMaxHp() * 0.3 < world._baylor.getStatus().getCurrentHp())
 				{
-					startQuestTimer("baylor_alarm", 40000, world.baylor, null);
+					startQuestTimer("baylor_alarm", 40000, world._baylor, null);
 				}
 			}
 			else if (npc.getNpcId() == BAYLOR)
 			{
 				world.status = 31;
-				world.baylor = null;
+				world._baylor = null;
 				npc.broadcastPacket(
 						new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 				Instance baylorInstance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 				baylorInstance.setDuration(300000);
-				startQuestTimer("spawn_oracle", 1000, npc, null);
+				this.startQuestTimer("spawn_oracle", 1000, npc, null);
 				giveRewards(player, npc.getInstanceId(), -1, true);
 			}
 		}
@@ -1958,11 +1962,11 @@ public class CrystalCaverns extends Quest
 			{
 				if (world.status < 30 && checkBaylorConditions(player))
 				{
-					world.raiders.clear();
+					world._raiders.clear();
 					L2Party party = player.getParty();
 					if (party == null)
 					{
-						world.raiders.add(player);
+						world._raiders.add(player);
 					}
 					else
 					{
@@ -1972,7 +1976,7 @@ public class CrystalCaverns extends Quest
 							partyMember.destroyItemByItemId("Quest",
 									rnd < 33 ? BOSS_CRYSTAL_1 : rnd < 67 ? BOSS_CRYSTAL_2 : BOSS_CRYSTAL_3, 1,
 									partyMember, true);
-							world.raiders.add(partyMember);
+							world._raiders.add(partyMember);
 						}
 					}
 				}
@@ -1987,8 +1991,8 @@ public class CrystalCaverns extends Quest
 
 				int radius = 150;
 				int i = 0;
-				int members = world.raiders.size();
-				for (L2PcInstance p : world.raiders)
+				int members = world._raiders.size();
+				for (L2PcInstance p : world._raiders)
 				{
 					int x = (int) (radius * Math.cos(i * 2 * Math.PI / members));
 					int y = (int) (radius * Math.sin(i++ * 2 * Math.PI / members));
@@ -2073,7 +2077,7 @@ public class CrystalCaverns extends Quest
 					{
 						if (door.getDoorId() == room + 24220000)
 						{
-							if (door.isOpen())
+							if (door.getOpen())
 							{
 								return "";
 							}
@@ -2135,7 +2139,7 @@ public class CrystalCaverns extends Quest
 					{
 						if (door.getDoorId() == doorId)
 						{
-							if (door.isOpen() && world.openedDoors.get(door) == character)
+							if (door.getOpen() && world.openedDoors.get(door) == character)
 							{
 								door.closeMe();
 								world.openedDoors.remove(door);

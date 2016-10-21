@@ -32,7 +32,7 @@ import l2server.loginserver.network.serverpackets.ServerList;
  */
 public class RequestAuthLogin2 extends L2LoginClientPacket
 {
-	private String authKey;
+	private String _authKey;
 
 	@Override
 	public boolean readImpl()
@@ -44,7 +44,7 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		readD(); // ???
 		readC(); // ???
 		readH(); // ???
-		authKey = readString();
+		_authKey = readString();
 		readC(); // ???
 		readH(); // ???
 		readD(); // ???
@@ -79,73 +79,73 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		LoginController lc = LoginController.getInstance();
 		/*try
 		{*/
-		AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
-		String user = lc.loginValid(authKey, client);
-		if (user != null)
-		{
-			result = lc.tryAuthLogin(authKey, client, user);
-		}
+			AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
+			String user = lc.loginValid(_authKey, client);
+			if (user != null)
+			{
+				result = lc.tryAuthLogin(_authKey, client, user);
+			}
 
-		switch (result)
-		{
-			case AUTH_SUCCESS:
-				client.setAccount(user);
-				lc.getCharactersOnAccount(user);
-				client.setState(LoginClientState.AUTHED_LOGIN);
-				client.setSessionKey(lc.assignSessionKeyToClient(user, client));
-				if (Config.SHOW_LICENCE)
-				{
-					client.sendPacket(new LoginOk(getClient().getSessionKey()));
-				}
-				else
-				{
-					int time = 0;
-					while (getClient().getCharsOnServ() == null && time < 10)
+			switch (result)
+			{
+				case AUTH_SUCCESS:
+					client.setAccount(user);
+					lc.getCharactersOnAccount(user);
+					client.setState(LoginClientState.AUTHED_LOGIN);
+					client.setSessionKey(lc.assignSessionKeyToClient(user, client));
+					if (Config.SHOW_LICENCE)
 					{
-						try
-						{
-							Thread.sleep(100);
-						}
-						catch (Exception e)
-						{
-							e.printStackTrace();
-						}
-						time++;
+						client.sendPacket(new LoginOk(getClient().getSessionKey()));
 					}
-					getClient().sendPacket(new ServerList(getClient()));
-				}
-				break;
-			case INVALID_PASSWORD:
-				client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
-				break;
-			case ACCOUNT_BANNED:
-				client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
-				break;
-			case ALREADY_ON_LS:
-				L2LoginClient oldClient;
-				if ((oldClient = lc.getAuthedClient(user)) != null)
-				{
-					// kick the other client
-					oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
-					lc.removeAuthedLoginClient(user);
-				}
-				// kick also current client
-				client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
-				break;
-			case ALREADY_ON_GS:
-				GameServerInfo gsi;
-				if ((gsi = lc.getAccountOnGameServer(user)) != null)
-				{
+					else
+					{
+						int time = 0;
+						while (getClient().getCharsOnServ() == null && time < 10)
+						{
+							try
+							{
+								Thread.sleep(100);
+							}
+							catch (Exception e)
+							{
+								e.printStackTrace();
+							}
+							time++;
+						}
+						getClient().sendPacket(new ServerList(getClient()));
+					}
+					break;
+				case INVALID_PASSWORD:
+					client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
+					break;
+				case ACCOUNT_BANNED:
+					client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
+					break;
+				case ALREADY_ON_LS:
+					L2LoginClient oldClient;
+					if ((oldClient = lc.getAuthedClient(user)) != null)
+					{
+						// kick the other client
+						oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+						lc.removeAuthedLoginClient(user);
+					}
+					// kick also current client
 					client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
-
-					// kick from there
-					if (gsi.isAuthed())
+					break;
+				case ALREADY_ON_GS:
+					GameServerInfo gsi;
+					if ((gsi = lc.getAccountOnGameServer(user)) != null)
 					{
-						gsi.getGameServerThread().kickPlayer(user);
+						client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+
+						// kick from there
+						if (gsi.isAuthed())
+						{
+							gsi.getGameServerThread().kickPlayer(user);
+						}
 					}
-				}
-				break;
-		}
+					break;
+			}
 		/*}
 		catch (HackingException e)
 		{

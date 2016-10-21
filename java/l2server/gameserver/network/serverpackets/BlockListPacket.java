@@ -23,6 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class BlockListPacket extends L2GameServerPacket
 {
+
 	private L2PcInstance player;
 
 	public BlockListPacket(L2PcInstance activeChar)

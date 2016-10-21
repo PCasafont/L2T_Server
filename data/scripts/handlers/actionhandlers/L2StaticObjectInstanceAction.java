@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.log.Log;
 
 public class L2StaticObjectInstanceAction implements IActionHandler
 {
@@ -35,7 +34,7 @@ public class L2StaticObjectInstanceAction implements IActionHandler
 	{
 		if (((L2StaticObjectInstance) target).getType() < 0)
 		{
-			Log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
+			_log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
 					((L2StaticObjectInstance) target).getStaticObjectId());
 		}
 

@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -40,7 +39,7 @@ import java.util.logging.Logger;
  */
 public class AdminMenu implements IAdminCommandHandler
 {
-	private static final Logger log = Logger.getLogger(AdminMenu.class.getName());
+	private static final Logger _log = Logger.getLogger(AdminMenu.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_char_manage",
@@ -115,7 +114,7 @@ public class AdminMenu implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.WARNING, "", e);
+				_log.log(Level.WARNING, "", e);
 			}
 		}
 		else if (command.startsWith("admin_recall_clan_menu"))
@@ -145,7 +144,7 @@ public class AdminMenu implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.WARNING, "", e);
+				_log.log(Level.WARNING, "", e);
 			}
 		}
 		else if (command.startsWith("admin_goto_char_menu"))
@@ -196,7 +195,7 @@ public class AdminMenu implements IAdminCommandHandler
 				if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 				{
 					activeChar.sendMessage("You don't have the access right to use this command!");
-					Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+					_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 							", but have no access to it!");
 					return false;
 				}
@@ -214,7 +213,7 @@ public class AdminMenu implements IAdminCommandHandler
 				if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 				{
 					activeChar.sendMessage("You don't have the access right to use this command!");
-					Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+					_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 							", but have no access to it!");
 					return false;
 				}

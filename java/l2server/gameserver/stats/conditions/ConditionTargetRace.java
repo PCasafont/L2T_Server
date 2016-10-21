@@ -27,7 +27,8 @@ import l2server.gameserver.util.Util;
  */
 public class ConditionTargetRace extends Condition
 {
-	private final Race[] races;
+
+	private final Race[] _races;
 
 	/**
 	 * Instantiates a new condition target race.
@@ -36,7 +37,7 @@ public class ConditionTargetRace extends Condition
 	 */
 	public ConditionTargetRace(Race[] races)
 	{
-		this.races = races;
+		_races = races;
 	}
 
 	@Override
@@ -46,6 +47,6 @@ public class ConditionTargetRace extends Condition
 		{
 			return false;
 		}
-		return Util.contains(races, env.target.getActingPlayer().getRace());
+		return Util.contains(_races, env.target.getActingPlayer().getRace());
 	}
 }

@@ -30,29 +30,30 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
-import lombok.Getter;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
 
 @Deprecated
 public class RequestBuyProcure extends L2GameClientPacket
 {
+
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	@SuppressWarnings("unused") private int listId;
-	private Procure[] items = null;
+	@SuppressWarnings("unused")
+	private int _listId;
+	private Procure[] _items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		listId = readD();
+		_listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Procure[count];
+		_items = new Procure[count];
 		for (int i = 0; i < count; i++)
 		{
 			readD(); //service
@@ -60,10 +61,10 @@ public class RequestBuyProcure extends L2GameClientPacket
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new Procure(itemId, cnt);
+			_items[i] = new Procure(itemId, cnt);
 		}
 	}
 
@@ -81,7 +82,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			return;
 		}
 
-		if (items == null)
+		if (_items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -114,7 +115,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		int slots = 0;
 		int weight = 0;
 
-		for (Procure i : items)
+		for (Procure i : _items)
 		{
 			i.setReward(castle);
 
@@ -146,7 +147,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		// Proceed the purchase
 		InventoryUpdate playerIU = new InventoryUpdate();
 
-		for (Procure i : items)
+		for (Procure i : _items)
 		{
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
@@ -199,20 +200,35 @@ public class RequestBuyProcure extends L2GameClientPacket
 
 	private static class Procure
 	{
-		@Getter private final int itemId;
-		@Getter private final long count;
-		@Getter private int reward;
+		private final int _itemId;
+		private final long _count;
+		private int _reward;
 
 		public Procure(int id, long num)
 		{
-			itemId = id;
-			count = num;
+			_itemId = id;
+			_count = num;
+		}
+
+		public int getItemId()
+		{
+			return _itemId;
+		}
+
+		public long getCount()
+		{
+			return _count;
+		}
+
+		public int getReward()
+		{
+			return _reward;
 		}
 
 		public void setReward(Castle c)
 		{
-			reward = L2Manor.getInstance()
-					.getRewardItem(itemId, c.getCrop(itemId, CastleManorManager.PERIOD_CURRENT).getReward());
+			_reward = L2Manor.getInstance()
+					.getRewardItem(_itemId, c.getCrop(_itemId, CastleManorManager.PERIOD_CURRENT).getReward());
 		}
 	}
 }

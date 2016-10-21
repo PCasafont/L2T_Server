@@ -27,12 +27,13 @@ import java.util.logging.Level;
  */
 public final class RequestLinkHtml extends L2GameClientPacket
 {
-	private String link;
+
+	private String _link;
 
 	@Override
 	protected void readImpl()
 	{
-		link = readS();
+		_link = readS();
 	}
 
 	@Override
@@ -44,14 +45,14 @@ public final class RequestLinkHtml extends L2GameClientPacket
 			return;
 		}
 
-		if (link.contains("..") || !link.contains(".htm"))
+		if (_link.contains("..") || !_link.contains(".htm"))
 		{
-			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + link + "', skipped");
+			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + _link + "', skipped");
 			return;
 		}
 		try
 		{
-			String filename = "" + link;
+			String filename = "" + _link;
 			NpcHtmlMessage msg = new NpcHtmlMessage(0);
 			msg.disableValidation();
 			msg.setFile(actor.getHtmlPrefix(), filename);

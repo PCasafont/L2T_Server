@@ -26,7 +26,6 @@ import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Formulas;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -35,19 +34,20 @@ import java.util.logging.Level;
 
 public class CharStatus
 {
-	@Getter private L2Character activeChar;
 
-	private double currentHp = 0; //Current HP of the L2Character
-	private double currentMp = 0; //Current MP of the L2Character
+	private L2Character _activeChar;
+
+	private double _currentHp = 0; //Current HP of the L2Character
+	private double _currentMp = 0; //Current MP of the L2Character
 
 	/**
 	 * Array containing all clients that need to be notified about hp/mp updates of the L2Character
 	 */
-	private Set<L2Character> statusListener;
+	private Set<L2Character> _statusListener;
 
-	private Future<?> regTask;
+	private Future<?> _regTask;
 
-	protected byte flagsRegenActive = 0;
+	protected byte _flagsRegenActive = 0;
 
 	protected static final byte REGEN_FLAG_CP = 4;
 	private static final byte REGEN_FLAG_HP = 1;
@@ -55,7 +55,7 @@ public class CharStatus
 
 	public CharStatus(L2Character activeChar)
 	{
-		this.activeChar = activeChar;
+		_activeChar = activeChar;
 	}
 
 	/**
@@ -111,11 +111,11 @@ public class CharStatus
 	 */
 	public final Set<L2Character> getStatusListener()
 	{
-		if (statusListener == null)
+		if (_statusListener == null)
 		{
-			statusListener = new CopyOnWriteArraySet<>();
+			_statusListener = new CopyOnWriteArraySet<>();
 		}
-		return statusListener;
+		return _statusListener;
 	}
 
 	// place holder, only PcStatus has CP
@@ -128,7 +128,7 @@ public class CharStatus
 	 * <p>
 	 * <B><U> Overridden in </U> :</B><BR><BR>
 	 * <li> L2Attackable : Set overhit values</li><BR>
-	 * <li> L2Npc : Update the attacker AggroInfo of the L2Attackable aggroList and clear duel status of the attacking players</li><BR><BR>
+	 * <li> L2Npc : Update the attacker AggroInfo of the L2Attackable _aggroList and clear duel status of the attacking players</li><BR><BR>
 	 *
 	 * @param attacker The L2Character who attacks
 	 */
@@ -149,7 +149,7 @@ public class CharStatus
 			return;
 		}
 
-		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getAppearance().isInvisible();
+		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getAppearance().getInvisible();
 		if (!isDOT && !isHPConsumption || isHide)
 		{
 			getActiveChar().stopEffectsOnDamage(awake, (int) value);
@@ -262,7 +262,7 @@ public class CharStatus
 	 */
 	public final synchronized void startHpMpRegeneration()
 	{
-		if (regTask == null && !getActiveChar().isDead())
+		if (_regTask == null && !getActiveChar().isDead())
 		{
 			if (Config.DEBUG)
 			{
@@ -273,7 +273,7 @@ public class CharStatus
 			int period = Formulas.getRegeneratePeriod(getActiveChar());
 
 			// Create the HP/MP/CP Regeneration task
-			regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new RegenTask(), period, period);
+			_regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new RegenTask(), period, period);
 		}
 	}
 
@@ -286,7 +286,7 @@ public class CharStatus
 	 */
 	public final synchronized void stopHpMpRegeneration()
 	{
-		if (regTask != null)
+		if (_regTask != null)
 		{
 			if (Config.DEBUG)
 			{
@@ -294,11 +294,11 @@ public class CharStatus
 			}
 
 			// Stop the HP/MP/CP Regeneration task
-			regTask.cancel(false);
-			regTask = null;
+			_regTask.cancel(false);
+			_regTask = null;
 
 			// Set the RegenActive flag to false
-			flagsRegenActive = 0;
+			_flagsRegenActive = 0;
 		}
 	}
 
@@ -315,7 +315,7 @@ public class CharStatus
 
 	public final double getCurrentHp()
 	{
-		return currentHp;
+		return _currentHp;
 	}
 
 	public final void setCurrentHp(double newHp)
@@ -343,11 +343,11 @@ public class CharStatus
 			if (newHp >= maxHp)
 			{
 				// Set the RegenActive flag to false
-				currentHp = maxHp;
-				flagsRegenActive &= ~REGEN_FLAG_HP;
+				_currentHp = maxHp;
+				_flagsRegenActive &= ~REGEN_FLAG_HP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (flagsRegenActive == 0)
+				if (_flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -355,8 +355,8 @@ public class CharStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				currentHp = newHp;
-				flagsRegenActive |= REGEN_FLAG_HP;
+				_currentHp = newHp;
+				_flagsRegenActive |= REGEN_FLAG_HP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
@@ -378,7 +378,7 @@ public class CharStatus
 
 	public final double getCurrentMp()
 	{
-		return currentMp;
+		return _currentMp;
 	}
 
 	public final void setCurrentMp(double newMp)
@@ -401,11 +401,11 @@ public class CharStatus
 			if (newMp >= maxMp)
 			{
 				// Set the RegenActive flag to false
-				currentMp = maxMp;
-				flagsRegenActive &= ~REGEN_FLAG_MP;
+				_currentMp = maxMp;
+				_flagsRegenActive &= ~REGEN_FLAG_MP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (flagsRegenActive == 0)
+				if (_flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -413,8 +413,8 @@ public class CharStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				currentMp = newMp;
-				flagsRegenActive |= REGEN_FLAG_MP;
+				_currentMp = newMp;
+				_flagsRegenActive |= REGEN_FLAG_MP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
@@ -476,5 +476,10 @@ public class CharStatus
 				Log.log(Level.SEVERE, "", e);
 			}
 		}
+	}
+
+	public L2Character getActiveChar()
+	{
+		return _activeChar;
 	}
 }

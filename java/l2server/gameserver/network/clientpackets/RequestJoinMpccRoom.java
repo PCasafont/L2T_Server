@@ -7,14 +7,16 @@ import l2server.log.Log;
  */
 public class RequestJoinMpccRoom extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int unk;
-	@SuppressWarnings("unused") private int id;
+	@SuppressWarnings("unused")
+	private int _unk;
+	@SuppressWarnings("unused")
+	private int _id;
 
 	@Override
 	public void readImpl()
 	{
-		unk = readD();
-		id = readD();
+		_unk = readD();
+		_id = readD();
 	}
 
 	@Override

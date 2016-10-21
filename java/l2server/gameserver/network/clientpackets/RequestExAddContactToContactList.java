@@ -27,12 +27,12 @@ import l2server.gameserver.network.serverpackets.ExConfirmAddingContact;
  */
 public class RequestExAddContactToContactList extends L2GameClientPacket
 {
-	private String name;
+	private String _name;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
+		_name = readS();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class RequestExAddContactToContactList extends L2GameClientPacket
 			return;
 		}
 
-		if (name == null)
+		if (_name == null)
 		{
 			return;
 		}
@@ -54,7 +54,7 @@ public class RequestExAddContactToContactList extends L2GameClientPacket
 			return;
 		}
 
-		boolean charAdded = activeChar.getContactList().add(name);
-		activeChar.sendPacket(new ExConfirmAddingContact(name, charAdded));
+		boolean charAdded = activeChar.getContactList().add(_name);
+		activeChar.sendPacket(new ExConfirmAddingContact(_name, charAdded));
 	}
 }

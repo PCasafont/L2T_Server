@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class AdminForgePacket extends L2GameServerPacket
 {
-	private List<Part> parts = new ArrayList<>();
+	private List<Part> _parts = new ArrayList<>();
 
 	private static class Part
 	{
@@ -42,6 +42,7 @@ public class AdminForgePacket extends L2GameServerPacket
 
 	public AdminForgePacket()
 	{
+
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +51,7 @@ public class AdminForgePacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		for (Part p : parts)
+		for (Part p : _parts)
 		{
 			generate(p.b, p.str);
 		}
@@ -102,6 +103,6 @@ public class AdminForgePacket extends L2GameServerPacket
 
 	public void addPart(byte b, String string)
 	{
-		parts.add(new Part(b, string));
+		_parts.add(new Part(b, string));
 	}
 }

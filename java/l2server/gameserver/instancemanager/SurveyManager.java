@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,7 +30,7 @@ import java.util.Map;
  */
 public class SurveyManager
 {
-	private static SurveyManager instance;
+	private static SurveyManager _instance;
 
 	private final String GET_CURRENT_SURVEY =
 			"SELECT survey_id,question,description FROM survey WHERE survey_id = (SELECT MAX(survey_id) FROM survey where active = 1)";
@@ -40,11 +39,11 @@ public class SurveyManager
 	private final String GET_CURRENT_SURVEY_ANSWERS = "SELECT charId FROM survey_answer WHERE survey_id = ?";
 	private final String STORE_ANSWER = "INSERT INTO survey_answer (charId,survey_id,answer_id) VALUES (?,?)";
 
-	private int id = 0;
-	@Getter private String question;
-	@Getter private String description;
-	private Map<Integer, String> possibleAnswers;
-	private List<Integer> answers;
+	private int _id = 0;
+	private String _question;
+	private String _description;
+	private Map<Integer, String> _possibleAnswers;
+	private List<Integer> _answers;
 
 	private SurveyManager()
 	{
@@ -62,12 +61,12 @@ public class SurveyManager
 
 			if (rset.next())
 			{
-				id = rset.getInt("survey_id");
-				question = rset.getString("question");
-				description = rset.getString("description");
+				_id = rset.getInt("survey_id");
+				_question = rset.getString("question");
+				_description = rset.getString("description");
 
 				PreparedStatement statement2 = con.prepareStatement(GET_CURRENT_SURVEY_POSSIBLE_ANSWERS);
-				statement2.setInt(1, id);
+				statement2.setInt(1, _id);
 				ResultSet rset2 = statement2.executeQuery();
 				Map<Integer, String> possibleAnswers = new HashMap<>();
 				while (rset2.next())
@@ -75,10 +74,10 @@ public class SurveyManager
 					possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
 				}
 
-				this.possibleAnswers = possibleAnswers;
+				_possibleAnswers = possibleAnswers;
 
 				statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
-				statement2.setInt(1, id);
+				statement2.setInt(1, _id);
 				rset2 = statement2.executeQuery();
 				List<Integer> answers = new ArrayList<>();
 				while (rset2.next())
@@ -86,7 +85,7 @@ public class SurveyManager
 					answers.add(rset.getInt("charId"));
 				}
 
-				this.answers = answers;
+				_answers = answers;
 			}
 
 			rset.close();
@@ -104,27 +103,37 @@ public class SurveyManager
 
 	public boolean isActive()
 	{
-		return id > 0;
+		return _id > 0;
+	}
+
+	public String getQuestion()
+	{
+		return _question;
+	}
+
+	public String getDescription()
+	{
+		return _description;
 	}
 
 	public Integer[] getPossibleAnswerIds()
 	{
-		return (Integer[]) possibleAnswers.keySet().toArray();
+		return (Integer[]) _possibleAnswers.keySet().toArray();
 	}
 
 	public String getPossibleAnswer(int id)
 	{
-		return possibleAnswers.get(id);
+		return _possibleAnswers.get(id);
 	}
 
 	public boolean playerAnswered(int playerObjId)
 	{
-		return answers.contains(playerObjId);
+		return _answers.contains(playerObjId);
 	}
 
 	public boolean storeAnswer(int playerObjId, int answerIndex)
 	{
-		if (answers.contains(playerObjId))
+		if (_answers.contains(playerObjId))
 		{
 			return false;
 		}
@@ -146,16 +155,16 @@ public class SurveyManager
 		{
 			L2DatabaseFactory.close(con);
 		}
-		answers.add(playerObjId);
+		_answers.add(playerObjId);
 		return true;
 	}
 
 	public static SurveyManager getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new SurveyManager();
+			_instance = new SurveyManager();
 		}
-		return instance;
+		return _instance;
 	}
 }

@@ -30,6 +30,7 @@ import java.util.logging.Level;
  */
 public class hitConditionBonus
 {
+
 	private static int frontBonus = 0;
 	private static int sideBonus = 0;
 	private static int backBonus = 0;

@@ -33,7 +33,6 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
 import l2server.util.StringUtil;
 
 import java.util.NoSuchElementException;
@@ -51,6 +50,7 @@ import java.util.regex.Pattern;
  */
 public class AdminSpawn implements IAdminCommandHandler
 {
+
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_show_spawns",
 			"admin_spawn",
@@ -72,7 +72,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			"admin_spawn_debug_print",
 			"admin_spawn_debug_print_menu"
 	};
-	public static Logger log = Logger.getLogger(AdminSpawn.class.getName());
+	public static Logger _log = Logger.getLogger(AdminSpawn.class.getName());
 
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -332,14 +332,14 @@ public class AdminSpawn implements IAdminCommandHandler
 		{
 			default:
 			case 0:
-				Log.info("('',1," + i + "," + x + "," + y + "," + z + ",0,0," + h + ",60,0,0),");
+				_log.info("('',1," + i + "," + x + "," + y + "," + z + ",0,0," + h + ",60,0,0),");
 				break;
 			case 1:
-				Log.info("<spawn npcId=\"" + i + "\" x=\"" + x + "\" y=\"" + y + "\" z=\"" + z + "\" heading=\"" + h +
+				_log.info("<spawn npcId=\"" + i + "\" x=\"" + x + "\" y=\"" + y + "\" z=\"" + z + "\" heading=\"" + h +
 						"\" respawn=\"0\" />");
 				break;
 			case 2:
-				Log.info("{ " + i + ", " + x + ", " + y + ", " + z + ", " + h + " },");
+				_log.info("{ " + i + ", " + x + ", " + y + ", " + z + ", " + h + " },");
 				break;
 		}
 	}

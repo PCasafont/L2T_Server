@@ -27,7 +27,6 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.StringUtil;
 
 import java.util.ArrayList;
@@ -102,6 +101,7 @@ public class QuestLink implements IBypassHandler
 			}
 			else
 			{
+
 				QuestState qs = player.getQuestState(q.getScriptName());
 				if (qs != null)
 				{
@@ -224,11 +224,11 @@ public class QuestLink implements IBypassHandler
 			{
 				if (content != null)
 				{
-					Log.fine("Showing quest window for quest " + questId + " html path: " + path);
+					_log.fine("Showing quest window for quest " + questId + " html path: " + path);
 				}
 				else
 				{
-					Log.fine("File not exists for quest " + questId + " html path: " + path);
+					_log.fine("File not exists for quest " + questId + " html path: " + path);
 				}
 			}
 		}

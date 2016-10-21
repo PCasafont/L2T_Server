@@ -15,9 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.Collection;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
@@ -26,7 +23,9 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+
+import java.util.Collection;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -43,6 +42,7 @@ public class AdminHeal implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
+
 		if (command.equals("admin_heal"))
 		{
 			handleHeal(activeChar);
@@ -58,7 +58,7 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					Log.warning("Heal error: " + e);
+					_log.warning("Heal error: " + e);
 				}
 				activeChar.sendMessage("Incorrect target/radius specified.");
 			}
@@ -79,6 +79,7 @@ public class AdminHeal implements IAdminCommandHandler
 
 	private void handleHeal(L2PcInstance activeChar, String player)
 	{
+
 		L2Object obj = activeChar.getTarget();
 		if (player != null)
 		{
@@ -131,7 +132,7 @@ public class AdminHeal implements IAdminCommandHandler
 			}
 			if (Config.DEBUG)
 			{
-				Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
+				_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
 						target.getName());
 			}
 		}

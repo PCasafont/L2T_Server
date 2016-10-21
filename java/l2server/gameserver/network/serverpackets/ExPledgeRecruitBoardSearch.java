@@ -26,22 +26,22 @@ import java.util.List;
  */
 public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 {
-	private int page;
-	private int pageCount;
-	private List<ClanRecruitData> data;
+	private int _page;
+	private int _pageCount;
+	private List<ClanRecruitData> _data;
 
 	public ExPledgeRecruitBoardSearch(int level, int karma, boolean clanName, String name, int sortBy, boolean desc, int page)
 	{
-		this.page = page;
+		_page = page;
 		List<ClanRecruitData> list =
 				ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
-		pageCount = (list.size() - 1) / 12 + 1;
+		_pageCount = (list.size() - 1) / 12 + 1;
 
-		data = new ArrayList<>();
+		_data = new ArrayList<>();
 		int index = (page - 1) * 12;
 		while (index < page * 12 && index < list.size())
 		{
-			data.add(list.get(index));
+			_data.add(list.get(index));
 			index++;
 		}
 	}
@@ -49,17 +49,17 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(page);
-		writeD(pageCount);
-		writeD(data.size());
+		writeD(_page);
+		writeD(_pageCount);
+		writeD(_data.size());
 
-		for (ClanRecruitData data : this.data)
+		for (ClanRecruitData data : _data)
 		{
 			writeD(data.clan.getClanId());
 			writeD(data.clan.getAllyId());
 		}
 
-		for (ClanRecruitData data : this.data)
+		for (ClanRecruitData data : _data)
 		{
 			writeD(data.clan.getCrestId());
 			writeD(data.clan.getAllyCrestId());

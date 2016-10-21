@@ -109,7 +109,7 @@ public class TargetArea implements ISkillTargetTypeHandler
 				if (!target.isDead() && target != activeChar)
 				{
 					/* FIXME
-					if(skill.isRepeating() && targetPoint != null)
+                    if(skill.isRepeating() && targetPoint != null)
 					{
 						if(radius < Util.calculateDistance(targetPoint.getX(), targetPoint.getY(), targetPoint.getZ(), target.getX(), target.getY(), target.getZ(), true))
 							continue;

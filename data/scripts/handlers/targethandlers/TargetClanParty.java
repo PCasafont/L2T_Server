@@ -34,6 +34,7 @@ import java.util.List;
  */
 public class TargetClanParty implements ISkillTargetTypeHandler
 {
+
 	/**
 	 *
 	 */
@@ -100,6 +101,7 @@ public class TargetClanParty implements ISkillTargetTypeHandler
 				if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() ||
 						player.isInParty() && player.getParty().isInParty(tempChar))
 				{
+
 					if (tempChar.getPet() != null)
 					{
 						if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))

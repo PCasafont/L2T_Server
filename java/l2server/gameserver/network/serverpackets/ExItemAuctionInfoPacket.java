@@ -26,10 +26,10 @@ import l2server.gameserver.model.itemauction.ItemAuctionState;
  */
 public final class ExItemAuctionInfoPacket extends L2GameServerPacket
 {
-	private final boolean refresh;
-	private final int timeRemaining;
-	private final ItemAuction currentAuction;
-	private final ItemAuction nextAuction;
+	private final boolean _refresh;
+	private final int _timeRemaining;
+	private final ItemAuction _currentAuction;
+	private final ItemAuction _nextAuction;
 
 	public ExItemAuctionInfoPacket(final boolean refresh, final ItemAuction currentAuction, final ItemAuction nextAuction)
 	{
@@ -40,35 +40,35 @@ public final class ExItemAuctionInfoPacket extends L2GameServerPacket
 
 		if (currentAuction.getAuctionState() != ItemAuctionState.STARTED)
 		{
-			timeRemaining = 0;
+			_timeRemaining = 0;
 		}
 		else
 		{
-			timeRemaining = (int) (currentAuction.getFinishingTimeRemaining() / 1000); // in seconds
+			_timeRemaining = (int) (currentAuction.getFinishingTimeRemaining() / 1000); // in seconds
 		}
 
-		this.refresh = refresh;
-		this.currentAuction = currentAuction;
-		this.nextAuction = nextAuction;
+		_refresh = refresh;
+		_currentAuction = currentAuction;
+		_nextAuction = nextAuction;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(refresh ? 0x00 : 0x01);
-		writeD(currentAuction.getInstanceId());
+		writeC(_refresh ? 0x00 : 0x01);
+		writeD(_currentAuction.getInstanceId());
 
-		final ItemAuctionBid highestBid = currentAuction.getHighestBid();
-		writeQ(highestBid != null ? highestBid.getLastBid() : currentAuction.getAuctionInitBid());
+		final ItemAuctionBid highestBid = _currentAuction.getHighestBid();
+		writeQ(highestBid != null ? highestBid.getLastBid() : _currentAuction.getAuctionInitBid());
 
-		writeD(timeRemaining);
-		writeItemInfo(currentAuction.getItemInfo());
+		writeD(_timeRemaining);
+		writeItemInfo(_currentAuction.getItemInfo());
 
-		if (nextAuction != null)
+		if (_nextAuction != null)
 		{
-			writeQ(nextAuction.getAuctionInitBid());
-			writeD((int) (nextAuction.getStartingTime() / 1000)); // unix time in seconds
-			writeItemInfo(nextAuction.getItemInfo());
+			writeQ(_nextAuction.getAuctionInitBid());
+			writeD((int) (_nextAuction.getStartingTime() / 1000)); // unix time in seconds
+			writeItemInfo(_nextAuction.getItemInfo());
 		}
 	}
 

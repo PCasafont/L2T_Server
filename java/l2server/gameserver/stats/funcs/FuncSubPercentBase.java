@@ -23,12 +23,12 @@ import l2server.gameserver.stats.Stats;
  */
 public class FuncSubPercentBase extends Func
 {
-	private final Lambda lambda;
+	private final Lambda _lambda;
 
 	public FuncSubPercentBase(Stats pStat, Object owner, Lambda lambda)
 	{
 		super(pStat, owner);
-		this.lambda = lambda;
+		_lambda = lambda;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class FuncSubPercentBase extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value -= env.baseValue * (lambda.calc(env) / 100.0);
+			env.value -= env.baseValue * (_lambda.calc(env) / 100.0);
 		}
 	}
 }

@@ -23,23 +23,23 @@ package l2server.gameserver.network.serverpackets;
 public class ObservationMode extends L2GameServerPacket
 {
 	// ddSS
-	private int x, y, z;
+	private int _x, _y, _z;
 
 	/**
 	 */
 	public ObservationMode(int x, int y, int z)
 	{
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		_x = x;
+		_y = y;
+		_z = z;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 		writeC(0x00);
 		writeC(0xc0);
 		writeC(0x00);

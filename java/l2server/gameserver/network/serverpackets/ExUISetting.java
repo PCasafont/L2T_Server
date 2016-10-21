@@ -26,45 +26,50 @@ import java.util.List;
  */
 public class ExUISetting extends L2GameServerPacket
 {
-	private final L2UIKeysSettings uiSettings;
+
+	private final L2UIKeysSettings _uiSettings;
 	private int buffsize, categories;
 
 	public ExUISetting(L2PcInstance player)
 	{
-		uiSettings = player.getUISettings();
+		_uiSettings = player.getUISettings();
 		calcSize();
 	}
+
+	/**
+	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+	 */
 
 	private void calcSize()
 	{
 		int size = 16; //initial header and footer
 		int category = 0;
 		int numKeyCt = 0;
-		if (uiSettings != null)
+		if (_uiSettings != null)
 		{
-			numKeyCt = uiSettings.getKeys().size();
+			numKeyCt = _uiSettings.getKeys().size();
 		}
 
 		for (int i = 0; i < numKeyCt; i++)
 		{
 			size++;
-			if (uiSettings.getCategories().containsKey(category))
+			if (_uiSettings.getCategories().containsKey(category))
 			{
-				List<Integer> catElList1 = uiSettings.getCategories().get(category);
+				List<Integer> catElList1 = _uiSettings.getCategories().get(category);
 				size = size + catElList1.size();
 			}
 			category++;
 			size++;
-			if (uiSettings.getCategories().containsKey(category))
+			if (_uiSettings.getCategories().containsKey(category))
 			{
-				List<Integer> catElList2 = uiSettings.getCategories().get(category);
+				List<Integer> catElList2 = _uiSettings.getCategories().get(category);
 				size = size + catElList2.size();
 			}
 			category++;
 			size = size + 4;
-			if (uiSettings.getKeys().containsKey(i))
+			if (_uiSettings.getKeys().containsKey(i))
 			{
-				List<ActionKey> keyElList = uiSettings.getKeys().get(i);
+				List<ActionKey> keyElList = _uiSettings.getKeys().get(i);
 				size = size + keyElList.size() * 20;
 			}
 		}
@@ -83,13 +88,13 @@ public class ExUISetting extends L2GameServerPacket
 
 		int category = 0;
 
-		int numKeyCt = uiSettings.getKeys().size();
+		int numKeyCt = _uiSettings.getKeys().size();
 		writeD(numKeyCt);
 		for (int i = 0; i < numKeyCt; i++)
 		{
-			if (uiSettings.getCategories().containsKey(category))
+			if (_uiSettings.getCategories().containsKey(category))
 			{
-				List<Integer> catElList1 = uiSettings.getCategories().get(category);
+				List<Integer> catElList1 = _uiSettings.getCategories().get(category);
 				writeC(catElList1.size());
 				for (int cmd : catElList1)
 				{
@@ -102,9 +107,9 @@ public class ExUISetting extends L2GameServerPacket
 			}
 			category++;
 
-			if (uiSettings.getCategories().containsKey(category))
+			if (_uiSettings.getCategories().containsKey(category))
 			{
-				List<Integer> catElList2 = uiSettings.getCategories().get(category);
+				List<Integer> catElList2 = _uiSettings.getCategories().get(category);
 				writeC(catElList2.size());
 				for (int cmd : catElList2)
 				{
@@ -117,9 +122,9 @@ public class ExUISetting extends L2GameServerPacket
 			}
 			category++;
 
-			if (uiSettings.getKeys().containsKey(i))
+			if (_uiSettings.getKeys().containsKey(i))
 			{
-				List<ActionKey> keyElList = uiSettings.getKeys().get(i);
+				List<ActionKey> keyElList = _uiSettings.getKeys().get(i);
 				writeD(keyElList.size());
 				for (ActionKey akey : keyElList)
 				{

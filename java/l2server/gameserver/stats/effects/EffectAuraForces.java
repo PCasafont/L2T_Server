@@ -259,6 +259,7 @@ public class EffectAuraForces extends L2Effect
 			}
 
 			return Util.checkIfInRange(getSkill().getSkillRadius(), getEffector(), getEffected(), false);
+
 		}
 		else
 		{

@@ -29,10 +29,11 @@ import java.util.List;
  */
 public class ExSellList extends L2ItemListPacket
 {
-	private List<L2TradeItem> buyList = new ArrayList<>();
-	private L2ItemInstance[] sellList = null;
-	private L2ItemInstance[] refundList = null;
-	private boolean done;
+
+	private List<L2TradeItem> _buyList = new ArrayList<>();
+	private L2ItemInstance[] _sellList = null;
+	private L2ItemInstance[] _refundList = null;
+	private boolean _done;
 
 	public ExSellList(L2PcInstance player, L2TradeList list, double taxRate, boolean done)
 	{
@@ -42,14 +43,14 @@ public class ExSellList extends L2ItemListPacket
 			{
 				continue;
 			}
-			buyList.add(item);
+			_buyList.add(item);
 		}
-		sellList = player.getInventory().getAvailableItems(false, true);
+		_sellList = player.getInventory().getAvailableItems(false, true);
 		if (player.hasRefund())
 		{
-			refundList = player.getRefund().getItems();
+			_refundList = player.getRefund().getItems();
 		}
-		this.done = done;
+		_done = done;
 	}
 
 	@Override
@@ -57,10 +58,10 @@ public class ExSellList extends L2ItemListPacket
 	{
 		writeD(0x00); // GoD ???
 
-		if (sellList != null && sellList.length > 0)
+		if (_sellList != null && _sellList.length > 0)
 		{
-			writeH(sellList.length);
-			for (L2ItemInstance item : sellList)
+			writeH(_sellList.length);
+			for (L2ItemInstance item : _sellList)
 			{
 				writeItem(item);
 
@@ -72,11 +73,11 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		if (refundList != null && refundList.length > 0)
+		if (_refundList != null && _refundList.length > 0)
 		{
-			writeH(refundList.length);
+			writeH(_refundList.length);
 			int itemIndex = 0;
-			for (L2ItemInstance item : refundList)
+			for (L2ItemInstance item : _refundList)
 			{
 				writeItem(item);
 
@@ -89,8 +90,8 @@ public class ExSellList extends L2ItemListPacket
 			writeH(0x00);
 		}
 
-		writeC(done ? 0x01 : 0x00);
+		writeC(_done ? 0x01 : 0x00);
 
-		buyList.clear();
+		_buyList.clear();
 	}
 }

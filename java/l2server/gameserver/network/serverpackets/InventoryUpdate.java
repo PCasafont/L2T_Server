@@ -49,11 +49,12 @@ import java.util.List;
 
 public class InventoryUpdate extends L2ItemListPacket
 {
-	private List<ItemInfo> items;
+
+	private List<ItemInfo> _items;
 
 	public InventoryUpdate()
 	{
-		items = new ArrayList<>();
+		_items = new ArrayList<>();
 		if (Config.DEBUG)
 		{
 			showDebug();
@@ -65,7 +66,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	 */
 	public InventoryUpdate(List<ItemInfo> items)
 	{
-		this.items = items;
+		_items = items;
 		if (Config.DEBUG)
 		{
 			showDebug();
@@ -76,7 +77,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			items.add(new ItemInfo(item));
+			_items.add(new ItemInfo(item));
 		}
 	}
 
@@ -84,7 +85,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			items.add(new ItemInfo(item, 1));
+			_items.add(new ItemInfo(item, 1));
 		}
 	}
 
@@ -92,7 +93,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			items.add(new ItemInfo(item, 2));
+			_items.add(new ItemInfo(item, 2));
 		}
 	}
 
@@ -100,7 +101,7 @@ public class InventoryUpdate extends L2ItemListPacket
 	{
 		if (item != null)
 		{
-			items.add(new ItemInfo(item, 3));
+			_items.add(new ItemInfo(item, 3));
 		}
 	}
 
@@ -112,7 +113,7 @@ public class InventoryUpdate extends L2ItemListPacket
 			{
 				if (item != null)
 				{
-					this.items.add(new ItemInfo(item));
+					_items.add(new ItemInfo(item));
 				}
 			}
 		}
@@ -120,7 +121,7 @@ public class InventoryUpdate extends L2ItemListPacket
 
 	private void showDebug()
 	{
-		for (ItemInfo item : items)
+		for (ItemInfo item : _items)
 		{
 			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
 					" last change:" + item.getChange());
@@ -130,14 +131,14 @@ public class InventoryUpdate extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		int count = items.size();
+		int count = _items.size();
 		writeH(count);
-		for (ItemInfo item : items)
+		for (ItemInfo item : _items)
 		{
 			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
 			writeItem(item);
 		}
-		items.clear();
-		items = null;
+		_items.clear();
+		_items = null;
 	}
 }

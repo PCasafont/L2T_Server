@@ -15,9 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.Collection;
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.CursedWeapon;
@@ -27,6 +24,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
+
+import java.util.Collection;
+import java.util.StringTokenizer;
 
 /**
  * This class handles following admin commands:
@@ -49,6 +49,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
+
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
 		int id = 0;
 

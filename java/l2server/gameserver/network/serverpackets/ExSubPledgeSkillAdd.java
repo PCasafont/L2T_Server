@@ -20,23 +20,23 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExSubPledgeSkillAdd extends L2GameServerPacket
 {
-	private final int type;
-	private final int skillId;
-	private final int skillLevel;
+	private final int _type;
+	private final int _skillId;
+	private final int _skillLevel;
 
 	public ExSubPledgeSkillAdd(int type, int skillId, int skillLevel)
 	{
-		this.type = type;
-		this.skillId = skillId;
-		this.skillLevel = skillLevel;
+		_type = type;
+		_skillId = skillId;
+		_skillLevel = skillLevel;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0xFE);
-		writeD(type);
-		writeD(skillId);
-		writeD(skillLevel);
+		writeD(_type);
+		writeD(_skillId);
+		writeD(_skillLevel);
 	}
 }

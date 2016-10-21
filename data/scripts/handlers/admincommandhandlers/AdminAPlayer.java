@@ -18,10 +18,11 @@ import java.util.logging.Logger;
  */
 public class AdminAPlayer implements IAdminCommandHandler
 {
+
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers"};
 
-	public static Logger log = Logger.getLogger(AdminAPlayer.class.getName());
+	public static Logger _log = Logger.getLogger(AdminAPlayer.class.getName());
 
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -113,7 +114,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 		{
 			// TODO: list the parties
 			/*
-			 * Aplayer party #XX
+             * Aplayer party #XX
 			 * Members: [Party[n]]+
 			 *
 			 * Possible output:

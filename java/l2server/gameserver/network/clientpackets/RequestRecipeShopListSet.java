@@ -28,7 +28,6 @@ import l2server.gameserver.network.serverpackets.RecipeShopMsg;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
-import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,28 +46,28 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private Recipe[] items = null;
+	private Recipe[] _items = null;
 
 	@Override
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Recipe[count];
+		_items = new Recipe[count];
 		for (int i = 0; i < count; i++)
 		{
 			int id = readD();
 			long cost = readQ();
 			if (cost < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new Recipe(id, cost);
+			_items[i] = new Recipe(id, cost);
 		}
 	}
 
@@ -81,7 +80,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			return;
 		}
 
-		if (items == null)
+		if (_items == null)
 		{
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
@@ -118,7 +117,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		List<L2RecipeList> dwarfRecipes = Arrays.asList(player.getDwarvenRecipeBook());
 		List<L2RecipeList> commonRecipes = Arrays.asList(player.getCommonRecipeBook());
 
-		for (Recipe i : items)
+		for (Recipe i : _items)
 		{
 			L2RecipeList list = RecipeController.getInstance().getRecipeList(i.getRecipeId());
 
@@ -152,24 +151,29 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 
 	private static class Recipe
 	{
-		@Getter private final int recipeId;
-		private final long cost;
+		private final int _recipeId;
+		private final long _cost;
 
 		public Recipe(int id, long c)
 		{
-			recipeId = id;
-			cost = c;
+			_recipeId = id;
+			_cost = c;
 		}
 
 		public boolean addToList(L2ManufactureList list)
 		{
-			if (cost > MAX_ADENA)
+			if (_cost > MAX_ADENA)
 			{
 				return false;
 			}
 
-			list.add(new L2ManufactureItem(recipeId, cost));
+			list.add(new L2ManufactureItem(_recipeId, _cost));
 			return true;
+		}
+
+		public int getRecipeId()
+		{
+			return _recipeId;
 		}
 	}
 }

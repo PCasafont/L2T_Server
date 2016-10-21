@@ -33,14 +33,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class DeathGate extends L2AttackableAIScript
 {
-	private static final int[] deathGateIds = {14927, 15200, 15201, 15202};
-	private static final int summonDeathGateId = 11266;
+	private static final int[] _deathGateIds = {14927, 15200, 15201, 15202};
+	private static final int _summonDeathGateId = 11266;
 
 	public DeathGate(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int i : deathGateIds)
+		for (int i : _deathGateIds)
 		{
 			addSpawnId(i);
 		}
@@ -61,62 +61,63 @@ public class DeathGate extends L2AttackableAIScript
 
 	class DeathGateAI implements Runnable
 	{
-		private L2Skill gateVortex;
-		private L2Skill gateRoot;
+		private L2Skill _gateVortex;
+		private L2Skill _gateRoot;
 		private L2Skill lastSkillUsed;
-		private L2Npc deathGate;
-		private L2PcInstance owner;
-		private ScheduledFuture<?> schedule = null;
+		private L2Npc _deathGate;
+		private L2PcInstance _owner;
+		private ScheduledFuture<?> _schedule = null;
 
 		protected DeathGateAI(L2Npc npc, L2PcInstance owner)
 		{
-			deathGate = npc;
+			_deathGate = npc;
 
-			this.owner = owner;
-			if (this.owner == null)
+			_owner = owner;
+			if (_owner == null)
 			{
 				return;
 			}
 
-			int skillLevel = this.owner.getSkillLevel(summonDeathGateId);
+			int skillLevel = _owner.getSkillLevel(_summonDeathGateId);
 			if (skillLevel == -1)
 			{
 				return;
 			}
 
-			gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
-			gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
+			_gateVortex = SkillTable.getInstance().getInfo(11291, skillLevel);
+			_gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
 		{
-			this.schedule = schedule;
+			_schedule = schedule;
 		}
 
 		@Override
 		public void run()
 		{
-			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() || deathGate.getOwner().isAlikeDead())
+			if (_deathGate == null || _deathGate.isDead() || _deathGate.isDecayed() ||
+					_deathGate.getOwner().isAlikeDead())
 			{
-				if (schedule != null)
+				if (_schedule != null)
 				{
-					schedule.cancel(true);
+					_schedule.cancel(true);
 					return;
 				}
 			}
 
-			deathGate.setTarget(deathGate);
+			_deathGate.setTarget(_deathGate);
 
-			if (lastSkillUsed == gateVortex)
+			if (lastSkillUsed == _gateVortex)
 			{
-				lastSkillUsed = gateRoot;
+				lastSkillUsed = _gateRoot;
 			}
 			else
 			{
-				lastSkillUsed = gateVortex;
+				lastSkillUsed = _gateVortex;
 			}
 
-			deathGate.doCast(lastSkillUsed);
+			_deathGate.doCast(lastSkillUsed);
 		}
 	}
 

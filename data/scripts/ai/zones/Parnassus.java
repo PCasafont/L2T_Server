@@ -11,15 +11,15 @@ import l2server.gameserver.network.serverpackets.EventTrigger;
 
 public class Parnassus extends Quest
 {
-	private static final int crystalPrisonEntrance = 33523;
-	private static final int crystalCavernsEntrance = 33522;
+	private static final int _crystalPrisonEntrance = 33523;
+	private static final int _crystalCavernsEntrance = 33522;
 
 	public Parnassus(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addCreatureSeeId(crystalPrisonEntrance);
-		addCreatureSeeId(crystalCavernsEntrance);
+		addCreatureSeeId(_crystalPrisonEntrance);
+		addCreatureSeeId(_crystalCavernsEntrance);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class Parnassus extends Quest
 	{
 		if (player != null)
 		{
-			if (npc.getNpcId() == crystalPrisonEntrance)
+			if (npc.getNpcId() == _crystalPrisonEntrance)
 			{
 				player.sendPacket(new EventTrigger(24230010, true));
 				player.sendPacket(new EventTrigger(24230012, true));

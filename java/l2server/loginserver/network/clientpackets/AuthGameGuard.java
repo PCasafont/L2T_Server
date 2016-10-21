@@ -18,7 +18,6 @@ package l2server.loginserver.network.clientpackets;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.serverpackets.GGAuth;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
-import lombok.Getter;
 
 /**
  * @author -Wooden-
@@ -26,24 +25,49 @@ import lombok.Getter;
  */
 public class AuthGameGuard extends L2LoginClientPacket
 {
-	@Getter private int sessionId;
-	@Getter private int data1;
-	@Getter private int data2;
-	@Getter private int data3;
-	@Getter private int data4;
+	private int _sessionId;
+	private int _data1;
+	private int _data2;
+	private int _data3;
+	private int _data4;
+
+	public int getSessionId()
+	{
+		return _sessionId;
+	}
+
+	public int getData1()
+	{
+		return _data1;
+	}
+
+	public int getData2()
+	{
+		return _data2;
+	}
+
+	public int getData3()
+	{
+		return _data3;
+	}
+
+	public int getData4()
+	{
+		return _data4;
+	}
 
 	/**
 	 */
 	@Override
 	protected boolean readImpl()
 	{
-		if (super.buf.remaining() >= 20)
+		if (super._buf.remaining() >= 20)
 		{
-			sessionId = readD();
-			data1 = readD();
-			data2 = readD();
-			data3 = readD();
-			data4 = readD();
+			_sessionId = readD();
+			_data1 = readD();
+			_data2 = readD();
+			_data3 = readD();
+			_data4 = readD();
 			return true;
 		}
 		else
@@ -57,7 +81,7 @@ public class AuthGameGuard extends L2LoginClientPacket
 	@Override
 	public void run()
 	{
-		if (sessionId == getClient().getSessionId())
+		if (_sessionId == getClient().getSessionId())
 		{
 			getClient().setState(LoginClientState.AUTHED_GG);
 			getClient().sendPacket(new GGAuth(getClient().getSessionId()));

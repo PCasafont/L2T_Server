@@ -25,6 +25,7 @@ import java.util.logging.Level;
 
 public class SqlUtils
 {
+
 	private SqlUtils()
 	{
 	}
@@ -33,7 +34,7 @@ public class SqlUtils
 	// Property - Public
 	public static SqlUtils getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
@@ -180,6 +181,6 @@ public class SqlUtils
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SqlUtils instance = new SqlUtils();
+		protected static final SqlUtils _instance = new SqlUtils();
 	}
 }

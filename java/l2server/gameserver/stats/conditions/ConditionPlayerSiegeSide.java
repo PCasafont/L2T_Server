@@ -23,7 +23,8 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerSiegeSide extends Condition
 {
-	private final int siegeSide;
+
+	private final int _siegeSide;
 
 	/**
 	 * Instantiates a new condition player siege side.
@@ -32,7 +33,7 @@ public class ConditionPlayerSiegeSide extends Condition
 	 */
 	public ConditionPlayerSiegeSide(int side)
 	{
-		siegeSide = side;
+		_siegeSide = side;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +42,6 @@ public class ConditionPlayerSiegeSide extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((L2PcInstance) env.player).getSiegeSide() == siegeSide;
+		return ((L2PcInstance) env.player).getSiegeSide() == _siegeSide;
 	}
 }

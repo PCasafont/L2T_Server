@@ -48,23 +48,23 @@ public enum BaseStats
 	private static final double[] LUCbonus = new double[MAX_STAT_VALUE];
 	private static final double[] CHAbonus = new double[MAX_STAT_VALUE];
 
-	private final BaseStat stat;
+	private final BaseStat _stat;
 
 	public final String getValue()
 	{
-		return stat.getClass().getSimpleName();
+		return _stat.getClass().getSimpleName();
 	}
 
 	BaseStats(BaseStat s)
 	{
-		stat = s;
+		_stat = s;
 	}
 
 	public final double calcBonus(L2Character actor)
 	{
 		if (actor != null)
 		{
-			return stat.calcBonus(actor);
+			return _stat.calcBonus(actor);
 		}
 
 		return 1;

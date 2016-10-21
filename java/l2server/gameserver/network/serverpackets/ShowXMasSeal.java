@@ -20,16 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShowXMasSeal extends L2GameServerPacket
 {
-	private int item;
+	private int _item;
 
 	public ShowXMasSeal(int item)
 	{
-		this.item = item;
+		_item = item;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(item);
+		writeD(_item);
 	}
 }

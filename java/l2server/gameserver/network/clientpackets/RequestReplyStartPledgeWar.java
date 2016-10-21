@@ -29,13 +29,13 @@ public final class RequestReplyStartPledgeWar extends L2GameClientPacket
 {
 	//
 
-	private int answer;
+	private int _answer;
 
 	@Override
 	protected void readImpl()
 	{
-		@SuppressWarnings("unused") String reqName = readS();
-		answer = readD();
+		@SuppressWarnings("unused") String _reqName = readS();
+		_answer = readD();
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public final class RequestReplyStartPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		if (answer == 1)
+		if (_answer == 1)
 		{
 			ClanWarManager.getInstance()
 					.storeClansWars(requestor.getClanId(), activeChar.getClanId(), requestor.getObjectId());

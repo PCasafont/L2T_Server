@@ -223,7 +223,7 @@ public class AdminBan implements IAdminCommandHandler
 			}
 		}
 		/*else if (command.startsWith("admin_ban_acc"))
-		{
+        {
 			// May need to check usage in admin_ban_menu as well.
 
 			if (targetPlayer == null && player.equals(""))

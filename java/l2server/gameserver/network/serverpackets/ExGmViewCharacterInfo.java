@@ -31,12 +31,12 @@ import java.nio.ByteOrder;
  */
 public final class ExGmViewCharacterInfo extends L2GameServerPacket
 {
-	private int objectId;
-	private byte[] data;
+	private int _objectId;
+	private byte[] _data;
 
 	public ExGmViewCharacterInfo(L2PcInstance player)
 	{
-		objectId = player.getObjectId();
+		_objectId = player.getObjectId();
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -210,7 +210,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		// Clan
 		String title = player.getTitle() != null ? player.getTitle() : "";
 
-		if (player.getAppearance().isInvisible() && player.isGM())
+		if (player.getAppearance().getInvisible() && player.isGM())
 		{
 			title = "Invisible";
 		}
@@ -286,8 +286,8 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		data = new byte[size];
-		buffer.get(data, 0, size);
+		_data = new byte[size];
+		buffer.get(_data, 0, size);
 	}
 
 	@Override
@@ -295,8 +295,8 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 	{
 		//writeH(0x155);
 
-		writeD(objectId);
+		writeD(_objectId);
 		writeD(0);
-		writeB(data);
+		writeB(_data);
 	}
 }

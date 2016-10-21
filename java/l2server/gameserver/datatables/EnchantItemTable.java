@@ -21,19 +21,19 @@ public class EnchantItemTable implements Reloadable
 
 	public class EnchantSupportItem
 	{
-		protected final EnchantTargetType targetType;
-		protected final int grade;
-		protected final int maxEnchantLevel;
-		protected final int chanceAdd;
-		protected final int itemId;
+		protected final EnchantTargetType _targetType;
+		protected final int _grade;
+		protected final int _maxEnchantLevel;
+		protected final int _chanceAdd;
+		protected final int _itemId;
 
 		public EnchantSupportItem(EnchantTargetType targetType, int type, int level, int chance, int items)
 		{
-			this.targetType = targetType;
-			grade = type;
-			maxEnchantLevel = level;
-			chanceAdd = chance;
-			itemId = items;
+			_targetType = targetType;
+			_grade = type;
+			_maxEnchantLevel = level;
+			_chanceAdd = chance;
+			_itemId = items;
 		}
 
 		/*
@@ -53,7 +53,7 @@ public class EnchantItemTable implements Reloadable
 			{
 				// weapon scrolls can enchant only weapons
 				case L2Item.TYPE2_WEAPON:
-					if (targetType != EnchantTargetType.WEAPON ||
+					if (_targetType != EnchantTargetType.WEAPON ||
 							Config.ENCHANT_MAX_WEAPON > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON)
 					{
 						return false;
@@ -61,7 +61,7 @@ public class EnchantItemTable implements Reloadable
 					break;
 				// armor scrolls can enchant only accessory and armors
 				case L2Item.TYPE2_SHIELD_ARMOR:
-					if (targetType != EnchantTargetType.ELEMENTAL_SHIRT && (targetType != EnchantTargetType.ARMOR ||
+					if (_targetType != EnchantTargetType.ELEMENTAL_SHIRT && (_targetType != EnchantTargetType.ARMOR ||
 							Config.ENCHANT_MAX_ARMOR > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR))
 					{
 						return false;
@@ -71,14 +71,14 @@ public class EnchantItemTable implements Reloadable
 					if ((enchantItem.getItem().getBodyPart() &
 							(L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
 					{
-						if (targetType != EnchantTargetType.HAIR_ACCESSORY || Config.ENCHANT_MAX_JEWELRY > 0 &&
+						if (_targetType != EnchantTargetType.HAIR_ACCESSORY || Config.ENCHANT_MAX_JEWELRY > 0 &&
 								enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
 						{
 							return false;
 						}
 						break;
 					}
-					if (targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_JEWELRY > 0 &&
+					if (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_JEWELRY > 0 &&
 							enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
 					{
 						return false;
@@ -89,18 +89,19 @@ public class EnchantItemTable implements Reloadable
 			}
 
 			// check for crystal types
-			if (grade != L2Item.CRYSTAL_NONE && grade != enchantItem.getItem().getItemGradePlain())
+			if (_grade != L2Item.CRYSTAL_NONE && _grade != enchantItem.getItem().getItemGradePlain())
 			{
 				return false;
 			}
 
 			// check for maximum enchant level
-			if (maxEnchantLevel != 0 && enchantItem.getEnchantLevel() >= maxEnchantLevel)
+			if (_maxEnchantLevel != 0 && enchantItem.getEnchantLevel() >= _maxEnchantLevel)
 			{
 				return false;
 			}
 
-			return !(itemId > 0 && enchantItem.getItemId() != itemId);
+			return !(_itemId > 0 && enchantItem.getItemId() != _itemId);
+
 		}
 
 		/*
@@ -108,23 +109,23 @@ public class EnchantItemTable implements Reloadable
 		 */
 		public final int getChanceAdd()
 		{
-			return chanceAdd;
+			return _chanceAdd;
 		}
 	}
 
 	public final class EnchantScroll extends EnchantSupportItem
 	{
-		private final boolean isBlessed;
-		private final boolean isCrystal;
-		private final boolean isSafe;
+		private final boolean _isBlessed;
+		private final boolean _isCrystal;
+		private final boolean _isSafe;
 
 		public EnchantScroll(EnchantTargetType targetType, boolean bless, boolean crystal, boolean safe, int type, int level, int chance, int item)
 		{
 			super(targetType, type, level, chance, item);
 
-			isBlessed = bless;
-			isCrystal = crystal;
-			isSafe = safe;
+			_isBlessed = bless;
+			_isCrystal = crystal;
+			_isSafe = safe;
 		}
 
 		/*
@@ -132,7 +133,7 @@ public class EnchantItemTable implements Reloadable
 		 */
 		public final boolean isBlessed()
 		{
-			return isBlessed;
+			return _isBlessed;
 		}
 
 		/*
@@ -140,7 +141,7 @@ public class EnchantItemTable implements Reloadable
 		 */
 		public final boolean isCrystal()
 		{
-			return isCrystal;
+			return _isCrystal;
 		}
 
 		/*
@@ -153,7 +154,7 @@ public class EnchantItemTable implements Reloadable
 				return true;
 			}
 
-			return isSafe;
+			return _isSafe;
 		}
 
 		public final boolean isValid(L2ItemInstance enchantItem, EnchantSupportItem supportItem)
@@ -190,7 +191,7 @@ public class EnchantItemTable implements Reloadable
 					return 0;
 				}
 
-				if (isBlessed)
+				if (_isBlessed)
 				{
 					return Config.BLESSED_ENCHANT_CHANCE_PER_LEVEL[enchantItem.getEnchantLevel()];
 				}
@@ -201,7 +202,7 @@ public class EnchantItemTable implements Reloadable
 			}
 
 			float chance = 0;
-			if (isBlessed)
+			if (_isBlessed)
 			{
 				// blessed scrolls does not use support items
 				if (supportItem != null)
@@ -209,7 +210,7 @@ public class EnchantItemTable implements Reloadable
 					return -1;
 				}
 
-				if (targetType == EnchantTargetType.WEAPON)
+				if (_targetType == EnchantTargetType.WEAPON)
 				{
 					chance = Config.BLESSED_ENCHANT_CHANCE_WEAPON;
 				}
@@ -224,7 +225,7 @@ public class EnchantItemTable implements Reloadable
 			}
 			else
 			{
-				if (targetType == EnchantTargetType.WEAPON)
+				if (_targetType == EnchantTargetType.WEAPON)
 				{
 					chance = Config.ENCHANT_CHANCE_WEAPON;
 				}
@@ -238,7 +239,7 @@ public class EnchantItemTable implements Reloadable
 				}
 			}
 
-			chance += chanceAdd;
+			chance += _chanceAdd;
 
 			if (supportItem != null)
 			{
@@ -249,19 +250,19 @@ public class EnchantItemTable implements Reloadable
 		}
 	}
 
-	private final TIntObjectHashMap<EnchantScroll> scrolls = new TIntObjectHashMap<>();
-	private final TIntObjectHashMap<EnchantSupportItem> supports = new TIntObjectHashMap<>();
+	private final TIntObjectHashMap<EnchantScroll> _scrolls = new TIntObjectHashMap<>();
+	private final TIntObjectHashMap<EnchantSupportItem> _supports = new TIntObjectHashMap<>();
 
-	private static EnchantItemTable instance;
+	private static EnchantItemTable _instance;
 
 	public static EnchantItemTable getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new EnchantItemTable();
+			_instance = new EnchantItemTable();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	private EnchantItemTable()
@@ -274,8 +275,8 @@ public class EnchantItemTable implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		scrolls.clear();
-		supports.clear();
+		_scrolls.clear();
+		_supports.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantItems.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -289,7 +290,7 @@ public class EnchantItemTable implements Reloadable
 					{
 						int id = d.getInt("id");
 						EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
-						int grade = ItemTable.crystalTypes.get(d.getString("grade", "none"));
+						int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
 						boolean isBlessed = d.getBool("isBlessed", false);
 						boolean isCrystal = d.getBool("isCrystal", false);
 						boolean isSafe = d.getBool("isSafe", false);
@@ -297,19 +298,19 @@ public class EnchantItemTable implements Reloadable
 						int extraChance = d.getInt("extraChance", 0);
 						int onlyOnItem = d.getInt("onlyOnItem", 0);
 
-						scrolls.put(id, new EnchantScroll(targetType, isBlessed, isCrystal, isSafe, grade, maxLevel,
+						_scrolls.put(id, new EnchantScroll(targetType, isBlessed, isCrystal, isSafe, grade, maxLevel,
 								extraChance, onlyOnItem));
 					}
 					else if (d.getName().equalsIgnoreCase("enchantSupportItem"))
 					{
 						int id = d.getInt("id");
 						EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
-						int grade = ItemTable.crystalTypes.get(d.getString("grade", "none"));
+						int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
 						int maxLevel = d.getInt("maxLevel", 0);
 						int extraChance = d.getInt("extraChance", 0);
 						int onlyOnItem = d.getInt("onlyOnItem", 0);
 
-						supports.put(id, new EnchantSupportItem(targetType, grade, maxLevel, extraChance, onlyOnItem));
+						_supports.put(id, new EnchantSupportItem(targetType, grade, maxLevel, extraChance, onlyOnItem));
 					}
 				}
 			}
@@ -329,7 +330,7 @@ public class EnchantItemTable implements Reloadable
 	 */
 	public final EnchantScroll getEnchantScroll(L2ItemInstance scroll)
 	{
-		return scrolls.get(scroll.getItemId());
+		return _scrolls.get(scroll.getItemId());
 	}
 
 	/**
@@ -337,7 +338,7 @@ public class EnchantItemTable implements Reloadable
 	 */
 	public final EnchantSupportItem getSupportItem(L2ItemInstance item)
 	{
-		return supports.get(item.getItemId());
+		return _supports.get(item.getItemId());
 	}
 
 	/**
@@ -399,5 +400,6 @@ public class EnchantItemTable implements Reloadable
 			return false;
 		}
 		return !item.getName().startsWith("Common");
+
 	}
 }

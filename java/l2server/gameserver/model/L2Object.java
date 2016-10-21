@@ -31,7 +31,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import lombok.Getter;
 
 /**
  * Mother class of all objects in the world wich ones is it possible
@@ -47,22 +46,22 @@ public abstract class L2Object
 {
 	// =========================================================
 	// Data Field
-	private boolean isVisible; // Object visibility
-	@Getter private ObjectKnownList knownList;
-	private String name;
-	private int objectId; // Object identifier
-	private ObjectPoly poly;
-	@Getter private ObjectPosition position;
-	@Getter private int instanceId = 0;
+	private boolean _isVisible; // Object visibility
+	private ObjectKnownList _knownList;
+	private String _name;
+	private int _objectId; // Object identifier
+	private ObjectPoly _poly;
+	private ObjectPosition _position;
+	private int _instanceId = 0;
 
-	private InstanceType instanceType = null;
+	private InstanceType _instanceType = null;
 
 	// =========================================================
 	// Constructor
 	public L2Object(int objectId)
 	{
 		setInstanceType(InstanceType.L2Object);
-		this.objectId = objectId;
+		_objectId = objectId;
 		initKnownList();
 		initPosition();
 	}
@@ -188,48 +187,53 @@ public abstract class L2Object
 		L2MiniGameManagerInstance(L2MerchantInstance),
 		L2CloneInstance(L2SummonInstance);
 
-		@Getter private final InstanceType parent;
-		private final long typeL;
-		private final long typeH;
-		private final long maskL;
-		private final long maskH;
+		private final InstanceType _parent;
+		private final long _typeL;
+		private final long _typeH;
+		private final long _maskL;
+		private final long _maskH;
 
 		InstanceType(InstanceType parent)
 		{
-			this.parent = parent;
+			_parent = parent;
 
 			final int high = ordinal() - (Long.SIZE - 1);
 			if (high < 0)
 			{
-				typeL = 1L << ordinal();
-				typeH = 0;
+				_typeL = 1L << ordinal();
+				_typeH = 0;
 			}
 			else
 			{
-				typeL = 0;
-				typeH = 1L << high;
+				_typeL = 0;
+				_typeH = 1L << high;
 			}
 
-			if (typeL < 0 || typeH < 0)
+			if (_typeL < 0 || _typeH < 0)
 			{
 				throw new Error("Too many instance types, failed to load " + name());
 			}
 
 			if (parent != null)
 			{
-				maskL = typeL | parent.maskL;
-				maskH = typeH | parent.maskH;
+				_maskL = _typeL | parent._maskL;
+				_maskH = _typeH | parent._maskH;
 			}
 			else
 			{
-				maskL = typeL;
-				maskH = typeH;
+				_maskL = _typeL;
+				_maskH = _typeH;
 			}
+		}
+
+		public final InstanceType getParent()
+		{
+			return _parent;
 		}
 
 		public final boolean isType(InstanceType it)
 		{
-			return (maskL & it.typeL) > 0 || (maskH & it.typeH) > 0;
+			return (_maskL & it._typeL) > 0 || (_maskH & it._typeH) > 0;
 		}
 
 		public final boolean isTypes(InstanceType... it)
@@ -247,22 +251,22 @@ public abstract class L2Object
 
 	protected final void setInstanceType(InstanceType i)
 	{
-		instanceType = i;
+		_instanceType = i;
 	}
 
 	public final InstanceType getInstanceType()
 	{
-		return instanceType;
+		return _instanceType;
 	}
 
 	public final boolean isInstanceType(InstanceType i)
 	{
-		return instanceType.isType(i);
+		return _instanceType.isType(i);
 	}
 
 	public final boolean isInstanceTypes(InstanceType... i)
 	{
-		return instanceType.isTypes(i);
+		return _instanceType.isTypes(i);
 	}
 
 	// =========================================================
@@ -324,8 +328,17 @@ public abstract class L2Object
 
 	public final int getX()
 	{
-		assert getPosition().getWorldRegion() != null || isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getX();
+	}
+
+	/**
+	 * @return The id of the instance zone the object is in - id 0 is global
+	 * since everything like dropped items, mobs, players can be in a instanciated area, it must be in l2object
+	 */
+	public int getInstanceId()
+	{
+		return _instanceId;
 	}
 
 	/**
@@ -333,12 +346,12 @@ public abstract class L2Object
 	 */
 	public void setInstanceId(int instanceId)
 	{
-		if (this.instanceId == instanceId)
+		if (_instanceId == instanceId)
 		{
 			return;
 		}
 
-		Instance oldI = InstanceManager.getInstance().getInstance(instanceId);
+		Instance oldI = InstanceManager.getInstance().getInstance(_instanceId);
 		Instance newI = InstanceManager.getInstance().getInstance(instanceId);
 
 		if (newI == null)
@@ -348,7 +361,7 @@ public abstract class L2Object
 
 		if (this instanceof L2PcInstance)
 		{
-			if (instanceId > 0 && oldI != null)
+			if (_instanceId > 0 && oldI != null)
 			{
 				oldI.removePlayer(getObjectId());
 				if (oldI.isShowTimer())
@@ -386,7 +399,7 @@ public abstract class L2Object
 		}
 		else if (this instanceof L2Npc)
 		{
-			if (instanceId > 0 && oldI != null)
+			if (_instanceId > 0 && oldI != null)
 			{
 				oldI.removeNpc((L2Npc) this);
 			}
@@ -396,13 +409,14 @@ public abstract class L2Object
 			}
 		}
 
-		this.instanceId = instanceId;
+		_instanceId = instanceId;
 
 		// If we change it for visible objects, me must clear & revalidate knownlists
-		if (isVisible && knownList != null)
+		if (_isVisible && _knownList != null)
 		{
 			if (this instanceof L2PcInstance)
 			{
+
 				// We don't want some ugly looking disappear/appear effects, so don't update
 				// the knownlist here, but players usually enter instancezones through teleporting
 				// and the teleport will do the revalidation for us.
@@ -417,13 +431,13 @@ public abstract class L2Object
 
 	public final int getY()
 	{
-		assert getPosition().getWorldRegion() != null || isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getY();
 	}
 
 	public final int getZ()
 	{
-		assert getPosition().getWorldRegion() != null || isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getZ();
 	}
 
@@ -439,7 +453,7 @@ public abstract class L2Object
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
-	 * <li> worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR><BR>
+	 * <li> _worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Delete NPC/PC or Unsummon</li><BR><BR>
@@ -452,7 +466,7 @@ public abstract class L2Object
 
 		synchronized (this)
 		{
-			isVisible = false;
+			_isVisible = false;
 			getPosition().setWorldRegion(null);
 		}
 
@@ -467,20 +481,20 @@ public abstract class L2Object
 	{
 		L2World.getInstance().removeObject(this);
 		IdFactory.getInstance().releaseId(getObjectId());
-		objectId = IdFactory.getInstance().getNextId();
+		_objectId = IdFactory.getInstance().getNextId();
 	}
 
 	/**
 	 * Init the position of a L2Object spawn and add it in the world as a visible object.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Set the x,y,z position of the L2Object spawn and update its worldregion </li>
-	 * <li>Add the L2Object spawn in the allobjects of L2World </li>
-	 * <li>Add the L2Object spawn to visibleObjects of its L2WorldRegion</li>
+	 * <li>Set the x,y,z position of the L2Object spawn and update its _worldregion </li>
+	 * <li>Add the L2Object spawn in the _allobjects of L2World </li>
+	 * <li>Add the L2Object spawn to _visibleObjects of its L2WorldRegion</li>
 	 * <li>Add the L2Object spawn in the world as a <B>visible</B> object</li><BR><BR>
 	 * <p>
 	 * <B><U> Assert </U> :</B><BR><BR>
-	 * <li> worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR><BR>
+	 * <li> _worldRegion == null <I>(L2Object is invisible at the beginning)</I></li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Create Door</li>
@@ -494,13 +508,13 @@ public abstract class L2Object
 		synchronized (this)
 		{
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
-			isVisible = true;
+			_isVisible = true;
 			getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 
-			// Add the L2Object spawn in the allobjects of L2World
+			// Add the L2Object spawn in the _allobjects of L2World
 			L2World.getInstance().storeObject(this);
 
-			// Add the L2Object spawn to visibleObjects and if necessary to allplayers of its L2WorldRegion
+			// Add the L2Object spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
 			getPosition().getWorldRegion().addVisibleObject(this);
 		}
 
@@ -519,7 +533,7 @@ public abstract class L2Object
 		synchronized (this)
 		{
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
-			isVisible = true;
+			_isVisible = true;
 
 			if (x > L2World.MAP_MAX_X)
 			{
@@ -542,13 +556,13 @@ public abstract class L2Object
 			getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 		}
 
-		// Add the L2Object spawn in the allobjects of L2World
+		// Add the L2Object spawn in the _allobjects of L2World
 		L2World.getInstance().storeObject(this);
 
 		// these can synchronize on others instancies, so they're out of
 		// synchronized, to avoid deadlocks
 
-		// Add the L2Object spawn to visibleObjects and if necessary to allplayers of its L2WorldRegion
+		// Add the L2Object spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
 		getPosition().getWorldRegion().addVisibleObject(this);
 
 		// Add the L2Object spawn in the world as a visible object
@@ -594,17 +608,22 @@ public abstract class L2Object
 	 */
 	public final boolean isVisible()
 	{
-		//return getPosition().getWorldRegion() != null && IsVisible;
+		//return getPosition().getWorldRegion() != null && _IsVisible;
 		return getPosition().getWorldRegion() != null;
 	}
 
 	public final void setIsVisible(boolean value)
 	{
-		isVisible = value;
-		if (!isVisible)
+		_isVisible = value;
+		if (!_isVisible)
 		{
 			getPosition().setWorldRegion(null);
 		}
+	}
+
+	public ObjectKnownList getKnownList()
+	{
+		return _knownList;
 	}
 
 	/**
@@ -615,36 +634,41 @@ public abstract class L2Object
 	 */
 	public void initKnownList()
 	{
-		knownList = new ObjectKnownList(this);
+		_knownList = new ObjectKnownList(this);
 	}
 
 	public final void setKnownList(ObjectKnownList value)
 	{
-		knownList = value;
+		_knownList = value;
 	}
 
 	public final String getName()
 	{
-		return name;
+		return _name;
 	}
 
 	public void setName(String value)
 	{
-		name = value;
+		_name = value;
 	}
 
 	public final int getObjectId()
 	{
-		return objectId;
+		return _objectId;
 	}
 
 	public final ObjectPoly getPoly()
 	{
-		if (poly == null)
+		if (_poly == null)
 		{
-			poly = new ObjectPoly(this);
+			_poly = new ObjectPoly(this);
 		}
-		return poly;
+		return _poly;
+	}
+
+	public ObjectPosition getPosition()
+	{
+		return _position;
 	}
 
 	/**
@@ -655,12 +679,12 @@ public abstract class L2Object
 	 */
 	public void initPosition()
 	{
-		position = new ObjectPosition(this);
+		_position = new ObjectPosition(this);
 	}
 
 	public final void setObjectPosition(ObjectPosition value)
 	{
-		position = value;
+		_position = value;
 	}
 
 	/**
@@ -692,6 +716,7 @@ public abstract class L2Object
 	 */
 	public void sendInfo(L2PcInstance activeChar)
 	{
+
 	}
 
 	@Override

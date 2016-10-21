@@ -35,73 +35,73 @@ public class CellNodeBuffer
 
 	private static final int MAX_ITERATIONS = 3500;
 
-	private final ReentrantLock lock = new ReentrantLock();
-	private final int mapSize;
-	private final CellNode[][] buffer;
+	private final ReentrantLock _lock = new ReentrantLock();
+	private final int _mapSize;
+	private final CellNode[][] _buffer;
 
-	private int baseX = 0;
-	private int baseY = 0;
+	private int _baseX = 0;
+	private int _baseY = 0;
 
-	private int targetX = 0;
-	private int targetY = 0;
-	private short targetZ = 0;
+	private int _targetX = 0;
+	private int _targetY = 0;
+	private short _targetZ = 0;
 
-	private long timeStamp = 0;
-	private long lastElapsedTime = 0;
+	private long _timeStamp = 0;
+	private long _lastElapsedTime = 0;
 
-	private CellNode current = null;
+	private CellNode _current = null;
 
 	public CellNodeBuffer(int size)
 	{
-		mapSize = size;
-		buffer = new CellNode[mapSize][mapSize];
+		_mapSize = size;
+		_buffer = new CellNode[_mapSize][_mapSize];
 	}
 
 	public final boolean lock()
 	{
-		return lock.tryLock();
+		return _lock.tryLock();
 	}
 
 	public final CellNode findPath(int x, int y, short z, int tx, int ty, short tz)
 	{
-		timeStamp = System.currentTimeMillis();
-		baseX = x + (tx - x - mapSize) / 2; // middle of the line (x,y) - (tx,ty)
-		baseY = y + (ty - y - mapSize) / 2; // will be in the center of the buffer
-		targetX = tx;
-		targetY = ty;
-		targetZ = tz;
-		current = getNode(x, y, z);
-		current.setCost(getCost(x, y, z, Config.HIGH_WEIGHT));
+		_timeStamp = System.currentTimeMillis();
+		_baseX = x + (tx - x - _mapSize) / 2; // middle of the line (x,y) - (tx,ty)
+		_baseY = y + (ty - y - _mapSize) / 2; // will be in the center of the buffer
+		_targetX = tx;
+		_targetY = ty;
+		_targetZ = tz;
+		_current = getNode(x, y, z);
+		_current.setCost(getCost(x, y, z, Config.HIGH_WEIGHT));
 
 		for (int count = 0; count < MAX_ITERATIONS; count++)
 		{
-			if (current.getLoc().getNodeX() == targetX && current.getLoc().getNodeY() == targetY &&
-					Math.abs(current.getLoc().getZ() - targetZ) < 64)
+			if (_current.getLoc().getNodeX() == _targetX && _current.getLoc().getNodeY() == _targetY &&
+					Math.abs(_current.getLoc().getZ() - _targetZ) < 64)
 			{
-				return current; // found
+				return _current; // found
 			}
 
 			getNeighbors();
-			if (current.getNext() == null)
+			if (_current.getNext() == null)
 			{
 				return null; // no more ways
 			}
 
-			current = current.getNext();
+			_current = _current.getNext();
 		}
 		return null;
 	}
 
 	public final void free()
 	{
-		current = null;
+		_current = null;
 
 		CellNode node;
-		for (int i = 0; i < mapSize; i++)
+		for (int i = 0; i < _mapSize; i++)
 		{
-			for (int j = 0; j < mapSize; j++)
+			for (int j = 0; j < _mapSize; j++)
 			{
-				node = buffer[i][j];
+				node = _buffer[i][j];
 				if (node != null)
 				{
 					node.free();
@@ -109,30 +109,30 @@ public class CellNodeBuffer
 			}
 		}
 
-		lock.unlock();
-		lastElapsedTime = System.currentTimeMillis() - timeStamp;
+		_lock.unlock();
+		_lastElapsedTime = System.currentTimeMillis() - _timeStamp;
 	}
 
 	public final long getElapsedTime()
 	{
-		return lastElapsedTime;
+		return _lastElapsedTime;
 	}
 
 	public final ArrayList<CellNode> debugPath()
 	{
 		ArrayList<CellNode> result = new ArrayList<>();
 
-		for (CellNode n = current; n.getParent() != null; n = (CellNode) n.getParent())
+		for (CellNode n = _current; n.getParent() != null; n = (CellNode) n.getParent())
 		{
 			result.add(n);
 			n.setCost(-n.getCost());
 		}
 
-		for (int i = 0; i < mapSize; i++)
+		for (int i = 0; i < _mapSize; i++)
 		{
-			for (int j = 0; j < mapSize; j++)
+			for (int j = 0; j < _mapSize; j++)
 			{
-				CellNode n = buffer[i][j];
+				CellNode n = _buffer[i][j];
 				if (n == null || !n.isInUse() || n.getCost() <= 0)
 				{
 					continue;
@@ -147,15 +147,15 @@ public class CellNodeBuffer
 
 	private void getNeighbors()
 	{
-		final short NSWE = ((NodeLoc) current.getLoc()).getNSWE();
+		final short NSWE = ((NodeLoc) _current.getLoc()).getNSWE();
 		if (NSWE == NSWE_NONE)
 		{
 			return;
 		}
 
-		final int x = current.getLoc().getNodeX();
-		final int y = current.getLoc().getNodeY();
-		final short z = current.getLoc().getZ();
+		final int x = _current.getLoc().getNodeX();
+		final int y = _current.getLoc().getNodeY();
+		final short z = _current.getLoc().getZ();
 
 		CellNode nodeE = null;
 		CellNode nodeS = null;
@@ -232,23 +232,23 @@ public class CellNodeBuffer
 
 	private CellNode getNode(int x, int y, short z)
 	{
-		final int aX = x - baseX;
-		if (aX < 0 || aX >= mapSize)
+		final int aX = x - _baseX;
+		if (aX < 0 || aX >= _mapSize)
 		{
 			return null;
 		}
 
-		final int aY = y - baseY;
-		if (aY < 0 || aY >= mapSize)
+		final int aY = y - _baseY;
+		if (aY < 0 || aY >= _mapSize)
 		{
 			return null;
 		}
 
-		CellNode result = buffer[aX][aY];
+		CellNode result = _buffer[aX][aY];
 		if (result == null)
 		{
 			result = new CellNode(new NodeLoc(x, y, z));
-			buffer[aX][aY] = result;
+			_buffer[aX][aY] = result;
 		}
 		else if (!result.isInUse())
 		{
@@ -281,7 +281,7 @@ public class CellNodeBuffer
 
 		final short geoZ = newNode.getLoc().getZ();
 
-		final int stepZ = Math.abs(geoZ - current.getLoc().getZ());
+		final int stepZ = Math.abs(geoZ - _current.getLoc().getZ());
 		float weight = diagonal ? Config.DIAGONAL_WEIGHT : Config.LOW_WEIGHT;
 
 		if (((NodeLoc) newNode.getLoc()).getNSWE() != NSWE_ALL || stepZ > 16)
@@ -308,10 +308,10 @@ public class CellNodeBuffer
 			}
 		}
 
-		newNode.setParent(current);
+		newNode.setParent(_current);
 		newNode.setCost(getCost(x, y, geoZ, weight));
 
-		CellNode node = current;
+		CellNode node = _current;
 		int count = 0;
 		while (node.getNext() != null && count < MAX_ITERATIONS * 4)
 		{
@@ -350,13 +350,14 @@ public class CellNodeBuffer
 			return true;
 		}
 		return Math.abs(result.getLoc().getZ() - z) > 16;
+
 	}
 
 	private double getCost(int x, int y, short z, float weight)
 	{
-		final int dX = x - targetX;
-		final int dY = y - targetY;
-		final int dZ = z - targetZ;
+		final int dX = x - _targetX;
+		final int dY = y - _targetY;
+		final int dZ = z - _targetZ;
 		// Math.abs(dx) + Math.abs(dy) + Math.abs(dz) / 16
 		double result = Math.sqrt(dX * dX + dY * dY + dZ * dZ / 256);
 		if (result > weight)

@@ -23,15 +23,15 @@ import l2server.gameserver.model.actor.instance.L2BoatInstance;
 public class VehicleInfo extends L2GameServerPacket
 {
 	// Store some parameters here because they can be changed during broadcast
-	private final int objId, x, y, z, heading;
+	private final int _objId, _x, _y, _z, _heading;
 
 	public VehicleInfo(L2BoatInstance boat)
 	{
-		objId = boat.getObjectId();
-		x = boat.getX();
-		y = boat.getY();
-		z = boat.getZ();
-		heading = boat.getHeading();
+		_objId = boat.getObjectId();
+		_x = boat.getX();
+		_y = boat.getY();
+		_z = boat.getZ();
+		_heading = boat.getHeading();
 	}
 
 	/* (non-Javadoc)
@@ -40,10 +40,10 @@ public class VehicleInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objId);
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(heading);
+		writeD(_objId);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeD(_heading);
 	}
 }

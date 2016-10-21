@@ -22,19 +22,19 @@ import l2server.gameserver.templates.item.L2Weapon;
 
 public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 {
-	private L2ItemInstance[] items;
-	private long price;
+	private L2ItemInstance[] _items;
+	private long _price;
 
 	public ExShowBaseAttributeCancelWindow(L2PcInstance player)
 	{
-		items = player.getInventory().getElementItems();
+		_items = player.getInventory().getElementItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(items.length);
-		for (L2ItemInstance item : items)
+		writeD(_items.length);
+		for (L2ItemInstance item : _items)
 		{
 			writeD(item.getObjectId());
 			writeQ(getPrice(item));
@@ -48,65 +48,65 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 			case L2Item.CRYSTAL_S:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 50000;
+					_price = 50000;
 				}
 				else
 				{
-					price = 40000;
+					_price = 40000;
 				}
 				break;
 			case L2Item.CRYSTAL_S80:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 100000;
+					_price = 100000;
 				}
 				else
 				{
-					price = 80000;
+					_price = 80000;
 				}
 				break;
 			case L2Item.CRYSTAL_S84:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 200000;
+					_price = 200000;
 				}
 				else
 				{
-					price = 160000;
+					_price = 160000;
 				}
 				break;
 			case L2Item.CRYSTAL_R:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 250000;
+					_price = 250000;
 				}
 				else
 				{
-					price = 240000;
+					_price = 240000;
 				}
 				break;
 			case L2Item.CRYSTAL_R95:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 300000;
+					_price = 300000;
 				}
 				else
 				{
-					price = 280000;
+					_price = 280000;
 				}
 				break;
 			case L2Item.CRYSTAL_R99:
 				if (item.getItem() instanceof L2Weapon)
 				{
-					price = 350000;
+					_price = 350000;
 				}
 				else
 				{
-					price = 320000;
+					_price = 320000;
 				}
 				break;
 		}
 
-		return price;
+		return _price;
 	}
 }

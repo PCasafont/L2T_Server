@@ -15,8 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Logger;
-
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
@@ -24,6 +22,8 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillType;
+
+import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -43,6 +43,7 @@ public class Charge implements ISkillHandler
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
+
 		for (L2Object target : targets)
 		{
 			if (!(target instanceof L2PcInstance))

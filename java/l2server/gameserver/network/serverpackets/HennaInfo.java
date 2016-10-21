@@ -20,44 +20,45 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public final class HennaInfo extends L2GameServerPacket
 {
-	private final L2PcInstance activeChar;
-	private final L2Henna[] hennas = new L2Henna[4];
-	private int count;
+
+	private final L2PcInstance _activeChar;
+	private final L2Henna[] _hennas = new L2Henna[4];
+	private int _count;
 
 	public HennaInfo(L2PcInstance player)
 	{
-		activeChar = player;
+		_activeChar = player;
 
 		int j = 0;
 		for (int i = 0; i < 3; i++)
 		{
-			L2Henna henna = activeChar.getHenna(i + 1);
+			L2Henna henna = _activeChar.getHenna(i + 1);
 			if (henna != null)
 			{
-				hennas[j++] = henna;
+				_hennas[j++] = henna;
 			}
 		}
-		count = j;
+		_count = j;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(activeChar.getHennaStatINT()); //equip INT
-		writeH(activeChar.getHennaStatSTR()); //equip STR
-		writeH(activeChar.getHennaStatCON()); //equip CON
-		writeH(activeChar.getHennaStatMEN()); //equip MEM
-		writeH(activeChar.getHennaStatDEX()); //equip DEX
-		writeH(activeChar.getHennaStatWIT()); //equip WIT
-		writeH(activeChar.getHennaStatLUC()); //equip LUC
-		writeH(activeChar.getHennaStatCHA()); //equip CHA
+		writeH(_activeChar.getHennaStatINT()); //equip INT
+		writeH(_activeChar.getHennaStatSTR()); //equip STR
+		writeH(_activeChar.getHennaStatCON()); //equip CON
+		writeH(_activeChar.getHennaStatMEN()); //equip MEM
+		writeH(_activeChar.getHennaStatDEX()); //equip DEX
+		writeH(_activeChar.getHennaStatWIT()); //equip WIT
+		writeH(_activeChar.getHennaStatLUC()); //equip LUC
+		writeH(_activeChar.getHennaStatCHA()); //equip CHA
 
 		writeD(3);
 		//writeD(4); // slots?
-		writeD(count); //size
-		for (int i = 0; i < count; i++)
+		writeD(_count); //size
+		for (int i = 0; i < _count; i++)
 		{
-			writeD(hennas[i].getSymbolId());
+			writeD(_hennas[i].getSymbolId());
 			writeD(0x01); // Enabled
 		}
 
@@ -66,7 +67,7 @@ public final class HennaInfo extends L2GameServerPacket
 		writeD(0x00);
 
 		//4rth Slot dye information
-		L2Henna dye = activeChar.getHenna(4);
+		L2Henna dye = _activeChar.getHenna(4);
 		if (dye != null)
 		{
 			writeD(dye.getSymbolId());

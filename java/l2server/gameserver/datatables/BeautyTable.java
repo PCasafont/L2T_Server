@@ -21,7 +21,6 @@ import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.io.File;
 import java.util.HashMap;
@@ -36,46 +35,81 @@ public class BeautyTable implements Reloadable
 {
 	public class BeautyTemplate
 	{
-		@Getter private int id;
-		@Getter private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
-		@Getter private Map<Integer, BeautyInfo> faceStyles = new HashMap<>();
-		@Getter private Map<Integer, BeautyInfo> hairColors = new HashMap<>();
+		private int _id;
+		private Map<Integer, BeautyInfo> _hairStyles = new HashMap<>();
+		private Map<Integer, BeautyInfo> _faceStyles = new HashMap<>();
+		private Map<Integer, BeautyInfo> _hairColors = new HashMap<>();
 
 		public BeautyTemplate(int id)
 		{
-			this.id = id;
+			_id = id;
+		}
+
+		public int getId()
+		{
+			return _id;
+		}
+
+		public Map<Integer, BeautyInfo> getHairStyles()
+		{
+			return _hairStyles;
+		}
+
+		public Map<Integer, BeautyInfo> getFaceStyles()
+		{
+			return _faceStyles;
+		}
+
+		public Map<Integer, BeautyInfo> getHairColors()
+		{
+			return _hairColors;
 		}
 	}
 
 	public class BeautyInfo
 	{
-		@Getter private int id;
-		@Getter private int parentId;
-		@Getter private int unk;
-		private int adenaCost;
-		private int ticketCost;
+		private int _id;
+		private int _parentId;
+		private int _unk;
+		private int _adenaCost;
+		private int _ticketCost;
 
 		private BeautyInfo(int id, int parentId, int unk, int adena, int tickets)
 		{
-			this.id = id;
-			this.parentId = parentId;
-			this.unk = unk;
-			adenaCost = adena;
-			ticketCost = tickets;
+			_id = id;
+			_parentId = parentId;
+			_unk = unk;
+			_adenaCost = adena;
+			_ticketCost = tickets;
+		}
+
+		public int getId()
+		{
+			return _id;
+		}
+
+		public int getParentId()
+		{
+			return _parentId;
+		}
+
+		public int getUnk()
+		{
+			return _unk;
 		}
 
 		public int getAdenaPrice()
 		{
-			return adenaCost;
+			return _adenaCost;
 		}
 
 		public int getTicketPrice()
 		{
-			return ticketCost;
+			return _ticketCost;
 		}
 	}
 
-	private Map<Integer, BeautyTemplate> beautyTable = new HashMap<>();
+	private Map<Integer, BeautyTemplate> _beautyTable = new HashMap<>();
 
 	private BeautyTable()
 	{
@@ -92,7 +126,7 @@ public class BeautyTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
 
 		XmlDocument doc = new XmlDocument(file);
-		beautyTable.clear();
+		_beautyTable.clear();
 		doc.getChildren().stream().filter(n -> n.getName().equalsIgnoreCase("list")).forEachOrdered(n ->
 		{
 			BeautyTemplate template = new BeautyTemplate(0);
@@ -126,7 +160,7 @@ public class BeautyTable implements Reloadable
 				}
 			}
 
-			beautyTable.put(0, template);
+			_beautyTable.put(0, template);
 
 			Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
 					template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
@@ -144,17 +178,17 @@ public class BeautyTable implements Reloadable
 
 	public BeautyTemplate getTemplate(int id)
 	{
-		return beautyTable.get(id);
+		return _beautyTable.get(id);
 	}
 
 	public static BeautyTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final BeautyTable instance = new BeautyTable();
+		protected static final BeautyTable _instance = new BeautyTable();
 	}
 }

@@ -33,41 +33,42 @@ import l2server.gameserver.model.L2Macro;
  */
 public class SendMacroList extends L2GameServerPacket
 {
-	private final int rev;
 
-	private final int count;
+	private final int _rev;
 
-	private final L2Macro macro;
+	private final int _count;
+
+	private final L2Macro _macro;
 
 	public SendMacroList(int rev, int count, L2Macro macro)
 	{
-		this.rev = rev;
-		this.count = count;
-		this.macro = macro;
+		_rev = rev;
+		_count = count;
+		_macro = macro;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(rev); // 0 - remove / 1 - add / 2 - edit
-		writeD(macro != null ? macro.id : 0); // Macro ID
-		writeC(count); // count of Macros
-		writeC(rev == 0 ? 0 : 1); // unknown
+		writeC(_rev); // 0 - remove / 1 - add / 2 - edit
+		writeD(_macro != null ? _macro.id : 0); // Macro ID
+		writeC(_count); // count of Macros
+		writeC(_rev == 0 ? 0 : 1); // unknown
 
-		if (macro != null && rev != 0)
+		if (_macro != null && _rev != 0)
 		{
-			writeD(macro.id); // Macro ID
-			writeS(macro.name); // Macro Name
-			writeS(macro.descr); // Desc
-			writeS(macro.acronym); // acronym
+			writeD(_macro.id); // Macro ID
+			writeS(_macro.name); // Macro Name
+			writeS(_macro.descr); // Desc
+			writeS(_macro.acronym); // acronym
 			writeH(104); // ???
-			writeH(macro.icon); // icon
+			writeH(_macro.icon); // icon
 
-			writeC(macro.commands.length); // count
+			writeC(_macro.commands.length); // count
 
-			for (int i = 0; i < macro.commands.length; i++)
+			for (int i = 0; i < _macro.commands.length; i++)
 			{
-				L2Macro.L2MacroCmd cmd = macro.commands[i];
+				L2Macro.L2MacroCmd cmd = _macro.commands[i];
 				writeC(i + 1); // i of count
 				writeC(cmd.type); // type 1 = skill, 3 = action, 4 = shortcut
 				writeD(cmd.d1); // skill id

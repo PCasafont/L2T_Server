@@ -35,20 +35,20 @@ import java.util.logging.Level;
 
 public class L2SkillSpawn extends L2Skill
 {
-	private final int npcId;
-	private final int despawnDelay;
-	private final boolean summonSpawn;
-	private final boolean randomOffset;
-	private int count;
+	private final int _npcId;
+	private final int _despawnDelay;
+	private final boolean _summonSpawn;
+	private final boolean _randomOffset;
+	private int _count;
 
 	public L2SkillSpawn(StatsSet set)
 	{
 		super(set);
-		npcId = set.getInteger("npcId", 0);
-		despawnDelay = set.getInteger("despawnDelay", 0);
-		summonSpawn = set.getBool("isSummonSpawn", false);
-		randomOffset = set.getBool("randomOffset", true);
-		count = set.getInteger("count", 1);
+		_npcId = set.getInteger("npcId", 0);
+		_despawnDelay = set.getInteger("despawnDelay", 0);
+		_summonSpawn = set.getBool("isSummonSpawn", false);
+		_randomOffset = set.getBool("randomOffset", true);
+		_count = set.getInteger("count", 1);
 	}
 
 	@Override
@@ -59,16 +59,16 @@ public class L2SkillSpawn extends L2Skill
 			return;
 		}
 
-		if (npcId == 0)
+		if (_npcId == 0)
 		{
 			Log.warning("NPC ID not defined for skill ID:" + getId());
 			return;
 		}
 
-		final L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+		final L2NpcTemplate template = NpcTable.getInstance().getTemplate(_npcId);
 		if (template == null)
 		{
-			Log.warning("Spawn of the nonexisting NPC ID:" + npcId + ", skill ID:" + getId());
+			Log.warning("Spawn of the nonexisting NPC ID:" + _npcId + ", skill ID:" + getId());
 			return;
 		}
 
@@ -82,10 +82,10 @@ public class L2SkillSpawn extends L2Skill
 			int first = 0;
 			if (skillMastery && getId() == 10532)
 			{
-				first = -count;
+				first = -_count;
 			}
 
-			for (int i = first; i < count; i++)
+			for (int i = first; i < _count; i++)
 			{
 				final L2Spawn spawn = new L2Spawn(template);
 
@@ -105,7 +105,7 @@ public class L2SkillSpawn extends L2Skill
 				}
 				else
 				{
-					if (randomOffset)
+					if (_randomOffset)
 					{
 						x = caster.getX() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
 						y = caster.getY() + (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
@@ -133,18 +133,18 @@ public class L2SkillSpawn extends L2Skill
 				}
 
 				npc.setIsRunning(true);
-				spawn.doSpawn(summonSpawn);
+				spawn.doSpawn(_summonSpawn);
 
-				if (despawnDelay > 0)
+				if (_despawnDelay > 0)
 				{
-					npc.scheduleDespawn(despawnDelay);
+					npc.scheduleDespawn(_despawnDelay);
 				}
 			}
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING,
-					"Exception while spawning NPC ID: " + npcId + ", skill ID: " + getId() + ", exception: " +
+					"Exception while spawning NPC ID: " + _npcId + ", skill ID: " + getId() + ", exception: " +
 							e.getMessage(), e);
 		}
 

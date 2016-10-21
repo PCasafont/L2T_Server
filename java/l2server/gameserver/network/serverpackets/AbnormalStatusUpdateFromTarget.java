@@ -26,31 +26,31 @@ import java.util.List;
  */
 public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 {
-	private L2Character character;
-	private List<Effect> effects;
+	private L2Character _character;
+	private List<Effect> _effects;
 
 	private static class Effect
 	{
-		protected int skillId;
-		protected int level;
-		protected int comboId;
-		protected int duration;
-		protected int effector;
+		protected int _skillId;
+		protected int _level;
+		protected int _comboId;
+		protected int _duration;
+		protected int _effector;
 
 		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
 		{
-			skillId = pSkillId;
-			level = pLevel;
-			comboId = pComboId;
-			duration = pDuration;
-			effector = pEffector;
+			_skillId = pSkillId;
+			_level = pLevel;
+			_comboId = pComboId;
+			_duration = pDuration;
+			_effector = pEffector;
 		}
 	}
 
 	public AbnormalStatusUpdateFromTarget(L2Character c)
 	{
-		character = c;
-		effects = new ArrayList<>();
+		_character = c;
+		_effects = new ArrayList<>();
 
 		for (L2Abnormal e : c.getAllEffects())
 		{
@@ -66,7 +66,7 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 					continue;
 			}
 
-			if (e.isInUse())
+			if (e.getInUse())
 			{
 				e.addIcon(this);
 			}
@@ -80,31 +80,31 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 			return;
 		}
 
-		effects.add(new Effect(skillId, level, comboId, duration, effector));
+		_effects.add(new Effect(skillId, level, comboId, duration, effector));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(character.getObjectId());
+		writeD(_character.getObjectId());
 
-		writeH(effects.size());
+		writeH(_effects.size());
 
-		for (Effect temp : effects)
+		for (Effect temp : _effects)
 		{
-			writeD(temp.skillId);
-			writeD(temp.level);
-			writeH(temp.comboId);
-			if (temp.duration == -1)
+			writeD(temp._skillId);
+			writeD(temp._level);
+			writeH(temp._comboId);
+			if (temp._duration == -1)
 			{
 				writeH(-1);
 			}
 			else
 			{
-				writeH(temp.duration / 1000 + 1);
+				writeH(temp._duration / 1000 + 1);
 			}
 
-			writeD(temp.effector);
+			writeD(temp._effector);
 		}
 	}
 }

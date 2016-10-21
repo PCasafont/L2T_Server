@@ -33,15 +33,16 @@ import java.util.logging.Level;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
-	private final List<Forum> table;
-	private int lastid = 1;
+
+	private final List<Forum> _table;
+	private int _lastid = 1;
 
 	/**
 	 * Instantiates a new forums bbs manager.
 	 */
 	private ForumsBBSManager()
 	{
-		table = new ArrayList<>();
+		_table = new ArrayList<>();
 
 		Connection con = null;
 		try
@@ -73,12 +74,12 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public void initRoot()
 	{
-		List<Forum> copy = new ArrayList<>(table);
+		List<Forum> copy = new ArrayList<>(_table);
 		for (Forum f : copy)
 		{
 			f.vload();
 		}
-		Log.info("Loaded " + table.size() + " forums. Last forum id used: " + lastid);
+		Log.info("Loaded " + _table.size() + " forums. Last forum id used: " + _lastid);
 	}
 
 	/**
@@ -93,11 +94,11 @@ public class ForumsBBSManager extends BaseBBSManager
 			return;
 		}
 
-		table.add(ff);
+		_table.add(ff);
 
-		if (ff.getID() > lastid)
+		if (ff.getID() > _lastid)
 		{
-			lastid = ff.getID();
+			_lastid = ff.getID();
 		}
 	}
 
@@ -114,7 +115,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByName(String name)
 	{
-		for (Forum f : table)
+		for (Forum f : _table)
 		{
 			if (f.getName().equals(name))
 			{
@@ -148,7 +149,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public int getANewID()
 	{
-		return ++lastid;
+		return ++_lastid;
 	}
 
 	/**
@@ -159,7 +160,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public Forum getForumByID(int idf)
 	{
-		for (Forum f : table)
+		for (Forum f : _table)
 		{
 			if (f.getID() == idf)
 			{
@@ -172,6 +173,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	@Override
 	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
 	{
+
 	}
 
 	/**
@@ -181,11 +183,11 @@ public class ForumsBBSManager extends BaseBBSManager
 	 */
 	public static ForumsBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final ForumsBBSManager instance = new ForumsBBSManager();
+		protected static final ForumsBBSManager _instance = new ForumsBBSManager();
 	}
 }

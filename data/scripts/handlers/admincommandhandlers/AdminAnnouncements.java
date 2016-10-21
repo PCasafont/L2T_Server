@@ -36,6 +36,7 @@ import java.util.Collection;
  */
 public class AdminAnnouncements implements IAdminCommandHandler
 {
+
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_list_announcements",
 			"admin_reload_announcements",

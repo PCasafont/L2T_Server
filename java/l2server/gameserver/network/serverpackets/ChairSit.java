@@ -27,21 +27,22 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ChairSit extends L2GameServerPacket
 {
-	private L2PcInstance activeChar;
-	private int staticObjectId;
+
+	private L2PcInstance _activeChar;
+	private int _staticObjectId;
 
 	/**
 	 */
 	public ChairSit(L2PcInstance player, int staticObjectId)
 	{
-		activeChar = player;
-		this.staticObjectId = staticObjectId;
+		_activeChar = player;
+		_staticObjectId = staticObjectId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(activeChar.getObjectId());
-		writeD(staticObjectId);
+		writeD(_activeChar.getObjectId());
+		writeD(_staticObjectId);
 	}
 }

@@ -29,8 +29,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 {
-	private int supportObjectId;
-	private int enchantObjectId;
+
+	private int _supportObjectId;
+	private int _enchantObjectId;
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -38,8 +39,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		supportObjectId = readD();
-		enchantObjectId = readD();
+		_supportObjectId = readD();
+		_enchantObjectId = readD();
 	}
 
 	/**
@@ -53,8 +54,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		{
 			if (activeChar.isEnchanting())
 			{
-				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(enchantObjectId);
-				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(supportObjectId);
+				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_enchantObjectId);
+				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(_supportObjectId);
 
 				if (item == null || support == null)
 				{
@@ -76,7 +77,7 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 
 				activeChar.setIsEnchanting(true);
 				activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
-				activeChar.sendPacket(new ExPutEnchantSupportItemResult(supportObjectId));
+				activeChar.sendPacket(new ExPutEnchantSupportItemResult(_supportObjectId));
 				activeChar.sendPacket(new ExEnchantItemAllowed());
 			}
 		}

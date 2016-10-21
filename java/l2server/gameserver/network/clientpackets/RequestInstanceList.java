@@ -19,9 +19,11 @@ import l2server.gameserver.network.serverpackets.ExInstanceList;
 
 public final class RequestInstanceList extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{
+
 	}
 
 	@Override

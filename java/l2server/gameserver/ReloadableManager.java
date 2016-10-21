@@ -20,21 +20,21 @@ import java.util.Map;
 
 public class ReloadableManager
 {
-	private Map<String, Reloadable> reloadables = new HashMap<>();
+	private Map<String, Reloadable> _reloadables = new HashMap<>();
 
 	public static ReloadableManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void register(String name, Reloadable r)
 	{
-		reloadables.put(name, r);
+		_reloadables.put(name, r);
 	}
 
 	public String reload(String name)
 	{
-		Reloadable r = reloadables.get(name);
+		Reloadable r = _reloadables.get(name);
 		if (r == null)
 		{
 			return "Couldn't find a reloadable called \"" + name + "\"";
@@ -46,6 +46,6 @@ public class ReloadableManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ReloadableManager instance = new ReloadableManager();
+		protected static final ReloadableManager _instance = new ReloadableManager();
 	}
 }

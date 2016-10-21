@@ -5,22 +5,22 @@ package l2server.gameserver.network.serverpackets;
  */
 public class BuyList extends L2GameServerPacket
 {
-	private int listID;
-	private long money;
-	private int listsize;
+	private int _listID;
+	private long _money;
+	private int _listsize;
 
 	public BuyList(int listID, long money, int listsize)
 	{
-		this.listID = listID;
-		this.money = money;
-		this.listsize = listsize;
+		_listID = listID;
+		_money = money;
+		_listsize = listsize;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(listID);
-		writeQ(money);
-		writeH(listsize);
+		writeD(_listID);
+		writeQ(_money);
+		writeH(_listsize);
 	}
 }

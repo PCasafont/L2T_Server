@@ -26,13 +26,13 @@ import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
  */
 public final class RequestAPSkillAcquire extends L2GameClientPacket
 {
-	private int totalCount;
-	private TIntIntHashMap abilities = new TIntIntHashMap();
+	private int _totalCount;
+	private TIntIntHashMap _abilities = new TIntIntHashMap();
 
 	@Override
 	protected void readImpl()
 	{
-		totalCount = readD(); // Total count
+		_totalCount = readD(); // Total count
 
 		// Knight skills
 		int count = readD();
@@ -40,7 +40,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			abilities.put(id, level);
+			_abilities.put(id, level);
 		}
 
 		// Knight skills
@@ -49,7 +49,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			abilities.put(id, level);
+			_abilities.put(id, level);
 		}
 
 		// Knight skills
@@ -58,7 +58,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int id = readD();
 			int level = readD();
-			abilities.put(id, level);
+			_abilities.put(id, level);
 		}
 	}
 
@@ -73,7 +73,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			return;
 		}
 
-		if (totalCount != abilities.size())
+		if (_totalCount != _abilities.size())
 		{
 			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 			return;
@@ -86,20 +86,20 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		}
 
 		// We don't trust the client, let's count how many of each type we got
-		for (int skillId : abilities.keys())
+		for (int skillId : _abilities.keys())
 		{
-			counts[AbilityTable.getInstance().getAbility(skillId).getType() - 1] += abilities.get(skillId);
+			counts[AbilityTable.getInstance().getAbility(skillId).getType() - 1] += _abilities.get(skillId);
 		}
 
 		int remainingPoints = player.getAbilityPoints();
-		for (int skillId : abilities.keys())
+		for (int skillId : _abilities.keys())
 		{
-			int level = abilities.get(skillId);
+			int level = _abilities.get(skillId);
 			Ability ability = AbilityTable.getInstance().getAbility(skillId);
 			if (level > ability.getMaxLevel() || level > remainingPoints ||
 					counts[ability.getType() - 1] < ability.getReqPoints() || ability.getReqSkill() > 0 &&
-					(!abilities.containsKey(ability.getReqSkill()) ||
-							abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))
+					(!_abilities.containsKey(ability.getReqSkill()) ||
+							_abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))
 			{
 				sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 				return;
@@ -108,7 +108,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			remainingPoints -= level;
 		}
 
-		player.setAbilities(abilities);
+		player.setAbilities(_abilities);
 
 		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
 	}

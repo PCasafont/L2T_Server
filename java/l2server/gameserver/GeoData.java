@@ -28,6 +28,7 @@ import l2server.util.Point3D;
  */
 public class GeoData
 {
+
 	protected GeoData()
 	{
 	}
@@ -42,7 +43,7 @@ public class GeoData
 
 	public static GeoData getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// Public Methods
@@ -172,6 +173,7 @@ public class GeoData
 
 	public static void unloadGeodata(byte rx, byte ry)
 	{
+
 	}
 
 	public static boolean loadGeodataFile(byte rx, byte ry)
@@ -187,6 +189,6 @@ public class GeoData
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GeoData instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
+		protected static final GeoData _instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
 	}
 }

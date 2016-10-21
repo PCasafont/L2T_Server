@@ -29,14 +29,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class BrokenBodiedGolem extends L2AttackableAIScript
 {
-	private static final int brokenGolem = 23259;
-	private static final int summonedGolem = 23260;
+	private static final int _brokenGolem = 23259;
+	private static final int _summonedGolem = 23260;
 
 	public BrokenBodiedGolem(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addKillId(brokenGolem);
+		addKillId(_brokenGolem);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class BrokenBodiedGolem extends L2AttackableAIScript
 	{
 		for (int a = 0; a < 2; a++)
 		{
-			L2Npc minion = addSpawn(summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+			L2Npc minion = addSpawn(_summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 			minion.setIsRunning(true);
 			minion.setTarget(killer);
 			((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);

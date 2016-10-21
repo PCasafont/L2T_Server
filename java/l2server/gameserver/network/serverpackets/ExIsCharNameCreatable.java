@@ -25,13 +25,13 @@ import l2server.gameserver.util.Util;
  */
 public final class ExIsCharNameCreatable extends L2GameServerPacket
 {
-	private int result;
+	private int _result;
 
 	public ExIsCharNameCreatable(String name)
 	{
 		if (name.length() < 1 || name.length() > 16)
 		{
-			result = CharCreateFail.REASON_16_ENG_CHARS;
+			_result = CharCreateFail.REASON_16_ENG_CHARS;
 			return;
 		}
 
@@ -41,7 +41,7 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 			{
 				if (name.toLowerCase().contains(st.toLowerCase()))
 				{
-					result = CharCreateFail.REASON_INCORRECT_NAME;
+					_result = CharCreateFail.REASON_INCORRECT_NAME;
 					return;
 				}
 			}
@@ -50,22 +50,22 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 		// Last Verified: May 30, 2009 - Gracia Final
 		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name))
 		{
-			result = CharCreateFail.REASON_INCORRECT_NAME;
+			_result = CharCreateFail.REASON_INCORRECT_NAME;
 			return;
 		}
 
 		if (CharNameTable.getInstance().doesCharNameExist(name))
 		{
-			result = CharCreateFail.REASON_NAME_ALREADY_EXISTS;
+			_result = CharCreateFail.REASON_NAME_ALREADY_EXISTS;
 			return;
 		}
 
-		result = -1;
+		_result = -1;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(result);
+		writeD(_result);
 	}
 }

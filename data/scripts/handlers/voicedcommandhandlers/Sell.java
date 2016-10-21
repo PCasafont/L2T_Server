@@ -41,7 +41,7 @@ import java.util.Map.Entry;
 
 public class Sell implements IVoicedCommandHandler
 {
-	private static final boolean logSellCommand = true;
+	private static final boolean _logSellCommand = true;
 
 	private static final String[] VOICED_COMMANDS = {"sell"};
 
@@ -371,7 +371,7 @@ public class Sell implements IVoicedCommandHandler
 					player.broadcastPacket(new PrivateStoreMsgSell(player));
 					player.sitDown();
 
-					if (logSellCommand)
+					if (_logSellCommand)
 					{
 						String log = player.getName() + " (" + list.getTitle() + ")\n";
 						for (TradeItem item : list.getItems())

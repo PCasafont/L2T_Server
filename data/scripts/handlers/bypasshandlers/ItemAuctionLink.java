@@ -25,7 +25,6 @@ import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -120,7 +119,7 @@ public class ItemAuctionLink implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			Log.severe("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
+			_log.severe("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
 		}
 
 		return true;

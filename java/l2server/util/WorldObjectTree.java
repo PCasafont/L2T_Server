@@ -27,10 +27,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 {
-	private final TreeMap<Integer, T> objectMap = new TreeMap<>();
-	private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
-	private final Lock r = rwl.readLock();
-	private final Lock w = rwl.writeLock();
+	private final TreeMap<Integer, T> _objectMap = new TreeMap<>();
+	private final ReentrantReadWriteLock _rwl = new ReentrantReadWriteLock();
+	private final Lock _r = _rwl.readLock();
+	private final Lock _w = _rwl.writeLock();
 
 	/**
 	 * @see l2server.util.L2ObjectMap#size()
@@ -38,14 +38,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public int size()
 	{
-		r.lock();
+		_r.lock();
 		try
 		{
-			return objectMap.size();
+			return _objectMap.size();
 		}
 		finally
 		{
-			r.unlock();
+			_r.unlock();
 		}
 	}
 
@@ -55,14 +55,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public boolean isEmpty()
 	{
-		r.lock();
+		_r.lock();
 		try
 		{
-			return objectMap.isEmpty();
+			return _objectMap.isEmpty();
 		}
 		finally
 		{
-			r.unlock();
+			_r.unlock();
 		}
 	}
 
@@ -72,14 +72,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public void clear()
 	{
-		w.lock();
+		_w.lock();
 		try
 		{
-			objectMap.clear();
+			_objectMap.clear();
 		}
 		finally
 		{
-			w.unlock();
+			_w.unlock();
 		}
 	}
 
@@ -91,14 +91,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			w.lock();
+			_w.lock();
 			try
 			{
-				objectMap.put(obj.getObjectId(), obj);
+				_objectMap.put(obj.getObjectId(), obj);
 			}
 			finally
 			{
-				w.unlock();
+				_w.unlock();
 			}
 		}
 	}
@@ -111,14 +111,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	{
 		if (obj != null)
 		{
-			w.lock();
+			_w.lock();
 			try
 			{
-				objectMap.remove(obj.getObjectId());
+				_objectMap.remove(obj.getObjectId());
 			}
 			finally
 			{
-				w.unlock();
+				_w.unlock();
 			}
 		}
 	}
@@ -129,14 +129,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public T get(int id)
 	{
-		r.lock();
+		_r.lock();
 		try
 		{
-			return objectMap.get(id);
+			return _objectMap.get(id);
 		}
 		finally
 		{
-			r.unlock();
+			_r.unlock();
 		}
 	}
 
@@ -150,14 +150,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 		{
 			return false;
 		}
-		r.lock();
+		_r.lock();
 		try
 		{
-			return objectMap.containsValue(obj);
+			return _objectMap.containsValue(obj);
 		}
 		finally
 		{
-			r.unlock();
+			_r.unlock();
 		}
 	}
 
@@ -167,14 +167,14 @@ public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public Iterator<T> iterator()
 	{
-		r.lock();
+		_r.lock();
 		try
 		{
-			return objectMap.values().iterator();
+			return _objectMap.values().iterator();
 		}
 		finally
 		{
-			r.unlock();
+			_r.unlock();
 		}
 	}
 }

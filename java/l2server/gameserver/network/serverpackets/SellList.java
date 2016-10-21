@@ -31,40 +31,41 @@ import java.util.List;
  */
 public class SellList extends L2GameServerPacket
 {
-	private final L2PcInstance activeChar;
-	private final L2MerchantInstance lease;
-	private long money;
-	private List<L2ItemInstance> selllist = new ArrayList<>();
+
+	private final L2PcInstance _activeChar;
+	private final L2MerchantInstance _lease;
+	private long _money;
+	private List<L2ItemInstance> _selllist = new ArrayList<>();
 
 	public SellList(L2PcInstance player)
 	{
-		activeChar = player;
-		lease = null;
-		money = activeChar.getAdena();
+		_activeChar = player;
+		_lease = null;
+		_money = _activeChar.getAdena();
 		doLease();
 	}
 
 	public SellList(L2PcInstance player, L2MerchantInstance lease)
 	{
-		activeChar = player;
-		this.lease = lease;
-		money = activeChar.getAdena();
+		_activeChar = player;
+		_lease = lease;
+		_money = _activeChar.getAdena();
 		doLease();
 	}
 
 	private void doLease()
 	{
-		if (lease == null)
+		if (_lease == null)
 		{
-			for (L2ItemInstance item : activeChar.getInventory().getItems())
+			for (L2ItemInstance item : _activeChar.getInventory().getItems())
 			{
 				if (!item.isEquipped() && // Not equipped
 						item.isSellable() && // Item is sellable
-						(activeChar.getPet() == null || // Pet not summoned or
-								item.getObjectId() != activeChar.getPet()
+						(_activeChar.getPet() == null || // Pet not summoned or
+								item.getObjectId() != _activeChar.getPet()
 										.getControlObjectId())) // Pet is summoned and not the item that summoned the pet
 				{
-					selllist.add(item);
+					_selllist.add(item);
 					if (Config.DEBUG)
 					{
 						Log.fine("item added to selllist: " + item.getItem().getName());
@@ -77,11 +78,11 @@ public class SellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(money);
-		writeD(lease == null ? 0x00 : 1000000 + lease.getTemplate().NpcId);
-		writeH(selllist.size());
+		writeQ(_money);
+		writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().NpcId);
+		writeH(_selllist.size());
 
-		for (L2ItemInstance item : selllist)
+		for (L2ItemInstance item : _selllist)
 		{
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());

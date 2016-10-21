@@ -23,21 +23,21 @@ public class VehiclePathPoint
 	public int moveSpeed;
 	public int rotationSpeed;
 
-	public VehiclePathPoint(int x, int y, int z)
+	public VehiclePathPoint(int _x, int _y, int _z)
 	{
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		x = _x;
+		y = _y;
+		z = _z;
 		moveSpeed = 350;
 		rotationSpeed = 4000;
 	}
 
-	public VehiclePathPoint(int x, int y, int z, int m, int r)
+	public VehiclePathPoint(int _x, int _y, int _z, int _m, int _r)
 	{
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		moveSpeed = m;
-		rotationSpeed = r;
+		x = _x;
+		y = _y;
+		z = _z;
+		moveSpeed = _m;
+		rotationSpeed = _r;
 	}
 }

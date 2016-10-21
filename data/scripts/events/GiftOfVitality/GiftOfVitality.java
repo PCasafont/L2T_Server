@@ -33,11 +33,11 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class GiftOfVitality extends Quest
 {
 	// Reuse between buffs
-	private static final int hours = 5;
+	private static final int _hours = 5;
 
-	private static final int jack = 4306;
+	private static final int _jack = 4306;
 
-	private static final int[][] spawns = {
+	private static final int[][] _spawns = {
 			{82766, 149438, -3464, 33865},
 			{82286, 53291, -1488, 15250},
 			{147060, 25943, -2008, 18774},
@@ -59,12 +59,12 @@ public class GiftOfVitality extends Quest
 	public GiftOfVitality(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(jack);
-		addFirstTalkId(jack);
-		addTalkId(jack);
-		for (int[] spawn : spawns)
+		addStartNpc(_jack);
+		addFirstTalkId(_jack);
+		addTalkId(_jack);
+		for (int[] _spawn : _spawns)
 		{
-			addSpawn(jack, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+			addSpawn(_jack, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
 		}
 	}
 
@@ -77,15 +77,15 @@ public class GiftOfVitality extends Quest
 
 		if (event.equalsIgnoreCase("vitality"))
 		{
-			long reuse = 0;
-			String streuse = st.get("reuse");
-			if (streuse != null)
+			long _reuse = 0;
+			String _streuse = st.get("reuse");
+			if (_streuse != null)
 			{
-				reuse = Long.parseLong(streuse);
+				_reuse = Long.parseLong(_streuse);
 			}
-			if (reuse > System.currentTimeMillis())
+			if (_reuse > System.currentTimeMillis())
 			{
-				long remainingTime = (reuse - System.currentTimeMillis()) / 1000;
+				long remainingTime = (_reuse - System.currentTimeMillis()) / 1000;
 				int hours = (int) (remainingTime / 3600);
 				int minutes = (int) (remainingTime % 3600 / 60);
 				SystemMessage sm =
@@ -101,7 +101,7 @@ public class GiftOfVitality extends Quest
 				npc.setTarget(player);
 				npc.doCast(SkillTable.getInstance().getInfo(23179, 1)); // Gift of Vitality
 				st.setState(State.STARTED);
-				st.set("reuse", String.valueOf(System.currentTimeMillis() + hours * 60 * 60 * 1000));
+				st.set("reuse", String.valueOf(System.currentTimeMillis() + _hours * 60 * 60 * 1000));
 				htmltext = "4306-okvitality.htm";
 			}
 		}

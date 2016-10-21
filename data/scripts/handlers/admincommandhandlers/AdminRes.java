@@ -24,7 +24,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.DecayTaskManager;
-import l2server.log.Log;
 
 import java.util.logging.Logger;
 
@@ -36,7 +35,7 @@ import java.util.logging.Logger;
  */
 public class AdminRes implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminRes.class.getName());
+	private static Logger _log = Logger.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_res", "admin_res_monster"};
 
 	@Override
@@ -118,7 +117,7 @@ public class AdminRes implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
+			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
 					obj.getObjectId());
 		}
 	}

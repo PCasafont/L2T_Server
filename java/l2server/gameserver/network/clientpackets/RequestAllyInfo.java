@@ -28,9 +28,11 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestAllyInfo extends L2GameClientPacket
 {
+
 	@Override
 	public void readImpl()
 	{
+
 	}
 
 	@Override

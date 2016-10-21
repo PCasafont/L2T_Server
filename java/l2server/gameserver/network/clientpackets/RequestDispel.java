@@ -29,9 +29,9 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class RequestDispel extends L2GameClientPacket
 {
-	private int objectId;
-	private int skillId;
-	private int skillLevel;
+	private int _objectId;
+	private int _skillId;
+	private int _skillLevel;
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -39,9 +39,9 @@ public class RequestDispel extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD();
-		skillId = readD();
-		skillLevel = readD();
+		_objectId = readD();
+		_skillId = readD();
+		_skillLevel = readD();
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class RequestDispel extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (skillId <= 0 || skillLevel <= 0)
+		if (_skillId <= 0 || _skillLevel <= 0)
 		{
 			return;
 		}
@@ -61,7 +61,7 @@ public class RequestDispel extends L2GameClientPacket
 			return;
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
+		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLevel);
 		if (skill == null)
 		{
 			return;
@@ -80,20 +80,20 @@ public class RequestDispel extends L2GameClientPacket
 		{
 			return;
 		}
-		if (activeChar.getObjectId() == objectId)
+		if (activeChar.getObjectId() == _objectId)
 		{
-			activeChar.stopSkillEffects(skillId);
+			activeChar.stopSkillEffects(_skillId);
 		}
 		else
 		{
 			final L2PetInstance pet = activeChar.getPet();
-			if (pet != null && pet.getObjectId() == objectId)
+			if (pet != null && pet.getObjectId() == _objectId)
 			{
-				pet.stopSkillEffects(skillId);
+				pet.stopSkillEffects(_skillId);
 			}
 			for (L2SummonInstance summon : activeChar.getSummons())
 			{
-				summon.stopSkillEffects(skillId);
+				summon.stopSkillEffects(_skillId);
 			}
 		}
 	}

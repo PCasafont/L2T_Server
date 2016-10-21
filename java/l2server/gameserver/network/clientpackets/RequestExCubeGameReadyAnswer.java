@@ -28,16 +28,17 @@ import l2server.log.Log;
  */
 public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
 {
-	int arena;
-	int answer;
+
+	int _arena;
+	int _answer;
 
 	@Override
 	protected void readImpl()
 	{
 		// client sends -1,0,1,2 for arena parameter
-		arena = readD() + 1;
+		_arena = readD() + 1;
 		// client sends 1 if clicked confirm on not clicked, 0 if clicked cancel
-		answer = readD();
+		_answer = readD();
 	}
 
 	@Override
@@ -50,17 +51,17 @@ public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
 			return;
 		}
 
-		switch (answer)
+		switch (_answer)
 		{
 			case 0:
 				// Cancel - Answer No
 				break;
 			case 1:
 				// OK or Time Over
-				HandysBlockCheckerManager.getInstance().increaseArenaVotes(arena);
+				HandysBlockCheckerManager.getInstance().increaseArenaVotes(_arena);
 				break;
 			default:
-				Log.warning("Unknown Cube Game Answer ID: " + answer);
+				Log.warning("Unknown Cube Game Answer ID: " + _answer);
 				break;
 		}
 	}

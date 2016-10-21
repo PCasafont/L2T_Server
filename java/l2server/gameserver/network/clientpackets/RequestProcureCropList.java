@@ -28,7 +28,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
-import lombok.Getter;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
@@ -47,20 +46,21 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public class RequestProcureCropList extends L2GameClientPacket
 {
+
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
-	private Crop[] items = null;
+	private Crop[] _items = null;
 
 	@Override
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Crop[count];
+		_items = new Crop[count];
 		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
@@ -69,17 +69,17 @@ public class RequestProcureCropList extends L2GameClientPacket
 			long cnt = readQ();
 			if (objId < 1 || itemId < 1 || manorId < 0 || cnt < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new Crop(objId, itemId, manorId, cnt);
+			_items[i] = new Crop(objId, itemId, manorId, cnt);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (items == null)
+		if (_items == null)
 		{
 			return;
 		}
@@ -113,7 +113,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		int slots = 0;
 		int weight = 0;
 
-		for (Crop i : items)
+		for (Crop i : _items)
 		{
 			if (!i.getCrop())
 			{
@@ -146,7 +146,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		}
 
 		// Proceed the purchase
-		for (Crop i : items)
+		for (Crop i : _items)
 		{
 			if (i.getReward() == 0)
 			{
@@ -211,29 +211,49 @@ public class RequestProcureCropList extends L2GameClientPacket
 
 	private static class Crop
 	{
-		@Getter private final int objectId;
-		@Getter private final int itemId;
-		private final int manorId;
-		@Getter private final long count;
-		@Getter private int reward = 0;
-		private CropProcure crop = null;
+		private final int _objectId;
+		private final int _itemId;
+		private final int _manorId;
+		private final long _count;
+		private int _reward = 0;
+		private CropProcure _crop = null;
 
 		public Crop(int obj, int id, int m, long num)
 		{
-			objectId = obj;
-			itemId = id;
-			manorId = m;
-			count = num;
+			_objectId = obj;
+			_itemId = id;
+			_manorId = m;
+			_count = num;
+		}
+
+		public int getObjectId()
+		{
+			return _objectId;
+		}
+
+		public int getItemId()
+		{
+			return _itemId;
+		}
+
+		public long getCount()
+		{
+			return _count;
+		}
+
+		public int getReward()
+		{
+			return _reward;
 		}
 
 		public long getPrice()
 		{
-			return crop.getPrice() * count;
+			return _crop.getPrice() * _count;
 		}
 
 		public long getFee(int castleId)
 		{
-			if (manorId == castleId)
+			if (_manorId == castleId)
 			{
 				return 0;
 			}
@@ -245,47 +265,47 @@ public class RequestProcureCropList extends L2GameClientPacket
 		{
 			try
 			{
-				crop = CastleManager.getInstance().getCastleById(manorId)
-						.getCrop(itemId, CastleManorManager.PERIOD_CURRENT);
+				_crop = CastleManager.getInstance().getCastleById(_manorId)
+						.getCrop(_itemId, CastleManorManager.PERIOD_CURRENT);
 			}
 			catch (NullPointerException e)
 			{
 				return false;
 			}
-			if (crop == null || crop.getId() == 0 || crop.getPrice() == 0 || count == 0)
+			if (_crop == null || _crop.getId() == 0 || _crop.getPrice() == 0 || _count == 0)
 			{
 				return false;
 			}
 
-			if (count > crop.getAmount())
+			if (_count > _crop.getAmount())
 			{
 				return false;
 			}
 
-			if (MAX_ADENA / count < crop.getPrice())
+			if (MAX_ADENA / _count < _crop.getPrice())
 			{
 				return false;
 			}
 
-			reward = L2Manor.getInstance().getRewardItem(itemId, crop.getReward());
+			_reward = L2Manor.getInstance().getRewardItem(_itemId, _crop.getReward());
 			return true;
 		}
 
 		public boolean setCrop()
 		{
-			synchronized (crop)
+			synchronized (_crop)
 			{
-				long amount = crop.getAmount();
-				if (count > amount)
+				long amount = _crop.getAmount();
+				if (_count > amount)
 				{
 					return false; // not enough crops
 				}
-				crop.setAmount(amount - count);
+				_crop.setAmount(amount - _count);
 			}
 			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
-				CastleManager.getInstance().getCastleById(manorId)
-						.updateCrop(itemId, crop.getAmount(), CastleManorManager.PERIOD_CURRENT);
+				CastleManager.getInstance().getCastleById(_manorId)
+						.updateCrop(_itemId, _crop.getAmount(), CastleManorManager.PERIOD_CURRENT);
 			}
 			return true;
 		}

@@ -124,9 +124,10 @@ import l2server.log.Log;
  */
 public final class NpcQuestHtmlMessage extends L2GameServerPacket
 {
-	private int npcObjId;
-	private String html;
-	private int questId = 0;
+
+	private int _npcObjId;
+	private String _html;
+	private int _questId = 0;
 
 	/**
 	 * @param npcObjId
@@ -134,8 +135,8 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 	 */
 	public NpcQuestHtmlMessage(int npcObjId, int questId)
 	{
-		this.npcObjId = npcObjId;
-		this.questId = questId;
+		_npcObjId = npcObjId;
+		_questId = questId;
 	}
 
 	@Override
@@ -154,7 +155,7 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 			text = "<html><body>" + text + "</body></html>";
 		}
 
-		html = text;
+		_html = text;
 	}
 
 	public boolean setFile(String path)
@@ -174,7 +175,7 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 
 	public void replace(String pattern, String value)
 	{
-		html = html.replaceAll(pattern, value);
+		_html = _html.replaceAll(pattern, value);
 	}
 
 	private void buildBypassCache(L2PcInstance activeChar)
@@ -185,11 +186,11 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 		}
 
 		activeChar.clearBypass();
-		int len = html.length();
+		int len = _html.length();
 		for (int i = 0; i < len; i++)
 		{
-			int start = html.indexOf("bypass -h", i);
-			int finish = html.indexOf("\"", start);
+			int start = _html.indexOf("bypass -h", i);
+			int finish = _html.indexOf("\"", start);
 
 			if (start < 0 || finish < 0)
 			{
@@ -198,14 +199,14 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 
 			start += 10;
 			i = finish;
-			int finish2 = html.indexOf("$", start);
+			int finish2 = _html.indexOf("$", start);
 			if (finish2 < finish && finish2 > 0)
 			{
-				activeChar.addBypass2(html.substring(start, finish2).trim());
+				activeChar.addBypass2(_html.substring(start, finish2).trim());
 			}
 			else
 			{
-				activeChar.addBypass(html.substring(start, finish).trim());
+				activeChar.addBypass(_html.substring(start, finish).trim());
 			}
 		}
 	}
@@ -213,8 +214,8 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(npcObjId);
-		writeS(html);
-		writeD(questId);
+		writeD(_npcObjId);
+		writeS(_html);
+		writeD(_questId);
 	}
 }

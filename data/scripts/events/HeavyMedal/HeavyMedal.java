@@ -116,13 +116,13 @@ public class HeavyMedal extends Quest
 		addTalkId(CAT_WINNIE);
 		addFirstTalkId(CAT_ROY);
 		addFirstTalkId(CAT_WINNIE);
-		for (int[] spawn : _spawns_roy)
+		for (int[] _spawn : _spawns_roy)
 		{
-			addSpawn(CAT_ROY, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+			addSpawn(CAT_ROY, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
 		}
-		for (int[] spawn : _spawns_winnie)
+		for (int[] _spawn : _spawns_winnie)
 		{
-			addSpawn(CAT_WINNIE, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
+			addSpawn(CAT_WINNIE, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
 		}
 	}
 
@@ -192,29 +192,29 @@ public class HeavyMedal extends Quest
 
 	public int checkLevel(QuestState st)
 	{
-		int lev = 0;
+		int _lev = 0;
 		if (st == null)
 		{
 			return 0;
 		}
 		else if (st.getQuestItemsCount(6402) > 0)
 		{
-			lev = 4;
+			_lev = 4;
 		}
 		else if (st.getQuestItemsCount(6401) > 0)
 		{
-			lev = 3;
+			_lev = 3;
 		}
 		else if (st.getQuestItemsCount(6400) > 0)
 		{
-			lev = 2;
+			_lev = 2;
 		}
 		else if (st.getQuestItemsCount(6399) > 0)
 		{
-			lev = 1;
+			_lev = 1;
 		}
 
-		return lev;
+		return _lev;
 	}
 
 	public static void main(String[] args)

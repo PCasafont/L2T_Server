@@ -35,7 +35,7 @@ import java.util.StringTokenizer;
  */
 public class AdminFortSiege implements IAdminCommandHandler
 {
-	//private static Logger log = Logger.getLogger(AdminFortSiege.class.getName());
+	//private static Logger _log = Logger.getLogger(AdminFortSiege.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_fortsiege",

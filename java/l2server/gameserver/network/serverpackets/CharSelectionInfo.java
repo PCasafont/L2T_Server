@@ -46,37 +46,37 @@ public class CharSelectionInfo extends L2GameServerPacket
 {
 	// d SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddddffd
 
-	private String loginName;
-	private int sessionId, activeId;
-	private CharSelectInfoPackage[] characterPackages;
+	private String _loginName;
+	private int _sessionId, _activeId;
+	private CharSelectInfoPackage[] _characterPackages;
 
 	/**
 	 */
 	public CharSelectionInfo(String loginName, int sessionId)
 	{
-		this.sessionId = sessionId;
-		this.loginName = loginName;
-		characterPackages = loadCharacterSelectInfo(this.loginName);
-		activeId = -1;
+		_sessionId = sessionId;
+		_loginName = loginName;
+		_characterPackages = loadCharacterSelectInfo(_loginName);
+		_activeId = -1;
 	}
 
 	public CharSelectionInfo(String loginName, int sessionId, int activeId)
 	{
-		this.sessionId = sessionId;
-		this.loginName = loginName;
-		characterPackages = loadCharacterSelectInfo(this.loginName);
-		this.activeId = activeId;
+		_sessionId = sessionId;
+		_loginName = loginName;
+		_characterPackages = loadCharacterSelectInfo(_loginName);
+		_activeId = activeId;
 	}
 
 	public CharSelectInfoPackage[] getCharInfo()
 	{
-		return characterPackages;
+		return _characterPackages;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		int size = characterPackages.length;
+		int size = _characterPackages.length;
 		writeD(size);
 
 		// Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
@@ -89,26 +89,26 @@ public class CharSelectionInfo extends L2GameServerPacket
 
 		long lastAccess = 0L;
 
-		if (activeId == -1)
+		if (_activeId == -1)
 		{
 			for (int i = 0; i < size; i++)
 			{
-				if (lastAccess < characterPackages[i].getLastAccess())
+				if (lastAccess < _characterPackages[i].getLastAccess())
 				{
-					lastAccess = characterPackages[i].getLastAccess();
-					activeId = i;
+					lastAccess = _characterPackages[i].getLastAccess();
+					_activeId = i;
 				}
 			}
 		}
 
 		for (int i = 0; i < size; i++)
 		{
-			CharSelectInfoPackage charInfoPackage = characterPackages[i];
+			CharSelectInfoPackage charInfoPackage = _characterPackages[i];
 
 			writeS(charInfoPackage.getName());
 			writeD(charInfoPackage.getCharId());
-			writeS(loginName);
-			writeD(sessionId);
+			writeS(_loginName);
+			writeD(_sessionId);
 			writeD(charInfoPackage.getClanId());
 			writeD(0x00); // ??
 
@@ -211,7 +211,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			// delete .. if != 0
 			// then char is inactive
 			writeD(charInfoPackage.getCurrentClass());
-			if (i == activeId)
+			if (i == _activeId)
 			{
 				writeD(0x01);
 			}
@@ -458,6 +458,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 		 * This prevents chars created before base class was introduced
 		 * from being displayed incorrectly.
 		 */
+
 		charInfopackage.setDeleteTimer(deletetime);
 		charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())

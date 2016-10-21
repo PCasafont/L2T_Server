@@ -39,14 +39,15 @@ import l2server.util.Rnd;
  */
 public final class RequestCrystallizeItem extends L2GameClientPacket
 {
-	private int objectId;
-	private long count;
+
+	private int _objectId;
+	private long _count;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD();
-		count = readQ();
+		_objectId = readD();
+		_count = readQ();
 	}
 
 	@Override
@@ -71,10 +72,10 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			return;
 		}
 
-		if (count <= 0)
+		if (_count <= 0)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
-					"[RequestCrystallizeItem] count <= 0! ban! oid: " + objectId + " owner: " + activeChar.getName(),
+					"[RequestCrystallizeItem] count <= 0! ban! oid: " + _objectId + " owner: " + activeChar.getName(),
 					Config.DEFAULT_PUNISH);
 			return;
 		}
@@ -103,7 +104,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		PcInventory inventory = activeChar.getInventory();
 		if (inventory != null)
 		{
-			L2ItemInstance item = inventory.getItemByObjectId(objectId);
+			L2ItemInstance item = inventory.getItemByObjectId(_objectId);
 			if (item == null)
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -115,13 +116,13 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 				return;
 			}
 
-			if (count > item.getCount())
+			if (_count > item.getCount())
 			{
-				count = activeChar.getInventory().getItemByObjectId(objectId).getCount();
+				_count = activeChar.getInventory().getItemByObjectId(_objectId).getCount();
 			}
 		}
 
-		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(objectId);
+		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		if (itemToRemove == null || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
 		{
 			return;
@@ -226,7 +227,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 
 		// remove from inventory
 		L2ItemInstance removedItem =
-				activeChar.getInventory().destroyItem("Crystalize", objectId, count, activeChar, null);
+				activeChar.getInventory().destroyItem("Crystalize", _objectId, _count, activeChar, null);
 
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);

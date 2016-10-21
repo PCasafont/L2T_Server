@@ -30,8 +30,6 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -54,74 +52,75 @@ public class L2Spawn
 	/**
 	 * The link on the L2NpcTemplate object containing generic and static properties of this spawn (ex : RewardExp, RewardSP, AggroRange...)
 	 */
-	@Getter private final L2Npc npc;
+	private final L2Npc _npc;
 
 	/**
 	 * The location area where L2NpcInstance can be spawned
 	 */
-	@Getter @Setter private SpawnGroup group;
+	private SpawnGroup _group;
 
 	/**
 	 * Is it spawned currently?
 	 */
-	@Getter private boolean spawned = false;
+	private boolean _spawned = false;
 
 	/**
 	 * Is it scheduled for respawn?
 	 */
-	protected boolean scheduled = false;
+	protected boolean _scheduled = false;
 
 	/**
 	 * The X position of the spwan point
 	 */
-	private int locX;
+	private int _locX;
 
 	/**
 	 * The Y position of the spwan point
 	 */
-	private int locY;
+	private int _locY;
 
 	/**
 	 * The Z position of the spwan point
 	 */
-	private int locZ;
+	private int _locZ;
 
 	/**
 	 * The heading of L2NpcInstance when they are spawned
 	 */
-	@Getter @Setter private int heading;
+	private int _heading;
 
 	/**
 	 * The possible coords in which to spawn [x, y, z, chance]
 	 */
-	List<int[]> randomCoords;
+	List<int[]> _randomCoords;
 
 	/**
 	 * The delay between a L2NpcInstance remove and its re-spawn
 	 */
-	@Getter private int respawnDelay;
+	private int _respawnDelay;
 
 	/**
 	 * Random delay RaidBoss
 	 */
-	@Getter private int randomRespawnDelay;
+	private int _randomRespawnDelay;
 
-	@Getter @Setter private int instanceId = 0;
-	@SuppressWarnings("unused") private int dimensionId = 0;
+	private int _instanceId = 0;
+	@SuppressWarnings("unused")
+	private int _dimensionId = 0;
 
 	/**
 	 * If True a L2NpcInstance is respawned each time that another is killed
 	 */
-	private boolean doRespawn = false;
+	private boolean _doRespawn = false;
 
 	/**
 	 * If it has a value, the npc data will be saved
 	 */
-	@Getter @Setter private String dbName = null;
+	private String _dbName = null;
 
-	@Getter private long nextRespawn = 0L;
+	private long _nextRespawn = 0L;
 
-	private static final List<SpawnListener> spawnListeners = new ArrayList<>();
+	private static final List<SpawnListener> _spawnListeners = new ArrayList<>();
 
 	/**
 	 * The task launching the function doSpawn()
@@ -140,7 +139,7 @@ public class L2Spawn
 				Log.log(Level.WARNING, "", e);
 			}
 
-			scheduled = false;
+			_scheduled = false;
 		}
 	}
 
@@ -178,11 +177,11 @@ public class L2Spawn
 			throw new IllegalArgumentException("Trying to create a spawn of a non NPC object!");
 		}
 
-		npc = (L2Npc) tmp;
+		_npc = (L2Npc) tmp;
 
 		// Link the L2NpcInstance to this L2Spawn
-		npc.setSpawn(this);
-		npc.setIsDead(true);
+		_npc.setSpawn(this);
+		_npc.setIsDead(true);
 
 		template.onSpawn(this);
 	}
@@ -196,38 +195,38 @@ public class L2Spawn
 	 * <li>Update the current number of SpawnTask in progress or stand by of this L2Spawn </li>
 	 * <li>Create a new SpawnTask to launch after the respawn Delay </li><BR><BR>
 	 * <p>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : A respawn is possible ONLY if _doRespawn=True and scheduledCount + currentCount < _maximumCount</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : A respawn is possible ONLY if _doRespawn=True and _scheduledCount + _currentCount < _maximumCount</B></FONT><BR><BR>
 	 */
 	public void onDecay(L2Npc oldNpc)
 	{
 		// sanity check
-		if (!spawned)
+		if (!_spawned)
 		{
 			return;
 		}
 
 		// Mark the spawn as not spawned
-		spawned = false;
+		_spawned = false;
 
 		// Check if respawn is possible to prevent multiple respawning caused by lag
-		if (doRespawn && !scheduled)
+		if (_doRespawn && !_scheduled)
 		{
 			// Update the current number of SpawnTask in progress or stand by of this L2Spawn
-			scheduled = true;
+			_scheduled = true;
 
-			int respawnDelay = this.respawnDelay + Rnd.get(randomRespawnDelay);
+			int respawnDelay = _respawnDelay + Rnd.get(_randomRespawnDelay);
 			// Create a new SpawnTask to launch after the respawn Delay
 			ThreadPoolManager.getInstance().scheduleGeneral(new SpawnTask(), respawnDelay);
-			nextRespawn = System.currentTimeMillis() + respawnDelay;
+			_nextRespawn = System.currentTimeMillis() + respawnDelay;
 
-			if (dbName != null && !dbName.isEmpty())
+			if (_dbName != null && !_dbName.isEmpty())
 			{
 				SpawnDataManager.getInstance().updateDbSpawnData(this);
 			}
 		}
 		else
 		{
-			npc.getTemplate().onUnSpawn(this);
+			_npc.getTemplate().onUnSpawn(this);
 		}
 	}
 
@@ -236,23 +235,33 @@ public class L2Spawn
 	 */
 	public boolean isRespawnEnabled()
 	{
-		return doRespawn;
+		return _doRespawn;
 	}
 
 	/**
-	 * Set doRespawn to False to stop respawn in thios L2Spawn.<BR><BR>
+	 * Set _doRespawn to False to stop respawn in thios L2Spawn.<BR><BR>
 	 */
 	public void stopRespawn()
 	{
-		doRespawn = false;
+		_doRespawn = false;
 	}
 
 	/**
-	 * Set doRespawn to True to start or restart respawn in this L2Spawn.<BR><BR>
+	 * Set _doRespawn to True to start or restart respawn in this L2Spawn.<BR><BR>
 	 */
 	public void startRespawn()
 	{
-		doRespawn = true;
+		_doRespawn = true;
+	}
+
+	public void setDbName(String dbName)
+	{
+		_dbName = dbName;
+	}
+
+	public String getDbName()
+	{
+		return _dbName;
 	}
 
 	public boolean doSpawn()
@@ -262,18 +271,18 @@ public class L2Spawn
 
 	public boolean doSpawn(boolean isSummonSpawn)
 	{
-		if (spawned)
+		if (_spawned)
 		{
 			return false;
 		}
 
-		boolean temp = npc.isShowSummonAnimation();
-		npc.setShowSummonAnimation(isSummonSpawn);
+		boolean temp = _npc.isShowSummonAnimation();
+		_npc.setShowSummonAnimation(isSummonSpawn);
 
 		boolean handled = false;
-		if (dbName != null && !dbName.isEmpty())
+		if (_dbName != null && !_dbName.isEmpty())
 		{
-			DbSpawnData dbsd = SpawnDataManager.getInstance().popDbSpawnData(dbName);
+			DbSpawnData dbsd = SpawnDataManager.getInstance().popDbSpawnData(_dbName);
 			if (dbsd != null)
 			{
 				long respawnTime = dbsd.respawnTime;
@@ -282,15 +291,15 @@ public class L2Spawn
 				{
 					long spawnTime = respawnTime - time;
 					ThreadPoolManager.getInstance().scheduleGeneral(new SpawnTask(), spawnTime);
-					nextRespawn = System.currentTimeMillis() + spawnTime;
+					_nextRespawn = System.currentTimeMillis() + spawnTime;
 				}
 				else
 				{
 					initializeNpc();
 					if (respawnTime == 0)
 					{
-						npc.setCurrentHp(dbsd.currentHp);
-						npc.setCurrentMp(dbsd.currentMp);
+						_npc.setCurrentHp(dbsd.currentHp);
+						_npc.setCurrentMp(dbsd.currentMp);
 					}
 				}
 
@@ -303,8 +312,8 @@ public class L2Spawn
 			initializeNpc();
 		}
 
-		npc.setShowSummonAnimation(temp);
-		spawned = true;
+		_npc.setShowSummonAnimation(temp);
+		_spawned = true;
 		return true;
 	}
 
@@ -330,11 +339,11 @@ public class L2Spawn
 		}
 		else
 		{
-			if (randomCoords != null)
+			if (_randomCoords != null)
 			{
 				int rnd = Rnd.get(100);
 				int cumul = 0;
-				for (int[] coord : randomCoords)
+				for (int[] coord : _randomCoords)
 				{
 					cumul += coord[4];
 					if (cumul > rnd)
@@ -360,58 +369,59 @@ public class L2Spawn
 			}
 		}
 
-		npc.stopAllEffects();
+		_npc.stopAllEffects();
 
-		npc.setInstanceId(instanceId);
-		npc.setIsDead(false);
+		_npc.setInstanceId(_instanceId);
+		_npc.setIsDead(false);
 		// Reset decay info
-		npc.setDecayed(false);
+		_npc.setDecayed(false);
 		// Set the HP and MP of the L2NpcInstance to the max
-		npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
+		_npc.setCurrentHpMp(_npc.getMaxHp(), _npc.getMaxMp());
 
 		// Set the heading of the L2NpcInstance (random heading if not defined)
 		if (getHeading() == -1)
 		{
-			npc.setHeading(Rnd.nextInt(61794));
+			_npc.setHeading(Rnd.nextInt(61794));
 		}
 		else
 		{
-			npc.setHeading(getHeading());
+			_npc.setHeading(getHeading());
 		}
 
-		if (npc instanceof L2Attackable)
+		if (_npc instanceof L2Attackable)
 		{
-			((L2Attackable) npc).setChampion(false);
+			((L2Attackable) _npc).setChampion(false);
 		}
 
 		if (Config.L2JMOD_CHAMPION_ENABLE)
 		{
 			// Set champion on next spawn
-			if (npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion &&
-					!npc.isRaid() && !npc.isRaidMinion() && !(npc instanceof L2ArmyMonsterInstance) &&
-					!(npc instanceof L2ChessPieceInstance) && !(npc instanceof L2EventGolemInstance) &&
-					getNpcId() != 44000 && Config.L2JMOD_CHAMPION_FREQUENCY > 0 &&
-					npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL && npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
+			if (_npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion &&
+					!_npc.isRaid() && !_npc.isRaidMinion() &&
+					!(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) &&
+					!(_npc instanceof L2EventGolemInstance) && getNpcId() != 44000 &&
+					Config.L2JMOD_CHAMPION_FREQUENCY > 0 && _npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL &&
+					_npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL &&
 					(Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
 			{
 				int random = Rnd.get(100);
 
 				if (random < Config.L2JMOD_CHAMPION_FREQUENCY)
 				{
-					((L2Attackable) npc).setChampion(true);
+					((L2Attackable) _npc).setChampion(true);
 				}
 			}
 		}
 
 		// Init other values of the L2NpcInstance (ex : from its L2CharTemplate for INT, STR, DEX...) and add it in the world as a visible object
-		npc.spawnMe(newlocx, newlocy, newlocz);
+		_npc.spawnMe(newlocx, newlocy, newlocz);
 
-		L2Spawn.notifyNpcSpawned(npc);
+		L2Spawn.notifyNpcSpawned(_npc);
 
 		if (Config.DEBUG)
 		{
-			Log.finest("spawned Mob ID: " + npc.getNpcId() + " ,at: " + npc.getX() + " x, " + npc.getY() + " y, " +
-					npc.getZ() + " z");
+			Log.finest("spawned Mob ID: " + _npc.getNpcId() + " ,at: " + _npc.getX() + " x, " + _npc.getY() + " y, " +
+					_npc.getZ() + " z");
 		}
 	}
 
@@ -438,11 +448,19 @@ public class L2Spawn
 	}
 
 	/**
+	 * Return the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
+	 */
+	public SpawnGroup getGroup()
+	{
+		return _group;
+	}
+
+	/**
 	 * Return the X position of the spwan point.<BR><BR>
 	 */
 	public int getX()
 	{
-		return locX;
+		return _locX;
 	}
 
 	/**
@@ -450,7 +468,7 @@ public class L2Spawn
 	 */
 	public int getY()
 	{
-		return locY;
+		return _locY;
 	}
 
 	/**
@@ -458,7 +476,7 @@ public class L2Spawn
 	 */
 	public int getZ()
 	{
-		return locZ;
+		return _locZ;
 	}
 
 	/**
@@ -466,7 +484,39 @@ public class L2Spawn
 	 */
 	public int getNpcId()
 	{
-		return npc.getNpcId();
+		return _npc.getNpcId();
+	}
+
+	/**
+	 * Return the heading of L2NpcInstance when they are spawned.<BR><BR>
+	 */
+	public int getHeading()
+	{
+		return _heading;
+	}
+
+	/**
+	 * Return the delay between a L2NpcInstance remove and its re-spawn.<BR><BR>
+	 */
+	public int getRespawnDelay()
+	{
+		return _respawnDelay;
+	}
+
+	/**
+	 * Return Random RaidBoss Spawn delay.<BR><BR>
+	 */
+	public int getRandomRespawnDelay()
+	{
+		return _randomRespawnDelay;
+	}
+
+	/**
+	 * Set the Identifier of the location area where L2NpcInstance can be spwaned.<BR><BR>
+	 */
+	public void setGroup(SpawnGroup group)
+	{
+		_group = group;
 	}
 
 	/**
@@ -474,7 +524,7 @@ public class L2Spawn
 	 */
 	public void setX(int locx)
 	{
-		locX = locx;
+		_locX = locx;
 	}
 
 	/**
@@ -482,7 +532,7 @@ public class L2Spawn
 	 */
 	public void setY(int locy)
 	{
-		locY = locy;
+		_locY = locy;
 	}
 
 	/**
@@ -490,35 +540,43 @@ public class L2Spawn
 	 */
 	public void setZ(int locz)
 	{
-		locZ = locz;
+		_locZ = locz;
+	}
+
+	/**
+	 * Set the heading of L2NpcInstance when they are spawned.<BR><BR>
+	 */
+	public void setHeading(int heading)
+	{
+		_heading = heading;
 	}
 
 	public void setRandomCoords(List<int[]> coords)
 	{
-		randomCoords = coords;
+		_randomCoords = coords;
 	}
 
 	public static void addSpawnListener(SpawnListener listener)
 	{
-		synchronized (spawnListeners)
+		synchronized (_spawnListeners)
 		{
-			spawnListeners.add(listener);
+			_spawnListeners.add(listener);
 		}
 	}
 
 	public static void removeSpawnListener(SpawnListener listener)
 	{
-		synchronized (spawnListeners)
+		synchronized (_spawnListeners)
 		{
-			spawnListeners.remove(listener);
+			_spawnListeners.remove(listener);
 		}
 	}
 
 	public static void notifyNpcSpawned(L2Npc npc)
 	{
-		synchronized (spawnListeners)
+		synchronized (_spawnListeners)
 		{
-			for (SpawnListener listener : spawnListeners)
+			for (SpawnListener listener : _spawnListeners)
 			{
 				listener.npcSpawned(npc);
 			}
@@ -540,7 +598,7 @@ public class L2Spawn
 			i = 10;
 		}
 
-		respawnDelay = i * 1000;
+		_respawnDelay = i * 1000;
 	}
 
 	/**
@@ -558,22 +616,47 @@ public class L2Spawn
 			i = 10;
 		}
 
-		randomRespawnDelay = i * 1000;
+		_randomRespawnDelay = i * 1000;
+	}
+
+	public L2Npc getNpc()
+	{
+		return _npc;
 	}
 
 	private void respawnNpc()
 	{
-		if (doRespawn)
+		if (_doRespawn)
 		{
-			npc.refreshID();
+			_npc.refreshID();
 			initializeNpc();
-			spawned = true;
+			_spawned = true;
 		}
 	}
 
 	public L2NpcTemplate getTemplate()
 	{
-		return npc.getTemplate();
+		return _npc.getTemplate();
+	}
+
+	public int getInstanceId()
+	{
+		return _instanceId;
+	}
+
+	public boolean isSpawned()
+	{
+		return _spawned;
+	}
+
+	public void setInstanceId(int instanceId)
+	{
+		_instanceId = instanceId;
+	}
+
+	public long getNextRespawn()
+	{
+		return _nextRespawn;
 	}
 
 	/* (non-Javadoc)
@@ -582,7 +665,7 @@ public class L2Spawn
 	@Override
 	public String toString()
 	{
-		return "L2Spawn [_template=" + getNpcId() + ", _locX=" + locX + ", _locY=" + locY + ", _locZ=" + locZ +
-				", _heading=" + heading + "]";
+		return "L2Spawn [_template=" + getNpcId() + ", _locX=" + _locX + ", _locY=" + _locY + ", _locZ=" + _locZ +
+				", _heading=" + _heading + "]";
 	}
 }

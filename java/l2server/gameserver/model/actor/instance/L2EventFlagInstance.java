@@ -12,18 +12,16 @@ import l2server.gameserver.events.instanced.types.CaptureTheFlag;
 import l2server.gameserver.events.instanced.types.FieldDomination;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author Pere
  */
 public class L2EventFlagInstance extends L2NpcInstance
 {
-	@Getter private boolean toDelete = false;
-	private EventInstance event = null;
-	@Getter @Setter private EventTeam team = null;
-	private EventType type;
+	private boolean _toDelete = false;
+	private EventInstance _event = null;
+	private EventTeam _team = null;
+	private EventType _type;
 
 	public L2EventFlagInstance(int objectId, L2NpcTemplate template)
 	{
@@ -32,21 +30,21 @@ public class L2EventFlagInstance extends L2NpcInstance
 
 	public void setEvent(EventInstance event)
 	{
-		this.event = event;
-		if (this.event.isType(EventType.CaptureTheFlag))
+		_event = event;
+		if (_event.isType(EventType.CaptureTheFlag))
 		{
-			type = EventType.CaptureTheFlag;
+			_type = EventType.CaptureTheFlag;
 		}
 		else
 		{
-			type = EventType.FieldDomination;
+			_type = EventType.FieldDomination;
 		}
 	}
 
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if (toDelete || !event.isType(type))
+		if (_toDelete || !_event.isType(_type))
 		{
 			deleteMe();
 			SpawnTable.getInstance().deleteSpawn(getSpawn(), true);
@@ -68,13 +66,13 @@ public class L2EventFlagInstance extends L2NpcInstance
 			else
 			{
 				if (player.getEvent() != null &&
-						(event.isType(EventType.CaptureTheFlag) || event.isType(EventType.FieldDomination)))
+						(_event.isType(EventType.CaptureTheFlag) || _event.isType(EventType.FieldDomination)))
 				{
-					if (event.isType(EventType.CaptureTheFlag) && player.getEvent() == event)
+					if (_event.isType(EventType.CaptureTheFlag) && player.getEvent() == _event)
 					{
 						((CaptureTheFlag) player.getEvent()).onFlagTouched(player, getTeam());
 					}
-					else if (event.isType(EventType.FieldDomination) && !player.isCastingNow() &&
+					else if (_event.isType(EventType.FieldDomination) && !player.isCastingNow() &&
 							player.getEvent() != null &&
 							player.getEvent().getParticipantTeam(player.getObjectId()).getFlagId() != getNpcId())
 					{
@@ -97,33 +95,43 @@ public class L2EventFlagInstance extends L2NpcInstance
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 
+	public EventTeam getTeam()
+	{
+		return _team;
+	}
+
+	public void setTeam(EventTeam team)
+	{
+		_team = team;
+	}
+
 	class FlagCastFinalizer implements Runnable
 	{
-		private L2PcInstance player;
+		private L2PcInstance _player;
 
 		FlagCastFinalizer(L2PcInstance player)
 		{
-			this.player = player;
+			_player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			if (player.isCastingNow())
+			if (_player.isCastingNow())
 			{
-				player.sendPacket(new MagicSkillLaunched(player, 2046, 1));
-				player.setIsCastingNow(false);
+				_player.sendPacket(new MagicSkillLaunched(_player, 2046, 1));
+				_player.setIsCastingNow(false);
 
-				if (player.getEvent() != null && player.getEvent() instanceof FieldDomination && !isToDelete())
+				if (_player.getEvent() != null && _player.getEvent() instanceof FieldDomination && !isToDelete())
 				{
 					if (getTeam() == null)
 					{
-						((FieldDomination) player.getEvent()).convertFlag(L2EventFlagInstance.this,
-								player.getEvent().getParticipantTeam(player.getObjectId()), player);
+						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this,
+								_player.getEvent().getParticipantTeam(_player.getObjectId()), _player);
 					}
 					else
 					{
-						((FieldDomination) player.getEvent()).convertFlag(L2EventFlagInstance.this, null, player);
+						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this, null, _player);
 					}
 				}
 			}
@@ -132,6 +140,11 @@ public class L2EventFlagInstance extends L2NpcInstance
 
 	public void shouldBeDeleted()
 	{
-		toDelete = true;
+		_toDelete = true;
+	}
+
+	public boolean isToDelete()
+	{
+		return _toDelete;
 	}
 }

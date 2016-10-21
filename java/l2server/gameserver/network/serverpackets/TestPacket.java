@@ -8,30 +8,30 @@ import java.nio.ByteOrder;
  */
 public class TestPacket extends L2GameServerPacket
 {
-	private ByteBuffer buffer = ByteBuffer.allocate(10000).order(ByteOrder.LITTLE_ENDIAN);
+	private ByteBuffer _buffer = ByteBuffer.allocate(10000).order(ByteOrder.LITTLE_ENDIAN);
 
 	public void writeChar(int x)
 	{
-		buffer.put((byte) x);
+		_buffer.put((byte) x);
 	}
 
 	public void writeShort(int x)
 	{
-		buffer.putShort((short) x);
+		_buffer.putShort((short) x);
 	}
 
 	public void writeInt(int x)
 	{
-		buffer.putInt(x);
+		_buffer.putInt(x);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		buffer.flip();
-		while (buffer.position() < buffer.limit())
+		_buffer.flip();
+		while (_buffer.position() < _buffer.limit())
 		{
-			writeC(buffer.get());
+			writeC(_buffer.get());
 		}
 	}
 }

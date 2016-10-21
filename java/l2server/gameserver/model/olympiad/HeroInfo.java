@@ -15,9 +15,6 @@
 
 package l2server.gameserver.model.olympiad;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,56 +39,176 @@ public class HeroInfo
 		public String result;
 	}
 
-	@Getter private final int id;
-	@Getter private final String name;
-	@Getter private final int classId;
+	private final int _id;
+	private final String _name;
+	private final int _classId;
 
-	@Getter @Setter private int victories;
-	@Getter @Setter private int defeats;
-	@Getter @Setter private int draws;
+	private int _victories;
+	private int _defeats;
+	private int _draws;
 
-	@Getter private int count = 1;
-	@Getter @Setter private boolean played = true;
-	@Getter @Setter private String clanName = "";
-	@Getter @Setter private int clanCrest = 0;
-	@Getter @Setter private String allyName = "";
-	@Getter @Setter private int allyCrest = 0;
+	private int _count = 1;
+	private boolean _played = true;
+	private String _clanName = "";
+	private int _clanCrest = 0;
+	private String _allyName = "";
+	private int _allyCrest = 0;
 
-	@Getter @Setter private String message;
-	@Getter private List<DiaryEntry> diary = new ArrayList<>();
-	@Getter private List<FightInfo> fights = new ArrayList<>();
+	private String _message;
+	private List<DiaryEntry> _diary = new ArrayList<>();
+	private List<FightInfo> _fights = new ArrayList<>();
 
 	public HeroInfo(OlympiadNobleInfo nobleInfo)
 	{
-		id = nobleInfo.getId();
-		name = nobleInfo.getName();
-		classId = nobleInfo.getClassId();
-		victories = nobleInfo.getVictories();
-		defeats = nobleInfo.getDefeats();
-		draws = nobleInfo.getDraws();
+		_id = nobleInfo.getId();
+		_name = nobleInfo.getName();
+		_classId = nobleInfo.getClassId();
+		_victories = nobleInfo.getVictories();
+		_defeats = nobleInfo.getDefeats();
+		_draws = nobleInfo.getDraws();
 	}
 
 	public HeroInfo(int id, String name, int classId, int count, boolean played)
 	{
-		this.id = id;
-		this.name = name;
-		this.classId = classId;
-		this.count = count;
-		this.played = played;
+		_id = id;
+		_name = name;
+		_classId = classId;
+		_count = count;
+		_played = played;
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public String getName()
+	{
+		return _name;
+	}
+
+	public int getClassId()
+	{
+		return _classId;
+	}
+
+	public int getVictories()
+	{
+		return _victories;
+	}
+
+	public void setVictories(int victories)
+	{
+		_victories = victories;
+	}
+
+	public int getDefeats()
+	{
+		return _defeats;
+	}
+
+	public void setDefeats(int defeats)
+	{
+		_defeats = defeats;
+	}
+
+	public int getDraws()
+	{
+		return _draws;
+	}
+
+	public void setDraws(int draws)
+	{
+		_draws = draws;
+	}
+
+	public int getCount()
+	{
+		return _count;
 	}
 
 	public void increaseCount()
 	{
-		count++;
+		_count++;
+	}
+
+	public boolean getPlayed()
+	{
+		return _played;
+	}
+
+	public void setPlayed(boolean played)
+	{
+		_played = played;
+	}
+
+	public String getClanName()
+	{
+		return _clanName;
+	}
+
+	public void setClanName(String clanName)
+	{
+		_clanName = clanName;
+	}
+
+	public int getClanCrest()
+	{
+		return _clanCrest;
+	}
+
+	public void setClanCrest(int clanCrest)
+	{
+		_clanCrest = clanCrest;
+	}
+
+	public String getAllyName()
+	{
+		return _allyName;
+	}
+
+	public void setAllyName(String allyName)
+	{
+		_allyName = allyName;
+	}
+
+	public int getAllyCrest()
+	{
+		return _allyCrest;
+	}
+
+	public void setAllyCrest(int allyCrest)
+	{
+		_allyCrest = allyCrest;
+	}
+
+	public String getMessage()
+	{
+		return _message;
+	}
+
+	public void setMessage(String message)
+	{
+		_message = message;
 	}
 
 	public void addDiaryEntry(DiaryEntry entry)
 	{
-		diary.add(entry);
+		_diary.add(entry);
+	}
+
+	public List<DiaryEntry> getDiary()
+	{
+		return _diary;
 	}
 
 	public void addFight(FightInfo fight)
 	{
-		fights.add(fight);
+		_fights.add(fight);
+	}
+
+	public List<FightInfo> getFights()
+	{
+		return _fights;
 	}
 }

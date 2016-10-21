@@ -36,17 +36,17 @@ public class GmListTable
 	/**
 	 * Set(L2PcInstance>) containing all the GM in game
 	 */
-	private ConcurrentHashMap<L2PcInstance, Boolean> gmList;
+	private ConcurrentHashMap<L2PcInstance, Boolean> _gmList;
 
 	public static GmListTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public ArrayList<L2PcInstance> getAllGms(boolean includeHidden)
 	{
 		ArrayList<L2PcInstance> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
+		for (Entry<L2PcInstance, Boolean> n : _gmList.entrySet())
 		{
 			if (includeHidden || !n.getValue())
 			{
@@ -60,7 +60,7 @@ public class GmListTable
 	public ArrayList<String> getAllGmNames(boolean includeHidden)
 	{
 		ArrayList<String> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
+		for (Entry<L2PcInstance, Boolean> n : _gmList.entrySet())
 		{
 			if (!n.getValue())
 			{
@@ -77,7 +77,7 @@ public class GmListTable
 
 	private GmListTable()
 	{
-		gmList = new ConcurrentHashMap<>();
+		_gmList = new ConcurrentHashMap<>();
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class GmListTable
 		{
 			Log.fine("added gm: " + player.getName());
 		}
-		gmList.put(player, hidden);
+		_gmList.put(player, hidden);
 	}
 
 	public void deleteGm(L2PcInstance player)
@@ -99,7 +99,7 @@ public class GmListTable
 			Log.fine("deleted gm: " + player.getName());
 		}
 
-		gmList.remove(player);
+		_gmList.remove(player);
 	}
 
 	/**
@@ -109,9 +109,9 @@ public class GmListTable
 	 */
 	public void showGm(L2PcInstance player)
 	{
-		if (gmList.containsKey(player))
+		if (_gmList.containsKey(player))
 		{
-			gmList.put(player, false);
+			_gmList.put(player, false);
 		}
 	}
 
@@ -122,15 +122,15 @@ public class GmListTable
 	 */
 	public void hideGm(L2PcInstance player)
 	{
-		if (gmList.containsKey(player))
+		if (_gmList.containsKey(player))
 		{
-			gmList.put(player, true);
+			_gmList.put(player, true);
 		}
 	}
 
 	public boolean isGmOnline(boolean includeHidden)
 	{
-		for (boolean gmStatus : gmList.values())
+		for (boolean gmStatus : _gmList.values())
 		{
 			if (includeHidden || !gmStatus)
 			{
@@ -179,6 +179,6 @@ public class GmListTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GmListTable instance = new GmListTable();
+		protected static final GmListTable _instance = new GmListTable();
 	}
 }

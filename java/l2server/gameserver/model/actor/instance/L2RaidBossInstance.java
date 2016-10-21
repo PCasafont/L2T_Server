@@ -40,13 +40,13 @@ public class L2RaidBossInstance extends L2MonsterInstance
 {
 	private static final int RAIDBOSS_MAINTENANCE_INTERVAL = 30000; // 30 sec
 
-	private boolean useRaidCurse = true;
+	private boolean _useRaidCurse = true;
 
 	/**
 	 * Constructor of L2RaidBossInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the template of the L2RaidBossInstance (copy skills from template to object and link calculators to NPC_STD_CALCULATOR) </li>
+	 * <li>Call the L2Character constructor to set the _template of the L2RaidBossInstance (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR) </li>
 	 * <li>Set the name of the L2RaidBossInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *
@@ -56,7 +56,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2RaidBossInstance);
-		setRaid(true);
+		setIsRaid(true);
 		BossManager.getInstance().registerBoss(this);
 	}
 
@@ -130,8 +130,9 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			getMinionList().spawnMinions();
 		}
 
-		maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::checkAndReturnToSpawn, 60000,
-				getMaintenanceInterval() + Rnd.get(5000));
+		_maintenanceTask = ThreadPoolManager.getInstance()
+				.scheduleGeneralAtFixedRate(this::checkAndReturnToSpawn, 60000,
+						getMaintenanceInterval() + Rnd.get(5000));
 	}
 
 	protected void checkAndReturnToSpawn()
@@ -167,7 +168,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	}
 
 	/**
-	 * Reduce the current HP of the L2Attackable, update its aggroList and launch the doDie Task if necessary.<BR><BR>
+	 * Reduce the current HP of the L2Attackable, update its _aggroList and launch the doDie Task if necessary.<BR><BR>
 	 */
 	@Override
 	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
@@ -189,7 +190,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 
 	public void setUseRaidCurse(boolean val)
 	{
-		useRaidCurse = val;
+		_useRaidCurse = val;
 	}
 
 	/* (non-Javadoc)
@@ -198,6 +199,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	public boolean giveRaidCurse()
 	{
-		return useRaidCurse;
+		return _useRaidCurse;
 	}
 }

@@ -25,12 +25,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.PetStatusShow;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
-import l2server.log.Log;
+import l2server.gameserver.network.serverpackets.*;
 
 public class L2PetInstanceAction implements IActionHandler
 {
@@ -56,7 +51,7 @@ public class L2PetInstanceAction implements IActionHandler
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("new target selected:" + target.getObjectId());
+				_log.fine("new target selected:" + target.getObjectId());
 			}
 
 			// Set the target of the L2PcInstance activeChar

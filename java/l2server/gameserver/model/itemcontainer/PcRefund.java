@@ -20,7 +20,6 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.logging.Level;
 
@@ -29,17 +28,23 @@ import java.util.logging.Level;
  */
 public class PcRefund extends ItemContainer
 {
-	@Getter private L2PcInstance owner;
+	private L2PcInstance _owner;
 
 	public PcRefund(L2PcInstance owner)
 	{
-		this.owner = owner;
+		_owner = owner;
 	}
 
 	@Override
 	public String getName()
 	{
 		return "Refund";
+	}
+
+	@Override
+	public L2PcInstance getOwner()
+	{
+		return _owner;
 	}
 
 	@Override
@@ -57,9 +62,9 @@ public class PcRefund extends ItemContainer
 			if (getSize() > 12)
 			{
 				L2ItemInstance removedItem = null;
-				synchronized (items)
+				synchronized (_items)
 				{
-					removedItem = items.remove(0);
+					removedItem = _items.remove(0);
 				}
 
 				if (removedItem != null)
@@ -85,7 +90,7 @@ public class PcRefund extends ItemContainer
 	{
 		try
 		{
-			for (L2ItemInstance item : items.values())
+			for (L2ItemInstance item : _items.values())
 			{
 				if (item != null)
 				{
@@ -98,7 +103,7 @@ public class PcRefund extends ItemContainer
 		{
 			Log.log(Level.SEVERE, "deleteMe()", e);
 		}
-		items.clear();
+		_items.clear();
 	}
 
 	@Override

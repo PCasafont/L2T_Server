@@ -20,13 +20,13 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPutTargetResultForItemAppearance extends L2GameServerPacket
 {
-	private int answer;
-	private int cost;
+	private int _answer;
+	private int _cost;
 
 	public ExPutTargetResultForItemAppearance(int answer, int cost)
 	{
-		this.answer = answer;
-		this.cost = cost;
+		_answer = answer;
+		_cost = cost;
 	}
 
 	/**
@@ -34,8 +34,8 @@ public class ExPutTargetResultForItemAppearance extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(answer);
-		writeQ(cost);
+		writeD(_answer);
+		writeQ(_cost);
 		writeD(1);
 	}
 }

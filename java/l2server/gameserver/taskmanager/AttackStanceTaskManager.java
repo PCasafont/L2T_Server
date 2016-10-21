@@ -42,7 +42,8 @@ import java.util.logging.Level;
  */
 public class AttackStanceTaskManager
 {
-	protected Map<L2Character, Long> attackStanceTasks = new ConcurrentHashMap<>();
+
+	protected Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 
 	private AttackStanceTaskManager()
 	{
@@ -51,7 +52,7 @@ public class AttackStanceTaskManager
 
 	public static AttackStanceTaskManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void addAttackStanceTask(L2Character actor)
@@ -72,7 +73,7 @@ public class AttackStanceTaskManager
 			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance)
 					.forEach(summon -> summon.unSummon(player));
 		}
-		attackStanceTasks.put(actor, System.currentTimeMillis());
+		_attackStanceTasks.put(actor, System.currentTimeMillis());
 	}
 
 	public void removeAttackStanceTask(L2Character actor)
@@ -87,7 +88,7 @@ public class AttackStanceTaskManager
 			((L2PcInstance) actor).onCombatStanceEnd();
 		}
 
-		attackStanceTasks.remove(actor);
+		_attackStanceTasks.remove(actor);
 	}
 
 	public boolean getAttackStanceTask(L2Character actor)
@@ -98,7 +99,7 @@ public class AttackStanceTaskManager
 			actor = summon.getOwner();
 		}
 
-		return attackStanceTasks.containsKey(actor);
+		return _attackStanceTasks.containsKey(actor);
 	}
 
 	private class FightModeScheduler implements Runnable
@@ -114,11 +115,11 @@ public class AttackStanceTaskManager
 			Long current = System.currentTimeMillis();
 			try
 			{
-				if (attackStanceTasks != null)
+				if (_attackStanceTasks != null)
 				{
 					synchronized (this)
 					{
-						for (Entry<L2Character, Long> entry : attackStanceTasks.entrySet())
+						for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
 						{
 							L2Character actor = entry.getKey();
 							if (current - entry.getValue() > 15000)
@@ -156,6 +157,6 @@ public class AttackStanceTaskManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AttackStanceTaskManager instance = new AttackStanceTaskManager();
+		protected static final AttackStanceTaskManager _instance = new AttackStanceTaskManager();
 	}
 }

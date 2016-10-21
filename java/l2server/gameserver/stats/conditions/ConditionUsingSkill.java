@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionUsingSkill extends Condition
 {
-	private final int skillId;
+	private final int _skillId;
 
 	/**
 	 * Instantiates a new condition using skill.
@@ -33,7 +33,7 @@ public final class ConditionUsingSkill extends Condition
 	 */
 	public ConditionUsingSkill(int skillId)
 	{
-		this.skillId = skillId;
+		_skillId = skillId;
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public final class ConditionUsingSkill extends Condition
 		{
 			return false;
 		}
-		return env.skill.getId() == skillId;
+		return env.skill.getId() == _skillId;
 	}
 }

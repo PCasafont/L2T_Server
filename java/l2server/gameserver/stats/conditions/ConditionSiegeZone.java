@@ -40,8 +40,8 @@ public final class ConditionSiegeZone extends Condition
 	public static final int COND_FORT_DEFEND = 0x0020;
 	public static final int COND_FORT_NEUTRAL = 0x0040;
 
-	private final int value;
-	private final boolean self;
+	private final int _value;
+	private final boolean _self;
 
 	/**
 	 * Instantiates a new condition siege zone.
@@ -49,10 +49,11 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value the value
 	 * @param self  the self
 	 */
+
 	public ConditionSiegeZone(int value, boolean self)
 	{
-		this.value = value;
-		this.self = self;
+		_value = value;
+		_self = self;
 	}
 
 	/* (non-Javadoc)
@@ -61,21 +62,21 @@ public final class ConditionSiegeZone extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		L2Character target = self ? env.player : env.target;
+		L2Character target = _self ? env.player : env.target;
 		Castle castle = CastleManager.getInstance().getCastle(target);
 		Fort fort = FortManager.getInstance().getFort(target);
 
 		if (castle == null && fort == null)
 		{
-			return (value & COND_NOT_ZONE) != 0;
+			return (_value & COND_NOT_ZONE) != 0;
 		}
 		if (castle != null)
 		{
-			return checkIfOk(target, castle, value);
+			return checkIfOk(target, castle, _value);
 		}
 		else
 		{
-			return checkIfOk(target, fort, value);
+			return checkIfOk(target, fort, _value);
 		}
 	}
 

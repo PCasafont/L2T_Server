@@ -24,24 +24,24 @@ import java.util.Collection;
 
 public class ShopPreviewList extends L2GameServerPacket
 {
-	private int listId;
-	private Collection<L2TradeItem> list;
-	private long money;
-	private int expertise;
+	private int _listId;
+	private Collection<L2TradeItem> _list;
+	private long _money;
+	private int _expertise;
 
 	public ShopPreviewList(L2TradeList list, long currentMoney, int expertiseIndex)
 	{
-		listId = list.getListId();
-		this.list = list.getItems();
-		money = currentMoney;
-		expertise = expertiseIndex;
+		_listId = list.getListId();
+		_list = list.getItems();
+		_money = currentMoney;
+		_expertise = expertiseIndex;
 	}
 
 	public ShopPreviewList(Collection<L2TradeItem> lst, int listId, long currentMoney)
 	{
-		this.listId = listId;
-		list = lst;
-		money = currentMoney;
+		_listId = listId;
+		_list = lst;
+		_money = currentMoney;
 	}
 
 	@Override
@@ -51,22 +51,22 @@ public class ShopPreviewList extends L2GameServerPacket
 		writeC(0x13); // ?
 		writeC(0x00); // ?
 		writeC(0x00); // ?
-		writeQ(money); // current money
-		writeD(listId);
+		writeQ(_money); // current money
+		writeD(_listId);
 
 		int newlength = 0;
-		for (L2TradeItem item : list)
+		for (L2TradeItem item : _list)
 		{
-			if (item.getTemplate().getCrystalType() <= expertise && item.getTemplate().isEquipable())
+			if (item.getTemplate().getCrystalType() <= _expertise && item.getTemplate().isEquipable())
 			{
 				newlength++;
 			}
 		}
 		writeH(newlength);
 
-		for (L2TradeItem item : list)
+		for (L2TradeItem item : _list)
 		{
-			if (item.getTemplate().getCrystalType() <= expertise && item.getTemplate().isEquipable())
+			if (item.getTemplate().getCrystalType() <= _expertise && item.getTemplate().isEquipable())
 			{
 				writeD(item.getItemId());
 				writeH(item.getTemplate().getType2()); // item type2

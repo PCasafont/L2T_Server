@@ -23,7 +23,8 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerSouls extends Condition
 {
-	private final int souls;
+
+	private final int _souls;
 
 	/**
 	 * Instantiates a new condition player souls.
@@ -32,7 +33,7 @@ public class ConditionPlayerSouls extends Condition
 	 */
 	public ConditionPlayerSouls(int souls)
 	{
-		this.souls = souls;
+		_souls = souls;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +42,6 @@ public class ConditionPlayerSouls extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((L2PcInstance) env.player).getSouls() >= souls;
+		return ((L2PcInstance) env.player).getSouls() >= _souls;
 	}
 }

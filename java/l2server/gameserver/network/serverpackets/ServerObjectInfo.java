@@ -24,36 +24,36 @@ import l2server.gameserver.model.actor.instance.L2StatueInstance;
  */
 public final class ServerObjectInfo extends L2GameServerPacket
 {
-	private L2Npc activeChar;
-	private int x, y, z, heading;
-	private int idTemplate;
-	private boolean isAttackable;
-	private double collisionHeight, collisionRadius;
-	private String name;
-	private int type;
+	private L2Npc _activeChar;
+	private int _x, _y, _z, _heading;
+	private int _idTemplate;
+	private boolean _isAttackable;
+	private double _collisionHeight, _collisionRadius;
+	private String _name;
+	private int _type;
 
 	public ServerObjectInfo(L2Npc activeChar, L2Character actor)
 	{
-		this.activeChar = activeChar;
-		idTemplate = this.activeChar.getTemplate().TemplateId + 1000000;
-		isAttackable = this.activeChar.isAutoAttackable(actor);
-		collisionHeight = this.activeChar.getCollisionHeight();
-		collisionRadius = this.activeChar.getCollisionRadius();
-		x = this.activeChar.getX();
-		y = this.activeChar.getY();
-		z = this.activeChar.getZ();
-		heading = this.activeChar.getHeading();
-		name = this.activeChar.getTemplate().ServerSideName ? this.activeChar.getTemplate().Name : "";
-		type = 4;
+		_activeChar = activeChar;
+		_idTemplate = _activeChar.getTemplate().TemplateId + 1000000;
+		_isAttackable = _activeChar.isAutoAttackable(actor);
+		_collisionHeight = _activeChar.getCollisionHeight();
+		_collisionRadius = _activeChar.getCollisionRadius();
+		_x = _activeChar.getX();
+		_y = _activeChar.getY();
+		_z = _activeChar.getZ();
+		_heading = _activeChar.getHeading();
+		_name = _activeChar.getTemplate().ServerSideName ? _activeChar.getTemplate().Name : "";
+		_type = 4;
 
-		if (this.activeChar instanceof L2StatueInstance)
+		if (_activeChar instanceof L2StatueInstance)
 		{
-			idTemplate = 0;
-			name = this.activeChar.getName();
-			isAttackable = false;
-			collisionHeight = 30;
-			collisionRadius = 40;
-			type = 7;
+			_idTemplate = 0;
+			_name = _activeChar.getName();
+			_isAttackable = false;
+			_collisionHeight = 30;
+			_collisionRadius = 40;
+			_type = 7;
 		}
 	}
 
@@ -63,26 +63,26 @@ public final class ServerObjectInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(activeChar.getObjectId());
-		writeD(idTemplate);
-		writeS(name); // name
-		writeD(isAttackable ? 1 : 0);
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(heading);
+		writeD(_activeChar.getObjectId());
+		writeD(_idTemplate);
+		writeS(_name); // name
+		writeD(_isAttackable ? 1 : 0);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeD(_heading);
 		writeF(1.0); // movement multiplier
 		writeF(1.0); // attack speed multiplier
-		writeF(collisionRadius);
-		writeF(collisionHeight);
-		writeD((int) (isAttackable ? activeChar.getCurrentHp() : 0));
-		writeD(isAttackable ? activeChar.getMaxVisibleHp() : 0);
-		writeD(type); // object type
+		writeF(_collisionRadius);
+		writeF(_collisionHeight);
+		writeD((int) (_isAttackable ? _activeChar.getCurrentHp() : 0));
+		writeD(_isAttackable ? _activeChar.getMaxVisibleHp() : 0);
+		writeD(_type); // object type
 		writeD(0x00); // special effects
 
-		if (type == 7)
+		if (_type == 7)
 		{
-			L2StatueInstance statue = (L2StatueInstance) activeChar;
+			L2StatueInstance statue = (L2StatueInstance) _activeChar;
 			writeD(statue.getRecordId());
 			writeD(0x00); // ???
 			writeD(statue.getSocialId());

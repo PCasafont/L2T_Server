@@ -56,6 +56,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	@Override
 	public void deleteMe(L2PcInstance owner)
 	{
+
 	}
 
 	@Override
@@ -78,6 +79,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	@Override
 	public void setFollowStatus(boolean state)
 	{
+
 	}
 
 	@Override
@@ -113,6 +115,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	@Override
 	public void doCast(L2Skill skill)
 	{
+
 	}
 
 	@Override
@@ -124,16 +127,19 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	@Override
 	public final void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
+
 	}
 
 	@Override
 	public void reduceCurrentHp(double i, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
 	{
+
 	}
 
 	@Override
 	public void updateAndBroadcastStatus(int val)
 	{
+
 	}
 
 	@Override

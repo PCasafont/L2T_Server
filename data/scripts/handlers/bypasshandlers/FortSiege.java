@@ -39,7 +39,7 @@ public class FortSiege implements IBypassHandler
 				(activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) == L2Clan.CP_CS_MANAGE_SIEGE)
 		{
 			/*
-			if (System.currentTimeMillis() < TerritoryWarManager.getInstance().getTWStartTimeInMillis()
+            if (System.currentTimeMillis() < TerritoryWarManager.getInstance().getTWStartTimeInMillis()
 					&& TerritoryWarManager.getInstance().getIsRegistrationOver())
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_SIEGE_REGISTRATION_TIME2));

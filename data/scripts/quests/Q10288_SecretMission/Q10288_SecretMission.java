@@ -32,11 +32,11 @@ public class Q10288_SecretMission extends Quest
 {
 	private static final String qn = "10288_SecretMission";
 	// NPC's
-	private static final int dominic = 31350;
-	private static final int aquilani = 32780;
-	private static final int greymore = 32757;
+	private static final int _dominic = 31350;
+	private static final int _aquilani = 32780;
+	private static final int _greymore = 32757;
 	// Items
-	private static final int letter = 15529;
+	private static final int _letter = 15529;
 
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -49,26 +49,26 @@ public class Q10288_SecretMission extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == dominic)
+		if (npc.getNpcId() == _dominic)
 		{
 			if (event.equalsIgnoreCase("31350-05.htm"))
 			{
 				st.setState(State.STARTED);
 				st.set("cond", "1");
-				st.giveItems(letter, 1);
+				st.giveItems(_letter, 1);
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == greymore && event.equalsIgnoreCase("32757-03.htm"))
+		else if (npc.getNpcId() == _greymore && event.equalsIgnoreCase("32757-03.htm"))
 		{
 			st.unset("cond");
-			st.takeItems(letter, -1);
+			st.takeItems(_letter, -1);
 			st.giveItems(57, 106583);
 			st.addExpAndSp(417788, 46320);
 			st.playSound("ItemSound.quest_finish");
 			st.exitQuest(false);
 		}
-		else if (npc.getNpcId() == aquilani)
+		else if (npc.getNpcId() == _aquilani)
 		{
 			if (st.getState() == State.STARTED)
 			{
@@ -97,7 +97,7 @@ public class Q10288_SecretMission extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == dominic)
+		if (npc.getNpcId() == _dominic)
 		{
 			switch (st.getState())
 			{
@@ -126,7 +126,7 @@ public class Q10288_SecretMission extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == aquilani)
+		else if (npc.getNpcId() == _aquilani)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -137,7 +137,7 @@ public class Q10288_SecretMission extends Quest
 				htmltext = "32780-06.html";
 			}
 		}
-		else if (npc.getNpcId() == greymore && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == _greymore && st.getInt("cond") == 2)
 		{
 			return "32757-01.htm";
 		}
@@ -153,7 +153,7 @@ public class Q10288_SecretMission extends Quest
 			Quest q = QuestManager.getInstance().getQuest(qn);
 			st = q.newQuestState(player);
 		}
-		if (npc.getNpcId() == aquilani)
+		if (npc.getNpcId() == _aquilani)
 		{
 			if (st.getState() == State.COMPLETED)
 			{
@@ -171,12 +171,12 @@ public class Q10288_SecretMission extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(dominic);
-		addStartNpc(aquilani);
-		addTalkId(dominic);
-		addTalkId(greymore);
-		addTalkId(aquilani);
-		addFirstTalkId(aquilani);
+		addStartNpc(_dominic);
+		addStartNpc(_aquilani);
+		addTalkId(_dominic);
+		addTalkId(_greymore);
+		addTalkId(_aquilani);
+		addFirstTalkId(_aquilani);
 	}
 
 	public static void main(String[] args)

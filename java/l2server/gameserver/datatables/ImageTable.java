@@ -15,18 +15,18 @@ import java.util.Map;
  */
 public class ImageTable
 {
-	private static ImageTable instance;
+	private static ImageTable _instance;
 
-	private static Map<Integer, PledgeCrest> images = new HashMap<>();
+	private static Map<Integer, PledgeCrest> _images = new HashMap<>();
 
 	public static ImageTable getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new ImageTable();
+			_instance = new ImageTable();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	private ImageTable()
@@ -56,7 +56,7 @@ public class ImageTable
 
 				id = Integer.valueOf(imgName.substring(0, imgName.length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				images.put(id, new PledgeCrest(id, array));
+				_images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -79,7 +79,7 @@ public class ImageTable
 				}
 				id = Integer.valueOf(image.getName().substring(0, image.getName().length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				images.put(id, new PledgeCrest(id, array));
+				_images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -88,16 +88,16 @@ public class ImageTable
 			e.printStackTrace();
 		}
 
-		Log.info("ImageTable: Loaded " + images.size() + " custom images.");
+		Log.info("ImageTable: Loaded " + _images.size() + " custom images.");
 	}
 
 	public void sendImages(L2PcInstance player)
 	{
-		for (int imageId : images.keySet())
+		for (int imageId : _images.keySet())
 		{
-			if (images.get(imageId) != null)
+			if (_images.get(imageId) != null)
 			{
-				player.sendPacket(images.get(imageId));
+				player.sendPacket(_images.get(imageId));
 			}
 		}
 	}

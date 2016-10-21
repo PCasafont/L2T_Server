@@ -25,7 +25,7 @@ import l2server.util.Rnd;
  */
 public class ConditionGameChance extends Condition
 {
-	private final int chance;
+	private final int _chance;
 
 	/**
 	 * Instantiates a new condition game chance.
@@ -34,7 +34,7 @@ public class ConditionGameChance extends Condition
 	 */
 	public ConditionGameChance(int chance)
 	{
-		this.chance = chance;
+		_chance = chance;
 	}
 
 	/**
@@ -47,6 +47,6 @@ public class ConditionGameChance extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return Rnd.get(100) < chance;
+		return Rnd.get(100) < _chance;
 	}
 }

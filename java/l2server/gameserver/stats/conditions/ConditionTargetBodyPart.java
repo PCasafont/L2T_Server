@@ -27,7 +27,8 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class ConditionTargetBodyPart extends Condition
 {
-	private L2Armor armor;
+
+	private L2Armor _armor;
 
 	/**
 	 * Instantiates a new condition target body part.
@@ -36,7 +37,7 @@ public class ConditionTargetBodyPart extends Condition
 	 */
 	public ConditionTargetBodyPart(L2Armor armor)
 	{
-		this.armor = armor;
+		_armor = armor;
 	}
 
 	/* (non-Javadoc)
@@ -51,7 +52,7 @@ public class ConditionTargetBodyPart extends Condition
 			return true;
 		}
 		int bodypart = env.target.getAttackingBodyPart();
-		int armor_part = armor.getBodyPart();
+		int armor_part = _armor.getBodyPart();
 		switch (bodypart)
 		{
 			case Inventory.PAPERDOLL_CHEST:

@@ -34,21 +34,22 @@ import java.util.HashSet;
  */
 public final class RequestPrivateStoreBuy extends L2GameClientPacket
 {
+
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
-	private int storePlayerId;
-	private HashSet<ItemRequest> items = null;
+	private int _storePlayerId;
+	private HashSet<ItemRequest> _items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		storePlayerId = readD();
+		_storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
-		items = new HashSet<>();
+		_items = new HashSet<>();
 
 		for (int i = 0; i < count; i++)
 		{
@@ -58,11 +59,11 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 
 			if (objectId < 1 || cnt < 1 || price < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
 
-			items.add(new ItemRequest(objectId, cnt, price));
+			_items.add(new ItemRequest(objectId, cnt, price));
 		}
 	}
 
@@ -75,7 +76,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 
-		if (items == null)
+		if (_items == null)
 		{
 			player.sendMessage("Couldn't find the items you are trying to buy.");
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -88,7 +89,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 
-		L2Object object = L2World.getInstance().getPlayer(storePlayerId);
+		L2Object object = L2World.getInstance().getPlayer(_storePlayerId);
 		if (object == null)
 		{
 			player.sendMessage("ERR1.");
@@ -146,7 +147,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 
 		if (storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL)
 		{
-			if (storeList.getItemCount() > items.size())
+			if (storeList.getItemCount() > _items.size())
 			{
 				String msgErr = "[RequestPrivateStoreBuy] player " + getClient().getActiveChar().getName() +
 						" tried to buy less items than sold by package-sell, ban this player for bot usage!";
@@ -155,7 +156,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			}
 		}
 
-		int result = storeList.privateStoreBuy(player, items);
+		int result = storeList.privateStoreBuy(player, _items);
 
 		if (result > 0)
 		{
@@ -175,7 +176,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		}
 
 		/*   Lease holders are currently not implemented
-				else if (seller != null)
+				else if (_seller != null)
 				{
 					// lease shop sell
 					L2MerchantInstance seller = (L2MerchantInstance)_seller;
@@ -214,7 +215,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	@Override
 	protected void cleanUp()
 	{
-		items = null;
+		_items = null;
 	}
 
 	@Override

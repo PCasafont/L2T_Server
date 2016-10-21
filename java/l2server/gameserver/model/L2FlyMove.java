@@ -17,7 +17,6 @@ package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
 import l2server.util.Point3D;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,62 +31,92 @@ public class L2FlyMove
 		START, CHOOSE, MOVE
 	}
 
-	@Getter private int id;
-	private TIntObjectHashMap<Point3D> steps = new TIntObjectHashMap<>();
-	private TIntObjectHashMap<L2FlyMoveChoose> chooses = new TIntObjectHashMap<>();
+	private int _id;
+	private TIntObjectHashMap<Point3D> _steps = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<L2FlyMoveChoose> _chooses = new TIntObjectHashMap<>();
 
 	public L2FlyMove(int id)
 	{
-		this.id = id;
+		_id = id;
+	}
+
+	public int getId()
+	{
+		return _id;
 	}
 
 	public void addStep(int id, Point3D s)
 	{
-		steps.put(id, s);
+		_steps.put(id, s);
 	}
 
 	public Point3D getStep(int id)
 	{
-		return steps.get(id);
+		return _steps.get(id);
 	}
 
 	public void addChoose(int id, L2FlyMoveChoose c)
 	{
-		chooses.put(id, c);
+		_chooses.put(id, c);
 	}
 
 	public L2FlyMoveChoose getChoose(int id)
 	{
-		return chooses.get(id);
+		return _chooses.get(id);
 	}
 
 	public class L2FlyMoveChoose
 	{
-		@Getter private int at;
-		@Getter private List<L2FlyMoveOption> options = new ArrayList<>();
+		private int _at;
+		private List<L2FlyMoveOption> _options = new ArrayList<>();
 
 		public L2FlyMoveChoose(int at)
 		{
-			this.at = at;
+			_at = at;
+		}
+
+		public int getAt()
+		{
+			return _at;
 		}
 
 		public void addOption(L2FlyMoveOption o)
 		{
-			options.add(o);
+			_options.add(o);
+		}
+
+		public List<L2FlyMoveOption> getOptions()
+		{
+			return _options;
 		}
 	}
 
 	public class L2FlyMoveOption
 	{
-		@Getter private int start;
-		@Getter private int end;
-		@Getter private int last;
+		private int _start;
+		private int _end;
+		private int _last;
 
 		public L2FlyMoveOption(int start, int end, int last)
 		{
-			this.start = start;
-			this.end = end;
-			this.last = last;
+			_start = start;
+			_end = end;
+			_last = last;
+		}
+
+		public int getStart()
+		{
+			return _start;
+		}
+
+		public int getEnd()
+		{
+			return _end;
+		}
+
+		public int getLast()
+		{
+			return _last;
 		}
 	}
 }

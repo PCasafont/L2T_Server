@@ -51,16 +51,17 @@ import java.util.logging.Level;
  */
 public class MercTicketManager
 {
+
 	public static MercTicketManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
 
 	// =========================================================
 	// Data Field
-	private List<L2ItemInstance> droppedTickets; // to keep track of items on the ground
+	private List<L2ItemInstance> _droppedTickets; // to keep track of items on the ground
 
 	// max tickets per merc type = 10 + (castleid * 2)?
 	// max ticker per castle = 40 + (castleid * 20)?
@@ -1747,7 +1748,7 @@ public class MercTicketManager
 				dropticket.setDropTime(0); //avoids it from beeing removed by the auto item destroyer
 				L2World.getInstance().storeObject(dropticket); //add to the world
 				// and keep track of this ticket in the list
-				droppedTickets.add(dropticket);
+				_droppedTickets.add(dropticket);
 
 				return NPC_IDS[i];
 			}
@@ -1832,23 +1833,23 @@ public class MercTicketManager
 
 	public final List<L2ItemInstance> getDroppedTickets()
 	{
-		if (droppedTickets == null)
+		if (_droppedTickets == null)
 		{
 			synchronized (this)
 			{
-				if (droppedTickets == null)
+				if (_droppedTickets == null)
 				{
-					droppedTickets = new ArrayList<>();
+					_droppedTickets = new ArrayList<>();
 				}
 			}
 		}
 
-		return droppedTickets;
+		return _droppedTickets;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MercTicketManager instance = new MercTicketManager();
+		protected static final MercTicketManager _instance = new MercTicketManager();
 	}
 }

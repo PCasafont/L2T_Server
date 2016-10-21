@@ -24,27 +24,27 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
  */
 public class NodeLoc extends AbstractNodeLoc
 {
-	private int x;
-	private int y;
-	private short geoHeightAndNSWE;
+	private int _x;
+	private int _y;
+	private short _geoHeightAndNSWE;
 
 	public NodeLoc(int x, int y, short z)
 	{
-		this.x = x;
-		this.y = y;
-		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
+		_x = x;
+		_y = y;
+		_geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
 	public void set(int x, int y, short z)
 	{
-		this.x = x;
-		this.y = y;
-		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
+		_x = x;
+		_y = y;
+		_geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
 	public short getNSWE()
 	{
-		return (short) (geoHeightAndNSWE & 0x0f);
+		return (short) (_geoHeightAndNSWE & 0x0f);
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return (x << 4) + L2World.MAP_MIN_X;
+		return (_x << 4) + L2World.MAP_MIN_X;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return (y << 4) + L2World.MAP_MIN_Y;
+		return (_y << 4) + L2World.MAP_MIN_Y;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public short getZ()
 	{
-		short height = (short) (geoHeightAndNSWE & 0x0fff0);
+		short height = (short) (_geoHeightAndNSWE & 0x0fff0);
 		return (short) (height >> 1);
 	}
 
@@ -87,7 +87,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeX()
 	{
-		return x;
+		return _x;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeY()
 	{
-		return y;
+		return _y;
 	}
 
 	/**
@@ -107,9 +107,9 @@ public class NodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + x;
-		result = prime * result + y;
-		result = prime * result + geoHeightAndNSWE;
+		result = prime * result + _x;
+		result = prime * result + _y;
+		result = prime * result + _geoHeightAndNSWE;
 		return result;
 	}
 
@@ -132,14 +132,14 @@ public class NodeLoc extends AbstractNodeLoc
 			return false;
 		}
 		final NodeLoc other = (NodeLoc) obj;
-		if (x != other.x)
+		if (_x != other._x)
 		{
 			return false;
 		}
-		if (y != other.y)
+		if (_y != other._y)
 		{
 			return false;
 		}
-		return geoHeightAndNSWE == other.geoHeightAndNSWE;
+		return _geoHeightAndNSWE == other._geoHeightAndNSWE;
 	}
 }

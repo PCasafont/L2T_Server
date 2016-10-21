@@ -22,13 +22,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExRegistWaitingSubstituteOk extends L2GameServerPacket
 {
-	int classId;
-	L2PcInstance player;
+
+	int _classId;
+	L2PcInstance _player;
 
 	public ExRegistWaitingSubstituteOk(int classId, L2PcInstance player)
 	{
-		this.classId = classId;
-		this.player = player.getParty().getLeader();
+		_classId = classId;
+		_player = player.getParty().getLeader();
 	}
 
 	@Override
@@ -40,7 +41,7 @@ public class ExRegistWaitingSubstituteOk extends L2GameServerPacket
 		writeC(0x00); // TODO: Unknown
 		writeC(0x00); // TODO: Unknown
 		writeD(0x00); // TODO: Unknown
-		writeD(player.getInstanceId() > 0 ? 0x01 : 0x00);
-		writeD(classId);
+		writeD(_player.getInstanceId() > 0 ? 0x01 : 0x00);
+		writeD(_classId);
 	}
 }

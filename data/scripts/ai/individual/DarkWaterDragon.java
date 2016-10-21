@@ -37,14 +37,14 @@ public class DarkWaterDragon extends L2AttackableAIScript
 	private static HashSet<Integer> secondSpawn = new HashSet<Integer>();
 	//Used to track if second Shades were already spawned
 	private static HashSet<Integer> myTrackingSet = new HashSet<Integer>(); //Used to track instances of npcs
-	private static ConcurrentHashMap<Integer, L2PcInstance> idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
+	private static ConcurrentHashMap<Integer, L2PcInstance> _idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
 	//Used to track instances of npcs
 
 	public DarkWaterDragon(int id, String name, String descr)
 	{
 		super(id, name, descr);
 		int[] mobs = {DRAGON, SHADE1, SHADE2, FAFURION, DETRACTOR1, DETRACTOR2};
-		registerMobs(mobs, QuestEventType.ON_KILL, QuestEventType.ON_SPAWN, QuestEventType.ON_ATTACK);
+		this.registerMobs(mobs, QuestEventType.ON_KILL, QuestEventType.ON_SPAWN, QuestEventType.ON_ATTACK);
 		myTrackingSet.clear();
 		secondSpawn.clear();
 	}
@@ -56,35 +56,35 @@ public class DarkWaterDragon extends L2AttackableAIScript
 		{
 			if (event.equalsIgnoreCase("first_spawn")) //timer to start timer "1"
 			{
-				startQuestTimer("1", 40000, npc, null, true); //spawns detractor every 40 seconds
+				this.startQuestTimer("1", 40000, npc, null, true); //spawns detractor every 40 seconds
 			}
 			else if (event.equalsIgnoreCase("second_spawn")) //timer to start timer "2"
 			{
-				startQuestTimer("2", 40000, npc, null, true); //spawns detractor every 40 seconds
+				this.startQuestTimer("2", 40000, npc, null, true); //spawns detractor every 40 seconds
 			}
 			else if (event.equalsIgnoreCase("third_spawn")) //timer to start timer "3"
 			{
-				startQuestTimer("3", 40000, npc, null, true); //spawns detractor every 40 seconds
+				this.startQuestTimer("3", 40000, npc, null, true); //spawns detractor every 40 seconds
 			}
 			else if (event.equalsIgnoreCase("fourth_spawn")) //timer to start timer "4"
 			{
-				startQuestTimer("4", 40000, npc, null, true); //spawns detractor every 40 seconds
+				this.startQuestTimer("4", 40000, npc, null, true); //spawns detractor every 40 seconds
 			}
 			else if (event.equalsIgnoreCase("1")) //spawns a detractor
 			{
-				addSpawn(DETRACTOR1, npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR1, npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0, false, 40000);
 			}
 			else if (event.equalsIgnoreCase("2")) //spawns a detractor
 			{
-				addSpawn(DETRACTOR2, npc.getX() + 100, npc.getY() - 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR2, npc.getX() + 100, npc.getY() - 100, npc.getZ(), 0, false, 40000);
 			}
 			else if (event.equalsIgnoreCase("3")) //spawns a detractor
 			{
-				addSpawn(DETRACTOR1, npc.getX() - 100, npc.getY() + 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR1, npc.getX() - 100, npc.getY() + 100, npc.getZ(), 0, false, 40000);
 			}
 			else if (event.equalsIgnoreCase("4")) //spawns a detractor
 			{
-				addSpawn(DETRACTOR2, npc.getX() - 100, npc.getY() - 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR2, npc.getX() - 100, npc.getY() - 100, npc.getZ(), 0, false, 40000);
 			}
 			else if (event.equalsIgnoreCase("fafurion_despawn")) //Fafurion Kindred disappears and drops reward
 			{
@@ -95,7 +95,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 				cancelQuestTimer("4", npc, null);
 
 				myTrackingSet.remove(npc.getObjectId());
-				player = idmap.remove(npc.getObjectId());
+				player = _idmap.remove(npc.getObjectId());
 				if (player != null) //You never know ...
 				{
 					((L2Attackable) npc).doItemDrop(NpcTable.getInstance().getTemplate(18485), player);
@@ -117,7 +117,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 					cancelQuestTimer("3", npc, null);
 					cancelQuestTimer("4", npc, null);
 					myTrackingSet.remove(npc.getObjectId());
-					idmap.remove(npc.getObjectId());
+					_idmap.remove(npc.getObjectId());
 				}
 				npc.reduceCurrentHp(500, npc, null); //poison kills Fafurion if he is not healed
 			}
@@ -167,9 +167,9 @@ public class DarkWaterDragon extends L2AttackableAIScript
 		{
 			myTrackingSet.remove(npcObjId);
 			secondSpawn.remove(npcObjId);
-			L2Attackable faf = (L2Attackable) addSpawn(FAFURION, npc.getX(), npc.getY(), npc.getZ(), 0, false,
+			L2Attackable faf = (L2Attackable) this.addSpawn(FAFURION, npc.getX(), npc.getY(), npc.getZ(), 0, false,
 					0); //spawns Fafurion Kindred when Dard Water Dragon is dead
-			idmap.put(faf.getObjectId(), killer);
+			_idmap.put(faf.getObjectId(), killer);
 		}
 		else if (npcId == FAFURION)
 		{
@@ -184,7 +184,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 			cancelQuestTimer("3", npc, null);
 			cancelQuestTimer("4", npc, null);
 			myTrackingSet.remove(npcObjId);
-			idmap.remove(npcObjId);
+			_idmap.remove(npcObjId);
 		}
 		return super.onKill(npc, killer, isPet);
 	}
@@ -202,17 +202,18 @@ public class DarkWaterDragon extends L2AttackableAIScript
 				//Spawn 4 Detractors on spawn of Fafurion
 				int x = npc.getX();
 				int y = npc.getY();
-				addSpawn(DETRACTOR2, x + 100, y + 100, npc.getZ(), 0, false, 40000);
-				addSpawn(DETRACTOR1, x + 100, y - 100, npc.getZ(), 0, false, 40000);
-				addSpawn(DETRACTOR2, x - 100, y + 100, npc.getZ(), 0, false, 40000);
-				addSpawn(DETRACTOR1, x - 100, y - 100, npc.getZ(), 0, false, 40000);
-				startQuestTimer("first_spawn", 2000, npc, null); //timer to delay timer "1"
-				startQuestTimer("second_spawn", 4000, npc, null); //timer to delay timer "2"
-				startQuestTimer("third_spawn", 8000, npc, null); //timer to delay timer "3"
-				startQuestTimer("fourth_spawn", 10000, npc, null); //timer to delay timer "4"
-				startQuestTimer("fafurion_poison", 3000, npc, null,
+				this.addSpawn(DETRACTOR2, x + 100, y + 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR1, x + 100, y - 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR2, x - 100, y + 100, npc.getZ(), 0, false, 40000);
+				this.addSpawn(DETRACTOR1, x - 100, y - 100, npc.getZ(), 0, false, 40000);
+				this.startQuestTimer("first_spawn", 2000, npc, null); //timer to delay timer "1"
+				this.startQuestTimer("second_spawn", 4000, npc, null); //timer to delay timer "2"
+				this.startQuestTimer("third_spawn", 8000, npc, null); //timer to delay timer "3"
+				this.startQuestTimer("fourth_spawn", 10000, npc, null); //timer to delay timer "4"
+				this.startQuestTimer("fafurion_poison", 3000, npc, null,
 						true); //Every three seconds reduces Fafurions hp like it is poisoned
-				startQuestTimer("fafurion_despawn", 120000, npc, null); //Fafurion Kindred disappears after two minutes
+				this.startQuestTimer("fafurion_despawn", 120000, npc,
+						null); //Fafurion Kindred disappears after two minutes
 			}
 		}
 		return super.onSpawn(npc);

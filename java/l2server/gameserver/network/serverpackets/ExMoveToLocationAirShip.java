@@ -19,28 +19,29 @@ import l2server.gameserver.model.actor.L2Character;
 
 public class ExMoveToLocationAirShip extends L2GameServerPacket
 {
-	private final int objId, tx, ty, tz, x, y, z;
+
+	private final int _objId, _tx, _ty, _tz, _x, _y, _z;
 
 	public ExMoveToLocationAirShip(L2Character cha)
 	{
-		objId = cha.getObjectId();
-		tx = cha.getXdestination();
-		ty = cha.getYdestination();
-		tz = cha.getZdestination();
-		x = cha.getX();
-		y = cha.getY();
-		z = cha.getZ();
+		_objId = cha.getObjectId();
+		_tx = cha.getXdestination();
+		_ty = cha.getYdestination();
+		_tz = cha.getZdestination();
+		_x = cha.getX();
+		_y = cha.getY();
+		_z = cha.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objId);
-		writeD(tx);
-		writeD(ty);
-		writeD(tz);
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_objId);
+		writeD(_tx);
+		writeD(_ty);
+		writeD(_tz);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 	}
 }

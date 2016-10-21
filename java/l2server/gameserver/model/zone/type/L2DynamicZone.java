@@ -32,22 +32,22 @@ import java.util.concurrent.Future;
  */
 public class L2DynamicZone extends L2ZoneType
 {
-	private L2WorldRegion region;
-	private L2Character owner;
-	private Future<?> task;
-	private L2Skill skill;
+	private L2WorldRegion _region;
+	private L2Character _owner;
+	private Future<?> _task;
+	private L2Skill _skill;
 
 	protected void setTask(Future<?> task)
 	{
-		this.task = task;
+		_task = task;
 	}
 
 	public L2DynamicZone(L2WorldRegion region, L2Character owner, L2Skill skill)
 	{
 		super(-1);
-		this.region = region;
-		this.owner = owner;
-		this.skill = skill;
+		_region = region;
+		_owner = owner;
+		_skill = skill;
 
 		Runnable r = this::remove;
 		setTask(ThreadPoolManager.getInstance().scheduleGeneral(r, skill.getBuffDuration()));
@@ -62,7 +62,7 @@ public class L2DynamicZone extends L2ZoneType
 			{
 				character.sendMessage("You have entered a temporary zone!");
 			}
-			skill.getEffects(owner, character);
+			_skill.getEffects(_owner, character);
 		}
 		catch (NullPointerException e)
 		{
@@ -77,54 +77,54 @@ public class L2DynamicZone extends L2ZoneType
 		{
 			character.sendMessage("You have left a temporary zone!");
 		}
-		if (character == owner)
+		if (character == _owner)
 		{
 			remove();
 			return;
 		}
-		character.stopSkillEffects(skill.getId());
+		character.stopSkillEffects(_skill.getId());
 	}
 
 	protected void remove()
 	{
-		if (task == null)
+		if (_task == null)
 		{
 			return;
 		}
-		task.cancel(false);
-		task = null;
+		_task.cancel(false);
+		_task = null;
 
-		region.removeZone(this);
-		for (L2Character member : characterList.values())
+		_region.removeZone(this);
+		for (L2Character member : _characterList.values())
 		{
 			try
 			{
-				member.stopSkillEffects(skill.getId());
+				member.stopSkillEffects(_skill.getId());
 			}
 			catch (NullPointerException e)
 			{
 				e.printStackTrace();
 			}
 		}
-		owner.stopSkillEffects(skill.getId());
+		_owner.stopSkillEffects(_skill.getId());
 	}
 
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)
 	{
-		if (character == owner)
+		if (character == _owner)
 		{
 			remove();
 		}
 		else
 		{
-			character.stopSkillEffects(skill.getId());
+			character.stopSkillEffects(_skill.getId());
 		}
 	}
 
 	@Override
 	public void onReviveInside(L2Character character)
 	{
-		skill.getEffects(owner, character);
+		_skill.getEffects(_owner, character);
 	}
 }

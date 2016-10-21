@@ -29,45 +29,45 @@ import java.util.List;
 public class ExOlympiadSpelledInfo extends L2GameServerPacket
 {
 	// chdd(dhd)
-	private int playerID;
-	private List<Effect> effects;
+	private int _playerID;
+	private List<Effect> _effects;
 
 	private static class Effect
 	{
-		protected int skillId;
-		protected int level;
-		protected int duration;
+		protected int _skillId;
+		protected int _level;
+		protected int _duration;
 
 		public Effect(int pSkillId, int pLevel, int pDuration)
 		{
-			skillId = pSkillId;
-			level = pLevel;
-			duration = pDuration;
+			_skillId = pSkillId;
+			_level = pLevel;
+			_duration = pDuration;
 		}
 	}
 
 	public ExOlympiadSpelledInfo(L2PcInstance player)
 	{
-		effects = new ArrayList<>();
-		playerID = player.getObjectId();
+		_effects = new ArrayList<>();
+		_playerID = player.getObjectId();
 	}
 
 	public void addEffect(int skillId, int level, int duration)
 	{
-		effects.add(new Effect(skillId, level, duration));
+		_effects.add(new Effect(skillId, level, duration));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(playerID);
-		writeD(effects.size());
-		for (Effect temp : effects)
+		writeD(_playerID);
+		writeD(_effects.size());
+		for (Effect temp : _effects)
 		{
-			writeD(temp.skillId);
-			writeD(temp.level);
+			writeD(temp._skillId);
+			writeD(temp._level);
 			writeD(0x00); // ???
-			writeH(temp.duration / 1000 + 1);
+			writeH(temp._duration / 1000 + 1);
 		}
 	}
 }

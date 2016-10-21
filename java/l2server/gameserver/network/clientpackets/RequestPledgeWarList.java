@@ -25,14 +25,15 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
  */
 public final class RequestPledgeWarList extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int unk1;
-	private int tab;
+	@SuppressWarnings("unused")
+	private int _unk1;
+	private int _tab;
 
 	@Override
 	protected void readImpl()
 	{
-		unk1 = readD();
-		tab = readD();
+		_unk1 = readD();
+		_tab = readD();
 	}
 
 	/**
@@ -40,8 +41,8 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		//Log.info("C5: RequestPledgeWarList d:"+_unk1);
-		//Log.info("C5: RequestPledgeWarList d:"+_tab);
+		//Logozo.info("C5: RequestPledgeWarList d:"+_unk1);
+		//Logozo.info("C5: RequestPledgeWarList d:"+_tab);
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
@@ -53,6 +54,6 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 		}
 
 		//do we need powers to do that??
-		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), tab));
+		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), _tab));
 	}
 }

@@ -34,20 +34,21 @@ import java.util.logging.Level;
 
 public class CastleManager implements InstanceListManager
 {
+
 	public static CastleManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
 
 	// =========================================================
 	// Data Field
-	private List<Castle> castles;
+	private List<Castle> _castles;
 
 	// =========================================================
 	// Constructor
-	private static final int castleCirclets[] = {0, 6838, 6835, 6839, 6837, 6840, 6834, 6836, 8182, 8183};
+	private static final int _castleCirclets[] = {0, 6838, 6835, 6839, 6837, 6840, 6834, 6836, 8182, 8183};
 
 	private CastleManager()
 	{
@@ -203,16 +204,16 @@ public class CastleManager implements InstanceListManager
 
 	public final List<Castle> getCastles()
 	{
-		if (castles == null)
+		if (_castles == null)
 		{
-			castles = new ArrayList<>();
+			_castles = new ArrayList<>();
 		}
-		return castles;
+		return _castles;
 	}
 
 	public final void validateTaxes()
 	{
-		for (Castle castle : castles)
+		for (Castle castle : _castles)
 		{
 			int maxTax = castle.getTendency() == 2 ? 30 : 0;
 			if (castle.getTaxPercent() > maxTax)
@@ -222,18 +223,18 @@ public class CastleManager implements InstanceListManager
 		}
 	}
 
-	int castleId = 1; // from this castle
+	int _castleId = 1; // from this castle
 
 	public int getCirclet()
 	{
-		return getCircletByCastleId(castleId);
+		return getCircletByCastleId(_castleId);
 	}
 
 	public int getCircletByCastleId(int castleId)
 	{
 		if (castleId > 0 && castleId < 10)
 		{
-			return castleCirclets[castleId];
+			return _castleCirclets[castleId];
 		}
 
 		return 0;
@@ -348,7 +349,7 @@ public class CastleManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		castles.forEach(Castle::activateInstance);
+		_castles.forEach(Castle::activateInstance);
 	}
 
 	public void spawnCastleTendencyNPCs()
@@ -359,6 +360,6 @@ public class CastleManager implements InstanceListManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CastleManager instance = new CastleManager();
+		protected static final CastleManager _instance = new CastleManager();
 	}
 }

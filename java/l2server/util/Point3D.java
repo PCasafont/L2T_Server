@@ -25,67 +25,114 @@
 
 package l2server.util;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 
-@AllArgsConstructor
-@EqualsAndHashCode
+/**
+ * This class ...
+ *
+ * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
+ */
 public class Point3D implements Serializable
 {
-	private static final long serialVersionUID = 4638345252031872577L;
+	/**
+	 * Comment for <code>serialVersionUID</code>
+	 */
+	private static final long serialVersionUID = 4638345252031872576L;
 
-	@Getter @Setter private volatile int x, y, z;
+	private volatile int _x, _y, _z;
+
+	public Point3D(int pX, int pY, int pZ)
+	{
+		_x = pX;
+		_y = pY;
+		_z = pZ;
+	}
 
 	public Point3D(int pX, int pY)
 	{
-		x = pX;
-		y = pY;
-		z = 0;
+		_x = pX;
+		_y = pY;
+		_z = 0;
 	}
 
 	/**
-	 * @param other The other point to copy this from
+	 * @param worldPosition
 	 */
-	public Point3D(Point3D other)
+	public Point3D(Point3D worldPosition)
 	{
-		x = other.x;
-		y = other.y;
-		z = other.z;
+		synchronized (worldPosition)
+		{
+			_x = worldPosition._x;
+			_y = worldPosition._y;
+			_z = worldPosition._z;
+		}
 	}
 
 	public synchronized void setTo(Point3D point)
 	{
-		x = point.x;
-		y = point.y;
-		z = point.z;
+		synchronized (point)
+		{
+			_x = point._x;
+			_y = point._y;
+			_z = point._z;
+		}
 	}
 
 	@Override
 	public String toString()
 	{
-		return "(" + x + ", " + y + ", " + z + ")";
+		return "(" + _x + ", " + _y + ", " + _z + ")";
 	}
 
-	public synchronized boolean equalsTo(int pX, int pY, int pZ)
+	@Override
+	public int hashCode()
 	{
-		return x == pX && y == pY && z == pZ;
+		return _x ^ _y ^ _z;
+	}
+
+	@Override
+	public synchronized boolean equals(Object o)
+	{
+		if (o instanceof Point3D)
+		{
+			Point3D point3D = (Point3D) o;
+			boolean ret;
+			synchronized (point3D)
+			{
+				ret = point3D._x == _x && point3D._y == _y && point3D._z == _z;
+			}
+			return ret;
+		}
+		return false;
+	}
+
+	public synchronized boolean equals(int pX, int pY, int pZ)
+	{
+		return _x == pX && _y == pY && _z == pZ;
 	}
 
 	public synchronized long distanceSquaredTo(Point3D point)
 	{
-		long dx = x - point.x;
-		long dy = y - point.y;
+		long dx, dy;
+		synchronized (point)
+		{
+			dx = _x - point._x;
+			dy = _y - point._y;
+		}
 		return dx * dx + dy * dy;
 	}
 
 	public static long distanceSquared(Point3D point1, Point3D point2)
 	{
-		long dx = point1.x - point2.x;
-		long dy = point1.y - point2.y;
+		long dx, dy;
+		synchronized (point1)
+		{
+			synchronized (point2)
+			{
+				dx = point1._x - point2._x;
+				dy = point1._y - point2._y;
+			}
+		}
 		return dx * dx + dy * dy;
 	}
 
@@ -94,10 +141,40 @@ public class Point3D implements Serializable
 		return distanceSquared(point1, point2) < distance * distance;
 	}
 
+	public int getX()
+	{
+		return _x;
+	}
+
+	public synchronized void setX(int pX)
+	{
+		_x = pX;
+	}
+
+	public int getY()
+	{
+		return _y;
+	}
+
+	public synchronized void setY(int pY)
+	{
+		_y = pY;
+	}
+
+	public int getZ()
+	{
+		return _z;
+	}
+
+	public synchronized void setZ(int pZ)
+	{
+		_z = pZ;
+	}
+
 	public synchronized void setXYZ(int pX, int pY, int pZ)
 	{
-		x = pX;
-		y = pY;
-		z = pZ;
+		_x = pX;
+		_y = pY;
+		_z = pZ;
 	}
 }

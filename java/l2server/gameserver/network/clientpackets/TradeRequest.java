@@ -34,12 +34,13 @@ import l2server.log.Log;
  */
 public final class TradeRequest extends L2GameClientPacket
 {
-	private int objectId;
+
+	private int _objectId;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD();
+		_objectId = readD();
 	}
 
 	@Override
@@ -70,7 +71,7 @@ public final class TradeRequest extends L2GameClientPacket
 			return;
 		}
 
-		L2Object target = L2World.getInstance().findObject(objectId);
+		L2Object target = L2World.getInstance().findObject(_objectId);
 		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));

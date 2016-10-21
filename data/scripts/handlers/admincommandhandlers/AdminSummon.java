@@ -19,7 +19,6 @@ import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
 
 import java.util.logging.Logger;
 
@@ -28,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class AdminSummon implements IAdminCommandHandler
 {
-	Logger log = Logger.getLogger(AdminSummon.class.getName());
+	Logger _log = Logger.getLogger(AdminSummon.class.getName());
 
 	public static final String[] ADMIN_COMMANDS = {"admin_summon"};
 
@@ -38,6 +37,7 @@ public class AdminSummon implements IAdminCommandHandler
 	@Override
 	public String[] getAdminCommandList()
 	{
+
 		return ADMIN_COMMANDS;
 	}
 
@@ -71,7 +71,7 @@ public class AdminSummon implements IAdminCommandHandler
 			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 			{
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+				_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 						", but have no access to it!");
 				return false;
 			}
@@ -84,7 +84,7 @@ public class AdminSummon implements IAdminCommandHandler
 			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 			{
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+				_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 						", but have no access to it!");
 				return false;
 			}

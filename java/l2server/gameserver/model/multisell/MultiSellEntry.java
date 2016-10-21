@@ -23,17 +23,17 @@ import java.util.List;
  */
 public class MultiSellEntry
 {
-	protected int entryId;
-	protected boolean stackable = true;
+	protected int _entryId;
+	protected boolean _stackable = true;
 
-	protected List<Ingredient> products;
-	protected List<Ingredient> ingredients;
+	protected List<Ingredient> _products;
+	protected List<Ingredient> _ingredients;
 
 	public MultiSellEntry(int entryId)
 	{
-		this.entryId = entryId;
-		products = new ArrayList<>();
-		ingredients = new ArrayList<>();
+		_entryId = entryId;
+		_products = new ArrayList<>();
+		_ingredients = new ArrayList<>();
 	}
 
 	/**
@@ -46,42 +46,42 @@ public class MultiSellEntry
 
 	public final void setEntryId(int id)
 	{
-		entryId = id;
+		_entryId = id;
 	}
 
 	public final int getEntryId()
 	{
-		return entryId;
+		return _entryId;
 	}
 
 	public final void addProduct(Ingredient product)
 	{
-		products.add(product);
+		_products.add(product);
 
 		if (!product.isStackable())
 		{
-			stackable = false;
+			_stackable = false;
 		}
 	}
 
 	public final List<Ingredient> getProducts()
 	{
-		return products;
+		return _products;
 	}
 
 	public final void addIngredient(Ingredient ingredient)
 	{
-		ingredients.add(ingredient);
+		_ingredients.add(ingredient);
 	}
 
 	public final List<Ingredient> getIngredients()
 	{
-		return ingredients;
+		return _ingredients;
 	}
 
 	public final boolean isStackable()
 	{
-		return stackable;
+		return _stackable;
 	}
 
 	public long getTaxAmount()

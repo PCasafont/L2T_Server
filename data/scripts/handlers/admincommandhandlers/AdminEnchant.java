@@ -26,7 +26,6 @@ import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.log.Log;
 
 import java.util.logging.Logger;
 
@@ -38,7 +37,7 @@ import java.util.logging.Logger;
  */
 public class AdminEnchant implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminEnchant.class.getName());
+	private static Logger _log = Logger.getLogger(AdminEnchant.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_seteh",//6
@@ -150,7 +149,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						Log.warning("Set enchant error: " + e);
+						_log.warning("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a new enchant value.");
 				}
@@ -158,7 +157,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						Log.warning("Set enchant error: " + e);
+						_log.warning("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}

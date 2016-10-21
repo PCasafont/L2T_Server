@@ -34,16 +34,16 @@ public final class RequestJoinSiege extends L2GameClientPacket
 {
 	//
 
-	private int castleId;
-	private int isAttacker;
-	private int isJoining;
+	private int _castleId;
+	private int _isAttacker;
+	private int _isJoining;
 
 	@Override
 	protected void readImpl()
 	{
-		castleId = readD();
-		isAttacker = readD();
-		isJoining = readD();
+		_castleId = readD();
+		_isAttacker = readD();
+		_isJoining = readD();
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 			return;
 		}
 
-		Castle castle = CastleManager.getInstance().getCastleById(castleId);
+		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
 		if (castle == null)
 		{
 			return;
@@ -75,9 +75,9 @@ public final class RequestJoinSiege extends L2GameClientPacket
 
 		//NOT FOR ERTHEIA SERVER
 		/*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
-			return;*/
+            return;*/
 
-		if (isJoining == 1)
+		if (_isJoining == 1)
 		{
 			if (System.currentTimeMillis() < clan.getDissolvingExpiryTime())
 			{
@@ -85,7 +85,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 						.getSystemMessage(SystemMessageId.CANT_PARTICIPATE_IN_SIEGE_WHILE_DISSOLUTION_IN_PROGRESS));
 				return;
 			}
-			if (isAttacker == 1)
+			if (_isAttacker == 1)
 			{
 				castle.getSiege().registerAttacker(activeChar);
 			}

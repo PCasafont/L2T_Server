@@ -62,24 +62,24 @@ import java.util.Arrays;
  */
 public final class ItemList extends L2ItemListPacket
 {
-	private PcInventory inventory;
-	private L2ItemInstance[] items;
-	private boolean showWindow;
+	private PcInventory _inventory;
+	private L2ItemInstance[] _items;
+	private boolean _showWindow;
 	private int length;
-	private ArrayList<L2ItemInstance> questItems;
+	private ArrayList<L2ItemInstance> _questItems;
 
 	public ItemList(L2PcInstance cha, boolean showWindow)
 	{
-		inventory = cha.getInventory();
-		items = cha.getInventory().getItems();
-		this.showWindow = showWindow;
-		questItems = new ArrayList<>();
-		for (int i = 0; i < items.length; i++)
+		_inventory = cha.getInventory();
+		_items = cha.getInventory().getItems();
+		_showWindow = showWindow;
+		_questItems = new ArrayList<>();
+		for (int i = 0; i < _items.length; i++)
 		{
-			if (items[i] != null && items[i].isQuestItem())
+			if (_items[i] != null && _items[i].isQuestItem())
 			{
-				questItems.add(items[i]); // add to questinv
-				items[i] = null; // remove from list
+				_questItems.add(_items[i]); // add to questinv
+				_items[i] = null; // remove from list
 			}
 			else
 			{
@@ -88,7 +88,7 @@ public final class ItemList extends L2ItemListPacket
 		}
 
 		// Sort here because the client doesn't give a damn about location slots
-		Arrays.sort(items, (i1, i2) ->
+		Arrays.sort(_items, (i1, i2) ->
 		{
 			if (i1 == null)
 			{
@@ -109,7 +109,7 @@ public final class ItemList extends L2ItemListPacket
 	@SuppressWarnings("unused")
 	private void showDebug()
 	{
-		for (L2ItemInstance temp : items)
+		for (L2ItemInstance temp : _items)
 		{
 			Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" +
 					temp.getItem().getType2());
@@ -119,12 +119,12 @@ public final class ItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(showWindow ? 0x01 : 0x00);
+		writeH(_showWindow ? 0x01 : 0x00);
 
-		//int count = items.length;
+		//int count = _items.length;
 		writeH(length);
 
-		for (L2ItemInstance item : items)
+		for (L2ItemInstance item : _items)
 		{
 			if (item == null || item.getItem() == null)
 			{
@@ -133,11 +133,11 @@ public final class ItemList extends L2ItemListPacket
 
 			writeItem(item);
 		}
-		if (inventory.hasInventoryBlock())
+		if (_inventory.hasInventoryBlock())
 		{
-			writeH(inventory.getBlockItems().length);
-			writeC(inventory.getBlockMode());
-			for (int i : inventory.getBlockItems())
+			writeH(_inventory.getBlockItems().length);
+			writeC(_inventory.getBlockMode());
+			for (int i : _inventory.getBlockItems())
 			{
 				writeD(i);
 			}
@@ -151,7 +151,7 @@ public final class ItemList extends L2ItemListPacket
 	@Override
 	public void runImpl()
 	{
-		getClient().sendPacket(new ExQuestItemList(questItems, getClient().getActiveChar().getInventory()));
+		getClient().sendPacket(new ExQuestItemList(_questItems, getClient().getActiveChar().getInventory()));
 		getClient().sendPacket(new ExAdenaInvenCount(getClient().getActiveChar().getAdena(),
 				getClient().getActiveChar().getInventory().getSize(false)));
 	}

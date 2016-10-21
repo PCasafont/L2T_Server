@@ -41,7 +41,6 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2DoorTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -64,47 +63,47 @@ public class L2DoorInstance extends L2Character
 	/**
 	 * The castle index in the array of L2Castle this L2NpcInstance belongs to
 	 */
-	private int castleIndex = -2;
+	private int _castleIndex = -2;
 	/**
 	 * The fort index in the array of L2Fort this L2NpcInstance belongs to
 	 */
-	private int fortIndex = -2;
-	@Getter private ClanHall clanHall;
-	@Getter private boolean open = false;
-	@Getter private boolean isAttackableDoor = false;
-	private boolean isTargetable;
-	private boolean checkCollision;
-	private int openType = 0;
-	private int meshindex = 1;
-	private int level = 0;
-	private int closeTime = -1;
-	private int openTime = -1;
-	private int randomTime = -1;
+	private int _fortIndex = -2;
+	private ClanHall _clanHall;
+	private boolean _open = false;
+	private boolean _isAttackableDoor = false;
+	private boolean _isTargetable;
+	private boolean _checkCollision;
+	private int _openType = 0;
+	private int _meshindex = 1;
+	private int _level = 0;
+	private int _closeTime = -1;
+	private int _openTime = -1;
+	private int _randomTime = -1;
 	// used for autoclose on open
-	private Future<?> autoCloseTask;
+	private Future<?> _autoCloseTask;
 
 	public L2DoorInstance(int objectId, L2DoorTemplate template, StatsSet data)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2DoorInstance);
 		setIsInvul(false);
-		isTargetable = data.getInteger("targetable", 1) == 1;
+		_isTargetable = data.getInteger("targetable", 1) == 1;
 		if (getGroupName() != null)
 		{
 			DoorTable.addDoorGroup(getGroupName(), getDoorId());
 		}
 		if (data.getString("default_status", "close").equals("open"))
 		{
-			open = true;
+			_open = true;
 		}
-		closeTime = data.getInteger("close_time", -1);
-		level = data.getInteger("level", 0);
-		openType = data.getInteger("open_method", 0);
-		checkCollision = data.getInteger("check_collision", 1) == 1;
+		_closeTime = data.getInteger("close_time", -1);
+		_level = data.getInteger("level", 0);
+		_openType = data.getInteger("open_method", 0);
+		_checkCollision = data.getInteger("check_collision", 1) == 1;
 		if (isOpenableByTime())
 		{
-			closeTime = data.getInteger("open_time");
-			randomTime = data.getInteger("random_time", -1);
+			_closeTime = data.getInteger("open_time");
+			_randomTime = data.getInteger("random_time", -1);
 			startTimerOpen();
 		}
 	}
@@ -153,17 +152,17 @@ public class L2DoorInstance extends L2Character
 	@Override
 	public L2CharacterAI getAI()
 	{
-		L2CharacterAI ai = this.ai; // copy handle
+		L2CharacterAI ai = _ai; // copy handle
 		if (ai == null)
 		{
 			synchronized (this)
 			{
-				if (this.ai == null)
+				if (_ai == null)
 				{
-					this.ai = new L2DoorAI(new AIAccessor());
+					_ai = new L2DoorAI(new AIAccessor());
 				}
 
-				return this.ai;
+				return _ai;
 			}
 		}
 		return ai;
@@ -171,10 +170,10 @@ public class L2DoorInstance extends L2Character
 
 	private void startTimerOpen()
 	{
-		int delay = open ? openTime : closeTime;
-		if (randomTime > 0)
+		int delay = _open ? _openTime : _closeTime;
+		if (_randomTime > 0)
 		{
-			delay += Rnd.get(randomTime);
+			delay += Rnd.get(_randomTime);
 		}
 		ThreadPoolManager.getInstance().scheduleGeneral(new TimerOpen(), delay * 1000);
 	}
@@ -223,33 +222,33 @@ public class L2DoorInstance extends L2Character
 
 	public final boolean isOpenableBySkill()
 	{
-		return (openType & OPEN_BY_SKILL) != 0;
+		return (_openType & OPEN_BY_SKILL) != 0;
 	}
 
 	public final boolean isOpenableByItem()
 	{
-		return (openType & OPEN_BY_ITEM) != 0;
+		return (_openType & OPEN_BY_ITEM) != 0;
 	}
 
 	public final boolean isOpenableByClick()
 	{
-		return (openType & OPEN_BY_CLICK) != 0;
+		return (_openType & OPEN_BY_CLICK) != 0;
 	}
 
 	public final boolean isOpenableByTime()
 	{
-		return (openType & OPEN_BY_TIME) != 0;
+		return (_openType & OPEN_BY_TIME) != 0;
 	}
 
 	public final boolean isOpenableByCycle()
 	{
-		return (openType & OPEN_BY_CYCLE) != 0;
+		return (_openType & OPEN_BY_CYCLE) != 0;
 	}
 
 	@Override
 	public final int getLevel()
 	{
-		return level;
+		return _level;
 	}
 
 	/**
@@ -261,15 +260,28 @@ public class L2DoorInstance extends L2Character
 	}
 
 	/**
+	 * @return Returns the open.
+	 */
+	public boolean getOpen()
+	{
+		return _open;
+	}
+
+	/**
 	 * @param open The open to set.
 	 */
 	private void setOpen(boolean open)
 	{
-		this.open = open;
+		_open = open;
 		if (getChildId() > 0)
 		{
 			getSiblingDoor(getChildId()).notifyChildEvent(open);
 		}
+	}
+
+	public boolean getIsAttackableDoor()
+	{
+		return _isAttackableDoor;
 	}
 
 	public boolean getIsShowHp()
@@ -279,7 +291,7 @@ public class L2DoorInstance extends L2Character
 
 	public void setIsAttackableDoor(boolean val)
 	{
-		isAttackableDoor = val;
+		_isAttackableDoor = val;
 	}
 
 	public int getDamage()
@@ -298,33 +310,38 @@ public class L2DoorInstance extends L2Character
 
 	public final Castle getCastle()
 	{
-		if (castleIndex < 0)
+		if (_castleIndex < 0)
 		{
-			castleIndex = CastleManager.getInstance().getCastleIndex(this);
+			_castleIndex = CastleManager.getInstance().getCastleIndex(this);
 		}
-		if (castleIndex < 0)
+		if (_castleIndex < 0)
 		{
 			return null;
 		}
-		return CastleManager.getInstance().getCastles().get(castleIndex);
+		return CastleManager.getInstance().getCastles().get(_castleIndex);
 	}
 
 	public final Fort getFort()
 	{
-		if (fortIndex < 0)
+		if (_fortIndex < 0)
 		{
-			fortIndex = FortManager.getInstance().getFortIndex(this);
+			_fortIndex = FortManager.getInstance().getFortIndex(this);
 		}
-		if (fortIndex < 0)
+		if (_fortIndex < 0)
 		{
 			return null;
 		}
-		return FortManager.getInstance().getForts().get(fortIndex);
+		return FortManager.getInstance().getForts().get(_fortIndex);
 	}
 
 	public void setClanHall(ClanHall clanhall)
 	{
-		clanHall = clanhall;
+		_clanHall = clanhall;
+	}
+
+	public ClanHall getClanHall()
+	{
+		return _clanHall;
 	}
 
 	public boolean isEnemy()
@@ -345,7 +362,7 @@ public class L2DoorInstance extends L2Character
 			return false;
 		}
 
-		if (isAttackableDoor())
+		if (getIsAttackableDoor())
 		{
 			return true;
 		}
@@ -432,7 +449,7 @@ public class L2DoorInstance extends L2Character
 		EventTrigger oe = null;
 		if (getEmitter() > 0)
 		{
-			oe = new EventTrigger(this, isOpen());
+			oe = new EventTrigger(this, getOpen());
 		}
 		for (L2PcInstance player : knownPlayers)
 		{
@@ -470,10 +487,10 @@ public class L2DoorInstance extends L2Character
 	public final void closeMe()
 	{
 		//remove close task
-		Future<?> oldTask = autoCloseTask;
+		Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
-			autoCloseTask = null;
+			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
 		if (getGroupName() != null)
@@ -497,7 +514,7 @@ public class L2DoorInstance extends L2Character
 				first = door;
 			}
 
-			if (door.isOpen() != open)
+			if (door.getOpen() != open)
 			{
 				door.setOpen(open);
 				door.broadcastStatusUpdate();
@@ -579,12 +596,12 @@ public class L2DoorInstance extends L2Character
 
 	public void setMeshIndex(int mesh)
 	{
-		meshindex = mesh;
+		_meshindex = mesh;
 	}
 
 	public int getMeshIndex()
 	{
-		return meshindex;
+		return _meshindex;
 	}
 
 	public int getEmitter()
@@ -648,7 +665,7 @@ public class L2DoorInstance extends L2Character
 	{
 		if (getEmitter() > 0)
 		{
-			activeChar.sendPacket(new EventTrigger(this, isOpen()));
+			activeChar.sendPacket(new EventTrigger(this, getOpen()));
 		}
 
 		activeChar.sendPacket(new StaticObject(this, activeChar.isGM()));
@@ -656,18 +673,18 @@ public class L2DoorInstance extends L2Character
 
 	public void setTargetable(boolean b)
 	{
-		isTargetable = b;
+		_isTargetable = b;
 		broadcastStatusUpdate();
 	}
 
 	public boolean isTargetable()
 	{
-		return isTargetable;
+		return _isTargetable;
 	}
 
 	public boolean checkCollision()
 	{
-		return checkCollision;
+		return _checkCollision;
 	}
 
 	/**
@@ -698,17 +715,17 @@ public class L2DoorInstance extends L2Character
 
 	private void startAutoCloseTask()
 	{
-		if (closeTime < 0 || isOpenableByTime())
+		if (_closeTime < 0 || isOpenableByTime())
 		{
 			return;
 		}
-		Future<?> oldTask = autoCloseTask;
+		Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
-			autoCloseTask = null;
+			_autoCloseTask = null;
 			oldTask.cancel(false);
 		}
-		autoCloseTask = ThreadPoolManager.getInstance().scheduleGeneral(new AutoClose(), closeTime * 1000);
+		_autoCloseTask = ThreadPoolManager.getInstance().scheduleGeneral(new AutoClose(), _closeTime * 1000);
 	}
 
 	private class AutoClose implements Runnable
@@ -716,7 +733,7 @@ public class L2DoorInstance extends L2Character
 		@Override
 		public void run()
 		{
-			if (isOpen())
+			if (getOpen())
 			{
 				closeMe();
 			}
@@ -728,7 +745,7 @@ public class L2DoorInstance extends L2Character
 		@Override
 		public void run()
 		{
-			boolean open = isOpen();
+			boolean open = getOpen();
 			if (open)
 			{
 				closeMe();
@@ -738,11 +755,11 @@ public class L2DoorInstance extends L2Character
 				openMe();
 			}
 
-			//Log.info("Door "+L2DoorInstance.this+ " switched state "+open);
-			int delay = open ? closeTime : openTime;
-			if (randomTime > 0)
+			//Logozo.info("Door "+L2DoorInstance.this+ " switched state "+open);
+			int delay = open ? _closeTime : _openTime;
+			if (_randomTime > 0)
 			{
-				delay += Rnd.get(randomTime);
+				delay += Rnd.get(_randomTime);
 			}
 			ThreadPoolManager.getInstance().scheduleGeneral(this, delay * 1000);
 		}

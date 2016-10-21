@@ -37,16 +37,17 @@ import java.util.Map.Entry;
  */
 public final class RequestMagicSkillUse extends L2GameClientPacket
 {
-	private int magicId;
-	private boolean ctrlPressed;
-	private boolean shiftPressed;
+
+	private int _magicId;
+	private boolean _ctrlPressed;
+	private boolean _shiftPressed;
 
 	@Override
 	protected void readImpl()
 	{
-		magicId = readD(); // Identifier of the used skill
-		ctrlPressed = readD() != 0; // True if it's a ForceAttack : Ctrl pressed
-		shiftPressed = readC() != 0; // True if Shift pressed
+		_magicId = readD(); // Identifier of the used skill
+		_ctrlPressed = readD() != 0; // True if it's a ForceAttack : Ctrl pressed
+		_shiftPressed = readC() != 0; // True if Shift pressed
 	}
 
 	@Override
@@ -80,7 +81,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		}
 
 		// Get the level of the used skill
-		int level = activeChar.getSkillLevelHash(magicId);
+		int level = activeChar.getSkillLevelHash(_magicId);
 
 		// Check combo
 		if (activeChar.getTarget() instanceof L2Character)
@@ -90,16 +91,16 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 				if (ab.getComboId() != 0)
 				{
 					Combo combo = ComboSkillTable.getInstance().getCombo(ab.getComboId());
-					if (combo.skills.containsKey(magicId))
+					if (combo.skills.containsKey(_magicId))
 					{
-						magicId = combo.skills.get(magicId);
+						_magicId = combo.skills.get(_magicId);
 						level = 1;
 						break;
 					}
 
 					for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet())
 					{
-						if (comboSkill.getValue() == magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
+						if (comboSkill.getValue() == _magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
 						{
 							level = 1;
 							break;
@@ -116,7 +117,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		}
 
 		// Get the L2Skill template corresponding to the skillID received from the client
-		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
+		L2Skill skill = SkillTable.getInstance().getInfo(_magicId, level);
 
 		// Check the validity of the skill
 		if (skill != null)
@@ -174,23 +175,23 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 				}
 
 				L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + offset, skill.getLevelHash());
-				activeChar.useMagic(magic, ctrlPressed, shiftPressed);
+				activeChar.useMagic(magic, _ctrlPressed, _shiftPressed);
 				return;
 			}
 
 			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001 &&
 					skill.getId() != activeChar.getQueuedSkill().getSkillId())
 			{
-				activeChar.setQueuedSkill(null, ctrlPressed, shiftPressed);
+				activeChar.setQueuedSkill(null, _ctrlPressed, _shiftPressed);
 			}
 
 			// activeChar.stopMove();
-			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
+			activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
 		}
 		else
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("No skill found with id " + magicId + " and level " + level + " !!");
+			Log.warning("No skill found with id " + _magicId + " and level " + level + " !!");
 		}
 	}
 }

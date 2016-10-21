@@ -22,23 +22,23 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class VehicleCheckLocation extends L2GameServerPacket
 {
-	private L2Character boat;
+	private L2Character _boat;
 
 	/**
 	 */
 	public VehicleCheckLocation(L2Character boat)
 	{
-		this.boat = boat;
+		_boat = boat;
 	}
 
 	@Override
 	protected void writeImpl()
 	{
 		writeC(0x6d);
-		writeD(boat.getObjectId());
-		writeD(boat.getX());
-		writeD(boat.getY());
-		writeD(boat.getZ());
-		writeD(boat.getHeading());
+		writeD(_boat.getObjectId());
+		writeD(_boat.getX());
+		writeD(_boat.getY());
+		writeD(_boat.getZ());
+		writeD(_boat.getHeading());
 	}
 }

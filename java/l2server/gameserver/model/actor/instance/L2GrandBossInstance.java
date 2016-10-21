@@ -32,7 +32,7 @@ import l2server.util.Rnd;
 public final class L2GrandBossInstance extends L2MonsterInstance
 {
 	private static final int BOSS_MAINTENANCE_INTERVAL = 10000;
-	private boolean useRaidCurse = true;
+	private boolean _useRaidCurse = true;
 
 	/**
 	 * Constructor for L2GrandBossInstance. This represent all grandbosses.
@@ -44,7 +44,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2GrandBossInstance);
-		setRaid(true);
+		setIsRaid(true);
 	}
 
 	@Override
@@ -120,7 +120,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 
 	public void setUseRaidCurse(boolean val)
 	{
-		useRaidCurse = val;
+		_useRaidCurse = val;
 	}
 
 	/* (non-Javadoc)
@@ -129,6 +129,6 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	@Override
 	public boolean giveRaidCurse()
 	{
-		return useRaidCurse;
+		return _useRaidCurse;
 	}
 }

@@ -30,13 +30,14 @@ import java.util.List;
  */
 public class FishTable
 {
-	private static List<FishData> fishsNormal = new ArrayList<>();
-	private static List<FishData> fishsEasy = new ArrayList<>();
-	private static List<FishData> fishsHard = new ArrayList<>();
+
+	private static List<FishData> _fishsNormal = new ArrayList<>();
+	private static List<FishData> _fishsEasy = new ArrayList<>();
+	private static List<FishData> _fishsHard = new ArrayList<>();
 
 	public static FishTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private FishTable()
@@ -65,13 +66,13 @@ public class FishTable
 				switch (fish.getGroup())
 				{
 					case 0:
-						fishsEasy.add(fish);
+						_fishsEasy.add(fish);
 						break;
 					case 1:
-						fishsNormal.add(fish);
+						_fishsNormal.add(fish);
 						break;
 					case 2:
-						fishsHard.add(fish);
+						_fishsHard.add(fish);
 				}
 
 				count++;
@@ -87,25 +88,25 @@ public class FishTable
 	public List<FishData> getfish(int lvl, int type, int group)
 	{
 		List<FishData> result = new ArrayList<>();
-		List<FishData> Fishs = null;
+		List<FishData> _Fishs = null;
 		switch (group)
 		{
 			case 0:
-				Fishs = fishsEasy;
+				_Fishs = _fishsEasy;
 				break;
 			case 1:
-				Fishs = fishsNormal;
+				_Fishs = _fishsNormal;
 				break;
 			case 2:
-				Fishs = fishsHard;
+				_Fishs = _fishsHard;
 		}
-		if (Fishs == null)
+		if (_Fishs == null)
 		{
 			// the fish list is empty
 			Log.warning("Fish are not defined !");
 			return null;
 		}
-		for (FishData f : Fishs)
+		for (FishData f : _Fishs)
 		{
 			if (f.getLevel() != lvl)
 			{
@@ -128,6 +129,6 @@ public class FishTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FishTable instance = new FishTable();
+		protected static final FishTable _instance = new FishTable();
 	}
 }

@@ -17,7 +17,6 @@ package l2server.gameserver.templates.item;
 
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceInfo;
-import lombok.Getter;
 
 /**
  * This class contains L2ItemInstance<BR>
@@ -30,70 +29,81 @@ import lombok.Getter;
  */
 public class L2WarehouseItem implements ItemInstanceInfo
 {
-	@Getter private L2Item item;
-	private int objectId;
-	private long count;
-	private int owner;
-	private int locationSlot;
-	private int enchant;
-	private int grade;
-	private boolean isSoulEnhanced;
-	@Getter private int[] ensoulEffectIds;
-	@Getter private int[] ensoulSpecialEffectIds;
-	private boolean isAugmented;
-	private long augmentationId;
-	private int customType1;
-	private int customType2;
-	private int mana;
+	private L2Item _item;
+	private int _object;
+	private long _count;
+	private int _owner;
+	private int _locationSlot;
+	private int _enchant;
+	private int _grade;
+	private boolean _isSoulEnhanced;
+	private int[] _ensoulEffectIds;
+	private int[] _ensoulSpecialEffectIds;
+	private boolean _isAugmented;
+	private long _augmentationId;
+	private int _customType1;
+	private int _customType2;
+	private int _mana;
 
-	private byte elemAtkType = -2;
-	private int elemAtkPower = 0;
-	private int[] elemDefAttr = {0, 0, 0, 0, 0, 0};
-	private boolean elemEnchanted = false;
-	private int time;
+	private byte _elemAtkType = -2;
+	private int _elemAtkPower = 0;
+	private int[] _elemDefAttr = {0, 0, 0, 0, 0, 0};
+	private boolean _elemEnchanted = false;
+	private int _time;
 
-	@Getter private int appearance;
+	private int _appearance;
 
 	public L2WarehouseItem(L2ItemInstance item)
 	{
-		this.item = item.getItem();
-		objectId = item.getObjectId();
-		count = item.getCount();
-		owner = item.getOwnerId();
-		locationSlot = item.getLocationSlot();
-		enchant = item.getEnchantLevel();
-		customType1 = item.getCustomType1();
-		customType2 = item.getCustomType2();
-		grade = item.getItem().getItemGrade();
-		isSoulEnhanced = item.isSoulEnhanced();
-		ensoulEffectIds = item.getEnsoulEffectIds();
-		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
+		_item = item.getItem();
+		_object = item.getObjectId();
+		_count = item.getCount();
+		_owner = item.getOwnerId();
+		_locationSlot = item.getLocationSlot();
+		_enchant = item.getEnchantLevel();
+		_customType1 = item.getCustomType1();
+		_customType2 = item.getCustomType2();
+		_grade = item.getItem().getItemGrade();
+		_isSoulEnhanced = item.isSoulEnhanced();
+		_ensoulEffectIds = item.getEnsoulEffectIds();
+		_ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
 		if (item.isAugmented())
 		{
-			isAugmented = true;
-			augmentationId = item.getAugmentation().getId();
+			_isAugmented = true;
+			_augmentationId = item.getAugmentation().getId();
 		}
 		else
 		{
-			isAugmented = false;
+			_isAugmented = false;
 		}
-		mana = item.getMana();
-		time = item.getRemainingTime();
+		_mana = item.getMana();
+		_time = item.getRemainingTime();
 
-		if (elemAtkPower > 0)
+		if (_elemAtkPower > 0)
 		{
-			elemEnchanted = true;
+			_elemEnchanted = true;
 		}
 		for (byte i = 0; i < 6; i++)
 		{
-			elemDefAttr[i] = item.getElementDefAttr(i);
-			if (elemDefAttr[i] > 0)
+			_elemDefAttr[i] = item.getElementDefAttr(i);
+			if (_elemDefAttr[i] > 0)
 			{
-				elemEnchanted = true;
+				_elemEnchanted = true;
 			}
 		}
 
-		appearance = item.getAppearance();
+		_appearance = item.getAppearance();
+	}
+
+	/**
+	 * Returns the item.
+	 *
+	 * @return L2Item
+	 */
+	@Override
+	public L2Item getItem()
+	{
+		return _item;
 	}
 
 	/**
@@ -104,7 +114,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public final int getObjectId()
 	{
-		return objectId;
+		return _object;
 	}
 
 	/**
@@ -114,7 +124,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getOwnerId()
 	{
-		return owner;
+		return _owner;
 	}
 
 	/**
@@ -125,7 +135,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public final int getLocationSlot()
 	{
-		return locationSlot;
+		return _locationSlot;
 	}
 
 	/**
@@ -136,7 +146,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public final long getCount()
 	{
-		return count;
+		return _count;
 	}
 
 	/**
@@ -146,7 +156,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getType1()
 	{
-		return item.getType1();
+		return _item.getType1();
 	}
 
 	/**
@@ -156,7 +166,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getType2()
 	{
-		return item.getType2();
+		return _item.getType2();
 	}
 
 	/**
@@ -166,7 +176,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final L2ItemType getItemType()
 	{
-		return item.getItemType();
+		return _item.getItemType();
 	}
 
 	/**
@@ -176,7 +186,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getItemId()
 	{
-		return item.getItemId();
+		return _item.getItemId();
 	}
 
 	/**
@@ -186,7 +196,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getBodyPart()
 	{
-		return item.getBodyPart();
+		return _item.getBodyPart();
 	}
 
 	/**
@@ -197,7 +207,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public final int getEnchantLevel()
 	{
-		return enchant;
+		return _enchant;
 	}
 
 	/**
@@ -207,7 +217,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final int getItemGrade()
 	{
-		return grade;
+		return _grade;
 	}
 
 	/**
@@ -217,7 +227,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isWeapon()
 	{
-		return item instanceof L2Weapon;
+		return _item instanceof L2Weapon;
 	}
 
 	/**
@@ -227,7 +237,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isArmor()
 	{
-		return item instanceof L2Armor;
+		return _item instanceof L2Armor;
 	}
 
 	/**
@@ -237,7 +247,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isEtcItem()
 	{
-		return item instanceof L2EtcItem;
+		return _item instanceof L2EtcItem;
 	}
 
 	/**
@@ -247,25 +257,37 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public String getItemName()
 	{
-		return item.getName();
+		return _item.getName();
 	}
 
 	@Override
 	public boolean isSoulEnhanced()
 	{
-		return isSoulEnhanced;
+		return _isSoulEnhanced;
+	}
+
+	@Override
+	public int[] getEnsoulEffectIds()
+	{
+		return _ensoulEffectIds;
+	}
+
+	@Override
+	public int[] getEnsoulSpecialEffectIds()
+	{
+		return _ensoulSpecialEffectIds;
 	}
 
 	@Override
 	public boolean isAugmented()
 	{
-		return isAugmented;
+		return _isAugmented;
 	}
 
 	@Override
 	public long getAugmentationBonus()
 	{
-		return augmentationId;
+		return _augmentationId;
 	}
 
 	/**
@@ -277,53 +299,53 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Deprecated
 	public String getName()
 	{
-		return item.getName();
+		return _item.getName();
 	}
 
 	public final int getCustomType1()
 	{
-		return customType1;
+		return _customType1;
 	}
 
 	public final int getCustomType2()
 	{
-		return customType2;
+		return _customType2;
 	}
 
 	@Override
 	public final int getMana()
 	{
-		return mana;
+		return _mana;
 	}
 
 	@Override
 	public byte getAttackElementType()
 	{
-		return elemAtkType;
+		return _elemAtkType;
 	}
 
 	@Override
 	public int getAttackElementPower()
 	{
-		return elemAtkPower;
+		return _elemAtkPower;
 	}
 
 	@Override
 	public int getElementDefAttr(byte i)
 	{
-		return elemDefAttr[i];
+		return _elemDefAttr[i];
 	}
 
 	@Override
 	public boolean isElementEnchanted()
 	{
-		return elemEnchanted;
+		return _elemEnchanted;
 	}
 
 	@Override
 	public int getRemainingTime()
 	{
-		return time;
+		return _time;
 	}
 
 	/**
@@ -334,12 +356,18 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	@Override
 	public String toString()
 	{
-		return item.toString();
+		return _item.toString();
 	}
 
 	@Override
 	public boolean isEquipped()
 	{
 		return false;
+	}
+
+	@Override
+	public int getAppearance()
+	{
+		return _appearance;
 	}
 }

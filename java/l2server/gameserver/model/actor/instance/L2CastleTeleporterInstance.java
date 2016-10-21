@@ -33,7 +33,7 @@ import java.util.logging.Level;
  */
 public final class L2CastleTeleporterInstance extends L2Npc
 {
-	private boolean currentTask = false;
+	private boolean _currentTask = false;
 
 	/**
 	 * @param template
@@ -144,11 +144,11 @@ public final class L2CastleTeleporterInstance extends L2Npc
 
 	public boolean getTask()
 	{
-		return currentTask;
+		return _currentTask;
 	}
 
 	public void setTask(boolean state)
 	{
-		currentTask = state;
+		_currentTask = state;
 	}
 }

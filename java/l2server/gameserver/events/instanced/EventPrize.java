@@ -17,7 +17,6 @@ package l2server.gameserver.events.instanced;
 
 import l2server.util.Rnd;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,29 +26,44 @@ import java.util.List;
  */
 public abstract class EventPrize
 {
-	protected final float chance;
-	protected final boolean dependsOnPerformance;
+	protected final float _chance;
+	protected final boolean _dependsOnPerformance;
 
 	public EventPrize(XmlNode node)
 	{
-		chance = node.getFloat("chance");
-		dependsOnPerformance = node.getBool("dependsOnPerformance", false);
+		_chance = node.getFloat("chance");
+		_dependsOnPerformance = node.getBool("dependsOnPerformance", false);
 	}
 
 	public abstract EventPrizeItem getItem();
 
 	public static class EventPrizeItem extends EventPrize
 	{
-		@Getter private final int id;
-		@Getter private final int min;
-		@Getter private final int max;
+		private final int _id;
+		private final int _min;
+		private final int _max;
 
 		public EventPrizeItem(XmlNode node)
 		{
 			super(node);
-			id = node.getInt("id");
-			min = node.getInt("min");
-			max = node.getInt("max");
+			_id = node.getInt("id");
+			_min = node.getInt("min");
+			_max = node.getInt("max");
+		}
+
+		public int getId()
+		{
+			return _id;
+		}
+
+		public int getMin()
+		{
+			return _min;
+		}
+
+		public int getMax()
+		{
+			return _max;
 		}
 
 		@Override
@@ -61,7 +75,7 @@ public abstract class EventPrize
 
 	public static class EventPrizeCategory extends EventPrize
 	{
-		private final List<EventPrizeItem> items = new ArrayList<>();
+		private final List<EventPrizeItem> _items = new ArrayList<>();
 
 		public EventPrizeCategory(XmlNode node)
 		{
@@ -70,7 +84,7 @@ public abstract class EventPrize
 			{
 				if (subNode.getName().equalsIgnoreCase("item"))
 				{
-					items.add(new EventPrizeItem(subNode));
+					_items.add(new EventPrizeItem(subNode));
 				}
 			}
 		}
@@ -80,7 +94,7 @@ public abstract class EventPrize
 		{
 			float rnd = Rnd.get(100000) / 1000.0f;
 			float percent = 0.0f;
-			for (EventPrizeItem item : items)
+			for (EventPrizeItem item : _items)
 			{
 				percent += item.getChance();
 				if (percent > rnd)
@@ -89,17 +103,17 @@ public abstract class EventPrize
 				}
 			}
 
-			return items.get(0);
+			return _items.get(0);
 		}
 	}
 
 	public float getChance()
 	{
-		return chance;
+		return _chance;
 	}
 
 	public boolean dependsOnPerformance()
 	{
-		return dependsOnPerformance;
+		return _dependsOnPerformance;
 	}
 }

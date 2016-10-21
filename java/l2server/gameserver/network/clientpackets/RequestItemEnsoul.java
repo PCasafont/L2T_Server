@@ -25,13 +25,13 @@ public class RequestItemEnsoul extends L2GameClientPacket
 		public int effectId;
 	}
 
-	private int targetItem;
-	private List<CrystalEffectData> effectData = new ArrayList<>();
+	private int _targetItem;
+	private List<CrystalEffectData> _effectData = new ArrayList<>();
 
 	@Override
 	public void readImpl()
 	{
-		targetItem = readD();
+		_targetItem = readD();
 		int count = readC();
 		for (int i = 0; i < count; i++)
 		{
@@ -40,7 +40,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			ced.order = readC(); // Crystal order
 			ced.crystalId = readD();
 			ced.effectId = readD();
-			effectData.add(ced);
+			_effectData.add(ced);
 		}
 	}
 
@@ -53,7 +53,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(this.targetItem);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItem);
 		if (targetItem == null || targetItem.isEquipped())
 		{
 			activeChar.sendPacket(new ExShowScreenMessage(
@@ -62,7 +62,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			return;
 		}
 
-		for (CrystalEffectData ced : effectData)
+		for (CrystalEffectData ced : _effectData)
 		{
 			int index = ced.order - 1;
 			if (index < 0 || index >= 2)

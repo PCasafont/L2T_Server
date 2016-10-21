@@ -24,9 +24,10 @@ import l2server.gameserver.model.L2Party;
  */
 public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
 {
-	private L2Party party;
-	private int mode, LeaderOID, memberCount;
-	private String name;
+
+	private L2Party _party;
+	private int _mode, _LeaderOID, _memberCount;
+	private String _name;
 
 	/**
 	 * @param party
@@ -34,11 +35,11 @@ public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
 	 */
 	public ExMPCCPartyInfoUpdate(L2Party party, int mode)
 	{
-		this.party = party;
-		name = this.party.getLeader().getName();
-		LeaderOID = this.party.getPartyLeaderOID();
-		memberCount = this.party.getMemberCount();
-		this.mode = mode;
+		_party = party;
+		_name = _party.getLeader().getName();
+		_LeaderOID = _party.getPartyLeaderOID();
+		_memberCount = _party.getMemberCount();
+		_mode = mode;
 	}
 
 	/**
@@ -47,9 +48,9 @@ public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(name);
-		writeD(LeaderOID);
-		writeD(memberCount);
-		writeD(mode); //mode 0 = Remove Party, 1 = AddParty, maybe more...
+		writeS(_name);
+		writeD(_LeaderOID);
+		writeD(_memberCount);
+		writeD(_mode); //mode 0 = Remove Party, 1 = AddParty, maybe more...
 	}
 }

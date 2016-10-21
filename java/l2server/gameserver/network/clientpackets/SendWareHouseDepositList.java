@@ -28,7 +28,6 @@ import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-import lombok.Getter;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
@@ -41,37 +40,38 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public final class SendWareHouseDepositList extends L2GameClientPacket
 {
+
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private WarehouseItem items[] = null;
+	private WarehouseItem _items[] = null;
 
 	@Override
 	protected void readImpl()
 	{
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new WarehouseItem[count];
+		_items = new WarehouseItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
 			long cnt = readQ();
 			if (objId < 1 || cnt < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new WarehouseItem(objId, cnt);
+			_items[i] = new WarehouseItem(objId, cnt);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (items == null)
+		if (_items == null)
 		{
 			return;
 		}
@@ -121,11 +121,11 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 
 		// Freight price from config or normal price per item slot (30)
-		final long fee = items.length * 30;
+		final long fee = _items.length * 30;
 		long currentAdena = player.getAdena();
 		int slots = 0;
 
-		for (WarehouseItem i : items)
+		for (WarehouseItem i : _items)
 		{
 			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (item == null)
@@ -172,7 +172,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (WarehouseItem i : items)
+		for (WarehouseItem i : _items)
 		{
 			// Check validity of requested item
 			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
@@ -226,13 +226,23 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 
 	private static class WarehouseItem
 	{
-		@Getter private final int objectId;
-		@Getter private final long count;
+		private final int _objectId;
+		private final long _count;
 
 		public WarehouseItem(int id, long num)
 		{
-			objectId = id;
-			count = num;
+			_objectId = id;
+			_count = num;
+		}
+
+		public int getObjectId()
+		{
+			return _objectId;
+		}
+
+		public long getCount()
+		{
+			return _count;
 		}
 	}
 }

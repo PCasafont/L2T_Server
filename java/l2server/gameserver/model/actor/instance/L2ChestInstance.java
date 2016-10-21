@@ -33,44 +33,44 @@ import l2server.util.Rnd;
  */
 public class L2ChestInstance extends L2MonsterInstance
 {
-	private volatile boolean isInteracted;
-	private volatile boolean specialDrop;
+	private volatile boolean _isInteracted;
+	private volatile boolean _specialDrop;
 
 	public L2ChestInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ChestInstance);
-		isInteracted = false;
-		specialDrop = false;
+		_isInteracted = false;
+		_specialDrop = false;
 	}
 
 	@Override
 	public void onSpawn()
 	{
 		super.onSpawn();
-		isInteracted = false;
-		specialDrop = false;
+		_isInteracted = false;
+		_specialDrop = false;
 		setMustRewardExpSp(true);
 	}
 
 	public synchronized boolean isInteracted()
 	{
-		return isInteracted;
+		return _isInteracted;
 	}
 
 	public synchronized void setInteracted()
 	{
-		isInteracted = true;
+		_isInteracted = true;
 	}
 
 	public synchronized boolean isSpecialDrop()
 	{
-		return specialDrop;
+		return _specialDrop;
 	}
 
 	public synchronized void setSpecialDrop()
 	{
-		specialDrop = true;
+		_specialDrop = true;
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class L2ChestInstance extends L2MonsterInstance
 	{
 		int id = getTemplate().NpcId;
 
-		if (!specialDrop)
+		if (!_specialDrop)
 		{
 			if (id >= 18265 && id <= 18286)
 			{

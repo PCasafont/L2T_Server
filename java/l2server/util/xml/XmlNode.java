@@ -15,7 +15,6 @@
 
 package l2server.util.xml;
 
-import lombok.Getter;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -29,48 +28,53 @@ import java.util.Map.Entry;
  */
 public class XmlNode
 {
-	@Getter private String name;
-	@Getter private Map<String, String> attributes = new HashMap<>();
-	@Getter private List<XmlNode> children = new ArrayList<>();
-	@Getter private String text = null;
+	private String _name;
+	private Map<String, String> _attributes = new HashMap<>();
+	private List<XmlNode> _children = new ArrayList<>();
+	private String _text = null;
 
 	public XmlNode(Node base)
 	{
-		name = base.getNodeName();
+		_name = base.getNodeName();
 		for (int i = 0; i < base.getAttributes().getLength(); i++)
 		{
 			String name = base.getAttributes().item(i).getNodeName();
 			String value = base.getAttributes().item(i).getNodeValue();
-			attributes.put(name, value);
+			_attributes.put(name, value);
 		}
 
 		for (Node baseSubNode = base.getFirstChild(); baseSubNode != null; baseSubNode = baseSubNode.getNextSibling())
 		{
 			if (baseSubNode.getNodeType() == Node.ELEMENT_NODE)
 			{
-				children.add(new XmlNode(baseSubNode));
+				_children.add(new XmlNode(baseSubNode));
 			}
 		}
 
 		if (base.getFirstChild() != null)
 		{
-			text = base.getFirstChild().getNodeValue();
+			_text = base.getFirstChild().getNodeValue();
 		}
+	}
+
+	public String getName()
+	{
+		return _name;
 	}
 
 	public boolean hasAttributes()
 	{
-		return !attributes.isEmpty();
+		return !_attributes.isEmpty();
 	}
 
 	public boolean hasAttribute(String name)
 	{
-		return attributes.containsKey(name);
+		return _attributes.containsKey(name);
 	}
 
 	public boolean getBool(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -92,7 +96,7 @@ public class XmlNode
 
 	public boolean getBool(String name, boolean deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -113,7 +117,7 @@ public class XmlNode
 
 	public int getInt(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -135,7 +139,7 @@ public class XmlNode
 
 	public int getInt(String name, int deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -156,7 +160,7 @@ public class XmlNode
 
 	public long getLong(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -178,7 +182,7 @@ public class XmlNode
 
 	public long getLong(String name, long deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -199,7 +203,7 @@ public class XmlNode
 
 	public float getFloat(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -221,7 +225,7 @@ public class XmlNode
 
 	public float getFloat(String name, float deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -242,7 +246,7 @@ public class XmlNode
 
 	public double getDouble(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -264,7 +268,7 @@ public class XmlNode
 
 	public double getDouble(String name, double deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -285,7 +289,7 @@ public class XmlNode
 
 	public String getString(String name)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			throw new IllegalArgumentException(
@@ -296,7 +300,7 @@ public class XmlNode
 
 	public String getString(String name, String deflt)
 	{
-		Object val = attributes.get(name);
+		Object val = _attributes.get(name);
 		if (val == null)
 		{
 			return deflt;
@@ -304,14 +308,29 @@ public class XmlNode
 		return String.valueOf(val);
 	}
 
+	public Map<String, String> getAttributes()
+	{
+		return _attributes;
+	}
+
 	public XmlNode getFirstChild()
 	{
-		if (children.isEmpty())
+		if (_children.isEmpty())
 		{
 			return null;
 		}
 
-		return children.get(0);
+		return _children.get(0);
+	}
+
+	public List<XmlNode> getChildren()
+	{
+		return _children;
+	}
+
+	public String getText()
+	{
+		return _text;
 	}
 
 	@Override
@@ -328,21 +347,21 @@ public class XmlNode
 			tabs += "\t";
 		}
 
-		String result = tabs + "<" + name;
-		for (Entry<String, String> attr : attributes.entrySet())
+		String result = tabs + "<" + _name;
+		for (Entry<String, String> attr : _attributes.entrySet())
 		{
 			result += " " + attr.getKey() + "=\"" + attr.getValue() + "\"";
 		}
 
-		if (!children.isEmpty() || text != null && text.length() > 0)
+		if (!_children.isEmpty() || _text != null && _text.length() > 0)
 		{
 			result += ">\r\n";
-			for (XmlNode child : children)
+			for (XmlNode child : _children)
 			{
 				result += child.toString(tabDepth + 1) + "\r\n";
 			}
 
-			result += tabs + "<" + name + ">\r\n";
+			result += tabs + "<" + _name + ">\r\n";
 		}
 		else
 		{

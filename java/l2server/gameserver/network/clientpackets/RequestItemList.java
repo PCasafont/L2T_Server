@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.ItemList;
  */
 public final class RequestItemList extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

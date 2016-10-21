@@ -22,12 +22,13 @@ package l2server.gameserver.network.clientpackets;
  */
 public final class AnswerJoinPartyRoom extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int requesterID; // not tested, just guessed
+	@SuppressWarnings("unused")
+	private int _requesterID; // not tested, just guessed
 
 	@Override
 	protected void readImpl()
 	{
-		requesterID = readD();
+		_requesterID = readD();
 	}
 
 	/**
@@ -36,6 +37,6 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 	protected void runImpl()
 	{
 		// TODO
-		//Log.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
+		//Logozo.info("C5:AnswerJoinPartyRoom: d: "+_requesterID);
 	}
 }

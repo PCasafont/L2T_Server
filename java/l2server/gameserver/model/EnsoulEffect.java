@@ -17,7 +17,6 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.funcs.Func;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,28 +26,48 @@ import java.util.List;
  */
 public class EnsoulEffect
 {
-	@Getter private final int id;
-	@Getter private final String name;
-	@Getter private final int group;
-	@Getter private final int stage;
-	private final List<Func> funcs = new ArrayList<>();
+	private final int _id;
+	private final String _name;
+	private final int _group;
+	private final int _stage;
+	private final List<Func> _funcs = new ArrayList<>();
 
 	public EnsoulEffect(int id, String name, int group, int stage)
 	{
-		this.id = id;
-		this.name = name;
-		this.group = group;
-		this.stage = stage;
+		_id = id;
+		_name = name;
+		_group = group;
+		_stage = stage;
 	}
 
 	public void addFunc(Func func)
 	{
-		funcs.add(func);
+		_funcs.add(func);
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public String getName()
+	{
+		return _name;
+	}
+
+	public int getGroup()
+	{
+		return _group;
+	}
+
+	public int getStage()
+	{
+		return _stage;
 	}
 
 	public void applyBonus(L2PcInstance player)
 	{
-		for (Func f : funcs)
+		for (Func f : _funcs)
 		{
 			player.addStatFunc(f);
 		}

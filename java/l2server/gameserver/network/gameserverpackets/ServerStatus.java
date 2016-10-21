@@ -17,6 +17,7 @@ package l2server.gameserver.network.gameserverpackets;
 
 import l2server.util.network.BaseSendablePacket;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +25,7 @@ import java.util.ArrayList;
  */
 public class ServerStatus extends BaseSendablePacket
 {
-	private ArrayList<Attribute> attributes;
+	private ArrayList<Attribute> _attributes;
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
 
@@ -73,12 +74,12 @@ public class ServerStatus extends BaseSendablePacket
 
 	public ServerStatus()
 	{
-		attributes = new ArrayList<>();
+		_attributes = new ArrayList<>();
 	}
 
 	public void addAttribute(int id, int value)
 	{
-		attributes.add(new Attribute(id, value));
+		_attributes.add(new Attribute(id, value));
 	}
 
 	/* (non-Javadoc)
@@ -88,8 +89,8 @@ public class ServerStatus extends BaseSendablePacket
 	public byte[] getContent()
 	{
 		writeC(0x06);
-		writeD(attributes.size());
-		for (Attribute temp : attributes)
+		writeD(_attributes.size());
+		for (Attribute temp : _attributes)
 		{
 			writeD(temp.id);
 			writeD(temp.value);

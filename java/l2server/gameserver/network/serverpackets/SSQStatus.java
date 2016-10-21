@@ -36,20 +36,20 @@ import l2server.gameserver.network.SystemMessageId;
  */
 public class SSQStatus extends L2GameServerPacket
 {
-	private int page;
+	private int _page;
 
 	public SSQStatus(int objectId, int recordPage)
 	{
-		page = recordPage;
+		_page = recordPage;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(page);
+		writeC(_page);
 		writeC(0); // current period?
 
-		switch (page)
+		switch (_page)
 		{
 			case 1:
 				// [ddd cc dd ddd c ddd c]

@@ -28,10 +28,10 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class L2MotherTreeZone extends L2ZoneType
 {
-	private int enterMsg;
-	private int leaveMsg;
-	private int mpRegen;
-	private int hpRegen;
+	private int _enterMsg;
+	private int _leaveMsg;
+	private int _mpRegen;
+	private int _hpRegen;
 
 	public L2MotherTreeZone(int id)
 	{
@@ -44,16 +44,16 @@ public class L2MotherTreeZone extends L2ZoneType
 		switch (name)
 		{
 			case "enterMsgId":
-				enterMsg = Integer.valueOf(value);
+				_enterMsg = Integer.valueOf(value);
 				break;
 			case "leaveMsgId":
-				leaveMsg = Integer.valueOf(value);
+				_leaveMsg = Integer.valueOf(value);
 				break;
 			case "MpRegenBonus":
-				mpRegen = Integer.valueOf(value);
+				_mpRegen = Integer.valueOf(value);
 				break;
 			case "HpRegenBonus":
-				hpRegen = Integer.valueOf(value);
+				_hpRegen = Integer.valueOf(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -68,9 +68,9 @@ public class L2MotherTreeZone extends L2ZoneType
 		{
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
-			if (enterMsg != 0)
+			if (_enterMsg != 0)
 			{
-				player.sendPacket(SystemMessage.getSystemMessage(enterMsg));
+				player.sendPacket(SystemMessage.getSystemMessage(_enterMsg));
 			}
 		}
 	}
@@ -82,9 +82,9 @@ public class L2MotherTreeZone extends L2ZoneType
 		{
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
-			if (leaveMsg != 0)
+			if (_leaveMsg != 0)
 			{
-				player.sendPacket(SystemMessage.getSystemMessage(leaveMsg));
+				player.sendPacket(SystemMessage.getSystemMessage(_leaveMsg));
 			}
 		}
 	}
@@ -104,7 +104,7 @@ public class L2MotherTreeZone extends L2ZoneType
 	 */
 	public int getMpRegenBonus()
 	{
-		return mpRegen;
+		return _mpRegen;
 	}
 
 	/**
@@ -112,6 +112,6 @@ public class L2MotherTreeZone extends L2ZoneType
 	 */
 	public int getHpRegenBonus()
 	{
-		return hpRegen;
+		return _hpRegen;
 	}
 }

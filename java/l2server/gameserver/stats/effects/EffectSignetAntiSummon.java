@@ -34,7 +34,7 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectSignetAntiSummon extends L2Effect
 {
-	private L2EffectPointInstance actor;
+	private L2EffectPointInstance _actor;
 
 	public EffectSignetAntiSummon(Env env, L2EffectTemplate template)
 	{
@@ -58,7 +58,7 @@ public class EffectSignetAntiSummon extends L2Effect
 			return false;
 		}
 
-		actor = (L2EffectPointInstance) getEffected();
+		_actor = (L2EffectPointInstance) getEffected();
 		return true;
 	}
 
@@ -77,7 +77,7 @@ public class EffectSignetAntiSummon extends L2Effect
 
 		L2PcInstance caster = (L2PcInstance) getEffector();
 
-		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (cha == null)
 			{
@@ -142,9 +142,9 @@ public class EffectSignetAntiSummon extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (actor != null)
+		if (_actor != null)
 		{
-			actor.deleteMe();
+			_actor.deleteMe();
 		}
 	}
 }

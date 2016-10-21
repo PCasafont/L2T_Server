@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2MerchantInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SetupGauge;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 
@@ -76,7 +75,7 @@ public class RentPet implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			Log.info("Exception in " + getClass().getSimpleName());
+			_log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

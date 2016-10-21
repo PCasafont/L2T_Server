@@ -24,7 +24,8 @@ import l2server.gameserver.model.quest.Quest;
 public class Validator extends Quest
 {
 	// arrays must be sorted
-	@SuppressWarnings("unused") private static final int[] allCertSkillIds = {
+	@SuppressWarnings("unused")
+	private static final int[] _allCertSkillIds = {
 			631,
 			632,
 			633,
@@ -64,7 +65,8 @@ public class Validator extends Quest
 			1490,
 			1491
 	};
-	@SuppressWarnings("unused") private static final int[][] certSkillsByLevel = {
+	@SuppressWarnings("unused")
+	private static final int[][] _certSkillsByLevel = {
 			{631, 632, 633, 634}, {631, 632, 633, 634}, {
 			637,
 			638,
@@ -96,7 +98,8 @@ public class Validator extends Quest
 	}, {656, 657, 658, 659, 660, 661, 662}
 	};
 
-	@SuppressWarnings("unused") private static final int[] allCertItemIds = {
+	@SuppressWarnings("unused")
+	private static final int[] _allCertItemIds = {
 			10280,
 			10281,
 			10282,
@@ -114,14 +117,16 @@ public class Validator extends Quest
 			10294,
 			10612
 	};
-	@SuppressWarnings("unused") private static final int[][] certItemsByLevel = {
+	@SuppressWarnings("unused")
+	private static final int[][] _certItemsByLevel = {
 			{10280},
 			{10280},
 			{10612, 10281, 10282, 10283, 10284, 10285, 10286, 10287},
 			{10288, 10289, 10290, 10291, 10292, 10293, 10294}
 	};
 
-	@SuppressWarnings("unused") private static final String[] VARS =
+	@SuppressWarnings("unused")
+	private static final String[] VARS =
 			{"EmergentAbility65-", "EmergentAbility70-", "ClassAbility75-", "ClassAbility80-"};
 
 	public Validator(int id, String name, String descr)
@@ -135,7 +140,7 @@ public class Validator extends Quest
 	{
 		return null;
 		/*if (!Config.SKILL_CHECK_ENABLE)
-			return null;
+            return null;
 
 		if (player.isGM() && !Config.SKILL_CHECK_GM)
 			return null;
@@ -224,7 +229,7 @@ public class Validator extends Quest
 							}
 							if (skill != null)
 							{
-								if (!Util.contains(certSkillsByLevel[i], id))
+								if (!Util.contains(_certSkillsByLevel[i], id))
 								{
 									// should remove this skill ?
 									Util.handleIllegalPlayerAction(player, "Invalid cert variable WITH skill:" +
@@ -272,7 +277,7 @@ public class Validator extends Quest
 							}
 							if (item != null)
 							{
-								if (!Util.contains(certItemsByLevel[i], item.getItemId()))
+								if (!Util.contains(_certItemsByLevel[i], item.getItemId()))
 								{
 									Util.handleIllegalPlayerAction(player, "Invalid cert variable:" +
 											qName + "=" + qValue + " - item found but does not match certificate level", 0);
@@ -289,6 +294,7 @@ public class Validator extends Quest
 							Util.handleIllegalPlayerAction(player, "Invalid cert variable:" +
 									qName + "=" + qValue + " - no cert item found in inventory", 0);
 						}
+
 					}
 					catch(NumberFormatException e)
 					{
@@ -349,7 +355,7 @@ public class Validator extends Quest
 		ArrayList<L2Skill> tmp = null;
 		for (L2Skill s : player.getAllSkills())
 		{
-			if (s != null && Arrays.binarySearch(allCertSkillIds, s.getId()) >= 0)
+			if (s != null && Arrays.binarySearch(_allCertSkillIds, s.getId()) >= 0)
 			{
 				if (tmp == null)
 					tmp = new ArrayList();
@@ -370,7 +376,7 @@ public class Validator extends Quest
 		ArrayList<L2ItemInstance> tmp = null;
 		for (L2ItemInstance i : player.getInventory().getItems())
 		{
-			if (i != null && Arrays.binarySearch(allCertItemIds, i.getItemId()) >= 0)
+			if (i != null && Arrays.binarySearch(_allCertItemIds, i.getItemId()) >= 0)
 			{
 				if (tmp == null)
 					tmp = new ArrayList();

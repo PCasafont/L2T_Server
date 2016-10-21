@@ -25,22 +25,23 @@ import java.util.ArrayList;
 
 public class DuelManager
 {
+
 	public static DuelManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
 	// Data Field
-	private ArrayList<Duel> duels;
-	private int currentDuelId = 0x90;
+	private ArrayList<Duel> _duels;
+	private int _currentDuelId = 0x90;
 
 	// =========================================================
 	// Constructor
 	private DuelManager()
 	{
 		Log.info("Initializing DuelManager");
-		duels = new ArrayList<>();
+		_duels = new ArrayList<>();
 	}
 
 	// =========================================================
@@ -49,11 +50,11 @@ public class DuelManager
 	private int getNextDuelId()
 	{
 		// In case someone wants to run the server forever :)
-		if (++currentDuelId >= 2147483640)
+		if (++_currentDuelId >= 2147483640)
 		{
-			currentDuelId = 1;
+			_currentDuelId = 1;
 		}
-		return currentDuelId;
+		return _currentDuelId;
 	}
 
 	// =========================================================
@@ -61,7 +62,7 @@ public class DuelManager
 
 	public Duel getDuel(int duelId)
 	{
-		for (Duel duel : duels)
+		for (Duel duel : _duels)
 		{
 			if (duel != null && duel.getId() == duelId)
 			{
@@ -127,12 +128,12 @@ public class DuelManager
 		}
 
 		Duel duel = new Duel(playerA, playerB, partyDuel, getNextDuelId());
-		duels.add(duel);
+		_duels.add(duel);
 	}
 
 	public void removeDuel(Duel duel)
 	{
-		duels.remove(duel);
+		_duels.remove(duel);
 	}
 
 	public void doSurrender(L2PcInstance player)
@@ -246,6 +247,6 @@ public class DuelManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DuelManager instance = new DuelManager();
+		protected static final DuelManager _instance = new DuelManager();
 	}
 }

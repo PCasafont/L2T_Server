@@ -15,26 +15,34 @@
 
 package l2server.gameserver.pathfinding;
 
-import lombok.Getter;
-
 public abstract class AbstractNode
 {
-	@Getter private AbstractNodeLoc loc;
-	@Getter private AbstractNode parent;
+	private AbstractNodeLoc _loc;
+	private AbstractNode _parent;
 
 	public AbstractNode(AbstractNodeLoc loc)
 	{
-		this.loc = loc;
+		_loc = loc;
 	}
 
 	public void setParent(AbstractNode p)
 	{
-		parent = p;
+		_parent = p;
+	}
+
+	public AbstractNode getParent()
+	{
+		return _parent;
+	}
+
+	public AbstractNodeLoc getLoc()
+	{
+		return _loc;
 	}
 
 	public void setLoc(AbstractNodeLoc l)
 	{
-		loc = l;
+		_loc = l;
 	}
 
 	/**
@@ -45,7 +53,7 @@ public abstract class AbstractNode
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (loc == null ? 0 : loc.hashCode());
+		result = prime * result + (_loc == null ? 0 : _loc.hashCode());
 		return result;
 	}
 
@@ -68,14 +76,14 @@ public abstract class AbstractNode
 			return false;
 		}
 		final AbstractNode other = (AbstractNode) obj;
-		if (loc == null)
+		if (_loc == null)
 		{
-			if (other.loc != null)
+			if (other._loc != null)
 			{
 				return false;
 			}
 		}
-		else if (!loc.equals(other.loc))
+		else if (!_loc.equals(other._loc))
 		{
 			return false;
 		}

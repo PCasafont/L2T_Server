@@ -35,20 +35,20 @@ public class LoginFail extends L2GameServerPacket
 	public static final int ACCESS_FAILED_TRY_LATER4 = 9;
 	public static final int ACCESS_FAILED_TRY_LATER5 = 10;
 
-	private int reason;
+	private int _reason;
 
 	/**
 	 * @param reason
 	 */
 	public LoginFail(int reason)
 	{
-		this.reason = reason;
+		_reason = reason;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(reason);
+		writeD(_reason);
 		writeD(0x00);
 	}
 }

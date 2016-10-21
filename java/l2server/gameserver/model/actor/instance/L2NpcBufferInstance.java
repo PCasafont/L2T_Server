@@ -349,7 +349,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 			}
 		}
 
-		List<Integer> buffIds = new ArrayList<>();
+		List<Integer> _buffIds = new ArrayList<>();
 		for (int a = 14779; a <= 14790; a++)
 		{
 			if (a == 14785 && type != 0)
@@ -367,12 +367,12 @@ public class L2NpcBufferInstance extends L2NpcInstance
 				continue;
 			}
 
-			buffIds.add(a);
+			_buffIds.add(a);
 		}
 
 		for (int a = 14993; a <= 14995; a++)
 		{
-			buffIds.add(a);
+			_buffIds.add(a);
 		}
 
 		if (player.getLevel() < Config.MAX_LEVEL)
@@ -380,11 +380,11 @@ public class L2NpcBufferInstance extends L2NpcInstance
 			Castle castle = CastleManager.getInstance().getCastle(player.getX(), player.getY(), player.getZ());
 			if (castle != null && castle.getTendency() == Castle.TENDENCY_LIGHT)
 			{
-				buffIds.add(19036);
+				_buffIds.add(19036);
 			}
 		}
 
-		for (int a : buffIds)
+		for (int a : _buffIds)
 		{
 			SkillTable.getInstance().getInfo(a, 1).getEffects(player, player);
 			if (!player.getSummons().isEmpty())

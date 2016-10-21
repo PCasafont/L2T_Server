@@ -26,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 
 public class L2PetInstanceAction implements IActionHandler
 {
@@ -52,7 +51,7 @@ public class L2PetInstanceAction implements IActionHandler
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("new target selected:" + target.getObjectId());
+				_log.fine("new target selected:" + target.getObjectId());
 			}
 
 			// Set the target of the L2PcInstance activeChar

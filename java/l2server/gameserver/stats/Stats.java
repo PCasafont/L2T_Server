@@ -15,8 +15,6 @@
 
 package l2server.gameserver.stats;
 
-import lombok.Getter;
-
 import java.util.NoSuchElementException;
 
 /**
@@ -338,11 +336,16 @@ public enum Stats
 
 	public static final int NUM_STATS = values().length;
 
-	@Getter private String value;
+	private String _value;
+
+	public String getValue()
+	{
+		return _value;
+	}
 
 	Stats(String s)
 	{
-		value = s;
+		_value = s;
 	}
 
 	public static Stats fromString(String name)

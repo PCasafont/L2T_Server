@@ -33,9 +33,9 @@ public class TalkingIslandGuards extends L2AttackableAIScript
 {
 	private static final int generalId = 33007;
 	private static final int guardId = 33018;
-	private static int action = 0;
-	private List<L2Npc> generals = new ArrayList<L2Npc>();
-	private List<L2Npc> guards = new ArrayList<L2Npc>();
+	private static int _action = 0;
+	private List<L2Npc> _generals = new ArrayList<L2Npc>();
+	private List<L2Npc> _guards = new ArrayList<L2Npc>();
 
 	public TalkingIslandGuards(int questId, String name, String descr)
 	{
@@ -52,16 +52,16 @@ public class TalkingIslandGuards extends L2AttackableAIScript
 			{
 				if (spawn.getNpcId() == generalId)
 				{
-					generals.add(spawn.getNpc());
+					_generals.add(spawn.getNpc());
 				}
 				else if (spawn.getNpcId() == guardId)
 				{
-					guards.add(spawn.getNpc());
+					_guards.add(spawn.getNpc());
 				}
 			}
 		}
 
-		if (!guards.isEmpty() && !generals.isEmpty())
+		if (!_guards.isEmpty() && !_generals.isEmpty())
 		{
 			startQuestTimer("socialgeneral", 5000, null, null);
 		}
@@ -72,20 +72,20 @@ public class TalkingIslandGuards extends L2AttackableAIScript
 	{
 		if (event.startsWith("socialgeneral"))
 		{
-			action = Rnd.get(12);
+			_action = Rnd.get(12);
 
-			for (L2Npc general : generals)
+			for (L2Npc general : _generals)
 			{
-				general.broadcastPacket(new SocialAction(general.getObjectId(), action));
+				general.broadcastPacket(new SocialAction(general.getObjectId(), _action));
 			}
 
 			startQuestTimer("socialguards", 2000, null, null);
 		}
 		else if (event.startsWith("socialguards"))
 		{
-			for (L2Npc guard : guards)
+			for (L2Npc guard : _guards)
 			{
-				guard.broadcastPacket(new SocialAction(guard.getObjectId(), action));
+				guard.broadcastPacket(new SocialAction(guard.getObjectId(), _action));
 			}
 
 			startQuestTimer("socialgeneral", 8000, null, null);

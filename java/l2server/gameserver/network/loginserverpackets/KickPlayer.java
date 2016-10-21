@@ -16,11 +16,11 @@
 package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
-import lombok.Getter;
 
 public class KickPlayer extends BaseRecievePacket
 {
-	@Getter private String account;
+
+	private String _account;
 
 	/**
 	 * @param decrypt
@@ -28,6 +28,14 @@ public class KickPlayer extends BaseRecievePacket
 	public KickPlayer(byte[] decrypt)
 	{
 		super(decrypt);
-		account = readS();
+		_account = readS();
+	}
+
+	/**
+	 * @return Returns the account.
+	 */
+	public String getAccount()
+	{
+		return _account;
 	}
 }

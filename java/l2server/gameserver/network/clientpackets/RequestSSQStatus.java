@@ -28,12 +28,13 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
  */
 public final class RequestSSQStatus extends L2GameClientPacket
 {
-	private int page;
+
+	private int _page;
 
 	@Override
 	protected void readImpl()
 	{
-		page = readC();
+		_page = readC();
 	}
 
 	@Override
@@ -45,7 +46,7 @@ public final class RequestSSQStatus extends L2GameClientPacket
 			return;
 		}
 
-		SSQStatus ssqs = new SSQStatus(activeChar.getObjectId(), page);
+		SSQStatus ssqs = new SSQStatus(activeChar.getObjectId(), _page);
 		activeChar.sendPacket(ssqs);
 	}
 }

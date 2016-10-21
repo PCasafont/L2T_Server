@@ -31,22 +31,23 @@ import l2server.util.Point3D;
  */
 public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 {
-	private int x;
-	private int y;
-	private int z;
-	private int skillId;
-	private boolean ctrlPressed;
-	private boolean shiftPressed;
+
+	private int _x;
+	private int _y;
+	private int _z;
+	private int _skillId;
+	private boolean _ctrlPressed;
+	private boolean _shiftPressed;
 
 	@Override
 	protected void readImpl()
 	{
-		x = readD();
-		y = readD();
-		z = readD();
-		skillId = readD();
-		ctrlPressed = readD() != 0;
-		shiftPressed = readC() != 0;
+		_x = readD();
+		_y = readD();
+		_z = readD();
+		_skillId = readD();
+		_ctrlPressed = readD() != 0;
+		_shiftPressed = readC() != 0;
 	}
 
 	/**
@@ -63,7 +64,7 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		}
 
 		// Get the level of the used skill
-		int level = activeChar.getSkillLevelHash(skillId);
+		int level = activeChar.getSkillLevelHash(_skillId);
 		if (level <= 0)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -71,23 +72,23 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		}
 
 		// Get the L2Skill template corresponding to the skillID received from the client
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, level);
+		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, level);
 
 		// Check the validity of the skill
 		if (skill != null)
 		{
-			activeChar.setSkillCastPosition(new Point3D(x, y, z));
+			activeChar.setSkillCastPosition(new Point3D(_x, _y, _z));
 
 			// normally magicskilluse packet turns char client side but for these skills, it doesn't (even with correct target)
-			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), x, y));
+			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), _x, _y));
 			activeChar.broadcastPacket(new ValidateLocation(activeChar));
 
-			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
+			activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
 		}
 		else
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("No skill found with id " + skillId + " and level " + level + " !!");
+			Log.warning("No skill found with id " + _skillId + " and level " + level + " !!");
 		}
 	}
 }

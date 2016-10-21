@@ -32,16 +32,17 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
  */
 public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 {
-	private int skillId;
-	private int skillLvl;
-	private int skillEnchant;
+
+	private int _skillId;
+	private int _skillLvl;
+	private int _skillEnchant;
 
 	@Override
 	protected void readImpl()
 	{
-		skillId = readD();
-		skillLvl = readH();
-		skillEnchant = readH();
+		_skillId = readD();
+		_skillLvl = readH();
+		_skillEnchant = readH();
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +51,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (skillId <= 0 || skillLvl <= 0) // minimal sanity check
+		if (_skillId <= 0 || _skillLvl <= 0) // minimal sanity check
 		{
 			return;
 		}
@@ -74,23 +75,23 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())
 			return;*/
 
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchant);
-		if (skill == null || skill.getId() != skillId)
+		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, _skillEnchant);
+		if (skill == null || skill.getId() != _skillId)
 		{
 			return;
 		}
 
-		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(skillId) == null)
+		if (EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId) == null)
 		{
 			return;
 		}
 
-		int playerSkillLvl = activeChar.getSkillLevelHash(skillId);
-		if (playerSkillLvl == -1 || playerSkillLvl != skillLvl + (skillEnchant << 16))
+		int playerSkillLvl = activeChar.getSkillLevelHash(_skillId);
+		if (playerSkillLvl == -1 || playerSkillLvl != _skillLvl + (_skillEnchant << 16))
 		{
 			return;
 		}
 
-		activeChar.sendPacket(new ExEnchantSkillInfo(skillId, skillLvl, skillEnchant / 1000, skillEnchant % 1000));
+		activeChar.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl, _skillEnchant / 1000, _skillEnchant % 1000));
 	}
 }

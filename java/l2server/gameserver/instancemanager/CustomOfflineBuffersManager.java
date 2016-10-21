@@ -57,77 +57,77 @@ public class CustomOfflineBuffersManager
 	private static final String STORE_BUFFERS =
 			"INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
 	private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";
-	private static final Map<Integer, BufferTable> customBufferTable = new HashMap<>();
+	private static final Map<Integer, BufferTable> _customBufferTable = new HashMap<>();
 
 	private class BufferTable
 	{
-		private int playerId;
-		private int coinId;
-		private String coinName;
-		private String description;
-		private Map<Integer, Long> buffs;
+		private int _playerId;
+		private int _coinId;
+		private String _coinName;
+		private String _description;
+		private Map<Integer, Long> _buffs;
 
 		private BufferTable(Integer bufferId)
 		{
-			playerId = bufferId;
-			coinName = "Adena";
-			buffs = new HashMap<>();
+			_playerId = bufferId;
+			_coinName = "Adena";
+			_buffs = new HashMap<>();
 		}
 
 		private void setCointId(int i)
 		{
-			coinId = i;
-			coinName = i != 0 ? ItemTable.getInstance().getTemplate(coinId).getName() : null;
+			_coinId = i;
+			_coinName = i != 0 ? ItemTable.getInstance().getTemplate(_coinId).getName() : null;
 		}
 
 		private int getCointId()
 		{
-			return coinId;
+			return _coinId;
 		}
 
 		private void addBuff(int skillId, long skillPrice)
 		{
-			buffs.put(skillId, skillPrice);
+			_buffs.put(skillId, skillPrice);
 		}
 
 		private Map<Integer, Long> getBuffs()
 		{
-			return buffs;
+			return _buffs;
 		}
 
 		private String getDescription()
 		{
-			return description;
+			return _description;
 		}
 
 		private void setDescription(String desc)
 		{
-			description = desc;
+			_description = desc;
 		}
 
 		private int getPlayerId()
 		{
-			return playerId;
+			return _playerId;
 		}
 
 		private void addBuffs(Map<Integer, Long> playerBuffs)
 		{
-			buffs = playerBuffs;
+			_buffs = playerBuffs;
 		}
 
 		private String getCoinName()
 		{
-			return coinName;
+			return _coinName;
 		}
 
 		private L2PcInstance getBuffer(boolean deleteIfIllegal)
 		{
-			L2PcInstance buffer = L2World.getInstance().getPlayer(playerId);
+			L2PcInstance buffer = L2World.getInstance().getPlayer(_playerId);
 			if (buffer != null && deleteIfIllegal && !buffer.getIsOfflineBuffer())
 			{
-				synchronized (customBufferTable)
+				synchronized (_customBufferTable)
 				{
-					customBufferTable.remove(playerId);
+					_customBufferTable.remove(_playerId);
 					return null;
 				}
 			}
@@ -138,10 +138,10 @@ public class CustomOfflineBuffersManager
 	public String getOfflineBuffersPage(int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
 			int maxPlayersPerPage = 20;
-			int playersSize = customBufferTable.size();
+			int playersSize = _customBufferTable.size();
 			int maxPages = playersSize / maxPlayersPerPage;
 			if (playersSize > maxPlayersPerPage * maxPages)
 			{
@@ -167,7 +167,7 @@ public class CustomOfflineBuffersManager
 			sb.append(
 					"<table width=750 bgcolor=999999><tr><td FIXWIDTH=50>Name</td><td FIXWIDTH=60>Class</td><td FIXWIDTH=35 align=center>Mana</td><td FIXWIDTH=80 align=center>Description</td><td FIXWIDTH=30>Buffs Count</td><td FIXWIDTH=35 align=center>Coin</td></tr></table>");
 
-			for (Entry<Integer, BufferTable> i : customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : _customBufferTable.entrySet())
 			{
 				BufferTable buffTable = i.getValue();
 				if (buffTable == null)
@@ -205,9 +205,9 @@ public class CustomOfflineBuffersManager
 		}
 
 		StringBuilder sb = new StringBuilder();
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(playerId);
+			BufferTable buffTable = _customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -271,9 +271,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(playerId);
+			BufferTable buffTable = _customBufferTable.get(playerId);
 			if (buffTable == null)
 			{
 				return;
@@ -287,7 +287,7 @@ public class CustomOfflineBuffersManager
 
 			if (buffer.getClient() == null || !buffer.getClient().isDetached() || !buffer.getIsOfflineBuffer())
 			{
-				customBufferTable.remove(playerId);
+				_customBufferTable.remove(playerId);
 				return;
 			}
 
@@ -388,7 +388,7 @@ public class CustomOfflineBuffersManager
 		{
 			return;
 		}
-		BufferTable buffTable = customBufferTable.get(player.getObjectId());
+		BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 		List<L2Skill> buffSkills = new ArrayList<>();
 		for (L2Skill sk : player.getAllSkills())
 		{
@@ -509,13 +509,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				customBufferTable.put(player.getObjectId(), buffTable);
+				_customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			if (player.getSkillLevelHash(skillId) != -1)
@@ -540,16 +540,16 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.getBuffs().remove(skillId);
 
 				if (buffTable.getBuffs().size() == 0)
 				{
-					customBufferTable.remove(player.getObjectId());
+					_customBufferTable.remove(player.getObjectId());
 				}
 
 				player.sendMessage("World Buffers: Buff removed!");
@@ -566,13 +566,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				customBufferTable.put(player.getObjectId(), buffTable);
+				_customBufferTable.put(player.getObjectId(), buffTable);
 			}
 			buffTable.setDescription(description);
 			player.sendMessage("World Buffers: Description updated!");
@@ -588,13 +588,13 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable == null)
 			{
 				buffTable = new BufferTable(player.getObjectId());
-				customBufferTable.put(player.getObjectId(), buffTable);
+				_customBufferTable.put(player.getObjectId(), buffTable);
 			}
 
 			buffTable.setCointId(coin != null ? TenkaiAuctionManager.getInstance().getCurrencyId(coin) : 0);
@@ -611,9 +611,9 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				buffTable.setDescription("");
@@ -634,9 +634,9 @@ public class CustomOfflineBuffersManager
 			return true;
 		}
 
-		synchronized (customBufferTable)
+		synchronized (_customBufferTable)
 		{
-			BufferTable buffTable = customBufferTable.get(player.getObjectId());
+			BufferTable buffTable = _customBufferTable.get(player.getObjectId());
 			if (buffTable != null)
 			{
 				if (buffTable.getBuffs().size() > 0 && buffTable.getCointId() != 0)
@@ -714,7 +714,7 @@ public class CustomOfflineBuffersManager
 					table.setCointId(coinId);
 					player.setIsOfflineBuffer(true);
 
-					customBufferTable.put(charId, table);
+					_customBufferTable.put(charId, table);
 				}
 				catch (Exception e)
 				{
@@ -740,7 +740,7 @@ public class CustomOfflineBuffersManager
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("CustomOfflineBuffers: restored " + customBufferTable.size() + " offline buffers!");
+		Log.info("CustomOfflineBuffers: restored " + _customBufferTable.size() + " offline buffers!");
 	}
 
 	public void storeOfflineBuffers()
@@ -750,7 +750,7 @@ public class CustomOfflineBuffersManager
 			return;
 		}
 
-		if (customBufferTable.isEmpty())
+		if (_customBufferTable.isEmpty())
 		{
 			return;
 		}
@@ -761,7 +761,7 @@ public class CustomOfflineBuffersManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement sq = con.prepareStatement(STORE_BUFFERS);
 
-			for (Entry<Integer, BufferTable> i : customBufferTable.entrySet())
+			for (Entry<Integer, BufferTable> i : _customBufferTable.entrySet())
 			{
 				BufferTable table = i.getValue();
 				if (table.getBuffs().isEmpty())
@@ -830,12 +830,12 @@ public class CustomOfflineBuffersManager
 
 	public static CustomOfflineBuffersManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CustomOfflineBuffersManager instance = new CustomOfflineBuffersManager();
+		protected static final CustomOfflineBuffersManager _instance = new CustomOfflineBuffersManager();
 	}
 }

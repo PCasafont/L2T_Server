@@ -20,16 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPledgeCount extends L2GameServerPacket
 {
-	private int count;
+	private int _count;
 
 	public ExPledgeCount(int count)
 	{
-		this.count = count;
+		_count = count;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(count);
+		writeD(_count);
 	}
 }

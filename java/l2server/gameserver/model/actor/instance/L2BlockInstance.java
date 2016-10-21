@@ -23,14 +23,13 @@ import l2server.gameserver.model.entity.BlockCheckerEngine;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 /**
  * @author BiggBoss
  */
 public class L2BlockInstance extends L2MonsterInstance
 {
-	@Getter private int colorEffect;
+	private int _colorEffect;
 
 	/**
 	 * @param objectId
@@ -53,10 +52,10 @@ public class L2BlockInstance extends L2MonsterInstance
 		// Do not update color while sending old info
 		synchronized (this)
 		{
-			if (colorEffect == 0x53)
+			if (_colorEffect == 0x53)
 			{
 				// Change color
-				colorEffect = 0x00;
+				_colorEffect = 0x00;
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this, attacker));
 				increaseTeamPointsAndSend(attacker, team, event);
@@ -64,7 +63,7 @@ public class L2BlockInstance extends L2MonsterInstance
 			else
 			{
 				// Change color
-				colorEffect = 0x53;
+				_colorEffect = 0x53;
 				// BroadCast to all known players
 				broadcastPacket(new NpcInfo(this, attacker));
 				increaseTeamPointsAndSend(attacker, team, event);
@@ -93,7 +92,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	 */
 	public void setRed(boolean isRed)
 	{
-		colorEffect = isRed ? 0x53 : 0x00;
+		_colorEffect = isRed ? 0x53 : 0x00;
 	}
 
 	/**
@@ -101,6 +100,12 @@ public class L2BlockInstance extends L2MonsterInstance
 	 *
 	 * @return
 	 */
+	@Override
+	public int getColorEffect()
+	{
+		return _colorEffect;
+	}
+
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{

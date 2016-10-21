@@ -29,46 +29,46 @@ import java.util.List;
  */
 public class PartySpelled extends L2GameServerPacket
 {
-	private List<Effect> effects;
-	private L2Character activeChar;
+	private List<Effect> _effects;
+	private L2Character _activeChar;
 
 	private static class Effect
 	{
-		protected int skillId;
-		protected int dat;
-		protected int duration;
+		protected int _skillId;
+		protected int _dat;
+		protected int _duration;
 
 		public Effect(int pSkillId, int pDat, int pDuration)
 		{
-			skillId = pSkillId;
-			dat = pDat;
-			duration = pDuration;
+			_skillId = pSkillId;
+			_dat = pDat;
+			_duration = pDuration;
 		}
 	}
 
 	public PartySpelled(L2Character cha)
 	{
-		effects = new ArrayList<>();
-		activeChar = cha;
+		_effects = new ArrayList<>();
+		_activeChar = cha;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(activeChar instanceof L2SummonInstance ? 2 : activeChar instanceof L2PetInstance ? 1 : 0);
-		writeD(activeChar.getObjectId());
-		writeD(effects.size());
-		for (Effect temp : effects)
+		writeD(_activeChar instanceof L2SummonInstance ? 2 : _activeChar instanceof L2PetInstance ? 1 : 0);
+		writeD(_activeChar.getObjectId());
+		writeD(_effects.size());
+		for (Effect temp : _effects)
 		{
-			writeD(temp.skillId);
-			writeD(temp.dat);
+			writeD(temp._skillId);
+			writeD(temp._dat);
 			writeD(0x00);
-			writeH(temp.duration / 1000 + 1);
+			writeH(temp._duration / 1000 + 1);
 		}
 	}
 
 	public void addPartySpelledEffect(int skillId, int dat, int duration)
 	{
-		effects.add(new Effect(skillId, dat, duration));
+		_effects.add(new Effect(skillId, dat, duration));
 	}
 }

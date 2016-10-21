@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.AskJoinPledge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import lombok.Getter;
 
 /**
  * This class ...
@@ -30,14 +29,15 @@ import lombok.Getter;
  */
 public final class RequestJoinPledge extends L2GameClientPacket
 {
-	private int target;
-	@Getter private int pledgeType;
+
+	private int _target;
+	private int _pledgeType;
 
 	@Override
 	protected void readImpl()
 	{
-		target = readD();
-		pledgeType = readD();
+		_target = readD();
+		_pledgeType = readD();
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance target = L2World.getInstance().getPlayer(this.target);
+		final L2PcInstance target = L2World.getInstance().getPlayer(_target);
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
@@ -69,7 +69,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 
-		if (!clan.checkClanJoinCondition(activeChar, target, pledgeType))
+		if (!clan.checkClanJoinCondition(activeChar, target, _pledgeType))
 		{
 			return;
 		}
@@ -80,8 +80,13 @@ public final class RequestJoinPledge extends L2GameClientPacket
 		}
 
 		final String pledgeName = activeChar.getClan().getName();
-		final String subPledgeName = activeChar.getClan().getSubPledge(pledgeType) != null ?
-				activeChar.getClan().getSubPledge(pledgeType).getName() : null;
-		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, pledgeType, pledgeName));
+		final String subPledgeName = activeChar.getClan().getSubPledge(_pledgeType) != null ?
+				activeChar.getClan().getSubPledge(_pledgeType).getName() : null;
+		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, _pledgeType, pledgeName));
+	}
+
+	public int getPledgeType()
+	{
+		return _pledgeType;
 	}
 }

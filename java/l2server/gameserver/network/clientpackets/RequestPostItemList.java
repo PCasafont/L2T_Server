@@ -28,6 +28,7 @@ import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
  */
 public final class RequestPostItemList extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

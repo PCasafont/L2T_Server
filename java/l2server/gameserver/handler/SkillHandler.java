@@ -25,16 +25,16 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class SkillHandler
 {
-	private TIntObjectHashMap<ISkillHandler> datatable;
+	private TIntObjectHashMap<ISkillHandler> _datatable;
 
 	public static SkillHandler getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private SkillHandler()
 	{
-		datatable = new TIntObjectHashMap<>();
+		_datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerSkillHandler(ISkillHandler handler)
@@ -42,13 +42,13 @@ public class SkillHandler
 		L2SkillType[] types = handler.getSkillIds();
 		for (L2SkillType t : types)
 		{
-			datatable.put(t.ordinal(), handler);
+			_datatable.put(t.ordinal(), handler);
 		}
 	}
 
 	public ISkillHandler getSkillHandler(L2SkillType skillType)
 	{
-		return datatable.get(skillType.ordinal());
+		return _datatable.get(skillType.ordinal());
 	}
 
 	/**
@@ -56,12 +56,12 @@ public class SkillHandler
 	 */
 	public int size()
 	{
-		return datatable.size();
+		return _datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SkillHandler instance = new SkillHandler();
+		protected static final SkillHandler _instance = new SkillHandler();
 	}
 }

@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public final class ConditionPlayerHasClanHall extends Condition
 {
-	private final ArrayList<Integer> clanHall;
+	private final ArrayList<Integer> _clanHall;
 
 	/**
 	 * Instantiates a new condition player has clan hall.
@@ -37,7 +37,7 @@ public final class ConditionPlayerHasClanHall extends Condition
 	 */
 	public ConditionPlayerHasClanHall(ArrayList<Integer> clanHall)
 	{
-		this.clanHall = clanHall;
+		_clanHall = clanHall;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public final class ConditionPlayerHasClanHall extends Condition
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
 		if (clan == null)
 		{
-			return clanHall.size() == 1 && clanHall.get(0) == 0;
+			return _clanHall.size() == 1 && _clanHall.get(0) == 0;
 		}
 
 		if (env.player.isGM())
@@ -67,11 +67,11 @@ public final class ConditionPlayerHasClanHall extends Condition
 		}
 
 		// All Clan Hall
-		if (clanHall.size() == 1 && clanHall.get(0) == -1)
+		if (_clanHall.size() == 1 && _clanHall.get(0) == -1)
 		{
 			return clan.getHasHideout() > 0;
 		}
 
-		return clanHall.contains(clan.getHasHideout());
+		return _clanHall.contains(clan.getHasHideout());
 	}
 }

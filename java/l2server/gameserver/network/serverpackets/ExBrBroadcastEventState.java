@@ -24,15 +24,15 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBrBroadcastEventState extends L2GameServerPacket
 {
-	private int eventId;
-	private int eventState;
-	private int param0;
-	private int param1;
-	private int param2;
-	private int param3;
-	private int param4;
-	private String param5;
-	private String param6;
+	private int _eventId;
+	private int _eventState;
+	private int _param0;
+	private int _param1;
+	private int _param2;
+	private int _param3;
+	private int _param4;
+	private String _param5;
+	private String _param6;
 
 	public static final int APRIL_FOOLS = 20090401;
 	public static final int EVAS_INFERNO = 20090801; // event state (0 - hide, 1 - show), day (1-14), percent (0-100)
@@ -42,34 +42,34 @@ public class ExBrBroadcastEventState extends L2GameServerPacket
 
 	public ExBrBroadcastEventState(int eventId, int eventState)
 	{
-		this.eventId = eventId;
-		this.eventState = eventState;
+		_eventId = eventId;
+		_eventState = eventState;
 	}
 
 	public ExBrBroadcastEventState(int eventId, int eventState, int param0, int param1, int param2, int param3, int param4, String param5, String param6)
 	{
-		this.eventId = eventId;
-		this.eventState = eventState;
-		this.param0 = param0;
-		this.param1 = param1;
-		this.param2 = param2;
-		this.param3 = param3;
-		this.param4 = param4;
-		this.param5 = param5;
-		this.param6 = param6;
+		_eventId = eventId;
+		_eventState = eventState;
+		_param0 = param0;
+		_param1 = param1;
+		_param2 = param2;
+		_param3 = param3;
+		_param4 = param4;
+		_param5 = param5;
+		_param6 = param6;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(eventId);
-		writeD(eventState);
-		writeD(param0);
-		writeD(param1);
-		writeD(param2);
-		writeD(param3);
-		writeD(param4);
-		writeS(param5);
-		writeS(param6);
+		writeD(_eventId);
+		writeD(_eventState);
+		writeD(_param0);
+		writeD(_param1);
+		writeD(_param2);
+		writeD(_param3);
+		writeD(_param4);
+		writeS(_param5);
+		writeS(_param6);
 	}
 }

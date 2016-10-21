@@ -23,12 +23,13 @@ import l2server.log.Log;
  */
 public final class EndScenePlayer extends L2GameClientPacket
 {
-	private int movieId;
+
+	private int _movieId;
 
 	@Override
 	protected void readImpl()
 	{
-		movieId = readD();
+		_movieId = readD();
 	}
 
 	@Override
@@ -39,18 +40,18 @@ public final class EndScenePlayer extends L2GameClientPacket
 		{
 			return;
 		}
-		if (movieId == 0)
+		if (_movieId == 0)
 		{
 			return;
 		}
-		if (activeChar.getMovieId() != movieId)
+		if (activeChar.getMovieId() != _movieId)
 		{
-			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + movieId);
+			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + _movieId);
 			return;
 		}
 		activeChar.setMovieId(0);
 		/* L2j guarrineitorada, we'll see if it explodes but it won't most probably
-		 * activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
+         * activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
 		 * activeChar.decayMe();
 		 * activeChar.spawnMe(activeChar.getPosition().getX(), activeChar.getPosition().getY(), activeChar.getPosition().getZ());
 		 * activeChar.setIsTeleporting(false, false);

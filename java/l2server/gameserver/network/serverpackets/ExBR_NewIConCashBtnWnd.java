@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBR_NewIConCashBtnWnd extends L2GameServerPacket
 {
-	private int unk;
+	private int _unk;
 
 	public ExBR_NewIConCashBtnWnd(int unk)
 	{
-		this.unk = unk;
+		_unk = unk;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeH(unk);
+		writeH(_unk);
 	}
 }

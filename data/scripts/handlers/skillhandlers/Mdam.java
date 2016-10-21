@@ -49,7 +49,7 @@ import java.util.logging.Logger;
 
 public class Mdam implements ISkillHandler
 {
-	private static final Logger logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MDAM, L2SkillType.DEATHLINK};
 
@@ -111,7 +111,7 @@ public class Mdam implements ISkillHandler
 
 			if (damage != 0)
 			{
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().isInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 
@@ -317,7 +317,7 @@ public class Mdam implements ISkillHandler
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("mdam");
-						logDamage.log(record);
+						_logDamage.log(record);
 					}
 				}
 			}

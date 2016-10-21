@@ -23,30 +23,30 @@ import l2server.gameserver.network.serverpackets.ExListPartyMatchingWaitingRoom;
  */
 public class RequestListPartyMatchingWaitingRoom extends L2GameClientPacket
 {
-	private static int page;
-	private static int minlvl;
-	private static int maxlvl;
-	private static int mode; // 1 - waitlist 0 - room waitlist
+	private static int _page;
+	private static int _minlvl;
+	private static int _maxlvl;
+	private static int _mode; // 1 - waitlist 0 - room waitlist
 
 	@Override
 	protected void readImpl()
 	{
-		page = readD();
-		minlvl = readD();
-		maxlvl = readD();
-		mode = readD();
+		_page = readD();
+		_minlvl = readD();
+		_maxlvl = readD();
+		_mode = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		L2PcInstance _activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
+		if (_activeChar == null)
 		{
 			return;
 		}
 
-		activeChar.sendPacket(new ExListPartyMatchingWaitingRoom(activeChar, page, minlvl, maxlvl, mode));
+		_activeChar.sendPacket(new ExListPartyMatchingWaitingRoom(_activeChar, _page, _minlvl, _maxlvl, _mode));
 	}
 }

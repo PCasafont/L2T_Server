@@ -33,12 +33,12 @@ import java.util.logging.Level;
  */
 public class ConfirmMenteeAdd extends L2GameClientPacket
 {
-	int response;
+	int _response;
 
 	@Override
 	protected void readImpl()
 	{
-		response = readD();
+		_response = readD();
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 				return;
 			}
 
-			if (response == 1)
+			if (_response == 1)
 			{
 				Connection con = null;
 				try

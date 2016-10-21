@@ -23,51 +23,51 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExFlyMoveBroadcast extends L2GameServerPacket
 {
-	private int objectId;
-	private L2FlyMoveType type;
-	private int originX;
-	private int originY;
-	private int originZ;
-	private int targetX;
-	private int targetY;
-	private int targetZ;
+	private int _objectId;
+	private L2FlyMoveType _type;
+	private int _originX;
+	private int _originY;
+	private int _originZ;
+	private int _targetX;
+	private int _targetY;
+	private int _targetZ;
 
 	public ExFlyMoveBroadcast(L2PcInstance activeChar, int x, int y, int z)
 	{
-		objectId = activeChar.getObjectId();
-		type = L2FlyMoveType.MOVE;
-		originX = activeChar.getX();
-		originY = activeChar.getY();
-		originZ = activeChar.getZ();
-		targetX = x;
-		targetY = y;
-		targetZ = z;
+		_objectId = activeChar.getObjectId();
+		_type = L2FlyMoveType.MOVE;
+		_originX = activeChar.getX();
+		_originY = activeChar.getY();
+		_originZ = activeChar.getZ();
+		_targetX = x;
+		_targetY = y;
+		_targetZ = z;
 	}
 
 	public ExFlyMoveBroadcast(L2PcInstance activeChar, boolean start)
 	{
-		objectId = activeChar.getObjectId();
-		type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
-		originX = activeChar.getX();
-		originY = activeChar.getY();
-		originZ = activeChar.getZ();
-		targetX = activeChar.getX();
-		targetY = activeChar.getY();
-		targetZ = activeChar.getZ();
+		_objectId = activeChar.getObjectId();
+		_type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
+		_originX = activeChar.getX();
+		_originY = activeChar.getY();
+		_originZ = activeChar.getZ();
+		_targetX = activeChar.getX();
+		_targetY = activeChar.getY();
+		_targetZ = activeChar.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(type.ordinal());
+		writeD(_objectId);
+		writeD(_type.ordinal());
 		writeD(0);
-		writeD(originX);
-		writeD(originY);
-		writeD(originZ);
+		writeD(_originX);
+		writeD(_originY);
+		writeD(_originZ);
 		writeD(0);
-		writeD(targetX);
-		writeD(targetY);
-		writeD(targetZ);
+		writeD(_targetX);
+		writeD(_targetY);
+		writeD(_targetZ);
 	}
 }

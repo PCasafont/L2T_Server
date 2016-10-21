@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.BlockListPacket;
  */
 public class RequestUpdateBlockMemo extends L2GameClientPacket
 {
+
 	private String cName;
 	private String memo;
 

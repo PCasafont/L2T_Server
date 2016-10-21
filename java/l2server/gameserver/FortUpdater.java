@@ -29,11 +29,12 @@ import java.util.logging.Logger;
  */
 public class FortUpdater implements Runnable
 {
-	protected static Logger log = Logger.getLogger(FortUpdater.class.getName());
-	private L2Clan clan;
-	private Fort fort;
-	@SuppressWarnings("unused") private int runCount;
-	private UpdaterType updaterType;
+	protected static Logger _log = Logger.getLogger(FortUpdater.class.getName());
+	private L2Clan _clan;
+	private Fort _fort;
+	@SuppressWarnings("unused")
+	private int _runCount;
+	private UpdaterType _updaterType;
 
 	public enum UpdaterType
 	{
@@ -43,10 +44,10 @@ public class FortUpdater implements Runnable
 
 	public FortUpdater(Fort fort, L2Clan clan, int runCount, UpdaterType ut)
 	{
-		this.fort = fort;
-		this.clan = clan;
-		this.runCount = runCount;
-		updaterType = ut;
+		_fort = fort;
+		_clan = clan;
+		_runCount = runCount;
+		_updaterType = ut;
 	}
 
 	@Override
@@ -54,42 +55,42 @@ public class FortUpdater implements Runnable
 	{
 		try
 		{
-			switch (updaterType)
+			switch (_updaterType)
 			{
 				case PERIODIC_UPDATE:
-					runCount++;
-					if (fort.getOwnerClan() == null || fort.getOwnerClan() != clan)
+					_runCount++;
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 					{
 						return;
 					}
 
-					fort.setBloodOathReward(fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
-					if (fort.getFortState() == 2)
+					_fort.setBloodOathReward(_fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
+					if (_fort.getFortState() == 2)
 					{
-						if (clan.getWarehouse().getAdena() >= Config.FS_FEE_FOR_CASTLE)
+						if (_clan.getWarehouse().getAdena() >= Config.FS_FEE_FOR_CASTLE)
 						{
-							clan.getWarehouse()
+							_clan.getWarehouse()
 									.destroyItemByItemId("FS_fee_for_Castle", 57, Config.FS_FEE_FOR_CASTLE, null, null);
-							CastleManager.getInstance().getCastleById(fort.getCastleId())
+							CastleManager.getInstance().getCastleById(_fort.getCastleId())
 									.addToTreasuryNoTax(Config.FS_FEE_FOR_CASTLE);
-							fort.raiseSupplyLvL();
+							_fort.raiseSupplyLvL();
 						}
 						else
 						{
-							fort.setFortState(1, 0);
+							_fort.setFortState(1, 0);
 						}
 					}
-					fort.saveFortVariables();
+					_fort.saveFortVariables();
 					break;
 				case MAX_OWN_TIME:
-					if (fort.getOwnerClan() == null || fort.getOwnerClan() != clan)
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 					{
 						return;
 					}
-					if (fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
+					if (_fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
 					{
-						fort.removeOwner(true);
-						fort.setFortState(0, 0);
+						_fort.removeOwner(true);
+						_fort.setFortState(0, 0);
 					}
 					break;
 			}

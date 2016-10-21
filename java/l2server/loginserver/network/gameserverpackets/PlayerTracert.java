@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class PlayerTracert extends BaseRecievePacket
 {
-	protected static Logger log = Logger.getLogger(PlayerTracert.class.getName());
+	protected static Logger _log = Logger.getLogger(PlayerTracert.class.getName());
 
 	/**
 	 * @param decrypt

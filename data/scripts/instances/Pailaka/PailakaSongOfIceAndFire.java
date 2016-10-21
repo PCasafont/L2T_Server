@@ -452,13 +452,13 @@ public class PailakaSongOfIceAndFire extends Quest
 
 	static final class Teleport implements Runnable
 	{
-		private final L2Character cha;
-		private final int instanceId;
+		private final L2Character _char;
+		private final int _instanceId;
 
 		public Teleport(L2Character c, int id)
 		{
-			cha = c;
-			instanceId = id;
+			_char = c;
+			_instanceId = id;
 		}
 
 		@Override
@@ -466,7 +466,7 @@ public class PailakaSongOfIceAndFire extends Quest
 		{
 			try
 			{
-				teleportPlayer((L2PcInstance) cha, TELEPORT, instanceId);
+				teleportPlayer((L2PcInstance) _char, TELEPORT, _instanceId);
 			}
 			catch (Exception e)
 			{

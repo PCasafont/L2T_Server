@@ -42,7 +42,7 @@ public class AdminCamera implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			/*List<Point3D> positions = new ArrayList<Point3D>();
-			for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
+            for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
 			{
 				if (player == null)
 					continue;
@@ -74,6 +74,7 @@ public class AdminCamera implements IAdminCommandHandler
 			double shortest = longest;
 			for (Point3D p : positions)
 			{
+
 			}
 
 			int objId = activeChar.getObjectId();

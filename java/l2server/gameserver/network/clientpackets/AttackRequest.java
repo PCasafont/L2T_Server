@@ -28,20 +28,24 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 public final class AttackRequest extends L2GameClientPacket
 {
 	// cddddc
-	private int objectId;
-	@SuppressWarnings("unused") private int originX;
-	@SuppressWarnings("unused") private int originY;
-	@SuppressWarnings("unused") private int originZ;
-	@SuppressWarnings("unused") private int attackId;
+	private int _objectId;
+	@SuppressWarnings("unused")
+	private int _originX;
+	@SuppressWarnings("unused")
+	private int _originY;
+	@SuppressWarnings("unused")
+	private int _originZ;
+	@SuppressWarnings("unused")
+	private int _attackId;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD();
-		originX = readD();
-		originY = readD();
-		originZ = readD();
-		attackId = readC(); // 0 for simple click   1 for shift-click
+		_objectId = readD();
+		_originX = readD();
+		_originY = readD();
+		_originZ = readD();
+		_attackId = readC(); // 0 for simple click   1 for shift-click
 	}
 
 	@Override
@@ -54,17 +58,17 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		// avoid using expensive operations if not needed
 		L2Object target;
-		if (activeChar.getTargetId() == objectId)
+		if (activeChar.getTargetId() == _objectId)
 		{
 			target = activeChar.getTarget();
 		}
 		else
 		{
-			target = L2World.getInstance().findObject(objectId);
+			target = L2World.getInstance().findObject(_objectId);
 		}
 		if (target == null)
 		{
-			target = L2World.getInstance().getPlayer(objectId);
+			target = L2World.getInstance().getPlayer(_objectId);
 			if (target == null)
 			{
 				return;
@@ -79,7 +83,7 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 
 		// Only GMs can directly attack invisible characters
-		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().isInvisible() &&
+		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() &&
 				!activeChar.isGM())
 		{
 			return;
@@ -94,9 +98,9 @@ public final class AttackRequest extends L2GameClientPacket
 			if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 &&
 					activeChar.getActiveRequester() == null)
 			{
-				//Log.debug("Starting ForcedAttack");
+				//Logozo.debug("Starting ForcedAttack");
 				target.onForcedAttack(activeChar);
-				//Log.debug("Ending ForcedAttack");
+				//Logozo.debug("Ending ForcedAttack");
 			}
 			else
 			{

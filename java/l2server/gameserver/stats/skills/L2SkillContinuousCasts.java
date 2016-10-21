@@ -31,21 +31,21 @@ import l2server.util.Point3D;
 
 public class L2SkillContinuousCasts extends L2Skill
 {
-	private final int skillId;
-	private final int skillLvl;
-	private final int skillEnchantRoute;
-	private final int skillEnchantLvl;
-	private final int castAmount;
+	private final int _skillId;
+	private final int _skillLvl;
+	private final int _skillEnchantRoute;
+	private final int _skillEnchantLvl;
+	private final int _castAmount;
 
 	public L2SkillContinuousCasts(StatsSet set)
 	{
 		super(set);
 
-		skillId = set.getInteger("castId", 0);
-		skillLvl = set.getInteger("castLvl", 0);
-		skillEnchantRoute = set.getInteger("castEnchantRoute", 0);
-		skillEnchantLvl = set.getInteger("castEnchantLvl", 0);
-		castAmount = set.getInteger("castAmount", 0);
+		_skillId = set.getInteger("castId", 0);
+		_skillLvl = set.getInteger("castLvl", 0);
+		_skillEnchantRoute = set.getInteger("castEnchantRoute", 0);
+		_skillEnchantLvl = set.getInteger("castEnchantLvl", 0);
+		_castAmount = set.getInteger("castAmount", 0);
 	}
 
 	@Override
@@ -57,30 +57,30 @@ public class L2SkillContinuousCasts extends L2Skill
 
 	private class CastTask implements Runnable
 	{
-		private int count = castAmount;
-		L2Character activeChar;
-		Point3D position;
+		private int _count = _castAmount;
+		L2Character _activeChar;
+		Point3D _position;
 
 		public CastTask(L2Character activeChar, Point3D position)
 		{
-			this.activeChar = activeChar;
-			this.position = position;
+			_activeChar = activeChar;
+			_position = position;
 		}
 
 		@Override
 		public void run()
 		{
-			if (!cast(activeChar, position))
+			if (!cast(_activeChar, _position))
 			{
 				return;
 			}
 
-			if (count > 0)
+			if (_count > 0)
 			{
 				ThreadPoolManager.getInstance().scheduleEffect(this, 1000);
 			}
 
-			count--;
+			_count--;
 		}
 	}
 
@@ -106,7 +106,7 @@ public class L2SkillContinuousCasts extends L2Skill
 				continue;
 			}
 
-			int level = skillLvl;
+			int level = _skillLvl;
 			if (level == 0)
 			{
 				level = 1;
@@ -117,7 +117,7 @@ public class L2SkillContinuousCasts extends L2Skill
 						continue;
 					}
 
-					if (e.getSkill().getId() == skillId)
+					if (e.getSkill().getId() == _skillId)
 					{
 						int maxLevel = SkillTable.getInstance().getMaxLevel(e.getSkill().getId());
 						if (e.getSkill().getLevel() < maxLevel)
@@ -132,7 +132,8 @@ public class L2SkillContinuousCasts extends L2Skill
 				}
 			}
 
-			L2Skill skillToCast = SkillTable.getInstance().getInfo(skillId, level, skillEnchantRoute, skillEnchantLvl);
+			L2Skill skillToCast =
+					SkillTable.getInstance().getInfo(_skillId, level, _skillEnchantRoute, _skillEnchantLvl);
 			//System.out.println(targetObj + " " + level);
 			if (!skillToCast.checkCondition(activeChar, target, false))
 			{

@@ -39,7 +39,7 @@ import l2server.util.Rnd;
 
 public class PcStatus extends PlayableStatus
 {
-	private double currentCp = 0; //Current CP of the L2PcInstance
+	private double _currentCp = 0; //Current CP of the L2PcInstance
 
 	public PcStatus(L2PcInstance activeChar)
 	{
@@ -78,7 +78,7 @@ public class PcStatus extends PlayableStatus
 			return;
 		}
 
-		boolean isHide = getActiveChar().getAppearance().isInvisible();
+		boolean isHide = getActiveChar().getAppearance().getInvisible();
 		if (!isHPConsumption || isHide)
 		{
 			if (getActiveChar().isSitting())
@@ -411,7 +411,7 @@ public class PcStatus extends PlayableStatus
 	@Override
 	public final double getCurrentCp()
 	{
-		return currentCp;
+		return _currentCp;
 	}
 
 	@Override
@@ -440,11 +440,11 @@ public class PcStatus extends PlayableStatus
 			if (newCp >= maxCp)
 			{
 				// Set the RegenActive flag to false
-				currentCp = maxCp;
-				flagsRegenActive &= ~REGEN_FLAG_CP;
+				_currentCp = maxCp;
+				_flagsRegenActive &= ~REGEN_FLAG_CP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (flagsRegenActive == 0)
+				if (_flagsRegenActive == 0)
 				{
 					stopHpMpRegeneration();
 				}
@@ -452,8 +452,8 @@ public class PcStatus extends PlayableStatus
 			else
 			{
 				// Set the RegenActive flag to true
-				currentCp = newCp;
-				flagsRegenActive |= REGEN_FLAG_CP;
+				_currentCp = newCp;
+				_flagsRegenActive |= REGEN_FLAG_CP;
 
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();

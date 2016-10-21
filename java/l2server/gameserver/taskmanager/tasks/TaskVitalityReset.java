@@ -31,6 +31,7 @@ import java.util.logging.Level;
  */
 public class TaskVitalityReset extends Task
 {
+
 	private static final String NAME = "vitalty reset";
 
 	/**

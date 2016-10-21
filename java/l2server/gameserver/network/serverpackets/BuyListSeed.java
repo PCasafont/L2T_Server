@@ -43,19 +43,20 @@ import java.util.stream.Collectors;
 
 public final class BuyListSeed extends L2GameServerPacket
 {
-	private int manorId;
-	private List<Seed> list = null;
-	private long money;
+
+	private int _manorId;
+	private List<Seed> _list = null;
+	private long _money;
 
 	public BuyListSeed(long currentMoney, int castleId, List<SeedProduction> seeds)
 	{
-		money = currentMoney;
-		manorId = castleId;
+		_money = currentMoney;
+		_manorId = castleId;
 
 		if (seeds != null && seeds.size() > 0)
 		{
-			list = new ArrayList<>();
-			list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
+			_list = new ArrayList<>();
+			_list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
 					.map(s -> new Seed(s.getId(), s.getCanProduce(), s.getPrice())).collect(Collectors.toList()));
 		}
 	}
@@ -63,18 +64,18 @@ public final class BuyListSeed extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(money); // current money
-		writeD(manorId); // manor id
+		writeQ(_money); // current money
+		writeD(_manorId); // manor id
 
-		if (list != null && list.size() > 0)
+		if (_list != null && _list.size() > 0)
 		{
-			writeH(list.size()); // list length
-			for (Seed s : list)
+			writeH(_list.size()); // list length
+			for (Seed s : _list)
 			{
-				writeD(s.itemId);
-				writeD(s.itemId);
+				writeD(s._itemId);
+				writeD(s._itemId);
 				writeD(0x00);
-				writeQ(s.count); // item count
+				writeQ(s._count); // item count
 				writeH(0x05); // Custom Type 2
 				writeH(0x00); // Custom Type 1
 				writeH(0x00); // Equipped
@@ -94,9 +95,9 @@ public final class BuyListSeed extends L2GameServerPacket
 				writeH(0x00);
 				writeH(0x00);
 				writeH(0x00);
-				writeQ(s.price); // price
+				writeQ(s._price); // price
 			}
-			list.clear();
+			_list.clear();
 		}
 		else
 		{
@@ -106,15 +107,15 @@ public final class BuyListSeed extends L2GameServerPacket
 
 	private static class Seed
 	{
-		public final int itemId;
-		public final long count;
-		public final long price;
+		public final int _itemId;
+		public final long _count;
+		public final long _price;
 
 		public Seed(int itemId, long count, long price)
 		{
-			this.itemId = itemId;
-			this.count = count;
-			this.price = price;
+			_itemId = itemId;
+			_count = count;
+			_price = price;
 		}
 	}
 }

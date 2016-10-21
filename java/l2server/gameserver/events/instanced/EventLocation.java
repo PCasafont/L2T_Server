@@ -4,7 +4,6 @@ import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.zone.type.L2TenkaiEventZone;
 import l2server.util.Point3D;
 import l2server.util.xml.XmlNode;
-import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -13,24 +12,24 @@ import java.util.ArrayList;
  */
 public class EventLocation
 {
-	@Getter private final int id;
-	@Getter private final String name;
-	private final ArrayList<Point3D> spawns;
-	@Getter private final int globalZ;
-	@Getter private final int maxTeamPlayers;
-	@Getter private final boolean hill;
+	private final int _id;
+	private final String _name;
+	private final ArrayList<Point3D> _spawns;
+	private final int _globalZ;
+	private final int _maxTeamPlayers;
+	private final boolean _hill;
 
-	private L2TenkaiEventZone zone = null;
+	private L2TenkaiEventZone _zone = null;
 
 	public EventLocation(XmlNode node)
 	{
-		id = node.getInt("id");
-		name = node.getString("name");
-		globalZ = node.getInt("globalZ");
-		maxTeamPlayers = node.getInt("maxTeamPlayers");
-		hill = node.getBool("hill", false);
+		_id = node.getInt("id");
+		_name = node.getString("name");
+		_globalZ = node.getInt("globalZ");
+		_maxTeamPlayers = node.getInt("maxTeamPlayers");
+		_hill = node.getBool("hill", false);
 
-		spawns = new ArrayList<>();
+		_spawns = new ArrayList<>();
 		for (XmlNode subNode : node.getChildren())
 		{
 			if (subNode.getName().equals("spawn"))
@@ -38,26 +37,51 @@ public class EventLocation
 				int x = subNode.getInt("x");
 				int y = subNode.getInt("y");
 				int z = subNode.getInt("z");
-				spawns.add(new Point3D(x, y, z));
+				_spawns.add(new Point3D(x, y, z));
 			}
 		}
 	}
 
 	public int getMaxPlayers()
 	{
-		return maxTeamPlayers * spawns.size();
+		return _maxTeamPlayers * _spawns.size();
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public String getName()
+	{
+		return _name;
+	}
+
+	public boolean isHill()
+	{
+		return _hill;
+	}
+
+	public int getGlobalZ()
+	{
+		return _globalZ;
 	}
 
 	public int getTeamCount()
 	{
-		return spawns.size();
+		return _spawns.size();
+	}
+
+	public int getMaxTeamPlayers()
+	{
+		return _maxTeamPlayers;
 	}
 
 	public Point3D getSpawn(int id)
 	{
-		if (id < spawns.size())
+		if (id < _spawns.size())
 		{
-			return spawns.get(id);
+			return _spawns.get(id);
 		}
 
 		return new Point3D(0, 0, 0);
@@ -65,11 +89,11 @@ public class EventLocation
 
 	public L2TenkaiEventZone getZone()
 	{
-		if (zone == null)
+		if (_zone == null)
 		{
-			zone = ZoneManager.getInstance().getZoneById(id + L2TenkaiEventZone.BASE_ID, L2TenkaiEventZone.class);
+			_zone = ZoneManager.getInstance().getZoneById(_id + L2TenkaiEventZone.BASE_ID, L2TenkaiEventZone.class);
 		}
 
-		return zone;
+		return _zone;
 	}
 }

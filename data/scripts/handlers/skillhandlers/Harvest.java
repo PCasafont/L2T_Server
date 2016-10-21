@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.logging.Logger;
@@ -39,7 +38,7 @@ import java.util.logging.Logger;
  */
 public class Harvest implements ISkillHandler
 {
-	private static Logger log = Logger.getLogger(Harvest.class.getName());
+	private static Logger _log = Logger.getLogger(Harvest.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.HARVEST};
 
@@ -63,7 +62,7 @@ public class Harvest implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			Log.info("Casting harvest");
+			_log.info("Casting harvest");
 		}
 
 		L2MonsterInstance target;

@@ -22,16 +22,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class SendTradeRequest extends L2GameServerPacket
 {
-	private int senderID;
+	private int _senderID;
 
 	public SendTradeRequest(int senderID)
 	{
-		this.senderID = senderID;
+		_senderID = senderID;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(senderID);
+		writeD(_senderID);
 	}
 }

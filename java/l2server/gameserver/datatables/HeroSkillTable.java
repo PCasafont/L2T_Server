@@ -22,34 +22,34 @@ import l2server.gameserver.model.L2Skill;
  */
 public class HeroSkillTable
 {
-	private static final L2Skill[] heroSkills = new L2Skill[5];
-	private static final int[] heroSkillsId = {395, 396, 1374, 1375, 1376};
+	private static final L2Skill[] _heroSkills = new L2Skill[5];
+	private static final int[] _heroSkillsId = {395, 396, 1374, 1375, 1376};
 
 	private HeroSkillTable()
 	{
-		for (int i = 0; i < heroSkillsId.length; i++)
+		for (int i = 0; i < _heroSkillsId.length; i++)
 		{
-			heroSkills[i] = SkillTable.getInstance().getInfo(heroSkillsId[i], 1);
+			_heroSkills[i] = SkillTable.getInstance().getInfo(_heroSkillsId[i], 1);
 		}
 	}
 
 	public static HeroSkillTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public static L2Skill[] getHeroSkills()
 	{
-		return heroSkills;
+		return _heroSkills;
 	}
 
 	public static boolean isHeroSkill(int skillid)
 	{
 		/*
-		 * Do not perform checks directly on L2Skill array,
+         * Do not perform checks directly on L2Skill array,
 		 * it will cause errors due to SkillTable not initialized
 		 */
-		for (int id : heroSkillsId)
+		for (int id : _heroSkillsId)
 		{
 			if (id == skillid)
 			{
@@ -63,6 +63,6 @@ public class HeroSkillTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final HeroSkillTable instance = new HeroSkillTable();
+		protected static final HeroSkillTable _instance = new HeroSkillTable();
 	}
 }

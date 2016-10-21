@@ -40,15 +40,15 @@ import java.util.logging.Logger;
 
 public class RegionBBSManager extends BaseBBSManager
 {
-	private static Logger logChat = Logger.getLogger("chat");
+	private static Logger _logChat = Logger.getLogger("chat");
 
 	private static final Comparator<L2PcInstance> PLAYER_NAME_COMPARATOR =
 			(p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName());
 
-	private int onlineCount = 0;
-	private int onlineCountGm = 0;
-	private static Map<Integer, List<L2PcInstance>> onlinePlayers = new ConcurrentHashMap<>();
-	private static Map<Integer, Map<String, String>> communityPages = new ConcurrentHashMap<>();
+	private int _onlineCount = 0;
+	private int _onlineCountGm = 0;
+	private static Map<Integer, List<L2PcInstance>> _onlinePlayers = new ConcurrentHashMap<>();
+	private static Map<Integer, Map<String, String>> _communityPages = new ConcurrentHashMap<>();
 
 	@Override
 	public void parsecmd(String command, L2PcInstance activeChar)
@@ -207,6 +207,7 @@ public class RegionBBSManager extends BaseBBSManager
 
 			try
 			{
+
 				L2PcInstance receiver = L2World.getInstance().getPlayer(ar2);
 				if (receiver == null)
 				{
@@ -244,7 +245,7 @@ public class RegionBBSManager extends BaseBBSManager
 					record.setParameters(new Object[]{
 							"TELL", "[" + activeChar.getName() + " to " + receiver.getName() + "]"
 					});
-					logChat.log(record);
+					_logChat.log(record);
 				}
 				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), Say2.TELL, activeChar.getName(), ar3);
 				if (!receiver.isSilenceMode() && !BlockList.isBlocked(receiver, activeChar))
@@ -298,16 +299,16 @@ public class RegionBBSManager extends BaseBBSManager
 
 		Collections.sort(sortedPlayers, PLAYER_NAME_COMPARATOR);
 
-		onlinePlayers.clear();
-		onlineCount = 0;
-		onlineCountGm = 0;
+		_onlinePlayers.clear();
+		_onlineCount = 0;
+		_onlineCountGm = 0;
 
 		for (L2PcInstance player : sortedPlayers)
 		{
 			addOnlinePlayer(player);
 		}
 
-		communityPages.clear();
+		_communityPages.clear();
 		writeCommunityPages();
 	}
 
@@ -320,18 +321,18 @@ public class RegionBBSManager extends BaseBBSManager
 	{
 		boolean added = false;
 
-		for (List<L2PcInstance> page : onlinePlayers.values())
+		for (List<L2PcInstance> page : _onlinePlayers.values())
 		{
 			if (page.size() < Config.NAME_PAGE_SIZE_COMMUNITYBOARD)
 			{
 				if (!page.contains(player))
 				{
 					page.add(player);
-					if (!player.getAppearance().isInvisible())
+					if (!player.getAppearance().getInvisible())
 					{
-						onlineCount++;
+						_onlineCount++;
 					}
-					onlineCountGm++;
+					_onlineCountGm++;
 				}
 				added = true;
 				break;
@@ -346,15 +347,15 @@ public class RegionBBSManager extends BaseBBSManager
 		if (!added)
 		{
 			List<L2PcInstance> temp = new ArrayList<>();
-			int page = onlinePlayers.size() + 1;
+			int page = _onlinePlayers.size() + 1;
 			if (temp.add(player))
 			{
-				onlinePlayers.put(page, temp);
-				if (!player.getAppearance().isInvisible())
+				_onlinePlayers.put(page, temp);
+				if (!player.getAppearance().getInvisible())
 				{
-					onlineCount++;
+					_onlineCount++;
 				}
-				onlineCountGm++;
+				_onlineCountGm++;
 			}
 		}
 	}
@@ -371,7 +372,7 @@ public class RegionBBSManager extends BaseBBSManager
 		final String trOpen = "<tr>";
 		final String colSpacer = "<td FIXWIDTH=15></td>";
 
-		for (int page : onlinePlayers.keySet())
+		for (int page : _onlinePlayers.keySet())
 		{
 			Map<String, String> communityPage = new HashMap<>();
 			htmlCode.setLength(0);
@@ -472,10 +473,9 @@ public class RegionBBSManager extends BaseBBSManager
 				}
 				else
 				{
-					StringUtil
-							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
-									String.valueOf(page + 1),
-									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+					StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
+							String.valueOf(page + 1),
+							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
 				htmlCode.append("</tr></table>");
 			}
@@ -509,7 +509,7 @@ public class RegionBBSManager extends BaseBBSManager
 				cell = 0;
 				for (L2PcInstance player : getOnlinePlayers(page))
 				{
-					if (player == null || player.getAppearance().isInvisible())
+					if (player == null || player.getAppearance().getInvisible())
 					{
 						continue; // Go to next
 					}
@@ -585,10 +585,9 @@ public class RegionBBSManager extends BaseBBSManager
 				}
 				else
 				{
-					StringUtil
-							.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
-									String.valueOf(page + 1),
-									"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+					StringUtil.append(htmlCode, "<td width=190><button value=\"Next\" action=\"bypass _bbsloc;page;",
+							String.valueOf(page + 1),
+							"\" width=50 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				}
 
 				htmlCode.append("</tr></table>");
@@ -598,7 +597,7 @@ public class RegionBBSManager extends BaseBBSManager
 
 			communityPage.put("pl", htmlCode.toString());
 
-			communityPages.put(page, communityPage);
+			_communityPages.put(page, communityPage);
 		}
 	}
 
@@ -612,10 +611,10 @@ public class RegionBBSManager extends BaseBBSManager
 	{
 		if (type.equalsIgnoreCase("gm"))
 		{
-			return onlineCountGm;
+			return _onlineCountGm;
 		}
 
-		return onlineCount;
+		return _onlineCount;
 	}
 
 	/**
@@ -626,7 +625,7 @@ public class RegionBBSManager extends BaseBBSManager
 	 */
 	private List<L2PcInstance> getOnlinePlayers(int page)
 	{
-		return onlinePlayers.get(page);
+		return _onlinePlayers.get(page);
 	}
 
 	/**
@@ -638,9 +637,9 @@ public class RegionBBSManager extends BaseBBSManager
 	 */
 	public String getCommunityPage(int page, String type)
 	{
-		if (communityPages.get(page) != null)
+		if (_communityPages.get(page) != null)
 		{
-			return communityPages.get(page).get(type);
+			return _communityPages.get(page).get(type);
 		}
 
 		return null;
@@ -653,11 +652,11 @@ public class RegionBBSManager extends BaseBBSManager
 	 */
 	public static RegionBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final RegionBBSManager instance = new RegionBBSManager();
+		protected static final RegionBBSManager _instance = new RegionBBSManager();
 	}
 }

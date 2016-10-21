@@ -20,19 +20,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class ExTacticalSign extends L2GameServerPacket
 {
-	private int objectId;
-	private int type;
+	private int _objectId;
+	private int _type;
 
 	public ExTacticalSign(int objId, int type)
 	{
-		objectId = objId;
-		this.type = type;
+		_objectId = objId;
+		_type = type;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(type);
+		writeD(_objectId);
+		writeD(_type);
 	}
 }

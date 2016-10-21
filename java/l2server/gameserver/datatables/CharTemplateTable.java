@@ -34,16 +34,17 @@ import java.io.File;
  */
 public final class CharTemplateTable implements Reloadable
 {
+
 	public static CharTemplateTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
-	private final L2PcTemplate[] templates;
+	private final L2PcTemplate[] _templates;
 
 	private CharTemplateTable()
 	{
-		templates = new L2PcTemplate[Race.values().length * 2];
+		_templates = new L2PcTemplate[Race.values().length * 2];
 		load();
 
 		ReloadableManager.getInstance().register("chartemplates", this);
@@ -69,6 +70,7 @@ public final class CharTemplateTable implements Reloadable
 		{
 			if (n.getName().equalsIgnoreCase("list"))
 			{
+
 				for (XmlNode d : n.getChildren())
 				{
 					if (d.getName().equalsIgnoreCase("race"))
@@ -140,13 +142,13 @@ public final class CharTemplateTable implements Reloadable
 									}
 								}
 
-								templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
+								_templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
 								count++;
 							}
 							else if (raceNode.getName().equalsIgnoreCase("skill"))
 							{
-								templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
+								_templates[raceId * 2].addSkill(raceNode.getInt("id"));
+								_templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
 							}
 						}
 					}
@@ -158,7 +160,7 @@ public final class CharTemplateTable implements Reloadable
 
 						if (ItemTable.getInstance().getTemplate(itemId) != null)
 						{
-							for (L2PcTemplate pct : templates)
+							for (L2PcTemplate pct : _templates)
 							{
 								if (pct != null)
 								{
@@ -183,7 +185,7 @@ public final class CharTemplateTable implements Reloadable
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			player.setTemplate(templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
+			player.setTemplate(_templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;
@@ -197,12 +199,12 @@ public final class CharTemplateTable implements Reloadable
 
 	public L2PcTemplate getTemplate(int tId)
 	{
-		return templates[tId];
+		return _templates[tId];
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CharTemplateTable instance = new CharTemplateTable();
+		protected static final CharTemplateTable _instance = new CharTemplateTable();
 	}
 }

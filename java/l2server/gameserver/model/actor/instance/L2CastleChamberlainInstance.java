@@ -50,8 +50,8 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 	protected static final int COND_ALL_FALSE = 0;
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	protected static final int COND_OWNER = 2;
-	private int preDay;
-	private int preHour;
+	private int _preDay;
+	private int _preHour;
 
 	public L2CastleChamberlainInstance(int objectId, L2NpcTemplate template)
 	{
@@ -1104,7 +1104,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 						{
 							if (!(skill.getMpConsume() > getCurrentMp()))
 							{
-								doCast(skill);
+								this.doCast(skill);
 							}
 							else
 							{
@@ -1192,13 +1192,13 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 					case 4:
 						break;
 					case 1:
-						preDay = Integer.parseInt(st.nextToken());
+						_preDay = Integer.parseInt(st.nextToken());
 						break;
 					case 2:
 						isAfternoon = Boolean.parseBoolean(st.nextToken());
 						break;
 					case 3:
-						preHour = Integer.parseInt(st.nextToken());
+						_preHour = Integer.parseInt(st.nextToken());
 						break;
 					default:
 						break;
@@ -1209,7 +1209,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 				{
 					if (Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
 					{
-						getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, preDay);
+						getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, _preDay);
 					}
 					else
 					{
@@ -1217,7 +1217,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 					}
 					if (Config.CL_SET_SIEGE_TIME_LIST.contains("hour"))
 					{
-						getCastle().getSiegeDate().set(Calendar.HOUR_OF_DAY, preHour);
+						getCastle().getSiegeDate().set(Calendar.HOUR_OF_DAY, _preHour);
 					}
 					if (Config.CL_SET_SIEGE_TIME_LIST.contains("minute"))
 					{

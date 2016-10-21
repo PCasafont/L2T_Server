@@ -5,19 +5,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class NpcInfoState extends L2GameServerPacket
 {
-	private byte state;
-	private int objectId;
+	private byte _state;
+	private int _objectId;
 
 	public NpcInfoState(byte state, int objectId)
 	{
-		this.state = state;
-		this.objectId = objectId;
+		_state = state;
+		_objectId = objectId;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeC(state);
-		writeD(objectId);
+		writeC(_state);
+		writeD(_objectId);
 	}
 }

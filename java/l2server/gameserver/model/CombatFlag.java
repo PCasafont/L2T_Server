@@ -27,36 +27,36 @@ public class CombatFlag
 {
 	//
 
-	protected L2PcInstance player = null;
+	protected L2PcInstance _player = null;
 	public int playerId = 0;
 
 	public L2ItemInstance itemInstance;
 
-	public Location location;
-	public int itemId;
-	private L2ItemInstance item = null;
+	public Location _location;
+	public int _itemId;
+	private L2ItemInstance _item = null;
 
 	// =========================================================
 	// Constructor
 	public CombatFlag(int x, int y, int z, int heading, int item_id)
 	{
-		location = new Location(x, y, z, heading);
-		itemId = item_id;
+		_location = new Location(x, y, z, heading);
+		_itemId = item_id;
 	}
 
 	public synchronized void spawnMe()
 	{
 		// Init the dropped L2ItemInstance and add it in the world as a visible object at the position where mob was last
-		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", itemId, 1, null, null);
+		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", _itemId, 1, null, null);
 		// Remove it from the world because spawnme will insert it again
 		L2World.getInstance().removeObject(i);
-		i.spawnMe(location.getX(), location.getY(), location.getZ());
+		i.spawnMe(_location.getX(), _location.getY(), _location.getZ());
 		itemInstance = i;
 	}
 
 	public synchronized void unSpawnMe()
 	{
-		if (player != null)
+		if (_player != null)
 		{
 			dropIt();
 		}
@@ -76,45 +76,45 @@ public class CombatFlag
 		}
 
 		// Player holding it data
-		this.player = player;
-		playerId = this.player.getObjectId();
+		_player = player;
+		playerId = _player.getObjectId();
 		itemInstance = null;
 
 		// Equip with the weapon
-		this.item = item;
-		this.player.getInventory().equipItem(this.item);
+		_item = item;
+		_player.getInventory().equipItem(_item);
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED);
-		sm.addItemName(this.item);
-		this.player.sendPacket(sm);
+		sm.addItemName(_item);
+		_player.sendPacket(sm);
 
 		// Refresh inventory
 		if (!Config.FORCE_INVENTORY_UPDATE)
 		{
 			InventoryUpdate iu = new InventoryUpdate();
-			iu.addItem(this.item);
-			this.player.sendPacket(iu);
+			iu.addItem(_item);
+			_player.sendPacket(iu);
 		}
 		else
 		{
-			this.player.sendPacket(new ItemList(this.player, false));
+			_player.sendPacket(new ItemList(_player, false));
 		}
 
 		// Refresh player stats
-		this.player.broadcastUserInfo();
-		this.player.setCombatFlagEquipped(true);
+		_player.broadcastUserInfo();
+		_player.setCombatFlagEquipped(true);
 		return true;
 	}
 
 	public void dropIt()
 	{
 		// Reset player stats
-		player.setCombatFlagEquipped(false);
-		int slot = player.getInventory().getSlotFromItem(item);
-		player.getInventory().unEquipItemInBodySlot(slot);
-		player.destroyItem("CombatFlag", item, null, true);
-		item = null;
-		player.broadcastUserInfo();
-		player = null;
+		_player.setCombatFlagEquipped(false);
+		int slot = _player.getInventory().getSlotFromItem(_item);
+		_player.getInventory().unEquipItemInBodySlot(slot);
+		_player.destroyItem("CombatFlag", _item, null, true);
+		_item = null;
+		_player.broadcastUserInfo();
+		_player = null;
 		playerId = 0;
 	}
 }

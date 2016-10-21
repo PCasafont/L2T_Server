@@ -49,6 +49,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
+
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
 		int id = 0;
 

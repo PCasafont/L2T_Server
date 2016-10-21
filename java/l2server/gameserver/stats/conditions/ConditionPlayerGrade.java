@@ -36,7 +36,7 @@ public final class ConditionPlayerGrade extends Condition
 	public static final int COND_S80_GRADE = 0x0040;
 	public static final int COND_S84_GRADE = 0x0080;
 
-	private final int value;
+	private final int _value;
 
 	/**
 	 * Instantiates a new condition player grade.
@@ -45,7 +45,7 @@ public final class ConditionPlayerGrade extends Condition
 	 */
 	public ConditionPlayerGrade(int value)
 	{
-		this.value = value;
+		_value = value;
 	}
 
 	/* (non-Javadoc)
@@ -58,7 +58,7 @@ public final class ConditionPlayerGrade extends Condition
 		{
 			byte expIndex = (byte) ((L2PcInstance) env.player).getExpertiseIndex();
 
-			return value == expIndex;
+			return _value == expIndex;
 		}
 		return false;
 	}

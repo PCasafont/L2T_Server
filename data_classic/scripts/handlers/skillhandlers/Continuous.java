@@ -24,11 +24,7 @@ import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
@@ -169,15 +165,15 @@ public class Continuous implements ISkillHandler
 				{
 					if (skill.isMagic())
 					{
-						ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
+						ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
 								L2ItemInstance.CHARGED_NONE;
-						((L2Npc) activeChar).soulshotcharged = false;
+						((L2Npc) activeChar)._soulshotcharged = false;
 					}
 					else
 					{
-						ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
+						ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
 								L2ItemInstance.CHARGED_NONE;
-						((L2Npc) activeChar).spiritshotcharged = false;
+						((L2Npc) activeChar)._spiritshotcharged = false;
 					}
 				}
 

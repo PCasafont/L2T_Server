@@ -15,13 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
@@ -32,11 +25,7 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -47,8 +36,14 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -153,7 +148,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			{
 				if (Config.DEBUG)
 				{
-					Log.info("admin_walk: " + e);
+					_log.info("admin_walk: " + e);
 				}
 			}
 		}
@@ -636,7 +631,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (template1 == null)
 			{
 				activeChar.sendMessage("Incorrect monster template.");
-				Log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
 				return;
 			}
 
@@ -644,7 +639,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (spawn == null)
 			{
 				activeChar.sendMessage("Incorrect monster spawn.");
-				Log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
 				return;
 			}
 			int respawnTime = spawn.getRespawnDelay() / 1000;
@@ -680,8 +675,8 @@ public class AdminTeleport implements IAdminCommandHandler
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-					Log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
+					_log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
+					_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
 							target.getObjectId());
 				}
 			}

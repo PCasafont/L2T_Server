@@ -26,6 +26,7 @@ import l2server.gameserver.taskmanager.TaskTypes;
  */
 public class TaskGlobalVariablesSave extends Task
 {
+
 	public static final String NAME = "global_varibales_save";
 
 	/**

@@ -30,6 +30,7 @@ import java.util.logging.LogRecord;
 
 public class FileLogFormatter extends Formatter
 {
+
 	/*
 	 * (non-Javadoc)
 	 *

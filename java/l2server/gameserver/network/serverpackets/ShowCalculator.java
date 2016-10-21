@@ -25,18 +25,18 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShowCalculator extends L2GameServerPacket
 {
-	private int calculatorId;
+	private int _calculatorId;
 
 	/**
 	 */
 	public ShowCalculator(int calculatorId)
 	{
-		this.calculatorId = calculatorId;
+		_calculatorId = calculatorId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(calculatorId);
+		writeD(_calculatorId);
 	}
 }

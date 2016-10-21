@@ -31,22 +31,22 @@ import java.util.logging.Level;
  */
 public abstract class FloodProtectedListener extends Thread
 {
-	private Map<String, ForeignConnection> floodProtection = new HashMap<>();
-	private String listenIp;
-	private int port;
-	private ServerSocket serverSocket;
+	private Map<String, ForeignConnection> _floodProtection = new HashMap<>();
+	private String _listenIp;
+	private int _port;
+	private ServerSocket _serverSocket;
 
 	public FloodProtectedListener(String listenIp, int port) throws IOException
 	{
-		this.port = port;
-		this.listenIp = listenIp;
-		if (this.listenIp.equals("*"))
+		_port = port;
+		_listenIp = listenIp;
+		if (_listenIp.equals("*"))
 		{
-			serverSocket = new ServerSocket(this.port);
+			_serverSocket = new ServerSocket(_port);
 		}
 		else
 		{
-			serverSocket = new ServerSocket(this.port, 50, InetAddress.getByName(this.listenIp));
+			_serverSocket = new ServerSocket(_port, 50, InetAddress.getByName(_listenIp));
 		}
 	}
 
@@ -59,10 +59,10 @@ public abstract class FloodProtectedListener extends Thread
 		{
 			try
 			{
-				connection = serverSocket.accept();
+				connection = _serverSocket.accept();
 				if (Config.FLOOD_PROTECTION)
 				{
-					ForeignConnection fConnection = floodProtection.get(connection.getInetAddress().getHostAddress());
+					ForeignConnection fConnection = _floodProtection.get(connection.getInetAddress().getHostAddress());
 					if (fConnection != null)
 					{
 						fConnection.connectionNumber += 1;
@@ -93,7 +93,7 @@ public abstract class FloodProtectedListener extends Thread
 					else
 					{
 						fConnection = new ForeignConnection(System.currentTimeMillis());
-						floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
+						_floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
 					}
 				}
 				addClient(connection);
@@ -112,7 +112,7 @@ public abstract class FloodProtectedListener extends Thread
 					// shutdown?
 					try
 					{
-						serverSocket.close();
+						_serverSocket.close();
 					}
 					catch (IOException io)
 					{
@@ -148,13 +148,13 @@ public abstract class FloodProtectedListener extends Thread
 		{
 			return;
 		}
-		ForeignConnection fConnection = floodProtection.get(ip);
+		ForeignConnection fConnection = _floodProtection.get(ip);
 		if (fConnection != null)
 		{
 			fConnection.connectionNumber -= 1;
 			if (fConnection.connectionNumber == 0)
 			{
-				floodProtection.remove(ip);
+				_floodProtection.remove(ip);
 			}
 		}
 		else
@@ -167,7 +167,7 @@ public abstract class FloodProtectedListener extends Thread
 	{
 		try
 		{
-			serverSocket.close();
+			_serverSocket.close();
 		}
 		catch (IOException e)
 		{

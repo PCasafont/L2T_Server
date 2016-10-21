@@ -41,7 +41,7 @@ public class ChatGlobal implements IChatHandler
 {
 	private static final int[] COMMAND_IDS = {25};
 
-	private TIntIntHashMap messages = new TIntIntHashMap();
+	private TIntIntHashMap _messages = new TIntIntHashMap();
 
 	public ChatGlobal()
 	{
@@ -50,9 +50,9 @@ public class ChatGlobal implements IChatHandler
 			@Override
 			public void run()
 			{
-				synchronized (messages)
+				synchronized (_messages)
 				{
-					messages.clear();
+					_messages.clear();
 				}
 			}
 		}, 1000L, 24L * 3600L * 1000L);
@@ -72,15 +72,15 @@ public class ChatGlobal implements IChatHandler
 		}
 
 		int messages = 0;
-		synchronized (this.messages)
+		synchronized (_messages)
 		{
-			if (this.messages.containsKey(activeChar.getObjectId()))
+			if (_messages.containsKey(activeChar.getObjectId()))
 			{
-				messages = this.messages.get(activeChar.getObjectId());
+				messages = _messages.get(activeChar.getObjectId());
 			}
 
 			messages++;
-			this.messages.put(activeChar.getObjectId(), messages);
+			_messages.put(activeChar.getObjectId(), messages);
 		}
 
 		int maxMessages = 20 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);

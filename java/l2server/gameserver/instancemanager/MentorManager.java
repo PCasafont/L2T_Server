@@ -103,12 +103,12 @@ public class MentorManager
 
 	public static MentorManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MentorManager instance = new MentorManager();
+		protected static final MentorManager _instance = new MentorManager();
 	}
 }

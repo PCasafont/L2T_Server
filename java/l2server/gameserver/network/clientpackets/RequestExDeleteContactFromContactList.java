@@ -26,12 +26,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 {
-	private String name;
+	private String _name;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
+		_name = readS();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 			return;
 		}
 
-		if (name == null)
+		if (_name == null)
 		{
 			return;
 		}
@@ -53,6 +53,6 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 			return;
 		}
 
-		activeChar.getContactList().remove(name);
+		activeChar.getContactList().remove(_name);
 	}
 }

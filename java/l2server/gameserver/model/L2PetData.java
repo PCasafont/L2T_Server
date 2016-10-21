@@ -17,8 +17,6 @@ package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.datatables.SkillTable;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,26 +28,31 @@ import java.util.List;
  */
 public class L2PetData
 {
-	private TIntObjectHashMap<L2PetLevelData> levelStats = new TIntObjectHashMap<>();
-	private List<L2PetSkillLearn> skills = new ArrayList<>();
+	private TIntObjectHashMap<L2PetLevelData> _levelStats = new TIntObjectHashMap<>();
+	private List<L2PetSkillLearn> _skills = new ArrayList<>();
 
-	@Getter private int load = 20000;
-	@Setter private int _hungry_limit = 1;
-	private int minlvl = Byte.MAX_VALUE;
-	@Getter private int[] food = {};
+	private int _load = 20000;
+	private int _hungry_limit = 1;
+	private int _minlvl = Byte.MAX_VALUE;
+	private int[] _food = {};
 
 	public void addNewStat(L2PetLevelData data, int level)
 	{
-		if (minlvl > level)
+		if (_minlvl > level)
 		{
-			minlvl = level;
+			_minlvl = level;
 		}
-		levelStats.put(level, data);
+		_levelStats.put(level, data);
 	}
 
 	public L2PetLevelData getPetLevelData(int petLevel)
 	{
-		return levelStats.get(petLevel);
+		return _levelStats.get(petLevel);
+	}
+
+	public int getLoad()
+	{
+		return _load;
 	}
 
 	public int getHungry_limit()
@@ -59,30 +62,40 @@ public class L2PetData
 
 	public int getMinLevel()
 	{
-		return minlvl;
+		return _minlvl;
 	}
 
-	public void set_load(int load)
+	public int[] getFood()
 	{
-		this.load = load;
+		return _food;
 	}
 
-	public void set_food(int[] food)
+	public void set_load(int _load)
 	{
-		this.food = food;
+		this._load = _load;
+	}
+
+	public void set_hungry_limit(int _hungry_limit)
+	{
+		this._hungry_limit = _hungry_limit;
+	}
+
+	public void set_food(int[] _food)
+	{
+		this._food = _food;
 	}
 
 	//SKILS
 
 	public void addNewSkill(int id, int lvl, int petLvl)
 	{
-		skills.add(new L2PetSkillLearn(id, lvl, petLvl));
+		_skills.add(new L2PetSkillLearn(id, lvl, petLvl));
 	}
 
 	public int getAvailableLevel(int skillId, int petLvl)
 	{
 		int lvl = 0;
-		for (L2PetSkillLearn temp : skills)
+		for (L2PetSkillLearn temp : _skills)
 		{
 			if (temp.getId() != skillId)
 			{
@@ -124,20 +137,35 @@ public class L2PetData
 
 	public List<L2PetSkillLearn> getAvailableSkills()
 	{
-		return skills;
+		return _skills;
 	}
 
 	public static final class L2PetSkillLearn
 	{
-		@Getter private final int id;
-		@Getter private final int level;
-		@Getter private final int minLevel;
+		private final int _id;
+		private final int _level;
+		private final int _minLevel;
 
 		public L2PetSkillLearn(int id, int lvl, int minLvl)
 		{
-			this.id = id;
-			level = lvl;
-			minLevel = minLvl;
+			_id = id;
+			_level = lvl;
+			_minLevel = minLvl;
+		}
+
+		public int getId()
+		{
+			return _id;
+		}
+
+		public int getLevel()
+		{
+			return _level;
+		}
+
+		public int getMinLevel()
+		{
+			return _minLevel;
 		}
 	}
 }

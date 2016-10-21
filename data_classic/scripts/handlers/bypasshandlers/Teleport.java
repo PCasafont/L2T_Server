@@ -15,11 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IBypassHandler;
@@ -32,8 +27,12 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.StringTokenizer;
 
 public class Teleport implements IBypassHandler
 {
@@ -77,7 +76,7 @@ public class Teleport implements IBypassHandler
 			}
 			catch (Exception e)
 			{
-				Log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
+				_log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
 						") - failed to parse raw teleport coordinates from html");
 				e.printStackTrace();
 			}

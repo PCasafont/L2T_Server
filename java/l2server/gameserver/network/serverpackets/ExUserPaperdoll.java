@@ -26,12 +26,12 @@ import java.nio.ByteOrder;
  */
 public final class ExUserPaperdoll extends L2GameServerPacket
 {
-	private int objectId;
-	private byte[] data;
+	private int _objectId;
+	private byte[] _data;
 
 	public ExUserPaperdoll(L2PcInstance character)
 	{
-		objectId = character.getObjectId();
+		_objectId = character.getObjectId();
 		int airShipHelm = 0;
 		if (character.isInAirShip() && character.getAirShip().isCaptain(character))
 		{
@@ -314,14 +314,14 @@ public final class ExUserPaperdoll extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		data = new byte[size];
-		buffer.get(data, 0, size);
+		_data = new byte[size];
+		buffer.get(_data, 0, size);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeB(data);
+		writeD(_objectId);
+		writeB(_data);
 	}
 }

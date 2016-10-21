@@ -32,17 +32,17 @@ public class Q10363_RequestOfTheSeeker extends Quest
 	public static String qn = "Q10363_RequestOfTheSeeker";
 
 	// NPC
-	private int nagel = 33450;
-	private int celin = 33451;
-	private int[] bodies = {32961, 32962, 32963, 32964};
+	private int _nagel = 33450;
+	private int _celin = 33451;
+	private int[] _bodies = {32961, 32962, 32963, 32964};
 
 	public Q10363_RequestOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(nagel);
-		addTalkId(nagel);
-		addTalkId(celin);
-		for (int npcId : bodies)
+		addStartNpc(_nagel);
+		addTalkId(_nagel);
+		addTalkId(_celin);
+		for (int npcId : _bodies)
 		{
 			addEventId(npcId, QuestEventType.ON_SOCIAL_ACTION);
 		}
@@ -59,13 +59,13 @@ public class Q10363_RequestOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == nagel && event.equalsIgnoreCase("33450-03.htm"))
+		if (npc.getNpcId() == _nagel && event.equalsIgnoreCase("33450-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
+		else if (npc.getNpcId() == _celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
 		{
 			st.unset("cond");
 			st.giveItems(1060, 100);
@@ -91,7 +91,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == nagel)
+		if (npc.getNpcId() == _nagel)
 		{
 			switch (st.getState())
 			{
@@ -126,7 +126,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == celin && st.getInt("cond") == 7)
+		else if (npc.getNpcId() == _celin && st.getInt("cond") == 7)
 		{
 			htmltext = "33451-01.htm";
 		}
@@ -150,7 +150,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 				if (actionId == 13)
 				{
 					boolean isCorpse = false;
-					for (int id : bodies)
+					for (int id : _bodies)
 					{
 						if (id == npc.getNpcId())
 						{

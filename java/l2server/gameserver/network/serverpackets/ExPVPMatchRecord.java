@@ -5,21 +5,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPVPMatchRecord extends L2GameServerPacket
 {
-	private int kills;
-	private int teamsSize;
+	private int _kills;
+	private int _teamsSize;
 
 	public ExPVPMatchRecord(int kills, int teamsSize)
 	{
-		this.kills = kills;
-		this.teamsSize = teamsSize;
+		_kills = kills;
+		_teamsSize = teamsSize;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(kills);
+		writeD(_kills);
 		writeD(0x00); // ranking2
-		writeD(teamsSize);
+		writeD(_teamsSize);
 		writeD(0x00); // ranking1
 		writeD(0x00); // kills3
 	}

@@ -85,24 +85,24 @@ public abstract class BaseBBSManager
 	 */
 	protected void send1002(L2PcInstance activeChar, String string, String string2, String string3)
 	{
-		List<String> arg = new ArrayList<>();
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add("0");
-		arg.add(activeChar.getName());
-		arg.add(Integer.toString(activeChar.getObjectId()));
-		arg.add(activeChar.getAccountName());
-		arg.add("9");
-		arg.add(string2);
-		arg.add(string2);
-		arg.add(string);
-		arg.add(string3);
-		arg.add(string3);
-		arg.add("0");
-		arg.add("0");
-		activeChar.sendPacket(new ShowBoard(arg));
+		List<String> _arg = new ArrayList<>();
+		_arg.add("0");
+		_arg.add("0");
+		_arg.add("0");
+		_arg.add("0");
+		_arg.add("0");
+		_arg.add("0");
+		_arg.add(activeChar.getName());
+		_arg.add(Integer.toString(activeChar.getObjectId()));
+		_arg.add(activeChar.getAccountName());
+		_arg.add("9");
+		_arg.add(string2);
+		_arg.add(string2);
+		_arg.add(string);
+		_arg.add(string3);
+		_arg.add(string3);
+		_arg.add("0");
+		_arg.add("0");
+		activeChar.sendPacket(new ShowBoard(_arg));
 	}
 }

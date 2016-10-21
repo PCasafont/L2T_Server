@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,32 +25,37 @@ import java.util.Map;
  */
 public class BossManager
 {
-	@Getter private static Map<Integer, L2RaidBossInstance> bosses = new HashMap<>();
+	private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<>();
 
 	public static BossManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void registerBoss(L2RaidBossInstance boss)
 	{
-		bosses.put(boss.getNpcId(), boss);
+		_bosses.put(boss.getNpcId(), boss);
+	}
+
+	public Map<Integer, L2RaidBossInstance> getBosses()
+	{
+		return _bosses;
 	}
 
 	public L2RaidBossInstance getBoss(int id)
 	{
-		return bosses.get(id);
+		return _bosses.get(id);
 	}
 
 	public boolean isAlive(int id)
 	{
-		L2RaidBossInstance boss = bosses.get(id);
+		L2RaidBossInstance boss = _bosses.get(id);
 		return boss != null && !boss.isDead();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final BossManager instance = new BossManager();
+		protected static final BossManager _instance = new BossManager();
 	}
 }

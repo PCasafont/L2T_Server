@@ -26,24 +26,25 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
  */
 public final class RequestShortCutReg extends L2GameClientPacket
 {
-	private int type;
-	private int id;
-	private int slot;
-	private int page;
-	private int lvl;
-	private int characterType; // 1 - player, 2 - pet
+
+	private int _type;
+	private int _id;
+	private int _slot;
+	private int _page;
+	private int _lvl;
+	private int _characterType; // 1 - player, 2 - pet
 
 	@Override
 	protected void readImpl()
 	{
-		type = readD();
+		_type = readD();
 		int slot = readD();
-		id = readD();
-		lvl = readD();
-		characterType = readD();
+		_id = readD();
+		_lvl = readD();
+		_characterType = readD();
 
-		this.slot = slot % 12;
-		page = slot / 12;
+		_slot = slot % 12;
+		_page = slot / 12;
 	}
 
 	@Override
@@ -55,17 +56,17 @@ public final class RequestShortCutReg extends L2GameClientPacket
 			return;
 		}
 
-		if (page > 10 || page < 0)
+		if (_page > 10 || _page < 0)
 		{
 			return;
 		}
 
-		switch (type)
+		switch (_type)
 		{
 			case 0x01: // item
 			case 0x02: // skill
 			{
-				L2ShortCut sc = new L2ShortCut(slot, page, type, id, lvl, characterType);
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;
@@ -74,14 +75,14 @@ public final class RequestShortCutReg extends L2GameClientPacket
 			case 0x04: // macro
 			case 0x05: // recipe
 			{
-				L2ShortCut sc = new L2ShortCut(slot, page, type, id, lvl, characterType);
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;
 			}
 			case 0x06: // Teleport Bookmark
 			{
-				L2ShortCut sc = new L2ShortCut(slot, page, type, id, lvl, characterType);
+				L2ShortCut sc = new L2ShortCut(_slot, _page, _type, _id, _lvl, _characterType);
 				activeChar.registerShortCut(sc);
 				sendPacket(new ShortCutRegister(sc));
 				break;

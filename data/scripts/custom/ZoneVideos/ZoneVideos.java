@@ -25,7 +25,7 @@ import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
 
 public class ZoneVideos extends Quest
 {
-	private static final boolean showIntroMovies = false;
+	private static final boolean _showIntroMovies = false;
 
 	private static final int[] ZONES = {523400, 523402, 523403, 523404};
 
@@ -39,7 +39,7 @@ public class ZoneVideos extends Quest
 		{
 			st = newQuestState(player);
 		}
-		if (showIntroMovies)
+		if (_showIntroMovies)
 		{
 			if (st.getGlobalQuestVar("FirstZoneVid").length() == 0)
 			{
@@ -65,7 +65,7 @@ public class ZoneVideos extends Quest
 			if (st.getGlobalQuestVar("ZoneVid" + zone.getId()).length() == 0)
 			{
 				int videoId = zone.getId() % 100;
-				if (!showIntroMovies && videoId > 100)
+				if (!_showIntroMovies && videoId > 100)
 				{
 					return null;
 				}

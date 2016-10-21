@@ -34,6 +34,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminGmChat implements IAdminCommandHandler
 {
+
 	private static final String[] ADMIN_COMMANDS = {"admin_gmchat", "admin_snoop", "admin_gmchat_menu"};
 
 	@Override

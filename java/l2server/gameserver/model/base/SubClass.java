@@ -17,8 +17,6 @@ package l2server.gameserver.model.base;
 
 import l2server.Config;
 import l2server.gameserver.datatables.PlayerClassTable;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Character Sub-Class Definition
@@ -29,40 +27,40 @@ import lombok.Setter;
  */
 public final class SubClass
 {
-	private static final byte maxLevel =
+	private static final byte _maxLevel =
 			Config.MAX_SUBCLASS_LEVEL < Config.MAX_LEVEL ? Config.MAX_SUBCLASS_LEVEL : Config.MAX_LEVEL;
 
-	private PlayerClass playerClass;
-	@Getter private long exp = Experience.getAbsoluteExp(40);
-	@Getter private long sp = 0;
-	@Getter private byte level = 40;
-	@Getter @Setter private int classIndex = 1;
-	@Setter private boolean isDual = false;
-	@Getter @Setter private int certificates = 0;
+	private PlayerClass _class;
+	private long _exp = Experience.getAbsoluteExp(40);
+	private long _sp = 0;
+	private byte _level = 40;
+	private int _classIndex = 1;
+	private boolean _isDual = false;
+	private int _certificates = 0;
 
 	public SubClass(int classId, long exp, long sp, byte level, int classIndex, boolean isDual)
 	{
-		playerClass = PlayerClassTable.getInstance().getClassById(classId);
-		this.exp = exp;
-		this.sp = sp;
-		this.level = level;
-		this.classIndex = classIndex;
-		this.isDual = isDual;
+		_class = PlayerClassTable.getInstance().getClassById(classId);
+		_exp = exp;
+		_sp = sp;
+		_level = level;
+		_classIndex = classIndex;
+		_isDual = isDual;
 	}
 
 	public SubClass(int classId, int classIndex)
 	{
 		// Used for defining a sub class using default values for XP, SP and player level.
-		playerClass = PlayerClassTable.getInstance().getClassById(classId);
-		this.classIndex = classIndex;
+		_class = PlayerClassTable.getInstance().getClassById(classId);
+		_classIndex = classIndex;
 		if (Config.STARTING_LEVEL > 40)
 		{
-			level = Config.STARTING_LEVEL;
-			if (level > getMaxLevel())
+			_level = Config.STARTING_LEVEL;
+			if (_level > getMaxLevel())
 			{
-				level = getMaxLevel();
+				_level = getMaxLevel();
 			}
-			exp = Experience.getAbsoluteExp(level);
+			_exp = Experience.getAbsoluteExp(_level);
 		}
 	}
 
@@ -72,38 +70,63 @@ public final class SubClass
 		// using the preset default values.
 		if (Config.STARTING_LEVEL > 40)
 		{
-			level = Config.STARTING_LEVEL;
-			if (level > getMaxLevel())
+			_level = Config.STARTING_LEVEL;
+			if (_level > getMaxLevel())
 			{
-				level = getMaxLevel();
+				_level = getMaxLevel();
 			}
-			exp = Experience.getAbsoluteExp(level);
+			_exp = Experience.getAbsoluteExp(_level);
 		}
 	}
 
 	public PlayerClass getClassDefinition()
 	{
-		return playerClass;
+		return _class;
 	}
 
 	public int getClassId()
 	{
-		return playerClass.getId();
+		return _class.getId();
+	}
+
+	public long getExp()
+	{
+		return _exp;
+	}
+
+	public long getSp()
+	{
+		return _sp;
+	}
+
+	public byte getLevel()
+	{
+		return _level;
+	}
+
+	public int getClassIndex()
+	{
+		return _classIndex;
 	}
 
 	public boolean isDual()
 	{
-		return isDual;
+		return _isDual;
+	}
+
+	public int getCertificates()
+	{
+		return _certificates;
 	}
 
 	public byte getMaxLevel()
 	{
-		return isDual ? Config.MAX_LEVEL : maxLevel;
+		return _isDual ? Config.MAX_LEVEL : _maxLevel;
 	}
 
 	public void setClassId(int classId)
 	{
-		playerClass = PlayerClassTable.getInstance().getClassById(classId);
+		_class = PlayerClassTable.getInstance().getClassById(classId);
 	}
 
 	public void setExp(long expValue)
@@ -113,12 +136,27 @@ public final class SubClass
 			expValue = Experience.getAbsoluteExp(getMaxLevel() + 1) - 1;
 		}
 
-		exp = expValue;
+		_exp = expValue;
 	}
 
 	public void setSp(long spValue)
 	{
-		sp = spValue;
+		_sp = spValue;
+	}
+
+	public void setClassIndex(int classIndex)
+	{
+		_classIndex = classIndex;
+	}
+
+	public void setIsDual(boolean isDual)
+	{
+		_isDual = isDual;
+	}
+
+	public void setCertificates(int certificates)
+	{
+		_certificates = certificates;
 	}
 
 	public void setLevel(byte levelValue)
@@ -132,7 +170,7 @@ public final class SubClass
 			levelValue = 40;
 		}
 
-		level = levelValue;
+		_level = levelValue;
 	}
 
 	public void incLevel()
@@ -142,7 +180,7 @@ public final class SubClass
 			return;
 		}
 
-		level++;
+		_level++;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}
 
@@ -153,7 +191,7 @@ public final class SubClass
 			return;
 		}
 
-		level--;
+		_level--;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}
 }

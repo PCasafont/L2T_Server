@@ -78,6 +78,7 @@ public class Potions extends ItemSkills
 	 */
 	public boolean usePotion(L2Playable activeChar, int magicId, int level)
 	{
+
 		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
 
 		if (skill != null)

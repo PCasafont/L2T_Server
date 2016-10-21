@@ -38,11 +38,12 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class QuestList extends L2GameServerPacket
 {
-	private Quest[] quests;
-	private L2PcInstance activeChar;
+	private Quest[] _quests;
+	private L2PcInstance _activeChar;
 
 	public QuestList()
 	{
+
 	}
 
 	@Override
@@ -50,8 +51,8 @@ public class QuestList extends L2GameServerPacket
 	{
 		if (getClient() != null && getClient().getActiveChar() != null)
 		{
-			activeChar = getClient().getActiveChar();
-			quests = activeChar.getAllActiveQuests();
+			_activeChar = getClient().getActiveChar();
+			_quests = _activeChar.getAllActiveQuests();
 		}
 	}
 
@@ -59,7 +60,7 @@ public class QuestList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		/*
-		  This text was wrote by XaKa
+          This text was wrote by XaKa
           QuestList packet structure:
           {
           		1 byte - 0x80
@@ -88,13 +89,14 @@ public class QuestList extends L2GameServerPacket
           However, the sequence "1000 0000 0000 0000 0000 0010 1101 1111" indicates that the current step is
           the 10th but the 6th and 9th are not to be shown at all (not completed, either).
          */
-		if (quests != null)
+
+		if (_quests != null)
 		{
-			writeH(quests.length);
-			for (Quest q : quests)
+			writeH(_quests.length);
+			for (Quest q : _quests)
 			{
 				writeD(q.getQuestIntId());
-				QuestState qs = activeChar.getQuestState(q.getName());
+				QuestState qs = _activeChar.getQuestState(q.getName());
 				if (qs == null)
 				{
 					writeD(0);
@@ -120,7 +122,7 @@ public class QuestList extends L2GameServerPacket
 
 		for (GlobalQuest q : GlobalQuest.values())
 		{
-			writeD(activeChar.getGlobalQuestState(q));
+			writeD(_activeChar.getGlobalQuestState(q));
 		}
 	}
 }

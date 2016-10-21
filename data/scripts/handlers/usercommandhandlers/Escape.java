@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
 
 import java.util.logging.Level;
 
@@ -142,32 +141,32 @@ public class Escape implements IUserCommandHandler
 
 	static class EscapeFinalizer implements Runnable
 	{
-		private L2PcInstance activeChar;
+		private L2PcInstance _activeChar;
 
 		EscapeFinalizer(L2PcInstance activeChar)
 		{
-			this.activeChar = activeChar;
+			_activeChar = activeChar;
 		}
 
 		@Override
 		public void run()
 		{
-			if (activeChar.isDead())
+			if (_activeChar.isDead())
 			{
 				return;
 			}
 
-			activeChar.enableAllSkills();
-			activeChar.setIsCastingNow(false);
-			activeChar.setInstanceId(0);
+			_activeChar.enableAllSkills();
+			_activeChar.setIsCastingNow(false);
+			_activeChar.setInstanceId(0);
 
 			try
 			{
-				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+				_activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "", e);
+				_log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

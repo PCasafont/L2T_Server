@@ -22,7 +22,6 @@
       <root url="jar://$PROJECT_DIR$/lib/trove-2.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jython-engine.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/lombok.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

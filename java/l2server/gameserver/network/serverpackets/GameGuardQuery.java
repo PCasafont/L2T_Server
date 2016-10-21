@@ -21,13 +21,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class GameGuardQuery extends L2GameServerPacket
 {
+
 	public GameGuardQuery()
 	{
+
 	}
 
 	@Override
 	public void runImpl()
 	{
+
 	}
 
 	@Override

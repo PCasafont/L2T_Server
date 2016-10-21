@@ -15,9 +15,6 @@
 
 package l2server.gameserver.scripting;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.script.CompiledScript;
 import java.io.File;
 import java.io.Serializable;
@@ -32,9 +29,9 @@ public class CompiledScriptHolder implements Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Getter @Setter private long lastModified;
-	@Getter @Setter private long size;
-	@Getter @Setter private CompiledScript compiledScript;
+	private long _lastModified;
+	private long _size;
+	private CompiledScript _compiledScript;
 
 	/**
 	 * @param compiledScript
@@ -42,9 +39,57 @@ public class CompiledScriptHolder implements Serializable
 	 */
 	public CompiledScriptHolder(CompiledScript compiledScript, File scriptFile)
 	{
-		this.compiledScript = compiledScript;
-		lastModified = scriptFile.lastModified();
-		size = scriptFile.length();
+		_compiledScript = compiledScript;
+		_lastModified = scriptFile.lastModified();
+		_size = scriptFile.length();
+	}
+
+	/**
+	 * @return Returns the lastModified.
+	 */
+	public long getLastModified()
+	{
+		return _lastModified;
+	}
+
+	/**
+	 * @param lastModified The lastModified to set.
+	 */
+	public void setLastModified(long lastModified)
+	{
+		_lastModified = lastModified;
+	}
+
+	/**
+	 * @return Returns the size.
+	 */
+	public long getSize()
+	{
+		return _size;
+	}
+
+	/**
+	 * @param size The size to set.
+	 */
+	public void setSize(long size)
+	{
+		_size = size;
+	}
+
+	/**
+	 * @return Returns the compiledScript.
+	 */
+	public CompiledScript getCompiledScript()
+	{
+		return _compiledScript;
+	}
+
+	/**
+	 * @param compiledScript The compiledScript to set.
+	 */
+	public void setCompiledScript(CompiledScript compiledScript)
+	{
+		_compiledScript = compiledScript;
 	}
 
 	public boolean matches(File f)

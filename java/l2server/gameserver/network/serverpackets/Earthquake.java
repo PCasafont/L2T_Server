@@ -20,32 +20,32 @@ package l2server.gameserver.network.serverpackets;
  */
 public class Earthquake extends L2GameServerPacket
 {
-	private int x;
-	private int y;
-	private int z;
-	private int intensity;
-	private int duration;
+	private int _x;
+	private int _y;
+	private int _z;
+	private int _intensity;
+	private int _duration;
 
 	/**
 	 * @param
 	 */
 	public Earthquake(int x, int y, int z, int intensity, int duration)
 	{
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.intensity = intensity;
-		this.duration = duration;
+		_x = x;
+		_y = y;
+		_z = z;
+		_intensity = intensity;
+		_duration = duration;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(intensity);
-		writeD(duration);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeD(_intensity);
+		writeD(_duration);
 		writeD(0x00); // Unknown
 	}
 }

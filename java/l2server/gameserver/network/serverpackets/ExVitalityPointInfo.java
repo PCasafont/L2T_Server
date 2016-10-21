@@ -22,11 +22,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExVitalityPointInfo extends L2GameServerPacket
 {
-	private int vitalityPoints;
+	private int _vitalityPoints;
 
 	public ExVitalityPointInfo(int vitPoints)
 	{
-		vitalityPoints = vitPoints;
+		_vitalityPoints = vitPoints;
 	}
 
 	/* (non-Javadoc)
@@ -35,6 +35,6 @@ public class ExVitalityPointInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(vitalityPoints);
+		writeD(_vitalityPoints);
 	}
 }

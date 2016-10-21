@@ -90,7 +90,7 @@ public class NornilsGarden extends Quest
 
 	private static final int _herb_jar = 18478;
 
-	private static final int[][] gatekeepers = {
+	private static final int[][] _gatekeepers = {
 			{18352, 9703, 0}, // Kamael Guard
 			{18353, 9704, 0}, // Guardian of Records
 			{18354, 9705, 0}, // Guardian of Observation
@@ -421,7 +421,7 @@ public class NornilsGarden extends Quest
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 			return "32330-08.html";
 		}
-		boolean kamael = false;
+		boolean _kamael = false;
 		// for each party member
 		for (L2PcInstance partyMember : party.getPartyMembers())
 		{
@@ -461,7 +461,7 @@ public class NornilsGarden extends Quest
 				QuestState checkst = partyMember.getQuestState("179_IntoTheLargeCavern");
 				if (checkst != null && checkst.getState() == State.STARTED)
 				{
-					kamael = true;
+					_kamael = true;
 				}
 				else
 				{
@@ -473,7 +473,7 @@ public class NornilsGarden extends Quest
 				}
 			}
 		}
-		if (!kamael)
+		if (!_kamael)
 		{
 			return "32330-08.html";
 		}
@@ -489,12 +489,12 @@ public class NornilsGarden extends Quest
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if (tmpworld instanceof NornilsWorld)
 			{
-				for (int[] auto : _auto_gates)
+				for (int _auto[] : _auto_gates)
 				{
-					if (zone.getId() == auto[0])
+					if (zone.getId() == _auto[0])
 					{
 						L2DoorInstance door =
-								InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(auto[1]);
+								InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(_auto[1]);
 						if (door != null)
 						{
 							door.openMe();
@@ -640,21 +640,21 @@ public class NornilsGarden extends Quest
 			return null;
 		}
 
-		for (int[] gk : gatekeepers)
+		for (int _gk[] : _gatekeepers)
 		{
-			if (npc.getNpcId() == gk[0])
+			if (npc.getNpcId() == _gk[0])
 			{
 				// Drop key
-				((L2MonsterInstance) npc).dropItem(player, gk[1], 1);
+				((L2MonsterInstance) npc).dropItem(player, _gk[1], 1);
 
 				// Check if gatekeeper should open bridge, and open it
-				if (gk[2] > 0)
+				if (_gk[2] > 0)
 				{
 					InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
 					if (tmpworld instanceof NornilsWorld)
 					{
 						L2DoorInstance door =
-								InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(gk[2]);
+								InstanceManager.getInstance().getInstance(tmpworld.instanceId).getDoor(_gk[2]);
 						if (door != null)
 						{
 							door.openMe();
@@ -679,7 +679,7 @@ public class NornilsGarden extends Quest
 		addFirstTalkId(_garden_guard);
 		addTalkId(_garden_guard);
 
-		for (int i[] : gatekeepers)
+		for (int i[] : _gatekeepers)
 		{
 			addKillId(i[0]);
 		}

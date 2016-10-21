@@ -19,19 +19,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class PetDelete extends L2GameServerPacket
 {
-	private int petType;
-	private int petObjId;
+	private int _petType;
+	private int _petObjId;
 
 	public PetDelete(int petType, int petObjId)
 	{
-		this.petType = petType; // Summon Type
-		this.petObjId = petObjId; // objectId
+		_petType = petType; // Summon Type
+		_petObjId = petObjId; // objectId
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(petType);
-		writeD(petObjId);
+		writeD(_petType);
+		writeD(_petObjId);
 	}
 }

@@ -38,13 +38,14 @@ import java.util.logging.Level;
  */
 public final class RequestAnswerFriendInvite extends L2GameClientPacket
 {
-	private int response;
+
+	private int _response;
 
 	@Override
 	protected void readImpl()
 	{
 		readC(); // Unknown, usually 1
-		response = readD();
+		_response = readD();
 	}
 
 	@Override
@@ -59,7 +60,7 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket
 				return;
 			}
 
-			if (response == 1)
+			if (_response == 1)
 			{
 				Connection con = null;
 				try

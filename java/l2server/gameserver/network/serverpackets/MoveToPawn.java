@@ -28,36 +28,36 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class MoveToPawn extends L2GameServerPacket
 {
-	private int charObjId;
-	private int targetId;
-	private int distance;
-	private int x, y, z, tx, ty, tz;
+	private int _charObjId;
+	private int _targetId;
+	private int _distance;
+	private int _x, _y, _z, _tx, _ty, _tz;
 
 	public MoveToPawn(L2Character cha, L2Character target, int distance)
 	{
-		charObjId = cha.getObjectId();
-		targetId = target.getObjectId();
-		this.distance = distance;
-		x = cha.getX();
-		y = cha.getY();
-		z = cha.getZ();
-		tx = target.getX();
-		ty = target.getY();
-		tz = target.getZ();
+		_charObjId = cha.getObjectId();
+		_targetId = target.getObjectId();
+		_distance = distance;
+		_x = cha.getX();
+		_y = cha.getY();
+		_z = cha.getZ();
+		_tx = target.getX();
+		_ty = target.getY();
+		_tz = target.getZ();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(charObjId);
-		writeD(targetId);
-		writeD(distance);
+		writeD(_charObjId);
+		writeD(_targetId);
+		writeD(_distance);
 
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(tx);
-		writeD(ty);
-		writeD(tz);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
+		writeD(_tx);
+		writeD(_ty);
+		writeD(_tz);
 	}
 }

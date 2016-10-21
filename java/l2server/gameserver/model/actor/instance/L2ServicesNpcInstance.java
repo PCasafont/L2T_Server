@@ -442,9 +442,10 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					break;
 				case 4: // Add Subclass - Action (Subclass 4 x[x])
 					/*
-					 * If the character is less than level 75 on any of their previously chosen
+                     * If the character is less than level 75 on any of their previously chosen
 					 * classes then disallow them to change to their most recently added sub-class choice.
 					 */
+
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
@@ -519,6 +520,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					 *
 					 * Note: paramOne = classIndex
 					 */
+
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
@@ -600,6 +602,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					 * Warning: the information about this subclass will be removed from the
 					 * subclass list even if false!
 					 */
+
 					if (!player.getFloodProtectors().getSubclass().tryPerformAction("add subclass"))
 					{
 						Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
@@ -644,8 +647,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 						 * up some place down the line along with other seemingly unrelated
 						 * problems.
 						 */
-						player.setActiveClass(
-								0); // Also updates classIndex plus switching classid to baseclass.
+						player.setActiveClass(0); // Also updates _classIndex plus switching _classid to baseclass.
 
 						player.sendMessage(
 								"The sub class could not be added, you have been reverted to your base class.");
@@ -743,7 +745,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 						return;
 					}
 
-					subClass.setDual(true);
+					subClass.setIsDual(true);
 					if (Config.STARTING_LEVEL > subClass.getLevel())
 					{
 						byte level = Config.STARTING_LEVEL;
@@ -933,9 +935,9 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 			String varFormat = castle.getName() + "_tendency";
 			String value = GlobalVariablesManager.getInstance().getStoredVariable(varFormat);
 
-			long currTime = System.currentTimeMillis();
-			long reuseTime = value == null ? 0 : Long.parseLong(value);
-			if (currTime > reuseTime)
+			long _currTime = System.currentTimeMillis();
+			long _reuseTime = value == null ? 0 : Long.parseLong(value);
+			if (_currTime > _reuseTime)
 			{
 				if (castle.getTendency() == Castle.TENDENCY_LIGHT)
 				{
@@ -1125,6 +1127,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 		}
 
 		return Config.ALLOW_ENTIRE_TREE && newC.childOf(oldC);
+
 	}
 
 	private Iterator<SubClass> iterSubClasses(L2PcInstance player)
@@ -1328,6 +1331,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 
 		if (counts == 0)
 		{
+
 			if (player.getClan().getLevel() < 8)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);

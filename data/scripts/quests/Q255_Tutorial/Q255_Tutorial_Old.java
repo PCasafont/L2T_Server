@@ -175,7 +175,7 @@ public class Q255_Tutorial_Old extends Quest
 					break;
 				case 23:
 					/*# table for Tutorial Close Link (23) 2nd class transfer [html]
-					TCLb = {
+                    TCLb = {
 						4 ) "tutorial_22aa.htm";,
 						7 ) "tutorial_22ba.htm";,
 						11) "tutorial_22ca.htm";,

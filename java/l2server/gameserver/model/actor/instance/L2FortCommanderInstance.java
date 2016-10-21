@@ -31,13 +31,13 @@ import java.util.List;
 
 public class L2FortCommanderInstance extends L2DefenderInstance
 {
-	private boolean canTalk;
+	private boolean _canTalk;
 
 	public L2FortCommanderInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FortCommanderInstance);
-		canTalk = true;
+		_canTalk = true;
 	}
 
 	/**
@@ -155,6 +155,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 
 	private class ScheduleTalkTask implements Runnable
 	{
+
 		public ScheduleTalkTask()
 		{
 		}
@@ -168,12 +169,12 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 
 	void setCanTalk(boolean val)
 	{
-		canTalk = val;
+		_canTalk = val;
 	}
 
 	private boolean canTalk()
 	{
-		return canTalk;
+		return _canTalk;
 	}
 
 	@Override

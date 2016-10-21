@@ -59,14 +59,14 @@ public class ExtraPass implements IItemHandler
 		}
 
 		int instanceId = (int) instanceSkill.getPower();
-		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
-		if (instanceTimes.isEmpty() || !instanceTimes.containsKey(instanceId))
+		Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(activeChar.getObjectId());
+		if (_instanceTimes.isEmpty() || !_instanceTimes.containsKey(instanceId))
 		{
 			activeChar.sendMessage("You don't have reuse!");
 			return;
 		}
 
-		for (int instId : instanceTimes.keySet())
+		for (int instId : _instanceTimes.keySet())
 		{
 			if (instId == instanceId)
 			{

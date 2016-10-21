@@ -61,52 +61,52 @@ public class L2TenkaiEventZone extends L2ZoneType
 
 	class OutOfEventZoneTask implements Runnable
 	{
-		private L2PcInstance player;
-		private int delay = 10;
-		private boolean warned = false;
+		private L2PcInstance _player;
+		private int _delay = 10;
+		private boolean _warned = false;
 
 		public OutOfEventZoneTask(L2PcInstance player)
 		{
-			this.player = player;
+			_player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			if (!isInsideZone(player) && player.isPlayingEvent())
+			if (!isInsideZone(_player) && _player.isPlayingEvent())
 			{
-				if (getDistanceToZone(player) > 500 || getZone().getHighZ() < player.getZ() ||
-						getZone().getLowZ() > player.getZ())
+				if (getDistanceToZone(_player) > 500 || getZone().getHighZ() < _player.getZ() ||
+						getZone().getLowZ() > _player.getZ())
 				{
-					if (delay > 0)
+					if (_delay > 0)
 					{
-						if (!warned)
+						if (!_warned)
 						{
-							player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
+							_player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events",
 									"You left the event zone. If you don't return in 10 seconds your character will die!"));
-							warned = true;
+							_warned = true;
 						}
-						else if (delay <= 5)
+						else if (_delay <= 5)
 						{
-							player.sendPacket(
-									new CreatureSay(0, Say2.TELL, "Instanced Events", delay + " seconds to return."));
+							_player.sendPacket(
+									new CreatureSay(0, Say2.TELL, "Instanced Events", _delay + " seconds to return."));
 						}
 
-						delay--;
+						_delay--;
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
 					}
 					else
 					{
-						if (player.getEvent().isType(EventType.VIP))
+						if (_player.getEvent().isType(EventType.VIP))
 						{
-							player.getEvent().getParticipantTeam(player.getObjectId()).decreasePoints();
+							_player.getEvent().getParticipantTeam(_player.getObjectId()).decreasePoints();
 						}
-						player.doDie(player);
+						_player.doDie(_player);
 					}
 				}
 				else
 				{
-					delay = 10;
+					_delay = 10;
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
 				}
 			}

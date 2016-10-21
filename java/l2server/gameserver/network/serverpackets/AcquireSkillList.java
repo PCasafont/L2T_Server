@@ -26,20 +26,20 @@ import java.util.Map;
  */
 public final class AcquireSkillList extends L2GameServerPacket
 {
-	private L2SkillLearn[] skills;
-	private L2PcInstance player;
+	private L2SkillLearn[] _skills;
+	private L2PcInstance _player;
 
 	public AcquireSkillList(L2PcInstance player)
 	{
-		skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
-		this.player = player;
+		_skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
+		_player = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(skills.length);
-		for (L2SkillLearn sk : skills)
+		writeH(_skills.length);
+		for (L2SkillLearn sk : _skills)
 		{
 			writeD(sk.getId());
 			writeH(sk.getLevel());
@@ -55,7 +55,7 @@ public final class AcquireSkillList extends L2GameServerPacket
 				writeQ(sk.getCostItems().get(itemId));
 			}
 
-			Map<Integer, Integer> costSkills = sk.getCostSkills(player);
+			Map<Integer, Integer> costSkills = sk.getCostSkills(_player);
 			writeC(costSkills.size());
 			for (int skillId : costSkills.keySet())
 			{

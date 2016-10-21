@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.SendMacroList;
 import l2server.log.Log;
 import l2server.util.StringUtil;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,89 +35,95 @@ import java.util.logging.Level;
  */
 public class MacroList
 {
-	private L2PcInstance owner;
-	@Getter private int revision;
-	private int macroId;
-	private Map<Integer, L2Macro> macroses = new HashMap<>();
+
+	private L2PcInstance _owner;
+	private int _revision;
+	private int _macroId;
+	private Map<Integer, L2Macro> _macroses = new HashMap<>();
 
 	public MacroList(L2PcInstance owner)
 	{
-		this.owner = owner;
-		revision = 1;
-		macroId = 1000;
+		_owner = owner;
+		_revision = 1;
+		_macroId = 1000;
+	}
+
+	public int getRevision()
+	{
+		return _revision;
 	}
 
 	public L2Macro[] getAllMacroses()
 	{
-		return macroses.values().toArray(new L2Macro[macroses.size()]);
+		return _macroses.values().toArray(new L2Macro[_macroses.size()]);
 	}
 
 	public L2Macro getMacro(int id)
 	{
-		return macroses.get(id - 1);
+		return _macroses.get(id - 1);
 	}
 
 	public void registerMacro(L2Macro macro)
 	{
 		if (macro.id == 0)
 		{
-			macro.id = macroId++;
-			while (macroses.get(macro.id) != null)
+			macro.id = _macroId++;
+			while (_macroses.get(macro.id) != null)
 			{
-				macro.id = macroId++;
+				macro.id = _macroId++;
 			}
-			macroses.put(macro.id, macro);
+			_macroses.put(macro.id, macro);
 			registerMacroInDb(macro);
-			owner.sendPacket(new SendMacroList(1, 1, macro));
+			_owner.sendPacket(new SendMacroList(1, 1, macro));
 		}
 		else
 		{
-			L2Macro old = macroses.put(macro.id, macro);
+			L2Macro old = _macroses.put(macro.id, macro);
 			if (old != null)
 			{
 				deleteMacroFromDb(old);
 			}
 			registerMacroInDb(macro);
-			owner.sendPacket(new SendMacroList(2, 1, macro));
+			_owner.sendPacket(new SendMacroList(2, 1, macro));
 		}
 	}
 
 	public void deleteMacro(int id)
 	{
-		L2Macro toRemove = macroses.get(id);
+		L2Macro toRemove = _macroses.get(id);
 		if (toRemove != null)
 		{
 			deleteMacroFromDb(toRemove);
 		}
-		macroses.remove(id);
+		_macroses.remove(id);
 
-		L2ShortCut[] allShortCuts = owner.getAllShortCuts();
+		L2ShortCut[] allShortCuts = _owner.getAllShortCuts();
 		for (L2ShortCut sc : allShortCuts)
 		{
 			if (sc.getId() == id && sc.getType() == L2ShortCut.TYPE_MACRO)
 			{
-				owner.deleteShortCut(sc.getSlot(), sc.getPage());
+				_owner.deleteShortCut(sc.getSlot(), sc.getPage());
 			}
 		}
 
-		owner.sendPacket(new SendMacroList(0, 0, toRemove));
+		_owner.sendPacket(new SendMacroList(0, 0, toRemove));
 	}
 
 	public void sendUpdate()
 	{
-		revision++;
+		_revision++;
 		L2Macro[] all = getAllMacroses();
 
 		// This part put all existing macroses to your list.
 		if (all.length == 0)
 		{
-			owner.sendPacket(new SendMacroList(1, all.length, null));
+			_owner.sendPacket(new SendMacroList(1, all.length, null));
 		}
 		else
 		{
 			for (L2Macro m : all)
 			{
-				owner.sendPacket(new SendMacroList(1, all.length, m));
+				_owner.sendPacket(new SendMacroList(1, all.length, m));
 			}
 		}
 	}
@@ -132,7 +137,7 @@ public class MacroList
 
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)");
-			statement.setInt(1, owner.getObjectId());
+			statement.setInt(1, _owner.getObjectId());
 			statement.setInt(2, macro.id);
 			statement.setInt(3, macro.icon);
 			statement.setString(4, macro.name);
@@ -182,7 +187,7 @@ public class MacroList
 
 			PreparedStatement statement =
 					con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?");
-			statement.setInt(1, owner.getObjectId());
+			statement.setInt(1, _owner.getObjectId());
 			statement.setInt(2, macro.id);
 			statement.execute();
 			statement.close();
@@ -199,14 +204,14 @@ public class MacroList
 
 	public void restore()
 	{
-		macroses.clear();
+		_macroses.clear();
 		Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?");
-			statement.setInt(1, owner.getObjectId());
+			statement.setInt(1, _owner.getObjectId());
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
@@ -238,7 +243,7 @@ public class MacroList
 
 				L2Macro m =
 						new L2Macro(id, icon, name, descr, acronym, commands.toArray(new L2MacroCmd[commands.size()]));
-				macroses.put(m.id, m);
+				_macroses.put(m.id, m);
 			}
 			rset.close();
 			statement.close();

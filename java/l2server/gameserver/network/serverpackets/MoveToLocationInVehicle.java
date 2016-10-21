@@ -23,10 +23,10 @@ import l2server.util.Point3D;
  */
 public class MoveToLocationInVehicle extends L2GameServerPacket
 {
-	private int charObjId;
-	private int boatId;
-	private Point3D destination;
-	private Point3D origin;
+	private int _charObjId;
+	private int _boatId;
+	private Point3D _destination;
+	private Point3D _origin;
 
 	/**
 	 * @param destination
@@ -34,10 +34,10 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
 	 */
 	public MoveToLocationInVehicle(L2PcInstance player, Point3D destination, Point3D origin)
 	{
-		charObjId = player.getObjectId();
-		boatId = player.getBoat().getObjectId();
-		this.destination = destination;
-		this.origin = origin;
+		_charObjId = player.getObjectId();
+		_boatId = player.getBoat().getObjectId();
+		_destination = destination;
+		_origin = origin;
 	}
 
 	/* (non-Javadoc)
@@ -46,13 +46,13 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(charObjId);
-		writeD(boatId);
-		writeD(destination.getX());
-		writeD(destination.getY());
-		writeD(destination.getZ());
-		writeD(origin.getX());
-		writeD(origin.getY());
-		writeD(origin.getZ());
+		writeD(_charObjId);
+		writeD(_boatId);
+		writeD(_destination.getX());
+		writeD(_destination.getY());
+		writeD(_destination.getZ());
+		writeD(_origin.getX());
+		writeD(_origin.getY());
+		writeD(_origin.getZ());
 	}
 }

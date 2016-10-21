@@ -34,15 +34,15 @@ import java.util.logging.Level;
 
 public class RaidBossPointsManager
 {
-	private HashMap<Integer, Map<Integer, Integer>> list;
+	private HashMap<Integer, Map<Integer, Integer>> _list;
 
-	private final Comparator<Map.Entry<Integer, Integer>> comparator =
+	private final Comparator<Map.Entry<Integer, Integer>> _comparator =
 			(entry, entry1) -> entry.getValue().equals(entry1.getValue()) ? 0 :
 					entry.getValue() < entry1.getValue() ? 1 : -1;
 
 	public static RaidBossPointsManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public RaidBossPointsManager()
@@ -52,7 +52,7 @@ public class RaidBossPointsManager
 
 	private void init()
 	{
-		list = new HashMap<>();
+		_list = new HashMap<>();
 		Connection con = null;
 		try
 		{
@@ -65,19 +65,19 @@ public class RaidBossPointsManager
 				int charId = rset.getInt("charId");
 				int bossId = rset.getInt("boss_id");
 				int points = rset.getInt("points");
-				Map<Integer, Integer> values = list.get(charId);
+				Map<Integer, Integer> values = _list.get(charId);
 				if (values == null)
 				{
 					values = new HashMap<>();
 					values.put(0, 0);
-					list.put(charId, values);
+					_list.put(charId, values);
 				}
 				values.put(bossId, points);
 				values.put(0, values.get(0) + points);
 			}
 			rset.close();
 			statement.close();
-			Log.info(getClass().getSimpleName() + ": Loaded " + list.size() + " Characters Raid Points.");
+			Log.info(getClass().getSimpleName() + ": Loaded " + _list.size() + " Characters Raid Points.");
 		}
 		catch (SQLException e)
 		{
@@ -122,7 +122,7 @@ public class RaidBossPointsManager
 		}
 
 		int ownerId = player.getObjectId();
-		Map<Integer, Integer> tmpPoint = list.get(ownerId);
+		Map<Integer, Integer> tmpPoint = _list.get(ownerId);
 		if (tmpPoint == null)
 		{
 			tmpPoint = new HashMap<>();
@@ -140,13 +140,13 @@ public class RaidBossPointsManager
 			updatePointsInDB(player, bossId, currentPoints);
 			updatePointsInDB(player, 0, tmpPoint.get(0));
 		}
-		list.put(ownerId, tmpPoint);
+		_list.put(ownerId, tmpPoint);
 	}
 
 	public final int getPointsByOwnerId(int ownerId)
 	{
 		Map<Integer, Integer> tmpPoint;
-		tmpPoint = list.get(ownerId);
+		tmpPoint = _list.get(ownerId);
 
 		if (tmpPoint == null || tmpPoint.isEmpty())
 		{
@@ -158,12 +158,12 @@ public class RaidBossPointsManager
 
 	public final Map<Integer, Integer> getList(L2PcInstance player)
 	{
-		Map<Integer, Integer> list = this.list.get(player.getObjectId());
+		Map<Integer, Integer> list = _list.get(player.getObjectId());
 		if (list == null)
 		{
 			list = new HashMap<>();
 			list.put(0, 0);
-			this.list.put(player.getObjectId(), list);
+			_list.put(player.getObjectId(), list);
 		}
 		return list;
 	}
@@ -178,7 +178,7 @@ public class RaidBossPointsManager
 			statement = con.prepareStatement("DELETE from character_raid_points WHERE charId > 0");
 			statement.executeUpdate();
 			statement.close();
-			list.clear();
+			_list.clear();
 		}
 		catch (Exception e)
 		{
@@ -205,7 +205,7 @@ public class RaidBossPointsManager
 		Map<Integer, Integer> tmpRanking = new HashMap<>();
 		Map<Integer, Integer> tmpPoints = new HashMap<>();
 
-		for (int ownerId : list.keySet())
+		for (int ownerId : _list.keySet())
 		{
 			int totalPoints = getPointsByOwnerId(ownerId);
 			if (totalPoints != 0)
@@ -215,7 +215,7 @@ public class RaidBossPointsManager
 		}
 		ArrayList<Entry<Integer, Integer>> list = new ArrayList<>(tmpPoints.entrySet());
 
-		Collections.sort(list, comparator);
+		Collections.sort(list, _comparator);
 
 		int ranking = 1;
 		for (Map.Entry<Integer, Integer> entry : list)
@@ -229,6 +229,6 @@ public class RaidBossPointsManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final RaidBossPointsManager instance = new RaidBossPointsManager();
+		protected static final RaidBossPointsManager _instance = new RaidBossPointsManager();
 	}
 }

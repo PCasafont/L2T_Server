@@ -27,73 +27,73 @@ import l2server.gameserver.model.olympiad.OlympiadParticipant;
 public class ExOlympiadUserInfo extends L2GameServerPacket
 {
 	// chcdSddddd
-	private L2PcInstance player;
-	private OlympiadParticipant par = null;
-	private int curHp;
-	private int maxHp;
-	private int curCp;
-	private int maxCp;
+	private L2PcInstance _player;
+	private OlympiadParticipant _par = null;
+	private int _curHp;
+	private int _maxHp;
+	private int _curCp;
+	private int _maxCp;
 
 	public ExOlympiadUserInfo(L2PcInstance player)
 	{
-		this.player = player;
-		if (this.player != null)
+		_player = player;
+		if (_player != null)
 		{
-			curHp = (int) this.player.getCurrentHp();
-			maxHp = this.player.getMaxVisibleHp();
-			curCp = (int) this.player.getCurrentCp();
-			maxCp = this.player.getMaxCp();
+			_curHp = (int) _player.getCurrentHp();
+			_maxHp = _player.getMaxVisibleHp();
+			_curCp = (int) _player.getCurrentCp();
+			_maxCp = _player.getMaxCp();
 		}
 		else
 		{
-			curHp = 0;
-			maxHp = 100;
-			curCp = 0;
-			maxCp = 100;
+			_curHp = 0;
+			_maxHp = 100;
+			_curCp = 0;
+			_maxCp = 100;
 		}
 	}
 
 	public ExOlympiadUserInfo(OlympiadParticipant par)
 	{
-		this.par = par;
-		player = par.player;
-		if (player != null)
+		_par = par;
+		_player = par.player;
+		if (_player != null)
 		{
-			curHp = (int) player.getCurrentHp();
-			maxHp = player.getMaxVisibleHp();
-			curCp = (int) player.getCurrentCp();
-			maxCp = player.getMaxCp();
+			_curHp = (int) _player.getCurrentHp();
+			_maxHp = _player.getMaxVisibleHp();
+			_curCp = (int) _player.getCurrentCp();
+			_maxCp = _player.getMaxCp();
 		}
 		else
 		{
-			curHp = 0;
-			maxHp = 100;
-			curCp = 0;
-			maxCp = 100;
+			_curHp = 0;
+			_maxHp = 100;
+			_curCp = 0;
+			_maxCp = 100;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (player != null)
+		if (_player != null)
 		{
-			writeC(player.getOlympiadSide());
-			writeD(player.getObjectId());
-			writeS(player.getName());
-			writeD(player.getCurrentClass().getId());
+			writeC(_player.getOlympiadSide());
+			writeD(_player.getObjectId());
+			writeS(_player.getName());
+			writeD(_player.getCurrentClass().getId());
 		}
 		else
 		{
-			writeC(par.side);
-			writeD(par.objectId);
-			writeS(par.name);
-			writeD(par.baseClass);
+			writeC(_par.side);
+			writeD(_par.objectId);
+			writeS(_par.name);
+			writeD(_par.baseClass);
 		}
 
-		writeD(curHp);
-		writeD(maxHp);
-		writeD(curCp);
-		writeD(maxCp);
+		writeD(_curHp);
+		writeD(_maxHp);
+		writeD(_curCp);
+		writeD(_maxCp);
 	}
 }

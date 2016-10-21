@@ -27,14 +27,15 @@ import l2server.gameserver.network.serverpackets.PledgeReceivePowerInfo;
  */
 public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private int unk1;
-	private String player;
+	@SuppressWarnings("unused")
+	private int _unk1;
+	private String _player;
 
 	@Override
 	protected void readImpl()
 	{
-		unk1 = readD();
-		player = readS();
+		_unk1 = readD();
+		_player = readS();
 	}
 
 	/**
@@ -42,8 +43,8 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		//Log.info("C5: RequestPledgeMemberPowerInfo d:"+_unk1);
-		//Log.info("C5: RequestPledgeMemberPowerInfo S:"+_player);
+		//Logozo.info("C5: RequestPledgeMemberPowerInfo d:"+_unk1);
+		//Logozo.info("C5: RequestPledgeMemberPowerInfo S:"+_player);
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
@@ -55,7 +56,7 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ClanMember member = clan.getClanMember(player);
+		L2ClanMember member = clan.getClanMember(_player);
 		if (member == null)
 		{
 			return;

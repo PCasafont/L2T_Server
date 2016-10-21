@@ -55,6 +55,7 @@ public class EffectAggroReduce extends L2Effect
 	@Override
 	public void onExit()
 	{
+
 	}
 
 	/**

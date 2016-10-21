@@ -25,39 +25,40 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PartySmallWindowAdd extends L2GameServerPacket
 {
-	private final L2PcInstance member;
-	private final int leaderId;
-	private final int distribution;
+
+	private final L2PcInstance _member;
+	private final int _leaderId;
+	private final int _distribution;
 
 	public PartySmallWindowAdd(L2PcInstance member, L2Party party)
 	{
-		this.member = member;
-		leaderId = party.getPartyLeaderOID();
-		distribution = party.getLootDistribution();
+		_member = member;
+		_leaderId = party.getPartyLeaderOID();
+		_distribution = party.getLootDistribution();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(leaderId); // c3
-		writeD(distribution);//writeD(0x04); ?? //c3
-		writeD(member.getObjectId());
-		writeS(member.getName());
-		writeD((int) member.getCurrentCp()); //c4
-		writeD(member.getMaxCp()); //c4
-		writeD((int) member.getCurrentHp());
-		writeD(member.getMaxVisibleHp());
-		writeD((int) member.getCurrentMp());
-		writeD(member.getMaxMp());
-		writeD(member.getVitalityPoints());
-		writeC(member.getLevel());
-		writeH(member.getCurrentClass().getId());
-		/*writeD(member.getVitalityPoints());
-		writeC(0x01); // ???
-		writeC(member.getRace().ordinal());
-		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
-		writeD(member.getSummons().size() + (member.getPet() != null ? 1 : 0));
-		for (L2SummonInstance summon : member.getSummons())
+		writeD(_leaderId); // c3
+		writeD(_distribution);//writeD(0x04); ?? //c3
+		writeD(_member.getObjectId());
+		writeS(_member.getName());
+		writeD((int) _member.getCurrentCp()); //c4
+		writeD(_member.getMaxCp()); //c4
+		writeD((int) _member.getCurrentHp());
+		writeD(_member.getMaxVisibleHp());
+		writeD((int) _member.getCurrentMp());
+		writeD(_member.getMaxMp());
+		writeD(_member.getVitalityPoints());
+		writeC(_member.getLevel());
+		writeH(_member.getCurrentClass().getId());
+		/*writeD(_member.getVitalityPoints());
+        writeC(0x01); // ???
+		writeC(_member.getRace().ordinal());
+		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(_member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
+		writeD(_member.getSummons().size() + (_member.getPet() != null ? 1 : 0));
+		for (L2SummonInstance summon : _member.getSummons())
 		{
 			writeD(summon.getObjectId());
 			writeD(summon.getNpcId() + 1000000);
@@ -69,17 +70,17 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 			writeD(summon.getMaxMp());
 			writeC(summon.getLevel());
 		}
-		if (member.getPet() != null)
+		if (_member.getPet() != null)
 		{
-			writeD(member.getPet().getObjectId());
-			writeD(member.getPet().getNpcId() + 1000000);
-			writeC(member.getPet().getSummonType());
-			writeS(member.getPet().getName());
+			writeD(_member.getPet().getObjectId());
+			writeD(_member.getPet().getNpcId() + 1000000);
+			writeC(_member.getPet().getSummonType());
+			writeS(_member.getPet().getName());
 			writeD((int)_member.getPet().getCurrentHp());
-			writeD(member.getPet().getMaxHp());
+			writeD(_member.getPet().getMaxHp());
 			writeD((int)_member.getPet().getCurrentMp());
-			writeD(member.getPet().getMaxMp());
-			writeC(member.getPet().getLevel());
+			writeD(_member.getPet().getMaxMp());
+			writeC(_member.getPet().getLevel());
 		}*/
 	}
 }

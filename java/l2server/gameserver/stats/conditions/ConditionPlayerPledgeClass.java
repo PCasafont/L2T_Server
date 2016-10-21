@@ -25,7 +25,8 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionPlayerPledgeClass extends Condition
 {
-	private final int pledgeClass;
+
+	private final int _pledgeClass;
 
 	/**
 	 * Instantiates a new condition player pledge class.
@@ -34,7 +35,7 @@ public final class ConditionPlayerPledgeClass extends Condition
 	 */
 	public ConditionPlayerPledgeClass(int pledgeClass)
 	{
-		this.pledgeClass = pledgeClass;
+		_pledgeClass = pledgeClass;
 	}
 
 	/**
@@ -59,12 +60,12 @@ public final class ConditionPlayerPledgeClass extends Condition
 			return false;
 		}
 
-		if (pledgeClass == -1)
+		if (_pledgeClass == -1)
 		{
 			return player.isClanLeader();
 		}
 
 		//System.out.println(player.getName() + " Pledge = " + player.getPledgeClass());
-		return player.getPledgeClass() >= pledgeClass;
+		return player.getPledgeClass() >= _pledgeClass;
 	}
 }

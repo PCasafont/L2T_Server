@@ -20,46 +20,47 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public class HennaRemoveList extends L2GameServerPacket
 {
-	private L2PcInstance player;
+
+	private L2PcInstance _player;
 
 	public HennaRemoveList(L2PcInstance player)
 	{
-		this.player = player;
+		_player = player;
 	}
 
 	@SuppressWarnings("unused")
 	private int getHennaUsedSlots()
 	{
-		int slots = 0;
-		switch (player.getHennaEmptySlots())
+		int _slots = 0;
+		switch (_player.getHennaEmptySlots())
 		{
 			case 0:
-				slots = 3;
+				_slots = 3;
 				break;
 			case 1:
-				slots = 2;
+				_slots = 2;
 				break;
 			case 2:
-				slots = 1;
+				_slots = 1;
 				break;
 			case 3:
-				slots = 0;
+				_slots = 0;
 				break;
 		}
 
-		return slots;
+		return _slots;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(player.getAdena());
+		writeQ(_player.getAdena());
 		writeD(4);
-		writeD(4 - player.getHennaEmptySlots());
+		writeD(4 - _player.getHennaEmptySlots());
 
 		for (int i = 0; i <= 4; i++)
 		{
-			L2Henna henna = player.getHenna(i);
+			L2Henna henna = _player.getHenna(i);
 			if (henna != null)
 			{
 				writeD(henna.getSymbolId());

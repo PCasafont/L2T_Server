@@ -13,8 +13,6 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.StringTokenizer;
 
@@ -23,11 +21,11 @@ import java.util.StringTokenizer;
  */
 public final class L2ChessPieceInstance extends L2MonsterInstance
 {
-	@Getter @Setter private ChessEventSide side;
-	@Getter private int type;
-	private boolean firstMove;
-	@Getter private int posX;
-	@Getter private int posY;
+	private ChessEventSide _side;
+	private int _type;
+	private boolean _firstMove;
+	private int _posX;
+	private int _posY;
 
 	public L2ChessPieceInstance(int objectId, L2NpcTemplate template)
 	{
@@ -43,9 +41,9 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 			setSide(ChessEvent.getSide(1));
 		}
 
-		type = templ % 10;
+		_type = templ % 10;
 
-		firstMove = true;
+		_firstMove = true;
 
 		setIsInvul(true);
 	}
@@ -234,9 +232,9 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 		setTurn();
 		sayMovement(enemy);
 
-		if (firstMove)
+		if (_firstMove)
 		{
-			firstMove = false;
+			_firstMove = false;
 		}
 
 		int moveX;
@@ -246,13 +244,13 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
 		if (getSide().getId() == 0)
 		{
-			rPosX = posX;
-			rPosY = posY;
+			rPosX = _posX;
+			rPosY = _posY;
 		}
 		else
 		{
-			rPosX = 7 - posX;
-			rPosY = 7 - posY;
+			rPosX = 7 - _posX;
+			rPosY = 7 - _posY;
 			i = 7 - i;
 			j = 7 - j;
 		}
@@ -317,13 +315,13 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
 		if (getSide().getId() == 0)
 		{
-			posX = i;
-			posY = j;
+			_posX = i;
+			_posY = j;
 		}
 		else
 		{
-			posX = 7 - i;
-			posY = 7 - j;
+			_posX = 7 - i;
+			_posY = 7 - j;
 		}
 
 		getSide().canTheKingBeKilled(true);
@@ -373,7 +371,7 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
 	public int moveType(int i, int j, boolean checkKing)
 	{
-		if (i == posX && j == posY)
+		if (i == _posX && j == _posY)
 		{
 			return 0;
 		}
@@ -382,59 +380,59 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 		switch (getType())
 		{
 			case 1:
-				if (i == posX && j == posY + 1 && estaBuit(i, j))
+				if (i == _posX && j == _posY + 1 && estaBuit(i, j))
 				{
 					canMove = true;
 				}
-				if (Math.abs(i - posX) == 1 && j == posY + 1 && hiHaEnemic(i, j))
+				if (Math.abs(i - _posX) == 1 && j == _posY + 1 && hiHaEnemic(i, j))
 				{
 					canMove = true;
 				}
-				if (firstMove && i == posX && j == posY + 2 && !anyBetween(posX, posY, i, j) && estaBuit(i, j))
+				if (_firstMove && i == _posX && j == _posY + 2 && !anyBetween(_posX, _posY, i, j) && estaBuit(i, j))
 				{
 					canMove = true;
 				}
 				break;
 			case 2:
-				if ((i == posX || j == posY) && !anyBetween(posX, posY, i, j))
+				if ((i == _posX || j == _posY) && !anyBetween(_posX, _posY, i, j))
 				{
 					canMove = true;
 				}
 				break;
 			case 3:
-				if (Math.abs(i - posX) == 1 && Math.abs(j - posY) == 2 ||
-						Math.abs(i - posX) == 2 && Math.abs(j - posY) == 1)
+				if (Math.abs(i - _posX) == 1 && Math.abs(j - _posY) == 2 ||
+						Math.abs(i - _posX) == 2 && Math.abs(j - _posY) == 1)
 				{
 					canMove = true;
 				}
 				break;
 			case 4:
-				if (Math.abs(i - posX) == Math.abs(j - posY) && !anyBetween(posX, posY, i, j))
+				if (Math.abs(i - _posX) == Math.abs(j - _posY) && !anyBetween(_posX, _posY, i, j))
 				{
 					canMove = true;
 				}
 				break;
 			case 5:
-				if ((i == posX || j == posY || Math.abs(i - posX) == Math.abs(j - posY)) &&
-						!anyBetween(posX, posY, i, j))
+				if ((i == _posX || j == _posY || Math.abs(i - _posX) == Math.abs(j - _posY)) &&
+						!anyBetween(_posX, _posY, i, j))
 				{
 					canMove = true;
 				}
 				break;
 			case 6:
-				if ((Math.abs(i - posX) == 1 || Math.abs(j - posY) == 1) &&
-						Math.abs(i - posX) + Math.abs(j - posY) <= 2)
+				if ((Math.abs(i - _posX) == 1 || Math.abs(j - _posY) == 1) &&
+						Math.abs(i - _posX) + Math.abs(j - _posY) <= 2)
 				{
 					canMove = true;
 				}
-				if (firstMove && j == posY && i == posX - 2 && getSide().getPiece(0, 0) != null &&
-						!getSide().getPiece(0, 0).hasMoved() && !anyBetween(posX, posY, 0, 0))
+				if (_firstMove && j == _posY && i == _posX - 2 && getSide().getPiece(0, 0) != null &&
+						!getSide().getPiece(0, 0).hasMoved() && !anyBetween(_posX, _posY, 0, 0))
 				{
 					canMove = true;
 					toReturn = 3;
 				}
-				if (firstMove && j == posY && i == posX + 2 && getSide().getPiece(7, 0) != null &&
-						!getSide().getPiece(7, 0).hasMoved() && !anyBetween(posX, posY, 7, 0))
+				if (_firstMove && j == _posY && i == _posX + 2 && getSide().getPiece(7, 0) != null &&
+						!getSide().getPiece(7, 0).hasMoved() && !anyBetween(_posX, _posY, 7, 0))
 				{
 					canMove = true;
 					toReturn = 4;
@@ -451,10 +449,10 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 			if (checkKing)
 			{
 				L2ChessPieceInstance piece = getSide().getPiece(i, j);
-				int oPosX = posX;
-				int oPosY = posY;
-				posX = i;
-				posY = j;
+				int oPosX = _posX;
+				int oPosY = _posY;
+				_posX = i;
+				_posY = j;
 				getSide().setPiece(i, j, this);
 				getSide().setPiece(oPosX, oPosY, null);
 				if (getSide().canTheKingBeKilled(true))
@@ -463,8 +461,8 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 				}
 				getSide().setPiece(i, j, piece);
 				getSide().setPiece(oPosX, oPosY, this);
-				posX = oPosX;
-				posY = oPosY;
+				_posX = oPosX;
+				_posY = oPosY;
 			}
 			if (canMove)
 			{
@@ -693,14 +691,14 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 	@Override
 	public void onSpawn()
 	{
-		posX = (getY() + 59752) / 45;
-		posY = (getX() + 60165) / 45;
+		_posX = (getY() + 59752) / 45;
+		_posY = (getX() + 60165) / 45;
 		if (getSide().getId() == 1)
 		{
-			posX = 7 - posX;
-			posY = 7 - posY;
+			_posX = 7 - _posX;
+			_posY = 7 - _posY;
 		}
-		getSide().setPiece(posX, posY, this);
+		getSide().setPiece(_posX, _posY, this);
 		super.onSpawn();
 	}
 
@@ -718,18 +716,43 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 
 	public boolean hasMoved()
 	{
-		return !firstMove;
+		return !_firstMove;
+	}
+
+	public int getType()
+	{
+		return _type;
+	}
+
+	public ChessEventSide getSide()
+	{
+		return _side;
+	}
+
+	public void setSide(ChessEventSide side)
+	{
+		_side = side;
+	}
+
+	public int getPosX()
+	{
+		return _posX;
+	}
+
+	public int getPosY()
+	{
+		return _posY;
 	}
 
 	public int getRPosX()
 	{
 		if (getSide().getId() == 0)
 		{
-			return posX;
+			return _posX;
 		}
 		else
 		{
-			return 7 - posX;
+			return 7 - _posX;
 		}
 	}
 
@@ -737,11 +760,11 @@ public final class L2ChessPieceInstance extends L2MonsterInstance
 	{
 		if (getSide().getId() == 0)
 		{
-			return posY;
+			return _posY;
 		}
 		else
 		{
-			return 7 - posY;
+			return 7 - _posY;
 		}
 	}
 

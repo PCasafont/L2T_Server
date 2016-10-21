@@ -5,17 +5,17 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDominionWarStart extends L2GameServerPacket
 {
-	private int size;
+	private int _size;
 
 	public ExDominionWarStart(int size)
 	{
-		this.size = size;
+		_size = size;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(size);
+		writeD(_size);
 	}
 }
 

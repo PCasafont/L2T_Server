@@ -35,7 +35,7 @@ public class PcKnownList extends PlayableKnownList
 	}
 
 	/**
-	 * Add a visible L2Object to L2PcInstance knownObjects and knownPlayer (if necessary) and send Server-Client Packets needed to inform the L2PcInstance of its state and actions in progress.<BR><BR>
+	 * Add a visible L2Object to L2PcInstance _knownObjects and _knownPlayer (if necessary) and send Server-Client Packets needed to inform the L2PcInstance of its state and actions in progress.<BR><BR>
 	 * <p>
 	 * <B><U> object is a L2ItemInstance </U> :</B><BR><BR>
 	 * <li> Send Server-Client Packet DropItem/SpawnItem to the L2PcInstance </li><BR><BR>
@@ -57,7 +57,7 @@ public class PcKnownList extends PlayableKnownList
 	 * <li> If the object has a private store, Send Server-Client Packet PrivateStoreMsgSell to the L2PcInstance </li>
 	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance </li><BR><BR>
 	 *
-	 * @param object The L2Object to add to knownObjects and _knownPlayer
+	 * @param object The L2Object to add to _knownObjects and _knownPlayer
 	 */
 	@Override
 	public boolean addKnownObject(L2Object object)
@@ -98,9 +98,9 @@ public class PcKnownList extends PlayableKnownList
 	}
 
 	/**
-	 * Remove a L2Object from L2PcInstance knownObjects and knownPlayer (if necessary) and send Server-Client Packet DeleteObject to the L2PcInstance.<BR><BR>
+	 * Remove a L2Object from L2PcInstance _knownObjects and _knownPlayer (if necessary) and send Server-Client Packet DeleteObject to the L2PcInstance.<BR><BR>
 	 *
-	 * @param object The L2Object to remove from knownObjects and _knownPlayer
+	 * @param object The L2Object to remove from _knownObjects and _knownPlayer
 	 */
 	@Override
 	protected boolean removeKnownObject(L2Object object, boolean forget)

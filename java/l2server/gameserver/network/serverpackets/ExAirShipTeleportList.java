@@ -19,32 +19,33 @@ import l2server.gameserver.model.VehiclePathPoint;
 
 public class ExAirShipTeleportList extends L2GameServerPacket
 {
-	private int dockId;
-	private VehiclePathPoint[][] teleports;
-	private int[] fuelConsumption;
+
+	private int _dockId;
+	private VehiclePathPoint[][] _teleports;
+	private int[] _fuelConsumption;
 
 	public ExAirShipTeleportList(int dockId, VehiclePathPoint[][] teleports, int[] fuelConsumption)
 	{
-		this.dockId = dockId;
-		this.teleports = teleports;
-		this.fuelConsumption = fuelConsumption;
+		_dockId = dockId;
+		_teleports = teleports;
+		_fuelConsumption = fuelConsumption;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(dockId);
-		if (teleports != null)
+		writeD(_dockId);
+		if (_teleports != null)
 		{
-			writeD(teleports.length);
+			writeD(_teleports.length);
 
 			VehiclePathPoint[] path;
 			VehiclePathPoint dst;
-			for (int i = 0; i < teleports.length; i++)
+			for (int i = 0; i < _teleports.length; i++)
 			{
 				writeD(i - 1);
-				writeD(fuelConsumption[i]);
-				path = teleports[i];
+				writeD(_fuelConsumption[i]);
+				path = _teleports[i];
 				dst = path[path.length - 1];
 				writeD(dst.x);
 				writeD(dst.y);

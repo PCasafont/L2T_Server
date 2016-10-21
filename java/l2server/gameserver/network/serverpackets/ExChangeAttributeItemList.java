@@ -25,31 +25,32 @@ import java.util.ArrayList;
  */
 public class ExChangeAttributeItemList extends L2ItemListPacket
 {
-	private ArrayList<L2ItemInstance> itemsList;
-	private int itemOID;
+
+	private ArrayList<L2ItemInstance> _itemsList;
+	private int _itemOID;
 
 	public ExChangeAttributeItemList(L2PcInstance player, int itemOID)
 	{
-		itemsList = new ArrayList<>();
+		_itemsList = new ArrayList<>();
 		for (L2ItemInstance item : player.getInventory().getItems())
 		{
 			if (item.isWeapon())
 			{
 				if (item.getAttackElementPower() > 0)
 				{
-					itemsList.add(item);
+					_itemsList.add(item);
 				}
 			}
 		}
-		this.itemOID = itemOID;
+		_itemOID = itemOID;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(itemOID);
-		writeD(itemsList.size());
-		for (L2ItemInstance item : itemsList)
+		writeD(_itemOID);
+		writeD(_itemsList.size());
+		for (L2ItemInstance item : _itemsList)
 		{
 			writeItem(item);
 		}

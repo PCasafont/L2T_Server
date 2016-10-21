@@ -22,12 +22,12 @@ import l2server.loginserver.SessionKey;
  */
 public final class PlayOk extends L2LoginServerPacket
 {
-	private int playOk1, playOk2;
+	private int _playOk1, _playOk2;
 
 	public PlayOk(SessionKey sessionKey)
 	{
-		playOk1 = sessionKey.playOkID1;
-		playOk2 = sessionKey.playOkID2;
+		_playOk1 = sessionKey.playOkID1;
+		_playOk2 = sessionKey.playOkID2;
 	}
 
 	/**
@@ -36,7 +36,7 @@ public final class PlayOk extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x07);
-		writeD(playOk1);
-		writeD(playOk2);
+		writeD(_playOk1);
+		writeD(_playOk2);
 	}
 }

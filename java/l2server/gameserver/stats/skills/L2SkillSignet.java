@@ -33,16 +33,16 @@ import l2server.util.Point3D;
 
 public final class L2SkillSignet extends L2Skill
 {
-	private int effectNpcId;
-	public int effectId;
-	public int effectLevel;
+	private int _effectNpcId;
+	public int _effectId;
+	public int _effectLevel;
 
 	public L2SkillSignet(StatsSet set)
 	{
 		super(set);
-		effectNpcId = set.getInteger("effectNpcId", -1);
-		effectId = set.getInteger("effectId", -1);
-		effectLevel = set.getInteger("effectLevel", 1);
+		_effectNpcId = set.getInteger("effectNpcId", -1);
+		_effectId = set.getInteger("effectId", -1);
+		_effectLevel = set.getInteger("effectLevel", 1);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public final class L2SkillSignet extends L2Skill
 			return;
 		}
 
-		L2NpcTemplate template = NpcTable.getInstance().getTemplate(effectNpcId);
+		L2NpcTemplate template = NpcTable.getInstance().getTemplate(_effectNpcId);
 		L2EffectPointInstance effectPoint =
 				new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, caster);
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());

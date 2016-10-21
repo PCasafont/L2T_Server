@@ -37,34 +37,34 @@ import java.util.zip.ZipFile;
  */
 public class FaenorScriptEngine extends ScriptEngine
 {
-	static Logger log = Logger.getLogger(FaenorScriptEngine.class.getName());
+	static Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
 	public static final String PACKAGE_DIRECTORY = Config.DATA_FOLDER + "faenor/";
 	public static final boolean DEBUG = true;
 
-	private LinkedList<ScriptDocument> scripts;
+	private LinkedList<ScriptDocument> _scripts;
 
 	public static FaenorScriptEngine getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private FaenorScriptEngine()
 	{
-		scripts = new LinkedList<>();
+		_scripts = new LinkedList<>();
 		loadPackages();
 		parsePackages();
 	}
 
 	public void reloadPackages()
 	{
-		scripts = new LinkedList<>();
+		_scripts = new LinkedList<>();
 		parsePackages();
 	}
 
 	private void loadPackages()
 	{
 		File packDirectory =
-				new File(Config.DATAPACK_ROOT, PACKAGE_DIRECTORY);//Log.sss(packDirectory.getAbsolutePath());
+				new File(Config.DATAPACK_ROOT, PACKAGE_DIRECTORY);//Logozo.sss(packDirectory.getAbsolutePath());
 
 		FileFilter fileFilter = file -> file.getName().endsWith(".zip");
 
@@ -97,7 +97,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			List<ScriptDocument> scrpts = module.getScriptFiles();
 			for (ScriptDocument script : scrpts)
 			{
-				scripts.add(script);
+				_scripts.add(script);
 			}
 			try
 			{
@@ -109,28 +109,28 @@ public class FaenorScriptEngine extends ScriptEngine
 			}
 		}
 		/*for (ScriptDocument script : scripts)
-		 {
-		 Log.sss("Script: "+script);
+         {
+		 Logozo.sss("Script: "+script);
 		 }
-		 Log.sss("Sorting");
+		 Logozo.sss("Sorting");
 		 orderScripts();
 		 for (ScriptDocument script : scripts)
 		 {
-		 Log.sss("Script: "+script);
+		 Logozo.sss("Script: "+script);
 		 }*/
 	}
 
 	public void orderScripts()
 	{
-		if (scripts.size() > 1)
+		if (_scripts.size() > 1)
 		{
 			//ScriptDocument npcInfo = null;
 
-			for (int i = 0; i < scripts.size(); )
+			for (int i = 0; i < _scripts.size(); )
 			{
-				if (scripts.get(i).getName().contains("NpcStatData"))
+				if (_scripts.get(i).getName().contains("NpcStatData"))
 				{
-					scripts.addFirst(scripts.remove(i));
+					_scripts.addFirst(_scripts.remove(i));
 					//scripts.set(i, scripts.get(0));
 					//scripts.set(0, npcInfo);
 				}
@@ -151,7 +151,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			sem.eval("beanshell", "double log1p(double d) { return Math.log1p(d); }");
 			sem.eval("beanshell", "double pow(double d, double p) { return Math.pow(d,p); }");
 
-			for (ScriptDocument script : scripts)
+			for (ScriptDocument script : _scripts)
 			{
 				parseScript(script, context);
 			}
@@ -202,14 +202,14 @@ public class FaenorScriptEngine extends ScriptEngine
 	@Override
 	public String toString()
 	{
-		if (scripts.isEmpty())
+		if (_scripts.isEmpty())
 		{
 			return "No Packages Loaded.";
 		}
 
 		String out = "Script Packages currently loaded:\n";
 
-		for (ScriptDocument script : scripts)
+		for (ScriptDocument script : _scripts)
 		{
 			out += script;
 		}
@@ -219,6 +219,6 @@ public class FaenorScriptEngine extends ScriptEngine
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FaenorScriptEngine instance = new FaenorScriptEngine();
+		protected static final FaenorScriptEngine _instance = new FaenorScriptEngine();
 	}
 }

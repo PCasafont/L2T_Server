@@ -37,9 +37,9 @@ import java.util.ArrayList;
  */
 public class EffectSignet extends L2Effect
 {
-	private L2Skill skill;
-	private L2EffectPointInstance actor;
-	private boolean srcInArena;
+	private L2Skill _skill;
+	private L2EffectPointInstance _actor;
+	private boolean _srcInArena;
 
 	public EffectSignet(Env env, L2EffectTemplate template)
 	{
@@ -60,15 +60,15 @@ public class EffectSignet extends L2Effect
 	{
 		if (getSkill() instanceof L2SkillSignet)
 		{
-			skill = SkillTable.getInstance()
-					.getInfo(((L2SkillSignet) getSkill()).effectId, ((L2SkillSignet) getSkill()).effectLevel);
+			_skill = SkillTable.getInstance()
+					.getInfo(((L2SkillSignet) getSkill())._effectId, ((L2SkillSignet) getSkill())._effectLevel);
 		}
 		else if (getSkill() instanceof L2SkillSignetCasttime)
 		{
-			skill = SkillTable.getInstance().getInfo(((L2SkillSignetCasttime) getSkill()).effectId, getLevel());
+			_skill = SkillTable.getInstance().getInfo(((L2SkillSignetCasttime) getSkill()).effectId, getLevel());
 		}
-		actor = (L2EffectPointInstance) getEffected();
-		srcInArena =
+		_actor = (L2EffectPointInstance) getEffected();
+		_srcInArena =
 				getEffector().isInsideZone(L2Character.ZONE_PVP) && !getEffector().isInsideZone(L2Character.ZONE_SIEGE);
 		return true;
 	}
@@ -79,12 +79,12 @@ public class EffectSignet extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (skill == null)
+		if (_skill == null)
 		{
 			return true;
 		}
 
-		int mpConsume = skill.getMpConsume();
+		int mpConsume = _skill.getMpConsume();
 
 		if (mpConsume > getEffector().getCurrentMp())
 		{
@@ -99,14 +99,14 @@ public class EffectSignet extends L2Effect
 		boolean signetActor = calc() != 0;
 
 		final ArrayList<L2Character> targets = new ArrayList<>();
-		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (cha == null)
 			{
 				continue;
 			}
 
-			if (skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, skill, srcInArena))
+			if (_skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, _skill, _srcInArena))
 			{
 				continue;
 			}
@@ -123,27 +123,27 @@ public class EffectSignet extends L2Effect
 			// there doesn't seem to be a visible effect with MagicSkillLaunched packet...
 			if (!signetActor)
 			{
-				actor.broadcastPacket(new MagicSkillUse(actor, cha, skill.getId(), skill.getLevelHash(), 0, 0, 0));
+				_actor.broadcastPacket(new MagicSkillUse(_actor, cha, _skill.getId(), _skill.getLevelHash(), 0, 0, 0));
 			}
 			targets.add(cha);
 		}
 
 		if (signetActor)
 		{
-			//_actor.broadcastPacket(new TargetSelected(actor.getObjectId(), actor.getObjectId(), actor.getX(), actor.getY(), actor.getZ()));
-			actor.broadcastPacket(new MagicSkillUse(actor, skill.getId(), skill.getLevelHash(), 0, 0));
-			//_actor.broadcastPacket(new MagicSkillLaunched(actor, skill.getId(), skill.getLevel(), targets.toArray(new L2Character[targets.size()])));
+			//_actor.broadcastPacket(new TargetSelected(_actor.getObjectId(), _actor.getObjectId(), _actor.getX(), _actor.getY(), _actor.getZ()));
+			_actor.broadcastPacket(new MagicSkillUse(_actor, _skill.getId(), _skill.getLevelHash(), 0, 0));
+			//_actor.broadcastPacket(new MagicSkillLaunched(_actor, _skill.getId(), _skill.getLevel(), targets.toArray(new L2Character[targets.size()])));
 		}
 
 		if (!targets.isEmpty())
 		{
 			if (!signetActor)
 			{
-				getEffector().callSkill(skill, targets.toArray(new L2Character[targets.size()]));
+				getEffector().callSkill(_skill, targets.toArray(new L2Character[targets.size()]));
 			}
 			else
 			{
-				actor.callSkill(skill, targets.toArray(new L2Character[targets.size()]));
+				_actor.callSkill(_skill, targets.toArray(new L2Character[targets.size()]));
 			}
 		}
 		return true;
@@ -155,9 +155,9 @@ public class EffectSignet extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (actor != null)
+		if (_actor != null)
 		{
-			actor.deleteMe();
+			_actor.deleteMe();
 		}
 	}
 }

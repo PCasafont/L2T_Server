@@ -21,15 +21,20 @@ import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.gameserver.templates.item.L2Item;
-import lombok.Getter;
 
 public class PetInventory extends Inventory
 {
-	@Getter private final L2PetInstance owner;
+	private final L2PetInstance _owner;
 
 	public PetInventory(L2PetInstance owner)
 	{
-		this.owner = owner;
+		_owner = owner;
+	}
+
+	@Override
+	public L2PetInstance getOwner()
+	{
+		return _owner;
 	}
 
 	@Override
@@ -39,7 +44,7 @@ public class PetInventory extends Inventory
 		int id;
 		try
 		{
-			id = owner.getOwner().getObjectId();
+			id = _owner.getOwner().getObjectId();
 		}
 		catch (NullPointerException e)
 		{
@@ -74,7 +79,7 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return items.size() + slots <= owner.getInventoryLimit();
+		return _items.size() + slots <= _owner.getInventoryLimit();
 	}
 
 	public boolean validateWeight(L2ItemInstance item, long count)
@@ -92,7 +97,7 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateWeight(long weight)
 	{
-		return totalWeight + weight <= owner.getMaxLoad();
+		return _totalWeight + weight <= _owner.getMaxLoad();
 	}
 
 	@Override
@@ -112,7 +117,7 @@ public class PetInventory extends Inventory
 	{
 		super.restore();
 		// check for equiped items from other pets
-		for (L2ItemInstance item : items.values())
+		for (L2ItemInstance item : _items.values())
 		{
 			if (item.isEquipped())
 			{
@@ -126,7 +131,7 @@ public class PetInventory extends Inventory
 
 	public void transferItemsToOwner()
 	{
-		for (L2ItemInstance item : items.values())
+		for (L2ItemInstance item : _items.values())
 		{
 			getOwner().transferItem("return", item.getObjectId(), item.getCount(), getOwner().getOwner().getInventory(),
 					getOwner().getOwner(), getOwner());

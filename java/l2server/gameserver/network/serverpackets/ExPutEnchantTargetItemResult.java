@@ -20,15 +20,20 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPutEnchantTargetItemResult extends L2GameServerPacket
 {
-	private int result;
+
+	private int _result;
 
 	/**
 	 *
 	 */
 	public ExPutEnchantTargetItemResult(int result)
 	{
-		this.result = result;
+		_result = result;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -36,6 +41,6 @@ public class ExPutEnchantTargetItemResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(result);
+		writeD(_result);
 	}
 }

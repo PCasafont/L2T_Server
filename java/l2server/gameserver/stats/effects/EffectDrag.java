@@ -34,7 +34,7 @@ import l2server.log.Log;
  */
 public class EffectDrag extends L2Effect
 {
-	private int x, y, z;
+	private int _x, _y, _z;
 
 	public EffectDrag(Env env, L2EffectTemplate template)
 	{
@@ -53,7 +53,8 @@ public class EffectDrag extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
+				getEffected().isRaid())
 		{
 			return false;
 		}
@@ -106,25 +107,25 @@ public class EffectDrag extends L2Effect
 		cos = dx / distance;
 
 		// Calculate the new destination with offset included
-		x = curX + (int) (offset * cos);
-		y = curY + (int) (offset * sin);
-		z = curZ;
+		_x = curX + (int) (offset * cos);
+		_y = curY + (int) (offset * sin);
+		_z = curZ;
 
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z,
 							getEffected().getInstanceId());
-			if (destiny.getX() != x || destiny.getY() != y)
+			if (destiny.getX() != _x || destiny.getY() != _y)
 			{
-				x = destiny.getX() - (int) (cos * 10);
-				y = destiny.getY() - (int) (sin * 10);
+				_x = destiny.getX() - (int) (cos * 10);
+				_y = destiny.getY() - (int) (sin * 10);
 			}
 		}
 		getEffected().setIsParalyzed(true);
 		getEffected().startParalyze();
-		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.DRAG));
-		getEffected().setXYZ(x, y, z);
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, FlyType.DRAG));
+		getEffected().setXYZ(_x, _y, _z);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 		return true;
 	}

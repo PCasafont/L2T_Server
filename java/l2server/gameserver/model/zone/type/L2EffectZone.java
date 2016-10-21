@@ -26,7 +26,6 @@ import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
-import lombok.Getter;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -41,25 +40,25 @@ import java.util.concurrent.Future;
  */
 public class L2EffectZone extends L2ZoneType
 {
-	@Getter private int chance;
-	private int initialDelay;
-	private int reuse;
-	@Getter private boolean enabled;
-	private boolean bypassConditions;
-	private boolean isShowDangerIcon;
-	private Future<?> task;
-	private HashMap<Integer, Integer> skills;
+	private int _chance;
+	private int _initialDelay;
+	private int _reuse;
+	private boolean _enabled;
+	private boolean _bypassConditions;
+	private boolean _isShowDangerIcon;
+	private Future<?> _task;
+	private HashMap<Integer, Integer> _skills;
 
 	public L2EffectZone(int id)
 	{
 		super(id);
-		chance = 100;
-		initialDelay = 0;
-		reuse = 30000;
-		enabled = true;
+		_chance = 100;
+		_initialDelay = 0;
+		_reuse = 30000;
+		_enabled = true;
 		setTargetType(InstanceType.L2Playable); // default only playabale
-		bypassConditions = false;
-		isShowDangerIcon = true;
+		_bypassConditions = false;
+		_isShowDangerIcon = true;
 	}
 
 	@Override
@@ -68,26 +67,26 @@ public class L2EffectZone extends L2ZoneType
 		switch (name)
 		{
 			case "chance":
-				chance = Integer.parseInt(value);
+				_chance = Integer.parseInt(value);
 				break;
 			case "initialDelay":
-				initialDelay = Integer.parseInt(value);
+				_initialDelay = Integer.parseInt(value);
 				break;
 			case "default_enabled":
-				enabled = Boolean.parseBoolean(value);
+				_enabled = Boolean.parseBoolean(value);
 				break;
 			case "reuse":
-				reuse = Integer.parseInt(value);
+				_reuse = Integer.parseInt(value);
 				break;
 			case "bypassSkillConditions":
-				bypassConditions = Boolean.parseBoolean(value);
+				_bypassConditions = Boolean.parseBoolean(value);
 				break;
 			case "maxDynamicSkillCount":
-				skills = new HashMap<>(Integer.parseInt(value));
+				_skills = new HashMap<>(Integer.parseInt(value));
 				break;
 			case "skillIdLvl":
 				String[] propertySplit = value.split(";");
-				skills = new HashMap<>(propertySplit.length);
+				_skills = new HashMap<>(propertySplit.length);
 				for (String skill : propertySplit)
 				{
 					String[] skillSplit = skill.split("-");
@@ -101,7 +100,7 @@ public class L2EffectZone extends L2ZoneType
 					{
 						try
 						{
-							skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
+							_skills.put(Integer.parseInt(skillSplit[0]), Integer.parseInt(skillSplit[1]));
 						}
 						catch (NumberFormatException nfe)
 						{
@@ -116,7 +115,7 @@ public class L2EffectZone extends L2ZoneType
 				}
 				break;
 			case "showDangerIcon":
-				isShowDangerIcon = Boolean.parseBoolean(value);
+				_isShowDangerIcon = Boolean.parseBoolean(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -127,16 +126,16 @@ public class L2EffectZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (skills != null)
+		if (_skills != null)
 		{
-			if (task == null)
+			if (_task == null)
 			{
 				synchronized (this)
 				{
-					if (task == null)
+					if (_task == null)
 					{
-						task = ThreadPoolManager.getInstance()
-								.scheduleGeneralAtFixedRate(new ApplySkill(), initialDelay, reuse);
+						_task = ThreadPoolManager.getInstance()
+								.scheduleGeneralAtFixedRate(new ApplySkill(), _initialDelay, _reuse);
 					}
 				}
 			}
@@ -144,7 +143,7 @@ public class L2EffectZone extends L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			character.setInsideZone(L2Character.ZONE_ALTERED, true);
-			if (isShowDangerIcon)
+			if (_isShowDangerIcon)
 			{
 				character.setInsideZone(L2Character.ZONE_DANGERAREA, true);
 				character.sendPacket(new EtcStatusUpdate((L2PcInstance) character));
@@ -158,7 +157,7 @@ public class L2EffectZone extends L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			character.setInsideZone(L2Character.ZONE_ALTERED, false);
-			if (isShowDangerIcon)
+			if (_isShowDangerIcon)
 			{
 				character.setInsideZone(L2Character.ZONE_DANGERAREA, false);
 				if (!character.isInsideZone(L2Character.ZONE_DANGERAREA))
@@ -167,16 +166,26 @@ public class L2EffectZone extends L2ZoneType
 				}
 			}
 		}
-		if (characterList.isEmpty() && task != null)
+		if (_characterList.isEmpty() && _task != null)
 		{
-			task.cancel(true);
-			task = null;
+			_task.cancel(true);
+			_task = null;
 		}
 	}
 
 	private L2Skill getSkill(int skillId, int skillLvl)
 	{
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);
+	}
+
+	public boolean isEnabled()
+	{
+		return _enabled;
+	}
+
+	public int getChance()
+	{
+		return _chance;
 	}
 
 	public void addSkill(int skillId, int skillLvL)
@@ -186,63 +195,63 @@ public class L2EffectZone extends L2ZoneType
 			removeSkill(skillId);
 			return;
 		}
-		if (skills == null)
+		if (_skills == null)
 		{
 			synchronized (this)
 			{
-				if (skills == null)
+				if (_skills == null)
 				{
-					skills = new HashMap<>(3);
+					_skills = new HashMap<>(3);
 				}
 			}
 		}
-		skills.put(skillId, skillLvL);
-		//Log.info("Zone: "+this+" adding skill: "+skillId+" lvl: "+skillLvL);
+		_skills.put(skillId, skillLvL);
+		//Logozo.info("Zone: "+this+" adding skill: "+skillId+" lvl: "+skillLvL);
 	}
 
 	public void removeSkill(int skillId)
 	{
-		if (skills != null)
+		if (_skills != null)
 		{
-			skills.remove(skillId);
+			_skills.remove(skillId);
 		}
 	}
 
 	public void clearSkills()
 	{
-		if (skills != null)
+		if (_skills != null)
 		{
-			skills.clear();
+			_skills.clear();
 		}
 	}
 
 	public void setZoneEnabled(boolean val)
 	{
-		enabled = val;
+		_enabled = val;
 	}
 
 	public int getSkillLevel(int skillId)
 	{
-		if (skills == null || !skills.containsKey(skillId))
+		if (_skills == null || !_skills.containsKey(skillId))
 		{
 			return 0;
 		}
 		else
 		{
-			return skills.get(skillId);
+			return _skills.get(skillId);
 		}
 	}
 
 	protected Collection<L2Character> getCharacterList()
 	{
-		return characterList.values();
+		return _characterList.values();
 	}
 
 	class ApplySkill implements Runnable
 	{
 		ApplySkill()
 		{
-			if (skills == null)
+			if (_skills == null)
 			{
 				throw new IllegalStateException("No skills defined.");
 			}
@@ -260,13 +269,13 @@ public class L2EffectZone extends L2ZoneType
 					{
 						if (Rnd.get(100) < getChance())
 						{
-							synchronized (skills)
+							synchronized (_skills)
 							{
-								Map<Integer, Integer> toIterate = new HashMap<>(skills);
+								Map<Integer, Integer> toIterate = new HashMap<>(_skills);
 								for (Entry<Integer, Integer> e : toIterate.entrySet())
 								{
 									L2Skill skill = getSkill(e.getKey(), e.getValue());
-									if (bypassConditions || skill.checkCondition(temp, temp, false))
+									if (_bypassConditions || skill.checkCondition(temp, temp, false))
 									{
 										if (temp.getFirstEffect(e.getKey()) == null)
 										{

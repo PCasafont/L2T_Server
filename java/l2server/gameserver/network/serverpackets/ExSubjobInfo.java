@@ -23,27 +23,27 @@ import l2server.gameserver.model.base.SubClass;
  */
 public final class ExSubjobInfo extends L2GameServerPacket
 {
-	private L2PcInstance activeChar;
+	private L2PcInstance _activeChar;
 
 	public ExSubjobInfo(L2PcInstance activeChar)
 	{
-		this.activeChar = activeChar;
+		_activeChar = activeChar;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x00); // GoD ???
-		writeD(activeChar.getCurrentClass().getId()); // Current Class
+		writeD(_activeChar.getCurrentClass().getId()); // Current Class
 		writeD(0x00); // GoD ???
 
-		writeD(activeChar.getSubClasses().size() + 1); // Class amount
+		writeD(_activeChar.getSubClasses().size() + 1); // Class amount
 
 		writeD(0x00); // Base class index
-		writeD(activeChar.getBaseClass());
-		writeD(activeChar.getBaseClassLevel());
+		writeD(_activeChar.getBaseClass());
+		writeD(_activeChar.getBaseClassLevel());
 		writeC(0x00); // 0x00 Red (base)
-		for (SubClass sc : activeChar.getSubClasses().values())
+		for (SubClass sc : _activeChar.getSubClasses().values())
 		{
 			writeD(sc.getClassIndex());
 			writeD(sc.getClassId());

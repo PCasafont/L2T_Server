@@ -36,15 +36,15 @@ import java.util.Map;
 public class SeedOfAnnihilation extends Quest
 {
 	private static final String qn = "SeedOfAnnihilation";
-	private static final Map<Integer, int[]> teleportZones = new HashMap<Integer, int[]>();
+	private static final Map<Integer, int[]> _teleportZones = new HashMap<Integer, int[]>();
 	private static final int ANNIHILATION_FURNACE = 18928;
 	// Strength, Agility, Wisdom
 	private static final int[] ZONE_BUFFS = {0, 6443, 6444, 6442};
 	private static final int[][] ZONE_BUFFS_LIST = {{1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 2, 1}, {3, 1, 2}};
 
 	// 0: Bistakon, 1: Reptilikon, 2: Cokrakon
-	private SeedRegion[] regionsData = new SeedRegion[3];
-	private Long seedsNextStatusChange;
+	private SeedRegion[] _regionsData = new SeedRegion[3];
+	private Long _seedsNextStatusChange;
 
 	private static class SeedRegion
 	{
@@ -66,25 +66,25 @@ public class SeedOfAnnihilation extends Quest
 
 	static
 	{
-		teleportZones.put(60002, new int[]{-213175, 182648, -10992});
-		teleportZones.put(60003, new int[]{-181217, 186711, -10528});
-		teleportZones.put(60004, new int[]{-180211, 182984, -15152});
-		teleportZones.put(60005, new int[]{-179275, 186802, -10720});
+		_teleportZones.put(60002, new int[]{-213175, 182648, -10992});
+		_teleportZones.put(60003, new int[]{-181217, 186711, -10528});
+		_teleportZones.put(60004, new int[]{-180211, 182984, -15152});
+		_teleportZones.put(60005, new int[]{-179275, 186802, -10720});
 	}
 
 	public void loadSeedRegionData()
 	{
 		// Bistakon data
-		regionsData[0] = new SeedRegion(new int[]{22750, 22751, 22752, 22753},
+		_regionsData[0] = new SeedRegion(new int[]{22750, 22751, 22752, 22753},
 				new int[][]{{22746, 22746, 22746}, {22747, 22747, 22747}, {22748, 22748, 22748}, {22749, 22749, 22749}},
 				60006, new int[][]{{-180450, 185507, -10544, 11632}, {-180005, 185489, -10544, 11632}});
 
 		// Reptilikon data
-		regionsData[1] = new SeedRegion(new int[]{22757, 22758, 22759}, new int[][]{{22754, 22755, 22756}}, 60007,
+		_regionsData[1] = new SeedRegion(new int[]{22757, 22758, 22759}, new int[][]{{22754, 22755, 22756}}, 60007,
 				new int[][]{{-179600, 186998, -10704, 11632}, {-179295, 186444, -10704, 11632}});
 
 		// Cokrakon data
-		regionsData[2] = new SeedRegion(new int[]{22763, 22764, 22765}, new int[][]{
+		_regionsData[2] = new SeedRegion(new int[]{22763, 22764, 22765}, new int[][]{
 				{22760, 22760, 22761},
 				{22760, 22760, 22762},
 				{22761, 22761, 22760},
@@ -98,17 +98,17 @@ public class SeedOfAnnihilation extends Quest
 		{
 			buffsNow = Rnd.get(ZONE_BUFFS_LIST.length);
 			saveGlobalQuestVar("SeedBuffsList", String.valueOf(buffsNow));
-			seedsNextStatusChange = getNextSeedsStatusChangeTime();
-			saveGlobalQuestVar("SeedNextStatusChange", String.valueOf(seedsNextStatusChange));
+			_seedsNextStatusChange = getNextSeedsStatusChangeTime();
+			saveGlobalQuestVar("SeedNextStatusChange", String.valueOf(_seedsNextStatusChange));
 		}
 		else
 		{
-			seedsNextStatusChange = Long.parseLong(var);
+			_seedsNextStatusChange = Long.parseLong(var);
 			buffsNow = Integer.parseInt(loadGlobalQuestVar("SeedBuffsList"));
 		}
-		for (int i = 0; i < regionsData.length; i++)
+		for (int i = 0; i < _regionsData.length; i++)
 		{
-			regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
+			_regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
 		}
 	}
 
@@ -130,11 +130,11 @@ public class SeedOfAnnihilation extends Quest
 	{
 		super(questId, name, descr);
 		loadSeedRegionData();
-		for (int i : teleportZones.keySet())
+		for (int i : _teleportZones.keySet())
 		{
 			addEnterZoneId(i);
 		}
-		for (SeedRegion element : regionsData)
+		for (SeedRegion element : _regionsData)
 		{
 			for (int elite_mob_id : element.elite_mob_ids)
 			{
@@ -149,19 +149,19 @@ public class SeedOfAnnihilation extends Quest
 
 	private void startEffectZonesControl()
 	{
-		for (int i = 0; i < regionsData.length; i++)
+		for (int i = 0; i < _regionsData.length; i++)
 		{
-			for (int j = 0; j < regionsData[i].af_spawns.length; j++)
+			for (int j = 0; j < _regionsData[i].af_spawns.length; j++)
 			{
-				regionsData[i].af_npcs[j] =
-						addSpawn(ANNIHILATION_FURNACE, regionsData[i].af_spawns[j][0], regionsData[i].af_spawns[j][1],
-								regionsData[i].af_spawns[j][2], regionsData[i].af_spawns[j][3], false, 0);
-				regionsData[i].af_npcs[j].setDisplayEffect(regionsData[i].activeBuff);
+				_regionsData[i].af_npcs[j] =
+						addSpawn(ANNIHILATION_FURNACE, _regionsData[i].af_spawns[j][0], _regionsData[i].af_spawns[j][1],
+								_regionsData[i].af_spawns[j][2], _regionsData[i].af_spawns[j][3], false, 0);
+				_regionsData[i].af_npcs[j].setDisplayEffect(_regionsData[i].activeBuff);
 			}
-			ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class)
-					.addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
+			ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class)
+					.addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
 		}
-		startQuestTimer("ChangeSeedsStatus", seedsNextStatusChange - System.currentTimeMillis(), null, null);
+		startQuestTimer("ChangeSeedsStatus", _seedsNextStatusChange - System.currentTimeMillis(), null, null);
 	}
 
 	private void initialMinionsSpawn()
@@ -172,7 +172,7 @@ public class SeedOfAnnihilation extends Quest
 			{
 				continue;
 			}
-			for (SeedRegion element : regionsData)
+			for (SeedRegion element : _regionsData)
 			{
 				if (Util.contains(element.elite_mob_ids, spawn.getNpcId()))
 				{
@@ -197,7 +197,7 @@ public class SeedOfAnnihilation extends Quest
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		for (SeedRegion element : regionsData)
+		for (SeedRegion element : _regionsData)
 		{
 			if (Util.contains(element.elite_mob_ids, npc.getNpcId()))
 			{
@@ -214,22 +214,23 @@ public class SeedOfAnnihilation extends Quest
 		{
 			int buffsNow = Rnd.get(ZONE_BUFFS_LIST.length);
 			saveGlobalQuestVar("SeedBuffsList", String.valueOf(buffsNow));
-			seedsNextStatusChange = getNextSeedsStatusChangeTime();
-			saveGlobalQuestVar("SeedNextStatusChange", String.valueOf(seedsNextStatusChange));
-			for (int i = 0; i < regionsData.length; i++)
+			_seedsNextStatusChange = getNextSeedsStatusChangeTime();
+			saveGlobalQuestVar("SeedNextStatusChange", String.valueOf(_seedsNextStatusChange));
+			for (int i = 0; i < _regionsData.length; i++)
 			{
-				regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
+				_regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
 
-				for (L2Npc af : regionsData[i].af_npcs)
+				for (L2Npc af : _regionsData[i].af_npcs)
 				{
-					af.setDisplayEffect(regionsData[i].activeBuff);
+					af.setDisplayEffect(_regionsData[i].activeBuff);
 				}
 
-				L2EffectZone zone = ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class);
+				L2EffectZone zone =
+						ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class);
 				zone.clearSkills();
-				zone.addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
+				zone.addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
 			}
-			startQuestTimer("ChangeSeedsStatus", seedsNextStatusChange - System.currentTimeMillis(), null, null);
+			startQuestTimer("ChangeSeedsStatus", _seedsNextStatusChange - System.currentTimeMillis(), null, null);
 		}
 		else if (event.equalsIgnoreCase("transform"))
 		{
@@ -257,9 +258,9 @@ public class SeedOfAnnihilation extends Quest
 	@Override
 	public String onEnterZone(L2Character character, L2ZoneType zone)
 	{
-		if (teleportZones.containsKey(zone.getId()))
+		if (_teleportZones.containsKey(zone.getId()))
 		{
-			int[] teleLoc = teleportZones.get(zone.getId());
+			int[] teleLoc = _teleportZones.get(zone.getId());
 			character.teleToLocation(teleLoc[0], teleLoc[1], teleLoc[2]);
 		}
 		return super.onEnterZone(character, zone);

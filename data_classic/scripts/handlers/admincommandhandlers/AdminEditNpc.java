@@ -15,17 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
-
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.cache.HtmCache;
@@ -45,8 +34,13 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * @author terry
@@ -92,7 +86,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 			if (target instanceof L2Npc)
 			{
 				L2Npc npc = (L2Npc) target;
-				Log.info("('',1," + npc.getNpcId() + "," + npc.getX() + "," + npc.getY() + "," + npc.getZ() + ",0,0," +
+				_log.info("('',1," + npc.getNpcId() + "," + npc.getX() + "," + npc.getY() + "," + npc.getZ() + ",0,0," +
 						npc.getHeading() + ",60,0,0),");
 			}
 		}
@@ -513,7 +507,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			Log.warning(
+			_log.warning(
 					"Could not store trade list (" + itemID + ", " + price + ", " + tradeListID + ", " + order + "): " +
 							e);
 			return false;
@@ -541,7 +535,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			Log.warning("Could not update trade list (" + itemID + ", " + price + ", " + tradeListID + ", " + order +
+			_log.warning("Could not update trade list (" + itemID + ", " + price + ", " + tradeListID + ", " + order +
 					"): " + e);
 		}
 		finally
@@ -565,7 +559,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			Log.warning("Could not delete trade list (" + tradeListID + ", " + order + "): " + e);
+			_log.warning("Could not delete trade list (" + tradeListID + ", " + order + "): " + e);
 		}
 		finally
 		{
@@ -597,7 +591,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			Log.warning("Could not get order for (" + itemID + ", " + price + ", " + tradeListID + "): " + e);
+			_log.warning("Could not get order for (" + itemID + ", " + price + ", " + tradeListID + "): " + e);
 		}
 		finally
 		{
@@ -830,7 +824,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			activeChar.sendMessage("Could not save npc property!");
-			Log.warning("Error saving new npc value (" + command + "): " + e);
+			_log.warning("Error saving new npc value (" + command + "): " + e);
 		}
 	}
 
@@ -1009,7 +1003,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			activeChar.sendMessage("Could not edit npc skills!");
-			Log.warning("Error while editing npc skills (" + npcId + ", " + skillId + "): " + e);
+			_log.warning("Error while editing npc skills (" + npcId + ", " + skillId + "): " + e);
 		}
 	}
 
@@ -1057,7 +1051,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			activeChar.sendMessage("Could not add npc skill!");
-			Log.warning("Error while adding a npc skill (" + npcId + ", " + skillId + ", " + level + "): ");
+			_log.warning("Error while adding a npc skill (" + npcId + ", " + skillId + ", " + level + "): ");
 			e.printStackTrace();
 		}
 	}
@@ -1079,7 +1073,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			activeChar.sendMessage("Could not delete npc skill!");
-			Log.warning("Error while deleting npc skill (" + npcId + ", " + skillId + "): " + e);
+			_log.warning("Error while deleting npc skill (" + npcId + ", " + skillId + "): " + e);
 		}
 	}
 }

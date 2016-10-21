@@ -24,7 +24,7 @@ import l2server.util.Rnd;
 
 public class L2PenaltyMonsterInstance extends L2MonsterInstance
 {
-	private L2PcInstance ptk;
+	private L2PcInstance _ptk;
 
 	public L2PenaltyMonsterInstance(int objectId, L2NpcTemplate template)
 	{
@@ -35,9 +35,9 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 	@Override
 	public L2Character getMostHated()
 	{
-		if (ptk != null)
+		if (_ptk != null)
 		{
-			return ptk; //always attack only one person
+			return _ptk; //always attack only one person
 		}
 		else
 		{
@@ -51,9 +51,9 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 		{
 			CreatureSay cs =
 					new CreatureSay(getObjectId(), Say2.ALL_NOT_RECORDED, getName(), "mmm your bait was delicious");
-			broadcastPacket(cs);
+			this.broadcastPacket(cs);
 		}
-		this.ptk = ptk;
+		_ptk = ptk;
 		addDamageHate(ptk, 0, 10);
 		getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, ptk);
 		addAttackerToAttackByList(ptk);
@@ -71,7 +71,7 @@ public class L2PenaltyMonsterInstance extends L2MonsterInstance
 		{
 			CreatureSay cs = new CreatureSay(getObjectId(), Say2.ALL_NOT_RECORDED, getName(),
 					"I will tell fishes not to take your bait");
-			broadcastPacket(cs);
+			this.broadcastPacket(cs);
 		}
 		return true;
 	}

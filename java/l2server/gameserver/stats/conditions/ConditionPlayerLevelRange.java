@@ -22,19 +22,19 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerLevelRange extends Condition
 {
-	private final int[] levels;
+	private final int[] _levels;
 
 	/**
 	 * Instantiates a new condition player levels range.
 	 */
 	public ConditionPlayerLevelRange(int[] levels)
 	{
-		this.levels = levels;
+		_levels = levels;
 	}
 
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return env.player.getLevel() >= levels[0] && env.player.getLevel() <= levels[1];
+		return env.player.getLevel() >= _levels[0] && env.player.getLevel() <= _levels[1];
 	}
 }

@@ -38,12 +38,13 @@ import java.util.List;
  */
 public class ExCubeGameTeamList extends L2GameServerPacket
 {
+
 	// Players Lists
-	List<L2PcInstance> bluePlayers;
-	List<L2PcInstance> redPlayers;
+	List<L2PcInstance> _bluePlayers;
+	List<L2PcInstance> _redPlayers;
 
 	// Common Values
-	int roomNumber;
+	int _roomNumber;
 
 	/**
 	 * Show Minigame Waiting List to Player
@@ -54,9 +55,9 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	 */
 	public ExCubeGameTeamList(List<L2PcInstance> redPlayers, List<L2PcInstance> bluePlayers, int roomNumber)
 	{
-		this.redPlayers = redPlayers;
-		this.bluePlayers = bluePlayers;
-		this.roomNumber = roomNumber - 1;
+		_redPlayers = redPlayers;
+		_bluePlayers = bluePlayers;
+		_roomNumber = roomNumber - 1;
 	}
 
 	/* (non-Javadoc)
@@ -65,17 +66,17 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(roomNumber);
+		writeD(_roomNumber);
 		writeD(0xffffffff);
 
-		writeD(bluePlayers.size());
-		for (L2PcInstance player : bluePlayers)
+		writeD(_bluePlayers.size());
+		for (L2PcInstance player : _bluePlayers)
 		{
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}
-		writeD(redPlayers.size());
-		for (L2PcInstance player : redPlayers)
+		writeD(_redPlayers.size());
+		for (L2PcInstance player : _redPlayers)
 		{
 			writeD(player.getObjectId());
 			writeS(player.getName());

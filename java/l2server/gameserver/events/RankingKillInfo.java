@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class RankingKillInfo
 {
-	private static Map<String, KillInfo> specificKillInfo = new HashMap<>();
+	private static Map<String, KillInfo> _specificKillInfo = new HashMap<>();
 
 	public void updateSpecificKillInfo(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
@@ -45,7 +45,7 @@ public class RankingKillInfo
 		}
 
 		//Killed
-		KillInfo map = specificKillInfo.get(killedPlayer.getName());
+		KillInfo map = _specificKillInfo.get(killedPlayer.getName());
 		if (map != null)
 		{
 			if (map.getKillingSpree() >= 3)
@@ -56,7 +56,7 @@ public class RankingKillInfo
 		}
 
 		//Killer
-		map = specificKillInfo.get(killerPlayer.getName());
+		map = _specificKillInfo.get(killerPlayer.getName());
 		if (map != null) // The player have specific info
 		{
 			map.increaseKills(killerPlayer, killedPlayer.getName());
@@ -65,7 +65,7 @@ public class RankingKillInfo
 		{
 			KillInfo info = new KillInfo();
 			info.increaseKills(killerPlayer, killedPlayer.getName());
-			specificKillInfo.put(killerPlayer.getName(), info);
+			_specificKillInfo.put(killerPlayer.getName(), info);
 		}
 
 		//Send the info
@@ -137,12 +137,13 @@ public class RankingKillInfo
 
 		return !(!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) ||
 				!killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()));
+
 	}
 
 	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)
 	{
 		/*if (killer == null || killed == null)
-			return;
+            return;
 
 		List<String> rewardedPlayers = new ArrayList<String>();
 		List<L2PcInstance> allPlayersToBuff = new ArrayList<L2PcInstance>();
@@ -219,21 +220,22 @@ public class RankingKillInfo
 
 	private class KillInfo
 	{
-		@SuppressWarnings("unused") private String killerName;
-		private int killingSpree;
-		private HashMap<String, Integer> killerList;
+		@SuppressWarnings("unused")
+		private String _killerName;
+		private int _killingSpree;
+		private HashMap<String, Integer> _killerList;
 
 		private KillInfo()
 		{
-			killerList = new HashMap<>();
+			_killerList = new HashMap<>();
 		}
 
 		private int getKillInfo(String name)
 		{
 			int i = 0;
-			if (killerList.containsKey(name))
+			if (_killerList.containsKey(name))
 			{
-				return killerList.get(name);
+				return _killerList.get(name);
 			}
 			return i;
 		}
@@ -245,20 +247,20 @@ public class RankingKillInfo
 				return;
 			}
 
-			if (killerList.containsKey(killedName))
+			if (_killerList.containsKey(killedName))
 			{
-				killerList.put(killedName, killerList.get(killedName) + 1);
+				_killerList.put(killedName, _killerList.get(killedName) + 1);
 			}
 			else
 			{
-				killerList.put(killedName, 1);
+				_killerList.put(killedName, 1);
 			}
 
-			killingSpree++;
+			_killingSpree++;
 
 			String message = null;
 			int skillLevel = 0;
-			switch (killingSpree)
+			switch (_killingSpree)
 			{
 				case 3:
 					message = " is on a Killing Spree!";
@@ -300,12 +302,12 @@ public class RankingKillInfo
 
 		private int getKillingSpree()
 		{
-			return killingSpree;
+			return _killingSpree;
 		}
 
 		private void notifyDead()
 		{
-			killingSpree = 0;
+			_killingSpree = 0;
 		}
 	}
 
@@ -331,9 +333,9 @@ public class RankingKillInfo
 
 	private int getSpecificKillsInfo(String killerName, String killedName)
 	{
-		if (specificKillInfo.get(killerName) != null)
+		if (_specificKillInfo.get(killerName) != null)
 		{
-			return specificKillInfo.get(killerName).getKillInfo(killedName);
+			return _specificKillInfo.get(killerName).getKillInfo(killedName);
 		}
 		return 0;
 	}
@@ -451,12 +453,12 @@ public class RankingKillInfo
 
 	public static RankingKillInfo getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final RankingKillInfo instance = new RankingKillInfo();
+		protected static final RankingKillInfo _instance = new RankingKillInfo();
 	}
 }

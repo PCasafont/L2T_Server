@@ -32,18 +32,18 @@ public class AntiFeedManager
 	public static final int OLYMPIAD_ID = 1;
 	public static final int TVT_ID = 2;
 
-	private Map<Integer, Long> lastDeathTimes;
-	private TIntObjectHashMap<Map<Integer, Connections>> eventIPs;
+	private Map<Integer, Long> _lastDeathTimes;
+	private TIntObjectHashMap<Map<Integer, Connections>> _eventIPs;
 
 	public static AntiFeedManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private AntiFeedManager()
 	{
-		lastDeathTimes = new ConcurrentHashMap<>();
-		eventIPs = new TIntObjectHashMap<>();
+		_lastDeathTimes = new ConcurrentHashMap<>();
+		_eventIPs = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class AntiFeedManager
 	 */
 	public final void setLastDeathTime(int objectId)
 	{
-		lastDeathTimes.put(objectId, System.currentTimeMillis());
+		_lastDeathTimes.put(objectId, System.currentTimeMillis());
 	}
 
 	/**
@@ -135,6 +135,7 @@ public class AntiFeedManager
 		//Clan check
 		return !(attackerPlayer.getClan() != null && targetPlayer.getClan() != null &&
 				attackerPlayer.getClanId() == targetPlayer.getClanId());
+
 	}
 
 	/**
@@ -142,7 +143,7 @@ public class AntiFeedManager
 	 */
 	public final void clear()
 	{
-		lastDeathTimes.clear();
+		_lastDeathTimes.clear();
 	}
 
 	/**
@@ -153,9 +154,9 @@ public class AntiFeedManager
 	 */
 	public final void registerEvent(int eventId)
 	{
-		if (!eventIPs.containsKey(eventId))
+		if (!_eventIPs.containsKey(eventId))
 		{
-			eventIPs.put(eventId, new HashMap<>());
+			_eventIPs.put(eventId, new HashMap<>());
 		}
 	}
 
@@ -189,10 +190,10 @@ public class AntiFeedManager
 	{
 		return true;
 		/*
-		if (client == null)
+        if (client == null)
 			return false; // unable to determine IP address
 
-		final Map<Integer, Connections> event = eventIPs.get(eventId);
+		final Map<Integer, Connections> event = _eventIPs.get(eventId);
 		if (event == null)
 			return false; // no such event registered
 
@@ -230,7 +231,7 @@ public class AntiFeedManager
 			return false; // unable to determine IP address
 		}
 
-		final Map<Integer, Connections> event = eventIPs.get(eventId);
+		final Map<Integer, Connections> event = _eventIPs.get(eventId);
 		if (event == null)
 		{
 			return false; // no such event registered
@@ -265,7 +266,7 @@ public class AntiFeedManager
 		}
 
 		final Integer addrHash = client.getConnectionAddress().hashCode();
-		eventIPs.forEachValue(new DisconnectProcedure(addrHash));
+		_eventIPs.forEachValue(new DisconnectProcedure(addrHash));
 	}
 
 	/**
@@ -275,7 +276,7 @@ public class AntiFeedManager
 	 */
 	public final void clear(int eventId)
 	{
-		final Map<Integer, Connections> event = eventIPs.get(eventId);
+		final Map<Integer, Connections> event = _eventIPs.get(eventId);
 		if (event != null)
 		{
 			event.clear();
@@ -315,7 +316,7 @@ public class AntiFeedManager
 
 	private static final class Connections
 	{
-		private int num = 0;
+		private int _num = 0;
 
 		/**
 		 * Returns true if successfully incremented number of connections
@@ -324,9 +325,9 @@ public class AntiFeedManager
 		@SuppressWarnings("unused")
 		public final synchronized boolean testAndIncrement(int max)
 		{
-			if (num < max)
+			if (_num < max)
 			{
-				num++;
+				_num++;
 				return true;
 			}
 			return false;
@@ -337,35 +338,35 @@ public class AntiFeedManager
 		 */
 		public final synchronized boolean testAndDecrement()
 		{
-			if (num > 0)
+			if (_num > 0)
 			{
-				num--;
+				_num--;
 			}
 
-			return num == 0;
+			return _num == 0;
 		}
 	}
 
 	private static final class DisconnectProcedure implements TObjectProcedure<Map<Integer, Connections>>
 	{
-		private final Integer addrHash;
+		private final Integer _addrHash;
 
 		public DisconnectProcedure(Integer addrHash)
 		{
-			this.addrHash = addrHash;
+			_addrHash = addrHash;
 		}
 
 		@Override
 		public final boolean execute(Map<Integer, Connections> event)
 		{
-			final Connections conns = event.get(addrHash);
+			final Connections conns = event.get(_addrHash);
 			if (conns != null)
 			{
 				synchronized (event)
 				{
 					if (conns.testAndDecrement())
 					{
-						event.remove(addrHash);
+						event.remove(_addrHash);
 					}
 				}
 			}
@@ -376,6 +377,6 @@ public class AntiFeedManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AntiFeedManager instance = new AntiFeedManager();
+		protected static final AntiFeedManager _instance = new AntiFeedManager();
 	}
 }

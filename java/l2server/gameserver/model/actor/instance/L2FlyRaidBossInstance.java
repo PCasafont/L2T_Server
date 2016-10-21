@@ -19,6 +19,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public final class L2FlyRaidBossInstance extends L2RaidBossInstance
 {
+
 	public L2FlyRaidBossInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);

@@ -36,19 +36,19 @@ import java.util.Map;
 
 public class SpiculaCloneGenerator extends L2AttackableAIScript
 {
-	private static final int yin = 19320;
-	private static final int yinFragment = 19308;
-	private static final int spiculaElite = 23303;
-	private static Map<Integer, Long> yinControl = new HashMap<Integer, Long>();
+	private static final int _yin = 19320;
+	private static final int _yinFragment = 19308;
+	private static final int _spiculaElite = 23303;
+	private static Map<Integer, Long> _yinControl = new HashMap<Integer, Long>();
 
 	public SpiculaCloneGenerator(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addKillId(yinFragment);
-		addAttackId(yin);
-		addSpawnId(yin);
-		addSpawnId(yinFragment);
+		addKillId(_yinFragment);
+		addAttackId(_yin);
+		addSpawnId(_yin);
+		addSpawnId(_yinFragment);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -57,7 +57,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == yin || spawn.getNpcId() == yinFragment)
+			if (spawn.getNpcId() == _yin || spawn.getNpcId() == _yinFragment)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -67,7 +67,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if (npc.getNpcId() == yin)
+		if (npc.getNpcId() == _yin)
 		{
 			npc.setIsInvul(true);
 		}
@@ -80,18 +80,18 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
 	{
-		if (yinControl.containsKey(npc.getObjectId()))
+		if (_yinControl.containsKey(npc.getObjectId()))
 		{
-			if (System.currentTimeMillis() >= yinControl.get(npc.getObjectId()) + 180000)
+			if (System.currentTimeMillis() >= _yinControl.get(npc.getObjectId()) + 180000)
 			{
-				yinControl.put(npc.getObjectId(), System.currentTimeMillis());
+				_yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 				spawnSpiculas(npc, attacker);
 			}
 		}
 		else
 		{
-			yinControl.put(npc.getObjectId(), System.currentTimeMillis());
+			_yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 			spawnSpiculas(npc, attacker);
 		}
@@ -113,9 +113,9 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 				"$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
 				3000)); //id: 1802277
 
-		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++)
+		for (int a = 0; a <= (npc.getNpcId() == _yinFragment ? 2 : 4); a++)
 		{
-			L2Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
+			L2Npc minion = addSpawn(_spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 
 			minion.setIsRunning(true);
 

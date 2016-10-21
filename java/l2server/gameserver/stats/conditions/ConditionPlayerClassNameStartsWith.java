@@ -22,11 +22,11 @@ import java.util.ArrayList;
 
 public class ConditionPlayerClassNameStartsWith extends Condition
 {
-	private final ArrayList<String> className;
+	private final ArrayList<String> _className;
 
 	public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
 	{
-		this.className = className;
+		_className = className;
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class ConditionPlayerClassNameStartsWith extends Condition
 			return false;
 		}
 
-		for (String className : this.className)
+		for (String className : _className)
 		{
 			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
 			{

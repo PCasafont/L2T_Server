@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import l2server.util.Rnd;
-import lombok.Getter;
 
 /**
  * This class defines the spawn data of a Minion type
@@ -28,26 +27,35 @@ import lombok.Getter;
  */
 public class L2MinionData
 {
+
 	/**
 	 * The Identifier of the L2Minion
 	 */
-	@Getter private int minionId;
+	private int _minionId;
 
 	/**
 	 * The number of this Minion Type to spawn
 	 */
-	private int minionAmount;
-	private int minionAmountMin;
-	private int minionAmountMax;
-	private int respawnTime;
-	private int maxRespawn;
+	private int _minionAmount;
+	private int _minionAmountMin;
+	private int _minionAmountMax;
+	private int _respawnTime;
+	private int _maxRespawn;
 
 	/**
 	 * Set the Identifier of the Minion to spawn.<BR><BR>
 	 */
 	public void setMinionId(int id)
 	{
-		minionId = id;
+		_minionId = id;
+	}
+
+	/**
+	 * Return the Identifier of the Minion to spawn.<BR><BR>
+	 */
+	public int getMinionId()
+	{
+		return _minionId;
 	}
 
 	/**
@@ -57,7 +65,7 @@ public class L2MinionData
 	 */
 	public void setAmountMin(int amountMin)
 	{
-		minionAmountMin = amountMin;
+		_minionAmountMin = amountMin;
 	}
 
 	/**
@@ -67,7 +75,7 @@ public class L2MinionData
 	 */
 	public void setAmountMax(int amountMax)
 	{
-		minionAmountMax = amountMax;
+		_minionAmountMax = amountMax;
 	}
 
 	/**
@@ -77,17 +85,17 @@ public class L2MinionData
 	 */
 	public void setAmount(int amount)
 	{
-		minionAmount = amount;
+		_minionAmount = amount;
 	}
 
 	public int getAmountMin()
 	{
-		return minionAmountMin;
+		return _minionAmountMin;
 	}
 
 	public int getAmountMax()
 	{
-		return minionAmountMax;
+		return _minionAmountMax;
 	}
 
 	/**
@@ -95,42 +103,42 @@ public class L2MinionData
 	 */
 	public int getAmount()
 	{
-		if (minionAmountMax > minionAmountMin)
+		if (_minionAmountMax > _minionAmountMin)
 		{
-			minionAmount = Rnd.get(minionAmountMin, minionAmountMax);
-			return minionAmount;
+			_minionAmount = Rnd.get(_minionAmountMin, _minionAmountMax);
+			return _minionAmount;
 		}
 		else
 		{
-			return minionAmountMin;
+			return _minionAmountMin;
 		}
 	}
 
 	public int getRespawnTime()
 	{
-		if (respawnTime > 0 && respawnTime < 15)
+		if (_respawnTime > 0 && _respawnTime < 15)
 		{
 			return 15;
 		}
 
-		return respawnTime;
+		return _respawnTime;
 	}
 
 	public void setRespawnTime(final int respawnTime)
 	{
-		this.respawnTime = respawnTime;
+		_respawnTime = respawnTime;
 	}
 
 	public int getMaxRespawn()
 	{
-		//if (maxRespawn > 5)
+		//if (_maxRespawn > 5)
 		//	return 5;
 
-		return maxRespawn;
+		return _maxRespawn;
 	}
 
 	public void setMaxRespawn(final int maxRespawn)
 	{
-		this.maxRespawn = maxRespawn;
+		_maxRespawn = maxRespawn;
 	}
 }

@@ -31,6 +31,7 @@ import java.util.logging.Level;
  */
 public class Post
 {
+
 	public static class CPost
 	{
 		public int postId;
@@ -42,23 +43,23 @@ public class Post
 		public String postTxt;
 	}
 
-	private List<CPost> post;
+	private List<CPost> _post;
 
 	/**
 	 */
 	//public enum ConstructorType {REPLY, CREATE };
-	public Post(String PostOwner, int PostOwnerID, long date, int tid, int PostForumID, String txt)
+	public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
 	{
-		post = new ArrayList<>();
+		_post = new ArrayList<>();
 		CPost cp = new CPost();
 		cp.postId = 0;
-		cp.postOwner = PostOwner;
-		cp.postOwnerId = PostOwnerID;
+		cp.postOwner = _PostOwner;
+		cp.postOwnerId = _PostOwnerID;
 		cp.postDate = date;
 		cp.postTopicId = tid;
-		cp.postForumId = PostForumID;
+		cp.postForumId = _PostForumID;
 		cp.postTxt = txt;
-		post.add(cp);
+		_post.add(cp);
 		insertindb(cp);
 	}
 
@@ -92,14 +93,14 @@ public class Post
 
 	public Post(Topic t)
 	{
-		post = new ArrayList<>();
+		_post = new ArrayList<>();
 		load(t);
 	}
 
 	public CPost getCPost(int id)
 	{
 		int i = 0;
-		for (CPost cp : post)
+		for (CPost cp : _post)
 		{
 			if (i++ == id)
 			{
@@ -157,7 +158,7 @@ public class Post
 				cp.postTopicId = result.getInt("post_topic_id");
 				cp.postForumId = result.getInt("post_forum_id");
 				cp.postTxt = result.getString("post_txt");
-				post.add(cp);
+				_post.add(cp);
 			}
 			result.close();
 			statement.close();

@@ -22,12 +22,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestCommissionBuyInfo extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private long auctionID;
+
+	@SuppressWarnings("unused")
+	private long _auctionID;
 
 	@Override
 	protected void readImpl()
 	{
-		auctionID = readQ();
+		_auctionID = readQ();
 		readD(); // Category - unused
 	}
 
@@ -40,7 +42,7 @@ public final class RequestCommissionBuyInfo extends L2GameClientPacket
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();
-		Auctions auction = am.getAuctionById(auctionID);
+		Auctions auction = am.getAuctionById(_auctionID);
 		if (auction != null)
 		{
 			if (activeChar.getObjectId() == auction.getPlayerID())

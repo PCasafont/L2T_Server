@@ -47,7 +47,7 @@ import java.util.logging.Logger;
  */
 public class Blow implements ISkillHandler
 {
-	private static final Logger logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.BLOW};
 
@@ -229,7 +229,7 @@ public class Blow implements ISkillHandler
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", (int) damage, skill, " to ", target});
 					record.setLoggerName("pdam");
-					logDamage.log(record);
+					_logDamage.log(record);
 				}
 
 				int reflectedDamage = 0;
@@ -255,7 +255,7 @@ public class Blow implements ISkillHandler
 
 							// Half the reflected damage for bows
 							/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-							if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+                            if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 									 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 								reflectedDamage *= 0.5f;*/
 

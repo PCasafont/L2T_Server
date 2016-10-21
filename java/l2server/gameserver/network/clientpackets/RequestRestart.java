@@ -38,7 +38,8 @@ import java.util.logging.Logger;
  */
 public final class RequestRestart extends L2GameClientPacket
 {
-	protected static final Logger logAccounting = Logger.getLogger("accounting");
+
+	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
 	@Override
 	protected void readImpl()
@@ -96,7 +97,7 @@ public final class RequestRestart extends L2GameClientPacket
 
 		LogRecord record = new LogRecord(Level.INFO, "Logged out");
 		record.setParameters(new Object[]{client});
-		logAccounting.log(record);
+		_logAccounting.log(record);
 
 		// detach the client from the char so that the connection isnt closed in the deleteMe
 		player.setClient(null);

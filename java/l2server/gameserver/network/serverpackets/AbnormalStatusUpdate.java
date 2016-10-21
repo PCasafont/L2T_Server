@@ -26,27 +26,27 @@ import java.util.List;
  */
 public class AbnormalStatusUpdate extends L2GameServerPacket
 {
-	private List<Effect> effects;
+	private List<Effect> _effects;
 
 	private static class Effect
 	{
-		protected int skillId;
-		protected int level;
-		protected int comboId;
-		protected int duration;
+		protected int _skillId;
+		protected int _level;
+		protected int _comboId;
+		protected int _duration;
 
 		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration)
 		{
-			skillId = pSkillId;
-			level = pLevel;
-			comboId = pComboId;
-			duration = pDuration;
+			_skillId = pSkillId;
+			_level = pLevel;
+			_comboId = pComboId;
+			_duration = pDuration;
 		}
 	}
 
 	public AbnormalStatusUpdate()
 	{
-		effects = new ArrayList<>();
+		_effects = new ArrayList<>();
 	}
 
 	public void addEffect(int skillId, int level, int comboId, int duration)
@@ -55,28 +55,28 @@ public class AbnormalStatusUpdate extends L2GameServerPacket
 		{
 			return;
 		}
-		effects.add(new Effect(skillId, level, comboId, duration));
+		_effects.add(new Effect(skillId, level, comboId, duration));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(effects.size());
+		writeH(_effects.size());
 
-		for (Effect temp : effects)
+		for (Effect temp : _effects)
 		{
-			writeD(temp.skillId);
-			writeD(temp.level);
+			writeD(temp._skillId);
+			writeD(temp._level);
 
-			writeD(temp.comboId);
+			writeD(temp._comboId);
 
-			if (temp.duration == -1)
+			if (temp._duration == -1)
 			{
 				writeH(-1);
 			}
 			else
 			{
-				writeH(temp.duration / 1000 + 1);
+				writeH(temp._duration / 1000 + 1);
 			}
 		}
 	}

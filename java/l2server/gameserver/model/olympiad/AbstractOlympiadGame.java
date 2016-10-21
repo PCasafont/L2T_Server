@@ -46,7 +46,7 @@ import java.util.logging.Logger;
  */
 public abstract class AbstractOlympiadGame
 {
-	protected static final Logger logResults = Logger.getLogger("olympiad");
+	protected static final Logger _logResults = Logger.getLogger("olympiad");
 
 	protected static final String POINTS = "olympiad_points";
 	protected static final String COMP_DONE = "competitions_done";
@@ -58,29 +58,29 @@ public abstract class AbstractOlympiadGame
 	protected static final String COMP_NONCLASSED = "competitions_nonclassed";
 	protected static final String COMP_TEAMS = "competitions_teams";
 
-	protected long startTime = 0;
-	protected boolean aborted = false;
-	protected final int gameId;
+	protected long _startTime = 0;
+	protected boolean _aborted = false;
+	protected final int _gameId;
 
 	protected AbstractOlympiadGame(int id)
 	{
-		gameId = id;
+		_gameId = id;
 	}
 
 	public final boolean isAborted()
 	{
-		return aborted;
+		return _aborted;
 	}
 
 	public final int getGameId()
 	{
-		return gameId;
+		return _gameId;
 	}
 
 	protected boolean makeCompetitionStart()
 	{
-		startTime = System.currentTimeMillis();
-		return !aborted;
+		_startTime = System.currentTimeMillis();
+		return !_aborted;
 	}
 
 	protected final void addPointsToParticipant(OlympiadParticipant par, int points)
@@ -494,7 +494,7 @@ public abstract class AbstractOlympiadGame
 	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
 	{
 		broadcastPacketToParticipants(packet);
-		stadium.broadcastPacketToObservers(packet, gameId);
+		stadium.broadcastPacketToObservers(packet, _gameId);
 	}
 
 	public abstract CompetitionType getType();

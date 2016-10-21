@@ -33,6 +33,7 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class L2SkillChangeWeapon extends L2Skill
 {
+
 	/**
 	 * @param set
 	 */

@@ -44,8 +44,8 @@ import java.util.logging.Logger;
  */
 public class Wedding implements IVoicedCommandHandler
 {
-	static final Logger log = Logger.getLogger(Wedding.class.getName());
-	private static final String[] voicedCommands = {"divorce", "engage", "gotolove"};
+	static final Logger _log = Logger.getLogger(Wedding.class.getName());
+	private static final String[] _voicedCommands = {"divorce", "engage", "gotolove"};
 
 	/**
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
@@ -79,8 +79,8 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 
-		int partnerId = activeChar.getPartnerId();
-		int coupleId = activeChar.getCoupleId();
+		int _partnerId = activeChar.getPartnerId();
+		int _coupleId = activeChar.getCoupleId();
 		long AdenaAmount = 0;
 
 		if (activeChar.isMarried())
@@ -95,7 +95,7 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("You have broken up as a couple.");
 		}
 
-		final L2PcInstance partner = L2World.getInstance().getPlayer(partnerId);
+		final L2PcInstance partner = L2World.getInstance().getPlayer(_partnerId);
 		if (partner != null)
 		{
 			partner.setPartnerId(0);
@@ -115,7 +115,7 @@ public class Wedding implements IVoicedCommandHandler
 			}
 		}
 
-		CoupleManager.getInstance().deleteCouple(coupleId);
+		CoupleManager.getInstance().deleteCouple(_coupleId);
 		return true;
 	}
 
@@ -222,7 +222,7 @@ public class Wedding implements IVoicedCommandHandler
 		}
 		catch (Exception e)
 		{
-			log.warning("could not read friend data:" + e);
+			_log.warning("could not read friend data:" + e);
 		}
 		finally
 		{
@@ -255,7 +255,7 @@ public class Wedding implements IVoicedCommandHandler
 		if (activeChar.getPartnerId() == 0)
 		{
 			activeChar.sendMessage("Couldn't find your fiance in the Database - Inform a Gamemaster.");
-			log.severe("Married but couldn't find parter for " + activeChar.getName());
+			_log.severe("Married but couldn't find parter for " + activeChar.getName());
 			return false;
 		}
 		else if (activeChar.getIsInsideGMEvent())
@@ -413,44 +413,44 @@ public class Wedding implements IVoicedCommandHandler
 
 	static class EscapeFinalizer implements Runnable
 	{
-		private final L2PcInstance activeChar;
-		private final int partnerx;
-		private final int partnery;
-		private final int partnerz;
+		private final L2PcInstance _activeChar;
+		private final int _partnerx;
+		private final int _partnery;
+		private final int _partnerz;
 
 		EscapeFinalizer(L2PcInstance activeChar, int x, int y, int z)
 		{
-			this.activeChar = activeChar;
-			partnerx = x;
-			partnery = y;
-			partnerz = z;
+			_activeChar = activeChar;
+			_partnerx = x;
+			_partnery = y;
+			_partnerz = z;
 		}
 
 		@Override
 		public void run()
 		{
-			if (activeChar.isDead())
+			if (_activeChar.isDead())
 			{
 				return;
 			}
 
-			if (SiegeManager.getInstance().getSiege(partnerx, partnery, partnerz) != null &&
-					SiegeManager.getInstance().getSiege(partnerx, partnery, partnerz).getIsInProgress())
+			if (SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz) != null &&
+					SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz).getIsInProgress())
 			{
-				activeChar.sendMessage("Your partner is in siege, you can't go to your partner.");
+				_activeChar.sendMessage("Your partner is in siege, you can't go to your partner.");
 				return;
 			}
 
-			activeChar.enableAllSkills();
-			activeChar.setIsCastingNow(false);
+			_activeChar.enableAllSkills();
+			_activeChar.setIsCastingNow(false);
 
 			try
 			{
-				activeChar.teleToLocation(partnerx, partnery, partnerz);
+				_activeChar.teleToLocation(_partnerx, _partnery, _partnerz);
 			}
 			catch (Exception e)
 			{
-				log.log(Level.SEVERE, "", e);
+				_log.log(Level.SEVERE, "", e);
 			}
 		}
 	}
@@ -461,6 +461,6 @@ public class Wedding implements IVoicedCommandHandler
 	@Override
 	public String[] getVoicedCommandList()
 	{
-		return voicedCommands;
+		return _voicedCommands;
 	}
 }

@@ -26,16 +26,17 @@ import l2server.log.Log;
  */
 public class AdminCommandHandler
 {
-	private TIntObjectHashMap<IAdminCommandHandler> datatable;
+
+	private TIntObjectHashMap<IAdminCommandHandler> _datatable;
 
 	public static AdminCommandHandler getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private AdminCommandHandler()
 	{
-		datatable = new TIntObjectHashMap<>();
+		_datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerAdminCommandHandler(IAdminCommandHandler handler)
@@ -47,7 +48,7 @@ public class AdminCommandHandler
 			{
 				Log.fine("Adding handler for command " + id);
 			}
-			datatable.put(id.hashCode(), handler);
+			_datatable.put(id.hashCode(), handler);
 		}
 	}
 
@@ -60,11 +61,11 @@ public class AdminCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
+			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
 		}
 		//Log.info(command);
 
-		return datatable.get(command.hashCode());
+		return _datatable.get(command.hashCode());
 	}
 
 	/**
@@ -72,12 +73,12 @@ public class AdminCommandHandler
 	 */
 	public int size()
 	{
-		return datatable.size();
+		return _datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AdminCommandHandler instance = new AdminCommandHandler();
+		protected static final AdminCommandHandler _instance = new AdminCommandHandler();
 	}
 }

@@ -6,8 +6,6 @@ import l2server.gameserver.model.actor.instance.L2EventFlagInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,26 +20,26 @@ public class EventTeam
 	/**
 	 * The name of the team<br>
 	 */
-	@Getter @Setter private String name;
+	private String _name;
 	/**
 	 * The team spot coordinated<br>
 	 */
-	private Point3D coordinates;
+	private Point3D _coordinates;
 	/**
 	 * The points of the team<br>
 	 */
-	@Getter private short points;
+	private short _points;
 	/**
 	 * Name and instance of all participated players in HashMap<br>
 	 */
-	private Map<Integer, L2PcInstance> participatedPlayers = new LinkedHashMap<>();
+	private Map<Integer, L2PcInstance> _participatedPlayers = new LinkedHashMap<>();
 
-	@Getter private int flagId = 44004;
-	@Getter private L2Spawn flagSpawn;
-	@Getter private int golemId = 44003;
-	@Getter private L2Spawn golemSpawn;
+	private int _flagId = 44004;
+	private L2Spawn _flagSpawn;
+	private int _golemId = 44003;
+	private L2Spawn _golemSpawn;
 
-	@Getter private L2PcInstance VIP;
+	private L2PcInstance _VIP;
 
 	/**
 	 * C'tor initialize the team<br><br>
@@ -51,11 +49,11 @@ public class EventTeam
 	 */
 	public EventTeam(int id, String name, Point3D coordinates)
 	{
-		flagId = 44004 + id;
-		this.name = name;
-		this.coordinates = coordinates;
-		points = 0;
-		flagSpawn = null;
+		_flagId = 44004 + id;
+		_name = name;
+		_coordinates = coordinates;
+		_points = 0;
+		_flagSpawn = null;
 	}
 
 	/**
@@ -71,9 +69,9 @@ public class EventTeam
 			return false;
 		}
 
-		synchronized (participatedPlayers)
+		synchronized (_participatedPlayers)
 		{
-			participatedPlayers.put(playerInstance.getObjectId(), playerInstance);
+			_participatedPlayers.put(playerInstance.getObjectId(), playerInstance);
 		}
 
 		return true;
@@ -84,13 +82,13 @@ public class EventTeam
 	 */
 	public void removePlayer(int playerObjectId)
 	{
-		synchronized (participatedPlayers)
+		synchronized (_participatedPlayers)
 		{
 			/*if (!EventsManager.getInstance().isType(EventType.DM)
-					&& !EventsManager.getInstance().isType(EventType.SS)
+                    && !EventsManager.getInstance().isType(EventType.SS)
 					&& !EventsManager.getInstance().isType(EventType.SS2))
-				participatedPlayers.get(playerObjectId).setEvent(null);*/
-			participatedPlayers.remove(playerObjectId);
+				_participatedPlayers.get(playerObjectId).setEvent(null);*/
+			_participatedPlayers.remove(playerObjectId);
 		}
 	}
 
@@ -99,12 +97,12 @@ public class EventTeam
 	 */
 	public void increasePoints()
 	{
-		++points;
+		++_points;
 	}
 
 	public void decreasePoints()
 	{
-		--points;
+		--_points;
 	}
 
 	/**
@@ -112,14 +110,14 @@ public class EventTeam
 	 */
 	public void cleanMe()
 	{
-		participatedPlayers.clear();
-		participatedPlayers = new HashMap<>();
-		points = 0;
+		_participatedPlayers.clear();
+		_participatedPlayers = new HashMap<>();
+		_points = 0;
 	}
 
 	public void onEventNotStarted()
 	{
-		for (L2PcInstance player : participatedPlayers.values())
+		for (L2PcInstance player : _participatedPlayers.values())
 		{
 			if (player != null)
 			{
@@ -138,12 +136,22 @@ public class EventTeam
 	{
 		boolean containsPlayer;
 
-		synchronized (participatedPlayers)
+		synchronized (_participatedPlayers)
 		{
-			containsPlayer = participatedPlayers.containsKey(playerObjectId);
+			containsPlayer = _participatedPlayers.containsKey(playerObjectId);
 		}
 
 		return containsPlayer;
+	}
+
+	/**
+	 * Returns the name of the team<br><br>
+	 *
+	 * @return String: name of the team<br>
+	 */
+	public String getName()
+	{
+		return _name;
 	}
 
 	/**
@@ -153,7 +161,17 @@ public class EventTeam
 	 */
 	public Point3D getCoords()
 	{
-		return coordinates;
+		return _coordinates;
+	}
+
+	/**
+	 * Returns the points of the team<br><br>
+	 *
+	 * @return short: team points<br>
+	 */
+	public short getPoints()
+	{
+		return _points;
 	}
 
 	/**
@@ -165,9 +183,9 @@ public class EventTeam
 	{
 		Map<Integer, L2PcInstance> participatedPlayers = null;
 
-		synchronized (this.participatedPlayers)
+		synchronized (_participatedPlayers)
 		{
-			participatedPlayers = this.participatedPlayers;
+			participatedPlayers = _participatedPlayers;
 		}
 
 		return participatedPlayers;
@@ -182,9 +200,9 @@ public class EventTeam
 	{
 		int participatedPlayerCount;
 
-		synchronized (participatedPlayers)
+		synchronized (_participatedPlayers)
 		{
-			participatedPlayerCount = participatedPlayers.size();
+			participatedPlayerCount = _participatedPlayers.size();
 		}
 
 		return participatedPlayerCount;
@@ -194,12 +212,12 @@ public class EventTeam
 	{
 		int alivePlayerCount = 0;
 
-		ArrayList<L2PcInstance> toIterate = new ArrayList<>(participatedPlayers.values());
+		ArrayList<L2PcInstance> toIterate = new ArrayList<>(_participatedPlayers.values());
 		for (L2PcInstance player : toIterate)
 		{
 			if (!player.isOnline() || player.getClient() == null || player.getEvent() == null)
 			{
-				participatedPlayers.remove(player.getObjectId());
+				_participatedPlayers.remove(player.getObjectId());
 			}
 			if (!player.isDead())
 			{
@@ -213,7 +231,7 @@ public class EventTeam
 	{
 		int count = 0;
 
-		for (L2PcInstance player : participatedPlayers.values())
+		for (L2PcInstance player : _participatedPlayers.values())
 		{
 			if (player.getCurrentClass().getId() == 146)
 			{
@@ -225,9 +243,9 @@ public class EventTeam
 
 	public L2PcInstance selectRandomParticipant()
 	{
-		int rnd = Rnd.get(participatedPlayers.size());
+		int rnd = Rnd.get(_participatedPlayers.size());
 		int i = 0;
-		for (L2PcInstance participant : participatedPlayers.values())
+		for (L2PcInstance participant : _participatedPlayers.values())
 		{
 			if (i == rnd)
 			{
@@ -238,27 +256,47 @@ public class EventTeam
 		return null;
 	}
 
+	public void setName(String name)
+	{
+		_name = name;
+	}
+
 	public void setCoords(Point3D coords)
 	{
-		coordinates = coords;
+		_coordinates = coords;
+	}
+
+	public L2Spawn getFlagSpawn()
+	{
+		return _flagSpawn;
 	}
 
 	public void setFlagSpawn(L2Spawn spawn)
 	{
-		if (flagSpawn != null && flagSpawn.getNpc() != null)
+		if (_flagSpawn != null && _flagSpawn.getNpc() != null)
 		{
-			((L2EventFlagInstance) flagSpawn.getNpc()).shouldBeDeleted();
-			flagSpawn.getNpc().deleteMe();
-			flagSpawn.stopRespawn();
-			SpawnTable.getInstance().deleteSpawn(flagSpawn, false);
+			((L2EventFlagInstance) _flagSpawn.getNpc()).shouldBeDeleted();
+			_flagSpawn.getNpc().deleteMe();
+			_flagSpawn.stopRespawn();
+			SpawnTable.getInstance().deleteSpawn(_flagSpawn, false);
 		}
 
-		flagSpawn = spawn;
+		_flagSpawn = spawn;
+	}
+
+	public int getFlagId()
+	{
+		return _flagId;
 	}
 
 	public void setVIP(L2PcInstance character)
 	{
-		VIP = character;
+		_VIP = character;
+	}
+
+	public L2PcInstance getVIP()
+	{
+		return _VIP;
 	}
 
 	public boolean isAlive()
@@ -266,12 +304,22 @@ public class EventTeam
 		return getAlivePlayerCount() > 0;
 	}
 
+	public L2Spawn getGolemSpawn()
+	{
+		return _golemSpawn;
+	}
+
 	public void setGolemSpawn(L2Spawn spawn)
 	{
-		if (golemSpawn != null && golemSpawn.getNpc() != null)
+		if (_golemSpawn != null && _golemSpawn.getNpc() != null)
 		{
-			golemSpawn.getNpc().deleteMe();
+			_golemSpawn.getNpc().deleteMe();
 		}
-		golemSpawn = spawn;
+		_golemSpawn = spawn;
+	}
+
+	public int getGolemId()
+	{
+		return _golemId;
 	}
 }

@@ -18,7 +18,6 @@ package l2server.gameserver.templates.chars;
 import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +34,8 @@ public class L2PcTemplate extends L2CharTemplate
 	public final double fCollisionHeightFemale;
 	public final double fCollisionRadiusFemale;
 
-	@Getter private List<PcTemplateItem> items = new ArrayList<>();
-	@Getter private List<Integer> skillIds = new ArrayList<>();
+	private List<PcTemplateItem> _items = new ArrayList<>();
+	private List<Integer> _skillIds = new ArrayList<>();
 
 	public L2PcTemplate(StatsSet set)
 	{
@@ -61,22 +60,30 @@ public class L2PcTemplate extends L2CharTemplate
 	{
 		if (amount == 1 || !equipped)
 		{
-			items.add(new PcTemplateItem(itemId, amount, equipped));
+			_items.add(new PcTemplateItem(itemId, amount, equipped));
 		}
 		else
 		{
 			for (int i = 0; i < amount; i++)
 			{
-				items.add(new PcTemplateItem(itemId, 1, equipped));
+				_items.add(new PcTemplateItem(itemId, 1, equipped));
 			}
 		}
 	}
 
+	/**
+	 * @return itemIds of all the starter equipment
+	 */
+	public List<PcTemplateItem> getItems()
+	{
+		return _items;
+	}
+
 	public static final class PcTemplateItem
 	{
-		@Getter private final int itemId;
-		@Getter private final int amount;
-		@Getter private final boolean equipped;
+		private final int _itemId;
+		private final int _amount;
+		private final boolean _equipped;
 
 		/**
 		 * @param amount
@@ -84,15 +91,44 @@ public class L2PcTemplate extends L2CharTemplate
 		 */
 		public PcTemplateItem(int itemId, int amount, boolean equipped)
 		{
-			this.itemId = itemId;
-			this.amount = amount;
-			this.equipped = equipped;
+			_itemId = itemId;
+			_amount = amount;
+			_equipped = equipped;
+		}
+
+		/**
+		 * @return Returns the itemId.
+		 */
+		public int getItemId()
+		{
+			return _itemId;
+		}
+
+		/**
+		 * @return Returns the amount.
+		 */
+		public int getAmount()
+		{
+			return _amount;
+		}
+
+		/**
+		 * @return Returns the if the item should be equipped after char creation.
+		 */
+		public boolean isEquipped()
+		{
+			return _equipped;
 		}
 	}
 
 	public void addSkill(int id)
 	{
-		skillIds.add(id);
+		_skillIds.add(id);
+	}
+
+	public List<Integer> getSkillIds()
+	{
+		return _skillIds;
 	}
 
 	public final int getFallHeight()

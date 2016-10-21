@@ -40,7 +40,7 @@ public class AttackableKnownList extends NpcKnownList
 			return false;
 		}
 
-		// Remove the L2Object from the aggrolist of the L2Attackable
+		// Remove the L2Object from the _aggrolist of the L2Attackable
 		if (object instanceof L2Character)
 		{
 			getActiveChar().getAggroList().remove(object);

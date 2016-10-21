@@ -47,6 +47,7 @@ public class AdminCache implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
+
 		if (command.startsWith("admin_cache_htm_rebuild") || command.equals("admin_cache_htm_reload"))
 		{
 			HtmCache.getInstance().reload(Config.DATAPACK_ROOT);

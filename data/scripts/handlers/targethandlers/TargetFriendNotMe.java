@@ -35,6 +35,7 @@ import java.util.List;
  */
 public class TargetFriendNotMe implements ISkillTargetTypeHandler
 {
+
 	/**
 	 *
 	 */
@@ -65,7 +66,7 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
 			targetList.add(player);
 		}
 		/* FIXME
-		else if (activeChar instanceof L2PcInstance)
+        else if (activeChar instanceof L2PcInstance)
 		{
 			player = (L2PcInstance) activeChar;
 			if (activeChar.getPet() != null)
@@ -88,6 +89,7 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
 									cmdChannel.isInChannel(tempChar.getParty())) ||
 					tempChar.getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
 			{
+
 				if (tempChar.getPet() != null)
 				{
 					if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))

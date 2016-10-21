@@ -32,25 +32,27 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * This class manages the player add/remove, team change and
- * event arena status, as the clearance of the participants
- * list or liberate the arena
- *
  * @author BiggBoss
  */
 public final class HandysBlockCheckerManager
 {
+	/*
+     * This class manage the player add/remove, team change and
+	 * event arena status, as the clearance of the participants
+	 * list or liberate the arena
+	 */
+
 	// All the participants and their team classifed by arena
-	private static ArenaParticipantsHolder[] arenaPlayers;
+	private static ArenaParticipantsHolder[] _arenaPlayers;
 
 	// Arena votes to start the game
-	private static TIntIntHashMap arenaVotes = new TIntIntHashMap();
+	private static TIntIntHashMap _arenaVotes = new TIntIntHashMap();
 
 	// Arena Status, True = is being used, otherwise, False
-	private static HashMap<Integer, Boolean> arenaStatus;
+	private static HashMap<Integer, Boolean> _arenaStatus;
 
 	// Registration request penalty (10 seconds)
-	private static ArrayList<Integer> registrationPenalty = new ArrayList<>();
+	private static ArrayList<Integer> _registrationPenalty = new ArrayList<>();
 
 	/**
 	 * Return the number of event-start votes for the spcified
@@ -61,7 +63,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized int getArenaVotes(int arenaId)
 	{
-		return arenaVotes.get(arenaId);
+		return _arenaVotes.get(arenaId);
 	}
 
 	/**
@@ -72,8 +74,8 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void increaseArenaVotes(int arena)
 	{
-		int newVotes = arenaVotes.get(arena) + 1;
-		ArenaParticipantsHolder holder = arenaPlayers[arena];
+		int newVotes = _arenaVotes.get(arena) + 1;
+		ArenaParticipantsHolder holder = _arenaPlayers[arena];
 
 		if (newVotes > holder.getAllPlayers().size() / 2 && !holder.getEvent().isStarted())
 		{
@@ -90,7 +92,7 @@ public final class HandysBlockCheckerManager
 		}
 		else
 		{
-			arenaVotes.put(arena, newVotes);
+			_arenaVotes.put(arena, newVotes);
 		}
 	}
 
@@ -102,19 +104,19 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void clearArenaVotes(int arena)
 	{
-		arenaVotes.put(arena, 0);
+		_arenaVotes.put(arena, 0);
 	}
 
 	private HandysBlockCheckerManager()
 	{
 		// Initialize arena status
-		if (arenaStatus == null)
+		if (_arenaStatus == null)
 		{
-			arenaStatus = new HashMap<>();
-			arenaStatus.put(0, false);
-			arenaStatus.put(1, false);
-			arenaStatus.put(2, false);
-			arenaStatus.put(3, false);
+			_arenaStatus = new HashMap<>();
+			_arenaStatus.put(0, false);
+			_arenaStatus.put(1, false);
+			_arenaStatus.put(2, false);
+			_arenaStatus.put(3, false);
 		}
 	}
 
@@ -126,7 +128,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public ArenaParticipantsHolder getHolder(int arena)
 	{
-		return arenaPlayers[arena];
+		return _arenaPlayers[arena];
 	}
 
 	/**
@@ -134,11 +136,11 @@ public final class HandysBlockCheckerManager
 	 */
 	public void startUpParticipantsQueue()
 	{
-		arenaPlayers = new ArenaParticipantsHolder[4];
+		_arenaPlayers = new ArenaParticipantsHolder[4];
 
 		for (int i = 0; i < 4; ++i)
 		{
-			arenaPlayers[i] = new ArenaParticipantsHolder(i);
+			_arenaPlayers[i] = new ArenaParticipantsHolder(i);
 		}
 	}
 
@@ -151,7 +153,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public boolean addPlayerToArena(L2PcInstance player, int arenaId)
 	{
-		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
+		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 
 		synchronized (holder)
 		{
@@ -159,7 +161,7 @@ public final class HandysBlockCheckerManager
 
 			for (int i = 0; i < 4; i++)
 			{
-				if (arenaPlayers[i].getAllPlayers().contains(player))
+				if (_arenaPlayers[i].getAllPlayers().contains(player))
 				{
 					SystemMessage msg = SystemMessage
 							.getSystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_MATCH_WAITING_LIST);
@@ -188,7 +190,7 @@ public final class HandysBlockCheckerManager
 				player.sendPacket(SystemMessage
 						.getSystemMessage(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE));
 			}
-			/*
+            /*
 			if (UnderGroundColiseum.getInstance().isRegisteredPlayer(player))
 			{
 				UngerGroundColiseum.getInstance().removeParticipant(player);
@@ -199,9 +201,9 @@ public final class HandysBlockCheckerManager
 				KrateiCubeManager.getInstance().removeParticipant(player);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE));
 			}
-			*/
+			 */
 
-			if (registrationPenalty.contains(player.getObjectId()))
+			if (_registrationPenalty.contains(player.getObjectId()))
 			{
 				player.sendPacket(
 						SystemMessage.getSystemMessage(SystemMessageId.CANNOT_REQUEST_REGISTRATION_10_SECS_AFTER));
@@ -233,7 +235,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void removePlayer(L2PcInstance player, int arenaId, int team)
 	{
-		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
+		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 		synchronized (holder)
 		{
 			boolean isRed = team == 0;
@@ -249,9 +251,9 @@ public final class HandysBlockCheckerManager
 			}
 
 			Integer objId = player.getObjectId();
-			if (!registrationPenalty.contains(objId))
+			if (!_registrationPenalty.contains(objId))
 			{
-				registrationPenalty.add(objId);
+				_registrationPenalty.add(objId);
 			}
 			schedulePenaltyRemoval(objId);
 		}
@@ -267,11 +269,11 @@ public final class HandysBlockCheckerManager
 	 */
 	public void changePlayerToTeam(L2PcInstance player, int arena, int team)
 	{
-		ArenaParticipantsHolder holder = arenaPlayers[arena];
+		ArenaParticipantsHolder holder = _arenaPlayers[arena];
 
 		synchronized (holder)
 		{
-			boolean isFromRed = holder.redPlayers.contains(player);
+			boolean isFromRed = holder._redPlayers.contains(player);
 
 			if (isFromRed && holder.getBlueTeamSize() == 6)
 			{
@@ -306,7 +308,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void clearPaticipantQueueByArenaId(int arenaId)
 	{
-		arenaPlayers[arenaId].clearPlayers();
+		_arenaPlayers[arenaId].clearPlayers();
 	}
 
 	/**
@@ -321,7 +323,7 @@ public final class HandysBlockCheckerManager
 		{
 			return false;
 		}
-		return arenaStatus.get(arenaId);
+		return _arenaStatus.get(arenaId);
 	}
 
 	/**
@@ -331,7 +333,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void setArenaBeingUsed(int arenaId)
 	{
-		arenaStatus.put(arenaId, true);
+		_arenaStatus.put(arenaId, true);
 	}
 
 	/**
@@ -342,7 +344,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void setArenaFree(int arenaId)
 	{
-		arenaStatus.put(arenaId, false);
+		_arenaStatus.put(arenaId, false);
 	}
 
 	/**
@@ -381,44 +383,44 @@ public final class HandysBlockCheckerManager
 
 	public static HandysBlockCheckerManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private static class SingletonHolder
 	{
-		private static HandysBlockCheckerManager instance = new HandysBlockCheckerManager();
+		private static HandysBlockCheckerManager _instance = new HandysBlockCheckerManager();
 	}
 
 	public class ArenaParticipantsHolder
 	{
-		int arena;
-		List<L2PcInstance> redPlayers;
-		List<L2PcInstance> bluePlayers;
-		BlockCheckerEngine engine;
+		int _arena;
+		List<L2PcInstance> _redPlayers;
+		List<L2PcInstance> _bluePlayers;
+		BlockCheckerEngine _engine;
 
 		public ArenaParticipantsHolder(int arena)
 		{
-			this.arena = arena;
-			redPlayers = new ArrayList<>(6);
-			bluePlayers = new ArrayList<>(6);
-			engine = new BlockCheckerEngine(this, this.arena);
+			_arena = arena;
+			_redPlayers = new ArrayList<>(6);
+			_bluePlayers = new ArrayList<>(6);
+			_engine = new BlockCheckerEngine(this, _arena);
 		}
 
 		public List<L2PcInstance> getRedPlayers()
 		{
-			return redPlayers;
+			return _redPlayers;
 		}
 
 		public List<L2PcInstance> getBluePlayers()
 		{
-			return bluePlayers;
+			return _bluePlayers;
 		}
 
 		public ArrayList<L2PcInstance> getAllPlayers()
 		{
 			ArrayList<L2PcInstance> all = new ArrayList<>(12);
-			all.addAll(redPlayers);
-			all.addAll(bluePlayers);
+			all.addAll(_redPlayers);
+			all.addAll(_bluePlayers);
 			return all;
 		}
 
@@ -426,11 +428,11 @@ public final class HandysBlockCheckerManager
 		{
 			if (team == 0)
 			{
-				redPlayers.add(player);
+				_redPlayers.add(player);
 			}
 			else
 			{
-				bluePlayers.add(player);
+				_bluePlayers.add(player);
 			}
 		}
 
@@ -438,21 +440,21 @@ public final class HandysBlockCheckerManager
 		{
 			if (team == 0)
 			{
-				redPlayers.remove(player);
+				_redPlayers.remove(player);
 			}
 			else
 			{
-				bluePlayers.remove(player);
+				_bluePlayers.remove(player);
 			}
 		}
 
 		public int getPlayerTeam(L2PcInstance player)
 		{
-			if (redPlayers.contains(player))
+			if (_redPlayers.contains(player))
 			{
 				return 0;
 			}
-			else if (bluePlayers.contains(player))
+			else if (_bluePlayers.contains(player))
 			{
 				return 1;
 			}
@@ -464,21 +466,21 @@ public final class HandysBlockCheckerManager
 
 		public int getRedTeamSize()
 		{
-			return redPlayers.size();
+			return _redPlayers.size();
 		}
 
 		public int getBlueTeamSize()
 		{
-			return bluePlayers.size();
+			return _bluePlayers.size();
 		}
 
 		public void broadCastPacketToTeam(L2GameServerPacket packet)
 		{
-			for (L2PcInstance p : redPlayers)
+			for (L2PcInstance p : _redPlayers)
 			{
 				p.sendPacket(packet);
 			}
-			for (L2PcInstance p : bluePlayers)
+			for (L2PcInstance p : _bluePlayers)
 			{
 				p.sendPacket(packet);
 			}
@@ -486,24 +488,24 @@ public final class HandysBlockCheckerManager
 
 		public void clearPlayers()
 		{
-			redPlayers.clear();
-			bluePlayers.clear();
+			_redPlayers.clear();
+			_bluePlayers.clear();
 		}
 
 		public BlockCheckerEngine getEvent()
 		{
-			return engine;
+			return _engine;
 		}
 
 		public void updateEvent()
 		{
-			engine.updatePlayersOnStart(this);
+			_engine.updatePlayersOnStart(this);
 		}
 
 		private void checkAndShuffle()
 		{
-			int redSize = redPlayers.size();
-			int blueSize = bluePlayers.size();
+			int redSize = _redPlayers.size();
+			int blueSize = _bluePlayers.size();
 			if (redSize > blueSize + 1)
 			{
 				broadCastPacketToTeam(
@@ -511,12 +513,12 @@ public final class HandysBlockCheckerManager
 				int needed = redSize - (blueSize + 1);
 				for (int i = 0; i < needed + 1; i++)
 				{
-					L2PcInstance plr = redPlayers.get(i);
+					L2PcInstance plr = _redPlayers.get(i);
 					if (plr == null)
 					{
 						continue;
 					}
-					changePlayerToTeam(plr, arena, 1);
+					changePlayerToTeam(plr, _arena, 1);
 				}
 			}
 			else if (blueSize > redSize + 1)
@@ -526,12 +528,12 @@ public final class HandysBlockCheckerManager
 				int needed = blueSize - (redSize + 1);
 				for (int i = 0; i < needed + 1; i++)
 				{
-					L2PcInstance plr = bluePlayers.get(i);
+					L2PcInstance plr = _bluePlayers.get(i);
 					if (plr == null)
 					{
 						continue;
 					}
-					changePlayerToTeam(plr, arena, 0);
+					changePlayerToTeam(plr, _arena, 0);
 				}
 			}
 		}
@@ -556,7 +558,7 @@ public final class HandysBlockCheckerManager
 		{
 			try
 			{
-				registrationPenalty.remove(objectId);
+				_registrationPenalty.remove(objectId);
 			}
 			catch (Exception e)
 			{

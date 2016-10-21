@@ -27,7 +27,7 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  */
 public class EffectImmobilePetBuff extends L2Effect
 {
-	private L2Summon pet;
+	private L2Summon _pet;
 
 	public EffectImmobilePetBuff(Env env, L2EffectTemplate template)
 	{
@@ -43,13 +43,13 @@ public class EffectImmobilePetBuff extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		pet = null;
+		_pet = null;
 
 		if (getEffected() instanceof L2Summon && getEffector() instanceof L2PcInstance &&
 				((L2Summon) getEffected()).getOwner() == getEffector())
 		{
-			pet = (L2Summon) getEffected();
-			pet.setIsImmobilized(true);
+			_pet = (L2Summon) getEffected();
+			_pet.setIsImmobilized(true);
 			return true;
 		}
 		return false;
@@ -58,7 +58,7 @@ public class EffectImmobilePetBuff extends L2Effect
 	@Override
 	public void onExit()
 	{
-		pet.setIsImmobilized(false);
+		_pet.setIsImmobilized(false);
 	}
 
 	@Override

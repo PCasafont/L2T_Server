@@ -26,16 +26,17 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 {
 	//
 
-	private int id;
-	private int recipeId;
-	@SuppressWarnings("unused") private long unknow;
+	private int _id;
+	private int _recipeId;
+	@SuppressWarnings("unused")
+	private long _unknow;
 
 	@Override
 	protected void readImpl()
 	{
-		id = readD();
-		recipeId = readD();
-		unknow = readQ();
+		_id = readD();
+		_recipeId = readD();
+		_unknow = readQ();
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance manufacturer = L2World.getInstance().getPlayer(id);
+		L2PcInstance manufacturer = L2World.getInstance().getPlayer(_id);
 		if (manufacturer == null)
 		{
 			return;
@@ -81,6 +82,6 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 			activeChar.sendMessage("Currently in Craft Mode");
 			return;
 		}
-		RecipeController.getInstance().requestManufactureItem(manufacturer, recipeId, activeChar);
+		RecipeController.getInstance().requestManufactureItem(manufacturer, _recipeId, activeChar);
 	}
 }

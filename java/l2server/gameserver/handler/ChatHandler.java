@@ -26,11 +26,12 @@ import l2server.log.Log;
  */
 public class ChatHandler
 {
-	private TIntObjectHashMap<IChatHandler> datatable;
+
+	private TIntObjectHashMap<IChatHandler> _datatable;
 
 	public static ChatHandler getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	/**
@@ -38,7 +39,7 @@ public class ChatHandler
 	 */
 	private ChatHandler()
 	{
-		datatable = new TIntObjectHashMap<>();
+		_datatable = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -55,7 +56,7 @@ public class ChatHandler
 			{
 				Log.fine("Adding handler for chat type " + id);
 			}
-			datatable.put(id, handler);
+			_datatable.put(id, handler);
 		}
 	}
 
@@ -67,7 +68,7 @@ public class ChatHandler
 	 */
 	public IChatHandler getChatHandler(int chatType)
 	{
-		return datatable.get(chatType);
+		return _datatable.get(chatType);
 	}
 
 	/**
@@ -77,12 +78,12 @@ public class ChatHandler
 	 */
 	public int size()
 	{
-		return datatable.size();
+		return _datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ChatHandler instance = new ChatHandler();
+		protected static final ChatHandler _instance = new ChatHandler();
 	}
 }

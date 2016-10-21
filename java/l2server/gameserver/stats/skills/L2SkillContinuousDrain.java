@@ -39,17 +39,17 @@ import java.util.logging.Logger;
 
 public class L2SkillContinuousDrain extends L2Skill
 {
-	private static final Logger logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
-	private float absorbPart;
-	private int absorbTime;
+	private float _absorbPart;
+	private int _absorbTime;
 
 	public L2SkillContinuousDrain(StatsSet set)
 	{
 		super(set);
 
-		absorbPart = set.getFloat("absorbPart", 0.0f) / 100;
-		absorbTime = set.getInteger("absorbTime", 0);
+		_absorbPart = set.getFloat("absorbPart", 0.0f) / 100;
+		_absorbTime = set.getInteger("absorbTime", 0);
 	}
 
 	@Override
@@ -60,30 +60,30 @@ public class L2SkillContinuousDrain extends L2Skill
 
 	private class DrainTask implements Runnable
 	{
-		private int count = absorbTime;
-		L2Character activeChar;
-		L2Object[] targets;
+		private int _count = _absorbTime;
+		L2Character _activeChar;
+		L2Object[] _targets;
 
 		public DrainTask(L2Character activeChar, L2Object[] targets)
 		{
-			this.activeChar = activeChar;
-			this.targets = targets;
+			_activeChar = activeChar;
+			_targets = targets;
 		}
 
 		@Override
 		public void run()
 		{
-			if (!drain(activeChar, targets))
+			if (!drain(_activeChar, _targets))
 			{
 				return;
 			}
 
-			if (count > 0)
+			if (_count > 0)
 			{
 				ThreadPoolManager.getInstance().scheduleEffect(this, 1000);
 			}
 
-			count--;
+			_count--;
 		}
 	}
 
@@ -135,32 +135,32 @@ public class L2SkillContinuousDrain extends L2Skill
 			byte shld = Formulas.calcShldUse(activeChar, target, this);
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, this, shld, ssMul, mcrit);
 
-			int drain = 0;
-			//int cp = (int)target.getCurrentCp();
-			int charHp = (int) target.getCurrentHp();
+			int _drain = 0;
+			//int _cp = (int)target.getCurrentCp();
+			int _hp = (int) target.getCurrentHp();
 
 			if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance &&
 					target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
 			{
-				/*if (cp > 0)
-				{
-					if (damage < cp)
-						drain = 0;
+				/*if (_cp > 0)
+                {
+					if (damage < _cp)
+						_drain = 0;
 					else
-						drain = damage - cp;
+						_drain = damage - _cp;
 				}
 				else */
-				if (damage > charHp)
+				if (damage > _hp)
 				{
-					drain = charHp;
+					_drain = _hp;
 				}
 				else
 				{
-					drain = damage;
+					_drain = damage;
 				}
 			}
 
-			double hpAdd = absorbPart * drain;
+			double hpAdd = _absorbPart * _drain;
 			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
 					activeChar.getCurrentHp() + hpAdd;
 
@@ -181,7 +181,7 @@ public class L2SkillContinuousDrain extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
-					logDamage.log(record);
+					_logDamage.log(record);
 				}
 
 				target.reduceCurrentHp(damage, activeChar, this);

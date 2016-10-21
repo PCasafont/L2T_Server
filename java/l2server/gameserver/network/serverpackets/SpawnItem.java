@@ -34,46 +34,46 @@ import l2server.gameserver.model.L2Object;
  */
 public final class SpawnItem extends L2GameServerPacket
 {
-	private int objectId;
-	private int itemId;
-	private int x, y, z;
-	private int stackable;
-	private long count;
+	private int _objectId;
+	private int _itemId;
+	private int _x, _y, _z;
+	private int _stackable;
+	private long _count;
 
 	public SpawnItem(L2Object obj)
 	{
-		objectId = obj.getObjectId();
-		x = obj.getX();
-		y = obj.getY();
-		z = obj.getZ();
+		_objectId = obj.getObjectId();
+		_x = obj.getX();
+		_y = obj.getY();
+		_z = obj.getZ();
 
 		if (obj instanceof L2ItemInstance)
 		{
 			L2ItemInstance item = (L2ItemInstance) obj;
-			itemId = item.getItemId();
-			stackable = item.isStackable() ? 0x01 : 0x00;
-			count = item.getCount();
+			_itemId = item.getItemId();
+			_stackable = item.isStackable() ? 0x01 : 0x00;
+			_count = item.getCount();
 		}
 		else
 		{
-			itemId = obj.getPoly().getPolyId();
-			stackable = 0;
-			count = 1;
+			_itemId = obj.getPoly().getPolyId();
+			_stackable = 0;
+			_count = 1;
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(itemId);
+		writeD(_objectId);
+		writeD(_itemId);
 
-		writeD(x);
-		writeD(y);
-		writeD(z);
+		writeD(_x);
+		writeD(_y);
+		writeD(_z);
 		// only show item count if it is a stackable item
-		writeD(stackable);
-		writeQ(count);
+		writeD(_stackable);
+		writeQ(_count);
 		writeH(0x00); // c2
 		writeH(0x00); // freya unk
 	}

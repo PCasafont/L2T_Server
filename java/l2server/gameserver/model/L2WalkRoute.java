@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 import java.util.List;
 
 /**
@@ -24,55 +22,66 @@ import java.util.List;
  */
 public class L2WalkRoute
 {
-	@Getter private final int id;
-	private final List<L2NpcWalkerNode> nodeList; // List of nodes
-	private final boolean repeatWalk; // Does repeat walk, after arriving into last point in list, or not
-	private boolean stopAfterCycle; // Make only one cycle or endlessly
-	@Getter private final byte repeatType;
+	private final int _id;
+	private final List<L2NpcWalkerNode> _nodeList; // List of nodes
+	private final boolean _repeatWalk; // Does repeat walk, after arriving into last point in list, or not
+	private boolean _stopAfterCycle; // Make only one cycle or endlessly
+	private final byte _repeatType;
 	// Repeat style: 0 - go back, 1 - go to first point (circle style), 2 - teleport to first point (conveyor style), 3 - random walking between points
-	private boolean debug;
+	private boolean _debug;
 
 	public L2WalkRoute(int id, List<L2NpcWalkerNode> route, boolean repeat, boolean once, byte repeatType)
 	{
-		this.id = id;
-		nodeList = route;
-		this.repeatType = repeatType;
-		repeatWalk = (this.repeatType >= 0 && this.repeatType <= 2) && repeat;
-		debug = false;
+
+		_id = id;
+		_nodeList = route;
+		_repeatType = repeatType;
+		_repeatWalk = (_repeatType >= 0 && _repeatType <= 2) && repeat;
+		_debug = false;
+	}
+
+	public int getId()
+	{
+		return _id;
 	}
 
 	public List<L2NpcWalkerNode> getNodeList()
 	{
-		return nodeList;
+		return _nodeList;
 	}
 
 	public L2NpcWalkerNode getLastNode()
 	{
-		return nodeList.get(nodeList.size() - 1);
+		return _nodeList.get(_nodeList.size() - 1);
 	}
 
 	public boolean repeatWalk()
 	{
-		return repeatWalk;
+		return _repeatWalk;
 	}
 
 	public boolean doOnce()
 	{
-		return stopAfterCycle;
+		return _stopAfterCycle;
+	}
+
+	public byte getRepeatType()
+	{
+		return _repeatType;
 	}
 
 	public int getNodesCount()
 	{
-		return nodeList.size();
+		return _nodeList.size();
 	}
 
 	public void setDebug(boolean val)
 	{
-		debug = val;
+		_debug = val;
 	}
 
 	public boolean debug()
 	{
-		return debug;
+		return _debug;
 	}
 }

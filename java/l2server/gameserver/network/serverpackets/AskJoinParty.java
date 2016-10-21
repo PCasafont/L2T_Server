@@ -32,21 +32,21 @@ public class AskJoinParty extends L2GameServerPacket
 {
 	//
 
-	private String requestorName;
-	private int itemDistribution;
+	private String _requestorName;
+	private int _itemDistribution;
 
 	/**
 	 */
 	public AskJoinParty(String requestorName, int itemDistribution)
 	{
-		this.requestorName = requestorName;
-		this.itemDistribution = itemDistribution;
+		_requestorName = requestorName;
+		_itemDistribution = itemDistribution;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(requestorName);
-		writeD(itemDistribution);
+		writeS(_requestorName);
+		writeD(_itemDistribution);
 	}
 }

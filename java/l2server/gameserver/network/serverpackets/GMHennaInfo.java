@@ -23,25 +23,29 @@ import l2server.gameserver.templates.item.L2Henna;
  */
 public class GMHennaInfo extends L2GameServerPacket
 {
-	private final L2PcInstance activeChar;
-	private final L2Henna[] hennas = new L2Henna[4];
-	private int count;
+	private final L2PcInstance _activeChar;
+	private final L2Henna[] _hennas = new L2Henna[4];
+	private int _count;
 
 	public GMHennaInfo(L2PcInstance activeChar)
 	{
-		this.activeChar = activeChar;
+		_activeChar = activeChar;
 
 		int j = 0;
 		for (int i = 0; i < 3; i++)
 		{
-			L2Henna h = this.activeChar.getHenna(i + 1);
+			L2Henna h = _activeChar.getHenna(i + 1);
 			if (h != null)
 			{
-				hennas[j++] = h;
+				_hennas[j++] = h;
 			}
 		}
-		count = j;
+		_count = j;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -49,23 +53,23 @@ public class GMHennaInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(activeChar.getHennaStatINT());
-		writeC(activeChar.getHennaStatSTR());
-		writeC(activeChar.getHennaStatCON());
-		writeC(activeChar.getHennaStatMEN());
-		writeC(activeChar.getHennaStatDEX());
-		writeC(activeChar.getHennaStatWIT());
-		writeC(activeChar.getHennaStatLUC());
-		writeC(activeChar.getHennaStatCHA());
+		writeC(_activeChar.getHennaStatINT());
+		writeC(_activeChar.getHennaStatSTR());
+		writeC(_activeChar.getHennaStatCON());
+		writeC(_activeChar.getHennaStatMEN());
+		writeC(_activeChar.getHennaStatDEX());
+		writeC(_activeChar.getHennaStatWIT());
+		writeC(_activeChar.getHennaStatLUC());
+		writeC(_activeChar.getHennaStatCHA());
 		writeD(4); // slots?
-		writeD(count); //size
-		for (int i = 0; i < count; i++)
+		writeD(_count); //size
+		for (int i = 0; i < _count; i++)
 		{
-			writeD(hennas[i].getSymbolId());
+			writeD(_hennas[i].getSymbolId());
 			writeD(0x01);
 		}
 
-		L2Henna specialDye = activeChar.getHenna(4);
+		L2Henna specialDye = _activeChar.getHenna(4);
 		if (specialDye != null)
 		{
 			writeD(specialDye.getSymbolId());

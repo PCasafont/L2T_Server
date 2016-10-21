@@ -31,9 +31,9 @@ public class Loc implements IUserCommandHandler
 	@Override
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
-		int nearestTown = MapRegionTable.getInstance().getClosestTownNumber(activeChar);
+		int _nearestTown = MapRegionTable.getInstance().getClosestTownNumber(activeChar);
 		SystemMessageId msg;
-		switch (nearestTown)
+		switch (_nearestTown)
 		{
 			case 0:
 				msg = SystemMessageId.LOC_TI_S1_S2_S3;

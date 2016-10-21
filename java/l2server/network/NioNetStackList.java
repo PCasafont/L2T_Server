@@ -24,11 +24,11 @@ package l2server.network;
  */
 public final class NioNetStackList<E>
 {
-	private final NioNetStackNode start = new NioNetStackNode();
+	private final NioNetStackNode _start = new NioNetStackNode();
 
-	private final NioNetStackNodeBuf buf = new NioNetStackNodeBuf();
+	private final NioNetStackNodeBuf _buf = new NioNetStackNodeBuf();
 
-	private NioNetStackNode end = new NioNetStackNode();
+	private NioNetStackNode _end = new NioNetStackNode();
 
 	public NioNetStackList()
 	{
@@ -37,66 +37,66 @@ public final class NioNetStackList<E>
 
 	public final void addLast(final E elem)
 	{
-		final NioNetStackNode newEndNode = buf.removeFirst();
-		end.value = elem;
-		end.next = newEndNode;
-		end = newEndNode;
+		final NioNetStackNode newEndNode = _buf.removeFirst();
+		_end._value = elem;
+		_end._next = newEndNode;
+		_end = newEndNode;
 	}
 
 	public final E removeFirst()
 	{
-		final NioNetStackNode old = start.next;
-		final E value = old.value;
-		start.next = old.next;
-		buf.addLast(old);
+		final NioNetStackNode old = _start._next;
+		final E value = old._value;
+		_start._next = old._next;
+		_buf.addLast(old);
 		return value;
 	}
 
 	public final boolean isEmpty()
 	{
-		return start.next == end;
+		return _start._next == _end;
 	}
 
 	public final void clear()
 	{
-		start.next = end;
+		_start._next = _end;
 	}
 
 	protected final class NioNetStackNode
 	{
-		protected NioNetStackNode next;
+		protected NioNetStackNode _next;
 
-		protected E value;
+		protected E _value;
 	}
 
 	private final class NioNetStackNodeBuf
 	{
-		private final NioNetStackNode start = new NioNetStackNode();
+		private final NioNetStackNode _start = new NioNetStackNode();
 
-		private NioNetStackNode end = new NioNetStackNode();
+		private NioNetStackNode _end = new NioNetStackNode();
 
 		NioNetStackNodeBuf()
 		{
-			start.next = end;
+			_start._next = _end;
 		}
 
 		final void addLast(final NioNetStackNode node)
 		{
-			node.next = null;
-			node.value = null;
-			end.next = node;
-			end = node;
+			node._next = null;
+			node._value = null;
+			_end._next = node;
+			_end = node;
 		}
 
 		final NioNetStackNode removeFirst()
 		{
-			if (start.next == end)
+			if (_start._next == _end)
 			{
 				return new NioNetStackNode();
 			}
 
-			final NioNetStackNode old = start.next;
-			start.next = old.next;
+			final NioNetStackNode old = _start._next;
+			_start._next = old._next;
 			return old;
 		}
 	}

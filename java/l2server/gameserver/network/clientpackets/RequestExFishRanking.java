@@ -25,6 +25,7 @@ import l2server.log.Log;
  */
 public final class RequestExFishRanking extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

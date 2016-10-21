@@ -22,6 +22,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShowOwnthingPos extends L2GameServerPacket
 {
+
 	public ExShowOwnthingPos()
 	{
 	}

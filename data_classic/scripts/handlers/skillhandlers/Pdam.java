@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
@@ -42,8 +38,11 @@ import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -73,7 +72,7 @@ public class Pdam implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			Log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
+			_log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
 		}
 
 		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
@@ -176,7 +175,7 @@ public class Pdam implements ISkillHandler
 
 			if (damage != 0)
 			{
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().isInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 
@@ -273,7 +272,7 @@ public class Pdam implements ISkillHandler
 
 								// Half the reflected damage for bows
 								/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-								if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+                                if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 										 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 									reflectedDamage *= 0.5f;*/
 

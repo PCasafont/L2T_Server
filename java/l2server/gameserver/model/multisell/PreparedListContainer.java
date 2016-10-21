@@ -25,24 +25,24 @@ import java.util.ArrayList;
 
 public class PreparedListContainer extends ListContainer
 {
-	private int npcObjectId = 0;
+	private int _npcObjectId = 0;
 
 	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, L2Npc npc)
 	{
 		super(template.getListId());
-		maintainEnchantment = template.getMaintainEnchantment();
+		_maintainEnchantment = template.getMaintainEnchantment();
 
-		applyTaxes = false;
-		isChance = template.isChance();
-		timeLimit = template.getTimeLimit();
+		_applyTaxes = false;
+		_isChance = template.isChance();
+		_timeLimit = template.getTimeLimit();
 
 		double taxRate = 0;
 		if (npc != null)
 		{
-			npcObjectId = npc.getObjectId();
+			_npcObjectId = npc.getObjectId();
 			if (template.getApplyTaxes() && npc.getIsInTown() && npc.getCastle().getOwnerId() > 0)
 			{
-				applyTaxes = true;
+				_applyTaxes = true;
 				taxRate = npc.getCastle().getTaxRate();
 			}
 		}
@@ -55,7 +55,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			final L2ItemInstance[] items;
-			if (maintainEnchantment)
+			if (_maintainEnchantment)
 			{
 				items = player.getInventory().getUniqueItemsByEnchantLevel(false, false, false);
 			}
@@ -65,7 +65,7 @@ public class PreparedListContainer extends ListContainer
 			}
 
 			// size is not known - using ArrayList
-			entries = new ArrayList<>();
+			_entries = new ArrayList<>();
 			for (L2ItemInstance item : items)
 			{
 				// only do the matchup on equipable items that are not currently equipped
@@ -80,7 +80,7 @@ public class PreparedListContainer extends ListContainer
 						{
 							if (item.getItemId() == ing.getItemId())
 							{
-								entries.add(new PreparedEntry(ent, item, applyTaxes, maintainEnchantment, taxRate));
+								_entries.add(new PreparedEntry(ent, item, _applyTaxes, _maintainEnchantment, taxRate));
 								break; // next entry
 							}
 						}
@@ -90,16 +90,16 @@ public class PreparedListContainer extends ListContainer
 		}
 		else
 		{
-			entries = new ArrayList<>(template.getEntries().size());
+			_entries = new ArrayList<>(template.getEntries().size());
 			for (MultiSellEntry ent : template.getEntries())
 			{
-				entries.add(new PreparedEntry(ent, null, applyTaxes, false, taxRate));
+				_entries.add(new PreparedEntry(ent, null, _applyTaxes, false, taxRate));
 			}
 		}
 	}
 
 	public final boolean checkNpcObjectId(int npcObjectId)
 	{
-		return this.npcObjectId == 0 || this.npcObjectId == npcObjectId;
+		return _npcObjectId == 0 || _npcObjectId == npcObjectId;
 	}
 }

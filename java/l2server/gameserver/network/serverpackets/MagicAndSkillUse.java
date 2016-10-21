@@ -22,17 +22,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class MagicAndSkillUse extends L2GameServerPacket
 {
-	private int objId;
+	private int _objId;
 
 	public MagicAndSkillUse(L2PcInstance player)
 	{
-		objId = player.getObjectId();
+		_objId = player.getObjectId();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objId);
+		writeD(_objId);
 		writeD(133560);
 		writeD(730502);
 	}

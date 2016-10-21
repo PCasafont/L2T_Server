@@ -30,12 +30,12 @@ import l2server.loginserver.SessionKey;
  */
 public final class LoginOk extends L2LoginServerPacket
 {
-	private int loginOk1, loginOk2;
+	private int _loginOk1, _loginOk2;
 
 	public LoginOk(SessionKey sessionKey)
 	{
-		loginOk1 = sessionKey.loginOkID1;
-		loginOk2 = sessionKey.loginOkID2;
+		_loginOk1 = sessionKey.loginOkID1;
+		_loginOk2 = sessionKey.loginOkID2;
 	}
 
 	/**
@@ -44,8 +44,8 @@ public final class LoginOk extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x03);
-		writeD(loginOk1);
-		writeD(loginOk2);
+		writeD(_loginOk1);
+		writeD(_loginOk2);
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x000003ea);

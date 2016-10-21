@@ -22,20 +22,20 @@ import l2server.gameserver.datatables.PlayerClassTable;
  */
 public final class ExCallToChangeClass extends L2GameServerPacket
 {
-	private int awakeningId;
-	private boolean show;
+	private int _awakeningId;
+	private boolean _show;
 
 	public ExCallToChangeClass(int classId, boolean show)
 	{
-		awakeningId = PlayerClassTable.getInstance().getAwakening(classId);
-		this.show = show;
+		_awakeningId = PlayerClassTable.getInstance().getAwakening(classId);
+		_show = show;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(awakeningId);
-		writeD(show ? 1 : 0);
+		writeD(_awakeningId);
+		writeD(_show ? 1 : 0);
 		writeD(0x01);
 	}
 }

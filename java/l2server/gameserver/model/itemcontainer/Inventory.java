@@ -29,7 +29,6 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.item.*;
 import l2server.log.Log;
 import l2server.util.StringUtil;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -91,20 +90,20 @@ public abstract class Inventory extends ItemContainer
 	//Speed percentage mods
 	public static final double MAX_ARMOR_WEIGHT = 12000;
 
-	private final L2ItemInstance[] paperdoll;
-	private final List<PaperdollListener> paperdollListeners;
+	private final L2ItemInstance[] _paperdoll;
+	private final List<PaperdollListener> _paperdollListeners;
 
 	// protected to be accessed from child classes only
-	protected int totalWeight;
+	protected int _totalWeight;
 
 	// used to quickly check for using of items of special type
-	@Getter private int wearedMask;
+	private int _wearedMask;
 
 	// Recorder of alterations in inventory
 	private static final class ChangeRecorder implements PaperdollListener
 	{
-		private final Inventory inventory;
-		private final List<L2ItemInstance> changed;
+		private final Inventory _inventory;
+		private final List<L2ItemInstance> _changed;
 
 		/**
 		 * Constructor of the ChangeRecorder
@@ -113,9 +112,9 @@ public abstract class Inventory extends ItemContainer
 		 */
 		ChangeRecorder(Inventory inventory)
 		{
-			this.inventory = inventory;
-			changed = new ArrayList<>();
-			this.inventory.addPaperdollListener(this);
+			_inventory = inventory;
+			_changed = new ArrayList<>();
+			_inventory.addPaperdollListener(this);
 		}
 
 		/**
@@ -124,9 +123,9 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyEquiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
-			if (!changed.contains(item))
+			if (!_changed.contains(item))
 			{
-				changed.add(item);
+				_changed.add(item);
 			}
 		}
 
@@ -136,9 +135,9 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
-			if (!changed.contains(item))
+			if (!_changed.contains(item))
 			{
-				changed.add(item);
+				_changed.add(item);
 			}
 		}
 
@@ -149,13 +148,18 @@ public abstract class Inventory extends ItemContainer
 		 */
 		public L2ItemInstance[] getChangedItems()
 		{
-			return changed.toArray(new L2ItemInstance[changed.size()]);
+			return _changed.toArray(new L2ItemInstance[_changed.size()]);
 		}
 	}
 
 	private static final class WeaponListener implements PaperdollListener
 	{
-		@Getter private static WeaponListener instance = new WeaponListener();
+		private static WeaponListener instance = new WeaponListener();
+
+		public static WeaponListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -247,13 +251,18 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class StatsListener implements PaperdollListener
 	{
-		@Getter private static StatsListener instance = new StatsListener();
+		private static StatsListener instance = new StatsListener();
+
+		public static StatsListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
 		{
 			/*if (slot == PAPERDOLL_RHAND)
-				return;*/
+                return;*/
 			inventory.getOwner().removeStatsOwner(item);
 		}
 
@@ -268,7 +277,12 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class ItemSkillsListener implements PaperdollListener
 	{
-		@Getter private static ItemSkillsListener instance = new ItemSkillsListener();
+		private static ItemSkillsListener instance = new ItemSkillsListener();
+
+		public static ItemSkillsListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -505,7 +519,12 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class ArmorSetListener implements PaperdollListener
 	{
-		@Getter private static ArmorSetListener instance = new ArmorSetListener();
+		private static ArmorSetListener instance = new ArmorSetListener();
+
+		public static ArmorSetListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyEquiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -746,7 +765,12 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class BraceletListener implements PaperdollListener
 	{
-		@Getter private static BraceletListener instance = new BraceletListener();
+		private static BraceletListener instance = new BraceletListener();
+
+		public static BraceletListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -770,7 +794,12 @@ public abstract class Inventory extends ItemContainer
 
 	private static final class BroochListener implements PaperdollListener
 	{
-		@Getter private static BroochListener instance = new BroochListener();
+		private static BroochListener instance = new BroochListener();
+
+		public static BroochListener getInstance()
+		{
+			return instance;
+		}
 
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item, Inventory inventory)
@@ -797,8 +826,8 @@ public abstract class Inventory extends ItemContainer
 	 */
 	protected Inventory()
 	{
-		paperdoll = new L2ItemInstance[PAPERDOLL_TOTALSLOTS];
-		paperdollListeners = new ArrayList<>();
+		_paperdoll = new L2ItemInstance[PAPERDOLL_TOTALSLOTS];
+		_paperdollListeners = new ArrayList<>();
 
 		if (this instanceof PcInventory)
 		{
@@ -843,7 +872,7 @@ public abstract class Inventory extends ItemContainer
 
 		synchronized (item)
 		{
-			if (!items.containsKey(item.getObjectId()))
+			if (!_items.containsKey(item.getObjectId()))
 			{
 				return null;
 			}
@@ -879,7 +908,7 @@ public abstract class Inventory extends ItemContainer
 
 		synchronized (item)
 		{
-			if (!items.containsKey(item.getObjectId()))
+			if (!_items.containsKey(item.getObjectId()))
 			{
 				return null;
 			}
@@ -925,9 +954,9 @@ public abstract class Inventory extends ItemContainer
 	protected boolean removeItem(L2ItemInstance item)
 	{
 		// Unequip item if equiped
-		for (int i = 0; i < paperdoll.length; i++)
+		for (int i = 0; i < _paperdoll.length; i++)
 		{
-			if (paperdoll[i] == item)
+			if (_paperdoll[i] == item)
 			{
 				unEquipItemInSlot(i);
 			}
@@ -942,7 +971,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public L2ItemInstance getPaperdollItem(int slot)
 	{
-		return paperdoll[slot];
+		return _paperdoll[slot];
 	}
 
 	public static int getPaperdollIndex(int slot)
@@ -1011,7 +1040,7 @@ public abstract class Inventory extends ItemContainer
 	public L2ItemInstance[] getPaperdollItems()
 	{
 		List<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance element : paperdoll)
+		for (L2ItemInstance element : _paperdoll)
 		{
 			if (element != null)
 			{
@@ -1033,7 +1062,7 @@ public abstract class Inventory extends ItemContainer
 		{
 			return null;
 		}
-		return paperdoll[index];
+		return _paperdoll[index];
 	}
 
 	/**
@@ -1045,7 +1074,7 @@ public abstract class Inventory extends ItemContainer
 	public int getPaperdollItemId(int slot)
 	{
 		// Check for chest parts with full body appearance
-		L2ItemInstance item = paperdoll[slot];
+		L2ItemInstance item = _paperdoll[slot];
 		if (item != null)
 		{
 			return item.getItemId();
@@ -1056,7 +1085,7 @@ public abstract class Inventory extends ItemContainer
 
 	public long getPaperdollAugmentationId(int slot)
 	{
-		L2ItemInstance item = paperdoll[slot];
+		L2ItemInstance item = _paperdoll[slot];
 		if (item != null)
 		{
 			//Do not show augment glow on hero weapons
@@ -1085,7 +1114,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public int getPaperdollObjectId(int slot)
 	{
-		L2ItemInstance item = paperdoll[slot];
+		L2ItemInstance item = _paperdoll[slot];
 		if (item != null)
 		{
 			return item.getObjectId();
@@ -1098,8 +1127,8 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public synchronized void addPaperdollListener(PaperdollListener listener)
 	{
-		assert !paperdollListeners.contains(listener);
-		paperdollListeners.add(listener);
+		assert !_paperdollListeners.contains(listener);
+		_paperdollListeners.add(listener);
 	}
 
 	/**
@@ -1107,7 +1136,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public synchronized void removePaperdollListener(PaperdollListener listener)
 	{
-		paperdollListeners.remove(listener);
+		_paperdollListeners.remove(listener);
 	}
 
 	public L2ItemInstance setPaperdollItem(int slot, L2ItemInstance item)
@@ -1125,12 +1154,12 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public synchronized L2ItemInstance setPaperdollItem(int slot, L2ItemInstance item, boolean updateDb)
 	{
-		L2ItemInstance old = paperdoll[slot];
+		L2ItemInstance old = _paperdoll[slot];
 		if (old != item)
 		{
 			if (old != null)
 			{
-				paperdoll[slot] = null;
+				_paperdoll[slot] = null;
 				// Put old item from paperdoll slot to base location
 				old.setLocation(getBaseLocation());
 				old.setLastChange(L2ItemInstance.MODIFIED);
@@ -1138,15 +1167,15 @@ public abstract class Inventory extends ItemContainer
 				int mask = 0;
 				for (int i = 0; i < PAPERDOLL_TOTALSLOTS; i++)
 				{
-					L2ItemInstance pi = paperdoll[i];
+					L2ItemInstance pi = _paperdoll[i];
 					if (pi != null)
 					{
 						mask |= pi.getItem().getItemMask();
 					}
 				}
-				wearedMask = mask;
+				_wearedMask = mask;
 				// Notify all paperdoll listener in order to unequip old item in slot
-				for (PaperdollListener listener : paperdollListeners)
+				for (PaperdollListener listener : _paperdollListeners)
 				{
 					if (listener == null)
 					{
@@ -1160,11 +1189,11 @@ public abstract class Inventory extends ItemContainer
 			// Add new item in slot of paperdoll
 			if (item != null)
 			{
-				paperdoll[slot] = item;
+				_paperdoll[slot] = item;
 				item.setLocation(getEquipLocation(), slot);
 				item.setLastChange(L2ItemInstance.MODIFIED);
-				wearedMask |= item.getItem().getItemMask();
-				for (PaperdollListener listener : paperdollListeners)
+				_wearedMask |= item.getItem().getItemMask();
+				for (PaperdollListener listener : _paperdollListeners)
 				{
 					if (listener == null)
 					{
@@ -1184,6 +1213,11 @@ public abstract class Inventory extends ItemContainer
 	 *
 	 * @return int
 	 */
+	public int getWearedMask()
+	{
+		return _wearedMask;
+	}
+
 	public int getSlotFromItem(L2ItemInstance item)
 	{
 		int slot = -1;
@@ -1545,11 +1579,11 @@ public abstract class Inventory extends ItemContainer
 			case L2Item.SLOT_R_EAR:
 			case L2Item.SLOT_LR_EAR:
 			{
-				if (paperdoll[PAPERDOLL_LEAR] == null)
+				if (_paperdoll[PAPERDOLL_LEAR] == null)
 				{
 					setPaperdollItem(PAPERDOLL_LEAR, item, updateDb);
 				}
-				else if (paperdoll[PAPERDOLL_REAR] == null)
+				else if (_paperdoll[PAPERDOLL_REAR] == null)
 				{
 					setPaperdollItem(PAPERDOLL_REAR, item, updateDb);
 				}
@@ -1563,11 +1597,11 @@ public abstract class Inventory extends ItemContainer
 			case L2Item.SLOT_R_FINGER:
 			case L2Item.SLOT_LR_FINGER:
 			{
-				if (paperdoll[PAPERDOLL_LFINGER] == null)
+				if (_paperdoll[PAPERDOLL_LFINGER] == null)
 				{
 					setPaperdollItem(PAPERDOLL_LFINGER, item, updateDb);
 				}
-				else if (paperdoll[PAPERDOLL_RFINGER] == null)
+				else if (_paperdoll[PAPERDOLL_RFINGER] == null)
 				{
 					setPaperdollItem(PAPERDOLL_RFINGER, item, updateDb);
 				}
@@ -1687,14 +1721,14 @@ public abstract class Inventory extends ItemContainer
 	{
 		long weight = 0;
 
-		for (L2ItemInstance item : items.values())
+		for (L2ItemInstance item : _items.values())
 		{
 			if (item != null && item.getItem() != null)
 			{
 				weight += item.getItem().getWeight() * item.getCount();
 			}
 		}
-		totalWeight = (int) Math.min(weight, Integer.MAX_VALUE);
+		_totalWeight = (int) Math.min(weight, Integer.MAX_VALUE);
 	}
 
 	/**
@@ -1704,7 +1738,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public int getTotalWeight()
 	{
-		return totalWeight;
+		return _totalWeight;
 	}
 
 	/**
@@ -1849,7 +1883,7 @@ public abstract class Inventory extends ItemContainer
 		// find same (or incompatible) talisman type
 		for (int i = PAPERDOLL_DECO1; i < PAPERDOLL_DECO1 + getMaxTalismanCount(); i++)
 		{
-			if (paperdoll[i] != null)
+			if (_paperdoll[i] != null)
 			{
 				if (getPaperdollItemId(i) == item.getItemId())
 				{
@@ -1863,7 +1897,7 @@ public abstract class Inventory extends ItemContainer
 		// free slot found - put on first free
 		for (int i = PAPERDOLL_DECO1; i < PAPERDOLL_DECO1 + getMaxTalismanCount(); i++)
 		{
-			if (paperdoll[i] == null)
+			if (_paperdoll[i] == null)
 			{
 				setPaperdollItem(i, item, updateDb);
 				return;
@@ -1889,10 +1923,10 @@ public abstract class Inventory extends ItemContainer
 		// find same (or incompatible) jewel type
 		for (int i = PAPERDOLL_JEWELRY1; i < PAPERDOLL_JEWELRY1 + getMaxJewelryCount(); i++)
 		{
-			if (paperdoll[i] != null)
+			if (_paperdoll[i] != null)
 			{
 				if (getPaperdollItemId(i) == item.getItemId() ||
-						item.getName().startsWith(paperdoll[i].getName().substring(0, 4)))
+						item.getName().startsWith(_paperdoll[i].getName().substring(0, 4)))
 				{
 					// overwrite
 					setPaperdollItem(i, item, updateDb);
@@ -1904,7 +1938,7 @@ public abstract class Inventory extends ItemContainer
 		// free slot found - put on first free
 		for (int i = PAPERDOLL_JEWELRY1; i < PAPERDOLL_JEWELRY1 + getMaxJewelryCount(); i++)
 		{
-			if (paperdoll[i] == null)
+			if (_paperdoll[i] == null)
 			{
 				setPaperdollItem(i, item, updateDb);
 				return;
@@ -1933,7 +1967,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		int slot;
 
-		for (L2ItemInstance item : paperdoll)
+		for (L2ItemInstance item : _paperdoll)
 		{
 			if (item == null)
 			{
@@ -1942,7 +1976,7 @@ public abstract class Inventory extends ItemContainer
 
 			slot = item.getLocationSlot();
 
-			for (PaperdollListener listener : paperdollListeners)
+			for (PaperdollListener listener : _paperdollListeners)
 			{
 				if (listener == null)
 				{

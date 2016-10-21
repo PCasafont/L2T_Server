@@ -30,6 +30,7 @@ import java.util.logging.Level;
  */
 public class GameGuardReply extends L2GameClientPacket
 {
+
 	private static final byte[] VALID = {
 			(byte) 0x88,
 			0x40,
@@ -53,14 +54,14 @@ public class GameGuardReply extends L2GameClientPacket
 			(byte) 0xc5,
 			};
 
-	private byte[] reply = new byte[8];
+	private byte[] _reply = new byte[8];
 
 	@Override
 	protected void readImpl()
 	{
-		readB(reply, 0, 4);
+		readB(_reply, 0, 4);
 		readD();
-		readB(reply, 4, 4);
+		readB(_reply, 4, 4);
 	}
 
 	@Override
@@ -70,7 +71,7 @@ public class GameGuardReply extends L2GameClientPacket
 		try
 		{
 			MessageDigest md = MessageDigest.getInstance("SHA");
-			byte[] result = md.digest(reply);
+			byte[] result = md.digest(_reply);
 			if (Arrays.equals(result, VALID))
 			{
 				client.setGameGuardOk(true);

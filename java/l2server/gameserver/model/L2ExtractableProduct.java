@@ -15,17 +15,15 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 /**
  * @author JIV
  */
 public class L2ExtractableProduct
 {
-	@Getter private final int id;
-	@Getter private final int min;
-	@Getter private final int max;
-	@Getter private final int chance;
+	private final int _id;
+	private final int _min;
+	private final int _max;
+	private final int _chance;
 
 	/**
 	 * Create Extractable product
@@ -37,9 +35,29 @@ public class L2ExtractableProduct
 	 */
 	public L2ExtractableProduct(int id, int min, int max, double chance)
 	{
-		this.id = id;
-		this.min = min;
-		this.max = max;
-		this.chance = (int) (chance * 1000);
+		_id = id;
+		_min = min;
+		_max = max;
+		_chance = (int) (chance * 1000);
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public int getMin()
+	{
+		return _min;
+	}
+
+	public int getMax()
+	{
+		return _max;
+	}
+
+	public int getChance()
+	{
+		return _chance;
 	}
 }

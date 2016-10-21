@@ -20,12 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExCompoundFail extends L2GameServerPacket
 {
-	private final int itemId;
+	private final int _itemId;
 
 	public ExCompoundFail(int itemId)
 	{
-		this.itemId = itemId;
+		_itemId = itemId;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -33,6 +37,6 @@ public class ExCompoundFail extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(itemId); // Remaining item id
+		writeD(_itemId); // Remaining item id
 	}
 }

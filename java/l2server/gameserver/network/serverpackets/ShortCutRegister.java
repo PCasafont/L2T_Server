@@ -35,57 +35,58 @@ import l2server.gameserver.model.L2ShortCut;
  */
 public final class ShortCutRegister extends L2GameServerPacket
 {
-	private L2ShortCut shortcut;
+
+	private L2ShortCut _shortcut;
 
 	/**
 	 * Register new skill shortcut
 	 */
 	public ShortCutRegister(L2ShortCut shortcut)
 	{
-		this.shortcut = shortcut;
+		_shortcut = shortcut;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(shortcut.getType());
-		writeD(shortcut.getSlot() + shortcut.getPage() * 12); // C4 Client
-		switch (shortcut.getType())
+		writeD(_shortcut.getType());
+		writeD(_shortcut.getSlot() + _shortcut.getPage() * 12); // C4 Client
+		switch (_shortcut.getType())
 		{
 			case L2ShortCut.TYPE_ITEM: //1
-				writeD(shortcut.getId());
-				writeD(shortcut.getCharacterType());
-				writeD(shortcut.getSharedReuseGroup());
+				writeD(_shortcut.getId());
+				writeD(_shortcut.getCharacterType());
+				writeD(_shortcut.getSharedReuseGroup());
 				writeD(0x00); // unknown
 				writeD(0x00); // unknown
 				writeQ(0x00); // item augment id
 				break;
 			case L2ShortCut.TYPE_SKILL: //2
-				writeD(shortcut.getId());
-				writeD(shortcut.getLevel());
-				writeD(shortcut.getSharedReuseGroup());
+				writeD(_shortcut.getId());
+				writeD(_shortcut.getLevel());
+				writeD(_shortcut.getSharedReuseGroup());
 				writeC(0x00); // C5
-				writeD(shortcut.getCharacterType());
+				writeD(_shortcut.getCharacterType());
 				break;
 			/* these are same as default case, no need to duplicate, enable if packet get changed
-			 */
+             */
             /*	case L2ShortCut.TYPE_ACTION: //3
-             *		writeD(shortcut.getId());
-			 *		writeD(shortcut.getUserCommand());
+             *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
 			 *		break;
 			 *	case L2ShortCut.TYPE_MACRO: //4
-			 *		writeD(shortcut.getId());
-			 *		writeD(shortcut.getUserCommand());
+			 *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
 			 *		break;
 			 *	case L2ShortCut.TYPE_RECIPE: //5
-			 *		writeD(shortcut.getId());
-			 *		writeD(shortcut.getUserCommand());
+			 *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
 			 *		break;
 			 */
 			default:
 			{
-				writeD(shortcut.getId());
-				writeD(shortcut.getCharacterType());
+				writeD(_shortcut.getId());
+				writeD(_shortcut.getCharacterType());
 			}
 		}
 	}

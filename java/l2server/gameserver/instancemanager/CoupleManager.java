@@ -1,16 +1,16 @@
 /*
- * program is free software: you can redistribute it and/or modify it under
+ * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
  *
- * program is distributed in the hope that it will be useful, but WITHOUT
+ * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
  *
  * You should have received a copy of the GNU General Public License along with
- * program. If not, see <http://www.gnu.org/licenses/>.
+ * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package l2server.gameserver.instancemanager;
@@ -32,6 +32,7 @@ import java.util.logging.Level;
  */
 public class CoupleManager
 {
+
 	private CoupleManager()
 	{
 		Log.info("L2JMOD: Initializing CoupleManager");
@@ -40,14 +41,14 @@ public class CoupleManager
 
 	public static CoupleManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	// =========================================================
 
 	// =========================================================
 	// Data Field
-	private ArrayList<Couple> couples;
+	private ArrayList<Couple> _couples;
 
 	// =========================================================
 	// Method - Public
@@ -110,15 +111,15 @@ public class CoupleManager
 		{
 			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0)
 			{
-				int player1id = player1.getObjectId();
-				int player2id = player2.getObjectId();
+				int _player1id = player1.getObjectId();
+				int _player2id = player2.getObjectId();
 
-				Couple newCouple = new Couple(player1, player2);
-				getCouples().add(newCouple);
-				player1.setPartnerId(player2id);
-				player2.setPartnerId(player1id);
-				player1.setCoupleId(newCouple.getId());
-				player2.setCoupleId(newCouple.getId());
+				Couple _new = new Couple(player1, player2);
+				getCouples().add(_new);
+				player1.setPartnerId(_player2id);
+				player2.setPartnerId(_player1id);
+				player1.setCoupleId(_new.getId());
+				player2.setCoupleId(_new.getId());
 			}
 		}
 	}
@@ -164,16 +165,16 @@ public class CoupleManager
 
 	public final ArrayList<Couple> getCouples()
 	{
-		if (couples == null)
+		if (_couples == null)
 		{
-			couples = new ArrayList<>();
+			_couples = new ArrayList<>();
 		}
-		return couples;
+		return _couples;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CoupleManager instance = new CoupleManager();
+		protected static final CoupleManager _instance = new CoupleManager();
 	}
 }

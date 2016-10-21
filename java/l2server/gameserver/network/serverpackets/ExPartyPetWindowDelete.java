@@ -22,12 +22,16 @@ import l2server.gameserver.model.actor.L2Summon;
  */
 public class ExPartyPetWindowDelete extends L2GameServerPacket
 {
-	private final L2Summon summon;
+	private final L2Summon _summon;
 
 	public ExPartyPetWindowDelete(L2Summon summon)
 	{
-		this.summon = summon;
+		_summon = summon;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -35,8 +39,8 @@ public class ExPartyPetWindowDelete extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(summon.getObjectId());
+		writeD(_summon.getObjectId());
 		writeC(0x01); // ???
-		writeD(summon.getOwner().getObjectId());
+		writeD(_summon.getOwner().getObjectId());
 	}
 }

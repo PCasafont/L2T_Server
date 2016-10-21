@@ -15,9 +15,6 @@
 
 package l2server.configurator;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.swing.*;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -41,8 +38,8 @@ public class JIPTextField extends JPanel implements FocusListener
 	 * Comment for <code>serialVersionUID</code>
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField[] textFields;
-	private List<FocusListener> focusListeners;
+	private JTextField[] _textFields;
+	private List<FocusListener> _focusListeners;
 
 	public JIPTextField(String textIp)
 	{
@@ -50,9 +47,9 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		initIPTextField(textIp);
 
-		for (JTextField textField : textFields)
+		for (JTextField _textField : _textFields)
 		{
-			textField.addFocusListener(this);
+			_textField.addFocusListener(this);
 		}
 	}
 
@@ -74,7 +71,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		final ActionListener nextfocusaction = evt -> ((Component) evt.getSource()).transferFocus();
 
 		setLayout(new GridBagLayout());
-		textFields = new JTextField[4];
+		_textFields = new JTextField[4];
 
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.anchor = GridBagConstraints.PAGE_START;
@@ -96,15 +93,15 @@ public class JIPTextField extends JPanel implements FocusListener
 				cons.gridx++;
 			}
 			MaxLengthDocument maxDoc = new MaxLengthDocument(3);
-			textFields[i] = new JTextField(maxDoc, str, 3);
+			_textFields[i] = new JTextField(maxDoc, str, 3);
 			if (previous != null)
 			{
-				previous.setNext(textFields[i]);
+				previous.setNext(_textFields[i]);
 			}
 			previous = maxDoc;
 			//ic.weightx = 1;
-			add(textFields[i], cons);
-			textFields[i].addActionListener(nextfocusaction);
+			add(_textFields[i], cons);
+			_textFields[i].addActionListener(nextfocusaction);
 			cons.gridx++;
 		}
 	}
@@ -112,23 +109,23 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void addFocusListener(FocusListener fl)
 	{
-		if (focusListeners == null)
+		if (_focusListeners == null)
 		{
-			focusListeners = new LinkedList<>();
+			_focusListeners = new LinkedList<>();
 		}
 
-		if (fl != null && !focusListeners.contains(fl))
+		if (fl != null && !_focusListeners.contains(fl))
 		{
-			focusListeners.add(fl);
+			_focusListeners.add(fl);
 		}
 	}
 
 	@Override
 	public void removeFocusListener(FocusListener fl)
 	{
-		if (focusListeners != null)
+		if (_focusListeners != null)
 		{
-			focusListeners.remove(fl);
+			_focusListeners.remove(fl);
 		}
 	}
 
@@ -137,13 +134,13 @@ public class JIPTextField extends JPanel implements FocusListener
 		String str = "";
 		for (int i = 0; i < 4; i++)
 		{
-			if (textFields[i].getText().length() == 0)
+			if (_textFields[i].getText().length() == 0)
 			{
 				str += "0";
 			}
 			else
 			{
-				str += textFields[i].getText();
+				str += _textFields[i].getText();
 			}
 			if (i < 3)
 			{
@@ -167,11 +164,11 @@ public class JIPTextField extends JPanel implements FocusListener
 				// byte always have a sign in Java, IP addresses aren't
 				if (b[i] >= 0)
 				{
-					textFields[i].setText(Byte.toString(b[i]));
+					_textFields[i].setText(Byte.toString(b[i]));
 				}
 				else
 				{
-					textFields[i].setText(Integer.toString(b[i] + 256));
+					_textFields[i].setText(Integer.toString(b[i] + 256));
 				}
 			}
 			return;
@@ -181,18 +178,18 @@ public class JIPTextField extends JPanel implements FocusListener
 		}
 		for (int i = 0; i < 4; i++)
 		{
-			textFields[i].setText("");
+			_textFields[i].setText("");
 		}
 	}
 
 	@Override
 	public void setEnabled(boolean enabled)
 	{
-		for (JTextField textField : textFields)
+		for (JTextField _textField : _textFields)
 		{
-			if (textField != null)
+			if (_textField != null)
 			{
-				textField.setEnabled(enabled);
+				_textField.setEnabled(enabled);
 			}
 		}
 	}
@@ -201,7 +198,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (textFields[i].getText().length() != 0)
+			if (_textFields[i].getText().length() != 0)
 			{
 				return false;
 			}
@@ -213,7 +210,7 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (textFields[i].getText().length() == 0)
+			if (_textFields[i].getText().length() == 0)
 			{
 				return false;
 			}
@@ -224,9 +221,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	@Override
 	public void focusGained(FocusEvent event)
 	{
-		if (focusListeners != null)
+		if (_focusListeners != null)
 		{
-			for (FocusListener fl : focusListeners)
+			for (FocusListener fl : _focusListeners)
 			{
 				fl.focusGained(event);
 			}
@@ -238,9 +235,9 @@ public class JIPTextField extends JPanel implements FocusListener
 	{
 		if (isCorrect() || isEmpty())
 		{
-			if (focusListeners != null)
+			if (_focusListeners != null)
 			{
-				for (FocusListener fl : focusListeners)
+				for (FocusListener fl : _focusListeners)
 				{
 					fl.focusLost(event);
 				}
@@ -250,13 +247,14 @@ public class JIPTextField extends JPanel implements FocusListener
 
 	public class MaxLengthDocument extends PlainDocument
 	{
+
 		/**
 		 * Comment for <code>serialVersionUID</code>
 		 */
 		private static final long serialVersionUID = 1L;
 
-		private int max;
-		@Getter @Setter private JTextField next;
+		private int _max;
+		private JTextField _next;
 
 		public MaxLengthDocument(int maxLength)
 		{
@@ -265,14 +263,14 @@ public class JIPTextField extends JPanel implements FocusListener
 
 		public MaxLengthDocument(int maxLength, JTextField next)
 		{
-			max = maxLength;
+			_max = maxLength;
 			setNext(next);
 		}
 
 		@Override
 		public void insertString(int offset, String str, AttributeSet a) throws BadLocationException
 		{
-			if (getLength() + str.length() > max)
+			if (getLength() + str.length() > _max)
 			{
 				if (getNext() != null)
 				{
@@ -295,6 +293,22 @@ public class JIPTextField extends JPanel implements FocusListener
 			{
 				super.insertString(offset, str, a);
 			}
+		}
+
+		/**
+		 * @param next The next to set.
+		 */
+		public void setNext(JTextField next)
+		{
+			_next = next;
+		}
+
+		/**
+		 * @return Returns the next.
+		 */
+		public JTextField getNext()
+		{
+			return _next;
 		}
 	}
 }

@@ -40,6 +40,7 @@ import static l2server.gameserver.taskmanager.TaskTypes.*;
  */
 public final class TaskManager
 {
+
 	protected static final String[] SQL_STATEMENTS = {
 			"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
 			"UPDATE global_tasks SET last_activation=? WHERE id=?",
@@ -47,8 +48,8 @@ public final class TaskManager
 			"INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"
 	};
 
-	private final HashMap<Integer, Task> tasks = new HashMap<>();
-	protected final ArrayList<ExecutedTask> currentTasks = new ArrayList<>();
+	private final HashMap<Integer, Task> _tasks = new HashMap<>();
+	protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<>();
 
 	public class ExecutedTask implements Runnable
 	{
@@ -140,13 +141,13 @@ public final class TaskManager
 				scheduled.cancel(true);
 			}
 
-			currentTasks.remove(this);
+			_currentTasks.remove(this);
 		}
 	}
 
 	public static TaskManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private TaskManager()
@@ -177,9 +178,9 @@ public final class TaskManager
 	public void registerTask(Task task)
 	{
 		int key = task.getName().hashCode();
-		if (!tasks.containsKey(key))
+		if (!_tasks.containsKey(key))
 		{
-			tasks.put(key, task);
+			_tasks.put(key, task);
 			task.initialize();
 		}
 	}
@@ -195,7 +196,7 @@ public final class TaskManager
 
 			while (rset.next())
 			{
-				Task task = tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
+				Task task = _tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
 
 				if (task == null)
 				{
@@ -209,7 +210,7 @@ public final class TaskManager
 					ExecutedTask current = new ExecutedTask(task, type, rset);
 					if (launchTask(current))
 					{
-						currentTasks.add(current);
+						_currentTasks.add(current);
 					}
 				}
 			}
@@ -425,6 +426,6 @@ public final class TaskManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TaskManager instance = new TaskManager();
+		protected static final TaskManager _instance = new TaskManager();
 	}
 }

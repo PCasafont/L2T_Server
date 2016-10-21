@@ -9,7 +9,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -18,37 +17,37 @@ import java.util.Calendar;
  */
 public class Curfew
 {
-	public static Curfew instance = null;
+	public static Curfew _instance = null;
 
-	private CurfewTask ctask;
-	private StartTask task;
+	private CurfewTask _ctask;
+	private StartTask _task;
 
-	private int eventTown = 9;
+	private int _eventTown = 9;
 	private String eventTownName = "Giran";
 	public long curfewEnd = 0;
 
 	public static Curfew getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new Curfew();
+			_instance = new Curfew();
 		}
-		return instance;
+		return _instance;
 	}
 
 	public void initialize()
 	{
-		eventTown = Rnd.get(19) + 1;
-		if (eventTown == 16)
+		_eventTown = Rnd.get(19) + 1;
+		if (_eventTown == 16)
 		{
-			eventTown = 20;
+			_eventTown = 20;
 		}
-		else if (eventTown == 18)
+		else if (_eventTown == 18)
 		{
-			eventTown = 22;
+			_eventTown = 22;
 		}
 
-		eventTownName = MapRegionTable.getInstance().getTownName(eventTown);
+		eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
 	}
 
 	public void start()
@@ -56,7 +55,7 @@ public class Curfew
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (!(player.isInsideZone(L2Character.ZONE_PEACE) &&
-					TownManager.getClosestTown(player).getTownId() == eventTown))
+					TownManager.getClosestTown(player).getTownId() == _eventTown))
 			{
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 			}
@@ -81,7 +80,7 @@ public class Curfew
 
 	private void stop()
 	{
-		eventTown = -1;
+		_eventTown = -1;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
 			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) &&
@@ -102,17 +101,17 @@ public class Curfew
 
 	class CurfewTask implements Runnable
 	{
-		@Getter private long startTime;
+		private long _startTime;
 
 		public CurfewTask(long startTime)
 		{
-			this.startTime = startTime;
+			_startTime = startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = Math.round((startTime - System.currentTimeMillis()) / 1000);
+			int delay = Math.round((_startTime - System.currentTimeMillis()) / 1000);
 
 			if (delay > 0)
 			{
@@ -129,8 +128,8 @@ public class Curfew
 	{
 		try
 		{
-			ctask = new CurfewTask(curfewEnd);
-			ThreadPoolManager.getInstance().executeTask(ctask);
+			_ctask = new CurfewTask(curfewEnd);
+			ThreadPoolManager.getInstance().executeTask(_ctask);
 		}
 		catch (Exception e)
 		{
@@ -155,8 +154,8 @@ public class Curfew
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(task);
+			_task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 		catch (Exception e)
 		{
@@ -166,14 +165,14 @@ public class Curfew
 
 	public StartTask getStartTask()
 	{
-		return task;
+		return _task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(task.getStartTime());
+		startTime.setTimeInMillis(_task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -184,7 +183,7 @@ public class Curfew
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = task.getStartTime() - System.currentTimeMillis();
+		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -205,17 +204,22 @@ public class Curfew
 
 	class StartTask implements Runnable
 	{
-		@Getter private long startTime;
+		private long _startTime;
 
 		public StartTask(long startTime)
 		{
-			this.startTime = startTime;
+			_startTime = startTime;
+		}
+
+		public long getStartTime()
+		{
+			return _startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

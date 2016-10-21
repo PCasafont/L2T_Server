@@ -40,29 +40,29 @@ import java.sql.ResultSet;
 public class FriendPacket extends L2GameServerPacket
 {
 	//
-	private boolean action, online;
-	private int objid;
-	private String name;
-	private L2PcInstance player;
-	private int level = 0;
-	private int classId = 0;
-	private String memo;
+	private boolean _action, _online;
+	private int _objid;
+	private String _name;
+	private L2PcInstance _player;
+	private int _level = 0;
+	private int _classId = 0;
+	private String _memo;
 
 	/**
 	 * @param action - true for adding, false for remove
 	 */
 	public FriendPacket(boolean action, int objId, L2PcInstance activeChar)
 	{
-		this.action = action;
-		objid = objId;
-		name = CharNameTable.getInstance().getNameById(objId);
-		online = L2World.getInstance().getPlayer(objId) != null;
-		player = L2World.getInstance().getPlayer(objId);
-		memo = activeChar.getFriendMemo(objId);
-		if (player != null)
+		_action = action;
+		_objid = objId;
+		_name = CharNameTable.getInstance().getNameById(objId);
+		_online = L2World.getInstance().getPlayer(objId) != null;
+		_player = L2World.getInstance().getPlayer(objId);
+		_memo = activeChar.getFriendMemo(objId);
+		if (_player != null)
 		{
-			level = player.getLevel();
-			classId = player.getClassId();
+			_level = _player.getLevel();
+			_classId = _player.getClassId();
 		}
 		else
 		{
@@ -73,14 +73,14 @@ public class FriendPacket extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(action ? 1 : 3); // 1-add 3-remove
-		writeD(objid);
-		writeS(name);
-		writeD(online ? 1 : 0);
-		writeD(online ? objid : 0);
-		writeD(level);
-		writeD(classId);
-		writeS(memo);
+		writeD(_action ? 1 : 3); // 1-add 3-remove
+		writeD(_objid);
+		writeS(_name);
+		writeD(_online ? 1 : 0);
+		writeD(_online ? _objid : 0);
+		writeD(_level);
+		writeD(_classId);
+		writeS(_memo);
 	}
 
 	private void offlineFriendInfo(int objId)
@@ -101,7 +101,7 @@ public class FriendPacket extends L2GameServerPacket
 			while (rset.next())
 			{
 				level = rset.getByte("level");
-				classId = rset.getInt("classid");
+				_classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
 			}
 			rset.close();
@@ -116,7 +116,7 @@ public class FriendPacket extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (classId != bClassId)
+		if (_classId != bClassId)
 		{
 			try
 			{
@@ -126,12 +126,12 @@ public class FriendPacket extends L2GameServerPacket
 				PreparedStatement statement =
 						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
-				statement.setInt(2, classId);
+				statement.setInt(2, _classId);
 				ResultSet rset = statement.executeQuery();
 
 				while (rset.next())
 				{
-					this.level = rset.getByte("level");
+					_level = rset.getByte("level");
 				}
 
 				rset.close();
@@ -149,7 +149,7 @@ public class FriendPacket extends L2GameServerPacket
 		}
 		else
 		{
-			this.level = level;
+			_level = level;
 		}
 	}
 }

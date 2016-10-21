@@ -26,7 +26,8 @@ import java.util.List;
  */
 public class StalkedStalkers extends EventInstance
 {
-	private HashMap<Integer, String> assignedStalkers = new HashMap<>();
+
+	private HashMap<Integer, String> _assignedStalkers = new HashMap<>();
 
 	public StalkedStalkers(int id, EventConfig config)
 	{
@@ -42,7 +43,7 @@ public class StalkedStalkers extends EventInstance
 		}
 
 		// Iterate over all participated players
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -53,7 +54,7 @@ public class StalkedStalkers extends EventInstance
 					randomStalkedPlayer = selectRandomParticipant();
 					limit++;
 				}
-				assignedStalkers.put(playerInstance.getObjectId(), randomStalkedPlayer.getName());
+				_assignedStalkers.put(playerInstance.getObjectId(), randomStalkedPlayer.getName());
 				stalkerMessage(playerInstance, -1);
 				playerInstance.addEventPoints(5);
 			}
@@ -66,7 +67,7 @@ public class StalkedStalkers extends EventInstance
 	public void calculateRewards()
 	{
 		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
 		{
 			boolean added = false;
 			int index = 0;
@@ -95,7 +96,7 @@ public class StalkedStalkers extends EventInstance
 	@Override
 	public void stopFight()
 	{
-		assignedStalkers.clear();
+		_assignedStalkers.clear();
 		super.stopFight();
 	}
 
@@ -103,10 +104,10 @@ public class StalkedStalkers extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		if (teams[0].getParticipatedPlayerCount() > 0)
+		if (_teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Participant points:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : _teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
@@ -130,7 +131,7 @@ public class StalkedStalkers extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, teams[0].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);
 
 		if (killerCharacter == null)
 		{
@@ -157,15 +158,15 @@ public class StalkedStalkers extends EventInstance
 			return;
 		}
 
-		if (killedPlayerInstance.getName().equalsIgnoreCase(assignedStalkers.get(killerPlayerInstance.getObjectId())))
+		if (killedPlayerInstance.getName().equalsIgnoreCase(_assignedStalkers.get(killerPlayerInstance.getObjectId())))
 		{
-			assignedStalkers.remove(killerPlayerInstance.getObjectId());
+			_assignedStalkers.remove(killerPlayerInstance.getObjectId());
 			L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 			while (randomStalkedPlayer.getObjectId() == killerPlayerInstance.getObjectId())
 			{
 				randomStalkedPlayer = selectRandomParticipant();
 			}
-			assignedStalkers.put(killerPlayerInstance.getObjectId(), randomStalkedPlayer.getName());
+			_assignedStalkers.put(killerPlayerInstance.getObjectId(), randomStalkedPlayer.getName());
 			stalkerMessage(killerPlayerInstance, -2);
 			killerPlayerInstance.addEventPoints(3);
 		}
@@ -201,16 +202,16 @@ public class StalkedStalkers extends EventInstance
 		}
 		if (level > 0)
 		{
-			player = L2World.getInstance().getPlayer(assignedStalkers.get(stalker.getObjectId()));
+			player = L2World.getInstance().getPlayer(_assignedStalkers.get(stalker.getObjectId()));
 			if (player == null || player.getEvent() != this)
 			{
-				assignedStalkers.remove(stalker.getObjectId());
+				_assignedStalkers.remove(stalker.getObjectId());
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalker.getObjectId())
 				{
 					randomStalkedPlayer = selectRandomParticipant();
 				}
-				assignedStalkers.put(stalker.getObjectId(), randomStalkedPlayer.getName());
+				_assignedStalkers.put(stalker.getObjectId(), randomStalkedPlayer.getName());
 				level = -3;
 			}
 		}
@@ -270,18 +271,18 @@ public class StalkedStalkers extends EventInstance
 
 		String playerName = CharNameTable.getInstance().getNameById(playerObjectId);
 
-		List<Integer> toIterate = new ArrayList<>(assignedStalkers.keySet());
+		List<Integer> toIterate = new ArrayList<>(_assignedStalkers.keySet());
 		for (int stalkerObjId : toIterate)
 		{
-			if (assignedStalkers.get(stalkerObjId).equals(playerName))
+			if (_assignedStalkers.get(stalkerObjId).equals(playerName))
 			{
-				assignedStalkers.remove(stalkerObjId);
+				_assignedStalkers.remove(stalkerObjId);
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalkerObjId)
 				{
 					randomStalkedPlayer = selectRandomParticipant();
 				}
-				assignedStalkers.put(stalkerObjId, randomStalkedPlayer.getName());
+				_assignedStalkers.put(stalkerObjId, randomStalkedPlayer.getName());
 				stalkerMessage(L2World.getInstance().getAllPlayers().get(stalkerObjId), -3);
 			}
 		}

@@ -31,7 +31,7 @@ public class AdminBBSManager extends BaseBBSManager
 	 */
 	public static AdminBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@Override
@@ -65,6 +65,6 @@ public class AdminBBSManager extends BaseBBSManager
 
 	private static class SingletonHolder
 	{
-		protected static final AdminBBSManager instance = new AdminBBSManager();
+		protected static final AdminBBSManager _instance = new AdminBBSManager();
 	}
 }

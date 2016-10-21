@@ -35,13 +35,13 @@ public class KingOfTheHill extends EventInstance
 			@Override
 			public void run()
 			{
-				if (!isState(EventState.STARTED))
+				if (!KingOfTheHill.this.isState(EventState.STARTED))
 				{
 					return;
 				}
 
 				L2PcInstance highest = null;
-				for (L2PcInstance player : teams[0].getParticipatedPlayers().values())
+				for (L2PcInstance player : _teams[0].getParticipatedPlayers().values())
 				{
 					if (player == null)
 					{
@@ -69,7 +69,7 @@ public class KingOfTheHill extends EventInstance
 	public void calculateRewards()
 	{
 		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
 		{
 			boolean added = false;
 			int index = 0;
@@ -98,15 +98,15 @@ public class KingOfTheHill extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		if (teams[0].getParticipatedPlayerCount() > 0)
+		if (_teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Participant heights:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : _teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " +
-							(participant.getZ() - config.getLocation().getGlobalZ()) + "<br>";
+							(participant.getZ() - _config.getLocation().getGlobalZ()) + "<br>";
 				}
 			}
 			if (html.length() > 4)
@@ -125,6 +125,6 @@ public class KingOfTheHill extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, teams[0].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);
 	}
 }

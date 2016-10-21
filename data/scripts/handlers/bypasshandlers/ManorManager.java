@@ -27,7 +27,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 
@@ -195,7 +194,7 @@ public class ManorManager implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			Log.info(e.getMessage());
+			_log.info(e.getMessage());
 		}
 		return false;
 	}

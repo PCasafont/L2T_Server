@@ -22,13 +22,13 @@ import l2server.gameserver.model.L2ItemInstance;
  */
 public class ExItemAppearanceResult extends L2GameServerPacket
 {
-	private int answer;
-	L2ItemInstance result;
+	private int _answer;
+	L2ItemInstance _result;
 
 	public ExItemAppearanceResult(int answer, L2ItemInstance result)
 	{
-		this.answer = answer;
-		this.result = result;
+		_answer = answer;
+		_result = result;
 	}
 
 	/**
@@ -36,15 +36,15 @@ public class ExItemAppearanceResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(answer);
-		if (answer == 1)
+		writeD(_answer);
+		if (_answer == 1)
 		{
-			writeD(result.getItemId());
+			writeD(_result.getItemId());
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???
-			writeD(result.getAppearance());
+			writeD(_result.getAppearance());
 		}
 	}
 }

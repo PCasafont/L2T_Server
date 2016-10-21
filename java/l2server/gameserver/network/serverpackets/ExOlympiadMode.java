@@ -24,18 +24,18 @@ package l2server.gameserver.network.serverpackets;
 public class ExOlympiadMode extends L2GameServerPacket
 {
 	// chc
-	private int mode;
+	private int _mode;
 
 	/**
 	 */
 	public ExOlympiadMode(int mode)
 	{
-		this.mode = mode;
+		_mode = mode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(mode);
+		writeC(_mode);
 	}
 }

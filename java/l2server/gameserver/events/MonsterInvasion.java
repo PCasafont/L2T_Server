@@ -11,7 +11,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.Calendar;
 
@@ -20,25 +19,25 @@ import java.util.Calendar;
  */
 public class MonsterInvasion
 {
-	public static MonsterInvasion instance = null;
+	public static MonsterInvasion _instance = null;
 
-	private StartTask task;
+	private StartTask _task;
 
 	public int type = 0;
 
-	private int eventTown = 9;
+	private int _eventTown = 9;
 	private String eventTownName = "Giran";
 	private boolean invasionFightStarted = false;
-	private L2Spawn armyCommanderSpawn;
-	private L2Spawn[] armySpawns = new L2Spawn[1000];
+	private L2Spawn _armyCommanderSpawn;
+	private L2Spawn[] _armySpawns = new L2Spawn[1000];
 
 	public static MonsterInvasion getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new MonsterInvasion();
+			_instance = new MonsterInvasion();
 		}
-		return instance;
+		return _instance;
 	}
 
 	public void initialize()
@@ -47,19 +46,19 @@ public class MonsterInvasion
 		switch (town)
 		{
 			case 0:
-				eventTown = 8;
+				_eventTown = 8;
 				break;
 			case 1:
-				eventTown = 9;
+				_eventTown = 9;
 				break;
 			case 2:
-				eventTown = 10;
+				_eventTown = 10;
 				break;
 			case 3:
-				eventTown = 15;
+				_eventTown = 15;
 		}
 
-		eventTownName = MapRegionTable.getInstance().getTownName(eventTown);
+		eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
 	}
 
 	public void start()
@@ -83,7 +82,7 @@ public class MonsterInvasion
 		int despY;
 		int heading;
 
-		switch (eventTown)
+		switch (_eventTown)
 		{
 			case 8:
 				x = 148620;
@@ -175,54 +174,54 @@ public class MonsterInvasion
 				tmpls[i] = NpcTable.getInstance().getTemplate(44000 + 10 * race + i);
 			}
 
-			armyCommanderSpawn = new L2Spawn(tmpls[0]);
+			_armyCommanderSpawn = new L2Spawn(tmpls[0]);
 
 			if (heading == 0 || heading == 32768)
 			{
-				armyCommanderSpawn.setX(iniY);
-				armyCommanderSpawn.setY(x);
+				_armyCommanderSpawn.setX(iniY);
+				_armyCommanderSpawn.setY(x);
 			}
 			else
 			{
-				armyCommanderSpawn.setX(x);
-				armyCommanderSpawn.setY(iniY);
+				_armyCommanderSpawn.setX(x);
+				_armyCommanderSpawn.setY(iniY);
 			}
-			armyCommanderSpawn.setZ(iniZ + 50);
-			armyCommanderSpawn.setHeading(heading);
+			_armyCommanderSpawn.setZ(iniZ + 50);
+			_armyCommanderSpawn.setHeading(heading);
 
-			armyCommanderSpawn.stopRespawn();
-			armyCommanderSpawn.doSpawn();
+			_armyCommanderSpawn.stopRespawn();
+			_armyCommanderSpawn.doSpawn();
 
 			int pRow = 2;
 			for (int i = 0; i < nMobs; i++)
 			{
-				armySpawns[i] = new L2Spawn(tmpls[(int) Math.floor(i * (types - 1) / nMobs) + 1]);
+				_armySpawns[i] = new L2Spawn(tmpls[(int) Math.floor(i * (types - 1) / nMobs) + 1]);
 
 				if (heading == 0)
 				{
-					armySpawns[i].setX(iniY - interY * pRow);
-					armySpawns[i].setY((int) Math.round(x + 20 * (i % 2 - 0.5)));
+					_armySpawns[i].setX(iniY - interY * pRow);
+					_armySpawns[i].setY((int) Math.round(x + 20 * (i % 2 - 0.5)));
 				}
 				else if (heading == 16384)
 				{
-					armySpawns[i].setX((int) Math.round(x + 20 * (i % 2 - 0.5)));
-					armySpawns[i].setY(iniY - interY * pRow);
+					_armySpawns[i].setX((int) Math.round(x + 20 * (i % 2 - 0.5)));
+					_armySpawns[i].setY(iniY - interY * pRow);
 				}
 				else if (heading == 32768)
 				{
-					armySpawns[i].setX(iniY + interY * pRow);
-					armySpawns[i].setY((int) Math.round(x - 20 * (i % 2 + 0.5)));
+					_armySpawns[i].setX(iniY + interY * pRow);
+					_armySpawns[i].setY((int) Math.round(x - 20 * (i % 2 + 0.5)));
 				}
 				else
 				{
-					armySpawns[i].setX((int) Math.round(x - 20 * (i % 2 + 0.5)));
-					armySpawns[i].setY(iniY + interY * pRow);
+					_armySpawns[i].setX((int) Math.round(x - 20 * (i % 2 + 0.5)));
+					_armySpawns[i].setY(iniY + interY * pRow);
 				}
-				armySpawns[i].setZ(iniZ + 100);
-				armySpawns[i].setHeading(heading);
+				_armySpawns[i].setZ(iniZ + 100);
+				_armySpawns[i].setHeading(heading);
 
-				armySpawns[i].stopRespawn();
-				armySpawns[i].doSpawn();
+				_armySpawns[i].stopRespawn();
+				_armySpawns[i].doSpawn();
 
 				if (i % 2 == 1)
 				{
@@ -232,7 +231,7 @@ public class MonsterInvasion
 		}
 		catch (Exception e)
 		{
-			//Log.warning("Error spawning ivasion army:");
+			//Logozo.warning("Error spawning ivasion army:");
 			e.printStackTrace();
 		}
 
@@ -240,7 +239,7 @@ public class MonsterInvasion
 		{
 			L2ArmyMonsterInstance mob;
 
-			mob = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+			mob = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
 			if (heading == 0 || heading == 32768)
 			{
 				mob.move(cDespY, x, cDespZ);
@@ -251,7 +250,7 @@ public class MonsterInvasion
 			}
 			for (int i = 0; i < nMobs; i++)
 			{
-				mob = (L2ArmyMonsterInstance) armySpawns[i].getNpc();
+				mob = (L2ArmyMonsterInstance) _armySpawns[i].getNpc();
 				if (heading == 0)
 				{
 					mob.move(cDespY, (int) Math.round(x + 20 * (i % 2 - 0.5)), cDespZ);
@@ -270,7 +269,7 @@ public class MonsterInvasion
 				}
 			}
 
-			mob = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+			mob = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
 			if (heading == 0 || heading == 32768)
 			{
 				mob.move(fDespY + 100, x, fDespZ);
@@ -289,7 +288,7 @@ public class MonsterInvasion
 			}
 			for (int i = 0; i < nMobs; i++)
 			{
-				mob = (L2ArmyMonsterInstance) armySpawns[i].getNpc();
+				mob = (L2ArmyMonsterInstance) _armySpawns[i].getNpc();
 				if (heading == 0)
 				{
 					mob.move(fDespY - (i - i % columns) / columns * interY,
@@ -317,16 +316,16 @@ public class MonsterInvasion
 		{
 			for (int i = 0; i < nMobs; i++)
 			{
-				if (armySpawns[i] != null && armySpawns[i].getNpc() != null)
+				if (_armySpawns[i] != null && _armySpawns[i].getNpc() != null)
 				{
-					armySpawns[i].getNpc().setIsInvul(false);
+					_armySpawns[i].getNpc().setIsInvul(false);
 				}
 			}
-			if (armyCommanderSpawn != null && armyCommanderSpawn.getNpc() != null)
+			if (_armyCommanderSpawn != null && _armyCommanderSpawn.getNpc() != null)
 			{
-				armyCommanderSpawn.getNpc().setIsInvul(false);
+				_armyCommanderSpawn.getNpc().setIsInvul(false);
 			}
-			//Log.warning("Error moving ivasion army:");
+			//Logozo.warning("Error moving ivasion army:");
 			e.printStackTrace();
 		}
 	}
@@ -334,10 +333,10 @@ public class MonsterInvasion
 	private void stop()
 	{
 		invasionFightStarted = false;
-		eventTown = -1;
-		for (int i = 0; i < armySpawns.length; i++)
+		_eventTown = -1;
+		for (int i = 0; i < _armySpawns.length; i++)
 		{
-			armySpawns[i] = null;
+			_armySpawns[i] = null;
 		}
 
 		Announcements.getInstance().announceToAll("The invading monster army has been defeated!");
@@ -347,16 +346,16 @@ public class MonsterInvasion
 	{
 		if (!invasionFightStarted)
 		{
-			for (L2Spawn armySpawn : armySpawns)
+			for (L2Spawn _armySpawn : _armySpawns)
 			{
-				if (armySpawn != null && armySpawn.getNpc() != null)
+				if (_armySpawn != null && _armySpawn.getNpc() != null)
 				{
-					armySpawn.getNpc().setIsInvul(false);
+					_armySpawn.getNpc().setIsInvul(false);
 				}
 			}
-			if (armyCommanderSpawn != null && armyCommanderSpawn.getNpc() != null)
+			if (_armyCommanderSpawn != null && _armyCommanderSpawn.getNpc() != null)
 			{
-				L2ArmyMonsterInstance commander = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+				L2ArmyMonsterInstance commander = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
 				commander.setIsInvul(false);
 				commander.shout("ATTACK!");
 			}
@@ -366,11 +365,11 @@ public class MonsterInvasion
 
 	public void onCommanderDeath()
 	{
-		for (L2Spawn armySpawn : armySpawns)
+		for (L2Spawn _armySpawn : _armySpawns)
 		{
-			if (armySpawn != null && armySpawn.getNpc() != null)
+			if (_armySpawn != null && _armySpawn.getNpc() != null)
 			{
-				armySpawn.getNpc().doDie(armySpawn.getNpc());
+				_armySpawn.getNpc().doDie(_armySpawn.getNpc());
 			}
 		}
 
@@ -399,8 +398,8 @@ public class MonsterInvasion
 			{
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
-			task = new StartTask(nextStartTime.getTimeInMillis());
-			ThreadPoolManager.getInstance().executeTask(task);
+			_task = new StartTask(nextStartTime.getTimeInMillis());
+			ThreadPoolManager.getInstance().executeTask(_task);
 		}
 		catch (Exception e)
 		{
@@ -410,14 +409,14 @@ public class MonsterInvasion
 
 	public StartTask getStartTask()
 	{
-		return task;
+		return _task;
 	}
 
 	public void showInfo(L2PcInstance activeChar)
 	{
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
-		startTime.setTimeInMillis(task.getStartTime());
+		startTime.setTimeInMillis(_task.getStartTime());
 		String time;
 		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
 		{
@@ -428,7 +427,7 @@ public class MonsterInvasion
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-		long toStart = task.getStartTime() - System.currentTimeMillis();
+		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
 		if (hours > 0 || minutes > 0)
@@ -449,17 +448,22 @@ public class MonsterInvasion
 
 	class StartTask implements Runnable
 	{
-		@Getter private long startTime;
+		private long _startTime;
 
 		public StartTask(long startTime)
 		{
-			this.startTime = startTime;
+			_startTime = startTime;
+		}
+
+		public long getStartTime()
+		{
+			return _startTime;
 		}
 
 		@Override
 		public void run()
 		{
-			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
+			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
 
 			if (delay > 0)
 			{

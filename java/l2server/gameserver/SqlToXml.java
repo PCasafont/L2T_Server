@@ -773,14 +773,14 @@ public class SqlToXml
 				content += "\t<specificSpawnList name=\"" + fort.getName() + "_defending_commanders\">\r\n";
 				for (int i = 1; i < 5; i++)
 				{
-					String spawnParams =
+					String _spawnParams =
 							siegeSettings.getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");
-					if (spawnParams.length() == 0)
+					if (_spawnParams.length() == 0)
 					{
 						break;
 					}
 
-					StringTokenizer st = new StringTokenizer(spawnParams.trim(), ",");
+					StringTokenizer st = new StringTokenizer(_spawnParams.trim(), ",");
 					int x = Integer.parseInt(st.nextToken());
 					int y = Integer.parseInt(st.nextToken());
 					int z = Integer.parseInt(st.nextToken());

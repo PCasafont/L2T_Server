@@ -30,11 +30,12 @@ import java.awt.*;
 public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer
 {
 	private static final long serialVersionUID = 1L;
-	@SuppressWarnings("unused") private PlayerTableModel table;
+	@SuppressWarnings("unused")
+	private PlayerTableModel _table;
 
 	public PlayerTableRenderer(PlayerTableModel table)
 	{
-		this.table = table;
+		_table = table;
 	}
 
 	@Override

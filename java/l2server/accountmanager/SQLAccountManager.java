@@ -39,10 +39,10 @@ import java.util.ArrayList;
  */
 public class SQLAccountManager
 {
-	private static String uname = "";
-	private static String pass = "";
-	private static String level = "";
-	private static String mode = "";
+	private static String _uname = "";
+	private static String _pass = "";
+	private static String _level = "";
+	private static String _mode = "";
 
 	public static void main(String[] args) throws SQLException, IOException, NoSuchAlgorithmException
 	{
@@ -57,66 +57,67 @@ public class SQLAccountManager
 			System.out.println("3 - Delete existing account.");
 			System.out.println("4 - List accounts & access levels.");
 			System.out.println("5 - Exit.");
-			LineNumberReader in = new LineNumberReader(new InputStreamReader(System.in));
-			while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4") || mode.equals("5")))
+			LineNumberReader _in = new LineNumberReader(new InputStreamReader(System.in));
+			while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4") ||
+					_mode.equals("5")))
 			{
 				System.out.print("Your choice: ");
-				mode = in.readLine();
+				_mode = _in.readLine();
 			}
 
-			if (mode.equals("1") || mode.equals("2") || mode.equals("3"))
+			if (_mode.equals("1") || _mode.equals("2") || _mode.equals("3"))
 			{
-				if (mode.equals("1") || mode.equals("2"))
+				if (_mode.equals("1") || _mode.equals("2"))
 				{
-					while (uname.trim().length() == 0)
+					while (_uname.trim().length() == 0)
 					{
 						System.out.print("Username: ");
-						uname = in.readLine().toLowerCase();
+						_uname = _in.readLine().toLowerCase();
 					}
 				}
-				else if (mode.equals("3"))
+				else if (_mode.equals("3"))
 				{
-					while (uname.trim().length() == 0)
+					while (_uname.trim().length() == 0)
 					{
 						System.out.print("Account name: ");
-						uname = in.readLine().toLowerCase();
+						_uname = _in.readLine().toLowerCase();
 					}
 				}
-				if (mode.equals("1"))
+				if (_mode.equals("1"))
 				{
-					while (pass.trim().length() == 0)
+					while (_pass.trim().length() == 0)
 					{
 						System.out.print("Password: ");
-						pass = in.readLine();
+						_pass = _in.readLine();
 					}
 				}
-				if (mode.equals("1") || mode.equals("2"))
+				if (_mode.equals("1") || _mode.equals("2"))
 				{
-					while (level.trim().length() == 0)
+					while (_level.trim().length() == 0)
 					{
 						System.out.print("Access level: ");
-						level = in.readLine();
+						_level = _in.readLine();
 					}
 				}
 			}
 
-			switch (mode)
+			switch (_mode)
 			{
 				case "1":
 					// Add or Update
-					addOrUpdateAccount(uname.trim(), pass.trim(), level.trim());
+					addOrUpdateAccount(_uname.trim(), _pass.trim(), _level.trim());
 					break;
 				case "2":
 					// Change Level
-					changeAccountLevel(uname.trim(), level.trim());
+					changeAccountLevel(_uname.trim(), _level.trim());
 					break;
 				case "3":
 					// Delete
 					System.out.print("Do you really want to delete this account ? Y/N : ");
-					String yesno = in.readLine();
+					String yesno = _in.readLine();
 					if (yesno.equalsIgnoreCase("Y"))
 					{
-						deleteAccount(uname.trim());
+						deleteAccount(_uname.trim());
 					}
 					else
 					{
@@ -125,7 +126,7 @@ public class SQLAccountManager
 					break;
 				case "4":
 					// List
-					mode = "";
+					_mode = "";
 					System.out.println("");
 					System.out.println("Please choose a listing mode:");
 					System.out.println("");
@@ -133,22 +134,22 @@ public class SQLAccountManager
 					System.out.println("2 - GM/privileged accounts (accessLevel > 0)");
 					System.out.println("3 - Regular accounts only (accessLevel = 0)");
 					System.out.println("4 - List all");
-					while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4")))
+					while (!(_mode.equals("1") || _mode.equals("2") || _mode.equals("3") || _mode.equals("4")))
 					{
 						System.out.print("Your choice: ");
-						mode = in.readLine();
+						_mode = _in.readLine();
 					}
 					System.out.println("");
-					printAccInfo(mode);
+					printAccInfo(_mode);
 					break;
 				case "5":
 					System.exit(0);
 			}
 
-			uname = "";
-			pass = "";
-			level = "";
-			mode = "";
+			_uname = "";
+			_pass = "";
+			_level = "";
+			_mode = "";
 			System.out.println();
 		}
 	}

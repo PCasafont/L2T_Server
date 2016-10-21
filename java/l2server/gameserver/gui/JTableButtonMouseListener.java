@@ -14,22 +14,22 @@ import java.awt.event.MouseListener;
  */
 public class JTableButtonMouseListener implements MouseListener
 {
-	private JTable table;
+	private JTable _table;
 
 	private void forwardEvent(MouseEvent e)
 	{
-		TableColumnModel columnModel = table.getColumnModel();
+		TableColumnModel columnModel = _table.getColumnModel();
 		int column = columnModel.getColumnIndexAtX(e.getX());
-		int row = e.getY() / table.getRowHeight();
+		int row = e.getY() / _table.getRowHeight();
 		Object value;
 		JComponent c;
 
-		if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0)
+		if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
 		{
 			return;
 		}
 
-		value = table.getValueAt(row, column);
+		value = _table.getValueAt(row, column);
 
 		if (!(value instanceof JComponent))
 		{
@@ -52,7 +52,7 @@ public class JTableButtonMouseListener implements MouseListener
 
 	public JTableButtonMouseListener(JTable table)
 	{
-		this.table = table;
+		_table = table;
 	}
 
 	@Override

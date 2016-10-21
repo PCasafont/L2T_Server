@@ -27,50 +27,51 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestWithdrawPartyRoom extends L2GameClientPacket
 {
-	private int roomid;
-	@SuppressWarnings("unused") private int unk1;
+	private int _roomid;
+	@SuppressWarnings("unused")
+	private int _unk1;
 
 	@Override
 	protected void readImpl()
 	{
-		roomid = readD();
-		unk1 = readD();
+		_roomid = readD();
+		_unk1 = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final L2PcInstance _activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
+		if (_activeChar == null)
 		{
 			return;
 		}
 
-		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
-		if (room == null)
+		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
+		if (_room == null)
 		{
 			return;
 		}
 
-		if (activeChar.isInParty() && room.getOwner().isInParty() &&
-				activeChar.getParty().getPartyLeaderOID() == room.getOwner().getParty().getPartyLeaderOID())
+		if (_activeChar.isInParty() && _room.getOwner().isInParty() &&
+				_activeChar.getParty().getPartyLeaderOID() == _room.getOwner().getParty().getPartyLeaderOID())
 		{
 			// If user is in party with Room Owner
 			// is not removed from Room
 
 			//_activeChar.setPartyMatching(0);
-			activeChar.broadcastUserInfo();
+			_activeChar.broadcastUserInfo();
 		}
 		else
 		{
-			room.deleteMember(activeChar);
+			_room.deleteMember(_activeChar);
 
-			activeChar.setPartyRoom(0);
+			_activeChar.setPartyRoom(0);
 			//_activeChar.setPartyMatching(0);
 
-			activeChar.sendPacket(new ExClosePartyRoom());
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_EXITED));
+			_activeChar.sendPacket(new ExClosePartyRoom());
+			_activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_EXITED));
 		}
 	}
 }

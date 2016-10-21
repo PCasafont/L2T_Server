@@ -46,10 +46,10 @@ import java.util.Map.Entry;
 
 public class SquadSkills extends Quest
 {
-	private static final String qn = "SquadSkills";
+	private static final String _qn = "SquadSkills";
 
-	private static final int[] courtWizzards = {35648, 35649, 35650, 35651, 35652, 35653, 35654, 35655, 35656};
-	private static final int[] supportUnitCaptain = {
+	private static final int[] _courtWizzards = {35648, 35649, 35650, 35651, 35652, 35653, 35654, 35655, 35656};
+	private static final int[] _supportUnitCaptain = {
 			36382,
 			36360,
 			36344,
@@ -93,19 +93,19 @@ public class SquadSkills extends Quest
 			35680,
 			35662
 	};
-	private static final List<SkillInfo> skillInfo = new ArrayList<SkillInfo>();
+	private static final List<SkillInfo> _skillInfo = new ArrayList<SkillInfo>();
 
 	public SquadSkills(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		for (int i : courtWizzards)
+		for (int i : _courtWizzards)
 		{
 			addStartNpc(i);
 			addTalkId(i);
 		}
 
-		for (int i : supportUnitCaptain)
+		for (int i : _supportUnitCaptain)
 		{
 			addStartNpc(i);
 			addTalkId(i);
@@ -134,7 +134,7 @@ public class SquadSkills extends Quest
 						int itemId = d.getInt("itemId");
 						int count = d.getInt("count");
 
-						skillInfo.add(new SkillInfo(id, level, clanLevel, reputation, itemId, count));
+						_skillInfo.add(new SkillInfo(id, level, clanLevel, reputation, itemId, count));
 					}
 				}
 			}
@@ -143,51 +143,51 @@ public class SquadSkills extends Quest
 
 	private class SkillInfo
 	{
-		private int skillId;
-		private int level;
-		private int clanLevel;
-		private int reputation;
-		private int itemId;
-		private int count;
+		private int _skillId;
+		private int _level;
+		private int _clanLevel;
+		private int _reputation;
+		private int _itemId;
+		private int _count;
 
 		private SkillInfo(int skillId, int level, int clanLevel, int reputation, int itemId, int count)
 		{
-			this.skillId = skillId;
-			this.level = level;
-			this.clanLevel = clanLevel;
-			this.reputation = reputation;
-			this.itemId = itemId;
-			this.count = count;
+			_skillId = skillId;
+			_level = level;
+			_clanLevel = clanLevel;
+			_reputation = reputation;
+			_itemId = itemId;
+			_count = count;
 		}
 
 		private int getSkillid()
 		{
-			return skillId;
+			return _skillId;
 		}
 
 		private int getSkillLevel()
 		{
-			return level;
+			return _level;
 		}
 
 		private int getClanLevel()
 		{
-			return clanLevel;
+			return _clanLevel;
 		}
 
 		private int getReputation()
 		{
-			return reputation;
+			return _reputation;
 		}
 
 		private int getItemId()
 		{
-			return itemId;
+			return _itemId;
 		}
 
 		private int getCount()
 		{
-			return count;
+			return _count;
 		}
 	}
 
@@ -206,9 +206,8 @@ public class SquadSkills extends Quest
 			String pledgeInfo = "<table width=300>";
 
 			//Add the main clan
-			pledgeInfo +=
-					"<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_0\">" + playerClan.getName() +
-							" (Main Clan)</a></td></tr>";
+			pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " show_available_skills_0\">" +
+					playerClan.getName() + " (Main Clan)</a></td></tr>";
 
 			//SubPledges
 			SubPledge[] subPledges = playerClan.getAllSubPledges();
@@ -219,8 +218,9 @@ public class SquadSkills extends Quest
 				{
 					continue;
 				}
-				pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + qn + " show_available_skills_" + pledge.getId() +
-						"\">" + pledge.getName() + "</a></td></tr>";
+				pledgeInfo +=
+						"<tr><td><a action=\"bypass -h Quest " + _qn + " show_available_skills_" + pledge.getId() +
+								"\">" + pledge.getName() + "</a></td></tr>";
 			}
 
 			pledgeInfo += "</table>";
@@ -249,16 +249,15 @@ public class SquadSkills extends Quest
 					{
 						continue;
 					}
-					skillInfo +=
-							"<tr><td><a action=\"bypass -h Quest " + qn + " try_learn_skill_" + toLearn.getKey() + "_" +
-									toLearn.getValue() + "_" + pledgeType + "\">" +
-									SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: " +
-									toLearn.getValue() + ")</a></td></tr>";
+					skillInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " try_learn_skill_" + toLearn.getKey() +
+							"_" + toLearn.getValue() + "_" + pledgeType + "\">" +
+							SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: " +
+							toLearn.getValue() + ")</a></td></tr>";
 				}
 			}
 			skillInfo += "</table>";
 
-			skillInfo += "<br><br> <a action=\"bypass -h Quest " + qn + " show_subPledges\">Back</a>";
+			skillInfo += "<br><br> <a action=\"bypass -h Quest " + _qn + " show_subPledges\">Back</a>";
 
 			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/SquadSkills/skillList.html")
 					.replace("%skillList%", skillInfo);
@@ -288,7 +287,7 @@ public class SquadSkills extends Quest
 
 			SkillInfo info = null;
 
-			for (SkillInfo skill : skillInfo)
+			for (SkillInfo skill : _skillInfo)
 			{
 				if (skill.getSkillid() == skillId && skill.getSkillLevel() == level)
 				{
@@ -301,7 +300,7 @@ public class SquadSkills extends Quest
 						return null;
 					}
 
-					if (!player.destroyItemByItemId(qn, skill.getItemId(), skill.getCount(), player, false))
+					if (!player.destroyItemByItemId(_qn, skill.getItemId(), skill.getCount(), player, false))
 					{
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_MISSING_TO_LEARN_SKILL));
 						return null;
@@ -351,7 +350,7 @@ public class SquadSkills extends Quest
 			}
 		}
 
-		for (SkillInfo skillInfo : SquadSkills.skillInfo)
+		for (SkillInfo skillInfo : _skillInfo)
 		{
 			if (skillInfo == null)
 			{
@@ -393,6 +392,6 @@ public class SquadSkills extends Quest
 
 	public static void main(String[] args)
 	{
-		new SquadSkills(-1, qn, "custom");
+		new SquadSkills(-1, _qn, "custom");
 	}
 }

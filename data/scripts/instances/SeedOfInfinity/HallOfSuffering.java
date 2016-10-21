@@ -53,6 +53,7 @@ Please maintain consistency between the Seed scripts.
  */
 public class HallOfSuffering extends Quest
 {
+
 	private class HSWorld extends InstanceWorld
 	{
 		public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();

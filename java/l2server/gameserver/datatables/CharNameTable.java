@@ -42,13 +42,14 @@ import java.util.logging.Level;
  */
 public class CharNameTable
 {
-	private final Map<Integer, String> chars;
-	private final Map<Integer, Integer> accessLevels;
+
+	private final Map<Integer, String> _chars;
+	private final Map<Integer, Integer> _accessLevels;
 
 	private CharNameTable()
 	{
-		chars = new ConcurrentHashMap<>();
-		accessLevels = new HashMap<>();
+		_chars = new ConcurrentHashMap<>();
+		_accessLevels = new HashMap<>();
 		if (Config.CACHE_CHAR_NAMES)
 		{
 			loadAll();
@@ -57,7 +58,7 @@ public class CharNameTable
 
 	public static CharNameTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public final void addName(L2PcInstance player)
@@ -65,7 +66,7 @@ public class CharNameTable
 		if (player != null)
 		{
 			addName(player.getObjectId(), player.getName());
-			accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
+			_accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
 		}
 	}
 
@@ -73,17 +74,17 @@ public class CharNameTable
 	{
 		if (name != null)
 		{
-			if (!name.equalsIgnoreCase(chars.get(objId)))
+			if (!name.equalsIgnoreCase(_chars.get(objId)))
 			{
-				chars.put(objId, name);
+				_chars.put(objId, name);
 			}
 		}
 	}
 
 	public final void removeName(int objId)
 	{
-		chars.remove(objId);
-		accessLevels.remove(objId);
+		_chars.remove(objId);
+		_accessLevels.remove(objId);
 	}
 
 	public final int getIdByName(String name)
@@ -93,7 +94,7 @@ public class CharNameTable
 			return -1;
 		}
 
-		Iterator<Entry<Integer, String>> it = chars.entrySet().iterator();
+		Iterator<Entry<Integer, String>> it = _chars.entrySet().iterator();
 
 		Map.Entry<Integer, String> pair;
 		while (it.hasNext())
@@ -138,8 +139,8 @@ public class CharNameTable
 		}
 		if (id > 0)
 		{
-			chars.put(id, name);
-			accessLevels.put(id, accessLevel);
+			_chars.put(id, name);
+			_accessLevels.put(id, accessLevel);
 			return id;
 		}
 
@@ -153,7 +154,7 @@ public class CharNameTable
 			return null;
 		}
 
-		String name = chars.get(id);
+		String name = _chars.get(id);
 		if (name != null)
 		{
 			return name;
@@ -191,8 +192,8 @@ public class CharNameTable
 		}
 		if (name != null && !name.isEmpty())
 		{
-			chars.put(id, name);
-			accessLevels.put(id, accessLevel);
+			_chars.put(id, name);
+			_accessLevels.put(id, accessLevel);
 			return name;
 		}
 
@@ -203,7 +204,7 @@ public class CharNameTable
 	{
 		if (getNameById(objectId) != null)
 		{
-			return accessLevels.get(objectId);
+			return _accessLevels.get(objectId);
 		}
 		else
 		{
@@ -286,8 +287,8 @@ public class CharNameTable
 				id = rset.getInt(1);
 				name = rset.getString(2);
 				accessLevel = rset.getInt(3);
-				chars.put(id, name);
-				accessLevels.put(id, accessLevel);
+				_chars.put(id, name);
+				_accessLevels.put(id, accessLevel);
 			}
 			rset.close();
 			statement.close();
@@ -300,7 +301,7 @@ public class CharNameTable
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _chars.size() + " char names.");
 	}
 
 	public boolean setCharNameConditions(L2PcInstance player, String name)
@@ -330,6 +331,6 @@ public class CharNameTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CharNameTable instance = new CharNameTable();
+		protected static final CharNameTable _instance = new CharNameTable();
 	}
 }

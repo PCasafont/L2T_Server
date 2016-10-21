@@ -23,4 +23,5 @@ import l2server.network.SendablePacket;
  */
 public abstract class L2LoginServerPacket extends SendablePacket<L2LoginClient>
 {
+
 }

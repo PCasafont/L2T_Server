@@ -24,47 +24,47 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class CharSelected extends L2GameServerPacket
 {
 	// SdSddddddddddffddddddddddddddddddddddddddddddddddddddddd d
-	private L2PcInstance activeChar;
-	private int sessionId;
+	private L2PcInstance _activeChar;
+	private int _sessionId;
 
 	/**
 	 */
 	public CharSelected(L2PcInstance cha, int sessionId)
 	{
-		activeChar = cha;
-		this.sessionId = sessionId;
+		_activeChar = cha;
+		_sessionId = sessionId;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(activeChar.getName());
-		writeD(activeChar.getCharId()); // ??
-		writeS(activeChar.getTitle());
-		writeD(sessionId);
-		writeD(activeChar.getClanId());
+		writeS(_activeChar.getName());
+		writeD(_activeChar.getCharId()); // ??
+		writeS(_activeChar.getTitle());
+		writeD(_sessionId);
+		writeD(_activeChar.getClanId());
 		writeD(0x00); // ??
-		writeD(activeChar.getAppearance().getSex() ? 1 : 0);
-		writeD(activeChar.getRace().ordinal());
-		writeD(activeChar.getCurrentClass().getId());
+		writeD(_activeChar.getAppearance().getSex() ? 1 : 0);
+		writeD(_activeChar.getRace().ordinal());
+		writeD(_activeChar.getCurrentClass().getId());
 		writeD(0x01); // active ??
-		writeD(activeChar.getX());
-		writeD(activeChar.getY());
-		writeD(activeChar.getZ());
+		writeD(_activeChar.getX());
+		writeD(_activeChar.getY());
+		writeD(_activeChar.getZ());
 
-		writeF(activeChar.getCurrentHp());
-		writeF(activeChar.getCurrentMp());
-		writeQ(activeChar.getSp());
-		writeQ(activeChar.getExp());
-		writeD(activeChar.getLevel());
-		writeD(activeChar.getReputation()); // thx evill33t
-		writeD(activeChar.getPkKills());
+		writeF(_activeChar.getCurrentHp());
+		writeF(_activeChar.getCurrentMp());
+		writeQ(_activeChar.getSp());
+		writeQ(_activeChar.getExp());
+		writeD(_activeChar.getLevel());
+		writeD(_activeChar.getReputation()); // thx evill33t
+		writeD(_activeChar.getPkKills());
 
 		writeD(TimeController.getInstance().getGameTime() % (24 * 60)); // "reset" on 24th hour
 		writeD(0x00);
 
-		writeD(activeChar.getCurrentClass().getId());
+		writeD(_activeChar.getCurrentClass().getId());
 
 		writeD(0x00);
 		writeD(0x00);

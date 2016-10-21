@@ -27,11 +27,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.util.Rnd;
 
 public class L2NpcAction implements IActionHandler

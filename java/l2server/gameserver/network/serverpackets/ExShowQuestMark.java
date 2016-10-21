@@ -20,14 +20,18 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShowQuestMark extends L2GameServerPacket
 {
-	private int questId;
-	private int state;
+	private int _questId;
+	private int _state;
 
 	public ExShowQuestMark(int questId, int state)
 	{
-		this.questId = questId;
-		this.state = state;
+		_questId = questId;
+		_state = state;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -35,7 +39,7 @@ public class ExShowQuestMark extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(questId);
-		writeD(state);
+		writeD(_questId);
+		writeD(_state);
 	}
 }

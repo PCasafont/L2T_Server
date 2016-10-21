@@ -27,7 +27,7 @@ import java.util.ArrayList;
  */
 public class ConditionPlayerInstanceId extends Condition
 {
-	private final ArrayList<Integer> instanceIds;
+	private final ArrayList<Integer> _instanceIds;
 
 	/**
 	 * Instantiates a new condition player instance id.
@@ -36,7 +36,7 @@ public class ConditionPlayerInstanceId extends Condition
 	 */
 	public ConditionPlayerInstanceId(ArrayList<Integer> instanceIds)
 	{
-		this.instanceIds = instanceIds;
+		_instanceIds = instanceIds;
 	}
 
 	/* (non-Javadoc)
@@ -69,6 +69,6 @@ public class ConditionPlayerInstanceId extends Condition
 			return false; // player in the different instance
 		}
 
-		return instanceIds.contains(world.templateId);
+		return _instanceIds.contains(world.templateId);
 	}
 }

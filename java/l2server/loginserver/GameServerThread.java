@@ -28,7 +28,6 @@ import l2server.util.Rnd;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
 import l2server.util.network.BaseSendablePacket;
-import lombok.Getter;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -48,38 +47,38 @@ import java.util.Set;
 
 public class GameServerThread extends Thread
 {
-	private final Socket connection;
-	private InputStream in;
-	private OutputStream out;
-	private final RSAPublicKey publicKey;
-	@Getter private final RSAPrivateKey privateKey;
-	private NewCrypt blowfish;
-	@Getter private GameServerState loginConnectionState = GameServerState.CONNECTED;
+	private final Socket _connection;
+	private InputStream _in;
+	private OutputStream _out;
+	private final RSAPublicKey _publicKey;
+	private final RSAPrivateKey _privateKey;
+	private NewCrypt _blowfish;
+	private GameServerState _loginConnectionState = GameServerState.CONNECTED;
 
-	private final String connectionIp;
+	private final String _connectionIp;
 
-	private GameServerInfo gsi;
+	private GameServerInfo _gsi;
 
 	/**
 	 * Authed Clients on a GameServer
 	 */
-	private final Set<String> accountsOnGameServer = new HashSet<>();
+	private final Set<String> _accountsOnGameServer = new HashSet<>();
 
-	private String connectionIPAddress;
+	private String _connectionIPAddress;
 
 	@Override
 	public void run()
 	{
-		connectionIPAddress = connection.getInetAddress().getHostAddress();
-		if (GameServerThread.isBannedGameserverIP(connectionIPAddress))
+		_connectionIPAddress = _connection.getInetAddress().getHostAddress();
+		if (GameServerThread.isBannedGameserverIP(_connectionIPAddress))
 		{
-			Log.info("GameServerRegistration: IP Address " + connectionIPAddress + " is on Banned IP list.");
+			Log.info("GameServerRegistration: IP Address " + _connectionIPAddress + " is on Banned IP list.");
 			forceClose(LoginServerFail.REASON_IP_BANNED);
 			// ensure no further processing for this connection
 			return;
 		}
 
-		InitLS startPacket = new InitLS(publicKey.getModulus().toByteArray());
+		InitLS startPacket = new InitLS(_publicKey.getModulus().toByteArray());
 		try
 		{
 			sendPacket(startPacket);
@@ -90,11 +89,11 @@ public class GameServerThread extends Thread
 			boolean checksumOk = false;
 			for (; ; )
 			{
-				lengthLo = in.read();
-				lengthHi = in.read();
+				lengthLo = _in.read();
+				lengthHi = _in.read();
 				length = lengthHi * 256 + lengthLo;
 
-				if (lengthHi < 0 || connection.isClosed())
+				if (lengthHi < 0 || _connection.isClosed())
 				{
 					Log.finer("LoginServerThread: Login terminated the connection.");
 					break;
@@ -107,7 +106,7 @@ public class GameServerThread extends Thread
 				int left = length - 2;
 				while (newBytes != -1 && receivedBytes < length - 2)
 				{
-					newBytes = in.read(data, receivedBytes, left);
+					newBytes = _in.read(data, receivedBytes, left);
 					receivedBytes = receivedBytes + newBytes;
 					left -= newBytes;
 				}
@@ -119,7 +118,7 @@ public class GameServerThread extends Thread
 				}
 
 				// decrypt if we have a key
-				data = blowfish.decrypt(data);
+				data = _blowfish.decrypt(data);
 				checksumOk = NewCrypt.verifyChecksum(data);
 				if (!checksumOk)
 				{
@@ -139,7 +138,7 @@ public class GameServerThread extends Thread
 		{
 			String serverName = getServerId() != -1 ?
 					"[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) :
-					"(" + connectionIPAddress + ")";
+					"(" + _connectionIPAddress + ")";
 			String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
 			Log.info(msg);
 		}
@@ -147,35 +146,35 @@ public class GameServerThread extends Thread
 		{
 			if (isAuthed())
 			{
-				gsi.setDown();
+				_gsi.setDown();
 				Log.info("Server [" + getServerId() + "] " +
 						GameServerTable.getInstance().getServerNameById(getServerId()) + " is now set as disconnected");
 			}
 			L2LoginServer.getInstance().getGameServerListener().removeGameServer(this);
-			L2LoginServer.getInstance().getGameServerListener().removeFloodProtection(connectionIp);
+			L2LoginServer.getInstance().getGameServerListener().removeFloodProtection(_connectionIp);
 		}
 	}
 
 	public boolean hasAccountOnGameServer(String account)
 	{
-		return accountsOnGameServer.contains(account);
+		return _accountsOnGameServer.contains(account);
 	}
 
 	public int getPlayerCount()
 	{
 		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
-			multiplier = 2.5f - (multiplier - 2.5f);
+            multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 
-		if (gsi.getId() == 28)
+		if (_gsi.getId() == 28)
 		{
 			multiplier = 2;
 		}
 
-		return (int) Math.round(accountsOnGameServer.size() * multiplier + Rnd.get(1));
-		//return accountsOnGameServer.size() * multiplier;
+		return (int) Math.round(_accountsOnGameServer.size() * multiplier + Rnd.get(1));
+		//return _accountsOnGameServer.size() * multiplier;
 	}
 
 	/**
@@ -201,7 +200,7 @@ public class GameServerThread extends Thread
 
 		try
 		{
-			connection.close();
+			_connection.close();
 		}
 		catch (IOException e)
 		{
@@ -220,22 +219,22 @@ public class GameServerThread extends Thread
 
 	public GameServerThread(Socket con)
 	{
-		connection = con;
-		connectionIp = con.getInetAddress().getHostAddress();
+		_connection = con;
+		_connectionIp = con.getInetAddress().getHostAddress();
 		try
 		{
-			in = connection.getInputStream();
-			out = new BufferedOutputStream(connection.getOutputStream());
+			_in = _connection.getInputStream();
+			_out = new BufferedOutputStream(_connection.getOutputStream());
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
 		KeyPair pair = GameServerTable.getInstance().getKeyPair();
-		privateKey = (RSAPrivateKey) pair.getPrivate();
-		publicKey = (RSAPublicKey) pair.getPublic();
-		blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
-		setName(getClass().getSimpleName() + "-" + getId() + "@" + connectionIp);
+		_privateKey = (RSAPrivateKey) pair.getPrivate();
+		_publicKey = (RSAPublicKey) pair.getPublic();
+		_blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
+		setName(getClass().getSimpleName() + "-" + getId() + "@" + _connectionIp);
 		start();
 	}
 
@@ -253,15 +252,15 @@ public class GameServerThread extends Thread
 			{
 				Log.finest("[S] " + sl.getClass().getSimpleName() + ":\n" + Util.printData(data));
 			}
-			data = blowfish.crypt(data);
+			data = _blowfish.crypt(data);
 
 			int len = data.length + 2;
-			synchronized (out)
+			synchronized (_out)
 			{
-				out.write(len & 0xff);
-				out.write(len >> 8 & 0xff);
-				out.write(data);
-				out.flush();
+				_out.write(len & 0xff);
+				_out.write(len >> 8 & 0xff);
+				_out.write(data);
+				_out.flush();
 			}
 		}
 		catch (IOException e)
@@ -274,7 +273,7 @@ public class GameServerThread extends Thread
 	{
 		sendPacket(new KickPlayer(account));
 		// Tenkai temp fix
-		accountsOnGameServer.remove(account);
+		_accountsOnGameServer.remove(account);
 	}
 
 	public void requestCharacters(String account)
@@ -289,12 +288,12 @@ public class GameServerThread extends Thread
 		Log.info("Updated Gameserver [" + getServerId() + "] " +
 				GameServerTable.getInstance().getServerNameById(getServerId()) + " IP's:");
 
-		gsi.clearServerAddresses();
+		_gsi.clearServerAddresses();
 		for (int i = 0; i < hosts.length; i += 2)
 		{
 			try
 			{
-				gsi.addServerAddress(hosts[i], hosts[i + 1]);
+				_gsi.addServerAddress(hosts[i], hosts[i + 1]);
 			}
 			catch (Exception e)
 			{
@@ -302,7 +301,7 @@ public class GameServerThread extends Thread
 			}
 		}
 
-		for (String s : gsi.getServerAddresses())
+		for (String s : _gsi.getServerAddresses())
 		{
 			Log.info(s);
 		}
@@ -322,12 +321,12 @@ public class GameServerThread extends Thread
 
 	public void setGameServerInfo(GameServerInfo gsi)
 	{
-		this.gsi = gsi;
+		_gsi = gsi;
 	}
 
 	public GameServerInfo getGameServerInfo()
 	{
-		return gsi;
+		return _gsi;
 	}
 
 	/**
@@ -335,7 +334,7 @@ public class GameServerThread extends Thread
 	 */
 	public String getConnectionIpAddress()
 	{
-		return connectionIPAddress;
+		return _connectionIPAddress;
 	}
 
 	public int getServerId()
@@ -347,23 +346,33 @@ public class GameServerThread extends Thread
 		return -1;
 	}
 
+	public RSAPrivateKey getPrivateKey()
+	{
+		return _privateKey;
+	}
+
 	public void SetBlowFish(NewCrypt blowfish)
 	{
-		this.blowfish = blowfish;
+		_blowfish = blowfish;
 	}
 
 	public void addAccountOnGameServer(String account)
 	{
-		accountsOnGameServer.add(account);
+		_accountsOnGameServer.add(account);
 	}
 
 	public void removeAccountOnGameServer(String account)
 	{
-		accountsOnGameServer.remove(account);
+		_accountsOnGameServer.remove(account);
+	}
+
+	public GameServerState getLoginConnectionState()
+	{
+		return _loginConnectionState;
 	}
 
 	public void setLoginConnectionState(GameServerState state)
 	{
-		loginConnectionState = state;
+		_loginConnectionState = state;
 	}
 }

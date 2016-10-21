@@ -33,18 +33,18 @@ import java.io.File;
  */
 public class ShuttleTable
 {
-	private TIntObjectHashMap<L2ShuttleInstance> shuttles = new TIntObjectHashMap<>();
+	private TIntObjectHashMap<L2ShuttleInstance> _shuttles = new TIntObjectHashMap<>();
 
-	private static ShuttleTable instance;
+	private static ShuttleTable _instance;
 
 	public static ShuttleTable getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new ShuttleTable();
+			_instance = new ShuttleTable();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	private ShuttleTable()
@@ -107,11 +107,11 @@ public class ShuttleTable
 						}
 
 						shuttle.moveToNextRoutePoint();
-						shuttles.put(id, shuttle);
+						_shuttles.put(id, shuttle);
 					}
 				}
 			}
 		}
-		Log.info("ShuttleTable: Loaded " + shuttles.size() + " shuttles.");
+		Log.info("ShuttleTable: Loaded " + _shuttles.size() + " shuttles.");
 	}
 }

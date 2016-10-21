@@ -27,6 +27,7 @@ import java.util.Map;
  */
 public class PolymorphingAngel extends L2AttackableAIScript
 {
+
 	private static final Map<Integer, Integer> ANGELSPAWNS = new HashMap<Integer, Integer>();
 
 	static
@@ -42,7 +43,7 @@ public class PolymorphingAngel extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 		int[] temp = {20830, 21067, 21062, 20831, 21070};
-		registerMobs(temp, QuestEventType.ON_KILL);
+		this.registerMobs(temp, QuestEventType.ON_KILL);
 	}
 
 	@Override
@@ -51,7 +52,7 @@ public class PolymorphingAngel extends L2AttackableAIScript
 		int npcId = npc.getNpcId();
 		if (ANGELSPAWNS.containsKey(npcId))
 		{
-			L2Attackable newNpc = (L2Attackable) addSpawn(ANGELSPAWNS.get(npcId), npc);
+			L2Attackable newNpc = (L2Attackable) this.addSpawn(ANGELSPAWNS.get(npcId), npc);
 			newNpc.setRunning();
 		}
 		return super.onKill(npc, killer, isPet);

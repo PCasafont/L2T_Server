@@ -32,32 +32,32 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SiegeFlagInstance extends L2Npc
 {
-	private L2Clan clan;
-	private L2PcInstance player;
-	private Siegable siege;
-	private final boolean isAdvanced;
-	private boolean canTalk;
+	private L2Clan _clan;
+	private L2PcInstance _player;
+	private Siegable _siege;
+	private final boolean _isAdvanced;
+	private boolean _canTalk;
 
 	public L2SiegeFlagInstance(L2PcInstance player, int objectId, L2NpcTemplate template, boolean advanced, boolean outPost)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);
 
-		clan = player.getClan();
-		this.player = player;
-		canTalk = true;
-		siege = SiegeManager.getInstance().getSiege(this.player.getX(), this.player.getY(), this.player.getZ());
-		if (siege == null)
+		_clan = player.getClan();
+		_player = player;
+		_canTalk = true;
+		_siege = SiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
+		if (_siege == null)
 		{
-			siege = FortSiegeManager.getInstance().getSiege(this.player.getX(), this.player.getY(), this.player.getZ());
+			_siege = FortSiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
 		}
-		if (clan == null || siege == null)
+		if (_clan == null || _siege == null)
 		{
 			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
 		}
 		else
 		{
-			L2SiegeClan sc = siege.getAttackerClan(clan);
+			L2SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc == null)
 			{
 				throw new NullPointerException(getClass().getSimpleName() + ": Cannot find siege clan.");
@@ -67,7 +67,7 @@ public class L2SiegeFlagInstance extends L2Npc
 				sc.addFlag(this);
 			}
 		}
-		isAdvanced = advanced;
+		_isAdvanced = advanced;
 		getStatus();
 		setIsInvul(false);
 	}
@@ -79,7 +79,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	public L2SiegeFlagInstance(L2PcInstance player, int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
-		isAdvanced = false;
+		_isAdvanced = false;
 	}
 
 	@Override
@@ -101,9 +101,9 @@ public class L2SiegeFlagInstance extends L2Npc
 		{
 			return false;
 		}
-		if (siege != null && clan != null)
+		if (_siege != null && _clan != null)
 		{
-			L2SiegeClan sc = siege.getAttackerClan(clan);
+			L2SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
 			{
 				sc.removeFlag(this);
@@ -162,7 +162,7 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	public boolean isAdvancedHeadquarter()
 	{
-		return isAdvanced;
+		return _isAdvanced;
 	}
 
 	@Override
@@ -185,20 +185,20 @@ public class L2SiegeFlagInstance extends L2Npc
 		{
 			if (getCastle() != null && getCastle().getSiege().getIsInProgress())
 			{
-				if (clan != null)
+				if (_clan != null)
 				{
 					// send warning to owners of headquarters that theirs base is under attack
-					clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
+					_clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
 					setCanTalk(false);
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
 			}
 			else if (getFort() != null && getFort().getSiege().getIsInProgress())
 			{
-				if (clan != null)
+				if (_clan != null)
 				{
 					// send warning to owners of headquarters that theirs base is under attack
-					clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
+					_clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
 					setCanTalk(false);
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
@@ -208,6 +208,7 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	private class ScheduleTalkTask implements Runnable
 	{
+
 		public ScheduleTalkTask()
 		{
 		}
@@ -221,11 +222,11 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	void setCanTalk(boolean val)
 	{
-		canTalk = val;
+		_canTalk = val;
 	}
 
 	private boolean canTalk()
 	{
-		return canTalk;
+		return _canTalk;
 	}
 }

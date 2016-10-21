@@ -33,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.List;
 
@@ -45,32 +44,33 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
  */
 public final class RequestBuyItem extends L2GameClientPacket
 {
+
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private int listId;
-	private Item[] items = null;
+	private int _listId;
+	private Item[] _items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		listId = readD();
+		_listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Item[count];
+		_items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new Item(itemId, cnt);
+			_items[i] = new Item(itemId, cnt);
 		}
 	}
 
@@ -89,7 +89,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			return;
 		}
 
-		if (items == null)
+		if (_items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -152,12 +152,12 @@ public final class RequestBuyItem extends L2GameClientPacket
 				{
 					Util.handleIllegalPlayerAction(player,
 							"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-									" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
+									" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
 					return;
 				}
 				for (L2TradeList tradeList : lists)
 				{
-					if (tradeList.getListId() == listId)
+					if (tradeList.getListId() == _listId)
 					{
 						list = tradeList;
 					}
@@ -165,30 +165,30 @@ public final class RequestBuyItem extends L2GameClientPacket
 			}
 			else
 			{
-				list = TradeController.getInstance().getBuyList(listId);
+				list = TradeController.getInstance().getBuyList(_listId);
 			}
 		}
 		else
 		{
-			list = TradeController.getInstance().getBuyList(listId);
+			list = TradeController.getInstance().getBuyList(_listId);
 		}
 
 		if (list == null)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-							" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
+							" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		listId = list.getListId();
+		_listId = list.getListId();
 
 		long subTotal = 0;
 
 		// Check for buylist validity and calculates summary values
 		long slots = 0;
 		long weight = 0;
-		for (Item i : items)
+		for (Item i : _items)
 		{
 			long price = -1;
 
@@ -197,7 +197,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + _listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				return;
 			}
@@ -308,14 +308,14 @@ public final class RequestBuyItem extends L2GameClientPacket
 		}
 
 		// Proceed the purchase
-		for (Item i : items)
+		for (Item i : _items)
 		{
 			L2TradeItem tradeItem = list.getItemById(i.getItemId());
 			if (tradeItem == null)
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + _listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				continue;
 			}
@@ -347,13 +347,23 @@ public final class RequestBuyItem extends L2GameClientPacket
 
 	private static class Item
 	{
-		@Getter private final int itemId;
-		@Getter private final long count;
+		private final int _itemId;
+		private final long _count;
 
 		public Item(int id, long num)
 		{
-			itemId = id;
-			count = num;
+			_itemId = id;
+			_count = num;
+		}
+
+		public int getItemId()
+		{
+			return _itemId;
+		}
+
+		public long getCount()
+		{
+			return _count;
 		}
 	}
 }

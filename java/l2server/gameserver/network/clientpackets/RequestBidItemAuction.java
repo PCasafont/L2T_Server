@@ -26,14 +26,14 @@ import l2server.gameserver.model.itemcontainer.PcInventory;
  */
 public final class RequestBidItemAuction extends L2GameClientPacket
 {
-	private int instanceId;
-	private long bid;
+	private int _instanceId;
+	private long _bid;
 
 	@Override
 	protected final void readImpl()
 	{
-		instanceId = super.readD();
-		bid = super.readQ();
+		_instanceId = super.readD();
+		_bid = super.readQ();
 	}
 
 	@Override
@@ -52,18 +52,18 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 			return;
 		}
 
-		if (bid < 0 || bid > PcInventory.MAX_ADENA)
+		if (_bid < 0 || _bid > PcInventory.MAX_ADENA)
 		{
 			return;
 		}
 
-		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(instanceId);
+		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
 		if (instance != null)
 		{
 			final ItemAuction auction = instance.getCurrentAuction();
 			if (auction != null)
 			{
-				auction.registerBid(activeChar, bid);
+				auction.registerBid(activeChar, _bid);
 			}
 		}
 	}

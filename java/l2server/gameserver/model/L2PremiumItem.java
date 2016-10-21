@@ -15,26 +15,39 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 /**
  * * @author Gnacik
  */
 public class L2PremiumItem
 {
-	@Getter private int itemId;
-	@Getter private long count;
-	@Getter private String sender;
+	private int _itemId;
+	private long _count;
+	private String _sender;
 
 	public L2PremiumItem(int itemid, long count, String sender)
 	{
-		itemId = itemid;
-		this.count = count;
-		this.sender = sender;
+		_itemId = itemid;
+		_count = count;
+		_sender = sender;
 	}
 
 	public void updateCount(long newcount)
 	{
-		count = newcount;
+		_count = newcount;
+	}
+
+	public int getItemId()
+	{
+		return _itemId;
+	}
+
+	public long getCount()
+	{
+		return _count;
+	}
+
+	public String getSender()
+	{
+		return _sender;
 	}
 }

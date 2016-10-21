@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2BoatInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.log.Log;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class BoatGludinRune implements Runnable
 {
-	private static final Logger log = Logger.getLogger(BoatGludinRune.class.getName());
+	private static final Logger _log = Logger.getLogger(BoatGludinRune.class.getName());
 
 	// Time: 1151s
 	private static final VehiclePathPoint[] GLUDIN_TO_RUNE = {
@@ -95,9 +94,9 @@ public class BoatGludinRune implements Runnable
 
 	private static final VehiclePathPoint[] GLUDIN_DOCK = {new VehiclePathPoint(-95686, 150514, -3610, 150, 800)};
 
-	private final L2BoatInstance boat;
-	private int cycle = 0;
-	private int shoutCount = 0;
+	private final L2BoatInstance _boat;
+	private int _cycle = 0;
+	private int _shoutCount = 0;
 
 	private final CreatureSay ARRIVED_AT_GLUDIN;
 	private final CreatureSay ARRIVED_AT_GLUDIN_2;
@@ -128,7 +127,7 @@ public class BoatGludinRune implements Runnable
 
 	public BoatGludinRune(L2BoatInstance boat)
 	{
-		this.boat = boat;
+		_boat = boat;
 
 		ARRIVED_AT_GLUDIN = new CreatureSay(0, Say2.BOAT, 801, 986);
 		ARRIVED_AT_GLUDIN_2 = new CreatureSay(0, Say2.BOAT, 801, 1625);
@@ -154,10 +153,9 @@ public class BoatGludinRune implements Runnable
 		ARRIVAL_GLUDIN5 = new CreatureSay(0, Say2.BOAT, 801, 1632);
 		ARRIVAL_GLUDIN1 = new CreatureSay(0, Say2.BOAT, 801, 1633);
 
-		GLUDIN_SOUND =
-				new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), GLUDIN_DOCK[0].x,
-						GLUDIN_DOCK[0].y, GLUDIN_DOCK[0].z);
-		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, this.boat.getObjectId(), RUNE_DOCK[0].x,
+		GLUDIN_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), GLUDIN_DOCK[0].x,
+				GLUDIN_DOCK[0].y, GLUDIN_DOCK[0].z);
+		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), RUNE_DOCK[0].x,
 				RUNE_DOCK[0].y, RUNE_DOCK[0].z);
 	}
 
@@ -166,7 +164,7 @@ public class BoatGludinRune implements Runnable
 	{
 		try
 		{
-			switch (cycle)
+			switch (_cycle)
 			{
 				case 0:
 					BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], RUNE_DOCK[0], LEAVE_GLUDIN5);
@@ -183,9 +181,9 @@ public class BoatGludinRune implements Runnable
 				case 3:
 					BoatManager.getInstance().dockShip(BoatManager.GLUDIN_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(GLUDIN_DOCK[0], RUNE_DOCK[0], LEAVING_GLUDIN);
-					boat.broadcastPacket(GLUDIN_SOUND);
-					boat.payForRide(7905, 1, -90015, 150422, -3610);
-					boat.executePath(GLUDIN_TO_RUNE);
+					_boat.broadcastPacket(GLUDIN_SOUND);
+					_boat.payForRide(7905, 1, -90015, 150422, -3610);
+					_boat.executePath(GLUDIN_TO_RUNE);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 250000);
 					break;
 				case 4:
@@ -206,27 +204,27 @@ public class BoatGludinRune implements Runnable
 				case 8:
 					if (BoatManager.getInstance().dockBusy(BoatManager.RUNE_HARBOR))
 					{
-						if (shoutCount == 0)
+						if (_shoutCount == 0)
 						{
 							BoatManager.getInstance().broadcastPacket(RUNE_DOCK[0], GLUDIN_DOCK[0], BUSY_RUNE);
 						}
 
-						shoutCount++;
-						if (shoutCount > 35)
+						_shoutCount++;
+						if (_shoutCount > 35)
 						{
-							shoutCount = 0;
+							_shoutCount = 0;
 						}
 
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
 						return;
 					}
-					boat.executePath(RUNE_DOCK);
+					_boat.executePath(RUNE_DOCK);
 					break;
 				case 9:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, true);
 					BoatManager.getInstance()
 							.broadcastPackets(RUNE_DOCK[0], GLUDIN_DOCK[0], ARRIVED_AT_RUNE, ARRIVED_AT_RUNE_2);
-					boat.broadcastPacket(RUNE_SOUND);
+					_boat.broadcastPacket(RUNE_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 				case 10:
@@ -244,9 +242,9 @@ public class BoatGludinRune implements Runnable
 				case 13:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(RUNE_DOCK[0], GLUDIN_DOCK[0], LEAVING_RUNE);
-					boat.broadcastPacket(RUNE_SOUND);
-					boat.payForRide(7904, 1, 34513, -38009, -3640);
-					boat.executePath(RUNE_TO_GLUDIN);
+					_boat.broadcastPacket(RUNE_SOUND);
+					_boat.payForRide(7904, 1, 34513, -38009, -3640);
+					_boat.executePath(RUNE_TO_GLUDIN);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 60000);
 					break;
 				case 14:
@@ -267,40 +265,40 @@ public class BoatGludinRune implements Runnable
 				case 18:
 					if (BoatManager.getInstance().dockBusy(BoatManager.GLUDIN_HARBOR))
 					{
-						if (shoutCount == 0)
+						if (_shoutCount == 0)
 						{
 							BoatManager.getInstance().broadcastPacket(GLUDIN_DOCK[0], RUNE_DOCK[0], BUSY_GLUDIN);
 						}
 
-						shoutCount++;
-						if (shoutCount > 35)
+						_shoutCount++;
+						if (_shoutCount > 35)
 						{
-							shoutCount = 0;
+							_shoutCount = 0;
 						}
 
 						ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
 						return;
 					}
-					boat.executePath(GLUDIN_DOCK);
+					_boat.executePath(GLUDIN_DOCK);
 					break;
 				case 19:
 					BoatManager.getInstance().dockShip(BoatManager.GLUDIN_HARBOR, true);
 					BoatManager.getInstance()
 							.broadcastPackets(GLUDIN_DOCK[0], RUNE_DOCK[0], ARRIVED_AT_GLUDIN, ARRIVED_AT_GLUDIN_2);
-					boat.broadcastPacket(GLUDIN_SOUND);
+					_boat.broadcastPacket(GLUDIN_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}
-			shoutCount = 0;
-			cycle++;
-			if (cycle > 19)
+			_shoutCount = 0;
+			_cycle++;
+			if (_cycle > 19)
 			{
-				cycle = 0;
+				_cycle = 0;
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, e.getMessage());
+			_log.log(Level.WARNING, e.getMessage());
 		}
 	}
 

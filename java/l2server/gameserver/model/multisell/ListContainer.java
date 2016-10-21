@@ -23,17 +23,17 @@ import java.util.List;
  */
 public class ListContainer
 {
-	protected int listId;
-	protected boolean applyTaxes = false;
-	protected boolean maintainEnchantment = false;
-	protected boolean isChance = false;
-	protected int timeLimit;
+	protected int _listId;
+	protected boolean _applyTaxes = false;
+	protected boolean _maintainEnchantment = false;
+	protected boolean _isChance = false;
+	protected int _timeLimit;
 
-	protected List<MultiSellEntry> entries;
+	protected List<MultiSellEntry> _entries;
 
 	public ListContainer()
 	{
-		entries = new ArrayList<>();
+		_entries = new ArrayList<>();
 	}
 
 	/**
@@ -42,61 +42,61 @@ public class ListContainer
 	 */
 	protected ListContainer(int listId)
 	{
-		this.listId = listId;
+		_listId = listId;
 	}
 
 	public final List<MultiSellEntry> getEntries()
 	{
-		return entries;
+		return _entries;
 	}
 
 	public final void setListId(int listId)
 	{
-		this.listId = listId;
+		_listId = listId;
 	}
 
 	public final int getListId()
 	{
-		return listId;
+		return _listId;
 	}
 
 	public final void setApplyTaxes(boolean applyTaxes)
 	{
-		this.applyTaxes = applyTaxes;
+		_applyTaxes = applyTaxes;
 	}
 
 	public final boolean getApplyTaxes()
 	{
-		return applyTaxes;
+		return _applyTaxes;
 	}
 
 	public final void setMaintainEnchantment(boolean maintainEnchantment)
 	{
-		this.maintainEnchantment = maintainEnchantment;
+		_maintainEnchantment = maintainEnchantment;
 	}
 
 	public final boolean getMaintainEnchantment()
 	{
-		return maintainEnchantment;
+		return _maintainEnchantment;
 	}
 
 	public final void setIsChance(boolean isChance)
 	{
-		this.isChance = isChance;
+		_isChance = isChance;
 	}
 
 	public final boolean isChance()
 	{
-		return isChance;
+		return _isChance;
 	}
 
 	public final void setTimeLimit(final int timeLimit)
 	{
-		this.timeLimit = timeLimit;
+		_timeLimit = timeLimit;
 	}
 
 	public final int getTimeLimit()
 	{
-		return timeLimit;
+		return _timeLimit;
 	}
 }

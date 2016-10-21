@@ -24,11 +24,11 @@ import java.util.List;
  */
 public class ExCursedWeaponList extends L2GameServerPacket
 {
-	private List<Integer> cursedWeaponIds;
+	private List<Integer> _cursedWeaponIds;
 
 	public ExCursedWeaponList(List<Integer> cursedWeaponIds)
 	{
-		this.cursedWeaponIds = cursedWeaponIds;
+		_cursedWeaponIds = cursedWeaponIds;
 	}
 
 	/**
@@ -36,8 +36,8 @@ public class ExCursedWeaponList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(cursedWeaponIds.size());
-		for (int i : cursedWeaponIds)
+		writeD(_cursedWeaponIds.size());
+		for (int i : _cursedWeaponIds)
 		{
 			writeD(i);
 		}

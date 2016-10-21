@@ -15,7 +15,6 @@ package l2server.gameserver.util;
 
 import l2server.Config;
 import l2server.gameserver.network.L2GameClient;
-import lombok.Getter;
 
 /**
  * Collection of flood protectors for single player.
@@ -27,90 +26,90 @@ public final class FloodProtectors
 	/**
 	 * Pick up item flood protector.
 	 */
-	@Getter private final FloodProtectorAction pickUpItem;
+	private final FloodProtectorAction _pickUp;
 
 	/**
 	 * Use-item flood protector.
 	 */
-	@Getter private final FloodProtectorAction useItem;
+	private final FloodProtectorAction _useItem;
 	/**
 	 * Roll-dice flood protector.
 	 */
-	@Getter private final FloodProtectorAction rollDice;
+	private final FloodProtectorAction _rollDice;
 	/**
 	 * Firework flood protector.
 	 */
-	@Getter private final FloodProtectorAction firework;
+	private final FloodProtectorAction _firework;
 	/**
 	 * Item-pet-summon flood protector.
 	 */
-	@Getter private final FloodProtectorAction itemPetSummon;
+	private final FloodProtectorAction _itemPetSummon;
 	/**
 	 * Hero-voice flood protector.
 	 */
-	@Getter private final FloodProtectorAction heroVoice;
+	private final FloodProtectorAction _heroVoice;
 	/**
 	 * Shout-chat flood protector.
 	 */
-	@Getter private final FloodProtectorAction shoutChat;
+	private final FloodProtectorAction _shoutChat;
 	/**
 	 * Trade-chat flood protector.
 	 */
-	@Getter private final FloodProtectorAction tradeChat;
+	private final FloodProtectorAction _tradeChat;
 	/**
 	 * Global-chat flood protector.
 	 */
-	@Getter private final FloodProtectorAction globalChat;
+	private final FloodProtectorAction _globalChat;
 	/**
 	 * Subclass flood protector.
 	 */
-	@Getter private final FloodProtectorAction subclass;
+	private final FloodProtectorAction _subclass;
 	/**
 	 * Drop-item flood protector.
 	 */
-	@Getter private final FloodProtectorAction dropItem;
+	private final FloodProtectorAction _dropItem;
 	/**
 	 * Server-bypass flood protector.
 	 */
-	@Getter private final FloodProtectorAction serverBypass;
+	private final FloodProtectorAction _serverBypass;
 	/**
 	 * Multisell flood protector.
 	 */
-	@Getter private final FloodProtectorAction multiSell;
+	private final FloodProtectorAction _multiSell;
 	/**
 	 * Transaction flood protector.
 	 */
-	@Getter private final FloodProtectorAction transaction;
+	private final FloodProtectorAction _transaction;
 	/**
 	 * Manufacture flood protector.
 	 */
-	@Getter private final FloodProtectorAction manufacture;
+	private final FloodProtectorAction _manufacture;
 	/**
 	 * Manor flood protector.
 	 */
-	@Getter private final FloodProtectorAction manor;
+	private final FloodProtectorAction _manor;
 	/**
 	 * Send mail flood protector.
 	 */
-	@Getter private final FloodProtectorAction sendMail;
+	private final FloodProtectorAction _sendMail;
 	/**
 	 * Character Select protector
 	 */
-	@Getter private final FloodProtectorAction characterSelect;
+	private final FloodProtectorAction _characterSelect;
 	/**
 	 * Item Auction
 	 */
-	@Getter private final FloodProtectorAction itemAuction;
+	private final FloodProtectorAction _itemAuction;
 	/**
 	 * Magic Gem flood protector.
 	 */
-	@Getter private final FloodProtectorAction magicGem;
+	private final FloodProtectorAction _magicGem;
 	/**
 	 * Event Bypass flood protector.
 	 */
-	@Getter private final FloodProtectorAction eventBypass;
+	private final FloodProtectorAction _eventBypass;
 
-	@Getter private final FloodProtectorAction reportBot;
+	private final FloodProtectorAction _reportBot;
 
 	/**
 	 * Creates new instance of FloodProtectors.
@@ -118,27 +117,242 @@ public final class FloodProtectors
 	public FloodProtectors(final L2GameClient client)
 	{
 		super();
-		pickUpItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
-		useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
-		rollDice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ROLL_DICE);
-		firework = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_FIREWORK);
-		itemPetSummon = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_PET_SUMMON);
-		heroVoice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_HERO_VOICE);
-		shoutChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SHOUT_CHAT);
-		tradeChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRADE_CHAT);
-		globalChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_GLOBAL_CHAT);
-		subclass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SUBCLASS);
-		dropItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_DROP_ITEM);
-		serverBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SERVER_BYPASS);
-		multiSell = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MULTISELL);
-		transaction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRANSACTION);
-		manufacture = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANUFACTURE);
-		manor = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANOR);
-		sendMail = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SENDMAIL);
-		characterSelect = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_CHARACTER_SELECT);
-		itemAuction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_AUCTION);
-		magicGem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MAGICGEM);
-		eventBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_EVENTBYPASS);
-		reportBot = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_REPORT_BOT);
+		_pickUp = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
+		_useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
+		_rollDice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ROLL_DICE);
+		_firework = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_FIREWORK);
+		_itemPetSummon = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_PET_SUMMON);
+		_heroVoice = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_HERO_VOICE);
+		_shoutChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SHOUT_CHAT);
+		_tradeChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRADE_CHAT);
+		_globalChat = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_GLOBAL_CHAT);
+		_subclass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SUBCLASS);
+		_dropItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_DROP_ITEM);
+		_serverBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SERVER_BYPASS);
+		_multiSell = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MULTISELL);
+		_transaction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_TRANSACTION);
+		_manufacture = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANUFACTURE);
+		_manor = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MANOR);
+		_sendMail = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_SENDMAIL);
+		_characterSelect = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_CHARACTER_SELECT);
+		_itemAuction = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_ITEM_AUCTION);
+		_magicGem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_MAGICGEM);
+		_eventBypass = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_EVENTBYPASS);
+		_reportBot = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_REPORT_BOT);
+	}
+
+	/**
+	 * Returns {@link #_useItem}.
+	 *
+	 * @return {@link #_useItem}
+	 */
+	public FloodProtectorAction getUseItem()
+	{
+		return _useItem;
+	}
+
+	/**
+	 * Returns {@link #_rollDice}.
+	 *
+	 * @return {@link #_rollDice}
+	 */
+	public FloodProtectorAction getRollDice()
+	{
+		return _rollDice;
+	}
+
+	/**
+	 * Returns {@link #_firework}.
+	 *
+	 * @return {@link #_firework}
+	 */
+	public FloodProtectorAction getFirework()
+	{
+		return _firework;
+	}
+
+	/**
+	 * Returns {@link #_itemPetSummon}.
+	 *
+	 * @return {@link #_itemPetSummon}
+	 */
+	public FloodProtectorAction getItemPetSummon()
+	{
+		return _itemPetSummon;
+	}
+
+	/**
+	 * Returns {@link #_heroVoice}.
+	 *
+	 * @return {@link #_heroVoice}
+	 */
+	public FloodProtectorAction getHeroVoice()
+	{
+		return _heroVoice;
+	}
+
+	/**
+	 * Returns {@link #_shoutChat}.
+	 *
+	 * @return {@link #_shoutChat}
+	 */
+	public FloodProtectorAction getShoutChat()
+	{
+		return _shoutChat;
+	}
+
+	/**
+	 * Returns {@link #_tradeChat}.
+	 *
+	 * @return {@link #_tradeChat}
+	 */
+	public FloodProtectorAction getTradeChat()
+	{
+		return _tradeChat;
+	}
+
+	/**
+	 * Returns {@link #_globalChat}.
+	 *
+	 * @return {@link #_globalChat}
+	 */
+	public FloodProtectorAction getGlobalChat()
+	{
+		return _globalChat;
+	}
+
+	/**
+	 * Returns {@link #_subclass}.
+	 *
+	 * @return {@link #_subclass}
+	 */
+	public FloodProtectorAction getSubclass()
+	{
+		return _subclass;
+	}
+
+	/**
+	 * Returns {@link #_dropItem}.
+	 *
+	 * @return {@link #_dropItem}
+	 */
+	public FloodProtectorAction getDropItem()
+	{
+		return _dropItem;
+	}
+
+	/**
+	 * Returns {@link #_serverBypass}.
+	 *
+	 * @return {@link #_serverBypass}
+	 */
+	public FloodProtectorAction getServerBypass()
+	{
+		return _serverBypass;
+	}
+
+	/**
+	 * Returns .
+	 *
+	 * @return
+	 */
+	public FloodProtectorAction getMultiSell()
+	{
+		return _multiSell;
+	}
+
+	/**
+	 * Returns {@link #_transaction}.
+	 *
+	 * @return {@link #_transaction}
+	 */
+	public FloodProtectorAction getTransaction()
+	{
+		return _transaction;
+	}
+
+	/**
+	 * Returns {@link #_manufacture}.
+	 *
+	 * @return {@link #_manufacture}
+	 */
+	public FloodProtectorAction getManufacture()
+	{
+		return _manufacture;
+	}
+
+	/**
+	 * Returns {@link #_manor}.
+	 *
+	 * @return {@link #_manor}
+	 */
+	public FloodProtectorAction getManor()
+	{
+		return _manor;
+	}
+
+	/**
+	 * Returns {@link #_sendMail}.
+	 *
+	 * @return {@link #_sendMail}
+	 */
+	public FloodProtectorAction getSendMail()
+	{
+		return _sendMail;
+	}
+
+	/**
+	 * Returns {@link #_characterSelect}.
+	 *
+	 * @return {@link #_characterSelect}
+	 */
+	public FloodProtectorAction getCharacterSelect()
+	{
+		return _characterSelect;
+	}
+
+	/**
+	 * Returns {@link #_itemAuction}.
+	 *
+	 * @return {@link #_itemAuction}
+	 */
+	public FloodProtectorAction getItemAuction()
+	{
+		return _itemAuction;
+	}
+
+	/**
+	 * Returns {@link #_magicGem}.
+	 *
+	 * @return {@link #_magicGem}
+	 */
+	public FloodProtectorAction getMagicGem()
+	{
+		return _magicGem;
+	}
+
+	/**
+	 * Returns {@link #_eventBypass}.
+	 *
+	 * @return {@link #_eventBypass}
+	 */
+	public FloodProtectorAction getEventBypass()
+	{
+		return _eventBypass;
+	}
+
+	/**
+	 * Returns {@link #_pickUp}.
+	 *
+	 * @return {@link #_pickUp}
+	 */
+	public FloodProtectorAction getPickUpItem()
+	{
+		return _pickUp;
+	}
+
+	public FloodProtectorAction getReportBot()
+	{
+		return _reportBot;
 	}
 }

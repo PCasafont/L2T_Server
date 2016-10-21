@@ -31,12 +31,12 @@ public class SetPrivateStoreMsgSell extends L2GameClientPacket
 
 	private static final int MAX_MSG_LENGTH = 29;
 
-	private String storeMsg;
+	private String _storeMsg;
 
 	@Override
 	protected void readImpl()
 	{
-		storeMsg = readS();
+		_storeMsg = readS();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class SetPrivateStoreMsgSell extends L2GameClientPacket
 			return;
 		}
 
-		if (storeMsg != null && storeMsg.length() > MAX_MSG_LENGTH)
+		if (_storeMsg != null && _storeMsg.length() > MAX_MSG_LENGTH)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Player " + player.getName() + " tried to overflow private store sell message",
@@ -56,7 +56,7 @@ public class SetPrivateStoreMsgSell extends L2GameClientPacket
 			return;
 		}
 
-		player.getSellList().setTitle(storeMsg);
+		player.getSellList().setTitle(_storeMsg);
 		sendPacket(new PrivateStoreMsgSell(player));
 	}
 }

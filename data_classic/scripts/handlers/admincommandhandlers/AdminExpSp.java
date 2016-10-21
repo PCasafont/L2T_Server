@@ -15,9 +15,6 @@
 
 package handlers.admincommandhandlers;
 
-import java.util.StringTokenizer;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
@@ -25,7 +22,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+
+import java.util.StringTokenizer;
+import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -150,7 +149,7 @@ public class AdminExpSp implements IAdminCommandHandler
 				activeChar.sendMessage("Added " + expval + " xp and " + spval + " sp to " + player.getName() + ".");
 				if (Config.DEBUG)
 				{
-					Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") added " + expval +
+					_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") added " + expval +
 							" xp and " + spval + " sp to " + player.getObjectId() + ".");
 				}
 			}
@@ -200,7 +199,7 @@ public class AdminExpSp implements IAdminCommandHandler
 				activeChar.sendMessage("Removed " + expval + " xp and " + spval + " sp from " + player.getName() + ".");
 				if (Config.DEBUG)
 				{
-					Log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") removed " + expval +
+					_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") removed " + expval +
 							" xp and " + spval + " sp from " + player.getObjectId() + ".");
 				}
 			}

@@ -27,12 +27,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestMenteeAdd extends L2GameClientPacket
 {
-	String name;
+	String _name;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
+		_name = readS();
 	}
 
 	@Override
@@ -45,11 +45,11 @@ public class RequestMenteeAdd extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance mentee = L2World.getInstance().getPlayer(name);
+		final L2PcInstance mentee = L2World.getInstance().getPlayer(_name);
 
 		SystemMessage sm;
 		// can't use mentee invite for locating invisible characters
-		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().isInvisible())
+		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
 		{
 			//Target is not found in the game.
 			activeChar.sendPacket(

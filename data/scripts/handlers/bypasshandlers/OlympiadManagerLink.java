@@ -30,7 +30,6 @@ import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 
 import java.util.Collection;
 import java.util.List;
@@ -168,7 +167,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						}
 						break;
 					default:
-						Log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
@@ -184,7 +183,7 @@ public class OlympiadManagerLink implements IBypassHandler
 
 				if (params[1] == null)
 				{
-					Log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
+					_log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
 							" has no buffGroup set in the bypass for the buff selected.");
 					return false;
 				}
@@ -289,14 +288,14 @@ public class OlympiadManagerLink implements IBypassHandler
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						Log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			_log.log(Level.INFO, "Exception in " + e.getMessage(), e);
 		}
 
 		return true;

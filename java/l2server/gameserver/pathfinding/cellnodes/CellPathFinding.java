@@ -37,19 +37,19 @@ import java.util.logging.Level;
  */
 public class CellPathFinding extends PathFinding
 {
-	private BufferInfo[] allBuffers;
-	private int findSuccess = 0;
-	private int findFails = 0;
-	private int postFilterUses = 0;
-	private int postFilterPlayableUses = 0;
-	private int postFilterPasses = 0;
-	private long postFilterElapsed = 0;
+	private BufferInfo[] _allBuffers;
+	private int _findSuccess = 0;
+	private int _findFails = 0;
+	private int _postFilterUses = 0;
+	private int _postFilterPlayableUses = 0;
+	private int _postFilterPasses = 0;
+	private long _postFilterElapsed = 0;
 
-	private ArrayList<L2ItemInstance> debugItems = null;
+	private ArrayList<L2ItemInstance> _debugItems = null;
 
 	public static CellPathFinding getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private CellPathFinding()
@@ -58,7 +58,7 @@ public class CellPathFinding extends PathFinding
 		{
 			String[] array = Config.PATHFIND_BUFFERS.split(";");
 
-			allBuffers = new BufferInfo[array.length];
+			_allBuffers = new BufferInfo[array.length];
 
 			String buf;
 			String[] args;
@@ -71,7 +71,7 @@ public class CellPathFinding extends PathFinding
 					throw new Exception("Invalid buffer definition: " + buf);
 				}
 
-				allBuffers[i] = new BufferInfo(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+				_allBuffers[i] = new BufferInfo(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 			}
 		}
 		catch (Exception e)
@@ -118,13 +118,13 @@ public class CellPathFinding extends PathFinding
 
 		if (debug)
 		{
-			if (debugItems == null)
+			if (_debugItems == null)
 			{
-				debugItems = new ArrayList<>();
+				_debugItems = new ArrayList<>();
 			}
 			else
 			{
-				for (L2ItemInstance item : debugItems)
+				for (L2ItemInstance item : _debugItems)
 				{
 					if (item == null)
 					{
@@ -133,7 +133,7 @@ public class CellPathFinding extends PathFinding
 					item.decayMe();
 				}
 
-				debugItems.clear();
+				_debugItems.clear();
 			}
 		}
 
@@ -160,7 +160,7 @@ public class CellPathFinding extends PathFinding
 
 			if (result == null)
 			{
-				findFails++;
+				_findFails++;
 				return null;
 			}
 
@@ -178,15 +178,15 @@ public class CellPathFinding extends PathFinding
 
 		if (path.size() < 3 || Config.MAX_POSTFILTER_PASSES <= 0)
 		{
-			findSuccess++;
+			_findSuccess++;
 			return path;
 		}
 
 		long timeStamp = System.currentTimeMillis();
-		postFilterUses++;
+		_postFilterUses++;
 		if (playable)
 		{
-			postFilterPlayableUses++;
+			_postFilterPlayableUses++;
 		}
 
 		int currentX, currentY, currentZ;
@@ -197,7 +197,7 @@ public class CellPathFinding extends PathFinding
 		do
 		{
 			pass++;
-			postFilterPasses++;
+			_postFilterPasses++;
 
 			remove = false;
 			middlePoint = path.listIterator();
@@ -242,8 +242,8 @@ public class CellPathFinding extends PathFinding
 			}
 		}
 
-		findSuccess++;
-		postFilterElapsed += System.currentTimeMillis() - timeStamp;
+		_findSuccess++;
+		_postFilterElapsed += System.currentTimeMillis() - timeStamp;
 		return path;
 	}
 
@@ -296,7 +296,7 @@ public class CellPathFinding extends PathFinding
 	private CellNodeBuffer alloc(int size, boolean playable)
 	{
 		CellNodeBuffer current = null;
-		for (BufferInfo i : allBuffers)
+		for (BufferInfo i : _allBuffers)
 		{
 			if (i.mapSize >= size)
 			{
@@ -352,7 +352,7 @@ public class CellPathFinding extends PathFinding
 		final L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(loc.getX(), loc.getY(), loc.getZ());
-		debugItems.add(item);
+		_debugItems.add(item);
 	}
 
 	private static final class BufferInfo
@@ -395,23 +395,24 @@ public class CellPathFinding extends PathFinding
 	@Override
 	public String[] getStat()
 	{
-		final String[] result = new String[allBuffers.length + 1];
-		for (int i = 0; i < allBuffers.length; i++)
+		final String[] result = new String[_allBuffers.length + 1];
+		for (int i = 0; i < _allBuffers.length; i++)
 		{
-			result[i] = allBuffers[i].toString();
+			result[i] = _allBuffers[i].toString();
 		}
 
 		final StringBuilder stat = new StringBuilder(100);
-		StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(postFilterUses), "/",
-				String.valueOf(postFilterPlayableUses));
-		if (postFilterUses > 0)
+		StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(_postFilterUses), "/",
+				String.valueOf(_postFilterPlayableUses));
+		if (_postFilterUses > 0)
 		{
-			StringUtil.append(stat, " total/avg(ms):", String.valueOf(postFilterElapsed), "/",
-					String.format("%1.2f", (double) postFilterElapsed / postFilterUses), " passes total/avg:",
-					String.valueOf(postFilterPasses), "/",
-					String.format("%1.1f", (double) postFilterPasses / postFilterUses), "\r\n");
+			StringUtil.append(stat, " total/avg(ms):", String.valueOf(_postFilterElapsed), "/",
+					String.format("%1.2f", (double) _postFilterElapsed / _postFilterUses), " passes total/avg:",
+					String.valueOf(_postFilterPasses), "/",
+					String.format("%1.1f", (double) _postFilterPasses / _postFilterUses), "\r\n");
 		}
-		StringUtil.append(stat, "Pathfind success/fail:", String.valueOf(findSuccess), "/", String.valueOf(findFails));
+		StringUtil
+				.append(stat, "Pathfind success/fail:", String.valueOf(_findSuccess), "/", String.valueOf(_findFails));
 		result[result.length - 1] = stat.toString();
 
 		return result;
@@ -420,6 +421,6 @@ public class CellPathFinding extends PathFinding
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CellPathFinding instance = new CellPathFinding();
+		protected static final CellPathFinding _instance = new CellPathFinding();
 	}
 }

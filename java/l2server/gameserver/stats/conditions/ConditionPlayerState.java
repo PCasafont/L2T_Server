@@ -28,8 +28,8 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
  */
 public class ConditionPlayerState extends Condition
 {
-	private final PlayerState check;
-	private final boolean required;
+	private final PlayerState _check;
+	private final boolean _required;
 
 	/**
 	 * Instantiates a new condition player state.
@@ -39,8 +39,8 @@ public class ConditionPlayerState extends Condition
 	 */
 	public ConditionPlayerState(PlayerState check, boolean required)
 	{
-		this.check = check;
-		this.required = required;
+		_check = check;
+		_required = required;
 	}
 
 	/**
@@ -51,49 +51,49 @@ public class ConditionPlayerState extends Condition
 	{
 		final L2Character character = env.player;
 		L2PcInstance player = null;
-		switch (check)
+		switch (_check)
 		{
 			case RESTING:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.isSitting() == required;
+					return player.isSitting() == _required;
 				}
-				return !required;
+				return !_required;
 			case MOVING:
-				return character.isMoving() == required;
+				return character.isMoving() == _required;
 			case RUNNING:
-				return character.isRunning() == required;
+				return character.isRunning() == _required;
 			case STANDING:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return required != (player.isSitting() || player.isMoving());
+					return _required != (player.isSitting() || player.isMoving());
 				}
-				return required != character.isMoving();
+				return _required != character.isMoving();
 			case COMBAT:
 				return AttackStanceTaskManager.getInstance().getAttackStanceTask(character);
 			case FLYING:
-				return character.isFlying() == required;
+				return character.isFlying() == _required;
 			case BEHIND:
-				return character.isBehindTarget() == required;
+				return character.isBehindTarget() == _required;
 			case FRONT:
-				return character.isInFrontOfTarget() == required;
+				return character.isInFrontOfTarget() == _required;
 			case CHAOTIC:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.getReputation() < 0 == required;
+					return player.getReputation() < 0 == _required;
 				}
-				return !required;
+				return !_required;
 			case OLYMPIAD:
 				player = character.getActingPlayer();
 				if (player != null)
 				{
-					return player.isInOlympiadMode() == required;
+					return player.isInOlympiadMode() == _required;
 				}
-				return !required;
+				return !_required;
 		}
-		return !required;
+		return !_required;
 	}
 }

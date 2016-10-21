@@ -105,6 +105,7 @@ public class EffectHeavyPunch extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
+
 		return true;
 	}
 }

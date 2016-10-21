@@ -22,46 +22,46 @@ package l2server.util.network;
  */
 public abstract class BaseRecievePacket
 {
-	private byte[] decrypt;
-	private int off;
+	private byte[] _decrypt;
+	private int _off;
 
 	public BaseRecievePacket(byte[] decrypt)
 	{
-		this.decrypt = decrypt;
-		off = 1; // skip packet type id
+		_decrypt = decrypt;
+		_off = 1; // skip packet type id
 	}
 
 	public int readD()
 	{
-		int result = decrypt[off++] & 0xff;
-		result |= decrypt[off++] << 8 & 0xff00;
-		result |= decrypt[off++] << 0x10 & 0xff0000;
-		result |= decrypt[off++] << 0x18 & 0xff000000;
+		int result = _decrypt[_off++] & 0xff;
+		result |= _decrypt[_off++] << 8 & 0xff00;
+		result |= _decrypt[_off++] << 0x10 & 0xff0000;
+		result |= _decrypt[_off++] << 0x18 & 0xff000000;
 		return result;
 	}
 
 	public int readC()
 	{
-		return decrypt[off++] & 0xff;
+		return _decrypt[_off++] & 0xff;
 	}
 
 	public int readH()
 	{
-		int result = decrypt[off++] & 0xff;
-		result |= decrypt[off++] << 8 & 0xff00;
+		int result = _decrypt[_off++] & 0xff;
+		result |= _decrypt[_off++] << 8 & 0xff00;
 		return result;
 	}
 
 	public double readF()
 	{
-		long result = decrypt[off++] & 0xff;
-		result |= (decrypt[off++] & 0xffL) << 8L;
-		result |= (decrypt[off++] & 0xffL) << 16L;
-		result |= (decrypt[off++] & 0xffL) << 24L;
-		result |= (decrypt[off++] & 0xffL) << 32L;
-		result |= (decrypt[off++] & 0xffL) << 40L;
-		result |= (decrypt[off++] & 0xffL) << 48L;
-		result |= (decrypt[off++] & 0xffL) << 56L;
+		long result = _decrypt[_off++] & 0xff;
+		result |= (_decrypt[_off++] & 0xffL) << 8L;
+		result |= (_decrypt[_off++] & 0xffL) << 16L;
+		result |= (_decrypt[_off++] & 0xffL) << 24L;
+		result |= (_decrypt[_off++] & 0xffL) << 32L;
+		result |= (_decrypt[_off++] & 0xffL) << 40L;
+		result |= (_decrypt[_off++] & 0xffL) << 48L;
+		result |= (_decrypt[_off++] & 0xffL) << 56L;
 		return Double.longBitsToDouble(result);
 	}
 
@@ -70,35 +70,35 @@ public abstract class BaseRecievePacket
 		String result = null;
 		try
 		{
-			result = new String(decrypt, off, decrypt.length - off, "UTF-16LE");
+			result = new String(_decrypt, _off, _decrypt.length - _off, "UTF-16LE");
 			result = result.substring(0, result.indexOf(0x00));
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
-		off += result.length() * 2 + 2;
+		_off += result.length() * 2 + 2;
 		return result;
 	}
 
 	public final byte[] readB(int length)
 	{
 		byte[] result = new byte[length];
-		System.arraycopy(decrypt, off + 0, result, 0, length);
-		off += length;
+		System.arraycopy(_decrypt, _off + 0, result, 0, length);
+		_off += length;
 		return result;
 	}
 
 	public long readQ()
 	{
-		long result = decrypt[off++] & 0xff;
-		result |= (decrypt[off++] & 0xffL) << 8L;
-		result |= (decrypt[off++] & 0xffL) << 16L;
-		result |= (decrypt[off++] & 0xffL) << 24L;
-		result |= (decrypt[off++] & 0xffL) << 32L;
-		result |= (decrypt[off++] & 0xffL) << 40L;
-		result |= (decrypt[off++] & 0xffL) << 48L;
-		result |= (decrypt[off++] & 0xffL) << 56L;
+		long result = _decrypt[_off++] & 0xff;
+		result |= (_decrypt[_off++] & 0xffL) << 8L;
+		result |= (_decrypt[_off++] & 0xffL) << 16L;
+		result |= (_decrypt[_off++] & 0xffL) << 24L;
+		result |= (_decrypt[_off++] & 0xffL) << 32L;
+		result |= (_decrypt[_off++] & 0xffL) << 40L;
+		result |= (_decrypt[_off++] & 0xffL) << 48L;
+		result |= (_decrypt[_off++] & 0xffL) << 56L;
 		return result;
 	}
 }

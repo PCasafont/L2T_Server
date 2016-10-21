@@ -23,27 +23,27 @@ import l2server.gameserver.model.olympiad.Olympiad;
  */
 public class ExOlympiadResult extends L2GameServerPacket
 {
-	private Object[] info;
+	private Object[] _info;
 
 	public ExOlympiadResult(Object[] info)
 	{
-		this.info = info;
+		_info = info;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD((Integer) info[0] < 0 ? 1 : 0); // Victory or Tie
-		writeS((String) info[1]); // Winner
+		writeD((Integer) _info[0] < 0 ? 1 : 0); // Victory or Tie
+		writeS((String) _info[1]); // Winner
 		for (int i = 0; i < 2; i++)
 		{
 			writeD(i + 1);
-			int multiplier = (Integer) info[0] == i ? 1 : -1;
-			int participants = (Integer) info[2];
+			int multiplier = (Integer) _info[0] == i ? 1 : -1;
+			int participants = (Integer) _info[2];
 			writeD(participants);
 			for (int j = 0; j < participants; j++)
 			{
-				L2PcInstance player = (L2PcInstance) info[i * participants + j + 4];
+				L2PcInstance player = (L2PcInstance) _info[i * participants + j + 4];
 				if (player == null)
 				{
 					writeS("");
@@ -62,7 +62,7 @@ public class ExOlympiadResult extends L2GameServerPacket
 					writeD(player.getCurrentClass().getId());
 					writeD(player.getOlyGivenDmg());
 					writeD(Olympiad.getInstance().getNobleInfo(player.getObjectId()).getPoints());
-					writeD((Integer) info[3] * multiplier);
+					writeD((Integer) _info[3] * multiplier);
 				}
 			}
 		}

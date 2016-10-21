@@ -15,64 +15,67 @@
 
 package l2server.gameserver.instancemanager;
 
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class DiscussionManager
 {
-	private List<Integer> voted = new ArrayList<>();
-	private int[] votes = new int[10];
-	private boolean votesEnabled = false;
-	@Getter private boolean globalChatDisabled = false;
+	private List<Integer> _voted = new ArrayList<>();
+	private int[] _votes = new int[10];
+	private boolean _votesEnabled = false;
+	private boolean _globalChatDisabled = false;
 
 	public static DiscussionManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public boolean vote(int objectId, byte option)
 	{
-		if (voted.contains(objectId))
+		if (_voted.contains(objectId))
 		{
 			return false;
 		}
-		voted.add(objectId);
-		votes[option]++;
+		_voted.add(objectId);
+		_votes[option]++;
 		return true;
 	}
 
 	public void startVotations()
 	{
-		voted.clear();
-		for (int i = 0; i < votes.length; i++)
+		_voted.clear();
+		for (int i = 0; i < _votes.length; i++)
 		{
-			votes[i] = 0;
+			_votes[i] = 0;
 		}
-		votesEnabled = true;
+		_votesEnabled = true;
 	}
 
 	public int[] endVotations()
 	{
-		voted.clear();
-		votesEnabled = false;
-		return votes;
+		_voted.clear();
+		_votesEnabled = false;
+		return _votes;
 	}
 
 	public boolean areVotesEnabled()
 	{
-		return votesEnabled;
+		return _votesEnabled;
 	}
 
 	public void setGlobalChatDisabled(boolean chatDisabled)
 	{
-		globalChatDisabled = chatDisabled;
+		_globalChatDisabled = chatDisabled;
+	}
+
+	public boolean isGlobalChatDisabled()
+	{
+		return _globalChatDisabled;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DiscussionManager instance = new DiscussionManager();
+		protected static final DiscussionManager _instance = new DiscussionManager();
 	}
 }

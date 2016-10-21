@@ -20,6 +20,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExTimeOverPartySubstitute extends L2GameServerPacket
 {
+
 	int k[];
 
 	public ExTimeOverPartySubstitute(int l[])

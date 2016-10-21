@@ -30,16 +30,16 @@ public final class RestartResponse extends L2GameServerPacket
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
 
-	private boolean result;
+	private boolean _result;
 
 	public RestartResponse(boolean result)
 	{
-		this.result = result;
+		_result = result;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(result ? 1 : 0);
+		writeD(_result ? 1 : 0);
 	}
 }

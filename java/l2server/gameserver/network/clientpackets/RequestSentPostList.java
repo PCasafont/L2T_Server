@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.ExShowSentPostList;
  */
 public final class RequestSentPostList extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

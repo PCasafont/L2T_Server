@@ -84,7 +84,7 @@ public class ChatTell implements IChatHandler
 				return;
 			}
 			/*
-			if (receiver.getClient() == null || receiver.getClient().isDetached())
+            if (receiver.getClient() == null || receiver.getClient().isDetached())
 			{
 				activeChar.sendMessage("Player is in offline mode.");
 				return;

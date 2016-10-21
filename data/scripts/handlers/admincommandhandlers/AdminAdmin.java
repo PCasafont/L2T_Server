@@ -27,7 +27,6 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
@@ -48,7 +47,7 @@ import java.util.logging.Logger;
  */
 public class AdminAdmin implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminAdmin.class.getName());
+	private static Logger _log = Logger.getLogger(AdminAdmin.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_admin",
@@ -126,7 +125,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				Log.warning("An error occured while ending olympiad: " + e);
+				_log.warning("An error occured while ending olympiad: " + e);
 			}
 			activeChar.sendMessage("Heroes formed");
 		}
@@ -271,7 +270,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("An error occured while reloading " + type + " !");
-				Log.warning("An error occured while reloading " + type + ": ");
+				_log.warning("An error occured while reloading " + type + ": ");
 				e.printStackTrace();
 			}
 		}

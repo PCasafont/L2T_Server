@@ -36,8 +36,8 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 			0x999999 // Silver
 	};
 
-	private int colorNum, itemObjectId;
-	private String title;
+	private int _colorNum, _itemObjectId;
+	private String _title;
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -45,9 +45,9 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		colorNum = readD();
-		title = readS();
-		itemObjectId = readD();
+		_colorNum = readD();
+		_title = readS();
+		_itemObjectId = readD();
 	}
 
 	/**
@@ -62,12 +62,12 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 			return;
 		}
 
-		if (colorNum < 0 || colorNum >= COLORS.length)
+		if (_colorNum < 0 || _colorNum >= COLORS.length)
 		{
 			return;
 		}
 
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjectId);
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjectId);
 		if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
 				!item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
 		{
@@ -76,8 +76,8 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 
 		if (activeChar.destroyItem("Consume", item, 1, null, true))
 		{
-			activeChar.setTitle(title);
-			activeChar.getAppearance().setTitleColor(COLORS[colorNum]);
+			activeChar.setTitle(_title);
+			activeChar.getAppearance().setTitleColor(COLORS[_colorNum]);
 			activeChar.broadcastUserInfo();
 		}
 	}

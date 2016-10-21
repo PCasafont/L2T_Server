@@ -40,17 +40,17 @@ import java.util.logging.Logger;
 
 public class L2SkillDrain extends L2Skill
 {
-	private static final Logger logDamage = Logger.getLogger("damage");
+	private static final Logger _logDamage = Logger.getLogger("damage");
 
-	private float absorbPart;
-	private int absorbAbs;
+	private float _absorbPart;
+	private int _absorbAbs;
 
 	public L2SkillDrain(StatsSet set)
 	{
 		super(set);
 
-		absorbPart = set.getFloat("absorbPart", 0.f);
-		absorbAbs = set.getInteger("absorbAbs", 0);
+		_absorbPart = set.getFloat("absorbPart", 0.f);
+		_absorbAbs = set.getInteger("absorbAbs", 0);
 	}
 
 	@Override
@@ -121,7 +121,7 @@ public class L2SkillDrain extends L2Skill
 				}
 			}
 
-			double hpAdd = absorbAbs + absorbPart * drain;
+			double hpAdd = _absorbAbs + _absorbPart * drain;
 			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
 					activeChar.getCurrentHp() + hpAdd;
 
@@ -162,7 +162,7 @@ public class L2SkillDrain extends L2Skill
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
-					logDamage.log(record);
+					_logDamage.log(record);
 				}
 
 				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
@@ -204,7 +204,7 @@ public class L2SkillDrain extends L2Skill
 			}
 		}
 		//effect self :]
-		/*L2Abnormal effect = activeChar.getFirstEffect(getId());
+        /*L2Abnormal effect = activeChar.getFirstEffect(getId());
 		if (effect != null && effect.isSelfEffect())
 		{
 			//Replace old effect with new one.
@@ -237,7 +237,7 @@ public class L2SkillDrain extends L2Skill
 				Log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
 			}
 
-			double hpAdd = absorbAbs + absorbPart * damage;
+			double hpAdd = _absorbAbs + _absorbPart * damage;
 			L2PcInstance owner = activeCubic.getOwner();
 			double hp =
 					owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;

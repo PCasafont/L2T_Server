@@ -32,12 +32,12 @@ import java.nio.ByteOrder;
  */
 public final class UserInfo extends L2GameServerPacket
 {
-	private int objectId;
-	private byte[] data;
+	private int _objectId;
+	private byte[] _data;
 
 	public UserInfo(L2PcInstance player)
 	{
-		objectId = player.getObjectId();
+		_objectId = player.getObjectId();
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -212,7 +212,7 @@ public final class UserInfo extends L2GameServerPacket
 		// Clan
 		String title = player.getTitle() != null ? player.getTitle() : "";
 
-		if (player.getAppearance().isInvisible() && player.isGM())
+		if (player.getAppearance().getInvisible() && player.isGM())
 		{
 			title = "Invisible";
 		}
@@ -288,15 +288,15 @@ public final class UserInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		data = new byte[size];
-		buffer.get(data, 0, size);
+		_data = new byte[size];
+		buffer.get(_data, 0, size);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(data.length);
-		writeB(data);
+		writeD(_objectId);
+		writeD(_data.length);
+		writeB(_data);
 	}
 }

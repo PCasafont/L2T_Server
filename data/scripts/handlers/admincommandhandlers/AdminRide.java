@@ -35,7 +35,7 @@ public class AdminRide implements IAdminCommandHandler
 			"admin_ride_wolf",
 			"admin_unride_wolf",
 			};
-	private int petRideId;
+	private int _petRideId;
 
 	private static final int PURPLE_MANED_HORSE_TRANSFORMATION_ID = 106;
 
@@ -44,6 +44,7 @@ public class AdminRide implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
+
 		if (command.startsWith("admin_ride"))
 		{
 			if (activeChar.isMounted() || activeChar.getPet() != null)
@@ -53,15 +54,15 @@ public class AdminRide implements IAdminCommandHandler
 			}
 			if (command.startsWith("admin_ride_wyvern"))
 			{
-				petRideId = 12621;
+				_petRideId = 12621;
 			}
 			else if (command.startsWith("admin_ride_strider"))
 			{
-				petRideId = 12526;
+				_petRideId = 12526;
 			}
 			else if (command.startsWith("admin_ride_wolf"))
 			{
-				petRideId = 16041;
+				_petRideId = 16041;
 			}
 			else if (command.startsWith("admin_ride_horse")) // handled using transformation
 			{
@@ -98,7 +99,7 @@ public class AdminRide implements IAdminCommandHandler
 				return false;
 			}
 
-			activeChar.mount(petRideId, 0, false);
+			activeChar.mount(_petRideId, 0, false);
 
 			return false;
 		}

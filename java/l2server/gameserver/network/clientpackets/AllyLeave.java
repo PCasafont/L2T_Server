@@ -23,6 +23,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public final class AllyLeave extends L2GameClientPacket
 {
+
 	//
 
 	@Override

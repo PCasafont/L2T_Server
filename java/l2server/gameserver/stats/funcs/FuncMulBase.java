@@ -20,12 +20,12 @@ import l2server.gameserver.stats.Stats;
 
 public class FuncMulBase extends Func
 {
-	private final Lambda lambda;
+	private final Lambda _lambda;
 
 	public FuncMulBase(Stats pStat, Object owner, Lambda lambda)
 	{
 		super(pStat, owner);
-		this.lambda = lambda;
+		_lambda = lambda;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class FuncMulBase extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value += env.baseValue * (lambda.calc(env) - 1.0);
+			env.value += env.baseValue * (_lambda.calc(env) - 1.0);
 		}
 	}
 }

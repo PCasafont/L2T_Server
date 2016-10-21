@@ -48,7 +48,6 @@ import l2server.gameserver.util.MinionList;
 import l2server.log.Log;
 import l2server.util.Rnd;
 import l2server.util.Util;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -64,22 +63,23 @@ import java.util.logging.Level;
  */
 public class Quest extends ManagedScript
 {
+
 	/**
 	 * HashMap containing events from String value of the event
 	 */
-	private static Map<String, Quest> allEventsS = new HashMap<>();
+	private static Map<String, Quest> _allEventsS = new HashMap<>();
 	/**
 	 * HashMap containing lists of timers from the name of the timer
 	 */
-	private Map<String, List<QuestTimer>> allEventTimers = new ConcurrentHashMap<>();
+	private Map<String, List<QuestTimer>> _allEventTimers = new ConcurrentHashMap<>();
 
-	private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+	private final ReentrantReadWriteLock _rwLock = new ReentrantReadWriteLock();
 
-	private final int questId;
-	@Getter private final String name;
-	@Getter private final String descr;
-	@Getter private final byte initialState = State.CREATED;
-	protected boolean onEnterWorld = false;
+	private final int _questId;
+	private final String _name;
+	private final String _descr;
+	private final byte _initialState = State.CREATED;
+	protected boolean _onEnterWorld = false;
 	// NOTE: questItemIds will be overridden by child classes.  Ideally, it should be
 	// protected instead of public.  However, quest scripts written in Jython will
 	// have trouble with protected, as Jython only knows private and public...
@@ -99,7 +99,7 @@ public class Quest extends ManagedScript
 	 */
 	public static Collection<Quest> findAllEvents()
 	{
-		return allEventsS.values();
+		return _allEventsS.values();
 	}
 
 	/**
@@ -111,9 +111,9 @@ public class Quest extends ManagedScript
 	 */
 	public Quest(int questId, String name, String descr)
 	{
-		this.questId = questId;
-		this.name = name;
-		this.descr = descr;
+		_questId = questId;
+		_name = name;
+		_descr = descr;
 
 		if (questId != 0)
 		{
@@ -121,7 +121,7 @@ public class Quest extends ManagedScript
 		}
 		else
 		{
-			allEventsS.put(name, this);
+			_allEventsS.put(name, this);
 		}
 		init_LoadGlobalData();
 	}
@@ -133,6 +133,7 @@ public class Quest extends ManagedScript
 	 */
 	protected void init_LoadGlobalData()
 	{
+
 	}
 
 	/**
@@ -143,6 +144,7 @@ public class Quest extends ManagedScript
 	 */
 	public void saveGlobalData()
 	{
+
 	}
 
 	public enum TrapAction
@@ -193,17 +195,18 @@ public class Quest extends ManagedScript
 
 		// control whether this event type is allowed for the same npc template in multiple quests
 		// or if the npc must be registered in at most one quest for the specified event
-		private boolean allowMultipleRegistration;
+		private boolean _allowMultipleRegistration;
 
 		QuestEventType(boolean allowMultipleRegistration)
 		{
-			this.allowMultipleRegistration = allowMultipleRegistration;
+			_allowMultipleRegistration = allowMultipleRegistration;
 		}
 
 		public boolean isMultipleRegistrationAllowed()
 		{
-			return allowMultipleRegistration;
+			return _allowMultipleRegistration;
 		}
+
 	}
 
 	/**
@@ -213,7 +216,7 @@ public class Quest extends ManagedScript
 	 */
 	public int getQuestIntId()
 	{
-		return questId;
+		return _questId;
 	}
 
 	/**
@@ -225,6 +228,36 @@ public class Quest extends ManagedScript
 	public QuestState newQuestState(L2PcInstance player)
 	{
 		return new QuestState(this, player, getInitialState());
+	}
+
+	/**
+	 * Return initial state of the quest
+	 *
+	 * @return State
+	 */
+	public byte getInitialState()
+	{
+		return _initialState;
+	}
+
+	/**
+	 * Return name of the quest
+	 *
+	 * @return String
+	 */
+	public String getName()
+	{
+		return _name;
+	}
+
+	/**
+	 * Return description of the quest
+	 *
+	 * @return String
+	 */
+	public String getDescr()
+	{
+		return _descr;
 	}
 
 	/**
@@ -263,7 +296,7 @@ public class Quest extends ManagedScript
 		{
 			timers = new CopyOnWriteArrayList<>();
 			timers.add(new QuestTimer(this, name, time, npc, player, repeating));
-			allEventTimers.put(name, timers);
+			_allEventTimers.put(name, timers);
 		}
 		// a timer with this name exists, but may not be for the same set of npc and player
 		else
@@ -274,12 +307,12 @@ public class Quest extends ManagedScript
 			{
 				try
 				{
-					rwLock.writeLock().lock();
+					_rwLock.writeLock().lock();
 					timers.add(new QuestTimer(this, name, time, npc, player, repeating));
 				}
 				finally
 				{
-					rwLock.writeLock().unlock();
+					_rwLock.writeLock().unlock();
 				}
 			}
 		}
@@ -295,7 +328,7 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			rwLock.readLock().lock();
+			_rwLock.readLock().lock();
 			for (QuestTimer timer : qt)
 			{
 				if (timer != null)
@@ -309,14 +342,14 @@ public class Quest extends ManagedScript
 		}
 		finally
 		{
-			rwLock.readLock().unlock();
+			_rwLock.readLock().unlock();
 		}
 		return null;
 	}
 
 	private List<QuestTimer> getQuestTimers(String name)
 	{
-		return allEventTimers.get(name);
+		return _allEventTimers.get(name);
 	}
 
 	public void cancelQuestTimers(String name)
@@ -328,7 +361,7 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			rwLock.writeLock().lock();
+			_rwLock.writeLock().lock();
 			for (QuestTimer timer : timers)
 			{
 				if (timer != null)
@@ -339,7 +372,7 @@ public class Quest extends ManagedScript
 		}
 		finally
 		{
-			rwLock.writeLock().unlock();
+			_rwLock.writeLock().unlock();
 		}
 	}
 
@@ -366,12 +399,12 @@ public class Quest extends ManagedScript
 		}
 		try
 		{
-			rwLock.writeLock().lock();
+			_rwLock.writeLock().lock();
 			timers.remove(timer);
 		}
 		finally
 		{
-			rwLock.writeLock().unlock();
+			_rwLock.writeLock().unlock();
 		}
 	}
 
@@ -626,19 +659,19 @@ public class Quest extends ManagedScript
 
 	public class TmpOnSkillSee implements Runnable
 	{
-		private L2Npc npc;
-		private L2PcInstance caster;
-		private L2Skill skill;
-		private L2Object[] targets;
-		private boolean isPet;
+		private L2Npc _npc;
+		private L2PcInstance _caster;
+		private L2Skill _skill;
+		private L2Object[] _targets;
+		private boolean _isPet;
 
 		public TmpOnSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 		{
-			this.npc = npc;
-			this.caster = caster;
-			this.skill = skill;
-			this.targets = targets;
-			this.isPet = isPet;
+			_npc = npc;
+			_caster = caster;
+			_skill = skill;
+			_targets = targets;
+			_isPet = isPet;
 		}
 
 		@Override
@@ -647,13 +680,13 @@ public class Quest extends ManagedScript
 			String res = null;
 			try
 			{
-				res = onSkillSee(npc, caster, skill, targets, isPet);
+				res = onSkillSee(_npc, _caster, _skill, _targets, _isPet);
 			}
 			catch (Exception e)
 			{
-				showError(caster, e);
+				showError(_caster, e);
 			}
-			showResult(caster, res);
+			showResult(_caster, res);
 		}
 	}
 
@@ -679,15 +712,15 @@ public class Quest extends ManagedScript
 
 	public class TmpOnAggroEnter implements Runnable
 	{
-		private L2Npc npc;
-		private L2PcInstance pc;
-		private boolean isPet;
+		private L2Npc _npc;
+		private L2PcInstance _pc;
+		private boolean _isPet;
 
 		public TmpOnAggroEnter(L2Npc npc, L2PcInstance pc, boolean isPet)
 		{
-			this.npc = npc;
-			this.pc = pc;
-			this.isPet = isPet;
+			_npc = npc;
+			_pc = pc;
+			_isPet = isPet;
 		}
 
 		@Override
@@ -696,13 +729,13 @@ public class Quest extends ManagedScript
 			String res = null;
 			try
 			{
-				res = onAggroRangeEnter(npc, pc, isPet);
+				res = onAggroRangeEnter(_npc, _pc, _isPet);
 			}
 			catch (Exception e)
 			{
-				showError(pc, e);
+				showError(_pc, e);
 			}
-			showResult(pc, res);
+			showResult(_pc, res);
 		}
 	}
 
@@ -1080,12 +1113,13 @@ public class Quest extends ManagedScript
 	/**
 	 * Add quests to the L2PCInstance of the player.<BR><BR>
 	 * <U><I>Action : </U></I><BR>
-	 * Add state of quests, drops and variables for quests in the HashMap quest of L2PcInstance
+	 * Add state of quests, drops and variables for quests in the HashMap _quest of L2PcInstance
 	 *
 	 * @param player : Player who is entering the world
 	 */
 	public static void playerEnter(L2PcInstance player)
 	{
+
 		Connection con = null;
 		try
 		{
@@ -1104,6 +1138,7 @@ public class Quest extends ManagedScript
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
 			{
+
 				// Get ID of the quest and ID of its state
 				String questId = rs.getString("name");
 				String statename = rs.getString("value");
@@ -1170,7 +1205,7 @@ public class Quest extends ManagedScript
 		}
 
 		// events
-		for (String name : allEventsS.keySet())
+		for (String name : _allEventsS.keySet())
 		{
 			player.processQuestEvent(name, "enter");
 		}
@@ -1891,7 +1926,7 @@ public class Quest extends ManagedScript
 	{
 		boolean questwindow = true;
 		if (fileName.endsWith(".html") ||
-				player.getQuestState(name) != null && player.getQuestState(name).getState() >= State.STARTED)
+				player.getQuestState(_name) != null && player.getQuestState(_name).getState() >= State.STARTED)
 		{
 			questwindow = false;
 		}
@@ -2107,14 +2142,14 @@ public class Quest extends ManagedScript
 		// if timers ought to be restarted, the quest can take care of it
 		// with its code (example: save global data indicating what timer must
 		// be restarted).
-		for (List<QuestTimer> timers : allEventTimers.values())
+		for (List<QuestTimer> timers : _allEventTimers.values())
 		{
 			for (QuestTimer timer : timers)
 			{
 				timer.cancel();
 			}
 		}
-		allEventTimers.clear();
+		_allEventTimers.clear();
 		if (removeFromList)
 		{
 			return QuestManager.getInstance().removeQuest(this);
@@ -2133,12 +2168,12 @@ public class Quest extends ManagedScript
 
 	public void setOnEnterWorld(boolean val)
 	{
-		onEnterWorld = val;
+		_onEnterWorld = val;
 	}
 
 	public boolean getOnEnterWorld()
 	{
-		return onEnterWorld;
+		return _onEnterWorld;
 	}
 
 	public int getOnKillDelay(int npcId)

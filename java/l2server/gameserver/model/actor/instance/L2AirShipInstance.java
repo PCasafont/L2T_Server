@@ -86,6 +86,7 @@ public class L2AirShipInstance extends L2Vehicle
 
 	public void setFuel(int f)
 	{
+
 	}
 
 	public int getMaxFuel()
@@ -95,6 +96,7 @@ public class L2AirShipInstance extends L2Vehicle
 
 	public void setMaxFuel(int mf)
 	{
+
 	}
 
 	@Override

@@ -37,7 +37,6 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
 
 import java.util.Collection;
 import java.util.logging.Level;
@@ -197,13 +196,13 @@ public class SummonItems implements IItemHandler
 
 	static class PetSummonFeedWait implements Runnable
 	{
-		private final L2PcInstance activeChar;
-		private final L2PetInstance petSummon;
+		private final L2PcInstance _activeChar;
+		private final L2PetInstance _petSummon;
 
 		PetSummonFeedWait(L2PcInstance activeChar, L2PetInstance petSummon)
 		{
-			this.activeChar = activeChar;
-			this.petSummon = petSummon;
+			_activeChar = activeChar;
+			_petSummon = petSummon;
 		}
 
 		@Override
@@ -211,18 +210,18 @@ public class SummonItems implements IItemHandler
 		{
 			try
 			{
-				if (petSummon.getCurrentFed() <= 0)
+				if (_petSummon.getCurrentFed() <= 0)
 				{
-					petSummon.unSummon(activeChar);
+					_petSummon.unSummon(_activeChar);
 				}
 				else
 				{
-					petSummon.startFeed();
+					_petSummon.startFeed();
 				}
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "", e);
+				_log.log(Level.SEVERE, "", e);
 			}
 		}
 	}
@@ -230,15 +229,15 @@ public class SummonItems implements IItemHandler
 	// TODO: this should be inside skill handler
 	static class PetSummonFinalizer implements Runnable
 	{
-		private final L2PcInstance activeChar;
-		private final L2ItemInstance item;
-		private final L2NpcTemplate npcTemplate;
+		private final L2PcInstance _activeChar;
+		private final L2ItemInstance _item;
+		private final L2NpcTemplate _npcTemplate;
 
 		PetSummonFinalizer(L2PcInstance activeChar, L2NpcTemplate npcTemplate, L2ItemInstance item)
 		{
-			this.activeChar = activeChar;
-			this.npcTemplate = npcTemplate;
-			this.item = item;
+			_activeChar = activeChar;
+			_npcTemplate = npcTemplate;
+			_item = item;
 		}
 
 		@Override
@@ -246,24 +245,24 @@ public class SummonItems implements IItemHandler
 		{
 			try
 			{
-				activeChar.sendPacket(new MagicSkillLaunched(activeChar, 2046, 1));
-				activeChar.setIsCastingNow(false);
+				_activeChar.sendPacket(new MagicSkillLaunched(_activeChar, 2046, 1));
+				_activeChar.setIsCastingNow(false);
 
 				// check for summon item validity
-				if (item == null || item.getOwnerId() != activeChar.getObjectId() ||
-						item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
+				if (_item == null || _item.getOwnerId() != _activeChar.getObjectId() ||
+						_item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
 				{
 					return;
 				}
 
-				final L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, activeChar, item);
+				final L2PetInstance petSummon = L2PetInstance.spawnPet(_npcTemplate, _activeChar, _item);
 				if (petSummon == null)
 				{
 					return;
 				}
 
 				petSummon.setShowSummonAnimation(true);
-				petSummon.setTitle(activeChar.getName());
+				petSummon.setTitle(_activeChar.getName());
 
 				if (!petSummon.isRespawned())
 				{
@@ -280,18 +279,18 @@ public class SummonItems implements IItemHandler
 					petSummon.store();
 				}
 
-				activeChar.setPet(petSummon);
+				_activeChar.setPet(petSummon);
 
 				//JIV remove - done on spawn
 				//L2World.getInstance().storeObject(petSummon);
-				petSummon.spawnMe(activeChar.getX() + 50, activeChar.getY() + 100, activeChar.getZ());
+				petSummon.spawnMe(_activeChar.getX() + 50, _activeChar.getY() + 100, _activeChar.getZ());
 				petSummon.startFeed();
-				item.setEnchantLevel(petSummon.getLevel());
+				_item.setEnchantLevel(petSummon.getLevel());
 
 				if (petSummon.getCurrentFed() <= 0)
 				{
 					ThreadPoolManager.getInstance()
-							.scheduleGeneral(new PetSummonFeedWait(activeChar, petSummon), 60000);
+							.scheduleGeneral(new PetSummonFeedWait(_activeChar, petSummon), 60000);
 				}
 				else
 				{
@@ -305,7 +304,7 @@ public class SummonItems implements IItemHandler
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "", e);
+				_log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

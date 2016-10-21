@@ -12,50 +12,50 @@ import java.util.Vector;
  */
 public class CoreMessage
 {
-	private final String message;
-	private final Vector<String> value = new Vector<>();
+	private final String _message;
+	private final Vector<String> _value = new Vector<>();
 
 	public CoreMessage(String message)
 	{
-		this.message = message;
+		_message = message;
 	}
 
 	public CoreMessage(int cmId)
 	{
 		CoreMessage cm = CoreMessageTable.getInstance().getMessage(cmId);
-		message = cm.message;
+		_message = cm._message;
 	}
 
 	public CoreMessage(CoreMessage cm)
 	{
-		message = cm.message;
+		_message = cm._message;
 	}
 
 	public String getString()
 	{
-		return message;
+		return _message;
 	}
 
 	public void addString(String text)
 	{
-		value.add(text);
+		_value.add(text);
 	}
 
 	public void addNumber(double num)
 	{
-		value.add(String.valueOf(num));
+		_value.add(String.valueOf(num));
 	}
 
 	public void addNumber(long num)
 	{
-		value.add(String.valueOf(num));
+		_value.add(String.valueOf(num));
 	}
 
 	public String renderMsg(String language)
 	{
-		String message = this.message;
+		String message = _message;
 		int i = 0;
-		for (String text : value)
+		for (String text : _value)
 		{
 			i++;
 			message = message.replace("$s" + i, text);

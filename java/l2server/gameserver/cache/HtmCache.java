@@ -20,7 +20,6 @@ import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -36,25 +35,25 @@ import java.util.logging.Level;
  */
 public class HtmCache implements Reloadable
 {
-	private final Map<Integer, String> cache;
+	private final Map<Integer, String> _cache;
 
-	@Getter private int loadedFiles;
-	private long bytesBuffLen;
+	private int _loadedFiles;
+	private long _bytesBuffLen;
 
 	public static HtmCache getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private HtmCache()
 	{
 		if (Config.LAZY_CACHE)
 		{
-			cache = new ConcurrentHashMap<>();
+			_cache = new ConcurrentHashMap<>();
 		}
 		else
 		{
-			cache = new HashMap<>();
+			_cache = new HashMap<>();
 		}
 		reload();
 
@@ -86,9 +85,9 @@ public class HtmCache implements Reloadable
 		}
 		else
 		{
-			cache.clear();
-			loadedFiles = 0;
-			bytesBuffLen = 0;
+			_cache.clear();
+			_loadedFiles = 0;
+			_bytesBuffLen = 0;
 			Log.info("Cache[HTML]: Running lazy cache");
 		}
 	}
@@ -101,7 +100,12 @@ public class HtmCache implements Reloadable
 
 	public double getMemoryUsage()
 	{
-		return (float) bytesBuffLen / 1048576;
+		return (float) _bytesBuffLen / 1048576;
+	}
+
+	public int getLoadedFiles()
+	{
+		return _loadedFiles;
 	}
 
 	private static class HtmFilter implements FileFilter
@@ -158,19 +162,19 @@ public class HtmCache implements Reloadable
 				content = new String(raw, "ISO-8859-1");
 				content = content.replaceAll("\r\n", "\n");
 
-				String oldContent = cache.get(hashcode);
+				String oldContent = _cache.get(hashcode);
 
 				if (oldContent == null)
 				{
-					bytesBuffLen += bytes;
-					loadedFiles++;
+					_bytesBuffLen += bytes;
+					_loadedFiles++;
 				}
 				else
 				{
-					bytesBuffLen = bytesBuffLen - oldContent.length() + bytes;
+					_bytesBuffLen = _bytesBuffLen - oldContent.length() + bytes;
 				}
 
-				cache.put(hashcode, content);
+				_cache.put(hashcode, content);
 
 				return content;
 			}
@@ -238,10 +242,10 @@ public class HtmCache implements Reloadable
 
 		if (content != null)
 		{
-			cache.put(customPath.hashCode(), content);
+			_cache.put(customPath.hashCode(), content);
 			if (newPath != null)
 			{
-				cache.put(newPath.hashCode(), content);
+				_cache.put(newPath.hashCode(), content);
 			}
 		}
 
@@ -256,7 +260,7 @@ public class HtmCache implements Reloadable
 		}
 
 		final int hashCode = path.hashCode();
-		String content = cache.get(hashCode);
+		String content = _cache.get(hashCode);
 
 		if (Config.LAZY_CACHE && content == null)
 		{
@@ -268,7 +272,7 @@ public class HtmCache implements Reloadable
 
 	public boolean contains(String path)
 	{
-		return cache.containsKey(path.hashCode());
+		return _cache.containsKey(path.hashCode());
 	}
 
 	/**
@@ -290,11 +294,12 @@ public class HtmCache implements Reloadable
 		filter = new HtmFilter();
 
 		return file.exists() && filter.accept(file) && !file.isDirectory();
+
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final HtmCache instance = new HtmCache();
+		protected static final HtmCache _instance = new HtmCache();
 	}
 }

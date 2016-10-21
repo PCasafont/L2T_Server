@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerAgathionId extends Condition
 {
-	private final int agathionId;
+	private final int _agathionId;
 
 	/**
 	 * Instantiates a new condition player agathion id.
@@ -32,7 +32,7 @@ public class ConditionPlayerAgathionId extends Condition
 	 */
 	public ConditionPlayerAgathionId(int agathionId)
 	{
-		this.agathionId = agathionId;
+		_agathionId = agathionId;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ConditionPlayerAgathionId extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((L2PcInstance) env.player).getAgathionId() == agathionId;
+		return ((L2PcInstance) env.player).getAgathionId() == _agathionId;
 	}
 }

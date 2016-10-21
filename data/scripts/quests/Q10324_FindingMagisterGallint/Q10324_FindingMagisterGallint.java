@@ -32,15 +32,15 @@ public class Q10324_FindingMagisterGallint extends Quest
 	public static String qn = "Q10324_FindingMagisterGallint";
 
 	// NPC
-	private int shannon = 32974;
-	private int gallint = 32980;
+	private int _shannon = 32974;
+	private int _gallint = 32980;
 
 	public Q10324_FindingMagisterGallint(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(shannon);
-		addTalkId(shannon);
-		addTalkId(gallint);
+		addStartNpc(_shannon);
+		addTalkId(_shannon);
+		addTalkId(_gallint);
 	}
 
 	@Override
@@ -54,13 +54,13 @@ public class Q10324_FindingMagisterGallint extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-03.htm"))
+		if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 11000);
@@ -85,7 +85,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == shannon)
+		if (npc.getNpcId() == _shannon)
 		{
 			switch (st.getState())
 			{
@@ -107,7 +107,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == gallint && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == _gallint && st.getInt("cond") == 1)
 		{
 			htmltext = "32980-01.htm";
 		}

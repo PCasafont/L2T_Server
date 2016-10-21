@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.log.Log;
 
 import java.util.Map;
 
@@ -60,13 +59,13 @@ public class ItemSkillsTemplate implements IItemHandler
 			return;
 		}
 		/*
-		 * FIXME: check this, maybe useful
+         * FIXME: check this, maybe useful
 		if (!InstancedEvent.onScrollUse(playable.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		*/
+		 */
 
 		//LasTravel
 		if (activeChar.getIsInsideGMEvent())
@@ -146,7 +145,7 @@ public class ItemSkillsTemplate implements IItemHandler
 							case 26026:
 							case 25000:
 							case 25001:
-								int buffId = activeChar.shortBuffTaskSkillId;
+								int buffId = activeChar._shortBuffTaskSkillId;
 								// greater healing potions
 								if (skillId == 2037 || skillId == 26025)
 								{
@@ -228,7 +227,7 @@ public class ItemSkillsTemplate implements IItemHandler
 		}
 		else
 		{
-			Log.info("Item " + item + " does not have registered any skill for handler.");
+			_log.info("Item " + item + " does not have registered any skill for handler.");
 		}
 	}
 

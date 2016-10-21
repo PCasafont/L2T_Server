@@ -37,20 +37,22 @@ import java.util.List;
  */
 public class RequestAcquireSkill extends L2GameClientPacket
 {
-	private int id;
-	private int level;
-	@SuppressWarnings("unused") private int enchantHash;
-	private int skillType;
+
+	private int _id;
+	private int _level;
+	@SuppressWarnings("unused")
+	private int _enchantHash;
+	private int _skillType;
 	private int subType;
 
 	@Override
 	protected void readImpl()
 	{
-		id = readD();
-		level = readH();
-		enchantHash = readH();
-		skillType = readD();
-		if (skillType == 3)
+		_id = readD();
+		_level = readH();
+		_enchantHash = readH();
+		_skillType = readD();
+		if (_skillType == 3)
 		{
 			subType = readD();
 		}
@@ -72,11 +74,11 @@ public class RequestAcquireSkill extends L2GameClientPacket
 			return;
 		}
 
-		if (level < 1 || level > 100 || id < 1 || id > 32000)
+		if (_level < 1 || _level > 100 || _id < 1 || _id > 32000)
 		{
 			Util.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
 			Log.warning(
-					"Recived Wrong Packet Data in Aquired Skill - id: " + id + " level: " + level + " for " + player);
+					"Recived Wrong Packet Data in Aquired Skill - id: " + _id + " level: " + _level + " for " + player);
 			return;
 		}
 
@@ -86,18 +88,18 @@ public class RequestAcquireSkill extends L2GameClientPacket
 		 * you want to learn Aggression lvl 5, thus skipping lvl 4.) or the packet sends the same level or lower (eg: Aggression lvl 3 and the
 		 * packet sends info that you want to learn Aggression level 3).
 		 */
-		if (Math.max(player.getSkillLevel(id), 0) + 1 != level && !(skillType == 3 || skillType == 4))
+		if (Math.max(player.getSkillLevel(_id), 0) + 1 != _level && !(_skillType == 3 || _skillType == 4))
 		{
 			return;
 		}
 
 		int knownEnchant = 0;
-		L2Skill knownSkill = player.getKnownSkill(id);
+		L2Skill knownSkill = player.getKnownSkill(_id);
 		if (knownSkill != null)
 		{
 			knownEnchant = knownSkill.getEnchantHash();
 		}
-		final L2Skill skill = SkillTable.getInstance().getInfo(id, level, knownEnchant);
+		final L2Skill skill = SkillTable.getInstance().getInfo(_id, _level, knownEnchant);
 
 		// Finding out if it's a clan skill
 		if (player.getClan() != null)
@@ -108,7 +110,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				if (sk == skill)
 				{
-					skillType = 2;
+					_skillType = 2;
 					break;
 				}
 			}
@@ -117,7 +119,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 		int counts = 0;
 		int requiredSp = 10000000;
 
-		switch (skillType)
+		switch (_skillType)
 		{
 			case 0:
 			{
@@ -208,7 +210,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 					// divine inspiration require book for each level
 					if (Config.DIVINE_SP_BOOK_NEEDED && skill.getId() == L2Skill.SKILL_DIVINE_INSPIRATION)
 					{
-						switch (level)
+						switch (_level)
 						{
 							case 1:
 								spbId = 8618; // Ancient Book - Divine Inspiration (Modern Language Version)
@@ -352,7 +354,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 
 				if (Config.DEBUG)
 				{
-					Log.fine("Learned pledge skill " + id + " for " + requiredSp + " SP.");
+					Log.fine("Learned pledge skill " + _id + " for " + requiredSp + " SP.");
 				}
 
 				SystemMessage cr = SystemMessage.getSystemMessage(SystemMessageId.S1_DEDUCTED_FROM_CLAN_REP);
@@ -447,7 +449,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 			{
 				int reqItem;
 				int cost;
-				if (skillType == 4)
+				if (_skillType == 4)
 				{
 					reqItem = CertificateSkillTable.SUBCLASS_CERTIFICATE;
 					cost = CertificateSkillTable.getInstance().getSubClassSkillCost(skill.getId());
@@ -548,7 +550,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 			}
 			default:
 			{
-				Log.warning("Recived Wrong Packet Data in Aquired Skill - unk1:" + skillType);
+				Log.warning("Recived Wrong Packet Data in Aquired Skill - unk1:" + _skillType);
 				return;
 			}
 		}
@@ -557,7 +559,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 		L2SkillLearn learned = null;
 		if (pClass != null)
 		{
-			learned = pClass.getSkills().get(SkillTable.getSkillHashCode(id, level));
+			learned = pClass.getSkills().get(SkillTable.getSkillHashCode(_id, _level));
 		}
 
 		if (learned != null)
@@ -587,17 +589,17 @@ public class RequestAcquireSkill extends L2GameClientPacket
 		{
 			if (!(trainer instanceof L2TransformManagerInstance))
 			{
-				Log.warning("RequestAcquireSkill: null skill (id: " + id + " class: " + player.getActiveClass() + ")");
+				Log.warning("RequestAcquireSkill: null skill (id: " + _id + " class: " + player.getActiveClass() + ")");
 				return;
 			}
 		}
 
 		if (Config.DEBUG)
 		{
-			Log.fine("Learned skill " + id + " for " + requiredSp + " SP.");
+			Log.fine("Learned skill " + _id + " for " + requiredSp + " SP.");
 		}
 
-		if (skillType != 3 && skillType != 2)
+		if (_skillType != 3 && _skillType != 2)
 		{
 			player.setSp(player.getSp() - requiredSp);
 
@@ -620,11 +622,11 @@ public class RequestAcquireSkill extends L2GameClientPacket
 				showSkillList(trainer, player);
 			}
 		}
-		else if (skillType == 4)
+		else if (_skillType == 4)
 		{
 			CertificateSkillTable.getInstance().sendSubClassSkillList(player);
 		}
-		else if (skillType == 5)
+		else if (_skillType == 5)
 		{
 			CertificateSkillTable.getInstance().sendDualClassSkillList(player);
 		}
@@ -633,15 +635,15 @@ public class RequestAcquireSkill extends L2GameClientPacket
 	private void updateShortCuts(L2PcInstance player)
 	{
 		// update all the shortcuts to this skill
-		if (level > 1)
+		if (_level > 1)
 		{
 			L2ShortCut[] allShortCuts = player.getAllShortCuts();
 
 			for (L2ShortCut sc : allShortCuts)
 			{
-				if (sc != null && sc.getId() == id && sc.getType() == L2ShortCut.TYPE_SKILL)
+				if (sc != null && sc.getId() == _id && sc.getType() == L2ShortCut.TYPE_SKILL)
 				{
-					L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), level, 1);
+					L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), _level, 1);
 					player.sendPacket(new ShortCutRegister(newsc));
 					player.registerShortCut(newsc);
 				}
@@ -651,7 +653,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 
 	private void showSkillList(L2Npc trainer, L2PcInstance player)
 	{
-		if (skillType == 4)
+		if (_skillType == 4)
 		{
 			Quest[] qlst = trainer.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_LEARN);
 			qlst[0].notifyAcquireSkillList(trainer, player);
@@ -666,7 +668,7 @@ public class RequestAcquireSkill extends L2GameClientPacket
 		}
 
 		// if skill is expand sendpacket :)
-		if (id >= 1368 && id <= 1372)
+		if (_id >= 1368 && _id <= 1372)
 		{
 			player.sendPacket(new ExStorageMaxCount(player));
 		}

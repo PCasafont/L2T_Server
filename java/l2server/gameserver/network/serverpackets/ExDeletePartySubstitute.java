@@ -20,6 +20,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExDeletePartySubstitute extends L2GameServerPacket
 {
+
 	public ExDeletePartySubstitute()
 	{
 	}

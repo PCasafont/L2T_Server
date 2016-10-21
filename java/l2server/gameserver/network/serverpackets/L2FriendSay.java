@@ -29,22 +29,23 @@ package l2server.gameserver.network.serverpackets;
  */
 public class L2FriendSay extends L2GameServerPacket
 {
-	private String sender, receiver, message;
+
+	private String _sender, _receiver, _message;
 
 	public L2FriendSay(String sender, String reciever, String message)
 	{
-		this.sender = sender;
-		receiver = reciever;
+		_sender = sender;
+		_receiver = reciever;
 
-		this.message = message;
+		_message = message;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(0); // ??
-		writeS(receiver);
-		writeS(sender);
-		writeS(message);
+		writeS(_receiver);
+		writeS(_sender);
+		writeS(_message);
 	}
 }

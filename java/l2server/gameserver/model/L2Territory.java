@@ -24,7 +24,6 @@ package l2server.gameserver.model;
 
 import l2server.log.Log;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,91 +32,91 @@ public class L2Territory
 {
 	public static class Point
 	{
-		public int x, y, zmin, zmax, proc;
+		public int _x, _y, _zmin, _zmax, _proc;
 
 		Point(int x, int y, int zmin, int zmax, int proc)
 		{
-			this.x = x;
-			this.y = y;
-			this.zmin = zmin;
-			this.zmax = zmax;
-			this.proc = proc;
+			_x = x;
+			_y = y;
+			_zmin = zmin;
+			_zmax = zmax;
+			_proc = proc;
 		}
 	}
 
-	@Getter private List<Point> points;
-	private int terr;
-	private int xMin;
-	private int xMax;
-	private int yMin;
-	private int yMax;
-	private int zMin;
-	private int zMax;
-	@Getter private int procMax;
+	private List<Point> _points;
+	private int _terr;
+	private int _xMin;
+	private int _xMax;
+	private int _yMin;
+	private int _yMax;
+	private int _zMin;
+	private int _zMax;
+	private int _procMax;
 
 	public L2Territory(int terr)
 	{
-		points = new ArrayList<>();
-		this.terr = terr;
-		xMin = 999999;
-		xMax = -999999;
-		yMin = 999999;
-		yMax = -999999;
-		zMin = 999999;
-		zMax = -999999;
-		procMax = 0;
+		_points = new ArrayList<>();
+		_terr = terr;
+		_xMin = 999999;
+		_xMax = -999999;
+		_yMin = 999999;
+		_yMax = -999999;
+		_zMin = 999999;
+		_zMax = -999999;
+		_procMax = 0;
 	}
 
 	public void add(int x, int y, int zmin, int zmax, int proc)
 	{
-		points.add(new Point(x, y, zmin, zmax, proc));
-		if (x < xMin)
+		_points.add(new Point(x, y, zmin, zmax, proc));
+		if (x < _xMin)
 		{
-			xMin = x;
+			_xMin = x;
 		}
-		if (y < yMin)
+		if (y < _yMin)
 		{
-			yMin = y;
+			_yMin = y;
 		}
-		if (x > xMax)
+		if (x > _xMax)
 		{
-			xMax = x;
+			_xMax = x;
 		}
-		if (y > yMax)
+		if (y > _yMax)
 		{
-			yMax = y;
+			_yMax = y;
 		}
-		if (zmin < zMin)
+		if (zmin < _zMin)
 		{
-			zMin = zmin;
+			_zMin = zmin;
 		}
-		if (zmax > zMax)
+		if (zmax > _zMax)
 		{
-			zMax = zmax;
+			_zMax = zmax;
 		}
-		procMax += proc;
+		_procMax += proc;
 	}
 
 	public void print()
 	{
-		for (Point p : points)
+		for (Point p : _points)
 		{
-			Log.info("(" + p.x + "," + p.y + ")");
+			Log.info("(" + p._x + "," + p._y + ")");
 		}
 	}
 
 	public boolean isIntersect(int x, int y, Point p1, Point p2)
 	{
-		double dy1 = p1.y - y;
-		double dy2 = p2.y - y;
+		double dy1 = p1._y - y;
+		double dy2 = p2._y - y;
 
 		if (Math.signum(dy1) == Math.signum(dy2))
 		{
 			return false;
 		}
 
-		double dx1 = p1.x - x;
-		double dx2 = p2.x - x;
+		double dx1 = p1._x - x;
+		double dx2 = p2._x - x;
 
 		if (dx1 >= 0 && dx2 >= 0)
 		{
@@ -129,7 +128,7 @@ public class L2Territory
 			return false;
 		}
 
-		double dx0 = dy1 * (p1.x - p2.x) / (p1.y - p2.y);
+		double dx0 = dy1 * (p1._x - p2._x) / (p1._y - p2._y);
 
 		return dx0 <= dx1;
 	}
@@ -137,10 +136,10 @@ public class L2Territory
 	public boolean isInside(int x, int y)
 	{
 		int intersect_count = 0;
-		for (int i = 0; i < points.size(); i++)
+		for (int i = 0; i < _points.size(); i++)
 		{
-			Point p1 = points.get(i > 0 ? i - 1 : points.size() - 1);
-			Point p2 = points.get(i);
+			Point p1 = _points.get(i > 0 ? i - 1 : _points.size() - 1);
+			Point p2 = _points.get(i);
 
 			if (isIntersect(x, y, p1, p2))
 			{
@@ -154,57 +153,67 @@ public class L2Territory
 	public int[] getRandomPoint()
 	{
 		int[] p = new int[4];
-		if (procMax > 0)
+		if (_procMax > 0)
 		{
 			int pos = 0;
-			int rnd = Rnd.nextInt(procMax);
-			for (Point p1 : points)
+			int rnd = Rnd.nextInt(_procMax);
+			for (Point p1 : _points)
 			{
-				pos += p1.proc;
+				pos += p1._proc;
 				if (rnd <= pos)
 				{
-					p[0] = p1.x;
-					p[1] = p1.y;
-					p[2] = p1.zmin;
-					p[3] = p1.zmax;
+					p[0] = p1._x;
+					p[1] = p1._y;
+					p[2] = p1._zmin;
+					p[3] = p1._zmax;
 					return p;
 				}
 			}
 		}
 		for (int i = 0; i < 100; i++)
 		{
-			p[0] = Rnd.get(xMin, xMax);
-			p[1] = Rnd.get(yMin, yMax);
+			p[0] = Rnd.get(_xMin, _xMax);
+			p[1] = Rnd.get(_yMin, _yMax);
 			if (isInside(p[0], p[1]))
 			{
 				double curdistance = 0;
-				p[2] = zMin + 100;
-				p[3] = zMax;
-				for (Point p1 : points)
+				p[2] = _zMin + 100;
+				p[3] = _zMax;
+				for (Point p1 : _points)
 				{
-					double dx = p1.x - p[0];
-					double dy = p1.y - p[1];
+					double dx = p1._x - p[0];
+					double dy = p1._y - p[1];
 					double distance = Math.sqrt(dx * dx + dy * dy);
 					if (curdistance == 0 || distance < curdistance)
 					{
 						curdistance = distance;
-						p[2] = p1.zmin + 100;
+						p[2] = p1._zmin + 100;
 					}
 				}
 				return p;
 			}
 		}
-		Log.warning("Can't make point for territory " + terr);
+		Log.warning("Can't make point for territory " + _terr);
 		return p;
+	}
+
+	public int getProcMax()
+	{
+		return _procMax;
 	}
 
 	public int getMinZ()
 	{
-		return zMin;
+		return _zMin;
 	}
 
 	public int getMaxZ()
 	{
-		return zMax;
+		return _zMax;
+	}
+
+	public List<Point> getPoints()
+	{
+		return _points;
 	}
 }

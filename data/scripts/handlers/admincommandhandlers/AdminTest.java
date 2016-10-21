@@ -76,8 +76,8 @@ public class AdminTest implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
-	private List<L2NpcTemplate> npcTemplates = new ArrayList<L2NpcTemplate>();
-	private List<Location> coords = new ArrayList<Location>();
+	private List<L2NpcTemplate> _npcTemplates = new ArrayList<L2NpcTemplate>();
+	private List<Location> _coords = new ArrayList<Location>();
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
@@ -700,19 +700,19 @@ public class AdminTest implements IAdminCommandHandler
 			}
 			else if (secondaryCommand.equals("GrabPosition"))
 			{
-				coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
+				_coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
 
 				activeChar.sendMessage("Recorded current position.");
 			}
 			else if (secondaryCommand.equals("ClearPositions"))
 			{
-				coords.clear();
+				_coords.clear();
 
 				activeChar.sendMessage("Cleared recorded positions.");
 			}
 			else if (secondaryCommand.equals("PrintPositions"))
 			{
-				for (Location l : coords)
+				for (Location l : _coords)
 				{
 					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
 				}
@@ -725,25 +725,25 @@ public class AdminTest implements IAdminCommandHandler
 					{
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 
-						if (npcTemplates.contains(monster.getTemplate()))
+						if (_npcTemplates.contains(monster.getTemplate()))
 						{
 							continue;
 						}
 
-						npcTemplates.add(monster.getTemplate());
+						_npcTemplates.add(monster.getTemplate());
 						activeChar.sendMessage("Added " + monster.getName() + ".");
 					}
 				}
 			}
 			else if (secondaryCommand.equals("ClearNpcs"))
 			{
-				npcTemplates.clear();
+				_npcTemplates.clear();
 
 				activeChar.sendMessage("Templates cleared.");
 			}
 			else if (secondaryCommand.equals("PrintDropsForNpcs"))
 			{
-				for (L2NpcTemplate npcTemplate : npcTemplates)
+				for (L2NpcTemplate npcTemplate : _npcTemplates)
 				{
 					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
 					System.out.println("\t\t<droplist>");
@@ -941,7 +941,7 @@ public class AdminTest implements IAdminCommandHandler
 
 					String toLog = "";
 					/*
-					toLog += "\t<item>\n";
+                    toLog += "\t<item>\n";
 					toLog += "\t\t<ingredient id=\"50009\" count=\"250\" /> <!-- Raid Heart -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"75\" /> <!-- " + baseItemName + " -->\n";
@@ -968,14 +968,14 @@ public class AdminTest implements IAdminCommandHandler
 					toLog += "\t\t<production id=\"" + itemTemplates[2].getItemId() + "\" count=\"1\" chance=\"10\" /> <!-- " + itemTemplates[2].getName() + " -->\n";
 					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" chance=\"90\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
 					toLog += "\t</item>\n";
-					*/
+					 */
 
 					/*
 					toLog += "\t<item id=\"" + itemId + "\" type=\"Weapon\" name=\"" + baseItemName + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[0].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[0].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[1].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[1].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[2].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[2].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
-					*/
+					 */
 
 					toLog += "case " + itemId + ": // " + baseItemName + "\n";
 					toLog += "case " + itemTemplates[0].getItemId() + ": // " + itemTemplates[0].getName() + "\n";
@@ -1206,19 +1206,19 @@ public class AdminTest implements IAdminCommandHandler
 			caster = (L2Character) target;
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(id, 1);
-		if (skill != null)
+		L2Skill _skill = SkillTable.getInstance().getInfo(id, 1);
+		if (_skill != null)
 		{
 			caster.setTarget(activeChar);
 			if (msu)
 			{
 				caster.broadcastPacket(
-						new MagicSkillUse(caster, activeChar, id, 1, skill.getHitTime(), skill.getReuseDelay(),
-								skill.getReuseHashCode(), 0, 0));
+						new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill.getReuseDelay(),
+								_skill.getReuseHashCode(), 0, 0));
 			}
 			else
 			{
-				caster.doCast(skill);
+				caster.doCast(_skill);
 			}
 		}
 	}

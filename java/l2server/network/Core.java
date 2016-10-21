@@ -43,12 +43,12 @@ public final class Core<T extends MMOClient<?>> extends Thread
 	// default HEADER_SIZE
 	private static final int HEADER_SIZE = 2;
 	// Selector
-	private final Selector selector;
+	private final Selector _selector;
 	// Implementations
-	private final IPacketHandler<T> packetHandler;
-	private final IMMOExecutor<T> executor;
-	private final IClientFactory<T> clientFactory;
-	private final IAcceptFilter acceptFilter;
+	private final IPacketHandler<T> _packetHandler;
+	private final IMMOExecutor<T> _executor;
+	private final IClientFactory<T> _clientFactory;
+	private final IAcceptFilter _acceptFilter;
 	// Configurations
 	private final int HELPER_BUFFER_SIZE;
 	private final int HELPER_BUFFER_COUNT;
@@ -63,11 +63,11 @@ public final class Core<T extends MMOClient<?>> extends Thread
 	// String Buffer
 	private final NioNetStringBuffer STRING_BUFFER;
 	// ByteBuffers General Purpose Pool
-	private final ArrayList<ByteBuffer> bufferPool;
+	private final ArrayList<ByteBuffer> _bufferPool;
 	// Pending Close
-	private final NioNetStackList<MMOConnection<T>> pendingClose;
+	private final NioNetStackList<MMOConnection<T>> _pendingClose;
 
-	private boolean shutdown;
+	private boolean _shutdown;
 
 	public Core(final CoreConfig sc, final IMMOExecutor<T> executor, final IPacketHandler<T> packetHandler, final IClientFactory<T> clientFactory, final IAcceptFilter acceptFilter) throws
 			IOException
@@ -87,19 +87,19 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		STRING_BUFFER = new NioNetStringBuffer(64 * 1024);
 
-		pendingClose = new NioNetStackList<>();
-		bufferPool = new ArrayList<>();
+		_pendingClose = new NioNetStackList<>();
+		_bufferPool = new ArrayList<>();
 
 		for (int i = 0; i < HELPER_BUFFER_COUNT; i++)
 		{
-			bufferPool.add(ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER));
+			_bufferPool.add(ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER));
 		}
 
-		this.acceptFilter = acceptFilter;
-		this.packetHandler = packetHandler;
-		this.clientFactory = clientFactory;
-		this.executor = executor;
-		selector = Selector.open();
+		_acceptFilter = acceptFilter;
+		_packetHandler = packetHandler;
+		_clientFactory = clientFactory;
+		_executor = executor;
+		_selector = Selector.open();
 	}
 
 	public final void openServerSocket(InetAddress address, int tcpPort) throws IOException
@@ -118,25 +118,25 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			ss.bind(new InetSocketAddress(address, tcpPort));
 		}
 
-		selectable.register(selector, SelectionKey.OP_ACCEPT);
+		selectable.register(_selector, SelectionKey.OP_ACCEPT);
 	}
 
 	final ByteBuffer getPooledBuffer()
 	{
-		if (bufferPool.isEmpty())
+		if (_bufferPool.isEmpty())
 		{
 			return ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER);
 		}
 
-		return bufferPool.remove(0);
+		return _bufferPool.remove(0);
 	}
 
 	final void recycleBuffer(final ByteBuffer buf)
 	{
-		if (bufferPool.size() < HELPER_BUFFER_COUNT)
+		if (_bufferPool.size() < HELPER_BUFFER_COUNT)
 		{
 			buf.clear();
-			bufferPool.add(buf);
+			_bufferPool.add(buf);
 		}
 	}
 
@@ -151,11 +151,11 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		Iterator<SelectionKey> selectedKeys;
 
-		while (!shutdown)
+		while (!_shutdown)
 		{
 			try
 			{
-				selectedKeysCount = selector.selectNow();
+				selectedKeysCount = _selector.selectNow();
 			}
 			catch (IOException e)
 			{
@@ -164,7 +164,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 			if (selectedKeysCount > 0)
 			{
-				selectedKeys = selector.selectedKeys().iterator();
+				selectedKeys = _selector.selectedKeys().iterator();
 
 				while (selectedKeys.hasNext())
 				{
@@ -198,13 +198,13 @@ public final class Core<T extends MMOClient<?>> extends Thread
 				}
 			}
 
-			synchronized (pendingClose)
+			synchronized (_pendingClose)
 			{
-				while (!pendingClose.isEmpty())
+				while (!_pendingClose.isEmpty())
 				{
 					try
 					{
-						con = pendingClose.removeFirst();
+						con = _pendingClose.removeFirst();
 						writeClosePacket(con);
 						closeConnectionImpl(con.getSelectionKey(), con);
 					}
@@ -256,12 +256,12 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		{
 			while ((sc = ssc.accept()) != null)
 			{
-				if (acceptFilter == null || acceptFilter.accept(sc))
+				if (_acceptFilter == null || _acceptFilter.accept(sc))
 				{
 					sc.configureBlocking(false);
-					SelectionKey clientKey = sc.register(selector, SelectionKey.OP_READ);
+					SelectionKey clientKey = sc.register(_selector, SelectionKey.OP_READ);
 					con = new MMOConnection<>(this, sc.socket(), clientKey, TCP_NODELAY);
-					con.setClient(clientFactory.create(con));
+					con.setClient(_clientFactory.create(con));
 					clientKey.attach(con);
 				}
 				else
@@ -446,21 +446,21 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			// apply limit
 			final int limit = buf.limit();
 			buf.limit(pos + dataSize);
-			final ReceivablePacket<T> cp = packetHandler.handlePacket(buf, client);
+			final ReceivablePacket<T> cp = _packetHandler.handlePacket(buf, client);
 
 			if (cp != null)
 			{
-				cp.buf = buf;
-				cp.sbuf = STRING_BUFFER;
-				cp.client = client;
+				cp._buf = buf;
+				cp._sbuf = STRING_BUFFER;
+				cp._client = client;
 
 				if (cp.read())
 				{
-					executor.execute(cp);
+					_executor.execute(cp);
 				}
 
-				cp.buf = null;
-				cp.sbuf = null;
+				cp._buf = null;
+				cp._sbuf = null;
 			}
 			buf.limit(limit);
 		}
@@ -615,15 +615,15 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		WRITE_BUFFER.position(dataPos);
 
 		// set client
-		sp.writeClient = client;
+		sp._writeClient = client;
 		// set the write buffer
-		sp.buf = WRITE_BUFFER;
+		sp._buf = WRITE_BUFFER;
 		// write content to buffer
 		sp.write();
 		// delete the write buffer
-		sp.buf = null;
+		sp._buf = null;
 		// release client
-		sp.writeClient = null;
+		sp._writeClient = null;
 
 		// size (inclusive header)
 		int dataSize = WRITE_BUFFER.position() - dataPos;
@@ -642,9 +642,9 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 	final void closeConnection(final MMOConnection<T> con)
 	{
-		synchronized (pendingClose)
+		synchronized (_pendingClose)
 		{
-			pendingClose.addLast(con);
+			_pendingClose.addLast(con);
 		}
 	}
 
@@ -679,12 +679,12 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 	public final void shutdown()
 	{
-		shutdown = true;
+		_shutdown = true;
 	}
 
 	protected void closeSelectorThread()
 	{
-		for (final SelectionKey key : selector.keys())
+		for (final SelectionKey key : _selector.keys())
 		{
 			try
 			{
@@ -698,7 +698,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 
 		try
 		{
-			selector.close();
+			_selector.close();
 		}
 		catch (IOException e)
 		{

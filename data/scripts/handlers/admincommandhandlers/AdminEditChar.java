@@ -31,7 +31,6 @@ import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.StringUtil;
 
 import java.sql.Connection;
@@ -73,7 +72,7 @@ import java.util.logging.Logger;
  */
 public class AdminEditChar implements IAdminCommandHandler
 {
-	private static Logger log = Logger.getLogger(AdminEditChar.class.getName());
+	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_edit_character", "admin_current_player", "admin_nokarma",
@@ -248,7 +247,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					Log.warning("Set karma error: " + e);
+					_log.warning("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
@@ -278,7 +277,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					Log.warning("Set pk error: " + e);
+					_log.warning("Set pk error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
@@ -308,7 +307,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					Log.warning("Set pvp error: " + e);
+					_log.warning("Set pvp error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
@@ -338,7 +337,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					Log.warning("Set Fame error: " + e);
+					_log.warning("Set Fame error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
@@ -1052,7 +1051,7 @@ public class AdminEditChar implements IAdminCommandHandler
 						").");
 		if (Config.DEBUG)
 		{
-			Log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
+			_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
 					oldKarma + ") to (" + newKarma + ").");
 		}
 	}
@@ -1118,7 +1117,7 @@ public class AdminEditChar implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			Log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
+			_log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
 					" MP: " + mpval + " CP: " + cpval + " PvP: " + pvpflagval + " / " + pvpkillsval);
 		}
 

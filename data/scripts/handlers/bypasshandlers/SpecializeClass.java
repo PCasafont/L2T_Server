@@ -94,7 +94,7 @@ public class SpecializeClass implements IBypassHandler
 			if (activeChar.getClassId() == activeChar.getBaseClass())
 			{
 				/*if (activeChar.isHero())
-				{
+                {
 					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're a hero!", 6000));
 					return false;
 				}

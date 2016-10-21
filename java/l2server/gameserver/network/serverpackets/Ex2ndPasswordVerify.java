@@ -20,22 +20,23 @@ package l2server.gameserver.network.serverpackets;
  */
 public class Ex2ndPasswordVerify extends L2GameServerPacket
 {
+
 	public static final int PASSWORD_OK = 0x00;
 	public static final int PASSWORD_WRONG = 0x01;
 	public static final int PASSWORD_BAN = 0x02;
 
-	int wrongTentatives, mode;
+	int _wrongTentatives, _mode;
 
 	public Ex2ndPasswordVerify(int mode, int wrongTentatives)
 	{
-		this.mode = mode;
-		this.wrongTentatives = wrongTentatives;
+		_mode = mode;
+		_wrongTentatives = wrongTentatives;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(mode);
-		writeD(wrongTentatives);
+		writeD(_mode);
+		writeD(_wrongTentatives);
 	}
 }

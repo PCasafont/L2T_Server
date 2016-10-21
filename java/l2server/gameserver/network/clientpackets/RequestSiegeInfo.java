@@ -23,6 +23,7 @@ package l2server.gameserver.network.clientpackets;
  */
 public class RequestSiegeInfo extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

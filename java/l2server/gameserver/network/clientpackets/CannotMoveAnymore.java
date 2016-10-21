@@ -28,18 +28,19 @@ import l2server.log.Log;
  */
 public final class CannotMoveAnymore extends L2GameClientPacket
 {
-	private int x;
-	private int y;
-	private int z;
-	private int heading;
+
+	private int _x;
+	private int _y;
+	private int _z;
+	private int _heading;
 
 	@Override
 	protected void readImpl()
 	{
-		x = readD();
-		y = readD();
-		z = readD();
-		heading = readD();
+		_x = readD();
+		_y = readD();
+		_z = readD();
+		_heading = readD();
 	}
 
 	@Override
@@ -53,30 +54,31 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine("client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() +
-					" z:" + player.getZ());
+			Log.fine(
+					"client: x:" + _x + " y:" + _y + " z:" + _z + " server x:" + player.getX() + " y:" + player.getY() +
+							" z:" + player.getZ());
 		}
 
 		if (player.getAI() != null)
 		{
-			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(x, y, z, heading));
+			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(_x, _y, _z, _heading));
 		}
 		/*if (player.getParty() != null)
-		{
+        {
 			player.getParty().broadcastToPartyMembers(player, new PartyMemberPosition(player));
 		}*/
 
 		// player.stopMove();
 		//
 		// if (Config.DEBUG)
-		// Log.fine("client: x:"+_x+" y:"+_y+" z:"+_z+
+		// Logozo.fine("client: x:"+_x+" y:"+_y+" z:"+_z+
 		// " server x:"+player.getX()+" y:"+player.getZ()+" z:"+player.getZ());
 		// StopMove smwl = new StopMove(player);
 		// getClient().getActiveChar().sendPacket(smwl);
 		// getClient().getActiveChar().broadcastPacket(smwl);
 		//
 		// StopRotation sr = new StopRotation(getClient().getActiveChar(),
-		// heading);
+		// _heading);
 		// getClient().getActiveChar().sendPacket(sr);
 		// getClient().getActiveChar().broadcastPacket(sr);
 	}

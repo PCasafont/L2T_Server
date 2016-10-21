@@ -28,14 +28,15 @@ import l2server.gameserver.model.olympiad.HeroesManager;
  */
 public final class RequestWriteHeroWords extends L2GameClientPacket
 {
-	private String heroWords;
+
+	private String _heroWords;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		heroWords = readS();
+		_heroWords = readS();
 	}
 
 	@Override
@@ -47,11 +48,11 @@ public final class RequestWriteHeroWords extends L2GameClientPacket
 			return;
 		}
 
-		if (heroWords == null || heroWords.length() > 300)
+		if (_heroWords == null || _heroWords.length() > 300)
 		{
 			return;
 		}
 
-		HeroesManager.getInstance().setHeroMessage(player, heroWords);
+		HeroesManager.getInstance().setHeroMessage(player, _heroWords);
 	}
 }

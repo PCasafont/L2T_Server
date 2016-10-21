@@ -18,7 +18,6 @@ package l2server.gameserver.model;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -73,47 +72,47 @@ public final class ChanceCondition
 		ON_EXIT(EVT_ON_EXIT), // You kill an enemy
 		ON_KILL(EVT_KILL);
 
-		private final int mask;
+		private final int _mask;
 
 		TriggerType(int mask)
 		{
-			this.mask = mask;
+			_mask = mask;
 		}
 
 		public final boolean check(int event)
 		{
-			return (mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
+			return (_mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
 		}
 	}
 
-	@Getter private final TriggerType triggerType;
-	private final double chance;
-	private final double critChance;
-	private final int mindmg;
-	private final byte[] elements;
-	private final int[] activationSkills;
-	private final boolean pvpOnly;
+	private final TriggerType _triggerType;
+	private final double _chance;
+	private final double _critChance;
+	private final int _mindmg;
+	private final byte[] _elements;
+	private final int[] _activationSkills;
+	private final boolean _pvpOnly;
 
 	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		triggerType = trigger;
-		this.chance = chance;
-		this.mindmg = mindmg;
-		this.elements = elements;
-		this.pvpOnly = pvpOnly;
-		this.activationSkills = activationSkills;
-		critChance = -1;
+		_triggerType = trigger;
+		_chance = chance;
+		_mindmg = mindmg;
+		_elements = elements;
+		_pvpOnly = pvpOnly;
+		_activationSkills = activationSkills;
+		_critChance = -1;
 	}
 
 	private ChanceCondition(TriggerType trigger, double chance, double critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		triggerType = trigger;
-		this.chance = chance;
-		this.mindmg = mindmg;
-		this.elements = elements;
-		this.pvpOnly = pvpOnly;
-		this.activationSkills = activationSkills;
-		this.critChance = critChance;
+		_triggerType = trigger;
+		_chance = chance;
+		_mindmg = mindmg;
+		_elements = elements;
+		_pvpOnly = pvpOnly;
+		_activationSkills = activationSkills;
+		_critChance = critChance;
 	}
 
 	public static ChanceCondition parse(StatsSet set)
@@ -203,24 +202,24 @@ public final class ChanceCondition
 
 	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill)
 	{
-		if (pvpOnly && !playable)
+		if (_pvpOnly && !playable)
 		{
 			return false;
 		}
 
-		if (elements != null && Arrays.binarySearch(elements, element) < 0)
+		if (_elements != null && Arrays.binarySearch(_elements, element) < 0)
 		{
 			return false;
 		}
 
-		if (activationSkills != null)
+		if (_activationSkills != null)
 		{
 			if (skill == null)
 			{
 				return false;
 			}
 
-			if (Arrays.binarySearch(activationSkills, skill.getId()) < 0)
+			if (Arrays.binarySearch(_activationSkills, skill.getId()) < 0)
 			{
 				return false;
 			}
@@ -228,24 +227,29 @@ public final class ChanceCondition
 
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if (mindmg > -1 && mindmg > damage)
+		if (_mindmg > -1 && _mindmg > damage)
 		{
 			return false;
 		}
 
-		if (!crit || critChance == -1)
+		if (!crit || _critChance == -1)
 		{
-			return triggerType.check(event) && (chance < 0 || Rnd.get(100) < chance);
+			return _triggerType.check(event) && (_chance < 0 || Rnd.get(100) < _chance);
 		}
 		else
 		{
-			return triggerType.check(event) && (critChance < 0 || Rnd.get(100) < critChance);
+			return _triggerType.check(event) && (_critChance < 0 || Rnd.get(100) < _critChance);
 		}
+	}
+
+	public TriggerType getTriggerType()
+	{
+		return _triggerType;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "Trigger[" + chance + ";" + triggerType.toString() + "]";
+		return "Trigger[" + _chance + ";" + _triggerType.toString() + "]";
 	}
 }

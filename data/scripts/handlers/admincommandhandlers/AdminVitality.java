@@ -28,6 +28,7 @@ import java.util.StringTokenizer;
 
 public class AdminVitality implements IAdminCommandHandler
 {
+
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_set_vitality",
 			"admin_set_vitality_level",

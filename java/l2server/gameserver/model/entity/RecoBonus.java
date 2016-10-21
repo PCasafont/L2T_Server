@@ -22,7 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RecoBonus
 {
-	private static final int[][] recoBonus = {
+	private static final int[][] _recoBonus = {
 			{25, 50, 50, 50, 50, 50, 50, 50, 50, 50},
 			{16, 33, 50, 50, 50, 50, 50, 50, 50, 50},
 			{12, 25, 37, 50, 50, 50, 50, 50, 50, 50},
@@ -47,26 +47,26 @@ public final class RecoBonus
 			int lvl = (int) Math.min(Math.ceil(activeChar.getLevel() / 10), 9);
 			int exp = (int) Math.ceil((Math.min(100, activeChar.getRecomHave()) - 1) / 10);
 
-			return recoBonus[lvl][exp];
+			return _recoBonus[lvl][exp];
 		}
 		return 0;
 	}
 
 	public static double getRecoMultiplier(L2PcInstance activeChar)
 	{
-		double multiplier = 1;
+		double _multiplier = 1;
 
 		int bonus = getRecoBonus(activeChar);
 		if (bonus > 0)
 		{
-			multiplier = 1 + bonus / 100;
+			_multiplier = 1 + bonus / 100;
 		}
 
-		if (multiplier < 1)
+		if (_multiplier < 1)
 		{
-			multiplier = 1;
+			_multiplier = 1;
 		}
 
-		return multiplier;
+		return _multiplier;
 	}
 }

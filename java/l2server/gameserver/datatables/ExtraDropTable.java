@@ -33,16 +33,17 @@ import java.util.ArrayList;
  */
 public class ExtraDropTable
 {
-	private TIntObjectHashMap<ArrayList<L2DropCategory>> extraGroups;
+
+	private TIntObjectHashMap<ArrayList<L2DropCategory>> _extraGroups;
 
 	public static ExtraDropTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private ExtraDropTable()
 	{
-		extraGroups = new TIntObjectHashMap<>();
+		_extraGroups = new TIntObjectHashMap<>();
 		if (!Config.IS_CLASSIC)
 		{
 			restoreData();
@@ -98,7 +99,7 @@ public class ExtraDropTable
 								extraGroup.add(dc);
 							}
 						}
-						extraGroups.put(id, extraGroup);
+						_extraGroups.put(id, extraGroup);
 					}
 				}
 			}
@@ -107,12 +108,12 @@ public class ExtraDropTable
 
 	public ArrayList<L2DropCategory> getExtraDroplist(int groupId)
 	{
-		return extraGroups.get(groupId);
+		return _extraGroups.get(groupId);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ExtraDropTable instance = new ExtraDropTable();
+		protected static final ExtraDropTable _instance = new ExtraDropTable();
 	}
 }

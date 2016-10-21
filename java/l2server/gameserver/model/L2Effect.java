@@ -21,8 +21,6 @@ import l2server.gameserver.stats.funcs.Lambda;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * This class ...
@@ -31,29 +29,30 @@ import lombok.Setter;
  */
 public abstract class L2Effect
 {
+
 	public enum EffectState
 	{
 		CREATED, ACTING, FINISHING
 	}
 
-	//member effector is the instance of L2Character that cast/used the spell/skill that is
+	//member _effector is the instance of L2Character that cast/used the spell/skill that is
 	//causing this effect.  Do not confuse with the instance of L2Character that
 	//is being affected by this effect.
-	@Getter private final L2Character effector;
+	private final L2Character _effector;
 
-	//member effected is the instance of L2Character that was affected
+	//member _effected is the instance of L2Character that was affected
 	//by this effect.  Do not confuse with the instance of L2Character that
 	//casted/used this effect.
-	@Getter private final L2Character effected;
+	private final L2Character _effected;
 
 	// the value of an update
-	private final Lambda lambda;
+	private final Lambda _lambda;
 
 	//the skill that was used.
-	@Getter private final L2Skill skill;
+	private final L2Skill _skill;
 
-	@Getter @Setter private L2Abnormal abnormal;
-	@Getter private L2EffectTemplate template;
+	private L2Abnormal _abnormal;
+	private L2EffectTemplate _template;
 
 	public boolean preventExitUpdate;
 
@@ -63,12 +62,12 @@ public abstract class L2Effect
 	 */
 	protected L2Effect(Env env, L2EffectTemplate template)
 	{
-		skill = env.skill;
-		//_item = env.item == null ? null : env.item.getItem();
-		this.template = template;
-		effected = env.target;
-		effector = env.player;
-		lambda = template.lambda;
+		_skill = env.skill;
+		//_item = env._item == null ? null : env._item.getItem();
+		_template = template;
+		_effected = env.target;
+		_effector = env.player;
+		_lambda = template.lambda;
 	}
 
 	/**
@@ -83,20 +82,35 @@ public abstract class L2Effect
 	 */
 	protected L2Effect(Env env, L2Effect effect)
 	{
-		template = effect.template;
-		skill = env.skill;
-		effected = env.target;
-		effector = env.player;
-		lambda = template.lambda;
+		_template = effect._template;
+		_skill = env.skill;
+		_effected = env.target;
+		_effector = env.player;
+		_lambda = _template.lambda;
 	}
 
 	public final double calc()
 	{
 		Env env = new Env();
-		env.player = effector;
-		env.target = effected;
-		env.skill = skill;
-		return lambda.calc(env);
+		env.player = _effector;
+		env.target = _effected;
+		env.skill = _skill;
+		return _lambda.calc(env);
+	}
+
+	public final L2Skill getSkill()
+	{
+		return _skill;
+	}
+
+	public final L2Character getEffector()
+	{
+		return _effector;
+	}
+
+	public final L2Character getEffected()
+	{
+		return _effected;
 	}
 
 	/**
@@ -108,7 +122,7 @@ public abstract class L2Effect
 	 */
 	public final void exit()
 	{
-		exit(false);
+		this.exit(false);
 	}
 
 	public final void exit(boolean preventUpdate)
@@ -159,6 +173,21 @@ public abstract class L2Effect
 		return getSkill().getLevelHash();
 	}
 
+	public L2Abnormal getAbnormal()
+	{
+		return _abnormal;
+	}
+
+	public void setAbnormal(L2Abnormal abnormal)
+	{
+		_abnormal = abnormal;
+	}
+
+	public L2EffectTemplate getTemplate()
+	{
+		return _template;
+	}
+
 	public boolean isSelfEffectType()
 	{
 		return false;
@@ -177,6 +206,6 @@ public abstract class L2Effect
 	@Override
 	public String toString()
 	{
-		return "L2Effect [_skill=" + skill + ", _type=" + getClass().getCanonicalName() + "]";
+		return "L2Effect [_skill=" + _skill + ", _type=" + this.getClass().getCanonicalName() + "]";
 	}
 }

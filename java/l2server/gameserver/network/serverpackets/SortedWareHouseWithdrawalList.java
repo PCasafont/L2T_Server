@@ -42,12 +42,12 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	public static final int CASTLE = 3; //not sure
 	public static final int FREIGHT = 4; //not sure
 
-	private L2PcInstance activeChar;
-	private long playerAdena;
-	private List<L2WarehouseItem> objects = new ArrayList<>();
-	private int whType;
-	private byte sortorder;
-	private WarehouseListType itemtype;
+	private L2PcInstance _activeChar;
+	private long _playerAdena;
+	private List<L2WarehouseItem> _objects = new ArrayList<>();
+	private int _whType;
+	private byte _sortorder;
+	private WarehouseListType _itemtype;
 
 	public enum WarehouseListType
 	{
@@ -103,87 +103,87 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 */
 	public SortedWareHouseWithdrawalList(L2PcInstance player, int type, WarehouseListType itemtype, byte sortorder)
 	{
-		activeChar = player;
-		whType = type;
-		this.itemtype = itemtype;
-		this.sortorder = sortorder;
+		_activeChar = player;
+		_whType = type;
+		_itemtype = itemtype;
+		_sortorder = sortorder;
 
-		playerAdena = activeChar.getAdena();
-		if (activeChar.getActiveWarehouse() == null)
+		_playerAdena = _activeChar.getAdena();
+		if (_activeChar.getActiveWarehouse() == null)
 		{
 			// Something went wrong!
-			Log.warning("error while sending withdraw request to: " + activeChar.getName());
+			Log.warning("error while sending withdraw request to: " + _activeChar.getName());
 			return;
 		}
 
-		switch (this.itemtype)
+		switch (_itemtype)
 		{
 			case WEAPON:
-				objects = createWeaponList(activeChar.getActiveWarehouse().getItems());
+				_objects = createWeaponList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case ARMOR:
-				objects = createArmorList(activeChar.getActiveWarehouse().getItems());
+				_objects = createArmorList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case ETCITEM:
-				objects = createEtcItemList(activeChar.getActiveWarehouse().getItems());
+				_objects = createEtcItemList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case RECIPE:
-				objects = createRecipeList(activeChar.getActiveWarehouse().getItems());
+				_objects = createRecipeList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case AMULETT:
-				objects = createAmulettList(activeChar.getActiveWarehouse().getItems());
+				_objects = createAmulettList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case SPELLBOOK:
-				objects = createSpellbookList(activeChar.getActiveWarehouse().getItems());
+				_objects = createSpellbookList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case CONSUMABLE:
-				objects = createConsumableList(activeChar.getActiveWarehouse().getItems());
+				_objects = createConsumableList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case SHOT:
-				objects = createShotList(activeChar.getActiveWarehouse().getItems());
+				_objects = createShotList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case SCROLL:
-				objects = createScrollList(activeChar.getActiveWarehouse().getItems());
+				_objects = createScrollList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case SEED:
-				objects = createSeedList(activeChar.getActiveWarehouse().getItems());
+				_objects = createSeedList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case OTHER:
-				objects = createOtherList(activeChar.getActiveWarehouse().getItems());
+				_objects = createOtherList(_activeChar.getActiveWarehouse().getItems());
 				break;
 			case ALL:
 			default:
-				objects = createAllList(activeChar.getActiveWarehouse().getItems());
+				_objects = createAllList(_activeChar.getActiveWarehouse().getItems());
 				break;
 		}
 
 		try
 		{
-			switch (this.sortorder)
+			switch (_sortorder)
 			{
 				case A2Z:
 				case Z2A:
-					Collections.sort(objects, new WarehouseItemNameComparator(this.sortorder));
+					Collections.sort(_objects, new WarehouseItemNameComparator(_sortorder));
 					break;
 				case GRADE:
-					if (this.itemtype == WarehouseListType.ARMOR || this.itemtype == WarehouseListType.WEAPON)
+					if (_itemtype == WarehouseListType.ARMOR || _itemtype == WarehouseListType.WEAPON)
 					{
-						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(objects, new WarehouseItemGradeComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemGradeComparator(A2Z));
 					}
 					break;
 				case LEVEL:
-					if (this.itemtype == WarehouseListType.RECIPE)
+					if (_itemtype == WarehouseListType.RECIPE)
 					{
-						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(objects, new WarehouseItemRecipeComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemRecipeComparator(A2Z));
 					}
 					break;
 				case WEAR:
-					if (this.itemtype == WarehouseListType.ARMOR)
+					if (_itemtype == WarehouseListType.ARMOR)
 					{
-						Collections.sort(objects, new WarehouseItemNameComparator(A2Z));
-						Collections.sort(objects, new WarehouseItemBodypartComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemNameComparator(A2Z));
+						Collections.sort(_objects, new WarehouseItemBodypartComparator(A2Z));
 					}
 					break;
 			}
@@ -393,28 +393,28 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Arrow</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createWeaponList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createWeaponList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isWeapon() || item.getItem().getType2() == L2Item.TYPE2_WEAPON ||
 					item.isEtcItem() && item.getItemType() == L2EtcItemType.ARROW ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -422,26 +422,26 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Armor</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createArmorList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createArmorList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isArmor() || item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -449,26 +449,26 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Everything which is no Weapon/Armor</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createEtcItemList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createEtcItemList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() || item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -476,27 +476,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Recipes</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createRecipeList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createRecipeList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.RECIPE ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -504,27 +504,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Amulett</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createAmulettList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createAmulettList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getItemName().toUpperCase().startsWith("AMULET") ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -532,27 +532,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Spellbook & Dwarven Drafts</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createSpellbookList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createSpellbookList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && !item.getItemName().toUpperCase().startsWith("AMULET") ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -560,28 +560,28 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Consumables (Potions, Shots, ...)</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createConsumableList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createConsumableList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && (item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
 					item.getEtcItem().getItemType() == L2EtcItemType.SHOT) ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -589,27 +589,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Shots</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createShotList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createShotList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SHOT ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -617,27 +617,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Scrolls/Potions</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createScrollList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createScrollList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SCROLL ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -645,27 +645,27 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Seeds</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createSeedList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createSeedList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getEtcItem().getItemType() == L2EtcItemType.SEED ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -673,13 +673,13 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>Everything which is no Weapon/Armor, Material, Recipe, Spellbook, Scroll or Shot</li>
 	 * <li>Money</li>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createOtherList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createOtherList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
 			if (item.isEtcItem() && item.getEtcItem().getItemType() != L2EtcItemType.MATERIAL &&
 					item.getEtcItem().getItemType() != L2EtcItemType.RECIPE &&
@@ -687,16 +687,16 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 					item.getEtcItem().getItemType() != L2EtcItemType.SHOT ||
 					item.getItem().getType2() == L2Item.TYPE2_MONEY)
 			{
-				if (list.size() < MAX_SORT_LIST_ITEMS)
+				if (_list.size() < MAX_SORT_LIST_ITEMS)
 				{
-					list.add(new L2WarehouseItem(item));
+					_list.add(new L2WarehouseItem(item));
 				}
 				else
 				{
 				}
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	/**
@@ -704,39 +704,39 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 	 * <li>no limit</li>
 	 * This may sound strange but we return the given Array as a List<L2WarehouseItem>
 	 *
-	 * @param items complete Warehouse List
+	 * @param _items complete Warehouse List
 	 * @return limited Item List
 	 */
-	private List<L2WarehouseItem> createAllList(L2ItemInstance[] items)
+	private List<L2WarehouseItem> createAllList(L2ItemInstance[] _items)
 	{
-		List<L2WarehouseItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items)
+		List<L2WarehouseItem> _list = new ArrayList<>();
+		for (L2ItemInstance item : _items)
 		{
-			if (list.size() < MAX_SORT_LIST_ITEMS)
+			if (_list.size() < MAX_SORT_LIST_ITEMS)
 			{
-				list.add(new L2WarehouseItem(item));
+				_list.add(new L2WarehouseItem(item));
 			}
 			else
 			{
 			}
 		}
-		return list;
+		return _list;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		/* 0x01-Private Warehouse
-		 * 0x02-Clan Warehouse
+         * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
-		writeH(whType);
-		writeQ(playerAdena);
-		writeH(objects.size());
+		writeH(_whType);
+		writeQ(_playerAdena);
+		writeH(_objects.size());
 		writeH(0x00); // GoD ???
 		writeD(0x00); // TODO: Amount of already deposited items
 
-		for (L2WarehouseItem item : objects)
+		for (L2WarehouseItem item : _objects)
 		{
 			writeItem(item);
 

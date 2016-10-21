@@ -20,6 +20,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExChangeAttributeOk extends L2GameServerPacket
 {
+
 	public ExChangeAttributeOk()
 	{
 	}

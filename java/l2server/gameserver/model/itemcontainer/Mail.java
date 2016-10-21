@@ -21,7 +21,6 @@ import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,13 +32,13 @@ import java.util.logging.Level;
  */
 public class Mail extends ItemContainer
 {
-	@Getter private final int ownerId;
-	@Getter private int messageId;
+	private final int _ownerId;
+	private int _messageId;
 
 	public Mail(int objectId, int messageId)
 	{
-		ownerId = objectId;
-		this.messageId = messageId;
+		_ownerId = objectId;
+		_messageId = messageId;
 	}
 
 	@Override
@@ -60,10 +59,15 @@ public class Mail extends ItemContainer
 		return ItemLocation.MAIL;
 	}
 
+	public int getMessageId()
+	{
+		return _messageId;
+	}
+
 	public void setNewMessageId(int messageId)
 	{
-		this.messageId = messageId;
-		for (L2ItemInstance item : items.values())
+		_messageId = messageId;
+		for (L2ItemInstance item : _items.values())
 		{
 			if (item == null)
 			{
@@ -78,7 +82,7 @@ public class Mail extends ItemContainer
 
 	public void returnToWh(ItemContainer wh)
 	{
-		for (L2ItemInstance item : items.values())
+		for (L2ItemInstance item : _items.values())
 		{
 			if (item == null)
 			{
@@ -99,7 +103,7 @@ public class Mail extends ItemContainer
 	protected void addItem(L2ItemInstance item)
 	{
 		super.addItem(item);
-		item.setLocation(getBaseLocation(), messageId);
+		item.setLocation(getBaseLocation(), _messageId);
 	}
 
 	/*
@@ -108,7 +112,7 @@ public class Mail extends ItemContainer
 	@Override
 	public void updateDatabase()
 	{
-		for (L2ItemInstance item : items.values())
+		for (L2ItemInstance item : _items.values())
 		{
 			if (item != null)
 			{
@@ -163,5 +167,11 @@ public class Mail extends ItemContainer
 		{
 			L2DatabaseFactory.close(con);
 		}
+	}
+
+	@Override
+	public int getOwnerId()
+	{
+		return _ownerId;
 	}
 }

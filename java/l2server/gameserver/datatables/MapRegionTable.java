@@ -40,7 +40,8 @@ import java.util.logging.Level;
  */
 public class MapRegionTable
 {
-	private final int[][] regions = new int[16][18];
+
+	private final int[][] _regions = new int[16][18];
 
 	public enum TeleportWhereType
 	{
@@ -49,7 +50,7 @@ public class MapRegionTable
 
 	public static MapRegionTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private MapRegionTable()
@@ -77,7 +78,7 @@ public class MapRegionTable
 				int region = Integer.parseInt(st.nextToken().trim());
 				for (int j = 0; j < 16; j++)
 				{
-					regions[j][region] = Integer.parseInt(st.nextToken().trim());
+					_regions[j][region] = Integer.parseInt(st.nextToken().trim());
 					//Log.fine(j+","+region+" -> "+rset.getInt(j+2));
 				}
 			}
@@ -107,7 +108,7 @@ public class MapRegionTable
 	{
 		try
 		{
-			return regions[getMapRegionX(posX)][getMapRegionY(posY)];
+			return _regions[getMapRegionX(posX)][getMapRegionY(posY)];
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{
@@ -515,6 +516,7 @@ public class MapRegionTable
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.ClanHall)
 				{
+
 					clanhall = ClanHallManager.getInstance().getClanHallByOwner(player.getClan());
 					if (clanhall != null)
 					{
@@ -670,6 +672,6 @@ public class MapRegionTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final MapRegionTable instance = new MapRegionTable();
+		protected static final MapRegionTable _instance = new MapRegionTable();
 	}
 }

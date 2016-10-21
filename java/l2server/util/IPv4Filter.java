@@ -30,12 +30,12 @@ import java.util.Map.Entry;
  */
 public class IPv4Filter implements IAcceptFilter, Runnable
 {
-	private HashMap<Integer, Flood> ipFloodMap;
+	private HashMap<Integer, Flood> _ipFloodMap;
 	private static final long SLEEP_TIME = 5000;
 
 	public IPv4Filter()
 	{
-		ipFloodMap = new HashMap<>();
+		_ipFloodMap = new HashMap<>();
 		Thread t = new Thread(this);
 		t.setName(getClass().getSimpleName());
 		t.setDaemon(true);
@@ -71,9 +71,9 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 
 		long current = System.currentTimeMillis();
 		Flood f;
-		synchronized (ipFloodMap)
+		synchronized (_ipFloodMap)
 		{
-			f = ipFloodMap.get(h);
+			f = _ipFloodMap.get(h);
 		}
 		if (f != null)
 		{
@@ -102,9 +102,9 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 		}
 		else
 		{
-			synchronized (ipFloodMap)
+			synchronized (_ipFloodMap)
 			{
-				ipFloodMap.put(h, new Flood());
+				_ipFloodMap.put(h, new Flood());
 			}
 		}
 
@@ -117,9 +117,9 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 		while (true)
 		{
 			long reference = System.currentTimeMillis() - 1000 * 300;
-			synchronized (ipFloodMap)
+			synchronized (_ipFloodMap)
 			{
-				Iterator<Entry<Integer, Flood>> it = ipFloodMap.entrySet().iterator();
+				Iterator<Entry<Integer, Flood>> it = _ipFloodMap.entrySet().iterator();
 				while (it.hasNext())
 				{
 					Flood f = it.next().getValue();

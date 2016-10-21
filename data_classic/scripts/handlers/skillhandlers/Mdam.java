@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -40,6 +36,10 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -111,7 +111,7 @@ public class Mdam implements ISkillHandler
 
 			if (damage != 0)
 			{
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().isInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 

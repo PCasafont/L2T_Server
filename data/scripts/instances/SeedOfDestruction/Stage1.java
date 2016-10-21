@@ -92,9 +92,9 @@ public class Stage1 extends Quest
 	private static final int MAX_PLAYERS = 45;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 
-	private TIntObjectHashMap<L2Territory> spawnZoneList = new TIntObjectHashMap<L2Territory>();
-	private TIntObjectHashMap<List<SODSpawn>> spawnList = new TIntObjectHashMap<List<SODSpawn>>();
-	private List<Integer> mustKillMobsId = new ArrayList<Integer>();
+	private TIntObjectHashMap<L2Territory> _spawnZoneList = new TIntObjectHashMap<L2Territory>();
+	private TIntObjectHashMap<List<SODSpawn>> _spawnList = new TIntObjectHashMap<List<SODSpawn>>();
+	private List<Integer> _mustKillMobsId = new ArrayList<Integer>();
 
 	// teleports
 	private static final int[] ENTER_TELEPORT_1 = {-242759, 219981, -9986};
@@ -206,9 +206,9 @@ public class Stage1 extends Quest
 									continue;
 								}
 								int flag = d.getInt("flag");
-								if (!spawnList.contains(flag))
+								if (!_spawnList.contains(flag))
 								{
-									spawnList.put(flag, new ArrayList<SODSpawn>());
+									_spawnList.put(flag, new ArrayList<SODSpawn>());
 								}
 
 								for (XmlNode cd : d.getChildren())
@@ -257,9 +257,9 @@ public class Stage1 extends Quest
 										spw.isNeededNextFlag = cd.getBool("mustKill", false);
 										if (spw.isNeededNextFlag)
 										{
-											mustKillMobsId.add(npcId);
+											_mustKillMobsId.add(npcId);
 										}
-										spawnList.get(flag).add(spw);
+										_spawnList.get(flag).add(spw);
 										spawnCount++;
 									}
 									else if (cd.getName().equalsIgnoreCase("zone"))
@@ -289,9 +289,9 @@ public class Stage1 extends Quest
 										spw.isNeededNextFlag = cd.getBool("mustKill", false);
 										if (spw.isNeededNextFlag)
 										{
-											mustKillMobsId.add(npcId);
+											_mustKillMobsId.add(npcId);
 										}
-										spawnList.get(flag).add(spw);
+										_spawnList.get(flag).add(spw);
 										spawnCount++;
 									}
 								}
@@ -355,7 +355,7 @@ public class Stage1 extends Quest
 									}
 								}
 
-								spawnZoneList.put(id, ter);
+								_spawnZoneList.put(id, ter);
 							}
 						}
 					}
@@ -369,7 +369,7 @@ public class Stage1 extends Quest
 		if (Config.DEBUG)
 		{
 			Log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
-			Log.info("[Seed of Destruction] Loaded " + spawnZoneList.size() + " spawn zones data.");
+			Log.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
 		}
 	}
 
@@ -390,7 +390,7 @@ public class Stage1 extends Quest
 		{
 			if (door.getDoorId() == doorId)
 			{
-				if (door.isOpen())
+				if (door.getOpen())
 				{
 					door.closeMe();
 				}
@@ -536,15 +536,15 @@ public class Stage1 extends Quest
 		{
 			try
 			{
-				for (SODSpawn spw : spawnList.get(flag))
+				for (SODSpawn spw : _spawnList.get(flag))
 				{
 					if (spw.isZone)
 					{
 						for (int i = 0; i < spw.count; i++)
 						{
-							if (spawnZoneList.contains(spw.zone))
+							if (_spawnZoneList.contains(spw.zone))
 							{
-								int[] point = spawnZoneList.get(spw.zone).getRandomPoint();
+								int[] point = _spawnZoneList.get(spw.zone).getRandomPoint();
 								spawn(world, spw.npcId, point[0], point[1], GeoData.getInstance()
 												.getSpawnHeight(point[0], point[1], point[2], point[3], null), Rnd.get(65535),
 										spw.isNeededNextFlag);
@@ -1053,7 +1053,7 @@ public class Stage1 extends Quest
 		{
 			addTrapActionId(i);
 		}
-		for (int mobId : mustKillMobsId)
+		for (int mobId : _mustKillMobsId)
 		{
 			addKillId(mobId);
 		}

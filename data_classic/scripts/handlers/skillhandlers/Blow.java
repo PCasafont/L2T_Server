@@ -15,10 +15,6 @@
 
 package handlers.skillhandlers;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Abnormal;
@@ -41,6 +37,10 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Rnd;
+
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 /**
  * @author Steuf
@@ -255,7 +255,7 @@ public class Blow implements ISkillHandler
 
 							// Half the reflected damage for bows
 							/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-							if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
+                            if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 									 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 								reflectedDamage *= 0.5f;*/
 

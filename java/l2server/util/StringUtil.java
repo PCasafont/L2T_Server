@@ -199,6 +199,7 @@ package l2server.util;
  */
 public final class StringUtil
 {
+
 	private StringUtil()
 	{
 	}

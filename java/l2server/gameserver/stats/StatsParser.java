@@ -41,18 +41,18 @@ import java.util.logging.Logger;
  */
 public abstract class StatsParser
 {
-	static Logger log = Logger.getLogger(StatsParser.class.getName());
+	static Logger _log = Logger.getLogger(StatsParser.class.getName());
 
-	protected int id;
-	protected String name;
+	protected int _id;
+	protected String _name;
 
-	protected XmlNode node;
+	protected XmlNode _node;
 
 	StatsParser(XmlNode node)
 	{
-		id = node.getInt("id");
-		name = node.getString("name");
-		this.node = node;
+		_id = node.getInt("id");
+		_name = node.getString("name");
+		_node = node;
 	}
 
 	public abstract void parse() throws RuntimeException;
@@ -256,7 +256,7 @@ public abstract class StatsParser
 
 		if (cond.conditions == null || cond.conditions.length == 0)
 		{
-			Log.severe("Empty <and> condition in " + name);
+			Log.severe("Empty <and> condition in " + _name);
 		}
 		return cond;
 	}
@@ -271,7 +271,7 @@ public abstract class StatsParser
 
 		if (cond.conditions == null || cond.conditions.length == 0)
 		{
-			Log.severe("Empty <or> condition in " + name);
+			Log.severe("Empty <or> condition in " + _name);
 		}
 		return cond;
 	}
@@ -283,7 +283,7 @@ public abstract class StatsParser
 			return new ConditionLogicNot(parseCondition(node.getFirstChild(), template));
 		}
 
-		Log.severe("Empty <not> condition in " + name);
+		Log.severe("Empty <not> condition in " + _name);
 		return null;
 	}
 
@@ -642,7 +642,7 @@ public abstract class StatsParser
 
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <player> condition in " + name);
+			Log.severe("Unrecognized <player> condition in " + _name);
 		}
 		return cond;
 	}
@@ -811,7 +811,7 @@ public abstract class StatsParser
 			}
 			else
 			{
-				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + name);
+				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + _name);
 			}
 		}
 		return cond;
@@ -830,14 +830,14 @@ public abstract class StatsParser
 				{
 					int old = mask;
 					String item = st.nextToken().trim();
-					if (ItemTable.weaponTypes.containsKey(item))
+					if (ItemTable._weaponTypes.containsKey(item))
 					{
-						mask |= ItemTable.weaponTypes.get(item).mask();
+						mask |= ItemTable._weaponTypes.get(item).mask();
 					}
 
-					if (ItemTable.armorTypes.containsKey(item))
+					if (ItemTable._armorTypes.containsKey(item))
 					{
-						mask |= ItemTable.armorTypes.get(item).mask();
+						mask |= ItemTable._armorTypes.get(item).mask();
 					}
 
 					if (item.equals("crossbow"))
@@ -877,7 +877,7 @@ public abstract class StatsParser
 		}
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <using> condition in " + name);
+			Log.severe("Unrecognized <using> condition in " + _name);
 		}
 		return cond;
 	}
@@ -905,7 +905,7 @@ public abstract class StatsParser
 		}
 		if (cond == null)
 		{
-			Log.severe("Unrecognized <game> condition in " + name);
+			Log.severe("Unrecognized <game> condition in " + _name);
 		}
 		return cond;
 	}
@@ -988,11 +988,11 @@ public abstract class StatsParser
 
 	public int getId()
 	{
-		return id;
+		return _id;
 	}
 
 	public String getName()
 	{
-		return name;
+		return _name;
 	}
 }

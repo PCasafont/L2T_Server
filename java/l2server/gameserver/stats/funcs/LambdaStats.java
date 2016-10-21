@@ -22,22 +22,23 @@ import l2server.gameserver.stats.Env;
  */
 public final class LambdaStats extends Lambda
 {
+
 	public enum StatsType
 	{
 		PLAYER_LEVEL, CUBIC_LEVEL, TARGET_LEVEL, PLAYER_MAX_HP, PLAYER_MAX_MP
 	}
 
-	private final StatsType stat;
+	private final StatsType _stat;
 
 	public LambdaStats(StatsType stat)
 	{
-		this.stat = stat;
+		_stat = stat;
 	}
 
 	@Override
 	public double calc(Env env)
 	{
-		switch (stat)
+		switch (_stat)
 		{
 			case PLAYER_LEVEL:
 				if (env.player == null)

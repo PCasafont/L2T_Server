@@ -24,9 +24,10 @@ import l2server.gameserver.network.serverpackets.ExBrLoadEventTopRankers;
  */
 public class BrEventRankerList extends L2GameClientPacket
 {
-	private int eventId;
-	private int day;
-	@SuppressWarnings("unused") private int ranking;
+	private int _eventId;
+	private int _day;
+	@SuppressWarnings("unused")
+	private int _ranking;
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -34,9 +35,9 @@ public class BrEventRankerList extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		eventId = readD();
-		day = readD(); // 0 - current, 1 - previous
-		ranking = readD();
+		_eventId = readD();
+		_day = readD(); // 0 - current, 1 - previous
+		_ranking = readD();
 	}
 
 	/* (non-Javadoc)
@@ -48,6 +49,6 @@ public class BrEventRankerList extends L2GameClientPacket
 		int count = 0;
 		int bestScore = 0;
 		int myScore = 0;
-		getClient().sendPacket(new ExBrLoadEventTopRankers(eventId, day, count, bestScore, myScore));
+		getClient().sendPacket(new ExBrLoadEventTopRankers(_eventId, _day, count, bestScore, myScore));
 	}
 }

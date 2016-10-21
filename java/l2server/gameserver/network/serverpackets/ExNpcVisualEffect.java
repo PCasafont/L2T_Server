@@ -5,18 +5,18 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExNpcVisualEffect extends L2GameServerPacket
 {
-	private int objId;
+	private int _objId;
 
 	public ExNpcVisualEffect(int objId)
 	{
-		this.objId = objId;
+		_objId = objId;
 	}
 
 	@Override
 	public void writeImpl()
 	{
 		writeD(0x00); // unk2
-		writeD(objId);
+		writeD(_objId);
 		writeD(0x00); // unk1
 	}
 }

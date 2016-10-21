@@ -80,15 +80,15 @@ public class CpDam implements ISkillHandler
 		{
 			if (skill.isMagic())
 			{
-				ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
+				ssMul = ((L2Npc) activeChar)._soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
 						L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).soulshotcharged = false;
+				((L2Npc) activeChar)._soulshotcharged = false;
 			}
 			else
 			{
-				ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
+				ssMul = ((L2Npc) activeChar)._spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
 						L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).spiritshotcharged = false;
+				((L2Npc) activeChar)._spiritshotcharged = false;
 			}
 		}
 

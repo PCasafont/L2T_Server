@@ -20,19 +20,19 @@ import l2server.util.Point3D;
 
 public class ExMoveToLocationInAirShip extends L2GameServerPacket
 {
-	private int charObjId;
-	private int airShipId;
-	private Point3D destination;
-	private int heading;
+	private int _charObjId;
+	private int _airShipId;
+	private Point3D _destination;
+	private int _heading;
 
 	/**
 	 */
 	public ExMoveToLocationInAirShip(L2PcInstance player)
 	{
-		charObjId = player.getObjectId();
-		airShipId = player.getAirShip().getObjectId();
-		destination = player.getInVehiclePosition();
-		heading = player.getHeading();
+		_charObjId = player.getObjectId();
+		_airShipId = player.getAirShip().getObjectId();
+		_destination = player.getInVehiclePosition();
+		_heading = player.getHeading();
 	}
 
 	/* (non-Javadoc)
@@ -41,11 +41,11 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(charObjId);
-		writeD(airShipId);
-		writeD(destination.getX());
-		writeD(destination.getY());
-		writeD(destination.getZ());
-		writeD(heading);
+		writeD(_charObjId);
+		writeD(_airShipId);
+		writeD(_destination.getX());
+		writeD(_destination.getY());
+		writeD(_destination.getZ());
+		writeD(_heading);
 	}
 }

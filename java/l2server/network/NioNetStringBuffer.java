@@ -7,29 +7,29 @@ import java.nio.BufferOverflowException;
  */
 public final class NioNetStringBuffer
 {
-	private final char[] buf;
+	private final char[] _buf;
 
-	private final int size;
+	private final int _size;
 
-	private int len;
+	private int _len;
 
 	public NioNetStringBuffer(final int size)
 	{
-		buf = new char[size];
-		this.size = size;
-		len = 0;
+		_buf = new char[size];
+		_size = size;
+		_len = 0;
 	}
 
 	public final void clear()
 	{
-		len = 0;
+		_len = 0;
 	}
 
 	public final void append(final char c)
 	{
-		if (len < size)
+		if (_len < _size)
 		{
-			buf[len++] = c;
+			_buf[_len++] = c;
 		}
 		else
 		{
@@ -40,6 +40,6 @@ public final class NioNetStringBuffer
 	@Override
 	public final String toString()
 	{
-		return new String(buf, 0, len);
+		return new String(_buf, 0, _len);
 	}
 }

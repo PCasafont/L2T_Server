@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2SpawnZone;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 /**
  * A Town zone
@@ -31,18 +30,18 @@ import lombok.Getter;
  */
 public class L2TownZone extends L2SpawnZone
 {
-	@Getter private int townId;
-	private int taxById;
-	private boolean isPeaceZone;
+	private int _townId;
+	private int _taxById;
+	private boolean _isPeaceZone;
 
 	public L2TownZone(int id)
 	{
 		super(id);
 
-		taxById = 0;
+		_taxById = 0;
 
 		// Default not peace zone
-		isPeaceZone = false;
+		_isPeaceZone = false;
 	}
 
 	@Override
@@ -51,13 +50,13 @@ public class L2TownZone extends L2SpawnZone
 		switch (name)
 		{
 			case "townId":
-				townId = Integer.parseInt(value);
+				_townId = Integer.parseInt(value);
 				break;
 			case "taxById":
-				taxById = Integer.parseInt(value);
+				_taxById = Integer.parseInt(value);
 				break;
 			case "isPeaceZone":
-				isPeaceZone = Boolean.parseBoolean(value);
+				_isPeaceZone = Boolean.parseBoolean(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -89,8 +88,8 @@ public class L2TownZone extends L2SpawnZone
 			//ThreadPoolManager.getInstance().scheduleGeneral(new MusicTask((L2PcInstance)character), 2000);
 		}
 
-		if (isPeaceZone && Config.ZONE_TOWN != 2 &&
-				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == townId))
+		if (_isPeaceZone && Config.ZONE_TOWN != 2 &&
+				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == _townId))
 		{
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 		}
@@ -102,7 +101,7 @@ public class L2TownZone extends L2SpawnZone
 	protected void onExit(L2Character character)
 	{
 		// TODO: there should be no exit if there was possibly no enter
-		if (isPeaceZone)
+		if (_isPeaceZone)
 		{
 			character.setInsideZone(L2Character.ZONE_PEACE, false);
 		}
@@ -130,24 +129,34 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	/**
+	 * Returns this zones town id (if any)
+	 *
+	 * @return
+	 */
+	public int getTownId()
+	{
+		return _townId;
+	}
+
+	/**
 	 * Returns this town zones castle id
 	 *
 	 * @return
 	 */
 	public final int getTaxById()
 	{
-		return taxById;
+		return _taxById;
 	}
 
 	public final boolean isPeaceZone()
 	{
-		return isPeaceZone;
+		return _isPeaceZone;
 	}
 
 	@SuppressWarnings("unused")
 	private boolean isInHostileTown(L2PcInstance player)
 	{
-		switch (townId)
+		switch (_townId)
 		{
 			case 7:
 				return player.isAtWarWithCastle(1);
@@ -174,18 +183,18 @@ public class L2TownZone extends L2SpawnZone
 
 	class MusicTask implements Runnable
 	{
-		private L2PcInstance player;
+		private L2PcInstance _player;
 
 		public MusicTask(L2PcInstance player)
 		{
-			this.player = player;
+			_player = player;
 		}
 
 		@Override
 		public void run()
 		{
 			int rnd = Rnd.get(4) + 1;
-			player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
+			_player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
 		}
 	}
 }

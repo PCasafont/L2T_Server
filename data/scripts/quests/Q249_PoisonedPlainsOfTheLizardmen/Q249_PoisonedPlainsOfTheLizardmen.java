@@ -29,8 +29,8 @@ import l2server.gameserver.model.quest.State;
 public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 {
 	private static final String qn = "249_PoisonedPlainsOfTheLizardmen";
-	private static final int mouen = 30196;
-	private static final int johnny = 32744;
+	private static final int _mouen = 30196;
+	private static final int _johnny = 32744;
 
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -43,7 +43,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == mouen)
+		if (npc.getNpcId() == _mouen)
 		{
 			if (event.equalsIgnoreCase("30196-03.htm"))
 			{
@@ -52,7 +52,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == johnny && event.equalsIgnoreCase("32744-03.htm"))
+		else if (npc.getNpcId() == _johnny && event.equalsIgnoreCase("32744-03.htm"))
 		{
 			st.unset("cond");
 			st.giveItems(57, 83056);
@@ -73,7 +73,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == mouen)
+		if (npc.getNpcId() == _mouen)
 		{
 			switch (st.getState())
 			{
@@ -98,7 +98,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == johnny)
+		else if (npc.getNpcId() == _johnny)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -116,9 +116,9 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(mouen);
-		addTalkId(mouen);
-		addTalkId(johnny);
+		addStartNpc(_mouen);
+		addTalkId(_mouen);
+		addTalkId(_johnny);
 	}
 
 	public static void main(String[] args)

@@ -15,10 +15,6 @@
 
 package handlers.bypasshandlers;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.logging.Level;
-
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
@@ -33,13 +29,11 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExHeroList;
-import l2server.gameserver.network.serverpackets.ExOlympiadInfoList;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import l2server.gameserver.network.serverpackets.*;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.logging.Level;
 
 /**
  * @author DS
@@ -173,7 +167,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						}
 						break;
 					default:
-						Log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
@@ -189,7 +183,7 @@ public class OlympiadManagerLink implements IBypassHandler
 
 				if (params[1] == null)
 				{
-					Log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
+					_log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
 							" has no buffGroup set in the bypass for the buff selected.");
 					return false;
 				}
@@ -294,14 +288,14 @@ public class OlympiadManagerLink implements IBypassHandler
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						Log.warning("Olympiad System: Couldnt send packet for request " + val);
+						_log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			_log.log(Level.INFO, "Exception in " + e.getMessage(), e);
 		}
 
 		return true;

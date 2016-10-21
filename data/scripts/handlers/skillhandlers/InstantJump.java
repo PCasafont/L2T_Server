@@ -39,6 +39,7 @@ import l2server.gameserver.util.Util;
  */
 public class InstantJump implements ISkillHandler
 {
+
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.INSTANT_JUMP};
 
 	@Override

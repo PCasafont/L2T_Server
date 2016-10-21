@@ -26,7 +26,6 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExSubjobInfo;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -89,7 +88,7 @@ public class ClassChange implements ISkillHandler
 
 		if (!player.getFloodProtectors().getSubclass().tryPerformAction("change subclass"))
 		{
-			Log.warning("Player " + player.getName() + " has performed a subclass change too fast");
+			_log.warning("Player " + player.getName() + " has performed a subclass change too fast");
 			return;
 		}
 

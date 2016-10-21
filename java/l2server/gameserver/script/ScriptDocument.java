@@ -16,7 +16,6 @@
 package l2server.gameserver.script;
 
 import l2server.log.Log;
-import lombok.Getter;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -33,18 +32,18 @@ import java.util.logging.Level;
  */
 public class ScriptDocument
 {
-	@Getter private Document document;
-	@Getter private String name;
+	private Document _document;
+	private String _name;
 
 	public ScriptDocument(String name, InputStream input)
 	{
-		this.name = name;
+		_name = name;
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try
 		{
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			document = builder.parse(input);
+			_document = builder.parse(input);
 		}
 		catch (SAXException sxe)
 		{
@@ -63,9 +62,22 @@ public class ScriptDocument
 		}
 	}
 
+	public Document getDocument()
+	{
+		return _document;
+	}
+
+	/**
+	 * @return Returns the _name.
+	 */
+	public String getName()
+	{
+		return _name;
+	}
+
 	@Override
 	public String toString()
 	{
-		return name;
+		return _name;
 	}
 }

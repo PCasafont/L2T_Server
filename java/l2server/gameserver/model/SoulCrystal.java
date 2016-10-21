@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model;
 
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,18 +23,33 @@ import java.util.List;
  */
 public class SoulCrystal
 {
-	@Getter private final int id;
-	@Getter private final boolean special;
-	@Getter private final List<EnsoulEffect> effects = new ArrayList<>();
+	private final int _id;
+	private final boolean _special;
+	private final List<EnsoulEffect> _effects = new ArrayList<>();
 
 	public SoulCrystal(int id, boolean special)
 	{
-		this.id = id;
-		this.special = special;
+		_id = id;
+		_special = special;
 	}
 
 	public void addEffect(EnsoulEffect effect)
 	{
-		effects.add(effect);
+		_effects.add(effect);
+	}
+
+	public int getId()
+	{
+		return _id;
+	}
+
+	public boolean isSpecial()
+	{
+		return _special;
+	}
+
+	public List<EnsoulEffect> getEffects()
+	{
+		return _effects;
 	}
 }

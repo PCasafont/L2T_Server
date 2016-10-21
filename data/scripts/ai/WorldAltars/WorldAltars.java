@@ -30,23 +30,23 @@ import java.util.Map;
 
 public class WorldAltars extends Quest
 {
-	private static final String qn = "WorldAltars";
-	private static final boolean debug = false;
+	private static final String _qn = "WorldAltars";
+	private static final boolean _debug = false;
 
-	private static final int[] altarIds = {143, 144, 145, 146};
-	private static final int[] bossIds = {80351, 80352, 80353, 80354};
+	private static final int[] _altarIds = {143, 144, 145, 146};
+	private static final int[] _bossIds = {80351, 80352, 80353, 80354};
 
 	public WorldAltars(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		for (int i : altarIds)
+		for (int i : _altarIds)
 		{
 			addTalkId(i);
 			addStartNpc(i);
 			addFirstTalkId(i);
 		}
 
-		for (int i : bossIds)
+		for (int i : _bossIds)
 		{
 			addKillId(i);
 		}
@@ -63,7 +63,7 @@ public class WorldAltars extends Quest
 	{
 		if (event.startsWith("trySpawnBoss"))
 		{
-			if (!debug)
+			if (!_debug)
 			{
 				L2Party party = player.getParty();
 				if (party == null)
@@ -145,6 +145,6 @@ public class WorldAltars extends Quest
 
 	public static void main(String[] args)
 	{
-		new WorldAltars(-1, qn, "ai");
+		new WorldAltars(-1, _qn, "ai");
 	}
 }

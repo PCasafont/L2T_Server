@@ -17,57 +17,58 @@ package l2server.gameserver.network.serverpackets;
 
 public class SpecialCamera extends L2GameServerPacket
 {
-	private final int id;
-	private final int dist;
-	private final int yaw;
-	private final int pitch;
-	private final int time;
-	private final int duration;
-	private final int turn;
-	private final int rise;
-	private final int widescreen;
-	private final int unknown;
+
+	private final int _id;
+	private final int _dist;
+	private final int _yaw;
+	private final int _pitch;
+	private final int _time;
+	private final int _duration;
+	private final int _turn;
+	private final int _rise;
+	private final int _widescreen;
+	private final int _unknown;
 
 	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration)
 	{
-		this.id = id;
-		this.dist = dist;
-		this.yaw = yaw;
-		this.pitch = pitch;
-		this.time = time;
-		this.duration = duration;
-		turn = 0;
-		rise = 0;
-		widescreen = 0;
-		unknown = 0;
+		_id = id;
+		_dist = dist;
+		_yaw = yaw;
+		_pitch = pitch;
+		_time = time;
+		_duration = duration;
+		_turn = 0;
+		_rise = 0;
+		_widescreen = 0;
+		_unknown = 0;
 	}
 
 	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration, int turn, int rise, int widescreen, int unk)
 	{
-		this.id = id;
-		this.dist = dist;
-		this.yaw = yaw;
-		this.pitch = pitch;
-		this.time = time;
-		this.duration = duration;
-		this.turn = turn;
-		this.rise = rise;
-		this.widescreen = widescreen;
-		unknown = unk;
+		_id = id;
+		_dist = dist;
+		_yaw = yaw;
+		_pitch = pitch;
+		_time = time;
+		_duration = duration;
+		_turn = turn;
+		_rise = rise;
+		_widescreen = widescreen;
+		_unknown = unk;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(id);
-		writeD(dist);
-		writeD(yaw);
-		writeD(pitch);
-		writeD(time);
-		writeD(duration);
-		writeD(turn);
-		writeD(rise);
-		writeD(widescreen);
-		writeD(unknown);
+		writeD(_id);
+		writeD(_dist);
+		writeD(_yaw);
+		writeD(_pitch);
+		writeD(_time);
+		writeD(_duration);
+		writeD(_turn);
+		writeD(_rise);
+		writeD(_widescreen);
+		writeD(_unknown);
 	}
 }

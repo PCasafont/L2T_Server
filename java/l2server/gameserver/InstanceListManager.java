@@ -7,6 +7,7 @@ package l2server.gameserver;
  */
 public interface InstanceListManager
 {
+
 	/**
 	 * Loads instances with their data from persistant format. This method
 	 * has no side effect as calling methods of another instance manager.

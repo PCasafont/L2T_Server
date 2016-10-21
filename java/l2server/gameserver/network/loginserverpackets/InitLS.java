@@ -19,17 +19,17 @@ import l2server.util.network.BaseRecievePacket;
 
 public class InitLS extends BaseRecievePacket
 {
-	private int rev;
-	private byte[] key;
+	private int _rev;
+	private byte[] _key;
 
 	public int getRevision()
 	{
-		return rev;
+		return _rev;
 	}
 
 	public byte[] getRSAKey()
 	{
-		return key;
+		return _key;
 	}
 
 	/**
@@ -38,8 +38,8 @@ public class InitLS extends BaseRecievePacket
 	public InitLS(byte[] decrypt)
 	{
 		super(decrypt);
-		rev = readD();
+		_rev = readD();
 		int size = readD();
-		key = readB(size);
+		_key = readB(size);
 	}
 }

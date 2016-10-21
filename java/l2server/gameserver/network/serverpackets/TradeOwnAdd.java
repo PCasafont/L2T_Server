@@ -25,17 +25,17 @@ import l2server.gameserver.model.TradeList;
  */
 public final class TradeOwnAdd extends L2ItemListPacket
 {
-	private TradeList.TradeItem item;
+	private TradeList.TradeItem _item;
 
 	public TradeOwnAdd(TradeList.TradeItem item)
 	{
-		this.item = item;
+		_item = item;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeH(1); // items added count
-		writeItem(item);
+		writeItem(_item);
 	}
 }

@@ -32,8 +32,9 @@ import l2server.log.Log;
  */
 public class RequestUnEquipItem extends L2GameClientPacket
 {
+
 	// cd
-	private int slot;
+	private int _slot;
 
 	/**
 	 * packet type id 0x11
@@ -42,7 +43,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		slot = readD();
+		_slot = readD();
 	}
 
 	@Override
@@ -50,7 +51,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 	{
 		if (Config.DEBUG)
 		{
-			Log.fine("request unequip slot " + slot);
+			Log.fine("request unequip slot " + _slot);
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
@@ -60,21 +61,21 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(slot);
+		L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
 		if (item == null)
 		{
 			// Wear-items are not to be unequipped
 			return;
 		}
 		// Prevent of unequiping a cursed weapon
-		if (slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
+		if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
 		{
 			// Message ?
 			return;
 		}
 
 		// arrows and bolts
-		if (slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
+		if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
 		{
 			// Message ?
 			return;
@@ -97,7 +98,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(slot);
+		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 
 		// show the update in the inventory
 		InventoryUpdate iu = new InventoryUpdate();
@@ -117,6 +118,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 		// this can be 0 if the user pressed the right mousebutton twice very fast
 		if (unequiped.length > 0)
 		{
+
 			SystemMessage sm = null;
 			if (unequiped[0].getEnchantLevel() > 0)
 			{

@@ -22,21 +22,21 @@ package l2server.gameserver.network.serverpackets;
  */
 public class StopRotation extends L2GameServerPacket
 {
-	private int charObjId, degree, speed;
+	private int _charObjId, _degree, _speed;
 
 	public StopRotation(int objectId, int degree, int speed)
 	{
-		charObjId = objectId;
-		this.degree = degree;
-		this.speed = speed;
+		_charObjId = objectId;
+		_degree = degree;
+		_speed = speed;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(charObjId);
-		writeD(degree);
-		writeD(speed);
+		writeD(_charObjId);
+		writeD(_degree);
+		writeD(_speed);
 		writeD(-1); // GoD ???
 	}
 }

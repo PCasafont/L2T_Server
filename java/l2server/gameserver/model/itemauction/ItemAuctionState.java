@@ -15,8 +15,6 @@
 
 package l2server.gameserver.model.itemauction;
 
-import lombok.Getter;
-
 /**
  * @author Forsaiken
  */
@@ -24,11 +22,16 @@ public enum ItemAuctionState
 {
 	CREATED((byte) 0), STARTED((byte) 1), FINISHED((byte) 2);
 
-	@Getter private final byte stateId;
+	private final byte _stateId;
 
 	ItemAuctionState(final byte stateId)
 	{
-		this.stateId = stateId;
+		_stateId = stateId;
+	}
+
+	public byte getStateId()
+	{
+		return _stateId;
 	}
 
 	public static ItemAuctionState stateForStateId(final byte stateId)

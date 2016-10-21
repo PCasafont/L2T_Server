@@ -29,7 +29,7 @@ import java.util.concurrent.ScheduledFuture;
 public class DamageManager
 {
 	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<>();
-	protected static ScheduledFuture<?> saveTask;
+	protected static ScheduledFuture<?> _saveTask;
 
 	public String getRankingInfo()
 	{
@@ -60,52 +60,52 @@ public class DamageManager
 
 	private class DamageInfo
 	{
-		private int classId;
-		private int newDamage;
-		private String newName;
-		private int playerId;
-		private String hwId;
+		private int _classId;
+		private int _newDamage;
+		private String _newName;
+		private int _playerId;
+		private String _hwId;
 
 		private DamageInfo(int classid, int newdmg, String newname, int playerid, String hwId)
 		{
-			classId = classid;
-			newDamage = newdmg;
-			newName = newname;
-			playerId = playerid;
-			this.hwId = hwId;
+			_classId = classid;
+			_newDamage = newdmg;
+			_newName = newname;
+			_playerId = playerid;
+			_hwId = hwId;
 		}
 
 		private void reset()
 		{
-			newDamage = 0;
-			newName = "";
-			playerId = 0;
-			hwId = "";
+			_newDamage = 0;
+			_newName = "";
+			_playerId = 0;
+			_hwId = "";
 		}
 
 		private int getClassId()
 		{
-			return classId;
+			return _classId;
 		}
 
 		private int getCurrentDamage()
 		{
-			return newDamage;
+			return _newDamage;
 		}
 
 		private String getNewName()
 		{
-			return newName;
+			return _newName;
 		}
 
 		private int getPlayerId()
 		{
-			return playerId;
+			return _playerId;
 		}
 
 		private String gethwId()
 		{
-			return hwId;
+			return _hwId;
 		}
 
 		private void setNewData(int dmg, L2PcInstance pl)
@@ -114,10 +114,10 @@ public class DamageManager
 					.replace("$1", PlayerClassTable.getInstance().getClassNameById(pl.getClassId()))
 					.replace("$2", String.valueOf(dmg))));
 
-			newDamage = dmg;
-			newName = pl.getName();
-			playerId = pl.getObjectId();
-			hwId = pl.getHWID();
+			_newDamage = dmg;
+			_newName = pl.getName();
+			_playerId = pl.getObjectId();
+			_hwId = pl.getHWID();
 		}
 	}
 
@@ -140,7 +140,7 @@ public class DamageManager
 
 		if (dmg > info.getCurrentDamage())
 		{
-			/*if (playerMatch(pl.getHWID(), pl.getClassId()))
+            /*if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
 				pl.sendMessage("You already have another record, only one per person is allowed");
 				return;
@@ -313,7 +313,7 @@ public class DamageManager
 			L2DatabaseFactory.close(con);
 		}
 
-		saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
+		_saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
 	}
 
 	private DamageManager()
@@ -323,12 +323,12 @@ public class DamageManager
 
 	public static DamageManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DamageManager instance = new DamageManager();
+		protected static final DamageManager _instance = new DamageManager();
 	}
 }

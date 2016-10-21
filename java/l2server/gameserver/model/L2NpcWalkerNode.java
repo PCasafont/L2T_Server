@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.network.NpcStringId;
-import lombok.Getter;
 
 /**
  * @author Rayan RPG, JIV
@@ -24,14 +23,15 @@ import lombok.Getter;
  */
 public class L2NpcWalkerNode
 {
-	@Getter private int chatId = 0;
-	@Getter private int moveX;
-	@Getter private int moveY;
-	@Getter private int moveZ;
-	@Getter private int delay;
-	@SuppressWarnings("unused") private NpcStringId npcString;
-	private String chatText;
-	@Getter private boolean running;
+	private int _chatId = 0;
+	private int _moveX;
+	private int _moveY;
+	private int _moveZ;
+	private int _delay;
+	@SuppressWarnings("unused")
+	private NpcStringId _npcString;
+	private String _chatText;
+	private boolean _running;
 
 	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
 	{
@@ -40,29 +40,59 @@ public class L2NpcWalkerNode
 
 	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
 	{
-		moveX = x;
-		moveY = y;
-		moveZ = z;
-		this.delay = delay;
-		this.npcString = npcString;
-		this.chatText = chatText;
-		if (this.chatText.startsWith("#"))
+		_moveX = x;
+		_moveY = y;
+		_moveZ = z;
+		_delay = delay;
+		_npcString = npcString;
+		_chatText = chatText;
+		if (_chatText.startsWith("#"))
 		{
-			chatId = Integer.parseInt(this.chatText.substring(1));
+			_chatId = Integer.parseInt(_chatText.substring(1));
 		}
-		else if (this.chatText.trim().isEmpty())
+		else if (_chatText.trim().isEmpty())
 		{
-			this.chatText = null;
+			_chatText = null;
 		}
-		this.running = running;
+		_running = running;
 	}
 
 	public String getChatText()
 	{
-		if (chatId != 0)
+		if (_chatId != 0)
 		{
 			throw new IllegalStateException("Chat id is defined for walker route!");
 		}
-		return chatText;
+		return _chatText;
+	}
+
+	public int getMoveX()
+	{
+		return _moveX;
+	}
+
+	public int getMoveY()
+	{
+		return _moveY;
+	}
+
+	public int getMoveZ()
+	{
+		return _moveZ;
+	}
+
+	public int getDelay()
+	{
+		return _delay;
+	}
+
+	public boolean getRunning()
+	{
+		return _running;
+	}
+
+	public int getChatId()
+	{
+		return _chatId;
 	}
 }

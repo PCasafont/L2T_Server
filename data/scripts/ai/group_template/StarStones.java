@@ -32,7 +32,7 @@ public class StarStones extends L2AttackableAIScript
 	public StarStones(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		registerMobs(mobs, QuestEventType.ON_SKILL_SEE);
+		this.registerMobs(mobs, QuestEventType.ON_SKILL_SEE);
 	}
 
 	@Override

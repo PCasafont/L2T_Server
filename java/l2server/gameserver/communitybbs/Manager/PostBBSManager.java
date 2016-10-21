@@ -32,15 +32,15 @@ import java.util.*;
 
 public class PostBBSManager extends BaseBBSManager
 {
-	private final Map<Topic, Post> postByTopic = new HashMap<>();
+	private final Map<Topic, Post> _postByTopic = new HashMap<>();
 
 	public Post getGPosttByTopic(Topic t)
 	{
-		Post post = postByTopic.get(t);
+		Post post = _postByTopic.get(t);
 		if (post == null)
 		{
 			post = new Post(t);
-			postByTopic.put(t, post);
+			_postByTopic.put(t, post);
 		}
 		return post;
 	}
@@ -50,12 +50,12 @@ public class PostBBSManager extends BaseBBSManager
 	 */
 	public void delPostByTopic(Topic t)
 	{
-		postByTopic.remove(t);
+		_postByTopic.remove(t);
 	}
 
 	public void addPostByTopic(Post p, Topic t)
 	{
-		postByTopic.putIfAbsent(t, p);
+		_postByTopic.putIfAbsent(t, p);
 	}
 
 	@Override
@@ -268,11 +268,11 @@ public class PostBBSManager extends BaseBBSManager
 
 	public static PostBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final PostBBSManager instance = new PostBBSManager();
+		protected static final PostBBSManager _instance = new PostBBSManager();
 	}
 }

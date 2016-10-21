@@ -27,49 +27,49 @@ import java.util.Map;
  */
 public class ExFlyMove extends L2GameServerPacket
 {
-	private int objectId;
-	private L2FlyMoveType type;
-	private int id;
-	Map<Integer, Point3D> moves;
+	private int _objectId;
+	private L2FlyMoveType _type;
+	private int _id;
+	Map<Integer, Point3D> _moves;
 
 	public ExFlyMove(L2PcInstance activeChar, int id, Map<Integer, Point3D> options)
 	{
-		objectId = activeChar.getObjectId();
-		type = L2FlyMoveType.CHOOSE;
-		this.id = id;
-		moves = options;
-		if (moves.containsKey(-1))
+		_objectId = activeChar.getObjectId();
+		_type = L2FlyMoveType.CHOOSE;
+		_id = id;
+		_moves = options;
+		if (_moves.containsKey(-1))
 		{
-			type = L2FlyMoveType.START;
-			activeChar.setXYZ(moves.get(-1).getX(), moves.get(-1).getY(), moves.get(-1).getZ());
+			_type = L2FlyMoveType.START;
+			activeChar.setXYZ(_moves.get(-1).getX(), _moves.get(-1).getY(), _moves.get(-1).getZ());
 		}
 	}
 
 	public ExFlyMove(L2PcInstance activeChar, int id, int ordinal, int x, int y, int z)
 	{
-		objectId = activeChar.getObjectId();
-		type = L2FlyMoveType.MOVE;
-		this.id = id;
-		moves = new HashMap<>();
-		moves.put(ordinal, new Point3D(x, y, z));
+		_objectId = activeChar.getObjectId();
+		_type = L2FlyMoveType.MOVE;
+		_id = id;
+		_moves = new HashMap<>();
+		_moves.put(ordinal, new Point3D(x, y, z));
 		activeChar.setXYZ(x, y, z);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(type.ordinal());
+		writeD(_objectId);
+		writeD(_type.ordinal());
 		writeD(0x00); // GoD ???
-		writeD(id);
-		writeD(moves.size());
-		for (int moveId : moves.keySet())
+		writeD(_id);
+		writeD(_moves.size());
+		for (int moveId : _moves.keySet())
 		{
 			writeD(moveId);
 			writeD(0x00); // GoD ???
-			writeD(moves.get(moveId).getX());
-			writeD(moves.get(moveId).getY());
-			writeD(moves.get(moveId).getZ());
+			writeD(_moves.get(moveId).getX());
+			writeD(_moves.get(moveId).getY());
+			writeD(_moves.get(moveId).getZ());
 		}
 	}
 }

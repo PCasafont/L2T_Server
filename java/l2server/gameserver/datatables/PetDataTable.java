@@ -29,22 +29,23 @@ import java.io.File;
 
 public class PetDataTable
 {
-	private static TIntObjectHashMap<L2PetData> petTable;
+
+	private static TIntObjectHashMap<L2PetData> _petTable;
 
 	public static PetDataTable getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private PetDataTable()
 	{
-		petTable = new TIntObjectHashMap<>();
+		_petTable = new TIntObjectHashMap<>();
 		load();
 	}
 
 	public void load()
 	{
-		petTable.clear();
+		_petTable.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "PetData.xml");
 		if (file.exists())
 		{
@@ -179,7 +180,7 @@ public class PetDataTable
 								break;
 						}
 					}
-					petTable.put(npcId, data);
+					_petTable.put(npcId, data);
 				}
 			}
 		}
@@ -188,26 +189,26 @@ public class PetDataTable
 			Log.warning("Not found PetData.xml");
 		}
 
-		Log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _petTable.size() + " Pets.");
 	}
 
 	public L2PetLevelData getPetLevelData(int petID, int petLevel)
 	{
-		return petTable.get(petID).getPetLevelData(petLevel);
+		return _petTable.get(petID).getPetLevelData(petLevel);
 	}
 
 	public L2PetData getPetData(int petID)
 	{
-		if (!petTable.contains(petID))
+		if (!_petTable.contains(petID))
 		{
 			Log.info("Missing pet data for npcid: " + petID);
 		}
-		return petTable.get(petID);
+		return _petTable.get(petID);
 	}
 
 	public int getPetMinLevel(int petID)
 	{
-		return petTable.get(petID).getMinLevel();
+		return _petTable.get(petID).getMinLevel();
 	}
 
 	/*
@@ -421,7 +422,7 @@ public class PetDataTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PetDataTable instance = new PetDataTable();
+		protected static final PetDataTable _instance = new PetDataTable();
 	}
 
 	public static void main(String... s)

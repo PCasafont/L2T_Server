@@ -22,12 +22,16 @@ import l2server.gameserver.model.L2ItemInstance;
  */
 public final class ExRpItemLink extends L2ItemListPacket
 {
-	private final L2ItemInstance item;
+	private final L2ItemInstance _item;
 
 	public ExRpItemLink(L2ItemInstance item)
 	{
-		this.item = item;
+		_item = item;
 	}
+
+    /*
+	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
+     */
 
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
@@ -35,6 +39,6 @@ public final class ExRpItemLink extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeItem(item);
+		writeItem(_item);
 	}
 }

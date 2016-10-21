@@ -48,7 +48,7 @@ public class RaceManagerKnownList extends NpcKnownList
 			if (packet != null)
 				((L2PcInstance) object).sendPacket(packet);
 		}
-		*/
+		 */
 
 		return true;
 	}
@@ -63,7 +63,7 @@ public class RaceManagerKnownList extends NpcKnownList
 
 		if (object instanceof L2PcInstance)
 		{
-			//Log.info("Sending delete monsrac info.");
+			//Logozo.info("Sending delete monsrac info.");
 			DeleteObject obj = null;
 			for (int i = 0; i < 8; i++)
 			{

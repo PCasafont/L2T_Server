@@ -26,48 +26,49 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public class PetStatusUpdate extends L2GameServerPacket
 {
-	private L2Summon summon;
-	private int maxHp, maxMp;
-	private int maxFed, curFed;
+
+	private L2Summon _summon;
+	private int _maxHp, _maxMp;
+	private int _maxFed, _curFed;
 
 	public PetStatusUpdate(L2Summon summon)
 	{
-		this.summon = summon;
-		maxHp = this.summon.getMaxVisibleHp();
-		maxMp = this.summon.getMaxMp();
-		if (this.summon instanceof L2PetInstance)
+		_summon = summon;
+		_maxHp = _summon.getMaxVisibleHp();
+		_maxMp = _summon.getMaxMp();
+		if (_summon instanceof L2PetInstance)
 		{
-			L2PetInstance pet = (L2PetInstance) this.summon;
-			curFed = pet.getCurrentFed(); // how fed it is
-			maxFed = pet.getMaxFed(); //max fed it can be
+			L2PetInstance pet = (L2PetInstance) _summon;
+			_curFed = pet.getCurrentFed(); // how fed it is
+			_maxFed = pet.getMaxFed(); //max fed it can be
 		}
-		else if (this.summon instanceof L2SummonInstance)
+		else if (_summon instanceof L2SummonInstance)
 		{
-			L2SummonInstance sum = (L2SummonInstance) this.summon;
-			curFed = sum.getTimeRemaining();
-			maxFed = sum.getTotalLifeTime();
+			L2SummonInstance sum = (L2SummonInstance) _summon;
+			_curFed = sum.getTimeRemaining();
+			_maxFed = sum.getTotalLifeTime();
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(summon.getSummonType());
-		writeD(summon.getObjectId());
-		writeD(summon.getX());
-		writeD(summon.getY());
-		writeD(summon.getZ());
+		writeD(_summon.getSummonType());
+		writeD(_summon.getObjectId());
+		writeD(_summon.getX());
+		writeD(_summon.getY());
+		writeD(_summon.getZ());
 		writeS("");
-		writeD(curFed);
-		writeD(maxFed);
-		writeD((int) summon.getCurrentHp());
-		writeD(maxHp);
-		writeD((int) summon.getCurrentMp());
-		writeD(maxMp);
-		writeD(summon.getLevel());
-		writeQ(summon.getStat().getExp());
-		writeQ(summon.getExpForThisLevel()); // 0% absolute value
-		writeQ(summon.getExpForNextLevel()); // 100% absolute value
+		writeD(_curFed);
+		writeD(_maxFed);
+		writeD((int) _summon.getCurrentHp());
+		writeD(_maxHp);
+		writeD((int) _summon.getCurrentMp());
+		writeD(_maxMp);
+		writeD(_summon.getLevel());
+		writeQ(_summon.getStat().getExp());
+		writeQ(_summon.getExpForThisLevel()); // 0% absolute value
+		writeQ(_summon.getExpForNextLevel()); // 100% absolute value
 		writeD(0); // ???
 	}
 }

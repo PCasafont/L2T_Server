@@ -24,39 +24,16 @@
 
 package handlers.admincommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.datatables.*;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CustomAuctionManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
@@ -71,22 +48,22 @@ import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.AllyCrest;
-import l2server.gameserver.network.serverpackets.CharSelected;
-import l2server.gameserver.network.serverpackets.CharSelectionInfo;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.ExOlympiadMode;
-import l2server.gameserver.network.serverpackets.ExUserEffects;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.RestartResponse;
-import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
 
 /**
  * This class ...
@@ -964,7 +941,7 @@ public class AdminTest implements IAdminCommandHandler
 
 					String toLog = "";
 					/*
-					toLog += "\t<item>\n";
+                    toLog += "\t<item>\n";
 					toLog += "\t\t<ingredient id=\"50009\" count=\"250\" /> <!-- Raid Heart -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" /> <!-- " + baseItemName + " -->\n";
 					toLog += "\t\t<production id=\"" + itemId + "\" count=\"1\" chance=\"75\" /> <!-- " + baseItemName + " -->\n";
@@ -991,14 +968,14 @@ public class AdminTest implements IAdminCommandHandler
 					toLog += "\t\t<production id=\"" + itemTemplates[2].getItemId() + "\" count=\"1\" chance=\"10\" /> <!-- " + itemTemplates[2].getName() + " -->\n";
 					toLog += "\t\t<production id=\"" + itemTemplates[1].getItemId() + "\" count=\"1\" chance=\"90\" /> <!-- " + itemTemplates[1].getName() + " -->\n";
 					toLog += "\t</item>\n";
-					*/
+					 */
 
 					/*
 					toLog += "\t<item id=\"" + itemId + "\" type=\"Weapon\" name=\"" + baseItemName + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[0].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[0].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[1].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[1].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
 					toLog += "\t<item id=\"" + itemTemplates[2].getItemId() + "\" type=\"Weapon\" name=\"" + itemTemplates[2].getName() + "\" canBeUsedAsApp=\"true\" overrideStats=\"true\" overrideSkills=\"true\" />\n";
-					*/
+					 */
 
 					toLog += "case " + itemId + ": // " + baseItemName + "\n";
 					toLog += "case " + itemTemplates[0].getItemId() + ": // " + itemTemplates[0].getName() + "\n";

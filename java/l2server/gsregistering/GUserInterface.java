@@ -2,7 +2,6 @@ package l2server.gsregistering;
 
 import l2server.images.ImagesTable;
 import l2server.loginserver.GameServerTable;
-import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -22,23 +21,25 @@ import java.util.ResourceBundle;
  */
 public class GUserInterface extends BaseGameServerRegister implements ActionListener
 {
+
 	/**
 	 *
 	 */
-	@SuppressWarnings("unused") private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
+	private static final long serialVersionUID = 1L;
 
-	@Getter private final JFrame frame;
+	private final JFrame _frame;
 
-	JTableModel dtm;
-	JProgressBar progressBar;
+	JTableModel _dtm;
+	JProgressBar _progressBar;
 
-	public JTable gsTable;
+	public JTable _gsTable;
 
 	public GUserInterface(ResourceBundle bundle)
 	{
 		super(bundle);
 
-		frame = new JFrame();
+		_frame = new JFrame();
 		getFrame().setTitle(getBundle().getString("toolName"));
 		getFrame().setSize(600, 400);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,13 +83,13 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		String name = getBundle().getString("gsName");
 		String action = getBundle().getString("gsAction");
 
-		dtm = new JTableModel(new Object[]{"ID", name, action});
-		gsTable = new JTable(dtm);
-		gsTable.addMouseListener(new JTableButtonMouseListener(gsTable));
+		_dtm = new JTableModel(new Object[]{"ID", name, action});
+		_gsTable = new JTable(_dtm);
+		_gsTable.addMouseListener(new JTableButtonMouseListener(_gsTable));
 
-		gsTable.getColumnModel().getColumn(0).setMaxWidth(30);
+		_gsTable.getColumnModel().getColumn(0).setMaxWidth(30);
 
-		TableColumn actionCollumn = gsTable.getColumnModel().getColumn(2);
+		TableColumn actionCollumn = _gsTable.getColumnModel().getColumn(2);
 		actionCollumn.setCellRenderer(new ButtonCellRenderer());
 
 		cons.fill = GridBagConstraints.BOTH;
@@ -99,18 +100,18 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		cons.gridwidth = 2;
 		JLayeredPane layer = new JLayeredPane();
 		layer.setLayout(new BoxLayout(layer, BoxLayout.PAGE_AXIS));
-		layer.add(new JScrollPane(gsTable), 0);
-		progressBar = new JProgressBar();
-		progressBar.setIndeterminate(true);
-		progressBar.setVisible(false);
-		layer.add(progressBar, BorderLayout.CENTER, 1);
+		layer.add(new JScrollPane(_gsTable), 0);
+		_progressBar = new JProgressBar();
+		_progressBar.setIndeterminate(true);
+		_progressBar.setVisible(false);
+		layer.add(_progressBar, BorderLayout.CENTER, 1);
 		//layer.setV
 		getFrame().add(layer, cons);
 
 		// maximize, doesn't seem really needed
 		//getFrame().setExtendedState(JFrame.MAXIMIZED_BOTH);
 		/*
-		// Work-around JVM maximize issue on linux
+        // Work-around JVM maximize issue on linux
 		String osName = System.getProperty("os.name");
 		if (osName.equals("Linux"))
 		{
@@ -132,11 +133,12 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	@Override
 	public void load()
 	{
-		SwingUtilities.invokeLater(() -> progressBar.setVisible(true));
+
+		SwingUtilities.invokeLater(() -> _progressBar.setVisible(true));
 
 		super.load();
 
-		SwingUtilities.invokeLater(() -> progressBar.setVisible(false));
+		SwingUtilities.invokeLater(() -> _progressBar.setVisible(false));
 	}
 
 	/**
@@ -179,7 +181,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 					System.exit(1);
 				}
 				// reset
-				dtm.setRowCount(0);
+				_dtm.setRowCount(0);
 
 				for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
 				{
@@ -198,15 +200,15 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 							try
 							{
 								BaseGameServerRegister.unregisterGameServer(id);
-								refreshAsync();
+								GUserInterface.this.refreshAsync();
 							}
 							catch (SQLException e1)
 							{
-								showError(getBundle().getString("errorUnregister"), e1);
+								GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
 							}
 						}
 					});
-					dtm.addRow(new Object[]{id, name, button});
+					_dtm.addRow(new Object[]{id, name, button});
 				}
 			});
 		}
@@ -247,15 +249,24 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 					}
 					catch (SQLException e1)
 					{
-						showError(getBundle().getString("errorUnregister"), e1);
+						GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
 					}
 				}
 				break;
 		}
 	}
 
+	/**
+	 * @return Returns the frame.
+	 */
+	public JFrame getFrame()
+	{
+		return _frame;
+	}
+
 	class ButtonCellRenderer implements TableCellRenderer
 	{
+
 		/* (non-Javadoc)
 		 * @see javax.swing.table.TableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
 		 */
@@ -274,26 +285,26 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	 */
 	class JTableButtonMouseListener implements MouseListener
 	{
-		private final JTable table;
+		private final JTable _table;
 
 		public JTableButtonMouseListener(JTable table)
 		{
-			this.table = table;
+			_table = table;
 		}
 
 		private void forwardEvent(MouseEvent e)
 		{
-			TableColumnModel columnModel = table.getColumnModel();
+			TableColumnModel columnModel = _table.getColumnModel();
 			int column = columnModel.getColumnIndexAtX(e.getX());
-			int row = e.getY() / table.getRowHeight();
+			int row = e.getY() / _table.getRowHeight();
 			Object value;
 
-			if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0)
+			if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
 			{
 				return;
 			}
 
-			value = table.getValueAt(row, column);
+			value = _table.getValueAt(row, column);
 
 			if (value instanceof JButton)
 			{
@@ -302,7 +313,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 				{
 					b.getModel().setPressed(true);
 					b.getModel().setArmed(true);
-					table.repaint();
+					_table.repaint();
 				}
 				else if (e.getID() == MouseEvent.MOUSE_RELEASED)
 				{

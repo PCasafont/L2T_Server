@@ -30,10 +30,10 @@ import java.util.Map;
  */
 public class RequestSaveKeyMapping extends L2GameClientPacket
 {
-	int tabNum;
+	int _tabNum;
 
-	Map<Integer, List<ActionKey>> keyMap = new HashMap<>();
-	Map<Integer, List<Integer>> catMap = new HashMap<>();
+	Map<Integer, List<ActionKey>> _keyMap = new HashMap<>();
+	Map<Integer, List<Integer>> _catMap = new HashMap<>();
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -45,8 +45,8 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 
 		readD(); // Unknown
 		readD(); // Unknown
-		tabNum = readD();
-		for (int i = 0; i < tabNum; i++)
+		_tabNum = readD();
+		for (int i = 0; i < _tabNum; i++)
 		{
 			int cmd1Size = readC();
 			for (int j = 0; j < cmd1Size; j++)
@@ -81,30 +81,30 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 
 	public void insertCategory(int cat, int cmd)
 	{
-		if (catMap.containsKey(cat))
+		if (_catMap.containsKey(cat))
 		{
-			catMap.get(cat).add(cmd);
+			_catMap.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			catMap.put(cat, tmp);
+			_catMap.put(cat, tmp);
 		}
 	}
 
 	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (keyMap.containsKey(cat))
+		if (_keyMap.containsKey(cat))
 		{
-			keyMap.get(cat).add(tmk);
+			_keyMap.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			keyMap.put(cat, tmp);
+			_keyMap.put(cat, tmp);
 		}
 	}
 
@@ -126,7 +126,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 		}
 		if (Config.STORE_UI_SETTINGS)
 		{
-			player.getUISettings().storeAll(catMap, keyMap);
+			player.getUISettings().storeAll(_catMap, _keyMap);
 		}
 	}
 }

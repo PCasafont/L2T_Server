@@ -32,10 +32,10 @@ import java.util.logging.Logger;
  */
 public class L2EffectTemplate
 {
-	static Logger log = Logger.getLogger(L2EffectTemplate.class.getName());
+	static Logger _log = Logger.getLogger(L2EffectTemplate.class.getName());
 
-	private final Class<?> func;
-	private final Constructor<?> constructor;
+	private final Class<?> _func;
+	private final Constructor<?> _constructor;
 
 	public final L2AbnormalTemplate abnormal;
 
@@ -65,7 +65,7 @@ public class L2EffectTemplate
 
 		try
 		{
-			this.func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
+			_func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
 		}
 		catch (ClassNotFoundException e)
 		{
@@ -73,7 +73,7 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			constructor = this.func.getConstructor(Env.class, L2EffectTemplate.class);
+			_constructor = _func.getConstructor(Env.class, L2EffectTemplate.class);
 		}
 		catch (NoSuchMethodException e)
 		{
@@ -85,7 +85,7 @@ public class L2EffectTemplate
 	{
 		try
 		{
-			return (L2Effect) constructor.newInstance(env, this);
+			return (L2Effect) _constructor.newInstance(env, this);
 		}
 		catch (IllegalAccessException e)
 		{
@@ -99,7 +99,7 @@ public class L2EffectTemplate
 		}
 		catch (InvocationTargetException e)
 		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " +
+			Log.log(Level.WARNING, "Error creating new instance of Class " + _func + " Exception was: " +
 					e.getTargetException().getMessage(), e.getTargetException());
 			return null;
 		}
@@ -134,8 +134,8 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			// if (applayCond != null)
-			// effect.setCondition(applayCond);
+			// if (_applayCond != null)
+			// effect.setCondition(_applayCond);
 			return (L2Effect) stolenCons.newInstance(env, stolen);
 		}
 		catch (IllegalAccessException e)

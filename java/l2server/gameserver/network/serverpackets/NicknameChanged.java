@@ -23,25 +23,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class NicknameChanged extends L2GameServerPacket
 {
-	private String title;
-	private int objectId;
+	private String _title;
+	private int _objectId;
 
 	public NicknameChanged(L2PcInstance cha)
 	{
-		objectId = cha.getObjectId();
-		title = cha.getTitle();
+		_objectId = cha.getObjectId();
+		_title = cha.getTitle();
 	}
 
 	public NicknameChanged(L2Character cha)
 	{
-		objectId = cha.getObjectId();
-		title = cha.getTitle();
+		_objectId = cha.getObjectId();
+		_title = cha.getTitle();
 	}
 
 	public NicknameChanged(final int objectId, final String title)
 	{
-		this.objectId = objectId;
-		this.title = title;
+		_objectId = objectId;
+		_title = title;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class NicknameChanged extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeS(title);
+		writeD(_objectId);
+		writeS(_title);
 	}
 }

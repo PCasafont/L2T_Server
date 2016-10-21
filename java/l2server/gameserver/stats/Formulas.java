@@ -78,16 +78,16 @@ public final class Formulas
 
 	static class FuncAddLevel3 extends Func
 	{
-		static final FuncAddLevel3[] instancies = new FuncAddLevel3[Stats.NUM_STATS];
+		static final FuncAddLevel3[] _instancies = new FuncAddLevel3[Stats.NUM_STATS];
 
 		static Func getInstance(Stats stat)
 		{
 			int pos = stat.ordinal();
-			if (instancies[pos] == null)
+			if (_instancies[pos] == null)
 			{
-				instancies[pos] = new FuncAddLevel3(stat);
+				_instancies[pos] = new FuncAddLevel3(stat);
 			}
-			return instancies[pos];
+			return _instancies[pos];
 		}
 
 		private FuncAddLevel3(Stats pStat)
@@ -110,16 +110,16 @@ public final class Formulas
 
 	static class FuncMultLevelMod extends Func
 	{
-		static final FuncMultLevelMod[] instancies = new FuncMultLevelMod[Stats.NUM_STATS];
+		static final FuncMultLevelMod[] _instancies = new FuncMultLevelMod[Stats.NUM_STATS];
 
 		static Func getInstance(Stats stat)
 		{
 			int pos = stat.ordinal();
-			if (instancies[pos] == null)
+			if (_instancies[pos] == null)
 			{
-				instancies[pos] = new FuncMultLevelMod(stat);
+				_instancies[pos] = new FuncMultLevelMod(stat);
 			}
-			return instancies[pos];
+			return _instancies[pos];
 		}
 
 		private FuncMultLevelMod(Stats pStat)
@@ -142,7 +142,7 @@ public final class Formulas
 
 	static class FuncMultRegenResting extends Func
 	{
-		static final FuncMultRegenResting[] instancies = new FuncMultRegenResting[Stats.NUM_STATS];
+		static final FuncMultRegenResting[] _instancies = new FuncMultRegenResting[Stats.NUM_STATS];
 
 		/**
 		 * Return the Func object corresponding to the state concerned.<BR><BR>
@@ -151,12 +151,12 @@ public final class Formulas
 		{
 			int pos = stat.ordinal();
 
-			if (instancies[pos] == null)
+			if (_instancies[pos] == null)
 			{
-				instancies[pos] = new FuncMultRegenResting(stat);
+				_instancies[pos] = new FuncMultRegenResting(stat);
 			}
 
-			return instancies[pos];
+			return _instancies[pos];
 		}
 
 		/**
@@ -310,7 +310,7 @@ public final class Formulas
 			if (env.player instanceof L2PcInstance)
 			{
 				/*L2PcInstance p = (L2PcInstance) env.player;
-				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
+                if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LFINGER) != null)
 					env.value -= 5;
 				if (p.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RFINGER) != null)
 					env.value -= 5;
@@ -841,7 +841,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -873,7 +873,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -905,7 +905,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -937,7 +937,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -969,7 +969,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1001,7 +1001,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1033,7 +1033,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1065,7 +1065,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1202,7 +1202,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR><BR>
 	 * <p>
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 */
@@ -1268,7 +1268,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR><BR>
 	 *
 	 * @param cha L2PcInstance or L2Summon that must obtain basic Func objects
 	 */
@@ -1661,7 +1661,7 @@ public final class Formulas
 
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker).soulshotcharged)
+			if (((L2Npc) attacker)._soulshotcharged)
 			{
 				ssBonus = L2ItemInstance.CHARGED_SOULSHOT;
 			}
@@ -1670,7 +1670,7 @@ public final class Formulas
 				ssBonus = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker).soulshotcharged = false;
+			((L2Npc) attacker)._soulshotcharged = false;
 		}
 
 		switch (shld)
@@ -2011,7 +2011,7 @@ public final class Formulas
 
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker).soulshotcharged)
+			if (((L2Npc) attacker)._soulshotcharged)
 			{
 				ssBonus = L2ItemInstance.CHARGED_SOULSHOT;
 			}
@@ -2020,7 +2020,7 @@ public final class Formulas
 				ssBonus = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker).soulshotcharged = false;
+			((L2Npc) attacker)._soulshotcharged = false;
 		}
 
 		switch (shld)
@@ -2366,7 +2366,7 @@ public final class Formulas
 			attacker = ((L2NpcInstance)attacker).getOwner();
 		else if (attacker instanceof L2GuardInstance && ((L2GuardInstance)attacker).getOwner() != null)
 			attacker = ((L2GuardInstance)attacker).getOwner();
-		*/
+		 */
 
 		double pAtk = attacker.calcStat(Stats.CRITICAL_ATTACK, attacker.getPAtk(target), target, skill);
 		double levelMod = attacker.getLevelMod();
@@ -2568,6 +2568,7 @@ public final class Formulas
 							damage *= 0.10;
 					}
 
+
 					break;
 				}
 				case 22957: // Garden Warrior
@@ -2633,7 +2634,7 @@ public final class Formulas
 		// AI SpiritShot
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker).spiritshotcharged)
+			if (((L2Npc) attacker)._spiritshotcharged)
 			{
 				ssMul = L2ItemInstance.CHARGED_SPIRITSHOT;
 			}
@@ -2642,7 +2643,7 @@ public final class Formulas
 				ssMul = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker).spiritshotcharged = false;
+			((L2Npc) attacker)._spiritshotcharged = false;
 		}
 
 		switch (shld)
@@ -3029,7 +3030,7 @@ public final class Formulas
 		if (target instanceof L2MonsterInstance)
 		{
 			if (((L2MonsterInstance) target).getTemplate().isLethalImmune ||
-					((L2MonsterInstance) target).isLethalImmune())
+					((L2MonsterInstance) target).getIsLethalInmune())
 			{
 				return false;
 			}
@@ -3779,6 +3780,7 @@ public final class Formulas
 			}
 
 			return !(target.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && skill.getName().contains("Talisman"));
+
 		}
 
 		if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
@@ -4128,8 +4130,9 @@ public final class Formulas
 			}
 			if (target instanceof L2PcInstance && ((L2PcInstance) target).isLandRates())
 			{
-				target.sendMessage("This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
-						skill.getPower() + " base land rate.");
+				target.sendMessage(
+						"This " + skill.getName() + " had a " + rate + "% chance to land over you, with a " +
+								skill.getPower() + " base land rate.");
 			}
 		}
 
@@ -4309,7 +4312,7 @@ public final class Formulas
 		// AI SpiritShot
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker).spiritshotcharged)
+			if (((L2Npc) attacker)._spiritshotcharged)
 			{
 				ssMul = L2ItemInstance.CHARGED_SPIRITSHOT;
 			}
@@ -4317,7 +4320,7 @@ public final class Formulas
 			{
 				ssMul = L2ItemInstance.CHARGED_NONE;
 			}
-			((L2Npc) attacker).spiritshotcharged = false;
+			((L2Npc) attacker)._spiritshotcharged = false;
 		}
 		//Mana Burnt = (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk(target, skill);

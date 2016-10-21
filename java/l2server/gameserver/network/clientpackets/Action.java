@@ -33,20 +33,23 @@ import l2server.log.Log;
 public final class Action extends L2GameClientPacket
 {
 	// cddddc
-	private int objectId;
-	@SuppressWarnings("unused") private int originX;
-	@SuppressWarnings("unused") private int originY;
-	@SuppressWarnings("unused") private int originZ;
-	private int actionId;
+	private int _objectId;
+	@SuppressWarnings("unused")
+	private int _originX;
+	@SuppressWarnings("unused")
+	private int _originY;
+	@SuppressWarnings("unused")
+	private int _originZ;
+	private int _actionId;
 
 	@Override
 	protected void readImpl()
 	{
-		objectId = readD(); // Target object Identifier
-		originX = readD();
-		originY = readD();
-		originZ = readD();
-		actionId = readC(); // Action identifier : 0-Simple click, 1-Shift click
+		_objectId = readD(); // Target object Identifier
+		_originX = readD();
+		_originY = readD();
+		_originZ = readD();
+		_actionId = readC(); // Action identifier : 0-Simple click, 1-Shift click
 	}
 
 	@Override
@@ -54,11 +57,11 @@ public final class Action extends L2GameClientPacket
 	{
 		if (Config.DEBUG)
 		{
-			Log.fine("Action:" + actionId);
+			Log.fine("Action:" + _actionId);
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("oid:" + objectId);
+			Log.fine("oid:" + _objectId);
 		}
 
 		// Get the current L2PcInstance of the player
@@ -76,27 +79,27 @@ public final class Action extends L2GameClientPacket
 		}
 
 		L2Object obj;
-		if (activeChar.getTargetId() == objectId)
+		if (activeChar.getTargetId() == _objectId)
 		{
 			obj = activeChar.getTarget();
 		}
-		else if (activeChar.isInAirShip() && activeChar.getAirShip().getHelmObjectId() == objectId)
+		else if (activeChar.isInAirShip() && activeChar.getAirShip().getHelmObjectId() == _objectId)
 		{
 			obj = activeChar.getAirShip();
 		}
 		else
 		{
-			obj = L2World.getInstance().findObject(objectId);
+			obj = L2World.getInstance().findObject(_objectId);
 		}
 
 		// If object requested does not exist, add warn msg into logs
 		if (obj == null)
 		{
 			// pressing e.g. pickup many times quickly would get you here
-			// Log.warning("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + objectId);
-			//activeChar.sendSysMessage("Obj was null (" + objectId);
+			// Log.warning("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + _objectId);
+			//activeChar.sendSysMessage("Obj was null (" + _objectId);
 
-			obj = L2World.getInstance().getPlayer(objectId);
+			obj = L2World.getInstance().getPlayer(_objectId);
 			//activeChar.sendSysMessage("Obj = " + obj);
 
 			if (obj == null)
@@ -117,7 +120,7 @@ public final class Action extends L2GameClientPacket
 		}
 
 		// Only GMs can directly interact with invisible characters, but an invis char can target itself
-		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().isInvisible() && !activeChar.isGM() &&
+		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar.isGM() &&
 				obj != activeChar)
 		{
 			activeChar.sendSysMessage("ERR2");
@@ -135,7 +138,7 @@ public final class Action extends L2GameClientPacket
 		// Check if the target is valid, if the player haven't a shop or isn't the requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...)
 		if (activeChar.getActiveRequester() == null)
 		{
-			switch (actionId)
+			switch (_actionId)
 			{
 				case 0:
 					obj.onAction(activeChar);
@@ -152,7 +155,7 @@ public final class Action extends L2GameClientPacket
 					break;
 				default:
 					// Ivalid action detected (probably client cheating), log this
-					Log.warning("Character: " + activeChar.getName() + " requested invalid action: " + actionId);
+					Log.warning("Character: " + activeChar.getName() + " requested invalid action: " + _actionId);
 					getClient().sendPacket(ActionFailed.STATIC_PACKET);
 					break;
 			}

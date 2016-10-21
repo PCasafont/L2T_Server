@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class ConditionTargetRaceId extends Condition
 {
-	private final ArrayList<Integer> raceIds;
+	private final ArrayList<Integer> _raceIds;
 
 	/**
 	 * Instantiates a new condition target race id.
@@ -37,7 +37,7 @@ public class ConditionTargetRaceId extends Condition
 	 */
 	public ConditionTargetRaceId(ArrayList<Integer> raceId)
 	{
-		raceIds = raceId;
+		_raceIds = raceId;
 	}
 
 	/* (non-Javadoc)
@@ -50,6 +50,6 @@ public class ConditionTargetRaceId extends Condition
 		{
 			return false;
 		}
-		return raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
+		return _raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
 	}
 }

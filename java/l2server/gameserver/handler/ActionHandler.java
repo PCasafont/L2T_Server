@@ -22,28 +22,28 @@ import java.util.Map;
 
 public class ActionHandler
 {
-	private Map<InstanceType, IActionHandler> actions;
-	private Map<InstanceType, IActionHandler> actionsShift;
+	private Map<InstanceType, IActionHandler> _actions;
+	private Map<InstanceType, IActionHandler> _actionsShift;
 
 	public static ActionHandler getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private ActionHandler()
 	{
-		actions = new HashMap<>();
-		actionsShift = new HashMap<>();
+		_actions = new HashMap<>();
+		_actionsShift = new HashMap<>();
 	}
 
 	public void registerActionHandler(IActionHandler handler)
 	{
-		actions.put(handler.getInstanceType(), handler);
+		_actions.put(handler.getInstanceType(), handler);
 	}
 
 	public void registerActionShiftHandler(IActionHandler handler)
 	{
-		actionsShift.put(handler.getInstanceType(), handler);
+		_actionsShift.put(handler.getInstanceType(), handler);
 	}
 
 	public IActionHandler getActionHandler(InstanceType iType)
@@ -51,7 +51,7 @@ public class ActionHandler
 		IActionHandler result = null;
 		for (InstanceType t = iType; t != null; t = t.getParent())
 		{
-			result = actions.get(t);
+			result = _actions.get(t);
 			if (result != null)
 			{
 				break;
@@ -65,7 +65,7 @@ public class ActionHandler
 		IActionHandler result = null;
 		for (InstanceType t = iType; t != null; t = t.getParent())
 		{
-			result = actionsShift.get(t);
+			result = _actionsShift.get(t);
 			if (result != null)
 			{
 				break;
@@ -76,17 +76,17 @@ public class ActionHandler
 
 	public int size()
 	{
-		return actions.size();
+		return _actions.size();
 	}
 
 	public int sizeShift()
 	{
-		return actionsShift.size();
+		return _actionsShift.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ActionHandler instance = new ActionHandler();
+		protected static final ActionHandler _instance = new ActionHandler();
 	}
 }

@@ -22,21 +22,21 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2EffectPointInstance extends L2Npc
 {
-	private final L2PcInstance owner;
+	private final L2PcInstance _owner;
 
 	public L2EffectPointInstance(int objectId, L2NpcTemplate template, L2Character owner)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2EffectPointInstance);
 		setIsInvul(false);
-		this.owner = owner == null ? null : owner.getActingPlayer();
+		_owner = owner == null ? null : owner.getActingPlayer();
 		setInstanceId(owner.getInstanceId());
 	}
 
 	@Override
 	public L2PcInstance getActingPlayer()
 	{
-		return owner;
+		return _owner;
 	}
 
 	/**

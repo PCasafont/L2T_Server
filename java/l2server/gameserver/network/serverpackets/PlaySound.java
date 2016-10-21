@@ -22,49 +22,49 @@ package l2server.gameserver.network.serverpackets;
  */
 public class PlaySound extends L2GameServerPacket
 {
-	private int unknown1;
-	private String soundFile;
-	private int unknown3;
-	private int unknown4;
-	private int unknown5;
-	private int unknown6;
-	private int unknown7;
-	private int unknown8;
+	private int _unknown1;
+	private String _soundFile;
+	private int _unknown3;
+	private int _unknown4;
+	private int _unknown5;
+	private int _unknown6;
+	private int _unknown7;
+	private int _unknown8;
 
 	public PlaySound(String soundFile)
 	{
-		unknown1 = 0;
-		this.soundFile = soundFile;
-		unknown3 = 0;
-		unknown4 = 0;
-		unknown5 = 0;
-		unknown6 = 0;
-		unknown7 = 0;
-		unknown8 = 0;
+		_unknown1 = 0;
+		_soundFile = soundFile;
+		_unknown3 = 0;
+		_unknown4 = 0;
+		_unknown5 = 0;
+		_unknown6 = 0;
+		_unknown7 = 0;
+		_unknown8 = 0;
 	}
 
 	public PlaySound(int unknown1, String soundFile, int unknown3, int unknown4, int unknown5, int unknown6, int unknown7)
 	{
-		this.unknown1 = unknown1;
-		this.soundFile = soundFile;
-		this.unknown3 = unknown3;
-		this.unknown4 = unknown4;
-		this.unknown5 = unknown5;
-		this.unknown6 = unknown6;
-		this.unknown7 = unknown7;
-		unknown8 = 0;
+		_unknown1 = unknown1;
+		_soundFile = soundFile;
+		_unknown3 = unknown3;
+		_unknown4 = unknown4;
+		_unknown5 = unknown5;
+		_unknown6 = unknown6;
+		_unknown7 = unknown7;
+		_unknown8 = 0;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(unknown1); //unknown 0 for quest and ship;
-		writeS(soundFile);
-		writeD(unknown3); //unknown 0 for quest; 1 for ship;
-		writeD(unknown4); //0 for quest; objectId of ship
-		writeD(unknown5); //x
-		writeD(unknown6); //y
-		writeD(unknown7); //z
-		writeD(unknown8);
+		writeD(_unknown1); //unknown 0 for quest and ship;
+		writeS(_soundFile);
+		writeD(_unknown3); //unknown 0 for quest; 1 for ship;
+		writeD(_unknown4); //0 for quest; objectId of ship
+		writeD(_unknown5); //x
+		writeD(_unknown6); //y
+		writeD(_unknown7); //z
+		writeD(_unknown8);
 	}
 }

@@ -15,8 +15,6 @@
 
 package l2server.loginserver.network.serverpackets;
 
-import lombok.Getter;
-
 /**
  * This class ...
  *
@@ -66,19 +64,24 @@ public final class PlayFail extends L2LoginServerPacket
 		REASON_CERTIFICATION_DAILY_USE_EXCEEDED(0x37),
 		REASON_CERTIFICATION_UNDERWAY_TRY_AGAIN_LATER(0x38);
 
-		@Getter private final int code;
+		private final int _code;
 
 		PlayFailReason(int code)
 		{
-			this.code = code;
+			_code = code;
+		}
+
+		public final int getCode()
+		{
+			return _code;
 		}
 	}
 
-	private final PlayFailReason reason;
+	private final PlayFailReason _reason;
 
 	public PlayFail(PlayFailReason reason)
 	{
-		this.reason = reason;
+		_reason = reason;
 	}
 
 	/**
@@ -87,6 +90,6 @@ public final class PlayFail extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x06);
-		writeC(reason.getCode());
+		writeC(_reason.getCode());
 	}
 }

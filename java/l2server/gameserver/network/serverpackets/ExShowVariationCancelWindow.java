@@ -23,6 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShowVariationCancelWindow extends L2GameServerPacket
 {
+
 	/**
 	 */
 	@Override

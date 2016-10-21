@@ -29,12 +29,13 @@ import l2server.gameserver.network.serverpackets.*;
  */
 public final class RequestAnswerJoinPledge extends L2GameClientPacket
 {
-	private int answer;
+
+	private int _answer;
 
 	@Override
 	protected void readImpl()
 	{
-		answer = readD();
+		_answer = readD();
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 			return;
 		}
 
-		if (answer == 0)
+		if (_answer == 0)
 		{
 			SystemMessage sm =
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION);

@@ -25,39 +25,39 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PledgeShowMemberListAdd extends L2GameServerPacket
 {
-	private String name;
-	private int lvl;
-	private int classId;
-	private int isOnline;
-	private int pledgeType;
+	private String _name;
+	private int _lvl;
+	private int _classId;
+	private int _isOnline;
+	private int _pledgeType;
 
 	public PledgeShowMemberListAdd(L2PcInstance player)
 	{
-		name = player.getName();
-		lvl = player.getLevel();
-		classId = player.getCurrentClass().getId();
-		isOnline = player.isOnline() ? player.getObjectId() : 0;
-		pledgeType = player.getPledgeType();
+		_name = player.getName();
+		_lvl = player.getLevel();
+		_classId = player.getCurrentClass().getId();
+		_isOnline = player.isOnline() ? player.getObjectId() : 0;
+		_pledgeType = player.getPledgeType();
 	}
 
 	public PledgeShowMemberListAdd(L2ClanMember cm)
 	{
-		name = cm.getName();
-		lvl = cm.getLevel();
-		classId = cm.getCurrentClass();
-		isOnline = cm.isOnline() ? cm.getObjectId() : 0;
-		pledgeType = cm.getPledgeType();
+		_name = cm.getName();
+		_lvl = cm.getLevel();
+		_classId = cm.getCurrentClass();
+		_isOnline = cm.isOnline() ? cm.getObjectId() : 0;
+		_pledgeType = cm.getPledgeType();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(name);
-		writeD(lvl);
-		writeD(classId);
+		writeS(_name);
+		writeD(_lvl);
+		writeD(_classId);
 		writeD(0);
 		writeD(1);
-		writeD(isOnline); // 1=online 0=offline
-		writeD(pledgeType);
+		writeD(_isOnline); // 1=online 0=offline
+		writeD(_pledgeType);
 	}
 }

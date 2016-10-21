@@ -29,7 +29,6 @@ import l2server.gameserver.taskmanager.DecayTaskManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.Collection;
 import java.util.logging.Level;
@@ -41,11 +40,11 @@ public class L2Trap extends L2Character
 {
 	protected static final int TICK = 1000; // 1s
 
-	private boolean isTriggered;
-	@Getter private final L2Skill skill;
-	private final int lifeTime;
-	private int timeRemaining;
-	private boolean hasLifeTime;
+	private boolean _isTriggered;
+	private final L2Skill _skill;
+	private final int _lifeTime;
+	private int _timeRemaining;
+	private boolean _hasLifeTime;
 
 	/**
 	 * @param objectId
@@ -58,21 +57,21 @@ public class L2Trap extends L2Character
 		setName(template.Name);
 		setIsInvul(false);
 
-		isTriggered = false;
-		this.skill = skill;
-		hasLifeTime = true;
+		_isTriggered = false;
+		_skill = skill;
+		_hasLifeTime = true;
 		if (lifeTime != 0)
 		{
-			this.lifeTime = lifeTime;
+			_lifeTime = lifeTime;
 		}
 		else
 		{
-			this.lifeTime = 30000;
+			_lifeTime = 30000;
 		}
-		timeRemaining = this.lifeTime;
+		_timeRemaining = _lifeTime;
 		if (lifeTime < 0)
 		{
-			hasLifeTime = false;
+			_hasLifeTime = false;
 		}
 
 		if (skill != null)
@@ -228,6 +227,12 @@ public class L2Trap extends L2Character
 	@Override
 	public void updateAbnormalEffect()
 	{
+
+	}
+
+	public L2Skill getSkill()
+	{
+		return _skill;
 	}
 
 	public L2PcInstance getOwner()
@@ -252,7 +257,7 @@ public class L2Trap extends L2Character
 	 */
 	public boolean isTriggered()
 	{
-		return isTriggered;
+		return _isTriggered;
 	}
 
 	/**
@@ -294,17 +299,17 @@ public class L2Trap extends L2Character
 		{
 			try
 			{
-				if (!isTriggered)
+				if (!_isTriggered)
 				{
-					if (hasLifeTime)
+					if (_hasLifeTime)
 					{
-						timeRemaining -= TICK;
-						if (timeRemaining < lifeTime - 15000)
+						_timeRemaining -= TICK;
+						if (_timeRemaining < _lifeTime - 15000)
 						{
 							SocialAction sa = new SocialAction(getObjectId(), 2);
 							broadcastPacket(sa);
 						}
-						if (timeRemaining < 0)
+						if (_timeRemaining < 0)
 						{
 							switch (getSkill().getTargetType())
 							{
@@ -321,14 +326,14 @@ public class L2Trap extends L2Character
 						}
 					}
 
-					for (L2Character target : getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
+					for (L2Character target : getKnownList().getKnownCharactersInRadius(_skill.getSkillRadius()))
 					{
 						if (target == getOwner())
 						{
 							continue;
 						}
 
-						if (!getOwner().isAbleToCastOnTarget(target, skill, false))
+						if (!getOwner().isAbleToCastOnTarget(target, _skill, false))
 						{
 							continue;
 						}
@@ -355,7 +360,7 @@ public class L2Trap extends L2Character
 	 */
 	public void trigger(L2Character target)
 	{
-		isTriggered = true;
+		_isTriggered = true;
 		broadcastPacket(new NpcInfo(this));
 		setTarget(target);
 
@@ -377,8 +382,8 @@ public class L2Trap extends L2Character
 		{
 			try
 			{
-				doCast(skill);
-				ThreadPoolManager.getInstance().scheduleGeneral(new UnsummonTask(), skill.getHitTime() + 300);
+				doCast(_skill);
+				ThreadPoolManager.getInstance().scheduleGeneral(new UnsummonTask(), _skill.getHitTime() + 300);
 			}
 			catch (Exception e)
 			{
@@ -400,7 +405,7 @@ public class L2Trap extends L2Character
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
-		if (isTriggered || canSee(activeChar))
+		if (_isTriggered || canSee(activeChar))
 		{
 			activeChar.sendPacket(new NpcInfo(this));
 		}
@@ -412,7 +417,7 @@ public class L2Trap extends L2Character
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
 		{
-			if (player != null && (isTriggered || canSee(player)))
+			if (player != null && (_isTriggered || canSee(player)))
 			{
 				player.sendPacket(mov);
 			}
@@ -431,7 +436,7 @@ public class L2Trap extends L2Character
 			}
 			if (isInsideRadius(player, radiusInKnownlist, false, false))
 			{
-				if (isTriggered || canSee(player))
+				if (_isTriggered || canSee(player))
 				{
 					player.sendPacket(mov);
 				}

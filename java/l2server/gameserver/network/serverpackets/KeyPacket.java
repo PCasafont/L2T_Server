@@ -24,38 +24,39 @@ import l2server.Config;
  */
 public final class KeyPacket extends L2GameServerPacket
 {
-	private byte[] key;
-	private int id;
+
+	private byte[] _key;
+	private int _id;
 
 	public KeyPacket(byte[] key, int id)
 	{
-		this.key = key;
-		this.id = id;
+		_key = key;
+		_id = id;
 	}
 
 	public KeyPacket(byte data[])
 	{
-		key = data;
-		id = 2;
+		_key = data;
+		_id = 2;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (id == 2)
+		if (_id == 2)
 		{
-			writeC(key == null ? 0x00 : 0x01);
-			if (key != null)
+			writeC(_key == null ? 0x00 : 0x01);
+			if (_key != null)
 			{
-				writeB(key);
+				writeB(_key);
 			}
 		}
 		else
 		{
-			writeC(id); //0 - wrong protocol, 1 - protocol ok
+			writeC(_id); //0 - wrong protocol, 1 - protocol ok
 			for (int i = 0; i < 8; i++)
 			{
-				writeC(key[i]); // key
+				writeC(_key[i]); // key
 			}
 		}
 		writeD(0x01);

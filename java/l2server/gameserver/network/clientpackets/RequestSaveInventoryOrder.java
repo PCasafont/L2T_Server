@@ -30,7 +30,7 @@ import java.util.List;
  */
 public final class RequestSaveInventoryOrder extends L2GameClientPacket
 {
-	private List<InventoryOrder> order;
+	private List<InventoryOrder> _order;
 
 	/**
 	 * client limit
@@ -45,12 +45,12 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket
 	{
 		int sz = readD();
 		sz = Math.min(sz, LIMIT);
-		order = new ArrayList<>(sz);
+		_order = new ArrayList<>(sz);
 		for (int i = 0; i < sz; i++)
 		{
 			int objectId = readD();
 			int order = readD();
-			this.order.add(new InventoryOrder(objectId, order));
+			_order.add(new InventoryOrder(objectId, order));
 		}
 	}
 
@@ -63,7 +63,7 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket
 		if (player != null)
 		{
 			Inventory inventory = player.getInventory();
-			for (InventoryOrder order : this.order)
+			for (InventoryOrder order : _order)
 			{
 				L2ItemInstance item = inventory.getItemByObjectId(order.objectID);
 				if (item != null && item.getLocation() == ItemLocation.INVENTORY)

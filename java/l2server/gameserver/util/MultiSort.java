@@ -32,32 +32,32 @@ public class MultiSort
 	public static final int SORT_ASCENDING = 0;
 	public static final int SORT_DESCENDING = 1;
 
-	private List<?> keyList;
-	private List<Integer> valueList;
+	private List<?> _keyList;
+	private List<Integer> _valueList;
 
-	private boolean isSortDescending;
-	private boolean isSorted;
+	private boolean _isSortDescending;
+	private boolean _isSorted;
 
 	public MultiSort(int[] valueList)
 	{
-		this.valueList = getIntList(valueList);
+		_valueList = getIntList(valueList);
 	}
 
 	public MultiSort(Collection<Integer> valueList)
 	{
-		this.valueList = getIntList(valueList);
+		_valueList = getIntList(valueList);
 	}
 
 	public MultiSort(Object[] keyList, int[] valueList)
 	{
-		this.keyList = getList(keyList);
-		this.valueList = getIntList(valueList);
+		_keyList = getList(keyList);
+		_valueList = getIntList(valueList);
 	}
 
 	public MultiSort(Map<?, Integer> valueMap)
 	{
-		keyList = getList(valueMap.keySet());
-		valueList = getIntList(valueMap.values());
+		_keyList = getList(valueMap.keySet());
+		_valueList = getIntList(valueMap.values());
 	}
 
 	private List<Integer> getIntList(Collection<Integer> valueList)
@@ -111,12 +111,12 @@ public class MultiSort
 
 	public final List<?> getKeys()
 	{
-		if (keyList == null)
+		if (_keyList == null)
 		{
 			return new ArrayList<>();
 		}
 
-		return keyList;
+		return _keyList;
 	}
 
 	public final int getFrequency(int checkValue)
@@ -191,27 +191,27 @@ public class MultiSort
 
 	public final List<Integer> getValues()
 	{
-		if (valueList == null)
+		if (_valueList == null)
 		{
 			return new ArrayList<>();
 		}
 
-		return valueList;
+		return _valueList;
 	}
 
 	public final boolean isSortDescending()
 	{
-		return isSortDescending;
+		return _isSortDescending;
 	}
 
 	public final boolean isSorted()
 	{
-		return isSorted;
+		return _isSorted;
 	}
 
 	public final void setSortDescending(boolean isDescending)
 	{
-		isSortDescending = isDescending;
+		_isSortDescending = isDescending;
 	}
 
 	public boolean sort()
@@ -297,9 +297,9 @@ public class MultiSort
 				}
 			}
 
-			keyList = newKeyList;
-			valueList = newValueList;
-			isSorted = true;
+			_keyList = newKeyList;
+			_valueList = newValueList;
+			_isSorted = true;
 			return true;
 		}
 		catch (Exception e)

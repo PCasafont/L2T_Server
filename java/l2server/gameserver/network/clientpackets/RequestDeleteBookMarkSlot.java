@@ -23,6 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestDeleteBookMarkSlot extends L2GameClientPacket
 {
+
 	private int id;
 
 	@Override

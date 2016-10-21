@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.ExUISetting;
  */
 public class RequestKeyMapping extends L2GameClientPacket
 {
+
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */

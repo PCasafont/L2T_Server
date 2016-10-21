@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  */
 public interface IUserCommandHandler
 {
-	Logger log = Logger.getLogger(IUserCommandHandler.class.getName());
+	Logger _log = Logger.getLogger(IUserCommandHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when someone uses an admin command.

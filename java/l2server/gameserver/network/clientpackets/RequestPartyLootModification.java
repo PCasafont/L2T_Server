@@ -23,12 +23,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RequestPartyLootModification extends L2GameClientPacket
 {
-	private byte mode;
+
+	private byte _mode;
 
 	@Override
 	protected void readImpl()
 	{
-		mode = (byte) readD();
+		_mode = (byte) readD();
 	}
 
 	@Override
@@ -39,15 +40,15 @@ public class RequestPartyLootModification extends L2GameClientPacket
 		{
 			return;
 		}
-		if (mode < 0 || mode > L2Party.ITEM_ORDER_SPOIL)
+		if (_mode < 0 || _mode > L2Party.ITEM_ORDER_SPOIL)
 		{
 			return;
 		}
 		L2Party party = activeChar.getParty();
-		if (party == null || mode == party.getLootDistribution() || party.getLeader() != activeChar)
+		if (party == null || _mode == party.getLootDistribution() || party.getLeader() != activeChar)
 		{
 			return;
 		}
-		party.requestLootChange(mode);
+		party.requestLootChange(_mode);
 	}
 }

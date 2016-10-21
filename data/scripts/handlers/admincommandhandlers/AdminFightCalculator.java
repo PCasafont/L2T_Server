@@ -1,16 +1,16 @@
 /*
- * _program is free software: you can redistribute it and/or modify it under
+ * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
  *
- * _program is distributed in the hope that it will be useful, but WITHOUT
+ * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
  *
  * You should have received a copy of the GNU General Public License along with
- * _program. If not, see <http://www.gnu.org/licenses/>.
+ * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package handlers.admincommandhandlers;
@@ -32,7 +32,7 @@ import l2server.util.StringUtil;
 import java.util.StringTokenizer;
 
 /**
- * _class handles following admin commands:
+ * This class handles following admin commands:
  * - gm = turns gm mode on/off
  *
  * @version $Revision: 1.1.2.1 $ $Date: 2005/03/15 21:32:48 $

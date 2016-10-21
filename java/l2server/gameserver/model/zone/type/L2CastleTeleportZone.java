@@ -19,7 +19,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.util.Rnd;
-import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -31,14 +30,14 @@ import java.util.ArrayList;
  */
 public class L2CastleTeleportZone extends L2ZoneType
 {
-	private int[] spawnLoc;
-	@Getter private int castleId;
+	private int[] _spawnLoc;
+	private int _castleId;
 
 	public L2CastleTeleportZone(int id)
 	{
 		super(id);
 
-		spawnLoc = new int[5];
+		_spawnLoc = new int[5];
 	}
 
 	@Override
@@ -47,22 +46,22 @@ public class L2CastleTeleportZone extends L2ZoneType
 		switch (name)
 		{
 			case "castleId":
-				castleId = Integer.parseInt(value);
+				_castleId = Integer.parseInt(value);
 				break;
 			case "spawnMinX":
-				spawnLoc[0] = Integer.parseInt(value);
+				_spawnLoc[0] = Integer.parseInt(value);
 				break;
 			case "spawnMaxX":
-				spawnLoc[1] = Integer.parseInt(value);
+				_spawnLoc[1] = Integer.parseInt(value);
 				break;
 			case "spawnMinY":
-				spawnLoc[2] = Integer.parseInt(value);
+				_spawnLoc[2] = Integer.parseInt(value);
 				break;
 			case "spawnMaxY":
-				spawnLoc[3] = Integer.parseInt(value);
+				_spawnLoc[3] = Integer.parseInt(value);
 				break;
 			case "spawnZ":
-				spawnLoc[4] = Integer.parseInt(value);
+				_spawnLoc[4] = Integer.parseInt(value);
 				break;
 			default:
 				super.setParameter(name, value);
@@ -101,7 +100,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 	{
 		ArrayList<L2PcInstance> players = new ArrayList<>();
 
-		for (L2Character temp : characterList.values())
+		for (L2Character temp : _characterList.values())
 		{
 			if (temp instanceof L2PcInstance)
 			{
@@ -115,15 +114,15 @@ public class L2CastleTeleportZone extends L2ZoneType
 	@Override
 	public void oustAllPlayers()
 	{
-		if (characterList == null)
+		if (_characterList == null)
 		{
 			return;
 		}
-		if (characterList.isEmpty())
+		if (_characterList.isEmpty())
 		{
 			return;
 		}
-		for (L2Character character : characterList.values())
+		for (L2Character character : _characterList.values())
 		{
 			if (character == null)
 			{
@@ -134,11 +133,16 @@ public class L2CastleTeleportZone extends L2ZoneType
 				L2PcInstance player = (L2PcInstance) character;
 				if (player.isOnline())
 				{
-					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2], spawnLoc[3]),
-							spawnLoc[4]);
+					player.teleToLocation(Rnd.get(_spawnLoc[0], _spawnLoc[1]), Rnd.get(_spawnLoc[2], _spawnLoc[3]),
+							_spawnLoc[4]);
 				}
 			}
 		}
+	}
+
+	public int getCastleId()
+	{
+		return _castleId;
 	}
 
 	/**
@@ -148,6 +152,6 @@ public class L2CastleTeleportZone extends L2ZoneType
 	 */
 	public int[] getSpawn()
 	{
-		return spawnLoc;
+		return _spawnLoc;
 	}
 }

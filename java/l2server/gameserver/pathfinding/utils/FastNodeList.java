@@ -22,24 +22,24 @@ import l2server.gameserver.pathfinding.AbstractNode;
  */
 public class FastNodeList
 {
-	private AbstractNode[] list;
-	private int size;
+	private AbstractNode[] _list;
+	private int _size;
 
 	public FastNodeList(int size)
 	{
-		list = new AbstractNode[size];
+		_list = new AbstractNode[size];
 	}
 
 	public void add(AbstractNode n)
 	{
-		list[size++] = n;
+		_list[_size++] = n;
 	}
 
 	public boolean contains(AbstractNode n)
 	{
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < _size; i++)
 		{
-			if (list[i].equals(n))
+			if (_list[i].equals(n))
 			{
 				return true;
 			}
@@ -49,9 +49,9 @@ public class FastNodeList
 
 	public boolean containsRev(AbstractNode n)
 	{
-		for (int i = size - 1; i >= 0; i--)
+		for (int i = _size - 1; i >= 0; i--)
 		{
-			if (list[i].equals(n))
+			if (_list[i].equals(n))
 			{
 				return true;
 			}

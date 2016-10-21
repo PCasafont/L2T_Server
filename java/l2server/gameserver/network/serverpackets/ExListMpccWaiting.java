@@ -22,17 +22,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExListMpccWaiting extends L2GameServerPacket
 {
-	@SuppressWarnings("unused") private final L2PcInstance activeChar;
-	@SuppressWarnings("unused") private int page;
-	@SuppressWarnings("unused") private int location;
-	@SuppressWarnings("unused") private int anyLevel;
+	@SuppressWarnings("unused")
+	private final L2PcInstance _activeChar;
+	@SuppressWarnings("unused")
+	private int _page;
+	@SuppressWarnings("unused")
+	private int _location;
+	@SuppressWarnings("unused")
+	private int _anyLevel;
 
 	public ExListMpccWaiting(L2PcInstance player, int page, int location, int anyLevel)
 	{
-		activeChar = player;
-		this.page = page;
-		this.location = location;
-		this.anyLevel = anyLevel;
+		_activeChar = player;
+		_page = page;
+		_location = location;
+		_anyLevel = anyLevel;
 	}
 
 	@Override

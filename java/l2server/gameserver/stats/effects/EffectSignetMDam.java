@@ -46,7 +46,7 @@ import java.util.ArrayList;
 
 public class EffectSignetMDam extends L2Effect
 {
-	private L2EffectPointInstance actor;
+	private L2EffectPointInstance _actor;
 
 	public EffectSignetMDam(Env env, L2EffectTemplate template)
 	{
@@ -68,7 +68,7 @@ public class EffectSignetMDam extends L2Effect
 		L2NpcTemplate template;
 		if (getSkill() instanceof L2SkillSignetCasttime)
 		{
-			template = NpcTable.getInstance().getTemplate(((L2SkillSignetCasttime) getSkill()).effectNpcId);
+			template = NpcTable.getInstance().getTemplate(((L2SkillSignetCasttime) getSkill())._effectNpcId);
 		}
 		else
 		{
@@ -99,7 +99,7 @@ public class EffectSignetMDam extends L2Effect
 		effectPoint.setIsInvul(true);
 		effectPoint.spawnMe(x, y, z);
 
-		actor = effectPoint;
+		_actor = effectPoint;
 		return true;
 	}
 
@@ -128,7 +128,7 @@ public class EffectSignetMDam extends L2Effect
 
 		ArrayList<L2Character> targets = new ArrayList<>();
 
-		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
+		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
 			if (cha == null || cha == caster)
 			{
@@ -213,9 +213,9 @@ public class EffectSignetMDam extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (actor != null)
+		if (_actor != null)
 		{
-			actor.deleteMe();
+			_actor.deleteMe();
 		}
 	}
 }

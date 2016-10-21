@@ -15,8 +15,6 @@
 
 package l2server.gameserver.script;
 
-import lombok.Getter;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -29,16 +27,32 @@ import java.util.zip.ZipFile;
  */
 public class ScriptPackage
 {
-	@Getter private List<ScriptDocument> scriptFiles;
-	@Getter private List<String> otherFiles;
-	@Getter private String name;
+	private List<ScriptDocument> _scriptFiles;
+	private List<String> _otherFiles;
+	private String _name;
 
 	public ScriptPackage(ZipFile pack)
 	{
-		scriptFiles = new ArrayList<>();
-		otherFiles = new ArrayList<>();
-		name = pack.getName();
+		_scriptFiles = new ArrayList<>();
+		_otherFiles = new ArrayList<>();
+		_name = pack.getName();
 		addFiles(pack);
+	}
+
+	/**
+	 * @return Returns the otherFiles.
+	 */
+	public List<String> getOtherFiles()
+	{
+		return _otherFiles;
+	}
+
+	/**
+	 * @return Returns the scriptFiles.
+	 */
+	public List<ScriptDocument> getScriptFiles()
+	{
+		return _scriptFiles;
 	}
 
 	/**
@@ -53,7 +67,7 @@ public class ScriptPackage
 				try
 				{
 					ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
-					scriptFiles.add(newScript);
+					_scriptFiles.add(newScript);
 				}
 				catch (IOException e1)
 				{
@@ -62,9 +76,17 @@ public class ScriptPackage
 			}
 			else if (!entry.isDirectory())
 			{
-				otherFiles.add(entry.getName());
+				_otherFiles.add(entry.getName());
 			}
 		}
+	}
+
+	/**
+	 * @return Returns the name.
+	 */
+	public String getName()
+	{
+		return _name;
 	}
 
 	@Override

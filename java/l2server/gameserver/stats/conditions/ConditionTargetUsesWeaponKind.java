@@ -25,7 +25,8 @@ import l2server.gameserver.templates.item.L2Weapon;
  */
 public class ConditionTargetUsesWeaponKind extends Condition
 {
-	private final int weaponMask;
+
+	private final int _weaponMask;
 
 	/**
 	 * Instantiates a new condition target uses weapon kind.
@@ -34,7 +35,7 @@ public class ConditionTargetUsesWeaponKind extends Condition
 	 */
 	public ConditionTargetUsesWeaponKind(int weaponMask)
 	{
-		this.weaponMask = weaponMask;
+		_weaponMask = weaponMask;
 	}
 
 	/* (non-Javadoc)
@@ -43,6 +44,7 @@ public class ConditionTargetUsesWeaponKind extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
+
 		if (env.target == null)
 		{
 			return false;
@@ -55,6 +57,6 @@ public class ConditionTargetUsesWeaponKind extends Condition
 			return false;
 		}
 
-		return (item.getItemType().mask() & weaponMask) != 0;
+		return (item.getItemType().mask() & _weaponMask) != 0;
 	}
 }

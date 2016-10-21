@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 public class ConditionPlayerHasPet extends Condition
 {
-	private final ArrayList<Integer> controlItemIds;
+	private final ArrayList<Integer> _controlItemIds;
 
 	/**
 	 * Instantiates a new condition player has pet.
@@ -37,11 +37,11 @@ public class ConditionPlayerHasPet extends Condition
 	{
 		if (itemIds.size() == 1 && itemIds.get(0) == 0)
 		{
-			controlItemIds = null;
+			_controlItemIds = null;
 		}
 		else
 		{
-			controlItemIds = itemIds;
+			_controlItemIds = itemIds;
 		}
 	}
 
@@ -61,7 +61,7 @@ public class ConditionPlayerHasPet extends Condition
 			return false;
 		}
 
-		if (controlItemIds == null)
+		if (_controlItemIds == null)
 		{
 			return true;
 		}
@@ -72,6 +72,6 @@ public class ConditionPlayerHasPet extends Condition
 			return false;
 		}
 
-		return controlItemIds.contains(controlItem.getItemId());
+		return _controlItemIds.contains(controlItem.getItemId());
 	}
 }

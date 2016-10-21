@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.ShowTownMap;
 import l2server.gameserver.network.serverpackets.StaticObject;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.gameserver.templates.item.L2Weapon;
-import lombok.Getter;
 
 /**
  * GODSON ROX!
@@ -42,10 +41,10 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public static final int INTERACTION_DISTANCE = 150;
 
-	@Getter private int staticObjectId;
-	private int meshIndex = 0; // 0 - static objects, alternate static objects
-	private int type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
-	@Getter private ShowTownMap map;
+	private int _staticObjectId;
+	private int _meshIndex = 0; // 0 - static objects, alternate static objects
+	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
+	private ShowTownMap _map;
 
 	/**
 	 * This class may be created only by L2Character and only for AI
@@ -95,12 +94,20 @@ public class L2StaticObjectInstance extends L2Character
 	}
 
 	/**
+	 * @return Returns the StaticObjectId.
+	 */
+	public int getStaticObjectId()
+	{
+		return _staticObjectId;
+	}
+
+	/**
 	 */
 	public L2StaticObjectInstance(int objectId, L2CharTemplate template, int staticId)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2StaticObjectInstance);
-		staticObjectId = staticId;
+		_staticObjectId = staticId;
 	}
 
 	@Override
@@ -141,17 +148,22 @@ public class L2StaticObjectInstance extends L2Character
 
 	public int getType()
 	{
-		return type;
+		return _type;
 	}
 
 	public void setType(int type)
 	{
-		this.type = type;
+		_type = type;
 	}
 
 	public void setMap(String texture, int x, int y)
 	{
-		map = new ShowTownMap("town_map." + texture, x, y);
+		_map = new ShowTownMap("town_map." + texture, x, y);
+	}
+
+	public ShowTownMap getMap()
+	{
+		return _map;
 	}
 
 	@Override
@@ -207,8 +219,8 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public void setMeshIndex(int meshIndex)
 	{
-		this.meshIndex = meshIndex;
-		broadcastPacket(new StaticObject(this));
+		_meshIndex = meshIndex;
+		this.broadcastPacket(new StaticObject(this));
 	}
 
 	/**
@@ -220,7 +232,7 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public int getMeshIndex()
 	{
-		return meshIndex;
+		return _meshIndex;
 	}
 
 	@Override

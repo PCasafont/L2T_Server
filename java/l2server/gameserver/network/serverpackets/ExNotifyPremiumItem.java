@@ -20,6 +20,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExNotifyPremiumItem extends L2GameServerPacket
 {
+
 	public ExNotifyPremiumItem()
 	{
 	}

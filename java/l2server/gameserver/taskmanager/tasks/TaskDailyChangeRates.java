@@ -25,6 +25,7 @@ import l2server.gameserver.taskmanager.TaskTypes;
  */
 public class TaskDailyChangeRates extends Task
 {
+
 	private static final String NAME = "daily_rate_change";
 
 	@Override

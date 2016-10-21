@@ -44,12 +44,12 @@ public class L2MonsterInstance extends L2Attackable
 {
 	//
 
-	private boolean enableMinions = true;
+	private boolean _enableMinions = true;
 
-	private L2MonsterInstance master = null;
-	private MinionList minionList = null;
+	private L2MonsterInstance _master = null;
+	private MinionList _minionList = null;
 
-	protected ScheduledFuture<?> maintenanceTask = null;
+	protected ScheduledFuture<?> _maintenanceTask = null;
 
 	private static final int MONSTER_MAINTENANCE_INTERVAL = 1000;
 
@@ -57,7 +57,7 @@ public class L2MonsterInstance extends L2Attackable
 	 * Constructor of L2MonsterInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the template of the L2MonsterInstance (copy skills from template to object and link calculators to NPC_STD_CALCULATOR) </li>
+	 * <li>Call the L2Character constructor to set the _template of the L2MonsterInstance (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR) </li>
 	 * <li>Set the name of the L2MonsterInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *
@@ -151,11 +151,11 @@ public class L2MonsterInstance extends L2Attackable
 			return;
 		}
 
-		if (maintenanceTask == null)
+		if (_maintenanceTask == null)
 		{
-			maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
+			_maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
-				if (enableMinions)
+				if (_enableMinions)
 				{
 					getMinionList().spawnMinions();
 				}
@@ -171,11 +171,11 @@ public class L2MonsterInstance extends L2Attackable
 			return false;
 		}
 
-		Map<Integer, L2PcInstance> knownPlayers = getKnownList().getKnownPlayers();
+		Map<Integer, L2PcInstance> _knownPlayers = getKnownList().getKnownPlayers();
 
 		if (killer instanceof L2PcInstance)
 		{
-			if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && knownPlayers.size() > 0 &&
+			if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && _knownPlayers.size() > 0 &&
 					!(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) &&
 					!(this instanceof L2ChessPieceInstance))
 			{
@@ -186,10 +186,10 @@ public class L2MonsterInstance extends L2Attackable
 			}
 		}
 
-		if (maintenanceTask != null)
+		if (_maintenanceTask != null)
 		{
-			maintenanceTask.cancel(false); // doesn't do it?
-			maintenanceTask = null;
+			_maintenanceTask.cancel(false); // doesn't do it?
+			_maintenanceTask = null;
 		}
 
 		return true;
@@ -198,10 +198,10 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public void deleteMe()
 	{
-		if (maintenanceTask != null)
+		if (_maintenanceTask != null)
 		{
-			maintenanceTask.cancel(false);
-			maintenanceTask = null;
+			_maintenanceTask.cancel(false);
+			_maintenanceTask = null;
 		}
 
 		if (hasMinions())
@@ -220,43 +220,53 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public L2MonsterInstance getLeader()
 	{
-		return master;
+		return _master;
 	}
 
 	public void setLeader(L2MonsterInstance leader)
 	{
-		master = leader;
+		_master = leader;
 	}
 
 	public void enableMinions(boolean b)
 	{
-		enableMinions = b;
+		_enableMinions = b;
 	}
 
 	public boolean hasMinions()
 	{
-		return minionList != null;
+		return _minionList != null;
 	}
 
 	public MinionList getMinionList()
 	{
-		if (minionList == null)
+		if (_minionList == null)
 		{
-			minionList = new MinionList(this);
+			_minionList = new MinionList(this);
 		}
 
-		return minionList;
+		return _minionList;
 	}
 
 	@Override
 	public int getMaxMp()
 	{
+		/*
+        if (getTemplate().isMiniRaid())
+			return getStat().getMaxMp() * 10;
+		 */
+
 		return getStat().getMaxMp();
 	}
 
 	@Override
 	public int getMaxHp()
 	{
+        /*
+		if (getTemplate().isMiniRaid())
+			return getStat().getMaxMp() * 10;
+		 */
+
 		return getStat().getMaxHp();
 	}
 }

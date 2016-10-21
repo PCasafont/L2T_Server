@@ -33,6 +33,7 @@ import java.util.Map;
 
 public class SeedOfDestruction extends Quest
 {
+
 	private class SODWorld extends InstanceWorld
 	{
 		public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
@@ -770,7 +771,7 @@ public class SeedOfDestruction extends Quest
 		{
 			if (door.getDoorId() == doorId)
 			{
-				if (door.isOpen())
+				if (door.getOpen())
 				{
 					door.closeMe();
 				}

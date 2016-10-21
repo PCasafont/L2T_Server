@@ -26,16 +26,17 @@ import l2server.log.Log;
  */
 public class VoicedCommandHandler
 {
-	private TIntObjectHashMap<IVoicedCommandHandler> datatable;
+
+	private TIntObjectHashMap<IVoicedCommandHandler> _datatable;
 
 	public static VoicedCommandHandler getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private VoicedCommandHandler()
 	{
-		datatable = new TIntObjectHashMap<>();
+		_datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerVoicedCommandHandler(IVoicedCommandHandler handler)
@@ -47,7 +48,7 @@ public class VoicedCommandHandler
 			{
 				Log.fine("Adding handler for command " + id);
 			}
-			datatable.put(id.hashCode(), handler);
+			_datatable.put(id.hashCode(), handler);
 		}
 	}
 
@@ -60,9 +61,9 @@ public class VoicedCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
+			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
 		}
-		return datatable.get(command.hashCode());
+		return _datatable.get(command.hashCode());
 	}
 
 	/**
@@ -70,12 +71,12 @@ public class VoicedCommandHandler
 	 */
 	public int size()
 	{
-		return datatable.size();
+		return _datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final VoicedCommandHandler instance = new VoicedCommandHandler();
+		protected static final VoicedCommandHandler _instance = new VoicedCommandHandler();
 	}
 }

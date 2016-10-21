@@ -25,7 +25,6 @@ import l2server.gameserver.model.quest.Quest.QuestEventType;
 import l2server.gameserver.templates.SpawnData;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -107,10 +106,11 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public float HatersDamageMultiplier;
 
 	//Skill AI
-	@SuppressWarnings("unchecked") public List<L2Skill>[] aiSkills = new List[AIST_COUNT];
+	@SuppressWarnings("unchecked")
+	public List<L2Skill>[] aiSkills = new List[AIST_COUNT];
 	public boolean[] aiSkillChecks = new boolean[AIST_COUNT];
 
-	private L2NpcAIData aiData = new L2NpcAIData();
+	private L2NpcAIData _aiData = new L2NpcAIData();
 
 	public enum AIType
 	{
@@ -147,24 +147,24 @@ public final class L2NpcTemplate extends L2CharTemplate
 		NONE
 	}
 
-	private ArrayList<L2DropData> spoilDrop = new ArrayList<>();
-	private ArrayList<L2DropData> normalDrop = new ArrayList<>();
-	private ArrayList<L2DropCategory> multiDrop = new ArrayList<>();
+	private ArrayList<L2DropData> _spoilDrop = new ArrayList<>();
+	private ArrayList<L2DropData> _normalDrop = new ArrayList<>();
+	private ArrayList<L2DropCategory> _multiDrop = new ArrayList<>();
 
 	/**
 	 * The table containing all Minions that must be spawn with the L2NpcInstance using this L2NpcTemplate
 	 */
-	private List<L2MinionData> minions = null;
-	private L2RandomMinionData randomMinions = null;
-	@Getter private Map<Integer, L2Skill> skills = null;
-	@Getter private List<SpawnData> spawns = new ArrayList<>();
+	private List<L2MinionData> _minions = null;
+	private L2RandomMinionData _randomMinions = null;
+	private Map<Integer, L2Skill> _skills = null;
+	private List<SpawnData> _spawns = new ArrayList<>();
 	// contains a list of quests for each event type (questStart, questAttack, questKill, etc)
-	private Map<QuestEventType, Quest[]> questEvents = null;
+	private Map<QuestEventType, Quest[]> _questEvents = null;
 
-	@Getter private StatsSet baseSet;
-	@Getter private L2NpcTemplate baseTemplate;
+	private StatsSet _baseSet;
+	private L2NpcTemplate _baseTemplate;
 
-	@Getter private final List<L2Spawn> allSpawns = new ArrayList<>();
+	private final List<L2Spawn> _allSpawns = new ArrayList<>();
 
 	/**
 	 * Constructor of L2Character.<BR><BR>
@@ -222,8 +222,8 @@ public final class L2NpcTemplate extends L2CharTemplate
 		FixedEvasion = set.getInteger("fixedEvasion", 0);
 		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", 0);
 
-		baseSet = set;
-		baseTemplate = this;
+		_baseSet = set;
+		_baseTemplate = this;
 
 		if (Config.isServer(Config.TENKAI_ESTHUS) && Type.equals("L2Defender"))
 		{
@@ -296,37 +296,37 @@ public final class L2NpcTemplate extends L2CharTemplate
 		baseHolyRes = baseTemplate.baseHolyRes;
 		baseDarkRes = baseTemplate.baseDarkRes;
 
-		aiData = baseTemplate.aiData;
+		_aiData = baseTemplate._aiData;
 
 		if (!set.getBool("overrideDrops", false))
 		{
-			spoilDrop = new ArrayList<>(baseTemplate.spoilDrop);
-			normalDrop = new ArrayList<>(baseTemplate.normalDrop);
-			multiDrop = new ArrayList<>();
-			for (L2DropCategory dc : baseTemplate.multiDrop)
+			_spoilDrop = new ArrayList<>(baseTemplate._spoilDrop);
+			_normalDrop = new ArrayList<>(baseTemplate._normalDrop);
+			_multiDrop = new ArrayList<>();
+			for (L2DropCategory dc : baseTemplate._multiDrop)
 			{
 				L2DropCategory newDC = new L2DropCategory(dc.getChance());
 				for (L2DropData dd : dc.getAllDrops())
 				{
 					newDC.addDropData(dd);
 				}
-				multiDrop.add(newDC);
+				_multiDrop.add(newDC);
 			}
 		}
 
-		if (baseTemplate.minions != null)
+		if (baseTemplate._minions != null)
 		{
-			minions = new ArrayList<>(baseTemplate.minions);
+			_minions = new ArrayList<>(baseTemplate._minions);
 		}
 
-		if (baseTemplate.randomMinions != null)
+		if (baseTemplate._randomMinions != null)
 		{
-			randomMinions = new L2RandomMinionData(baseTemplate.randomMinions);
+			_randomMinions = new L2RandomMinionData(baseTemplate._randomMinions);
 		}
 
-		if (baseTemplate.skills != null)
+		if (baseTemplate._skills != null)
 		{
-			for (L2Skill skill : baseTemplate.skills.values())
+			for (L2Skill skill : baseTemplate._skills.values())
 			{
 				addSkill(skill);
 			}
@@ -334,56 +334,56 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 		if (!set.getBool("overrideSpawns", false))
 		{
-			spawns = new ArrayList<>(baseTemplate.spawns);
+			_spawns = new ArrayList<>(baseTemplate._spawns);
 		}
 
-		if (baseTemplate.questEvents != null)
+		if (baseTemplate._questEvents != null)
 		{
-			questEvents = new HashMap<>(baseTemplate.questEvents);
+			_questEvents = new HashMap<>(baseTemplate._questEvents);
 		}
 
-		baseSet = set;
-		while (baseTemplate != baseTemplate.baseTemplate)
+		_baseSet = set;
+		while (baseTemplate != baseTemplate._baseTemplate)
 		{
-			baseTemplate = baseTemplate.baseTemplate;
+			baseTemplate = baseTemplate._baseTemplate;
 		}
-		this.baseTemplate = baseTemplate;
+		_baseTemplate = baseTemplate;
 	}
 
 	public void addSpoilData(L2DropData drop)
 	{
-		spoilDrop.add(drop);
+		_spoilDrop.add(drop);
 	}
 
 	public void addDropData(L2DropData drop)
 	{
-		normalDrop.add(drop);
+		_normalDrop.add(drop);
 	}
 
 	public void addMultiDrop(L2DropCategory category)
 	{
-		multiDrop.add(category);
+		_multiDrop.add(category);
 	}
 
 	public void addRaidData(L2MinionData minion)
 	{
-		if (minions == null)
+		if (_minions == null)
 		{
-			minions = new ArrayList<>();
+			_minions = new ArrayList<>();
 		}
-		minions.add(minion);
+		_minions.add(minion);
 	}
 
 	public void setRandomRaidData(L2RandomMinionData minion)
 	{
-		randomMinions = minion;
+		_randomMinions = minion;
 	}
 
 	public void addSkill(L2Skill skill)
 	{
-		if (skills == null)
+		if (_skills == null)
 		{
-			skills = new LinkedHashMap<>();
+			_skills = new LinkedHashMap<>();
 		}
 
 		if (!skill.isPassive())
@@ -410,7 +410,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 					addRangeSkill(skill);
 					break;
 				/*case ROOT:
-				addRootSkill(skill);
+                addRootSkill(skill);
 				addImmobiliseSkill(skill);
 				addRangeSkill(skill);
 				break;
@@ -466,22 +466,22 @@ public final class L2NpcTemplate extends L2CharTemplate
 			}
 		}
 
-		skills.put(skill.getId(), skill);
+		_skills.put(skill.getId(), skill);
 	}
 
 	public void addSpawn(SpawnData spawn)
 	{
-		spawns.add(spawn);
+		_spawns.add(spawn);
 	}
 
 	public ArrayList<L2DropData> getSpoilData()
 	{
-		return spoilDrop;
+		return _spoilDrop;
 	}
 
 	public ArrayList<L2DropData> getDropData()
 	{
-		return normalDrop;
+		return _normalDrop;
 	}
 
 	/**
@@ -489,7 +489,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 */
 	public ArrayList<L2DropCategory> getMultiDropData()
 	{
-		return multiDrop;
+		return _multiDrop;
 	}
 
 	/**
@@ -497,17 +497,17 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 */
 	public List<L2MinionData> getMinionData()
 	{
-		return minions;
+		return _minions;
 	}
 
 	public L2MinionData getMinionData(final int minionId)
 	{
-		if (minions == null)
+		if (_minions == null)
 		{
 			return null;
 		}
 
-		for (L2MinionData minion : minions)
+		for (L2MinionData minion : _minions)
 		{
 			if (minionId != minion.getMinionId())
 			{
@@ -522,24 +522,34 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 	public L2RandomMinionData getRandomMinionData()
 	{
-		return randomMinions;
+		return _randomMinions;
+	}
+
+	public Map<Integer, L2Skill> getSkills()
+	{
+		return _skills;
+	}
+
+	public List<SpawnData> getSpawns()
+	{
+		return _spawns;
 	}
 
 	public void addQuestEvent(Quest.QuestEventType EventType, Quest q)
 	{
-		if (questEvents == null)
+		if (_questEvents == null)
 		{
-			questEvents = new HashMap<>();
+			_questEvents = new HashMap<>();
 		}
 
-		if (questEvents.get(EventType) == null)
+		if (_questEvents.get(EventType) == null)
 		{
-			questEvents.put(EventType, new Quest[]{q});
+			_questEvents.put(EventType, new Quest[]{q});
 		}
 		else
 		{
-			Quest[] quests = questEvents.get(EventType);
-			int len = quests.length;
+			Quest[] _quests = _questEvents.get(EventType);
+			int len = _quests.length;
 
 			// if only one registration per npc is allowed for this event type
 			// then only register this NPC if not already registered for the specified event.
@@ -550,9 +560,9 @@ public final class L2NpcTemplate extends L2CharTemplate
 			if (!EventType.isMultipleRegistrationAllowed())
 			{
 				// if it is the same quest (i.e. reload) or the existing is a superclass of the new one, replace the existing.
-				if (quests[0].getName().equals(q.getName()) || L2NpcTemplate.isAssignableTo(q, quests[0].getClass()))
+				if (_quests[0].getName().equals(q.getName()) || L2NpcTemplate.isAssignableTo(q, _quests[0].getClass()))
 				{
-					quests[0] = q;
+					_quests[0] = q;
 				}
 				else
 				{
@@ -572,20 +582,20 @@ public final class L2NpcTemplate extends L2CharTemplate
 				// Add the new quest in the end of the list otherwise.
 				for (int i = 0; i < len; i++)
 				{
-					if (quests[i].getName().equals(q.getName()) ||
-							L2NpcTemplate.isAssignableTo(q, quests[i].getClass()))
+					if (_quests[i].getName().equals(q.getName()) ||
+							L2NpcTemplate.isAssignableTo(q, _quests[i].getClass()))
 					{
-						quests[i] = q;
+						_quests[i] = q;
 						return;
 					}
-					else if (L2NpcTemplate.isAssignableTo(quests[i], q.getClass()))
+					else if (L2NpcTemplate.isAssignableTo(_quests[i], q.getClass()))
 					{
 						return;
 					}
-					tmp[i] = quests[i];
+					tmp[i] = _quests[i];
 				}
 				tmp[len] = q;
-				questEvents.put(EventType, tmp);
+				_questEvents.put(EventType, tmp);
 			}
 		}
 	}
@@ -638,12 +648,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 	public Quest[] getEventQuests(Quest.QuestEventType EventType)
 	{
-		if (questEvents == null)
+		if (_questEvents == null)
 		{
 			return null;
 		}
 
-		return questEvents.get(EventType);
+		return _questEvents.get(EventType);
 	}
 
 	public void setRace(int raceId)
@@ -737,14 +747,14 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public void setAIData(L2NpcAIData aidata)
 	{
 		//_AIdataStatic = new L2NpcAIData(); // not needed to init object and in next line override with other reference. maybe other intention?
-		aiData = aidata;
+		_aiData = aidata;
 	}
 
 	//-----------------------------------------------------------------------
 
 	public L2NpcAIData getAIData()
 	{
-		return aiData;
+		return _aiData;
 	}
 
 	public void addBuffSkill(L2Skill skill)
@@ -1081,6 +1091,16 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public boolean isUndead()
 	{
 		return Race == L2NpcRace.UNDEAD;
+	}
+
+	public StatsSet getBaseSet()
+	{
+		return _baseSet;
+	}
+
+	public L2NpcTemplate getBaseTemplate()
+	{
+		return _baseTemplate;
 	}
 
 	public String getXmlNpcId()
@@ -1642,31 +1662,36 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return " maxSocial2=\"" + getAIData().getMaxSocial(true) + "\"";
 	}
 
-	private List<L2Spawn> knownSpawns = new ArrayList<>();
+	private List<L2Spawn> _knownSpawns = new ArrayList<>();
 
 	public final void addKnownSpawn(final L2Spawn spawn)
 	{
-		knownSpawns.add(spawn);
+		_knownSpawns.add(spawn);
 	}
 
 	public final List<L2Spawn> getKnownSpawns()
 	{
-		return knownSpawns;
+		return _knownSpawns;
 	}
 
 	public void onSpawn(L2Spawn spawn)
 	{
-		synchronized (allSpawns)
+		synchronized (_allSpawns)
 		{
-			allSpawns.add(spawn);
+			_allSpawns.add(spawn);
 		}
 	}
 
 	public void onUnSpawn(L2Spawn spawn)
 	{
-		synchronized (allSpawns)
+		synchronized (_allSpawns)
 		{
-			allSpawns.remove(spawn);
+			_allSpawns.remove(spawn);
 		}
+	}
+
+	public List<L2Spawn> getAllSpawns()
+	{
+		return _allSpawns;
 	}
 }

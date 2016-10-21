@@ -33,7 +33,7 @@ public final class Rnd
 	public static final class NonAtomicRandom extends Random
 	{
 		private static final long serialVersionUID = 1L;
-		private volatile long seed;
+		private volatile long _seed;
 
 		public NonAtomicRandom()
 		{
@@ -48,13 +48,13 @@ public final class Rnd
 		@Override
 		public final int next(final int bits)
 		{
-			return (int) ((seed = seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
+			return (int) ((_seed = _seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 		}
 
 		@Override
 		public final void setSeed(final long seed)
 		{
-			this.seed = (seed ^ MULTIPLIER) & MASK;
+			_seed = (seed ^ MULTIPLIER) & MASK;
 		}
 	}
 
@@ -63,16 +63,16 @@ public final class Rnd
 	 */
 	public static final class RandomContainer
 	{
-		private final Random random;
+		private final Random _random;
 
 		private RandomContainer(final Random random)
 		{
-			this.random = random;
+			_random = random;
 		}
 
 		public final Random directRandom()
 		{
-			return random;
+			return _random;
 		}
 
 		/**
@@ -83,7 +83,7 @@ public final class Rnd
 		 */
 		public final double get()
 		{
-			return random.nextDouble();
+			return _random.nextDouble();
 		}
 
 		/**
@@ -94,7 +94,7 @@ public final class Rnd
 		 */
 		public final int get(final int n)
 		{
-			return (int) (random.nextDouble() * n);
+			return (int) (_random.nextDouble() * n);
 		}
 
 		/**
@@ -106,7 +106,7 @@ public final class Rnd
 		 */
 		public final int get(final int min, final int max)
 		{
-			return min + (int) (random.nextDouble() * (max - min + 1));
+			return min + (int) (_random.nextDouble() * (max - min + 1));
 		}
 
 		/**
@@ -118,7 +118,7 @@ public final class Rnd
 		 */
 		public final long get(final long min, final long max)
 		{
-			return min + (long) (random.nextDouble() * (max - min + 1));
+			return min + (long) (_random.nextDouble() * (max - min + 1));
 		}
 
 		/**
@@ -129,7 +129,7 @@ public final class Rnd
 		 */
 		public final boolean nextBoolean()
 		{
-			return random.nextBoolean();
+			return _random.nextBoolean();
 		}
 
 		/**
@@ -140,7 +140,7 @@ public final class Rnd
 		 */
 		public final void nextBytes(final byte[] array)
 		{
-			random.nextBytes(array);
+			_random.nextBytes(array);
 		}
 
 		/**
@@ -151,7 +151,7 @@ public final class Rnd
 		 */
 		public final double nextDouble()
 		{
-			return random.nextDouble();
+			return _random.nextDouble();
 		}
 
 		/**
@@ -162,7 +162,7 @@ public final class Rnd
 		 */
 		public final float nextFloat()
 		{
-			return random.nextFloat();
+			return _random.nextFloat();
 		}
 
 		/**
@@ -173,7 +173,7 @@ public final class Rnd
 		 */
 		public final double nextGaussian()
 		{
-			return random.nextGaussian();
+			return _random.nextGaussian();
 		}
 
 		/**
@@ -184,7 +184,7 @@ public final class Rnd
 		 */
 		public final int nextInt()
 		{
-			return random.nextInt();
+			return _random.nextInt();
 		}
 
 		/**
@@ -195,7 +195,7 @@ public final class Rnd
 		 */
 		public final long nextLong()
 		{
-			return random.nextLong();
+			return _random.nextLong();
 		}
 	}
 
@@ -249,7 +249,7 @@ public final class Rnd
 	{
 		private static final class Seed
 		{
-			long seed;
+			long _seed;
 
 			Seed(final long seed)
 			{
@@ -258,21 +258,21 @@ public final class Rnd
 
 			final int next(final int bits)
 			{
-				return (int) ((seed = seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
+				return (int) ((_seed = _seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 			}
 
 			final void setSeed(final long seed)
 			{
-				this.seed = (seed ^ MULTIPLIER) & MASK;
+				_seed = (seed ^ MULTIPLIER) & MASK;
 			}
 		}
 
 		private static final long serialVersionUID = 1L;
-		private final ThreadLocal<Seed> seedLocal;
+		private final ThreadLocal<Seed> _seedLocal;
 
 		public ThreadLocalRandom()
 		{
-			seedLocal = new ThreadLocal<Seed>()
+			_seedLocal = new ThreadLocal<Seed>()
 			{
 				@Override
 				public final Seed initialValue()
@@ -284,7 +284,7 @@ public final class Rnd
 
 		public ThreadLocalRandom(final long seed)
 		{
-			seedLocal = new ThreadLocal<Seed>()
+			_seedLocal = new ThreadLocal<Seed>()
 			{
 				@Override
 				public final Seed initialValue()
@@ -297,15 +297,15 @@ public final class Rnd
 		@Override
 		public final int next(final int bits)
 		{
-			return seedLocal.get().next(bits);
+			return _seedLocal.get().next(bits);
 		}
 
 		@Override
 		public final void setSeed(final long seed)
 		{
-			if (seedLocal != null)
+			if (_seedLocal != null)
 			{
-				seedLocal.get().setSeed(seed);
+				_seedLocal.get().setSeed(seed);
 			}
 		}
 	}

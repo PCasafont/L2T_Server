@@ -26,6 +26,7 @@ import l2server.log.Log;
 
 public class GuardKnownList extends AttackableKnownList
 {
+
 	public GuardKnownList(L2GuardInstance activeChar)
 	{
 		super(activeChar);
@@ -95,7 +96,7 @@ public class GuardKnownList extends AttackableKnownList
 			return false;
 		}
 
-		// Check if the aggroList of the L2GuardInstance is Empty
+		// Check if the _aggroList of the L2GuardInstance is Empty
 		if (getActiveChar().noTarget())
 		{
 			//removeAllKnownObjects();

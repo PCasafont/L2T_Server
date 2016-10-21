@@ -15,13 +15,12 @@
 
 package handlers.bypasshandlers;
 
-import java.util.StringTokenizer;
-
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MerchantInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+
+import java.util.StringTokenizer;
 
 public class Buy implements IBypassHandler
 {
@@ -50,7 +49,7 @@ public class Buy implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			Log.info("Exception in " + getClass().getSimpleName());
+			_log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

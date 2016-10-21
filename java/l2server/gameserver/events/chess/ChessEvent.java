@@ -8,7 +8,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
-import lombok.Getter;
 
 /**
  * @author Pere
@@ -20,15 +19,15 @@ public class ChessEvent
 		INACTIVATING, PARTICIPATING, STARTING, STARTED, REWARDING
 	}
 
-	private static ChessEventSide[] sides = new ChessEventSide[2];
+	private static ChessEventSide[] _sides = new ChessEventSide[2];
 
-	@Getter private static L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
+	private static L2ChessPieceInstance[][] _board = new L2ChessPieceInstance[8][8];
 
-	private static ChessState state = ChessState.PARTICIPATING;
+	private static ChessState _state = ChessState.PARTICIPATING;
 
-	@Getter private static L2PcInstance[][] waitingPlayers = new L2PcInstance[8][2];
+	private static L2PcInstance[][] _waitingPlayers = new L2PcInstance[8][2];
 
-	private static int[] waitingPlayerSideIds = new int[8];
+	private static int[] _waitingPlayerSideIds = new int[8];
 
 	public static byte turn = (byte) 0;
 
@@ -43,14 +42,14 @@ public class ChessEvent
 
 	public static void init()
 	{
-		sides[0] = new ChessEventSide((byte) 0);
-		sides[1] = new ChessEventSide((byte) 1);
+		_sides[0] = new ChessEventSide((byte) 0);
+		_sides[1] = new ChessEventSide((byte) 1);
 		turn = (byte) 0;
 		for (int i = 0; i < 8; i++)
 		{
-			waitingPlayers[i][0] = null;
-			waitingPlayers[i][1] = null;
-			waitingPlayerSideIds[i] = -1;
+			_waitingPlayers[i][0] = null;
+			_waitingPlayers[i][1] = null;
+			_waitingPlayerSideIds[i] = -1;
 		}
 	}
 
@@ -67,16 +66,16 @@ public class ChessEvent
 
 		for (int i = 0; i < 8; i++)
 		{
-			waitingPlayers[i][0] = null;
-			waitingPlayers[i][1] = null;
-			waitingPlayerSideIds[i] = -1;
+			_waitingPlayers[i][0] = null;
+			_waitingPlayers[i][1] = null;
+			_waitingPlayerSideIds[i] = -1;
 		}
 
-		sides[0].setPlayer(player1);
-		sides[1].setPlayer(player2);
+		_sides[0].setPlayer(player1);
+		_sides[1].setPlayer(player2);
 
-		sides[0].spawnPieces();
-		sides[1].spawnPieces();
+		_sides[0].spawnPieces();
+		_sides[1].spawnPieces();
 
 		// Set state STARTED
 		setState(ChessState.STARTED);
@@ -128,25 +127,25 @@ public class ChessEvent
 
 		if (winner != null)
 		{
-			sides[1 - getParticipantSideId(winner.getObjectId())].defeatMe();
-			sides[getParticipantSideId(winner.getObjectId())].cleanMe();
+			_sides[1 - getParticipantSideId(winner.getObjectId())].defeatMe();
+			_sides[getParticipantSideId(winner.getObjectId())].cleanMe();
 		}
 		else
 		{
-			sides[0].defeatMe();
-			sides[1].defeatMe();
+			_sides[0].defeatMe();
+			_sides[1].defeatMe();
 		}
-		sides[0].setCanTheKingBeKilled(false);
-		sides[0].setHasWon(false);
-		sides[1].setCanTheKingBeKilled(false);
-		sides[1].setHasWon(false);
+		_sides[0].setCanTheKingBeKilled(false);
+		_sides[0].setHasWon(false);
+		_sides[1].setCanTheKingBeKilled(false);
+		_sides[1].setHasWon(false);
 
 		turn = (byte) 0;
 		for (int i = 0; i < 8; i++)
 		{
 			for (int j = 0; j < 8; j++)
 			{
-				board[i][j] = null;
+				_board[i][j] = null;
 			}
 		}
 
@@ -167,15 +166,15 @@ public class ChessEvent
 
 		while (i < 8 && !trobat)
 		{
-			if (waitingPlayers[i][0] == null && waitingPlayers[i][1] == null)
+			if (_waitingPlayers[i][0] == null && _waitingPlayers[i][1] == null)
 			{
 				trobat = true;
 			}
 			i++;
 		}
 
-		waitingPlayers[i - 1][sideId] = playerInstance;
-		waitingPlayerSideIds[i - 1] = sideId;
+		_waitingPlayers[i - 1][sideId] = playerInstance;
+		_waitingPlayerSideIds[i - 1] = sideId;
 
 		return trobat;
 	}
@@ -191,12 +190,13 @@ public class ChessEvent
 
 		while (i < 8 && !trobat)
 		{
-			if (waitingPlayers[i][0] != null && waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId() ||
-					waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId() ||
+					_waitingPlayers[i][1] != null &&
+							_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
-				waitingPlayers[i][0] = null;
-				waitingPlayers[i][1] = null;
-				waitingPlayerSideIds[i] = -1;
+				_waitingPlayers[i][0] = null;
+				_waitingPlayers[i][1] = null;
+				_waitingPlayerSideIds[i] = -1;
 				trobat = true;
 			}
 			i++;
@@ -213,15 +213,15 @@ public class ChessEvent
 
 		L2PcInstance target = null;
 
-		if (waitingPlayers[cellId][0] != null)
+		if (_waitingPlayers[cellId][0] != null)
 		{
-			waitingPlayers[cellId][1] = playerInstance;
-			target = waitingPlayers[cellId][0];
+			_waitingPlayers[cellId][1] = playerInstance;
+			target = _waitingPlayers[cellId][0];
 		}
-		else if (waitingPlayers[cellId][1] != null)
+		else if (_waitingPlayers[cellId][1] != null)
 		{
-			waitingPlayers[cellId][0] = playerInstance;
-			target = waitingPlayers[cellId][1];
+			_waitingPlayers[cellId][0] = playerInstance;
+			target = _waitingPlayers[cellId][1];
 		}
 
 		return target;
@@ -241,13 +241,14 @@ public class ChessEvent
 
 		while (i < 8 && target == null)
 		{
-			if (waitingPlayers[i][0] != null && waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
+			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
 			{
-				target = waitingPlayers[i][1];
+				target = _waitingPlayers[i][1];
 			}
-			else if (waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if (_waitingPlayers[i][1] != null &&
+					_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
-				target = waitingPlayers[i][0];
+				target = _waitingPlayers[i][0];
 				side = 1;
 			}
 			i++;
@@ -278,15 +279,16 @@ public class ChessEvent
 
 		while (i < 8 && target == null)
 		{
-			if (waitingPlayers[i][0] != null && waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
+			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
 			{
-				target = waitingPlayers[i][1];
-				waitingPlayers[i][1] = null;
+				target = _waitingPlayers[i][1];
+				_waitingPlayers[i][1] = null;
 			}
-			else if (waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if (_waitingPlayers[i][1] != null &&
+					_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
 			{
-				target = waitingPlayers[i][0];
-				waitingPlayers[i][0] = null;
+				target = _waitingPlayers[i][0];
+				_waitingPlayers[i][0] = null;
 			}
 			i++;
 		}
@@ -302,7 +304,7 @@ public class ChessEvent
 		if (teamId != -1)
 		{
 			// Remove the player from team
-			sides[teamId].removePlayer();
+			_sides[teamId].removePlayer();
 			return true;
 		}
 
@@ -311,8 +313,8 @@ public class ChessEvent
 
 	public static void sysMsgToAllParticipants(String message)
 	{
-		sides[0].getPlayer().sendMessage(message);
-		sides[1].getPlayer().sendMessage(message);
+		_sides[0].getPlayer().sendMessage(message);
+		_sides[1].getPlayer().sendMessage(message);
 	}
 
 	public static void onLogout(L2PcInstance playerInstance)
@@ -343,6 +345,7 @@ public class ChessEvent
 
 		if (command.startsWith("wait") && getParticipantSideId(playerInstance.getObjectId()) == -1)
 		{
+
 			int sideId = Integer.valueOf(command.substring(4));
 
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
@@ -442,17 +445,18 @@ public class ChessEvent
 		{
 			pieceMoving = false;
 		}
-		ChessEvent.state = state;
+		_state = state;
 	}
 
 	public static boolean isState(ChessState state)
 	{
-		return state == state;
+		return _state == state;
 	}
 
 	public static byte getParticipantSideId(int playerObjectId)
 	{
-		return (byte) (sides[0].containsPlayer(playerObjectId) ? 0 : sides[1].containsPlayer(playerObjectId) ? 1 : -1);
+		return (byte) (_sides[0].containsPlayer(playerObjectId) ? 0 :
+				_sides[1].containsPlayer(playerObjectId) ? 1 : -1);
 	}
 
 	public static boolean isPlayerParticipant(int playerObjectId)
@@ -461,15 +465,15 @@ public class ChessEvent
 		{
 			return false;
 		}
-		return sides[0].containsPlayer(playerObjectId) || sides[1].containsPlayer(playerObjectId);
+		return _sides[0].containsPlayer(playerObjectId) || _sides[1].containsPlayer(playerObjectId);
 	}
 
 	public static boolean isPlayerWaiting(int playerObjectId)
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			if (waitingPlayers[i][0] != null && waitingPlayers[i][0].getObjectId() == playerObjectId ||
-					waitingPlayers[i][1] != null && waitingPlayers[i][1].getObjectId() == playerObjectId)
+			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerObjectId ||
+					_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerObjectId)
 			{
 				return true;
 			}
@@ -481,8 +485,8 @@ public class ChessEvent
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			if (waitingPlayerSideIds[i] != -1 && waitingPlayers[i][waitingPlayerSideIds[i]] != null &&
-					waitingPlayers[i][waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
+			if (_waitingPlayerSideIds[i] != -1 && _waitingPlayers[i][_waitingPlayerSideIds[i]] != null &&
+					_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
 			{
 				return true;
 			}
@@ -494,8 +498,8 @@ public class ChessEvent
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			if (waitingPlayers[i][0] != null && waitingPlayers[i][1] != null && waitingPlayerSideIds[i] != -1 &&
-					waitingPlayers[i][waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
+			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][1] != null && _waitingPlayerSideIds[i] != -1 &&
+					_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
 			{
 				return true;
 			}
@@ -503,16 +507,26 @@ public class ChessEvent
 		return false;
 	}
 
+	public static L2PcInstance[][] getWaitingPlayers()
+	{
+		return _waitingPlayers;
+	}
+
 	public static ChessEventSide getSide(int id)
 	{
-		return sides[id];
+		return _sides[id];
+	}
+
+	public static L2ChessPieceInstance[][] getBoard()
+	{
+		return _board;
 	}
 
 	public static L2ChessPieceInstance[][] getBoard(int side)
 	{
 		if (side == 0)
 		{
-			return board;
+			return _board;
 		}
 		else
 		{
@@ -521,7 +535,7 @@ public class ChessEvent
 			{
 				for (int j = 0; j < 8; j++)
 				{
-					board[i][j] = board[7 - i][7 - j];
+					board[i][j] = _board[7 - i][7 - j];
 				}
 			}
 			return board;
@@ -530,7 +544,7 @@ public class ChessEvent
 
 	public static void setBoard(int i, int j, L2ChessPieceInstance piece)
 	{
-		board[i][j] = piece;
+		_board[i][j] = piece;
 	}
 
 	public static void setBoard(int i, int j, L2ChessPieceInstance piece, int side)
@@ -540,6 +554,6 @@ public class ChessEvent
 			i = 7 - i;
 			j = 7 - j;
 		}
-		board[i][j] = piece;
+		_board[i][j] = piece;
 	}
 }

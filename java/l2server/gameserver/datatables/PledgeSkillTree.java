@@ -34,7 +34,7 @@ import java.util.Map;
  */
 public class PledgeSkillTree
 {
-	private Map<Long, L2PledgeSkillLearn> skillTree = new HashMap<>();
+	private Map<Long, L2PledgeSkillLearn> _skillTree = new HashMap<>();
 
 	public PledgeSkillTree()
 	{
@@ -43,7 +43,7 @@ public class PledgeSkillTree
 
 	public static PledgeSkillTree getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	public void reload()
@@ -53,7 +53,7 @@ public class PledgeSkillTree
 
 	private void load()
 	{
-		skillTree.clear();
+		_skillTree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/pledgeSkillTree.xml");
 		if (file.exists())
 		{
@@ -106,24 +106,24 @@ public class PledgeSkillTree
 								continue;
 							}
 
-							skillTree.put(SkillTable.getSkillHashCode(skill),
+							_skillTree.put(SkillTable.getSkillHashCode(skill),
 									new L2PledgeSkillLearn(skillId, skillLvl, clanLvl, reputation));
 						}
 					}
 				}
 			}
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + skillTree.size() + " Pledge Skills");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _skillTree.size() + " Pledge Skills");
 	}
 
 	public L2PledgeSkillLearn[] getAvailableSkills(L2PcInstance cha)
 	{
 		List<L2PledgeSkillLearn> result = new ArrayList<>();
-		Map<Long, L2PledgeSkillLearn> skills = skillTree;
+		Map<Long, L2PledgeSkillLearn> skills = _skillTree;
 
 		if (skills == null)
 		{
-			// the skillTree for this class is undefined, so we give an empty list
+			// the _skillTree for this class is undefined, so we give an empty list
 
 			Log.warning("No clan skills defined!");
 			return new L2PledgeSkillLearn[]{};
@@ -165,6 +165,6 @@ public class PledgeSkillTree
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PledgeSkillTree instance = new PledgeSkillTree();
+		protected static final PledgeSkillTree _instance = new PledgeSkillTree();
 	}
 }

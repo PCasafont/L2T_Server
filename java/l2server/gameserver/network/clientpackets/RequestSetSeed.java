@@ -50,22 +50,22 @@ public class RequestSetSeed extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
-	private int manorId;
-	private Seed items[] = null;
+	private int _manorId;
+	private Seed _items[] = null;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		manorId = readD();
+		_manorId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
 
-		items = new Seed[count];
+		_items = new Seed[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -73,17 +73,17 @@ public class RequestSetSeed extends L2GameClientPacket
 			long price = readQ();
 			if (itemId < 1 || sales < 0 || price < 0)
 			{
-				items = null;
+				_items = null;
 				return;
 			}
-			items[i] = new Seed(itemId, sales, price);
+			_items[i] = new Seed(itemId, sales, price);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (items == null)
+		if (_items == null)
 		{
 			return;
 		}
@@ -96,7 +96,7 @@ public class RequestSetSeed extends L2GameClientPacket
 		}
 
 		// check castle owner
-		Castle currentCastle = CastleManager.getInstance().getCastleById(manorId);
+		Castle currentCastle = CastleManager.getInstance().getCastleById(_manorId);
 		if (currentCastle.getOwnerId() != player.getClanId())
 		{
 			return;
@@ -124,8 +124,8 @@ public class RequestSetSeed extends L2GameClientPacket
 			return;
 		}
 
-		List<SeedProduction> seeds = new ArrayList<>(items.length);
-		for (Seed i : items)
+		List<SeedProduction> seeds = new ArrayList<>(_items.length);
+		for (Seed i : _items)
 		{
 			SeedProduction s = i.getSeed();
 			if (s == null)
@@ -147,25 +147,25 @@ public class RequestSetSeed extends L2GameClientPacket
 
 	private static class Seed
 	{
-		private final int itemId;
-		private final long sales;
-		private final long price;
+		private final int _itemId;
+		private final long _sales;
+		private final long _price;
 
 		public Seed(int id, long s, long p)
 		{
-			itemId = id;
-			sales = s;
-			price = p;
+			_itemId = id;
+			_sales = s;
+			_price = p;
 		}
 
 		public SeedProduction getSeed()
 		{
-			if (sales != 0 && MAX_ADENA / sales < price)
+			if (_sales != 0 && MAX_ADENA / _sales < _price)
 			{
 				return null;
 			}
 
-			return CastleManorManager.getInstance().getNewSeedProduction(itemId, sales, price, sales);
+			return CastleManorManager.getInstance().getNewSeedProduction(_itemId, _sales, _price, _sales);
 		}
 	}
 }

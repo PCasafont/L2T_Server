@@ -23,12 +23,14 @@ package l2server.gameserver.network.clientpackets;
  */
 public class RequestPledgeExtendedInfo extends L2GameClientPacket
 {
-	@SuppressWarnings("unused") private String name;
+
+	@SuppressWarnings("unused")
+	private String _name;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
+		_name = readS();
 	}
 
 	@Override

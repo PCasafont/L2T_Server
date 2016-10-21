@@ -126,7 +126,7 @@ public class Fishing implements ISkillHandler
 				return;
 			}
 		}
-		/*
+        /*
 		 * If fishing is enabled, here is the code that was striped from
 		 * startFishing() in L2PcInstance. Decide now where will the hook be
 		 * cast...

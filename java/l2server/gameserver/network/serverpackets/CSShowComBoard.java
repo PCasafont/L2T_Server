@@ -17,18 +17,19 @@ package l2server.gameserver.network.serverpackets;
 
 public final class CSShowComBoard extends L2GameServerPacket
 {
-	private final byte[] html;
+
+	private final byte[] _html;
 
 	public CSShowComBoard(final byte[] html)
 	{
-		this.html = html;
+		_html = html;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x01); //c4 1 to show community 00 to hide
-		writeB(html);
+		writeB(_html);
 	}
 
 	@Override

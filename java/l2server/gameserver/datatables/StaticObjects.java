@@ -29,18 +29,18 @@ import java.io.File;
 
 public class StaticObjects
 {
-	private TIntObjectHashMap<L2StaticObjectInstance> staticObjects;
+	private TIntObjectHashMap<L2StaticObjectInstance> _staticObjects;
 
 	public static StaticObjects getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private StaticObjects()
 	{
-		staticObjects = new TIntObjectHashMap<>();
+		_staticObjects = new TIntObjectHashMap<>();
 		parseData();
-		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
+		Log.info("StaticObject: Loaded " + _staticObjects.size() + " StaticObject Templates.");
 	}
 
 	private void parseData()
@@ -108,19 +108,19 @@ public class StaticObjects
 				obj.setMap(texture, map_x, map_y);
 				obj.spawnMe();
 
-				staticObjects.put(obj.getStaticObjectId(), obj);
+				_staticObjects.put(obj.getStaticObjectId(), obj);
 			}
 		}
 	}
 
 	public L2StaticObjectInstance getObject(int id)
 	{
-		return staticObjects.get(id);
+		return _staticObjects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final StaticObjects instance = new StaticObjects();
+		protected static final StaticObjects _instance = new StaticObjects();
 	}
 }

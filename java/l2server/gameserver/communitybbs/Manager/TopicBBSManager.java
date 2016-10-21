@@ -33,18 +33,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TopicBBSManager extends BaseBBSManager
 {
-	private final List<Topic> table;
-	private final Map<Forum, Integer> maxId;
+	private final List<Topic> _table;
+	private final Map<Forum, Integer> _maxId;
 
 	protected TopicBBSManager()
 	{
-		table = new ArrayList<>();
-		maxId = new ConcurrentHashMap<>();
+		_table = new ArrayList<>();
+		_maxId = new ConcurrentHashMap<>();
 	}
 
 	public void addTopic(Topic tt)
 	{
-		table.add(tt);
+		_table.add(tt);
 	}
 
 	/**
@@ -52,17 +52,17 @@ public class TopicBBSManager extends BaseBBSManager
 	 */
 	public void delTopic(Topic topic)
 	{
-		table.remove(topic);
+		_table.remove(topic);
 	}
 
 	public void setMaxID(int id, Forum f)
 	{
-		maxId.put(f, id);
+		_maxId.put(f, id);
 	}
 
 	public int getMaxID(Forum f)
 	{
-		Integer i = maxId.get(f);
+		Integer i = _maxId.get(f);
 		if (i == null)
 		{
 			return 0;
@@ -72,7 +72,7 @@ public class TopicBBSManager extends BaseBBSManager
 
 	public Topic getTopicByID(int idf)
 	{
-		for (Topic t : table)
+		for (Topic t : _table)
 		{
 			if (t.getID() == idf)
 			{
@@ -355,8 +355,8 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()),
-					";", String.valueOf(index - 1),
+			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()), ";",
+					String.valueOf(index - 1),
 					"\" back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
 		}
 
@@ -374,9 +374,8 @@ public class TopicBBSManager extends BaseBBSManager
 			}
 			else
 			{
-				StringUtil
-						.append(html, "<td><a action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()), ";",
-								String.valueOf(i), "\"> ", String.valueOf(i), " </a></td>");
+				StringUtil.append(html, "<td><a action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()), ";",
+						String.valueOf(i), "\"> ", String.valueOf(i), " </a></td>");
 			}
 		}
 		if (index == nbp)
@@ -386,8 +385,8 @@ public class TopicBBSManager extends BaseBBSManager
 		}
 		else
 		{
-			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()),
-					";", String.valueOf(index + 1),
+			StringUtil.append(html, "<td><button action=\"bypass _bbstopics;read;", String.valueOf(forum.getID()), ";",
+					String.valueOf(index + 1),
 					"\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
 		}
 
@@ -400,11 +399,11 @@ public class TopicBBSManager extends BaseBBSManager
 
 	public static TopicBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final TopicBBSManager instance = new TopicBBSManager();
+		protected static final TopicBBSManager _instance = new TopicBBSManager();
 	}
 }

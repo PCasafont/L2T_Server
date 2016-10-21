@@ -25,7 +25,6 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
-import lombok.Setter;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -34,16 +33,16 @@ import java.util.concurrent.ScheduledFuture;
  */
 public class GamePlayWatcher
 {
-	private static GamePlayWatcher instance;
+	private static GamePlayWatcher _instance;
 
 	public static GamePlayWatcher getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new GamePlayWatcher();
+			_instance = new GamePlayWatcher();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	public void makeWatcher(L2PcInstance watcher)
@@ -56,39 +55,39 @@ public class GamePlayWatcher
 
 	private class WatchTask implements Runnable
 	{
-		private final L2PcInstance watcher;
-		private L2PcInstance pivot = null;
-		private long checkForAnotherPivotTimer = 0L;
+		private final L2PcInstance _watcher;
+		private L2PcInstance _pivot = null;
+		private long _checkForAnotherPivotTimer = 0L;
 
-		@Setter private ScheduledFuture<?> schedule = null;
+		private ScheduledFuture<?> _schedule = null;
 
 		public WatchTask(L2PcInstance watcher)
 		{
-			this.watcher = watcher;
+			_watcher = watcher;
 		}
 
 		@Override
 		public void run()
 		{
-			if (!watcher.isOnline() || !watcher.isInWatcherMode())
+			if (!_watcher.isOnline() || !_watcher.isInWatcherMode())
 			{
-				if (schedule != null)
+				if (_schedule != null)
 				{
-					schedule.cancel(false);
+					_schedule.cancel(false);
 				}
 
 				return;
 			}
 
-			if (checkForAnotherPivotTimer < System.currentTimeMillis() || pivot == null ||
-					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) ||
-					pivot.isInsidePeaceZone(pivot) || pivot.isDead())
+			if (_checkForAnotherPivotTimer < System.currentTimeMillis() || _pivot == null ||
+					!AttackStanceTaskManager.getInstance().getAttackStanceTask(_pivot) ||
+					_pivot.isInsidePeaceZone(_pivot) || _pivot.isDead())
 			{
-				pivot = null;
-				checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
+				_pivot = null;
+				_checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
 			}
 
-			if (pivot == null)
+			if (_pivot == null)
 			{
 				int bestCombatPvPCount = 0;
 				int bestCombatPvECount = 0;
@@ -96,7 +95,7 @@ public class GamePlayWatcher
 				{
 					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) ||
 							player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() ||
-							player == watcher)
+							player == _watcher)
 					{
 						continue;
 					}
@@ -133,7 +132,7 @@ public class GamePlayWatcher
 					if (flaggedCount > bestCombatPvPCount || combatPvPCount > bestCombatPvPCount ||
 							bestCombatPvPCount < 2 && combatPvECount > bestCombatPvECount)
 					{
-						pivot = player;
+						_pivot = player;
 						bestCombatPvPCount = Math.max(combatPvPCount, flaggedCount);
 						bestCombatPvECount = combatPvECount;
 					}
@@ -142,19 +141,19 @@ public class GamePlayWatcher
 
 			//_pivot = L2World.getInstance().getPlayer("pere");
 
-			if (pivot == null || watcher.isTeleporting())
+			if (_pivot == null || _watcher.isTeleporting())
 			{
 				// We stream Gludio when no mini game is going on.
 				//if (Config.isServer(Config.FUSION))
 				{
-					if (!watcher.isTeleporting())
+					if (!_watcher.isTeleporting())
 					{
-						if (!watcher.isInsideRadius(-14504, 123799, 500, false))
+						if (!_watcher.isInsideRadius(-14504, 123799, 500, false))
 						{
-							watcher.teleToLocation(-14504, 123799, -3114);
+							_watcher.teleToLocation(-14504, 123799, -3114);
 						}
 
-						watcher.sendPacket(new SpecialCamera(watcher.getObjectId(), Rnd.get(50, 150), // Distance
+						_watcher.sendPacket(new SpecialCamera(_watcher.getObjectId(), Rnd.get(50, 150), // Distance
 								(int) (System.currentTimeMillis() / 100), // Yaw
 								Rnd.get(15, 25), // Pitch
 								2000, // Time
@@ -170,23 +169,23 @@ public class GamePlayWatcher
 				return;
 			}
 
-			if (!Util.checkIfInRange(5000, watcher, pivot, true))
+			if (!Util.checkIfInRange(5000, _watcher, _pivot, true))
 			{
-				watcher.setInstanceId(pivot.getInstanceId());
-				watcher.teleToLocation(pivot.getX(), pivot.getY(), pivot.getZ());
+				_watcher.setInstanceId(_pivot.getInstanceId());
+				_watcher.teleToLocation(_pivot.getX(), _pivot.getY(), _pivot.getZ());
 				return;
 			}
 
-			if (!Util.checkIfInRange(500, watcher, pivot, true))
+			if (!Util.checkIfInRange(500, _watcher, _pivot, true))
 			{
-				watcher.setXYZ(pivot.getX(), pivot.getY(), pivot.getZ());
-				watcher.broadcastUserInfo();
+				_watcher.setXYZ(_pivot.getX(), _pivot.getY(), _pivot.getZ());
+				_watcher.broadcastUserInfo();
 			}
 
-			if (pivot.getTarget() == null || pivot.getTarget() == pivot)
+			if (_pivot.getTarget() == null || _pivot.getTarget() == _pivot)
 			{
 				// 3rd person cam
-				watcher.sendPacket(new SpecialCamera(pivot.getObjectId(), Rnd.get(50, 150), // Distance
+				_watcher.sendPacket(new SpecialCamera(_pivot.getObjectId(), Rnd.get(50, 150), // Distance
 						0, // Yaw
 						Rnd.get(15, 25), // Pitch
 						2000, // Time
@@ -199,22 +198,21 @@ public class GamePlayWatcher
 			}
 			else
 			{
-				double yaw = Math.toDegrees(
-						Math.atan2(pivot.getX() - pivot.getTarget().getX(), pivot.getY() - pivot.getTarget().getY())) +
-						90;
+				double yaw = Math.toDegrees(Math.atan2(_pivot.getX() - _pivot.getTarget().getX(),
+						_pivot.getY() - _pivot.getTarget().getY())) + 90;
 				double angle = 180 - yaw;
-				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(pivot, pivot.getTarget(), false));
+				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(_pivot, _pivot.getTarget(), false));
 				if (pitch < 15)
 				{
 					pitch = 15;
 				}
 				double distance = 250;
 				Point3D cameraPos =
-						new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-								(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+						new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+								(int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
 										Math.cos(pitch * Math.PI / 180.0)),
-								(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
-				while (!GeoEngine.getInstance().canSeeTarget(pivot, cameraPos))
+								(int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+				while (!GeoEngine.getInstance().canSeeTarget(_pivot, cameraPos))
 				{
 					distance -= 100;
 
@@ -225,14 +223,14 @@ public class GamePlayWatcher
 					}
 
 					cameraPos =
-							new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-									(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
+							new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+									(int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
 											Math.cos(pitch * Math.PI / 180.0)),
-									(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+									(int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
 				}
 
 				// 3rd person cam
-				watcher.sendPacket(new SpecialCamera(pivot.getObjectId(), Rnd.get(50, 150), // Distance
+				_watcher.sendPacket(new SpecialCamera(_pivot.getObjectId(), Rnd.get(50, 150), // Distance
 						(int) Math.round(yaw), // Yaw
 						Rnd.get(15, 25), // Pitch
 						2000, // Time
@@ -243,6 +241,11 @@ public class GamePlayWatcher
 						0 // Relative to Object's angle
 				));
 			}
+		}
+
+		public void setSchedule(ScheduledFuture<?> schedule)
+		{
+			_schedule = schedule;
 		}
 	}
 }

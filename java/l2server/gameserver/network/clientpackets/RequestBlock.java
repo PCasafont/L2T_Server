@@ -25,23 +25,24 @@ import l2server.log.Log;
 
 public final class RequestBlock extends L2GameClientPacket
 {
+
 	private static final int BLOCK = 0;
 	private static final int UNBLOCK = 1;
 	private static final int BLOCKLIST = 2;
 	private static final int ALLBLOCK = 3;
 	private static final int ALLUNBLOCK = 4;
 
-	private String name;
-	private Integer type;
+	private String _name;
+	private Integer _type;
 
 	@Override
 	protected void readImpl()
 	{
-		type = readD(); //0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
+		_type = readD(); //0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 
-		if (type == BLOCK || type == UNBLOCK)
+		if (_type == BLOCK || _type == UNBLOCK)
 		{
-			name = readS();
+			_name = readS();
 		}
 	}
 
@@ -49,7 +50,7 @@ public final class RequestBlock extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		final int targetId = CharNameTable.getInstance().getIdByName(name);
+		final int targetId = CharNameTable.getInstance().getIdByName(_name);
 		final int targetAL = CharNameTable.getInstance().getAccessLevelById(targetId);
 
 		if (activeChar == null)
@@ -57,7 +58,7 @@ public final class RequestBlock extends L2GameClientPacket
 			return;
 		}
 
-		switch (type)
+		switch (_type)
 		{
 			case BLOCK:
 			case UNBLOCK:
@@ -83,7 +84,7 @@ public final class RequestBlock extends L2GameClientPacket
 					return;
 				}
 
-				if (type == BLOCK)
+				if (_type == BLOCK)
 				{
 					BlockList.addToBlockList(activeChar, targetId);
 				}
@@ -106,7 +107,7 @@ public final class RequestBlock extends L2GameClientPacket
 				BlockList.setBlockAll(activeChar, false);
 				break;
 			default:
-				Log.info("Unknown 0x0a block type: " + type);
+				Log.info("Unknown 0x0a block type: " + _type);
 		}
 	}
 }

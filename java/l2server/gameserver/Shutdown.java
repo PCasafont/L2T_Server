@@ -34,7 +34,6 @@ import l2server.gameserver.network.serverpackets.ServerClose;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
-import lombok.Getter;
 
 import java.util.Collection;
 import java.util.logging.Level;
@@ -53,10 +52,10 @@ public class Shutdown extends Thread
 	public static final int ABORT = 3;
 	private static final String[] MODE_TEXT = {"SIGTERM", "shutting down", "restarting", "aborting"};
 
-	private int shutdownMode = SIGTERM;
-	private static ShutdownTask task = null;
+	private int _shutdownMode = SIGTERM;
+	private static ShutdownTask _task = null;
 
-	@Getter private boolean shuttingDown = false;
+	private boolean _shuttingDown = false;
 
 	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart)
 	{
@@ -79,20 +78,20 @@ public class Shutdown extends Thread
 	{
 		if (restart)
 		{
-			shutdownMode = GM_RESTART;
+			_shutdownMode = GM_RESTART;
 		}
 		else
 		{
-			shutdownMode = GM_SHUTDOWN;
+			_shutdownMode = GM_SHUTDOWN;
 		}
 
 		if (text != null)
 		{
 			Log.info(text);
 		}
-		Log.info(MODE_TEXT[shutdownMode] + " in " + seconds + " seconds!");
+		Log.info(MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 
-		if (shutdownMode > 0)
+		if (_shutdownMode > 0)
 		{
 			switch (seconds)
 			{
@@ -118,14 +117,14 @@ public class Shutdown extends Thread
 			}
 		}
 
-		if (task != null)
+		if (_task != null)
 		{
-			task.abort();
+			_task.abort();
 		}
 
 		//		 the main instance should only run for shutdown hook, so we start a new instance
-		task = new ShutdownTask(seconds, restart);
-		task.start();
+		_task = new ShutdownTask(seconds, restart);
+		_task.start();
 	}
 
 	/**
@@ -136,12 +135,12 @@ public class Shutdown extends Thread
 	public void abort(L2PcInstance activeChar)
 	{
 		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " +
-				MODE_TEXT[shutdownMode] + " has been stopped!");
-		if (task != null)
+				MODE_TEXT[_shutdownMode] + " has been stopped!");
+		if (_task != null)
 		{
-			task.abort();
-			Announcements an = Announcements.getInstance();
-			an.announceToAll("Server aborts " + MODE_TEXT[shutdownMode] + " and continues normal operation!");
+			_task.abort();
+			Announcements _an = Announcements.getInstance();
+			_an.announceToAll("Server aborts " + MODE_TEXT[_shutdownMode] + " and continues normal operation!");
 		}
 	}
 
@@ -186,7 +185,7 @@ public class Shutdown extends Thread
 	@Override
 	public void run()
 	{
-		shuttingDown = true;
+		_shuttingDown = true;
 		try
 		{
 			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
@@ -272,7 +271,7 @@ public class Shutdown extends Thread
 		}
 
 		// server will quit, when this function ends.
-		if (shutdownMode == GM_RESTART)
+		if (_shutdownMode == GM_RESTART)
 		{
 			Runtime.getRuntime().halt(2);
 		}
@@ -287,7 +286,7 @@ public class Shutdown extends Thread
 	 */
 	private void saveData()
 	{
-		switch (shutdownMode)
+		switch (_shutdownMode)
 		{
 			case SIGTERM:
 				Log.info("SIGTERM received. Shutting down NOW!");
@@ -407,9 +406,14 @@ public class Shutdown extends Thread
 		}
 	}
 
+	public boolean isShuttingDown()
+	{
+		return _shuttingDown;
+	}
+
 	private class ShutdownTask extends Thread
 	{
-		private int secondsShut;
+		private int _secondsShut;
 
 		/**
 		 * This creates a countdown instance of Shutdown.
@@ -423,14 +427,14 @@ public class Shutdown extends Thread
 			{
 				seconds = 0;
 			}
-			secondsShut = seconds;
+			_secondsShut = seconds;
 			if (restart)
 			{
-				shutdownMode = GM_RESTART;
+				_shutdownMode = GM_RESTART;
 			}
 			else
 			{
-				shutdownMode = GM_SHUTDOWN;
+				_shutdownMode = GM_SHUTDOWN;
 			}
 		}
 
@@ -440,8 +444,8 @@ public class Shutdown extends Thread
 			// gm shutdown: send warnings and then call exit to start shutdown sequence
 			countdown();
 			// last point where logging is operational :(
-			Log.warning("GM shutdown countdown is over. " + MODE_TEXT[shutdownMode] + " NOW!");
-			switch (shutdownMode)
+			Log.warning("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
+			switch (_shutdownMode)
 			{
 				case GM_SHUTDOWN:
 					System.exit(0);
@@ -457,7 +461,7 @@ public class Shutdown extends Thread
 		 */
 		private void abort()
 		{
-			shutdownMode = ABORT;
+			_shutdownMode = ABORT;
 		}
 
 		/**
@@ -468,66 +472,66 @@ public class Shutdown extends Thread
 		{
 			try
 			{
-				while (secondsShut > 0)
+				while (_secondsShut > 0)
 				{
-					switch (secondsShut)
+					switch (_secondsShut)
 					{
 						case 540:
-							sendServerQuit(540, shutdownMode == GM_RESTART);
+							sendServerQuit(540, _shutdownMode == GM_RESTART);
 							break;
 						case 480:
-							sendServerQuit(480, shutdownMode == GM_RESTART);
+							sendServerQuit(480, _shutdownMode == GM_RESTART);
 							break;
 						case 420:
-							sendServerQuit(420, shutdownMode == GM_RESTART);
+							sendServerQuit(420, _shutdownMode == GM_RESTART);
 							break;
 						case 360:
-							sendServerQuit(360, shutdownMode == GM_RESTART);
+							sendServerQuit(360, _shutdownMode == GM_RESTART);
 							break;
 						case 300:
-							sendServerQuit(300, shutdownMode == GM_RESTART);
+							sendServerQuit(300, _shutdownMode == GM_RESTART);
 							break;
 						case 240:
-							sendServerQuit(240, shutdownMode == GM_RESTART);
+							sendServerQuit(240, _shutdownMode == GM_RESTART);
 							break;
 						case 180:
-							sendServerQuit(180, shutdownMode == GM_RESTART);
+							sendServerQuit(180, _shutdownMode == GM_RESTART);
 							break;
 						case 120:
-							sendServerQuit(120, shutdownMode == GM_RESTART);
+							sendServerQuit(120, _shutdownMode == GM_RESTART);
 							break;
 						case 60:
-							sendServerQuit(60, shutdownMode == GM_RESTART);
+							sendServerQuit(60, _shutdownMode == GM_RESTART);
 							break;
 						case 30:
-							sendServerQuit(30, shutdownMode == GM_RESTART);
+							sendServerQuit(30, _shutdownMode == GM_RESTART);
 							break;
 						case 10:
-							sendServerQuit(10, shutdownMode == GM_RESTART);
+							sendServerQuit(10, _shutdownMode == GM_RESTART);
 							break;
 						case 5:
-							sendServerQuit(5, shutdownMode == GM_RESTART);
+							sendServerQuit(5, _shutdownMode == GM_RESTART);
 							break;
 						case 4:
-							sendServerQuit(4, shutdownMode == GM_RESTART);
+							sendServerQuit(4, _shutdownMode == GM_RESTART);
 							break;
 						case 3:
-							sendServerQuit(3, shutdownMode == GM_RESTART);
+							sendServerQuit(3, _shutdownMode == GM_RESTART);
 							break;
 						case 2:
-							sendServerQuit(2, shutdownMode == GM_RESTART);
+							sendServerQuit(2, _shutdownMode == GM_RESTART);
 							break;
 						case 1:
-							sendServerQuit(1, shutdownMode == GM_RESTART);
+							sendServerQuit(1, _shutdownMode == GM_RESTART);
 							break;
 					}
 
-					secondsShut--;
+					_secondsShut--;
 
 					int delay = 1000; //milliseconds
 					Thread.sleep(delay);
 
-					if (shutdownMode == ABORT)
+					if (_shutdownMode == ABORT)
 					{
 						break;
 					}
@@ -549,12 +553,12 @@ public class Shutdown extends Thread
 	 */
 	public static Shutdown getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final Shutdown instance = new Shutdown();
+		protected static final Shutdown _instance = new Shutdown();
 	}
 }

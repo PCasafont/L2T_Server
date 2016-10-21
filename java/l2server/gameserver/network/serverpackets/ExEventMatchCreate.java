@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExEventMatchCreate extends L2GameServerPacket
 {
-	private int unk;
+	private int _unk;
 
 	public ExEventMatchCreate(int unk)
 	{
-		this.unk = unk;
+		_unk = unk;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(unk);
+		writeD(_unk);
 	}
 }

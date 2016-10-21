@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.L2SpawnZone;
-import lombok.Getter;
 
 /**
  * A castle zone
@@ -30,8 +29,8 @@ import lombok.Getter;
  */
 public class L2CastleZone extends L2SpawnZone
 {
-	@Getter private int castleId;
-	private Castle castle = null;
+	private int _castleId;
+	private Castle _castle = null;
 
 	public L2CastleZone(int id)
 	{
@@ -43,7 +42,7 @@ public class L2CastleZone extends L2SpawnZone
 	{
 		if (name.equals("castleId"))
 		{
-			castleId = Integer.parseInt(value);
+			_castleId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -86,7 +85,7 @@ public class L2CastleZone extends L2SpawnZone
 	 */
 	public void banishForeigners(int owningClanId)
 	{
-		for (L2Character temp : characterList.values())
+		for (L2Character temp : _characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -107,12 +106,17 @@ public class L2CastleZone extends L2SpawnZone
 		}
 	}
 
+	public int getCastleId()
+	{
+		return _castleId;
+	}
+
 	private Castle getCastle()
 	{
-		if (castle == null)
+		if (_castle == null)
 		{
-			castle = CastleManager.getInstance().getCastleById(castleId);
+			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		}
-		return castle;
+		return _castle;
 	}
 }

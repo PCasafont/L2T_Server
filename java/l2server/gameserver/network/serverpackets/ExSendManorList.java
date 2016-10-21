@@ -32,6 +32,7 @@ import l2server.gameserver.model.entity.Castle;
  */
 public class ExSendManorList extends L2GameServerPacket
 {
+
 	@Override
 	protected final void writeImpl()
 	{

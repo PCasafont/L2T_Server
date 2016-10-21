@@ -34,83 +34,83 @@ import java.util.concurrent.ScheduledFuture;
 
 public class WarpedSpace extends L2AttackableAIScript
 {
-	private static final int gravityCoreId = 13432;
-	private static final L2Skill spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
+    private static final int _gravityCoreId = 13432;
+    private static final L2Skill _spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
 
-	public WarpedSpace(int id, String name, String descr)
-	{
-		super(id, name, descr);
+    public WarpedSpace(int id, String name, String descr)
+    {
+        super(id, name, descr);
 
-		addSpawnId(gravityCoreId);
-	}
+        addSpawnId(_gravityCoreId);
+    }
 
-	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		npc.disableCoreAI(true);
+    @Override
+    public final String onSpawn(L2Npc npc)
+    {
+        npc.disableCoreAI(true);
 
-		WarpedSpaceAI ai = new WarpedSpaceAI(npc);
+        WarpedSpaceAI ai = new WarpedSpaceAI(npc);
 
-		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 100, 10));
+        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 100, 10));
 
-		return null;
-	}
+        return null;
+    }
 
-	class WarpedSpaceAI implements Runnable
-	{
-		private L2Npc gravityCore;
-		private ScheduledFuture<?> schedule = null;
+    class WarpedSpaceAI implements Runnable
+    {
+        private L2Npc _gravityCore;
+        private ScheduledFuture<?> _schedule = null;
 
-		protected WarpedSpaceAI(L2Npc npc)
-		{
-			gravityCore = npc;
-		}
+        protected WarpedSpaceAI(L2Npc npc)
+        {
+            _gravityCore = npc;
+        }
 
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
-			this.schedule = schedule;
-		}
+        public void setSchedule(ScheduledFuture<?> schedule)
+        {
+            _schedule = schedule;
+        }
 
-		@Override
-		public void run()
-		{
-			if (gravityCore == null || gravityCore.isDead() || gravityCore.isDecayed() ||
-					gravityCore.getOwner().isAlikeDead())
-			{
-				for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175))
-				{
-					if (ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP) != null)
-					{
-						ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP).exit();
-					}
-				}
+        @Override
+        public void run()
+        {
+            if (_gravityCore == null || _gravityCore.isDead() || _gravityCore.isDecayed() ||
+                    _gravityCore.getOwner().isAlikeDead())
+            {
+                for (L2Character ch : _gravityCore.getKnownList().getKnownCharactersInRadius(175))
+                {
+                    if (ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP) != null)
+                    {
+                        ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP).exit();
+                    }
+                }
 
-				if (schedule != null)
-				{
-					schedule.cancel(true);
-					return;
-				}
-			}
+                if (_schedule != null)
+                {
+                    _schedule.cancel(true);
+                    return;
+                }
+            }
 
-			for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175))
-			{
-				if (ch.getFirstEffect(spatialTrap.getId()) != null)
-				{
-					continue;
-				}
-				else if (gravityCore.getOwner() == ch)
-				{
-					SkillTable.getInstance().getInfo(30527, 1).getEffects(gravityCore, ch);
-					continue;
-				}
+            for (L2Character ch : _gravityCore.getKnownList().getKnownCharactersInRadius(175))
+            {
+                if (ch.getFirstEffect(_spatialTrap.getId()) != null)
+                {
+                    continue;
+                }
+                else if (_gravityCore.getOwner() == ch)
+                {
+                    SkillTable.getInstance().getInfo(30527, 1).getEffects(_gravityCore, ch);
+                    continue;
+                }
 
-				spatialTrap.getEffects(gravityCore, ch);
-			}
-		}
-	}
+                _spatialTrap.getEffects(_gravityCore, ch);
+            }
+        }
+    }
 
-	public static void main(String[] args)
-	{
-		new WarpedSpace(-1, "WarpedSpace", "ai/individual");
-	}
+    public static void main(String[] args)
+    {
+        new WarpedSpace(-1, "WarpedSpace", "ai/individual");
+    }
 }

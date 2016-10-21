@@ -27,7 +27,8 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionPlayerHasCastle extends Condition
 {
-	private final int castle;
+
+	private final int _castle;
 
 	/**
 	 * Instantiates a new condition player has castle.
@@ -36,7 +37,7 @@ public final class ConditionPlayerHasCastle extends Condition
 	 */
 	public ConditionPlayerHasCastle(int castle)
 	{
-		this.castle = castle;
+		_castle = castle;
 	}
 
 	/**
@@ -62,20 +63,20 @@ public final class ConditionPlayerHasCastle extends Condition
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
 		if (clan == null)
 		{
-			return castle == 0;
+			return _castle == 0;
 		}
 
 		// Any castle
-		if (castle == -1)
+		if (_castle == -1)
 		{
 			return clan.getHasCastle() > 0;
 		}
 
-		if (castle > 10 && clan.getHasCastle() > 0)
+		if (_castle > 10 && clan.getHasCastle() > 0)
 		{
-			return CastleManager.getInstance().getCastleById(clan.getHasCastle()).getTendency() == castle % 10;
+			return CastleManager.getInstance().getCastleById(clan.getHasCastle()).getTendency() == _castle % 10;
 		}
 
-		return clan.getHasCastle() == castle;
+		return clan.getHasCastle() == _castle;
 	}
 }

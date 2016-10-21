@@ -45,7 +45,8 @@ public class L2JailZone extends L2ZoneType
 			if (Config.JAIL_IS_PVP)
 			{
 				character.setInsideZone(L2Character.ZONE_PVP, true);
-				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+				character
+						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 			if (Config.JAIL_DISABLE_TRANSACTION)
 			{
@@ -92,17 +93,17 @@ public class L2JailZone extends L2ZoneType
 
 	static class BackToJail implements Runnable
 	{
-		private L2PcInstance activeChar;
+		private L2PcInstance _activeChar;
 
 		BackToJail(L2Character character)
 		{
-			activeChar = (L2PcInstance) character;
+			_activeChar = (L2PcInstance) character;
 		}
 
 		@Override
 		public void run()
 		{
-			activeChar.teleToLocation(-114356, -249645, -2984); // Jail
+			_activeChar.teleToLocation(-114356, -249645, -2984); // Jail
 		}
 	}
 }

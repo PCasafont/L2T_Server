@@ -31,10 +31,10 @@ import l2server.loginserver.network.L2LoginClient;
  */
 public final class Init extends L2LoginServerPacket
 {
-	private int sessionId;
+	private int _sessionId;
 
-	private byte[] publicKey;
-	private byte[] blowfishKey;
+	private byte[] _publicKey;
+	private byte[] _blowfishKey;
 
 	public Init(L2LoginClient client)
 	{
@@ -43,9 +43,9 @@ public final class Init extends L2LoginServerPacket
 
 	public Init(byte[] publickey, byte[] blowfishkey, int sessionId)
 	{
-		this.sessionId = sessionId;
-		publicKey = publickey;
-		blowfishKey = blowfishkey;
+		_sessionId = sessionId;
+		_publicKey = publickey;
+		_blowfishKey = blowfishkey;
 	}
 
 	/**
@@ -55,10 +55,10 @@ public final class Init extends L2LoginServerPacket
 	{
 		writeC(0x00); // init packet id
 
-		writeD(sessionId); // session id
+		writeD(_sessionId); // session id
 		writeD(0x0000c621); // protocol revision
 
-		writeB(publicKey); // RSA Public Key
+		writeB(_publicKey); // RSA Public Key
 
 		// unk GG related?
 		writeD(0x29DD954E);
@@ -66,7 +66,7 @@ public final class Init extends L2LoginServerPacket
 		writeD(0x97ADB620);
 		writeD(0x07BDE0F7);
 
-		writeB(blowfishKey); // BlowFish key
+		writeB(_blowfishKey); // BlowFish key
 		writeC(0x00030402);
 	}
 }

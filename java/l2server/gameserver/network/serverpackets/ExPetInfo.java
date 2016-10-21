@@ -28,16 +28,16 @@ import java.util.Set;
  */
 public final class ExPetInfo extends L2GameServerPacket
 {
-	private int objectId;
-	private int val;
-	private byte[] data1;
-	private byte[] data2;
-	private Set<Integer> abnormals;
+	private int _objectId;
+	private int _val;
+	private byte[] _data1;
+	private byte[] _data2;
+	private Set<Integer> _abnormals;
 
 	public ExPetInfo(L2PetInstance pet, L2Character attacker, int val)
 	{
-		objectId = pet.getObjectId();
-		this.val = 0;//pet.isShowSummonAnimation() ? 2 : val;
+		_objectId = pet.getObjectId();
+		_val = 0;//pet.isShowSummonAnimation() ? 2 : val;
 
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -55,8 +55,8 @@ public final class ExPetInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		data1 = new byte[size];
-		buffer.get(data1, 0, size);
+		_data1 = new byte[size];
+		buffer.get(_data1, 0, size);
 
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -131,21 +131,21 @@ public final class ExPetInfo extends L2GameServerPacket
 
 		size = buffer.position();
 		buffer.position(0);
-		data2 = new byte[size];
-		buffer.get(data2, 0, size);
+		_data2 = new byte[size];
+		buffer.get(_data2, 0, size);
 
-		abnormals = pet.getAbnormalEffect();
-		if (pet.getOwner().getAppearance().isInvisible())
+		_abnormals = pet.getAbnormalEffect();
+		if (pet.getOwner().getAppearance().getInvisible())
 		{
-			abnormals.add(VisualEffect.STEALTH.getId());
+			_abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeC(val); // 0=teleported 1=default 2=summoned
+		writeD(_objectId);
+		writeC(_val); // 0=teleported 1=default 2=summoned
 		writeH(0x0025);
 		writeC(0xfd);
 		writeC(0xbf);
@@ -153,14 +153,14 @@ public final class ExPetInfo extends L2GameServerPacket
 		writeC(0xf3);
 		writeC(0xec);
 
-		writeC(data1.length);
-		writeB(data1);
+		writeC(_data1.length);
+		writeB(_data1);
 
-		writeH(data2.length);
-		writeB(data2);
+		writeH(_data2.length);
+		writeB(_data2);
 
-		writeH(abnormals.size());
-		for (int abnormal : abnormals)
+		writeH(_abnormals.size());
+		for (int abnormal : _abnormals)
 		{
 			writeH(abnormal);
 		}

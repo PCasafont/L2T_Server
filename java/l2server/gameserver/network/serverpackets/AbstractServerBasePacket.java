@@ -23,6 +23,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public abstract class AbstractServerBasePacket extends L2GameServerPacket
 {
+
 	/**
 	 */
 	@Override

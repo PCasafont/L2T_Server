@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
  */
 public final class RequestBookMarkSlotInfo extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

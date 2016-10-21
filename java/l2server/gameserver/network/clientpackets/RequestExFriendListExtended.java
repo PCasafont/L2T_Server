@@ -24,6 +24,7 @@ import l2server.gameserver.network.serverpackets.FriendListExtended;
  */
 public final class RequestExFriendListExtended extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

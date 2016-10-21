@@ -27,8 +27,9 @@ import l2server.gameserver.stats.Env;
  */
 public final class ConditionSlotItemId extends ConditionInventory
 {
-	private final int itemId;
-	private final int enchantLevel;
+
+	private final int _itemId;
+	private final int _enchantLevel;
 
 	/**
 	 * Instantiates a new condition slot item id.
@@ -40,8 +41,8 @@ public final class ConditionSlotItemId extends ConditionInventory
 	public ConditionSlotItemId(int slot, int itemId, int enchantLevel)
 	{
 		super(slot);
-		this.itemId = itemId;
-		this.enchantLevel = enchantLevel;
+		_itemId = itemId;
+		_enchantLevel = enchantLevel;
 	}
 
 	/* (non-Javadoc)
@@ -55,11 +56,11 @@ public final class ConditionSlotItemId extends ConditionInventory
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
-		L2ItemInstance item = inv.getPaperdollItem(slot);
+		L2ItemInstance item = inv.getPaperdollItem(_slot);
 		if (item == null)
 		{
-			return itemId == 0;
+			return _itemId == 0;
 		}
-		return item.getItemId() == itemId && item.getEnchantLevel() >= enchantLevel;
+		return item.getItemId() == _itemId && item.getEnchantLevel() >= _enchantLevel;
 	}
 }

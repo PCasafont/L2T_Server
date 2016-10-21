@@ -52,35 +52,36 @@ import java.util.regex.PatternSyntaxException;
 @SuppressWarnings("unused")
 public final class CharacterCreate extends L2GameClientPacket
 {
-	protected static final Logger logAccounting = Logger.getLogger("accounting");
+
+	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 
 	// cSdddddddddddd
-	private String name;
-	private int race;
-	private byte sex;
-	private int classId;
-	private int baseTemplateId;
-	private int INT;
-	private int str;
-	private int con;
-	private int men;
-	private int dex;
-	private int wit;
-	private byte hairStyle;
-	private byte hairColor;
-	private byte face;
+	private String _name;
+	private int _race;
+	private byte _sex;
+	private int _classId;
+	private int _baseTemplateId;
+	private int _int;
+	private int _str;
+	private int _con;
+	private int _men;
+	private int _dex;
+	private int _wit;
+	private byte _hairStyle;
+	private byte _hairColor;
+	private byte _face;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
-		race = readD();
-		sex = (byte) readD();
-		classId = readD();
-		if (Config.IS_CLASSIC && classId > 53)
+		_name = readS();
+		_race = readD();
+		_sex = (byte) readD();
+		_classId = readD();
+		if (Config.IS_CLASSIC && _classId > 53)
 		{
-			classId = 53;
-			name = ""; // Force invalid message when they try to create > dwarf on classic
+			_classId = 53;
+			_name = ""; // Force invalid message when they try to create > dwarf on classic
 		}
 		L2PcTemplate t = null;
 		for (int i = 0; i < 14; i++)
@@ -92,30 +93,30 @@ public final class CharacterCreate extends L2GameClientPacket
 			}
 
 			int startingClassId = template.startingClassId;
-			if (race == 5 && sex == 1)
+			if (_race == 5 && _sex == 1)
 			{
 				startingClassId++;
 			}
-			else if (race == 6 && sex == 0)
+			else if (_race == 6 && _sex == 0)
 			{
-				sex = 1;
+				_sex = 1;
 			}
-			if (startingClassId == classId)
+			if (startingClassId == _classId)
 			{
-				baseTemplateId = i;
+				_baseTemplateId = i;
 				t = CharTemplateTable.getInstance().getTemplate(i);
 				break;
 			}
 		}
-		INT = readD();
-		str = readD();
-		con = readD();
-		men = readD();
-		dex = readD();
-		wit = readD();
-		hairStyle = (byte) readD();
-		hairColor = (byte) readD();
-		face = (byte) readD();
+		_int = readD();
+		_str = readD();
+		_con = readD();
+		_men = readD();
+		_dex = readD();
+		_wit = readD();
+		_hairStyle = (byte) readD();
+		_hairColor = (byte) readD();
+		_face = (byte) readD();
 	}
 
 	@Override
@@ -128,11 +129,11 @@ public final class CharacterCreate extends L2GameClientPacket
 		}
 
 		// Last Verified: May 30, 2009 - Gracia Final - Players are able to create characters with names consisting of as little as 1,2,3 letter/number combinations.
-		if (name.length() < 1 || name.length() > 16)
+		if (_name.length() < 1 || _name.length() > 16)
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("Character Creation Failure: Character name " + name +
+				Log.fine("Character Creation Failure: Character name " + _name +
 						" is invalid. Message generated: Your title cannot exceed 16 characters in length. Please try again.");
 			}
 
@@ -144,7 +145,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			for (String st : Config.FORBIDDEN_NAMES)
 			{
-				if (name.toLowerCase().contains(st.toLowerCase()))
+				if (_name.toLowerCase().contains(st.toLowerCase()))
 				{
 					sendPacket(new CharCreateFail(CharCreateFail.REASON_INCORRECT_NAME));
 					return;
@@ -153,11 +154,11 @@ public final class CharacterCreate extends L2GameClientPacket
 		}
 
 		// Last Verified: May 30, 2009 - Gracia Final
-		if (!Util.isAlphaNumeric(name) || !isValidName(name))
+		if (!Util.isAlphaNumeric(_name) || !isValidName(_name))
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("Character Creation Failure: Character name " + name +
+				Log.fine("Character Creation Failure: Character name " + _name +
 						" is invalid. Message generated: Incorrect name. Please try again.");
 			}
 
@@ -165,27 +166,27 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 
-		if (face > 2 || face < 0)
+		if (_face > 2 || _face < 0)
 		{
-			Log.warning("Character Creation Failure: Character face " + face + " is invalid. Possible client hack. " +
+			Log.warning("Character Creation Failure: Character face " + _face + " is invalid. Possible client hack. " +
 					getClient());
 
 			sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 			return;
 		}
 
-		if (hairStyle < 0 || sex == 0 && hairStyle > 4 || sex != 0 && hairStyle > 6)
+		if (_hairStyle < 0 || _sex == 0 && _hairStyle > 4 || _sex != 0 && _hairStyle > 6)
 		{
-			Log.warning("Character Creation Failure: Character hair style " + hairStyle +
+			Log.warning("Character Creation Failure: Character hair style " + _hairStyle +
 					" is invalid. Possible client hack. " + getClient());
 
 			sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 			return;
 		}
 
-		if (hairColor > 3 || hairColor < 0)
+		if (_hairColor > 3 || _hairColor < 0)
 		{
-			Log.warning("Character Creation Failure: Character hair color " + hairColor +
+			Log.warning("Character Creation Failure: Character hair color " + _hairColor +
 					" is invalid. Possible client hack. " + getClient());
 
 			sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -211,7 +212,7 @@ public final class CharacterCreate extends L2GameClientPacket
 				sendPacket(new CharCreateFail(CharCreateFail.REASON_TOO_MANY_CHARACTERS));
 				return;
 			}
-			else if (CharNameTable.getInstance().doesCharNameExist(name))
+			else if (CharNameTable.getInstance().doesCharNameExist(_name))
 			{
 				if (Config.DEBUG)
 				{
@@ -223,14 +224,14 @@ public final class CharacterCreate extends L2GameClientPacket
 				return;
 			}
 
-			template = CharTemplateTable.getInstance().getTemplate(baseTemplateId);
+			template = CharTemplateTable.getInstance().getTemplate(_baseTemplateId);
 
 			if (template == null)
 			{
 				if (Config.DEBUG)
 				{
-					Log.fine("Character Creation Failure: " + name + " classId: " + classId + " Template: " + template +
-							" Message generated: Your character creation has failed.");
+					Log.fine("Character Creation Failure: " + _name + " classId: " + _classId + " Template: " +
+							template + " Message generated: Your character creation has failed.");
 				}
 
 				sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -239,8 +240,8 @@ public final class CharacterCreate extends L2GameClientPacket
 
 			int objectId = IdFactory.getInstance().getNextId();
 			newChar = L2PcInstance
-					.create(objectId, template, getClient().getAccountName(), name, hairStyle, hairColor, face,
-							sex != 0, classId);
+					.create(objectId, template, getClient().getAccountName(), _name, _hairStyle, _hairColor, _face,
+							_sex != 0, _classId);
 		}
 
 		newChar.setCurrentHp(newChar.getMaxHp());
@@ -255,7 +256,7 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		LogRecord record = new LogRecord(Level.INFO, "Created new character");
 		record.setParameters(new Object[]{newChar, getClient()});
-		logAccounting.log(record);
+		_logAccounting.log(record);
 	}
 
 	public static boolean isValidName(String text)
@@ -467,7 +468,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
 			player.registerShortCut(shortcut);
 			// .landrates macro
-			/*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
+            /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1006, 0, 0);
 			player.registerShortCut(shortcut);*/

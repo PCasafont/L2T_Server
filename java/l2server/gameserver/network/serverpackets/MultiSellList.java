@@ -40,23 +40,24 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class MultiSellList extends L2GameServerPacket
 {
-	private int size, index;
-	private final ListContainer list;
-	private final boolean finished;
+
+	private int _size, _index;
+	private final ListContainer _list;
+	private final boolean _finished;
 
 	public MultiSellList(ListContainer list, int index)
 	{
-		this.list = list;
-		this.index = index;
-		size = list.getEntries().size() - index;
-		if (size > MultiSell.PAGE_SIZE)
+		_list = list;
+		_index = index;
+		_size = list.getEntries().size() - index;
+		if (_size > MultiSell.PAGE_SIZE)
 		{
-			finished = false;
-			size = MultiSell.PAGE_SIZE;
+			_finished = false;
+			_size = MultiSell.PAGE_SIZE;
 		}
 		else
 		{
-			finished = true;
+			_finished = true;
 		}
 	}
 
@@ -64,20 +65,20 @@ public final class MultiSellList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeD(list.getListId()); // list id
+		writeD(_list.getListId()); // list id
 		writeC(0x00);
-		writeD(1 + index / MultiSell.PAGE_SIZE); // page started from 1
-		writeD(finished ? 1 : 0); // finished
+		writeD(1 + _index / MultiSell.PAGE_SIZE); // page started from 1
+		writeD(_finished ? 1 : 0); // finished
 		writeD(MultiSell.PAGE_SIZE); // size of pages
-		writeD(size); //list length
-		writeC(list.isChance() ? 0x01 : 0x00); // Old or modern format
+		writeD(_size); //list length
+		writeC(_list.isChance() ? 0x01 : 0x00); // Old or modern format
 		writeD(0);
 
 		//String toLog = "";
 		MultiSellEntry ent;
-		while (size-- > 0)
+		while (_size-- > 0)
 		{
-			ent = list.getEntries().get(index++);
+			ent = _list.getEntries().get(_index++);
 
 			final Ingredient product = ent.getProducts().get(0);
 
@@ -97,7 +98,7 @@ public final class MultiSellList extends L2GameServerPacket
 
 			toLog += "\t\t<ingredient id=\"57\" count=\"" + productTemplate.getReferencePrice() * 1000 + "\" /><!-- Adena -->\n";
 			 */
-			/*
+            /*
 			for (Ingredient i : ent.getIngredients())
 			{
 				L2Item itemTemplate = ItemTable.getInstance().getTemplate(i.getItemId());

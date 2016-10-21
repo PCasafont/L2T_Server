@@ -31,7 +31,7 @@ public class ClanBBSManager extends BaseBBSManager
 {
 	public static ClanBBSManager getInstance()
 	{
-		return SingletonHolder.instance;
+		return SingletonHolder._instance;
 	}
 
 	/**
@@ -256,7 +256,7 @@ public class ClanBBSManager extends BaseBBSManager
 
 	private static class SingletonHolder
 	{
-		protected static final ClanBBSManager instance = new ClanBBSManager();
+		protected static final ClanBBSManager _instance = new ClanBBSManager();
 	}
 
 	/**
@@ -296,7 +296,7 @@ public class ClanBBSManager extends BaseBBSManager
 								cl.getLeaderName(), "</td></tr><tr><td height=7></td></tr>" +
 										// ADMINISTRATOR ??
 				/*
-				 * html.append("<tr>"); html.append("<td fixWIDTH=100 align=left>ADMINISTRATOR</td>"); html.append("<td fixWIDTH=195 align=left height=16>"+cl.getLeaderName()+"</td>"); html.append("</tr>");
+                 * html.append("<tr>"); html.append("<td fixWIDTH=100 align=left>ADMINISTRATOR</td>"); html.append("<td fixWIDTH=195 align=left height=16>"+cl.getLeaderName()+"</td>"); html.append("</tr>");
 				 */
 										"<tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>ALLIANCE</td><td fixWIDTH=195 align=left height=16>",
 								cl.getAllyName() != null ? cl.getAllyName() : "",

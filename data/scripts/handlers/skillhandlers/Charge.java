@@ -33,7 +33,7 @@ import java.util.logging.Logger;
 
 public class Charge implements ISkillHandler
 {
-	static Logger log = Logger.getLogger(Charge.class.getName());
+	static Logger _log = Logger.getLogger(Charge.class.getName());
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.L2PcInstance, l2server.gameserver.model.L2ItemInstance)
@@ -43,6 +43,7 @@ public class Charge implements ISkillHandler
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
+
 		for (L2Object target : targets)
 		{
 			if (!(target instanceof L2PcInstance))

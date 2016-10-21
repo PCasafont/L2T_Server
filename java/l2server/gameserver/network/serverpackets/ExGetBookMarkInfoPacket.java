@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance.TeleportBookmark;
  */
 public class ExGetBookMarkInfoPacket extends L2GameServerPacket
 {
+
 	private L2PcInstance player;
 
 	public ExGetBookMarkInfoPacket(L2PcInstance cha)
@@ -40,13 +41,13 @@ public class ExGetBookMarkInfoPacket extends L2GameServerPacket
 
 		for (TeleportBookmark tpbm : player.getTpbookmark())
 		{
-			writeD(tpbm.id);
-			writeD(tpbm.x);
-			writeD(tpbm.y);
-			writeD(tpbm.z);
-			writeS(tpbm.name);
-			writeD(tpbm.icon);
-			writeS(tpbm.tag);
+			writeD(tpbm._id);
+			writeD(tpbm._x);
+			writeD(tpbm._y);
+			writeD(tpbm._z);
+			writeS(tpbm._name);
+			writeD(tpbm._icon);
+			writeS(tpbm._tag);
 		}
 	}
 }

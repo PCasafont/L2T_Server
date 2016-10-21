@@ -57,16 +57,17 @@ import java.util.logging.Level;
  */
 public final class RequestActionUse extends L2GameClientPacket
 {
-	private int actionId;
-	private boolean ctrlPressed;
-	private boolean shiftPressed;
+
+	private int _actionId;
+	private boolean _ctrlPressed;
+	private boolean _shiftPressed;
 
 	@Override
 	protected void readImpl()
 	{
-		actionId = readD();
-		ctrlPressed = readD() == 1;
-		shiftPressed = readC() == 1;
+		_actionId = readD();
+		_ctrlPressed = readD() == 1;
+		_shiftPressed = readC() == 1;
 	}
 
 	@Override
@@ -81,8 +82,8 @@ public final class RequestActionUse extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.finest(activeChar.getName() + " request Action use: id " + actionId + " 2:" + ctrlPressed + " 3:" +
-					shiftPressed);
+			Log.finest(activeChar.getName() + " request Action use: id " + _actionId + " 2:" + _ctrlPressed + " 3:" +
+					_shiftPressed);
 		}
 
 		// dont do anything if player is dead
@@ -104,11 +105,11 @@ public final class RequestActionUse extends L2GameClientPacket
 		{
 			// Allow naviarope to use summon actions
 			int[] allowedActions = activeChar.isTransformed() && activeChar.getTransformationId() != 509 ?
-					ExBasicActionList.actionsOnTransform : ExBasicActionList.defaultActionList;
-			if (!(Arrays.binarySearch(allowedActions, actionId) >= 0))
+					ExBasicActionList._actionsOnTransform : ExBasicActionList._defaultActionList;
+			if (!(Arrays.binarySearch(allowedActions, _actionId) >= 0))
 			{
 				getClient().sendPacket(ActionFailed.STATIC_PACKET);
-				Log.warning("Player " + activeChar + " used action which he does not have! id = " + actionId +
+				Log.warning("Player " + activeChar + " used action which he does not have! id = " + _actionId +
 						" transform: " + activeChar.getTransformation());
 				return;
 			}
@@ -121,10 +122,10 @@ public final class RequestActionUse extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.info("Requested Action ID: " + String.valueOf(actionId));
+			Log.info("Requested Action ID: " + String.valueOf(_actionId));
 		}
 
-		switch (actionId)
+		switch (_actionId)
 		{
 			case 0: // Sit/Stand
 				if (activeChar.getMountType() != 0)
@@ -285,7 +286,7 @@ public final class RequestActionUse extends L2GameClientPacket
 							continue;
 						}
 
-						if (target.isAutoAttackable(activeChar) || ctrlPressed)
+						if (target.isAutoAttackable(activeChar) || _ctrlPressed)
 						{
 							if (target instanceof L2DoorInstance)
 							{
@@ -317,7 +318,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					if (summon != null && !summon.isMovementDisabled() && !summon.isBetrayed())
 					{
 						summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
-						if (actionId == 1101)
+						if (_actionId == 1101)
 						{
 							((L2SummonAI) summon.getAI()).setStartFollowController(true);
 							((L2SummonAI) summon.getAI()).notifyFollowStatusChange();
@@ -605,7 +606,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 71:
 			case 72:
 			case 73:
-				useCoupleSocial(actionId - 55);
+				useCoupleSocial(_actionId - 55);
 				break;
 			case 1000: // Siege Golem - Siege Hammer
 				if (target instanceof L2DoorInstance)
@@ -1118,7 +1119,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				SystemMessage sm;
 				// can't use friend invite for locating invisible characters
-				if (!target.getActingPlayer().isOnline() || target.getActingPlayer().getAppearance().isInvisible())
+				if (!target.getActingPlayer().isOnline() || target.getActingPlayer().getAppearance().getInvisible())
 				{
 					//Target is not found in the game.
 					activeChar.sendPacket(SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME);
@@ -1178,13 +1179,13 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 79:
 			case 80:
 			case 81:
-				useTacticalSign(actionId - 77, false);
+				useTacticalSign(_actionId - 77, false);
 				break;
 			case 82:
 			case 83:
 			case 84:
 			case 85:
-				useTacticalSign(actionId - 81, true);
+				useTacticalSign(_actionId - 81, true);
 				break;
 			case 87: // Propose
 				tryBroadcastSocial(28);
@@ -1202,7 +1203,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 11335:
 				break;
 			default:
-				Log.warning(activeChar.getName() + ": unhandled action type " + actionId);
+				Log.warning(activeChar.getName() + ": unhandled action type " + _actionId);
 		}
 	}
 
@@ -1262,8 +1263,8 @@ public final class RequestActionUse extends L2GameClientPacket
 			}
 
 			summon.setTarget(target);
-			//summon.setLastActionId(actionId);
-			summon.useMagic(skill, ctrlPressed, shiftPressed);
+			//summon.setLastActionId(_actionId);
+			summon.useMagic(skill, _ctrlPressed, _shiftPressed);
 		}
 	}
 
@@ -1404,7 +1405,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			if (targetChar instanceof L2PcInstance)
 			{
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
-				if (targetPlayer.getAppearance().isInvisible())
+				if (targetPlayer.getAppearance().getInvisible())
 				{
 					return;
 				}
@@ -1423,7 +1424,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		if (targetChar instanceof L2PcInstance)
 		{
 			L2PcInstance targetPlayer = (L2PcInstance) targetChar;
-			if (targetPlayer.getAppearance().isInvisible())
+			if (targetPlayer.getAppearance().getInvisible())
 			{
 				return;
 			}
@@ -1437,6 +1438,6 @@ public final class RequestActionUse extends L2GameClientPacket
 	@Override
 	protected boolean triggersOnActionRequest()
 	{
-		return actionId != 10 && actionId != 28;
+		return _actionId != 10 && _actionId != 28;
 	}
 }

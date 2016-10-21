@@ -184,13 +184,13 @@ public enum L2SkillType
 	NOTDONE,
 	BALLISTA;
 
-	private final Class<? extends L2Skill> clazz;
+	private final Class<? extends L2Skill> _class;
 
 	public L2Skill makeSkill(StatsSet set) throws RuntimeException
 	{
 		try
 		{
-			Constructor<? extends L2Skill> c = clazz.getConstructor(StatsSet.class);
+			Constructor<? extends L2Skill> c = _class.getConstructor(StatsSet.class);
 
 			return c.newInstance(set);
 		}
@@ -202,11 +202,11 @@ public enum L2SkillType
 
 	L2SkillType()
 	{
-		clazz = L2SkillDefault.class;
+		_class = L2SkillDefault.class;
 	}
 
 	L2SkillType(Class<? extends L2Skill> classType)
 	{
-		clazz = classType;
+		_class = classType;
 	}
 }

@@ -32,14 +32,15 @@ import java.util.List;
  */
 public class PetInventoryUpdate extends L2ItemListPacket
 {
-	private List<ItemInfo> items;
+
+	private List<ItemInfo> _items;
 
 	/**
 	 * @param items
 	 */
 	public PetInventoryUpdate(List<ItemInfo> items)
 	{
-		this.items = items;
+		_items = items;
 		if (Config.DEBUG)
 		{
 			showDebug();
@@ -53,35 +54,35 @@ public class PetInventoryUpdate extends L2ItemListPacket
 
 	public void addItem(L2ItemInstance item)
 	{
-		items.add(new ItemInfo(item));
+		_items.add(new ItemInfo(item));
 	}
 
 	public void addNewItem(L2ItemInstance item)
 	{
-		items.add(new ItemInfo(item, 1));
+		_items.add(new ItemInfo(item, 1));
 	}
 
 	public void addModifiedItem(L2ItemInstance item)
 	{
-		items.add(new ItemInfo(item, 2));
+		_items.add(new ItemInfo(item, 2));
 	}
 
 	public void addRemovedItem(L2ItemInstance item)
 	{
-		items.add(new ItemInfo(item, 3));
+		_items.add(new ItemInfo(item, 3));
 	}
 
 	public void addItems(List<L2ItemInstance> items)
 	{
 		for (L2ItemInstance item : items)
 		{
-			this.items.add(new ItemInfo(item));
+			_items.add(new ItemInfo(item));
 		}
 	}
 
 	private void showDebug()
 	{
-		for (ItemInfo item : items)
+		for (ItemInfo item : _items)
 		{
 			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
 					" last change:" + item.getChange());
@@ -91,9 +92,9 @@ public class PetInventoryUpdate extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		int count = items.size();
+		int count = _items.size();
 		writeH(count);
-		for (ItemInfo item : items)
+		for (ItemInfo item : _items)
 		{
 			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
 			writeItem(item);

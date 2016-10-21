@@ -26,12 +26,12 @@ import java.nio.ByteBuffer;
  */
 public abstract class AbstractPacket<T extends MMOClient<?>>
 {
-	protected ByteBuffer buf;
+	protected ByteBuffer _buf;
 
-	protected T client;
+	protected T _client;
 
 	public final T getClient()
 	{
-		return client;
+		return _client;
 	}
 }

@@ -32,28 +32,28 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public final class PartySmallWindowAll extends L2GameServerPacket
 {
-	private L2Party party;
-	private L2PcInstance exclude;
-	private int dist, LeaderOID;
+	private L2Party _party;
+	private L2PcInstance _exclude;
+	private int _dist, _LeaderOID;
 
 	public PartySmallWindowAll(L2PcInstance exclude, L2Party party)
 	{
-		this.exclude = exclude;
-		this.party = party;
-		LeaderOID = this.party.getPartyLeaderOID();
-		dist = this.party.getLootDistribution();
+		_exclude = exclude;
+		_party = party;
+		_LeaderOID = _party.getPartyLeaderOID();
+		_dist = _party.getLootDistribution();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(LeaderOID);
-		writeC(dist);
-		writeC(party.getMemberCount() - 1);
+		writeD(_LeaderOID);
+		writeC(_dist);
+		writeC(_party.getMemberCount() - 1);
 
-		for (L2PcInstance member : party.getPartyMembers())
+		for (L2PcInstance member : _party.getPartyMembers())
 		{
-			if (member != null && member != exclude)
+			if (member != null && member != _exclude)
 			{
 				writeD(member.getObjectId());
 				writeS(member.getName());

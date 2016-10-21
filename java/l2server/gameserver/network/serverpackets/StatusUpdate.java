@@ -70,11 +70,11 @@ public final class StatusUpdate extends L2GameServerPacket
 	public static final int CUR_CP = 0x21;
 	public static final int MAX_CP = 0x22;
 
-	private int objectId;
-	private int causerId = 0;
-	private int display = 0;
-	//private int maxHp = -1;
-	private ArrayList<Attribute> attributes;
+	private int _objectId;
+	private int _causerId = 0;
+	private int _display = 0;
+	//private int _maxHp = -1;
+	private ArrayList<Attribute> _attributes;
 
 	static class Attribute
 	{
@@ -107,45 +107,45 @@ public final class StatusUpdate extends L2GameServerPacket
 	 */
 	public StatusUpdate(L2Object object)
 	{
-		attributes = new ArrayList<>();
-		objectId = object.getObjectId();
+		_attributes = new ArrayList<>();
+		_objectId = object.getObjectId();
 		/*if (object instanceof L2Attackable || object instanceof L2Playable
-				&& getClient() != null && getClient().getActiveChar() != null
-				&& getClient().getActiveChar().getObjectId() != objectId)
-			maxHp = ((L2Character) object).getMaxVisibleHp();*/
+                && getClient() != null && getClient().getActiveChar() != null
+				&& getClient().getActiveChar().getObjectId() != _objectId)
+			_maxHp = ((L2Character) object).getMaxVisibleHp();*/
 	}
 
 	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display)
 	{
 		this(object);
-		causerId = causer != null ? causer.getObjectId() : 0;
-		this.display = display.ordinal();
+		_causerId = causer != null ? causer.getObjectId() : 0;
+		_display = display.ordinal();
 	}
 
 	public void addAttribute(int id, int level)
 	{
-        /*if (maxHp != -1)
+        /*if (_maxHp != -1)
 		{
 			if (id == CUR_HP)
 			{
 				level = (int)((level / (float)_maxHp) * HP_MOD);
-				attributes.add(new Attribute(MAX_HP, HP_MOD)); // This is a ninja fix
+				_attributes.add(new Attribute(MAX_HP, HP_MOD)); // This is a ninja fix
 			}
 			else if (id == MAX_HP)
 				level = HP_MOD;
 		}*/
-		attributes.add(new Attribute(id, level));
+		_attributes.add(new Attribute(id, level));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(objectId);
-		writeD(causerId);
-		writeC(display);
-		writeC(attributes.size());
+		writeD(_objectId);
+		writeD(_causerId);
+		writeC(_display);
+		writeC(_attributes.size());
 
-		for (Attribute temp : attributes)
+		for (Attribute temp : _attributes)
 		{
 			writeC(temp.id);
 			writeD(temp.value);

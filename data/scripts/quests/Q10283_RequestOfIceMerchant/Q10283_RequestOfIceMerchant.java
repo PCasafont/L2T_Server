@@ -31,19 +31,19 @@ public class Q10283_RequestOfIceMerchant extends Quest
 {
 	private static final String qn = "10283_RequestOfIceMerchant";
 	// NPC's
-	private static final int rafforty = 32020;
-	private static final int kier = 32022;
-	private static final int jinia = 32760;
+	private static final int _rafforty = 32020;
+	private static final int _kier = 32022;
+	private static final int _jinia = 32760;
 
 	public Q10283_RequestOfIceMerchant(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		addStartNpc(rafforty);
-		addTalkId(rafforty);
-		addTalkId(kier);
-		addFirstTalkId(jinia);
-		addTalkId(jinia);
+		addStartNpc(_rafforty);
+		addTalkId(_rafforty);
+		addTalkId(_kier);
+		addFirstTalkId(_jinia);
+		addTalkId(_jinia);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == rafforty)
+		if (npc.getNpcId() == _rafforty)
 		{
 			if (event.equalsIgnoreCase("32020-03.htm"))
 			{
@@ -71,12 +71,12 @@ public class Q10283_RequestOfIceMerchant extends Quest
 				st.playSound("ItemSound.quest_middle");
 			}
 		}
-		else if (npc.getNpcId() == kier && event.equalsIgnoreCase("spawn"))
+		else if (npc.getNpcId() == _kier && event.equalsIgnoreCase("spawn"))
 		{
-			addSpawn(jinia, 104322, -107669, -3680, 44954, false, 60000);
+			addSpawn(_jinia, 104322, -107669, -3680, 44954, false, 60000);
 			return null;
 		}
-		else if (npc.getNpcId() == jinia && event.equalsIgnoreCase("32760-04.html"))
+		else if (npc.getNpcId() == _jinia && event.equalsIgnoreCase("32760-04.html"))
 		{
 			st.giveItems(57, 190000);
 			st.addExpAndSp(627000, 50300);
@@ -97,13 +97,13 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == rafforty)
+		if (npc.getNpcId() == _rafforty)
 		{
 			switch (st.getState())
 			{
 				case State.CREATED:
-					QuestState prev = player.getQuestState("115_TheOtherSideOfTruth");
-					if (prev != null && prev.getState() == State.COMPLETED && player.getLevel() >= 82)
+					QuestState _prev = player.getQuestState("115_TheOtherSideOfTruth");
+					if (_prev != null && _prev.getState() == State.COMPLETED && player.getLevel() >= 82)
 					{
 						htmltext = "32020-01.htm";
 					}
@@ -127,11 +127,11 @@ public class Q10283_RequestOfIceMerchant extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == kier && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == _kier && st.getInt("cond") == 2)
 		{
 			htmltext = "32022-01.html";
 		}
-		else if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
+		else if (npc.getNpcId() == _jinia && st.getInt("cond") == 2)
 		{
 			htmltext = "32760-02.html";
 		}
@@ -146,7 +146,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 		{
 			return null;
 		}
-		if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
+		if (npc.getNpcId() == _jinia && st.getInt("cond") == 2)
 		{
 			return "32760-01.html";
 		}

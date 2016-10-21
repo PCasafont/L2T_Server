@@ -38,16 +38,16 @@ import java.io.File;
  */
 public class FlyMoveTable implements Reloadable
 {
-	private static FlyMoveTable instance;
+	private static FlyMoveTable _instance;
 
 	public static FlyMoveTable getInstance()
 	{
-		if (instance == null)
+		if (_instance == null)
 		{
-			instance = new FlyMoveTable();
+			_instance = new FlyMoveTable();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	private FlyMoveTable()

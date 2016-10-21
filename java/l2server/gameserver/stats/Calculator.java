@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
  * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
  * <p>
- * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+_player.getLevel()<BR><BR>
+ * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR><BR>
  * <p>
  * When the calc method of a calculator is launched, each mathematic function is called according to its priority <B>_order</B>.
  * Indeed, Func with lowest priority order is executed first and Funcs with the same order are executed in unspecified order.
@@ -37,19 +37,19 @@ public final class Calculator
 	/**
 	 * Empty Func table definition
 	 */
-	private static final Func[] emptyFuncs = new Func[0];
+	private static final Func[] _emptyFuncs = new Func[0];
 
 	/**
 	 * Table of Func object
 	 */
-	private Func[] functions;
+	private Func[] _functions;
 
 	/**
 	 * Constructor of Calculator (Init value : emptyFuncs).<BR><BR>
 	 */
 	public Calculator()
 	{
-		functions = emptyFuncs;
+		_functions = _emptyFuncs;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public final class Calculator
 	 */
 	public Calculator(Calculator c)
 	{
-		functions = c.functions;
+		_functions = c._functions;
 	}
 
 	/**
@@ -75,8 +75,8 @@ public final class Calculator
 			return false;
 		}
 
-		Func[] funcs1 = c1.functions;
-		Func[] funcs2 = c2.functions;
+		Func[] funcs1 = c1._functions;
+		Func[] funcs2 = c2._functions;
 
 		if (funcs1 == funcs2)
 		{
@@ -108,7 +108,7 @@ public final class Calculator
 	 */
 	public int size()
 	{
-		return functions.length;
+		return _functions.length;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public final class Calculator
 	 */
 	public synchronized void addFunc(Func f)
 	{
-		Func[] funcs = functions;
+		Func[] funcs = _functions;
 		Func[] tmp = new Func[funcs.length + 1];
 
 		final int order = f.getOrder();
@@ -134,7 +134,7 @@ public final class Calculator
 			tmp[i + 1] = funcs[i];
 		}
 
-		functions = tmp;
+		_functions = tmp;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public final class Calculator
 	 */
 	public synchronized void removeFunc(Func f)
 	{
-		Func[] funcs = functions;
+		Func[] funcs = _functions;
 		Func[] tmp = new Func[funcs.length - 1];
 
 		int i;
@@ -164,11 +164,11 @@ public final class Calculator
 
 		if (tmp.length == 0)
 		{
-			functions = emptyFuncs;
+			_functions = _emptyFuncs;
 		}
 		else
 		{
-			functions = tmp;
+			_functions = tmp;
 		}
 	}
 
@@ -179,7 +179,7 @@ public final class Calculator
 	{
 		ArrayList<Stats> modifiedStats = new ArrayList<>();
 
-		for (Func func : functions)
+		for (Func func : _functions)
 		{
 			if (func.funcOwner == owner)
 			{
@@ -195,7 +195,7 @@ public final class Calculator
 	 */
 	public void calc(Env env)
 	{
-		for (Func func : functions)
+		for (Func func : _functions)
 		{
 			func.calc(env);
 		}

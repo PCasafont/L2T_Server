@@ -25,6 +25,7 @@ import l2server.gameserver.instancemanager.DuelManager;
  */
 public final class RequestDuelSurrender extends L2GameClientPacket
 {
+
 	@Override
 	protected void readImpl()
 	{

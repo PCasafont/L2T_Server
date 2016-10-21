@@ -28,7 +28,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class BeastSkills implements ISkillHandler
 {
-	// private static Logger log = Logger.getLogger(BeastSkills.class.getName());
+	// private static Logger _log = Logger.getLogger(BeastSkills.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {
 			L2SkillType.BEAST_FEED,
 			L2SkillType.BEAST_RELEASE,

@@ -31,12 +31,12 @@ public final class RequestFriendInvite extends L2GameClientPacket
 {
 	//
 
-	private String name;
+	private String _name;
 
 	@Override
 	protected void readImpl()
 	{
-		name = readS();
+		_name = readS();
 	}
 
 	@Override
@@ -49,12 +49,12 @@ public final class RequestFriendInvite extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance friend = L2World.getInstance().getPlayer(name);
+		final L2PcInstance friend = L2World.getInstance().getPlayer(_name);
 
 		SystemMessage sm;
 
 		// can't use friend invite for locating invisible characters
-		if (friend == null || !friend.isOnline() || friend.getAppearance().isInvisible())
+		if (friend == null || !friend.isOnline() || friend.getAppearance().getInvisible())
 		{
 			//Target is not found in the game.
 			activeChar.sendPacket(SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME);
@@ -83,7 +83,7 @@ public final class RequestFriendInvite extends L2GameClientPacket
 		{
 			// Player already is in your friendlist
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_IN_FRIENDS_LIST);
-			sm.addString(name);
+			sm.addString(_name);
 			activeChar.sendPacket(sm);
 			return;
 		}
@@ -93,14 +93,14 @@ public final class RequestFriendInvite extends L2GameClientPacket
 			// requets to become friend
 			activeChar.onTransactionRequest(friend);
 			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_REQUESTED_C1_TO_BE_FRIEND);
-			sm.addString(name);
+			sm.addString(_name);
 			FriendAddRequest ajf = new FriendAddRequest(activeChar.getName());
 			friend.sendPacket(ajf);
 		}
 		else
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
-			sm.addString(name);
+			sm.addString(_name);
 		}
 
 		activeChar.sendPacket(sm);
