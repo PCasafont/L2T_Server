@@ -21,7 +21,7 @@
 	<classpathentry kind="lib" path="lib/bsh-2.0b5.jar" />
 	<classpathentry kind="lib" path="lib/bsh-engine.jar" />
 	<classpathentry kind="lib" path="lib/java-engine.jar" />
-	<classpathentry kind="lib" path="lib/jnit-4.12.jar" />
+	<classpathentry kind="lib" path="lib/junit-4.12.jar" />
 	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar" />
 	<classpathentry kind="output" path="bin" />
 </classpath>
