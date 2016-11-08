@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
+import l2server.Config;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.olympiad.Olympiad;
 
@@ -53,6 +54,7 @@ public class ExOlympiadResult extends L2GameServerPacket
 					writeD(0x00);
 					writeD(0x00);
 					writeD(0x00);
+					writeD(0x00);
 				}
 				else
 				{
@@ -63,6 +65,7 @@ public class ExOlympiadResult extends L2GameServerPacket
 					writeD(player.getOlyGivenDmg());
 					writeD(Olympiad.getInstance().getNobleInfo(player.getObjectId()).getPoints());
 					writeD((Integer) _info[3] * multiplier);
+					writeD(Config.SERVER_ID);
 				}
 			}
 		}

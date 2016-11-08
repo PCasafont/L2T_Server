@@ -489,9 +489,9 @@ public class CharStat
 			val = Config.MAX_MATK_SPEED;
 		}
 
-		if (Config.isServer(Config.TENKAI) && val > 1800)
+		if (Config.isServer(Config.TENKAI) && val > 1650)
 		{
-			val = 1800 + (int) Math.pow(val - 1800, 0.8);
+			val = 1650 + (int) Math.pow(val - 1650, 0.8);
 		}
 
 		return (int) val;
@@ -793,9 +793,9 @@ public class CharStat
 		int val = (int) Math
 				.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().basePAtkSpd * bonusAtk, null,
 						null));
-		if (Config.isServer(Config.TENKAI) && val > 1400)
+		if (Config.isServer(Config.TENKAI) && val > 1200)
 		{
-			val = 1400 + (int) Math.pow(val - 1400, 0.75);
+			val = 1200 + (int) Math.pow(val - 1200, 0.75);
 		}
 
 		return val;
@@ -958,9 +958,9 @@ public class CharStat
 			runSpeed = 2;
 		}
 
-		if (Config.isServer(Config.TENKAI) && runSpeed > 280)
+		if (Config.isServer(Config.TENKAI) && runSpeed > 250)
 		{
-			runSpeed = (int) (280 + Math.pow(runSpeed - 280, 0.85));
+			runSpeed = (int) (250 + Math.pow(runSpeed - 250, 0.80));
 		}
 
 		return runSpeed;

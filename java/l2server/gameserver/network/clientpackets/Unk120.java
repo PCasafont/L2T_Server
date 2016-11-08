@@ -1,7 +1,5 @@
 package l2server.gameserver.network.clientpackets;
 
-import l2server.log.Log;
-
 /**
  * @author MegaParzor!
  */
@@ -16,7 +14,7 @@ public class Unk120 extends L2GameClientPacket
 	public void runImpl()
 	{
 		// TODO
-		Log.info(getType() + " was received from " + getClient() + ".");
+		//Log.info(getType() + " was received from " + getClient() + ".");
 	}
 }
 
