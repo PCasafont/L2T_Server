@@ -1348,72 +1348,72 @@
           material="steel"
           weight="0" crystal_type="none">
     </item>
-    <item id="47220" type="Weapon" name="Red Pirate Garment" icon="icon.pirate_red_change" bodypart="none"
+    <item id="47220" type="Armor" name="Red Pirate Garment" icon="icon.pirate_red_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
           material="steel"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47221" type="Weapon" name="Blue Pirate Garment" icon="icon.pirate_blue_change" bodypart="none"
+    <item id="47221" type="Armor" name="Blue Pirate Garment" icon="icon.pirate_blue_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
           material="steel"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47222" type="Weapon" name="Pirate Shipmate Garment" icon="icon.pirate_crew_change" bodypart="none"
+    <item id="47222" type="Armor" name="Pirate Shipmate Garment" icon="icon.pirate_crew_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
           material="steel"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47223" type="Weapon" name="Archer-Green Garment" icon="icon.arc_i00" bodypart="none" material="steel"
+    <item id="47223" type="Armor" name="Archer-Green Garment" icon="icon.arc_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47224" type="Weapon" name="Archer-Red Garment" icon="icon.arc_r_i00" bodypart="none" material="steel"
+    <item id="47224" type="Armor" name="Archer-Red Garment" icon="icon.arc_r_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47225" type="Weapon" name="Wizard Garment" icon="icon.ev_wp_halloween" bodypart="none" material="steel"
+    <item id="47225" type="Armor" name="Wizard Garment" icon="icon.ev_wp_halloween" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47226" type="Weapon" name="Red Noblesse Garment" icon="icon.nobless_red" bodypart="none" material="steel"
+    <item id="47226" type="Armor" name="Red Noblesse Garment" icon="icon.nobless_red" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47227" type="Weapon" name="White Noblesse Garment" icon="icon.nobless_white" bodypart="none"
+    <item id="47227" type="Armor" name="White Noblesse Garment" icon="icon.nobless_white" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
           material="steel"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47228" type="Weapon" name="Wizard-Wine Garment" icon="icon.dark_assassin" bodypart="none" material="steel"
+    <item id="47228" type="Armor" name="Wizard-Wine Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47229" type="Weapon" name="Wizard-Red Garment" icon="icon.wzd_i00" bodypart="none" material="steel"
+    <item id="47229" type="Armor" name="Wizard-Red Garment" icon="icon.wzd_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47230" type="Weapon" name="Blue Musketeer Garment" icon="icon.inquisitor_blue" bodypart="none"
-          material="steel"
+    <item id="47230" type="Armor" name="Blue Musketeer Garment" icon="icon.inquisitor_blue" bodypart="alldress"
+          material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47231" type="Weapon" name="Red Musketeer Garment" icon="icon.inquisitor_red" bodypart="none"
-          material="steel"
+    <item id="47231" type="Armor" name="Red Musketeer Garment" icon="icon.inquisitor_red" bodypart="alldress"
+          material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47232" type="Weapon" name="Cowboy-Purple Garment" icon="icon.cowboy_purple_chest_change" bodypart="none"
-          material="steel"
+    <item id="47232" type="Armor" name="Cowboy-Purple Garment" icon="icon.cowboy_purple_chest_change" bodypart="alldress"
+          material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0" crystal_type="none">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47233" type="Weapon" name="Cowboy-Red Garment" icon="icon.dark_assassin" bodypart="none" material="steel"
+    <item id="47233" type="Armor" name="Cowboy-Red Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
           weight="0"
           crystal_type="none">
         <baseAdd stat="pDef" val="400" />

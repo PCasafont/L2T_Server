@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47220" count="1" /> <!-- Red Pirate Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47221" count="1" /> <!-- Blue Pirate Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47222" count="1" /> <!-- Pirate Shipmate Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47223" count="1" /> <!-- Archer-Green Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47224" count="1" /> <!-- Archer-Red Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47225" count="1" /> <!-- Wizard Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47226" count="1" /> <!-- Red Noblesse Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47227" count="1" /> <!-- White Noblesse Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47228" count="1" /> <!-- Wizard-Wine Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47229" count="1" /> <!-- Wizard-Red Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47230" count="1" /> <!-- Blue Musketeer Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47231" count="1" /> <!-- Red Musketeer Garment -->
+    </item>
+    <item>
+        <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+        <production id="47232" count="1" /> <!-- Cowboy-Purple Garment -->
+    </item>
+</list>
