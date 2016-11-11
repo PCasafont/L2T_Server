@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <hairStyle id="10008" unk="0" adenaCost="1000000" ticketCost="4" />
     <hairStyle id="10001" unk="15000000" adenaCost="1000000" ticketCost="0" />
-    <hairStyle id="10009" unk="0" adenaCost="1000000" ticketCost="4" />
     <hairStyle id="10002" unk="0" adenaCost="1000000" ticketCost="4" />
-    <hairStyle id="10010" unk="0" adenaCost="1000000" ticketCost="4" />
     <hairStyle id="10003" unk="0" adenaCost="1000000" ticketCost="4" />
-    <hairStyle id="10011" unk="0" adenaCost="1000000" ticketCost="7" />
     <hairStyle id="10004" unk="0" adenaCost="1000000" ticketCost="4" />
     <hairStyle id="10005" unk="0" adenaCost="1000000" ticketCost="4" />
-    <hairStyle id="10013" unk="0" adenaCost="1000000" ticketCost="7" />
     <hairStyle id="10006" unk="0" adenaCost="1000000" ticketCost="4" />
     <hairStyle id="10007" unk="0" adenaCost="1000000" ticketCost="4" />
+    <hairStyle id="10008" unk="0" adenaCost="1000000" ticketCost="4" />
+    <hairStyle id="10009" unk="0" adenaCost="1000000" ticketCost="4" />
+    <hairStyle id="10010" unk="0" adenaCost="1000000" ticketCost="4" />
+    <hairStyle id="10011" unk="0" adenaCost="1000000" ticketCost="7" />
+    <hairStyle id="10013" unk="0" adenaCost="1000000" ticketCost="10" />
+    <hairStyle id="10014" unk="0" adenaCost="1000000" ticketCost="10" />
+    <hairStyle id="10015" unk="0" adenaCost="1000000" ticketCost="10" />
+    <hairStyle id="15001" unk="0" adenaCost="1000000" ticketCost="4" />
     <faceStyle id="20001" unk="2000000" adenaCost="500000" ticketCost="0" />
     <faceStyle id="20002" unk="2000000" adenaCost="500000" ticketCost="0" />
     <faceStyle id="20003" unk="2000000" adenaCost="500000" ticketCost="0" />
     <faceStyle id="20004" unk="0" adenaCost="1000000" ticketCost="1" />
     <faceStyle id="20005" unk="0" adenaCost="1000000" ticketCost="1" />
+    <faceStyle id="20006" unk="0" adenaCost="1000000" ticketCost="1" />
+    <hairColor id="101" parentId="10001" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10002" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10005" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10006" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10007" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10008" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10009" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10010" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10014" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="101" parentId="10015" unk="0" adenaCost="0" ticketCost="0" />
+    <hairColor id="102" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="102" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="102" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="102" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="103" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="103" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="103" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
+    <hairColor id="103" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="104" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="104" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="104" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
@@ -37,32 +63,12 @@
     <hairColor id="108" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="108" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="108" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10001" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10002" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="109" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="109" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10005" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10006" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10007" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10008" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10009" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10010" unk="0" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="109" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="101" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="109" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="102" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="110" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="102" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="110" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="102" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="110" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="102" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
     <hairColor id="110" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="103" parentId="10003" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="103" parentId="10004" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="103" parentId="10011" unk="3000000" adenaCost="0" ticketCost="0" />
-    <hairColor id="103" parentId="10013" unk="3000000" adenaCost="0" ticketCost="0" />
 </list>
