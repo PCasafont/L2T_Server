@@ -113,35 +113,6 @@ public class L2DatabaseFactory
 				Log.fine("Database Connection FAILED");
 			}
 		}
-
-		// Web Database...
-		config = new BoneCPConfig();
-
-		try
-		{
-			config.setLazyInit(true);
-			config.setPartitionCount(PARTITION_COUNT);
-			config.setMinConnectionsPerPartition(5);
-			config.setMaxConnectionsPerPartition(Math.max(10, Config.DATABASE_MAX_CONNECTIONS / PARTITION_COUNT));
-			config.setAcquireRetryAttempts(5);
-			config.setAcquireRetryDelay(3000);
-			config.setConnectionTimeout(0);
-			config.setAcquireIncrement(5);
-			config.setIdleMaxAge(Config.DATABASE_MAX_IDLE_TIME);
-			config.setStatementsCacheSize(20);
-			config.setJdbcUrl("jdbc:mysql://94.23.102.159/accounting");
-			config.setUsername("accounting_user");
-			config.setPassword("f00ky0gr4np4");
-			config.setTransactionRecoveryEnabled(true);
-
-			_webDatabase = new BoneCP(config);
-
-			_webDatabase.getConnection().close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "DatabaseFactory: Failed to connect to the Web Database!", e);
-		}
 	}
 
 	// =========================================================
