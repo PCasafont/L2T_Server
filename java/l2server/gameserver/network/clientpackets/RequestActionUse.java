@@ -189,10 +189,10 @@ public final class RequestActionUse extends L2GameClientPacket
 					{
 						if (summon != summons.get(0))
 						{
-							((L2SummonAI) summon.getAI()).setStartFollowController(
-									!((L2SummonAI) summons.get(0).getAI()).getStartFollowController());
+							summon.setFollowStatus(false);
+							((L2SummonAI) summon.getAI()).setStartFollowController(true);
 						}
-						((L2SummonAI) summon.getAI()).notifyFollowStatusChange();
+						summon.setFollowStatus(true);
 					}
 				}
 				break;
