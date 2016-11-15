@@ -25,6 +25,8 @@
              initialPrice="1" initialDuration="24" /> <!-- Venir's Talisman - Stage 24 -->
     <auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
              initialPrice="1" initialDuration="24" /> <!-- Talisman - Seven Signs -->
+    <auction id="119" itemId="14721" count="5" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Event - Golden Apiga -->
     <auction id="201" itemId="46603,46604,46605" count="1" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
              initialPrice="1" initialDuration="24" /> <!-- RZubei/BDinasty/WAssassin App Stone -->
 </list>

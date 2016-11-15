@@ -3878,292 +3878,908 @@
           weight="0" crystal_type="none">
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27764" type="Weapon" name="Ultimate Eternal Helmet - Heavy Armor / Lv1"
+    <item id="27764" type="Armor" name="Ultimate Eternal Helmet - Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="169" />
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
+        <baseAdd stat="pDef" val="162" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8805" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an attack or defense type set option. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27765" type="Weapon" name="Ultimate Eternal Breatplate - Heavy Armor / Lv1"
+    <item id="27765" type="Armor" name="Ultimate Eternal Breatplate - Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="7520"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13310-3" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="451" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8806" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27766" type="Weapon" name="Ultimate Eternal Gaiters - Heavy Armor / Lv1"
+    <item id="27766" type="Armor" name="Ultimate Eternal Gaiters - Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="3170"
+          price="263933000"
+          enchantEnabled="1" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="282" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8807" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27767" type="Weapon" name="Ultimate Eternal Gauntlets - Heavy Armor / Lv1"
+    <item id="27767" type="Armor" name="Ultimate Eternal Gauntlets - Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8808" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27768" type="Weapon" name="Ultimate Eternal Boots - Heavy Armor / Lv1"
+    <item id="27768" type="Armor" name="Ultimate Eternal Boots - Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27769" type="Weapon" name="Ultimate Eternal Leather Helmet - Light Armor / Lv1"
+    <item id="27769" type="Armor" name="Ultimate Eternal Leather Helmet - Light Armor / Lv1"
           icon="BranchIcon.icon.armor_leather_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8810" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27770" type="Weapon" name="Ultimate Eternal Leather Armor - Light Armor / Lv1"
+    <item id="27770" type="Armor" name="Ultimate Eternal Leather Armor - Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="light" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="4140"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13311-3" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="361" />
         <baseAdd stat="rEvas" val="5" />
         <baseAdd stat="mEvasRate" val="5" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8811" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27771" type="Weapon" name="Ultimate Eternal Leather Leggings - Light Armor / Lv1"
+    <item id="27771" type="Armor" name="Ultimate Eternal Leather Leggings - Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="light" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="1320"
+          price="263933000"
+          enchantEnabled="1" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="226" />
         <baseAdd stat="rEvas" val="3" />
         <baseAdd stat="mEvasRate" val="3" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8812" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27772" type="Weapon" name="Ultimate Eternal Leather Gloves - Light Armor / Lv1"
+    <item id="27772" type="Armor" name="Ultimate Eternal Leather Gloves - Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8813" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows an assassin or enchant type set option. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27773" type="Weapon" name="Ultimate Eternal Leather Boots - Light Armor / Lv1"
+    <item id="27773" type="Armor" name="Ultimate Eternal Leather Boots - Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27774" type="Weapon" name="Ultimate Eternal Circlet - Robe / Lv1" icon="BranchIcon.icon.armor_circlet_i01"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="169" />
+    <item id="27774" type="Armor" name="Ultimate Eternal Circlet - Robe / Lv1" icon="BranchIcon.icon.armor_circlet_i01" defaultAction="equip"
+          bodypart="head"
+          immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000" enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
+        <baseAdd stat="pDef" val="162" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8815" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. Bestows a magic or recovery type set option.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27775" type="Weapon" name="Ultimate Eternal Tunic - Robe / Lv1" icon="BranchIcon.icon.armor_t813_u_i01"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="248" />
+    <item id="27775" type="Armor" name="Ultimate Eternal Tunic - Robe / Lv1" icon="BranchIcon.icon.armor_t813_u_i01" defaultAction="equip"
+          armorType="magic"
+          bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="1750" price="422292000"
+          enchantEnabled="1"
+          enchant4Skill="13312-3" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="mDef" val="56" />
+        <baseAdd stat="pDef" val="248" />
+        <add stat="maxMp" val="649" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8816" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27776" type="Weapon" name="Ultimate Eternal Stockings - Robe / Lv1"
-          icon="BranchIcon.icon.armor_t813_l_i01" bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="155" />
+    <item id="27776" type="Armor" name="Ultimate Eternal Stockings - Robe / Lv1"
+          icon="BranchIcon.icon.armor_t813_l_i01"           defaultAction="equip" armorType="magic"
+          bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="850" price="263933000"
+          enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="mDef" val="37" />
+        <baseAdd stat="pDef" val="155" />
+        <add stat="maxMp" val="427" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8817" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27777" type="Weapon" name="Ultimate Eternal Gloves - Robe / Lv1" icon="BranchIcon.icon.armor_t813_g_i01"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="27777" type="Armor" name="Ultimate Eternal Gloves - Robe / Lv1" icon="BranchIcon.icon.armor_t813_g_i01"
+          defaultAction="equip"
+          bodypart="gloves"
+          immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000" enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8818" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Bestows a magic or recovery type set option. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27778" type="Weapon" name="Ultimate Eternal Shoes - Robe / Lv1" icon="BranchIcon.icon.armor_t813_b_i01"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="27778" type="Armor" name="Ultimate Eternal Shoes - Robe / Lv1" icon="BranchIcon.icon.armor_t813_b_i01"
+          defaultAction="equip"
+          bodypart="feet"
+          immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000" enchantEnabled="1"
+          isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8819" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27779" type="Weapon" name="Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv1"
+    <item id="27779" type="Armor" name="Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          armorSet="19571" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8805" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27780" type="Weapon" name="Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv1"
+    <item id="27780" type="Armor" name="Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="7520"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13310-3" armorSet="19571" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="451" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8806" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27781" type="Weapon" name="Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv1"
+    <item id="27781" type="Armor" name="Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="3170"
+          price="263933000"
+          enchantEnabled="1" armorSet="19571" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="282" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8807" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27782" type="Weapon" name="Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv1"
+    <item id="27782" type="Armor" name="Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19571" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8808" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%.  Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
-    <item id="27783" type="Weapon" name="Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv1"
+    <item id="27783" type="Armor" name="Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19571" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues and Yul Archers only. -->
-    <item id="27784" type="Weapon" name="Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv1"
+    <item id="27784" type="Armor" name="Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_leather_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip" bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530"
+          price="158359000"
+          enchantEnabled="1" armorSet="19577" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8810" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues and Yul Archers only. -->
-    <item id="27785" type="Weapon" name="Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv1"
+    <item id="27785" type="Armor" name="Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="light" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="4140"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13311-3" armorSet="19577" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul" />
+        </cond>
         <baseAdd stat="pDef" val="361" />
         <baseAdd stat="rEvas" val="5" />
         <baseAdd stat="mEvasRate" val="5" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8811" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues and Yul Archers only. -->
-    <item id="27786" type="Weapon" name="Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv1"
+    <item id="27786" type="Armor" name="Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip" armorType="light" bodypart="legs" immediateEffect="1" crystalCount="5630"
+          crystalType="r99" weight="1320"
+          price="263933000" enchantEnabled="1" armorSet="19577" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul" />
+        </cond>
         <baseAdd stat="pDef" val="226" />
         <baseAdd stat="rEvas" val="3" />
         <baseAdd stat="mEvasRate" val="3" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8812" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
-    <item id="27787" type="Weapon" name="Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1"
+    <item id="27787" type="Armor" name="Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19577" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8813" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues and Yul Archers only. -->
-    <item id="27788" type="Weapon" name="Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv1"
+    <item id="27788" type="Armor" name="Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19577" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27789" type="Weapon" name="Ultimate Eternal Circlet - Magic Type / Robe / Lv1"
+    <item id="27789" type="Armor" name="Ultimate Eternal Circlet - Magic Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_circlet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          armorSet="19582" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8815" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27790" type="Weapon" name="Ultimate Eternal Tunic - Magic Type / Robe / Lv1"
+    <item id="27790" type="Armor" name="Ultimate Eternal Tunic - Magic Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="248" />
+          defaultAction="equip"
+          armorType="magic" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="1750"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13312-3" armorSet="19582" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="mDef" val="56" />
+        <baseAdd stat="pDef" val="248" />
+        <add stat="maxMp" val="649" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8816" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27791" type="Weapon" name="Ultimate Eternal Stockings - Magic Type / Robe / Lv1"
+    <item id="27791" type="Armor" name="Ultimate Eternal Stockings - Magic Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="155" />
+          defaultAction="equip"
+          armorType="magic" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="850"
+          price="263933000"
+          enchantEnabled="1" armorSet="19582" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="mDef" val="37" />
+        <baseAdd stat="pDef" val="155" />
+        <add stat="maxMp" val="427" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8817" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27792" type="Weapon" name="Ultimate Eternal Gloves - Magic Type / Robe / Lv1"
+    <item id="27792" type="Armor" name="Ultimate Eternal Gloves - Magic Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19582" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8818" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers, Feoh Wizards, Wynn Summoners, Iss Enchanters, and Sayha's Seers only. -->
-    <item id="27793" type="Weapon" name="Ultimate Eternal Shoes - Magic Type / Robe / Lv1"
+    <item id="27793" type="Armor" name="Ultimate Eternal Shoes - Magic Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19582" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore, Feoh, Wynn, Iss, Sayha's" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8819" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Sigel Knights only. -->
     <item id="27794" type="Weapon" name="Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          armorSet="19779" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Sigel" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8805" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, decreases P. Critical Damage and additionally increases P. Def.Sigel Knights only. -->
-    <item id="27795" type="Weapon" name="Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv1"
+    <item id="27795" type="Armor" name="Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="7520"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13310-3" armorSet="19779" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Sigel" />
+        </cond>
         <baseAdd stat="pDef" val="451" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8806" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Sigel Knights only. -->
-    <item id="27796" type="Weapon" name="Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1"
+    <item id="27796" type="Armor" name="Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="heavy" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="3170"
+          price="263933000"
+          enchantEnabled="1" armorSet="19779" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Sigel" />
+        </cond>
         <baseAdd stat="pDef" val="282" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8807" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
-    <item id="27797" type="Weapon" name="Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv1"
+    <item id="27797" type="Armor" name="Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19779" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Sigel" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8808" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Sigel Knights only. -->
-    <item id="27798" type="Weapon" name="Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv1"
+    <item id="27798" type="Armor" name="Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv1"
           icon="BranchIcon.icon.armor_t811_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19779" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Sigel" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27799" type="Weapon" name="Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv1"
+    <item id="27799" type="Armor" name="Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_leather_helmet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip" bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530"
+          price="158359000"
+          enchantEnabled="1" armorSet="19785" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8810" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%. When enchanted to + 4, increases Evasion, Speed and Physical Attack Resistance, and decreases the chance of receiving P. Critical Hit. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27800" type="Weapon" name="Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv1"
+    <item id="27800" type="Armor" name="Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="light" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="4140"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13311-3" armorSet="19785" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="361" />
         <baseAdd stat="rEvas" val="5" />
         <baseAdd stat="mEvasRate" val="5" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8811" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27801" type="Weapon" name="Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv1"
+    <item id="27801" type="Armor" name="Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          armorType="light" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="1320"
+          price="263933000"
+          enchantEnabled="1" armorSet="19785" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="226" />
         <baseAdd stat="rEvas" val="3" />
         <baseAdd stat="mEvasRate" val="3" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8812" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27802" type="Weapon" name="Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1"
+    <item id="27802" type="Armor" name="Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19785" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8813" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Othell Rogues, Yul Archers, Iss Enchanters, Aeore Healers, Wynn Summoners, Tyrr Warriors, and Eviscerators only. -->
-    <item id="27803" type="Weapon" name="Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv1"
+    <item id="27803" type="Armor" name="Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv1"
           icon="BranchIcon.icon.armor_t812_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19785" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Othell, Yul, Iss, Aeore, Wynn, Tyrr, Eviscerator" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8809" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Aeore Healers only. -->
-    <item id="27804" type="Weapon" name="Ultimate Eternal Circlet - Recovery Type / Robe / Lv1"
+    <item id="27804" type="Armor" name="Ultimate Eternal Circlet - Recovery Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_circlet_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
+          enchantEnabled="1"
+          armorSet="19790" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore" />
+        </cond>
         <baseAdd stat="pDef" val="169" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rEvas" val="0.3" />
+        <enchant stat="mEvasRate" val="0.3" />
+        <skill id="8815" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="3" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="26.431" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="13" chance="97.449" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="31.672" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 8%.When enchanted to + 4, increases M. Evasion and Mentall Attack Resistance, and decreases P. Critical Damage and the chance of receiving P. Critical Hit. Aeore Healers only. -->
-    <item id="27805" type="Weapon" name="Ultimate Eternal Tunic - Recovery Type / Robe / Lv1"
+    <item id="27805" type="Armor" name="Ultimate Eternal Tunic - Recovery Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_u_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="248" />
+          defaultAction="equip"
+          armorType="magic" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="1750"
+          price="422292000"
+          enchantEnabled="1" enchant4Skill="13312-3" armorSet="19790" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore" />
+        </cond>
         <baseAdd stat="mDef" val="56" />
+        <baseAdd stat="pDef" val="248" />
+        <add stat="maxMp" val="649" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="pAtk" val="3" />
+        <enchant stat="mAtk" val="2" />
+        <skill id="8816" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="6" chance="97.805" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="70.482" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="34" chance="99.359" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="84.457" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 5%. Aeore Healers only. -->
-    <item id="27806" type="Weapon" name="Ultimate Eternal Stockings - Recovery Type / Robe / Lv1"
+    <item id="27806" type="Armor" name="Ultimate Eternal Stockings - Recovery Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_l_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="pDef" val="155" />
+          defaultAction="equip"
+          armorType="magic" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="850"
+          price="263933000"
+          enchantEnabled="1" armorSet="19790" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore" />
+        </cond>
         <baseAdd stat="mDef" val="37" />
+        <baseAdd stat="pDef" val="155" />
+        <add stat="maxMp" val="427" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="rCrit" val="0.5" />
+        <enchant stat="mCritRate" val="0.5" />
+        <skill id="8817" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="4" chance="91.692" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="44.051" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="22" chance="95.972" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="52.786" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
-    <item id="27807" type="Weapon" name="Ultimate Eternal Gloves - Recovery Type / Robe / Lv1"
+    <item id="27807" type="Armor" name="Ultimate Eternal Gloves - Recovery Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_g_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
+          enchantEnabled="1"
+          armorSet="19790" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="accCombat" val="0.3" />
+        <enchant stat="accMagic" val="0.3" />
+        <skill id="8818" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 2%. Aeore Healers only. -->
-    <item id="27808" type="Weapon" name="Ultimate Eternal Shoes - Recovery Type / Robe / Lv1"
+    <item id="27808" type="Armor" name="Ultimate Eternal Shoes - Recovery Type / Robe / Lv1"
           icon="BranchIcon.icon.armor_t813_b_i01"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
+          enchantEnabled="1"
+          armorSet="19790" isBlessed="true">
+        <cond addName="1" msgId="113">
+            <player starts_with_class_name_restriction="Aeore" />
+        </cond>
         <baseAdd stat="pDef" val="113" />
+        <enchant stat="pDef" val="0" />
+        <enchant stat="runSpd" val="1.0" />
+        <skill id="8819" level="1" /> <!-- PvP Defense -->
+        <crystallizeReward id="36164" count="2" chance="73.353" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="17.62" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
     <item id="27809" type="Weapon" name="Ultimate Eternal Helmet - Heavy Armor / lv2"

@@ -100,8 +100,8 @@
     <item id="35005" type="Armor" name="Dark Eternal Gauntlets - Attack Type / Heavy" icon="icon.armor_t811_g_i00"
           defaultAction="equip"
           bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
-          enchantEnabled="1"
-          armorSet="19571" isBlessed="true">
+        enchantEnabled="1"
+        armorSet="19571" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Tyrr, Sigel, Iss" />
         </cond>
