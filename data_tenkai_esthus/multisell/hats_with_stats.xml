@@ -1,651 +1,651 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+<list>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35772" /> <!-- Rabbit Ears - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35771" /> <!-- Rabbit Ears - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35770" /> <!-- Rabbit Ears - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35769" /> <!-- Rabbit Ears - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35768" /> <!-- Rabbit Ears - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35767" /> <!-- Rabbit Ears - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35766" /> <!-- Rabbit Ears - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35765" /> <!-- Rabbit Ears - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35784" /> <!-- Raccoon Ears - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35783" /> <!-- Raccoon Ears - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35782" /> <!-- Raccoon Ears - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35781" /> <!-- Raccoon Ears - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35780" /> <!-- Raccoon Ears - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35779" /> <!-- Raccoon Ears - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35778" /> <!-- Raccoon Ears - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35777" /> <!-- Raccoon Ears - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35796" /> <!-- Cat Ears - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35795" /> <!-- Cat Ears - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35794" /> <!-- Cat Ears - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35793" /> <!-- Cat Ears - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35792" /> <!-- Cat Ears - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35791" /> <!-- Cat Ears - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35790" /> <!-- Cat Ears - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35789" /> <!-- Cat Ears - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35803" /> <!-- Romantic Chapeau - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35804" /> <!-- Romantic Chapeau - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35805" /> <!-- Romantic Chapeau - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35806" /> <!-- Romantic Chapeau - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35807" /> <!-- Romantic Chapeau - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35808" /> <!-- Romantic Chapeau - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35819" /> <!-- Angel Circlet - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35818" /> <!-- Angel Circlet - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35817" /> <!-- Angel Circlet - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35816" /> <!-- Angel Circlet - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35815" /> <!-- Angel Circlet - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35830" /> <!-- Demon Circlet - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35829" /> <!-- Demon Circlet - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35828" /> <!-- Demon Circlet - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35827" /> <!-- Demon Circlet - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35826" /> <!-- Demon Circlet - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35842" /> <!-- Pirate's Eyepatch - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35841" /> <!-- Pirate's Eyepatch - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35840" /> <!-- Pirate's Eyepatch - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35839" /> <!-- Pirate's Eyepatch - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35838" /> <!-- Pirate's Eyepatch - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35837" /> <!-- Pirate's Eyepatch - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35836" /> <!-- Pirate's Eyepatch - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35835" /> <!-- Pirate's Eyepatch - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35854" /> <!-- Outlaw's Eyepatch - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35853" /> <!-- Outlaw's Eyepatch - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35852" /> <!-- Outlaw's Eyepatch - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35851" /> <!-- Outlaw's Eyepatch - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35850" /> <!-- Outlaw's Eyepatch - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35849" /> <!-- Outlaw's Eyepatch - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35848" /> <!-- Outlaw's Eyepatch - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35847" /> <!-- Outlaw's Eyepatch - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35866" /> <!-- Eyepatch - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35865" /> <!-- Eyepatch - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35864" /> <!-- Eyepatch - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35863" /> <!-- Eyepatch - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35862" /> <!-- Eyepatch - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35861" /> <!-- Eyepatch - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35860" /> <!-- Eyepatch - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35859" /> <!-- Eyepatch - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35878" /> <!-- Party Hat - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35877" /> <!-- Party Hat - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35876" /> <!-- Party Hat - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35875" /> <!-- Party Hat - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35874" /> <!-- Party Hat - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35873" /> <!-- Party Hat - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35889" /> <!-- Refined Angel Ring - Accuracy -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35888" /> <!-- Refined Angel Ring - M. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35887" /> <!-- Refined Angel Ring - P. Atk. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35886" /> <!-- Refined Angel Ring - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35885" /> <!-- Refined Angel Ring - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35899" /> <!-- Refined Devil Horn - M. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35898" /> <!-- Refined Devil Horn - P. Def. -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35897" /> <!-- Refined Devil Horn - Critical Damage -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35896" /> <!-- Refined Devil Horn - Critical Rate -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35900" /> <!-- Refined Devil Horn - Evasion -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35928" /> <!-- Draco's Hat - Accuracy (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35927" /> <!-- Draco's Hat - M. Atk. (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35926" /> <!-- Draco's Hat - P. Atk. (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35925" /> <!-- Draco's Hat - Evasion (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35924" /> <!-- Draco's Hat - M. Def. (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35923" /> <!-- Draco's Hat - P. Def. (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35922" /> <!-- Draco's Hat - Critical Damage (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35921" /> <!-- Draco's Hat - Critical Rate (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35785" /> <!-- Cat Ears - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35786" /> <!-- Cat Ears - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35787" /> <!-- Cat Ears - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35788" /> <!-- Cat Ears - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35761" /> <!-- Rabbit Ears - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35762" /> <!-- Rabbit Ears - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35763" /> <!-- Rabbit Ears - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35764" /> <!-- Rabbit Ears - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35773" /> <!-- Raccoon Ears - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35774" /> <!-- Raccoon Ears - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="32744" /> <!-- Raccoon Ears - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="32745" /> <!-- Raccoon Ears - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35775" /> <!-- Raccoon Ears - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35776" /> <!-- Raccoon Ears - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35890" /> <!-- Refined Devil Horn - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35891" /> <!-- Refined Devil Horn - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35892" /> <!-- Refined Devil Horn - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35893" /> <!-- Refined Devil Horn - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35894" /> <!-- Refined Devil Horn - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35895" /> <!-- Refined Devil Horn - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35797" /> <!-- Romantic Chapeau - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35798" /> <!-- Romantic Chapeau - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35799" /> <!-- Romantic Chapeau - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35800" /> <!-- Romantic Chapeau - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35801" /> <!-- Romantic Chapeau - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35802" /> <!-- Romantic Chapeau - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35831" /> <!-- Pirate's Eyepatch - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35832" /> <!-- Pirate's Eyepatch - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35833" /> <!-- Pirate's Eyepatch - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35834" /> <!-- Pirate's Eyepatch - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35843" /> <!-- Outlaw's Eyepatch - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35844" /> <!-- Outlaw's Eyepatch - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35845" /> <!-- Outlaw's Eyepatch - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35846" /> <!-- Outlaw's Eyepatch - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35867" /> <!-- Party Hat - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35868" /> <!-- Party Hat - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35869" /> <!-- Party Hat - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35870" /> <!-- Party Hat - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35871" /> <!-- Party Hat - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35872" /> <!-- Party Hat - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35915" /> <!-- Draco's Hat - STR (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35916" /> <!-- Draco's Hat - DEX (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35917" /> <!-- Draco's Hat - CON (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35918" /> <!-- Draco's Hat - MEN (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35919" /> <!-- Draco's Hat - INT (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35920" /> <!-- Draco's Hat - WIT (Event) -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35855" /> <!-- Eyepatch - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35856" /> <!-- Eyepatch - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35857" /> <!-- Eyepatch - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35858" /> <!-- Eyepatch - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35809" /> <!-- Angel Circlet - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35810" /> <!-- Angel Circlet - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35811" /> <!-- Angel Circlet - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35812" /> <!-- Angel Circlet - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35813" /> <!-- Angel Circlet - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35814" /> <!-- Angel Circlet - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35879" /> <!-- Refined Angel Ring - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35880" /> <!-- Refined Angel Ring - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35881" /> <!-- Refined Angel Ring - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35882" /> <!-- Refined Angel Ring - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35883" /> <!-- Refined Angel Ring - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35884" /> <!-- Refined Angel Ring - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35820" /> <!-- Demon Circlet - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35821" /> <!-- Demon Circlet - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35822" /> <!-- Demon Circlet - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35823" /> <!-- Demon Circlet - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35825" /> <!-- Demon Circlet - WIT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35824" /> <!-- Demon Circlet - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35890" /> <!-- Refined Devil Horn - STR -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35891" /> <!-- Refined Devil Horn - DEX -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35892" /> <!-- Refined Devil Horn - CON -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35893" /> <!-- Refined Devil Horn - MEN -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35894" /> <!-- Refined Devil Horn - INT -->
     </item>
     <item>
-        <ingredient count="1500000" id="57" /> <!-- Silver Shilen -->
+        <ingredient count="10" id="14721" /> <!-- Event - Golden Apiga -->
         <production count="1" id="35895" /> <!-- Refined Devil Horn - WIT -->
     </item>
 </list>
