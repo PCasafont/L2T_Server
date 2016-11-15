@@ -2,7 +2,7 @@
     <prizeList name="InstancedEvents">
         <prizeItem id="57" min="20000000" max="30000000" chance="100" dependsOnPerformance="true" /> <!-- Adena -->
         <prizeItem id="4356" min="10" max="15" chance="100" dependsOnPerformance="true" /> <!-- Gold Einhasad -->
-        <prizeItem id="14720" min="2" max="6" chance="100" dependsOnPerformance="true" /> <!-- Event - Apiga -->
+        <prizeItem id="14720" min="2" max="5" chance="100" dependsOnPerformance="true" /> <!-- Event - Apiga -->
         <prizeItem id="20336" min="1" max="1" chance="20" /> <!-- XP Rune III (Lv. 1-100+) 50% - 5-hour -->
         <prizeCategory chance="10">
             <item id="36241" min="1" max="1" chance="50" /> <!-- Blessed Antharas' Earring - 3-hour -->
