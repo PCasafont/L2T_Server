@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true">
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35002" />    <!-- Dark Eternal Helmet - Attack Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27779" />    <!-- Ultimate Eternal Helmet - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35018" />    <!-- Dark Eternal Helmet - Defense Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27794" />    <!-- Ultimate Eternal Helmet - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35003" />    <!-- Dark Eternal Breastplate - Attack Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27780" />    <!-- Ultimate Eternal Breatplate - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35019" />    <!-- Dark Eternal Breastplate - Defense Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27795" />    <!-- Ultimate Eternal Breatplate - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35004" />    <!-- Dark Eternal Gaiters - Attack Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27781" />    <!-- Ultimate Eternal Gaiters - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35020" />    <!-- Dark Eternal Gaiters - Defense Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27796" />    <!-- Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35005" />    <!-- Dark Eternal Gauntlets - Attack Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27782" />    <!-- Ultimate Eternal Gauntlets - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35021" />    <!-- Dark Eternal Gauntlets - Defense Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27797" />    <!-- Ultimate Eternal Gauntlets - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35006" />    <!-- Dark Eternal Boots - Attack Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27783" />    <!-- Ultimate Eternal Boots - Attack Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35022" />    <!-- Dark Eternal Boots - Defense Type / Heavy -->
+        <!-- Products -->
+        <production count="1" id="27798" />    <!-- Ultimate Eternal Boots - Defense Type / Heavy Armor / Lv1 -->
+    </item>
+    <item>
+    <!-- Ingredients -->
+    <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+    <ingredient count="1" id="35023" />    <!-- Dark Eternal Leather Helmet - Enchant Type / Light -->
+    <!-- Products -->
+    <production count="1" id="27799" />    <!-- Ultimate Eternal Leather Helmet - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35008" />    <!-- Dark Eternal Leather Helmet - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27784" />    <!-- Ultimate Eternal Leather Helmet - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35024" />    <!-- Dark Eternal Leather Armor - Enchant Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27800" />    <!-- Ultimate Eternal Leather Armor - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35009" />    <!-- Dark Eternal Leather Armor - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27785" />    <!-- Ultimate Eternal Leather Armor - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35025" />    <!-- Dark Eternal Leather Leggings - Enchant Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27801" />    <!-- Ultimate Eternal Leather Leggings - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35010" />    <!-- Dark Eternal Leather Leggings - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27786" />    <!-- Ultimate Eternal Leather Leggings - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35010" />    <!-- Dark Eternal Leather Gloves - Enchant Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27786" />    <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35010" />    <!-- Dark Eternal Leather Gloves - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27786" />    <!-- Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35026" />    <!-- Dark Eternal Leather Gloves - Enchant Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27802" />    <!-- Ultimate Eternal Leather Gloves - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35011" />    <!-- Dark Eternal Leather Gloves - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27787" />    <!-- Ultimate Eternal Leather Gloves - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35027" />    <!-- Dark Eternal Leather Boots - Enchant Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27803" />    <!-- Ultimate Eternal Leather Boots - Enchant Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35012" />    <!-- Dark Eternal Leather Boots - Assassin Type / Light -->
+        <!-- Products -->
+        <production count="1" id="27788" />    <!-- Ultimate Eternal Leather Boots - Assassin Type / Light Armor / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35013" />    <!-- Dark Eternal Circlet - Magic Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27789" />    <!-- Ultimate Eternal Circlet - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35028" />    <!-- Dark Eternal Circlet - Recovery Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27804" />    <!-- Ultimate Eternal Circlet - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35014" />    <!-- Dark Eternal Tunic - Magic Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27790" />    <!-- Ultimate Eternal Tunic - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35029" />    <!-- Dark Eternal Tunic - Recovery Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27805" />    <!-- Ultimate Eternal Tunic - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35015" />    <!-- Dark Eternal Stockings - Magic Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27791" />    <!-- Ultimate Eternal Stockings - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35030" />    <!-- Dark Eternal Stockings - Recovery Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27806" />    <!-- Ultimate Eternal Stockings - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35016" />    <!-- Dark Eternal Gloves - Magic Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27792" />    <!-- Ultimate Eternal Gloves - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35031" />    <!-- Dark Eternal Gloves - Recovery Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27807" />    <!-- Ultimate Eternal Gloves - Recovery Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35017" />    <!-- Dark Eternal Shoes - Magic Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27793" />    <!-- Ultimate Eternal Shoes - Magic Type / Robe / Lv1 -->
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="50" id="14721" />    <!-- Event - Golden Apiga -->
+        <ingredient count="1" id="35032" />    <!-- Dark Eternal Shoes - Recovery Type / Robe -->
+        <!-- Products -->
+        <production count="1" id="27808" />    <!-- Ultimate Eternal Shoes - Recovery Type / Robe / Lv1 -->
+    </item>
+    </list>
