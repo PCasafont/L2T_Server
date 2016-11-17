@@ -41,8 +41,8 @@
     </customFarm>
     <customFarm farmZone="lands_of_chaos" adjustDropsPerMob="23336"> <!-- Lvl: 96 | Strength: 38330 | Exp Score: 5 -->
         <itemDrop itemId="57" min="26156" max="62838" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="46150" min="1" max="1" chance="30" /> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46151" min="1" max="1" chance="17" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="46150" min="1" max="3" chance="60" /> <!-- Superior Giant's Codex Chapter 1 -->
+        <itemDrop itemId="46151" min="1" max="3" chance="30" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
         <itemDrop itemId="36978" min="1" max="1" chance="10" /> <!-- Scroll: Enchant Hair Accessory -->
         <spoilDrop itemId="46152" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
@@ -52,12 +52,12 @@
         <itemDrop itemId="57" min="71414" max="92839" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36665" min="1" max="1" chance="5" /> <!-- Nerva's Temporary Prison Key -->
         <itemDrop itemId="18577" min="1" max="1" chance="25" /> <!-- Legendary Life Stone (R99-grade) -->
-        <dropCategory chance="100">
-            <itemDrop itemId="30297" min="2" max="3" chance="60" /> <!-- Superior Giant's Codex -->
-            <itemDrop itemId="30298" min="2" max="3" chance="30" /> <!-- Superior Giant's CoDEX - Mastery -->
-        </dropCategory>
-        <itemDrop itemId="46150" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46151" min="1" max="1" chance="10" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="30297" min="1" max="3" chance="50" /> <!-- Superior Giant's Codex -->
+        <itemDrop itemId="46150" min="1" max="1" chance="10" /> <!-- Superior Giant's Codex Chapter 1 -->
+        <itemDrop itemId="30298" min="1" max="3" chance="25" /> <!-- Superior Giant's CoDEX - Mastery -->
+        <itemDrop itemId="46151" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="30299" min="1" max="1" chance="10" /> <!-- Superior Giant's CoDEX - Discipline -->
+        <itemDrop itemId="46152" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
         <spoilDrop itemId="30299" min="1" max="1" chance="40" /> <!-- Superior Giant's CoDEX - Discipline -->
         <spoilDrop itemId="46152" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
@@ -71,20 +71,20 @@
     <customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" expMultiplier="10"
                 atkMultiplier="1" defMultiplier="2.2" overrideDrops="true"
                 overrideLevels="107"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
-        <itemDrop itemId="57" min="191001" max="272401" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="46154" min="1" max="3" chance="42" /> <!-- Superior Giant's Codex Chapter 2 -->
-        <itemDrop itemId="46155" min="1" max="3" chance="27" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
+        <itemDrop itemId="57" min="241001" max="312201" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="46154" min="1" max="3" chance="50" /> <!-- Superior Giant's Codex Chapter 2 -->
+        <itemDrop itemId="46155" min="1" max="3" chance="25" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
         <itemDrop itemId="36515" min="1" max="2" chance="5" /> <!-- Elcyum -->
-        <itemDrop itemId="46156" min="1" max="1" chance="23" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
-        <spoilDrop itemId="46156" min="1" max="1" chance="80" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
-        <spoilDrop itemId="36515" min="1" max="2" chance="12" /> <!-- Elcyum -->
+        <itemDrop itemId="46156" min="1" max="1" chance="15" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
+        <spoilDrop itemId="46156" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
+        <spoilDrop itemId="36515" min="1" max="2" chance="10" /> <!-- Elcyum -->
     </customFarm>
     <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"
                 defMultiplier="50" overrideDrops="true"
                 overrideLevels="105"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
         <itemDrop itemId="57" min="501483" max="807216" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36414" min="1" max="1" chance="15" /> <!-- Dragon Claw -->
-        <itemDrop itemId="14720" min="1" max="1" chance="10" /> <!-- Event - Apiga -->
+        <itemDrop itemId="14720" min="1" max="1" chance="15" /> <!-- Event - Apiga -->
     </customFarm>
     <customFarm farmZone="hellbound_beleth_magic_circle" adjustDropsPerMob="23354"
                 atkMultiplier="0.03" defMultiplier="0.25" overrideLevels="103"> <!-- Lvl: 103 | Strength: 50795 -->
@@ -112,7 +112,7 @@
     </customFarm>
     <customFarm farmZone="hellbound_phantasmal_ridge_1" adjustDropsPerMob="23384"
                 atkMultiplier="0.1" defMultiplier="0.4" overrideLevels="105"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="72193" max="126179" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="57" min="73193" max="136179" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36514" min="1" max="1" chance="40" /> <!-- Elcyum Crystal -->
         <itemDrop itemId="36550" min="3" max="5" chance="15" /> <!-- Weapon Fragment (Top-grade) -->
         <itemDrop itemId="36565" min="1" max="2" chance="15" /> <!-- Exquisite Synthetic Cokes -->
@@ -120,11 +120,11 @@
         <spoilDrop itemId="36550" min="3" max="5" chance="90" /> <!-- Weapon Fragment (Top-grade) -->
         <spoilDrop itemId="36565" min="5" max="12" chance="90" /> <!-- Exquisite Synthetic Cokes -->
         <spoilDrop itemId="36545" min="3" max="5" chance="90" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="17" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="hellbound_phantasmal_ridge_2" adjustDropsPerMob="23395"
                 atkMultiplier="0.1" defMultiplier="0.5" overrideLevels="106"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="69086" max="174872" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="57" min="79086" max="194872" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36514" min="1" max="1" chance="50" /> <!-- Elcyum Crystal -->
         <itemDrop itemId="36550" min="1" max="3" chance="15" /> <!-- Weapon Fragment (Top-grade) -->
         <itemDrop itemId="36565" min="2" max="4" chance="15" /> <!-- Exquisite Synthetic Cokes -->
@@ -132,7 +132,7 @@
         <spoilDrop itemId="36550" min="4" max="10" chance="90" /> <!-- Weapon Fragment (Top-grade) -->
         <spoilDrop itemId="36565" min="2" max="5" chance="90" /> <!-- Exquisite Synthetic Cokes -->
         <spoilDrop itemId="36545" min="4" max="10" chance="90" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="30" /> <!-- Gold Einhasad -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="33" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"
                 defMultiplier="1.0" overrideLevels="105"
