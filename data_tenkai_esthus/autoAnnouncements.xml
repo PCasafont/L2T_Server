@@ -4,7 +4,7 @@
               initial="10" reuse="100" />
     <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="30"
               reuse="100" />
-    <announce text="Auto-announcements: Never miss an Automatic Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="50" reuse="100" />
+    <announce text="Auto-announcements: Never miss an Automated Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="50" reuse="100" />
     <announce text="Auto-announcements: The farm zones are revamped! You should give them a try!" initial="70" reuse="100" />
     <announce text="Auto-announcements: Never share your account information!" initial="90" reuse="100" />
 </list>
