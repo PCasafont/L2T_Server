@@ -123,7 +123,7 @@ public class Server
 		printSection("Engines");
 		L2ScriptEngineManager.getInstance();
 
-		printSection("World");
+		printSection("Wotrld");
 		// start game time control early
 		TimeController.getInstance();
 		InstanceManager.getInstance();
