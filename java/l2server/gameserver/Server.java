@@ -122,7 +122,7 @@ public class Server
 		// load script engines
 		printSection("Engines");
 		L2ScriptEngineManager.getInstance();
-	printSection("wesh");
+
 		printSection("World");
 		// start game time control early
 		TimeController.getInstance();
