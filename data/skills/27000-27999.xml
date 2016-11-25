@@ -3388,4 +3388,134 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
-</list>
+    <!-- Damage Received -3%. -->
+    <skill id="27682" levels="1" name="Inherent Abilities - Damage Reduction">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pvpPhysDef" val="3" />
+            <addPercent stat="pvpMagicalDef" val="3" />
+            <addPercent stat="pvpPhysSkillsDef" val="3" />
+            <addPercent stat="pvePhysDef" val="3" />
+            <addPercent stat="pveMagicalDef" val="3" />
+            <addPercent stat="pvePhysSkillsDef" val="3" />
+        </for>
+    </skill>
+    <!-- Damage Received -8%. -->
+    <skill id="27683" levels="1" name="Inherent Abilities - Damage Reduction">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pvpPhysDef" val="8" />
+            <addPercent stat="pvpMagicalDef" val="8" />
+            <addPercent stat="pvpPhysSkillsDef" val="8" />
+            <addPercent stat="pvePhysDef" val="8" />
+            <addPercent stat="pveMagicalDef" val="8" />
+            <addPercent stat="pvePhysSkillsDef" val="8" />
+        </for>
+    </skill>
+    <!-- Damage Received -5%. -->
+    <skill id="27684" levels="1" name="Inherent Abilities - Damage Reduction">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pvpPhysDef" val="5" />
+            <addPercent stat="pvpMagicalDef" val="5" />
+            <addPercent stat="pvpPhysSkillsDef" val="5" />
+            <addPercent stat="pvePhysDef" val="5" />
+            <addPercent stat="pveMagicalDef" val="5" />
+            <addPercent stat="pvePhysSkillsDef" val="5" />
+        </for>
+    </skill>
+    <!-- Damage Received -2%. -->
+    <skill id="27685" levels="1" name="Inherent Abilities - Damage Reduction">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pvpPhysDef" val="2" />
+            <addPercent stat="pvpMagicalDef" val="2" />
+            <addPercent stat="pvpPhysSkillsDef" val="2" />
+            <addPercent stat="pvePhysDef" val="2" />
+            <addPercent stat="pveMagicalDef" val="2" />
+            <addPercent stat="pvePhysSkillsDef" val="2" />
+        </for>
+    </skill>
+    <!-- Damage Received -2%. -->
+    <skill id="27686" levels="1" name="Inherent Abilities - Damage Reduction">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pvpPhysDef" val="2" />
+            <addPercent stat="pvpMagicalDef" val="2" />
+            <addPercent stat="pvpPhysSkillsDef" val="2" />
+            <addPercent stat="pvePhysDef" val="2" />
+            <addPercent stat="pveMagicalDef" val="2" />
+            <addPercent stat="pvePhysSkillsDef" val="2" />
+        </for>
+    </skill>
+    <!-- P. Atk + 1%, M. Atk + 2%. -->
+    <skill id="27697" levels="1" name="Inherent Abilities - Helm Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pAtk" val="1" />
+            <addPercent stat="mAtk" val="2" />
+        </for>
+    </skill>
+    <!-- P. Atk + 1%, M. Atk + 2%. -->
+    <skill id="27698" levels="1" name="Inherent Abilities - Top Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pAtk" val="1" />
+            <addPercent stat="mAtk" val="2" />
+        </for>
+    </skill>
+    <!-- P. Atk + 1%, M. Atk + 2%. -->
+    <skill id="27699" levels="1" name="Inherent Abilities - Pants Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pAtk" val="1" />
+            <addPercent stat="mAtk" val="2" />
+        </for>
+    </skill>
+    <!-- P. Atk + 1%, M. Atk + 2%. -->
+    <skill id="27700" levels="1" name="Inherent Abilities - Gloves Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pAtk" val="1" />
+            <addPercent stat="mAtk" val="2" />
+        </for>
+    </skill>
+    <!-- P. Atk + 1%, M. Atk + 2%. -->
+    <skill id="27701" levels="1" name="Inherent Abilities - Shoes Attack">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent stat="pAtk" val="1" />
+            <addPercent stat="mAtk" val="2" />
+        </for>
+    </skill>
+    </list>

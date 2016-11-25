@@ -17,7 +17,7 @@
             <itemDrop itemId="19447" min="1" max="1" chance="40" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
         </dropCategory>
     </npc>
-    <npc id="80200" templateId="33691" name="Dimensional Door" level="120" type="L2Npc" atkRange="40" hpMax="2"
+    <npc id="2512" templateId="2512" name="Beryn" title="Valiant" level="120" type="L2Npc" atkRange="40" hpMax="2"
          hpReg="0.0"
          mpMax="0" mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
          pAtkSpd="299"
