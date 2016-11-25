@@ -42,8 +42,9 @@
     <customFarm farmZone="lands_of_chaos" adjustDropsPerMob="23336"> <!-- Lvl: 96 | Strength: 38330 | Exp Score: 5 -->
         <itemDrop itemId="57" min="25000" max="50000" chance="100" /> <!-- Adena -->
         <itemDrop itemId="46150" min="1" max="3" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46151" min="1" max="3" chance="35" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="46151" min="1" max="3" chance="40" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
         <itemDrop itemId="36978" min="1" max="1" chance="15" /> <!-- Scroll: Enchant Hair Accessory -->
+        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
         <spoilDrop itemId="46152" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
     <customFarm farmZone="raider_crossroads" adjustDropsPerMob="23316"
@@ -58,6 +59,7 @@
         <itemDrop itemId="46151" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
         <itemDrop itemId="30299" min="1" max="1" chance="10" /> <!-- Superior Giant's CoDEX - Discipline -->
         <itemDrop itemId="46152" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
+        <itemDrop itemId="4356" min="1" max="1" chance="5" /> <!-- Gold Einhasad -->
         <spoilDrop itemId="30299" min="1" max="1" chance="40" /> <!-- Superior Giant's CoDEX - Discipline -->
         <spoilDrop itemId="46152" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
@@ -75,9 +77,11 @@
         <itemDrop itemId="46154" min="1" max="3" chance="50" /> <!-- Superior Giant's Codex Chapter 2 -->
         <itemDrop itemId="46155" min="1" max="3" chance="25" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
         <itemDrop itemId="36515" min="1" max="2" chance="5" /> <!-- Elcyum -->
+        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
         <itemDrop itemId="46156" min="1" max="1" chance="15" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
         <spoilDrop itemId="46156" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
         <spoilDrop itemId="36515" min="1" max="2" chance="10" /> <!-- Elcyum -->
+        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"
                 defMultiplier="50" overrideDrops="true"
@@ -86,6 +90,7 @@
         <itemDrop itemId="36414" min="1" max="1" chance="15" /> <!-- Dragon Claw -->
         <itemDrop itemId="14720" min="1" max="1" chance="15" /> <!-- Event - Apiga -->
         <itemDrop itemId="36515" min="1" max="1" chance="10" /> <!-- Elcyum -->
+        <itemDrop itemId="4356" min="1" max="1" chance="20" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="hellbound_beleth_magic_circle" adjustDropsPerMob="23354"
                 atkMultiplier="0.03" defMultiplier="0.25" overrideLevels="103"> <!-- Lvl: 103 | Strength: 50795 -->
@@ -130,10 +135,11 @@
         <itemDrop itemId="36550" min="1" max="3" chance="15" /> <!-- Weapon Fragment (Top-grade) -->
         <itemDrop itemId="36565" min="1" max="3" chance="15" /> <!-- Exquisite Synthetic Cokes -->
         <itemDrop itemId="36545" min="1" max="3" chance="15" /> <!-- Durandil Wire -->
+        <itemDrop itemId="4356" min="1" max="1" chance="10" /> <!-- Gold Einhasad -->
         <spoilDrop itemId="36550" min="1" max="5" chance="90" /> <!-- Weapon Fragment (Top-grade) -->
         <spoilDrop itemId="36565" min="1" max="5" chance="90" /> <!-- Exquisite Synthetic Cokes -->
         <spoilDrop itemId="36545" min="1" max="5" chance="90" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="30" /> <!-- Gold Einhasad -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="20" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"
                 defMultiplier="1.0" overrideLevels="105"
