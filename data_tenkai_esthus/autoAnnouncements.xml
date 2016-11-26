@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <announce text="Auto-announcements: Please remember our new Event Currency ''Golden Apigas'' are fully trade-ables, while the bronze ones aren't. To get a Golden Apiga you must trade 10 Event - Apiga to Prinz at his Currency Shop." initial="5" reuse="100" />
-    <announce text="Auto-announcements: The GMShop, Global Teleporter and NPCBuffer are in your Magic Gem (look at your inventory!)" initial="10" reuse="100" />
-    <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="30" reuse="100" />
-    <announce text="Auto-announcements: Never miss an Automated Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="50" reuse="100" />
-    <announce text="Auto-announcements: The farm zones have been remade! You should give them a try!" initial="70" reuse="100" />
-    <announce text="Auto-announcements: Never share your account information!" initial="90" reuse="100" />
+    <announce text="Auto-announcements: Please remember our new Event Currency ''Golden Apigas'' are fully trade-ables, while the bronze ones aren't. To get a Golden Apiga you must trade 10 Event - Apiga to Prinz at his Currency Shop." initial="7" reuse="100" />
+    <announce text="Auto-announcements: Gainak Siege drops have been reviewed! Don't miss your chance!" initial="15" reuse="100" />
+    <announce text="Auto-announcements: The GMShop, Class Master, Global Teleporter and NPCBuffer are in your Magic Gem (look at your inventory!)" initial="20" reuse="100" />
+    <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="40" reuse="100" />
+    <announce text="Auto-announcements: Never miss an Automated Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="60" reuse="100" />
+    <announce text="Auto-announcements: The farm zones have been remade! You should give them a try!" initial="80" reuse="100" />
+    <announce text="Auto-announcements: Never share your account information!" initial="100" reuse="100" />
 </list>
