@@ -5,6 +5,6 @@
     <announce text="Auto-announcements: The GMShop, Class Master, Global Teleporter and NPCBuffer are in your Magic Gem (look at your inventory!)" initial="20" reuse="100" />
     <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="40" reuse="100" />
     <announce text="Auto-announcements: Never miss an Automated Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="60" reuse="100" />
-    <announce text="Auto-announcements: The farm zones have been remade! You should give them a try!" initial="80" reuse="100" />
+    <announce text="Auto-announcements: The farm zones have been remade! You shold give them a try!" initial="80" reuse="100" />
     <announce text="Auto-announcements: Never share your account information!" initial="100" reuse="100" />
 </list>
