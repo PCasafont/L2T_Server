@@ -150,4 +150,8 @@
         <itemDrop itemId="36515" min="743" max="1175" chance="100" /> <!-- Elcyum -->
         <itemDrop itemId="4356" min="20" max="30" chance="100" /> <!-- Gold Einhasad -->
     </customFarm>
+    <customFarm farmZone="christmas"
+                atkMultiplier="0.8" defMultiplier="1.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="5556" min="1" max="2" chance="100" /> <!-- Star -->
+    </customFarm>
 </list>

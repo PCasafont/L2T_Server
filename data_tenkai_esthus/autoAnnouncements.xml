@@ -7,4 +7,5 @@
     <announce text="Auto-announcements: Never miss an Automated Event or Gainak Siege! There you can collect the new Event - Apigas to trade for great rewards!" initial="60" reuse="100" />
     <announce text="Auto-announcements: The farm zones have been remade! You should give them a try!" initial="80" reuse="100" />
     <announce text="Auto-announcements: Never share your account information!" initial="100" reuse="100" />
+    <announce text="Auto-announcements: We're working on a new server! Check the forum to contribute!" initial="120" reuse="100" />
 </list>

@@ -9,4 +9,34 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
+    <npc id="80198" templateId="13160" name="Snowman" serverSideName="true" title=""
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+    <npc id="80199" templateId="33732" name="Snowman" serverSideName="true" title=""
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+    <npc id="50008" templateId="32897" name="Inia" serverSideName="true" title="General Merchant"
+         serverSideTitle="true" level="70"
+         type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
 </list>

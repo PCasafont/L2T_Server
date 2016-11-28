@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+<list>
     <item>
         <ingredient count="15" id="5556" /> <!-- Star Ornament -->
         <production count="1" id="10606" /> <!-- Agathion Seal Bracelet - Rudolph -->
@@ -342,7 +342,15 @@
         <production id="38959" count="1" /> <!-- NC Dinos Hat Appearance Stone (100-day) -->
     </item>
     <item>
-        <ingredient id="5556" count="100" /> <!-- Star Ornament -->
-        <production id="4357" count="1000000" /> <!-- Silver Shilen -->
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47223" count="1" /> <!-- app archer -->
+    </item>
+    <item>
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47226" count="1" /> <!-- app red nobless -->
+    </item>
+    <item>
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47231" count="1" /> <!-- app red nobless -->
     </item>
 </list>

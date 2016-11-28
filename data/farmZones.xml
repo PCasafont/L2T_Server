@@ -405,4 +405,8 @@
         <mob id="23398" /> <!-- Koraza -->
         <mob id="23399" /> <!-- Bend Beetle -->
     </farmZone>
+    <farmZone name="christmas">
+        <mob id="80198" /> <!-- Snowman_Red -->
+        <mob id="80199" /> <!-- Snowman_Blue -->
+    </farmZone>
 </list>
