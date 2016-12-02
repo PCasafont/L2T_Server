@@ -41,9 +41,10 @@
     </customFarm>
     <customFarm farmZone="lands_of_chaos" adjustDropsPerMob="23336"> <!-- Lvl: 96 | Strength: 38330 | Exp Score: 5 -->
         <itemDrop itemId="57" min="25000" max="50000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="46150" min="1" max="3" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46151" min="1" max="3" chance="40" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="46150" min="1" max="5" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
+        <itemDrop itemId="46151" min="1" max="5" chance="40" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
         <itemDrop itemId="36978" min="1" max="1" chance="15" /> <!-- Scroll: Enchant Hair Accessory -->
+        <itemDrop itemId="46152" min="1" max="1" chance="25" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
         <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
         <spoilDrop itemId="46152" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
@@ -86,11 +87,12 @@
     <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"
                 defMultiplier="50" overrideDrops="true"
                 overrideLevels="105"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
-        <itemDrop itemId="57" min="500000" max="750000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36414" min="1" max="1" chance="15" /> <!-- Dragon Claw -->
-        <itemDrop itemId="14720" min="1" max="1" chance="15" /> <!-- Event - Apiga -->
-        <itemDrop itemId="36515" min="1" max="1" chance="10" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="1" max="1" chance="20" /> <!-- Gold Einhasad -->
+        <itemDrop itemId="57" min="5000000" max="10000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="36414" min="1" max="5" chance="100" /> <!-- Dragon Claw -->
+        <itemDrop itemId="14720" min="1" max="5" chance="100" /> <!-- Event - Apiga -->
+        <itemDrop itemId="36515" min="1" max="5" chance="75" /> <!-- Elcyum -->
+        <itemDrop itemId="4356" min="1" max="1" chance="100" /> <!-- Gold Einhasad -->
+        <itemDrop itemId="4356" min="1" max="5" chance="40" /> <!-- Gold Einhasad -->
     </customFarm>
     <customFarm farmZone="hellbound_beleth_magic_circle" adjustDropsPerMob="23354"
                 atkMultiplier="0.03" defMultiplier="0.25" overrideLevels="103"> <!-- Lvl: 103 | Strength: 50795 -->
@@ -147,5 +149,9 @@
         <itemDrop itemId="57" min="33408201" max="80065914" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36515" min="743" max="1175" chance="100" /> <!-- Elcyum -->
         <itemDrop itemId="4356" min="20" max="30" chance="100" /> <!-- Gold Einhasad -->
+    </customFarm>
+    <customFarm farmZone="christmas"
+                atkMultiplier="0.8" defMultiplier="1.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="5556" min="1" max="2" chance="100" /> <!-- Star -->
     </customFarm>
 </list>
