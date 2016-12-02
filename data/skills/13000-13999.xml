@@ -8976,7 +8976,7 @@
 	-->
     <skill id="13827" levels="3" name="Christmas Talisman - ALL STAT (Low)">
         <table name="#name">Christmas Talisman - ALL STAT (High);Christmas Talisman - ALL STAT (Low)</table>
-        <table name="#statlvl">2 1 1 2</table>
+        <table name="#statlvl">2 1 1 1</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
