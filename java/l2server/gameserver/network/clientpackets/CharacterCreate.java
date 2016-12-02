@@ -293,19 +293,8 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 
-		MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-		if (mainTown != null)
-		{
-			int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-			int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-			int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
-			newChar.setXYZInvisible(startX, startY, startZ);
-		}
-		else
-		{
-			newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
-					template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
-		}
+		newChar.setXYZInvisible(template.startX, template.startY, template.startZ);
+		newChar.setTitle("");
 
 		newChar.setTitle("");
 
@@ -476,12 +465,7 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
-			// Temp epic jewels
-			player.getInventory().addItem("Init", 37732, 1, player, null);
-			player.getInventory().addItem("Init", 37733, 1, player, null);
-			player.getInventory().addItem("Init", 26469, 1, player, null);
-			player.getInventory().addItem("Init", 37734, 1, player, null);
-			player.getInventory().addItem("Init", 37735, 1, player, null);
+			//add spawn items
 		}
 	}
 }

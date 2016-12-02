@@ -4014,9 +4014,9 @@
           crystalType="c" weight="10" isStackable="true">
     </item>
     <!-- Enchant Scroll exclusive to Pa'agrio, Sayha, Maphr and Eva Shirts. When enchanted, increases P. Def. and M. Def. by 1. From +3, Elemental defense increases by 3, and from +4, P. Def. Increases by 3. Can be safely enchanted up to +3 and can be enchanted up to a max of +10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from +4. At +5, +6, +7, +8, +9, and +10, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->
-    <item id="25793" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt"
-          icon="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00"
-          immediateEffect="1" crystalType="c" isStackable="true">
+    <item id="25793" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt" icon="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00"
+          immediateEffect="1"
+          weight="10" isStackable="true" handler="EnchantScrolls">
     </item>
     <!-- For 30 min., Priestess Tsubaki's spirit stays with you, increasing your Speed. Cannot be exchanged, dropped, or sold. Can be stored in the private warehouse. -->
     <item id="25794" type="EtcItem" name="Transformation Scroll: Priestess Tsubaki" icon="icon.etc_scroll_white_i00"

@@ -5867,11 +5867,11 @@
         <table name="#spd">0 0 0 7 7 7 7 7 7 7</table>
         <table name="#maxHp">0 0 0 510 520 531 536 541 547 552</table>
         <table name="#elementRes">0 0 0 6 12 18 24 30 36 36</table>
-        <table name="#mpConsume">0 0 0 0 3 3 3 3 3 3</table>
-        <table name="#reflectRes">0 0 0 0 0 5 5 5 5 5</table>
-        <table name="#baseStr">0 0 0 1 2 3 3 4 4 4</table>
-        <table name="#baseDex">0 0 0 1 2 3 3 3 4 4</table>
-        <table name="#baseCon">0 0 0 1 2 2 3 3 4 4</table>
+        <table name="#mpConsume">0 0 0 0 4 4 3 3 3 3</table>
+        <table name="#reflectRes">0 0 0 0 4 4 5 5 5 5</table>
+        <table name="#baseStr">10 10 10 4 4 4 13 14 14 400</table>
+        <table name="#baseDex">0 0 0 1 4 4 4 3 4 4</table>
+        <table name="#baseCon">0 0 0 1 4 4 4 4 4 4</table>
         <table name="#skillCol">0 0 0 0 0 0 0 3 3 3</table>
         <table name="#damageReduction">0 0 0 0 0 0 0 0 3 3</table>
         <set name="target" val="TARGET_SELF" />
@@ -8974,12 +8974,23 @@
 		Level 1: All Stats + 1 with the power of Talisman.
 		Level 2: All Stats + 2 with the power of Talisman.
 	-->
-    <skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
+    <skill id="13827" levels="3" name="Christmas Talisman - ALL STAT (Low)">
         <table name="#name">Christmas Talisman - ALL STAT (High);Christmas Talisman - ALL STAT (Low)</table>
+        <table name="#statlvl">2 1 1 2</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <baseAdd stat="LUC" val="#statlvl" />
+            <baseAdd stat="CHA" val="#statlvl" />
+            <baseAdd stat="INT" val="#statlvl" />
+            <baseAdd stat="CON" val="#statlvl" />
+            <baseAdd stat="DEX" val="#statlvl" />
+            <baseAdd stat="WIT" val="#statlvl" />
+            <baseAdd stat="STR" val="#statlvl" />
+            <baseAdd stat="MEN" val="#statlvl" />
+        </for>
     </skill>
     <!-- P. Skill Critical Damage + 7% with the power of Talisman. -->
     <skill id="13828" levels="1" name="Christmas Talisman - P. Skill Critical Damage">

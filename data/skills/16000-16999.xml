@@ -5525,4 +5525,60 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="1500" />
     </skill>
+    <skill id="16748" levels="1" name="Ring of Authority">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <mul val="1.15" order="0x30" stat="pCritDmg" />
+            <mul val="1.25" order="0x30" stat="knockDownRes" />
+            <mul val="1.25" order="0x30" stat="paralysisRes" />
+            <mul val="1.15" order="0x30" stat="stunRes" />
+            <mul val='1.04' order='0x30' stat='pAtk'/>
+            <mul val="1.05" order="0x10" stat="pAtk-giants" />
+        </for>
+    </skill>
+    <skill id="16749" levels="1" name="Ruler's Ring of Authority">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <mul val="1.20" order="0x30" stat="pCritDmg" />
+            <mul val="1.30" order="0x30" stat="knockDownRes" />
+            <mul val="1.30" order="0x30" stat="paralysisRes" />
+            <mul val="1.30" order="0x30" stat="stunRes" />
+            <mul val='1.05' order='0x30' stat='pAtk'/>
+            <baseAdd stat="LUC" val="2" />
+            <baseAdd stat="CHA" val="2" />
+            <mul val="1.05" order="0x10" stat="pAtk-giants" />
+        </for>
+    </skill>
+    <skill id="16750" levels="1" name="Ring of the Truth">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <mul val="1.15" order="0x30" stat="mCritDmg" />
+            <mul val="1.25" order="0x30" stat="knockDownRes" />
+            <mul val="1.25" order="0x30" stat="paralysisRes" />
+            <mul val="1.25" order="0x30" stat="stunRes" />
+            <mul val='1.04' order='0x30' stat='mAtk'/>
+            <mul val="1.05" order="0x10" stat="pAtk-giants" />
+        </for>
+    </skill>
+    <skill id="16751" levels="1" name="Ring of the Truth-Seeker">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <mul val="1.20" order="0x30" stat="mCritDmg" />
+            <mul val="1.30" order="0x30" stat="knockDownRes" />
+            <mul val="1.30" order="0x30" stat="paralysisRes" />
+            <mul val="1.30" order="0x30" stat="stunRes" />
+            <mul val='1.05' order='0x30' stat='mAtk'/>
+            <baseAdd stat="LUC" val="2" />
+            <baseAdd stat="CHA" val="2" />
+            <mul val="1.05" order="0x10" stat="pAtk-giants" />
+        </for>
+    </skill>
 </list>

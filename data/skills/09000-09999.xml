@@ -3394,8 +3394,8 @@
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
     <skill id="9397" levels="1" name="Blessed Scroll: Enchant Elemental Shirt">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="ENCHANT_ARMOR" />
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
     <skill id="9398" levels="1" name="Blessed Scroll of Resurrection">

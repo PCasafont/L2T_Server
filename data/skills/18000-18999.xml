@@ -3407,4 +3407,42 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <skill id="18715" levels="1" name="Ruby">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <mul val='1.09' order='0x10' stat='pAtk'/>
+        </for>
+    </skill>
+    <!--  Blessed Soulshot damage + 20% / mAtk + 9%. -->
+    <skill id="18718" levels="2" name="Sapphire">
+        <table name="#mAtk">9 9 9 9 9 9</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <mul val="1.09" order="0x30" stat="mAtk" />
+        </for>
+    </skill>
+    <skill id="18720" levels="1" name="Obsidian">
+        <set name="target" val="TARGET_SELF" />
+        <set name="targetDirection" val="AROUND" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="hitTime" val="800" />
+        <set name="coolTime" val="15000" />
+        <set name="reuseDelay" val="15000" />
+        <set name="skillRadius" val="1500" />
+        <for>
+            <abnormal stackLvl="1" stackType="flash">
+                <effect type="RemoveTarget" val="0" />
+            </abnormal>
+            <abnormal duration="1" self="1" stackLvl="1" stackType="flash">
+                <effect type="Untargetable" val="0" />
+            </abnormal>
+        </for>
+    </skill>
 </list>

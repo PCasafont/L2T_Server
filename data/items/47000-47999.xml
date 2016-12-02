@@ -1312,9 +1312,9 @@
         <baseAdd stat="mDef" val="98" />
     </item>
     <!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, P. Critical Damage +15%, P. Atk. +4%. Effect does not stack with identical ones. -->
-    <item id="47215" type="Weapon" name="Ring of Authority" icon="icon.accessory_ring_of_helios_red" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47215" type="Armor" name="Ring of Authority" icon="icon.accessory_ring_of_helios_red" defaultAction="equip" bodypart="rfinger;lfinger"
+          immediateEffect="1" weight="150">
+        <skill id="16748" level="1" />
         <baseAdd stat="mDef" val="101" />
     </item>
     <!--
@@ -1322,26 +1322,27 @@
 		Effect does not stack with identical ones.
 		Can be crafted.
 	-->
-    <item id="47216" type="Weapon" name="Ruler's Ring of Authority" icon="icon.accessory_ring_of_helios_enchant_red"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47216" type="Armor" name="Ruler's Ring of Authority" icon="icon.accessory_ring_of_helios_enchant_red" defaultAction="equip"
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
         <baseAdd stat="mDef" val="114" />
+        <skill id="16749" level="1"/>
     </item>
     <!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, M. Critical Damage +15%, M. Atk. +4%. Effect does not stack with identical ones. -->
-    <item id="47217" type="Weapon" name="Ring of the Truth" icon="icon.accessory_ring_of_helios" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47217" type="Armor" name="Ring of the Truth" icon="icon.accessory_ring_of_helios" defaultAction="equip"
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
         <baseAdd stat="mDef" val="101" />
+        <skill id="16750" level="1"/>
     </item>
     <!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Knock Down when single M. Atk. skill is used.
 		Effect does not stack with identical ones.
 		Can be crafted.
 	-->
-    <item id="47218" type="Weapon" name="Ring of the Truth-Seeker" icon="icon.accessory_ring_of_helios_enchant"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47218" type="Armor" name="Ring of the Truth-Seeker" icon="icon.accessory_ring_of_helios_enchant" defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          weight="150" immediateEffect="1">
         <baseAdd stat="mDef" val="114" />
+        <skill id="16751" level="1" />
     </item>
     <!-- Take this to Rafforty to enhance the Ring of the Beginning. -->
     <item id="47219" type="Weapon" name="Source of the Emperor" icon="icon.source of the load" bodypart="none"
@@ -3898,24 +3899,29 @@
           weight="0" crystal_type="none">
     </item>
     <!-- Disrupts the target's skill casting when used. When used on a PC, inflicts damage with 13275 power, ignoring the target's CP. Low chance of killing the enemy instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47687" type="Weapon" name="Greater Topaz" icon="icon.bm_jewel_absdmg_high_lv1_lavianrose" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47687" type="Armor" name="Greater Topaz" icon="icon.bm_jewel_absdmg_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+         <!-- Greater Topaz -->
     </item>
     <!-- When equipped, increases Soulshot and Beast Soulshot damage by 20% and P. Atk. By 9%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47688" type="Weapon" name="Greater Ruby" icon="icon.bm_jewel_ssdmg_high_lv1_lavianrose" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47688" type="Armor" name="Greater Ruby" icon="icon.bm_jewel_ssdmg_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+        <skill id="18715" level="1" />
     </item>
     <!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 20% and M. Atk. By 13%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47689" type="Weapon" name="Greater Sapphire" icon="icon.bm_jewel_spsdmg_high_lv1_lavianrose"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47689" type="Armor" name="Greater Sapphire" icon="icon.bm_jewel_spsdmg_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+        <skill id="18718" level="2"/>
     </item>
     <!-- When equipped, PvP incoming damage decreases by 15% and cancels the attacker's target. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47690" type="Weapon" name="Greater Obsidian" icon="icon.bm_jewel_pvpdef_high_lv1_lavianrose"
-          bodypart="none" material="steel"
+    <item id="47690" type="Armor" name="Greater Obsidian" icon="icon.bm_jewel_pvpdef_high_lv1_lavianrose"
+          bodypart="jewel" material="steel"
           weight="0" crystal_type="none">
+        <skill id="17704" level="6"/>
+        <skill id="18720" level="1"/>
     </item>
     <!-- When equipped, increases Attack Attribute by 120 and all Defense Attributes by 70. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47691" type="Weapon" name="Greater Opal" icon="icon.bm_jewel_atkeleup_high_lv1_lavianrose" bodypart="none"
@@ -3933,9 +3939,9 @@
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- When equipped, P. Def. Increases by 1986 and incoming P. Critical Damage decreases by 5%. P. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47694" type="Weapon" name="Greater Diamond" icon="icon.bm_jewel_phydef_high_lv1_lavianrose"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47694" type="Armor" name="Greater Diamond" icon="icon.bm_jewel_phydef_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
     </item>
     <!-- When equipped, M. Def. Increases by 1150 and incoming M. Critical Damage decreases by 5%. M. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47695" type="Weapon" name="Greater Pearl" icon="icon.bm_jewel_magdef_high_lv1_lavianrose" bodypart="none"
@@ -3963,8 +3969,8 @@
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- When equipped, M. Skill Critical Damage + 12% and M. Skill Power + 5%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47700" type="Weapon" name="Greater Blue Cat's Eye" icon="icon.bm_jewel_blue_catseye_high_lv1_lavianrose"
-          bodypart="none"
+    <item id="47700" type="Armor" name="Greater Blue Cat's Eye" icon="icon.bm_jewel_blue_catseye_high_lv1_lavianrose"
+          bodypart="jewel"
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- Double-click to obtain a Red Cat's Eye Lv. 1. -->

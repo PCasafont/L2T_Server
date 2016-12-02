@@ -7599,7 +7599,6 @@
                 </not>
             </cond>
             <abnormal duration="120">
-                <effect type="Buff" val="0" />
                 <addPercent stat="pDef" val="70" />
             </abnormal>
         </for>

@@ -17,7 +17,7 @@ import java.util.Calendar;
 /**
  * @author Pere
  */
-public class CloneInvasion
+public class  CloneInvasion
 {
 	public static CloneInvasion _instance = null;
 

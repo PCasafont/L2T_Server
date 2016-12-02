@@ -4685,7 +4685,7 @@
 		Level 6: Received Damage during PvP - 15%, and when attacked the enemy's targeting on you is canceled. Activation wait time is 15 seconds.
 	-->
     <skill id="17704" levels="6" name="Greater Obsidian">
-        <table name="#pvpDef">1 3 7 11 15</table>
+        <table name="#pvpDef">1 3 7 11 15 15</table>
         <table name="#name">Obsidian;Obsidian;Obsidian;Obsidian;Obsidian;Greater Obsidian</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -4697,6 +4697,8 @@
             <addPercent stat="pvpPhysSkillsDef" val="#pvpDef" />
         </for>
     </skill>
+
+
     <!--
 		Level 1: Attack Attribute + 10.
 		Level 2: Attack Attribute + 20.
@@ -4706,7 +4708,8 @@
 		Level 6: Attack Attribute + 120, all Defense Attributes + 70.
 	-->
     <skill id="17705" levels="6" name="Greater Opal">
-        <table name="#power">10 20 40 70 120</table>
+        <table name="#power">10 20 40 70 120 120</table>
+        <table name="#res">0 0 0 0 0 70</table>
         <table name="#name">Opal;Opal;Opal;Opal;Opal;Greater Opal</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -4719,6 +4722,12 @@
             <add stat="earthPower" val="#power" />
             <add stat="holyPower" val="#power" />
             <add stat="darkPower" val="#power" />
+            <add stat="fireRes" val="#res" />
+            <add stat="waterRes" val="#res" />
+            <add stat="windRes" val="#res" />
+            <add stat="earthRes" val="#res" />
+            <add stat="holyRes" val="#res" />
+            <add stat="darkRes" val="#res" />
         </for>
     </skill>
     <!--
@@ -4754,8 +4763,9 @@
 		Level 6: P. Def. + 1986, P. Critical Damage - 5%. Additional P. Def. + 10%.
 	-->
     <skill id="17708" levels="6" name="Greater Diamond">
-        <table name="#def">283 567 945 1418 1986</table>
-        <table name="#critVuln">1 2 3 4 5</table>
+        <table name="#def">283 567 945 1418 1986 1986</table>
+        <table name="#critVuln">1 2 3 4 5 5</table>
+        <table name="#pdef">0 0 0 0 0 10</table>
         <table name="#name">Diamond;Diamond;Diamond;Diamond;Diamond;Greater Diamond</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -4764,6 +4774,7 @@
         <for>
             <add stat="pDef" val="#def" />
             <subPercent stat="critVuln" val="#critVuln" />
+            <addPercent stat="pDef" val="#pdef" />
         </for>
     </skill>
     <!--
@@ -4775,8 +4786,9 @@
 		Level 6: M. Def. + 1150, M. Critical Damage - 5%. Additional M. Def. + 10%.
 	-->
     <skill id="17709" levels="6" name="Greater Pearl">
-        <table name="#def">163 328 548 821 1150</table>
-        <table name="#critVuln">1 2 3 4 5</table>
+        <table name="#def">163 328 548 821 1150 1150</table>
+        <table name="#matk">0 0 0 0 0 10</table>
+        <table name="#critVuln">1 2 3 4 5 5</table>
         <table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Greater Pearl</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -4785,6 +4797,7 @@
         <for>
             <add stat="mDef" val="#def" />
             <subPercent stat="magicCritVuln" val="#critVuln" />
+            <addPercent stat="mAtk" val="#matk"/>
         </for>
     </skill>
     <skill id="17710" levels="1" name="10th Anniversary Blessing Effect (Free)">
@@ -5554,7 +5567,8 @@
 		Level 6: When using a skill, there is a 15% chance of recovering 136 MP. Skill Cooldown - 5%.
 	-->
     <skill id="17823" levels="6" name="Greater Aquamarine">
-        <table name="#chance">1 2 4 9 15</table>
+        <table name="#chance">1 2 4 9 15 15</table>
+        <table name="#skillCol">0 0 0 0 0 5</table>
         <table name="#name">Aquamarine;Aquamarine;Aquamarine;Aquamarine;Aquamarine;Greater Aquamarine</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -5564,6 +5578,11 @@
         <set name="activationChance" val="#chance" />
         <set name="triggeredId" val="17822" />
         <set name="triggeredLevel" val="1" />
+        <for>
+            <subPercent stat="pReuse" val="#skillCol" />
+            <subPercent stat="mReuse" val="#skillCol" />
+        </for>
+
     </skill>
     <skill id="17824" levels="1" name="La Vie En Rose's Jewelry Box">
         <set name="target" val="TARGET_SELF" />

@@ -140,15 +140,15 @@ public class EventConfig
 		double[] chances = new double[]{
 				25.0, // TvT
 				4.0, // Capture the Flag
-				0.0, // VIP TvT
+				5.0, // VIP TvT
 				9.0, // Survival
 				11.0, // Death Match
-				0.0, // King of the Hill
-				0.0, // Lucky Chests
+				2.0, // King of the Hill
+				3.0, // Lucky Chests
 				18.0, // Team Survival
-				0.0, // Cursed Battle
-				0.0, // Destroy the Golem
-				0.0, // Field Domination
+				4.0, // Cursed Battle
+				5.0, // Destroy the Golem
+				2.0, // Field Domination
 				2.0, // Stalked Stalkers
 				6.0 // Simon Says
 		};

@@ -1572,14 +1572,14 @@
           isStackable="true">
     </item>
     <!-- Event item. All Stats + 2 when equipped. Effect does not stack with additional Talismans of the same type. -->
-    <item id="46291" type="Weapon" name="Christmas Talisman - ALL STAT +2" icon="icon.etc_xmas_talisman_i01"
-          bodypart="none"
-          crystalType="none" material="steel" weight="0">
+    <item id="46291" type="Armor" name="Christmas Talisman - ALL STAT +2" icon="icon.etc_xmas_talisman_i01" defaultAction="equip"
+          bodypart="deco1" immediateEffect="1" weight="150" isTradable="true" isDropable="false" isSellable="true">
+        <skill id="13827" level="1"/>
     </item>
     <!-- Event item. All Stats + 1 when equipped. Effect does not stack with additional Talismans of the same type. -->
-    <item id="46292" type="Weapon" name="Christmas Talisman - ALL STAT +1" icon="icon.etc_xmas_talisman_i01"
-          bodypart="none"
-          crystalType="none" material="steel" weight="0">
+    <item id="46292" type="Armor" name="Christmas Talisman - ALL STAT +1" icon="icon.etc_xmas_talisman_i01" defaultAction="equip"
+          bodypart="deco1" immediateEffect="1" weight="150" isTradable="true" isDropable="false" isSellable="true">
+        <skill id="13827" level="2" />
     </item>
     <!-- Event item. P. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
     <item id="46293" type="Weapon" name="Christmas Talisman: P. Skill Critical Damage - 1-hour"
