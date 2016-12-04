@@ -4772,7 +4772,7 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <add stat="pDef" val="#def" />
+            <mul val="#def" order="0x30" stat="pDef" />
             <subPercent stat="critVuln" val="#critVuln" />
             <addPercent stat="pDef" val="#pdef" />
         </for>
@@ -4795,7 +4795,7 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <add stat="mDef" val="#def" />
+            <mul val="#def" order="0x30" stat="mDef" />
             <subPercent stat="magicCritVuln" val="#critVuln" />
             <addPercent stat="mAtk" val="#matk"/>
         </for>

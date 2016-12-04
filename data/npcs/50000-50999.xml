@@ -9,26 +9,6 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
-    <npc id="80198" templateId="13160" name="Snowman" serverSideName="true" title=""
-         serverSideTitle="true" level="70"
-         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
-         INT="7" WIT="9"
-         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
-         walkSpd="50"
-         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-         holyRes="20"
-         darkRes="20" aiType="fighter">
-    </npc>
-    <npc id="80199" templateId="33732" name="Snowman" serverSideName="true" title=""
-         serverSideTitle="true" level="70"
-         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
-         INT="7" WIT="9"
-         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
-         walkSpd="50"
-         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-         holyRes="20"
-         darkRes="20" aiType="fighter">
-    </npc>
     <npc id="50008" templateId="32897" name="Inia" serverSideName="true" title="General Merchant"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
@@ -38,5 +18,57 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
+        <spawn x="-114074" y="252641" z="-1554" heading="32294" respawn="1000" />
+    </npc>
+    <npc id="80200" templateId="32897" name="Inia" serverSideName="true" title="General Merchant"
+         serverSideTitle="true" level="70"
+         type="L2Npc" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+    <npc id="80199" templateId="80198" name="Snowman" serverSideName="true" title=""
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+
+    <npc id="80199" templateId="80199" name="Snowman" serverSideName="true" title=""
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+    </npc>
+    <npc id="80197" templateId="32897" name="test" serverSideName="true" title="Server Information"
+         serverSideTitle="true"
+         level="70" type="L2Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
+         DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="80242" templateId="29303" name="test" serverSideName="true" title="Server Information"
+         serverSideTitle="true"
+         level="70" type="L2Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
+         DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
 </list>

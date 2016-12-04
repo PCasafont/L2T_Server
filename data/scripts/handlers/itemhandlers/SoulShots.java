@@ -29,6 +29,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.util.Broadcast;
 
+
 /**
  * This class ...
  *
@@ -152,6 +153,8 @@ public class SoulShots implements IItemHandler
 					case 38859:
 						rubyLvl = 5;
 						break;
+					case 47688:
+						rubyLvl = 6;
 				}
 			}
 		}
@@ -223,6 +226,9 @@ public class SoulShots implements IItemHandler
 				break;
 			case 5:
 				skillId = 17817;
+				rubyMul = 1.2;
+				break;
+			case 6:
 				rubyMul = 1.2;
 				break;
 		}

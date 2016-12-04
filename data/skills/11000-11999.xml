@@ -4490,6 +4490,42 @@
             </abnormal>
         </for>
     </skill>
+
+    <skill id="11153" levels="25" name="Chain Blaze">
+        <enchantRoute id="1" level="21,22,23,24,25" /> <!-- Power -->
+        <enchantRoute id="2" level="21,22,23,24,25" /> <!-- Chance -->
+        <enchantRoute id="3" level="21,22,23,24,25" /> <!-- Distance -->
+        <table name="#mpConsume">31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73</table>
+        <table name="#power">57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 535 545
+            555
+            <enchantRoute id="1" level="21,22,23,24,25" type="ADD_PERCENT">1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1
+                5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8
+            </enchantRoute>
+        </table>
+        <set name="target" val="TARGET_AROUND_TARGET" />
+        <set name="targetDirection" val="AROUND" />
+        <set name="effectRange" val="1100" />
+        <set name="skillRadius" val="500" />
+        <set name="behaviorType" val="ATTACK" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="power" val="#power" />
+        <set name="hitTime" val="1000" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="7000" />
+
+
+        <for>
+            <abnormal>
+                <effect type="MagicPull" val="0" />
+            </abnormal>
+            <abnormal noicon="1">
+                <effect type="Negate" val="0" />
+            </abnormal>
+        </for>
+    </skill>
     <!--
 		Level 1: Pulls nearby enemies to the center.
 		Level 2:

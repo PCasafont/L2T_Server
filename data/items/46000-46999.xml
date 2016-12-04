@@ -4438,49 +4438,55 @@
 		Dimensional Item
 		STR +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46717" type="Weapon" name="Mysterious Talisman - STR - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46717" type="Armor" name="Mysterious Talisman - STR - 30-day" icon="icon.npoint_talisman_stat"
+         defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="1"/>
     </item>
     <!--
 		Dimensional Item
 		INT +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46718" type="Weapon" name="Mysterious Talisman - INT - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46718" type="Armor" name="Mysterious Talisman - INT - 30-day" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="2"/>
     </item>
     <!--
 		Dimensional Item
 		DEX +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46719" type="Weapon" name="Mysterious Talisman - DEX - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46719" type="Armor" name="Mysterious Talisman - DEX - 30-day" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="3"/>
     </item>
     <!--
 		Dimensional Item
 		WIT +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46720" type="Weapon" name="Mysterious Talisman - WIT - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46720" type="Armor" name="Mysterious Talisman - WIT - 30-day" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="4"/>
     </item>
     <!--
 		Dimensional Item
 		CON +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46721" type="Weapon" name="Mysterious Talisman - CON - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46721" type="Armor" name="Mysterious Talisman - CON - 30-day" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="5"/>
     </item>
     <!--
 		Dimensional Item
 		MEN +5 when wearing the Talisman. Effect does not stack with identical ones.
 	-->
-    <item id="46722" type="Weapon" name="Mysterious Talisman - MEN - 30-day" icon="icon.npoint_talisman_stat"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="46722" type="Armor" name="Mysterious Talisman - MEN - 30-day" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
+        <skill id="90005" level="6"/>
     </item>
     <!--
 		Dimensional Item

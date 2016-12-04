@@ -159,6 +159,9 @@ public class BlessedSpiritShot implements IItemHandler
 					case 38931:
 						sapphireLvl = 5;
 						break;
+					case 47689:
+						sapphireLvl = 6;
+						break;
 				}
 			}
 		}
@@ -234,6 +237,8 @@ public class BlessedSpiritShot implements IItemHandler
 				skillLvl = 2;
 				sapphireMul = 1.2;
 				break;
+			case 6:
+				sapphireMul = 1.2;
 		}
 
 		activeChar.consumableLock.lock();

@@ -102,6 +102,7 @@
         <stat value="97" bonus="9.01" />
         <stat value="98" bonus="9.33" />
         <stat value="99" bonus="9.67" />
+        <stat value="100" bonus="10.0" />
     </STR>
     <INT>
         <!-- 1.020^(INT-31.375) -->
@@ -205,6 +206,7 @@
         <stat value="97" bonus="3.67" />
         <stat value="98" bonus="3.74" />
         <stat value="99" bonus="3.82" />
+        <stat value="100" bonus="4.0"
     </INT>
     <CON>
         <!-- 1.030^(CON-27.632) -->
@@ -308,6 +310,7 @@
         <stat value="97" bonus="7.77" />
         <stat value="98" bonus="8" />
         <stat value="99" bonus="8.24" />
+        <stat value="100" bonus="8.5" />
     </CON>
     <MEN>
         <!-- 1.010^(MEN+0.060) -->
@@ -411,6 +414,7 @@
         <stat value="97" bonus="2.63" />
         <stat value="98" bonus="2.65" />
         <stat value="99" bonus="2.68" />
+        <stat value="100" bonus="2.71" />
     </MEN>
     <DEX>
         <!-- 1.009^(DEX-19.360) -->
@@ -514,6 +518,7 @@
         <stat value="97" bonus="2" />
         <stat value="98" bonus="2.02" />
         <stat value="99" bonus="2.04" />
+        <stat value="100" bonus="2.06" />
     </DEX>
     <WIT>
         <!-- 1.050^(WIT-20.000) -->
@@ -617,5 +622,6 @@
         <stat value="97" bonus="42.81" />
         <stat value="98" bonus="44.95" />
         <stat value="99" bonus="47.2" />
+        <stat value="100" bonus="50.0" />
     </WIT>
 </list>
