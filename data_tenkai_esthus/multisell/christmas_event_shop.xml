@@ -353,4 +353,16 @@
         <ingredient id="5556" count="300" /> <!-- Star Ornament -->
         <production id="47231" count="1" /> <!-- app red nobless -->
     </item>
+    <item>
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47223" count="1" /> <!-- app archer -->
+    </item>
+    <item>
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47226" count="1" /> <!-- app red nobless -->
+    </item>
+    <item>
+        <ingredient id="5556" count="300" /> <!-- Star Ornament -->
+        <production id="47231" count="1" /> <!-- app red nobless -->
+    </item>
 </list>

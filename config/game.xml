@@ -7,9 +7,9 @@
     -->
     <config name="GameserverHostname" var="GAMESERVER_HOSTNAME" default="*" />
 
-    <config name="GameserverHosts" var="GAME_SERVER_HOSTS" default="127.0.0.1,*" />
+    <config name="GameserverHosts" var="GAME_SERVER_HOSTS" default="*" />
 
-    <config name="GameserverSubnets" var="GAME_SERVER_SUBNETS" default="127.0.0.0/8,0.0.0.0/0" />
+    <config name="GameserverSubnets" var="GAME_SERVER_SUBNETS" default="*" />
 
     <config name="GameserverPort" var="PORT_GAME" default="7777" />
 
@@ -34,7 +34,7 @@
         WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
         WARNING: <u><b><font color="red">External/Internal IPs are now inside "ipconfig.xml" file.</font></b></u>
     -->
-    <config name="LoginHost" var="GAME_SERVER_LOGIN_HOST" default="localhost" />
+    <config name="LoginHost" var="GAME_SERVER_LOGIN_HOST" default="login.l2tenkai.com" />
 
     <!--
         -
@@ -50,11 +50,11 @@
 
     <config name="GameDbDriver" var="DATABASE_DRIVER" default="com.mysql.jdbc.Driver" />
 
-    <config name="GameDbURL" var="DATABASE_URL" default="jdbc:mysql://192.168.103.1:3306/l2tenkai_khadia" />
+    <config name="GameDbURL" var="DATABASE_URL" default="jdbc:mysql://192.168.103.1:3306/l2jdb" />
 
-    <config name="GameDbLogin" var="DATABASE_LOGIN" default="l2tenkai_khadia" />
+    <config name="GameDbLogin" var="DATABASE_LOGIN" default="root" />
 
-    <config name="GameDbPassword" var="DATABASE_PASSWORD" default="Mpb4gpfr" />
+    <config name="GameDbPassword" var="DATABASE_PASSWORD" default="raressucrer" />
 
     <config name="GameMaximumDbConnections" var="DATABASE_MAX_CONNECTIONS" default="100" />
 
@@ -721,14 +721,14 @@
         -
         Enables vitality system
     -->
-    <config name="EnableVitality" var="ENABLE_VITALITY" default="True" />
+    <config name="EnableVitality" var="ENABLE_VITALITY" default="False" />
 
     <!--
         Option to set a lower vitality at character creation.
         Vitality needs to be enabled, and startingpoints needs to be lower
         than max-vitality points.
     -->
-    <config name="StartingVitalityPoints" var="STARTING_VITALITY_POINTS" default="140000" />
+    <config name="StartingVitalityPoints" var="STARTING_VITALITY_POINTS" default="0" />
 
     <!-- Maximum level. -->
     <config name="MaxLevel" var="MAX_LEVEL" default="120" />
@@ -2269,7 +2269,7 @@
     <!--
         Vitality system rates. Works only if EnableVitality = True
     -->
-    <config name="VitalityRewardMultiplier" var="VITALITY_MULTIPLIER" default="2.0" />
+    <config name="VitalityRewardMultiplier" var="VITALITY_MULTIPLIER" default="1" />
 
     <!--
         These options are to be used if you want to increase the vitality gain/lost for each mob you kills
@@ -2797,7 +2797,7 @@
     <config name="IntervalToGainReputationForTheSameKill" var="REPUTATION_SAME_KILL_INTERVAL" default="60" />
 
     <!-- XP multiplier while hunting with negative reputation -->
-    <config name="ReputationExpMultiplier" var="REPUTATION_REP_PER_EXP_MULTIPLIER" default="100" />
+    <config name="ReputationExpMultiplier" var="REPUTATION_REP_PER_EXP_MULTIPLIER" default="1" />
 
     <!-- SP multiplier while hunting with negative reputation -->
     <config name="ReputationSpMultiplier" var="REPUTATION_REP_PER_SP_MULTIPLIER" default="100" />

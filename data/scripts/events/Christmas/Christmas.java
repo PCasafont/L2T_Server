@@ -33,7 +33,7 @@ import java.util.Map;
 public class Christmas extends Quest
 {
 	//Config
-	private static final boolean _exChangeOnly = true;
+	private static final boolean _exChangeOnly = false;
 	private static final int _startInvasionEach = 3; //Hours
 	private static final int _timeToEndInvasion = 15; //Minutes
 	private static final int _rewardRandomPlayerEach = 2; //Hours
