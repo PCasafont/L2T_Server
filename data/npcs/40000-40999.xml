@@ -8,6 +8,7 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="-114309" y="253578" z="-1540" heading="54205" respawn="1000" />
     </npc>
     <npc id="40002" templateId="33123" name="Genius" serverSideName="true" title="Buffing Services"
          serverSideTitle="true" level="70"
@@ -18,6 +19,7 @@
          walkSpd="80" runSpd="120" rHand="35105" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="-114448" y="253576" z="-1543" heading="44995" respawn="1000" />
     </npc>
     <npc id="40003" templateId="32897" name="Prinz" serverSideName="true" title="General Merchant"
          serverSideTitle="true" level="70"
@@ -28,6 +30,7 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
+        <spawn x="-115156" y="253575" z="-1497" heading="155" respawn="1000" />
     </npc>
     <npc id="40004" templateId="32153" name="Esthus" serverSideName="true" title="Server Information"
          serverSideTitle="true"
@@ -38,6 +41,7 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="-114378" y="252441" z="-1566" heading="16743" respawn="1000" />
     </npc>
     <npc id="40005" templateId="32147" name="Nelinn" serverSideName="true" title="Services NPC" serverSideTitle="true"
          level="70"
@@ -48,6 +52,8 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="-113642" y="253404" z="-1498" heading="33685" respawn="1000" />
+
     </npc>
     <npc id="40006" templateId="32237" name="Mayu" serverSideName="true" title="Event Manager" serverSideTitle="true"
          level="70"

@@ -9,7 +9,7 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
-    <npc id="50008" templateId="32897" name="Inia" serverSideName="true" title="General Merchant"
+    <npc id="50008" templateId="33804" name="Charlotte" serverSideName="true" title="Event Shop"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"

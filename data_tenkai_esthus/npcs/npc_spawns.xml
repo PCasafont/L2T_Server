@@ -3,16 +3,11 @@
     <!-- Beryn
     <npc id="2512">
         <spawn x="83681" y="148856" z="-3408" heading="32478" respawn="60" /> -->
+    </npc>
     <!-- Andromeda -->
     <npc id="50007">
         <spawn x="84629" y="148797" z="-3403" heading="64171" respawn="10000" />
     </npc>
-
-
-    <!-- Informations NPC au debut -->
-    <npc id="40004"><spawn x="-114373" y="258617" z="-1199" heading="64171" respawn="10000" /></npc>
-
-
     <!-- Raiders annoying army -->
     <npc id="19322" overrideSpawns="true">
     </npc>

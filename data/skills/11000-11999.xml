@@ -4518,9 +4518,6 @@
 
 
         <for>
-            <abnormal>
-                <effect type="MagicPull" val="0" />
-            </abnormal>
             <abnormal noicon="1">
                 <effect type="Negate" val="0" />
             </abnormal>
