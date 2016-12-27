@@ -12240,11 +12240,6 @@
         <skill id="4416" level="6" /> <!-- Humanoids -->
         <skill id="5465" level="1" /> <!-- Earth Attack -->
         <skill id="15544" level="1" /> <!-- Rush Attack -->
-        <spoilDrop itemId="36560" min="1" max="1" chance="0.3" /> <!-- Accessory Gem (Top-grade) -->
-        <spoilDrop itemId="36885" min="1" max="1" chance="0.003" /> <!-- Recipe: Durable Braid - Downgrade -->
-        <itemDrop itemId="57" min="29082" max="135324" chance="71.368" /> <!-- Adena -->
-        <itemDrop itemId="36560" min="1" max="1" chance="0.17091" /> <!-- Accessory Gem (Top-grade) -->
-        <itemDrop itemId="36863" min="1" max="1" chance="0.0055" /> <!-- Recipe: Exquisite Leather - Upgrade -->
         <spawn x="16758" y="-138140" z="-968" heading="55830" respawn="60" />
         <spawn x="19355" y="-138801" z="-968" heading="4796" respawn="60" />
         <spawn x="20075" y="-138258" z="-952" heading="55028" respawn="60" />
@@ -13750,15 +13745,15 @@
                   chance="0.0009" /> <!-- Recipe: Armor Fragment (Top-grade) - Upgrade -->
         <itemDrop itemId="17421" min="1" max="1" chance="0.0009" /> <!-- Amaranthine Stormer -->
     </npc>
-    <npc id="23349" name="Noctum" title="Gravekeeper" level="87" type="L2Monster" atkRange="40" hpMax="186799"
+    <npc id="23349" name="Noctum" title="Gravekeeper" level="87" type="L2Monster" atkRange="40" hpMax="99736"
          hpReg="27.86"
          mpMax="2339" mpReg="20.21" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="2042251" sp="490"
-         pAtk="90750"
-         mAtk="109500" pDef="6000" mDef="4500" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60"
+         pAtk="40750"
+         mAtk="24500" pDef="990" mDef="990" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60"
          runSpd="120"
          collisionRadius="50" collisionHeight="60.5" fireRes="150" waterRes="150" windRes="150" earthRes="150"
          holyRes="150"
-         darkRes="150" aiType="fighter">
+         darkRes="150" aiType="fighter" isLethalImmune="true" >
         <minion npcId="22938" min="2" max="2" /> <!-- Seknus -->
         <minion npcId="22932" min="1" max="1" /> <!-- Krakia Carcass -->
         <skill id="15582" level="1" /> <!-- Fearsome Bombing -->
@@ -16157,7 +16152,7 @@
          aggressive="true"
          aggroRange="600" rHand="17421" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150"
          windRes="150"
-         earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
+         earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
         <spawn x="-47810" y="57540" z="-3096" heading="44472" respawn="60" />
         <spawn x="-48087" y="57634" z="-3088" heading="31361" respawn="60" />
         <spawn x="-48089" y="58478" z="-3168" heading="30240" respawn="60" />

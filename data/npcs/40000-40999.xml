@@ -30,7 +30,7 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-115156" y="253575" z="-1497" heading="155" respawn="1000" />
+        <spawn x="-115136" y="253554" z="-1503" heading="0" respawn="1000" />
     </npc>
     <npc id="40004" templateId="32153" name="Esthus" serverSideName="true" title="Server Information"
          serverSideTitle="true"

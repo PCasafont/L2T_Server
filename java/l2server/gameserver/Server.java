@@ -218,7 +218,6 @@ public class Server
 		GrandBossManager.getInstance().initZones();
 		FourSepulchersManager.getInstance().init();
 		EventDroplist.getInstance();
-		MainTownManager.getInstance();
 
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();

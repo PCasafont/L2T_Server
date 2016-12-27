@@ -316,8 +316,7 @@ public class Balok extends L2AttackableAIScript
                         {
                             world._rewardedPlayers.add(pMember);
                             pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                    Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                            13 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+                                    3, player, true);
                         }
                         else
                         {

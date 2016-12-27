@@ -10590,7 +10590,10 @@
     </item>
     <!-- Wrapped Pack containing Bard's heart. -->
     <item id="34846" type="EtcItem" name="Bard's Gift" icon="icon.present_of_destination_event" immediateEffect="1"
-          weight="10">
+          weight="10" handler="ExtractableItems" isSellable="true" isTradable="true">
+        <capsuledItem id="57" min="1000000" max="100000000" chance="100.0" /> <!-- Adena -->
+        <capsuledItem id="36515" min="1" max="500" chance="100.0" /> <!-- Elcyum -->
+        <capsuledItem id="37559" min="1" max="20" chance="100.0" /> <!-- Shiny Coin -->
     </item>
     <!-- When used, you can temporarily feel the Vitality recovery herb's effect for 2 hours. No effect applies when used while the 'Birthday Vitality' buff is in effect. Cooldown is 60 min. Vitality item with limited usage. Will not be deleted upon death. -->
     <item id="34847" type="EtcItem" name="Pirate Elixir (2-hour)" icon="icon.etc_hot_spring_nectar_i00"

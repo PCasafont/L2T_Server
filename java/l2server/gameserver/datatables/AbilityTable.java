@@ -147,7 +147,7 @@ public class AbilityTable
 
 	public long getAdenaCostForReset()
 	{
-		return 10000000;
+		return 1	;
 	}
 
 	public long getSpCostPerPoint(int curPoints)

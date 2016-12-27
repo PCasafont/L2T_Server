@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list>
     <drop category="newPlayer">
-        <itemDrop itemId="4357" min="75236" max="91853" chance="100"/> <!-- Silver Shilen -->
+        <itemDrop itemId="37559" min="1" max="1" chance="10"/> <!-- Shiny Coin -->
+        <itemDrop itemId="10429" min="1" max="1" chance="5"/> <!-- Enchant Scroll -->
         <itemDrop itemId="19467" min="1" max="1" chance="30"/> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
         <itemDrop itemId="19468" min="1" max="1" chance="30"/> <!-- Teal Soul Crystal Fragment (R99-grade) -->
         <itemDrop itemId="19469" min="1" max="1" chance="30"/> <!-- Purple Soul Crystal Fragment (R99-grade) -->
@@ -27,8 +28,6 @@
         <itemDrop itemId="30297" min="1" max="2" chance="40"/> <!-- Superior Giant's Codex -->
         <itemDrop itemId="30299" min="1" max="1" chance="5"/> <!-- Superior Giant's CoDEX - Discipline -->
         <itemDrop itemId="38941" min="1" max="1" chance="10"/> <!-- La Vie En Rose's Jewelry Box -->
-        <itemDrop itemId="19168" min="1" max="1" chance="60"/> <!-- Life Stone: Accessory (R99-grade) -->
-        <itemDrop itemId="18576" min="1" max="2" chance="60"/> <!-- Top-grade Life Stone (R99-grade) -->
         <itemDrop itemId="36513" min="1" max="1" chance="30"/> <!-- Elcyum Powder -->
     </drop>
     <drop category="oldPlayer">
@@ -36,12 +35,12 @@
         <itemDrop itemId="30299" min="1" max="1" chance="10"/> <!-- Superior Giant's CoDEX - Discipline -->
         <itemDrop itemId="46150" min="1" max="1" chance="20"/> <!-- Superior Giant's Codex Chapter 1 -->
         <itemDrop itemId="46152" min="1" max="1" chance="5"/> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-        <itemDrop itemId="38941" min="1" max="1" chance="10"/> <!-- La Vie En Rose's Jewelry Box -->
         <itemDrop itemId="36514" min="1" max="2" chance="100"/> <!-- Elcyum Crystal -->
-        <itemDrop itemId="4355" min="1" max="1" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="37559" min="1" max="1" chance="5"/> <!-- Shiny Coin -->
     </drop>
     <drop category="boss">
-        <itemDrop itemId="4355" min="20" max="30" chance="50"/> <!-- Blue Eva -->
+        <itemDrop itemId="37559" min="1" max="10" chance="30"/> <!-- Shiny Coin -->
+        <itemDrop itemId="10429" min="1" max="2" chance="30"/> <!-- Enchant Scroll -->
         <itemDrop itemId="36515" min="3" max="5" chance="40"/> <!-- Elcyum -->
         <itemDrop itemId="36731" min="1" max="1" chance="10"/> <!-- Life Stone Instilled with Giants' Power -->
         <itemDrop itemId="30298" min="2" max="3" chance="60"/> <!-- Superior Giant's CoDEX - Mastery -->
@@ -49,13 +48,5 @@
         <itemDrop itemId="35675" min="1" max="5" chance="100"/> <!-- High-grade Elixir of Life (R-grade) -->
         <itemDrop itemId="35676" min="1" max="5" chance="100"/> <!-- High-grade Elixir of Mind (R-grade) -->
         <itemDrop itemId="35677" min="1" max="5" chance="100"/> <!-- High-grade Elixir of CP (R-grade) -->
-        <itemDrop itemId="19462" min="1" max="1" chance="3"/> <!-- Octavis' Shirt -->
-        <itemDrop itemId="19457" min="1" max="1" chance="3"/> <!-- Octavis' Ring -->
-        <itemDrop itemId="19458" min="1" max="1" chance="3"/> <!-- Octavis' Earring -->
-        <itemDrop itemId="19459" min="1" max="1" chance="3"/> <!-- Octavis' Necklace -->
-        <itemDrop itemId="19456" min="1" max="1" chance="3"/> <!-- Istina's Shirt -->
-        <itemDrop itemId="19453" min="1" max="1" chance="3"/> <!-- Istina's Necklace -->
-        <itemDrop itemId="19451" min="1" max="1" chance="3"/> <!-- Istina's Ring -->
-        <itemDrop itemId="19452" min="1" max="1" chance="3"/> <!-- Istina's Earring -->
     </drop>
 </list>

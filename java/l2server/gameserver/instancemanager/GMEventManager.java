@@ -64,8 +64,8 @@ import java.util.Map.Entry;
 public class GMEventManager
 {
 	private static final int _bufferNpcId = 8508;
-	private static final int _dummyArenaSignNpcId = 35608;
-	private static final int _rewardCoinId = 14720;
+	private static final int _dummyArenaSignNpcId = 50013;
+	private static final int _rewardCoinId = 37559;
 	private Map<String, Event> _predefinedEvents = new HashMap<>();
 	private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>();
 	private static Map<String, SubEvent> _subEvents = new HashMap<>();

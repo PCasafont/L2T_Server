@@ -554,8 +554,7 @@ public class Antharas extends L2AttackableAIScript
                         player.addItem(_qn, _expeditionVolunteerCrystalPouch, 1, npc, true);
 
                         player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                Rnd.get(10 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                        18 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+                                4, player, true);
                     }
                     else
                     {

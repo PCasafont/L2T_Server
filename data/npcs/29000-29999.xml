@@ -7942,4 +7942,44 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
+    <npc id="29303" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="1000130" hpReg="8.5" mpMax="1961"
+         mpReg="3.0" STR="90" CON="120" DEX="120" INT="120" WIT="96" MEN="80" exp="103954" sp="95566" pAtk="50000" mAtk="50000" pDef="2000"
+         mDef="20000" pAtkSpd="1400" mAtkSpd="1403" pCritRate="10" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
+         extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
+        <skill id="4416" level="11" /> <!-- Giants -->
+        <skill id="4408" level="20" /> <!-- HP Increase (12x) -->
+        <skill id="4409" level="20" /> <!-- MP Increase (12x) -->
+        <skill id="4410" level="22" /> <!-- Extremely Strong P. Atk. -->
+        <skill id="4411" level="22" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="22" /> <!-- Average P. Def. -->
+        <skill id="4413" level="22" /> <!-- Extremely Strong M. Def. -->
+        <skill id="4435" level="5" /> <!-- Stun Resistance -->
+        <skill id="4438" level="5" /> <!-- Sleep Resistance -->
+        <skill id="4441" level="5" /> <!-- Mental Resistance -->
+        <skill id="4440" level="5" /> <!-- Paralysis Resistance -->
+        <skill id="4439" level="5" /> <!-- Hold Resistance -->
+        <skill id="4414" level="2" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="5620" level="8" /> <!-- Melee Attack Vulnerability -->
+        <skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
+        <skill id="6019" level="1" /> <!-- Searching Master -->
+        <skill id="4032" level="8" /> <!-- Power Strike -->
+
+        <spawn x="91802" y="161529" z="2034" heading="32294" respawn="345600" />
+    </npc>
+    <npc id="29304" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
+         mpReg="3.0" STR="90" CON="90" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="1" mAtk="1" pDef="1"
+         mDef="1" pAtkSpd="400" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
+         extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
+        <skill id="4416" level="11" /> <!-- Giants -->
+    </npc>
+    <npc id="29305" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
+         mpReg="3.0" STR="90" CON="90" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="1" mAtk="1" pDef="1"
+         mDef="1" pAtkSpd="400" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
+         extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
+        <skill id="4416" level="11" /> <!-- Giants -->
+    </npc>
 </list>

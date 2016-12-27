@@ -35,12 +35,12 @@ public class Christmas extends Quest
 	//Config
 	private static final boolean _exChangeOnly = false;
 	private static final int _startInvasionEach = 3; //Hours
-	private static final int _timeToEndInvasion = 15; //Minutes
-	private static final int _rewardRandomPlayerEach = 2; //Hours
+	private static final int _timeToEndInvasion = 10; //Minutes
+	private static final int _rewardRandomPlayerEach = 3; //Hours
 	private static final int _santaTalksEach = 3; //Hours
-	private static final int _santaId = 33885;
+	private static final int _santaId = 50014;
 	private static final int _secondSantaId = 104;
-	private static final int[] _invaderIds = {80198, 80199};
+	private static final int[] _invaderIds = {80198, 80199, 80498, 80499};
 
 	//Vars
 	private static Long _nextInvasion;
@@ -55,9 +55,9 @@ public class Christmas extends Quest
 
 	private static final int[][] _randomRewards = {
 			//Item Id, ammount
-			{36513, 1000}, //Elcyum Powder
-			{36514, 100}, //Elcyum Crystal
-			{36515, 10} //Elcyum
+			{57, 5000000}, // Adena
+			{36414, 5}, // Dragon Claw
+			{37559, 5} //Shiny Coin
 	};
 
 	public Christmas(int id, String name, String descr)
@@ -65,44 +65,13 @@ public class Christmas extends Quest
 		super(id, name, descr);
 
 		//Spawn Santa's
-		addSpawn(_santaId, 83453, 148642, -3405, 32659, false, 0);
-		addSpawn(_santaId, 147709, -55308, -2735, 49609, false, 0);
-		addSpawn(_santaId, 18456, 145205, -3103, 8291, false, 0);
-		addSpawn(_santaId, -12661, 122568, -3121, 15716, false, 0);
-		addSpawn(_santaId, 87360, -143376, -1293, 15917, false, 0);
-		addSpawn(_santaId, 117066, 77063, -2694, 38717, false, 0);
-		addSpawn(_santaId, 147463, 25632, -2013, 15704, false, 0);
-		addSpawn(_santaId, 43903, -47733, -797, 49285, false, 0);
-		addSpawn(_santaId, 82916, 53098, -1496, 16552, false, 0);
-		addSpawn(_santaId, -80920, 149744, -3044, 16304, false, 0);
-		addSpawn(_santaId, 111380, 218701, -3466, 17021, false, 0);
-		addSpawn(_santaId, -59011, -56895, -2042, 31470, false, 0);
-		addSpawn(_santaId, -78307, 247921, -3303, 24266, false, 0);
+
+		//addSpawn(_santaId, -78307, 247921, -3303, 24266, false, 0);
+
 
 		if (!_exChangeOnly)
 		{
-			//Small Tree
-			addSpawn(13006, 83276, 149323, -3409, 0, false, 0);
-			addSpawn(13006, 83680, 149248, -3409, 31644, false, 0);
-			addSpawn(13006, 83680, 147988, -3409, 33115, false, 0);
-			addSpawn(13006, 83271, 147908, -3409, 14420, false, 0);
-			addSpawn(13006, 83258, 148361, -3409, 289, false, 0);
-			addSpawn(13006, 83249, 148799, -3409, 1722, false, 0);
-			addSpawn(13006, 83076, 149323, -3473, 508, false, 0);
-			addSpawn(13006, 83066, 148841, -3473, 32767, false, 0);
-			addSpawn(13006, 83067, 148396, -3473, 31613, false, 0);
-			addSpawn(13006, 83066, 147911, -3473, 32408, false, 0);
-			addSpawn(13006, -59316, -56895, -2042, 33975, false, 0);
-			addSpawn(13006, -59428, -56607, -2042, 44389, false, 0);
-			addSpawn(13006, -59721, -56487, -2042, 48539, false, 0);
-			addSpawn(13006, -60016, -56599, -2042, 57046, false, 0);
-			addSpawn(13006, -60127, -56895, -2042, 386, false, 0);
-			addSpawn(13006, -60010, -57188, -2042, 7845, false, 0);
-			addSpawn(13006, -59719, -57301, -2042, 16338, false, 0);
-			addSpawn(13006, -59426, -57187, -2042, 23351, false, 0);
 
-			//Big Tree
-			addSpawn(34009, 82595, 148617, -3476, 63602, false, 0);
 		}
 
 		addStartNpc(_santaId);
@@ -299,22 +268,22 @@ public class Christmas extends Quest
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		StringBuilder tb = new StringBuilder();
-		tb.append("<html><center><font color=\"3D81A8\">Merry Christmas!</font></center><br1>Hohohoh! Hi " +
+		tb.append("<html><center><font color=\"3D81A8\">MEUUUH!</font></center><br1>Hohohoh! Hi " +
 				player.getName() +
-				" If you give me some <font color=LEVEL>Star Ornament's</font> I can give you some gifts! Take all what you can!<br>");
+				" If you give me some <font color=LEVEL>Milk</font> I can give you some gifts! Take all what you can!<br>");
 
 		if (_exChangeOnly)
 		{
 			tb.append(
-					"This event is currently working in exchange mode, there are no more invasions or free gifts, you can only exchange your Star Ornaments.<br>");
+					"This event is currently working in exchange mode, there are no more invasions or free gifts, you can only exchange your Milk.<br>");
 		}
 		else
 		{
 			tb.append(
-					"You can get <font color=LEVEL>Star Ornament</font> while participating in the <font color=LEVEL>Snowman's invasion</font> each <font color=LEVEL>" +
+					"You can get <font color=LEVEL>Milk</font> while participating in the <font color=LEVEL>Cow invasion</font> each <font color=LEVEL>" +
 							_startInvasionEach + "</font> hours.<br>");
 			tb.append(
-					"<font color=LEVEL>Santa</font> will also visit <font color=LEVEL>randomly</font> each <font color=LEVEL>" +
+					"<font color=LEVEL>King of the cows</font> will also visit <font color=LEVEL>randomly</font> each <font color=LEVEL>" +
 							_rewardRandomPlayerEach +
 							"</font> hours an <font color=LEVEL>active</font> player and will give special random gifts!<br>");
 			tb.append(getNextInvasionTime() + "<br1>");
@@ -335,7 +304,7 @@ public class Christmas extends Quest
 				"_multisell christmas_event_shop\"><font color=c2dceb>View the event shop.</font></a><br1>");
 		tb.append("<br>");
 
-		if (!_exChangeOnly)
+		/*if (!_exChangeOnly)
 		{
 			tb.append("<font color=\"3D81A8\">Free Effects:</font><br1>");
 			tb.append(
@@ -349,7 +318,7 @@ public class Christmas extends Quest
 			tb.append(
 					"<a action=\"bypass -h Quest Christmas eventMusic\"><font color=c2dceb>Play some music!</font></a><br1>");
 			tb.append("<br>");
-		}
+		}*/
 
 		//GMPart
 		if (player.isGM())
@@ -379,12 +348,12 @@ public class Christmas extends Quest
 			if (_exChangeOnly)
 			{
 				Announcements.getInstance().announceToAll(
-						"Santa's Girl: Hohoho! I need tons of Star Ornaments!!! You have only few days more for get some gifts before I go to my home! Hohoho! Hohoho!");
+						"King of the Cows: Hohoho! I need tons of Milk!!! You have only few days more for get some gifts before I go to my home! Hohoho! Hohoho!");
 			}
 			else
 			{
 				Announcements.getInstance().announceToAll(
-						"Santa's Girl: Hohoho! I need tons of Star Ornaments!!! Please collect them in Snowman's invasion for me!! You can found me at any Town! Hohoho! Hohoho!");
+						"King of the Cows: Hohoho! I need tons of Milk !!! Please collect them in cow invasion for me!! You can found me at any Town! Hohoho! Hohoho!");
 			}
 		}
 		else if (event.equalsIgnoreCase("teleport_to_fantasy"))
@@ -504,7 +473,7 @@ public class Christmas extends Quest
 				radius += 300;
 			}
 
-			Announcements.getInstance().announceToAll("Fantasy Island is under Snowmen's invasion!");
+			Announcements.getInstance().announceToAll("Fantasy Island is under Cow invasion!");
 			Announcements.getInstance().announceToAll("Don't attack mobs from other players!");
 			Announcements.getInstance().announceToAll("Dualbox is not allowed on the event!");
 			Announcements.getInstance()
@@ -572,10 +541,10 @@ public class Christmas extends Quest
 
 		if (minutes < 0)
 		{
-			return "<font color=LEVEL>Next Santa Reward in: Currently rewarding a player!</font>";
+			return "<font color=LEVEL>Next King of the Cows Reward in: Currently rewarding a player!</font>";
 		}
 
-		return "<font color=LEVEL>Next Santa Reward: " + hours + " hours and " + minutes + " minutes!</font>";
+		return "<font color=LEVEL>Next King of the Cows Reward: " + hours + " hours and " + minutes + " minutes!</font>";
 	}
 
 	@Override

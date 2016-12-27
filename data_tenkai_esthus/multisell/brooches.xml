@@ -22,7 +22,7 @@
     </item>
     <!-- La Vie En Rose's Jewelry Box -->
     <item>
-        <ingredient id="57" count="150000" />
+        <ingredient id="57" count="50000" />
         <production id="38941" count="1" />
     </item>
 </list>

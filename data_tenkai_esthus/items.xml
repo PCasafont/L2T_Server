@@ -34,4 +34,5 @@
     <item id="46336" type="Weapon" name="Shadow Dualsword" canBeUsedAsApp="true" />
     <!-- BB QHP -->
     <item id="1540" type="EtcItem" name="Quick Healing Potion" reuseDelay="300000" />
+
 </list>

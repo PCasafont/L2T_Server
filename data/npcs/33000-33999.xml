@@ -8007,6 +8007,7 @@
         <spawn x="146468" y="27822" z="-2264" heading="65323" respawn="60" />
         <spawn x="15145" y="143472" z="-2664" heading="57049" respawn="60" />
         <spawn x="86158" y="-143435" z="-1336" heading="63814" respawn="60" />
+        <spawn x="-115173" y="252991" z="-1512" heading="0" respawn="60" />
         <spawn x="43463" y="-48421" z="-792" heading="19404" respawn="0" />
     </npc>
     <npc id="33826" name="Small Draco" level="1" type="L2Npc" atkRange="40" hpMax="68" hpReg="1.74" mpMax="45"
@@ -8843,6 +8844,8 @@
          pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="-80038" y="244262" z="-3723" heading="33685" respawn="1000" />
+        <spawn x="-78429" y="244203" z="-3695" heading="33685" respawn="1000" />
     </npc>
     <npc id="33921" name="Allenos" title="Sergeant" level="93" type="L2Npc" atkRange="40" hpMax="10788" hpReg="10.27"
          mpMax="2249"

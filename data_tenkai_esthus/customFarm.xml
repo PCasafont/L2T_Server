@@ -1,57 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <customFarm farmZone="fairy_settlement" adjustDropsPerMob="22883"> <!-- Lvl: 90 | Strength: 160 | Exp Score: 5 -->
-    </customFarm>
-    <customFarm farmZone="isle_of_souls" adjustDropsPerMob="23253"> <!-- Lvl: 94 | Strength: 231 | Exp Score: 35 -->
-    </customFarm>
-    <customFarm farmZone="seal_of_shilen" adjustDropsPerMob="22886"> <!-- Lvl: 95 | Strength: 219 | Exp Score: 30 -->
-    </customFarm>
-    <customFarm farmZone="prison_of_darkness"
-                adjustDropsPerMob="22970"> <!-- Lvl: 93 | Strength: 1461 | Exp Score: 5 -->
-    </customFarm>
-    <customFarm farmZone="garden_of_genesis" adjustDropsPerMob="22957"> <!-- Lvl: 92 | Strength: 1461 | Exp Score: 1 -->
-    </customFarm>
-    <customFarm farmZone="garden_of_genesis_special"
-                adjustDropsPerMob="23038"> <!-- Lvl: 94 | Strength: 6000 | Exp Score: 1 -->
-    </customFarm>
-    <customFarm farmZone="nornils_cave" adjustDropsPerMob="23268"
-                overrideDrops="true"> <!-- Lvl: 95 | Strength: 1165 | Exp Score: 20 -->
-        <itemDrop itemId="57" min="4925" max="9428" chance="100" /> <!-- Adena -->
-    </customFarm>
-    <customFarm farmZone="nornils_cave_special" adjustDropsPerMob="23304"
-                overrideDrops="true"> <!-- Lvl: 96 | Strength: 1700 | Exp Score: 30 -->
-        <itemDrop itemId="57" min="6925" max="14428" chance="100" /> <!-- Adena -->
-    </customFarm>
-    <customFarm farmZone="orbis_temple"
-                adjustDropsPerMob="22916"> <!-- Lvl: 96 | Strength: 4174 | Exp Score: 20 | Mobs' strength varies from 1800 to 12500 -->
-        <dropCategory chance="100">
-            <itemDrop itemId="30297" min="1" max="1" chance="90" /> <!-- Superior Giant's Codex -->
-            <itemDrop itemId="30299" min="1" max="1" chance="10" /> <!-- Superior Giant's CoDEX - Discipline -->
-        </dropCategory>
-        <itemDrop itemId="19168" min="1" max="2" chance="10" /> <!-- Life Stone: Accessory (R99-grade) -->
-    </customFarm>
-    <customFarm farmZone="seed_of_hellfire"
-                adjustDropsPerMob="23230"> <!-- Lvl: 98 | Strength: 3732 | Exp Score: 20 | Mobs' strength varies from 1700 to 17200 -->
-    </customFarm>
-    <customFarm farmZone="guillotine_fortress"
-                adjustDropsPerMob="23209"> <!-- Lvl: 96 | Strength: 4467 | Exp Score: 25 | Mobs' strength varies from 3000 to 17900 -->
-    </customFarm>
-    <customFarm farmZone="cemetery"
-                adjustDropsPerMob="23299"> <!-- Lvl: 98 | Strength: 60000/1720 | Exp Score: 20 | Extremelly easy for mages -->
-    </customFarm>
-    <customFarm farmZone="lands_of_chaos" adjustDropsPerMob="23336"> <!-- Lvl: 96 | Strength: 38330 | Exp Score: 5 -->
-        <itemDrop itemId="57" min="25000" max="50000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="46150" min="1" max="5" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46151" min="1" max="5" chance="40" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
-        <itemDrop itemId="36978" min="1" max="1" chance="15" /> <!-- Scroll: Enchant Hair Accessory -->
-        <itemDrop itemId="46152" min="1" max="1" chance="25" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
-        <spoilDrop itemId="46152" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-    </customFarm>
-    <customFarm farmZone="raider_crossroads" adjustDropsPerMob="23316"
-                atkMultiplier="0.05" defMultiplier="0.1"
+
+    <customFarm farmZone="raider_crossroads"
+                atkMultiplier="0.07" defMultiplier="0.3" adjustDropsPerMob="23316"
                 overrideDrops="true"> <!-- Lvl: 99 | Strength: 19842 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
-        <itemDrop itemId="57" min="50000" max="75000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="57" min="55000" max="89437" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36665" min="1" max="1" chance="5" /> <!-- Nerva's Temporary Prison Key -->
         <itemDrop itemId="18577" min="1" max="1" chance="25" /> <!-- Legendary Life Stone (R99-grade) -->
         <itemDrop itemId="30297" min="1" max="3" chance="50" /> <!-- Superior Giant's Codex -->
@@ -60,98 +13,114 @@
         <itemDrop itemId="46151" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
         <itemDrop itemId="30299" min="1" max="1" chance="10" /> <!-- Superior Giant's CoDEX - Discipline -->
         <itemDrop itemId="46152" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-        <itemDrop itemId="4356" min="1" max="1" chance="5" /> <!-- Gold Einhasad -->
         <spoilDrop itemId="30299" min="1" max="1" chance="40" /> <!-- Superior Giant's CoDEX - Discipline -->
         <spoilDrop itemId="46152" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
     </customFarm>
-    <customFarm farmZone="raider_crossroads_special" adjustDropsPerMob="23329"
-                atkMultiplier="0.01" defMultiplier="0.1"
-                overrideDrops="true"> <!-- Lvl: 99 | Strength: 40000 | Exp Score: 230 | Extremelly high attack -->
-        <itemDrop itemId="57" min="100000" max="125000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="30298" min="2" max="3" chance="80" /> <!-- Superior Giant's CoDEX - Mastery -->
-        <itemDrop itemId="18577" min="1" max="1" chance="80" /> <!-- Legendary Life Stone (R99-grade) -->
+    <customFarm farmZone="ladar" overrideDrops="true">   <!-- Flaming Ladar -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36515" min="1" max="5" chance="75" /> <!-- Elcyum -->
     </customFarm>
-    <customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" expMultiplier="10"
-                atkMultiplier="1" defMultiplier="2.2" overrideDrops="true"
-                overrideLevels="107"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
-        <itemDrop itemId="57" min="200000" max="300000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="46154" min="1" max="3" chance="50" /> <!-- Superior Giant's Codex Chapter 2 -->
-        <itemDrop itemId="46155" min="1" max="3" chance="25" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
-        <itemDrop itemId="36515" min="1" max="2" chance="5" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
-        <itemDrop itemId="46156" min="1" max="1" chance="15" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
-        <spoilDrop itemId="46156" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex - Discipline Chapter 2 -->
-        <spoilDrop itemId="36515" min="1" max="2" chance="10" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
+    <customFarm farmZone="cassius" overrideDrops="true">  <!-- Wind Cassius -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36515" min="1" max="5" chance="75" /> <!-- Elcyum -->
+    </customFarm>
+    <customFarm farmZone="terakan" overrideDrops="true">   <!-- Earth Terakan -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36515" min="1" max="5" chance="75" /> <!-- Elcyum -->
     </customFarm>
     <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"
                 defMultiplier="50" overrideDrops="true"
                 overrideLevels="105"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
-        <itemDrop itemId="57" min="5000000" max="10000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="57" min="100000" max="1000000" chance="100" /> <!-- Adena -->
         <itemDrop itemId="36414" min="1" max="5" chance="100" /> <!-- Dragon Claw -->
         <itemDrop itemId="14720" min="1" max="5" chance="100" /> <!-- Event - Apiga -->
         <itemDrop itemId="36515" min="1" max="5" chance="75" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="1" max="1" chance="100" /> <!-- Gold Einhasad -->
-        <itemDrop itemId="4356" min="1" max="5" chance="40" /> <!-- Gold Einhasad -->
     </customFarm>
-    <customFarm farmZone="hellbound_beleth_magic_circle" adjustDropsPerMob="23354"
-                atkMultiplier="0.03" defMultiplier="0.25" overrideLevels="103"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="50000" max="100000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36513" min="2" max="5" chance="85" /> <!-- Elcyum Powder -->
-        <itemDrop itemId="46537" min="1" max="1" chance="10" /> <!-- Mystic Soul Crystal Fragment -->
-        <spoilDrop itemId="46537" min="1" max="1" chance="20" /> <!-- Mystic Soul Crystal Fragment -->
-    </customFarm>
-    <customFarm farmZone="hellbound_desert_quarry" adjustDropsPerMob="19506"
-                atkMultiplier="0.06" defMultiplier="0.3" overrideLevels="104"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="25000" max="50000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36513" min="5" max="12" chance="85" /> <!-- Elcyum Powder -->
-        <itemDrop itemId="39415" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary STR Dye (Charisma) -->
-        <itemDrop itemId="39416" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary DEX Dye (Charisma) -->
-        <itemDrop itemId="39417" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary CON Dye (Charisma) -->
-        <itemDrop itemId="39418" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary INT Dye (Charisma) -->
-        <itemDrop itemId="39419" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary WIT Dye (Charisma) -->
-        <itemDrop itemId="39420" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary MEN Dye (Charisma) -->
-        <itemDrop itemId="39445" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary STR Dye (Luck) -->
-        <itemDrop itemId="39446" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary DEX Dye (Luck) -->
-        <itemDrop itemId="39447" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary CON Dye (Luck) -->
-        <itemDrop itemId="39448" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary INT Dye (Luck) -->
-        <itemDrop itemId="39449" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary WIT Dye (Luck) -->
-        <itemDrop itemId="39450" min="1" max="1" chance="5" /> <!-- Lv. 5 Legendary MEN Dye (Luck) -->
-    </customFarm>
-    <customFarm farmZone="hellbound_phantasmal_ridge_1" adjustDropsPerMob="23384"
-                atkMultiplier="0.1" defMultiplier="0.4" overrideLevels="105"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="25000" max="50000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36514" min="1" max="1" chance="40" /> <!-- Elcyum Crystal -->
-        <itemDrop itemId="36550" min="3" max="5" chance="15" /> <!-- Weapon Fragment (Top-grade) -->
-        <itemDrop itemId="36565" min="1" max="2" chance="15" /> <!-- Exquisite Synthetic Cokes -->
-        <itemDrop itemId="36545" min="1" max="2" chance="15" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="36550" min="3" max="5" chance="90" /> <!-- Weapon Fragment (Top-grade) -->
-        <spoilDrop itemId="36565" min="5" max="12" chance="90" /> <!-- Exquisite Synthetic Cokes -->
-        <spoilDrop itemId="36545" min="3" max="5" chance="90" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="17" /> <!-- Gold Einhasad -->
-    </customFarm>
-    <customFarm farmZone="hellbound_phantasmal_ridge_2" adjustDropsPerMob="23395"
-                atkMultiplier="0.1" defMultiplier="0.5" overrideLevels="106"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="50000" max="90000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36514" min="1" max="1" chance="25" /> <!-- Elcyum Crystal -->
-        <itemDrop itemId="36550" min="1" max="3" chance="15" /> <!-- Weapon Fragment (Top-grade) -->
-        <itemDrop itemId="36565" min="1" max="3" chance="15" /> <!-- Exquisite Synthetic Cokes -->
-        <itemDrop itemId="36545" min="1" max="3" chance="15" /> <!-- Durandil Wire -->
-        <itemDrop itemId="4356" min="1" max="1" chance="10" /> <!-- Gold Einhasad -->
-        <spoilDrop itemId="36550" min="1" max="5" chance="90" /> <!-- Weapon Fragment (Top-grade) -->
-        <spoilDrop itemId="36565" min="1" max="5" chance="90" /> <!-- Exquisite Synthetic Cokes -->
-        <spoilDrop itemId="36545" min="1" max="5" chance="90" /> <!-- Durandil Wire -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="20" /> <!-- Gold Einhasad -->
+    <customFarm farmZone="garden_of_genesis" adjustDropsPerMob="22959"
+                atkMultiplier="2.2" defMultiplier="1.5" expMultiplier="2" overrideLevels="104"> <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="57" min="10000" max="20433" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="39415" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary STR Dye (Charisma) -->
+        <itemDrop itemId="39416" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary DEX Dye (Charisma) -->
+        <itemDrop itemId="39417" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary CON Dye (Charisma) -->
+        <itemDrop itemId="39418" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary INT Dye (Charisma) -->
+        <itemDrop itemId="39419" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary WIT Dye (Charisma) -->
+        <itemDrop itemId="39420" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary MEN Dye (Charisma) -->
+        <itemDrop itemId="39445" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary STR Dye (Luck) -->
+        <itemDrop itemId="39446" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary DEX Dye (Luck) -->
+        <itemDrop itemId="39447" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary CON Dye (Luck) -->
+        <itemDrop itemId="39448" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary INT Dye (Luck) -->
+        <itemDrop itemId="39449" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary WIT Dye (Luck) -->
+        <itemDrop itemId="39450" min="1" max="1" chance="10" /> <!-- Lv. 5 Legendary MEN Dye (Luck) -->
     </customFarm>
     <customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"
                 defMultiplier="1.0" overrideLevels="105"
                 overrideDrops="true"> <!-- Lvl: all | Strength: 3633365 | Exp Score: 20-150 -->
-        <itemDrop itemId="57" min="33408201" max="80065914" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36515" min="743" max="1175" chance="100" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="20" max="30" chance="100" /> <!-- Gold Einhasad -->
+        <itemDrop itemId="57" min="33408201" max="14065914" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="36515" min="54" max="162" chance="100" /> <!-- Elcyum -->
+        <itemDrop itemId="4356" min="16" max="21" chance="100" /> <!-- Gold Einhasad -->
+        <itemDrop itemId="38572" min="1" max="3" chance="80" /> <!-- Apparition Stone lvl 88 -->
+        <itemDrop itemId="38573" min="1" max="4" chance="80" /> <!-- Apparition Stone lvl 93 -->
+        <itemDrop itemId="38574" min="1" max="2" chance="80" /> <!-- Apparition Stone lvl 99 -->
     </customFarm>
-    <customFarm farmZone="christmas"
-                atkMultiplier="0.8" defMultiplier="1.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="5556" min="1" max="2" chance="100" /> <!-- Star -->
+    <customFarm farmZone="event_island"
+                atkMultiplier="0.8" defMultiplier="20.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="21235" min="1" max="2" chance="100" /> <!-- Milk -->
     </customFarm>
+    <customFarm farmZone="event_island2"
+                atkMultiplier="1.2" defMultiplier="40.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="21235" min="2" max="4" chance="100" /> <!-- Milk -->
+    </customFarm>
+    <customFarm farmZone="giant_cave"
+                atkMultiplier="1.0" defMultiplier="1.0" expMultiplier="10.0"  overrideLevels="105" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+       <!-- <itemDrop itemId="57" min="200000" max="300439" chance="100" />  Adena -->
+
+    </customFarm>
+    <customFarm farmZone="world_altar_raids"
+                atkMultiplier="5.0" defMultiplier="4.2" expMultiplier="5.0" overrideLevels="110" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="4356" min="1" max="2" chance="40" /> <!-- Gold Einhasad -->
+        <itemDrop itemId="57" min="200000" max="800000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="36515" min="1" max="10" chance="5" /> <!-- Elcyum -->
+        <itemDrop itemId="37559" min="1" max="5" chance="50" /> <!-- Shiny Coin -->
+        <itemDrop itemId="38572" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 88 -->
+        <itemDrop itemId="38573" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 93 -->
+        <itemDrop itemId="38574" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 99 -->
+    </customFarm>
+    <customFarm farmZone="prison_of_darkness"
+                atkMultiplier="2" defMultiplier="2.94" expMultiplier="2.3"  overrideLevels="99" adjustDropsPerMob="22970" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="57" min="40000" max="49432" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="46537" min="1" max="1" chance="10" /> <!-- Mystic Soul Crystal Fragment -->
+        <spoilDrop itemId="46537" min="1" max="1" chance="20" /> <!-- Mystic Soul Crystal Fragment -->
+    </customFarm>
+    <customFarm farmZone="harnak_1"
+                atkMultiplier="10.0" defMultiplier="5.0" expMultiplier="20" hpMultiplier="15.0" overrideLevels="105" adjustDropsPerMob="22935" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="57" min="80000" max="125341" chance="100" /> <!-- Adena -->
+
+    </customFarm>
+    <customFarm farmZone="harnak_1_demonic"
+                atkMultiplier="30.0" defMultiplier="30.0" expMultiplier="25" hpMultiplier="80.0"  overrideLevels="107" adjustDropsPerMob="22942" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="57" min="100000" max="150241" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="38572" min="1" max="1" chance="4" /> <!-- Apparition Stone lvl 88 -->
+        <itemDrop itemId="38573" min="1" max="1" chance="4" /> <!-- Apparition Stone lvl 93 -->
+        <itemDrop itemId="38574" min="1" max="1" chance="4" /> <!-- Apparition Stone lvl 99 -->
+    </customFarm>
+
+    <customFarm farmZone="harnak_3"
+                atkMultiplier="50.0" defMultiplier="30.0" expMultiplier="35" hpMultiplier="100.0"  overrideLevels="109" adjustDropsPerMob="22932" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+        <itemDrop itemId="57" min="130000" max="210234" chance="100" /> <!-- Adena -->
+
+    </customFarm>
+    <customFarm farmZone="harnak_3_demonic"
+                                 atkMultiplier="50.0" defMultiplier="30.0" expMultiplier="40"  hpMultiplier="200.0"  overrideLevels="110" adjustDropsPerMob="22946" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
+    <itemDrop itemId="57" min="150000" max="175002" chance="100" /> <!-- Adena -->
+    <itemDrop itemId="38572" min="1" max="1" chance="10" /> <!-- Apparition Stone lvl 88 -->
+    <itemDrop itemId="38573" min="1" max="1" chance="10" /> <!-- Apparition Stone lvl 93 -->
+    <itemDrop itemId="38574" min="1" max="1" chance="10" /> <!-- Apparition Stone lvl 99 -->
+</customFarm>
+
 </list>

@@ -40109,50 +40109,27 @@
 		<spawn x="187611" y="50006" z="-5856" heading="13173" respawn="60" />
 		<spawn x="186919" y="52105" z="-5832" heading="34692" respawn="60" />
 	</npc>
-	<npc id="20969" name="Giant's Shadow" level="78" type="L2Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
-			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="103954" sp="24" pAtk="3820" mAtk="1113" pDef="667"
-			mDef="949" pAtkSpd="253" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
-			extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-			holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="20969" name="Giant's Shadow" level="105" type="L2Monster" atkRange="500" hpMax="964696" hpReg="44.91" mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="195000" mAtk="49866" pDef="14800"
+         mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" randomWalk="true" rHand="4028"
+         extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="120" waterRes="120" windRes="120" earthRes="120"
+         holyRes="120" darkRes="120" aiType="fighter" skillChance="15" clanRange="300" isLethalImmune="true">
 		<skill id="4416" level="11" /> <!-- Giants -->
-		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 		<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
 		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
 		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
 		<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-		<skill id="4415" level="9" /> <!-- Bow -->
-		<skill id="5620" level="9" /> <!-- Melee Attack Vulnerability -->
-		<skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
 		<skill id="6019" level="1" /> <!-- Searching Master -->
 		<skill id="4040" level="8" /> <!-- Power Shot -->
-		<spoilDrop itemId="5161" min="1" max="1" chance="1.3821" /> <!-- Recipe: Spiritshot Compressed Package (A-grade) -->
-		<spoilDrop itemId="5487" min="1" max="1" chance="4.6678" /> <!-- Sealed Robe of Nightmare Fabric -->
-		<spoilDrop itemId="729" min="1" max="1" chance="0.1152" /> <!-- Scroll: Enchant Weapon (A-grade) -->
-		<dropCategory chance="70">
-			<itemDrop itemId="57" min="5111" max="10430" chance="100" /> <!-- Adena -->
-		</dropCategory>
-		<dropCategory chance="3.7528">
-			<itemDrop itemId="12267" min="1" max="1" chance="3.469" /> <!-- Common Item - Sealed Boots of Nightmare -->
-			<itemDrop itemId="5502" min="1" max="1" chance="21.531" /> <!-- Sealed Boots of Nightmare Lining -->
-			<itemDrop itemId="12260" min="1" max="1" chance="3.469" /> <!-- Common Item - Sealed Majestic Boots -->
-			<itemDrop itemId="5503" min="1" max="1" chance="21.531" /> <!-- Sealed Majestic Boot Lining -->
-			<itemDrop itemId="12264" min="1" max="1" chance="3.469" /> <!-- Common Item - Sealed Gauntlets of Nightmare -->
-			<itemDrop itemId="5514" min="1" max="1" chance="21.531" /> <!-- Sealed Gauntlets of Nightmare Design -->
-			<itemDrop itemId="12257" min="1" max="1" chance="3.469" /> <!-- Common Item - Sealed Majestic Gauntlets -->
-			<itemDrop itemId="5515" min="1" max="1" chance="21.531" /> <!-- Sealed Majestic Gauntlet Design -->
-		</dropCategory>
-		<dropCategory chance="6.7143">
-			<itemDrop itemId="1894" min="1" max="1" chance="25.0014" /> <!-- Corroded Quality Leather -->
-			<itemDrop itemId="4039" min="1" max="1" chance="23.7514" /> <!-- Corroded Mold Glue -->
-			<itemDrop itemId="4041" min="1" max="1" chance="6.196" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4044" min="1" max="1" chance="23.7514" /> <!-- Corroded Thons -->
-			<itemDrop itemId="4150" min="1" max="1" chance="13.7291" /> <!-- Recipe: Sealed Avadon Gloves -->
-			<itemDrop itemId="8732" min="1" max="1" chance="5.9378" /> <!-- Life Stone - Lv. 76 -->
-			<itemDrop itemId="8742" min="1" max="1" chance="1.4845" /> <!-- Mid-grade Life Stone - Lv. 76 -->
-			<itemDrop itemId="8752" min="1" max="1" chance="0.1484" /> <!-- High-grade Life Stone - Lv. 76 -->
-		</dropCategory>
+		<spawn x="173334" y="54832" z="-4348" heading="7124" respawn="60" />
+		<spawn x="173334" y="56026" z="-4348" heading="7124" respawn="60" />
+		<spawn x="174018" y="56054" z="-4350" heading="7124" respawn="60" />
+		<spawn x="174150" y="55631" z="-4370" heading="7124" respawn="60" />
+		<spawn x="174750" y="55600" z="-4370" heading="7124" respawn="60" />
+		<spawn x="175199" y="55895" z="-4365" heading="7124" respawn="60" />
+		<spawn x="175495" y="55845" z="-4348" heading="7124" respawn="60" />
+		<spawn x="175483" y="55329" z="-4348" heading="7124" respawn="60" />
 		<spawn x="180776" y="53191" z="-6024" heading="7124" respawn="60" />
 		<spawn x="181670" y="54478" z="-5888" heading="34492" respawn="60" />
 		<spawn x="182354" y="50995" z="-6016" heading="38705" respawn="60" />
@@ -40176,14 +40153,13 @@
 		<spawn x="188233" y="49269" z="-5840" heading="43283" respawn="60" />
 		<spawn x="187223" y="51661" z="-5840" heading="44017" respawn="60" />
 	</npc>
-	<npc id="20970" name="Soldier of Ancient Times" level="73" type="L2Monster" atkRange="40" hpMax="8200" hpReg="8.5" mpMax="1760"
-			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="54238" sp="13" pAtk="3133" mAtk="886" pDef="503"
-			mDef="858" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="15" runSpd="180" randomWalk="true" rHand="3937"
+	<npc id="20970" name="Soldier of Ancient Times" level="73" type="L2Monster" atkRange="40" hpMax="990130" hpReg="8.5" mpMax="1760"
+			mpReg="3.0" STR="110" CON="119" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="9000" mAtk="15000" pDef="19000"
+			mDef="20000" pAtkSpd="600" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
 			extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-			holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5"
-			clanRange="300">
+			holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300" isLethalImmune="true">
 		<skill id="4416" level="11" /> <!-- Giants -->
-		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
+		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 		<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
 		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
@@ -40195,28 +40171,6 @@
 		<skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
 		<skill id="6019" level="1" /> <!-- Searching Master -->
 		<skill id="4582" level="8" /> <!-- Poison -->
-		<spoilDrop itemId="5489" min="1" max="1" chance="8.2857" /> <!-- Sealed Tallum Stocking Fabric -->
-		<spoilDrop itemId="1895" min="1" max="3" chance="89.6811" /> <!-- Corroded Metallic Fiber -->
-		<spoilDrop itemId="4042" min="1" max="1" chance="10.4628" /> <!-- Corroded Enria -->
-		<dropCategory chance="70">
-			<itemDrop itemId="57" min="3100" max="6312" chance="100" /> <!-- Adena -->
-		</dropCategory>
-		<dropCategory chance="3.2223">
-			<itemDrop itemId="12224" min="1" max="1" chance="3.9179" /> <!-- Common Item - Sealed Dark Crystal Boots -->
-			<itemDrop itemId="5496" min="1" max="1" chance="21.0821" /> <!-- Sealed Dark Crystal Boot Lining -->
-			<itemDrop itemId="12231" min="1" max="1" chance="3.9179" /> <!-- Common Item - Sealed Tallum Boots -->
-			<itemDrop itemId="5497" min="1" max="1" chance="21.0821" /> <!-- Sealed Tallum Boot Lining -->
-			<itemDrop itemId="12221" min="1" max="1" chance="3.9179" /> <!-- Common Item - Sealed Dark Crystal Gloves -->
-			<itemDrop itemId="5508" min="1" max="1" chance="21.0821" /> <!-- Sealed Dark Crystal Glove Design -->
-			<itemDrop itemId="12229" min="1" max="1" chance="3.9179" /> <!-- Common Item - Sealed Tallum Gloves -->
-			<itemDrop itemId="5509" min="1" max="1" chance="21.0821" /> <!-- Sealed Tallum Glove Design -->
-		</dropCategory>
-		<dropCategory chance="4.804">
-			<itemDrop itemId="10581" min="1" max="1" chance="25" /> <!-- Forgotten Scroll: Improve Condition -->
-			<itemDrop itemId="10584" min="1" max="1" chance="25" /> <!-- Forgotten Scroll: Improve Movement -->
-			<itemDrop itemId="10609" min="1" max="1" chance="25" /> <!-- Forgotten Scroll: Chant of Critical -->
-			<itemDrop itemId="14217" min="1" max="1" chance="25" /> <!-- Forgotten Scroll: Condition of Pa'agrio -->
-		</dropCategory>
 		<spawn x="172820" y="54009" z="-5920" heading="26024" respawn="60" />
 		<spawn x="173555" y="56055" z="-5944" heading="34015" respawn="60" />
 		<spawn x="172914" y="55555" z="-5952" heading="31287" respawn="60" />
@@ -40239,15 +40193,22 @@
 		<spawn x="178820" y="54109" z="-5984" heading="4691" respawn="60" />
 		<spawn x="179581" y="54156" z="-5992" heading="13982" respawn="60" />
 		<spawn x="179833" y="56375" z="-5864" heading="12216" respawn="60" />
+		<spawn x="181331" y="59872" z="-4000" heading="12216" respawn="60" />
+		<spawn x="182060" y="59916" z="-4000" heading="12216" respawn="60" />
+		<spawn x="182027" y="59240" z="-4000" heading="12216" respawn="60" />
+		<spawn x="181369" y="59197" z="-4000" heading="12216" respawn="60" />
+        <spawn x="180136" y="59785" z="-4000" heading="12216" respawn="60" />
+        <spawn x="179540" y="59846" z="-4000" heading="12216" respawn="60" />
+        <spawn x="179525" y="59231" z="-4000" heading="12216" respawn="60" />
+        <spawn x="180024" y="59221" z="-4000" heading="12216" respawn="60" />
 	</npc>
-	<npc id="20971" name="Warrior of Ancient Times" level="75" type="L2Monster" atkRange="40" hpMax="8486" hpReg="8.5" mpMax="1840"
-			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="57250" sp="13" pAtk="3347" mAtk="958" pDef="524"
-			mDef="894" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="15" runSpd="180" randomWalk="true" rHand="3937"
+	<npc id="20971" name="Warrior of Ancient Times" level="75" type="L2Monster" atkRange="40" hpMax="1090130" hpReg="8.5" mpMax="1840"
+			mpReg="3.0" STR="110" CON="119" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="10000" mAtk="15000" pDef="22000"
+			mDef="25000" pAtkSpd="600" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
 			extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-			holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5"
-			clanRange="300">
+			holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300" isLethalImmune="true">
 		<skill id="4416" level="11" /> <!-- Giants -->
-		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
+		<skill id="4408" level="11" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 		<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
 		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
@@ -40259,24 +40220,6 @@
 		<skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
 		<skill id="6019" level="1" /> <!-- Searching Master -->
 		<skill id="4032" level="8" /> <!-- Power Strike -->
-		<spoilDrop itemId="1877" min="1" max="1" chance="26.6382" /> <!-- Corroded Adamantite Nugget -->
-		<spoilDrop itemId="1876" min="1" max="3" chance="66.5954" /> <!-- Corroded Mithril Ore -->
-		<spoilDrop itemId="1895" min="1" max="5" chance="63.4242" /> <!-- Corroded Metallic Fiber -->
-		<dropCategory chance="70">
-			<itemDrop itemId="57" min="3285" max="6703" chance="100" /> <!-- Adena -->
-		</dropCategory>
-		<dropCategory chance="2.536">
-			<itemDrop itemId="12225" min="1" max="1" chance="6.7053" /> <!-- Common Item - Sealed Dark Crystal Shield -->
-			<itemDrop itemId="5494" min="1" max="1" chance="33.9386" /> <!-- Sealed Dark Crystal Shield Fragment -->
-			<itemDrop itemId="12226" min="1" max="1" chance="4.6976" /> <!-- Common Item - Sealed Dark Crystal Helmet -->
-			<itemDrop itemId="5525" min="1" max="1" chance="24.9804" /> <!-- Sealed Dark Crystal Helmet Design -->
-			<itemDrop itemId="12234" min="1" max="1" chance="4.6976" /> <!-- Common Item - Sealed Tallum Helmet -->
-			<itemDrop itemId="5526" min="1" max="1" chance="24.9805" /> <!-- Sealed Tallum Helmet Design -->
-		</dropCategory>
-		<dropCategory chance="3.9343">
-			<itemDrop itemId="12768" min="1" max="1" chance="50" /> <!-- Forgotten Scroll: Evasion Counter -->
-			<itemDrop itemId="12769" min="1" max="1" chance="50" /> <!-- Forgotten Scroll: Evasion Chance -->
-		</dropCategory>
 		<spawn x="178097" y="53847" z="-6016" heading="15958" respawn="60" />
 		<spawn x="177091" y="55185" z="-5976" heading="13776" respawn="60" />
 		<spawn x="179965" y="54164" z="-5992" heading="48207" respawn="60" />
@@ -40299,6 +40242,11 @@
 		<spawn x="186513" y="48368" z="-5952" heading="62114" respawn="60" />
 		<spawn x="187527" y="50134" z="-5856" heading="36222" respawn="60" />
 		<spawn x="188283" y="49617" z="-5832" heading="38902" respawn="60" />
+		<spawn x="183438" y="58372" z="-3978" heading="38902" respawn="60" />
+		<spawn x="183709" y="58210" z="-3997" heading="38902" respawn="60" />
+		<spawn x="184001" y="58120" z="-3997" heading="38902" respawn="60" />
+		<spawn x="184246" y="58465" z="-3997" heading="38902" respawn="60" />
+		<spawn x="184308" y="59172" z="-3997" heading="38902" respawn="60" />
 	</npc>
 	<npc id="20972" name="Shaman of Ancient Times" level="75" type="L2Monster" atkRange="40" hpMax="8486" hpReg="8.5" mpMax="1840"
 			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="59324" sp="14" pAtk="3347" mAtk="2050" pDef="629"

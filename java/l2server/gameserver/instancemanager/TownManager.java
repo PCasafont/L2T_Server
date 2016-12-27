@@ -39,17 +39,7 @@ public class TownManager
 			}
 		}
 
-		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof L2PcInstance)
-		{
-			L2PcInstance player = (L2PcInstance) activeObject;
-			Castle castle = CastleManager.getInstance().findNearestCastle(player);
-			if (!(castle != null && castle.getSiege().getIsInProgress() &&
-					(castle.getSiege().checkIsDefender(player.getClan()) ||
-							castle.getSiege().checkIsAttacker(player.getClan()))))
-			{
-				return getTown(MainTownManager.getInstance().getCurrentMainTown().getTownId());
-			}
-		}
+
 
 		int mapRegion = MapRegionTable.getInstance()
 				.getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY());

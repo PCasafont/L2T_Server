@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Tenkai Event Manager -->
 <list>
+    <item>
+        <ingredient count="6000" id="57" /> <!-- Adena -->
+        <production count="1" id="36550" /> <!-- Weapon Fragment (Top-grade) -->
+    </item>
+    <item>
+        <ingredient count="6000" id="57" /> <!-- Adena -->
+        <production count="1" id="36565" />  <!-- Exquisite Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="6000" id="57" /> <!-- Adena -->
+        <production count="1" id="36545" /> <!-- Durandil Wire -->
+    </item>
     <item>
         <ingredient count="10" id="46537" /> <!-- Mystic Soul Crystal Fragment -->
         <production count="1" id="46553" /> <!-- Mystic Soul Crystal -->
@@ -15,10 +26,6 @@
         <production count="1" id="36515" /> <!-- Elcyum -->
     </item>
     <item>
-        <ingredient id="4356" count="135" /> <!-- Gold Einhasad -->
-        <production id="36414" count="1" /> <!-- Dragon Claw -->
-    </item>
-    <item>
         <ingredient id="57" count="2500000" /> <!-- Adena -->
         <production id="36949" count="1" /> <!-- Chaos Essence -->
     </item>
@@ -27,11 +34,11 @@
         <production id="37494" count="1" /> <!-- Chaos Essence (Dual Class) -->
     </item>
     <item>
-        <ingredient id="57" count="8000" /> <!-- Adena -->
+        <ingredient id="57" count="4000" /> <!-- Adena -->
         <production id="35562" count="1" /> <!-- Energy of Destruction -->
     </item>
     <item>
-        <ingredient id="57" count="3000" /> <!-- Adena -->
+        <ingredient id="57" count="1500" /> <!-- Adena -->
         <production id="35563" count="1" /> <!-- Giant's Energy -->
     </item>
     <item>

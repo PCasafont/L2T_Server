@@ -50,7 +50,7 @@ public class CreatureInvasion extends Quest
 	private static final boolean _debug = false;
 	private static final String _qn = "CreatureInvasion";
 
-	private static final int _invasionDuration = 15; //Minutes
+	private static final int _invasionDuration = 7; //Minutes
 	private static final int[] _weakCreatures = {13031, 13120};
 	private static final int[] _hardCreatures = {13123, 13034};
 	private static final int[] _strangeCreatures = {13035, 13124};
@@ -321,10 +321,10 @@ public class CreatureInvasion extends Quest
 		}
 		else if (event.equalsIgnoreCase("spawn_boss"))
 		{
-			L2Npc boss = addSpawn(_bossId, 82689, 148600, -3473, 65137, false, 0);
+			L2Npc boss = addSpawn(_bossId, -114373, 252703, -1552, 65137, false, 0);
 			_bossAttackInfo = new BossAttackInfo(boss);
 
-			Announcements.getInstance().announceToAll("The Golden Pig has appeared on Giran!");
+			Announcements.getInstance().announceToAll("The Golden Pig has appeared on Talking Island Village !");
 
 			startQuestTimer("end_event", _invasionDuration * 60000, null, null);
 		}

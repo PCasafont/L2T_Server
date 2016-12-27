@@ -24,7 +24,6 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.handler.BypassHandler;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.*;
-import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.actor.knownlist.NpcKnownList;
@@ -1463,22 +1462,8 @@ public class L2Npc extends L2Character
 			}
 			html.replace("%pker%", pker);
 		}
-		else if (npcId == 40004 && val.equals("main_towns"))
-		{
-			html.replace("%nextTowns%", MainTownManager.getInstance().getNextTownsInfo());
-		}
-		else if (npcId == 40001)
-		{
-			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-			if (mainTown != null)
-			{
-				html.replace("%currentMainTown%", "(" + mainTown.getName() + ")");
-			}
-			else
-			{
-				html.replace("%currentMainTown%", "");
-			}
-		}
+
+
 		else if (npcId == 80001) // Astrake
 		{
 			int[] EPIC_BOSSES = {

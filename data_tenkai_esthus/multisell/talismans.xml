@@ -105,7 +105,7 @@
         <production id="39571" count="1" /> <!-- Talisman - Wind: Debuff Resistance -->
     </item>
     <item>
-        <ingredient id="57" count="200000000" /> <!-- Adena -->
+        <ingredient id="57" count="75000" /> <!-- Adena -->
         <production id="39634" count="1" /> <!-- Venir's Talisman - Stage 1 -->
     </item>
     <item>
@@ -153,7 +153,7 @@
         <production id="26345" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 4 (High-grade) -->
     </item>
     <item>
-        <ingredient id="57" count="100000" /> <!-- Adena -->
+        <ingredient id="57" count="1000000" /> <!-- Adena -->
         <production id="39572" count="1" /> <!-- Talisman - Insanity -->
     </item>
 </list>

@@ -58,11 +58,11 @@
 
     <config name="LoginDbDriver" var="DATABASE_DRIVER" default="com.mysql.jdbc.Driver" />
 
-    <config name="LoginDbURL" var="DATABASE_URL" default="jdbc:mysql://localhost:3306/l2jdb" />
+    <config name="LoginDbURL" var="DATABASE_URL" default="jdbc:mysql://localhost:3306/l2tenkai_common" />
 
-    <config name="LoginDbLogin" var="DATABASE_LOGIN" default="root" />
+    <config name="LoginDbLogin" var="DATABASE_LOGIN" default="l2tenkai_common" />
 
-    <config name="LoginDbPassword" var="DATABASE_PASSWORD" default="raressucrer" />
+    <config name="LoginDbPassword" var="DATABASE_PASSWORD" default="ADrxu63mdu2iA7G" />
 
     <config name="LoginMaximumDbConnections" var="DATABASE_MAX_CONNECTIONS" default="10" />
 

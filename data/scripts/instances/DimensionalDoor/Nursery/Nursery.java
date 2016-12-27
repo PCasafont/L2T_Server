@@ -265,47 +265,47 @@ public class Nursery extends L2AttackableAIScript
                     if (world.points >= 1 && world.points <= 800)
                     {
                         shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                1 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 801 && world.points <= 1600)
                     {
                         shinyCoins += Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                5 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                2 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 1601 && world.points <= 2000)
                     {
                         shinyCoins += Rnd.get(5 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                7 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                3 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2001 && world.points <= 2400)
                     {
                         shinyCoins += Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                9 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2401 && world.points <= 2800)
                     {
                         shinyCoins += Rnd.get(9 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                11 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 2801 && world.points <= 3200)
                     {
                         shinyCoins += Rnd.get(11 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                13 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 3201 && world.points <= 3600)
                     {
                         shinyCoins += Rnd.get(13 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                15 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 3601 && world.points <= 4000)
                     {
                         shinyCoins += Rnd.get(15 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                17 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
                     else if (world.points >= 4001)
                     {
                         shinyCoins += Rnd.get(17 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                19 * DimensionalDoor.getDimensionalDoorRewardRate());
+                                4 * DimensionalDoor.getDimensionalDoorRewardRate());
                     }
 
                     if (world.points > 600)

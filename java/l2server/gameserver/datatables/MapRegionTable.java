@@ -149,9 +149,6 @@ public class MapRegionTable
 			case 3:
 				castle = 9;
 				break; //Orc Village
-			case 4:
-				castle = 9;
-				break; //Dwarven Village
 			case 5:
 				castle = 1;
 				break; //Town of Gludio
@@ -248,9 +245,6 @@ public class MapRegionTable
 				break;
 			case 3:
 				nearestTown = "Orc Village";
-				break;
-			case 4:
-				nearestTown = "Dwarven Village";
 				break;
 			case 5:
 				nearestTown = "Town of Gludio";
@@ -381,9 +375,6 @@ public class MapRegionTable
 				break;
 			case 3:
 				nearestTown = "Orc";
-				break;
-			case 4:
-				nearestTown = "Dwarven";
 				break;
 			case 5:
 				nearestTown = "Gludio";

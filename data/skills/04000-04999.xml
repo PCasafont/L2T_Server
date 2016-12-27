@@ -6814,8 +6814,8 @@
     <skill id="4407" levels="2" name="Enchant Type Monster">
         <table name="#name">Ordinary Monster;Enchant Type Monster</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
     </skill>
     <skill id="4408" levels="20" name="HP Increase (12x)">

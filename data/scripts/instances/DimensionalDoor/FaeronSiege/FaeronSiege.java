@@ -726,8 +726,7 @@ public class FaeronSiege extends Quest
                         {
                             world._rewardedPlayers.add(pMember);
                             pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                    Rnd.get(70 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                            80 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+                                 3, player, true);
                         }
                         else
                         {

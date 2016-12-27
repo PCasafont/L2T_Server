@@ -48,7 +48,6 @@ import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveOption;
@@ -9075,18 +9074,8 @@ public class L2PcInstance extends L2Playable
 				int x = rset.getInt("x");
 				int y = rset.getInt("y");
 				int z = rset.getInt("z");
-				MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-				if (z > 100000 && mainTown != null)
-				{
-					z -= 1000000;
-					if (TownManager.getTown(x, y, z) != TownManager.getTown(mainTown.getTownId()))
-					{
-						int[] coords = mainTown.getRandomCoords();
-						x = coords[0];
-						y = coords[1];
-						z = coords[2];
-					}
-				}
+
+
 				// Set the x,y,z position of the L2PcInstance and make it invisible
 				player.setXYZInvisible(x, y, z);
 
@@ -9564,15 +9553,6 @@ public class L2PcInstance extends L2Playable
 			int z = _lastZ != 0 ? _lastZ :
 					_eventSavedPosition != null && isPlayingEvent() ? _eventSavedPosition.getZ() : getZ();
 
-			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-			if (mainTown != null)
-			{
-				L2TownZone currentTown = TownManager.getTown(x, y, z);
-				if (currentTown != null && currentTown.getTownId() == mainTown.getTownId())
-				{
-					z += 1000000;
-				}
-			}
 
 			con = L2DatabaseFactory.getInstance().getConnection();
 
@@ -19590,15 +19570,12 @@ public class L2PcInstance extends L2Playable
 		InstanceManager.getInstance().createInstance(getObjectId());
 		L2Spawn servitor;
 		float angle = Rnd.get(1000);
-		int sCount = 4;
+		int sCount = 2;
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
-			MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
-			L2TownZone townZone = TownManager.getTown(currentTown.getTownId());
-			if (!townZone.isCharacterInZone(this))
-			{
+
 				sCount = 2;
-			}
+
 		}
 		for (int i = 0; i < sCount; i++)
 		{

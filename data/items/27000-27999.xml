@@ -5466,7 +5466,7 @@
           defaultAction="equip"
           bodypart="head" immediateEffect="1" crystalCount="3378" crystalType="r99" weight="530" price="158359000"
           enchantEnabled="1"
-          armorSet="19779" isBlessed="true">
+          armorSet="19791" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Sigel" />
         </cond>
@@ -5487,7 +5487,7 @@
           defaultAction="equip"
           armorType="heavy" bodypart="chest" immediateEffect="1" crystalCount="9008" crystalType="r99" weight="7520"
           price="422292000"
-          enchantEnabled="1" enchant4Skill="13310-3" armorSet="19779" isBlessed="true">
+          enchantEnabled="1" enchant4Skill="13310-3" armorSet="19791" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Sigel" />
         </cond>
@@ -5508,7 +5508,7 @@
           defaultAction="equip"
           armorType="heavy" bodypart="legs" immediateEffect="1" crystalCount="5630" crystalType="r99" weight="3170"
           price="263933000"
-          enchantEnabled="1" armorSet="19779" isBlessed="true">
+          enchantEnabled="1" armorSet="19791" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Sigel" />
         </cond>
@@ -5529,7 +5529,7 @@
           defaultAction="equip"
           bodypart="gloves" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="510" price="105573000"
           enchantEnabled="1"
-          armorSet="19779" isBlessed="true">
+          armorSet="19791" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Sigel" />
         </cond>
@@ -5550,7 +5550,7 @@
           defaultAction="equip"
           bodypart="feet" immediateEffect="1" crystalCount="2252" crystalType="r99" weight="1070" price="105573000"
           enchantEnabled="1"
-          armorSet="19779" isBlessed="true">
+          armorSet="19791" isBlessed="true">
         <cond addName="1" msgId="113">
             <player starts_with_class_name_restriction="Sigel" />
         </cond>

@@ -18,8 +18,6 @@ package handlers.bypasshandlers;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.instancemanager.MainTownManager;
-import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -82,17 +80,6 @@ public class Teleport implements IBypassHandler
 			}
 
 			return true;
-		}
-		else if (command.startsWith("maintown"))
-		{
-			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-			if (mainTown != null)
-			{
-				int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-				int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-				int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
-				activeChar.teleToLocation(startX, startY, startZ);
-			}
 		}
 		else if (command.startsWith("pvpzone"))
 		{

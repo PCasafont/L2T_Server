@@ -5052,7 +5052,7 @@
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
     </npc>
-    <npc id="25162" name="Giant Marpanak" title="Raid Boss" level="60" type="L2RaidBoss" atkRange="40" hpMax="1467265"
+    <npc id="25162" name="Giant Marpanak" level="60" type="L2RaidBoss" atkRange="40" hpMax="1467265"
          hpReg="253.24435"
          mpMax="2302" mpReg="2.4" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="5553282" sp="1249267"
          pAtk="10635"
@@ -5079,24 +5079,8 @@
         <skill id="4177" level="6" /> <!-- Cancellation -->
         <itemDrop itemId="9817" min="2" max="6" chance="83" /> <!-- Nonliving Nucleus -->
         <itemDrop itemId="8176" min="1" max="3" chance="83" /> <!-- Destruction Tombstone -->
-        <dropCategory chance="66.6264">
-            <itemDrop itemId="110" min="1" max="1" chance="18.4386" /> <!-- Doom Shield -->
-            <itemDrop itemId="2416" min="1" max="1" chance="12.9069" /> <!-- Blue Wolf Helmet -->
-            <itemDrop itemId="2417" min="1" max="1" chance="12.9069" /> <!-- Doom Helmet -->
-            <itemDrop itemId="4077" min="40" max="120" chance="33.686" /> <!-- Doom Shield Fragment -->
-            <itemDrop itemId="4088" min="81" max="243" chance="13.9757" /> <!-- Blue Wolf Helmet Design -->
-            <itemDrop itemId="4089" min="140" max="420" chance="8.0859" /> <!-- Doom Helmet Pattern -->
-        </dropCategory>
-        <dropCategory chance="36.1528">
-            <itemDrop itemId="287" min="1" max="1" chance="9.8463" /> <!-- Bow of Peril -->
-            <itemDrop itemId="4121" min="12" max="36" chance="90.1537" /> <!-- Bow of Peril Shaft -->
-        </dropCategory>
-        <dropCategory chance="75.0177">
-            <itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye [Men + 4 Wit - 4] -->
-            <itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
-            <itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
-            <itemDrop itemId="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-grade) -->
-        </dropCategory>
+        <spawn x="173944" y="61604" z="-4371" heading="0" respawn="60" />
+        <spawn x="175649" y="61459" z="-4371" heading="0" respawn="60" />
     </npc>
     <npc id="25163" name="Roaring Skylancer" title="Raid Boss" level="70" type="L2RaidBoss" atkRange="40"
          hpMax="1275172" hpReg="294.2109"
@@ -21303,7 +21287,7 @@
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
         <skill id="4743" level="9" /> <!-- Power Strike -->
     </npc>
-    <npc id="25680" name="Giant Marpanak" title="Raid Boss" level="82" type="L2RaidBoss" atkRange="40" hpMax="2036314"
+    <npc id="25680" name="Giant Marpanak" title="" level="82" type="L2RaidBoss" atkRange="40" hpMax="2036314"
          hpReg="328.668"
          mpMax="3870" mpReg="3.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="5553282" sp="1332"
          pAtk="22649"
@@ -21330,30 +21314,7 @@
         <skill id="4173" level="8" /> <!-- Might -->
         <skill id="4177" level="8" /> <!-- Cancellation -->
         <itemDrop itemId="14851" min="1" max="1" chance="100" /> <!-- Cave Exploration Text 1 Sheet -->
-        <dropCategory chance="78.6944">
-            <itemDrop itemId="9448" min="1" max="1" chance="0.1149" /> <!-- Dynasty Cudgel -->
-            <itemDrop itemId="9449" min="1" max="1" chance="0.1149" /> <!-- Dynasty Mace -->
-            <itemDrop itemId="10252" min="1" max="1" chance="0.1149" /> <!-- Dynasty Staff -->
-            <itemDrop itemId="10253" min="1" max="1" chance="0.1149" /> <!-- Dynasty Crusher -->
-            <itemDrop itemId="9622" min="1" max="1" chance="34.7598" /> <!-- Dynasty Cudgel Piece -->
-            <itemDrop itemId="9623" min="1" max="1" chance="34.7598" /> <!-- Dynasty Mace Piece -->
-            <itemDrop itemId="10546" min="1" max="3" chance="18.0125" /> <!-- Dynasty Staff Piece -->
-            <itemDrop itemId="10547" min="2" max="4" chance="12.0083" /> <!-- Dynasty Crusher Piece -->
-        </dropCategory>
-        <dropCategory chance="42.3896">
-            <itemDrop itemId="9516" min="1" max="1" chance="3.4947" /> <!-- Sealed Dynasty Helmet -->
-            <itemDrop itemId="9529" min="1" max="1" chance="4.9926" /> <!-- Sealed Dynasty Shield -->
-            <itemDrop itemId="13885" min="1" max="1" chance="9.5299" /> <!-- Sealed Arcana Sigil -->
-            <itemDrop itemId="9532" min="9" max="27" chance="47.9022" /> <!-- Sealed Dynasty Helmet Piece -->
-            <itemDrop itemId="9545" min="40" max="120" chance="12.847" /> <!-- Sealed Dynasty Shield Fragment -->
-            <itemDrop itemId="10114" min="14" max="42" chance="21.2336" /> <!-- Sealed Dynasty Sigil Piece -->
-        </dropCategory>
-        <dropCategory chance="58.8563">
-            <itemDrop itemId="959" min="1" max="1" chance="8.9552" /> <!-- Scroll: Enchant Weapon (S-grade) -->
-            <itemDrop itemId="960" min="1" max="1" chance="89.5522" /> <!-- Scroll: Enchant Armor (S-grade) -->
-            <itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
-        </dropCategory>
-        <spawn x="193902" y="54135" z="-4184" heading="0" respawn="21600" dbName="Giant Marpanak" />
+        <spawn x="173944" y="61604" z="-4371" heading="0" respawn="60" />
     </npc>
     <npc id="25681" name="Gorgolos" title="Raid Boss" level="82" type="L2RaidBoss" atkRange="40" hpMax="729451"
          hpReg="94.19477"
@@ -27707,6 +27668,10 @@
         <skill id="16208" level="4" /> <!-- Fire Spike -->
         <skill id="16214" level="4" /> <!-- Fire Buster -->
         <skill id="16220" level="4" /> <!-- Fire Blast -->
+        <itemDrop itemId="36550" min="20" max="100" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="100" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="100" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="37559" min="2" max="6" chance="10" />
         <itemDrop itemId="36978" min="2" max="2" chance="100" /> <!-- Scroll: Enchant Hair Accessory -->
         <itemDrop itemId="36514" min="1" max="1" chance="100" /> <!-- Elcyum Crystal -->
         <itemDrop itemId="36979" min="2" max="2" chance="100" /> <!-- Life Stone: Hair Accessory -->
@@ -27832,6 +27797,10 @@
         <skill id="16210" level="4" /> <!-- Wind Spike -->
         <skill id="16216" level="4" /> <!-- Wind Buster -->
         <skill id="16222" level="4" /> <!-- Wind Blast -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="37559" min="2" max="4" chance="10" />
         <itemDrop itemId="36978" min="2" max="2" chance="71.4285" /> <!-- Scroll: Enchant Hair Accessory -->
         <itemDrop itemId="36514" min="2" max="2" chance="71.4285" /> <!-- Elcyum Crystal -->
         <itemDrop itemId="36979" min="2" max="2" chance="42.8571" /> <!-- Life Stone: Hair Accessory -->
@@ -27958,6 +27927,10 @@
         <skill id="16211" level="4" /> <!-- Earth Spike -->
         <skill id="16217" level="4" /> <!-- Earth Buster -->
         <skill id="16223" level="4" /> <!-- Earth Blast -->
+        <itemDrop itemId="36550" min="20" max="50" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="50" chance="80" /> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="50" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="37559" min="2" max="2" chance="10" />
         <itemDrop itemId="36514" min="2" max="2" chance="40" /> <!-- Elcyum Crystal -->
         <itemDrop itemId="36979" min="2" max="2" chance="30" /> <!-- Life Stone: Hair Accessory -->
         <itemDrop itemId="36978" min="2" max="2" chance="30" /> <!-- Scroll: Enchant Hair Accessory -->

@@ -93,4 +93,15 @@
             <baseAdd stat="MEN" val="#men" />
         </for>
     </skill>
+    <skill id="90006" levels="1" name="Paralyze">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="lvlDepend" val="1" />
+        <set name="reuseDelay" val="30000" />
+        <set name="chanceType" val="ON_HIT" />
+        <set name="activationChance" val="90" />
+        <set name="triggeredId" val="5171" />
+        <set name="triggeredLevel" val="10" />
+    </skill>
 </list>

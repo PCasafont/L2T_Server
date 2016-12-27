@@ -57,7 +57,7 @@ public class DimensionalDoor extends Quest
 
 		if (event.equalsIgnoreCase("main"))
 		{
-			return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+			return _qn + (Config.SERVER_NAME.contains("esthus") ? "_old" : "") + ".html";
 		}
 		else if (event.equalsIgnoreCase("learnSkills"))
 		{
@@ -104,7 +104,7 @@ public class DimensionalDoor extends Quest
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		}
 
-		return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
+		return _qn + (Config.SERVER_NAME.contains("esthus") ? "_old" : "") + ".html";
 	}
 
 	public static int getNpcManagerId()
@@ -119,7 +119,7 @@ public class DimensionalDoor extends Quest
 
 	public static int getDimensionalDoorRewardRate()
 	{
-		return 3;
+		return 1;
 	}
 
 	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel)

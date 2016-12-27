@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="1" id="10639" /> <!-- Vote Coin -->
+        <production count="3000000" id="57" /> <!-- Adena -->
+    </item>
+    <item>
+        <ingredient count="1" id="10639" /> <!-- Vote Coin -->
+        <production count="3" id="37559" /> <!-- Shiny Coin -->
+    </item>
+</list>
