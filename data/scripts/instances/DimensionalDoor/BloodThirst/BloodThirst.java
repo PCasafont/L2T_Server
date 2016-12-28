@@ -146,8 +146,7 @@ public class BloodThirst extends L2AttackableAIScript
             if (npc == world._bloodThirst)
             {
                 player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                        Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+                       3, player, true);
 
                 InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);

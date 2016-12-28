@@ -64,6 +64,7 @@ public final class Config
 	public static int ANTHARAS_MIN_PLAYERS;
 	public static int LINDVIOR_MIN_PLAYERS;
 	public static int VALAKAS_MIN_PLAYERS;
+	public static int HELIOS_MIN_PLAYERS;
 	public static int BAIUM_MIN_PLAYERS;
 	public static int KELBIM_MIN_PLAYERS;
 
@@ -939,6 +940,9 @@ public final class Config
 	public static int VALAKAS_WAIT_TIME;
 	public static int VALAKAS_INTERVAL_SPAWN;
 	public static int VALAKAS_RANDOM_SPAWN;
+	public static int HELIOS_WAIT_TIME;
+	public static int HELIOS_INTERVAL_SPAWN;
+	public static int HELIOS_RANDOM_SPAWN;
 	public static int ANTHARAS_WAIT_TIME;
 	public static int ANTHARAS_INTERVAL_SPAWN;
 	public static int ANTHARAS_RANDOM_SPAWN;

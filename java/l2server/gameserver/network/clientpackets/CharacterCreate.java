@@ -16,15 +16,12 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.GeoData;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.instancemanager.MainTownManager;
-import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
@@ -40,7 +37,6 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
 import l2server.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-import l2server.util.Rnd;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;

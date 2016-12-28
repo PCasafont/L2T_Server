@@ -8853,6 +8853,7 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+
     </npc>
     <npc id="27525" name="Remembered Embryo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
          mpReg="0.0"

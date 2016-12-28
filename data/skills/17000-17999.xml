@@ -4698,7 +4698,6 @@
         </for>
     </skill>
 
-
     <!--
 		Level 1: Attack Attribute + 10.
 		Level 2: Attack Attribute + 20.
@@ -4762,19 +4761,19 @@
 		Level 5: P. Def. + 1986, and Received P. Critical Damage - 5%.
 		Level 6: P. Def. + 1986, P. Critical Damage - 5%. Additional P. Def. + 10%.
 	-->
-    <skill id="17708" levels="6" name="Greater Diamond">
+    <skill id="17708" levels="6" name="Diamond">
         <table name="#def">283 567 945 1418 1986 1986</table>
         <table name="#critVuln">1 2 3 4 5 5</table>
-        <table name="#pdef">0 0 0 0 0 10</table>
+        <table name="#pdef">1.0 1.0 1.0 1.0 1.0 1.10</table>
         <table name="#name">Diamond;Diamond;Diamond;Diamond;Diamond;Greater Diamond</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <mul val="#def" order="0x30" stat="pDef" />
+            <add stat="pDef" val="#def"/>
             <subPercent stat="critVuln" val="#critVuln" />
-            <addPercent stat="pDef" val="#pdef" />
+            <mul stat="pDef" order="0x30" val="#pdef" />
         </for>
     </skill>
     <!--
@@ -4787,17 +4786,17 @@
 	-->
     <skill id="17709" levels="6" name="Greater Pearl">
         <table name="#def">163 328 548 821 1150 1150</table>
-        <table name="#matk">0 0 0 0 0 10</table>
+        <table name="#matk">1.0 1.0 1.0 1.0 1.0 1.10</table>
         <table name="#critVuln">1 2 3 4 5 5</table>
-        <table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Greater Pearl</table>
+        <table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Greater_Pearl</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <mul val="#def" order="0x30" stat="mDef" />
+            <add val="#def" order="0x30" stat="mDef" />
             <subPercent stat="magicCritVuln" val="#critVuln" />
-            <addPercent stat="mAtk" val="#matk"/>
+            <mul stat="mDef" val="#matk"/>
         </for>
     </skill>
     <skill id="17710" levels="1" name="10th Anniversary Blessing Effect (Free)">

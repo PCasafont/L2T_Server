@@ -119,6 +119,8 @@
                    isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
     <enchantScroll id="34627" targetType="ELEMENTAL_SHIRT" grade="none"
                    onlyOnItem="37718" /> <!-- Enchant Scroll: Elemental Shirt -->
+    <enchantScroll id="23241" targetType="ELEMENTAL_SHIRT" grade="none"
+                   onlyOnItem="37718" /> <!-- Blessed Enchant Scroll: Elemental Shirt -->
     <!-- Support Items -->
     <enchantSupportItem id="12364" targetType="WEAPON" grade="b" maxLevel="9"
                         extraChance="15" /> <!-- Lucky Enchant Stone: Weapon (B-grade) -->

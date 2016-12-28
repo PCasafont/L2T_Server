@@ -3889,8 +3889,8 @@
     </item>
     <!-- Sparkling coin. Used to exchange for special items through the dimensional merchant. -->
     <item id="37559" type="EtcItem" name="Shiny Coin" icon="icon.etc_recall_token" immediateEffect="1" weight="0"
-          isTradable="false"
-          isDropable="false" isSellable="false" isStackable="true">
+          isTradable="true"
+          isDropable="true" isSellable="true" isStackable="true">
     </item>
     <!-- Vitality extract containing the emperor's strength. 1 out of 4 bars on the vitality gauge are replenished. Cooldown is 60 minutes. Cannot be used in the Olympiad. -->
     <item id="37560" type="EtcItem" name="Emperor's Vitality Tonic" icon="icon.etc_recall_potion3" weight="0">

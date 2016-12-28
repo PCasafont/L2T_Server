@@ -1397,7 +1397,7 @@
     <!-- Eternal Breastplate - Defense Type / Heavy -->
     <armorSet id="19779" parts="5">
         <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13070" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
+        <skill id="13070" levels="1" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
         <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
         <shieldSkill id="3551" /> <!-- Equipped with Shield -->
     </armorSet>
@@ -1412,5 +1412,12 @@
         <skill id="3006" levels="1" /> <!-- Equip Set Items -->
         <skill id="13091" levels="4" /> <!-- Set Effect - Eternal Robe (recovery) -->
         <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+    </armorSet>
+    <!-- Eternal Breastplate - Defense Type / Heavy -->
+    <armorSet id="19791" parts="5">
+        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
+        <skill id="13070" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
+        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
     </armorSet>
 </list>

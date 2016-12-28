@@ -2442,7 +2442,7 @@
     <config name="InstancedEventEnabled" var="INSTANCED_EVENT_ENABLED" default="False" />
 
     <!-- Time Between TvT events (in minutes, 300 = 5 hours) -->
-    <config name="InstancedEventInterval" var="INSTANCED_EVENT_INTERVAL" default="300" />
+    <config name="InstancedEventInterval" var="INSTANCED_EVENT_INTERVAL" default="200" />
 
     <!-- Event running time (in minutes). -->
     <config name="InstancedEventRunningTime" var="INSTANCED_EVENT_RUNNING_TIME" default="10" />
@@ -3054,9 +3054,9 @@
     <config name="CustomLotteryRewardMultplier" var="CUSTOM_LOTTERY_REWARD_MULTIPLIER" default="1" />
 
     <!-- Custom Damage Manager (Event) -->
-    <config name="EnableCustomDamageManager" var="ENABLE_CUSTOM_DAMAGE_MANAGER" default="false" />
-    <config name="CustomDamageManagerRewardId" var="CUSTOM_DAMAGE_MANAGER_REWARD_ID" default="4357" />
-    <config name="CustomDamageManagerRewardAmount" var="CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT" default="1000000" />
+    <config name="EnableCustomDamageManager" var="ENABLE_CUSTOM_DAMAGE_MANAGER" default="true" />
+    <config name="CustomDamageManagerRewardId" var="CUSTOM_DAMAGE_MANAGER_REWARD_ID" default="37559" />
+    <config name="CustomDamageManagerRewardAmount" var="CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT" default="5" />
 
     <!-- Custom Auction (Community Board) -->
     <config name="EnableCustomAuctions" var="ENABLE_CUSTOM_AUCTIONS" default="false" />

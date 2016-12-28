@@ -400,8 +400,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
                     world.instancedPlayer.sendPacket(new ExSendUIEventRemove());
                     world.instancedPlayer.showQuestMovie(47);
                     world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                            Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(),
-                                    8 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+                            3, player, true);
                 }
                 npc.setDisplayEffect(1);
             }

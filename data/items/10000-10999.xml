@@ -3502,7 +3502,7 @@
     <!-- Small, shiny lead medal. It reads, 'Permission No.3 for Group Admission to Special Workshop'. -->
     <item id="10429" type="EtcItem" name="Tully's Lead Medal" icon="icon.etc_jewel_blue_i00" immediateEffect="1"
           weight="2"
-          price="0" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
+          price="0" isTradable="true" isDropable="true" isSellable="true" isStackable="true">
     </item>
     <!-- Small, shiny zinc medal. It reads, 'Permission No.4 for Group Admission to Special Workshop'. -->
     <item id="10430" type="EtcItem" name="Tully's Zinc Medal" icon="icon.etc_jewel_green_i00" immediateEffect="1"

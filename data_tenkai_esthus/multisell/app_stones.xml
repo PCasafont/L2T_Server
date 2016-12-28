@@ -912,4 +912,44 @@
         <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
         <production id="46586" count="1" /> <!-- Freya's Tunic Appearance Stone -->
     </item>
+ <item>
+        <ingredient id="4037" count="10" />  <!--Event Apiga -->
+   <production id="47232" count="1" /> <!-- CowBoy Purple -->
+ </item>
+     <item>
+         <ingredient id="4037" count="10" />  <!--Event Apiga -->
+ <production id="47231" count="1" /> <!--Red Musketer -->
+ </item>
+   <item>
+         <ingredient id="4037" count="10" /> <!--Event Apiga -->
+      <production id="47230" count="1" /><!-- Blue Musketer -->
+ </item>
+ <item>
+          <ingredient id="4037" count="10" /> <!-- Event Apiga -->
+<production id="47229" count="1" />  <!--Wizard Red -->
+ </item>
+     <item>
+        <ingredient id="4037" count="10" /> <!--Event Apiga -->
+     <production id="47228" count="1" /><!-- Wizard Wine -->
+    </item>
+          <item>
+              <ingredient id="4037" count="10" /> <!-- Event Apiga -->
+        <production id="47364" count="1" /> <!-- White Nobless -->
+    </item>
+    <item>
+        <ingredient id="4037" count="10" /> <!-- Event Apiga -->
+        <production id="47363" count="1" /> <!-- Red Nobless -->
+    </item>
+  <item>
+        <ingredient id="4037" count="10" /> <!-- Event Apiga -->
+  <production id="47225" count="1" /> <!-- Wizard  -->
+</item>
+ <item>
+      <ingredient id="4037" count="10" /> <!--Event Apiga -->
+      <production id="47224" count="1" /> <!--Red Archer  -->
+       </item>
+          <item>
+             <ingredient id="4037" count="10" /> <!-- Event Apiga -->
+            <production id="47223" count="1" /> <!--Green Archer     -->
+         </item>
 </list>

@@ -15,19 +15,20 @@
 
 package l2server.gameserver.events;
 
+import l2server.gameserver.GmListTable;
+import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author LasTravel
@@ -142,7 +143,7 @@ public class RankingKillInfo
 
 	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)
 	{
-		/*if (killer == null || killed == null)
+		if (killer == null || killed == null)
             return;
 
 		List<String> rewardedPlayers = new ArrayList<String>();
@@ -196,26 +197,26 @@ public class RankingKillInfo
 					rewardedPlayers.add(pl.getExternalIP());
 					if (checkConditions(pl, killed))
 					{
-						int rnd = Rnd.get(150);
-						int rewardId = 0;
-						if (rnd > 0 && rnd < 30)
+						/*int rnd = Rnd.get(150);*/
+						int rewardId = 37559;
+						/*if (rnd > 0 && rnd < 30)
 							rewardId = Rnd.get(38074, 38085);
 						else if (rnd == 0)
 						{
 							if (Rnd.get(100)< 10)
 								rewardId = 37586;
-						}
+						}*/
 
 						if (rewardId != 0)
 						{
-							pl.addItem("LegendaryCard", rewardId, 1, pl, true);
-							GmListTable.broadcastMessageToGMs("LegendaryCard: " + pl.getName() + " get one card!");
-							Util.logToFile(pl.getName()+"("+pl.getClan().getName()+")"+"->("+killed.getName()+"("+killed.getClan().getName()+")) rewarded with "+ ItemTable.getInstance().getTemplate(rewardId).getName(), "LegendaryCards", true);
+							pl.addItem("ShinyCoin", rewardId, 1, pl, true);
+							//GmListTable.broadcastMessageToGMs("LegendaryCard: " + pl.getName() + " get one card!");
+							//Util.logToFile(pl.getName()+"("+pl.getClan().getName()+")"+"->("+killed.getName()+"("+killed.getClan().getName()+")) rewarded with "+ ItemTable.getInstance().getTemplate(rewardId).getName(), "LegendaryCards", true);
 						}
 					}
 				}
 			}
-		}*/
+		}
 	}
 
 	private class KillInfo

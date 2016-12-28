@@ -83,7 +83,7 @@ public class ChatGlobal implements IChatHandler
 			_messages.put(activeChar.getObjectId(), messages);
 		}
 
-		int maxMessages = 20 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);
+		int maxMessages = 40 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);
 		if (messages > maxMessages)
 		{
 			activeChar.sendMessage("You can't write more than " + maxMessages + " global messages a day.");

@@ -7323,28 +7323,22 @@
     </item>
     <!-- Fruit basket full of delicious-looking apples. -->
     <item id="20770" type="EtcItem" name="Apple Basket Herb" icon="BranchSys.br_Xmas_apple_basket_i00"
-          immediateEffect="1" exImmediateEffect="1"
-          isDepositable="false" isOlyRestricted="true">
-        <skill id="22128" level="1" /> <!-- Rudolph's Joy -->
+          immediateEffect="1" weight="0" isStackable="true">
     </item>
     <!-- Fruit basket full of delicious-looking oranges. -->
     <item id="20771" type="EtcItem" name="Orange Basket Herb" icon="BranchSys.br_Xmas_orange_basket_i00"
-          immediateEffect="1"
-          exImmediateEffect="1" isDepositable="false" isOlyRestricted="true">
-        <skill id="22128" level="2" /> <!-- Rudolph's Joy -->
+          immediateEffect="1">
     </item>
     <!-- Fruit basket full of delicious-looking bananas. -->
     <item id="20772" type="EtcItem" name="Banana Basket Herb" icon="BranchSys.br_Xmas_banana_basket_i00"
-          immediateEffect="1"
-          exImmediateEffect="1" isDepositable="false" isOlyRestricted="true">
-        <skill id="22128" level="3" /> <!-- Rudolph's Joy -->
+          immediateEffect="1" >
     </item>
     <!-- Rudolph's Gift filled with Christmas fortune. Contains a wrapped Rudolph Pet Coupon, 4 Vitality Star Candy, Mysterious Food, and Transformation Scroll Pack. -->
     <item id="20773" type="EtcItem" name="Rudolph's Gift" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
           defaultAction="peel"
           immediateEffect="1" weight="100" isTradable="false" isDropable="false" isSellable="false"
           isDepositable="false" isStackable="true"
-          isPremium="true" isOlyRestricted="true">
+         isOlyRestricted="true" handler="ExtractableItems">
         <capsuledItem id="20762" min="1" max="1" chance="100.0" /> <!-- Rudolph Pet Coupon -->
         <capsuledItem id="20739" min="1" max="1" chance="100.0" /> <!-- Transformation Scroll Pack -->
         <capsuledItem id="20764" min="1" max="1" chance="100.0" /> <!-- Purple Star Candy -->

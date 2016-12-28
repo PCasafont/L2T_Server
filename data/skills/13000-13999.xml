@@ -1022,10 +1022,10 @@
 	-->
     <skill id="13070" levels="4" name="Set Effect - Eternal Heavy Armor 5 Piece (Defense Type)">
         <table name="#critDamEvas">0 3.3 3.3 3.3</table>
-        <table name="#stunVuln">0 10 10 10</table>
+        <table name="#stunVuln">0 40 10 10</table>
         <table name="#pDefmul">0 0 0 7</table>
         <table name="#pDef">0 0 0 103</table>
-        <table name="#mDef">0 0 54 54</table>
+        <table name="#mDef">0 0 10 54</table>
         <table name="#bonusHp">0 0 108 108</table>
         <table name="#elemRes">0 0 0 15</table>
         <table name="#name">Set Effect - Eternal Heavy Armor 2 Piece (Defense Type);Set Effect - Eternal Heavy Armor 3

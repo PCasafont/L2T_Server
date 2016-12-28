@@ -52,7 +52,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
     private static final String _qn = "AntharasOpenWorld";
 
     //Id's
-    private static final int _maxMinions = 30;
+        private static final int _maxMinions = 30;
     private static final int _behemothDragon = 29069;
     private static final int _taraskDragon = 29225;
     private static final int[] _dragonBombers = {29070, 29076};

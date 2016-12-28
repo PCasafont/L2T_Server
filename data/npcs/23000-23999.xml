@@ -12982,6 +12982,26 @@
         <itemDrop itemId="36554" min="1" max="1" chance="1.14599" /> <!-- Armor Fragment (High-grade) -->
         <itemDrop itemId="36545" min="1" max="1" chance="0.3" /> <!-- Durandil Wire -->
     </npc>
+
+    <npc id="23329" name="Nerva Kaiser" level="99" type="L2Monster" atkRange="40" hpMax="548122" hpReg="40.6"
+         mpMax="28731"
+         mpReg="29.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="959958945" sp="460780" pAtk="2000000"
+         mAtk="1000000"
+         pDef="40000" mDef="35000" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+         aggressive="true"
+         aggroRange="600" collisionRadius="20" collisionHeight="36.5" elemAtkType="3" elemAtkValue="370" fireRes="150"
+         waterRes="150"
+         windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <skill id="5465" level="1" /> <!-- Earth Attack -->
+        <skill id="15547" level="1" /> <!-- Point Attack -->
+        <skill id="15552" level="1" /> <!-- Hell's Prison -->
+        <spoilDrop itemId="36554" min="1" max="1" chance="0.75" /> <!-- Armor Fragment (High-grade) -->
+        <spoilDrop itemId="36887" min="1" max="1" chance="0.003" /> <!-- Recipe: Quality Braid - Upgrade -->
+        <itemDrop itemId="57" min="28814" max="64816" chance="73.4693" /> <!-- Adena -->
+        <itemDrop itemId="36554" min="1" max="1" chance="1.14599" /> <!-- Armor Fragment (High-grade) -->
+        <itemDrop itemId="36545" min="1" max="1" chance="0.3" /> <!-- Durandil Wire -->
+    </npc>
     <npc id="23330" name="Rubble" level="99" type="L2Monster" atkRange="40" hpMax="493309" hpReg="39.97" mpMax="28731"
          mpReg="12.82"
          STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="17315720" sp="8311" pAtk="133333" mAtk="33000"
@@ -13750,15 +13770,15 @@
                   chance="0.0009" /> <!-- Recipe: Armor Fragment (Top-grade) - Upgrade -->
         <itemDrop itemId="17421" min="1" max="1" chance="0.0009" /> <!-- Amaranthine Stormer -->
     </npc>
-    <npc id="23349" name="Noctum" title="Gravekeeper" level="87" type="L2Monster" atkRange="40" hpMax="186799"
+    <npc id="23349" name="Noctum" title="Gravekeeper" level="87" type="L2Monster" atkRange="40" hpMax="99736"
          hpReg="27.86"
          mpMax="2339" mpReg="20.21" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="2042251" sp="490"
-         pAtk="90750"
-         mAtk="109500" pDef="6000" mDef="4500" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60"
+         pAtk="40750"
+         mAtk="24500" pDef="990" mDef="990" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60"
          runSpd="120"
          collisionRadius="50" collisionHeight="60.5" fireRes="150" waterRes="150" windRes="150" earthRes="150"
          holyRes="150"
-         darkRes="150" aiType="fighter">
+         darkRes="150" aiType="fighter" isLethalImmune="true" >
         <minion npcId="22938" min="2" max="2" /> <!-- Seknus -->
         <minion npcId="22932" min="1" max="1" /> <!-- Krakia Carcass -->
         <skill id="15582" level="1" /> <!-- Fearsome Bombing -->
@@ -16157,7 +16177,7 @@
          aggressive="true"
          aggroRange="600" rHand="17421" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150"
          windRes="150"
-         earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
+         earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
         <spawn x="-47810" y="57540" z="-3096" heading="44472" respawn="60" />
         <spawn x="-48087" y="57634" z="-3088" heading="31361" respawn="60" />
         <spawn x="-48089" y="58478" z="-3168" heading="30240" respawn="60" />

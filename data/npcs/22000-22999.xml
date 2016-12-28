@@ -43387,11 +43387,11 @@
 		<skill id="14010" level="3" /> <!-- Electric Range -->
 		<skill id="14011" level="3" /> <!-- Electric Staff -->
 	</npc>
-	<npc id="22931" name="Krakia Bathus" level="86" type="L2Monster" atkRange="40" hpMax="91736" hpReg="34.36" mpMax="2253"
-			mpReg="11.27" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1033874" sp="248" pAtk="33945" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="true"
+	<npc id="22931" name="Krakia Bathus" level="86" type="L2Monster" atkRange="40" hpMax="93696" hpReg="44.91" mpMax="45970"
+			mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="320000" mAtk="1600000"
+			pDef="940" mDef="960" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="28" collisionHeight="46.15" fireRes="160" waterRes="160" windRes="160" earthRes="160"
-			holyRes="160" darkRes="160" aiType="fighter">
+			holyRes="160" darkRes="160" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -43409,9 +43409,9 @@
 	</npc>
 	<npc id="22932" name="Krakia Carcass" level="86" type="L2Monster" atkRange="1100" hpMax="91736" hpReg="34.36" mpMax="2253"
 			mpReg="11.27" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1033874" sp="248" pAtk="30923" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="80" mCritRate="80" walkSpd="40" runSpd="120" aggressive="true"
+			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="80" mCritRate="80" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" rHand="15304" collisionRadius="25" collisionHeight="36" fireRes="160" waterRes="160" windRes="160"
-			earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+			earthRes="160" holyRes="160" darkRes="160" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="15587" level="1" /> <!-- High-speed Shot -->
@@ -43430,9 +43430,9 @@
 	</npc>
 	<npc id="22933" name="Krakia Lotus" level="87" type="L2Monster" atkRange="40" hpMax="93399" hpReg="34.36" mpMax="2339" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1058404" sp="254" pAtk="35040" mAtk="16000" pDef="960" mDef="940"
-			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="28" collisionHeight="46.15" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160"
-			darkRes="160" aiType="mage">
+			darkRes="160" aiType="mage" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -43449,9 +43449,9 @@
 	</npc>
 	<npc id="22934" name="Rakzan" level="86" type="L2Monster" atkRange="40" hpMax="91736" hpReg="34.36" mpMax="2253" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1033874" sp="248" pAtk="28133" mAtk="15500" pDef="930" mDef="920"
-			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="65" collisionHeight="79" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160"
-			aiType="fighter">
+			aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15586" level="1" /> <!-- Chains of Hatred -->
@@ -43467,9 +43467,9 @@
 	</npc>
 	<npc id="22935" name="Weiss Khan" level="85" type="L2Monster" atkRange="40" hpMax="91265" hpReg="34.36" mpMax="2253" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1008723" sp="242" pAtk="27225" mAtk="21900" pDef="900" mDef="900"
-			pAtkSpd="253" mAtkSpd="1195" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="1195" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="16" collisionHeight="42.5" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160"
-			darkRes="160" aiType="fighter">
+			darkRes="160" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15575" level="1" /> <!-- Dedicated Blow -->
@@ -43486,9 +43486,9 @@
 	</npc>
 	<npc id="22936" name="Weiss Ele" level="85" type="L2Monster" atkRange="40" hpMax="91265" hpReg="34.36" mpMax="2253" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1008723" sp="242" pAtk="27225" mAtk="21900" pDef="900" mDef="900"
-			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="18" collisionHeight="35" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160"
-			aiType="fighter">
+			aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15589" level="1" /> <!-- Painful Blow -->
@@ -43506,9 +43506,9 @@
 	</npc>
 	<npc id="22937" name="Bamonti" level="86" type="L2Monster" atkRange="40" hpMax="91736" hpReg="34.36" mpMax="2253" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1033874" sp="248" pAtk="33945" mAtk="15500" pDef="930" mDef="920"
-			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="19" collisionHeight="43" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160"
-			aiType="fighter">
+			aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
@@ -43526,9 +43526,9 @@
 	</npc>
 	<npc id="22938" name="Seknus" level="85" type="L2Monster" atkRange="40" hpMax="91265" hpReg="34.36" mpMax="2253" mpReg="11.27"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1008723" sp="242" pAtk="27225" mAtk="21900" pDef="900" mDef="900"
-			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true" aggroRange="300"
+			pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false" aggroRange="300"
 			collisionRadius="18" collisionHeight="50" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160"
-			aiType="fighter">
+			aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15579" level="1" /> <!-- Cursed Blow -->
@@ -43548,9 +43548,9 @@
 	</npc>
 	<npc id="22939" name="Demonic Bathus" level="86" type="L2Monster" atkRange="40" hpMax="137604" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1581446" sp="379" pAtk="49755" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="true"
+			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="28" collisionHeight="46.15" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="4410" level="17" /> <!-- Very Strong P. Atk. -->
@@ -43569,9 +43569,9 @@
 	</npc>
 	<npc id="22940" name="Demonic Carcass" level="86" type="L2Monster" atkRange="1100" hpMax="137604" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1581446" sp="379" pAtk="44408" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="80" mCritRate="80" walkSpd="40" runSpd="120" aggressive="true"
+			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="80" mCritRate="80" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" rHand="15304" collisionRadius="25" collisionHeight="36" fireRes="180" waterRes="180" windRes="180"
-			earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+			earthRes="180" holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="15587" level="1" /> <!-- High-speed Shot -->
@@ -43589,9 +43589,9 @@
 	</npc>
 	<npc id="22941" name="Demonic Lotus" level="87" type="L2Monster" atkRange="40" hpMax="140099" hpReg="34.69" mpMax="2339"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1618968" sp="388" pAtk="45840" mAtk="16000"
-			pDef="960" mDef="940" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="true"
+			pDef="960" mDef="940" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="28" collisionHeight="46.15" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="mage">
+			holyRes="180" darkRes="180" aiType="mage" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
 		<skill id="4410" level="17" /> <!-- Very Strong P. Atk. -->
@@ -43607,9 +43607,9 @@
 	</npc>
 	<npc id="22942" name="Demonic Rakzan" level="86" type="L2Monster" atkRange="40" hpMax="137604" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1581446" sp="379" pAtk="41153" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true"
+			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="42" collisionHeight="79" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15585" level="1" /> <!-- Hateful Blow -->
@@ -43629,9 +43629,9 @@
 	</npc>
 	<npc id="22943" name="Demonic Weiss Khan" level="85" type="L2Monster" atkRange="40" hpMax="136898" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1542974" sp="370" pAtk="39825" mAtk="46950"
-			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true"
+			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="16" collisionHeight="42.5" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15575" level="1" /> <!-- Dedicated Blow -->
@@ -43647,9 +43647,9 @@
 	</npc>
 	<npc id="22944" name="Demonic Weiss Ele" level="85" type="L2Monster" atkRange="40" hpMax="136898" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1542974" sp="370" pAtk="39825" mAtk="46950"
-			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true"
+			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="18" collisionHeight="35" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15589" level="1" /> <!-- Painful Blow -->
@@ -43666,9 +43666,9 @@
 	</npc>
 	<npc id="22945" name="Demonic Bamonti" level="86" type="L2Monster" atkRange="40" hpMax="137604" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1581446" sp="379" pAtk="49755" mAtk="15500"
-			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true"
+			pDef="930" mDef="920" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="19" collisionHeight="43" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4410" level="17" /> <!-- Very Strong P. Atk. -->
@@ -43687,9 +43687,9 @@
 	</npc>
 	<npc id="22946" name="Demonic Seknus" level="85" type="L2Monster" atkRange="40" hpMax="136898" hpReg="34.69" mpMax="2253"
 			mpReg="11.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="1542974" sp="370" pAtk="39825" mAtk="46950"
-			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="true"
+			pDef="900" mDef="900" pAtkSpd="253" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="18" collisionHeight="50" fireRes="180" waterRes="180" windRes="180" earthRes="180"
-			holyRes="180" darkRes="180" aiType="fighter">
+			holyRes="180" darkRes="180" aiType="fighter" isLethalImmune="true">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="15579" level="1" /> <!-- Cursed Blow -->

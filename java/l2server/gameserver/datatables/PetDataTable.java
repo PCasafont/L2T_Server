@@ -404,7 +404,7 @@ public class PetDataTable
 			case 16034:// Improved Baby Buffalo
 			case 16036:// Improved Baby Cougar
 			case 16035:// Improved Baby Kookaburra
-				return new int[]{10311, 10312, 10313};
+					return new int[]{10311, 10312, 10313};
 
 			// unknown item id.. should never happen
 			default:

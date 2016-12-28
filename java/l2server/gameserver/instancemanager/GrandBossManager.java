@@ -508,6 +508,8 @@ public class GrandBossManager
 				return Config.LINDVIOR_INTERVAL_SPAWN * 3600000;
 			case 26124:
 				return Config.KELBIM_INTERVAL_SPAWN * 3600000;
+			case 29303:
+				return Config.HELIOS_INTERVAL_SPAWN * 360000;
 			case 25286: //Anakim
 				return (int) calcReuseFromDays(0, 21, Calendar.TUESDAY, 0, 16, Calendar.SATURDAY);
 			case 25283: //Lilith
@@ -579,6 +581,8 @@ public class GrandBossManager
 				return Config.BAIUM_RANDOM_SPAWN * 3600000;
 			case 29028:
 				return Config.VALAKAS_RANDOM_SPAWN * 3600000;
+			case 29303:
+				return Config.HELIOS_RANDOM_SPAWN * 360000;
 			case 29240:
 				return Config.LINDVIOR_RANDOM_SPAWN * 3600000;
 			case 26124:

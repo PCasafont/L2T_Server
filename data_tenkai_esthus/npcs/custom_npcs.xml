@@ -14,7 +14,7 @@
         <itemDrop itemId="46155" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
         <dropCategory chance="15">
             <itemDrop itemId="19448" min="1" max="1" chance="60" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
-            <itemDrop itemId="19447" min="1" max="1" chance="40" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+            <itemDrop itemId="19447" min="1" max="1" chance="40" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) ind-->
         </dropCategory>
     </npc>
     <npc id="2512" templateId="2512" name="Beryn" title="Valiant" level="120" type="L2Npc" atkRange="40" hpMax="2"
@@ -1150,7 +1150,7 @@
         <itemDrop itemId="36563" min="1" max="1" chance="0.12464" /> <!-- Synthetic Cokes -->
         <itemDrop itemId="17527" min="1" max="1" chance="0.03" /> <!-- Scroll: Enchant Armor (R-grade) -->
     </npc>
-    <npc id="80350" templateId="27457" name="Scarecrow" title="Damage Dealer" level="99" type="L2RaidBoss" atkRange="0"
+    <npc id="80350" templateId="13161" name="Scarecrow" title="Damage Dealer" level="99" type="L2RaidBoss" atkRange="0"
          hpMax="191665744"
          hpReg="2536.0" mpMax="3025740" mpReg="1000.0" STR="50" CON="50" DEX="50" INT="50" WIT="50" MEN="50"
          exp="499688640"

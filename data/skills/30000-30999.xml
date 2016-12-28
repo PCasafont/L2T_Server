@@ -1753,7 +1753,7 @@
         <set name="hitTime" val="100" />
         <set name="reuseDelay" val="7000" />
         <set name="castRange" val="150" />
-        <set name="effectRange" val="650" />
+        <set name="effectRange" val="400" />
         <set name="weaponsAllowed" val="Dual Fist" />
         <set name="flyType" val="MOVE_HORIZONTAL" />
         <set name="flyCourse" val="0" />
@@ -2079,7 +2079,7 @@
                 <effect type="Immortal" val="0" />
                 <effect chanceType="ON_EXIT" triggeredId="23607" triggeredLevel="#trigLevel" type="ChanceSkillTrigger"
                         val="0" />
-                <effect activationChance="100" activationMinDamage="300" chanceType="ON_HIT" triggeredId="30521"
+                <effect activationChance="100" activationMinDamage="1200" chanceType="ON_HIT" triggeredId="30521"
                         triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
                 <add stat="runSpd" val="#runSpd" />
                 <addPercent stat="pAtk" val="#pAtk" />

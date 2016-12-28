@@ -1,6 +1,7 @@
 ﻿<list>
     <currency position="1" itemId="57" /> <!-- Adena -->
-    <currency position="2" itemId="4037" /> <!-- Coin of Luck -->
+    <currency position="2" itemId="37559" /> <!-- Shiny Coin -->
+    <currency position="3" itemId="4037" /> <!-- Coin of Luck -->
     <auction id="1" itemId="36414" count="50" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
              initialPrice="1" initialDuration="20" /> <!-- Dragon Claw -->
     <auction id="2"
@@ -25,8 +26,6 @@
              initialPrice="1" initialDuration="24" /> <!-- Venir's Talisman - Stage 24 -->
     <auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
              initialPrice="1" initialDuration="24" /> <!-- Talisman - Seven Signs -->
-    <auction id="119" itemId="14721" count="5" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Event - Golden Apiga -->
-    <auction id="201" itemId="46603,46604,46605" count="1" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- RZubei/BDinasty/WAssassin App Stone -->
+    <auction id="110" itemId="10429" count="10" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Enchant -->
 </list>

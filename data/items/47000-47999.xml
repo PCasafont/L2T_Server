@@ -1308,25 +1308,30 @@
     </item>
     <!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, P. Critical Damage +15%, P. Atk. +4%. Effect does not stack with identical ones. -->
     <item id="47215" type="Armor" name="Ring of Authority" icon="icon.accessory_ring_of_helios_red" defaultAction="equip" bodypart="rfinger;lfinger"
-          immediateEffect="1" weight="150">
+          immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <skill id="16748" level="1" />
         <baseAdd stat="mDef" val="101" />
+        <enchant stat="mDef" val="0" />
     </item>
+
     <!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
 		Effect does not stack with identical ones.
 		Can be crafted.
 	-->
     <item id="47216" type="Armor" name="Ruler's Ring of Authority" icon="icon.accessory_ring_of_helios_enchant_red" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16749" level="1"/>
+        <skill id="16748" level="2"/>
+        <skill id="16755" level="1" />
+        <enchant stat="mDef" val="0" />
     </item>
     <!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, M. Critical Damage +15%, M. Atk. +4%. Effect does not stack with identical ones. -->
     <item id="47217" type="Armor" name="Ring of the Truth" icon="icon.accessory_ring_of_helios" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="101" />
-        <skill id="16750" level="1"/>
+        <skill id="16749" level="1"/>
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Knock Down when single M. Atk. skill is used.
@@ -1335,83 +1340,83 @@
 	-->
     <item id="47218" type="Armor" name="Ring of the Truth-Seeker" icon="icon.accessory_ring_of_helios_enchant" defaultAction="equip"
           bodypart="rfinger;lfinger"
-          weight="150" immediateEffect="1">
+          weight="150" immediateEffect="1" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16751" level="1" />
+        <skill id="16749" level="2" />
+        <skill id="16757" level="1"/>
+        <enchant stat="mDef" val="0" />
     </item>
     <!-- Take this to Rafforty to enhance the Ring of the Beginning. -->
     <item id="47219" type="Weapon" name="Source of the Emperor" icon="icon.source of the load" bodypart="none"
           material="steel"
-          weight="0" crystal_type="none">
+          weight="0" crystal_type="r">
     </item>
-    <item id="47220" type="Armor" name="Red Pirate Garment" icon="icon.pirate_red_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47220" type="Armor" name="Red Pirate Garment" icon="icon.pirate_red_change" bodypart="alldress" isTradable="true" isDropable="true" isSellable="true"
           material="steel"
-          weight="0" crystal_type="none">
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47221" type="Armor" name="Blue Pirate Garment" icon="icon.pirate_blue_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47221" type="Armor" name="Blue Pirate Garment" icon="icon.pirate_blue_change" bodypart="alldress" isTradable="true" isDropable="true" isSellable="true"
           material="steel"
-          weight="0" crystal_type="none">
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47222" type="Armor" name="Pirate Shipmate Garment" icon="icon.pirate_crew_change" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47222" type="Armor" name="Pirate Shipmate Garment" icon="icon.pirate_crew_change" bodypart="alldress" isTradable="true" isDropable="true" isSellable="true"
           material="steel"
-          weight="0" crystal_type="none">
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47223" type="Armor" name="Archer-Green Garment" icon="icon.arc_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47223" type="Armor" name="Archer-Green Garment" icon="icon.arc_i00" bodypart="alldress"  material="steel" isTradable="true" isStackable="true" isSellable="true"
+    weight="0">
+    </item>
+    <item id="47224" type="Armor" name="Archer-Red Garment" icon="icon.arc_r_i00" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47224" type="Armor" name="Archer-Red Garment" icon="icon.arc_r_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47225" type="Armor" name="Wizard Garment" icon="icon.ev_wp_halloween" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47225" type="Armor" name="Wizard Garment" icon="icon.ev_wp_halloween" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47226" type="Armor" name="Red Noblesse Garment" icon="icon.nobless_red" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47226" type="Armor" name="Red Noblesse Garment" icon="icon.nobless_red" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
-          weight="0"
-          crystal_type="none">
-        <baseAdd stat="pDef" val="400" />
-    </item>
-    <item id="47227" type="Armor" name="White Noblesse Garment" icon="icon.nobless_white" bodypart="alldress" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47227" type="Armor" name="White Noblesse Garment" icon="icon.nobless_white" bodypart="alldress" isTradable="true" isDropable="true" isSellable="true"
           material="steel"
-          weight="0" crystal_type="none">
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47228" type="Armor" name="Wizard-Wine Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47228" type="Armor" name="Wizard-Wine Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47229" type="Armor" name="Wizard-Red Garment" icon="icon.wzd_i00" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47229" type="Armor" name="Wizard-Red Garment" icon="icon.wzd_i00" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
     <item id="47230" type="Armor" name="Blue Musketeer Garment" icon="icon.inquisitor_blue" bodypart="alldress"
-          material="steel" isTradable="false" isDropable="false" isSellable="false"
-          weight="0" crystal_type="none">
+          material="steel" isTradable="true" isDropable="true" isSellable="true"
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
     <item id="47231" type="Armor" name="Red Musketeer Garment" icon="icon.inquisitor_red" bodypart="alldress"
-          material="steel" isTradable="false" isDropable="false" isSellable="false"
-          weight="0" crystal_type="none">
+          material="steel" isTradable="true" isDropable="true" isSellable="true"
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
     <item id="47232" type="Armor" name="Cowboy-Purple Garment" icon="icon.cowboy_purple_chest_change" bodypart="alldress"
-          material="steel" isTradable="false" isDropable="false" isSellable="false"
-          weight="0" crystal_type="none">
+          material="steel" isTradable="true" isDropable="true" isSellable="true"
+          weight="0" crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
-    <item id="47233" type="Armor" name="Cowboy-Red Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="false" isDropable="false" isSellable="false"
+    <item id="47233" type="Armor" name="Cowboy-Red Garment" icon="icon.dark_assassin" bodypart="alldress" material="steel" isTradable="true" isDropable="true" isSellable="true"
           weight="0"
-          crystal_type="none">
+          crystal_type="r">
         <baseAdd stat="pDef" val="400" />
     </item>
     <!-- Teleports to the Blackbird Campsite. -->
@@ -2129,14 +2134,12 @@
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- Use to change the appearance of your upper or full-bod armor into a Red Noblesse Garment. The stone modifies the appearance of all armor, and all armor appears as a Red Noblesse Outfit. -->
-    <item id="47363" type="Weapon" name="Red Noblesse Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47363" type="EtcItem" name="Red Noblesse Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+    weight="0" isStackable="true" handler="AppearanceStone" standardItem="47226">
     </item>
     <!-- Use to change the appearance of your upper or full-bod armor into a White Noblesse Garment. The stone modifies the appearance of all armor, and all armor appears as a White Noblesse Outfit. -->
-    <item id="47364" type="Weapon" name="White Noblesse Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47364" type="EtcItem" name="White Noblesse Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+          weight="0" isStackable="true" handler="AppearanceStone" standardItem="47227">
     </item>
     <!-- Use to change the appearance of your upper or full-bod armor into a Blue Musketeer Garment. The stone modifies the appearance of all armor, and all armor appears as a Blue Musketeer Outfit. -->
     <item id="47365" type="Weapon" name="Blue Musketeer Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -2879,9 +2882,11 @@
 		STR +2
 	-->
     <item id="47478" type="Armor" name="Ruler's Ring of Authority - Str" icon="icon.accessory_ring_of_helios_enchant_red" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r" >
         <baseAdd stat="mDef" val="114" />
-        <skill id="16749" level="2"/>
+        <skill id="16748" level="3"/>
+        <skill id="16755" level="1" />
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2891,9 +2896,11 @@
 		INT +2
 	-->
     <item id="47479" type="Armor" name="Ruler's Ring of Authority - Int" icon="icon.accessory_ring_of_helios_enchant_red" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16749" level="3"/>
+        <skill id="16748" level="4"/>
+        <skill id="16755" level="1" />
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2903,9 +2910,11 @@
 		CON +2
 	-->
     <item id="47480" type="Armor" name="Ruler's Ring of Authority - CON" icon="icon.accessory_ring_of_helios_enchant_red" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16749" level="4"/>
+        <skill id="16748" level="5"/>
+        <skill id="16755" level="1" />
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2915,9 +2924,11 @@
 		STR +2
 	-->
     <item id="47481" type="Armor" name="Ring of the Truth-Seeker - Str" icon="icon.accessory_ring_of_helios_enchant" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16751" level="2"/>
+        <skill id="16749" level="3"/>
+        <skill id="16757" level="1"/>
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2927,9 +2938,11 @@
 		INT +2
 	-->
     <item id="47482" type="Armor" name="Ring of the Truth-Seeker - Int" icon="icon.accessory_ring_of_helios_enchant" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16751" level="3"/>
+        <skill id="16757" level="1"/>
+        <skill id="16749" level="4"/>
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2939,9 +2952,11 @@
 		CON +2
 	-->
     <item id="47483" type="Armor" name="Ring of the Truth-Seeker - Con" icon="icon.accessory_ring_of_helios_enchant" defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" >
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150" enchantEnabled="1" crystalType="r">
         <baseAdd stat="mDef" val="114" />
-        <skill id="16751" level="4"/>
+        <skill id="16749" level="5"/>
+        <skill id="16757" level="1"/>
+        <enchant stat="mDef" val="0" />
     </item>
     <!--
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -3915,7 +3930,7 @@
     <item id="47689" type="Armor" name="Greater Sapphire" icon="icon.bm_jewel_spsdmg_high_lv1_lavianrose" defaultAction="equip"
           bodypart="jewel"
           immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
-        <skill id="18718" level="2"/>
+        <skill id="18718" level="1"/>
     </item>
     <!-- When equipped, PvP incoming damage decreases by 15% and cancels the attacker's target. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47690" type="Armor" name="Greater Obsidian" icon="icon.bm_jewel_pvpdef_high_lv1_lavianrose"
@@ -3942,12 +3957,14 @@
     <!-- When equipped, P. Def. Increases by 1986 and incoming P. Critical Damage decreases by 5%. P. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47694" type="Armor" name="Greater Diamond" icon="icon.bm_jewel_phydef_high_lv1_lavianrose" defaultAction="equip"
           bodypart="jewel"
-          immediateEffect="1" weight="5">
+          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+        <skill id="17708" level="6" />
     </item>
     <!-- When equipped, M. Def. Increases by 1150 and incoming M. Critical Damage decreases by 5%. M. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47695" type="Weapon" name="Greater Pearl" icon="icon.bm_jewel_magdef_high_lv1_lavianrose" bodypart="none"
           material="steel"
           weight="0" crystal_type="none">
+        <skill id="17709" level="6" />
     </item>
     <!-- Increases Vitality Status Bonus XP by 30% and the Vitality Point Consumption Speed decreases by 15%. XP Gain increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47696" type="Weapon" name="Greater Vital Stone" icon="icon.bm_jewel_vital_high_lv1_lavianrose"

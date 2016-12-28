@@ -37,7 +37,7 @@ public class VoteNpc extends Quest
 {
 	private static final boolean _debug = false;
 	private static final String _qn = "VoteNpc";
-	private static final int _voteNpcId = 40004;
+	private static final int _voteNpcId = 50010;
 	@SuppressWarnings("unused")
 	private static final String SELECT_VOTE_IP =
 			"SELECT * from " + Config.WEB_DB_NAME + ".server_voted_ips WHERE ip = ?";
@@ -221,7 +221,7 @@ public class VoteNpc extends Quest
 					//saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
 				}
 
-				player.addItem(_qn, 4356, 70, npc, true);
+				player.addItem(_qn, 10639, 1, npc, true);
 
 				Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward",
 						"VoteSystem", true);

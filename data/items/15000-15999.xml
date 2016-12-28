@@ -3618,9 +3618,9 @@
           defaultAction="equip"
           weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
           immediateEffect="1"
-          crystalType="s" weight="150" elementEnabled="1" enchantEnabled="1" isTradable="false" isDropable="false"
+          crystalType="s" weight="150" elementEnabled="1" enchantEnabled="1" isTradable="false" isDropable="true"
           isSellable="false"
-          isDepositable="false" time="7200">
+          isDepositable="false" time="1">
         <cond msgId="1518">
             <player instanceId="112" />
         </cond>
@@ -3632,7 +3632,7 @@
     </item>
     <item id="15311" type="EtcItem" name="Delusion Chamber Invitation" icon="icon.etc_magic_coin_gold_i01"
           immediateEffect="1"
-          weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false">
+          weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isDestroyable="true">
     </item>
     <!-- Dawn's bracelet given from the Priest Franz. Precious looking bracelet. Increases Weight Limit of 5000. -->
     <item id="15312" type="Armor" name="Dawn's Bracelet" icon="icon.accessory_lbracelet_of_dawn" defaultAction="equip"

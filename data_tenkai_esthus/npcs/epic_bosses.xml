@@ -8,12 +8,14 @@
         <itemDrop itemId="6660" min="20" max="25" chance="100" /> <!-- Queen Ant's Ring -->
         <itemDrop itemId="36252" min="20" max="25" chance="100" /> <!-- Bottle of Queen Ant's Soul -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Core -->
     <npc id="29006" level="107" overrideDrops="true">
         <!-- Epic Items -->
         <itemDrop itemId="6662" min="20" max="25" chance="100" /> <!-- Ring of Core -->
         <itemDrop itemId="57" min="500000" max="750000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Orfen -->
     <npc id="29014" level="107" overrideDrops="true" hpMax="115920000" exp="9339738544" sp="2241537"
@@ -22,6 +24,7 @@
         <itemDrop itemId="6661" min="20" max="25" chance="100" /> <!-- Orfen's Earring -->
         <itemDrop itemId="36253" min="20" max="25" chance="100" /> <!-- Bottle of Orfen's Soul -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Baium -->
     <npc id="29020" level="107" overrideDrops="true" hpMax="127008000" exp="9339738544" sp="2241537"
@@ -30,6 +33,7 @@
         <itemDrop itemId="6658" min="20" max="25" chance="100" /> <!-- Baium's Ring -->
         <itemDrop itemId="37520" min="20" max="25" chance="100" /> <!-- Bottle of Baium's Soul -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Antharas -->
     <npc id="29068" level="107" overrideDrops="true" hpMax="1172612305" hpReg="1830.0" mpMax="3996001" mpReg="1000.0"
@@ -52,6 +56,7 @@
         <itemDrop itemId="36426" min="2" max="5" chance="100" /> <!-- Antharas Dualsword (Fragment) -->
         <!-- Adena -->
         <itemDrop itemId="57" min="450000000" max="1200000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="100" max="150" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Valakas -->
     <npc id="29028" level="107" overrideDrops="true" hpMax="1172612305" hpReg="1830.0" mpMax="3996001" mpReg="1000.0"
@@ -71,6 +76,7 @@
         <itemDrop itemId="36433" min="4" max="6" chance="100" /> <!-- Valakas Retributer (Fragment) -->
         <!-- Adena -->
         <itemDrop itemId="57" min="450000000" max="1200000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="100" max="150" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Lindvior (Open World) -->
     <npc id="29240" level="107" overrideDrops="true" hpMax="1172612305" hpReg="1830.0" mpMax="3996001" mpReg="1000.0"
@@ -89,6 +95,7 @@
         <itemDrop itemId="36440" min="4" max="6" chance="100" /> <!-- Lindvior Dual Dagger - Fragment -->
         <!-- Adena -->
         <itemDrop itemId="57" min="450000000" max="1200000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="100" max="150" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Kelbim -->
     <npc id="26124" level="107" overrideDrops="true" hpMax="95760030" exp="9339738544" sp="2241537"
@@ -102,6 +109,7 @@
         <!-- Epic Items -->
         <itemDrop itemId="37714" min="15" max="20" chance="100" /> <!-- Talisman - Lilith -->
         <itemDrop itemId="36257" min="2" max="3" chance="100" /> <!-- Lilith's Soul Necklace -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <itemDrop itemId="37716" min="5" max="10" chance="100" /> <!-- Seven Signs' Energy -->
         <!-- Random Stuff -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
@@ -114,12 +122,14 @@
         <itemDrop itemId="37716" min="5" max="10" chance="100" /> <!-- Seven Signs' Energy -->
         <!-- Random Stuff -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <itemDrop itemId="10296" min="2" max="3" chance="100" /> <!-- Transformation Sealbook: Anakim -->
     </npc>
     <!-- Instance Epic Bosses -->
     <!-- Beleth (Currently only accessible on Tenkai)-->
     <npc id="29118" overrideDrops="true">
         <!-- Epic Items -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <itemDrop itemId="10314" min="1" max="1" chance="80" /> <!-- Beleth' Ring -->
         <itemDrop itemId="13893" min="1" max="1" chance="40" /> <!-- Sealed Holy Spirit's Cloak -->
     </npc>
@@ -138,6 +148,7 @@
         <itemDrop itemId="16025" min="7" max="10" chance="100" /> <!-- Freya's Necklace -->
         <itemDrop itemId="16027" min="5" max="7" chance="100" /> <!-- Bottle of Freya's Soul -->
         <itemDrop itemId="21714" min="1" max="1" chance="80" /> <!-- Sealed Cloak of Freya -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <!-- Cosmetic -->
         <itemDrop itemId="21894" min="1" max="1" chance="80" /> <!-- Ice Queen's Tiara -->
         <itemDrop itemId="57" min="7000000" max="11000000" chance="100" /> <!-- Adena -->
@@ -153,6 +164,7 @@
     <npc id="29181" overrideDrops="true" level="107" hpMax="95760030" exp="9339738544" sp="2241537"
          pAtk="1284001" mAtk="620680" pDef="8119" mDef="3558">
         <!-- Epic Items -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <itemDrop itemId="21712" min="5" max="6" chance="100" /> <!-- Blessed Zaken's Earring -->
         <itemDrop itemId="21713" min="1" max="2" chance="100" /> <!-- Zaken's Sealed Cloak -->
         <!-- Cosmetic -->
@@ -163,6 +175,7 @@
     <npc id="29022" overrideDrops="true">
         <!-- Epic Items -->
         <itemDrop itemId="6659" min="1" max="1" chance="100" /> <!-- Zaken's Earring -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         <!-- Cosmetic -->
         <itemDrop itemId="8922" min="1" max="1" chance="100" /> <!-- Pirate Hat -->
     </npc>
@@ -176,6 +189,7 @@
         <!-- Cosmetic -->
         <itemDrop itemId="21893" min="1" max="1" chance="80" /> <!-- Halisha's Helmet -->
         <itemDrop itemId="57" min="7000000" max="11000000" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Tauti (Easy Mode) -->
     <npc id="29236" overrideDrops="true">
@@ -183,6 +197,7 @@
         <dropCategory chance="60">
             <itemDrop itemId="35570" min="1" max="1" chance="10" /> <!-- Tauti's Ring -->
             <itemDrop itemId="35293" min="1" max="1" chance="90" /> <!-- Tauti's Bracelet -->
+            <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         </dropCategory>
     </npc>
     <!-- Tauti (Extreme Mode) -->
@@ -192,6 +207,7 @@
         <itemDrop itemId="35295" min="5" max="7" chance="100" /> <!-- Bottle of Tauti's Soul -->
         <itemDrop itemId="35570" min="7" max="10" chance="100" /> <!-- Tauti's Ring -->
         <itemDrop itemId="35667" min="11" max="14" chance="100" /> <!-- Tauti's Fragment -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Octavis (Easy Mode) -->
     <npc id="29194" overrideDrops="true">
@@ -201,6 +217,7 @@
             <itemDrop itemId="19457" min="1" max="1" chance="25" /> <!-- Octavis' Ring -->
             <itemDrop itemId="19458" min="1" max="1" chance="25" /> <!-- Octavis' Earring -->
             <itemDrop itemId="19459" min="1" max="1" chance="25" /> <!-- Octavis' Necklace -->
+            <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         </dropCategory>
     </npc>
     <!-- Octavis (Extreme Mode) -->
@@ -214,6 +231,7 @@
         <itemDrop itemId="19457" min="1" max="2" chance="100" /> <!-- Octavis' Ring -->
         <itemDrop itemId="19458" min="1" max="2" chance="100" /> <!-- Octavis' Earring -->
         <itemDrop itemId="19459" min="1" max="2" chance="100" /> <!-- Octavis' Necklace -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Istina (Easy Mode) -->
     <npc id="29195" overrideDrops="true">
@@ -223,6 +241,7 @@
             <itemDrop itemId="19453" min="1" max="1" chance="25" /> <!-- Istina's Necklace -->
             <itemDrop itemId="19451" min="1" max="1" chance="25" /> <!-- Istina's Ring -->
             <itemDrop itemId="19452" min="1" max="1" chance="25" /> <!-- Istina's Earring -->
+            <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
         </dropCategory>
     </npc>
     <!-- Istina (Extreme Mode) -->
@@ -236,6 +255,7 @@
         <itemDrop itemId="19453" min="1" max="2" chance="100" /> <!-- Istina's Necklace -->
         <itemDrop itemId="19451" min="1" max="2" chance="100" /> <!-- Istina's Ring -->
         <itemDrop itemId="19452" min="1" max="2" chance="100" /> <!-- Istina's Earring -->
+        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Earth Wyrm Trasken -->
     <npc id="19159" overrideDrops="true" level="107" hpMax="95760030" exp="9339738544" sp="2241537"

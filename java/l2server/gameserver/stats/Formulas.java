@@ -4689,10 +4689,10 @@ public final class Formulas
 
 	public static double damageMultiplier(L2Character attacker, L2Character target)
 	{
-		if (!Config.isServer(Config.TENKAI))
-		{
-			return 1.0;
-		}
+		//if (!Config.isServer(Config.TENKAI))
+		//{
+		//	return 1.0;
+		//}
 
 		double multiplier = 1.0;
 		if (attacker.getActingPlayer() != null)
@@ -4760,20 +4760,20 @@ public final class Formulas
 							if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER ||
 									weapon.getItemType() == L2WeaponType.DUALDAGGER))
 							{
-								multiplier *= 1.2;
+								multiplier *= 1.1;
 							}
 							break;
 						case 142: // Yul Archer
 							multiplier *= 1.05;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 1.3;
+							multiplier *= 1.10;
 							break;
 						case 144: // Iss Enchanter
 							multiplier *= 1.5;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 1.7;
+							multiplier *= 1.5;
 							break;
 						case 146: // Aeore Healer
 							multiplier *= 1.5;
@@ -4787,7 +4787,7 @@ public final class Formulas
 						multiplier *= 0.9;
 						break;
 					case 166: // Feoh Archmage
-						multiplier *= 1.5;
+						multiplier *= 1.3;
 						break;
 					case 167: // Feoh Soultaker
 						multiplier *= 0.9;
@@ -4822,19 +4822,19 @@ public final class Formulas
 							multiplier *= 0.95;
 							break;
 						case 142: // Yul Archer
-							//multiplier *= 1.4;
+							multiplier *= 0.85;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.85;
+							multiplier *= 0.95;
 							break;
 						case 144: // Iss Enchanter
-							//multiplier *= 1.8;
+							multiplier *= 1.3;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 0.85;
+							multiplier *= 0.95;
 							break;
 						case 146: // Aeore Healer
-							//multiplier *= 2.1;
+							multiplier *= 1.2;
 							break;
 					}
 				}
@@ -4842,10 +4842,10 @@ public final class Formulas
 				switch (targetClass.getId())
 				{
 					case 166: // Feoh Archmage
-						multiplier *= 0.8;
+						//multiplier *= 0.8;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 1.2;
+						//multiplier *= 1.2;
 						break;
 					case 188: // Eviscerator
 						//multiplier *= 0.8;
