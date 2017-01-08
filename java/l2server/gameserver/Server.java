@@ -38,7 +38,9 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
 import l2server.gameserver.network.PacketOpcodes;
+import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
+import l2server.gameserver.pathfinding.cellnodes.CellPathFinding;
 import l2server.gameserver.script.faenor.FaenorScriptEngine;
 import l2server.gameserver.scripting.CompiledScriptCache;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
@@ -50,6 +52,7 @@ import l2server.network.Core;
 import l2server.network.CoreConfig;
 import l2server.util.DeadLockDetector;
 import l2server.util.IPv4Filter;
+import org.junit.Assert;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,7 +62,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Calendar;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 
@@ -486,6 +489,25 @@ public class Server
 
 		AutoAnnounceTaskManager.getInstance();
 		//ArtificialPlayersManager.getInstance();
+		testPathGludio();
+	}
+
+	public void testPathGludio()
+	{
+		testPath(-13303, 124790, -3118, -13524, 121844, -2968);
+	}
+
+	private void testPath(int fromX, int fromY, int fromZ, int toX, int toY, int toZ)
+	{
+		long curTime = System.nanoTime();
+		java.util.List<AbstractNodeLoc>
+				path = CellPathFinding.getInstance().findPath(fromX, fromY, fromZ, toX, toY, toZ, 0, true);
+		Log.info("Path finding took " + (System.nanoTime() - curTime) / 1000000.0 + " ms.");
+		Assert.assertTrue(!path.isEmpty());
+
+		curTime = System.nanoTime();
+		GeoData.getInstance().canMoveFromToTarget(fromX, fromY, fromZ, toX, toY, toZ, 0);
+		Log.info("Geo check took " + (System.nanoTime() - curTime) / 1000000.0 + " ms.");
 	}
 
 	public static void main(String[] args) throws Exception

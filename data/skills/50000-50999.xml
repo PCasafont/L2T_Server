@@ -1,244 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <skill id="50100" levels="1" name="Herb of Windwalk">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="2" stackType="speed_up">
-                <effect type="Buff" val="0" />
-                <add stat="runSpd" val="33" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50101" levels="1" name="Herb of Berserker">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="2" stackType="berserker">
-                <effect type="Buff" val="0" />
-                <addPercent stat="mAtk" val="16" />
-                <addPercent stat="pAtk" val="8" />
-                <subPercent stat="mDef" val="16" />
-                <subPercent stat="pDef" val="8" />
-                <addPercent stat="mAtkSpd" val="8" />
-                <addPercent stat="pAtkSpd" val="8" />
-                <add stat="runSpd" val="8" />
-                <sub stat="rEvas" val="4" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50102" levels="1" name="Herb of Body">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="6" stackType="max_hp_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="maxHp" val="35" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50103" levels="1" name="Herb of Soul">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="6" stackType="max_mp_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="maxMp" val="35" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50104" levels="1" name="Herb of Shield">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="pd_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="pDef" val="15" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50105" levels="1" name="Herb of Magic Barrier">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="2" stackType="md_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="mDef" val="30" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50106" levels="1" name="Herb of Haste">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="2" stackType="attack_time_down">
-                <effect type="Buff" val="0" />
-                <addPercent stat="pAtkSpd" val="33" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50107" levels="1" name="Herb of Might">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="pa_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="pAtk" val="15" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50108" levels="1" name="Herb of Death Whisper">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="critical_dmg_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="pCritDmg" val="35" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50109" levels="1" name="Herb of Focus">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="critical_prob_up">
-                <effect type="Buff" val="0" />
-                <addPercentBase stat="rCrit" val="30" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50110" levels="1" name="Herb of Guidance">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="hit_up">
-                <effect type="Buff" val="0" />
-                <add stat="accCombat" val="4" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50111" levels="1" name="Herb of Agility">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="avoid_up">
-                <effect type="Buff" val="0" />
-                <add stat="rEvas" val="4" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50112" levels="1" name="Herb of Acumen">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="casting_time_down">
-                <effect type="Buff" val="0" />
-                <addPercent stat="mAtkSpd" val="30" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50113" levels="1" name="Herb of Empower">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="ma_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="mAtk" val="75" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50114" levels="1" name="Herb of Wild Magic">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="2" stackType="magic_critical_up">
-                <effect type="Buff" val="0" />
-                <addPercentBase stat="mCritRate" val="200" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50115" levels="1" name="Herb of Concentration">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="6" stackType="cancel_prob_down">
-                <effect type="Buff" val="0" />
-                <sub stat="cancel" val="53" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50116" levels="1" name="Herb of Bless Shield">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="6" stackType="shield_prob_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="rShld" val="30" />
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="50117" levels="1" name="Herb of Advanced Block">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="isPotion" val="true" />
-        <set name="stayAfterDeath" val="true" />
-        <for>
-            <abnormal duration="1200" stackLvl="3" stackType="shield_defence_up">
-                <effect type="Buff" val="0" />
-                <addPercent stat="sDef" val="50" />
-            </abnormal>
-        </for>
-    </skill>
+	<skill id="50100" levels="1" name="Herb of Windwalk">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="2" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="33" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50101" levels="1" name="Herb of Berserker">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="2" stackType="berserker">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="16" />
+				<addPercent stat="pAtk" val="8" />
+				<subPercent stat="mDef" val="16" />
+				<subPercent stat="pDef" val="8" />
+				<addPercent stat="mAtkSpd" val="8" />
+				<addPercent stat="pAtkSpd" val="8" />
+				<add stat="runSpd" val="8" />
+				<sub stat="rEvas" val="4" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50102" levels="1" name="Herb of Body">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="6" stackType="max_hp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxHp" val="35" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50103" levels="1" name="Herb of Soul">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="6" stackType="max_mp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxMp" val="35" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50104" levels="1" name="Herb of Shield">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="pd_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pDef" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50105" levels="1" name="Herb of Magic Barrier">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="2" stackType="md_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mDef" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50106" levels="1" name="Herb of Haste">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="2" stackType="attack_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="33" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50107" levels="1" name="Herb of Might">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="pa_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtk" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50108" levels="1" name="Herb of Death Whisper">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="critical_dmg_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pCritDmg" val="35" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50109" levels="1" name="Herb of Focus">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="critical_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="rCrit" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50110" levels="1" name="Herb of Guidance">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="hit_up">
+				<effect type="Buff" val="0" />
+				<add stat="accCombat" val="4" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50111" levels="1" name="Herb of Agility">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="avoid_up">
+				<effect type="Buff" val="0" />
+				<add stat="rEvas" val="4" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50112" levels="1" name="Herb of Acumen">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="casting_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtkSpd" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50113" levels="1" name="Herb of Empower">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="ma_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="75" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50114" levels="1" name="Herb of Wild Magic">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="2" stackType="magic_critical_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="mCritRate" val="200" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50115" levels="1" name="Herb of Concentration">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="6" stackType="cancel_prob_down">
+				<effect type="Buff" val="0" />
+				<sub stat="cancel" val="53" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50116" levels="1" name="Herb of Bless Shield">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="6" stackType="shield_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="rShld" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="50117" levels="1" name="Herb of Advanced Block">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="3" stackType="shield_defence_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="sDef" val="50" />
+			</abnormal>
+		</for>
+	</skill>
 </list>

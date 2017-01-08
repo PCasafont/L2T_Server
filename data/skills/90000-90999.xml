@@ -1,107 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <skill id="90000" levels="1" name="Custom Mana Drug">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="magicLvl" val="1" />
-        <set name="itemConsumeId" val="726" />
-        <set name="itemConsumeCount" val="1" />
-        <set name="buffDuration" val="15000" />
-        <set name="isPotion" val="true" />
-        <for>
-            <cond addName="1" msgId="113">
-                <player flyMounted="False" />
-            </cond>
-            <abnormal count="3" duration="5" stackLvl="1" stackType="mp_recover" type="ManaHealOverTime" val="1.5">
-            </abnormal>
-        </for>
-    </skill>
-    <skill id="90001" levels="1" name="Custom Mana Potion">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="MANAHEAL" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="magicLvl" val="1" />
-        <set name="itemConsumeId" val="728" />
-        <set name="itemConsumeCount" val="1" />
-        <set name="power" val="100" />
-        <set name="isPotion" val="true" />
-        <for>
-            <cond addName="1" msgId="113">
-                <player flyMounted="False" />
-            </cond>
-        </for>
-    </skill>
-    <skill id="90002" levels="1" name="Custom Trap skill">
-        <set name="target" val="TARGET_AROUND_CASTER" />
-        <set name="targetDirection" val="AROUND" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_PASSIVE" />
-        <set name="isMagic" val="true" />
-    </skill>
-    <skill id="90003" levels="20" name="Custom Halloween Skill">
-        <table name="#maxHpMp">5 10 15 20 25 30 35 40 45 50 60 65 70 75 80 85 90 95 100 105</table>
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_PASSIVE" />
-        <set name="isMagic" val="true" />
-        <for>
-            <addPercent stat="maxHp" val="#maxHpMp" />
-            <addPercent stat="maxMp" val="#maxHpMp" />
-            <addPercent stat="pAtk" val="#maxHpMp" />
-            <addPercent stat="mAtk" val="#maxHpMp" />
-            <addPercent stat="pDef" val="#maxHpMp" />
-            <addPercent stat="mDef" val="#maxHpMp" />
-        </for>
-    </skill>
-    <skill id="90004" levels="3" name="Christmas Talisman - ALL STAT (Low)">
-        <table name="#name">Christmas Talisman - ALL STAT (High);Christmas Talisman - ALL STAT (Low)</table>
-        <table name="#stat">2 2 2</table>
-        <set name="name" val="#name" />
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_PASSIVE" />
-        <for>
-            <baseAdd stat="LUC" val="2" />
-            <baseAdd stat="CHA" val="#stat" />
-            <baseAdd stat="INT" val="#stat" />
-            <baseAdd stat="CON" val="#stat" />
-            <baseAdd stat="DEX" val="#stat" />
-            <baseAdd stat="WIT" val="#stat" />
-            <baseAdd stat="STR" val="#stat" />
-            <baseAdd stat="MEN" val="#stat" />
-        </for>
-    </skill>
-    <skill id="90005" levels="6" name="Mysterious Talisman">
-        <table name="#str">5 0 0 0 0 0 </table>
-        <table name="#int">0 5 0 0 0 0 </table>
-        <table name="#dex">0 0 5 0 0 0 </table>
-        <table name="#wit">0 0 0 5 0 0 </table>
-        <table name="#con">0 0 0 0 5 0 </table>
-        <table name="#men">0 0 0 0 0 5 </table>
-        <table name="#name">Mysterious Talisman - STR;Mysterious Talisman - INT;Mysterious Talisman - DEX;Mysterious Talisman - WIT;Mysterious Talisman - CON;Mysterious Talisman - MEN</table>
-        <set name="name" val="#name" />
-        <set name="target" val="TARGET_SELF"/>
-        <set name="skillType" val="BUFF"/>
-        <set name="operateType" val="OP_PASSIVE"/>
-        <for>
-            <baseAdd stat="STR" val="#str" />
-            <baseAdd stat="INT" val="#int" />
-            <baseAdd stat="DEX" val="#dex" />
-            <baseAdd stat="CON" val="#con" />
-            <baseAdd stat="WIT" val="#wit" />
-            <baseAdd stat="MEN" val="#men" />
-        </for>
-    </skill>
-    <skill id="90006" levels="1" name="Paralyze">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="BUFF" />
-        <set name="operateType" val="OP_PASSIVE" />
-        <set name="lvlDepend" val="1" />
-        <set name="reuseDelay" val="30000" />
-        <set name="chanceType" val="ON_HIT" />
-        <set name="activationChance" val="90" />
-        <set name="triggeredId" val="5171" />
-        <set name="triggeredLevel" val="10" />
-    </skill>
+	<skill id="90000" levels="1" name="Custom Mana Drug">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="1" />
+		<set name="itemConsumeId" val="726" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="buffDuration" val="15000" />
+		<set name="isPotion" val="true" />
+		<for>
+			<cond addName="1" msgId="113">
+				<player flyMounted="False" />
+			</cond>
+			<abnormal count="3" duration="5" stackLvl="1" stackType="mp_recover" type="ManaHealOverTime" val="1.5">
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="90001" levels="1" name="Custom Mana Potion">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="MANAHEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="1" />
+		<set name="itemConsumeId" val="728" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="100" />
+		<set name="isPotion" val="true" />
+		<for>
+			<cond addName="1" msgId="113">
+				<player flyMounted="False" />
+			</cond>
+		</for>
+	</skill>
+	<skill id="90002" levels="1" name="Custom Trap skill">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="isMagic" val="true" />
+	</skill>
+	<skill id="90003" levels="20" name="Custom Halloween Skill">
+		<table name="#maxHpMp">5 10 15 20 25 30 35 40 45 50 60 65 70 75 80 85 90 95 100 105		</table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<addPercent stat="maxHp" val="#maxHpMp" />
+			<addPercent stat="maxMp" val="#maxHpMp" />
+			<addPercent stat="pAtk" val="#maxHpMp" />
+			<addPercent stat="mAtk" val="#maxHpMp" />
+			<addPercent stat="pDef" val="#maxHpMp" />
+			<addPercent stat="mDef" val="#maxHpMp" />
+		</for>
+	</skill>
 </list>
