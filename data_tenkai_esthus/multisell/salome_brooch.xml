@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
     <item>
-        <ingredient count="1" id="38894" /> <!-- Diamond -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47694" count="1" /> <!-- Greater Diamond -->
-    </item>
-    <item>
-        <ingredient count="1" id="38899" /> <!-- Pearl -->
-        <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47695" count="1" /> <!-- Greater Pearl -->
-    </item>
-    <item>
-        <ingredient count="1" id="38859" /> <!-- Ruby -->
-        <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47688" count="1" /> <!-- Greater Ruby -->
-    </item>
-    <item>
-        <ingredient count="1" id="38874" /> <!-- Obsidian -->
-        <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47690" count="1" /> <!-- Greater Obsidian -->
-    </item>
-    <item>
-        <ingredient count="1" id="38889" /> <!-- Aquamarine -->
-        <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47693" count="1" /> <!-- Greater Aquamarine -->
-    </item>
-    <item>
-        <ingredient count="1" id="38884" /> <!-- Emerald -->
-        <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <production id="47692" count="1" /> <!-- Greater Emerald -->
+        <production id="28358" count="1" /> <!-- Brooch Lv6 -->
     </item>
 </list>

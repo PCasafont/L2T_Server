@@ -254,7 +254,7 @@ public class CharStat
 
 		// Set a cap of Critical Hit at 500
 		int maxCritical = (int) Math.round(calcStat(Stats.MAX_CRITICAL_RATE, Config.MAX_PCRIT_RATE, target, skill));
-		if (!Config.isServer(Config.TENKAI) && criticalHit > maxCritical)
+		if (criticalHit > maxCritical)
 		{
 			criticalHit = maxCritical;
 		}
@@ -484,12 +484,12 @@ public class CharStat
 		}
 		double val =
 				calcStat(Stats.MAGIC_ATTACK_SPEED, _activeChar.getTemplate().baseMAtkSpd * bonusSpdAtk, null, null);
-		if (!Config.isServer(Config.TENKAI) && val > Config.MAX_MATK_SPEED && !_activeChar.isGM())
+		if (val > Config.MAX_MATK_SPEED)
 		{
 			val = Config.MAX_MATK_SPEED;
 		}
 
-		if (Config.isServer(Config.TENKAI) && val > 1650)
+		if (val > 1650)
 		{
 			val = 1650 + (int) Math.pow(val - 1650, 0.8);
 		}
@@ -527,7 +527,7 @@ public class CharStat
 
 		int maxCritical =
 				(int) Math.round(calcStat(Stats.MAX_MAGIC_CRITICAL_RATE, Config.MAX_MCRIT_RATE, target, skill));
-		if (!Config.isServer(Config.TENKAI) && mrate > maxCritical)
+		if (mrate > maxCritical)
 		{
 			mrate = maxCritical;
 		}
@@ -793,7 +793,7 @@ public class CharStat
 		int val = (int) Math
 				.round(calcStat(Stats.POWER_ATTACK_SPEED, _activeChar.getTemplate().basePAtkSpd * bonusAtk, null,
 						null));
-		if (Config.isServer(Config.TENKAI) && val > 1200)
+		if (val > 1200)
 		{
 			val = 1200 + (int) Math.pow(val - 1200, 0.75);
 		}
@@ -958,7 +958,7 @@ public class CharStat
 			runSpeed = 2;
 		}
 
-		if (Config.isServer(Config.TENKAI) && runSpeed > 250)
+		if (runSpeed > 250)
 		{
 			runSpeed = (int) (250 + Math.pow(runSpeed - 250, 0.80));
 		}
@@ -1291,6 +1291,15 @@ public class CharStat
 
 	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill)
 	{
-		return calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
+		double  var =  calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
+
+
+		if (var > 150)
+		{
+			var = (int) (150 + Math.pow(var - 150, 0.80));
+		}
+		return var;
 	}
+
+
 }

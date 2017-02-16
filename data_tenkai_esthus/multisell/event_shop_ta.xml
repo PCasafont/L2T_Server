@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient id="37559" count="30" /> <!-- Shiny -->
+        <production id="46717" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="30" /> <!-- Shiny -->
+        <production id="46718" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="30" /> <!-- Shiny -->
+        <production id="46719" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="30" /> <!-- Shiny -->
+        <production id="46720" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="30" /> <!-- Shiny -->
+        <production id="46721" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="20" /> <!-- Shiny -->
+        <production id="46722" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47435" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47436" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47437" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47438" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47439" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="3" /> <!-- Shiny -->
+        <production id="47440" count="1" />
+    </item>
+    <item>
+        <ingredient id="37559" count="100" /> <!-- Shiny -->
+        <production id="47109" count="1" /> <!--Lillith Stage 10 -->
+    </item>
+    <item>
+        <ingredient id="37559" count="100" /> <!-- Shiny -->
+        <production id="47098" count="1" /> <!--Anakim Stage 10 -->
+    </item>
+</list>

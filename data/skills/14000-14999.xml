@@ -2962,6 +2962,7 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="500" />
+        <set name="castRange" val="40" />
     </skill>
     <skill id="14255" levels="1" name="Large Flash">
         <set name="target" val="TARGET_NONE" />

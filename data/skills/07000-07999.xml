@@ -222,9 +222,9 @@
         Level 5:
     -->
     <skill id="7029" levels="10" name="Super Haste">
-        <table name="#atkSpd">100 200 200 100 300 700 1900 4900 9900 19900</table>
-        <table name="#runSpd">100 200 200 0 300 700 1900 4900 9900 19900</table>
-        <table name="#pAtk">0 0 999900 0 300 700 1900 4900 9900 19900</table>
+        <table name="#atkSpd">100 200 3000 100 300 700 1900 4900 9900 19900</table>
+        <table name="#runSpd">100 200 500 600 1000 2000 3000 5000 9900 19900</table>
+        <table name="#pAtk">0 0 999900 9999999 300 700 1900 4900 9900 199000000</table>
         <table name="#reuse">99 99 99 0 99.5 99.8 99.9 99.95 99.98 99.99</table>
         <table name="#amount">0 0 0 100 300 700 1900 4900 9900 19900</table>
         <set name="target" val="TARGET_SELF" />

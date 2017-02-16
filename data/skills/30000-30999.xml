@@ -383,6 +383,8 @@
                 <addPercent stat="pvePhysDef" val="#dmgRed" />
                 <addPercent stat="pveMagicalDef" val="#dmgRed" />
                 <addPercent stat="pvePhysSkillsDef" val="#dmgRed" />
+                <addPercent stat="pDef" val="#dmgRed" />
+                <addPercent stat="mDef" val="#dmgRed" />
             </abnormal>
         </for>
     </skill>
@@ -443,7 +445,7 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
         <set name="mpConsume" val="40" />
-        <set name="hitTime" val="1000" />
+        <set name="hitTime" val="1000" />z
         <set name="coolTime" val="500" />
         <set name="reuseDelay" val="180000" />
         <set name="isDebuff" val="false" />
@@ -865,7 +867,7 @@
         <set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
         <for>
             <abnormal duration="#duration" stackLvl="1" stackType="sayhas_fury" visualEffect="ertheiaPinkRunPower">
-                <effect activationChance="20" chanceType="ON_ATTACKED" triggeredId="30027" triggeredLevel="1"
+                <effect activationChance="50" chanceType="ON_ATTACKED" triggeredId="30027" triggeredLevel="1"
                         type="ChanceSkillTrigger" val="0" />
                 <subPercent stat="critVuln" val="50" />
                 <subPercent stat="magicCritVuln" val="50" />
@@ -2056,7 +2058,7 @@
     -->
     <skill id="30520" levels="3" name="Steel Mind">
         <enchantRoute id="1" level="1,2,3" /> <!-- Time -->
-        <table name="#pAtkPSCritDam">10 15 15</table>
+        <table name="#pAtkPSCritDam">10 15 30</table>
         <table name="#pAtk">15 30 30</table>
         <table name="#runSpd">50 70 70</table>
         <table name="#mpConsume">221 232 243</table>
@@ -2071,7 +2073,7 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="#mpConsume" />
         <set name="hitTime" val="1500" />
-        <set name="coolTime" val="500" />
+        <set name="coolTime" val="300" />
         <set name="reuseDelay" val="300000" />
         <set name="weaponsAllowed" val="Dual Fist" />
         <for>
@@ -2079,7 +2081,7 @@
                 <effect type="Immortal" val="0" />
                 <effect chanceType="ON_EXIT" triggeredId="23607" triggeredLevel="#trigLevel" type="ChanceSkillTrigger"
                         val="0" />
-                <effect activationChance="100" activationMinDamage="1200" chanceType="ON_HIT" triggeredId="30521"
+                <effect activationChance="100" activationMinDamage="2000" chanceType="ON_HIT" triggeredId="30521"
                         triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
                 <add stat="runSpd" val="#runSpd" />
                 <addPercent stat="pAtk" val="#pAtk" />
@@ -2089,6 +2091,8 @@
                 <addPercent stat="aerialYokeRes" val="90" />
                 <addPercent stat="pCritDmg" val="#pAtkPSCritDam" />
                 <addPercent stat="pSkillCritDmg" val="#pAtkPSCritDam" />
+                <addPercent stat="pvePhysDmg" val="30" />
+                <addPercent stat="pvePhysSkillsDmg" val="30" />
             </abnormal>
         </for>
     </skill>

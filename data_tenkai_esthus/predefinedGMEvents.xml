@@ -1,6 +1,8 @@
 ﻿<list>
     <currency itemId="57" /> <!-- Adena -->
     <subEvent eventName="CreatureInvasion" startBypass="start_invasion" endBypass="end_event" />
+    <subEvent eventName="Christmas" startBypass="start_invasion_gm" endBypass="end_invasion_gm_force" />
+    <subEvent eventName="SurpriseEvent" startBypass="start_invasion_gm" endBypass="end_invasion_gm" />
     <event name="1vs1" description="Little PvP Event" location="Giran Arena" arenaZones="giran_pvp_battle,"
            peaceZones="giran_pvp_peace1,giran_pvp_peace2,giran_pvp_peace3,giran_pvp_peace4"
            arenaSigns="22220001,22220002" spawnTeamOne="73431,142320,-3766,26168"

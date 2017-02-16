@@ -2619,7 +2619,7 @@
          hpReg="1830.0"
          mpMax="3996001" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680"
          sp="33890321"
-         pAtk="56459" mAtk="81506" pDef="6962" mDef="8078" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40"
+         pAtk="56459" mAtk="81506" pDef="5500" mDef="8078" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40"
          walkSpd="50"
          runSpd="186" aggressive="true" aggroRange="10000" extraDropGroup="29" collisionRadius="300"
          collisionHeight="300" elemAtkType="3"

@@ -21,6 +21,9 @@
     <item id="34999" type="Weapon" name="Tauti's Axe" canBeUsedAsApp="true" />
     <item id="35000" type="Weapon" name="Tauti's Two-handed Axe" canBeUsedAsApp="true" />
     <item id="35001" type="Weapon" name="Tauti's Dual Axe" canBeUsedAsApp="true" />
+
+    <item id="20016" type="Armor" name="Horn-rimmed Glasses - Agility" canBeUsedAsApp="true" />
+
     <!-- Allow Appearance on Shadow Weapons -->
     <item id="46327" type="Weapon" name="Shadow Shaper" canBeUsedAsApp="true" />
     <item id="46328" type="Weapon" name="Shadow Cutter" canBeUsedAsApp="true" />

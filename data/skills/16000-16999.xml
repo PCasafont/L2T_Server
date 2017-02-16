@@ -5533,7 +5533,7 @@
         <table name="#knocres">25 30 30 30 30</table>
         <table name="#paralysis">25 30 30 30 30</table>
         <table name="#stun">25 30 30 30 30</table>
-        <table name="#patkb">1.04 1.05 1.05 1.05 1.05</table>
+        <table name="#patkb">4 5 5 5 5</table>
         <table name="#knocresp">25 30 30 30 30</table>
         <table name="#paralysisp">25 30 30 30 30</table>
         <table name="#stunp">25 30 30 30 30</table>
@@ -5541,20 +5541,20 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <baseAdd val="#pcrit" order="0x30" stat="pCritDmg" />
-            <baseAdd val="#knocres" order="0x30" stat="knockDownRes" />
-            <baseAdd val="#paralysis" order="0x30" stat="paralysisRes" />
-            <baseAdd val="#stun" order="0x30" stat="stunRes" />
-            <baseAdd val="#knocresp" order="0x30" stat="knockDownProf" />
-            <baseAdd val="#paralysisp" order="0x30" stat="paralysisProf" />
-            <baseAdd val="#stunp" order="0x30" stat="stunProf" />
-            <mul val="#patkb" order='0x30' stat='pAtk'/>
+            <addPercentBase val="#pcrit" stat="pCritDmg" />
+            <baseAdd val="#knocres" stat="knockDownRes" />
+            <baseAdd val="#paralysis"  stat="paralysisRes" />
+            <baseAdd val="#stun" stat="stunRes" />
+            <baseAdd val="#knocresp" stat="knockDownProf" />
+            <baseAdd val="#paralysisp" stat="paralysisProf" />
+            <baseAdd val="#stunp"  stat="stunProf" />
+            <AddPercent val="#patkb" stat='pAtk'/>
             <baseAdd stat="LUC" val="2" />
             <baseAdd stat="CHA" val="2" />
             <baseAdd stat="STR" val="#str" />
             <baseAdd stat="INT" val="#matk" />
             <baseAdd stat="CON" val="#con" />
-            <mul val="1.05" order="0x10" stat="pAtk-giants" />
+            <AddPercent val="5" stat="pAtk-giants" />
         </for>
     </skill>
     <skill id="16749" levels="5" name="Ring of the Truth">
@@ -5568,25 +5568,25 @@
         <table name="#knocresp">25 30 30 30 30</table>
         <table name="#paralysisp">25 30 30 30 30</table>
         <table name="#stunp">25 30 30 30 30</table>
-        <table name="#matkb">1.04 1.05 1.05 1.05 1.05</table>
+        <table name="#matkb">4 5 5 5 5</table>
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <baseAdd val="#mcrit" order="0x30" stat="mCritDmg" />
-            <baseAdd val="#knocres" order="0x30" stat="knockDownRes" />
-            <baseAdd val="#paralysis" order="0x30" stat="paralysisRes" />
-            <baseAdd val="#stun" order="0x30" stat="stunRes" />
-            <baseAdd val="#knocresp" order="0x30" stat="knockDownProf" />
-            <baseAdd val="#paralysisp" order="0x30" stat="paralysisProf" />
-            <baseAdd val="#stunp" order="0x30" stat="stunProf" />
-            <mul val='#matkb' order='0x30' stat='mAtk'/>
+            <addPercentBase val="#mcrit" stat="mCritDmg" />
+            <baseAdd val="#knocres" stat="knockDownRes" />
+            <baseAdd val="#paralysis" stat="paralysisRes" />
+            <baseAdd val="#stun" stat="stunRes" />
+            <baseAdd val="#knocresp" stat="knockDownProf" />
+            <baseAdd val="#paralysisp" stat="paralysisProf" />
+            <baseAdd val="#stunp" stat="stunProf" />
+            <AddPercent val='#matkb'  stat='mAtk'/>
             <baseAdd stat="LUC" val="2" />
             <baseAdd stat="CHA" val="2" />
             <baseAdd stat="STR" val="#str" />
             <baseAdd stat="INT" val="#matk" />
             <baseAdd stat="CON" val="#con" />
-            <mul val="#matkb" order="0x10" stat="pAtk-giants" />
+            <AddPercent val="#matkb" stat="pAtk-giants" />
         </for>
     </skill>
     <skill id="16755" levels="1" name="ChanceParalyze">
@@ -5594,7 +5594,7 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="reuseDelay" val="60000" />
-        <set name="chanceType" val="ON_HIT" />
+        <set name="chanceType" val="ON_PHYSICAL" />
         <set name="activationChance" val="100" />
         <set name="triggeredId" val="16756" />
         <set name="triggeredLevel" val="1" />
@@ -5610,7 +5610,7 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <for>
-            <abnormal duration="3" landRate="100" stackLvl="1" stackType="paralyze">
+            <abnormal duration="3" landRate="150" stackLvl="1" stackType="paralyze">
                 <effect type="Paralyze" val="0" />
             </abnormal>
         </for>
@@ -5620,7 +5620,7 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="reuseDelay" val="60000" />
-        <set name="chanceType" val="ON_HIT" />
+        <set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
         <set name="activationChance" val="100" />
         <set name="triggeredId" val="16758" />
         <set name="triggeredLevel" val="1" />
@@ -5636,7 +5636,7 @@
         <set name="effectRange" val="400" />
         <set name="isDebuff" val="true" />
         <for>
-            <abnormal duration="3" landRate="100" stackLvl="1" stackType="knock_down">
+            <abnormal duration="3" landRate="150" stackLvl="1" stackType="knock_down">
                 <effect type="KnockDown" val="0" />
             </abnormal>
         </for>

@@ -2415,14 +2415,16 @@
         <spawn x="-115648" y="248725" z="-1760" heading="53043" respawn="60" />
         <spawn x="-115322" y="250100" z="-1704" heading="10220" respawn="60" />
     </npc>
-    <npc id="33231" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.61" mpMax="2044" mpReg="3.78"
-         STR="88"
-         CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
-         mAtkSpd="398"
-         pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="14.5" collisionHeight="18"
-         targetable="false"
-         showName="false" fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-         aiType="fighter">
+    <npc id="33231" name="" serverSideName="true" title="" level="105" type="L2Monster" atkRange="40" hpMax="35000000"
+         hpReg="151.22101"
+         mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
+         sp="1634597"
+         pAtk="260185" mAtk="41051" pDef="60000" mDef="15000" pAtkSpd="439" mAtkSpd="599" pCritRate="40" mCritRate="40"
+         walkSpd="60"
+         runSpd="300" aggressive="false" aggroRange="1200" collisionRadius="50" collisionHeight="99" elemAtkType="3"
+         elemAtkValue="600"
+         fireRes="450" waterRes="450" windRes="450" earthRes="600" holyRes="450" darkRes="450" aiType="balanced"
+         skillChance="70" isLethalImmune="true" >
         <spawn x="-114833" y="249850" z="-1696" heading="55934" respawn="60" />
         <spawn x="-115485" y="249225" z="-1704" heading="12696" respawn="60" />
         <spawn x="-115485" y="250225" z="-1688" heading="564" respawn="60" />

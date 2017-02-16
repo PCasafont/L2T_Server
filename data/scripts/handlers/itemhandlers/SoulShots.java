@@ -155,6 +155,7 @@ public class SoulShots implements IItemHandler
 						break;
 					case 47688:
 						rubyLvl = 6;
+						break;
 				}
 			}
 		}
@@ -229,6 +230,7 @@ public class SoulShots implements IItemHandler
 				rubyMul = 1.2;
 				break;
 			case 6:
+				skillId = 18715;
 				rubyMul = 1.2;
 				break;
 		}

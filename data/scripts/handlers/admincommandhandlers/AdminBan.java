@@ -24,12 +24,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.GMAudit;
+import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * This class handles following admin commands:
@@ -49,7 +51,7 @@ public class AdminBan implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_ban", "admin_ban_acc", "admin_ban_char", "admin_chat_ban", "admin_unban", // returns unban commands
-			"admin_unban_acc", "admin_unban_char", "admin_unban_chat", "admin_jail", "admin_unjail"
+			"admin_unban_acc", "admin_unban_char", "admin_unban_chat", "admin_jail", "admin_unjail", "admin_setPoints"
 	};
 
 	@Override
@@ -102,6 +104,35 @@ public class AdminBan implements IAdminCommandHandler
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
 			return false;
+		}
+
+		if (command.startsWith("admin_setPoints"))
+		{
+			Connection coni = null;
+
+
+
+
+			try
+			{
+				coni = L2DatabaseFactory.getInstance().getConnection();
+
+				PreparedStatement statement =
+						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
+				statement.setString(1, player);
+				statement.setString(2, reason);
+
+				statement.execute();
+				statement.close();
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			}
+			finally
+			{
+				L2DatabaseFactory.close(coni);
+			}
 		}
 
 		if (command.startsWith("admin_ban"))

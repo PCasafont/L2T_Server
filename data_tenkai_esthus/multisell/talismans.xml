@@ -105,7 +105,7 @@
         <production id="39571" count="1" /> <!-- Talisman - Wind: Debuff Resistance -->
     </item>
     <item>
-        <ingredient id="57" count="75000" /> <!-- Adena -->
+        <ingredient id="57" count="10000000" /> <!-- Adena -->
         <production id="39634" count="1" /> <!-- Venir's Talisman - Stage 1 -->
     </item>
     <item>

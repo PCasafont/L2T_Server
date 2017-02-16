@@ -1620,8 +1620,8 @@
     </item>
     <!-- Freshly collected milk. When used, you can feel the effects of Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration (1-hour). The effect disappears if a higher level version of the buff is acquired. -->
     <item id="21235" type="EtcItem" name="Fresh Milk" icon="icon.etc_fresh_milk_i00" immediateEffect="1" weight="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isStackable="true">
+          isTradable="true"
+          isDropable="true" isSellable="true" isStackable="true">
     </item>
     <!-- Freshly collected milk. When used, you can feel the effects of Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. The effect disappears if a higher skill is acquired. -->
     <item id="21236" type="EtcItem" name="Fresh Milk - Event" icon="icon.etc_fresh_milk_i00" immediateEffect="1"

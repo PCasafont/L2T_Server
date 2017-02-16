@@ -741,8 +741,7 @@
         -
         Maximum character running speed.
     -->
-    <config name="MaxRunSpeed" var="MAX_RUN_SPEED" default="300" />
-
+    <config name="MaxRunSpeed" var="MAX_RUN_SPEED" default="400" />
     <!-- Maximum character Physical Critical Rate. (10 = 1%) -->
     <config name="MaxPCritRate" var="MAX_PCRIT_RATE" default="500" />
 
@@ -750,16 +749,16 @@
     <config name="MaxMCritRate" var="MAX_MCRIT_RATE" default="500" />
 
     <!-- Maximum character Attack Speed. -->
-    <config name="MaxPAtkSpeed" var="MAX_PATK_SPEED" default="1500" />
+    <config name="MaxPAtkSpeed" var="MAX_PATK_SPEED" default="3000" />
 
     <!-- Maximum character Cast Speed. -->
-    <config name="MaxMAtkSpeed" var="MAX_MATK_SPEED" default="1999" />
+    <config name="MaxMAtkSpeed" var="MAX_MATK_SPEED" default="3500" />
 
     <!-- Maximum character Evasion. -->
     <config name="MaxEvasion" var="MAX_EVASION" default="250" />
 
     <!-- Maximum number of allowed subclasses for every player. -->
-    <config name="MaxSubclass" var="MAX_SUBCLASS" default="3" />
+    <config name="MaxSubclass" var="MAX_SUBCLASS" default="4" />
 
     <!-- Maximum subclass level. -->
     <config name="MaxSubclassLevel" var="MAX_SUBCLASS_LEVEL" default="80" />
@@ -785,7 +784,7 @@
 
     <config name="MaximumSlotsForDwarf" var="INVENTORY_MAXIMUM_DWARF" default="100" />
 
-    <config name="MaximumSlotsForGMPlayer" var="INVENTORY_MAXIMUM_GM" default="250" />
+    <config name="MaximumSlotsForGMPlayer" var="INVENTORY_MAXIMUM_GM" default="500" />
 
     <config name="MaximumSlotsForQuestItems" var="INVENTORY_MAXIMUM_QUEST_ITEMS" default="100" />
 

@@ -3318,8 +3318,9 @@
 		Level 6: For 15 sec, create a protection shield that absorbs 50000 damage and recovers 15% of Max HP instantly.
 	-->
     <skill id="18565" levels="6" name="Greater Tanzanite - Barrier">
-        <table name="#duration">5 5 10 10 15</table>
-        <table name="#damage">5000 10000 15000 30000 50000</table>
+        <table name="#duration">5 5 10 10 15 15</table>
+        <table name="#damage">5000 10000 15000 30000 50000 50000</table>
+        <table name="#Heal"> 0 0 0 0 0 15</table>
         <table name="#name">Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite -
             Barrier;Greater Tanzanite - Barrier
         </table>
@@ -3327,6 +3328,7 @@
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
+        <set name="power" val="10" />
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="500" />
         <set name="reuseDelay" val="180000" />
@@ -3336,6 +3338,7 @@
         <for>
             <abnormal duration="#duration" stackLvl="1" stackType="dmg_barrier" visualEffect="invincible">
                 <effect type="Invincible" val="0" />
+                <effect type="HealPercent" val="#Heal" />
             </abnormal>
         </for>
     </skill>
@@ -3364,6 +3367,7 @@
 	-->
     <skill id="18567" levels="2" name="Greater Garnet - Cancel Debuffs">
         <table name="#name">Garnet - Purge;Greater Garnet - Cancel Debuffs</table>
+        <table name="#time">0 7</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
@@ -3377,6 +3381,7 @@
         <for>
             <abnormal>
                 <effect type="CancelDebuff" val="0" />
+                <set stat="debuffImmunity" val="#time" />
             </abnormal>
         </for>
     </skill>
@@ -3390,10 +3395,19 @@
 	-->
     <skill id="18568" levels="6" name="Greater Vital Stone">
         <table name="#name">Vital Stone;Vital Stone;Vital Stone;Vital Stone;Vital Stone;Greater Vital Stone</table>
+        <table name="#vitality"> 3 6 12 20 30 30</table>
+        <table name="#rExp"> 0 0 0 0 0 15</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <abnormal stackLvl="9" stackType="vp_up" visualEffect="vitality">
+                <effect type="Buff" val="0" />
+                <sub stat="vitalityConsumeRate" val="#vitality" />
+                <add stat="rExp" val="#rExp" />
+            </abnormal>
+        </for>
     </skill>
     <skill id="18570" levels="1" name="Function Test Item">
         <set name="target" val="TARGET_NONE" />
@@ -3407,30 +3421,112 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
-    <!-- Soulshot damage + 20% / Patk +9%. -->
-    <!--  Blessed Soulshot damage + 20% / mAtk + 9%. -->
-    <skill id="18718" levels="1" name="Sapphire">
+    <!-- Crafted - STR -->
+    <skill id="18660" levels="1" name="Craft Effect - STR">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <mul val="1.09" order="0x30" stat="mAtk" />
+            <baseAdd stat="STR" val="2" />
         </for>
     </skill>
-    <skill id="18720" levels="1" name="Obsidian">
+    <!-- Crafted - Int -->
+    <skill id="18661" levels="1" name="Craft Effect - INT">
         <set name="target" val="TARGET_SELF" />
-        <set name="targetDirection" val="AROUND" />
-        <set name="skillType" val="DEBUFF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <baseAdd stat="INT" val="2" />
+        </for>
+    </skill>
+    <!-- Crafted - Con -->
+    <skill id="18663" levels="1" name="Craft Effect - CON">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <baseAdd stat="CON" val="2" />
+        </for>
+    </skill>
+    <skill id="18713" levels="6" name="Greater Red Cat's Eye">
+        <table name="#pCritDmg">1 2 4 7 12 12</table>
+        <table name="#physicalSkillPower">0 0 0 0 0 5</table>
+        <table name="#pSkillCritDmg">0 0 0 0 12 12</table>
+        <table name="#name">Red Cat's Eye;Red Cat's Eye;Red Cat's Eye;Red Cat's Eye;Red Cat's Eye;Greater Red Cat's Eye
+        </table>
+        <set name="name" val="#name" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="pCritDmg" val="#pCritDmg" />
+            <addPercent stat="physicalSkillPower" val="#physicalSkillPower" />
+            <addPercent stat="pSkillCritDmg" val="#pSkillCritDmg" />
+        </for>
+    </skill>
+    <skill id="18714" levels="6" name="Greater Blue Cat's Eye">
+        <table name="#mCritDmg">1 2 4 7 12 12</table>
+        <table name="#mSkillPower">0 0 0 0 0 5</table>
+        <table name="#name">Blue Cat's Eye;Blue Cat's Eye;Blue Cat's Eye;Blue Cat's Eye;Blue Cat's Eye;Greater Blue Cat's Eye
+        </table>
+        <set name="name" val="#name" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="mCritDmg" val="#mCritDmg" />
+            <addPercent stat="mSkillPower" val="#mSkillPower" />
+        </for>
+    </skill>
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <skill id="18715" levels="1" name="Ruby">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <skill id="18716" levels="1" name="Ruby">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <!-- Soulshot damage + 20% / Patk +9%. -->
+    <skill id="18717" levels="1" name="Ruby">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent val="9" stat="pAtk" />
+        </for>
+    </skill>
+    <!--  Blessed Soulshot damage + 20% / mAtk + 9%. -->
+    <skill id="18718" levels="1" name="Sapphire">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="DUMMY" />
+        <set name="operateType" val="OP_ACTIVE" />
+    </skill>
+    <!--  Blessed Soulshot damage + 20% / mAtk + 13%. -->
+    <skill id="18719" levels="1" name="Sapphire">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <set name="magicLvl" val="1" />
+        <for>
+            <addPercent val="13" stat="mAtk" />
+        </for>
+    </skill>
+    <skill id="18720" levels="1" name="Obsidian_Disp">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="hitTime" val="800" />
-        <set name="coolTime" val="15000" />
-        <set name="reuseDelay" val="15000" />
-        <set name="skillRadius" val="1500" />
+        <set name="reuseDelay" val="180000" />
+        <set name="staticReuse" val="true" />
         <for>
-            <abnormal stackLvl="1" stackType="flash">
-                <effect type="RemoveTarget" val="0" />
-            </abnormal>
-            <abnormal duration="1" self="1" stackLvl="1" stackType="flash">
+            <abnormal  duration="1" self="1" landRate="20">
                 <effect type="Untargetable" val="0" />
             </abnormal>
         </for>

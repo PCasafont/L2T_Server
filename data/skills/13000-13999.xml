@@ -1028,9 +1028,9 @@
         <table name="#mDef">0 0 10 54</table>
         <table name="#bonusHp">0 0 108 108</table>
         <table name="#elemRes">0 0 0 15</table>
-        <table name="#name">Set Effect - Eternal Heavy Armor 2 Piece (Defense Type);Set Effect - Eternal Heavy Armor 3
-            Piece (Defense Type);Set Effect - Eternal Heavy Armor 4 Piece (Defense Type);Set Effect - Eternal Heavy
-            Armor 5 Piece (Defense Type)
+        <table name="#name">;Set Effect Eternal Heavy Armor 2 Piece (Defense Type);Set Effect - Eternal Heavy Armor 3
+            Piece (Defense Type);Set Effect - Eternal Heavy Armor 4 Piece (Defense Type);Set Effect - Eternal Heavy Armor 5
+            Piece (Defense Type)
         </table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
@@ -5482,8 +5482,8 @@
         <set name="isMagic" val="true" />
         <set name="magicLvl" val="99" />
         <set name="hitTime" val="1000" />
-        <set name="coolTime" val="500" />
-        <set name="reuseDelay" val="300000" />
+        <set name="coolTime" val="0" />
+        <set name="reuseDelay" val="60000" />
         <set name="castRange" val="1000" />
         <set name="effectRange" val="1500" />
         <set name="removedOnAction" val="true" />

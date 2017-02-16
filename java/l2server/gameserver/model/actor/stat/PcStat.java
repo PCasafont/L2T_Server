@@ -632,9 +632,9 @@ public class PcStat extends PlayableStat
 		val += Config.RUN_SPD_BOOST;
 
 		// Apply max run speed cap.
-		if (!Config.isServer(Config.TENKAI) && val > Config.MAX_RUN_SPEED && !getActiveChar().isGM())
+		if (!player.isGM() && val > Config.MAX_RUN_SPEED )
 		{
-			return Config.MAX_RUN_SPEED;
+			return (int) (300 + Math.pow(val - 300, 0.60));
 		}
 
 		if (val < 2)
@@ -650,7 +650,7 @@ public class PcStat extends PlayableStat
 	{
 		int val = super.getPAtkSpd();
 
-		if (!Config.isServer(Config.TENKAI) && val > Config.MAX_PATK_SPEED && !getActiveChar().isGM())
+		if (val > Config.MAX_PATK_SPEED)
 		{
 			return Config.MAX_PATK_SPEED;
 		}
@@ -683,7 +683,7 @@ public class PcStat extends PlayableStat
 	{
 		int val = super.getMAtkSpd();
 
-		if (!Config.isServer(Config.TENKAI) && val > Config.MAX_MATK_SPEED && !getActiveChar().isGM())
+		if (val > Config.MAX_MATK_SPEED)
 		{
 			return Config.MAX_MATK_SPEED;
 		}

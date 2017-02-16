@@ -4940,13 +4940,8 @@
 		It can be enchanted up to +10 using Enchant Scroll: Elemental Shirt. When enchanted to +4 or more, passive and stats are increased. When enchanted to +6 or more, various use skills are bestowed .
 	-->
     <item id="37718" type="Armor" name="Shiny Elemental Shirt" icon="icon.ainhasard_shirt" defaultAction="equip"
-          bodypart="shirt"
-          immediateEffect="1" weight="130" enchant4Skill="13562-4" isDropable="false" isSellable="false"
-          enchant10Skill="13562-10;13563-5;13564-4;13565-3;13566-2;13567-1"
-          enchant1Skill="13562-1" enchant2Skill="13562-2" enchant3Skill="13562-3" enchant5Skill="13562-5"
-          enchant6Skill="13562-6;13563-1"
-          enchant7Skill="13562-7;13563-2;13564-1" enchant8Skill="13562-8;13563-3;13564-2;13565-1"
-          enchant9Skill="13562-9;13563-4;13564-3;13565-2;13566-1">
+          bodypart="shirt" immediateEffect="1" weight="130">
+
         <baseAdd stat="pDef" val="28" />
     </item>
     <!--

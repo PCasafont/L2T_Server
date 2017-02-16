@@ -3,55 +3,55 @@
     <item>
         <ingredient count="1" id="47217" /> <!-- Ring of truth -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <ingredient count="25" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47218" count="1" /> <!-- Ring of truth Seeker -->
     </item>
     <item>
         <ingredient count="1" id="47218" /> <!-- Ring of truth Seeker -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47481" count="1" /> <!-- Ring of truth Seeker STR -->
     </item>
     <item>
         <ingredient count="1" id="47218" /> <!-- Ring of truth Seeker -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47482" count="1" /> <!-- Ring of truth Seeker INT -->
     </item>
     <item>
         <ingredient count="1" id="47218" /> <!-- Ring of truth Seeker -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47483" count="1" /> <!-- Ring of truth Seeker CON -->
     </item>
     <item>
         <ingredient count="1" id="47215" /> <!-- Ring of Authority -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
-        <ingredient count="25" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47216" count="1" /> <!-- Ruler's Ring Of Authority -->
     </item>
     <item>
         <ingredient count="1" id="47216" /> <!-- Ruler's Ring Of Authority -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47478" count="1" /> <!-- Ruler's Ring Of Authority STR -->
     </item>
     <item>
         <ingredient count="1" id="47216" /> <!-- Ruler's Ring Of Authority -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47479" count="1" /> <!-- Ruler's Ring Of Authority INT -->
     </item>
     <item>
         <ingredient count="1" id="47216" /> <!-- Ruler's Ring Of Authority -->
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <ingredient count="5" id="36414" /> <!-- Dragon Claw -->
-        <ingredient count="45" id="37559" />    <!-- Shiny Coin -->
+        <ingredient count="100" id="37559" />    <!-- Shiny Coin -->
         <production id="47480" count="1" /> <!-- Ruler's Ring Of Authority CON -->
     </item>
 </list>

@@ -18,6 +18,7 @@ package l2server.gameserver.taskmanager.tasks;
 import l2server.Config;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
+import l2server.gameserver.events.TopRanked;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
@@ -52,6 +53,7 @@ public class TaskCustomTasks extends Task
 			{
 				DamageManager.getInstance().giveRewardsAndReset();
 			}
+			TopRanked.getInstance().test();
 		}
 	}
 

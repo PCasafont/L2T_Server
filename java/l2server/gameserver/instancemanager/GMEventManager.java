@@ -64,8 +64,8 @@ import java.util.Map.Entry;
 public class GMEventManager
 {
 	private static final int _bufferNpcId = 8508;
-	private static final int _dummyArenaSignNpcId = 50013;
-	private static final int _rewardCoinId = 37559;
+	private static final int _dummyArenaSignNpcId = 35608;
+	private static final int _rewardCoinId = 14720;
 	private Map<String, Event> _predefinedEvents = new HashMap<>();
 	private static Map<Integer, CurrencyInfo> _currencies = new LinkedHashMap<>();
 	private static Map<String, SubEvent> _subEvents = new HashMap<>();
@@ -74,12 +74,18 @@ public class GMEventManager
 	public String getCustomEventPanel(L2PcInstance player, int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
+		sb.append(
+				"<tr><td><button value=\"Creature Invasion\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; CreatureInvasion\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Cows Invasion\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; Christmas\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></td>");
+
+
 		sb.append("<table width=750 border=0>");
 
 		if (player.isGM())
 		{
 			if (_currentEvent == null || !_currentEvent.isStarted())
 			{
+
+
 				sb.append("<tr><td><table width=750 border=1>");
 				if (_currentEvent == null || !_currentEvent.isStarted())
 				{
@@ -280,11 +286,11 @@ public class GMEventManager
 				}
 
 				String manageFences =
-						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Refresh\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				if (_currentEvent != null && !_currentEvent.getFences().isEmpty())
 				{
 					manageFences =
-							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Refresh\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageBets =
@@ -296,9 +302,6 @@ public class GMEventManager
 				}
 
 				String returnBets = "";
-				String reload =
-						"<button value=\"Reload\" width=100 height=24 action=\"bypass _bbscustom;gmEvent;1;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
-
 				if (_currentEvent != null && _currentEvent.hasBets())
 				{
 					returnBets =
@@ -312,7 +315,7 @@ public class GMEventManager
 						manageFight +
 						"</td><td><button value=\"Restart Fight\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;restartFight;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Stop Event\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;stopEvent;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></td></tr>");
 				sb.append(
-						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5;10;15></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
+						"<tr><td><table width=750 bgcolor=999999 border=0><tr><td FIXWIDTH=150>Team One Players</td><td FIXWIDTH=50><combobox width=100 height=17 var=\"rCount1\" list=1;2;3;4;5></td><td FIXWIDTH=350><button action=\"bypass _bbscustom;action;gEvent;giveReward;1; $rCount1 ;\" value=\" \" width=16 height=16 back=L2UI_CH3.joypad_r_hold fore=L2UI_CH3.joypad_r_over></button></td><td FIXWIDTH=200>" +
 								(hasBets ?
 										"<button value=\"Reward Bets\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;giveBetRewards;1\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" :
 										"") + "</td></tr></table></td></tr>");
@@ -1576,7 +1579,7 @@ public class GMEventManager
 
 					if (bet.getTeamId() == winnerTeam && bet.getItemId() == coin.getId())
 					{
-						long reward = Math.round(totalBet * 0.9f * bet.getBetAmount() / fighterTotalBet);
+						long reward = Math.round(totalBet * 1.2f * bet.getBetAmount() / fighterTotalBet);
 						sendRewardMail(bet.getPlayerId(), coin.getId(), reward,
 								"Congratulations, your bet has been successful!");
 					}

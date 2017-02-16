@@ -1126,9 +1126,19 @@
     </skill>
     <!-- All Stats + 5. -->
     <skill id="26110" levels="1" name="2014 World Olympiad Hero's Accessory">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <baseAdd stat="MEN" val="5" />
+            <baseAdd stat="WIT" val="5" />
+            <baseAdd stat="CON" val="5" />
+            <baseAdd stat="INT" val="5" />
+            <baseAdd stat="DEX" val="5" />
+            <baseAdd stat="STR" val="5" />
+            <baseAdd stat="LUC" val="5" />
+            <baseAdd stat="CHA" val="5" />
+        </for>
     </skill>
     <!-- All Stats + 2. -->
     <skill id="26111" levels="1" name="2014 World Olympiad Semifinalist's Accessory">

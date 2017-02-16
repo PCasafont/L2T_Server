@@ -1469,7 +1469,7 @@
         <skill id="4415" level="1" /> <!-- Bare Hands -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
     </npc>
-    <npc id="32076" name="Box" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
+    <npc id="32076" name=" " level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
          STR="88"
          CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
          mAtkSpd="500"

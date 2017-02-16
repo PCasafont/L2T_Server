@@ -1420,4 +1420,12 @@
         <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
         <shieldSkill id="3551" /> <!-- Equipped with Shield -->
     </armorSet>
+    <armorSet id="20000" parts="1">
+        <skill id="13562" levels="11" />
+        <skill id="13563" levels="5" />
+        <skill id="13564" levels="4" />
+        <skill id="13565" levels="3" />
+        <skill id="13566" levels="2" />
+        <skill id="13567" levels="1" />
+    </armorSet>
 </list>

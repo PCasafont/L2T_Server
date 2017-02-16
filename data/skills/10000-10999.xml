@@ -4285,7 +4285,7 @@
         <table name="#level">1 2 3</table>
         <table name="#triggeredLevel">2 3 3</table>
         <table name="#chance">20 10 10</table>
-        <table name="#pAtk">10 15 30</table>
+        <table name="#pAtk">10 20 30</table>
         <table name="#spd">5 7 10</table>
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
@@ -8841,7 +8841,6 @@
             <abnormal duration="#duration" stackLvl="1" stackType="ultimate_escape">
                 <effect type="Buff" val="0" />
                 <add stat="rEvas" val="#evas" />
-                <add stat="mEvasRate" val="#evas" />
                 <addPercent stat="mDef" val="#mDef" />
                 <addPercent stat="debuffRes" val="90" />
                 <add stat="pSkillEvas" val="#pSkillEvas" />
@@ -9104,7 +9103,7 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="mpConsume" val="9" />
         <set name="hitTime" val="200" />
-        <set name="reuseDelay" val="120000" />
+        <set name="reuseDelay" val="300000" />
         <set name="removedOnAction" val="true" />
         <set name="removedOnDamage" val="true" />
         <for>
@@ -9278,6 +9277,7 @@
         <set name="coolTime" val="200" />
         <set name="reuseDelay" val="60000" />
         <set name="skillRadius" val="100" />
+        <set name="castRange" val="80" />
         <for>
             <abnormal stackLvl="1" stackType="flash">
                 <effect type="RemoveTarget" val="0" />
@@ -10090,8 +10090,8 @@
         <set name="itemConsumeCount" val="5" />
         <set name="mpConsume" val="64" />
         <set name="hitTime" val="3000" />
-        <set name="coolTime" val="500" />
-        <set name="reuseDelay" val="600000" />
+        <set name="coolTime" val="300" />
+        <set name="reuseDelay" val="400000" />
         <for>
             <abnormal duration="#duration" stackLvl="1" stackType="minds_eye">
                 <effect type="Buff" val="0" />
@@ -10123,7 +10123,7 @@
         <set name="itemConsumeCount" val="5" />
         <set name="mpConsume" val="64" />
         <set name="hitTime" val="3000" />
-        <set name="coolTime" val="500" />
+        <set name="coolTime" val="300" />
         <set name="reuseDelay" val="600000" />
         <for>
             <abnormal duration="#duration" stackLvl="1" stackType="minds_eye">

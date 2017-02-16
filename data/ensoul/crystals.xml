@@ -748,7 +748,6 @@
         <effect id="480" /> <!-- MP Focus -->
         <effect id="495" /> <!-- MP Death -->
         <effect id="510" /> <!-- MP Hunter -->
-        <effect id="525" /> <!-- MP Fire -->
     </crystal>
     <!-- Mystic Soul Crystal -->
     <crystal id="46553" special="true">
@@ -756,6 +755,126 @@
         <effect id="527" /> <!-- Feoh -->
         <effect id="528" /> <!-- Sigel -->
     </crystal>
+    <!-- Lilith Soul Crystal - Stage 1 -->
+    <crystal id="47100" special="true">
+        <effect id="668" /> <!-- PvP.Othell -->
+        <effect id="678" /> <!-- PvP.Iss -->
+        <effect id="688" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 2 -->
+    <crystal id="47101" special="true">
+        <effect id="669" /> <!-- PvP.Othell -->
+        <effect id="679" /> <!-- PvP.Iss -->
+        <effect id="689" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 3 -->
+    <crystal id="47102" special="true">
+        <effect id="670" /> <!-- PvP.Othell -->
+        <effect id="680" /> <!-- PvP.Iss -->
+        <effect id="690" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 4 -->
+    <crystal id="47103" special="true">
+        <effect id="671" /> <!-- PvP.Othell -->
+        <effect id="681" /> <!-- PvP.Iss -->
+        <effect id="691" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 5 -->
+    <crystal id="47104" special="true">
+        <effect id="672" /> <!-- PvP.Othell -->
+        <effect id="682" /> <!-- PvP.Iss -->
+        <effect id="692" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 6 -->
+    <crystal id="47105" special="true">
+        <effect id="673" /> <!-- PvP.Othell -->
+        <effect id="683" /> <!-- PvP.Iss -->
+        <effect id="693" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 7 -->
+    <crystal id="47106" special="true">
+        <effect id="674" /> <!-- PvP.Othell -->
+        <effect id="684" /> <!-- PvP.Iss -->
+        <effect id="694" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 8 -->
+    <crystal id="47107" special="true">
+        <effect id="675" /> <!-- PvP.Othell -->
+        <effect id="685" /> <!-- PvP.Iss -->
+        <effect id="695" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 9 -->
+    <crystal id="47108" special="true">
+        <effect id="676" /> <!-- PvP.Othell -->
+        <effect id="686" /> <!-- PvP.Iss -->
+        <effect id="696" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Lilith Soul Crystal - Stage 10 -->
+    <crystal id="47109" special="true">
+        <effect id="677" /> <!-- PvP.Othell -->
+        <effect id="687" /> <!-- PvP.Iss -->
+        <effect id="697" /> <!-- PvP.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 1 -->
+    <crystal id="47089" special="true">
+        <effect id="698" /> <!-- PvE.Othell -->
+        <effect id="708" /> <!-- PvE.Iss -->
+        <effect id="718" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 2 -->
+    <crystal id="47090" special="true">
+        <effect id="699" /> <!-- PvE.Othell -->
+        <effect id="709" /> <!-- PvE.Iss -->
+        <effect id="719" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 3 -->
+    <crystal id="47091" special="true">
+        <effect id="700" /> <!-- PvE.Othell -->
+        <effect id="710" /> <!-- PvE.Iss -->
+        <effect id="720" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 4 -->
+    <crystal id="47092" special="true">
+        <effect id="701" /> <!-- PvE.Othell -->
+        <effect id="711" /> <!-- PvE.Iss -->
+        <effect id="721" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 5 -->
+    <crystal id="47093" special="true">
+        <effect id="702" /> <!-- PvE.Othell -->
+        <effect id="712" /> <!-- PvE.Iss -->
+        <effect id="722" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 6 -->
+    <crystal id="47094" special="true">
+        <effect id="703" /> <!-- PvE.Othell -->
+        <effect id="713" /> <!-- PvE.Iss -->
+        <effect id="723" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 7 -->
+    <crystal id="47095" special="true">
+        <effect id="704" /> <!-- PvE.Othell -->
+        <effect id="714" /> <!-- PvE.Iss -->
+        <effect id="724" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 8 -->
+    <crystal id="47096" special="true">
+        <effect id="705" /> <!-- PvE.Othell -->
+        <effect id="715" /> <!-- PvE.Iss -->
+        <effect id="725" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 9 -->
+    <crystal id="47097" special="true">
+        <effect id="706" /> <!-- PvE.Othell -->
+        <effect id="716" /> <!-- PvE.Iss -->
+        <effect id="726" /> <!-- PvE.Aeroe -->
+    </crystal>
+    <!-- Anakim Soul Crystal - Stage 10 -->
+    <crystal id="47098" special="true">
+        <effect id="707" /> <!-- PvE.Othell -->
+        <effect id="717" /> <!-- PvE.Iss -->
+        <effect id="727" /> <!-- PvE.Aeroe -->
+    </crystal>    <effect id="525" /> <!-- MP Fire -->
     <!-- Practice Soul Crystal - Stage 1 -->
     <crystal id="46526">
         <effect id="666" /> <!-- Fury-Practice -->

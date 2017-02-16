@@ -15,6 +15,7 @@
 
 package l2server.gameserver.stats.skills;
 
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
@@ -47,6 +48,13 @@ public class L2SkillAgathion extends L2Skill
 		{
 			activeChar.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+			return;
+		}
+
+		// Ranked 1v1 Restriction Agathions
+		if (Ranked1v1.fighters.containsKey(activeChar))
+		{
+			activeChar.sendMessage("You can't use this in 1v1!");
 			return;
 		}
 

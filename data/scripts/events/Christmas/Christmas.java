@@ -34,10 +34,10 @@ public class Christmas extends Quest
 {
 	//Config
 	private static final boolean _exChangeOnly = false;
-	private static final int _startInvasionEach = 3; //Hours
+	private static final int _startInvasionEach = 12; //Hours
 	private static final int _timeToEndInvasion = 10; //Minutes
 	private static final int _rewardRandomPlayerEach = 3; //Hours
-	private static final int _santaTalksEach = 3; //Hours
+	private static final int _santaTalksEach = 12; //Hours
 	private static final int _santaId = 50014;
 	private static final int _secondSantaId = 104;
 	private static final int[] _invaderIds = {80198, 80199, 80498, 80499};
@@ -69,10 +69,6 @@ public class Christmas extends Quest
 		//addSpawn(_santaId, -78307, 247921, -3303, 24266, false, 0);
 
 
-		if (!_exChangeOnly)
-		{
-
-		}
 
 		addStartNpc(_santaId);
 		addTalkId(_santaId);
@@ -450,7 +446,7 @@ public class Christmas extends Quest
 		}
 		else if (event.startsWith("start_invasion"))
 		{
-			if (_isUnderInvasion || _exChangeOnly)
+			if (_isUnderInvasion)
 			{
 				return "";
 			}

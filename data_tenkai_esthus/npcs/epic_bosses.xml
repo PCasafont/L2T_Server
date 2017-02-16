@@ -30,19 +30,20 @@
     <npc id="29020" level="107" overrideDrops="true" hpMax="127008000" exp="9339738544" sp="2241537"
          pAtk="1284001" mAtk="620680" pDef="12119" mDef="4558">
         <!-- Epic Items -->
-        <itemDrop itemId="6658" min="20" max="25" chance="100" /> <!-- Baium's Ring -->
-        <itemDrop itemId="37520" min="20" max="25" chance="100" /> <!-- Bottle of Baium's Soul -->
+        <itemDrop itemId="6658" min="5" max="15" chance="100" /> <!-- Baium's Ring -->
+        <itemDrop itemId="37520" min="5" max="15" chance="100" /> <!-- Bottle of Baium's Soul -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
+        <itemDrop itemId="10429" min="5" max="15" chance="100" /> <!-- Enchant Medal -->
     </npc>
     <!-- Antharas -->
     <npc id="29068" level="107" overrideDrops="true" hpMax="1172612305" hpReg="1830.0" mpMax="3996001" mpReg="1000.0"
          STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184" sp="44057417"
-         pAtk="3000000" mAtk="5500000" pDef="15000" mDef="12500" pAtkSpd="253" mAtkSpd="3819">
+         pAtk="3000000" mAtk="5500000" pDef="5000" mDef="8500" pAtkSpd="253" mAtkSpd="3819">
         <!-- Epic Items -->
-        <itemDrop itemId="6656" min="20" max="25" chance="100" /> <!-- Antharas' Earring -->
-        <itemDrop itemId="19465" min="200" max="250" chance="100" /> <!-- Bottle of Antharas' Soul -->
+        <itemDrop itemId="6656" min="5" max="15" chance="100" /> <!-- Antharas' Earring -->
+        <itemDrop itemId="19465" min="50" max="150" chance="100" /> <!-- Bottle of Antharas' Soul -->
         <itemDrop itemId="36414" min="900" max="1200" chance="100" /> <!-- Dragon Claw -->
+        <itemDrop itemId="37559" min="700" max="900" chance="100" /> <!-- Shyni Coin -->
         <!-- Epic Weapons -->
         <itemDrop itemId="36417" min="1" max="3" chance="100" /> <!-- Antharas Shaper (Fragment) -->
         <itemDrop itemId="36418" min="1" max="3" chance="100" /> <!-- Antharas Slasher (Fragment) -->
@@ -63,9 +64,10 @@
          STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184" sp="44057417"
          pAtk="3000000" mAtk="5500000" pDef="15000" mDef="12500" pAtkSpd="253" mAtkSpd="3819">
         <!-- Epic Items -->
-        <itemDrop itemId="6657" min="20" max="25" chance="100" /> <!-- Valakas' Necklace -->
-        <itemDrop itemId="19466" min="200" max="250" chance="100" /> <!-- Bottle of Valakas' Soul -->
+        <itemDrop itemId="6657" min="5" max="15" chance="100" /> <!-- Valakas' Necklace -->
+        <itemDrop itemId="19466" min="50" max="150" chance="100" /> <!-- Bottle of Valakas' Soul -->
         <itemDrop itemId="36414" min="900" max="1200" chance="100" /> <!-- Dragon Claw -->
+        <itemDrop itemId="37559" min="700" max="900" chance="100" /> <!-- Shiny Coin -->
         <!-- Epic Weapons -->
         <itemDrop itemId="36427" min="2" max="3" chance="100" /> <!-- Valakas Shaper (Fragment) -->
         <itemDrop itemId="36428" min="2" max="3" chance="100" /> <!-- Valakas Cutter (Fragment) -->
@@ -83,8 +85,9 @@
          STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184" sp="44057417"
          pAtk="3000000" mAtk="5500000" pDef="15000" mDef="12500" pAtkSpd="253" mAtkSpd="3819">
         <!-- Epic Items -->
-        <itemDrop itemId="36946" min="20" max="25" chance="100" /> <!-- Lindvior's Earring -->
+        <itemDrop itemId="36946" min="5" max="15" chance="100" /> <!-- Lindvior's Earring -->
         <itemDrop itemId="36414" min="900" max="1200" chance="100" /> <!-- Dragon Claw -->
+        <itemDrop itemId="37559" min="700" max="900" chance="100" /> <!-- Shiny Coin -->
         <!-- Epic Boss Weapons -->
         <itemDrop itemId="36434" min="2" max="3" chance="100" /> <!-- Lindvior Shaper - Fragment -->
         <itemDrop itemId="36435" min="2" max="3" chance="100" /> <!-- Lindvior Thrower - Fragment -->
@@ -107,10 +110,10 @@
     <npc id="25283" level="107" overrideDrops="true" hpMax="95760030" exp="9339738544" sp="2241537"
          pAtk="1284001" mAtk="620680" pDef="12119" mDef="4558">
         <!-- Epic Items -->
-        <itemDrop itemId="37714" min="15" max="20" chance="100" /> <!-- Talisman - Lilith -->
+        <itemDrop itemId="37714" min="10" max="15" chance="100" /> <!-- Talisman - Lilith -->
         <itemDrop itemId="36257" min="2" max="3" chance="100" /> <!-- Lilith's Soul Necklace -->
         <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->
-        <itemDrop itemId="37716" min="5" max="10" chance="100" /> <!-- Seven Signs' Energy -->
+        <itemDrop itemId="37716" min="5" max="8" chance="100" /> <!-- Seven Signs' Energy -->
         <!-- Random Stuff -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
     </npc>
@@ -118,8 +121,8 @@
     <npc id="25286" level="107" overrideDrops="true" hpMax="95760030" exp="9339738544" sp="2241537"
          pAtk="1284001" mAtk="620680" pDef="12119" mDef="4558">
         <!-- Epic Items -->
-        <itemDrop itemId="37715" min="15" max="20" chance="100" /> <!-- Talisman - Anakim -->
-        <itemDrop itemId="37716" min="5" max="10" chance="100" /> <!-- Seven Signs' Energy -->
+        <itemDrop itemId="37715" min="10" max="15" chance="100" /> <!-- Talisman - Anakim -->
+        <itemDrop itemId="37716" min="5" max="8" chance="100" /> <!-- Seven Signs' Energy -->
         <!-- Random Stuff -->
         <itemDrop itemId="57" min="60000000" max="150000000" chance="100" /> <!-- Adena -->
         <itemDrop itemId="10429" min="10" max="20" chance="100" /> <!-- Enchant Medal -->

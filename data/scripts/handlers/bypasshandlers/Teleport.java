@@ -16,7 +16,9 @@
 package handlers.bypasshandlers;
 
 import l2server.Config;
-import l2server.gameserver.GeoData;
+import l2server.gameserver.Ranked1v1;
+import l2server.gameserver.events.PvpZone;
+import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
@@ -85,6 +87,12 @@ public class Teleport implements IBypassHandler
 		{
 			boolean parties = st.nextToken().equals("1");
 			boolean artificialPlayers = st.nextToken().equals("1");
+
+			if (PvpZone.state == PvpZone.State.FIGHT)
+			{
+				activeChar.sendMessage("You can't teleport while the pvp zone is opened");
+				return false;
+			}
 
 			if (!parties && activeChar.isInParty() && !activeChar.isGM())
 			{

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <item>
+        <ingredient id="5899" count="10" /> <!-- Kail's Coin -->
+        <production id="10429" count="1" /> <!-- Tully's Lead Medal -->
+    </item>
+    <item>
+        <ingredient id="5899" count="125" /> <!-- Kail's Coin  -->
+        <production id="23953" count="1" /> <!-- 2014 World's Olympiad Hero Accessory -->
+    </item>
+</list>

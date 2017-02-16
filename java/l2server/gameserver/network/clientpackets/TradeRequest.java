@@ -16,6 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
@@ -98,6 +99,12 @@ public final class TradeRequest extends L2GameClientPacket
 			return;
 		}
 
+		// Ranked restrict trade
+		if (Ranked1v1.fighters.containsKey(player))
+		{
+			player.sendMessage("You cant request trade in 1v1 !");
+			return;
+		}
 		// Alt game - Karma punishment
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0 || partner.getReputation() < 0))
 		{

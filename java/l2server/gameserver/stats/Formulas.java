@@ -1827,7 +1827,7 @@ public final class Formulas
 		double positionBonus = 0.0;
 		if (attacker.isBehind(target))
 		{
-			positionBonus = 0.20; // Behind bonus
+			positionBonus = 0.10; // Behind bonus
 		}
 		else if (!attacker.isInFrontOf(target))
 		{
@@ -1903,13 +1903,13 @@ public final class Formulas
 
 		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null)
 		{
-			if (pAtk > 100000)
+			if (pAtk > 150000)
 			{
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+				pAtk = 150000 + Math.pow(pAtk - 150000, 0.85);
 			}
-			if (critBonus > 3)
+			if (critBonus > 2)
 			{
-				critBonus = 2 + Math.pow(critBonus - 2, 0.55);
+				critBonus = 2 + Math.pow(critBonus - 2, 0.45);
 			}
 		}
 
@@ -1923,9 +1923,67 @@ public final class Formulas
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000)
+		if (Config.isServer(Config.TENKAI))
 		{
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
+			if (attacker.getActingPlayer() != null)
+			{
+				PlayerClass attackerClass = attacker.getActingPlayer().getCurrentClass();
+				if (attackerClass.getParent() != null && attackerClass.getParent().getAwakeningClassId() > 0)
+				{
+					//PHYS DAMAGES CAP
+					int awakening = attackerClass.getParent().getAwakeningClassId();
+					switch (awakening)
+					{
+						case 139: // Sigel Knight
+							if (damage > 25000)
+								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							break;
+						case 140: // Tyrr Warrior
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.95);
+							break;
+						case 141: // Othell Rogue
+							if (damage > 40000)
+								damage = 40000 + Math.pow(damage - 40000, 0.85);
+							break;
+						case 142: // Yul Archer
+						{
+							switch (attackerClass.getId()) {
+								case 163: //Yull Moonlight Sentinel
+									if (damage > 20000)
+										damage = 20000 + Math.pow(damage - 20000, 0.90);
+									break;
+								default: //all other yullz
+									if (damage > 25000)
+										damage = 25000 + Math.pow(damage - 25000, 0.93);
+									break;
+							}
+							break;
+						}
+						case 143: // Feoh Wizard
+							if (damage > 30000)
+								damage = 30000 + Math.pow(damage - 30000, 0.93);
+							break;
+						case 144: // Iss Enchanter
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.93);
+							break;
+						case 145: // Wynn Summoner
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.93);
+							break;
+						case 146: // Aeore Healer
+							if (damage > 30000)
+								damage = 30000 + Math.pow(damage - 30000, 0.93);
+							break;
+						default:
+							damage = 69;
+							break;
+					}
+				}
+			}
+
+
 		}
 
 		int dmgCap = (int) target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
@@ -1943,7 +2001,7 @@ public final class Formulas
 			damage = 0;
 		}
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000 && pDef > 5000)
+		if (Config.isServer(Config.TENKAI) && isPvP && damage > 30000 && pDef > 5000)
 		{
 			Connection con = null;
 			try
@@ -2263,9 +2321,9 @@ public final class Formulas
 
 		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null)
 		{
-			if (pAtk > 100000)
+			if (pAtk > 170000)
 			{
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+				pAtk = 170000 + Math.pow(pAtk - 170000, 0.8);
 			}
 			if (critBonus > 2)
 			{
@@ -2288,9 +2346,9 @@ public final class Formulas
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000)
+		if (Config.isServer(Config.TENKAI) && isPvP && damage > 30000)
 		{
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
+			damage = 30000 + Math.pow(damage - 30000, 0.9);
 		}
 
 		//if (isPvP)
@@ -2314,7 +2372,7 @@ public final class Formulas
 		}
 
 		if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && attacker instanceof L2PcInstance &&
-				damage > 10000 && pDef > 5000)
+				damage > 30000 && pDef > 5000)
 		{
 			Connection con = null;
 			try
@@ -2390,6 +2448,10 @@ public final class Formulas
 		}
 
 		double critBonus = attacker.calcStat(Stats.PSKILL_CRIT_DMG, 1, target, skill);
+		if (critBonus > 1.3)
+		{
+			critBonus = 1.3;
+		}
 		critBonus = attacker.calcStat(Stats.CRITICAL_DAMAGE, critBonus, target, skill);
 		double critStaticBonus = attacker.calcStat(Stats.CRITICAL_DAMAGE_ADD, 1, target, null);
 		critBonus = target.calcStat(Stats.CRIT_VULN, critBonus, target, skill);
@@ -2452,9 +2514,9 @@ public final class Formulas
 
 		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null)
 		{
-			if (pAtk > 100000)
+			if (pAtk > 180000)
 			{
-				pAtk = 100000 + Math.pow(pAtk - 100000, 0.8);
+				pAtk = 180000 + Math.pow(pAtk - 180000, 0.8);
 			}
 			if (critBonus > 5)
 			{
@@ -2789,13 +2851,13 @@ public final class Formulas
 		{
 			//if (mAtk > 1000000)
 			//	mAtk = 1000000 + Math.pow(mAtk - 1000000, 0.9);
-			if (critBonus > 2)
+			if (critBonus > 3)
 			{
-				critBonus = 1 + Math.pow(critBonus - 1, 0.55);
+				critBonus = 2 + Math.pow(critBonus - 2, 0.55);
 			}
-			if (finalBonus > 2)
+			if (finalBonus > 3)
 			{
-				finalBonus = 1 + Math.pow(finalBonus - 1, 0.45);
+				finalBonus = 2 + Math.pow(finalBonus - 2, 0.45);
 			}
 		}
 
@@ -2804,9 +2866,81 @@ public final class Formulas
 
 		damage = calcCustomModifier(attacker, target, damage);
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000)
+		if (Config.isServer(Config.TENKAI))
 		{
-			damage = 10000 + Math.pow(damage - 10000, 0.9);
+			if (attacker.getActingPlayer() != null)
+			{
+				PlayerClass attackerClass = attacker.getActingPlayer().getCurrentClass();
+				if (attackerClass.getParent() != null && attackerClass.getParent().getAwakeningClassId() > 0)
+				{
+					//M DAMAGES CAP
+					int awakening = attackerClass.getParent().getAwakeningClassId();
+					switch (awakening)
+					{
+						case 139: // Sigel Knight
+							if (damage > 30000)
+								damage = 30000 + Math.pow(damage - 30000, 0.93);
+							break;
+						case 140: // Tyrr Warrior
+							if (damage > 25000)
+								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							break;
+						case 141: // Othell Rogue
+							if (damage > 25000)
+								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							break;
+						case 142: // Yul Archer
+						{
+							switch (attackerClass.getId())
+							{
+								    case 163: //Yull Moonlight Sentinel
+									if (damage > 20000)
+										damage = 20000 + Math.pow(damage - 20000, 0.90);
+									break;
+								default: //all other yullz
+									if (damage > 25000)
+										damage = 25000 + Math.pow(damage - 25000, 0.93);
+									break;
+							}
+							break;
+						}
+						case 143: // If Player is Feoh Wizard
+						{
+							switch (attackerClass.getId())
+							{
+									case 170: //Feoh Soulhound
+									if (damage > 30000)
+										damage = 30000 + Math.pow(damage - 30000, 0.93);
+									break;
+								default: //All The Other Feoh
+									if (damage > 30000)
+										damage = 30000 + Math.pow(damage - 30000, 0.93);
+									break;
+							}
+							break;
+						}
+						case 144: // Iss Enchanter
+							if (damage > 30000)
+								damage = 30000 + Math.pow(damage - 30000, 0.93);
+							break;
+						case 145: // Wynn Summoner
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.93);
+							break;
+						case 146: // Aeore Healer
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.93);
+							break;
+					}
+					if (attackerClass.getId() == 189)
+					{
+						if (damage > 40000)
+							damage = 40000 + Math.pow(damage - 40000, 0.80);
+					}
+				}
+			}
+
+
 		}
 
 		if (missed)
@@ -2826,7 +2960,7 @@ public final class Formulas
 			damage = 1;
 		}
 
-		if (Config.isServer(Config.TENKAI) && isPvP && damage > 10000 && mDef > 5000)
+		if (Config.isServer(Config.TENKAI) && isPvP && damage > 30000 && mDef > 5000)
 		{
 			Connection con = null;
 			try
@@ -4689,10 +4823,10 @@ public final class Formulas
 
 	public static double damageMultiplier(L2Character attacker, L2Character target)
 	{
-		if (!Config.isServer(Config.TENKAI))
-		{
-			return 1.0;
-		}
+		//if (!Config.isServer(Config.TENKAI))
+		//{
+		//	return 1.0;
+		//}
 
 		double multiplier = 1.0;
 		if (attacker.getActingPlayer() != null)
@@ -4701,6 +4835,9 @@ public final class Formulas
 			if (target.getActingPlayer() != null) // PvP Damage
 			{
 				multiplier *= 0.99;
+
+
+
 				int attackerClanId = attacker.getActingPlayer().getClanId();
 				L2Party attackerParty = attacker.getActingPlayer().getParty();
 				int targetClanId = target.getActingPlayer().getClanId();
@@ -4754,29 +4891,29 @@ public final class Formulas
 							}
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 0.95;
+							multiplier *= 1.2;
 							break;
 						case 141: // Othell Rogue
 							if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER ||
 									weapon.getItemType() == L2WeaponType.DUALDAGGER))
 							{
-								multiplier *= 1.2;
+								multiplier *= 1.9;
 							}
 							break;
 						case 142: // Yul Archer
-							multiplier *= 1.05;
+							multiplier *= 1.27;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 1.3;
+							multiplier *= 0.9;
 							break;
 						case 144: // Iss Enchanter
-							multiplier *= 1.5;
+							multiplier *= 2.00;
 							break;
 						case 145: // Wynn Summoner
-							multiplier *= 1.7;
+							multiplier *= 1.5;
 							break;
 						case 146: // Aeore Healer
-							multiplier *= 1.5;
+							multiplier *= 1.35;
 							break;
 					}
 				}
@@ -4787,22 +4924,25 @@ public final class Formulas
 						multiplier *= 0.9;
 						break;
 					case 166: // Feoh Archmage
-						multiplier *= 1.5;
+						multiplier *= 1.19;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 0.9;
+						multiplier *= 1.15;
+						break;
+					case 170: //Feoh Soulhound
+						multiplier *= 1.0;
 						break;
 					case 168: // Feoh Mystic Muse
-						multiplier *= 1.3;
+						multiplier *= 1.15;
 						break;
 					case 169: // Feoh Storm Screamer
-						multiplier *= 0.9;
+						multiplier *= 1.2;
 						break;
-					case 188: // Eviscerator
+					case 188: // Eviscerat::or
 						multiplier *= 1.2;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 1.2;
+						multiplier *= 0.85;
 						break;
 				}
 
@@ -4813,28 +4953,28 @@ public final class Formulas
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
-							multiplier *= 0.8;
+							multiplier *= 0.9;
 							break;
 						case 140: // Tyrr Warrior
 							multiplier *= 1.1;
 							break;
 						case 141: // Othell Rogue
-							multiplier *= 0.95;
+							multiplier *= 1.0;
 							break;
 						case 142: // Yul Archer
-							//multiplier *= 1.4;
-							break;
-						case 143: // Feoh Wizard
 							multiplier *= 0.85;
 							break;
+						case 143: // Feoh Wizard
+							multiplier *= 0.82;
+							break;
 						case 144: // Iss Enchanter
-							//multiplier *= 1.8;
+							multiplier *= 1.0;
 							break;
 						case 145: // Wynn Summoner
 							multiplier *= 0.85;
 							break;
 						case 146: // Aeore Healer
-							//multiplier *= 2.1;
+							multiplier *= 0.88;
 							break;
 					}
 				}
@@ -4842,16 +4982,16 @@ public final class Formulas
 				switch (targetClass.getId())
 				{
 					case 166: // Feoh Archmage
-						multiplier *= 0.8;
+						//multiplier *= 0.8;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 1.2;
+						//multiplier *= 1.35;
 						break;
 					case 188: // Eviscerator
 						//multiplier *= 0.8;
 						break;
 					case 189: // Sayha's Seer
-						//multiplier *= 1.4;
+						multiplier *= 0.75;
 						break;
 				}
 			}
@@ -4884,7 +5024,7 @@ public final class Formulas
 							multiplier *= 1.6;
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 0.9;
+							multiplier *= 1.4;
 							break;
 						case 141: //Othell Rogue
 							multiplier *= 1.5;
@@ -4913,7 +5053,7 @@ public final class Formulas
 						multiplier *= 1.4;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 0.9;
+						multiplier *= 1.10;
 						break;
 					case 188: // Eviscerator
 						multiplier *= 1.0;

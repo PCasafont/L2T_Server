@@ -28,4 +28,24 @@
              initialPrice="1" initialDuration="24" /> <!-- Talisman - Seven Signs -->
     <auction id="110" itemId="10429" count="10" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
              initialPrice="1" initialDuration="24" /> <!-- Enchant -->
+    <auction id="111" itemId="35564" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Ruler's Belt -->
+    <auction id="112" itemId="35771" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 P.Atk -->
+    <auction id="113" itemId="36176" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36177" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36178" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36179" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36180" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36181" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36182" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+    <auction id="113" itemId="36183" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
 </list>

@@ -164,7 +164,6 @@
     <item id="20016" type="Armor" name="Horn-rimmed Glasses - Agility" icon="BranchSys.icon.br_Eye_Glasses_i00"
           defaultAction="equip"
           bodypart="hair" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false"
-          isPremium="true"
           isOlyRestricted="true">
         <enchant stat="mDef" val="0" />
         <skill id="21005" level="3" />

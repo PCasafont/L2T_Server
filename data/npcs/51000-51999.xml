@@ -43,4 +43,40 @@
         <skill id="16202" level="4" /> <!-- Fatal Strike -->
         <itemDrop itemId="57" min="5000000" max="6000000" chance="100" /> <!-- Adena -->
     </npc>
+    <npc id="92000" templateId="36777" name="Melonis" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+         mpReg="8.29"
+         STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+         mAtkSpd="407"
+         pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+         waterRes="0"
+         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="92010" templateId="8457" name="Kartia" serverSideName="true" title="DC Event"
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter" isLethalImmune="true">
+    </npc>
+    <npc id="92011" templateId="8456" name="Karthos" serverSideName="true" title="DC Event"
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter" isLethalImmune="true">
+    </npc>
+    <npc id="92012" templateId="8460" name="Herina" serverSideName="true" title="Sexy Shop" serverSideTitle="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+         mpReg="8.29"
+         STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+         mAtkSpd="407"
+         pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+         waterRes="0"
+         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
 </list>

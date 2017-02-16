@@ -1968,7 +1968,7 @@
     </npc>
     <npc id="15172" name="Unicorn Lancer" level="105" type="L2Pet" atkRange="40" hpMax="24949" hpReg="18.5" mpMax="2020"
          mpReg="16.0"
-         STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6013" mAtk="4436" pDef="2818" mDef="5622"
+         STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6013" mAtk="4436" pDef="8969" mDef="7896"
          pAtkSpd="491"
          mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10"
          collisionHeight="23" fireRes="280"
@@ -2028,7 +2028,7 @@
     </npc>
     <npc id="15178" name="Unicorn Cherub" level="105" type="L2Pet" atkRange="900" hpMax="17996" hpReg="18.5"
          mpMax="1489" mpReg="13.0"
-         STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6442" mAtk="4806" pDef="2117" mDef="4264"
+         STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6442" mAtk="4806" pDef="5987" mDef="7896"
          pAtkSpd="343"
          mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10"
          collisionHeight="23" fireRes="300"

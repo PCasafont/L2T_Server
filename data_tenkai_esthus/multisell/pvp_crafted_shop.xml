@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" >
+    <category>
+        <item>
+            <ingredient count="50" id="5899" /> <!-- Kail's Coin -->
+            <ingredient count="1" id="37521" /> <!-- Baium's soul ring -->
+
+            <production count="1" id="47466" /> <!-- Baium's - STR -->
+        </item>
+        <item>
+            <ingredient count="50" id="5899" /> <!-- Kail's Coin -->
+            <ingredient count="1" id="37521" /> <!-- Baium's soul ring -->
+
+            <production count="1" id="47467" /> <!-- Baium's -INT -->
+        </item>
+         <item>
+            <ingredient count="50" id="5899" /> <!-- Kail's Coin -->
+            <ingredient count="1" id="37521" /> <!-- Baium's soul ring -->
+
+            <production count="1" id="47468" /> <!-- Baium's - CON -->
+        </item>
+    </category>
+</list>
