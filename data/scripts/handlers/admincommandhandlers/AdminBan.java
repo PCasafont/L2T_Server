@@ -51,7 +51,7 @@ public class AdminBan implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_ban", "admin_ban_acc", "admin_ban_char", "admin_chat_ban", "admin_unban", // returns unban commands
-			"admin_unban_acc", "admin_unban_char", "admin_unban_chat", "admin_jail", "admin_unjail", "admin_setPoints"
+			"admin_unban_acc", "admin_unban_char", "admin_unban_chat", "admin_jail", "admin_unjail"
 	};
 
 	@Override
@@ -106,34 +106,6 @@ public class AdminBan implements IAdminCommandHandler
 			return false;
 		}
 
-		if (command.startsWith("admin_setPoints"))
-		{
-			Connection coni = null;
-
-
-
-
-			try
-			{
-				coni = L2DatabaseFactory.getInstance().getConnection();
-
-				PreparedStatement statement =
-						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
-				statement.setString(1, player);
-				statement.setString(2, reason);
-
-				statement.execute();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
-			}
-			finally
-			{
-				L2DatabaseFactory.close(coni);
-			}
-		}
 
 		if (command.startsWith("admin_ban"))
 		{

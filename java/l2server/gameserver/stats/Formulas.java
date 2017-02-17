@@ -1935,8 +1935,8 @@ public final class Formulas
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
-							if (damage > 25000)
-								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							if (damage > 3000)
+								damage = 35000 + Math.pow(damage - 25000, 0.93);
 							break;
 						case 140: // Tyrr Warrior
 							if (damage > 35000)
@@ -1954,8 +1954,8 @@ public final class Formulas
 										damage = 20000 + Math.pow(damage - 20000, 0.90);
 									break;
 								default: //all other yullz
-									if (damage > 25000)
-										damage = 25000 + Math.pow(damage - 25000, 0.93);
+									if (damage > 20000)
+										damage = 20000 + Math.pow(damage - 20000, 0.83);
 									break;
 							}
 							break;

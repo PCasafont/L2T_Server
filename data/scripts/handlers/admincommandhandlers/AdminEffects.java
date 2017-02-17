@@ -16,6 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
+import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Object;
@@ -29,9 +30,13 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Broadcast;
+import l2server.log.Log;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Collection;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * This class handles following admin commands:
@@ -87,6 +92,7 @@ public class AdminEffects implements IAdminCommandHandler
 			"admin_abnormal_menu",
 			"admin_play_sounds",
 			"admin_play_sound",
+			"admin_setPoints",
 			"admin_atmosphere",
 			"admin_atmosphere_menu",
 			"admin_set_displayeffect",
@@ -189,6 +195,36 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				activeChar.sendMessage("Usage: //play_sound <soundname>");
 			}
+		}
+		else if (command.startsWith("admin_setPoints"))
+		{
+
+			String name = st.nextToken();
+			int Points = Integer.parseInt(st.nextToken());
+
+			Connection coni = null;
+			try
+			{
+				coni = L2DatabaseFactory.getInstance().getConnection();
+
+				PreparedStatement statement =
+						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
+				statement.setInt(1, Points);
+				statement.setString(2, name);
+
+				statement.execute();
+				statement.close();
+				activeChar.sendMessage("You changed " + name + "'s points to " + Points);
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			}
+			finally
+			{
+				L2DatabaseFactory.close(coni);
+			}
+
 		}
 		else if (command.equals("admin_para_all"))
 		{

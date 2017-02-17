@@ -53,6 +53,10 @@ public class TaskCustomTasks extends Task
 			{
 				DamageManager.getInstance().giveRewardsAndReset();
 			}
+		}
+
+		if (day == Calendar.SATURDAY)
+		{
 			TopRanked.getInstance().test();
 		}
 	}

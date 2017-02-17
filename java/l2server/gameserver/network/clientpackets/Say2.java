@@ -35,6 +35,7 @@ import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 /**
@@ -161,8 +162,6 @@ public final class Say2 extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
 		}
-
-
 
 
 

@@ -173,7 +173,7 @@
     <command name="admin_invul" accessLevels="6" />
     <command name="admin_itemcreate" accessLevels="6" />
     <command name="admin_jail" accessLevels="6" confirmDlg="true" />
-    <command name="admin_setPoints" accessLevels="6"/>
+    <command name="admin_setPoints" accessLevels="3"/>
     <command name="admin_kick" accessLevels="6" />
     <command name="admin_kick_menu" accessLevels="6" />
     <command name="admin_kick_non_gm" accessLevels="º" />

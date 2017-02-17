@@ -235,7 +235,6 @@ public class BlessedSpiritShot implements IItemHandler
 				break;
 			case 6:
 				skillId = 18718;
-				skillLvl = 1;
 				sapphireMul = 1.2;
 				break;
 		}

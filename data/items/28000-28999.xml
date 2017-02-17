@@ -2224,8 +2224,8 @@
           defaultAction="equip"
           bodypart="brooch" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
         <baseAdd stat="mDef" val="101" />
-        <skill id="13660" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
-        <skill id="13924" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
+        <skill id="27718" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
+        <skill id="27719" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
     </item>
     <!-- La Vie En Rose's refined gemstone powder. Go find Shadai to use it when exchanging for gemstones. -->
     <item id="28359" type="Weapon" name="La Vie En Rose's Gemstone Powder" icon="BranchIcon.icon.etc_g_bm_powder_jewel"
