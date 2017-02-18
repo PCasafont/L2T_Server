@@ -439,7 +439,6 @@ return;
     protected Ranked1v1()
     {
         ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Event(), 60000 * timeEach , 62000 * timeEach);
-        ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Item(), 0  , 500);
     }
 
     public static Ranked1v1 getInstance()

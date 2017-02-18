@@ -55,7 +55,7 @@ public class TaskCustomTasks extends Task
 			}
 		}
 
-		if (day == Calendar.SATURDAY)
+		if (day == Calendar.SUNDAY)
 		{
 			TopRanked.getInstance().test();
 		}

@@ -20,6 +20,7 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.datatables.SkillTreeTable;
+import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.instancemanager.MentorManager;
@@ -619,6 +620,12 @@ public class PcStat extends PlayableStat
 		int val;
 
 		L2PcInstance player = getActiveChar();
+
+		//Event
+		if (Elpy.registered.contains(this.getActiveChar()))
+			return 120;
+
+
 		if (player.isMounted())
 		{
 			float baseRunSpd = NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).baseRunSpd;
@@ -654,7 +661,9 @@ public class PcStat extends PlayableStat
 		{
 			return Config.MAX_PATK_SPEED;
 		}
-
+		//Event
+		if (Elpy.registered.contains(this.getActiveChar()))
+			return 500;
 		return val;
 	}
 
@@ -683,10 +692,12 @@ public class PcStat extends PlayableStat
 	{
 		int val = super.getMAtkSpd();
 
+
 		if (val > Config.MAX_MATK_SPEED)
 		{
 			return Config.MAX_MATK_SPEED;
 		}
+
 
 		return val;
 	}

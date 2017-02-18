@@ -18,6 +18,7 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
+import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.events.PvpZone;
 import l2server.gameserver.events.TopRanked;
@@ -187,6 +188,27 @@ public final class Say2 extends L2GameClientPacket
 			activeChar.sendMessage("You may not chat at this time.");
 			return;
 		}*/
+
+		if (_text.equalsIgnoreCase(".elpy"))
+		{
+			Elpy.getInstance().addPlayer(activeChar);
+			return;
+		}
+		if (_text.equalsIgnoreCase(".leaveElpy"))
+		{
+			Elpy.getInstance().removePlayer(activeChar);
+			return;
+		}
+		if (_text.equalsIgnoreCase(".runElpy") && activeChar.isGM())
+		{
+			Elpy.getInstance().openRegistration();
+			return;
+		}
+		if(_text.equalsIgnoreCase(".stopElpy") && activeChar.isGM())
+		{
+			Elpy.getInstance().stopEvent();
+			return;
+		}
 
 		if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
 				(activeChar.getEvent().isType(EventType.DeathMatch) ||
