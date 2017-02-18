@@ -26,11 +26,70 @@ public class TopRanked
     private StartTask _task;
 
 
+    public int getRankedPoints(int id)
+    {
+        Connection get = null;
 
+        try
+        {
+            get = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = get.prepareStatement(
+                    "SELECT rankedPoints FROM characters WHERE charId = ?");
+            statement.setInt(1, id);
+            ResultSet rset = statement.executeQuery();
+
+            if (rset.next())
+            {
+                int currentPoints = rset.getInt("rankedPoints");
+                return (currentPoints);
+            }
+            rset.close();
+            statement.close();
+        }
+
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(get);
+        }
+        return 0;
+    }
+
+    public void setRankedPoints(int id, int amount)
+    {
+        Connection con = null;
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE characters SET rankedPoints=? WHERE charId=?");
+            statement.setInt(1, amount);
+            statement.setInt(2, id);
+
+            statement.execute();
+            statement.close();
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(con);
+        }
+    }
     public void test()
     {
         int position = 1;
         Connection get = null;
+        int amount = 0;
+        int currentPoints = 0;
+
+        Announcements.getInstance().announceToAll("Rewards of the current season delivered !");
         try
         {
             get = L2DatabaseFactory.getInstance().getConnection();
@@ -39,15 +98,23 @@ public class TopRanked
             ResultSet rset = statement.executeQuery();
             while (rset.next())
             {
+
                 String id =  rset.getString("charId");
                 Integer x = Integer.valueOf(id);
+                currentPoints = getRankedPoints(x);
 
-                Announcements.getInstance().announceToAll("" + x);
-                Message msg = new Message(-1, x, false, "ItemAuction", "yo", 0);
+                amount = (int) (Math.pow(currentPoints, 1.05))*(5/position);
+                if (amount > 70)
+                 amount = (int) (70 + Math.pow(currentPoints - 70, 0.55));
+
+                Message msg = new Message(-1, x, false, "Ranked System", "Congrats for youre ranking ! You ended the season at position " + position + " with " + currentPoints + " points !", 0);
 
                 Mail attachments = msg.createAttachments();
-                attachments.addItem("ItemAuction", 4032, 1, null, null);
+                attachments.addItem("Ranked System", 5899, amount, null, null);
                 MailManager.getInstance().sendMessage(msg);
+
+
+                setRankedPoints(x, (10 / position) * currentPoints / 12);
 
                 position++;
             }

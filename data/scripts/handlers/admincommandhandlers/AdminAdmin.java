@@ -16,6 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
+import l2server.L2DatabaseFactory;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.datatables.*;
@@ -27,8 +28,12 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.log.Log;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -72,7 +77,8 @@ public class AdminAdmin implements IAdminCommandHandler
 			"admin_sethero",
 			"admin_endolympiad",
 			"admin_setconfig",
-			"admin_config_server"
+			"admin_config_server",
+			"admin_setPoints"
 	};
 
 	@Override
@@ -144,6 +150,38 @@ public class AdminAdmin implements IAdminCommandHandler
 				target.setHero(target.isHero() ? false : true);
 			}
 			target.broadcastUserInfo();
+		}
+		else if (command.startsWith("admin_setPoints"))
+		{
+			StringTokenizer st = new StringTokenizer(command);
+			st.nextToken();
+
+			String name = st.nextToken();
+			int Points = Integer.parseInt(st.nextToken());
+
+			Connection coni = null;
+			try
+			{
+				coni = L2DatabaseFactory.getInstance().getConnection();
+
+				PreparedStatement statement =
+						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
+				statement.setInt(1, Points);
+				statement.setString(2, name);
+
+				statement.execute();
+				statement.close();
+				activeChar.sendMessage("You changed " + name + "'s points to " + Points);
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			}
+			finally
+			{
+				L2DatabaseFactory.close(coni);
+			}
+
 		}
 		else if (command.startsWith("admin_diet"))
 		{

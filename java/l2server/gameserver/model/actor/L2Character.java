@@ -6257,6 +6257,8 @@ public abstract class L2Character extends L2Object
 			L2PcInstance player = (L2PcInstance) this;
 			L2PcInstance victim = (L2PcInstance) target;
 			Elpy.getInstance().onAttack(player, victim);
+			victim.sendMessage("You received 1 damage from " + player.getName());
+			return;
 		}
 		// If the attacker/target is dead or use fake death, notify the AI with EVT_CANCEL
 		// and send a Server->Client packet ActionFailed (if attacker is a L2PcInstance)

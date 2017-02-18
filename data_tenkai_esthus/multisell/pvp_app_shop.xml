@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
     <item>
-        <ingredient id="5899" count="100" /> <!-- Kail's Coin -->
+        <ingredient id="5899" count="200" /> <!-- Kail's Coin -->
         <production id="46605" count="1" /> <!-- White Assassin -->
     </item>
 </list>

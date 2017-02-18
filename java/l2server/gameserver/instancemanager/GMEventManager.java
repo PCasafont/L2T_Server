@@ -18,6 +18,7 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
@@ -74,12 +75,24 @@ public class GMEventManager
 	public String getCustomEventPanel(L2PcInstance player, int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
+		if (player.isGM())
+		{
 		sb.append(
-				"<tr><td><button value=\"Creature Invasion\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; CreatureInvasion\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td><td><button value=\"Cows Invasion\" width=200 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; Christmas\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></td>");
+				"<table><tr>" +
+						"<td>" +
+						"<button value=\"Creature Invasion\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; CreatureInvasion\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"<td>" +
+						"<button value=\"Cows Invasion\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; Christmas\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"<td>" +
+						"<button value=\"Chests\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; SurpriseEvent\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"</tr></table>");
 
 
 		sb.append("<table width=750 border=0>");
-
+		}
 		if (player.isGM())
 		{
 			if (_currentEvent == null || !_currentEvent.isStarted())
@@ -659,7 +672,14 @@ public class GMEventManager
 				case "loadEvent":
 					_currentEvent = new Event(_predefinedEvents.get(st.nextToken().trim()));
 					break;
+				case "reduce":
+				{
+					int playerId = Integer.valueOf(st.nextToken());
+					player.sendMessage("- 10 to " + playerId);
+					Ranked1v1.getInstance().reduce(playerId);
 
+					break;
+				}
 				case "startSubEvent":
 				{
 					String eventName = st.nextToken().trim();

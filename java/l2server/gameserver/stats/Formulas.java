@@ -4901,10 +4901,10 @@ public final class Formulas
 							}
 							break;
 						case 142: // Yul Archer
-							multiplier *= 1.27;
+							multiplier *= 1.15;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.9;
+							multiplier *= 0.85;
 							break;
 						case 144: // Iss Enchanter
 							multiplier *= 2.00;

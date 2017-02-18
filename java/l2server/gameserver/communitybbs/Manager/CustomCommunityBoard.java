@@ -1369,6 +1369,7 @@ public class CustomCommunityBoard
 		sb.append("</tr></table</center><br><br>");
 
 
+
 		sb.append("<center><table width=30% bgcolor=999999><tr>" +
 				"<td FIXWIDTH=50>Name</td>" +
 				"<td FIXWIDTH=30>Points</td>" +
@@ -1452,8 +1453,14 @@ public class CustomCommunityBoard
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 		}
 		}
-		sb.append("</tr></table</center>");
 
+		sb.append("</tr></table</center>");
+		if (player.isGM())
+		{
+			sb.append("<center><table><tr>");
+			sb.append("<td align=right><button value=\"Reward\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;reward;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></center>");
+		}
 
 		sb.append("<br><br><center>");
 		sb.append("<table align=center><tr><td align=center FIXWIDTH=5%></td><td align=center FIXWIDTH=60%>TOP 10</td><td></td></tr></table>");
@@ -1468,10 +1475,13 @@ public class CustomCommunityBoard
 		{
 			get = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = get.prepareStatement(
-					"SELECT rankedPoints,char_name FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 10");
+					"SELECT rankedPoints,char_name, charId FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 10");
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
+
+				String id =  rset.getString("charId");
+				Integer x = Integer.valueOf(id);
 
 				if (n % 2 == 1)
 					sb.append("<table  bgcolor=999999><tr>");
@@ -1480,8 +1490,22 @@ public class CustomCommunityBoard
 				sb.append("" +
 						"<td align=center FIXWIDTH=60% >" + n + "</td>" +
 						"<td align=center FIXWIDTH=60%>" + rset.getString("char_name") + "</td>" +
-						"<td align=center FIXWIDTH=60%>" + rset.getString("rankedPoints") + "</td>" +
-						"</tr></table>");
+						"<td align=center FIXWIDTH=60%>" + rset.getString("rankedPoints") + "</td>");
+				if (player.isGM())
+				{
+					sb.append("<td>" +
+							"<button value=\"-\" width=20 height=20 action=\"bypass _bbscustom;action;gEvent;reduce;" +
+							x +
+							";1\" "+
+							"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+							"</td></tr></table>");
+
+				}
+				else
+				{
+					sb.append(	"</tr></table>");
+				}
+
 				n++;
 			}
 

@@ -3,6 +3,7 @@ package l2server.gameserver;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.Ranked2v2;
+import l2server.gameserver.events.TopRanked;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.NpcUtil;
@@ -169,8 +170,8 @@ public class Ranked1v1
 
 
         int amount = totalPoints;
-        if (amount > 5)
-            amount = 5 + (int) Math.pow(amount - 5, 0.55);
+        if (amount > 8)
+            amount = 8 + (int) Math.pow(amount - 8, 0.55);
 
         setRankedPoints(killer, getRankedPoints(killer) + totalPoints);
         setRankedPoints(killed, getRankedPoints(killed) - ((totalPoints / 2) + 1));
@@ -406,6 +407,58 @@ return;
         return;
     }
 
+    public void reduce (int id)
+    {
+        Connection get = null;
+        int currentPoints = 10;
+
+        try
+        {
+            get = L2DatabaseFactory.getInstance().getConnection();
+            PreparedStatement statement = get.prepareStatement(
+                    "SELECT rankedPoints FROM characters WHERE charId = ?");
+            statement.setInt(1, id);
+            ResultSet rset = statement.executeQuery();
+
+            if (rset.next())
+            {
+                currentPoints = rset.getInt("rankedPoints");
+
+            }
+            rset.close();
+            statement.close();
+        }
+
+        catch (Exception e)
+        {
+            Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+        }
+        finally
+        {
+            L2DatabaseFactory.close(get);
+        }
+
+        Connection con = null;
+        try
+        {
+            con = L2DatabaseFactory.getInstance().getConnection();
+
+            PreparedStatement statement =
+                    con.prepareStatement("UPDATE characters SET rankedPoints=? WHERE charId=?");
+            statement.setInt(1, currentPoints - 10);
+            statement.setInt(2, id);
+
+            statement.execute();
+            statement.close();
+        }
+        catch (Exception e)
+        {
+            Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+        }
+        finally {
+            L2DatabaseFactory.close(con);
+        }
+    }
 
     public void handleEventCommand(L2PcInstance player, String command)
     {
@@ -431,9 +484,18 @@ return;
             case "clear":
                 clear(player);
                 break;
+            case "reward":
+                TopRanked.getInstance().test();
+                break;
+            case "reduce": {
+                int playerId = Integer.valueOf(st.nextToken());
+                reduce(playerId);
+                break;
+            }
 
         }
 
+        return;
     }
 
     protected Ranked1v1()

@@ -52,6 +52,7 @@ import java.util.logging.Level;
  * <li> social = forces an L2Character instance to broadcast social action packets.
  * <li> effect = forces an L2Character instance to broadcast MSU packets.
  * <li> abnormal = force changes over an L2Character instance's abnormal state.
+ * <li> setPoints = change ranked points of the L2PcInstance.
  * <li> play_sound/play_sounds = Music broadcasting related commands
  * <li> atmosphere = sky change related commands.
  */
@@ -198,7 +199,6 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_setPoints"))
 		{
-
 			String name = st.nextToken();
 			int Points = Integer.parseInt(st.nextToken());
 

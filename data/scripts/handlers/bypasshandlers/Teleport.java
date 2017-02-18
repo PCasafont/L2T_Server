@@ -88,11 +88,7 @@ public class Teleport implements IBypassHandler
 			boolean parties = st.nextToken().equals("1");
 			boolean artificialPlayers = st.nextToken().equals("1");
 
-			if (PvpZone.state == PvpZone.State.FIGHT)
-			{
-				activeChar.sendMessage("You can't teleport while the pvp zone is opened");
-				return false;
-			}
+
 
 			if (!parties && activeChar.isInParty() && !activeChar.isGM())
 			{
@@ -100,6 +96,8 @@ public class Teleport implements IBypassHandler
 						new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
 				return true;
 			}
+
+
 
 			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
 			if (mostPvP != null)
