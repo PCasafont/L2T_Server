@@ -1392,7 +1392,12 @@ public class CustomCommunityBoard
 
 		if (player.isGM())
 		{
+
+
 			sb.append("<td align=right><button value=\"Clear\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;clear;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+
+			sb.append("<td align=right><button value=\"test\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;doall;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 		}
 
@@ -1420,7 +1425,7 @@ public class CustomCommunityBoard
 				continue;
 			}
 			if (i < maxToDisplay)
-			sb.append("<td align=left>" + registered.getName() + " </td>");
+			sb.append("<td align=left>" + registered.getName() + " (" + getRankedPoints(registered) + ") </td>");
 			i++;
 		}
 		if (i > maxToDisplay)

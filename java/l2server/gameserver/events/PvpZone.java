@@ -26,6 +26,7 @@ public class PvpZone
     public static State state = State.INACTIVE;
     public static Vector<L2PcInstance> players = new Vector<>();
     public static Vector<L2PcInstance> fighters = new Vector<>();
+    public static Vector<Integer> _fight = new Vector<>();
 
     protected void openRegistrations()
     {
@@ -195,6 +196,9 @@ public class PvpZone
         if(state == State.FIGHT)
         {
             Announcements.getInstance().announceToAll("PvP Zone Closed !");
+            players.clear();
+            fighters.clear();
+            _fight.clear();
             revert();
             clean();
         }
@@ -230,6 +234,7 @@ public class PvpZone
 
 
         players.clear();
+        _fight.clear();
         state = State.INACTIVE;
 
     }

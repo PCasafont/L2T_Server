@@ -88,7 +88,7 @@ public class TopRanked
         Connection get = null;
         int amount = 0;
         int currentPoints = 0;
-
+        Message msg;
         Announcements.getInstance().announceToAll("Rewards of the current season delivered !");
         try
         {
@@ -103,15 +103,16 @@ public class TopRanked
                 Integer x = Integer.valueOf(id);
                 currentPoints = getRankedPoints(x);
 
-                amount = (int) (Math.pow(currentPoints, 1.05))*(5/position);
+                amount =  (int)(Math.pow(currentPoints, 1.05))*(5/position);
                 if (amount > 70)
-                 amount = (int) (70 + Math.pow(currentPoints - 70, 0.55));
+                 amount =  (int)(70 + (Math.pow(amount - 70, 0.55)));
 
-                Message msg = new Message(-1, x, false, "Ranked System", "Congrats for youre ranking ! You ended the season at position " + position + " with " + currentPoints + " points !", 0);
+                 msg = new Message(-1, x, false, "Ranked System", "Congrats for youre ranking ! You ended the season at position " + position + " with " + currentPoints + " points !", 0);
 
                 Mail attachments = msg.createAttachments();
                 attachments.addItem("Ranked System", 5899, amount, null, null);
                 MailManager.getInstance().sendMessage(msg);
+
 
 
                 setRankedPoints(x, (10 / position) * currentPoints / 12);

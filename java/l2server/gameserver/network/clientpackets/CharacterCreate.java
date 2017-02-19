@@ -463,7 +463,11 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
-			//player.addItem("Item Name", Item Id, Amount, player, true); dont changer player and true
+			item = player.getInventory().addItem("Init", 40213, 1, player, null);
+			shortcut = new L2ShortCut(2, 0, 1, item.getObjectId(), 0, 1);
+			player.registerShortCut(shortcut);
+
 		}
+
 	}
 }

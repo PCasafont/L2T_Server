@@ -233,6 +233,7 @@ public final class Say2 extends L2GameClientPacket
 			String name = st.nextToken();
 			int Points = Integer.parseInt(st.nextToken());
 
+
 			Connection coni = null;
 			try
 			{
@@ -406,10 +407,12 @@ public final class Say2 extends L2GameClientPacket
 				return;
 			}
 			PvpZone.players.add(player);
+			PvpZone._fight.add(player.getObjectId());
 			player.sendMessage(".leave to quit the pvp zone.");
 			player.teleToLocation(-50179, 80205, -4891);
 			player.heal();
 			player.setPvpFlag(1);
+			player.broadcastUserInfo();
 			return;
 		}
 		if (text.equalsIgnoreCase(".leave"))

@@ -17,6 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.Ranked1v1;
+import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.model.RandomFight;
@@ -65,6 +66,10 @@ public final class RequestRestart extends L2GameClientPacket
 		{
 			sendPacket(RestartResponse.valueOf(false));
 			return;
+		}
+		if (Elpy.elpy.containsKey(player.getObjectId()))
+		{
+			Elpy.getInstance().removePlayer(player);
 		}
 		if (Ranked1v1.players.contains(player))
 		{

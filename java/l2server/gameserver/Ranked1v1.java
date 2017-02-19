@@ -4,6 +4,7 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.events.TopRanked;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.NpcUtil;
@@ -35,6 +36,7 @@ public class Ranked1v1
     public static final int timeEach = 2;
     public static Vector<L2PcInstance> players = new Vector<>();
     public static Map<L2PcInstance, Long> fighters = new HashMap<L2PcInstance, Long>();
+    public  static Vector<Integer> _fight = new Vector<>();
     public  ScheduledFuture<?> t;
 
     public void checkRegistered()
@@ -397,7 +399,7 @@ return;
             {
                 continue;
             }
-            players.remove(player);
+            register.sendMessage("You've been forced unregistered by a GM");
         }
 
         players.clear();
@@ -460,6 +462,18 @@ return;
         }
     }
 
+    public void doAll(L2PcInstance player)
+    {
+        player.sendMessage("Adding everyone !");
+        for (Map.Entry<Integer, L2PcInstance> fighter : L2World.getInstance().getAllPlayers().entrySet())
+        {
+            if (fighter.getValue() == null || fighter.getValue().isInStoreMode() || fighter.getValue().isInCraftMode())
+                continue;
+            Ranked1v1.getInstance().register(fighter.getValue());
+        }
+        return;
+    }
+
     public void handleEventCommand(L2PcInstance player, String command)
     {
         if (player == null)
@@ -483,6 +497,9 @@ return;
                 break;
             case "clear":
                 clear(player);
+                break;
+            case "doall":
+                doAll(player);
                 break;
             case "reward":
                 TopRanked.getInstance().test();

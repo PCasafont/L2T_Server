@@ -152,9 +152,10 @@ public class Teleport implements IBypassHandler
 				}
 				if (PvpZone.players.contains(mostPvP) ||
 						PvpZone.fighters.contains(mostPvP) ||
-						Ranked1v1.fighters.containsKey(mostPvP))
+						Ranked1v1.fighters.containsKey(mostPvP) ||
+						PvpZone._fight.contains(mostPvP.getObjectId()))
 				{
-					activeChar.sendMessage("Sorry, I can't find anyone in flag status right now.");
+					activeChar.sendMessage("Sorry, I can't find anyone in flag status right now..");
 					return true;
 				}
 				activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150,
