@@ -174,9 +174,6 @@ public class BlessedSpiritShot implements IItemHandler
 			case 0:
 				switch (itemId)
 				{
-					case 3947:
-						skillId = 2061;
-						break;
 					case 3948:
 						skillId = 2160;
 						break;
@@ -206,7 +203,6 @@ public class BlessedSpiritShot implements IItemHandler
 						break;
 					case 22076:
 						skillId = 26054;
-					case 19442:
 					case 22434:
 						skillId = 9195;
 						break;
@@ -238,7 +234,9 @@ public class BlessedSpiritShot implements IItemHandler
 				sapphireMul = 1.2;
 				break;
 			case 6:
+				skillId = 18718;
 				sapphireMul = 1.2;
+				break;
 		}
 
 		activeChar.consumableLock.lock();

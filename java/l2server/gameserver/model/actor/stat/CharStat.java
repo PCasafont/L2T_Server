@@ -1291,6 +1291,15 @@ public class CharStat
 
 	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill)
 	{
-		return calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
+		double  var =  calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
+
+
+		if (var > 150)
+		{
+			var = (int) (150 + Math.pow(var - 150, 0.80));
+		}
+		return var;
 	}
+
+
 }

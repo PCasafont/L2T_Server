@@ -193,7 +193,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			{
 				// success
 				int newEnchantLevel = item.getEnchantLevel() + 1;
-				if (Config.isServer(Config.TENKAI_ESTHUS) && newEnchantLevel < 16)
+				if (Config.isServer(Config.TENKAI_ESTHUS) && newEnchantLevel < 16 && item.getItemId() != 37718)
 				{
 					newEnchantLevel = 16;
 				}

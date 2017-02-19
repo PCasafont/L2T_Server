@@ -16,11 +16,16 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.Ranked1v1;
+import l2server.gameserver.events.Elpy;
+import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.instancemanager.AntiFeedManager;
+import l2server.gameserver.model.RandomFight;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.CharSelectionInfo;
 import l2server.gameserver.network.serverpackets.RestartResponse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -62,7 +67,26 @@ public final class RequestRestart extends L2GameClientPacket
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-
+		if (Elpy.elpy.containsKey(player.getObjectId()))
+		{
+			Elpy.getInstance().removePlayer(player);
+		}
+		if (Ranked1v1.players.contains(player))
+		{
+			Ranked1v1.players.remove(player);
+		}
+		if (Ranked2v2.players.contains(player))
+		{
+			Ranked2v2.players.remove(player);
+		}
+		if (Ranked2v2.teamOne.contains(player))
+		{
+			Ranked2v2.teamOne.clear();
+		}
+		if (Ranked2v2.teamTwo.contains(player))
+		{
+			Ranked2v2.teamTwo.clear();
+		}
 		if (player.isLocked())
 		{
 			Log.warning("Player " + player.getName() + " tried to restart during class change.");
@@ -76,6 +100,14 @@ public final class RequestRestart extends L2GameClientPacket
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
+
+		       if(RandomFight.players.contains(player))
+		       {
+		           player.sendMessage("You can't restart when you are in random fight event.");
+		           player.sendPacket(ActionFailed.STATIC_PACKET);
+		           return;
+		       }
+
 
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
 				!(player.isGM() && Config.GM_RESTART_FIGHTING))

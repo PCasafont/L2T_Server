@@ -22,9 +22,7 @@ import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
-import l2server.gameserver.events.DamageManager;
-import l2server.gameserver.events.LotterySystem;
-import l2server.gameserver.events.RankingKillInfo;
+import l2server.gameserver.events.*;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
@@ -360,13 +358,19 @@ public class Server
 
 		if (Config.isServer(Config.TENKAI))
 		{
+			printSection("Events");
 			//HiddenChests.getInstance().spawnChests();
 			//CloneInvasion.getInstance().scheduleEventStart();
 			//MonsterInvasion.getInstance().scheduleEventStart();
 			//Curfew.getInstance().scheduleEventStart();
 			//ChessEvent.start();
 
-			//LasTravel
+			//LasTravel + Inia
+			//stopRanked.getInstance().scheduleEventStart();
+			PvpZone.getInstance();
+			//RandomFight.getInstance();
+            Ranked1v1.getInstance();
+			Ranked2v2.getInstance();
 			CustomCommunityBoard.getInstance();
 			GMEventManager.getInstance();
 		}

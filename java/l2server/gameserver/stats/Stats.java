@@ -315,6 +315,9 @@ public enum Stats
 	OWNER_PATKSPD("ownerPAtkSpd"),
 	OWNER_MATKSPD("ownerMAtkSpd"),
 	OWNER_PVP_PVE("ownerPvPPvE"),
+	OWNER_ACCURACY_MAGIC("owneraccMagic"),
+	OWNER_P_EVASION_RATE("ownerrEvas"),
+	OWNER_M_EVASION_RATE("ownermEvasRate"),
 	// "Bool" value, considered true if greater than 0
 
 	SERVITOR_ACCURACY("servitorAccuracy"),

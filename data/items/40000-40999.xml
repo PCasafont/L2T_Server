@@ -1306,7 +1306,13 @@
     <!-- Double-click to obtain a Blessed Antharas Earring, Blessed Valakas Necklace, Tauti's Ring, Earth Wyrm Heart Ring, and Blessed Zaken's Earring (7-day). Cannot be used in the Olympiad. -->
     <item id="40213" type="EtcItem" name="Ertheia's Rare Accessory Pack - 7-day"
           icon="icon.etc_marguene_collection_box_i00"
-          immediateEffect="1" crystalType="c" weight="0">
+          immediateEffect="1" handler="ExtractableItems" >
+        <capsuledItem id="36409" min="1" max="1" chance="100.0" /> <!-- B.Antharas Earring -->
+        <capsuledItem id="26470" min="1" max="1" chance="100.0" /> <!-- Lindvior Earring -->
+        <capsuledItem id="36410" min="1" max="1" chance="100.0" /> <!-- B.Valakas Earring -->
+        <capsuledItem id="36411" min="1" max="1" chance="100.0" /> <!-- Tauti Ring -->
+        <capsuledItem id="36412" min="1" max="1" chance="100.0" /> <!-- Earth Wyrm Ring -->
+        <capsuledItem id="37737" min="1" max="1" chance="100.0" /> <!-- Ruler's Authority -->
     </item>
     <!-- Double-click to obtain a Blessed Antharas Earring (7-day). -->
     <item id="40214" type="EtcItem" name="Blessed Antharas' Earring  Pack - 7-day"

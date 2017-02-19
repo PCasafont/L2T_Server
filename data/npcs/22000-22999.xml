@@ -43388,7 +43388,8 @@
 		<skill id="14011" level="3" /> <!-- Electric Staff -->
 	</npc>
 	<npc id="22931" name="Krakia Bathus" level="86" type="L2Monster" atkRange="40" hpMax="93696" hpReg="44.91" mpMax="45970"
-			mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="320000" mAtk="1600000"
+			mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="15359420" sp="73724" pAtk="320000" mAtk="1600000"
+
 			pDef="940" mDef="960" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="120" aggressive="false"
 			aggroRange="300" collisionRadius="28" collisionHeight="46.15" fireRes="160" waterRes="160" windRes="160" earthRes="160"
 			holyRes="160" darkRes="160" aiType="fighter" isLethalImmune="true">

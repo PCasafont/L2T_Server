@@ -15466,19 +15466,19 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-78818" y="243610" z="-3720" heading="800" respawn="60" randomRespawn="800" />
-        <spawn x="-78559" y="244769" z="-3672" heading="45655" respawn="60" randomRespawn="45655" />
-        <spawn x="-76211" y="242805" z="-3728" heading="30439" respawn="60" randomRespawn="30439" />
-        <spawn x="-77694" y="244131" z="-3688" heading="38475" respawn="60" randomRespawn="38475" />
-        <spawn x="-77599" y="243770" z="-3688" heading="14161" respawn="60" randomRespawn="14161" />
-        <spawn x="-83676" y="244986" z="-3520" heading="34933" respawn="60" randomRespawn="34933" />
-        <spawn x="-84812" y="244882" z="-3640" heading="27084" respawn="60" randomRespawn="27084" />
-        <spawn x="-83977" y="244896" z="-3504" heading="11786" respawn="60" randomRespawn="11786" />
-        <spawn x="-84128" y="246219" z="-3456" heading="1429" respawn="60" randomRespawn="1429" />
-        <spawn x="-84007" y="246423" z="-3480" heading="22554" respawn="60" randomRespawn="22554" />
-        <spawn x="-84131" y="245745" z="-3456" heading="36040" respawn="60" randomRespawn="36040" />
-        <spawn x="-83988" y="246739" z="-3512" heading="56592" respawn="60" randomRespawn="56592" />
-        <spawn x="-84912" y="246841" z="-3576" heading="24575" respawn="60" randomRespawn="24575" />
+        <spawn x="-78818" y="243610" z="-3720" heading="800" respawn="60" randomRespawn="60" />
+        <spawn x="-78559" y="244769" z="-3672" heading="45655" respawn="60" randomRespawn="60" />
+        <spawn x="-76211" y="242805" z="-3728" heading="30439" respawn="60" randomRespawn="60" />
+        <spawn x="-77694" y="244131" z="-3688" heading="38475" respawn="60" randomRespawn="60" />
+        <spawn x="-77599" y="243770" z="-3688" heading="14161" respawn="60" randomRespawn="60" />
+        <spawn x="-83676" y="244986" z="-3520" heading="34933" respawn="60" randomRespawn="60" />
+        <spawn x="-84812" y="244882" z="-3640" heading="27084" respawn="60" randomRespawn="60" />
+        <spawn x="-83977" y="244896" z="-3504" heading="11786" respawn="60" randomRespawn="60" />
+        <spawn x="-84128" y="246219" z="-3456" heading="1429" respawn="60" randomRespawn="60" />
+        <spawn x="-84007" y="246423" z="-3480" heading="22554" respawn="60" randomRespawn="60" />
+        <spawn x="-84131" y="245745" z="-3456" heading="36040" respawn="60" randomRespawn="60" />
+        <spawn x="-83988" y="246739" z="-3512" heading="56592" respawn="60" randomRespawn="60" />
+        <spawn x="-84912" y="246841" z="-3576" heading="24575" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23449" name="Keen Floato" level="5" type="L2Monster" atkRange="40" hpMax="144" hpReg="2.0" mpMax="0"
          mpReg="0.0"
@@ -15488,19 +15488,16 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <skill id="16346" level="1" /> <!-- Deadly Fear -->
-        <spawn x="-79494" y="244562" z="-3672" heading="53040" respawn="60" randomRespawn="53040" />
-        <spawn x="-79664" y="245182" z="-3648" heading="4416" respawn="60" randomRespawn="4416" />
-        <spawn x="-78299" y="244353" z="-3696" heading="61054" respawn="60" randomRespawn="61054" />
-        <spawn x="-78565" y="244560" z="-3688" heading="20950" respawn="60" randomRespawn="20950" />
-        <spawn x="-79202" y="244608" z="-3664" heading="20217" respawn="60" randomRespawn="20217" />
-        <spawn x="-78667" y="243351" z="-3704" heading="9914" respawn="60" randomRespawn="9914" />
-        <spawn x="-78520" y="244370" z="-3704" heading="45629" respawn="60" randomRespawn="45629" />
-        <spawn x="-79172" y="245189" z="-3656" heading="14903" respawn="60" randomRespawn="14903" />
-        <spawn x="-84032" y="244383" z="-3592" heading="28899" respawn="60" randomRespawn="28899" />
-        <spawn x="-83739" y="245453" z="-3464" heading="7116" respawn="60" randomRespawn="7116" />
-        <spawn x="-84767" y="245423" z="-3576" heading="60403" respawn="60" randomRespawn="60403" />
-        <spawn x="-84005" y="244746" z="-3520" heading="18664" respawn="60" randomRespawn="18664" />
-        <spawn x="-80236" y="244970" z="-3680" heading="17329" respawn="60" randomRespawn="17329" />
+        <spawn x="-79494" y="244562" z="-3672" heading="53040" respawn="60" randomRespawn="60" />
+        <spawn x="-78565" y="244560" z="-3688" heading="20950" respawn="60" randomRespawn="60" />
+        <spawn x="-79202" y="244608" z="-3664" heading="20217" respawn="60" randomRespawn="60" />
+        <spawn x="-78667" y="243351" z="-3704" heading="9914" respawn="60" randomRespawn="60" />
+        <spawn x="-79172" y="245189" z="-3656" heading="14903" respawn="60" randomRespawn="60" />
+        <spawn x="-84032" y="244383" z="-3592" heading="28899" respawn="60" randomRespawn="60" />
+        <spawn x="-83739" y="245453" z="-3464" heading="7116" respawn="60" randomRespawn="60" />
+        <spawn x="-84767" y="245423" z="-3576" heading="60403" respawn="60" randomRespawn="60" />
+        <spawn x="-84005" y="244746" z="-3520" heading="18664" respawn="60" randomRespawn="60" />
+        <spawn x="-80236" y="244970" z="-3680" heading="17329" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23450" name="Ratel" level="7" type="L2Monster" atkRange="40" hpMax="394" hpReg="2.0" mpMax="0" mpReg="0.0"
          STR="80"
@@ -15509,28 +15506,27 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-77970" y="244366" z="-3704" heading="34110" respawn="60" randomRespawn="34110" />
-        <spawn x="-79230" y="243878" z="-3712" heading="59696" respawn="60" randomRespawn="59696" />
-        <spawn x="-80606" y="244102" z="-3680" heading="64603" respawn="60" randomRespawn="64603" />
-        <spawn x="-78987" y="244485" z="-3672" heading="36311" respawn="60" randomRespawn="36311" />
-        <spawn x="-81238" y="244733" z="-3592" heading="39950" respawn="60" randomRespawn="39950" />
-        <spawn x="-79242" y="244018" z="-3704" heading="50395" respawn="60" randomRespawn="50395" />
-        <spawn x="-77467" y="244069" z="-3704" heading="16316" respawn="60" randomRespawn="16316" />
-        <spawn x="-78277" y="244438" z="-3696" heading="28815" respawn="60" randomRespawn="28815" />
-        <spawn x="-78322" y="244917" z="-3656" heading="56283" respawn="60" randomRespawn="56283" />
-        <spawn x="-83689" y="244803" z="-3528" heading="11308" respawn="60" randomRespawn="11308" />
-        <spawn x="-84256" y="245871" z="-3456" heading="9283" respawn="60" randomRespawn="9283" />
-        <spawn x="-84574" y="245030" z="-3600" heading="14883" respawn="60" randomRespawn="14883" />
-        <spawn x="-78595" y="243598" z="-3720" heading="50351" respawn="60" randomRespawn="50351" />
-        <spawn x="-84379" y="244725" z="-3568" heading="47211" respawn="60" randomRespawn="47211" />
-        <spawn x="-84481" y="245078" z="-3584" heading="60920" respawn="60" randomRespawn="60920" />
-        <spawn x="-84960" y="245451" z="-3608" heading="63335" respawn="60" randomRespawn="63335" />
-        <spawn x="-81293" y="244117" z="-3640" heading="25099" respawn="60" randomRespawn="25099" />
-        <spawn x="-80708" y="244783" z="-3648" heading="7812" respawn="60" randomRespawn="7812" />
-        <spawn x="-81155" y="244618" z="-3592" heading="30603" respawn="60" randomRespawn="30603" />
-        <spawn x="-84471" y="246412" z="-3480" heading="34565" respawn="60" randomRespawn="34565" />
-        <spawn x="-84466" y="246762" z="-3512" heading="47146" respawn="60" randomRespawn="47146" />
-        <spawn x="-81512" y="244156" z="-3664" heading="47896" respawn="60" randomRespawn="47896" />
+        <spawn x="-77970" y="244366" z="-3704" heading="34110" respawn="60" randomRespawn="60" />
+        <spawn x="-79230" y="243878" z="-3712" heading="59696" respawn="60" randomRespawn="60" />
+        <spawn x="-78987" y="244485" z="-3672" heading="36311" respawn="60" randomRespawn="60" />
+        <spawn x="-81238" y="244733" z="-3592" heading="39950" respawn="60" randomRespawn="60" />
+        <spawn x="-79242" y="244018" z="-3704" heading="50395" respawn="60" randomRespawn="60" />
+        <spawn x="-77467" y="244069" z="-3704" heading="16316" respawn="60" randomRespawn="60" />
+        <spawn x="-78277" y="244438" z="-3696" heading="28815" respawn="60" randomRespawn="60" />
+        <spawn x="-78322" y="244917" z="-3656" heading="56283" respawn="60" randomRespawn="60" />
+        <spawn x="-83689" y="244803" z="-3528" heading="11308" respawn="60" randomRespawn="60" />
+        <spawn x="-84256" y="245871" z="-3456" heading="9283" respawn="60" randomRespawn="60" />
+        <spawn x="-84574" y="245030" z="-3600" heading="14883" respawn="60" randomRespawn="60" />
+        <spawn x="-78595" y="243598" z="-3720" heading="50351" respawn="60" randomRespawn="60" />
+        <spawn x="-84379" y="244725" z="-3568" heading="47211" respawn="60" randomRespawn="60" />
+        <spawn x="-84481" y="245078" z="-3584" heading="60920" respawn="60" randomRespawn="60" />
+        <spawn x="-84960" y="245451" z="-3608" heading="63335" respawn="60" randomRespawn="60" />
+        <spawn x="-81293" y="244117" z="-3640" heading="25099" respawn="60" randomRespawn="60" />
+        <spawn x="-80708" y="244783" z="-3648" heading="7812" respawn="60" randomRespawn="60" />
+        <spawn x="-81155" y="244618" z="-3592" heading="30603" respawn="60" randomRespawn="60" />
+        <spawn x="-84471" y="246412" z="-3480" heading="34565" respawn="60" randomRespawn="60" />
+        <spawn x="-84466" y="246762" z="-3512" heading="47146" respawn="60" randomRespawn="60" />
+        <spawn x="-81512" y="244156" z="-3664" heading="47896" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23451" name="Robust Ratel" level="9" type="L2Monster" atkRange="40" hpMax="258" hpReg="2.0" mpMax="0"
          mpReg="0.0"
@@ -15540,22 +15536,22 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <skill id="16347" level="1" /> <!-- Breeze Shell -->
-        <spawn x="-75765" y="243218" z="-3720" heading="22853" respawn="60" randomRespawn="22853" />
-        <spawn x="-79033" y="244924" z="-3648" heading="60869" respawn="60" randomRespawn="60869" />
-        <spawn x="-81057" y="244382" z="-3624" heading="21436" respawn="60" randomRespawn="21436" />
-        <spawn x="-80303" y="244273" z="-3688" heading="23906" respawn="60" randomRespawn="23906" />
-        <spawn x="-83600" y="245986" z="-3480" heading="23621" respawn="60" randomRespawn="23621" />
-        <spawn x="-80423" y="244085" z="-3696" heading="27259" respawn="60" randomRespawn="27259" />
-        <spawn x="-79354" y="243897" z="-3712" heading="46113" respawn="60" randomRespawn="46113" />
-        <spawn x="-81102" y="244914" z="-3616" heading="20589" respawn="60" randomRespawn="20589" />
-        <spawn x="-80746" y="244116" z="-3672" heading="3806" respawn="60" randomRespawn="3806" />
-        <spawn x="-81170" y="244767" z="-3576" heading="48685" respawn="60" randomRespawn="48685" />
-        <spawn x="-84078" y="246731" z="-3512" heading="32767" respawn="60" randomRespawn="32767" />
-        <spawn x="-83749" y="246162" z="-3472" heading="52256" respawn="60" randomRespawn="52256" />
-        <spawn x="-84632" y="246014" z="-3488" heading="40440" respawn="60" randomRespawn="40440" />
-        <spawn x="-84981" y="245978" z="-3544" heading="8949" respawn="60" randomRespawn="8949" />
-        <spawn x="-81585" y="244360" z="-3640" heading="1128" respawn="60" randomRespawn="1128" />
-        <spawn x="-76098" y="243210" z="-3704" heading="58375" respawn="60" randomRespawn="58375" />
+        <spawn x="-75765" y="243218" z="-3720" heading="22853" respawn="60" randomRespawn="60" />
+        <spawn x="-79033" y="244924" z="-3648" heading="60869" respawn="60" randomRespawn="60" />
+        <spawn x="-81057" y="244382" z="-3624" heading="21436" respawn="60" randomRespawn="60" />
+        <spawn x="-80303" y="244273" z="-3688" heading="23906" respawn="60" randomRespawn="60" />
+        <spawn x="-83600" y="245986" z="-3480" heading="23621" respawn="60" randomRespawn="60" />
+        <spawn x="-80423" y="244085" z="-3696" heading="27259" respawn="60" randomRespawn="60" />
+        <spawn x="-79354" y="243897" z="-3712" heading="46113" respawn="60" randomRespawn="60" />
+        <spawn x="-81102" y="244914" z="-3616" heading="20589" respawn="60" randomRespawn="60" />
+        <spawn x="-80746" y="244116" z="-3672" heading="3806" respawn="60" randomRespawn="60" />
+        <spawn x="-81170" y="244767" z="-3576" heading="48685" respawn="60" randomRespawn="60" />
+        <spawn x="-84078" y="246731" z="-3512" heading="32767" respawn="60" randomRespawn="60" />
+        <spawn x="-83749" y="246162" z="-3472" heading="52256" respawn="60" randomRespawn="60" />
+        <spawn x="-84632" y="246014" z="-3488" heading="40440" respawn="60" randomRespawn="60" />
+        <spawn x="-84981" y="245978" z="-3544" heading="8949" respawn="60" randomRespawn="60" />
+        <spawn x="-81585" y="244360" z="-3640" heading="1128" respawn="60" randomRespawn="60" />
+        <spawn x="-76098" y="243210" z="-3704" heading="58375" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23452" name="Honeybee" level="10" type="L2Monster" atkRange="40" hpMax="294" hpReg="2.0" mpMax="0"
          mpReg="0.0"
@@ -15564,25 +15560,25 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-80831" y="242230" z="-3560" heading="37605" respawn="60" randomRespawn="37605" />
-        <spawn x="-80524" y="241926" z="-3552" heading="19696" respawn="60" randomRespawn="19696" />
-        <spawn x="-81054" y="242003" z="-3536" heading="28414" respawn="60" randomRespawn="28414" />
-        <spawn x="-81241" y="242216" z="-3560" heading="26235" respawn="60" randomRespawn="26235" />
-        <spawn x="-80842" y="242119" z="-3560" heading="12176" respawn="60" randomRespawn="12176" />
-        <spawn x="-80636" y="241539" z="-3536" heading="22665" respawn="60" randomRespawn="22665" />
-        <spawn x="-80510" y="241421" z="-3536" heading="28444" respawn="60" randomRespawn="28444" />
-        <spawn x="-80332" y="241408" z="-3544" heading="34116" respawn="60" randomRespawn="34116" />
-        <spawn x="-80146" y="241569" z="-3536" heading="4199" respawn="60" randomRespawn="4199" />
-        <spawn x="-80223" y="241081" z="-3464" heading="27049" respawn="60" randomRespawn="27049" />
-        <spawn x="-80570" y="241444" z="-3536" heading="42742" respawn="60" randomRespawn="42742" />
-        <spawn x="-80376" y="241551" z="-3536" heading="55962" respawn="60" randomRespawn="55962" />
-        <spawn x="-79372" y="241055" z="-3552" heading="4995" respawn="60" randomRespawn="4995" />
-        <spawn x="-78855" y="240383" z="-3560" heading="14899" respawn="60" randomRespawn="14899" />
-        <spawn x="-79025" y="240199" z="-3560" heading="49353" respawn="60" randomRespawn="49353" />
-        <spawn x="-79180" y="240842" z="-3560" heading="55139" respawn="60" randomRespawn="55139" />
-        <spawn x="-79375" y="239828" z="-3528" heading="62658" respawn="60" randomRespawn="62658" />
-        <spawn x="-79637" y="240424" z="-3512" heading="16789" respawn="60" randomRespawn="16789" />
-        <spawn x="-80694" y="241631" z="-3520" heading="39821" respawn="60" randomRespawn="39821" />
+        <spawn x="-80831" y="242230" z="-3560" heading="37605" respawn="60" randomRespawn="60" />
+        <spawn x="-80524" y="241926" z="-3552" heading="19696" respawn="60" randomRespawn="60" />
+        <spawn x="-81054" y="242003" z="-3536" heading="28414" respawn="60" randomRespawn="60" />
+        <spawn x="-81241" y="242216" z="-3560" heading="26235" respawn="60" randomRespawn="60" />
+        <spawn x="-80842" y="242119" z="-3560" heading="12176" respawn="60" randomRespawn="60" />
+        <spawn x="-80636" y="241539" z="-3536" heading="22665" respawn="60" randomRespawn="60" />
+        <spawn x="-80510" y="241421" z="-3536" heading="28444" respawn="60" randomRespawn="60" />
+        <spawn x="-80332" y="241408" z="-3544" heading="34116" respawn="60" randomRespawn="60" />
+        <spawn x="-80146" y="241569" z="-3536" heading="4199" respawn="60" randomRespawn="60" />
+        <spawn x="-80223" y="241081" z="-3464" heading="27049" respawn="60" randomRespawn="60" />
+        <spawn x="-80570" y="241444" z="-3536" heading="42742" respawn="60" randomRespawn="60" />
+        <spawn x="-80376" y="241551" z="-3536" heading="55962" respawn="60" randomRespawn="60" />
+        <spawn x="-79372" y="241055" z="-3552" heading="4995" respawn="60" randomRespawn="60" />
+        <spawn x="-78855" y="240383" z="-3560" heading="14899" respawn="60" randomRespawn="60" />
+        <spawn x="-79025" y="240199" z="-3560" heading="49353" respawn="60" randomRespawn="60" />
+        <spawn x="-79180" y="240842" z="-3560" heading="55139" respawn="60" randomRespawn="60" />
+        <spawn x="-79375" y="239828" z="-3528" heading="62658" respawn="60" randomRespawn="60" />
+        <spawn x="-79637" y="240424" z="-3512" heading="16789" respawn="60" randomRespawn="60" />
+        <spawn x="-80694" y="241631" z="-3520" heading="39821" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23453" name="Kiku" level="12" type="L2Monster" atkRange="40" hpMax="359" hpReg="2.0" mpMax="0" mpReg="0.0"
          STR="80"
@@ -15591,25 +15587,25 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-78729" y="239895" z="-3544" heading="18913" respawn="60" randomRespawn="18913" />
-        <spawn x="-78641" y="239745" z="-3520" heading="49820" respawn="60" randomRespawn="49820" />
-        <spawn x="-78657" y="239995" z="-3544" heading="45661" respawn="60" randomRespawn="45661" />
-        <spawn x="-78178" y="239130" z="-3544" heading="19952" respawn="60" randomRespawn="19952" />
-        <spawn x="-78009" y="238221" z="-3552" heading="56794" respawn="60" randomRespawn="56794" />
-        <spawn x="-78912" y="239324" z="-3552" heading="44158" respawn="60" randomRespawn="44158" />
-        <spawn x="-79072" y="239154" z="-3552" heading="25269" respawn="60" randomRespawn="25269" />
-        <spawn x="-78799" y="239051" z="-3552" heading="10556" respawn="60" randomRespawn="10556" />
-        <spawn x="-78465" y="239069" z="-3552" heading="11873" respawn="60" randomRespawn="11873" />
-        <spawn x="-79178" y="239594" z="-3536" heading="25210" respawn="60" randomRespawn="25210" />
-        <spawn x="-78753" y="239387" z="-3544" heading="6092" respawn="60" randomRespawn="6092" />
-        <spawn x="-78732" y="239667" z="-3528" heading="22267" respawn="60" randomRespawn="22267" />
-        <spawn x="-78465" y="238260" z="-3528" heading="41214" respawn="60" randomRespawn="41214" />
-        <spawn x="-78579" y="238417" z="-3544" heading="49420" respawn="60" randomRespawn="49420" />
-        <spawn x="-78193" y="238119" z="-3552" heading="23239" respawn="60" randomRespawn="23239" />
-        <spawn x="-78276" y="238440" z="-3552" heading="35215" respawn="60" randomRespawn="35215" />
-        <spawn x="-78131" y="239033" z="-3552" heading="22511" respawn="60" randomRespawn="22511" />
-        <spawn x="-78396" y="237852" z="-3552" heading="34116" respawn="60" randomRespawn="34116" />
-        <spawn x="-78305" y="238271" z="-3552" heading="37285" respawn="60" randomRespawn="37285" />
+        <spawn x="-78729" y="239895" z="-3544" heading="18913" respawn="60" randomRespawn="60" />
+        <spawn x="-78641" y="239745" z="-3520" heading="49820" respawn="60" randomRespawn="60" />
+        <spawn x="-78657" y="239995" z="-3544" heading="45661" respawn="60" randomRespawn="60" />
+        <spawn x="-78178" y="239130" z="-3544" heading="19952" respawn="60" randomRespawn="60" />
+        <spawn x="-78009" y="238221" z="-3552" heading="56794" respawn="60" randomRespawn="60" />
+        <spawn x="-78912" y="239324" z="-3552" heading="44158" respawn="60" randomRespawn="60" />
+        <spawn x="-79072" y="239154" z="-3552" heading="25269" respawn="60" randomRespawn="60" />
+        <spawn x="-78799" y="239051" z="-3552" heading="10556" respawn="60" randomRespawn="60" />
+        <spawn x="-78465" y="239069" z="-3552" heading="11873" respawn="60" randomRespawn="60" />
+        <spawn x="-79178" y="239594" z="-3536" heading="25210" respawn="60" randomRespawn="60" />
+        <spawn x="-78753" y="239387" z="-3544" heading="6092" respawn="60" randomRespawn="60" />
+        <spawn x="-78732" y="239667" z="-3528" heading="22267" respawn="60" randomRespawn="60" />
+        <spawn x="-78465" y="238260" z="-3528" heading="41214" respawn="60" randomRespawn="60" />
+        <spawn x="-78579" y="238417" z="-3544" heading="49420" respawn="60" randomRespawn="60" />
+        <spawn x="-78193" y="238119" z="-3552" heading="23239" respawn="60" randomRespawn="60" />
+        <spawn x="-78276" y="238440" z="-3552" heading="35215" respawn="60" randomRespawn="60" />
+        <spawn x="-78131" y="239033" z="-3552" heading="22511" respawn="60" randomRespawn="60" />
+        <spawn x="-78396" y="237852" z="-3552" heading="34116" respawn="60" randomRespawn="60" />
+        <spawn x="-78305" y="238271" z="-3552" heading="37285" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23454" name="Robust Kiku" level="15" type="L2Monster" atkRange="40" hpMax="444" hpReg="2.0" mpMax="0"
          mpReg="0.0"
@@ -15619,44 +15615,48 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <skill id="16346" level="1" /> <!-- Deadly Fear -->
-        <spawn x="-80911" y="237261" z="-3320" heading="23875" respawn="60" randomRespawn="23875" />
-        <spawn x="-81264" y="237339" z="-3360" heading="9231" respawn="60" randomRespawn="9231" />
-        <spawn x="-80760" y="236899" z="-3368" heading="39807" respawn="60" randomRespawn="39807" />
-        <spawn x="-80120" y="237027" z="-3288" heading="64850" respawn="60" randomRespawn="64850" />
-        <spawn x="-80677" y="237388" z="-3272" heading="39631" respawn="60" randomRespawn="39631" />
-        <spawn x="-81642" y="237233" z="-3384" heading="35955" respawn="60" randomRespawn="35955" />
-        <spawn x="-80558" y="237179" z="-3312" heading="29654" respawn="60" randomRespawn="29654" />
-        <spawn x="-80037" y="236858" z="-3320" heading="51472" respawn="60" randomRespawn="51472" />
-        <spawn x="-79936" y="236949" z="-3320" heading="21671" respawn="60" randomRespawn="21671" />
+        <spawn x="-80911" y="237261" z="-3320" heading="23875" respawn="60" randomRespawn="60" />
+        <spawn x="-81264" y="237339" z="-3360" heading="9231" respawn="60" randomRespawn="60" />
+        <spawn x="-80760" y="236899" z="-3368" heading="39807" respawn="60" randomRespawn="60" />
+        <spawn x="-80120" y="237027" z="-3288" heading="64850" respawn="60" randomRespawn="60" />
+        <spawn x="-80677" y="237388" z="-3272" heading="39631" respawn="60" randomRespawn="60" />
+        <spawn x="-81642" y="237233" z="-3384" heading="35955" respawn="60" randomRespawn="60" />
+        <spawn x="-80558" y="237179" z="-3312" heading="29654" respawn="60" randomRespawn="60" />
+        <spawn x="-80037" y="236858" z="-3320" heading="51472" respawn="60" randomRespawn="60" />
+        <spawn x="-79936" y="236949" z="-3320" heading="21671" respawn="60" randomRespawn="60" />
     </npc>
-    <npc id="23455" name="Growler" level="15" type="L2Monster" atkRange="40" hpMax="444" hpReg="2.0" mpMax="0"
-         mpReg="0.0" STR="80"
-         CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="44" mAtk="23" pDef="139" mDef="63" pAtkSpd="298"
-         mAtkSpd="391" pCritRate="40"
-         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-         windRes="0"
-         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    <npc id="23455" name="Growler" level="107" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="62" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="2500000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+         collisionRadius="23"
+         collisionHeight="44" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150"
+         aiType="fighter">
         <skill id="16347" level="1" /> <!-- Breeze Shell -->
-        <spawn x="-82604" y="237514" z="-3344" heading="56501" respawn="60" randomRespawn="56501" />
-        <spawn x="-82629" y="237797" z="-3360" heading="41340" respawn="60" randomRespawn="41340" />
-        <spawn x="-83527" y="237879" z="-3360" heading="47955" respawn="60" randomRespawn="47955" />
-        <spawn x="-83534" y="237765" z="-3368" heading="40267" respawn="60" randomRespawn="40267" />
-        <spawn x="-81815" y="237693" z="-3352" heading="35685" respawn="60" randomRespawn="35685" />
-        <spawn x="-81552" y="236839" z="-3328" heading="27452" respawn="60" randomRespawn="27452" />
-        <spawn x="-81535" y="236953" z="-3360" heading="36974" respawn="60" randomRespawn="36974" />
-        <spawn x="-81542" y="237113" z="-3368" heading="62587" respawn="60" randomRespawn="62587" />
-        <spawn x="-81957" y="238173" z="-3248" heading="3475" respawn="60" randomRespawn="3475" />
-        <spawn x="-82434" y="237703" z="-3344" heading="17127" respawn="60" randomRespawn="17127" />
-        <spawn x="-82411" y="238328" z="-3264" heading="31000" respawn="60" randomRespawn="31000" />
-        <spawn x="-81491" y="236696" z="-3320" heading="32318" respawn="60" randomRespawn="32318" />
-        <spawn x="-81886" y="237693" z="-3352" heading="59986" respawn="60" randomRespawn="59986" />
-        <spawn x="-82476" y="237045" z="-3280" heading="21881" respawn="60" randomRespawn="21881" />
-        <spawn x="-83285" y="237142" z="-3320" heading="58145" respawn="60" randomRespawn="58145" />
-        <spawn x="-83277" y="237570" z="-3392" heading="43709" respawn="60" randomRespawn="43709" />
-        <spawn x="-83639" y="236617" z="-3360" heading="20290" respawn="60" randomRespawn="20290" />
-        <spawn x="-83741" y="236937" z="-3344" heading="8949" respawn="60" randomRespawn="8949" />
-        <spawn x="-83686" y="236588" z="-3360" heading="25572" respawn="60" randomRespawn="25572" />
-        <spawn x="-83493" y="237832" z="-3368" heading="9707" respawn="60" randomRespawn="9707" />
+        <spawn x="-82604" y="237514" z="-3344" heading="56501" respawn="60" randomRespawn="60" />
+        <spawn x="-82629" y="237797" z="-3360" heading="41340" respawn="60" randomRespawn="60" />
+        <spawn x="-83527" y="237879" z="-3360" heading="47955" respawn="60" randomRespawn="60" />
+        <spawn x="-83534" y="237765" z="-3368" heading="40267" respawn="60" randomRespawn="60" />
+        <spawn x="-81815" y="237693" z="-3352" heading="35685" respawn="60" randomRespawn="60" />
+        <spawn x="-81552" y="236839" z="-3328" heading="27452" respawn="60" randomRespawn="60" />
+        <spawn x="-81535" y="236953" z="-3360" heading="36974" respawn="60" randomRespawn="60" />
+        <spawn x="-81542" y="237113" z="-3368" heading="62587" respawn="60" randomRespawn="60" />
+        <spawn x="-81957" y="238173" z="-3248" heading="3475" respawn="60" randomRespawn="60" />
+        <spawn x="-82434" y="237703" z="-3344" heading="17127" respawn="60" randomRespawn="60" />
+        <spawn x="-82411" y="238328" z="-3264" heading="31000" respawn="60" randomRespawn="60" />
+        <spawn x="-81491" y="236696" z="-3320" heading="32318" respawn="60" randomRespawn="60" />
+        <spawn x="-81886" y="237693" z="-3352" heading="59986" respawn="60" randomRespawn="60" />
+        <spawn x="-82476" y="237045" z="-3280" heading="21881" respawn="60" randomRespawn="60" />
+        <spawn x="-83285" y="237142" z="-3320" heading="58145" respawn="60" randomRespawn="60" />
+        <spawn x="-83277" y="237570" z="-3392" heading="43709" respawn="60" randomRespawn="60" />
+        <spawn x="-83639" y="236617" z="-3360" heading="20290" respawn="60" randomRespawn="60" />
+        <spawn x="-83741" y="236937" z="-3344" heading="8949" respawn="60" randomRespawn="60" />
+        <spawn x="-83686" y="236588" z="-3360" heading="25572" respawn="60" randomRespawn="60" />
+        <spawn x="-83493" y="237832" z="-3368" heading="9707" respawn="60" randomRespawn="60" />
+        <itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
+        <spoilDrop itemId="37559" min="1" max="1" chance="35" /> <!-- Shiny Coin -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="5" /> <!-- Gold Einhsad -->
     </npc>
     <npc id="23456" name="Evolved Growler" title="Quest Monster" level="120" type="L2Npc" atkRange="40" hpMax="2"
          hpReg="0.0"
@@ -15666,91 +15666,99 @@
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
-    <npc id="23457" name="Treant" level="19" type="L2Monster" atkRange="40" hpMax="580" hpReg="2.0" mpMax="0"
-         mpReg="0.0" STR="80"
-         CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="71" mAtk="36" pDef="191" mDef="87" pAtkSpd="298"
-         mAtkSpd="391" pCritRate="40"
-         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-         windRes="0"
-         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    <npc id="23457" name="Treant" level="107" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="62" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="2500000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+         collisionRadius="23"
+         collisionHeight="44" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150"
+         aiType="fighter">
         <skill id="16346" level="1" /> <!-- Deadly Fear -->
-        <spawn x="-85790" y="234617" z="-3040" heading="9414" respawn="60" randomRespawn="9414" />
-        <spawn x="-86418" y="234299" z="-2912" heading="55829" respawn="60" randomRespawn="55829" />
-        <spawn x="-86397" y="234922" z="-3000" heading="55711" respawn="60" randomRespawn="55711" />
-        <spawn x="-86587" y="235152" z="-3000" heading="6996" respawn="60" randomRespawn="6996" />
-        <spawn x="-86871" y="235290" z="-2984" heading="25893" respawn="60" randomRespawn="25893" />
-        <spawn x="-87266" y="235207" z="-2936" heading="34382" respawn="60" randomRespawn="34382" />
-        <spawn x="-87254" y="235041" z="-2920" heading="50130" respawn="60" randomRespawn="50130" />
-        <spawn x="-86419" y="234557" z="-2936" heading="60144" respawn="60" randomRespawn="60144" />
-        <spawn x="-86366" y="234408" z="-2936" heading="11330" respawn="60" randomRespawn="11330" />
-        <spawn x="-87271" y="235116" z="-2928" heading="14399" respawn="60" randomRespawn="14399" />
-        <spawn x="-86236" y="235130" z="-2984" heading="44491" respawn="60" randomRespawn="44491" />
-        <spawn x="-87020" y="237329" z="-2848" heading="30581" respawn="60" randomRespawn="30581" />
-        <spawn x="-86872" y="237190" z="-2888" heading="64132" respawn="60" randomRespawn="64132" />
-        <spawn x="-87005" y="237410" z="-2832" heading="29727" respawn="60" randomRespawn="29727" />
-        <spawn x="-86517" y="237297" z="-2824" heading="53750" respawn="60" randomRespawn="53750" />
-        <spawn x="-86702" y="237638" z="-2760" heading="11487" respawn="60" randomRespawn="11487" />
-        <spawn x="-86900" y="236286" z="-2992" heading="5074" respawn="60" randomRespawn="5074" />
-        <spawn x="-87258" y="236019" z="-2952" heading="29291" respawn="60" randomRespawn="29291" />
-        <spawn x="-86779" y="235671" z="-3008" heading="41718" respawn="60" randomRespawn="41718" />
-        <spawn x="-86953" y="237588" z="-2792" heading="31603" respawn="60" randomRespawn="31603" />
-        <spawn x="-87205" y="236828" z="-2912" heading="15868" respawn="60" randomRespawn="15868" />
-        <spawn x="-87017" y="236674" z="-2952" heading="15303" respawn="60" randomRespawn="15303" />
-        <spawn x="-86755" y="236086" z="-3008" heading="2792" respawn="60" randomRespawn="2792" />
-        <spawn x="-87561" y="236838" z="-2920" heading="24067" respawn="60" randomRespawn="24067" />
-        <spawn x="-88175" y="238455" z="-2584" heading="32023" respawn="60" randomRespawn="32023" />
-        <spawn x="-88254" y="238486" z="-2576" heading="5194" respawn="60" randomRespawn="5194" />
-        <spawn x="-86588" y="236582" z="-2968" heading="1165" respawn="60" randomRespawn="1165" />
-        <spawn x="-87446" y="236516" z="-2928" heading="5616" respawn="60" randomRespawn="5616" />
-        <spawn x="-87644" y="236054" z="-2920" heading="15792" respawn="60" randomRespawn="15792" />
-        <spawn x="-88272" y="240646" z="-2968" heading="64603" respawn="60" randomRespawn="64603" />
-        <spawn x="-88499" y="241124" z="-2920" heading="44643" respawn="60" randomRespawn="44643" />
-        <spawn x="-88155" y="241078" z="-2944" heading="65162" respawn="60" randomRespawn="65162" />
-        <spawn x="-88576" y="240386" z="-2928" heading="64736" respawn="60" randomRespawn="64736" />
-        <spawn x="-88473" y="240243" z="-2920" heading="51212" respawn="60" randomRespawn="51212" />
-        <spawn x="-87859" y="241164" z="-2936" heading="35108" respawn="60" randomRespawn="35108" />
-        <spawn x="-87610" y="240993" z="-2936" heading="29213" respawn="60" randomRespawn="29213" />
-        <spawn x="-87715" y="240273" z="-2936" heading="12529" respawn="60" randomRespawn="12529" />
-        <spawn x="-88150" y="240941" z="-2960" heading="13481" respawn="60" randomRespawn="13481" />
-        <spawn x="-87884" y="240535" z="-2968" heading="3103" respawn="60" randomRespawn="3103" />
+        <spawn x="-85790" y="234617" z="-3040" heading="9414" respawn="60" randomRespawn="60" />
+        <spawn x="-86418" y="234299" z="-2912" heading="55829" respawn="60" randomRespawn="60" />
+        <spawn x="-86397" y="234922" z="-3000" heading="55711" respawn="60" randomRespawn="60" />
+        <spawn x="-86587" y="235152" z="-3000" heading="6996" respawn="60" randomRespawn="60" />
+        <spawn x="-86871" y="235290" z="-2984" heading="25893" respawn="60" randomRespawn="60" />
+        <spawn x="-87266" y="235207" z="-2936" heading="34382" respawn="60" randomRespawn="60" />
+        <spawn x="-87254" y="235041" z="-2920" heading="50130" respawn="60" randomRespawn="60" />
+        <spawn x="-86419" y="234557" z="-2936" heading="60144" respawn="60" randomRespawn="60" />
+        <spawn x="-86366" y="234408" z="-2936" heading="11330" respawn="60" randomRespawn="60" />
+        <spawn x="-87271" y="235116" z="-2928" heading="14399" respawn="60" randomRespawn="60" />
+        <spawn x="-86236" y="235130" z="-2984" heading="44491" respawn="60" randomRespawn="60" />
+        <spawn x="-87020" y="237329" z="-2848" heading="30581" respawn="60" randomRespawn="60" />
+        <spawn x="-86872" y="237190" z="-2888" heading="64132" respawn="60" randomRespawn="60" />
+        <spawn x="-87005" y="237410" z="-2832" heading="29727" respawn="60" randomRespawn="60" />
+        <spawn x="-86517" y="237297" z="-2824" heading="53750" respawn="60" randomRespawn="60" />
+        <spawn x="-86702" y="237638" z="-2760" heading="11487" respawn="60" randomRespawn="60" />
+        <spawn x="-86900" y="236286" z="-2992" heading="5074" respawn="60" randomRespawn="60" />
+        <spawn x="-87258" y="236019" z="-2952" heading="29291" respawn="60" randomRespawn="60" />
+        <spawn x="-86779" y="235671" z="-3008" heading="41718" respawn="60" randomRespawn="60" />
+        <spawn x="-86953" y="237588" z="-2792" heading="31603" respawn="60" randomRespawn="60" />
+        <spawn x="-87205" y="236828" z="-2912" heading="15868" respawn="60" randomRespawn="60" />
+        <spawn x="-87017" y="236674" z="-2952" heading="15303" respawn="60" randomRespawn="60" />
+        <spawn x="-86755" y="236086" z="-3008" heading="2792" respawn="60" randomRespawn="60" />
+        <spawn x="-87561" y="236838" z="-2920" heading="24067" respawn="60" randomRespawn="60" />
+        <spawn x="-88175" y="238455" z="-2584" heading="32023" respawn="60" randomRespawn="60" />
+        <spawn x="-88254" y="238486" z="-2576" heading="5194" respawn="60" randomRespawn="60" />
+        <spawn x="-86588" y="236582" z="-2968" heading="1165" respawn="60" />
+        <spawn x="-87446" y="236516" z="-2928" heading="5616" respawn="60" />
+        <spawn x="-87644" y="236054" z="-2920" heading="15792" respawn="60"  />
+        <spawn x="-88272" y="240646" z="-2968" heading="64603" respawn="60" />
+        <spawn x="-88499" y="241124" z="-2920" heading="44643" respawn="60"  />
+        <spawn x="-88155" y="241078" z="-2944" heading="65162" respawn="60" />
+        <spawn x="-88576" y="240386" z="-2928" heading="64736" respawn="60"/>
+        <spawn x="-88473" y="240243" z="-2920" heading="51212" respawn="60"  />
+        <spawn x="-87859" y="241164" z="-2936" heading="35108" respawn="60" />
+        <spawn x="-87610" y="240993" z="-2936" heading="29213" respawn="60" />
+        <spawn x="-87715" y="240273" z="-2936" heading="12529" respawn="60"  />
+        <spawn x="-88150" y="240941" z="-2960" heading="13481" respawn="60"  />
+        <spawn x="-87884" y="240535" z="-2968" heading="3103" respawn="60"/>
+        <itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="1" max="1" chance="10" /> <!-- Tully's -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="5" /> <!-- Gold Einhsad -->
     </npc>
-    <npc id="23458" name="Leafie" level="15" type="L2Monster" atkRange="40" hpMax="444" hpReg="2.0" mpMax="0"
-         mpReg="0.0" STR="80"
-         CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="33" mAtk="16" pDef="90" mDef="40" pAtkSpd="298"
-         mAtkSpd="391" pCritRate="40"
-         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-         windRes="0"
-         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    <npc id="23458" name="Leafie" level="107" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="62" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="2500000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+         collisionRadius="23"
+         collisionHeight="44" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150"
+         aiType="fighter">
         <skill id="16347" level="1" /> <!-- Breeze Shell -->
-        <spawn x="-85754" y="234418" z="-3016" heading="25819" respawn="60" randomRespawn="25819" />
-        <spawn x="-86060" y="234273" z="-2936" heading="2456" respawn="60" randomRespawn="2456" />
-        <spawn x="-86174" y="234596" z="-2992" heading="1186" respawn="60" randomRespawn="1186" />
-        <spawn x="-86681" y="234822" z="-2944" heading="42859" respawn="60" randomRespawn="42859" />
-        <spawn x="-87044" y="235753" z="-2976" heading="41639" respawn="60" randomRespawn="41639" />
-        <spawn x="-87209" y="235373" z="-2936" heading="16228" respawn="60" randomRespawn="16228" />
-        <spawn x="-87269" y="234864" z="-2904" heading="57670" respawn="60" randomRespawn="57670" />
-        <spawn x="-86798" y="235176" z="-2984" heading="35672" respawn="60" randomRespawn="35672" />
-        <spawn x="-86996" y="235143" z="-2952" heading="56917" respawn="60" randomRespawn="56917" />
-        <spawn x="-86535" y="234296" z="-2896" heading="32243" respawn="60" randomRespawn="32243" />
-        <spawn x="-86435" y="234356" z="-2920" heading="62906" respawn="60" randomRespawn="62906" />
-        <spawn x="-86981" y="237591" z="-2792" heading="23749" respawn="60" randomRespawn="23749" />
-        <spawn x="-86445" y="236596" z="-2944" heading="17018" respawn="60" randomRespawn="17018" />
-        <spawn x="-86547" y="237282" z="-2832" heading="60443" respawn="60" randomRespawn="60443" />
-        <spawn x="-87158" y="236591" z="-2944" heading="28452" respawn="60" randomRespawn="28452" />
-        <spawn x="-86586" y="236391" z="-2992" heading="11547" respawn="60" randomRespawn="11547" />
-        <spawn x="-87598" y="235868" z="-2920" heading="44472" respawn="60" randomRespawn="44472" />
-        <spawn x="-87444" y="237017" z="-2888" heading="12877" respawn="60" randomRespawn="12877" />
-        <spawn x="-87198" y="236137" z="-2960" heading="61793" respawn="60" randomRespawn="61793" />
-        <spawn x="-86780" y="237384" z="-2832" heading="33157" respawn="60" randomRespawn="33157" />
-        <spawn x="-87418" y="237186" z="-2856" heading="36336" respawn="60" randomRespawn="36336" />
-        <spawn x="-86560" y="236940" z="-2912" heading="4034" respawn="60" randomRespawn="4034" />
-        <spawn x="-86278" y="235139" z="-2992" heading="11047" respawn="60" randomRespawn="11047" />
-        <spawn x="-88335" y="238377" z="-2576" heading="32069" respawn="60" randomRespawn="32069" />
-        <spawn x="-88038" y="238216" z="-2592" heading="39725" respawn="60" randomRespawn="39725" />
-        <spawn x="-87883" y="238798" z="-2592" heading="1627" respawn="60" randomRespawn="1627" />
-        <spawn x="-87314" y="235988" z="-2944" heading="25131" respawn="60" randomRespawn="25131" />
-        <spawn x="-86657" y="237557" z="-2776" heading="11500" respawn="60" randomRespawn="11500" />
-        <spawn x="-87023" y="237557" z="-2800" heading="8140" respawn="60" randomRespawn="8140" />
+        <spawn x="-85754" y="234418" z="-3016" heading="25819" respawn="60" randomRespawn="60" />
+        <spawn x="-86060" y="234273" z="-2936" heading="2456" respawn="60" randomRespawn="60" />
+        <spawn x="-86174" y="234596" z="-2992" heading="1186" respawn="60" randomRespawn="60" />
+        <spawn x="-86681" y="234822" z="-2944" heading="42859" respawn="60" randomRespawn="60" />
+        <spawn x="-87044" y="235753" z="-2976" heading="41639" respawn="60" randomRespawn="60" />
+        <spawn x="-87209" y="235373" z="-2936" heading="16228" respawn="60" randomRespawn="60" />
+        <spawn x="-87269" y="234864" z="-2904" heading="57670" respawn="60" randomRespawn="60" />
+        <spawn x="-86798" y="235176" z="-2984" heading="35672" respawn="60" randomRespawn="60" />
+        <spawn x="-86996" y="235143" z="-2952" heading="56917" respawn="60" randomRespawn="60" />
+        <spawn x="-86535" y="234296" z="-2896" heading="32243" respawn="60" randomRespawn="60" />
+        <spawn x="-86435" y="234356" z="-2920" heading="62906" respawn="60" randomRespawn="60" />
+        <spawn x="-86981" y="237591" z="-2792" heading="23749" respawn="60" randomRespawn="60" />
+        <spawn x="-86445" y="236596" z="-2944" heading="17018" respawn="60" randomRespawn="60" />
+        <spawn x="-86547" y="237282" z="-2832" heading="60443" respawn="60" randomRespawn="60" />
+        <spawn x="-87158" y="236591" z="-2944" heading="28452" respawn="60" randomRespawn="60" />
+        <spawn x="-86586" y="236391" z="-2992" heading="11547" respawn="60" randomRespawn="60" />
+        <spawn x="-87598" y="235868" z="-2920" heading="44472" respawn="60" randomRespawn="60" />
+        <spawn x="-87444" y="237017" z="-2888" heading="12877" respawn="60" randomRespawn="60" />
+        <spawn x="-87198" y="236137" z="-2960" heading="61793" respawn="60" randomRespawn="60" />
+        <spawn x="-86780" y="237384" z="-2832" heading="33157" respawn="60" randomRespawn="60" />
+        <spawn x="-87418" y="237186" z="-2856" heading="36336" respawn="60" randomRespawn="60" />
+        <spawn x="-86560" y="236940" z="-2912" heading="4034" respawn="60" randomRespawn="60" />
+        <spawn x="-86278" y="235139" z="-2992" heading="11047" respawn="60" randomRespawn="60" />
+        <spawn x="-88335" y="238377" z="-2576" heading="32069" respawn="60" randomRespawn="60" />
+        <spawn x="-88038" y="238216" z="-2592" heading="39725" respawn="60" randomRespawn="60" />
+        <spawn x="-87883" y="238798" z="-2592" heading="1627" respawn="60" randomRespawn="60" />
+        <spawn x="-87314" y="235988" z="-2944" heading="25131" respawn="60" randomRespawn="60" />
+        <spawn x="-86657" y="237557" z="-2776" heading="11500" respawn="60" randomRespawn="60" />
+        <spawn x="-87023" y="237557" z="-2800" heading="8140" respawn="60" randomRespawn="60" />
+        <itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
+        <itemDrop itemId="10429" min="1" max="1" chance="10" /> <!-- Tully's -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="5" /> <!-- Gold Einhsad -->
     </npc>
     <npc id="23459" name="Karaphon" title="Earth Spirit" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
          mpMax="0"
@@ -15969,19 +15977,19 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-78975" y="239731" z="-3552" heading="45151" respawn="60" randomRespawn="45151" />
-        <spawn x="-79497" y="240743" z="-3552" heading="43987" respawn="60" randomRespawn="43987" />
-        <spawn x="-78867" y="239552" z="-3544" heading="46469" respawn="60" randomRespawn="46469" />
-        <spawn x="-79349" y="239774" z="-3520" heading="39775" respawn="60" randomRespawn="39775" />
-        <spawn x="-78462" y="239449" z="-3472" heading="29730" respawn="60" randomRespawn="29730" />
-        <spawn x="-78757" y="240451" z="-3552" heading="36887" respawn="60" randomRespawn="36887" />
-        <spawn x="-78599" y="239177" z="-3552" heading="28986" respawn="60" randomRespawn="28986" />
-        <spawn x="-78786" y="239399" z="-3544" heading="29271" respawn="60" randomRespawn="29271" />
-        <spawn x="-78999" y="240088" z="-3560" heading="50351" respawn="60" randomRespawn="50351" />
-        <spawn x="-79848" y="240609" z="-3496" heading="20314" respawn="60" randomRespawn="20314" />
-        <spawn x="-79752" y="240727" z="-3520" heading="40961" respawn="60" randomRespawn="40961" />
-        <spawn x="-79695" y="240838" z="-3536" heading="21462" respawn="60" randomRespawn="21462" />
-        <spawn x="-79216" y="241105" z="-3552" heading="2280" respawn="60" randomRespawn="2280" />
+        <spawn x="-78975" y="239731" z="-3552" heading="45151" respawn="60" randomRespawn="60" />
+        <spawn x="-79497" y="240743" z="-3552" heading="43987" respawn="60" randomRespawn="60" />
+        <spawn x="-78867" y="239552" z="-3544" heading="46469" respawn="60" randomRespawn="60" />
+        <spawn x="-79349" y="239774" z="-3520" heading="39775" respawn="60" randomRespawn="60" />
+        <spawn x="-78462" y="239449" z="-3472" heading="29730" respawn="60" randomRespawn="60" />
+        <spawn x="-78757" y="240451" z="-3552" heading="36887" respawn="60" randomRespawn="60" />
+        <spawn x="-78599" y="239177" z="-3552" heading="28986" respawn="60" randomRespawn="60" />
+        <spawn x="-78786" y="239399" z="-3544" heading="29271" respawn="60" randomRespawn="60" />
+        <spawn x="-78999" y="240088" z="-3560" heading="50351" respawn="60" randomRespawn="60" />
+        <spawn x="-79848" y="240609" z="-3496" heading="20314" respawn="60" randomRespawn="60" />
+        <spawn x="-79752" y="240727" z="-3520" heading="40961" respawn="60" randomRespawn="60" />
+        <spawn x="-79695" y="240838" z="-3536" heading="21462" respawn="60" randomRespawn="60" />
+        <spawn x="-79216" y="241105" z="-3552" heading="2280" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23485" name="Evolved Kiku" level="11" type="L2Monster" atkRange="40" hpMax="334" hpReg="2.0" mpMax="0"
          mpReg="0.0"
@@ -15991,39 +15999,43 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <skill id="16346" level="1" /> <!-- Deadly Fear -->
-        <spawn x="-81458" y="235645" z="-3272" heading="27452" respawn="60" randomRespawn="27452" />
-        <spawn x="-81837" y="236328" z="-3256" heading="743" respawn="60" randomRespawn="743" />
-        <spawn x="-81619" y="236094" z="-3224" heading="60678" respawn="60" randomRespawn="60678" />
-        <spawn x="-81615" y="235890" z="-3256" heading="14364" respawn="60" randomRespawn="14364" />
-        <spawn x="-81818" y="236018" z="-3272" heading="62433" respawn="60" randomRespawn="62433" />
+        <spawn x="-81458" y="235645" z="-3272" heading="27452" respawn="60" randomRespawn="60" />
+        <spawn x="-81837" y="236328" z="-3256" heading="743" respawn="60" randomRespawn="60" />
+        <spawn x="-81619" y="236094" z="-3224" heading="60678" respawn="60" randomRespawn="60" />
+        <spawn x="-81615" y="235890" z="-3256" heading="14364" respawn="60" randomRespawn="60" />
+        <spawn x="-81818" y="236018" z="-3272" heading="62433" respawn="60" randomRespawn="60" />
     </npc>
-    <npc id="23486" name="Robust Growler" level="17" type="L2Monster" atkRange="40" hpMax="509" hpReg="2.0" mpMax="0"
-         mpReg="0.0"
-         STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="55" mAtk="28" pDef="176" mDef="80" pAtkSpd="298"
-         mAtkSpd="391"
-         pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-         waterRes="0"
-         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    <npc id="23486" name="Robust Growler" level="107" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="62" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="2500000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+         collisionRadius="23"
+         collisionHeight="44" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150"
+         aiType="fighter">
         <skill id="16347" level="1" /> <!-- Breeze Shell -->
-        <spawn x="-83738" y="236650" z="-3368" heading="37246" respawn="60" randomRespawn="37246" />
-        <spawn x="-81957" y="238173" z="-3248" heading="31738" respawn="60" randomRespawn="31738" />
-        <spawn x="-82738" y="237885" z="-3360" heading="48263" respawn="60" randomRespawn="48263" />
-        <spawn x="-83793" y="237552" z="-3320" heading="60552" respawn="60" randomRespawn="60552" />
-        <spawn x="-82028" y="238077" z="-3256" heading="41010" respawn="60" randomRespawn="41010" />
-        <spawn x="-83732" y="236164" z="-3360" heading="20707" respawn="60" randomRespawn="20707" />
-        <spawn x="-83736" y="236216" z="-3360" heading="445" respawn="60" randomRespawn="445" />
-        <spawn x="-83918" y="236816" z="-3336" heading="19101" respawn="60" randomRespawn="19101" />
-        <spawn x="-83664" y="235791" z="-3320" heading="20532" respawn="60" randomRespawn="20532" />
-        <spawn x="-83990" y="236425" z="-3344" heading="18733" respawn="60" randomRespawn="18733" />
-        <spawn x="-83987" y="235871" z="-3312" heading="44437" respawn="60" randomRespawn="44437" />
-        <spawn x="-83712" y="236715" z="-3360" heading="60998" respawn="60" randomRespawn="60998" />
-        <spawn x="-83560" y="237785" z="-3360" heading="47146" respawn="60" randomRespawn="47146" />
-        <spawn x="-83006" y="238018" z="-3384" heading="21436" respawn="60" randomRespawn="21436" />
-        <spawn x="-82365" y="237081" z="-3288" heading="21881" respawn="60" randomRespawn="21881" />
-        <spawn x="-82302" y="237244" z="-3320" heading="35682" respawn="60" randomRespawn="35682" />
-        <spawn x="-82332" y="237033" z="-3280" heading="32296" respawn="60" randomRespawn="32296" />
-        <spawn x="-83142" y="237776" z="-3408" heading="39499" respawn="60" randomRespawn="39499" />
-        <spawn x="-83295" y="237569" z="-3392" heading="6406" respawn="60" randomRespawn="6406" />
+        <spawn x="-83738" y="236650" z="-3368" heading="37246" respawn="60" randomRespawn="60" />
+        <spawn x="-81957" y="238173" z="-3248" heading="31738" respawn="60" randomRespawn="60" />
+        <spawn x="-82738" y="237885" z="-3360" heading="48263" respawn="60" randomRespawn="60" />
+        <spawn x="-83793" y="237552" z="-3320" heading="60552" respawn="60" randomRespawn="60" />
+        <spawn x="-82028" y="238077" z="-3256" heading="41010" respawn="60" randomRespawn="60" />
+        <spawn x="-83732" y="236164" z="-3360" heading="20707" respawn="60" randomRespawn="60" />
+        <spawn x="-83736" y="236216" z="-3360" heading="445" respawn="60" randomRespawn="60" />
+        <spawn x="-83918" y="236816" z="-3336" heading="19101" respawn="60" randomRespawn="60" />
+        <spawn x="-83664" y="235791" z="-3320" heading="20532" respawn="60" randomRespawn="60" />
+        <spawn x="-83990" y="236425" z="-3344" heading="18733" respawn="60" randomRespawn="60" />
+        <spawn x="-83987" y="235871" z="-3312" heading="44437" respawn="60" randomRespawn="60" />
+        <spawn x="-83712" y="236715" z="-3360" heading="60998" respawn="60" randomRespawn="60" />
+        <spawn x="-83560" y="237785" z="-3360" heading="47146" respawn="60" randomRespawn="60" />
+        <spawn x="-83006" y="238018" z="-3384" heading="21436" respawn="60" randomRespawn="60" />
+        <spawn x="-82365" y="237081" z="-3288" heading="21881" respawn="60" randomRespawn="60" />
+        <spawn x="-82302" y="237244" z="-3320" heading="35682" respawn="60" randomRespawn="60" />
+        <spawn x="-82332" y="237033" z="-3280" heading="32296" respawn="60" randomRespawn="60" />
+        <spawn x="-83142" y="237776" z="-3408" heading="39499" respawn="60" randomRespawn="60" />
+        <spawn x="-83295" y="237569" z="-3392" heading="6406" respawn="60" randomRespawn="60" />
+        <itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
+        <spoilDrop itemId="37559" min="1" max="1" chance="35" /> <!-- Shiny Coin -->
+        <spoilDrop itemId="4356" min="1" max="1" chance="10" /> <!-- Gold Einhsad -->
     </npc>
     <npc id="23487" name="Magma Ailith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
          mpReg="0.0" STR="80"
@@ -16931,45 +16943,7 @@
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-56414" y="76299" z="-4224" heading="61010" respawn="60" randomRespawn="61010" />
-        <spawn x="-57377" y="76422" z="-4200" heading="19657" respawn="60" randomRespawn="19657" />
-        <spawn x="-55666" y="76152" z="-4232" heading="19574" respawn="60" randomRespawn="19574" />
-        <spawn x="-56385" y="76577" z="-4232" heading="24579" respawn="60" randomRespawn="24579" />
-        <spawn x="-52874" y="79912" z="-4808" heading="16646" respawn="60" randomRespawn="16646" />
-        <spawn x="-51187" y="78839" z="-4816" heading="16821" respawn="60" randomRespawn="16821" />
-        <spawn x="-61210" y="76402" z="-3912" heading="55784" respawn="60" randomRespawn="55784" />
-        <spawn x="-60178" y="78239" z="-3912" heading="34270" respawn="60" randomRespawn="34270" />
-        <spawn x="-59124" y="81785" z="-4424" heading="0" respawn="60" />
-        <spawn x="-62278" y="77219" z="-3904" heading="35413" respawn="60" randomRespawn="35413" />
-        <spawn x="-59724" y="82775" z="-4472" heading="18192" respawn="60" randomRespawn="18192" />
-        <spawn x="-59480" y="84456" z="-4464" heading="19078" respawn="60" randomRespawn="19078" />
-        <spawn x="-52252" y="80502" z="-4800" heading="16064" respawn="60" randomRespawn="16064" />
-        <spawn x="-52775" y="81241" z="-4832" heading="19069" respawn="60" randomRespawn="19069" />
-        <spawn x="-49288" y="79759" z="-4832" heading="1102" respawn="60" randomRespawn="1102" />
-        <spawn x="-51198" y="81669" z="-4888" heading="21446" respawn="60" randomRespawn="21446" />
-        <spawn x="-56739" y="89542" z="-3832" heading="9943" respawn="60" randomRespawn="9943" />
-        <spawn x="-56899" y="91531" z="-3856" heading="39924" respawn="60" randomRespawn="39924" />
-        <spawn x="-55996" y="91154" z="-3864" heading="53212" respawn="60" randomRespawn="53212" />
-        <spawn x="-54251" y="90869" z="-3856" heading="58137" respawn="60" randomRespawn="58137" />
-        <spawn x="-44070" y="74451" z="-3640" heading="2944" respawn="60" randomRespawn="2944" />
-        <spawn x="-44374" y="75274" z="-3640" heading="54878" respawn="60" randomRespawn="54878" />
-        <spawn x="-43808" y="76224" z="-3640" heading="2934" respawn="60" randomRespawn="2934" />
-        <spawn x="-42934" y="75275" z="-3640" heading="49151" respawn="60" randomRespawn="49151" />
-        <spawn x="-43506" y="81116" z="-4232" heading="23708" respawn="60" randomRespawn="23708" />
-        <spawn x="-41521" y="81099" z="-4224" heading="25111" respawn="60" randomRespawn="25111" />
-        <spawn x="-44228" y="83287" z="-4304" heading="8356" respawn="60" randomRespawn="8356" />
-        <spawn x="-43690" y="82284" z="-4328" heading="809" respawn="60" randomRespawn="809" />
-        <spawn x="-41894" y="82820" z="-4312" heading="37158" respawn="60" randomRespawn="37158" />
-        <spawn x="-42335" y="82096" z="-4264" heading="29557" respawn="60" randomRespawn="29557" />
-        <spawn x="-40898" y="82494" z="-4288" heading="63486" respawn="60" randomRespawn="63486" />
-        <spawn x="-43128" y="82814" z="-4368" heading="44162" respawn="60" randomRespawn="44162" />
-        <spawn x="-43886" y="84444" z="-4264" heading="25688" respawn="60" randomRespawn="25688" />
-        <spawn x="-36584" y="85803" z="-3184" heading="50711" respawn="60" randomRespawn="50711" />
-        <spawn x="-35574" y="85540" z="-3184" heading="22197" respawn="60" randomRespawn="22197" />
-        <spawn x="-34949" y="84717" z="-3160" heading="50371" respawn="60" randomRespawn="50371" />
-        <spawn x="-34673" y="85704" z="-3192" heading="21835" respawn="60" randomRespawn="21835" />
-        <spawn x="-35095" y="86425" z="-3160" heading="55987" respawn="60" randomRespawn="55987" />
-        <spawn x="-36514" y="86191" z="-3168" heading="4163" respawn="60" randomRespawn="4163" />
+
     </npc>
     <npc id="23551" name="Kerberos Fort" title="Spirit of the Night" level="101" type="L2Npc" atkRange="40" hpMax="1"
          hpReg="0.0"
@@ -16978,32 +16952,7 @@
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-60093" y="77237" z="-3904" heading="19739" respawn="60" randomRespawn="19739" />
-        <spawn x="-60168" y="77053" z="-3912" heading="32056" respawn="60" randomRespawn="32056" />
-        <spawn x="-57198" y="76353" z="-4240" heading="43889" respawn="60" randomRespawn="43889" />
-        <spawn x="-59997" y="82982" z="-4472" heading="13386" respawn="60" randomRespawn="13386" />
-        <spawn x="-56692" y="75732" z="-4224" heading="48849" respawn="60" randomRespawn="48849" />
-        <spawn x="-53514" y="80634" z="-4808" heading="23270" respawn="60" randomRespawn="23270" />
-        <spawn x="-55764" y="76311" z="-4232" heading="22080" respawn="60" randomRespawn="22080" />
-        <spawn x="-53055" y="81100" z="-4824" heading="39052" respawn="60" randomRespawn="39052" />
-        <spawn x="-55596" y="91016" z="-3888" heading="32245" respawn="60" randomRespawn="32245" />
-        <spawn x="-44555" y="75642" z="-3632" heading="54015" respawn="60" randomRespawn="54015" />
-        <spawn x="-44496" y="74571" z="-3632" heading="25439" respawn="60" randomRespawn="25439" />
-        <spawn x="-42819" y="75136" z="-3624" heading="54101" respawn="60" randomRespawn="54101" />
-        <spawn x="-43762" y="76223" z="-3640" heading="38565" respawn="60" randomRespawn="38565" />
-        <spawn x="-43183" y="81147" z="-4248" heading="47908" respawn="60" randomRespawn="47908" />
-        <spawn x="-41718" y="81436" z="-4248" heading="63852" respawn="60" randomRespawn="63852" />
-        <spawn x="-42923" y="83799" z="-4312" heading="824" respawn="60" randomRespawn="824" />
-        <spawn x="-44171" y="81923" z="-4272" heading="19758" respawn="60" randomRespawn="19758" />
-        <spawn x="-51386" y="80013" z="-4832" heading="45184" respawn="60" randomRespawn="45184" />
-        <spawn x="-43083" y="83015" z="-4360" heading="30382" respawn="60" randomRespawn="30382" />
-        <spawn x="-41730" y="84488" z="-4288" heading="4816" respawn="60" randomRespawn="4816" />
-        <spawn x="-36279" y="85036" z="-3168" heading="50046" respawn="60" randomRespawn="50046" />
-        <spawn x="-35534" y="85540" z="-3184" heading="41872" respawn="60" randomRespawn="41872" />
-        <spawn x="-61268" y="77614" z="-3920" heading="51249" respawn="60" randomRespawn="51249" />
-        <spawn x="-34630" y="85082" z="-3160" heading="48182" respawn="60" randomRespawn="48182" />
-        <spawn x="-34369" y="85401" z="-3160" heading="43541" respawn="60" randomRespawn="43541" />
-        <spawn x="-36268" y="86326" z="-3184" heading="14377" respawn="60" randomRespawn="14377" />
+
     </npc>
     <npc id="23552" name="Kerberos Nero" title="Spirit of the Night" level="120" type="L2Npc" atkRange="40" hpMax="1"
          hpReg="0.0"
@@ -17012,32 +16961,7 @@
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-55504" y="76355" z="-4232" heading="35352" respawn="60" randomRespawn="35352" />
-        <spawn x="-60173" y="84105" z="-4456" heading="57617" respawn="60" randomRespawn="57617" />
-        <spawn x="-53551" y="80224" z="-4808" heading="34224" respawn="60" randomRespawn="34224" />
-        <spawn x="-52887" y="81288" z="-4832" heading="26951" respawn="60" randomRespawn="26951" />
-        <spawn x="-50507" y="79514" z="-4800" heading="15270" respawn="60" randomRespawn="15270" />
-        <spawn x="-50866" y="81471" z="-4912" heading="42260" respawn="60" randomRespawn="42260" />
-        <spawn x="-56679" y="91439" z="-3856" heading="25739" respawn="60" randomRespawn="25739" />
-        <spawn x="-56274" y="76543" z="-4224" heading="52371" respawn="60" randomRespawn="52371" />
-        <spawn x="-60846" y="76418" z="-3888" heading="35753" respawn="60" randomRespawn="35753" />
-        <spawn x="-44338" y="75487" z="-3640" heading="36695" respawn="60" randomRespawn="36695" />
-        <spawn x="-43306" y="76166" z="-3632" heading="64056" respawn="60" randomRespawn="64056" />
-        <spawn x="-42868" y="75731" z="-3632" heading="39893" respawn="60" randomRespawn="39893" />
-        <spawn x="-42286" y="81320" z="-4240" heading="6261" respawn="60" randomRespawn="6261" />
-        <spawn x="-60730" y="78404" z="-3928" heading="40778" respawn="60" randomRespawn="40778" />
-        <spawn x="-43997" y="82431" z="-4328" heading="59067" respawn="60" randomRespawn="59067" />
-        <spawn x="-44391" y="83393" z="-4304" heading="28087" respawn="60" randomRespawn="28087" />
-        <spawn x="-51546" y="79928" z="-4824" heading="34463" respawn="60" randomRespawn="34463" />
-        <spawn x="-42943" y="83184" z="-4352" heading="30606" respawn="60" randomRespawn="30606" />
-        <spawn x="-43806" y="84289" z="-4288" heading="56895" respawn="60" randomRespawn="56895" />
-        <spawn x="-41633" y="84053" z="-4320" heading="57589" respawn="60" randomRespawn="57589" />
-        <spawn x="-35142" y="84795" z="-3168" heading="39643" respawn="60" randomRespawn="39643" />
-        <spawn x="-58898" y="82010" z="-4456" heading="34649" respawn="60" randomRespawn="34649" />
-        <spawn x="-35774" y="85090" z="-3160" heading="38550" respawn="60" randomRespawn="38550" />
-        <spawn x="-34739" y="85713" z="-3184" heading="39836" respawn="60" randomRespawn="39836" />
-        <spawn x="-35360" y="86600" z="-3176" heading="21709" respawn="60" randomRespawn="21709" />
-        <spawn x="-36514" y="86191" z="-3168" heading="1076" respawn="60" randomRespawn="1076" />
+
     </npc>
     <npc id="23553" name="Fury Sylph Barrena" title="Spirit of the Night" level="120" type="L2Npc" atkRange="40"
          hpMax="1" hpReg="0.0"
@@ -17046,47 +16970,6 @@
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-57434" y="82328" z="-4488" heading="16993" respawn="60" randomRespawn="16993" />
-        <spawn x="-58313" y="83189" z="-4464" heading="28928" respawn="60" randomRespawn="28928" />
-        <spawn x="-59311" y="83073" z="-4488" heading="38733" respawn="60" randomRespawn="38733" />
-        <spawn x="-59141" y="83243" z="-4488" heading="17056" respawn="60" randomRespawn="17056" />
-        <spawn x="-60036" y="84325" z="-4456" heading="19382" respawn="60" randomRespawn="19382" />
-        <spawn x="-61226" y="77360" z="-3928" heading="42070" respawn="60" randomRespawn="42070" />
-        <spawn x="-57695" y="84562" z="-4488" heading="63992" respawn="60" randomRespawn="63992" />
-        <spawn x="-53650" y="80282" z="-4808" heading="11086" respawn="60" randomRespawn="11086" />
-        <spawn x="-53954" y="81424" z="-4776" heading="64056" respawn="60" randomRespawn="64056" />
-        <spawn x="-53741" y="82208" z="-4832" heading="64239" respawn="60" randomRespawn="64239" />
-        <spawn x="-60008" y="77330" z="-3896" heading="22453" respawn="60" randomRespawn="22453" />
-        <spawn x="-52383" y="81570" z="-4816" heading="43604" respawn="60" randomRespawn="43604" />
-        <spawn x="-52831" y="80912" z="-4824" heading="13729" respawn="60" randomRespawn="13729" />
-        <spawn x="-50508" y="80149" z="-4872" heading="38200" respawn="60" randomRespawn="38200" />
-        <spawn x="-56821" y="75872" z="-4232" heading="34828" respawn="60" randomRespawn="34828" />
-        <spawn x="-55373" y="89260" z="-3856" heading="49377" respawn="60" randomRespawn="49377" />
-        <spawn x="-56676" y="90491" z="-3872" heading="47896" respawn="60" randomRespawn="47896" />
-        <spawn x="-62202" y="77869" z="-3928" heading="43314" respawn="60" randomRespawn="43314" />
-        <spawn x="-56459" y="91209" z="-3848" heading="57648" respawn="60" randomRespawn="57648" />
-        <spawn x="-55896" y="90947" z="-3856" heading="27032" respawn="60" randomRespawn="27032" />
-        <spawn x="-55838" y="76938" z="-4240" heading="5263" respawn="60" randomRespawn="5263" />
-        <spawn x="-54647" y="90869" z="-3888" heading="58012" respawn="60" randomRespawn="58012" />
-        <spawn x="-55211" y="91900" z="-3856" heading="37008" respawn="60" randomRespawn="37008" />
-        <spawn x="-61334" y="76710" z="-3936" heading="59550" respawn="60" randomRespawn="59550" />
-        <spawn x="-44410" y="75565" z="-3632" heading="45147" respawn="60" randomRespawn="45147" />
-        <spawn x="-42875" y="75450" z="-3640" heading="52847" respawn="60" randomRespawn="52847" />
-        <spawn x="-43264" y="80874" z="-4224" heading="50428" respawn="60" randomRespawn="50428" />
-        <spawn x="-42227" y="81086" z="-4248" heading="33936" respawn="60" randomRespawn="33936" />
-        <spawn x="-61746" y="78604" z="-3920" heading="26551" respawn="60" randomRespawn="26551" />
-        <spawn x="-43815" y="83884" z="-4312" heading="14891" respawn="60" randomRespawn="14891" />
-        <spawn x="-43543" y="81962" z="-4320" heading="3667" respawn="60" randomRespawn="3667" />
-        <spawn x="-60490" y="78318" z="-3928" heading="56630" respawn="60" randomRespawn="56630" />
-        <spawn x="-41053" y="83727" z="-4280" heading="28742" respawn="60" randomRespawn="28742" />
-        <spawn x="-51569" y="80146" z="-4840" heading="11184" respawn="60" randomRespawn="11184" />
-        <spawn x="-60034" y="83424" z="-4456" heading="16218" respawn="60" randomRespawn="16218" />
-        <spawn x="-42619" y="84272" z="-4296" heading="52920" respawn="60" randomRespawn="52920" />
-        <spawn x="-57265" y="76468" z="-4232" heading="45563" respawn="60" randomRespawn="45563" />
-        <spawn x="-35074" y="84918" z="-3168" heading="17733" respawn="60" randomRespawn="17733" />
-        <spawn x="-60006" y="76814" z="-3904" heading="42697" respawn="60" randomRespawn="42697" />
-        <spawn x="-59141" y="81777" z="-4456" heading="38890" respawn="60" randomRespawn="38890" />
-        <spawn x="-34504" y="85554" z="-3184" heading="52045" respawn="60" randomRespawn="52045" />
     </npc>
     <npc id="23554" name="Fury Kiku" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
          STR="80"
@@ -17096,104 +16979,15 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
-    <npc id="23555" name="Fury Sylph Temptress" title="Spirit of the Night" level="120" type="L2Npc" atkRange="40"
-         hpMax="1"
-         hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
-         pDef="1" mDef="1"
-         pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10"
-         collisionHeight="24"
-         fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-51779" y="81669" z="-4856" heading="1305" respawn="60" randomRespawn="1305" />
-        <spawn x="-60156" y="77241" z="-3904" heading="62352" respawn="60" randomRespawn="62352" />
-        <spawn x="-52943" y="80959" z="-4824" heading="21689" respawn="60" randomRespawn="21689" />
-        <spawn x="-55574" y="76312" z="-4232" heading="38151" respawn="60" randomRespawn="38151" />
-        <spawn x="-53111" y="81053" z="-4816" heading="9897" respawn="60" randomRespawn="9897" />
-        <spawn x="-57478" y="83429" z="-4488" heading="7207" respawn="60" randomRespawn="7207" />
-        <spawn x="-50427" y="79478" z="-4800" heading="1323" respawn="60" randomRespawn="1323" />
-        <spawn x="-61821" y="76670" z="-3920" heading="27107" respawn="60" randomRespawn="27107" />
-        <spawn x="-56361" y="89688" z="-3880" heading="2188" respawn="60" randomRespawn="2188" />
-        <spawn x="-55557" y="89344" z="-3872" heading="11179" respawn="60" randomRespawn="11179" />
-        <spawn x="-60094" y="84105" z="-4456" heading="22310" respawn="60" randomRespawn="22310" />
-        <spawn x="-56789" y="91577" z="-3864" heading="20808" respawn="60" randomRespawn="20808" />
-        <spawn x="-55446" y="91871" z="-3864" heading="53284" respawn="60" randomRespawn="53284" />
-        <spawn x="-55796" y="90740" z="-3872" heading="15461" respawn="60" randomRespawn="15461" />
-        <spawn x="-62430" y="77869" z="-3912" heading="48232" respawn="60" randomRespawn="48232" />
-        <spawn x="-54559" y="90795" z="-3888" heading="45765" respawn="60" randomRespawn="45765" />
-        <spawn x="-54515" y="90869" z="-3880" heading="13733" respawn="60" randomRespawn="13733" />
-        <spawn x="-58477" y="84711" z="-4496" heading="32067" respawn="60" randomRespawn="32067" />
-        <spawn x="-44027" y="74348" z="-3624" heading="1752" respawn="60" randomRespawn="1752" />
-        <spawn x="-53682" y="80031" z="-4792" heading="28928" respawn="60" randomRespawn="28928" />
-        <spawn x="-44053" y="75625" z="-3656" heading="48867" respawn="60" randomRespawn="48867" />
-        <spawn x="-57555" y="84681" z="-4472" heading="25130" respawn="60" randomRespawn="25130" />
-        <spawn x="-42934" y="75275" z="-3640" heading="30421" respawn="60" randomRespawn="30421" />
-        <spawn x="-51105" y="78415" z="-4784" heading="27415" respawn="60" randomRespawn="27415" />
-        <spawn x="-60720" y="78501" z="-3920" heading="28896" respawn="60" randomRespawn="28896" />
-        <spawn x="-42926" y="81003" z="-4248" heading="4861" respawn="60" randomRespawn="4861" />
-        <spawn x="-42041" y="81269" z="-4248" heading="48581" respawn="60" randomRespawn="48581" />
-        <spawn x="-61482" y="78570" z="-3928" heading="17723" respawn="60" randomRespawn="17723" />
-        <spawn x="-56953" y="76548" z="-4224" heading="4344" respawn="60" randomRespawn="4344" />
-        <spawn x="-43243" y="81983" z="-4352" heading="40663" respawn="60" randomRespawn="40663" />
-        <spawn x="-57744" y="83622" z="-4464" heading="4835" respawn="60" randomRespawn="4835" />
-        <spawn x="-56330" y="75520" z="-4224" heading="60294" respawn="60" randomRespawn="60294" />
-        <spawn x="-44248" y="83152" z="-4304" heading="12333" respawn="60" randomRespawn="12333" />
-        <spawn x="-42707" y="84036" z="-4304" heading="6955" respawn="60" randomRespawn="6955" />
-        <spawn x="-51718" y="79901" z="-4824" heading="15858" respawn="60" randomRespawn="15858" />
-        <spawn x="-42202" y="82004" z="-4248" heading="64842" respawn="60" randomRespawn="64842" />
-        <spawn x="-41765" y="83397" z="-4336" heading="24267" respawn="60" randomRespawn="24267" />
-        <spawn x="-40749" y="82331" z="-4256" heading="3397" respawn="60" randomRespawn="3397" />
-        <spawn x="-54136" y="81627" z="-4800" heading="50914" respawn="60" randomRespawn="50914" />
-        <spawn x="-59199" y="82921" z="-4488" heading="21298" respawn="60" randomRespawn="21298" />
-        <spawn x="-34852" y="85041" z="-3168" heading="12318" respawn="60" randomRespawn="12318" />
-        <spawn x="-60035" y="83140" z="-4464" heading="1125" respawn="60" randomRespawn="1125" />
-        <spawn x="-53897" y="82029" z="-4840" heading="42129" respawn="60" randomRespawn="42129" />
-        <spawn x="-61139" y="77593" z="-3920" heading="17608" respawn="60" randomRespawn="17608" />
-        <spawn x="-59054" y="83517" z="-4488" heading="59435" respawn="60" randomRespawn="59435" />
-        <spawn x="-34552" y="85906" z="-3200" heading="10008" respawn="60" randomRespawn="10008" />
-        <spawn x="-59091" y="82243" z="-4456" heading="21219" respawn="60" randomRespawn="21219" />
-        <spawn x="-35240" y="86791" z="-3160" heading="13694" respawn="60" randomRespawn="13694" />
-    </npc>
-    <npc id="23556" name="Fury Sylph Purka" title="Spirit of the Night" level="120" type="L2Npc" atkRange="40" hpMax="1"
+       <npc id="23556" name="Fury Sylph Purka" title="Spirit of the Night" level="120" type="L2Npc" atkRange="40" hpMax="1"
          hpReg="0.0"
          mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
          pAtkSpd="250"
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-56954" y="91807" z="-3832" heading="49377" respawn="60" randomRespawn="49377" />
-        <spawn x="-55869" y="91871" z="-3856" heading="58625" respawn="60" randomRespawn="58625" />
-        <spawn x="-55996" y="91292" z="-3864" heading="1097" respawn="60" randomRespawn="1097" />
-        <spawn x="-53496" y="82329" z="-4824" heading="578" respawn="60" randomRespawn="578" />
-        <spawn x="-57929" y="85033" z="-4472" heading="2007" respawn="60" randomRespawn="2007" />
-        <spawn x="-61561" y="77111" z="-3920" heading="50063" respawn="60" randomRespawn="50063" />
-        <spawn x="-51914" y="80511" z="-4824" heading="20808" respawn="60" randomRespawn="20808" />
-        <spawn x="-44217" y="74441" z="-3632" heading="48762" respawn="60" randomRespawn="48762" />
-        <spawn x="-61343" y="78535" z="-3928" heading="11392" respawn="60" randomRespawn="11392" />
-        <spawn x="-58015" y="84951" z="-4488" heading="22548" respawn="60" randomRespawn="22548" />
-        <spawn x="-49725" y="81201" z="-4888" heading="45883" respawn="60" randomRespawn="45883" />
-        <spawn x="-51125" y="78618" z="-4808" heading="16600" respawn="60" randomRespawn="16600" />
-        <spawn x="-50508" y="79987" z="-4848" heading="57089" respawn="60" randomRespawn="57089" />
-        <spawn x="-43263" y="81925" z="-4352" heading="18484" respawn="60" randomRespawn="18484" />
-        <spawn x="-61746" y="78536" z="-3928" heading="42681" respawn="60" randomRespawn="42681" />
-        <spawn x="-60298" y="77254" z="-3904" heading="14439" respawn="60" randomRespawn="14439" />
-        <spawn x="-58700" y="83355" z="-4472" heading="19912" respawn="60" randomRespawn="19912" />
-        <spawn x="-57454" y="83600" z="-4480" heading="13137" respawn="60" randomRespawn="13137" />
-        <spawn x="-40859" y="82727" z="-4296" heading="11255" respawn="60" randomRespawn="11255" />
-        <spawn x="-55557" y="89386" z="-3880" heading="65044" respawn="60" randomRespawn="65044" />
-        <spawn x="-59949" y="84336" z="-4456" heading="19558" respawn="60" randomRespawn="19558" />
-        <spawn x="-54052" y="81701" z="-4808" heading="16325" respawn="60" randomRespawn="16325" />
-        <spawn x="-41059" y="83752" z="-4288" heading="21613" respawn="60" randomRespawn="21613" />
-        <spawn x="-58812" y="82436" z="-4480" heading="64609" respawn="60" randomRespawn="64609" />
-        <spawn x="-51281" y="81075" z="-4880" heading="51203" respawn="60" randomRespawn="51203" />
-        <spawn x="-56583" y="75644" z="-4216" heading="26247" respawn="60" randomRespawn="26247" />
-        <spawn x="-57054" y="90126" z="-3848" heading="38849" respawn="60" randomRespawn="38849" />
-        <spawn x="-36479" y="85547" z="-3176" heading="1179" respawn="60" randomRespawn="1179" />
-        <spawn x="-35331" y="85656" z="-3176" heading="8662" respawn="60" randomRespawn="8662" />
-        <spawn x="-60228" y="83376" z="-4456" heading="28969" respawn="60" randomRespawn="28969" />
-        <spawn x="-57215" y="76670" z="-4240" heading="7300" respawn="60" randomRespawn="7300" />
-        <spawn x="-60980" y="77317" z="-3936" heading="61888" respawn="60" randomRespawn="61888" />
-        <spawn x="-35519" y="86710" z="-3152" heading="23270" respawn="60" randomRespawn="23270" />
-        <spawn x="-60874" y="77758" z="-3912" heading="42721" respawn="60" randomRespawn="42721" />
-        <spawn x="-62620" y="77544" z="-3904" heading="13578" respawn="60" randomRespawn="13578" />
+
+
     </npc>
     <npc id="23557" name="Fury Kerberos Liger" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
          mpReg="0.0"
@@ -17202,41 +16996,8 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-61839" y="78480" z="-3928" heading="0" respawn="60" />
-        <spawn x="-59942" y="84465" z="-4464" heading="46969" respawn="60" randomRespawn="46969" />
-        <spawn x="-51274" y="78618" z="-4792" heading="49804" respawn="60" randomRespawn="49804" />
-        <spawn x="-58593" y="83461" z="-4480" heading="0" respawn="60" />
-        <spawn x="-51198" y="81072" z="-4896" heading="0" respawn="60" />
-        <spawn x="-56611" y="75694" z="-4224" heading="55351" respawn="60" randomRespawn="55351" />
-        <spawn x="-60459" y="77292" z="-3896" heading="0" respawn="60" />
-        <spawn x="-50517" y="79907" z="-4840" heading="0" respawn="60" />
-        <spawn x="-58078" y="85033" z="-4488" heading="2037" respawn="60" randomRespawn="2037" />
-        <spawn x="-55953" y="91836" z="-3848" heading="0" respawn="60" />
-        <spawn x="-58064" y="84802" z="-4504" heading="4691" respawn="60" randomRespawn="4691" />
-        <spawn x="-57052" y="90038" z="-3840" heading="0" respawn="60" />
-        <spawn x="-41164" y="83858" z="-4312" heading="0" respawn="60" />
-        <spawn x="-43262" y="82074" z="-4360" heading="57345" respawn="60" randomRespawn="57345" />
-        <spawn x="-55583" y="89294" z="-3872" heading="0" respawn="60" />
-        <spawn x="-54158" y="81595" z="-4784" heading="0" respawn="60" />
-        <spawn x="-40965" y="82621" z="-4280" heading="0" respawn="60" />
-        <spawn x="-60887" y="77851" z="-3904" heading="0" respawn="60" />
-        <spawn x="-60296" y="83440" z="-4448" heading="0" respawn="60" />
-        <spawn x="-61049" y="77247" z="-3912" heading="0" respawn="60" />
-        <spawn x="-44216" y="74590" z="-3648" heading="48064" respawn="60" randomRespawn="48064" />
-        <spawn x="-61615" y="77178" z="-3912" heading="0" respawn="60" />
-        <spawn x="-35656" y="85420" z="-3184" heading="0" respawn="60" />
-        <spawn x="-36551" y="85481" z="-3168" heading="0" respawn="60" />
-        <spawn x="-53495" y="82478" z="-4824" heading="33874" respawn="60" randomRespawn="33874" />
-        <spawn x="-51924" y="80599" z="-4824" heading="0" respawn="60" />
-        <spawn x="-56032" y="91202" z="-3864" heading="0" respawn="60" />
-        <spawn x="-61237" y="78428" z="-3920" heading="0" respawn="60" />
-        <spawn x="-62555" y="77620" z="-3904" heading="0" respawn="60" />
-        <spawn x="-49709" y="81113" z="-4880" heading="0" respawn="60" />
-        <spawn x="-56989" y="91730" z="-3840" heading="0" respawn="60" />
-        <spawn x="-58662" y="82436" z="-4480" heading="37802" respawn="60" randomRespawn="37802" />
-        <spawn x="-35445" y="86765" z="-3160" heading="47150" respawn="60" randomRespawn="47150" />
-        <spawn x="-57124" y="76599" z="-4240" heading="40267" respawn="60" randomRespawn="40267" />
-        <spawn x="-57560" y="83494" z="-4488" heading="0" respawn="60" />
+
+
     </npc>
     <npc id="23558" name="Fury Kerberos Nero" level="100" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
          mpReg="0.0"
@@ -17245,42 +17006,7 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-55616" y="89467" z="-3880" heading="0" respawn="60" />
-        <spawn x="-59842" y="84442" z="-4464" heading="54252" respawn="60" randomRespawn="54252" />
-        <spawn x="-41008" y="82727" z="-4280" heading="11255" respawn="60" randomRespawn="11255" />
-        <spawn x="-53137" y="82587" z="-4784" heading="0" respawn="60" />
-        <spawn x="-58706" y="82329" z="-4480" heading="38902" respawn="60" randomRespawn="38902" />
-        <spawn x="-50479" y="79886" z="-4848" heading="0" respawn="60" />
-        <spawn x="-61051" y="77419" z="-3936" heading="0" respawn="60" />
-        <spawn x="-57018" y="76642" z="-4224" heading="0" respawn="60" />
-        <spawn x="-61652" y="77049" z="-3912" heading="0" respawn="60" />
-        <spawn x="-56977" y="90213" z="-3848" heading="0" respawn="60" />
-        <spawn x="-44110" y="74547" z="-3648" heading="48805" respawn="60" randomRespawn="48805" />
-        <spawn x="-35424" y="85390" z="-3168" heading="0" respawn="60" />
-        <spawn x="-36605" y="85522" z="-3168" heading="0" respawn="60" />
-        <spawn x="-51230" y="78724" z="-4816" heading="0" respawn="60" />
-        <spawn x="-56092" y="91247" z="-3856" heading="0" respawn="60" />
-        <spawn x="-56505" y="75737" z="-4232" heading="57345" respawn="60" randomRespawn="57345" />
-        <spawn x="-60747" y="77685" z="-3928" heading="0" respawn="60" />
-        <spawn x="-60121" y="83482" z="-4456" heading="8142" respawn="60" randomRespawn="8142" />
-        <spawn x="-57454" y="83450" z="-4488" heading="13314" respawn="60" randomRespawn="13314" />
-        <spawn x="-61736" y="78667" z="-3920" heading="0" respawn="60" />
-        <spawn x="-61343" y="78385" z="-3920" heading="0" respawn="60" />
-        <spawn x="-41208" y="83752" z="-4296" heading="54462" respawn="60" randomRespawn="54462" />
-        <spawn x="-55944" y="91951" z="-3856" heading="0" respawn="60" />
-        <spawn x="-43156" y="82031" z="-4352" heading="45882" respawn="60" randomRespawn="45882" />
-        <spawn x="-56840" y="91883" z="-3848" heading="0" respawn="60" />
-        <spawn x="-58699" y="83504" z="-4480" heading="57345" respawn="60" randomRespawn="57345" />
-        <spawn x="-62763" y="77516" z="-3904" heading="0" respawn="60" />
-        <spawn x="-54052" y="81551" z="-4792" heading="0" respawn="60" />
-        <spawn x="-35369" y="86710" z="-3168" heading="36738" respawn="60" randomRespawn="36738" />
-        <spawn x="-51883" y="80606" z="-4824" heading="0" respawn="60" />
-        <spawn x="-61737" y="78401" z="-3928" heading="0" respawn="60" />
-        <spawn x="-58035" y="84927" z="-4488" heading="0" respawn="60" />
-        <spawn x="-49792" y="81278" z="-4888" heading="0" respawn="60" />
-        <spawn x="-51373" y="80979" z="-4864" heading="0" respawn="60" />
-        <spawn x="-60403" y="77360" z="-3912" heading="49510" respawn="60" randomRespawn="49510" />
-        <spawn x="-58015" y="84801" z="-4504" heading="0" respawn="60" />
+
     </npc>
     <npc id="23559" name="El Floato" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
          STR="80"
@@ -17306,7 +17032,7 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <spawn x="-52631" y="83763" z="-4864" heading="0" respawn="60" />
-        <spawn x="-48897" y="82391" z="-4872" heading="392" respawn="60" randomRespawn="392" />
+        <spawn x="-48897" y="82391" z="-4872" heading="392" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23562" name="Harpe" title="Separated Evil Thoughts" level="120" type="L2Npc" atkRange="40" hpMax="1"
          hpReg="0.0"
@@ -17323,7 +17049,7 @@
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-50592" y="83216" z="-5128" heading="32274" respawn="60" randomRespawn="32274" />
+        <spawn x="-50592" y="83216" z="-5128" heading="32274" respawn="60" randomRespawn="60" />
     </npc>
     <npc id="23564" name="Croa" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
          STR="80"

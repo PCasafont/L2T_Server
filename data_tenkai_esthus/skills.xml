@@ -7,28 +7,31 @@
         <set name="itemConsumeId" val="38941" />
         <set name="itemConsumeCount" val="1" />
         <set name="capsuled_items_skill"
-             val="38854,1,8;38859,1,8;38874,1,7;38879,1,7;38884,1,7;38889,1,7;38894,1,7;38899,1,7;38931,1,7;26480,1,7;26485,1,7;26490,1,7;26501,1,7;26506,1,7" />
+             val="47681,1,8;47686,1,8;26506,1,8;38854,1,8;38859,1,8;26485,1,8;26490,1,8;26501,1,8;38874,1,7;38879,1,7;38884,1,7;38889,1,7;38894,1,7;38899,1,7;38931,1,7;26480,1,7" />
     </skill>
-    <skill id="17701" levels="5" name="Topaz: Spiritshot">
-        <table name="#power">1062 3717 6903 10089 13275</table>
-        <set name="target" val="TARGET_SINGLE" />
-        <set name="skillType" val="DEBUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="hitTime" val="1000" />
-        <set name="coolTime" val="500" />
-        <set name="reuseDelay" val="60000" />
-        <set name="staticReuse" val="true" />
-        <set name="sharedReuse" val="17701-1" />
-        <set name="castRange" val="600" />
-        <set name="effectRange" val="1100" />
-        <set name="ignoreImmunity" val="true" />
+    <skill id="17701" levels="6" name="Greater Topaz - Spiritshot">
+        <table name="#power">1062 3717 6903 10089 13275 13275</table>
+        <table name="#name">Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz:
+            Spiritshot;Greater Topaz - Spiritshot
+        </table>
+        <table name="#lethal"> 0 0 0 0 0 5</table>
+        <set name="name" val="#name"/>
+        <set name="target" val="TARGET_SINGLE"/>
+        <set name="skillType" val="DEBUFF"/>
+        <set name="operateType" val="OP_ACTIVE"/>
+        <set name="hitTime" val="1000"/>
+        <set name="coolTime" val="500"/>
+        <set name="reuseDelay" val="50000"/>
+        <set name="staticReuse" val="true"/>
+        <set name="sharedReuse" val="17701-1"/>
+        <set name="castRange" val="600"/>
+        <set name="effectRange" val="1100"/>
+        <set name="lethal2" val="#lethal"/>
+        <set name="ignoreImmunity" val="true"/>
         <for>
-            <cond msgId="1509">
-                <player olympiad="false" />
-            </cond>
             <abnormal>
-                <effect type="AbortCast" val="0" />
-                <effect type="FixedPcDmg" val="#power" />
+                <effect type="AbortCast" val="0"/>
+                <effect type="FixedPcDmg" val="#power"/>
             </abnormal>
         </for>
     </skill>
@@ -68,7 +71,7 @@
         <set name="isDebuff" val="true" />
         <set name="ignoreResists" val="true" />
         <set name="removedOnDamage" val="true" />
-        <set name="removedOnDamageChance" val="20" />
+        <set name="removedOnDamageChance" val="5" />
         <for>
             <abnormal duration="30" stackLvl="#abnormalLvl" stackType="real_target" visualEffect="realtarget">
                 <effect type="Debuff" val="0" />

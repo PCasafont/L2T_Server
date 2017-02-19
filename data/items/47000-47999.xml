@@ -703,9 +703,9 @@
           weight="0" crystal_type="none">
     </item>
     <!-- A crystal with Anakim's Soul. Can assign soul crystal enhancement ability to weapons. -->
-    <item id="47098" type="Weapon" name="Anakim Soul Crystal - Stage 10" icon="icon.bm_ensoul_stone_pve" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47098" type="EtcItem" name="Anakim Soul Crystal - Stage 10" icon="icon.bm_ensoul_stone_pve"
+          immediateEffect="1"
+          weight="0" isStackable="false">
     </item>
     <!-- A crystal with Lilith's Energy. When compounded with the Shining Soul of Monster Spirit, the crystal absorbs the monster's soul and becomes Lilith's Soul Crystal, which releases the seal of power and is able to assign special abilities to weapons. -->
     <item id="47099" type="Weapon" name="Crystal with Lilith's Energy" icon="icon.bm_ensoul_stone_PvP_empty"
@@ -758,9 +758,9 @@
           weight="0" crystal_type="none">
     </item>
     <!-- A crystal with Lilith's Soul. Can assign soul crystal enhancement ability to weapons. -->
-    <item id="47109" type="Weapon" name="Lilith Soul Crystal - Stage 10" icon="icon.bm_ensoul_stone_pvp" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47109" type="EtcItem" name="Lilith Soul Crystal - Stage 10" icon="icon.bm_ensoul_stone_pvp"
+          immediateEffect="1"
+          weight="0" isStackable="false">
     </item>
     <!-- A crystal with the Soul of the Seven Signs. Can assign soul crystal enhancement ability to weapons. Can be upgraded to the next stage by compounding with a monster's soul. If upgrade is successful, the power of the soul sealed into the Soul Crystal becomes stronger. -->
     <item id="47110" type="Weapon" name="Seven Signs Soul Crystal - Stage 4" icon="icon.bm_ensoul_stone_hidden"
@@ -2742,10 +2742,20 @@
 		(Craft Effect)
 		STR +2
 	-->
-    <item id="47466" type="Weapon" name="Baium's Soul Ring - Str" icon="icon.accessory_ring_of_baium_i00"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47466" type="Armor" name="Baium's Soul Ring - STR" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13539" level="1" /> <!-- Baium's Soul Ring -->
+        <skill id="18660" level="1" /> <!-- Crafted - Str -->
+
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Damage +15%, Atk. Spd./Casting Spd. +5%, Stun/Hold/Mental Atk./Def. Success Rate +25%
@@ -2753,10 +2763,20 @@
 		(Craft Effect)
 		INT +2
 	-->
-    <item id="47467" type="Weapon" name="Baium's Soul Ring - Int" icon="icon.accessory_ring_of_baium_i00"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47467" type="Armor" name="Baium's Soul Ring - Int" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13539" level="1" /> <!-- Baium's Soul Ring -->
+        <skill id="18661" level="1" /> <!-- Crafted - Int -->
+
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Damage +15%, Atk. Spd./Casting Spd. +5%, Stun/Hold/Mental Atk./Def. Success Rate +25%
@@ -2764,10 +2784,20 @@
 		(Craft Effect)
 		CON +2
 	-->
-    <item id="47468" type="Weapon" name="Baium's Soul Ring - CON" icon="icon.accessory_ring_of_baium_i00"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47468" type="Armor" name="Baium's Soul Ring - CON" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13539" level="1" /> <!-- Baium's Soul Ring -->
+        <skill id="18662" level="1" /> <!-- Crafted - Con -->
+
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -2786,10 +2816,20 @@
 		(Craft Effect)
 		Skill Cooldown -3%
 	-->
-    <item id="47470" type="Weapon" name="Frintezza's Soul Necklace - Mind"
-          icon="icon.accessory_necklace_of_frintessa_i00" bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47470" type="Armor" name="Frintezza's Soul Necklace - Mind" icon="icon.accessory_necklace_of_frintessa_i00"
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="158" />
+        <add stat="maxMp" val="62" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13540" level="1" /> <!-- Frintezza's Soul Necklace -->
+        <skill id="13540" level="1" /> <!-- Craft - Mind -->
+        <crystallizeReward id="36164" count="2" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="15.461" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="8" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="18.527" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -3865,131 +3905,153 @@
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- When using a physical skill after equipping, P. Critical Damage + 1% and P. Skill Critical Damage + 1%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47677" type="Weapon" name="Red Cat's Eye - Lv. 1" icon="icon.bm_jewel_red_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47677" type="Armor" name="Red Cat's Eye - Lv. 1" icon="icon.bm_jewel_red_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5" >
+        <skill id="18713" level="1" />
     </item>
     <!-- When using a physical skill after equipping, P. Critical Damage + 2% and P. Skill Critical Damage + 2%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47678" type="Weapon" name="Red Cat's Eye - Lv. 2" icon="icon.bm_jewel_red_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When using a physical skill after equipping, P. Critical Damage + 4% and P. Skill Critical Damage + 4%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47679" type="Weapon" name="Red Cat's Eye - Lv. 3" icon="icon.bm_jewel_red_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When using a physical skill after equipping, P. Critical Damage + 7% and P. Skill Critical Damage + 7%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47680" type="Weapon" name="Red Cat's Eye - Lv. 4" icon="icon.bm_jewel_red_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When using a physical skill after equipping, P. Critical Damage + 12% and P. Skill Critical Damage + 12%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47681" type="Weapon" name="Red Cat's Eye - Lv. 5" icon="icon.bm_jewel_red_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When equipped, M. Skill Critical Damage + 1%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47682" type="Weapon" name="Blue Cat's Eye - Lv. 1" icon="Icon.bm_jewel_blue_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When equipped, M. Skill Critical Damage + 2%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47683" type="Weapon" name="Blue Cat's Eye - Lv. 2" icon="Icon.bm_jewel_blue_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When equipped, M. Skill Critical Damage + 4%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47684" type="Weapon" name="Blue Cat's Eye - Lv. 3" icon="Icon.bm_jewel_blue_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When equipped, M. Skill Critical Damage + 7%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47685" type="Weapon" name="Blue Cat's Eye - Lv. 4" icon="Icon.bm_jewel_blue_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- When equipped, M. Skill Critical Damage + 12%. Effect does not stack with additional jewels of the same type. -->
-    <item id="47686" type="Weapon" name="Blue Cat's Eye - Lv. 5" icon="Icon.bm_jewel_blue_catseye" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-    </item>
-    <!-- Disrupts the target's skill casting when used. When used on a PC, inflicts damage with 13275 power, ignoring the target's CP. Low chance of killing the enemy instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47687" type="Armor" name="Greater Topaz" icon="icon.bm_jewel_absdmg_high_lv1_lavianrose" defaultAction="equip"
+    <item id="47678" type="Armor" name="Red Cat's Eye - Lv. 2" icon="icon.bm_jewel_red_catseye" defaultAction="equip"
           bodypart="jewel"
           immediateEffect="1" weight="5">
-         <!-- Greater Topaz -->
+        <skill id="18713" level="2" />
+    </item>
+    <!-- When using a physical skill after equipping, P. Critical Damage + 4% and P. Skill Critical Damage + 4%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47679" type="Armor" name="Red Cat's Eye - Lv. 3" icon="icon.bm_jewel_red_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18713" level="3" />
+    </item>
+    <!-- When using a physical skill after equipping, P. Critical Damage + 7% and P. Skill Critical Damage + 7%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47680" type="Armor" name="Red Cat's Eye - Lv. 4" icon="icon.bm_jewel_red_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18713" level="4" />
+    </item>
+    <!-- When using a physical skill after equipping, P. Critical Damage + 12% and P. Skill Critical Damage + 12%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47681" type="Armor" name="Red Cat's Eye - Lv. 5" icon="icon.bm_jewel_red_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18713" level="5" />
+    </item>
+    <!-- When equipped, M. Skill Critical Damage + 1%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47682" type="Armor" name="Blue Cat's Eye - Lv. 1" icon="Icon.bm_jewel_blue_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="1" />
+    </item>
+    <!-- When equipped, M. Skill Critical Damage + 2%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47683" type="Armor" name="Blue Cat's Eye - Lv. 2" icon="Icon.bm_jewel_blue_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="2" />
+    </item>
+    <!-- When equipped, M. Skill Critical Damage + 4%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47684" type="Armor" name="Blue Cat's Eye - Lv. 3" icon="Icon.bm_jewel_blue_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="3" />
+    </item>
+    <!-- When equipped, M. Skill Critical Damage + 7%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47685" type="Armor" name="Blue Cat's Eye - Lv. 4" icon="Icon.bm_jewel_blue_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="4" />
+    </item>
+    <!-- When equipped, M. Skill Critical Damage + 12%. Effect does not stack with additional jewels of the same type. -->
+    <item id="47686" type="Armor" name="Blue Cat's Eye - Lv. 5" icon="Icon.bm_jewel_blue_catseye" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="5" />
+    </item>
+    <!-- Disrupts the target's skill casting when used. When used on a PC, inflicts damage with 13275 power, ignoring the target's CP. Low chance of killing the enemy instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <!-- Disrupts the target's skill casting when used. When used on a PC, inflicts damage with 13275 power, ignoring the target's CP. Low chance of killing the enemy instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="47687" type="Armor" name="Topaz - Lv.6 " icon="icon.bm_jewel_absdmg_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="17701" level="6" />
+        <!-- Greater Topaz -->
     </item>
     <!-- When equipped, increases Soulshot and Beast Soulshot damage by 20% and P. Atk. By 9%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47688" type="Armor" name="Greater Ruby" icon="icon.bm_jewel_ssdmg_high_lv1_lavianrose" defaultAction="equip"
+    <item id="47688" type="Armor" name="Ruby - Lv. 6" icon="icon.etc_bm_jewel_ruby_i00" defaultAction="equip"
           bodypart="jewel"
-          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
-        <skill id="18715" level="1" />
+          immediateEffect="1" weight="5">
+        <skill id="18717" level="1"/>
     </item>
     <!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 20% and M. Atk. By 13%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47689" type="Armor" name="Greater Sapphire" icon="icon.bm_jewel_spsdmg_high_lv1_lavianrose" defaultAction="equip"
+    <item id="47689" type="Armor" name="Sapphire - Lv. 6" icon="icon.etc_bm_jewel_sapphire_i00" defaultAction="equip"
           bodypart="jewel"
-          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
-        <skill id="18718" level="1"/>
+          immediateEffect="1" weight="5">
+        <skill id="18719" level="1"/>
     </item>
     <!-- When equipped, PvP incoming damage decreases by 15% and cancels the attacker's target. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47690" type="Armor" name="Greater Obsidian" icon="icon.bm_jewel_pvpdef_high_lv1_lavianrose"
-          bodypart="jewel" material="steel"
-          weight="0" crystal_type="none">
-        <skill id="17704" level="6"/>
+    <item id="47690" type="Armor" name="Obsidian - Lv. 6" icon="icon.etc_bm_jewel_obsidian_i00" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="17704" level="6" /> <!-- Obsidian -->
         <skill id="18720" level="1"/>
     </item>
     <!-- When equipped, increases Attack Attribute by 120 and all Defense Attributes by 70. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47691" type="Weapon" name="Greater Opal" icon="icon.bm_jewel_atkeleup_high_lv1_lavianrose" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47691" type="Armor" name="Opal - Lv. 6" icon="icon.etc_bm_jewel_opal_i00" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="17705" level="6" /> <!-- Opal -->
     </item>
     <!-- When equipped, all basic stats + 3 and Skill Prominence rate + 30%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47692" type="Weapon" name="Greater Emerald" icon="icon.bm_jewel_allstat_high_lv1_lavianrose"
-          bodypart="none" material="steel"
-          weight="0" crystal_type="none">
+    <item id="47692" type="Armor" name="Emerald - Lv. 6"  defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="17825" level="6" /> <!-- Emerald -->
     </item>
     <!-- When using a skill after equipping, there is a 15% chance of recovering 136 MP, and skill cooldown is reduced by 5%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47693" type="Weapon" name="Greater Aquamarine" icon="icon.bm_jewel_castmpup_high_lv1_lavianrose"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47693" type="Armor" name="Aquamarine - Lv. 6" icon="icon.bm_jewel_castmpup_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">>
+        <skill id="17823" level="6" /> <!-- Aquamarine -->
     </item>
     <!-- When equipped, P. Def. Increases by 1986 and incoming P. Critical Damage decreases by 5%. P. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47694" type="Armor" name="Greater Diamond" icon="icon.bm_jewel_phydef_high_lv1_lavianrose" defaultAction="equip"
+    <item id="47694" type="Armor" name="Diamond - Lv. 6"  defaultAction="equip"
           bodypart="jewel"
-          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
-        <skill id="17708" level="6" />
+          immediateEffect="1" weight="5">
+        <skill id="17708" level="6" /> <!-- Diamond -->
     </item>
     <!-- When equipped, M. Def. Increases by 1150 and incoming M. Critical Damage decreases by 5%. M. Def. increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47695" type="Weapon" name="Greater Pearl" icon="icon.bm_jewel_magdef_high_lv1_lavianrose" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <skill id="17709" level="6" />
+    <item id="47695" type="Armor" name="Pearl - Lv. 6"  defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="17709" level="6" /> <!-- Pearl -->
     </item>
     <!-- Increases Vitality Status Bonus XP by 30% and the Vitality Point Consumption Speed decreases by 15%. XP Gain increases by 10% as well. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47696" type="Weapon" name="Greater Vital Stone" icon="icon.bm_jewel_vital_high_lv1_lavianrose"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47696" type="Armor" name="Vital Stone - Lv. 6" icon="icon.bm_jewel_vital_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18568" level="6" /> <!-- Vital Stone -->
     </item>
     <!-- Increases success rate of Resistance to Debuffs by 30%, and when receiving damage to a PC, Stun/Silence are canceled. When used, all debuffs are canceled. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47697" type="Weapon" name="Greater Garnet" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
+    <item id="47697" type="Armor" name="Garnet - Lv. 6" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18567" level="2" /> <!-- Garnet -->
+        <skill id="18566" level="6" /> <!-- Garnet Passive -->
     </item>
     <!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds, and recovers 15% of Max HP immediately. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47698" type="Weapon" name="Greater Tanzanite" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47698" type="Armor" name="Tanzanite - Lv. 6" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18565" level="6" /> <!-- Tanzanite -->
     </item>
-    <!-- When using a physical skill after equipping, P. Critical Damage + 12%, P. Skill Critical Damage + 12% and P. Skill Power + 5%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47699" type="Weapon" name="Greater Red Cat's Eye" icon="icon.bm_jewel_red_catseye_high_lv1_lavianrose"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <!-- When using a physical skill after equipping, P. Critical Damage + 12%, P. Skill Critical Damage + 12% and P.
+     Skill Power + 5%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
+    <item id="47699" type="Armor" name="Red Cat's Eye - Lv. 6" icon="icon.bm_jewel_red_catseye_high_lv1_lavianrose" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="18713" level="6" />
     </item>
     <!-- When equipped, M. Skill Critical Damage + 12% and M. Skill Power + 5%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="47700" type="Armor" name="Greater Blue Cat's Eye" icon="icon.bm_jewel_blue_catseye_high_lv1_lavianrose"
+    <item id="47700" type="Armor" name="Blue Cat's Eye - Lv. 6" icon="icon.bm_jewel_blue_catseye_high_lv1_lavianrose" defaultAction="equip"
           bodypart="jewel"
-          material="steel" weight="0" crystal_type="none">
+          immediateEffect="1" weight="5">
+        <skill id="18714" level="6" />
     </item>
     <!-- Double-click to obtain a Red Cat's Eye Lv. 1. -->
     <item id="47701" type="Weapon" name="La Vie En Rose's Red Cat's Eye Chest"

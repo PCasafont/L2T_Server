@@ -2183,6 +2183,7 @@
         <baseAdd stat="mDef" val="48" />
         <add stat="maxMp" val="21" />
         <enchant stat="mDef" val="0" />
+        <skill id="3561" level="1" /> <!-- Baium's Ring -->
     </item>
     <!-- P. Atk. + 5 for S-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 6 for two-handed sword, two-handed blunt, dualsword, and two-handed fist weapon. P. Atk. 10 for bow weapons. M. Atk. 4 for all weapons. P. Atk./M. Atk. doubles starting at + 4. -->
     <item id="22306" type="EtcItem" name="Scroll: Enchant Weapon (S-grade) - Event"

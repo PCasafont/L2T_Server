@@ -67,7 +67,7 @@
     </npc>
     <npc id="40007" templateId="35693" name="Kraid" serverSideName="true" title="Donations Manager"
          serverSideTitle="true" level="70"
-         type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
+         type="L2ServicesNpc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
          INT="28" WIT="53"
          MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40"
          mCritRate="40" walkSpd="80"

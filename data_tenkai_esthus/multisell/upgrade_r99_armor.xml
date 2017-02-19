@@ -39,7 +39,7 @@
     <item>
         <!-- Ingredients -->
         <ingredient count="50" id="37559" />    <!-- Shiny Coin -->
-        <ingredient count="1" id="35050" />    <!-- Dark Eternal Gaiters - Defense Type / Heavy -->
+        <ingredient count="1" id="35020" />    <!-- Dark Eternal Gaiters - Defense Type / Heavy -->
         <!-- Products -->
         <production count="1" id="27796" />    <!-- Ultimate Eternal Gaiters - Defense Type / Heavy Armor / Lv1 -->
     </item>

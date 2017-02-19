@@ -1510,8 +1510,10 @@
     </item>
     <!-- Enchant Scroll exclusive to Pa'agrio, Sayha, Maphr and Eva Shirts. When enchanted, increases P. Def. and M. Def. by 1. From +3, Elemental defense increases by 3, and from +4, P. Def. Increases by 3. Can be safely enchanted up to +3 and can be enchanted up to a max of +10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from +4. At +5, +6, +7, +8, +9, and +10, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->
     <item id="23241" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt" icon="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00"
-          immediateEffect="1"
-          weight="10" isStackable="true" handler="EnchantScrolls">
+          defaultAction="skill_reduce" etcitemType="bless_scrl_enchant_am" immediateEffect="1" weight="120"
+          price="7000000" isStackable="true"
+          isOlyRestricted="true" handler="EnchantScrolls">
+        <skill id="2028" level="1" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
     </item>
     <!-- Obtained by defeating a raid boss. Contains a standard or blessed D-grade weapon. -->
     <item id="23242" type="EtcItem" name="Weapon Pack Blessed by Light (D-grade)"
@@ -3027,7 +3029,7 @@
     <!-- Changes the appearance of the entire armor into that of a Maid Costume. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. Female only. -->
     <item id="23513" type="EtcItem" name="Maid Appearance Stone" icon="BranchSys3.icon1.g_co_cutie_maid_stone"
           immediateEffect="1"
-          weight="0" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
+          weight="0" isTradable="true" isDropable="true" isSellable="true" isStackable="true"
           handler="AppearanceStone" standardItem="23458">
         <cond msgId="1518">
             <player sex="1" />
@@ -3624,6 +3626,8 @@
           bodypart="rear;lear" immediateEffect="1" weight="150" isTradable="false" isDropable="false"
           isSellable="false">
         <baseAdd stat="mDef" val="170" />
+        <skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+        <skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
     </item>
     <!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Attack Rate + 50%, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Attack + 5%, P. Atk. + 10%, M. Atk. + 20%. Wild Magic Effect, and Damage Shield effect. Decreases P. Skill cooldown and M. Skill cooldown. Can use Cancel Hold skill, and Hold Resistance + 100% momentarily. 3-day. -->
     <item id="23639" type="Armor" name="Blessed Valakas' Necklace - 3-day" icon="icon.accessory_necklace_of_valakas_i00"
@@ -3641,6 +3645,8 @@
           defaultAction="equip"
           bodypart="neck" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
         <baseAdd stat="mDef" val="226" />
+        <skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
     </item>
     <!-- Double-click to obtain a random Star Agathion (7-day). -->
     <item id="23641" type="EtcItem" name="Star Agathion Pack" icon="icon.etc_pi_box_joy_pack" immediateEffect="1"
@@ -5454,6 +5460,7 @@
           defaultAction="equip"
           bodypart="hairall" immediateEffect="1" weight="0">
         <enchant stat="mDef" val="0" />
+        <skill id="26110" level="1"/> <!-- 2014 World Olympiad Hero's Accessory -->
     </item>
     <!-- Hair Accessory worn by the semifinalist of the 2014 World Olympiad. Equip for a boost of + 2 on all stats. -->
     <item id="23954" type="Armor" name="2014 World Olympiad Semifinalist's Accessory"

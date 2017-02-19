@@ -158,6 +158,9 @@ public class SpiritShot implements IItemHandler
 					case 38931:
 						sapphireLvl = 5;
 						break;
+					case 47689:
+						sapphireLvl = 6;
+						break;
 				}
 			}
 		}
@@ -233,6 +236,10 @@ public class SpiritShot implements IItemHandler
 				skillId = 17821;
 				sapphireMul = 1.2;
 				break;
+			case 6:
+				skillId = 18718;
+				skillLvl = 1;
+				sapphireMul = 1.2;
 		}
 
 		activeChar.consumableLock.lock();

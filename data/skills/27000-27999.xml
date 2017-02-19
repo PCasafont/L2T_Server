@@ -2332,7 +2332,7 @@
 		Level 3: For 15 seconds when hunting monsters, Vitality Consumption + 100%, XP/SP Gain + 100%. Cooldown 20 minutes.
 	-->
     <skill id="27439" levels="3" name="Vital Stone - Vital Wind">
-        <set name="target" val="TARGET_NONE" />
+        <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="reuseDelay" val="1200000" />
@@ -2384,16 +2384,19 @@
 		Level 6: Increases Damage in PvP by 15%, and decreases the chance of receiving a critical attack by 25%.
 	-->
     <skill id="27442" levels="6" name="Greater Amethyst">
-        <table name="#pvpDam">3 5 7 10 15</table>
+        <table name="#pvpDam">3 5 7 10 15 15</table>
         <table name="#name">Amethyst;Amethyst;Amethyst;Amethyst;Amethyst;Greater Amethyst</table>
+        <table name="#physicals">0 0 0 0 0 25</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
+
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
             <addPercent stat="pvpPhysDmg" val="#pvpDam" />
             <addPercent stat="pvpMagicalDmg" val="#pvpDam" />
             <addPercent stat="pvpPhysSkillsDmg" val="#pvpDam" />
+            <subPercent stat="critVuln" val="#physicals" />
         </for>
     </skill>
     <!-- Removes invincibility of target. Cooldown 30 minutes. -->
@@ -3518,4 +3521,20 @@
             <addPercent stat="mAtk" val="2" />
         </for>
     </skill>
-    </list>
+    <skill id="27718" levels="1" name="La Vie En Rose Elegant Brooch">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+        <add stat="inventoryLimit" val="12" />
+        </for>
+    </skill>
+    <skill id="27719" levels="1" name="La Vie En Rose Elegant Brooch">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <override stat="jewelry" val="6" />
+        </for>
+    </skill>
+</list>

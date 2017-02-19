@@ -43,7 +43,7 @@ public class Halloween extends Quest
 	private static final int mountedRaidId = 80331;
 	private static final int finalRaidId = 80330;
 	private static final int passiveSkillId = 90003;
-	private static final int[] minionIds = {80335, 80336, 80337, 80338, 80339, 80340, 80341, 80342};
+	private static final int[] minionIds = {80318, 80319, 80320, 80356, 80322, 80323, 80324, 80355};
 
 	//Helpers
 	private static final int kegorId = 80332;
@@ -197,14 +197,14 @@ public class Halloween extends Quest
 			dummy = addSpawn(80346, 153570, 142072, -12741, 39237, false, 0, false, instanceId);
 
 			Announcements.getInstance().announceToAll(
-					"The global Halloween Instance now is available through Pumkin Ghost located in Giran!");
+					"ssh");
 			Announcements.getInstance().announceToAll("The instance will start on 10 minutes!");
 			Announcements.getInstance().announceToAll("When started, none will be able to enter!");
 
 			eventState = 1;
 
 			startQuestTimer("stop_event", 130 * 60000, null, null);
-			startQuestTimer("stage_1_start_event", Debug ? 60000 : 10 * 60000, null, null);
+			startQuestTimer("stage_1_start_event", Debug ? 60000 : 1 *  60000, null, null);
 		}
 		else if (event.equalsIgnoreCase("stage_1_start_event"))
 		{

@@ -47,6 +47,10 @@ public class DimensionalDoor extends Quest
 		}
 	}
 
+	public String onTalkNpc(L2Npc npc, L2PcInstance player) {
+		return null;
+	}
+
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{

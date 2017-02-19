@@ -16,6 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.ItemTable;
@@ -579,7 +580,12 @@ public final class UseItem extends L2GameClientPacket
 						.getSystemMessage(SystemMessageId.THIS_ITEM_CANT_BE_EQUIPPED_FOR_THE_OLYMPIAD_EVENT));
 				return;
 			}
-
+			// Ranked Restriction Items
+			if (Ranked1v1.fighters.containsKey(activeChar) && item.getItem().isOlyRestricted())
+			{
+				activeChar.sendMessage("Item restricted!");
+				return;
+			}
 			switch (item.getItem().getBodyPart())
 			{
 				case L2Item.SLOT_LR_HAND:

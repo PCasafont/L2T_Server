@@ -22,6 +22,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.*;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.ai.L2CharacterAI;
 import l2server.gameserver.ai.L2PlayerAI;
 import l2server.gameserver.ai.L2SummonAI;
@@ -41,6 +42,7 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.events.instanced.types.StalkedStalkers;
+import l2server.gameserver.events.PvpZone;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.ItemHandler;
@@ -75,7 +77,6 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2BossZone;
 import l2server.gameserver.model.zone.type.L2NoRestartZone;
-import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -6756,6 +6757,17 @@ public class L2PcInstance extends L2Playable
 		if (killer != null)
 		{
 			L2PcInstance pk = killer.getActingPlayer();
+
+			if(RandomFight.state == RandomFight.State.FIGHT)
+			           {
+			               if(RandomFight.players.contains(this) && RandomFight.players.contains(pk))
+			               {
+			                   pk.sendMessage("You won !");
+							   Announcements.getInstance().announceToAll("Random Fight Results : "+pk.getName()+" is the winner.");
+
+			               }
+			           }
+
 			if (getEvent() != null)
 			{
 				getEvent().onKill(killer, this);
@@ -6766,7 +6778,7 @@ public class L2PcInstance extends L2Playable
 			//	OpenWorldOlympiadsManager.getInstance().onKill(pk, this);
 			//}
 
-			if (getIsInsideGMEvent() && pk.getIsInsideGMEvent())
+			if (pk != null && getIsInsideGMEvent() && pk.getIsInsideGMEvent())
 			{
 				GMEventManager.getInstance().onKill(killer, this);
 			}
@@ -6813,6 +6825,40 @@ public class L2PcInstance extends L2Playable
 					!getIsInsideGMEvent())
 			{
 				RankingKillInfo.getInstance().updateSpecificKillInfo(pk, this);
+			}
+			if (pk != null && getEvent() == null && !isInOlympiadMode())
+			{
+				if (RandomFight.state == RandomFight.State.FIGHT && RandomFight.players.contains(this) && RandomFight.players.contains(pk))
+				{
+					RandomFight.getInstance().onKillInia(pk, this);
+				}
+			}
+
+			if (Ranked1v1.state == Ranked1v1.State.FIGHT && pk != null && getEvent() == null && !isInOlympiadMode())
+			{
+				if (Ranked1v1.fighters.containsKey(this) && Ranked1v1.fighters.containsKey(pk))
+				{
+					Ranked1v1.getInstance().onKill2v2(pk, this);
+				}
+			}
+			if (Ranked2v2.state == Ranked2v2.State.FIGHT && pk != null && getEvent() == null && !isInOlympiadMode())
+			{
+				if (Ranked2v2.teamOne.contains(this) || Ranked2v2.teamTwo.contains(this))
+				{
+					if (Ranked2v2.teamOne.contains(pk) || Ranked2v2.teamTwo.contains(pk))
+					{
+						Ranked2v2.getInstance().onKill2v2(pk, this);
+					}
+				}
+
+			}
+
+			if (pk != null && getEvent() == null && !isInOlympiadMode())
+			{
+				if (PvpZone.state == PvpZone.State.FIGHT &&  PvpZone.players.contains(this) && PvpZone.players.contains(pk))
+				{
+					PvpZone.getInstance().onKillPvpZone(this, pk);
+				}
 			}
 
 			if (pk != null && pk.getClan() != null && getClan() != null && getClan() != pk.getClan() &&
@@ -12162,7 +12208,7 @@ public class L2PcInstance extends L2Playable
 			return effectArray[effect];
 		}*/
 
-		sendSysMessage("Glow = " + Math.min(127, wpn.getEnchantLevel()));
+		//sendSysMessage("Glow = " + Math.min(127, wpn.getEnchantLevel()));
 		return Math.min(127, wpn.getEnchantLevel());
 	}
 
@@ -16879,7 +16925,15 @@ public class L2PcInstance extends L2Playable
 		{
 			L2ItemInstance equippedItem = getInventory().getPaperdollItem(i);
 			if (equippedItem != null && (!equippedItem.getItem().checkCondition(this, this, false) ||
-					isInOlympiadMode() && equippedItem.getItem().isOlyRestricted()))
+					isInOlympiadMode() && equippedItem.getItem().isOlyRestricted() || (RandomFight.state == RandomFight.State.FIGHT &&
+					RandomFight.players.contains(this) && equippedItem.getItem().isOlyRestricted()) || (PvpZone.state == PvpZone.State.FIGHT &&
+					PvpZone.players.contains(this) && equippedItem.getItem().isOlyRestricted()  ||
+					(Ranked1v1.state == Ranked1v1.State.FIGHT &&
+							Ranked1v1.fighters.containsKey(this) &&
+							equippedItem.getItem().isOlyRestricted())||
+					(Ranked2v2.state == Ranked2v2.State.FIGHT &&
+							Ranked2v2.fighters.containsKey(this) &&
+							equippedItem.getItem().isOlyRestricted()))))
 			{
 				getInventory().unEquipItemInSlot(i);
 
@@ -22655,6 +22709,31 @@ public class L2PcInstance extends L2Playable
 		return isInsideZone(L2Character.ZONE_PVP) || isInsideZone(L2Character.ZONE_SIEGE);
 	}
 
+	public void setRankedPoints(int amount)
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE characters SET rankedPoints=? WHERE charId=?");
+			statement.setInt(1, amount);
+			statement.setInt(2, this.getObjectId());
+
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
 	private int _lastPhysicalDamages;
 
 	public final void setLastPhysicalDamages(int lastPhysicalDamages)
@@ -23048,7 +23127,7 @@ public class L2PcInstance extends L2Playable
 		//	startDragonBloodConsumeTask();
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
-			if (isPlayingEvent() || isInOlympiadMode())
+			if (isPlayingEvent() || isInOlympiadMode() || Ranked1v1.fighters.containsKey(L2PcInstance.this) )
 			{
 				getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
 				broadcastUserInfo();

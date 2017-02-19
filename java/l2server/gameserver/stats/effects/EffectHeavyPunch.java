@@ -72,15 +72,14 @@ public class EffectHeavyPunch extends L2Effect
 		attacker.sendMessage("Heavy Punch is acting up.");
 
 		double multiplier = 17.5;
-		if (Config.isServer(Config.TENKAI))
-		{
-			multiplier = 4;
-		}
+
+			multiplier = 17;
+
 
 		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier *
 				attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
 
-		if (Config.isServer(Config.TENKAI) && damage > 10000 && target.getActingPlayer() != null)
+		if (damage > 10000 && target.getActingPlayer() != null)
 		{
 			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
 		}

@@ -11422,7 +11422,6 @@
         <skill id="10040" level="6" reqSp="4990000" minLevel="98" /> <!-- Summon Golden Lion -->
         <skill id="1927" level="1" reqSp="0" minLevel="85" learnFromPanel="false" autoGet="true" /> <!-- Sigel Force -->
         <skill id="10021" level="1" reqSp="10000" minLevel="85"> <!-- Spike Shield -->
-            <reqSkill id="86" /> <!-- Reflect Damage -->
             <reqSkill id="916" /> <!-- Shield Deflect Magic -->
         </skill>
         <skill id="10021" level="2" reqSp="250000" minLevel="90" /> <!-- Spike Shield -->
@@ -14778,7 +14777,7 @@
         <skill id="11124" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Wizardry -->
         <skill id="11124" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Wizardry -->
         <skill id="11134" level="1" reqSp="211440000" minLevel="101" /> <!-- Meteor -->
-        <skill id="11153" level="1" reqSp="211440000" minLevel="100"/> <!-- Chain Blaze -->
+        <skill id="11153" level="25" reqSp="211440000" minLevel="100"/> <!-- Chain Blaze -->
     </class>
     <class id="167" name="Feoh Soultaker" parentId="95" pickSkillsFrom="143" isMage="true" level="85" baseHp="6990"
            hpAdd="105" hpMod="0" baseMp="3514" mpAdd="70" mpMod="0" baseCp="9652" cpAdd="145" cpMod="0">
@@ -15076,6 +15075,9 @@
         <skill id="11347" level="2" reqSp="250000" minLevel="90" /> <!-- Greater Servitor Haste -->
         <skill id="11347" level="3" reqSp="1000000" minLevel="95" /> <!-- Greater Servitor Haste -->
         <skill id="11347" level="4" reqSp="5000000" minLevel="99" /> <!-- Greater Servitor Haste -->
+        <skill id="11347" level="5" reqSp="211440000" minLevel="101" /> <!-- Greater Servitor Haste -->
+        <skill id="11347" level="6" reqSp="608946501" minLevel="103" /> <!-- Greater Servitor Haste -->
+        <skill id="11347" level="7" reqSp="1753765925" minLevel="105" /> <!-- Greater Servitor Haste -->
         <skill id="11350" level="1" reqSp="10000" minLevel="85" /> <!-- Arcana Rage -->
         <skill id="11350" level="2" reqSp="250000" minLevel="90" /> <!-- Arcana Rage -->
         <skill id="11350" level="3" reqSp="1000000" minLevel="95" /> <!-- Arcana Rage -->
@@ -15099,6 +15101,10 @@
         <skill id="11370" level="5" reqSp="1461471604" minLevel="104" /> <!-- Summon Witch Cat -->
         <skill id="11370" level="6" reqSp="1753765925" minLevel="105" /> <!-- Summon Witch Cat -->
         <skill id="11387" level="1" reqSp="211440000" minLevel="101" /> <!-- Arcana's Call -->
+        <skill id="11394" level="1" reqSp="211440000" minLevel="99" /> <!-- Surrender to the Elemental -->
+        <skill id="11394" level="2" reqSp="211440000" minLevel="100" /> <!-- Surrender to the Elemental -->
+        <skill id="11394" level="3" reqSp="211440000" minLevel="101" /> <!-- Surrender to the Elemental -->
+    <skill id="11394" level="4" reqSp="211440000" minLevel="102" /> <!-- Surrender to the Elemental -->
     </class>
     <class id="177" name="Wynn Elemental Master" parentId="104" pickSkillsFrom="145" isMage="true" level="85"
            baseHp="6502" hpAdd="98" hpMod="0" baseMp="3368" mpAdd="67" mpMod="0" baseCp="9873" cpAdd="148" cpMod="0">
@@ -15130,6 +15136,9 @@
         <skill id="11348" level="2" reqSp="250000" minLevel="90" /> <!-- Servitor Death Whisper -->
         <skill id="11348" level="3" reqSp="1000000" minLevel="95" /> <!-- Servitor Death Whisper -->
         <skill id="11348" level="4" reqSp="5000000" minLevel="99" /> <!-- Servitor Death Whisper -->
+        <skill id="11348" level="5" reqSp="211440000" minLevel="101" /> <!-- Servitor Death Whisper -->
+        <skill id="11348" level="6" reqSp="608946501" minLevel="103" /> <!-- Servitor Death Whisper -->
+        <skill id="11348" level="7" reqSp="1753765925" minLevel="105" /> <!-- Servitor Death Whisper -->
         <skill id="11353" level="1" reqSp="10000" minLevel="85" /> <!-- Elemental Rage -->
         <skill id="11353" level="2" reqSp="250000" minLevel="90" /> <!-- Elemental Rage -->
         <skill id="11353" level="3" reqSp="1000000" minLevel="95" /> <!-- Elemental Rage -->
@@ -15156,6 +15165,10 @@
         <skill id="11372" level="5" reqSp="1461471604" minLevel="104" /> <!-- Summon Unicorn Cherub -->
         <skill id="11372" level="6" reqSp="1753765925" minLevel="105" /> <!-- Summon Unicorn Cherub -->
         <skill id="11389" level="1" reqSp="211440000" minLevel="101" /> <!-- Elemental's Call -->
+        <skill id="11393" level="1" reqSp="211440000" minLevel="99" /> <!-- Freezing Invoke -->
+        <skill id="11393" level="2" reqSp="211440000" minLevel="100" /> <!-- Freezing Invoke -->
+        <skill id="11393" level="3" reqSp="211440000" minLevel="101" /> <!-- Freezing Invoke -->
+    <skill id="11393" level="4" reqSp="211440000" minLevel="102" /> <!-- Freezing Invoke -->
     </class>
     <class id="178" name="Wynn Spectral Master" parentId="111" pickSkillsFrom="145" isMage="true" level="85"
            baseHp="6502" hpAdd="98" hpMod="0" baseMp="3368" mpAdd="67" mpMod="0" baseCp="9873" cpAdd="148" cpMod="0">
@@ -15211,6 +15224,7 @@
         <skill id="11374" level="5" reqSp="1461471604" minLevel="104" /> <!-- Summon Banshee Queen -->
         <skill id="11374" level="6" reqSp="1753765925" minLevel="105" /> <!-- Summon Banshee Queen -->
         <skill id="11391" level="1" reqSp="211440000" minLevel="101" /> <!-- Spectral's Call -->
+        <skill id="11395" level="1" reqSp="211440000" minLevel="99" /> <!-- Curse Exposure -->
     </class>
     <class id="179" name="Aeore Cardinal" parentId="97" pickSkillsFrom="146" isMage="true" level="85" baseHp="6751"
            hpAdd="101" hpMod="0" baseMp="4325" mpAdd="87" mpMod="0" baseCp="9137" cpAdd="137" cpMod="0">

@@ -4622,26 +4622,28 @@
 		Level 6: Disrupts the target's skill casting. When used on a PC, inflicts damage with 13275 Power and ignores CP. Low chance of killing the enemy instantly.
 	-->
     <skill id="17701" levels="6" name="Greater Topaz - Spiritshot">
-        <table name="#power">1062 3717 6903 10089 13275</table>
+        <table name="#power">1062 3717 6903 10089 13275 13275</table>
         <table name="#name">Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz:
             Spiritshot;Greater Topaz - Spiritshot
         </table>
-        <set name="name" val="#name" />
-        <set name="target" val="TARGET_SINGLE" />
-        <set name="skillType" val="DEBUFF" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="hitTime" val="1000" />
-        <set name="coolTime" val="500" />
-        <set name="reuseDelay" val="30000" />
-        <set name="staticReuse" val="true" />
-        <set name="sharedReuse" val="17701-1" />
-        <set name="castRange" val="600" />
-        <set name="effectRange" val="1100" />
-        <set name="ignoreImmunity" val="true" />
+        <table name="#lethal"> 0 0 0 0 0 5</table>
+        <set name="name" val="#name"/>
+        <set name="target" val="TARGET_SINGLE"/>
+        <set name="skillType" val="DEBUFF"/>
+        <set name="operateType" val="OP_ACTIVE"/>
+        <set name="hitTime" val="1000"/>
+        <set name="coolTime" val="500"/>
+        <set name="reuseDelay" val="30000"/>
+        <set name="staticReuse" val="true"/>
+        <set name="sharedReuse" val="17701-1"/>
+        <set name="castRange" val="600"/>
+        <set name="effectRange" val="1100"/>
+        <set name="lethal2" val="#lethal"/>
+        <set name="ignoreImmunity" val="true"/>
         <for>
             <abnormal>
-                <effect type="AbortCast" val="0" />
-                <effect type="FixedPcDmg" val="#power" />
+                <effect type="AbortCast" val="0"/>
+                <effect type="FixedPcDmg" val="#power"/>
             </abnormal>
         </for>
     </skill>
@@ -4684,9 +4686,9 @@
 		Level 5: Received Damage in PvP - 15%.
 		Level 6: Received Damage during PvP - 15%, and when attacked the enemy's targeting on you is canceled. Activation wait time is 15 seconds.
 	-->
-    <skill id="17704" levels="6" name="Greater Obsidian">
+    <skill id="17704" levels="6" name="Obsidian">
         <table name="#pvpDef">1 3 7 11 15 15</table>
-        <table name="#name">Obsidian;Obsidian;Obsidian;Obsidian;Obsidian;Greater Obsidian</table>
+        <table name="#name">Obsidian;Obsidian;Obsidian;Obsidian;Obsidian;Obsidian</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
@@ -4706,10 +4708,10 @@
 		Level 5: Attack Attribute + 120.
 		Level 6: Attack Attribute + 120, all Defense Attributes + 70.
 	-->
-    <skill id="17705" levels="6" name="Greater Opal">
+    <skill id="17705" levels="6" name="Opal">
         <table name="#power">10 20 40 70 120 120</table>
         <table name="#res">0 0 0 0 0 70</table>
-        <table name="#name">Opal;Opal;Opal;Opal;Opal;Greater Opal</table>
+        <table name="#name">Opal;Opal;Opal;Opal;Opal;Opal</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
@@ -4764,16 +4766,16 @@
     <skill id="17708" levels="6" name="Diamond">
         <table name="#def">283 567 945 1418 1986 1986</table>
         <table name="#critVuln">1 2 3 4 5 5</table>
-        <table name="#pdef">1.0 1.0 1.0 1.0 1.0 1.10</table>
-        <table name="#name">Diamond;Diamond;Diamond;Diamond;Diamond;Greater Diamond</table>
+        <table name="#pdef">0 0 0 0 0 10</table>
+        <table name="#name">Diamond;Diamond;Diamond;Diamond;Diamond;Diamond</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <add stat="pDef" val="#def"/>
+            <add stat="pDef" val="#def" />
             <subPercent stat="critVuln" val="#critVuln" />
-            <mul stat="pDef" order="0x30" val="#pdef" />
+            <addPercent stat="pDef" val="#pdef"/>
         </for>
     </skill>
     <!--
@@ -4784,19 +4786,19 @@
 		Level 5: M. Def. + 1150, and Received M. Critical Damage - 5%.
 		Level 6: M. Def. + 1150, M. Critical Damage - 5%. Additional M. Def. + 10%.
 	-->
-    <skill id="17709" levels="6" name="Greater Pearl">
-        <table name="#def">163 328 548 821 1150 1150</table>
-        <table name="#matk">1.0 1.0 1.0 1.0 1.0 1.10</table>
+    <skill id="17709" levels="6" name="Pearl">
+        <table name="#def">1    63 328 548 821 1150 1150</table>
+        <table name="#mdef">0 0 0 0 0 10</table>
         <table name="#critVuln">1 2 3 4 5 5</table>
-        <table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Greater_Pearl</table>
+        <table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Pearl</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <add val="#def" order="0x30" stat="mDef" />
+            <add stat="mDef" val="#def" />
             <subPercent stat="magicCritVuln" val="#critVuln" />
-            <mul stat="mDef" val="#matk"/>
+            <addPercent stat="mDef" val="#mdef"/>
         </for>
     </skill>
     <skill id="17710" levels="1" name="10th Anniversary Blessing Effect (Free)">
@@ -5581,16 +5583,16 @@
             <subPercent stat="pReuse" val="#skillCol" />
             <subPercent stat="mReuse" val="#skillCol" />
         </for>
-
     </skill>
+
     <skill id="17824" levels="1" name="La Vie En Rose's Jewelry Box">
-        <set name="target" val="TARGET_SELF" />
-        <set name="skillType" val="EXTRACTABLE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="itemConsumeId" val="38941" />
-        <set name="itemConsumeCount" val="1" />
+        <set name="target" val="TARGET_SELF"/>
+        <set name="skillType" val="EXTRACTABLE"/>
+        <set name="operateType" val="OP_ACTIVE"/>
+        <set name="itemConsumeId" val="38941"/>
+        <set name="itemConsumeCount" val="1"/>
         <set name="capsuled_items_skill"
-             val="38932,1,8;38933,1,8;38934,1,7;38935,1,7;38936,1,7;38937,1,7;38938,1,7;38939,1,7;38940,1,7;26491,1,7;26492,1,7;26493,1,7;26507,1,7;26508,1,7" />
+             val="38932,1,8;38933,1,8;38934,1,7;38935,1,7;38936,1,7;38937,1,7;38938,1,7;38939,1,7;38940,1,7;47681,1,7;47686,1,7;26491,1,7;26492,1,7;26493,1,7;26507,1,7;26508,1,7"/>
     </skill>
     <!--
 		Level 1: CON + 1, MEN + 1
@@ -5600,11 +5602,13 @@
 		Level 5: STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3
 		Level 6: All basic stats + 3, Skill Prominence + 30%.
 	-->
-    <skill id="17825" levels="6" name="Greater Emerald">
-        <table name="#conmen">1 1 1 2 3</table>
-        <table name="#strint">0 1 1 2 3</table>
-        <table name="#dexwit">0 0 1 2 3</table>
-        <table name="#name">Emerald;Emerald;Emerald;Emerald;Emerald;Greater Emerald</table>
+    <skill id="17825" levels="6" name="Emerald">
+        <table name="#conmen">1 1 1 2 3 3</table>
+        <table name="#strint">0 1 1 2 3 3</table>
+        <table name="#dexwit">0 0 1 2 3 3</table>
+        <table name="#luccha">0 0 0 0 0 3</table>
+        <table name="#mast">0 0 0 0 0 30</table>
+        <table name="#name">Emerald;Emerald;Emerald;Emerald;Emerald;Emerald</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
@@ -5616,6 +5620,9 @@
             <baseAdd stat="INT" val="#strint" />
             <baseAdd stat="DEX" val="#dexwit" />
             <baseAdd stat="WIT" val="#dexwit" />
+            <baseAdd stat="LUC" val="#luccha" />
+            <baseAdd stat="CHA" val="#luccha" />
+            <addPercentBase stat="skillMastery" val="#mast"/>
         </for>
     </skill>
     <skill id="17826" levels="1" name="10th Anniversary Time Capsule Box">

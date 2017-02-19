@@ -2523,26 +2523,39 @@
     <!-- MP + 59, Bleed Resistance + 50%, Bleed Atk. Rate + 50%. Increases Heal Amount, Vampiric Rage Effect, Stun/Mental Attack Resistance + 40%, Stun/Mental Atk. Rate + 40%. Decreases physical/magic skill MP consumption. Increases Earth/Holy defense. CON + 3, MEN + 3. Increases P. Def. and M. Def. Can use Stun canceling skills. Momentarily increases Stun Resistance + 100%. Only one effect is applied when two of the same earrings are equipped. -->
     <item id="36409" type="Armor" name="Blessed Antharas' Earring (14-day) - Event"
           icon="icon.accessory_earring_of_antaras_i00"
-          defaultAction="equip" bodypart="rear;lear" immediateEffect="1" weight="150">
+          defaultAction="equip" bodypart="rear;lear" immediateEffect="1" weight="150"
+          isEnchantable="false" isOlyRestricted="true" time="20160" isEpic="true">
         <baseAdd stat="mDef" val="170" />
+        <skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+        <skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
     </item>
     <!-- Increases HP by 625, MP by 79, Sleep Resistance by 50%, Sleep Attack Rate by 50%, Fire Resistance by 30, Dark Resistance by 20, STR by 3, INT by 3, P. Skill Power by 5%, P. Atk. by 10%, and M. Atk. by 20%. Decreases M. Skill and P. Skill cooldown, and creates a Wild Magic Effect and Damage Shield effect. Can use Cancel Hold and momentarily makes Hold Resistance 100%. -->
     <item id="36410" type="Armor" name="Blessed Valakas' Necklace (14-day) - Event"
           icon="icon.accessory_necklace_of_valakas_i00"
-          defaultAction="equip" bodypart="neck" immediateEffect="1" weight="150">
+          defaultAction="equip" bodypart="neck" immediateEffect="1" weight="150"
+          isEnchantable="false" isOlyRestricted="true" time="20160" isEpic="true">
         <baseAdd stat="mDef" val="226" />
+        <skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
     </item>
     <!-- Tauti's Ring. Increases Fire/Dark Resistance by 25, MP by 38, Critical Damage by 15%, Skill Atk. Power by 5%, damage inflicted during PvP by 5%, Paralyze/Yoke/Banishment Resistance by 10, Damage Reflect Resistance by 5, and Blood Siphon Resistance by 5. Decreases damage received during PvP by 5%, and increases Critical by 54 when equipped with a blunt. Wearing two of these rings will give you the effect of wearing one (excluding Attribute Resistance or M. Def.). -->
     <item id="36411" type="Armor" name="Tauti's Ring (14-day) - Event" icon="icon.accessary_tauti_ring"
           defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150">
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150"
+          isEnchantable="false" isOlyRestricted="true" time="20160" isEpic="true">
         <baseAdd stat="mDef" val="108" />
+        <skill id="8870" level="1" /> <!-- Tauti's Ring -->
     </item>
     <!-- Increases MP by 38, Poison Resistance by 50%, Poison Attack Rate by 50%, Knock Back/Knock Down/Pulling Resistance by 20, and Physical/Magic Attack Resistance, MP Regeneration, Critical Damage, Accuracy, Atk. Spd., Casting Spd., and Wind/Water Resistance. Can increase party members' Atk. Spd., Casting Spd., and Vampiric Rage, and use Poison Cancellation. Wearing two of these rings will give you the effect of wearing one. -->
     <item id="36412" type="Armor" name="Earth Wyrm Heart Ring (14-day) - Event" icon="icon.ring_earthworm_heart"
           defaultAction="equip"
-          bodypart="rfinger;lfinger" immediateEffect="1" weight="150">
+          bodypart="rfinger;lfinger" immediateEffect="1" weight="150"
+          isDepositable="false"
+          isEnchantable="false" isOlyRestricted="true" time="20160" isEpic="true">
         <baseAdd stat="mDef" val="108" />
+        <skill id="13317" level="1" /> <!-- Earth Wyrm Heart Ring -->
+        <skill id="13318" level="1" /> <!-- Earth Wyrm Heart Ring -->
+        <skill id="13319" level="1" /> <!-- Earth Wyrm Heart Ring -->
     </item>
     <!-- Changes into single mesh in a certain area. -->
     <item id="36413" type="Armor" name="Single Mesh Armor" icon="icon.armor_t2000_ul_i00" defaultAction="equip"

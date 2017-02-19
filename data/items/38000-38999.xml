@@ -6487,7 +6487,7 @@
     <!-- Disrupts the target's skill casting when used. When used on a PC, inflicts damage with 13275 power and ignores the target's CP. Effect does not stack with additional jewels of the same type. -->
     <item id="38854" type="Armor" name="Topaz - Lv. 5" icon="icon.etc_bm_jewel_topaz_i00" defaultAction="equip"
           bodypart="jewel"
-          immediateEffect="1" weight="5">
+          immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
         <skill id="17701" level="5" /> <!-- Topaz: Spiritshot -->
     </item>
     <!-- When equipped, increases Soulshot and Beast Soulshot damage by 1%. Effect does not stack with additional jewels of the same type. -->

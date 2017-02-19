@@ -3905,8 +3905,7 @@
                 27 28 29 30
             </enchantRoute>
         </table>
-        <set name="target" val="TARGET_AROUND_TARGET" />
-        <set name="targetDirection" val="AROUND" />
+        <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="MDAM" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
@@ -3921,6 +3920,7 @@
         <set name="baseCritRate" val="#baseCritRate" />
         <set name="elementPower" val="20" />
         <set name="negateId" val="11105" />
+
         <for>
             <cond msgId="109">
                 <target active_effect_id="11105" />
@@ -4515,8 +4515,6 @@
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="500" />
         <set name="reuseDelay" val="7000" />
-
-
         <for>
             <abnormal noicon="1">
                 <effect type="Negate" val="0" />
@@ -4616,7 +4614,7 @@
         <set name="isStanceSwitch" val="true" />
         <for>
             <abnormal landRate="#landRate" noicon="1">
-                <effect activationChance="100" chanceType="ON_START" triggeredId="11188" triggeredLevel="0"
+                <effect activationChance="70" chanceType="ON_START" triggeredId="11188" triggeredLevel="0"
                         type="ChanceSkillTrigger" val="0" />
             </abnormal>
         </for>
@@ -6137,6 +6135,11 @@
                 <add stat="ownerMAtkSpd" val="10" />
                 <add stat="ownerCrit" val="30" />
                 <add stat="ownerCritDmg" val="15" />
+                <add stat="owneraccMagic" val="250" />
+                <add stat="ownerrEvas" val="50" />
+                <add stat="ownermEvasRate" val="18" />
+                <add stat="bowWpnVuln" val="60" />-->
+                <add stat="servitorAccuracy" val="400" />
             </abnormal>
         </for>
     </skill>
@@ -6500,7 +6503,7 @@
         <set name="power" val="#power" />
         <set name="hitTime" val="3500" />
         <set name="coolTime" val="500" />
-        <set name="reuseDelay" val="3000" />
+        <set name="reuseDelay" val="1000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
     </skill>
@@ -6646,7 +6649,7 @@
         </table>
         <set name="target" val="TARGET_SUMMON" />
         <set name="targetDirection" val="ALL_SUMMONS" />
-        <set name="skillType" val="CANCEL_DEBUFF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
         <set name="mpConsume" val="70" />
@@ -6662,7 +6665,8 @@
                 <effect type="Heal" val="#enchHeal" />
             </abnormal>
             <abnormal duration="5" stackLvl="3" stackType="abnormal_immunity">
-                <set stat="debuffImmunity" val="1" />
+                <effect type="CancelDebuff" val="0" />
+                <set stat="debuffImmunity" val="5" />
             </abnormal>
         </for>
     </skill>
@@ -6691,7 +6695,7 @@
         <set name="mpConsume" val="70" />
         <set name="hitTime" val="2000" />
         <set name="coolTime" val="200" />
-        <set name="reuseDelay" val="900000" />
+        <set name="reuseDelay" val="600000" />
         <set name="castRange" val="900" />
         <set name="effectRange" val="1400" />
         <set name="skillRadius" val="1000" />
@@ -7488,9 +7492,9 @@
         <enchantRoute id="3" level="3,4,5,6,7" /> <!-- Wind -->
         <table name="#mpConsume">61 67 73 79</table>
         <table name="#atkSpd">10 12 15 20 20 20 20</table>
-        <table name="#atk">0 0 0 5 7 10</table>
-        <table name="#acc">0 0 0 2 4 6</table>
-        <table name="#maxHp">0 0 0 5 10 15</table>
+        <table name="#atk">0 0 0 0 5 7 10 </table>
+        <table name="#acc">0 0 0 0 2 4 6</table>
+        <table name="#maxHp">0 0 0 0 5 10 15 </table>
         <table name="#addPercentPDef">0
             <enchantRoute id="1" level="3,4">1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9
                 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6
@@ -7545,9 +7549,9 @@
         <enchantRoute id="3" level="3,4,5,6,7" /> <!-- Wind -->
         <table name="#mpConsume">61 67 73 79</table>
         <table name="#critDmg">10 12 15 20 20 20 20</table>
-        <table name="#atk">0 0 0 5 7 10</table>
-        <table name="#acc">0 0 0 2 4 6</table>
-        <table name="#maxHp">0 0 0 5 10 15</table>
+        <table name="#atk">0 0 0 0 5 7 10</table>
+        <table name="#acc">0 0 0 0 2 4 6</table>
+        <table name="#maxHp">0 0 0 0 5 10 15</table>
         <table name="#addPercentPDef">0
             <enchantRoute id="1" level="3,4">1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9
                 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6
@@ -8385,7 +8389,7 @@
     <skill id="11380" levels="3" name="Power Stump">
         <table name="#power">22677 23839 25001</table>
         <table name="#mpConsume">86 86 87</table>
-        <set name="target" val="TARGET_AROUND_TARGET" />
+        <set name="target" val="TARGET_AROUND_CASTER" />
         <set name="targetDirection" val="AROUND" />
         <set name="skillType" val="PDAM" />
         <set name="operateType" val="OP_ACTIVE" />
@@ -8553,6 +8557,9 @@
         <for>
             <abnormal duration="30">
                 <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
                 <addPercent stat="accCombat" val="23" />
                 <addPercent stat="knockDownProf" val="60" />
                 <addPercent stat="knockBackProf" val="60" />
@@ -8602,6 +8609,9 @@
         <for>
             <abnormal duration="30">
                 <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
                 <addPercent stat="pAtkSpd" val="10" />
                 <subPercent stat="mReuse" val="60" />
                 <subPercent stat="pReuse" val="60" />
@@ -8651,6 +8661,9 @@
         <for>
             <abnormal duration="30">
                 <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
                 <addPercent stat="pCritDmg" val="10" />
                 <set stat="debuffImmunity" val="1" />
             </abnormal>
@@ -8678,6 +8691,83 @@
                 <addPercent stat="mAtk" val="20" />
                 <addPercent stat="pDef" val="20" />
                 <addPercent stat="mDef" val="20" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="11393" levels="4" name="Freezing Invoke">
+        <table name="#mpConsume">286 301 316 331</table>
+        <table name="#power">224 231 238 245</table>
+        <table name="#magiclv">99 101 103 105</table>
+        <set name="magicLvl" val="#magiclv"/>
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="power" val="#power" />
+        <set name="castRange" val="1500"/>
+        <set name="hitTime" val="2560" />
+        <set name="coolTime" val="500" />
+        <set name="reuseDelay" val="10000" />
+        <set name="isMagic" val="true" />
+        <set name="skillType" val="MDAM" />
+        <set name="itemConsumeCount" val="2" />
+        <set name="itemConsumeId" val="3031" />
+        <set name="power" val="#power" />
+        <set name="target" val="TARGET_AROUND_TARGET" />
+        <set name="targetDirection" val="AROUND" />
+        <set name="effectRange" val="1500" />
+        <set name="behaviorType" val="ATTACK" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <for>
+            <abnormal effectType="DEBUFF" duration="20" landRate="80">
+                <subPercent stat="pDef" val="30" />
+                <subPercent stat="mDef" val="30" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="11394" levels="4" name="Surrender to the Elemental">
+        <table name="#mpConsume">286 301 316 331</table>
+        <table name="#power">249 256 264 272</table>
+        <table name="#magiclv">99 101 103 105</table>
+        <set name="target" val="TARGET_SINGLE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="behaviorType" val="ATTACK" />
+        <set name="isMagic" val="true" />
+        <set name="magicLvl" val="#magiclv"/>
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="itemConsumeId" val="3031" />
+        <set name="power" val="#power" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="300" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="1100" />
+        <for>
+            <abnormal effectType="DEBUFF" duration="10" landRate="80">
+                <sub stat="fireRes" val="50" />
+                <sub stat="waterRes" val="50" />
+                <sub stat="windRes" val="50" />
+                <sub stat="earthRes" val="50" />
+                <sub stat="holyRes" val="50" />
+                <sub stat="darkRes" val="50" />
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="11395" levels="1" name="Curse Exposure">
+        <set name="target" val="TARGET_SINGLE" />
+        <set name="skillType" val="MDAM" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="behaviorType" val="ATTACK" />
+        <set name="isMagic" val="true" />
+        <set name="mpConsume" val="286" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="itemConsumeId" val="3031" />
+        <set name="power" val="249" />
+        <set name="hitTime" val="3000" />
+        <set name="coolTime" val="300" />
+        <set name="reuseDelay" val="5000" />
+        <set name="castRange" val="1100" />
+        <for>
+            <abnormal effectType="DEBUFF" duration="30" landRate="80">
+                <subPercent stat="blowRate" val="30" />
             </abnormal>
         </for>
     </skill>

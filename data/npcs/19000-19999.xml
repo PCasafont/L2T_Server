@@ -2783,7 +2783,7 @@
     </npc>
     <npc id="19269" name="Clan Flag" level="99" type="L2Monster" atkRange="40" hpMax="22104185" hpReg="71.06"
          mpMax="2555" mpReg="51.57"
-         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30625" mAtk="21875" pDef="3300" mDef="3250"
+         STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30625" mAtk="21875" pDef="30000" mDef="30000"
          pAtkSpd="253"
          mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="15"
          collisionHeight="120" fireRes="300"
@@ -5795,7 +5795,7 @@
          mDef="3000"
          pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="60" runSpd="120" collisionRadius="24"
          collisionHeight="57"
-         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
         <skill id="4416" level="9" /> <!-- Demons -->
         <itemDrop itemId="35567" min="1" max="1" chance="1" /> <!-- Dark Eternal Enhancement Stone -->
         <dropCategory chance="100">
@@ -5810,7 +5810,7 @@
          mDef="3000"
          pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="30"
          collisionHeight="43"
-         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
         <skill id="4416" level="9" /> <!-- Demons -->
         <itemDrop itemId="35567" min="1" max="1" chance="1" /> <!-- Dark Eternal Enhancement Stone -->
         <dropCategory chance="100">
@@ -5825,7 +5825,7 @@
          mDef="3000"
          pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="18"
          collisionHeight="38"
-         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
         <skill id="4416" level="9" /> <!-- Demons -->
         <itemDrop itemId="35567" min="1" max="1" chance="1" /> <!-- Dark Eternal Enhancement Stone -->
         <dropCategory chance="100">

@@ -6919,7 +6919,7 @@
     <!-- Coin owned by Sorcerer Kail who used to be an aid of Beleth. Take it to Warehouse Keeper Sorint. -->
     <item id="5899" type="EtcItem" name="Kail's Coin" icon="icon.etc_magic_coin_blood_i00" immediateEffect="1"
           isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
+          isDropable="false" isSellable="false" isDepositable="false" isStackable="true" >
     </item>
     <!-- High-quality coin collecting album made of leather. -->
     <item id="5900" type="EtcItem" name="Coin Collecting Album" icon="icon.etc_magic_book_black_i00" immediateEffect="1"

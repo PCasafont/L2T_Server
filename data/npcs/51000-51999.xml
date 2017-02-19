@@ -1,0 +1,82 @@
+<list>
+    <npc id="51000" templateId="20969" name="Giant's Solo Mob" serverSideName="true" title="L2 Tenkai Test Mob" serverSideTitle="true"
+         level="105" type="L2Monster" atkRange="500" hpMax="964696" hpReg="44.91" mpMax="45970"
+         mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="320000" mAtk="1600000" pDef="14800"
+         mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" randomWalk="true" rHand="4028"
+         extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="120" waterRes="120" windRes="120" earthRes="120"
+         holyRes="120" darkRes="120" aiType="fighter" skillChance="15" clanRange="300" isLethalImmune="true">
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="5465" level="1" /> <!-- Earth Attack -->
+        <skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+        <skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+        <skill id="4457" level="1" /> <!-- Fist Weapon Vulnerability -->
+        <skill id="4459" level="1" /> <!-- Dualsword Vulnerability -->
+        <skill id="4460" level="1" /> <!-- Sword Vulnerability -->
+        <itemDrop itemId="57" min="1000000" max="2000000" chance="100" /> <!-- Adena -->
+    </npc>
+    <npc id="51001" templateId="25162" name="Giant's Party Mob" title="Tenkai Party Mob" serverSideName="true" level="107" type="L2Monster" atkRange="700" hpMax="1289650"
+         hpReg="153.244"
+         mpMax="789655" mpReg="2.4" STR="164" CON="111" DEX="111" INT="188" WIT="111" MEN="111" exp="26852500" sp="1250321650"
+         pAtk="1950000"
+         mAtk="1795000" pDef="43500" mDef="43500" pAtkSpd="280" mAtkSpd="1500" pCritRate="15" mCritRate="15" walkSpd="150"
+         runSpd="180"
+         rHand="3937" collisionRadius="120" collisionHeight="120" fireRes="120" waterRes="120" windRes="120" earthRes="120"
+         holyRes="120"
+         darkRes="120" aiType="balanced" skillChance="100" clanRange="300" dodge="-18" isLethalImmune="true">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4851" level="1" /> <!-- Raid Boss (Lv. 60) -->
+        <skill id="4416" level="11" /> <!-- Giants -->
+        <skill id="4411" level="11" /> <!-- Average M. Atk. -->
+        <skill id="4412" level="11" /> <!-- Average P. Def. -->
+        <skill id="4413" level="11" /> <!-- Average M. Def. -->
+        <skill id="4414" level="1" /> <!-- Standard Type -->
+        <skill id="4415" level="3" /> <!-- One-handed Sword -->
+        <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+        <skill id="4730" level="6" /> <!-- Mortal Blow -->
+        <skill id="4735" level="6" /> <!-- Spinning Slasher -->
+        <skill id="4173" level="6" /> <!-- Might -->
+        <skill id="4177" level="6" /> <!-- Cancellation -->
+        <skill id="4416" level="3" /> <!-- Beast -->
+        <skill id="5465" level="1" /> <!-- Earth Attack -->
+        <skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+        <skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
+        <skill id="16202" level="4" /> <!-- Fatal Strike -->
+        <itemDrop itemId="57" min="5000000" max="6000000" chance="100" /> <!-- Adena -->
+    </npc>
+    <npc id="92000" templateId="36777" name="Melonis" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+         mpReg="8.29"
+         STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+         mAtkSpd="407"
+         pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+         waterRes="0"
+         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="92010" templateId="8457" name="Kartia" serverSideName="true" title="DC Event"
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter" isLethalImmune="true">
+    </npc>
+    <npc id="92011" templateId="8456" name="Karthos" serverSideName="true" title="DC Event"
+         serverSideTitle="true" level="70"
+         type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter" isLethalImmune="true">
+    </npc>
+    <npc id="92012" templateId="8460" name="Herina" serverSideName="true" title="Sexy Shop" serverSideTitle="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+         mpReg="8.29"
+         STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+         mAtkSpd="407"
+         pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+         waterRes="0"
+         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+</list>

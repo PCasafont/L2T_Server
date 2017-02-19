@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="1" id="10639" /> <!-- Vote Coin -->
+        <production count="10" id="37559" /> <!-- Shiny Coin -->
+    </item>
+    <item>
+        <ingredient count="15" id="10639" /> <!-- Vote Coin -->
+        <production count="1" id="35564" /> <!-- Ruler's Belt -->
+    </item>
+    <item>
+        <ingredient id="10639" count="5" /> <!-- Vote Coin -->
+        <production id="47109" count="1" /> <!--Lillith Stage 10 -->
+    </item>
+    <item>
+        <ingredient id="10639" count="5" /> <!-- Vote Coin -->
+        <production id="47098" count="1" /> <!-- Anakim Stage 10 -->
+    </item>
+</list>

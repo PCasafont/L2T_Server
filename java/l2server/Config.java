@@ -37,6 +37,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static l2server.gameserver.model.RandomFight.players;
+
 public final class Config
 {
 	public static final int DEFAULT = 0x01;
@@ -46,6 +48,11 @@ public final class Config
 	//--------------------------------------------------
 	// Temporary Config File
 	//--------------------------------------------------
+
+	public static boolean ALLOW_RANDOM_FIGHT;
+    public static int EVERY_MINUTES;
+	public static int RANDOM_FIGHT_REWARD_ID;
+  	public static int RANDOM_FIGHT_REWARD_COUNT;
 
 	// Instances
 	public static int FRINTEZZA_MIN_PLAYERS;
@@ -1466,6 +1473,8 @@ public final class Config
 				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
 	}
 
+
+
 	public static int getServerTypeId(String[] serverTypes)
 	{
 		int tType = 0;
@@ -1689,6 +1698,8 @@ public final class Config
 
 		return array;
 	}
+
+
 
 	/**
 	 * itemId1,itemNumber1;itemId2,itemNumber2...

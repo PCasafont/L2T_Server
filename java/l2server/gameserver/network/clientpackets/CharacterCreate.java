@@ -452,6 +452,8 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
 			player.registerShortCut(shortcut);
+
+			//STARTER PACK YOMI ZBEUBE
 			// .landrates macro
             /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
@@ -461,7 +463,11 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 		{
-			//add spawn items
+			item = player.getInventory().addItem("Init", 40213, 1, player, null);
+			shortcut = new L2ShortCut(2, 0, 1, item.getObjectId(), 0, 1);
+			player.registerShortCut(shortcut);
+
 		}
+
 	}
 }

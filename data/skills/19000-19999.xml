@@ -2364,7 +2364,7 @@
         <set name="reuseDelay" val="600000" />
         <set name="aggroPoints" val="669" />
         <for>
-            <abnormal duration="#duration" stackLvl="1" stackType="chant_of_bison">
+            <abnormal duration="#duration" stackLvl="1" stackType="prophecy_of_might">
                 <effect type="Buff" val="0" />
                 <addPercent stat="pAtk" val="10" />
                 <addPercent stat="mAtk" val="10" />
@@ -2850,6 +2850,7 @@
             <abnormal duration="30" stackLvl="1" stackType="song_of_wisdom">
                 <effect type="Buff" val="0" />
                 <addPercent stat="mAtk" val="15" />
+                <addPercent stat="mSkillPower" val="15" />
             </abnormal>
         </for>
     </skill>

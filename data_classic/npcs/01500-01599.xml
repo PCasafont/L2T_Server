@@ -1,9 +1,0 @@
-<list>
-    <npc id="1594" name="Singer &amp; Dancer Agathion" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="3000.0"
-         baseHpReg="10.0" baseMpMax="1500.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
-         basePAtk="1000.0" baseMAtk="750.0" basePDef="500.0" baseMDef="350.0" basePAtkSpd="230" baseCritRate="5"
-         baseWalkSpd="60.0" baseRunSpd="180.0" collisionRadius="5.0" collisionHeight="3.75">
-        <elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
-        <ai type="fighter" />
-    </npc>
-</list>

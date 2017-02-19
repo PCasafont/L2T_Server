@@ -24,12 +24,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.GMAudit;
+import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 /**
  * This class handles following admin commands:
@@ -103,6 +105,7 @@ public class AdminBan implements IAdminCommandHandler
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
 			return false;
 		}
+
 
 		if (command.startsWith("admin_ban"))
 		{

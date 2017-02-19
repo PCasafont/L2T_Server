@@ -209,6 +209,7 @@
         <mob id="23334" /> <!-- Shelop -->
     </farmZone>
     <farmZone name="open_world_raid_bosses">
+        <!-- 1st Page -->
         <mob id="25945" /> <!-- Megaloprepis -->
         <mob id="25956" /> <!-- Vengeful Eligos -->
         <mob id="26022" /> <!-- Dark Messenger Afjak -->
@@ -224,6 +225,22 @@
         <mob id="26027" /> <!-- Destruction Knight Zeruel -->
         <mob id="26034" /> <!-- Corrupted Goblier -->
         <mob id="26036" /> <!-- Corrupted Harthemon -->
+        <!-- 2nd Page -->
+        <mob id="26038" /> <!-- Fallen Angel Eloule -->
+        <mob id="25947" /> <!-- Skellrus' Herald Iskios -->
+        <mob id="25949" /> <!-- Lindvior's Herald Numa -->
+        <mob id="25958" /> <!-- Vengeful Lerazia -->
+        <mob id="25960" /> <!-- Vengeful Edaire -->
+        <mob id="26024" /> <!-- Chaos Wizard Amormio -->
+        <mob id="26026" /> <!-- Death Priest Borhunt -->
+        <mob id="26035" /> <!-- Corrupted Cherkia -->
+        <mob id="26037" /> <!-- Corrupted Sarboth -->
+        <mob id="25967" /> <!-- Zetahl -->
+        <mob id="25978" /> <!-- Garamor's Herald Gariott -->
+        <mob id="26044" /> <!-- Evil Magikus -->
+        <mob id="25968" /> <!-- Tabris -->
+        <mob id="25970" /> <!-- Ravolas -->
+        <mob id="25972" /> <!-- Dephracor -->
     </farmZone>
     <farmZone name="special_mobs_in_farm_zones">
         <mob id="23329" /> <!-- Nerva Kaiser -->
