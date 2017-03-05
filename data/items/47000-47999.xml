@@ -2806,9 +2806,19 @@
 		Max HP +5%
 	-->
     <item id="47469" type="Weapon" name="Frintezza's Soul Necklace - Body"
-          icon="icon.accessory_necklace_of_frintessa_i00" bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="158" />
+        <add stat="maxMp" val="62" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13540" level="1" /> <!-- Frintezza's Soul Necklace -->
+        <skill id="18655" level="1" /> <!-- Craft Effect - Body -->
+        <crystallizeReward id="36164" count="2" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="15.461" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="8" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="18.527" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -2825,7 +2835,7 @@
         <add stat="maxMp" val="62" />
         <enchant stat="mDef" val="0" />
         <skill id="13540" level="1" /> <!-- Frintezza's Soul Necklace -->
-        <skill id="13540" level="1" /> <!-- Craft - Mind -->
+        <skill id="18655" level="1" /> <!-- Craft Effect - Mind -->
         <crystallizeReward id="36164" count="2" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
         <crystallizeReward id="19448" count="1" chance="15.461" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
         <crystallizeReward id="17527" count="8" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -2838,9 +2848,19 @@
 		Fixed Damage Resistance +5%
 	-->
     <item id="47471" type="Weapon" name="Frintezza's Soul Necklace - Barrier"
-          icon="icon.accessory_necklace_of_frintessa_i00"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="158" />
+        <add stat="maxMp" val="62" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13540" level="1" /> <!-- Frintezza's Soul Necklace -->
+        <skill id="18656" level="1" /> <!-- Craft Effect - Barrier -->
+        <crystallizeReward id="36164" count="2" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="15.461" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="8" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="18.527" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2849,10 +2869,20 @@
 		(Craft Effect)
 		STR +2
 	-->
-    <item id="47472" type="Weapon" name="Queen Ant's Soul Ring - Str" icon="icon.accessory_ring_of_queen_ant_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47472" type="Armor" name="Queen Ant's Soul Ring - Str" icon="icon.accessory_ring_of_queen_ant_i00"
+          defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13441" level="1" /> <!-- Queen Ant Soul Ring -->
+        <skill id="18660" level="1" /> <!-- Crafted - Str -->
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2861,10 +2891,20 @@
 		(Craft Effect)
 		INT +2
 	-->
-    <item id="47473" type="Weapon" name="Queen Ant's Soul Ring - Int" icon="icon.accessory_ring_of_queen_ant_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47473" type="Armor" name="Queen Ant's Soul Ring - Int" icon="icon.accessory_ring_of_queen_ant_i00"
+          defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13441" level="1" /> <!-- Queen Ant Soul Ring -->
+        <skill id="18661" level="1" /> <!-- Crafted - Int -->
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2873,10 +2913,20 @@
 		(Craft Effect)
 		CON +2
 	-->
-    <item id="47474" type="Weapon" name="Queen Ant's Soul Ring - CON" icon="icon.accessory_ring_of_queen_ant_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47474" type="Armor" name="Queen Ant's Soul Ring - CON" icon="icon.accessory_ring_of_queen_ant_i00"
+          defaultAction="equip"
+          bodypart="rfinger;lfinger"
+          immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="79" />
+        <add stat="maxMp" val="31" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13441" level="1" /> <!-- Queen Ant Soul Ring -->
+        <skill id="18662" level="1" /> <!-- Crafted - Con -->
+        <crystallizeReward id="36164" count="1" chance="64.363" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="7.73" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="4" chance="92.631" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="9.263" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +46, Sleep/Paralysis/Mental Atk./Def. Success Rate +25%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -3005,10 +3055,21 @@
 		(Craft Effect)
 		P. Def. +4%
 	-->
-    <item id="47484" type="Weapon" name="Blessed Antharas' Earring - Shield"
-          icon="icon.accessory_earring_of_antaras_i00" bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="mDef" val="170" />
+    <item id="47484" type="Armor" name="Blessed Antharas' Earring - Shield"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000"
+          enchantEnabled="1"
+          isEpic="true">
+    <baseAdd stat="mDef" val="170" />
+    <add stat="maxMp" val="59" />
+    <enchant stat="mDef" val="0" />
+    <skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="18657" level="1" /> <!-- Crafted - Shield -->
+    <crystallizeReward id="36164" count="1" chance="11.596" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="19448" count="1" chance="1.393" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="17527" count="1" chance="66.754" /> <!-- Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="36514" count="1" chance="1.669" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -3017,22 +3078,45 @@
 		(Craft Effect)
 		M. Def. +4%
 	-->
-    <item id="47485" type="Weapon" name="Blessed Antharas' Earring - Earth" icon="icon.accessory_earring_of_antaras_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="mDef" val="170" />
+    <item id="47485" type="Armor" name="Blessed Antharas' Earring - Earth" icon="icon.accessory_earring_of_antaras_i00"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000"
+          enchantEnabled="1"
+          isEpic="true">
+    <baseAdd stat="mDef" val="170" />
+    <add stat="maxMp" val="59" />
+    <enchant stat="mDef" val="0" />
+    <skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="18658" level="1" /> <!-- Crafted - Earth -->
+    <crystallizeReward id="36164" count="1" chance="11.596" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="19448" count="1" chance="1.393" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="17527" count="1" chance="66.754" /> <!-- Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="36514" count="1" chance="1.669" /> <!-- Elcyum Crystal -->
     </item>
     <!--
+
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
 		Skills Used: Immediately neutralizes Stun effect when used, and gives Stun Resistance for 5 seconds.
 		Effect does not stack with identical ones.
 		(Craft Effect)
 		6 Major Attributes Def. +25
 	-->
-    <item id="47486" type="Weapon" name="Blessed Antharas' Earring - Pure" icon="icon.accessory_earring_of_antaras_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
-        <baseAdd stat="mDef" val="170" />
+    <item id="47486" type="Armor" name="Blessed Antharas' Earring - Pure" icon="icon.accessory_earring_of_antaras_i00"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000"
+          enchantEnabled="1"
+          isEpic="true">
+    <baseAdd stat="mDef" val="170" />
+    <add stat="maxMp" val="59" />
+    <enchant stat="mDef" val="0" />
+    <skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
+    <skill id="18659" level="1" /> <!-- Crafted - Pure -->
+    <crystallizeReward id="36164" count="1" chance="11.596" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="19448" count="1" chance="1.393" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="17527" count="1" chance="66.754" /> <!-- Scroll: Enchant Armor (R-grade) -->
+    <crystallizeReward id="36514" count="1" chance="1.669" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -3041,10 +3125,21 @@
 		(Craft Effect)
 		Max HP +5%
 	-->
-    <item id="47487" type="Weapon" name="Blessed Valakas' Necklace - Body" icon="icon.accessory_necklace_of_valakas_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47487" type="Armor" name="Blessed Valakas' Necklace - Body" icon="icon.accessory_necklace_of_valakas_i00"
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="226" />
+        <add stat="maxMp" val="79" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="18654" level="1" /> <!-- Craft Effect - Body -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -3053,10 +3148,21 @@
 		(Craft Effect)
 		Skill Cooldown -3%
 	-->
-    <item id="47488" type="Weapon" name="Blessed Valakas' Necklace - Mind" icon="icon.accessory_necklace_of_valakas_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47488" type="Armor" name="Blessed Valakas' Necklace - Mind" icon="icon.accessory_necklace_of_valakas_i00"
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="226" />
+        <add stat="maxMp" val="79" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="18655" level="1" /> <!-- Craft Effect - Mind -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -3065,10 +3171,21 @@
 		(Craft Effect)
 		Fixed Damage Resistance +5%
 	-->
-    <item id="47489" type="Weapon" name="Blessed Valakas' Necklace - Barrier"
-          icon="icon.accessory_necklace_of_valakas_i00"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+    <item id="47489" type="Armor" name="Blessed Valakas' Necklace - Barrier"
+          defaultAction="equip"
+          bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000"
+          enchantEnabled="1"
+          isEpic="true">
         <baseAdd stat="mDef" val="226" />
+        <add stat="maxMp" val="79" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
+        <skill id="18656" level="1" /> <!-- Craft Effect - Barrier -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -3078,10 +3195,20 @@
 		(Craft Effect)
 		P. Def. +4%
 	-->
-    <item id="47490" type="Weapon" name="Lindvior's Earring - Shield" icon="icon.accessory_earring_of_lind_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47490" type="Armor" name="Lindvior's Earring - Shield" icon="icon.accessory_earring_of_lind_i00"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000"
+          isEpic="true">
         <baseAdd stat="mDef" val="170" />
+        <add stat="maxMp" val="59" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13524" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="13542" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="18657" level="1" /> <!-- Crafted - Shield -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -3091,10 +3218,20 @@
 		(Craft Effect)
 		M. Def. +4%
 	-->
-    <item id="47491" type="Weapon" name="Lindvior's Earring - Earth" icon="icon.accessory_earring_of_lind_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47491" type="Armor" name="Lindvior's Earring - Earth" icon="icon.accessory_earring_of_lind_i00"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000"
+          isEpic="true">
         <baseAdd stat="mDef" val="170" />
+        <add stat="maxMp" val="59" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13524" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="13542" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="18658" level="1" /> <!-- Crafted - Earth -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -3104,10 +3241,20 @@
 		(Craft Effect)
 		6 Major Attributes Def. +25
 	-->
-    <item id="47492" type="Weapon" name="Lindvior's Earring - Pure" icon="icon.accessory_earring_of_lind_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="47492" type="Armor" name="Lindvior's Earring - Pure" icon="icon.accessory_earring_of_lind_i00"
+          defaultAction="equip"
+          bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000"
+          isEpic="true">
         <baseAdd stat="mDef" val="170" />
+        <add stat="maxMp" val="59" />
+        <enchant stat="mDef" val="0" />
+        <skill id="13524" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="13542" level="1" /> <!-- Lindvior's Earring -->
+        <skill id="18659" level="1" /> <!-- Crafted - Pure -->
+        <crystallizeReward id="36164" count="1" chance="15.439" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="19448" count="1" chance="1.854" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="17527" count="1" chance="88.881" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <crystallizeReward id="36514" count="1" chance="2.222" /> <!-- Elcyum Crystal -->
     </item>
     <!-- Used as an ingredient when dissolving rare accessories through Rafforty. -->
     <item id="47493" type="Weapon" name="Accessory Solvent" icon="icon.rare_acc_smith_solvent" bodypart="none"

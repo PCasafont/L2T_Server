@@ -21,7 +21,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
-import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,7 +129,7 @@ public class Spezion extends L2AttackableAIScript
                         if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
                         {
                             world.rewardedPlayers.add(pMember);
-                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),3,
+                            pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),35,
                                            player, true);
                         }
                         else

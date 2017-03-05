@@ -15579,6 +15579,8 @@
         <skill id="30511" level="3" reqSp="1500000" minLevel="95" /> <!-- Air Light -->
         <skill id="30511" level="4" reqSp="7500000" minLevel="99" /> <!-- Air Light -->
         <skill id="30511" level="5" reqSp="211440000" minLevel="101" /> <!-- Air Light -->
+        <skill id="30511" level="6" reqSp="608946501" minLevel="103" /> <!-- Air Light -->
+        <skill id="30511" level="7" reqSp="1753765925" minLevel="105" /> <!-- Air Light -->
         <skill id="30514" level="2" reqSp="15000" minLevel="85" /> <!-- Fluid Weave -->
         <skill id="30514" level="3" reqSp="211440000" minLevel="101" /> <!-- Fluid Weave -->
         <skill id="30502" level="15" reqSp="75000" minLevel="86" /> <!-- Chin Strike -->

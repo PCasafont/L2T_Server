@@ -17,7 +17,7 @@ import java.util.Map;
 public class AltarOfTalking extends Quest
 {
     private static final int _margueriteId = 80245;
-    private static final String _qn = "AltarOfTalking";
+    private static final String _qn = "FactionNpc";
     private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
     private static final int[] _raidIds = {80248, 80247, 80246};
     private static final int[] _stoneIds = {20770, 20771, 20772};
@@ -44,7 +44,7 @@ public class AltarOfTalking extends Quest
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        return "AltarOfTalking.html";
+        return "FactionNpc.html";
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AltarOfTalking extends Quest
                     {
                         return stoneId + "-no.html";
                     }
-                    Announcements.getInstance().announceToAll("Marguerite: Mooooooh !");
+                    Announcements.getInstance().announceToAll("Marguerite: Mooooooh!");
                     _spawnInfo.put(bossId, true); //Boss is spawned
 
 
@@ -106,7 +106,7 @@ public class AltarOfTalking extends Quest
             _spawnInfo.put(npc.getNpcId(), false);
 
         }
-        Announcements.getInstance().announceToAll("Marguerite: MOOOOOOOOOH !");
+        Announcements.getInstance().announceToAll("Marguerite: MOOOOOOOOOH!");
         return super.onKill(npc, player, isPet);
     }
 

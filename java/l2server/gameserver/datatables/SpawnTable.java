@@ -283,7 +283,7 @@ public class SpawnTable
 					continue;
 				}
 
-				if (Config.isServer(Config.TENKAI_ESTHUS))
+				if (Config.isServer(Config.TENKAI_VASPER))
 				{
 					if (template.Type.equals("L2RaidBoss") && template.Level <= 85)
 					{

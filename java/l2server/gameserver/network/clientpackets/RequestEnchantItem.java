@@ -193,7 +193,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			{
 				// success
 				int newEnchantLevel = item.getEnchantLevel() + 1;
-				if (Config.isServer(Config.TENKAI_ESTHUS) && newEnchantLevel < 16 && item.getItemId() != 37718)
+				if (Config.isServer(Config.TENKAI_VASPER) && newEnchantLevel < 16 && item.getItemId() != 37718)
 				{
 					newEnchantLevel = 16;
 				}
@@ -233,7 +233,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				// announce the success
 				int minEnchantAnnounce = item.isArmor() ? 6 : 7;
 				int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
-				if (!Config.isServer(Config.TENKAI_ESTHUS) &&
+				if (!Config.isServer(Config.TENKAI_VASPER) &&
 						(item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce))
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);

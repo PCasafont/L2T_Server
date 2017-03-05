@@ -929,7 +929,9 @@
         <set name="coolTime" val="300" />
     </skill>
     <!-- For clan members owning a residence, Max CP + 700, and PvP Def. + 3%. -->
-    <skill id="19103" levels="1" name="Resident Power">
+    <skill id="19103" levels="2" name="Resident Power ">
+        <table name="#pvpDef">3 5</table>
+        <table name="#maxCp">700 1000</table>
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_PASSIVE" />
@@ -937,6 +939,12 @@
         <set name="hitTime" val="1500" />
         <set name="castRange" val="600" />
         <set name="effectRange" val="1100" />
+        <for>
+            <add stat="maxCp" val="#maxCp"/>
+            <addPercent stat="pvpPhysDef" val="#pvpDef" />
+            <addPercent stat="pvpMagicalDef" val="#pvpDef" />
+            <addPercent stat="pvpPhysSkillsDef" val="#pvpDef" />
+        </for>
     </skill>
     <!-- For clan members owning a residence, Max CP + 1000, and PvP Def. + 5%. -->
     <skill id="19104" levels="2" name="Resident Power">

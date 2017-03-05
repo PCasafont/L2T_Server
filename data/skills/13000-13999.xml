@@ -8974,9 +8974,9 @@
 		Level 1: All Stats + 1 with the power of Talisman.
 		Level 2: All Stats + 2 with the power of Talisman.
 	-->
-    <skill id="13827" levels="3" name="Christmas Talisman - ALL STAT (Low)">
+    <skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
         <table name="#name">Christmas Talisman - ALL STAT (High);Christmas Talisman - ALL STAT (Low)</table>
-        <table name="#statlvl">2 1 1 1</table>
+        <table name="#statlvl">1 2</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />

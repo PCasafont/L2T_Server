@@ -3030,12 +3030,14 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_PASSIVE" />
     </skill>
-    <skill id="27551" levels="1" name="Shadai's Jewelry Box">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
-        <set name="operateType" val="OP_ACTIVE" />
-        <set name="hitTime" val="500" />
-        <set name="coolTime" val="500" />
+    <skill id="27551" levels="1" name="La Vie En Rose's Jewelry Box">
+        <set name="target" val="TARGET_SELF"/>
+        <set name="skillType" val="EXTRACTABLE"/>
+        <set name="operateType" val="OP_ACTIVE"/>
+        <set name="itemConsumeId" val="27470"/>
+        <set name="itemConsumeCount" val="1"/>
+        <set name="capsuled_items_skill"
+             val="47681,1,8;47686,1,8"/>
     </skill>
     <!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. -->
     <skill id="27556" levels="1" name="Maphr's Wind Scroll">

@@ -74,7 +74,7 @@ public class TeleportLocationTable implements Reloadable
 						teleport.setLocZ(d.getInt("z"));
 
 						teleport.setPrice(d.getInt("price", 0));
-						if (Config.isServer(Config.TENKAI_ESTHUS))
+						if (Config.isServer(Config.TENKAI_VASPER))
 						{
 							teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
 						}

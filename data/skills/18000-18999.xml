@@ -3379,9 +3379,9 @@
         <set name="excludedFromCheck" val="true" />
         <set name="canBeUsedWhenDisabled" val="true" />
         <for>
-            <abnormal>
+            <abnormal duration="7" stackLvl="2" stackType="abnormal_immunity">
                 <effect type="CancelDebuff" val="0" />
-                <set stat="debuffImmunity" val="#time" />
+                <set stat="debuffImmunity" val="5" />
             </abnormal>
         </for>
     </skill>
@@ -3421,6 +3421,66 @@
         <set name="skillType" val="NOTDONE" />
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
+    <!-- Crafted - Body -->
+    <skill id="18654" levels="1" name="Craft Effect - Body">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="maxHp" val="5" />
+        </for>
+    </skill>
+    <!-- Crafted - Mind -->
+    <skill id="18655" levels="1" name="Craft Effect - Mind">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <subPercent stat="pReuse" val="3" />
+            <subPercent stat="mReuse" val="3" />
+        </for>
+    </skill>
+    <!-- Crafted - Barrier -->
+    <skill id="18656" levels="1" name="Craft Effect - Barrier">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <subPercent stat="fixedDmgVuln" val="5" />
+        </for>
+    </skill>
+    <!-- Crafted - Shield -->
+    <skill id="18657" levels="1" name="Craft Effect - Shield">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="pDef" val="4" />
+        </for>
+    </skill>
+    <!-- Crafted - Earth -->
+    <skill id="18658" levels="1" name="Craft Effect - Earth">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="mDef" val="4" />
+        </for>
+    </skill>
+    <!-- Crafted - Pure -->
+    <skill id="18659" levels="1" name="Craft Effect - Pure">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
+        <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="fireRes" val="25" />
+            <addPercent stat="waterRes" val="25" />
+            <addPercent stat="windRes" val="25" />
+            <addPercent stat="earthRes" val="25" />
+            <addPercent stat="holyRes" val="25" />
+            <addPercent stat="darkRes" val="25" />
+        </for>
+    </skill>
     <!-- Crafted - STR -->
     <skill id="18660" levels="1" name="Craft Effect - STR">
         <set name="target" val="TARGET_SELF" />
@@ -3440,7 +3500,7 @@
         </for>
     </skill>
     <!-- Crafted - Con -->
-    <skill id="18663" levels="1" name="Craft Effect - CON">
+    <skill id="18662" levels="1" name="Craft Effect - CON">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />

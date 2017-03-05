@@ -31,7 +31,7 @@ public class PvpZone
     protected void openRegistrations()
     {
         state=State.LOADING;
-        Broadcast.announceToOnlinePlayers("PvP Zone will open in 30 seconds !");
+        Broadcast.announceToOnlinePlayers("PvP Zone will open in 30 seconds!");
         ThreadPoolManager.getInstance().scheduleGeneral(new fight(), 30000 );
     }
 
@@ -138,10 +138,10 @@ public class PvpZone
 
         killer.addItem("", 5899, amount,killer, true);
 
-        killer.sendMessage("You won " + totalPoints + " points !");
-        killer.sendMessage("Current points : " + getRankedPoints(killer));
+        killer.sendMessage("You won " + totalPoints + " points!");
+        killer.sendMessage("Current points: " + getRankedPoints(killer));
         killed.sendMessage("You lost " + totalPoints / 3 + " points");
-        killed.sendMessage("Current points : " + getRankedPoints(killed));
+        killed.sendMessage("Current points: " + getRankedPoints(killed));
 
 
         List<L2PcInstance> assistants =
@@ -171,7 +171,7 @@ public class PvpZone
 
     public void reviveKilled(L2PcInstance player)
     {
-        player.sendMessage("You will revive in 10 seconds !");
+        player.sendMessage("You will revive in 10 seconds!");
         //Pause of 10 Seconds
         try {
             Thread.sleep(10000);
@@ -186,7 +186,7 @@ public class PvpZone
     protected void startFight()
     {
         state = State.FIGHT;
-        Announcements.getInstance().announceToAll("PvP zone will close in 10 minutes!");
+        Announcements.getInstance().announceToAll("PvP Zone will close in 10 minutes!");
         Broadcast.announceToOnlinePlayers("Write .pvpzone to teleport!");
         ThreadPoolManager.getInstance().scheduleGeneral(new checkLast(), 60000 * 10 );
     }
@@ -195,7 +195,7 @@ public class PvpZone
     {
         if(state == State.FIGHT)
         {
-            Announcements.getInstance().announceToAll("PvP Zone Closed !");
+            Announcements.getInstance().announceToAll("PvP Zone has closed.");
             players.clear();
             fighters.clear();
             _fight.clear();

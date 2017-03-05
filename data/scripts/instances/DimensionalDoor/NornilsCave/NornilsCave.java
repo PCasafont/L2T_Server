@@ -351,7 +351,7 @@ public class NornilsCave extends L2AttackableAIScript
                         {
                             world.rewardedPlayers.add(pMember);
                             pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                    3, player, true);
+                                    15, player, true);
                         }
                         else
                         {

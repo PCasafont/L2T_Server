@@ -37,13 +37,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static l2server.gameserver.model.RandomFight.players;
-
 public final class Config
 {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
-	public static final int TENKAI_ESTHUS = 0x20;
+	public static final int TENKAI_VASPER = 0x20;
 
 	//--------------------------------------------------
 	// Temporary Config File
@@ -1083,15 +1081,15 @@ public final class Config
 					SERVER_NAME_MASK = DEFAULT;
 				}
 
-				if (SERVER_NAME.contains("esthus"))
+				if (SERVER_NAME.contains("vasper") || SERVER_NAME.contains("vasper"))
 				{
-					SERVER_NAME_MASK |= TENKAI_ESTHUS;
+					SERVER_NAME_MASK |= TENKAI_VASPER;
 				}
 
 				//TODO data driven pls
-				WEB_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_web";
-				FORUM_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_board";
-				LOGIN_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_common";
+				WEB_DB_NAME = "l2tenkai_web";
+				FORUM_DB_NAME = "l2tenkai_board";
+				LOGIN_DB_NAME = "l2tenkai_common";
 
 				// Chat Filter (default)
 				try

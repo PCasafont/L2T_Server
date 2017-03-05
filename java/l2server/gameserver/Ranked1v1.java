@@ -2,7 +2,6 @@ package l2server.gameserver;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.events.TopRanked;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
@@ -18,7 +17,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.Vector;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
@@ -65,7 +63,7 @@ public class Ranked1v1
             {
                 continue;
             }
-            sendMessage.getKey().sendMessage("[RANKED] Match found ! You will be teleported in 30 seconds !");
+            sendMessage.getKey().sendMessage("[RANKED] Match found! You will be teleported in 30 seconds!");
             players.remove(sendMessage.getKey());
         }
 
@@ -82,7 +80,7 @@ public class Ranked1v1
                 {
                     continue;
                 }
-                sendMessage.getKey().sendMessage("Ur opponent left !");
+                sendMessage.getKey().sendMessage("Your opponent left!");
             }
             state = State.INACTIVE;
         }
@@ -114,7 +112,7 @@ public class Ranked1v1
             }
 
             fighter.getKey().setIsParalyzed(true);
-            fighter.getKey().sendMessage("Fight will start in 15 seconds");
+            fighter.getKey().sendMessage("Fight will start in 15 seconds.");
             fighter.getKey().setPvpFlag(0);
             fighter.getKey().heal();
             i++;
@@ -185,11 +183,11 @@ public class Ranked1v1
         killer.sendMessage("Duration : " + getTime(killer));
         killed.sendMessage("Duration : " + getTime(killed));
 
-        killer.sendMessage("You won " + totalPoints + " points !");
-        killer.sendMessage("Current points : " + getRankedPoints(killer));
+        killer.sendMessage("You won " + totalPoints + " points!");
+        killer.sendMessage("Current points: " + getRankedPoints(killer));
 
         killed.sendMessage("You lost " + ((totalPoints / 2) - 1)  + " points");
-        killed.sendMessage("Current points : " + getRankedPoints(killed));
+        killed.sendMessage("Current points: " + getRankedPoints(killed));
 
         for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet())
         {
@@ -223,7 +221,7 @@ public class Ranked1v1
                 {
                     continue;
                 }
-                sendMessage.getKey().sendMessage("Your enemy left !");
+                sendMessage.getKey().sendMessage("Your enemy left.");
             }
             state = State.INACTIVE;
         }
@@ -240,7 +238,7 @@ public class Ranked1v1
             }
             fighter.getKey().setPvpFlag(1);
             fighter.getKey().setIsParalyzed(false);
-            fighter.getKey().sendMessage("[RANKED] Fight !");
+            fighter.getKey().sendMessage("[RANKED] Fight!");
             fighter.setValue(System.currentTimeMillis());
         }
 
@@ -285,7 +283,7 @@ return;
                 fighter.getKey().heal();
                 fighter.getKey().setTeam(0);
                 fighter.getKey().teleToLocation(-114435,253417,-1546);
-                fighter.getKey().sendMessage("[RANKED] Tie !");
+                fighter.getKey().sendMessage("[RANKED] Tie!");
             }
             fighters.clear();
             state = State.INACTIVE;
@@ -324,7 +322,7 @@ return;
             player.sendMessage("You're not in the queue.");
             return;
         }
-        player.sendMessage("You left the queue !");
+        player.sendMessage("You left the queue!");
         players.remove(player);
         CustomCommunityBoard.getInstance().parseCmd("_bbscustom;ranked;0;0", player);
         return;
@@ -404,7 +402,7 @@ return;
 
         players.clear();
 
-        player.sendMessage("Queue cleared !");
+        player.sendMessage("Queue cleared!");
         CustomCommunityBoard.getInstance().parseCmd("_bbscustom;ranked;0;0", player);
         return;
     }

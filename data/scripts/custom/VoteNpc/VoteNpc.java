@@ -40,7 +40,7 @@ public class VoteNpc extends Quest
 	private static final int _voteNpcId = 50010;
 	@SuppressWarnings("unused")
 	private static final String SELECT_VOTE_IP =
-			"SELECT * from " + Config.WEB_DB_NAME + ".server_voted_ips WHERE ip = ?";
+			"SELECT * from l2tenkai_web.server_voted_ips WHERE ip = ?";
 
 	//private static Map<Integer, Rewards> _voteRewards = new HashMap<Integer, Rewards>();
 

@@ -308,6 +308,7 @@ public class Christmas extends Quest
 			tb.append(
 					"<a action=\"bypass -h Quest Christmas eventEffect 16420\"><font color=c2dceb>Receive the Tree Fairy's Blessing buff!</font></a><br1>");
 			tb.append(
+
 					"<a action=\"bypass -h Quest Christmas eventEffect 16421\"><font color=c2dceb>Receive the Snowman Fairy's Blessing buff!</font></a><br1>");
 			tb.append("<br>");
 			tb.append("<font color=\"3D81A8\">Christmas Music:</font><br1>");

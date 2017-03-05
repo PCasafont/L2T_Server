@@ -117,7 +117,7 @@ public class EffectCancel extends L2Effect
 				buff.exit();
 
 				// Tenkai custom: recover buffs 1 minute after they're cancelled!
-				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS) &&
+				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_VASPER) &&
 						buff.getEffected() instanceof L2PcInstance)
 				{
 					target.scheduleEffectRecovery(buff, 60, target.isInOlympiadMode());

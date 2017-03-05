@@ -154,7 +154,7 @@ public class Server
 		RecipeController.getInstance();
 		ArmorSetsTable.getInstance();
 		FishTable.getInstance();
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 			EnchantMultiSellTable.getInstance();
 		}
@@ -399,14 +399,7 @@ public class Server
 
 		if (Config.ENABLE_CUSTOM_AUCTIONS)
 		{
-			if (Config.isServer(Config.TENKAI))
-			{
-				TenkaiAuctionManager.getInstance();
-			}
-			else
-			{
-				CustomAuctionManager.getInstance();
-			}
+			TenkaiAuctionManager.getInstance();
 		}
 
 		if (Config.ENABLE_CUSTOM_LOTTERY)

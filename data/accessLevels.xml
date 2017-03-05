@@ -4,7 +4,7 @@
                  isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
                  allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 
-    <accessLevel id="2" name="Head GM" nameColor="00C5CD" titleColor="00FFFF" childAccess="3;4;5;6;7"
+    <accessLevel id="2" name="Head GM" nameColor="00FFFF" titleColor="00FFFF" childAccess="3;4;5;6;7"
                  isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
                  allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 

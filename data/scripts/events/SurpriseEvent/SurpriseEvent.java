@@ -1,28 +1,19 @@
 package events.SurpriseEvent;
 
 import l2server.gameserver.Announcements;
-import l2server.gameserver.GmListTable;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.network.NpcStringId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -223,7 +214,7 @@ public class SurpriseEvent extends Quest
 		if (playerWeapon != null)
 		{
 			player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
-					player.getName() + " You should use ur hands!"));
+					player.getName() + " You should use your hands!"));
 			return "";
 		}
 		else
@@ -234,10 +225,10 @@ public class SurpriseEvent extends Quest
 			L2Character chara = (L2Character) player.getTarget();
 			chara.deleteMe();
 			nb_box--;
-			Announcements.getInstance().announceToAll("a box has been found by " + player.getName() + " !");
+			Announcements.getInstance().announceToAll("A box has been found by " + player.getName() + "!");
 			//for(int k=0; k<_reward_name[random].length; k++)
 			//	Announcements.getInstance().announceToAll( player.getName() + " found : " + _randomRewards[random][1] + " " +  _reward_name[random][k]);
-			Announcements.getInstance().announceToAll("Box(es) left :  " + nb_box + " !");
+			Announcements.getInstance().announceToAll("Boxes left :  " + nb_box + "!");
 			if (nb_box <= 0)
 			{
 				for (L2Character charaa : _invaders)
@@ -251,7 +242,7 @@ public class SurpriseEvent extends Quest
 				_invaders.clear();
 				_attackInfo.clear();
 				_isUnderInvasion = false;
-				Announcements.getInstance().announceToAll("All the box(es) have been found !");
+				Announcements.getInstance().announceToAll("All the boxes have been found!");
 				nb_box = 3;
 			}
 			return super.onKill(npc, player, isPet);

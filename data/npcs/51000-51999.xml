@@ -79,4 +79,12 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
+    <npc id="99999" templateId="13190" name="Inia" serverSideName="true" title="Faction Npc" serverSideTitle="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+         mpReg="8.29"
+         STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+         mAtkSpd="407"
+         pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+         waterRes="0"
+         windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
 </list>

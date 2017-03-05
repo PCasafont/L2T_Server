@@ -10833,8 +10833,8 @@
         <set name="reuseDelay" val="300000" />
         <for>
             <abnormal duration="#duration" effectType="BUFF" stackLvl="1" stackType="pd_up_bow">
-                <addPercent stat="bowWpnVuln" val="#bowWpnVuln" />
-                <addPercent stat="crossbowWpnVuln" val="#bowWpnVuln" />
+                <subPercent stat="bowWpnVuln" val="#bowWpnVuln" />
+                <subPercent stat="crossbowWpnVuln" val="#bowWpnVuln" />
                 <addPercent stat="mDef" val="#mDef" />
                 <addPercent stat="pAtk" val="#addPercentPAtk" />
             </abnormal>

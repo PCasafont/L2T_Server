@@ -22,6 +22,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.*;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.events.Faction.FactionManager;
 import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.ai.L2CharacterAI;
 import l2server.gameserver.ai.L2PlayerAI;
@@ -19625,7 +19626,7 @@ public class L2PcInstance extends L2Playable
 		L2Spawn servitor;
 		float angle = Rnd.get(1000);
 		int sCount = 2;
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 
 				sCount = 2;
@@ -22734,6 +22735,210 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 
+	public int getRankedPoints()
+	{
+		Connection get = null;
+
+		try
+		{
+			get = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = get.prepareStatement(
+					"SELECT rankedPoints FROM characters WHERE charId = ?");
+			statement.setInt(1, this.getObjectId());
+			ResultSet rset = statement.executeQuery();
+
+			if (rset.next())
+			{
+				int currentPoints = rset.getInt("rankedPoints");
+				return (currentPoints);
+			}
+			rset.close();
+			statement.close();
+		}
+
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(get);
+		}
+		return 0;
+	}
+
+	public void setFactionId(int id)
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+
+			if (this.getFactionId() != 0)
+				FactionManager.getInstance().subFactionMember(this.getFactionId(), 1);
+			FactionManager.getInstance().addFactionMember(id,  1);
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE characters SET faction_id=? WHERE charId=?");
+			statement.setInt(1, id);
+			statement.setInt(2, this.getObjectId());
+
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
+	public int getFactionId()
+	{
+		Connection get = null;
+
+		try
+		{
+			get = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = get.prepareStatement(
+					"SELECT faction_id FROM characters WHERE charId = ?");
+			statement.setInt(1, this.getObjectId());
+			ResultSet rset = statement.executeQuery();
+
+			if (rset.next())
+			{
+				int currentPoints = rset.getInt("faction_id");
+				return (currentPoints);
+			}
+			rset.close();
+			statement.close();
+		}
+
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Couldn't get current faction_id points : " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(get);
+		}
+		return 0;
+	}
+
+	public void setFactionPoints(int amount)
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+
+
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
+			statement.setInt(1, amount);
+			statement.setInt(2, this.getObjectId());
+
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
+	public void addFactionPoints(int amount)
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+
+
+
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
+			statement.setInt(1, this.getFactionPoints() +  amount);
+			statement.setInt(2, this.getObjectId());
+
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
+	public void subFactionPoints(int amount)
+	{
+		Connection con = null;
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+
+
+
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
+			statement.setInt(1, this.getFactionPoints() -  amount);
+			statement.setInt(2, this.getObjectId());
+
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+
+	public int getFactionPoints()
+	{
+		Connection get = null;
+
+		try
+		{
+			get = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = get.prepareStatement(
+					"SELECT faction_points FROM characters WHERE charId = ?");
+			statement.setInt(1, this.getObjectId());
+			ResultSet rset = statement.executeQuery();
+
+			if (rset.next())
+			{
+				int currentPoints = rset.getInt("faction_points");
+				return (currentPoints);
+			}
+			rset.close();
+			statement.close();
+		}
+
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Couldn't get current faction_id points : " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(get);
+		}
+		return 0;
+	}
+
 	private int _lastPhysicalDamages;
 
 	public final void setLastPhysicalDamages(int lastPhysicalDamages)
@@ -23085,7 +23290,7 @@ public class L2PcInstance extends L2Playable
 
 		broadcastUserInfo();
 
-		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_VASPER))
 		{
 			return;
 		}

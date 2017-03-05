@@ -1935,34 +1935,34 @@ public final class Formulas
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
-							if (damage > 3000)
-								damage = 35000 + Math.pow(damage - 25000, 0.93);
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 1);
 							break;
 						case 140: // Tyrr Warrior
 							if (damage > 35000)
-								damage = 35000 + Math.pow(damage - 35000, 0.95);
+								damage = 35000 + Math.pow(damage - 35000, 1);
 							break;
 						case 141: // Othell Rogue
 							if (damage > 40000)
-								damage = 40000 + Math.pow(damage - 40000, 0.85);
+								damage = 40000 + Math.pow(damage - 40000, 1);
 							break;
 						case 142: // Yul Archer
 						{
 							switch (attackerClass.getId()) {
 								case 163: //Yull Moonlight Sentinel
-									if (damage > 20000)
-										damage = 20000 + Math.pow(damage - 20000, 0.90);
+									if (damage > 15000)
+										damage = 15000 + Math.pow(damage - 15000, 0.80);
 									break;
 								default: //all other yullz
-									if (damage > 20000)
-										damage = 20000 + Math.pow(damage - 20000, 0.83);
+									if (damage > 15000)
+										damage = 15000 + Math.pow(damage - 15000, 0.75);
 									break;
 							}
 							break;
 						}
 						case 143: // Feoh Wizard
-							if (damage > 30000)
-								damage = 30000 + Math.pow(damage - 30000, 0.93);
+							if (damage > 28000)
+								damage = 28000 + Math.pow(damage - 28000, 0.90);
 							break;
 						case 144: // Iss Enchanter
 							if (damage > 35000)
@@ -1978,6 +1978,10 @@ public final class Formulas
 							break;
 						default:
 							damage = 69;
+							break;
+						case 188: //Eviscerator
+							if (damage > 25000)
+								damage = 25000 + Math.pow(damage - 25000, 0.90);
 							break;
 					}
 				}
@@ -2882,24 +2886,24 @@ public final class Formulas
 								damage = 30000 + Math.pow(damage - 30000, 0.93);
 							break;
 						case 140: // Tyrr Warrior
-							if (damage > 25000)
-								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.97);
 							break;
 						case 141: // Othell Rogue
-							if (damage > 25000)
-								damage = 25000 + Math.pow(damage - 25000, 0.93);
+							if (damage > 35000)
+								damage = 35000 + Math.pow(damage - 35000, 0.90);
 							break;
 						case 142: // Yul Archer
 						{
 							switch (attackerClass.getId())
 							{
-								    case 163: //Yull Moonlight Sentinel
+								case 163: //Yull Moonlight Sentinel
 									if (damage > 20000)
 										damage = 20000 + Math.pow(damage - 20000, 0.90);
 									break;
 								default: //all other yullz
 									if (damage > 25000)
-										damage = 25000 + Math.pow(damage - 25000, 0.93);
+										damage = 25000 + Math.pow(damage - 25000, 0.86);
 									break;
 							}
 							break;
@@ -2908,13 +2912,17 @@ public final class Formulas
 						{
 							switch (attackerClass.getId())
 							{
-									case 170: //Feoh Soulhound
-									if (damage > 30000)
-										damage = 30000 + Math.pow(damage - 30000, 0.93);
+								case 169: //Feoh Storm Screamer
+									if (damage > 45000)
+										damage = 45000 + Math.pow(damage - 45000, 0.91);
+									break;
+								case 170: //Feoh Soulhound
+									if (damage > 40000)
+										damage = 40000 + Math.pow(damage - 40000, 0.91);
 									break;
 								default: //All The Other Feoh
-									if (damage > 30000)
-										damage = 30000 + Math.pow(damage - 30000, 0.93);
+									if (damage > 40000)
+										damage = 40000 + Math.pow(damage - 40000, 0.93);
 									break;
 							}
 							break;
@@ -2931,11 +2939,15 @@ public final class Formulas
 							if (damage > 35000)
 								damage = 35000 + Math.pow(damage - 35000, 0.93);
 							break;
+						case 188: //Eviscerator
+							if (damage > 25000)
+								damage=  25000 + Math.pow(damage - 25000, 0.90);
+							break;
 					}
 					if (attackerClass.getId() == 189)
 					{
 						if (damage > 40000)
-							damage = 40000 + Math.pow(damage - 40000, 0.80);
+							damage = 40000 + Math.pow(damage - 40000, 0.95);
 					}
 				}
 			}
@@ -4901,7 +4913,7 @@ public final class Formulas
 							}
 							break;
 						case 142: // Yul Archer
-							multiplier *= 1.15;
+							multiplier *= 1.05;
 							break;
 						case 143: // Feoh Wizard
 							multiplier *= 0.85;
@@ -4962,7 +4974,7 @@ public final class Formulas
 							multiplier *= 1.0;
 							break;
 						case 142: // Yul Archer
-							multiplier *= 0.85;
+							multiplier *= 0.90;
 							break;
 						case 143: // Feoh Wizard
 							multiplier *= 0.82;
@@ -4999,12 +5011,12 @@ public final class Formulas
 			// PvE Damage
 			{
 				if (Config.isServer(Config.TENKAI) && target.getInstanceId() == 0 &&
-						!Config.isServer(Config.TENKAI_ESTHUS))
+						!Config.isServer(Config.TENKAI_VASPER))
 				{
 					multiplier *= 3.0f;
 				}
 
-				if (Config.isServer(Config.TENKAI_ESTHUS) && !target.isRaid())
+				if (Config.isServer(Config.TENKAI_VASPER) && !target.isRaid())
 				{
 					multiplier *= 2.0f;
 				}

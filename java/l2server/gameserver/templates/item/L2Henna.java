@@ -57,7 +57,7 @@ public class L2Henna
 		dye = set.getInteger("dyeId");
 		name = set.getString("name");
 		long p = set.getLong("price", 0);
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 			p = (int) Math.sqrt(p);
 		}

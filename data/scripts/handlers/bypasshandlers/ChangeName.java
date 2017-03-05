@@ -116,7 +116,7 @@ public class ChangeName implements IBypassHandler
 				String html = "<html>" + "<title>Tenkai</title>" + "<body>" +
 						"<center><br><tr><td>Change Clan Name</tr></td><br>" + "<br>" +
 						"Do you want to change your current clan name? Have in mind that this is a very big privilege, any name change has always been denied by the administrators!<br>" +
-						"But I can help you. This is not a recommended option, I would suggest you to create another clan, but if you insist that much... it will be 25 coins of luck.<br>" +
+						"But I can help you. This is not a recommended option, I would suggest you to create another clan, but if you insist that much... it will be 10 Coins of Luck.<br>" +
 						"<center><tr><td><edit var=text width=130 height=11 length=26><br>" +
 						"<button value=\"Done\" action=\"bypass -h npc_%objectId%_ChangeClanName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\"></td></tr><br>" +
 						"</center></body></html>";
@@ -153,7 +153,7 @@ public class ChangeName implements IBypassHandler
 						activeChar.sendPacket(sm);
 						return false;
 					}
-					if (!activeChar.destroyItemByItemId("Change Clan Name", 4037, 25, target, true))
+					if (!activeChar.destroyItemByItemId("Change Clan Name", 4037, 10, target, true))
 					{
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 						return false;

@@ -15,7 +15,6 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
-import l2server.util.Rnd;
 
 /**
  * @author LasTravel
@@ -146,7 +145,7 @@ public class BloodThirst extends L2AttackableAIScript
             if (npc == world._bloodThirst)
             {
                 player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                       3, player, true);
+                       10, player, true);
 
                 InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);

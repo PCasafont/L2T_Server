@@ -5622,7 +5622,7 @@
             <baseAdd stat="WIT" val="#dexwit" />
             <baseAdd stat="LUC" val="#luccha" />
             <baseAdd stat="CHA" val="#luccha" />
-            <addPercentBase stat="skillMastery" val="#mast"/>
+            <addPercent stat="skillMastery" val="#mast"/>
         </for>
     </skill>
     <skill id="17826" levels="1" name="10th Anniversary Time Capsule Box">

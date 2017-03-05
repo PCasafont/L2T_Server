@@ -16,9 +16,6 @@
 package handlers.bypasshandlers;
 
 import l2server.Config;
-import l2server.gameserver.Ranked1v1;
-import l2server.gameserver.events.PvpZone;
-import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
@@ -84,10 +81,10 @@ public class Teleport implements IBypassHandler
 			return true;
 		}
 		else if (command.startsWith("pvpzone"))
+
 		{
 			boolean parties = st.nextToken().equals("1");
 			boolean artificialPlayers = st.nextToken().equals("1");
-
 
 
 			if (!parties && activeChar.isInParty() && !activeChar.isGM())
@@ -96,8 +93,6 @@ public class Teleport implements IBypassHandler
 						new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
 				return true;
 			}
-
-
 
 			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
 			if (mostPvP != null)
@@ -150,16 +145,8 @@ public class Teleport implements IBypassHandler
 						return true;
 					}
 				}
-				if (PvpZone.players.contains(mostPvP) ||
-						PvpZone.fighters.contains(mostPvP) ||
-						Ranked1v1.fighters.containsKey(mostPvP) ||
-						PvpZone._fight.contains(mostPvP.getObjectId()))
-				{
-					activeChar.sendMessage("Sorry, I can't find anyone in flag status right now..");
-					return true;
-				}
-				activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150,
-						mostPvP.getZ());
+
+				activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150, mostPvP.getZ());
 				activeChar.setInstanceId(0);
 				activeChar.setProtection(true);
 				if (!activeChar.isGM())
@@ -176,8 +163,11 @@ public class Teleport implements IBypassHandler
 
 			return true;
 		}
+
+
 		return false;
 	}
+
 
 	@Override
 	public String[] getBypassList()

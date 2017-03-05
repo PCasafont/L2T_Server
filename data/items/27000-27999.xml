@@ -2351,9 +2351,10 @@
           crystalType="c" isStackable="true">
     </item>
     <!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. Has a very low chance of obtaining a Radiant Gemstone Fragment or a La Vie En Rose's Radiant Brooch. -->
-    <item id="27470" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
-          crystalType="c"
-          isStackable="true">
+    <item id="27470" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00"
+          immediateEffect="1"
+          weight="0" isStackable="true" handler="ItemSkills">
+        <skill id="27751" level="1" />
     </item>
     <!-- Increases Vitality Status Bonus EXP by 25% and decreases Vitality Point Consumption Speed by 7%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
     <item id="27471" type="Armor" name="Vital Stone - Lv. 4" icon="icon.etc_bm_jewel_vital" defaultAction="equip"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <announce text="Auto-announcements: The Global Teleporter and NPCBuffer are in your Magic Gem (look at your inventory!)" initial="20" reuse="100" />
+    <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="40" reuse="100" />
+    <announce text="Auto-announcements: Never share your account information!" initial="100" reuse="100" />
+</list>

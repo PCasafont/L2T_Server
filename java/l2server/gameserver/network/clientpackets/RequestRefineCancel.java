@@ -134,7 +134,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 				return;
 		}
 
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 			price = (int) Math.sqrt(price);
 		}

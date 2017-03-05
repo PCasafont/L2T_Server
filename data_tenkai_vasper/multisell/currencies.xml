@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <item>
+        <ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+        <production id="57" count="1000000" /> <!-- Adena -->
+    </item>
+    <item>
+        <ingredient id="57" count="3000000" /> <!-- Adena -->
+        <production id="4356" count="1" /> <!-- Gold Einhasad -->
+    </item>
+    <item>
+        <ingredient id="4037" count="1" /> <!-- Coin of Luck -->
+        <production id="4356" count="100" /> <!-- Gold Einhasad -->
+    </item>
+    <item>
+        <ingredient id="4356" count="100" /> <!-- Gold Einhasad -->
+        <production id="4037" count="1" /> <!-- Coin of Luck -->
+    </item>
+    <item>
+        <ingredient id="14720" count="10" /> <!-- Event - Apiga -->
+        <production id="14721" count="1" /> <!-- Event - Golden Apiga -->
+    </item>
+    <item>
+        <ingredient id="14721" count="1" /> <!-- Event - Golden Apiga -->
+        <production id="14720" count="10" /> <!-- Event -  Apiga -->
+    </item>
+</list>

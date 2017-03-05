@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.events.Elpy;
+import l2server.gameserver.events.Faction.FactionManager;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.events.PvpZone;
 import l2server.gameserver.events.TopRanked;
@@ -265,6 +266,12 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 
+		if (_text.equalsIgnoreCase(".faction_list"))
+		{
+			activeChar.sendMessage("Faction 1 : " + FactionManager.getInstance().getFactionAmount(1));
+			return ;
+		}
+
 		if (activeChar.isCursedWeaponEquipped() && (_type == TRADE || _type == SHOUT || _type == GLOBAL))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(
@@ -386,12 +393,12 @@ public final class Say2 extends L2GameClientPacket
 		{
 			if (player.getLevel() < 105)
 			{
-				player.sendMessage("You need to be atleast level 105 !");
+				player.sendMessage("You need to be at least level 105!");
 				return;
 			}
 			if (player.getPvpKills() < 20)
 			{
-				player.sendMessage("You need atleast 20 PvPs !");
+				player.sendMessage("You need at least 20 PvPs!");
 				return;
 			}
 			if (PvpZone.players.contains(player))
