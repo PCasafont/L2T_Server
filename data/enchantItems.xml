@@ -117,10 +117,10 @@
     <enchantScroll id="947" targetType="WEAPON" grade="b" /> <!-- Scroll: Enchant Weapon (B-grade) -->
     <enchantScroll id="6571" targetType="WEAPON" grade="b"
                    isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
-    <enchantScroll id="34627" targetType="ELEMENTAL_SHIRT" grade="none"
-                   onlyOnItem="37718" /> <!-- Enchant Scroll: Elemental Shirt -->
-    <enchantScroll id="25793" targetType="ELEMENTAL_SHIRT" grade="none"
-                   onlyOnItem="37718" /> <!-- Enchant Scroll: Elemental Shirt -->
+    <enchantScroll grade="none" targetType="ELEMENTAL_SHIRT" id="34627"
+                   onlyOnItems="37718;46193;46194"/>
+    <enchantScroll grade="none" targetType="ELEMENTAL_SHIRT" id="23241"
+                   onlyOnItems="37718;46193;46194"/>
     <!-- Support Items -->
     <enchantSupportItem id="12364" targetType="WEAPON" grade="b" maxLevel="9"
                         extraChance="15" /> <!-- Lucky Enchant Stone: Weapon (B-grade) -->

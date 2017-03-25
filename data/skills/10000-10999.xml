@@ -5233,9 +5233,11 @@
             <abnormal duration="30" self="1" stackLvl="1" stackType="faceoff_self" visualEffect="faceoff">
                 <effect chanceType="ON_START" triggeredId="10319" triggeredLevel="#lvl" type="ChanceSkillTrigger"
                         val="0" />
+                <effect type="Invincible" val="0" />
             </abnormal>
             <abnormal duration="30" stackLvl="1" stackType="faceoff" visualEffect="faceoff">
                 <effect type="Faceoff" val="0" />
+
             </abnormal>
         </for>
     </skill>
@@ -10091,7 +10093,7 @@
         <set name="mpConsume" val="64" />
         <set name="hitTime" val="3000" />
         <set name="coolTime" val="300" />
-        <set name="reuseDelay" val="400000" />
+        <set name="reuseDelay" val="600000" />
         <for>
             <abnormal duration="#duration" stackLvl="1" stackType="minds_eye">
                 <effect type="Buff" val="0" />

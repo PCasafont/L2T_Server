@@ -1913,7 +1913,7 @@ public final class Formulas
 			}
 		}
 
-		double damage = 77.0 * (weaponRandom * (pAtk * critBonus + pAtk * positionBonus) + critStaticBonus) / pDef *
+		double damage = 100.0 * (weaponRandom * (pAtk * critBonus + pAtk * positionBonus) + critStaticBonus) / pDef *
 				finalBonus * ssBonus;
 		//if (isBow)
 		//	damage = (70.0 * ((pAtk + pAtk * critBonus) * weaponRandom + critStaticBonus + positionBonus * (pAtk + pAtk)) / pDef) * finalBonus;
@@ -1939,23 +1939,23 @@ public final class Formulas
 								damage = 35000 + Math.pow(damage - 35000, 1);
 							break;
 						case 140: // Tyrr Warrior
-							if (damage > 35000)
-								damage = 35000 + Math.pow(damage - 35000, 1);
+							if (damage > 45000)
+								damage = 45000 + Math.pow(damage - 45000, 0.84);
 							break;
 						case 141: // Othell Rogue
-							if (damage > 40000)
-								damage = 40000 + Math.pow(damage - 40000, 1);
+							if (damage > 75000)
+								damage = 75000 + Math.pow(damage - 75000, 1);
 							break;
 						case 142: // Yul Archer
 						{
 							switch (attackerClass.getId()) {
 								case 163: //Yull Moonlight Sentinel
-									if (damage > 15000)
-										damage = 15000 + Math.pow(damage - 15000, 0.80);
+									if (damage > 55000)
+										damage = 55000 + Math.pow(damage - 55000, 0.85); //.75
 									break;
 								default: //all other yullz
-									if (damage > 15000)
-										damage = 15000 + Math.pow(damage - 15000, 0.75);
+									if (damage > 65000)
+										damage = 65000 + Math.pow(damage - 65000, 0.85); //.75
 									break;
 							}
 							break;
@@ -1980,8 +1980,8 @@ public final class Formulas
 							damage = 69;
 							break;
 						case 188: //Eviscerator
-							if (damage > 25000)
-								damage = 25000 + Math.pow(damage - 25000, 0.90);
+							if (damage > 85000)
+								damage = 85000 + Math.pow(damage - 85000, 0.20);
 							break;
 					}
 				}
@@ -2480,7 +2480,7 @@ public final class Formulas
 		double positionBonus = 0.0;
 		if (attacker.isBehind(target))
 		{
-			positionBonus = 0.20; // Behind bonus
+			positionBonus = 0.80; // Behind bonus .20
 		}
 		else if (!attacker.isInFrontOf(target))
 		{
@@ -2853,19 +2853,19 @@ public final class Formulas
 
 		if (Config.isServer(Config.TENKAI) && attacker.getActingPlayer() != null)
 		{
-			//if (mAtk > 1000000)
-			//	mAtk = 1000000 + Math.pow(mAtk - 1000000, 0.9);
+			if (mAtk > 1000000)
+				mAtk = 1000000 + Math.pow(mAtk - 1000000, 0.9);
 			if (critBonus > 3)
 			{
-				critBonus = 2 + Math.pow(critBonus - 2, 0.55);
+				critBonus = 2 + Math.pow(critBonus - 2, 1.5);
 			}
 			if (finalBonus > 3)
 			{
-				finalBonus = 2 + Math.pow(finalBonus - 2, 0.45);
+				finalBonus = 2 + Math.pow(finalBonus - 2, 1.5);
 			}
 		}
 
-		double damage = 91.0 * Math.sqrt(mAtk) * skill.getPower(attacker, target, isPvP, isPvE) / mDef * finalBonus *
+		double damage = 100.0 * Math.sqrt(mAtk) * skill.getPower(attacker, target, isPvP, isPvE) / mDef * finalBonus *
 				critBonus * weaponRandom + staticCritBonus;
 
 		damage = calcCustomModifier(attacker, target, damage);
@@ -2886,24 +2886,24 @@ public final class Formulas
 								damage = 30000 + Math.pow(damage - 30000, 0.93);
 							break;
 						case 140: // Tyrr Warrior
-							if (damage > 35000)
-								damage = 35000 + Math.pow(damage - 35000, 0.97);
+							if (damage > 45000)
+								damage = 45000 + Math.pow(damage - 45000, 0.97);
 							break;
 						case 141: // Othell Rogue
-							if (damage > 35000)
-								damage = 35000 + Math.pow(damage - 35000, 0.90);
+							if (damage > 45000)
+								damage = 45000 + Math.pow(damage - 45000, 1);
 							break;
 						case 142: // Yul Archer
 						{
 							switch (attackerClass.getId())
 							{
 								case 163: //Yull Moonlight Sentinel
-									if (damage > 20000)
-										damage = 20000 + Math.pow(damage - 20000, 0.90);
+									if (damage > 45000)
+										damage = 45000 + Math.pow(damage - 45000, 0.86);
 									break;
 								default: //all other yullz
-									if (damage > 25000)
-										damage = 25000 + Math.pow(damage - 25000, 0.86);
+									if (damage > 50000)
+										damage = 50000 + Math.pow(damage - 50000, 0.86);
 									break;
 							}
 							break;
@@ -2913,16 +2913,16 @@ public final class Formulas
 							switch (attackerClass.getId())
 							{
 								case 169: //Feoh Storm Screamer
-									if (damage > 45000)
-										damage = 45000 + Math.pow(damage - 45000, 0.91);
+									if (damage > 45000) //45k
+										damage = 45000 + Math.pow(damage - 45000, 0.86);
 									break;
 								case 170: //Feoh Soulhound
-									if (damage > 40000)
-										damage = 40000 + Math.pow(damage - 40000, 0.91);
+									if (damage > 55000) //40k
+										damage = 55000 + Math.pow(damage - 55000, 0.86); //.96
 									break;
 								default: //All The Other Feoh
-									if (damage > 40000)
-										damage = 40000 + Math.pow(damage - 40000, 0.93);
+									if (damage > 45000)
+										damage = 45000 + Math.pow(damage - 45000, 0.86);
 									break;
 							}
 							break;
@@ -2944,10 +2944,10 @@ public final class Formulas
 								damage=  25000 + Math.pow(damage - 25000, 0.90);
 							break;
 					}
-					if (attackerClass.getId() == 189)
+					if (attackerClass.getId() == 189) // Sayha
 					{
-						if (damage > 40000)
-							damage = 40000 + Math.pow(damage - 40000, 0.95);
+						if (damage > 75000)
+							damage = 75000 + Math.pow(damage - 75000, 0.20);
 					}
 				}
 			}
@@ -4850,33 +4850,33 @@ public final class Formulas
 
 
 
-				int attackerClanId = attacker.getActingPlayer().getClanId();
-				L2Party attackerParty = attacker.getActingPlayer().getParty();
-				int targetClanId = target.getActingPlayer().getClanId();
-				L2Party targetParty = attacker.getActingPlayer().getParty();
-				if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null &&
-						targetParty != null && !attacker.isInsideZone(L2Character.ZONE_PVP))
-				{
-					int attackerClannies = 0;
-					int targetClannies = 0;
-					for (L2PcInstance clanny : attacker.getKnownList().getKnownPlayers().values())
-					{
-						if (clanny.getClanId() == attackerClanId || clanny.getParty() == attackerParty)
-						{
-							attackerClannies++;
-						}
-						else if (clanny.getClanId() == targetClanId || clanny.getParty() == targetParty)
-						{
-							targetClannies++;
-						}
-					}
-
-					if (targetClannies > 2 && attackerClannies > targetClannies)
-					{
-						multiplier *= Math.pow(targetClannies / (double) attackerClannies, 1.15);
-						//System.out.println(targetClannies + " " + attackerClannies + " " + multiplier);
-					}
-				}
+				//int attackerClanId = attacker.getActingPlayer().getClanId();
+				//L2Party attackerParty = attacker.getActingPlayer().getParty();
+				//int targetClanId = target.getActingPlayer().getClanId();
+				//L2Party targetParty = attacker.getActingPlayer().getParty();
+				//if (attackerClanId > 0 && targetClanId > 0 && attackerClanId != targetClanId && attackerParty != null &&
+				//		targetParty != null && !attacker.isInsideZone(L2Character.ZONE_PVP))
+				//{
+				//	int attackerClannies = 0;
+				//	int targetClannies = 0;
+				//	for (L2PcInstance clanny : attacker.getKnownList().getKnownPlayers().values())
+				//	{
+				//		if (clanny.getClanId() == attackerClanId || clanny.getParty() == attackerParty)
+				//		{
+				//			attackerClannies++;
+				//		}
+				//		else if (clanny.getClanId() == targetClanId || clanny.getParty() == targetParty)
+				//		{
+				//			targetClannies++;
+				//		}
+				//	}
+				//
+				//	if (targetClannies > 2 && attackerClannies > targetClannies)
+				//	{
+				//		multiplier *= Math.pow(targetClannies / (double) attackerClannies, 1.15);
+				//		//System.out.println(targetClannies + " " + attackerClannies + " " + multiplier);
+				//	}
+				//}
 
 				if (attacker.getActingPlayer().isPlayingEvent())
 				{
@@ -4895,7 +4895,7 @@ public final class Formulas
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
-							multiplier *= 1.2;
+							multiplier *= 1.8; //1.2
 							if (weapon != null && (weapon.getItemType() == L2WeaponType.BOW ||
 									weapon.getItemType() == L2WeaponType.CROSSBOW))
 							{
@@ -4903,20 +4903,20 @@ public final class Formulas
 							}
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 1.2;
+							multiplier *= 1.1; //1.2
 							break;
 						case 141: // Othell Rogue
 							if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER ||
 									weapon.getItemType() == L2WeaponType.DUALDAGGER))
 							{
-								multiplier *= 1.9;
+								multiplier *= 2; //1.9
 							}
 							break;
 						case 142: // Yul Archer
-							multiplier *= 1.05;
+							multiplier *= 1; //.95
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.85;
+							multiplier *= 1; //.85
 							break;
 						case 144: // Iss Enchanter
 							multiplier *= 2.00;
@@ -4933,28 +4933,58 @@ public final class Formulas
 				switch (attackerClass.getId())
 				{
 					case 152: // Tyrr Duelist
-						multiplier *= 0.9;
+						multiplier *= 1.5; //.85
+						break;
+					case 154: // Tyrr Titan
+						multiplier *= 0.95;
+						break;
+					case 157: // Tyrr Doombringer
+						multiplier *= 1.2; //1.3
+						break;
+					case 158://Othel Adventure
+						multiplier *= 2; //1.4
+						break;
+					case 159: //othel windrider
+						multiplier *= 2; //1.2
+						break;
+					case 160: // Othel GhostHunter
+						multiplier *= 1.8; //1.2
+						break;
+					case 161: //Othel Spoiler
+						multiplier *= 1.6; //1.3
+						break;
+					case 162: // Yul Sagi
+						multiplier *= 1.2;
+						break;
+					case 163: // Yul Moonlight
+						multiplier *= 1.1;
+						break;
+					case 165: // Yull Trickster
+						multiplier *= 1.2; //2
+						break;
+					case 164: // Yul Ghost Sent
+						multiplier *= 1.2;
 						break;
 					case 166: // Feoh Archmage
-						multiplier *= 1.19;
+						multiplier *= 1; //1
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 1.15;
-						break;
+						multiplier *= 1; //1
+//						break;
 					case 170: //Feoh Soulhound
-						multiplier *= 1.0;
+						multiplier *= 1.13; //1.4
 						break;
 					case 168: // Feoh Mystic Muse
-						multiplier *= 1.15;
+						multiplier *= 1.20; //1.15
 						break;
 					case 169: // Feoh Storm Screamer
-						multiplier *= 1.2;
+						multiplier *= 1.1;
 						break;
 					case 188: // Eviscerat::or
-						multiplier *= 1.2;
+						multiplier *= 0.98;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.85;
+						multiplier *= 0.65;
 						break;
 				}
 
@@ -4965,28 +4995,28 @@ public final class Formulas
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
-							multiplier *= 0.9;
+							multiplier *= 0.7; //.9
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 1.1;
+							multiplier *= 1.2;
 							break;
 						case 141: // Othell Rogue
-							multiplier *= 1.0;
+							multiplier *= 0.85;
 							break;
 						case 142: // Yul Archer
-							multiplier *= 0.90;
+							multiplier *= 1;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.82;
+							multiplier *= 0.98;
 							break;
 						case 144: // Iss Enchanter
-							multiplier *= 1.0;
+							multiplier *= 1;
 							break;
 						case 145: // Wynn Summoner
 							multiplier *= 0.85;
 							break;
 						case 146: // Aeore Healer
-							multiplier *= 0.88;
+							multiplier *= 1;
 							break;
 					}
 				}
@@ -4994,13 +5024,13 @@ public final class Formulas
 				switch (targetClass.getId())
 				{
 					case 166: // Feoh Archmage
-						//multiplier *= 0.8;
+						//multiplier *= 0.9;
 						break;
 					case 167: // Feoh Soultaker
 						//multiplier *= 1.35;
 						break;
 					case 188: // Eviscerator
-						//multiplier *= 0.8;
+						multiplier *= .78; //.95
 						break;
 					case 189: // Sayha's Seer
 						multiplier *= 0.75;
@@ -5029,7 +5059,7 @@ public final class Formulas
 				if (attackerClass.getParent() != null && attackerClass.getParent().getAwakeningClassId() > 0)
 				{
 					int awakening = attackerClass.getParent().getAwakeningClassId();
-					@SuppressWarnings("unused") L2Weapon weapon = attacker.getActiveWeaponItem();
+					 L2Weapon weapon = attacker.getActiveWeaponItem();
 					switch (awakening)
 					{
 						case 139: // Sigel Knight
@@ -5045,7 +5075,7 @@ public final class Formulas
 							multiplier *= 1.2;
 							break;
 						case 143: //Feoh Wizard
-							multiplier *= 1.5;
+							multiplier *= 2.5;
 							break;
 						case 144: // Iss Enchanter
 							multiplier *= 1.5;
@@ -5062,10 +5092,19 @@ public final class Formulas
 				switch (attackerClass.getId())
 				{
 					case 166: // Feoh Archmage
-						multiplier *= 1.4;
+						multiplier *= 2;
 						break;
 					case 167: // Feoh Soultaker
-						multiplier *= 1.10;
+						multiplier *= 2;
+						break;
+					case 168: // Feoh Mystic Muse
+						multiplier *= 2.1;
+						break;
+					case 169: // Feoh Storm Screamer
+						multiplier *= 2.3;
+						break;
+					case 170: // Feoh Soulhound
+						multiplier *= 2;
 						break;
 					case 188: // Eviscerator
 						multiplier *= 1.0;

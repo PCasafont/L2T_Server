@@ -2547,9 +2547,35 @@
 		Level 6: P. Def. + 15%. Received Physical Critical Damage - 25%, 15% chance of reflecting physical abnormal states.
 	-->
     <skill id="18444" levels="6" name="Physical Reflect Shirt Enchant Effect">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <table name="#pDef">5 6 8 10 12 15</table>
+        <table name="#critVuln">0 8 12 16 20 25</table>
+        <table name="#reflectDebuffs">0 0 7 9 12 15</table>
+        <table name="#stats">1 2 3 3 4 4</table>
+        <table name="#spd">7 7 7 7 7 7</table>
+        <table name="#maxHp">0 0 0 510 520 531 536 541 547 552</table>
+        <table name="#elementRes">0 0 0 6 12 18 24 30 36 42</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="pDef" val="#pDef" />
+            <subPercent stat="critVuln" val="#critVuln" />
+            <addPercent stat="reflectDebuffs" val="#reflectDebuffs" />
+            <add stat="runSpd" val="#spd" />
+            <add stat="maxHp" val="#maxHp" />
+            <baseAdd stat="STR" val="#stats" />
+            <baseAdd stat="DEX" val="#stats" />
+            <baseAdd stat="CON" val="#stats" />
+            <baseAdd stat="INT" val="#stats" />
+            <baseAdd stat="WIT" val="#stats" />
+            <baseAdd stat="MEN" val="#stats" />
+            <add stat="waterRes" val="#elementRes" />
+            <add stat="fireRes" val="#elementRes" />
+            <add stat="windRes" val="#elementRes" />
+            <add stat="earthRes" val="#elementRes" />
+            <add stat="holyRes" val="#elementRes" />
+            <add stat="darkRes" val="#elementRes" />
+        </for>
     </skill>
     <!--
 		Level 1: M. Def. + 5%.
@@ -2560,9 +2586,37 @@
 		Level 6: M. Def. + 15%. Received Magic Critical Damage - 25%, 15% chance of reflecting magical abnormal states.
 	-->
     <skill id="18445" levels="6" name="Magical Reflect Shirt Enchant Effect">
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <table name="#mDefP">5 6 8 10 12 15</table>
+        <table name="#magicCritVuln">0 8 12 16 20 25</table>
+        <table name="#reflectDebuffs">0 0 7 9 12 15</table>
+        <table name="#stats">1 2 3 3 4 4</table>
+        <table name="#spd">7 7 7 7 7 7</table>
+        <table name="#mDef">9 10 11 12 13 14 15 16 17 18</table>
+        <table name="#maxHp">0 0 0 510 520 531 536 541 547 552</table>
+        <table name="#elementRes">0 0 0 6 12 18 24 30 36 42</table>
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+        <for>
+            <addPercent stat="mDef" val="#mDefP" />
+            <subPercent stat="magicCritVuln" val="#magicCritVuln" />
+            <addPercent stat="reflectDebuffs" val="#reflectDebuffs" />
+            <add stat="mDef" val="#mDef" />
+            <add stat="runSpd" val="#spd" />
+            <add stat="maxHp" val="#maxHp" />
+            <baseAdd stat="STR" val="#stats" />
+            <baseAdd stat="DEX" val="#stats" />
+            <baseAdd stat="CON" val="#stats" />
+            <baseAdd stat="INT" val="#stats" />
+            <baseAdd stat="WIT" val="#stats" />
+            <baseAdd stat="MEN" val="#stats" />
+            <add stat="waterRes" val="#elementRes" />
+            <add stat="fireRes" val="#elementRes" />
+            <add stat="windRes" val="#elementRes" />
+            <add stat="earthRes" val="#elementRes" />
+            <add stat="holyRes" val="#elementRes" />
+            <add stat="darkRes" val="#elementRes" />
+        </for>
     </skill>
     <!-- M. Def. + 8. -->
     <skill id="18446" levels="1" name="Reflect Shirt Basic Effect">

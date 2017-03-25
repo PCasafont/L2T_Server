@@ -42,7 +42,6 @@ public enum Stats
 	GAIN_MP_LIMIT("gainMpLimit"),
 	LIMIT_HP("limitHp"),
 	// non-displayed hp limit
-
 	// ATTACK & DEFENCE
 	PHYS_DEFENSE("pDef"),
 	MAGIC_DEFENSE("mDef"),

@@ -13,7 +13,7 @@ import l2server.log.Log;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.*;
+import java.util.Calendar;
 import java.util.logging.Level;
 
 
@@ -89,12 +89,12 @@ public class TopRanked
         int amount = 0;
         int currentPoints = 0;
         Message msg;
-        Announcements.getInstance().announceToAll("Rewards of the current season delivered !");
+        Announcements.getInstance().announceToAll("Ranked rewards delivered !");
         try
         {
             get = L2DatabaseFactory.getInstance().getConnection();
             PreparedStatement statement = get.prepareStatement(
-                    "SELECT rankedPoints,charId FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 10");
+                    "SELECT rankedPoints,charId FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 15");
             ResultSet rset = statement.executeQuery();
             while (rset.next())
             {
@@ -103,20 +103,53 @@ public class TopRanked
                 Integer x = Integer.valueOf(id);
                 currentPoints = getRankedPoints(x);
 
-                amount =  (int)(Math.pow(currentPoints, 1.05))*(5/position);
+                amount =  (int)((Math.pow(currentPoints, 0.75)) + (15/position)) + 1;
                 if (amount > 70)
                  amount =  (int)(70 + (Math.pow(amount - 70, 0.55)));
 
                  msg = new Message(-1, x, false, "Ranked System", "Congrats for youre ranking ! You ended the season at position " + position + " with " + currentPoints + " points !", 0);
 
                 Mail attachments = msg.createAttachments();
+                int rewardAmount = 0;
+                int rewardId = 4037;
+
                 attachments.addItem("Ranked System", 5899, amount, null, null);
+                 if (position == 1)
+                 {
+                     rewardAmount = 6;
+                     attachments.addItem("Ranked System", rewardId, rewardAmount, null, null);
+                 }
+                 else if (position == 2)
+                 {
+                     rewardAmount = 4;
+                     attachments.addItem("Ranked System", rewardId, rewardAmount, null, null);
+                 }
+                 else if (position == 3)
+                 {
+                     rewardAmount = 3;
+                     attachments.addItem("Ranked System", rewardId, rewardAmount, null, null);
+                 }
+                 else if (position == 4)
+                 {
+                     rewardAmount = 2;
+                     attachments.addItem("Ranked System", rewardId, rewardAmount, null, null);
+                 }
+                 else if (position == 5)
+                 {
+                     rewardAmount = 1;
+                     attachments.addItem("Ranked System", rewardId, rewardAmount, null, null);
+                 }
+
                 MailManager.getInstance().sendMessage(msg);
 
+                if (position <= 5)
+                {
 
 
-                setRankedPoints(x, (10 / position) * currentPoints / 12);
-
+                    L2PcInstance test = L2PcInstance.load(x);
+                    Announcements.getInstance().announceToAll("n°" + position + "  " + test.getName() + " with " + currentPoints + " points won " + rewardAmount + " CoLs");
+                    setRankedPoints(x, (12 / position) * currentPoints / 10);
+                }
                 position++;
             }
             rset.close();

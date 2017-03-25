@@ -331,6 +331,13 @@
         <mob id="20970" /> <!-- Soldier of Ancient Times -->
         <mob id="20971" /> <!--  Warrior of Ancient Times -->
     </farmZone>
+    <farmZone name="giant_cave2">
+        <mob id="23774" /> <!-- Delta Bathus-->
+    </farmZone>
+    <farmZone name="giant_cave3">
+        <mob id="23775" /> <!-- Delta Carcaas -->
+        <mob id="23776" /> <!-- Delta Kshana -->
+    </farmZone>
     <farmZone name="cassius">
         <mob id="25943" /> <!-- Wind Cassius -->
     </farmZone>

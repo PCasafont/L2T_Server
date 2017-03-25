@@ -6835,6 +6835,7 @@ public class L2PcInstance extends L2Playable
 				}
 			}
 
+
 			if (Ranked1v1.state == Ranked1v1.State.FIGHT && pk != null && getEvent() == null && !isInOlympiadMode())
 			{
 				if (Ranked1v1.fighters.containsKey(this) && Ranked1v1.fighters.containsKey(pk))

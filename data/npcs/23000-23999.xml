@@ -17955,4 +17955,412 @@
          fireRes="0"
          waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
+    <npc id="23774" name="Delta Bathus" title="" level="102" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="4000000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
+         collisionRadius="10" collisionHeight="24"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
+        <skill id="14823" level="1" /> <!-- Half kill Imm -->
+        <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->
+        <skill id="4379" level="5" /> <!-- Spear Resistance -->
+        <skill id="4461" level="1" /> <!-- Dagger/Rapri Vul -->
+        <skill id="4071" level="1" /> <!-- Bow/Crossboss REsistance -->
+        <spawn x="185334" y="55249" z="-7242" heading="57" respawn="20" />
+        <spawn x="185332" y="55599" z="-7242" heading="57" respawn="20" />
+        <spawn x="185330" y="55949" z="-7242" heading="57" respawn="20" />
+        <spawn x="185328" y="56299" z="-7242" heading="57" respawn="20" />
+        <spawn x="185326" y="56649" z="-7242" heading="57" respawn="20" />
+        <spawn x="185325" y="56998" z="-7242" heading="57" respawn="20" />
+        <spawn x="185323" y="57348" z="-7242" heading="57" respawn="20" />
+        <spawn x="185321" y="57698" z="-7242" heading="57" respawn="20" />
+        <spawn x="185319" y="58048" z="-7242" heading="57" respawn="20" />
+        <spawn x="185317" y="58398" z="-7242" heading="57" respawn="20" />
+        <spawn x="185684" y="55251" z="-7242" heading="57" respawn="20" />
+        <spawn x="185682" y="55601" z="-7242" heading="57" respawn="20" />
+        <spawn x="185680" y="55951" z="-7242" heading="57" respawn="20" />
+        <spawn x="185678" y="56301" z="-7242" heading="57" respawn="20" />
+        <spawn x="185676" y="56651" z="-7242" heading="57" respawn="20" />
+        <spawn x="185675" y="57000" z="-7242" heading="57" respawn="20" />
+        <spawn x="185673" y="57350" z="-7242" heading="57" respawn="20" />
+        <spawn x="185671" y="57700" z="-7242" heading="57" respawn="20" />
+        <spawn x="185667" y="58400" z="-7242" heading="57" respawn="20" />
+        <spawn x="186034" y="55253" z="-7242" heading="57" respawn="20" />
+        <spawn x="186032" y="55603" z="-7242" heading="57" respawn="20" />
+        <spawn x="186030" y="55953" z="-7242" heading="57" respawn="20" />
+        <spawn x="186028" y="56303" z="-7242" heading="57" respawn="20" />
+        <spawn x="186026" y="56653" z="-7242" heading="57" respawn="20" />
+        <spawn x="186025" y="57002" z="-7242" heading="57" respawn="20" />
+        <spawn x="186023" y="57352" z="-7242" heading="57" respawn="20" />
+        <spawn x="186021" y="57702" z="-7242" heading="57" respawn="20" />
+        <spawn x="186019" y="58052" z="-7242" heading="57" respawn="20" />
+        <spawn x="186017" y="58402" z="-7242" heading="57" respawn="20" />
+        <spawn x="186384" y="55255" z="-7242" heading="57" respawn="20" />
+        <spawn x="186382" y="55605" z="-7242" heading="57" respawn="20" />
+        <spawn x="186380" y="55955" z="-7242" heading="57" respawn="20" />
+        <spawn x="186378" y="56305" z="-7242" heading="57" respawn="20" />
+        <spawn x="186376" y="56655" z="-7242" heading="57" respawn="20" />
+        <spawn x="186375" y="57004" z="-7242" heading="57" respawn="20" />
+        <spawn x="186373" y="57354" z="-7242" heading="57" respawn="20" />
+        <spawn x="186371" y="57704" z="-7242" heading="57" respawn="20" />
+        <spawn x="186367" y="58404" z="-7242" heading="57" respawn="20" />
+        <spawn x="186734" y="55257" z="-7242" heading="57" respawn="20" />
+        <spawn x="186732" y="55607" z="-7242" heading="57" respawn="20" />
+        <spawn x="186730" y="55957" z="-7242" heading="57" respawn="20" />
+        <spawn x="186728" y="56307" z="-7242" heading="57" respawn="20" />
+        <spawn x="186726" y="56657" z="-7242" heading="57" respawn="20" />
+        <spawn x="186725" y="57006" z="-7242" heading="57" respawn="20" />
+        <spawn x="186723" y="57356" z="-7242" heading="57" respawn="20" />
+        <spawn x="186721" y="57706" z="-7242" heading="57" respawn="20" />
+        <spawn x="186719" y="58056" z="-7242" heading="57" respawn="20" />
+        <spawn x="186717" y="58406" z="-7242" heading="57" respawn="20" />
+        <spawn x="187083" y="55258" z="-7242" heading="57" respawn="20" />
+        <spawn x="187081" y="55608" z="-7242" heading="57" respawn="20" />
+        <spawn x="187079" y="55958" z="-7242" heading="57" respawn="20" />
+        <spawn x="187077" y="56308" z="-7242" heading="57" respawn="20" />
+        <spawn x="187075" y="56658" z="-7242" heading="57" respawn="20" />
+        <spawn x="187074" y="57007" z="-7242" heading="57" respawn="20" />
+        <spawn x="187072" y="57357" z="-7242" heading="57" respawn="20" />
+        <spawn x="187070" y="57707" z="-7242" heading="57" respawn="20" />
+        <spawn x="187066" y="58407" z="-7242" heading="57" respawn="20" />
+        <spawn x="187433" y="55260" z="-7242" heading="57" respawn="20" />
+        <spawn x="187431" y="55610" z="-7242" heading="57" respawn="20" />
+        <spawn x="187429" y="55960" z="-7242" heading="57" respawn="20" />
+        <spawn x="187427" y="56310" z="-7242" heading="57" respawn="20" />
+        <spawn x="187425" y="56660" z="-7242" heading="57" respawn="20" />
+        <spawn x="187424" y="57009" z="-7242" heading="57" respawn="20" />
+        <spawn x="187422" y="57359" z="-7242" heading="57" respawn="20" />
+        <spawn x="187420" y="57709" z="-7242" heading="57" respawn="20" />
+        <spawn x="187418" y="58059" z="-7242" heading="57" respawn="20" />
+        <spawn x="187416" y="58409" z="-7242" heading="57" respawn="20" />
+        <spawn x="187783" y="55262" z="-7242" heading="57" respawn="20" />
+        <spawn x="187781" y="55612" z="-7242" heading="57" respawn="20" />
+        <spawn x="187779" y="55962" z="-7242" heading="57" respawn="20" />
+        <spawn x="187777" y="56312" z="-7242" heading="57" respawn="20" />
+        <spawn x="187775" y="56662" z="-7242" heading="57" respawn="20" />
+        <spawn x="187774" y="57011" z="-7242" heading="57" respawn="20" />
+        <spawn x="187772" y="57361" z="-7242" heading="57" respawn="20" />
+        <spawn x="187770" y="57711" z="-7242" heading="57" respawn="20" />
+        <spawn x="187766" y="58411" z="-7242" heading="57" respawn="20" />
+        <spawn x="188133" y="55264" z="-7242" heading="57" respawn="20" />
+        <spawn x="188131" y="55614" z="-7242" heading="57" respawn="20" />
+        <spawn x="188129" y="55964" z="-7242" heading="57" respawn="20" />
+        <spawn x="188127" y="56314" z="-7242" heading="57" respawn="20" />
+        <spawn x="188125" y="56664" z="-7242" heading="57" respawn="20" />
+        <spawn x="188124" y="57013" z="-7242" heading="57" respawn="20" />
+        <spawn x="188122" y="57363" z="-7242" heading="57" respawn="20" />
+        <spawn x="188120" y="57713" z="-7242" heading="57" respawn="20" />
+        <spawn x="188118" y="58063" z="-7242" heading="57" respawn="20" />
+        <spawn x="188116" y="58413" z="-7242" heading="57" respawn="20" />
+        <spawn x="188483" y="55266" z="-7242" heading="57" respawn="20" />
+        <spawn x="188481" y="55616" z="-7242" heading="57" respawn="20" />
+        <spawn x="188479" y="55966" z="-7242" heading="57" respawn="20" />
+        <spawn x="188477" y="56316" z="-7242" heading="57" respawn="20" />
+        <spawn x="188475" y="56666" z="-7242" heading="57" respawn="20" />
+        <spawn x="188474" y="57015" z="-7242" heading="57" respawn="20" />
+        <spawn x="188472" y="57365" z="-7242" heading="57" respawn="20" />
+        <spawn x="188470" y="57715" z="-7242" heading="57" respawn="20" />
+        <spawn x="188468" y="58065" z="-7242" heading="57" respawn="20" />
+        <spawn x="188466" y="58415" z="-7242" heading="57" respawn="20" />
+        <spawn x="186883" y="54427" z="-7239" heading="65411" respawn="20" />
+        <spawn x="186887" y="54777" z="-7239" heading="65411" respawn="20" />
+        <spawn x="186892" y="55126" z="-7239" heading="65411" respawn="20" />
+        <spawn x="186896" y="55476" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187233" y="54423" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187237" y="54773" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187242" y="55122" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187246" y="55472" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187582" y="54418" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187586" y="54768" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187591" y="55117" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187595" y="55467" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187932" y="54414" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187936" y="54764" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187941" y="55113" z="-7239" heading="65411" respawn="20" />
+        <spawn x="187945" y="55463" z="-7239" heading="65411" respawn="20" />
+        <spawn x="186881" y="54945" z="-7239" heading="65286" respawn="20" />
+        <spawn x="187229" y="54941" z="-7239" heading="65416" respawn="20" />
+        <spawn x="187575" y="54943" z="-7239" heading="60" respawn="20" />
+        <spawn x="187984" y="54941" z="-7239" heading="65484" respawn="20" />
+
+    </npc>
+    <npc id="23775" name="Delta Carcass" title="" level="102" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="4000000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
+         collisionRadius="10" collisionHeight="24"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
+        <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
+        <skill id="14823" level="1" /> <!-- Half kill Imm -->
+        <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->
+        <skill id="4379" level="5" /> <!-- Spear Resistance -->
+        <skill id="4461" level="1" /> <!-- Dagger/Rapri Vul -->
+        <skill id="4071" level="1" /> <!-- Bow/Crossboss REsistance -->
+        <spawn x="189612" y="62029" z="-7239" heading="52352" respawn="20" />
+        <spawn x="189946" y="62135" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190280" y="62241" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190613" y="62346" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190947" y="62452" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191281" y="62558" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191613" y="62664" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191947" y="62769" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192281" y="62875" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192614" y="62981" z="-7239" heading="52352" respawn="20" />
+        <spawn x="189718" y="61696" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190052" y="61801" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190385" y="61907" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190719" y="62013" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191053" y="62118" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191386" y="62224" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191719" y="62330" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192053" y="62436" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192386" y="62541" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192720" y="62647" z="-7239" heading="52352" respawn="20" />
+        <spawn x="189824" y="61362" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190157" y="61468" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190491" y="61573" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190825" y="61679" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191158" y="61785" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191492" y="61890" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191825" y="61996" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192158" y="62102" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192492" y="62208" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192826" y="62313" z="-7239" heading="52352" respawn="20" />
+        <spawn x="189929" y="61028" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190263" y="61134" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190597" y="61240" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190930" y="61345" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191264" y="61451" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191597" y="61557" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191930" y="61663" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192264" y="61768" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192598" y="61874" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192931" y="61980" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190035" y="60696" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190369" y="60801" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190703" y="60907" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191036" y="61012" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191370" y="61117" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191702" y="61223" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192036" y="61329" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192370" y="61435" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192703" y="61540" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193037" y="61646" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190141" y="60362" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190475" y="60468" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190808" y="60573" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191142" y="60679" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191476" y="60785" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191808" y="60891" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192142" y="60996" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192475" y="61101" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192809" y="61207" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193143" y="61312" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190247" y="60028" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190580" y="60134" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190914" y="60240" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191248" y="60345" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191581" y="60451" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191914" y="60557" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192248" y="60663" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192581" y="60768" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192915" y="60874" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193249" y="60980" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190352" y="59695" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190686" y="59800" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191020" y="59906" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191353" y="60012" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191686" y="60118" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192020" y="60223" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192353" y="60329" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192687" y="60435" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193021" y="60540" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193354" y="60646" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190458" y="59361" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190792" y="59467" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191125" y="59572" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191459" y="59678" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191792" y="59784" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192125" y="59890" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192459" y="59995" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192793" y="60101" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193126" y="60207" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193460" y="60312" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190564" y="59027" z="-7239" heading="52352" respawn="20" />
+        <spawn x="190897" y="59133" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191231" y="59239" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191565" y="59344" z="-7239" heading="52352" respawn="20" />
+        <spawn x="191897" y="59450" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192231" y="59556" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192565" y="59662" z="-7239" heading="52352" respawn="20" />
+        <spawn x="192898" y="59767" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193232" y="59873" z="-7239" heading="52352" respawn="20" />
+        <spawn x="193566" y="59979" z="-7239" heading="52352" respawn="20" />
+        <spawn x="185390" y="59699" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185404" y="59848" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185418" y="59997" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185432" y="60146" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185446" y="60295" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185539" y="59685" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185553" y="59834" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185567" y="59983" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185581" y="60132" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185595" y="60281" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185688" y="59671" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185702" y="59820" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185716" y="59969" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185730" y="60118" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185744" y="60267" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185837" y="59657" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185851" y="59806" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185865" y="59955" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185879" y="60104" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185893" y="60253" z="-7238" heading="64554" respawn="20" />
+        <spawn x="185986" y="59643" z="-7238" heading="64554" respawn="20" />
+        <spawn x="186000" y="59792" z="-7238" heading="64554" respawn="20" />
+        <spawn x="186014" y="59941" z="-7238" heading="64554" respawn="20" />
+        <spawn x="186028" y="60090" z="-7238" heading="64554" respawn="20" />
+        <spawn x="186042" y="60239" z="-7238" heading="64554" respawn="20" />
+    </npc>
+    <npc id="23776" name="Delta Kshana" title="" level="102" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+         mpMax="45970" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="4000000"
+         mAtk="1600000"
+         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
+         collisionRadius="10" collisionHeight="24"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
+        <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
+        <skill id="14823" level="1" /> <!-- Half kill Imm -->
+        <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->
+        <skill id="4379" level="5" /> <!-- Spear Resistance -->
+        <skill id="4461" level="1" /> <!-- Dagger/Rapri Vul -->
+        <skill id="4071" level="1" /> <!-- Bow/Crossboss REsistance -->
+        <spawn x="186504" y="59871" z="-7239" heading="315" respawn="20" />
+        <spawn x="186494" y="60221" z="-7239" heading="315" respawn="20" />
+        <spawn x="186483" y="60570" z="-7239" heading="315" respawn="20" />
+        <spawn x="186473" y="60920" z="-7239" heading="315" respawn="20" />
+        <spawn x="186462" y="61270" z="-7239" heading="315" respawn="20" />
+        <spawn x="186451" y="61619" z="-7239" heading="315" respawn="20" />
+        <spawn x="186441" y="61969" z="-7239" heading="315" respawn="20" />
+        <spawn x="186430" y="62319" z="-7239" heading="315" respawn="20" />
+        <spawn x="186420" y="62668" z="-7239" heading="315" respawn="20" />
+        <spawn x="186409" y="63018" z="-7239" heading="315" respawn="20" />
+        <spawn x="186854" y="59881" z="-7239" heading="315" respawn="20" />
+        <spawn x="186844" y="60231" z="-7239" heading="315" respawn="20" />
+        <spawn x="186833" y="60581" z="-7239" heading="315" respawn="20" />
+        <spawn x="186822" y="60931" z="-7239" heading="315" respawn="20" />
+        <spawn x="186812" y="61281" z="-7239" heading="315" respawn="20" />
+        <spawn x="186801" y="61629" z="-7239" heading="315" respawn="20" />
+        <spawn x="186791" y="61979" z="-7239" heading="315" respawn="20" />
+        <spawn x="186780" y="62329" z="-7239" heading="315" respawn="20" />
+        <spawn x="186770" y="62679" z="-7239" heading="315" respawn="20" />
+        <spawn x="186759" y="63029" z="-7239" heading="315" respawn="20" />
+        <spawn x="187204" y="59892" z="-7239" heading="315" respawn="20" />
+        <spawn x="187193" y="60242" z="-7239" heading="315" respawn="20" />
+        <spawn x="187183" y="60591" z="-7239" heading="315" respawn="20" />
+        <spawn x="187172" y="60941" z="-7239" heading="315" respawn="20" />
+        <spawn x="187162" y="61291" z="-7239" heading="315" respawn="20" />
+        <spawn x="187151" y="61640" z="-7239" heading="315" respawn="20" />
+        <spawn x="187141" y="61990" z="-7239" heading="315" respawn="20" />
+        <spawn x="187130" y="62340" z="-7239" heading="315" respawn="20" />
+        <spawn x="187119" y="62690" z="-7239" heading="315" respawn="20" />
+        <spawn x="187109" y="63039" z="-7239" heading="315" respawn="20" />
+        <spawn x="187553" y="59902" z="-7239" heading="315" respawn="20" />
+        <spawn x="187542" y="60252" z="-7239" heading="315" respawn="20" />
+        <spawn x="187532" y="60602" z="-7239" heading="315" respawn="20" />
+        <spawn x="187521" y="60952" z="-7239" heading="315" respawn="20" />
+        <spawn x="187511" y="61302" z="-7239" heading="315" respawn="20" />
+        <spawn x="187500" y="61651" z="-7239" heading="315" respawn="20" />
+        <spawn x="187489" y="62000" z="-7239" heading="315" respawn="20" />
+        <spawn x="187479" y="62350" z="-7239" heading="315" respawn="20" />
+        <spawn x="187468" y="62700" z="-7239" heading="315" respawn="20" />
+        <spawn x="187458" y="63050" z="-7239" heading="315" respawn="20" />
+        <spawn x="187903" y="59913" z="-7239" heading="315" respawn="20" />
+        <spawn x="187892" y="60263" z="-7239" heading="315" respawn="20" />
+        <spawn x="187882" y="60613" z="-7239" heading="315" respawn="20" />
+        <spawn x="187871" y="60962" z="-7239" heading="315" respawn="20" />
+        <spawn x="187860" y="61312" z="-7239" heading="315" respawn="20" />
+        <spawn x="187850" y="61661" z="-7239" heading="315" respawn="20" />
+        <spawn x="187839" y="62011" z="-7239" heading="315" respawn="20" />
+        <spawn x="187829" y="62361" z="-7239" heading="315" respawn="20" />
+        <spawn x="187818" y="62711" z="-7239" heading="315" respawn="20" />
+        <spawn x="187808" y="63060" z="-7239" heading="315" respawn="20" />
+        <spawn x="188253" y="59924" z="-7239" heading="315" respawn="20" />
+        <spawn x="188242" y="60273" z="-7239" heading="315" respawn="20" />
+        <spawn x="188231" y="60623" z="-7239" heading="315" respawn="20" />
+        <spawn x="188221" y="60973" z="-7239" heading="315" respawn="20" />
+        <spawn x="188210" y="61323" z="-7239" heading="315" respawn="20" />
+        <spawn x="188200" y="61672" z="-7239" heading="315" respawn="20" />
+        <spawn x="188189" y="62022" z="-7239" heading="315" respawn="20" />
+        <spawn x="188179" y="62371" z="-7239" heading="315" respawn="20" />
+        <spawn x="188168" y="62721" z="-7239" heading="315" respawn="20" />
+        <spawn x="188157" y="63071" z="-7239" heading="315" respawn="20" />
+        <spawn x="183948" y="59443" z="-7238" heading="162" respawn="20" />
+        <spawn x="183945" y="59593" z="-7238" heading="162" respawn="20" />
+        <spawn x="183943" y="59743" z="-7238" heading="162" respawn="20" />
+        <spawn x="183941" y="59893" z="-7238" heading="162" respawn="20" />
+        <spawn x="183938" y="60042" z="-7238" heading="162" respawn="20" />
+        <spawn x="183936" y="60192" z="-7238" heading="162" respawn="20" />
+        <spawn x="183934" y="60342" z="-7238" heading="162" respawn="20" />
+        <spawn x="183931" y="60492" z="-7238" heading="162" respawn="20" />
+        <spawn x="184098" y="59446" z="-7238" heading="162" respawn="20" />
+        <spawn x="184095" y="59596" z="-7238" heading="162" respawn="20" />
+        <spawn x="184093" y="59746" z="-7238" heading="162" respawn="20" />
+        <spawn x="184091" y="59896" z="-7238" heading="162" respawn="20" />
+        <spawn x="184088" y="60045" z="-7238" heading="162" respawn="20" />
+        <spawn x="184086" y="60195" z="-7238" heading="162" respawn="20" />
+        <spawn x="184084" y="60345" z="-7238" heading="162" respawn="20" />
+        <spawn x="184081" y="60495" z="-7238" heading="162" respawn="20" />
+        <spawn x="184248" y="59448" z="-7238" heading="162" respawn="20" />
+        <spawn x="184245" y="59598" z="-7238" heading="162" respawn="20" />
+        <spawn x="184243" y="59748" z="-7238" heading="162" respawn="20" />
+        <spawn x="184241" y="59898" z="-7238" heading="162" respawn="20" />
+        <spawn x="184238" y="60047" z="-7238" heading="162" respawn="20" />
+        <spawn x="184236" y="60197" z="-7238" heading="162" respawn="20" />
+        <spawn x="184234" y="60347" z="-7238" heading="162" respawn="20" />
+        <spawn x="184231" y="60497" z="-7238" heading="162" respawn="20" />
+        <spawn x="184398" y="59450" z="-7238" heading="162" respawn="20" />
+        <spawn x="184395" y="59600" z="-7238" heading="162" respawn="20" />
+        <spawn x="184393" y="59750" z="-7238" heading="162" respawn="20" />
+        <spawn x="184391" y="59900" z="-7238" heading="162" respawn="20" />
+        <spawn x="184388" y="60049" z="-7238" heading="162" respawn="20" />
+        <spawn x="184386" y="60199" z="-7238" heading="162" respawn="20" />
+        <spawn x="184384" y="60349" z="-7238" heading="162" respawn="20" />
+        <spawn x="184381" y="60499" z="-7238" heading="162" respawn="20" />
+        <spawn x="184547" y="59453" z="-7238" heading="162" respawn="20" />
+        <spawn x="184544" y="59603" z="-7238" heading="162" respawn="20" />
+        <spawn x="184542" y="59753" z="-7238" heading="162" respawn="20" />
+        <spawn x="184540" y="59903" z="-7238" heading="162" respawn="20" />
+        <spawn x="184537" y="60052" z="-7238" heading="162" respawn="20" />
+        <spawn x="184535" y="60202" z="-7238" heading="162" respawn="20" />
+        <spawn x="184533" y="60352" z="-7238" heading="162" respawn="20" />
+        <spawn x="184530" y="60502" z="-7238" heading="162" respawn="20" />
+        <spawn x="184697" y="59455" z="-7238" heading="162" respawn="20" />
+        <spawn x="184694" y="59605" z="-7238" heading="162" respawn="20" />
+        <spawn x="184692" y="59755" z="-7238" heading="162" respawn="20" />
+        <spawn x="184690" y="59905" z="-7238" heading="162" respawn="20" />
+        <spawn x="184687" y="60054" z="-7238" heading="162" respawn="20" />
+        <spawn x="184685" y="60204" z="-7238" heading="162" respawn="20" />
+        <spawn x="184683" y="60354" z="-7238" heading="162" respawn="20" />
+        <spawn x="184680" y="60504" z="-7238" heading="162" respawn="20" />
+        <spawn x="184847" y="59457" z="-7238" heading="162" respawn="20" />
+        <spawn x="184844" y="59607" z="-7238" heading="162" respawn="20" />
+        <spawn x="184842" y="59757" z="-7238" heading="162" respawn="20" />
+        <spawn x="184840" y="59907" z="-7238" heading="162" respawn="20" />
+        <spawn x="184837" y="60056" z="-7238" heading="162" respawn="20" />
+        <spawn x="184835" y="60206" z="-7238" heading="162" respawn="20" />
+        <spawn x="184833" y="60356" z="-7238" heading="162" respawn="20" />
+        <spawn x="184830" y="60506" z="-7238" heading="162" respawn="20" />
+        <spawn x="184997" y="59460" z="-7238" heading="162" respawn="20" />
+        <spawn x="184994" y="59610" z="-7238" heading="162" respawn="20" />
+        <spawn x="184992" y="59760" z="-7238" heading="162" respawn="20" />
+        <spawn x="184990" y="59910" z="-7238" heading="162" respawn="20" />
+        <spawn x="184987" y="60059" z="-7238" heading="162" respawn="20" />
+        <spawn x="184985" y="60209" z="-7238" heading="162" respawn="20" />
+        <spawn x="184983" y="60359" z="-7238" heading="162" respawn="20" />
+        <spawn x="184980" y="60509" z="-7238" heading="162" respawn="20" />
+    </npc>
 </list>

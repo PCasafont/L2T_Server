@@ -11,15 +11,15 @@
         <spawn x="-115171" y="253074" z="-1504" heading="0" respawn="1000" />
     </npc>
     <npc id="50008" templateId="33941" name="Charlotte" serverSideName="true" title="Event Shop"
-                   serverSideTitle="true" level="70"
-                   type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
-                   INT="7" WIT="9"
-                   MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
-                   walkSpd="50"
-                   runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-                   holyRes="20"
-                   darkRes="20" aiType="fighter">
-    <spawn x="-114074" y="252641" z="-1554" heading="32294" respawn="1000" />
+         serverSideTitle="true" level="70"
+         type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+         INT="7" WIT="9"
+         MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
+         walkSpd="50"
+         runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="20"
+         darkRes="20" aiType="fighter">
+        <spawn x="-82584" y="150592" z="-3129" heading="16383" respawn="1000" />
 </npc>
     <npc id="50009" templateId="13394" name="Salome" serverSideName="true" title="Augmented Item Shop"
          serverSideTitle="true" level="70"
@@ -30,7 +30,7 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-114776" y="252715" z="-1545" heading="0" respawn="1000" />
+        <spawn x="-82370" y="150707" z="-3129" heading="26110" respawn="1000" />
     </npc>
     <npc id="50010" templateId="33943" name="Katalin" serverSideName="true" title="Vote Manager"
          serverSideTitle="true"
@@ -41,7 +41,7 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-114074" y="252607" z="-1556" heading="33989" respawn="1000" />
+        <spawn x="-82365" y="150981" z="-3129" heading="31847" respawn="1000" />
     </npc>
     <npc id="50011" templateId="33944" name="Inia" title="Helios" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
          mpMax="1642"
@@ -135,7 +135,7 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-115165" y="253351" z="-1501" heading="0" respawn="1000" />
+        <spawn x="-83021" y="150605" z="-3129" heading="63590" respawn="1000" />
     </npc>
     <npc id="50014" templateId="13198" name="King of the Cows" serverSideName="true" title="Event Npc"
          serverSideTitle="true" level="70"
@@ -146,7 +146,7 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-114078" y="252686" z="-1556" heading="32294" respawn="1000" />
+        <spawn x="-83404" y="150648" z="-3129" heading="2669" respawn="1000" />
     </npc>
     <npc id="80245" templateId="13190" name="Marguerite" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
          mpReg="8.29"
@@ -267,4 +267,64 @@
          waterRes="150"
          windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" skillChance="15" clanRange="300">
     </npc>
+	<npc id="91003" templateId="22191" name="Jisoo" serverSideName="true" title="Priest of the Sun" serverSideTitle="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
+		 mpReg="8.29"
+		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+		 mAtkSpd="407"
+		 pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0"
+		 waterRes="0"
+		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="91004" templateId="25950" name="Aulikel" serverSideName="true" title="Descendant of the Light" level="107" type="L2RaidBoss" atkRange="40" hpMax="60000000"
+		 hpReg="151.22101"
+		 mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
+		 sp="1634597"
+		 pAtk="260185" mAtk="41051" pDef="70000" mDef="45000" pAtkSpd="439" mAtkSpd="599" pCritRate="40" mCritRate="40"
+		 walkSpd="60"
+		 runSpd="300" aggressive="true" aggroRange="1200" collisionRadius="55" collisionHeight="80.5" elemAtkType="3"
+		 fireRes="450" waterRes="450" windRes="450" earthRes="600" holyRes="450" darkRes="450" aiType="balanced"
+		 elemAtkValue="600"
+		 skillChance="70" isLethalImmune="true">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="5466" level="1" /> <!-- Holy Attack -->
+		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+		<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="16248" level="1" /> <!-- 88Lv. Raid Boss -->
+		<skill id="16206" level="4" /> <!-- Holy Spike -->
+		<skill id="16212" level="4" /> <!-- Holy Buster -->
+		<skill id="16218" level="4" /> <!-- Holy Blast -->
+		<itemDrop itemId="36414" min="100" max="200" chance="100" /> <!-- Dragon Claw -->
+		<itemDrop itemId="57" min="500000000" max="500000000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="37559" min="100" max="200" chance="100" /> <!-- Shiny Coin -->
+		<itemDrop itemId="4356" min="50" max="125" chance="70" /> <!-- Gold Ein -->
+		<itemDrop itemId="46193" min="2" max="3" chance="100" /> <!-- P.Reflect -->
+		<itemDrop itemId="46194" min="2" max="3" chance="100" /> <!-- M.Reflect -->
+	</npc>
+	<npc id="91005" templateId="29275" name="Zlepx" serverSideName="true" title="Descendant of the Dark" level="107" type="L2RaidBoss" atkRange="40" hpMax="60000000"
+		 hpReg="151.22101"
+		 mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6856810821128"
+		 sp="1634597"
+		 pAtk="260185" mAtk="41051" pDef="70000" mDef="70000" pAtkSpd="159" mAtkSpd="212" pCritRate="40" mCritRate="40"
+		 walkSpd="60"
+		 runSpd="300" aggressive="true" aggroRange="1200" collisionRadius="55" collisionHeight="80.5" elemAtkType="3"
+		 fireRes="450" waterRes="450" windRes="450" earthRes="600" holyRes="450" darkRes="450" aiType="balanced"
+		 elemAtkValue="600"
+		 skillChance="70" isLethalImmune="true">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+		<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="16248" level="1" /> <!-- 88Lv. Raid Boss -->
+		<skill id="16211" level="4" /> <!-- Earth Spike -->
+		<skill id="16217" level="4" /> <!-- Earth Buster -->
+		<skill id="16223" level="4" /> <!-- Earth Blast -->
+		<itemDrop itemId="36414" min="200" max="325" chance="100" /> <!-- Dragon Claw -->
+		<itemDrop itemId="57" min="500000000" max="1000000000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="37559" min="200" max="300" chance="100" /> <!-- Shiny Coin -->
+		<itemDrop itemId="4356" min="50" max="125" chance="70" /> <!-- Gold Ein -->
+		<itemDrop itemId="46193" min="3" max="4" chance="100" /> <!-- P.Reflect -->
+		<itemDrop itemId="46194" min="3" max="4" chance="100" /> <!-- M.Reflect -->
+	</npc>
 </list>

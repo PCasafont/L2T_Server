@@ -19,10 +19,13 @@
 
 package l2server.gameserver.gui;
 
+import l2server.gameserver.Announcements;
 import l2server.gameserver.gui.playertable.PlayerTablePane;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Pere
@@ -35,8 +38,20 @@ public class AdminTab extends JPanel
 	private JPanel _listPanel = new PlayerTablePane();
 	private JPanel _infoPanel = new JPanel();
 
+
+
+
 	public AdminTab()
 	{
+
+		JTextArea  talkadmin = new JTextArea();
+		JButton bouton = new JButton("Send");
+		bouton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Announcements.getInstance().announceToAll(talkadmin.getText());
+
+			}
+		});
 		setLayout(_layout);
 		_cons.fill = GridBagConstraints.HORIZONTAL;
 
@@ -49,15 +64,28 @@ public class AdminTab extends JPanel
 		_cons.weighty = 1;
 		_cons.gridx = 0;
 		_cons.gridy = 2;
-		_infoPanel.add(new JLabel(""), _cons);
+
+
+		_infoPanel.add(bouton, _cons);
+
+
+
+
 		_infoPanel.setPreferredSize(new Dimension(235, _infoPanel.getHeight()));
 
 		_cons.fill = GridBagConstraints.BOTH;
 		_cons.weightx = 1;
 		_cons.weighty = 1;
+
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _listPanel, _infoPanel);
 		splitPane.setResizeWeight(0.3);
 		splitPane.setDividerLocation(535);
 		add(splitPane, _cons);
+		_listPanel.add(talkadmin, _cons);
+
+
+
 	}
+
+
 }

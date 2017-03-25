@@ -386,6 +386,12 @@ public class OlympiadManager
 			return null;
 		}
 
+		if (player.getLevel() < 106)
+		{
+			player.sendMessage("Only players level 106 or above can participate in the Grand Olympiad.");
+			return null;
+		}
+
 		if (player.isSubClassActive())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANT_JOIN_THE_OLYMPIAD_WITH_A_SUB_CLASS_CHARACTER);

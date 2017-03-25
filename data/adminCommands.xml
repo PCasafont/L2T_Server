@@ -96,6 +96,7 @@
     <command name="admin_devspawn" accessLevels="6" />
     <command name="admin_diet" accessLevels="6" />
     <command name="admin_enable_global_chat" accessLevels="6" />
+    <command name="admin_disable_global_chat" accessLevels="6" />
     <command name="admin_dump" accessLevels="6" />
     <command name="admin_earthquake" accessLevels="3" />
     <command name="admin_earthquake_menu" accessLevels="6" />

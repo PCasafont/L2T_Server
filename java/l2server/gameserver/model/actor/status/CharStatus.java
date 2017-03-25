@@ -213,11 +213,6 @@ public class CharStatus
 			}
 		}
 
-		if (isDOT)
-		{
-			value = Formulas.calcCustomModifier(attacker, getActiveChar(), value);
-		}
-
 		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
 		if (isDOT)
 		{

@@ -10141,7 +10141,7 @@
             <baseAdd stat="LUC" val="#newStats" />
             <baseAdd stat="CHA" val="#newStats" />
             <add stat="absorbDam" val="#vamp" />
-            <subPercent stat="reflectVuln" val="#reflectRes" />
+            <sub stat="reflectVuln" val="#reflectRes" />
             <subPercent stat="fixedDmgVuln" val="#fixedDmgRes" />
             <subPercent stat="pReuse" val="#cooldown" />
             <subPercent stat="mReuse" val="#cooldown" />

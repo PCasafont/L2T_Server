@@ -64,7 +64,12 @@ public final class L2ArmorSet
 		L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
 		L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
 		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
-
+		L2ItemInstance greaterItem1 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY1);
+		L2ItemInstance greaterItem2 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY2);
+		L2ItemInstance greaterItem3 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY3);
+		L2ItemInstance greaterItem4 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY4);
+		L2ItemInstance greaterItem5 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY5);
+		L2ItemInstance greaterItem6 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY6);
 		int count = 0;
 		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(_id))
 		{
@@ -83,6 +88,30 @@ public final class L2ArmorSet
 			count++;
 		}
 		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem1 != null && greaterItem1.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem2 != null && greaterItem2.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem3 != null && greaterItem3.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem4 != null && greaterItem4.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem5 != null && greaterItem5.getArmorItem().isArmorSetPart(_id))
+		{
+			count++;
+		}
+		if (greaterItem6 != null && greaterItem6.getArmorItem().isArmorSetPart(_id))
 		{
 			count++;
 		}

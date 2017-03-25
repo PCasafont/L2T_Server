@@ -252,6 +252,10 @@ public class ChainHeal implements ISkillHandler
 			{
 				return false;
 			}
+			if (activeChar.isInSameOlympiadGame(pTarget)|| activeChar.isInSameClan(pTarget))
+			{
+				return false;
+			}
 			if (target.isInsideZone(L2Character.ZONE_TOWN))
 			{
 				return true;

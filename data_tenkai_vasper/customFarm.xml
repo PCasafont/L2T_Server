@@ -82,6 +82,18 @@
     <itemDrop itemId="57" min="200000" max="300439" chance="100" />  <!-- Adena -->
     <itemDrop itemId="37559" min="1" max="5" chance="20" />  <!-- Adena -->
     </customFarm>
+    <customFarm farmZone="giant_cave2"
+                atkMultiplier="1.5" defMultiplier="1.4" expMultiplier="20.0"  overrideLevels="107" overrideDrops="true" > <!-- Lvl: 107 | Strength: 50795 -->
+        <!-- <itemDrop itemId="5899" min="5" max="10" chance="25" />   kail COins -->
+        <!--<itemDrop itemId="37559" min="5" max="10" chance="25" />   Shiny Coins -->
+        <itemDrop itemId="57" min="5000000" max="10000000" chance="100" />  <!-- Adena -->
+    </customFarm>
+    <customFarm farmZone="giant_cave3"
+                atkMultiplier="1" defMultiplier="0.5" expMultiplier="25.0"  overrideLevels="107" overrideDrops="true" > <!-- Lvl: 107 | Strength: 50795 -->
+        <!--<itemDrop itemId="5899" min="2" max="5" chance="13" />  kail COins -->
+        <!--<itemDrop itemId="37559" min="2" max="5" chance="13" />  Shiny Coins -->
+        <itemDrop itemId="57" min="2500000" max="5000000" chance="100" />  <!-- Adena -->
+    </customFarm>
     <customFarm farmZone="world_altar_raids"
                 atkMultiplier="5.0" defMultiplier="2.2" expMultiplier="5.0" overrideLevels="110" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
         <itemDrop itemId="4356" min="1" max="2" chance="40" /> <!-- Gold Einhasad -->

@@ -24,7 +24,7 @@ public class Elpy
 	public static int registTime = 60; //Seconds
 	public static int time = 5; //Min
 	public static int minPlayers = 2;
-	public static int life = 5;
+	public static int life = 6;
 	
 	public void openRegistration()
 	{
@@ -85,6 +85,7 @@ public class Elpy
 		}
 		
 		state = State.ACTIVE;
+		Announcements.getInstance().announceToAll("Participants : " + registered.size());
 		for (L2PcInstance player : registered)
 		{
 			if (player == null)
@@ -157,12 +158,23 @@ public class Elpy
 			attacker.sendMessage("You killed " + target.getName());
 			int amount = (int)((12 / elpy.size()) + 1);
 			attacker.addItem("Kail's Coin", 5899, amount, attacker, true);
-			if (atLife < life)
+			if (atLife + 2 <= life)
+			{
+				elpy.put(attacker.getObjectId(), atLife + 2);
+				attacker.setTitle("Life : " + elpy.get(attacker.getObjectId()));
+				attacker.broadcastUserInfo();
+				attacker.broadcastTitleInfo();
+			}
+			else if (atLife + 1 <= life)
 			{
 				elpy.put(attacker.getObjectId(), atLife + 1);
 				attacker.setTitle("Life : " + elpy.get(attacker.getObjectId()));
 				attacker.broadcastUserInfo();
 				attacker.broadcastTitleInfo();
+			}
+			if (elpy.size() <= 1 ||registered.size() <= 1)
+			{
+				stopEvent();
 			}
 		}
 		
@@ -180,10 +192,10 @@ public class Elpy
 		target.broadcastUserInfo();
 		registered.remove(target);
 		elpy.remove(target.getObjectId());
-		if (elpy.size() == 1)
+		if (elpy.size() <= 1)
 		{
-
-stopEvent();
+			Announcements.getInstance().announceToAll("King of elpies -> " + attacker.getName());
+		stopEvent();
 		}
 
 	}
