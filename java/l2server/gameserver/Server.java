@@ -367,7 +367,7 @@ public class Server
 
 			//LasTravel + Inia
 			//stopRanked.getInstance().scheduleEventStart();
-			PvpZone.getInstance();
+			//PvpZone.getInstance();
 			//RandomFight.getInstance();
             Ranked1v1.getInstance();
 			Ranked2v2.getInstance();
