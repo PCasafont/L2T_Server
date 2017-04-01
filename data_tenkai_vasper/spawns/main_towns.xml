@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <specificSpawnList name="gludio_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="-14609" y="124023" z="-3120" heading="48510" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="-14693" y="124023" z="-3120" heading="48510" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="-14786" y="123655" z="-3122" heading="1413" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="-14378" y="123799" z="-3126" heading="14450" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="-14786" y="123565" z="-3122" heading="1413" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="-13958" y="123376" z="-3118" heading="22853" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="-14018" y="123337" z="-3118" heading="22360" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="-14133" y="123867" z="-3120" heading="40959" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="-14575" y="123621" z="-3112" heading="32767" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="-14174" y="123626" z="-3112" heading="2555" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="-14797" y="123283" z="-3112" heading="800" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="-14133" y="124063" z="-3120" heading="33049" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="dion_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="17775" y="146049" z="-3090" heading="63813" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="17912" y="145360" z="-3055" heading="11094" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="18668" y="145927" z="-3076" heading="51279" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="18772" y="145437" z="-3133" heading="28498" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="18606" y="145920" z="-3076" heading="48500" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="18552" y="145921" z="-3074" heading="52756" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="18199" y="146081" z="-3080" heading="41544" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="18382" y="145098" z="-3080" heading="7037" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="19396" y="145317" z="-3105" heading="30929" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="18228" y="146030" z="-3088" heading="41852" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="17490" y="145780" z="-3070" heading="60053" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="18354" y="145971" z="-3092" heading="38679" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="giran_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="83479" y="147912" z="-3409" heading="16383" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="83265" y="148844" z="-3400" heading="0" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="83667" y="148382" z="-3409" heading="32712" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="83391" y="148623" z="-3409" heading="32712" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="83265" y="148399" z="-3409" heading="0" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="83054" y="148843" z="-3469" heading="28114" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="83044" y="148391" z="-3469" heading="34401" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="83680" y="148855" z="-3405" heading="35906" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="83292" y="149292" z="-3405" heading="54860" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="82447" y="148606" z="-3469" heading="65188" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="83674" y="147989" z="-3405" heading="28544" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="82310" y="148222" z="-3469" heading="57730" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="oren_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="80227" y="54670" z="-1564" heading="63967" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="80191" y="55220" z="-1564" heading="58653" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="80862" y="54567" z="-1529" heading="32919" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="80905" y="54726" z="-1529" heading="33749" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="80882" y="54895" z="-1529" heading="33979" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="83157" y="53391" z="-1454" heading="31004" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="83118" y="53577" z="-1442" heading="34049" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="82663" y="53695" z="-1489" heading="4836" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="83183" y="53715" z="-1452" heading="32768" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="82459" y="53532" z="-1496" heading="53988" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="82673" y="54141" z="-1498" heading="49700" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="82324" y="53256" z="-1488" heading="14103" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="aden_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="147141" y="26538" z="-2209" heading="10424" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="147773" y="26536" z="-2209" heading="24575" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="147398" y="27277" z="-2208" heading="48779" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="147459" y="26875" z="-2208" heading="49093" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="147511" y="27270" z="-2208" heading="51895" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="147615" y="27365" z="-2200" heading="49153" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="147291" y="27373" z="-2200" heading="47604" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="146404" y="27072" z="-2200" heading="64443" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="148399" y="26626" z="-2200" heading="11382" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="147446" y="27917" z="-2205" heading="11330" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="146453" y="26662" z="-2205" heading="6599" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="148461" y="27284" z="-2205" heading="34895" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="heine_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="111792" y="218956" z="-3547" heading="28799" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="111664" y="219200" z="-3547" heading="31728" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="111351" y="218678" z="-3470" heading="16152" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="111391" y="219211" z="-3547" heading="50245" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="111409" y="218675" z="-3470" heading="17918" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="111535" y="218687" z="-3466" heading="17149" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="111132" y="218778" z="-3484" heading="17358" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="111076" y="219110" z="-3536" heading="49153" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="111800" y="219193" z="-3543" heading="38594" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="111245" y="218643" z="-3466" heading="17642" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="111973" y="219009" z="-3543" heading="14815" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="111635" y="218784" z="-3488" heading="15732" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="goddard_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="148127" y="-55537" z="-2746" heading="38216" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="147349" y="-55428" z="-2738" heading="56831" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="147838" y="-55510" z="-2738" heading="47769" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="147725" y="-55815" z="-2762" heading="15197" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="147700" y="-55508" z="-2738" heading="49458" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="147998" y="-55455" z="-2735" heading="51027" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="147519" y="-55492" z="-2735" heading="47671" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="147298" y="-55662" z="-2744" heading="64545" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="147558" y="-55157" z="-2728" heading="53248" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="147332" y="-55818" z="-2759" heading="62709" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="148079" y="-55821" z="-2759" heading="34401" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="148135" y="-55703" z="-2744" heading="38549" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="rune_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="43739" y="-47693" z="-801" heading="47671" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="43968" y="-47709" z="-801" heading="51115" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="43569" y="-47712" z="-801" heading="32767" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="43891" y="-48048" z="-801" heading="32767" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="43554" y="-47658" z="-801" heading="32767" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="43556" y="-47608" z="-792" heading="36864" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="43530" y="-48401" z="-800" heading="14903" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="44174" y="-48342" z="-792" heading="16383" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="44231" y="-48377" z="-792" heading="18000" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="44114" y="-48397" z="-792" heading="29577" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="44122" y="-48500" z="-798" heading="31225" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="43560" y="-48505" z="-798" heading="1807" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="schuttgart_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="87046" y="-142774" z="-1329" heading="60062" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="87661" y="-142779" z="-1329" heading="28285" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="87211" y="-143242" z="-1297" heading="17358" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="87363" y="-143013" z="-1305" heading="16461" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="87513" y="-143259" z="-1297" heading="16383" respawn="10000" />
+        <!-- Augment Item NPC -->
+        <spawn npcId="50009" x="86962" y="-142951" z="-1312" heading="63393" respawn="10000" />
+        <!-- Beauty NPC -->
+        <spawn npcId="50015" x="87811" y="-143127" z="-1302" heading="26056" respawn="10000" />
+        <!-- Dimensional NPC -->
+        <spawn npcId="80200" x="86822" y="-143185" z="-1342" heading="25669" respawn="10000" />
+        <!-- Vote NPC -->
+        <spawn npcId="50010" x="86920" y="-143062" z="-1304" heading="6469" respawn="10000" />
+        <!-- Event NPC -->
+        <spawn npcId="50008" x="87069" y="-143311" z="-1294" heading="16190" respawn="10000" />
+        <!-- King Cow NPC -->
+        <spawn npcId="50014" x="87760" y="-142937" z="-1318" heading="38404" respawn="10000" />
+        <!-- Banker NPC -->
+        <spawn npcId="50012" x="87363" y="-143245" z="-1294" heading="17959" respawn="10000" />
+    </specificSpawnList>
+</list>

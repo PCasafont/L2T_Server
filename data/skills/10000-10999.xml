@@ -6769,7 +6769,8 @@
                     <player active_effect_id="30517" />
                 </not>
             </cond>
-            <abnormal duration="3" landRate="#landRate" stackLvl="1" >
+            <abnormal duration="10" landRate="#landRate" stackLvl="1">
+                <effect type="RemoveHide" val="0" />
                 <addPercent stat="critVuln" val="10" />
                 <subPercent stat="gainHpLimit" val="50" />
             </abnormal>

@@ -18203,12 +18203,10 @@
         <spawn x="185404" y="59848" z="-7238" heading="64554" respawn="20" />
         <spawn x="185418" y="59997" z="-7238" heading="64554" respawn="20" />
         <spawn x="185432" y="60146" z="-7238" heading="64554" respawn="20" />
-        <spawn x="185446" y="60295" z="-7238" heading="64554" respawn="20" />
         <spawn x="185539" y="59685" z="-7238" heading="64554" respawn="20" />
         <spawn x="185553" y="59834" z="-7238" heading="64554" respawn="20" />
         <spawn x="185567" y="59983" z="-7238" heading="64554" respawn="20" />
         <spawn x="185581" y="60132" z="-7238" heading="64554" respawn="20" />
-        <spawn x="185595" y="60281" z="-7238" heading="64554" respawn="20" />
         <spawn x="185688" y="59671" z="-7238" heading="64554" respawn="20" />
         <spawn x="185702" y="59820" z="-7238" heading="64554" respawn="20" />
         <spawn x="185716" y="59969" z="-7238" heading="64554" respawn="20" />
@@ -18299,47 +18297,34 @@
         <spawn x="188168" y="62721" z="-7239" heading="315" respawn="20" />
         <spawn x="188157" y="63071" z="-7239" heading="315" respawn="20" />
         <spawn x="183948" y="59443" z="-7238" heading="162" respawn="20" />
-        <spawn x="183945" y="59593" z="-7238" heading="162" respawn="20" />
         <spawn x="183943" y="59743" z="-7238" heading="162" respawn="20" />
         <spawn x="183941" y="59893" z="-7238" heading="162" respawn="20" />
         <spawn x="183938" y="60042" z="-7238" heading="162" respawn="20" />
         <spawn x="183936" y="60192" z="-7238" heading="162" respawn="20" />
         <spawn x="183934" y="60342" z="-7238" heading="162" respawn="20" />
-        <spawn x="183931" y="60492" z="-7238" heading="162" respawn="20" />
         <spawn x="184098" y="59446" z="-7238" heading="162" respawn="20" />
-        <spawn x="184095" y="59596" z="-7238" heading="162" respawn="20" />
         <spawn x="184093" y="59746" z="-7238" heading="162" respawn="20" />
         <spawn x="184091" y="59896" z="-7238" heading="162" respawn="20" />
         <spawn x="184088" y="60045" z="-7238" heading="162" respawn="20" />
         <spawn x="184086" y="60195" z="-7238" heading="162" respawn="20" />
-        <spawn x="184084" y="60345" z="-7238" heading="162" respawn="20" />
-        <spawn x="184081" y="60495" z="-7238" heading="162" respawn="20" />
         <spawn x="184248" y="59448" z="-7238" heading="162" respawn="20" />
-        <spawn x="184245" y="59598" z="-7238" heading="162" respawn="20" />
         <spawn x="184243" y="59748" z="-7238" heading="162" respawn="20" />
         <spawn x="184241" y="59898" z="-7238" heading="162" respawn="20" />
         <spawn x="184238" y="60047" z="-7238" heading="162" respawn="20" />
         <spawn x="184236" y="60197" z="-7238" heading="162" respawn="20" />
         <spawn x="184234" y="60347" z="-7238" heading="162" respawn="20" />
-        <spawn x="184231" y="60497" z="-7238" heading="162" respawn="20" />
-        <spawn x="184398" y="59450" z="-7238" heading="162" respawn="20" />
         <spawn x="184395" y="59600" z="-7238" heading="162" respawn="20" />
         <spawn x="184393" y="59750" z="-7238" heading="162" respawn="20" />
         <spawn x="184391" y="59900" z="-7238" heading="162" respawn="20" />
         <spawn x="184388" y="60049" z="-7238" heading="162" respawn="20" />
         <spawn x="184386" y="60199" z="-7238" heading="162" respawn="20" />
-        <spawn x="184384" y="60349" z="-7238" heading="162" respawn="20" />
-        <spawn x="184381" y="60499" z="-7238" heading="162" respawn="20" />
-        <spawn x="184547" y="59453" z="-7238" heading="162" respawn="20" />
         <spawn x="184544" y="59603" z="-7238" heading="162" respawn="20" />
         <spawn x="184542" y="59753" z="-7238" heading="162" respawn="20" />
         <spawn x="184540" y="59903" z="-7238" heading="162" respawn="20" />
         <spawn x="184537" y="60052" z="-7238" heading="162" respawn="20" />
         <spawn x="184535" y="60202" z="-7238" heading="162" respawn="20" />
-        <spawn x="184533" y="60352" z="-7238" heading="162" respawn="20" />
         <spawn x="184530" y="60502" z="-7238" heading="162" respawn="20" />
         <spawn x="184697" y="59455" z="-7238" heading="162" respawn="20" />
-        <spawn x="184694" y="59605" z="-7238" heading="162" respawn="20" />
         <spawn x="184692" y="59755" z="-7238" heading="162" respawn="20" />
         <spawn x="184690" y="59905" z="-7238" heading="162" respawn="20" />
         <spawn x="184687" y="60054" z="-7238" heading="162" respawn="20" />
@@ -18347,15 +18332,12 @@
         <spawn x="184683" y="60354" z="-7238" heading="162" respawn="20" />
         <spawn x="184680" y="60504" z="-7238" heading="162" respawn="20" />
         <spawn x="184847" y="59457" z="-7238" heading="162" respawn="20" />
-        <spawn x="184844" y="59607" z="-7238" heading="162" respawn="20" />
         <spawn x="184842" y="59757" z="-7238" heading="162" respawn="20" />
         <spawn x="184840" y="59907" z="-7238" heading="162" respawn="20" />
         <spawn x="184837" y="60056" z="-7238" heading="162" respawn="20" />
         <spawn x="184835" y="60206" z="-7238" heading="162" respawn="20" />
-        <spawn x="184833" y="60356" z="-7238" heading="162" respawn="20" />
         <spawn x="184830" y="60506" z="-7238" heading="162" respawn="20" />
         <spawn x="184997" y="59460" z="-7238" heading="162" respawn="20" />
-        <spawn x="184994" y="59610" z="-7238" heading="162" respawn="20" />
         <spawn x="184992" y="59760" z="-7238" heading="162" respawn="20" />
         <spawn x="184990" y="59910" z="-7238" heading="162" respawn="20" />
         <spawn x="184987" y="60059" z="-7238" heading="162" respawn="20" />
