@@ -128,6 +128,7 @@
                   startRandom="300" />
         <skill id="1923" /> <!-- Battle Instinct -->
         <skill id="1924" /> <!-- Dark Blessing -->
+        <skill id="1925" /> <!-- Soul of Protection -->
         <skill id="1926" /> <!-- Body Reinforcement -->
     </race>
     <race id="6" name="Ertheia">
