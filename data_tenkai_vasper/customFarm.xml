@@ -85,8 +85,8 @@
     </customFarm>
     <customFarm farmZone="giant_cave2"
                 atkMultiplier="0.5" defMultiplier="1" mdefMultiplier="1.25" expMultiplier="12.5"  overrideLevels="107" overrideDrops="true" > <!-- Lvl: 107 | Strength: 50795 -->
-        <itemDrop itemId="5899" min="3" max="5" chance="20" />   <!--kail COins -->
-        <itemDrop itemId="37559" min="3" max="5" chance="20" />   <!--Shiny Coins -->
+        <itemDrop itemId="5899" min="4" max="8" chance="20" />   <!--kail COins -->
+        <itemDrop itemId="37559" min="4" max="8" chance="20" />   <!--Shiny Coins -->
         <itemDrop itemId="36414" min="1" max="2" chance="5" /> <!-- Dragon claws -->
         <itemDrop itemId="57" min="1750000" max="2500000" chance="100" />  <!-- Adena -->
     </customFarm>
