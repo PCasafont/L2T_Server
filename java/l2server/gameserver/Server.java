@@ -169,7 +169,7 @@ public class Server
 		RaidBossPointsManager.getInstance();
 		PetDataTable.getInstance();
 		PartySearchManager.getInstance();
-		MentorManager.getInstance();
+		//MentorManager.getInstance();
 		BeautyTable.getInstance();
 		ScenePlayerDataTable.getInstance();
 		CompoundTable.getInstance();
