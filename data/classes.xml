@@ -14776,8 +14776,8 @@
         <skill id="11124" level="2" reqSp="250000" minLevel="90" /> <!-- Superior Wizardry -->
         <skill id="11124" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Wizardry -->
         <skill id="11124" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Wizardry -->
+        <skill id="11153" level="1" reqSp="211440000" minLevel="100"/> <!-- Chain Blaze -->
         <skill id="11134" level="1" reqSp="211440000" minLevel="101" /> <!-- Meteor -->
-        <skill id="11153" level="25" reqSp="211440000" minLevel="100"/> <!-- Chain Blaze -->
     </class>
     <class id="167" name="Feoh Soultaker" parentId="95" pickSkillsFrom="143" isMage="true" level="85" baseHp="6990"
            hpAdd="105" hpMod="0" baseMp="3514" mpAdd="70" mpMod="0" baseCp="9652" cpAdd="145" cpMod="0">

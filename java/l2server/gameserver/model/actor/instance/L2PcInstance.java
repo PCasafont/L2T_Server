@@ -51,6 +51,7 @@ import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
+import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveOption;
@@ -78,6 +79,7 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2BossZone;
 import l2server.gameserver.model.zone.type.L2NoRestartZone;
+import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -9122,10 +9124,21 @@ public class L2PcInstance extends L2Playable
 				int x = rset.getInt("x");
 				int y = rset.getInt("y");
 				int z = rset.getInt("z");
-
-
+				MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+				if (z > 100000 && mainTown != null)
+				{
+					z -= 1000000;
+					if (TownManager.getTown(x, y, z) != TownManager.getTown(mainTown.getTownId()))
+					{
+						int[] coords = mainTown.getRandomCoords();
+						x = coords[0];
+						y = coords[1];
+						z = coords[2];
+					}
+				}
 				// Set the x,y,z position of the L2PcInstance and make it invisible
 				player.setXYZInvisible(x, y, z);
+
 
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement(
@@ -9600,6 +9613,16 @@ public class L2PcInstance extends L2Playable
 					_eventSavedPosition != null && isPlayingEvent() ? _eventSavedPosition.getY() : getY();
 			int z = _lastZ != 0 ? _lastZ :
 					_eventSavedPosition != null && isPlayingEvent() ? _eventSavedPosition.getZ() : getZ();
+
+            MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+            if (mainTown != null)
+            {
+                L2TownZone currentTown = TownManager.getTown(x, y, z);
+                if (currentTown != null && currentTown.getTownId() == mainTown.getTownId())
+                {
+                    z += 1000000;
+                }
+            }
 
 
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -19621,43 +19644,46 @@ public class L2PcInstance extends L2Playable
 		return _npcServitors[id];
 	}
 
-	public void spawnServitors()
-	{
-		InstanceManager.getInstance().createInstance(getObjectId());
-		L2Spawn servitor;
-		float angle = Rnd.get(1000);
-		int sCount = 2;
-		if (Config.isServer(Config.TENKAI_VASPER))
-		{
+    public void spawnServitors()
+    {
+        InstanceManager.getInstance().createInstance(getObjectId());
+        L2Spawn servitor;
+        float angle = Rnd.get(1000);
+        int sCount = 4;
+        if (Config.isServer(Config.TENKAI_VASPER))
+        {
+            MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
+            L2TownZone townZone = TownManager.getTown(currentTown.getTownId());
+            if (!townZone.isCharacterInZone(this))
+            {
+                sCount = 2;
+            }
+        }
+        for (int i = 0; i < sCount; i++)
+        {
+            servitor = getNpcServitor(i);
+            if (servitor != null)
+            {
+                servitor.setInstanceId(getObjectId());
+                servitor.setX(Math.round(getX() + (float) Math.cos(angle / 1000 * 2 * Math.PI) * 30));
+                servitor.setY(Math.round(getY() + (float) Math.sin(angle / 1000 * 2 * Math.PI) * 30));
+                servitor.setZ(getZ() + 75);
+                int heading = (int) Math
+                        .round(Math.atan2(getY() - servitor.getY(), getX() - servitor.getX()) / Math.PI * 32768);
+                if (heading < 0)
+                {
+                    heading = 65535 + heading;
+                }
+                servitor.setHeading(heading);
 
-				sCount = 2;
-
-		}
-		for (int i = 0; i < sCount; i++)
-		{
-			servitor = getNpcServitor(i);
-			if (servitor != null)
-			{
-				servitor.setInstanceId(getObjectId());
-				servitor.setX(Math.round(getX() + (float) Math.cos(angle / 1000 * 2 * Math.PI) * 30));
-				servitor.setY(Math.round(getY() + (float) Math.sin(angle / 1000 * 2 * Math.PI) * 30));
-				servitor.setZ(getZ() + 75);
-				int heading = (int) Math
-						.round(Math.atan2(getY() - servitor.getY(), getX() - servitor.getX()) / Math.PI * 32768);
-				if (heading < 0)
-				{
-					heading = 65535 + heading;
-				}
-				servitor.setHeading(heading);
-
-				if (InstanceManager.getInstance().getInstance(getObjectId()) != null)
-				{
-					servitor.doSpawn();
-				}
-			}
-			angle += 1000 / sCount;
-		}
-	}
+                if (InstanceManager.getInstance().getInstance(getObjectId()) != null)
+                {
+                    servitor.doSpawn();
+                }
+            }
+            angle += 1000 / sCount;
+        }
+    }
 
 	private void onEventTeleported()
 	{

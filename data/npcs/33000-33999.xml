@@ -5789,7 +5789,6 @@
         <spawn x="83118" y="54008" z="-1488" heading="40158" respawn="0" />
         <spawn x="147194" y="25614" z="-2008" heading="21219" respawn="0" />
         <spawn x="148524" y="-56315" z="-2776" heading="21672" respawn="0" />
-        <spawn x="44231" y="-48377" z="-792" heading="18000" respawn="0" />
         <spawn x="-13921" y="123320" z="-3112" heading="26144" respawn="0" />
         <spawn x="-80926" y="149502" z="-3040" heading="9914" respawn="0" />
         <spawn x="86441" y="-142311" z="-1336" heading="38902" respawn="0" />
@@ -6294,7 +6293,6 @@
          pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="8" collisionHeight="21.3"
          fireRes="300" waterRes="300"
          windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-        <spawn x="147615" y="27365" z="-2200" heading="49153" respawn="60" />
     </npc>
     <npc id="33648" name="Gerkenshtein" level="70" type="L2Npc" atkRange="40" hpMax="3874" hpReg="7.71" mpMax="1642"
          mpReg="5.59"
@@ -8414,7 +8412,6 @@
          mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6.5"
          collisionHeight="21.96"
          fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
-        <spawn x="43556" y="-47608" z="-792" heading="36864" respawn="0" />
     </npc>
     <npc id="33873" name="Angel Cat" title="Letter Collector" level="99" type="L2Npc" atkRange="40" hpMax="14612"
          hpReg="11.42"
@@ -9154,7 +9151,6 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="44114" y="-48397" z="-792" heading="29577" respawn="0" />
     </npc>
     <npc id="33958" name="Tulesir" title="Bard" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
          mpReg="0.0"

@@ -113,7 +113,6 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-113647" y="253303" z="-1502" heading="33685" respawn="1000" />
     </npc>
     <npc id="50013" templateId="8466" name="Caroline" serverSideName="true" title="Rules"
          serverSideTitle="true" level="70"

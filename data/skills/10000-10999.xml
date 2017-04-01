@@ -6769,14 +6769,9 @@
                     <player active_effect_id="30517" />
                 </not>
             </cond>
-            <abnormal duration="3" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun"
-                      visualEffect="stun">
-                <effect type="Stun" val="0" />
+            <abnormal duration="3" landRate="#landRate" stackLvl="1" >
                 <addPercent stat="critVuln" val="10" />
                 <subPercent stat="gainHpLimit" val="50" />
-            </abnormal>
-            <abnormal noicon="1">
-                <effect type="RemoveTarget" val="0" />
             </abnormal>
         </for>
     </skill>

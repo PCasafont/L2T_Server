@@ -310,7 +310,7 @@
           bodypart="rhand"
           crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
           isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="707" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -327,7 +327,7 @@
           weaponType="dualdagger"
           bodypart="lrhand" crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1"
           isEnchantable="false" isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="809" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -344,7 +344,7 @@
           bodypart="lrhand" crystalType="r"
           material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false"
           isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="1592" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -361,7 +361,7 @@
           bodypart="lrhand"
           crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="400"
           isEnchantable="false" isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="1434" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />

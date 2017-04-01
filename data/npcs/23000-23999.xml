@@ -17960,8 +17960,8 @@
          mAtk="1600000"
          pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
          collisionRadius="10" collisionHeight="24"
-         fireRes="150"
-         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter">
+         fireRes="400" elemAtkType="4" elemAtkValue="450"
+         waterRes="400" windRes="400" earthRes="450" holyRes="400" darkRes="400" aiType="fighter" isLethalImmune="false">
         <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
         <skill id="14823" level="1" /> <!-- Half kill Imm -->
         <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->
@@ -18089,10 +18089,10 @@
     <npc id="23775" name="Delta Carcass" title="" level="102" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
          mpMax="45970" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="4000000"
          mAtk="1600000"
-         pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
+         pDef="14800" mDef="16000" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
          collisionRadius="10" collisionHeight="24"
-         fireRes="150"
-         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
+         fireRes="400" elemAtkType="3" elemAtkValue="300"
+         waterRes="400" windRes="400" earthRes="450" holyRes="400" darkRes="400" aiType="fighter" isLethalImmune="false">
         <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
         <skill id="14823" level="1" /> <!-- Half kill Imm -->
         <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->
@@ -18230,8 +18230,8 @@
          mAtk="1600000"
          pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" exp="153594288" sp="73724"
          collisionRadius="10" collisionHeight="24"
-         fireRes="150"
-         waterRes="150" windRes="150" earthRes="350" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="false">
+         fireRes="400" elemAtkType="3" elemAtkValue="300"
+         waterRes="400" windRes="400" earthRes="450" holyRes="400" darkRes="400" aiType="fighter" isLethalImmune="false">
         <skill id="4282" level="1" /> <!-- Earth Attack Vuln -->
         <skill id="14823" level="1" /> <!-- Half kill Imm -->
         <skill id="16547" level="10" /> <!-- Danger Stone reisstance -->

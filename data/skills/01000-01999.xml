@@ -12144,7 +12144,7 @@
         <set name="reuseDelay" val="3000" />
         <set name="isDebuff" val="false" />
         <for>
-            <abnormal duration="15" stackLvl="3" stackType="pa_down">
+            <abnormal duration="5" stackLvl="3" stackType="pa_down">
                 <effect type="Debuff" val="0" />
                 <subPercent stat="pAtk" val="40" />
                 <subPercent stat="pDef" val="40" />

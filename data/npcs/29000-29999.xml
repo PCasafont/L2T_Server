@@ -6358,9 +6358,6 @@
         <skill id="14030" level="1" /> <!-- Hero's Magic -->
         <skill id="14031" level="1" /> <!-- Hero's Magic -->
         <skill id="5464" level="1" /> <!-- Wind Attack -->
-        <skill id="14279" level="1" /> <!-- Octavis' Influence -->
-        <skill id="14280" level="1" /> <!-- Octavis' Influence -->
-        <skill id="14281" level="1" /> <!-- Octavis' Influence -->
         <itemDrop itemId="36287" min="1" max="1" chance="65" /> <!-- Unbind Scroll: Armor (R99-grade) -->
         <itemDrop itemId="19462" min="1" max="1" chance="60" /> <!-- Octavis' Shirt -->
         <itemDrop itemId="19447" min="1" max="1" chance="35.8333" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->

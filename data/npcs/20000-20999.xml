@@ -28538,34 +28538,6 @@
 		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
-		<spoilDrop itemId="4042" min="1" max="1" chance="5.8802" /> <!-- Corroded Enria -->
-		<spoilDrop itemId="4043" min="1" max="1" chance="11.7603" /> <!-- Asofe -->
-		<spoilDrop itemId="4129" min="1" max="1" chance="3.8183" /> <!-- Recipe: Black Ore Earring -->
-		<dropCategory chance="70">
-			<itemDrop itemId="57" min="1398" max="2835" chance="100" /> <!-- Adena -->
-		</dropCategory>
-		<dropCategory chance="1.3555">
-			<itemDrop itemId="2384" min="1" max="1" chance="0.2141" /> <!-- Zubei's Leather Shirt -->
-			<itemDrop itemId="4066" min="1" max="1" chance="30.2172" /> <!-- Zubei's Leather Shirt Fabric -->
-			<itemDrop itemId="2390" min="1" max="1" chance="0.1317" /> <!-- Avadon Leather Armor -->
-			<itemDrop itemId="4068" min="1" max="1" chance="23.2143" /> <!-- Avadon Leather Armor Lining -->
-			<itemDrop itemId="2388" min="1" max="1" chance="0.3426" /> <!-- Zubei's Leather Gaiters -->
-			<itemDrop itemId="4067" min="1" max="1" chance="45.8801" /> <!-- Zubei's Leather Gaiter Texture -->
-		</dropCategory>
-		<dropCategory chance="27.7406">
-			<itemDrop itemId="1869" min="1" max="1" chance="31.3062" /> <!-- Corroded Iron Ore -->
-			<itemDrop itemId="1864" min="1" max="1" chance="62.6124" /> <!-- Corroded Stem -->
-			<itemDrop itemId="1880" min="1" max="1" chance="3.1306" /> <!-- Corroded Steel -->
-			<itemDrop itemId="5550" min="1" max="1" chance="0.4174" /> <!-- Corroded Reinforced Metal Plate -->
-			<itemDrop itemId="4043" min="1" max="1" chance="1.0435" /> <!-- Asofe -->
-			<itemDrop itemId="4615" min="1" max="1" chance="0.0432" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
-			<itemDrop itemId="4998" min="1" max="1" chance="0.3894" /> <!-- Recipe: Sealed Blue Wolf Gloves (60%) -->
-			<itemDrop itemId="4173" min="1" max="1" chance="0.3894" /> <!-- Recipe: Sealed Blue Wolf Gloves -->
-			<itemDrop itemId="8728" min="1" max="1" chance="0.5218" /> <!-- Life Stone - Lv. 61 -->
-			<itemDrop itemId="8738" min="1" max="1" chance="0.1304" /> <!-- Mid-grade Life Stone - Lv. 61 -->
-			<itemDrop itemId="8748" min="1" max="1" chance="0.013" /> <!-- High-grade Life Stone - Lv. 61 -->
-			<itemDrop itemId="8758" min="1" max="1" chance="0.0027" /> <!-- Top-grade Life Stone - Lv. 61 -->
-		</dropCategory>
 	</npc>
 	<npc id="20653" name="Lesser Giant" level="61" type="L2Monster" atkRange="40" hpMax="3132" hpReg="7.5" mpMax="1302" mpReg="2.7"
 			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="14612" sp="1286" pAtk="902" mAtk="506" pDef="379" mDef="308"
@@ -28598,35 +28570,6 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
 		<skill id="4073" level="6" /> <!-- Stun -->
-		<spoilDrop itemId="4064" min="1" max="1" chance="11.9042" /> <!-- Avadon Breastplate Part -->
-		<spoilDrop itemId="4052" min="1" max="1" chance="23.2857" /> <!-- Black Ore Earring Piece -->
-		<spoilDrop itemId="5230" min="1" max="1" chance="0.8769" /> <!-- Recipe: Mithril Arrow -->
-		<dropCategory chance="70">
-			<itemDrop itemId="57" min="2608" max="5284" chance="100" /> <!-- Adena -->
-		</dropCategory>
-		<dropCategory chance="1.9981">
-			<itemDrop itemId="2398" min="1" max="1" chance="0.1309" /> <!-- Blue Wolf Tunic -->
-			<itemDrop itemId="4084" min="1" max="1" chance="21.1296" /> <!-- Blue Wolf Tunic Fabric -->
-			<itemDrop itemId="2399" min="1" max="1" chance="0.1309" /> <!-- Tunic of Doom -->
-			<itemDrop itemId="4085" min="1" max="1" chance="21.1296" /> <!-- Tunic of Doom Pattern -->
-			<itemDrop itemId="2403" min="1" max="1" chance="0.2096" /> <!-- Blue Wolf Stockings -->
-			<itemDrop itemId="4086" min="1" max="1" chance="28.5298" /> <!-- Blue Wolf Stocking Pattern -->
-			<itemDrop itemId="2404" min="1" max="1" chance="0.2096" /> <!-- Stockings of Doom -->
-			<itemDrop itemId="4087" min="1" max="1" chance="28.53" /> <!-- Stockings of Doom Pattern -->
-		</dropCategory>
-		<dropCategory chance="2.8888">
-			<itemDrop itemId="1894" min="1" max="1" chance="21.4522" /> <!-- Corroded Quality Leather -->
-			<itemDrop itemId="4039" min="1" max="1" chance="20.3795" /> <!-- Corroded Mold Glue -->
-			<itemDrop itemId="4041" min="1" max="1" chance="5.3164" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4044" min="1" max="1" chance="20.3795" /> <!-- Corroded Thons -->
-			<itemDrop itemId="4624" min="1" max="1" chance="0.8433" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
-			<itemDrop itemId="5276" min="1" max="1" chance="0.8152" /> <!-- Recipe: Greater Spiritshot Compressed Package (A-grade) -->
-			<itemDrop itemId="8729" min="1" max="1" chance="8.1518" /> <!-- Life Stone - Lv. 64 -->
-			<itemDrop itemId="8739" min="1" max="1" chance="2.038" /> <!-- Mid-grade Life Stone - Lv. 64 -->
-			<itemDrop itemId="8749" min="1" max="1" chance="0.2038" /> <!-- High-grade Life Stone - Lv. 64 -->
-			<itemDrop itemId="8759" min="1" max="1" chance="0.0408" /> <!-- Top-grade Life Stone - Lv. 64 -->
-			<itemDrop itemId="6036" min="1" max="1" chance="20.3795" /> <!-- Greater Magic Haste Potion -->
-		</dropCategory>
 	</npc>
 	<npc id="20655" name="Lesser Giant Shooter" level="63" type="L2Monster" atkRange="1100" hpMax="3297" hpReg="7.5" mpMax="1376"
 			mpReg="2.7" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="327338" sp="34009" pAtk="988" mAtk="561" pDef="483"
@@ -32091,22 +32034,6 @@
 			<itemDrop itemId="8750" min="1" max="1" chance="0.0106" /> <!-- High-grade Life Stone - Lv. 67 -->
 			<itemDrop itemId="8760" min="1" max="1" chance="0.0022" /> <!-- Top-grade Life Stone - Lv. 67 -->
 		</dropCategory>
-		<spawn x="143818" y="-20882" z="-3169" heading="61609" respawn="90" />
-		<spawn x="149962" y="-21412" z="-3159" heading="55015" respawn="90" />
-		<spawn x="149443" y="-18825" z="-3095" heading="19536" respawn="90" />
-		<spawn x="138059" y="-13762" z="-4293" heading="31085" respawn="90" />
-		<spawn x="140536" y="-17163" z="-4568" heading="0" respawn="90" />
-		<spawn x="145892" y="-13973" z="-4438" heading="22996" respawn="90" />
-		<spawn x="145992" y="-17870" z="-3541" heading="51999" respawn="90" />
-		<spawn x="145702" y="-16721" z="-3874" heading="4350" respawn="90" />
-		<spawn x="149029" y="-15309" z="-4454" heading="11408" respawn="90" />
-		<spawn x="149720" y="-15645" z="-4592" heading="0" respawn="90" />
-		<spawn x="146999" y="-11965" z="-4449" heading="8398" respawn="90" />
-		<spawn x="150018" y="-13832" z="-4600" heading="0" respawn="90" />
-		<spawn x="141310" y="-11576" z="-4736" heading="0" respawn="90" />
-		<spawn x="145380" y="-10772" z="-4792" heading="0" respawn="90" />
-		<spawn x="146954" y="-10920" z="-4588" heading="0" respawn="90" />
-		<spawn x="149812" y="-10914" z="-4468" heading="44173" respawn="90" />
 	</npc>
 	<npc id="20774" name="Conjurer Bat" level="70" type="L2Monster" atkRange="40" hpMax="3874" hpReg="7.5" mpMax="1641" mpReg="2.7"
 			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="30078" sp="8" pAtk="1197" mAtk="648" pDef="518" mDef="421"

@@ -1088,7 +1088,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="18199" y="146081" z="-3080" heading="41544" respawn="60" />
     </npc>
     <npc id="30072" name="Metty" title="Guard" level="99" type="L2Guard" atkRange="1100" hpMax="84843" hpReg="8.5"
          mpMax="2044"
@@ -9717,7 +9716,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="83183" y="53715" z="-1452" heading="32768" respawn="60" />
     </npc>
     <npc id="30658" name="Gupu" title="Father" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
          mpMax="1642" mpReg="2.7"
@@ -12060,7 +12058,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="-14797" y="123283" z="-3112" heading="800" respawn="0" />
     </npc>
     <npc id="30828" name="Waters" title="Pet Manager" level="70" type="L2PetManager" atkRange="40" hpMax="4228"
          hpReg="7.5"
@@ -12900,7 +12897,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="147291" y="27373" z="-2200" heading="47604" respawn="60" />
     </npc>
     <npc id="30869" name="Lemper" title="Pet Manager" level="70" type="L2PetManager" atkRange="40" hpMax="4228"
          hpReg="7.5"
@@ -14708,7 +14704,7 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="18378" y="145052" z="-3074" heading="64312" respawn="60" />
+
     </npc>
     <npc id="30958" name="Galion" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
          mpReg="2.7" STR="88"

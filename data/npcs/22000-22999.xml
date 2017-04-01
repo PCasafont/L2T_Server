@@ -29387,26 +29387,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.1259" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="5277" min="1" max="1" chance="0.3225" /> <!-- Recipe: Greater Spiritshot Compressed Package (S-grade) -->
 		</dropCategory>
-		<spawn x="184302" y="58538" z="-3992" heading="7774" respawn="60" />
-		<spawn x="183798" y="59038" z="-3992" heading="58564" respawn="60" />
-		<spawn x="186256" y="55599" z="-4568" heading="25533" respawn="60" />
-		<spawn x="186236" y="56907" z="-4568" heading="17805" respawn="60" />
-		<spawn x="187562" y="56978" z="-4568" heading="22516" respawn="60" />
-		<spawn x="190839" y="59417" z="-4976" heading="29767" respawn="60" />
-		<spawn x="191298" y="61791" z="-6104" heading="23864" respawn="60" />
-		<spawn x="191510" y="62807" z="-4976" heading="39314" respawn="60" />
-		<spawn x="193108" y="61108" z="-6104" heading="11441" respawn="60" />
-		<spawn x="193052" y="62265" z="-6104" heading="51930" respawn="60" />
-		<spawn x="187888" y="56688" z="-4571" heading="20113" respawn="60" />
-		<spawn x="186229" y="62463" z="-4981" heading="1827" respawn="60" />
-		<spawn x="190772" y="61930" z="-4984" heading="59647" respawn="60" />
-		<spawn x="190579" y="59169" z="-4981" heading="16874" respawn="60" />
-		<spawn x="193169" y="59664" z="-4981" heading="3547" respawn="60" />
-		<spawn x="193408" y="59600" z="-4981" heading="9346" respawn="60" />
-		<spawn x="193557" y="60512" z="-4981" heading="25533" respawn="10" />
-		<spawn x="193163" y="61323" z="-4984" heading="24066" respawn="60" />
-		<spawn x="192509" y="62105" z="-4984" heading="23935" respawn="60" />
-		<spawn x="192767" y="62671" z="-4981" heading="32189" respawn="60" />
 	</npc>
 	<npc id="22664" name="Lesser Giant Wizard" level="82" type="L2Monster" atkRange="40" hpMax="208876" hpReg="112.55804" mpMax="2127"
 			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="601724" sp="145" pAtk="11888" mAtk="11081" pDef="871"
@@ -29448,34 +29428,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.1928" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="5282" min="1" max="1" chance="0.4937" /> <!-- Recipe: Greater Blessed Spiritshot Compressed Package (S-grade) -->
 		</dropCategory>
-		<spawn x="186974" y="61109" z="-7232" heading="58532" respawn="60" />
-		<spawn x="187873" y="59893" z="-7232" heading="23470" respawn="60" />
-		<spawn x="186958" y="62270" z="-7232" heading="14450" respawn="60" />
-		<spawn x="187511" y="62718" z="-7232" heading="8886" respawn="60" />
-		<spawn x="187991" y="61707" z="-7232" heading="36389" respawn="60" />
-		<spawn x="187299" y="56848" z="-7232" heading="24873" respawn="60" />
-		<spawn x="186350" y="56652" z="-7240" heading="47465" respawn="60" />
-		<spawn x="187239" y="55647" z="-7232" heading="41626" respawn="60" />
-		<spawn x="190618" y="61176" z="-6104" heading="36971" respawn="60" />
-		<spawn x="190573" y="60511" z="-7240" heading="35629" respawn="60" />
-		<spawn x="191349" y="60673" z="-7240" heading="45338" respawn="60" />
-		<spawn x="190686" y="61269" z="-7240" heading="13129" respawn="60" />
-		<spawn x="192635" y="60461" z="-7240" heading="2401" respawn="60" />
-		<spawn x="191416" y="61431" z="-7240" heading="13693" respawn="60" />
-		<spawn x="192412" y="61481" z="-7240" heading="36767" respawn="60" />
-		<spawn x="193210" y="60747" z="-7240" heading="10013" respawn="60" />
-		<spawn x="193275" y="61374" z="-7240" heading="60892" respawn="60" />
-		<spawn x="187808" y="62405" z="-7237" heading="5299" respawn="60" />
-		<spawn x="186480" y="61252" z="-7237" heading="42494" respawn="60" />
-		<spawn x="185807" y="58766" z="-7237" heading="20638" respawn="60" />
-		<spawn x="185047" y="60824" z="-7237" heading="50387" respawn="60" />
-		<spawn x="184163" y="58814" z="-7237" heading="11547" respawn="60" />
-		<spawn x="184153" y="61139" z="-7237" heading="40702" respawn="60" />
-		<spawn x="183654" y="60924" z="-7237" heading="53206" respawn="60" />
-		<spawn x="182995" y="59192" z="-7237" heading="65417" respawn="60" />
-		<spawn x="182731" y="59949" z="-7237" heading="297" respawn="60" />
-		<spawn x="182326" y="61027" z="-7237" heading="55580" respawn="60" />
-		<spawn x="186343" y="55813" z="-7234" heading="4375" respawn="60" />
 	</npc>
 	<npc id="22665" name="Lesser Giant Elder" level="82" type="L2Monster" atkRange="40" hpMax="208876" hpReg="112.55804" mpMax="2127"
 			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="594762" sp="143" pAtk="13077" mAtk="11081" pDef="1045"
@@ -29520,60 +29472,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.1917" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="6901" min="1" max="1" chance="1.1041" /> <!-- Recipe: Arrow of Light -->
 		</dropCategory>
-		<spawn x="184877" y="61296" z="-7232" heading="60044" respawn="60" />
-		<spawn x="185399" y="57055" z="-7232" heading="3692" respawn="60" />
-		<spawn x="185422" y="56332" z="-7232" heading="59963" respawn="60" />
-		<spawn x="185348" y="55786" z="-7232" heading="37236" respawn="60" />
-		<spawn x="187019" y="60904" z="-7232" heading="54934" respawn="60" />
-		<spawn x="188058" y="60427" z="-7232" heading="46293" respawn="60" />
-		<spawn x="187119" y="61716" z="-7232" heading="62517" respawn="60" />
-		<spawn x="188099" y="62001" z="-7232" heading="46293" respawn="60" />
-		<spawn x="187044" y="57657" z="-7232" heading="55198" respawn="60" />
-		<spawn x="185716" y="55224" z="-7232" heading="56680" respawn="60" />
-		<spawn x="187111" y="54965" z="-7232" heading="26055" respawn="60" />
-		<spawn x="186307" y="54857" z="-7232" heading="46394" respawn="60" />
-		<spawn x="190183" y="59460" z="-7232" heading="42847" respawn="60" />
-		<spawn x="190289" y="59997" z="-7232" heading="61272" respawn="60" />
-		<spawn x="189226" y="61562" z="-6104" heading="12977" respawn="60" />
-		<spawn x="190947" y="59657" z="-7232" heading="17233" respawn="60" />
-		<spawn x="191316" y="59505" z="-7232" heading="20648" respawn="60" />
-		<spawn x="190528" y="61797" z="-7232" heading="59710" respawn="60" />
-		<spawn x="192017" y="62008" z="-7232" heading="45155" respawn="60" />
-		<spawn x="193211" y="59563" z="-7232" heading="21642" respawn="60" />
-		<spawn x="192725" y="59445" z="-7232" heading="51333" respawn="60" />
-		<spawn x="193871" y="59571" z="-7232" heading="20794" respawn="60" />
-		<spawn x="193762" y="60683" z="-7232" heading="54059" respawn="60" />
-		<spawn x="193870" y="60204" z="-7232" heading="48207" respawn="60" />
-		<spawn x="193838" y="61416" z="-7232" heading="14241" respawn="60" />
-		<spawn x="192745" y="61847" z="-7232" heading="7062" respawn="60" />
-		<spawn x="193113" y="62044" z="-7232" heading="42441" respawn="60" />
-		<spawn x="193554" y="62125" z="-7232" heading="27508" respawn="60" />
-		<spawn x="187439" y="62058" z="-7237" heading="527" respawn="60" />
-		<spawn x="187345" y="60186" z="-7237" heading="11013" respawn="60" />
-		<spawn x="185985" y="60997" z="-7237" heading="56168" respawn="60" />
-		<spawn x="186216" y="60804" z="-7237" heading="47235" respawn="60" />
-		<spawn x="185318" y="58976" z="-7237" heading="4461" respawn="60" />
-		<spawn x="185549" y="59214" z="-7237" heading="15940" respawn="60" />
-		<spawn x="185332" y="61184" z="-7237" heading="43536" respawn="60" />
-		<spawn x="184633" y="58784" z="-7237" heading="21749" respawn="60" />
-		<spawn x="184403" y="59032" z="-7237" heading="16146" respawn="60" />
-		<spawn x="184168" y="60787" z="-7237" heading="33989" respawn="60" />
-		<spawn x="183631" y="61295" z="-7237" heading="55621" respawn="60" />
-		<spawn x="183453" y="59146" z="-7237" heading="32288" respawn="60" />
-		<spawn x="182979" y="58839" z="-7237" heading="8485" respawn="60" />
-		<spawn x="183383" y="59763" z="-7237" heading="1722" respawn="60" />
-		<spawn x="182826" y="60746" z="-7237" heading="23233" respawn="60" />
-		<spawn x="182796" y="61141" z="-7237" heading="41346" respawn="60" />
-		<spawn x="191022" y="62070" z="-7237" heading="49428" respawn="60" />
-		<spawn x="188677" y="56787" z="-7237" heading="52507" respawn="60" />
-		<spawn x="188543" y="55865" z="-7240" heading="13361" respawn="60" />
-		<spawn x="188117" y="55626" z="-7237" heading="15715" respawn="60" />
-		<spawn x="187654" y="56013" z="-7237" heading="12855" respawn="60" />
-		<spawn x="187981" y="56358" z="-7237" heading="890" respawn="60" />
-		<spawn x="188078" y="57101" z="-7237" heading="50292" respawn="60" />
-		<spawn x="187683" y="57372" z="-7237" heading="52415" respawn="60" />
-		<spawn x="186340" y="57517" z="-7237" heading="55142" respawn="60" />
-		<spawn x="185901" y="57389" z="-7237" heading="54650" respawn="60" />
 	</npc>
 	<npc id="22666" name="Barif" level="82" type="L2Monster" atkRange="40" hpMax="23098" hpReg="8.5" mpMax="2127" mpReg="3.0"
 			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="53177" sp="13" pAtk="1971" mAtk="1148" pDef="659" mDef="587"
@@ -29614,14 +29512,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.0627" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="5157" min="1" max="1" chance="0.1606" /> <!-- Recipe: Soulshot Compressed Package (S-grade) -->
 		</dropCategory>
-		<spawn x="193734" y="62133" z="-7232" heading="20352" respawn="60" />
-		<spawn x="193422" y="62266" z="-7232" heading="30212" respawn="60" />
-		<spawn x="183510" y="58222" z="-3991" heading="11094" respawn="60" />
-		<spawn x="187065" y="62638" z="-7237" heading="57343" respawn="60" />
-		<spawn x="190169" y="61838" z="-7237" heading="50948" respawn="60" />
-		<spawn x="188501" y="57218" z="-7237" heading="48655" respawn="60" />
-		<spawn x="187999" y="54928" z="-7237" heading="15086" respawn="60" />
-		<spawn x="186932" y="56268" z="-7237" heading="65361" respawn="60" />
 	</npc>
 	<npc id="22667" name="Barif's Pet" level="81" type="L2Monster" atkRange="40" hpMax="21946" hpReg="8.5" mpMax="2085" mpReg="3.0"
 			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="53565" sp="13" pAtk="2273" mAtk="1586" pDef="535" mDef="478"
@@ -29700,23 +29590,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.0627" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="5167" min="1" max="1" chance="0.1606" /> <!-- Recipe: Blessed Spiritshot Compressed Package (S-grade) -->
 		</dropCategory>
-		<spawn x="188499" y="62839" z="-4976" heading="8506" respawn="60" />
-		<spawn x="190651" y="59669" z="-4976" heading="36013" respawn="60" />
-		<spawn x="191964" y="58357" z="-4808" heading="60727" respawn="60" />
-		<spawn x="191880" y="58099" z="-4808" heading="47256" respawn="60" />
-		<spawn x="183294" y="59663" z="-3992" heading="0" respawn="60" />
-		<spawn x="192119" y="58229" z="-4808" heading="10614" respawn="60" />
-		<spawn x="184096" y="58807" z="-3991" heading="17094" respawn="60" />
-		<spawn x="184259" y="59780" z="-3991" heading="22976" respawn="60" />
-		<spawn x="188378" y="62433" z="-4981" heading="33331" respawn="60" />
-		<spawn x="190133" y="59878" z="-4981" heading="64904" respawn="60" />
-		<spawn x="193113" y="60692" z="-4981" heading="33209" respawn="60" />
-		<spawn x="193739" y="59559" z="-4981" heading="31079" respawn="60" />
-		<spawn x="193459" y="59871" z="-4981" heading="64344" respawn="60" />
-		<spawn x="193270" y="62271" z="-4981" heading="32442" respawn="60" />
-		<spawn x="192404" y="60811" z="-4981" heading="32563" respawn="60" />
-		<spawn x="192759" y="62866" z="-4981" heading="32936" respawn="60" />
-		<spawn x="192208" y="58491" z="-4807" heading="25730" respawn="60" />
 	</npc>
 	<npc id="22669" name="Leogul" title="Scout" level="81" type="L2Monster" atkRange="40" hpMax="21946" hpReg="8.5" mpMax="2085"
 			mpReg="3.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="25150" sp="2646" pAtk="1880" mAtk="1088" pDef="647"
@@ -29756,12 +29629,6 @@
 			<itemDrop itemId="9575" min="1" max="1" chance="0.1453" /> <!-- High-grade Life Stone - Lv. 80 -->
 			<itemDrop itemId="9625" min="1" max="1" chance="0.1674" /> <!-- Lesser Giant's Codex - Oblivion -->
 		</dropCategory>
-		<spawn x="185902" y="56930" z="-7232" heading="4955" respawn="60" />
-		<spawn x="188557" y="61016" z="-6096" heading="0" respawn="60" />
-		<spawn x="186276" y="57586" z="-4571" heading="18317" respawn="60" />
-		<spawn x="187108" y="62504" z="-4984" heading="61775" respawn="60" />
-		<spawn x="186787" y="55404" z="-7237" heading="11175" respawn="10" />
-		<spawn x="187475" y="56614" z="-7240" heading="63375" respawn="10" />
 	</npc>
 	<npc id="22670" name="Beastial Lord" level="80" type="L2Monster" atkRange="40" hpMax="20858" hpReg="8.5" mpMax="1839" mpReg="3.0"
 			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" exp="54452" sp="14" pAtk="2166" mAtk="1503" pDef="525" mDef="686"
