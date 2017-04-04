@@ -2946,8 +2946,8 @@ public final class Formulas
 					}
 					if (attackerClass.getId() == 189) // Sayha
 					{
-						if (damage > 75000)
-							damage = 75000 + Math.pow(damage - 75000, 0.20);
+						if (damage > 65000)
+							damage = 65000 + Math.pow(damage - 65000, 0.18);
 					}
 				}
 			}
@@ -4984,7 +4984,7 @@ public final class Formulas
 						multiplier *= 0.98;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.65;
+						multiplier *= 0.57;
 						break;
 				}
 
@@ -5033,7 +5033,7 @@ public final class Formulas
 						multiplier *= .78; //.95
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.75;
+						multiplier *= 0.90;
 						break;
 				}
 			}

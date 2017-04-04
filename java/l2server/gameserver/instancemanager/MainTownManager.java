@@ -121,7 +121,7 @@ public class MainTownManager
 		}
 	}
 
-	private static final int ROTATION_INTERVAL_DAYS = 7;
+	private static final int ROTATION_INTERVAL_DAYS = 2;
 
 	private final List<MainTownInfo> _mainTowns = new ArrayList<>();
 
