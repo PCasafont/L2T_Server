@@ -171,8 +171,7 @@
         <mob id="23299" /> <!-- Operations Chief of the 7th Division -->
         <mob id="23300" /> <!-- Commander of Operations -->
     </farmZone>
-    <farmZone
-            name="raider_crossroads"> <!-- Lvl: 99 | Strength: 15000 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
+    <farmZone name="raider_crossroads"> <!-- Lvl: 99 | Strength: 15000 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
         <mob id="23314" /> <!-- Nerva Orc Raider -->
         <mob id="23315" /> <!-- Nerva Orc Archer -->
         <mob id="23316" /> <!-- Nerva Orc Priest -->
@@ -183,15 +182,14 @@
         <mob id="23321" /> <!-- Nerva Orc Warrior -->
         <mob id="23322" /> <!-- Nerva Orc Prefect -->
         <mob id="23323" /> <!-- Nerva Orc Elite -->
+        <mob id="23323" /> <!-- Nerva Orc Elite -->
         <mob id="23324" /> <!-- Nerva Bloodlust Captain -->
         <mob id="23325" /> <!-- Nerva Bloodlust Archer -->
         <mob id="23326" /> <!-- Nerva Bloodlust Wizard -->
         <mob id="23327" /> <!-- Nerva Bloodlust Soldier -->
         <mob id="23328" /> <!-- Nerva Bloodlust Assassin -->
-    </farmZone>
-    <farmZone
-            name="raider_crossroads_special"> <!-- Lvl: 99 | Strength: 40000 | Exp Score: 230 | Extremelly high attack -->
         <mob id="23329" /> <!-- Nerva Kaiser -->
+        <mob id="23318"/> <!-- Nerva Orc Assassin -->
     </farmZone>
     <farmZone name="gainak_siege"> <!-- Lvl: 99 | Strength: 16000 | Exp Score: 0 -->
         <mob id="19471" /> <!-- Mysterious Assassin -->

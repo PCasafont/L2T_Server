@@ -110,7 +110,7 @@
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <spawn x="186969" y="57808" z="-4573" heading="48655" respawn="1000"/>
     </npc>
-    <npc id="40017" templateId="33123" name="Dark Sylight" serverSideName="true" title="Portal"
+    <npc id="40017" templateId="33123" name="DarkSylight" serverSideName="true" title="Portal"
          serverSideTitle="true"
          level="70" type="L2Teleporter" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
          CON="74" DEX="61"
@@ -120,5 +120,16 @@
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <spawn x="191385" y="57072" z="-7623" heading="57199" respawn="1000" />
+    </npc>
+    <npc id="40018" templateId="33918" name="Toshi" serverSideName="true" title="Buffer"
+         serverSideTitle="true"
+         level="70" type="L2NpcBuffer" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
+         CON="74" DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="191410" y="57096" z="-7623" heading="56600" respawn="1000" />
     </npc>
 </list>
