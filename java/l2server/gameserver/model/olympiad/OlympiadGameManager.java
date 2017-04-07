@@ -79,24 +79,24 @@ public class OlympiadGameManager implements Runnable
 			OlympiadGameTask task;
 			AbstractOlympiadGame newGame;
 
-			List<List<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
+			//List<List<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
 			boolean readyNonClassed = OlympiadManager.getInstance().hasEnoughRegisteredNonClassed();
 
-			if (readyClassed == null)
-			{
-				for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
-				{
-					for (int objId : list)
-					{
-						L2PcInstance player = L2World.getInstance().getPlayer(objId);
-						if (player != null)
-						{
-							player.sendMessage(
-									"Your match may not begin yet because there are not enough participants registered.");
-						}
-					}
-				}
-			}
+			//if (readyClassed == null)
+			//{
+			//	for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
+			//	{
+			//		for (int objId : list)
+			//		{
+			//			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			//			if (player != null)
+			//			{
+			//				player.sendMessage(
+			//						"Your match may not begin yet because there are not enough participants registered.");
+			//			}
+			//		}
+			//	}
+			//}
 			if (!readyNonClassed)
 			{
 				for (int objId : OlympiadManager.getInstance().getRegisteredNonClassBased())
@@ -109,7 +109,7 @@ public class OlympiadGameManager implements Runnable
 					}
 				}
 			}
-			if (readyClassed != null || readyNonClassed)
+			if (readyNonClassed)
 			{
 				// set up the games queue
 				for (int i = 0; i < _tasks.length; i++)
@@ -120,19 +120,19 @@ public class OlympiadGameManager implements Runnable
 						if (!task.isRunning())
 						{
 							// WTF was this "fair arena distribution"? Commenting out...
-							if (readyClassed != null/* && (i % 2) == 0*/)
-							{
-								newGame = OlympiadGameClassed.createGame(i, readyClassed);
-								if (newGame != null)
-								{
-									task.attachGame(newGame);
-									continue;
-								}
-								else
-								{
-									readyClassed = null;
-								}
-							}
+							//if (readyClassed != null/* && (i % 2) == 0*/)
+							//{
+							//	newGame = OlympiadGameClassed.createGame(i, readyClassed);
+							//	if (newGame != null)
+							//	{
+							//		task.attachGame(newGame);
+							//		continue;
+							//	}
+							//	else
+							//	{
+							//		readyClassed = null;
+							//	}
+							//}
 							if (readyNonClassed)
 							{
 								newGame = OlympiadGameNonClassed
@@ -151,7 +151,7 @@ public class OlympiadGameManager implements Runnable
 					}
 
 					// stop generating games if no more participants
-					if (readyClassed == null && !readyNonClassed)
+					if (!readyNonClassed)
 					{
 						break;
 					}
