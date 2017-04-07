@@ -9453,7 +9453,7 @@
         <set name="aggroPoints" val="669" />
         <for>
             <abnormal duration="#duration" stackLvl="11" stackType="drum_melody, multi_buff, counter_critical">
-                <effect activationChance="80" activationMinDamage="600" chanceType="ON_ATTACKED" triggeredId="11569"
+                <effect activationChance="50" activationMinDamage="600" chanceType="ON_ATTACKED" triggeredId="11569"
                         type="ChanceSkillTrigger" val="0" />
                 <addPercent stat="maxMp" val="20" />
                 <addPercent stat="regHp" val="20" />
@@ -10885,7 +10885,6 @@
             <abnormal duration="8" stackLvl="1" stackType="counter_critical_trigger">
                 <effect type="Buff" val="0" />
                 <addPercent stat="pCritDmg" val="100" />
-                <addPercent stat="mCritDmg" val="100" />
             </abnormal>
         </for>
     </skill>

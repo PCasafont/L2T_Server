@@ -2941,7 +2941,7 @@ public final class Formulas
 							break;
 						case 188: //Eviscerator
 							if (damage > 25000)
-								damage=  25000 + Math.pow(damage - 25000, 0.90);
+								damage = 25000 + Math.pow(damage - 25000, 0.90);
 							break;
 					}
 					if (attackerClass.getId() == 189) // Sayha
@@ -4978,13 +4978,13 @@ public final class Formulas
 						multiplier *= 1.2; //1.15
 						break;
 					case 169: // Feoh Storm Screamer
-						multiplier *= 1.3;
+						multiplier *= 1.2; //1.3
 						break;
 					case 188: // Eviscerat::or
 						multiplier *= 0.98;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.57;
+						multiplier *= 0.27; //0.57
 						break;
 				}
 
@@ -5030,10 +5030,10 @@ public final class Formulas
 						//multiplier *= 1.35;
 						break;
 					case 188: // Eviscerator
-						multiplier *= .78; //.95
+						multiplier *= .75; //.95
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.90;
+						multiplier *= 0.50; //0.90
 						break;
 				}
 			}

@@ -8094,7 +8094,7 @@
         <set name="effectRange" val="1400" />
         <for>
             <abnormal duration="3600" stackLvl="11" stackType="drum_melody, multi_buff, counter_critical">
-                <effect activationChance="90" activationMinDamage="600" chanceType="ON_ATTACKED_HIT" triggeredId="11569"
+                <effect activationChance="50" activationMinDamage="600" chanceType="ON_ATTACKED_HIT" triggeredId="11569"
                         type="ChanceSkillTrigger" val="0" />
                 <addPercent stat="maxMp" val="20" />
                 <addPercent stat="regHp" val="20" />
