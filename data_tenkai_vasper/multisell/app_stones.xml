@@ -960,8 +960,4 @@
         <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
         <production id="46596" count="1" /> <!-- Freya's Tunic Appearance Stone -->
     </item>
-    <item>
-        <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
-        <production id="46976" count="1" /> <!-- Freya's Tunic Appearance Stone -->
-    </item>
 </list>
