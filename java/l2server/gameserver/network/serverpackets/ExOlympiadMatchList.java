@@ -15,6 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
+import l2server.gameserver.model.olympiad.OlympiadGameClassed;
 import l2server.gameserver.model.olympiad.OlympiadGameNonClassed;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
 
@@ -59,6 +60,10 @@ public class ExOlympiadMatchList extends L2GameServerPacket
 			if (curGame.getGame() instanceof OlympiadGameNonClassed)
 			{
 				writeD(1);
+			}
+			else if (curGame.getGame() instanceof OlympiadGameClassed)
+			{
+				writeD(2);
 			}
 			else
 			{

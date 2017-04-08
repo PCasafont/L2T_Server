@@ -2917,12 +2917,12 @@ public final class Formulas
 										damage = 45000 + Math.pow(damage - 45000, 0.86);
 									break;
 								case 170: //Feoh Soulhound
-									if (damage > 55000) //40k
-										damage = 55000 + Math.pow(damage - 55000, 0.86); //.96
+									if (damage > 40000) //40k
+										damage = 40000 + Math.pow(damage - 40000, 0.96); //.96
 									break;
 								default: //All The Other Feoh
 									if (damage > 45000)
-										damage = 45000 + Math.pow(damage - 45000, 0.86);
+										damage = 45000 + Math.pow(damage - 45000, 0.96); //0.86
 									break;
 							}
 							break;
@@ -4972,7 +4972,7 @@ public final class Formulas
 						multiplier *= 1.4; //1
 //						break;
 					case 170: //Feoh Soulhound
-						multiplier *= 1; //1.4
+						multiplier *= 1.4; //1.4
 						break;
 					case 168: // Feoh Mystic Muse
 						multiplier *= 1.2; //1.15
@@ -4984,7 +4984,7 @@ public final class Formulas
 						multiplier *= 0.98;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 0.27; //0.57
+						multiplier *= 0.47; //0.57
 						break;
 				}
 
@@ -5007,7 +5007,7 @@ public final class Formulas
 							multiplier *= 1;
 							break;
 						case 143: // Feoh Wizard
-							multiplier *= 0.98;
+							multiplier *= 0.98; //0.98
 							break;
 						case 144: // Iss Enchanter
 							multiplier *= 1;
@@ -5091,6 +5091,9 @@ public final class Formulas
 
 				switch (attackerClass.getId())
 				{
+					case 155: // Tyrr GK
+						multiplier *= 2;
+						break;
 					case 166: // Feoh Archmage
 						multiplier *= 2;
 						break;

@@ -31,12 +31,12 @@ import java.util.*;
 public class OlympiadManager
 {
 	private List<Integer> _nonClassBasedRegisters;
-	//private Map<Integer, List<Integer>> _classBasedRegisters;
+	private Map<Integer, List<Integer>> _classBasedRegisters;
 
 	private OlympiadManager()
 	{
 		_nonClassBasedRegisters = new ArrayList<>();
-	//	_classBasedRegisters = new LinkedHashMap<>();
+		_classBasedRegisters = new LinkedHashMap<>();
 	}
 
 	public static OlympiadManager getInstance()
@@ -49,28 +49,28 @@ public class OlympiadManager
 		return _nonClassBasedRegisters;
 	}
 
-	//public final Map<Integer, List<Integer>> getRegisteredClassBased()
-	//{
-	//	return _classBasedRegisters;
-	//}
-//
-	//protected final List<List<Integer>> hasEnoughRegisteredClassed()
-	//{
-	//	List<List<Integer>> result = null;
-	//	for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
-	//	{
-	//		if (classList.getValue() != null && classList.getValue().size() >= Config.ALT_OLY_CLASSED)
-	//		{
-	//			if (result == null)
-	//			{
-	//				result = new ArrayList<>();
-	//			}
-//
-	//			result.add(classList.getValue());
-	//		}
-	//	}
-	//	return result;
-	//}
+	public final Map<Integer, List<Integer>> getRegisteredClassBased()
+	{
+		return _classBasedRegisters;
+	}
+
+	protected final List<List<Integer>> hasEnoughRegisteredClassed()
+	{
+		List<List<Integer>> result = null;
+		for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
+		{
+			if (classList.getValue() != null && classList.getValue().size() >= Config.ALT_OLY_CLASSED)
+			{
+				if (result == null)
+				{
+					result = new ArrayList<>();
+				}
+
+				result.add(classList.getValue());
+			}
+		}
+		return result;
+	}
 
 	protected final boolean hasEnoughRegisteredNonClassed()
 	{
@@ -80,7 +80,7 @@ public class OlympiadManager
 	protected final void clearRegistered()
 	{
 		_nonClassBasedRegisters.clear();
-		//_classBasedRegisters.clear();
+		_classBasedRegisters.clear();
 		AntiFeedManager.getInstance().clear(AntiFeedManager.OLYMPIAD_ID);
 	}
 
@@ -111,18 +111,19 @@ public class OlympiadManager
 			return false;
 		}
 
-		//final List<Integer> classed = _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
-		//if (classed != null && classed.contains(objId))
-		//{
-		//	if (showMessage)
-		//	{
-		//		final SystemMessage sm = SystemMessage
-		//				.getSystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
-		//		sm.addPcName(player);
-		//		player.sendPacket(sm);
-		//	}
-		//	return true;
-		//}
+		final List<Integer> classed =
+				_classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+		if (classed != null && classed.contains(objId))
+		{
+			if (showMessage)
+			{
+				final SystemMessage sm = SystemMessage
+						.getSystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_CLASS_MATCH_WAITING_LIST);
+				sm.addPcName(player);
+				player.sendPacket(sm);
+			}
+			return true;
+		}
 
 		return false;
 	}
@@ -236,26 +237,26 @@ public class OlympiadManager
 
 		switch (type)
 		{
-			//case CLASSED:
-			//{
-			//	int classId = player.getCurrentClass().getParent().getAwakeningClassId();
-			//	List<Integer> classed = _classBasedRegisters.get(classId);
-			//	if (classed != null)
-			//	{
-			//		addPlayer(classed, nobleInfo);
-			//	}
-			//	else
-			//	{
-			//		classed = new ArrayList<>();
-			//		classed.add(player.getObjectId());
-			//		_classBasedRegisters.put(classId, classed);
-			//	}
-//
-			//	sm = SystemMessage.getSystemMessage(
-			//			SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_CLASSIFIED_GAMES);
-			//	player.sendPacket(sm);
-			//	break;
-			//}
+			case CLASSED:
+			{
+				int classId = player.getCurrentClass().getParent().getAwakeningClassId();
+				List<Integer> classed = _classBasedRegisters.get(classId);
+				if (classed != null)
+				{
+					addPlayer(classed, nobleInfo);
+				}
+				else
+				{
+					classed = new ArrayList<>();
+					classed.add(player.getObjectId());
+					_classBasedRegisters.put(classId, classed);
+				}
+
+				sm = SystemMessage.getSystemMessage(
+						SystemMessageId.YOU_HAVE_BEEN_REGISTERED_IN_A_WAITING_LIST_OF_CLASSIFIED_GAMES);
+				player.sendPacket(sm);
+				break;
+			}
 			case NON_CLASSED:
 			{
 
@@ -314,21 +315,21 @@ public class OlympiadManager
 			return true;
 		}
 
-		//int classId = player.getCurrentClass().getParent().getAwakeningClassId();
-		//final List<Integer> classed = _classBasedRegisters.get(classId);
-		//if (classed != null && classed.remove(objId))
-		//{
-		//	_classBasedRegisters.remove(classId);
-		//	_classBasedRegisters.put(classId, classed);
-//
-		//	if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
-		//	{
-		//		AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
-		//	}
-//
-		//	player.sendPacket(sm);
-		//	return true;
-		//}
+		int classId = player.getCurrentClass().getParent().getAwakeningClassId();
+		final List<Integer> classed = _classBasedRegisters.get(classId);
+		if (classed != null && classed.remove(objId))
+		{
+			_classBasedRegisters.remove(classId);
+			_classBasedRegisters.put(classId, classed);
+
+			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			{
+				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
+			}
+
+			player.sendPacket(sm);
+			return true;
+		}
 		return false;
 	}
 
@@ -351,8 +352,9 @@ public class OlympiadManager
 			return;
 		}
 
-		//final List<Integer> classed = _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
-		//if (classed != null && classed.remove(objId))
+		final List<Integer> classed =
+				_classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
+		if (classed != null && classed.remove(objId))
 		{
 		}
 	}

@@ -84,17 +84,29 @@ public class OlympiadManagerLink implements IBypassHandler
 						if (!OlympiadManager.getInstance().isRegistered(activeChar))
 						{
 							final int nonClassed = OlympiadManager.getInstance().getRegisteredNonClassBased().size();
+							final Collection<List<Integer>> allClassed =
+									OlympiadManager.getInstance().getRegisteredClassBased().values();
+							int classed = 0;
+							if (!allClassed.isEmpty())
 							{
-
+								for (List<Integer> cls : allClassed)
+								{
+									if (cls != null)
+									{
+										classed += cls.size();
+									}
+								}
 							}
-							html.setFile(activeChar.getHtmlPrefix(),Olympiad.OLYMPIAD_HTML_PATH + "noble_register.htm");
+							html.setFile(activeChar.getHtmlPrefix(),
+									Olympiad.OLYMPIAD_HTML_PATH + "noble_register.htm");
 							html.replace("%period%", String.valueOf(Olympiad.getInstance().getCurrentCycle())); // TODO
 							html.replace("%rounds%", "?"); // TODO
-							html.replace("%participants%", String.valueOf(nonClassed));
+							html.replace("%participants%", String.valueOf(classed + nonClassed));
 						}
 						else
 						{
-							html.setFile(activeChar.getHtmlPrefix(),Olympiad.OLYMPIAD_HTML_PATH + "noble_unregister.htm");
+							html.setFile(activeChar.getHtmlPrefix(),
+									Olympiad.OLYMPIAD_HTML_PATH + "noble_unregister.htm");
 						}
 						html.replace("%objectId%", String.valueOf(target.getObjectId()));
 						activeChar.sendPacket(html);
