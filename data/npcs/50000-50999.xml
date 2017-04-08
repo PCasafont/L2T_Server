@@ -10,7 +10,7 @@
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
         <spawn x="-115171" y="253074" z="-1504" heading="0" respawn="1000" />
     </npc>
-    <npc id="50008" templateId="33941" name="Charlotte" serverSideName="true" title="Event Shop"
+    <npc id="50008" templateId="33941" name="Charlotte" serverSideName="true" title="Event Merchant"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"
@@ -21,7 +21,7 @@
          darkRes="20" aiType="fighter">
         <spawn x="-82584" y="150592" z="-3129" heading="16383" respawn="1000" />
 </npc>
-    <npc id="50009" templateId="13394" name="Salome" serverSideName="true" title="Augmented Item Shop"
+    <npc id="50009" templateId="13394" name="Salome" serverSideName="true" title="Augmented Item Merchant"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"
@@ -104,7 +104,7 @@
          holyRes="20"
          darkRes="20" aiType="fighter" isLethalImmune="true">
     </npc>
-    <npc id="50012" templateId="13392" name="Alize" serverSideName="true" title="Bank trader"
+    <npc id="50012" templateId="13392" name="Alize" serverSideName="true" title="Bank Trader"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"
@@ -125,7 +125,7 @@
          darkRes="20" aiType="fighter">
         <spawn x="73832" y="142544" z="-3777" heading="33685" respawn="1000" />
     </npc>
-    <npc id="50015" templateId="13298" name="Eva" serverSideName="true" title="Beauty Npc"
+    <npc id="50015" templateId="13298" name="Eva" serverSideName="true" title="Beauty Shop"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"
@@ -136,7 +136,7 @@
          darkRes="20" aiType="fighter">
         <spawn x="-83021" y="150605" z="-3129" heading="63590" respawn="1000" />
     </npc>
-    <npc id="50014" templateId="13198" name="King of the Cows" serverSideName="true" title="Event Npc"
+    <npc id="50014" templateId="13198" name="King of the Cows" serverSideName="true" title="Cow Guy"
          serverSideTitle="true" level="70"
          type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
          INT="7" WIT="9"

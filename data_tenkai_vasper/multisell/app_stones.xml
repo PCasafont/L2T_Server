@@ -953,11 +953,19 @@
             <production id="47223" count="1" /> <!--Green Archer     -->
          </item>
     <item>
-        <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
-        <production id="46595" count="1" /> <!-- Freya's Tunic Appearance Stone -->
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="46595" count="1" /> <!-- Dynasty Breastplate -->
     </item>
     <item>
-        <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
-        <production id="46596" count="1" /> <!-- Freya's Tunic Appearance Stone -->
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="46596" count="1" /> <!-- Dynasty Leather Armor -->
+    </item>
+    <item>
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="46597" count="1" /> <!-- Dynasty Tunic -->
+    </item>
+    <item>
+        <ingredient id="4037" count="2" />
+        <production id="46606" count="1" />
     </item>
 </list>
