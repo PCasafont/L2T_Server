@@ -92,4 +92,35 @@
         <ingredient count="25" id="5899"/>
         <production count="1" id="47490"/>
     </item>
+    <!-- Baium Soul Ring -->
+    <item>
+        <ingredient count="1" id="47466"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47467"/>
+    </item>
+    <item>
+        <ingredient count="1" id="47466"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47468"/>
+    </item>
+    <item>
+        <ingredient count="1" id="47467"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47468"/>
+    </item>
+    <item>
+        <ingredient count="1" id="47467"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47466"/>
+    </item>
+    <item>
+        <ingredient count="1" id="47468"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47467"/>
+    </item>
+    <item>
+        <ingredient count="1" id="47468"/>
+        <ingredient count="25" id="5899"/>
+        <production count="1" id="47466"/>
+    </item>
 </list>

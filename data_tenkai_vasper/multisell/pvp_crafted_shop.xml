@@ -76,9 +76,9 @@
         <production count="1" id="47485" />
     </item>
     <item>
-    <ingredient count="50" id="5899" />
-    <ingredient count="1" id="19463" />
-    <production count="1" id="47486" />
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19463" />
+        <production count="1" id="47486" />
     </item>
     <!-- Lindvior Earring -->
     <item>

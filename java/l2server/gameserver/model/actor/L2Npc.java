@@ -990,6 +990,7 @@ public class L2Npc extends L2Character
 		return CastleManager.getInstance().getCastles().get(_castleIndex);
 	}
 
+	
 	/**
 	 * Return closest castle in defined distance
 	 *

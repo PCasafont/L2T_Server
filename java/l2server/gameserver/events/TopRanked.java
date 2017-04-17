@@ -111,7 +111,7 @@ public class TopRanked
 
                 Mail attachments = msg.createAttachments();
                 int rewardAmount = 0;
-                int rewardId = 4037;
+                int rewardId = 57;
 
                 attachments.addItem("Ranked System", 5899, amount, null, null);
                  if (position == 1)

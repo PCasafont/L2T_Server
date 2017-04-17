@@ -36,7 +36,7 @@ public class DamageDealer extends L2AttackableAIScript
 		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
 		{
 			L2Npc scarecrow = addSpawn(80350, -114361, 253054, -1542, 14661, false, 0);
-
+			
 			scarecrow.setIsImmobilized(true);
 			scarecrow.setIsMortal(false);
 			scarecrow.disableCoreAI(true);

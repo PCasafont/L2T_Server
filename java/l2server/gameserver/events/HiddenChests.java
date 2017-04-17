@@ -3,18 +3,14 @@ package l2server.gameserver.events;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
@@ -401,7 +397,7 @@ public class HiddenChests
 		}
 	}
 
-	public void tryOpenChest(L2PcInstance activeChar, L2Npc npc)
+/*	public void tryOpenChest(L2PcInstance activeChar, L2Npc npc)
 	{
 		if (activeChar == null)
 		{
@@ -412,10 +408,12 @@ public class HiddenChests
 		int castingMillis = 30000;
 		activeChar.broadcastPacket(new MagicSkillUse(activeChar, 11030, 1, castingMillis, 0));
 		activeChar.sendPacket(new SetupGauge(0, castingMillis));
-		activeChar.sendMessage("Opening chest...");
+		activeChar.sendMessage("Opening bitch...");
 		activeChar.setLastSkillCast(SkillTable.getInstance().getInfo(11030, 1));
 		OpenChestCastFinalizer fcf = new OpenChestCastFinalizer(activeChar, npc);
 		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleEffect(fcf, castingMillis));
 		activeChar.forceIsCasting(TimeController.getGameTicks() + castingMillis / TimeController.MILLIS_IN_TICK);
-	}
+	}*/
+	
+	
 }

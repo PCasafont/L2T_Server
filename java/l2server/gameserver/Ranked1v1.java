@@ -86,8 +86,8 @@ public class Ranked1v1
         }
 
         state = State.FIGHT;
-
-        L2Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
+	
+	    L2Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
         L2Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
         bufferOne.spawnMe();
         bufferTwo.spawnMe();
