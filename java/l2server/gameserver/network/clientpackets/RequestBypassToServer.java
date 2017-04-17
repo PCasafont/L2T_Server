@@ -16,6 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.IniaParser;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.communitybbs.CommunityBoard;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
@@ -221,6 +222,10 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			else if (_command.startsWith("_friend"))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CB_OFFLINE));
+			}
+			else if (_command.startsWith("Inia"))
+			{
+				IniaParser.getInstance().handleCommands(getClient(), _command);
 			}
 			else if (_command.startsWith("Quest "))
 			{

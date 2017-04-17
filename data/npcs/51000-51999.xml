@@ -87,4 +87,37 @@
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
     </npc>
+
+	<npc id="95000" templateId="8568" name="Fire Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+		 mpReg="0.0"
+		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
+		 mAtkSpd="391"
+		 pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+		 waterRes="0"
+		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="95001" templateId="8569" name="Water Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+		 mpReg="0.0"
+		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
+		 mAtkSpd="391"
+		 pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+		 waterRes="0"
+		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="95002" templateId="8570" name="Dark Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+		 mpReg="0.0"
+		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
+		 mAtkSpd="391"
+		 pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+		 waterRes="0"
+		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="95003" templateId="8571" name="Earth Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+		 mpReg="0.0"
+		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
+		 mAtkSpd="391"
+		 pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+		 waterRes="0"
+		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
 </list>

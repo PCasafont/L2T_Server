@@ -18,6 +18,7 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
+import l2server.gameserver.Nodes.NodesManager;
 import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.Faction.FactionManager;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
@@ -190,6 +191,12 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}*/
 
+		if (_text.equalsIgnoreCase(".spawn"))
+		{
+			NodesManager.getInstance().SpawnNewNode(activeChar);
+			return;
+		}
+		
 		if (_text.equalsIgnoreCase(".elpy"))
 		{
 			Elpy.getInstance().addPlayer(activeChar);
