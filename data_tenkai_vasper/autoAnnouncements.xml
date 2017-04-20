@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
     <announce text="Auto-announcements: The Global Teleporter and NPCBuffer are in your Magic Gem (look at your inventory!)" initial="20" reuse="100" />
+    <announce text="Auto-announcements: En el inventario encontraras la Gema Magica (Magic Gem) donde podras teletransportarte y bufearte!" initial="20" reuse="100" />
     <announce text="Auto-announcements: Are you looking for server information? Check the Community Board (ALT + B)!" initial="40" reuse="100" />
     <announce text="Auto-announcements: Never share your account information!" initial="100" reuse="100" />
+    <announce text="Auto-announcements: Warning, lately scammer sending pm inviting you to log in fake tenkai website to steal your account informations" initial="10" reuse="15" />
+    <announce text="Auto-announcements: Double check if you login Tenkai website and if you send your info by mistake use Tenkai launcher and change your password" initial="10" reuse="15" />
 </list>

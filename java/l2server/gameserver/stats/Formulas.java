@@ -4970,7 +4970,7 @@ public final class Formulas
 						break;
 					case 167: // Feoh Soultaker
 						multiplier *= 1.4; //1
-//						break;
+						break;
 					case 170: //Feoh Soulhound
 						multiplier *= 1.4; //1.4
 						break;

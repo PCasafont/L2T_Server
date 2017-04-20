@@ -275,12 +275,17 @@
     <npc id="25944" overrideDrops="true" />
     <!-- Helios (Event Boss) -->
     <npc id="29303" overrideDrops="true" level="107" hpMax="50000000"
-         STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184" sp="44057417"
+         STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="283572573184" sp="44057417"
          pAtk="3000000" mAtk="5500000" pDef="15000" mDef="12500" pAtkSpd="253" mAtkSpd="3819">
-        <itemDrop itemId="34846" min="4" max="8" chance="100" /> <!-- Bard's Gift -->
-        <itemDrop itemId="17236" min="4" max="8" chance="100" /> <!-- Victory Gift -->
+        <itemDrop itemId="34846" min="8" max="16" chance="100" /> <!-- Bard's Gift -->
+        <itemDrop itemId="17236" min="8" max="16" chance="100" /> <!-- Victory Gift -->
         <itemDrop itemId="57" min="100000000" max="200000000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="37559" min="100" max="250" chance="100" /> <!-- Shiny Coin -->
-        <itemDrop itemId="4356" min="10" max="70" chance="100" /> <!-- Gold Ein -->
+        <itemDrop itemId="36515" min="50" max="100" chance="100" /> <!-- Elcyum -->
+        <itemDrop itemId="37559" min="200" max="500" chance="100" /> <!-- Shiny Coin -->
+        <itemDrop itemId="5899" min="50" max="100" chance="100" /> <!-- Kails Coin -->
+        <itemDrop itemId="4356" min="200" max="500" chance="100" /> <!-- Gold Ein -->
+        <itemDrop itemId="10429" min="50" max="100" chance="100" /> <!-- Enchant Medal -->
+        <itemDrop itemId="46155" min="50" max="100" chance="100" /> <!-- Superior Giant's Codex - Mastery Chapter2 -->
+        <itemDrop itemId="36731" min="20" max="50" chance="100"/> <!-- Life Stone Instilled with Giants' Power -->
     </npc>
 </list>
