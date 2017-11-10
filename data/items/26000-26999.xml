@@ -1185,7 +1185,7 @@
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
     </item>
-    <!-- Double-click to receive C-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 40 - 84. -->
+    <!-- Double-click to receive C-grade equipment items necessary for Ertheia Fighter-type characters. Can be used by characters Lv. 40 - 84. -->
     <item id="26230" type="EtcItem" name="Fated Support Box: Ertheia Fighter (C-grade)"
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
@@ -1195,7 +1195,7 @@
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
     </item>
-    <!-- Double-click to receive B-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 52 - 84. -->
+    <!-- Double-click to receive B-grade equipment items necessary for Ertheia Fighter-type characters. Can be used by characters Lv. 52 - 84. -->
     <item id="26232" type="EtcItem" name="Fated Support Box: Ertheia Fighter (B-grade)"
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
@@ -1205,7 +1205,7 @@
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
     </item>
-    <!-- Double-click to receive A-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 61 - 84. -->
+    <!-- Double-click to receive A-grade equipment items necessary for Ertheia Fighter-type characters. Can be used by characters Lv. 61 - 84. -->
     <item id="26234" type="EtcItem" name="Fated Support Box: Ertheia Fighter (A-grade)"
           icon="icon.etc_equip_item_box_i00" immediateEffect="1"
           crystalType="c" isStackable="true">
@@ -1215,7 +1215,7 @@
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" crystalType="c" isStackable="true">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 76 - 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for Ertheia Fighter-type characters. Can be used by characters Lv. 76 - 84. -->
     <item id="26236" type="EtcItem" name="Fated Support Box: Ertheia Fighter - Stage 1 (S-grade)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" crystalType="c" isStackable="true">
@@ -1225,7 +1225,7 @@
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" crystalType="c" isStackable="true">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for Ertheia fighter-type characters. Can be used by characters Lv. 81 - 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for Ertheia Fighter-type characters. Can be used by characters Lv. 81 - 84. -->
     <item id="26238" type="EtcItem" name="Fated Support Box: Ertheia Fighter - Stage 2 (S-grade)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" crystalType="c" isStackable="true">

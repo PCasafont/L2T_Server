@@ -91,7 +91,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- The Lizardman mystic who rules over the Delu Lizardmen with his mighty insight and wisdom. He is said to have studied directly under Hardin. In his youth, he counseled peace with the humans, but they were blindly hostile despite his peaceful efforts. He has grown angry over the years at the human stupidity, and has declared war on any and all intruders to his tribe's territory. -->
+    <!-- The Lizardman mystic who Rule over the Delu Lizardmen with his mighty insight and wisdom. He is said to have studied directly under Hardin. In his youth, he counseled peace with the humans, but they were blindly hostile despite his peaceful efforts. He has grown angry over the years at the human stupidity, and has declared war on any and all intruders to his tribe's territory. -->
     <skill id="4813" levels="1" name="Raid Boss (Lv. 40)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -252,7 +252,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- A gigantic tiger of legend that rules the Anghel Waterfall. Originally, it was a sacred and divine creature who guided angels in the heavens, but it mauled its master and ran away to the earth. It despairs of its now miserable life, and has grown violent. It devours any traveler or reckless adventurers who passes by. -->
+    <!-- A gigantic tiger of legend that Rule the Anghel Waterfall. Originally, it was a sacred and divine creature who guided angels in the heavens, but it mauled its master and ran away to the earth. It despairs of its now miserable life, and has grown violent. It devours any traveler or reckless adventurers who passes by. -->
     <skill id="4836" levels="1" name="Raid Boss (Lv. 65)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -287,7 +287,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- The Old Chief who has led Leto Lizardmen for the last several decades. In spite of his old age, he has survived thanks to his strength and quick wits. He knows that his tribe cannot take their homeland back in a direct fight against the Kingdom of Aden, so he watches for an opportunity to strike. He hopes to use the coming confusion to secure the territory of the Leto Lizardmen. -->
+    <!-- The Old Chief who has led Leto Lizardmen for the last several decades. In spite of his old age, he has survived thanks to his strength and quick wits. He knows that his tribe cannot take their homeland back in a direct Fight against the Kingdom of Aden, so he watches for an opportunity to strike. He hopes to use the coming confusion to secure the territory of the Leto Lizardmen. -->
     <skill id="4841" levels="1" name="Raid Boss (Lv. 40)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -392,7 +392,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- The brave and great Tiger King. Despite his beastly looks, he rules the Silenos thanks to his divine nature and bravery. Originally, he was one of the Evil Spirits that Shilen created, but he has learned not to hate the gods and endeavored to live up to his position as Tiger King after accumulating wisdom over the years. Among the Silenos Tribe, he is accompanied by loyal shamans. -->
+    <!-- The brave and great Tiger King. Despite his beastly looks, he Rule the Silenos thanks to his divine nature and bravery. Originally, he was one of the Evil Spirits that Shilen created, but he has learned not to hate the gods and endeavored to live up to his position as Tiger King after accumulating wisdom over the years. Among the Silenos Tribe, he is accompanied by loyal shamans. -->
     <skill id="4856" levels="1" name="Raid Boss (Lv. 45)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -455,7 +455,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- Crokian Chief who rules Alligator Island. As a native Crokian who has lived in Innadril before humans and elves came, he hates outsiders and tries to protect his territory and tribe from them. Although he is not happy about the Water Couatl Ateka living on the same island, he cannot do anything about it because he is afraid of Water Dragon Fafurion. He dreams about the day when Crokians can rule Innadril again. -->
+    <!-- Crokian Chief who Rule Alligator Island. As a native Crokian who has lived in Innadril before humans and elves came, he hates outsiders and tries to protect his territory and tribe from them. Although he is not happy about the Water Couatl Ateka living on the same island, he cannot do anything about it because he is afraid of Water Dragon Fafurion. He dreams about the day when Crokians can rule Innadril again. -->
     <skill id="4865" levels="1" name="Raid Boss (Lv. 36)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -525,7 +525,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- The Vanor Silenos Chief, he rules the Plains of Glory east of Aden. During the Unification in the reign of King Raoul, Kandra agreed to a peace treaty with the humans. As war clouds have gathered, though, he has again taken steps to ready the Vanor Silenos Tribe for battle. Rumor has it that King Raoul proposed the original peace treaty because he feared Kandra's renowned swordsmanship. -->
+    <!-- The Vanor Silenos Chief, he Rule the Plains of Glory east of Aden. During the Unification in the reign of King Raoul, Kandra agreed to a peace treaty with the humans. As war clouds have gathered, though, he has again taken steps to ready the Vanor Silenos Tribe for battle. Rumor has it that King Raoul proposed the original peace treaty because he feared Kandra's renowned swordsmanship. -->
     <skill id="4875" levels="1" name="Raid Boss (Lv. 72)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -665,7 +665,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- The King of Bloody Lords, he was summoned by Marilion to help fend off an impending Nephilim attack. Terrifying in battle, he slew many Nephilim and dealt a grievous blow to the Army of Light. He was finally driven back by Anakim, who personally came to fight alongside the Nephilim, and fled to the Necropolis. -->
+    <!-- The King of Bloody Lords, he was summoned by Marilion to help fend off an impending Nephilim attack. Terrifying in battle, he slew many Nephilim and dealt a grievous blow to the Army of Light. He was finally driven back by Anakim, who personally came to Fight alongside the Nephilim, and fled to the Necropolis. -->
     <skill id="4895" levels="1" name="Raid Boss (Lv. 70)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />

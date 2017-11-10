@@ -405,7 +405,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		// find the next mob to spawn, based on the current npcId, growthlevel, and food.
 		if (growthLevel == 2)
 		{
-			// if tamed, the mob that will spawn depends on the class type (fighter/mage) of the player!
+			// if tamed, the mob that will spawn depends on the class type (Fighter/mage) of the player!
 			if (Rnd.get(2) == 0)
 			{
 				if (player.getCurrentClass().isMage())

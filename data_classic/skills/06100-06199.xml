@@ -397,7 +397,7 @@
             </abnormal>
         </for>
     </skill>
-    <!-- You have been weakened by the Altar's Curse. You probably can't fight in this condition. -->
+    <!-- You have been weakened by the Altar's Curse. You probably can't Fight in this condition. -->
     <skill id="6148" levels="1" name="Altar's Curse">
         <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />

@@ -49,6 +49,8 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
 import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
+import l2server.gameserver.instancemanager.arena.Fight;
+import l2server.gameserver.instancemanager.arena.Fighter;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveOption;
@@ -3421,7 +3423,7 @@ public class L2PcInstance extends L2Playable
 		L2Weapon weaponItem = null;
 		if (classId >= 0x00 && classId <= 0x09)
 		{
-			//human fighter fists
+			//human Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(246);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3433,7 +3435,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x12 && classId <= 0x18)
 		{
-			//elven fighter fists
+			//elven Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(244);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3445,7 +3447,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x1f && classId <= 0x25)
 		{
-			//dark elven fighter fists
+			//dark elven Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(245);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3457,7 +3459,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x2c && classId <= 0x30)
 		{
-			//orc fighter fists
+			//orc Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(248);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -6770,6 +6772,17 @@ public class L2PcInstance extends L2Playable
 			if (getIsInsideGMEvent() && pk.getIsInsideGMEvent())
 			{
 				GMEventManager.getInstance().onKill(killer, this);
+			}
+
+			if (ArenaManager.getInstance().isInFight(this)){
+				Fight fight = ArenaManager.getInstance().getFight(this);
+				Fighter winner = ArenaManager.getInstance().getFighter((L2PcInstance) killer);
+				if (fight == null || winner == null){
+					return false;
+				}
+				Fighter loser = ArenaManager.getInstance().getFighter(this);
+				winner.onKill(this);
+				loser.onDie((L2PcInstance) killer);
 			}
 
 			//if (pk != null && getEvent() == null && !isInOlympiadMode())
@@ -15960,7 +15973,7 @@ public class L2PcInstance extends L2Playable
 						}
 						else
 						{
-							htmlMsg.setHtml("<html><body>You are free for now, respect server rules!</body></html>");
+							htmlMsg.setHtml("<html><body>You are free for now, respect server Rule!</body></html>");
 						}
 						sendPacket(htmlMsg);
 						stopPunishTask(true);

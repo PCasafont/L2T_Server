@@ -35,7 +35,7 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- Brakki obtained the power of Fire Spirit Nastron, which gave him beast-like attributes. Thanks to his enhanced strength and instincts, he has become a formidable chief of the Ketra Orcs. He finds his inferiors burdensome during a battle, however, and prefers to fight alone. He has fought Varka's Chief Horus several times without success. -->
+    <!-- Brakki obtained the power of Fire Spirit Nastron, which gave him beast-like attributes. Thanks to his enhanced strength and instincts, he has become a formidable chief of the Ketra Orcs. He finds his inferiors burdensome during a battle, however, and prefers to Fight alone. He has fought Varka's Chief Horus several times without success. -->
     <skill id="4905" levels="1" name="Raid Boss (Lv. 80)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
@@ -175,14 +175,14 @@
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- This Basilisk obtained intelligence after the dark magic polluting the Wasteland mutated him. Bigger and stronger than other Basilisks, he rules over weaker ones. He hates the other tribes and will literally kill most living things he sees. -->
+    <!-- This Basilisk obtained intelligence after the dark magic polluting the Wasteland mutated him. Bigger and stronger than other Basilisks, he Rule over weaker ones. He hates the other tribes and will literally kill most living things he sees. -->
     <skill id="4925" levels="1" name="Raid Boss (Lv. 30)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />
     </skill>
-    <!-- This Gargoyle Lord rules the Gargoyles of the Wasteland. Strong-willed and confident, he resists the wishes of the Ancient Gargoyles. Rather than waiting for Shilen's resurrection, which he says may never occur, he is focused on building a Gargoyle kingdom now. -->
+    <!-- This Gargoyle Lord Rule the Gargoyles of the Wasteland. Strong-willed and confident, he resists the wishes of the Ancient Gargoyles. Rather than waiting for Shilen's resurrection, which he says may never occur, he is focused on building a Gargoyle kingdom now. -->
     <skill id="4926" levels="1" name="Raid Boss (Lv. 35)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="PASSIVE" />

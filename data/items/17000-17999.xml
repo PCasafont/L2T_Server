@@ -6818,7 +6818,7 @@
     <!-- Proof received by those who have completed the second class transfer. Can be exchanged for equipment. -->
     <item id="17822" type="EtcItem" name="Proof of Justice" icon="icon.item_normal52" immediateEffect="1" weight="2">
     </item>
-    <!-- Life Stone that can augment a hair accessory. Can attach a fighter-type option. -->
+    <!-- Life Stone that can augment a hair accessory. Can attach a Fighter-type option. -->
     <item id="17823" type="EtcItem" name="Life Stone: Hair Accessory - Warrior" icon="icon.etc_mineral_general_i00"
           immediateEffect="1"
           weight="2" isStackable="true">

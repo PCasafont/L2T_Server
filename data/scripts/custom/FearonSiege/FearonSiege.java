@@ -72,7 +72,7 @@ public class FearonSiege extends Quest
 			"They... They are coming...",
 			"They will arrive soon...",
 			"No one will be safe...",
-			"But... The Aden army will be ready to fight!",
+			"But... The Aden army will be ready to Fight!",
 			"Hurry up Leona Blackbird please...",
 			"Fearon Village is in dangerous..."
 	};

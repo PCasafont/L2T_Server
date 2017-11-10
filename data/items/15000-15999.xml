@@ -4039,7 +4039,7 @@
           isStackable="true" isPremium="true">
         <capsuledItem id="15344" min="1" max="1" chance="100.0" /> <!-- Aqua Elf Transformation Harp (Event) -->
     </item>
-    <!-- Can only be used to enchant S-grade Player Commendation Weapons. Normal enchant rules apply. -->
+    <!-- Can only be used to enchant S-grade Player Commendation Weapons. Normal enchant Rule apply. -->
     <item id="15346" type="EtcItem" name="Player Commendation - Scroll: Enchant Weapon (S-grade)"
           icon="icon.etc_scroll_of_enchant_weapon_i05"
           defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" weight="120" isTradable="false"
@@ -4047,7 +4047,7 @@
           isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
         <skill id="2999" level="1" /> <!-- Player Commendation - Scroll: Enchant Weapon (S-grade) -->
     </item>
-    <!-- Can only be used to enchant A-grade Player Commendation Weapons. Normal enchant rules apply. -->
+    <!-- Can only be used to enchant A-grade Player Commendation Weapons. Normal enchant Rule apply. -->
     <item id="15347" type="EtcItem" name="Player Commendation - Scroll: Enchant Weapon (A-grade)"
           icon="icon.etc_scroll_of_enchant_weapon_i04"
           defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" weight="120" isTradable="false"
@@ -4055,7 +4055,7 @@
           isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
         <skill id="2998" level="1" /> <!-- Player Commendation - Scroll: Enchant Weapon (A-grade) -->
     </item>
-    <!-- Can only be used to enchant B-grade Player Commendation Weapons. Normal enchant rules apply. -->
+    <!-- Can only be used to enchant B-grade Player Commendation Weapons. Normal enchant Rule apply. -->
     <item id="15348" type="EtcItem" name="Player Commendation - Scroll: Enchant Weapon (B-grade)"
           icon="icon.etc_scroll_of_enchant_weapon_i03"
           defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" weight="120" isTradable="false"
@@ -4063,7 +4063,7 @@
           isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
         <skill id="2997" level="1" /> <!-- Player Commendation - Scroll: Enchant Weapon (B-grade) -->
     </item>
-    <!-- Can only be used to enchant C-grade Player Commendation Weapons. Normal enchant rules apply. -->
+    <!-- Can only be used to enchant C-grade Player Commendation Weapons. Normal enchant Rule apply. -->
     <item id="15349" type="EtcItem" name="Player Commendation - Scroll: Enchant Weapon (C-grade)"
           icon="icon.etc_scroll_of_enchant_weapon_i02"
           defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" weight="120" isTradable="false"
@@ -4071,7 +4071,7 @@
           isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
         <skill id="2996" level="1" /> <!-- Player Commendation - Scroll: Enchant Weapon (C-grade) -->
     </item>
-    <!-- Can only be used to enchant D-grade Player Commendation Weapons. Normal enchant rules apply. -->
+    <!-- Can only be used to enchant D-grade Player Commendation Weapons. Normal enchant Rule apply. -->
     <item id="15350" type="EtcItem" name="Player Commendation - Scroll: Enchant Weapon (D-grade)"
           icon="icon.etc_scroll_of_enchant_weapon_i01"
           defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" weight="120" isTradable="false"

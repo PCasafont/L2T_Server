@@ -1551,7 +1551,7 @@ public class GMEventManager
 					continue;
 				}
 
-				//Reward the fighter players
+				//Reward the Fighter players
 				long winnerBetReward = Math.round(totalBet * 0.1f / winnerTeamSize);
 				for (Entry<Integer, Integer> i : _participants.entrySet())
 				{
@@ -1652,9 +1652,9 @@ public class GMEventManager
 
 			setCanBetNow(true);
 
-			sendPacketToWaitingPlayers(new ExShowScreenMessage("The fight will start in 40 seconds!", 5000));
+			sendPacketToWaitingPlayers(new ExShowScreenMessage("The Fight will start in 40 seconds!", 5000));
 			sendPacketToFighterPlayers(
-					new ExShowScreenMessage("Take buffs! The fight will start in 40 seconds!", 5000));
+					new ExShowScreenMessage("Take buffs! The Fight will start in 40 seconds!", 5000));
 
 			ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
@@ -1671,8 +1671,8 @@ public class GMEventManager
 					}
 				}
 
-				sendPacketToWaitingPlayers(new ExShowScreenMessage("The fight has started!", 2000));
-				sendPacketToFighterPlayers(new ExShowScreenMessage("Start the fight! GO! GO! GO!", 5000));
+				sendPacketToWaitingPlayers(new ExShowScreenMessage("The Fight has started!", 2000));
+				sendPacketToFighterPlayers(new ExShowScreenMessage("Start the Fight! GO! GO! GO!", 5000));
 			}, 40000);
 		}
 
@@ -2044,7 +2044,7 @@ public class GMEventManager
 				if (!_currentEvent.hasAcceptedRules(player.getObjectId()))
 				{
 					player.sendPacket(new ExShowScreenMessage(
-							"You should accept the Event rules (on the Arena Sign) before enter to the zone! ", 5000));
+							"You should accept the Event Rule (on the Arena Sign) before enter to the zone! ", 5000));
 					player.teleToLocation(_currentEvent.getTeleportLocation(), true);
 					return false;
 				}

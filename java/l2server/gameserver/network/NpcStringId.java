@@ -789,7 +789,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7056<br>
-	 * Message: This fight is a waste of time. Goodbye!
+	 * Message: This Fight is a waste of time. Goodbye!
 	 */
 	public static final NpcStringId THIS_FIGHT_IS_A_WASTE_OF_TIME_GOODBYE;
 
@@ -1189,7 +1189,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7463<br>
-	 * Message: If we can't avoid this fight, we'll need great strength. It's the only way to peace.
+	 * Message: If we can't avoid this Fight, we'll need great strength. It's the only way to peace.
 	 */
 	public static final NpcStringId IF_WE_CANT_AVOID_THIS_FIGHT_WELL_NEED_GREAT_STRENGTH_ITS_THE_ONLY_WAY_TO_PEACE;
 
@@ -1250,7 +1250,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7559<br>
-	 * Message: $s1. Nothing risked, nothing gained. Only those who fight enjoy the spoils of victory.
+	 * Message: $s1. Nothing risked, nothing gained. Only those who Fight enjoy the spoils of victory.
 	 */
 	public static final NpcStringId S1_NOTHING_RISKED_NOTHING_GAINED_ONLY_THOSE_WHO_FIGHT_ENJOY_THE_SPOILS_OF_VICTORY;
 
@@ -1262,7 +1262,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7561<br>
-	 * Message: With no fight, I have no reason to stay.
+	 * Message: With no Fight, I have no reason to stay.
 	 */
 	public static final NpcStringId WITH_NO_FIGHT_I_HAVE_NO_REASON_TO_STAY;
 
@@ -1304,7 +1304,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7650<br>
-	 * Message: $s1... Would you fight Uruz, who has reached the power of Azira?
+	 * Message: $s1... Would you Fight Uruz, who has reached the power of Azira?
 	 */
 	public static final NpcStringId S1_WOULD_YOU_FIGHT_URUZ_WHO_HAS_REACHED_THE_POWER_OF_AZIRA;
 
@@ -1413,7 +1413,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7758<br>
-	 * Message: You're not a king! You're just a tyrant! $s1, we must fight together!
+	 * Message: You're not a king! You're just a tyrant! $s1, we must Fight together!
 	 */
 	public static final NpcStringId YOURE_NOT_A_KING_YOURE_JUST_A_TYRANT_S1_WE_MUST_FIGHT_TOGETHER;
 
@@ -1461,13 +1461,13 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7766<br>
-	 * Message: $s1! You dare to fight me? A king's power must be great to rule!
+	 * Message: $s1! You dare to Fight me? A king's power must be great to rule!
 	 */
 	public static final NpcStringId S1_YOU_DARE_TO_FIGHT_ME_A_KINGS_POWER_MUST_BE_GREAT_TO_RULE;
 
 	/**
 	 * ID: 7767<br>
-	 * Message: You would fight the king, $s1? Traitor!
+	 * Message: You would Fight the king, $s1? Traitor!
 	 */
 	public static final NpcStringId YOU_WOULD_FIGHT_THE_KING_S1_TRAITOR;
 
@@ -1497,7 +1497,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7858<br>
-	 * Message: $s1, we must fight this soul together to prevent an everlasting winter!
+	 * Message: $s1, we must Fight this soul together to prevent an everlasting winter!
 	 */
 	public static final NpcStringId S1_WE_MUST_FIGHT_THIS_SOUL_TOGETHER_TO_PREVENT_AN_EVERLASTING_WINTER;
 
@@ -1623,7 +1623,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7961<br>
-	 * Message: Why don't you fight me someday?
+	 * Message: Why don't you Fight me someday?
 	 */
 	public static final NpcStringId WHY_DONT_YOU_FIGHT_ME_SOMEDAY;
 
@@ -1647,7 +1647,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 7966<br>
-	 * Message: You would fight me, a messenger of the gods?
+	 * Message: You would Fight me, a messenger of the gods?
 	 */
 	public static final NpcStringId YOU_WOULD_FIGHT_ME_A_MESSENGER_OF_THE_GODS;
 
@@ -1875,7 +1875,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 8258<br>
-	 * Message: I'll never forget the taste of his steel, $s1! Let's fight him together!
+	 * Message: I'll never forget the taste of his steel, $s1! Let's Fight him together!
 	 */
 	public static final NpcStringId ILL_NEVER_FORGET_THE_TASTE_OF_HIS_STEEL_S1_LETS_FIGHT_HIM_TOGETHER;
 
@@ -1995,7 +1995,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 8558<br>
-	 * Message: He's got a tough shell. $s1! Let's fight together and crack his skull!
+	 * Message: He's got a tough shell. $s1! Let's Fight together and crack his skull!
 	 */
 	public static final NpcStringId HES_GOT_A_TOUGH_SHELL_S1_LETS_FIGHT_TOGETHER_AND_CRACK_HIS_SKULL;
 
@@ -2037,7 +2037,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 8566<br>
-	 * Message: $s1! Are you going to fight me?
+	 * Message: $s1! Are you going to Fight me?
 	 */
 	public static final NpcStringId S1_ARE_YOU_GOING_TO_FIGHT_ME;
 
@@ -2805,7 +2805,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 9759<br>
-	 * Message: $s1! You have to fight better than that if you expect to survive!
+	 * Message: $s1! You have to Fight better than that if you expect to survive!
 	 */
 	public static final NpcStringId S1_YOU_HAVE_TO_FIGHT_BETTER_THAN_THAT_IF_YOU_EXPECT_TO_SURVIVE;
 
@@ -3190,7 +3190,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 11452<br>
-	 * Message: This enemy is far too powerful for me to fight. I must withdraw.
+	 * Message: This enemy is far too powerful for me to Fight. I must withdraw.
 	 */
 	public static final NpcStringId THIS_ENEMY_IS_FAR_TOO_POWERFUL_FOR_ME_TO_FIGHT_I_MUST_WITHDRAW;
 
@@ -3239,7 +3239,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 15805<br>
-	 * Message: The power of Lord Beleth rules the whole world...!
+	 * Message: The power of Lord Beleth Rule the whole world...!
 	 */
 	public static final NpcStringId THE_POWER_OF_LORD_BELETH_RULES_THE_WHOLE_WORLD;
 
@@ -6947,7 +6947,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1000108<br>
-	 * Message: Those who are afraid should get away and those who are brave should fight!
+	 * Message: Those who are afraid should get away and those who are brave should Fight!
 	 */
 	public static final NpcStringId THOSE_WHO_ARE_AFRAID_SHOULD_GET_AWAY_AND_THOSE_WHO_ARE_BRAVE_SHOULD_FIGHT;
 
@@ -8033,7 +8033,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1000288<br>
-	 * Message: $s1! How dare you interrupt our fight! Hey guys, help!
+	 * Message: $s1! How dare you interrupt our Fight! Hey guys, help!
 	 */
 	public static final NpcStringId S1_HOW_DARE_YOU_INTERRUPT_OUR_FIGHT_HEY_GUYS_HELP;
 
@@ -13189,7 +13189,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1300164<br>
-	 * Message: Do you wish to fight? Are you afraid? No matter how hard you try, you have nowhere to run. But if you face it head on, our mercenary troop will help you out!
+	 * Message: Do you wish to Fight? Are you afraid? No matter how hard you try, you have nowhere to run. But if you face it head on, our mercenary troop will help you out!
 	 */
 	public static final NpcStringId
 			DO_YOU_WISH_TO_FIGHT_ARE_YOU_AFRAID_NO_MATTER_HOW_HARD_YOU_TRY_YOU_HAVE_NOWHERE_TO_RUN_BUT_IF_YOU_FACE_IT_HEAD_ON_OUR_MERCENARY_TROOP_WILL_HELP_YOU_OUT;
@@ -13361,7 +13361,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800010<br>
-	 * Message: Looting rules are no longer active.
+	 * Message: Looting Rule are no longer active.
 	 */
 	public static final NpcStringId LOOTING_RULES_ARE_NO_LONGER_ACTIVE;
 
@@ -14885,7 +14885,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800273<br>
-	 * Message: The enemies have attacked. Everyone come out and fight!!!! ... Urgh~!
+	 * Message: The enemies have attacked. Everyone come out and Fight!!!! ... Urgh~!
 	 */
 	public static final NpcStringId THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH;
 
@@ -16629,7 +16629,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800557<br>
-	 * Message: A change in rules may be helpful when problems are persistent.
+	 * Message: A change in Rule may be helpful when problems are persistent.
 	 */
 	public static final NpcStringId A_CHANGE_IN_RULES_MAY_BE_HELPFUL_WHEN_PROBLEMS_ARE_PERSISTENT;
 
@@ -17802,7 +17802,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800749<br>
-	 * Message: Oh followers of the Dragon of Darkness, fight by my side!
+	 * Message: Oh followers of the Dragon of Darkness, Fight by my side!
 	 */
 	public static final NpcStringId OH_FOLLOWERS_OF_THE_DRAGON_OF_DARKNESS_FIGHT_BY_MY_SIDE;
 
@@ -18309,7 +18309,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800833<br>
-	 * Message: I... don't want to fight...
+	 * Message: I... don't want to Fight...
 	 */
 	public static final NpcStringId I_DONT_WANT_TO_FIGHT;
 
@@ -18351,7 +18351,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800840<br>
-	 * Message: I really... didn't want... to fight...
+	 * Message: I really... didn't want... to Fight...
 	 */
 	public static final NpcStringId I_REALLY_DIDNT_WANT_TO_FIGHT;
 
@@ -18729,7 +18729,7 @@ public final class NpcStringId
 
 	/**
 	 * ID: 1800902<br>
-	 * Message: Why are you not responding? You don't even have any Cool Packs! You can't fight me!
+	 * Message: Why are you not responding? You don't even have any Cool Packs! You can't Fight me!
 	 */
 	public static final NpcStringId WHY_ARE_YOU_NOT_RESPONDING_YOU_DONT_EVEN_HAVE_ANY_COOL_PACKS_YOU_CANT_FIGHT_ME;
 

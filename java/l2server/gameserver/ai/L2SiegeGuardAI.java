@@ -346,7 +346,7 @@ public class L2SiegeGuardAI extends L2CharacterAI implements Runnable
 	 * <li>Call all L2Object of its Faction inside the Faction Range</li>
 	 * <li>Chose a target and order to attack it with magic skill or physical attack</li><BR><BR>
 	 * <p>
-	 * TODO: Manage casting rules to healer mobs (like Ant Nurses)
+	 * TODO: Manage casting Rule to healer mobs (like Ant Nurses)
 	 */
 	private void thinkAttack()
 	{

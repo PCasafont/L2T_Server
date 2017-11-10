@@ -1838,7 +1838,7 @@ public final class Formulas
 		double weaponRandom = attacker.getRandomDamageMultiplier();
 
 		double finalBonus = 1.0;
-		// Dmg/def bonusses in PvP fight
+		// Dmg/def bonusses in PvP Fight
 		if (isPvP)
 		{
 			finalBonus *= attacker.getPvPPhysicalDamage(target) / target.getPvPPhysicalDefense(attacker);
@@ -2212,7 +2212,7 @@ public final class Formulas
 		double weaponRandom = attacker.getRandomDamageMultiplier();
 
 		double skillDmgBonus = 1.0;
-		// Dmg/def bonusses in PvP fight
+		// Dmg/def bonusses in PvP Fight
 		if (isPvP)
 		{
 			skillDmgBonus *= attacker.getPvPPhysicalSkillDamage(target) / target.getPvPPhysicalSkillDefense(attacker);
@@ -2427,9 +2427,9 @@ public final class Formulas
 		double finalBonus = 1;
 		if (attacker instanceof L2Playable && target instanceof L2Playable)
 		{
-			// Dmg bonuses in PvP fight
+			// Dmg bonuses in PvP Fight
 			finalBonus *= attacker.getPvPPhysicalSkillDamage(target);
-			// Def bonuses in PvP fight
+			// Def bonuses in PvP Fight
 			finalBonus /= target.getPvPPhysicalSkillDefense(attacker);
 		}
 

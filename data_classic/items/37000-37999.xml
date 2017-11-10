@@ -2411,7 +2411,7 @@
     <item id="37314" type="EtcItem" name="Fated Support Box" icon="icon.etc_box_of_adventure_1_i00" immediateEffect="1"
           weight="0">
     </item>
-    <!-- Double-click to receive C-grade equipment items necessary for fighter-type characters. Can be used by characters Lv. 40 - 84. -->
+    <!-- Double-click to receive C-grade equipment items necessary for Fighter-type characters. Can be used by characters Lv. 40 - 84. -->
     <item id="37315" type="EtcItem" name="Fated Support Box: Fighter (C-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2436,7 +2436,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive C-grade equipment items necessary for orc-fighter-type characters. Can be used by characters Lv. 40 - 84. -->
+    <!-- Double-click to receive C-grade equipment items necessary for orc-Fighter-type characters. Can be used by characters Lv. 40 - 84. -->
     <item id="37320" type="EtcItem" name="Fated Support Box: Orc Fighter (C-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2446,7 +2446,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive B-grade equipment items necessary for fighter-type characters. Can be used by characters Lv. 52 - 84. -->
+    <!-- Double-click to receive B-grade equipment items necessary for Fighter-type characters. Can be used by characters Lv. 52 - 84. -->
     <item id="37322" type="EtcItem" name="Fated Support Box: Fighter (B-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2471,7 +2471,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive B-grade equipment items necessary for orc-fighter-type characters. Can be used by characters Lv. 52 - 84. -->
+    <!-- Double-click to receive B-grade equipment items necessary for orc-Fighter-type characters. Can be used by characters Lv. 52 - 84. -->
     <item id="37327" type="EtcItem" name="Fated Support Box: Orc Fighter (B-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2481,7 +2481,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive A-grade equipment items necessary for fighter-type characters. Can be used by characters Lv. 61 - 84. -->
+    <!-- Double-click to receive A-grade equipment items necessary for Fighter-type characters. Can be used by characters Lv. 61 - 84. -->
     <item id="37329" type="EtcItem" name="Fated Support Box: Fighter (A-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2506,7 +2506,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive A-grade equipment items necessary for orc-fighter-type characters. Can be used by characters Lv. 61 - 84. -->
+    <!-- Double-click to receive A-grade equipment items necessary for orc-Fighter-type characters. Can be used by characters Lv. 61 - 84. -->
     <item id="37334" type="EtcItem" name="Fated Support Box: Orc Fighter (A-grade)" icon="icon.etc_equip_item_box_i00"
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2516,7 +2516,7 @@
           immediateEffect="1"
           weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for fighter-type characters. Can be used by characters Lv. 76 - 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for Fighter-type characters. Can be used by characters Lv. 76 - 84. -->
     <item id="37336" type="EtcItem" name="Fated Support Box: Fighter (S-grade) (Stage 1)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2541,7 +2541,7 @@
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for orc-fighter-type characters. Can be used by characters Lv. 76 - 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for orc-Fighter-type characters. Can be used by characters Lv. 76 - 84. -->
     <item id="37341" type="EtcItem" name="Fated Support Box: Orc Fighter (S-grade) (Stage 1)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2551,7 +2551,7 @@
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for fighter-type characters. Can be used by characters between level 81 and level 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for Fighter-type characters. Can be used by characters between level 81 and level 84. -->
     <item id="37343" type="EtcItem" name="Fated Support Box: Fighter (S-grade) (Stage 2)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
@@ -2576,7 +2576,7 @@
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Double-click to receive S-grade equipment items necessary for orc-fighter-type characters. Can be used by characters between level 81 and level 84. -->
+    <!-- Double-click to receive S-grade equipment items necessary for orc-Fighter-type characters. Can be used by characters between level 81 and level 84. -->
     <item id="37348" type="EtcItem" name="Fated Support Box: Orc Fighter (S-grade) (Stage 2)"
           icon="icon.etc_equip_item_box_i00"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">

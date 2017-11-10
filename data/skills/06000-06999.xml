@@ -1375,7 +1375,7 @@
             </abnormal>
         </for>
     </skill>
-    <!-- You have been weakened by the Altar's Curse. You probably can't fight in this condition. -->
+    <!-- You have been weakened by the Altar's Curse. You probably can't Fight in this condition. -->
     <skill id="6148" levels="1" name="Altar's Curse">
         <set name="target" val="TARGET_SINGLE" />
         <set name="skillType" val="DEBUFF" />
@@ -9317,9 +9317,9 @@
         <set name="effectRange" val="2100" />
     </skill>
     <!--
-		Level 1: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 50, Critical Rate + 10%, and Critical Damage + 10%.
-		Level 2: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 80, Critical Rate + 30%, Critical Damage + 15%, P. Atk. + 15%, and M. Atk. + 15%.
-		Level 3: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 90, Critical Rate + 50%, Critical Damage + 20%, P. Atk. + 15%, M. Atk. + 15%, Atk. Spd. + 15%, Casting Spd. + 15%, and XP bonus + 20%.
+		Level 1: The brave who Fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 50, Critical Rate + 10%, and Critical Damage + 10%.
+		Level 2: The brave who Fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 80, Critical Rate + 30%, Critical Damage + 15%, P. Atk. + 15%, and M. Atk. + 15%.
+		Level 3: The brave who Fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 90, Critical Rate + 50%, Critical Damage + 20%, P. Atk. + 15%, M. Atk. + 15%, Atk. Spd. + 15%, Casting Spd. + 15%, and XP bonus + 20%.
 	-->
     <skill id="6885" levels="3" name="Morale Boost">
         <set name="target" val="TARGET_NONE" />
@@ -9436,7 +9436,7 @@
         <set name="hitTime" val="1000" />
         <set name="coolTime" val="800" />
     </skill>
-    <!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. After swallowing the Ancient Drake and absorbing its power, it quickly arose as a Commander that rules over the monsters nearby. It has good hearing but its vision is very poor, so it waits in a quiet, dark place, listening to the enemy's heartbeat, before swooping in for an attack. -->
+    <!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. After swallowing the Ancient Drake and absorbing its power, it quickly arose as a Commander that Rule over the monsters nearby. It has good hearing but its vision is very poor, so it waits in a quiet, dark place, listening to the enemy's heartbeat, before swooping in for an attack. -->
     <skill id="6898" levels="1" name="Raid Boss (Lv. 84)">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="NOTDONE" />

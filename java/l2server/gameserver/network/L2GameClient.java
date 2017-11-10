@@ -25,7 +25,9 @@ import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
+import l2server.gameserver.instancemanager.ArenaManager;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
+import l2server.gameserver.instancemanager.arena.Fighter;
 import l2server.gameserver.model.CharSelectInfoPackage;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Clan;
@@ -962,6 +964,14 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 						fast = false;
 					}
 				}
+				if (ArenaManager.getInstance().isInFight(player)){
+
+					Fighter fighter = ArenaManager.getInstance().getFighter(player);
+					if (fighter != null){
+						fighter.onDisconnect();
+					}
+				}
+
 				cleanMe(fast);
 			}
 			catch (Exception e1)

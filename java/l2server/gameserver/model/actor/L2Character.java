@@ -33,10 +33,9 @@ import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.instancemanager.SiegeManager;
-import l2server.gameserver.instancemanager.TownManager;
+import l2server.gameserver.instancemanager.*;
+import l2server.gameserver.instancemanager.arena.Fight;
+import l2server.gameserver.instancemanager.arena.Fighter;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.actor.instance.L2PcInstance.SkillDat;
@@ -1097,6 +1096,16 @@ public abstract class L2Character extends L2Object
 			 * As soon as we know that our hit landed, we must discharge any active soulshots.
 			 * This must be done so to avoid unwanted soulshot consumption.
 			 */
+
+			if (ArenaManager.getInstance().isInFight(player)){
+				Fight fight = ArenaManager.getInstance().getFight(player);
+				Fighter attacker = ArenaManager.getInstance().getFighter(player);
+				if (fight == null || attacker == null){
+					return ;
+				}
+				Fighter victim = ArenaManager.getInstance().getFighter(player);
+				attacker.onHit((L2PcInstance) target);
+			}
 
 			// If we didn't miss the hit, discharge the shoulshots, if any
 			if (this instanceof L2Summon && !(this instanceof L2PetInstance && weaponInst != null))
@@ -5788,7 +5797,7 @@ public abstract class L2Character extends L2Object
 		// Set the L2Character _move object to MoveData object
 		_move = m;
 
-		// Adding 2 ticks to fight ping a bit
+		// Adding 2 ticks to Fight ping a bit
 		if (isOnGeodataPath())
 		{
 			m._moveStartTime += 2;

@@ -122,7 +122,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 
 		if (npc1 != null && npc2 != null)
 		{
-			replyMSG = StringUtil.concat("<html><title>Selected mobs to fight</title>" + "<body>" + "<table>" +
+			replyMSG = StringUtil.concat("<html><title>Selected mobs to Fight</title>" + "<body>" + "<table>" +
 							"<tr><td>First</td><td>Second</td></tr>" + "<tr><td>level ", String.valueOf(lvl1),
 					"</td><td>level ", String.valueOf(lvl2), "</td></tr>" + "<tr><td>id ", String.valueOf(npc1.NpcId),
 					"</td><td>id ", String.valueOf(npc2.NpcId), "</td></tr>" + "<tr><td>", String.valueOf(npc1.Name),
@@ -136,7 +136,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		{
 			L2NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl1);
 			final StringBuilder sb = StringUtil.startAppend(50 + npcs.length * 200,
-					"<html><title>Select first mob to fight</title>" + "<body><table>");
+					"<html><title>Select first mob to Fight</title>" + "<body><table>");
 
 			for (L2NpcTemplate n : npcs)
 			{
@@ -153,7 +153,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		{
 			L2NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl2);
 			final StringBuilder sb = StringUtil.startAppend(50 + npcs.length * 200,
-					"<html><title>Select second mob to fight</title>" + "<body><table>");
+					"<html><title>Select second mob to Fight</title>" + "<body><table>");
 
 			for (L2NpcTemplate n : npcs)
 			{
@@ -168,7 +168,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		}
 		else
 		{
-			replyMSG = "<html><title>Select mobs to fight</title>" + "<body>" + "<table>" +
+			replyMSG = "<html><title>Select mobs to Fight</title>" + "<body>" + "<table>" +
 					"<tr><td>First</td><td>Second</td></tr>" +
 					"<tr><td><edit var=\"lvl1\" width=80></td><td><edit var=\"lvl2\" width=80></td></tr>" + "</table>" +
 					"<center><br><br><br>" +
@@ -322,7 +322,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 
 		final StringBuilder replyMSG =
-				StringUtil.startAppend(1000, "<html><title>Selected mobs to fight</title>" + "<body>" + "<table>");
+				StringUtil.startAppend(1000, "<html><title>Selected mobs to Fight</title>" + "<body>" + "<table>");
 
 		if (params.length() == 0)
 		{

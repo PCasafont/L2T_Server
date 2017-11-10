@@ -1322,7 +1322,7 @@
             </abnormal>
         </for>
     </skill>
-    <!-- Summons a golden lion to fight alongside you. -->
+    <!-- Summons a golden lion to Fight alongside you. -->
     <skill id="10040" levels="6" name="Summon Golden Lion">
         <table name="#mpConsume">154 156 164 173 181 189</table>
         <table name="#npcId">14936 14937 14938 14939 14974 14975</table>
@@ -1863,7 +1863,7 @@
             </abnormal>
         </for>
     </skill>
-    <!-- Summons a Blood Panther to fight with you. -->
+    <!-- Summons a Blood Panther to Fight with you. -->
     <skill id="10068" levels="7" name="Summon Blood Panther">
         <table name="#mpConsume">154 156 164 173 178 185 191</table>
         <table name="#npcIds">15138 15139 15140 15141 15191 15192 15193</table>

@@ -21,7 +21,7 @@
         <set name="operateType" val="OP_ACTIVE" />
         <set name="isMagic" val="true" />
     </skill>
-    <!-- Tauti is the lord who rules over the Seed of Hellfire. It is one of the 9 seeds sown in Gracia by Shilen's command. It is one of Bremnon's weapons that has the appearance of an enormous axe. It uses the conflict between the classes in order to carry out Shilen's command and to grow its own power. It does not personally appear while ruling over the Seed of Hellfire. No one knows the extent of its hidden power. -->
+    <!-- Tauti is the lord who Rule over the Seed of Hellfire. It is one of the 9 seeds sown in Gracia by Shilen's command. It is one of Bremnon's weapons that has the appearance of an enormous axe. It uses the conflict between the classes in order to carry out Shilen's command and to grow its own power. It does not personally appear while ruling over the Seed of Hellfire. No one knows the extent of its hidden power. -->
     <skill id="15214" levels="1" name="Tauti">
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />

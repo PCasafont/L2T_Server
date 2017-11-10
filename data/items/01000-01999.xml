@@ -1511,7 +1511,7 @@
           isTradable="false"
           isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
     </item>
-    <!-- The key that can be obtained by killing a ratman fighter. When you give it to a salamander, he will give you the token of fire. -->
+    <!-- The key that can be obtained by killing a ratman Fighter. When you give it to a salamander, he will give you the token of fire. -->
     <item id="1281" type="EtcItem" name="Key of Flame" icon="icon.etc_key_i00" immediateEffect="1" isTradable="false"
           isDropable="false"
           isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
@@ -3592,7 +3592,7 @@
           isTradable="false"
           isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
     </item>
-    <!-- Fang from a dead ratman fighter. Gather 3 of these. -->
+    <!-- Fang from a dead ratman Fighter. Gather 3 of these. -->
     <item id="1610" type="EtcItem" name="Ratman Fang" icon="icon.etc_claw_i00" immediateEffect="1" isTradable="false"
           isDropable="false"
           isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
