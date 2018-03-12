@@ -26,6 +26,7 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
@@ -157,6 +158,8 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 
+
+
 		if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") ||
 				activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") ||
 				activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
@@ -170,6 +173,7 @@ public final class Say2 extends L2GameClientPacket
 			activeChar.sendMessage("You may not chat at this time.");
 			return;
 		}*/
+
 
 		if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
 				(activeChar.getEvent().isType(EventType.DeathMatch) ||

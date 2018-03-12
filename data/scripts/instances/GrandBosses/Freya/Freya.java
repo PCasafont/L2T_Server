@@ -697,7 +697,7 @@ public class Freya extends L2AttackableAIScript
             //int minPlayers = template_id == 144 ? Config.FREYA_MIN_PLAYERS * 2 : Config.FREYA_MIN_PLAYERS;
             int minPlayers = Config.FREYA_MIN_PLAYERS;
             int maxLvl = 93;
-            if (Config.isServer(Config.TENKAI_ESTHUS))
+            if (Config.isServer(Config.TENKAI_LEGACY))
             {
                 maxLvl = Config.MAX_LEVEL;
             }

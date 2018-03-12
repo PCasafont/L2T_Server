@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Donations Manager -->
+<list>
+    <item>
+        <ingredient id="4356" count="100" /> <!-- Gold Einhasad -->
+        <production id="4037" count="1" /> <!-- Coin of Luck -->
+    </item>
+    <item>
+        <ingredient id="4037" count="1" /> <!-- Coin of Luck -->
+        <production id="4356" count="100" /> <!-- Gold Einhasad -->
+    </item>
+    <item>
+        <ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+        <production id="4357" count="84000000" /> <!-- Silver Shilen -->
+    </item>
+    <item>
+        <ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+        <production id="4358" count="210" /> <!-- Bloody Pa'agrio -->
+    </item>
+    <item>
+        <ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+        <production id="4355" count="70" /> <!-- Blue Eva -->
+    </item>
+    <item>
+        <ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+        <production id="19448" count="3" />    <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+    </item>
+    <item>
+        <ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+        <production id="19447" count="1" />    <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+    </item>
+    <item>
+        <ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+        <production id="23257" count="1" />    <!-- XP Rune III (Lv. 1-100+) 200% - 1-hour -->
+    </item>
+    <item>
+        <ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+        <production id="23264" count="1" />    <!-- SP Rune 200% - 1-hour -->
+    </item>
+    <item>
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="45616" count="1" />    <!-- Talisman - Battle: Attack (30-day) -->
+    </item>
+    <item>
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="45619" count="1" />    <!-- Talisman - Battle: Speed (30-day) -->
+    </item>
+    <item>
+        <ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+        <production id="45622" count="1" />    <!-- Talisman - Battle: Support (30-day) -->
+    </item>
+</list>

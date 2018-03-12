@@ -1468,7 +1468,7 @@ public abstract class L2Character extends L2Object
 
 		boolean hitted = doAttackHitSimple(attack, target, 100, sAtk);
 		int percentLostPerTarget = 15;
-		if (Config.isServer(Config.TENKAI_ESTHUS) && target instanceof L2MonsterInstance)
+		if (Config.isServer(Config.TENKAI_LEGACY) && target instanceof L2MonsterInstance)
 		{
 			percentLostPerTarget = 50;
 		}

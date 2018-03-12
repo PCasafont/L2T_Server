@@ -41,7 +41,7 @@ public final class Config
 {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
-	public static final int TENKAI_ESTHUS = 0x20;
+	public static final int TENKAI_LEGACY = 0x20;
 
 	//--------------------------------------------------
 	// Temporary Config File
@@ -1072,9 +1072,10 @@ public final class Config
 					SERVER_NAME_MASK = DEFAULT;
 				}
 
-				if (SERVER_NAME.contains("esthus"))
+
+				if (SERVER_NAME.contains("legacy"))
 				{
-					SERVER_NAME_MASK |= TENKAI_ESTHUS;
+					SERVER_NAME_MASK |= TENKAI_LEGACY;
 				}
 
 				//TODO data driven pls

@@ -19604,7 +19604,7 @@ public class L2PcInstance extends L2Playable
 		L2Spawn servitor;
 		float angle = Rnd.get(1000);
 		int sCount = 4;
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
 			L2TownZone townZone = TownManager.getTown(currentTown.getTownId());
@@ -23042,7 +23042,7 @@ public class L2PcInstance extends L2Playable
 
 		broadcastUserInfo();
 
-		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_LEGACY))
 		{
 			return;
 		}

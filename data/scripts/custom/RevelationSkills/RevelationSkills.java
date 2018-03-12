@@ -51,7 +51,7 @@ public class RevelationSkills extends Quest
 		addStartNpc(_monkOfChaos);
 		addTalkId(_monkOfChaos);
 
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			addStartNpc(40005);
 			addTalkId(40005);

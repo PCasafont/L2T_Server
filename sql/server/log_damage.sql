@@ -15,5 +15,5 @@ CREATE TABLE IF NOT EXISTS `log_damage` (
   ssBonus float NOT NULL DEFAULT '1',
   finalBonus float NOT NULL DEFAULT '1',
   damage float DEFAULT NULL,
-  PRIMARY KEY (`attacker`, `0`)
+  PRIMARY KEY (`attacker`, 0)
 );

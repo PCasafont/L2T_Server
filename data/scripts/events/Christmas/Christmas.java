@@ -33,6 +33,7 @@ import java.util.Map;
 public class Christmas extends Quest
 {
 	//Config
+	private static final boolean _onGoing = false;
 	private static final boolean _exChangeOnly = true;
 	private static final int _startInvasionEach = 3; //Hours
 	private static final int _timeToEndInvasion = 15; //Minutes
@@ -63,6 +64,10 @@ public class Christmas extends Quest
 	public Christmas(int id, String name, String descr)
 	{
 		super(id, name, descr);
+
+		if (!_onGoing){
+			return ;
+		}
 
 		//Spawn Santa's
 		addSpawn(_santaId, 83453, 148642, -3405, 32659, false, 0);

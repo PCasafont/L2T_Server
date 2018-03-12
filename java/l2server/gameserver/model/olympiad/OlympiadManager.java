@@ -185,7 +185,7 @@ public class OlympiadManager
 	{
 		CompetitionType type = CompetitionType.CLASSED;
 
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) != Calendar.FRIDAY)
 			{

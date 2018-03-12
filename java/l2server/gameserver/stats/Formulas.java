@@ -4859,12 +4859,12 @@ public final class Formulas
 			// PvE Damage
 			{
 				if (Config.isServer(Config.TENKAI) && target.getInstanceId() == 0 &&
-						!Config.isServer(Config.TENKAI_ESTHUS))
+						!Config.isServer(Config.TENKAI_LEGACY))
 				{
 					multiplier *= 3.0f;
 				}
 
-				if (Config.isServer(Config.TENKAI_ESTHUS) && !target.isRaid())
+				if (Config.isServer(Config.TENKAI_LEGACY) && !target.isRaid())
 				{
 					multiplier *= 2.0f;
 				}

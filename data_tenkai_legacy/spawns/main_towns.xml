@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <specificSpawnList name="gludio_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="-14609" y="124023" z="-3120" heading="48510" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="-14693" y="124023" z="-3120" heading="48510" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="-14786" y="123655" z="-3122" heading="1413" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="-14378" y="123799" z="-3126" heading="14450" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="-14786" y="123565" z="-3122" heading="1413" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="dion_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="17775" y="146049" z="-3090" heading="63813" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="17912" y="145360" z="-3055" heading="11094" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="18668" y="145927" z="-3076" heading="51279" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="18772" y="145437" z="-3133" heading="28498" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="18606" y="145920" z="-3076" heading="48500" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="giran_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="83479" y="147912" z="-3409" heading="16383" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="83265" y="148844" z="-3400" heading="0" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="83667" y="148382" z="-3409" heading="32712" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="83391" y="148623" z="-3409" heading="32712" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="83265" y="148399" z="-3409" heading="0" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="oren_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="80227" y="54670" z="-1564" heading="63967" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="80191" y="55220" z="-1564" heading="58653" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="80862" y="54567" z="-1529" heading="32919" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="80905" y="54726" z="-1529" heading="33749" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="80882" y="54895" z="-1529" heading="33979" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="aden_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="147141" y="26538" z="-2209" heading="10424" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="147773" y="26536" z="-2209" heading="24575" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="147398" y="27277" z="-2208" heading="48779" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="147459" y="26875" z="-2208" heading="49093" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="147511" y="27270" z="-2208" heading="51895" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="heine_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="111792" y="218956" z="-3547" heading="28799" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="111664" y="219200" z="-3547" heading="31728" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="111351" y="218678" z="-3470" heading="16152" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="111391" y="219211" z="-3547" heading="50245" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="111409" y="218675" z="-3470" heading="17918" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="goddard_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="148127" y="-55537" z="-2746" heading="38216" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="147349" y="-55428" z="-2738" heading="56831" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="147838" y="-55510" z="-2738" heading="47769" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="147725" y="-55815" z="-2762" heading="15197" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="147700" y="-55508" z="-2738" heading="49458" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="rune_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="43739" y="-47693" z="-801" heading="47671" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="43968" y="-47709" z="-801" heading="51115" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="43569" y="-47712" z="-801" heading="32767" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="43891" y="-48048" z="-801" heading="32767" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="43554" y="-47658" z="-801" heading="32767" respawn="10000" />
+    </specificSpawnList>
+    <specificSpawnList name="schuttgart_custom_spawns">
+        <!-- Global Teleporter -->
+        <spawn npcId="40001" x="87046" y="-142774" z="-1329" heading="60062" respawn="10000" />
+        <!-- Buffing Services -->
+        <spawn npcId="40002" x="87661" y="-142779" z="-1329" heading="28285" respawn="10000" />
+        <!-- General Merchant -->
+        <spawn npcId="40003" x="87211" y="-143242" z="-1297" heading="17358" respawn="10000" />
+        <!-- Server Information -->
+        <spawn npcId="40004" x="87363" y="-143013" z="-1305" heading="16461" respawn="10000" />
+        <!-- Services NPC -->
+        <spawn npcId="40005" x="87513" y="-143259" z="-1297" heading="16383" respawn="10000" />
+    </specificSpawnList>
+</list>

@@ -463,7 +463,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerShortCut(shortcut);*/
 		}
 
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			//add spawn items
 		}
