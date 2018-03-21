@@ -75,7 +75,7 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		}
 
 		int repToTake = Config.CANCEL_CLAN_WAR_REPUTATION_POINTS;
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 			if (playerClan.getReputationScore() < 500000)
 			{

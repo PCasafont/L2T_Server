@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <accessLevel id="1" name="Admin" nameColor="00FF00" titleColor="00FF00" childAccess="2;3;4;5;6;7"
+    <accessLevel id="1" name="Admin" nameColor="FFFFFF" titleColor="FFFFFF" childAccess="2;3;4;5;6;7"
                  isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
                  allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 
@@ -8,13 +8,13 @@
                  isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
                  allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 
-    <accessLevel id="3" name="Event GM" nameColor="FFF000" titleColor="FFF000" childAccess="5;6;7"
-                 isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
+    <accessLevel id="3" name="Event GM" nameColor="585858" titleColor="585858" childAccess="4;5;6;7"
+                 isGm="true" allowPeaceAttack="false" allowFixedRes="true" allowTransaction="true"
                  allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 
     <accessLevel id="4" name="Support GM" nameColor="000C00" titleColor="000C00" childAccess="5;6;7"
-                 isGm="false" allowPeaceAttack="false" allowFixedRes="true" allowTransaction="false"
-                 allowAltG="true" giveDamage="false" takeAggro="false" gainExp="false" />
+                 isGm="true" allowPeaceAttack="false" allowFixedRes="true" allowTransaction="true"
+                 allowAltG="false" giveDamage="true" takeAggro="true" gainExp="true" />
 
     <accessLevel id="5" name="General GM" nameColor="0000C0" titleColor="0000C0" childAccess="6;7"
                  isGm="false" allowPeaceAttack="false" allowFixedRes="true" allowTransaction="false"

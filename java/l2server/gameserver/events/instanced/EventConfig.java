@@ -144,9 +144,9 @@ public class EventConfig
 				9.0, // Survival
 				11.0, // Death Match
 				2.0, // King of the Hill
-				3.0, // Lucky Chests
+				0.0, // Lucky Chests
 				18.0, // Team Survival
-				4.0, // Cursed Battle
+				0.0, // Cursed Battle
 				5.0, // Destroy the Golem
 				2.0, // Field Domination
 				2.0, // Stalked Stalkers

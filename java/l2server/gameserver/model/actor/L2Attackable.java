@@ -2024,10 +2024,7 @@ public class L2Attackable extends L2Npc
 
 		for (GlobalDropCategory drop : GlobalDropTable.getInstance().getGlobalDropCategories())
 		{
-			if (getNpcId() == 50101)
-			{
-				break;
-			}
+		
 
 			RewardItem item = null;
 			int random = Rnd.get(100000);

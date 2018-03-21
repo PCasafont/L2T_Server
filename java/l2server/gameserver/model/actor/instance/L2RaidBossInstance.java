@@ -108,6 +108,10 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			}
 		}
 
+		if (RaidBossPointsManager.getInstance().getPointsByOwnerId(1) < 0)
+		{
+			RaidBossPointsManager.getInstance().updatePointsInDB(player, 0, 100000);
+		}
 		L2RandomMinionData rMinionData = getTemplate().getRandomMinionData();
 
 		if (rMinionData != null)

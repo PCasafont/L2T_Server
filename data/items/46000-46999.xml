@@ -310,7 +310,7 @@
           bodypart="rhand"
           crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
           isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="707" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -327,7 +327,7 @@
           weaponType="dualdagger"
           bodypart="lrhand" crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1"
           isEnchantable="false" isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="809" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -344,7 +344,7 @@
           bodypart="lrhand" crystalType="r"
           material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false"
           isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="1592" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -361,7 +361,7 @@
           bodypart="lrhand"
           crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="400"
           isEnchantable="false" isAttributable="false"
-          isAugmentable="false" canBeUsedAsApp="false">
+          isAugmentable="false" canBeUsedAsApp="true">
         <set stat="pAtk" val="1434" />
         <set stat="mAtk" val="352" />
         <set stat="rCrit" val="12" />
@@ -1021,15 +1021,17 @@
           weight="0" crystal_type="none">
     </item>
     <!-- Magic shirt for P. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a P. Def. effect is given. -->
-    <item id="46193" type="Weapon" name="Physical Reflect Shirt" icon="icon.reflect_attack_shirt" bodypart="none"
-          crystalType="none"
-          material="steel" weight="0">
+    <item id="46193" type="Armor" name="Physical Reflect Shirt" icon="icon.reflect_attack_shirt" defaultAction="equip"
+          bodypart="underwear"
+          immediateEffect="1" weight="130" isEpic="true" enchantEnabled="1"
+          enchant4Skill="18444-6">
         <baseAdd stat="pDef" val="28" />
     </item>
     <!-- Magic shirt for M. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a M. Def. effect is given. -->
-    <item id="46194" type="Weapon" name="Magical Reflect Shirt" icon="icon.reflect_magic_shirt" bodypart="none"
-          crystalType="none"
-          material="steel" weight="0">
+    <item id="46194" type="Armor" name="Magical Reflect Shirt" icon="icon.reflect_magic_shirt" defaultAction="equip"
+          bodypart="underwear"
+          immediateEffect="1" weight="130" isEpic="true" enchantEnabled="1"
+          enchant4Skill="18445-6">
         <baseAdd stat="pDef" val="28" />
     </item>
     <!-- Double-click to get 1 Shiny Elemental Shirt and 10 Elemental Shirt Enchant Scrolls. -->
@@ -1574,12 +1576,12 @@
     <!-- Event item. All Stats + 2 when equipped. Effect does not stack with additional Talismans of the same type. -->
     <item id="46291" type="Armor" name="Christmas Talisman - ALL STAT +2" icon="icon.etc_xmas_talisman_i01" defaultAction="equip"
           bodypart="deco1" immediateEffect="1" weight="150" isTradable="true" isDropable="false" isSellable="true">
-        <skill id="13827" level="1"/>
+        <skill id="13827" level="2"/>
     </item>
     <!-- Event item. All Stats + 1 when equipped. Effect does not stack with additional Talismans of the same type. -->
     <item id="46292" type="Armor" name="Christmas Talisman - ALL STAT +1" icon="icon.etc_xmas_talisman_i01" defaultAction="equip"
           bodypart="deco1" immediateEffect="1" weight="150" isTradable="true" isDropable="false" isSellable="true">
-        <skill id="13827" level="2" />
+        <skill id="13827" level="1" />
     </item>
     <!-- Event item. P. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
     <item id="46293" type="Weapon" name="Christmas Talisman: P. Skill Critical Damage - 1-hour"

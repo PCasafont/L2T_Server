@@ -3211,7 +3211,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="-14767" y="123313" z="-3112" heading="0" respawn="0" />
     </npc>
     <npc id="31204" name="Georgio" level="70" type="L2TownPet" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
          mpReg="2.7"
@@ -9346,7 +9345,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="3" /> <!-- One-handed Sword -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="146404" y="27072" z="-2200" heading="64443" respawn="60" />
     </npc>
     <npc id="31521" name="Jeremy" title="Chef" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
          mpMax="1642" mpReg="2.7"

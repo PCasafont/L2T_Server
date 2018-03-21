@@ -19,7 +19,6 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
-import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -400,7 +399,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
                     world.instancedPlayer.sendPacket(new ExSendUIEventRemove());
                     world.instancedPlayer.showQuestMovie(47);
                     world.instancedPlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                            3, player, true);
+                            10, player, true);
                 }
                 npc.setDisplayEffect(1);
             }

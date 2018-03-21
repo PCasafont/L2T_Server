@@ -35,6 +35,7 @@ import java.util.List;
  *         - http://www.youtube.com/watch?v=N4PXCfIRHzA&feature=related
  *         - http://www.youtube.com/watch?v=CgSr7qtj1T4
  *         - http://www.youtube.com/watch?v=OELyergKzVY
+ *         - 23088 healers disable
  */
 
 public class Octavis extends L2AttackableAIScript
@@ -491,7 +492,6 @@ public class Octavis extends L2AttackableAIScript
                     world.allMinions.add(minion);
                     world.curatorMinions.add(minion);
                     minion.setIsRunning(true);
-
                     L2Spawn spawn = minion.getSpawn();
                     spawn.setRespawnDelay(20);
                     spawn.startRespawn();

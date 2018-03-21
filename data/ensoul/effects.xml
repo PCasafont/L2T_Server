@@ -4616,4 +4616,560 @@
     <effect id="667" name="Acumen-Practice" group="64" stage="1">
         <addPercent stat="mAtkSpd" val="1" />
     </effect>
+    <!-- Skill Power + 1% -->
+    <effect id="668" name="PvP.Othell" group="46" stage="1">
+        <addPercent stat="physicalSkillPower" val="1" />
+        <addPercent stat="mSkillPower" val="1" />
+    </effect>
+    <!-- Skill Power + 2% -->
+    <effect id="669" name="PvP.Othell" group="46" stage="2">
+        <addPercent stat="physicalSkillPower" val="2" />
+        <addPercent stat="mSkillPower" val="2" />
+    </effect>
+    <!-- Skill Power + 3 -->
+    <effect id="670" name="PvP.Othell" group="46" stage="3">
+        <addPercent stat="physicalSkillPower" val="3" />
+        <addPercent stat="mSkillPower" val="3" />
+    </effect>
+    <!-- Skill Power + 4% -->
+    <effect id="671" name="PvP.Othell" group="46" stage="4">
+        <addPercent stat="physicalSkillPower" val="4" />
+        <addPercent stat="mSkillPower" val="4" />
+    </effect>
+    <!-- Skill Power + 5%, PvP Damage + 2% -->
+    <effect id="672" name="PvP.Othell" group="46" stage="5">
+        <addPercent stat="physicalSkillPower" val="5" />
+        <addPercent stat="mSkillPower" val="5" />
+        <addPercent stat="pvpPhysDmg"  val="2" />
+        <addPercent stat="pvpMagicalDmg" val="2" />
+        <addPercent stat="pvpPhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Skill Power + 6%, PvP Damage + 3% -->
+    <effect id="673" name="PvP.Othell" group="46" stage="6">
+        <addPercent stat="physicalSkillPower" val="6" />
+        <addPercent stat="mSkillPower" val="6" />
+        <addPercent stat="pvpPhysDmg"  val="3" />
+        <addPercent stat="pvpMagicalDmg"  val="3" />
+        <addPercent stat="pvpPhysSkillsDmg"  val="3" />
+    </effect>
+    <!-- Skill Power + 8%, PvP Damage + 5% -->
+    <effect id="674" name="PvP.Othell" group="46" stage="7">
+        <addPercent stat="physicalSkillPower" val="8" />
+        <addPercent stat="mSkillPower" val="8" />
+        <addPercent stat="pvpPhysDmg"  val="5" />
+        <addPercent stat="pvpMagicalDmg"  val="5" />
+        <addPercent stat="pvpPhysSkillsDmg"  val="5" />
+    </effect>
+    <!-- Skill Power + 8%, PvP Damage + 8% -->
+    <effect id="675" name="PvP.Othell" group="46" stage="8">
+        <addPercent stat="physicalSkillPower" val="8" />
+        <addPercent stat="mSkillPower" val="8" />
+        <addPercent stat="pvpPhysDmg"  val="8" />
+        <addPercent stat="pvpMagicalDmg"  val="8" />
+        <addPercent stat="pvpPhysSkillsDmg"  val="8" />
+    </effect>
+    <!-- Skill Power + 9%, PvP Damage + 9% -->
+    <effect id="676" name="PvP.Othell" group="46" stage="9">
+        <addPercent stat="physicalSkillPower" val="9" />
+        <addPercent stat="mSkillPower" val="9" />
+        <addPercent stat="pvpPhysDmg"  val="9" />
+        <addPercent stat="pvpMagicalDmg"  val="9" />
+        <addPercent stat="pvpPhysSkillsDmg"  val="9" />
+    </effect>
+    <!-- Skill Power + 10%, PvP Damage + 10% -->
+    <effect id="677" name="PvP.Othell" group="46" stage="10">
+        <addPercent stat="physicalSkillPower" val="10" />
+        <addPercent stat="mSkillPower" val="10" />
+        <addPercent stat="pvpPhysDmg"  val="10" />
+        <addPercent stat="pvpMagicalDmg"  val="10" />
+        <addPercent stat="pvpPhysSkillsDmg"  val="10" />
+    </effect>
+    <!-- Attack Attribute + 10 -->
+    <effect id="678" name="PvP.Iss" group="47" stage="1">
+        <addPercent stat="firePower" val="10" />
+        <addPercent stat="waterPower" val="10" />
+        <addPercent stat="windPower" val="10" />
+        <addPercent stat="earthPower" val="10" />
+        <addPercent stat="holyPower" val="10" />
+        <addPercent stat="darkPower" val="10" />
+    </effect>
+    <!-- Attack Attribute + 20 -->
+    <effect id="679" name="PvP.Iss" group="47" stage="2">
+        <addPercent stat="firePower" val="20" />
+        <addPercent stat="waterPower" val="20" />
+        <addPercent stat="windPower" val="20" />
+        <addPercent stat="earthPower" val="20" />
+        <addPercent stat="holyPower" val="20" />
+        <addPercent stat="darkPower" val="20" />
+    </effect>
+    <!-- Attack Attribute + 30 -->
+    <effect id="680" name="PvP.Iss" group="47" stage="3">
+        <addPercent stat="firePower" val="30" />
+        <addPercent stat="waterPower" val="30" />
+        <addPercent stat="windPower" val="30" />
+        <addPercent stat="earthPower" val="30" />
+        <addPercent stat="holyPower" val="30" />
+        <addPercent stat="darkPower" val="30" />
+    </effect>
+    <!-- Attack Attribute + 40 -->
+    <effect id="681" name="PvP.Iss" group="47" stage="4">
+        <addPercent stat="firePower" val="40" />
+        <addPercent stat="waterPower" val="40" />
+        <addPercent stat="windPower" val="40" />
+        <addPercent stat="earthPower" val="40" />
+        <addPercent stat="holyPower" val="40" />
+        <addPercent stat="darkPower" val="40" />
+    </effect>
+    <!-- Attack Attribute + 50, PvP Damage + 2%  -->
+    <effect id="682" name="PvP.Iss" group="47" stage="5">
+        <addPercent stat="firePower" val="50" />
+        <addPercent stat="waterPower" val="50" />
+        <addPercent stat="windPower" val="50" />
+        <addPercent stat="earthPower" val="50" />
+        <addPercent stat="holyPower" val="50" />
+        <addPercent stat="darkPower" val="50" />
+        <addPercent stat="pvpPhysDmg"  val="2" />
+        <addPercent stat="pvpMagicalDmg" val="2" />
+        <addPercent stat="pvpPhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Attack Attribute + 70, PvP Damage + 3%  -->
+    <effect id="683" name="PvP.Iss" group="47" stage="6">
+        <addPercent stat="firePower" val="70" />
+        <addPercent stat="waterPower" val="70" />
+        <addPercent stat="windPower" val="70" />
+        <addPercent stat="earthPower" val="70" />
+        <addPercent stat="holyPower" val="70" />
+        <addPercent stat="darkPower" val="70" />
+        <addPercent stat="pvpPhysDmg"  val="3" />
+        <addPercent stat="pvpMagicalDmg" val="3" />
+        <addPercent stat="pvpPhysSkillsDmg" val="3" />
+    </effect>
+    <!-- Attack Attribute + 80, PvP Damage + 5%  -->
+    <effect id="684" name="PvP.Iss" group="47" stage="7">
+        <addPercent stat="firePower" val="80" />
+        <addPercent stat="waterPower" val="80" />
+        <addPercent stat="windPower" val="80" />
+        <addPercent stat="earthPower" val="80" />
+        <addPercent stat="holyPower" val="80" />
+        <addPercent stat="darkPower" val="80" />
+        <addPercent stat="pvpPhysDmg"  val="5" />
+        <addPercent stat="pvpMagicalDmg" val="5" />
+        <addPercent stat="pvpPhysSkillsDmg" val="5" />
+    </effect>
+    <!-- Attack Attribute + 80, PvP Damage + 8%  -->
+    <effect id="685" name="PvP.Iss" group="47" stage="8">
+        <addPercent stat="firePower" val="80" />
+        <addPercent stat="waterPower" val="80" />
+        <addPercent stat="windPower" val="80" />
+        <addPercent stat="earthPower" val="80" />
+        <addPercent stat="holyPower" val="80" />
+        <addPercent stat="darkPower" val="80" />
+        <addPercent stat="pvpPhysDmg"  val="8" />
+        <addPercent stat="pvpMagicalDmg" val="8" />
+        <addPercent stat="pvpPhysSkillsDmg" val="8" />
+    </effect>
+    <!-- Attack Attribute + 90, PvP Damage + 9%  -->
+    <effect id="686" name="PvP.Iss" group="47" stage="9">
+        <addPercent stat="firePower" val="90" />
+        <addPercent stat="waterPower" val="90" />
+        <addPercent stat="windPower" val="90" />
+        <addPercent stat="earthPower" val="90" />
+        <addPercent stat="holyPower" val="90" />
+        <addPercent stat="darkPower" val="90" />
+        <addPercent stat="pvpPhysDmg"  val="9" />
+        <addPercent stat="pvpMagicalDmg" val="9" />
+        <addPercent stat="pvpPhysSkillsDmg" val="9" />
+    </effect>
+    <!-- Attack Attribute + 100, PvP Damage + 10 % -->
+    <effect id="687" name="PvP.Iss" group="47" stage="10">
+        <addPercent stat="firePower" val="100" />
+        <addPercent stat="waterPower" val="100" />
+        <addPercent stat="windPower" val="100" />
+        <addPercent stat="earthPower" val="100" />
+        <addPercent stat="holyPower" val="100" />
+        <addPercent stat="darkPower" val="100" />
+        <addPercent stat="physicalSkillPower" val="100" />
+        <addPercent stat="pvpMagicalDmg" val="10" />
+        <addPercent stat="pvpPhysSkillsDmg" val="10" />
+    </effect>
+    <!-- Skill Cooldown - 1 %  -->
+    <effect id="688" name="PvP.Aeroe" group="48" stage="1">
+        <addPercent stat="pReuse" val="1" />
+        <addPercent stat="mReuse" val="1" />
+    </effect>
+    <!-- Skill Cooldown - 2 %  -->
+    <effect id="689" name="PvP.Aeroe" group="48" stage="2">
+        <addPercent stat="pReuse" val="2" />
+        <addPercent stat="mReuse" val="2" />
+    </effect>
+    <!-- Skill Cooldown - 3 %  -->
+    <effect id="690" name="PvP.Aeroe" group="48" stage="3">
+        <addPercent stat="pReuse" val="3" />
+        <addPercent stat="mReuse" val="3" />
+    </effect>
+    <!-- Skill Cooldown - 4 %  -->
+    <effect id="691" name="PvP.Aeroe" group="48" stage="4">
+        <addPercent stat="pReuse" val="4" />
+        <addPercent stat="mReuse" val="4" />
+    </effect>
+    <!-- Skill Cooldown - 5 %, PvP Damage + 2%  -->
+    <effect id="692" name="PvP.Aeroe" group="48" stage="5">
+        <addPercent stat="pReuse" val="4" />
+        <addPercent stat="mReuse" val="4" />
+        <addPercent stat="pvpPhysDmg"  val="2" />
+        <addPercent stat="pvpMagicalDmg" val="2" />
+        <addPercent stat="pvpPhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Skill Cooldown - 7 %, PvP Damage + 3%  -->
+    <effect id="693" name="PvP.Aeroe" group="48" stage="6">
+        <addPercent stat="pReuse" val="7" />
+        <addPercent stat="mReuse" val="7" />
+        <addPercent stat="pvpPhysDmg"  val="3" />
+        <addPercent stat="pvpMagicalDmg" val="3" />
+        <addPercent stat="pvpPhysSkillsDmg" val="3" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvP Damage + 5%  -->
+    <effect id="694" name="PvP.Aeroe" group="48" stage="7">
+        <addPercent stat="pReuse" val="8" />
+        <addPercent stat="mReuse" val="8" />
+        <addPercent stat="pvpPhysDmg"  val="5" />
+        <addPercent stat="pvpMagicalDmg" val="5" />
+        <addPercent stat="pvpPhysSkillsDmg" val="5" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvP Damage + 8 %  -->
+    <effect id="695" name="PvP.Aeroe" group="48" stage="8">
+        <addPercent stat="pReuse" val="8" />
+        <addPercent stat="mReuse" val="8" />
+        <addPercent stat="pvpPhysDmg"  val="8" />
+        <addPercent stat="pvpMagicalDmg" val="8" />
+        <addPercent stat="pvpPhysSkillsDmg" val="8" />
+    </effect>
+    <!-- Skill Cooldown - 9 %, PvP Damage + 9 %  -->
+    <effect id="696" name="PvP.Aeroe" group="48" stage="9">
+        <addPercent stat="pReuse" val="9" />
+        <addPercent stat="mReuse" val="9" />
+        <addPercent stat="pvpPhysDmg"  val="9" />
+        <addPercent stat="pvpMagicalDmg" val="9" />
+        <addPercent stat="pvpPhysSkillsDmg" val="9" />
+    </effect>
+    <!-- Skill Cooldown - 10 %, PvP Damage + 10 % -->
+    <effect id="697" name="PvP.Aeroe" group="48" stage="10">
+        <addPercent stat="pReuse" val="-10" />
+        <addPercent stat="mReuse" val="-10" />
+        <addPercent stat="pvpPhysDmg" val="10"/>
+        <addPercent stat="pvpMagicalDmg" val="10" />
+        <addPercent stat="pvpPhysSkillsDmg" val="10" />
+    </effect>
+    <!-- Skill Power + 1% -->
+    <effect id="698" name="PvE.Othell" group="46" stage="1">
+        <addPercent stat="physicalSkillPower" val="1" />
+        <addPercent stat="mSkillPower" val="1" />
+    </effect>
+    <!-- Skill Power + 2% -->
+    <effect id="699" name="PvE.Othell" group="46" stage="2">
+        <addPercent stat="physicalSkillPower" val="2" />
+        <addPercent stat="mSkillPower" val="2" />
+    </effect>
+    <!-- Skill Power + 3 -->
+    <effect id="700" name="PvE.Othell" group="46" stage="3">
+        <addPercent stat="physicalSkillPower" val="3" />
+        <addPercent stat="mSkillPower" val="3" />
+    </effect>
+    <!-- Skill Power + 4% -->
+    <effect id="701" name="PvE.Othell" group="46" stage="4">
+        <addPercent stat="physicalSkillPower" val="4" />
+        <addPercent stat="mSkillPower" val="4" />
+    </effect>
+    <!-- Skill Power + 5%, PvE Damage + 2% -->
+    <effect id="702" name="PvE.Othell" group="46" stage="5">
+        <addPercent stat="physicalSkillPower" val="5" />
+        <addPercent stat="mSkillPower" val="5" />
+        <addPercent stat="pvePhysDmg"  val="2" />
+        <addPercent stat="pveMagicalDmg" val="2" />
+        <addPercent stat="pvePhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Skill Power + 6%, PvE Damage + 3% -->
+    <effect id="703" name="PvE.Othell" group="46" stage="6">
+        <addPercent stat="physicalSkillPower" val="6" />
+        <addPercent stat="mSkillPower" val="6" />
+        <addPercent stat="pvePhysDmg"  val="3" />
+        <addPercent stat="pveMagicalDmg"  val="3" />
+        <addPercent stat="pvePhysSkillsDmg"  val="3" />
+    </effect>
+    <!-- Skill Power + 8%, PvE Damage + 5% -->
+    <effect id="704" name="PvE.Othell" group="46" stage="7">
+        <addPercent stat="physicalSkillPower" val="8" />
+        <addPercent stat="mSkillPower" val="8" />
+        <addPercent stat="pvePhysDmg"  val="5" />
+        <addPercent stat="pveMagicalDmg"  val="5" />
+        <addPercent stat="pvePhysSkillsDmg"  val="5" />
+    </effect>
+    <!-- Skill Power + 8%, PvE Damage + 8% -->
+    <effect id="705" name="PvE.Othell" group="46" stage="8">
+        <addPercent stat="physicalSkillPower" val="8" />
+        <addPercent stat="mSkillPower" val="8" />
+        <addPercent stat="pvePhysDmg"  val="8" />
+        <addPercent stat="pveMagicalDmg"  val="8" />
+        <addPercent stat="pvePhysSkillsDmg"  val="8" />
+    </effect>
+    <!-- Skill Power + 9%, PvE Damage + 9% -->
+    <effect id="706" name="PvE.Othell" group="46" stage="9">
+        <addPercent stat="physicalSkillPower" val="9" />
+        <addPercent stat="mSkillPower" val="9" />
+        <addPercent stat="pvePhysDmg"  val="9" />
+        <addPercent stat="pveMagicalDmg"  val="9" />
+        <addPercent stat="pvePhysSkillsDmg"  val="9" />
+    </effect>
+    <!-- Skill Power + 10%, PvE Damage + 10% -->
+    <effect id="707" name="PvE.Othell" group="46" stage="10">
+        <addPercent stat="physicalSkillPower" val="10" />
+        <addPercent stat="mSkillPower" val="10" />
+        <addPercent stat="pvePhysDmg"  val="10" />
+        <addPercent stat="pveMagicalDmg"  val="10" />
+        <addPercent stat="pvePhysSkillsDmg"  val="10" />
+    </effect>
+    <!-- Attack Attribute + 10 -->
+    <effect id="708" name="PvE.Iss" group="47" stage="1">
+        <addPercent stat="firePower" val="10" />
+        <addPercent stat="waterPower" val="10" />
+        <addPercent stat="windPower" val="10" />
+        <addPercent stat="earthPower" val="10" />
+        <addPercent stat="holyPower" val="10" />
+        <addPercent stat="darkPower" val="10" />
+    </effect>
+    <!-- Attack Attribute + 20 -->
+    <effect id="709" name="PvE.Iss" group="47" stage="2">
+        <addPercent stat="firePower" val="20" />
+        <addPercent stat="waterPower" val="20" />
+        <addPercent stat="windPower" val="20" />
+        <addPercent stat="earthPower" val="20" />
+        <addPercent stat="holyPower" val="20" />
+        <addPercent stat="darkPower" val="20" />
+    </effect>
+    <!-- Attack Attribute + 30 -->
+    <effect id="710" name="PvE.Iss" group="47" stage="3">
+        <addPercent stat="firePower" val="30" />
+        <addPercent stat="waterPower" val="30" />
+        <addPercent stat="windPower" val="30" />
+        <addPercent stat="earthPower" val="30" />
+        <addPercent stat="holyPower" val="30" />
+        <addPercent stat="darkPower" val="30" />
+    </effect>
+    <!-- Attack Attribute + 40 -->
+    <effect id="711" name="PvE.Iss" group="47" stage="4">
+        <addPercent stat="firePower" val="40" />
+        <addPercent stat="waterPower" val="40" />
+        <addPercent stat="windPower" val="40" />
+        <addPercent stat="earthPower" val="40" />
+        <addPercent stat="holyPower" val="40" />
+        <addPercent stat="darkPower" val="40" />
+    </effect>
+    <!-- Attack Attribute + 50, PvE Damage + 2%  -->
+    <effect id="712" name="PvE.Iss" group="47" stage="5">
+        <addPercent stat="firePower" val="50" />
+        <addPercent stat="waterPower" val="50" />
+        <addPercent stat="windPower" val="50" />
+        <addPercent stat="earthPower" val="50" />
+        <addPercent stat="holyPower" val="50" />
+        <addPercent stat="darkPower" val="50" />
+        <addPercent stat="pvePhysDmg"  val="2" />
+        <addPercent stat="pveMagicalDmg" val="2" />
+        <addPercent stat="pvePhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Attack Attribute + 70, PvE Damage + 3%  -->
+    <effect id="713" name="PvE.Iss" group="47" stage="6">
+        <addPercent stat="firePower" val="70" />
+        <addPercent stat="waterPower" val="70" />
+        <addPercent stat="windPower" val="70" />
+        <addPercent stat="earthPower" val="70" />
+        <addPercent stat="holyPower" val="70" />
+        <addPercent stat="darkPower" val="70" />
+        <addPercent stat="pvePhysDmg"  val="3" />
+        <addPercent stat="pveMagicalDmg" val="3" />
+        <addPercent stat="pvePhysSkillsDmg" val="3" />
+    </effect>
+    <!-- Attack Attribute + 80, PvE Damage + 5%  -->
+    <effect id="714" name="PvE.Iss" group="47" stage="7">
+        <addPercent stat="firePower" val="80" />
+        <addPercent stat="waterPower" val="80" />
+        <addPercent stat="windPower" val="80" />
+        <addPercent stat="earthPower" val="80" />
+        <addPercent stat="holyPower" val="80" />
+        <addPercent stat="darkPower" val="80" />
+        <addPercent stat="pvePhysDmg"  val="5" />
+        <addPercent stat="pveMagicalDmg" val="5" />
+        <addPercent stat="pvePhysSkillsDmg" val="5" />
+    </effect>
+    <!-- Attack Attribute + 80, PvE Damage + 8%  -->
+    <effect id="715" name="PvE.Iss" group="47" stage="8">
+        <addPercent stat="firePower" val="80" />
+        <addPercent stat="waterPower" val="80" />
+        <addPercent stat="windPower" val="80" />
+        <addPercent stat="earthPower" val="80" />
+        <addPercent stat="holyPower" val="80" />
+        <addPercent stat="darkPower" val="80" />
+        <addPercent stat="pvePhysDmg"  val="8" />
+        <addPercent stat="pveMagicalDmg" val="8" />
+        <addPercent stat="pvePhysSkillsDmg" val="8" />
+    </effect>
+    <!-- Attack Attribute + 90, PvE Damage + 9%  -->
+    <effect id="716" name="PvE.Iss" group="47" stage="9">
+        <addPercent stat="firePower" val="90" />
+        <addPercent stat="waterPower" val="90" />
+        <addPercent stat="windPower" val="90" />
+        <addPercent stat="earthPower" val="90" />
+        <addPercent stat="holyPower" val="90" />
+        <addPercent stat="darkPower" val="90" />
+        <addPercent stat="pvePhysDmg"  val="9" />
+        <addPercent stat="pveMagicalDmg" val="9" />
+        <addPercent stat="pvePhysSkillsDmg" val="9" />
+    </effect>
+    <!-- Attack Attribute + 100, PvE Damage + 10 % -->
+    <effect id="717" name="PvE.Iss" group="47" stage="10">
+        <addPercent stat="firePower" val="100" />
+        <addPercent stat="waterPower" val="100" />
+        <addPercent stat="windPower" val="100" />
+        <addPercent stat="earthPower" val="100" />
+        <addPercent stat="holyPower" val="100" />
+        <addPercent stat="darkPower" val="100" />
+        <addPercent stat="physicalSkillPower" val="100" />
+        <addPercent stat="pveMagicalDmg" val="10" />
+        <addPercent stat="pvePhysSkillsDmg" val="10" />
+    </effect>
+    <!-- Skill Cooldown - 1 %  -->
+    <effect id="718" name="PvE.Aeroe" group="48" stage="1">
+        <addPercent stat="pReuse" val="-1" />
+        <addPercent stat="mReuse" val="-1" />
+    </effect>
+    <!-- Skill Cooldown - 2 %  -->
+    <effect id="719" name="PvE.Aeroe" group="48" stage="2">
+        <addPercent stat="pReuse" val="-2" />
+        <addPercent stat="mReuse" val="-2" />
+    </effect>
+    <!-- Skill Cooldown - 3 %  -->
+    <effect id="720" name="PvE.Aeroe" group="48" stage="3">
+        <addPercent stat="pReuse" val="-3" />
+        <addPercent stat="mReuse" val="-3" />
+    </effect>
+    <!-- Skill Cooldown - 4 %  -->
+    <effect id="721" name="PvE.Aeroe" group="48" stage="4">
+        <addPercent stat="pReuse" val="-4" />
+        <addPercent stat="mReuse" val="-4" />
+    </effect>
+    <!-- Skill Cooldown - 5 %, PvE Damage + 2%  -->
+    <effect id="722" name="PvE.Aeroe" group="48" stage="5">
+        <addPercent stat="pReuse" val="-4" />
+        <addPercent stat="mReuse" val="-4" />
+        <addPercent stat="pvePhysDmg"  val="2" />
+        <addPercent stat="pveMagicalDmg" val="2" />
+        <addPercent stat="pvePhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Skill Cooldown - 7 %, PvE Damage + 3%  -->
+    <effect id="723" name="PvE.Aeroe" group="48" stage="6">
+        <addPercent stat="pReuse" val="-7" />
+        <addPercent stat="mReuse" val="-7" />
+        <addPercent stat="pvePhysDmg"  val="3" />
+        <addPercent stat="pveMagicalDmg" val="3" />
+        <addPercent stat="pvePhysSkillsDmg" val="3" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvE Damage + 5%  -->
+    <effect id="724" name="PvE.Aeroe" group="48" stage="7">
+        <addPercent stat="pReuse" val="-8" />
+        <addPercent stat="mReuse" val="-8" />
+        <addPercent stat="pvePhysDmg"  val="5" />
+        <addPercent stat="pveMagicalDmg" val="5" />
+        <addPercent stat="pvePhysSkillsDmg" val="5" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvE Damage + 8 %  -->
+    <effect id="725" name="PvE.Aeroe" group="48" stage="8">
+        <addPercent stat="pReuse" val="-8" />
+        <addPercent stat="mReuse" val="-8" />
+        <addPercent stat="pvePhysDmg"  val="8" />
+        <addPercent stat="pveMagicalDmg" val="8" />
+        <addPercent stat="pvePhysSkillsDmg" val="8" />
+    </effect>
+    <!-- Skill Cooldown - 9 %, PvE Damage + 9 %  -->
+    <effect id="726" name="PvE.Aeroe" group="48" stage="9">
+        <addPercent stat="pReuse" val="-9" />
+        <addPercent stat="mReuse" val="-9" />
+        <addPercent stat="pvePhysDmg"  val="9" />
+        <addPercent stat="pveMagicalDmg" val="9" />
+        <addPercent stat="pvePhysSkillsDmg" val="9" />
+    </effect>
+    <!-- Skill Cooldown - 10 %, PvE Damage + 10 % -->
+    <effect id="727" name="PvE.Aeroe" group="48" stage="10">
+        <addPercent stat="pReuse" val="-10" />
+        <addPercent stat="mReuse" val="-10" />
+        <addPercent stat="pvePhysDmg" val="10"/>
+        <addPercent stat="pveMagicalDmg" val="10" />
+        <addPercent stat="pvePhysSkillsDmg" val="10" />
+    </effect>
+    <!-- Skill Cooldown - 1 %  -->
+    <effect id="718" name="PvE.Aeroe" group="48" stage="1">
+        <addPercent stat="pReuse" val="-1" />
+        <addPercent stat="mReuse" val="-1" />
+    </effect>
+    <!-- Skill Cooldown - 2 %  -->
+    <effect id="719" name="PvE.Aeroe" group="48" stage="2">
+        <addPercent stat="pReuse" val="-2" />
+        <addPercent stat="mReuse" val="-2" />
+    </effect>
+    <!-- Skill Cooldown - 3 %  -->
+    <effect id="720" name="PvE.Aeroe" group="48" stage="3">
+        <addPercent stat="pReuse" val="-3" />
+        <addPercent stat="mReuse" val="-3" />
+    </effect>
+    <!-- Skill Cooldown - 4 %  -->
+    <effect id="721" name="PvE.Aeroe" group="48" stage="4">
+        <addPercent stat="pReuse" val="-4" />
+        <addPercent stat="mReuse" val="-4" />
+    </effect>
+    <!-- Skill Cooldown - 5 %, PvE Damage + 2%  -->
+    <effect id="722" name="PvE.Aeroe" group="48" stage="5">
+        <addPercent stat="pReuse" val="-4" />
+        <addPercent stat="mReuse" val="-4" />
+        <addPercent stat="pvePhysDmg"  val="2" />
+        <addPercent stat="pveMagicalDmg" val="2" />
+        <addPercent stat="pvePhysSkillsDmg" val="2" />
+    </effect>
+    <!-- Skill Cooldown - 7 %, PvE Damage + 3%  -->
+    <effect id="723" name="PvE.Aeroe" group="48" stage="6">
+        <addPercent stat="pReuse" val="-7" />
+        <addPercent stat="mReuse" val="-7" />
+        <addPercent stat="pvePhysDmg"  val="3" />
+        <addPercent stat="pveMagicalDmg" val="3" />
+        <addPercent stat="pvePhysSkillsDmg" val="3" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvE Damage + 5%  -->
+    <effect id="724" name="PvE.Aeroe" group="48" stage="7">
+        <addPercent stat="pReuse" val="-8" />
+        <addPercent stat="mReuse" val="-8" />
+        <addPercent stat="pvePhysDmg"  val="5" />
+        <addPercent stat="pveMagicalDmg" val="5" />
+        <addPercent stat="pvePhysSkillsDmg" val="5" />
+    </effect>
+    <!-- Skill Cooldown - 8 %, PvE Damage + 8 %  -->
+    <effect id="725" name="PvE.Aeroe" group="48" stage="8">
+        <addPercent stat="pReuse" val="-8" />
+        <addPercent stat="mReuse" val="-8" />
+        <addPercent stat="pvePhysDmg"  val="8" />
+        <addPercent stat="pveMagicalDmg" val="8" />
+        <addPercent stat="pvePhysSkillsDmg" val="8" />
+    </effect>
+    <!-- Skill Cooldown - 9 %, PvE Damage + 9 %  -->
+    <effect id="726" name="PvE.Aeroe" group="48" stage="9">
+        <addPercent stat="pReuse" val="-9" />
+        <addPercent stat="mReuse" val="-9" />
+        <addPercent stat="pvePhysDmg"  val="9" />
+        <addPercent stat="pveMagicalDmg" val="9" />
+        <addPercent stat="pvePhysSkillsDmg" val="9" />
+    </effect>
+    <!-- Skill Cooldown - 10 %, PvE Damage + 10 % -->
+    <effect id="727" name="PvE.Aeroe" group="48" stage="10">
+        <addPercent stat="pReuse" val="-10" />
+        <addPercent stat="mReuse" val="-10" />
+        <addPercent stat="pvePhysDmg" val="10"/>
+        <addPercent stat="pveMagicalDmg" val="10" />
+        <addPercent stat="pvePhysSkillsDmg" val="10" />
+    </effect>
 </list>

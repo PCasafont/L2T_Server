@@ -1854,21 +1854,21 @@
     <!-- Gift in commemoration of the World Cup victory. Can obtain XP Buff 50% and Nevit's Voice by using it. -->
     <item id="17236" type="EtcItem" name="Gift of Victory Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
           isStackable="true" weight="10" handler="ExtractableItems" isSellable="true" isTradable="true">
-        <capsuledItem id="36550" min="500" max="1000" chance="60.0" /> <!-- Weapon Fragment (Top-Grade) -->
-        <capsuledItem id="36545" min="500" max="1000" chance="60.0" /> <!-- Durandil Wire -->
-        <capsuledItem id="36565" min="500" max="1000" chance="60.0" /> <!-- Exquisite Synthetic Cokes -->
+        <capsuledItem id="36550" min="500" max="1000" chance="70.0" /> <!-- Weapon Fragment (Top-Grade) -->
+        <capsuledItem id="36545" min="500" max="1000" chance="70.0" /> <!-- Durandil Wire -->
+        <capsuledItem id="36565" min="500" max="1000" chance="70.0" /> <!-- Exquisite Synthetic Cokes -->
         <capsuledItem id="57" min="5000000" max="25000000" chance="100.0" /> <!-- Adena -->
-        <capsuledItem id="36414" min="15" max="25" chance="40.0" /> <!-- Dragon Claw -->
+        <capsuledItem id="36414" min="5" max="15" chance="50.0" /> <!-- Dragon Claw -->
     </item>
     <!-- Gift in commemoration of the World Cup victory. Can obtain XP Buff 50% and Nevit's Voice by using it. -->
     <item id="17237" type="EtcItem" name="Luxury Gift of Victory Box" icon="icon.etc_pi_gift_box_i04"
           immediateEffect="1" isStackable="true" weight="10" handler="ExtractableItems" isSellable="true" isTradable="true">
-        <capsuledItem id="47224" min="1" max="1" chance="10.0" /> <!-- Red-Archer -->
-        <capsuledItem id="47225" min="1" max="1" chance="10.0" /> <!-- Wizard -->
-        <capsuledItem id="47231" min="1" max="1" chance="10.0" /> <!-- Red Musketer -->
-        <capsuledItem id="47230" min="1" max="1" chance="10.0" /> <!-- Blue Musketer -->
-        <capsuledItem id="24134" min="1" max="1" chance="10.0" /> <!-- Assassin -->
-        <capsuledItem id="23513" min="1" max="1" chance="10.0" /> <!-- Maid -->
+        <capsuledItem id="47224" min="1" max="1" chance="7.0" /> <!-- Red-Archer -->
+        <capsuledItem id="47225" min="1" max="1" chance="7.0" /> <!-- Wizard -->
+        <capsuledItem id="47231" min="1" max="1" chance="7.0" /> <!-- Red Musketer -->
+        <capsuledItem id="47230" min="1" max="1" chance="7.0" /> <!-- Blue Musketer -->
+        <capsuledItem id="24134" min="1" max="1" chance="7.0" /> <!-- Dark Assassin -->
+        <capsuledItem id="23513" min="1" max="1" chance="7.0" /> <!-- Maid -->
     </item>
     <!-- Document that proves participation in the Olympiad Match 3. Take this document to the Olympiad Operator to receive the minimum reward. -->
     <item id="17238" type="EtcItem" name="Olympiad Match 3 Participation Certificate"

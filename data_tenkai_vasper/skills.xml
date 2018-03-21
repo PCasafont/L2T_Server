@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <skill id="17824" levels="1" name="La Vie En Rose's Jewelry Box">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="EXTRACTABLE" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeId" val="38941" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="capsuled_items_skill"
+             val="38854,1,8;38859,1,8;38874,1,7;38879,1,7;38884,1,7;38889,1,7;38894,1,7;38899,1,7;38931,1,7;26480,1,7;26485,1,7;26490,1,7;26501,1,7;26506,1,7"/>
+    </skill>
+    <skill id="17701" levels="6" name="Greater Topaz - Spiritshot">
+        <table name="#power">1062 3717 6903 10089 13275 13275</table>
+        <table name="#name">Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz:
+            Spiritshot;Greater Topaz - Spiritshot
+        </table>
+        <table name="#lethal"> 0 0 0 0 0 5</table>
+        <set name="name" val="#name"/>
+        <set name="target" val="TARGET_SINGLE"/>
+        <set name="skillType" val="DEBUFF"/>
+        <set name="operateType" val="OP_ACTIVE"/>
+        <set name="hitTime" val="1000"/>
+        <set name="coolTime" val="500"/>
+        <set name="reuseDelay" val="50000"/>
+        <set name="staticReuse" val="true"/>
+        <set name="sharedReuse" val="17701-1"/>
+        <set name="castRange" val="600"/>
+        <set name="effectRange" val="1100"/>
+        <set name="lethal2" val="#lethal"/>
+        <set name="ignoreImmunity" val="true"/>
+        <for>
+            <abnormal>
+                <effect type="AbortCast" val="0"/>
+                <effect type="FixedPcDmg" val="#power"/>
+            </abnormal>
+        </for>
+    </skill>
+    <skill id="2038" levels="1" name="Quick Healing Potion">
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="HEAL_STATIC" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="itemConsumeCount" val="1" />
+        <set name="power" val="1" />
+        <set name="reuseDelay" val="300000" />
+        <set name="isPotion" val="true" />
+        <for>
+            <cond addName="1" msgId="113">
+                <player flyMounted="False" />
+            </cond>
+        </for>
+    </skill>
+    <skill id="522" levels="4" name="Real Target">
+        <table name="#magicLvl">40 52 62 70</table>
+        <table name="#mpConsume">11 14 19 22</table>
+        <table name="#castRange">600 700 800 900</table>
+        <table name="#effectRange">1100 1200 1300 1400</table>
+        <table name="#bowWpnVuln">12 16 20 24</table>
+        <table name="#crossbowWpnVuln">16 24 32 40</table>
+        <table name="#abnormalLvl">1 2 3 4</table>
+        <set name="target" val="TARGET_SINGLE" />
+        <set name="skillType" val="DEBUFF" />
+        <set name="operateType" val="OP_ACTIVE" />
+        <set name="magicLvl" val="#magicLvl" />
+        <set name="lvlDepend" val="1" />
+        <set name="mpConsume" val="#mpConsume" />
+        <set name="power" val="100" />
+        <set name="hitTime" val="1500" />
+        <set name="reuseDelay" val="3000" />
+        <set name="castRange" val="#castRange" />
+        <set name="effectRange" val="#effectRange" />
+        <set name="isDebuff" val="true" />
+        <set name="ignoreResists" val="true" />
+        <set name="removedOnDamage" val="true" />
+        <set name="removedOnDamageChance" val="5" />
+        <for>
+            <abnormal duration="30" stackLvl="#abnormalLvl" stackType="real_target" visualEffect="realtarget">
+                <effect type="Debuff" val="0" />
+                <addPercent stat="bowWpnVuln" val="#bowWpnVuln" />
+                <addPercent stat="crossbowWpnVuln" val="#crossbowWpnVuln" />
+            </abnormal>
+        </for>
+    </skill>
+</list>

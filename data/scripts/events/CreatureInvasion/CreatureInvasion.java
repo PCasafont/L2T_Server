@@ -599,7 +599,7 @@ public class CreatureInvasion extends Quest
 		if (playerWeapon == null || playerWeapon.getItemId() != _bowId)
 		{
 			player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId,
-					player.getName() + " You should use the Redemption Bow!"));
+					player.getName() + " You should use the Redemption Bow, buy it from Charlotte!"));
 			return false;
 		}
 

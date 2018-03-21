@@ -2675,7 +2675,7 @@
           defaultAction="equip"
           bodypart="rear;lear" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
           isDepositable="false"
-          isEnchantable="false" isOlyRestricted="true" time="14400" isEpic="true">
+          isEnchantable="false" isOlyRestricted="true" time="20160" isEpic="true">
         <baseAdd stat="mDef" val="170" />
         <skill id="13524" level="1" /> <!-- Lindvior's Earring -->
         <skill id="13542" level="1" /> <!-- Lindvior's Earring -->

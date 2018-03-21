@@ -15,8 +15,9 @@
 
 package handlers.actionhandlers;
 
+import l2server.gameserver.Nodes.L2Node;
+import l2server.gameserver.Nodes.NodesManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.GMEventManager;
@@ -68,13 +69,15 @@ public class L2NpcAction implements IActionHandler
 			return false;
 		}
 
-		// Chests event
-		if (((L2Npc) target).getNpcId() == 50101 && !activeChar.isInsideRadius(target, 400, true, true))
+	
+		
+		if ((((L2Npc) target).getNpcId() >= 95000 && ((L2Npc) target).getNpcId() <= 95004) && !activeChar.isInsideRadius(target, 200, true, true))
 		{
+			activeChar.sendMessage("You have to be closer from the totem.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
-
+	
 		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -130,6 +133,16 @@ public class L2NpcAction implements IActionHandler
 		else if (interact)
 		{
 			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			
+			
+			// Node Interact !
+			if ((((L2Npc) target).getNpcId() >= 95000 && ((L2Npc) target).getNpcId() <= 95004))
+			{
+				
+				((L2Node)target).TalkToMe(activeChar);
+				//NodesManager.getInstance().tryOwnNode(activeChar, (L2Npc) target);
+				return true;
+			}
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
 			if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead())
 			{
@@ -165,9 +178,11 @@ public class L2NpcAction implements IActionHandler
 					// Tenkai custom - instant action on touching certain NPC instead of html stuff etc.
 					if (((L2Npc) target).getNpcId() == 50101)
 					{
-						HiddenChests.getInstance().tryOpenChest(activeChar, (L2Npc) target);
+						NodesManager.getInstance().tryOwnNode(activeChar, (L2Npc) target);
 						return true;
 					}
+					
+				
 
 					Quest[] qlsa = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 					if (qlsa != null && qlsa.length > 0)

@@ -201,8 +201,7 @@ public final class RequestRestartPoint extends L2GameClientPacket
 					break;
 
 				default:
-					loc = MapRegionTable.getInstance()
-							.getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Town);
+					loc = MapRegionTable.getInstance().getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Town);
 					break;
 			}
 

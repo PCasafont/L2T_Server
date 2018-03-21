@@ -121,6 +121,8 @@ public class BeastSoulShot implements IItemHandler
 					case 38859:
 						rubyLvl = 5;
 						break;
+					case 47688:
+						rubyLvl = 6;
 				}
 			}
 		}
@@ -134,7 +136,7 @@ public class BeastSoulShot implements IItemHandler
 				switch (itemId)
 				{
 					case 6645:
-						skillId = 17814;
+						skillId = 17817;
 						break;
 					default:
 						skillId = 22036;
@@ -160,6 +162,10 @@ public class BeastSoulShot implements IItemHandler
 				break;
 			case 5:
 				skillId = 17891;
+				rubyMul = 1.2;
+				break;
+			case 6:
+				skillId = 18716;
 				rubyMul = 1.2;
 				break;
 		}

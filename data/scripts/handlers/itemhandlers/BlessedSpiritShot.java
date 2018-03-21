@@ -37,7 +37,7 @@ import l2server.gameserver.util.Broadcast;
 public class BlessedSpiritShot implements IItemHandler
 {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see IItemHandler#useItem(L2Playable, L2ItemInstance, boolean)
 	 */
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
@@ -174,9 +174,6 @@ public class BlessedSpiritShot implements IItemHandler
 			case 0:
 				switch (itemId)
 				{
-					case 3947:
-						skillId = 2061;
-						break;
 					case 3948:
 						skillId = 2160;
 						break;
@@ -206,7 +203,6 @@ public class BlessedSpiritShot implements IItemHandler
 						break;
 					case 22076:
 						skillId = 26054;
-					case 19442:
 					case 22434:
 						skillId = 9195;
 						break;
@@ -238,41 +234,44 @@ public class BlessedSpiritShot implements IItemHandler
 				sapphireMul = 1.2;
 				break;
 			case 6:
+				skillId = 18718;
 				sapphireMul = 1.2;
+				break;
 		}
 
-		activeChar.consumableLock.lock();
-		try
-		{
-			// Check if Soul shot is already active
-			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
-			{
-				return;
-			}
 
-			// Consume Blessed SpiritShot if player has enough of them
-			if (!activeChar
-					.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null,
-							false))
+			activeChar.consumableLock.lock();
+			try
 			{
-				if (!activeChar.disableAutoShot(item))
+				// Check if Soul shot is already active
+				if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
 				{
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
+					return;
 				}
-				return;
+
+				// Consume Blessed SpiritShot if player has enough of them
+				if (!activeChar
+						.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null,
+								false))
+				{
+					if (!activeChar.disableAutoShot(item))
+					{
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
+					}
+					return;
+				}
+
+				// Charge Blessed SpiritShot
+				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
+			}
+			finally
+			{
+				activeChar.consumableLock.unlock();
 			}
 
-			// Charge Blessed SpiritShot
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
+			// Send message to client
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));
+			Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
+					new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
 		}
-		finally
-		{
-			activeChar.consumableLock.unlock();
-		}
-
-		// Send message to client
-		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
-				new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
 	}
-}

@@ -72,7 +72,7 @@ public final class RequestCompoundStart extends L2GameClientPacket
 		if (rnd >= combination.getChance())
 		{
 			// The rarest item should be the one being destroyed
-			// In all compounds both items are the same, except on Esthus' Venir's
+			// In all compounds both items are the same, except on vasper' Venir's
 			if (compoundItem2.getItemId() > compoundItem1.getItemId())
 			{
 				L2ItemInstance tmp = compoundItem1;

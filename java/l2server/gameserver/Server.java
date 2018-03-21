@@ -22,9 +22,7 @@ import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
-import l2server.gameserver.events.DamageManager;
-import l2server.gameserver.events.LotterySystem;
-import l2server.gameserver.events.RankingKillInfo;
+import l2server.gameserver.events.*;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
@@ -159,7 +157,7 @@ public class Server
 		RecipeController.getInstance();
 		ArmorSetsTable.getInstance();
 		FishTable.getInstance();
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
 			EnchantMultiSellTable.getInstance();
 		}
@@ -174,7 +172,7 @@ public class Server
 		RaidBossPointsManager.getInstance();
 		PetDataTable.getInstance();
 		PartySearchManager.getInstance();
-		MentorManager.getInstance();
+		//MentorManager.getInstance();
 		BeautyTable.getInstance();
 		ScenePlayerDataTable.getInstance();
 		CompoundTable.getInstance();
@@ -221,6 +219,7 @@ public class Server
 		GrandBossManager.getInstance().initZones();
 		FourSepulchersManager.getInstance().init();
 		EventDroplist.getInstance();
+		//MainTownManager.getInstance();
 
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
@@ -363,13 +362,19 @@ public class Server
 
 		if (Config.isServer(Config.TENKAI))
 		{
+			printSection("Events");
 			//HiddenChests.getInstance().spawnChests();
 			//CloneInvasion.getInstance().scheduleEventStart();
 			//MonsterInvasion.getInstance().scheduleEventStart();
 			//Curfew.getInstance().scheduleEventStart();
 			//ChessEvent.start();
 
-			//LasTravel
+			//LasTravel + Inia
+			//stopRanked.getInstance().scheduleEventStart();
+			//PvpZone.getInstance();
+			//RandomFight.getInstance();
+            Ranked1v1.getInstance();
+			Ranked2v2.getInstance();
 			CustomCommunityBoard.getInstance();
 			GMEventManager.getInstance();
 		}
@@ -398,14 +403,7 @@ public class Server
 
 		if (Config.ENABLE_CUSTOM_AUCTIONS)
 		{
-			if (Config.isServer(Config.TENKAI))
-			{
-				TenkaiAuctionManager.getInstance();
-			}
-			else
-			{
-				CustomAuctionManager.getInstance();
-			}
+			TenkaiAuctionManager.getInstance();
 		}
 
 		if (Config.ENABLE_CUSTOM_LOTTERY)

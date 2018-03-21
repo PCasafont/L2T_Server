@@ -2,12 +2,14 @@ package l2server.gameserver.communitybbs.Manager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.NpcTable.DropChances;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
+import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
@@ -37,6 +39,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.logging.Level;
 
 /**
  * @author LasTravel
@@ -627,7 +630,16 @@ public class CustomCommunityBoard
 						GMEventManager.getInstance().handleEventCommand(activeChar, command);
 						break;
 					}
-
+					case "ranked":
+					{
+						Ranked1v1.getInstance().handleEventCommand(activeChar, command);
+						break;
+					}
+					case "ranked2":
+					{
+						Ranked2v2.getInstance().handleEventCommand(activeChar, command);
+						break;
+					}
 					case "showRadar":
 						activeChar.getRadar().addMarker(Integer.valueOf(command.split(" ")[1]),
 								Integer.valueOf(command.split(" ")[2]), Integer.valueOf(command.split(" ")[3]));
@@ -925,7 +937,10 @@ public class CustomCommunityBoard
 			case "lottery":
 				sendNormalChatWindow(activeChar, "customLottery.htm");
 				break;
-
+			case "ranked":
+				sendCommunityBoardPage(
+						getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()), activeChar), activeChar);
+				break;
 			case "buyPanel":
 				sendCommunityBoardPage(
 						getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken())), activeChar);
@@ -1285,6 +1300,237 @@ public class CustomCommunityBoard
 		a = a.replace("%disableWings%", "<button value=" + isNickNameWingsDisabled +
 				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		return a;
+	}
+
+	public int getRankedPoints(L2PcInstance player)
+	{
+		Connection get = null;
+
+		try
+		{
+			get = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = get.prepareStatement(
+					"SELECT rankedPoints FROM characters WHERE charId = ?");
+			statement.setInt(1, player.getObjectId());
+			ResultSet rset = statement.executeQuery();
+
+			if (rset.next())
+			{
+				int currentPoints = rset.getInt("rankedPoints");
+				return (currentPoints);
+			}
+			rset.close();
+			statement.close();
+		}
+
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(get);
+		}
+		return 0;
+	}
+
+
+	private String getCustomBuyPage(int pageToShow, int type, L2PcInstance player)
+	{
+
+		StringBuilder sb = new StringBuilder();
+
+
+						sb.append(
+								"<html><body>%menu%<br><center>");
+		sb.append("<img src=\"Crest.pledge_crest_%serverId%_20016\" width=500 height=128>");
+
+
+		int points = getRankedPoints(player);
+
+		sb.append("<center>");
+
+
+		sb.append("<table><tr>");
+
+
+		sb.append("<td><button value=\"Appearances Stones\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +	 //App
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h multisell pvp_app_shop\" ></td>");
+		sb.append("<td><button value=\"Fragments\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +			//Frags
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_40001_multisell pvp_frag_shop\" ></td>");
+		sb.append("<td><button value=\"Crafted Jewels\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +		//Crafted Jewels
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_50014_multisell pvp_crafted_shop\" ></td>");
+		sb.append("<td><button value=\"Runes\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +				//Runes
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() +
+				"_multisell pvp_runes_shop\" ></td>");
+		sb.append("<td><button value=\"Other\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +				//Others
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() +
+				"_multisell pvp_other_shop\" ></td>");
+		sb.append("</tr></table</center><br><br>");
+
+
+
+		sb.append("<center><table width=30% bgcolor=999999><tr>" +
+				"<td FIXWIDTH=50>Name</td>" +
+				"<td FIXWIDTH=30>Points</td>" +
+				"</tr></table>");
+
+		sb.append("<table width=30% ><tr>" +
+				"<td FIXWIDTH=50>" + player.getName() + "</td>" +
+				"<td FIXWIDTH=30>" + points + "</td>" +
+				"</tr></table></center><br>");
+
+
+
+		//PVP
+
+
+		sb.append("<table width=100% bgcolor=999999><tr>");
+		sb.append("<td align=right>1v1</td>");
+		sb.append("<td align=right>Restrictions : Items</td>");
+		sb.append("<td align=right>Players in  queue : " + Ranked1v1.players.size() + "</td>");
+
+		if (player.isGM())
+		{
+
+
+			sb.append("<td align=right><button value=\"Clear\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;clear;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+
+			sb.append("<td align=right><button value=\"test\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;doall;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+		}
+
+		if (Ranked1v1.players.contains(player))
+		{
+			sb.append("<td align=right><button value=\"Unregister\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;unregister;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+		}
+		else
+		{
+			sb.append("<td align=right><button value=\"Register\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;register;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+		}
+		sb.append("</tr></table</center>");
+
+		sb.append("<table width=100% ><tr>");
+
+		int maxToDisplay = 6;
+		sb.append("<td>  In queue : </td>");
+		int i = 0;
+		for (L2PcInstance registered : Ranked1v1.players)
+		{
+			if (registered == null)
+			{
+				continue;
+			}
+			if (i < maxToDisplay)
+			sb.append("<td align=left>" + registered.getName() + " (" + getRankedPoints(registered) + ") </td>");
+			i++;
+		}
+		if (i > maxToDisplay)
+			sb.append("<td>...</td>");
+		sb.append("</tr></table><br>");
+
+		//2V2
+		sb.append("<center>	<table width=100% bgcolor=999999><tr>");
+		sb.append("<td align=right>2v2 (Under Work)</td>");
+		sb.append("<td align=right>Restrictions : Items</td>");
+		sb.append("<td align=right>Players in  queue : " + Ranked2v2.players.size() + "</td>");
+
+		if (player.isGM())
+		{
+			sb.append("<td align=right><button value=\"Clear\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;clear;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+
+
+		if (Ranked2v2.players.contains(player) || Ranked2v2.teamOne.contains(player) || Ranked2v2.teamTwo.contains(player))
+		{
+			sb.append("<td align=right><button value=\"Unregister\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;unregister;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+		}
+		else
+		{
+			sb.append("<td align=right><button value=\"Register PT \" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;registerpt;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+
+			sb.append("<td align=right><button value=\"Register\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;register;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+		}
+		}
+
+		sb.append("</tr></table</center>");
+		if (player.isGM())
+		{
+			sb.append("<center><table><tr>");
+			sb.append("<td align=right><button value=\"Reward\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;reward;\" " +
+					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></center>");
+		}
+
+		sb.append("<br><br><center>");
+		sb.append("<table align=center><tr><td align=center FIXWIDTH=5%></td><td align=center FIXWIDTH=60%>TOP 10</td><td></td></tr></table>");
+		sb.append("<table align=center bgcolor=3333333><tr>" +
+				"<td align=center FIXWIDTH=60%>N°</td>" +
+				"<td align=center FIXWIDTH=60%>Name</td>" +
+				"<td align=center FIXWIDTH=60%>Points</td>" +
+				"</tr></table><br>");
+		Connection get = null;
+		int n = 1;
+		try
+		{
+			get = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = get.prepareStatement(
+					"SELECT rankedPoints,char_name, charId FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 10");
+			ResultSet rset = statement.executeQuery();
+			while (rset.next())
+			{
+
+				String id =  rset.getString("charId");
+				Integer x = Integer.valueOf(id);
+
+				if (n % 2 == 1)
+					sb.append("<table  bgcolor=999999><tr>");
+				else
+					sb.append("<table ><tr>");
+				sb.append("" +
+						"<td align=center FIXWIDTH=60% >" + n + "</td>" +
+						"<td align=center FIXWIDTH=60%>" + rset.getString("char_name") + "</td>" +
+						"<td align=center FIXWIDTH=60%>" + rset.getString("rankedPoints") + "</td>");
+				if (player.isGM())
+				{
+					sb.append("<td>" +
+							"<button value=\"-\" width=20 height=20 action=\"bypass _bbscustom;action;gEvent;reduce;" +
+							x +
+							";1\" "+
+							"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+							"</td></tr></table>");
+
+				}
+				else
+				{
+					sb.append(	"</tr></table>");
+				}
+
+				n++;
+			}
+
+			rset.close();
+			statement.close();
+		}
+
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(get);
+		}
+
+
+		sb.append("</center><br><br></body></html>");
+
+		return sb.toString();
 	}
 
 	private String getCustomBuyPage(int pageToShow, int type)

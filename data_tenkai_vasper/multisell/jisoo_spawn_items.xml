@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="20" id="4037" /> <!-- Ring of truth -->
+		<production id="9743" count="1" /> <!-- Ring of truth Seeker -->
+	</item>
+	<item>
+		<ingredient count="35" id="4037" /> <!-- Ring of truth -->
+		<production id="1261" count="1" /> <!-- Ring of truth Seeker -->
+	</item>
+
+</list>

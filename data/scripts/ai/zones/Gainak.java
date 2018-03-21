@@ -144,7 +144,7 @@ public class Gainak extends Quest
 				s.addString("Gainak is now under siege.");
 				Announcements.getInstance().announceToAll(s);
 
-				if (Config.isServer(Config.TENKAI_ESTHUS))
+				if (Config.isServer(Config.TENKAI_VASPER))
 				{
 					ExShowScreenMessage essm = new ExShowScreenMessage("Gainak is now under siege!", 5000);
 					Broadcast.toAllOnlinePlayers(essm);

@@ -224,6 +224,7 @@ public class FarmZoneManager
 						float hpMultiplier = farmNode.getFloat("hpMultiplier", 1.0f);
 						float atkMultiplier = farmNode.getFloat("atkMultiplier", 1.0f);
 						float defMultiplier = farmNode.getFloat("defMultiplier", 1.0f);
+						float mdefMultiplier = farmNode.getFloat("mdefMultiplier", 1.0f);
 						int level = farmNode.getInt("overrideLevels", 0);
 						boolean overrideDrops = farmNode.getBool("overrideDrops", false);
 						float expMultiplier = farmNode.getFloat("expMultiplier", 1.0f);
@@ -346,7 +347,7 @@ public class FarmZoneManager
 							mob.basePAtk *= atkMultiplier;
 							mob.baseMAtk *= atkMultiplier;
 							mob.basePDef *= defMultiplier;
-							mob.baseMDef *= defMultiplier;
+							mob.baseMDef *= mdefMultiplier;
 							mob.RewardExp = (long) (mob.RewardExp * expMultiplier);
 
 							if (level > 0)

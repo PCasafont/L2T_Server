@@ -206,7 +206,7 @@
         <stat value="97" bonus="3.67" />
         <stat value="98" bonus="3.74" />
         <stat value="99" bonus="3.82" />
-        <stat value="100" bonus="4.0"
+        <stat value="100" bonus="4.0" />
     </INT>
     <CON>
         <!-- 1.030^(CON-27.632) -->

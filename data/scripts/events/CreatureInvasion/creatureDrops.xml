@@ -1,52 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list>
     <drop category="newPlayer">
-        <itemDrop itemId="37559" min="1" max="1" chance="10"/> <!-- Shiny Coin -->
-        <itemDrop itemId="10429" min="1" max="1" chance="5"/> <!-- Enchant Scroll -->
-        <itemDrop itemId="19467" min="1" max="1" chance="30"/> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
-        <itemDrop itemId="19468" min="1" max="1" chance="30"/> <!-- Teal Soul Crystal Fragment (R99-grade) -->
-        <itemDrop itemId="19469" min="1" max="1" chance="30"/> <!-- Purple Soul Crystal Fragment (R99-grade) -->
-        <itemDrop itemId="9546" min="1" max="2" chance="20"/> <!-- Fire Stone -->
-        <itemDrop itemId="9547" min="1" max="2" chance="20"/> <!-- Water Stone -->
-        <itemDrop itemId="9551" min="1" max="2" chance="20"/> <!-- Holy Stone -->
-        <itemDrop itemId="9548" min="1" max="2" chance="20"/> <!-- Earth Stone -->
-        <itemDrop itemId="9550" min="1" max="2" chance="20"/> <!-- Dark Stone -->
-        <itemDrop itemId="9549" min="1" max="2" chance="20"/> <!-- Wind Stone -->
-        <itemDrop itemId="9552" min="1" max="2" chance="20"/> <!-- Fire Crystal -->
-        <itemDrop itemId="9553" min="1" max="2" chance="20"/> <!-- Water Crystal -->
-        <itemDrop itemId="9554" min="1" max="2" chance="20"/> <!-- Earth Crystal -->
-        <itemDrop itemId="9555" min="1" max="2" chance="20"/> <!-- Wind Crystal -->
-        <itemDrop itemId="9556" min="1" max="2" chance="20"/> <!-- Dark Crystal -->
-        <itemDrop itemId="9557" min="1" max="2" chance="20"/> <!-- Holy Crystal -->
-        <itemDrop itemId="35566" min="1" max="1" chance="15"/> <!-- Dark Amaranthine Enhancement Stone -->
-        <itemDrop itemId="35567" min="1" max="1" chance="15"/> <!-- Dark Eternal Enhancement Stone -->
-        <itemDrop itemId="35568" min="1" max="1" chance="15"/> <!-- Bloody Amaranthine Enhancement Stone -->
-        <itemDrop itemId="35569" min="1" max="1" chance="15"/> <!-- Bloody Eternal Enhancement Stone -->
-        <itemDrop itemId="17526" min="1" max="1" chance="40"/> <!-- Scroll: Enchant Weapon (R-grade) -->
-        <itemDrop itemId="17527" min="1" max="1" chance="40"/> <!-- Scroll: Enchant Armor (R-grade) -->
-        <itemDrop itemId="35562" min="1" max="5" chance="100"/> <!-- Energy of Destruction -->
-        <itemDrop itemId="30297" min="1" max="2" chance="40"/> <!-- Superior Giant's Codex -->
-        <itemDrop itemId="30299" min="1" max="1" chance="5"/> <!-- Superior Giant's CoDEX - Discipline -->
-        <itemDrop itemId="38941" min="1" max="1" chance="10"/> <!-- La Vie En Rose's Jewelry Box -->
-        <itemDrop itemId="36513" min="1" max="1" chance="30"/> <!-- Elcyum Powder -->
+        <itemDrop itemId="57" min="200000" max="500000" chance="100"/> <!-- Adena -->
+        <itemDrop itemId="37559" min="1" max="10" chance="100"/> <!-- Shiny Coin -->
+        <itemDrop itemId="10429" min="1" max="1" chance="100"/> <!-- Enchant Scroll -->
+        <itemDrop itemId="36514" min="1" max="10" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="36513" min="1" max="50" chance="100"/> <!-- Elcyum Powder -->
     </drop>
     <drop category="oldPlayer">
-        <itemDrop itemId="30297" min="1" max="1" chance="60"/> <!-- Superior Giant's Codex -->
-        <itemDrop itemId="30299" min="1" max="1" chance="10"/> <!-- Superior Giant's CoDEX - Discipline -->
-        <itemDrop itemId="46150" min="1" max="1" chance="20"/> <!-- Superior Giant's Codex Chapter 1 -->
-        <itemDrop itemId="46152" min="1" max="1" chance="5"/> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-        <itemDrop itemId="36514" min="1" max="2" chance="100"/> <!-- Elcyum Crystal -->
-        <itemDrop itemId="37559" min="1" max="1" chance="5"/> <!-- Shiny Coin -->
+        <itemDrop itemId="57" min="100000" max="500000" chance="100"/> <!-- Adena -->
+        <itemDrop itemId="30297" min="1" max="1" chance="50"/> <!-- Superior Giant's Codex -->
+        <itemDrop itemId="30299" min="1" max="1" chance="5"/> <!-- Superior Giant's CoDEX - Discipline -->
+        <itemDrop itemId="46150" min="1" max="1" chance="50"/> <!-- Superior Giant's Codex Chapter 1 -->
+        <itemDrop itemId="46152" min="1" max="1" chance="10"/> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
+        <itemDrop itemId="36514" min="1" max="5" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="37559" min="1" max="5" chance="100"/> <!-- Shiny Coin -->
     </drop>
     <drop category="boss">
-        <itemDrop itemId="37559" min="1" max="10" chance="30"/> <!-- Shiny Coin -->
-        <itemDrop itemId="10429" min="1" max="2" chance="30"/> <!-- Enchant Scroll -->
-        <itemDrop itemId="36515" min="3" max="5" chance="40"/> <!-- Elcyum -->
-        <itemDrop itemId="36731" min="1" max="1" chance="10"/> <!-- Life Stone Instilled with Giants' Power -->
-        <itemDrop itemId="30298" min="2" max="3" chance="60"/> <!-- Superior Giant's CoDEX - Mastery -->
-        <itemDrop itemId="46151" min="1" max="1" chance="20"/> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
-        <itemDrop itemId="35675" min="1" max="5" chance="100"/> <!-- High-grade Elixir of Life (R-grade) -->
-        <itemDrop itemId="35676" min="1" max="5" chance="100"/> <!-- High-grade Elixir of Mind (R-grade) -->
-        <itemDrop itemId="35677" min="1" max="5" chance="100"/> <!-- High-grade Elixir of CP (R-grade) -->
+        <itemDrop itemId="57" min="10000000" max="20000000" chance="100"/> <!-- Adena -->
+        <itemDrop itemId="37559" min="1" max="10" chance="50"/> <!-- Shiny Coin -->
+        <itemDrop itemId="10429" min="1" max="10" chance="50"/> <!-- Enchant Scroll -->
+        <itemDrop itemId="36731" min="2" max="5" chance="100"/> <!-- Life Stone Instilled with Giants' Power -->
+        <itemDrop itemId="30298" min="2" max="10" chance="100"/> <!-- Superior Giant's CoDEX - Mastery -->
+        <itemDrop itemId="46151" min="2" max="10" chance="100"/> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="36513" min="5" max="30" chance="100"/> <!-- Elcyum Powder -->
+        <itemDrop itemId="36514" min="5" max="20" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="36515" min="5" max="20" chance="100"/> <!-- Elcyum -->
     </drop>
 </list>

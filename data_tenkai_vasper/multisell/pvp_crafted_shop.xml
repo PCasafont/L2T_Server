@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true">
+    <!-- Queen Ant Soul -->
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36254" />
+        <production count="1" id="47472" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36254" />
+        <production count="1" id="47473" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36254" />
+        <production count="1" id="47474" />
+    </item>
+    <!-- Baium Soul Ring -->
+    <item>
+        <ingredient id="5899" count="50" /> <!-- Kail's Coin -->
+        <ingredient id="37521" count="1"  /> <!-- Baium's soul ring -->
+        <production id="47466" count="1"  /> <!-- Baium's - STR -->
+    </item>
+    <item>
+        <ingredient count="50" id="5899" /> <!-- Kail's Coin -->
+        <ingredient count="1" id="37521" /> <!-- Baium's soul ring -->
+        <production count="1" id="47467" /> <!-- Baium's -INT -->
+    </item>
+    <item>
+        <ingredient count="50" id="5899" /> <!-- Kail's Coin -->
+        <ingredient count="1" id="37521" /> <!-- Baium's soul ring -->
+        <production count="1" id="47468" /> <!-- Baium's - CON -->
+    </item>
+    <!-- Blessed Valakas Necklace -->
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19464" />
+        <production count="1" id="47487" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19464" />
+        <production count="1" id="47488" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19464" />
+        <production count="1" id="47489" />
+    </item>
+    <!-- Frintezza Soul Necklace -->
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="37522" />
+        <production count="1" id="47469" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="37522" />
+        <production count="1" id="47470" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="37522" />
+        <production count="1" id="47471" />
+    </item>
+    <!-- Blessed Antharas Earring -->
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19463" />
+        <production count="1" id="47484" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19463" />
+        <production count="1" id="47485" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="19463" />
+        <production count="1" id="47486" />
+    </item>
+    <!-- Lindvior Earring -->
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36946" />
+        <production count="1" id="47490" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36946" />
+        <production count="1" id="47491" />
+    </item>
+    <item>
+        <ingredient count="50" id="5899" />
+        <ingredient count="1" id="36946" />
+        <production count="1" id="47492" />
+    </item>
+    </list>

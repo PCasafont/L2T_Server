@@ -132,10 +132,9 @@ public class Pdam implements ISkillHandler
 			if (skill.getBaseCritRate() > 0)
 			{
 				double critRate = skill.getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar);
-				if (Config.isServer(Config.TENKAI))
-				{
-					critRate *= Math.sqrt(BaseStats.STR.calcBonus(activeChar)) / BaseStats.STR.calcBonus(activeChar);
-				}
+
+				critRate *= Math.sqrt(BaseStats.STR.calcBonus(activeChar)) / BaseStats.STR.calcBonus(activeChar);
+
 				critRate = activeChar.calcStat(Stats.PCRITICAL_RATE, critRate, target, skill);
 				//if (target instanceof L2PcInstance)
 				//	System.out.println(skill.getBaseCritRate() + " " + BaseStats.STR.calcBonus(activeChar) + " " + activeChar.calcStat(Stats.PCRITICAL_RATE, 1, target, skill) + " " + activeChar.calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) * (BaseStats.DEX.calcBonus(activeChar) - 1) * critRate + " " + critRate);
@@ -159,11 +158,10 @@ public class Pdam implements ISkillHandler
 				damage = (int) Formulas.calcPhysSkillDam(activeChar, target, skill, shld, crit, dual, soul);
 			}
 
-			if (target instanceof L2MonsterInstance && Config.isServer(Config.TENKAI))
-			{
+
 				damage *= pveAoeNerf;
 				pveAoeNerf *= 0.5;
-			}
+
 
 			if (damagesMultipliesPerTarget)
 			{

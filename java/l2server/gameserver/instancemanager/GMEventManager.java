@@ -18,6 +18,7 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
+import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
@@ -74,12 +75,30 @@ public class GMEventManager
 	public String getCustomEventPanel(L2PcInstance player, int pageToShow)
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append("<table width=750 border=0>");
+		if (player.isGM())
+		{
+		sb.append(
+				"<table><tr>" +
+						"<td>" +
+						"<button value=\"Creature Invasion\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; CreatureInvasion\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"<td>" +
+						"<button value=\"Cows Invasion\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; Christmas\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"<td>" +
+						"<button value=\"Chests\" width=140 height=24 action=\"bypass _bbscustom;action;gEvent;startSubEvent; SurpriseEvent\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
+						"</td>" +
+						"</tr></table>");
 
+
+		sb.append("<table width=750 border=0>");
+		}
 		if (player.isGM())
 		{
 			if (_currentEvent == null || !_currentEvent.isStarted())
 			{
+
+
 				sb.append("<tr><td><table width=750 border=1>");
 				if (_currentEvent == null || !_currentEvent.isStarted())
 				{
@@ -280,11 +299,11 @@ public class GMEventManager
 				}
 
 				String manageFences =
-						"<button value=\"Add Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+						"<button value=\"Refresh\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;addFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				if (_currentEvent != null && !_currentEvent.getFences().isEmpty())
 				{
 					manageFences =
-							"<button value=\"Delete Fences\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
+							"<button value=\"Refresh\" width=100 height=24 action=\"bypass _bbscustom;action;gEvent;delFences;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>";
 				}
 
 				String manageBets =
@@ -656,7 +675,14 @@ public class GMEventManager
 				case "loadEvent":
 					_currentEvent = new Event(_predefinedEvents.get(st.nextToken().trim()));
 					break;
+				case "reduce":
+				{
+					int playerId = Integer.valueOf(st.nextToken());
+					player.sendMessage("- 10 to " + playerId);
+					Ranked1v1.getInstance().reduce(playerId);
 
+					break;
+				}
 				case "startSubEvent":
 				{
 					String eventName = st.nextToken().trim();
@@ -1576,7 +1602,7 @@ public class GMEventManager
 
 					if (bet.getTeamId() == winnerTeam && bet.getItemId() == coin.getId())
 					{
-						long reward = Math.round(totalBet * 0.9f * bet.getBetAmount() / fighterTotalBet);
+						long reward = Math.round(totalBet * 1.2f * bet.getBetAmount() / fighterTotalBet);
 						sendRewardMail(bet.getPlayerId(), coin.getId(), reward,
 								"Congratulations, your bet has been successful!");
 					}

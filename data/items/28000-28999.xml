@@ -2220,10 +2220,12 @@
           weight="0" crystal_type="none">
     </item>
     <!-- Activates 6 jewel slots when equipped. Inventory Slot + 12. -->
-    <item id="28358" type="Weapon" name="La Vie En Rose's Elegant Brooch"
-          icon="BranchIcon.icon.etc_g_bm_brooch_lavianrose"
-          bodypart="none" material="steel" weight="0" crystal_type="none">
+    <item id="28358" type="Armor" name="La Vie En Rose's Elegant Brooch" icon="BranchIcon.icon.etc_g_bm_brooch_lavianrose"
+          defaultAction="equip"
+          bodypart="brooch" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
         <baseAdd stat="mDef" val="101" />
+        <skill id="27718" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
+        <skill id="27719" level="1" /> <!-- La Vie En Rose's Radiant Brooch -->
     </item>
     <!-- La Vie En Rose's refined gemstone powder. Go find Shadai to use it when exchanging for gemstones. -->
     <item id="28359" type="Weapon" name="La Vie En Rose's Gemstone Powder" icon="BranchIcon.icon.etc_g_bm_powder_jewel"
@@ -2311,14 +2313,18 @@
           material="steel" weight="0" crystal_type="none">
     </item>
     <!-- Decreases damage received from Reflect Damage by 50 and there's a chance of reflecting debuffs to the enemy. Can use the invincibility skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="28376" type="Weapon" name="Greater Cat's Eye" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="28376" type="Armor" name="Cat's Eye - Lv. 6" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="27440" level="6" />
+        <skill id="27441" level="1" />
     </item>
     <!-- PvP Damage + 15%, chance of receiving a critical attack - 25%. Can remove invincibility. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="28377" type="Weapon" name="Greater Amethyst" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00"
-          bodypart="none"
-          material="steel" weight="0" crystal_type="none">
+    <item id="28377" type="Armor" name="Amethyst - Lv. 6" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+          bodypart="jewel"
+          immediateEffect="1" weight="5">
+        <skill id="27442" level="6" /> <!-- Amethyst -->
+        <skill id="27443" level="1" /> <!-- Amethyst - Remove Invincibility -->
     </item>
     <!-- Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%. XP Gain increases by 10%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="28378" type="Weapon" name="Greater Vital Stone" icon="icon.bm_jewel_vital_high_lv1_lavianrose"
@@ -2331,7 +2337,7 @@
           weight="0" crystal_type="none">
     </item>
     <!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Recover 15% of Max HP instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-    <item id="28380" type="Weapon" name="Greater Tanzanite" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose"
+    <item id="28380" type="Armor" name="Greater Tanzanite" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose"
           bodypart="none"
           material="steel" weight="0" crystal_type="none">
     </item>

@@ -86,6 +86,7 @@ public class L2SkillTeleport extends L2Skill
 						.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 				return;
 			}
+
 		}
 
 		try

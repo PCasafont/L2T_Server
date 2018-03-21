@@ -16,12 +16,15 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.GeoData;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.instancemanager.MainTownManager;
+import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
@@ -37,6 +40,7 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
 import l2server.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.Rnd;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -289,8 +293,19 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 
-		newChar.setXYZInvisible(template.startX, template.startY, template.startZ);
-		newChar.setTitle("");
+		MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+		if (mainTown != null)
+		{
+			int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+			int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+			int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
+			newChar.setXYZInvisible(startX, startY, startZ);
+		}
+		else
+		{
+			newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
+					template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
+		}
 
 		newChar.setTitle("");
 
@@ -452,6 +467,8 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
 			player.registerShortCut(shortcut);
+
+			//STARTER PACK YOMI ZBEUBE
 			// .landrates macro
             /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
@@ -459,9 +476,13 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerShortCut(shortcut);*/
 		}
 
-		if (Config.isServer(Config.TENKAI_ESTHUS))
+		if (Config.isServer(Config.TENKAI_VASPER))
 		{
-			//add spawn items
+			item = player.getInventory().addItem("Init", 40213, 1, player, null);
+			shortcut = new L2ShortCut(2, 0, 1, item.getObjectId(), 0, 1);
+			player.registerShortCut(shortcut);
+
 		}
+
 	}
 }

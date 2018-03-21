@@ -215,6 +215,7 @@ public class SummonStat extends PlayableStat
 		return super.getMAtkSpd() + (int) ownerBonus;
 	}
 
+	//Code to give pets physical acc
 	@Override
 	public int getAccuracy()
 	{
@@ -230,6 +231,54 @@ public class SummonStat extends PlayableStat
 
 		return (int) getActiveChar().getOwner().calcStat(Stats.SERVITOR_ACCURACY, super.getAccuracy(), null, null);
 	}
+	//code to give pets magic Acc
+	@Override
+	public int getMAccuracy()
+	{
+		if (getActiveChar().getOwner() == null)
+		{
+			return super.getMAccuracy();
+		}
+
+		if (getActiveChar() instanceof L2CloneInstance)
+		{
+			return getActiveChar().getOwner().getMAccuracy();
+		}
+
+		return (int) getActiveChar().getOwner().calcStat(Stats.OWNER_ACCURACY_MAGIC, super.getMAccuracy(), null, null);
+	}
+
+	//code to give pets physical evasion
+	public int getEvasionRate(L2Character target)
+	{
+		if (getActiveChar() .getOwner() == null)
+		{
+			return super.getEvasionRate(target);
+		}
+
+		if (getActiveChar() instanceof L2CloneInstance)
+
+		{
+			return getActiveChar().getOwner().getEvasionRate(target);
+		}
+		return (int) getActiveChar().getOwner().calcStat(Stats.OWNER_P_EVASION_RATE, super.getEvasionRate(target), null, null);
+	}
+	//code to give pets magic evasion
+	public int getMEvasionRate(L2Character target)
+	{
+		if (getActiveChar() .getOwner() == null)
+		{
+			return super.getMEvasionRate(target);
+		}
+
+		if (getActiveChar() instanceof L2CloneInstance)
+
+		{
+			return getActiveChar().getOwner().getMEvasionRate(target);
+		}
+		return (int) getActiveChar().getOwner().calcStat(Stats.OWNER_M_EVASION_RATE, super.getMEvasionRate(target), null, null);
+	}
+
 
 	@Override
 	public double getPvPPhysicalDamage(L2Character target)

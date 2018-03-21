@@ -667,8 +667,16 @@ public class EnterWorld extends L2GameClientPacket
 		if (Config.isServer(Config.TENKAI) || Config.IS_CLASSIC)
 		{
 			// Give Deck if not in the inventory
+
+
 			if (activeChar.getInventory().getItemByItemId(938) == null)
 			{
+
+
+
+
+
+
 				activeChar.addItem("Deck", 938, 1, activeChar, true);
 			}
 		}

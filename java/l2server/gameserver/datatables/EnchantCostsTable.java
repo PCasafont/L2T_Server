@@ -203,7 +203,7 @@ public class EnchantCostsTable
 						int adena = enchantNode.getInt("adena");
 						int sp = 0;//enchantNode.getInt("sp");
 
-						if (Config.isServer(Config.TENKAI_ESTHUS))
+						if (Config.isServer(Config.TENKAI_VASPER))
 						{
 							adena = (int) Math.sqrt(adena);
 						}

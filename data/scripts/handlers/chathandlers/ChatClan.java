@@ -33,6 +33,12 @@ public class ChatClan implements IChatHandler
 	/**
 	 * Handle chat type 'clan'
 	 */
+
+	/*if (activeChar.isGM())
+		{
+			type = Say2.CHATROOM_ALL;
+		}
+			else*/
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{

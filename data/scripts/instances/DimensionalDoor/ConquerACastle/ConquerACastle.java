@@ -318,7 +318,7 @@ public class ConquerACastle extends L2AttackableAIScript
                         {
                             world.rewardedPlayers.add(pMember);
                             pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                    3, player, true);
+                                    30, player, true);
                         }
                         else
                         {

@@ -171,8 +171,7 @@
         <mob id="23299" /> <!-- Operations Chief of the 7th Division -->
         <mob id="23300" /> <!-- Commander of Operations -->
     </farmZone>
-    <farmZone
-            name="raider_crossroads"> <!-- Lvl: 99 | Strength: 15000 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
+    <farmZone name="raider_crossroads"> <!-- Lvl: 99 | Strength: 15000 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
         <mob id="23314" /> <!-- Nerva Orc Raider -->
         <mob id="23315" /> <!-- Nerva Orc Archer -->
         <mob id="23316" /> <!-- Nerva Orc Priest -->
@@ -183,15 +182,14 @@
         <mob id="23321" /> <!-- Nerva Orc Warrior -->
         <mob id="23322" /> <!-- Nerva Orc Prefect -->
         <mob id="23323" /> <!-- Nerva Orc Elite -->
+        <mob id="23323" /> <!-- Nerva Orc Elite -->
         <mob id="23324" /> <!-- Nerva Bloodlust Captain -->
         <mob id="23325" /> <!-- Nerva Bloodlust Archer -->
         <mob id="23326" /> <!-- Nerva Bloodlust Wizard -->
         <mob id="23327" /> <!-- Nerva Bloodlust Soldier -->
         <mob id="23328" /> <!-- Nerva Bloodlust Assassin -->
-    </farmZone>
-    <farmZone
-            name="raider_crossroads_special"> <!-- Lvl: 99 | Strength: 40000 | Exp Score: 230 | Extremelly high attack -->
         <mob id="23329" /> <!-- Nerva Kaiser -->
+        <mob id="23318"/> <!-- Nerva Orc Assassin -->
     </farmZone>
     <farmZone name="gainak_siege"> <!-- Lvl: 99 | Strength: 16000 | Exp Score: 0 -->
         <mob id="19471" /> <!-- Mysterious Assassin -->
@@ -209,6 +207,7 @@
         <mob id="23334" /> <!-- Shelop -->
     </farmZone>
     <farmZone name="open_world_raid_bosses">
+        <!-- 1st Page -->
         <mob id="25945" /> <!-- Megaloprepis -->
         <mob id="25956" /> <!-- Vengeful Eligos -->
         <mob id="26022" /> <!-- Dark Messenger Afjak -->
@@ -224,6 +223,22 @@
         <mob id="26027" /> <!-- Destruction Knight Zeruel -->
         <mob id="26034" /> <!-- Corrupted Goblier -->
         <mob id="26036" /> <!-- Corrupted Harthemon -->
+        <!-- 2nd Page -->
+        <mob id="26038" /> <!-- Fallen Angel Eloule -->
+        <mob id="25947" /> <!-- Skellrus' Herald Iskios -->
+        <mob id="25949" /> <!-- Lindvior's Herald Numa -->
+        <mob id="25958" /> <!-- Vengeful Lerazia -->
+        <mob id="25960" /> <!-- Vengeful Edaire -->
+        <mob id="26024" /> <!-- Chaos Wizard Amormio -->
+        <mob id="26026" /> <!-- Death Priest Borhunt -->
+        <mob id="26035" /> <!-- Corrupted Cherkia -->
+        <mob id="26037" /> <!-- Corrupted Sarboth -->
+        <mob id="25967" /> <!-- Zetahl -->
+        <mob id="25978" /> <!-- Garamor's Herald Gariott -->
+        <mob id="26044" /> <!-- Evil Magikus -->
+        <mob id="25968" /> <!-- Tabris -->
+        <mob id="25970" /> <!-- Ravolas -->
+        <mob id="25972" /> <!-- Dephracor -->
     </farmZone>
     <farmZone name="special_mobs_in_farm_zones">
         <mob id="23329" /> <!-- Nerva Kaiser -->
@@ -313,6 +328,13 @@
         <mob id="25162" /> <!-- Giant Marpanak -->
         <mob id="20970" /> <!-- Soldier of Ancient Times -->
         <mob id="20971" /> <!--  Warrior of Ancient Times -->
+    </farmZone>
+    <farmZone name="giant_cave1">
+        <mob id="23774" /> <!-- Delta Bathus-->
+    </farmZone>
+    <farmZone name="giant_cave2">
+        <mob id="23775" /> <!-- Delta Carcaas -->
+        <mob id="23776" /> <!-- Delta Kshana -->
     </farmZone>
     <farmZone name="cassius">
         <mob id="25943" /> <!-- Wind Cassius -->

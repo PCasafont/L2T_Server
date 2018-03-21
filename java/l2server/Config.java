@@ -41,11 +41,16 @@ public final class Config
 {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
-	public static final int TENKAI_ESTHUS = 0x20;
+	public static final int TENKAI_VASPER = 0x20;
 
 	//--------------------------------------------------
 	// Temporary Config File
 	//--------------------------------------------------
+
+	public static boolean ALLOW_RANDOM_FIGHT;
+    public static int EVERY_MINUTES;
+	public static int RANDOM_FIGHT_REWARD_ID;
+  	public static int RANDOM_FIGHT_REWARD_COUNT;
 
 	// Instances
 	public static int FRINTEZZA_MIN_PLAYERS;
@@ -1076,15 +1081,15 @@ public final class Config
 					SERVER_NAME_MASK = DEFAULT;
 				}
 
-				if (SERVER_NAME.contains("esthus"))
+				if (SERVER_NAME.contains("vasper") || SERVER_NAME.contains("vasper"))
 				{
-					SERVER_NAME_MASK |= TENKAI_ESTHUS;
+					SERVER_NAME_MASK |= TENKAI_VASPER;
 				}
 
 				//TODO data driven pls
-				WEB_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_web";
-				FORUM_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_board";
-				LOGIN_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_common";
+				WEB_DB_NAME = "l2tenkai_web";
+				FORUM_DB_NAME = "l2tenkai_board";
+				LOGIN_DB_NAME = "l2tenkai_common";
 
 				// Chat Filter (default)
 				try
@@ -1466,6 +1471,8 @@ public final class Config
 				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
 	}
 
+
+
 	public static int getServerTypeId(String[] serverTypes)
 	{
 		int tType = 0;
@@ -1689,6 +1696,8 @@ public final class Config
 
 		return array;
 	}
+
+
 
 	/**
 	 * itemId1,itemNumber1;itemId2,itemNumber2...

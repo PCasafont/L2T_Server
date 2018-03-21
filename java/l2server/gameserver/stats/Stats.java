@@ -42,7 +42,6 @@ public enum Stats
 	GAIN_MP_LIMIT("gainMpLimit"),
 	LIMIT_HP("limitHp"),
 	// non-displayed hp limit
-
 	// ATTACK & DEFENCE
 	PHYS_DEFENSE("pDef"),
 	MAGIC_DEFENSE("mDef"),
@@ -315,6 +314,9 @@ public enum Stats
 	OWNER_PATKSPD("ownerPAtkSpd"),
 	OWNER_MATKSPD("ownerMAtkSpd"),
 	OWNER_PVP_PVE("ownerPvPPvE"),
+	OWNER_ACCURACY_MAGIC("owneraccMagic"),
+	OWNER_P_EVASION_RATE("ownerrEvas"),
+	OWNER_M_EVASION_RATE("ownermEvasRate"),
 	// "Bool" value, considered true if greater than 0
 
 	SERVITOR_ACCURACY("servitorAccuracy"),

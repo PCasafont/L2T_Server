@@ -3,20 +3,20 @@
     <command name="admin_abnormal" accessLevels="3" />
     <command name="admin_abnormal_menu" accessLevels="3" />
     <command name="admin_accept_petition" accessLevels="6" />
-    <command name="admin_add" accessLevels="3" />
-    <command name="admin_addShopItem" accessLevels="2" />
+    <command name="admin_add" accessLevels="6" />
+    <command name="admin_addShopItem" accessLevels="3" />
     <command name="admin_add_announcement" accessLevels="6" />
     <command name="admin_add_attacker" accessLevels="3" />
     <command name="admin_add_autoann" accessLevels="6" />
-    <command name="admin_add_clan_skill" accessLevels="3" />
-    <command name="admin_add_defender" accessLevels="3" />
-    <command name="admin_add_exp_sp" accessLevels="3" />
-    <command name="admin_add_exp_sp_to_character" accessLevels="3" />
-    <command name="admin_add_fortattacker" accessLevels="3" />
-    <command name="admin_add_guard" accessLevels="3" />
-    <command name="admin_add_level" accessLevels="3" />
-    <command name="admin_add_skill" accessLevels="3" />
-    <command name="admin_add_skill_npc" accessLevels="2" />
+    <command name="admin_add_clan_skill" accessLevels="6" />
+    <command name="admin_add_defender" accessLevels="6" />
+    <command name="admin_add_exp_sp" accessLevels="6" />
+    <command name="admin_add_exp_sp_to_character" accessLevels="6" />
+    <command name="admin_add_fortattacker" accessLevels="6" />
+    <command name="admin_add_guard" accessLevels="6" />
+    <command name="admin_add_level" accessLevels="6" />
+    <command name="admin_add_skill" accessLevels="6" />
+    <command name="admin_add_skill_npc" accessLevels="3" />
     <command name="admin_admin" accessLevels="6" />
     <command name="admin_admin1" accessLevels="6" />
     <command name="admin_admin2" accessLevels="6" />
@@ -30,16 +30,16 @@
     <command name="admin_announce_announcements" accessLevels="6" />
     <command name="admin_announce_menu" accessLevels="6" />
     <command name="admin_areacancel" accessLevels="6" />
-    <command name="admin_atmosphere" accessLevels="3" />
-    <command name="admin_atmosphere_menu" accessLevels="3" />
+    <command name="admin_atmosphere" accessLevels="6" />
+    <command name="admin_atmosphere_menu" accessLevels="6" />
     <command name="admin_ban" accessLevels="6" confirmDlg="true" />
-    <command name="admin_ban_acc" accessLevels="6" />
-    <command name="admin_ban_char" accessLevels="6" />
-    <command name="admin_ban_menu" accessLevels="6" />
+    <command name="admin_ban_acc" accessLevels="1" />
+    <command name="admin_ban_char" accessLevels="1" />
+    <command name="admin_ban_menu" accessLevels="1" />
     <command name="admin_bbs" accessLevels="2" />
     <command name="admin_bighead" accessLevels="6" />
     <command name="admin_busy" accessLevels="6" />
-    <command name="admin_buy" accessLevels="3" />
+    <command name="admin_buy" accessLevels="6" />
     <command name="admin_cache_crest_fix" accessLevels="2" />
     <command name="admin_cache_crest_rebuild" accessLevels="2" />
     <command name="admin_cache_crest_reload" accessLevels="2" />
@@ -48,15 +48,15 @@
     <command name="admin_cache_reload_file" accessLevels="2" />
     <command name="admin_cache_reload_path" accessLevels="2" />
     <command name="admin_camera" accessLevels="3" />
-    <command name="admin_changelvl" accessLevels="2" confirmDlg="true" />
-    <command name="admin_changename" accessLevels="3" />
+    <command name="admin_changelvl" accessLevels="6" confirmDlg="true" />
+    <command name="admin_changename" accessLevels="6" />
     <command name="admin_character_disconnect" accessLevels="6" />
     <command name="admin_character_info" accessLevels="6" />
     <command name="admin_lookup_hw" accessLevels="6" />
     <command name="admin_character_list" accessLevels="6" />
-    <command name="admin_charquestmenu" accessLevels="3" />
+    <command name="admin_charquestmenu" accessLevels="6" />
     <command name="admin_char_manage" accessLevels="3" />
-    <command name="admin_chat_ban" accessLevels="6" />
+    <command name="admin_chat_ban" accessLevels="3" />
     <command name="admin_chess_start" accessLevels="2" />
     <command name="admin_clanhall" accessLevels="3" />
     <command name="admin_clanhallclosedoors" accessLevels="3" />
@@ -70,12 +70,12 @@
     <command name="admin_clear_fortsiege_list" accessLevels="3" />
     <command name="admin_clear_siege_list" accessLevels="3" />
     <command name="admin_close" accessLevels="6" />
-    <command name="admin_closeall" accessLevels="2" />
+    <command name="admin_closeall" accessLevels="6" />
     <command name="admin_close_window" accessLevels="6" />
     <command name="admin_config_server" accessLevels="2" />
     <command name="admin_createinstance" accessLevels="2" />
-    <command name="admin_create_coin" accessLevels="3" />
-    <command name="admin_create_item" accessLevels="3" />
+    <command name="admin_create_coin" accessLevels="6" />
+    <command name="admin_create_item" accessLevels="6" />
     <command name="admin_current_player" accessLevels="6" />
     <command name="admin_cw_add" accessLevels="3" confirmDlg="true" />
     <command name="admin_cw_goto" accessLevels="6" />
@@ -85,9 +85,9 @@
     <command name="admin_cw_remove" accessLevels="3" />
     <command name="admin_daily_event" accessLevels="2" />
     <command name="admin_debug" accessLevels="1" />
-    <command name="admin_delete" accessLevels="3" />
+    <command name="admin_delete" accessLevels="6" />
     <command name="admin_delete_buffer" accessLevels="3" />
-    <command name="admin_delShopItem" accessLevels="2" />
+    <command name="admin_delShopItem" accessLevels="3" />
     <command name="admin_del_announcement" accessLevels="6" />
     <command name="admin_del_autoann" accessLevels="6" />
     <command name="admin_del_skill_npc" accessLevels="2" />
@@ -95,13 +95,15 @@
     <command name="admin_devdelete" accessLevels="6" />
     <command name="admin_devspawn" accessLevels="6" />
     <command name="admin_diet" accessLevels="6" />
+    <command name="admin_enable_global_chat" accessLevels="6" />
+    <command name="admin_disable_global_chat" accessLevels="6" />
     <command name="admin_dump" accessLevels="6" />
     <command name="admin_earthquake" accessLevels="3" />
-    <command name="admin_earthquake_menu" accessLevels="3" />
-    <command name="admin_editShopItem" accessLevels="2" />
-    <command name="admin_edit_character" accessLevels="3" />
+    <command name="admin_earthquake_menu" accessLevels="6" />
+    <command name="admin_editShopItem" accessLevels="3" />
+    <command name="admin_edit_character" accessLevels="6" />
     <command name="admin_edit_npc" accessLevels="3" />
-    <command name="admin_edit_skill_npc" accessLevels="2" />
+    <command name="admin_edit_skill_npc" accessLevels="3" />
     <command name="admin_effect" accessLevels="3" />
     <command name="admin_effect_menu" accessLevels="3" />
     <command name="admin_empty_vitality" accessLevels="2" />
@@ -143,15 +145,15 @@
     <command name="admin_ge_status" accessLevels="2" />
     <command name="admin_ghostoff" accessLevels="2" />
     <command name="admin_ghoston" accessLevels="2" />
-    <command name="admin_give_all_skills" accessLevels="3" />
-    <command name="admin_give_item_target" accessLevels="3" confirmDlg="true" />
-    <command name="admin_give_item_to_all" accessLevels="3" confirmDlg="true" />
+    <command name="admin_give_all_skills" accessLevels="6" />
+    <command name="admin_give_item_target" accessLevels="6" confirmDlg="true" />
+    <command name="admin_give_item_to_all" accessLevels="6" confirmDlg="true" />
     <command name="admin_gm" accessLevels="2" />
     <command name="admin_gmchat" accessLevels="6" />
     <command name="admin_gmchat_menu" accessLevels="6" />
     <command name="admin_gmlistoff" accessLevels="6" />
     <command name="admin_gmliston" accessLevels="6" />
-    <command name="admin_gmshop" accessLevels="3" />
+    <command name="admin_gmshop" accessLevels="6" />
     <command name="admin_gmspeed" accessLevels="6" />
     <command name="admin_gmspeed_menu" accessLevels="6" />
     <command name="admin_godown" accessLevels="6" />
@@ -171,11 +173,11 @@
     <command name="admin_invisible" accessLevels="6" />
     <command name="admin_invis_menu" accessLevels="6" />
     <command name="admin_invul" accessLevels="6" />
-    <command name="admin_itemcreate" accessLevels="3" />
+    <command name="admin_itemcreate" accessLevels="6" />
     <command name="admin_jail" accessLevels="6" confirmDlg="true" />
     <command name="admin_kick" accessLevels="6" />
     <command name="admin_kick_menu" accessLevels="6" />
-    <command name="admin_kick_non_gm" accessLevels="3" />
+    <command name="admin_kick_non_gm" accessLevels="º" />
     <command name="admin_kill" accessLevels="6" />
     <command name="admin_kill_menu" accessLevels="3" />
     <command name="admin_kill_monster" accessLevels="6" />
@@ -204,11 +206,12 @@
     <command name="admin_move_to" accessLevels="6" />
     <command name="admin_movie" accessLevels="6" />
     <command name="admin_msg" accessLevels="3" />
-    <command name="admin_nokarma" accessLevels="3" />
+    <command name="admin_setPoints" accessLevels="3" />
+    <command name="admin_nokarma" accessLevels="6" />
     <command name="admin_npc_index" accessLevels="6" />
     <command name="admin_observe_landrates" accessLevels="3" />
-    <command name="admin_oly_ban" accessLevels="3" />
-    <command name="admin_oly_unban" accessLevels="3" />
+    <command name="admin_oly_ban" accessLevels="6" />
+    <command name="admin_oly_unban" accessLevels="6" />
     <command name="admin_open" accessLevels="6" />
     <command name="admin_openall" accessLevels="2" />
     <command name="admin_para" accessLevels="6" />
@@ -293,21 +296,21 @@
     <command name="admin_sethero" accessLevels="2" />
     <command name="admin_setinstance" accessLevels="2" />
     <command name="admin_setinvul" accessLevels="6" />
-    <command name="admin_setkarma" accessLevels="3" />
-    <command name="admin_setlb" accessLevels="3" />
-    <command name="admin_setlc" accessLevels="3" />
-    <command name="admin_setle" accessLevels="3" />
-    <command name="admin_setlf" accessLevels="3" />
-    <command name="admin_setlg" accessLevels="3" />
-    <command name="admin_setlh" accessLevels="3" />
-    <command name="admin_setll" accessLevels="3" />
-    <command name="admin_setls" accessLevels="3" />
-    <command name="admin_setlw" accessLevels="3" />
-    <command name="admin_setpk" accessLevels="3" />
-    <command name="admin_setpvp" accessLevels="3" />
-    <command name="admin_setre" accessLevels="3" />
-    <command name="admin_setrf" accessLevels="3" />
-    <command name="admin_setsex" accessLevels="3" />
+    <command name="admin_setkarma" accessLevels="6" />
+    <command name="admin_setlb" accessLevels="6" />
+    <command name="admin_setlc" accessLevels="6" />
+    <command name="admin_setle" accessLevels="6" />
+    <command name="admin_setlf" accessLevels="6" />
+    <command name="admin_setlg" accessLevels="6" />
+    <command name="admin_setlh" accessLevels="6" />
+    <command name="admin_setll" accessLevels="6" />
+    <command name="admin_setls" accessLevels="6" />
+    <command name="admin_setlw" accessLevels="6" />
+    <command name="admin_setpk" accessLevels="6" />
+    <command name="admin_setpvp" accessLevels="6" />
+    <command name="admin_setre" accessLevels="6" />
+    <command name="admin_setrf" accessLevels="6" />
+    <command name="admin_setsex" accessLevels="6" />
     <command name="admin_setsiegetime" accessLevels="3" />
     <command name="admin_setskill" accessLevels="3" />
     <command name="admin_settcolor" accessLevels="3" />
@@ -392,10 +395,10 @@
     <command name="admin_unban_chat" accessLevels="6" />
     <command name="admin_unban_menu" accessLevels="6" />
     <command name="admin_unblockip" accessLevels="3" />
-    <command name="admin_unjail" accessLevels="6" />
+    <command name="admin_unjail" accessLevels="3" />
     <command name="admin_unpara" accessLevels="6" />
-    <command name="admin_unpara_all" accessLevels="3" />
-    <command name="admin_unpara_all_menu" accessLevels="3" />
+    <command name="admin_unpara_all" accessLevels="6" />
+    <command name="admin_unpara_all_menu" accessLevels="6" />
     <command name="admin_unpara_menu" accessLevels="6" />
     <command name="admin_unpolymorph" accessLevels="6" />
     <command name="admin_unpolymorph_menu" accessLevels="6" />
@@ -414,13 +417,13 @@
     <command name="admin_vis" accessLevels="6" />
     <command name="admin_visible" accessLevels="6" />
     <command name="admin_walk" accessLevels="6" />
-    <command name="admin_zone_check" accessLevels="2" />
-    <command name="admin_zone_reload" accessLevels="2" />
-    <command name="admin_zone_visual" accessLevels="1" />
-    <command name="admin_zone_visual_clear" accessLevels="1" />
-    <command name="banchat" accessLevels="7" />
+    <command name="admin_zone_check" accessLevels="6" />
+    <command name="admin_zone_reload" accessLevels="6" />
+    <command name="admin_zone_visual" accessLevels="6" />
+    <command name="admin_zone_visual_clear" accessLevels="6" />
+    <command name="banchat" accessLevels="6" />
     <command name="debug" accessLevels="2" />
-    <command name="recall" accessLevels="3" />
+    <command name="recall" accessLevels="6" />
     <command name="teleportto" accessLevels="6" />
-    <command name="unbanchat" accessLevels="7" />
+    <command name="unbanchat" accessLevels="6" />
 </list>

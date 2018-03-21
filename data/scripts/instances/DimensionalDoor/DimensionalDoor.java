@@ -47,6 +47,10 @@ public class DimensionalDoor extends Quest
 		}
 	}
 
+	public String onTalkNpc(L2Npc npc, L2PcInstance player) {
+		return null;
+	}
+
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -57,7 +61,7 @@ public class DimensionalDoor extends Quest
 
 		if (event.equalsIgnoreCase("main"))
 		{
-			return _qn + (Config.SERVER_NAME.contains("esthus") ? "_old" : "") + ".html";
+			return _qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
 		}
 		else if (event.equalsIgnoreCase("learnSkills"))
 		{
@@ -104,7 +108,7 @@ public class DimensionalDoor extends Quest
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		}
 
-		return _qn + (Config.SERVER_NAME.contains("esthus") ? "_old" : "") + ".html";
+		return _qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
 	}
 
 	public static int getNpcManagerId()

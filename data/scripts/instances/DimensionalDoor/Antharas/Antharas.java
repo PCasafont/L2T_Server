@@ -47,8 +47,6 @@ public class Antharas extends L2AttackableAIScript
     private static final String _qn = "Antharas";
 
     //Id's
-    private static final int _expeditionVolunteerRewardBox = 18549;
-    private static final int _expeditionVolunteerCrystalPouch = 35704;
     private static final int[] _allGuards = {19129, 19128, 19133, 19130, 19136, 19137, 19127};
     private static final int _antharasId = 29223;
     private static final int _behemothId = 29224;
@@ -550,11 +548,8 @@ public class Antharas extends L2AttackableAIScript
                     {
                         world.rewardedPlayers.add(player);
 
-                        player.addItem(_qn, _expeditionVolunteerRewardBox, 1, npc, true);
-                        player.addItem(_qn, _expeditionVolunteerCrystalPouch, 1, npc, true);
-
                         player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                                4, player, true);
+                                50, player, true);
                     }
                     else
                     {

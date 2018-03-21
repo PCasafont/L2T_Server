@@ -5980,7 +5980,7 @@
     <!-- Lord's crown hair accessory. Allows use of Residential Skills when equipped. Cannot be transferred between servers. -->
     <item id="6841" type="Armor" name="Lord's Crown" icon="icon.accessory_crown_i00" defaultAction="equip"
           bodypart="hair" immediateEffect="1"
-          weight="10" isTradable="false" isDropable="false" isSellable="false" canBeUsedAsApp="false"
+          weight="10" isTradable="false" isDropable="false" isSellable="false" canBeUsedAsApp="true"
           equipCondition="{{ec_castle;1};{ec_clan_leader;1}}">
         <cond msgId="1518">
             <and>

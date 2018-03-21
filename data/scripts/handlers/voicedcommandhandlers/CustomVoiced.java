@@ -16,6 +16,7 @@
 package handlers.voicedcommandhandlers;
 
 import l2server.Config;
+import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.handler.IVoicedCommandHandler;
@@ -29,9 +30,14 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
+import l2server.log.Log;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.text.DecimalFormat;
 import java.util.Calendar;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 public class CustomVoiced implements IVoicedCommandHandler
 {
@@ -57,7 +63,8 @@ public class CustomVoiced implements IVoicedCommandHandler
 			"unrec", // deletes recommendations
 			"treasure", // opens the hidden chests event information window
 			"clones", // opens the clones event information window
-			"offlinebuffer"
+			"offlinebuffer",
+			"setPoint"
 	};
 
 	/**
@@ -74,6 +81,39 @@ public class CustomVoiced implements IVoicedCommandHandler
 		else if (command.equalsIgnoreCase("offlinebuffer"))
 		{
 			CustomOfflineBuffersManager.getInstance().offlineBuffPannel(player);
+		}
+		else if (command.equalsIgnoreCase("setPoint"))
+		{
+			player.sendMessage("oui");
+			StringTokenizer st = new StringTokenizer(command);
+			st.nextToken();
+
+			String name = st.nextToken();
+			int Points = Integer.parseInt(st.nextToken());
+
+			Connection coni = null;
+			try
+			{
+				coni = L2DatabaseFactory.getInstance().getConnection();
+
+				PreparedStatement statement =
+						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
+				statement.setInt(1, Points);
+				statement.setString(2, name);
+
+				statement.execute();
+				statement.close();
+				player.sendMessage("You changed " + name + "'s points to " + Points);
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			}
+			finally
+			{
+				L2DatabaseFactory.close(coni);
+			}
+			return true;
 		}
 		else if (command.equalsIgnoreCase("event"))
 		{

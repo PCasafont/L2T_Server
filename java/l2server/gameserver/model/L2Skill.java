@@ -37,7 +37,6 @@ import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.*;
 import l2server.gameserver.util.Util;

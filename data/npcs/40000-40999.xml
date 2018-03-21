@@ -8,7 +8,6 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-114309" y="253578" z="-1540" heading="54205" respawn="1000" />
     </npc>
     <npc id="40002" templateId="33123" name="Genius" serverSideName="true" title="Buffing Services"
          serverSideTitle="true" level="70"
@@ -19,7 +18,6 @@
          walkSpd="80" runSpd="120" rHand="35105" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-114448" y="253576" z="-1543" heading="44995" respawn="1000" />
     </npc>
     <npc id="40003" templateId="32897" name="Prinz" serverSideName="true" title="General Merchant"
          serverSideTitle="true" level="70"
@@ -30,7 +28,6 @@
          runSpd="100" collisionRadius="10" collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20"
          holyRes="20"
          darkRes="20" aiType="fighter">
-        <spawn x="-115136" y="253554" z="-1503" heading="0" respawn="1000" />
     </npc>
     <npc id="40004" templateId="32153" name="Esthus" serverSideName="true" title="Server Information"
          serverSideTitle="true"
@@ -41,7 +38,6 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-114378" y="252441" z="-1566" heading="16743" respawn="1000" />
     </npc>
     <npc id="40005" templateId="32147" name="Nelinn" serverSideName="true" title="Services NPC" serverSideTitle="true"
          level="70"
@@ -52,8 +48,6 @@
          mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
          windRes="0"
          earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="-113642" y="253404" z="-1498" heading="33685" respawn="1000" />
-
     </npc>
     <npc id="40006" templateId="32237" name="Mayu" serverSideName="true" title="Event Manager" serverSideTitle="true"
          level="70"
@@ -67,7 +61,7 @@
     </npc>
     <npc id="40007" templateId="35693" name="Kraid" serverSideName="true" title="Donations Manager"
          serverSideTitle="true" level="70"
-         type="L2Npc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
+         type="L2ServicesNpc" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61"
          INT="28" WIT="53"
          MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40"
          mCritRate="40" walkSpd="80"
@@ -104,5 +98,38 @@
          walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
          earthRes="0"
          holyRes="0" darkRes="0" aiType="fighter">
+    </npc>
+    <npc id="40016" templateId="30080" name="Sylight" serverSideName="true" title="ForbiddenArea"
+         serverSideTitle="true"
+         level="70" type="L2Teleporter" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
+         CON="74" DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="186969" y="57808" z="-4573" heading="48655" respawn="1000"/>
+    </npc>
+    <npc id="40017" templateId="33123" name="DarkSylight" serverSideName="true" title="Portal"
+         serverSideTitle="true"
+         level="70" type="L2Teleporter" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
+         CON="74" DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="191385" y="57072" z="-7623" heading="57199" respawn="1000" />
+    </npc>
+    <npc id="40018" templateId="33918" name="Toshi" serverSideName="true" title="Buffer"
+         serverSideTitle="true"
+         level="70" type="L2NpcBuffer" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80"
+         CON="74" DEX="61"
+         INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
+         pCritRate="40"
+         mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+         windRes="0"
+         earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+        <spawn x="191410" y="57096" z="-7623" heading="56600" respawn="1000" />
     </npc>
 </list>

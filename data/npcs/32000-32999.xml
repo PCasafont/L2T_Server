@@ -1469,7 +1469,7 @@
         <skill id="4415" level="1" /> <!-- Bare Hands -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
     </npc>
-    <npc id="32076" name="Box" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
+    <npc id="32076" name=" " level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
          STR="88"
          CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
          mAtkSpd="500"
@@ -6211,12 +6211,10 @@
         <skill id="4415" level="1" /> <!-- Bare Hands -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
         <spawn x="15253" y="143036" z="-2672" heading="64751" respawn="60" />
-        <spawn x="111076" y="219110" z="-3536" heading="49153" respawn="0" />
         <spawn x="83575" y="147665" z="-3400" heading="18408" respawn="0" />
         <spawn x="83058" y="53938" z="-1488" heading="40158" respawn="0" />
         <spawn x="147174" y="25672" z="-2008" heading="0" respawn="0" />
         <spawn x="148619" y="-56305" z="-2776" heading="7391" respawn="0" />
-        <spawn x="44174" y="-48342" z="-792" heading="16383" respawn="0" />
         <spawn x="-13905" y="123380" z="-3112" heading="27450" respawn="0" />
         <spawn x="-80850" y="149556" z="-3040" heading="4504" respawn="0" />
         <spawn x="86453" y="-142407" z="-1336" heading="46787" respawn="0" />
@@ -8886,7 +8884,6 @@
         <spawn x="88940" y="-140816" z="-1536" heading="11000" respawn="60" />
         <spawn x="43568" y="-48976" z="-792" heading="1000" respawn="60" />
         <spawn x="146144" y="-57900" z="-2976" heading="44000" respawn="60" />
-        <spawn x="148399" y="26626" z="-2200" heading="11382" respawn="60" />
         <spawn x="115656" y="76620" z="-2664" heading="60000" respawn="60" />
         <spawn x="81792" y="55376" z="-1520" heading="16500" respawn="60" />
         <spawn x="82672" y="146752" z="-3464" heading="33000" respawn="60" />
@@ -9017,7 +9014,6 @@
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
         <spawn x="85894" y="-142108" z="-1336" heading="59284" respawn="60" />
         <spawn x="80960" y="56455" z="-1552" heading="49464" respawn="60" />
-        <spawn x="18228" y="146030" z="-3088" heading="41852" respawn="60" />
         <spawn x="-13948" y="123819" z="-3112" heading="49588" respawn="60" />
         <spawn x="108384" y="221614" z="-3592" heading="0" respawn="60" />
         <spawn x="42665" y="-47924" z="-792" heading="54596" respawn="60" />
@@ -11112,7 +11108,6 @@
         <skill id="4414" level="2" /> <!-- Standard Type -->
         <skill id="4415" level="1" /> <!-- Bare Hands -->
         <skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
-        <spawn x="147558" y="-55157" z="-2728" heading="53248" respawn="60" />
     </npc>
     <npc id="32595" name="Lawrence" title="Great Master" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
          mpMax="1642"

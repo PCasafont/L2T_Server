@@ -2405,32 +2405,17 @@
          targetable="false"
          showName="false" fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
          aiType="fighter">
-        <spawn x="-116300" y="248475" z="-1872" heading="3670" respawn="60" />
-        <spawn x="-114507" y="250225" z="-1728" heading="36037" respawn="60" />
-        <spawn x="-116463" y="249225" z="-1792" heading="42210" respawn="60" />
-        <spawn x="-115159" y="249850" z="-1696" heading="27306" respawn="60" />
-        <spawn x="-114507" y="249850" z="-1704" heading="42371" respawn="60" />
-        <spawn x="-116952" y="248725" z="-1936" heading="20566" respawn="60" />
-        <spawn x="-115648" y="249475" z="-1656" heading="57934" respawn="60" />
-        <spawn x="-115648" y="248725" z="-1760" heading="53043" respawn="60" />
-        <spawn x="-115322" y="250100" z="-1704" heading="10220" respawn="60" />
     </npc>
-    <npc id="33231" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.61" mpMax="2044" mpReg="3.78"
-         STR="88"
-         CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
-         mAtkSpd="398"
-         pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="14.5" collisionHeight="18"
-         targetable="false"
-         showName="false" fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-         aiType="fighter">
-        <spawn x="-114833" y="249850" z="-1696" heading="55934" respawn="60" />
-        <spawn x="-115485" y="249225" z="-1704" heading="12696" respawn="60" />
-        <spawn x="-115485" y="250225" z="-1688" heading="564" respawn="60" />
-        <spawn x="-115648" y="249975" z="-1672" heading="20086" respawn="60" />
-        <spawn x="-116952" y="248225" z="-1968" heading="2334" respawn="60" />
-        <spawn x="-116952" y="248475" z="-1944" heading="29132" respawn="60" />
-        <spawn x="-116789" y="248600" z="-1912" heading="52205" respawn="60" />
-        <spawn x="-115159" y="249350" z="-1688" heading="29490" respawn="60" />
+    <npc id="33231" name="" serverSideName="true" title="" level="105" type="L2Monster" atkRange="40" hpMax="35000000"
+         hpReg="151.22101"
+         mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
+         sp="1634597"
+         pAtk="260185" mAtk="41051" pDef="60000" mDef="15000" pAtkSpd="439" mAtkSpd="599" pCritRate="40" mCritRate="40"
+         walkSpd="60"
+         runSpd="300" aggressive="false" aggroRange="1200" collisionRadius="50" collisionHeight="99" elemAtkType="3"
+         elemAtkValue="600"
+         fireRes="450" waterRes="450" windRes="450" earthRes="600" holyRes="450" darkRes="450" aiType="balanced"
+         skillChance="70" isLethalImmune="true" >
     </npc>
     <npc id="33232" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.61" mpMax="2044" mpReg="3.78"
          STR="88"
@@ -5804,7 +5789,6 @@
         <spawn x="83118" y="54008" z="-1488" heading="40158" respawn="0" />
         <spawn x="147194" y="25614" z="-2008" heading="21219" respawn="0" />
         <spawn x="148524" y="-56315" z="-2776" heading="21672" respawn="0" />
-        <spawn x="44231" y="-48377" z="-792" heading="18000" respawn="0" />
         <spawn x="-13921" y="123320" z="-3112" heading="26144" respawn="0" />
         <spawn x="-80926" y="149502" z="-3040" heading="9914" respawn="0" />
         <spawn x="86441" y="-142311" z="-1336" heading="38902" respawn="0" />
@@ -6309,7 +6293,6 @@
          pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="8" collisionHeight="21.3"
          fireRes="300" waterRes="300"
          windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
-        <spawn x="147615" y="27365" z="-2200" heading="49153" respawn="60" />
     </npc>
     <npc id="33648" name="Gerkenshtein" level="70" type="L2Npc" atkRange="40" hpMax="3874" hpReg="7.71" mpMax="1642"
          mpReg="5.59"
@@ -8429,7 +8412,6 @@
          mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6.5"
          collisionHeight="21.96"
          fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
-        <spawn x="43556" y="-47608" z="-792" heading="36864" respawn="0" />
     </npc>
     <npc id="33873" name="Angel Cat" title="Letter Collector" level="99" type="L2Npc" atkRange="40" hpMax="14612"
          hpReg="11.42"
@@ -9169,7 +9151,6 @@
          pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
          waterRes="0"
          windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-        <spawn x="44114" y="-48397" z="-792" heading="29577" respawn="0" />
     </npc>
     <npc id="33958" name="Tulesir" title="Bard" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
          mpReg="0.0"

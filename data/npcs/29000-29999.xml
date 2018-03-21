@@ -2619,7 +2619,7 @@
          hpReg="1830.0"
          mpMax="3996001" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680"
          sp="33890321"
-         pAtk="56459" mAtk="81506" pDef="6962" mDef="8078" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40"
+         pAtk="56459" mAtk="81506" pDef="5500" mDef="8078" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40"
          walkSpd="50"
          runSpd="186" aggressive="true" aggroRange="10000" extraDropGroup="29" collisionRadius="300"
          collisionHeight="300" elemAtkType="3"
@@ -6358,9 +6358,6 @@
         <skill id="14030" level="1" /> <!-- Hero's Magic -->
         <skill id="14031" level="1" /> <!-- Hero's Magic -->
         <skill id="5464" level="1" /> <!-- Wind Attack -->
-        <skill id="14279" level="1" /> <!-- Octavis' Influence -->
-        <skill id="14280" level="1" /> <!-- Octavis' Influence -->
-        <skill id="14281" level="1" /> <!-- Octavis' Influence -->
         <itemDrop itemId="36287" min="1" max="1" chance="65" /> <!-- Unbind Scroll: Armor (R99-grade) -->
         <itemDrop itemId="19462" min="1" max="1" chance="60" /> <!-- Octavis' Shirt -->
         <itemDrop itemId="19447" min="1" max="1" chance="35.8333" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
@@ -7946,7 +7943,8 @@
          mpReg="3.0" STR="90" CON="120" DEX="120" INT="120" WIT="96" MEN="80" exp="103954" sp="95566" pAtk="50000" mAtk="50000" pDef="2000"
          mDef="20000" pAtkSpd="1400" mAtkSpd="1403" pCritRate="10" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
          extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
-         holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
+         holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300"
+        isLethalImmune="true">
         <skill id="4416" level="11" /> <!-- Giants -->
         <skill id="4408" level="20" /> <!-- HP Increase (12x) -->
         <skill id="4409" level="20" /> <!-- MP Increase (12x) -->

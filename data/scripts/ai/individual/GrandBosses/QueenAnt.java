@@ -126,7 +126,7 @@ public class QueenAnt extends L2AttackableAIScript
 
             if (player != null)
             {
-                if (player.getLevel() > 48 && !player.isGM() && !Config.isServer(Config.TENKAI_ESTHUS))
+                if (player.getLevel() > 48 && !player.isGM() && !Config.isServer(Config.TENKAI_VASPER))
                 {
                     if (getQuestTimer("player_kick", null, player) == null)
                     {
@@ -402,7 +402,7 @@ public class QueenAnt extends L2AttackableAIScript
             return null;
         }
 
-        if (!Config.isServer(Config.TENKAI_ESTHUS) && player.getLevel() - npc.getLevel() > 8)
+        if (!Config.isServer(Config.TENKAI_VASPER) && player.getLevel() - npc.getLevel() > 8)
         {
             npc.broadcastPacket(new MagicSkillUse(npc, player, CURSE.getSkillId(), CURSE.getSkillLvl(), 300, 0, 0));
 

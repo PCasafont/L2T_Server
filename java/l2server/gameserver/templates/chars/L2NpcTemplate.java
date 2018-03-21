@@ -225,7 +225,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		_baseSet = set;
 		_baseTemplate = this;
 
-		if (Config.isServer(Config.TENKAI_ESTHUS) && Type.equals("L2Defender"))
+		if (Config.isServer(Config.TENKAI_VASPER) && Type.equals("L2Defender"))
 		{
 			Level = 103;
 		}

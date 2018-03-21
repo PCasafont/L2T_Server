@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <item>
+        <ingredient id="21235" count="100" /> <!-- Milk -->
+        <production id="20770" count="1" /> <!-- app archer -->
+    </item>
+    <item>
+        <ingredient id="21235" count="300" /> <!-- Milk -->
+        <production id="47223" count="1" /> <!-- app archer -->
+    </item>
+    <item>
+        <ingredient id="21235" count="300" /> <!-- Milk -->
+        <production id="47223" count="1" /> <!-- app archer -->
+    </item>
+    <item>
+        <ingredient id="21235" count="300" /> <!-- Milk -->
+        <production id="47226" count="1" /> <!-- app red nobless -->
+    </item>
+    <item>
+        <ingredient id="21235" count="300" /> <!-- Milk -->
+        <production id="47231" count="1" /> <!-- app red nobless -->
+    </item>
+    <item>
+        <ingredient id="21235" count="600" /> <!-- Milk -->
+        <production id="46291" count="1" /> <!-- app red nobless -->
+    </item>
+    <item>
+    <ingredient id="21235" count="300" /> <!-- Milk -->
+    <production id="46292" count="1" /> <!-- app red nobless -->
+</item>
+</list>

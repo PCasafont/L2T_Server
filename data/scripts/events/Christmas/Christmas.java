@@ -33,11 +33,11 @@ import java.util.Map;
 public class Christmas extends Quest
 {
 	//Config
-	private static final boolean _exChangeOnly = true;
-	private static final int _startInvasionEach = 3; //Hours
+	private static final boolean _exChangeOnly = false;
+	private static final int _startInvasionEach = 5; //Hours
 	private static final int _timeToEndInvasion = 10; //Minutes
 	private static final int _rewardRandomPlayerEach = 3; //Hours
-	private static final int _santaTalksEach = 3; //Hours
+	private static final int _santaTalksEach = 12; //Hours
 	private static final int _santaId = 50014;
 	private static final int _secondSantaId = 104;
 	private static final int[] _invaderIds = {80198, 80199, 80498, 80499};
@@ -69,10 +69,6 @@ public class Christmas extends Quest
 		//addSpawn(_santaId, -78307, 247921, -3303, 24266, false, 0);
 
 
-		if (!_exChangeOnly)
-		{
-
-		}
 
 		addStartNpc(_santaId);
 		addTalkId(_santaId);
@@ -312,6 +308,7 @@ public class Christmas extends Quest
 			tb.append(
 					"<a action=\"bypass -h Quest Christmas eventEffect 16420\"><font color=c2dceb>Receive the Tree Fairy's Blessing buff!</font></a><br1>");
 			tb.append(
+
 					"<a action=\"bypass -h Quest Christmas eventEffect 16421\"><font color=c2dceb>Receive the Snowman Fairy's Blessing buff!</font></a><br1>");
 			tb.append("<br>");
 			tb.append("<font color=\"3D81A8\">Christmas Music:</font><br1>");
@@ -348,12 +345,12 @@ public class Christmas extends Quest
 			if (_exChangeOnly)
 			{
 				Announcements.getInstance().announceToAll(
-						"King of the Cows: Hohoho! I need tons of Milk!!! You have only few days more for get some gifts before I go to my home! Hohoho! Hohoho!");
+						"King of the Cows: Ho-ho-ho! I need tons of Milk! You have only few days more for get some gifts before I go to my home! Ho-ho-ho! Ho-ho-ho!");
 			}
 			else
 			{
 				Announcements.getInstance().announceToAll(
-						"King of the Cows: Hohoho! I need tons of Milk !!! Please collect them in cow invasion for me!! You can found me at any Town! Hohoho! Hohoho!");
+						"King of the Cows: Ho-ho-ho! I need tons of Milk! Please collect them in Cow Invasion for me! You can find me at any Town! Ho-ho-ho! Ho-ho-ho!");
 			}
 		}
 		else if (event.equalsIgnoreCase("teleport_to_fantasy"))
@@ -450,7 +447,7 @@ public class Christmas extends Quest
 		}
 		else if (event.startsWith("start_invasion"))
 		{
-			if (_isUnderInvasion || _exChangeOnly)
+			if (_isUnderInvasion)
 			{
 				return "";
 			}
@@ -473,7 +470,7 @@ public class Christmas extends Quest
 				radius += 300;
 			}
 
-			Announcements.getInstance().announceToAll("Fantasy Island is under Cow invasion!");
+			Announcements.getInstance().announceToAll("Fantasy Island is under Cow Invasion!");
 			Announcements.getInstance().announceToAll("Don't attack mobs from other players!");
 			Announcements.getInstance().announceToAll("Dualbox is not allowed on the event!");
 			Announcements.getInstance()
