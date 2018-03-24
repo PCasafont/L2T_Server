@@ -946,6 +946,8 @@ public final class Config
 	public static int LINDVIOR_RANDOM_SPAWN;
 	public static int KELBIM_INTERVAL_SPAWN;
 	public static int KELBIM_RANDOM_SPAWN;
+	public static int HELIOS_INTERVAL_SPAWN;
+	public static int HELIOS_RANDOM_SPAWN;
 
 	// Gracia Seeds Settings
 	public static int SOD_TIAT_KILL_COUNT;
