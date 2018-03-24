@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <skill id="617" name="Transform Onyx Beast" level="1" minLevel="50" spCost="0" itemId="9648" raceId="-1" />
+    <skill id="618" name="Transform Death Blader" level="1" minLevel="55" spCost="0" itemId="9649" raceId="-1" />
+    <skill id="663" name="Transfomr Zaken" level="1" minLevel="60" spCost="0" itemId="10295" raceId="-1" />
+    <skill id="664" name="Transform Anakim" level="1" minLevel="70" spCost="0" itemId="10296" raceId="-1" />
+    <skill id="665" name="Transform Benom" level="1" minLevel="70" spCost="0" itemId="10297" raceId="-1" />
+    <skill id="666" name="Transform Gordon" level="1" minLevel="76" spCost="0" itemId="10298" raceId="-1" />
+    <skill id="667" name="Transform Ranku" level="1" minLevel="76" spCost="0" itemId="10299" raceId="-1" />
+    <skill id="668" name="Transform Kiyachi" level="1" minLevel="76" spCost="0" itemId="10300" raceId="-1" />
+    <skill id="669" name="Transform Demon Prince" level="1" minLevel="76" spCost="0" itemId="10301" raceId="-1" />
+    <skill id="670" name="Transform Heretic" level="1" minLevel="70" spCost="0" itemId="10302" raceId="-1" />
+    <skill id="671" name="Transform Vale Master" level="1" minLevel="70" spCost="0" itemId="10303" raceId="-1" />
+    <skill id="672" name="Transform Saber Tooth Tiger" level="1" minLevel="70" spCost="0" itemId="10304" raceId="-1" />
+    <skill id="673" name="Transform Ol Mahum" level="1" minLevel="70" spCost="0" itemId="10305" raceId="-1" />
+    <skill id="674" name="Transform Doll Blader" level="1" minLevel="70" spCost="0" itemId="10306" raceId="-1" />
+    <skill id="541" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="0" />
+    <skill id="545" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="0" />
+    <skill id="548" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="0" />
+    <skill id="551" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="0" />
+    <skill id="554" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="0" />
+    <skill id="558" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="0" />
+    <skill id="542" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="1" />
+    <skill id="544" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="1" />
+    <skill id="549" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="1" />
+    <skill id="551" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="1" />
+    <skill id="554" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="1" />
+    <skill id="557" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="1" />
+    <skill id="542" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="2" />
+    <skill id="546" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="2" />
+    <skill id="547" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="2" />
+    <skill id="551" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="2" />
+    <skill id="554" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="2" />
+    <skill id="557" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="2" />
+    <skill id="542" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="3" />
+    <skill id="545" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="3" />
+    <skill id="548" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="3" />
+    <skill id="552" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="3" />
+    <skill id="553" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="3" />
+    <skill id="557" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="3" />
+    <skill id="542" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="4" />
+    <skill id="545" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="4" />
+    <skill id="548" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="4" />
+    <skill id="550" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="4" />
+    <skill id="555" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="4" />
+    <skill id="557" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="4" />
+    <skill id="543" name="Transform Grail Apostle" level="1" minLevel="60" spCost="0" itemId="9650" raceId="5" />
+    <skill id="545" name="Transform Unicorn" level="1" minLevel="60" spCost="0" itemId="9651" raceId="5" />
+    <skill id="548" name="Transform Lilim Knight" level="1" minLevel="60" spCost="0" itemId="9652" raceId="5" />
+    <skill id="551" name="Transform Golem Guardian" level="1" minLevel="60" spCost="0" itemId="9653" raceId="5" />
+    <skill id="554" name="Transform Inferno Drake" level="1" minLevel="60" spCost="0" itemId="9654" raceId="5" />
+    <skill id="556" name="Transform Dragon Bomber" level="1" minLevel="60" spCost="0" itemId="9655" raceId="5" />
+</list>

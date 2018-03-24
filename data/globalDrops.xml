@@ -1,6 +1,0 @@
-<list>
-    <globalDrop description="Energy of Destruction" chance="0.1" minAmount="1" maxAmount="1" minLevel="85"
-                maxDailyCount="2">
-        <item id="35562" /> <!-- Energy of Destruction -->
-    </globalDrop>
-</list>

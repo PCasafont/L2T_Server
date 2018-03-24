@@ -1,0 +1,1017 @@
+<list>
+    <npc id="3401" name="Greyclaw Kutus" title="Lord of Destruction" level="23" type="L2Npc" atkRange="40"
+         hpMax="192052" hpReg="0.0"
+         mpMax="515" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341" mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="21"
+         collisionHeight="43.5"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4790" level="1" /> <!-- Raid Boss (Lv. 23) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3402" name="Kutus' Escort" title="Follower of Destruction" level="22" type="L2Npc" atkRange="40"
+         hpMax="7241" hpReg="0.0"
+         mpMax="267" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="273"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="13.5"
+         collisionHeight="25"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3403" name="Kutus' Pawn" title="Follower of Destruction" level="22" type="L2Npc" atkRange="40"
+         hpMax="10807" hpReg="0.0"
+         mpMax="267" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="273"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="13.5"
+         collisionHeight="25"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3404" name="Tracker Captain Sharuk" title="Lord of Destruction" level="23" type="L2Npc" atkRange="40"
+         hpMax="63377"
+         hpReg="0.0" mpMax="282" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="12"
+         collisionHeight="30" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4929" level="1" /> <!-- Raid Boss (Lv. 23) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3405" name="Sharuk's Tracker" title="Follower of Destruction" level="22" type="L2Npc" atkRange="40"
+         hpMax="3566"
+         hpReg="0.0" mpMax="266" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="23"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3406" name="Sharuk's Marksman" title="Follower of Destruction" level="22" type="L2Npc" atkRange="1100"
+         hpMax="4779"
+         hpReg="0.0" mpMax="266" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="22"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3407" name="Sukar Ratman Chief" title="Lord of Destruction" level="21" type="L2Npc" atkRange="40"
+         hpMax="180415"
+         hpReg="0.0" mpMax="251" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="14"
+         collisionHeight="25" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4927" level="1" /> <!-- Raid Boss (Lv. 21) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3408" name="Sukar Ratman Escort" title="Follower of Destruction" level="20" type="L2Npc" atkRange="40"
+         hpMax="10199"
+         hpReg="0.0" mpMax="235" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="18.7"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3409" name="Sukar Ratman Priest" title="Follower of Destruction" level="20" type="L2Npc" atkRange="40"
+         hpMax="10199"
+         hpReg="0.0" mpMax="235" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="18.7"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3410" name="Ikuntai" title="Lord of Destruction" level="25" type="L2Npc" atkRange="40" hpMax="206272"
+         hpReg="0.0"
+         mpMax="316" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341" mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="15"
+         collisionHeight="39"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4853" level="1" /> <!-- Raid Boss (Lv. 25) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3411" name="Ikuntai's Servitor" title="Follower of Destruction" level="24" type="L2Npc" atkRange="40"
+         hpMax="11556"
+         hpReg="0.0" mpMax="299" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="8"
+         collisionHeight="23"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13"
+         darkRes="184"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3412" name="Ikuntai's Pawn" title="Follower of Destruction" level="24" type="L2Npc" atkRange="40"
+         hpMax="5778"
+         hpReg="0.0" mpMax="299" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="28"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3413" name="Zombie Lord Crowl" title="Lord of Destruction" level="25" type="L2Npc" atkRange="40"
+         hpMax="206272"
+         hpReg="0.0" mpMax="576" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="30"
+         collisionHeight="21.25" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4846" level="1" /> <!-- Raid Boss (Lv. 25) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3414" name="Evil Spirit Archer" title="Follower of Destruction" level="24" type="L2Npc" atkRange="1100"
+         hpMax="7742"
+         hpReg="0.0" mpMax="300" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="11" collisionHeight="27"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3415" name="Evil Spirit Warrior" title="Follower of Destruction" level="24" type="L2Npc" atkRange="40"
+         hpMax="5778"
+         hpReg="0.0" mpMax="300" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="11" collisionHeight="25"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3416" name="Zombie Lord Ferkel" title="Lord of Destruction" level="20" type="L2Npc" atkRange="40"
+         hpMax="175466"
+         hpReg="0.0" mpMax="235" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="12"
+         collisionHeight="27.5" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4899" level="1" /> <!-- Raid Boss (Lv. 20) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3417" name="Ferkel's Warrior" title="Follower of Destruction" level="19" type="L2Npc" atkRange="40"
+         hpMax="9942"
+         hpReg="0.0" mpMax="224" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="13" collisionHeight="21"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3418" name="Ferkel's Priest" title="Follower of Destruction" level="19" type="L2Npc" atkRange="40"
+         hpMax="9942"
+         hpReg="0.0" mpMax="224" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="13" collisionHeight="21"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3419" name="Execution Grounds Watchman Guillotine" title="Lord of Destruction" level="35" type="L2Npc"
+         atkRange="40"
+         hpMax="218274" hpReg="0.0" mpMax="894" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
+         pAtk="971"
+         mAtk="663" pDef="273" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1"
+         runSpd="1" collisionRadius="20"
+         collisionHeight="58" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4833" level="1" /> <!-- Raid Boss (Lv. 35) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3420" name="Flame Lord Shadar" title="Lord of Destruction" level="35" type="L2Npc" atkRange="40"
+         hpMax="330718"
+         hpReg="0.0" mpMax="491" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="28"
+         collisionHeight="75" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-13"
+         darkRes="184" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4847" level="1" /> <!-- Raid Boss (Lv. 35) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3421" name="Claws of Shadar" title="Follower of Destruction" level="34" type="L2Npc" atkRange="40"
+         hpMax="18211"
+         hpReg="0.0" mpMax="473" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="24"
+         fireRes="-5" waterRes="20" windRes="43" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="13" /> <!-- Fairies -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3422" name="Whip of Shadar" title="Follower of Destruction" level="34" type="L2Npc" atkRange="40"
+         hpMax="9105"
+         hpReg="0.0" mpMax="473" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="36"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13"
+         darkRes="184"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3423" name="Soul Collector Acheron" title="Lord of Destruction" level="35" type="L2Npc" atkRange="40"
+         hpMax="109137"
+         hpReg="0.0" mpMax="894" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="18"
+         collisionHeight="63" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-13"
+         darkRes="184" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4869" level="1" /> <!-- Raid Boss (Lv. 35) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3424" name="Soul Slasher" title="Follower of Destruction" level="34" type="L2Npc" atkRange="40"
+         hpMax="8052" hpReg="0.0"
+         mpMax="474" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="273"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1" collisionRadius="20"
+         collisionHeight="35"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3425" name="Soul Strainer" title="Follower of Destruction" level="34" type="L2Npc" atkRange="40"
+         hpMax="12019"
+         hpReg="0.0" mpMax="474" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="30" collisionHeight="40"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3426" name="Lord Ishka" title="Lord of Destruction" level="60" type="L2Npc" atkRange="40" hpMax="528144"
+         hpReg="0.0"
+         mpMax="2302" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="22" collisionHeight="67"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4947" level="1" /> <!-- Raid Boss (Lv. 60) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3427" name="Ishka's Elite Officer" title="Follower of Destruction" level="59" type="L2Npc" atkRange="40"
+         hpMax="54346"
+         hpReg="0.0" mpMax="1229" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="11" collisionHeight="28.5"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3428" name="Ishka's Elite Soldier" title="Follower of Destruction" level="59" type="L2Npc" atkRange="40"
+         hpMax="54346"
+         hpReg="0.0" mpMax="1229" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="30.5"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="107"
+         darkRes="193"
+         aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3429" name="Demon Kuri" title="Lord of Destruction" level="59" type="L2Npc" atkRange="40" hpMax="338190"
+         hpReg="0.0"
+         mpMax="1229" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="50" collisionHeight="180"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13"
+         darkRes="184"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4859" level="1" /> <!-- Raid Boss (Lv. 59) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3430" name="Kuri's Wife" title="Follower of Destruction" level="58" type="L2Npc" atkRange="40"
+         hpMax="38200" hpReg="19.86"
+         mpMax="1192" mpReg="14.41" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="341" mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="14"
+         collisionHeight="40"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13"
+         darkRes="184"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3431" name="Devil Blader of Chaos" title="Follower of Destruction" level="58" type="L2Npc" atkRange="40"
+         hpMax="19100"
+         hpReg="15.58" mpMax="1193" mpReg="11.31" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="15"
+         collisionHeight="45" elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160"
+         earthRes="160" holyRes="107"
+         darkRes="193" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3432" name="Ancient Weird Drake" title="Lord of Destruction" level="60" type="L2Npc" atkRange="40"
+         hpMax="1056289"
+         hpReg="0.0" mpMax="2302" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="45"
+         collisionHeight="150" fireRes="220" waterRes="135" windRes="160" earthRes="160" holyRes="160" darkRes="160"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4874" level="1" /> <!-- Raid Boss (Lv. 60) -->
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4276" level="1" /> <!-- Bow/Crossbow Vulnerability -->
+    </npc>
+    <npc id="3433" name="Slaughter Lord Gato" title="Lord of Destruction" level="50" type="L2Npc" atkRange="40"
+         hpMax="738329"
+         hpReg="0.0" mpMax="912" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="30"
+         collisionHeight="57" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4840" level="1" /> <!-- Raid Boss (Lv. 50) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3434" name="Gato's Sniper" title="Follower of Destruction" level="49" type="L2Npc" atkRange="1100"
+         hpMax="27461"
+         hpReg="0.0" mpMax="879" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="14" collisionHeight="25"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3435" name="Gato's Troop Captain" title="Follower of Destruction" level="49" type="L2Npc" atkRange="40"
+         hpMax="20493"
+         hpReg="0.0" mpMax="879" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="14" collisionHeight="27"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3436" name="Ketra's Commander Atis" title="Lord of Destruction" level="49" type="L2Npc" atkRange="40"
+         hpMax="705138"
+         hpReg="0.0" mpMax="879" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="12"
+         collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4799" level="1" /> <!-- Raid Boss (Lv. 49) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3437" name="Ketra Marksman" title="Follower of Destruction" level="48" type="L2Npc" atkRange="1100"
+         hpMax="26181"
+         hpReg="0.0" mpMax="845" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="27"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3438" name="Ketra Raider" title="Follower of Destruction" level="48" type="L2Npc" atkRange="40"
+         hpMax="19538" hpReg="0.0"
+         mpMax="845" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="12"
+         collisionHeight="24"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3439" name="Beacon of Blue Sky" title="Lord of Destruction" level="45" type="L2Npc" atkRange="40"
+         hpMax="577073"
+         hpReg="43.29" mpMax="745" mpReg="31.41" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="12"
+         collisionHeight="50" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4810" level="1" /> <!-- Raid Boss (Lv. 45) -->
+        <skill id="4416" level="3" /> <!-- Beast -->
+    </npc>
+    <npc id="3440" name="Beacon's Shooter" title="Follower of Destruction" level="44" type="L2Npc" atkRange="1100"
+         hpMax="21302"
+         hpReg="14.0" mpMax="713" mpReg="10.16" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="11" collisionHeight="27"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3441" name="Beacon's Warrior" title="Follower of Destruction" level="44" type="L2Npc" atkRange="40"
+         hpMax="15897"
+         hpReg="12.63" mpMax="713" mpReg="9.17" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="25"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3442" name="Earth Protector Panathen" title="Lord of Destruction" level="43" type="L2Npc" atkRange="40"
+         hpMax="517915"
+         hpReg="0.0" mpMax="680" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="16"
+         collisionHeight="31" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4863" level="1" /> <!-- Raid Boss (Lv. 43) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3443" name="Panathen's Knight" title="Follower of Destruction" level="42" type="L2Npc" atkRange="40"
+         hpMax="28480"
+         hpReg="0.0" mpMax="648" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="26" collisionHeight="42"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3444" name="Panathen's Protectors" title="Follower of Destruction" level="42" type="L2Npc" atkRange="1100"
+         hpMax="14240"
+         hpReg="0.0" mpMax="648" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="20" collisionHeight="28"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3445" name="Betrayer of Urutu Freki" title="Lord of Destruction" level="25" type="L2Npc" atkRange="40"
+         hpMax="206272"
+         hpReg="0.0" mpMax="316" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="11"
+         collisionHeight="29.7" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4954" level="1" /> <!-- Raid Boss (Lv. 25) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3446" name="Freki's Vampire Bat" title="Follower of Destruction" level="24" type="L2Npc" atkRange="40"
+         hpMax="11556"
+         hpReg="0.0" mpMax="299" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="33.5"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3447" name="Freki's Wild Bear" title="Follower of Destruction" level="24" type="L2Npc" atkRange="40"
+         hpMax="11556"
+         hpReg="0.0" mpMax="299" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="21" collisionHeight="40"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3448" name="Nellis' Vengeful Spirit" title="Lord of Destruction" level="39" type="L2Npc" atkRange="40"
+         hpMax="413681"
+         hpReg="0.0" mpMax="565" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10"
+         collisionHeight="28.1" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="5026" level="1" /> <!-- Raid Boss (Lv. 39) -->
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3449" name="Nellis' Follower" title="Follower of Destruction" level="38" type="L2Npc" atkRange="40"
+         hpMax="22722"
+         hpReg="0.0" mpMax="546" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="9"
+         collisionHeight="16.5"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3450" name="Rayito the Looter" title="Lord of Destruction" level="37" type="L2Npc" atkRange="40"
+         hpMax="184748"
+         hpReg="0.0" mpMax="528" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="16"
+         collisionHeight="33.2" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="5027" level="1" /> <!-- Raid Boss (Lv. 37) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3451" name="Rayito's Guard Captain" title="Follower of Destruction" level="36" type="L2Npc" atkRange="40"
+         hpMax="20311"
+         hpReg="0.0" mpMax="509" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="14.5" collisionHeight="28"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3452" name="Rayito's Henchman" title="Follower of Destruction" level="36" type="L2Npc" atkRange="40"
+         hpMax="13608"
+         hpReg="0.0" mpMax="509" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663"
+         pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1" collisionRadius="6"
+         collisionHeight="16.6"
+         fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3453" name="Ketra's Hero Hekaton" title="Lord of Destruction" level="80" type="L2Npc" atkRange="40"
+         hpMax="1430157"
+         hpReg="0.0" mpMax="2043" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="17"
+         collisionHeight="46.2" fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4903" level="1" /> <!-- Raid Boss (Lv. 80) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3454" name="Hekaton's Scout" title="Follower of Destruction" level="79" type="L2Npc" atkRange="1100"
+         hpMax="55129"
+         hpReg="0.0" mpMax="2003" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="27"
+         fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3455" name="Hekaton's Servant" title="Follower of Destruction" level="79" type="L2Npc" atkRange="40"
+         hpMax="41141"
+         hpReg="0.0" mpMax="2003" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="12" collisionHeight="29"
+         fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3456" name="Varka's Hero Shadith" title="Lord of Destruction" level="80" type="L2Npc" atkRange="40"
+         hpMax="1430157"
+         hpReg="0.0" mpMax="2043" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="1" runSpd="1"
+         collisionRadius="17"
+         collisionHeight="47.5" fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4907" level="1" /> <!-- Raid Boss (Lv. 80) -->
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+    </npc>
+    <npc id="3457" name="Shadith' Escort Captain" title="Follower of Destruction" level="79" type="L2Npc" atkRange="40"
+         hpMax="82282"
+         hpReg="0.0" mpMax="2003" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="16" collisionHeight="41"
+         fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3458" name="Shadith' Sentinel" title="Follower of Destruction" level="79" type="L2Npc" atkRange="40"
+         hpMax="41141"
+         hpReg="0.0" mpMax="2003" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="80" mCritRate="80" walkSpd="1" runSpd="1"
+         collisionRadius="16" collisionHeight="38"
+         fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100" aiType="fighter">
+        <skill id="4416" level="6" /> <!-- Humanoids -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3459" name="Doom Blade Thanatos" title="Lord of Destruction" level="72" type="L2Npc" atkRange="40"
+         hpMax="1309119"
+         hpReg="0.0" mpMax="3131" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="15"
+         collisionHeight="32.5" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-13"
+         darkRes="184" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4880" level="1" /> <!-- Raid Boss (Lv. 72) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3460" name="Kernon" title="Lord of Destruction" level="73" type="L2Npc" atkRange="40" hpMax="946298"
+         hpReg="0.0"
+         mpMax="3348" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="24" collisionHeight="40"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13"
+         darkRes="184"
+         aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4809" level="1" /> <!-- Raid Boss (Lv. 75) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3461" name="Taliadon" title="Follower of Destruction" level="72" type="L2Npc" atkRange="40" hpMax="108753"
+         hpReg="0.0"
+         mpMax="1800" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="15"
+         collisionHeight="45"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3462" name="Vemsk" title="Follower of Destruction" level="72" type="L2Npc" atkRange="40" hpMax="54376"
+         hpReg="0.0"
+         mpMax="1800" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="12"
+         collisionHeight="31"
+         elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-33"
+         darkRes="53" aiType="fighter">
+        <skill id="4416" level="1" /> <!-- Undead -->
+        <skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3463" name="Meanas Anor" title="Lord of Destruction" level="70" type="L2Npc" atkRange="40" hpMax="1275172"
+         hpReg="0.0"
+         mpMax="1641" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
+         pDef="341"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="58" collisionHeight="108"
+         fireRes="80" waterRes="-5" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4962" level="1" /> <!-- Raid Boss (Lv. 70) -->
+        <skill id="4416" level="10" /> <!-- Dragons -->
+    </npc>
+    <npc id="3464" name="Swamp Wyvern" title="Follower of Destruction" level="69" type="L2Npc" atkRange="40"
+         hpMax="48961" hpReg="0.0"
+         mpMax="1604" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="273"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="29"
+         collisionHeight="72"
+         fireRes="220" waterRes="135" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+        <skill id="4416" level="10" /> <!-- Dragons -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+    </npc>
+    <npc id="3465" name="Swamp Succubus" title="Follower of Destruction" level="69" type="L2Npc" atkRange="40"
+         hpMax="73077"
+         hpReg="0.0" mpMax="1604" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
+         mAtk="663" pDef="273"
+         mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="10" collisionHeight="36"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="127"
+         darkRes="324"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4278" level="1" /> <!-- Dark Attack -->
+        <skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+    </npc>
+    <npc id="3466" name="Mammon Collector Talos" title="Lord of Destruction" level="25" type="L2Npc" atkRange="40"
+         hpMax="206272"
+         hpReg="0.0" mpMax="316" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971"
+         mAtk="663"
+         pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1"
+         collisionRadius="13"
+         collisionHeight="37.5" elemAtkType="5" elemAtkValue="33" fireRes="20" waterRes="20" windRes="20" earthRes="20"
+         holyRes="-13"
+         darkRes="184" aiType="fighter">
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="4983" level="1" /> <!-- Raid Boss (Lv. 25) -->
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3467" name="Talos' Pawn" title="Follower of Destruction" level="22" type="L2Npc" atkRange="40"
+         hpMax="10807" hpReg="0.0"
+         mpMax="267" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="273"
+         mDef="250"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="14"
+         collisionHeight="36"
+         elemAtkType="5" elemAtkValue="33" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="127"
+         darkRes="324"
+         aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="4414" level="3" /> <!-- Light Armor Type -->
+        <skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
+        <skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
+        <skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
+    </npc>
+    <npc id="3468" name="Jermann" title="Weakened Ruler" level="88" type="L2Npc" atkRange="40" hpMax="348077"
+         hpReg="0.0" mpMax="2044"
+         mpReg="0.0" STR="126" CON="96" DEX="55" INT="79" WIT="78" MEN="113" pAtk="100" mAtk="100" pDef="100" mDef="100"
+         pAtkSpd="253"
+         mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="35" collisionHeight="74"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="5467" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3469" name="Jermann" title="Weakened Ruler" level="93" type="L2Npc" atkRange="40" hpMax="541220"
+         hpReg="0.0" mpMax="2044"
+         mpReg="0.0" STR="126" CON="96" DEX="55" INT="79" WIT="78" MEN="113" pAtk="100" mAtk="100" pDef="100" mDef="100"
+         pAtkSpd="253"
+         mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="35" collisionHeight="74"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="5467" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3470" name="Jermann" title="Weakened Ruler" level="98" type="L2Npc" atkRange="40" hpMax="615901"
+         hpReg="0.0" mpMax="3066"
+         mpReg="0.0" STR="126" CON="96" DEX="55" INT="79" WIT="78" MEN="113" pAtk="100" mAtk="100" pDef="100" mDef="100"
+         pAtkSpd="253"
+         mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="35" collisionHeight="74"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="5467" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3471" name="Jermann" title="35% Drop" level="98" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0"
+         mpMax="3066"
+         mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="100" mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253"
+         mAtkSpd="500" pCritRate="48" mCritRate="48" walkSpd="60" runSpd="120" collisionRadius="35" collisionHeight="74"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="5467" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3472" name="Jermann" title="50% Drop" level="98" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0"
+         mpMax="3066"
+         mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="100" mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253"
+         mAtkSpd="500" pCritRate="57" mCritRate="57" walkSpd="60" runSpd="120" collisionRadius="35" collisionHeight="74"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="9" /> <!-- Demons -->
+        <skill id="5467" level="1" /> <!-- Dark Attack -->
+    </npc>
+    <npc id="3473" name="Omega Golem" title="Raid Boss" level="96" type="L2RaidBoss" atkRange="40" hpMax="56203348"
+         hpReg="25001.125"
+         mpMax="3066" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="207470592"
+         sp="49792" pAtk="100"
+         mAtk="100" pDef="120" mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60"
+         runSpd="120"
+         collisionRadius="50" collisionHeight="68" fireRes="150" waterRes="150" windRes="150" earthRes="150"
+         holyRes="150" darkRes="150"
+         aiType="fighter">
+        <minion npcId="3474" min="2" max="3" /> <!-- Super Kat the Cat -->
+        <minion npcId="3475" min="2" max="3" /> <!-- Super Feline Queen -->
+        <minion npcId="3476" min="2" max="3" /> <!-- Super Mew the Cat -->
+        <skill id="4494" level="1" /> <!-- Raid Boss -->
+        <skill id="15413" level="1" /> <!-- Raid Boss (Lv. 96) -->
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <skill id="5465" level="1" /> <!-- Earth Attack -->
+        <skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+        <spawn x="199427" y="84684" z="-211" heading="59066" respawn="43200" randomRespawn="86400"
+               dbName="Omega Golem" />
+    </npc>
+    <npc id="3474" name="Super Kat the Cat" level="95" type="L2Monster" atkRange="40" hpMax="1113846" hpReg="72.26"
+         mpMax="3066"
+         mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="3655125" sp="80619" pAtk="100"
+         mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120"
+         collisionRadius="22.5"
+         collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
+         aiType="fighter">
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+    </npc>
+    <npc id="3475" name="Super Feline Queen" level="95" type="L2Monster" atkRange="40" hpMax="1113846" hpReg="72.26"
+         mpMax="3066"
+         mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="3655125" sp="80619" pAtk="100"
+         mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120"
+         collisionRadius="22.5"
+         collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
+         aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+    </npc>
+    <npc id="3476" name="Super Mew the Cat" level="95" type="L2Monster" atkRange="40" hpMax="1113846" hpReg="72.26"
+         mpMax="3066"
+         mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="3655125" sp="80619" pAtk="100"
+         mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120"
+         collisionRadius="22.5"
+         collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
+         aiType="fighter">
+        <skill id="4416" level="4" /> <!-- Animals -->
+    </npc>
+    <npc id="3477" name="Reinforced Super Kat the Cat" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40"
+         hpMax="30496656"
+         hpReg="165.75" mpMax="2044" mpReg="120.27" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
+         exp="174332928"
+         sp="41839" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40"
+         mCritRate="40" walkSpd="60"
+         runSpd="120" collisionRadius="22.5" collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150"
+         earthRes="150"
+         holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="2" /> <!-- Magic Creatures -->
+        <itemDrop itemId="17308" min="1" max="1" chance="27.1" /> <!-- Immortal Boots - Heavy Armor -->
+        <itemDrop itemId="17318" min="1" max="1" chance="25.51" /> <!-- Immortal Gloves - Robe -->
+        <itemDrop itemId="17310" min="1" max="1" chance="17.84" /> <!-- Immortal Leather Helmet - Light Armor -->
+        <itemDrop itemId="17304" min="1" max="1" chance="16.91" /> <!-- Immortal Helmet - Heavy Armor -->
+        <itemDrop itemId="17313" min="1" max="3" chance="13.07" /> <!-- Immortal Leather Gloves - Light Armor -->
+        <itemDrop itemId="17319" min="2" max="4" chance="8.751" /> <!-- Immortal Shoes - Robe -->
+        <itemDrop itemId="17296" min="1" max="1" chance="1.755" /> <!-- Requiem Thrower -->
+        <itemDrop itemId="17300" min="1" max="1" chance="1.746" /> <!-- Requiem Retributer -->
+        <itemDrop itemId="17291" min="1" max="1" chance="1.669" /> <!-- Requiem Cutter -->
+        <itemDrop itemId="17290" min="1" max="1" chance="1.647" /> <!-- Requiem Shaper -->
+        <itemDrop itemId="17527" min="1" max="1" chance="49.66" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <itemDrop itemId="17526" min="1" max="1" chance="4.026" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+    </npc>
+    <npc id="3478" name="Reinforced Kat the Cat" level="87" type="L2Monster" atkRange="40" hpMax="496672" hpReg="39.23"
+         mpMax="2044"
+         mpReg="28.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
+         pAtkSpd="253"
+         mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="17"
+         fireRes="150"
+         waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+    </npc>
+    <npc id="3479" name="Darkened Super Feline Queen" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+         hpMax="33852160"
+         hpReg="171.91" mpMax="2044" mpReg="124.75" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
+         exp="190541568"
+         sp="45729" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40"
+         mCritRate="40" walkSpd="60"
+         runSpd="120" collisionRadius="22.5" collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150"
+         earthRes="150"
+         holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+        <itemDrop itemId="17343" min="1" max="1" chance="71.04" /> <!-- Twilight Shield - Heavy Armor -->
+        <itemDrop itemId="17339" min="1" max="1" chance="18.59" /> <!-- Twilight Breastplate - Heavy Armor -->
+        <itemDrop itemId="17350" min="1" max="1" chance="18.07" /> <!-- Twilight Tunic - Robe -->
+        <itemDrop itemId="17325" min="1" max="1" chance="1" /> <!-- Apocalypse Cutter -->
+        <itemDrop itemId="17330" min="1" max="1" chance="1" /> <!-- Apocalypse Thrower -->
+        <itemDrop itemId="17527" min="1" max="1" chance="48.15" /> <!-- Scroll: Enchant Armor (R-grade) -->
+        <itemDrop itemId="17526" min="1" max="1" chance="4.01" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+    </npc>
+    <npc id="3480" name="Mind-controlling Feline Queen" level="91" type="L2Monster" atkRange="40" hpMax="525953"
+         hpReg="40.02"
+         mpMax="2044" mpReg="29.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100"
+         pDef="100" mDef="100"
+         pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7"
+         collisionHeight="16"
+         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+    </npc>
+    <npc id="3481" name="Control-crazed Mew the Cat" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40"
+         hpMax="24955736"
+         hpReg="23001.035" mpMax="2044" mpReg="1000.0" STR="164" CON="82" DEX="55" INT="188" WIT="78" MEN="149"
+         exp="198916032"
+         sp="47739" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40"
+         mCritRate="40" walkSpd="60"
+         runSpd="120" collisionRadius="22.5" collisionHeight="37.5" fireRes="150" waterRes="150" windRes="150"
+         earthRes="150"
+         holyRes="150" darkRes="150" aiType="fighter">
+        <minion npcId="3482" min="4" max="6" /> <!-- Traitorous Mew the Cat -->
+        <skill id="4416" level="4" /> <!-- Animals -->
+        <spawn x="204382" y="112278" z="-1089" heading="4644" respawn="43200" randomRespawn="86400"
+               dbName="Control-crazed Mew the Cat" />
+    </npc>
+    <npc id="3482" name="Traitorous Mew the Cat" level="93" type="L2Monster" atkRange="40" hpMax="541220" hpReg="54.195"
+         mpMax="2044"
+         mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="3502845" sp="80619" pAtk="100"
+         mAtk="100" pDef="100"
+         mDef="100" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120"
+         collisionRadius="6" collisionHeight="16"
+         fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+        <skill id="4416" level="7" /> <!-- Spirits -->
+    </npc>
+</list>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="50" id="36515" /> <!-- Elcyum -->
+        <production count="1" id="36731" /> <!-- Life Stone Instilled with Giants' Power -->
+    </item>
+</list>

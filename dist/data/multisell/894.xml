@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="13" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38603" /> <!-- Steel Full Plate Armor -->
+    </item>
+    <item>
+        <ingredient count="3" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38607" /> <!-- Steel Karmian Tunic -->
+    </item>
+    <item>
+        <ingredient count="5" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38611" /> <!-- Steel Plated Leather Armor -->
+    </item>
+    <item>
+        <ingredient count="26" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38618" /> <!-- Steel Doom Plate Armor -->
+    </item>
+    <item>
+        <ingredient count="19" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38620" /> <!-- Steel Avadon Robe -->
+    </item>
+    <item>
+        <ingredient count="26" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38625" /> <!-- Steel Leather Armor of Doom -->
+    </item>
+    <item>
+        <ingredient count="48" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38628" /> <!-- Steel Armor of Nightmare -->
+    </item>
+    <item>
+        <ingredient count="36" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38633" /> <!-- Steel Dark Crystal Robe -->
+    </item>
+    <item>
+        <ingredient count="36" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38638" /> <!-- Steel Dark Crystal Leather Armor -->
+    </item>
+    <item>
+        <ingredient count="85" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38642" /> <!-- Steel Imperial Crusader Breastplate -->
+    </item>
+    <item>
+        <ingredient count="85" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38648" /> <!-- Steel Major Arcana Robe -->
+    </item>
+    <item>
+        <ingredient count="85" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38653" /> <!-- Steel Draconic Leather Armor -->
+    </item>
+    <item>
+        <ingredient count="126" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38657" /> <!-- Steel Dynasty Breastplate -->
+    </item>
+    <item>
+        <ingredient count="126" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38663" /> <!-- Steel Dynasty Tunic -->
+    </item>
+    <item>
+        <ingredient count="126" id="37045" /> <!-- Steel Door Guild Coin -->
+        <production count="1" id="38669" /> <!-- Steel Dynasty Leather Armor -->
+    </item>
+</list>

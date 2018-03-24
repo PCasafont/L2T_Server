@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="Nursery">
+    <activityTime val="60" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
+    <spawnlist>
+        <spawn npcId="33152" x="-185854" y="147197" z="-15302" heading="49151" respawn="20" /><!-- Tie -->
+    </spawnlist>
+</instance>

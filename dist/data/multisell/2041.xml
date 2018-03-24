@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36482" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36506" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36483" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36507" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36484" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36508" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36485" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36509" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36486" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36510" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36487" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36511" />
+    </item>
+    <item>
+        <!-- Ingredients -->
+        <ingredient count="1" id="36488" />
+        <ingredient count="120" id="36414" />
+        <ingredient count="9280" id="36550" />
+        <ingredient count="9280" id="36565" />
+        <ingredient count="9280" id="36545" />
+        <ingredient count="2618" id="36515" />
+        <ingredient count="4380" id="35563" />
+        <ingredient count="18000" id="19440" />
+
+        <!-- Products -->
+        <production count="1" id="36512" />
+    </item>
+</list>

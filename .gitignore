@@ -1,5 +1,4 @@
 # IDEA
-.idea
 
 # Gradle
 .gradle
@@ -17,7 +16,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.ear
 *.zip
@@ -29,7 +28,6 @@ hs_err_pid*
 
 # Other
 bin
-log
-lib/cachedir
+dist/log
 *.l2j
 *.cache

@@ -1,0 +1,1522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!-- description will be replaced for stringIds same as in retail, we will use them for parse teleports easly from the logs, no priceId means it costs adena, no price means it's free, no noble means it's for all players -->
+    <tele id="1" description="DE Village -> Town of Gludio" x="-12787" y="122779" z="-3112" price="10000" />
+    <tele id="2" description="Elven Village -> Town of Gludio" x="-12787" y="122779" z="-3112" price="9200" />
+    <tele id="3" description="Gludio -> Elven Village" x="46951" y="51550" z="-2976" price="9200" />
+    <tele id="4" description="Gludio -> DE Village" x="9709" y="15566" z="-4568" price="10000" />
+    <tele id="5" description="Gludio -> Gludin" x="-80684" y="149770" z="-3040" price="7300" />
+    <tele id="6" description="Gludio -> Dion" x="15472" y="142880" z="-2688" price="3400" />
+    <tele id="7" description="Gludin -> Orc village" x="-45158" y="-112583" z="-240" price="26000" />
+    <tele id="8" description="Gludin -> Dwarven village" x="115120" y="-178224" z="-880" price="38000" />
+    <tele id="9" description="Gludin -> TI Village" x="-84141" y="244623" z="-3728" price="9400" />
+    <tele id="10" description="Gludin -> Elven Village" x="46951" y="51550" z="-2976" price="16000" />
+    <tele id="11" description="Gludin -> DE Village" x="9709" y="15566" z="-4568" price="16000" />
+    <tele id="12" description="Gludin -> Town of Gludio" x="-12787" y="122779" z="-3112" price="7300" />
+    <tele id="13" description="Gludin -> Wastelands" x="-16526" y="208032" z="-3664" price="3400" />
+    <tele id="15" description="TI -> Village of Gludin" x="-80684" y="149770" z="-3040" price="18000" />
+    <tele id="16" description="Dwarven Village -> Town of Gludio" x="-12787" y="122779" z="-3112" price="32000" />
+    <tele id="17" description="Dwarven Village -> Eastern Mining Zone (Northeastern Shore)" x="169008" y="-208272"
+          z="-3504" price="2400" />
+    <tele id="18" description="Dion -> Town of Gludio" x="-12787" y="122779" z="-3112" price="3400" />
+    <tele id="19" description="Dion -> Town of Giran" x="83551" y="147945" z="-3400" price="6800" />
+    <tele id="22" description="Cruma Tower 1st floor -> Cruma Tower Entrance" x="17253" y="114232" z="-3440" />
+    <tele id="23" description="Cruma Tower 1st floor -> Cruma Tower 2nd floor" x="17776" y="108288" z="-9056" />
+    <tele id="24" description="Cruma Tower 2nd floor -> Cruma Tower 1st floor" x="17781" y="113999" z="-11672" />
+    <tele id="25" description="Giran -> Dion" x="15472" y="142880" z="-2688" price="6800" />
+    <tele id="26" description="Giran -> Oren" x="82956" y="53162" z="-1495" price="9400" />
+    <tele id="28" description="Giran -> Hardin's Private Academy" x="105918" y="109759" z="-3192" price="4400" />
+    <tele id="29" description="TI Dungeon inside -> outside" x="-112899" y="234942" z="-3688" />
+    <tele id="30" description="TI Dungeon outside -> inside" x="48586" y="248459" z="-6160" />
+    <tele id="31" description="Ivory Tower Basement" x="84915" y="15969" z="-4294" />
+    <tele id="32" description="Ivory Tower Ground Floor" x="85399" y="16197" z="-3679" />
+    <tele id="33" description="Ivory Tower 1st Floor" x="85399" y="16197" z="-2809" />
+    <tele id="34" description="Ivory Tower 2nd Floor" x="85399" y="16197" z="-2293" />
+    <tele id="35" description="Ivory Tower 3th Floor" x="85399" y="16197" z="-1776" />
+    <tele id="36" description="Ivory Tower Ground Floor -> Oren Castle Town" x="82956" y="53162" z="-1495"
+          price="3700" />
+    <tele id="37" description="Ivory Tower Ground Floor -> Hunter's Village" x="116819" y="76994" z="-2714"
+          price="6800" />
+    <tele id="38" description="Ivory Tower Ground Floor -> Aden Castle Town" x="146331" y="25762" z="-2018"
+          price="6200" />
+    <tele id="40" description="Aden -> Oren Town" x="82971" y="53207" z="-1470" price="6900" />
+    <tele id="41" description="Aden -> Hunter's Village" x="117088" y="76931" z="-2688" price="5900" />
+    <tele id="43" description="Hunters -> Oren Town" x="82971" y="53207" z="-1488" price="4100" />
+    <tele id="45" description="Hunters -> Hardin's Private Academy" x="105918" y="109759" z="-3192" price="3400" />
+    <tele id="46" description="Hunters -> Aden Town" x="146783" y="25808" z="-2008" price="5900" />
+    <tele id="47" description="Oren -> Giran Town" x="83551" y="147945" z="-3400" price="9400" />
+    <tele id="48" description="Oren -> Ivory Tower" x="85391" y="16228" z="-3672" price="3700" />
+    <tele id="49" description="Oren -> Hunter's Village" x="117088" y="76931" z="-2688" price="4100" />
+    <tele id="50" description="Oren -> Hardin's Private Academy" x="105918" y="109759" z="-3192" price="6100" />
+    <tele id="51" description="Oren -> Aden Town" x="146783" y="25808" z="-2008" price="6900" />
+    <tele id="52" description="Hardin's Private Academy -> Giran Town" x="83551" y="147945" z="-3400" price="4400" />
+    <tele id="53" description="Hardin's Private Academy -> Oren Town" x="82971" y="53207" z="-1488" price="6100" />
+    <tele id="54" description="Hardin's Private Academy -> Hunter's Village" x="117088" y="76931" z="-2688"
+          price="3400" />
+    <tele id="55" description="Cruma level 2 -> Cruma level 3" x="17719" y="115590" z="-6584" />
+    <tele id="56" description="Cruma level 3 -> Cruma Core" x="17691" y="111726" z="-6583" />
+    <tele id="57" description="Cruma core -> Cruma level 3" x="17719" y="115590" z="-6584" />
+    <tele id="58" description="Cruma Tower 3rd floor -> Cruma Tower 2nd Floor" x="17731" y="119465" z="-9067" />
+    <tele id="59" description="Heine -> The Town of Giran" x="83551" y="147945" z="-3400" price="7600" />
+    <tele id="60" description="Heine -> Giran Harbor" x="47938" y="186864" z="-3480" price="7100" />
+    <tele id="63" description="Giran Harbor -> Giran Town" x="83551" y="147942" z="-3400" price="6300" />
+    <tele id="65" description="Heine -> The Town of Dion" x="15472" y="142880" z="-2688" price="12000" />
+    <tele id="66" description="Heine -> Field of Silence" x="87691" y="162835" z="-3563" price="12000" />
+    <tele id="67" description="Heine -> Field of Whispers" x="82192" y="226128" z="-3664" price="5900" />
+    <tele id="68" description="Heine -> Entrance to Alligator Islands" x="115583" y="192261" z="-3488" price="2100" />
+    <tele id="69" description="Giran -> Dragon Valley" x="73024" y="118485" z="-3688" price="1800" />
+    <tele id="70" description="Giran -> Heine" x="111455" y="219400" z="-3544" price="7600" />
+    <tele id="76" description="Aden -> Coliseum" x="146440" y="46723" z="-3432" price="2000" />
+    <tele id="81" description="Aden -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="6800" />
+    <tele id="84" description="Aden -> Forsaken Plains" x="168217" y="37990" z="-4072" price="1900" />
+    <tele id="85" description="Dion -> Heine" x="111455" y="219400" z="-3544" price="12000" />
+    <tele id="86" description="Dion -> Fortress of Resistance" x="47382" y="111278" z="-2104" price="1700" />
+    <tele id="87" description="Dion -> Bee Hive" x="34475" y="188095" z="-2976" price="2900" />
+    <tele id="88" description="Gludio -> Windawood Manor" x="-28327" y="155125" z="-3496" price="1400" />
+    <tele id="90" description="Gludin -> Abandoned Camp" x="-49853" y="147089" z="-2784" price="1200" />
+    <tele id="91" description="Gludin -> Fellmere Harvest Grounds" x="-63736" y="101522" z="-3552" price="1400" />
+    <tele id="92" description="Gludin -> Langk Lizardman Dwelling" x="-44763" y="203497" z="-3592" price="1800" />
+    <tele id="93" description="Orc Village -> The Immortal Plateau" x="-10983" y="-117484" z="-2464" price="960" />
+    <tele id="94" description="Orc Village -> Immortal Plateau,Southern Region" x="-4190" y="-80040" z="-2696"
+          price="2000" />
+    <tele id="96" description="Orc Village -> Frozen Waterfall" x="8652" y="-139941" z="-1144" price="1600" />
+    <tele id="97" description="Oren -> Plains of Lizardmen" x="87252" y="85514" z="-3056" price="1900" />
+    <tele id="98" description="Oren -> Sea of Spores" x="64328" y="26803" z="-3768" price="2500" />
+    <tele id="99" description="Hunters -> Northern Pathway of Enchanted Valley" x="104426" y="33746" z="-3800"
+          price="3600" />
+    <tele id="100" description="Hunters -> Southern Pathway of Enchanted Valley" x="124904" y="61992" z="-3920"
+          price="1300" />
+    <tele id="101" description="Hunters -> Entrance to the Forest of Mirrors" x="142065" y="81300" z="-3000"
+          price="2000" />
+    <tele id="107" description="Giran Harbor -> Heine" x="111455" y="219400" z="-3544" price="8500" />
+    <tele id="108" description="Goddard -> Rune Township" x="43835" y="-47749" z="-792" price="10000" />
+    <tele id="109" description="Goddard -> Varka Silenos Stronghold" x="125740" y="-40864" z="-3736" price="4200" />
+    <tele id="110" description="Goddard -> Ketra Orc Outpost" x="146990" y="-67128" z="-3640" price="1800" />
+    <tele id="119" description="Rune Township -> Town of Goddard" x="148024" y="-55281" z="-2728" price="10000" />
+    <tele id="120" description="Rune Township -> The Town of Giran" x="83551" y="147945" z="-3400" price="59000" />
+    <tele id="121" description="Rune -> Aden Castle Town" x="146783" y="25808" z="-2008" price="37000" />
+    <tele id="122" description="Rune -> Rune Castle Town Guild" x="38316" y="-48216" z="-1152" price="150" />
+    <tele id="123" description="Rune -> Rune Castle Town Temple" x="38303" y="-48040" z="896" price="150" />
+    <tele id="124" description="Rune -> Forest of the Dead" x="52107" y="-54328" z="-3152" price="1200" />
+    <tele id="125" description="Rune -> Swamp of Screams" x="69340" y="-50203" z="-3288" price="3000" />
+    <tele id="126" description="Rune -> Stakato Nest" x="89513" y="-44800" z="-2136" price="9100" />
+    <tele id="132" description="Goddard -> Aden Castle Town" x="146783" y="25808" z="-2008" price="8100" />
+    <tele id="134" description="Aden -> Rune" x="43835" y="-47749" z="-792" price="37000" />
+    <tele id="135" description="Aden -> Goddard" x="148024" y="-55281" z="-2728" price="8100" />
+    <tele id="136" description="Giran -> Giran Harbor" x="47938" y="186864" z="-3480" price="5200" />
+    <tele id="137" description="Dwarven Village -> Mithril Mines Eastern Entrance" x="178591" y="-184615" z="-360"
+          price="12000" />
+    <tele id="201" description="TOI - 1st Floor" x="115168" y="16022" z="-5100" price="100000" />
+    <tele id="202" description="TOI - 2nd Floor" x="114649" y="18587" z="-3609" price="150000" />
+    <tele id="203" description="TOI - 3rd Floor" x="117918" y="16039" z="-2127" price="200000" />
+    <tele id="204" description="TOI - 4th Floor" x="114622" y="12946" z="-645" price="250000" />
+    <tele id="205" description="TOI - 5th Floor" x="112209" y="16078" z="928" price="300000" />
+    <tele id="206" description="TOI - 6th Floor" x="112376" y="16099" z="1947" price="350000" />
+    <tele id="207" description="TOI - 7th Floor" x="114448" y="16175" z="2994" price="400000" />
+    <tele id="208" description="TOI - 8th Floor" x="111063" y="16118" z="3967" price="450000" />
+    <tele id="209" description="TOI - 9th Floor" x="117147" y="18415" z="4977" price="500000" />
+    <tele id="210" description="TOI - 10th Floor" x="118374" y="15973" z="5987" price="550000" />
+    <tele id="211" description="TOI - 11th Floor" x="112209" y="16078" z="7028" price="600000" />
+    <tele id="212" description="TOI - 12th Floor" x="114809" y="18711" z="7996" price="650000" />
+    <tele id="213" description="TOI - 13th Floor" x="115178" y="16989" z="9007" price="700000" />
+    <tele id="214" description="TOI - 14th Floor Outside Door" x="112714" y="14111" z="10077" price="800000" />
+    <tele id="215" description="TOI - 14th Floor Inside On Roof" x="113098" y="14532" z="10077" price="900000" />
+    <tele id="250" description="Cat Heretics Entrance" x="-52964" y="-250276" z="-7910" />
+    <tele id="251" description="Cat Heretics Exit" x="42514" y="143917" z="-5385" />
+    <tele id="252" description="Cat Branded Entrance" x="46472" y="170305" z="-4982" />
+    <tele id="253" description="Cat Branded Exit" x="45770" y="170299" z="-4985" />
+    <tele id="254" description="Cat Apostate Entrance" x="-20322" y="-250786" z="-8160" />
+    <tele id="255" description="Cat Apostate Exit" x="77225" y="78362" z="-5119" />
+    <tele id="256" description="Cat Witch Entrance" x="140690" y="79679" z="-5429" />
+    <tele id="257" description="Cat Witch Exit" x="139965" y="79678" z="-5433" />
+    <tele id="258" description="Cat DarkOmen Entrance" x="-19176" y="13504" z="-4899" />
+    <tele id="259" description="Cat DarkOmen Exit" x="-19931" y="13502" z="-4905" />
+    <tele id="260" description="Cat ForbiddenPath Entrance" x="12828" y="-248492" z="-9582" />
+    <tele id="261" description="Cat ForbiddenPath Exit" x="113429" y="84540" z="-6545" />
+    <tele id="262" description="Necro Sacrifice Entrance" x="-41563" y="210034" z="-5088" />
+    <tele id="263" description="Necro Sacrifice Exit" x="-41567" y="209292" z="-5091" />
+    <tele id="264" description="Necro Pilgrims Entrance" x="45241" y="123636" z="-5414" />
+    <tele id="265" description="Necro Pilgrims Exit" x="45250" y="124366" z="-5417" />
+    <tele id="266" description="Necro Worshippers Entrance" x="111525" y="174022" z="-5432" />
+    <tele id="267" description="Necro Worshippers Exit" x="110818" y="174010" z="-5443" />
+    <tele id="268" description="Necro Patriots Entrance" x="-21499" y="77376" z="-5168" />
+    <tele id="269" description="Necro Patriots Exit" x="-22197" y="77369" z="-5177" />
+    <tele id="270" description="Necro Ascetics Entrance" x="-51942" y="79096" z="-4739" />
+    <tele id="271" description="Necro Ascetics Exit" x="-52716" y="79106" z="-4745" />
+    <tele id="272" description="Necro Martyrs Entrance" x="118576" y="132800" z="-4832" />
+    <tele id="273" description="Necro Martyrs Exit" x="117793" y="132810" z="-4835" />
+    <tele id="274" description="Necro Saints Entrance" x="83357" y="209207" z="-5437" />
+    <tele id="275" description="Necro Saints Exit" x="82608" y="209225" z="-5443" />
+    <tele id="276" description="Necro Disciples Entrance" x="172600" y="-17599" z="-4899" />
+    <tele id="277" description="Necro Disciples Exit" x="171902" y="-17595" z="-4905" />
+    <tele id="350" description="Dion(artifact -> out)" x="22967" y="157715" z="-2954" />
+    <tele id="351" description="Dion(artifact -> hall)" x="22090" y="159871" z="-2711" />
+    <tele id="352" description="Dion(artifact -> outofcastle)" x="22448" y="155798" z="-2958" />
+    <tele id="353" description="Dion(in -> artifact)" x="22592" y="161530" z="-2775" />
+    <tele id="354" description="Dion(in -> out)" x="22967" y="157715" z="-2954" />
+    <tele id="355" description="Dion(in -> outofcastle)" x="22448" y="155798" z="-2958" />
+    <tele id="356" description="Dion(out -> artifact)" x="22592" y="161530" z="-2775" />
+    <tele id="357" description="Dion(out -> hall)" x="22090" y="159871" z="-2711" />
+    <tele id="358" description="Dion(out -> outofcastle)" x="22448" y="155798" z="-2958" />
+    <tele id="359" description="Dion(outofcastle -> artifact)" x="22592" y="161530" z="-2775" />
+    <tele id="360" description="Dion(outofcastle -> out)" x="22967" y="157715" z="-2954" />
+    <tele id="361" description="Dion(outofcastle -> hall)" x="22090" y="159871" z="-2711" />
+    <tele id="362" description="Giran(artifact -> out)" x="113892" y="144175" z="-2714" />
+    <tele id="363" description="Giran(artifact -> hall)" x="115984" y="145073" z="-2584" />
+    <tele id="364" description="Giran(artifact -> outofcastle)" x="112016" y="144682" z="-2833" />
+    <tele id="365" description="Giran(in -> artifact)" x="117619" y="144564" z="-2648" />
+    <tele id="366" description="Giran(in -> out)" x="113892" y="144175" z="-2714" />
+    <tele id="367" description="Giran(in -> outofcastle)" x="112016" y="144682" z="-2833" />
+    <tele id="368" description="Giran(out -> artifact)" x="117619" y="144564" z="-2648" />
+    <tele id="369" description="Giran(out -> hall)" x="115984" y="145073" z="-2584" />
+    <tele id="370" description="Giran(out -> outofcastle)" x="112016" y="144682" z="-2833" />
+    <tele id="371" description="Giran(outofcastle -> artifact)" x="117619" y="144564" z="-2648" />
+    <tele id="372" description="Giran(outofcastle -> out)" x="113892" y="144175" z="-2714" />
+    <tele id="373" description="Giran(outofcastle -> hall)" x="115984" y="145073" z="-2584" />
+    <tele id="374" description="Oren(artifact -> out)" x="79956" y="36351" z="-2532" />
+    <tele id="375" description="Oren(artifact -> hall)" x="82113" y="37217" z="-2311" />
+    <tele id="376" description="Oren(artifact -> outofcastle)" x="78079" y="36809" z="-2566" />
+    <tele id="377" description="Oren(in -> artifact)" x="83710" y="36713" z="-2375" />
+    <tele id="378" description="Oren(in -> out)" x="79956" y="36351" z="-2532" />
+    <tele id="379" description="Oren(in -> outofcastle)" x="78079" y="36809" z="-2566" />
+    <tele id="380" description="Oren(out -> artifact)" x="83710" y="36713" z="-2375" />
+    <tele id="381" description="Oren(out -> hall)" x="82113" y="37217" z="-2311" />
+    <tele id="382" description="Oren(out -> outofcastle)" x="78079" y="36809" z="-2566" />
+    <tele id="383" description="Oren(outofcastle -> artifact)" x="83710" y="36713" z="-2375" />
+    <tele id="384" description="Oren(outofcastle -> out)" x="79956" y="36351" z="-2532" />
+    <tele id="385" description="Oren(outofcastle -> hall)" x="82113" y="37217" z="-2311" />
+    <tele id="386" description="Gludio(artifact -> out)" x="-18941" y="112085" z="-2762" />
+    <tele id="387" description="Gludio(artifact -> hall)" x="-18129" y="109898" z="-2517" />
+    <tele id="388" description="Gludio(artifact -> outofcastle)" x="-18484" y="113897" z="-2772" />
+    <tele id="389" description="Gludio(in -> artifact)" x="-18592" y="108271" z="-2581" />
+    <tele id="390" description="Gludio(in -> out)" x="-18941" y="112085" z="-2762" />
+    <tele id="391" description="Gludio(in -> outofcastle)" x="-18484" y="113897" z="-2772" />
+    <tele id="392" description="Gludio(out -> artifact)" x="-18592" y="108271" z="-2581" />
+    <tele id="393" description="Gludio(out -> hall)" x="-18129" y="109898" z="-2517" />
+    <tele id="394" description="Gludio(out -> outofcastle)" x="-18484" y="113897" z="-2772" />
+    <tele id="395" description="Gludio(outofcastle -> artifact)" x="-18592" y="108271" z="-2581" />
+    <tele id="396" description="Gludio(outofcastle -> out)" x="-18941" y="112085" z="-2762" />
+    <tele id="397" description="Gludio(outofcastle -> hall)" x="-18129" y="109898" z="-2517" />
+    <tele id="398" description="Aden(artifact -> out)" x="147723" y="7916" z="-475" />
+    <tele id="399" description="Aden(artifact -> in)" x="148580" y="4578" z="-408" />
+    <tele id="400" description="Aden(artifact -> outofcastle)" x="147582" y="8753" z="-496" />
+    <tele id="401" description="Aden(artifact -> hall)" x="147520" y="6107" z="-409" />
+    <tele id="402" description="Aden(in -> artifact)" x="1147499" y="2544" z="-473" />
+    <tele id="403" description="Aden(in -> out)" x="147723" y="7916" z="-475" />
+    <tele id="404" description="Aden(in -> outofcastle)" x="147582" y="8753" z="-496" />
+    <tele id="405" description="Aden(in -> hall)" x="147520" y="6107" z="-409" />
+    <tele id="406" description="Aden(out -> artifact)" x="147499" y="2544" z="-473" />
+    <tele id="407" description="Aden(out -> in)" x="148580" y="4578" z="-408" />
+    <tele id="408" description="Aden(out -> outofcastle)" x="147582" y="8753" z="-496" />
+    <tele id="409" description="Aden(out -> hall)" x="147520" y="6107" z="-409" />
+    <tele id="410" description="Aden(outofcastle -> artifact)" x="147499" y="2544" z="-473" />
+    <tele id="411" description="Aden(outofcastle -> out)" x="147723" y="7916" z="-475" />
+    <tele id="412" description="Aden(outofcastle -> in)" x="148580" y="4578" z="-408" />
+    <tele id="413" description="Aden(outofcastle -> hall)" x="147520" y="6107" z="-409" />
+    <tele id="414" description="Aden(hall) -> artifact)" x="147499" y="2544" z="-473" />
+    <tele id="415" description="Aden(hall) -> out)" x="147723" y="7916" z="-475" />
+    <tele id="416" description="Aden(hall) -> in)" x="148580" y="4578" z="-408" />
+    <tele id="417" description="Aden(hall) -> outofcastle)" x="147582" y="8753" z="-496" />
+    <tele id="418" description="Dwarven Village -> Abandoned Coal Mines" x="139714" y="-177456" z="-1536" price="690" />
+    <tele id="419" description="Dwarven Village -> Mithril Mines Western Entrance" x="171946" y="-173352" z="3440"
+          price="11000" />
+    <tele id="450" description="Disciples Necropolis -> Anakim (DUSK)" x="185065" y="-12612" z="-5104" />
+    <tele id="451" description="Disciples Necropolis -> Lilith (DAWN)" x="185060" y="-9622" z="-5104" />
+    <tele id="452" description="Anakim/Lilith -> Disciples Necropolis" x="183225" y="-11911" z="-4897" />
+    <tele id="464" description="DE Village -> Dark Forest" x="-22224" y="14168" z="-3232" price="890" />
+    <tele id="465" description="DE Village -> Spider Nest" x="-61095" y="75104" z="-3352" price="3600" />
+    <tele id="466" description="DE Village -> Swampland" x="-21966" y="40544" z="-3192" price="1100" />
+    <tele id="467" description="DE Village -> Neutral Zone" x="-10612" y="75881" z="-3592" price="1700" />
+    <tele id="468" description="Elven Village -> Elven Forest" x="21362" y="51122" z="-3688" price="710" />
+    <tele id="470" description="Elven Village -> Elven Fortress" x="29294" y="74968" z="-3776" price="820" />
+    <tele id="471" description="Orc Village -> Cave of Trials" x="9340" y="-112509" z="-2536" price="1500" />
+    <tele id="500" description="Clan Hall -> Village Square" x="-14393" y="123671" z="-3144" />
+    <tele id="501" description="Clan Hall -> East Gate Entrance" x="-11817" y="123652" z="-3079" />
+    <tele id="502" description="Clan Hall -> West Gate Entrance" x="-16796" y="124108" z="-3127" />
+    <tele id="503" description="Clan Hall -> South Gate Entrance" x="-14207" y="126547" z="-3151" />
+    <tele id="504" description="Clan Hall -> North Gate Entrance" x="-14591" y="121024" z="-2990" />
+    <tele id="505" description="Clan Hall -> Ruins of Agony" x="-41248" y="122848" z="-2912" price="500" />
+    <tele id="506" description="Clan Hall -> Ruins of Despair" x="-19120" y="136816" z="-3762" price="500" />
+    <tele id="507" description="Clan Hall -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="508" description="Clan Hall -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="509" description="Clan Hall -> Village Square" x="-82445" y="150788" z="-3129" />
+    <tele id="510" description="Clan Hall -> North Gate Entrance" x="-83331" y="148563" z="-3148" />
+    <tele id="511" description="Clan Hall -> East Gate Entrance" x="-78405" y="152723" z="-3181" />
+    <tele id="512" description="Clan Hall -> South Gate Entrance" x="-77460" y="155995" z="-3194" />
+    <tele id="513" description="Clan Hall -> West Gate Entrance" x="-85138" y="152749" z="-3160" />
+    <tele id="514" description="Clan Hall -> Windmill Hill" x="-75437" y="168800" z="-3632" price="500" />
+    <tele id="515" description="Clan Hall -> Fellmere Harvesting Grounds" x="-63736" y="101522" z="-3552" price="500" />
+    <tele id="516" description="Clan Hall -> Windy Hill" x="-88539" y="83389" z="-2864" price="500" />
+    <tele id="517" description="Clan Hall -> Abandoned Camp" x="-49853" y="147089" z="-2784" price="500" />
+    <tele id="518" description="Clan Hall -> Wastelands" x="-16526" y="208032" z="-3664" price="500" />
+    <tele id="519" description="Clan Hall -> Village Square" x="19025" y="145245" z="-3107" />
+    <tele id="520" description="Clan Hall -> North Gate Entrance" x="21511" y="145866" z="-3153" />
+    <tele id="521" description="Clan Hall -> East Gate Entrance" x="18891" y="142365" z="-3051" />
+    <tele id="522" description="Clan Hall -> South Gate Entrance" x="17394" y="147593" z="-3129" />
+    <tele id="523" description="Clan Hall -> West Gate Entrance" x="16582" y="144130" z="-2960" />
+    <tele id="524" description="Clan Hall -> Cruma Marshlands" x="5106" y="126916" z="-3664" price="500" />
+    <tele id="525" description="Clan Hall -> Fortress of Resistance" x="47382" y="111278" z="-2104" price="500" />
+    <tele id="526" description="Clan Hall -> Plains of Dion" x="630" y="179184" z="-3720" price="500" />
+    <tele id="527" description="Clan Hall -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="528" description="Clan Hall -> Entrance to Floran Village" x="17430" y="170103" z="-3506" price="500" />
+    <tele id="529" description="Clan Hall -> Village Square" x="147450" y="28081" z="-2294" />
+    <tele id="530" description="Clan Hall -> East Gate Entrance" x="151950" y="25094" z="-2172" />
+    <tele id="531" description="Clan Hall -> West Gate Entrance" x="142593" y="26344" z="-2425" />
+    <tele id="532" description="Clan Hall -> South Gate Entrance" x="147503" y="32299" z="-2501" />
+    <tele id="533" description="Clan Hall -> North Gate Entrance" x="147465" y="20737" z="-2130" />
+    <tele id="534" description="Clan Hall -> Ancient Battleground" x="106517" y="-2871" z="-3454" price="500" />
+    <tele id="535" description="Clan Hall -> Enchanted Valley, Southern Region" x="124904" y="61992" z="-3973"
+          price="500" />
+    <tele id="536" description="Clan Hall -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="537" description="Clan Hall -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="538" description="Clan Hall -> Forest of Mirrors" x="142065" y="81300" z="-3000" price="500" />
+    <tele id="539" description="Clan Hall -> Anghel Waterfall" x="166182" y="91560" z="-3168" price="500" />
+    <tele id="540" description="Clan Hall -> South Entrance of Devastated Castle" x="181726" y="-7524" z="-3464"
+          price="500" />
+    <tele id="541" description="Clan Hall -> West Area of the Devastated Castle" x="168779" y="-18790" z="-3184"
+          price="500" />
+    <tele id="542" description="Clan Hall -> Seal of Shilen" x="184742" y="19745" z="-3168" price="500" />
+    <tele id="543" description="Clan Hall -> Forsaken Plains" x="168217" y="37990" z="-4072" price="500" />
+    <tele id="544" description="Clan Hall -> Tower of Insolence" x="114649" y="11115" z="-5120" price="500" />
+    <tele id="545" description="Clan Hall -> The Giants Cave Upper Layer" x="183985" y="61424" z="-3992" price="500" />
+    <tele id="546" description="Clan Hall -> The Giants Cave Lower Layer" x="191754" y="56760" z="-7624" price="500" />
+    <tele id="547" description="Clan Hall -> Village Square" x="81749" y="149171" z="-3464" />
+    <tele id="548" description="Clan Hall -> North Gate Entrance" x="81525" y="143821" z="-3528" />
+    <tele id="549" description="Clan Hall -> East Gate Entrance" x="88342" y="147329" z="-3400" />
+    <tele id="550" description="Clan Hall -> South Gate Entrance" x="81548" y="152633" z="-3528" />
+    <tele id="551" description="Clan Hall -> West Gate Entrance" x="77305" y="148636" z="-3592" />
+    <tele id="552" description="Clan Hall -> Brekas Stronghold" x="85546" y="131328" z="-3672" price="500" />
+    <tele id="553" description="Clan Hall -> Devils Isle" x="43408" y="206881" z="-3752" price="500" />
+    <tele id="554" description="Clan Hall -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="555" description="Clan Hall -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="556" description="Clan Hall -> Village Square" x="147728" y="-56331" z="-2776" />
+    <tele id="557" description="Clan Hall -> North Gate Entrance" x="147731" y="-58930" z="-2976" />
+    <tele id="558" description="Clan Hall -> East Gate Entrance" x="150561" y="-57489" z="-2976" />
+    <tele id="559" description="Clan Hall -> West Gate Entrance" x="144866" y="-57464" z="-2976" />
+    <tele id="560" description="Clan Hall -> Varka Silenos Stronghold" x="125740" y="-40864" z="-3736" price="500" />
+    <tele id="561" description="Clan Hall -> Ketra Orc Outpost" x="146990" y="-67128" z="-3640" price="500" />
+    <tele id="562" description="Clan Hall -> Entrance to the Forge of the Gods" x="169018" y="-116303" z="-2432"
+          price="500" />
+    <tele id="563" description="Clan Hall -> Wall of Argos" x="165054" y="-47861" z="-3560" price="500" />
+    <tele id="564" description="Clan Hall -> Hot Springs" x="144880" y="-113468" z="-2560" price="500" />
+    <tele id="565" description="Clan Hall -> Village Square" x="43889" y="-49101" z="-792" />
+    <tele id="566" description="Clan Hall -> South Gate Entrance" x="43307" y="-46563" z="-816" />
+    <tele id="567" description="Clan Hall -> North Gate Entrance" x="40909" y="-52670" z="-896" />
+    <tele id="568" description="Clan Hall -> Forest of the Dea" x="52107" y="-54328" z="-3158" price="500" />
+    <tele id="569" description="Clan Hall -> Wild Beast Pastures" x="43805" y="-88010" z="-2780" price="500" />
+    <tele id="570" description="Clan Hall -> Swamp of Screams" x="69340" y="-50203" z="-3314" price="500" />
+    <tele id="571" description="Clan Hall -> Valley of Saints" x="65307" y="-71445" z="-3696" price="500" />
+    <tele id="572" description="Clan Hall -> Monastery of Silence" x="106414" y="-87799" z="-2949" price="500" />
+    <tele id="573" description="Clan Hall -> Shyeeds Cavern" x="76911" y="-55295" z="-5824" price="500" />
+    <tele id="574" description="Clan Hall -> Village Square" x="87379" y="-142322" z="-1336" />
+    <tele id="575" description="Clan Hall -> West Gate Entrance" x="84753" y="-141051" z="-1536" />
+    <tele id="576" description="Clan Hall -> South Gate Entrance" x="87347" y="-139802" z="-1536" />
+    <tele id="577" description="Clan Hall -> East Gate Entrance" x="89959" y="-141034" z="-1536" />
+    <tele id="578" description="Clan Hall -> Crypts of Disgrace" x="47692" y="-115745" z="-3744" price="500" />
+    <tele id="579" description="Clan Hall -> Plunderous Plains" x="111965" y="-154172" z="-1528" price="500" />
+    <tele id="580" description="Clan Hall -> Den of Evil" x="68693" y="-110438" z="-1946" price="500" />
+    <tele id="581" description="Clan Hall -> Ice Merchant Cabin" x="113903" y="-108752" z="-860" price="500" />
+    <tele id="1001" description="TI -> Obelisk of Victory" x="-99586" y="237637" z="-3568" price="470" />
+    <tele id="1002" description="TI -> Western Territory" x="-106696" y="214691" z="-3424" price="1000" />
+    <tele id="1003" description="TI -> Elven Ruins" x="-112367" y="234703" z="-3688" price="830" />
+    <tele id="1004" description="TI -> Singing Waterfall" x="-111728" y="244330" z="-3448" price="770" />
+    <tele id="1005" description="TI -> DE Village" x="9709" y="15566" z="-4568" price="24000" />
+    <tele id="1006" description="TI -> Dwarven Village" x="115120" y="-178224" z="-880" price="46000" />
+    <tele id="1007" description="TI -> Elven Village" x="46951" y="51550" z="-2976" price="23000" />
+    <tele id="1008" description="TI -> Orc Village" x="-45158" y="-112583" z="-240" price="35000" />
+    <tele id="1009" description="DE Village -> Dwarven Village" x="115120" y="-178224" z="-880" price="22000" />
+    <tele id="1010" description="DE Village -> TI Village" x="-84141" y="244623" z="-3728" price="24000" />
+    <tele id="1012" description="DE Village -> Orc Village" x="-45158" y="-112583" z="-240" price="13000" />
+    <tele id="1013" description="Elven Village -> Neutral Zone" x="-10612" y="75881" z="-3592" price="1700" />
+    <tele id="1014" description="Elven Village -> Dwarven Village" x="115120" y="-178224" z="-880" price="23000" />
+    <tele id="1015" description="Elven Village -> TI Village" x="-84141" y="244623" z="-3728" price="23000" />
+    <tele id="1016" description="Elven Village -> Orc Village" x="-45158" y="-112583" z="-240" price="18000" />
+    <tele id="1017" description="Dwarven Village -> DE Village" x="9709" y="15566" z="-4568" price="22000" />
+    <tele id="1018" description="Dwarven Village -> Elven Village" x="46951" y="51550" z="-2976" price="23000" />
+    <tele id="1019" description="Dwarven Village -> TI Village" x="-84141" y="244623" z="-3728" price="46000" />
+    <tele id="1020" description="Dwarven Village -> Schuttgart" x="87126" y="-143520" z="-1288" price="4400" />
+    <tele id="1021" description="Dwarven Village -> Orc Village" x="-45158" y="-112583" z="-240" price="17000" />
+    <tele id="1022" description="Dwarven Village -> Western Mining Zone (Central Shore)" x="136910" y="-205082"
+          z="-3664" price="970" />
+    <tele id="1023" description="Orc Village -> Town of Gludio" x="-12787" y="122779" z="-3112" price="23000" />
+    <tele id="1024" description="Orc Village -> Schuttgart" x="87126" y="-143520" z="-1288" price="13000" />
+    <tele id="1025" description="Orc Village -> DE Village" x="9709" y="15566" z="-4568" price="13000" />
+    <tele id="1026" description="Orc Village -> Dwarven Village" x="115120" y="-178224" z="-880" price="17000" />
+    <tele id="1027" description="Orc Village -> TI Village" x="-84141" y="244623" z="-3728" price="35000" />
+    <tele id="1028" description="Orc Village -> Elven Village" x="46951" y="51550" z="-2976" price="18000" />
+    <tele id="1029" description="Gludin -> Windmill Hill" x="-75437" y="168800" z="-3632" price="550" />
+    <tele id="1030" description="Gludin -> Forgotten Temple" x="-53001" y="191425" z="-3568" price="2000" />
+    <tele id="1031" description="Gludio -> Ant Cave" x="-9959" y="176184" z="-4160" price="2100" />
+    <tele id="1032" description="Gludin -> Red Rock Ridge" x="-42256" y="198333" z="-2800" price="3700" />
+    <tele id="1033" description="Gludio -> Orc Village" x="-45158" y="-112583" z="-240" price="23000" />
+    <tele id="1034" description="Gludio -> Dwarven Village" x="115120" y="-178224" z="-880" price="32000" />
+    <tele id="1035" description="Gludio -> Schuttgart" x="87126" y="-143520" z="-1288" price="85000" />
+    <tele id="1036" description="Gludio -> Heine" x="111455" y="219400" z="-3544" price="47000" />
+    <tele id="1037" description="Gludio -> Aden" x="146783" y="25808" z="-2008" price="56000" />
+    <tele id="1038" description="Gludio -> Oren" x="82971" y="53207" z="-1488" price="35000" />
+    <tele id="1039" description="Gludio -> Goddard" x="148024" y="-55281" z="-2728" price="71000" />
+    <tele id="1040" description="Gludio -> Giran" x="83551" y="147945" z="-3400" price="29000" />
+    <tele id="1041" description="Gludio -> Rune" x="43835" y="-47749" z="-792" price="53000" />
+    <tele id="1042" description="Gludio -> Ruins of Agony" x="-41248" y="122848" z="-2904" price="790" />
+    <tele id="1043" description="Gludio -> Ruins of Despair" x="-19120" y="136816" z="-3752" price="610" />
+    <tele id="1044" description="Gludin -> Orc Barracks" x="-89763" y="105359" z="-3576" price="1800" />
+    <tele id="1046" description="Dion -> Goddard" x="148024" y="-55281" z="-2728" price="71000" />
+    <tele id="1047" description="Dion -> Rune" x="43835" y="-47749" z="-792" price="57000" />
+    <tele id="1048" description="Dion -> Schuttgart" x="87126" y="-143520" z="-1288" price="88000" />
+    <tele id="1049" description="Dion -> Aden" x="146783" y="25808" z="-2008" price="52000" />
+    <tele id="1050" description="Dion -> Oren" x="82971" y="53207" z="-1488" price="33000" />
+    <tele id="1051" description="Dion -> Cruma Marshlands" x="5106" y="126916" z="-3664" price="760" />
+    <tele id="1052" description="Dion -> Cruma Tower" x="17225" y="114173" z="-3440" price="2300" />
+    <tele id="1053" description="Dion -> Plains of Dion" x="630" y="179184" z="-3720" price="1500" />
+    <tele id="1054" description="Dion -> Tanor Canyon" x="60374" y="164301" z="-2856" price="3900" />
+    <tele id="1055" description="Giran -> Gludio" x="-12787" y="122779" z="-3112" price="29000" />
+    <tele id="1056" description="Giran -> Goddard" x="148024" y="-55281" z="-2728" price="63000" />
+    <tele id="1057" description="Giran -> Rune" x="43835" y="-47749" z="-792" price="59000" />
+    <tele id="1058" description="Giran -> Schuttgart" x="87126" y="-143520" z="-1288" price="87000" />
+    <tele id="1059" description="Giran -> Aden" x="146783" y="25808" z="-2008" price="13000" />
+    <tele id="1060" description="Giran -> Antharas Lair" x="131557" y="114509" z="-3712" price="7000" />
+    <tele id="1061" description="Giran -> Devil Isle" x="43408" y="206881" z="-3752" price="5700" />
+    <tele id="1062" description="Giran -> Brekas Stronghold" x="85546" y="131328" z="-3672" price="1000" />
+    <tele id="1063" description="Heine -> Oren" x="82971" y="53207" z="-1488" price="50000" />
+    <tele id="1064" description="Heine -> Aden" x="146783" y="25808" z="-2008" price="59000" />
+    <tele id="1065" description="Heine -> Goddard" x="148024" y="-55281" z="-2728" price="83000" />
+    <tele id="1066" description="Heine -> Rune" x="43835" y="-47749" z="-792" price="82000" />
+    <tele id="1067" description="Heine -> Schuttgart" x="87126" y="-143520" z="-1288" price="100000" />
+    <tele id="1068" description="Heine -> Gludio" x="-12787" y="122779" z="-3112" price="47000" />
+    <tele id="1069" description="Heine -> Garden of Eva" x="84413" y="234334" z="-3656" price="2400" />
+    <tele id="1070" description="Oren -> Rune" x="43835" y="-47749" z="-792" price="10000" />
+    <tele id="1071" description="Oren -> Goddard" x="148024" y="-55281" z="-2728" price="37000" />
+    <tele id="1072" description="Oren -> Heine" x="111455" y="219400" z="-3544" price="50000" />
+    <tele id="1073" description="Oren -> Dion" x="15472" y="142880" z="-2688" price="33000" />
+    <tele id="1074" description="Oren -> Schuttgart" x="87126" y="-143520" z="-1288" price="59000" />
+    <tele id="1075" description="Oren -> Gludio" x="-12787" y="122779" z="-3112" price="35000" />
+    <tele id="1077" description="Oren -> Outlaw Forest" x="91539" y="-12204" z="-2440" price="5200" />
+    <tele id="1078" description="Aden -> Giran" x="83551" y="147945" z="-3400" price="13000" />
+    <tele id="1079" description="Aden -> Heine" x="111455" y="219400" z="-3546" price="59000" />
+    <tele id="1080" description="Aden -> Schuttgart" x="87126" y="-143520" z="-1288" price="53000" />
+    <tele id="1081" description="Aden -> Dion" x="15472" y="142880" z="-2688" price="52000" />
+    <tele id="1082" description="Aden -> Gludio" x="-12787" y="122779" z="-3112" price="56000" />
+    <tele id="1083" description="Aden -> Seal of Shilen" x="184742" y="19745" z="-3168" price="3000" />
+    <tele id="1084" description="Aden -> Forest of Mirrors" x="142065" y="81300" z="-3000" price="4400" />
+    <tele id="1085" description="Aden -> Fields of Massacre" x="183543" y="-14974" z="-2776" price="6500" />
+    <tele id="1086" description="Aden -> Ancient Battleground" x="106517" y="-2871" z="-3416" price="5900" />
+    <tele id="1087" description="Aden -> Silent Valley" x="170838" y="55776" z="-5280" price="6100" />
+    <tele id="1088" description="Aden -> ToI" x="114649" y="11115" z="-5120" price="4200" />
+    <tele id="1089" description="Goddard -> Gludio" x="-12787" y="122779" z="-3112" price="71000" />
+    <tele id="1090" description="Goddard -> Giran" x="83551" y="147945" z="-3400" price="63000" />
+    <tele id="1091" description="Goddard -> Dion" x="15472" y="142880" z="-2688" price="71000" />
+    <tele id="1092" description="Goddard -> Heine" x="111455" y="219400" z="-3544" price="83000" />
+    <tele id="1093" description="Goddard -> Schuttgart" x="87126" y="-143520" z="-1288" price="10000" />
+    <tele id="1094" description="Goddard -> Oren" x="82971" y="53207" z="-1488" price="37000" />
+    <tele id="1095" description="Goddard -> Hot Springs" x="144880" y="-113468" z="-2560" price="9300" />
+    <tele id="1096" description="Goddard -> Wall of Argos" x="165054" y="-47861" z="-3560" price="2200" />
+    <tele id="1097" description="Goddard -> Monastery of silence" x="106414" y="-87799" z="-2920" price="10000" />
+    <tele id="1098" description="Rune -> Dion" x="15472" y="142880" z="-2688" price="57000" />
+    <tele id="1099" description="Rune Township -> The Town of Gludio" x="-12787" y="122779" z="-3114" price="53000" />
+    <tele id="1100" description="Rune -> Heine" x="111455" y="219400" z="-3544" price="82000" />
+    <tele id="1101" description="Rune -> Schuttgart" x="87126" y="-143520" z="-1288" price="10000" />
+    <tele id="1102" description="Rune -> Oren" x="82971" y="53207" z="-1488" price="10000" />
+    <tele id="1103" description="Rune -> Wild Beast Pastures" x="53516" y="-82831" z="-2700" price="7200" />
+    <tele id="1104" description="Rune -> Valley of Saints" x="65307" y="-71445" z="-3688" price="3800" />
+    <tele id="1105" description="Rune -> Monastery of Silence" x="106414" y="-87799" z="-2920" price="14000" />
+    <tele id="1106" description="Schuttgart -> Rune" x="43835" y="-47749" z="-792" price="10000" />
+    <tele id="1107" description="Schuttgart -> Goddard" x="148024" y="-55281" z="-2728" price="10000" />
+    <tele id="1108" description="Schuttgart -> Aden" x="146783" y="25808" z="-2008" price="53000" />
+    <tele id="1109" description="Schuttgart -> Oren" x="82971" y="53207" z="-1488" price="59000" />
+    <tele id="1110" description="Schuttgart -> Heine" x="111455" y="219400" z="-3544" price="100000" />
+    <tele id="1111" description="Schuttgart -> Giran" x="83551" y="147945" z="-3400" price="87000" />
+    <tele id="1112" description="Schuttgart -> Dion" x="15472" y="142880" z="-2688" price="87000" />
+    <tele id="1113" description="Schuttgart -> Gludio" x="-12787" y="122779" z="-3112" price="85000" />
+    <tele id="1114" description="Schuttgart -> Orc Village" x="-45158" y="-112583" z="-240" price="13000" />
+    <tele id="1115" description="Schuttgart -> Dwarven Village" x="115120" y="-178224" z="-880" price="4400" />
+    <tele id="1116" description="Schuttgart -> Den of Evil" x="68693" y="-110438" z="-1904" price="7500" />
+    <tele id="1117" description="Schuttgart -> Plunderous Plains" x="111965" y="-154172" z="-1528" price="1600" />
+    <tele id="1118" description="Schuttgart -> Ice Merchant Cabin" x="113903" y="-108752" z="-856" price="3500" />
+    <tele id="1119" description="Schuttgart -> Crypt of Disgrace" x="47692" y="-115745" z="-3744" price="9600" />
+    <tele id="1120" description="Schuttgart -> Pavel Ruins" x="91280" y="-117152" z="-3928" price="5300" />
+    <tele id="1121" description="Gludin -> Windy Hill" x="-88539" y="83389" z="-2864" price="2600" />
+    <tele id="1122" description="Kamael Vilage -> Town of Aden" x="146331" y="25762" z="-2018" price="26000" />
+    <tele id="1123" description="Kamael Vilage -> Talking Island Village" x="-84318" y="244579" z="-3730"
+          price="20000" />
+    <tele id="1124" description="Kamael Vilage -> Dark Elf Village" x="9745" y="15606" z="-4574" price="13000" />
+    <tele id="1125" description="Kamael Vilage -> Elven Village" x="46934" y="51467" z="-2977" price="16000" />
+    <tele id="1126" description="Kamael Vilage -> Dwarven Village" x="115113" y="-178212" z="-901" price="32000" />
+    <tele id="1127" description="Kamael Vilage -> Orc Village" x="-44836" y="-112524" z="-235" price="17000" />
+    <tele id="1128" description="Kamael Vilage -> Stronghold I" x="-122410" y="73205" z="-2872" price="2600" />
+    <tele id="1129" description="Kamael Vilage -> Stronghold II" x="-95540" y="52150" z="-2024" price="2200" />
+    <tele id="1130" description="Kamael Vilage -> Stronghold III" x="-85928" y="37095" z="-2048" price="3200" />
+    <tele id="1131" description="Kamael Vilage -> Isle of Souls Harbor" x="-74016" y="51932" z="-3680" price="4300" />
+    <tele id="1132" description="Kamael Vilage -> Stronghold I free" x="-122410" y="73205" z="-2872" />
+    <tele id="1133" description="Kamael Vilage -> Stronghold II free" x="-95540" y="52150" z="-2024" />
+    <tele id="1134" description="Kamael Vilage -> Stronghold III free" x="-85928" y="37095" z="-2048" />
+    <tele id="1135" description="Strongolds -> Kamael Village free" x="-117251" y="46771" z="360" />
+    <tele id="1136" description="Soul Isle Harbor -> The Town of Gludio" x="-12672" y="122776" z="-3116" price="9300" />
+    <tele id="1137" description="Soul Isle Harbor -> Town of Aden" x="146331" y="25762" z="-2018" price="22000" />
+    <tele id="1138" description="Soul Isle Harbor -> The Town of Gludio" x="-117251" y="46771" z="360" price="4300" />
+    <tele id="1139" description="Kamael Vilage -> The Town of Gludio" x="-12672" y="122776" z="-3116" price="12000" />
+    <tele id="2001" description="Gludio Outer -> Out" x="-18372" y="113315" z="-2760" />
+    <tele id="2002" description="Gludio Outer -> In" x="-18395" y="112831" z="-2768" />
+    <tele id="2003" description="Gludio Inner -> Out" x="-18115" y="110679" z="-2528" />
+    <tele id="2004" description="Gludio Inner -> In" x="-18123" y="110210" z="-2512" />
+    <tele id="2005" description="Dion Outer -> Out" x="22315" y="156447" z="-2962" />
+    <tele id="2006" description="Dion Outer -> In" x="22315" y="156909" z="-2962" />
+    <tele id="2007" description="Dion Inner -> Out" x="22073" y="159057" z="-2725" />
+    <tele id="2008" description="Dion Inner -> In" x="22073" y="159516" z="-2706" />
+    <tele id="2009" description="Giran Outer -> Out" x="112568" y="144869" z="-2835" />
+    <tele id="2010" description="Giran Outer -> In" x="113123" y="144869" z="-2835" />
+    <tele id="2011" description="Giran Inner -> Out" x="115209" y="145089" z="-2604" />
+    <tele id="2012" description="Giran Inner -> In" x="115727" y="145096" z="-2579" />
+    <tele id="2013" description="Oren Outer -> Out" x="78618" y="36955" z="-2562" />
+    <tele id="2014" description="Oren Outer -> In" x="79211" y="36955" z="-2562" />
+    <tele id="2015" description="Oren Inner -> Out" x="81285" y="37190" z="-2337" />
+    <tele id="2016" description="Oren Inner -> In" x="81789" y="37190" z="-2306" />
+    <tele id="2017" description="Aden Outer -> Out" x="147455" y="8808" z="-495" />
+    <tele id="2018" description="Aden Outer -> In" x="147455" y="7966" z="-470" />
+    <tele id="2019" description="Aden Inner -> Out" x="145616" y="4614" z="-436" />
+    <tele id="2020" description="Aden Inner -> In" x="146374" y="4599" z="-403" />
+    <tele id="2021" description="Aden Inner -> Out" x="149283" y="4610" z="-432" />
+    <tele id="2022" description="Aden Inner -> In" x="148575" y="4607" z="-403" />
+    <tele id="2023" description="Aden Hall -> Out" x="147456" y="6357" z="-407" />
+    <tele id="2024" description="Aden Hall -> In" x="147456" y="6058" z="-407" />
+    <tele id="2025" description="Aden Terrace -> Out" x="147458" y="2010" z="217" />
+    <tele id="2026" description="Aden Terrace -> In" x="147458" y="2408" z="219" />
+    <tele id="2027" description="Innadril Outer -> Out" x="116263" y="245174" z="-1058" />
+    <tele id="2028" description="Innadril Outer -> In" x="116263" y="245750" z="-1058" />
+    <tele id="2029" description="Innadril Inner -> Out" x="116021" y="247821" z="-826" />
+    <tele id="2030" description="Innadril Inner -> In" x="116021" y="248272" z="-805" />
+    <tele id="2031" description="Goddard Outer -> Out" x="147459" y="-45221" z="-2084" />
+    <tele id="2032" description="Goddard Outer -> In" x="147459" y="-45789" z="-2084" />
+    <tele id="2033" description="Goddard Inner -> Out" x="145514" y="-48241" z="-2383" />
+    <tele id="2034" description="Goddard Inner -> In" x="146026" y="-48241" z="-2383" />
+    <tele id="2035" description="Goddard Inner -> Out" x="149430" y="-48245" z="-2383" />
+    <tele id="2036" description="Goddard Inner -> In" x="148928" y="-48245" z="-2383" />
+    <tele id="2037" description="Goddard Terrace -> Out" x="148748" y="-48951" z="-687" />
+    <tele id="2038" description="Goddard Terrace -> In" x="148736" y="-49201" z="-688" />
+    <tele id="2039" description="Goddard Terrace -> Out" x="146177" y="-48942" z="-687" />
+    <tele id="2040" description="Goddard Terrace -> In" x="146181" y="-49209" z="-686" />
+    <tele id="2041" description="Rune Outer -> Out" x="18788" y="-49149" z="-1240" />
+    <tele id="2042" description="Rune Outer -> In" x="17716" y="-49149" z="-1190" />
+    <tele id="2043" description="Rune Inner -> Out" x="16037" y="-49149" z="-1060" />
+    <tele id="2044" description="Rune Inner -> In" x="15573" y="-49162" z="-1058" />
+    <tele id="2045" description="Rune Inner -> Out" x="12858" y="-51332" z="-1089" />
+    <tele id="2046" description="Rune Inner -> In" x="12858" y="-50860" z="-1089" />
+    <tele id="2047" description="Schuttgart Outer -> Out" x="77544" y="-149250" z="-355" />
+    <tele id="2048" description="Schuttgart Outer -> In" x="77544" y="-149869" z="-355" />
+    <tele id="2049" description="Schuttgart Inner -> Out" x="75577" y="-152303" z="-651" />
+    <tele id="2050" description="Schuttgart Inner -> In" x="76091" y="-152303" z="-651" />
+    <tele id="2051" description="Schuttgart Inner -> Out" x="79519" y="-152303" z="-651" />
+    <tele id="2052" description="Schuttgart Inner -> In" x="79009" y="-152303" z="-651" />
+    <tele id="2053" description="Schuttgart Terrace -> Out" x="76260" y="-152991" z="1044" />
+    <tele id="2054" description="Schuttgart Terrace -> In" x="76267" y="-153275" z="1044" />
+    <tele id="2055" description="Schuttgart Terrace -> Out" x="78843" y="-153008" z="1044" />
+    <tele id="2056" description="Schuttgart Terrace -> In" x="78832" y="-153271" z="1044" />
+    <tele id="9000" description="Gludin Arena - 1000 adena" x="-87328" y="142266" z="-3640" price="1000" noble="1" />
+    <tele id="9001" description="Coliseum - 1000 adena" x="146440" y="46723" z="-3400" price="1000" noble="1" />
+    <tele id="9002" description="Giran Arena - 1000 adena" x="73579" y="142709" z="-3768" price="1000" noble="1" />
+    <tele id="9010" description="Center of the Forgotten Temple - 1000 adena" x="-54026" y="179504" z="-4650"
+          price="1000" noble="1" />
+    <tele id="9011" description="Wastelands, Western Region - 1000 adena" x="-47506" y="179572" z="-3669" price="1000"
+          noble="1" />
+    <tele id="9020" description="The Giant's Cave Upper Layer - 1000 adena" x="183985" y="61424" z="-3992" price="1000"
+          noble="1" />
+    <tele id="9021" description="Plains of Glory - 1000 adena" x="135580" y="19467" z="-3424" price="1000" noble="1" />
+    <tele id="9022" description="War-Torn Plains - 1000 adena" x="156898" y="11217" z="-4032" price="1000" noble="1" />
+    <tele id="9023" description="Tower of Insolence, 3rd Floor - 1000 adena" x="110848" y="16154" z="-2120" price="1000"
+          noble="1" />
+    <tele id="9024" description="Tower of Insolence, 5th Floor - 1000 adena" x="118404" y="15988" z="832" price="1000"
+          noble="1" />
+    <tele id="9025" description="Tower of Insolence, 7th Floor - 1000 adena" x="115064" y="12181" z="2960" price="1000"
+          noble="1" />
+    <tele id="9026" description="Tower of Insolence. 10th Floor - 1000 adena" x="118525" y="16455" z="5984" price="1000"
+          noble="1" />
+    <tele id="9027" description="Tower of Insolence. 13th Floor - 1000 adena" x="115384" y="16820" z="9000" price="1000"
+          noble="1" />
+    <tele id="9028" description="Hunters Valley - 1000 adena" x="114306" y="86573" z="-3112" price="1000" noble="1" />
+    <tele id="9029" description="Anghel Waterfall - 1000 adena" x="166182" y="91560" z="-3168" price="1000" noble="1" />
+    <tele id="9030" description="The Center of the Forest of Mirrors - 1000 adena" x="166080" y="75574" z="-2992"
+          price="1000" noble="1" />
+    <tele id="9031" description="The Center of the Enchanted Valley - 1000 adena" x="114674" y="44150" z="-3376"
+          price="1000" noble="1" />
+    <tele id="9032" description="Hunters Valley - 1000 adena" x="114306" y="86573" z="-3112" price="1000" noble="1" />
+    <tele id="9033" description="The Giant's Cave Lower Layer - 1000 adena" x="191754" y="56760" z="-7624" price="1000"
+          noble="1" />
+    <tele id="9040" description="Gorgon Flower Garden - 1000 adena" x="113553" y="134813" z="-3540" price="1000"
+          noble="1" />
+    <tele id="9041" description="Antharas' Lair - 1st Level - 1000 adena" x="147071" y="120156" z="-4520" price="1000"
+          noble="1" />
+    <tele id="9042" description="Antharas' Lair - 2nd Level - 1000 adena" x="151835" y="112977" z="-5520" price="1000"
+          noble="1" />
+    <tele id="9043" description="Antharas' Lair - Magic Force Field Bridge - 1000 adena" x="146494" y="109285" z="-3448"
+          price="1000" noble="1" />
+    <tele id="9044" description="The Heart of Antharas' Lair - 1000 adena" x="154396" y="121235" z="-3808" price="1000"
+          noble="1" />
+    <tele id="9045" description="The Center of Dragon Valley - 1000 adena" x="122824" y="110836" z="-3808" price="1000"
+          noble="1" />
+    <tele id="9046" description="Hardin's Private Academy - 1000 adena" x="105918" y="109759" z="-3170" price="1000"
+          noble="1" />
+    <tele id="9050" description="The Center of the Forest of the Dead - 1000 adena" x="54425" y="-41692" z="-3072"
+          price="1000" noble="1" />
+    <tele id="9051" description="The Center of the Valley of Saints - 1000 adena" x="84092" y="-80084" z="-3504"
+          price="1000" noble="1" />
+    <tele id="9052" description="Cursed Village - 1000 adena" x="62084" y="-40935" z="-2802" price="1000" noble="1" />
+    <tele id="9053" description="Shyeed's Cavern - 1000 adena" x="76911" y="-55295" z="-5824" price="1000" noble="1" />
+    <tele id="9054" description="Monastery of Silence - 1000 adena" x="106414" y="-87799" z="-2949" price="1000"
+          noble="1" />
+    <tele id="9060" description="Varka Silenos Village - 1000 adena" x="107929" y="-52248" z="-2408" price="1000"
+          noble="1" />
+    <tele id="9061" description="Ketra Orc Village - 1000 adena" x="149817" y="-80053" z="-5576" price="1000"
+          noble="1" />
+    <tele id="9062" description="Devil's Pass - 1000 adena" x="106349" y="-61870" z="-2904" price="1000" noble="1" />
+    <tele id="9063" description="Garden of Wild Beasts - 1000 adena" x="132997" y="-60608" z="-2960" price="1000"
+          noble="1" />
+    <tele id="9064" description="The Center of the Hot Springs - 1000 adena" x="144625" y="-101291" z="-3384"
+          price="1000" noble="1" />
+    <tele id="9065" description="The Center of the Wall of Argos - 1000 adena" x="183140" y="-53307" z="-1896"
+          price="1000" noble="1" />
+    <tele id="9066" description="Shrine of Loyalty - 1000 adena" x="191257" y="-59388" z="-2898" price="1000"
+          noble="1" />
+    <tele id="9067" description="Four Sepulchers - 1000 adena" x="178127" y="-84435" z="-7215" price="1000" noble="1" />
+    <tele id="9068" description="Imperial Tomb - 1000 adena" x="186699" y="-75915" z="-2826" price="1000" noble="1" />
+    <tele id="9070" description="Forge of the Gods - Top Level - 1000 adena" x="173436" y="-112725" z="-3680"
+          price="1000" noble="1" />
+    <tele id="9071" description="Forge of the Gods - Lower Level - 1000 adena" x="180260" y="-111913" z="-5851"
+          price="1000" noble="1" />
+    <tele id="9080" description="Execution Grounds - 1000 adena" x="50568" y="152408" z="-2656" price="1000"
+          noble="1" />
+    <tele id="9081" description="Floran Agricultural Area - 1000 adena" x="26810" y="172787" z="-3376" price="1000"
+          noble="1" />
+    <tele id="9082" description="The Center of the Cruma Marshlands - 1000 adena" x="5941" y="125455" z="-3400"
+          price="1000" noble="1" />
+    <tele id="9090" description="Frost Lake - 1000 adena" x="107577" y="-122392" z="-3632" price="1000" noble="1" />
+    <tele id="9091" description="Grave Robber Hideout - 1000 adena" x="44221" y="-114232" z="-2784" price="1000"
+          noble="1" />
+    <tele id="9092" description="Sky Wagon Relic - 1000 adena" x="121618" y="-141554" z="-1496" price="1000"
+          noble="1" />
+    <tele id="9100" description="Evil Hunting Grounds - 1000 adena" x="-6989" y="109503" z="-3040" price="1000"
+          noble="1" />
+    <tele id="9101" description="The Center of the Neutral Zone - 1000 adena" x="-18415" y="85624" z="-3680"
+          price="1000" noble="1" />
+    <tele id="9102" description="The Center of the Dark Forest - 1000 adena" x="-14129" y="27094" z="-3680" price="1000"
+          noble="1" />
+    <tele id="9103" description="Center of the School of Dark Arts - 1000 adena" x="-49185" y="49441" z="-5912"
+          price="1000" noble="1" />
+    <tele id="9104" description="Center of the Elven Ruins - 1000 adena" x="49315" y="248452" z="-5960" price="1000"
+          noble="1" />
+    <tele id="9105" description="Immortal Plateau, Northern Region - 1000 adena" x="-25309" y="-131569" z="-680"
+          price="1000" noble="1" />
+    <tele id="9106" description="The Center of the Mithril Mines - 1000 adena" x="175499" y="-181586" z="-904"
+          price="1000" noble="1" />
+    <tele id="9107" description="The Center of the Abandoned Coal Mines - 1000 adena" x="144706" y="-173223" z="-1520"
+          price="1000" noble="1" />
+    <tele id="9110" description="Forest of Evil - 1000 adena" x="93218" y="16969" z="-3904" price="1000" noble="1" />
+    <tele id="9111" description="Timak Outpost - 1000 adena" x="67097" y="68815" z="-3648" price="1000" noble="1" />
+    <tele id="9112" description="Altar of Rites - 1000 adena" x="-44566" y="77508" z="-3736" price="1000" noble="1" />
+    <tele id="9120" description="Field of Silence (Western Section) - 1000 adena" x="75387" y="195263" z="-3000"
+          price="1000" noble="1" />
+    <tele id="9121" description="Field of Whispers (Eastern Section) - 1000 adena" x="97786" y="209303" z="-3040"
+          price="1000" noble="1" />
+    <tele id="9122" description="The Center of Alligator Island - 1000 adena" x="113708" y="178387" z="-3232"
+          price="1000" noble="1" />
+    <tele id="9123" description="Inside the Garden of Eva - 1000 adena" x="82693" y="242220" z="-6712" price="1000"
+          noble="1" />
+    <tele id="9124" description="Garden of Eva - 2nd Level - 1000 adena" x="79248" y="247390" z="-8816" price="1000"
+          noble="1" />
+    <tele id="9125" description="Garden of Eva - 3rd Level - 1000 adena" x="77868" y="250400" z="-9328" price="1000"
+          noble="1" />
+    <tele id="9126" description="Garden of Eva - 4th Level - 1000 adena" x="78721" y="253309" z="-9840" price="1000"
+          noble="1" />
+    <tele id="9127" description="Garden of Eva - 5th Level - 1000 adena" x="82951" y="252354" z="-10592" price="1000"
+          noble="1" />
+    <tele id="9128" description="Field of Silence Center - 1000 adena" x="80987" y="182423" z="-3504" price="1000"
+          noble="1" />
+    <tele id="9129" description="Field of Whispers Center - 1000 adena" x="86147" y="218268" z="-3592" price="1000"
+          noble="1" />
+    <tele id="9900" description="Gludin Arena - 1 Olympiad Token" x="-87328" y="142266" z="-3640" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9901" description="Coliseum - 1 Olympiad Token" x="146440" y="46723" z="-3400" price="1" priceId="13722"
+          noble="1" />
+    <tele id="9902" description="Giran Arena - 1 Olympiad Token" x="73579" y="142709" z="-3768" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9910" description="Center of the Forgotten Temple - 1 Olympiad Token" x="-54026" y="179504" z="-4650"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9911" description="Wastelands, Western Region - 1 Olympiad Token" x="-47506" y="179572" z="-3669"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9920" description="The Giant's Cave Upper Layer - 1 Olympiad Token" x="183985" y="61424" z="-3992"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9921" description="Plains of Glory - 1 Olympiad Token" x="135580" y="19467" z="-3424" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9922" description="War-Torn Plains - 1 Olympiad Token" x="156898" y="11217" z="-4032" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9923" description="Tower of Insolence, 3rd Floor - 1 Olympiad Token" x="110848" y="16154" z="-2120"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9924" description="Tower of Insolence, 5th Floor - 1 Olympiad Token" x="118404" y="15988" z="832"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9925" description="Tower of Insolence, 7th Floor - 1 Olympiad Token" x="115064" y="12181" z="2960"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9926" description="Tower of Insolence. 10th Floor - 1 Olympiad Token" x="118525" y="16455" z="5984"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9927" description="Tower of Insolence. 13th Floor - 1 Olympiad Token" x="115384" y="16820" z="9000"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9928" description="Hunters Valley - 1 Olympiad Token" x="114306" y="86573" z="-3112" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9929" description="Anghel Waterfall - 1 Olympiad Token" x="166182" y="91560" z="-3168" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9930" description="The Center of the Forest of Mirrors - 1 Olympiad Token" x="166080" y="75574" z="-2992"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9931" description="The Center of the Enchanted Valley - 1 Olympiad Token" x="114674" y="44150" z="-3376"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9932" description="Hunters Valley - 1 Olympiad Token" x="114306" y="86573" z="-3112" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9933" description="The Giant's Cave Lower Layer - 1 Olympiad Token" x="191754" y="56760" z="-7624"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9940" description="Gorgon Flower Garden - 1 Olympiad Token" x="113553" y="134813" z="-3540" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9941" description="Antharas' Lair - 1st Level - 1 Olympiad Token" x="147071" y="120156" z="-4520"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9942" description="Antharas' Lair - 2nd Level - 1 Olympiad Token" x="151835" y="112977" z="-5520"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9943" description="Antharas Lair, Magic Force Field Bridge - 1 Olympiad Token" x="146494" y="109285"
+          z="-3448" price="1" priceId="13722" noble="1" />
+    <tele id="9944" description="The Heart of Antharas' Lair - 1 Olympiad Token" x="154396" y="121235" z="-3808"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9945" description="The Center of Dragon Valley - 1 Olympiad Token" x="122824" y="110836" z="-3720"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9946" description="Hardin's Private Academy - 1 Olympiad Token" x="105918" y="109759" z="-3170" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9950" description="The Center of the Forest of the Dead - 1 Olympiad Token" x="54425" y="-41692" z="-3072"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9951" description="The Center of the Valley of Saints - 1 Olympiad Token" x="84092" y="-80084" z="-3504"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9952" description="Cursed Village - 1 Olympiad Token" x="62084" y="-40935" z="-2802" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9953" description="Shyeed's Cavern - 1 Olympiad Token" x="76911" y="-55295" z="-5824" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9954" description="Monastery of Silence - 1 Olympiad Token" x="106414" y="-87799" z="-2949" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9960" description="Varka Silenos Village - 1000 adena" x="107929" y="-52248" z="-2408" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9961" description="Ketra Orc Village - 1000 adena" x="149817" y="-80053" z="-5576" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9962" description="Devil's Pass - 1000 adena" x="106349" y="-61870" z="-2904" price="1" priceId="13722"
+          noble="1" />
+    <tele id="9963" description="Garden of Wild Beasts - 1000 adena" x="132997" y="-60608" z="-2960" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9964" description="The Center of the Hot Springs - 1000 adena" x="144625" y="-101291" z="-3384" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9965" description="The Center of the Wall of Argos - 1000 adena" x="183140" y="-53307" z="-1896" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9966" description="Shrine of Loyalty - 1000 adena" x="191257" y="-59388" z="-2898" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9967" description="Four Sepulchers - 1000 adena" x="178127" y="-84435" z="-7215" price="1" priceId="13722"
+          noble="1" />
+    <tele id="9968" description="Imperial Tomb - 1000 adena" x="186699" y="-75915" z="-2826" price="1" priceId="13722"
+          noble="1" />
+    <tele id="9970" description="Forge of the Gods - Top Level - 1000 adena" x="173436" y="-112725" z="-3680" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9971" description="Forge of the Gods - Lower Level - 1000 adena" x="180260" y="-111913" z="-5851"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9980" description="Execution Grounds - 1 Olympiad Token" x="50568" y="152408" z="-2656" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9981" description="Floran Agricultural Area - 1 Olympiad Token" x="26810" y="172787" z="-3376" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9982" description="The Center of the Cruma Marshlands - 1 Olympiad Token" x="5941" y="125455" z="-3400"
+          price="1" priceId="13722" noble="1" />
+    <tele id="9990" description="Frost Lake - 1 Olympiad Token" x="107577" y="-122392" z="-3632" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9991" description="Grave Robber Hideout - 1 Olympiad Token" x="44221" y="-114232" z="-2784" price="1"
+          priceId="13722" noble="1" />
+    <tele id="9992" description="Sky Wagon Relic - 1 Olympiad Token" x="121618" y="-141554" z="-1496" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10000" description="Evil Hunting Grounds - 1 Olympiad Token" x="-6989" y="109503" z="-3040" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10001" description="The Center of the Neutral Zone - 1 Olympiad Token" x="-18415" y="85624" z="-3680"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10002" description="The Center of the Dark Forest - 1 Olympiad Token" x="-14129" y="27094" z="-3680"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10003" description="Center of the School of Dark Arts - 1 Olympiad Token" x="-49185" y="49441" z="-5912"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10004" description="Center of the Elven Ruins - 1 Olympiad Token" x="49315" y="248452" z="-5960" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10005" description="Immortal Plateau, Northern Region - 1 Olympiad Token" x="-25309" y="-131569" z="-680"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10006" description="The Center of the Mithril Mines - 1 Olympiad Token" x="175499" y="-181586" z="-904"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10007" description="The Center of the Abandoned Coal Mines - 1 Olympiad Token" x="144706" y="-173223"
+          z="-1520" price="1" priceId="13722" noble="1" />
+    <tele id="10010" description="Forest of Evil - 1 Olympiad Token" x="93218" y="16969" z="-3904" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10011" description="Timak Outpost - 1 Olympiad Token" x="67097" y="68815" z="-3648" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10012" description="Altar of Rites - 1 Olympiad Token" x="-44566" y="77508" z="-3736" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10020" description="Field of Silence (Western Section) - 1 Olympiad Token" x="75387" y="195263" z="-3000"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10021" description="Field of Whispers (Eastern Section) - 1 Olympiad Token" x="97786" y="209303" z="-3040"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10022" description="The Center of Alligator Island - 1 Olympiad Token" x="113708" y="178387" z="-3232"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10023" description="Inside the Garden of Eva - 1 Olympiad Token" x="82693" y="242220" z="-6712" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10024" description="Garden of Eva - 2nd Level - 1 Olympiad Token" x="79248" y="247390" z="-8816" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10025" description="Garden of Eva - 3rd Level - 1 Olympiad Token" x="77868" y="250400" z="-9328" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10026" description="Garden of Eva - 4th Level - 1 Olympiad Token" x="78721" y="253309" z="-9840" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10027" description="Garden of Eva - 5th Level - 1 Olympiad Token" x="82951" y="252354" z="-10592"
+          price="1" priceId="13722" noble="1" />
+    <tele id="10028" description="Ketra teleport - Goddard Castle Town" x="147978" y="-55408" z="-2728" price="4900" />
+    <tele id="10029" description="Ketra teleport - Rune Castle Town" x="43849" y="-47877" z="-792" price="22000" />
+    <tele id="10030" description="Ketra teleport - Aden Castle Town" x="146705" y="25840" z="-2000" price="21000" />
+    <tele id="10031" description="Ketra teleport - Wall of Argos" x="164564" y="-48145" z="-3536" price="7000" />
+    <tele id="10032" description="Ketra teleport - Hot Springs" x="144880" y="-113468" z="-2560" price="6700" />
+    <tele id="10033" description="Varka teleport - Goddard Castle Town" x="147978" y="-55408" z="-2728" price="8000" />
+    <tele id="10034" description="Varka teleport - Rune Castle Town" x="43849" y="-47877" z="-792" price="12000" />
+    <tele id="10035" description="Varka teleport - Aden Castle Town" x="146705" y="25840" z="-2000" price="17000" />
+    <tele id="10036" description="Varka teleport - Wall of Argos" x="164564" y="-48145" z="-3536" price="11000" />
+    <tele id="10037" description="Varka teleport - Hot Springs" x="144880" y="-113468" z="-2560" price="14000" />
+    <tele id="10038" description="Field of Silence Center - 1000 adena" x="80987" y="182423" z="-3504" price="1"
+          priceId="13722" noble="1" />
+    <tele id="10039" description="Field of Whispers Center - 1000 adena" x="86147" y="218268" z="-3592" price="1"
+          priceId="13722" noble="1" />
+    <tele id="11998" description="Pagan Chapel - > exit" x="-16359" y="-43803" z="-10725" />
+    <tele id="11999" description="Pagan Temple - > exit" x="-16307" y="-36591" z="-10725" />
+    <tele id="12050" description="Gludio -> Kamael Village" x="-117251" y="46771" z="360" price="12000" />
+    <tele id="12051" description="Dark Elf Village -> Kamael Village" x="-117251" y="46771" z="360" price="13000" />
+    <tele id="12052" description="Orc Village -> Kamael Village" x="-117251" y="46771" z="360" price="17000" />
+    <tele id="12053" description="Elven Village -> Kamael Village" x="-117251" y="46771" z="360" price="16000" />
+    <tele id="12054" description="Town of Aden -> Kamael Village" x="-117251" y="46771" z="360" price="26000" />
+    <tele id="12055" description="Talking Village -> Kamael Village" x="-117251" y="46771" z="360" price="10000" />
+    <tele id="12056" description="Dwarven Village -> Kamael Village" x="-117251" y="46771" z="360" price="32000" />
+    <tele id="12057" description="Soul Harbor -> Nornil's Garden" x="-119534" y="87176" z="-12593" />
+    <tele id="12058" description="Nornil's Garden -> Soul Harbor" x="-73494" y="53507" z="-3680" />
+    <tele id="12059" description="Underground Coliseum -> Fantasy Isle" x="-59224" y="-56837" z="-2032" />
+    <tele id="12060" description="Fantasy Isle -> Underground Coliseum" x="-81490" y="-49167" z="-10352" />
+    <tele id="12108" description="Fantasy Isle -> Krateis Cube" x="-70293" y="-71029" z="-1416" />
+    <tele id="12109" description="Krateis Cube -> Fantasy Isle" x="-59224" y="-56837" z="-2032" />
+    <tele id="12118" description="Gludio -> Airship dock" x="-149406" y="255247" z="-80" />
+    <tele id="12119" description="Airship dock -> Talking Island" x="-84752" y="243122" z="-3728" />
+    <tele id="12120" description="Talking Island -> Airship dock" x="-149406" y="255247" z="-80" />
+    <tele id="12121" description="Fantasy Isle -> Handys Block" x="-57328" y="-60566" z="-2360" />
+    <tele id="12122" description="Keucereus -> Heart of Infinity" x="-204288" y="242026" z="1744" />
+    <tele id="12139" description="Handys Block -> Fantasy Isle" x="-59157" y="-56906" z="-2032" />
+    <tele id="13000" description="Gludio Castle -> Front of the Gludio Castle" x="-15043" y="116596" z="-3208" />
+    <tele id="13001" description="Gludio Castle -> Gludio Town Square" x="-14393" y="123671" z="-3144" />
+    <tele id="13002" description="Gludio Castle -> Front of the Shanty Fortress" x="-58761" y="154663" z="-2701" />
+    <tele id="13003" description="Gludio Castle -> Front of the Southern Fortress" x="-29856" y="214275" z="-3680" />
+    <tele id="13004" description="Gludio Castle -> Ruins of Agony" x="-41248" y="122848" z="-2912" price="500" />
+    <tele id="13005" description="Gludio Castle -> Ruins of Despair" x="-19120" y="136816" z="-3762" price="500" />
+    <tele id="13006" description="Gludio Castle -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="13007" description="Gludio Castle -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="13008" description="Dion Castle -> Front of Dion Castle" x="19888" y="153395" z="-3144" />
+    <tele id="13009" description="Dion Castle -> Dion Town Square" x="19025" y="145245" z="-3107" />
+    <tele id="13010" description="Dion Castle -> Front of the Hive Fortress" x="20126" y="188254" z="-3392" />
+    <tele id="13011" description="Dion Castle -> Entrance to Floran Village" x="17430" y="170103" z="-3506" />
+    <tele id="13012" description="Dion Castle -> Cruma Marshlands" x="5106" y="126916" z="-3664" price="500" />
+    <tele id="13013" description="Dion Castle -> Fortress of Resistance" x="47382" y="111278" z="-2104" price="500" />
+    <tele id="13014" description="Dion Castle -> Plains of Dion" x="630" y="179184" z="-3720" price="500" />
+    <tele id="13015" description="Dion Castle -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="13016" description="Giran Castle -> Front of Giran Castle" x="107954" y="145841" z="-3224" />
+    <tele id="13017" description="Giran Castle -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="13018" description="Giran Castle -> Front of the Valley Fortress" x="125934" y="118277" z="-3080" />
+    <tele id="13019" description="Giran Castle -> Giran Harbor" x="47938" y="186864" z="-3420" />
+    <tele id="13020" description="Giran Castle -> Brekas Stronghold" x="85546" y="131328" z="-3672" price="500" />
+    <tele id="13021" description="Giran Castle -> Devils Isle" x="43408" y="206881" z="-3752" price="500" />
+    <tele id="13022" description="Giran Castle -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="13023" description="Giran Castle -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="13024" description="Oren Castle -> Front of Oren Castle" x="75648" y="39380" z="-2952" />
+    <tele id="13025" description="Oren Castle -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="13026" description="Oren Castle -> Front of the Ivory Fortress" x="77023" y="1591" z="-3608" />
+    <tele id="13027" description="Oren Castle -> Ivory Tower" x="85391" y="16228" z="-3640" price="500" />
+    <tele id="13028" description="Oren Castle -> Near the frontier post" x="109721" y="7394" z="-2800" price="500" />
+    <tele id="13029" description="Oren Castle -> Sea of Spores" x="64328" y="26803" z="-3768" price="500" />
+    <tele id="13030" description="Oren Castle -> Enchanted Valley, Southern Region" x="124904" y="61992" z="-3973"
+          price="500" />
+    <tele id="13031" description="Oren Castle -> Ancient Battleground" x="118509" y="4779" z="-4000" price="500" />
+    <tele id="13032" description="Aden Castle -> Front of Aden Castle" x="147428" y="20161" z="-2008" />
+    <tele id="13033" description="Aden Castle -> Aden Town Square" x="147450" y="28081" z="-2294" />
+    <tele id="13034" description="Aden Castle -> Front of the Narsell Fortress" x="160702" y="51661" z="-3512" />
+    <tele id="13035" description="Aden Castle -> Front of the Basin Fortress" x="189664" y="46042" z="-4264" />
+    <tele id="13036" description="Aden Castle -> Enchanted Valley, Northen Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="13038" description="Aden Castle -> Forest of Mirrors" x="142065" y="81300" z="-3000" price="500" />
+    <tele id="13039" description="Aden Castle -> Anghel Waterfall" x="166182" y="91560" z="-3168" price="500" />
+    <tele id="13040" description="Innadril Castle -> Front of Innadril Castle" x="117608" y="241660" z="-1408" />
+    <tele id="13041" description="Innadril Castle -> Innadril Town Square" x="111455" y="219400" z="-3546" />
+    <tele id="13042" description="Innadril Castle -> Front of the White Sands Fortress" x="124651" y="207877"
+          z="-3184" />
+    <tele id="13043" description="Innadril Castle -> The Center of Alligator Island" x="113708" y="178387" z="-3232"
+          price="500" />
+    <tele id="13044" description="Innadril Castle -> Field of Silence" x="80987" y="182423" z="-3504" price="500" />
+    <tele id="13045" description="Innadril Castle -> Field of Whispers" x="86147" y="218268" z="-3592" price="500" />
+    <tele id="13046" description="Innadril Castle -> Inside the Garden of Eva" x="82693" y="242220" z="-6712"
+          price="500" />
+    <tele id="13047" description="Goddard Castle -> Front of Goddard Castle" x="153996" y="-50182" z="-2992" />
+    <tele id="13048" description="Goddard Castle -> Goddard Town Square" x="147728" y="-56331" z="-2776" />
+    <tele id="13049" description="Goddard Castle -> Front of the Borderland Fortress" x="153460" y="-70055" z="-3312" />
+    <tele id="13050" description="Goddard Castle -> Hot Springs" x="144880" y="-113468" z="-2560" price="500" />
+    <tele id="13051" description="Goddard Castle -> Varka Silenos Stronghold" x="125740" y="-40864" z="-3736"
+          price="500" />
+    <tele id="13052" description="Goddard Castle -> Ketra Orc Outpost" x="146990" y="-67128" z="-3640" price="500" />
+    <tele id="13053" description="Goddard Castle -> Entrance to the Forge of the Gods" x="169018" y="-116303" z="-2432"
+          price="500" />
+    <tele id="13054" description="Goddard Castle -> Wall of Argos" x="165054" y="-47861" z="-3560" price="500" />
+    <tele id="13055" description="Rune Castle -> Front of Rune Castle" x="27400" y="-49180" z="-1320" />
+    <tele id="13056" description="Rune Castle -> Rune Town Square" x="43889" y="-49101" z="-792" />
+    <tele id="13057" description="Rune Castle -> Front of the Swamp Fortress" x="71814" y="-57054" z="-3088" />
+    <tele id="13058" description="Rune Castle -> Forest of the Dead" x="52107" y="-54328" z="-3158" price="500" />
+    <tele id="13059" description="Rune Castle -> Wild Beast Pastures" x="43805" y="-88010" z="-2780" price="500" />
+    <tele id="13060" description="Rune Castle -> Swamp of Screams" x="69340" y="-50203" z="-3314" price="500" />
+    <tele id="13061" description="Rune Castle -> Valley of Saints" x="65307" y="-71445" z="-3696" price="500" />
+    <tele id="13062" description="Rune Castle -> Monastery of Silence" x="106414" y="-87799" z="-2949" price="500" />
+    <tele id="13063" description="Schuttgart Castle -> Front of Schuttgart Castle" x="76358" y="-145548" z="-1176" />
+    <tele id="13064" description="Schuttgart Castle -> Schuttgart Town Square" x="87379" y="-142322" z="-1336" />
+    <tele id="13065" description="Schuttgart Castle -> Front of the Archaic Fortress" x="105007" y="-140874"
+          z="-3360" />
+    <tele id="13066" description="Schuttgart Castle -> The Center of the Abandoned Coal Mines" x="144706" y="-173223"
+          z="-1520" price="500" />
+    <tele id="13067" description="Schuttgart Castle -> Plunderous Plains" x="111965" y="-154172" z="-1528"
+          price="500" />
+    <tele id="13068" description="Schuttgart Castle -> Den of Evil" x="68693" y="-110438" z="-1946" price="500" />
+    <tele id="13069" description="Schuttgart Castle -> Ice Merchant Cabin" x="113903" y="-108752" z="-860"
+          price="500" />
+    <tele id="13070" description="Schuttgart Castle -> Crypts of Disgrace" x="47692" y="-115745" z="-3744"
+          price="500" />
+    <tele id="13071" description="Aden Castle -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="13072" description="Aden Castle -> The Giants Cave Upper Layer" x="183985" y="61424" z="-3992"
+          price="500" />
+    <tele id="13073" description="Aden Castle -> The Giants Cave Lower Layer" x="191754" y="56760" z="-7624"
+          price="500" />
+    <tele id="14000" description="Guide of Immortality -> Seed of Infinity" x="-183292" y="206063" z="-12888" />
+    <tele id="14001" description="Gatekeeper of the Abyss -> Seed of Infinity" x="-212836" y="209824" z="4288" />
+    <tele id="14063" description="Rune Castle -> Shyeeds Cavern" x="76911" y="-55295" z="-5824" price="500" />
+    <tele id="15000" description="Oren -> Sel Mahum Training Grounds (West Gate)" x="76839" y="63851" z="-3648"
+          price="2400" />
+    <tele id="15001" description="Oren -> Sel Mahum Training Grounds (South Gate)" x="79414" y="71496" z="-3448"
+          price="3700" />
+    <tele id="15002" description="Oren -> Sel Mahum Training Grounds (Center)" x="87448" y="61460" z="-3664"
+          price="1800" />
+    <tele id="15003" description="Schuttgart -> Mithril Mines" x="171946" y="-173352" z="3440" price="5300" />
+    <tele id="15004" description="Entrance SOA -> Enter the Seed of Annihilation" x="-180218" y="185923" z="-10576" />
+    <tele id="15005" description="Enter the Seed of Annihilation -> Entrance SOA" x="-178262" y="153430" z="2472" />
+    <tele id="15006" description="Seed of Infinity Dock" x="-212843" y="209695" z="4280" price="150000" />
+    <tele id="15007" description="Seed of Destruction Dock" x="-248535" y="250273" z="4336" price="150000" />
+    <tele id="15008" description="Seed of Annihilation Dock" x="-175520" y="154505" z="2712" price="150000" />
+    <tele id="20000" description="Shanty Fortress -> Fortress West Gate" x="-55240" y="157193" z="-2048" />
+    <tele id="20001" description="Shanty Fortress -> Fortress East Gate" x="-50296" y="155793" z="-2056" />
+    <tele id="20002" description="Shanty Fortress -> Gludio Town Square" x="-14393" y="123671" z="-3144" />
+    <tele id="20003" description="Shanty Fortress -> Front of the Gludio Castle Gate" x="-15043" y="116596" z="-3208" />
+    <tele id="20004" description="Shanty Fortress -> Ruins of Agony" x="-41248" y="122848" z="-2912" price="500" />
+    <tele id="20005" description="Shanty Fortress -> Ruins of Despair" x="-19120" y="136816" z="-3762" price="500" />
+    <tele id="20006" description="Shanty Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20007" description="Shanty Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="20008" description="Southern Fortress -> Fortress West Gate" x="-25480" y="219848" z="-3248" />
+    <tele id="20009" description="Southern Fortress -> Fortress East Gate" x="-19886" y="219821" z="-3256" />
+    <tele id="20010" description="Southern Fortress -> Gludio Town Square" x="-14393" y="123671" z="-3144" />
+    <tele id="20011" description="Southern Fortress -> Front of the Gludio Castle Gate" x="-15043" y="116596"
+          z="-3208" />
+    <tele id="20012" description="Southern Fortress -> Ruins of Agony" x="-41248" y="122848" z="-2912" price="500" />
+    <tele id="20013" description="Southern Fortress -> Ruins of Despair" x="-19120" y="136816" z="-3762" price="500" />
+    <tele id="20014" description="Southern Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20015" description="Southern Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="20016" description="Hive Fortress -> Fortress North Gate" x="15383" y="186025" z="-2920" />
+    <tele id="20017" description="Hive Fortress -> Fortress South Gate" x="18046" y="190017" z="-2920" />
+    <tele id="20018" description="Hive Fortress -> Dion Town Square" x="19025" y="145245" z="-3107" />
+    <tele id="20019" description="Hive Fortress -> Front of the Dion Castle Gate" x="19888" y="153395" z="-3144" />
+    <tele id="20020" description="Hive Fortress -> Cruma Marshlands" x="5106" y="126916" z="-3664" price="500" />
+    <tele id="20021" description="Hive Fortress -> Fortress of Resistance" x="47382" y="111278" z="-2104" price="500" />
+    <tele id="20022" description="Hive Fortress -> Plains of Dion" x="630" y="179184" z="-3720" price="500" />
+    <tele id="20023" description="Hive Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20024" description="Valley Fortress -> Fortress North Gate" x="126066" y="120350" z="-2584" />
+    <tele id="20025" description="Valley Fortress -> Fortress South Gate" x="126023" y="125853" z="-2584" />
+    <tele id="20026" description="Valley Fortress -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="20027" description="Valley Fortress -> Front of the Giran Castle Gate" x="107954" y="145841" z="-3224" />
+    <tele id="20028" description="Valley Fortress -> Breka's Stronghold" x="85546" y="131328" z="-3672" price="500" />
+    <tele id="20029" description="Valley Fortress -> Devil's Isle" x="43408" y="206881" z="-3752" price="500" />
+    <tele id="20030" description="Valley Fortress -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="20031" description="Valley Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20032" description="Ivory Fortress -> Fortress North Gate" x="74367" y="2533" z="-3040" />
+    <tele id="20033" description="Ivory Fortress -> Fortress South Gate" x="71388" y="6235" z="-3032" />
+    <tele id="20034" description="Ivory Fortress -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="20035" description="Ivory Fortress -> Front of the Oren Castle Gate" x="75648" y="39380" z="-2952" />
+    <tele id="20036" description="Ivory Fortress -> Sea of Spores" x="64328" y="26803" z="-3768" price="500" />
+    <tele id="20037" description="Ivory Fortress -> Enchanted Valley, Southern Region" x="124904" y="61992" z="-3973"
+          price="500" />
+    <tele id="20038" description="Ivory Fortress -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="20039" description="Ivory Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000" price="500" />
+    <tele id="20040" description="Narsell Fortress -> Fortress West Gate" x="153112" y="56872" z="-3256" />
+    <tele id="20041" description="Narsell Fortress -> Fortress East Gate" x="156730" y="53921" z="-3256" />
+    <tele id="20042" description="Narsell Fortress -> Aden Town Square" x="147450" y="28081" z="-2294" />
+    <tele id="20043" description="Narsell Fortress -> Front of the Aden Castle Gate" x="147428" y="20161" z="-2008" />
+    <tele id="20044" description="Narsell Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000"
+          price="500" />
+    <tele id="20045" description="Narsell Fortress -> Enchanted Valley, Southern Region" x="124904" y="61992" z="-3973"
+          price="500" />
+    <tele id="20046" description="Narsell Fortress -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="20047" description="Narsell Fortress -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="20048" description="Narsell Fortress -> The Giant's Cave Upper Layer" x="183985" y="61424" z="-3992"
+          price="500" />
+    <tele id="20049" description="Narsell Fortress -> The Giant's Cave Lower Layer" x="191754" y="56760" z="-7624"
+          price="500" />
+    <tele id="20050" description="Bayou Fortress -> Fortress North Gate" x="189894" y="36746" z="-3408" />
+    <tele id="20051" description="Bayou Fortress -> Fortress South Gate" x="189914" y="42242" z="-3408" />
+    <tele id="20052" description="Bayou Fortress -> Aden Town Square" x="147450" y="28081" z="-2294" />
+    <tele id="20053" description="Bayou Fortress -> Front of the Aden Castle Gate" x="147428" y="20161" z="-2008" />
+    <tele id="20054" description="Bayou Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000" price="500" />
+    <tele id="20055" description="Bayou Fortress -> Enchanted Valley, Southern Region" x="124904" y="61992" z="-3973"
+          price="500" />
+    <tele id="20056" description="Bayou Fortress -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="20057" description="Bayou Fortress -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="20058" description="Bayou Fortress -> The Giant's Cave Upper Layer" x="183985" y="61424" z="-3992"
+          price="500" />
+    <tele id="20059" description="Bayou Fortress -> The Giant's Cave Lower Layer" x="191754" y="56760" z="-7624"
+          price="500" />
+    <tele id="20060" description="White Sands Fortress -> Fortress West Gate" x="116336" y="203775" z="-3336" />
+    <tele id="20061" description="White Sands Fortress -> Fortress East Gate" x="120487" y="206093" z="-3336" />
+    <tele id="20062" description="White Sands Fortress -> Heine Town Square" x="111455" y="219400" z="-3546" />
+    <tele id="20063" description="White Sands Fortress -> Front of the Innadril Castle Gate" x="117608" y="241660"
+          z="-1408" />
+    <tele id="20064" description="White Sands Fortress -> Field of Silence Center" x="80987" y="182423" z="-3504"
+          price="500" />
+    <tele id="20065" description="White Sands Fortress -> Field of Whispers Center" x="86147" y="218268" z="-3592"
+          price="500" />
+    <tele id="20066" description="White Sands Fortress -> The Center of Alligator Island" x="113708" y="178387"
+          z="-3232" price="500" />
+    <tele id="20067" description="White Sands Fortress -> Inside the Garden of Eva" x="82693" y="242220" z="-6712"
+          price="500" />
+    <tele id="20068" description="Borderland Fortress -> Fortress West Gate" x="157017" y="-68977" z="-2864" />
+    <tele id="20069" description="Borderland Fortress -> Fortress East Gate" x="161618" y="-72057" z="-2864" />
+    <tele id="20070" description="Borderland Fortress -> Goddard Town Square" x="147728" y="-56331" z="-2776" />
+    <tele id="20071" description="Borderland Fortress -> Front of the Goddard Castle Gate" x="153996" y="-50182"
+          z="-2992" price="500" />
+    <tele id="20072" description="Borderland Fortress -> Varka Silenos Stronghold" x="125740" y="-40864" z="-3736"
+          price="500" />
+    <tele id="20073" description="Borderland Fortress -> Ketra Orc Outpost" x="146990" y="-67128" z="-3640"
+          price="500" />
+    <tele id="20074" description="Borderland Fortress -> Entrance to the Forge of the Gods" x="169018" y="-116303"
+          z="-2432" price="500" />
+    <tele id="20075" description="Borderland Fortress -> Wall of Argos" x="165054" y="-47861" z="-3560" price="500" />
+    <tele id="20076" description="Swamp Fortress -> Fortress North Gate" x="68692" y="-63928" z="-2784" />
+    <tele id="20077" description="Swamp Fortress -> Fortress South Gate" x="70820" y="-58862" z="-2784" />
+    <tele id="20078" description="Swamp Fortress -> Rune Town Square" x="43889" y="-49101" z="-792" />
+    <tele id="20079" description="Swamp Fortress -> Front of the Rune Castle Gate" x="27400" y="-49180" z="-1320" />
+    <tele id="20080" description="Swamp Fortress -> Forest of the Dead" x="52107" y="-54328" z="-3158" price="500" />
+    <tele id="20081" description="Swamp Fortress -> Wild Beast Pastures" x="43805" y="-88010" z="-2780" price="500" />
+    <tele id="20082" description="Swamp Fortress -> Swamp of Screams" x="69340" y="-50203" z="-3314" price="500" />
+    <tele id="20083" description="Swamp Fortress -> Valley of Saints" x="65307" y="-71445" z="-3696" price="500" />
+    <tele id="20084" description="Swamp Fortress -> Shyeed's Cavern" x="76911" y="-55295" z="-5824" price="500" />
+    <tele id="20085" description="Archaic Fortress -> Fortress West Gate" x="107248" y="-140450" z="-2960" />
+    <tele id="20086" description="Archaic Fortress -> Fortress East Gate" x="111769" y="-141775" z="-2920" />
+    <tele id="20087" description="Archaic Fortress -> Schuttgart Town Square" x="87379" y="-142322" z="-1336" />
+    <tele id="20088" description="Archaic Fortress -> Front of the Schuttgart Castle Gate" x="76358" y="-145548"
+          z="-1176" />
+    <tele id="20089" description="Archaic Fortress -> Crypts of Disgrace" x="47692" y="-115745" z="-3744" price="500" />
+    <tele id="20090" description="Archaic Fortress -> Plunderous Plains" x="111965" y="-154172" z="-1528" price="500" />
+    <tele id="20091" description="Archaic Fortress -> Den of Evil" x="68693" y="-110438" z="-1946" price="500" />
+    <tele id="20092" description="Archaic Fortress -> Ice Merchant Cabin" x="113903" y="-108752" z="-860" price="500" />
+    <tele id="20093" description="Floran Fortress -> Fortress West Gate" x="3798" y="148797" z="-2888" />
+    <tele id="20094" description="Floran Fortress -> Fortress East Gate" x="7693" y="150682" z="-2888" />
+    <tele id="20095" description="Floran Fortress -> Gludio Town Square" x="-14393" y="123671" z="-3144" />
+    <tele id="20096" description="Floran Fortress -> Dion Town Square" x="19025" y="145245" z="-3107" />
+    <tele id="20097" description="Floran Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20098" description="Floran Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="20099" description="Floran Fortress -> Plains of Dion" x="630" y="179184" z="-3720" price="500" />
+    <tele id="20100" description="Floran Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20101" description="Cloud Mountain Fortress -> Fortress North Gate" x="-54275" y="89255" z="-2824" />
+    <tele id="20102" description="Cloud Mountain Fortress -> Fortress South Gate" x="-52274" y="93334" z="-2816" />
+    <tele id="20103" description="Cloud Mountain Fortress -> Gludio Town Square" x="-14393" y="123671" z="-3144" />
+    <tele id="20104" description="Cloud Mountain Fortress -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="20105" description="Cloud Mountain Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20106" description="Cloud Mountain Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496"
+          price="500" />
+    <tele id="20107" description="Cloud Mountain Fortress -> Sea of Spores" x="64328" y="26803" z="-3768" price="500" />
+    <tele id="20108" description="Cloud Mountain Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000"
+          price="500" />
+    <tele id="20109" description="Tanor Fortress -> Fortress North Gate" x="58923" y="137789" z="-1752" />
+    <tele id="20110" description="Tanor Fortress -> Fortress South Gate" x="61551" y="141036" z="-1752" />
+    <tele id="20111" description="Tanor Fortress -> Dion Town Square" x="19025" y="145245" z="-3107" />
+    <tele id="20112" description="Tanor Fortress -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="20113" description="Tanor Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20114" description="Tanor Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496" price="500" />
+    <tele id="20115" description="Tanor Fortress -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="20116" description="Tanor Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20117" description="Dragonspine Fortress -> Fortress North Gate" x="12468" y="93196" z="-3424" />
+    <tele id="20118" description="Dragonspine Fortress -> Fortress South Gate" x="10494" y="96881" z="-3424" />
+    <tele id="20119" description="Dragonspine Fortress -> Dion Town Square" x="19025" y="145245" z="-3107" />
+    <tele id="20120" description="Dragonspine Fortress -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="20121" description="Dragonspine Fortress -> The Ant Nest" x="-9959" y="176184" z="-4160" price="500" />
+    <tele id="20122" description="Dragonspine Fortress -> Windawood Manor" x="-28327" y="155125" z="-3496"
+          price="500" />
+    <tele id="20123" description="Dragonspine Fortress -> Sea of Spores" x="64328" y="26803" z="-3768" price="500" />
+    <tele id="20124" description="Dragonspine Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000"
+          price="500" />
+    <tele id="20125" description="Antharas Fortress -> Fortress West Gate" x="77834" y="89176" z="-2880" />
+    <tele id="20126" description="Antharas Fortress -> Fortress East Gate" x="80441" y="92831" z="-2880" />
+    <tele id="20127" description="Antharas Fortress -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="20128" description="Antharas Fortress -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="20129" description="Antharas Fortress -> Sea of Spores" x="64328" y="26803" z="-3768" price="500" />
+    <tele id="20130" description="Antharas Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000"
+          price="500" />
+    <tele id="20131" description="Antharas Fortress -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="20132" description="Antharas Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20133" description="Western Fortress -> Fortress North Gate" x="112356" y="-17243" z="-992" />
+    <tele id="20134" description="Western Fortress -> Fortress South Gate" x="110349" y="-13288" z="-922" />
+    <tele id="20135" description="Western Fortress -> Aden Town Square" x="147450" y="28081" z="-2294" />
+    <tele id="20136" description="Western Fortress -> Oren Town Square" x="82323" y="55466" z="-1480" />
+    <tele id="20137" description="Western Fortress -> Goddard Town Square" x="147728" y="-56331" z="-2776" />
+    <tele id="20138" description="Western Fortress -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="20139" description="Western Fortress -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="20140" description="Western Fortress -> Ancient Battleground" x="118509" y="-4779" z="-4000"
+          price="500" />
+    <tele id="20141" description="Western Fortress -> Entrance to the Forge of the Gods" x="169018" y="-116303"
+          z="-2432" price="500" />
+    <tele id="20142" description="Western Fortress -> Wall of Argos" x="165054" y="-47861" z="-3560" price="500" />
+    <tele id="20143" description="Western Fortress -> The Giant's Cave Upper Layer" x="183985" y="61424" z="-3992"
+          price="500" />
+    <tele id="20144" description="Western Fortress -> The Giant's Cave Lower Layer" x="191754" y="56760" z="-7624"
+          price="500" />
+    <tele id="20145" description="Hunters Fortress -> Fortress North Gate" x="124180" y="93249" z="-2144" />
+    <tele id="20146" description="Hunters Fortress -> Fortress South Gate" x="126155" y="97124" z="-2144" />
+    <tele id="20147" description="Hunters Fortress -> Aden Town Square" x="147450" y="28081" z="-2294" />
+    <tele id="20148" description="Hunters Fortress -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="20149" description="Hunters Fortress -> Enchanted Valley, Northern Region" x="104426" y="33746" z="-3825"
+          price="500" />
+    <tele id="20150" description="Hunters Fortress -> Blazing Swamp" x="155310" y="-16339" z="-3320" price="500" />
+    <tele id="20151" description="Hunters Fortress -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="20152" description="Hunters Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20153" description="Hunters Fortress -> The Giant's Cave Upper Layer" x="183985" y="61424" z="-3992"
+          price="500" />
+    <tele id="20154" description="Hunters Fortress -> The Giant's Cave Lower Layer" x="191754" y="56760" z="-7624"
+          price="500" />
+    <tele id="20155" description="Aaru Fortress -> Fortress North Gate" x="73205" y="183893" z="-2584" />
+    <tele id="20156" description="Aaru Fortress -> Fortress South Gate" x="72822" y="188128" z="-2584" />
+    <tele id="20157" description="Aaru Fortress -> Heine Town Square" x="111455" y="219400" z="-3546" />
+    <tele id="20158" description="Aaru Fortress -> Giran Town Square" x="81749" y="149171" z="-3464" />
+    <tele id="20159" description="Aaru Fortress -> Inside the Garden of Eva" x="82693" y="242220" z="-6712"
+          price="500" />
+    <tele id="20160" description="Aaru Fortress -> The Center of Alligator Island" x="113708" y="178387" z="-3232"
+          price="500" />
+    <tele id="20161" description="Aaru Fortress -> Dragon Valley" x="73024" y="118485" z="-3720" price="500" />
+    <tele id="20162" description="Aaru Fortress -> Tanor Canyon" x="60374" y="164301" z="-2856" price="500" />
+    <tele id="20163" description="Demon Fortress -> Fortress West Gate" x="98920" y="-56423" z="-624" />
+    <tele id="20164" description="Demon Fortress -> Fortress East Gate" x="102390" y="-54320" z="-632" />
+    <tele id="20165" description="Demon Fortress -> Rune Town Square" x="43889" y="-49101" z="-792" />
+    <tele id="20166" description="Demon Fortress -> Goddard Town Square" x="147728" y="-56331" z="-2776" />
+    <tele id="20167" description="Demon Fortress -> Swamp of Screams" x="69340" y="-50203" z="-3314" price="500" />
+    <tele id="20168" description="Demon Fortress -> Valley of Saints" x="65307" y="-71445" z="-3696" price="500" />
+    <tele id="20169" description="Demon Fortress -> Entrance to the Forge of the Gods" x="169018" y="-116303" z="-2432"
+          price="500" />
+    <tele id="20170" description="Demon Fortress -> Wall of Argos" x="165054" y="-47861" z="-3560" price="500" />
+    <tele id="20171" description="Demon Fortress -> Shyeed's Cavern" x="76911" y="-55295" z="-5824" price="500" />
+    <tele id="20172" description="Monastic Fortress -> Fortress North Gate" x="72388" y="-96770" z="-1424" />
+    <tele id="20173" description="Monastic Fortress -> Fortress South Gate" x="71937" y="-92600" z="-1416" />
+    <tele id="20174" description="Monastic Fortress -> Rune Town Square" x="43889" y="-49101" z="-792" />
+    <tele id="20175" description="Monastic Fortress -> Schuttgart Town Square" x="87379" y="-142322" z="-1336" />
+    <tele id="20176" description="Monastic Fortress -> Swamp of Screams" x="69340" y="-50203" z="-3314" price="500" />
+    <tele id="20177" description="Monastic Fortress -> Valley of Saints" x="65307" y="-71445" z="-3696" price="500" />
+    <tele id="20178" description="Monastic Fortress -> Den of Evil" x="68693" y="-110438" z="-1946" price="500" />
+    <tele id="20179" description="Monastic Fortress -> Ice Merchant Cabin" x="113903" y="-108752" z="-860"
+          price="500" />
+    <tele id="20180" description="Monastic Fortress -> Shyeed's Cavern" x="76911" y="-55295" z="-5824" price="500" />
+    <tele id="200901" description="News Informer -> Forge of the Gods" x="169018" y="-116303" z="-2432" price="10000" />
+    <tele id="200902" description="News Informer -> Primeval Isle Wharf" x="11235" y="-24026" z="-3640" price="10000" />
+    <tele id="200903" description="News Informer -> The Giant's Cave" x="174491" y="50942" z="-4360" price="10000" />
+    <tele id="200904" description="News Informer -> Den of Evil" x="68693" y="-110438" z="-1904" price="10000" />
+    <tele id="200905" description="News Informer -> Mithril Mines Western Entrance" x="171946" y="-173352" z="3440"
+          price="10000" />
+    <tele id="200906" description="News Informer -> Mithril Mines Eastern Entrance" x="178591" y="-184615" z="360"
+          price="10000" />
+    <tele id="200907" description="News Informer -> Field of Silence" x="87691" y="162835" z="-3520" price="10000" />
+    <tele id="200908" description="News Informer -> Field of Whispers" x="82192" y="226128" z="-3656" price="10000" />
+    <tele id="200909" description="News Informer -> Crypts of Disgrace" x="47692" y="-115745" z="-3744" price="10000" />
+    <tele id="200910" description="News Informer -> Stakato Nest" x="89513" y="-44800" z="-2136" price="10000" />
+    <tele id="200911" description="News Informer -> Town of Giran" x="83551" y="147945" z="-3400" price="100000" />
+    <tele id="200912" description="News Informer -> Town of Aden" x="146783" y="25808" z="-2008" price="100000" />
+    <tele id="200913" description="News Informer -> Town of Oren" x="82971" y="53207" z="-1488" price="100000" />
+    <tele id="200914" description="News Informer -> Rune Township" x="43835" y="-47749" z="-792" price="100000" />
+    <tele id="200915" description="News Informer -> Town of Goddard" x="148024" y="-55281" z="-2728" price="100000" />
+    <tele id="200916" description="Primeval Isle -> Rune Township" x="43835" y="-47749" z="-792" price="50000" />
+    <tele id="200917" description="Rune Township -> Primeval Isle" x="11235" y="-24026" z="-3640" price="6400" />
+    <tele id="200918" description="Heine -> Isle of Prayer" x="149518" y="195280" z="-3736" price="7200" />
+    <tele id="200919" description="Giant's Cave -> Lower" x="191754" y="56760" z="-7624" />
+    <tele id="200920" description="Giant's Cave -> Upper" x="183985" y="61424" z="-3992" />
+    <tele id="200921" description="Giran Harbor -> Pirate's Palace" x="52241" y="218775" z="-3224" />
+    <tele id="200922" description="Aden GK -> The Giant's Cave" x="174491" y="50942" z="-4360" price="7400" />
+    <tele id="200923" description="FoG Entrance -> FoG Upper Level" x="173492" y="-112272" z="-5192" />
+    <tele id="200924" description="Krun -> Enter Mines " x="173462" y="-174011" z="3480" />
+    <tele id="200925" description="Tarum -> Enter Mines " x="179299" y="-182831" z="-224" />
+    <tele id="200926" description="Goddard -> Forge of the Gods" x="169018" y="-116303" z="-2432" price="10000" />
+    <!-- L2Fusion -->
+    <tele id="14024" description="Giran Arena" x="73739" y="142644" z="-3798" />
+    <tele id="14025" description="Gludin Arena" x="-88663" y="142092" z="-3646" />
+    <tele id="14026" description="Coliseum" x="151440" y="46704" z="-3407" />
+    <tele id="14027" description="Monster Race Track" x="12314" y="182482" z="-3562" />
+    <tele id="14028" description="Gludio" x="-14465" y="123994" z="-3120" />
+    <tele id="14029" description="Dion" x="15667" y="142968" z="-2706" />
+    <tele id="14030" description="Oren" x="83045" y="53137" z="-1496" />
+    <tele id="14031" description="Giran" x="83384" y="147963" z="-3405" />
+    <tele id="14032" description="Heine" x="111394" y="219363" z="-3546" />
+    <tele id="14033" description="Aden" x="146790" y="25811" z="-2013" />
+    <tele id="14034" description="Goddard" x="147958" y="-55314" z="-2734" />
+    <tele id="14035" description="Schuttgart" x="87066" y="-143343" z="-1319" />
+    <tele id="14036" description="Gludin" x="-80808" y="149816" z="-3044" />
+    <tele id="14037" description="Hunter Village" x="117076" y="76886" z="-2700" />
+    <tele id="14038" description="Rune" x="43837" y="-47738" z="-797" />
+    <tele id="14039" description="Elven Village" x="46921" y="51416" z="-2977" />
+    <tele id="14040" description="Dark Elven Village" x="11088" y="15983" z="-4584" />
+    <tele id="14041" description="Dwarven Village" x="115133" y="-178164" z="-902" />
+    <tele id="14042" description="Orc Village" x="-45169" y="-112506" z="-240" />
+    <tele id="14043" description="Talking Island" x="-84133" y="244581" z="-3730" />
+    <tele id="14044" description="Floran Village" x="17829" y="170229" z="-3508" />
+    <tele id="14045" description="Kamael Village" x="-116920" y="46544" z="368" />
+    <tele id="14050" description="Hellbound Dark Side" x="6350" y="240196" z="-1875" price="25000" />
+    <tele id="14051" description="Isle of Prayer" x="140950" y="181412" z="-3629" price="14800" />
+    <tele id="14052" description="Giants Cave" x="186908" y="56256" z="-4578" price="10000" />
+    <tele id="14080" description="Gludio Airship Field" x="-149354" y="253703" z="-190" price="10000" />
+    <tele id="25001" description="Elven Ruins" x="49272" y="248462" z="-5968" />
+    <tele id="25002" description="Windmill Hill" x="-74094" y="165415" z="-3717" />
+    <tele id="25003" description="Dion Hills" x="13393" y="139385" z="-2880" />
+    <tele id="25005" description="Brekas Stronghold" x="85797" y="131668" z="-3678" />
+    <tele id="25006" description="Death Pass" x="73257" y="117691" z="-3711" />
+    <tele id="25007" description="Bee Hive" x="23152" y="187318" z="-3566" />
+    <tele id="25008" description="Sea of Spores" x="61990" y="29455" z="-3732" />
+    <tele id="25009" description="Hunters Valley" x="106160" y="78291" z="-1760" />
+    <tele id="25010" description="The Enchanted Valley" x="125307" y="61011" z="-4192" />
+    <tele id="25012" description="Fields of Massacre" x="175464" y="-5131" z="-2833" />
+    <tele id="25013" description="Forsaken Plains" x="166190" y="32229" z="-3728" />
+    <tele id="25015" description="Valley of Saints" x="65116" y="-71503" z="-3694" />
+    <tele id="25016" description="Forest of the Dead" x="47260" y="-60349" z="-3017" />
+    <tele id="25017" description="Blazing Swamp" x="159672" y="-13463" z="-2841" />
+    <tele id="25018" description="Archaic Laboratory" x="92445" y="-109031" z="-3338" />
+    <tele id="25019" description="Pavel Ruins" x="90978" y="-132330" z="-2610" />
+    <tele id="25020" description="Hot Spring" x="149849" y="-112621" z="-2066" />
+    <tele id="25021" description="Varka Silenos Barracks" x="108121" y="-53849" z="-2509" />
+    <tele id="25022" description="Ketra Orc Outpost" x="149792" y="-81888" z="-5592" />
+    <tele id="25023" description="Monastery of Silence" x="106212" y="-88326" z="-2936" />
+    <tele id="25024" description="Plains of the Lizardmen" x="86575" y="85876" z="-2894" />
+    <tele id="25025" description="Timak Outpost" x="67595" y="70867" z="-3648" />
+    <tele id="25026" description="Sel Mahum Training Grounds" x="76866" y="63817" z="-3657" />
+    <tele id="25027" description="Beast Farm" x="53686" y="-82048" z="-2741" />
+    <tele id="25028" description="Dragon Valley" x="99165" y="110027" z="-3696" />
+    <tele id="25029" description="Imperial Tomb" x="187716" y="-75218" z="-2761" />
+    <tele id="25030" description="Primeval Island" x="10460" y="-25217" z="-3694" />
+    <tele id="25031" description="Partisans Hideaway" x="39684" y="113707" z="-2078" />
+    <tele id="25032" description="Ruins of Agony" x="-42406" y="120632" z="-3414" />
+    <tele id="25033" description="Tower of Insolence - 1st Floor" x="116656" y="16029" z="-5105" />
+    <tele id="25034" description="Tower of Insolence - 10th Floor" x="118428" y="16398" z="5982" />
+    <tele id="25050" description="Floran Village" x="18069" y="170293" z="-3512" />
+    <tele id="27250" description="Crypts of Disgrace" x="55064" y="-119266" z="-3432" />
+    <tele id="27251" description="Giants Cave" x="174458" y="52572" z="-4373" />
+    <tele id="27252" description="Den of Evil" x="75874" y="-125035" z="-3424" />
+    <tele id="27253" description="Harnak Underground Ruins" x="-114709" y="148112" z="-7724" />
+    <tele id="27254" description="Altar of Evil" x="-13945" y="22113" z="-3616" />
+    <tele id="27255" description="Bloody Swampland" x="-14235" y="44686" z="-3584" />
+    <tele id="27256" description="Prison of Darkness" x="175480" y="148176" z="-11652" />
+    <tele id="27257" description="Nornil Cave" x="-86976" y="43237" z="-2688" />
+    <tele id="27258" description="Orbis Temple" x="210157" y="50514" z="-8399" />
+    <tele id="27259" description="Seal of Shilen" x="185342" y="20276" z="-3270" />
+    <tele id="27260" description="Guillotine Fortress" x="33504" y="147235" z="-3477" />
+    <tele id="27261" description="Pagan Temple" x="-16338" y="-37325" z="-10728" />
+    <tele id="27262" description="The Cemetary" x="167391" y="20299" z="-3330" />
+    <tele id="27263" description="Raider Crossroad" x="16641" y="-132599" z="-1718" />
+    <tele id="27264" description="Atelia Fortress" x="-47731" y="60419" z="-3249" />
+    <tele id="27265" description="Ruins of Ye Sagira" x="-115047" y="237313" z="-3092" />
+    <tele id="27266" description="Ruins of Ye Sagira (Border)" x="-114654" y="227622" z="-2864" />
+    <tele id="27267" description="Ancient City of Arkan" x="207530" y="86566" z="-1000" />
+    <tele id="27268" description="Gainak" x="16506" y="-114128" z="-224" />
+    <tele id="27269" description="Seed of Hellfire" x="-147383" y="152646" z="-14048" />
+    <tele id="28300" description="Abandoned Camp" x="-49853" y="147089" z="-2784" />
+    <tele id="28301" description="Execution Grounds" x="50568" y="152408" z="-2656" />
+    <tele id="28302" description="Forbidden Gateways" x="185342" y="20276" z="-3270" />
+    <tele id="28305" description="Garden of Genesis" x="207629" y="112678" z="-2058" />
+    <tele id="28306" description="Gainak" x="16379" y="-114060" z="-226" />
+    <!--
+        [PARSED FROM HUNTINGZONES-E.DAT @ VALIANCE]
+     -->
+    <!-- Area Id: 1... -->
+    <tele id="30000" description="Dion Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30006" description="Town of Dion" x="15472" y="142880" z="-2699" price="0" level="0" />
+    <tele id="30007" description="Floran Village" x="17308" y="170368" z="-3495" price="0" level="0" />
+    <tele id="30008" description="Dion Castle" x="22310" y="155917" z="-2952" price="0" level="0" />
+    <tele id="30014" description="Fortress of Resistance" x="43962" y="108861" z="-2032" price="0" level="0" />
+    <tele id="30115" description="Dion Arena" x="12443" y="183467" z="-3560" price="0" level="0" />
+    <tele id="30208" description="Hive Fortress" x="16732" y="188294" z="-2760" price="0" level="0" />
+    <tele id="30209" description="Floran Fortress" x="5317" y="149746" z="-2728" price="0" level="0" />
+    <tele id="30210" description="Tanor Fortress" x="60342" y="139723" z="-1592" price="0" level="0" />
+    <tele id="30005" description="Mandragora Farm" x="38291" y="148029" z="-3696" price="0" level="20" />
+    <tele id="30011" description="Dion Hills" x="29928" y="151415" z="2392" price="0" level="20" />
+    <tele id="30002" description="Partisan's Hideaway" x="50081" y="116859" z="-2176" price="0" level="23" />
+    <tele id="30013" description="Plains of Dion" x="630" y="179184" z="-3720" price="0" level="23" />
+    <tele id="30003" description="Cruma Marshlands" x="5106" y="126916" z="-3664" price="0" level="25" />
+    <tele id="30012" description="Floran Agricultural Area" x="10610" y="156322" z="-2472" price="0" level="30" />
+    <tele id="30010" description="Bee Hive" x="34475" y="188095" z="-2976" price="0" level="34" />
+    <tele id="30004" description="Cruma Tower" x="17225" y="114173" z="-3440" price="0" level="40" />
+    <tele id="30009" description="Tanor Canyon" x="58316" y="163851" z="-2816" price="0" level="46" />
+    <tele id="30001" description="Guillotine Fortress" x="50568" y="152408" z="-2656" price="0" level="95" />
+    <!-- Area Id: 16... -->
+    <tele id="30015" description="Giran Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30016" description="Hardin's Academy" x="105918" y="109759" z="-3170" price="0" level="0" />
+    <tele id="30021" description="Pirate Tunnel" x="41528" y="198358" z="-4648" price="0" level="0" />
+    <tele id="30023" description="Giran Harbor" x="47938" y="186864" z="-3420" price="0" level="0" />
+    <tele id="30024" description="Town of Giran" x="83475" y="147966" z="-3404" price="0" level="0" />
+    <tele id="30025" description="Giran Arena" x="73579" y="142709" z="-3768" price="0" level="0" />
+    <tele id="30026" description="Giran Castle" x="112077" y="144869" z="-2824" price="0" level="0" />
+    <tele id="30211" description="Valley Fortress" x="126082" y="123622" z="-2424" price="0" level="0" />
+    <tele id="30027" description="Breka's Stronghold" x="85546" y="131328" z="-3672" price="0" level="30" />
+    <tele id="30028" description="Gorgon Flower Garden" x="113553" y="134813" z="-3540" price="0" level="31" />
+    <tele id="30020" description="Death Pass" x="67933" y="117045" z="-3544" price="0" level="35" />
+    <tele id="30022" description="Devil's Isle" x="43408" y="206881" z="-3752" price="0" level="45" />
+    <tele id="30017" description="Dragon Valley" x="73024" y="118485" z="-3720" price="0" level="81" />
+    <tele id="30018" description="Antharas' Lair" x="131557" y="114509" z="-3712" price="0" level="85" />
+    <tele id="30019" description="Antharas' Nest" x="177160" y="114922" z="-7704" price="0" level="85" />
+    <!-- Area Id: 30... -->
+    <tele id="30029" description="Gludio Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30034" description="Gludin Village" x="-80684" y="149770" z="-3043" price="0" level="0" />
+    <tele id="30035" description="Gludin Harbor" x="-91101" y="150344" z="-3624" price="0" level="0" />
+    <tele id="30036" description="Town of Gludio" x="-12787" y="122779" z="-3114" price="0" level="0" />
+    <tele id="30039" description="Fellmere Lake" x="-57798" y="127629" z="-2928" price="0" level="0" />
+    <tele id="30040" description="Gludin Arena" x="-87328" y="142266" z="-3640" price="0" level="0" />
+    <tele id="30041" description="Gludio Castle" x="-18341" y="113946" z="-1268" price="0" level="0" />
+    <tele id="30046" description="Talking Island" x="-114212" y="245920" z="-3680" price="0" level="0" />
+    <tele id="30047" description="Talking Island Village" x="-114358" y="255884" z="-1512" price="0" level="0" />
+    <tele id="30212" description="Camp Fortress" x="-53034" y="156482" z="-1896" price="0" level="0" />
+    <tele id="30213" description="Gludio Southern Fortress" x="-22429" y="219895" z="-3072" price="0" level="0" />
+    <tele id="30230" description="Refugee Camp" x="-26781" y="255525" z="-1952" price="0" level="0" />
+    <tele id="30259" description="Ruins of Ye Sagira" x="-109377" y="237449" z="-2880" price="0" level="8" />
+    <tele id="30051" description="Evil Hunting Grounds" x="-6989" y="109503" z="-3040" price="0" level="14" />
+    <tele id="30056" description="Neutral Zone" x="-10612" y="75881" z="-3592" price="0" level="15" />
+    <tele id="30044" description="Langk Lizardmen Dwellings" x="-44763" y="203497" z="-3592" price="0" level="16" />
+    <tele id="30048" description="Fellmere Harvesting Grounds" x="-63736" y="101522" z="-3552" price="0" level="17" />
+    <tele id="30260" description="Labyrinth of Belis" x="-111754" y="231765" z="-3168" price="0" level="18" />
+    <tele id="30050" description="Ruins of Agony Bend" x="-50174" y="129303" z="-2912" price="0" level="19" />
+    <tele id="30052" description="Entrance to the Ruins of Despair" x="-36652" y="135591" z="-3160" price="0"
+          level="19" />
+    <tele id="30049" description="Windmill Hill" x="-75437" y="168800" z="-3632" price="0" level="20" />
+    <tele id="30053" description="Windawood Manor" x="-28327" y="155125" z="-3496" price="0" level="22" />
+    <tele id="30054" description="Ol Mahum Checkpoint" x="-6661" y="201880" z="-3632" price="0" level="22" />
+    <tele id="30045" description="Maille Lizardmen Barracks" x="-25283" y="106820" z="-3416" price="0" level="24" />
+    <tele id="30031" description="Ruins of Agony" x="-42628" y="119766" z="-3528" price="0" level="25" />
+    <tele id="30042" description="Windy Hill" x="-88539" y="83389" z="-2864" price="0" level="26" />
+    <tele id="30038" description="Forgotten Temple" x="-53001" y="191425" z="-3568" price="0" level="27" />
+    <tele id="30033" description="Ant Nest" x="-9959" y="176184" z="-4160" price="0" level="29" />
+    <tele id="30030" description="Ruins of Despair" x="-19120" y="136816" z="-3762" price="0" level="30" />
+    <tele id="30043" description="Red Rock Ridge" x="-44829" y="188171" z="-3256" price="0" level="30" />
+    <tele id="30032" description="Wasteland" x="-16526" y="208032" z="-3664" price="0" level="35" />
+    <tele id="30037" description="Orc Barracks" x="-89763" y="105359" z="-3576" price="0" level="35" />
+    <tele id="30055" description="Ant Incubator" x="-26489" y="195307" z="-3928" price="0" level="36" />
+    <tele id="30261" description="Harnak Underground Ruins" x="-116185" y="236382" z="-3088" price="0" level="85" />
+    <tele id="30229" description="Beleth's Magic Circle" x="-23517" y="244622" z="-3136" price="0" level="99" />
+    <tele id="30231" description="Phantasmal Ridge" x="-16989" y="253858" z="-3360" price="0" level="99" />
+    <tele id="30232" description="Desert Quarry" x="-6295" y="242330" z="-2048" price="0" level="99" />
+    <!-- Area Id: 67... -->
+    <tele id="30057" description="Oren Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30060" description="Elven Village" x="46951" y="51550" z="-2976" price="0" level="0" />
+    <tele id="30062" description="Iris Lake" x="51469" y="82600" z="-3312" price="0" level="0" />
+    <tele id="30064" description="Shilen Temple" x="25934" y="11037" z="-3720" price="0" level="0" />
+    <tele id="30065" description="Dark Elf Village" x="9709" y="15566" z="-4500" price="0" level="0" />
+    <tele id="30067" description="Altar of Rites" x="-44566" y="77508" z="-3736" price="0" level="0" />
+    <tele id="30069" description="Bandit Stronghold" x="87091" y="-20354" z="-2072" price="0" level="0" />
+    <tele id="30070" description="Ivory Tower" x="85391" y="16228" z="-3640" price="0" level="0" />
+    <tele id="30071" description="Town of Oren" x="82971" y="53207" z="-1470" price="0" level="0" />
+    <tele id="30072" description="Oren Castle" x="78189" y="36936" z="-2560" price="0" level="0" />
+    <tele id="30079" description="Misty Mountains" x="61740" y="94946" z="-1488" price="0" level="0" />
+    <tele id="30080" description="Starlight Waterfall" x="58502" y="53453" z="-3624" price="0" level="0" />
+    <tele id="30081" description="Undine Waterfall" x="-7233" y="57006" z="-3520" price="0" level="0" />
+    <tele id="30082" description="Gods' Falls" x="70456" y="6591" z="-3632" price="0" level="0" />
+    <tele id="30214" description="Ivory Fortress" x="72606" y="4413" z="-2888" price="0" level="0" />
+    <tele id="30215" description="Cloud Mountain Fortress" x="-53234" y="91513" z="-2664" price="0" level="0" />
+    <tele id="30216" description="Dragonspine Fortress" x="11535" y="95277" z="-3264" price="0" level="0" />
+    <tele id="30217" description="Antharas' Fortress" x="79503" y="91179" z="-2720" price="0" level="0" />
+    <tele id="30218" description="Western Fortress" x="111368" y="-14851" z="-832" price="0" level="0" />
+    <tele id="30059" description="Shadow of the Mother Tree" x="50953" y="42105" z="-3480" price="0" level="1" />
+    <tele id="30058" description="Elven Forest" x="21362" y="51122" z="-3688" price="0" level="8" />
+    <tele id="30061" description="Elven Fortress" x="29294" y="74968" z="-3776" price="0" level="10" />
+    <tele id="30075" description="Timak Outpost" x="67097" y="68815" z="-3648" price="0" level="40" />
+    <tele id="30076" description="Ivory Tower Crater" x="85391" y="16228" z="-3640" price="0" level="40" />
+    <tele id="30077" description="Forest of Evil" x="93218" y="16969" z="-3904" price="0" level="45" />
+    <tele id="30078" description="Outlaw Forest" x="91539" y="-12204" z="-2440" price="0" level="46" />
+    <tele id="30068" description="Sea of Spores" x="64328" y="26803" z="-3768" price="0" level="52" />
+    <tele id="30073" description="Plains of the Lizardmen" x="87252" y="85514" z="-3103" price="0" level="81" />
+    <tele id="30074" description="Sel Mahum Training Grounds" x="84517" y="62538" z="-3480" price="0" level="81" />
+    <tele id="30063" description="Altar of Evil" x="-22224" y="14168" z="-3232" price="0" level="85" />
+    <tele id="30066" description="Bloody Swampland" x="-20023" y="50151" z="-3688" price="0" level="87" />
+    <!-- Area Id: 97... -->
+    <tele id="30083" description="Aden Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30086" description="Devastated Castle" x="178358" y="-14192" z="-2256" price="0" level="0" />
+    <tele id="30092" description="Anghel Waterfall" x="166182" y="91560" z="-3168" price="0" level="0" />
+    <tele id="30093" description="Town of Aden" x="146783" y="25808" z="-2000" price="0" level="0" />
+    <tele id="30094" description="Hunters Village" x="117088" y="76931" z="-2670" price="0" level="0" />
+    <tele id="30095" description="Eastern Border Outpost" x="158141" y="-24543" z="-1288" price="0" level="0" />
+    <tele id="30096" description="Coliseum" x="146440" y="46723" z="-3400" price="0" level="0" />
+    <tele id="30097" description="Narsell Lake" x="146440" y="46723" z="-3400" price="0" level="0" />
+    <tele id="30098" description="Aden Castle" x="147461" y="9898" z="-592" price="0" level="0" />
+    <tele id="30106" description="Western Border Outpost" x="112405" y="-16607" z="-1864" price="0" level="0" />
+    <tele id="30219" description="Narsell Fortress" x="154613" y="55391" z="-3096" price="0" level="0" />
+    <tele id="30220" description="Bayou Fortress" x="189828" y="40014" z="-3248" price="0" level="0" />
+    <tele id="30221" description="Hunter's Fortress" x="125250" y="95423" z="-1976" price="0" level="0" />
+    <tele id="30202" description="Kamael Village" x="-118070" y="45956" z="420" price="0" level="1" />
+    <tele id="30207" description="Hills of Gold" x="-116114" y="87005" z="-3544" price="0" level="13" />
+    <tele id="30205" description="Cave of Souls" x="-123842" y="38117" z="1176" price="0" level="15" />
+    <tele id="30091" description="Forest of Mirrors" x="142065" y="81300" z="-3000" price="0" level="40" />
+    <tele id="30102" description="Hunters Valley" x="114306" y="86573" z="-3112" price="0" level="40" />
+    <tele id="30089" description="Enchanted Valley" x="124904" y="61992" z="-3973" price="0" level="45" />
+    <tele id="30103" description="Plains of Glory" x="135580" y="19467" z="-3424" price="0" level="45" />
+    <tele id="30105" description="War-Torn Plains" x="156898" y="11217" z="-4032" price="0" level="45" />
+    <tele id="30100" description="Forsaken Plains" x="168217" y="37990" z="-4072" price="0" level="55" />
+    <tele id="30084" description="Tower of Insolence" x="114649" y="11115" z="-5120" price="0" level="60" />
+    <tele id="30104" description="Fields of Massacre" x="183543" y="-14974" z="-2768" price="0" level="61" />
+    <tele id="30099" description="Ancient Battleground" x="106517" y="-2871" z="-3454" price="0" level="64" />
+    <tele id="30085" description="Blazing Swamp" x="155310" y="-16339" z="-3320" price="0" level="65" />
+    <tele id="30101" description="Silent Valley" x="170838" y="55776" z="-5280" price="0" level="74" />
+    <tele id="30088" description="Giant's Cave" x="181737" y="46469" z="-4276" price="0" level="80" />
+    <tele id="30201" description="Isle of Souls" x="-121436" y="56288" z="-1586" price="0" level="93" />
+    <tele id="30203" description="Nornil's Cave" x="-86961" y="43356" z="-2680" price="0" level="93" />
+    <tele id="30204" description="Nornil's Garden" x="-84728" y="60089" z="-2576" price="0" level="93" />
+    <tele id="30206" description="Mimir's Forest" x="-103032" y="46457" z="-1136" price="0" level="93" />
+    <tele id="30087" description="Seal of Shilen" x="188611" y="20588" z="-3696" price="0" level="95" />
+    <tele id="30090" description="Cemetary" x="167047" y="20304" z="-3328" price="0" level="97" />
+    <!-- Area Id: 121... -->
+    <tele id="30107" description="Innadril Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30112" description="Heine" x="111455" y="219400" z="-3546" price="0" level="0" />
+    <tele id="30113" description="Innadril Castle" x="115988" y="246899" z="-976" price="0" level="0" />
+    <tele id="30186" description="Tour Boat Dock" x="111418" y="225960" z="-3624" price="0" level="0" />
+    <tele id="30196" description="Coral Reef" x="160074" y="167893" z="-3538" price="0" level="0" />
+    <tele id="30197" description="Parnassus" x="149532" y="1772243" z="-610" price="0" level="0" />
+    <tele id="30222" description="White Sands Fortress" x="118659" y="205047" z="-3176" price="0" level="0" />
+    <tele id="30223" description="Aaru Fortress" x="72959" y="186218" z="-2424" price="0" level="0" />
+    <tele id="30114" description="Alligator Beach" x="116267" y="201177" z="-3432" price="0" level="38" />
+    <tele id="30110" description="Garden of Eva" x="84413" y="234334" z="-3656" price="0" level="40" />
+    <tele id="30111" description="Alligator Island" x="115583" y="192261" z="-3488" price="0" level="40" />
+    <tele id="30192" description="Isle of Prayer" x="145159" y="189247" z="-3756" price="0" level="78" />
+    <tele id="30108" description="Field of Silence" x="91088" y="182384" z="-3192" price="0" level="81" />
+    <tele id="30109" description="Field of Whispers" x="74592" y="207656" z="-3032" price="0" level="81" />
+    <tele id="30195" description="Dark Cloud Mansion" x="148838" y="179183" z="-6009" price="0" level="81" />
+    <tele id="30194" description="Chromatic Highlands" x="148444" y="160914" z="-3102" price="0" level="82" />
+    <tele id="30193" description="Crystal Caverns" x="143203" y="148824" z="-12004" price="0" level="97" />
+    <tele id="30198" description="Emerald Square" x="144697" y="147492" z="-12159" price="0" level="97" />
+    <tele id="30199" description="Steam Corridor" x="149948" y="150300" z="-12170" price="0" level="97" />
+    <tele id="30200" description="Coral Garden" x="141135" y="149911" z="-11840" price="0" level="97" />
+    <!-- Area Id: 138... -->
+    <tele id="30116" description="Pa'agrio Temple" x="-55699" y="-114967" z="2528" price="0" level="0" />
+    <tele id="30117" description="Orc Village" x="-45158" y="-112583" z="-236" price="0" level="0" />
+    <tele id="30124" description="Schuttgart Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30125" description="Strip Mine" x="106561" y="-173949" z="-400" price="0" level="0" />
+    <tele id="30126" description="Dwarven Village" x="115120" y="-178224" z="-917" price="0" level="0" />
+    <tele id="30127" description="Spine Mountains" x="147493" y="-200840" z="192" price="0" level="0" />
+    <tele id="30133" description="Mining Zone Passage" x="113826" y="-171150" z="-160" price="0" level="0" />
+    <tele id="30138" description="Caron's Dungeon" x="76021" y="-110477" z="-1704" price="0" level="0" />
+    <tele id="30141" description="Valley of the Lords" x="32173" y="-122954" z="-792" price="0" level="0" />
+    <tele id="30142" description="Schuttgart Castle" x="77630" y="-150885" z="368" price="0" level="0" />
+    <tele id="30143" description="Town of Schuttgart" x="87056" y="-143472" z="-1296" price="0" level="0" />
+    <tele id="30145" description="Frost Lake" x="107577" y="-122392" z="-3632" price="0" level="0" />
+    <tele id="30187" description="Ice Merchant Cabin" x="113750" y="-109163" z="-832" price="0" level="0" />
+    <tele id="30188" description="Brigand Stronghold" x="126272" y="-159336" z="-1232" price="0" level="0" />
+    <tele id="30224" description="Archaic Fortress" x="109203" y="-141149" z="-2800" price="0" level="0" />
+    <tele id="30121" description="Valley of Heroes" x="-39347" y="-107274" z="-2072" price="0" level="1" />
+    <tele id="30130" description="Frozen Valley" x="112971" y="-174924" z="-608" price="0" level="1" />
+    <tele id="30122" description="Immortal Plateau, Northern Region" x="-10983" y="-117484" z="-2464" price="0"
+          level="8" />
+    <tele id="30131" description="Western Mining Zone" x="128527" y="-204036" z="-3408" price="0" level="8" />
+    <tele id="30128" description="Abandoned Coal Mines" x="139714" y="-177456" z="-1536" price="0" level="10" />
+    <tele id="30123" description="Immortal Plateau, Southern Region" x="-4190" y="-80040" z="-2696" price="0"
+          level="18" />
+    <tele id="30132" description="Eastern Mining Zone" x="175836" y="-205837" z="-3384" price="0" level="18" />
+    <tele id="30134" description="Plunderous Plains" x="111965" y="-154172" z="-1528" price="0" level="30" />
+    <tele id="30146" description="Sky Wagon Relic" x="121618" y="-141554" z="-1496" price="0" level="39" />
+    <tele id="30135" description="Frozen Labyrinth" x="113903" y="-108752" z="-884" price="0" level="53" />
+    <tele id="30136" description="Freya's Garden" x="102728" y="-126242" z="-2840" price="0" level="57" />
+    <tele id="30144" description="Archaic Laboratory" x="90418" y="-107317" z="-3328" price="0" level="70" />
+    <tele id="30137" description="Pavel Ruins" x="91280" y="-117152" z="-3952" price="0" level="73" />
+    <tele id="30140" description="Crypts of Disgrace" x="47692" y="-115745" z="-3744" price="0" level="80" />
+    <tele id="30129" description="Mithril Mines" x="171946" y="-173352" z="3440" price="0" level="81" />
+    <tele id="30139" description="Den of Evil" x="68693" y="-110438" z="-1946" price="0" level="81" />
+    <tele id="30118" description="Land of Chaos" x="-8830" y="-119289" z="424" price="0" level="99" />
+    <tele id="30119" description="Gainak" x="9340" y="-112509" z="-2536" price="0" level="99" />
+    <tele id="30120" description="Raider's Crossroads" x="9990" y="-136667" z="-1192" price="0" level="99" />
+    <!-- Area Id: 179... -->
+    <tele id="30147" description="Oracle of Dawn" x="-79184" y="111952" z="-4897" price="0" level="0" />
+    <tele id="30148" description="Oracle of Dusk" x="-80208" y="87120" z="-5153" price="0" level="0" />
+    <tele id="30150" description="Olympiad Stadium" x="-21453" y="-21058" z="-3024" price="0" level="0" />
+    <tele id="30151" description="Frontier" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30249" description="Delusion Chamber" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30149" description="Dimensional Rift" x="0" y="0" z="0" price="0" level="30" />
+    <!-- Area Id: 180... -->
+    <tele id="30152" description="Goddard Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30153" description="Town of Goddard" x="148024" y="-55281" z="-2728" price="0" level="0" />
+    <tele id="30154" description="Goddard Castle" x="147450" y="-47331" z="-496" price="0" level="0" />
+    <tele id="30157" description="Rainbow Springs Chateau" x="139997" y="-124860" z="-1896" price="0" level="0" />
+    <tele id="30162" description="Ketra Orc Village" x="149548" y="-82014" z="-5592" price="0" level="0" />
+    <tele id="30164" description="Pilgrim's Temple" x="168982" y="-86455" z="-3007" price="0" level="0" />
+    <tele id="30168" description="Varka Silenos Village" x="108155" y="-53670" z="-2472" price="0" level="0" />
+    <tele id="30225" description="Borderland Fortress" x="158920" y="-70150" z="-2704" price="0" level="0" />
+    <tele id="30226" description="Demon Fortress" x="100429" y="-55316" z="-488" price="0" level="0" />
+    <tele id="30169" description="Devil's Pass" x="106349" y="-61870" z="-2904" price="0" level="60" />
+    <tele id="30155" description="Garden of Beasts" x="132997" y="-60608" z="-2960" price="0" level="67" />
+    <tele id="30165" description="Wall of Argos" x="165054" y="-47861" z="-3560" price="0" level="70" />
+    <tele id="30156" description="Hot Springs" x="144880" y="-113468" z="-2560" price="0" level="73" />
+    <tele id="30166" description="Shrine of Loyalty" x="190112" y="-61776" z="-2944" price="0" level="73" />
+    <tele id="30161" description="Ketra Orc Outpost" x="146990" y="-67128" z="-3640" price="0" level="76" />
+    <tele id="30163" description="Imperial Tomb" x="186699" y="-75915" z="-2826" price="0" level="76" />
+    <tele id="30167" description="Varka Silenos Barracks" x="125740" y="-40864" z="-3736" price="0" level="76" />
+    <tele id="30158" description="Forge of the Gods" x="168902" y="-116703" z="-2417" price="0" level="78" />
+    <tele id="30159" description="Hall of Flames" x="189964" y="-116820" z="-1624" price="0" level="80" />
+    <tele id="30170" description="Last Imperial Tomb" x="174141" y="-88685" z="-5112" price="0" level="80" />
+    <tele id="30160" description="Valakas' Lair" x="215378" y="-116635" z="-1608" price="0" level="85" />
+    <!-- Area Id: 200... -->
+    <tele id="30171" description="Rune Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30172" description="Town of Rune" x="43835" y="-47749" z="-792" price="0" level="0" />
+    <tele id="30173" description="Rune Castle" x="14659" y="-49230" z="-160" price="0" level="0" />
+    <tele id="30174" description="Rune Harbor" x="36839" y="-38435" z="-3640" price="0" level="0" />
+    <tele id="30175" description="Windtail Waterfall" x="40723" y="-94881" z="-2096" price="0" level="0" />
+    <tele id="30177" description="Wild Beast Reserve" x="55133" y="-93217" z="-1360" price="0" level="0" />
+    <tele id="30180" description="Cursed Village" x="57670" y="-41672" z="-3154" price="0" level="0" />
+    <tele id="30181" description="Fortress of the Dead" x="57966" y="-28378" z="584" price="0" level="0" />
+    <tele id="30190" description="Primeval Isle Wharf" x="10448" y="-24960" z="-3664" price="0" level="0" />
+    <tele id="30191" description="Sailren's Den" x="26240" y="-7840" z="-1972" price="0" level="0" />
+    <tele id="30227" description="Swamp Fortress" x="69955" y="-61163" z="-2624" price="0" level="0" />
+    <tele id="30228" description="Monastic Fortress" x="72269" y="-94495" z="-1264" price="0" level="0" />
+    <tele id="30178" description="Valley of Saints" x="65797" y="-71510" z="-3744" price="0" level="60" />
+    <tele id="30179" description="Forest of the Dead" x="52107" y="-54328" z="-3158" price="0" level="65" />
+    <tele id="30182" description="Swamp of Screams" x="69340" y="-50203" z="-3314" price="0" level="65" />
+    <tele id="30183" description="Monastery of Silence" x="106414" y="-87799" z="-2949" price="0" level="80" />
+    <tele id="30185" description="Stakato Nest" x="88969" y="-45307" z="-2112" price="0" level="82" />
+    <tele id="30176" description="Beast Farm" x="43805" y="-88010" z="-2780" price="0" level="83" />
+    <tele id="30189" description="Primeval Isle" x="8480" y="-14624" z="-3693" price="0" level="83" />
+    <tele id="30184" description="Pagan Temple" x="35630" y="-49748" z="-760" price="0" level="97" />
+    <!-- Area Id: 285... -->
+    <tele id="30233" description="Rombarshya Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30234" description="Keucereus Alliance Base" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30235" description="Temple of Shilen" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30236" description="Seed of Destruction" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30237" description="Secret Airstrip" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30238" description="Entrance of Destruction" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30239" description="Central Square" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30240" description="Scouting Pass" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30241" description="Fortress of Destruction" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30242" description="Tiat's Throne Room" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30243" description="Seed of Infinity" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30244" description="Death Gate" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30245" description="Hall of Suffering" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30246" description="Hall of Erosion" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30247" description="Heart of Infinity" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30248" description="Aerial Cleft" x="0" y="0" z="0" price="0" level="0" />
+    <!-- Area Id: 302... -->
+    <tele id="30250" description="Cardiff Territory" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30251" description="Seed of Annihilation" x="0" y="0" z="0" price="0" level="0" />
+    <!-- Area Id: 304... -->
+    <tele id="30252" description="Magmeld" x="0" y="0" z="0" price="0" level="0" />
+    <tele id="30253" description="Ancient City Arcan" x="207106" y="87611" z="-1104" price="0" level="0" />
+    <tele id="30254" description="Fairy Settlement" x="215392" y="80049" z="816" price="0" level="90" />
+    <tele id="30256" description="Garden of Genesis" x="207665" y="112248" z="-2064" price="0" level="90" />
+    <tele id="30257" description="Prison of Darkness" x="207106" y="87611" z="-1104" price="0" level="90" />
+    <tele id="30258" description="Fortuna Prison" x="0" y="0" z="0" price="0" level="90" />
+    <tele id="30255" description="Orbis Temple" x="198671" y="85881" z="-192" price="0" level="95" />
+    <!--
+        [/PARSED FROM HUNTINGZONES-E.DAT @ VALIANCE]
+     -->
+</list>

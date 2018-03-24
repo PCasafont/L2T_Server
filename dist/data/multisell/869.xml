@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="1" id="34992" /> <!-- Corroded Accessory Gem -->
+        <production count="1" id="36556" /> <!-- Accessory Gem (Low-grade) -->
+    </item>
+    <item>
+        <ingredient count="2" id="34991" /> <!-- Corroded Armor Fragment -->
+        <production count="1" id="36551" /> <!-- Armor Fragment (Low-grade) -->
+    </item>
+    <item>
+        <ingredient count="1" id="34990" /> <!-- Corroded Weapon Fragment -->
+        <production count="1" id="36546" /> <!-- Weapon Fragment (Low-grade) -->
+    </item>
+    <item>
+        <ingredient count="5" id="1864" /> <!-- Corroded Stem -->
+        <production count="1" id="36526" /> <!-- Fiber -->
+    </item>
+    <item>
+        <ingredient count="2" id="1866" /> <!-- Corroded Suede -->
+        <production count="1" id="36526" /> <!-- Fiber -->
+    </item>
+    <item>
+        <ingredient count="9" id="1885" /> <!-- Corroded High-grade Suede -->
+        <production count="1" id="36527" /> <!-- Synthetic Fiber -->
+    </item>
+    <item>
+        <ingredient count="30" id="1895" /> <!-- Corroded Metallic Fiber -->
+        <production count="1" id="36527" /> <!-- Synthetic Fiber -->
+    </item>
+    <item>
+        <ingredient count="3" id="1867" /> <!-- Corroded Animal Skin -->
+        <production count="1" id="36516" /> <!-- Worn Leather -->
+    </item>
+    <item>
+        <ingredient count="3" id="1872" /> <!-- Corroded Animal Bone Fragment -->
+        <production count="1" id="36516" /> <!-- Worn Leather -->
+    </item>
+    <item>
+        <ingredient count="26" id="1882" /> <!-- Corroded Leather -->
+        <production count="1" id="36517" /> <!-- Leather -->
+    </item>
+    <item>
+        <ingredient count="21" id="1894" /> <!-- Corroded Quality Leather -->
+        <production count="1" id="36518" /> <!-- Durable Leather -->
+    </item>
+    <item>
+        <ingredient count="7" id="1869" /> <!-- Corroded Iron Ore -->
+        <production count="1" id="36521" /> <!-- Iron Ore -->
+    </item>
+    <item>
+        <ingredient count="7" id="1870" /> <!-- Corroded Coal -->
+        <production count="1" id="36521" /> <!-- Iron Ore -->
+    </item>
+    <item>
+        <ingredient count="7" id="1871" /> <!-- Corroded Charcoal -->
+        <production count="1" id="36521" /> <!-- Iron Ore -->
+    </item>
+    <item>
+        <ingredient count="1" id="1876" /> <!-- Corroded Mithril Ore -->
+        <production count="1" id="36521" /> <!-- Iron Ore -->
+    </item>
+    <item>
+        <ingredient count="120" id="1873" /> <!-- Corroded Silver Nugget -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="20" id="1874" /> <!-- Corroded Oriharukon Ore -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="3" id="4041" /> <!-- Corroded Mold Hardener -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="30" id="1880" /> <!-- Corroded Steel -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="40" id="1881" /> <!-- Corroded Coarse Bone Powder -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="13" id="1883" /> <!-- Corroded Steel Mold -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="4" id="1886" /> <!-- Corroded Silver Mold -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="4" id="5550" /> <!-- Corroded Reinforced Metal Plate -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="5" id="1890" /> <!-- Corroded Mithril Alloy -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="2" id="4039" /> <!-- Corroded Mold Glue -->
+        <production count="1" id="36522" /> <!-- Silver -->
+    </item>
+    <item>
+        <ingredient count="62" id="1877" /> <!-- Corroded Adamantite Nugget -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="3" id="9629" /> <!-- Corroded Adamantine -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="5" id="1892" /> <!-- Corroded Blacksmith' Frame -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="13" id="1893" /> <!-- Corroded Oriharukon -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="7" id="19312" /> <!-- Corroded Itenium Temper -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="3" id="9628" /> <!-- Corroded Leonard -->
+        <production count="1" id="36523" /> <!-- Adamantite -->
+    </item>
+    <item>
+        <ingredient count="35" id="9630" /> <!-- Corroded Orichalcum -->
+        <production count="1" id="36524" /> <!-- Orichalcum -->
+    </item>
+    <item>
+        <ingredient count="41" id="19309" /> <!-- Corroded Durandil Temper -->
+        <production count="1" id="36524" /> <!-- Orichalcum -->
+    </item>
+    <item>
+        <ingredient count="76" id="19314" /> <!-- Corroded Dark Ion -->
+        <production count="1" id="36524" /> <!-- Orichalcum -->
+    </item>
+    <item>
+        <ingredient count="15" id="1868" /> <!-- Corroded Thread -->
+        <production count="1" id="36531" /> <!-- Thread -->
+    </item>
+    <item>
+        <ingredient count="138" id="1878" /> <!-- Corroded Durable Braid -->
+        <production count="1" id="36532" /> <!-- Thin Braid -->
+    </item>
+    <item>
+        <ingredient count="34" id="5549" /> <!-- Corroded Metallic Thread -->
+        <production count="1" id="36532" /> <!-- Thin Braid -->
+    </item>
+    <item>
+        <ingredient count="212" id="1884" /> <!-- Corroded Cord -->
+        <production count="1" id="36532" /> <!-- Thin Braid -->
+    </item>
+    <item>
+        <ingredient count="23" id="1889" /> <!-- Corroded Synthetic Braid -->
+        <production count="1" id="36532" /> <!-- Thin Braid -->
+    </item>
+    <item>
+        <ingredient count="1" id="1875" /> <!-- Corroded Stone of Purity -->
+        <production count="1" id="36561" /> <!-- Cokes -->
+    </item>
+    <item>
+        <ingredient count="13" id="1865" /> <!-- Corroded Varnish -->
+        <production count="1" id="36561" /> <!-- Cokes -->
+    </item>
+    <item>
+        <ingredient count="10" id="4042" /> <!-- Corroded Enria -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="20" id="4043" /> <!-- Asofe -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="12" id="4040" /> <!-- Corroded Mold Lubricant -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="20" id="4044" /> <!-- Corroded Thons -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="102" id="1879" /> <!-- Corroded Cokes -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="25" id="5220" /> <!-- Corroded Metal Hardener -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="15" id="1887" /> <!-- Corroded Varnish of Purity -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="19" id="1888" /> <!-- Corroded Synthetic Cokes -->
+        <production count="1" id="36562" /> <!-- Greater Cokes -->
+    </item>
+    <item>
+        <ingredient count="7" id="1891" /> <!-- Corroded Artisan's Frame -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="3" id="5551" /> <!-- Corroded Reorin's Mold -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="4" id="4048" /> <!-- Corroded Maestro Mold -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="2" id="4045" /> <!-- Corroded Maestro Holder -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="28" id="19310" /> <!-- Corroded Greater Synthetic Cokes -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="8" id="19313" /> <!-- Corroded Ertel -->
+        <production count="1" id="36563" /> <!-- Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="8" id="4047" /> <!-- Corroded Craftsman Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="61" id="4046" /> <!-- Corroded Maestro Anvil Lock -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="10" id="5553" /> <!-- Corroded Arcsmith' Anvil -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="6" id="5554" /> <!-- Corroded Warsmith' Holder -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="14" id="5552" /> <!-- Corroded Warsmith' Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="24" id="19311" /> <!-- Corroded Laktorarium -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="2" id="19305" /> <!-- Corroded Giant's Warsmith' Holder -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="6" id="19306" /> <!-- Corroded Giant's Reorin's Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="3" id="19307" /> <!-- Corroded Giant's Arcsmith' Anvil -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="8" id="19308" /> <!-- Corroded Giant's Warsmith' Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19514" /> <!-- Corroded Ancient Warsmith' Holder -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19515" /> <!-- Corroded Ancient Reorin's Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19516" /> <!-- Corroded Ancient Arcsmith' Anvil -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="2" id="19517" /> <!-- Corroded Ancient Warsmith' Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19518" /> <!-- Corroded Legendary Warsmith' Holder -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19519" /> <!-- Corroded Legendary Reorin's Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19520" /> <!-- Corroded Legendary Arcsmith' Anvil -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+    <item>
+        <ingredient count="1" id="19521" /> <!-- Corroded Legendary Warsmith' Mold -->
+        <production count="1" id="36564" /> <!-- Greater Synthetic Cokes -->
+    </item>
+</list>

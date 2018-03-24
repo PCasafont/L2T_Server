@@ -66,11 +66,11 @@ public class L2DatabaseFactory
 			config.setMinConnectionsPerPartition(5);
 			config.setMaxConnectionsPerPartition(Math.max(10, Config.DATABASE_MAX_CONNECTIONS / PARTITION_COUNT));
 			config.setAcquireRetryAttempts(5); // How often BoneCp tries to acquire a new connection after a failed try
-			config.setAcquireRetryDelay(
+			config.setAcquireRetryDelayInMs(
 					3000); // Waiting time before trying to acquire connection again, too short delay might slow down the db
-			config.setConnectionTimeout(0); // 0 = wait indefinitely for new connection
+			config.setConnectionTimeoutInMs(0); // 0 = wait indefinitely for new connection
 			config.setAcquireIncrement(5); // if pool is exhausted, get 5 more connections at a time
-			config.setIdleMaxAge(Config.DATABASE_MAX_IDLE_TIME); // 0 = idle connections never expire
+			config.setIdleMaxAgeInSeconds(Config.DATABASE_MAX_IDLE_TIME); // 0 = idle connections never expire
 			config.setStatementsCacheSize(
 					20); // L2J put a fantasy value (100) here with comment "SURE?", let's try with less since default is 0
 			config.setJdbcUrl(Config.DATABASE_URL);

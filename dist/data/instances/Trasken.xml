@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="Earth Wyrm Cave">
+    <activityTime val="120" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="87608" spawnY="-143201" spawnZ="-1300" />
+    <spawnlist>
+        <!-- Belenora -->
+        <spawn npcId="33506" x="75254" y="-182400" z="-9888" heading="40960" respawn="60" />
+        <!-- Dark Elf Soldier -->
+        <spawn npcId="33507" x="75210" y="-182546" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="76280" y="-182298" z="-9888" heading="0" respawn="60" />
+        <spawn npcId="33507" x="75106" y="-182365" z="-9888" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75067" y="-182406" z="-9888" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75150" y="-182417" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75249" y="-182497" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75227" y="-182626" z="-9899" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75292" y="-182532" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75177" y="-182587" z="-9888" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75119" y="-182461" z="-9888" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75166" y="-182505" z="-9888" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="76333" y="-182254" z="-9888" heading="0" respawn="60" />
+        <spawn npcId="33507" x="75259" y="-182579" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75199" y="-182458" z="-9896" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75133" y="-182552" z="-9864" heading="8192" respawn="60" />
+        <spawn npcId="33507" x="75032" y="-182453" z="-9888" heading="8192" respawn="60" />
+        <!-- Alejandro -->
+        <spawn npcId="33502" x="75179" y="-182148" z="-9888" heading="32768" respawn="60" />
+        <!-- Dwarf Soldier -->
+        <spawn npcId="33503" x="75067" y="-182208" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75015" y="-182211" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75067" y="-182148" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75012" y="-182148" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="74955" y="-182145" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="74952" y="-182082" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75015" y="-182082" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="74952" y="-182211" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="74949" y="-182019" z="-9880" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75015" y="-182019" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="74952" y="-182269" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75015" y="-182272" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75067" y="-182272" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75067" y="-182022" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="76277" y="-181919" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="76342" y="-181971" z="-9896" heading="0" respawn="60" />
+        <spawn npcId="33503" x="75067" y="-182085" z="-9896" heading="0" respawn="60" />
+        <!-- Teleport Device -->
+        <spawn npcId="33513" x="75179" y="-181893" z="-9896" heading="0" respawn="60" />
+        <!-- Wooden Medic -->
+        <spawn npcId="33505" x="75372" y="-181770" z="-9888" heading="24576" respawn="60" />
+        <!-- Dwarf Soldier -->
+        <spawn npcId="33504" x="75372" y="-181644" z="-9888" heading="45056" respawn="60" />
+        <spawn npcId="33504" x="75459" y="-181612" z="-9896" heading="16384" respawn="60" />
+        <spawn npcId="33504" x="75287" y="-181685" z="-9896" heading="32768" respawn="60" />
+        <spawn npcId="33504" x="75205" y="-181755" z="-9888" heading="0" respawn="60" />
+        <!-- Fernando -->
+        <spawn npcId="33160" x="77154" y="-182196" z="-9888" heading="30708" respawn="60" />
+        <!-- Tentacle -->
+        <spawn npcId="29198" x="79526" y="-181507" z="-9896" heading="42749" respawn="60" />
+        <spawn npcId="29198" x="80432" y="-180356" z="-9896" heading="19795" respawn="60" />
+        <spawn npcId="29198" x="80432" y="-180850" z="-9896" heading="44991" respawn="60" />
+        <spawn npcId="29198" x="80432" y="-184308" z="-9896" heading="37585" respawn="60" />
+        <spawn npcId="29198" x="80783" y="-180092" z="-9896" heading="12194" respawn="60" />
+        <spawn npcId="29198" x="80168" y="-183593" z="-9896" heading="26626" respawn="60" />
+        <spawn npcId="29198" x="80872" y="-180246" z="-9888" heading="10554" respawn="60" />
+        <spawn npcId="29198" x="81443" y="-182945" z="-9872" heading="46798" respawn="60" />
+        <spawn npcId="29198" x="81273" y="-183674" z="-9896" heading="2271" respawn="60" />
+        <spawn npcId="29198" x="81358" y="-184079" z="-9896" heading="5310" respawn="60" />
+        <spawn npcId="29198" x="81273" y="-183026" z="-9872" heading="18796" respawn="60" />
+        <spawn npcId="29198" x="79938" y="-181744" z="-9896" heading="38441" respawn="60" />
+        <spawn npcId="29198" x="81139" y="-180477" z="-9872" heading="55592" respawn="60" />
+        <spawn npcId="29198" x="81495" y="-181016" z="-9872" heading="3517" respawn="60" />
+        <spawn npcId="29198" x="80872" y="-181170" z="-9896" heading="2987" respawn="60" />
+        <spawn npcId="29198" x="80961" y="-180015" z="-9888" heading="48027" respawn="60" />
+        <spawn npcId="29198" x="82315" y="-182058" z="-9896" heading="29777" respawn="60" />
+        <spawn npcId="29198" x="82564" y="-181977" z="-9896" heading="57134" respawn="60" />
+        <spawn npcId="29198" x="81940" y="-180939" z="-9880" heading="42939" respawn="60" />
+        <spawn npcId="29198" x="82066" y="-182058" z="-9896" heading="38882" respawn="60" />
+        <spawn npcId="29198" x="82790" y="-183073" z="-9888" heading="41801" respawn="60" />
+        <spawn npcId="29198" x="80763" y="-183512" z="-9888" heading="63581" respawn="60" />
+        <!-- Tentacle -->
+        <spawn npcId="29205" x="79423" y="-182218" z="-9896" heading="35179" respawn="60" />
+        <spawn npcId="29205" x="80783" y="-180246" z="-9896" heading="34912" respawn="60" />
+        <spawn npcId="29205" x="80170" y="-180356" z="-9896" heading="21512" respawn="60" />
+        <spawn npcId="29205" x="80423" y="-183674" z="-9872" heading="25477" respawn="60" />
+        <spawn npcId="29205" x="80144" y="-181823" z="-9896" heading="34942" respawn="60" />
+        <spawn npcId="29205" x="80432" y="-179862" z="-9896" heading="47116" respawn="60" />
+        <spawn npcId="29205" x="80516" y="-180862" z="-9896" heading="43485" respawn="60" />
+        <spawn npcId="29205" x="81742" y="-184061" z="-9896" heading="23309" respawn="60" />
+        <spawn npcId="29205" x="81103" y="-184079" z="-9896" heading="41642" respawn="60" />
+        <spawn npcId="29205" x="81273" y="-183917" z="-9896" heading="38136" respawn="60" />
+        <spawn npcId="29205" x="81900" y="-182382" z="-9896" heading="44739" respawn="60" />
+        <spawn npcId="29205" x="81050" y="-180554" z="-9888" heading="51101" respawn="60" />
+        <spawn npcId="29205" x="81900" y="-181977" z="-9896" heading="1962" respawn="60" />
+        <spawn npcId="29205" x="80783" y="-180862" z="-9896" heading="39953" respawn="60" />
+        <spawn npcId="29205" x="81443" y="-183836" z="-9896" heading="25283" respawn="60" />
+        <spawn npcId="29205" x="82564" y="-182625" z="-9896" heading="15729" respawn="60" />
+        <spawn npcId="29205" x="82896" y="-181653" z="-9896" heading="13615" respawn="60" />
+        <spawn npcId="29205" x="82813" y="-182706" z="-9896" heading="12202" respawn="60" />
+        <spawn npcId="29205" x="82813" y="-181491" z="-9896" heading="17260" respawn="60" />
+        <spawn npcId="29205" x="83228" y="-181653" z="-9896" heading="19761" respawn="60" />
+        <spawn npcId="29205" x="83228" y="-182139" z="-9896" heading="40650" respawn="60" />
+        <spawn npcId="29205" x="79938" y="-182534" z="-9872" heading="26203" respawn="60" />
+        <spawn npcId="29205" x="83062" y="-181977" z="-9896" heading="23729" respawn="60" />
+        <spawn npcId="29205" x="81406" y="-180631" z="-9888" heading="1241" respawn="60" />
+        <!-- Earth Wyrm Topography 1 -->
+        <spawn npcId="19025" x="81184" y="-182093" z="-9888" heading="49151" respawn="60" />
+        <!-- Earth Wyrm Topography 2 -->
+        <spawn npcId="19026" x="81184" y="-182099" z="-9888" heading="49151" respawn="60" />
+        <!-- Earth Wyrm Topography 3 -->
+        <spawn npcId="19027" x="81184" y="-182099" z="-9888" heading="49151" respawn="60" />
+        <!-- Earth Wyrm Topography 4 -->
+        <spawn npcId="19028" x="81184" y="-182099" z="-9888" heading="49151" respawn="60" />
+        <!-- Stomach Gland -->
+        <spawn npcId="29206" x="87919" y="-173954" z="-15980" heading="26284" respawn="0" />
+        <spawn npcId="29206" x="88117" y="-173391" z="-15980" heading="4393" respawn="0" />
+        <spawn npcId="29206" x="88636" y="-173489" z="-15980" heading="61965" respawn="0" />
+        <spawn npcId="29206" x="88768" y="-173759" z="-15980" heading="65268" respawn="0" />
+        <spawn npcId="29206" x="87795" y="-173762" z="-15980" heading="33501" respawn="0" />
+    </spawnlist>
+    <doorlist>
+        <door doorId="22120001" />
+    </doorlist>
+</instance>

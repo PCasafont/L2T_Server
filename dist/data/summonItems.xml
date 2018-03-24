@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <item id="5560" npcId="13006" summonType="0" despawn="1200" /> <!-- Holiday Tree -->
+    <item id="5561" npcId="13007" summonType="0" despawn="1200" /> <!-- Special Holiday Tree -->
+    <item id="2375" npcId="12077" summonType="1" /> <!-- Wolf Collar -->
+    <item id="9882" npcId="16025" summonType="1" /> <!-- Great Black Wolf Necklace -->
+    <item id="10163" npcId="16030" summonType="1" /> <!-- Wolf Collar -->
+    <item id="10307" npcId="16037" summonType="1" /> <!-- Great Snow Wolf Necklace -->
+    <item id="10426" npcId="16041" summonType="1" /> <!-- Fenrir Necklace -->
+    <item id="10611" npcId="16042" summonType="1" /> <!-- Snow Fenrir Necklace -->
+    <item id="3500" npcId="12311" summonType="1" /> <!-- Dragonflute of Wind -->
+    <item id="3501" npcId="12312" summonType="1" /> <!-- Star Dragon Flute -->
+    <item id="3502" npcId="12313" summonType="1" /> <!-- Dragonflute of Twilight -->
+    <item id="4422" npcId="12526" summonType="1" /> <!-- Dragon Bugle of Wind -->
+    <item id="4423" npcId="12527" summonType="1" /> <!-- Star Dragon Bugle -->
+    <item id="4424" npcId="12528" summonType="1" /> <!-- Dragon Bugle of Twilight -->
+    <item id="10308" npcId="16038" summonType="1" /> <!-- Red Wind Dragon Bugle -->
+    <item id="10309" npcId="16039" summonType="1" /> <!-- Red Star Dragon Bugle -->
+    <item id="10310" npcId="16040" summonType="1" /> <!-- Red Twilight Dragon Bugle -->
+    <item id="14819" npcId="16068" summonType="1" /> <!-- Guardian's Dragon Bugle -->
+    <item id="4425" npcId="12564" summonType="1" /> <!-- Penitent's Manacles -->
+    <item id="6648" npcId="12780" summonType="1" /> <!-- Baby Buffalo Panpipe -->
+    <item id="6649" npcId="12782" summonType="1" /> <!-- Baby Cougar Chime -->
+    <item id="6650" npcId="12781" summonType="1" /> <!-- Baby Kookaburra Ocarina -->
+    <item id="10311" npcId="16034" summonType="1" /> <!-- Improved Buffalo Panpipe -->
+    <item id="10312" npcId="16036" summonType="1" /> <!-- Improved Cougar Chime -->
+    <item id="10313" npcId="16035" summonType="1" /> <!-- Improved Kookaburra Ocarina -->
+    <item id="14828" npcId="16067" summonType="1" /> <!-- Deinonychus Mesozoic Stone -->
+    <item id="13017" npcId="16045" summonType="1" /> <!-- White Weasel Minion Necklace -->
+    <item id="13303" npcId="16045" summonType="1" /> <!-- White Weasel Minion Necklace (Event) -->
+    <item id="13018" npcId="16046" summonType="1" /> <!-- Fairy Princess Minion Necklace -->
+    <item id="13304" npcId="16046" summonType="1" /> <!-- Fairy Princess Minion Necklace (Event) -->
+    <item id="13019" npcId="16044" summonType="1" /> <!-- Wild Beast Fighter Minion Necklace -->
+    <item id="13305" npcId="16044" summonType="1" /> <!-- Wild Beast Fighter Minion Necklace (Event) -->
+    <item id="13020" npcId="16043" summonType="1" /> <!-- Fox Shaman Minion Necklace -->
+    <item id="13306" npcId="16043" summonType="1" /> <!-- Fox Shaman Minion Necklace (Event) -->
+    <item id="13548" npcId="16052" summonType="1" /> <!-- Toy Knight Minion Necklace -->
+    <item id="14061" npcId="16052" summonType="1" /> <!-- Toy Knight Summon Whistle -->
+    <item id="13549" npcId="16051" summonType="1" /> <!-- Soul Monk Minion Necklace -->
+    <item id="14062" npcId="16051" summonType="1" /> <!-- Spirit Shaman Summon Whistle -->
+    <item id="13550" npcId="16050" summonType="1" /> <!-- Owl Monk Minion Necklace -->
+    <item id="14063" npcId="16050" summonType="1" /> <!-- Owl Monk Summon Necklace -->
+    <item id="13551" npcId="16053" summonType="1" /> <!-- Turtle Ascetic Minion Necklace -->
+    <item id="14064" npcId="16053" summonType="1" /> <!-- Turtle Ascetic Summon Necklace -->
+    <item id="20908" npcId="1562" summonType="1" /> <!-- Desheloph Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20909" npcId="1563" summonType="1" /> <!-- Hyum Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20910" npcId="1564" summonType="1" /> <!-- Lekang Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20911" npcId="1565" summonType="1" /> <!-- Lilias Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20912" npcId="1566" summonType="1" /> <!-- Lapham Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20913" npcId="1567" summonType="1" /> <!-- Mafum Rose Necklace (Event) - 3-hour Summon Duration -->
+    <item id="20915" npcId="1568" summonType="1" /> <!-- Enhanced Rose Necklace: Desheloph - 5-hour Summon Duration -->
+    <item id="20916" npcId="1569" summonType="1" /> <!-- Enhanced Rose Necklace: Hyum - 5-hour Summon Duration -->
+    <item id="20917" npcId="1570" summonType="1" /> <!-- Enhanced Rose Necklace: Lekang - 5-hour Summon Duration -->
+    <item id="20918" npcId="1571" summonType="1" /> <!-- Enhanced Rose Necklace: Lilias - 5-hour Summon Duration -->
+    <item id="20919" npcId="1572" summonType="1" /> <!-- Enhanced Rose Necklace: Lapham - 5-hour Summon Duration -->
+    <item id="20920" npcId="1573" summonType="1" /> <!-- Enhanced Rose Necklace: Mafum - 5-hour Summon Duration -->
+    <item id="15488" npcId="16071" summonType="1" /> <!-- Maguen Pet Collar -->
+    <item id="15489" npcId="16072" summonType="1" /> <!-- Elite Maguen Pet Collar -->
+    <item id="20761" npcId="1561" summonType="1" /> <!-- Rudolph Necklace -->
+    <item id="34905" npcId="16094" summonType="1" /> <!-- Clan-exclusive Pet (Raccoon) -->
+    <item id="34906" npcId="16095" summonType="1" /> <!-- Clan-exclusive Pet (White Cat) -->
+    <item id="34907" npcId="16096" summonType="1" /> <!-- Clan-exclusive Pet (Desert Fox) -->
+    <item id="34908" npcId="16097" summonType="1" /> <!-- Clan-exclusive Pet for Training -->
+    <item id="8663" npcId="12621" summonType="2" /> <!-- Mysterious Potion (Event) -->
+</list>

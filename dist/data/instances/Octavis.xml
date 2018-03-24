@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="Octavis Raid Boss">
+    <activityTime val="120" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="10" />
+    <spawnPoint spawnX="210624" spawnY="50045" spawnZ="-8423" />
+    <doorlist>
+        <door doorId="26210001" />
+        <door doorId="26210002" />
+        <door doorId="26210101" />
+        <door doorId="26210102" />
+        <door doorId="26210103" />
+        <door doorId="26210104" />
+        <door doorId="26210105" />
+        <door doorId="26210106" />
+    </doorlist>
+</instance>

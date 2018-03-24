@@ -1,0 +1,17 @@
+
+dataSources/
+dictionaries/
+libraries/
+modules/
+
+dataSources.*
+dbnavigator.xml
+dynamic.xml
+jsLibraryMappings.xml
+modules.xml
+mongoSettings.xml
+gradle.xml
+tasks.xml
+uiDesigner.xml
+vcs.xml
+workspace.xml

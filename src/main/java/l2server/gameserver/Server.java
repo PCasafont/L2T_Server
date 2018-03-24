@@ -61,11 +61,6 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.29.2.15.2.19 $ $Date: 2005/04/05 19:41:23 $
- */
 public class Server
 {
 	private final Core<L2GameClient> _selectorThread;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="1" id="37714" /> <!-- Talisman - Lilith -->
+        <ingredient count="1" id="37715" /> <!-- Talisman - Anakim -->
+        <ingredient count="1" id="37716" /> <!-- Seven Signs' Energy -->
+        <production count="1" id="37717" /> <!-- Talisman - Seven Signs -->
+    </item>
+</list>

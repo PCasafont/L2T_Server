@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd"
+      isChance="true">
+    <item>
+        <ingredient count="1" id="34984" /> <!-- Talisman - Infinity -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34985" /> <!-- Talisman - Destruction -->
+        <production count="1" id="34985" chance="100" /> <!-- Talisman - Destruction -->
+    </item>
+    <item>
+        <ingredient count="1" id="34985" /> <!-- Talisman - Destruction -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34986" /> <!-- Talisman - Annihilation -->
+        <production count="1" id="34986" chance="100" /> <!-- Talisman - Annihilation -->
+    </item>
+    <item>
+        <ingredient count="1" id="34986" /> <!-- Talisman - Annihilation -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34987" chance="30" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34986" chance="50" /> <!-- Talisman - Annihilation -->
+        <production count="1" id="34985" chance="20" /> <!-- Talisman - Destruction -->
+    </item>
+    <item>
+        <ingredient count="1" id="34986" /> <!-- Talisman - Annihilation -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="1" id="36184" /> <!-- Kaliel's Energy - Annihilation -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34987" chance="30" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34986" chance="70" /> <!-- Talisman - Annihilation -->
+    </item>
+    <item>
+        <ingredient count="1" id="34986" /> <!-- Talisman - Annihilation -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="1" id="36515" /> <!-- Elcyum -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34987" chance="30" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34986" chance="70" /> <!-- Talisman - Annihilation -->
+    </item>
+    <item>
+        <ingredient count="1" id="34986" /> <!-- Talisman - Annihilation -->
+        <ingredient count="25" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="3" id="36515" /> <!-- Elcyum -->
+        <ingredient count="30" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34987" chance="50" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34986" chance="50" /> <!-- Talisman - Annihilation -->
+    </item>
+    <item>
+        <ingredient count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <ingredient count="30" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="60" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34988" /> <!-- Talisman - Desire -->
+        <production count="1" id="34988" chance="20" /> <!-- Talisman - Desire -->
+        <production count="1" id="34987" chance="60" /> <!-- Talisman - Hellfire -->
+        <production count="1" id="34986" chance="20" /> <!-- Talisman - Annihilation -->
+    </item>
+    <item>
+        <ingredient count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <ingredient count="30" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="1" id="36185" /> <!-- Kaliel's Energy - Hellfire -->
+        <ingredient count="60" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34988" /> <!-- Talisman - Desire -->
+        <production count="1" id="34988" chance="20" /> <!-- Talisman - Desire -->
+        <production count="1" id="34987" chance="80" /> <!-- Talisman - Hellfire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <ingredient count="30" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="8" id="36515" /> <!-- Elcyum -->
+        <ingredient count="60" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34988" /> <!-- Talisman - Desire -->
+        <production count="1" id="34988" chance="20" /> <!-- Talisman - Desire -->
+        <production count="1" id="34987" chance="80" /> <!-- Talisman - Hellfire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34987" /> <!-- Talisman - Hellfire -->
+        <ingredient count="30" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="12" id="36515" /> <!-- Elcyum -->
+        <ingredient count="60" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34988" /> <!-- Talisman - Desire -->
+        <production count="1" id="34988" chance="50" /> <!-- Talisman - Desire -->
+        <production count="1" id="34987" chance="50" /> <!-- Talisman - Hellfire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34988" /> <!-- Talisman - Desire -->
+        <ingredient count="35" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="70" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34989" /> <!-- Talisman - Longing -->
+        <production count="1" id="34989" chance="10" /> <!-- Talisman - Longing -->
+        <production count="1" id="34988" chance="50" /> <!-- Talisman - Desire -->
+        <production count="1" id="34987" chance="40" /> <!-- Talisman - Hellfire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34988" /> <!-- Talisman - Desire -->
+        <ingredient count="35" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="1" id="36186" /> <!-- Kaliel's Energy - desire -->
+        <ingredient count="70" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34989" /> <!-- Talisman - Longing -->
+        <production count="1" id="34989" chance="10" /> <!-- Talisman - Longing -->
+        <production count="1" id="34988" chance="90" /> <!-- Talisman - Desire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34988" /> <!-- Talisman - Desire -->
+        <ingredient count="35" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="16" id="36515" /> <!-- Elcyum -->
+        <ingredient count="70" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34989" /> <!-- Talisman - Longing -->
+        <production count="1" id="34989" chance="10" /> <!-- Talisman - Longing -->
+        <production count="1" id="34988" chance="90" /> <!-- Talisman - Desire -->
+    </item>
+    <item>
+        <ingredient count="1" id="34988" /> <!-- Talisman - Desire -->
+        <ingredient count="35" id="35562" /> <!-- Energy of Destruction -->
+        <ingredient count="32" id="36515" /> <!-- Elcyum -->
+        <ingredient count="70" id="35563" /> <!-- Giant's Energy -->
+        <production count="1" id="34989" /> <!-- Talisman - Longing -->
+        <production count="1" id="34989" chance="50" /> <!-- Talisman - Longing -->
+        <production count="1" id="34988" chance="50" /> <!-- Talisman - Desire -->
+    </item>
+</list>

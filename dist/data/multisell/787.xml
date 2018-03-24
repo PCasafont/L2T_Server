@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="4854" id="36516" /> <!-- Worn Leather -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="106" id="36517" /> <!-- Leather -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1867" id="36521" /> <!-- Iron Ore -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="41" id="36522" /> <!-- Silver -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="5276" id="36526" /> <!-- Fiber -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="116" id="36527" /> <!-- Synthetic Fiber -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1618" id="36531" /> <!-- Thread -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="35" id="36532" /> <!-- Thin Braid -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1213" id="36536" /> <!-- Worn Leather Braid -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="27" id="36537" /> <!-- Leather Braid -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="867" id="36541" /> <!-- Steel Wire -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="19" id="36542" /> <!-- Silver Wire -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="248" id="36546" /> <!-- Weapon Fragment (Low-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="5" id="36547" /> <!-- Weapon Fragment -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="219" id="36551" /> <!-- Armor Fragment (Low-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="5" id="36552" /> <!-- Armor Fragment -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="744" id="36556" /> <!-- Accessory Gem (Low-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="16" id="36557" /> <!-- Accessory Gem -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="182" id="36561" /> <!-- Cokes -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="4" id="36562" /> <!-- Greater Cokes -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="747" id="1458" /> <!-- Crystal (D-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="162" id="1459" /> <!-- Crystal (C-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="54" id="1460" /> <!-- Crystal (B-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="32" id="1461" /> <!-- Crystal (A-grade) -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="41" id="37045" /> <!-- Steel Door Guild Coin -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13757" /> <!-- Gludio Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13758" /> <!-- Dion Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13759" /> <!-- Giran Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13760" /> <!-- Oren Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13761" /> <!-- Aden Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13762" /> <!-- Innadril Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13763" /> <!-- Goddard Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13764" /> <!-- Rune Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="13765" /> <!-- Schuttgart Territory Badge -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="25" id="33500" /> <!-- Mark of Lords -->
+        <ingredient count="150000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="5" id="33500" /> <!-- Mark of Lords -->
+        <ingredient count="550000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="33501" /> <!-- Mark of the King -->
+        <ingredient count="250000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="6622" /> <!-- Lesser Giant's Codex -->
+        <ingredient count="400000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="9625" /> <!-- Lesser Giant's CoDEX - Oblivion -->
+        <production count="6" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="9626" /> <!-- Lesser Giant's CoDEX - Discipline -->
+        <production count="9" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="1" id="9627" /> <!-- Lesser Giant's CoDEX - Mastery -->
+        <production count="19" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+    <item>
+        <ingredient count="85" id="37544" /> <!-- Snowball -->
+        <ingredient count="200000" id="57" /> <!-- Adena -->
+        <production count="1" id="37607" /> <!-- Treasure Chest - Western Winds -->
+    </item>
+</list>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient count="1" id="34884" /> <!-- Bottle of Octavis' Soul -->
+        <ingredient count="1" id="19461" /> <!-- Octavis' Bracelet -->
+        <production count="1" id="34860" /> <!-- Enhanced Octavis' Bracelet -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19457" /> <!-- Octavis' Ring -->
+        <production count="1" id="37507" /> <!-- Enhanced Octavis' Ring - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19458" /> <!-- Octavis' Earring -->
+        <production count="1" id="37508" /> <!-- Enhanced Octavis' Earring - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19459" /> <!-- Octavis' Necklace -->
+        <production count="1" id="37509" /> <!-- Enhanced Octavis' Necklace - Warrior -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19457" /> <!-- Octavis' Ring -->
+        <production count="1" id="37513" /> <!-- Enhanced Octavis' Ring - Wizard -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19458" /> <!-- Octavis' Earring -->
+        <production count="1" id="37514" /> <!-- Enhanced Octavis' Earring - Wizard -->
+    </item>
+    <item>
+        <ingredient count="10" id="37505" /> <!-- Octavis Crystal -->
+        <ingredient count="1" id="19459" /> <!-- Octavis' Necklace -->
+        <production count="1" id="37515" /> <!-- Enhanced Octavis' Necklace - Wizard -->
+    </item>
+</list>

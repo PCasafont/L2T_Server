@@ -1,0 +1,184 @@
+<list>
+    <prizeList name="InstancedEvents">
+        <prizeItem id="57" min="1000000" max="50000000" chance="100" dependsOnPerformance="true" /> <!-- Adena -->
+        <prizeItem id="4356" min="10" max="15" chance="100" dependsOnPerformance="true" /> <!-- Gold Einhasad -->
+        <prizeItem id="37559" min="10" max="50" chance="100" dependsOnPerformance="true" /> <!-- Shiny Coin -->
+        <prizeItem id="20336" min="1" max="1" chance="20" /> <!-- XP Rune III (Lv. 1-100+) 50% - 5-hour -->
+        <prizeCategory chance="10">
+            <item id="36241" min="1" max="1" chance="50" /> <!-- Blessed Antharas' Earring - 3-hour -->
+            <item id="36242" min="1" max="1" chance="50" /> <!-- Blessed Valakas' Necklace - 3-hour -->
+        </prizeCategory>
+        <prizeCategory chance="2">
+            <item id="22727" min="1" max="1" chance="0.7" /> <!-- Japanese Sword Appearance Stone -->
+            <item id="22728" min="1" max="1" chance="0.7" /> <!-- Japanese Dagger Appearance Stone -->
+            <item id="22729" min="1" max="1" chance="0.7" /> <!-- Japanese Long Sword Appearance Stone -->
+            <item id="22730" min="1" max="1" chance="0.7" /> <!-- Japanese Fist Weapon Appearance Stone -->
+            <item id="22731" min="1" max="1" chance="0.7" /> <!-- Japanese Great Spear Appearance Stone -->
+            <item id="22732" min="1" max="1" chance="0.7" /> <!-- Japanese Bow Appearance Stone -->
+            <item id="22733" min="1" max="1" chance="0.7" /> <!-- Japanese Crossbow Appearance Stone -->
+            <item id="22734" min="1" max="1" chance="0.7" /> <!-- Japanese Blunt Appearance Stone -->
+            <item id="22735" min="1" max="1" chance="0.7" /> <!-- Japanese Giant Blunt Appearance Stone -->
+            <item id="22736" min="1" max="1" chance="0.7" /> <!-- Japanese Magic Blunt Appearance Stone -->
+            <item id="22737" min="1" max="1" chance="0.7" /> <!-- Japanese Giant Magic Blunt Appearance Stone -->
+            <item id="22738" min="1" max="1" chance="0.7" /> <!-- Japanese Dualsword Appearance Stone -->
+            <item id="22739" min="1" max="1" chance="0.7" /> <!-- Japanese Double Dagger Appearance Stone -->
+            <item id="22740" min="1" max="1" chance="0.7" /> <!-- Japanese Double Blunt Appearance Stone -->
+            <item id="22741" min="1" max="1" chance="0.7" /> <!-- Japanese Shield Appearance Stone -->
+            <item id="22742" min="1" max="1" chance="0.7" /> <!-- Japanese Sigil Appearance Stone -->
+            <item id="22666" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Sword -->
+            <item id="22667" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Dagger -->
+            <item id="22668" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Two-handed Sword -->
+            <item id="22669" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Fist Weapon -->
+            <item id="22670" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Spear -->
+            <item id="22671" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Bow -->
+            <item id="22672" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Crossbow -->
+            <item id="22673" min="1" max="1"
+                  chance="0.7" /> <!-- Emerald Weapon Appearance Stone: One-handed Blunt Weapon -->
+            <item id="22674" min="1" max="1"
+                  chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Two-handed Blunt Weapon -->
+            <item id="22675" min="1" max="1"
+                  chance="0.7" /> <!-- Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon -->
+            <item id="22676" min="1" max="1"
+                  chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon -->
+            <item id="22677" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Dualsword -->
+            <item id="22678" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Dual Dagger -->
+            <item id="22679" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Dual Blunt Weapon -->
+            <item id="22680" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Shield -->
+            <item id="22681" min="1" max="1" chance="0.7" /> <!-- Emerald Weapon Appearance Stone: Sigil -->
+            <item id="23200" min="1" max="1" chance="1.31" /> <!-- Tribal Warrior Costume Appearance Stone Pack -->
+            <item id="23199" min="1" max="1" chance="1.31" /> <!-- Ninja Outfit Appearance Stone Pack -->
+            <item id="23503" min="1" max="1" chance="0.26" /> <!-- Military Top Appearance Stone -->
+            <item id="23504" min="1" max="1" chance="0.26" /> <!-- Military Pants Appearance Stone -->
+            <item id="23505" min="1" max="1" chance="0.26" /> <!-- Military Gloves Appearance Stone -->
+            <item id="23506" min="1" max="1" chance="0.26" /> <!-- Military Shoes Appearance Stone -->
+            <item id="23507" min="1" max="1" chance="0.26" /> <!-- Military Hair Accessory Appearance Stone -->
+            <item id="23493" min="1" max="1" chance="0.26" /> <!-- Metal Suit Top Appearance Stone -->
+            <item id="23494" min="1" max="1" chance="0.26" /> <!-- Metal Suit Pants Appearance Stone -->
+            <item id="23495" min="1" max="1" chance="0.26" /> <!-- Metal Suit Gloves Appearance Stone -->
+            <item id="23496" min="1" max="1" chance="0.26" /> <!-- Metal Suit Shoes Appearance Stone -->
+            <item id="23497" min="1" max="1" chance="0.26" /> <!-- Metal Suit Hair Accessory Appearance Stone -->
+            <item id="23513" min="1" max="1" chance="1.31" /> <!-- Maid Appearance Stone -->
+            <item id="23487" min="1" max="1" chance="1.31" /> <!-- Santa Outfit Appearance Stone -->
+            <item id="23172" min="1" max="1" chance="0.61" /> <!-- Beach Swimsuit Appearance Stone - Event -->
+            <item id="23234" min="1" max="1" chance="0.61" /> <!-- Alluring Swimsuit Appearance Stone -->
+            <item id="23235" min="1" max="1" chance="0.61" /> <!-- Seductive Swimsuit Appearance Stone -->
+            <item id="23888" min="1" max="1" chance="0.26" /> <!-- Vampire Top Appearance Stone -->
+            <item id="23889" min="1" max="1" chance="0.26" /> <!-- Vampire Pants Appearance Stone -->
+            <item id="23890" min="1" max="1" chance="0.26" /> <!-- Vampire Gloves Appearance Stone -->
+            <item id="23891" min="1" max="1" chance="0.26" /> <!-- Vampire Shoes Appearance Stone -->
+            <item id="23892" min="1" max="1" chance="0.26" /> <!-- Vampire Hair Accessory Appearance Stone -->
+            <item id="23878" min="1" max="1" chance="0.43" /> <!-- Samurai Hair Accessory Appearance Stone -->
+            <item id="23880" min="1" max="1" chance="0.87" /> <!-- Samurai Outfit Appearance Stone -->
+            <item id="23882" min="1" max="1" chance="1.31" /> <!-- Anakim Outfit Appearance Stone -->
+            <item id="38956" min="1" max="1" chance="0.87" /> <!-- NC Dinos Appearance Stone (100-day) -->
+            <item id="38959" min="1" max="1" chance="0.43" /> <!-- NC Dinos Hat Appearance Stone (100-day) -->
+            <item id="23929" min="1" max="1" chance="0.7" /> <!-- Tears One-handed Sword Appearance Stone - 7-day -->
+            <item id="23930" min="1" max="1" chance="0.7" /> <!-- Tears Dagger Appearance Stone - 7-day -->
+            <item id="23931" min="1" max="1" chance="0.7" /> <!-- Tears Two-handed Sword Appearance Stone - 7-day -->
+            <item id="23932" min="1" max="1" chance="0.7" /> <!-- Tears Fist Weapon Appearance Stone - 7-day -->
+            <item id="23933" min="1" max="1" chance="0.7" /> <!-- Tears Spear Appearance Stone - 7-day -->
+            <item id="23934" min="1" max="1" chance="0.7" /> <!-- Tears Bow Appearance Stone - 7-day -->
+            <item id="23935" min="1" max="1" chance="0.7" /> <!-- Tears Crossbow Appearance Stone - 7-day -->
+            <item id="23936" min="1" max="1"
+                  chance="0.7" /> <!-- Tears One-handed Blunt Weapon Appearance Stone - 7-day -->
+            <item id="23937" min="1" max="1" chance="0.7" /> <!-- Tears Magic Sword Appearance Stone - 7-day -->
+            <item id="23938" min="1" max="1"
+                  chance="0.7" /> <!-- Tears One-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+            <item id="23939" min="1" max="1"
+                  chance="0.7" /> <!-- Tears Two-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+            <item id="23940" min="1" max="1" chance="0.7" /> <!-- Tears Dualsword Appearance Stone - 7-day -->
+            <item id="23941" min="1" max="1" chance="0.7" /> <!-- Tears Dual Dagger Appearance Stone - 7-day -->
+            <item id="23942" min="1" max="1" chance="0.7" /> <!-- Tears Dual Blunt Weapon Appearance Stone - 7-day -->
+            <item id="23943" min="1" max="1" chance="0.7" /> <!-- Tears Shield Appearance Stone - 7-day -->
+            <item id="23944" min="1" max="1" chance="0.7" /> <!-- Tears Sigil Appearance Stone - 7-day -->
+            <item id="37832" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Dagger - 15-day -->
+            <item id="37833" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: One-handed Sword - 15-day -->
+            <item id="37834" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: Two-handed Sword - 15-day -->
+            <item id="37835" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: One-handed Blunt Weapon - 15-day -->
+            <item id="37836" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Fist Weapon - 15-day -->
+            <item id="37837" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Spear - 15-day -->
+            <item id="37838" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Bow - 15-day -->
+            <item id="37839" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Crossbow - 15-day -->
+            <item id="37840" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: One-handed Magic Sword - 15-day -->
+            <item id="37841" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: One-handed Magic Blunt Weapon - 15-day -->
+            <item id="37842" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: Two-handed Magic Blunt Weapon - 15-day -->
+            <item id="37843" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Dualsword - 15-day -->
+            <item id="37844" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Dual Dagger - 15-day -->
+            <item id="37845" min="1" max="1"
+                  chance="0.7" /> <!-- Valentine Appearance Stone: Dual Blunt Weapon - 15-day -->
+            <item id="37846" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Shield - 15-day -->
+            <item id="37847" min="1" max="1" chance="0.7" /> <!-- Valentine Appearance Stone: Sigil - 15-day -->
+            <item id="23189" min="1" max="1" chance="0.26" /> <!-- Ninja Top Appearance Stone -->
+            <item id="23190" min="1" max="1" chance="0.26" /> <!-- Ninja Pants Appearance Stone -->
+            <item id="23191" min="1" max="1" chance="0.26" /> <!-- Ninja Gloves Appearance Stone -->
+            <item id="23192" min="1" max="1" chance="0.26" /> <!-- Ninja Shoes Appearance Stone -->
+            <item id="23193" min="1" max="1" chance="0.26" /> <!-- Ninja Hair Accessory Appearance Stone -->
+            <item id="23194" min="1" max="1" chance="0.26" /> <!-- Tribal Warrior Top Appearance Stone -->
+            <item id="23195" min="1" max="1" chance="0.26" /> <!-- Tribal Warrior Pants Appearance Stone -->
+            <item id="23196" min="1" max="1" chance="0.26" /> <!-- Tribal Warrior Gloves Appearance Stone -->
+            <item id="23197" min="1" max="1" chance="0.26" /> <!-- Tribal Warrior Shoes Appearance Stone -->
+            <item id="23198" min="1" max="1" chance="0.26" /> <!-- Tribal Warrior Hair Accessory Appearance Stone -->
+            <item id="38200" min="1" max="1" chance="0.7" /> <!-- Blue Mackerel Appearance Stone: One-handed Sword -->
+            <item id="38201" min="1" max="1" chance="0.7" /> <!-- Trumpetfish Appearance Stone: Dagger -->
+            <item id="38202" min="1" max="1" chance="0.7" /> <!-- Shark Appearance Stone: Two-handed Sword -->
+            <item id="38203" min="1" max="1" chance="0.7" /> <!-- Squid Appearance Stone: Spear -->
+            <item id="38204" min="1" max="1"
+                  chance="0.7" /> <!-- Sea Horse Appearance Stone: Two-handed Magic Blunt Weapon -->
+            <item id="38205" min="1" max="1" chance="0.7" /> <!-- Lobster Appearance Stone: Fist Weapon -->
+            <item id="38206" min="1" max="1" chance="0.7" /> <!-- Giant Crab Appearance Stone: Bow -->
+            <item id="38207" min="1" max="1" chance="0.7" /> <!-- Crayfish Appearance Stone: Crossbow -->
+            <item id="38208" min="1" max="1" chance="0.7" /> <!-- Starfish Appearance Stone: Sigil -->
+            <item id="38209" min="1" max="1" chance="0.7" /> <!-- Turtle Appearance Stone: Shield -->
+            <item id="38210" min="1" max="1" chance="0.7" /> <!-- Blue Mackerel Appearance Stone: Dualsword -->
+            <item id="37915" min="1" max="1"
+                  chance="0.7" /> <!-- Scarecrow Sword Appearance Stone: One-handed Magic Sword -->
+            <item id="37914" min="1" max="1" chance="0.7" /> <!-- Pumpkin Dual Dagger Appearance Stone: Dual Dagger -->
+            <item id="37913" min="1" max="1" chance="0.7" /> <!-- Pumpkin Dagger Appearance Stone: Dagger -->
+            <item id="37912" min="1" max="1" chance="0.7" /> <!-- Chrono Maracas Appearance Stone: Dualsword -->
+            <item id="37911" min="1" max="1"
+                  chance="0.7" /> <!-- Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon -->
+            <item id="37910" min="1" max="1" chance="0.7" /> <!-- Chrono Campana Appearance Stone: Spear -->
+            <item id="37909" min="1" max="1" chance="0.7" /> <!-- Chrono Unitus Appearance Stone: Fist Weapon -->
+            <item id="37908" min="1" max="1" chance="0.7" /> <!-- Chrono Cithara Appearance Stone: One-handed Sword -->
+            <item id="37907" min="1" max="1" chance="0.7" /> <!-- Pig Lollipop Appearance Stone: One-handed Sword -->
+            <item id="24134" min="1" max="1" chance="1.31" /> <!-- Appearance Stone: Dark Assassin Suit -->
+            <item id="40220" min="1" max="1"
+                  chance="0.7" /> <!-- Appearance Stone: Cat Staff (Ertheia Only) - 90-day -->
+            <item id="40219" min="1" max="1"
+                  chance="0.7" /> <!-- Appearance Stone: Cat Fighter (Ertheia Only) - 90-day -->
+            <item id="26256" min="1" max="1" chance="0.7" /> <!-- Halloween Shaper -->
+            <item id="26257" min="1" max="1" chance="0.7" /> <!-- Halloween Cutter -->
+            <item id="26258" min="1" max="1" chance="0.7" /> <!-- Halloween Slasher -->
+            <item id="26259" min="1" max="1" chance="0.7" /> <!-- Halloween Avenger -->
+            <item id="26260" min="1" max="1" chance="0.7" /> <!-- Halloween Fighter -->
+            <item id="26261" min="1" max="1" chance="0.7" /> <!-- Halloween Stormer -->
+            <item id="26262" min="1" max="1" chance="0.7" /> <!-- Halloween Thrower -->
+            <item id="26263" min="1" max="1" chance="0.7" /> <!-- Halloween Shooter -->
+            <item id="26264" min="1" max="1" chance="0.7" /> <!-- Halloween Buster -->
+            <item id="26265" min="1" max="1" chance="0.7" /> <!-- Halloween Caster -->
+            <item id="26266" min="1" max="1" chance="0.7" /> <!-- Halloween Retributer -->
+            <item id="26267" min="1" max="1" chance="0.7" /> <!-- Halloween Dualsword -->
+            <item id="26268" min="1" max="1" chance="0.7" /> <!-- Halloween Dual Dagger -->
+            <item id="26269" min="1" max="1" chance="0.7" /> <!-- Halloween Dual Blunt Weapon -->
+            <item id="26270" min="1" max="1" chance="0.7" /> <!-- Halloween Shield -->
+            <item id="26271" min="1" max="1" chance="0.7" /> <!-- Halloween Sigil -->
+            <item id="26273" min="1" max="1" chance="1.31" /> <!-- Halloween Outfit Appearance Stone -->
+            <item id="26337" min="1" max="1" chance="0.43" /> <!-- School Uniform Hair B Appearance Stone -->
+            <item id="26336" min="1" max="1" chance="0.87" /> <!-- School Uniform B Appearance Stone -->
+            <item id="26335" min="1" max="1" chance="0.43" /> <!-- School Uniform Hair A Appearance Stone -->
+            <item id="26334" min="1" max="1" chance="0.87" /> <!-- School Uniform A Appearance Stone -->
+            <item id="26333" min="1" max="1" chance="0.43" /> <!-- Lineage II Baseball Cap Appearance Stone -->
+            <item id="26332" min="1" max="1" chance="0.87" /> <!-- Lineage II Baseball Uniform Appearance Stone -->
+            <item id="26358" min="1" max="1" chance="0.87" /> <!-- Pirate Crew Appeareance Stone -->
+            <item id="26357" min="1" max="1" chance="1.31" /> <!-- Pirate Captain Appeareance Stone -->
+            <item id="46270" min="1" max="1" chance="1.31" /> <!-- Dark Knight Suit Appearance Stone -->
+            <item id="23853" min="1" max="1" chance="0.43" /> <!-- Transparent Armor Appearance Stone -->
+        </prizeCategory>
+    </prizeList>
+</list>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!-- Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Can be used in the Olympiad. -->
+    <effect id="40001" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Can be used in the Olympiad. -->
+    <effect id="40002" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5. Can be used in the Olympiad. -->
+    <effect id="40003" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P. Atk. + 5%, M. Atk. + 10%. Can be used in the Olympiad. -->
+    <effect id="40004" rarity="4" slot="4">
+        <effect desc="Active Skill: P. Atk. + 5%, M. Atk. + 10%. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P. Atk. + 7%, M. Atk. + 15%, Casting Spd. + 5%. Can be used in the Olympiad. -->
+    <effect id="40005" rarity="4" slot="4">
+        <effect desc="Active Skill: P. Atk. + 7%, M. Atk. + 15%, Casting Spd. + 5%. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P. Atk. + 10%, M. Atk. + 20%, Casting Spd. + 10%. Can be used in the Olympiad. -->
+    <effect id="40006" rarity="4" slot="4">
+        <effect desc="Active Skill: P. Atk. + 10%, M. Atk. + 20%, Casting Spd. + 10%. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P./ M. Def. + 3%, P. Atk. + 3%, M. Atk. + 5%. Can be used in the Olympiad. -->
+    <effect id="40007" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 3%, P. Atk. + 3%, M. Atk. + 5%. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P./ M. Def. + 5%, P. Atk. + 5%, M. Atk. + 10%. Can be used in the Olympiad. -->
+    <effect id="40008" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 5%, P. Atk. + 5%, M. Atk. + 10%. Can be used in the Olympiad" />
+    </effect>
+    <!-- Active Skill: P./ M. Def. + 10%, P. Atk. + 10%, M. Atk. + 20%. Can be used in the Olympiad. -->
+    <effect id="40009" rarity="4" slot="4">
+        <effect desc="Active Skill: P./ M. Def. + 10%, P. Atk. + 10%, M. Atk. + 20%. Can be used in the Olympiad" />
+    </effect>
+</list>

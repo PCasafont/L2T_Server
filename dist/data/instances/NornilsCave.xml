@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="Nornils Cave">
+    <activityTime val="60" />
+    <allowSummon val="false" />
+    <emptyDestroyTime val="1200" />
+    <spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
+    <doorlist>
+        <door doorId="16200014" />
+        <door doorId="16200015" />
+        <door doorId="16200016" />
+        <door doorId="16200201" />
+    </doorlist>
+
+</instance>
