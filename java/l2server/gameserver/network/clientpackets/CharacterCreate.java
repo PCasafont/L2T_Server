@@ -293,19 +293,8 @@ public final class CharacterCreate extends L2GameClientPacket
 
 		newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 
-		MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-		if (mainTown != null)
-		{
-			int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-			int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
-			int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
-			newChar.setXYZInvisible(startX, startY, startZ);
-		}
-		else
-		{
-			newChar.setXYZInvisible(template.startX + Rnd.get(-template.startRandom, template.startRandom),
-					template.startY + Rnd.get(-template.startRandom, template.startRandom), template.startZ);
-		}
+		newChar.setXYZInvisible(template.startX, template.startY, template.startZ);
+		newChar.setTitle("");
 
 		newChar.setTitle("");
 
@@ -467,8 +456,6 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerMacro(macro);
 			shortcut = new L2ShortCut(11, 0, 4, 1005, 0, 0);
 			player.registerShortCut(shortcut);
-
-			//STARTER PACK YOMI ZBEUBE
 			// .landrates macro
             /*macro = new L2Macro(1006, 5, "Land Rates", "To see the skill land rates", "LDRT", new L2MacroCmd[]{new L2MacroCmd(0, 3, 0, 0, ".landrates")});
 			player.registerMacro(macro);
@@ -476,13 +463,9 @@ public final class CharacterCreate extends L2GameClientPacket
 			player.registerShortCut(shortcut);*/
 		}
 
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
-			item = player.getInventory().addItem("Init", 40213, 1, player, null);
-			shortcut = new L2ShortCut(2, 0, 1, item.getObjectId(), 0, 1);
-			player.registerShortCut(shortcut);
-
+			//add spawn items
 		}
-
 	}
 }

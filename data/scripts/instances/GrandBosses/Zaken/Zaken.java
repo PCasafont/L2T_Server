@@ -425,7 +425,7 @@ public class Zaken extends L2AttackableAIScript
             int minLevel = template_id == _dayTimeEasy ? 53 : template_id == _dayTimeHard ? 76 : 53;
             int maxLevel = template_id == _dayTimeEasy ? 68 : template_id == _dayTimeHard ? 90 : 68;
 
-            if (Config.isServer(Config.TENKAI_VASPER) && template_id == _dayTimeHard)
+            if (Config.isServer(Config.TENKAI_LEGACY) && template_id == _dayTimeHard)
             {
                 minPlayers = 7;
                 maxLevel = Config.MAX_LEVEL;

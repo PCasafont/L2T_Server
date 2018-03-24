@@ -72,7 +72,7 @@ public class SqlToXml
 				boolean fighter = true;
 				while (rset2.next())
 				{
-					content += "\t\t<template type=\"" + (fighter ? "fighter" : "mage") + "\"" + " STR=\"" +
+					content += "\t\t<template type=\"" + (fighter ? "Fighter" : "mage") + "\"" + " STR=\"" +
 							rset2.getInt("STR") + "\"" + " CON=\"" + rset2.getInt("CON") + "\"" + " DEX=\"" +
 							rset2.getInt("DEX") + "\"" + " INT=\"" + rset2.getInt("_INT") + "\"" + " WIT=\"" +
 							rset2.getInt("WIT") + "\"" + " MEN=\"" + rset2.getInt("MEN") + "\"" + " basePAtk=\"" +

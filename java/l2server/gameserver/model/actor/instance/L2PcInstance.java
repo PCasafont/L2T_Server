@@ -22,8 +22,6 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.*;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.events.Faction.FactionManager;
-import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.ai.L2CharacterAI;
 import l2server.gameserver.ai.L2PlayerAI;
 import l2server.gameserver.ai.L2SummonAI;
@@ -43,7 +41,6 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.events.instanced.types.StalkedStalkers;
-import l2server.gameserver.events.PvpZone;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.ItemHandler;
@@ -52,6 +49,8 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
 import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
+import l2server.gameserver.instancemanager.arena.Fight;
+import l2server.gameserver.instancemanager.arena.Fighter;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveOption;
@@ -3424,7 +3423,7 @@ public class L2PcInstance extends L2Playable
 		L2Weapon weaponItem = null;
 		if (classId >= 0x00 && classId <= 0x09)
 		{
-			//human fighter fists
+			//human Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(246);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3436,7 +3435,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x12 && classId <= 0x18)
 		{
-			//elven fighter fists
+			//elven Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(244);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3448,7 +3447,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x1f && classId <= 0x25)
 		{
-			//dark elven fighter fists
+			//dark elven Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(245);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -3460,7 +3459,7 @@ public class L2PcInstance extends L2Playable
 		}
 		else if (classId >= 0x2c && classId <= 0x30)
 		{
-			//orc fighter fists
+			//orc Fighter fists
 			L2Item temp = ItemTable.getInstance().getTemplate(248);
 			weaponItem = (L2Weapon) temp;
 		}
@@ -6760,17 +6759,6 @@ public class L2PcInstance extends L2Playable
 		if (killer != null)
 		{
 			L2PcInstance pk = killer.getActingPlayer();
-
-			if(RandomFight.state == RandomFight.State.FIGHT)
-			           {
-			               if(RandomFight.players.contains(this) && RandomFight.players.contains(pk))
-			               {
-			                   pk.sendMessage("You won !");
-							   Announcements.getInstance().announceToAll("Random Fight Results : "+pk.getName()+" is the winner.");
-
-			               }
-			           }
-
 			if (getEvent() != null)
 			{
 				getEvent().onKill(killer, this);
@@ -6781,9 +6769,20 @@ public class L2PcInstance extends L2Playable
 			//	OpenWorldOlympiadsManager.getInstance().onKill(pk, this);
 			//}
 
-			if (pk != null && getIsInsideGMEvent() && pk.getIsInsideGMEvent())
+			if (getIsInsideGMEvent() && pk.getIsInsideGMEvent())
 			{
 				GMEventManager.getInstance().onKill(killer, this);
+			}
+
+			if (ArenaManager.getInstance().isInFight(this)){
+				Fight fight = ArenaManager.getInstance().getFight(this);
+				Fighter winner = ArenaManager.getInstance().getFighter((L2PcInstance) killer);
+				if (fight == null || winner == null){
+					return false;
+				}
+				Fighter loser = ArenaManager.getInstance().getFighter(this);
+				winner.onKill(this);
+				loser.onDie((L2PcInstance) killer);
 			}
 
 			//if (pk != null && getEvent() == null && !isInOlympiadMode())
@@ -6828,41 +6827,6 @@ public class L2PcInstance extends L2Playable
 					!getIsInsideGMEvent())
 			{
 				RankingKillInfo.getInstance().updateSpecificKillInfo(pk, this);
-			}
-			if (pk != null && getEvent() == null && !isInOlympiadMode())
-			{
-				if (RandomFight.state == RandomFight.State.FIGHT && RandomFight.players.contains(this) && RandomFight.players.contains(pk))
-				{
-					RandomFight.getInstance().onKillInia(pk, this);
-				}
-			}
-
-
-			if (Ranked1v1.state == Ranked1v1.State.FIGHT && pk != null && getEvent() == null && !isInOlympiadMode())
-			{
-				if (Ranked1v1.fighters.containsKey(this) && Ranked1v1.fighters.containsKey(pk))
-				{
-					Ranked1v1.getInstance().onKill2v2(pk, this);
-				}
-			}
-			if (Ranked2v2.state == Ranked2v2.State.FIGHT && pk != null && getEvent() == null && !isInOlympiadMode())
-			{
-				if (Ranked2v2.teamOne.contains(this) || Ranked2v2.teamTwo.contains(this))
-				{
-					if (Ranked2v2.teamOne.contains(pk) || Ranked2v2.teamTwo.contains(pk))
-					{
-						Ranked2v2.getInstance().onKill2v2(pk, this);
-					}
-				}
-
-			}
-
-			if (pk != null && getEvent() == null && !isInOlympiadMode())
-			{
-				if (PvpZone.state == PvpZone.State.FIGHT &&  PvpZone.players.contains(this) && PvpZone.players.contains(pk))
-				{
-					PvpZone.getInstance().onKillPvpZone(this, pk);
-				}
 			}
 
 			if (pk != null && pk.getClan() != null && getClan() != null && getClan() != pk.getClan() &&
@@ -9139,7 +9103,6 @@ public class L2PcInstance extends L2Playable
 				// Set the x,y,z position of the L2PcInstance and make it invisible
 				player.setXYZInvisible(x, y, z);
 
-
 				// Retrieve the name and ID of the other characters assigned to this account.
 				PreparedStatement stmt = con.prepareStatement(
 						"SELECT charId, char_name FROM characters WHERE account_name=? AND charId<>?");
@@ -9614,16 +9577,15 @@ public class L2PcInstance extends L2Playable
 			int z = _lastZ != 0 ? _lastZ :
 					_eventSavedPosition != null && isPlayingEvent() ? _eventSavedPosition.getZ() : getZ();
 
-            MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-            if (mainTown != null)
-            {
-                L2TownZone currentTown = TownManager.getTown(x, y, z);
-                if (currentTown != null && currentTown.getTownId() == mainTown.getTownId())
-                {
-                    z += 1000000;
-                }
-            }
-
+			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+			if (mainTown != null)
+			{
+				L2TownZone currentTown = TownManager.getTown(x, y, z);
+				if (currentTown != null && currentTown.getTownId() == mainTown.getTownId())
+				{
+					z += 1000000;
+				}
+			}
 
 			con = L2DatabaseFactory.getInstance().getConnection();
 
@@ -12233,7 +12195,7 @@ public class L2PcInstance extends L2Playable
 			return effectArray[effect];
 		}*/
 
-		//sendSysMessage("Glow = " + Math.min(127, wpn.getEnchantLevel()));
+		sendSysMessage("Glow = " + Math.min(127, wpn.getEnchantLevel()));
 		return Math.min(127, wpn.getEnchantLevel());
 	}
 
@@ -16011,7 +15973,7 @@ public class L2PcInstance extends L2Playable
 						}
 						else
 						{
-							htmlMsg.setHtml("<html><body>You are free for now, respect server rules!</body></html>");
+							htmlMsg.setHtml("<html><body>You are free for now, respect server Rule!</body></html>");
 						}
 						sendPacket(htmlMsg);
 						stopPunishTask(true);
@@ -16950,15 +16912,7 @@ public class L2PcInstance extends L2Playable
 		{
 			L2ItemInstance equippedItem = getInventory().getPaperdollItem(i);
 			if (equippedItem != null && (!equippedItem.getItem().checkCondition(this, this, false) ||
-					isInOlympiadMode() && equippedItem.getItem().isOlyRestricted() || (RandomFight.state == RandomFight.State.FIGHT &&
-					RandomFight.players.contains(this) && equippedItem.getItem().isOlyRestricted()) || (PvpZone.state == PvpZone.State.FIGHT &&
-					PvpZone.players.contains(this) && equippedItem.getItem().isOlyRestricted()  ||
-					(Ranked1v1.state == Ranked1v1.State.FIGHT &&
-							Ranked1v1.fighters.containsKey(this) &&
-							equippedItem.getItem().isOlyRestricted())||
-					(Ranked2v2.state == Ranked2v2.State.FIGHT &&
-							Ranked2v2.fighters.containsKey(this) &&
-							equippedItem.getItem().isOlyRestricted()))))
+					isInOlympiadMode() && equippedItem.getItem().isOlyRestricted()))
 			{
 				getInventory().unEquipItemInSlot(i);
 
@@ -19644,46 +19598,46 @@ public class L2PcInstance extends L2Playable
 		return _npcServitors[id];
 	}
 
-    public void spawnServitors()
-    {
-        InstanceManager.getInstance().createInstance(getObjectId());
-        L2Spawn servitor;
-        float angle = Rnd.get(1000);
-        int sCount = 4;
-        if (Config.isServer(Config.TENKAI_VASPER))
-        {
-            MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
-            L2TownZone townZone = TownManager.getTown(currentTown.getTownId());
-            if (!townZone.isCharacterInZone(this))
-            {
-                sCount = 2;
-            }
-        }
-        for (int i = 0; i < sCount; i++)
-        {
-            servitor = getNpcServitor(i);
-            if (servitor != null)
-            {
-                servitor.setInstanceId(getObjectId());
-                servitor.setX(Math.round(getX() + (float) Math.cos(angle / 1000 * 2 * Math.PI) * 30));
-                servitor.setY(Math.round(getY() + (float) Math.sin(angle / 1000 * 2 * Math.PI) * 30));
-                servitor.setZ(getZ() + 75);
-                int heading = (int) Math
-                        .round(Math.atan2(getY() - servitor.getY(), getX() - servitor.getX()) / Math.PI * 32768);
-                if (heading < 0)
-                {
-                    heading = 65535 + heading;
-                }
-                servitor.setHeading(heading);
+	public void spawnServitors()
+	{
+		InstanceManager.getInstance().createInstance(getObjectId());
+		L2Spawn servitor;
+		float angle = Rnd.get(1000);
+		int sCount = 4;
+		if (Config.isServer(Config.TENKAI_LEGACY))
+		{
+			MainTownInfo currentTown = MainTownManager.getInstance().getCurrentMainTown();
+			L2TownZone townZone = TownManager.getTown(currentTown.getTownId());
+			if (!townZone.isCharacterInZone(this))
+			{
+				sCount = 2;
+			}
+		}
+		for (int i = 0; i < sCount; i++)
+		{
+			servitor = getNpcServitor(i);
+			if (servitor != null)
+			{
+				servitor.setInstanceId(getObjectId());
+				servitor.setX(Math.round(getX() + (float) Math.cos(angle / 1000 * 2 * Math.PI) * 30));
+				servitor.setY(Math.round(getY() + (float) Math.sin(angle / 1000 * 2 * Math.PI) * 30));
+				servitor.setZ(getZ() + 75);
+				int heading = (int) Math
+						.round(Math.atan2(getY() - servitor.getY(), getX() - servitor.getX()) / Math.PI * 32768);
+				if (heading < 0)
+				{
+					heading = 65535 + heading;
+				}
+				servitor.setHeading(heading);
 
-                if (InstanceManager.getInstance().getInstance(getObjectId()) != null)
-                {
-                    servitor.doSpawn();
-                }
-            }
-            angle += 1000 / sCount;
-        }
-    }
+				if (InstanceManager.getInstance().getInstance(getObjectId()) != null)
+				{
+					servitor.doSpawn();
+				}
+			}
+			angle += 1000 / sCount;
+		}
+	}
 
 	private void onEventTeleported()
 	{
@@ -22737,235 +22691,6 @@ public class L2PcInstance extends L2Playable
 		return isInsideZone(L2Character.ZONE_PVP) || isInsideZone(L2Character.ZONE_SIEGE);
 	}
 
-	public void setRankedPoints(int amount)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-			PreparedStatement statement =
-					con.prepareStatement("UPDATE characters SET rankedPoints=? WHERE charId=?");
-			statement.setInt(1, amount);
-			statement.setInt(2, this.getObjectId());
-
-			statement.execute();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-
-	public int getRankedPoints()
-	{
-		Connection get = null;
-
-		try
-		{
-			get = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = get.prepareStatement(
-					"SELECT rankedPoints FROM characters WHERE charId = ?");
-			statement.setInt(1, this.getObjectId());
-			ResultSet rset = statement.executeQuery();
-
-			if (rset.next())
-			{
-				int currentPoints = rset.getInt("rankedPoints");
-				return (currentPoints);
-			}
-			rset.close();
-			statement.close();
-		}
-
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(get);
-		}
-		return 0;
-	}
-
-	public void setFactionId(int id)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-			if (this.getFactionId() != 0)
-				FactionManager.getInstance().subFactionMember(this.getFactionId(), 1);
-			FactionManager.getInstance().addFactionMember(id,  1);
-			PreparedStatement statement =
-					con.prepareStatement("UPDATE characters SET faction_id=? WHERE charId=?");
-			statement.setInt(1, id);
-			statement.setInt(2, this.getObjectId());
-
-			statement.execute();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-
-	public int getFactionId()
-	{
-		Connection get = null;
-
-		try
-		{
-			get = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = get.prepareStatement(
-					"SELECT faction_id FROM characters WHERE charId = ?");
-			statement.setInt(1, this.getObjectId());
-			ResultSet rset = statement.executeQuery();
-
-			if (rset.next())
-			{
-				int currentPoints = rset.getInt("faction_id");
-				return (currentPoints);
-			}
-			rset.close();
-			statement.close();
-		}
-
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Couldn't get current faction_id points : " + e.getMessage(), e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(get);
-		}
-		return 0;
-	}
-
-	public void setFactionPoints(int amount)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-
-			PreparedStatement statement =
-					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
-			statement.setInt(1, amount);
-			statement.setInt(2, this.getObjectId());
-
-			statement.execute();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-
-	public void addFactionPoints(int amount)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-
-
-			PreparedStatement statement =
-					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
-			statement.setInt(1, this.getFactionPoints() +  amount);
-			statement.setInt(2, this.getObjectId());
-
-			statement.execute();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-
-	public void subFactionPoints(int amount)
-	{
-		Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-
-
-
-			PreparedStatement statement =
-					con.prepareStatement("UPDATE characters SET faction_points=? WHERE charId=?");
-			statement.setInt(1, this.getFactionPoints() -  amount);
-			statement.setInt(2, this.getObjectId());
-
-			statement.execute();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "Failed updating faction_id Points", e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-
-	public int getFactionPoints()
-	{
-		Connection get = null;
-
-		try
-		{
-			get = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = get.prepareStatement(
-					"SELECT faction_points FROM characters WHERE charId = ?");
-			statement.setInt(1, this.getObjectId());
-			ResultSet rset = statement.executeQuery();
-
-			if (rset.next())
-			{
-				int currentPoints = rset.getInt("faction_points");
-				return (currentPoints);
-			}
-			rset.close();
-			statement.close();
-		}
-
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Couldn't get current faction_id points : " + e.getMessage(), e);
-		}
-		finally
-		{
-			L2DatabaseFactory.close(get);
-		}
-		return 0;
-	}
-
 	private int _lastPhysicalDamages;
 
 	public final void setLastPhysicalDamages(int lastPhysicalDamages)
@@ -23317,7 +23042,7 @@ public class L2PcInstance extends L2Playable
 
 		broadcastUserInfo();
 
-		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_LEGACY))
 		{
 			return;
 		}
@@ -23359,7 +23084,7 @@ public class L2PcInstance extends L2Playable
 		//	startDragonBloodConsumeTask();
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
-			if (isPlayingEvent() || isInOlympiadMode() || Ranked1v1.fighters.containsKey(L2PcInstance.this) )
+			if (isPlayingEvent() || isInOlympiadMode())
 			{
 				getInventory().unEquipItemInBodySlot(L2Item.SLOT_LR_HAND);
 				broadcastUserInfo();

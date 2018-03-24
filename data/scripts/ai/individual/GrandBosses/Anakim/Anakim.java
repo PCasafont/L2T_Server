@@ -179,7 +179,7 @@ public class Anakim extends L2AttackableAIScript
             {
                 if (!_remnants.isEmpty())
                 {
-                    return "You must kill all minions before you can engage in a fight with Anakim.";
+                    return "You must kill all minions before you can engage in a Fight with Anakim.";
                 }
 
                 GrandBossManager.getInstance().setBossStatus(_anakimId, GrandBossManager.getInstance().FIGHTING);

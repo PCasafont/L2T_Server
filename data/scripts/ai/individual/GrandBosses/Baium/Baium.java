@@ -118,7 +118,7 @@ public class Baium extends L2AttackableAIScript
                 if (!_debug)
                 {
                     int maxLvl = 84;
-                    if (Config.isServer(Config.TENKAI_VASPER))
+                    if (Config.isServer(Config.TENKAI_LEGACY))
                     {
                         maxLvl = Config.MAX_LEVEL;
                     }

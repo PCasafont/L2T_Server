@@ -3063,7 +3063,7 @@
           icon="BranchSys3.icon1.g_auto_shape_shift_stone"
           immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
     </item>
-    <!-- Mark with which you can participate in monster duels in the Fantasy Isle Festival. Take it to a Contender to fight with him. -->
+    <!-- Mark with which you can participate in monster duels in the Fantasy Isle Festival. Take it to a Contender to Fight with him. -->
     <item id="23532" type="EtcItem" name="Contender's Mark - Event" icon="BranchSys3.icon1.g_ev_sponsor_token"
           immediateEffect="1"
           weight="0">

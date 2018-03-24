@@ -2774,7 +2774,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	 * pass parameters like soulshot, spiritshots, blessed spiritshots or shield deffence.
 	 * Some other optimizations have been done
 	 * <br><br>
-	 * This new feature works following next rules:
+	 * This new feature works following next Rule:
 	 * <li> To enable feature, effectPower must be over -1 (check DocumentSkill#attachEffect for further information)</li>
 	 * <li> If main skill fails, secondary effect always fail</li>
 	 */

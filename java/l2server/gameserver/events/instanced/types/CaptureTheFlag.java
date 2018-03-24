@@ -62,7 +62,7 @@ public class CaptureTheFlag extends EventInstance
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
-					// return here, the fight can't be completed
+					// return here, the Fight can't be completed
 					Announcements.getInstance().announceToAll("The event has ended. No team won due to inactivity!");
 					return;
 				}

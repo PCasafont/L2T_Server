@@ -52,7 +52,7 @@ public class SagaOfTheSpectralMaster extends SagasSuperClass
 				"Goodness! I no longer sense a battle there now.",
 				"let...",
 				"Only engaged in the battle to bar their choice. Perhaps you should regret.",
-				"The human nation was foolish to try and fight a giant's strength.",
+				"The human nation was foolish to try and Fight a giant's strength.",
 				"Must...Retreat... Too...Strong.",
 				"PLAYERNAME. Defeat...by...retaining...and...Mo...Hacker",
 				"....! Fight...Defeat...It...Fight...Defeat...It..."

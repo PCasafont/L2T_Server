@@ -48,31 +48,31 @@ public final class NewCharacter extends L2GameClientPacket
 		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(0);
 		ct.addChar(template);
 
-		template = CharTemplateTable.getInstance().getTemplate(0); // human fighter
+		template = CharTemplateTable.getInstance().getTemplate(0); // human Fighter
 		ct.addChar(template);
 
 		template = CharTemplateTable.getInstance().getTemplate(1); // human mage
 		ct.addChar(template);
 
-		template = CharTemplateTable.getInstance().getTemplate(2); // elf fighter
+		template = CharTemplateTable.getInstance().getTemplate(2); // elf Fighter
 		ct.addChar(template);
 
 		template = CharTemplateTable.getInstance().getTemplate(3); // elf mage
 		ct.addChar(template);
 
-		template = CharTemplateTable.getInstance().getTemplate(4); // dark elf fighter
+		template = CharTemplateTable.getInstance().getTemplate(4); // dark elf Fighter
 		ct.addChar(template);
 
 		template = CharTemplateTable.getInstance().getTemplate(5); // dark elf mage
 		ct.addChar(template);
 
-		template = CharTemplateTable.getInstance().getTemplate(6); // orc fighter
+		template = CharTemplateTable.getInstance().getTemplate(6); // orc Fighter
 		ct.addChar(template);
 
 		template = CharTemplateTable.getInstance().getTemplate(7); // orc mage
 		ct.addChar(template);
 
-		template = CharTemplateTable.getInstance().getTemplate(8); // dwarf fighter
+		template = CharTemplateTable.getInstance().getTemplate(8); // dwarf Fighter
 		ct.addChar(template);
 
 		template = CharTemplateTable.getInstance().getTemplate(9); //kamael male soldier

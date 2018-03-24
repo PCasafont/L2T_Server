@@ -409,7 +409,7 @@ public class MinionList
 			return null;
 		}
 
-		if (Config.isServer(Config.TENKAI_VASPER) && minionTemplate.Level + 5 < master.getLevel())
+		if (Config.isServer(Config.TENKAI_LEGACY) && minionTemplate.Level + 5 < master.getLevel())
 		{
 			minionTemplate.Level = (byte) master.getLevel();
 		}

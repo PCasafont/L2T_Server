@@ -280,6 +280,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 	{
 		if (!con.isClosed())
 		{
+
 			ByteBuffer buf;
 			if ((buf = con.getReadBuffer()) == null)
 			{
@@ -299,6 +300,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			try
 			{
 				result = con.read(buf);
+				System.out.println(result);
 			}
 			catch (IOException e)
 			{

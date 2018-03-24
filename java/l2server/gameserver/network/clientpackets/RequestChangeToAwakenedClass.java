@@ -127,7 +127,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 			player.setBaseClass(cl.getId());
 		}
 
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			player.giveAvailableSkills(true);
 		}

@@ -64,7 +64,7 @@ public class Olympiad
 	private static final String OLYMPIAD_DELETE_NOBLE = "DELETE FROM olympiad_nobles WHERE charId = ? LIMIT 1";
 	private static final String OLYMPIAD_GET_HEROES =
 			"SELECT charId FROM olympiad_nobles " + "WHERE class_id = ? AND competitions_done >= " +
-					(Config.isServer(Config.TENKAI_VASPER) ? 5 : 10) + " AND competitions_won > 0 " +
+					(Config.isServer(Config.TENKAI_LEGACY) ? 5 : 10) + " AND competitions_won > 0 " +
 					"ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
 	private static final String GET_ALL_CLASSIFIED_NOBLES = "SELECT charId from olympiad_nobles_eom " +
 			"WHERE competitions_done >= 10 AND competitions_won > 0 ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
@@ -564,7 +564,7 @@ public class Olympiad
 		Announcements.getInstance().announceToAll(sm);
 
 		Calendar endTime = Calendar.getInstance();
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			endTime.add(Calendar.DAY_OF_WEEK, 7);
 			endTime.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);

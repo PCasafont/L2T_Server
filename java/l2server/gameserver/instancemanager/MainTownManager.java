@@ -138,7 +138,7 @@ public class MainTownManager
 
 	private void load()
 	{
-		if (!Config.isServer(Config.TENKAI_VASPER))
+		if (!Config.isServer(Config.TENKAI_LEGACY))
 		{
 			return;
 		}

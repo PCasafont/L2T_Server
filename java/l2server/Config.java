@@ -41,16 +41,11 @@ public final class Config
 {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
-	public static final int TENKAI_VASPER = 0x20;
+	public static final int TENKAI_LEGACY = 0x20;
 
 	//--------------------------------------------------
 	// Temporary Config File
 	//--------------------------------------------------
-
-	public static boolean ALLOW_RANDOM_FIGHT;
-    public static int EVERY_MINUTES;
-	public static int RANDOM_FIGHT_REWARD_ID;
-  	public static int RANDOM_FIGHT_REWARD_COUNT;
 
 	// Instances
 	public static int FRINTEZZA_MIN_PLAYERS;
@@ -69,7 +64,6 @@ public final class Config
 	public static int ANTHARAS_MIN_PLAYERS;
 	public static int LINDVIOR_MIN_PLAYERS;
 	public static int VALAKAS_MIN_PLAYERS;
-	public static int HELIOS_MIN_PLAYERS;
 	public static int BAIUM_MIN_PLAYERS;
 	public static int KELBIM_MIN_PLAYERS;
 
@@ -945,9 +939,6 @@ public final class Config
 	public static int VALAKAS_WAIT_TIME;
 	public static int VALAKAS_INTERVAL_SPAWN;
 	public static int VALAKAS_RANDOM_SPAWN;
-	public static int HELIOS_WAIT_TIME;
-	public static int HELIOS_INTERVAL_SPAWN;
-	public static int HELIOS_RANDOM_SPAWN;
 	public static int ANTHARAS_WAIT_TIME;
 	public static int ANTHARAS_INTERVAL_SPAWN;
 	public static int ANTHARAS_RANDOM_SPAWN;
@@ -1081,15 +1072,16 @@ public final class Config
 					SERVER_NAME_MASK = DEFAULT;
 				}
 
-				if (SERVER_NAME.contains("vasper") || SERVER_NAME.contains("vasper"))
+
+				if (SERVER_NAME.contains("legacy"))
 				{
-					SERVER_NAME_MASK |= TENKAI_VASPER;
+					SERVER_NAME_MASK |= TENKAI_LEGACY;
 				}
 
 				//TODO data driven pls
-				WEB_DB_NAME = "l2tenkai_web";
-				FORUM_DB_NAME = "l2tenkai_board";
-				LOGIN_DB_NAME = "l2tenkai_common";
+				WEB_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_web";
+				FORUM_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_board";
+				LOGIN_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_common";
 
 				// Chat Filter (default)
 				try
@@ -1471,8 +1463,6 @@ public final class Config
 				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
 	}
 
-
-
 	public static int getServerTypeId(String[] serverTypes)
 	{
 		int tType = 0;
@@ -1696,8 +1686,6 @@ public final class Config
 
 		return array;
 	}
-
-
 
 	/**
 	 * itemId1,itemNumber1;itemId2,itemNumber2...

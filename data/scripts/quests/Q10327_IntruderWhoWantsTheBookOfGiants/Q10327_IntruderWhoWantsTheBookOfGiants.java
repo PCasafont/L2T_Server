@@ -290,6 +290,6 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 	public static void main(String[] args)
 	{
 		new Q10327_IntruderWhoWantsTheBookOfGiants(10327, qn,
-				"Using skills to fight monsters. Oppotunity to obtain a no-Grade accessory.");
+				"Using skills to Fight monsters. Oppotunity to obtain a no-Grade accessory.");
 	}
 }

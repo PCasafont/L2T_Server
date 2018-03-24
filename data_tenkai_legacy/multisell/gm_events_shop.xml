@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+    <item>
+        <ingredient id="14720" count="1" /> <!-- Event - Apiga -->
+        <production id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+    </item>
+    <item>
+        <ingredient id="14720" count="1" /> <!-- Event - Apiga -->
+        <production id="37559" count="20" /> <!-- Bloody Pa'agrio -->
+    </item>
+    <item>
+        <ingredient id="14720" count="1" /> <!-- Event - Apiga -->
+        <production id="4355" count="100" /> <!-- Blue Eva -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23929" count="1" /> <!-- Tears One-handed Sword Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23930" count="1" /> <!-- Tears Dagger Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23931" count="1" /> <!-- Tears Two-handed Sword Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23932" count="1" /> <!-- Tears Fist Weapon Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23933" count="1" /> <!-- Tears Spear Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23934" count="1" /> <!-- Tears Bow Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23935" count="1" /> <!-- Tears Crossbow Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23936" count="1" /> <!-- Tears One-handed Blunt Weapon Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23937" count="1" /> <!-- Tears Magic Sword Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23938" count="1" /> <!-- Tears One-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23939" count="1" /> <!-- Tears Two-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23940" count="1" /> <!-- Tears Dualsword Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23941" count="1" /> <!-- Tears Dual Dagger Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23942" count="1" /> <!-- Tears Dual Blunt Weapon Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23943" count="1" /> <!-- Tears Shield Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="23944" count="1" /> <!-- Tears Sigil Appearance Stone - 7-day -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22727" count="1" /> <!-- Japanese Sword Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22728" count="1" /> <!-- Japanese Dagger Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22729" count="1" /> <!-- Japanese Long Sword Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22730" count="1" /> <!-- Japanese Fist Weapon Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22731" count="1" /> <!-- Japanese Great Spear Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22732" count="1" /> <!-- Japanese Bow Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22733" count="1" /> <!-- Japanese Crossbow Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22734" count="1" /> <!-- Japanese Blunt Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22735" count="1" /> <!-- Japanese Giant Blunt Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22736" count="1" /> <!-- Japanese Magic Blunt Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22737" count="1" /> <!-- Japanese Giant Magic Blunt Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22738" count="1" /> <!-- Japanese Dualsword Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22739" count="1" /> <!-- Japanese Double Dagger Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22740" count="1" /> <!-- Japanese Double Blunt Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22741" count="1" /> <!-- Japanese Shield Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="5" /> <!-- Event - Apiga -->
+        <production id="22742" count="1" /> <!-- Japanese Sigil Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23503" count="1" /> <!-- Military Top Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23504" count="1" /> <!-- Military Pants Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23505" count="1" /> <!-- Military Gloves Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23506" count="1" /> <!-- Military Shoes Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23507" count="1" /> <!-- Military Hair Accessory Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="2" /> <!-- Event - Apiga -->
+        <production id="23878" count="1" /> <!-- Samurai Hair Accessory Appearance Stone -->
+    </item>
+    <item>
+        <ingredient id="14720" count="8" /> <!-- Event - Apiga -->
+        <production id="23880" count="1" /> <!-- Samurai Outfit Appearance Stone -->
+    </item>
+</list>

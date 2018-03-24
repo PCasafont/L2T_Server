@@ -410,6 +410,6 @@ public class Q10323_GoingIntoARealWar extends Quest
 
 	public static void main(String[] args)
 	{
-		new Q10323_GoingIntoARealWar(10323, qn, "Using soulshots and spiritshots to fight monsters.");
+		new Q10323_GoingIntoARealWar(10323, qn, "Using soulshots and spiritshots to Fight monsters.");
 	}
 }

@@ -922,7 +922,7 @@ public class Duel
 			return;
 		}
 
-		// stop the fight
+		// stop the Fight
 		stopFighting();
 
 		// TODO: Can every party member cancel a party duel? or only the party leaders?

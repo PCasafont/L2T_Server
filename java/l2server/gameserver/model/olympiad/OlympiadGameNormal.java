@@ -143,7 +143,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				toRemove.add(playerTwo.getObjectId());
 
 				//System.out.println("Matched " + playerOne.getName() + " VS " + playerTwo.getName());
-				//Util.logToFile(playerOne.getName() + " (HWID: " + playerOne.getClient().getHardwareId() + ", IP: " + playerOne.getInetAddress() + ") is going to fight against " + playerTwo.getName() + " (HWID: " + playerTwo.getClient().getHardwareId() + ", IP: " + playerTwo.getInetAddress() + ")", "OlympiadLogs", true);
+				//Util.logToFile(playerOne.getName() + " (HWID: " + playerOne.getClient().getHardwareId() + ", IP: " + playerOne.getInetAddress() + ") is going to Fight against " + playerTwo.getName() + " (HWID: " + playerTwo.getClient().getHardwareId() + ", IP: " + playerTwo.getInetAddress() + ")", "OlympiadLogs", true);
 				break;
 			}
 		}
@@ -858,7 +858,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		{
 			if (Log.isLoggable(Level.SEVERE))
 			{
-				Log.log(Level.SEVERE, "SQL exception while saving olympiad fight.", e);
+				Log.log(Level.SEVERE, "SQL exception while saving olympiad Fight.", e);
 			}
 		}
 		finally

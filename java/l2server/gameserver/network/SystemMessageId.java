@@ -7336,19 +7336,19 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 1275<br>
-	 * Message: You've chosen to fight for the Seal of Avarice during this quest event period.
+	 * Message: You've chosen to Fight for the Seal of Avarice during this quest event period.
 	 */
 	public static final SystemMessageId FIGHT_FOR_AVARICE;
 
 	/**
 	 * ID: 1276<br>
-	 * Message: You've chosen to fight for the Seal of Gnosis during this quest event period.
+	 * Message: You've chosen to Fight for the Seal of Gnosis during this quest event period.
 	 */
 	public static final SystemMessageId FIGHT_FOR_GNOSIS;
 
 	/**
 	 * ID: 1277<br>
-	 * Message: You've chosen to fight for the Seal of Strife during this quest event period.
+	 * Message: You've chosen to Fight for the Seal of Strife during this quest event period.
 	 */
 	public static final SystemMessageId FIGHT_FOR_STRIFE;
 
@@ -8433,7 +8433,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 1456<br>
-	 * Message: You cannot fish while riding as a passenger of a boat - it's against the rules.
+	 * Message: You cannot fish while riding as a passenger of a boat - it's against the Rule.
 	 */
 	public static final SystemMessageId CANNOT_FISH_ON_BOAT;
 
@@ -8675,7 +8675,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 1496<br>
-	 * Message: The match has started, fight!
+	 * Message: The match has started, Fight!
 	 */
 	public static final SystemMessageId STARTS_THE_GAME;
 
@@ -15584,7 +15584,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 3762<br>
-	 * Message: You dare fight me? Ha - fools!
+	 * Message: You dare Fight me? Ha - fools!
 	 */
 	public static final SystemMessageId YOU_DARE_FIGHT_ME;
 
@@ -15852,7 +15852,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 3807<br>
-	 * Message: Warrior, don't forget about the bloody past and fight against destruction.
+	 * Message: Warrior, don't forget about the bloody past and Fight against destruction.
 	 */
 	public static final SystemMessageId WARRIOR_DONT_FORGET_ABOUT_THE_BLOODY_PAST_AND_FIGHT_AGAINST_DESTRUCTION;
 
@@ -15888,7 +15888,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 3813<br>
-	 * Message: Because Clan $s1 did not fight back for 1 week, the clan war was cancelled.
+	 * Message: Because Clan $s1 did not Fight back for 1 week, the clan war was cancelled.
 	 */
 	public static final SystemMessageId BECAUSE_CLAN_S1_DID_NOT_FIGHT_BACK_FOR_1_WEEK_THE_CLAN_WAR_WAS_CANCELLED;
 
@@ -17632,7 +17632,7 @@ public final class SystemMessageId
 
 	/**
 	 * ID: 4762<br>
-	 * Message: Make rules about item acquiring during a party hunt.
+	 * Message: Make Rule about item acquiring during a party hunt.
 	 */
 	public static final SystemMessageId MAKE_RULES_ABOUT_ITEM_ACQUIRING_DURING_A_PARTY_HUNT;
 

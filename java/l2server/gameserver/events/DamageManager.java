@@ -294,7 +294,7 @@ public class DamageManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement =
-					con.prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, `hwId` FROM `dmg_data`");
+						con.prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, `hwId` FROM `dmg_data`");
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
 			{

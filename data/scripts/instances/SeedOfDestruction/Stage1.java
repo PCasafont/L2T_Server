@@ -582,7 +582,7 @@ public class Stage1 extends Quest
 						break;
 					case 1:
 						ExShowScreenMessage message1 = new ExShowScreenMessage(1, 0, 5, 0, 1, 0, 0, false, 10000, 1,
-								"The enemies have attacked. Everyone come out and fight!!!! ... Urgh~!");
+								"The enemies have attacked. Everyone come out and Fight!!!! ... Urgh~!");
 						sendScreenMessage(world, message1);
 						for (int i : ENTRANCE_ROOM_DOORS)
 						{

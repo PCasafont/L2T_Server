@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS `log_damage` (
   positionBonus float NOT NULL DEFAULT '0',
   ssBonus float NOT NULL DEFAULT '1',
   finalBonus float NOT NULL DEFAULT '1',
-  damage float DEFAULT NULL
-  PRIMARY KEY (`player_id`, `time`)
+  damage float DEFAULT NULL,
+  PRIMARY KEY (`attacker`, 0)
 );

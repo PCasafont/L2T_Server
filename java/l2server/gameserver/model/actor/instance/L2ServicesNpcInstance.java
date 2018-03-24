@@ -496,7 +496,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 
 						player.setActiveClass(player.getTotalSubClasses());
 
-						if (Config.isServer(Config.TENKAI_VASPER))
+						if (Config.isServer(Config.TENKAI_LEGACY))
 						{
 							player.giveAvailableSkills(true);
 							player.sendSkillList();
@@ -629,7 +629,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 						content += "Change Subclass:<br>Your sub class has been changed to <font color=\"LEVEL\">" +
 								PlayerClassTable.getInstance().getClassNameById(paramTwo) + "</font>.";
 
-						if (Config.isServer(Config.TENKAI_VASPER))
+						if (Config.isServer(Config.TENKAI_LEGACY))
 						{
 							player.giveAvailableSkills(true);
 							player.sendSkillList();

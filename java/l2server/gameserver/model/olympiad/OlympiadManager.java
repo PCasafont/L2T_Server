@@ -185,7 +185,7 @@ public class OlympiadManager
 	{
 		CompetitionType type = CompetitionType.CLASSED;
 
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) != Calendar.FRIDAY)
 			{
@@ -383,12 +383,6 @@ public class OlympiadManager
 			//sm.addPcName(noble);
 			//player.sendPacket(sm);
 			player.sendMessage("Only awakened characters can participate in the Grand Olympiad.");
-			return null;
-		}
-
-		if (player.getLevel() < 106)
-		{
-			player.sendMessage("Only players level 106 or above can participate in the Grand Olympiad.");
 			return null;
 		}
 

@@ -246,7 +246,7 @@
         -
         Castle
         -
-        Siege Time rules
+        Siege Time Rule
         Which values can change Castle Lords (day,hour,minute)
     -->
     <config name="CLSetSiegeTimeList" var="CL_SET_SIEGE_TIME_LIST" default="hour" />
@@ -932,7 +932,7 @@
     <config name="CommonRecipeLimit" var="COMMON_RECIPE_LIMIT" default="50" />
 
     <!--
-        Alternative crafting rules. If enabled, the following will be true:
+        Alternative crafting Rule. If enabled, the following will be true:
         Crafting takes time.
         Players get EXP/SP for crafting.
     -->
@@ -2173,7 +2173,7 @@
 
     <!--
         Disable Raid Curse if raid more than 8 levels lower.
-        Caution: drop will be reduced or even absent if DeepBlue drop rules enabled.
+        Caution: drop will be reduced or even absent if DeepBlue drop Rule enabled.
     -->
     <config name="DisableRaidCurse" var="RAID_DISABLE_CURSE" default="False" />
 
@@ -2887,7 +2887,7 @@
     <!-- Hero tables show last month's winners or current status. -->
     <config name="AltOlyShowMonthlyWinners" var="ALT_OLY_SHOW_MONTHLY_WINNERS" default="True" />
 
-    <!-- Olympiad Managers announce each start of fight. -->
+    <!-- Olympiad Managers announce each start of Fight. -->
     <config name="AltOlyAnnounceGames" var="ALT_OLY_ANNOUNCE_GAMES" default="True" />
 
     <!-- Enchant limit for items during Olympiad battles. Disabled = -1. -->

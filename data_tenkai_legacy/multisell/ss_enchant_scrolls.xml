@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Event Manager -->
+<list>
+    <!-- Scroll: Enchant Armor (D) -->
+    <item>
+        <ingredient id="4357" count="15" />
+        <production id="956" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (D) -->
+    <item>
+        <ingredient id="4357" count="40" />
+        <production id="955" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (C) -->
+    <item>
+        <ingredient id="4357" count="50" />
+        <production id="952" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (C) -->
+    <item>
+        <ingredient id="4357" count="150" />
+        <production id="951" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (B) -->
+    <item>
+        <ingredient id="4357" count="200" />
+        <production id="948" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (B) -->
+    <item>
+        <ingredient id="4357" count="600" />
+        <production id="947" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (A) -->
+    <item>
+        <ingredient id="4357" count="630" />
+        <production id="730" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (A) -->
+    <item>
+        <ingredient id="4357" count="2000" />
+        <production id="729" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (S) -->
+    <item>
+        <ingredient id="4357" count="2500" />
+        <production id="960" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (S) -->
+    <item>
+        <ingredient id="4357" count="6000" />
+        <production id="959" count="1" />
+    </item>
+    <!-- Scroll: Enchant Armor (R) -->
+    <item>
+        <ingredient id="4357" count="8500" />
+        <production id="17527" count="1" />
+    </item>
+    <!-- Scroll: Enchant Weapon (R) -->
+    <item>
+        <ingredient id="4357" count="25000" />
+        <production id="17526" count="1" />
+    </item>
+</list>

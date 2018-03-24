@@ -443,7 +443,7 @@ public class FinalEmperialTomb extends Quest
 
 		//New instance
 		int maxLvl = 92;
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			maxLvl = Config.MAX_LEVEL;
 		}

@@ -101,7 +101,7 @@ public class  CloneInvasion
 
 				L2NpcAIData npcAIDat = new L2NpcAIData();
 				npcAIDat.setAi(player.getActiveWeaponItem() != null ? player.isMageClass() ? "mage" :
-						player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter" :
+						player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "Fighter" :
 						"balanced");
 				npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
 				npcAIDat.setCanMove(true);

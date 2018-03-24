@@ -586,7 +586,7 @@ public abstract class L2Item
 			return 2;
 		}
 
-		if (Config.isServer(Config.TENKAI_VASPER))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			return (int) Math.sqrt(_referencePrice);
 		}

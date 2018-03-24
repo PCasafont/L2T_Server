@@ -17,29 +17,21 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Announcements;
-import l2server.gameserver.Nodes.NodesManager;
-import l2server.gameserver.events.Elpy;
-import l2server.gameserver.events.Faction.FactionManager;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
-import l2server.gameserver.events.PvpZone;
-import l2server.gameserver.events.TopRanked;
 import l2server.gameserver.handler.ChatHandler;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.RandomFight;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -168,15 +160,6 @@ public final class Say2 extends L2GameClientPacket
 
 
 
-
-
-
-		checkRandomFight(_text,activeChar);
-		checkPvpZone(_text, activeChar);
-		       if(_text.equalsIgnoreCase(".register") || _text.equalsIgnoreCase(".unregister")
-					   || _text.equalsIgnoreCase(".points") || _text.equalsIgnoreCase(".pvpzone") || _text.equalsIgnoreCase(".leave"))
-		           return;
-
 		if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") ||
 				activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") ||
 				activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
@@ -191,32 +174,6 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}*/
 
-		if (_text.equalsIgnoreCase(".spawn"))
-		{
-			NodesManager.getInstance().SpawnNewNode(activeChar);
-			return;
-		}
-		
-		if (_text.equalsIgnoreCase(".elpy"))
-		{
-			Elpy.getInstance().addPlayer(activeChar);
-			return;
-		}
-		if (_text.equalsIgnoreCase(".leaveElpy"))
-		{
-			Elpy.getInstance().removePlayer(activeChar);
-			return;
-		}
-		if (_text.equalsIgnoreCase(".runElpy") && activeChar.isGM())
-		{
-			Elpy.getInstance().openRegistration();
-			return;
-		}
-		if(_text.equalsIgnoreCase(".stopElpy") && activeChar.isGM())
-		{
-			Elpy.getInstance().stopEvent();
-			return;
-		}
 
 		if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
 				(activeChar.getEvent().isType(EventType.DeathMatch) ||
@@ -225,58 +182,6 @@ public final class Say2 extends L2GameClientPacket
 		{
 			activeChar.sendMessage("You cannot talk during an All vs All PvP Event");
 			return;
-		}
-
-		if (_text.equalsIgnoreCase(".hi") && activeChar.isGM())
-		{
-			Announcements.getInstance().announceToAll("Yomi: Hi all! Here I am.");
-			return;
-		}
-
-		if (_text.startsWith(".setPoints"))
-		{
-			StringTokenizer st = new StringTokenizer(_text);
-			st.nextToken();
-
-			String name = st.nextToken();
-			int Points = Integer.parseInt(st.nextToken());
-
-
-			Connection coni = null;
-			try
-			{
-				coni = L2DatabaseFactory.getInstance().getConnection();
-
-				PreparedStatement statement =
-						coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
-				statement.setInt(1, Points);
-				statement.setString(2, name);
-
-				statement.execute();
-				statement.close();
-				activeChar.sendMessage("You changed " + name + "'s points to " + Points);
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
-			}
-			finally
-			{
-				L2DatabaseFactory.close(coni);
-			}
-		return;
-			}
-
-		if (_text.equalsIgnoreCase(".season"))
-		{
-			TopRanked.getInstance().showInfo(activeChar);
-			return;
-		}
-
-		if (_text.equalsIgnoreCase(".faction_list"))
-		{
-			activeChar.sendMessage("Faction 1 : " + FactionManager.getInstance().getFactionAmount(1));
-			return ;
 		}
 
 		if (activeChar.isCursedWeaponEquipped() && (_type == TRADE || _type == SHOUT || _type == GLOBAL))
@@ -303,8 +208,6 @@ public final class Say2 extends L2GameClientPacket
 				return;
 			}
 		}
-
-
 
 		if (_type == PETITION_PLAYER && activeChar.isGM())
 		{
@@ -393,100 +296,6 @@ public final class Say2 extends L2GameClientPacket
 		}
 		_text = filteredText;
 	}
-
-	void checkPvpZone(String text,L2PcInstance player)
-	{
-		if (text.equalsIgnoreCase(".pvpzone"))
-		{
-			if (player.getLevel() < 105)
-			{
-				player.sendMessage("You need to be at least level 105!");
-				return;
-			}
-			if (player.getPvpKills() < 20)
-			{
-				player.sendMessage("You need at least 20 PvPs!");
-				return;
-			}
-			if (PvpZone.players.contains(player))
-			{
-				player.teleToLocation(-50179, 80205, -4891);
-				player.heal();
-				player.setPvpFlag(1);
-				return;
-			}
-			if (PvpZone.state != PvpZone.State.FIGHT)
-			{
-				player.sendMessage("PvP zone is closed for the moment !");
-				return;
-			}
-			PvpZone.players.add(player);
-			PvpZone._fight.add(player.getObjectId());
-			player.sendMessage(".leave to quit the pvp zone.");
-			player.teleToLocation(-50179, 80205, -4891);
-			player.heal();
-			player.setPvpFlag(1);
-			player.broadcastUserInfo();
-			return;
-		}
-		if (text.equalsIgnoreCase(".leave"))
-		{
-			if (PvpZone.players.contains(player))
-			{
-				player.sendMessage("You left the PvP Zone");
-				PvpZone.players.remove(player);
-				player.setPvpFlag(0);
-				player.teleToLocation(-114435, 253417, -1551);
-			}
-		}
-	}
-	void checkRandomFight(String text,L2PcInstance player)
-  {
-	       if(text.equalsIgnoreCase(".register"))
-	       {
-	           if(RandomFight.players.contains(player))
-	           {
-	               player.sendMessage("You're already registered to the event.");
-	               return;
-	           }
-	           if(RandomFight.state == RandomFight.State.INACTIVE)
-			   {
-				   player.sendMessage("You can't register for the moment.");
-				   return;
-			   }
-	           if(RandomFight.state != RandomFight.State.REGISTER)
-	           {
-	               player.sendMessage("Event has already started.");
-	               return;
-	           }
-	           RandomFight.players.add(player);
-	           player.sendMessage("You have been registered to the event! use .unregister to unregister.");
-	           return;
-	       }
-
-	       if(text.equalsIgnoreCase(".points"))
-		   {
-			   player.sendMessage("Current points : " + RandomFight.getInstance().getRankedPoints(player));
-			   return;
-		   }
-	       if(text.equalsIgnoreCase(".unregister"))
-	       {
-	          if(!RandomFight.players.contains(player))
-	           {
-	               player.sendMessage("You're not registered anymore to the event.");
-	               return;
-	           }
-	           if(RandomFight.state == RandomFight.State.INACTIVE)
-	               return;
-	           if(RandomFight.state != RandomFight.State.REGISTER)
-	           {
-	               player.sendMessage("Event has already started.");
-	               return;
-	           }
-	           RandomFight.players.remove(player);
-	           player.sendMessage("Unregistered from the event!");
-	       }
-	   }
 
 	private boolean parseAndPublishItem(L2PcInstance owner)
 	{
