@@ -6,6 +6,10 @@
 # Compiled class file
 *.class
 
+# Logs
+/log/
+*.log
+
 # Package Files #
 #*.jar
 *.war
@@ -19,7 +23,6 @@ hs_err_pid*
 
 # Other
 /bin
-/log/
 /dist/log
 *.l2j
 *.cache
