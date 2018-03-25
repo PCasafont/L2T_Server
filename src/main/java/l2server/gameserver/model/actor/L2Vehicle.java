@@ -513,12 +513,4 @@ public abstract class L2Vehicle extends L2Character
 			_ai = newAI;
 		}
 	}
-
-	public class AIAccessor extends L2Character.AIAccessor
-	{
-		@Override
-		public void detachAI()
-		{
-		}
-	}
 }

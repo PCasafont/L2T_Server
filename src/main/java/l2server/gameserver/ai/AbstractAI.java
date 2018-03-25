@@ -111,11 +111,6 @@ abstract class AbstractAI implements Ctrl
 	protected final L2Character _actor;
 
 	/**
-	 * An accessor for private methods of the actor
-	 */
-	protected final L2Character.AIAccessor _accessor;
-
-	/**
 	 * Current long-term intention
 	 */
 	protected CtrlIntention _intention = AI_INTENTION_IDLE;
@@ -164,16 +159,12 @@ abstract class AbstractAI implements Ctrl
 	private static final int ATTACK_FOLLOW_INTERVAL = 500;
 
 	/**
-	 * Constructor of AbstractAI.<BR><BR>
-	 *
-	 * @param accessor The AI accessor of the L2Character
+	 * Constructor of AbstractAI.
+	 * @param creature the creature
 	 */
-	protected AbstractAI(L2Character.AIAccessor accessor)
+	protected AbstractAI(L2Character creature)
 	{
-		_accessor = accessor;
-
-		// Get the L2Character managed by this Accessor AI
-		_actor = accessor.getActor();
+		_actor = creature;
 	}
 
 	/**
@@ -627,7 +618,7 @@ abstract class AbstractAI implements Ctrl
 			_moveToPawnTimeout = TimeController.getGameTicks();
 			_moveToPawnTimeout += 1000 / TimeController.MILLIS_IN_TICK;
 
-			if (pawn == null || _accessor == null)
+			if (pawn == null)
 			{
 				return;
 			}
@@ -657,16 +648,16 @@ abstract class AbstractAI implements Ctrl
 
 				if (tries > 0)
 				{
-					_accessor.moveTo(position.getX(), position.getY(), position.getZ(), 0);
+					_actor.moveToLocation(position.getX(), position.getY(), position.getZ(), 0);
 				}
 				else
 				{
-					_accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
+					_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 				}
 			}
 			else
 			{
-				_accessor.moveTo(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
+				_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 			}
 
 			if (!_actor.isMoving())
@@ -714,7 +705,7 @@ abstract class AbstractAI implements Ctrl
 			_clientMovingToPawnOffset = 0;
 
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 
 			// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
 			MoveToLocation msg = new MoveToLocation(_actor);
@@ -741,7 +732,7 @@ abstract class AbstractAI implements Ctrl
 		// Stop movement of the L2Character
 		if (_actor.isMoving())
 		{
-			_accessor.stopMove(pos);
+			_actor.stopMove(pos);
 		}
 
 		_clientMovingToPawnOffset = 0;

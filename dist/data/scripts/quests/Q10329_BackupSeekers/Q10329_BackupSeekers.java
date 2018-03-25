@@ -111,7 +111,7 @@ public class Q10329_BackupSeekers extends Quest
 			st.playSound("ItemSound.quest_accept");
 
 			final L2Npc guide = addSpawn(_guideId, -117996, 255845, -1320, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
+			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(_guideRoute1, player);
 			guideAI.setWaiting(true);
@@ -193,7 +193,7 @@ public class Q10329_BackupSeekers extends Quest
 			st.set("secondRoute", "1");
 
 			final L2Npc guide = addSpawn(_guideId, -114074, 252514, -1560, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
+			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(_guideRoute2, player);
 			guideAI.setWaiting(true);

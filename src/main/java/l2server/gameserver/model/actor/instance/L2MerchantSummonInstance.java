@@ -48,7 +48,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	}
 
 	@Override
-	public L2CharacterAI getAI()
+	public L2CharacterAI initAI()
 	{
 		return null;
 	}

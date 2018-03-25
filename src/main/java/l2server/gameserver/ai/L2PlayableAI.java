@@ -18,7 +18,6 @@ package l2server.gameserver.ai;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.network.SystemMessageId;
 
@@ -34,13 +33,9 @@ import l2server.gameserver.network.SystemMessageId;
  */
 public abstract class L2PlayableAI extends L2CharacterAI
 {
-
-	/**
-	 * @param accessor
-	 */
-	public L2PlayableAI(AIAccessor accessor)
+	public L2PlayableAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	/**

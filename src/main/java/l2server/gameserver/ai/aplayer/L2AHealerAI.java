@@ -19,7 +19,6 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
@@ -29,9 +28,9 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class L2AHealerAI extends L2APlayerAI
 {
-	public L2AHealerAI(AIAccessor accessor)
+	public L2AHealerAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

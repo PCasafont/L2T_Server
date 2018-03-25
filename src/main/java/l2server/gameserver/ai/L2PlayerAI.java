@@ -15,18 +15,23 @@
 
 package l2server.gameserver.ai;
 
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_CAST;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_INTERACT;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_MOVE_TO;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_PICK_UP;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
+
 import l2server.Config;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.log.Log;
-
-import static l2server.gameserver.ai.CtrlIntention.*;
 
 public class L2PlayerAI extends L2PlayableAI
 {
@@ -35,9 +40,9 @@ public class L2PlayerAI extends L2PlayableAI
 
 	IntentionCommand _nextIntention = null;
 
-	public L2PlayerAI(AIAccessor accessor)
+	public L2PlayerAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
@@ -243,7 +248,7 @@ public class L2PlayerAI extends L2PlayableAI
 			return;
 		}
 
-		_accessor.doAttack(target);
+		_actor.doAttack(target);
 	}
 
 	private void thinkCast()
@@ -296,13 +301,13 @@ public class L2PlayerAI extends L2PlayableAI
 			// Replace the current target by the cast target
 			_actor.setTarget(getCastTarget());
 			// Launch the Cast of the skill
-			_accessor.doCast(_skill, _actor.canDoubleCast() && !_actor.wasLastCast1());
+			_actor.doCast(_skill, _actor.canDoubleCast() && !_actor.wasLastCast1());
 			// Restore the initial target
 			_actor.setTarget(oldTarget);
 		}
 		else
 		{
-			_accessor.doCast(_skill, _actor.canDoubleCast() && !_actor.wasLastCast1());
+			_actor.doCast(_skill, _actor.canDoubleCast() && !_actor.wasLastCast1());
 		}
 	}
 
@@ -322,7 +327,7 @@ public class L2PlayerAI extends L2PlayableAI
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((L2PcInstance.AIAccessor) _accessor).doPickupItem(target);
+		((L2PcInstance) _actor).doPickupItem(target);
 	}
 
 	private void thinkInteract()
@@ -342,7 +347,7 @@ public class L2PlayerAI extends L2PlayableAI
 		}
 		if (!(target instanceof L2StaticObjectInstance))
 		{
-			((L2PcInstance.AIAccessor) _accessor).doInteract((L2Character) target);
+			((L2PcInstance) _actor).doInteract((L2Character) target);
 		}
 		setIntention(AI_INTENTION_IDLE);
 	}

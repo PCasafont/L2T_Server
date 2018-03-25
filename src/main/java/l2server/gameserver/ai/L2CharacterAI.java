@@ -72,14 +72,9 @@ public class L2CharacterAI extends AbstractAI
 		}
 	}
 
-	/**
-	 * Constructor of L2CharacterAI.<BR><BR>
-	 *
-	 * @param accessor The AI accessor of the L2Character
-	 */
-	public L2CharacterAI(L2Character.AIAccessor accessor)
+	public L2CharacterAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	public IntentionCommand getNextIntention()
@@ -685,16 +680,16 @@ public class L2CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtArrived()
 	{
-		_accessor.getActor().revalidateZone(true);
+		_actor.revalidateZone(true);
 
-		if (_accessor.getActor().moveToNextRoutePoint())
+		if (_actor.moveToNextRoutePoint())
 		{
 			return;
 		}
 
-		if (_accessor.getActor() instanceof L2Attackable)
+		if (_actor instanceof L2Attackable)
 		{
-			((L2Attackable) _accessor.getActor()).setisReturningToSpawnPoint(false);
+			((L2Attackable) _actor).setisReturningToSpawnPoint(false);
 		}
 		clientStoppedMoving();
 
@@ -747,12 +742,12 @@ public class L2CharacterAI extends AbstractAI
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
 		clientStopMoving(blocked_at_pos);
 
-		/*if (Config.ACTIVATE_POSITION_RECORDER && Universe.getInstance().shouldLog(_accessor.getActor().getObjectId()))
+		/*if (Config.ACTIVATE_POSITION_RECORDER && Universe.getInstance().shouldLog(_actor.getObjectId()))
 		{
-			if (!_accessor.getActor().isFlying())
+			if (!_actor.isFlying())
 				Universe.getInstance().registerObstacle(blocked_at_pos.x, blocked_at_pos.y, blocked_at_pos.z);
-			if (_accessor.getActor() instanceof L2PcInstance)
-				((L2PcInstance) _accessor.getActor()).explore();
+			if (_actor instanceof L2PcInstance)
+				((L2PcInstance) _actor).explore();
 		}*/
 
 		// Launch actions corresponding to the Event Think

@@ -18,7 +18,6 @@ package l2server.gameserver.ai.aplayer;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
@@ -38,9 +37,9 @@ public class L2AWarriorAI extends L2APlayerAI
 
 	private static final int HURRICANE_RUSH = 10267;
 
-	public L2AWarriorAI(AIAccessor accessor)
+	public L2AWarriorAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

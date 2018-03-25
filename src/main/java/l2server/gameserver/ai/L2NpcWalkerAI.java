@@ -45,11 +45,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	/**
 	 * Constructor of L2CharacterAI.<BR><BR>
 	 *
-	 * @param accessor The AI accessor of the L2Character
+	 * @param creature
 	 */
-	public L2NpcWalkerAI(L2Character.AIAccessor accessor)
+	public L2NpcWalkerAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	public void initializeRoute(List<L2NpcWalkerNode> route)
