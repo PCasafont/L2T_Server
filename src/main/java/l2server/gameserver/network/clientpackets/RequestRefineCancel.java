@@ -17,10 +17,12 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2ShortCut;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExVariationCancelResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
+import l2server.gameserver.network.serverpackets.ShortCutRegister;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
@@ -172,5 +174,22 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
 		activeChar.sendPacket(iu);
+		
+		updateShortcuts(activeChar, targetItem.getObjectId(), L2ShortCut.TYPE_ITEM);
+	}
+	
+	private void updateShortcuts(L2PcInstance player, int id, int type)
+	{
+		final L2ShortCut[] allShortCuts = player.getAllShortCuts();
+		
+		for (L2ShortCut sc : allShortCuts)
+		{
+			if ((sc.getId() == id) && (sc.getType() == type))
+			{
+				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), sc.getLevel(), sc.getCharacterType());
+				player.sendPacket(new ShortCutRegister(newsc));
+				player.registerShortCut(newsc);
+			}
+		}
 	}
 }
