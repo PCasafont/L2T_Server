@@ -87,7 +87,7 @@ public class Q10326_RespectYourElders extends Quest
 			st.playSound("ItemSound.quest_accept");
 
 			final L2Npc guide = addSpawn(_guideId, -116572, 255510, -1424, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
+			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(_guideRoute, player);
 			guideAI.setWaiting(true);

@@ -27,9 +27,9 @@ import l2server.gameserver.network.serverpackets.VehicleStarted;
  */
 public class L2BoatAI extends L2VehicleAI
 {
-	public L2BoatAI(L2BoatInstance.AIAccessor accessor)
+	public L2BoatAI(L2BoatInstance creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class L2BoatAI extends L2VehicleAI
 			}
 
 			_clientMoving = true;
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 			_actor.broadcastPacket(new VehicleDeparture(getActor()));
 		}
 	}
@@ -53,7 +53,7 @@ public class L2BoatAI extends L2VehicleAI
 	{
 		if (_actor.isMoving())
 		{
-			_accessor.stopMove(pos);
+			_actor.stopMove(pos);
 		}
 
 		if (_clientMoving || pos != null)

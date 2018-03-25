@@ -752,7 +752,7 @@ public abstract class L2Character extends L2Object
 	 *
 	 * @param target The L2Character targeted
 	 */
-	protected void doAttack(L2Character target)
+	public void doAttack(L2Character target)
 	{
 		if (Config.DEBUG)
 		{
@@ -2906,41 +2906,58 @@ public abstract class L2Character extends L2Object
 	// Property - Public
 
 	/**
-	 * Return the L2CharacterAI of the L2Character and if its null create a new one.
+	 * Gets this creature's AI.
+	 * @return the AI
 	 */
-	public L2CharacterAI getAI()
+	public final L2CharacterAI getAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
+		if (_ai == null)
 		{
 			synchronized (this)
 			{
 				if (_ai == null)
 				{
-					_ai = new L2CharacterAI(new AIAccessor());
+					// Return the new AI within the synchronized block
+					// to avoid being nulled by other threads
+					return _ai = initAI();
 				}
-				return _ai;
 			}
 		}
-		return ai;
-	}
-
-	public void setAI(L2CharacterAI newAI)
-	{
-		L2CharacterAI oldAI = getAI();
-		if (oldAI != null && oldAI != newAI && oldAI instanceof L2AttackableAI)
-		{
-			oldAI.stopAITask();
-		}
-		_ai = newAI;
+		return _ai;
 	}
 
 	/**
-	 * Return True if the L2Character has a L2CharacterAI.
+	 * Initialize this creature's AI.<br>
+	 * OOP approach to be overridden in child classes.
+	 * @return the new AI
+	 */
+	protected L2CharacterAI initAI()
+	{
+		return new L2CharacterAI(this);
+	}
+	
+	public void setAI(L2CharacterAI newAI)
+	{
+		final L2CharacterAI oldAI = _ai;
+		if ((oldAI != null) && (oldAI != newAI) && (oldAI instanceof L2AttackableAI))
+		{
+			((L2AttackableAI) oldAI).stopAITask();
+		}
+		_ai = newAI;
+	}
+	
+	/**
+	 * Verifies if this creature has an AI,
+	 * @return {@code true} if this creature has an AI, {@code false} otherwise
 	 */
 	public boolean hasAI()
 	{
 		return _ai != null;
+	}
+	
+	public void detachAI()
+	{
+		setAI(null);
 	}
 
 	/**
@@ -4325,84 +4342,6 @@ public abstract class L2Character extends L2Object
 		return _effects.getFirstEffect(tp);
 	}
 
-	// =========================================================
-	// =========================================================
-	// NEED TO ORGANIZE AND MOVE TO PROPER PLACE
-
-	/**
-	 * This class permit to the L2Character AI to obtain informations and uses L2Character method
-	 */
-	public class AIAccessor
-	{
-		public AIAccessor()
-		{
-		}
-
-		/**
-		 * Return the L2Character managed by this Accessor AI.<BR><BR>
-		 */
-		public L2Character getActor()
-		{
-			return L2Character.this;
-		}
-
-		/**
-		 * Accessor to L2Character moveToLocation() method with an interaction area.<BR><BR>
-		 */
-		public void moveTo(int x, int y, int z, int offset)
-		{
-			moveToLocation(x, y, z, offset);
-		}
-
-		/**
-		 * Accessor to L2Character moveToLocation() method without interaction area.<BR><BR>
-		 */
-		public void moveTo(int x, int y, int z)
-		{
-			moveToLocation(x, y, z, 0);
-		}
-
-		/**
-		 * Accessor to L2Character stopMove() method.<BR><BR>
-		 */
-		public void stopMove(L2CharPosition pos)
-		{
-			L2Character.this.stopMove(pos);
-		}
-
-		/**
-		 * Accessor to L2Character doAttack() method.<BR><BR>
-		 */
-		public void doAttack(L2Character target)
-		{
-			L2Character.this.doAttack(target);
-		}
-
-		/**
-		 * Accessor to L2Character doCast() method.<BR><BR>
-		 */
-		public void doCast(L2Skill skill, boolean second)
-		{
-			L2Character.this.doCast(skill, second);
-		}
-
-		/**
-		 * Create a NotifyAITask.<BR><BR>
-		 */
-		public NotifyAITask newNotifyTask(CtrlEvent evt)
-		{
-			return new NotifyAITask(evt);
-		}
-
-		/**
-		 * Cancel the AI.<BR><BR>
-		 */
-		public void detachAI()
-		{
-			_ai = null;
-		}
-	}
-
 	/**
 	 * This class group all mouvement data.<BR><BR>
 	 * <p>
@@ -5465,7 +5404,7 @@ public abstract class L2Character extends L2Object
 	 * @param z      The Y position of the destination
 	 * @param offset The size of the interaction area of the L2Character targeted
 	 */
-	protected void moveToLocation(int x, int y, int z, int offset)
+	public void moveToLocation(int x, int y, int z, int offset)
 	{
 		// Get the Move Speed of the L2Charcater
 		float speed = getStat().getMoveSpeed();

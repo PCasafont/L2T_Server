@@ -62,28 +62,6 @@ public abstract class L2Summon extends L2Playable
 	// we dont have walk speed in pet data so for now use runspd / 3
 	public static final int WALK_SPEED_MULTIPLIER = 3;
 
-	public class AIAccessor extends L2Character.AIAccessor
-	{
-		protected AIAccessor()
-		{
-		}
-
-		public L2Summon getSummon()
-		{
-			return L2Summon.this;
-		}
-
-		public boolean isAutoFollow()
-		{
-			return getFollowStatus();
-		}
-
-		public void doPickupItem(L2Object object)
-		{
-			L2Summon.this.doPickupItem(object);
-		}
-	}
-
 	public L2Summon(int objectId, L2NpcTemplate template, L2PcInstance owner)
 	{
 		super(objectId, template);
@@ -93,7 +71,7 @@ public abstract class L2Summon extends L2Playable
 
 		_showSummonAnimation = true;
 		_owner = owner;
-		_ai = new L2SummonAI(new L2Summon.AIAccessor());
+		getAI();
 
 		setXYZInvisible(owner.getX() + 20, owner.getY() + 20, owner.getZ() + 100);
 	}
@@ -173,22 +151,9 @@ public abstract class L2Summon extends L2Playable
 	}
 
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
-		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					_ai = new L2SummonAI(new L2Summon.AIAccessor());
-				}
-
-				return _ai;
-			}
-		}
-		return ai;
+		return new L2SummonAI(this);
 	}
 
 	@Override
@@ -624,7 +589,7 @@ public abstract class L2Summon extends L2Playable
 		return null;
 	}
 
-	protected void doPickupItem(L2Object object)
+	public void doPickupItem(L2Object object)
 	{
 	}
 

@@ -105,7 +105,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			st.playSound("ItemSound.quest_accept");
 
 			final L2Npc guide = addSpawn(_guideId, -110596, 253644, -1784, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
+			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(_guideRoute, player);
 			guideAI.setWaiting(true);

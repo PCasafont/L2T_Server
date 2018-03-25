@@ -371,7 +371,7 @@ public class Octavis extends L2AttackableAIScript
             }
             else if (event.equalsIgnoreCase("stage_1_start_run"))
             {
-                world.lionsAI = new L2NpcWalkerAI(world.octavisLions.new AIAccessor());
+                world.lionsAI = new L2NpcWalkerAI(world.octavisLions);
 
                 world.octavisLions.setAI(world.lionsAI);
 

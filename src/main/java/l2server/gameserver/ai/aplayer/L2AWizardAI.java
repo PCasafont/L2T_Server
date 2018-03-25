@@ -18,7 +18,6 @@ package l2server.gameserver.ai.aplayer;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
 /**
@@ -30,9 +29,9 @@ public class L2AWizardAI extends L2APlayerAI
 	public static final int MAGICAL_EVASION = 11057;
 
 	//11007 + 3
-	public L2AWizardAI(AIAccessor accessor)
+	public L2AWizardAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

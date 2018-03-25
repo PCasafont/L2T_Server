@@ -499,7 +499,7 @@ public class L2PetInstance extends L2Summon
 	}
 
 	@Override
-	protected void doPickupItem(L2Object object)
+	public void doPickupItem(L2Object object)
 	{
 		boolean follow = getFollowStatus();
 		if (isDead())

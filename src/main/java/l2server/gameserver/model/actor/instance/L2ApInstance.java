@@ -32,56 +32,38 @@ public class L2ApInstance extends L2PcInstance
 	}
 
 	@Override
-	public L2CharacterAI getAI()
+	public L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai;
-		if (ai == null)
+		int classId = getCurrentClass().getParent().getAwakeningClassId();
+		if (getClassId() == 188)
 		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					int classId = getCurrentClass().getParent().getAwakeningClassId();
-					if (getClassId() == 188)
-					{
-						classId = 140;
-					}
-					else if (getClassId() == 189)
-					{
-						classId = 143;
-					}
-
-					switch (classId)
-					{
-						case 139:
-							_ai = new L2AKnightAI(new L2PcInstance.AIAccessor());
-							break;
-						case 140:
-							_ai = new L2AWarriorAI(new L2PcInstance.AIAccessor());
-							break;
-						case 141:
-							_ai = new L2ARogueAI(new L2PcInstance.AIAccessor());
-							break;
-						case 142:
-							_ai = new L2AArcherAI(new L2PcInstance.AIAccessor());
-							break;
-						case 143:
-							_ai = new L2AWizardAI(new L2PcInstance.AIAccessor());
-							break;
-						case 144:
-							_ai = new L2AEnchanterAI(new L2PcInstance.AIAccessor());
-							break;
-						case 145:
-							_ai = new L2ASummonerAI(new L2PcInstance.AIAccessor());
-							break;
-						case 146:
-							_ai = new L2AHealerAI(new L2PcInstance.AIAccessor());
-							break;
-					}
-				}
-				return _ai;
-			}
+			classId = 140;
 		}
-		return ai;
+		else if (getClassId() == 189)
+		{
+			classId = 143;
+		}
+		
+		switch (classId)
+		{
+			case 139:
+				return new L2AKnightAI(this);
+			case 140:
+				return new L2AWarriorAI(this);
+			case 141:
+				return new L2ARogueAI(this);
+			case 142:
+				return new L2AArcherAI(this);
+			case 143:
+				return new L2AWizardAI(this);
+			case 144:
+				return new L2AEnchanterAI(this);
+			case 145:
+				return new L2ASummonerAI(this);
+			case 146:
+				return new L2AHealerAI(this);
+			default:
+				return new L2AWarriorAI(this); 
+		}
 	}
 }

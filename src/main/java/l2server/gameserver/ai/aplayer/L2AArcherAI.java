@@ -19,7 +19,6 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
@@ -31,9 +30,9 @@ public class L2AArcherAI extends L2APlayerAI
 	public static final int QUICK_EVASION = 10774;
 	public static final int QUICK_CHARGE = 10805;
 
-	public L2AArcherAI(AIAccessor accessor)
+	public L2AArcherAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

@@ -15,20 +15,19 @@
 
 package l2server.gameserver.ai;
 
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+
+import java.util.concurrent.Future;
+
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.util.Rnd;
-
-import java.util.concurrent.Future;
-
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 public class L2SummonAI extends L2PlayableAI implements Runnable
 {
@@ -42,9 +41,9 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	private volatile boolean _startAvoid = false;
 	private Future<?> _avoidTask = null;
 
-	public L2SummonAI(AIAccessor accessor)
+	public L2SummonAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override
@@ -97,7 +96,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 			return;
 		}
 		clientStopMoving(null);
-		_accessor.doAttack(getAttackTarget());
+		_actor.doAttack(getAttackTarget());
 	}
 
 	private void thinkCast()
@@ -117,7 +116,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_accessor.doCast(_skill, false);
+		_actor.doCast(_skill, false);
 	}
 
 	private void thinkPickUp()
@@ -131,7 +130,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((L2Summon.AIAccessor) _accessor).doPickupItem(getTarget());
+		((L2Summon) _actor).doPickupItem(getTarget());
 	}
 
 	private void thinkInteract()

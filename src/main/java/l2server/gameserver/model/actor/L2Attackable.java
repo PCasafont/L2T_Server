@@ -365,30 +365,13 @@ public class L2Attackable extends L2Npc
 	{
 		setStatus(new AttackableStatus(this));
 	}
-
-	/**
-	 * Return the L2Character AI of the L2Attackable and if its null create a new one.
-	 */
+	
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai;
-
-		if (ai == null)
-		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					_ai = new L2AttackableAI(new AIAccessor());
-				}
-
-				return _ai;
-			}
-		}
-		return ai;
+		return new L2AttackableAI(this);
 	}
-
+	
 	/**
 	 * Not used.
 	 * get condition to hate, actually isAggressive() is checked by monster and karma by guards in motheds that overwrite this one.

@@ -108,64 +108,10 @@ public class L2DoorInstance extends L2Character
 		}
 	}
 
-	/**
-	 * This class may be created only by L2Character and only for AI
-	 */
-	public class AIAccessor extends L2Character.AIAccessor
-	{
-		protected AIAccessor()
-		{
-		}
-
-		@Override
-		public L2DoorInstance getActor()
-		{
-			return L2DoorInstance.this;
-		}
-
-		@Override
-		public void moveTo(int x, int y, int z, int offset)
-		{
-		}
-
-		@Override
-		public void moveTo(int x, int y, int z)
-		{
-		}
-
-		@Override
-		public void stopMove(L2CharPosition pos)
-		{
-		}
-
-		@Override
-		public void doAttack(L2Character target)
-		{
-		}
-
-		@Override
-		public void doCast(L2Skill skill, boolean second)
-		{
-		}
-	}
-
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
-		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					_ai = new L2DoorAI(new AIAccessor());
-				}
-
-				return _ai;
-			}
-		}
-		return ai;
+		return new L2DoorAI(this);
 	}
 
 	private void startTimerOpen()

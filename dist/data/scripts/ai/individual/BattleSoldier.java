@@ -75,7 +75,7 @@ public class BattleSoldier extends L2AttackableAIScript
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		L2NpcWalkerAI _battleSoldierAI = new L2NpcWalkerAI(npc.new AIAccessor());
+		L2NpcWalkerAI _battleSoldierAI = new L2NpcWalkerAI(npc);
 
 		npc.setAI(_battleSoldierAI);
 

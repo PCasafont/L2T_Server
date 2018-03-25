@@ -98,7 +98,7 @@ public class NpcWalkersTable
 						walkerSpawn.doSpawn();
 
 						L2Npc walker = walkerSpawn.getNpc();
-						L2NpcWalkerAI walkerAI = new L2NpcWalkerAI(walker.new AIAccessor());
+						L2NpcWalkerAI walkerAI = new L2NpcWalkerAI(walker);
 
 						walker.setAI(walkerAI);
 						walkerAI.initializeRoute(route);
