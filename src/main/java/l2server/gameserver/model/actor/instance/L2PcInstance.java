@@ -2124,6 +2124,25 @@ public class L2PcInstance extends L2Playable
 	{
 		_shortCuts.deleteShortCut(slot, page);
 	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param objId the item objectId to search and update.
+	 */
+	public void updateItemShortCuts(int objId)
+	{
+		_shortCuts.updateItemShortCuts(objId);
+	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param skillId the skill Id to search and update.
+	 * @param skillLevel the skill level to update.
+	 */
+	public void updateSkillShortCuts(int skillId, int skillLevel)
+	{
+		_shortCuts.updateSkillShortCuts(skillId, skillLevel);
+	}
 
 	/**
 	 * Add a L2Macro to the L2PcInstance _macroses<BR><BR>
