@@ -11,10 +11,6 @@ As of now we still didn't prepare a standard to deploy and run the software. Sta
 * [Intellij IDEA](https://www.jetbrains.com/idea/download)
 * [MySQL Server](https://dev.mysql.com/downloads/mysql)
 
-```
-Give examples
-```
-
 ### Installing
 
 * Clone the project
@@ -26,7 +22,7 @@ Give examples
 
 * **L2j Team**
 * **Pere** - *Main fork author* - [PCasafont](https://github.com/PurpleBooth)
-* **Lastravel** - *Contributed for 5 years*
+* **Lastravel** - *Contributed for 5 years* - [lastravel](https://github.com/lastravel)
 * **Inia** - *New project maintainer* - [Inia68](https://github.com/Inia68)
 
 Other contributors:
