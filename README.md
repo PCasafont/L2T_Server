@@ -26,7 +26,7 @@ Give examples
 
 * **L2j Team**
 * **Pere** - *Main fork author* - [PCasafont](https://github.com/PurpleBooth)
-* **Lastravel** - *Scripts and events*
+* **Lastravel** - *Contributed for 5 years*
 * **Inia** - *New project maintainer* - [Inia68](https://github.com/Inia68)
 
 Other contributors:
