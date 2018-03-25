@@ -19,10 +19,12 @@ import l2server.gameserver.datatables.LifeStoneTable;
 import l2server.gameserver.datatables.LifeStoneTable.LifeStone;
 import l2server.gameserver.model.L2Augmentation;
 import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2ShortCut;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExVariationResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
+import l2server.gameserver.network.serverpackets.ShortCutRegister;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -136,5 +138,22 @@ public final class RequestRefine extends L2GameClientPacket
 		StatusUpdate su = new StatusUpdate(activeChar);
 		su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
 		activeChar.sendPacket(su);
+		
+		updateShortcuts(activeChar, targetItem.getObjectId(), L2ShortCut.TYPE_ITEM);
+	}
+	
+	private void updateShortcuts(L2PcInstance player, int id, int type)
+	{
+		final L2ShortCut[] allShortCuts = player.getAllShortCuts();
+		
+		for (L2ShortCut sc : allShortCuts)
+		{
+			if ((sc.getId() == id) && (sc.getType() == type))
+			{
+				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), sc.getLevel(), sc.getCharacterType());
+				player.sendPacket(new ShortCutRegister(newsc));
+				player.registerShortCut(newsc);
+			}
+		}
 	}
 }
