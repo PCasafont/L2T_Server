@@ -45,7 +45,7 @@ public class L2LoginServer
 
 	public static void main(String[] args)
 	{
-		_instance = new L2LoginServer();
+		new L2LoginServer();
 	}
 
 	public static L2LoginServer getInstance()
@@ -179,7 +179,9 @@ public class L2LoginServer
 
 		Log.info("Login Server ready on " + (bindAddress == null ? "*" : bindAddress.getHostAddress()) + ":" +
 				Config.PORT_LOGIN);
-	}
+
+        _instance = this;
+    }
 
 	public GameServerListener getGameServerListener()
 	{
