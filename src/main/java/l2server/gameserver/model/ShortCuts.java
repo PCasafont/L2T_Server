@@ -19,6 +19,7 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ShortCutInit;
+import l2server.gameserver.network.serverpackets.ShortCutRegister;
 import l2server.log.Log;
 
 import java.sql.Connection;
@@ -483,5 +484,42 @@ public class ShortCuts
 		}
 
 		return _shortCuts.get(classIndex).get(levelRange).values().size() != 0;
+	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param skillId the skill Id to search and update.
+	 * @param skillLevel the skill level to update.
+	 */
+	public synchronized void updateSkillShortcuts(int skillId, int skillLevel)
+	{
+		// Update all the shortcuts for this skill
+		for (L2ShortCut sc : getAllShortCuts())
+		{
+			if ((sc.getId() == skillId) && (sc.getType() == L2ShortCut.TYPE_SKILL))
+			{
+				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), skillLevel, 1);
+				_owner.sendPacket(new ShortCutRegister(newsc));
+				_owner.registerShortCut(newsc);
+			}
+		}
+	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param objId the item objectId to search and update.
+	 * @param type the short cut type to update.
+	 */
+	public synchronized void updateItemShortcuts(int objId)
+	{
+		for (L2ShortCut sc : getAllShortCuts())
+		{
+			if ((sc.getId() == objId) && (sc.getType() ==  L2ShortCut.TYPE_ITEM))
+			{
+				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), sc.getLevel(), sc.getCharacterType());
+				_owner.sendPacket(new ShortCutRegister(newsc));
+				_owner.registerShortCut(newsc);
+			}
+		}
 	}
 }
