@@ -35,9 +35,9 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 {
 	private List<Integer> _alreadyBuffed = new ArrayList<>();
 
-	public L2NewbieHelperAI(L2Character.AIAccessor accessor)
+	public L2NewbieHelperAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 20000, 2000);
 	}
 

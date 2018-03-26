@@ -26,9 +26,9 @@ import l2server.gameserver.network.serverpackets.ExStopMoveAirShip;
  */
 public class L2AirShipAI extends L2VehicleAI
 {
-	public L2AirShipAI(L2AirShipInstance.AIAccessor accessor)
+	public L2AirShipAI(L2AirShipInstance creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class L2AirShipAI extends L2VehicleAI
 		if (!_actor.isMovementDisabled())
 		{
 			_clientMoving = true;
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 			_actor.broadcastPacket(new ExMoveToLocationAirShip(getActor()));
 		}
 	}
@@ -47,7 +47,7 @@ public class L2AirShipAI extends L2VehicleAI
 	{
 		if (_actor.isMoving())
 		{
-			_accessor.stopMove(pos);
+			_actor.stopMove(pos);
 		}
 
 		if (_clientMoving || pos != null)

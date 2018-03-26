@@ -60,29 +60,13 @@ public class L2DefenderInstance extends L2Attackable
 	}
 
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
+		if (getCastle(10000) == null)
 		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					if (getCastle(10000) == null)
-					{
-						_ai = new L2FortSiegeGuardAI(new AIAccessor());
-					}
-					else
-					{
-						_ai = new L2SiegeGuardAI(new AIAccessor());
-					}
-				}
-
-				return _ai;
-			}
+			return new L2FortSiegeGuardAI(this);
 		}
-		return ai;
+		return new L2SiegeGuardAI(this);
 	}
 
 	/**

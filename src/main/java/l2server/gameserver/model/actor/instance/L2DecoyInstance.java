@@ -103,30 +103,18 @@ public class L2DecoyInstance extends L2Attackable
 	}
 
 	@Override
-	public L2CharacterAI getAI()
+	public L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
-		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					if (getNpcId() >= 13319 && getNpcId() <= 13322)
-					{
-						_ai = new L2AttackableAI(new L2Attackable.AIAccessor());
-					}
-					else
-					{
-						_ai = new L2CharacterAI(new L2Character.AIAccessor());
-					}
-				}
-
-				return _ai;
-			}
-		}
 		setIsRunning(true);
-		return ai;
+		
+		if (getNpcId() >= 13319 && getNpcId() <= 13322)
+		{
+			return new L2AttackableAI(this);
+		}
+		else
+		{
+			return new L2CharacterAI(this);
+		}
 	}
 
 	@Override

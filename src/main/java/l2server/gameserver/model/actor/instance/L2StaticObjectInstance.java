@@ -19,9 +19,7 @@
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ai.L2CharacterAI;
-import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.knownlist.StaticObjectKnownList;
 import l2server.gameserver.model.actor.stat.StaticObjStat;
@@ -46,49 +44,8 @@ public class L2StaticObjectInstance extends L2Character
 	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
 	private ShowTownMap _map;
 
-	/**
-	 * This class may be created only by L2Character and only for AI
-	 */
-	public class AIAccessor extends L2Character.AIAccessor
-	{
-		protected AIAccessor()
-		{
-		}
-
-		@Override
-		public L2StaticObjectInstance getActor()
-		{
-			return L2StaticObjectInstance.this;
-		}
-
-		@Override
-		public void moveTo(int x, int y, int z, int offset)
-		{
-		}
-
-		@Override
-		public void moveTo(int x, int y, int z)
-		{
-		}
-
-		@Override
-		public void stopMove(L2CharPosition pos)
-		{
-		}
-
-		@Override
-		public void doAttack(L2Character target)
-		{
-		}
-
-		@Override
-		public void doCast(L2Skill skill, boolean second)
-		{
-		}
-	}
-
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
 		return null;
 	}

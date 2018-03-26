@@ -136,5 +136,8 @@ public final class RequestRefine extends L2GameClientPacket
 		StatusUpdate su = new StatusUpdate(activeChar);
 		su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
 		activeChar.sendPacket(su);
+		
+		// Update shortcuts
+		activeChar.updateItemShortCuts(targetItem.getObjectId());
 	}
 }

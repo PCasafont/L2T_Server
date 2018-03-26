@@ -172,5 +172,8 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
 		activeChar.sendPacket(iu);
+		
+		// Update shortcuts
+		activeChar.updateItemShortCuts(targetItem.getObjectId());
 	}
 }

@@ -22,7 +22,6 @@ import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ShortCut;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -306,30 +305,13 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			player.sendPacket(new ExEnchantSkillInfoDetail(_type, _skillId, currentSkill.getLevel(),
 					currentSkill.getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
 
-			updateSkillShortcuts(player);
+			player.updateSkillShortcuts(_skillId, player.getSkillLevelHash(_skillId));
 		}
 		else
 		{
 			SystemMessage sm =
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ENOUGH_SP_TO_ENCHANT_THAT_SKILL);
 			player.sendPacket(sm);
-		}
-	}
-
-	private void updateSkillShortcuts(L2PcInstance player)
-	{
-		// update all the shortcuts to this skill
-		L2ShortCut[] allShortCuts = player.getAllShortCuts();
-
-		for (L2ShortCut sc : allShortCuts)
-		{
-			if (sc != null && sc.getId() == _skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
-			{
-				L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(),
-						player.getSkillLevelHash(_skillId), 1);
-				player.sendPacket(new ShortCutRegister(newsc));
-				player.registerShortCut(newsc);
-			}
 		}
 	}
 

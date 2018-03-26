@@ -368,7 +368,7 @@ public class Teredor extends L2AttackableAIScript
         world.Teredor.stopMove(null);
         world.teredorWalkAI.cancelTask();
         world.Teredor.setIsInvul(false);
-        world.teredorAttackAI = new L2AttackableAI(world.Teredor.new AIAccessor());
+        world.teredorAttackAI = new L2AttackableAI(world.Teredor);
         world.Teredor.setAI(world.teredorAttackAI);
     }
 
@@ -381,7 +381,7 @@ public class Teredor extends L2AttackableAIScript
 
         world.Teredor.setIsInvul(true);
         world.Teredor.setIsRunning(true);
-        world.teredorWalkAI = new L2NpcWalkerAI(world.Teredor.new AIAccessor());
+        world.teredorWalkAI = new L2NpcWalkerAI(world.Teredor);
         world.Teredor.setAI(world.teredorWalkAI);
         world.teredorWalkAI.initializeRoute(_route, null);
         world.teredorWalkAI.walkToLocation();

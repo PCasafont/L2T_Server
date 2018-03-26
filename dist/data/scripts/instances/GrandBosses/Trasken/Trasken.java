@@ -157,7 +157,7 @@ public class Trasken extends L2AttackableAIScript
             teredor.stopMove(null);
             world.teredor_WalkAI.cancelTask();
             teredor.setIsInvul(false);
-            world.teredor_AttackAI = new L2AttackableAI(teredor.new AIAccessor());
+            world.teredor_AttackAI = new L2AttackableAI(teredor);
             teredor.setAI(world.teredor_AttackAI);
         }
     }
@@ -178,7 +178,7 @@ public class Trasken extends L2AttackableAIScript
 
             teredor.setIsInvul(true);
             teredor.setIsRunning(true);
-            world.teredor_WalkAI = new L2NpcWalkerAI(teredor.new AIAccessor());
+            world.teredor_WalkAI = new L2NpcWalkerAI(teredor);
             teredor.setAI(world.teredor_WalkAI);
             world.teredor_WalkAI.initializeRoute(_route, null);
             world.teredor_WalkAI.walkToLocation();

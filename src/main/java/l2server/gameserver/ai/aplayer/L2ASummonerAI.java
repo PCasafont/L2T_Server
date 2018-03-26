@@ -17,7 +17,6 @@ package l2server.gameserver.ai.aplayer;
 
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 
@@ -26,9 +25,9 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class L2ASummonerAI extends L2APlayerAI
 {
-	public L2ASummonerAI(AIAccessor accessor)
+	public L2ASummonerAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

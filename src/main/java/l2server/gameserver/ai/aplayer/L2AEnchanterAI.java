@@ -19,7 +19,6 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
@@ -33,9 +32,9 @@ public class L2AEnchanterAI extends L2APlayerAI
 	private static final int[] SONATAS = {11529, 11530, 11532};
 	private static final int ASSAULT_RUSH = 11508;
 
-	public L2AEnchanterAI(AIAccessor accessor)
+	public L2AEnchanterAI(L2Character creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

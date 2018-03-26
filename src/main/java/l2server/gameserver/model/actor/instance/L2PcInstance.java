@@ -229,47 +229,6 @@ public class L2PcInstance extends L2Playable
 
 	private static final int[] COMMON_CRAFT_LEVELS = {5, 20, 28, 36, 43, 49, 55, 62, 70};
 
-	public class AIAccessor extends L2Character.AIAccessor
-	{
-		protected AIAccessor()
-		{
-
-		}
-
-		public L2PcInstance getPlayer()
-		{
-			return L2PcInstance.this;
-		}
-
-		public void doPickupItem(L2Object object)
-		{
-			L2PcInstance.this.doPickupItem(object);
-		}
-
-		public void doInteract(L2Character target)
-		{
-			L2PcInstance.this.doInteract(target);
-		}
-
-		@Override
-		public void doAttack(L2Character target)
-		{
-			super.doAttack(target);
-
-			// cancel the recent fake-death protection instantly if the player attacks or casts spells
-			getPlayer().setRecentFakeDeath(false);
-		}
-
-		@Override
-		public void doCast(L2Skill skill, boolean second)
-		{
-			super.doCast(skill, second);
-
-			// cancel the recent fake-death protection instantly if the player attacks or casts spells
-			getPlayer().setRecentFakeDeath(false);
-		}
-	}
-
 	private L2GameClient _client;
 
 	private String _accountName;
@@ -1377,7 +1336,7 @@ public class L2PcInstance extends L2Playable
 		_appearance = app;
 
 		// Create an AI
-		_ai = new L2PlayerAI(new L2PcInstance.AIAccessor());
+		getAI();
 
 		// Create a L2Radar object
 		_radar = new L2Radar(this);
@@ -1502,26 +1461,10 @@ public class L2PcInstance extends L2Playable
 		return (L2PcTemplate) super.getTemplate();
 	}
 
-	/**
-	 * Return the AI of the L2PcInstance (create it if necessary).<BR><BR>
-	 */
 	@Override
-	public L2CharacterAI getAI()
+	protected L2CharacterAI initAI()
 	{
-		L2CharacterAI ai = _ai; // copy handle
-		if (ai == null)
-		{
-			synchronized (this)
-			{
-				if (_ai == null)
-				{
-					_ai = new L2PlayerAI(new L2PcInstance.AIAccessor());
-				}
-
-				return _ai;
-			}
-		}
-		return ai;
+		return new L2PlayerAI(this);
 	}
 
 	/**
@@ -2180,6 +2123,25 @@ public class L2PcInstance extends L2Playable
 	public void deleteShortCut(int slot, int page)
 	{
 		_shortCuts.deleteShortCut(slot, page);
+	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param objId the item objectId to search and update.
+	 */
+	public void updateItemShortCuts(int objId)
+	{
+		_shortCuts.updateItemShortcuts(objId);
+	}
+	
+	/**
+	 * Updates the shortcut bars with the new skill.
+	 * @param skillId the skill Id to search and update.
+	 * @param skillLevel the skill level to update.
+	 */
+	public void updateSkillShortcuts(int skillId, int skillLevel)
+	{
+		_shortCuts.updateSkillShortcuts(skillId, skillLevel);
 	}
 
 	/**
@@ -5991,7 +5953,7 @@ public class L2PcInstance extends L2Playable
 	 *
 	 * @param object The L2ItemInstance to pick up
 	 */
-	protected void doPickupItem(L2Object object)
+	public void doPickupItem(L2Object object)
 	{
 		if (isAlikeDead() || isFakeDeath())
 		{

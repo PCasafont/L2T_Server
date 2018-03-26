@@ -26,9 +26,9 @@ public abstract class L2VehicleAI extends L2CharacterAI
 	 * @author DS
 	 * Simple AI for vehicles
 	 */
-	public L2VehicleAI(L2Vehicle.AIAccessor accessor)
+	public L2VehicleAI(L2Vehicle creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 
 	@Override

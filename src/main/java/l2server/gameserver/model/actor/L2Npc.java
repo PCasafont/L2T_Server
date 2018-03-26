@@ -1690,7 +1690,7 @@ public class L2Npc extends L2Character
 
 		if (getNpcId() == 33454)
 		{
-			setAI(new L2NewbieHelperAI(new AIAccessor()));
+			setAI(new L2NewbieHelperAI(this));
 		}
 	}
 

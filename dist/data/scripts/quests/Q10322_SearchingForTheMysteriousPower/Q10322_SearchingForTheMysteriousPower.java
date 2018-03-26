@@ -97,7 +97,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 			st.playSound("ItemSound.quest_accept");
 
 			final L2Npc guide = addSpawn(_guideId, -111487, 255894, -1440, 1000, false, 600000);
-			final L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide.new AIAccessor());
+			final L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 
 			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideFirstChatId);
