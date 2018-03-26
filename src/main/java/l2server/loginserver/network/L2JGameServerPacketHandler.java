@@ -17,7 +17,16 @@ package l2server.loginserver.network;
 
 import l2server.log.Log;
 import l2server.loginserver.GameServerThread;
-import l2server.loginserver.network.gameserverpackets.*;
+import l2server.loginserver.network.gameserverpackets.BlowFishKey;
+import l2server.loginserver.network.gameserverpackets.ChangeAccessLevel;
+import l2server.loginserver.network.gameserverpackets.GameServerAuth;
+import l2server.loginserver.network.gameserverpackets.PlayerAuthRequest;
+import l2server.loginserver.network.gameserverpackets.PlayerInGame;
+import l2server.loginserver.network.gameserverpackets.PlayerLogout;
+import l2server.loginserver.network.gameserverpackets.PlayerTracert;
+import l2server.loginserver.network.gameserverpackets.ReplyCharacters;
+import l2server.loginserver.network.gameserverpackets.RequestTempBan;
+import l2server.loginserver.network.gameserverpackets.ServerStatus;
 import l2server.loginserver.network.loginserverpackets.LoginServerFail;
 import l2server.util.network.BaseRecievePacket;
 

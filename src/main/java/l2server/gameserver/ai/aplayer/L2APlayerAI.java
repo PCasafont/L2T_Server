@@ -15,8 +15,6 @@
 
 package l2server.gameserver.ai.aplayer;
 
-import java.util.concurrent.ScheduledFuture;
-
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -43,6 +41,8 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Pere

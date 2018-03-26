@@ -27,7 +27,6 @@ import l2server.util.Rnd;
 import l2server.util.crypt.ScrambledKeyPair;
 import l2server.util.lib.LoginLog;
 
-import javax.crypto.Cipher;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
@@ -43,6 +42,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
+
+import javax.crypto.Cipher;
 
 /**
  * This class ...

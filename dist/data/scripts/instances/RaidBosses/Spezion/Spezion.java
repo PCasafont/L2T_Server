@@ -1,6 +1,5 @@
 package instances.RaidBosses.Spezion;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
@@ -20,6 +19,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

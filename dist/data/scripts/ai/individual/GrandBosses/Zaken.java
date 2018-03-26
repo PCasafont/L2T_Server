@@ -15,7 +15,6 @@
 
 package ai.individual.GrandBosses;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
@@ -35,6 +34,8 @@ import l2server.gameserver.model.zone.type.L2BossZone;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.templates.StatsSet;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.logging.Logger;
 

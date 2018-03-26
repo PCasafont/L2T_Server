@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
@@ -25,6 +24,8 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...

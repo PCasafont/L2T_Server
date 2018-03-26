@@ -15,18 +15,43 @@
 
 package l2server.gameserver.model.actor;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.ItemsAutoDestroy;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
-import l2server.gameserver.ai.*;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.ai.CtrlEvent;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.ai.L2AttackableAI;
+import l2server.gameserver.ai.L2CharacterAI;
+import l2server.gameserver.ai.L2FortSiegeGuardAI;
+import l2server.gameserver.ai.L2SiegeGuardAI;
+import l2server.gameserver.datatables.EventDroplist;
 import l2server.gameserver.datatables.EventDroplist.DateDrop;
+import l2server.gameserver.datatables.ExtraDropTable;
+import l2server.gameserver.datatables.GlobalDropTable;
 import l2server.gameserver.datatables.GlobalDropTable.GlobalDropCategory;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.L2CharPosition;
+import l2server.gameserver.model.L2CommandChannel;
+import l2server.gameserver.model.L2DropCategory;
+import l2server.gameserver.model.L2DropData;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Manor;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Party;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2ArmyMonsterInstance;
+import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
+import l2server.gameserver.model.actor.instance.L2GuardInstance;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2NpcInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.actor.knownlist.AttackableKnownList;
 import l2server.gameserver.model.actor.status.AttackableStatus;
 import l2server.gameserver.model.quest.Quest;
@@ -49,6 +74,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
+
+import gnu.trove.TIntIntHashMap;
 
 public class L2Attackable extends L2Npc
 {

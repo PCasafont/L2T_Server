@@ -28,7 +28,12 @@ import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.util.StringUtil;
 
 import java.text.DateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TopicBBSManager extends BaseBBSManager

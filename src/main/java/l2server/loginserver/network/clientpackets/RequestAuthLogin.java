@@ -25,9 +25,10 @@ import l2server.loginserver.network.serverpackets.LoginFail;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
 
-import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
+
+import javax.crypto.Cipher;
 
 /**
  * Format: x

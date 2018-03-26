@@ -20,7 +20,7 @@ import l2server.gameserver.model.zone.L2ZoneForm;
 import l2server.gameserver.network.serverpackets.ExServerPrimitive;
 import l2server.util.Rnd;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * A primitive rectangular zone

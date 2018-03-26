@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.itemauction;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -45,6 +44,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
+
+import gnu.trove.TIntObjectHashMap;
 
 public final class ItemAuctionInstance
 {

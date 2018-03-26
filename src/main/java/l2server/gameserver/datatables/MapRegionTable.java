@@ -17,7 +17,12 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.events.MonsterInvasion;
-import l2server.gameserver.instancemanager.*;
+import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.ClanHallManager;
+import l2server.gameserver.instancemanager.FortManager;
+import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.instancemanager.TownManager;
+import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
@@ -30,7 +35,11 @@ import l2server.gameserver.model.zone.type.L2ArenaZone;
 import l2server.gameserver.model.zone.type.L2ClanHallZone;
 import l2server.log.Log;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.LineNumberReader;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;

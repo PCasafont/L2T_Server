@@ -15,7 +15,6 @@
 
 package ai.individual.GrandBosses.Kelbim;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
@@ -34,6 +33,8 @@ import l2server.gameserver.network.serverpackets.Earthquake;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

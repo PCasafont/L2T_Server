@@ -15,7 +15,6 @@
 
 package ai.individual.GrandBosses;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -24,7 +23,13 @@ import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.L2BabyPetInstance;
+import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
+import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2BossZone;
@@ -33,6 +38,8 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

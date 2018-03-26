@@ -28,7 +28,11 @@ import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.util.StringUtil;
 
 import java.text.DateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class PostBBSManager extends BaseBBSManager
 {

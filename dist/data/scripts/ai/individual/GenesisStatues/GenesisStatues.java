@@ -15,13 +15,14 @@
 
 package ai.individual.GenesisStatues;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.HashMap;
 import java.util.Map;

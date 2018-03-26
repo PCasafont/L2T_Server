@@ -13,9 +13,10 @@
 
 package l2server.gameserver.model;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
+
+import gnu.trove.TIntIntHashMap;
 
 /**
  * @author Luno

@@ -18,7 +18,16 @@ package l2server.gameserver.script;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.RecipeController;
 import l2server.gameserver.TimeController;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.datatables.CharTemplateTable;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.datatables.SkillTreeTable;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2World;
 

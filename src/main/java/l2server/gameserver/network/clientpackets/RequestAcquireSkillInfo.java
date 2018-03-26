@@ -16,9 +16,17 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.CertificateSkillTable;
+import l2server.gameserver.datatables.PledgeSkillTree;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.datatables.SkillTreeTable;
+import l2server.gameserver.datatables.SubPledgeSkillTree;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2PledgeSkillLearn;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2SkillLearn;
+import l2server.gameserver.model.L2SquadTrainer;
+import l2server.gameserver.model.L2TransformSkillLearn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2TransformManagerInstance;

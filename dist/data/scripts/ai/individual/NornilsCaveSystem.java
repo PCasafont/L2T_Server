@@ -15,7 +15,6 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
@@ -23,6 +22,8 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.HashMap;
 import java.util.Map;

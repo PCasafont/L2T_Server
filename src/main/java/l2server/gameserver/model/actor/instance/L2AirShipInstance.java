@@ -20,7 +20,11 @@ import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Vehicle;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ExAirShipInfo;
+import l2server.gameserver.network.serverpackets.ExGetOffAirShip;
+import l2server.gameserver.network.serverpackets.ExGetOnAirShip;
+import l2server.gameserver.network.serverpackets.ExMoveToLocationAirShip;
+import l2server.gameserver.network.serverpackets.ExStopMoveAirShip;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.util.Point3D;
 

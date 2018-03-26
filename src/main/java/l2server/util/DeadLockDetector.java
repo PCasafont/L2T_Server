@@ -19,7 +19,11 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.Shutdown;
 import l2server.log.Log;
 
-import java.lang.management.*;
+import java.lang.management.LockInfo;
+import java.lang.management.ManagementFactory;
+import java.lang.management.MonitorInfo;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.util.logging.Level;
 
 /**

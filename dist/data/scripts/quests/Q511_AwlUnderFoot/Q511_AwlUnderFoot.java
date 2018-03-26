@@ -15,7 +15,6 @@
 
 package quests.Q511_AwlUnderFoot;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -35,6 +34,8 @@ import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Gigiikun

@@ -18,8 +18,6 @@ package l2server.loginserver.network.loginserverpackets;
 import l2server.loginserver.GameServerTable;
 import l2server.util.network.BaseSendablePacket;
 
-import java.io.IOException;
-
 /**
  * @author -Wooden-
  */

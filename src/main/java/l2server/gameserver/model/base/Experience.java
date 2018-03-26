@@ -18,7 +18,11 @@ package l2server.gameserver.model.base;
 import l2server.Config;
 import l2server.log.Log;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.LineNumberReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;

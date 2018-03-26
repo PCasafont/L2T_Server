@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TLongObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Skill;
@@ -26,6 +25,8 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import gnu.trove.TLongObjectHashMap;
 
 /**
  * @author JIV

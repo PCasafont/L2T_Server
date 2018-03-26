@@ -15,13 +15,13 @@
 
 package l2server.util.xml;
 
-import org.w3c.dom.Node;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import org.w3c.dom.Node;
 
 /**
  * @author Pere

@@ -15,9 +15,10 @@
 
 package l2server.gameserver.model;
 
-import gnu.trove.TIntHashSet;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
+
+import gnu.trove.TIntHashSet;
 
 /**
  * This class ...
