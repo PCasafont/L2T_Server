@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+<list enabled="true">
     <!-- Custom Script Zones -->
     <zone name="Emerald Square 1st Secret Room" id="20105" type="ScriptZone" shape="Cuboid" minZ="-11900" maxZ="-11800">
         <node X="144175" Y="142396" />
@@ -483,98 +483,6 @@
         <node X="214324" Y="114625" />
         <node X="213068" Y="114628" />
         <node X="213058" Y="115891" />
-    </zone>
-
-    <!-- Zaken zones -->
-    <zone id='120111' name='t21_24_slave1f_001m1' type='ScriptZone' shape='NPoly' minZ='-3532' maxZ='-3332'>
-        <node X='53762' Y='217601' />
-        <node X='54718' Y='217594' />
-        <node X='54718' Y='218557' />
-        <node X='53762' Y='218563' />
-    </zone>
-    <zone id='120112' name='t21_24_slave1f_002m1' type='ScriptZone' shape='NPoly' minZ='-3544' maxZ='-3344'>
-        <node X='55795' Y='217581' />
-        <node X='56771' Y='217589' />
-        <node X='56771' Y='218582' />
-        <node X='55795' Y='218574' />
-    </zone>
-    <zone id='120113' name='t21_24_slave1f_003m1' type='ScriptZone' shape='NPoly' minZ='-3532' maxZ='-3332'>
-        <node X='54778' Y='218606' />
-        <node X='55744' Y='218606' />
-        <node X='55744' Y='219593' />
-        <node X='54778' Y='219594' />
-    </zone>
-    <zone id='120114' name='t21_24_slave1f_004m1' type='ScriptZone' shape='NPoly' minZ='-3528' maxZ='-3328'>
-        <node X='53752' Y='219650' />
-        <node X='54721' Y='219650' />
-        <node X='54721' Y='220613' />
-        <node X='53752' Y='220619' />
-    </zone>
-    <zone id='120115' name='t21_24_slave1f_005m1' type='ScriptZone' shape='NPoly' minZ='-3540' maxZ='-3340'>
-        <node X='55806' Y='219650' />
-        <node X='56761' Y='219649' />
-        <node X='56761' Y='220600' />
-        <node X='55806' Y='220600' />
-    </zone>
-    <zone id='120116' name='t21_24_slave1f_006m1' type='ScriptZone' shape='NPoly' minZ='-3276' maxZ='-3076'>
-        <node X='53766' Y='217601' />
-        <node X='54722' Y='217594' />
-        <node X='54722' Y='218557' />
-        <node X='53766' Y='218563' />
-    </zone>
-    <zone id='120117' name='t21_24_slave1f_007m1' type='ScriptZone' shape='NPoly' minZ='-3288' maxZ='-3088'>
-        <node X='55799' Y='217581' />
-        <node X='56775' Y='217589' />
-        <node X='56775' Y='218582' />
-        <node X='55799' Y='218574' />
-    </zone>
-    <zone id='120118' name='t21_24_slave1f_008m1' type='ScriptZone' shape='NPoly' minZ='-3276' maxZ='-3076'>
-        <node X='54782' Y='218606' />
-        <node X='55748' Y='218606' />
-        <node X='55748' Y='219593' />
-        <node X='54782' Y='219594' />
-    </zone>
-    <zone id='120119' name='t21_24_slave1f_009m1' type='ScriptZone' shape='NPoly' minZ='-3272' maxZ='-3072'>
-        <node X='53756' Y='219650' />
-        <node X='54725' Y='219650' />
-        <node X='54725' Y='220613' />
-        <node X='53756' Y='220619' />
-    </zone>
-    <zone id='120120' name='t21_24_slave1f_010m1' type='ScriptZone' shape='NPoly' minZ='-3284' maxZ='-3084'>
-        <node X='55810' Y='219649' />
-        <node X='56765' Y='219649' />
-        <node X='56765' Y='220600' />
-        <node X='55810' Y='220600' />
-    </zone>
-    <zone id='120121' name='t21_24_slave1f_011m1' type='ScriptZone' shape='NPoly' minZ='-2992' maxZ='-2792'>
-        <node X='53766' Y='217601' />
-        <node X='54722' Y='217594' />
-        <node X='54722' Y='218557' />
-        <node X='53766' Y='218563' />
-    </zone>
-    <zone id='120122' name='t21_24_slave1f_012m1' type='ScriptZone' shape='NPoly' minZ='-3004' maxZ='-2804'>
-        <node X='55799' Y='217581' />
-        <node X='56775' Y='217589' />
-        <node X='56775' Y='218582' />
-        <node X='55799' Y='218574' />
-    </zone>
-    <zone id='120123' name='t21_24_slave1f_013m1' type='ScriptZone' shape='NPoly' minZ='-2992' maxZ='-2792'>
-        <node X='54782' Y='218606' />
-        <node X='55748' Y='218606' />
-        <node X='55748' Y='219593' />
-        <node X='54782' Y='219594' />
-    </zone>
-    <zone id='120124' name='t21_24_slave1f_014m1' type='ScriptZone' shape='NPoly' minZ='-2988' maxZ='-2788'>
-        <node X='53756' Y='219650' />
-        <node X='54725' Y='219650' />
-        <node X='54725' Y='220613' />
-        <node X='53756' Y='220619' />
-    </zone>
-    <zone id='120125' name='t21_24_slave1f_015m1' type='ScriptZone' shape='NPoly' minZ='-3000' maxZ='-2800'>
-        <node X='55810' Y='219649' />
-        <node X='56765' Y='219649' />
-        <node X='56765' Y='220600' />
-        <node X='55810' Y='220600' />
     </zone>
     <zone name="Gainak Siege" id="60019" type="SiegeZone" shape="NPoly" minZ="-265" maxZ="-11">
         <node X="14816" Y="-114416" />
