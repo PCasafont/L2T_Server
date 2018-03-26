@@ -20,7 +20,11 @@ import l2server.gameserver.model.PartyMatchRoomList;
 import l2server.gameserver.model.PartyMatchWaitingList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
+import l2server.gameserver.network.serverpackets.ListPartyWaiting;
+import l2server.gameserver.network.serverpackets.PartyMatchDetail;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class ...

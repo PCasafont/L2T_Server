@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.stats.Stats;
@@ -29,6 +28,8 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.Collection;
 import java.util.StringTokenizer;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author MrPoke

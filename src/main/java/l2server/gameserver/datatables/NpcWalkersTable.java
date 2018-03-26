@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
@@ -29,6 +28,8 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * Main Table to Load Npc Walkers Routes and Chat SQL Table.<br>

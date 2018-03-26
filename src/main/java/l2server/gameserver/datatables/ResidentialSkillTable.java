@@ -1,6 +1,5 @@
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
 import l2server.log.Log;
@@ -9,6 +8,8 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * Warning: must be loaded after loading SkillTable

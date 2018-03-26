@@ -15,7 +15,6 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
@@ -24,6 +23,8 @@ import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.Util;
+
+import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel

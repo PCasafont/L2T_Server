@@ -17,7 +17,11 @@ package l2server.gameserver.templates.item;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.Elementals;
+import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.L2CrystallizeReward;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.network.SystemMessageId;

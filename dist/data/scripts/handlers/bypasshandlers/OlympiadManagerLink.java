@@ -29,7 +29,12 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ExHeroList;
+import l2server.gameserver.network.serverpackets.ExOlympiadInfoList;
+import l2server.gameserver.network.serverpackets.InventoryUpdate;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 import java.util.Collection;
 import java.util.List;

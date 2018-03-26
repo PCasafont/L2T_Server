@@ -15,7 +15,6 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
@@ -24,6 +23,8 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.HashMap;
 import java.util.Map;

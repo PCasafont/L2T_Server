@@ -19,7 +19,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2SummonItem;
 import l2server.log.Log;
@@ -27,6 +26,8 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
+
+import gnu.trove.TIntObjectHashMap;
 
 public class SummonItemsData
 {

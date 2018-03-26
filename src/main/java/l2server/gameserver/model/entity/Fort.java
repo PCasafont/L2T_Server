@@ -15,16 +15,24 @@
 
 package l2server.gameserver.model.entity;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.FortUpdater;
 import l2server.gameserver.FortUpdater.UpdaterType;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.datatables.ResidentialSkillTable;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.datatables.StaticObjects;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.CombatFlag;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2FortBallistaInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -40,10 +48,16 @@ import l2server.log.Log;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+import gnu.trove.TIntIntHashMap;
 
 public class Fort
 {

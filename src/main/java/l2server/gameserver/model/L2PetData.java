@@ -15,11 +15,12 @@
 
 package l2server.gameserver.model;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.datatables.SkillTable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * Class hold information about basic pet stats which are same on each level

@@ -15,7 +15,6 @@
 
 package ai.group_template;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
@@ -24,6 +23,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Rnd;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Slyce

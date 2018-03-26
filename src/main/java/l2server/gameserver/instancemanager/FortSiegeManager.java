@@ -17,7 +17,11 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.CombatFlag;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Fort;

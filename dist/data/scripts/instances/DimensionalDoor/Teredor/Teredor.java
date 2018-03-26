@@ -1,7 +1,5 @@
 package instances.DimensionalDoor.Teredor;
 
-import ai.group_template.L2AttackableAIScript;
-import instances.DimensionalDoor.DimensionalDoor;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.ai.L2AttackableAI;
@@ -24,8 +22,12 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
+import ai.group_template.L2AttackableAIScript;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import instances.DimensionalDoor.DimensionalDoor;
 
 /**
  * @author LasTravel

@@ -15,6 +15,8 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
+
 import l2server.Config;
 import l2server.gameserver.RecipeController;
 import l2server.gameserver.model.L2ManufactureItem;
@@ -31,8 +33,6 @@ import l2server.gameserver.util.Util;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
  * This class ...

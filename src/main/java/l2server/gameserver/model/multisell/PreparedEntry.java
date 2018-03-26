@@ -15,11 +15,11 @@
 
 package l2server.gameserver.model.multisell;
 
+import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
+
 import l2server.gameserver.model.L2ItemInstance;
 
 import java.util.ArrayList;
-
-import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 /**
  * @author DS

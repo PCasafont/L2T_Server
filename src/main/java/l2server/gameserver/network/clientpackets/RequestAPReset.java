@@ -15,10 +15,11 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.datatables.AbilityTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
+
+import gnu.trove.TIntIntHashMap;
 
 /**
  * @author Pere

@@ -15,13 +15,14 @@
 
 package quests.Q692_HowtoOpposeEvil;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Gigiikun

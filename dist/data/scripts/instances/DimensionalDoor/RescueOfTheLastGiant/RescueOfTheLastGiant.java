@@ -1,7 +1,5 @@
 package instances.DimensionalDoor.RescueOfTheLastGiant;
 
-import ai.group_template.L2AttackableAIScript;
-import instances.DimensionalDoor.DimensionalDoor;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
@@ -17,11 +15,19 @@ import l2server.gameserver.model.actor.instance.L2NpcBufferInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ExSendUIEvent;
+import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import instances.DimensionalDoor.DimensionalDoor;
 
 /**
  * @author LasTravel

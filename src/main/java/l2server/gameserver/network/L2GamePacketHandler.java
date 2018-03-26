@@ -20,7 +20,11 @@ import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.PacketOpcodes.PacketFamily;
 import l2server.gameserver.network.clientpackets.L2GameClientPacket;
 import l2server.log.Log;
-import l2server.network.*;
+import l2server.network.IClientFactory;
+import l2server.network.IMMOExecutor;
+import l2server.network.IPacketHandler;
+import l2server.network.MMOConnection;
+import l2server.network.ReceivablePacket;
 import l2server.util.Util;
 
 import java.nio.ByteBuffer;

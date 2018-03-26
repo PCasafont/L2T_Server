@@ -15,6 +15,8 @@
 
 package l2server.gameserver.model.entity;
 
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
+
 //import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 import l2server.Config;
@@ -39,8 +41,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 public class Auction
 {

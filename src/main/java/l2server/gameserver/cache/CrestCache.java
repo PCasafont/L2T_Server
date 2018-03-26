@@ -22,7 +22,11 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
 import l2server.log.Log;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

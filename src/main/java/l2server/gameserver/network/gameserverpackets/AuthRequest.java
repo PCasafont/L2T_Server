@@ -17,8 +17,6 @@ package l2server.gameserver.network.gameserverpackets;
 
 import l2server.util.network.BaseSendablePacket;
 
-import java.io.IOException;
-
 public class AuthRequest extends BaseSendablePacket
 {
 	/**
