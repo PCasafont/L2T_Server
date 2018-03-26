@@ -305,7 +305,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			player.sendPacket(new ExEnchantSkillInfoDetail(_type, _skillId, currentSkill.getLevel(),
 					currentSkill.getEnchantRouteId(), currentSkill.getEnchantLevel(), player));
 
-			player.updateSkillShortCuts(_skillId, player.getSkillLevelHash(_skillId));
+			player.updateSkillShortcuts(_skillId, player.getSkillLevelHash(_skillId));
 		}
 		else
 		{

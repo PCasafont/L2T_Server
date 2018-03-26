@@ -491,7 +491,7 @@ public class ShortCuts
 	 * @param skillId the skill Id to search and update.
 	 * @param skillLevel the skill level to update.
 	 */
-	public synchronized void updateSkillShortCuts(int skillId, int skillLevel)
+	public synchronized void updateSkillShortcuts(int skillId, int skillLevel)
 	{
 		// Update all the shortcuts for this skill
 		for (L2ShortCut sc : getAllShortCuts())
@@ -510,7 +510,7 @@ public class ShortCuts
 	 * @param objId the item objectId to search and update.
 	 * @param type the short cut type to update.
 	 */
-	public synchronized void updateItemShortCuts(int objId)
+	public synchronized void updateItemShortcuts(int objId)
 	{
 		for (L2ShortCut sc : getAllShortCuts())
 		{

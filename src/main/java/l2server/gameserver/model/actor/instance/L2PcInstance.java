@@ -2131,7 +2131,7 @@ public class L2PcInstance extends L2Playable
 	 */
 	public void updateItemShortCuts(int objId)
 	{
-		_shortCuts.updateItemShortCuts(objId);
+		_shortCuts.updateItemShortcuts(objId);
 	}
 	
 	/**
@@ -2139,9 +2139,9 @@ public class L2PcInstance extends L2Playable
 	 * @param skillId the skill Id to search and update.
 	 * @param skillLevel the skill level to update.
 	 */
-	public void updateSkillShortCuts(int skillId, int skillLevel)
+	public void updateSkillShortcuts(int skillId, int skillLevel)
 	{
-		_shortCuts.updateSkillShortCuts(skillId, skillLevel);
+		_shortCuts.updateSkillShortcuts(skillId, skillLevel);
 	}
 
 	/**
