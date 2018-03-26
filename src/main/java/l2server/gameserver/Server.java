@@ -94,6 +94,40 @@ public class Server
 
 	public Server() throws Exception
 	{
+        ServerMode.serverMode = ServerMode.MODE_GAMESERVER;
+        // Local Constants
+        final String LOG_FOLDER = "log"; // Name of folder for log file
+        final String LOG_NAME = "./log.cfg"; // Name of log file
+
+        /* Main */
+        // Create log folder
+        File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
+        logFolder.mkdir();
+
+        // Create input stream for log file -- or store file data into memory
+        InputStream is = new FileInputStream(new File(LOG_NAME));
+        LogManager.getLogManager().readConfiguration(is);
+        is.close();
+
+        // Initialize config
+        Config.load();
+
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        gui = new ServerGui();
+        gui.init();
+
+        printSection("Database");
+        L2DatabaseFactory.getInstance();
+
+        //SqlToXml.races();
+        //SqlToXml.classes();
+        //SqlToXml.shops();
+        //SqlToXml.customShops();
+        //SqlToXml.enchantSkillGroups();
+        //SqlToXml.armorSets();
+        //SqlToXml.henna();
+        //SqlToXml.fortSpawns();
+
 		long serverLoadStart = System.currentTimeMillis();
 
 		gameServer = this;
@@ -480,50 +514,17 @@ public class Server
 
 		AutoAnnounceTaskManager.getInstance();
 		//ArtificialPlayersManager.getInstance();
-	}
+
+        //SqlToXml.spawns();
+        //SqlToXml.raidBosses();
+
+        Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
+        gameServer = this;
+    }
 
 	public static void main(String[] args) throws Exception
 	{
-		ServerMode.serverMode = ServerMode.MODE_GAMESERVER;
-		// Local Constants
-		final String LOG_FOLDER = "log"; // Name of folder for log file
-		final String LOG_NAME = "./log.cfg"; // Name of log file
-
-        /* Main */
-		// Create log folder
-		File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
-		logFolder.mkdir();
-
-		// Create input stream for log file -- or store file data into memory
-		InputStream is = new FileInputStream(new File(LOG_NAME));
-		LogManager.getLogManager().readConfiguration(is);
-		is.close();
-
-		// Initialize config
-		Config.load();
-
-		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		gui = new ServerGui();
-		gui.init();
-
-		printSection("Database");
-		L2DatabaseFactory.getInstance();
-
-		//SqlToXml.races();
-		//SqlToXml.classes();
-		//SqlToXml.shops();
-		//SqlToXml.customShops();
-		//SqlToXml.enchantSkillGroups();
-		//SqlToXml.armorSets();
-		//SqlToXml.henna();
-		//SqlToXml.fortSpawns();
-
-		gameServer = new Server();
-
-		//SqlToXml.spawns();
-		//SqlToXml.raidBosses();
-
-		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
+		new Server();
 	}
 
 	static long _t = 0;

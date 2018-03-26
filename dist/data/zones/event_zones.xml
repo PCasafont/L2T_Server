@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+<list enabled="true">
     <!-- Event Zones -->
     <zone name="Coliseum" id="80000" type="TenkaiEventZone" shape="NPoly" minZ="-4415" maxZ="-2410">
         <node X="148087" Y="47009" />

@@ -1,34 +1,20 @@
 package events.DCEvent;
 
-import com.sun.corba.se.impl.oa.toa.TOA;
-import events.DCEvent.DCEvent;
 import l2server.gameserver.Announcements;
-import l2server.gameserver.GmListTable;
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.events.RankingKillInfo;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.network.NpcStringId;
-import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.util.Broadcast;
-import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

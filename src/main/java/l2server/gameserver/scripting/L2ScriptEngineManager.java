@@ -242,7 +242,7 @@ public final class L2ScriptEngineManager
 					else
 					{
 						Log.warning("Failed loading: (" + file.getCanonicalPath() + ") @ " + list.getName() + ":" +
-								lnr.getLineNumber() + " - Reason: doesnt exists or is not a file.");
+								lnr.getLineNumber() + " - Reason: it doesn't exist or it's not a file.");
 					}
 				}
 			}
@@ -310,7 +310,7 @@ public final class L2ScriptEngineManager
 		}
 		else
 		{
-			throw new IllegalArgumentException("The argument directory either doesnt exists or is not an directory.");
+			throw new IllegalArgumentException("The argument directory either doesn't exist or it's not a directory.");
 		}
 	}
 

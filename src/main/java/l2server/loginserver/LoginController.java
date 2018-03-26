@@ -664,7 +664,7 @@ public class LoginController
 			rset.close();
 			statement.close();
 
-			// if account doesnt exists
+			// if account doesn't exist
 			if (expected == null)
 			{
 				if (Config.AUTO_CREATE_ACCOUNTS)
