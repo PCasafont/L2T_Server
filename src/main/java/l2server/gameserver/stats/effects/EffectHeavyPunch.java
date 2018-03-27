@@ -15,7 +15,6 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.Config;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Character;

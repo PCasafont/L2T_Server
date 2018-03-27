@@ -16,7 +16,26 @@
 package l2server.gameserver.templates.skills;
 
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.stats.skills.*;
+import l2server.gameserver.stats.skills.L2SkillAgathion;
+import l2server.gameserver.stats.skills.L2SkillAppearance;
+import l2server.gameserver.stats.skills.L2SkillChangeWeapon;
+import l2server.gameserver.stats.skills.L2SkillChargeDmg;
+import l2server.gameserver.stats.skills.L2SkillContinuousCasts;
+import l2server.gameserver.stats.skills.L2SkillContinuousDrain;
+import l2server.gameserver.stats.skills.L2SkillCreateItem;
+import l2server.gameserver.stats.skills.L2SkillDecoy;
+import l2server.gameserver.stats.skills.L2SkillDefault;
+import l2server.gameserver.stats.skills.L2SkillDrain;
+import l2server.gameserver.stats.skills.L2SkillLearnSkill;
+import l2server.gameserver.stats.skills.L2SkillMount;
+import l2server.gameserver.stats.skills.L2SkillSiegeFlag;
+import l2server.gameserver.stats.skills.L2SkillSignet;
+import l2server.gameserver.stats.skills.L2SkillSignetCasttime;
+import l2server.gameserver.stats.skills.L2SkillSpawn;
+import l2server.gameserver.stats.skills.L2SkillSummon;
+import l2server.gameserver.stats.skills.L2SkillSweeper;
+import l2server.gameserver.stats.skills.L2SkillTeleport;
+import l2server.gameserver.stats.skills.L2SkillTrap;
 import l2server.gameserver.templates.StatsSet;
 
 import java.lang.reflect.Constructor;

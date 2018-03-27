@@ -13,13 +13,18 @@
 
 package l2server.gameserver.idfactory;
 
-import gnu.trove.TIntArrayList;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.log.Log;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import gnu.trove.TIntArrayList;
 
 /**
  * This class ...

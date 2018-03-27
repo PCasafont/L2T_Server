@@ -15,8 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.templates.item.L2EtcItem;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class manages handlers of items

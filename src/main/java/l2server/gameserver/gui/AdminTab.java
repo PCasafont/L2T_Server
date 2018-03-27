@@ -22,10 +22,17 @@ package l2server.gameserver.gui;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.gui.playertable.PlayerTablePane;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 
 /**
  * @author Pere

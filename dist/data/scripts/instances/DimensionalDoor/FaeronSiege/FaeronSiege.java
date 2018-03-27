@@ -15,7 +15,6 @@
 
 package instances.DimensionalDoor.FaeronSiege;
 
-import instances.DimensionalDoor.DimensionalDoor;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -32,7 +31,12 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2server.gameserver.network.serverpackets.Earthquake;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SpecialCamera;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
@@ -40,6 +44,8 @@ import l2server.util.Rnd;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import instances.DimensionalDoor.DimensionalDoor;
 
 /**
  * @author LasTravel

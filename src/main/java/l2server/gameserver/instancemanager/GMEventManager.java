@@ -21,8 +21,12 @@ import l2server.gameserver.GmListTable;
 import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
+import l2server.gameserver.datatables.PlayerClassTable;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
@@ -55,8 +59,13 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.StringTokenizer;
 
 /**
  * @author LasTravel

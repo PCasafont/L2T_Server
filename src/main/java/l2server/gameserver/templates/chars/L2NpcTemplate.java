@@ -17,7 +17,14 @@ package l2server.gameserver.templates.chars;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ExtraDropTable;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.Elementals;
+import l2server.gameserver.model.L2DropCategory;
+import l2server.gameserver.model.L2DropData;
+import l2server.gameserver.model.L2MinionData;
+import l2server.gameserver.model.L2NpcAIData;
+import l2server.gameserver.model.L2RandomMinionData;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2XmassTreeInstance;
 import l2server.gameserver.model.quest.Quest;
@@ -27,7 +34,11 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This cl contains all generic data of a L2Spawn object.<BR><BR>

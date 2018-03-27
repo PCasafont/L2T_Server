@@ -17,7 +17,11 @@ package l2server.loginserver.network;
 
 import l2server.log.Log;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
-import l2server.loginserver.network.clientpackets.*;
+import l2server.loginserver.network.clientpackets.AuthGameGuard;
+import l2server.loginserver.network.clientpackets.RequestAuthLogin;
+import l2server.loginserver.network.clientpackets.RequestAuthLogin2;
+import l2server.loginserver.network.clientpackets.RequestServerList;
+import l2server.loginserver.network.clientpackets.RequestServerLogin;
 import l2server.network.IPacketHandler;
 import l2server.network.ReceivablePacket;
 import l2server.util.Util;

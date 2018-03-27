@@ -16,7 +16,14 @@
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ai.L2CharacterAI;
-import l2server.gameserver.ai.aplayer.*;
+import l2server.gameserver.ai.aplayer.L2AArcherAI;
+import l2server.gameserver.ai.aplayer.L2AEnchanterAI;
+import l2server.gameserver.ai.aplayer.L2AHealerAI;
+import l2server.gameserver.ai.aplayer.L2AKnightAI;
+import l2server.gameserver.ai.aplayer.L2ARogueAI;
+import l2server.gameserver.ai.aplayer.L2ASummonerAI;
+import l2server.gameserver.ai.aplayer.L2AWarriorAI;
+import l2server.gameserver.ai.aplayer.L2AWizardAI;
 import l2server.gameserver.model.actor.appearance.PcAppearance;
 import l2server.gameserver.templates.chars.L2PcTemplate;
 

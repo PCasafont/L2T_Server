@@ -15,7 +15,6 @@
 
 package handlers.chathandlers;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -31,6 +30,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Stats;
 
 import java.util.Collection;
+
+import gnu.trove.TIntIntHashMap;
 
 /**
  * Global chat handler.

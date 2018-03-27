@@ -15,7 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.events.instanced.EventsManager;
@@ -25,11 +24,17 @@ import l2server.gameserver.model.entity.BlockCheckerEngine;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ExCubeGameAddPlayer;
+import l2server.gameserver.network.serverpackets.ExCubeGameChangeTeam;
+import l2server.gameserver.network.serverpackets.ExCubeGameRemovePlayer;
+import l2server.gameserver.network.serverpackets.L2GameServerPacket;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import gnu.trove.TIntIntHashMap;
 
 /**
  * @author BiggBoss

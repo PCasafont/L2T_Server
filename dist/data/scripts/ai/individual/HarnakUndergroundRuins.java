@@ -15,7 +15,6 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
@@ -28,6 +27,8 @@ import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.HashMap;
 import java.util.Map;

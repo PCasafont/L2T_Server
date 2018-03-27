@@ -16,12 +16,14 @@
 package l2server.gameserver.script.faenor;
 
 import l2server.Config;
-import l2server.gameserver.script.*;
+import l2server.gameserver.script.Parser;
+import l2server.gameserver.script.ParserNotCreatedException;
+import l2server.gameserver.script.ScriptDocument;
+import l2server.gameserver.script.ScriptEngine;
+import l2server.gameserver.script.ScriptPackage;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.log.Log;
-import org.w3c.dom.Node;
 
-import javax.script.ScriptContext;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -31,6 +33,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
+
+import javax.script.ScriptContext;
+
+import org.w3c.dom.Node;
 
 /**
  * @author Luis Arias

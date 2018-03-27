@@ -15,6 +15,10 @@
 
 package l2server.gameserver.ai;
 
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
+
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -22,7 +26,11 @@ import l2server.gameserver.TimeController;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2DefenderInstance;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2NpcInstance;
@@ -33,8 +41,6 @@ import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.concurrent.Future;
-
-import static l2server.gameserver.ai.CtrlIntention.*;
 
 /**
  * This class manages AI of L2Attackable.<BR><BR>

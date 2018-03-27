@@ -1,6 +1,5 @@
 package instances.GrandBosses.Trasken;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.L2AttackableAI;
 import l2server.gameserver.ai.L2NpcWalkerAI;
@@ -17,10 +16,16 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.Earthquake;
+import l2server.gameserver.network.serverpackets.ExSendUIEvent;
+import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

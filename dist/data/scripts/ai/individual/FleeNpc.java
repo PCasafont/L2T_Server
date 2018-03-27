@@ -15,13 +15,14 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 public class FleeNpc extends L2AttackableAIScript
 {

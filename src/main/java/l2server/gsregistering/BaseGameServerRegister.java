@@ -22,8 +22,7 @@ import l2server.i18n.LanguageControl;
 import l2server.loginserver.GameServerTable;
 import l2server.util.Util;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,6 +35,9 @@ import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
  * @author KenM

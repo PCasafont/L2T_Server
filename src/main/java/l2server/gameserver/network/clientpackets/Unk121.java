@@ -1,7 +1,5 @@
 package l2server.gameserver.network.clientpackets;
 
-import l2server.log.Log;
-
 /**
  * @author MegaParzor!
  */

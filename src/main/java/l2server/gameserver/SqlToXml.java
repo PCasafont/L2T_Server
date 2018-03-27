@@ -15,7 +15,6 @@
 
 package l2server.gameserver;
 
-import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
@@ -42,6 +41,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
+
+import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Pere

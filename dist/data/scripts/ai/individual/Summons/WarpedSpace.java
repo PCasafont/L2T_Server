@@ -15,13 +15,14 @@
 
 package ai.individual.Summons;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.skills.L2AbnormalType;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.concurrent.ScheduledFuture;
 

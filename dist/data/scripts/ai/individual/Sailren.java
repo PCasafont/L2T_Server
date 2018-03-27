@@ -15,7 +15,6 @@
 
 package ai.individual;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -35,6 +34,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,8 +13,6 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntIntHashMap;
-import gnu.trove.TLongObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -30,6 +28,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
+
+import gnu.trove.TIntIntHashMap;
+import gnu.trove.TLongObjectHashMap;
 
 /**
  *

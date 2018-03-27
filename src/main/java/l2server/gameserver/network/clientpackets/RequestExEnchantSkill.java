@@ -25,7 +25,11 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
+import l2server.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
+import l2server.gameserver.network.serverpackets.ExEnchantSkillResult;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.log.Log;
 import l2server.util.Rnd;
 

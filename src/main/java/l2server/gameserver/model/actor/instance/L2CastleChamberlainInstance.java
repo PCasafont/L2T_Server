@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.actor.instance;
 
-import gnu.trove.TIntArrayList;
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.SkillTable;
@@ -40,6 +39,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
+
+import gnu.trove.TIntArrayList;
 
 /**
  * Castle Chamberlains implementation used for: - tax rate control - regional

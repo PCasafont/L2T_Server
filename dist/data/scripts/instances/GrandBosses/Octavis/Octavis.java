@@ -1,13 +1,16 @@
 package instances.GrandBosses.Octavis;
 
-import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.*;
+import l2server.gameserver.model.L2NpcWalkerNode;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
@@ -20,6 +23,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+
+import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;

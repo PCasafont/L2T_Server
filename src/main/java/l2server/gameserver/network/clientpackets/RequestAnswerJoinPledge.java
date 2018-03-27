@@ -20,7 +20,11 @@ import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.*;
+import l2server.gameserver.network.serverpackets.JoinPledge;
+import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import l2server.gameserver.network.serverpackets.PledgeShowMemberListAdd;
+import l2server.gameserver.network.serverpackets.PledgeShowMemberListAll;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class ...
