@@ -522,11 +522,6 @@ public class Server
         gameServer = this;
     }
 
-	public static void main(String[] args) throws Exception
-	{
-		new Server();
-	}
-
 	static long _t = 0;
 
 	public static void printSection(String s)

@@ -4,7 +4,6 @@ L2Tenkai's L2j server fork, based on its Interlude version (started 2008) and ha
 
 ## Getting Started
 
-As of now we still didn't prepare a standard to deploy and run the software. Stay tuned for changes!
 
 ### Prerequisites
 
@@ -14,9 +13,18 @@ As of now we still didn't prepare a standard to deploy and run the software. Sta
 ### Installing
 
 * Clone the project
-* Open it with IntelliJ IDEA
+* Open it with IntelliJ IDEA. Make sure to import it as a Gradle project!
 * Run the [database installer script](dist/tools/database_installer.bat)
-* ...more to come
+* Create or modify a configuration file. They are the .properties files located at the [config folder](dist/config).
+* Make the [global config file](dist/config.cfg) point to your configuration file.
+
+### Running locally
+
+There are a couple shared run configurations for IntelliJ, feel free to use them.
+
+### Deploying
+
+You can run either `gradle distZip` to generate a zip with all the necessary files to deploy or `gradle installDist` to generate a folder with all the necessary files to deploy.
 
 ## Authors
 
@@ -33,4 +41,4 @@ Other contributors:
 
 ## License
 
-This project is licensed under the GNU GPL License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU GPL License - see the [LICENSE.md](LICENSE.md) file for details.

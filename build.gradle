@@ -23,6 +23,7 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'distribution'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -36,6 +37,10 @@ compileTestKotlin {
 	kotlinOptions {
 		jvmTarget = "1.8"
 	}
+}
+
+springBoot {
+	mainClassName = "l2server.gameserver.GameApplicationKt"
 }
 
 repositories {
@@ -67,8 +72,8 @@ dependencies {
 
 	// Kotlin
 	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	compile("org.jetbrains.kotlin:kotlin-reflect")
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 
 	// Spring
 	compile('org.springframework.boot:spring-boot-starter-web')
@@ -80,13 +85,58 @@ dependencies {
 	// Spring test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
-
 }
 
 sourceSets {
 	main {
 		java {
 			srcDirs 'dist/data/scripts'
+		}
+	}
+}
+
+task gameJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'l2t-game-server.jar'
+	exclude('**/loginserver/**')
+	exclude('**/accountmanager/**')
+	exclude('**/gsregistering/**')
+	manifest {
+		attributes(
+				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
+				'Main-Class': 'l2server.gameserver.GameApplicationKt')
+	}
+}
+
+task loginJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'l2t-login-server.jar'
+	manifest {
+		attributes(
+				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
+				'Main-Class': 'l2server.loginserver.LoginApplicationKt')
+	}
+}
+
+artifacts {
+	archives gameJar, loginJar
+}
+
+distributions {
+	main {
+		contents {
+			from('dist') {
+				includeEmptyDirs(false)
+				exclude('log/')
+			}
+			into('lib') {
+				from(configurations.runtime)
+				from('/lib')
+			}
+			from(gameJar)
+			from(loginJar)
+			exclude('.gitignore')
+			exclude('log/')
 		}
 	}
 }

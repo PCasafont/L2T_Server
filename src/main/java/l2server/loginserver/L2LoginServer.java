@@ -43,11 +43,6 @@ public class L2LoginServer
 	private GameServerListener _gameServerListener;
 	private Core<L2LoginClient> _selectorThread;
 
-	public static void main(String[] args)
-	{
-		new L2LoginServer();
-	}
-
 	public static L2LoginServer getInstance()
 	{
 		return _instance;
